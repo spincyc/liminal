@@ -431,3 +431,33 @@ test("the real templates fill a full-length form with verified questions that ne
     questions.map((question) => question.id),
   );
 });
+
+test("with recency, a module prefers templates never served, then those served longest ago", () => {
+  const templates = fakeSection(MATH, 6, 0);
+  const spec = Modules.moduleSpec(MATH, "1");
+  const plain = Modules.chooseModule(templates, spec, { seed: "r" });
+  // Everything the plain choice took was served; every cell has enough
+  // others, so none of it comes back.
+  const recency = {};
+  plain.templates.forEach((template, index) => { recency[template.id] = 10 + index; });
+  const fresh = Modules.chooseModule(templates, spec, { seed: "r", recency });
+  assert.equal(fresh.templates.length, spec.size);
+  assert.deepEqual(fresh.templates.filter((template) => recency[template.id] !== undefined), []);
+  // With everything served, each cell takes the ones served longest ago.
+  const all = {};
+  templates.forEach((template, index) => { all[template.id] = 100 - index; });
+  const oldest = Modules.chooseModule(templates, spec, { seed: "r", recency: all });
+  spec.domains.forEach((domain) => {
+    Modules.TIERS.forEach((tier) => {
+      const cell = templates.filter((template) => template.domain === domain.name && template.difficulty === tier);
+      const wanted = spec.cells[domain.name][tier];
+      const expected = cell.map((template) => template.id).sort((a, b) => all[a] - all[b]).slice(0, wanted).sort();
+      const got = oldest.templates.filter((template) => template.domain === domain.name && template.difficulty === tier)
+        .map((template) => template.id).sort();
+      assert.deepEqual(got, expected, `${domain.name} ${tier}`);
+    });
+  });
+  // Without recency the choice is unchanged, so printed forms are too.
+  assert.deepEqual(Modules.chooseModule(templates, spec, { seed: "r" }).templates.map((t) => t.id),
+    plain.templates.map((t) => t.id));
+});

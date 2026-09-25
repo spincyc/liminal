@@ -10,6 +10,9 @@
 // A module is chosen template by template, never more than one question per
 // template, and a form never repeats a template across its modules. A form is
 // fully described by its code (see formCode), which rebuilds it exactly.
+// Printed booklets (app/print.js) build whole forms here; the on-screen
+// tests (lib/simulation.js) take one module at a time, because Module 2's
+// route is known only once Module 1 is done (see ROUTING_THRESHOLD).
 // Pure logic with no DOM access; loads in Node and as a plain browser script
 // (window.LiminalModules, after window.LiminalTemplateMask and
 // window.LiminalRuns).
@@ -106,6 +109,13 @@
 
   const BREAK_MINUTES = 10;
   const SECTION_ORDER = ["sat-reading-writing", "sat-math"];
+
+  // On-screen tests route Module 2 by Module 1: the harder module at or
+  // above this share of Module 1 correct, the easier one below it. A
+  // practice approximation, like the mixes above: the real test routes on
+  // its own scoring of Module 1, which is not published. Unanswered
+  // questions count as incorrect.
+  const ROUTING_THRESHOLD = 0.6;
 
   function hash(text) {
     let value = 2166136261;
@@ -215,6 +225,25 @@
     };
   }
 
+  /* ------------------------------------------------------------- routing */
+
+  // The fewest correct answers out of `total` that route to the harder
+  // Module 2 (17 of 27, 14 of 22). Whole numbers only, so the cutoff never
+  // depends on how 0.6 rounds in floating point.
+  function routeCutoff(total, threshold) {
+    const share = threshold === undefined ? ROUTING_THRESHOLD : Number(threshold);
+    const count = Math.max(0, Math.trunc(Number(total) || 0));
+    const permille = Math.round(share * 1000);
+    return Math.ceil((count * permille) / 1000);
+  }
+
+  // "h" (harder) or "e" (easier) for a Module 1 result.
+  function routeFor(correct, total, threshold) {
+    const count = Math.max(0, Math.trunc(Number(total) || 0));
+    if (!count) return "e";
+    return (Number(correct) || 0) >= routeCutoff(count, threshold) ? "h" : "e";
+  }
+
   /* ------------------------------------------------------------ choosing */
 
   // Official order within a module: Reading and Writing by domain, Easy to
@@ -251,6 +280,10 @@
   // module, then a seeded shuffle. Only then does a short cell borrow from
   // the nearest tier of its domain (NEAREST), so borrowing never starves
   // another cell. Never two of one template; never one in `exclude` (ids).
+  // With `recency` ({ [templateId]: last serve number }, as runs.js takes
+  // it), a cell first prefers templates never served, then those served
+  // longest ago, so a student's on-screen tests rotate through the pool;
+  // printed forms pass none and choose by skill and seed alone.
   // Returns the ordered templates, their mask, and one shortfall per cell
   // that its own tier could not fill:
   //   { domain, tier, wanted, filled, borrowed: [{ tier, count }], missing }
@@ -260,6 +293,11 @@
     const settings = options || {};
     const seed = String(settings.seed === undefined ? "" : settings.seed);
     const excluded = new Set(settings.exclude || []);
+    const recency = settings.recency && typeof settings.recency === "object" ? settings.recency : null;
+    // Serve numbers start at 1, so -1 ranks a template never served first.
+    const served = (template) => (recency && Object.prototype.hasOwnProperty.call(recency, template.id)
+      ? Number(recency[template.id]) || 0
+      : -1);
     const taken = new Set();
     const skillUses = new Map();
     const chosen = [];
@@ -279,7 +317,8 @@
             return;
           }
           const uses = (entry) => skillUses.get(entry.skill) || 0;
-          const difference = uses(template) - uses(best) ||
+          const difference = (recency ? served(template) - served(best) : 0) ||
+            uses(template) - uses(best) ||
             order.get(template.id) - order.get(best.id);
           if (difference < 0 || (difference === 0 && template.id < best.id)) best = template;
         });
@@ -532,6 +571,7 @@
     BREAK_MINUTES,
     MODULES,
     NEAREST,
+    ROUTING_THRESHOLD,
     SECTIONS,
     SECTION_ORDER,
     TIERS,
@@ -546,6 +586,8 @@
     orderModule,
     parseFormCode,
     rebuildForm,
+    routeCutoff,
+    routeFor,
     sectionSlots,
     slot,
   };
