@@ -24,6 +24,14 @@ read [Drill protocols](drill-protocols.md).
 
 Five full practice tests: weeks 1, 4, 7, 10, and 11.
 
+**Full practice tests are official tests.** For the SAT, use the full-length
+practice tests in College Board's Bluebook app; for the ACT, ACT's official
+practice tests. Their scores are the only honest estimate you have. Liminal's
+accuracy is practice feedback on its own questions, not a score.
+For SAT Math from around 500, the
+[Learn plan](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan) gives the skill order and a mastery
+gate for Phase II.
+
 ---
 
 ## Phase I — Assess and repair (weeks 1-2)
@@ -51,7 +59,7 @@ The five careless-error habits, at 80% speed all week.
 | 1 | Weak domain 1: read the guide, 15 items untimed | 1.5 h |
 | 2 | Grammar: read the conventions guide, 25 items | 1.5 h |
 | 3 | Weak domain 1: 20 items untimed, every step written | 1.5 h |
-| 4 | Formula reference — **handwrite it once** | 1 h |
+| 4 | Formula reference (SAT: [Math formulas to know](https://spincyc.github.io/liminal/learn.html#sat/general/math-reference); ACT: [formula reference](../act/math/07-formula-reference.md)) — **handwrite it once** | 1 h |
 | 5 | Grammar: 30 items | 1.5 h |
 | 6 | Missed-items + weekly audit | 1 h |
 | 7 | Rest | — |
@@ -139,7 +147,7 @@ Content is functional. Now push into the hard third.
 | --- | --- | --- |
 | 1 | **Hard-difficulty drill**, domain A, 15 items untimed | 1.5 h |
 | 2 | Hard drill, domain B, 15 items untimed | 1.5 h |
-| 3 | Advanced topics you've been avoiding — logs, trig graphs, counting, complex numbers | 1.5 h |
+| 3 | Advanced topics you've been avoiding — SAT: unit circle and radians, absolute value equations, nonlinear systems; ACT: logs, trig graphs, counting, complex numbers | 1.5 h |
 | 4 | Hard drill, domain C, 15 items | 1.5 h |
 | 5 | Cross-domain Hard mix, 20 items | 1.5 h |
 | 6 | Missed-items + audit | 1 h |
@@ -170,7 +178,7 @@ ceiling, not speed. Speed comes in Phase IV.
 | 2 | **Mixed-mode**, 40 items, real timing | 1.5 h |
 | 3 | Compressed: one section at **90% of real time** | 1 h |
 | 4 | Mixed-mode, 40 items | 1.5 h |
-| 5 | Missed-items + flagged review | 1 h |
+| 5 | Missed-items + marked-for-review items | 1 h |
 | 6 | **Full practice test** | 3 h |
 | 7 | Same-day impressions. Rest. | 0.5 h |
 

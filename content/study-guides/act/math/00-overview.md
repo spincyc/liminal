@@ -83,7 +83,7 @@ that the SAT largely doesn't:
 
 - Matrices (basic operations, determinants of 2×2)
 - Logarithms
-- Complex numbers beyond the basics
+- Complex numbers (not tested on the digital SAT)
 - Trigonometric graphs, amplitude and period
 - Law of Sines and Law of Cosines
 - Conic sections beyond circles

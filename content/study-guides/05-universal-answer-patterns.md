@@ -226,11 +226,13 @@ misread.
 
 ## Tier 4 — Grammar and writing specific
 
-### Shortest grammatically correct answer usually wins
+### ACT only: the shortest grammatically correct answer usually wins
 
-Both tests prefer concision. When two choices are both grammatically correct and
-mean the same thing, the shorter one is nearly always credited. Redundancy is
-treated as an error.
+ACT English tests concision. When two choices are both grammatically correct and
+mean the same thing, the shorter one is usually credited, and redundancy is
+treated as an error. **This does not carry over to the SAT**: concision is not
+one of the SAT's official Standard English Conventions testing points, so on
+the SAT never pick a choice for being shorter.
 
 Watch specifically for redundancy across the sentence: *"annual yearly," "the
 reason is because," "in my personal opinion," "returned back," "each and every."*
@@ -238,10 +240,12 @@ reason is because," "in my personal opinion," "returned back," "each and every."
 **Fails when:** the shorter choice loses necessary information, changes meaning,
 or creates ambiguity. Concision never beats correctness or clarity.
 
-### "DELETE" / "OMIT the underlined portion" is right more often than 1-in-4
+### ACT only: take "DELETE" / "OMIT the underlined portion" seriously
 
-When deleting is an option, it's credited at a noticeably higher rate than
-chance, because redundancy and irrelevance are heavily tested.
+The option appears only on the ACT. Redundancy and irrelevance are tested
+there, so deleting is a real candidate whenever the words add nothing. (The
+old rule of thumb that it is right "more often than 1 in 4" is folklore, not a
+published figure.)
 
 **Fails when:** the deleted material is doing real work — a necessary
 transition, a required subject, essential clarifying information.

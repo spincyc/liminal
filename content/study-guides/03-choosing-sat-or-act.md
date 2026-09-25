@@ -8,6 +8,12 @@ For most students the difference is small. For a meaningful minority it is
 large — 3-4 ACT points or 100+ SAT points — and those students are leaving real
 score on the table if they pick wrong.
 
+> **Verify before you rely on this.** Section timings, the concordance table,
+> and college testing policies change. The facts here were rechecked on
+> 2026-09-25; confirm them on [satsuite.collegeboard.org](https://satsuite.collegeboard.org/sat/whats-on-the-test/structure),
+> [act.org](https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/act-exam-sections-and-structure.html),
+> and each college's admissions site.
+
 ---
 
 ## The short version
@@ -22,27 +28,31 @@ If you have already taken both officially, you already have your answer. Use it.
 
 ## Concordance table
 
-Approximate equivalence between ACT Composite and SAT Total.
+Approximate equivalence between ACT Composite and SAT Total: the SAT score
+range that concords with each ACT Composite in the official 2018 ACT/SAT
+concordance tables ([College Board PDF](https://satsuite.collegeboard.org/media/pdf/guide-2018-act-sat-concordance.pdf),
+Table A2, checked 2026-09-25).
 
 | ACT | SAT | | ACT | SAT |
 | ---: | ---: | --- | ---: | ---: |
-| 36 | 1590-1600 | | 22 | 1100-1120 |
-| 35 | 1540-1580 | | 21 | 1060-1090 |
-| 34 | 1500-1530 | | 20 | 1030-1050 |
-| 33 | 1460-1490 | | 19 | 990-1020 |
-| 32 | 1430-1450 | | 18 | 960-980 |
-| 31 | 1400-1420 | | 17 | 920-950 |
-| 30 | 1370-1390 | | 16 | 880-910 |
-| 29 | 1340-1360 | | 15 | 830-870 |
-| 28 | 1310-1330 | | 14 | 780-820 |
-| 27 | 1280-1300 | | 13 | 730-770 |
-| 26 | 1240-1270 | | 12 | 690-720 |
-| 25 | 1200-1230 | | 11 | 650-680 |
+| 36 | 1570-1600 | | 22 | 1100-1120 |
+| 35 | 1530-1560 | | 21 | 1060-1090 |
+| 34 | 1490-1520 | | 20 | 1030-1050 |
+| 33 | 1450-1480 | | 19 | 990-1020 |
+| 32 | 1420-1440 | | 18 | 960-980 |
+| 31 | 1390-1410 | | 17 | 920-950 |
+| 30 | 1360-1380 | | 16 | 880-910 |
+| 29 | 1330-1350 | | 15 | 830-870 |
+| 28 | 1300-1320 | | 14 | 780-820 |
+| 27 | 1260-1290 | | 13 | 730-770 |
+| 26 | 1230-1250 | | 12 | 690-720 |
+| 25 | 1200-1220 | | 11 | 650-680 |
 | 24 | 1160-1190 | | 10 | 620-640 |
 | 23 | 1130-1150 | | 9 | 590-610 |
 
-**Treat this as approximate.** The published concordance predates both the
-digital SAT redesign and the enhanced ACT. It remains the standard reference and
+**Treat this as approximate, and verify before relying on it.** The
+published concordance predates both the digital SAT redesign and the
+enhanced ACT, and either organization may publish a new one. It remains the standard reference and
 is close enough for choosing a test, but do not treat a one-point or 20-point
 gap as meaningful. A difference worth acting on is roughly **2+ ACT points** or
 **60+ SAT points**.
@@ -88,7 +98,7 @@ students who have never taken physics often do fine.
 | Formula sheet | Provided | **None** |
 | Calculator | Whole section, Desmos built in | Whole section |
 | Emphasis | Algebra and data analysis heavy | Broader, includes more geometry |
-| Trigonometry | Light — right triangles mostly | More, including identities and graphs |
+| Trigonometry | Light — right-triangle trigonometry, plus radians and the unit circle | More, including identities and graphs |
 | Grid-ins | ~25% of questions | None; all multiple choice |
 
 **Math weighting is a real strategic factor.** SAT Math is half your score. On

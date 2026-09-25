@@ -59,8 +59,8 @@ there for you.
 
 ### Consequence 3: Difficulty is engineered, not accidental
 
-Hard questions aren't hard because the content is harder. They're hard because
-the writer added specific obstacles:
+Some hard questions are hard because the content is harder. Many are hard
+because the writer added specific obstacles:
 
 | Difficulty lever | How it looks |
 | --- | --- |
@@ -71,9 +71,12 @@ the writer added specific obstacles:
 | Denser language | Same idea, more subordinate clauses |
 | Unfamiliar framing | Standard concept in a novel context |
 
-Notice that most levers are about **the trap, not the topic**. That's why "learn
-harder math" is often the wrong response to missing hard math questions. The
-right response is usually "read the question again and answer what it asked."
+Notice that many levers are about **the trap, not the topic**. So when you miss
+a hard question, first ask whether you knew the content. If you did, the fix is
+usually "read the question again and answer what it asked." If you didn't —
+and for a student scoring around 500 in SAT Math, that is the usual case — the
+fix is to learn the content, starting with the Easy and Medium skills (see the
+[SAT Math plan](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan)).
 
 ---
 
@@ -267,13 +270,15 @@ What tends to make an item statistically hard:
 - Common misreading produces a listed answer
 
 **Grammar**
-- The error is at a distance from the underlined portion (subject far from verb)
-- The sentence is grammatical but wordy or illogical
-- Two choices are both grammatical and you must judge concision or logic
+- The error is at a distance from the tested words (subject far from verb)
+- A clause looks independent but isn't, or an interruption is long
+- ACT only: two choices are both grammatical and you must judge concision or
+  logic (the SAT's conventions questions don't test concision)
 
-Notice a theme: **hard items usually punish reading, not knowledge.** The
-concept is often the same as an easy item's. This is why slowing down on the
-stem gains more than studying advanced content.
+Notice a theme: **hard items often punish reading as much as knowledge.** The
+concept is often the same as an easy item's, which is why slowing down on the
+stem helps — once you know the concept. It is not a substitute for learning
+content you don't have yet.
 
 ---
 

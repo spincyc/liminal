@@ -3,8 +3,16 @@
 Condensed one-page references. These are the pages to reread **the day before**
 your test — not the full guides.
 
-Everything here is covered in depth elsewhere in this library. This file exists
-because on the night before a test you want density, not explanation.
+Everything here is covered in depth elsewhere in this library and, for the
+SAT, in the app's [Learn pages](https://spincyc.github.io/liminal/learn.html).
+This file exists because on the night before a test you want density, not
+explanation.
+
+> **Verify before you rely on this.** Question counts, times, entry rules and
+> test-day procedures below were rechecked on 2026-09-25. Confirm them against
+> [satsuite.collegeboard.org](https://satsuite.collegeboard.org/sat/whats-on-the-test/structure),
+> [act.org](https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/act-exam-sections-and-structure.html),
+> and your admission ticket.
 
 ---
 
@@ -23,9 +31,15 @@ because on the night before a test you want density, not explanation.
 2. **Extreme language** on verbal (`always`, `never`, `proves`, `all`) → suspect
 3. Two choices that **mean the same thing** → both dead
 4. Wrong **magnitude or sign** on math → dead
-5. Among survivors on verbal: take the **more hedged, more boring** one
-6. Among survivors on math: take the **cleaner number**
+5. Among survivors on verbal: lean to the **more hedged, plainer** one — but
+   this fails whenever the text is itself definite, and on hard questions the
+   plain choice is often the near miss
+6. Among survivors on math: lean to the **cleaner number** — but this fails on
+   hard questions, where messy values are common; substitute back instead
 7. Nothing left? **Default letter**, immediately, move on
+
+Steps 5 and 6 are tie-breakers, not methods. On Liminal's own questions such
+tells picked the key only a little more often than chance.
 
 ### Five rules that are close to absolute
 
@@ -53,23 +67,24 @@ move. Two minutes on one hard question costs three easy ones.
 | RW (×2) | 27 | 32 min | Q7@8, Q14@16, Q21@24, done@30 |
 | Math (×2) | 22 | 35 min | Q6@9, Q12@18, Q18@26, done@33 |
 
-Module 1 determines your Module 2 routing. **Don't warm up through it.** A hard
-Module 2 is good news.
+Module 1 determines your Module 2 routing. **Don't warm up through it.** A
+hard-feeling Module 2 is usually good news.
 
 ### RW question order
 
 Craft and Structure → Information and Ideas → Standard English Conventions →
 Expression of Ideas
 
-Grammar is the back half and it's your fastest points. You may navigate freely
-within a module.
+Grammar is the back half and it's your fastest points. Each domain runs easy to
+hard, so the last questions (Expression of Ideas) start easy again. You may
+navigate freely within a module.
 
 ### Grid-in rules
 
 - 5 characters (6 with a minus sign)
 - No commas, `$`, `%`, or units
-- **No mixed numbers** — `3 1/2` reads as `31/2`. Use `7/2` or `3.5`
-- Repeating decimals **fill the grid**: `.6666` or `.6667`, not `.67`
+- **No mixed numbers** — enter 3½ as `7/2` or `3.5`
+- Long decimals to the fourth digit: `.6666` or `.6667`, not `.67`
 - Negatives allowed. One answer if several are valid.
 
 ### Reading method
@@ -89,9 +104,11 @@ within a module.
 | DEP | IND | `,` |
 | Phrase | Phrase | usually nothing |
 
-**Free kills:** semicolon and period doing the same job → both wrong. One-sided
-interrupter punctuation → wrong. Comma between subject and verb → wrong. Comma
-splice → wrong. Colon without a full sentence before it → wrong.
+**Free kills:** semicolon and period doing the same job → both wrong (fails
+if the two choices differ in anything else). One-sided interrupter punctuation
+→ wrong (fails when the interrupter starts or ends the sentence). Comma
+between subject and verb → wrong. Comma splice → wrong. Colon without a full
+sentence before it → wrong.
 
 **`However` is not a conjunction.** `X, however, Y` joining two clauses is a
 splice.
@@ -152,10 +169,10 @@ Math has **4 choices**. **No formula sheet.**
 
 Same join table and free kills as the SAT (above).
 
-Three principles: **shorter is better** · **clearer is better** · **relevance
-rules**.
+Three ACT principles (not SAT rules): **shorter is better** · **clearer is
+better** · **relevance rules**.
 
-- **DELETE/OMIT** is right more than 25% of the time
+- **DELETE/OMIT** is a real candidate whenever the words add nothing
 - **NO CHANGE** is right about 25% of the time — don't avoid it
 - On any **stated-goal** question, the goal is the entire rubric
 - Transitions: **cover the choices**, name the relationship, then look
@@ -250,7 +267,8 @@ conjunction · avoided NO CHANGE · didn't flip the inequality
 - [ ] Layers
 - [ ] **SAT only:** charged device, Bluebook installed and set up, charger
 - [ ] Phone **fully off**, not vibrate
-- [ ] Arrive by 7:30; doors close at 8:00
+- [ ] Arrive by the time on your admission ticket; doors close at the stated
+      time and late arrivals are turned away
 
 ### During the test
 

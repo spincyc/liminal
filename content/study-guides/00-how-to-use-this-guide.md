@@ -33,8 +33,11 @@ enough attempts.
 
 ### 2. Learn the pattern
 
-Read the specific domain guide for a weak skill. Not the whole library — the one
-guide. Each domain guide is structured the same way:
+Read the page for one weak skill. Not the whole library — the one page. For
+the SAT, every catalog skill has a page in the app's
+[Learn section](https://spincyc.github.io/liminal/learn.html), with the method,
+worked examples, traps, and when each shortcut fails. For the ACT, use the
+domain guides in [`act/`](README.md#act), which are structured like this:
 
 - **What the test actually asks** — the real question forms, not a textbook
   chapter.
@@ -74,8 +77,8 @@ points, and no amount of reading about quadratics will find it.
 
 ### 5. Re-drill spaced
 
-Come back to the same skill 3 and 10 days later. The app's **Missed** session
-mode exists for this. Spacing is not optional — it is the difference between
+Come back to the same skill 3 and 10 days later. The app's Review view (and
+the **Missed-question review** practice mode) exists for this. Spacing is not optional — it is the difference between
 recognizing a concept and being able to produce it under pressure.
 
 ---
@@ -87,13 +90,18 @@ Rough guidance, per weak skill:
 - **30-40 items** to move a skill from broken to functional.
 - **60-80 items** to move it from functional to reliable under time.
 
-The bank holds 575 items per section with at least 175 Easy, 250 Medium, and 150
-Hard, so you will not run out. Do not do easy items to feel good; do them only
-to build a procedure, then move up.
+Each ACT section draws from a fixed bank of 575 questions (175 Easy, 250
+Medium, 150 Hard). SAT sections are built from question templates that
+generate fresh versions, but each skill has only a few templates per
+difficulty, so after a few sets you will meet familiar question types in new
+numbers or passages. Do not do easy items to feel good; do them only to build a
+procedure, then move up.
 
 **Difficulty selection rule:** practice at the level where you get roughly
 60-75% correct. Below 50% you are guessing and learning nothing. Above 85% you
-are rehearsing what you already know.
+are rehearsing what you already know. This rule fails when a skill is new to
+you: then start at Easy even if you score below 50%, and learn the method from
+its page before judging your accuracy.
 
 ---
 
@@ -116,13 +124,16 @@ instead — reviewing 10 items properly beats attempting 40 carelessly.
 
 Flag any item where you were unsure, guessed, or took too long even though you
 landed on the credited answer. A right answer for the wrong reason is a future
-wrong answer. The app's flag feature is for exactly this.
+wrong answer. The app's **Mark for review** button is for exactly this.
 
 ---
 
 ## Full-length practice tests
 
-Take them, but not too many and not too early.
+Take them, but not too many and not too early. Use official tests: for the
+SAT, the full-length practice tests in College Board's Bluebook app; for the
+ACT, ACT's official practice tests. Liminal's sets are practice, and its
+accuracy is not a score.
 
 - **Minimum 3** before test day, **maximum about 6**. Beyond that you are
   burning material and energy for diminishing returns.
@@ -158,13 +169,16 @@ Realistic movement from serious, well-run prep:
 | Starting point | Realistic gain with 8 weeks of real work |
 | --- | --- |
 | Low baseline, big content gaps | Large — the gaps are the opportunity |
-| Mid-range | Moderate — usually process and pacing, not content |
+| Mid-range | Moderate — a mix of missing content, process, and pacing |
 | Already high | Small — you are fighting for a handful of items |
 
-Gains come disproportionately from fixing careless errors and pacing, not from
-mastering the hardest content. The last five questions of a math section are
-worth exactly as much as the first five, and the first five are much easier to
-secure.
+Where the gains come from depends on where you start. From a low or middling
+score (around 500 in SAT Math, for example), most of the gain is content: the
+Easy and Medium skills you cannot do yet. From a high score, it is mostly
+careless errors and pacing. Either way, the last five questions of a math
+section are worth exactly as much as the first five, and the first five are
+much easier to secure. For SAT Math from around 500, see the
+[Learn plan](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan).
 
 If you are retaking, look at your actual score report first. It tells you which
 reporting categories were weak. Start there, not at the beginning of this

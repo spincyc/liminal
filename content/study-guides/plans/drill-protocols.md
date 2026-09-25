@@ -14,10 +14,18 @@ matter more than the schedule.
 | Minutes | Block | Purpose |
 | --- | --- | --- |
 | 0-5 | **Warm-up** — 5 easy items in a skill you have | Get into it without frustration |
-| 5-15 | **Missed-items review** — the app's Missed mode | Spaced repetition on old errors |
-| 15-25 | **Learn** — read one guide section | New material, while fresh |
+| 5-15 | **Missed-items review** — the app's Missed-question review mode | Spaced repetition on old errors |
+| 15-25 | **Learn** — read one Learn page section (SAT) or guide section (ACT) | New material, while fresh |
 | 25-50 | **Drill** — 15-25 items in that skill | Build the procedure |
-| 50-70 | **Review** — every miss, plus every flagged item | Where the learning happens |
+| 50-70 | **Review** — every miss, plus every item you marked for review | Where the learning happens |
+
+**A note on volume for SAT drills in Liminal.** SAT sets are built from
+question templates, and a set takes at most one question per template. One
+skill at one difficulty may have only two or three templates, so a drill on a
+single skill and difficulty can be just a few questions. Mix difficulties,
+add a neighboring skill, or run several short sets across the week; the
+volumes below are totals across sets, not one set. ACT sections draw from
+fixed banks and have no such cap.
 
 **When you're short on time, cut the drill block, not the review block.**
 Reviewing 8 items properly beats attempting 30 carelessly.
@@ -196,7 +204,10 @@ process problem underneath.
 - Saturday morning, at the real start time
 - One sitting, real timing, real breaks
 - Phone off and in another room
-- Bluebook for the SAT; paper and a real bubble sheet for the ACT
+- Official tests only: the full-length practice tests in College Board's
+  Bluebook app for the SAT, ACT's official practice tests for the ACT. Their
+  scores are the only honest estimate you have; Liminal's accuracy is practice
+  feedback, not a score
 
 Score inflation from taking a test on your couch in three sittings is real, and
 it will hurt on test day.
@@ -219,15 +230,18 @@ real one, never the day before.
 
 | Mode | Use it for |
 | --- | --- |
-| **Targeted** | Domain and skill drilling — the core of every plan |
-| **Full mix** | Mixed-mode practice, final weeks |
-| **Recommended** | When you're not sure what to work on |
-| **Missed** | The first 15 minutes of every session |
-| **Bookmarked** | Items you want to return to deliberately |
-| **Flagged** | Items you got right but weren't sure about |
+| **Targeted practice** | Domain and skill drilling — the core of every plan |
+| **Full section mix** | Mixed practice, final weeks |
+| **Recommended next** | When you're not sure what to work on |
+| **Missed-question review** | The first 15 minutes of every session |
+| **Marked for review** | Items you marked: guesses, and right answers you weren't sure about |
 
-**Flag aggressively during drills.** A right answer for the wrong reason is a
-future wrong answer, and flagging is the only way you'll find it later.
+Every mode runs in the digital test screen; choose feedback after each
+question while learning a skill, and feedback at the end, with timing on, when
+you want test conditions.
+
+**Mark aggressively during drills.** A right answer for the wrong reason is a
+future wrong answer, and marking it is the only way you'll find it later.
 
 ---
 

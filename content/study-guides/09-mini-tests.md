@@ -37,16 +37,18 @@ See [Timing and pacing](06-timing-and-pacing.md) for where those come from.
 
 ---
 
-## How it differs from practice mode
+## How it differs from a practice set
 
-| | Practice | Mini test |
+Every session in the app runs in the same digital test screen, with a
+question navigator and a mark-for-review button. What differs is the setup:
+
+| | Practice set | Mini test |
 | --- | --- | --- |
-| Feedback | After every question | Only at the end |
-| Hints | Available | Hidden |
-| Running score | Shown | Hidden |
-| Clock | None | Counts down, then counts overtime |
-| Navigation | Forward only | Jump to any question, forward and back |
-| Review | Per question, as you go | Full pass over all 20 afterwards |
+| Feedback | Your choice: after each question or at the end | Only at the end |
+| Hints | Available when feedback comes after each question | Hidden |
+| Clock | Optional time limit | Counts down; the test ends when time is up |
+| Navigation | Jump to any question, forward and back | Same |
+| Review | As you go, or on the report | Full pass over all 20 afterwards |
 
 Withholding feedback is the point. Immediate explanations are excellent for
 learning a skill and useless for measuring one — knowing you got the last three
@@ -70,9 +72,10 @@ something, move on, come back if there's time.
 **Never leave a blank.** Neither test penalizes a wrong answer. The report
 counts blanks as incorrect and will say so.
 
-**Watch the clock, don't obey it.** The timer runs past zero into overtime
-rather than cutting you off, so a slow run still finishes and the report tells
-you the overage. Finishing 6 minutes late is useful information, not a failure.
+**Watch the clock at checkpoints.** The test ends and submits your answers
+when time runs out, and a five-minute alert appears before that, just as a
+real module ends on time. Unanswered questions count as incorrect, so answer
+everything before the clock does.
 
 ---
 
@@ -81,7 +84,8 @@ you the overage. Finishing 6 minutes late is useful information, not a failure.
 You get accuracy overall, by section, and by domain with the weakest first,
 plus a note on your pace.
 
-**What it is not:** a scaled SAT total or an ACT Composite. Twenty items is far
+**What it is not:** a scaled SAT total or an ACT Composite. For a score
+estimate, use an official full-length practice test (Bluebook for the SAT). Twenty items is far
 too small a sample to estimate a score, and the app does not reproduce the
 SAT's adaptive routing or either test's scaling. Treat the percentages as a
 pointer to what to drill, nothing more.
@@ -90,8 +94,9 @@ pointer to what to drill, nothing more.
 
 1. **Look at the weakest domain**, not the weakest section. "Math 5/9" doesn't
    tell you anything actionable; "Advanced Math 1/4" does.
-2. **Check the pace note.** If you ran over the budget, pacing is the
-   constraint to fix before content.
+2. **Check your pace.** If time ran out with questions unanswered, pacing is
+   part of the problem; redo the unanswered ones untimed to see whether
+   content is too.
 3. **Review all 20** — including the ones you got right. A right answer you
    guessed at is a future wrong answer.
 4. **Classify each miss** into the four error types from
