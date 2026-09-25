@@ -1,13 +1,20 @@
 #!/usr/bin/env node
 "use strict";
 
-// Builds a printable practice test from the canonical banks.
+// Builds a printable ACT practice test from the fixed ACT banks.
 //
-//   node tools/build-booklet.js --form sat-full --seed spring-1 --pdf
+//   node tools/build-booklet.js --form act-full --seed spring-1 --pdf
 //
 // Emits a two-column booklet, a separate answer key, and optional LaTeX
-// source into build/. PDF conversion shells out to an installed Chrome; no
-// package installation is required for any output format.
+// source into dist/booklets/. PDF conversion shells out to an installed
+// Chrome; no package installation is required for any output format.
+//
+// SAT booklets are not built here. They are built from question templates
+// on the Booklets page (src/print.html, lib/modules.js) and rendered by the
+// practice screen's renderer (app/render.js), which typesets Math and
+// sanitizes figure SVG with the browser's parser; a Node copy of that
+// renderer would drift from it. The old fixed SAT banks, which named each
+// Math question's method in its stem, are no longer used for booklets.
 //
 // The filename avoids the `-test.js` suffix on purpose: `node --test` globs
 // that pattern and would execute this script during the test run.
@@ -19,7 +26,16 @@ const { spawn } = require("child_process");
 
 const core = require("../src/lib/core.js");
 const booklet = require("../src/lib/booklet.js");
-const { ROOT, loadCatalog, hydrateBank } = require("./lib/content.js");
+const { ROOT, hydrateBank } = require("./lib/content.js");
+
+const SAT_NOTE =
+  "SAT booklets are built from question templates on the Booklets page " +
+  "(print.html): run `node tools/build.js && node tools/serve.js`, open " +
+  "print.html, and print the booklet to PDF. This tool builds ACT booklets.";
+
+function actBlueprints() {
+  return core.ALL_BLUEPRINTS.filter((blueprint) => blueprint.test === "ACT");
+}
 
 const CHROME_CANDIDATES = [
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
@@ -32,7 +48,7 @@ const CHROME_CANDIDATES = [
 
 function parseArgs(argv) {
   const options = {
-    form: "sat-full",
+    form: "act-full",
     seed: String(Date.now()),
     outDir: path.join(ROOT, "dist", "booklets"),
     pdf: false,
@@ -58,9 +74,9 @@ function usage() {
   return [
     "Usage: node tools/build-booklet.js [options]",
     "",
-    "  -f, --form <id>   blueprint id (default sat-full); --list to see them",
+    "  -f, --form <id>   ACT blueprint id (default act-full); --list to see them",
     "  -s, --seed <str>  seed controlling which questions are drawn",
-    "  -o, --out <dir>   output directory (default build/)",
+    "  -o, --out <dir>   output directory (default dist/booklets/)",
     "      --pdf         also render PDFs using an installed Chrome",
     "      --tex         also emit pdflatex-ready LaTeX source",
     "  -l, --list        list available blueprints and exit",
@@ -145,17 +161,22 @@ function main() {
   }
 
   if (options.list) {
-    core.ALL_BLUEPRINTS.forEach((blueprint) => {
+    actBlueprints().forEach((blueprint) => {
       const total = core.blueprintTotal(blueprint);
       console.log(
         `${blueprint.id.padEnd(18)} ${String(total).padStart(3)} questions  ` +
           `${String(blueprint.minutes).padStart(3)} min  ${blueprint.label}`,
       );
     });
+    console.log(`\n${SAT_NOTE}`);
     return;
   }
 
   const blueprint = core.blueprintById(options.form);
+  if ((blueprint && blueprint.test === "SAT") || /^sat/i.test(options.form)) {
+    console.error(SAT_NOTE);
+    process.exit(2);
+  }
   if (!blueprint) {
     console.error(
       `Unknown form "${options.form}". Run with --list to see the available ids.`,
@@ -163,10 +184,9 @@ function main() {
     process.exit(2);
   }
 
-  const catalog = loadCatalog();
   const bankBySection = {};
-  catalog.sections.forEach((section) => {
-    bankBySection[section.key] = hydrateBank(section.key);
+  blueprint.sections.forEach((entry) => {
+    bankBySection[entry.sectionKey] = bankBySection[entry.sectionKey] || hydrateBank(entry.sectionKey);
   });
 
   const form = core.buildTestForm(bankBySection, blueprint, options.seed);

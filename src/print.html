@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="light" />
     <meta
       name="description"
-      content="Build and download printable two-column SAT and ACT practice booklets with a bubble answer sheet and a separate answer key."
+      content="Build printable two-column SAT and ACT practice booklets: SAT forms built from fresh templates to the digital test's module structure, ACT forms from fixed banks, each with a bubble answer sheet and an answer key."
     />
     <title>Printable booklets — Liminal</title>
     <link rel="stylesheet" href="styles/tokens.css" />
@@ -38,10 +38,16 @@
     <main id="main" class="site-main" tabindex="-1">
       <header class="page-head">
         <h1 tabindex="-1">Printable booklets</h1>
-        <p class="lede">
-          A two-column <span data-test-name>SAT</span> test booklet with
-          directions, a section schedule, and a bubble answer sheet, plus a
-          separate answer key. Print it, or save it as a PDF.
+        <p class="lede" data-test-only="SAT">
+          A two-column SAT booklet built from fresh questions to the digital
+          test's module structure, with directions, a section schedule, a
+          bubble answer sheet, and the answer key and explanations at the end.
+          Print it, or save it as a PDF.
+        </p>
+        <p class="lede" data-test-only="ACT" hidden>
+          A two-column ACT test booklet with directions, a section schedule,
+          and a bubble answer sheet, plus a separate answer key. Print it, or
+          save it as a PDF.
         </p>
       </header>
 
@@ -50,6 +56,23 @@
           <p class="step">Step 1 of 3</p>
           <h2 id="formHeading">Choose a form</h2>
           <div id="formGrid" class="option-list" role="radiogroup" aria-labelledby="formHeading"></div>
+          <div id="moduleOptions" class="field-grid module-options" hidden>
+            <div class="field">
+              <label for="moduleSection">Section</label>
+              <select id="moduleSection">
+                <option value="sat-reading-writing">Reading and Writing</option>
+                <option value="sat-math">Math</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="moduleKind">Module</label>
+              <select id="moduleKind">
+                <option value="1">Module 1</option>
+                <option value="h">Module 2, harder route</option>
+                <option value="e">Module 2, easier route</option>
+              </select>
+            </div>
+          </div>
         </section>
 
         <div class="side-stack">
@@ -84,7 +107,13 @@
             </div>
 
             <div id="printStatus" class="status-line" role="status" aria-live="polite"></div>
-            <p class="note">
+            <ul id="printWarnings" class="note warning-list" hidden></ul>
+            <p class="note" data-test-only="SAT">
+              The SAT booklet already ends with its answer key and explanations;
+              print only the pages you need. Downloads are self-contained web
+              pages: open one in any browser and print it to get a PDF.
+            </p>
+            <p class="note" data-test-only="ACT" hidden>
               Downloads are self-contained web pages. Open one in any browser and
               print it to get a PDF; there is nothing else to install.
             </p>
@@ -92,8 +121,13 @@
 
           <section class="card" aria-labelledby="shareHeading">
             <p class="step">Step 3 of 3</p>
-            <h2 id="shareHeading">Share this form</h2>
-            <p>
+            <h2 id="shareHeading">Share or rebuild</h2>
+            <p data-test-only="SAT">
+              Every SAT booklet prints its form code on the cover and in the
+              answer key. The code names the exact templates of every module, so
+              it rebuilds the same booklet even after new templates are added.
+            </p>
+            <p data-test-only="ACT" hidden>
               Anyone who opens this link builds the same test from the same seed,
               so your results are comparable.
             </p>
@@ -104,8 +138,21 @@
                 <button id="copyLinkBtn" class="button secondary" type="button">Copy link</button>
               </div>
             </div>
+            <div class="field" data-test-only="SAT">
+              <label for="codeInput">Rebuild from code</label>
+              <div class="input-row">
+                <input id="codeInput" type="text" autocomplete="off" spellcheck="false"
+                  aria-describedby="codeNote" placeholder="r1rhm1mh-…" />
+                <button id="rebuildBtn" class="button secondary" type="button">Rebuild</button>
+              </div>
+              <p id="codeNote" class="field-note">
+                Paste the form code from a booklet's cover or answer key. Rebuild
+                opens that exact booklet; the buttons above then use the same code
+                until you change the form or the seed.
+              </p>
+            </div>
             <p class="note">
-              The link carries the form and seed only: no answers, no scores, and
+              The link names the form only: no answers, no scores, and
               nothing about your progress.
             </p>
           </section>
@@ -114,7 +161,16 @@
 
       <section class="notice booklet-notice" aria-labelledby="honestHeading">
         <h2 id="honestHeading">What these booklets are worth</h2>
-        <p>
+        <p data-test-only="SAT">
+          SAT booklets draw fresh questions from the same templates as practice
+          sets and follow the digital test's module lengths, times, and domain
+          counts. The difficulty mix of each module is a practice
+          approximation: the real test chooses Module 2 from Module 1
+          performance by rules that are not published, so a full-length
+          booklet always gives the harder Module 2. Time yourself honestly, and
+          treat the percentage as practice feedback, not a score prediction.
+        </p>
+        <p data-test-only="ACT" hidden>
           Use them for pacing, endurance, and answer-sheet practice. The question
           banks are generated from a limited set of templates, so accuracy on a
           form runs well above what the same student would score on an official
@@ -140,8 +196,13 @@
     </footer>
 
     <script src="content/catalog.js"></script>
+    <script src="content/templates.js"></script>
     <script src="lib/core.js"></script>
+    <script src="lib/template-mask.js"></script>
+    <script src="lib/runs.js"></script>
+    <script src="lib/modules.js"></script>
     <script src="lib/booklet.js"></script>
+    <script src="app/render.js"></script>
     <script src="app/site.js"></script>
     <script src="app/print.js"></script>
   </body>

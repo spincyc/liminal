@@ -1,7 +1,8 @@
 // Turns a built test form into printable artifacts. The model step is shared
 // so the HTML booklet, the answer key, and the LaTeX source always number and
-// letter questions identically. Loaded both by the build script and by the
-// page, so the booklet a browser prints matches the one the CLI writes.
+// letter questions identically. Pure: loaded by the build script (ACT forms)
+// and by the booklet page, which passes the site's own renderer for SAT
+// template forms (see `render` under HTML below).
 (function (root, factory) {
   const api = factory(
     typeof module === "object" && module.exports
@@ -13,7 +14,11 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function (core) {
   "use strict";
 
-function buildModel(form, blueprint, seed) {
+// `options.code`, when given, is the form's rebuild code (SAT template forms,
+// lib/modules.js): it is printed on the cover and the key, and the short form
+// label is derived from it.
+function buildModel(form, blueprint, seed, options) {
+  const settings = options || {};
   let number = 0;
   const sections = form.map((group, index) => {
     const questions = group.questions.map((question) => {
@@ -43,9 +48,10 @@ function buildModel(form, blueprint, seed) {
   return {
     blueprint,
     seed,
+    code: settings.code || null,
     // Scoped to the blueprint so one shared seed does not print the same form
     // code on an SAT booklet and an ACT booklet.
-    formCode: formCode(`${blueprint.id}-${seed}`),
+    formCode: formCode(settings.code || `${blueprint.id}-${seed}`),
     sections,
     total: number,
     minutes: sections.reduce((sum, section) => sum + (section.minutes || 0), 0),
@@ -61,6 +67,15 @@ function formCode(seed) {
     hash = Math.imul(hash, 16777619);
   });
   return (hash >>> 0).toString(36).toUpperCase().padStart(7, "0").slice(-7);
+}
+
+// The section after which the one break falls, or null for a form with no
+// break (a mini test, one SAT section, one module).
+function breakSection(model) {
+  const after = model.blueprint.breakAfter;
+  return Number.isInteger(after) && after >= 0 && after < model.sections.length - 1
+    ? model.sections[after]
+    : null;
 }
 
 /* ------------------------------------------------------------ stimulus text */
@@ -112,11 +127,15 @@ function parseBlocks(text) {
 
 /* -------------------------------------------------------------------- HTML */
 
+// Content is plain text and is always escaped; quotes too, since some of it
+// lands in attributes.
 function escapeHtml(value) {
   return String(value == null ? "" : value)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 function blocksToHtml(text) {
@@ -145,9 +164,20 @@ function blocksToHtml(text) {
     .join("");
 }
 
-function questionHtml(item, previous) {
+// How question content becomes HTML. Without `render`, content is escaped
+// plain text and stimuli go through parseBlocks above (ACT bank forms). The
+// booklet page passes `render` for SAT template forms, so a booklet shows
+// exactly what the practice screen shows (app/render.js: math typesetting,
+// real tables, sanitized figures):
+//   render.rich(text, question)          block content: stems, choices, explanations
+//   render.stimulus(stimulus, question)  a { type, content } stimulus
+//   render.figure(figure, question)      a { svg, alt, notToScale } figure
+// Each returns markup serialized from escaped text and allow-listed
+// elements, never content strings inserted as HTML.
+function questionHtml(item, previous, render) {
   const { question, number, letters } = item;
-  const parts = [`<article class="q" id="q${number}">`];
+  const rich = Boolean(render && render.rich);
+  const parts = [`<article class="q${rich ? " rich" : ""}" id="q${number}">`];
   // A passage set shares one stimulus across every question in it. Printing it
   // above each question would repeat 750 words ten times; the real booklet
   // prints the passage once and then the questions that go with it.
@@ -159,20 +189,27 @@ function questionHtml(item, previous) {
   if (question.stimulus && question.stimulus.content && !repeated) {
     parts.push(
       `<div class="stimulus ${escapeHtml(question.stimulus.type)}">` +
-        blocksToHtml(question.stimulus.content) +
+        (render && render.stimulus
+          ? render.stimulus(question.stimulus, question)
+          : blocksToHtml(question.stimulus.content)) +
         `</div>`,
     );
   }
+  if (question.figure && render && render.figure) {
+    parts.push(`<div class="figure">${render.figure(question.figure, question)}</div>`);
+  }
   parts.push(
-    `<p class="stem"><span class="num">${number}.</span> ${escapeHtml(question.stem)}</p>`,
+    rich
+      ? `<div class="stem"><span class="num">${number}.</span><div class="body">${render.rich(question.stem, question)}</div></div>`
+      : `<p class="stem"><span class="num">${number}.</span> ${escapeHtml(question.stem)}</p>`,
   );
   if (question.responseType === "multiple-choice" && question.choices) {
     parts.push(
       `<ol class="choices">${question.choices
-        .map(
-          (choice, index) =>
-            `<li><span class="letter">${letters[index]}.</span> ${escapeHtml(choice)}</li>`,
-        )
+        .map((choice, index) =>
+          rich
+            ? `<li><span class="letter">${letters[index]}.</span><div class="body">${render.rich(choice, question)}</div></li>`
+            : `<li><span class="letter">${letters[index]}.</span> ${escapeHtml(choice)}</li>`)
         .join("")}</ol>`,
     );
   } else if (question.responseType === "numeric") {
@@ -182,6 +219,8 @@ function questionHtml(item, previous) {
   return parts.join("");
 }
 
+// One row per question: answer bubbles, or a box to write a
+// student-produced response in.
 function answerSheetHtml(model) {
   return model.sections
     .map((section) => {
@@ -189,9 +228,11 @@ function answerSheetHtml(model) {
         .map(
           (item) =>
             `<li><span class="asnum">${item.number}</span>` +
-            item.letters
-              .map((letter) => `<span class="bubble">${letter}</span>`)
-              .join("") +
+            (item.question.responseType === "numeric"
+              ? '<span class="write-in"></span>'
+              : item.letters
+                .map((letter) => `<span class="bubble">${letter}</span>`)
+                .join("")) +
             `</li>`,
         )
         .join("");
@@ -214,7 +255,9 @@ body {
   font-size: 9.6pt; line-height: 1.36; text-rendering: optimizeLegibility;
 }
 h1, h2, h3 { font-weight: 600; margin: 0 0 .4em; line-height: 1.2; }
-.cover { height: 9.4in; display: flex; flex-direction: column; break-after: page; }
+/* At least one page, so the footer sits at its foot; a long key grid grows
+   it rather than running into the next page. */
+.cover { min-height: 9.4in; display: flex; flex-direction: column; break-after: page; }
 .cover h1 { font-size: 26pt; letter-spacing: .01em; margin-bottom: .1em; }
 .cover .sub { font-size: 12pt; font-style: italic; color: #444; margin-bottom: 1.6em; }
 .meta { border-top: 1.5pt solid var(--ink); border-bottom: .5pt solid var(--rule);
@@ -261,18 +304,81 @@ table.data th { background: #e6e2d8; font-weight: 600; }
 .bubble { display: inline-flex; align-items: center; justify-content: center;
   width: 1.28em; height: 1.28em; border: .5pt solid var(--ink); border-radius: 50%;
   font-size: 6.6pt; color: #555; }
+.write-in { display: inline-block; width: 5.4em; height: 1.28em; border: .5pt solid var(--ink); border-radius: 2pt; }
 .key-grid { column-count: 5; column-gap: .3in; font-size: 9pt; }
 .key-grid li { break-inside: avoid; }
 .exp { break-inside: avoid; margin-bottom: .8em; }
 .exp h4 { margin: 0 0 .15em; font-size: 9.6pt; }
 .exp .tag { font-variant: small-caps; letter-spacing: .05em; color: #555; font-size: 8.4pt; }
+/* Rendered explanations run long; kept whole, most would leave half a
+   column empty. They may split, but never right after their heading. */
+.exp.rich { break-inside: auto; }
+.exp.rich h4, .exp.rich .tag { break-after: avoid; }
 .exp ol { margin: .2em 0 .2em 1.1em; padding: 0; }
+.cover-note { max-width: 6in; margin: 0 0 1em; padding-left: .6em; border-left: 2pt solid var(--rule); font-size: 9.3pt; }
+.form-code { margin: 1em 0 0; max-width: 6.4in; font-size: 9pt; }
+.form-code dt { font-variant: small-caps; letter-spacing: .06em; color: #555; }
+.form-code dd { margin: 0 0 .3em; }
+.form-code code { font-family: "Courier New", Courier, monospace; font-size: 9pt; word-break: break-all; }
+.key-part { break-before: page; }
+.key-part > h2 { font-size: 15pt; }
+/* Content from the site's renderer (app/render.js), for template forms. */
+/* Baseline-aligned, so a number or letter sits on the first line of its
+   text even when a stacked fraction makes that line taller. */
+.q.rich .stem, .q.rich .choices li { display: flex; align-items: baseline; gap: .3em; }
+.q.rich .choices li { text-indent: 0; padding-left: 0; }
+.q.rich .num, .q.rich .letter { flex: none; margin-right: 0; }
+.q.rich .body { flex: 1 1 auto; min-width: 0; }
+.inline > .lm-rich, .inline > .lm-rich > p:only-child { display: inline; }
+.lm-rich > * + *, .lm-stimulus > * + * { margin-top: .35em; }
+.lm-rich p, .lm-stimulus p { margin: 0; }
+.lm-passage-title { margin: 0; font-size: 9.6pt; font-weight: 600; text-align: center; }
+.lm-passage-label { margin: 0; font-weight: 600; }
+.lm-list { margin: 0 0 0 1.1em; padding: 0; }
+.lm-equations { display: flex; flex-direction: column; align-items: center; gap: .15em; }
+.lm-equation { margin: 0; font-variant-numeric: tabular-nums; white-space: pre-wrap; }
+.lm-table { margin: .2em auto; border-collapse: collapse; font-size: 8.8pt; }
+.lm-table th, .lm-table td { padding: .16em .5em; border: .4pt solid var(--rule); text-align: center; }
+.lm-table thead th { background: #e6e2d8; font-weight: 600; }
+.lm-table tbody th { font-weight: 600; text-align: left; }
+.figure { margin: 0 0 .45em; }
+.lm-figure { display: flex; flex-direction: column; align-items: center; margin: 0; color: var(--ink); }
+.lm-figure svg { display: block; width: 100%; height: auto; max-height: 2.6in; overflow: visible; }
+.lm-figure-note { margin-top: .2em; font-size: 8.4pt; font-style: italic; }
+.lm-figure-fallback { padding: .4em; border: .5pt dashed var(--rule); }
+/* Typeset Math (renderText with { math: true }), after src/styles/math.css
+   with its tokens resolved, since a downloaded booklet carries no other
+   stylesheet. Each piece's spoken form (.lm-math-sr) is visually hidden on
+   screen and left out of print, or every fraction would print twice. */
+.lm-math { font-variant-numeric: lining-nums; }
+.lm-math-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0, 0, 0, 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+.lm-math-power { position: relative; top: -.5em; margin-left: .04em; font-size: .8em;
+  line-height: 0; vertical-align: baseline; }
+.lm-math-power .lm-math-power { font-size: .9em; }
+.lm-math-stack { display: inline-flex; max-width: 100%; flex-direction: column; align-items: stretch;
+  margin: 0 .1em; font-size: .92em; line-height: 1.2; text-align: center; vertical-align: middle; }
+.lm-math-num, .lm-math-den { display: block; padding: 0 .2em; }
+.lm-math-num { padding-bottom: .1em; border-bottom: max(1px, .065em) solid currentColor; }
+.lm-math-den { padding-top: .12em; }
+.lm-math-stack .lm-math-stack { font-size: 1em; }
+.lm-math-fence { white-space: nowrap; }
+.lm-math-fence > .lm-math-bracket { display: inline-block; transform: scaleY(1.55); transform-origin: 50% 55%; }
+.lm-math-radical { display: inline-flex; align-items: stretch; max-width: 100%; }
+.lm-math-index { position: relative; top: -.2em; align-self: flex-start; margin-right: -.3em;
+  margin-left: .05em; font-size: .8em; line-height: 1; }
+.lm-math-sign { flex: none; width: .62em; height: auto; overflow: visible; fill: none;
+  stroke: currentColor; stroke-linejoin: round; stroke-width: max(1px, .065em);
+  vector-effect: non-scaling-stroke; }
+.lm-math-sign path { vector-effect: non-scaling-stroke; }
+.lm-math-radicand { align-self: baseline; padding: .1em .12em 0 .06em;
+  border-top: max(1px, .065em) solid currentColor; line-height: 1.15; }
 @media screen {
   body { background: #d8d4cc; padding: 24px 0; }
   .page { background: #fff; max-width: 7.5in; margin: 0 auto; padding: .5in;
     box-shadow: 0 2px 18px rgba(0,0,0,.22); }
 }
-@media print { .page { padding: 0; max-width: none; } .noprint { display: none; } }
+@media print { .page { padding: 0; max-width: none; } .noprint { display: none; } .lm-math-sr { display: none; } }
 `;
 
 function shell(title, body) {
@@ -285,73 +391,20 @@ function shell(title, body) {
 `;
 }
 
-function renderBookletHtml(model) {
-  const { blueprint } = model;
-  const schedule = model.sections
-    .map(
-      (section) =>
-        `<tr><td>${escapeHtml(section.label)}</td>` +
-        `<td>${section.questions.length} questions</td>` +
-        `<td>${section.minutes ? `${section.minutes} minutes` : "—"}</td>` +
-        `<td>${section.firstNumber}–${section.lastNumber}</td></tr>`,
-    )
-    .join("");
-
-  const cover = `<div class="cover">
-  <h1>${escapeHtml(blueprint.label)}</h1>
-  <p class="sub">${escapeHtml(blueprint.summary)}</p>
-  <dl class="meta">
-    <div><dt>Form</dt><dd>${escapeHtml(model.formCode)}</dd></div>
-    <div><dt>Questions</dt><dd>${model.total}</dd></div>
-    <div><dt>Testing time</dt><dd>${model.minutes} min</dd></div>
-    <div><dt>Sections</dt><dd>${model.sections.length}</dd></div>
-  </dl>
-  <div class="directions">
-    <h3>Directions</h3>
-    <ol>
-      <li>Work one section at a time and observe each section's time limit. Do not
-        move ahead to another section or return to a section once its time expires.</li>
-      <li>Mark every answer on the answer sheet at the back of this booklet. Answers
-        written in the booklet are not scored.</li>
-      <li>There is no penalty for a wrong answer, so answer every question.</li>
-      <li>Take one ten-minute break after
-        ${escapeHtml(model.sections[Math.min(blueprint.breakAfter || 0, model.sections.length - 1)].label)}.</li>
-    </ol>
-  </div>
-  <table class="schedule">
-    <thead><tr><th>Section</th><th>Length</th><th>Time</th><th>Numbers</th></tr></thead>
-    <tbody>${schedule}</tbody>
-  </table>
-  <p style="margin-top:auto;font-size:8.4pt;color:#555">Original practice content.
-  Not affiliated with, endorsed by, or published by the College Board or ACT, Inc.
-  Accuracy practice only — this form does not produce a scaled score.</p>
-</div>`;
-
-  const sections = model.sections
-    .map(
-      (section) => `<div class="section-head">
-    <h2>${escapeHtml(section.label)}</h2>
-    <p class="timing">${section.questions.length} questions · ${section.minutes} minutes ·
-      questions ${section.firstNumber}–${section.lastNumber}</p>
-    <p class="dirs">${escapeHtml(section.directions)}</p>
-  </div>
-  <div class="questions">${section.questions.map((item, index) => questionHtml(item, section.questions[index - 1])).join("")}
-    <p class="stop">End of ${escapeHtml(section.label)}</p>
-  </div>`,
-    )
-    .join("");
-
-  const sheet = `<div class="answer-sheet">
-  <h2>Answer sheet — form ${escapeHtml(model.formCode)}</h2>
-  <p class="dirs">Fill in one bubble per question. Erase changes completely.</p>
-  <div class="as-wrap">${answerSheetHtml(model)}</div>
-</div>`;
-
-  return shell(`${blueprint.label} — form ${model.formCode}`, cover + sections + sheet);
+// The rebuild code, where the form has one.
+function formCodeHtml(model) {
+  if (!model.code) return "";
+  return `<dl class="form-code">
+    <dt>Form code</dt><dd><code>${escapeHtml(model.code)}</code></dd>
+    <dd>To rebuild this booklet and its answer key, open Printable booklets and
+    paste the code under Rebuild from code.</dd>
+  </dl>`;
 }
 
-function renderKeyHtml(model) {
-  const keyRows = model.sections
+// The answer key grid and the explanations, one section per form section.
+function keyParts(model, render) {
+  const rich = Boolean(render && render.rich);
+  const grid = model.sections
     .map(
       (section) =>
         `<div class="as-section"><h3>${escapeHtml(section.label)}</h3><ol class="as-grid">` +
@@ -375,24 +428,28 @@ function renderKeyHtml(model) {
         section.questions
           .map((item) => {
             const q = item.question;
+            const text = (value) => (rich ? render.rich(value, q) : escapeHtml(value));
+            // Rich content is a block; "inline" lets a one-paragraph block
+            // sit on the line of its label.
+            const li = rich ? '<li class="inline">' : "<li>";
             const steps = (q.solutionSteps || [])
-              .map((step) => `<li>${escapeHtml(step)}</li>`)
+              .map((step) => `${li}${text(step)}</li>`)
               .join("");
             const traps = (q.distractorRationales || [])
               .map(
                 (row) =>
-                  `<li>${item.letters[row.index]}. ${escapeHtml(row.reason)}</li>`,
+                  `${li}${item.letters[row.index]}. ${text(row.reason)}</li>`,
               )
               .join("");
-            return `<div class="exp">
+            return `<div class="exp${rich ? " rich" : ""}">
         <h4>${item.number}. Correct answer: ${
           item.correctLetter || escapeHtml(String(q.correctAnswer))
         }</h4>
         <p class="tag">${escapeHtml(q.domain)} · ${escapeHtml(q.skill)} · ${escapeHtml(q.difficulty)} · ${escapeHtml(q.id)}</p>
-        <p>${escapeHtml(q.explanation)}</p>
+        ${rich ? `<div>${text(q.explanation)}</div>` : `<p>${text(q.explanation)}</p>`}
         ${steps ? `<ol>${steps}</ol>` : ""}
         ${traps ? `<p class="tag">Why the others fail</p><ul>${traps}</ul>` : ""}
-        <p><em>Trap:</em> ${escapeHtml(q.trap)}</p>
+        ${rich ? `<div class="inline"><em>Trap:</em> ${text(q.trap)}</div>` : `<p><em>Trap:</em> ${text(q.trap)}</p>`}
       </div>`;
           })
           .join("") +
@@ -400,17 +457,112 @@ function renderKeyHtml(model) {
     )
     .join("");
 
+  return { grid, explanations };
+}
+
+// The test booklet: cover, one part per section, the answer sheet, and,
+// with `options.key`, the answer key and explanations at the end.
+// `options.render`: see questionHtml.
+function renderBookletHtml(model, options) {
+  const settings = options || {};
+  const { blueprint } = model;
+  const pause = breakSection(model);
+  const schedule = model.sections
+    .map(
+      (section) =>
+        `<tr><td>${escapeHtml(section.label)}</td>` +
+        `<td>${section.questions.length} questions</td>` +
+        `<td>${section.minutes ? `${section.minutes} minutes` : "—"}</td>` +
+        `<td>${section.firstNumber}–${section.lastNumber}</td></tr>`,
+    )
+    .join("");
+
+  const notes = (blueprint.notes || [])
+    .map((note) => `<p class="cover-note">${escapeHtml(note)}</p>`)
+    .join("");
+
+  const cover = `<div class="cover">
+  <h1>${escapeHtml(blueprint.label)}</h1>
+  <p class="sub">${escapeHtml(blueprint.summary)}</p>${notes}
+  <dl class="meta">
+    <div><dt>Form</dt><dd>${escapeHtml(model.formCode)}</dd></div>
+    <div><dt>Questions</dt><dd>${model.total}</dd></div>
+    <div><dt>Testing time</dt><dd>${model.minutes} min</dd></div>
+    <div><dt>Sections</dt><dd>${model.sections.length}</dd></div>
+  </dl>
+  <div class="directions">
+    <h3>Directions</h3>
+    <ol>
+      <li>Work one section at a time and observe each section's time limit. Do not
+        move ahead to another section or return to a section once its time expires.</li>
+      <li>Mark every answer on the answer sheet at the back of this booklet. Answers
+        written in the booklet are not scored.</li>
+      <li>There is no penalty for a wrong answer, so answer every question.</li>${pause ? `
+      <li>Take one ten-minute break after
+        ${escapeHtml(pause.label)}.</li>` : ""}
+    </ol>
+  </div>
+  <table class="schedule">
+    <thead><tr><th>Section</th><th>Length</th><th>Time</th><th>Numbers</th></tr></thead>
+    <tbody>${schedule}</tbody>
+  </table>${formCodeHtml(model)}
+  <p style="margin-top:auto;font-size:8.4pt;color:#555">Original practice content.
+  Not affiliated with, endorsed by, or published by the College Board or ACT, Inc.
+  Accuracy practice only — this form does not produce a scaled score.</p>
+</div>`;
+
+  const sections = model.sections
+    .map(
+      (section) => `<div class="section-head">
+    <h2>${escapeHtml(section.label)}</h2>
+    <p class="timing">${section.questions.length} questions · ${section.minutes} minutes ·
+      questions ${section.firstNumber}–${section.lastNumber}</p>
+    <p class="dirs">${escapeHtml(section.directions)}</p>
+  </div>
+  <div class="questions">${section.questions.map((item, index) => questionHtml(item, section.questions[index - 1], settings.render)).join("")}
+    <p class="stop">End of ${escapeHtml(section.label)}</p>
+  </div>`,
+    )
+    .join("");
+
+  const writeIn = model.sections.some((section) =>
+    section.questions.some((item) => item.question.responseType === "numeric"));
+  const sheet = `<div class="answer-sheet">
+  <h2>Answer sheet — form ${escapeHtml(model.formCode)}</h2>
+  <p class="dirs">Fill in one bubble per question${writeIn ? "; write each student-produced response in its box" : ""}. Erase changes completely.</p>
+  <div class="as-wrap">${answerSheetHtml(model)}</div>
+</div>`;
+
+  let key = "";
+  if (settings.key) {
+    const parts = keyParts(model, settings.render);
+    key = `<div class="key-part">
+  <h2>Answer key — form ${escapeHtml(model.formCode)}</h2>
+  <p class="dirs">Grade the answer sheet before you read the explanations.
+  Score by accuracy only.</p>
+  <div class="as-wrap">${parts.grid}</div>
+</div>${parts.explanations}`;
+  }
+
+  return shell(`${blueprint.label} — form ${model.formCode}`, cover + sections + sheet + key);
+}
+
+// The answer key and explanations on their own. `options.render`: see
+// questionHtml.
+function renderKeyHtml(model, options) {
+  const settings = options || {};
+  const parts = keyParts(model, settings.render);
   const cover = `<div class="cover">
   <h1>Answer key and explanations</h1>
   <p class="sub">${escapeHtml(model.blueprint.label)} — form ${escapeHtml(model.formCode)}</p>
-  <div class="as-wrap">${keyRows}</div>
+  <div class="as-wrap">${parts.grid}</div>${formCodeHtml(model)}
   <p style="margin-top:auto;font-size:8.4pt;color:#555">Score by accuracy only.
   Log every miss with the question id so it can be found again in the app.</p>
 </div>`;
 
   return shell(
     `Answer key — ${model.blueprint.label} — form ${model.formCode}`,
-    cover + explanations,
+    cover + parts.explanations,
   );
 }
 
@@ -638,10 +790,10 @@ ${questions}
 \\begin{enumerate}[leftmargin=1.4em,itemsep=2pt]
 \\item Work one section at a time and observe each section's time limit.
 \\item Mark every answer on the answer sheet at the back of this booklet.
-\\item There is no penalty for a wrong answer, so answer every question.
-\\item Take one ten-minute break after ${tex(
-    model.sections[Math.min(blueprint.breakAfter || 0, model.sections.length - 1)].label,
-  )}.
+\\item There is no penalty for a wrong answer, so answer every question.${
+    breakSection(model) ? `
+\\item Take one ten-minute break after ${tex(breakSection(model).label)}.` : ""
+  }
 \\end{enumerate}
 \\bigskip
 
@@ -664,7 +816,9 @@ ${body}
     BOOKLET_CSS,
     blocksToHtml,
     blocksToTex,
+    breakSection,
     buildModel,
+    escapeHtml,
     formCode,
     parseBlocks,
     renderBookletHtml,

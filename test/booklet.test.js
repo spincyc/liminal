@@ -151,12 +151,14 @@ test("LaTeX escaping emits no raw Unicode and protects specials", () => {
   );
 });
 
-test("full blueprints fit the real catalog and the real banks", () => {
+// ACT booklets draw from the fixed banks. SAT booklets are built from
+// templates (see the template-form tests below and test/modules.test.js).
+test("full ACT blueprints fit the real catalog and the real banks", () => {
   const { loadCatalog, loadBank } = require("../tools/lib/content");
   const known = new Set(loadCatalog().sections.map((section) => section.key));
   const scoreable = new Map();
 
-  for (const blueprint of core.FULL_TEST_BLUEPRINTS) {
+  for (const blueprint of core.FULL_TEST_BLUEPRINTS.filter((entry) => entry.test === "ACT")) {
     assert.ok(blueprint.id && blueprint.label && blueprint.minutes > 0);
     const demand = new Map();
     for (const entry of blueprint.sections) {
@@ -197,6 +199,165 @@ test("rendered booklet and key cover every question", () => {
   const texOut = booklet.renderTex(model);
   assert.equal((texOut.match(/\\question\{/g) || []).length, 98);
   assert.ok(!/[^\x00-\x7F]/.test(texOut), "LaTeX source must stay ASCII");
+});
+
+/* ------------------------------------------------ template forms (SAT) */
+
+function richQuestion(overrides) {
+  return {
+    id: "sat-math:t:k3.t.0",
+    sectionKey: "sat-math",
+    domain: "Algebra",
+    skill: "Linear functions",
+    difficulty: "Hard",
+    responseType: "multiple-choice",
+    stem: 'Which "value" <b>fits</b>?',
+    choices: ["1", "2", "3", "4"],
+    correctAnswer: 2,
+    explanation: "Because.",
+    solutionSteps: ["One.", "Two."],
+    distractorRationales: [{ index: 0, reason: "Stops early." }],
+    trap: "A trap.",
+    stimulus: null,
+    figure: null,
+    ...overrides,
+  };
+}
+
+// Stands in for app/render.js, which needs a DOM.
+const fakeRender = {
+  rich: (text) => `<div class="lm-rich"><p>${booklet.escapeHtml(text)}</p></div>`,
+  stimulus: (stimulus) => `<div class="lm-stimulus"><p>${booklet.escapeHtml(stimulus.content)}</p></div>`,
+  figure: (figure) => `<figure class="lm-figure">${booklet.escapeHtml(figure.alt)}</figure>`,
+};
+
+const satBlueprint = {
+  id: "sat-math",
+  test: "SAT",
+  label: "SAT Math section",
+  summary: "Two modules.",
+  notes: ["Module 2 here is the harder route."],
+  breakAfter: null,
+  minutes: 70,
+};
+
+function richModel() {
+  const groups = [
+    {
+      label: "Math — Module 1",
+      minutes: 35,
+      directions: "Calculator allowed.",
+      questions: [
+        richQuestion(),
+        richQuestion({
+          id: "sat-math:u:k3.u.0",
+          responseType: "numeric",
+          choices: null,
+          correctAnswer: "7/3",
+          distractorRationales: null,
+          figure: { svg: "<svg></svg>", alt: "A triangle", notToScale: true },
+        }),
+      ],
+    },
+    {
+      label: "Math — Module 2, harder route",
+      minutes: 35,
+      directions: "Calculator allowed.",
+      questions: [richQuestion({ id: "sat-math:v:k3.v.0", stimulus: { type: "table", content: "x | y\n1 | 2" } })],
+    },
+  ];
+  return booklet.buildModel(groups, satBlueprint, "k3", { code: "m1mh-k3-1.2-abcd" });
+}
+
+test("template forms render through the page's renderer, with the key at the end", () => {
+  const model = richModel();
+  assert.equal(model.code, "m1mh-k3-1.2-abcd");
+  assert.equal(model.formCode, booklet.formCode("m1mh-k3-1.2-abcd"));
+  const html = booklet.renderBookletHtml(model, { render: fakeRender, key: true });
+  assert.equal((html.match(/<article class="q rich"/g) || []).length, 3);
+  assert.match(html, /<div class="figure"><figure class="lm-figure">A triangle<\/figure><\/div>/);
+  assert.match(html, /<div class="stimulus table"><div class="lm-stimulus">/);
+  assert.match(html, /Which &quot;value&quot; &lt;b&gt;fits&lt;\/b&gt;\?/);
+  assert.ok(!html.includes("<b>fits"), "content must never reach the booklet as markup");
+  assert.match(html, /<code>m1mh-k3-1\.2-abcd<\/code>/);
+  assert.match(html, /Module 2 here is the harder route\./);
+  assert.ok(!html.includes("ten-minute break"), "one section has no break");
+  // Bubbles for choices, a box for the student-produced response.
+  assert.equal((html.match(/class="write-in"/g) || []).length, 1);
+  assert.equal((html.match(/class="bubble"/g) || []).length, 8);
+  // The key and explanations follow the answer sheet.
+  const sheet = html.indexOf("Answer sheet — form");
+  const key = html.indexOf("Answer key — form");
+  assert.ok(sheet > 0 && key > sheet);
+  assert.equal((html.match(/Correct answer:/g) || []).length, 3);
+  assert.match(html, /Correct answer: 7\/3/);
+  assert.match(html, /<li class="inline">A\. <div class="lm-rich"><p>Stops early\.<\/p><\/div><\/li>/);
+
+  const keyOnly = booklet.renderKeyHtml(model, { render: fakeRender });
+  assert.match(keyOnly, /<code>m1mh-k3-1\.2-abcd<\/code>/);
+  assert.equal((keyOnly.match(/Correct answer:/g) || []).length, 3);
+  assert.ok(!keyOnly.includes('<article class="q'), "the key alone prints no questions");
+});
+
+test("without a renderer, text is escaped and no figure markup is emitted", () => {
+  const html = booklet.renderBookletHtml(richModel());
+  assert.equal((html.match(/<article class="q"/g) || []).length, 3);
+  assert.ok(!html.includes("<figure") && !html.includes('<div class="figure">'));
+  assert.match(html, /<p class="stem"><span class="num">1\.<\/span> Which &quot;value&quot;/);
+  assert.ok(!html.includes("Answer key — form"), "the key is opt-in");
+});
+
+test("the break direction prints only for a form with a break", () => {
+  const empty = (blueprint) => blueprint.sections.map((entry) => ({
+    entry, label: entry.label, minutes: entry.minutes, directions: entry.directions, questions: [],
+  }));
+  const full = core.blueprintById("act-full");
+  const mini = core.blueprintById("act");
+  const fullModel = booklet.buildModel(empty(full), full, "s");
+  const miniModel = booklet.buildModel(empty(mini), mini, "s");
+  assert.match(booklet.renderBookletHtml(fullModel), /ten-minute break after\s+Mathematics/);
+  assert.match(booklet.renderTex(fullModel), /ten-minute break after Mathematics/);
+  assert.ok(!booklet.renderBookletHtml(miniModel).includes("ten-minute break"));
+  assert.ok(!booklet.renderTex(miniModel).includes("ten-minute break"));
+});
+
+test("escapeHtml escapes quotes as well as markup", () => {
+  assert.equal(booklet.escapeHtml(`<a href="x">'&'</a>`), "&lt;a href=&quot;x&quot;&gt;&#39;&amp;&#39;&lt;/a&gt;");
+});
+
+test("a real template form fills a 98-question booklet", () => {
+  const Runs = require("../src/lib/runs");
+  const Modules = require("../src/lib/modules");
+  const S = require("../src/lib/families/shared");
+  const sections = {
+    "sat-math": Runs.catalogTemplates(require("../src/lib/families/sat/math"), require("../content/templates/sat-math.json")),
+    "sat-reading-writing": Runs.catalogTemplates(
+      require("../src/lib/families/sat/reading-writing"),
+      require("../content/templates/sat-reading-writing.json"),
+    ),
+  };
+  const form = Modules.buildForm(sections, { seed: "booklet" });
+  const drawn = Modules.drawForm(form, S.instantiate);
+  const groups = drawn.modules.map((entry) => ({
+    label: entry.label, minutes: entry.minutes, directions: entry.directions, questions: entry.questions,
+  }));
+  const model = booklet.buildModel(groups, { ...satBlueprint, breakAfter: form.breakAfter }, form.seed, { code: form.code });
+  assert.equal(model.total, 98);
+  assert.equal(model.minutes, 134);
+  const html = booklet.renderBookletHtml(model, { key: true });
+  assert.equal((html.match(/<article class="q"/g) || []).length, 98);
+  assert.equal((html.match(/Correct answer:/g) || []).length, 98);
+  assert.match(html, /ten-minute break after\s+Reading and Writing — Module 2/);
+  const numeric = drawn.modules.flatMap((entry) => entry.questions).filter((question) => question.responseType === "numeric").length;
+  assert.equal((html.match(/class="write-in"/g) || []).length, numeric);
+});
+
+test("the booklet CLI builds ACT only and points SAT to the Booklets page", () => {
+  const { spawnSync } = require("node:child_process");
+  const path = require("node:path");
+  const result = spawnSync(process.execPath, [path.join(__dirname, "..", "tools", "build-booklet.js"), "--form", "sat-full"], { encoding: "utf8" });
+  assert.equal(result.status, 2);
+  assert.match(result.stderr, /print\.html/);
 });
 
 /* ------------------------------------------------- repetition prevention */
