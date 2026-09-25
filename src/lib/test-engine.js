@@ -12,11 +12,11 @@
   "use strict";
 
   // Session logic for the digital test mode: navigation, answers, marks,
-  // eliminations, instant checking, the section timer, and the final
-  // summary. No DOM access. Every action returns a new JSON-safe state, so
-  // the shell can save a snapshot after each change and resume after a
-  // reload. Time is read only through the `now` passed in, so tests can
-  // drive the clock.
+  // eliminations, instant checking, the section timer, per-question time,
+  // and the final summary. No DOM access. Every action returns a new
+  // JSON-safe state, so the shell can save a snapshot after each change and
+  // resume after a reload. Time is read only through the `now` passed in, so
+  // tests can drive the clock.
 
   const SCHEMA = "liminal-test-session";
   const VERSION = 1;
@@ -56,6 +56,7 @@
       checked: state.checked.slice(),
       hinted: state.hinted.slice(),
       visited: state.visited.slice(),
+      timeMs: (state.timeMs || filled(state.questions.length, 0)).slice(),
     });
   }
 
@@ -72,6 +73,11 @@
     if (!questions.length) throw new Error("A test session needs at least one question.");
     const limit = Number(settings.timeLimitSeconds);
     const count = questions.length;
+    // Questions already on the student's marked list start marked, so the
+    // list can mirror what the student leaves marked.
+    const marked = Array.isArray(settings.marked) && settings.marked.length === count
+      ? settings.marked.map(Boolean)
+      : filled(count, false);
     return {
       schema: SCHEMA,
       version: VERSION,
@@ -83,11 +89,16 @@
       questions,
       index: 0,
       responses: filled(count, null),
-      marked: filled(count, false),
+      marked,
       eliminated: filled(count, () => []),
       checked: filled(count, false),
       hinted: filled(count, false),
       visited: [true].concat(filled(count - 1, false)),
+      // Time spent on each question while it was on screen; the running span
+      // of the current one starts at questionSince (null while no question is
+      // shown, such as on the review page).
+      timeMs: filled(count, 0),
+      questionSince: nowMs,
       eliminatorOn: false,
       elapsedMs: 0,
       segmentStart: nowMs,
@@ -140,6 +151,42 @@
       next = finish(next, nowMs, "time");
     }
     return Object.assign({ state: next }, status);
+  }
+
+  /* --------------------------------------------------------- question time */
+
+  // Adds the running span to the current question. An instantly checked
+  // question stops gaining time: what follows is reading the explanation,
+  // not solving. Without a clock reading nothing changes.
+  function settleQuestionTime(state, nowMs) {
+    if (nowMs === undefined || nowMs === null) return state;
+    if (state.questionSince === null || state.questionSince === undefined) return state;
+    const next = copyState(state);
+    const counting = !state.finished &&
+      !(state.feedback === "instant" && state.checked[state.index]);
+    if (counting) next.timeMs[state.index] += Math.max(0, nowMs - state.questionSince);
+    next.questionSince = nowMs;
+    return next;
+  }
+
+  // Time on each question so far, including the current running span.
+  function questionTimes(state, nowMs) {
+    return settleQuestionTime(state, nowMs).timeMs ||
+      filled(state.questions.length, 0);
+  }
+
+  // The review page and the report show no question, so no question gains
+  // time there.
+  function leaveQuestion(state, nowMs) {
+    if (state.questionSince === null || state.questionSince === undefined) return state;
+    const next = settleQuestionTime(state, nowMs);
+    return Object.assign({}, next, { questionSince: null });
+  }
+
+  function enterQuestion(state, nowMs) {
+    if (state.finished || (state.questionSince !== null && state.questionSince !== undefined)) return state;
+    if (nowMs === undefined || nowMs === null) return state;
+    return Object.assign({}, state, { questionSince: nowMs });
   }
 
   /* ---------------------------------------------------------------- actions */
@@ -211,21 +258,24 @@
     return next;
   }
 
-  function goTo(state, index) {
+  // With a clock reading, the time so far goes to the question being left
+  // and the new one starts counting.
+  function goTo(state, index, nowMs) {
     const at = clampIndex(state, index);
-    if (at === state.index) return state;
-    const next = copyState(state);
+    if (at === state.index) return enterQuestion(state, nowMs);
+    const next = copyState(settleQuestionTime(state, nowMs));
     next.index = at;
     next.visited[at] = true;
+    if (nowMs !== undefined && nowMs !== null && !next.finished) next.questionSince = nowMs;
     return next;
   }
 
-  function nextQuestion(state) {
-    return goTo(state, state.index + 1);
+  function nextQuestion(state, nowMs) {
+    return goTo(state, state.index + 1, nowMs);
   }
 
-  function back(state) {
-    return goTo(state, state.index - 1);
+  function back(state, nowMs) {
+    return goTo(state, state.index - 1, nowMs);
   }
 
   function isLast(state) {
@@ -233,11 +283,11 @@
   }
 
   // Instant feedback only: locks the current answer and reports the verdict.
-  function check(state, index) {
-    const at = index === undefined ? state.index : clampIndex(state, index);
+  function check(state, index, nowMs) {
+    const at = index === undefined || index === null ? state.index : clampIndex(state, index);
     if (state.feedback !== "instant" || state.finished || state.checked[at]) return state;
     if (!hasResponse(state.responses[at])) return state;
-    const next = copyState(state);
+    const next = copyState(settleQuestionTime(state, nowMs));
     next.checked[at] = true;
     return next;
   }
@@ -252,9 +302,10 @@
 
   function finish(state, nowMs, reason) {
     if (state.finished) return state;
-    const next = copyState(state);
+    const next = copyState(settleQuestionTime(state, nowMs));
     next.elapsedMs = elapsedMs(state, nowMs);
     next.segmentStart = null;
+    next.questionSince = null;
     next.finished = true;
     next.finishReason = reason === "time" ? "time" : "user";
     return next;
@@ -321,6 +372,7 @@
   // position so repeated IDs cannot collide.
   function summary(state, nowMs) {
     const api = core();
+    const times = questionTimes(state, nowMs);
     const keyed = state.questions.map((question, index) =>
       Object.assign({}, question, { id: `${index}:${question.id}` })
     );
@@ -339,12 +391,15 @@
       marked: state.marked[index],
       checked: state.checked[index],
       hinted: state.hinted[index],
+      timeMs: Math.round(times[index] || 0),
     }));
     const correct = items.filter((item) => item.correct).length;
-    const sectionKey = state.questions[0].sectionKey;
-    const budget = typeof api.paceBudgetSeconds === "function"
-      ? api.paceBudgetSeconds(sectionKey, state.questions.length)
-      : null;
+    // A set that mixes sections (a mini test) is paced question by question.
+    const budget = typeof api.paceBudgetForQuestions === "function"
+      ? api.paceBudgetForQuestions(state.questions)
+      : typeof api.paceBudgetSeconds === "function"
+        ? api.paceBudgetSeconds(state.questions[0].sectionKey, state.questions.length)
+        : null;
     const elapsed = elapsedMs(state, nowMs === undefined ? 0 : nowMs);
     return {
       feedback: state.feedback,
@@ -388,24 +443,33 @@
       correct: report.correct,
       total: report.total,
       items: report.items.map((item) => ({
+        index: item.index,
         question: item.question,
         response: item.response,
         answered: item.answered,
         correct: item.correct,
         marked: item.marked,
+        checked: item.checked,
         hinted: item.hinted,
+        timeMs: item.timeMs,
       })),
     };
   }
 
   /* ---------------------------------------------------------- persistence */
 
-  // A snapshot freezes the elapsed time; restoring starts a new running
-  // segment, so time while the page was closed is not counted.
-  function serialize(state, nowMs) {
-    const snapshot = copyState(state);
+  // A snapshot freezes the elapsed time and notes the wall clock. A timed
+  // set keeps counting while the page is closed or reloading, as a real
+  // section clock would, unless the student paused it on purpose (`paused`,
+  // from Save and exit). An untimed set counts only time on the page.
+  // Question times never count closed time.
+  function serialize(state, nowMs, options) {
+    const snapshot = copyState(settleQuestionTime(state, nowMs));
     snapshot.elapsedMs = elapsedMs(state, nowMs);
     snapshot.segmentStart = null;
+    snapshot.questionSince = null;
+    snapshot.savedAtMs = Number.isFinite(Number(nowMs)) ? Number(nowMs) : null;
+    snapshot.paused = Boolean(options && options.paused);
     return JSON.parse(JSON.stringify(snapshot));
   }
 
@@ -435,6 +499,8 @@
       checked: list(snapshot.checked, false).map(Boolean),
       hinted: list(snapshot.hinted, false).map(Boolean),
       visited: list(snapshot.visited, false).map(Boolean),
+      timeMs: list(snapshot.timeMs, 0).map((value) => Math.max(0, Number(value) || 0)),
+      questionSince: null,
       eliminatorOn: Boolean(snapshot.eliminatorOn),
       elapsedMs: Math.max(0, Number(snapshot.elapsedMs) || 0),
       segmentStart: null,
@@ -447,7 +513,15 @@
     };
     state.index = clampIndex(state, snapshot.index);
     state.visited[state.index] = true;
-    if (!state.finished) state.segmentStart = nowMs;
+    const savedAt = Number(snapshot.savedAtMs);
+    if (state.timeLimitSeconds && !state.finished && !snapshot.paused &&
+        snapshot.savedAtMs !== null && Number.isFinite(savedAt) && nowMs > savedAt) {
+      state.elapsedMs += nowMs - savedAt;
+    }
+    if (!state.finished) {
+      state.segmentStart = nowMs;
+      state.questionSince = nowMs;
+    }
     return state;
   }
 
@@ -531,10 +605,30 @@
       toggleMark: apply(toggleMark),
       toggleEliminator: apply(toggleEliminator),
       toggleEliminate: apply(toggleEliminate),
-      goTo: apply(goTo),
-      next: apply(nextQuestion),
-      back: apply(back),
-      check: apply(check),
+      goTo(index) {
+        session.state = goTo(session.state, index, clock());
+        return session.state;
+      },
+      next() {
+        session.state = nextQuestion(session.state, clock());
+        return session.state;
+      },
+      back() {
+        session.state = back(session.state, clock());
+        return session.state;
+      },
+      check(index) {
+        session.state = check(session.state, index, clock());
+        return session.state;
+      },
+      leaveQuestion() {
+        session.state = leaveQuestion(session.state, clock());
+        return session.state;
+      },
+      enterQuestion() {
+        session.state = enterQuestion(session.state, clock());
+        return session.state;
+      },
       useHint: apply(useHint),
       markReported: apply(markReported),
       finish(reason) {
@@ -554,9 +648,10 @@
       itemStatus: (index) => itemStatus(session.state, index),
       statuses: () => session.state.questions.map((_, index) => itemStatus(session.state, index)),
       counts: () => counts(session.state),
+      questionTimes: () => questionTimes(session.state, clock()),
       summary: () => summary(session.state, clock()),
       result: () => result(session.state, clock()),
-      serialize: () => serialize(session.state, clock()),
+      serialize: (options) => serialize(session.state, clock(), options),
     });
     return session;
   }
@@ -596,6 +691,9 @@
     next: nextQuestion,
     back,
     check,
+    leaveQuestion,
+    enterQuestion,
+    questionTimes,
     useHint,
     finish,
     markReported,

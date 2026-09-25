@@ -245,7 +245,7 @@ test("finish freezes the clock and the summary scores every item", () => {
 
   const result = session.result();
   assert.deepEqual(Object.keys(result.items[0]).sort(),
-    ["answered", "correct", "hinted", "marked", "question", "response"]);
+    ["answered", "checked", "correct", "hinted", "index", "marked", "question", "response", "timeMs"]);
   assert.equal(result.items[1].marked, true);
   assert.equal(result.feedback, "end");
   assert.equal(result.timeLimitSeconds, 600);
@@ -261,7 +261,7 @@ test("repeated question ids are scored by position", () => {
   assert.equal(session.summary().correct, 2);
 });
 
-test("serialize and restore round-trip without counting closed time", () => {
+test("serialize and restore round-trip; a paused timed set skips closed time", () => {
   const now = clock();
   const session = engine.create({ questions: QUESTIONS, feedback: "instant", timeLimitSeconds: 600, now });
   session.select(2);
@@ -271,13 +271,14 @@ test("serialize and restore round-trip without counting closed time", () => {
   session.toggleEliminate(1);
   session.toggleMark();
   now.advance(250_000);
-  const snapshot = session.serialize();
+  const snapshot = session.serialize({ paused: true }); // Save and exit
   const json = JSON.parse(JSON.stringify(snapshot));
   assert.deepEqual(json, snapshot, "the snapshot is JSON-safe");
   assert.equal(snapshot.elapsedMs, 250_000);
   assert.equal(snapshot.segmentStart, null);
+  assert.equal(snapshot.paused, true);
 
-  now.advance(3_600_000); // the page was closed for an hour
+  now.advance(3_600_000); // the set was put away for an hour
   const restored = engine.restore(json, { now });
   assert.equal(restored.state.index, 2);
   assert.deepEqual(restored.state.responses, [2, null, null]);
@@ -290,6 +291,79 @@ test("serialize and restore round-trip without counting closed time", () => {
   now.advance(10_000);
   assert.equal(restored.timer().remainingSeconds, 340);
   assert.deepEqual(restored.state.questions, QUESTIONS);
+});
+
+test("a timed set keeps wall time across a reload; an untimed set does not", () => {
+  const now = clock();
+  const timed = engine.create({ questions: QUESTIONS, timeLimitSeconds: 600, now });
+  now.advance(100_000);
+  const snapshot = timed.serialize(); // saved as the page unloads
+  now.advance(30_000); // reloading
+  const restored = engine.restore(snapshot, { now });
+  assert.equal(restored.timer().remainingSeconds, 470);
+  now.advance(1_000);
+  assert.equal(restored.timer().remainingSeconds, 469);
+
+  now.advance(3_600_000); // closed for an hour: the section has ended
+  const late = engine.restore(restored.serialize(), { now: () => now() + 60_000 });
+  const reading = late.tick();
+  assert.equal(reading.expired, true);
+  assert.equal(late.state.finished, true);
+  assert.equal(late.state.finishReason, "time");
+
+  const untimed = engine.create({ questions: QUESTIONS, now });
+  now.advance(20_000);
+  const saved = untimed.serialize();
+  now.advance(600_000);
+  assert.equal(engine.restore(saved, { now }).timer().elapsedMs, 20_000);
+});
+
+test("each question gathers time only while it is on screen", () => {
+  const now = clock();
+  const session = engine.create({ questions: QUESTIONS, feedback: "instant", now });
+  now.advance(5_000);
+  session.select(2);
+  now.advance(1_000);
+  session.check(); // six seconds to answer
+  now.advance(30_000); // reading the explanation does not count
+  session.next();
+  now.advance(7_000);
+  session.leaveQuestion(); // the review page
+  now.advance(50_000);
+  session.enterQuestion();
+  now.advance(3_000);
+  assert.deepEqual(session.questionTimes(), [6_000, 10_000, 0]);
+
+  const snapshot = session.serialize();
+  now.advance(100_000); // closed time never counts toward a question
+  const restored = engine.restore(snapshot, { now });
+  now.advance(2_000);
+  restored.goTo(2);
+  now.advance(4_000);
+  restored.finish();
+  now.advance(9_000);
+  const items = restored.result().items;
+  assert.deepEqual(items.map((item) => item.timeMs), [6_000, 12_000, 4_000]);
+  assert.deepEqual(items.map((item) => item.index), [0, 1, 2]);
+  assert.equal(items[0].checked, true);
+});
+
+test("questions already marked start marked", () => {
+  const session = engine.create({ questions: QUESTIONS, marked: [false, true, false], now: clock() });
+  assert.deepEqual(session.state.marked, [false, true, false]);
+  assert.equal(session.counts().marked, 1);
+  const ignored = engine.create({ questions: QUESTIONS, marked: [true], now: clock() });
+  assert.deepEqual(ignored.state.marked, [false, false, false]);
+});
+
+test("a set that mixes sections is paced question by question", () => {
+  const mixed = [
+    question("rw", { sectionKey: "sat-reading-writing" }),
+    question("m1"),
+    question("m2"),
+  ];
+  const summary = engine.create({ questions: mixed, now: clock() }).summary();
+  assert.equal(summary.paceBudgetSeconds, Math.round((32 * 60) / 27 + 2 * (35 * 60) / 22));
 });
 
 test("restore rejects foreign or empty snapshots", () => {
