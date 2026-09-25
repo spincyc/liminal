@@ -1,0 +1,26 @@
+{
+  "name": "liminal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Free, original SAT and ACT practice that runs entirely in the browser.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node tools/build.js",
+    "serve": "node tools/serve.js",
+    "check": "node tools/check-all.js",
+    "test": "node --test \"test/**/*.test.js\"",
+    "validate": "node tools/validate-content.js",
+    "report": "node tools/report-content.js",
+    "report:write": "node tools/report-content.js --write",
+    "audit": "node tools/audit-questions.js",
+    "audit:strict": "node tools/audit-questions.js --strict",
+    "check:difficulty": "node tools/check-difficulty.js",
+    "check:shapes": "node tools/check-shapes.js",
+    "check:passages": "node tools/check-passages.js",
+    "check:guides": "node tools/check-guides.js",
+    "booklet": "node tools/build-booklet.js"
+  }
+}
