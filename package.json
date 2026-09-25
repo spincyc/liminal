@@ -21,8 +21,10 @@
     "check:shapes": "node tools/check-shapes.js",
     "check:passages": "node tools/check-passages.js",
     "check:guides": "node tools/check-guides.js",
+    "check:learn": "node tools/check-learn.js",
     "check:families": "node tools/check-families.js",
     "templates": "node tools/update-templates.js",
+    "build:learn": "node tools/build-learn.js",
     "booklet": "node tools/build-booklet.js"
   }
 }
