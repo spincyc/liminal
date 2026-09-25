@@ -1,0 +1,446 @@
+/* The Learn page (learn.html). Loads after tokens.css and app.css and reads
+   only their properties: the header, cards, buttons and focus rings are the
+   site's own. Callout kinds differ by label, border and fill, never by
+   color alone. */
+
+.learn-act-note {
+  max-width: 70ch;
+  margin-bottom: 24px;
+}
+
+/* ------------------------------------------------------------------ index */
+
+.learn-group + .learn-group {
+  margin-top: 40px;
+}
+
+.learn-group > h2 {
+  margin-bottom: 14px;
+}
+
+.learn-domain + .learn-domain {
+  margin-top: 24px;
+}
+
+.learn-domain > h3 {
+  margin-bottom: 10px;
+  color: var(--color-muted);
+  font-size: var(--text-base);
+}
+
+.learn-skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.learn-skill.card {
+  padding: 14px 18px;
+}
+
+.learn-skill-link {
+  display: inline-block;
+  padding: 2px 0;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  text-decoration: none;
+}
+
+.learn-skill-link:hover {
+  text-decoration: underline;
+}
+
+.learn-subskills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 14px;
+  margin: 6px 0 0;
+  padding: 0;
+  font-size: var(--text-sm);
+  list-style: none;
+}
+
+.learn-subskills a {
+  display: inline-block;
+  min-height: 24px;
+  padding: 3px 0;
+}
+
+/* ------------------------------------------------------------------- page */
+
+.learn-crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 8px;
+  margin: 0 0 6px;
+  padding: 0;
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  list-style: none;
+}
+
+.learn-crumbs li + li::before {
+  content: "›";
+  margin-right: 8px;
+  color: var(--color-line-strong);
+}
+
+.learn-crumbs a {
+  display: inline-block;
+  min-height: 24px;
+  padding: 2px 0;
+}
+
+.learn-actions {
+  margin-top: 14px;
+}
+
+.learn-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.learn-toc {
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  font-size: var(--text-sm);
+}
+
+.learn-toc-title {
+  margin-bottom: 6px;
+  color: var(--color-muted);
+  font-weight: var(--weight-bold);
+}
+
+.learn-toc ol {
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid var(--color-line);
+  list-style: none;
+}
+
+.learn-toc a {
+  display: block;
+  padding: 6px 0 6px 12px;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.learn-toc a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.learn-article {
+  max-width: 820px;
+  min-width: 0;
+}
+
+/* Rhythm inside a lesson; app.css zeroes heading and paragraph margins. */
+.learn-article > * + * {
+  margin-top: 16px;
+}
+
+.learn-article > h2 {
+  margin-top: 36px;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-line);
+}
+
+.learn-article > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.learn-article > h3 {
+  margin-top: 26px;
+}
+
+.learn-heading {
+  scroll-margin-top: 16px;
+}
+
+.learn-article a {
+  overflow-wrap: anywhere;
+}
+
+.learn-article code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--color-soft);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+/* Zero-specificity resets, so the article and callout rhythm above and
+   below sets the space between blocks. */
+:where(.learn-list, .learn-pre, .learn-table-wrap) {
+  margin: 0;
+}
+
+.learn-list {
+  padding-left: 1.5em;
+}
+
+.learn-list > li + li {
+  margin-top: 6px;
+}
+
+.learn-fact {
+  text-decoration: underline dotted var(--color-line-strong);
+  text-underline-offset: 3px;
+}
+
+.learn-facts {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+.learn-facts ul {
+  margin: 6px 0 0;
+  padding-left: 1.25em;
+}
+
+.learn-article > .learn-end {
+  margin-top: 32px;
+}
+
+/* Preformatted work keeps its alignment and scrolls inside itself. */
+.learn-pre {
+  max-width: 100%;
+  padding: 12px 14px;
+  overflow-x: auto;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  white-space: pre;
+}
+
+/* ---------------------------------------------------------------- callouts */
+
+.callout {
+  --callout-line: var(--color-line-strong);
+  --callout-fill: var(--color-soft);
+  --callout-ink: var(--color-muted);
+  padding: 14px 16px;
+  border: 1px solid transparent;
+  border-left: 4px solid var(--callout-line);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--callout-fill);
+}
+
+.callout > * + * {
+  margin-top: 10px;
+}
+
+.callout > .callout-label + * {
+  margin-top: 4px;
+}
+
+.callout-label {
+  color: var(--callout-ink);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.callout-example {
+  --callout-line: var(--color-accent);
+  --callout-fill: var(--color-accent-soft);
+  --callout-ink: var(--color-accent);
+}
+
+.callout-fails-when {
+  --callout-line: var(--color-bad);
+  --callout-fill: var(--color-bad-soft);
+  --callout-ink: var(--color-bad);
+}
+
+.callout-trap {
+  --callout-line: var(--color-bad);
+  --callout-fill: var(--color-surface);
+  --callout-ink: var(--color-bad);
+  border-color: var(--color-bad);
+  border-style: dashed dashed dashed solid;
+}
+
+.callout-desmos {
+  --callout-line: var(--color-good);
+  --callout-fill: var(--color-good-soft);
+  --callout-ink: var(--color-good);
+}
+
+.callout-check {
+  --callout-line: var(--color-good);
+  --callout-fill: var(--color-surface);
+  --callout-ink: var(--color-good);
+  border-color: var(--color-line);
+  border-left-color: var(--callout-line);
+}
+
+.callout-rule {
+  --callout-line: var(--color-ink);
+  --callout-fill: var(--color-softer);
+  --callout-ink: var(--color-ink);
+  border-color: var(--color-line);
+  border-left-color: var(--callout-line);
+}
+
+.callout-note {
+  --callout-line: var(--color-line-strong);
+  --callout-fill: var(--color-soft);
+  --callout-ink: var(--color-muted);
+}
+
+/* ------------------------------------------------------------------ tables */
+
+.learn-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.learn-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.learn-table th,
+.learn-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.learn-table thead th {
+  border-bottom: 1.5px solid var(--color-line-strong);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+}
+
+.learn-table .align-center {
+  text-align: center;
+}
+
+.learn-table .align-right {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* A table too wide for its column shows each row as label: value pairs
+   (learn.js adds .is-stacked after measuring). */
+.learn-table-wrap.is-stacked :is(table, thead, tbody, tr, th, td) {
+  display: block;
+}
+
+.learn-table-wrap.is-stacked thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.learn-table-wrap.is-stacked tr {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.learn-table-wrap.is-stacked tr:first-child {
+  border-top: 1.5px solid var(--color-line-strong);
+}
+
+.learn-table-wrap.is-stacked td {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 12px;
+  padding: 3px 0;
+  border: 0;
+  text-align: left;
+}
+
+.learn-table-wrap.is-stacked td::before {
+  content: attr(data-label);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+/* ------------------------------------------------------------------ narrow */
+
+@media (max-width: 960px) {
+  .learn-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .learn-toc {
+    position: static;
+    max-height: none;
+    padding: 12px 16px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+  }
+
+  .learn-toc ol {
+    border-left: 0;
+  }
+
+  .learn-toc a {
+    padding: 6px 0;
+  }
+
+  .learn-article {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .callout {
+    padding: 12px 12px 12px 14px;
+  }
+
+  .learn-actions .button {
+    width: 100%;
+  }
+}
+
+@media print {
+  .learn-toc,
+  .learn-actions,
+  .learn-crumbs,
+  .learn-act-note {
+    display: none;
+  }
+
+  .learn-layout {
+    display: block;
+  }
+
+  .learn-article {
+    border: 0;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" data-test="SAT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta
+      name="description"
+      content="Short, original SAT lessons for every Reading and Writing and Math skill, with worked examples, common traps, and when each shortcut fails."
+    />
+    <title>Learn — Liminal</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/app.css" />
+    <link rel="stylesheet" href="styles/math.css" />
+    <link rel="stylesheet" href="styles/learn.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="index.html#practice" data-view="setup">
+          <span class="brand-name">Liminal</span>
+          <span class="brand-sub">Independent <span data-test-name>SAT</span> practice</span>
+        </a>
+        <div class="test-switch" role="group" aria-label="Test">
+          <button class="test-switch-option" type="button" data-test-option="SAT" aria-pressed="true">SAT</button>
+          <button class="test-switch-option" type="button" data-test-option="ACT" aria-pressed="false">ACT</button>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#practice" data-view="setup">Practice</a>
+          <a class="nav-link" href="learn.html" data-view="learn" aria-current="page">Learn</a>
+          <a class="nav-link" href="index.html#progress" data-view="dashboard">Progress</a>
+          <a class="nav-link" href="index.html#review" data-view="review">Review</a>
+          <a class="nav-link" href="index.html#tips" data-view="signs"><span class="nav-full">Study tips</span><span class="nav-short" aria-hidden="true">Tips</span></a>
+          <a class="nav-link" href="print.html" data-view="booklets">Booklets</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="site-main learn-main" tabindex="-1">
+      <aside class="notice learn-act-note" data-test-only="ACT" hidden aria-label="About the ACT">
+        <p>
+          Learn pages cover the SAT. For the ACT, use the
+          <a href="https://github.com/spincyc/liminal/tree/main/content/study-guides#act">ACT study guides</a>
+          in the project's study library on GitHub.
+        </p>
+      </aside>
+
+      <div id="learnView" class="learn-view"></div>
+      <p id="learnStatus" class="status-line" role="status" aria-live="polite"></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <p>
+          Private by design: no account and no server. Progress stays in this
+          browser on this device.
+        </p>
+        <p>
+          Independent educational practice. Not affiliated with, endorsed by, or
+          sponsored by College Board or ACT, Inc. SAT® is a registered trademark
+          of College Board. ACT® is a registered trademark of ACT, Inc. All
+          questions and passages here are original.
+        </p>
+      </div>
+    </footer>
+
+    <script src="content/learn-sat.js"></script>
+    <script src="lib/learn-markup.js"></script>
+    <script src="app/site.js"></script>
+    <script src="app/learn.js"></script>
+  </body>
+</html>
