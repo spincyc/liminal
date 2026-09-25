@@ -13,7 +13,7 @@
   const { MINUS, num, paren, signed, lin, approx, point, poly, sup } = S;
   const {
     tidy, denominator, ratio, gridable, drawUntilDistinct, bin, rootFactor, lead, denominatorHard,
-    ratioHard, drawUntilDistinctHard, term, decimalTextHard, ratioText,
+    ratioHard, drawUntilDistinctHard, term, decimalTextHard, ratioText, labelValue, sampleQuadratic, realRoots,
   } = C;
 
   // Exact decimal text for n / 10^k: decimalText(106, 2) -> "1.06", (120, 2) -> "1.2".
@@ -28,7 +28,8 @@
 
   const cap = (text) => text[0].toUpperCase() + text.slice(1);
 
-  const commas = (value) => value.toLocaleString("en-US");
+  // "12,500" with a U+2212 minus for negatives.
+  const commas = (value) => `${value < 0 ? MINUS : ""}${Math.abs(value).toLocaleString("en-US")}`;
 
   // A point whose coordinates may be fractions: "(5/2, 0)".
   const pt = (x, y) => `(${ratio(x)}, ${ratio(y)})`;
@@ -59,6 +60,36 @@
     };
     if (mode === "intercept") {
       const z = t.pick(zeros);
+      if (z === 0 || isZero(-z)) return null;
+      // A grid of two independent slips on the key: the sign of the zero, and
+      // which axis it goes on. Sometimes the undivided factor constant stands in
+      // for the doubled slip.
+      const grid = [
+        [[-z, 0], `Reverses a sign: ${factorOf(z)} is 0 at x = ${ratio(z)}, not x = ${ratio(-z)}.`],
+        [[0, z], "Puts the zero on the y-axis; an x-intercept has y-coordinate 0."],
+        m > 1 && !isZero(n) && approx(z, n / m) && t.chance(0.5)
+          ? [[n, 0], `Reads ${num(n)} from ${bin(m, -n)} without dividing by ${m}.`]
+          : [[0, -z], "Reverses the sign of the zero and puts it on the y-axis."],
+      ];
+      if (t.chance(0.8)) {
+        return {
+          ...common,
+          responseType: "multiple-choice",
+          stem: "The function p is defined by the given equation. Which of the following is an x-intercept of the graph of y = p(x) in the xy-plane?",
+          correct: pt(z, 0),
+          wrong: grid.map(([[x, y], why]) => [pt(x, y), why]),
+          explanation:
+            `The graph meets the x-axis where p(x) = 0, which happens when one factor is 0. The zeros are ${zeroList}, ` +
+            `so the x-intercepts are the points with those x-coordinates and y = 0. Of the choices, only ${pt(z, 0)} is one of them.`,
+          steps: [
+            "An x-intercept is a point (x, 0) where p(x) = 0.",
+            `Set each factor equal to 0: x = ${zeroList}.`,
+            `Of the choices, only ${pt(z, 0)} has one of these x-coordinates and y = 0.`,
+          ],
+          trap: `${factorOf(z)} is 0 at x = ${ratio(z)}; the number printed in a factor has the opposite sign of its zero, and an x-intercept lies on the x-axis.`,
+          verify: () => approx(p(z), 0) && grid.every(([[x, y]]) => y !== 0 || !approx(p(x), 0)),
+        };
+      }
       const offers = [];
       zeros.forEach((w) => {
         if (w !== 0 && !isZero(-w)) {
@@ -152,6 +183,33 @@
     { what: "the number of fish in a pond during a drought", short: "the number of fish", unit: "month", start: "the drought began", up: false },
   ];
 
+  // Three distractors drawn from a pool of modelled slips. Most of the time
+  // they all sit on one side of the key (when three do), so the key is the
+  // extreme value; otherwise they are any three. Distractors built around the
+  // key then do not give it away as the middle value.
+  function spreadAround(t, key, pool, oneSide = 0.5) {
+    const usable = pool.filter(([value], index) => Number.isFinite(value) && value !== key &&
+      pool.findIndex(([other]) => other === value) === index);
+    const above = usable.filter(([value]) => value > key);
+    const below = usable.filter(([value]) => value < key);
+    if (t.chance(oneSide)) {
+      const sides = [below, above].filter((side) => side.length >= 3);
+      if (sides.length) return t.sample(t.pick(sides), 3);
+    }
+    return t.sample(usable, Math.min(3, usable.length));
+  }
+
+  // Applies spreadAround to a multiple-choice record whose key and modelled
+  // mistakes are all numbers; other records pass through unchanged.
+  function spreadChoices(t, record) {
+    if (!record || record.responseType !== "multiple-choice") return record;
+    const keyValue = labelValue(S.label(record.correct));
+    const entries = (record.wrong || []).map(([value, why]) => [labelValue(S.label(value)), why, value]);
+    if (!Number.isFinite(keyValue) || entries.length < 3 || entries.some(([value]) => !Number.isFinite(value))) return record;
+    const picked = spreadAround(t, keyValue, entries);
+    return picked.length === 3 ? { ...record, wrong: picked.map(([, why, value]) => [value, why]) } : record;
+  }
+
   function percentRateItem(t) {
     const ctx = t.pick(MODELS);
     const r = t.pick(ctx.up ? [2, 3, 4, 5, 6, 8, 12, 15, 25] : [2, 4, 5, 8, 10, 12, 15, 20, 25]);
@@ -159,35 +217,62 @@
     const base = decimalText(hundredths, 2);
     const A = t.int(2, 60) * 50;
     const word = ctx.up ? "increase" : "decrease";
+    // Either the percent change, or the new amount as a percent of the old.
+    const askFactor = t.chance(0.45);
+    const key = askFactor ? hundredths : r;
+    const pool = askFactor
+      ? [
+        [r, `Gives the percent ${word}, not the new amount as a percent of the old one.`],
+        [Number(base), `Reads the base ${base} as a percent without converting it to hundredths.`],
+        [ctx.up ? 100 - r : 100 + r, ctx.up
+          ? `Subtracts the ${r}% from 100%, as if ${ctx.short} decreased.`
+          : `Adds the ${r}% to 100%, as if ${ctx.short} increased.`],
+        [Number(decimalText(r, 2)), `Writes the decimal ${decimalText(r, 2)} for the change and stops, without converting to a percent or adding 100%.`],
+      ]
+      : [
+        [hundredths, ctx.up
+          ? `Writes the factor ${base} as a percent; the factor includes the original 100%.`
+          : `Gives the percent of ${ctx.short} that remains each ${ctx.unit}, not the percent decrease.`],
+        [Number(base), `Reads the base ${base} itself as a percent.`],
+        [Number(decimalText(r, 2)), `Stops at the decimal ${decimalText(r, 2)} without converting it to a percent.`],
+        [ctx.up ? r * 10 : Math.min(100 - r, r * 10), ctx.up
+          ? `Reads the decimal ${decimalText(r, 2)} as tenths, so ${decimalText(r, 2)} becomes ${r * 10}%.`
+          : `Reads the decimal ${decimalText(r, 2)} as tenths, so ${decimalText(r, 2)} becomes ${r * 10}%.`],
+      ];
+    const wrong = spreadAround(t, key, pool.filter(([value]) => value <= 100 * 3 && value > 0));
+    const stem = askFactor
+      ? `The function f models ${ctx.what} t ${ctx.unit}s after ${ctx.start}. According to the model, each ${ctx.unit} ${ctx.short} is what percent of ${ctx.short} one ${ctx.unit} earlier?`
+      : `The function f models ${ctx.what} t ${ctx.unit}s after ${ctx.start}. According to the model, by what percent does ${ctx.short} ${word} each ${ctx.unit}?`;
     return {
       responseType: "multiple-choice",
       stimulus: { type: "equations", content: `f(t) = ${commas(A)}(${base})^t` },
-      stem: `The function f models ${ctx.what} t ${ctx.unit}s after ${ctx.start}. According to the model, by what percent does ${ctx.short} ${word} each ${ctx.unit}?`,
-      correct: `${r}%`,
-      wrong: [
-        [`${hundredths}%`, ctx.up
-          ? `Writes the factor ${base} as a percent; the factor includes the original 100%.`
-          : `Gives the percent of ${ctx.short} that remains each ${ctx.unit}, not the percent decrease.`],
-        [`${base}%`, `Reads the base ${base} itself as a percent.`],
-        [`${decimalText(r, 2)}%`, `Stops at the decimal ${decimalText(r, 2)} without converting it to a percent.`],
-      ],
+      stem,
+      correct: `${key}%`,
+      wrong: wrong.map(([value, why]) => [`${num(value)}%`, why]),
       explanation:
-        `Each ${ctx.unit}, f is multiplied by ${base}. ${ctx.up ? `${base} = 1 + ${decimalText(r, 2)}` : `${base} = 1 ${MINUS} ${decimalText(r, 2)}`}, ` +
+        `Each ${ctx.unit}, f is multiplied by ${base}, so each value is ${hundredths}% of the one before. ` +
+        `${ctx.up ? `${base} = 1 + ${decimalText(r, 2)}` : `${base} = 1 ${MINUS} ${decimalText(r, 2)}`}, ` +
         `so ${ctx.short} ${word}s by ${decimalText(r, 2)}, or ${r}%, each ${ctx.unit}.`,
       steps: [
         `The base ${base} is the factor applied each ${ctx.unit}.`,
-        `${ctx.up ? `${base} ${MINUS} 1` : `1 ${MINUS} ${base}`} = ${decimalText(r, 2)}.`,
-        `${decimalText(r, 2)} = ${r}%, so the ${word} is ${r}% each ${ctx.unit}.`,
+        `As a percent, ${base} is ${hundredths}%: each value is ${hundredths}% of the previous one.`,
+        askFactor
+          ? `So the answer is ${hundredths}%.`
+          : `${ctx.up ? `${hundredths}% ${MINUS} 100%` : `100% ${MINUS} ${hundredths}%`} = ${r}%, so the ${word} is ${r}% each ${ctx.unit}.`,
       ],
-      principles: ["In A(b)^t, a base b = 1 + r means growth by r per period and b = 1 − r means decay by r per period."],
-      trap: ctx.up
-        ? `${hundredths}% is the new amount as a percent of the old one, not the increase.`
-        : `${hundredths}% is what remains, not what is lost.`,
-      hint: `What fraction of ${ctx.short} is ${ctx.up ? "added" : "lost"} when it is multiplied by ${base}?`,
+      principles: ["In A(b)^t, a base b = 1 + r means growth by r per period and b = 1 − r means decay by r per period; b itself, as a percent, compares each value with the one before."],
+      trap: askFactor
+        ? `${r}% is the change each ${ctx.unit}, not the new amount compared with the old.`
+        : ctx.up
+          ? `${hundredths}% is the new amount as a percent of the old one, not the increase.`
+          : `${hundredths}% is what remains, not what is lost.`,
+      hint: `What does multiplying by ${base} do to an amount?`,
       verify: () => {
         const f = (x) => A * (hundredths / 100) ** x;
-        const change = ((f(4) - f(3)) / f(3)) * 100;
-        return approx(Math.abs(change), r, 1e-9) && (change > 0) === ctx.up;
+        const ratio = (f(4) / f(3)) * 100;
+        const change = Math.abs(ratio - 100);
+        return approx(askFactor ? ratio : change, key, 1e-9) && (ratio > 100) === ctx.up &&
+          wrong.every(([value]) => !approx(value, key));
       },
     };
   }
@@ -198,16 +283,21 @@
     const base = decimalText(ctx.up ? 100 + r : 100 - r, 2);
     const A = t.int(4, 90) * 25;
     const word = ctx.up ? "increase" : "decrease";
+    const Short = cap(ctx.short);
+    // Phrasings of different lengths, so neither length marks the key.
+    const key = t.pick([`${Short} when ${ctx.start}`, `${Short} at the time ${ctx.start}`, `${Short} at t = 0, when ${ctx.start}`]);
+    const wrong = t.sample([
+      [`${Short} 1 ${ctx.unit} after ${ctx.start}`, `Evaluates the model at t = 1; ${commas(A)} is the value at t = 0.`],
+      [t.pick([`The ${word} each ${ctx.unit}`, `The ${word} in ${ctx.short} each ${ctx.unit}`]), "Treats the coefficient as a fixed change per period, as in a linear model."],
+      [t.pick([`The percent ${word} each ${ctx.unit}`, `The percent ${word} in ${ctx.short} each ${ctx.unit}`]), `The percent ${word} comes from the base ${base}, not from the coefficient.`],
+      [`${Short} after ${ctx.unit === "day" ? "one week" : `${commas(A)} ${ctx.unit}s`}`, `Reads the coefficient as a number of ${ctx.unit}s instead of an amount.`],
+    ], 3);
     return {
       responseType: "multiple-choice",
       stimulus: { type: "equations", content: `f(t) = ${commas(A)}(${base})^t` },
       stem: `The function f models ${ctx.what} t ${ctx.unit}s after ${ctx.start}. Which of the following is the best interpretation of ${commas(A)} in this context?`,
-      correct: `${cap(ctx.short)} when ${ctx.start}`,
-      wrong: [
-        [`${cap(ctx.short)} 1 ${ctx.unit} after ${ctx.start}`, `Evaluates the model at t = 1; ${commas(A)} is the value at t = 0.`],
-        [`The ${word} in ${ctx.short} each ${ctx.unit}`, "Treats the coefficient as a fixed change per period, as in a linear model."],
-        [`The percent ${word} in ${ctx.short} each ${ctx.unit}`, `The percent ${word} comes from the base ${base}, not from the coefficient.`],
-      ],
+      correct: key,
+      wrong,
       explanation:
         `At t = 0, (${base})^0 = 1, so f(0) = ${commas(A)}. The coefficient is ${ctx.short} when ${ctx.start}; ` +
         `the base ${base} describes the ${r}% ${word} each ${ctx.unit}.`,
@@ -227,26 +317,33 @@
     const ctx = t.pick(MODELS);
     const tenths = t.pick(ctx.up ? [11, 12, 15, 20, 30] : [9, 8, 5]);
     const n = [20, 30, 5].includes(tenths) ? t.pick([2, 3]) : 2;
-    const scale = tenths % 10 === 0 ? 1 : 10 ** n;
+    const scale = tenths % 10 === 0 ? 1 : 10 ** (n + 1);
     const A = t.int(2, 40) * Math.max(scale, 10);
     if (A < 100 && scale === 1) return null;
+    if (A > 99999) return null;
     const base = decimalText(tenths, 1);
-    const value = (A * tenths ** n) / 10 ** n;
-    const one = (A * tenths) / 10;
+    const power = (k) => (A * tenths ** k) / 10 ** k;
+    const value = power(n);
+    const one = power(1);
     const times = (A * n * tenths) / 10;
     const linear = A + n * (one - A);
-    if (!Number.isInteger(value) || value > 99999 || !Number.isInteger(one) || !Number.isInteger(times)) return null;
-    const wrong = [
+    if (!Number.isInteger(value) || value > 99999) return null;
+    // 2 × 2 = 2²: the trap below names this slip, so it must not land on the key.
+    if (times === value || one === value) return null;
+    const pool = [
       [one, `Applies the factor ${base} only once, giving the value after 1 ${ctx.unit}.`],
       [times, `Uses ${base} × ${n} in place of (${base})${sup(n)}, multiplying instead of raising to a power.`],
-    ];
-    if (linear > 0 && Number.isInteger(linear)) wrong.push([linear, `Adds the first ${ctx.unit}'s change, ${num(one - A)}, ${n} times, as if the change were linear.`]);
+      [linear, `Adds the first ${ctx.unit}'s change, ${commas(one - A)}, ${n} times, as if the change were linear.`],
+      [power(n + 1), `Applies the factor ${n + 1} times, counting one ${ctx.unit} too many.`],
+      [value - A, `Gives the change over ${n} ${ctx.unit}s instead of the value.`],
+    ].filter(([v]) => Number.isInteger(v) && v > 0 && v <= 999999);
+    const wrong = spreadAround(t, value, pool);
     return {
       responseType: numeric ? "numeric" : "multiple-choice",
       stimulus: { type: "equations", content: `f(t) = ${commas(A)}(${base})^t` },
       stem: `The function f models ${ctx.what} t ${ctx.unit}s after ${ctx.start}. According to the model, what is ${ctx.short} ${n} ${ctx.unit}s after ${ctx.start}?`,
       correct: numeric ? value : commas(value),
-      wrong: numeric ? undefined : wrong.map(([v, why]) => [commas(v), why]),
+      wrong: numeric ? pool.map(([v]) => [v, "slip"]) : wrong.map(([v, why]) => [commas(v), why]),
       explanation: `f(${n}) = ${commas(A)}(${base})${sup(n)} = ${commas(A)} × ${decimalText(tenths ** n, n)} = ${commas(value)}.`,
       steps: [
         `Substitute t = ${n}: f(${n}) = ${commas(A)}(${base})${sup(n)}.`,
@@ -259,7 +356,7 @@
       verify: () => {
         let amount = A;
         for (let step = 0; step < n; step += 1) amount = (amount * tenths) / 10;
-        return approx(amount, value);
+        return approx(amount, value) && (numeric || wrong.every(([v]) => !approx(v, amount)));
       },
     };
   }
@@ -281,11 +378,13 @@
       stimulus: { type: "equations", content: vertexFormText(a, h, k) },
       stem: `The function f is defined by the given equation. What is the ${word} value of f(x)?`,
       correct: k,
-      wrong: numeric ? undefined : [
+      wrong: spreadAround(t, k, [
         [h, `Gives the x-coordinate of the vertex, where the ${word} occurs, not the ${word} value.`],
         [-h, "Gives the x-coordinate of the vertex, with its sign reversed as well."],
         [f0, "Gives f(0), the y-intercept, instead of the value at the vertex."],
-      ],
+        [a * 4 * h * h + k, `Reads the vertex at x = ${num(-h)} from the sign in the parentheses and evaluates f there.`],
+        [-k, "Reverses the sign of the constant term."],
+      ]),
       explanation:
         `(${lin(1, -h)})² is never negative and is 0 at x = ${num(h)}. ${a > 0 ? "Since the leading coefficient is positive, f(x) is least" : "Since the leading coefficient is negative, f(x) is greatest"} ` +
         `when that square is 0, so the ${word} value is f(${num(h)}) = ${num(k)}.`,
@@ -355,11 +454,13 @@
       stimulus: { type: "equations", content: text },
       stem: "The function f is defined by the given equation. What is the x-coordinate of the vertex of the graph of y = f(x) in the xy-plane?",
       correct: numeric ? mid : ratio(mid),
-      wrong: numeric ? undefined : [
-        [ratio(-mid), "Reads the zeros from the factors with the wrong signs, then takes their midpoint."],
-        [ratio(r + s), "Adds the zeros but does not divide by 2."],
-        [ratio(Math.abs(r - s) / 2), "Takes half the distance between the zeros instead of the point halfway between them."],
-      ],
+      wrong: spreadAround(t, mid, [
+        [-mid, "Reads the zeros from the factors with the wrong signs, then takes their midpoint."],
+        [r + s, "Adds the zeros but does not divide by 2."],
+        [Math.abs(r - s) / 2, "Takes half the distance between the zeros instead of the point halfway between them."],
+        [a * (mid - r) * (mid - s), "Gives the y-coordinate of the vertex instead of the x-coordinate."],
+        [-(r + s), "Reads the zeros with the wrong signs and adds them without dividing by 2."],
+      ]).map(([value, why]) => [ratio(value), why]),
       explanation: `The zeros of f are ${num(r)} and ${num(s)}. A parabola is symmetric about its vertex, so the vertex lies halfway between them: x = (${num(r)} + ${paren(s)})/2 = ${num(mid)}.`,
       steps: [
         `f(x) = 0 at x = ${num(r)} and x = ${num(s)}.`,
@@ -384,6 +485,7 @@
     const x0 = t.int(-3, 2);
     const h = x0 + t.int(1, 4);
     const k = t.int(-15, 15);
+    if (k === h) return null; // the trap contrasts the two
     const xs = [0, 1, 2, 3, 4, 5].map((i) => x0 + i);
     const f = (x) => a * (x - h) ** 2 + k;
     const askValue = t.chance(0.45);
@@ -432,8 +534,8 @@
 
   function projectileItem(t, ask, numeric) {
     const ctx = t.pick(LAUNCHES);
-    const t2 = t.int(3, 8);
-    const u = t.int(1, t2 - 2);
+    const t2 = t.int(3, 10);
+    const u = t.int(1, Math.min(t2 - 2, 6));
     const { g } = ctx;
     if (g === 5 && (t2 + u) % 2 !== 0) return null;
     const v = g * (t2 - u);
@@ -454,8 +556,10 @@
       key = t2;
       wrong = [
         [u, `Takes the negative solution, t = ${MINUS}${u}, and drops its sign; a time before launch is not in the model's domain.`],
-        [peakT, "Gives the time of the maximum height, halfway to the zeros' midpoint, not the landing time."],
+        [peakT, "Gives the time of the maximum height, midway between the two zeros, not the landing time."],
         [t2 - u, `Gives the time the ${ctx.noun} returns to its starting height of ${h0} ${ctx.unit}, where h(t) = ${h0}, not 0.`],
+        [t2 + u, `Subtracts the negative solution from the positive one, ${t2} ${MINUS} (${MINUS}${u}), as if the flight began at t = ${MINUS}${u}.`],
+        [h0, `Gives the starting height, h(0) = ${h0}, instead of a time.`],
       ];
       steps = [
         `The ${ctx.noun} hits the ground when h(t) = 0: ${poly([-g, v, h0], "t")} = 0.`,
@@ -470,6 +574,7 @@
         [peakT, `Gives the time, ${num(peakT)} seconds, at which the maximum occurs, not the height.`],
         [h0, `Gives the starting height h(0) = ${h0}.`],
         [g * peakT * peakT + v * peakT + h0, `Evaluates h(${num(peakT)}) with +${g}t² instead of ${MINUS}${g}t².`],
+        [h(t2 / 2), `Takes the maximum at t = ${num(t2 / 2)}, halfway to the landing time, instead of at the vertex.`],
       ];
       steps = [
         `The maximum occurs at the vertex, t = ${v}/(2 · ${g}) = ${num(peakT)}.`,
@@ -488,6 +593,8 @@
         [tau1, "Gives the earlier of the two times, when the object is still rising."],
         [peakT, "Gives the time of the maximum height."],
         [t2, "Gives the time the object hits the ground."],
+        [tau1 + tau2, "Adds the two times, the sum of the solutions, instead of choosing the later one."],
+        [H, `Gives the height, ${H} ${ctx.unit}, instead of the time.`],
       ];
       steps = [
         `Set h(t) = ${H}: ${poly([-g, v, h0 - H], "t")} = 0.`,
@@ -496,12 +603,13 @@
       ];
       trap = `Both t = ${tau1} and t = ${tau2} give a height of ${H}; the question asks for the later one.`;
     }
+    const offered = spreadAround(t, key, wrong.filter(([value]) => Number.isFinite(value) && value > 0), 0.8);
     return {
       responseType: numeric ? "numeric" : "multiple-choice",
       stimulus: { type: "equations", content: model },
       stem,
       correct: key,
-      wrong: numeric ? undefined : wrong,
+      wrong: numeric ? wrong : offered,
       explanation: steps.join(" "),
       steps,
       principles: [
@@ -532,42 +640,79 @@
 
   /* ================================================= exponential-table-model */
 
+  // Bases as exact fractions top/bottom, with the text a student sees.
   const TABLE_BASES = [
     { text: "2", top: 2, bottom: 1 },
     { text: "3", top: 3, bottom: 1 },
     { text: "4", top: 4, bottom: 1 },
+    { text: "5", top: 5, bottom: 1 },
     { text: "1/2", top: 1, bottom: 2 },
+    { text: "1/3", top: 1, bottom: 3 },
     { text: "0.5", top: 1, bottom: 2 },
     { text: "1.5", top: 3, bottom: 2 },
+    { text: "2.5", top: 5, bottom: 2 },
+    { text: "0.8", top: 4, bottom: 5 },
+    { text: "1.2", top: 6, bottom: 5 },
   ];
+
+  // top/bottom in the style of the base it came from: a decimal when the base
+  // is written as a decimal and the value terminates, otherwise a fraction.
+  function fractionText(top, bottom, decimalStyle) {
+    const g = S.gcd(top, bottom);
+    const [n, d] = [top / g, bottom / g];
+    if (d === 1) return String(n);
+    const decimal = decimalStyle ? ratioText(n, d, 4) : null;
+    return decimal || `${n}/${d}`;
+  }
 
   function exponentialTableItem(t, ask) {
     const base = t.pick(TABLE_BASES);
-    const x0 = base.top === 4 ? 1 : t.pick([1, 2]);
-    const last = x0 + 4;
-    const a = base.bottom === 1 ? t.int(2, base.top === 4 ? 5 : 12) : base.bottom ** last * t.int(1, 4);
-    const f = (x) => (a * base.top ** x) / base.bottom ** x;
-    const xs = [0, 1, 2, 3].map((i) => x0 + i);
+    // Rows one apart, or two apart (then consecutive rows differ by the base squared).
+    const step = ask === "equation" && t.chance(0.3) ? 2 : 1;
+    // The table never shows x = 0: it starts after it, or ends just before it.
+    const x0 = t.pick(step === 2 ? [1, 2] : [1, 2, 3, -4]);
+    const xs = [0, 1, 2, 3].map((i) => x0 + step * i);
+    const last = xs[3] + step;
+    // The coefficient must make every shown value (and the value asked) whole.
+    const lowest = Math.min(0, x0);
+    const highest = Math.max(last, 0);
+    const unit = base.bottom ** Math.max(0, highest) * base.top ** Math.max(0, -lowest);
+    const a = unit * t.int(1, base.bottom === 1 && base.top <= 3 ? 12 : 4);
+    const f = (x) => (a * base.top ** Math.max(x, 0) * base.bottom ** Math.max(-x, 0)) / (base.bottom ** Math.max(x, 0) * base.top ** Math.max(-x, 0));
     const values = xs.map(f);
-    if (values.concat([f(last), a]).some((value) => !Number.isInteger(value) || value > 99999)) return null;
+    if (values.concat([f(last), a]).some((value) => !Number.isInteger(value) || value > 99999 || value < 1)) return null;
+    if (values[0] === a) return null;
     const content = S.table(["x", "f(x)"], xs.map((x) => [x, f(x)]));
     const ratioValue = base.top / base.bottom;
-    const D = values[1] - values[0];
-    const E = values[0] - D * x0;
+    const stepTop = base.top ** step;
+    const stepBottom = base.bottom ** step;
+    const decimalStyle = base.text.includes(".");
+    const stepText = step === 1 ? base.text : fractionText(stepTop, stepBottom, decimalStyle);
+    const inverse = fractionText(base.bottom, base.top, decimalStyle);
     const form = (coef, baseText) => `f(x) = ${commas(coef)}(${baseText})^x`;
-    const inverse = base.bottom === 1 ? `1/${base.top}` : base.top === 1 ? `${base.bottom}` : `${base.bottom}/${base.top}`;
     const intro = "The table shows values of the exponential function f for selected values of x.";
+    const backSteps = x0 > 0
+      ? `Work back to x = 0: f(0) = ${commas(values[0])} ÷ ${x0 === 1 ? base.text : `(${base.text})${sup(x0)}`} = ${commas(a)}.`
+      : `Step forward to x = 0: f(0) = ${commas(values[3])} × ${base.text} = ${commas(a)}.`;
     const steps = [
-      `Each value is ${ratioValue > 1 ? `${base.text} times` : `${base.text} of`} the one before: ${commas(values[1])} ÷ ${commas(values[0])} = ${base.text}.`,
-      `Work back ${x0} step${x0 === 1 ? "" : "s"} to x = 0: f(0) = ${commas(values[0])} ÷ (${base.text})${sup(x0)} = ${commas(a)}.`,
+      step === 1
+        ? `Each value is the one before it times ${base.text}: ${commas(values[1])} ÷ ${commas(values[0])} = ${base.text}.`
+        : `Consecutive rows are 2 apart in x, and each value is the one before it times ${stepText}, so each increase of 1 in x multiplies f by √(${stepText}) = ${base.text}.`,
+      backSteps,
     ];
     if (ask === "equation") {
+      // A 2 × 2 grid: coefficient f(0) or the first table value, times the
+      // base or the wrong base (its reciprocal, or the two-step ratio).
+      const wrongBase = step === 1 ? inverse : stepText;
+      const wrongBaseValue = step === 1 ? 1 / ratioValue : ratioValue ** 2;
+      const baseWhy = step === 1
+        ? "inverts the ratio, dividing each value by the next one instead of the previous one"
+        : `uses ${stepText}, the ratio between rows, as the base, but the rows are 2 apart in x`;
       const offers = [
-        [form(values[0], base.text), `Uses f(${x0}) = ${commas(values[0])} as the initial value; the table starts at x = ${x0}, not x = 0.`, (x) => values[0] * ratioValue ** x],
-        [`f(x) = ${lin(D, E)}`, "Fits a line through the first two rows; the differences in the table are not constant.", (x) => D * x + E],
-        [form(a, inverse), "Inverts the ratio, dividing each value by the next one instead of the previous one.", (x) => a / ratioValue ** x],
+        [form(values[0], base.text), `Uses f(${num(x0)}) = ${commas(values[0])} as the coefficient; the coefficient is f(0), and the table starts at x = ${num(x0)}.`, (x) => values[0] * ratioValue ** x],
+        [form(a, wrongBase), `Finds f(0) but ${baseWhy}.`, (x) => a * wrongBaseValue ** x],
+        [form(values[0], wrongBase), `Uses the first table value as the coefficient and ${baseWhy}.`, (x) => values[0] * wrongBaseValue ** x],
       ];
-      if (base.bottom === 1 && a !== base.top) offers.push([form(base.top, String(a)), "Swaps the initial value and the base.", (x) => base.top * a ** x]);
       const keyText = form(a, base.text);
       return {
         responseType: "multiple-choice",
@@ -578,12 +723,12 @@
         explanation: `${steps.join(" ")} So f(x) = ${commas(a)}(${base.text})^x.`,
         steps: [...steps, `So f(x) = ${commas(a)}(${base.text})^x.`],
         principles: ["An exponential function multiplies by the same factor for each increase of 1 in x; its coefficient is f(0), which may lie outside the table."],
-        trap: `${commas(values[0])} is f(${x0}), not f(0); the coefficient is the value at x = 0.`,
-        hint: "Divide consecutive outputs. What would f be one step before the first row?",
+        trap: `${commas(values[0])} is f(${num(x0)}), not f(0), and the base is the factor for a change of 1 in x.`,
+        hint: "Compare consecutive outputs by dividing. What would f be at x = 0?",
         verify: () => {
-          const rows = content.split("\n").slice(1).map((line) => line.split(" | ").map((cell) => Number(cell.replace(MINUS, "-").replace(/,/g, ""))));
+          const rows = readTable(content);
           const fits = (fn) => rows.every(([x, y]) => approx(fn(x), y));
-          // The key is rebuilt from its displayed coefficient and base, not from a and the base object.
+          // The key is rebuilt from its displayed coefficient and base.
           const [, coef, baseShown] = keyText.match(/^f\(x\) = ([\d,]+)\(([\d./]+)\)\^x$/);
           const [top, bottom = "1"] = baseShown.split("/");
           const shown = (x) => Number(coef.replace(/,/g, "")) * (Number(top) / Number(bottom)) ** x;
@@ -591,21 +736,23 @@
         },
       };
     }
+    const rows = () => readTable(content);
     if (ask === "zero") {
       return {
         responseType: "numeric",
         stimulus: { type: "table", content },
         stem: `${intro} What is the value of f(0)?`,
         correct: a,
+        wrong: [[values[0], "first row"], [values[0] - (values[1] - values[0]) * x0, "linear"]],
         explanation: steps.join(" "),
         steps: [...steps, `f(0) = ${commas(a)}.`],
         principles: ["Stepping x back by 1 divides an exponential function's value by its factor."],
-        trap: `The ratio ${base.text} is found on the way; subtracting the first difference instead of dividing by the ratio gives ${commas(E)}, the linear guess.`,
+        trap: `f(${num(x0)}) = ${commas(values[0])} is the first row, not f(0), and stepping by the first difference, as if f were linear, gives ${commas(values[0] - (values[1] - values[0]) * x0)}.`,
         hint: "What happens to f each time x decreases by 1?",
         verify: () => {
-          const rows = content.split("\n").slice(1).map((line) => line.split(" | ").map((cell) => Number(cell.replace(MINUS, "-").replace(/,/g, ""))));
-          const r = rows[1][1] / rows[0][1];
-          return approx(rows[0][1] / r ** rows[0][0], a) && approx(rows[3][1] / rows[2][1], r);
+          const r = rows();
+          const ratio = r[1][1] / r[0][1];
+          return approx(r[0][1] / ratio ** r[0][0], a) && approx(r[3][1] / r[2][1], ratio);
         },
       };
     }
@@ -615,21 +762,22 @@
     return {
       responseType: "numeric",
       stimulus: { type: "table", content },
-      stem: `${intro} What is the value of f(${last})?`,
+      stem: `${intro} What is the value of f(${num(last)})?`,
       correct: next,
-      explanation: `Each increase of 1 in x multiplies f by ${base.text}, so f(${last}) = ${commas(prev)} × ${base.text} = ${commas(next)}.`,
+      wrong: [[linearNext, "linear"]],
+      explanation: `Each increase of 1 in x multiplies f by ${base.text}, so f(${num(last)}) = ${commas(prev)} × ${base.text} = ${commas(next)}.`,
       steps: [
         `Find the factor: ${commas(values[1])} ÷ ${commas(values[0])} = ${base.text}.`,
-        `The next row is one more step: f(${last}) = f(${last - 1}) × ${base.text}.`,
-        `f(${last}) = ${commas(prev)} × ${base.text} = ${commas(next)}.`,
+        `The next value is one more step: f(${num(last)}) = f(${num(last - 1)}) × ${base.text}.`,
+        `f(${num(last)}) = ${commas(prev)} × ${base.text} = ${commas(next)}.`,
       ],
       principles: ["Equal steps in x multiply an exponential function by equal factors; they do not add equal amounts."],
       trap: `Continuing the last difference, as if f were linear, gives ${commas(linearNext)}.`,
       hint: "Compare consecutive outputs by dividing, not subtracting.",
       verify: () => {
-        const rows = content.split("\n").slice(1).map((line) => line.split(" | ").map((cell) => Number(cell.replace(MINUS, "-").replace(/,/g, ""))));
-        const r = rows[1][1] / rows[0][1];
-        return approx(rows[3][1] * r, next) && !approx(linearNext, next);
+        const r = rows();
+        const ratio = r[1][1] / r[0][1];
+        return approx(r[3][1] * ratio, next) && !approx(linearNext, next);
       },
     };
   }
@@ -855,7 +1003,7 @@
       steps: [
         `Write f from its zeros: f(x) = ${factored}.`,
         `Use ${point(px, py)}: ${num(py)} = ${term((px - r1) * (px - r2), "a")}, so a = ${num(a)}.`,
-        `The axis of symmetry is halfway between the zeros: x = (${num(r1)} + ${num(r2)})/2 = ${num(h)}.`,
+        `The axis of symmetry is halfway between the zeros: x = (${num(r1)} + ${paren(r2)})/2 = ${num(h)}.`,
         `The ${word} value is f(${num(h)}) = ${num(a)}(${num(h - r1)})(${num(h - r2)}) = ${num(extreme)}.`,
       ],
       principles: [
@@ -1067,7 +1215,15 @@
         const simple = ratioText(Number(perUnit.change.replace(".", "")) * P, 10 ** places(perUnit.change), 2);
         if (simple) wrong.push([pct(simple), `Multiplies the yearly ${perUnit.change}% by ${P}, adding the percents instead of compounding them.`]);
       }
+      wrong.push([pct(F.text), `Writes the factor ${F.text} with a percent sign instead of converting it to a percent change.`]);
       if (new Set(wrong.map(([value]) => value).concat(pct(F.change))).size < 4) continue;
+      if (wrong.some(([value]) => value === pct(F.change))) continue;
+      // Pick three slips so the key is sometimes the extreme value.
+      const asNumber = (text) => Number(text.replace("%", ""));
+      const picked = spreadAround(t, Number(F.change), wrong.map(([text, why]) => [asNumber(text), why, text]), 0.6);
+      if (picked.length < 3) continue;
+      wrong.length = 0;
+      picked.forEach(([, why, text]) => wrong.push([text, why]));
       const stimulus = words
         ? null
         : { type: "equations", content: `f(t) = ${commas(A)}${expPart(b.text, n)}` };
@@ -1084,7 +1240,7 @@
         stimulus,
         stem,
         correct: numeric ? Number(F.change) : pct(F.change),
-        wrong: numeric ? undefined : wrong,
+        wrong: wrong,
         explanation:
           `A change of ${count(P)} multiplies the quantity by ${b.text}^(${exponentNote}) = ${F.text}` +
           `${n / g === 1 ? "" : `, because ${b.text} = ${factorPower(s, 1).text}^${n / g}`}. ` +
@@ -1137,6 +1293,16 @@
         if (bOverN) wrong.push([form(bOverN, "t"), `Divides the base by ${n} instead of taking its ${n === 2 ? "square" : n === 3 ? "cube" : "fourth"} root.`]);
         if (places(bn.text) <= 4) wrong.push([form(bn.text, "t"), `Reads t/${n} as ${n}t and raises the base to the power ${n}.`]);
         const correct = form(one.text, "t");
+        const grid = t.chance(0.5);
+        if (grid) {
+          // A grid of two slips: keeping the original base, and reading t/n as nt.
+          wrong.length = 0;
+          wrong.push(
+            [form(one.text, `(${n}t)`), `Rewrites the base as ${one.text} and then also reads t/${n} as ${n}t, converting twice.`],
+            [form(b.text, "t"), `Drops the /${n} from the exponent but keeps the base ${b.text}, which is the factor for ${n} years, not 1.`],
+            [form(b.text, `(${n}t)`), `Reads t/${n} as ${n}t and keeps the base ${b.text}.`],
+          );
+        }
         if (new Set(wrong.map(([v]) => v).concat(correct)).size < 4) continue;
         return {
           responseType: "multiple-choice",
@@ -1154,7 +1320,9 @@
             `Check at t = ${n}: both forms give ${commas(A)} × ${b.text}.`,
           ],
           principles: ["(b^n)^(t/n) = b^t.", "An equivalent form must agree with the original for every t, not just at t = 0."],
-          trap: "Dividing the base or its percent change by the period treats a compounding change as if it were linear.",
+          trap: grid
+            ? `${b.text} is the factor for ${n} years. Changing the base to ${one.text} already accounts for the /${n}, so changing the exponent as well converts twice.`
+            : "Dividing the base or its percent change by the period treats a compounding change as if it were linear.",
           hint: `What number, multiplied by itself ${n} times, gives ${b.text}?`,
           verify: () => [0.5, 1, 3, 7].every((x) => approx(A * one.value ** x, f(x))) &&
             !approx(A * one.value ** (1 / n), f(1)),
@@ -1172,6 +1340,13 @@
       const letter = per === 12 ? "m" : "q";
       const form = (exp, base = rText) => `g(${letter}) = ${commas(A)}(${base})^${exp}`;
       const correct = form(`(${letter}/${per})`);
+      const monthlyWhy = `the yearly ${decimalTextHard(Math.abs(r - 100), 0)}% divided by ${per}`;
+      const gridWrong = [
+        [form(`(${per}${letter})`), `Converts in the wrong direction: ${letter} ${per === 12 ? "months" : "quarters"} are ${letter}/${per} years, not ${per}${letter} years.`],
+        [form(`(${letter}/${per})`, monthly), `Uses ${monthlyWhy} as the rate and also divides ${letter} by ${per}, converting twice.`],
+        [form(`(${per}${letter})`, monthly), `Uses ${monthlyWhy} as the rate and multiplies ${letter} by ${per}.`],
+      ];
+      const useGrid = t.chance(0.6);
       return {
         responseType: "multiple-choice",
         stimulus: { type: "equations", content: `f(t) = ${commas(A)}(${rText})^t` },
@@ -1179,7 +1354,7 @@
           `The function f is defined by the given equation, where f(t) is ${ctx.long} t years after ${ctx.event}. ` +
           `The function g models the same quantity, where g(${letter}) is ${ctx.short} ${letter} ${noun} after ${ctx.event}. Which of the following defines g?`,
         correct,
-        wrong: [
+        wrong: useGrid ? gridWrong : [
           [form(`(${per}${letter})`), `Converts in the wrong direction: ${letter} ${per === 12 ? "months" : "quarters"} are ${letter}/${per} years, not ${per}${letter} years.`],
           [form(letter, monthly), `Divides the yearly ${decimalTextHard(Math.abs(r - 100), 0)}% by ${per}; that ${per === 12 ? "monthly" : "quarterly"} rate compounded ${per} times is not ${decimalTextHard(Math.abs(r - 100), 0)}%.`],
           [form(letter), `Keeps the yearly factor but counts ${per === 12 ? "months" : "quarters"} as if they were years.`],
@@ -1200,7 +1375,14 @@
           const g = (x) => A * (r / 100) ** (x / per);
           const f = (x) => A * (r / 100) ** x;
           const wrongMonthly = (x) => A * Number(monthly) ** x;
-          return approx(g(per), f(1)) && approx(g(per * 2.5), f(2.5)) && !approx(wrongMonthly(per), f(1));
+          const R = r / 100;
+          const M = Number(monthly);
+          // Each offered model, evaluated one year in, misses the yearly factor.
+          const offeredFns = useGrid
+            ? [(x) => A * R ** (per * x), (x) => A * M ** (x / per), (x) => A * M ** (per * x)]
+            : [(x) => A * R ** (per * x), wrongMonthly, (x) => A * R ** x];
+          return approx(g(per), f(1)) && approx(g(per * 2.5), f(2.5)) && !approx(wrongMonthly(per), f(1)) &&
+            offeredFns.every((fn) => !approx(fn(per), f(1)));
         },
       };
     }
@@ -1238,7 +1420,7 @@
         correct,
         wrong,
         explanation:
-          `(${b.text})^(${MINUS}t/${n}) = ((${b.text})^(${MINUS}1/${n}))^t. Since ${b.text} = ${inv.text}^${n}, ` +
+          `(${b.text})^(${MINUS}t/${n}) = [(${b.text})^(${MINUS}1/${n})]^t. Since ${b.text} = ${inv.text}^${n}, ` +
           `(${b.text})^(${MINUS}1/${n}) = 1/${inv.text} = ${perYear.text}. The yearly factor ${perYear.text} is a ${perYear.change}% ${perYear.up ? "increase" : "decrease"}.`,
         steps: [
           `Split the exponent: (${b.text})^(${MINUS}t/${n}) = [(${b.text})^(${MINUS}1/${n})]^t.`,
@@ -1270,7 +1452,8 @@
       const A = minus ? u * P ** c : u * Q ** c;
       if (A > 20000 || a > 20000 || a === A) continue;
       const swapped = ratioText(minus ? A * P ** c : A * Q ** c, minus ? Q ** c : P ** c, 2);
-      const scaled = ratioText(minus ? A * Q : A * P, minus ? P * c : Q * c, 2);
+      // Uses b × c where b^c belongs: A ÷ (b·c) for t − c, A × (b·c) for t + c.
+      const scaled = minus ? ratioText(A * Q, P * c, 2) : ratioText(A * P * c, Q, 2);
       const ctx = t.pick(CONTEXTS);
       const wrong = [[A, `Reads the coefficient ${commas(A)} as the value at t = 0, but the exponent is t ${minus ? MINUS : "+"} ${c}, not t.`]];
       if (swapped && Number(swapped) !== a) wrong.push([Number(swapped), `${minus ? "Multiplies" : "Divides"} by ${bText}^${c} instead of ${minus ? "dividing" : "multiplying"}: the sign of the shift was reversed.`]);
@@ -1284,7 +1467,7 @@
           `The function f is defined by the given equation, where f(t) is ${ctx.long} t years after ${ctx.event}. ` +
           `The equation can be rewritten in the form f(t) = a(b)^t, where a and b are constants. What is the value of a?`,
         correct: a,
-        wrong: numeric ? undefined : wrong,
+        wrong: wrong,
         explanation:
           `(${bText})^${exp} = (${bText})^t · (${bText})^${minus ? `(${MINUS}${c})` : c}. ` +
           `So a = ${commas(A)} ${minus ? "÷" : "×"} ${bText}^${c} = ${commas(A)} ${minus ? "÷" : "×"} ${ratioText(P ** c, Q ** c)} = ${commas(a)}, which is also f(0).`,
@@ -1349,7 +1532,7 @@
         stimulus: { type: "table", content: table },
         stem: `The table gives selected values of the function f. The function g is defined by g(x) = ${shifted("f", h, k, scale)}. What is the value of g(${num(m)})?`,
         correct: key,
-        wrong: numeric ? undefined : wrong,
+        wrong: wrong,
         explanation:
           `g(${num(m)}) = ${scale === 1 ? "" : "2"}f(${num(m)} ${signed(h)}) ${signed(k)} = ${scale === 1 ? "" : "2"}f(${num(m + h)}) ${signed(k)}. ` +
           `The table gives f(${num(m + h)}) = ${num(f(m + h))}, so g(${num(m)}) = ${scale === 1 ? "" : `2(${num(f(m + h))}) `}${scale === 1 ? num(f(m + h)) + " " : ""}${signed(k)} = ${num(key)}.`,
@@ -1363,7 +1546,7 @@
           "Adding inside the parentheses changes the input; adding outside changes the output.",
         ],
         trap: numeric
-          ? `Looking up f(${num(m - h)}) (shifting the wrong way) gives ${num(scale * f(m - h) + k)}, and stopping at f(${num(m + h)}) gives ${num(f(m + h))}.`
+          ? `Looking up f(${num(m - h)}) (shifting the wrong way) gives ${num(scale * f(m - h) + k)}, and stopping at ${scale === 1 ? "" : "2"}f(${num(m + h)}) gives ${num(scale * f(m + h))}.`
           : "A shift inside the parentheses moves the graph opposite to its sign, which tempts a lookup in the wrong row.",
         hint: `Which input does f receive when x = ${num(m)}?`,
         verify: () => {
@@ -1398,7 +1581,7 @@
         stimulus: { type: "table", content: table },
         stem: `The function g is defined by g(x) = ${shifted("f", h, k)}, where f is a function. The table gives selected values of g. What is the value of f(${num(n)})?`,
         correct: key,
-        wrong: numeric ? undefined : wrong,
+        wrong: wrong,
         explanation:
           `f(${num(n)}) appears in g(x) when x ${signed(h)} = ${num(n)}, so x = ${num(n - h)}. ` +
           `Then g(${num(n - h)}) = f(${num(n)}) ${signed(k)}, and f(${num(n)}) = ${num(g(n - h))} ${signed(-k)} = ${num(key)}.`,
@@ -1469,7 +1652,7 @@
         stimulus: { type: "table", content: table },
         stem: `${lead} What is the value of ${outerName}(${innerName}(${num(m)}))?`,
         correct: key,
-        wrong: numeric ? undefined : wrong,
+        wrong: wrong,
         explanation:
           `Work from the inside out: ${innerName}(${num(m)}) = ${num(mid)}, and then ${outerName}(${num(mid)}) = ${num(key)}.`,
         steps: [
@@ -1539,7 +1722,7 @@
           `The table gives selected values of the quadratic function f. The function g is defined by g(x) = ${shifted("f", -h, k, scale)}. ` +
           (askValue ? "What is the minimum value of g(x)?" : "For what value of x does g(x) reach its minimum value?"),
         correct: key,
-        wrong: numeric ? undefined : wrong,
+        wrong: wrong,
         explanation:
           `${findVertex} So f has minimum ${num(q)} at x = ${num(p)}. The graph of g is the graph of f shifted ${h > 0 ? "right" : "left"} ${Math.abs(h)}` +
           `${scale === 2 ? ", stretched vertically by 2," : ""} and moved ${k > 0 ? "up" : "down"} ${Math.abs(k)}, so g has minimum ${num(minValue)} at x = ${num(minAt)}.`,
@@ -1632,12 +1815,13 @@
           [atMinus, `Evaluates p at ${num(-r)} instead of ${num(r)}: dividing by ${divisor(r)} gives the remainder p(${num(r)}).`],
           [flippedR, `Sets p(${num(r)}) equal to ${num(-R)}, reversing the sign of the remainder.`],
           [partial, `Stops at ${num(r)}k = ${num(partial)} without dividing by ${num(r)}.`],
+          [k + d / r ** power, `Leaves out the constant term ${num(d)} when substituting x = ${num(r)}.`],
         ]
         : [
           [atMinus, `Uses x = ${num(-r)} as the zero of ${divisor(r)}; the zero of ${divisor(r)} is ${num(r)}.`],
-          [-k, `Loses a sign while moving the other terms of p(${num(r)}) = 0 across the equals sign.`],
           [partial, `Stops at ${num(r ** power)}k = ${num(partial)} without dividing by ${num(r ** power)}.`],
           [k * r, `Divides by ${num(r)} instead of ${num(r ** power)} when solving for k.`],
+          [k + d / r ** power, `Leaves out the constant term ${num(d)} when substituting x = ${num(r)}.`],
         ];
       const clean = wrong.filter(([v]) => Number.isInteger(v));
       if (!numeric && new Set(clean.map(([v]) => v).concat(k)).size < 4) continue;
@@ -1665,7 +1849,7 @@
         stimulus: { type: "equations", content: `p(x) = ${display}` },
         stem,
         correct: k,
-        wrong: numeric ? undefined : clean,
+        wrong: clean,
         explanation:
           `${remainderForm ? `The remainder when p(x) is divided by ${divisor(r)} is p(${num(r)})` : `${divisor(r)} is a factor exactly when p(${num(r)}) = 0`}, ` +
           `so p(${num(r)}) = ${num(target)}. Substituting x = ${num(r)}, the terms without k add to ${num(target - partial)}, which leaves ` +
@@ -1699,7 +1883,9 @@
 
   function polynomialTable(t) {
     for (;;) {
-      const r = t.nonzero(-4, 4);
+      // |r| ≥ 2: the sign-change midpoint m can never be ±1 (the table always
+      // lists x = 0), so a key "x ± 1" would be the only choice with its number.
+      const r = t.pick([-4, -3, -2, 2, 3, 4]);
       const m = t.int(-4, 5);
       const xs = [...new Set([r, m - 1, m + 1, 0, t.int(-5, 6)])].sort((x, y) => x - y);
       if (xs.length !== 5 || xs.includes(m) || m === r || m === -r || m === 0) continue;
@@ -1709,13 +1895,17 @@
       if (m - 1 === r || m + 1 === r) continue;
       values.set(m + 1, -Math.sign(left) * t.int(1, 9));
       const v = values.get(0);
-      if ([r, -r, m, 0].includes(v)) continue;
+      if ([r, -r, m, -m, 0].includes(v)) continue;
       const correct = divisor(r);
-      const wrong = [
-        [divisor(-r), `Uses x ${signed(r)}, whose zero is ${num(-r)}; the table shows p(${num(r)}) = 0, which gives the factor ${divisor(r)}.`],
-        [divisor(m), `p changes sign between x = ${num(m - 1)} and x = ${num(m + 1)}, so it has a zero there, but not necessarily at ${num(m)}: this could be a factor, but need not be.`],
-        [divisor(v), `Reads p(0) = ${num(v)} backwards, as if ${num(v)} were a zero of p.`],
-      ];
+      // Sign slips on the key and on the sign-change midpoint, so no choice
+      // shares more with the others than the key does.
+      const pool = {
+        flip: [divisor(-r), `Uses x ${signed(r)}, whose zero is ${num(-r)}; the table shows p(${num(r)}) = 0, which gives the factor ${divisor(r)}.`],
+        mid: [divisor(m), `p changes sign between x = ${num(m - 1)} and x = ${num(m + 1)}, so it has a zero there, but not necessarily at ${num(m)}: this could be a factor, but need not be.`],
+        midFlip: [divisor(-m), `Takes the sign change between x = ${num(m - 1)} and x = ${num(m + 1)} as a zero at ${num(m)} and then writes the factor with the sign of the zero.`],
+        intercept: [divisor(v), `Reads p(0) = ${num(v)} backwards, as if ${num(v)} were a zero of p.`],
+      };
+      const wrong = t.chance(0.5) ? [pool.flip, pool.mid, pool.midFlip] : [pool.mid, pool.midFlip, pool.intercept];
       const table = S.table(["x", "p(x)"], xs.map((x) => [x, values.get(x)]));
       return {
         responseType: "multiple-choice",
@@ -1748,7 +1938,7 @@
             sum + yi * rows.reduce((prod, [xj], j) => (j === i ? prod : (prod * (z - xj)) / (xi - xj)), 1), 0);
           const vanish = (z) => rows.reduce((prod, [xj]) => prod * (z - xj), 1);
           const mustVanish = (z) => (at.has(z) ? at.get(z) === 0 : [0, 1, -1].every((c) => approx(lagrange(z) + c * vanish(z), 0)));
-          return at.get(r) === 0 && !mustVanish(-r) && !mustVanish(m) && !mustVanish(v) && Math.sign(at.get(m - 1)) === -Math.sign(at.get(m + 1));
+          return at.get(r) === 0 && [-r, m, -m, v].every((z) => !mustVanish(z)) && Math.sign(at.get(m - 1)) === -Math.sign(at.get(m + 1));
         },
       };
     }
@@ -1765,12 +1955,16 @@
         : `When the polynomial p(x) is divided by ${divisor(r)}, the quotient is q(x) and the remainder is ${num(R)}.`;
       const say = (name, at, value) => `${name}(${num(at)}) = ${num(value)}`;
       const correct = say("p", r, R);
-      const wrong = [
-        [say("p", -r, R), `Takes the zero of ${divisor(r)} to be ${num(-r)}, copying the sign in the divisor.`],
-        [say("q", r, R), "Attaches the remainder to the quotient q instead of to p."],
-        [say("p", r, 0), `Treats ${divisor(r)} as a factor; a nonzero remainder means it is not one.`],
-        [say("p", R, r), "Swaps the input and the output of p."],
-      ];
+      const pool = {
+        minus: [say("p", -r, R), `Takes the zero of ${divisor(r)} to be ${num(-r)}, copying the sign in the divisor.`],
+        quotient: [say("q", r, R), "Attaches the remainder to the quotient q instead of to p."],
+        both: [say("q", -r, R), `Attaches the remainder to q and takes the zero of ${divisor(r)} to be ${num(-r)}.`],
+        factor: [say("p", r, 0), `Treats ${divisor(r)} as a factor; a nonzero remainder means it is not one.`],
+        swap: [say("p", R, r), "Swaps the input and the output of p."],
+      };
+      // Two sets of slips; in each, no choice shares more symbols with the
+      // others than the key does.
+      const wrong = t.chance(0.5) ? [pool.minus, pool.quotient, pool.both] : [pool.minus, pool.swap, pool.factor];
       return {
         responseType: "multiple-choice",
         stimulus: null,
@@ -1802,11 +1996,448 @@
           return holds((p) => horner(p, r) === R) &&
             !holds((p) => horner(p, -r) === R) &&
             !holds((p, q) => horner(q, r) === R) &&
+            !holds((p, q) => horner(q, -r) === R) &&
             !holds((p) => horner(p, r) === 0) &&
             !holds((p) => horner(p, R) === r);
         },
       };
     }
+  }
+
+  /* ================================================== graph-which-function */
+
+  // A candidate definition of f: its text and its own function, built from
+  // its own constants, so the key's match with the drawn graph is checked by
+  // evaluating, not assumed.
+  const powerFactor = (r, power) => (power === 1 ? rootFactor(r) : r === 0 ? `x${sup(power)}` : `${rootFactor(r)}${sup(power)}`);
+
+  function productCandidate(a, factors) {
+    return {
+      text: `f(x) = ${lead(a)}${factors.map(([r, power]) => powerFactor(r, power)).join("")}`,
+      fn: (x) => factors.reduce((product, [r, power]) => product * (x - r) ** power, a),
+    };
+  }
+
+  function exponentialCandidate(a, base, c) {
+    const [top, bottom] = base;
+    const baseText = bottom === 1 ? `${top}` : `${top}/${bottom}`;
+    const power = bottom === 1 && Math.abs(a) === 1 ? `${lead(a)}${top}^x` : `${lead(a)}(${baseText})^x`;
+    return {
+      text: `f(x) = ${power}${c === 0 ? "" : ` ${signed(c)}`}`,
+      fn: (x) => a * (top / bottom) ** x + c,
+    };
+  }
+
+  function whichFunctionShape(t) {
+    const kind = t.pick(["quadratic", "quadratic", "repeated", "repeated", "exponential"]);
+    if (kind === "quadratic") {
+      const a = t.pick([1, -1, 2, -2]);
+      const r = t.int(-5, 3);
+      const s = r + t.int(2, Math.abs(a) === 2 ? 4 : 6);
+      if (s === 0 || r === 0 || -r === s) return null;
+      const key = productCandidate(a, [[r, 1], [s, 1]]);
+      const yInt = a * r * s;
+      if (Math.abs(yInt) > 9) return null;
+      const other = t.pick([s + 1, s - 1, r - 1].filter((v) => v !== r && v !== s && v !== 0));
+      const decoys = [
+        [productCandidate(-a, [[r, 1], [s, 1]]), "Has the right x-intercepts, but its leading coefficient has the wrong sign, so its graph opens the other way."],
+        [productCandidate(a, [[-r, 1], [-s, 1]]), `Opens the right way, but its zeros are ${num(-r)} and ${num(-s)}: the numbers in the factors have the signs of the zeros.`],
+        [productCandidate(2 * a, [[r, 1], [s, 1]]), `Has the right x-intercepts and opens the right way, but its y-intercept is ${num(2 * yInt)}, not ${num(yInt)}.`],
+        [productCandidate(a, [[r, 1], [other, 1]]), `Has an x-intercept at ${num(other)}, where the graph does not cross the x-axis.`],
+      ];
+      const vertex = (r + s) / 2;
+      return {
+        key, decoys, window: [Math.min(r, 0) - 2, Math.max(s, 0) + 2], extra: [vertex],
+        describe: `a parabola that opens ${a > 0 ? "upward" : "downward"}, crosses the x-axis at (${num(r)}, 0) and (${num(s)}, 0), and crosses the y-axis at (0, ${num(yInt)})`,
+        features: `The graph crosses the x-axis at x = ${num(r)} and x = ${num(s)}, opens ${a > 0 ? "upward" : "downward"}, and has y-intercept ${num(yInt)}.`,
+      };
+    }
+    if (kind === "repeated") {
+      const a = t.pick([1, -1]);
+      const r = t.int(-3, 3);
+      const s = r + t.pick([-4, -3, -2, 2, 3, 4]);
+      if (Math.abs(s) > 5 || s === r) return null;
+      const key = productCandidate(a, [[r, 2], [s, 1]]);
+      const yInt = key.fn(0);
+      const yIntText = Math.abs(yInt) <= 9 ? `; it crosses the y-axis at (0, ${num(yInt)})` : "";
+      const decoys = [
+        [productCandidate(a, [[r, 1], [s, 2]]), `Has the right zeros, but the squared factor belongs to x = ${num(r)}, where the graph touches the x-axis; this graph would touch at x = ${num(s)} instead.`],
+        [productCandidate(a, [[r, 1], [s, 1]]), `Has the right zeros, but neither is repeated, so its graph would cross the x-axis at x = ${num(r)} instead of touching it.`],
+        [productCandidate(-a, [[r, 2], [s, 1]]), "Has the right zeros and the repeated root, but the wrong sign, so its graph would rise and fall on the opposite sides."],
+        // Skipped when s = −r: the reflected zeros would repeat another choice.
+        ...(s !== -r ? [[productCandidate(a, [[-r, 2], [-s, 1]]), `Has zeros at ${num(-r)} and ${num(-s)}: the numbers in the factors have the signs of the zeros.`]] : []),
+      ];
+      const turn = (r + 2 * s) / 3;
+      return {
+        key, decoys, window: [Math.min(r, s, 0) - 2, Math.max(r, s, 0) + 2], extra: [turn],
+        describe: `a curve that ${a > 0 ? "rises from the lower left" : "falls from the upper left"}, touches the x-axis at (${num(r)}, 0) without crossing it, crosses the x-axis at (${num(s)}, 0), ` +
+          `and ${a > 0 ? "rises to the upper right" : "falls to the lower right"}${yIntText}`,
+        features: `The graph touches the x-axis at x = ${num(r)} and crosses it at x = ${num(s)}, and it ${a > 0 ? "rises" : "falls"} to the right.`,
+      };
+    }
+    const a = t.pick([1, 2, 3, -1, -2]);
+    const base = t.pick([[2, 1], [3, 1], [1, 2]]);
+    const c = t.nonzero(-4, 4);
+    const key = exponentialCandidate(a, base, c);
+    const inverse = [base[1], base[0]];
+    const shiftUp = t.pick([1, -1]);
+    const decoys = [
+      [exponentialCandidate(a, inverse, c), `Has the right y-intercept and horizontal asymptote, but its base is ${inverse[1] === 1 ? inverse[0] : `${inverse[0]}/${inverse[1]}`}, so it ${(a > 0) === (inverse[0] > inverse[1]) ? "increases" : "decreases"} where the graph ${(a > 0) === (base[0] > base[1]) ? "increases" : "decreases"}.`],
+      [exponentialCandidate(a + shiftUp, base, c - shiftUp), `Has the right y-intercept, but its graph levels off toward y = ${num(c - shiftUp)}, not y = ${num(c)}.`],
+      [exponentialCandidate(2 * a, base, c), `Levels off toward the right line, but its y-intercept is ${num(2 * a + c)}, not ${num(a + c)}.`],
+      [exponentialCandidate(-a, base, c), `Levels off toward the right line, but it is the reflection of the graph: its y-intercept is ${num(-a + c)}.`],
+    ].filter(([candidate], index) => candidate.text !== key.text && !(index === 1 && a + shiftUp === 0));
+    // A window of at most 12 units, so the grid stays one unit per square,
+    // reaching from below the curve's level in the direction it grows.
+    const heads = a > 0 ? 1 : -1;
+    let yLow = Math.min(0, c, a + c) - 1;
+    let yHigh = Math.max(0, c, a + c) + 1;
+    if (heads > 0) yHigh = Math.min(10, yLow + 12);
+    else yLow = Math.max(-10, yHigh - 12);
+    return {
+      key, decoys, yRange: [yLow, yHigh],
+      window: [-5, 4], extra: [],
+      describe: `a curve that ${(a > 0) === (base[0] > base[1]) ? "increases" : "decreases"} from left to right, levels off toward the horizontal line y = ${num(c)} on the ${base[0] > base[1] ? "left" : "right"}, ` +
+        `and crosses the y-axis at (0, ${num(a + c)})`,
+      features: `The graph levels off toward y = ${num(c)}, crosses the y-axis at ${num(a + c)}, and ${(a > 0) === (base[0] > base[1]) ? "increases" : "decreases"}.`,
+    };
+  }
+
+  function whichFunctionItem(t) {
+    const shape = whichFunctionShape(t);
+    if (!shape || shape.decoys.length < 3) return null;
+    const [xMin, xMax] = [Math.min(shape.window[0], -1), Math.max(shape.window[1], 1)];
+    // The vertical window shows every key feature, clipped to at most ±10.
+    const sampleXs = [];
+    for (let x = xMin; x <= xMax; x += 0.25) sampleXs.push(x);
+    const values = [...sampleXs, ...shape.extra].map(shape.key.fn);
+    const yMin = shape.yRange ? shape.yRange[0] : Math.max(-10, Math.floor(Math.min(0, ...values)) - 1);
+    const yMax = shape.yRange ? shape.yRange[1] : Math.min(10, Math.ceil(Math.max(0, ...values)) + 1);
+    if (yMax - yMin < 4) return null;
+    const unit = Math.min(28, 300 / (xMax - xMin));
+    const tall = yMax - yMin > 12;
+    const P = tall
+      ? S.plane({ xMin, xMax, yMin, yMax, unit, yUnit: unit / 2, yStep: 2, yLabelStep: 2 })
+      : S.plane({ xMin, xMax, yMin, yMax, unit });
+    const gridWords = tall ? "grid lines 1 unit apart horizontally and 2 units apart vertically" : "a grid of unit squares";
+    const alt = `The graph of y = f(x) in ${P.describe()}, on ${gridWords}: ${shape.describe}.`;
+    const figure = { svg: P.svg([...P.grid(), ...P.axes(), P.curve(shape.key.fn)], alt), alt, notToScale: false };
+    const decoys = t.sample(shape.decoys, 3);
+    // Visible difference: a decoy must leave the drawn curve by at least half a
+    // grid unit somewhere inside the window.
+    const visibleGap = (fn) => sampleXs.some((x) => {
+      const y = shape.key.fn(x);
+      const z = fn(x);
+      return (y >= yMin && y <= yMax) || (z >= yMin && z <= yMax) ? Math.abs(y - z) >= 0.5 : false;
+    });
+    return {
+      responseType: "multiple-choice",
+      stimulus: null,
+      figure,
+      stem: t.pick([
+        "The graph of y = f(x) is shown. Which of the following could define f?",
+        "The graph of the function f is shown in the xy-plane. Which of the following equations could define f?",
+      ]),
+      correct: shape.key.text,
+      wrong: decoys.map(([candidate, why]) => [candidate.text, why]),
+      explanation: `${shape.features} Only ${shape.key.text.replace("f(x) = ", "")} has every one of these features; each other choice misses at least one.`,
+      steps: [
+        "List what the graph shows: where it meets the x-axis and how (crossing or touching), its y-intercept, its end behavior, and any level it approaches.",
+        shape.features,
+        `Check each choice against every feature; only ${shape.key.text} passes all of them.`,
+      ],
+      principles: [
+        "A factor (x − r) gives a zero at x = r; squared, the graph touches the x-axis there instead of crossing.",
+        "In a(b)^x + c, the graph levels off toward y = c, crosses the y-axis at a + c, and grows when a > 0 and b > 1.",
+      ],
+      trap: "A choice can match most of the graph; one feature is enough to rule it out, so check every feature, not just the first.",
+      hint: "Read two or three features off the graph, then test each choice against all of them.",
+      estimatedSeconds: 110,
+      verify: () => sampleXs.every((x) => approx(shape.key.fn(x), values[sampleXs.indexOf(x)], 1e-9)) &&
+        decoys.every(([candidate]) => visibleGap(candidate.fn)),
+    };
+  }
+
+  /* ================================================ graph-transformation */
+
+  // f is drawn as line segments joining lattice points at x = −4, −2, 0, 2, 4.
+  function segmentFunction(xs, ys) {
+    return (x) => {
+      if (x < xs[0] - 1e-9 || x > xs[xs.length - 1] + 1e-9) return NaN;
+      for (let i = 0; i < xs.length - 1; i += 1) {
+        if (x <= xs[i + 1] + 1e-9) return ys[i] + ((ys[i + 1] - ys[i]) * (x - xs[i])) / (xs[i + 1] - xs[i]);
+      }
+      return ys[ys.length - 1];
+    };
+  }
+
+  function graphTransformItem(t, numeric) {
+    const xs = [-4, -2, 0, 2, 4];
+    const ys = xs.map(() => t.int(-4, 4));
+    if (new Set(ys).size < 4) return null;
+    const f = segmentFunction(xs, ys);
+    const at = (x) => ys[xs.indexOf(x)];
+    const h = t.pick([-3, -2, -1, 1, 2, 3]);
+    const k = t.nonzero(-3, 3);
+    const form = numeric ? "value" : t.pick(["value", "point", "point", "max"]);
+    const gText = shifted("f", -h, k);
+    const g = (x) => f(x - h) + k;
+    let stem;
+    let key;
+    let wrong;
+    let steps;
+    let check;
+    if (form === "value") {
+      const u = t.pick(xs);
+      const a = u + h;
+      key = at(u) + k;
+      const pool = [
+        [xs.includes(a + h) ? at(a + h) + k : null, `Shifts the wrong way: uses f(${num(a)} ${signed(h)}) = f(${num(a + h)}) instead of f(${num(a)} ${signed(-h)}) = f(${num(u)}).`],
+        [at(u) - k, `Finds f(${num(u)}) = ${num(at(u))} but ${k > 0 ? "subtracts" : "adds"} ${Math.abs(k)} instead of ${k > 0 ? "adding" : "subtracting"} it.`],
+        [xs.includes(a) ? at(a) + k : null, `Ignores the shift inside f and reads f(${num(a)}).`],
+        [at(u), `Finds f(${num(u)}) = ${num(at(u))} and stops before ${k > 0 ? "adding" : "subtracting"} ${Math.abs(k)}.`],
+        [xs.includes(a - k) ? at(a - k) + h : null, "Swaps the two shifts, moving the input by the outside number and the output by the inside number."],
+      ].filter(([value]) => value !== null && Number.isFinite(value));
+      wrong = spreadAround(t, key, pool);
+      stem = `The graph of y = f(x) is shown. The function g is defined by g(x) = ${gText}. What is the value of g(${num(a)})?`;
+      steps = [
+        `g(${num(a)}) = f(${num(a)} ${signed(-h)}) ${signed(k)} = f(${num(u)}) ${signed(k)}.`,
+        `Read the graph: f(${num(u)}) = ${num(at(u))}.`,
+        `g(${num(a)}) = ${num(at(u))} ${signed(k)} = ${num(key)}.`,
+      ];
+      check = () => approx(g(a), key) && (numeric || wrong.every(([value]) => !approx(value, key)));
+    } else if (form === "point") {
+      const u = t.pick(xs);
+      const pt2 = (x, y) => point(x, y);
+      key = pt2(u + h, at(u) + k);
+      // A grid of the two sign slips: the shift of x and the shift of y.
+      wrong = [
+        [pt2(u - h, at(u) + k), `Moves the point ${h > 0 ? "left" : "right"} ${Math.abs(h)} instead of ${h > 0 ? "right" : "left"}: f(x ${signed(-h)}) moves the graph the opposite way from the sign inside.`],
+        [pt2(u + h, at(u) - k), `Moves the point ${k > 0 ? "down" : "up"} ${Math.abs(k)} instead of ${k > 0 ? "up" : "down"}.`],
+        [pt2(u - h, at(u) - k), "Reverses both shifts."],
+      ];
+      stem = `The graph of y = f(x) is shown. The function g is defined by g(x) = ${gText}. Which of the following points lies on the graph of y = g(x)?`;
+      steps = [
+        `The graph of g is the graph of f moved ${h > 0 ? "right" : "left"} ${Math.abs(h)} and ${k > 0 ? "up" : "down"} ${Math.abs(k)}.`,
+        `The point (${num(u)}, ${num(at(u))}) on the graph of f moves to (${num(u + h)}, ${num(at(u) + k)}).`,
+        `Check: g(${num(u + h)}) = f(${num(u)}) ${signed(k)} = ${num(at(u) + k)}.`,
+      ];
+      const onG = (text) => {
+        const [, xs1, ys1] = text.replace(/−/g, "-").match(/^\((-?\d+), (-?\d+)\)$/);
+        const x = Number(xs1);
+        const y = Number(ys1);
+        return Number.isFinite(g(x)) && approx(g(x), y);
+      };
+      check = () => onG(key) && wrong.every(([text]) => !onG(text));
+    } else {
+      const top = Math.max(...ys);
+      if (ys.filter((y) => y === top).length !== 1) return null;
+      const u = xs[ys.indexOf(top)];
+      key = u + h;
+      wrong = [
+        [u - h, `Moves the high point ${h > 0 ? "left" : "right"} instead of ${h > 0 ? "right" : "left"}.`],
+        [u, "Gives where f reaches its maximum; the graph of g is shifted."],
+        [top + k, "Gives the maximum value of g, not the x-value where it occurs."],
+        [u + k, "Shifts the x-coordinate by the outside number instead of the inside one."],
+      ].filter(([value]) => value !== key);
+      wrong = spreadAround(t, key, wrong);
+      stem = `The graph of y = f(x) is shown. The function g is defined by g(x) = ${gText}. For what value of x does g(x) reach its maximum value?`;
+      steps = [
+        `f reaches its maximum, ${num(top)}, at x = ${num(u)}.`,
+        `g(x) = ${gText} takes that value when x ${signed(-h)} = ${num(u)}, so at x = ${num(u + h)}.`,
+        `The maximum of g is ${num(top + k)}, at x = ${num(key)}.`,
+      ];
+      check = () => {
+        let best = { x: NaN, y: -Infinity };
+        for (let x = -4 + h; x <= 4 + h + 1e-9; x += 0.125) if (g(x) > best.y + 1e-9) best = { x, y: g(x) };
+        return approx(best.x, key) && wrong.every(([value]) => !approx(value, key));
+      };
+    }
+    const P = S.plane({ xMin: -6, xMax: 6, yMin: -6, yMax: 6, unit: 25, xLabelStep: 2, yLabelStep: 2 });
+    const parts = [...P.grid(), ...P.axes()];
+    for (let i = 0; i < xs.length - 1; i += 1) parts.push(P.segment(xs[i], ys[i], xs[i + 1], ys[i + 1]));
+    xs.forEach((x, i) => parts.push(P.point(x, ys[i])));
+    const alt = `The graph of y = f(x) in ${P.describe()}, on a grid of unit squares: line segments joining the points ` +
+      `${xs.slice(0, -1).map((x, i) => point(x, ys[i])).join(", ")}, and ${point(xs[4], ys[4])}, in that order. The graph ends at the first and last points.`;
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: null,
+      figure: { svg: P.svg(parts, alt), alt, notToScale: false },
+      stem,
+      correct: key,
+      wrong: numeric ? wrong : wrong,
+      explanation: steps.join(" "),
+      steps,
+      principles: [
+        "The graph of y = f(x − h) + k is the graph of y = f(x) moved right h and up k.",
+        "To evaluate f(x − h) + k at a number, find the input f receives first, read f there, then apply the outside change.",
+      ],
+      trap: "A shift inside the parentheses moves the graph opposite to its sign; a change outside moves it up or down by the same sign.",
+      hint: "Which point of the graph of f does the input you are given send you to?",
+      estimatedSeconds: 110,
+      verify: check,
+    };
+  }
+
+  /* ================================================ exponential-from-words */
+
+  const GROWTH_SCENES = [
+    { thing: "the number of subscribers to a newsletter", short: "the number of subscribers", start: "when the newsletter launched", unit: "year", up: true },
+    { thing: "the population of a colony of birds on an island", short: "the population of the colony", start: "at the start of a study", unit: "year", up: true },
+    { thing: "the number of cells in a culture", short: "the number of cells", start: "when the culture was started", unit: "hour", up: true },
+    { thing: "the value, in dollars, of a collectible card", short: "the value of the card", start: "when it was bought", unit: "year", up: true },
+    { thing: "the mass, in grams, of a decaying sample", short: "the mass of the sample", start: "when it was first weighed", unit: "day", up: false },
+    { thing: "the value, in dollars, of a delivery van", short: "the value of the van", start: "when it was purchased", unit: "year", up: false },
+    { thing: "the amount of chlorine, in grams, in a pool", short: "the amount of chlorine", start: "when the pool was treated", unit: "hour", up: false },
+  ];
+
+  // A percent of hundredths as a base: 6 up -> "1.06"; 8 down -> "0.92"; 2.5 up -> "1.025".
+  const baseText = (rate, up) => {
+    const thousandths = Math.round((up ? 100 + rate : 100 - rate) * 10);
+    return decimalText(thousandths, 3);
+  };
+
+  function wordsModelItem(t) {
+    const scene = t.pick(GROWTH_SCENES);
+    const n = t.pick([2, 3, 4, 5]);
+    const rate = t.pick(scene.up ? [4, 5, 6, 8, 10, 12, 15, 20] : [4, 5, 6, 8, 10, 12, 15, 20]);
+    if ((rate * 10) % n !== 0) return null;
+    const A = t.int(2, 90) * (t.chance(0.5) ? 100 : 50);
+    const B = baseText(rate, scene.up);
+    const Bsplit = baseText(rate / n, scene.up);
+    const change = scene.up ? "increases" : "decreases";
+    const form = (base, exponent) => `f(t) = ${commas(A)}(${base})^${exponent}`;
+    const units = `${scene.unit}s`;
+    const key = form(B, `(t/${n})`);
+    // A 2 × 2 grid: the base (the stated rate, or that rate split across the n
+    // units) and the exponent (t divided by n, or t multiplied by n).
+    const wrong = [
+      [form(B, `(${n}t)`), `Multiplies t by ${n}, as if the ${rate}% change happened ${n} times each ${scene.unit} instead of once every ${n} ${units}.`],
+      [form(Bsplit, `(t/${n})`), `Splits the ${rate}% into ${num(rate / n)}% per ${scene.unit} and also divides t by ${n}, dividing by ${n} twice.`],
+      [form(Bsplit, `(${n}t)`), `Splits the ${rate}% into ${num(rate / n)}% per ${scene.unit} and then applies it ${n} times each ${scene.unit}.`],
+    ];
+    const value = (text) => {
+      const [, coef, base, top, times] = text.match(/^f\(t\) = ([\d,]+)\(([\d.]+)\)\^\((?:t\/(\d+)|(\d+)t)\)$/);
+      return (x) => Number(coef.replace(/,/g, "")) * Number(base) ** (top ? x / Number(top) : x * Number(times));
+    };
+    const truth = (x) => A * (1 + ((scene.up ? 1 : -1) * rate) / 100) ** Math.floor(x / n + 1e-9);
+    return {
+      responseType: "multiple-choice",
+      stimulus: null,
+      stem:
+        `${cap(scene.thing)} was ${commas(A)} ${scene.start}, and it ${change} by ${rate}% every ${n} ${units}. ` +
+        `Which of the following functions f best models ${scene.short} t ${units} after that?`,
+      correct: key,
+      wrong,
+      explanation:
+        `Every ${n} ${units} the amount is multiplied by ${B}. After t ${units} there have been t/${n} such periods, so f(t) = ${commas(A)}(${B})^(t/${n}).`,
+      steps: [
+        `A ${rate}% ${scene.up ? "increase" : "decrease"} multiplies the amount by ${B}.`,
+        `The change happens once every ${n} ${units}, so after t ${units} it has happened t/${n} times.`,
+        `f(t) = ${commas(A)}(${B})^(t/${n}).`,
+      ],
+      principles: [
+        "A change by a fixed percent per period multiplies by the same factor each period, which makes the model exponential.",
+        "When the period is n units of t, the exponent is t/n.",
+      ],
+      trap: `The ${rate}% belongs to every ${n} ${units}; splitting it into ${num(rate / n)}% per ${scene.unit} treats a compounding change as proportional.`,
+      hint: `How many ${n}-${scene.unit} periods fit into t ${units}?`,
+      verify: () => {
+        const model = value(key);
+        // At whole multiples of the period the model and the stated rule agree.
+        return [0, n, 2 * n, 3 * n].every((x) => approx(model(x), truth(x), 1e-9)) &&
+          wrong.every(([text]) => [n, 2 * n].some((x) => !approx(value(text)(x), truth(x), 1e-6)));
+      },
+    };
+  }
+
+  function wordsValueItem(t, numeric) {
+    const scene = t.pick(GROWTH_SCENES);
+    const n = t.pick([2, 3, 4, 5]);
+    const rate = t.pick(scene.up ? [10, 20, 50] : [10, 20, 50]);
+    const k = t.pick([2, 3]);
+    const factor = (scene.up ? 100 + rate : 100 - rate) / 100;
+    const A = t.int(1, 9) * 1000;
+    const value = Math.round(A * factor ** k * 1000) / 1000;
+    if (!Number.isInteger(value) || value > 99999) return null;
+    const units = `${scene.unit}s`;
+    const pool = [
+      [Math.round(A * (1 + ((scene.up ? 1 : -1) * rate * k) / 100)), `Adds ${rate}% of the starting amount ${k} times, as if the change were linear.`],
+      [Math.round(A * factor), `Applies the ${rate}% change only once.`],
+      [Math.round(A * factor ** (k + 1)), `Applies the change ${k + 1} times; ${k * n} ${units} contain ${k} periods of ${n} ${units}.`],
+      [Math.round(A * factor ** (k * n)), `Applies the ${rate}% change every ${scene.unit} instead of every ${n} ${units}.`],
+      [Math.round(A * ((scene.up ? 100 + rate / n : 100 - rate / n) / 100) ** (k * n)), `Splits the ${rate}% into ${num(rate / n)}% per ${scene.unit} and applies that every ${scene.unit}.`],
+    ].filter(([v]) => v > 0 && v <= 999999 && Number.isFinite(v));
+    const wrong = spreadAround(t, value, pool);
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: null,
+      stem:
+        `${cap(scene.thing)} was ${commas(A)} ${scene.start}, and it ${scene.up ? "increases" : "decreases"} by ${rate}% every ${n} ${units}. ` +
+        `According to this description, what will ${scene.short} be ${k * n} ${units} after that?`,
+      correct: numeric ? value : commas(value),
+      wrong: numeric ? pool : wrong.map(([v, why]) => [commas(v), why]),
+      explanation:
+        `${k * n} ${units} are ${k} periods of ${n} ${units}, and each period multiplies the amount by ${num(factor)}. So the amount is ${commas(A)}(${num(factor)})${sup(k)} = ${commas(value)}.`,
+      steps: [
+        `Each period of ${n} ${units} multiplies the amount by ${num(factor)}.`,
+        `${k * n} ${units} contain ${k * n}/${n} = ${k} periods.`,
+        `${commas(A)}(${num(factor)})${sup(k)} = ${commas(value)}.`,
+      ],
+      principles: ["A percent change repeated each period multiplies the amount by the same factor each period; the changes compound rather than add."],
+      trap: `Adding ${rate}% of the starting amount each period treats the change as linear; the percent applies to the current amount.`,
+      hint: `How many times does the ${rate}% change happen in ${k * n} ${units}?`,
+      verify: () => {
+        let amount = A;
+        for (let day = 1; day <= k * n; day += 1) if (day % n === 0) amount *= factor;
+        return approx(amount, value, 1e-9) && (numeric || wrong.every(([v]) => !approx(v, amount)));
+      },
+    };
+  }
+
+  // "doubles every 5 years": how long until it is 8 times as large?
+  function wordsMultipleItem(t, numeric) {
+    const scene = t.pick(GROWTH_SCENES.filter((entry) => entry.up));
+    const [F, word] = t.pick([[2, "doubles"], [3, "triples"]]);
+    const n = t.pick([2, 3, 4, 5, 6, 8]);
+    const k = t.pick(F === 2 ? [2, 3, 4, 5] : [2, 3]);
+    const multiple = F ** k;
+    const key = n * k;
+    const units = `${scene.unit}s`;
+    const pool = [
+      [n * multiple, `Multiplies the ${n} ${units} by ${multiple}, as if the amount grew ${multiple} times in ${multiple} periods.`],
+      [(n * (multiple - 1)) / (F - 1), `Assumes the same amount is added every ${n} ${units}, as in a linear model.`],
+      [n * (k + 1), "Counts the starting amount as one of the periods."],
+      [n * (multiple / F), `Divides the target ${multiple} by ${F} and multiplies by ${n}.`],
+      [n + multiple, `Adds ${multiple} to ${n}.`],
+    ].filter(([v]) => Number.isInteger(v) && v > 0);
+    const wrong = spreadAround(t, key, pool);
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: null,
+      stem:
+        `${cap(scene.thing)} ${word} every ${n} ${units}. How many ${units} does it take for ${scene.short} to become ${multiple} times what it was at the start?`,
+      correct: key,
+      wrong: numeric ? pool : wrong,
+      explanation: `Each ${n} ${units} multiplies the amount by ${F}. ${multiple} = ${F}${sup(k)}, so it takes ${k} periods, or ${k} × ${n} = ${key} ${units}.`,
+      steps: [
+        `After p periods of ${n} ${units}, the amount is ${F}^p times the start.`,
+        `${F}^p = ${multiple} when p = ${k}.`,
+        `${k} periods × ${n} ${units} = ${key} ${units}.`,
+      ],
+      principles: ["Repeated doubling or tripling multiplies; the number of periods is the exponent that produces the target multiple."],
+      trap: `${multiple} times as large is ${k} ${word === "doubles" ? "doublings" : "triplings"}, not ${multiple} of them.`,
+      hint: `Write ${multiple} as a power of ${F}.`,
+      verify: () => {
+        let amount = 1;
+        let time = 0;
+        while (amount < multiple) {
+          time += n;
+          amount *= F;
+        }
+        return time === key && amount === multiple && (numeric || wrong.every(([v]) => v !== key));
+      },
+    };
   }
 
   const factoredPolynomialIntercepts = {
@@ -1918,7 +2549,7 @@
       // The presentation is fixed before any redraw, so figures keep their share.
       const style = t.pick(["values", "graph", "intercept"]);
       const make = [vertexAndPoint, zerosAndPoint, symmetricInputs][variant];
-      return { estimatedSeconds: 120, ...drawUntilDistinctHard(() => make(t, numeric, style)) };
+      return { estimatedSeconds: 120, ...spreadChoices(t, drawUntilDistinctHard(() => make(t, numeric, style))) };
     },
   };
 
@@ -1944,25 +2575,46 @@
     },
   };
 
+  // Hard: the table gives g, not f, and f must be recovered by undoing the
+  // transformation; or the table hides a quadratic's vertex that the
+  // transformation then moves.
   const functionTransformationTable = {
     id: "function-transformation-table",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "polynomial functions",
-    title: "Transformed or composed function read from a table",
+    title: "Transformed function recovered from a table",
     recognize:
-      "The table describes f, but the question is about a new function built from it: find which input f actually " +
-      "receives (inside changes act on x, opposite to their sign) and apply the outside changes last.",
+      "The table describes one function but the question is about another built from it: find which input the " +
+      "inner function actually receives (inside changes act on x, opposite to their sign), and undo or apply the " +
+      "outside change last; a quadratic's vertex may lie between the listed rows.",
     rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
     tricks: ["sign-error", "intermediate-value", "wrong-quantity", "neighbouring-rule"],
     build(t) {
-      const roll = t.random();
+      const reverse = t.chance(0.45);
       const numeric = t.chance(0.35);
-      const common = { estimatedSeconds: 105 };
-      if (roll < 0.22) return { ...common, ...transformLookup(t, numeric) };
-      if (roll < 0.4) return { ...common, ...transformReverse(t, numeric) };
-      if (roll < 0.65) return { ...common, ...transformComposition(t, numeric) };
-      return { ...common, ...transformQuadratic(t, numeric) };
+      const make = reverse ? () => transformReverse(t, numeric) : () => transformQuadratic(t, numeric);
+      return { estimatedSeconds: 110, ...spreadChoices(t, drawUntilDistinctHard(make)) };
+    },
+  };
+
+  // Medium: evaluate a shifted or composed function from a table, working
+  // from the inside out.
+  const functionTableEvaluate = {
+    id: "function-table-evaluate",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Nonlinear functions",
+    subskill: "polynomial functions",
+    title: "Shifted or composed function evaluated from a table",
+    recognize: "Evaluate the inside first: find the input the table's function receives, read its value, then apply the outside operations.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["sign-error", "intermediate-value", "wrong-quantity"],
+    build(t) {
+      const lookup = t.chance(0.5);
+      const numeric = t.chance(0.35);
+      const make = lookup ? () => transformLookup(t, numeric) : () => transformComposition(t, numeric);
+      return { estimatedSeconds: 90, ...spreadChoices(t, drawUntilDistinctHard(make)) };
     },
   };
 
@@ -1976,20 +2628,93 @@
       "A factor or a remainder is a statement about one value of p: x − a is a factor exactly when p(a) = 0, and the " +
       "remainder on division by x − a is p(a). Only a listed zero forces a factor.",
     rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
-    tricks: ["sign-error", "must-vs-could", "neighbouring-rule", "intermediate-value"],
+    tricks: ["must-vs-could", "sign-error", "neighbouring-rule"],
+    build(t) {
+      const make = t.chance(0.5) ? () => polynomialTable(t) : () => polynomialStatement(t);
+      return { estimatedSeconds: 100, ...drawUntilDistinctHard(make) };
+    },
+  };
+
+  // Medium: a factor or a remainder fixes the value of p at one input, which
+  // leaves one linear equation for the unknown coefficient.
+  const polynomialConstantFromRemainder = {
+    id: "polynomial-constant-from-remainder",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Nonlinear functions",
+    subskill: "polynomial functions",
+    title: "Unknown coefficient from a factor or remainder",
+    recognize: "x − a is a factor exactly when p(a) = 0, and the remainder on division by x − a is p(a); substitute a and solve for the constant.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["sign-error", "intermediate-value", "neighbouring-rule"],
+    build(t) {
+      const remainder = t.chance(0.5);
+      const numeric = t.chance(0.45);
+      return { estimatedSeconds: 95, ...spreadChoices(t, drawUntilDistinctHard(() => polynomialUnknown(t, numeric, remainder))) };
+    },
+  };
+
+  const exponentialFromWords = {
+    id: "exponential-from-words",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Nonlinear functions",
+    subskill: "exponential functions",
+    title: "Exponential model built from a verbal description",
+    recognize:
+      "A fixed percent change (or doubling) per period multiplies by the same factor each period: the factor is the base, " +
+      "and the number of periods in t units is the exponent.",
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["unit-mismatch", "neighbouring-rule", "percent-base"],
     build(t) {
       const roll = t.random();
-      const common = { estimatedSeconds: 100 };
-      if (roll < 0.3) return { ...common, ...polynomialUnknown(t, t.chance(0.45), false) };
-      if (roll < 0.58) return { ...common, ...polynomialUnknown(t, t.chance(0.45), true) };
-      if (roll < 0.8) return { ...common, ...polynomialTable(t) };
-      return { ...common, ...polynomialStatement(t) };
+      const numeric = t.chance(0.45);
+      const make = roll < 0.45 ? () => wordsModelItem(t)
+        : roll < 0.75 ? () => wordsValueItem(t, numeric) : () => wordsMultipleItem(t, numeric);
+      return { estimatedSeconds: 95, ...drawUntilDistinct(make) };
+    },
+  };
+
+  const graphWhichFunction = {
+    id: "graph-which-function",
+    domain: "Advanced Math",
+    skill: "Nonlinear functions",
+    subskill: "polynomial functions",
+    title: "Definition of a function matched to its graph",
+    recognize:
+      "Read every feature the graph shows (zeros and whether the graph crosses or touches there, the y-intercept, " +
+      "end behavior, a level it approaches) and test each candidate against all of them.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    tricks: ["sign-error", "equivalent-form", "wrong-quantity"],
+    build(t) {
+      return drawUntilDistinctHard(() => whichFunctionItem(t));
+    },
+  };
+
+  const graphTransformation = {
+    id: "graph-transformation",
+    domain: "Advanced Math",
+    skill: "Nonlinear functions",
+    subskill: "polynomial functions",
+    title: "Transformed function read from a graph",
+    recognize:
+      "g(x) = f(x − h) + k moves the graph of f right h and up k: find the input f receives, read f from the graph there, " +
+      "and apply the outside change last.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["sign-error", "intermediate-value", "wrong-quantity"],
+    build(t) {
+      const numeric = t.chance(0.25);
+      return drawUntilDistinctHard(() => {
+        const record = graphTransformItem(t, numeric);
+        return record && record.verify() ? record : null;
+      });
     },
   };
 
   return [
     factoredPolynomialIntercepts, exponentialModelReading, quadraticVertexReading,
     projectileHeightModel, exponentialTableModel, vertexFromConditions, exponentialRewrite,
-    functionTransformationTable, polynomialFactorRemainder,
+    functionTableEvaluate, polynomialConstantFromRemainder, exponentialFromWords, functionTransformationTable,
+    polynomialFactorRemainder, graphWhichFunction, graphTransformation,
   ];
 });
