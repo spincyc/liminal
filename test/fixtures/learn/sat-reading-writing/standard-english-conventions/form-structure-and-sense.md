@@ -25,6 +25,10 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for modifier placement.
 
+## Possessives and plurals {#possessives-and-plurals}
+
+> **Example.** A minimal fixture example for possessives and plurals.
+
 ## Parallel structure {#parallel-structure}
 
 > **Example.** A minimal fixture example for parallel structure.
