@@ -54,11 +54,24 @@ test("filterQuestions combines taxonomy, difficulty, and search filters", () => 
   );
 });
 
-test("scoreResponse handles choices, numeric tolerance, and essays", () => {
+test("scoreResponse handles choices, exact numeric keys, and essays", () => {
   assert.equal(core.scoreResponse(questions[0], 2), true);
+  assert.equal(core.scoreResponse(questions[0], "2"), true);
   assert.equal(core.scoreResponse(questions[0], 1), false);
-  assert.equal(core.scoreResponse(questions[1], "4.5004"), true);
+  assert.equal(core.scoreResponse(questions[1], "4.5"), true);
+  assert.equal(core.scoreResponse(questions[1], "9/2"), true);
+  assert.equal(core.scoreResponse(questions[1], "4.50"), true);
+  assert.equal(core.scoreResponse(questions[1], "4.5004"), false, "no tolerance band");
   assert.equal(core.scoreResponse({ responseType: "essay" }, "draft"), null);
+});
+
+test("a choice question is never correct without a choice", () => {
+  const keyA = { responseType: "multiple-choice", correctAnswer: 0 };
+  for (const response of [null, undefined, "", " ", 0.4, "0.0", "A", NaN, [], false]) {
+    assert.equal(core.scoreResponse(keyA, response), false, JSON.stringify(response));
+  }
+  assert.equal(core.scoreResponse(keyA, 0), true);
+  assert.equal(core.scoreResponse(keyA, "0"), true);
 });
 
 test("buildSession is deterministic and respects count", () => {
@@ -272,10 +285,55 @@ test("numeric responses accept fractions, the U+2212 minus, and thousands commas
   assert.equal(core.scoreResponse(key, "\u22121.75"), true);
   assert.equal(core.scoreResponse(key, "7/4"), false);
   assert.equal(core.scoreResponse({ responseType: "numeric", correctAnswer: "1000" }, "1,000"), true);
-  assert.equal(core.scoreResponse({ responseType: "numeric", correctAnswer: "0.6667" }, "2/3"), true);
   assert.equal(core.scoreResponse({ responseType: "numeric", correctAnswer: "50\u00b0" }, "50"), true);
   assert.ok(Number.isNaN(core.parseNumericResponse("3/0")));
   assert.ok(Number.isNaN(core.parseNumericResponse("abc")));
+});
+
+// The real test's student-produced-response rules: a terminating key is
+// matched exactly; a key whose decimal does not fit the grid also takes a
+// decimal that fills the grid, rounded or cut off.
+test("numeric scoring follows the grid rules for terminating keys", () => {
+  const score = (key, response) => core.scoreResponse({ responseType: "numeric", correctAnswer: key }, response);
+  assert.equal(score("0.75", "3/4"), true);
+  assert.equal(score("0.75", ".75"), true);
+  assert.equal(score("0.75", "6/8"), true);
+  assert.equal(score("0.75", ".7500"), true);
+  assert.equal(score("0.75", ".751"), false);
+  assert.equal(score("0.75", ".7"), false);
+  assert.equal(score("3/4", "0.75"), true, "a terminating fraction key takes its decimal");
+  assert.equal(score("-2.5", "-5/2"), true);
+  assert.equal(score("-2.5", "-2.49"), false);
+  assert.equal(score("12", "12.0"), true);
+  assert.equal(score("12", "24/2"), true);
+  assert.equal(score("12", "12.001"), false);
+  for (const empty of [null, undefined, "", "-", ".", "/"]) {
+    assert.equal(score("0", empty), false, JSON.stringify(empty));
+  }
+});
+
+test("numeric scoring accepts grid-filling decimals for repeating keys", () => {
+  const score = (key, response) => core.scoreResponse({ responseType: "numeric", correctAnswer: key }, response);
+  // 2/3: the examples the real directions give.
+  for (const good of ["2/3", "4/6", ".6666", ".6667", "0.666", "0.667"]) {
+    assert.equal(score("2/3", good), true, good);
+  }
+  for (const bad of [".66", ".67", "0.66", "0.67", ".6668", "0.668", "667/1000"]) {
+    assert.equal(score("2/3", bad), false, bad);
+  }
+  // 7/3 = 2.333…: only three decimal places fit after "2.".
+  for (const good of ["7/3", "14/6", "2.333"]) assert.equal(score("7/3", good), true, good);
+  for (const bad of ["2.33", "2.334", "2.3", "02.33"]) assert.equal(score("7/3", bad), false, bad);
+  // A negative answer gets a sixth character for the sign.
+  for (const good of ["-2/3", "-.6666", "-.6667", "-0.666", "\u22120.667"]) {
+    assert.equal(score("-2/3", good), true, good);
+  }
+  for (const bad of ["-.666", "-.667", "-0.67", ".6667"]) assert.equal(score("-2/3", bad), false, bad);
+  // A terminating decimal too long for the grid follows the same rule.
+  assert.equal(score("1/32", ".0313"), true);
+  assert.equal(score("1/32", ".0312"), true);
+  assert.equal(score("1/32", ".031"), false);
+  assert.equal(score("1/32", "0.03125"), true, "the exact value is always right");
 });
 
 test("pace budgets follow real-test seconds per question", () => {
@@ -296,6 +354,29 @@ test("accuracyByDifficulty counts generated attempts and falls back to the bank"
   assert.deepEqual(tiers.Easy, { attempted: 1, correct: 1, accuracy: 1 });
   assert.deepEqual(tiers.Hard, { attempted: 2, correct: 1, accuracy: 0.5 });
   assert.equal(tiers.Medium.accuracy, null);
+});
+
+test("summarizeProgress leaves unresolvable attempts out of both counts", () => {
+  const summary = core.summarizeProgress([
+    { questionId: "q1", correct: true },
+    { questionId: "missing-1", correct: false },
+    { questionId: "missing-2", correct: true },
+  ], questions);
+  assert.equal(summary.attempted, 1);
+  assert.equal(summary.correct, 1);
+  assert.equal(summary.accuracy, 1);
+  assert.equal(summary.uniqueCompleted, 1);
+});
+
+test("pace budgets for mixed sections sum each question's own pace", () => {
+  const mixed = [
+    ...Array.from({ length: 11 }, () => ({ sectionKey: "sat-reading-writing" })),
+    ...Array.from({ length: 9 }, () => ({ sectionKey: "sat-math" })),
+  ];
+  assert.equal(core.paceBudgetForQuestions(mixed), Math.round(11 * (32 * 60) / 27 + 9 * (35 * 60) / 22));
+  assert.equal(core.paceBudgetForQuestions([{ sectionKey: "act-writing" }]), null);
+  assert.equal(core.paceBudgetForQuestions([{}], "sat-math"), Math.round((35 * 60) / 22));
+  assert.equal(core.paceBudgetForQuestions([]), null);
 });
 
 test("summarizeProgress counts generated attempts by their own skill", () => {

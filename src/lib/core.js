@@ -69,6 +69,21 @@
     return perQuestion && count > 0 ? Math.round(perQuestion * count) : null;
   }
 
+  // The same budget for a list that may mix sections (a mini test): each
+  // question at its own section's pace. Null when any question's section is
+  // not paced per question.
+  function paceBudgetForQuestions(questions, fallbackSectionKey) {
+    const list = questions || [];
+    if (!list.length) return null;
+    let total = 0;
+    for (const question of list) {
+      const perQuestion = SECONDS_PER_QUESTION[(question && question.sectionKey) || fallbackSectionKey];
+      if (!perQuestion) return null;
+      total += perQuestion;
+    }
+    return Math.round(total);
+  }
+
   function section(sectionKey, count, minutes, label) {
     return {
       sectionKey,
@@ -425,57 +440,163 @@
     });
   }
 
-  // A typed response may be a decimal or a fraction, with an ASCII hyphen or a
-  // U+2212 minus sign, as the real answer grid accepts. NaN when it is neither.
-  function parseNumericResponse(value) {
-    const text = String(value === null || value === undefined ? "" : value)
+  // Typed numeric text with the U+2212 minus made ASCII and the thousands
+  // commas and spaces the grid never holds removed.
+  function cleanNumericText(value) {
+    return String(value === null || value === undefined ? "" : value)
       .trim()
       .replace(/\u2212/g, "-")
       .replace(/[,\s]/g, "");
-    const fraction = /^(-?)(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/.exec(text);
-    if (fraction) {
-      const denominator = Number(fraction[3]);
-      return denominator ? (fraction[1] ? -1 : 1) * Number(fraction[2]) / denominator : NaN;
-    }
-    return /^-?(\d+\.?\d*|\.\d+)$/.test(text) ? Number(text) : NaN;
   }
 
-  function numericEqual(actual, expected) {
-    const actualNumber = parseNumericResponse(actual);
-    const expectedNumber = parseNumericResponse(expected);
-    if (Number.isFinite(actualNumber) && Number.isFinite(expectedNumber)) {
-      return Math.abs(actualNumber - expectedNumber) <= 0.001;
+  const NUMERIC_PATTERN = /^(-?)(\d+\.?\d*|\.\d+)(?:\/(\d+\.?\d*|\.\d+))?$/;
+
+  // A typed response may be a decimal or a fraction, with an ASCII hyphen or a
+  // U+2212 minus sign, as the real answer grid accepts. NaN when it is neither.
+  function parseNumericResponse(value) {
+    const match = NUMERIC_PATTERN.exec(cleanNumericText(value));
+    if (!match) return NaN;
+    const denominator = match[3] === undefined ? 1 : Number(match[3]);
+    return denominator ? (match[1] ? -1 : 1) * Number(match[2]) / denominator : NaN;
+  }
+
+  /* ---- exact rationals, so scoring never depends on floating point */
+
+  function gcdBig(a, b) {
+    let left = a < 0n ? -a : a;
+    let right = b < 0n ? -b : b;
+    while (right) [left, right] = [right, left % right];
+    return left || 1n;
+  }
+
+  function decimalRational(text) {
+    const [whole, decimals = ""] = text.split(".");
+    return { n: BigInt(`${whole || "0"}${decimals}`), d: 10n ** BigInt(decimals.length) };
+  }
+
+  // { n, d } in lowest terms with d > 0, or null for text that is not a
+  // number, a decimal, or a fraction (whose parts may be decimals).
+  function parseRational(value) {
+    const match = NUMERIC_PATTERN.exec(cleanNumericText(value));
+    if (!match) return null;
+    let { n, d } = decimalRational(match[2]);
+    if (match[3] !== undefined) {
+      const bottom = decimalRational(match[3]);
+      if (bottom.n === 0n) return null;
+      n *= bottom.d;
+      d *= bottom.n;
     }
-    return normalize(actual).replace(/,/g, "") === normalize(expected).replace(/,/g, "");
+    if (match[1]) n = -n;
+    const divisor = gcdBig(n, d);
+    return { n: n / divisor, d: d / divisor };
+  }
+
+  function sameRational(left, right) {
+    return left.n === right.n && left.d === right.d;
+  }
+
+  // The grid holds five characters, six when the first is a negative sign.
+  const GRID_POSITIVE = 5;
+  const GRID_NEGATIVE = 6;
+
+  // Whether the value's exact decimal fits the grid, written as short as it
+  // can be (".5", not "0.5"). A repeating decimal never fits.
+  function decimalFitsGrid(value) {
+    let rest = value.d;
+    let places = 0;
+    while (rest % 10n === 0n) { rest /= 10n; places += 1; }
+    while (rest % 2n === 0n) { rest /= 2n; places += 1; }
+    while (rest % 5n === 0n) { rest /= 5n; places += 1; }
+    if (rest !== 1n) return false;
+    const magnitude = value.n < 0n ? -value.n : value.n;
+    const whole = magnitude / value.d;
+    const length = (value.n < 0n ? 1 : 0) + (whole ? String(whole).length : 0) +
+      (places ? places + 1 : 0);
+    return length <= (value.n < 0n ? GRID_NEGATIVE : GRID_POSITIVE);
+  }
+
+  // The value cut off, or rounded half up, at `places` decimal places.
+  function atPlaces(value, places, round) {
+    const scale = 10n ** BigInt(places);
+    const negative = value.n < 0n;
+    const magnitude = negative ? -value.n : value.n;
+    const scaled = round
+      ? (magnitude * scale * 2n + value.d) / (value.d * 2n)
+      : (magnitude * scale) / value.d;
+    const divisor = gcdBig(scaled, scale);
+    return { n: (negative ? -scaled : scaled) / divisor, d: scale / divisor };
+  }
+
+  // The real test's rules for a student-produced response. A key whose exact
+  // decimal fits the grid takes that value exactly, as any equivalent
+  // fraction or decimal. A key that does not fit (a repeating decimal such as
+  // "7/3", or a long one) also takes a decimal that fills the grid, rounded or
+  // cut off: 2/3 accepts .6666, .6667, 0.666, and 0.667 but not .66 or .67.
+  // Keys that are not numbers (legacy "50\u00b0") compare as normalized text.
+  function numericEqual(actual, expected) {
+    const key = parseRational(expected);
+    if (!key) {
+      const text = normalize(actual).replace(/,/g, "");
+      return text !== "" && text === normalize(expected).replace(/,/g, "");
+    }
+    const response = parseRational(actual);
+    if (!response) return false;
+    if (sameRational(response, key)) return true;
+    if (decimalFitsGrid(key)) return false;
+    const text = cleanNumericText(actual);
+    if (text.includes("/") || !text.includes(".")) return false;
+    const negative = text.startsWith("-");
+    const [whole, decimals] = text.replace(/^-/, "").split(".");
+    // Leading zeros before a nonzero whole part do not fill the grid.
+    const wholeLength = /^0*$/.test(whole) ? whole.length : whole.replace(/^0+/, "").length;
+    const length = (negative ? 1 : 0) + wholeLength + 1 + decimals.length;
+    if (length < (negative ? GRID_NEGATIVE : GRID_POSITIVE)) return false;
+    return sameRational(response, atPlaces(key, decimals.length, false)) ||
+      sameRational(response, atPlaces(key, decimals.length, true));
+  }
+
+  // A choice response must be a choice index; nothing else is ever correct.
+  function choiceIndex(response) {
+    if (typeof response === "number") return Number.isInteger(response) ? response : null;
+    if (typeof response === "string" && /^\s*\d+\s*$/.test(response)) return Number(response);
+    return null;
   }
 
   function scoreResponse(question, response) {
     if (question.responseType === "essay") return null;
     if (question.responseType === "multiple-choice") {
-      return Number(response) === question.correctAnswer;
+      const choice = choiceIndex(response);
+      return choice !== null && choice === question.correctAnswer;
     }
     return numericEqual(response, question.correctAnswer);
   }
 
+  // Attempts that resolve to no question (no bank record and no skill of
+  // their own) are left out of every count, numerator and denominator alike.
   function summarizeProgress(attempts, questions) {
     const byId = new Map(questions.map((question) => [question.id, question]));
     const summary = {
-      attempted: attempts.length,
+      attempted: 0,
       correct: 0,
       accuracy: null,
       uniqueCompleted: new Set(),
       bySkill: {},
       recent: [],
     };
+    let scored = 0;
+    const resolved = [];
     attempts.forEach((attempt) => {
       // Generated questions are in no bank; their attempts carry their own
       // section and skill.
       const question = byId.get(attempt.questionId) ||
         (attempt.skill ? { sectionKey: attempt.sectionKey, skill: attempt.skill } : null);
       if (!question) return;
+      resolved.push(attempt);
+      summary.attempted += 1;
       summary.uniqueCompleted.add(attempt.questionId);
       if (attempt.correct === true) summary.correct += 1;
-      if (attempt.correct !== null) {
+      if (attempt.correct === true || attempt.correct === false) scored += 1;
+      if (attempt.correct === true || attempt.correct === false) {
         const key = `${question.sectionKey}|${question.skill}`;
         if (!summary.bySkill[key]) {
           summary.bySkill[key] = {
@@ -490,13 +611,12 @@
         if (attempt.correct) summary.bySkill[key].correct += 1;
       }
     });
-    const scored = attempts.filter((attempt) => attempt.correct !== null);
-    summary.accuracy = scored.length ? summary.correct / scored.length : null;
+    summary.accuracy = scored ? summary.correct / scored : null;
     Object.values(summary.bySkill).forEach((skill) => {
       skill.accuracy = skill.correct / skill.attempted;
     });
     summary.uniqueCompleted = summary.uniqueCompleted.size;
-    summary.recent = attempts.slice(-10).reverse();
+    summary.recent = resolved.slice(-10).reverse();
     return summary;
   }
 
@@ -688,6 +808,8 @@
     numericEqual,
     accuracyByDifficulty,
     parseNumericResponse,
+    parseRational,
+    paceBudgetForQuestions,
     paceBudgetSeconds,
     SECONDS_PER_QUESTION,
     questionFamily,
