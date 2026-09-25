@@ -1,8 +1,8 @@
 /* Shared design tokens. One visual language for every page and for the
    digital test mode, taken from the test screen: light, plain system sans,
-   one blue accent, neutral greys. Load this file before app.css and
-   test-shell.css; both read these properties and define no colors of their
-   own. Light theme only, like the real test. */
+   one blue accent, neutral greys. Load this file before app.css,
+   test-shell.css, and math.css; they read these properties and define no
+   colors of their own. Light theme only, like the real test. */
 
 :root {
   color-scheme: light;
@@ -21,6 +21,11 @@
   --weight-bold: 700;
   --leading: 1.5;
   --leading-tight: 1.25;
+
+  /* Math (math.css), in em so it follows the surrounding text */
+  --math-script: 0.8em; /* exponents and root indexes */
+  --math-fraction: 0.92em; /* numerator and denominator */
+  --math-rule: max(1px, 0.065em); /* fraction bar and radical overline */
 
   /* Color */
   --color-page: #f5f6f8;

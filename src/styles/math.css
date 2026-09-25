@@ -1,0 +1,126 @@
+/* Typeset math from LiminalRender.renderText(text, { math: true }): stacked
+   fractions, raised exponents, and radicals with an overline. Sizes are in
+   em so the math follows the text around it, at any zoom or text size, and
+   every line is drawn in currentColor so it takes the text color of its
+   context: ink, a selected choice, or the dark theme. Load after tokens.css
+   on every page that renders Math text. */
+
+.lm-math {
+  font-variant-numeric: lining-nums;
+}
+
+/* The spoken form ("3 over 5"); the drawing beside it is aria-hidden. */
+.lm-math-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Exponents: raised without opening up the line spacing. */
+.lm-math-power {
+  position: relative;
+  top: -0.5em;
+  margin-left: 0.04em;
+  font-size: var(--math-script);
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+.lm-math-power .lm-math-power {
+  font-size: 0.9em;
+}
+
+/* Fractions: numerator over denominator, the bar on the math axis. */
+.lm-math-stack {
+  display: inline-flex;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0 0.1em;
+  font-size: var(--math-fraction);
+  line-height: 1.2;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* A long numerator wraps inside the fraction rather than pushing past a
+   phone screen at large text sizes. */
+.lm-math-num,
+.lm-math-den {
+  display: block;
+  padding: 0 0.2em;
+}
+
+.lm-math-num {
+  padding-bottom: 0.1em;
+  border-bottom: var(--math-rule) solid currentColor;
+}
+
+.lm-math-den {
+  padding-top: 0.12em;
+}
+
+/* A fraction inside a fraction keeps its size rather than shrinking twice. */
+.lm-math-stack .lm-math-stack {
+  font-size: 1em;
+}
+
+/* Brackets kept around a stacked fraction, (2/3)² or f(1/2), grow with it. */
+.lm-math-fence {
+  white-space: nowrap;
+}
+
+.lm-math-fence > .lm-math-bracket {
+  display: inline-block;
+  transform: scaleY(1.55);
+  transform-origin: 50% 55%;
+}
+
+/* Radicals: the drawn sign stretches to the radicand's height and meets
+   its overline; an index sits in the crook of the sign. The radicand sets
+   the baseline, so a root lines up with the text around it. */
+.lm-math-radical {
+  display: inline-flex;
+  align-items: stretch;
+  max-width: 100%;
+}
+
+.lm-math-index {
+  position: relative;
+  top: -0.2em;
+  align-self: flex-start;
+  margin-right: -0.3em;
+  margin-left: 0.05em;
+  font-size: var(--math-script);
+  line-height: 1;
+}
+
+.lm-math-sign {
+  flex: none;
+  width: 0.62em;
+  height: auto;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: var(--math-rule);
+  vector-effect: non-scaling-stroke;
+}
+
+.lm-math-sign path {
+  vector-effect: non-scaling-stroke;
+}
+
+.lm-math-radicand {
+  align-self: baseline;
+  padding: 0.1em 0.12em 0 0.06em;
+  border-top: var(--math-rule) solid currentColor;
+  line-height: 1.15;
+}

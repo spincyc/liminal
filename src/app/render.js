@@ -165,6 +165,416 @@
     return segments;
   }
 
+  /* ------------------------------------------------------------- math text */
+
+  // Math text is typed in plain notation: x^2, x^(3/5), (x + 1)/(x − 2),
+  // √(x + 4), ⁵√(x⁶). mathTokens reads that notation and returns a node tree
+  // the DOM renderer draws as a stacked fraction, a raised exponent, or a
+  // radical with an overline:
+  //   { type: "text", text }
+  //   { type: "sup", children, simple }       an exponent written with ^
+  //   { type: "frac", num, den, inline? }     a/b; inline (a slash) in exponents
+  //   { type: "root", index, children }       index null, "3", "4", "5", "n"
+  //   { type: "fence", open, close, children } brackets around a stacked fraction
+  // It only typesets what is unambiguous. Anything else stays text: words
+  // and units (km/h, miles/hour, and/or, m/s), dates (9/25/2026), money
+  // ($3/4), 2/3x (is x in the denominator?), and Unicode superscripts that
+  // are already in the text.
+
+  const MATH_TOKEN = new RegExp([
+    "(?<num>\\d{1,3}(?:,\\d{3})+(?:\\.\\d+)?|\\d+(?:\\.\\d+)?|\\.\\d+)",
+    "(?<sups>[⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿⁱ]+)",
+    "(?<word>[\\p{Lu}\\p{Ll}\\p{Lt}\\p{Lo}]+)",
+    "(?<root>[√∛∜])",
+    "(?<space>\\s+)",
+    "(?<other>[\\s\\S])",
+  ].join("|"), "gu");
+
+  const BRACKETS = { "(": ")", "[": "]" };
+  const CLOSERS = new Set([")", "]"]);
+  const MINUS_SIGNS = new Set(["−", "-"]);
+  const GREEK = /^[\u0370-\u03ff]+$/; // Greek letters (π, θ) are not Latin words
+  // Function names that may stand before a bracket in an operand: f(5)/f(3).
+  const FUNCTION_LETTERS = new Set(["f", "g", "h", "k", "p", "q"]);
+  const FUNCTION_WORDS = new Set(["sin", "cos", "tan", "log", "ln"]);
+  // A number directly followed by these is an ordinal (3rd), not 3·r·d.
+  const ORDINALS = new Set(["st", "nd", "rd", "th"]);
+  // Unit pairs such as 20 m/s or 3,600 s/h are rates, not fractions.
+  const UNITS = new Set([
+    "m", "km", "cm", "mm", "mi", "ft", "in", "yd", "g", "kg", "mg", "lb", "lbs",
+    "oz", "s", "sec", "min", "h", "hr", "hrs", "L", "mL", "gal", "qt",
+  ]);
+  const NOT_FRACTIONS = new Set(["w/o", "c/o", "n/a"]);
+  const CURRENCY = new Set(["$", "€", "£", "¥", "¢"]);
+  const SUPERSCRIPT_INDEX = { "⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4",
+    "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9", "ⁿ": "n" };
+
+  // Lexes a line into tokens { kind, text } and nests bracket pairs as
+  // { kind: "group", open, close, items }. An unmatched bracket stays text.
+  function mathItems(text) {
+    const root = { items: [] };
+    const stack = [root];
+    for (const match of String(text).matchAll(MATH_TOKEN)) {
+      const kind = Object.keys(match.groups).find((name) => match.groups[name] !== undefined);
+      const value = match[0];
+      const top = stack[stack.length - 1];
+      if (kind === "other" && BRACKETS[value]) {
+        const group = { kind: "group", open: value, close: BRACKETS[value], items: [] };
+        top.items.push(group);
+        stack.push(group);
+      } else if (kind === "other" && CLOSERS.has(value) && stack.length > 1 && top.close === value) {
+        stack.pop();
+      } else if (kind === "other" && CLOSERS.has(value)) {
+        // A closer that matches nothing open, or the wrong kind: unwind to
+        // text so the brackets print exactly as written.
+        top.items.push({ kind: "other", text: value });
+      } else {
+        top.items.push({ kind, text: value });
+      }
+    }
+    // Groups still open at the end of the line were never closed: flatten
+    // them back into their parent as text.
+    while (stack.length > 1) {
+      const group = stack.pop();
+      const parent = stack[stack.length - 1];
+      parent.items.pop();
+      parent.items.push({ kind: "other", text: group.open }, ...group.items);
+    }
+    return root.items;
+  }
+
+  function isNode(item, type) {
+    return item && item.kind === "node" && (!type || item.node.type === type);
+  }
+
+  // Tokens that can be one factor of an operand: 3, x, ², (x + 1), √2, x^2.
+  function isFactor(item) {
+    return Boolean(item) && (item.kind === "num" || item.kind === "word" ||
+      item.kind === "sups" || item.kind === "group" || isNode(item, "sup") || isNode(item, "root"));
+  }
+
+  function isSign(item) {
+    return Boolean(item) && item.kind === "other" && MINUS_SIGNS.has(item.text);
+  }
+
+  function isDegree(item, previous) {
+    return Boolean(item) && item.kind === "other" && item.text === "°" &&
+      Boolean(previous) && previous.kind === "num";
+  }
+
+  function latinLetters(word) {
+    return GREEK.test(word) ? 0 : Array.from(word).filter((ch) => !GREEK.test(ch)).length;
+  }
+
+  function nodeItem(node) {
+    return { kind: "node", node };
+  }
+
+  // ⁵√(x⁶), ∛8, √(x + 4), √2. A superscript number directly before √ is the
+  // root's index unless it is an exponent on what precedes it (12²√3).
+  function applyRoots(items, context) {
+    const out = [];
+    for (let index = 0; index < items.length; index += 1) {
+      const item = items[index];
+      if (item.kind !== "root") {
+        out.push(item);
+        continue;
+      }
+      const next = items[index + 1];
+      let children = null;
+      if (next && next.kind === "group" && next.open === "(") children = convert(next.items, context);
+      else if (next && next.kind === "num") children = [{ type: "text", text: next.text }];
+      else if (next && next.kind === "word" && Array.from(next.text).length === 1) {
+        children = [{ type: "text", text: next.text }];
+      }
+      if (!children) {
+        out.push(item);
+        continue;
+      }
+      let rootIndex = item.text === "∛" ? "3" : item.text === "∜" ? "4" : null;
+      const before = out[out.length - 1];
+      if (item.text === "√" && before && before.kind === "sups" &&
+          /^(?:[⁰¹²³⁴⁵⁶⁷⁸⁹]+|ⁿ)$/.test(before.text) && !isFactor(out[out.length - 2])) {
+        rootIndex = Array.from(before.text).map((ch) => SUPERSCRIPT_INDEX[ch]).join("");
+        out.pop();
+      }
+      out.push(nodeItem({ type: "root", index: rootIndex, children }));
+      index += 1;
+    }
+    return out;
+  }
+
+  // x^2, x^k, (2/3)^−2, 2^(x + 1). The exponent reaches one number, one
+  // letter, or one bracket group, the usual precedence of ^.
+  function applyPowers(items, context) {
+    const out = [];
+    for (let index = 0; index < items.length; index += 1) {
+      const item = items[index];
+      const base = out[out.length - 1];
+      if (item.kind !== "other" || item.text !== "^" || !isFactor(base)) {
+        out.push(item);
+        continue;
+      }
+      let next = items[index + 1];
+      let sign = "";
+      let used = 1;
+      if (isSign(next) && items[index + 2] &&
+          (items[index + 2].kind === "num" || items[index + 2].kind === "word")) {
+        sign = next.text;
+        next = items[index + 2];
+        used = 2;
+      }
+      let node = null;
+      if (next && next.kind === "group" && !sign) {
+        node = { type: "sup", children: convert(next.items, { inSup: true }), simple: false };
+      } else if (next && next.kind === "num") {
+        node = { type: "sup", children: [{ type: "text", text: sign + next.text }], simple: true };
+      } else if (next && next.kind === "word") {
+        // x^ab is (x^a)b: the exponent takes one letter.
+        const [first, ...rest] = Array.from(next.text);
+        node = { type: "sup", children: [{ type: "text", text: sign + first }], simple: true };
+        if (rest.length) {
+          items = items.slice();
+          items.splice(index + used + 1, 0, { kind: "word", text: rest.join("") });
+        }
+      }
+      if (!node) {
+        out.push(item);
+        continue;
+      }
+      out.push(nodeItem(node));
+      index += used;
+    }
+    return out;
+  }
+
+  // The operand to the left of a slash: the run of factors that ends there.
+  function numeratorStart(items, end) {
+    let start = end + 1;
+    while (start > 0 && (isFactor(items[start - 1]) || isDegree(items[start - 1], items[start - 2]))) {
+      start -= 1;
+    }
+    return start;
+  }
+
+  // The operand to the right of a slash: an optional minus, one factor, and
+  // its exponents. Returns the index after it, or -1 when what follows would
+  // make the reading ambiguous (1/2x, 1/2(3)).
+  function denominatorEnd(items, begin) {
+    let index = begin;
+    if (isSign(items[index]) && isFactor(items[index + 1])) index += 1;
+    const primary = items[index];
+    if (!primary || primary.kind === "sups" || isNode(primary, "sup")) return -1;
+    if (primary.kind === "word" && isCall(items, index)) {
+      index += 2;
+    } else if (primary.kind === "word") {
+      if (latinLetters(primary.text) > 1) return -1;
+      index += 1;
+    } else if (isFactor(primary)) {
+      index += 1;
+    } else {
+      return -1;
+    }
+    while (items[index] && (items[index].kind === "sups" || isNode(items[index], "sup") ||
+        isDegree(items[index], items[index - 1]))) {
+      index += 1;
+    }
+    if (isFactor(items[index])) return -1;
+    return index;
+  }
+
+  function isCall(items, index) {
+    const word = items[index];
+    const group = items[index + 1];
+    return Boolean(word) && word.kind === "word" && Boolean(group) && group.kind === "group" &&
+      (FUNCTION_LETTERS.has(word.text) || FUNCTION_WORDS.has(word.text));
+  }
+
+  function plainText(items) {
+    return items.map((item) => (item.kind === "group" ? item.open + plainText(item.items) + item.close
+      : item.text || "")).join("");
+  }
+
+  function acceptableNumerator(items) {
+    const hasCoefficient = items[0].kind === "num";
+    for (let index = 0; index < items.length; index += 1) {
+      const item = items[index];
+      if (item.kind !== "word") continue;
+      if (index > 0 && items[index - 1].kind === "num" && ORDINALS.has(item.text)) return false;
+      if (items[index + 1] && items[index + 1].kind === "group") {
+        if (latinLetters(item.text) > 1 && !FUNCTION_WORDS.has(item.text)) return false;
+      } else if (!hasCoefficient && latinLetters(item.text) > 1) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function isYear(item) {
+    return item.kind === "num" && /^(?:19|20)\d\d$/.test(item.text);
+  }
+
+  // Decides whether items[start..slash) / items(slash..end) is a fraction.
+  function acceptableFraction(items, start, slash, end, gap) {
+    const num = items.slice(start, slash - gap);
+    const den = items.slice(slash + 1 + gap, end);
+    const before = items[start - 1];
+    const after = items[end];
+    const isSlash = (item) => Boolean(item) && item.kind === "other" && item.text === "/";
+    if (!num.length || !den.length) return false;
+    // Part of a chain such as 9/25/2026 or a / b/c, which reads (a/b)/c.
+    if (isSlash(before) || isSlash(after)) return false;
+    if (before && before.kind === "space" && isSlash(items[start - 2])) return false;
+    if (before && before.kind === "other" && CURRENCY.has(before.text)) return false;
+    if (!acceptableNumerator(num)) return false;
+    const numWords = num.filter((item) => item.kind === "word").map((item) => item.text);
+    const denWords = den.filter((item) => item.kind === "word").map((item) => item.text);
+    if (numWords.length === 1 && denWords.length === 1 && den.length === 1 &&
+        UNITS.has(numWords[0]) && UNITS.has(denWords[0]) &&
+        num.every((item) => item.kind === "num" || item.kind === "word")) {
+      return false;
+    }
+    if (NOT_FRACTIONS.has(`${plainText(num)}/${plainText(den)}`.toLowerCase())) return false;
+    if (num.length === 1 && den.length === 1 && isYear(num[0]) && isYear(den[0])) return false;
+    return true;
+  }
+
+  // One operand's nodes. A lone bracket group loses its brackets: the
+  // fraction bar groups it now.
+  function operand(items, context) {
+    if (items.length === 1 && items[0].kind === "group") {
+      return { nodes: convert(items[0].items, context), grouped: true };
+    }
+    return { nodes: convert(items, context), grouped: false };
+  }
+
+  function applyFractions(items, context) {
+    let out = items.slice();
+    for (let slash = 0; slash < out.length; slash += 1) {
+      const item = out[slash];
+      if (item.kind !== "other" || item.text !== "/") continue;
+      // "a/b" or "a / b"; never a slash spaced on one side only.
+      const spaced = out[slash - 1] && out[slash - 1].kind === "space" && out[slash - 1].text === " " &&
+        out[slash + 1] && out[slash + 1].kind === "space" && out[slash + 1].text === " ";
+      const gap = spaced ? 1 : 0;
+      const start = numeratorStart(out, slash - 1 - gap);
+      const end = denominatorEnd(out, slash + 1 + gap);
+      if (end < 0 || !acceptableFraction(out, start, slash, end, gap)) continue;
+      const num = operand(out.slice(start, slash - gap), context);
+      const den = operand(out.slice(slash + 1 + gap, end), context);
+      const node = { type: "frac", num: num.nodes, den: den.nodes };
+      if (context.inSup) {
+        node.inline = true;
+        node.numGrouped = num.grouped;
+        node.denGrouped = den.grouped;
+      }
+      out = out.slice(0, start).concat([nodeItem(node)], out.slice(end));
+      slash = start;
+    }
+    return out;
+  }
+
+  function isStackedFraction(node) {
+    return node.type === "frac" && !node.inline;
+  }
+
+  // Brackets around nothing but a stacked fraction are dropped, (1/2)x → ½x,
+  // unless they carry meaning: a call or product before them, f(1/2) and
+  // 4(1/4), or an exponent after them, (2/3)². Kept brackets around a
+  // stacked fraction become a fence so they can stretch to its height.
+  function groupNodes(group, before, after, context) {
+    const inner = convert(group.items, context);
+    const body = inner.filter((node) => !(node.type === "text" && node.text.trim() === ""));
+    const signed = body.length === 2 && body[0].type === "text" && MINUS_SIGNS.has(body[0].text);
+    const lone = (body.length === 1 && isStackedFraction(body[0])) ||
+      (signed && isStackedFraction(body[1]));
+    const bound = isFactor(before) || (before && before.kind === "node") ||
+      (after && (after.kind === "sups" || isNode(after, "sup")));
+    if (lone && !bound) return inner;
+    if (inner.some(isStackedFraction)) {
+      return [{ type: "fence", open: group.open, close: group.close, children: inner }];
+    }
+    return [{ type: "text", text: group.open }, ...inner, { type: "text", text: group.close }];
+  }
+
+  function mergeText(nodes) {
+    const out = [];
+    nodes.forEach((node) => {
+      const last = out[out.length - 1];
+      if (node.type === "text" && last && last.type === "text") last.text += node.text;
+      else if (node.type !== "text" || node.text !== "") out.push(node);
+    });
+    return out;
+  }
+
+  // Items to nodes, after the structural passes for this bracket level.
+  function convert(items, context) {
+    const settings = context || {};
+    const passed = applyFractions(applyPowers(applyRoots(items, settings), settings), settings);
+    const nodes = [];
+    passed.forEach((item, index) => {
+      if (item.kind === "node") nodes.push(item.node);
+      else if (item.kind === "group") {
+        nodes.push(...groupNodes(item, passed[index - 1], passed[index + 1], settings));
+      } else nodes.push({ type: "text", text: item.text });
+    });
+    return mergeText(nodes);
+  }
+
+  function mathTokens(text) {
+    const source = text === null || text === undefined ? "" : String(text);
+    return convert(mathItems(source), {});
+  }
+
+  /* --------------------------------------------------------- math speech */
+
+  const ROOT_NAMES = { 2: "square", 3: "cube", 4: "fourth", 5: "fifth", 6: "sixth",
+    7: "seventh", 8: "eighth", 9: "ninth", 10: "tenth" };
+
+  // An operand reads without "the fraction … end fraction" when it is one
+  // plain term such as 3, −2, 4π, or x², with no operator inside it.
+  function isSimple(nodes) {
+    return nodes.length === 1 && nodes[0].type === "text" &&
+      /^[−-]?[^\s+\-−=±·×÷/]+$/.test(nodes[0].text);
+  }
+
+  function rootName(index) {
+    if (!index) return "square";
+    if (ROOT_NAMES[index]) return ROOT_NAMES[index];
+    return `${index}th`;
+  }
+
+  function nodeSpeech(node) {
+    if (node.type === "text") return node.text;
+    if (node.type === "fence") return node.open + mathSpeech(node.children) + node.close;
+    if (node.type === "frac") {
+      const num = mathSpeech(node.num);
+      const den = mathSpeech(node.den);
+      return isSimple(node.num) && isSimple(node.den)
+        ? ` ${num} over ${den} `
+        : ` the fraction, ${num}, over ${den}, end fraction `;
+    }
+    if (node.type === "sup") {
+      const power = mathSpeech(node.children);
+      if (node.simple && power === "2") return " squared ";
+      if (node.simple && power === "3") return " cubed ";
+      if (node.simple) return ` to the power ${power} `;
+      return ` raised to the exponent, ${power}, end exponent `;
+    }
+    if (node.type === "root") {
+      const name = `the ${rootName(node.index)} root of`;
+      const radicand = mathSpeech(node.children);
+      return isSimple(node.children) ? ` ${name} ${radicand} ` : ` ${name}, ${radicand}, end root `;
+    }
+    return "";
+  }
+
+  // What a screen reader says for typeset nodes, in ClearSpeak's style:
+  // "3 over 5", "x squared", "the square root of, x + 4, end root".
+  function mathSpeech(nodes) {
+    return (nodes || []).map(nodeSpeech).join("").replace(/\s+/g, " ").trim();
+  }
+
   /* ------------------------------------------------------------ SVG figures */
 
   const SVG_ELEMENTS = new Set([
@@ -322,9 +732,92 @@
     });
   }
 
+  // Draws math nodes. Each typeset piece carries its spoken form in visually
+  // hidden text and hides the drawing from assistive technology, so a
+  // screen reader says "3 over 5" instead of "3 5". Pieces nested inside a
+  // hidden drawing need no spoken form of their own.
+  function appendMathNodes(target, nodes, hidden) {
+    nodes.forEach((node) => {
+      if (node.type === "text") {
+        target.appendChild(doc().createTextNode(node.text));
+      } else if (node.type === "fence") {
+        const fence = el("span", "lm-math-fence");
+        fence.append(el("span", "lm-math-bracket", node.open));
+        appendMathNodes(fence, node.children, hidden);
+        fence.append(el("span", "lm-math-bracket", node.close));
+        target.appendChild(fence);
+      } else if (node.type === "frac" && node.inline) {
+        // A fraction in an exponent stays on one line, a/b, with the
+        // brackets it was written with.
+        const operand = (parts, grouped) => (grouped
+          ? [{ type: "text", text: "(" }, ...parts, { type: "text", text: ")" }]
+          : parts);
+        appendMathNodes(target, [...operand(node.num, node.numGrouped), { type: "text", text: "/" },
+          ...operand(node.den, node.denGrouped)], hidden);
+      } else {
+        const wrap = el("span", `lm-math lm-math-${node.type}`);
+        if (!hidden) wrap.appendChild(el("span", "lm-math-sr", ` ${mathSpeech([node])} `));
+        const drawing = mathDrawing(node);
+        if (!hidden) drawing.setAttribute("aria-hidden", "true");
+        wrap.appendChild(drawing);
+        target.appendChild(wrap);
+      }
+    });
+  }
+
+  // The radical sign is drawn, not typed: a √ glyph's height differs from
+  // font to font, while this stretches to the radicand's height so its top
+  // always meets the overline, even over a stacked fraction.
+  function radicalSign() {
+    const svg = doc().createElementNS(SVG_NS, "svg");
+    svg.setAttribute("class", "lm-math-sign");
+    svg.setAttribute("viewBox", "0 0 10 20");
+    svg.setAttribute("preserveAspectRatio", "none");
+    svg.setAttribute("focusable", "false");
+    const path = doc().createElementNS(SVG_NS, "path");
+    path.setAttribute("d", "M0.5 12.5 L2.6 11 L5.4 19.4 L10 0.6");
+    svg.appendChild(path);
+    return svg;
+  }
+
+  function mathDrawing(node) {
+    if (node.type === "sup") {
+      const sup = el("sup", "lm-math-power");
+      appendMathNodes(sup, node.children, true);
+      return sup;
+    }
+    if (node.type === "frac") {
+      const stack = el("span", "lm-math-stack");
+      const num = el("span", "lm-math-num");
+      const den = el("span", "lm-math-den");
+      appendMathNodes(num, node.num, true);
+      appendMathNodes(den, node.den, true);
+      stack.append(num, den);
+      return stack;
+    }
+    const box = el("span", "lm-math-radical");
+    if (node.index) box.appendChild(el("span", "lm-math-index", node.index));
+    box.appendChild(radicalSign());
+    const radicand = el("span", "lm-math-radicand");
+    appendMathNodes(radicand, node.children, true);
+    box.appendChild(radicand);
+    return box;
+  }
+
+  // Appends text with its math typeset: exponents, fractions, radicals.
+  function appendMath(target, text) {
+    appendMathNodes(target, mathTokens(text), false);
+    return target;
+  }
+
+  function appendPlain(target, text, options) {
+    if (options && options.math) appendMath(target, text);
+    else target.appendChild(doc().createTextNode(text));
+  }
+
   function appendInline(target, text, options) {
     if (!(options && options.underlines)) {
-      target.appendChild(doc().createTextNode(text));
+      appendPlain(target, text, options);
       return;
     }
     parseUnderlines(text).forEach((segment) => {
@@ -342,18 +835,24 @@
         wrap.append(underlined, number);
         target.appendChild(wrap);
       } else {
-        target.appendChild(doc().createTextNode(segment.text));
+        appendPlain(target, segment.text, options);
       }
     });
   }
 
-  function renderTable(block) {
+  // A text element: plain textContent, or typeset math when asked.
+  function textEl(tag, className, text, options) {
+    if (!(options && options.math)) return el(tag, className, text);
+    return appendMath(el(tag, className), text);
+  }
+
+  function renderTable(block, options) {
     const wrap = el("div", "lm-table-wrap");
     const table = el("table", "lm-table");
     const head = el("thead");
     const headRow = el("tr");
     block.header.forEach((cell, index) => {
-      const th = el("th", "", cell);
+      const th = textEl("th", "", cell, options);
       th.scope = "col";
       if (index === 0 && block.rowHeaders) th.setAttribute("aria-hidden", "true");
       headRow.appendChild(th);
@@ -364,7 +863,7 @@
       const tr = el("tr");
       row.forEach((cell, index) => {
         const isHeader = block.rowHeaders && index === 0;
-        const td = el(isHeader ? "th" : "td", "", cell);
+        const td = textEl(isHeader ? "th" : "td", "", cell, options);
         if (isHeader) td.scope = "row";
         tr.appendChild(td);
       });
@@ -381,7 +880,7 @@
     const container = el("div", settings.className || "lm-rich");
     blocks.forEach((block) => {
       if (block.kind === "table") {
-        container.appendChild(renderTable(block));
+        container.appendChild(renderTable(block, settings));
       } else if (block.kind === "list") {
         const list = el("ul", "lm-list");
         block.items.forEach((item) => {
@@ -396,7 +895,7 @@
           : "lm-passage-label", block.text));
       } else if (block.kind === "equations") {
         const group = el("div", "lm-equations");
-        block.lines.forEach((line) => group.appendChild(el("p", "lm-equation", line)));
+        block.lines.forEach((line) => group.appendChild(textEl("p", "lm-equation", line, settings)));
         container.appendChild(group);
       } else {
         const paragraph = el("p");
@@ -408,7 +907,8 @@
   }
 
   // Plain question text (stems, explanations): paragraphs on blank lines,
-  // tables where pipe rows appear.
+  // tables where pipe rows appear. options.math typesets exponents,
+  // fractions, and radicals (see mathTokens); pass it for Math sections.
   function renderText(text, options) {
     return renderBlocks(parseBlocks(text), options);
   }
@@ -511,6 +1011,8 @@
     splitCells,
     parseBlocks,
     parseUnderlines,
+    mathTokens,
+    mathSpeech,
     splitStemPassage,
     sanitizeSvgTree,
     svgSize,
@@ -518,6 +1020,7 @@
     renderBlocks,
     renderText,
     renderStimulus,
+    appendMath,
     renderFigure,
     buildSvg,
   };
