@@ -1942,6 +1942,55 @@
   font-size: 0.88rem;
 }
 
+/* ------------------------------------------------------------- break */
+
+/* The break between the sections of a full-length test: one centered
+   countdown and the button to go on. */
+.lm-shell .lm-break {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 640px;
+  text-align: center;
+}
+
+.lm-shell .lm-break .lm-page-title {
+  margin-bottom: 4px;
+}
+
+.lm-shell .lm-break-label {
+  color: var(--lm-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.lm-shell .lm-break-clock {
+  margin: 0 0 8px;
+  color: var(--lm-ink);
+  font-size: clamp(3rem, 14vw, 4.5rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.lm-shell .lm-break .lm-lede {
+  max-width: 52ch;
+}
+
+.lm-shell .lm-break-resume {
+  margin-top: 12px;
+  min-width: 220px;
+}
+
+.lm-shell .lm-break-note {
+  margin-top: 8px;
+  color: var(--lm-muted);
+  font-size: 0.9rem;
+}
+
 /* ------------------------------------------------------ narrower screens */
 
 @media (max-width: 900px) {

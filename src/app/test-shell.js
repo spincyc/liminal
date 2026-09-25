@@ -9,7 +9,10 @@
   // directions, timer, tools), a question area, and a bottom bar (question
   // navigator, Back, Next), then a review page, a report, and an answer
   // review. Session decisions live in LiminalTestEngine; content rendering
-  // lives in LiminalRender; scoring comes from PracticeCore.
+  // lives in LiminalRender; scoring comes from PracticeCore. One module of
+  // an on-screen SAT test (options.module) is submitted from its review page
+  // and hands over to the app instead of showing a report; the break
+  // between sections has its own screen (startBreak).
 
   const SHELL_SCHEMA = "liminal-test-shell";
   const SHELL_VERSION = 1;
@@ -371,6 +374,201 @@
     return h("div", { className: "lm-ref-body" }, [grid, facts]);
   }
 
+  /* ------------------------------------------------- dialogs and mounting */
+
+  // A modal question in `dialog`: Cancel, an optional secondary choice
+  // (`settings.alternative`: { text, onChoose }), and the confirming action.
+  function confirmIn(dialog, settings) {
+    const cancel = h("button", {
+      type: "button",
+      className: "lm-btn lm-btn-secondary",
+      text: settings.cancel || "Cancel",
+      onClick: () => dialog.close("cancel"),
+    });
+    const alternative = settings.alternative
+      ? h("button", {
+        type: "button",
+        className: "lm-btn lm-btn-secondary lm-btn-danger",
+        text: settings.alternative.text,
+        onClick: () => dialog.close("alternative"),
+      })
+      : null;
+    const confirm = h("button", {
+      type: "button",
+      className: "lm-btn lm-btn-primary",
+      text: settings.confirm || "OK",
+      onClick: () => dialog.close("confirm"),
+    });
+    dialog.replaceChildren(
+      h("h2", { id: "lm-dialog-title", className: "lm-dialog-title", text: settings.title }),
+      h("p", { className: "lm-dialog-text", text: settings.text }),
+      h("div", { className: "lm-dialog-actions" }, [cancel, alternative, confirm]),
+    );
+    const opener = document.activeElement;
+    dialog.returnValue = "";
+    dialog.onclose = () => {
+      if (dialog.returnValue === "confirm") settings.onConfirm();
+      else if (dialog.returnValue === "alternative") settings.alternative.onChoose();
+      else if (opener && opener.isConnected) opener.focus();
+    };
+    if (typeof dialog.showModal === "function") {
+      dialog.showModal();
+      cancel.focus();
+    } else if (root.confirm(`${settings.title}\n\n${settings.text}`)) {
+      settings.onConfirm();
+    }
+  }
+
+  // Puts a full-screen node on the page. The page behind it is inert while
+  // it is open, so Tab and screen readers stay inside. Returns the undo.
+  function mount(node) {
+    const previousOverflow = document.documentElement.style.overflow;
+    const inerted = [];
+    document.body.appendChild(node);
+    Array.from(document.body.children).forEach((child) => {
+      if (child === node || child.hasAttribute("inert") || child.tagName === "SCRIPT") return;
+      child.setAttribute("inert", "");
+      inerted.push(child);
+    });
+    document.documentElement.style.overflow = "hidden";
+    return function unmount() {
+      node.remove();
+      inerted.forEach((child) => child.removeAttribute("inert"));
+      document.documentElement.style.overflow = previousOverflow;
+    };
+  }
+
+  /* ---------------------------------------------------------------- break */
+
+  // The break between the sections of a full-length test: its own
+  // countdown, on the wall clock (`endsAt`), so it keeps running while the
+  // page is closed; a way to go on early; and Save and exit. `options`:
+  // { title, endsAt, next (what starts after it), now?,
+  //   onContinue(reason: "skip" | "time"), onExit({ reason: "save" | "discard" }) }.
+  function startBreak(options) {
+    if (active) active.close();
+    const controller = createBreak(options || {});
+    active = controller;
+    return { close: controller.close, element: controller.root };
+  }
+
+  function createBreak(options) {
+    const now = typeof options.now === "function" ? options.now : () => Date.now();
+    const endsAt = Number(options.endsAt) || now();
+    const call = (name, payload) => {
+      if (typeof options[name] !== "function") return;
+      try {
+        options[name](payload);
+      } catch (error) {
+        if (root.console) root.console.error(`LiminalShell ${name} failed`, error);
+      }
+    };
+    let closed = false;
+    let timerId = null;
+    const refs = {};
+    refs.clock = h("p", { className: "lm-break-clock", role: "timer" });
+    refs.dialog = h("dialog", { className: "lm-dialog", "aria-labelledby": "lm-dialog-title" });
+    refs.resume = h("button", {
+      type: "button",
+      className: "lm-btn lm-btn-primary lm-break-resume",
+      text: "Resume testing",
+      onClick: () => end("skip"),
+    });
+    const title = options.title || "Break";
+    const shell = h("div", {
+      className: "lm-shell lm-break-shell",
+      role: "dialog",
+      "aria-modal": "true",
+      "aria-label": `${title}: break`,
+      dataset: { view: "break" },
+    }, [
+      h("header", { className: "lm-top" }, [
+        h("div", { className: "lm-top-left" }, [h("h1", { className: "lm-title", text: title })]),
+        h("div", { className: "lm-top-center" }, [h("p", { className: "lm-center-label", text: "Break" })]),
+        h("div", { className: "lm-top-right" }, [
+          h("button", {
+            type: "button",
+            className: "lm-tool lm-tool-close",
+            "aria-label": "Exit",
+            title: "Exit",
+            onClick: requestExit,
+          }, [icon("close"), h("span", { className: "lm-tool-label", text: "Exit" })]),
+        ]),
+      ]),
+      h("main", { className: "lm-main" }, [
+        h("div", { className: "lm-page lm-break" }, [
+          h("h2", { className: "lm-page-title", tabindex: "-1", text: "Break time" }),
+          h("p", { className: "lm-break-label", text: "Time left" }),
+          refs.clock,
+          h("p", { className: "lm-lede", text: "Stand up, stretch, and get some water. The break clock keeps running even if you leave this page." }),
+          h("p", { className: "lm-lede", text: `Next: ${options.next || "the next section"}. It starts on its own when the break ends.` }),
+          refs.resume,
+          h("p", { className: "lm-break-note", text: "On test day you would wait for the clock to run out. Here you can go on whenever you are ready." }),
+        ]),
+      ]),
+      refs.dialog,
+    ]);
+
+    function remaining() {
+      return Math.max(0, endsAt - now());
+    }
+
+    function tick() {
+      if (closed) return;
+      const left = remaining();
+      const shown = formatClock(left, true);
+      if (refs.clock.textContent !== shown) {
+        refs.clock.textContent = shown;
+        refs.clock.setAttribute("aria-label", `Break time left: ${spokenClock(left, true)}`);
+      }
+      if (left <= 0) end("time");
+    }
+
+    function teardown() {
+      if (closed) return;
+      closed = true;
+      if (timerId !== null) root.clearInterval(timerId);
+      if (refs.dialog.open) {
+        refs.dialog.onclose = null;
+        refs.dialog.close();
+      }
+      unmount();
+      if (active && active.root === shell) active = null;
+    }
+
+    // The next screen opens after this one is gone.
+    function end(reason) {
+      if (closed) return;
+      teardown();
+      root.setTimeout(() => call("onContinue", reason), 0);
+    }
+
+    function requestExit() {
+      confirmIn(refs.dialog, {
+        title: "Leave the break?",
+        text: "Save and exit keeps your place: resume the test from the Practice page. The break clock keeps running while you are away. Discard test ends the whole test for good; modules you finished stay in your progress.",
+        cancel: "Stay on the break",
+        alternative: { text: "Discard test", onChoose: () => leave("discard") },
+        confirm: "Save and exit",
+        onConfirm: () => leave("save"),
+      });
+    }
+
+    function leave(reason) {
+      teardown();
+      call("onExit", { reason });
+    }
+
+    const unmount = mount(shell);
+    tick();
+    if (!closed) {
+      timerId = root.setInterval(tick, 250);
+      const heading = shell.querySelector(".lm-page-title");
+      if (heading) heading.focus({ preventScroll: true });
+    }
+    return { root: shell, close: teardown };
+  }
+
   /* ------------------------------------------------------------ the shell */
 
   // Whether a saved snapshot can be resumed, so an app never offers a
@@ -466,6 +664,11 @@
       options.tools || {},
     );
     const directions = options.directions || (resumeShell && resumeShell.directions) || null;
+    // One module of an on-screen SAT test: `{ next }` names what follows
+    // ("Module 2", "the break", "your results"). Submitting it, or its time
+    // running out, delivers the result and hands over to the app
+    // (onContinue) instead of showing a report, so there is no going back.
+    const moduleInfo = options.module || (resumeShell && resumeShell.module) || null;
     // A set that spans sections (a mini test) switches directions and tools
     // at each section boundary, as the real test does.
     const mixed = new Set(session.state.questions.map((question) => question.sectionKey).filter(Boolean)).size > 1;
@@ -491,6 +694,7 @@
         runCode,
         tools,
         directions,
+        module: moduleInfo,
         view,
         timerHidden,
         finished: session.state.finished,
@@ -605,9 +809,10 @@
       hidden: true,
     });
 
+    refs.alertText = h("p", { className: "lm-alert-text", text: "5 minutes remaining." });
     refs.alert = h("div", { className: "lm-alert", hidden: true }, [
       icon("clock"),
-      h("p", { className: "lm-alert-text", text: "5 minutes remaining." }),
+      refs.alertText,
       h("button", {
         type: "button",
         className: "lm-alert-close",
@@ -853,48 +1058,8 @@
     }
 
     /* ---- dialogs */
-    // `settings.alternative` adds a third, secondary choice ({ text,
-    // onChoose }) between Cancel and the confirming action.
     function confirmDialog(settings) {
-      const dialog = refs.dialog;
-      const cancel = h("button", {
-        type: "button",
-        className: "lm-btn lm-btn-secondary",
-        text: settings.cancel || "Cancel",
-        onClick: () => dialog.close("cancel"),
-      });
-      const alternative = settings.alternative
-        ? h("button", {
-          type: "button",
-          className: "lm-btn lm-btn-secondary lm-btn-danger",
-          text: settings.alternative.text,
-          onClick: () => dialog.close("alternative"),
-        })
-        : null;
-      const confirm = h("button", {
-        type: "button",
-        className: "lm-btn lm-btn-primary",
-        text: settings.confirm || "OK",
-        onClick: () => dialog.close("confirm"),
-      });
-      dialog.replaceChildren(
-        h("h2", { id: "lm-dialog-title", className: "lm-dialog-title", text: settings.title }),
-        h("p", { className: "lm-dialog-text", text: settings.text }),
-        h("div", { className: "lm-dialog-actions" }, [cancel, alternative, confirm]),
-      );
-      const opener = document.activeElement;
-      dialog.returnValue = "";
-      dialog.onclose = () => {
-        if (dialog.returnValue === "confirm") settings.onConfirm();
-        else if (dialog.returnValue === "alternative") settings.alternative.onChoose();
-        else if (opener && opener.isConnected) opener.focus();
-      };
-      if (typeof dialog.showModal === "function") {
-        dialog.showModal();
-        cancel.focus();
-      } else if (root.confirm(`${settings.title}\n\n${settings.text}`)) {
-        settings.onConfirm();
-      }
+      confirmIn(refs.dialog, settings);
     }
 
     function closeDialog() {
@@ -909,6 +1074,20 @@
     function requestExit() {
       if (session.state.finished) {
         exit("done");
+        return;
+      }
+      if (moduleInfo) {
+        confirmDialog({
+          title: "Leave this test?",
+          text: "Save and exit keeps your place: resume the test from the Practice page" +
+            `${session.state.timeLimitSeconds ? ", and this module's timer picks up where it stopped" : ""}. ` +
+            "Discard test ends the whole test for good. Modules you already finished stay in your progress; " +
+            "this module's answers are not recorded.",
+          cancel: "Keep testing",
+          alternative: { text: "Discard test", onChoose: () => exit("discard") },
+          confirm: "Save and exit",
+          onConfirm: () => exit("save"),
+        });
         return;
       }
       const unchecked = session.state.feedback === "instant"
@@ -937,6 +1116,7 @@
     /* ---- navigation */
     function navigate(index) {
       closePanel(false);
+      hideNotice();
       session.goTo(index);
       if (view !== "question" && view !== "answers") view = "question";
       save();
@@ -977,6 +1157,7 @@
 
     function showView(name) {
       closePanel(false);
+      hideNotice();
       view = name;
       // Only a question on screen gathers time.
       if (name === "question") session.enterQuestion();
@@ -987,6 +1168,20 @@
 
     function requestFinish() {
       const counts = session.counts();
+      if (moduleInfo) {
+        const blank = counts.unanswered;
+        confirmDialog({
+          title: blank
+            ? `Submit this module with ${blank} unanswered question${blank === 1 ? "" : "s"}?`
+            : "Submit this module?",
+          text: `After you submit, you move on to ${moduleInfo.next || "the next part"} and can't come back to this module.` +
+            (blank ? " Unanswered questions count as incorrect." : ""),
+          cancel: "Go back",
+          confirm: "Submit module",
+          onConfirm: () => finishSession("user"),
+        });
+        return;
+      }
       if (counts.unanswered > 0) {
         confirmDialog({
           title: `Finish with ${counts.unanswered} unanswered question${counts.unanswered === 1 ? "" : "s"}?`,
@@ -1001,6 +1196,10 @@
     }
 
     function finishSession(reason) {
+      if (moduleInfo) {
+        endModule(reason);
+        return;
+      }
       closePanel(false);
       closeDialog();
       if (!session.state.finished) session.finish(reason);
@@ -1016,7 +1215,42 @@
       call("onFinish", session.result());
     }
 
+    // A module ends by being submitted or by running out of time. Its result
+    // is delivered, the screen closes, and the app opens what follows; the
+    // student cannot return to it.
+    function endModule(reason) {
+      if (closed) return;
+      closePanel(false);
+      closeDialog();
+      if (!session.state.finished) session.finish(reason);
+      deliverResult();
+      const result = session.result();
+      teardown();
+      root.setTimeout(() => call("onContinue", { reason: result.finishReason || reason, result }), 0);
+    }
+
+    // A one-time note over the first question (why a module started, say),
+    // in the alert the five-minute warning uses; it goes on navigation.
+    let noticeShown = false;
+    function showNotice(text) {
+      refs.alertText.textContent = text;
+      refs.alert.hidden = false;
+      noticeShown = true;
+      announce(text, true);
+    }
+
+    function hideNotice() {
+      if (!noticeShown) return;
+      noticeShown = false;
+      refs.alert.hidden = true;
+      refs.alertText.textContent = "5 minutes remaining.";
+    }
+
     function timeUp() {
+      if (moduleInfo) {
+        endModule("time");
+        return;
+      }
       timeUpNotice = true;
       refs.alert.hidden = true;
       closePanel(false);
@@ -1060,6 +1294,7 @@
       const reading = session.tick();
       if (reading.alertDue) {
         timerHidden = false;
+        hideNotice();
         refs.alert.hidden = false;
         announce("5 minutes remaining.", true);
         save();
@@ -1758,7 +1993,12 @@
       ]);
       refs.main.replaceChildren(h("div", { className: "lm-page lm-review" }, [
         heading,
-        h("p", { className: "lm-lede", text: "Select a question number to go back to it. Nothing is scored until you select Finish." }),
+        h("p", {
+          className: "lm-lede",
+          text: moduleInfo
+            ? `Select a question number to go back to it. When you select Next, this module is submitted and you move on to ${moduleInfo.next || "the next part"}; you can't come back to it.`
+            : "Select a question number to go back to it. Nothing is scored until you select Finish.",
+        }),
         h("p", { className: "lm-review-counts", text: summaryText }),
         card,
       ]));
@@ -1829,7 +2069,11 @@
         children.push(h("p", { className: "lm-report-note", text:
           `${hintedCorrect} of your correct answers came after a hint. Progress counts them apart: they show you can follow the method, not yet that you can find it.` }));
       }
-      children.push(h("p", { className: "lm-caveat", text:
+      // An on-screen SAT test adds why each Module 2 went the way it did.
+      (Array.isArray(options.reportNotes) ? options.reportNotes : []).forEach((text) => {
+        children.push(h("p", { className: "lm-report-note", text: String(text) }));
+      });
+      children.push(h("p", { className: "lm-caveat", text: options.caveat ||
         "This is accuracy on one practice set, not a scaled score. The real test adapts its second module to your first, weights questions differently, and draws on a wider range of difficulty, so a percent correct here does not convert to an SAT or ACT score." }));
 
       const actions = typeof options.reportActions === "function"
@@ -1852,6 +2096,23 @@
           ]))),
         ]));
       }
+
+      // Extra tables from the app, such as results by module: { title,
+      // columns, rows }, every cell plain text, the first a row header.
+      (Array.isArray(options.reportSections) ? options.reportSections : []).forEach((section) => {
+        if (!section || !Array.isArray(section.columns) || !Array.isArray(section.rows)) return;
+        children.push(h("section", { className: "lm-report-section" }, [
+          h("h3", { text: section.title }),
+          h("div", { className: "lm-table-wrap" }, [
+            h("table", { className: "lm-table lm-extra-table" }, [
+              h("thead", {}, [h("tr", {}, section.columns.map((text) => h("th", { scope: "col", text })))]),
+              h("tbody", {}, section.rows.map((row) => h("tr", {}, row.map((cell, index) => (index
+                ? h("td", { text: String(cell) })
+                : h("th", { scope: "row", text: String(cell) })))))),
+            ]),
+          ]),
+        ]));
+      });
 
       if (report.byDifficulty.length) {
         children.push(h("section", { className: "lm-report-section" }, [
@@ -1947,7 +2208,7 @@
       } else if (view === "review") {
         refs.backButton.textContent = "Back";
         refs.backButton.disabled = false;
-        refs.nextButton.textContent = "Finish";
+        refs.nextButton.textContent = moduleInfo ? "Next" : "Finish";
         refs.nextButton.disabled = false;
         refs.nextButton.classList.add("lm-btn-finish");
       } else if (view === "report") {
@@ -2039,17 +2300,7 @@
     }
 
     /* ---- lifecycle */
-    const previousOverflow = document.documentElement.style.overflow;
-    // The page behind the shell is inert while it is open, so Tab and
-    // screen readers stay inside the test.
-    const inerted = [];
-    function setBackgroundInert() {
-      Array.from(document.body.children).forEach((node) => {
-        if (node === shell || node.hasAttribute("inert") || node.tagName === "SCRIPT") return;
-        node.setAttribute("inert", "");
-        inerted.push(node);
-      });
-    }
+    let unmount = null;
 
     function teardown() {
       if (closed) return;
@@ -2064,23 +2315,24 @@
         refs.dialog.onclose = null;
         refs.dialog.close();
       }
-      shell.remove();
-      inerted.forEach((node) => node.removeAttribute("inert"));
-      document.documentElement.style.overflow = previousOverflow;
+      if (unmount) unmount();
       if (active && active.root === shell) active = null;
     }
 
-    document.body.appendChild(shell);
-    setBackgroundInert();
-    document.documentElement.style.overflow = "hidden";
+    unmount = mount(shell);
     document.addEventListener("keydown", onKeyDown, true);
     document.addEventListener("pointerdown", onDocumentPointer, true);
     document.addEventListener("visibilitychange", onVisibility);
     root.addEventListener("pagehide", onPageHide);
 
     if (session.state.finished) {
-      if (!session.state.reported) deliverResult();
-      render();
+      // A module whose time ran out while the page was closed hands over at
+      // once; anything else finished shows its report.
+      if (moduleInfo) endModule(session.state.finishReason || "user");
+      else {
+        if (!session.state.reported) deliverResult();
+        render();
+      }
     } else {
       const first = session.tick();
       if (!session.state.finished) {
@@ -2091,6 +2343,8 @@
         render();
         flushSave();
         timerId = root.setInterval(onTick, 250);
+        if (!resume && options.openDirections) openPanelNamed("directions");
+        if (!resume && options.notice) showNotice(String(options.notice));
       } else {
         timeUp();
       }
@@ -2111,6 +2365,7 @@
     SPR_RULES,
     canResume,
     start,
+    startBreak,
     formatClock,
   };
 });
