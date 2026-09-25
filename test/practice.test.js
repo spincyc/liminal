@@ -220,18 +220,23 @@ test("a skill drill takes several seeds per template, never the same item twice"
     sectionKey: "sat-math", templates: mathTemplates, skill: "Circles", difficulty: "Hard", count: 10, seed: "d1",
     instantiate: S.instantiate,
   });
-  assert.equal(drill.templates, 2, "two templates hold this skill and tier");
+  // Counted from the live templates, so growing a skill does not break the test.
+  const cell = mathTemplates.filter((entry) => entry.skill === "Circles" && entry.difficulty === "Hard").length;
+  assert.ok(cell >= 2, "a drill cell holds at least two templates");
+  assert.equal(drill.templates, cell);
   assert.equal(drill.questions.length, 10);
   assert.ok(drill.questions.every((question) => question.skill === "Circles" && question.difficulty === "Hard"));
   assert.equal(new Set(drill.questions.map((question) => question.id)).size, 10);
   assert.equal(new Set(drill.questions.map(Practice.itemKey)).size, 10, "every item distinct");
-  // Round by round, so the two templates alternate rather than bunch.
+  // Round by round, so the templates alternate rather than bunch: no
+  // template is used more than once more than any other.
   const counts = {};
   drill.questions.forEach((question) => { counts[question.templateId] = (counts[question.templateId] || 0) + 1; });
-  assert.deepEqual(Object.values(counts), [5, 5]);
-  assert.equal(drill.served.length, 5);
+  assert.equal(Object.keys(counts).length, Math.min(cell, 10));
+  assert.ok(Math.max(...Object.values(counts)) - Math.min(...Object.values(counts)) <= 1);
+  assert.equal(drill.served.length, Math.ceil(10 / cell));
   drill.served.forEach((round) => {
-    assert.equal(round.templateIds.length, 2);
+    assert.ok(round.templateIds.length >= 1 && round.templateIds.length <= cell);
     assert.ok(round.mask && round.mask !== "0");
   });
   // Rebuildable from ids, like any generated question.
@@ -266,7 +271,7 @@ test("a drill covers every tier when none is chosen, and is empty when nothing m
   const all = Practice.buildDrill({
     sectionKey: "sat-math", templates: mathTemplates, skill: "Circles", count: 12, seed: "e", instantiate: S.instantiate,
   });
-  assert.equal(all.templates, 6);
+  assert.equal(all.templates, mathTemplates.filter((entry) => entry.skill === "Circles").length);
   assert.deepEqual([...new Set(all.questions.map((question) => question.difficulty))].sort(), ["Easy", "Hard", "Medium"]);
   const none = Practice.buildDrill({
     sectionKey: "sat-math", templates: mathTemplates, skill: "Not a skill", count: 5, instantiate: S.instantiate,
