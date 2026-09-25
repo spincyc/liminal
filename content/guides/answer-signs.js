@@ -14,7 +14,7 @@
 
   window.PRACTICE_ANSWER_SIGNS = {
     version: "2026.1",
-    updated: "2026-07-31",
+    updated: "2026-09-25",
     disclaimer:
       "These are heuristics, not rules. A well-written question can and will " +
       "punish a student who only pattern-matches. Solve first; use a tell to " +
@@ -30,6 +30,11 @@
           "You rarely need to prove the right answer. Prove three answers wrong " +
           "and the last one is correct by default. Cross off aggressively; one " +
           "clearly false word inside a choice kills the whole choice.",
+        caution:
+          "It fails when you eliminate for the wrong reason. If all four choices " +
+          "end up crossed off, or you are left with none you can defend, your " +
+          "reading of the question was off: reread the stem, don't pick the " +
+          "least bad survivor.",
       },
       {
         title: "The test rewards the defensible answer, not the clever one",
@@ -37,6 +42,11 @@
           "The correct choice is the one a reasonable person could defend using " +
           "only the passage or the math on the page. If defending a choice " +
           "requires a story, an assumption, or outside knowledge, it is wrong.",
+        caution:
+          "It fails on questions that ask for a reasonable inference or a " +
+          "logical completion: there the answer goes one careful step beyond " +
+          "the words on the page. The step must be forced by the text, not " +
+          "merely plausible.",
       },
       {
         title: "Extreme language is usually a trap",
@@ -46,6 +56,12 @@
           "are rarely correct on reading and science. Measured words — often, " +
           "may, suggests, some, tends to — survive scrutiny and are correct more " +
           "often. (Math is the exception: there, precision is required.)",
+        caution:
+          "It fails whenever the text itself is emphatic. If the passage says " +
+          "a result held in every trial, the choice with 'every' is right and " +
+          "the hedged one is wrong. On Liminal's own items the most-hedged " +
+          "choice was the key only a little more often than chance, so check " +
+          "the wording against the text instead of counting hedges.",
       },
       {
         title: "Right answers are boring; wrong answers are interesting",
@@ -54,6 +70,11 @@
           "surprising, or emotionally satisfying. The credited answer is often " +
           "the flattest, most literal restatement of the text or the cleanest " +
           "number.",
+        caution:
+          "It fails on hard questions, which are built so that the plain-" +
+          "sounding choice is the near miss and the key needs a closer reading, " +
+          "and on hard math, where the correct value is often the messy one. " +
+          "Use it only to break a genuine tie after you have reasoned it out.",
       },
       {
         title: "Two opposite choices often contain the answer",
@@ -62,6 +83,11 @@
           "the question around that contrast — the answer is frequently one of " +
           "the two. When two choices say the same thing in different words, both " +
           "are usually wrong (they can't both be right, so they cancel).",
+        caution:
+          "Opposite pairs are often both distractors, one overstating each " +
+          "way, with the key a measured third option. And two choices only " +
+          "cancel if they truly mean the same thing; check that before " +
+          "crossing both off.",
       },
       {
         title: "Match scope, tense, and tone",
@@ -69,6 +95,11 @@
           "The credited answer matches the passage's scope (not broader, not " +
           "narrower), its verb tense, and its tone. A choice that is too sweeping " +
           "for a modest paragraph, or too negative for a neutral author, is out.",
+        caution:
+          "It fails when the question asks about one part of the text, not the " +
+          "whole, or about a view the author describes but rejects. Match the " +
+          "scope and tone of what the question points to, not of the passage " +
+          "as a whole.",
       },
     ],
 
@@ -170,19 +201,27 @@
               "generalize) and check the choice against them literally.",
           },
           {
-            name: "Grammar: the shortest, cleanest choice usually wins",
+            name: "Grammar: see what changes across the choices",
             sign:
-              "On Standard-English-Conventions questions, when meaning is equal, " +
-              "the most concise, non-redundant option is generally correct.",
+              "On Standard English Conventions questions, look down the four " +
+              "choices before reading closely. What differs names the rule: " +
+              "punctuation marks (boundaries), is/are (subject-verb agreement), " +
+              "its/their (pronoun agreement), -ing or to-forms against full " +
+              "verbs (verb finiteness), tenses, apostrophes (possessives and " +
+              "plurals), or word order (modifier placement).",
             why:
-              "The SAT prizes concision. Wordy, repetitive, or comma-splice-laden " +
-              "choices are built to be eliminated.",
+              "The SAT's conventions questions test a short official list of " +
+              "points, and every choice keeps the same meaning. Knowing which " +
+              "point is in play tells you exactly what to check.",
             example:
-              "'Because of the fact that' loses to 'because'; 'annual event that " +
-              "happens each year' is redundant.",
+              "If the choices are the forms study's, studies, studies' and " +
+              "studys, decide how many studies there are and whether anything " +
+              "belongs to them.",
             caution:
-              "Concision never beats correctness. A short choice with a grammar " +
-              "error still loses to a slightly longer correct one.",
+              "Length is not a signal here: concision is not one of the SAT's " +
+              "official testing points, so never pick a choice for being " +
+              "shorter. Some choices change two things at once; settle the " +
+              "clearest rule first.",
           },
           {
             name: "Punctuation: test the two halves",
@@ -295,9 +334,11 @@
               "If you solved a rate problem and got 0.5 hours, confirm that half " +
               "an hour actually satisfies the given distance and speed.",
             caution:
-              "Answers must fit the grid: no negative signs allowed in the SAT " +
-              "grid on many items, and fractions/decimals must be entered " +
-              "precisely. If your answer can't be gridded, you erred.",
+              "Negative answers are allowed. You can enter up to 5 characters " +
+              "for a positive answer and 6 for a negative one (the minus sign " +
+              "counts). Enter a mixed number as an improper fraction or a " +
+              "decimal (7/2 or 3.5), and a long decimal to the fourth digit " +
+              "(.6666 or .6667 for 2/3, not .67).",
           },
           {
             name: "Geometry figures are usually drawn to scale (SAT)",
@@ -325,8 +366,8 @@
         category: "English",
         title: "ACT English tells",
         intro:
-          "ACT English is a fast grammar-and-rhetoric section (about 36 seconds " +
-          "per question). It rewards a small set of mechanical rules and a strong " +
+          "ACT English is a fast grammar-and-rhetoric section (about 42 seconds " +
+          "per question: 50 questions in 35 minutes). It rewards a small set of mechanical rules and a strong " +
           "bias toward concision.",
         tells: [
           {
@@ -420,8 +461,9 @@
               "If the paragraph is in past tense, a sudden present-tense verb in " +
               "the underline is the error to fix.",
             caution:
-              "Match the antecedent, not the nearest noun. 'Each of the players " +
-              "lost their...' should be 'his or her' — 'each' is singular.",
+              "Match the antecedent, not the nearest noun. In 'The team, after " +
+              "three losses to rival schools, changed their lineup,' the " +
+              "antecedent is 'team' (singular), so 'its' is the fix.",
           },
         ],
       },
@@ -435,7 +477,8 @@
         category: "Reading",
         title: "ACT Reading tells",
         intro:
-          "ACT Reading is time-pressured (about 52 seconds per question). Answers " +
+          "ACT Reading is time-pressured (about 67 seconds per question: 36 " +
+          "questions in 40 minutes). Answers " +
           "are strictly text-based; the credited choice is provable with a line " +
           "reference, and 'literal and supported' beats 'insightful.'",
         tells: [
@@ -659,32 +702,32 @@
         category: "Math",
         title: "ACT Math tells",
         intro:
-          "ACT Math is five choices (A–E), roughly one minute each, arranged " +
-          "easy-to-hard. Like SAT Math, the tells are about using the answer " +
+          "ACT Math has 45 questions in 50 minutes (about 67 seconds each), " +
+          "each with four answer choices, arranged roughly easy-to-hard. Like SAT Math, the tells are about using the answer " +
           "choices and avoiding seeded mistakes — not blind guessing.",
         tells: [
           {
             name: "Difficulty rises with question number",
             sign:
-              "Early questions (1–20) are usually straightforward; on late " +
-              "questions (50–60), the 'obvious' answer is more likely a trap. " +
+              "Early questions (about 1–15) are usually straightforward; on late " +
+              "questions (about 35–45), the 'obvious' answer is more likely a trap. " +
               "Trust an easy computation early; double-check an easy-looking " +
               "answer late.",
             why:
               "The ordered difficulty means a late question that feels trivial " +
               "probably hides a step you skipped.",
             example:
-              "On question 58, if the answer came in one line, re-read for a " +
+              "On question 43, if the answer came in one line, re-read for a " +
               "'not,' a unit change, or an extra condition.",
             caution:
               "Ordering is a tendency, not a guarantee. Don't talk yourself out " +
               "of a genuinely correct easy answer just because it's late.",
           },
           {
-            name: "Backsolve with the five choices",
+            name: "Backsolve with the four choices",
             sign:
               "When choices are numbers, test them in the problem. They're " +
-              "listed in order, so start with the middle (C) and move up or down.",
+              "listed in order, so start with B or C and move up or down.",
             why:
               "One choice must work; checking them is often faster and safer than " +
               "setting up and solving the algebra.",
