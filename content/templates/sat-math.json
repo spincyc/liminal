@@ -353,20 +353,20 @@
     {
       "id": "proportional-rate-scaling",
       "bit": 58,
-      "version": 1,
-      "fingerprint": "f3dd715a2e0b8a91"
+      "version": 2,
+      "fingerprint": "812450a44767f0cf"
     },
     {
       "id": "ratio-share-of-total",
       "bit": 59,
-      "version": 1,
-      "fingerprint": "47bc6c5534620bcc"
+      "version": 2,
+      "fingerprint": "3b909258bdc2bda6"
     },
     {
       "id": "rate-unit-conversion",
       "bit": 60,
-      "version": 1,
-      "fingerprint": "7d282d2859fa02d8"
+      "version": 2,
+      "fingerprint": "09ce65cc357ac218"
     },
     {
       "id": "ratio-after-change",
@@ -377,26 +377,26 @@
     {
       "id": "multi-unit-rate",
       "bit": 62,
-      "version": 1,
-      "fingerprint": "a0c12483803e6ff7"
+      "version": 2,
+      "fingerprint": "13fc029730c58650"
     },
     {
       "id": "average-rate-two-legs",
       "bit": 63,
-      "version": 1,
-      "fingerprint": "e9b546743499b05e"
+      "version": 2,
+      "fingerprint": "64f737c2c005083f"
     },
     {
       "id": "percent-of-a-quantity",
       "bit": 64,
-      "version": 1,
-      "fingerprint": "b33c1ed18eaa23c3"
+      "version": 2,
+      "fingerprint": "da345fffe6dd41fd"
     },
     {
       "id": "percent-change-between-values",
       "bit": 65,
-      "version": 1,
-      "fingerprint": "05765ebba3aaffd7"
+      "version": 2,
+      "fingerprint": "3328d4b8c6c5d5c1"
     },
     {
       "id": "percent-of-a-subgroup",
@@ -407,308 +407,308 @@
     {
       "id": "percent-change-expression",
       "bit": 67,
-      "version": 1,
-      "fingerprint": "c1f9433fc8360cb0"
+      "version": 2,
+      "fingerprint": "790095fb59d92de0"
     },
     {
       "id": "successive-percent",
       "bit": 68,
-      "version": 1,
-      "fingerprint": "658e87bab5fda391"
+      "version": 2,
+      "fingerprint": "9648a3ed22259814"
     },
     {
       "id": "percent-mixture-fixed-part",
       "bit": 69,
-      "version": 1,
-      "fingerprint": "5bc17e9ec55ca5b2"
+      "version": 2,
+      "fingerprint": "9d9ff48570d3156b"
     },
     {
       "id": "list-mean-or-median",
       "bit": 70,
-      "version": 1,
-      "fingerprint": "fe5003d8f21aeee7"
+      "version": 2,
+      "fingerprint": "b42c2226ce192c58"
     },
     {
       "id": "box-plot-summary",
       "bit": 71,
-      "version": 1,
-      "fingerprint": "ba617af2b025c31d"
+      "version": 2,
+      "fingerprint": "3e4e5215f4f40b7b"
     },
     {
       "id": "data-display-center",
       "bit": 72,
-      "version": 1,
-      "fingerprint": "5af8d28d243a0af1"
+      "version": 2,
+      "fingerprint": "530c8bda61ab6d9f"
     },
     {
       "id": "mean-missing-value",
       "bit": 73,
-      "version": 1,
-      "fingerprint": "aa75fa4219d02081"
+      "version": 2,
+      "fingerprint": "70369af4d06e6ee7"
     },
     {
       "id": "weighted-mean-groups",
       "bit": 74,
-      "version": 1,
-      "fingerprint": "2ce7965be4b20892"
+      "version": 2,
+      "fingerprint": "1289034986d710eb"
     },
     {
       "id": "data-change-statistics",
       "bit": 75,
-      "version": 1,
-      "fingerprint": "ca0e8fa0155dd500"
+      "version": 2,
+      "fingerprint": "81a56fceaf07cca8"
     },
     {
       "id": "best-fit-line-equation",
       "bit": 76,
-      "version": 1,
-      "fingerprint": "4c0d1a02ceb6619e"
+      "version": 2,
+      "fingerprint": "6501952ff08dec11"
     },
     {
       "id": "scatterplot-shape-and-count",
       "bit": 77,
-      "version": 1,
-      "fingerprint": "690704f77c218476"
+      "version": 2,
+      "fingerprint": "8563c734aa025b5d"
     },
     {
       "id": "scatterplot-fit-reading",
       "bit": 78,
-      "version": 1,
-      "fingerprint": "5ebf24cf30c3bd4a"
+      "version": 2,
+      "fingerprint": "e22f13f83c12446d"
     },
     {
       "id": "two-group-fit-lines",
       "bit": 79,
-      "version": 1,
-      "fingerprint": "79311b2a4cb9b894"
+      "version": 2,
+      "fingerprint": "832989df9f86b585"
     },
     {
       "id": "uneven-table-growth",
       "bit": 80,
-      "version": 1,
-      "fingerprint": "540704dc8743e3f9"
+      "version": 2,
+      "fingerprint": "e40e0bfd5366049f"
     },
     {
       "id": "fit-slope-rescaled-units",
       "bit": 81,
-      "version": 1,
-      "fingerprint": "28e44448cde6a72a"
+      "version": 2,
+      "fingerprint": "8e24d44e617fff51"
     },
     {
       "id": "two-way-table-chance",
       "bit": 82,
-      "version": 1,
-      "fingerprint": "7510185e2113cc7e"
+      "version": 2,
+      "fingerprint": "cd8fea1bccd43223"
     },
     {
       "id": "expected-count-from-probability",
       "bit": 83,
-      "version": 1,
-      "fingerprint": "a60c95209b4f95e7"
+      "version": 2,
+      "fingerprint": "98110999a91dac6f"
     },
     {
       "id": "frequency-distribution-probability",
       "bit": 84,
-      "version": 1,
-      "fingerprint": "ebf73f826211bc12"
+      "version": 2,
+      "fingerprint": "63590bf55810f72c"
     },
     {
       "id": "two-way-or-neither",
       "bit": 85,
-      "version": 1,
-      "fingerprint": "281cc5b3ef2c8eb5"
+      "version": 2,
+      "fingerprint": "467413f01e10cfc5"
     },
     {
       "id": "conditional-two-way",
       "bit": 86,
-      "version": 1,
-      "fingerprint": "46b2a1643c351782"
+      "version": 2,
+      "fingerprint": "5e4a1afebdc0ec6a"
     },
     {
       "id": "probability-after-change",
       "bit": 87,
-      "version": 1,
-      "fingerprint": "ee21a3ba8cdfd436"
+      "version": 2,
+      "fingerprint": "a27d0a5b2293d106"
     },
     {
       "id": "sampling-method-choice",
       "bit": 88,
-      "version": 1,
-      "fingerprint": "3e2fef8d343425f6"
+      "version": 2,
+      "fingerprint": "37f56aa70ca957ef"
     },
     {
       "id": "margin-and-sample-size",
       "bit": 89,
-      "version": 1,
-      "fingerprint": "537d4eafdfbae49c"
+      "version": 2,
+      "fingerprint": "9c32db69974d41b4"
     },
     {
       "id": "sample-proportion-estimate",
       "bit": 90,
-      "version": 1,
-      "fingerprint": "c3da9de8711e8fed"
+      "version": 2,
+      "fingerprint": "01c55917f4106f9c"
     },
     {
       "id": "mark-recapture-estimate",
       "bit": 91,
-      "version": 1,
-      "fingerprint": "fcdd55d13164b6cc"
+      "version": 2,
+      "fingerprint": "b56e8dbe8ea9bf8a"
     },
     {
       "id": "sample-inference",
       "bit": 92,
-      "version": 1,
-      "fingerprint": "8e9ae8c3ea9deba1"
+      "version": 2,
+      "fingerprint": "919c172403d351ac"
     },
     {
       "id": "two-estimates-compare",
       "bit": 93,
-      "version": 1,
-      "fingerprint": "12a8f89fcd21f214"
+      "version": 2,
+      "fingerprint": "c5151f25ef937d8d"
     },
     {
       "id": "altitude-area",
       "bit": 94,
-      "version": 1,
-      "fingerprint": "e3b2eee2931d4a80"
+      "version": 2,
+      "fingerprint": "8e8e49979c8a58e8"
     },
     {
       "id": "rectilinear-floor-plan",
       "bit": 95,
-      "version": 1,
-      "fingerprint": "6cef37b5cfb9aabc"
+      "version": 2,
+      "fingerprint": "434f02db6479e94a"
     },
     {
       "id": "volume-to-dimension",
       "bit": 96,
-      "version": 1,
-      "fingerprint": "1b0df1d22885273a"
+      "version": 2,
+      "fingerprint": "de28a775d8829d9f"
     },
     {
       "id": "volume-unit-conversion",
       "bit": 97,
-      "version": 1,
-      "fingerprint": "ccb6da7e03028ebf"
+      "version": 2,
+      "fingerprint": "b6e9f6efe2aeeeb7"
     },
     {
       "id": "scaling-area-volume",
       "bit": 98,
-      "version": 1,
-      "fingerprint": "a596497f17711986"
+      "version": 2,
+      "fingerprint": "81d7d48f007fd982"
     },
     {
       "id": "displacement-and-transfer",
       "bit": 99,
-      "version": 1,
-      "fingerprint": "6513d55b110d9827"
+      "version": 2,
+      "fingerprint": "ddfb3b75976e5c06"
     },
     {
       "id": "angle-pair-single-step",
       "bit": 100,
-      "version": 1,
-      "fingerprint": "d0a4436662c7476e"
+      "version": 2,
+      "fingerprint": "ce04dc2d69e9bec0"
     },
     {
       "id": "triangle-side-bounds",
       "bit": 101,
-      "version": 1,
-      "fingerprint": "71c816a35956f730"
+      "version": 2,
+      "fingerprint": "d22bf865da2d324d"
     },
     {
       "id": "crossing-similar-triangles",
       "bit": 102,
-      "version": 1,
-      "fingerprint": "c079bed0304c1487"
+      "version": 2,
+      "fingerprint": "dfe47b9d8dfc34ce"
     },
     {
       "id": "shared-height-area-ratio",
       "bit": 103,
-      "version": 1,
-      "fingerprint": "a308581cf2bf741f"
+      "version": 2,
+      "fingerprint": "367ae0bcbfa0a30f"
     },
     {
       "id": "similar-triangles-parallel",
       "bit": 104,
-      "version": 1,
-      "fingerprint": "36f81d521cc028cb"
+      "version": 2,
+      "fingerprint": "8a84132a6ffdbb14"
     },
     {
       "id": "angle-chase-not-to-scale",
       "bit": 105,
-      "version": 1,
-      "fingerprint": "c639ac4c25b3d21c"
+      "version": 2,
+      "fingerprint": "b65a178d141b4d1f"
     },
     {
       "id": "right-triangle-ratio-read",
       "bit": 106,
-      "version": 1,
-      "fingerprint": "2b13e41115ff43b6"
+      "version": 2,
+      "fingerprint": "f7d3aa891558644b"
     },
     {
       "id": "special-right-triangle",
       "bit": 107,
-      "version": 1,
-      "fingerprint": "cd801a73ebc7f3b0"
+      "version": 2,
+      "fingerprint": "a96fb4b8d2da4c6c"
     },
     {
       "id": "pythagorean-two-step",
       "bit": 108,
-      "version": 1,
-      "fingerprint": "442e6d29f612634d"
+      "version": 2,
+      "fingerprint": "a02b17c2ebf6f288"
     },
     {
       "id": "trig-context-length",
       "bit": 109,
-      "version": 1,
-      "fingerprint": "73da4967ff58bf83"
+      "version": 2,
+      "fingerprint": "835fc18927474cba"
     },
     {
       "id": "trig-similar-cofunction",
       "bit": 110,
-      "version": 1,
-      "fingerprint": "f62908a647033c12"
+      "version": 2,
+      "fingerprint": "ff1d91cad95750c0"
     },
     {
       "id": "unit-circle-quadrant",
       "bit": 111,
-      "version": 1,
-      "fingerprint": "bbf47d332b6fc694"
+      "version": 2,
+      "fingerprint": "2286775ff9137fff"
     },
     {
       "id": "circle-measure-basic",
       "bit": 112,
-      "version": 1,
-      "fingerprint": "a2fe4817b4990e70"
+      "version": 2,
+      "fingerprint": "4a60ad037b0789e7"
     },
     {
       "id": "circle-measure-convert",
       "bit": 113,
-      "version": 1,
-      "fingerprint": "d689a951c43f1f99"
+      "version": 2,
+      "fingerprint": "ee7194338271c245"
     },
     {
       "id": "circle-equation-features",
       "bit": 114,
-      "version": 1,
-      "fingerprint": "296f5c5296b34472"
+      "version": 2,
+      "fingerprint": "b13d05d1a3a0068e"
     },
     {
       "id": "tangent-radius-right-angle",
       "bit": 115,
-      "version": 1,
-      "fingerprint": "e7508a3f95eaa32e"
+      "version": 2,
+      "fingerprint": "157630cc96599b7e"
     },
     {
       "id": "arc-sector-inscribed",
       "bit": 116,
-      "version": 1,
-      "fingerprint": "d952d5c3a63e828d"
+      "version": 2,
+      "fingerprint": "e9746685a9d322b1"
     },
     {
       "id": "circle-equation-complete-square",
       "bit": 117,
-      "version": 1,
-      "fingerprint": "93bf64e47bcabb86"
+      "version": 2,
+      "fingerprint": "b31f2b5bbd4ad786"
     },
     {
       "id": "literal-equation-factor-target",
@@ -871,6 +871,162 @@
       "bit": 144,
       "version": 1,
       "fingerprint": "3a8218b781668ada"
+    },
+    {
+      "id": "average-rate-required-leg",
+      "bit": 145,
+      "version": 1,
+      "fingerprint": "660af0563548b5b9"
+    },
+    {
+      "id": "density-cube-edge",
+      "bit": 146,
+      "version": 1,
+      "fingerprint": "aace76fb293c13cf"
+    },
+    {
+      "id": "combined-work-rate",
+      "bit": 147,
+      "version": 1,
+      "fingerprint": "6afcbd15cfbd67ba"
+    },
+    {
+      "id": "successive-percent-undo",
+      "bit": 148,
+      "version": 1,
+      "fingerprint": "16c6bfcaadf4fbc6"
+    },
+    {
+      "id": "percent-of-equals-percent-of",
+      "bit": 149,
+      "version": 1,
+      "fingerprint": "e704b7f7b4956413"
+    },
+    {
+      "id": "percent-base-reversal",
+      "bit": 150,
+      "version": 1,
+      "fingerprint": "1ff27f2cafbb5df5"
+    },
+    {
+      "id": "data-change-median",
+      "bit": 151,
+      "version": 1,
+      "fingerprint": "638f28a8346b8a16"
+    },
+    {
+      "id": "histogram-class-intervals",
+      "bit": 152,
+      "version": 1,
+      "fingerprint": "9c0f565a98e1b887"
+    },
+    {
+      "id": "compare-spread-plots",
+      "bit": 153,
+      "version": 1,
+      "fingerprint": "90a31ee653bda80e"
+    },
+    {
+      "id": "could-be-median",
+      "bit": 154,
+      "version": 1,
+      "fingerprint": "df1ac5af981d65a5"
+    },
+    {
+      "id": "fit-model-choice",
+      "bit": 155,
+      "version": 1,
+      "fingerprint": "eba430af6f55f9c5"
+    },
+    {
+      "id": "outlier-removal-fit",
+      "bit": 156,
+      "version": 1,
+      "fingerprint": "2f852dfb0e060489"
+    },
+    {
+      "id": "exponential-fit-interpretation",
+      "bit": 157,
+      "version": 1,
+      "fingerprint": "40be819246352ec5"
+    },
+    {
+      "id": "conditional-table-probability",
+      "bit": 158,
+      "version": 1,
+      "fingerprint": "8719b27fd13d5804"
+    },
+    {
+      "id": "two-way-unknown-cells",
+      "bit": 159,
+      "version": 1,
+      "fingerprint": "5a3bd5c667f42e1e"
+    },
+    {
+      "id": "interval-mean-scope",
+      "bit": 160,
+      "version": 1,
+      "fingerprint": "ad3a596bfdbb0b94"
+    },
+    {
+      "id": "scaling-dimension-change",
+      "bit": 161,
+      "version": 1,
+      "fingerprint": "cb07614b642f827b"
+    },
+    {
+      "id": "inscribed-polygon-circle",
+      "bit": 162,
+      "version": 1,
+      "fingerprint": "2e291fbe02079da1"
+    },
+    {
+      "id": "shaded-region-area",
+      "bit": 163,
+      "version": 1,
+      "fingerprint": "182d569f6c77cab5"
+    },
+    {
+      "id": "altitude-hypotenuse-similarity",
+      "bit": 164,
+      "version": 1,
+      "fingerprint": "5b456a9c2d184fa5"
+    },
+    {
+      "id": "nonparallel-similarity",
+      "bit": 165,
+      "version": 1,
+      "fingerprint": "7be393b1dfd1d5a9"
+    },
+    {
+      "id": "regular-polygon-angles",
+      "bit": 166,
+      "version": 1,
+      "fingerprint": "118925ab4b0b9539"
+    },
+    {
+      "id": "cofunction-complementary-angles",
+      "bit": 167,
+      "version": 1,
+      "fingerprint": "4cdb261d4bfb855d"
+    },
+    {
+      "id": "two-observer-elevation",
+      "bit": 168,
+      "version": 1,
+      "fingerprint": "4edd99c8fbb5a4db"
+    },
+    {
+      "id": "chord-distance-center",
+      "bit": 169,
+      "version": 1,
+      "fingerprint": "4768205c260527a2"
+    },
+    {
+      "id": "chord-arc-height",
+      "bit": 170,
+      "version": 1,
+      "fingerprint": "d70368ae22c90a6e"
     }
   ]
 }

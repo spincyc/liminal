@@ -109,5 +109,57 @@
     return [headers, ...rows].map((row) => row.map(label).join(" | ")).join("\n");
   }
 
-  return { MINUS, gcd, approx, formatNumber, num, paren, label, answerKey, frac, sup, poly, lin, signed, point, table };
+  /* ------------------------------------------------------------ word forms */
+
+  // Thousands separators, as the test prints them: grouped(12500) -> "12,500",
+  // grouped(-6400) -> "−6,400", grouped(1234.5) -> "1,234.5". Four-digit
+  // numbers are grouped too ("1,120 milliliters"), except that callers print
+  // years with num().
+  function grouped(value) {
+    const [whole, part] = formatNumber(Math.abs(value)).split(".");
+    const body = whole.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return `${value < 0 ? MINUS : ""}${body}${part ? `.${part}` : ""}`;
+  }
+
+  // A count and its noun in agreement: plural(1, "hour") -> "1 hour",
+  // plural(3, "hour") -> "3 hours", plural(1200, "person", "people") ->
+  // "1,200 people". Only exactly 1 takes the singular ("1.5 hours").
+  function plural(count, one, many = `${one}s`) {
+    return `${grouped(count)} ${count === 1 ? one : many}`;
+  }
+
+  // Dollars as the test prints them: money(96) -> "$96", money(0.8) ->
+  // "$0.80", money(1250.5) -> "$1,250.50". Cents always show two digits;
+  // whole-dollar amounts show none. Amounts round to the cent.
+  function money(value) {
+    const cents = Math.round(Math.abs(value) * 100);
+    const dollars = Math.floor(cents / 100);
+    const rest = cents % 100;
+    const sign = value < 0 && cents ? MINUS : "";
+    return `${sign}$${grouped(dollars)}${rest ? `.${String(rest).padStart(2, "0")}` : ""}`;
+  }
+
+  // "a" or "an" for the word or number that follows, by how it is read
+  // aloud: article(80) -> "an" ("an 80% increase"), article(18) -> "an",
+  // article(1.8) -> "a", article("hour") -> "an", article("unit") -> "a".
+  function article(next) {
+    const text = String(next).replace(MINUS, "-").trim();
+    if (/^\d/.test(text)) {
+      // The leading group of the whole part is what is said first:
+      // 8, 11, 18, 80-89 and 800-899 start with a vowel sound.
+      const whole = text.split(".")[0].replace(/\D/g, "");
+      const lead = Number(whole.slice(0, ((whole.length - 1) % 3) + 1));
+      return lead === 8 || lead === 11 || lead === 18 || (lead >= 80 && lead <= 89) ||
+        (lead >= 800 && lead <= 899) ? "an" : "a";
+    }
+    const word = text.toLowerCase();
+    if (/^(hour|honest|honor|heir)/.test(word)) return "an";
+    if (/^(uni|use|usu|uti|one|once|eu|ewe)/.test(word)) return "a";
+    return /^[aeiou]/.test(word) ? "an" : "a";
+  }
+
+  return {
+    MINUS, gcd, approx, formatNumber, num, paren, label, answerKey, frac, sup, poly, lin, signed, point, table,
+    grouped, plural, money, article,
+  };
 });
