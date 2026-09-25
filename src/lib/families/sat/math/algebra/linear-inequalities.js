@@ -10,15 +10,46 @@
 
   // Linear inequalities templates (Algebra), ordered Easy, Medium, Hard.
 
-  const { MINUS, num, paren, lin, point, frac } = S;
+  const { MINUS, num, paren, lin, point, frac, approx } = S;
   const {
     clean, whole, commas, usd, money, distinctWrong, commaChoices, moveText, holds, readPoint,
-    round2, commasHard, usdHard, commaChoicesHard, distinctWrongHard, compile,
+    round2, commasHard, usdHard, commaChoicesHard, distinctWrongHard, compile, fitsGridHard,
   } = C;
 
   const FLIP = { "<": ">", ">": "<", "≤": "≥", "≥": "≤" };
 
   const STRICT = { "<": true, ">": true, "≤": false, "≥": false };
+
+  // A modelled mistake that prints the same as the key would be dropped by
+  // instantiate, silently leaving the item with fewer traps; such draws are
+  // redrawn instead.
+  const hitsKey = (key, wrong) => wrong.some(([value]) => S.label(value) === S.label(key));
+
+  const compare = (left, rel, right) => {
+    const tolerance = 1e-9 * Math.max(1, Math.abs(left), Math.abs(right));
+    if (rel === "<") return left < right - tolerance;
+    if (rel === "≤") return left <= right + tolerance;
+    if (rel === ">") return left > right + tolerance;
+    return left >= right - tolerance;
+  };
+
+  // The whole numbers 0..limit that satisfy a displayed one-relation
+  // inequality in n, compiled once, as a comparable string.
+  function wholeSolutions(text, limit = 3000) {
+    const [leftText, rel, rightText] = text.split(/ (≤|≥|<|>) /);
+    const left = compile(leftText);
+    const right = compile(rightText);
+    const out = [];
+    for (let n = 0; n <= limit; n += 1) if (compare(left({ n }), rel, right({ n }))) out.push(n);
+    return out.join(",");
+  }
+
+  // True when x satisfies a displayed compound inequality "L < expr ≤ U".
+  function holdsCompound(text, values) {
+    const [low, r1, middle, r2, high] = text.split(/ (≤|<) /);
+    const value = compile(middle)(values);
+    return compare(compile(low)(values), r1, value) && compare(value, r2, compile(high)(values));
+  }
 
   /* ---------------------------------------------------------- inequality-word-limit */
 
@@ -161,6 +192,61 @@
     },
   ];
 
+  // "Which value is a solution" for L (<, ≤) ax + b (<, ≤) U: the solutions
+  // form an interval, so the key lies between values that fail one side each.
+  function twoSidedMember(t) {
+    for (;;) {
+      const a = (t.chance(0.55) ? -1 : 1) * t.int(2, 6);
+      const b = t.nonzero(-12, 12);
+      const k1 = t.int(-8, 4);
+      const k2 = k1 + t.int(3, 7);
+      const [v1, v2] = [a * k1 + b, a * k2 + b];
+      const [lowV, highV] = [Math.min(v1, v2), Math.max(v1, v2)];
+      const lowStrict = t.chance(0.6);
+      const highStrict = lowStrict ? t.chance(0.4) : true;
+      const expression = a < 0 && t.chance(0.5) ? `${num(b)} ${MINUS} ${lin(-a, 0)}` : lin(a, b);
+      const inequality = `${num(lowV)} ${lowStrict ? "<" : "≤"} ${expression} ${highStrict ? "<" : "≤"} ${num(highV)}`;
+      // Dividing by a negative a turns the lower value's bound into the upper bound on x.
+      const xLowStrict = a > 0 ? lowStrict : highStrict;
+      const xHighStrict = a > 0 ? highStrict : lowStrict;
+      const xRange = `${num(k1)} ${xLowStrict ? "<" : "≤"} x ${xHighStrict ? "<" : "≤"} ${num(k2)}`;
+      const key = t.int(k1 + 1, k2 - 1);
+      const [strictEnd, endSide] = xLowStrict && (!xHighStrict || t.chance(0.5)) ? [k1, "lower"] : [k2, "upper"];
+      const below = k1 - t.int(1, 3);
+      const above = k2 + t.int(1, 3);
+      const wrong = [
+        [strictEnd, `Makes the ${endSide} comparison an equality, but that inequality is strict, so x = ${num(strictEnd)} is excluded.`],
+        ...t.shuffle([
+          [below, `Satisfies the upper bound, x ${xHighStrict ? "<" : "≤"} ${num(k2)}, but not the lower bound.`],
+          [above, `Satisfies the lower bound, x ${xLowStrict ? ">" : "≥"} ${num(k1)}, but not the upper bound.`],
+        ]),
+      ];
+      if (hitsKey(key, wrong)) continue;
+      const steps = [
+        `${b > 0 ? `Subtract ${num(b)} from` : `Add ${num(-b)} to`} all three parts: ${num(lowV - b)} ${lowStrict ? "<" : "≤"} ${lin(a, 0)} ${highStrict ? "<" : "≤"} ${num(highV - b)}.`,
+        `Divide all three parts by ${num(a)}${a < 0 ? ", reversing both inequalities because the divisor is negative" : ""}: ${xRange}.`,
+        `Of the choices, only ${num(key)} lies in that range.`,
+      ];
+      return {
+        responseType: "multiple-choice",
+        estimatedSeconds: 65,
+        stimulus: { type: "equations", content: inequality },
+        stem: "Which of the following values of x is a solution to the given inequality?",
+        correct: key,
+        wrong,
+        explanation: `${steps[0]} ${steps[1]} So ${num(key)} is a solution.`,
+        steps,
+        principles: [
+          "A two-sided inequality holds when both of its comparisons hold.",
+          "Multiplying or dividing every part of an inequality by a negative number reverses its direction.",
+        ],
+        trap: `Each wrong value satisfies one of the two comparisons${xLowStrict || xHighStrict ? ", or makes a strict one an equality" : ""}; a solution must satisfy both.`,
+        hint: "Undo the operations on x in all three parts at once.",
+        verify: () => holdsCompound(inequality, { x: key }) && wrong.every(([value]) => !holdsCompound(inequality, { x: value })),
+      };
+    }
+  }
+
   const inequalitySolve = {
     id: "linear-inequality-solve",
     domain: "Algebra",
@@ -175,6 +261,9 @@
     tricks: ["sign-error", "reversed-condition"],
     build(t) {
       const form = t.pick(["set", "set", "member", "extreme"]);
+      // Half the "which value" items are two-sided, so the key sits between
+      // offered values instead of always beyond them.
+      if (form === "member" && t.chance(0.5)) return twoSidedMember(t);
       for (;;) {
         const a = (t.chance(0.6) ? -1 : 1) * t.int(2, 9);
         const k = t.nonzero(-9, 9);
@@ -243,6 +332,7 @@
             [nearWrong, a < 0 ? flipReason : `Satisfies x ${FLIP[solRel]} ${num(k)}, the solution with the inequality reversed.`],
             [farWrong, a < 0 ? flipReason : `Satisfies x ${FLIP[solRel]} ${num(k)}, the solution with the inequality reversed.`],
           ];
+          if (hitsKey(key, wrong)) continue;
           return {
             ...common,
             responseType: "multiple-choice",
@@ -285,12 +375,12 @@
     domain: "Algebra",
     skill: "Linear inequalities",
     subskill: "solve inequalities",
-    difficulty: "Medium",
+    difficulty: "Easy",
     title: "One-constraint inequality from a story",
     recognize:
       "A limit (at most, at least) makes an inequality, not an equation: a fixed part plus a rate times the count, " +
       "compared with the limit; a count must then be rounded in the direction that keeps the inequality true.",
-    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 0, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["rounding-direction", "reversed-condition", "intermediate-value"],
     build(t) {
       const scene = t.pick(limitScenes);
@@ -326,11 +416,12 @@
           // Over whole numbers, the strict version differs from the key only
           // when the boundary itself is a whole number.
           const chosen = exactBoundary ? [wrong[0], ...t.sample(wrong.slice(1), 2)] : wrong.slice(0, 3);
-          const setOf = (text) => {
-            const out = [];
-            for (let n = 0; n <= 3000; n += 1) if (holds(text, { n })) out.push(n);
-            return out.join(",");
-          };
+          const setOf = (text) => wholeSolutions(text);
+          // Over whole numbers a wrong model can happen to allow exactly the
+          // same counts as the key (41 + 37n ≥ 410 and 41n + 37 ≥ 410 both
+          // mean n ≥ 10), which would make two choices correct: redraw.
+          const keySet = setOf(keyText);
+          if (chosen.some(([text]) => setOf(text) === keySet)) continue;
           return {
             responseType: "multiple-choice",
             estimatedSeconds: 75,
@@ -373,7 +464,7 @@
         wrong.push([room, `Gives the ${scene.amount} ${max ? "left" : "still needed"}, not the number of ${scene.units}.`]);
         const plus = max ? Math.floor((v.B + v.F) / v.r + 1e-9) : Math.ceil((v.B + v.F) / v.r - 1e-9);
         wrong.push([plus, `Adds ${scene.fixedWords} to the ${max ? "limit" : "goal"} instead of subtracting it.`]);
-        if (!numeric && distinctWrong(key, wrong) < 3) continue;
+        if (!numeric && (distinctWrong(key, wrong) < 3 || hitsKey(key, wrong))) continue;
         return commaChoices({
           responseType: numeric ? "numeric" : "multiple-choice",
           estimatedSeconds: 90,
@@ -572,11 +663,12 @@
     domain: "Algebra",
     skill: "Linear inequalities",
     subskill: "systems of inequalities",
+    difficulty: "Medium",
     title: "Whole-number optimum under several linear constraints",
     recognize:
       "Every stated limit is an inequality; the answer is set by whichever one binds first, and a count must be " +
       "rounded in the direction that keeps every inequality true, not to the nearest whole number.",
-    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 2, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["rounding-direction", "wrong-quantity", "intermediate-value", "reversed-condition"],
     build(t) {
       const variant = t.int(0, 3);
@@ -588,9 +680,12 @@
       };
 
       if (variant === 0) {
-        // Budget, a minimum of the other item, and a total-count limit.
+        // Budget, a minimum of the other item, and a total-count limit; either
+        // the budget or the count limit binds, about equally often.
+        const countBinds = t.chance(0.5);
         for (;;) {
           const scene = t.pick(budgetScenes);
+          const item = scene.items.replace(/s$/, "");
           const a = t.int(...scene.a);
           const b = t.int(...scene.b);
           const L = t.int(4, 15);
@@ -598,36 +693,52 @@
           const C = Math.ceil((a * target + b * L + 1) / scene.scale) * scene.scale;
           if (C > a * (target + 1) + b * L - 1) continue;
           const quotient = (C - b * L) / a;
-          const key = Math.floor(quotient);
-          const N = key + L + t.int(2, 5);
+          const budgetMax = Math.floor(quotient);
+          const N = countBinds ? budgetMax + L - t.int(1, 4) : budgetMax + L + t.int(2, 5);
+          const key = Math.min(budgetMax, N - L);
+          const budgetOnly = countBinds
+            ? [budgetMax, `Uses only the budget and never checks the ${N}-${item} limit, which the ${L} required ${scene.ys} share.`]
+            : [key + 1, `Rounds ${num(round2(quotient))} up; ${key + 1} ${scene.xs} plus ${L} ${scene.ys} cost more than ${usdHard(C)}.`];
+          const countOnly = countBinds
+            ? [N, `Gives all ${N} ${scene.items} to ${scene.xs}, leaving no room for the ${L} required ${scene.ys}.`]
+            : [N - L, `Uses only the ${N}-${item} limit and never checks the budget.`];
           const wrong = [
-            [key + 1, `Rounds ${num(round2(quotient))} up; ${key + 1} ${scene.xs} plus ${L} ${scene.ys} cost more than ${usdHard(C)}.`],
-            [N - L, `Uses only the ${N}-${scene.items.replace(/s$/, "")} limit and never checks the budget.`],
-            [key + L, `Gives the total number of ${scene.xs} and ${scene.ys}, not the number of ${scene.xs}.`],
-            [Math.floor(C / a), `Leaves the required ${scene.ys} out of the budget.`],
+            budgetOnly,
+            ...t.shuffle([
+              countOnly,
+              [key + L, `Gives the total number of ${scene.xs} and ${scene.ys}, not the number of ${scene.xs}.`],
+              [Math.floor(C / a), `Leaves the required ${scene.ys} out of the budget.`],
+              [Math.floor((C - b * L) / b), `Divides the ${usdHard(C - b * L)} left after the ${scene.ys} by the price of one of the ${scene.ys} instead of one of the ${scene.xs}.`],
+            ]),
           ];
-          if (distinctWrongHard(key, wrong) < 3) continue;
+          if (distinctWrongHard(key, wrong) < 3 || hitsKey(key, wrong)) continue;
+          const explanation = countBinds
+            ? `To leave the most room for ${scene.xs}, use only the required ${L} ${scene.ys}. The budget would then allow ` +
+              `${a}x ≤ ${commasHard(C - b * L)}, or x ≤ ${num(round2(quotient))}, so up to ${budgetMax} ${scene.xs}. But the ` +
+              `${scene.items} are limited to ${N} in total, so x + ${L} ≤ ${N} and x ≤ ${key}. The count limit binds first.`
+            : `To leave the most money for ${scene.xs}, buy only the required ${L} ${scene.ys}, which cost ${usdHard(b * L)}. ` +
+              `That leaves ${usdHard(C - b * L)}, so ${a}x ≤ ${commasHard(C - b * L)} and x ≤ ${num(round2(quotient))}. ` +
+              `A whole number of ${scene.xs} cannot exceed that, so x ≤ ${key}. Then ${key} + ${L} = ${key + L} ≤ ${N}, ` +
+              `so the ${N}-${item} limit is also met.`;
           return commaChoicesHard({
             ...common,
             stem: `${scene.setup(a, b)} ${scene.limits(C, L, N)} ${scene.ask}`,
             correct: key,
             wrong,
-            explanation:
-              `To leave the most money for ${scene.xs}, buy only the required ${L} ${scene.ys}, which cost ${usdHard(b * L)}. ` +
-              `That leaves ${usdHard(C - b * L)}, so ${a}x ≤ ${commasHard(C - b * L)} and x ≤ ${num(round2(quotient))}. ` +
-              `A whole number of ${scene.xs} cannot exceed that, so x ≤ ${key}. Then ${key} + ${L} = ${key + L} ≤ ${N}, ` +
-              `so the ${N}-${scene.items.replace(/s$/, "")} limit is also met.`,
+            explanation,
             steps: [
               `Write the limits: ${a}x + ${b}y ≤ ${commasHard(C)}, y ≥ ${L}, and x + y ≤ ${N}.`,
-              `Use the smallest allowed y, ${L}: ${a}x ≤ ${commasHard(C - b * L)}.`,
-              `x ≤ ${num(round2(quotient))}, so the greatest whole number is ${key}, rounding down.`,
-              `Check the count limit: ${key} + ${L} = ${key + L} ≤ ${N}.`,
+              `Use the smallest allowed y, ${L}: the budget gives ${a}x ≤ ${commasHard(C - b * L)}, so x ≤ ${num(round2(quotient))}, or ${budgetMax} as a whole number.`,
+              `The count limit gives x ≤ ${N} ${MINUS} ${L} = ${N - L}.`,
+              `Both must hold, so the maximum is the smaller bound: ${key}, set by the ${countBinds ? "count limit" : "budget"}.`,
             ],
             principles: [
               "A maximum under several limits is set by the limit that binds first.",
               "A whole-number count that must stay under a limit is rounded down, whatever the decimal.",
             ],
-            trap: `Rounding ${num(round2(quotient))} to the nearest whole number breaks the budget, and the count limit looks binding but is not.`,
+            trap: countBinds
+              ? `The budget alone would allow ${budgetMax} ${scene.xs}, but the ${L} required ${scene.ys} use part of the ${N}-${item} limit.`
+              : `Rounding ${num(round2(quotient))} to the nearest whole number breaks the budget, and the count limit looks binding but is not.`,
             hint: "Check every stated limit, and ask which way a count may be rounded without breaking one.",
             verify: () => {
               let best = -1;
@@ -665,7 +776,7 @@
             [P + key, `Gives the total number of ${scene.xs} and ${scene.ys}, not the number of ${scene.ys}.`],
             [need, `Stops at the amount, in dollars, still needed after the ${scene.xs}.`],
           ];
-          if (distinctWrongHard(key, wrong) < 3) continue;
+          if (distinctWrongHard(key, wrong) < 3 || hitsKey(key, wrong)) continue;
           return commaChoicesHard({
             ...common,
             stem: `${scene.setup(a, b, P, R)} ${scene.ask}`,
@@ -716,7 +827,7 @@
             [k * key, `Gives the number of ${scene.ys}, not ${scene.xs}.`],
             [Math.floor(C / a), `Leaves the ${scene.ys} out of the budget.`],
           ];
-          if (distinctWrongHard(key, wrong) < 3) continue;
+          if (distinctWrongHard(key, wrong) < 3 || hitsKey(key, wrong)) continue;
           return commaChoicesHard({
             ...common,
             stem: `${scene.setup(a, b, k, C)} ${scene.ask}`,
@@ -770,13 +881,17 @@
         const key = Math.floor(bounds[bind]);
         if (key !== target || Math.floor(bounds[other]) !== target + gap) continue;
         const names = [scene.n1, scene.n2];
+        const rowSwap = Math.floor((avail[bind] - use1[bind] * T) / use2[bind]);
         const wrong = [
           [Math.floor(bounds[other]), `Checks only the ${names[other]} limit.`],
-          [key + 1, `Rounds the ${names[bind]} limit, ${num(round2(bounds[bind]))}, up.`],
-          [key + T, `Gives the total number of ${scene.xs} and ${scene.ys}.`],
-          [Math.min(Math.floor(avail[0] / use1[0]), Math.floor(avail[1] / use1[1])), `Leaves the ${T} ${scene.ys} out of the ${names[0]} and ${names[1]} totals.`],
+          ...t.shuffle([
+            [key + 1, `Rounds the ${names[bind]} limit, ${num(round2(bounds[bind]))}, up.`],
+            [key + T, `Gives the total number of ${scene.xs} and ${scene.ys}.`],
+            [Math.min(Math.floor(avail[0] / use1[0]), Math.floor(avail[1] / use1[1])), `Leaves the ${T} ${scene.ys} out of the ${names[0]} and ${names[1]} totals.`],
+            [rowSwap, `Swaps the table's rows for ${names[bind]}, charging each ${scene.xOne} what a ${scene.yOne} needs and each ${scene.yOne} what a ${scene.xOne} needs.`],
+          ]),
         ];
-        if (distinctWrongHard(key, wrong) < 3) continue;
+        if (distinctWrongHard(key, wrong) < 3 || hitsKey(key, wrong)) continue;
         const rows = [
           [`Each ${scene.xOne}`, use1[0], use1[1]],
           [`Each ${scene.yOne}`, use2[0], use2[1]],
@@ -912,7 +1027,35 @@
       let key;
       let wrong;
       let steps;
-      if (ask === "choice") {
+      // Half the "which inequality" items offer a grid of two independent
+      // slips (the wrong limits, the wrong ends included or excluded), so the
+      // key does not share more of its numbers with the others than they do.
+      const gridItem = ask === "choice" && t.chance(0.5);
+      if (gridItem && within) {
+        const [halfLo, halfHi] = [clean(v.c - v.d / 2), clean(v.c + v.d / 2)];
+        key = range(lo, hi, false, false);
+        wrong = [
+          [range(lo, hi, true, true), `Leaves out ${num(lo)} and ${num(hi)}, which are exactly ${num(v.d)} from ${num(v.c)} and still allowed.`],
+          [range(halfLo, halfHi, false, false), `Treats ${num(v.d)} as the width of the whole range, going only ${num(v.d / 2)} each way from ${num(v.c)}.`],
+          [range(halfLo, halfHi, true, true), `Goes only ${num(v.d / 2)} each way from ${num(v.c)} and also leaves out the limits.`],
+        ];
+        steps = [
+          `Within ${num(v.d)} of ${num(v.c)} means from ${num(v.c)} ${MINUS} ${num(v.d)} = ${num(lo)} up to ${num(v.c)} + ${num(v.d)} = ${num(hi)}.`,
+          `Both limits are allowed, so ${key}.`,
+        ];
+      } else if (gridItem) {
+        key = range(lo, hi, lowStrict, highStrict);
+        const endWord = (strict) => (strict ? "excludes" : "includes");
+        wrong = [
+          [range(lo, hi, !lowStrict, highStrict), `${lowStrict ? "Includes" : "Leaves out"} ${num(lo)}, which the description ${endWord(lowStrict)}.`],
+          [range(lo, hi, lowStrict, !highStrict), `${highStrict ? "Includes" : "Leaves out"} ${num(hi)}, which the description ${endWord(highStrict)}.`],
+          [range(lo, hi, !lowStrict, !highStrict), `Gets both limits wrong: it ${lowStrict ? "includes" : "leaves out"} ${num(lo)} and ${highStrict ? "includes" : "leaves out"} ${num(hi)}.`],
+        ];
+        steps = [
+          `The lower limit is ${num(lo)}, which is ${lowStrict ? "excluded" : "included"}; the upper limit is ${num(hi)}, which is ${highStrict ? "excluded" : "included"}.`,
+          `So ${key}.`,
+        ];
+      } else if (ask === "choice") {
         key = range(lo, hi, lowStrict, highStrict);
         wrong = [[complement, `Describes the ${scene.fails}, the reverse of the condition.`]];
         if (within) {
@@ -1050,29 +1193,45 @@
         const key = askY ? Y : X;
         const slipX = -X;
         const slipY = up * slipX + cUp;
+        // The corner always lies between the two boundaries' intercepts, so
+        // offering both would bracket the key; one intercept is offered, next
+        // to the other coordinate and a slip in solving for the corner.
         let wrong;
         if (askY) {
           const atZero = most ? Math.min(cUp, cDown) : Math.max(cUp, cDown);
           const otherIntercept = most ? Math.max(cUp, cDown) : Math.min(cUp, cDown);
+          // The rising boundary's intercept lies on the same side of the key
+          // as the sign slip, so the key is an end value about half the time.
+          const intercept = cUp === atZero
+            ? [atZero, `Finds the ${most ? "greatest" : "least"} value of b only for a = 0, where the boundary lines cross the y-axis.`]
+            : [otherIntercept, `Takes the y-intercept ${num(otherIntercept)} of one boundary, a point that breaks the other inequality.`];
           wrong = [
             [X, "Gives the x-coordinate of the corner, not the y-coordinate."],
-            ...t.shuffle([
-              [atZero, `Finds the ${most ? "greatest" : "least"} value of b only for a = 0, where the boundary lines cross the y-axis.`],
-              [otherIntercept, `Takes the y-intercept ${num(otherIntercept)} of one boundary, a point that breaks the other inequality.`],
-              [slipY, `Solves for the corner with a sign error, getting a = ${num(slipX)}.`],
-            ]),
+            intercept,
+            [slipY, `Solves for the corner with a sign error, getting a = ${num(slipX)}.`],
+            [-Y, "Gives the y-coordinate of the corner with its sign reversed."],
           ];
         } else {
+          const intercepts = [
+            [frac(-cUp, up), `Uses the x-intercept of y = ${rising}, where one boundary meets the x-axis, not where the boundaries meet.`],
+            [frac(-cDown, down), `Uses the x-intercept of y = ${falling}, where one boundary meets the x-axis, not where the boundaries meet.`],
+          ];
+          const slips = [[slipX, "Solves for the corner with a sign error."]];
+          if (up + down !== 0) {
+            slips.push([frac(cDown - cUp, up + down), `Adds the slopes instead of subtracting them when setting ${rising} equal to ${falling}.`]);
+          }
+          // The intercept offered lies on the same side of the key as the sign slip.
+          const sameSide = intercepts.find(([value]) => {
+            const x = typeof value === "number" ? value : Number(value.replace(MINUS, "-").split("/")[0]) / Number(value.split("/")[1] || 1);
+            return Math.sign(x - X) === Math.sign(slipX - X);
+          });
           wrong = [
             [Y, "Gives the y-coordinate of the corner, not the x-coordinate."],
-            ...t.shuffle([
-              [slipX, "Solves for the corner with a sign error."],
-              [frac(-cUp, up), `Uses the x-intercept of y = ${rising}, where one boundary meets the x-axis, not where the boundaries meet.`],
-              [frac(-cDown, down), `Uses the x-intercept of y = ${falling}, where one boundary meets the x-axis, not where the boundaries meet.`],
-            ]),
+            sameSide || t.pick(intercepts),
+            ...slips,
           ];
         }
-        if (!numeric && distinctWrongHard(key, wrong) < 3) continue;
+        if (!numeric && (distinctWrongHard(key, wrong) < 3 || hitsKey(key, wrong))) continue;
         const extreme = most ? "maximum" : "minimum";
         const why = {
           maxY: `For a < ${num(X)} the rising boundary y = ${rising} is the lower ceiling, and for a > ${num(X)} the falling boundary y = ${falling} is; either way b stays below ${num(Y)}.`,
@@ -1129,5 +1288,699 @@
     },
   };
 
-  return [inequalityRange, inequalitySolve, inequalityWord, inequalitySystem, inequalityOptimization, regionCorner];
+  /* ------------------------------------------------ shared by the new templates */
+
+  // The number a choice label stands for: "−7/3" -> −2.333….
+  const valueOfLabel = (label) => {
+    const [top, bottom] = S.label(label).replace(MINUS, "-").replace(/,/g, "").split("/");
+    return Number(top) / Number(bottom || 1);
+  };
+
+  // Credit the cold review's blind strategy earns on one set of choices (the
+  // key first): of the two middle values, the choice sharing the most numbers
+  // with the others is picked, and ties split the credit.
+  function blindCredit(labels) {
+    const tokens = labels.map((text) => new Set(text.replace(/−/g, "-").match(/\d+(\.\d+)?|[a-zA-Z]+/g) || []));
+    const score = tokens.map((mine, index) => tokens.reduce((sum, theirs, other) =>
+      sum + (index === other ? 0 : [...mine].filter((token) => theirs.has(token)).length), 0));
+    const order = [0, 1, 2, 3].sort((left, right) => valueOfLabel(labels[left]) - valueOfLabel(labels[right]));
+    const middle = [order[1], order[2]];
+    const best = Math.max(...middle.map((index) => score[index]));
+    const kept = middle.filter((index) => score[index] === best);
+    return kept.includes(0) ? 1 / kept.length : 0;
+  }
+
+  // Chooses three distractors from a pool of modelled mistakes so that
+  // neither the key's rank among the values nor the digits it shares with
+  // the others singles it out: over many items a student who never reads
+  // the question does no better than chance. Returns null when the pool is
+  // too small.
+  function neutralTriple(t, key, pool) {
+    const seen = new Set([S.label(key)]);
+    const unique = pool.filter(([text]) => !seen.has(S.label(text)) && seen.add(S.label(text))).slice(0, 8);
+    if (unique.length < 3) return null;
+    const scored = [];
+    for (let i = 0; i < unique.length; i += 1) {
+      for (let j = i + 1; j < unique.length; j += 1) {
+        for (let k = j + 1; k < unique.length; k += 1) {
+          const triple = [unique[i], unique[j], unique[k]];
+          scored.push({ triple, credit: blindCredit([key, ...triple.map(([text]) => text)].map(S.label)) });
+        }
+      }
+    }
+    const credited = scored.filter((entry) => entry.credit > 0);
+    const clear = scored.filter((entry) => entry.credit === 0);
+    if (!credited.length || !clear.length) return t.shuffle(t.pick(scored).triple);
+    const mean = credited.reduce((sum, entry) => sum + entry.credit, 0) / credited.length;
+    const chosen = t.chance(Math.min(1, 0.22 / mean)) ? t.pick(credited) : t.pick(clear);
+    return t.shuffle(chosen.triple);
+  }
+
+  // How many of the offered wrong choices share a number with the key's label.
+  function echoes(key, wrong) {
+    const digits = (text) => new Set(S.label(text).match(/\d+/g) || []);
+    const own = digits(key);
+    return wrong.filter(([text]) => [...digits(text)].some((token) => own.has(token))).length;
+  }
+
+  // Picks three distractors from a pool of modelled mistakes so the key is
+  // the least or the greatest choice about half the time, rather than
+  // wherever the mistakes' sizes happen to put it.
+  function pickBalanced(t, key, pool) {
+    const seen = new Set([S.label(key)]);
+    const unique = pool.filter(([text]) => !seen.has(S.label(text)) && seen.add(S.label(text)));
+    const k = valueOfLabel(key);
+    const below = unique.filter(([text]) => valueOfLabel(text) < k);
+    const above = unique.filter(([text]) => valueOfLabel(text) > k);
+    if (t.chance(0.5)) {
+      const side = t.shuffle([below, above]).find((list) => list.length >= 3);
+      if (side) return t.shuffle(side).slice(0, 3);
+    } else if (below.length && above.length) {
+      const first = [t.pick(below), t.pick(above)];
+      return [...first, ...t.shuffle(unique.filter((entry) => !first.includes(entry)))].slice(0, 3);
+    }
+    return t.shuffle(unique).slice(0, 3);
+  }
+
+  /* ----------------------------------------------- inequality-two-variable-context */
+
+  // Fixed amount F plus a per-item a and b, compared with a limit L.
+  const twoItemScenes = [
+    {
+      rel: "≤", money: true, xs: "small candles", ys: "large candles",
+      make: (t) => ({ a: t.int(4, 9), b: t.int(11, 18), F: t.pick([5, 6, 8, 10]), L: 10 * t.int(10, 24) }),
+      text: (v) =>
+        `A customer is buying small candles that cost ${usd(v.a)} each and large candles that cost ${usd(v.b)} each. ` +
+        `The order has a ${usd(v.F)} shipping fee, and the customer will spend at most ${usd(v.L)} in all.`,
+      fixed: "the shipping fee", total: "the total cost, in dollars, of the order",
+    },
+    {
+      rel: "≤", money: false, xs: "boxes of books", ys: "boxes of tiles",
+      make: (t) => ({ a: t.int(25, 45), b: t.int(50, 80), F: t.int(150, 230), L: 50 * t.int(24, 50) }),
+      text: (v) =>
+        `A freight elevator can carry at most ${commas(v.L)} pounds. A worker who weighs ${v.F} pounds is loading the ` +
+        `elevator with boxes of books that weigh ${v.a} pounds each and boxes of tiles that weigh ${v.b} pounds each.`,
+      fixed: "the worker's weight", total: "the total weight, in pounds, in the elevator",
+    },
+    {
+      rel: "≥", money: true, xs: "mugs", ys: "T-shirts",
+      make: (t) => ({ a: t.int(5, 9), b: t.int(12, 20), F: 10 * t.int(5, 20), L: 50 * t.int(12, 30) }),
+      text: (v) =>
+        `A club has already raised ${usd(v.F)} for a trip. It will sell mugs for ${usd(v.a)} each and T-shirts for ` +
+        `${usd(v.b)} each, and it needs to raise at least ${usd(v.L)} in all.`,
+      fixed: "the money already raised", total: "the total amount, in dollars, the club raises",
+    },
+    {
+      rel: "≥", money: false, xs: "minutes of jogging", ys: "minutes of swimming",
+      make: (t) => ({ a: t.int(6, 10), b: t.int(11, 15), F: 10 * t.int(3, 9), L: 50 * t.int(8, 16) }),
+      text: (v) =>
+        `Jada's warm-up burns ${v.F} calories. After it, she burns ${v.a} calories per minute jogging and ${v.b} ` +
+        `calories per minute swimming, and she wants to burn at least ${commas(v.L)} calories in all.`,
+      fixed: "the warm-up's calories", total: "the total number of calories Jada burns",
+    },
+  ];
+
+  const twoVariableContext = {
+    id: "inequality-two-variable-context",
+    domain: "Algebra",
+    skill: "Linear inequalities",
+    subskill: "solve inequalities",
+    difficulty: "Medium",
+    title: "Two-variable linear inequality in context",
+    recognize:
+      "Each quantity's rate pairs with its own variable, the fixed part is added once, and \"at most\" or \"at least\" " +
+      "sets the direction; fixing one variable turns the inequality into a one-variable bound that is rounded the safe way.",
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["reversed-condition", "rounding-direction", "wrong-quantity"],
+    build(t) {
+      const scene = t.pick(twoItemScenes);
+      const max = scene.rel === "≤";
+      const form = t.pick(max ? ["model", "bound", "pair"] : ["model", "bound"]);
+      const numeric = form === "bound" && t.chance(0.5);
+      for (;;) {
+        const v = scene.make(t);
+        const { a, b, F, L } = v;
+        const total = (x, y) => F + a * x + b * y;
+        const ok = (x, y) => (max ? total(x, y) <= L : total(x, y) >= L);
+        const flip = max ? "≥" : "≤";
+        const model = (p, q, rel) => `${commas(F)} + ${p}x + ${q}y ${rel} ${commas(L)}`;
+        const keyModel = model(a, b, scene.rel);
+        const define = `where x is the number of ${scene.xs} and y is the number of ${scene.ys}`;
+        const common = {
+          explanation: `${scene.total[0].toUpperCase()}${scene.total.slice(1)} is ${commas(F)} + ${a}x + ${b}y, and it must be ${max ? "at most" : "at least"} ${commas(L)}: ${keyModel}.`,
+          principles: [
+            "In a two-variable linear inequality, each rate multiplies the variable for its own quantity, and a fixed amount is added once.",
+            "\"At most\" is ≤ and \"at least\" is ≥.",
+          ],
+        };
+        if (form === "model") {
+          const key = keyModel;
+          const wrong = [
+            [model(b, a, scene.rel), `Pairs each rate with the other quantity: ${b} goes with ${scene.ys}, not ${scene.xs}.`],
+            [model(a, b, flip), `Reverses the inequality: the total must be ${max ? "at most" : "at least"} ${commas(L)}.`],
+            [model(b, a, flip), "Pairs each rate with the other quantity and also reverses the inequality."],
+          ];
+          return {
+            ...common,
+            responseType: "multiple-choice",
+            estimatedSeconds: 80,
+            stimulus: null,
+            stem: `${scene.text(v)} Which inequality represents this situation, ${define}?`,
+            correct: key,
+            wrong,
+            steps: [
+              `${scene.fixed[0].toUpperCase()}${scene.fixed.slice(1)} is a fixed ${commas(F)}.`,
+              `The ${scene.xs} contribute ${a}x and the ${scene.ys} ${b}y.`,
+              `"${max ? "At most" : "At least"} ${commas(L)}" gives ${key}.`,
+            ],
+            trap: "Swapping the two rates or the direction of the inequality produces a statement that reads just as naturally.",
+            hint: "Build the total from its parts before comparing it with the limit.",
+            verify: () => {
+              // Test the offered inequalities on a grid of whole-number points
+              // spanning every count the limit could allow.
+              const [xTop, yTop] = [Math.ceil(L / a) + 3, Math.ceil(L / b) + 3];
+              const [xStep, yStep] = [Math.max(1, Math.floor(xTop / 60)), Math.max(1, Math.floor(yTop / 60))];
+              const agrees = (text) => {
+                const [left, rel, right] = text.replace(/,/g, "").split(/ (≤|≥) /);
+                const [lf, rf] = [compile(left), compile(right)];
+                for (let x = 0; x <= xTop; x += xStep) {
+                  for (let y = 0; y <= yTop; y += yStep) {
+                    if (compare(lf({ x, y }), rel, rf({ x, y })) !== ok(x, y)) return false;
+                  }
+                }
+                return true;
+              };
+              return agrees(key) && wrong.every(([text]) => !agrees(text));
+            },
+          };
+        }
+        if (form === "bound") {
+          const y0 = t.int(2, 9);
+          const room = max ? L - F - b * y0 : L - F - b * y0;
+          if (room <= a * 3) continue;
+          const q = room / a;
+          if (Number.isInteger(q)) continue;
+          const key = max ? Math.floor(q) : Math.ceil(q);
+          const pool = [
+            [max ? key + 1 : key - 1, `Rounds ${num(round2(q))} ${max ? "up" : "down"}; ${max ? key + 1 : key - 1} ${scene.xs} would ${max ? "go over" : "fall short of"} ${commas(L)}.`],
+            [max ? Math.floor((L - b * y0) / a) : Math.ceil((L - b * y0) / a), `Leaves out ${scene.fixed}.`],
+            [max ? Math.floor((L - F - a * y0) / b) : Math.ceil((L - F - a * y0) / b), `Pairs the ${y0} ${scene.ys} with the rate for ${scene.xs}, and the ${scene.xs} with the rate for ${scene.ys}.`],
+            [key + y0, `Gives the total number of ${scene.xs} and ${scene.ys}, not the number of ${scene.xs}.`],
+            [max ? Math.floor((L + F - b * y0) / a) : Math.ceil((L + F - b * y0) / a), `Adds ${scene.fixed} to the ${max ? "limit" : "goal"} instead of subtracting it.`],
+          ].filter(([value]) => value > 0);
+          const wrong = pickBalanced(t, key, pool);
+          if (!numeric && (wrong.length < 3 || hitsKey(key, wrong))) continue;
+          const ask = max
+            ? `If the ${scene.ys} number ${y0}, what is the greatest possible number of ${scene.xs}?`
+            : `If Jada does ${y0} ${scene.ys}, what is the least possible whole number of ${scene.xs}?`;
+          const stemAsk = scene.xs === "minutes of jogging" ? ask
+            : max ? `If ${y0} ${scene.ys} are included, what is the greatest number of ${scene.xs} possible?`
+              : `If the club sells ${y0} ${scene.ys}, what is the least number of ${scene.xs} it must sell?`;
+          return commaChoices({
+            ...common,
+            responseType: numeric ? "numeric" : "multiple-choice",
+            estimatedSeconds: 90,
+            stimulus: null,
+            stem: `${scene.text(v)} ${stemAsk}`,
+            correct: key,
+            wrong: numeric ? [] : wrong,
+            steps: [
+              `Write the inequality: ${keyModel}.`,
+              `Substitute y = ${y0}: ${a}x ${scene.rel} ${commas(L)} ${MINUS} ${commas(F)} ${MINUS} ${commas(b * y0)} = ${commas(room)}.`,
+              `x ${scene.rel} ${num(round2(q))}…, so the ${max ? "greatest" : "least"} whole number is ${key}.`,
+            ],
+            trap: max
+              ? `${num(round2(q))} rounds to the nearest whole number the wrong way here: only rounding down keeps the total within ${commas(L)}.`
+              : `${num(round2(q))} must be rounded up: a smaller whole number leaves the total short of ${commas(L)}.`,
+            hint: "Put in what you know, then ask which way a whole number may be rounded.",
+            verify: () => {
+              const found = [];
+              for (let x = 0; x <= 2000; x += 1) if (ok(x, y0)) found.push(x);
+              return found.length > 0 && (max ? Math.max(...found) : Math.min(...found)) === key;
+            },
+          });
+        }
+        // "pair": each wrong combination satisfies one mistaken model and
+        // breaks the true one, and none is smaller in both counts than the key.
+        const combos = [];
+        for (let x = 1; a * x < L; x += 1) for (let y = 1; b * y < L; y += 1) combos.push([x, y]);
+        const near = combos.filter(([x, y]) => ok(x, y) && L - total(x, y) < Math.min(a, b));
+        const swapped = combos.filter(([x, y]) => !ok(x, y) && F + b * x + a * y <= L);
+        const noFixed = combos.filter(([x, y]) => !ok(x, y) && a * x + b * y <= L);
+        const reversed = combos.filter(([x, y]) => total(x, y) >= L + Math.max(a, b) && total(x, y) <= L + 3 * b);
+        if (!near.length || !swapped.length || !noFixed.length || !reversed.length) continue;
+        const [kx, ky] = t.pick(near);
+        const notBelow = (list) => list.filter(([x, y]) => !(x <= kx && y <= ky) && (x !== kx || y !== ky));
+        const choose = (list) => (notBelow(list).length ? t.pick(notBelow(list)) : null);
+        const picks = [choose(swapped), choose(noFixed), choose(reversed)];
+        if (picks.some((entry) => !entry)) continue;
+        const say = ([x, y]) => `${x} ${scene.xs} and ${y} ${scene.ys}`;
+        const key = say([kx, ky]);
+        const wrong = [
+          [say(picks[0]), `Costs ${usd(F + b * picks[0][0] + a * picks[0][1])} only if each price is paired with the other kind of candle; it actually costs ${usd(total(...picks[0]))}.`],
+          [say(picks[1]), `Stays within ${usd(L)} only if ${scene.fixed} is left out; with it the order costs ${usd(total(...picks[1]))}.`],
+          [say(picks[2]), `Costs ${usd(total(...picks[2]))}, which satisfies the inequality reversed, not "at most ${usd(L)}".`],
+        ];
+        if (scene.xs !== "small candles") {
+          wrong[0][1] = `Fits only if each weight is paired with the other kind of box; it actually weighs ${commas(total(...picks[0]))} pounds.`;
+          wrong[1][1] = `Fits only if ${scene.fixed} is left out; with it the load is ${commas(total(...picks[1]))} pounds.`;
+          wrong[2][1] = `Weighs ${commas(total(...picks[2]))} pounds, which satisfies the inequality reversed, not "at most ${commas(L)} pounds".`;
+        }
+        if (new Set([key, ...wrong.map(([text]) => text)]).size < 4) continue;
+        return {
+          ...common,
+          responseType: "multiple-choice",
+          estimatedSeconds: 95,
+          stimulus: null,
+          stem: `${scene.text(v)} Which of the following combinations is possible?`,
+          correct: key,
+          wrong,
+          steps: [
+            `Write the condition: ${keyModel}.`,
+            `Test each combination: ${key} gives ${commas(total(kx, ky))}, which is at most ${commas(L)}.`,
+            "Each other combination gives a total over the limit.",
+          ],
+          trap: `Pairing a rate with the wrong item, or forgetting ${scene.fixed}, lets a combination that is over the limit look possible.`,
+          hint: "Compute the total for each combination with every part of the cost included.",
+          verify: () => {
+            const read = (text) => text.match(/^(\d+) .* and (\d+) /).slice(1).map(Number);
+            return ok(...read(key)) && wrong.every(([text]) => !ok(...read(text)));
+          },
+        };
+      }
+    },
+  };
+
+  /* ------------------------------------------------------- inequality-graph-region */
+
+  const GRID = 6;
+
+  // y = (rise/run)x + b0 through lattice points of the window.
+  function boundaryLine(t, runs = [1, 2, 3]) {
+    for (;;) {
+      const run = t.pick(runs);
+      const rise = t.nonzero(-3, 3);
+      if (S.gcd(rise, run) !== 1) continue;
+      const b0 = t.int(-3, 3);
+      const points = [];
+      for (let x = -GRID; x <= GRID; x += run) {
+        const y = b0 + (rise * x) / run;
+        if (Math.abs(y) <= GRID - 1) points.push([x, y]);
+      }
+      if (points.length >= 3) return { rise, run, b0, points };
+    }
+  }
+
+  // Two lattice points a student would read off a line.
+  function readablePoints(line) {
+    const first = line.points.find(([x]) => x === 0) || line.points[0];
+    const second = line.points.reduce((best, candidate) =>
+      (Math.abs(candidate[0] - first[0]) > Math.abs(best[0] - first[0]) ? candidate : best));
+    return [first, second];
+  }
+
+  const at = (line, x) => line.b0 + (line.rise * x) / line.run;
+  const slopeOf = (line) => frac(line.rise, line.run);
+
+  // "y = (2/3)x − 1"
+  function lineEquation(line) {
+    const divisor = S.gcd(line.rise, line.run);
+    const top = line.rise / divisor;
+    const bottom = line.run / divisor;
+    const term = bottom === 1 ? lin(top, 0) : `${top < 0 ? MINUS : ""}(${Math.abs(top)}/${bottom})x`;
+    return `y = ${term}${line.b0 === 0 ? "" : ` ${line.b0 < 0 ? MINUS : "+"} ${Math.abs(line.b0)}`}`;
+  }
+
+  // Shading constraint for y (≥ or ≤) (rise/run)x + b0, as run·y − rise·x against run·b0.
+  const side = (line, above) => [-line.rise, line.run, line.run * line.b0, above ? ">=" : "<="];
+
+  function extrapolateItem(t) {
+    const numeric = t.chance(0.5);
+    for (;;) {
+      const line = boundaryLine(t, [2, 3, 4]);
+      const above = t.chance(0.5);
+      const strict = t.chance(0.5);
+      const c = t.sign() * t.int(9, 24);
+      const edge = at(line, c);
+      const whole = Number.isInteger(edge);
+      const key = above ? (whole ? edge + (strict ? 1 : 0) : Math.ceil(edge)) : (whole ? edge - (strict ? 1 : 0) : Math.floor(edge));
+      const word = above ? "least" : "greatest";
+      const round = (value) => (above ? Math.ceil(value - 1e-9) + (strict && Number.isInteger(value) ? 1 : 0) : Math.floor(value + 1e-9) - (strict && Number.isInteger(value) ? 1 : 0));
+      const [p, q] = readablePoints(line);
+      const through = `the line through ${point(...p)} and ${point(...q)}`;
+      const pool = [];
+      if (whole) {
+        pool.push(strict
+          ? [edge, `Includes the boundary value ${num(edge)}, but a dashed boundary line is not part of the solution region.`]
+          : [edge + (above ? 1 : -1), `Leaves out the boundary value ${num(edge)}, but the solid boundary line is part of the solution region.`]);
+      } else {
+        pool.push([above ? Math.floor(edge) : Math.ceil(edge), `Rounds ${num(round2(edge))} ${above ? "down" : "up"}, to a point on the unshaded side of the boundary.`]);
+      }
+      pool.push([round(line.b0 - (line.rise * c) / line.run), `Reads the slope of ${through} with the wrong sign.`]);
+      pool.push([round(line.b0 + (line.run * c) / line.rise), `Reads the slope of ${through} as run over rise.`]);
+      if (line.b0 !== 0) pool.push([round(-line.b0 + (line.rise * c) / line.run), `Reads the y-intercept as ${num(-line.b0)} instead of ${num(line.b0)}.`]);
+      pool.push([above ? (whole ? edge - (strict ? 1 : 0) : Math.floor(edge)) - 0 : (whole ? edge + (strict ? 1 : 0) : Math.ceil(edge)),
+        `Gives the ${above ? "greatest" : "least"} value on the unshaded side, the region reversed.`]);
+      const wrong = pickBalanced(t, key, pool);
+      if (!numeric && (wrong.length < 3 || hitsKey(key, wrong))) continue;
+      const P = S.plane({ xMin: -GRID, xMax: GRID, yMin: -GRID, yMax: GRID });
+      const parts = [
+        P.region([side(line, above)]),
+        ...P.grid(),
+        ...P.axes(),
+        P.line(line.rise, -line.run, -line.run * line.b0, { dashed: strict }),
+      ];
+      const alt =
+        `A ${strict ? "dashed" : "solid"} line graphed in ${P.describe()}, with grid lines 1 unit apart. The line passes ` +
+        `through ${point(...p)} and ${point(...q)}, and the region ${above ? "above" : "below"} the line is shaded.`;
+      const relation = above ? (strict ? ">" : "≥") : (strict ? "<" : "≤");
+      const inequality = `${lineEquation(line).replace("=", relation)}`;
+      return {
+        responseType: numeric ? "numeric" : "multiple-choice",
+        estimatedSeconds: 120,
+        stimulus: null,
+        figure: { svg: P.svg(parts, alt), alt, notToScale: false },
+        stem:
+          `The shaded region shown represents all solutions (x, y) to a linear inequality. If the point (${num(c)}, k) is a ` +
+          `solution to the inequality, where k is an integer, what is the ${word} possible value of k?`,
+        correct: key,
+        wrong: numeric ? [] : wrong,
+        explanation:
+          `The boundary passes through ${point(...p)} and ${point(...q)}, so it is ${lineEquation(line)}. It is ` +
+          `${strict ? "dashed, so it is not included" : "solid, so it is included"}, and the shading is ${above ? "above" : "below"} it: ` +
+          `${inequality}. At x = ${num(c)} the boundary is at y = ${S.frac(line.rise * c + line.run * line.b0, line.run)}, so ` +
+          `k ${relation} ${S.frac(line.rise * c + line.run * line.b0, line.run)} and the ${word} integer k is ${num(key)}.`,
+        steps: [
+          `Read the boundary: slope ${slopeOf(line)} and y-intercept ${num(line.b0)}, so ${lineEquation(line)}.`,
+          `A ${strict ? "dashed" : "solid"} line with shading ${above ? "above" : "below"} gives ${inequality}.`,
+          `At x = ${num(c)}: k ${relation} ${S.frac(line.rise * c + line.run * line.b0, line.run)}.`,
+          `The ${word} integer k is ${num(key)}.`,
+        ],
+        principles: [
+          "A dashed boundary means a strict inequality (< or >); a solid one includes the line (≤ or ≥).",
+          "A point outside the drawn window is tested with the inequality, not the picture.",
+        ],
+        trap: `x = ${num(c)} lies off the grid, so k cannot be read from the drawing; and whether the boundary value itself counts depends on whether the line is ${strict ? "dashed, as here" : "solid, as here"}.`,
+        hint: "The point is off the grid; what does the graph tell you that works for any x?",
+        verify: () => {
+          // Rebuild the boundary from the two listed points and test integers directly.
+          const [[x1, y1], [x2, y2]] = [p, q];
+          const yAt = (x) => y1 + ((y2 - y1) / (x2 - x1)) * (x - x1);
+          const good = (k) => {
+            const d = k - yAt(c);
+            if (Math.abs(d) < 1e-9) return !strict;
+            return above ? d > 0 : d < 0;
+          };
+          const valid = [];
+          for (let k = -200; k <= 200; k += 1) if (good(k)) valid.push(k);
+          return (above ? Math.min(...valid) : Math.max(...valid)) === key;
+        },
+      };
+    }
+  }
+
+  // Two boundaries, one solid and one dashed; the offered points lie off the
+  // grid, so each must be tested in the inequalities the graph encodes.
+  function offGridPointItem(t) {
+    for (;;) {
+      const solid = boundaryLine(t, [1, 2, 3]);
+      const dashed = boundaryLine(t, [1, 2, 3]);
+      if (Math.abs(solid.rise / solid.run - dashed.rise / dashed.run) < 0.5) continue;
+      // Shade below the solid line and above the dashed one, or the reverse.
+      const belowSolid = t.chance(0.5);
+      const okSolid = (x, y) => (belowSolid ? y <= at(solid, x) + 1e-9 : y >= at(solid, x) - 1e-9);
+      const okDashed = (x, y) => (belowSolid ? y > at(dashed, x) + 1e-9 : y < at(dashed, x) - 1e-9);
+      const inRegion = (x, y) => okSolid(x, y) && okDashed(x, y);
+      // Off-grid x-values where both boundaries are whole numbers.
+      const step = solid.run * dashed.run / S.gcd(solid.run, dashed.run);
+      const xs = [];
+      for (let x = -15; x <= 15; x += 1) if (Math.abs(x) >= GRID + 2 && x % step === 0) xs.push(x);
+      if (xs.length < 4) continue;
+      const [x1, x2, x3, x4] = t.sample(xs, 4);
+      if ([x1, x2, x3, x4].some((x) => Math.abs(at(solid, x)) > 30 || Math.abs(at(dashed, x)) > 30)) continue;
+      const nudge = belowSolid ? 1 : -1;
+      const keyPoint = [x1, at(solid, x1)];
+      const candidates = [
+        [[x2, at(dashed, x2)], "Lies on the dashed boundary line, and points on a dashed boundary are not solutions."],
+        [[x3, at(solid, x3) + nudge], `Satisfies the dashed boundary's inequality but lies ${belowSolid ? "above" : "below"} the solid line, outside the shaded region.`],
+        [[x4, at(dashed, x4) - nudge], `Satisfies the solid boundary's inequality but lies ${belowSolid ? "below" : "above"} the dashed line, outside the shaded region.`],
+      ];
+      if (!inRegion(...keyPoint) || candidates.some(([[x, y]]) => inRegion(x, y))) continue;
+      // The first two wrong points must fail for the stated reason only.
+      if (!okSolid(...candidates[0][0]) || okSolid(...candidates[1][0]) || !okDashed(...candidates[1][0])) continue;
+      if (!okSolid(...candidates[2][0]) || okDashed(...candidates[2][0])) continue;
+      const key = point(...keyPoint);
+      const wrong = candidates.map(([p, reason]) => [point(...p), reason]);
+      if (hitsKey(key, wrong) || new Set([key, ...wrong.map(([text]) => text)]).size < 4) continue;
+      const P = S.plane({ xMin: -GRID, xMax: GRID, yMin: -GRID, yMax: GRID });
+      const parts = [
+        P.region([side(solid, !belowSolid), side(dashed, belowSolid)]),
+        ...P.grid(),
+        ...P.axes(),
+        P.line(solid.rise, -solid.run, -solid.run * solid.b0),
+        P.line(dashed.rise, -dashed.run, -dashed.run * dashed.b0, { dashed: true }),
+      ];
+      const [sp, sq] = readablePoints(solid);
+      const [dp, dq] = readablePoints(dashed);
+      const alt =
+        `Two lines graphed in ${P.describe()}, with grid lines 1 unit apart. A solid line passes through ${point(...sp)} ` +
+        `and ${point(...sq)}, and a dashed line passes through ${point(...dp)} and ${point(...dq)}. The region ` +
+        `${belowSolid ? "below the solid line and above the dashed line" : "above the solid line and below the dashed line"} is shaded.`;
+      const solidRel = belowSolid ? "≤" : "≥";
+      const dashedRel = belowSolid ? ">" : "<";
+      const system = [lineEquation(solid).replace("=", solidRel), lineEquation(dashed).replace("=", dashedRel)];
+      const steps = [
+        `Solid line through ${point(...sp)} and ${point(...sq)}: ${lineEquation(solid)}; the shading is ${belowSolid ? "below" : "above"} it and the line is included: ${system[0]}.`,
+        `Dashed line through ${point(...dp)} and ${point(...dq)}: ${lineEquation(dashed)}; the shading is ${belowSolid ? "above" : "below"} it and the line is excluded: ${system[1]}.`,
+        `Test each point in both: ${key} lies on the solid line, which is included, and on the shaded side of the dashed line.`,
+      ];
+      return {
+        responseType: "multiple-choice",
+        estimatedSeconds: 130,
+        stimulus: null,
+        figure: { svg: P.svg(parts, alt), alt, notToScale: false },
+        stem: "The shaded region shown represents all solutions to a system of two linear inequalities. Which of the following points is a solution to the system?",
+        correct: key,
+        wrong,
+        explanation: steps.join(" "),
+        steps,
+        principles: [
+          "A solid boundary line is part of the solution region (≤ or ≥); a dashed one is not (< or >).",
+          "A point off the drawn grid is tested with the inequalities the graph shows, not by eye.",
+        ],
+        trap: "Every point lies off the grid, so the drawing cannot settle it; and a point on the solid line counts while a point on the dashed line does not.",
+        hint: "None of the points is on the grid shown. What would let you test them anyway?",
+        verify: () => {
+          // Rebuild both boundaries from their listed points and test every choice.
+          const through = ([ax, ay], [bx, by]) => (x) => ay + ((by - ay) / (bx - ax)) * (x - ax);
+          const fs = through(sp, sq);
+          const fd = through(dp, dq);
+          const inside = (text) => {
+            const [x, y] = readPoint(text);
+            const solidOk = belowSolid ? y <= fs(x) + 1e-9 : y >= fs(x) - 1e-9;
+            const dashedOk = belowSolid ? y > fd(x) + 1e-9 : y < fd(x) - 1e-9;
+            return solidOk && dashedOk;
+          };
+          return inside(key) && wrong.every(([text]) => !inside(text));
+        },
+      };
+    }
+  }
+
+  const graphRegion = {
+    id: "inequality-graph-region",
+    domain: "Algebra",
+    skill: "Linear inequalities",
+    subskill: "systems of inequalities",
+    difficulty: "Hard",
+    title: "Solutions of linear inequalities read from a shaded graph",
+    recognize:
+      "The picture fixes the inequality, not the answer: read each boundary's equation from lattice points, note " +
+      "dashed or solid and the shaded side, then work with the inequality, because the points asked about lie off " +
+      "the drawn grid.",
+    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    tricks: ["sign-error", "rounding-direction", "wrong-quantity", "reversed-condition"],
+    build(t) {
+      return t.chance(0.5) ? extrapolateItem(t) : offGridPointItem(t);
+    },
+  };
+
+  /* ---------------------------------------------------- inequality-parameter-range */
+
+  const RELATIONS = ["<", "≤", ">", "≥"];
+  const NEGATE = { "<": "≥", "≤": ">", ">": "≤", "≥": "<" };
+
+  // c REL t after dividing −αc REL δ by −α.
+  function solveFor(coefficient, rel, right) {
+    return { rel: coefficient > 0 ? rel : FLIP[rel], bound: right / coefficient };
+  }
+
+  // The least (for > and ≥) or greatest (for < and ≤) integer satisfying c REL bound.
+  function integerEnd(rel, bound) {
+    const whole = Number.isInteger(bound);
+    if (rel === "≥") return Math.ceil(bound - 1e-9);
+    if (rel === ">") return whole ? bound + 1 : Math.ceil(bound);
+    if (rel === "≤") return Math.floor(bound + 1e-9);
+    return whole ? bound - 1 : Math.floor(bound);
+  }
+
+  function identityItem(t, numeric) {
+    for (;;) {
+      const alpha = t.pick([2, 3, 4, 5, -2, -3, -4]);
+      const beta = t.int(1, 4);
+      const delta = t.nonzero(-20, 20);
+      const rel = t.pick(RELATIONS);
+      const all = t.chance(0.5);
+      // α(βx − c) REL αβx + δ  ->  −αc REL δ.
+      const statement = all ? rel : NEGATE[rel];
+      const { rel: cRel, bound } = solveFor(-alpha, statement, delta);
+      if (Math.abs(bound) > 12 || bound === 0) continue;
+      const key = integerEnd(cRel, bound);
+      const least = cRel === ">" || cRel === "≥";
+      const word = least ? "least" : "greatest";
+      const inequality = `${num(alpha)}(${lin(beta, 0)} ${MINUS} c) ${rel} ${lin(alpha * beta, delta)}`;
+      const other = solveFor(-alpha, all ? NEGATE[rel] : rel, delta);
+      const slipped = solveFor(alpha, statement, delta);
+      const pool = [
+        [integerEnd(other.rel, other.bound), `Answers for the opposite condition: that value makes the inequality ${all ? "false for every x" : "true for every x"}.`],
+        [integerEnd(least ? "≥" : "≤", slipped.bound), `Distributes ${num(alpha)} without changing the sign of c, getting ${lin(alpha, 0, "c")} instead of ${lin(-alpha, 0, "c")}.`],
+        [integerEnd(FLIP[cRel], bound), `Divides by ${num(-alpha)} ${-alpha < 0 ? "without reversing" : "and reverses"} the inequality.`],
+        [Number.isInteger(bound) ? (cRel === ">" || cRel === "<" ? bound : bound + (least ? 1 : -1)) : Math.round(bound) === key ? key + (least ? 1 : -1) : Math.round(bound),
+          Number.isInteger(bound)
+            ? (cRel === ">" || cRel === "<" ? `Includes c = ${num(bound)}, where the two sides are equal, which the strict inequality rules out.` : `Leaves out c = ${num(bound)}, which the inequality allows.`)
+            : `Rounds ${num(round2(bound))} to the nearest whole number instead of in the direction the inequality allows.`],
+      ].filter(([value]) => Number.isFinite(value));
+      const wrong = neutralTriple(t, key, pool);
+      if (!numeric && (!wrong || hitsKey(key, wrong))) continue;
+      const reduced = `${lin(-alpha, 0, "c")} ${statement} ${num(delta)}`;
+      return {
+        responseType: numeric ? "numeric" : "multiple-choice",
+        estimatedSeconds: 110,
+        stimulus: { type: "equations", content: inequality },
+        stem:
+          `In the given inequality, c is a constant. If ${all ? "the inequality is true for all values of x" : "the inequality has no solution"}, ` +
+          `what is the ${word} possible ${Number.isInteger(bound) && (cRel === "≥" || cRel === "≤") ? "" : "integer "}value of c?`,
+        correct: key,
+        wrong: numeric ? [] : wrong,
+        explanation:
+          `Distributing gives ${lin(alpha * beta, 0)} ${-alpha * 1 < 0 ? MINUS : "+"} ${lin(Math.abs(alpha), 0, "c")} ${rel} ${lin(alpha * beta, delta)}. ` +
+          `The x-terms are equal, so they cancel and x drops out: ${lin(-alpha, 0, "c")} ${rel} ${num(delta)}. ` +
+          `${all ? "The inequality holds for every x exactly when this statement is true" : "The inequality fails for every x exactly when this statement is false"}: ` +
+          `${reduced}, so c ${cRel} ${S.frac(delta, -alpha)}. The ${word} ${Number.isInteger(bound) && (cRel === "≥" || cRel === "≤") ? "" : "integer "}value is ${num(key)}.`,
+        steps: [
+          `Distribute: ${lin(alpha * beta, 0)} ${-alpha < 0 ? MINUS : "+"} ${lin(Math.abs(alpha), 0, "c")} ${rel} ${lin(alpha * beta, delta)}.`,
+          `Subtract ${lin(alpha * beta, 0)} from both sides: ${lin(-alpha, 0, "c")} ${rel} ${num(delta)}, a statement with no x in it.`,
+          all ? "For the inequality to hold for every x, that statement must be true." : "For no x to work, that statement must be false.",
+          `${reduced} gives c ${cRel} ${S.frac(delta, -alpha)}${-alpha < 0 ? ", reversing the inequality to divide by a negative" : ""}; the ${word} ${Number.isInteger(bound) && (cRel === "≥" || cRel === "≤") ? "" : "integer "}value is ${num(key)}.`,
+        ],
+        principles: [
+          "When the variable terms on the two sides are equal, an inequality is true for all x or for none, depending only on its constants.",
+          "Dividing both sides of an inequality by a negative number reverses it.",
+        ],
+        trap: `There is nothing to solve for x; the question is whether the leftover statement about c is ${all ? "true" : "false"}.`,
+        hint: "Simplify both sides and look at what happens to x.",
+        verify: () => {
+          // Test the displayed inequality at several x for integer values of c near the key.
+          const works = (c) => {
+            const results = [-7, -1.5, 0, 2, 9.25].map((x) => holds(inequality.replace(/c\)/, `(${num(c)}))`), { x }));
+            return all ? results.every(Boolean) : results.every((r) => !r);
+          };
+          const beyond = least ? key - 1 : key + 1;
+          return works(key) && works(least ? key + 3 : key - 3) && !works(beyond);
+        },
+      };
+    }
+  }
+
+  function couldBeItem(t) {
+    for (;;) {
+      const a = t.pick([2, 3, 4, 5, -2, -3, -4]);
+      const b = t.nonzero(-9, 9);
+      const lo = t.int(-6, 4);
+      const hi = lo + t.int(3, 6);
+      // lo < x < hi, written through g(x) = ax + b.
+      const [gLo, gHi] = [a * lo + b, a * hi + b].sort((m, n) => m - n);
+      // Mostly a negative multiplier, so the order of the range reverses.
+      const c = t.pick([-1, -2, -3, -2, 2, 3]);
+      const d = t.nonzero(-9, 9);
+      const h = (x) => c * x + d;
+      const [hLo, hHi] = [h(lo), h(hi)].sort((m, n) => m - n);
+      const inside = (value) => value > hLo && value < hHi;
+      const gText = a < 0 && t.chance(0.5) ? `${num(b)} ${MINUS} ${lin(-a, 0)}` : lin(a, b);
+      const hText = c < 0 ? `${num(d)} ${MINUS} ${lin(-c, 0)}` : lin(c, d);
+      const minusH = c < 0 ? lin(-c, -d) : `${num(-d)} ${MINUS} ${lin(c, 0)}`;
+      const insideValues = [];
+      for (let v = hLo + 1; v < hHi; v += 1) insideValues.push(v);
+      if (!insideValues.length) continue;
+      const key = t.pick(insideValues);
+      const outside = (list) => list.filter((v) => !inside(v) && v !== key);
+      const xs = outside(Array.from({ length: hi - lo - 1 }, (_, i) => lo + 1 + i));
+      const negs = outside(Array.from({ length: Math.max(0, hHi - hLo - 1) }, (_, i) => -(hLo + 1 + i)));
+      const gs = outside(Array.from({ length: Math.max(0, gHi - gLo - 1) }, (_, i) => gLo + 1 + i));
+      const endpoint = (value) => [value, `Is an endpoint of the range of ${hText}, but the inequalities are strict, so that value is never reached.`];
+      const pool = t.shuffle([
+        endpoint(hLo),
+        endpoint(hHi),
+        ...t.sample(xs, 2).map((value) => [value, `Is a possible value of x, not of ${hText}.`]),
+        ...t.sample(negs, 2).map((value) => [value, `Is a possible value of ${minusH}: the sign of ${hText} is reversed.`]),
+        ...t.sample(gs, 2).map((value) => [value, `Is a possible value of ${gText}, the expression in the given inequality, not of ${hText}.`]),
+      ]);
+      const wrong = neutralTriple(t, key, pool);
+      if (!wrong || hitsKey(key, wrong) || wrong.some(([value]) => inside(value))) continue;
+      const inequality = `${num(gLo)} < ${gText} < ${num(gHi)}`;
+      return {
+        responseType: "multiple-choice",
+        estimatedSeconds: 100,
+        stimulus: { type: "equations", content: inequality },
+        stem: `If x satisfies the given inequality, which of the following could be the value of ${hText}?`,
+        correct: key,
+        wrong,
+        explanation:
+          `Solving gives ${num(lo)} < x < ${num(hi)}${a < 0 ? " (dividing by a negative number reverses both inequalities)" : ""}. ` +
+          `Then ${hText} runs between ${num(h(lo))} and ${num(h(hi))}${c < 0 ? ", with the order reversed because x is multiplied by a negative number" : ""}: ` +
+          `${num(hLo)} < ${hText} < ${num(hHi)}. Of the choices, only ${num(key)} is in that range.`,
+        steps: [
+          `${b > 0 ? `Subtract ${num(b)} from` : `Add ${num(-b)} to`} all three parts and divide by ${num(a)}: ${num(lo)} < x < ${num(hi)}.`,
+          `${c < 0 ? `Multiply by ${num(c)}, reversing the inequalities, and add ${num(d)}` : `Multiply by ${num(c)} and add ${num(d)}`}: ${num(hLo)} < ${hText} < ${num(hHi)}.`,
+          `Only ${num(key)} lies strictly between ${num(hLo)} and ${num(hHi)}.`,
+        ],
+        principles: [
+          "Applying the same operations to every part of a compound inequality keeps it true; multiplying by a negative number reverses the order.",
+        ],
+        trap: `The choices include values that fit x, or ${gText}, or ${hText} with its sign reversed; only the range of ${hText} itself answers the question.`,
+        hint: `Find the range of x first, then build ${hText} from it.`,
+        verify: () => {
+          // Read the asked expression back from its text, find the x that gives
+          // each offered value, and test that x in the displayed inequality.
+          const f = compile(hText);
+          const [intercept, slope] = [f({ x: 0 }), f({ x: 1 }) - f({ x: 0 })];
+          const reached = (target) => holdsCompound(inequality, { x: (target - intercept) / slope });
+          return reached(key) && wrong.every(([value]) => !reached(value));
+        },
+      };
+    }
+  }
+
+  const parameterRange = {
+    id: "inequality-parameter-range",
+    domain: "Algebra",
+    skill: "Linear inequalities",
+    subskill: "solve inequalities",
+    difficulty: "Hard",
+    title: "Inequalities as conditions on a constant or on another expression",
+    recognize:
+      "The question is not \"solve for x\": either the x-terms cancel, leaving a statement about the constant that " +
+      "must be true (for all x) or false (for no x), or the range of x must be carried through a second expression, " +
+      "reversing the order wherever a negative multiplies.",
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
+    tricks: ["reversed-condition", "sign-error", "wrong-quantity", "rounding-direction"],
+    build(t) {
+      return t.chance(0.5) ? identityItem(t, t.chance(0.4)) : couldBeItem(t);
+    },
+  };
+
+  return [
+    inequalityRange, inequalitySolve, inequalityWord, inequalitySystem, inequalityOptimization, twoVariableContext,
+    regionCorner, graphRegion, parameterRange,
+  ];
 });
