@@ -62,6 +62,8 @@ for (const asset of [
   "lib/progress.js",
   "lib/review-queue.js",
   "lib/practice.js",
+  "lib/analytics.js",
+  "lib/progress-io.js",
   "app/render.js",
   "app/test-shell.js",
   "app/site.js",
@@ -199,7 +201,8 @@ if (html.includes('"lib/booklet.js"')) throw new Error("index.html loads lib/boo
 for (const [name, page, order] of [
   ["index.html", html, [
     "styles/tokens.css", "styles/app.css", "styles/test-shell.css", "styles/math.css",
-    "lib/core.js", "lib/template-mask.js", "lib/runs.js", "lib/progress.js", "lib/practice.js",
+    "lib/core.js", "lib/template-mask.js", "lib/runs.js", "lib/progress.js", "lib/review-queue.js",
+    "lib/practice.js", "lib/analytics.js", "lib/progress-io.js",
     "app/site.js", ...VIEW_SCRIPTS, "app/app.js",
   ]],
   ["print.html", printHtml, [
