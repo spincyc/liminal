@@ -212,6 +212,46 @@ Also enforced:
   key positions 18–32%, the longest choice is the key at most 40% of the
   time, and at least three families use not-to-scale figures.
 
+## Building choices without tells
+
+The gate measures tells; these construction patterns avoid them.
+
+- **Errors on a grid.** Build distractors from two independent mistakes
+  (each alone, then both), so every choice differs from two others by one
+  change and no choice is the one the others vary around.
+- **Keys anywhere in order.** Offer slips on both sides of the key, so the
+  key is sometimes the smallest or largest value (`spreadRank` and
+  `packRanked` with `balance` in the Problem-Solving and Geometry
+  `common.js`; `spreadAround` and `spreadWithMirror` in Algebra's). Offer a
+  decoy ± pair when the key's negation is a likely slip.
+- **Statement grids.** For "which is true" items, cross two claims with their
+  negations (`statementGrid`), so each choice has the same shape and length.
+- **Two decisions in grammar.** Standard English Conventions choice sets are
+  2×2 squares over two grammatical decisions (number × tense, mark × verb
+  form), declared as `features`, so the key is never alone on one feature.
+- **Transitions.** Each Transitions template mixes at least two key relations
+  across its scenes, so every word is sometimes right and sometimes wrong.
+- **Rhetorical Synthesis.** Choices are grounded word by word against the
+  notes (`ungroundedWords` in `expression-of-ideas/common.js`, with per-topic
+  `allow` lists), so no distractor adds a fact the notes lack.
+- **Redraw, don't drop.** A modelled mistake that lands on the key, or two
+  choices with the same value, redraws the instance.
+
+Figures: Math graphs use the coordinate-plane helpers `S.plane` in
+`shared/figures.js` (grid, axes, lines, segments, clipped curves, points,
+shaded half-planes, labels); data displays use the helpers in the
+Problem-Solving `common.js`; Reading and Writing bar and line graphs come
+from `information-and-ideas/common.js`, whose `verify()` reads the values
+back from the alt text (`readChartAlt`). Alt text describes the figure
+without giving the answer away. Shared text uses the notation helpers
+(`S.plural`, `S.money`, `S.grouped`, `S.article`).
+
+Reading and Writing passages written in an older style, and original poems,
+open with an honest header ("The following text is from an original story
+written in a nineteenth-century style."). Invented researchers appear only
+with invented places and studies; a real person, place or finding must be
+accurate.
+
 ## Writing math
 
 The test screen, booklets and Learn pages typeset Math text
@@ -306,7 +346,8 @@ node tools/check-families.js --sample <id> --seed 3 --svg-dir <dir>
 node tools/update-templates.js                # register new templates, re-version changed ones
 ```
 
-The reference templates are `system-parameter-solution-count`
-(`sat/math/algebra/systems-of-two-linear-equations.js`) and
-`cross-text-method-challenge`
-(`sat/reading-writing/craft-and-structure/cross-text-connections.js`).
+The reference templates are `linear-function-identity`
+(`sat/math/algebra/linear-functions.js`), `graph-which-function`
+(`sat/math/advanced-math/nonlinear-functions.js`), and
+`inference-combine-separated-premises`
+(`sat/reading-writing/information-and-ideas/inferences.js`).

@@ -28,7 +28,7 @@ require editing another.
 
 | Layer | Lives in | Rule |
 | --- | --- | --- |
-| Content | `content/` | Data only: JSON banks, passages, catalog, authored sources, study guides. No UI or layout. |
+| Content | `content/` | Data only: JSON banks, passages, catalog, template registries, authored sources, Learn pages, study guides. No UI or layout. |
 | Logic | `src/lib/` | Pure functions with no DOM access, loadable in Node and the browser, covered by `test/`. Reusable pieces belong here. |
 | Presentation | `src/app/`, `src/styles/`, `src/*.html` | DOM and styling only; calls into `src/lib/` for every decision. |
 | Tooling | `tools/` | Build, validation, audit, generation. Never shipped to the browser. |
@@ -39,12 +39,20 @@ require editing another.
 
 1. `README.md`
 2. `docs/official-structure.md`
-3. `content/schema.md`
-4. `docs/content-authoring.md`
-5. `docs/difficulty-calibration.md`
-6. `content/catalog.json`
+3. `docs/question-templates.md` (SAT questions are templates)
+4. `docs/difficulty-calibration.md`
+5. `content/catalog.json`
+6. `content/schema.md` and `docs/content-authoring.md` (the fixed ACT banks)
 
-Canonical questions are JSON arrays in `content/banks/`. The build writes the
+SAT practice is generated from the templates in `src/lib/families/`; the
+fixed SAT banks in `content/banks/` are retired and kept only so old attempts
+and ids still resolve, so never regenerate them. A template change follows
+`docs/question-templates.md`: pass `npm run check:families` (and a
+`--reps 3000` deep pass), read at least three seeds of every changed template
+as a strong test-taker, then run `npm run templates` and commit the registry,
+whose version bumps when what a template builds changes.
+
+Canonical ACT questions are JSON arrays in `content/banks/`. The build writes the
 browser bundles into `dist/content/`; never hand-edit build output. The catalog
 defines section keys, official taxonomy, allowed response types, calculator
 policies, difficulty targets, and exact domain targets; keep records within it
@@ -57,7 +65,7 @@ checks passed; it does not mean a person approved the content. Use
 `editorial-reviewed` only after a documented, independent review recorded in
 `docs/content-audit.md`.
 
-For a coherent content batch:
+For a coherent ACT bank batch:
 
 1. Preserve accepted IDs and edit or run the relevant generator in
    `tools/generators/`.
@@ -68,45 +76,125 @@ For a coherent content batch:
 
 ## Application notes
 
-- The browser app has no module loader. `index.html` loads the generated
-  catalog and template registries, `lib/core.js`, `lib/template-mask.js`,
-  `lib/runs.js`, `lib/test-engine.js`, `app/render.js`, `app/test-shell.js`,
-  `lib/booklet.js`, `app/site.js` (the shared header and SAT | ACT switch),
-  then `app/app.js`. Section banks load on demand from `content/<section>.js`,
-  and a SAT section's templates load from `lib/families/` the first time that
-  section is chosen.
+- The browser app has no module loader; each page loads plain scripts in
+  order, and `tools/smoke-static.js` pins that order.
+  - `index.html`: the generated catalog, answer signs and template registries,
+    then `lib/core.js`, `lib/template-mask.js`, `lib/runs.js`,
+    `lib/modules.js`, `lib/simulation.js`, `lib/test-engine.js`,
+    `lib/progress.js`, `lib/review-queue.js`,
+    `lib/practice.js`, `lib/analytics.js`, `lib/progress-io.js`,
+    `app/render.js`, `app/test-shell.js`, `app/site.js` (the shared header
+    and SAT | ACT switch), the views in `app/views/`, then `app/app.js`.
+    Stylesheets: `tokens.css`, `app.css`, `test-shell.css`, `math.css`,
+    `review.css`, `progress.css`.
+  - `learn.html`: `content/learn-sat.js` (built by `tools/build-learn.js`),
+    `lib/learn-markup.js`, `app/site.js`, `app/render.js`, `app/learn.js`;
+    it routes `#<pageId>` and `#<pageId>/<anchor>`.
+  - `print.html`: the catalog and registries, `lib/core.js`,
+    `lib/template-mask.js`, `lib/runs.js`, `lib/modules.js`,
+    `lib/booklet.js`, `app/render.js`, `app/site.js`, `app/print.js`.
+  ACT section banks load on demand from `content/<section>.js`; a SAT
+  section's templates load from `lib/families/<section>.js` when needed.
+  The built registries (`content/templates.js`) carry every template's tier,
+  domain, skill and subskill, so labels and re-tiering never need a bundle.
+- `app/app.js` is the page shell: routing, the one place sets are launched
+  and recorded, and the `ctx` it hands each view. The view interface is
+  documented at its top; each view (`practice`, `progress`, `review`, `tips`)
+  lives in `app/views/`.
 - SAT sections are built from templates (`docs/question-templates.md`): a run
-  takes at most one question per template and one per scene, and is described
-  by its template mask and seed. ACT sections draw from their fixed banks.
-  New templates must pass `npm run check:families` and be registered with
-  `npm run templates`; registry bits are permanent.
-- Every session runs in the digital test mode (`window.LiminalShell`): the
-  setup view builds a question list and calls `LiminalShell.start` with a
-  feedback mode (`instant` or `end`), an optional time limit, and callbacks.
-  `src/lib/test-engine.js` holds the session logic and has no DOM access;
-  `src/app/render.js` renders stimuli and sanitizes figure SVG through an
-  allow-list. Never show domain, skill, difficulty, or IDs during a session.
+  takes at most one question per template and one per scene, prefers
+  templates the student saw least recently, follows the catalog's domain
+  weights, and is described by its code (mask, seed and any steered
+  attempts). ACT sections draw from their fixed banks. New or changed
+  templates must pass `npm run check:families` and be registered with
+  `npm run templates`; registry bits are permanent, and a template's version
+  goes up when what it builds changes.
+- Every session runs in the digital test mode (`window.LiminalShell`):
+  `src/lib/test-engine.js` holds the session logic (including each
+  question's time) and has no DOM access; `src/app/render.js` renders
+  stimuli, typesets Math text when called with `{ math: true }` (so
+  `styles/math.css` must load wherever it does), and sanitizes figure SVG
+  through an allow-list. Never show domain, skill, difficulty, or IDs during
+  a session. Exit is Save and exit (resumable, clock paused) or Discard set;
+  nothing is discarded silently.
 - Content strings render as text, never as trusted HTML. Figures are parsed
-  as SVG data and rebuilt element by element.
-- Browser storage: `liminal:progress:v2` holds attempts (each carries its
-  section, skill, domain, and difficulty, plus family and seed for generated
-  questions), the marked-for-review list, and each section's seen-template
-  mask; `liminal:session:v1` holds an unfinished set so it can resume after a
-  reload; `liminal:test:v1` holds the SAT | ACT choice.
+  as SVG data and rebuilt element by element. Learn pages arrive as block
+  trees and render through DOM APIs only.
+- Browser storage:
+  - `liminal:progress:v3` (`src/lib/progress.js`) holds every attempt a set
+    shows (a blank is recorded as wrong), each with its source, hint use,
+    time, feedback mode, template id, version and seed, and `reviewOf` when
+    it re-practises a miss; marks; per-section serve history and scenes;
+    session summaries; the error log; and the plan. It migrates
+    `liminal:progress:v2` (kept as a backup; answers from the retired SAT
+    banks are tagged `legacy-bank`) and merges what another tab saved.
+    `LiminalProgress.stats` is the one accuracy model: legacy answers are
+    left out, a hinted correct answer is not counted as correct, and
+    template answers count at the template's current tier.
+  - `liminal:session:v1` holds an unfinished set or test so it can resume
+    after a reload (`config.simulation` is a test's state; `state` is the
+    module on screen, null during the break); `liminal:test:v1` holds the
+    SAT | ACT choice.
+  - `lib/progress-io.js` defines the downloadable progress file
+    (`{ format: "liminal-progress", version: 3, exportedAt, progress }`);
+    a restore is validated before anything is written, and a file from a
+    newer record version is refused.
 - A generated question's id is `<section>:<template>:<seed>` (older ones use
-  `sat-math-hard:<family>:<seed>`), so it can be rebuilt exactly; never store
-  generated questions in a bank.
+  `sat-math-hard:<family>:<seed>`), so it can be rebuilt exactly while its
+  template's version is unchanged; never store generated questions in a bank.
+- Review's spaced schedule (`src/lib/review-queue.js`) is derived from
+  attempts and stores nothing: a miss returns after 1 day, then 3, 7 and 21
+  days after each correct answer, with a fresh version of the same template
+  from the second return; a wrong, blank or hinted answer restarts it; a
+  correct answer before the due day changes nothing. Error-log tags live in
+  the progress record's `errorLog`.
+- The Progress view gets every number from `lib/analytics.js`, which counts
+  through `LiminalProgress.stats`. Its states are practice guidance: the gate
+  is at least 80% on a skill's last 20 Medium answers (and needs 20);
+  mastered adds at least 60% over 5 or more Hard answers; under 5 answers is
+  not enough data. Keep these constants in step with the SAT Math plan page
+  in Learn.
+- `src/lib/modules.js` is a practice approximation of the digital test's
+  modules (sizes, difficulty mixes, domain counts, order); it builds the
+  booklets and the on-screen tests, and every screen that uses it says the
+  real routing is not published. Module 2 routes by
+  `modules.ROUTING_THRESHOLD` (60% of Module 1), a fixed practice rule.
+- On-screen SAT tests: `src/lib/simulation.js` is the state machine
+  (modules, routing, the break, resume, the combined report), and
+  `practice.buildModuleRun` builds each module from the blueprint without
+  repeating a template or an earlier scene in the same test. The shell's
+  module mode (`options.module`) submits from the review page with no way
+  back, and `LiminalShell.startBreak` runs the break on the wall clock.
+  Sessions record one `module` entry per module plus one `section` or
+  `full` entry that repeats their totals, so analytics that add sessions
+  must not count both. A skill drill (kind `drill`) may take several seeds
+  of one template; `index.html#practice/<sectionKey>/<skillSlug>` fills in
+  the drill for that skill.
 - Do not claim that the recommendation logic implements official SAT
   adaptivity, ACT scoring, or score prediction, and do not add scaled score
   estimates (see "Decided" in `docs/roadmap.md`). Reports show accuracy, with
-  Hard accuracy on its own.
+  Hard accuracy on its own; official Bluebook practice tests are the score
+  gauge.
+- `content/learn/` holds the SAT Learn pages: one page per catalog skill at
+  `<sectionKey>/<slug(domain)>/<slug(skill)>.md`, cross-skill pages at
+  `sat/general/<slug>.md`, and time-sensitive values in `facts.json` with
+  their official source and the date checked. Pages use the strict Markdown
+  subset documented at the top of `src/lib/learn-markup.js`; anything else
+  fails the build. `npm run check:learn` requires one `##` section per
+  catalog subskill anchored `{#<slug(subskill)>}` with a worked Example,
+  every template's skill and subskill to resolve to such a section, dated
+  and sourced facts, and working links. Link into Learn with
+  `learn.html#<pageId>[/<anchor>]`. Every heuristic is followed by when it
+  fails, and SAT pages hold no ACT-only rules.
 - `content/guides/answer-signs.js` powers the Study tips view. It is a study
   guide of probabilistic tells, not a question bank: never run it through the
-  generators, and keep every tell's caution and the disclaimer.
-- `content/study-guides/` is the Markdown study library. Every guide must be
-  reachable from its `README.md`; `npm run check:guides` enforces this.
-  Heuristics state when they fail; time-sensitive facts carry a
-  verify-before-relying note.
+  generators, and keep every tell's caution, each principle's caution, and
+  the disclaimer.
+- `content/study-guides/` is the Markdown library for general, planning and
+  ACT guides; SAT skill content lives in Learn, and links into Learn are
+  checked. Every guide must be reachable from its `README.md`;
+  `npm run check:guides` enforces this. Heuristics state when they fail;
+  time-sensitive facts carry a verify-before-relying note.
 
 ## Context hygiene
 
@@ -120,16 +208,19 @@ For a coherent content batch:
 ## Verification
 
 ```sh
-npm run check        # required before any commit that touches code or content
+npm run check                                   # required before any commit that touches code or content
+node tools/check-families.js --reps 3000 | tail # after template changes: rare defects hide in 1 draw in 1,000
 git diff --check
 ```
 
 Test major interactions in a current browser when one is available: section
 loading, targeted and full sessions, each response type, hints, answer guides,
 the digital test mode in both feedback modes (timer, navigator, review page,
-eliminator, figures, numeric entry, report), resuming after a reload, review
-lists, progress, keyboard operation, and phone width. Report unavailable
-tooling rather than installing it.
+eliminator, figures, typeset math, numeric entry, report), Save and exit and
+resuming after a reload, Review (Due, the error log, Marked), Progress (the
+diagnostic, skill map, pacing, history, plan, download and restore), Learn
+pages and their deep links, booklets, keyboard operation, dark mode, and phone
+width. Report unavailable tooling rather than installing it.
 
 ## Editing and completion
 
