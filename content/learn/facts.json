@@ -1,0 +1,182 @@
+[
+  {
+    "id": "sat-rw-questions",
+    "value": "54",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test/structure"
+  },
+  {
+    "id": "sat-rw-minutes",
+    "value": "64",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test/structure"
+  },
+  {
+    "id": "sat-rw-module-questions",
+    "value": "27",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-rw-module-minutes",
+    "value": "32",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test/structure"
+  },
+  {
+    "id": "sat-math-questions",
+    "value": "44",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test/structure"
+  },
+  {
+    "id": "sat-math-minutes",
+    "value": "70",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test/structure"
+  },
+  {
+    "id": "sat-math-module-questions",
+    "value": "22",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-math-module-minutes",
+    "value": "35",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test/structure"
+  },
+  {
+    "id": "sat-total-time",
+    "value": "2 hours 14 minutes",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test/structure"
+  },
+  {
+    "id": "sat-break",
+    "value": "10 minutes",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/sat/whats-on-the-test/structure"
+  },
+  {
+    "id": "sat-pretest-per-module",
+    "value": "2",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-rw-scored",
+    "value": "50",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-math-scored",
+    "value": "40",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-total-scale",
+    "value": "400–1600",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-section-scale",
+    "value": "200–800",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-math-mc-share",
+    "value": "about 75%",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-math-spr-share",
+    "value": "about 25%",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-spr-chars-positive",
+    "value": "5",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/english-sat-test-directions-bb.pdf"
+  },
+  {
+    "id": "sat-spr-chars-negative",
+    "value": "6",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/english-sat-test-directions-bb.pdf"
+  },
+  {
+    "id": "sat-rw-passage-words",
+    "value": "25–150",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-rw-seconds",
+    "value": "about 71 seconds",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-math-seconds",
+    "value": "about 95 seconds",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-math-algebra",
+    "value": "about 35% (13–15 of the 40 scored questions)",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-math-advanced",
+    "value": "about 35% (13–15 of the 40 scored questions)",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-math-psda",
+    "value": "about 15% (5–7 of the 40 scored questions)",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-math-geometry",
+    "value": "about 15% (5–7 of the 40 scored questions)",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-rw-information",
+    "value": "about 26% (12–14 of the 50 scored questions)",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-rw-craft",
+    "value": "about 28% (13–15 of the 50 scored questions)",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-rw-expression",
+    "value": "about 20% (8–12 of the 50 scored questions)",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  },
+  {
+    "id": "sat-rw-conventions",
+    "value": "about 26% (11–15 of the 50 scored questions)",
+    "verified": "2026-09-25",
+    "source": "https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf"
+  }
+]
