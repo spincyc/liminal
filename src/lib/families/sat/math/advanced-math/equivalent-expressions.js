@@ -13,7 +13,7 @@
   const { MINUS, num, paren, signed, lin, approx, poly, sup } = S;
   const {
     tidy, ratio, gridable, drawUntilDistinct, bin, drawUntilDistinctHard, term, terms, realRoots,
-    ratioText, quadraticRoots,
+    ratioText, quadraticRoots, lead, rootFactor, sampleQuadratic, denominatorHard,
   } = C;
 
   // pw("x", 3) -> "x³", pw("x", 1) -> "x"
@@ -44,8 +44,10 @@
   function monomialChoice({ expr, key, offers: all, at, explanation, steps, principles, trap, hint }) {
     const show = ([co, ex, ey]) => mono(co, [["x", ex], ["y", ey]]);
     const value = ([co, ex, ey], x, y) => co * x ** ex * y ** ey;
-    // A slip can land on the key (2 + 2 = 2 · 2); such an offer is no distractor.
-    const offers = all.filter(([form]) => show(form) !== show(key));
+    // A slip can land on the key (2 + 2 = 2 · 2); such a draw is redrawn, so
+    // every modelled mistake stays a distractor and no trap names the key.
+    if (all.some(([form]) => show(form) === show(key))) return null;
+    const offers = all;
     return {
       responseType: "multiple-choice",
       stimulus: null,
@@ -105,15 +107,21 @@
     const p = n === 2 ? t.pick([2, 3, 4, 5, 6, -2, -3, -5]) : t.pick([2, 3, 4, -2, -3]);
     const a = t.int(2, 6);
     const key = [p ** n, a * n, 0];
-    const offers = [];
+    // A 2 × 2 grid of independent slips: the coefficient right or wrong, the
+    // exponent multiplied or added. Each choice shares one part with two others.
+    const coefficientSlips = [
+      [p, `Raises only ${pw("x", a)} to the power ${n}; the coefficient ${num(p)} must be raised to it as well.`],
+      [p * n, `Multiplies the coefficient ${num(p)} by ${n} instead of raising it to the power ${n}.`],
+    ];
     if (p < 0 && n % 2 === 0) {
-      offers.push([[-(p ** n), a * n, 0], `Keeps the negative sign; (${num(p)})${sup(n)} is positive because the power is even.`]);
+      coefficientSlips.push([-(p ** n), `Keeps the negative sign; (${num(p)})${sup(n)} is positive because the power is even.`]);
     }
-    offers.push(
-      [[p, a * n, 0], `Raises only ${pw("x", a)} to the power ${n}; the coefficient ${num(p)} must be raised to it as well.`],
+    const [badCo, coWhy] = t.pick(coefficientSlips);
+    const offers = [
+      [[badCo, a * n, 0], coWhy],
       [[p ** n, a + n, 0], `Adds the exponents ${a} and ${n} instead of multiplying them.`],
-      [[p * n, a * n, 0], `Multiplies the coefficient ${num(p)} by ${n} instead of raising it to the power ${n}.`],
-    );
+      [[badCo, a + n, 0], `${coWhy.replace(/\.$/, "")}, and adds the exponents ${a} and ${n} instead of multiplying them.`],
+    ];
     const inside = mono(p, [["x", a]]);
     return monomialChoice({
       expr: `(${inside})${sup(n)}`,
@@ -132,7 +140,7 @@
         "A power of a power multiplies the exponents: (x^a)^n = x^(an).",
         "A power of a product raises every factor: (cx^a)^n = c^n · x^(an).",
       ],
-      trap: `Adding ${a} and ${n} gives ${pw("x", a + n)}, and forgetting the coefficient leaves ${num(p)} in front; both are offered.`,
+      trap: `Adding ${a} and ${n} gives ${pw("x", a + n)}, and the coefficient must be raised to the power ${n} as well.`,
       hint: `Write (${inside})${sup(n)} as ${n} copies of ${inside} multiplied together.`,
     });
   }
@@ -143,15 +151,21 @@
     const P = p * q;
     const b = t.int(2, 5);
     const a = t.chance(0.5) ? b * t.int(2, 4) : b + t.int(1, 6);
-    const offers = [];
-    if (a % b === 0 && a / b !== a - b) {
-      offers.push([[p, a / b, 0], `Divides the exponents, ${a} ÷ ${b}, instead of subtracting them.`]);
-    }
-    offers.push(
-      [[P - q, a - b, 0], `Subtracts the coefficients, ${P} ${MINUS} ${q}, instead of dividing them.`],
-      [[p, a + b, 0], "Adds the exponents instead of subtracting them."],
-      [[P, a - b, 0], `Simplifies the powers of x but leaves the coefficient ${P} undivided.`],
-    );
+    // A 2 × 2 grid: the coefficient divided or not, the exponents subtracted or not.
+    const exponentSlips = [[a + b, "adds the exponents instead of subtracting them"]];
+    if (a % b === 0 && a / b !== a - b) exponentSlips.push([a / b, `divides the exponents, ${a} ÷ ${b}, instead of subtracting them`]);
+    const coefficientSlips = [
+      [P - q, `subtracts the coefficients, ${P} ${MINUS} ${q}, instead of dividing them`],
+      [P, `leaves the coefficient ${P} undivided`],
+    ];
+    const [badEx, exWhy] = t.pick(exponentSlips);
+    const [badCo, coWhy] = t.pick(coefficientSlips);
+    const cap = (text) => `${text.charAt(0).toUpperCase()}${text.slice(1)}.`;
+    const offers = [
+      [[p, badEx, 0], cap(exWhy)],
+      [[badCo, a - b, 0], cap(coWhy)],
+      [[badCo, badEx, 0], cap(`${coWhy}, and ${exWhy}`)],
+    ];
     return monomialChoice({
       expr: `(${mono(P, [["x", a]])})/(${mono(q, [["x", b]])})`,
       key: [p, a - b, 0],
@@ -181,6 +195,7 @@
     const b = div ? t.int(1, a * n - 1) : t.int(1, 9);
     const k = div ? a * n - b : a * n + b;
     const added = div ? a + n - b : a + n + b;
+    if (added === k) return null; // (x²)²: adding and multiplying agree, so the trap would name the key
     return {
       responseType: "numeric",
       stimulus: { type: "equations", content: `(${pw("x", a)})${sup(n)} ${div ? "/" : "·"} ${pw("x", b)} = x^k` },
@@ -198,7 +213,7 @@
       principles: [
         "(x^a)^n = x^(an), while x^a · x^b = x^(a + b) and x^a / x^b = x^(a − b).",
       ],
-      trap: `Adding the ${a} and the ${n} in (${pw("x", a)})${sup(n)} instead of multiplying gives ${added}.`,
+      trap: `Adding the ${a} and the ${n} in (${pw("x", a)})${sup(n)} instead of multiplying gives ${num(added)}.`,
       hint: `How many factors of x are in (${pw("x", a)})${sup(n)}?`,
       verify: () => approx(Math.log2((2 ** a) ** n * 2 ** (div ? -b : b)), k, 1e-9),
     };
@@ -287,9 +302,74 @@
     };
   }
 
+  // (mx + p)(x + q) with m > 1: which product, or which factor, matches.
+  function nonMonicItem(t, askFactor) {
+    const m = t.pick([2, 3, 5]);
+    const p = t.nonzero(-9, 9);
+    const q = t.nonzero(-7, 7);
+    if (S.gcd(m, p) !== 1 || p === q || p === m * q) return null;
+    const coefficients = [m, m * q + p, p * q];
+    if (coefficients[1] === 0) return null;
+    const expr = poly(coefficients);
+    const original = (x) => m * x * x + coefficients[1] * x + p * q;
+    const value = (pair) => (x) => pair.reduce((acc, [mm, k]) => acc * (mm * x + k), 1);
+    const common = {
+      responseType: "multiple-choice",
+      stimulus: null,
+      explanation:
+        `${expr} = ${bin(m, p)}${bin(1, q)}: the product of the first terms is ${m}x², the product of the constants is ` +
+        `${num(p)} · ${paren(q)} = ${num(p * q)}, and the outer and inner products add to ${num(m * q)}x ${signed(p)}x = ${lin(coefficients[1], 0)}.`,
+      principles: ["(mx + p)(x + q) = mx² + (mq + p)x + pq: the x-term comes from the outer and inner products."],
+      hint: "Expand a choice in your head: does it give the x-term as well as the first and last terms?",
+    };
+    if (askFactor) {
+      const offers = [
+        [[m, q], `Pairs ${num(q)} with ${m}x; (${lin(m, q)})(${lin(1, p)}) has x-term ${lin(m * p + q, 0)}.`],
+        [[1, -q], `Reverses the sign in ${lin(1, q)}: x = ${num(q)} does not make the expression 0.`],
+        [[m, -p], `Reverses the sign in ${lin(m, p)}: x = ${ratio(p / m)} does not make the expression 0.`],
+        [[1, p], `Drops the leading coefficient ${m} from ${lin(m, p)}.`],
+      ].filter(([[mm, k]]) => !approx(original(-k / mm), 0));
+      const key = t.chance(0.5) ? [m, p] : [1, q];
+      return {
+        ...common,
+        stem: `Which of the following is a factor of ${expr}?`,
+        correct: lin(key[0], key[1]),
+        wrong: t.shuffle(offers).map(([[mm, k], why]) => [lin(mm, k), why]),
+        steps: [
+          `Look for (mx + p)(x + q) with m · 1 = ${m} and pq = ${num(p * q)} whose outer and inner products add to ${lin(coefficients[1], 0)}.`,
+          `${bin(m, p)}${bin(1, q)} works: ${num(m * q)}x ${signed(p)}x = ${lin(coefficients[1], 0)}.`,
+          `So ${lin(key[0], key[1])} is a factor.`,
+        ],
+        trap: `The constants must sit in the right factors: swapping ${num(p)} and ${num(q)} keeps the constant term but changes the x-term.`,
+        verify: () => approx(original(-key[1] / key[0]), 0) && offers.every(([[mm, k]]) => !approx(original(-k / mm), 0)),
+      };
+    }
+    const show = (pair) => pair.map(([mm, k]) => bin(mm, k)).join("");
+    const key = [[m, p], [1, q]];
+    const offers = [
+      [[[m, q], [1, p]], `Pairs each constant with the other factor; this product has x-term ${lin(m * p + q, 0)}.`],
+      [[[m, -p], [1, -q]], `Reverses both signs; this product is ${poly([m, -coefficients[1], p * q])}.`],
+      [[[m, p], [1, -q]], `Gives ${num(q)} the wrong sign; this product is ${poly([m, p - m * q, -p * q])}.`],
+      [[[m, -p], [1, q]], `Gives ${num(p)} the wrong sign; this product is ${poly([m, m * q - p, -p * q])}.`],
+    ].filter(([pair]) => !agrees(value(pair), original));
+    return {
+      ...common,
+      stem: `Which expression is equivalent to ${expr}?`,
+      correct: show(key),
+      wrong: t.shuffle(offers).map(([pair, why]) => [show(pair), why]),
+      steps: [
+        `The first terms multiply to ${m}x² and the constants to ${num(p * q)}.`,
+        `The x-term is the sum of the outer and inner products: ${num(m)}(${num(q)})x + ${paren(p)}x = ${lin(coefficients[1], 0)}.`,
+        `So ${expr} = ${show(key)}.`,
+      ],
+      trap: "Several products give the right first and last terms; only one gives the right x-term.",
+      verify: () => agrees(value(key), original) && offers.every(([pair]) => !agrees(value(pair), original)),
+    };
+  }
+
   function squaresItem(t) {
-    const a = t.int(2, 6);
-    const b = t.int(1, 9);
+    const a = t.int(2, 8);
+    const b = t.int(1, 11);
     if (S.gcd(a, b) !== 1) return null;
     const expr = poly([a * a, 0, -b * b]);
     const original = (x) => a * a * x * x - b * b;
@@ -299,6 +379,13 @@
       b > 1 && { text: `${bin(a, -b * b)}${bin(a, b * b)}`, fn: (x) => (a * x - b * b) * (a * x + b * b), why: `Uses ${b * b} in each factor instead of its square root, ${b}.` },
       { text: `${bin(a, b)}²`, fn: (x) => (a * x + b) ** 2, why: `Writes a perfect square; (${lin(a, b)})² = ${poly([a * a, 2 * a * b, b * b])} has an x-term.` },
     ].filter(Boolean);
+    if (b > 1 && t.chance(0.6)) {
+      // A 2 × 2 grid: the square root taken of the x² coefficient or not, and
+      // of the constant or not; each choice shares one factor shape with two others.
+      offers.splice(0, offers.length,
+        offers[1], offers[2],
+        { text: `${bin(a * a, -b * b)}${bin(a * a, b * b)}`, fn: (x) => (a * a * x - b * b) * (a * a * x + b * b), why: `Uses ${a * a} and ${b * b} in the factors instead of their square roots, ${a} and ${b}.` });
+    }
     const key = t.chance(0.5) ? `${bin(a, -b)}${bin(a, b)}` : `${bin(a, b)}${bin(a, -b)}`;
     return {
       responseType: "multiple-choice",
@@ -438,12 +525,13 @@
 
   /* =============================================== rational-exponent-rewrite */
 
-  const ROOTS = { 2: "√", 3: "∛", 4: "∜", 5: "⁵√" };
+  const ROOTS = { 2: "√", 3: "∛", 4: "∜", 5: "⁵√", 6: "⁶√" };
 
   const radical = (n, m) => (m === 1 ? `${ROOTS[n]}x` : `${ROOTS[n]}(${pw("x", m)})`);
 
   // x^(7/4); every choice is kept to a non-integer exponent so the forms match.
   const xPow = (value) => `x^(${ratio(value)})`;
+
 
   const isWhole = (value) => Math.abs(value - Math.round(value)) < 1e-9;
 
@@ -455,8 +543,8 @@
   }
 
   function rationalExponentItem(t, kind, numeric) {
-    const n = numeric ? t.pick([2, 4, 5]) : t.pick([2, 3, 4, 5]);
-    const m = coprimePower(t, n);
+    const n = numeric ? t.pick([2, 4, 5]) : t.pick([2, 3, 4, 5, 6]);
+    const m = coprimePower(t, n, 1, 3 * n - 1);
     let expr;
     let key;
     let offers;
@@ -465,7 +553,7 @@
     let evaluate;
     let trap;
     if (kind === "product") {
-      const k = t.int(1, 3);
+      const k = t.int(1, 4);
       expr = `${radical(n, m)} · ${pw("x", k)}`;
       key = m / n + k;
       offers = [
@@ -482,7 +570,7 @@
       evaluate = (x) => (x ** m) ** (1 / n) * x ** k;
       trap = `Multiplying ${ratio(m / n)} by ${k} where the exponents should be added, or writing the root with its index and power swapped, gives another choice.`;
     } else if (kind === "two-roots") {
-      const j = numeric ? t.pick([2, 4, 5].filter((v) => v !== n)) : t.pick([2, 3, 4].filter((v) => v !== n));
+      const j = numeric ? t.pick([2, 4, 5].filter((v) => v !== n)) : t.pick([2, 3, 4, 5].filter((v) => v !== n));
       const i = coprimePower(t, j, 1, j + 1);
       expr = `${radical(n, m)} · ${radical(j, i)}`;
       key = m / n + i / j;
@@ -517,9 +605,56 @@
       ];
       evaluate = (x) => ((x ** m) ** (1 / n)) ** k;
       trap = `A power of a power multiplies the exponents; adding ${k} or dividing by ${k} gives another choice.`;
+    } else if (kind === "nested") {
+      // The root of a root: the indices multiply.
+      const j = t.pick([2, 3].filter((v) => v !== n || v === 2));
+      if (S.gcd(m, n * j) !== 1) return null;
+      expr = `${ROOTS[j]}(${radical(n, m)})`;
+      key = m / (n * j);
+      offers = [
+        [m / (n + j), `Adds the root indices ${n} and ${j} instead of multiplying them.`],
+        [(m * j) / n, `Multiplies the exponent by ${j} instead of dividing by it.`],
+        [(n * j) / m, `Writes the result with the root index and the power swapped, x^(${n * j}/${m}).`],
+      ];
+      explanation = `${radical(n, m)} = x^(${m}/${n}), and taking the ${j === 2 ? "square" : "cube"} root of that multiplies the exponent by 1/${j}: (${m}/${n}) · (1/${j}) = ${ratio(key)}.`;
+      steps = [
+        `Rewrite the inner root: ${radical(n, m)} = x^(${m}/${n}).`,
+        `A ${j === 2 ? "square" : "cube"} root is the power 1/${j}: (x^(${m}/${n}))^(1/${j}).`,
+        `Multiply the exponents: ${m}/${n} · 1/${j} = ${ratio(key)}, so the expression is ${xPow(key)}.`,
+      ];
+      evaluate = (x) => ((x ** m) ** (1 / n)) ** (1 / j);
+      trap = "A root of a root multiplies the indices; adding them, or multiplying the exponent by the outer index, gives another choice.";
+    } else if (kind === "reciprocal") {
+      // 1 over a root: the exponent is negative.
+      const k = t.int(1, 2);
+      expr = k === 1 ? `1/(${radical(n, m)})` : `${pw("x", k)}/(${radical(n, m)})${sup(2)}`;
+      key = k === 1 ? -m / n : k - (2 * m) / n;
+      offers = k === 1
+        ? [
+          [m / n, "Drops the negative sign: dividing by a power of x makes the exponent negative."],
+          [-n / m, `Writes the root with the index and the power swapped, x^(${MINUS}${n}/${m}).`],
+          [1 - m / n, "Treats the 1 in the numerator as x¹ and subtracts the exponents."],
+        ]
+        : [
+          [k - m / n, `Forgets to square the root in the denominator, subtracting ${ratio(m / n)} instead of ${ratio((2 * m) / n)}.`],
+          [k + (2 * m) / n, "Adds the exponents instead of subtracting the denominator's exponent."],
+          [(2 * m) / n - k, "Subtracts in the wrong order, the numerator's exponent from the denominator's."],
+        ];
+      explanation = k === 1
+        ? `${radical(n, m)} = x^(${m}/${n}), and dividing by a power of x gives a negative exponent: 1/x^(${m}/${n}) = x^(${MINUS}${m}/${n}).`
+        : `(${radical(n, m)})² = x^(${2 * m}/${n}), and dividing ${pw("x", k)} by it subtracts the exponents: ${k} ${MINUS} ${2 * m}/${n} = ${ratio(key)}.`;
+      steps = k === 1
+        ? [`Rewrite the root: ${radical(n, m)} = x^(${m}/${n}).`, `1/x^a = x^(${MINUS}a).`, `So the expression is ${xPow(key)}.`]
+        : [
+          `Rewrite the denominator: (${radical(n, m)})² = (x^(${m}/${n}))² = x^(${2 * m}/${n}).`,
+          `Subtract exponents: ${k} ${MINUS} ${2 * m}/${n} = ${ratio(key)}.`,
+          `So the expression is ${xPow(key)}.`,
+        ];
+      evaluate = k === 1 ? (x) => 1 / (x ** m) ** (1 / n) : (x) => x ** k / ((x ** m) ** (1 / n)) ** 2;
+      trap = "Division by a root subtracts its exponent, which can leave a negative exponent.";
     } else {
       const k = t.int(Math.floor(m / n) + 1, Math.floor(m / n) + 3);
-      expr = `${pw("x", k)}/${radical(n, m)}`;
+      expr = `${pw("x", k)}/(${radical(n, m)})`;
       key = k - m / n;
       offers = [
         [k + m / n, "Adds the exponents instead of subtracting the denominator's exponent."],
@@ -553,18 +688,62 @@
         verify: check,
       };
     }
+    // Half the multiple-choice items ask for the exponent itself, so the same
+    // expression can appear with either kind of choice.
+    const askExponent = t.chance(0.4);
     return {
       responseType: "multiple-choice",
-      stimulus: null,
-      stem: `Which expression is equivalent to ${expr}, where x > 0?`,
-      correct: xPow(key),
-      wrong: offers.map(([value, why]) => [xPow(value), why]),
+      stimulus: askExponent ? { type: "equations", content: `${expr} = x^c` } : null,
+      stem: askExponent
+        ? "The given equation is true for all x > 0, where c is a constant. What is the value of c?"
+        : `Which expression is equivalent to ${expr}, where x > 0?`,
+      correct: askExponent ? ratio(key) : xPow(key),
+      wrong: offers.map(([value, why]) => [askExponent ? ratio(value) : xPow(value), why]),
       explanation,
       steps,
       principles: ["The nth root of x^m is x^(m/n): the power is the numerator and the root index is the denominator."],
       trap,
       hint: "Write every root as a power of x first.",
       verify: check,
+    };
+  }
+
+  // ⁿ√(x^a y^b): each exponent is divided by the index.
+  function twoVariableRootItem(t) {
+    const n = t.pick([2, 3, 4, 5]);
+    const a = t.int(1, 3 * n - 1);
+    const b = t.int(1, 3 * n - 1);
+    if (a === b || (a % n === 0 && b % n === 0) || S.gcd(S.gcd(a, b), n) !== 1) return null;
+    const part = (name, value) => (isWhole(value) ? pw(name, value) : `${name}^(${ratio(value)})`);
+    const show = ([u, v]) => `${part("x", u)}${part("y", v)}`;
+    const key = [a / n, b / n];
+    const offers = [
+      [[a / n, b], `Takes the ${n === 2 ? "square" : n === 3 ? "cube" : `${n}th`} root of the x-factor only and leaves ${pw("y", b)} unchanged.`],
+      [[n / a, n / b], "Writes each exponent with the root index and the power swapped."],
+      [[a * n, b * n], `Multiplies each exponent by ${n} instead of dividing by ${n}.`],
+      [[a - n, b - n], `Subtracts the index ${n} from each exponent instead of dividing.`],
+    ].filter(([pair]) => !(approx(pair[0], key[0]) && approx(pair[1], key[1])) && pair.every((value) => value !== 0));
+    const expr = `${ROOTS[n]}(${pw("x", a)}${pw("y", b)})`;
+    const value = ([u, v], x, y) => x ** u * y ** v;
+    const at = (x, y) => (x ** a * y ** b) ** (1 / n);
+    const points = [[1.37, 0.62], [2.9, 1.8], [0.41, 2.2]];
+    return {
+      responseType: "multiple-choice",
+      stimulus: null,
+      stem: `Which expression is equivalent to ${expr}, where x > 0 and y > 0?`,
+      correct: show(key),
+      wrong: t.shuffle(offers).map(([pair, why]) => [show(pair), why]),
+      explanation: `The ${n === 2 ? "square" : n === 3 ? "cube" : `${n}th`} root is the power 1/${n}, and it applies to every factor: (${pw("x", a)})^(1/${n}) = ${part("x", a / n)} and (${pw("y", b)})^(1/${n}) = ${part("y", b / n)}.`,
+      steps: [
+        `Write the root as a power: ${expr} = (${pw("x", a)}${pw("y", b)})^(1/${n}).`,
+        `Raise each factor to the power 1/${n}: ${part("x", a / n)} and ${part("y", b / n)}.`,
+        `So the expression is ${show(key)}.`,
+      ],
+      principles: ["(xy)^r = x^r y^r, and the nth root of x^m is x^(m/n)."],
+      trap: "The root applies to every factor under it, and it divides each exponent by the index.",
+      hint: "Write the root as a fractional power of the whole product.",
+      verify: () => points.every(([x, y]) => approx(value(key, x, y), at(x, y), 1e-9)) &&
+        offers.every(([pair]) => points.some(([x, y]) => !approx(value(pair, x, y), at(x, y), 1e-6))),
     };
   }
 
@@ -633,18 +812,28 @@
         `The given equation is true for all values of x, where a, b, and k are constants${ordered ? " and a > b" : ""}. ` +
         `If a + b = ${num(s)}, which of the following gives all possible values of k?`,
       correct: ordered ? `${num(k1)} only` : pairText(k1, k2),
+      // Never both one-value choices when both values are right, so the key is
+      // not the union of two other choices; with a > b the union is offered
+      // and is wrong.
       wrong: ordered
         ? [
           [pairText(k1, k2), `Lists both assignments of a and b, but a > b rules out a = ${num(b)}, b = ${num(a)}.`],
           [`${num(k2)} only`, `Takes a = ${num(b)} and b = ${num(a)}, the assignment that a > b rules out.`],
-          [`${num(slip1)} only`, slipReason],
-          [`${num(m + n)} only`, "Adds the constants as if both leading coefficients were 1."],
+          ...t.shuffle([
+            [`${num(slip1)} only`, slipReason],
+            [`${num(m + n)} only`, "Adds the constants as if both leading coefficients were 1."],
+          ]),
         ]
         : [
-          [`${num(k1)} only`, `Takes a = ${num(a)} and b = ${num(b)} and never tries the swapped assignment a = ${num(b)}, b = ${num(a)}.`],
-          [`${num(k2)} only`, `Takes a = ${num(b)} and b = ${num(a)} and never tries the swapped assignment a = ${num(a)}, b = ${num(b)}.`],
+          ...t.shuffle([
+            [`${num(k1)} only`, `Takes a = ${num(a)} and b = ${num(b)} and never tries the swapped assignment a = ${num(b)}, b = ${num(a)}.`],
+            [`${num(k2)} only`, `Takes a = ${num(b)} and b = ${num(a)} and never tries the swapped assignment a = ${num(a)}, b = ${num(b)}.`],
+          ]).slice(0, 1),
           [pairText(slip1, slip2), slipReason],
-          [`${num(m + n)} only`, "Adds the constants as if both leading coefficients were 1."],
+          ...t.shuffle([
+            [pairText(k1, slip2), `Gets (a, b) = (${num(a)}, ${num(b)}) right but ${slipReason.charAt(0).toLowerCase()}${slipReason.slice(1, -1)} for the swapped assignment.`],
+            [`${num(m + n)} only`, "Adds the constants as if both leading coefficients were 1."],
+          ]),
         ],
       explanation:
         `Expanding gives ${expanded}. Matching coefficients: ab = ${num(P)} and k = ${kExpr}. ` +
@@ -914,7 +1103,7 @@
           correct: key,
           wrong: [
             [k * k, `Squares each term of x ${minus ? MINUS : "+"} 1/x separately and forgets the cross term 2 · x · (1/x) = 2.`],
-            [minus ? k * k - 2 : k * k + 2, `Uses the cross term with the wrong sign: (x ${minus ? MINUS : "+"} 1/x)² = x² ${minus ? MINUS : "+"} 2 + 1/x².`],
+            [minus ? k * k - 2 : k * k + 2, `Expands (x ${minus ? MINUS : "+"} 1/x)² correctly but then ${minus ? "subtracts" : "adds"} the 2 instead of ${minus ? "adding" : "subtracting"} it when isolating x² + 1/x².`],
             [minus ? k * k + 1 : k * k - 1, "Uses x · (1/x) = 1 as the cross term, forgetting the factor of 2 in 2ab."],
           ],
           explanation:
@@ -1093,6 +1282,504 @@
     }
   }
 
+  /* ================================================= quadratic-structure-form */
+
+  // Equivalent forms of f(x) = a(x − r)(x − s). Each form carries its own
+  // function, built from its own constants, so equivalence is checked by
+  // evaluating, not assumed.
+  function quadraticForms(a, r, s) {
+    const h = (r + s) / 2;
+    const k = -a * ((s - r) / 2) ** 2;
+    const B = -a * (r + s);
+    const c = a * r * s;
+    const vertexText = (hh, kk, aa = a) => `${lead(aa)}(${lin(1, -hh)})² ${signed(kk)}`;
+    return {
+      h, k, B, c,
+      standard: { type: "standard", text: poly([a, B, c]), fn: (x) => a * x * x + B * x + c },
+      factored: { type: "factored", text: `${lead(a)}${rootFactor(r)}${rootFactor(s)}`, fn: (x) => a * (x - r) * (x - s) },
+      vertex: { type: "vertex", text: vertexText(h, k), fn: (x) => a * (x - h) ** 2 + k },
+      partialX: { type: "partial", text: `x(${lin(a, B)}) ${signed(c)}`, fn: (x) => x * (a * x + B) + c },
+      partialA: { type: "partial", text: `${lead(a)}(${poly([1, -(r + s), 0])}) ${signed(c)}`, fn: (x) => a * (x * x - (r + s) * x) + c },
+      vertexText,
+    };
+  }
+
+  function quadraticStructure(t) {
+    const a = t.pick([1, 1, 2, 3, -1, -2]);
+    const r = t.nonzero(-7, 6);
+    const s = r + 2 * t.int(1, 5);
+    if (s === 0 || r + s === 0) return null;
+    const F = quadraticForms(a, r, s);
+    if (Math.abs(F.c) > 90 || Math.abs(F.k) > 90) return null;
+    const ask = t.pick(["zeros", "extreme"]);
+    const word = a > 0 ? "minimum" : "maximum";
+    const feature = ask === "zeros"
+      ? "the x-intercepts of the graph of y = f(x) in the xy-plane"
+      : `the ${word} value of f`;
+    const wantType = ask === "zeros" ? "factored" : "vertex";
+    const given = ask === "zeros" ? t.pick([F.standard, F.standard, F.vertex]) : t.pick([F.standard, F.standard, F.factored]);
+    const key = ask === "zeros" ? F.factored : F.vertex;
+    const allEquivalent = t.chance(0.5);
+    const shows = {
+      standard: `shows the y-intercept, ${num(F.c)}, not ${feature}`,
+      factored: `shows the zeros ${num(r)} and ${num(s)}, not the ${word} value`,
+      vertex: `shows the vertex (${num(F.h)}, ${num(F.k)}), not the x-intercepts`,
+      partial: `shows only the constant term ${num(F.c)}, which is the y-intercept, not ${feature}`,
+    };
+    let offers;
+    if (allEquivalent) {
+      offers = [F.standard, F.factored, F.vertex, F.partialX, ...(a === 1 ? [] : [F.partialA])]
+        .filter((form) => form !== key && form.text !== given.text)
+        .map((form) => [form, `Is equivalent to f(x), but it ${shows[form.type]}.`]);
+      offers = t.shuffle(offers).slice(0, 3);
+    } else if (ask === "zeros") {
+      const pool = [
+        [{ type: "factored", text: `${lead(a)}${rootFactor(-r)}${rootFactor(-s)}`, fn: (x) => a * (x + r) * (x + s) },
+          `Writes the factors with the signs of the zeros; ${lead(a)}${rootFactor(-r)}${rootFactor(-s)} is zero at x = ${num(-r)} and x = ${num(-s)}, so it is not equivalent to f(x).`],
+        [given === F.vertex ? F.standard : F.vertex, `Is equivalent to f(x), but it ${shows[given === F.vertex ? "standard" : "vertex"]}.`],
+      ];
+      if (a !== 1) {
+        pool.push([{ type: "factored", text: `${rootFactor(r)}${rootFactor(s)}`, fn: (x) => (x - r) * (x - s) },
+          `Has the right zeros but drops the leading coefficient ${num(a)}, so it is not equivalent to f(x).`]);
+      } else {
+        const q = t.pick([r - 1, r + 1].filter((v) => v !== 0 && v !== s && 2 * (r + s) - v !== 0));
+        pool.push([{ type: "factored", text: `${rootFactor(q)}${rootFactor(r + s - q)}`, fn: (x) => (x - q) * (x - (r + s - q)) },
+          `Uses two numbers that add to ${num(r + s)} but multiply to ${num(q * (r + s - q))}, not ${num(r * s)}; it is not equivalent to f(x).`]);
+      }
+      offers = pool;
+    } else {
+      const pool = [
+        [{ type: "vertex", text: F.vertexText(-F.h, F.k), fn: (x) => a * (x + F.h) ** 2 + F.k },
+          `Shows ${num(F.k)} as the ${word} but puts the vertex at x = ${num(-F.h)}; it is not equivalent to f(x).`],
+        [given === F.factored ? F.standard : F.factored, `Is equivalent to f(x), but it ${shows[given === F.factored ? "standard" : "factored"]}.`],
+      ];
+      if (a !== 1) {
+        const slip = F.c - F.h * F.h;
+        pool.push([{ type: "vertex", text: F.vertexText(F.h, slip), fn: (x) => a * (x - F.h) ** 2 + slip },
+          `Completes the square without first factoring ${num(a)} out of the x-terms, so the constant is ${num(slip)}; it is not equivalent to f(x).`]);
+      } else {
+        pool.push([{ type: "vertex", text: F.vertexText(F.h, -F.k), fn: (x) => a * (x - F.h) ** 2 - F.k },
+          `Adds ${num(F.h * F.h)} where completing the square subtracts it, so the constant has the wrong sign; it is not equivalent to f(x).`]);
+      }
+      offers = pool;
+    }
+    const samples = [-3.7, -1.2, 0.6, 2.3, 5.9];
+    const same = (f, g) => samples.every((x) => approx(f(x), g(x), 1e-9));
+    const zerosText = `x = ${num(r)} and x = ${num(s)}`;
+    const route = ask === "zeros"
+      ? `f(x) = 0 at ${zerosText}, so f(x) = ${F.factored.text}; each zero appears in a factor.`
+      : `The zeros are ${num(r)} and ${num(s)}, so the vertex is at x = ${num(F.h)} and the ${word} value is f(${num(F.h)}) = ${num(F.k)}: f(x) = ${F.vertex.text}.`;
+    return {
+      responseType: "multiple-choice",
+      stimulus: null,
+      stem:
+        `The function f is defined by f(x) = ${given.text}. Which of the following is equivalent to f(x) and displays ` +
+        `${feature} as ${ask === "zeros" ? "constants or coefficients" : "a constant or coefficient"}?`,
+      correct: key.text,
+      wrong: offers.map(([form, why]) => [form.text, why]),
+      explanation:
+        `${ask === "zeros" ? "A factored form a(x − r)(x − s) shows the zeros r and s" : `A vertex form a(x − h)² + k shows the ${word} value k`}. ${route}`,
+      steps: [
+        ask === "zeros" ? "The form that shows x-intercepts is the factored form a(x − r)(x − s)." : `The form that shows the ${word} value is the vertex form a(x − h)² + k.`,
+        `From f(x) = ${given.text}: the zeros are ${num(r)} and ${num(s)}${ask === "zeros" ? "" : `, halfway between them is x = ${num(F.h)}`}.`,
+        ask === "zeros" ? `So f(x) = ${F.factored.text}.` : `f(${num(F.h)}) = ${num(F.k)}, so f(x) = ${F.vertex.text}.`,
+        "Check that the chosen form matches f(x) at any input; a form can show the right kind of number and still not be equivalent.",
+      ],
+      principles: [
+        "Factored form shows the zeros, vertex form shows the vertex and the extreme value, and standard form shows the y-intercept.",
+        "An equivalent form must agree with f(x) for every x.",
+      ],
+      trap: allEquivalent
+        ? "Every choice is equivalent; the question is which one displays the asked feature as a number in the expression."
+        : "A form of the right shape can still be wrong: check that it is equivalent to f(x).",
+      hint: `Which kind of form puts ${ask === "zeros" ? "the x-intercepts" : `the ${word} value`} in plain sight? Then check it against f(x).`,
+      verify: () => {
+        const [A, Bq, Cq] = sampleQuadratic(given.fn);
+        const zeros = realRoots(A, Bq, Cq);
+        const vx = -Bq / (2 * A);
+        const extreme = A * vx * vx + Bq * vx + Cq;
+        const keyOk = same(key.fn, given.fn) && (ask === "zeros"
+          ? zeros.length === 2 && approx(Math.min(...zeros), r) && approx(Math.max(...zeros), s)
+          : approx(vx, F.h) && approx(extreme, F.k));
+        return keyOk && offers.every(([form]) => !same(form.fn, given.fn) || form.type !== wantType);
+      },
+    };
+  }
+
+  /* ============================================ nonlinear-formula-rearrange */
+
+  // Formula shapes solved for one letter. Each shape draws a numeric constant
+  // k and a scene (letters and context), and returns the display text, the
+  // formula as a function, the key, and modelled wrong rearrangements, each
+  // with a function of the other letters so verify() can test it against the
+  // formula itself. Scenes are invented, not quoted.
+  const FORMULA_SHAPES = [
+    // out = k·A·B², solved for B (B > 0).
+    (t) => {
+      const scene = t.pick([
+        { out: "d", A: "a", B: "t", text: "In a model of a cart rolling down a ramp, the distance d, in centimeters, traveled in t seconds depends on a constant a set by the ramp's angle." },
+        { out: "E", A: "m", B: "v", text: "An engineer estimates the energy E stored in a spinning wheel of mass m turning at speed v." },
+        { out: "L", A: "w", B: "s", text: "A designer estimates the load L a shelf of width w can hold when its supports are s centimeters thick." },
+      ]);
+      const k = t.pick([2, 3, 4, 5, 6, 8, 10]);
+      const halves = t.chance(0.4);
+      const { out, A, B } = scene;
+      const c = halves ? 1 / k : k;
+      return {
+        scene, target: B, others: [out, A],
+        formula: halves ? `${out} = (${A}${B}²)/${k}` : `${out} = ${k}${A}${B}²`,
+        forward: (v) => c * v[A] * v[B] ** 2,
+        key: [halves ? `√(${k}${out}/${A})` : `√(${out}/(${k}${A}))`, (v) => Math.sqrt(v[out] / (c * v[A]))],
+        offers: [
+          [halves ? `${k}${out}/${A}` : `${out}/(${k}${A})`, (v) => v[out] / (c * v[A]), `Solves for ${B}² and stops before taking the square root.`],
+          [halves ? `√(${out}/(${k}${A}))` : `√(${k}${out}/${A})`, (v) => Math.sqrt(v[out] / (v[A] / c)),
+            halves ? `Divides by ${k} instead of multiplying by ${k} to clear the fraction.` : `Multiplies by ${k} instead of dividing by ${k}.`],
+          [halves ? `√(${k}${out})/${A}` : `√(${out}/${k})/${A}`, (v) => Math.sqrt(v[out] / c) / v[A], `Takes the square root before dividing by ${A}, so ${A} is left outside the root.`],
+          [halves ? `${k}${out}/(2${A})` : `${out}/(${2 * k}${A})`, (v) => v[out] / (2 * c * v[A]), `Undoes the square by dividing by 2 instead of taking a square root.`],
+        ],
+        undo: `Divide by the constant factors first, then take the square root, since ${B} > 0.`,
+      };
+    },
+    // out = k√(A·B), solved for A.
+    (t) => {
+      const scene = t.pick([
+        { out: "v", A: "h", B: "g", text: "The speed v of water leaving a tank through a small hole at depth h is modeled by the formula below, where g is a constant." },
+        { out: "r", A: "A", B: "n", text: "A botanist models the radius r of a flower bed that holds n plants, each needing area A, with the formula below." },
+        { out: "T", A: "L", B: "c", text: "A lab models the time T for a signal to cross a cable of length L with the formula below, where c is a constant for the cable." },
+      ]);
+      const k = t.pick([2, 3, 4, 5, 6]);
+      const swap = t.chance(0.5);
+      const { out } = scene;
+      // Solve for either letter under the root; the other stays a constant.
+      const [A, B] = swap ? [scene.B, scene.A] : [scene.A, scene.B];
+      return {
+        scene, target: A, others: [out, B],
+        formula: `${out} = ${k}√(${scene.A}${scene.B})`,
+        forward: (v) => k * Math.sqrt(v[A] * v[B]),
+        key: [`${out}²/(${k * k}${B})`, (v) => v[out] ** 2 / (k * k * v[B])],
+        offers: [
+          [`${out}²/(${k}${B})`, (v) => v[out] ** 2 / (k * v[B]), `Squares ${out} but not the ${k} in front of the root.`],
+          [`${out}/(${k}${B})`, (v) => v[out] / (k * v[B]), "Divides but never squares to remove the square root."],
+          [`${B}(${out}/${k})²`, (v) => v[B] * (v[out] / k) ** 2, `Multiplies by ${B} instead of dividing by it after squaring.`],
+          [`√(${out}/(${k}${B}))`, (v) => Math.sqrt(v[out] / (k * v[B])), "Takes another square root instead of squaring to undo the root."],
+        ],
+        undo: "Divide by the constant, then square both sides to remove the root.",
+      };
+    },
+    // out = kP/d², solved for d (d > 0).
+    (t) => {
+      const scene = t.pick([
+        { out: "I", A: "P", B: "d", text: "The brightness I of light from a lamp of power P, measured d meters away, is modeled by the formula below." },
+        { out: "F", A: "q", B: "r", text: "A physics class models the force F between two charged spheres a distance r apart, where q depends on the charges." },
+        { out: "S", A: "W", B: "x", text: "A sound engineer models the loudness S at a distance x from a speaker of power W with the formula below." },
+      ]);
+      const k = t.pick([2, 3, 4, 5, 6, 8, 10]);
+      const { out, A, B } = scene;
+      return {
+        scene, target: B, others: [out, A],
+        formula: `${out} = (${k}${A})/${B}²`,
+        forward: (v) => (k * v[A]) / v[B] ** 2,
+        key: [`√((${k}${A})/${out})`, (v) => Math.sqrt((k * v[A]) / v[out])],
+        offers: [
+          [`(${k}${A})/${out}`, (v) => (k * v[A]) / v[out], `Solves for ${B}² and stops before taking the square root.`],
+          [`√(${out}/(${k}${A}))`, (v) => Math.sqrt(v[out] / (k * v[A])), `Inverts the fraction under the root, which gives 1/${B}.`],
+          [`√(${k}${A}${out})`, (v) => Math.sqrt(k * v[A] * v[out]), `Multiplies by ${out} instead of dividing by it.`],
+          [`√(${A}/(${k}${out}))`, (v) => Math.sqrt(v[A] / (k * v[out])), `Divides by ${k} instead of multiplying by it.`],
+        ],
+        undo: `Multiply both sides by ${B}², divide by ${out}, then take the square root, since ${B} > 0.`,
+      };
+    },
+    // 1/out = k/A + 1/B, solved for B.
+    (t) => {
+      const scene = t.pick([
+        { out: "R", A: "a", B: "b", text: "Two resistors are connected side by side. Their combined resistance R, in ohms, satisfies the equation below, where a and b are the two resistances in ohms." },
+        { out: "f", A: "p", B: "q", text: "For a lens, the focal length f, the object distance p, and the image distance q satisfy the equation below." },
+        { out: "T", A: "m", B: "n", text: "Two pumps working together fill a tank in T hours. Their separate filling times m and n, in hours, satisfy the equation below." },
+      ]);
+      const k = t.pick([1, 1, 2, 3, 4]);
+      const { out, A, B } = scene;
+      const kA = `${k === 1 ? "" : k}${out}`;
+      const scaledA = k === 1 ? A : `(${A}/${k})`;
+      return {
+        scene, target: B, others: [out, A],
+        formula: `1/${out} = ${k}/${A} + 1/${B}`,
+        forward: (v) => 1 / (k / v[A] + 1 / v[B]),
+        key: [`(${A}${out})/(${A} − ${kA})`, (v) => (v[A] * v[out]) / (v[A] - k * v[out])],
+        offers: [
+          [`(${A}${out})/(${kA} − ${A})`, (v) => (v[A] * v[out]) / (k * v[out] - v[A]), `Subtracts in the wrong order when combining 1/${out} ${MINUS} ${k}/${A} over a common denominator.`],
+          [`(${A} − ${kA})/(${A}${out})`, (v) => (v[A] - k * v[out]) / (v[A] * v[out]), `Finds 1/${B} and stops before taking the reciprocal.`],
+          [`${out} − ${scaledA}`, (v) => v[out] - v[A] / k, `Takes reciprocals term by term, as if 1/${B} = 1/${out} ${MINUS} ${k}/${A} meant ${B} = ${out} ${MINUS} ${scaledA}.`],
+          [`(${A}${out})/(${A} + ${kA})`, (v) => (v[A] * v[out]) / (v[A] + k * v[out]), `Adds ${k}/${A} instead of subtracting it when isolating 1/${B}.`],
+        ],
+        undo: `Isolate 1/${B}, combine the fractions over one denominator, then take the reciprocal of both sides.`,
+      };
+    },
+    // out = k√(A/B), solved for A.
+    (t) => {
+      const scene = t.pick([
+        { out: "T", A: "L", B: "g", text: "The time T, in seconds, for one swing of a pendulum of length L is modeled by the formula below, where g is a constant." },
+        { out: "v", A: "F", B: "m", text: "The speed v of a wave along a rope under tension F is modeled by the formula below, where m depends on the rope." },
+        { out: "t", A: "h", B: "a", text: "The time t for a ball to roll down a ramp of height h is modeled by the formula below, where a depends on the ramp." },
+      ]);
+      const k = t.pick([2, 3, 4, 5, 6]);
+      const { out, A, B } = scene;
+      if (t.chance(0.4)) {
+        // Solve for the letter in the denominator under the root.
+        return {
+          scene, target: B, others: [out, A],
+          formula: `${out} = ${k}√(${A}/${B})`,
+          forward: (v) => k * Math.sqrt(v[A] / v[B]),
+          key: [`(${k * k}${A})/${out}²`, (v) => (k * k * v[A]) / v[out] ** 2],
+          offers: [
+            [`${out}²/(${k * k}${A})`, (v) => v[out] ** 2 / (k * k * v[A]), `Solves for 1/${B} and stops before taking the reciprocal.`],
+            [`(${k}${A})/${out}²`, (v) => (k * v[A]) / v[out] ** 2, `Squares ${out} but not the ${k}.`],
+            [`(${k * k}${A})/${out}`, (v) => (k * k * v[A]) / v[out], "Squares the constant but not the other side, so the root is not fully removed."],
+            [`√((${k}${A})/${out})`, (v) => Math.sqrt((k * v[A]) / v[out]), "Takes a square root instead of squaring to undo the root."],
+          ],
+          undo: `Divide by ${k}, square both sides, then solve for ${B} by taking reciprocals.`,
+        };
+      }
+      return {
+        scene, target: A, others: [out, B],
+        formula: `${out} = ${k}√(${A}/${B})`,
+        forward: (v) => k * Math.sqrt(v[A] / v[B]),
+        key: [`(${B}${out}²)/${k * k}`, (v) => (v[B] * v[out] ** 2) / (k * k)],
+        offers: [
+          [`(${B}${out}²)/${k}`, (v) => (v[B] * v[out] ** 2) / k, `Squares ${out} but not the ${k}.`],
+          [`(${B}${out})/${k}`, (v) => (v[B] * v[out]) / k, "Never squares to remove the square root."],
+          [`${out}²/(${k * k}${B})`, (v) => v[out] ** 2 / (k * k * v[B]), `Divides by ${B} instead of multiplying by it.`],
+          [`((${B}${out})/${k})²`, (v) => ((v[B] * v[out]) / k) ** 2, `Multiplies by ${B} before squaring, so ${B} ends up squared.`],
+        ],
+        undo: `Divide by ${k}, square both sides, then multiply by ${B}.`,
+      };
+    },
+  ];
+
+  const listLetters = (letters) => letters.length === 2
+    ? `${letters[0]} and ${letters[1]}`
+    : `${letters.slice(0, -1).join(", ")}, and ${letters[letters.length - 1]}`;
+
+  function formulaItem(t) {
+    const F = t.pick(FORMULA_SHAPES)(t);
+    const offers = t.sample(F.offers, 3);
+    const letters = [F.target, ...F.others];
+    // Two sets of positive inputs, chosen so every denominator stays away from 0.
+    const trials = [[1.7, 3.2, 0.55, 2.4], [4.3, 0.9, 2.6, 1.15]].map((values) => {
+      const assignment = {};
+      letters.forEach((letter, index) => (assignment[letter] = values[index]));
+      return assignment;
+    });
+    return {
+      responseType: "multiple-choice",
+      stimulus: { type: "equations", content: F.formula },
+      stem: `${F.scene.text} Which of the following correctly expresses ${F.target} in terms of ${listLetters(F.others)}?`,
+      correct: F.key[0],
+      wrong: offers.map(([text, , why]) => [text, why]),
+      explanation: `${F.undo} This gives ${F.target} = ${F.key[0]}.`,
+      steps: [
+        "Treat every letter except the one wanted as a constant.",
+        F.undo,
+        `${F.target} = ${F.key[0]}.`,
+      ],
+      principles: [
+        "Solving a formula for a letter undoes its operations in reverse order, applying each step to the whole of both sides.",
+        "A square root is undone by squaring, and a square by taking the square root; a sum of reciprocals is not the reciprocal of a sum.",
+      ],
+      trap: "Each wrong choice undoes one operation incorrectly, or stops one step early.",
+      hint: `What was done to ${F.target} last? Undo that first.`,
+      verify: () => trials.every((values) => {
+        const known = { ...values };
+        known[F.scene.out] = F.forward(values);
+        const truth = values[F.target];
+        if (!Number.isFinite(known[F.scene.out])) return false;
+        return approx(F.key[1](known), truth, 1e-9) && offers.every(([, fn]) => !approx(fn(known), truth, 1e-6));
+      }),
+    };
+  }
+
+  // Power-law formulas for the "how many times" form, moved here from the
+  // Algebra rearranging template: vars gives each input's exponent.
+  const POWER_SCENES = [
+    {
+      out: "L", K: [0.6, 0.8, 1.2, 1.5], formula: (K) => `L = (${num(K)}wd²)/s`, vars: { w: 1, d: 2, s: -1 },
+      names: { w: "width", d: "depth", s: "span" }, outName: "maximum load",
+      text: "The given formula models the maximum load L, in kilograms, that a wooden beam can support, where w is " +
+        "the beam's width and d is its depth, both in centimeters, and s is the length of its span, in meters.",
+    },
+    {
+      out: "F", K: [0.3, 0.4, 0.6, 0.65], formula: (K) => `F = ${num(K)}Av²`, vars: { A: 1, v: 2 },
+      names: { A: "area", v: "speed" }, outName: "drag force",
+      text: "The given formula models the drag force F, in newtons, on a flat panel moving through air, where A is " +
+        "the panel's area, in square meters, and v is its speed, in meters per second.",
+    },
+    {
+      out: "I", K: [8, 12, 15, 20], formula: (K) => `I = (${num(K)}P)/d²`, vars: { P: 1, d: -2 },
+      names: { P: "power", d: "distance from the lamp" }, outName: "light intensity",
+      text: "The given formula models the light intensity I, in lux, at a point d meters from a lamp whose power is P watts.",
+    },
+    {
+      out: "Q", K: [0.4, 0.8, 2.5], formula: (K) => `Q = (${num(K)}r⁴p)/L`, vars: { r: 4, p: 1, L: -1 },
+      names: { r: "radius", p: "pressure difference", L: "length" }, outName: "flow rate",
+      text: "The given formula models the rate Q at which a liquid flows through a narrow pipe, where r is the " +
+        "pipe's radius, p is the pressure difference between its ends, and L is its length.",
+    },
+    {
+      out: "V", K: [2, 3, 4], formula: (K) => `V = ${num(K)}r²h`, vars: { r: 2, h: 1 },
+      names: { r: "radius", h: "height" }, outName: "volume",
+      text: "The given formula gives the volume V of a storage tank with radius r and height h, both in meters.",
+    },
+  ];
+
+  const CHANGES = [
+    { factor: 2, word: "doubled", gerund: "Doubling" },
+    { factor: 3, word: "tripled", gerund: "Tripling" },
+    { factor: 0.5, word: "halved", gerund: "Halving" },
+  ];
+
+  // How many times the output changes when two inputs of a power law are scaled.
+  function formulaScalingItem(t, numericWanted) {
+    const scene = t.pick(POWER_SCENES);
+    const K = t.pick(scene.K);
+    const letters = Object.keys(scene.vars);
+    const [first, second] = t.sample(letters, 2);
+    const [c1, c2] = [t.pick(CHANGES), t.pick(CHANGES)];
+    const e1 = scene.vars[first];
+    const e2 = scene.vars[second];
+    const effect1 = c1.factor ** e1;
+    const effect2 = c2.factor ** e2;
+    const key = effect1 * effect2;
+    if (approx(key, 1)) return null;
+    const flat = (e) => Math.sign(e);
+    const candidates = [];
+    if (Math.abs(e1) > 1 || Math.abs(e2) > 1) {
+      candidates.push([c1.factor ** flat(e1) * c2.factor ** flat(e2), "Ignores the exponent, treating every input as if it appeared to the first power."]);
+    }
+    if (e1 < 0 || e2 < 0) {
+      candidates.push([c1.factor ** Math.abs(e1) * c2.factor ** Math.abs(e2),
+        `Treats ${e1 < 0 ? first : second}, which is in the denominator, as if it were in the numerator.`]);
+    }
+    candidates.push([effect1, `Applies only the change to the ${scene.names[first]}.`]);
+    candidates.push([effect2, `Applies only the change to the ${scene.names[second]}.`]);
+    candidates.push([effect1 + effect2, "Adds the two effects instead of multiplying them."]);
+    const numeric = numericWanted && gridable(key);
+    const rest = letters.filter((letter) => letter !== first && letter !== second);
+    const formula = scene.formula(K);
+    const describe = (letter, change, exponent, effect) => {
+      const detail = [];
+      if (Math.abs(exponent) === 2) detail.push("squared");
+      else if (Math.abs(exponent) > 2) detail.push(`raised to the power ${Math.abs(exponent)}`);
+      if (exponent < 0) detail.push("in the denominator");
+      return `${change.gerund} ${letter}${detail.length ? `, which is ${detail.join(" and ")},` : ""} multiplies ${scene.out} by ${ratio(effect)}.`;
+    };
+    const forward = (values) => letters.reduce((product, letter) => product * values[letter] ** scene.vars[letter], K);
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: { type: "equations", content: formula },
+      stem:
+        `${scene.text} If the ${scene.names[first]} is ${c1.word} and the ${scene.names[second]} is ${c2.word}` +
+        `${rest.length ? `, while the ${scene.names[rest[0]]} stays the same` : ""}, the new ${scene.outName} ` +
+        `is how many times the original ${scene.outName}?`,
+      correct: numeric ? key : ratio(key),
+      wrong: t.shuffle(candidates).map(([value, reason]) => [ratio(value), reason]),
+      explanation:
+        `${describe(first, c1, e1, effect1)} ${describe(second, c2, e2, effect2)} The effects multiply: ` +
+        `${ratio(effect1)} × ${ratio(effect2)} = ${ratio(key)}.`,
+      steps: [
+        describe(first, c1, e1, effect1),
+        describe(second, c2, e2, effect2),
+        `Multiply the effects: ${ratio(effect1)} × ${ratio(effect2)} = ${ratio(key)}.`,
+      ],
+      principles: [
+        "Scaling an input that appears as xⁿ scales the output by the factor raised to the n.",
+        "Scaling an input in the denominator by c scales the output by 1/c (to the matching power).",
+      ],
+      trap: "Doubling one input and halving another cancel only when they enter the formula the same way; powers and denominators change that.",
+      hint: "Follow each change through the formula separately, then combine them.",
+      verify: () => {
+        // Evaluate the formula before and after the change at arbitrary inputs.
+        const base = {};
+        letters.forEach((letter, index) => (base[letter] = 1.3 + 0.7 * index));
+        const changed = { ...base, [first]: base[first] * c1.factor };
+        changed[second] *= c2.factor;
+        return approx(forward(changed) / forward(base), key, 1e-9) &&
+          candidates.every(([value]) => !approx(value, key, 1e-9));
+      },
+    };
+  }
+
+  /* ================================================ common-base-exponent */
+
+  // Bases written as powers of 2, 3, or 5 (a negative power is a reciprocal).
+  const BASES = [
+    { b: 2, u: 2, text: "4" }, { b: 2, u: 3, text: "8" }, { b: 2, u: 4, text: "16" }, { b: 2, u: 5, text: "32" },
+    { b: 2, u: -1, text: "(1/2)" }, { b: 2, u: -2, text: "(1/4)" }, { b: 2, u: -3, text: "(1/8)" }, { b: 2, u: 1, text: "2" },
+    { b: 3, u: 2, text: "9" }, { b: 3, u: 3, text: "27" }, { b: 3, u: -1, text: "(1/3)" }, { b: 3, u: -2, text: "(1/9)" }, { b: 3, u: 1, text: "3" },
+    { b: 5, u: 2, text: "25" }, { b: 5, u: 3, text: "125" }, { b: 5, u: -1, text: "(1/5)" }, { b: 5, u: 1, text: "5" },
+  ];
+
+  // "(3x − 2)" as an exponent; a bare "x" stays as it is.
+  const exponentText = (p, q) => (q === 0 && p === 1 ? "x" : `(${lin(p, q)})`);
+
+  function commonBaseItem(t, numeric) {
+    const b = t.pick([2, 3, 5]);
+    const pool = BASES.filter((entry) => entry.b === b);
+    const [L, Rb] = t.sample(pool, 2);
+    if (L.u === 1 && Rb.u === 1) return null;
+    const p = t.nonzero(-3, 4);
+    const r = t.nonzero(-3, 4);
+    const x = t.pick([-4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 0.5, 1.5, 2.5]);
+    const q = t.int(-6, 6);
+    const lhs = L.u * (p * x + q);
+    // s from u(px + q) = v(rx + s).
+    const s = lhs / Rb.u - r * x;
+    if (!Number.isInteger(s) || Math.abs(s) > 12) return null;
+    const den = L.u * p - Rb.u * r;
+    if (den === 0) return null;
+    const content = `${L.text}^${exponentText(p, q)} = ${Rb.text}^${exponentText(r, s)}`;
+    const nice = (value) => Number.isFinite(value) && Math.abs(value) <= 40 && denominatorHard(value) <= 8;
+    const wrong = [];
+    if (p !== r) wrong.push([(s - q) / (p - r), "Sets the exponents equal as written, before writing both sides as powers of the same base."]);
+    if (L.u * p !== r) wrong.push([(s - L.u * q) / (L.u * p - r), `Rewrites only the left base as a power of ${b}.`]);
+    wrong.push([(s - q) / den, `Multiplies only the x-terms of the exponents by the powers ${num(L.u)} and ${num(Rb.u)}, not the constants.`]);
+    if ((L.u < 0 || Rb.u < 0) && Math.abs(L.u) * p !== Math.abs(Rb.u) * r) {
+      wrong.push([(Math.abs(Rb.u) * s - Math.abs(L.u) * q) / (Math.abs(L.u) * p - Math.abs(Rb.u) * r),
+        `Writes ${L.u < 0 ? L.text : Rb.text} as ${b}^${Math.abs(L.u < 0 ? L.u : Rb.u)}, losing the negative exponent of a reciprocal.`]);
+    }
+    const offers = wrong.filter(([value]) => nice(value) && !approx(value, x));
+    if (!numeric && offers.length < 3) return null;
+    const powerText = (entry) => (entry.u === 1 ? `${b}` : entry.u > 0 ? `${b}${sup(entry.u)}` : `${b}^(${num(entry.u)})`);
+    const times = (u, p0, q0) => `${u === 1 ? "" : u === -1 ? MINUS : num(u)}${exponentText(p0, q0)}`;
+    // Compare the two sides as numbers, relative to their size (they can be tiny).
+    const holds = (value) => {
+      const left = (b ** L.u) ** (p * value + q);
+      const right = (b ** Rb.u) ** (r * value + s);
+      return Math.abs(left / right - 1) < 1e-9;
+    };
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: { type: "equations", content },
+      stem: "What value of x satisfies the given equation?",
+      correct: numeric ? x : ratio(x),
+      wrong: numeric ? undefined : t.shuffle(offers).slice(0, 3).map(([value, why]) => [ratio(value), why]),
+      explanation:
+        `Write both sides as powers of ${b}: ${L.text} = ${powerText(L)} and ${Rb.text} = ${powerText(Rb)}. ` +
+        `Then ${times(L.u, p, q)} = ${times(Rb.u, r, s)}, ` +
+        `so ${lin(L.u * p, L.u * q)} = ${lin(Rb.u * r, Rb.u * s)} and x = ${ratio(x)}.`,
+      steps: [
+        `Rewrite the bases: ${L.text} = ${powerText(L)}, ${Rb.text} = ${powerText(Rb)}.`,
+        `A power of a power multiplies exponents: ${b}^(${lin(L.u * p, L.u * q)}) = ${b}^(${lin(Rb.u * r, Rb.u * s)}).`,
+        `Equal powers of the same base have equal exponents: ${lin(L.u * p, L.u * q)} = ${lin(Rb.u * r, Rb.u * s)}.`,
+        `Solve: x = ${ratio(x)}.`,
+      ],
+      principles: ["Rewrite both sides with one base; then b^m = b^n (b > 0, b ≠ 1) means m = n.", "(b^u)^m = b^(um), and 1/b^u = b^(−u)."],
+      trap: numeric
+        ? `Setting the exponents equal before rewriting the bases gives ${offers.length ? ratio(offers[0][0]) : "a different value"}; the exponents can be compared only once the bases match.`
+        : "Exponents can be compared only after both sides have the same base, and every term of each exponent is multiplied by the power.",
+      hint: `Can ${L.text} and ${Rb.text} be written as powers of the same number?`,
+      verify: () => holds(x) && offers.every(([value]) => !holds(value)),
+    };
+  }
+
   const monomialExponentRules = {
     id: "monomial-exponent-rules",
     difficulty: "Easy",
@@ -1120,12 +1807,13 @@
     subskill: "factoring",
     title: "Factoring a quadratic by matching",
     recognize:
-      "In (x + p)(x + q) the constant is pq and the x-coefficient is p + q; a difference of two squares has no x-term.",
+      "In (x + p)(x + q) the constant is pq and the x-coefficient is p + q; with a leading coefficient the x-term is the sum of the outer and inner products; a difference of two squares has no x-term.",
     rubric: { steps: 0, concept: 1, interpretation: 0, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["sign-error", "equivalent-form"],
     build(t) {
       const roll = t.random();
-      const make = roll < 0.4 ? () => trinomialItem(t, false) : roll < 0.7 ? () => trinomialItem(t, true) : () => squaresItem(t);
+      const make = roll < 0.25 ? () => trinomialItem(t, false) : roll < 0.45 ? () => trinomialItem(t, true)
+        : roll < 0.62 ? () => nonMonicItem(t, false) : roll < 0.78 ? () => nonMonicItem(t, true) : () => squaresItem(t);
       return { estimatedSeconds: 60, ...drawUntilDistinct(make) };
     },
   };
@@ -1160,9 +1848,10 @@
     build(t) {
       const numeric = t.chance(0.3);
       const kind = numeric
-        ? t.pick(["product", "two-roots", "quotient"])
-        : t.pick(["product", "product", "two-roots", "power", "quotient"]);
-      return { estimatedSeconds: 85, ...drawUntilDistinct(() => rationalExponentItem(t, kind, numeric)) };
+        ? t.pick(["product", "two-roots", "quotient", "nested", "power", "reciprocal"])
+        : t.pick(["product", "two-roots", "power", "quotient", "nested", "reciprocal"]);
+      const make = !numeric && t.chance(0.25) ? () => twoVariableRootItem(t) : () => rationalExponentItem(t, kind, numeric);
+      return { estimatedSeconds: 85, ...drawUntilDistinct(make) };
     },
   };
 
@@ -1180,10 +1869,31 @@
     build(t) {
       const roll = t.random();
       const make = roll < 0.35 ? allPossible : roll < 0.65 ? orderedCoefficients : achievableK;
-      return { estimatedSeconds: 120, ...drawUntilDistinctHard(() => make(t)) };
+      // The key must not be the one choice whose opening number differs from
+      // the other three's (the gate's form check).
+      const opening = (value) => (S.label(value).match(/^\S+/) || [""])[0];
+      const oddOneOut = (record) => {
+        if (record.responseType !== "multiple-choice") return false;
+        const shown = [];
+        record.wrong.forEach(([value]) => {
+          if (shown.length < 3 && !shown.includes(S.label(value))) shown.push(S.label(value));
+        });
+        const heads = shown.map(opening);
+        return new Set(heads).size === 1 && heads[0] !== opening(record.correct);
+      };
+      return {
+        estimatedSeconds: 120,
+        ...drawUntilDistinctHard(() => {
+          const record = make(t);
+          return record && !oddOneOut(record) ? record : null;
+        }),
+      };
     },
   };
 
+  // Hard: the target is a power of a different base, or a square that hides
+  // the given sum and product; the structure has to be seen before anything
+  // can be computed.
   const expressionSubstitution = {
     id: "expression-substitution",
     domain: "Advanced Math",
@@ -1191,23 +1901,96 @@
     subskill: "exponent rules",
     title: "Evaluate an expression through a known combination",
     recognize:
-      "The variables cannot (or need not) be found one at a time; the target is a multiple, square, or power of the " +
-      "given combination, and rewriting it in those terms is the whole problem.",
+      "The variables cannot be found one at a time; the target is a power of a common base whose exponent is a " +
+      "multiple of the given combination, or a square that contains the given sum and product.",
     rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
     tricks: ["wrong-quantity", "equivalent-form", "neighbouring-rule", "sign-error", "intermediate-value"],
     build(t) {
-      const roll = t.random();
+      const powers = t.chance(0.55);
       const numeric = t.chance(0.36);
-      const common = { estimatedSeconds: 95 };
-      if (roll < 0.3) return { ...common, ...substitutionPowers(t, numeric) };
-      if (roll < 0.55) return { ...common, ...substitutionSymmetric(t, numeric) };
-      if (roll < 0.77) return { ...common, ...substitutionLinear(t, numeric) };
-      return { ...common, ...substitutionExponent(t, numeric) };
+      const make = powers ? () => substitutionPowers(t, numeric) : () => substitutionSymmetric(t, numeric);
+      return { estimatedSeconds: 110, ...drawUntilDistinctHard(make) };
+    },
+  };
+
+  // Medium: the target is a visible multiple of the given linear combination,
+  // or a power of the same base as the given equation.
+  const expressionFromCombination = {
+    id: "expression-from-combination",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Equivalent expressions",
+    subskill: "exponent rules",
+    title: "Value of an expression from a given equation without solving it",
+    recognize:
+      "The target is a multiple of the given combination plus a constant, or a power of the same base split into a " +
+      "product of powers; rewrite the target in terms of what is given.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["wrong-quantity", "sign-error", "intermediate-value", "neighbouring-rule"],
+    build(t) {
+      const linear = t.chance(0.55);
+      const numeric = t.chance(0.4);
+      const make = linear ? () => substitutionLinear(t, numeric) : () => substitutionExponent(t, numeric);
+      return { estimatedSeconds: 85, ...drawUntilDistinctHard(make) };
+    },
+  };
+
+  const nonlinearFormulaRearrange = {
+    id: "nonlinear-formula-rearrange",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Equivalent expressions",
+    subskill: "rational expressions",
+    title: "Solving or scaling a nonlinear formula",
+    recognize:
+      "Every other letter is a constant: clear fractions, collect the terms with the target letter (factoring it out " +
+      "if it appears twice), and undo squares, roots, and reciprocals last, on whole sides. When inputs are scaled, " +
+      "each input's factor is raised to its exponent, and the effects multiply.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["equivalent-form", "intermediate-value", "neighbouring-rule"],
+    build(t) {
+      const scaling = t.chance(0.3);
+      const numeric = t.chance(0.5);
+      const make = scaling ? () => formulaScalingItem(t, numeric) : () => formulaItem(t);
+      return { estimatedSeconds: 95, ...drawUntilDistinct(make) };
+    },
+  };
+
+  const commonBaseExponent = {
+    id: "common-base-exponent",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Equivalent expressions",
+    subskill: "exponent rules",
+    title: "Exponential equation solved by rewriting with a common base",
+    recognize: "Write both sides as powers of one base, multiply out each exponent, and set the exponents equal.",
+    rubric: { steps: 1, concept: 1, interpretation: 0, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["neighbouring-rule", "sign-error", "equivalent-form"],
+    build(t) {
+      const numeric = t.chance(0.45);
+      return { estimatedSeconds: 90, ...drawUntilDistinct(() => commonBaseItem(t, numeric)) };
+    },
+  };
+
+  const quadraticStructureForm = {
+    id: "quadratic-structure-form",
+    domain: "Advanced Math",
+    skill: "Equivalent expressions",
+    subskill: "factoring",
+    title: "Equivalent quadratic form that displays a feature",
+    recognize:
+      "Each form of a quadratic displays one feature: factored form the zeros, vertex form the vertex and extreme " +
+      "value, standard form the y-intercept. Decide which form is wanted, then check the candidate is truly equivalent.",
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 1 },
+    tricks: ["equivalent-form", "sign-error", "wrong-quantity"],
+    build(t) {
+      return { estimatedSeconds: 110, ...drawUntilDistinctHard(() => quadraticStructure(t)) };
     },
   };
 
   return [
     monomialExponentRules, quadraticFactorMatch, rationalExpressionCombine, rationalExponentRewrite,
-    unknownCoefficientProduct, expressionSubstitution,
+    expressionFromCombination, nonlinearFormulaRearrange, commonBaseExponent, unknownCoefficientProduct,
+    expressionSubstitution, quadraticStructureForm,
   ];
 });
