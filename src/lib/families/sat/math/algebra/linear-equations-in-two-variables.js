@@ -17,6 +17,39 @@
     commaChoicesHard, distinctWrongHard, compileHard, compile, fitsGrid, lineCoefficients, slopeTerm,
   } = C;
 
+  /* ---------------------------------------------------------------- helpers */
+
+  // True when a modelled mistake prints the same as the key. Such a draw is
+  // redrawn rather than silently losing the distractor: a wrong method must
+  // never land on the credited answer.
+  const collides = (key, wrong) => wrong.some(([value]) => S.label(value) === S.label(key));
+
+  // Three wrong answers from a pool of modelled mistakes with numeric values,
+  // chosen so the key is the smallest or largest choice about half the time
+  // and sits between distractors otherwise. A test-wise student who always
+  // eliminates the extremes, or always picks them, gains nothing.
+  function spreadAround(t, key, pool) {
+    const seen = new Set([S.label(key)]);
+    const unique = pool.filter(([value]) => {
+      const text = S.label(value);
+      if (seen.has(text) || !Number.isFinite(value)) return false;
+      seen.add(text);
+      return true;
+    });
+    const below = t.shuffle(unique.filter(([value]) => value < key));
+    const above = t.shuffle(unique.filter(([value]) => value > key));
+    const full = [below, above].filter((side) => side.length >= 3);
+    if (full.length && (t.chance(0.5) || !below.length || !above.length)) return t.pick(full).slice(0, 3);
+    if (below.length && above.length && below.length + above.length >= 3) {
+      const low = below.length >= 2 && (above.length < 2 || t.chance(0.5)) ? 2 : 1;
+      return t.shuffle([...below.slice(0, low), ...above.slice(0, 3 - low)]);
+    }
+    return t.shuffle(unique).slice(0, 3);
+  }
+
+  // "the value in parentheses" of a product: 4(3), 4(−7); never "((−7))".
+  const times = (a, b) => `${num(a)}(${num(b)})`;
+
   /* --------------------------------------------------- two-variable-equation-model */
 
   const modelScenes = [
@@ -26,6 +59,7 @@
         `A snack stand sells pretzels for ${usd(v.a)} each and drinks for ${usd(v.b)} each. One day, the stand's ` +
         `sales from pretzels and drinks totaled ${usd(T)}.`,
       defs: "x is the number of pretzels sold and y is the number of drinks sold",
+      defsFlip: "x is the number of drinks sold and y is the number of pretzels sold",
       given: (x) => `If the stand sold ${x} pretzels that day, how many drinks did it sell?`,
       leftover: "dollars of drink sales", xs: "pretzels", ys: "drinks", totalNoun: "dollars", dollars: true,
     },
@@ -34,8 +68,18 @@
       text: (v, T) =>
         `In a basketball game, a team scored ${T} points, all from 2-point baskets and 3-point baskets.`,
       defs: "x is the number of 2-point baskets and y is the number of 3-point baskets",
+      defsFlip: "x is the number of 3-point baskets and y is the number of 2-point baskets",
       given: (x) => `If ${x} of the team's baskets were 2-point baskets, how many 3-point baskets did the team make?`,
       leftover: "points from 3-point baskets", xs: "2-point baskets", ys: "3-point baskets", totalNoun: "points",
+    },
+    {
+      make: (t) => ({ a: 3, b: 2, x0: t.int(3, 14), y0: t.int(6, 20) }),
+      text: (v, T) =>
+        `In a basketball game, a team scored ${T} points, all from 3-point baskets and 2-point baskets.`,
+      defs: "x is the number of 3-point baskets and y is the number of 2-point baskets",
+      defsFlip: "x is the number of 2-point baskets and y is the number of 3-point baskets",
+      given: (x) => `If ${x} of the team's baskets were 3-point baskets, how many 2-point baskets did the team make?`,
+      leftover: "points from 2-point baskets", xs: "3-point baskets", ys: "2-point baskets", totalNoun: "points",
     },
     {
       make: (t) => ({ a: t.pick([2, 3, 4]), b: t.pick([5, 6, 7]), x0: t.int(1, 6), y0: t.int(1, 4) }),
@@ -43,6 +87,7 @@
         `On a training day, Rosa walked at an average speed of ${v.a} miles per hour and jogged at an average speed ` +
         `of ${v.b} miles per hour, covering ${T} miles in all.`,
       defs: "x is the number of hours Rosa walked and y is the number of hours she jogged",
+      defsFlip: "x is the number of hours Rosa jogged and y is the number of hours she walked",
       given: (x) => `If Rosa walked for ${x} hour${x === 1 ? "" : "s"}, for how many hours did she jog?`,
       leftover: "miles jogged", xs: "hours walking", ys: "hours jogging", totalNoun: "miles",
     },
@@ -52,6 +97,7 @@
         `A baker uses ${num(v.a)} cups of flour for each loaf of bread and ${num(v.b)} cups of flour for each batch of ` +
         `muffins. On Monday, the baker used ${num(T)} cups of flour for bread and muffins.`,
       defs: "x is the number of loaves and y is the number of batches of muffins",
+      defsFlip: "x is the number of batches of muffins and y is the number of loaves",
       given: (x) => `If the baker made ${x} loaves on Monday, how many batches of muffins did the baker make?`,
       leftover: "cups of flour for muffins", xs: "loaves", ys: "batches", totalNoun: "cups of flour",
     },
@@ -61,6 +107,7 @@
         `A carpenter uses ${v.a} feet of lumber for each shelf and ${v.b} feet of lumber for each bench. The ` +
         `carpenter used ${T} feet of lumber for shelves and benches last week.`,
       defs: "x is the number of shelves and y is the number of benches",
+      defsFlip: "x is the number of benches and y is the number of shelves",
       given: (x) => `If the carpenter built ${x} shelves last week, how many benches did the carpenter build?`,
       leftover: "feet of lumber for benches", xs: "shelves", ys: "benches", totalNoun: "feet of lumber",
     },
@@ -282,45 +329,48 @@
       const variant = t.int(0, 2);
       for (;;) {
         if (variant === 0) {
-          // Which point lies on ax + by = c (or y = mx + k)?
+          // Which point lies on ax + by = c (or y = mx + k)? The choices are the
+          // key with its signs changed, so every choice uses the same numbers.
           const slopeForm = t.chance(0.35);
           const x0 = t.nonzero(-6, 8);
           const y0 = t.nonzero(-8, 10);
+          if (Math.abs(x0) === Math.abs(y0)) continue;
           let equation;
-          let wrong;
+          let reasons;
           if (slopeForm) {
             const m = t.sign() * t.int(2, 5);
             const k = y0 - m * x0;
             if (k === 0 || Math.abs(k) > 30) continue;
             equation = `y = ${lin(m, k)}`;
-            wrong = [
-              [point(y0, x0), "Swaps the coordinates of a point on the line."],
-              [point(x0, m * x0 - k), `Uses ${num(-k)} for the constant term instead of ${num(k)}.`],
-              [point(-x0, y0), `Satisfies y = ${lin(-m, k)}: the sign of the slope is lost.`],
-              [point(x0 + 1, y0 + 1), "Moves one unit in each direction, which follows a slope of 1."],
-            ];
+            reasons = {
+              flipX: `Satisfies y = ${lin(-m, k)}: the sign of the slope is lost.`,
+              flipY: `Satisfies y = ${lin(-m, -k)}: the sign of y is lost, which changes the sign of every term on the right.`,
+              flipBoth: `Satisfies y = ${lin(m, -k)}: the sign of the constant term is lost.`,
+            };
           } else {
             const a = t.sign() * t.int(1, 6);
             const b = t.sign() * t.int(2, 6);
             const c = a * x0 + b * y0;
             if (c === 0 || (a < 0 && b < 0) || S.gcd(S.gcd(a, b), c) !== 1) continue;
             equation = standardForm(a, b, c);
-            wrong = [
-              [point(y0, x0), "Swaps the coordinates of a point on the line."],
-              [point(x0, -y0), `Satisfies ${standardForm(a, -b, c)}: the sign of the y-term is flipped.`],
-            ];
-            if (Number.isInteger(c / a) && Number.isInteger(c / b)) {
-              wrong.push([point(c / a, c / b), "Combines the x-intercept value and the y-intercept value into a single point."]);
-            }
-            wrong.push([point(-x0, y0), `Satisfies ${standardForm(-a, b, c)}: the sign of the x-term is flipped.`]);
-            wrong.push([point(x0 + b, y0 + a), "Moves from a point on the line in a direction that leaves the line."]);
+            reasons = {
+              flipX: `Satisfies ${standardForm(-a, b, c)}: the sign of the x-term is flipped.`,
+              flipY: `Satisfies ${standardForm(a, -b, c)}: the sign of the y-term is flipped.`,
+              flipBoth: `Satisfies ${standardForm(a, b, -c)}: the sign of the constant is flipped.`,
+            };
           }
           const key = point(x0, y0);
-          const kept = wrong.filter(([text]) => {
+          const pool = [
+            [point(-x0, y0), reasons.flipX],
+            [point(x0, -y0), reasons.flipY],
+            [point(-x0, -y0), reasons.flipBoth],
+            [point(y0, x0), "Swaps the coordinates of a point on the line."],
+          ];
+          const kept = t.sample(pool.filter(([text]) => {
             const [px, py] = readPoint(text);
             return !holds(equation, { x: px, y: py });
-          });
-          if (distinctWrong(key, kept) < 3) continue;
+          }), 3);
+          if (kept.length < 3 || collides(key, kept) || distinctWrong(key, kept) < 3) continue;
           return {
             responseType: "multiple-choice",
             estimatedSeconds: 60,
@@ -355,23 +405,26 @@
           const c = a * p + b * k;
           if (c === 0 || Math.abs(c) > 80 || (a < 0 && b < 0) || S.gcd(S.gcd(a, b), c) !== 1) continue;
           const equation = standardForm(a, b, c);
-          const wrong = [];
-          if (Number.isInteger((c + a * p) / b)) wrong.push([(c + a * p) / b, `Moves ${num(a * p)} across the equals sign without changing its sign.`]);
-          wrong.push([c - a * p, `Stops at ${lin(b, 0, "k")} = ${num(c - a * p)}, before dividing by ${num(b)}.`]);
-          if (Number.isInteger((c - b * p) / a)) wrong.push([(c - b * p) / a, `Substitutes ${num(p)} for y instead of x.`]);
-          wrong.push([-k, "Loses the sign while dividing."]);
+          const pool = [
+            [(c + a * p) / b, `Moves ${num(a * p)} across the equals sign without changing its sign.`],
+            [c - a * p, `Stops at ${lin(b, 0, "k")} = ${num(c - a * p)}, before dividing by ${num(b)}.`],
+            [(c - b * p) / a, `Substitutes ${num(p)} for y instead of x.`],
+            [c / b - a * p, `Divides only the constant ${num(c)} by ${num(b)}, not the term ${num(a * p)}.`],
+            [(c - a * p) / a, `Divides ${num(c - a * p)} by ${num(a)}, the coefficient of x, instead of by ${num(b)}.`],
+          ].filter(([value]) => Number.isInteger(value));
           const numeric = t.chance(0.6);
-          if (!numeric && distinctWrong(k, wrong) < 3) continue;
+          const wrong = numeric ? [] : spreadAround(t, k, pool);
+          if (!numeric && (collides(k, wrong) || distinctWrong(k, wrong) < 3)) continue;
           return {
             responseType: numeric ? "numeric" : "multiple-choice",
             estimatedSeconds: 55,
             stimulus: { type: "equations", content: equation },
-            stem: `The point ${point(p, 0).replace(/0\)$/, "k)")} lies on the graph of the given equation in the xy-plane. What is the value of k?`,
+            stem: `The point (${num(p)}, k) lies on the graph of the given equation in the xy-plane. What is the value of k?`,
             correct: k,
-            wrong: numeric ? [] : wrong,
+            wrong,
             explanation: `Substitute x = ${num(p)}: ${num(a * p)} ${xTerm(b, "k")} = ${num(c)}, so ${lin(b, 0, "k")} = ${num(c - a * p)} and k = ${num(k)}.`,
             steps: [
-              `Substitute x = ${num(p)} and y = k: ${lin(a, 0).replace("x", "")}(${num(p)}) ${xTerm(b, "k")} = ${num(c)}.`,
+              `Substitute x = ${num(p)} and y = k: ${times(a, p)} ${xTerm(b, "k")} = ${num(c)}.`,
               `${moveText(a * p)}: ${lin(b, 0, "k")} = ${num(c - a * p)}.`,
               `Divide by ${num(b)}: k = ${num(k)}.`,
             ],
@@ -381,30 +434,28 @@
             verify: () => holds(equation, { x: p, y: k }) && !holds(equation, { x: p, y: k + 1 }),
           };
         }
-        // A line described by its slope and one point; which other point is on it?
+        // A line described by its slope and one point; which other point is on
+        // it? The choices step by (run, rise), (run, −rise), (rise, run), and
+        // (−rise, run): every choice reuses the same two steps.
         const m = t.sign() * t.int(2, 5);
         const x0 = t.int(-5, 6);
         const y0 = t.int(-6, 8);
         const s = t.pick([2, 3, -2, 4]);
         const key = point(x0 + s, y0 + m * s);
-        const wrong = [
-          [point(x0 + m * s, y0 + s), "Swaps the run and the rise, moving horizontally by the slope."],
+        const wrong = t.sample([
+          [point(x0 + m * s, y0 + s), "Swaps the run and the rise, moving horizontally by the change in y."],
           [point(x0 + s, y0 - m * s), `Moves in the direction of a line with slope ${num(-m)}.`],
+          [point(x0 - m * s, y0 + s), `Moves along a line with slope ${frac(-1, m)}, the negative reciprocal of ${num(m)}.`],
           [point(x0 + s, y0 + m), `Adds the slope to y once, although x changes by ${num(s)}.`],
-          [point(s, m * s), "Starts from the origin instead of from the given point."],
-        ];
-        const kept = wrong.filter(([text]) => {
-          const [px, py] = readPoint(text);
-          return px === x0 || (py - y0) !== m * (px - x0);
-        });
-        if (distinctWrong(key, kept) < 3) continue;
+        ], 3);
+        if (collides(key, wrong) || distinctWrong(key, wrong) < 3) continue;
         return {
           responseType: "multiple-choice",
           estimatedSeconds: 65,
           stimulus: null,
           stem: `In the xy-plane, a line with slope ${num(m)} passes through the point ${point(x0, y0)}. Which of the following points also lies on the line?`,
           correct: key,
-          wrong: kept,
+          wrong,
           explanation:
             `A slope of ${num(m)} means y changes by ${num(m)} for each increase of 1 in x. Moving ${num(s)} in x from ` +
             `${point(x0, y0)} changes y by ${num(m)} · ${paren(s)} = ${num(m * s)}, reaching ${key}.`,
@@ -414,12 +465,12 @@
             `From ${point(x0, y0)}: ${key}.`,
           ],
           principles: ["Any two points on a line give the same slope: change in y ÷ change in x."],
-          trap: "Moving across by the slope and up by 1 swaps the rise and the run.",
+          trap: "Moving across by the change in y and up by the change in x swaps the rise and the run.",
           hint: "Check the change in y against the change in x from the given point.",
           verify: () => {
             const [kx, ky] = readPoint(key);
             const slopeTo = ([px, py]) => (px === x0 ? NaN : (py - y0) / (px - x0));
-            return approx(slopeTo([kx, ky]), m) && kept.every(([text]) => !approx(slopeTo(readPoint(text)), m));
+            return approx(slopeTo([kx, ky]), m) && wrong.every(([text]) => !approx(slopeTo(readPoint(text)), m));
           },
         };
       }
@@ -431,12 +482,12 @@
     domain: "Algebra",
     skill: "Linear equations in two variables",
     subskill: "equation modeling",
-    difficulty: "Medium",
+    difficulty: "Easy",
     title: "Two-variable linear equation from a total",
     recognize:
       "Each quantity contributes its rate times its count, and the contributions add to the total; keep each rate " +
       "with its own variable.",
-    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 0 },
     tricks: ["wrong-quantity", "intermediate-value"],
     build(t) {
       const scene = t.pick(modelScenes);
@@ -450,29 +501,36 @@
         const show = scene.dollars ? money : (value) => commas(value);
         const Tt = show(T);
         const eq = (a, b) => `${show(a)}x + ${show(b)}y = ${Tt}`;
+        const per = (a, b) => `x/${show(a)} + y/${show(b)} = ${Tt}`;
         if (!askCount) {
-          const key = eq(v.a, v.b);
-          const pool = [
-            [eq(v.b, v.a), "Attaches each rate to the other quantity."],
-            [`x + y = ${Tt}`, `Adds the counts, but ${Tt} is a total of ${scene.totalNoun}, not a number of ${scene.xs} and ${scene.ys}.`],
-            [`${show(clean(v.a + v.b))}(x + y) = ${Tt}`, "Applies both rates to every item."],
-            [`x/${show(v.a)} + y/${show(v.b)} = ${Tt}`, "Divides each count by its rate instead of multiplying."],
+          // Two independent slips: rates swapped between the variables, and
+          // counts divided by their rates instead of multiplied. The four
+          // choices are the four combinations. Which item x counts is drawn,
+          // so no coefficient habitually opens the key.
+          const flip = t.chance(0.5);
+          const [A, B, X, Y, x0, y0] = flip
+            ? [v.b, v.a, scene.ys, scene.xs, v.y0, v.x0]
+            : [v.a, v.b, scene.xs, scene.ys, v.x0, v.y0];
+          const key = eq(A, B);
+          const wrong = [
+            [eq(B, A), "Attaches each rate to the other quantity."],
+            [per(A, B), "Divides each count by its rate instead of multiplying."],
+            [per(B, A), "Divides each count by a rate instead of multiplying, and attaches each rate to the other quantity."],
           ];
-          const wrong = [pool[0], ...t.sample(pool.slice(1), 3)];
-          const pairs = [[v.x0, v.y0], [0, T / v.b], [T / v.a, 0]];
+          const pairs = [[x0, y0], [0, T / B], [T / A, 0]];
           return {
             responseType: "multiple-choice",
             estimatedSeconds: 75,
             stimulus: null,
-            stem: `${scene.text(v, T)} Which equation represents this situation, where ${scene.defs}?`,
+            stem: `${scene.text(v, T)} Which equation represents this situation, where ${flip ? scene.defsFlip : scene.defs}?`,
             correct: key,
             wrong,
             explanation:
-              `The ${scene.xs} contribute ${show(v.a)}x ${scene.totalNoun} and the ${scene.ys} contribute ${show(v.b)}y; ` +
+              `The ${X} contribute ${show(A)}x ${scene.totalNoun} and the ${Y} contribute ${show(B)}y; ` +
               `together they make ${Tt}, so ${key}.`,
             steps: [
-              `${scene.xs.charAt(0).toUpperCase()}${scene.xs.slice(1)}: ${show(v.a)} for each, so ${show(v.a)}x.`,
-              `${scene.ys.charAt(0).toUpperCase()}${scene.ys.slice(1)}: ${show(v.b)} for each, so ${show(v.b)}y.`,
+              `${X.charAt(0).toUpperCase()}${X.slice(1)}: ${show(A)} for each, so ${show(A)}x.`,
+              `${Y.charAt(0).toUpperCase()}${Y.slice(1)}: ${show(B)} for each, so ${show(B)}y.`,
               `The two parts add to the total: ${key}.`,
             ],
             principles: ["When each item contributes a fixed amount, a total is the sum of rate × count over the item types."],
@@ -485,21 +543,23 @@
         }
         const key = v.y0;
         const left = clean(T - v.a * v.x0);
-        const wrong = [[left, `Gives the ${scene.leftover}, not the number of ${scene.ys}.`]];
-        const swapped = (T - v.b * v.x0) / v.a;
-        if (whole(swapped) && swapped > 0) wrong.push([clean(swapped), "Uses each rate for the other quantity."]);
-        const lazy = T / v.b - v.x0;
-        if (whole(lazy) && lazy > 0) wrong.push([clean(lazy), `Divides the total by ${num(v.b)} and then subtracts the ${v.x0} ${scene.xs}.`]);
-        const plus = (T + v.a * v.x0) / v.b;
-        if (whole(plus)) wrong.push([clean(plus), `Adds the ${scene.xs}' share to the total instead of subtracting it.`]);
-        if (!numeric && distinctWrong(key, wrong) < 3) continue;
+        const pool = [
+          [left, `Gives the ${scene.leftover}, not the number of ${scene.ys}.`],
+          [clean((T - v.b * v.x0) / v.a), "Uses each rate for the other quantity."],
+          [clean(T / v.b - v.x0), `Divides the total by ${num(v.b)} and then subtracts the ${v.x0} ${scene.xs}.`],
+          [clean((T + v.a * v.x0) / v.b), `Adds the ${scene.xs}' share to the total instead of subtracting it.`],
+          [clean(T / v.b), `Divides the whole total by ${num(v.b)} without first removing the ${scene.xs}' share.`],
+          [clean(left / v.a), `Divides the ${scene.leftover} by ${num(v.a)}, the rate for ${scene.xs}, instead of by ${num(v.b)}.`],
+        ].filter(([value]) => value > 0 && whole(value));
+        const wrong = numeric ? [] : spreadAround(t, key, pool);
+        if (!numeric && (collides(key, wrong) || distinctWrong(key, wrong) < 3)) continue;
         return {
           responseType: numeric ? "numeric" : "multiple-choice",
           estimatedSeconds: 80,
           stimulus: null,
           stem: `${scene.text(v, T)} ${scene.given(v.x0)}`,
           correct: key,
-          wrong: numeric ? [] : wrong,
+          wrong,
           explanation:
             `The situation is ${eq(v.a, v.b)}. With x = ${v.x0}: ${show(v.a)}(${v.x0}) + ${show(v.b)}y = ${Tt}, so ` +
             `${show(v.b)}y = ${show(left)} and y = ${key}.`,
@@ -563,19 +623,25 @@
           return { m, f: (x) => y0 + m * x };
         };
         if (form === "slope") {
+          // Two independent slips, amount and direction, crossed: the change
+          // over the whole labelled interval (or the starting amount) read as
+          // the change per unit, and the direction reversed.
           const amount = (value) => (scene.money ? usd(value) : `${num(value)} ${value === 1 ? scene.unitOne : scene.units}`);
           const word = scene.up ? "increases" : "decreases";
-          const key = scene.slope(amount(r), word);
+          const other = scene.up ? "decreases" : "increases";
           const change = clean(r * x1);
-          const invText = scene.money ? `$${frac(1, 1)}/${num(r)}` : `${frac(1, 1)}/${num(r)} ${scene.unitOne}`;
+          if (change === r || x1 === 1 || y0 === r) continue;
+          const [wrongAmount, amountReason] = t.pick([
+            [change, `Uses the change from x = 0 to x = ${x1}, ${num(change)}, as the change for a single ${scene.xOne}`],
+            [y0, `Uses the starting amount, ${num(y0)}, the y-intercept, as the change for each ${scene.xOne}`],
+          ]);
+          const key = scene.slope(amount(r), word);
           const wrong = [
-            [scene.slope(amount(change), word), `Uses the change from x = 0 to x = ${x1}, ${num(change)}, as the change for a single ${scene.xOne}.`],
-            [scene.slope(amount(r), scene.up ? "decreases" : "increases"), "Gets the size of the slope right but its direction wrong."],
-            [scene.slope(invText, word), "Divides the change in x by the change in y."],
-            [scene.start(y0), "Describes the y-intercept, not the slope."],
+            [scene.slope(amount(wrongAmount), word), `${amountReason}.`],
+            [scene.slope(amount(r), other), "Gets the size of the slope right but its direction wrong."],
+            [scene.slope(amount(wrongAmount), other), `${amountReason}, and reverses the direction of the change.`],
           ];
           if (!Number.isInteger(r) && scene.money) continue;
-          if (change === r || x1 === 1) continue;
           return {
             responseType: "multiple-choice",
             estimatedSeconds: 85,
@@ -583,8 +649,7 @@
             figure,
             stem: `${lead} Which of the following is the best interpretation of the slope of the line in this context?`,
             correct: key,
-            // "$1/75 each month" is not a plausible choice; money scenes use the intercept instead.
-            wrong: !scene.money && t.chance(0.5) ? wrong.slice(0, 3) : [wrong[0], wrong[1], wrong[3]],
+            wrong,
             explanation:
               `The slope is ${rateWork}. It is the change in y for each increase of 1 in x, so ${key.charAt(0).toLowerCase()}${key.slice(1)}`,
             steps: [
@@ -593,11 +658,14 @@
               `A ${scene.up ? "positive" : "negative"} slope means the amount ${word}.`,
             ],
             principles: ["The slope of a linear model is the change in the output for each increase of 1 in the input."],
-            trap: `${num(change)} is the change over ${x1} ${scene.xs}; the slope is the change over one.`,
+            trap: `${num(change)} is the change over ${x1} ${scene.xs}, and ${num(y0)} is the starting amount; the slope is the change over one ${scene.xOne}.`,
             hint: `How much does y change when x goes up by 1?`,
             verify: () => {
               const { m } = verifyLine();
-              return approx(Math.abs(m), r) && Math.sign(m) === dir && key.includes(scene.up ? "increases" : "decreases");
+              // Each choice claims a size and a direction; only the key's match the line.
+              const claim = (text) => [text.includes(`by ${amount(r)} `), text.includes(scene.up ? "increases" : "decreases")];
+              return approx(Math.abs(m), r) && Math.sign(m) === dir && claim(key).every(Boolean) &&
+                wrong.every(([text]) => !claim(text).every(Boolean));
             },
           };
         }
@@ -605,22 +673,26 @@
           const x2 = scene.up ? x1 + t.int(2, 8) : t.int(2, n - 1);
           if (x2 === x1) continue;
           const key = clean(y0 + slope * x2);
-          const wrong = [
+          const pool = [
             [r, `Gives the rate of change per ${scene.xOne}, not the amount after ${x2} ${scene.xs}.`],
             [clean(y0 - slope * x2), `${scene.up ? "Subtracts" : "Adds"} the change instead of ${scene.up ? "adding" : "subtracting"} it.`],
             [clean(y1 + slope * x2), `Starts from the point at x = ${x1} instead of from x = 0.`],
             [clean(r * x2), `Gives the change after ${x2} ${scene.xs}, not the amount then.`],
-          ].filter(([value]) => value >= 0);
-          if (!numeric && distinctWrong(key, wrong) < 3) continue;
+            [clean(y1 - slope * x2), `Starts from the point at x = ${x1} and ${scene.up ? "subtracts" : "adds"} the change.`],
+            ...(scene.up ? [[clean(y0 + (y1 / x1) * x2), `Divides ${num(y1)} by ${x1} for the rate, ignoring the starting amount ${num(y0)}.`]] : []),
+          ].filter(([value]) => value >= 0 && terminates(value));
+          const response = responseFor(numeric, key);
+          const wrong = response === "numeric" ? [] : spreadAround(t, key, pool);
+          if (response !== "numeric" && (collides(key, wrong) || distinctWrong(key, wrong) < 3)) continue;
           return commaChoices({
-            responseType: responseFor(numeric, key),
+            responseType: response,
             estimatedSeconds: 85,
             stimulus: null,
             figure,
             stem: `${lead} ${scene.value(x2)}`,
             correct: key,
             wrong,
-            explanation: `The slope is ${rateWork}, so the model is y = ${num(y0)} ${signed(slope).replace(/ (\S+)$/, " $1")}x. At x = ${x2}, y = ${num(y0)} ${signed(clean(slope * x2))} = ${num(key)}.`,
+            explanation: `The slope is ${rateWork}, so the model is y = ${lin(slope, y0)}. At x = ${x2}, y = ${num(y0)} ${signed(clean(slope * x2))} = ${num(key)}.`,
             steps: [
               `Rate: ${rateWork} per ${scene.xOne}.`,
               `Model: y = ${lin(slope, y0)}.`,
@@ -645,15 +717,17 @@
           G = clean(y0 + slope * key);
         }
         if (key === x1) continue;
-        const wrong = [
+        const pool = [
           [r, `Gives the rate of change per ${scene.xOne}, not a number of ${scene.xs}.`],
           [clean(Math.abs(G - y0)), `Gives the change in ${scene.units}, not the time it takes.`],
           [clean((G - y1) / slope), `Counts the time from x = ${x1} instead of from x = 0.`],
-        ];
-        if (scene.up) wrong.push([clean(G / r), "Divides the target by the rate, ignoring the starting amount."]);
-        else wrong.push([clean(y1 / r), `Gives the time from x = ${x1} until the amount reaches 0.`]);
-        const kept = wrong.filter(([value]) => value > 0 && terminates(value));
-        if (!numeric && distinctWrong(key, kept) < 3) continue;
+          [clean(key + x1), `Adds the ${x1} ${scene.xs} at the labelled point to the time needed from x = 0.`],
+          [clean(G / r), "Divides the target amount by the rate, ignoring the starting amount."],
+          [clean((G + y0) / r), "Adds the starting amount to the target instead of finding the change between them."],
+          [clean(Math.abs(G - y0) / (y1 / x1)), `Divides the change by ${num(y1)} ÷ ${x1}, which ignores the starting amount in the rate.`],
+        ].filter(([value]) => value > 0 && terminates(value) && S.formatNumber(value).length <= 7);
+        const wrong = numeric ? [] : spreadAround(t, key, pool);
+        if (!numeric && (collides(key, wrong) || distinctWrong(key, wrong) < 3)) continue;
         return commaChoices({
           responseType: numeric ? "numeric" : "multiple-choice",
           estimatedSeconds: 90,
@@ -661,7 +735,7 @@
           figure,
           stem: `${lead} ${scene.time(G)}`,
           correct: key,
-          wrong: kept,
+          wrong,
           explanation:
             `The slope is ${rateWork}, so y = ${lin(slope, y0)}. Setting y = ${commas(G)} gives ${lin(slope, 0)} = ` +
             `${commas(clean(G - y0))}, so x = ${key}.`,
@@ -688,11 +762,12 @@
     domain: "Algebra",
     skill: "Linear equations in two variables",
     subskill: "equation modeling",
+    difficulty: "Medium",
     title: "Linear model read in a different unit",
     recognize:
       "The coefficient is a rate in the model's own input unit; before interpreting or rewriting it, convert that " +
       "rate to the unit the question uses, and leave the starting value alone.",
-    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["unit-mismatch", "wrong-quantity", "equivalent-form"],
     build(t) {
       const variant = t.int(0, 2);
@@ -709,23 +784,26 @@
         let key;
         let wrong;
         let claims;
+        // Two independent slips, crossed into the four choices: for the rate,
+        // the amount (the cost of the first group, fee included) and the unit
+        // (per item instead of per group); for the fee, the kind of statement
+        // (the cost of one group instead of no use) and the number read.
         if (aboutRate) {
           key = scene.rate(a, scene.group);
           wrong = [
             [scene.rate(clean(a + b), scene.group), `Treats the cost for the first ${scene.group}, which includes the fixed ${usdHard(b)}, as the rate.`],
             [scene.rate(a, perOne), `Reads ${num(a)} per ${scene.one}, but n counts groups of ${scene.size}.`],
-            [scene.total(a, scene.group), `Confuses the rate with a total: C is ${usdHard(clean(a + b))}, not ${usdHard(a)}, when n = 1.`],
-            [scene.rate(clean(a * scene.size), perOne), `Converts in the wrong direction, multiplying by ${scene.size} instead of dividing.`],
+            [scene.rate(clean(a + b), perOne), `Adds the fixed ${usdHard(b)} into the rate and reads it per ${scene.one} instead of per ${scene.group}.`],
           ];
-          claims = { key: ["rate", 1, a], wrong: [["rate", 1, clean(a + b)], ["rate", 1 / scene.size, a], ["total", 1, a], ["rate", 1 / scene.size, clean(a * scene.size)]] };
+          claims = { key: ["rate", 1, a], wrong: [["rate", 1, clean(a + b)], ["rate", 1 / scene.size, a], ["rate", 1 / scene.size, clean(a + b)]] };
         } else {
           key = scene.base(b);
           wrong = [
-            [scene.rate(b, scene.group), `Treats the fixed amount ${usdHard(b)} as the rate for each ${scene.group}.`],
+            [scene.base(a), `Reads the coefficient ${num(a)} as the cost when n = 0; ${num(a)} multiplies n.`],
             [scene.total(b, scene.group), `Takes ${usdHard(b)} as the cost when n = 1; it is the cost when n = 0.`],
-            [scene.rate(b, perOne), `Treats ${usdHard(b)} as a rate, and per ${scene.one} rather than per ${scene.group}.`],
+            [scene.total(a, scene.group), `Takes the rate ${usdHard(a)} as the cost when n = 1, leaving out the fixed ${usdHard(b)}.`],
           ];
-          claims = { key: ["base", 0, b], wrong: [["rate", 1, b], ["total", 1, b], ["rate", 1 / scene.size, b]] };
+          claims = { key: ["base", 0, b], wrong: [["base", 0, a], ["total", 1, b], ["total", 1, a]] };
         }
         const model = compileHard(equation.split(" = ")[1]);
         const holds = ([kind, step, amount]) => {
@@ -797,7 +875,7 @@
             [clean(up ? modelSpan * scene.F : modelSpan / scene.F), `Converts ${modelUnit[2]} to ${askUnit[2]} by ${verb} by ${commasHard(scene.F)} instead of ${inverse}.`],
             [convert((start + level) / coefficient), `Adds ${commasHard(start)} and ${commasHard(level)} instead of finding the change between them.`],
           ].filter(([value]) => value > 0 && exact(value));
-          if (distinctWrongHard(span, wrong) < 3) continue;
+          if (collides(span, wrong) || distinctWrongHard(span, wrong) < 3) continue;
           const numeric = fitsGridHard(span) && t.chance(0.6);
           const changeAmount = clean(Math.abs(level - start));
           const unitLine = up
@@ -841,7 +919,7 @@
             [wrongWay, `Converts by ${inverse} by ${commasHard(scene.F)} instead of ${verb}.`],
             [after, scene.after(askUnit)],
           ].filter(([value]) => exact(value));
-          if (distinctWrongHard(key, wrong) < 3) continue;
+          if (collides(key, wrong) || distinctWrongHard(key, wrong) < 3) continue;
           const numeric = fitsGridHard(key) && t.chance(0.6);
           const factorWord = `${commasHard(scene.F)} ${scene.small[2]} in 1 ${scene.big[1]}`;
           return commaChoicesHard({
@@ -879,14 +957,20 @@
         const eq = (value, first) => modelText(scene, value, first, newLetter, rateFirst);
         const keyEq = eq(key, start);
         const scaledStart = up ? start * scene.F : clean(start / scene.F);
+        // Rate slip (unconverted, or converted the wrong way) crossed with the
+        // constant slip (rescaled with the rate).
+        const [rateSlip, rateReason] = t.pick([
+          [coefficient, `Keeps the per-${modelUnit[1]} rate while switching the variable to ${askUnit[2]}`],
+          [wrongWay, `Converts the rate by ${inverse} by ${commasHard(scene.F)} instead of ${verb}`],
+        ]);
         const candidates = [
-          [eq(coefficient, start), `Keeps the per-${modelUnit[1]} rate while switching the variable to ${askUnit[2]}.`],
-          [eq(wrongWay, start), `Converts the rate by ${inverse} by ${commasHard(scene.F)} instead of ${verb}.`],
+          [eq(rateSlip, start), `${rateReason}.`],
           [eq(key, scaledStart), `Converts the starting value as well as the rate; ${commasHard(start)} stays the same when the input's unit changes.`],
+          [eq(rateSlip, scaledStart), `${rateReason}, and also rescales the starting value ${commasHard(start)}.`],
         ];
-        const exactValues = [coefficient, wrongWay, key];
-        const wrong = candidates.filter((entry, index) => exact(index === 2 ? scaledStart : exactValues[index]));
-        if (distinctWrongHard(keyEq, wrong) < 3) continue;
+        if (![rateSlip, scaledStart].every(exact)) continue;
+        const wrong = candidates;
+        if (collides(keyEq, wrong) || distinctWrongHard(keyEq, wrong) < 3) continue;
         return {
           responseType: "multiple-choice",
           estimatedSeconds: 85,
@@ -939,10 +1023,15 @@
     tricks: ["sign-error", "equivalent-form"],
     build(t) {
       const askForm = t.chance(0.45);
+      // The slope choices are ±(a/b) and ±(b/a); the pair nearer 0 sits in the
+      // middle. Drawing |slope| > 1 a little over half the time keeps the key
+      // off the middle pair about as often as on it.
+      const steep = t.chance(0.55);
       for (;;) {
         const a = t.int(1, 9);
         const b = t.nonzero(-9, 9);
         if (Math.abs(b) < 2 || a === Math.abs(b)) continue;
+        if (!askForm && steep !== a > Math.abs(b)) continue;
         const k = t.nonzero(-9, 9);
         const c = b * k;
         const equation = standardForm(a, b, c);
@@ -957,26 +1046,33 @@
         let key;
         let wrong;
         if (askForm) {
+          // Two independent slips: one in the x-term (a sign or an inversion,
+          // both of which keep its numbers) and one in the constant (not
+          // divided by b). The choices are the four combinations, so no choice
+          // is the "average" of the others.
           key = solved;
-          wrong = t.shuffle([
-            [`y = ${slopeTerm(a, b)} ${signed(k)}`, `Moves ${lin(a, 0)} to the right side without changing its sign.`],
+          const slips = [
+            [slopeTerm(a, b), `moves ${lin(a, 0)} to the right side without changing its sign`],
+            [slopeTerm(-b, a), "inverts the coefficient of x when dividing"],
+          ];
+          const [xTermWrong, xReason] = t.pick(slips);
+          wrong = [
+            [`y = ${xTermWrong} ${signed(k)}`, `${xReason.charAt(0).toUpperCase()}${xReason.slice(1)}.`],
             [`y = ${slopeTerm(-a, b)} ${signed(c)}`, `Divides the x-term by ${num(b)} but not the constant.`],
-            [`y = ${lin(-a, k)}`, `Divides the constant by ${num(b)} but not the x-term.`],
-            [`y = ${slopeTerm(-b, a)} ${signed(k)}`, "Inverts the coefficient of x when dividing."],
-          ]);
+            [`y = ${xTermWrong} ${signed(c)}`, `${xReason.charAt(0).toUpperCase()}${xReason.slice(1)}, and does not divide the constant by ${num(b)}.`],
+          ];
         } else {
           key = numeric ? slopeValue : slope;
           steps.push(`The slope is the coefficient of x: ${slope}.`);
+          // Sign slip, inversion, and both: a two-by-two grid of the same two
+          // numbers, so no choice is built around the key.
           wrong = [
             [frac(a, b), "Divides the x-coefficient by the y-coefficient without changing the sign."],
-            ...t.shuffle([
-              [frac(-b, a), "Divides the y-coefficient by the x-coefficient, which inverts the slope."],
-              [num(k), `Gives ${num(k)}, the y-intercept, instead of the slope.`],
-              [num(-a), `Takes the opposite of the x-coefficient as the slope without dividing by ${num(b)}.`],
-            ]),
+            [frac(-b, a), "Divides the y-coefficient by the x-coefficient, which inverts the slope."],
+            [frac(b, a), "Inverts the slope and also loses its sign."],
           ];
         }
-        if (!numeric && distinctWrong(key, wrong) < 3) continue;
+        if (!numeric && (collides(key, wrong) || distinctWrong(key, wrong) < 3)) continue;
         return {
           responseType: numeric ? "numeric" : "multiple-choice",
           estimatedSeconds: 60,
@@ -1013,6 +1109,332 @@
     },
   };
 
+  /* ---------------------------------------------------- linear-intercept-meaning */
+
+  // Decreasing amounts: y = y0 − r·x reaches 0 at x = y0 / r. Each scene
+  // phrases five claims a choice can make: when the amount runs out, what it
+  // started at, how fast it falls, what remains at a time, and how much is
+  // used by then. Choices cross a claim with a number, so every choice is a
+  // true-sounding sentence about the same situation.
+  const drainScenes = [
+    {
+      x: "t", y: "F", xs: "hours", ys: "gallons",
+      starts: [12, 14, 15, 16, 18, 20, 21, 24, 25, 27, 28, 30, 32, 35, 36, 40], rates: [1.5, 2, 2.5, 3, 3.5, 4, 5, 6],
+      what: "the amount of fuel F, in gallons, in a generator's tank t hours after the generator is started",
+      empty: (N) => `The generator runs out of fuel ${num(N)} hours after it is started.`,
+      start: (N) => `The tank held ${num(N)} gallons of fuel when the generator was started.`,
+      rate: (N) => `The generator uses ${num(N)} gallons of fuel for each hour it runs.`,
+      remain: (x, y) => `The tank holds ${num(y)} gallons of fuel ${num(x)} hours after the generator is started.`,
+      used: (x, y) => `The generator uses ${num(y)} gallons of fuel in the first ${num(x)} hours after it is started.`,
+      askEmpty: "According to the model, how many hours after it is started will the generator run out of fuel?",
+      askUsed: (x) => `According to the graph, how many gallons of fuel does the generator use in the first ${x} hours after it is started?`,
+    },
+    {
+      x: "w", y: "B", xs: "weeks", ys: "dollars", money: true,
+      starts: [40, 50, 60, 75, 80, 90, 100, 120, 125, 150, 160, 180, 200], rates: [2.5, 5, 7.5, 10, 12.5, 15, 20, 25],
+      what: "the balance B, in dollars, on a gift card w weeks after it was bought, if the same amount is spent each week",
+      empty: (N) => `The card's balance reaches $0 after ${num(N)} weeks.`,
+      start: (N) => `The card's balance was ${usd(N)} when it was bought.`,
+      rate: (N) => `The card's balance goes down by ${usd(N)} each week.`,
+      remain: (x, y) => `The card's balance is ${usd(y)} after ${num(x)} weeks.`,
+      used: (x, y) => `The card's owner spends ${usd(y)} in the first ${num(x)} weeks.`,
+      askEmpty: "According to the model, after how many weeks will the card's balance reach $0?",
+      askUsed: (x) => `According to the graph, how many dollars are spent from the card in the first ${x} weeks?`,
+    },
+    {
+      x: "h", y: "D", xs: "hours", ys: "miles",
+      starts: [90, 120, 135, 150, 165, 180, 200, 210, 225, 240, 270, 300, 330, 360, 400, 420, 450], rates: [30, 40, 45, 50, 55, 60, 65, 70, 75],
+      what: "the distance D, in miles, between a driver and her destination h hours after she leaves home",
+      empty: (N) => `The driver reaches her destination ${num(N)} hours after she leaves home.`,
+      start: (N) => `The driver's home is ${num(N)} miles from her destination.`,
+      rate: (N) => `The driver travels ${num(N)} miles closer to her destination each hour.`,
+      remain: (x, y) => `The driver is ${num(y)} miles from her destination ${num(x)} hours after she leaves home.`,
+      used: (x, y) => `The driver travels ${num(y)} miles in the first ${num(x)} hours after she leaves home.`,
+      askEmpty: "According to the model, how many hours after she leaves home will the driver reach her destination?",
+      askUsed: (x) => `According to the graph, how many miles does the driver travel in the first ${x} hours after she leaves home?`,
+    },
+    {
+      x: "m", y: "V", xs: "minutes", ys: "gallons",
+      starts: [800, 900, 1000, 1200, 1500, 1600, 1800, 2000, 2400, 2500, 3000, 3200, 3600, 4000, 4500], rates: [25, 40, 50, 60, 75, 80, 100, 120, 125, 150, 200, 250],
+      what: "the volume V, in gallons, of water in a pool m minutes after the pool begins to drain",
+      empty: (N) => `The pool is empty ${commas(N)} minutes after it begins to drain.`,
+      start: (N) => `The pool held ${commas(N)} gallons of water when it began to drain.`,
+      rate: (N) => `The pool loses ${commas(N)} gallons of water each minute while it drains.`,
+      remain: (x, y) => `The pool holds ${commas(y)} gallons of water ${commas(x)} minutes after it begins to drain.`,
+      used: (x, y) => `The pool loses ${commas(y)} gallons of water in the first ${commas(x)} minutes of draining.`,
+      askEmpty: "According to the model, how many minutes after it begins to drain will the pool be empty?",
+      askUsed: (x) => `According to the graph, how many gallons of water does the pool lose in the first ${x} minutes of draining?`,
+    },
+    {
+      x: "t", y: "H", xs: "hours", ys: "centimeters",
+      starts: [10, 12, 14, 15, 16, 18, 20, 21, 24, 25, 27, 28, 30, 32, 36], rates: [0.5, 1.5, 2, 2.5, 3, 3.5, 4],
+      what: "the height H, in centimeters, of a candle t hours after it is lit",
+      empty: (N) => `The candle burns down completely ${num(N)} hours after it is lit.`,
+      start: (N) => `The candle was ${num(N)} centimeters tall when it was lit.`,
+      rate: (N) => `The candle gets ${num(N)} centimeters shorter for each hour it burns.`,
+      remain: (x, y) => `The candle is ${num(y)} centimeters tall ${num(x)} hours after it is lit.`,
+      used: (x, y) => `The candle gets ${num(y)} centimeters shorter in the first ${num(x)} hours after it is lit.`,
+      askEmpty: "According to the model, how many hours after it is lit will the candle burn down completely?",
+      askUsed: (x) => `According to the graph, by how many centimeters does the candle get shorter in the first ${x} hours after it is lit?`,
+    },
+  ];
+
+  // Budgets: a·x + b·y = T. The x-intercept is how many of the first item the
+  // total buys alone; the coefficient is a price.
+  const budgetScenes = [
+    {
+      intro: (eq, T) => `The equation ${eq} represents the number of shirts, x, and the number of hats, y, that a club can buy for ${usd(T)}.`,
+      max: [(N) => `The club can buy ${num(N)} shirts if it buys no hats.`, (N) => `The club can buy ${num(N)} hats if it buys no shirts.`],
+      price: [(N) => `The club pays ${usd(N)} for each shirt that it buys.`, (N) => `The club pays ${usd(N)} for each hat that it buys.`],
+      prices: [[6, 30], [4, 20]], totals: [120, 1500],
+    },
+    {
+      intro: (eq, T) => `The equation ${eq} represents the number of hours, x, that a student tutors and the number of hours, y, that she works at a bookstore to earn ${usd(T)} in one month.`,
+      max: [
+        (N) => `The student must tutor for ${num(N)} hours if she does not work at the bookstore.`,
+        (N) => `The student must work ${num(N)} hours at the bookstore if she does not tutor.`,
+      ],
+      price: [
+        (N) => `The student earns ${usd(N)} for each hour that she tutors.`,
+        (N) => `The student earns ${usd(N)} for each hour that she works at the bookstore.`,
+      ],
+      prices: [[15, 40], [10, 25]], totals: [300, 2000],
+    },
+  ];
+
+  // A nice grid step: at most 10 lines up to `top`, dividing every value given.
+  function niceStep(top, values) {
+    return [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000].find((step) =>
+      top / step <= 10 && values.every((value) => Math.abs(value / step - Math.round(value / step)) < 1e-9)) || null;
+  }
+
+  // The line from (0, y0) to (n, 0) on a first-quadrant grid.
+  function drainFigure(scene, y0, n, alt, marks = []) {
+    const xStep = niceStep(n, [n, ...marks]);
+    const yStep = niceStep(y0, [y0]);
+    if (!xStep || !yStep) return null;
+    const xMax = n + xStep;
+    const yMax = y0 + yStep;
+    const P = S.plane({
+      xMin: 0, xMax, yMin: 0, yMax, xStep, yStep,
+      unit: 300 / xMax, yUnit: 220 / yMax, names: [scene.x, scene.y],
+    });
+    const parts = [...P.grid(), ...P.axes(), P.segment(0, y0, n, 0)];
+    return { svg: P.svg(parts, alt), alt, notToScale: false };
+  }
+
+  const interceptMeaning = {
+    id: "linear-intercept-meaning",
+    domain: "Algebra",
+    skill: "Linear equations in two variables",
+    subskill: "equation modeling",
+    difficulty: "Medium",
+    title: "Meaning of an intercept or a point of a linear model",
+    recognize:
+      "An intercept is a point where one variable is 0: on the vertical axis the input is 0 (the starting amount), on " +
+      "the horizontal axis the output is 0 (the amount has run out, or nothing of the other item is bought). A point " +
+      "(a, b) says the output is b when the input is a.",
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["wrong-quantity", "neighbouring-rule"],
+    build(t) {
+      const budget = t.chance(0.3);
+      if (budget) {
+        for (;;) {
+          const scene = t.pick(budgetScenes);
+          const a = t.int(...scene.prices[0]);
+          const b = t.int(...scene.prices[1]);
+          const lcm = (a * b) / S.gcd(a, b);
+          const [low, high] = scene.totals;
+          if (a === b || lcm > high) continue;
+          const T = lcm * t.int(Math.ceil(low / lcm), Math.floor(high / lcm));
+          if (T < low) continue;
+          const [nx, ny] = [T / a, T / b];
+          if ([nx, ny].some((value) => value === a || value === b) || nx === ny) continue;
+          const onX = t.chance(0.5);
+          const side = onX ? 0 : 1;
+          const [own, other] = onX ? [nx, ny] : [ny, nx];
+          const price = onX ? a : b;
+          const equation = `${a}x + ${b}y = ${commas(T)}`;
+          const claims = [
+            { text: scene.max[side](own), check: (f) => approx(onX ? f(own, 0) : f(0, own), T) },
+            { text: scene.max[side](other), check: (f) => approx(onX ? f(other, 0) : f(0, other), T) },
+            { text: scene.price[side](own), check: (f) => approx(onX ? f(1, 0) - f(0, 0) : f(0, 1) - f(0, 0), own) },
+            { text: scene.price[side](other), check: (f) => approx(onX ? f(1, 0) - f(0, 0) : f(0, 1) - f(0, 0), other) },
+          ];
+          const key = claims[0].text;
+          const wrong = [
+            [claims[1].text, `Divides ${commas(T)} by ${onX ? b : a}, the other coefficient; the ${onX ? "x" : "y"}-intercept comes from dividing by ${price}.`],
+            [claims[2].text, `Reads the intercept value ${own} as a price; the price is the coefficient ${price}.`],
+            [claims[3].text, `Takes the other intercept value, ${other}, as a price; the price is the coefficient ${price}.`],
+          ];
+          if (collides(key, wrong)) continue;
+          const intercept = onX ? `(${own}, 0)` : `(0, ${own})`;
+          return {
+            responseType: "multiple-choice",
+            estimatedSeconds: 80,
+            stimulus: null,
+            stem:
+              `${scene.intro(equation, T)} What is the best interpretation of the ${onX ? "x" : "y"}-intercept of the graph ` +
+              "of this equation in the xy-plane?",
+            correct: key,
+            wrong,
+            explanation:
+              `At the ${onX ? "x" : "y"}-intercept, ${onX ? "y" : "x"} = 0, so ${onX ? `${a}x` : `${b}y`} = ${commas(T)} and ` +
+              `${onX ? "x" : "y"} = ${own}: the whole ${usd(T)} goes to one kind, and none to the other. The intercept is ${intercept}.`,
+            steps: [
+              `On the ${onX ? "x" : "y"}-axis, ${onX ? "y" : "x"} = 0.`,
+              `Solve ${onX ? `${a}x` : `${b}y`} = ${commas(T)}: ${onX ? "x" : "y"} = ${own}.`,
+              `So ${key.charAt(0).toLowerCase()}${key.slice(1)}`,
+            ],
+            principles: [
+              "At an x-intercept y = 0, and at a y-intercept x = 0.",
+              "In a total such as ax + by = T, each coefficient is the amount one item contributes.",
+            ],
+            trap: `The coefficient ${price} is a price; the intercept value ${own} is a count.`,
+            hint: "Which variable is 0 at that intercept?",
+            verify: () => {
+              const f = (x, y) => compileHard(equation.split(" = ")[0])({ x, y });
+              return claims[0].check(f) && claims.slice(1).every((claim) => !claim.check(f));
+            },
+          };
+        }
+      }
+      const form = t.pick(["x-intercept", "y-intercept", "point", "point", "number"]);
+      const graph = t.chance(0.5);
+      for (;;) {
+        const scene = t.pick(drainScenes);
+        const y0 = t.pick(scene.starts);
+        const r = t.pick(scene.rates);
+        const n = y0 / r;
+        if (!Number.isInteger(n) || n < 4 || n > 30 || n === y0 || n === r) continue;
+        const x1 = t.int(2, n - 2);
+        const y1 = clean(y0 - r * x1);
+        const used = clean(r * x1);
+        if ([y1, used].some((value) => !whole(value) || value < 2) || y1 === x1 || used === y1) continue;
+        const shown = `${scene.y} = ${commas(y0)} ${MINUS} ${num(r)}${scene.x}`;
+        const eqAlt = `A line in the first quadrant with ${scene.x} on the horizontal axis and ${scene.y} on the vertical axis. ` +
+          `It starts on the vertical axis at ${commas(y0)} and meets the horizontal axis at ${commas(n)}.`;
+        const figure = graph ? drainFigure(scene, y0, n, eqAlt, form === "number" ? [x1] : []) : null;
+        if (graph && !figure) continue;
+        if (graph && form === "number" && used % niceStep(y0, [y0])) continue;
+        const lead = graph
+          ? `The graph shows ${scene.what}.`
+          : `The equation ${shown} gives ${scene.what}.`;
+        // Claims are checked against the displayed model, not the numbers drawn.
+        const model = compileHard(shown.split(" = ")[1]);
+        const f = (x) => model({ [scene.x]: x });
+        const truth = {
+          empty: (N) => approx(f(N), 0),
+          start: (N) => approx(f(0), N),
+          rate: (N) => approx(f(0) - f(1), N),
+          remain: (x, y) => approx(f(x), y),
+          used: (x, y) => approx(f(0) - f(x), y),
+        };
+        const workSlope = `${commas(y0)} ${MINUS} ${num(r)}${scene.x}`;
+        if (form === "number") {
+          const key = graph ? used : n;
+          return {
+            responseType: "numeric",
+            estimatedSeconds: 75,
+            stimulus: null,
+            figure,
+            stem: `${lead} ${graph ? scene.askUsed(x1) : scene.askEmpty}`,
+            correct: key,
+            wrong: [],
+            explanation: graph
+              ? `The graph starts at ${commas(y0)} and passes through (${x1}, ${commas(y1)}), so ${commas(y0)} ${MINUS} ${commas(y1)} = ${commas(used)} ${scene.ys} are used up in the first ${x1} ${scene.xs}.`
+              : `The amount is used up when ${scene.y} = 0: ${workSlope} = 0 gives ${scene.x} = ${commas(y0)} ÷ ${num(r)} = ${commas(n)}.`,
+            steps: graph
+              ? [
+                `At ${scene.x} = 0 the graph is at ${commas(y0)}; at ${scene.x} = ${x1} it is at ${commas(y1)}.`,
+                `The amount used is the drop between them: ${commas(y0)} ${MINUS} ${commas(y1)} = ${commas(used)}.`,
+              ]
+              : [
+                `Running out means ${scene.y} = 0: ${workSlope} = 0.`,
+                `${num(r)}${scene.x} = ${commas(y0)}, so ${scene.x} = ${commas(n)}.`,
+              ],
+            principles: ["The horizontal intercept of a decreasing amount is when it runs out; the vertical intercept is where it starts."],
+            trap: graph
+              ? `${commas(y1)} is what remains after ${x1} ${scene.xs}; the question asks how much is used.`
+              : `${commas(y0)} is the starting amount and ${num(r)} the rate; the question asks for the time when nothing remains.`,
+            hint: graph ? "Compare the graph's height at the start with its height at that time." : "What is the value of the amount when it has run out?",
+            verify: () => (graph ? truth.used(x1, key) : truth.empty(key) && !truth.empty(key + 1)),
+          };
+        }
+        let claims;
+        let reasons;
+        let question;
+        if (form === "x-intercept") {
+          question = `the ${scene.x}-intercept of the graph`;
+          claims = [["empty", n], ["empty", y0], ["rate", n], ["rate", y0]];
+          reasons = [
+            `Uses ${commas(y0)}, the starting amount, as the time when the amount runs out.`,
+            `Reads the ${scene.x}-intercept value ${commas(n)} as a rate; the rate is ${num(r)} ${scene.ys} per ${scene.xs.replace(/s$/, "")}.`,
+            `Reads the starting amount ${commas(y0)} as a rate; the ${scene.x}-intercept is where the amount is 0.`,
+          ];
+        } else if (form === "y-intercept") {
+          question = `the ${scene.y}-intercept of the graph`;
+          claims = [["start", y0], ["start", n], ["rate", y0], ["rate", n]];
+          reasons = [
+            `Uses ${commas(n)}, the ${scene.x}-intercept value, as the starting amount.`,
+            `Reads the starting amount ${commas(y0)} as the amount used each ${scene.xs.replace(/s$/, "")}.`,
+            `Reads the ${scene.x}-intercept value ${commas(n)} as a rate; the ${scene.y}-intercept is the amount when ${scene.x} = 0.`,
+          ];
+        } else {
+          question = `the point ${point(x1, y1)} on the graph`;
+          claims = [["remain", x1, y1], ["remain", y1, x1], ["used", x1, y1], ["used", y1, x1]];
+          reasons = [
+            "Swaps the coordinates: the first coordinate is the time and the second is the amount.",
+            `Reads ${commas(y1)}, the amount that remains, as the amount used; ${commas(used)} is used by then.`,
+            "Swaps the coordinates and reads the remaining amount as the amount used.",
+          ];
+        }
+        const holdsClaim = ([kind, ...args]) => truth[kind](...args);
+        if (!holdsClaim(claims[0]) || claims.slice(1).some(holdsClaim)) continue;
+        const say = ([kind, ...args]) => scene[kind](...args);
+        const key = say(claims[0]);
+        const wrong = claims.slice(1).map((claim, index) => [say(claim), reasons[index]]);
+        if (collides(key, wrong) || new Set([key, ...wrong.map(([text]) => text)]).size < 4) continue;
+        const pointNote = form === "point" ? ` The point ${point(x1, y1)} says ${scene.y} = ${commas(y1)} when ${scene.x} = ${commas(x1)}.` : "";
+        return {
+          responseType: "multiple-choice",
+          estimatedSeconds: 85,
+          stimulus: null,
+          figure,
+          stem: `${lead} Which of the following is the best interpretation of ${question} in this context?`,
+          correct: key,
+          wrong,
+          explanation:
+            (form === "x-intercept"
+              ? `At the ${scene.x}-intercept, ${scene.y} = 0: nothing is left. ${workSlope} = 0 when ${scene.x} = ${commas(n)}.`
+              : form === "y-intercept"
+                ? `At the ${scene.y}-intercept, ${scene.x} = 0: the moment it starts, when the amount is ${commas(y0)}.`
+                : `The first coordinate is ${scene.x}, in ${scene.xs}, and the second is ${scene.y}, in ${scene.ys}.${pointNote}`) +
+            ` So ${key.charAt(0).toLowerCase()}${key.slice(1)}`,
+          steps: [
+            form === "point"
+              ? `The point gives ${scene.x} = ${commas(x1)} and ${scene.y} = ${commas(y1)}.`
+              : `At this intercept, ${form === "x-intercept" ? `${scene.y} = 0` : `${scene.x} = 0`}.`,
+            form === "point"
+              ? `${scene.y} is the amount remaining, so ${commas(y1)} ${scene.ys} remain after ${commas(x1)} ${scene.xs}; ${commas(used)} have been used.`
+              : form === "x-intercept"
+                ? `${scene.y} = 0 when ${scene.x} = ${commas(n)}: the amount has run out.`
+                : `${scene.y} = ${commas(y0)} when ${scene.x} = 0: the starting amount.`,
+          ],
+          principles: [
+            "A point (a, b) on the graph of a model says the output is b when the input is a.",
+            "The vertical intercept is the value at the start; the horizontal intercept is when the value reaches 0.",
+          ],
+          trap: form === "point"
+            ? "The second coordinate is what remains, not what has been used, and the coordinates cannot be swapped."
+            : `The rate, ${num(r)} per ${scene.xs.replace(/s$/, "")}, is the slope; the intercepts are where one of the two variables is 0.`,
+          hint: form === "point" ? "Which variable does each coordinate give?" : "Which variable is 0 at that intercept?",
+          verify: () => holdsClaim(claims[0]) && claims.slice(1).every((claim) => !holdsClaim(claim)),
+        };
+      }
+    },
+  };
+
   /* --------------------------------------------------------------- line-point-shift */
 
   // "4p − 5q = 17": the given equation written for a point named with other letters.
@@ -1034,10 +1456,15 @@
     build(t) {
       const form = t.pick(["rise", "run", "choice"]);
       const numeric = form !== "choice" && t.chance(0.45);
+      // The key is the outer ± pair when the change asked for is the larger
+      // one; draw that a little over half the time.
+      const outer = t.chance(0.55);
       for (;;) {
         const a = t.int(2, 9);
         const b = t.nonzero(-9, 9);
         if (Math.abs(b) < 2 || a === Math.abs(b) || S.gcd(a, b) !== 1) continue;
+        if (form === "rise" && outer !== a > Math.abs(b)) continue;
+        if (form === "run" && outer !== Math.abs(b) > a) continue;
         const c = t.nonzero(-40, 40);
         const equation = standardForm(a, b, c);
         const slope = frac(-a, b);
@@ -1055,13 +1482,12 @@
           stem =
             `In the xy-plane, the points (p, q) and (p + ${dx}, q + r) lie on the graph of the given equation, where p, q, ` +
             "and r are constants. What is the value of r?";
+          // Sign slip crossed with inversion: ±r and ±(inverted r), so the
+          // key is one of two ± pairs rather than the value the others vary.
           wrong = [
             [(a * dx) / b, `Uses a slope of ${frac(a, b)}; solving the equation for y shows the slope is ${slope}.`],
-            ...t.shuffle([
-              [frac(-b * dx, a), `Uses ${frac(-b, a)}, the change in x for each unit of y, as the slope.`],
-              [-a * dx, `Stops at ${lin(b, 0, "r")} = ${num(-a * dx)} without dividing by ${num(b)}.`],
-              [frac(c - a * dx, b), `Substitutes (${dx}, r) into the equation, as if the shift were itself a point on the line.`],
-            ]),
+            [frac(-b * dx, a), `Uses ${frac(-b, a)}, the change in x for each unit of y, as the slope.`],
+            [frac(b * dx, a), `Uses ${frac(b, a)}: inverts the slope and also loses its sign.`],
           ];
           steps = [
             `Both points satisfy the equation: ${inLetters(a, b, c, "p", "q")} and ${a}(p + ${dx}) ${bSign} ${Math.abs(b)}(q + r) = ${num(c)}.`,
@@ -1078,11 +1504,8 @@
             "q, and r are constants. What is the value of r?";
           wrong = [
             [(b * dy) / a, `Uses a slope of ${frac(a, b)}; solving the equation for y shows the slope is ${slope}.`],
-            ...t.shuffle([
-              [frac(-a * dy, b), `Multiplies the change in y by the slope, ${slope}, instead of dividing by it.`],
-              [-b * dy, `Stops at ${lin(a, 0, "r")} = ${num(-b * dy)} without dividing by ${a}.`],
-              [frac(c - b * dy, a), `Substitutes (r, ${num(dy)}) into the equation, as if the shift were itself a point on the line.`],
-            ]),
+            [frac(-a * dy, b), `Multiplies the change in y by the slope, ${slope}, instead of dividing by it.`],
+            [frac(a * dy, b), `Multiplies the change in y by ${frac(a, b)}: inverts the division and loses the sign of the slope.`],
           ];
           steps = [
             `Both points satisfy the equation: ${inLetters(a, b, c, "p", "q")} and ${a}(p + r) ${bSign} ${Math.abs(b)}(q ${signed(dy)}) = ${num(c)}.`,
@@ -1108,7 +1531,7 @@
             `So ${key} is on the graph whenever (s, t) is.`,
           ];
         }
-        if (!numeric && distinctWrongHard(key, wrong) < 3) continue;
+        if (!numeric && (collides(key, wrong) || distinctWrongHard(key, wrong) < 3)) continue;
         if (typeof key === "number" && !fitsGridHard(key)) continue;
         return {
           responseType: numeric ? "numeric" : "multiple-choice",
@@ -1147,5 +1570,387 @@
     },
   };
 
-  return [pointOnLine, standardFormSlope, equationModel, graphContext, linearModelUnits, pointShift];
+  /* ------------------------------------------------------ translated-line-intercept */
+
+  // "7/2" or "−3" back to a number; choices may be fractions or decimals.
+  const valueOf = (text) => {
+    const [top, bottom = "1"] = String(text).replace(MINUS, "-").split("/");
+    return Number(top) / Number(bottom);
+  };
+
+  const translatedLine = {
+    id: "translated-line-intercept",
+    domain: "Algebra",
+    skill: "Linear equations in two variables",
+    subskill: "graph interpretation",
+    difficulty: "Hard",
+    title: "Intercept or equation of a translated line read from its graph",
+    recognize:
+      "A vertical shift changes the y-intercept by the shift but moves the x-intercept by the shift divided by the " +
+      "slope; a horizontal shift does the reverse. Read the slope and intercept from the graph, move the line, and " +
+      "only then set the other variable to 0.",
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    tricks: ["wrong-quantity", "sign-error", "neighbouring-rule"],
+    build(t) {
+      const form = t.pick(["vertical", "horizontal", "equation"]);
+      // Numeric items differ only in the graph, which the variety count does not
+      // see, so most items are multiple choice.
+      const numericWanted = form !== "equation" && t.chance(0.2);
+      for (;;) {
+        const q = t.int(1, 5);
+        const p = t.nonzero(-5, 5);
+        if (S.gcd(p, q) !== 1 || Math.abs(p) === q) continue;
+        const m = p / q;
+        const b = t.int(-6, 6);
+        // Lattice points on the line inside the window, to mark on the graph.
+        const lattice = [];
+        for (let step = -6; step <= 6; step += 1) {
+          const [x, y] = [step * q, b + step * p];
+          if (Math.abs(x) <= 6 && Math.abs(y) <= 6) lattice.push([x, y]);
+        }
+        if (lattice.length < 2) continue;
+        const marked = t.sample(lattice, 2).sort((u, v) => u[0] - v[0]);
+        if (marked[1][0] - marked[0][0] < 2) continue;
+        const vertical = form !== "horizontal" && (form === "vertical" || t.chance(0.6));
+        const s = t.sign();
+        const k = t.int(2, 7);
+        const moveText = vertical ? `${k} units ${s > 0 ? "up" : "down"}` : `${k} units to the ${s > 0 ? "right" : "left"}`;
+        // Standard form of the line shown: p·x − q·y = −q·b, leading coefficient positive.
+        const flip = p < 0 ? -1 : 1;
+        const [A, B, Cst] = [flip * p, flip * -q, flip * -q * b];
+        let key;
+        let wrong;
+        let stem;
+        let steps;
+        let explanation;
+        let trap;
+        let hint;
+        let check;
+        const slopeText = frac(p, q);
+        const original = `y = ${slopeTerm(p, q)}${b ? ` ${signed(b)}` : ""}`;
+        if (form === "equation") {
+          if (vertical ? Math.abs(B) === 1 : A === 1) continue;
+          const coefficient = vertical ? B : A;
+          const shift = s * k;
+          const constant = (value) => standardForm(A, B, value);
+          key = constant(Cst + coefficient * shift);
+          const slipName = vertical ? "y" : "x";
+          wrong = [
+            [constant(Cst - coefficient * shift), `Replaces ${slipName} with ${slipName} ${s > 0 ? "+" : MINUS} ${k}, which moves the line the other way.`],
+            [constant(Cst + shift), `Adds the shift to the constant without multiplying it by the coefficient of ${slipName}, ${num(coefficient)}.`],
+            [constant(Cst - shift), `Adds the shift to the constant with the wrong sign and without multiplying it by ${num(coefficient)}.`],
+          ];
+          stem = `The graph of a line in the xy-plane is shown. The line is translated ${moveText}. Which equation represents the translated line?`;
+          steps = [
+            `From the marked points, the slope is ${slopeText} and the y-intercept is ${num(b)}, so the line is ${original}, or ${constant(Cst)}.`,
+            `Translating ${moveText} replaces ${slipName} with (${slipName} ${s > 0 ? MINUS : "+"} ${k}): ${vertical ? `${lin(A, 0)} ${B < 0 ? MINUS : "+"} ${num(Math.abs(B))}(y ${s > 0 ? MINUS : "+"} ${k})` : `${num(A)}(x ${s > 0 ? MINUS : "+"} ${k}) ${B < 0 ? MINUS : "+"} ${lin(Math.abs(B), 0, "y")}`} = ${num(Cst)}.`,
+            `Expand and collect the constants: ${key}.`,
+          ];
+          explanation = `The line shown is ${constant(Cst)}. Moving it ${moveText} replaces ${slipName} with ${slipName} ${s > 0 ? MINUS : "+"} ${k}, which changes the constant by ${num(coefficient)} × ${paren(shift)} = ${num(coefficient * shift)}: ${key}.`;
+          trap = `The shift is multiplied by the coefficient of ${slipName} before it reaches the constant, and moving ${s > 0 ? (vertical ? "up" : "right") : (vertical ? "down" : "left")} ${s > 0 ? "subtracts" : "adds"} ${k} ${s > 0 ? "from" : "to"} ${slipName} inside the equation.`;
+          hint = "Write an equation for the line shown before moving it.";
+          check = () => {
+            const moved = marked.map(([x, y]) => (vertical ? [x, y + s * k] : [x + s * k, y]));
+            const fits = (text) => moved.every(([x, y]) => holds(text, { x, y }));
+            return fits(key) && wrong.every(([text]) => !fits(text));
+          };
+        } else {
+          // Intercept asked: the x-intercept after a vertical shift, the
+          // y-intercept after a horizontal one.
+          const before = vertical ? -b / m : b;
+          const delta = vertical ? (-s * k) / m : -m * s * k;
+          const value = before + delta;
+          const show = (x) => frac(Math.round(x * q * Math.abs(p)), q * Math.abs(p));
+          if (!exact(value * q * Math.abs(p))) continue;
+          const dirSign = Math.sign(delta);
+          const moved = `${show(Math.abs(delta))} unit${Math.abs(delta) === 1 ? "" : "s"}`;
+          const pool = [
+            [show(before - delta), `Moves the line ${vertical ? (s > 0 ? "down" : "up") : (s > 0 ? "left" : "right")} instead of ${vertical ? (s > 0 ? "up" : "down") : (s > 0 ? "right" : "left")}.`],
+            [show(before + dirSign * k), `Moves the ${vertical ? "x" : "y"}-intercept ${k} units, the size of the shift; with a slope of ${slopeText} it moves ${moved}.`],
+            t.chance(0.7)
+              ? [show(before - dirSign * k), `Moves the ${vertical ? "x" : "y"}-intercept ${k} units, the size of the shift, and in the wrong direction.`]
+              : t.pick([
+                [show(before), `Gives the ${vertical ? "x" : "y"}-intercept of the line before it is translated.`],
+                [show(vertical ? b + s * k : (-(b - m * s * k)) / m), `Gives the ${vertical ? "y" : "x"}-intercept of the translated line instead.`],
+              ]),
+          ];
+          key = show(value);
+          const response = numericWanted && fitsGridHard(value) ? "numeric" : "multiple-choice";
+          if (response === "numeric") key = value;
+          wrong = response === "numeric" ? [] : pool;
+          if (vertical && Math.abs(value) > 40) continue;
+          const asked = vertical ? "x-coordinate of the x-intercept" : "y-coordinate of the y-intercept";
+          stem = `The graph of a line in the xy-plane is shown. The line is translated ${moveText}. What is the ${asked} of the translated line?`;
+          // "(3/2)(x − 4)" or "3(x − 4)": a fraction slope is parenthesized.
+          const factor = q === 1 ? slopeText : `(${slopeText})`;
+          const movedEquation = vertical
+            ? `y = ${slopeTerm(p, q)} ${signed(b + s * k)}`
+            : `y = ${factor}(x ${s > 0 ? MINUS : "+"} ${k}) ${signed(b)}`;
+          steps = [
+            `From the marked points, the slope is ${slopeText} and the y-intercept is ${num(b)}: ${original}.`,
+            `Translated ${moveText}: ${movedEquation}.`,
+            vertical
+              ? `Set y = 0: ${slopeTerm(p, q)} = ${num(-(b + s * k))}, so x = ${show(value)}.`
+              : `Set x = 0: y = ${factor}(${num(-s * k)}) ${signed(b)} = ${show(value)}.`,
+          ];
+          explanation =
+            `The line shown is ${original}. After the translation it is ${movedEquation}, whose ${vertical ? "x" : "y"}-intercept ` +
+            `is at ${vertical ? "x" : "y"} = ${show(value)}. A ${k}-unit ${vertical ? "vertical" : "horizontal"} shift moves the ` +
+            `${vertical ? "x" : "y"}-intercept ${moved}, not ${k}.`;
+          trap = `The ${vertical ? "x" : "y"}-intercept does not move ${k} units: on a line with slope ${slopeText}, a ${k}-unit ${vertical ? "vertical" : "horizontal"} shift moves it ${moved}.`;
+          hint = "Write an equation for the line shown, then move it.";
+          check = () => {
+            // Two-point form through the translated marked points.
+            const moved = marked.map(([x, y]) => (vertical ? [x, y + s * k] : [x + s * k, y]));
+            const [[x1, y1], [x2, y2]] = moved;
+            const slope = (y2 - y1) / (x2 - x1);
+            const answer = vertical ? x1 - y1 / slope : y1 - slope * x1;
+            const keyValue = typeof key === "number" ? key : valueOf(key);
+            return approx(answer, keyValue) && wrong.every(([text]) => !approx(valueOf(text), answer));
+          };
+        }
+        if (typeof key === "string" && (collides(key, wrong) || distinctWrongHard(key, wrong) < 3)) continue;
+        const P = S.plane({ xMin: -7, xMax: 7, yMin: -7, yMax: 7 });
+        const alt =
+          `A line in the xy-plane, drawn on a grid from −7 to 7 on both axes. The line passes through the marked points ` +
+          `${point(...marked[0])} and ${point(...marked[1])}.`;
+        const figure = {
+          svg: P.svg([...P.grid(), ...P.axes(), P.line(p, -q, -q * b), P.point(...marked[0]), P.point(...marked[1])], alt),
+          alt,
+          notToScale: false,
+        };
+        return {
+          responseType: typeof key === "number" ? "numeric" : "multiple-choice",
+          estimatedSeconds: 120,
+          stimulus: null,
+          figure,
+          stem,
+          correct: key,
+          wrong,
+          explanation,
+          steps,
+          principles: [
+            "Translating a graph k units up replaces y with y − k; translating it k units right replaces x with x − k.",
+            "An x-intercept is where y = 0 and a y-intercept is where x = 0.",
+          ],
+          trap,
+          hint,
+          verify: check,
+        };
+      }
+    },
+  };
+
+  /* ------------------------------------------------------- line-intercept-conditions */
+
+  const interceptConditions = {
+    id: "line-intercept-conditions",
+    domain: "Algebra",
+    skill: "Linear equations in two variables",
+    subskill: "equation modeling",
+    difficulty: "Hard",
+    title: "A line pinned down by conditions on its intercepts",
+    recognize:
+      "Name the intercepts (a, 0) and (0, b). The slope between them is −b/a, and the line is x/a + y/b = 1; a " +
+      "condition on the intercepts then becomes an equation in a or b alone.",
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["sign-error", "wrong-quantity", "neighbouring-rule"],
+    build(t) {
+      const form = t.pick(["slope-sum", "slope-sum", "ratio-point", "ratio-point", "letters"]);
+      for (;;) {
+        if (form === "letters") {
+          // Intercepts (c1·k, 0) and (0, c2·k): the equation or the slope.
+          const c1 = t.nonzero(-6, 6);
+          const c2 = t.nonzero(-6, 6);
+          if (Math.abs(c1) === Math.abs(c2)) continue;
+          const askSlope = t.chance(0.4);
+          const g = S.gcd(c1, c2);
+          // x/(c1 k) + y/(c2 k) = 1  ->  (c2/g)x + (c1/g)y = (c1 c2 / g)k.
+          const rc = (c1 * c2) / g;
+          const eqText = (xc, yc) => {
+            const sign = xc < 0 ? -1 : 1;
+            const [X, Y, R] = [sign * xc, sign * yc, sign * rc];
+            const rhs = `${R === 1 ? "" : R === -1 ? MINUS : num(R)}k`;
+            return `${lin(X, 0)} ${Y < 0 ? MINUS : "+"} ${Math.abs(Y) === 1 ? "" : num(Math.abs(Y))}y = ${rhs}`;
+          };
+          const [u, v] = [c2 / g, c1 / g];
+          const kText = (c) => `${c === 1 ? "" : c === -1 ? MINUS : num(c)}k`;
+          const intercepts = `(${kText(c1)}, 0) and y-intercept (0, ${kText(c2)})`;
+          const stem =
+            `In the xy-plane, a line has x-intercept ${intercepts}, where k is a positive constant. ` +
+            (askSlope ? "What is the slope of the line?" : "Which equation represents the line?");
+          let key;
+          let wrong;
+          if (askSlope) {
+            key = frac(-c2, c1);
+            wrong = [
+              [frac(c2, c1), "Divides the y-intercept by the x-intercept without the minus sign: from (a, 0) to (0, b) the run is −a."],
+              [frac(-c1, c2), "Divides the x-intercept by the y-intercept, which inverts the slope."],
+              [frac(c1, c2), "Inverts the slope and loses its sign."],
+            ];
+          } else {
+            key = eqText(u, v);
+            wrong = [
+              [eqText(v, u), "Pairs each intercept's number with its own variable; x/a + y/b = 1 puts b with x after clearing fractions."],
+              [eqText(u, -v), "Loses the sign of one intercept, which changes the direction of the line."],
+              [eqText(v, -u), "Pairs each intercept's number with its own variable and loses a sign."],
+            ];
+          }
+          if (collides(key, wrong) || distinctWrongHard(key, wrong) < 3) continue;
+          const kValue = 1.7;
+          const [ax, by] = [c1 * kValue, c2 * kValue];
+          return {
+            responseType: "multiple-choice",
+            estimatedSeconds: 100,
+            stimulus: null,
+            stem,
+            correct: key,
+            wrong,
+            explanation: askSlope
+              ? `The line goes from (${kText(c1)}, 0) to (0, ${kText(c2)}): a rise of ${kText(c2)} over a run of ${kText(-c1)}, so the slope is ${key}; k cancels.`
+              : `A line with intercepts (a, 0) and (0, b) is x/a + y/b = 1. Here x/(${kText(c1)}) + y/(${kText(c2)}) = 1; clearing the fractions gives ${key}.`,
+            steps: askSlope
+              ? [
+                `Change in y from (${kText(c1)}, 0) to (0, ${kText(c2)}): ${kText(c2)}.`,
+                `Change in x: 0 ${MINUS} ${c1 < 0 ? `(${kText(c1)})` : kText(c1)} = ${kText(-c1)}.`,
+                `Slope: (${kText(c2)}) ÷ (${kText(-c1)}) = ${key}.`,
+              ]
+              : [
+                `Intercept form: x/(${kText(c1)}) + y/(${kText(c2)}) = 1.`,
+                `Multiply every term by ${kText(Math.abs(rc))} to clear the fractions${c1 < 0 ? ", then multiply by −1 so the x-term is positive" : ""}.`,
+                `So ${key}. Check: x = ${kText(c1)}, y = 0 and x = 0, y = ${kText(c2)} both satisfy it.`,
+              ],
+            principles: [
+              "The line through (a, 0) and (0, b) has slope −b/a and equation x/a + y/b = 1.",
+              "Checking a choice at both intercepts confirms it.",
+            ],
+            trap: askSlope
+              ? "The slope is rise over run, and the run from (a, 0) to (0, b) is −a, not a."
+              : "Clearing the fractions puts the y-intercept's number with x and the x-intercept's number with y.",
+            hint: "Where does each intercept put the line?",
+            verify: () => {
+              if (askSlope) return approx(valueOf(key), (by - 0) / (0 - ax)) && wrong.every(([text]) => !approx(valueOf(text), -by / ax));
+              const on = (text) => [[ax, 0], [0, by]].every(([x, y]) => holds(text, { x, y, k: kValue }));
+              return on(key) && wrong.every(([text]) => !on(text));
+            },
+          };
+        }
+        if (form === "slope-sum") {
+          // Slope and a sum (or difference) of the intercepts.
+          const a = t.nonzero(-12, 12);
+          const b = t.nonzero(-12, 12);
+          if (Math.abs(a) < 2 || Math.abs(b) < 2 || Math.abs(a) === Math.abs(b)) continue;
+          const slope = frac(-b, a);
+          // Slopes a student would meet: small numerators and denominators.
+          if (Math.abs(a / S.gcd(a, b)) > 6 || Math.abs(b / S.gcd(a, b)) > 6) continue;
+          const m = -b / a;
+          const useSum = t.chance(0.6);
+          const total = useSum ? a + b : b - a;
+          const askB = t.chance(0.6);
+          const key = askB ? b : a;
+          // A slope read as +b/a gives b = m·a instead of b = −m·a.
+          const aSlip = useSum ? total / (1 + m) : total / (m - 1);
+          const bSlip = m * aSlip;
+          const pool = [
+            [askB ? a : b, `Gives the value of ${askB ? "a" : "b"}, the other intercept.`],
+            [askB ? bSlip : aSlip, "Takes the slope to be b/a, the rise over the run with the sign of the run lost."],
+            [askB ? aSlip : bSlip, `Takes the slope to be b/a and then reports ${askB ? "a" : "b"}.`],
+            [total / 2, "Assumes the two intercepts are equal."],
+            [-key, "Loses a sign in the last step."],
+          ].filter(([value]) => Number.isFinite(value) && exact(value) && Math.abs(value) < 1000);
+          const numeric = t.chance(0.4);
+          const wrong = numeric ? [] : spreadAround(t, key, pool);
+          if (!numeric && (collides(key, wrong) || distinctWrongHard(key, wrong) < 3)) continue;
+          const condition = useSum ? `a + b = ${num(total)}` : `b ${MINUS} a = ${num(total)}`;
+          const bInA = slopeTerm(b, a, "a");
+          return {
+            responseType: numeric ? "numeric" : "multiple-choice",
+            estimatedSeconds: 115,
+            stimulus: null,
+            stem:
+              `A line in the xy-plane has a slope of ${slope}. Its x-intercept is (a, 0) and its y-intercept is (0, b), where ` +
+              `a and b are constants. If ${condition}, what is the value of ${askB ? "b" : "a"}?`,
+            correct: key,
+            wrong,
+            explanation:
+              `The slope from (a, 0) to (0, b) is (b ${MINUS} 0) ÷ (0 ${MINUS} a) = ${MINUS}b/a, so ${MINUS}b/a = ${slope} and ` +
+              `b = ${bInA}. Substituting into ${condition} gives a = ${num(a)} and b = ${num(b)}.`,
+            steps: [
+              `Slope between the intercepts: ${MINUS}b/a = ${slope}, so b = ${bInA}.`,
+              `Substitute into ${condition}: ${slopeTerm(useSum ? a + b : b - a, a, "a")} = ${num(total)}, so a = ${num(a)}.`,
+              `Then b = ${num(b)}.`,
+            ],
+            principles: [
+              "The slope between (a, 0) and (0, b) is −b/a.",
+              "A second condition on a and b then gives one equation in one unknown.",
+            ],
+            trap: `The run from (a, 0) to (0, b) is −a, so the slope is −b/a; reading it as b/a gives a line with the same steepness tilted the other way.`,
+            hint: "Write the slope using the two intercept points.",
+            verify: () => {
+              // Search every intercept pair on a grid of halves for the one that fits both conditions.
+              const found = [];
+              for (let i = -60; i <= 60; i += 1) {
+                const A = i / 2;
+                if (A === 0) continue;
+                const Bv = useSum ? total - A : total + A;
+                if (Bv !== 0 && approx(-Bv / A, valueOf(slope))) found.push([A, Bv]);
+              }
+              return found.length === 1 && approx(askB ? found[0][1] : found[0][0], key);
+            },
+          };
+        }
+        // ratio-point: a = r·b, and the line passes through (x1, y1).
+        const r = t.pick([2, 3, 4, -2, -3, -4]);
+        const b = t.nonzero(-9, 9);
+        const x1 = r * t.nonzero(-3, 3);
+        const y1 = b - x1 / r;
+        if (Math.abs(y1) > 15 || x1 === 0 || y1 === 0 || Math.abs(b) < 2) continue;
+        const key = b;
+        const pool = [
+          [r * b, "Gives a, the x-coordinate of the x-intercept."],
+          [y1 + r * x1, `Uses a slope of ${num(-r)}: divides a by b instead of b by a.`],
+          [y1 - x1 / r, `Uses a slope of ${frac(1, r)}, which loses the minus sign in −b/a.`],
+          [y1 - r * x1, `Uses a slope of ${num(r)}: inverts the slope and loses its sign.`],
+          [y1, "Gives the y-coordinate of the given point."],
+        ].filter(([value]) => exact(value));
+        const numeric = t.chance(0.4);
+        const wrong = numeric ? [] : spreadAround(t, key, pool);
+        if (!numeric && (collides(key, wrong) || distinctWrongHard(key, wrong) < 3)) continue;
+        const rText = r < 0 ? `${MINUS}${Math.abs(r)}b` : `${r}b`;
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 115,
+          stimulus: null,
+          stem:
+            `In the xy-plane, a line has x-intercept (a, 0) and y-intercept (0, b), where a and b are nonzero constants ` +
+            `and a = ${rText}. The line passes through the point ${point(x1, y1)}. What is the value of b?`,
+          correct: key,
+          wrong,
+          explanation:
+            `The slope is ${MINUS}b/a = ${MINUS}b/(${rText}) = ${frac(-1, r)} whatever b is, so the line is y = ${slopeTerm(-1, r)} + b. ` +
+            `Through ${point(x1, y1)}: ${num(y1)} = (${frac(-1, r)})(${num(x1)}) + b, so b = ${num(b)}.`,
+          steps: [
+            `Slope between the intercepts: ${MINUS}b/a = ${MINUS}b/(${rText}) = ${frac(-1, r)}.`,
+            `The line is y = ${slopeTerm(-1, r)} + b.`,
+            `Substitute ${point(x1, y1)}: ${num(y1)} = ${num(-x1 / r)} + b, so b = ${num(b)}.`,
+          ],
+          principles: [
+            "The slope between (a, 0) and (0, b) is −b/a, so a fixed ratio of the intercepts fixes the slope.",
+            "A slope and one point determine a line.",
+          ],
+          trap: `The condition a = ${rText} fixes the slope at ${frac(-1, r)}; using ${num(-r)} divides the intercepts the wrong way round.`,
+          hint: "What does the relation between a and b say about the slope?",
+          verify: () => {
+            // (r·b, 0), (0, b), and (x1, y1) are collinear for exactly one nonzero b on a grid of halves.
+            const collinear = (bb) => approx((0 - r * bb) * (y1 - 0) - (bb - 0) * (x1 - r * bb), 0);
+            const found = [];
+            for (let i = -80; i <= 80; i += 1) if (i !== 0 && collinear(i / 2)) found.push(i / 2);
+            return found.length === 1 && found[0] === key;
+          },
+        };
+      }
+    },
+  };
+
+  return [pointOnLine, standardFormSlope, equationModel, graphContext, linearModelUnits, interceptMeaning, pointShift, translatedLine, interceptConditions];
 });
