@@ -34,13 +34,83 @@
     return S.formatNumber(tidy(value)).replace("-", "").length <= 5;
   }
 
-  // True when a multiple-choice record can show four distinct choices.
+  // The value of a numeric choice label such as "−7", "5/2", "2²⁰", "1/3⁴", or
+  // "4^10"; NaN for anything else (expressions with letters, words).
+  function labelValue(text) {
+    const source = String(text).replace(/\s+/g, "").replace(/−/g, "-");
+    const SUP = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+    let position = 0;
+    const peek = () => source[position];
+    function atom() {
+      if (peek() === "(") {
+        position += 1;
+        const inner = quotient();
+        if (peek() !== ")") return NaN;
+        position += 1;
+        return inner;
+      }
+      const match = /^\d+(\.\d+)?/.exec(source.slice(position));
+      if (!match) return NaN;
+      position += match[0].length;
+      return Number(match[0]);
+    }
+    function power() {
+      const base = atom();
+      let digits = "";
+      while (position < source.length && SUP.includes(peek())) digits += SUP.indexOf(source[position++]);
+      if (digits) return base ** Number(digits);
+      if (peek() === "^") {
+        position += 1;
+        return base ** signedPower();
+      }
+      return base;
+    }
+    function signedPower() {
+      if (peek() === "-") {
+        position += 1;
+        return -power();
+      }
+      return power();
+    }
+    function quotient() {
+      let value = signedPower();
+      while (peek() === "/") {
+        position += 1;
+        value /= signedPower();
+      }
+      return value;
+    }
+    const value = quotient();
+    return position === source.length ? value : NaN;
+  }
+
+  // True when a multiple-choice record can show four distinct choices: at
+  // least three distractors that differ from each other and from the key,
+  // none of them a modelled mistake that lands on the key (a draw like that
+  // is redrawn rather than silently losing the distractor), and no two
+  // numeric choices with the same value written differently (2²⁰ and 4¹⁰).
   function enoughChoices(record) {
     if (!record) return false;
-    if (record.responseType === "numeric") return gridable(record.correct);
-    const seen = new Set([S.label(record.correct)]);
-    for (const [value] of record.wrong || []) seen.add(S.label(value));
-    return seen.size >= 4;
+    const key = S.label(record.correct);
+    // A numeric item's modelled mistakes still feed its trap text, so one
+    // that lands on the key is redrawn there too.
+    if (record.responseType === "numeric") {
+      return gridable(record.correct) && !(record.wrong || []).some(([value]) => S.label(value) === key);
+    }
+    const labels = [key];
+    for (const [value] of record.wrong || []) {
+      const text = S.label(value);
+      if (text === key) return false;
+      if (!labels.includes(text) && !S.BAD_TEXT.test(text)) labels.push(text);
+    }
+    if (labels.length < 4) return false;
+    const shown = labels.slice(0, 4).map(labelValue);
+    if (shown.every(Number.isFinite)) {
+      for (let i = 0; i < 4; i += 1) {
+        for (let j = i + 1; j < 4; j += 1) if (Math.abs(shown[i] - shown[j]) < 1e-9 * Math.max(1, Math.abs(shown[i]))) return false;
+      }
+    }
+    return true;
   }
 
   // Redraws with fresh parameters until the record is usable, so a rare
@@ -76,22 +146,24 @@
     return den === Infinity ? num(value) : frac(Math.round(value * den), den);
   }
 
-  // True when a multiple-choice record has at least three distractors whose
-  // labels differ from the key and from each other (what instantiate needs).
+  // The same test for templates whose numeric keys are checked elsewhere.
   function enoughChoicesHard(record) {
-    if (record.responseType === "numeric") return true;
-    const seen = new Set([S.label(record.correct)]);
-    for (const [value] of record.wrong || []) seen.add(S.label(value));
-    return seen.size >= 4;
+    if (!record) return false;
+    if (record.responseType === "numeric") {
+      const key = S.label(record.correct);
+      return !(record.wrong || []).some(([value]) => S.label(value) === key);
+    }
+    return enoughChoices(record);
   }
 
   // Redraws until the record can be shown as four distinct choices. Every draw
   // uses fresh random parameters, so a rare collision never reaches a student.
   function drawUntilDistinctHard(make) {
-    for (;;) {
+    for (let attempt = 0; attempt < 2000; attempt += 1) {
       const record = make();
       if (record && enoughChoicesHard(record)) return record;
     }
+    throw new Error("no draw produced a usable record");
   }
 
   // Leading term: term(-1, "x²") -> "−x²", term(3, "a") -> "3a", term(-4, "") -> "−4".
@@ -162,7 +234,7 @@
   }
 
   return {
-    tidy, denominator, ratio, gridable, drawUntilDistinct, bin, rootFactor, lead, denominatorHard,
+    tidy, denominator, ratio, gridable, labelValue, enoughChoices, drawUntilDistinct, bin, rootFactor, lead, denominatorHard,
     ratioHard, enoughChoicesHard, drawUntilDistinctHard, term, plus, terms, sampleQuadratic,
     realRoots, decimalTextHard, ratioText, quadraticRoots,
   };
