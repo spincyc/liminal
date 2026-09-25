@@ -346,3 +346,65 @@ test("ids parse into section, template, and seed", () => {
   assert.equal(Progress.sectionOfId("sat-reading-writing-0575"), "sat-reading-writing");
   assert.equal(Progress.sourceOf({ id: "sat-math-0001", sectionKey: "sat-math" }), "legacy-bank");
 });
+
+test("a re-practice records the miss it re-practises, through saving and merging", () => {
+  const fresh = {
+    id: "sat-math:linear-slope:r9.linear-slope.1",
+    templateId: "linear-slope",
+    sectionKey: "sat-math",
+    responseType: "multiple-choice",
+    reviewOf: "sat-math:linear-slope:k2.linear-slope.0",
+  };
+  const attemptA = Progress.buildAttempt(fresh, { response: 2, correct: true }, { id: "s2:0", now: 10 });
+  assert.equal(attemptA.reviewOf, "sat-math:linear-slope:k2.linear-slope.0");
+  const plain = Progress.buildAttempt({ ...fresh, reviewOf: undefined }, { response: 2, correct: true },
+    { id: "s2:1", now: 11 });
+  assert.equal("reviewOf" in plain, false, "an ordinary answer carries no reviewOf");
+  const storage = memoryStorage();
+  const tabA = Progress.createStore(storage);
+  const tabB = Progress.createStore(storage);
+  tabA.update((progress) => Progress.recordAttempts(progress, [attemptA]));
+  tabB.update((progress) => Progress.recordAttempts(progress, [plain]));
+  const stored = Progress.normalize(JSON.parse(storage.getItem(Progress.STORAGE_KEY)));
+  assert.deepEqual(stored.attempts.map((item) => [item.id, item.reviewOf]),
+    [["s2:0", "sat-math:linear-slope:k2.linear-slope.0"], ["s2:1", undefined]]);
+});
+
+test("the built registries label answers without loading a template bundle", () => {
+  const registries = {
+    "sat-math": { sectionKey: "sat-math", templates: [
+      { id: "t1", bit: 0, version: 2, difficulty: "Hard", domain: "Algebra", skill: "Linear functions", subskill: "slope" },
+      { id: "t2", bit: 1, difficulty: "Easy", domain: "Algebra", skill: "Linear equations in one variable" },
+      { id: "old", bit: 2, retired: true },
+    ] },
+    "sat-reading-writing": { sectionKey: "sat-reading-writing", templates: [] },
+  };
+  const info = Progress.registryTemplateInfo(registries);
+  assert.deepEqual(info["sat-math"].t1,
+    { difficulty: "Hard", domain: "Algebra", skill: "Linear functions", subskill: "slope", version: 2 });
+  assert.equal(info["sat-math"].t2.version, 1, "a missing version is 1");
+  assert.equal(info["sat-math"].old, undefined, "retired templates are left out");
+  assert.deepEqual(info["sat-reading-writing"], {});
+  assert.deepEqual(Progress.registryTemplateInfo(undefined), {});
+  const [labelled] = Progress.withCurrentTemplates(
+    [attempt("1", { templateId: "t1", templateVersion: 1, difficulty: "Medium", skill: "Old name" })], info);
+  assert.equal(labelled.difficulty, "Hard");
+  assert.equal(labelled.skill, "Linear functions");
+  assert.equal(labelled.updated, true);
+});
+
+test("scenes seen outside a recorded run are noted without serving anything", () => {
+  let progress = Progress.serveTemplates(Progress.empty({ epoch: "e1" }), "sat-reading-writing", {
+    templateIds: ["t1"],
+    scenes: { t1: "harbor" },
+  });
+  const noted = Progress.noteScenes(progress, "sat-reading-writing", { t1: ["orchard", "harbor", "orchard"], t2: ["mill"] });
+  const history = Progress.historyFor(noted, "sat-reading-writing");
+  assert.deepEqual(history.scenes, { t1: ["orchard", "harbor"], t2: ["mill"] }, "noted scenes count as the oldest");
+  assert.equal(history.serve, 1);
+  assert.deepEqual(history.lastServed, { t1: 1 });
+  assert.equal(Progress.noteScenes(noted, "sat-reading-writing", { t1: ["harbor"], t3: [] }), noted,
+    "nothing new returns the same record");
+  assert.equal(Progress.noteScenes(progress, "sat-math", {}), progress);
+  assert.deepEqual(Progress.historyFor(progress, "sat-reading-writing").scenes, { t1: ["harbor"] }, "the input is untouched");
+});

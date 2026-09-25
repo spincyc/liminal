@@ -7,6 +7,8 @@
 // Schema v3 (key liminal:progress:v3):
 //   attempts  every answer a set showed, including unanswered ones
 //             (answered: false, correct: false); append-only, unique by id.
+//             A re-practice of an earlier miss carries reviewOf (the missed
+//             question's id); the review schedule is derived from these.
 //   marked    question ids currently marked for review.
 //   errorLog  { [attemptId]: { reason, rule?, at } }.
 //   history   per section: a serve counter, the counter value each template
@@ -483,6 +485,25 @@
     return Object.assign({}, progress, { history });
   }
 
+  // Scenes the student has seen that history does not hold (an answer kept
+  // from before scenes were recorded, or one past the per-template limit),
+  // so later draws steer around them too. Serve numbers are untouched, and
+  // the noted scenes count as the oldest seen. `scenes`: { [templateId]:
+  // [scene] }. Returns `progress` itself when nothing is new.
+  function noteScenes(progress, sectionKey, scenes) {
+    const history = cloneHistory(progress);
+    const entry = sectionHistory(history, sectionKey);
+    let changed = false;
+    Object.keys(scenes || {}).forEach((id) => {
+      const known = entry.scenes[id] || [];
+      const added = unique(strings(scenes[id]).filter((scene) => scene && !known.includes(scene)));
+      if (!added.length) return;
+      entry.scenes[id] = added.concat(known).slice(-LIMITS.scenesPerTemplate);
+      changed = true;
+    });
+    return changed ? Object.assign({}, progress, { history }) : progress;
+  }
+
   // A fixed-bank set: its questions share the next serve number, and only
   // the most recently served stay remembered.
   function serveQuestions(progress, sectionKey, questionIds) {
@@ -546,6 +567,10 @@
       record.seed = question.seed !== undefined ? String(question.seed) : parsed.seed;
     }
     if (settings.runCode) record.runCode = settings.runCode;
+    // A question built to re-practise an earlier miss names it, so the
+    // review schedule (lib/review-queue.js) follows a fresh version back to
+    // the original.
+    if (typeof question.reviewOf === "string" && question.reviewOf) record.reviewOf = question.reviewOf;
     return record;
   }
 
@@ -670,6 +695,30 @@
     });
   }
 
+  // withCurrentTemplates's `current` from the built template registries
+  // ({ [sectionKey]: registry }, as window.PRACTICE_TEMPLATES holds them),
+  // whose live entries carry each template's tier, taxonomy, and version.
+  // Views label and re-tier answers with it without loading a section's
+  // template bundle. Retired entries are left out.
+  function registryTemplateInfo(registries) {
+    const info = {};
+    Object.keys(registries || {}).forEach((sectionKey) => {
+      const registry = registries[sectionKey];
+      info[sectionKey] = {};
+      ((registry && registry.templates) || []).forEach((entry) => {
+        if (!entry || entry.retired || typeof entry.id !== "string") return;
+        info[sectionKey][entry.id] = {
+          difficulty: entry.difficulty || null,
+          domain: entry.domain || null,
+          skill: entry.skill || null,
+          subskill: entry.subskill || null,
+          version: Number(entry.version) > 0 ? Number(entry.version) : 1,
+        };
+      });
+    });
+    return info;
+  }
+
   // The most recently answered question ids, newest last.
   function recentQuestionIds(progress, limit) {
     return progress.attempts.slice(-(limit || 30)).map((attempt) => attempt.questionId);
@@ -791,6 +840,7 @@
     recordSession,
     setPlan,
     serveTemplates,
+    noteScenes,
     serveQuestions,
     // records
     buildAttempt,
@@ -803,6 +853,7 @@
     isMarked,
     latestAttempts,
     withCurrentTemplates,
+    registryTemplateInfo,
     recentQuestionIds,
     historyFor,
     recentlyServedIds,
