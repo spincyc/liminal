@@ -13,6 +13,7 @@ const checks = [
   ["node", ["--check", "src/lib/booklet.js"]],
   ["node", ["tools/validate-content.js", "--complete"]],
   ["node", ["tools/check-answer-positions.js"]],
+  ["node", ["tools/check-hard-math.js"]],
   ["node", ["tools/build.js"]],
   ["node", ["tools/smoke-static.js"]],
   ["node", ["tools/check-guides.js"]],
