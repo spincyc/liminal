@@ -1,2 +1,481 @@
 /* The Review view: due re-practice, the error log, missed and marked lists.
-   Reads tokens.css; defines no colors of its own. */
+   Reads tokens.css; defines no colors of its own. The shared list pieces
+   (.tabs, .review-list, .review-item, .review-item-head, .review-toolbar,
+   .review-item-actions) are in app.css. */
+
+/* ------------------------------------------------------------ summaries */
+
+.review-summary {
+  display: grid;
+  gap: 12px;
+}
+
+.review-summary > * + * {
+  margin-top: 0;
+}
+
+.review-summary h2 {
+  font-size: var(--text-xl);
+}
+
+.review-summary .check-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--tap);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.review-how {
+  border-top: 1px solid var(--color-line);
+  padding-top: 8px;
+}
+
+.review-how > summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  color: var(--color-accent);
+  font-weight: var(--weight-bold);
+  cursor: pointer;
+}
+
+.review-how > p {
+  max-width: 70ch;
+  margin-top: 8px;
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+/* ----------------------------------------------------------- due list */
+
+.review-due {
+  padding: 8px 20px;
+}
+
+.review-due-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-due-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.review-due-row:last-child {
+  border-bottom: 0;
+}
+
+.review-due-title {
+  font-weight: var(--weight-semibold);
+}
+
+.review-due-facts {
+  grid-column: 1;
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+.review-due-row > a {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+}
+
+.review-due .review-more {
+  margin: 8px 0;
+}
+
+.review-upcoming-list {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-upcoming-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 360px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.review-upcoming-day {
+  font-weight: var(--weight-semibold);
+}
+
+/* ------------------------------------------------------------ error log */
+
+.review-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+}
+
+.review-filter {
+  flex: 1 1 220px;
+  max-width: 360px;
+}
+
+.review-gap {
+  border-left-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.review-item-title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+}
+
+.review-item-head .review-item-title {
+  color: var(--color-ink);
+}
+
+.review-item-aside {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.review-facts {
+  margin-top: 6px;
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+.review-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.review-flag {
+  padding: 2px 10px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  color: var(--color-ink);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+}
+
+.review-flag.is-schedule {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-hover);
+}
+
+.review-tag {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-line);
+}
+
+.review-tag .field-label {
+  color: var(--color-ink);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+}
+
+.review-reasons .chip {
+  min-width: 0;
+}
+
+/* Chips already space their content. */
+.review-reason-filter .tab-count {
+  margin-left: -2px;
+}
+
+.review-rule {
+  display: grid;
+  gap: 6px;
+}
+
+.review-rule-status {
+  color: var(--color-good);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.review-rule-status:empty {
+  display: none;
+}
+
+.review-item > .status-line {
+  margin-top: 4px;
+}
+
+.review-more {
+  justify-self: start;
+}
+
+/* ------------------------------------------------------ question detail */
+
+.review-question {
+  display: grid;
+  gap: 16px;
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-softer);
+  line-height: 1.6;
+}
+
+.review-note {
+  padding: 8px 12px;
+  border-left: 4px solid var(--color-line-strong);
+  background: var(--color-surface);
+  font-size: var(--text-sm);
+}
+
+.review-question .lm-stimulus,
+.review-question .lm-rich {
+  display: grid;
+  gap: 0.75em;
+}
+
+.review-question .lm-stimulus {
+  padding: 12px 14px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.review-question .lm-passage-title {
+  font-size: var(--text-base);
+  text-align: center;
+}
+
+.review-question .lm-passage-label {
+  font-weight: var(--weight-bold);
+}
+
+.review-question .lm-list {
+  margin: 0;
+  padding-left: 1.3em;
+}
+
+.review-question .lm-equations {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+
+.review-question .lm-equation {
+  white-space: pre-wrap;
+}
+
+.review-question .lm-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.review-question .lm-table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.review-question .lm-table :is(th, td) {
+  padding: 6px 12px;
+  border: 1px solid var(--color-line-strong);
+  text-align: center;
+}
+
+.review-question .lm-table thead th {
+  background: var(--color-soft);
+}
+
+.review-question .lm-figure {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--color-ink);
+}
+
+.review-question .lm-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  overflow: visible;
+}
+
+.review-question .lm-figure-note {
+  font-size: var(--text-sm);
+  font-style: italic;
+}
+
+.review-question .lm-ul-n,
+.review-question .lm-ul-marker {
+  margin: 0 3px;
+  padding: 0 4px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: var(--weight-bold);
+}
+
+.review-question-stem {
+  font-weight: var(--weight-semibold);
+}
+
+.review-choices {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Color is never the only cue: the key and the student's answer carry
+   text tags too. */
+.review-choice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  padding: 8px 12px;
+  border: 1.5px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.review-choice.is-key {
+  border-color: var(--color-good);
+  background: var(--color-good-soft);
+}
+
+.review-choice.is-wrong {
+  border-color: var(--color-bad);
+  background: var(--color-bad-soft);
+}
+
+.review-choice-letter {
+  flex: none;
+  min-width: 1.6em;
+  font-weight: var(--weight-bold);
+}
+
+.review-choice-text {
+  flex: 1 1 12em;
+  min-width: 0;
+}
+
+.review-choice-tag {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.review-choice-tag.is-key {
+  color: var(--color-good);
+}
+
+.review-choice-tag.is-yours {
+  color: var(--color-bad);
+}
+
+.review-choice.is-key .review-choice-tag.is-yours {
+  color: var(--color-good);
+}
+
+.review-numeric {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin: 0;
+}
+
+.review-numeric dt {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.review-numeric dd {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+}
+
+.review-numeric dd.is-key {
+  color: var(--color-good);
+}
+
+.review-numeric dd.is-wrong {
+  color: var(--color-bad);
+}
+
+.review-explanation {
+  display: grid;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-line);
+}
+
+.review-exp-section {
+  display: grid;
+  gap: 4px;
+}
+
+.review-exp-section h3 {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.review-steps {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+/* ---------------------------------------------------------------- phone */
+
+@media (max-width: 640px) {
+  .review-due {
+    padding: 4px 16px;
+  }
+
+  .review-due-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .review-due-row > a {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 36px;
+  }
+
+  .review-filter {
+    max-width: none;
+  }
+
+  .review-question {
+    padding: 12px;
+  }
+
+  .review-item-aside {
+    white-space: normal;
+  }
+}
