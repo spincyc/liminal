@@ -525,6 +525,58 @@
     return state;
   }
 
+  /* ------------------------------------------------------- combining */
+
+  // One finished session from finished parts, such as the modules of an
+  // on-screen SAT test, so one report and one answer review cover them all.
+  // `parts`: [{ questions, responses, marked?, hinted?, timeMs?, elapsedMs,
+  // timeLimitSeconds }], in order. The result is finished and already
+  // reported: each part was recorded when it ended, so it is never recorded
+  // again. Its limit is the parts' limits added up when every part had one.
+  function combineFinished(parts, nowMs) {
+    const list = (parts || []).filter((part) => part && Array.isArray(part.questions) && part.questions.length);
+    if (!list.length) throw new Error("A combined session needs at least one question.");
+    const questions = [];
+    const responses = [];
+    const marked = [];
+    const hinted = [];
+    const timeMs = [];
+    let elapsed = 0;
+    let limit = 0;
+    let everyPartTimed = true;
+    list.forEach((part) => {
+      const at = (values, index) => (Array.isArray(values) ? values[index] : undefined);
+      part.questions.forEach((question, index) => {
+        questions.push(question);
+        responses.push(hasResponse(at(part.responses, index)) ? at(part.responses, index) : null);
+        marked.push(Boolean(at(part.marked, index)));
+        hinted.push(Boolean(at(part.hinted, index)));
+        timeMs.push(Math.max(0, Number(at(part.timeMs, index)) || 0));
+      });
+      elapsed += Math.max(0, Number(part.elapsedMs) || 0);
+      if (Number(part.timeLimitSeconds) > 0) limit += Number(part.timeLimitSeconds);
+      else everyPartTimed = false;
+    });
+    const state = createState({
+      questions,
+      feedback: "end",
+      timeLimitSeconds: everyPartTimed ? limit : null,
+      marked,
+    }, nowMs);
+    return Object.assign(state, {
+      responses,
+      hinted,
+      timeMs,
+      visited: filled(questions.length, true),
+      questionSince: null,
+      elapsedMs: elapsed,
+      segmentStart: null,
+      finished: true,
+      finishReason: "user",
+      reported: true,
+    });
+  }
+
   /* ------------------------------------------------------ numeric entry */
 
   // Cleans typed student-produced-response text: digits, one decimal point,
@@ -707,6 +759,7 @@
     counts,
     summary,
     result,
+    combineFinished,
     hasResponse,
     sanitizeNumericEntry,
     describeNumericEntry,

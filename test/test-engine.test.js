@@ -425,3 +425,30 @@ test("numeric entry description drives the answer preview", () => {
 test("create refuses an empty question list", () => {
   assert.throws(() => engine.create({ questions: [] }), /at least one question/);
 });
+
+test("finished parts combine into one reported session for one report and one review", () => {
+  const rw = question("r1", { sectionKey: "sat-reading-writing", domain: "Craft and Structure", correctAnswer: 1 });
+  const state = engine.combineFinished([
+    { questions: [rw], responses: [1], marked: [true], hinted: [false], timeMs: [5000], elapsedMs: 60_000, timeLimitSeconds: 1920 },
+    { questions: [], responses: [] },
+    { questions: QUESTIONS, responses: [2, "3/4", null], timeMs: [1, 2, 3], elapsedMs: 90_000, timeLimitSeconds: 2100 },
+  ], 5_000);
+  assert.equal(state.finished, true);
+  assert.equal(state.reported, true, "each part was recorded when it ended");
+  assert.equal(state.timeLimitSeconds, 1920 + 2100);
+  const summary = engine.summary(state, 99_999_999);
+  assert.equal(summary.total, 4);
+  assert.equal(summary.correct, 3);
+  assert.equal(summary.unanswered, 1);
+  assert.equal(summary.marked, 1);
+  assert.equal(summary.elapsedMs, 150_000, "the parts' time, not the wall clock");
+  assert.deepEqual(summary.items.map((item) => item.timeMs), [5000, 1, 2, 3]);
+  // It survives the shell's snapshot round trip as a finished report.
+  const restored = engine.restoreState(engine.serialize(state, 5_000), 10_000_000);
+  assert.equal(restored.finished, true);
+  assert.equal(restored.reported, true);
+  assert.equal(engine.summary(restored, 10_000_000).elapsedMs, 150_000);
+  // An untimed part leaves the whole untimed.
+  assert.equal(engine.combineFinished([{ questions: [rw], responses: [0] }], 1).timeLimitSeconds, null);
+  assert.throws(() => engine.combineFinished([], 1), /at least one question/);
+});
