@@ -34,15 +34,22 @@
     const line = standard ? `y ${m > 0 ? MINUS : "+"} ${Math.abs(m) === 1 ? "" : Math.abs(m)}x = ${num(d)}` : `y = ${lin(m, d)}`;
     const r = t.pick([r1, r2]);
     const pool = [-4, -3, -2, -1, 0, 1, 2, 3, 4].filter((x) => x !== r1 && x !== r2);
-    const [x3, x4] = t.sample(pool, 2);
+    const [x3, x4, x5] = t.sample(pool, 3);
     const isSolution = ([x, y]) => approx(P(x), y) && approx(L(x), y);
+    // Points that satisfy only one equation, the mistake this item tests; the
+    // swapped solution appears only sometimes, so the key is not usually the
+    // choice whose numbers the others repeat.
+    const third = t.chance(0.2)
+      ? [[L(r), r], `Swaps the coordinates of the solution (${num(r)}, ${num(L(r))}).`]
+      : t.chance(0.5)
+        ? [[x5, P(x5)], `Satisfies ${parabola} but not ${line}.`]
+        : [[x5, L(x5)], `Satisfies ${line} but not ${parabola}.`];
     const offers = [
       [[x3, P(x3)], `Satisfies ${parabola} but not ${line}.`],
       [[x4, L(x4)], `Satisfies ${line} but not ${parabola}.`],
-      [[L(r), r], `Swaps the coordinates of the solution (${num(r)}, ${num(L(r))}).`],
-      [[-r, L(r)], `Changes the sign of the x-coordinate of the solution (${num(r)}, ${num(L(r))}).`],
+      third,
     ].filter(([pair]) => !isSolution(pair));
-    if ([P(x3), L(x4), L(r)].some((y) => Math.abs(y) > 60)) return null;
+    if ([P(x3), L(x4), L(r), P(x5), L(x5)].some((y) => Math.abs(y) > 60)) return null;
     const first = t.chance(0.5);
     return {
       responseType: "multiple-choice",
@@ -545,6 +552,216 @@
     };
   }
 
+  /* =================================================== line-circle-tangent */
+
+  // Lines ax + by = c with a² + b² a perfect square, so the tangent values of
+  // c are integers.
+  const NORMALS = [[3, 4, 5], [4, 3, 5], [3, -4, 5], [4, -3, 5], [6, 8, 10], [8, 6, 10], [5, 12, 13], [12, 5, 13], [5, -12, 13]];
+
+  function circleText(h, v, r) {
+    const part = (name, center) => (center === 0 ? `${name}²` : `(${name} ${signed(-center)})²`);
+    return `${part("x", h)} + ${part("y", v)} = ${r * r}`;
+  }
+
+  function lineCircleItem(t, numeric) {
+    const [a, b, n] = t.pick(NORMALS);
+    const centered = t.chance(0.4);
+    const h = centered ? 0 : t.nonzero(-4, 4);
+    const v = centered ? 0 : t.nonzero(-4, 4);
+    const r = t.int(1, n === 13 ? 2 : 4);
+    const base = a * h + b * v;
+    const high = base + n * r;
+    const low = base - n * r;
+    const lineText = `${term(a, "x")} ${plus(b, "y")} = c`;
+    const ask = numeric ? "greater" : t.pick(["greater", "possible"]);
+    const key = ask === "greater" || t.chance(0.5) ? high : low;
+    const other = key === high ? low : high;
+    const wrong = [
+      [base + (key === high ? r : -r), `Sets the distance from the center to the line equal to ${r} but leaves out the factor √(${a}² + ${Math.abs(b)}²) = ${n}.`],
+      [base + (key === high ? n * r * r : -n * r * r), `Uses the radius squared, ${r * r}, where the radius ${r} belongs.`],
+      [base, "Makes the line pass through the center of the circle, which gives two intersection points."],
+      [base + (key === high ? 2 * n * r : -2 * n * r), `Uses the diameter, ${2 * r}, as the distance from the center to the line.`],
+      [base + (key === high ? n * n * r : -n * n * r), `Divides by ${a}² + ${Math.abs(b)}² = ${n * n} instead of its square root, ${n}, in the distance formula.`],
+      [-a * h - b * v + (key === high ? n * r : -n * r), "Reverses the signs of the center's coordinates, reading (x − h) as a center at −h."],
+    ];
+    if (ask === "greater") wrong.push([low, "Gives the smaller of the two values of c that make the line tangent."]);
+    // Offer slips from one side of the key, the other, or both, so the key is
+    // sometimes the extreme value and sometimes not.
+    const usable = wrong.filter(([value], index) => value !== key && (ask === "greater" || value !== other) &&
+      wrong.findIndex(([v]) => v === value) === index);
+    const above = usable.filter(([value]) => value > key);
+    const below = usable.filter(([value]) => value < key);
+    const plan = t.pick(["below", "above", "mixed", "mixed"]);
+    const offered = plan === "below" && below.length >= 3 ? t.sample(below, 3)
+      : plan === "above" && above.length >= 3 ? t.sample(above, 3) : t.sample(usable, 3);
+    const stemEnd = ask === "greater"
+      ? "the system has exactly one solution for two values of c. What is the greater of these two values?"
+      : "for which of the following values of c does the system have exactly one solution?";
+    const substituted = `x² + y² = ${r * r}`;
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: { type: "equations", content: `${circleText(h, v, r)}\n${lineText}` },
+      stem: `In the given system of equations, c is a constant. ${ask === "greater" ? `In the xy-plane, ${stemEnd}` : `In the xy-plane, ${stemEnd}`}`,
+      correct: key,
+      wrong: numeric ? undefined : offered,
+      explanation:
+        `The first equation is a circle with center (${num(h)}, ${num(v)}) and radius ${r}; the second is a line. One solution means ` +
+        `the line is tangent to the circle, so its distance from the center equals the radius: |${num(a)}(${num(h)}) ${signed(b)}(${num(v)}) ${MINUS} c|/√(${a}² + ${Math.abs(b)}²) = ${r}. ` +
+        `So |${num(base)} ${MINUS} c| = ${n * r}, which gives c = ${num(high)} or c = ${num(low)}.`,
+      steps: [
+        `Read the circle: center (${num(h)}, ${num(v)}), radius √${r * r} = ${r}.`,
+        "Exactly one solution means the line touches the circle at one point: the distance from the center to the line equals the radius.",
+        `Distance from (${num(h)}, ${num(v)}) to ${lineText}: |${num(base)} ${MINUS} c|/${n} = ${r}, so |${num(base)} ${MINUS} c| = ${n * r}.`,
+        `c = ${num(base)} ± ${n * r}: c = ${num(high)} or c = ${num(low)}.`,
+      ],
+      principles: [
+        "A line and a circle meet in two, one, or no points; one point means the line is tangent, at a distance from the center equal to the radius.",
+        "Substituting the line into the circle gives a quadratic whose discriminant is 0 exactly when the line is tangent.",
+      ],
+      trap: `The distance from the center to ${lineText} is |ah + bv − c| divided by √(a² + b²) = ${n}; leaving out the ${n}, or using ${r * r} for the radius, gives a value of c whose line cuts the circle twice.`,
+      hint: "What does one solution say about how the line and the circle meet?",
+      verify: () => {
+        // Substitute the line into the circle and count real roots by the discriminant.
+        const roots = (c) => {
+          // y = (c − ax)/b; (x − h)² + ((c − ax)/b − v)² = r².
+          const A = 1 + (a * a) / (b * b);
+          const B = -2 * h - (2 * a * (c / b - v)) / b;
+          const C = h * h + (c / b - v) ** 2 - r * r;
+          const disc = B * B - 4 * A * C;
+          return Math.abs(disc) < 1e-7 * Math.max(1, B * B) ? 1 : disc > 0 ? 2 : 0;
+        };
+        // Every offered value either misses tangency or, when the greater value
+        // is asked for, is the smaller tangent value.
+        return roots(high) === 1 && roots(low) === 1 && high > low && roots((high + low) / 2) === 2 &&
+          (numeric || offered.every(([value]) => (ask === "greater" && value === low) || roots(value) !== 1));
+      },
+    };
+  }
+
+  /* ============================================= polynomial-level-count */
+
+  // The graph of a polynomial with turning points at lattice points: a cubic
+  // (turning points two units apart) or a quartic with two equal minima.
+  function levelShape(t) {
+    if (t.chance(0.55)) {
+      const up = t.chance(0.5);
+      const u = t.int(-3, 0);
+      const w = u + 2;
+      const drop = t.pick([2, 4, 6]);
+      const C = t.int(-5, 3);
+      const a = (up ? 1 : -1) * (drop / 4);
+      // f(x) = a(x − w)²(x − u + 1) + C: turning points at u and w.
+      const fn = (x) => a * (x - w) ** 2 * (x - u + 1) + C;
+      const top = Math.max(fn(u), fn(w));
+      const bottom = Math.min(fn(u), fn(w));
+      const count = (k) => (k > top || k < bottom ? 1 : k === top || k === bottom ? 2 : 3);
+      const describe = up
+        ? `rises from the lower left to a turning point at (${num(u)}, ${num(fn(u))}), falls to a turning point at (${num(w)}, ${num(fn(w))}), and then rises to the upper right`
+        : `falls from the upper left to a turning point at (${num(u)}, ${num(fn(u))}), rises to a turning point at (${num(w)}, ${num(fn(w))}), and then falls to the lower right`;
+      return { kind: "cubic", fn, top, bottom, count, xs: [u, w], describe, window: [u - 3, w + 3] };
+    }
+    const p = t.int(-4, 0);
+    const q = p + 4;
+    const bump = t.pick([2, 4, 6, 8]);
+    const a = bump / 16;
+    const C = t.int(-6, 1);
+    const fn = (x) => a * (x - p) ** 2 * (x - q) ** 2 + C;
+    const top = C + bump;
+    const bottom = C;
+    const count = (k) => (k < bottom ? 0 : k === bottom ? 2 : k < top ? 4 : k === top ? 3 : 2);
+    const describe = `falls from the upper left to a low point at (${num(p)}, ${num(C)}), rises to a high point at (${num(p + 2)}, ${num(top)}), ` +
+      `falls to a low point at (${num(q)}, ${num(C)}), and then rises to the upper right`;
+    return { kind: "quartic", fn, top, bottom, count, xs: [p, p + 2, q], describe, window: [p - 2, q + 2] };
+  }
+
+  const COUNT_WORDS = ["no", "exactly one", "exactly two", "exactly three", "exactly four"];
+
+  function levelCountItem(t) {
+    const shape = levelShape(t);
+    const { top, bottom, count } = shape;
+    const [xMin, xMax] = [Math.min(shape.window[0], -1), Math.max(shape.window[1], 1)];
+    const yLow = Math.min(bottom - 3, -1);
+    const yHigh = Math.max(top + 3, 1);
+    // Candidate levels: the two turning values, a level strictly between them,
+    // and levels above and below; plus the x-coordinate of a turning point.
+    const levels = new Map();
+    const add = (k, why) => {
+      if (Number.isInteger(k) && !levels.has(k)) levels.set(k, why);
+    };
+    const between = t.int(bottom + 1, top - 1);
+    add(top, "a turning value");
+    add(bottom, "a turning value");
+    add(between, "between the turning values");
+    add(top + t.int(1, 3), "above the higher turning value");
+    add(bottom - t.int(1, 3), "below the lower turning value");
+    shape.xs.forEach((x) => add(x, "the x-coordinate of a turning point"));
+    const byCount = new Map();
+    for (const [k] of levels) {
+      const c = count(k);
+      if (!byCount.has(c)) byCount.set(c, []);
+      byCount.get(c).push(k);
+    }
+    const counts = [...byCount.keys()].filter((c) => byCount.get(c).length >= 1);
+    const want = t.pick(counts.filter((c) => c !== 0 || shape.kind === "quartic"));
+    const keyK = t.pick(byCount.get(want));
+    const others = [...levels.keys()].filter((k) => count(k) !== want);
+    if (others.length < 3) return null;
+    const chosen = t.sample(others, 3);
+    const reason = (k) => {
+      const c = count(k);
+      const where = shape.xs.includes(k) && k !== top && k !== bottom && k !== between
+        ? `Reads ${num(k)}, an x-coordinate of a turning point, as a level; the line y = ${num(k)} meets the graph ${c === 0 ? "nowhere" : `${COUNT_WORDS[c].replace("exactly ", "")} time${c === 1 ? "" : "s"}`}.`
+        : `The horizontal line y = ${num(k)} meets the graph ${c === 0 ? "nowhere" : `at ${COUNT_WORDS[c].replace("exactly ", "")} point${c === 1 ? "" : "s"}`}, so that system has ${COUNT_WORDS[c]} solution${c === 1 ? "" : "s"}.`;
+      return where;
+    };
+    const P = S.plane({ xMin, xMax, yMin: yLow, yMax: yHigh, unit: Math.min(30, 300 / (xMax - xMin)) });
+    const alt =
+      `The graph of y = f(x) in ${P.describe()}, drawn on a grid of unit squares. The curve ${shape.describe}.`;
+    const figure = { svg: P.svg([...P.grid(), ...P.axes(), P.curve(shape.fn)], alt), alt, notToScale: false };
+    return {
+      responseType: "multiple-choice",
+      stimulus: null,
+      figure,
+      stem:
+        `The graph of y = f(x) is shown, where f is a polynomial function. In the xy-plane, the system consisting of ` +
+        `y = f(x) and y = k, where k is a constant, has ${COUNT_WORDS[want]} solution${want === 1 ? "" : "s"}. Which of the following could be the value of k?`,
+      correct: keyK,
+      wrong: chosen.map((k) => [k, reason(k)]),
+      explanation:
+        `Each solution of the system is a point where the horizontal line y = k meets the graph. ` +
+        `At k = ${num(keyK)} the line meets the graph at ${want === 0 ? "no points" : `${COUNT_WORDS[want].replace("exactly ", "")} point${want === 1 ? "" : "s"}`}. ` +
+        `Lines through a turning value touch the graph there, which changes the count.`,
+      steps: [
+        "A solution of the system is an intersection of the graph with the horizontal line y = k.",
+        `Read the turning values from the graph: ${num(bottom)} and ${num(top)}.`,
+        `Slide a horizontal line: at y = ${num(keyK)} it meets the graph ${want === 0 ? "nowhere" : `${COUNT_WORDS[want].replace("exactly ", "")} time${want === 1 ? "" : "s"}`}.`,
+        "Each other choice gives a different number of intersections.",
+      ],
+      principles: [
+        "The solutions of f(x) = k are the x-coordinates where the line y = k meets the graph of f.",
+        "A horizontal line through a turning point touches the graph there instead of crossing it.",
+      ],
+      trap: "A horizontal line through a turning value touches the graph, so it gives one fewer intersection than lines just past it.",
+      hint: "Picture the horizontal line y = k moving up and down the graph.",
+      estimatedSeconds: 110,
+      verify: () => {
+        // Count sign changes and touch points of f − k on a fine grid over a wide interval.
+        const intersections = (k) => {
+          let n = 0;
+          const step = 1 / 64;
+          for (let x = shape.window[0] - 20; x < shape.window[1] + 20; x += step) {
+            const f0 = shape.fn(x) - k;
+            const f1 = shape.fn(x + step) - k;
+            if (Math.abs(f0) < 1e-12) n += 1;
+            else if (f0 * f1 < 0) n += 1;
+          }
+          return n;
+        };
+        return intersections(keyK) === want && chosen.every((k) => intersections(k) !== want);
+      },
+    };
+  }
+
   const parabolaLineSolutionCheck = {
     id: "parabola-line-solution-check",
     difficulty: "Easy",
@@ -719,12 +936,12 @@
     domain: "Advanced Math",
     skill: "Systems of equations",
     subskill: "nonlinear systems",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Nonlinear system answered through the square of a sum or difference",
     recognize:
       "The system gives x² + y² together with x + y, x − y, or xy. Since (x ± y)² = x² + y² ± 2xy, squaring the " +
       "linear equation or doubling the product connects them, and the asked quantity follows without finding x or y.",
-    rubric: { steps: 1, concept: 2, interpretation: 0, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 0, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
     tricks: ["intermediate-value", "sign-error", "neighbouring-rule"],
     build(t) {
       const form = t.pick(["sum", "difference", "product"]);
@@ -763,11 +980,16 @@
           given = `x ${sign} y = ${num(L)}`;
           asked = "xy";
           key = P;
-          wrong = [
+          // Modelled slips on both sides of the key; three are drawn, so the
+          // key is not always the value the others are built around.
+          wrong = t.sample([
             [plusSign ? L2 - A : A - L2, `Finds 2xy = ${num(2 * P)} and stops before dividing by 2.`],
             [-P, `Expands (x ${sign} y)² as x² + y² ${plusSign ? MINUS : "+"} 2xy.`],
             [(A + L2) / 2, `Adds ${num(L2)} and ${num(A)} instead of subtracting one from the other, then halves.`],
-          ];
+            [(plusSign ? L2 - A : A - L2) / 4, `Expands (x ${sign} y)² with a cross term of ${sign === "+" ? "" : MINUS}4xy, so it divides by 4.`],
+            [A, "Gives x² + y², the value in the first equation, instead of xy."],
+            [L2, `Gives (x ${sign} y)², the square of the second equation, instead of xy.`],
+          ].filter(([value]) => Number.isInteger(value) && value !== P), 3);
           steps = [
             `Square the linear equation: (x ${sign} y)² = ${num(L2)}, so x² ${sign} 2xy + y² = ${num(L2)}.`,
             `Replace x² + y² with ${num(A)}: ${num(A)} ${sign} 2xy = ${num(L2)}.`,
@@ -781,7 +1003,7 @@
           stimulus: { type: "equations", content: (t.chance(0.5) ? lines : [lines[1], lines[0]]).join("\n") },
           stem: `If (x, y) is a solution to the given system of equations, what is the value of ${asked}?`,
           correct: key,
-          wrong: numeric ? undefined : [wrong[0], ...t.shuffle(wrong.slice(1))],
+          wrong: numeric ? undefined : wrong,
           explanation: `${steps.join(" ")} Neither x nor y has to be found.`,
           steps,
           principles: [
@@ -816,8 +1038,49 @@
     },
   };
 
+  const lineCircleTangent = {
+    id: "line-circle-tangent",
+    domain: "Advanced Math",
+    skill: "Systems of equations",
+    subskill: "nonlinear systems",
+    title: "Line and circle meeting at exactly one point",
+    recognize:
+      "One solution of a line-and-circle system means the line is tangent: its distance from the center equals the " +
+      "radius (equivalently, the quadratic from substituting has discriminant 0), which gives two values of the constant.",
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 2, trap: 1 },
+    tricks: ["neighbouring-rule", "sign-error", "reversed-condition"],
+    build(t) {
+      const numeric = t.chance(0.4);
+      // A draw where a modelled slip happens to give the other tangent value
+      // offers two right answers; verify() catches it and the draw is redone.
+      return {
+        estimatedSeconds: 120,
+        ...drawUntilDistinctHard(() => {
+          const record = lineCircleItem(t, numeric);
+          return record && record.verify() ? record : null;
+        }),
+      };
+    },
+  };
+
+  const polynomialLevelCount = {
+    id: "polynomial-level-count",
+    domain: "Advanced Math",
+    skill: "Systems of equations",
+    subskill: "nonlinear systems",
+    title: "Number of solutions of y = f(x) and y = k read from a graph",
+    recognize:
+      "The solutions are the intersections of the graph with a horizontal line; the count changes only at the turning " +
+      "values, where the line touches the graph instead of crossing it.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["reversed-condition", "wrong-quantity"],
+    build(t) {
+      return drawUntilDistinctHard(() => levelCountItem(t));
+    },
+  };
+
   return [
-    constantFromSolution, parabolaLineSolutionCheck, lineParabolaSolve, nonlinearSystemSolve, discriminantParameter,
-    squareIdentity,
+    constantFromSolution, parabolaLineSolutionCheck, lineParabolaSolve, nonlinearSystemSolve, squareIdentity,
+    discriminantParameter, lineCircleTangent, polynomialLevelCount,
   ];
 });
