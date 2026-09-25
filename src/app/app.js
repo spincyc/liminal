@@ -13,7 +13,8 @@
   //   open(options, params)  render and show; params come from the hash
   //   onTestChange()    optional: the SAT | ACT switch changed
   //   onProgressChange() optional: progress changed in this tab or another
-  //   onSessionChange() optional: the saved unfinished set changed
+  //   onSessionChange(problem) optional: the saved unfinished set changed;
+  //                     `problem` is a message when a test could not go on
 
   const catalog = window.PRACTICE_CATALOG;
   const core = window.PracticeCore;
@@ -21,8 +22,13 @@
   const runs = window.LiminalRuns;
   const Progress = window.LiminalProgress;
   const practice = window.LiminalPractice;
+  const Modules = window.LiminalModules;
+  const Simulation = window.LiminalSimulation;
 
-  // An unfinished set, so closing the tab mid-test loses nothing.
+  // An unfinished set, so closing the tab mid-test loses nothing. An
+  // on-screen SAT test keeps its whole state here too (config.simulation),
+  // with the module on screen as the set (`state`, null on the break or
+  // between modules).
   const SESSION_KEY = "liminal:session:v1";
 
   // localStorage can throw on access when a browser blocks site data; the
@@ -167,11 +173,16 @@
     return loadedTemplates.get(sectionKey) || [];
   }
 
-  // What each loaded template is now: its tier, taxonomy, and version, for
-  // LiminalProgress.withCurrentTemplates. Sections not loaded yet are absent,
-  // and their attempts keep what they stored.
+  // What each template is now: its tier, taxonomy, and version, for
+  // LiminalProgress.withCurrentTemplates. Loaded sections answer from their
+  // templates; the rest from the built registries, which carry the same
+  // fields, when this Progress version reads them (registryTemplateInfo),
+  // and otherwise are absent, so their attempts keep what they stored.
   function templateInfo() {
-    const info = {};
+    const fromRegistry = typeof Progress.registryTemplateInfo === "function"
+      ? Progress.registryTemplateInfo(window.PRACTICE_TEMPLATES || {})
+      : null;
+    const info = Object.assign({}, fromRegistry || {});
     loadedTemplates.forEach((templates, sectionKey) => {
       info[sectionKey] = {};
       templates.forEach((template) => {
@@ -274,7 +285,7 @@
     load() {
       try {
         const saved = JSON.parse(storage.getItem(SESSION_KEY));
-        return saved && saved.config && saved.state ? saved : null;
+        return saved && saved.config && (saved.state || saved.config.simulation) ? saved : null;
       } catch (error) {
         return null;
       }
@@ -292,7 +303,12 @@
     },
     // A saved set the test screen can actually reopen.
     valid(saved) {
-      return Boolean(saved && window.LiminalShell && window.LiminalShell.canResume(saved.state));
+      if (!saved || !window.LiminalShell) return false;
+      if (saved.config && saved.config.simulation) {
+        return Simulation.canResume(saved.config.simulation) &&
+          (!saved.state || window.LiminalShell.canResume(saved.state));
+      }
+      return Boolean(saved.state && window.LiminalShell.canResume(saved.state));
     },
   };
 
@@ -350,7 +366,7 @@
     update((progress) => {
       let next = Progress.recordAttempts(progress, pending.map((item) => attemptFor(meta, item, now)));
       next = Progress.setMarks(next, marks);
-      return Progress.recordSession(next, Progress.summarizeSession(
+      return Progress.recordSession(next, Object.assign(Progress.summarizeSession(
         {
           id: meta.sessionId,
           sectionKey: meta.sectionKey,
@@ -363,7 +379,7 @@
         },
         result.items,
         result.elapsedMs,
-      ));
+      ), meta.sessionFields || {}));
     });
   }
 
@@ -378,13 +394,24 @@
     };
   }
 
+  // Back on the page the set started from, with every count brought up to
+  // date. `problem` explains a test that could not go on.
+  function closeScreen(problem) {
+    shellOpen = false;
+    notifySession(problem);
+    notifyProgress();
+    showView(currentView);
+  }
+
   // Every set, practice or timed, runs in the full-screen test mode.
   // `config`: { title, sectionKey, kind, questions, feedback,
-  // timeLimitSeconds, runCode?, setCode?, tools? }. Throws when the test
-  // screen cannot open; the caller shows why.
+  // timeLimitSeconds, runCode?, setCode?, tools?, simulation? }; a config
+  // with `simulation` is one module of an on-screen SAT test (see "SAT
+  // tests" below), and may add `notice` and `openDirections` for its first
+  // screen. Throws when the test screen cannot open; the caller shows why.
   function launch(config, resume) {
     if (!window.LiminalShell) throw new Error("The test screen did not load. Refresh the page and try again.");
-    const { questions, ...rest } = config;
+    const { questions, notice, openDirections, ...rest } = config;
     const meta = {
       ...rest,
       sessionId: rest.sessionId || Progress.newId("s"),
@@ -410,15 +437,12 @@
         activeSession.clear();
       },
       reportActions: (report) => reportActions(meta, report),
-      // Back where the set started, with every count brought up to date.
       onExit(detail) {
-        shellOpen = false;
         if (detail && detail.reason === "discard") activeSession.clear();
-        notifySession();
-        notifyProgress();
-        showView(currentView);
+        closeScreen();
       },
     };
+    if (meta.simulation) Object.assign(options, moduleOptions(meta), { notice, openDirections });
     shellOpen = true;
     try {
       window.LiminalShell.start(options);
@@ -428,9 +452,10 @@
     }
   }
 
-  // Reopens the saved set, or discards it with a reason when it cannot be
-  // reopened. Returns an error message, or null when the set opened.
-  function resume() {
+  // Reopens the saved set or test, or discards it with a reason when it
+  // cannot be reopened. Resolves to an error message, or null when it
+  // opened.
+  async function resume() {
     const saved = activeSession.load();
     if (!saved) return "There is no unfinished set to resume.";
     if (!activeSession.valid(saved)) {
@@ -438,6 +463,7 @@
       notifySession();
       return "The unfinished set could not be restored, so it was removed.";
     }
+    if (saved.config.simulation) return resumeTest(saved);
     try {
       launch({ ...saved.config, questions: [] }, saved.state);
       return null;
@@ -446,6 +472,293 @@
       notifySession();
       return `The unfinished set could not be restored (${error.message}), so it was removed.`;
     }
+  }
+
+  /* ------------------------------------------------------------ SAT tests */
+
+  // An on-screen SAT test (lib/simulation.js): one module, a section, or
+  // the full-length test. Each module is its own set in the test screen,
+  // recorded when it ends (kind "module"); the break has its own screen; the
+  // whole test ends in one combined report and, for a section or the full
+  // test, one more session record (kind "section" or "full"). The saved
+  // unfinished set carries the test's state, so a reload resumes at the
+  // right module and clock.
+
+  function sectionsIn(state) {
+    return [...new Set(state.steps.filter((step) => step.sectionKey).map((step) => step.sectionKey))];
+  }
+
+  // What the saved unfinished set holds while no module is on screen.
+  function testConfig(state) {
+    return {
+      title: Simulation.runTitle(state),
+      kind: state.kind,
+      sectionKey: state.sectionKey || sectionsIn(state)[0],
+      feedback: "end",
+      simulation: state,
+    };
+  }
+
+  function storeTest(state) {
+    activeSession.store({ config: testConfig(state), savedAt: Date.now(), state: null });
+  }
+
+  // `request`: { kind: "module" | "section" | "full", sectionKey?, module? }.
+  // Loads every section the test needs first, so no step waits on the
+  // network. Rejects when the templates cannot load or the test screen
+  // cannot open.
+  async function startTest(request) {
+    const state = Simulation.create({
+      ...request,
+      id: Progress.newId("t"),
+      seed: practice.newRunSeed(),
+      now: Date.now(),
+    });
+    await Promise.all(sectionsIn(state).map((key) => sectionTemplates(key)));
+    shellOpen = true;
+    try {
+      continueTest(state);
+    } catch (error) {
+      shellOpen = false;
+      throw error;
+    }
+  }
+
+  async function resumeTest(saved) {
+    const state = Simulation.restore(saved.config.simulation);
+    try {
+      await Promise.all(sectionsIn(state).map((key) => sectionTemplates(key)));
+    } catch (error) {
+      return `${error.message} Refresh the page and try again; your test is still saved.`;
+    }
+    try {
+      const step = Simulation.currentStep(state);
+      if (saved.state && step.type === "module" && step.started) {
+        launch({ ...saved.config, questions: [] }, saved.state);
+      } else {
+        // A break that ran out while the page was closed ends as soon as
+        // its screen opens, and the next section starts with a note.
+        shellOpen = true;
+        continueTest(state);
+      }
+      return null;
+    } catch (error) {
+      shellOpen = false;
+      activeSession.clear();
+      notifySession();
+      return `The unfinished test could not be restored (${error.message}), so it was removed.`;
+    }
+  }
+
+  // Opens whatever the test needs next: a module, the break, or the report.
+  // Throws when a module cannot be built.
+  function continueTest(state, notice) {
+    const step = Simulation.currentStep(state);
+    if (step.type === "done") {
+      finishTest(state).catch((error) => {
+        console.error(error);
+        closeScreen(`The test's report could not open (${error.message}). Its modules are in your progress.`);
+      });
+      return;
+    }
+    if (step.type === "break") {
+      showBreak(state);
+      return;
+    }
+    launchModule(state, step, notice);
+  }
+
+  // Continuing from inside a screen: a failure there has no caller to show
+  // it, so it closes the screen with the reason. The test stays saved.
+  function continueFromScreen(state, notice) {
+    try {
+      continueTest(state, notice);
+    } catch (error) {
+      console.error(error);
+      storeTest(state);
+      closeScreen(`The next part of the test could not open (${error.message}). Resume it from here.`);
+    }
+  }
+
+  // Builds the module on screen from the blueprint, avoiding every template
+  // and scene the test has already used in this section, and opens it.
+  function launchModule(state, step, notice) {
+    const run = practice.buildModuleRun({
+      sectionKey: step.sectionKey,
+      module: step.module,
+      templates: templatesNow(step.sectionKey),
+      seed: Simulation.moduleSeed(state),
+      history: Progress.historyFor(store.get(), step.sectionKey),
+      exclude: Simulation.usedTemplateIds(state, step.sectionKey),
+      avoidScenes: Simulation.usedScenes(state, step.sectionKey),
+      instantiate: window.LiminalFamilyShared.instantiate,
+    });
+    if (!run.questions.length) throw new Error("No questions could be built for this module.");
+    recordServed(run);
+    const sessionId = Progress.newId("s");
+    const timeLimitSeconds = step.minutes * 60;
+    const next = Simulation.beginModule(state, {
+      sessionId,
+      templateIds: run.chosenIds,
+      questionIds: run.questions.map((question) => question.id),
+      scenes: Object.values(run.scenes),
+      runCode: run.code,
+      timeLimitSeconds,
+      now: Date.now(),
+    });
+    launch({
+      title: step.title,
+      sectionKey: step.sectionKey,
+      kind: "module",
+      questions: run.questions,
+      feedback: "end",
+      timeLimitSeconds,
+      runCode: run.code,
+      setCode: run.setCode,
+      sessionId,
+      simulation: next,
+      sessionFields: {
+        testId: next.id,
+        testKind: next.kind,
+        module: step.module,
+        route: Simulation.ROUTE_NAMES[step.module] || null,
+      },
+      notice,
+      openDirections: step.number === 1 || step.module === "1",
+    });
+  }
+
+  // The shell options that make a set one module of a test: submitting it
+  // records it, moves the test on, and opens what follows.
+  function moduleOptions(meta) {
+    const step = Simulation.currentStep(meta.simulation);
+    let advanced = null;
+    function advance(result) {
+      if (!advanced) {
+        advanced = Simulation.finishModule(meta.simulation, {
+          sessionId: meta.sessionId,
+          items: Simulation.compactItems(result.items),
+          elapsedMs: result.elapsedMs,
+          finishReason: result.finishReason,
+          now: Date.now(),
+        });
+      }
+      return advanced;
+    }
+    return {
+      module: { next: step.type === "module" ? step.next : "the next part" },
+      onFinish(result) {
+        recordFinish(meta, result);
+        storeTest(advance(result));
+      },
+      onContinue(detail) {
+        const state = advance(detail.result);
+        continueFromScreen(state, detail.reason === "time"
+          ? "Time ran out on the last module, so the answers you had were submitted."
+          : null);
+      },
+    };
+  }
+
+  function showBreak(state) {
+    const current = Simulation.startBreak(state, Date.now());
+    storeTest(current);
+    const step = Simulation.currentStep(current);
+    window.LiminalShell.startBreak({
+      title: Simulation.runTitle(current),
+      endsAt: step.endsAt,
+      next: step.next,
+      onContinue(reason) {
+        continueFromScreen(Simulation.endBreak(current, Date.now()),
+          reason === "time" ? "The break is over, so this section has started." : null);
+      },
+      onExit(detail) {
+        if (detail && detail.reason === "discard") activeSession.clear();
+        closeScreen();
+      },
+    });
+  }
+
+  function testCaveat(state) {
+    const share = Math.round(Modules.ROUTING_THRESHOLD * 100);
+    const routing = state.kind === "module"
+      ? "Each module's mix of easy, medium, and hard questions is a practice approximation."
+      : `Module 2 was chosen by a practice rule (${share}% correct on Module 1 or more gives the harder one), ` +
+        "and each module's mix of easy, medium, and hard questions is a practice approximation.";
+    return `This is accuracy on practice questions, not a scaled score. ${routing} ` +
+      "The College Board does not publish its routing or scoring rules, so percent correct here does not " +
+      "convert to an SAT score.";
+  }
+
+  // Results by module, for the combined report.
+  function moduleTable(summary) {
+    return {
+      title: "By module",
+      columns: ["Module", "Questions", "Correct", "Time used"],
+      rows: summary.modules.map((row) => [
+        row.label,
+        `${row.first}–${row.last}`,
+        `${row.correct} of ${row.total} (${Math.round((row.accuracy || 0) * 100)}%)`,
+        `${formatDuration(row.elapsedMs)} of ${formatDuration(row.timeLimitSeconds * 1000)}` +
+          (row.finishReason === "time" ? ", time ran out" : ""),
+      ]),
+    };
+  }
+
+  // The whole test is done: one session record for a section or the full
+  // test (each module has its own already), then one report and one answer
+  // review over every module.
+  async function finishTest(state) {
+    const summary = Simulation.report(state);
+    if (state.kind !== "module") {
+      const items = Simulation.runItems(state);
+      update((progress) => Progress.recordSession(progress, Object.assign(Progress.summarizeSession({
+        id: state.id,
+        sectionKey: state.sectionKey || sectionsIn(state)[0],
+        kind: state.kind,
+        title: summary.title,
+        startedAt: state.startedAt,
+        finishedAt: state.finishedAt || Date.now(),
+        feedback: "end",
+      }, items, summary.elapsedMs), Simulation.sessionFields(state))));
+    }
+    activeSession.clear();
+    const questions = await questionsForIds(Simulation.questionIds(state));
+    const byId = new Map(questions.map((question) => [question.id, question]));
+    // A question whose template was retired since cannot be rebuilt; the
+    // review leaves it out rather than fail.
+    const parts = Simulation.reviewParts(state).map((part) => {
+      const keep = part.questionIds.map((id) => byId.has(id));
+      const pick = (list) => list.filter((_, index) => keep[index]);
+      return {
+        questions: part.questionIds.filter((id) => byId.has(id)).map((id) => byId.get(id)),
+        responses: pick(part.responses),
+        marked: pick(part.marked),
+        hinted: pick(part.hinted),
+        timeMs: pick(part.timeMs),
+        elapsedMs: part.elapsedMs,
+        timeLimitSeconds: part.timeLimitSeconds,
+      };
+    });
+    const now = Date.now();
+    const combined = window.LiminalTestEngine.combineFinished(parts, now);
+    const sections = sectionsIn(state);
+    const meta = { title: summary.title, sectionKey: sections[0], kind: state.kind };
+    shellOpen = true;
+    window.LiminalShell.start({
+      title: summary.title,
+      sectionKey: sections[0],
+      tools: { calculator: sections.some(isMath), reference: sections.includes("sat-math") },
+      resume: window.LiminalTestEngine.serialize(combined, now),
+      learnHref: practice.learnHref,
+      reportNotes: summary.routes.map((route) => route.text),
+      reportSections: [moduleTable(summary)],
+      caveat: testCaveat(state),
+      reportActions: (report) => reportActions(meta, report),
+      onExit() {
+        closeScreen();
+      },
+    });
   }
 
   /* ------------------------------------------------- after-report actions */
@@ -485,18 +798,59 @@
 
   const DRILL_COUNT = 10;
 
-  async function drillSkill(row) {
-    const section = sectionByKey(row.sectionKey);
-    let questions;
-    if (practice.usesTemplates(row.sectionKey)) {
-      await sectionTemplates(row.sectionKey);
-      questions = buildRun({ sectionKey: row.sectionKey, count: DRILL_COUNT, filters: { skills: [row.skill] } }).questions;
-    } else {
-      const bank = await loadBank(row.sectionKey);
-      questions = core.buildSession(core.filterQuestions(bank, { skills: [row.skill] }), DRILL_COUNT,
-        `${Date.now()}-drill`, { avoidIds: Progress.recentlyServedIds(store.get(), row.sectionKey) });
+  // Questions for a skill drill. A template section takes several seeds per
+  // template when a skill has few (lib/practice.js buildDrill) and records
+  // each round as served; a bank section takes matching questions not seen
+  // recently. `request`: { sectionKey, skill, difficulty? (null for every
+  // tier), count? }.
+  async function drillQuestions(request) {
+    const count = Math.max(1, Math.round(Number(request.count) || DRILL_COUNT));
+    if (practice.usesTemplates(request.sectionKey)) {
+      const templates = await sectionTemplates(request.sectionKey);
+      const drill = practice.buildDrill({
+        sectionKey: request.sectionKey,
+        templates,
+        skill: request.skill,
+        difficulty: request.difficulty || null,
+        count,
+        history: Progress.historyFor(store.get(), request.sectionKey),
+        instantiate: window.LiminalFamilyShared.instantiate,
+      });
+      if (drill.served.length) {
+        update((progress) => drill.served.reduce((current, round) =>
+          Progress.serveTemplates(current, request.sectionKey, round), progress));
+      }
+      return drill.questions;
     }
-    if (questions.length) instantSet(`${section.test} ${section.shortLabel}: ${row.skill}`, questions, "skill-drill");
+    const bank = await loadBank(request.sectionKey);
+    const filters = { skills: [request.skill], difficulties: request.difficulty ? [request.difficulty] : [] };
+    const questions = core.buildSession(core.filterQuestions(bank, filters), count, `${Date.now()}-drill`,
+      { avoidIds: Progress.recentlyServedIds(store.get(), request.sectionKey) });
+    update((progress) => Progress.serveQuestions(progress, request.sectionKey,
+      questions.map((question) => question.id)));
+    return questions;
+  }
+
+  // A drill on one skill, feedback after each question unless the request
+  // asks for the end (`feedback: "end"`). Resolves to the number of
+  // questions it opened with (0 when nothing matched).
+  async function startDrill(request) {
+    const questions = await drillQuestions(request);
+    if (!questions.length) return 0;
+    const section = sectionByKey(request.sectionKey);
+    launch({
+      title: `${section.test} ${section.shortLabel}: ${request.skill}${request.difficulty ? `, ${request.difficulty}` : ""}`,
+      sectionKey: request.sectionKey,
+      kind: "drill",
+      questions,
+      feedback: request.feedback === "end" ? "end" : "instant",
+      timeLimitSeconds: null,
+    });
+    return questions.length;
+  }
+
+  function drillSkill(row) {
+    return startDrill({ sectionKey: row.sectionKey, skill: row.skill, count: DRILL_COUNT });
   }
 
   function reportActions(meta, report) {
@@ -518,7 +872,7 @@
       actions.push({
         label: `Drill my weakest skill: ${weakest.skill}`,
         note: `${Math.round(weakest.accuracy * 100)}% correct over ${weakest.attempted} answers so far. ` +
-          `Up to ${DRILL_COUNT} questions, feedback after each.`,
+          `${DRILL_COUNT} questions at every level, feedback after each.`,
         run: () => drillSkill(weakest).catch((error) => console.error(error)),
       });
     }
@@ -557,6 +911,9 @@
     buildMiniTest,
     launch,
     resume,
+    startTest,
+    startDrill,
+    DRILL_COUNT,
     activeSession,
     showView,
     openView,
@@ -576,10 +933,10 @@
     });
   }
 
-  function notifySession() {
+  function notifySession(problem) {
     if (shellOpen) return;
     Object.values(views).forEach((view) => {
-      if (view.onSessionChange) view.onSessionChange();
+      if (view.onSessionChange) view.onSessionChange(problem || null);
     });
   }
 

@@ -1,16 +1,18 @@
 (function () {
   "use strict";
 
-  // The Practice view: the set builder form, the side cards (Hard math reps,
-  // mini tests, retake a set, booklets), and the resume banner.
+  // The Practice view: "Take a test" (an SAT module, section, or the
+  // full-length test on screen), then practice sets: the skill drill, the
+  // set builder form, and the side cards (mini tests, Hard math reps, retake
+  // a set, booklets), with the resume banner above them all.
   //
   // Interface: window.LiminalViews.practice(ctx) returns the view object
   // described at the top of app/app.js. `ctx` is app.js's shared context:
   // catalog, core, site, runs, Progress, practice, store, update, loaders
   // (loadBank, sectionTemplates, templatesNow, rebuildQuestion), buildRun,
-  // buildMiniTest, launch, resume, activeSession, showView, and formatting
-  // helpers. Hash: #practice, or #practice/<sectionKey>/<skillSlug> to open
-  // the form set to one skill.
+  // buildMiniTest, launch, resume, startTest, startDrill, activeSession,
+  // showView, and formatting helpers. Hash: #practice, or
+  // #practice/<sectionKey>/<skillSlug> to open the drill set to one skill.
 
   // Question counts that match a real module (SAT) or section (ACT).
   const MODULE_SIZES = {
@@ -25,6 +27,7 @@
   // mode sets any count, feedback, or timer.
   const HARD_REPS_DEFAULT_COUNT = 10;
   const DEFAULT_COUNT = 20;
+  const DRILL_MAX = 30;
 
   function create(ctx) {
     const { core, practice, Progress } = ctx;
@@ -47,7 +50,6 @@
       resumeBtn: byId("resumeBtn"),
       discardSession: byId("discardSessionBtn"),
       sessionStatus: byId("sessionStatus"),
-      filterDetails: byId("filterDetails"),
       filterSummary: byId("filterSummary"),
       filterHint: byId("filterHint"),
       domain: byId("domainSelect"),
@@ -67,6 +69,18 @@
       retakeInput: byId("retakeInput"),
       retakeBtn: byId("retakeBtn"),
       retakeStatus: byId("retakeStatus"),
+      resumeHeading: byId("resumeHeading"),
+      testArea: byId("testArea"),
+      testModuleKind: byId("testModuleKind"),
+      testStatus: byId("testStatus"),
+      drillForm: byId("drillForm"),
+      drillSection: byId("drillSection"),
+      drillSkill: byId("drillSkill"),
+      drillCount: byId("drillCount"),
+      drillFeedback: byId("drillFeedback"),
+      drillStart: byId("drillStart"),
+      drillNote: byId("drillNote"),
+      drillStatus: byId("drillStatus"),
     };
 
     let currentBank = [];
@@ -105,8 +119,8 @@
         : sections[0].key;
     }
 
-    // SAT questions are generated from templates, so the honest number is
-    // how many templates there are; ACT sections are fixed banks.
+    // SAT questions are generated fresh each time, so the honest number is
+    // how many kinds of question there are; ACT sections are fixed banks.
     function renderSetupCopy() {
       const test = ctx.currentTest();
       const sections = ctx.testSections(test);
@@ -114,8 +128,8 @@
         const templates = sections.reduce(
           (total, section) => total + practice.templateCount(ctx.registry(section.key)), 0);
         elements.setupLede.textContent =
-          `Build a set from ${ctx.formatNumber(templates)} SAT question templates, each drawing a ` +
-          "fresh question every time. Every set opens in the digital test screen.";
+          "Take a timed test built like the real SAT, or practice in shorter sets. Every question is " +
+          `new each time, drawn from ${ctx.formatNumber(templates)} kinds of question.`;
         return;
       }
       const essay = (section) => (section.responseTypes || []).includes("essay");
@@ -273,10 +287,10 @@
     function modeNote(mode) {
       if (mode === "targeted") {
         return usesTemplates()
-          ? "Fresh questions from the templates you have seen least recently, narrowed by any topic filters."
+          ? "New questions of the kinds you have seen least recently, narrowed by any topic filters."
           : "Questions you have not seen recently, narrowed by any topic filters.";
       }
-      if (mode === "full") return "A mix from the whole section, weighted like the real test. Topic filters are not used.";
+      if (mode === "full") return "A mix from the whole section, weighted like the real test. Topic filters are not used. For the real module structure, use Take a test.";
       if (mode === "adaptive") {
         return usesTemplates()
           ? `A set on your weakest skill so far: the lowest accuracy among skills with at least ${Progress.WEAK_SKILL_MIN_ATTEMPTS} answers counted. Until then, a mix of the whole section.`
@@ -291,7 +305,7 @@
     function filterUse(mode) {
       if (mode === "full") {
         return { domain: false, skill: false, difficulty: false, search: false,
-          hint: "Full section mix draws from the whole section, so topic filters are off." };
+          hint: "The whole-section mix draws from every topic, so topic filters are off." };
       }
       if (mode === "adaptive") {
         return { domain: false, skill: false, difficulty: false, search: false,
@@ -301,7 +315,7 @@
       }
       if (buildsTemplateRun(mode)) {
         return { domain: true, skill: true, difficulty: true, search: false,
-          hint: "Questions here are generated fresh from templates, so there is no text to search." };
+          hint: "Questions here are new each time, so there is no text to search." };
       }
       return { domain: true, skill: true, difficulty: true, search: true, hint: "" };
     }
@@ -362,8 +376,8 @@
         const available = ctx.runs.available(ctx.templatesNow(sectionKey()),
           practice.runFilters(mode, formFilters(), weakest()));
         elements.matchCount.textContent = available
-          ? `${ctx.formatNumber(available)} question template${available === 1 ? "" : "s"} match, at most one question each`
-          : "No question templates match. Loosen a filter under Narrow by topic.";
+          ? `Up to ${ctx.formatNumber(available)} question${available === 1 ? "" : "s"}, one of each kind that matches`
+          : "Nothing matches. Loosen a filter under Narrow by topic.";
         elements.matchCount.classList.toggle("is-empty", available === 0);
         elements.start.disabled = available === 0;
         setAvailable(available);
@@ -475,7 +489,7 @@
           filters: practice.runFilters(mode, formFilters(), weakest()),
         });
         if (!run.questions.length) {
-          ctx.setStatus(elements.bankStatus, "No question templates match this set. Loosen a filter.", "error");
+          ctx.setStatus(elements.bankStatus, "Nothing matches this set. Loosen a filter.", "error");
           return;
         }
         tryLaunch({
@@ -551,10 +565,7 @@
     }
 
     function scrollToForm() {
-      const reduceMotion = window.matchMedia &&
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      elements.form.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
-      elements.count.focus({ preventScroll: true });
+      scrollToCard(elements.form, elements.count);
     }
 
     // Sets the practice form to SAT Math, Hard only, so the count, feedback,
@@ -583,7 +594,7 @@
       blueprints.forEach((blueprint, index) => {
         const item = document.createElement("div");
         item.className = "mini-test-item";
-        const name = document.createElement("h3");
+        const name = document.createElement("h4");
         name.textContent = blueprint.label;
         const summary = document.createElement("p");
         summary.textContent = blueprint.summary;
@@ -687,13 +698,13 @@
       }
       if (!run.questions.length) {
         resetRetake();
-        ctx.setStatus(elements.retakeStatus, "None of this set's templates are still in use.", "error");
+        ctx.setStatus(elements.retakeStatus, "None of this set's questions can be built any more.", "error");
         return;
       }
       const changed = changedTemplates(parsed, run.questions, templates);
       const warnings = [
-        run.missing ? `${run.missing} of its templates ${run.missing === 1 ? "is" : "are"} no longer in use` : "",
-        changed ? `${changed} ${changed === 1 ? "template has" : "templates have"} changed since you took it` : "",
+        run.missing ? `${run.missing} of its questions can no longer be built` : "",
+        changed ? `${changed} of its questions ${changed === 1 ? "has" : "have"} changed since you took it` : "",
       ].filter(Boolean);
       const key = `${parsed.sectionKey}|${parsed.code}`;
       if (warnings.length && retakePending !== key) {
@@ -718,6 +729,158 @@
       }, elements.retakeStatus);
     }
 
+    /* --------------------------------------------------------- take a test */
+
+    // A module, a section, or the full-length test, from the button's
+    // data-test-kind and data-section.
+    async function startTest(button) {
+      const kind = button.dataset.testKind;
+      const request = { kind };
+      if (kind !== "full") request.sectionKey = button.dataset.section;
+      if (kind === "module") request.module = elements.testModuleKind.value;
+      const buttons = elements.testArea.querySelectorAll("[data-test-kind]");
+      buttons.forEach((item) => { item.disabled = true; });
+      ctx.setStatus(elements.testStatus, "Preparing your test…", "loading");
+      try {
+        await ctx.startTest(request);
+        ctx.setStatus(elements.testStatus, "");
+      } catch (error) {
+        ctx.setStatus(elements.testStatus, `${error.message} Refresh the page and try again.`, "error");
+      } finally {
+        buttons.forEach((item) => { item.disabled = false; });
+      }
+    }
+
+    /* --------------------------------------------------------------- drill */
+
+    function drillLevelInputs() {
+      return Array.from(elements.drillForm.querySelectorAll('input[name="drillLevel"]'));
+    }
+
+    function drillLevel() {
+      const checked = drillLevelInputs().find((input) => input.checked);
+      return checked ? checked.value : "";
+    }
+
+    function setDrillLevel(value) {
+      drillLevelInputs().forEach((input) => { input.checked = input.value === value; });
+    }
+
+    function drillCount() {
+      const value = Math.round(Number(elements.drillCount.value));
+      return Math.min(DRILL_MAX, Math.max(1, Number.isFinite(value) && value > 0 ? value : ctx.DRILL_COUNT));
+    }
+
+    // The drill's sections follow the SAT | ACT switch; its skills are
+    // grouped by domain.
+    function populateDrillSections() {
+      const sections = ctx.testSections();
+      const current = elements.drillSection.value;
+      replaceOptions(elements.drillSection, sections.map((section) => ({ value: section.key, label: section.shortLabel })));
+      if (sections.some((section) => section.key === current)) elements.drillSection.value = current;
+      populateDrillSkills();
+    }
+
+    function populateDrillSkills(preferred) {
+      const section = ctx.sectionByKey(elements.drillSection.value);
+      const current = preferred || elements.drillSkill.value;
+      elements.drillSkill.innerHTML = "";
+      ((section && section.domains) || []).forEach((domain) => {
+        const group = document.createElement("optgroup");
+        group.label = domain.name;
+        Object.keys(domain.skills).forEach((skill) => {
+          const option = document.createElement("option");
+          option.value = skill;
+          option.textContent = skill;
+          group.appendChild(option);
+        });
+        elements.drillSkill.appendChild(group);
+      });
+      if ([...elements.drillSkill.options].some((option) => option.value === current)) {
+        elements.drillSkill.value = current;
+      }
+      updateDrillNote();
+    }
+
+    // How many questions the drill can hold. A template section repeats a
+    // kind of question with new numbers or a new context, so it rarely runs
+    // short; a bank section holds only the questions that match.
+    async function updateDrillNote() {
+      const key = elements.drillSection.value;
+      const skill = elements.drillSkill.value;
+      const level = drillLevel();
+      const count = drillCount();
+      elements.drillNote.className = "match-count";
+      if (!key || !skill) {
+        elements.drillNote.textContent = "";
+        elements.drillStart.disabled = true;
+        return;
+      }
+      let kinds = null;
+      let matching = null;
+      if (practice.usesTemplates(key)) {
+        let templates = ctx.templatesNow(key);
+        if (!templates.length) {
+          try {
+            templates = await ctx.sectionTemplates(key);
+          } catch (error) {
+            ctx.setStatus(elements.drillStatus, `${error.message} Refresh the page and try again.`, "error");
+            return;
+          }
+        }
+        if (key !== elements.drillSection.value || skill !== elements.drillSkill.value) return;
+        kinds = ctx.runs.available(templates, { skills: [skill], difficulties: level ? [level] : [] });
+      } else {
+        let bank = ctx.bankIfLoaded(key);
+        if (!bank) {
+          try {
+            bank = await ctx.loadBank(key);
+          } catch (error) {
+            ctx.setStatus(elements.drillStatus, `${error.message} Refresh the page and try again.`, "error");
+            return;
+          }
+        }
+        if (key !== elements.drillSection.value || skill !== elements.drillSkill.value) return;
+        matching = core.filterQuestions(bank, { skills: [skill], difficulties: level ? [level] : [] }).length;
+      }
+      const levelWord = level ? `${level.toLowerCase()} ` : "";
+      if (kinds === 0 || matching === 0) {
+        elements.drillNote.textContent = `No ${levelWord}questions for this skill yet. Choose another level.`;
+        elements.drillNote.classList.add("is-empty");
+        elements.drillStart.disabled = true;
+        return;
+      }
+      elements.drillStart.disabled = false;
+      elements.drillNote.textContent = kinds !== null
+        ? `${count} ${levelWord}question${count === 1 ? "" : "s"} from ${kinds} kind${kinds === 1 ? "" : "s"} ` +
+          "of question; repeats use new numbers or a new context."
+        : `${Math.min(count, matching)} of ${matching} matching ${levelWord}question${matching === 1 ? "" : "s"}.`;
+    }
+
+    async function startDrill(event) {
+      event.preventDefault();
+      const request = {
+        sectionKey: elements.drillSection.value,
+        skill: elements.drillSkill.value,
+        difficulty: drillLevel() || null,
+        count: drillCount(),
+        feedback: elements.drillFeedback.value,
+      };
+      elements.drillCount.value = String(request.count);
+      elements.drillStart.disabled = true;
+      ctx.setStatus(elements.drillStatus, "Preparing your drill…", "loading");
+      try {
+        const opened = await ctx.startDrill(request);
+        ctx.setStatus(elements.drillStatus, opened
+          ? (opened < request.count ? `Only ${opened} questions matched, so the drill has ${opened}.` : "")
+          : "No questions match this drill. Choose another level.", opened ? "" : "error");
+      } catch (error) {
+        ctx.setStatus(elements.drillStatus, `${error.message} Refresh the page and try again.`, "error");
+      } finally {
+        elements.drillStart.disabled = false;
+      }
+    }
+
     /* ------------------------------------------------------ resume banner */
 
     function renderResumeBanner() {
@@ -732,14 +895,20 @@
       elements.resumeBanner.classList.toggle("hidden", !saved);
       if (!saved) return;
       const when = new Date(saved.savedAt).toLocaleString();
-      elements.resumeText.textContent =
-        `${saved.config.title}: ${saved.config.questionCount} questions, ` +
-        `${saved.config.feedback === "end" ? "report at the end" : "feedback after each question"}` +
-        `${saved.config.timeLimitSeconds ? ", timed" : ""}. Saved ${when}.`;
+      const test = saved.config.simulation;
+      elements.resumeHeading.textContent = test ? "You have an unfinished test" : "You have an unfinished set";
+      elements.discardSession.textContent = test ? "Discard test" : "Discard set";
+      elements.resumeText.textContent = test
+        ? `${window.LiminalSimulation.describe(window.LiminalSimulation.restore(test))} Saved ${when}.`
+        : `${saved.config.title}: ${saved.config.questionCount} questions, ` +
+          `${saved.config.feedback === "end" ? "report at the end" : "feedback after each question"}` +
+          `${saved.config.timeLimitSeconds ? ", timed" : ""}. Saved ${when}.`;
     }
 
-    function resumeSet() {
-      const problem = ctx.resume();
+    async function resumeSet() {
+      elements.resumeBtn.disabled = true;
+      const problem = await ctx.resume();
+      elements.resumeBtn.disabled = false;
       if (problem) {
         ctx.setStatus(elements.sessionStatus, problem, "error");
         renderResumeBanner();
@@ -747,40 +916,44 @@
     }
 
     function discardSet() {
+      const test = Boolean((ctx.activeSession.load() || { config: {} }).config.simulation);
       ctx.activeSession.clear();
-      ctx.setStatus(elements.sessionStatus, "The unfinished set was discarded.", "success");
+      ctx.setStatus(elements.sessionStatus, `The unfinished ${test ? "test" : "set"} was discarded.`, "success");
       renderResumeBanner();
     }
 
     /* --------------------------------------------------------- deep link */
 
-    // index.html#practice/<sectionKey>/<skillSlug>: the form set to that
-    // skill, every difficulty, ready for a count.
+    function scrollToCard(card, focus) {
+      const reduceMotion = window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      card.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      if (focus) focus.focus({ preventScroll: true });
+    }
+
+    // index.html#practice/<sectionKey>/<skillSlug> (Learn's "Practice this
+    // skill"): the drill set to that skill, ready to start.
     async function applyDeepLink(params) {
       const [key, skillSlug] = params;
       const section = ctx.sectionByKey(key);
       if (!section || section.test === undefined) return;
       if (ctx.currentTest() !== section.test) ctx.site.setTest(section.test);
-      elements.section.value = section.key;
-      elements.mode.value = "targeted";
-      await changeSection();
       const found = practice.findSkill(section, skillSlug);
       if (!found) {
-        ctx.setStatus(elements.bankStatus, "That skill link did not match a skill in this section.", "error");
+        ctx.setStatus(elements.drillStatus, "That skill link did not match a skill in this section.", "error");
+        scrollToCard(elements.drillForm);
         return;
       }
-      elements.domain.value = found.domain;
-      populateSkills();
-      elements.skill.value = found.skill;
-      elements.search.value = "";
-      difficultyInputs().forEach((input) => {
-        input.checked = true;
-      });
-      elements.filterDetails.open = true;
-      updateMatches();
-      ctx.setStatus(elements.bankStatus,
-        `The form is set to ${found.skill}. Choose the count, feedback, and timer, then start.`, "success");
-      scrollToForm();
+      elements.drillSection.value = section.key;
+      populateDrillSkills(found.skill);
+      await updateDrillNote();
+      if (elements.drillStart.disabled) {
+        setDrillLevel("");
+        await updateDrillNote();
+      }
+      ctx.setStatus(elements.drillStatus,
+        `The drill is set to ${found.skill}. Choose a level and start.`, "success");
+      scrollToCard(elements.drillForm, elements.drillStart);
     }
 
     /* ------------------------------------------------------------ wiring */
@@ -819,17 +992,36 @@
     elements.hardRepsCustomize.addEventListener("click", customizeHardReps);
     elements.retakeForm.addEventListener("submit", retake);
     elements.retakeInput.addEventListener("input", resetRetake);
+    elements.testArea.querySelectorAll("[data-test-kind]").forEach((button) => {
+      button.addEventListener("click", () => startTest(button));
+    });
+    elements.drillForm.addEventListener("submit", startDrill);
+    elements.drillSection.addEventListener("change", () => {
+      ctx.setStatus(elements.drillStatus, "");
+      populateDrillSkills();
+    });
+    elements.drillSkill.addEventListener("change", updateDrillNote);
+    elements.drillCount.addEventListener("input", updateDrillNote);
+    elements.drillCount.addEventListener("change", () => {
+      elements.drillCount.value = String(drillCount());
+      updateDrillNote();
+    });
+    drillLevelInputs().forEach((input) => input.addEventListener("change", updateDrillNote));
 
     function onTestChange() {
       populateSections();
+      populateDrillSections();
       renderSetupCopy();
       renderMiniTests();
       ctx.setStatus(elements.hardRepsStatus, "");
       ctx.setStatus(elements.retakeStatus, "");
+      ctx.setStatus(elements.testStatus, "");
+      ctx.setStatus(elements.drillStatus, "");
       changeSection();
     }
 
     populateSections();
+    populateDrillSections();
     renderSetupCopy();
     renderMiniTests();
     renderResumeBanner();
@@ -848,8 +1040,9 @@
         updateMatches();
         updateRecommendation();
       },
-      onSessionChange() {
+      onSessionChange(problem) {
         renderResumeBanner();
+        if (problem) ctx.setStatus(elements.sessionStatus, problem, "error");
       },
     };
   }

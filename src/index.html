@@ -45,8 +45,8 @@
         <header class="page-head">
           <h1 id="setupHeading" tabindex="-1">Practice</h1>
           <p id="setupLede" class="lede">
-            Build a set of original <span data-test-name>SAT</span> questions and
-            work through it in the digital test screen.
+            Take a timed test built like the real <span data-test-name>SAT</span>,
+            or practice in shorter sets. Everything opens in the digital test screen.
           </p>
         </header>
 
@@ -62,191 +62,300 @@
         </div>
         <div id="sessionStatus" class="status-line" role="status" aria-live="polite"></div>
 
-        <div class="practice-grid">
-          <form id="practiceForm" class="card builder" aria-labelledby="builderHeading" novalidate>
-            <h2 id="builderHeading">Build a practice set</h2>
-
-            <div class="field-grid">
-              <div class="field">
-                <label for="sectionSelect">Section</label>
-                <select id="sectionSelect" required aria-describedby="sectionNote"></select>
-                <p id="sectionNote" class="field-note"></p>
+        <section id="testArea" class="card test-area" aria-labelledby="testHeading" data-test-only="SAT">
+          <div class="area-head">
+            <h2 id="testHeading">Take a test</h2>
+            <p class="muted">
+              The real SAT's structure: timed modules, answers checked at the end.
+            </p>
+          </div>
+          <div class="test-options">
+            <div class="test-option">
+              <div class="test-option-text">
+                <h3>One module</h3>
+                <p>27 Reading and Writing questions in 32 minutes, or 22 Math questions in 35.</p>
+                <div class="test-option-field">
+                  <label for="testModuleKind">Which module</label>
+                  <select id="testModuleKind">
+                    <option value="1">Module 1: mixed difficulty</option>
+                    <option value="h">Module 2: harder</option>
+                    <option value="e">Module 2: easier</option>
+                  </select>
+                </div>
               </div>
-
-              <div class="field">
-                <label for="modeSelect">Practice mode</label>
-                <select id="modeSelect" aria-describedby="modeNote">
-                  <option value="targeted">Targeted practice</option>
-                  <option value="full">Full section mix</option>
-                  <option value="adaptive">Recommended next</option>
-                  <option value="missed">Missed-question review</option>
-                  <option value="flagged">Marked for review</option>
-                </select>
-                <p id="modeNote" class="field-note"></p>
-              </div>
-
-              <div class="field">
-                <label for="countInput">Questions</label>
-                <input
-                  id="countInput"
-                  class="count-input"
-                  type="number"
-                  min="1"
-                  step="1"
-                  value="20"
-                  inputmode="numeric"
-                />
-                <div id="countPicks" class="chip-row" role="group" aria-label="Question count shortcuts"></div>
-              </div>
-
-              <div class="field">
-                <label for="feedbackSelect">Feedback</label>
-                <select id="feedbackSelect">
-                  <option value="instant">After each question</option>
-                  <option value="end">Report at the end</option>
-                </select>
-              </div>
-
-              <div class="field span-2">
-                <span class="field-label" id="timedLabel">Timing</span>
-                <label class="check-line">
-                  <input id="timedCheck" type="checkbox" aria-describedby="timedNote" />
-                  Time me at real test pace
-                </label>
-                <p id="timedNote" class="field-note"></p>
+              <div class="test-option-actions">
+                <button class="button primary" type="button" data-test-kind="module" data-section="sat-reading-writing"
+                  aria-label="Start a Reading and Writing module">Reading and Writing</button>
+                <button class="button primary" type="button" data-test-kind="module" data-section="sat-math"
+                  aria-label="Start a Math module">Math</button>
               </div>
             </div>
+            <div class="test-option">
+              <div class="test-option-text">
+                <h3>One section</h3>
+                <p>Module 1, then a harder or easier Module 2 depending on how Module 1 went: 64 minutes for Reading and Writing, 70 for Math.</p>
+              </div>
+              <div class="test-option-actions">
+                <button class="button secondary" type="button" data-test-kind="section" data-section="sat-reading-writing"
+                  aria-label="Start the Reading and Writing section: 54 questions in 64 minutes">Reading and Writing</button>
+                <button class="button secondary" type="button" data-test-kind="section" data-section="sat-math"
+                  aria-label="Start the Math section: 44 questions in 70 minutes">Math</button>
+              </div>
+            </div>
+            <div class="test-option">
+              <div class="test-option-text">
+                <h3>Full-length SAT</h3>
+                <p>Both sections, four modules, and a 10-minute break: 2 hours 24 minutes in all.</p>
+              </div>
+              <div class="test-option-actions">
+                <button class="button secondary" type="button" data-test-kind="full">Start full-length SAT</button>
+              </div>
+            </div>
+          </div>
+          <div id="testStatus" class="status-line" role="status" aria-live="polite"></div>
+          <p class="note">
+            How Module 2 is chosen, and each module's mix of easy and hard
+            questions, are practice approximations: the College Board does not
+            publish its own. Results show percent correct, never a scaled score.
+          </p>
+        </section>
 
-            <details id="filterDetails" class="disclosure">
-              <summary>
-                <span class="disclosure-title">Narrow by topic</span>
-                <span id="filterSummary" class="disclosure-note">All topics</span>
-              </summary>
-              <div class="disclosure-body">
-                <p id="filterHint" class="hint hidden"></p>
+        <section class="practice-area" aria-labelledby="practiceAreaHeading">
+          <div class="area-head">
+            <h2 id="practiceAreaHeading">Practice sets</h2>
+            <p class="muted">Shorter sets, with feedback after each question if you want it.</p>
+          </div>
+
+          <div class="practice-grid">
+            <div class="main-stack">
+              <form id="drillForm" class="card drill-card" aria-labelledby="drillHeading" novalidate>
+                <h3 id="drillHeading">Drill one skill</h3>
+                <p class="muted">A short set on a single skill at one level, with new numbers or a new context each time.</p>
                 <div class="field-grid">
                   <div class="field">
-                    <label for="domainSelect">Domain</label>
-                    <select id="domainSelect">
-                      <option value="">All domains</option>
+                    <label for="drillSection">Section</label>
+                    <select id="drillSection"></select>
+                  </div>
+                  <div class="field">
+                    <label for="drillSkill">Skill</label>
+                    <select id="drillSkill"></select>
+                  </div>
+                  <fieldset class="field span-2">
+                    <legend>Level</legend>
+                    <div class="chip-row">
+                      <label class="check-chip"><input type="radio" name="drillLevel" value="Easy" /> Easy</label>
+                      <label class="check-chip"><input type="radio" name="drillLevel" value="Medium" checked /> Medium</label>
+                      <label class="check-chip"><input type="radio" name="drillLevel" value="Hard" /> Hard</label>
+                      <label class="check-chip"><input type="radio" name="drillLevel" value="" /> All levels</label>
+                    </div>
+                  </fieldset>
+                  <div class="field">
+                    <label for="drillCount">Questions</label>
+                    <input id="drillCount" class="count-input" type="number" min="1" max="30" step="1" value="10"
+                      inputmode="numeric" />
+                  </div>
+                  <div class="field">
+                    <label for="drillFeedback">Feedback</label>
+                    <select id="drillFeedback">
+                      <option value="instant">After each question</option>
+                      <option value="end">Report at the end</option>
                     </select>
+                  </div>
+                </div>
+                <div class="start-row">
+                  <button id="drillStart" class="button primary" type="submit">Start drill</button>
+                  <p id="drillNote" class="match-count" aria-live="polite"></p>
+                </div>
+                <div id="drillStatus" class="status-line" role="status" aria-live="polite"></div>
+              </form>
+
+              <form id="practiceForm" class="card builder" aria-labelledby="builderHeading" novalidate>
+                <h3 id="builderHeading">Build a practice set</h3>
+                <p class="muted">Choose a section, how many questions, and any topics. It also replays questions you missed or marked.</p>
+
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="sectionSelect">Section</label>
+                    <select id="sectionSelect" required aria-describedby="sectionNote"></select>
+                    <p id="sectionNote" class="field-note"></p>
                   </div>
 
                   <div class="field">
-                    <label for="skillSelect">Skill</label>
-                    <select id="skillSelect">
-                      <option value="">All skills</option>
+                    <label for="modeSelect">Practice mode</label>
+                    <select id="modeSelect" aria-describedby="modeNote">
+                      <option value="targeted">Targeted practice</option>
+                      <option value="full">Whole-section mix</option>
+                      <option value="adaptive">Recommended next</option>
+                      <option value="missed">Missed-question review</option>
+                      <option value="flagged">Marked for review</option>
+                    </select>
+                    <p id="modeNote" class="field-note"></p>
+                  </div>
+
+                  <div class="field">
+                    <label for="countInput">Questions</label>
+                    <input
+                      id="countInput"
+                      class="count-input"
+                      type="number"
+                      min="1"
+                      step="1"
+                      value="20"
+                      inputmode="numeric"
+                    />
+                    <div id="countPicks" class="chip-row" role="group" aria-label="Question count shortcuts"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="feedbackSelect">Feedback</label>
+                    <select id="feedbackSelect">
+                      <option value="instant">After each question</option>
+                      <option value="end">Report at the end</option>
                     </select>
                   </div>
 
-                  <fieldset class="field span-2">
-                    <legend>Difficulty</legend>
-                    <div class="chip-row">
-                      <label class="check-chip"><input type="checkbox" name="difficulty" value="Easy" checked /> Easy</label>
-                      <label class="check-chip"><input type="checkbox" name="difficulty" value="Medium" checked /> Medium</label>
-                      <label class="check-chip"><input type="checkbox" name="difficulty" value="Hard" checked /> Hard</label>
-                    </div>
-                  </fieldset>
-
                   <div class="field span-2">
-                    <label for="searchInput">Search this section</label>
-                    <input
-                      id="searchInput"
-                      type="search"
-                      placeholder="Skills, passages, topics, or question IDs"
-                      autocomplete="off"
-                    />
+                    <span class="field-label" id="timedLabel">Timing</span>
+                    <label class="check-line">
+                      <input id="timedCheck" type="checkbox" aria-describedby="timedNote" />
+                      Time me at real test pace
+                    </label>
+                    <p id="timedNote" class="field-note"></p>
                   </div>
                 </div>
-              </div>
-            </details>
 
-            <div class="start-row">
-              <button id="startBtn" class="button primary" type="submit" disabled>
-                Start practice set
-              </button>
-              <p id="matchCount" class="match-count" aria-live="polite">Loading…</p>
-            </div>
-            <div id="bankStatus" class="status-line" role="status" aria-live="polite"></div>
+                <details id="filterDetails" class="disclosure">
+                  <summary>
+                    <span class="disclosure-title">Narrow by topic</span>
+                    <span id="filterSummary" class="disclosure-note">All topics</span>
+                  </summary>
+                  <div class="disclosure-body">
+                    <p id="filterHint" class="hint hidden"></p>
+                    <div class="field-grid">
+                      <div class="field">
+                        <label for="domainSelect">Domain</label>
+                        <select id="domainSelect">
+                          <option value="">All domains</option>
+                        </select>
+                      </div>
 
-            <div class="recommend-row">
-              <div>
-                <h3 id="recommendHeading">Recommended next</h3>
-                <p id="recommendText" class="muted">
-                  Answer a few questions and a suggestion based on your history will appear here.
-                </p>
-              </div>
-              <button id="recommendBtn" class="button secondary" type="button" disabled
-                aria-describedby="recommendText">
-                Start recommended set
-              </button>
-            </div>
-          </form>
+                      <div class="field">
+                        <label for="skillSelect">Skill</label>
+                        <select id="skillSelect">
+                          <option value="">All skills</option>
+                        </select>
+                      </div>
 
-          <aside class="side-stack" aria-label="More ways to practice">
-            <section id="hardRepsCard" class="card" aria-labelledby="hardRepsHeading" data-test-only="SAT">
-              <h2 id="hardRepsHeading">Hard math reps</h2>
-              <p>
-                Ten genuinely hard SAT Math problems, generated fresh every time.
-                No timer; a full report at the end.
-              </p>
-              <div class="card-actions">
-                <button id="hardRepsBtn" class="button primary" type="button">Start 10 hard problems</button>
-                <button id="hardRepsCustomizeBtn" class="text-link" type="button">Set count, feedback, or timer</button>
-              </div>
-              <div id="hardRepsStatus" class="status-line" role="status" aria-live="polite"></div>
-            </section>
+                      <fieldset class="field span-2">
+                        <legend>Difficulty</legend>
+                        <div class="chip-row">
+                          <label class="check-chip"><input type="checkbox" name="difficulty" value="Easy" checked /> Easy</label>
+                          <label class="check-chip"><input type="checkbox" name="difficulty" value="Medium" checked /> Medium</label>
+                          <label class="check-chip"><input type="checkbox" name="difficulty" value="Hard" checked /> Hard</label>
+                        </div>
+                      </fieldset>
 
-            <section class="card" aria-labelledby="miniTestHeading">
-              <h2 id="miniTestHeading">Timed mini test</h2>
-              <p>
-                Twenty questions weighted like the real <span data-test-name>SAT</span>,
-                answered without feedback and reviewed in full afterwards.
-              </p>
-              <div id="miniTestOptions" class="mini-test-list"></div>
-              <div id="miniTestStatus" class="status-line" role="status" aria-live="polite"></div>
-              <p class="note">
-                Reports accuracy by section and domain. It does not estimate a
-                scaled score.
-              </p>
-            </section>
+                      <div class="field span-2">
+                        <label for="searchInput">Search this section</label>
+                        <input
+                          id="searchInput"
+                          type="search"
+                          placeholder="Skills, passages, topics, or question IDs"
+                          autocomplete="off"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </details>
 
-            <section class="card" aria-labelledby="retakeHeading" data-test-only="SAT">
-              <h2 id="retakeHeading">Retake a set</h2>
-              <p>
-                Every SAT set's report shows a set code, such as
-                <span class="code-sample">math-3f9k2-a8x1q</span>. Enter one to
-                take the same questions again.
-              </p>
-              <form id="retakeForm" class="retake-form" novalidate>
-                <label for="retakeInput">Set code</label>
-                <div class="retake-row">
-                  <input
-                    id="retakeInput"
-                    type="text"
-                    autocomplete="off"
-                    autocapitalize="off"
-                    spellcheck="false"
-                    aria-describedby="retakeStatus"
-                  />
-                  <button id="retakeBtn" class="button secondary" type="submit">Retake</button>
+                <div class="start-row">
+                  <button id="startBtn" class="button primary" type="submit" disabled>
+                    Start practice set
+                  </button>
+                  <p id="matchCount" class="match-count" aria-live="polite">Loading…</p>
+                </div>
+                <div id="bankStatus" class="status-line" role="status" aria-live="polite"></div>
+
+                <div class="recommend-row">
+                  <div>
+                    <h4 id="recommendHeading">Recommended next</h4>
+                    <p id="recommendText" class="muted">
+                      Answer a few questions and a suggestion based on your history will appear here.
+                    </p>
+                  </div>
+                  <button id="recommendBtn" class="button secondary" type="button" disabled
+                    aria-describedby="recommendText">
+                    Start recommended set
+                  </button>
                 </div>
               </form>
-              <div id="retakeStatus" class="status-line" role="status" aria-live="polite"></div>
-            </section>
+            </div>
 
-            <section class="card" aria-labelledby="printHeading">
-              <h2 id="printHeading">Printable booklet</h2>
-              <p>
-                A two-column paper test with a bubble answer sheet and a separate
-                answer key. Print it or save it as a PDF.
-              </p>
-              <div class="card-actions">
-                <a class="button secondary" href="print.html">Build a booklet</a>
-              </div>
-            </section>
-          </aside>
-        </div>
+            <aside class="side-stack" aria-label="More ways to practice">
+              <section class="card" aria-labelledby="miniTestHeading">
+                <h3 id="miniTestHeading">Timed mini test</h3>
+                <p>
+                  Twenty questions weighted like the real <span data-test-name>SAT</span>,
+                  answered without feedback and reviewed in full afterwards.
+                </p>
+                <div id="miniTestOptions" class="mini-test-list"></div>
+                <div id="miniTestStatus" class="status-line" role="status" aria-live="polite"></div>
+                <p class="note">
+                  Reports accuracy by section and domain. It does not estimate a
+                  scaled score.
+                </p>
+              </section>
+
+              <section id="hardRepsCard" class="card" aria-labelledby="hardRepsHeading" data-test-only="SAT">
+                <h3 id="hardRepsHeading">Hard math reps</h3>
+                <p>
+                  Ten genuinely hard SAT Math problems, generated fresh every time.
+                  No timer; a full report at the end.
+                </p>
+                <div class="card-actions">
+                  <button id="hardRepsBtn" class="button primary" type="button">Start 10 hard problems</button>
+                  <button id="hardRepsCustomizeBtn" class="text-link" type="button">Set count, feedback, or timer</button>
+                </div>
+                <div id="hardRepsStatus" class="status-line" role="status" aria-live="polite"></div>
+              </section>
+
+              <section class="card" aria-labelledby="retakeHeading" data-test-only="SAT">
+                <h3 id="retakeHeading">Retake a set</h3>
+                <p>
+                  Every SAT set's report shows a set code, such as
+                  <span class="code-sample">math-3f9k2-a8x1q</span>. Enter one to
+                  take the same questions again.
+                </p>
+                <form id="retakeForm" class="retake-form" novalidate>
+                  <label for="retakeInput">Set code</label>
+                  <div class="retake-row">
+                    <input
+                      id="retakeInput"
+                      type="text"
+                      autocomplete="off"
+                      autocapitalize="off"
+                      spellcheck="false"
+                      aria-describedby="retakeStatus"
+                    />
+                    <button id="retakeBtn" class="button secondary" type="submit">Retake</button>
+                  </div>
+                </form>
+                <div id="retakeStatus" class="status-line" role="status" aria-live="polite"></div>
+              </section>
+
+              <section class="card" aria-labelledby="printHeading">
+                <h3 id="printHeading">Printable booklet</h3>
+                <p>
+                  A two-column paper test with a bubble answer sheet and a separate
+                  answer key. Print it or save it as a PDF.
+                </p>
+                <div class="card-actions">
+                  <a class="button secondary" href="print.html">Build a booklet</a>
+                </div>
+              </section>
+            </aside>
+          </div>
+        </section>
       </section>
 
       <section id="dashboardView" class="view hidden" aria-labelledby="dashboardHeading">
@@ -360,6 +469,8 @@
     <script src="lib/core.js"></script>
     <script src="lib/template-mask.js"></script>
     <script src="lib/runs.js"></script>
+    <script src="lib/modules.js"></script>
+    <script src="lib/simulation.js"></script>
     <script src="lib/test-engine.js"></script>
     <script src="lib/progress.js"></script>
     <script src="lib/review-queue.js"></script>
