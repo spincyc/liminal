@@ -1,12 +1,11 @@
 /* Shared design tokens. One visual language for every page and for the
-   digital test mode, taken from the test screen: light, plain system sans,
-   one blue accent, neutral greys. Load this file before app.css,
-   test-shell.css, and math.css; they read these properties and define no
-   colors of their own. Light theme only, like the real test. */
+   digital test mode, taken from the test screen: plain system sans, one blue
+   accent, neutral greys. Load this file before app.css, test-shell.css, and
+   math.css; they read these properties and define no colors of their own.
+   Pages follow the system's light or dark setting; the test screen stays
+   light, like the real test (see the color block below). */
 
 :root {
-  color-scheme: light;
-
   /* Type */
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
     "Noto Sans", sans-serif;
@@ -27,7 +26,31 @@
   --math-fraction: 0.92em; /* numerator and denominator */
   --math-rule: max(1px, 0.065em); /* fraction bar and radical overline */
 
-  /* Color */
+  /* Shape */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  /* Focus and targets */
+  --focus-width: 3px;
+  --focus-offset: 2px;
+  --tap: 44px;
+  --bar-h: 64px;
+
+  /* Layout */
+  --page-max: 1180px;
+  --gutter: 24px;
+}
+
+/* Color, light. The test screen (.lm-shell) sets these again on itself so
+   it keeps the light values when the page around it turns dark: its
+   stylesheet still paints some surfaces #fff directly, and the real test
+   has no dark mode. */
+:root,
+.lm-shell {
+  color-scheme: light;
+
   --color-page: #f5f6f8;
   --color-surface: #fff;
   --color-ink: #1a1c20;
@@ -47,23 +70,41 @@
   --color-disabled: #e3e6ec;
   --color-disabled-ink: #596069;
 
-  /* Shape and depth */
-  --radius-sm: 6px;
-  --radius: 10px;
-  --radius-lg: 14px;
-  --radius-pill: 999px;
   --shadow-bar: 0 1px 3px rgba(20, 24, 31, 0.06);
   --shadow-card: 0 4px 18px rgba(20, 24, 31, 0.08);
+}
 
-  /* Focus and targets */
-  --focus-width: 3px;
-  --focus-offset: 2px;
-  --tap: 44px;
-  --bar-h: 64px;
+/* Color, dark: the same roles re-valued for a dark page. Every text pair
+   the stylesheets use meets WCAG AA (4.5:1; the lowest is disabled ink on
+   the disabled fill, 5.2:1), and control borders (line-strong) and focus
+   rings (accent) stay above 3:1. The accent turns light, so text on it
+   (on-accent) turns dark. Screen only: printing keeps ink on paper. */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
 
-  /* Layout */
-  --page-max: 1180px;
-  --gutter: 24px;
+    --color-page: #111317;
+    --color-surface: #1a1d22;
+    --color-ink: #e6e8ec;
+    --color-muted: #a8aeb8;
+    --color-line: #353a42;
+    --color-line-strong: #7d8591;
+    --color-soft: #23272e;
+    --color-softer: #1e2126;
+    --color-accent: #8fb0ff;
+    --color-accent-hover: #b4caff;
+    --color-accent-soft: #1f2b47;
+    --color-on-accent: #0b1533;
+    --color-good: #6bcf8a;
+    --color-good-soft: #16291d;
+    --color-bad: #ff8f86;
+    --color-bad-soft: #3a1c1a;
+    --color-disabled: #2a2e35;
+    --color-disabled-ink: #9aa1ab;
+
+    --shadow-bar: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.45);
+  }
 }
 
 @media (max-width: 640px) {
