@@ -116,7 +116,7 @@
       clue: "left the exact locations",
       key: "open-ended",
       wrong: [
-        ["detailed", "The proposal left specific locations undecided, the opposite of spelling everything out."],
+        ["fine-grained", "The proposal left specific locations undecided, the opposite of working out every detail."],
         ["extravagant", "Nothing in the text concerns the proposal's cost; it describes what the plan left undecided."],
         ["unpopular", "The text never reports residents' reactions; it says only that they would help decide the details later."],
       ],
@@ -523,7 +523,7 @@
     },
     {
       scene: "cs-heron-leopard-frog",
-      text: "In the wetland food web of Cattail Creek, the gray heron is a ______ of the leopard frog: herons wade slowly through the shallows, strike with their long bills, and swallow frogs whole.",
+      text: "In the wetland food web of Cattail Creek, the great blue heron is a ______ of the leopard frog: herons wade slowly through the shallows, strike with their long bills, and swallow frogs whole.",
       cue: "swallow frogs whole",
       side: "first",
       key: "predator",
@@ -575,7 +575,7 @@
     },
     {
       scene: "cs-asher-mills-strike",
-      text: "Legislators cited the 1848 strike at the Asher mills again and again during the debates over the Factory Act of 1850. Historians therefore regard the strike as a ______ of the law, which limited the workday to ten hours.",
+      text: "Legislators cited the 1848 strike at the Asher mills again and again during the debates over the state's Mill Hours Act of 1850. Historians therefore regard the strike as a ______ of the law, which limited the workday to ten hours.",
       cue: "Legislators cited the 1848 strike",
       side: "first",
       key: "catalyst",
@@ -633,16 +633,16 @@
   // uses a less common sense that the surrounding sentences settle.
   const WIC_UNCOMMON_TOPICS = [
     {
-      scene: "cs-circumbinary-planets",
-      text: "For decades, most astronomers would not even entertain the idea that a planet could orbit two stars at once, since the stars' shifting pull seemed certain to fling it away. Then a survey telescope detected a planet circling the double star Oren-4 on a stable path.",
+      scene: "cs-varne-valley-terraces",
+      text: "For decades, most historians of the Varne Valley would not even entertain the idea that its stone farming terraces were older than the valley's first written records, since no charter or chronicle mentions them. Then charcoal buried beneath the lowest terrace walls was radiocarbon dated to about 900 BCE.",
       word: "entertain",
       key: "consider",
-      everyday: ["amuse", "This is the everyday sense of “entertain,” but refusing to amuse an idea makes no sense; the text is about whether astronomers would take the possibility seriously."],
+      everyday: ["amuse", "This is the everyday sense of “entertain,” but refusing to amuse an idea makes no sense; the text is about whether historians would take the possibility seriously."],
       others: [
-        ["host", "“Entertain” can mean to receive guests, but an idea is not a guest; the sentence concerns whether astronomers would think about the possibility."],
-        ["observe", "Astronomers observe the sky, but no one can observe an idea; the sentence is about treating a possibility as worth thinking about."],
+        ["host", "“Entertain” can mean to receive guests, but an idea is not a guest; the sentence concerns whether historians would think about the possibility."],
+        ["observe", "Historians could see the terraces themselves, but no one can observe an idea; the sentence is about treating a possibility as worth thinking about."],
       ],
-      why: "Astronomers would not “entertain” the idea because they thought such a planet would be flung away, so the word means consider.",
+      why: "Historians would not “entertain” the idea because no written record mentioned the terraces, so the word means consider.",
     },
     {
       scene: "cs-lung-decline-arrested",
@@ -685,7 +685,7 @@
       text: "Because so few of Renzo Bassi's canvases survived the fire that destroyed his studio, those that remain have appreciated enormously: a painting that sold for 800 dollars in 1950 fetched 2 million dollars at auction last spring.",
       word: "appreciated",
       key: "risen in value",
-      everyday: ["won admiration", "To appreciate usually means to value or admire, but the sale prices show the text is about money, not praise."],
+      everyday: ["won wide admiration", "To appreciate usually means to value or admire, but the sale prices show the text is about money, not praise."],
       others: [
         ["become understood", "“Appreciate” can mean to understand fully, but the auction figures show a rise in price, not in understanding."],
         ["been restored", "The fire explains why the paintings are rare, but nothing says the surviving canvases were repaired."],
@@ -757,7 +757,7 @@
       text: "The critic Adaeze Mbeki praised the novel's daring structure, which tells its story backward, but found its dialogue flat, with characters who speak in the same even tone whether they are grieving, joking, or furious.",
       word: "flat",
       key: "dull",
-      everyday: ["level", "“Flat” most often describes a level surface, but dialogue has no surface; Mbeki means it lacks life and variety."],
+      everyday: ["horizontal", "“Flat” most often describes a horizontal surface, but dialogue has no surface; Mbeki means it lacks life and variety."],
       others: [
         ["blunt", "“Flat” can mean direct, as in a flat refusal, but Mbeki objects that the dialogue lacks variety of feeling, not that it is too direct."],
         ["quiet", "An even tone need not be quiet; the complaint is that the characters' feeling never changes."],
@@ -934,7 +934,7 @@
     },
     {
       scene: "cs-saturn-ringlets",
-      text: "Seen through a backyard telescope, Saturn's rings appear ______, like a single flat disk around the planet. Spacecraft images, however, reveal thousands of separate ringlets divided by narrow gaps.",
+      text: "Seen through a small backyard telescope, Saturn's rings appear ______, like a single flat disk around the planet. Spacecraft images, however, reveal thousands of separate ringlets divided by narrow gaps.",
       pivot: "however",
       lureCue: "thousands of separate ringlets",
       key: "continuous",
@@ -1019,7 +1019,7 @@
       text: "The old radio on the kitchen shelf had been silent for years. When Emeric finally turned the dial, it coughed, crackled, and then bloomed into a waltz so full and warm that his grandmother set down her knife to listen.",
       expression: "bloomed",
       key: "swelled",
-      literal: ["flowered", "Flowering is the literal sense of blooming, but a radio cannot produce flowers; the word describes the music opening out."],
+      literal: ["produced flowers", "Producing flowers is the literal sense of blooming, but a radio cannot do that; the word describes the music opening out and filling the room."],
       others: [
         ["faded", "The waltz is full and warm enough to stop his grandmother's work, the reverse of fading."],
         ["stalled", "Coughing and crackling might suggest a breakdown, but the radio went on to play a full waltz."],
@@ -1057,7 +1057,7 @@
       key: "work as one",
       literal: ["make garments", "Knitting literally produces clothing, but the orchestra is making music; the phrase describes the players coordinating."],
       others: [
-        ["break apart", "By the third week the players listen to one another and enter on time, the reverse of coming apart."],
+        ["fall to pieces", "By the third week the players listen to one another and enter on time, the reverse of coming apart."],
         ["compete openly", "The sections are listening for each other, not trying to outdo each other."],
       ],
       why: "The violins listen for the cellos and the horns enter on time, so the orchestra began to “knit together,” or work as one.",
@@ -1166,11 +1166,13 @@
     domain: "Craft and Structure",
     skill: "Words in Context",
     subskill: "meaning in context",
-    difficulty: "Medium",
+    difficulty: "Easy",
     title: "Figurative expression in descriptive prose",
     recognize:
       "The word or phrase is used figuratively; its literal meaning is offered and does not describe what the text shows.",
-    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    // Easy: the literal sense offered as the lure cannot describe the scene,
+    // so one look at the surrounding detail settles the item.
+    rubric: { steps: 0, concept: 1, interpretation: 1, distractors: 0, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["common-meaning", "word-association"],
     build(t) {
       const topic = t.pick(WIC_FIGURATIVE_TOPICS);
@@ -1191,7 +1193,7 @@
         principles: ["A figurative expression borrows the image of its literal meaning; the details around it show which quality of that image is meant."],
         trap: `Choosing “${topic.literal[0]},” the literal meaning, which cannot describe what the text shows.`,
         hint: "What do the details right after the expression show is happening?",
-        estimatedSeconds: 75,
+        estimatedSeconds: 55,
         // The expression appears exactly once, and the literal-sense choice is
         // offered alongside a key that the passage does not simply repeat.
         verify: () =>
@@ -1229,7 +1231,7 @@
       wrong: [
         ["indifferent", "Indifference means not caring, but respondents voiced real hopes and worries; their difficulty was holding both at once."],
         ["skeptical", "Skepticism captures the worry about shoppers but ignores that the same respondents expected benefits for schools."],
-        ["divided", "“Divided” would mean the town split into opposing camps, but the text says individual respondents held both views themselves."],
+        ["polarized", "“Polarized” would mean respondents split into two opposing camps, but the text says the same respondents held both views at once."],
       ],
       why: "The same respondents both hoped and worried, and many changed their answers, so they were ambivalent: each held mixed feelings.",
     },
@@ -1351,11 +1353,13 @@
     domain: "Craft and Structure",
     skill: "Words in Context",
     subskill: "precision",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Near-synonyms where only one fits every detail",
     recognize:
       "The four choices share a general meaning; each wrong one carries a connotation or scope that one detail in the text rules out.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
+    // Medium: the keys are everyday words (temporary, partial, limited), and
+    // each distractor clashes with one stated detail.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["extreme-language", "too-narrow"],
     build(t) {
       const topic = t.pick(WIC_CONNOTATION_TOPICS);
@@ -1368,7 +1372,7 @@
         principles: ["Near-synonyms differ in strength, attitude, or scope; the precise word is the one every detail in the text supports."],
         trap: "Choosing a word that fits one detail of the text while ignoring another.",
         hint: "Each wrong choice fits only part of what the text says. Which one fits all of it?",
-        seconds: 95,
+        seconds: 75,
         // Every clue the key must satisfy is in the text after the blank; where
         // the topic gives a yearly rate, recompute the compounded loss.
         check: () => {
@@ -1433,7 +1437,7 @@
       word: "dust",
       resolver: "brushing fine black powder",
       key: "apply powder to",
-      opposite: ["wipe clean", "Dusting usually means removing dust, but wiping the frame would destroy the prints; the technician adds powder to reveal them."],
+      opposite: ["remove dust from", "Dusting usually means removing dust, but wiping the frame would destroy the prints; the technician adds powder to reveal them."],
       others: [
         ["examine closely", "Close examination may follow, but the text describes brushing powder onto the glass."],
         ["seal off", "Sealing off a scene is police work, but the text describes what the technician did to the frame itself."],
@@ -1575,7 +1579,7 @@
           "Choose the sense that detail requires, even if the opening favored the other one.",
         ],
         principles: ["Some words carry opposite senses; decide between them from what the text says happened, not from the first impression."],
-        trap: `Choosing “${topic.opposite[0]},” the opposite sense of “${topic.word},” which the opening of the text makes attractive.`,
+        trap: `Choosing “${topic.opposite[0]},” the opposite sense of “${topic.word},” which fits the word on its own but not what the text goes on to say.`,
         hint: `What does the text say happened after “${topic.word}”?`,
         estimatedSeconds: 90,
         // The word occurs once, the settling detail comes after it, and the
@@ -1592,6 +1596,681 @@
     },
   };
 
+  /* ------------------ 9. High-register word for the standing of a claim */
+
+  // Dense academic prose; the blank names how well a claim, inference, or body
+  // of evidence stands. The choices are all advanced evaluative words that
+  // differ along separate dimensions (strength: tenuous; defensibility:
+  // untenable; ambiguity: equivocal; scope: circumscribed; time: provisional;
+  // basis: conjectural; genuineness: spurious; surface plausibility: specious;
+  // relevance: salient) or in degree, so the precise word is the one whose
+  // dimension and degree the details establish. Every key also serves as a
+  // distractor in other topics, so "the most impressive word" is no guide.
+  const WIC_EVALUATION_WORDS = new Set([
+    "equivocal", "tenuous", "untenable", "circumscribed", "provisional", "conjectural",
+    "specious", "corroborated", "salient", "incontrovertible", "spurious", "anomalous",
+    "anachronistic", "expansive", "superseded", "impugned", "peripheral", "tacit", "emblematic",
+  ]);
+
+  const WIC_EVALUATION_TOPICS = [
+    {
+      scene: "cs-corran-tutoring-evaluation",
+      text: "Advocates of expanding the Corran tutoring program cite its 2019 evaluation as proof that the program raises test scores, but the evaluation's own findings are ______. Scores rose at four of the eight participating schools and fell at the other four, and the evaluators conclude that their data are consistent both with a modest benefit and with no benefit at all.",
+      clues: ["consistent both with a modest benefit and with no benefit at all"],
+      key: "equivocal",
+      wrong: [
+        ["untenable", "“Untenable” would mean the findings cannot be defended, but nothing calls the data themselves into question; the problem is that they point two ways."],
+        ["anomalous", "“Anomalous” would mean the findings depart from an expected pattern, but the text names no expected pattern; it says the results support two readings."],
+        ["incontrovertible", "“Incontrovertible” is the advocates' view of the evaluation as proof, but results split four and four that fit both a benefit and none are far from beyond dispute."],
+      ],
+      why: "Scores rose at half the schools and fell at the other half, and the evaluators say their data fit both a modest benefit and none, so the findings are equivocal: open to more than one interpretation.",
+      trap: "Choosing “incontrovertible,” the advocates' view of the evaluation, instead of a word for what the evaluators themselves report.",
+      hint: "What do the evaluators say their data are consistent with?",
+    },
+    {
+      scene: "cs-vessaro-ledger-uprising",
+      text: "The historian Rosa Menezes's claim that Vessaro's merchants financed the uprising of 1791 rests on a single ledger entry recording a payment “for the cause” to an unnamed recipient. Menezes herself concedes that the phrase could refer to a parish fund or a relief society, so the documentary link between the merchants and the uprising remains ______ at best.",
+      clues: ["rests on a single ledger entry", "could refer to a parish fund"],
+      key: "tenuous",
+      wrong: [
+        ["untenable", "“Untenable” would mean the link has been shown to be indefensible, but nothing disproves it; and “at best” introduces the most that can be said for the link, not a word for its collapse."],
+        ["corroborated", "A single entry that may refer to something else confirms nothing; a corroborated link would need independent supporting evidence, which the text says is lacking."],
+        ["circumscribed", "“Circumscribed” describes a claim limited in scope, but the problem here is how thin the evidence is, not how far the claim extends."],
+      ],
+      why: "The link rests on one ambiguous entry that Menezes admits could mean something else, so it is tenuous: very weak, though not disproved.",
+      trap: "Choosing “untenable,” which goes further than the text: a thinly supported claim is weak, not refuted.",
+      hint: "How much evidence supports the link, and does anything contradict it?",
+    },
+    {
+      scene: "cs-velt-basin-salt-beds",
+      text: "For much of the twentieth century, textbooks described the salt flats of the Velt Basin as the floor of a single ancient lake that had filled once and then slowly evaporated. That account became ______ when drilling revealed two separate salt beds divided by a thick layer of river gravel, showing that the basin had dried out, flooded again, and dried out a second time.",
+      clues: ["filled once", "two separate salt beds"],
+      key: "untenable",
+      wrong: [
+        ["tenuous", "“Tenuous” would mean the account had become thinly supported, but two salt beds separated by gravel directly contradict a lake that filled only once."],
+        ["provisional", "“Provisional” describes a view accepted for now while more evidence is awaited, but the drilling did not leave the account awaiting review; it contradicted it."],
+        ["corroborated", "Evidence that the basin flooded at least twice contradicts, rather than confirms, a lake that filled once."],
+      ],
+      why: "An account of a lake that filled only once cannot survive evidence that the basin dried out and flooded again, so it became untenable: impossible to defend.",
+      trap: "Choosing “tenuous,” which understates the problem: the drilling does not merely weaken the single-lake account, it contradicts it.",
+      hint: "Compare what the textbook account says about the lake with what the drilling showed.",
+    },
+    {
+      scene: "cs-tamsin-bay-marsh-nitrogen",
+      text: "The authors of the Tamsin Bay wetlands study are careful to keep their conclusion ______. They report that restored marshes removed more nitrogen from farm runoff than unrestored ones did, but only in the three coastal counties they sampled and only during the growing season, and they explicitly decline to extend the finding to inland wetlands or to the winter months.",
+      clues: ["only in the three coastal counties", "decline to extend the finding"],
+      key: "circumscribed",
+      wrong: [
+        ["equivocal", "“Equivocal” would mean the conclusion points two ways, but the authors report a clear result; what they limit is where and when it applies."],
+        ["conjectural", "“Conjectural” describes a conclusion resting on guesswork, but this one rests on measurements taken in three counties."],
+        ["expansive", "“Expansive” is the reverse of what the authors do: they refuse to extend the finding beyond the places and season they studied."],
+      ],
+      why: "The authors confine the finding to three counties and one season and refuse to extend it further, so they keep the conclusion circumscribed: restricted in scope.",
+      trap: "Choosing “equivocal” because the authors sound cautious, although their caution concerns the reach of a clear result, not its meaning.",
+      hint: "What do the words “only” and “decline to extend” do to the authors' conclusion?",
+    },
+    {
+      scene: "cs-orvel-manuscripts-dating",
+      text: "The cataloging committee regards the new dating of the Orvel manuscripts as ______. The dates will guide every entry in the catalog for now, but the committee has scheduled a review for 2027, when results from a second laboratory's radiocarbon tests are expected, and it has told catalogers to keep the older dates in a note beside each entry.",
+      clues: ["for now", "scheduled a review"],
+      key: "provisional",
+      wrong: [
+        ["incontrovertible", "A committee that schedules a review and keeps the older dates on file does not treat the new ones as beyond dispute."],
+        ["circumscribed", "“Circumscribed” would mean the dating applies only within narrow limits, but it guides every entry in the catalog; what is limited is how long it will stand unreviewed."],
+        ["spurious", "“Spurious” would mean the committee thinks the dates are false, but it has adopted them to guide the catalog."],
+      ],
+      why: "The committee uses the new dates for now while planning a review and keeping the old dates at hand, so it regards them as provisional: accepted until they can be confirmed.",
+      trap: "Choosing “circumscribed,” which mistakes a limit on how long the dating is trusted for a limit on how widely it applies.",
+      hint: "What has the committee arranged for 2027, and why keep the older dates?",
+    },
+    {
+      scene: "cs-danza-portrait",
+      text: "No portrait of the composer Aurelio Danza survives from his lifetime, and none of his contemporaries left a description of his appearance. The familiar image of him, stooped and bearded with a quill in hand, derives from a painting made seventy years after his death, and the painter's depiction, however affecting, is entirely ______.",
+      clues: ["No portrait", "none of his contemporaries left a description"],
+      key: "conjectural",
+      wrong: [
+        ["anachronistic", "“Anachronistic” would mean the image contains details out of their proper period, but the text faults the painting for resting on no evidence; being painted later does not make an image anachronistic."],
+        ["corroborated", "No contemporary described Danza's appearance, so nothing could confirm the painter's depiction."],
+        ["equivocal", "“Equivocal” means open to two readings, but the image itself is perfectly clear; the problem is that nothing supports it."],
+      ],
+      why: "With no portrait and no description to work from, the painter could only imagine Danza's appearance, so the depiction is conjectural: based on guesswork.",
+      trap: "Choosing “anachronistic” because the painting came seventy years later, although the text's point is that it rests on no evidence at all.",
+      hint: "What evidence of Danza's appearance could the painter have drawn on?",
+    },
+    {
+      scene: "cs-tarn-highway-growth",
+      text: "At first glance, the argument that a new highway caused the Tarn Valley's population boom seems persuasive, since towns along the route grew by a third in the decade after it opened. The argument is ______, however: towns in the neighboring valley, which the highway never reached, grew just as quickly over the same decade, and residents of both valleys cite the same reason for moving there, an expanding mining industry.",
+      clues: ["seems persuasive", "grew just as quickly"],
+      key: "specious",
+      wrong: [
+        ["incontrovertible", "The argument seems beyond dispute only “at first glance”; “however” introduces evidence that undercuts it."],
+        ["equivocal", "“Equivocal” would mean the argument is ambiguous, but it is clear enough; the neighboring valley's equal growth shows that it is wrong."],
+        ["circumscribed", "“Circumscribed” would mean the argument is limited in scope, but the problem is that its explanation fails, not that it covers too little."],
+      ],
+      why: "The argument looks persuasive but fails once the neighboring valley's equal growth and the shared mining cause are considered, so it is specious: plausible on the surface but wrong.",
+      trap: "Choosing “incontrovertible,” the impression the argument makes at first glance, rather than what the evidence after “however” shows.",
+      hint: "How does the argument seem at first, and what does the evidence after “however” show?",
+    },
+    {
+      scene: "cs-skerra-head-whirlpool",
+      text: "Sailors' accounts from the 1850s describe a whirlpool that formed off Skerra Head only during the strongest spring tides, but historians long dismissed the reports as folklore. The accounts have since been ______ by computer models of the local tides, which show that currents at the headland reach whirlpool-forming speeds only under exactly the conditions the sailors described.",
+      clues: ["only during the strongest spring tides", "exactly the conditions the sailors described"],
+      key: "corroborated",
+      wrong: [
+        ["superseded", "“Superseded” would mean the models replaced the accounts with something better, but the models agree with the sailors; they confirm the accounts rather than displace them."],
+        ["circumscribed", "The models do not narrow the accounts: the sailors already said the whirlpool formed only on the strongest spring tides, and the models match that condition exactly."],
+        ["impugned", "“Impugned” would mean the models called the accounts into question, the reverse of what they did."],
+      ],
+      why: "Tidal models independently match the conditions the sailors reported, so the accounts have been corroborated: confirmed by separate evidence.",
+      trap: "Choosing “circumscribed” because the models apply “only under exactly the conditions,” although those were the sailors' own conditions.",
+      hint: "Compare what the models show with what the sailors reported.",
+    },
+    {
+      scene: "cs-treaty-drafts-river-clause",
+      text: "The two surviving drafts of the treaty differ in dozens of small ways, including spelling, punctuation, and the order in which the witnesses' names appear. For historians trying to explain why the negotiations collapsed, however, only one difference is ______: the later draft omits the clause guaranteeing each side access to the river, the very issue over which the talks broke down.",
+      clues: ["dozens of small ways", "the very issue over which the talks broke down"],
+      key: "salient",
+      wrong: [
+        ["peripheral", "“Peripheral” describes the dozens of small differences; the omitted river clause is the one that bears directly on why the talks failed."],
+        ["spurious", "“Spurious” would mean the difference is not genuine, but the later draft really does omit the clause."],
+        ["tacit", "“Tacit” means understood without being stated, but the missing clause is a documented difference between the drafts, not an unspoken understanding."],
+      ],
+      why: "Among many trivial differences, only the missing river clause bears on why the talks collapsed, so it is the salient one: the difference that stands out as relevant.",
+      trap: "Choosing “tacit” because the clause is missing, which confuses an omission from a document with something understood without being said.",
+      hint: "Which difference matters for explaining the collapse, and how does it compare with the others?",
+    },
+    {
+      scene: "cs-pellan-wreck-jars",
+      text: "Scholars had long debated whether the ceramic workshop at Pellan sold its wares overseas. The question was settled in 2021, when divers recovered more than four hundred jars bearing the workshop's stamp from a wreck off a distant island, still sealed in the ship's hold beneath cargo labels naming Pellan as their port of origin. The evidence that Pellan's jars traveled overseas is now ______.",
+      clues: ["The question was settled", "bearing the workshop's stamp"],
+      key: "incontrovertible",
+      wrong: [
+        ["tenuous", "Four hundred stamped jars under labels naming Pellan are the reverse of thin evidence."],
+        ["equivocal", "The stamps and labels leave no room for two readings; the text says the question was settled."],
+        ["specious", "“Specious” would mean the evidence only seems convincing, but nothing in the text undercuts it; the question was settled."],
+      ],
+      why: "Stamped jars and labels naming Pellan, found in a distant wreck, settled a long debate, so the evidence is incontrovertible: impossible to dispute.",
+      trap: "Choosing “specious,” which sounds like a verdict on evidence but means convincing only on the surface.",
+      hint: "What happened to the scholars' long debate in 2021?",
+    },
+    {
+      scene: "cs-brenholt-weekend-admissions",
+      text: "Early analyses of records from Brenholt's hospitals found that patients admitted on weekends died at higher rates than patients admitted on weekdays, and some administrators blamed thinner weekend staffing. A later study showed the association to be ______: weekend patients were, on average, far sicker when they arrived, and once the severity of their illness was taken into account, the difference in death rates disappeared entirely.",
+      clues: ["far sicker when they arrived", "disappeared entirely"],
+      key: "spurious",
+      wrong: [
+        ["tenuous", "“Tenuous” would leave a weak but real link between weekend admission and death, but the difference disappeared entirely once severity was considered."],
+        ["salient", "“Salient” would mean the association stood out as important, but the later study showed it was not a real effect of weekend admission at all."],
+        ["circumscribed", "“Circumscribed” would mean the association held only in a limited set of cases, but it vanished altogether."],
+      ],
+      why: "The apparent weekend effect vanished once the patients' condition on arrival was considered, so the association was spurious: apparent but not genuine.",
+      trap: "Choosing “tenuous,” which implies a real but weak link, when the text says the difference disappeared entirely.",
+      hint: "What happened to the difference once the patients' severity was taken into account?",
+    },
+    {
+      scene: "cs-kettle-hills-tree-rings",
+      text: "Tree-ring records from the Kettle Hills show a narrow ring, the mark of a dry year, in roughly one year of every eight across four centuries. The rings for 1740 through 1747, however, are ______: eight narrow rings in a row, a run that appears nowhere else in the record and that the researchers attribute to a prolonged drought.",
+      clues: ["one year of every eight", "appears nowhere else in the record"],
+      key: "anomalous",
+      wrong: [
+        ["spurious", "“Spurious” would mean the narrow rings are not genuine evidence, but the researchers read them as the record of a real drought."],
+        ["equivocal", "Eight narrow rings in a row point clearly to dry years; the text reports no competing reading of them."],
+        ["emblematic", "“Emblematic” would make the run typical of the record, but it appears nowhere else."],
+      ],
+      why: "Narrow rings normally appear about once in eight years, but here eight appear in a row, a run found nowhere else, so these rings are anomalous: departing from the usual pattern.",
+      trap: "Choosing “emblematic,” which would make the unusual run typical of the whole record.",
+      hint: "How does this run compare with the pattern across the rest of the four centuries?",
+    },
+  ];
+
+  // Builds a high-register blank item whose trap and hint are specific to the
+  // topic, and checks that all four choices come from the template's advanced
+  // word list and that every key recurs as a distractor elsewhere in the bank.
+  function WIC_registerItem(topic, bank, words, extra) {
+    const recurs = (key) => bank.some((other) => other !== topic && other.wrong.some(([word]) => word === key));
+    return WIC_blankItem(topic, {
+      ...extra,
+      trap: topic.trap,
+      hint: topic.hint,
+      check: () =>
+        [topic.key, ...topic.wrong.map(([word]) => word)].every((word) => words.has(word)) &&
+        topic.clues.every((clue) => topic.text.includes(clue)) &&
+        recurs(topic.key),
+    });
+  }
+
+  const wicAcademicEvaluation = {
+    id: "wic-academic-evaluation",
+    sectionKey: "sat-reading-writing",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    subskill: "precision",
+    difficulty: "Hard",
+    title: "Advanced word for how well a claim or body of evidence stands",
+    recognize:
+      "The blank names the standing of a claim or body of evidence; the advanced choices differ in dimension (strength, certainty, scope, genuineness, relevance) and in degree, and the details settle exactly one.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["extreme-language", "opposite-stance", "word-association"],
+    build(t) {
+      const topic = t.pick(WIC_EVALUATION_TOPICS);
+      return WIC_registerItem(topic, WIC_EVALUATION_TOPICS, WIC_EVALUATION_WORDS, {
+        steps: [
+          "Decide what the blank describes: how strong the evidence is, how certain or ambiguous, how broad, whether it is genuine, or how much it matters.",
+          "Find the details that establish that standing and note how far they go.",
+          "Choose the word that matches both the dimension and the degree those details establish.",
+        ],
+        principles: [
+          "Advanced evaluative words differ in what they measure: tenuous is about strength, untenable about whether a claim can be defended at all, equivocal about ambiguity, circumscribed about scope, provisional about time.",
+          "A word that is right in direction but wrong in degree or dimension is not the precise word.",
+        ],
+        seconds: 95,
+      });
+    },
+  };
+
+  /* ---------------- 10. High-register word for a scholar's or text's manner */
+
+  // The blank names the manner, scope, or attitude of a scholar, critic, or
+  // piece of writing; the details show one quality, and each distractor names
+  // a neighboring quality (cautious vs. reserved, thorough vs. narrow, biased
+  // vs. combative) that the details do not show, or a quality the text
+  // assigns to something else. Every key recurs as a distractor elsewhere.
+  const WIC_STANCE_WORDS = new Set([
+    "circumspect", "tendentious", "cursory", "exhaustive", "idiosyncratic", "derivative",
+    "sanguine", "ambivalent", "polemical", "reticent", "meticulous", "dispassionate",
+    "circumscribed", "archaic", "rudimentary", "diffident", "equivocal", "perfunctory", "candid", "pedantic",
+  ]);
+
+  const WIC_STANCE_TOPICS = [
+    {
+      scene: "cs-irrin-ridge-furnace",
+      text: "Although her excavation at Irrin Ridge uncovered what may be the oldest glass furnace yet found, the archaeologist Hana Ruiz was notably ______ in announcing it. Her report dates the furnace only to “no later than” the ninth century BCE, describes two ways in which the soil layers above it might have been disturbed, and declines to call the furnace the oldest until a second site has been analyzed.",
+      clues: ["describes two ways", "declines to call the furnace the oldest"],
+      key: "circumspect",
+      wrong: [
+        ["sanguine", "A sanguine archaeologist would confidently expect her find to prove the oldest, but Ruiz declines to make that claim."],
+        ["cursory", "“Cursory” means hasty and superficial, but a report that details possible disturbances to the soil is careful, not hurried."],
+        ["tendentious", "A tendentious report would slant the evidence toward a favored conclusion, but Ruiz's report sets out the ways her own find might mislead."],
+      ],
+      why: "Ruiz dates the furnace cautiously, sets out how the evidence might mislead, and withholds the claim that it is the oldest, so she was circumspect: careful not to claim more than the evidence allows.",
+      trap: "Choosing “sanguine” because the find may be the oldest yet found, although Ruiz refuses to claim that it is.",
+      hint: "What does Ruiz's report do with the claim that her furnace is the oldest?",
+    },
+    {
+      scene: "cs-callowmere-railway-report",
+      text: "Commissioned by the railway company whose safety record it was meant to assess, the 1887 Callowmere report is plainly ______. It attributes every accident to the carelessness of passengers, omits the inspectors' warnings about worn rails that appear in the company's own files, and closes by recommending that the company's charter be renewed.",
+      clues: ["Commissioned by the railway company", "recommending that the company's charter be renewed"],
+      key: "tendentious",
+      wrong: [
+        ["cursory", "A hasty report might miss evidence, but this one leaves out warnings from the company's own files and always blames passengers, a consistent slant rather than mere haste."],
+        ["dispassionate", "A report that blames only passengers and recommends renewing its sponsor's charter takes a side; it is not impartial."],
+        ["exhaustive", "A report that omits the inspectors' warnings is not complete."],
+      ],
+      why: "Paid for by the company it judged, the report blames passengers, leaves out unfavorable warnings, and recommends renewal, so it is tendentious: written to promote one side.",
+      trap: "Choosing “cursory,” which explains the missing warnings as haste and ignores that every omission favors the company.",
+      hint: "Whose interests do all of the report's choices serve?",
+    },
+    {
+      scene: "cs-ostrander-banners-catalog",
+      text: "The museum's exhibition catalog devotes forty pages to the Ostrander tapestries but only a single paragraph to the twelve embroidered banners displayed beside them, and that paragraph lists the banners' dimensions without discussing their makers, their imagery, or how the museum acquired them. Reviewers have rightly called the catalog's treatment of the banners ______.",
+      clues: ["only a single paragraph", "lists the banners' dimensions"],
+      key: "cursory",
+      wrong: [
+        ["tendentious", "“Tendentious” would mean the catalog argues a slanted case about the banners, but it says almost nothing about them at all."],
+        ["meticulous", "Forty careful pages go to the tapestries; the banners get one paragraph of measurements, the reverse of meticulous treatment."],
+        ["derivative", "“Derivative” would mean the paragraph was copied from someone else's work, which the text never suggests."],
+      ],
+      why: "Twelve banners receive one paragraph of dimensions and nothing about their makers, imagery, or history, so the treatment is cursory: hasty and superficial.",
+      trap: "Choosing “meticulous,” which describes the catalog's treatment of the tapestries, not of the banners.",
+      hint: "How much attention does the catalog give the banners compared with the tapestries?",
+    },
+    {
+      scene: "cs-baltic-rye-prices",
+      text: "Petra Holmqvist's history of Baltic grain prices is nothing if not ______. Drawing on the account books of more than three hundred merchant houses, it records the price of rye at every major port in the region for each month from 1650 to 1800, and it devotes a full appendix to reconciling the eleven different units in which merchants measured grain.",
+      clues: ["more than three hundred merchant houses", "every major port"],
+      key: "exhaustive",
+      wrong: [
+        ["cursory", "Monthly prices at every port over 150 years, drawn from three hundred merchant houses, are the reverse of a hasty survey."],
+        ["idiosyncratic", "“Idiosyncratic” would mean the study follows peculiar methods of the author's own, but the text stresses its completeness, not its oddity."],
+        ["circumscribed", "The study's subject is specific, but every detail stresses how completely it covers that subject; “circumscribed” would stress its limits."],
+      ],
+      why: "Every port, every month, three hundred sources, and an appendix on units: the study is exhaustive, covering its subject completely.",
+      trap: "Choosing “circumscribed” because the study concerns one region's grain, although every detail in the text stresses completeness, not limits.",
+      hint: "What do the details after “nothing if not” emphasize about the study?",
+    },
+    {
+      scene: "cs-heyer-diary-spelling",
+      text: "The eighteenth-century diarist Tomas Heyer spelled by rules that no one else followed: he wrote “night” as “nite” but “light” as “lyght,” and he marked the days of the week with symbols of his own devising. Scholars transcribing the diary must therefore master Heyer's ______ system of notation before they can reliably date its entries.",
+      clues: ["rules that no one else followed", "symbols of his own devising"],
+      key: "idiosyncratic",
+      wrong: [
+        ["archaic", "Spellings such as “lyght” look old-fashioned, but the text's point is that the rules were Heyer's alone, not that they belonged to an earlier age."],
+        ["derivative", "A system that no one else followed was not copied from others."],
+        ["rudimentary", "Nothing suggests the system is crude or undeveloped; the difficulty is that it is peculiar to Heyer."],
+      ],
+      why: "Heyer followed rules no one else used and invented his own symbols, so his system is idiosyncratic: peculiar to one person.",
+      trap: "Choosing “archaic” because of spellings like “lyght,” which look old but are singled out as Heyer's own.",
+      hint: "Whose rules did Heyer's spelling follow?",
+    },
+    {
+      scene: "cs-tirel-letters-novel",
+      text: "Critics have long praised Anselm Tirel's 1932 novel for its inventive structure: the story is told entirely in letters that are never answered. A recently rediscovered novel by Tirel's teacher, published eleven years earlier, uses the same device, follows a closely similar plot, and even shares the names of two characters, leading some scholars to conclude that Tirel's celebrated book is more ______ than it first appeared.",
+      clues: ["published eleven years earlier", "uses the same device"],
+      key: "derivative",
+      wrong: [
+        ["idiosyncratic", "“Idiosyncratic” would make the novel more individual, more peculiar to Tirel, the reverse of what the teacher's earlier book reveals."],
+        ["tendentious", "“Tendentious” describes writing slanted toward a cause, but nothing suggests the novel argues for anything; the discovery concerns where its device came from."],
+        ["polemical", "“Polemical” describes an aggressive attack on opponents, which has no bearing on a borrowed structure and plot."],
+      ],
+      why: "The teacher's earlier novel has the same device, a similar plot, and shared names, so Tirel's book is more derivative, drawn from another's work, than it seemed.",
+      trap: "Choosing “idiosyncratic,” which fits the novel's reputation for inventiveness but not the evidence that its structure was borrowed.",
+      hint: "What does the teacher's earlier novel reveal about where Tirel's device came from?",
+    },
+    {
+      scene: "cs-carvenne-currency-reform",
+      text: "Most economists who studied Carvenne's 1993 currency reform expected it to collapse within a year. The reform's chief architect, Ilse Maren, was far more ______: in a memorandum to the cabinet she predicted that inflation would fall below 5 percent within eighteen months, and she offered to resign if it did not.",
+      clues: ["expected it to collapse", "offered to resign if it did not"],
+      key: "sanguine",
+      wrong: [
+        ["circumspect", "A circumspect official would hedge her forecast, but Maren staked her post on a precise prediction."],
+        ["ambivalent", "“Ambivalent” means torn between opposing views, but Maren's memorandum shows no doubt about the reform."],
+        ["diffident", "“Diffident” means lacking self-confidence, the reverse of an official who offers to resign if her forecast fails."],
+      ],
+      why: "Unlike the pessimistic economists, Maren confidently predicted success and bet her post on it, so she was sanguine: optimistic.",
+      trap: "Choosing “circumspect,” a word for careful judgment, although Maren's bold, precise forecast is anything but hedged.",
+      hint: "How does Maren's forecast compare with the economists' expectations?",
+    },
+    {
+      scene: "cs-poet-city-letters",
+      text: "The poet's letters reveal a deeply ______ attitude toward the city where she spent her last thirty years. She praised its libraries and concert halls as the finest she had ever known, yet in the same letters she described its streets as “a noise I cannot think through” and repeatedly made, and then canceled, plans to leave.",
+      clues: ["praised its libraries", "then canceled, plans to leave"],
+      key: "ambivalent",
+      wrong: [
+        ["sanguine", "Her praise of the libraries is warm, but the complaints about the noise and her plans to leave show she was not simply hopeful about the city."],
+        ["polemical", "“Polemical” describes an aggressive argument against opponents, but these are private letters expressing mixed feelings, not an attack."],
+        ["reticent", "Letters full of praise, complaint, and plans to leave are the reverse of reluctant to reveal feelings."],
+      ],
+      why: "She praised the city and complained about it in the same letters, and she kept planning and canceling her departure, so her attitude was ambivalent: torn between opposing feelings.",
+      trap: "Choosing “sanguine” from her praise of the libraries while ignoring the complaints in the same letters.",
+      hint: "What did she keep doing with her plans to leave?",
+    },
+    {
+      scene: "cs-obiora-repatriation-essay",
+      text: "Unlike her earlier, measured surveys of the field, Dana Obiora's 2018 essay on returning museum objects to their countries of origin is frankly ______. It names the museum directors she holds responsible for delays, dismisses their public statements as “evasions,” and urges donors to withhold funds until the disputed objects are returned.",
+      clues: ["Unlike her earlier, measured surveys", "urges donors to withhold funds"],
+      key: "polemical",
+      wrong: [
+        ["dispassionate", "“Dispassionate” describes her earlier, measured surveys, which “Unlike” sets against this essay."],
+        ["equivocal", "An essay that names those responsible and urges donors to act takes a clear position; it is not ambiguous."],
+        ["perfunctory", "“Perfunctory” means done with minimal effort or interest, but the essay is forceful and specific."],
+      ],
+      why: "The essay attacks named directors, dismisses their statements, and calls for pressure on them, so it is polemical: a forceful argument against opponents.",
+      trap: "Choosing “dispassionate,” the quality of her earlier work that “Unlike” sets this essay against.",
+      hint: "What does “Unlike” tell you about how this essay differs from her earlier work?",
+    },
+    {
+      scene: "cs-brekke-memoir",
+      text: "Although the engineer Johan Brekke kept detailed notebooks on every bridge he designed, he was famously ______ about his private life. His four-hundred-page memoir never once mentions his family, and after he retired he declined every request for an interview, answering letters from admirers with a printed card that thanked them for their interest.",
+      clues: ["never once mentions his family", "declined every request for an interview"],
+      key: "reticent",
+      wrong: [
+        ["meticulous", "Brekke was meticulous about his bridges, as his notebooks show, but the blank concerns his private life, which he kept to himself."],
+        ["candid", "A memoir that never mentions his family and a refusal of every interview are the reverse of frank disclosure."],
+        ["sanguine", "“Sanguine” means optimistic, a quality the text never addresses."],
+      ],
+      why: "Brekke left his family out of his memoir and refused every interview, so he was reticent: unwilling to reveal personal matters.",
+      trap: "Choosing “meticulous,” which describes his engineering notebooks, not his reluctance to discuss his private life.",
+      hint: "What did Brekke leave out of his memoir, and how did he answer requests to talk?",
+    },
+    {
+      scene: "cs-brunn-altarpiece-restoration",
+      text: "Reviewers praised the restorers' ______ work on the Brunn altarpiece. Before removing any varnish, the team photographed each panel under ultraviolet light, logged the position of every earlier repair, and tested each solvent for six months on a hidden strip of the frame, a level of care that, one reviewer wrote, left nothing to chance.",
+      clues: ["Reviewers praised", "logged the position of every earlier repair"],
+      key: "meticulous",
+      wrong: [
+        ["pedantic", "“Pedantic” also involves attention to detail, but it is a criticism, fussiness over trivial points, and the reviewers praised the work."],
+        ["cursory", "Six months of solvent tests and a log of every repair are the reverse of hasty work."],
+        ["idiosyncratic", "“Idiosyncratic” would mean the restorers followed peculiar methods of their own, but the text praises their care, not their originality."],
+      ],
+      why: "Every step the text lists shows careful attention to detail, which the reviewers praised, so the work was meticulous.",
+      trap: "Choosing “pedantic,” which shares the attention to detail but carries a criticism that the reviewers' praise rules out.",
+      hint: "Do the reviewers admire or fault the restorers' attention to detail?",
+    },
+    {
+      scene: "cs-vells-flood-history",
+      text: "Writing only a year after the flood that destroyed her family's farm, the historian Mara Vells produced an account of the disaster that is remarkably ______. It weighs each of the engineers' decisions against the information they had at the time, credits several officials whom she might easily have blamed, and draws no conclusion where the records are incomplete.",
+      clues: ["destroyed her family's farm", "credits several officials"],
+      key: "dispassionate",
+      wrong: [
+        ["polemical", "Her loss might lead a reader to expect an attack, but the account credits officials she could have blamed."],
+        ["equivocal", "Declining to judge where records are missing is not ambiguity; the account weighs each decision and credits officials, reaching clear judgments wherever the evidence allows."],
+        ["perfunctory", "Weighing every decision against the information available at the time is thorough work, not the minimal effort “perfunctory” implies."],
+      ],
+      why: "Despite her personal loss, Vells judges the engineers fairly, credits officials, and avoids unsupported conclusions, so the account is dispassionate: free of personal feeling or bias.",
+      trap: "Choosing “polemical,” what her personal loss might lead a reader to expect, rather than what the account actually does.",
+      hint: "What might her loss have led her to write, and what did she write instead?",
+    },
+  ];
+
+  const wicAcademicStance = {
+    id: "wic-academic-stance",
+    sectionKey: "sat-reading-writing",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    subskill: "precision",
+    difficulty: "Hard",
+    title: "Advanced word for the manner of a scholar, critic, or text",
+    recognize:
+      "The blank names a manner, scope, or attitude; the details show one quality, and each advanced distractor names a neighboring quality the details do not show or a quality the text assigns to something else.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["opposite-stance", "true-but-irrelevant", "word-association"],
+    build(t) {
+      const topic = t.pick(WIC_STANCE_TOPICS);
+      return WIC_registerItem(topic, WIC_STANCE_TOPICS, WIC_STANCE_WORDS, {
+        steps: [
+          "Collect every detail the text gives about the person's or the text's manner, and note what the blank describes (not something nearby).",
+          "For each choice, name the quality it denotes and check whether those details show that quality.",
+          "Reject words for neighboring qualities (cautious vs. reserved, thorough vs. narrow, slanted vs. combative) and words the text applies to something else.",
+        ],
+        principles: [
+          "Advanced words for manner come in close families; the precise one is the quality the text's details actually demonstrate.",
+          "Connotation counts: praise rules out a word that carries criticism even when both describe the same behavior.",
+        ],
+        seconds: 95,
+      });
+    },
+  };
+
+  /* ------------------------- 11. Word used in an older sense in period prose */
+
+  // Original passages written in a nineteenth- or early twentieth-century
+  // style use a word in a sense now old-fashioned (nice = subtle, want =
+  // lack, discover = reveal). The modern sense is offered as `modern`; the
+  // other distractors are readings the surrounding detail invites and rules
+  // out. The passages are original writing, not excerpts, and say so.
+  const WIC_PERIOD_STORY = "The following text is from an original story written in a nineteenth-century style.";
+  const WIC_PERIOD_ESSAY = "The following text is from an original essay written in an early twentieth-century style.";
+
+  const WIC_PERIOD_TOPICS = [
+    {
+      scene: "cs-period-comma-in-will",
+      header: WIC_PERIOD_STORY,
+      text: "Mr. Aldous was not a man to be hurried in matters of judgment. When the two drafts of the will were laid before him, he sat an hour over them with his spectacles pushed high on his forehead, for the question between them was a nice one: the drafts differed in a single comma, and upon that comma depended whether the orchard passed to the nephew or to the parish.",
+      word: "nice",
+      resolver: "differed in a single comma",
+      key: "subtle",
+      modern: ["pleasant", "“Nice” now usually means pleasant, but a question that kept a careful man bent over two drafts for an hour was not agreeable; it was fine and difficult to decide."],
+      others: [
+        ["trivial", "A single comma sounds trivial, but the orchard's fate depended on it, so the question was fine, not unimportant."],
+        ["courteous", "People can be courteous, but a question cannot; the text describes how finely the drafts differed."],
+      ],
+      why: "The drafts differed only by a comma on which much depended, so the question was “nice” in the older sense: subtle, requiring fine judgment.",
+    },
+    {
+      scene: "cs-period-parsonage-wanted",
+      header: WIC_PERIOD_STORY,
+      text: "The parsonage at Elmstead was small and plainly furnished, yet it wanted nothing that a sensible family could require. There were books enough for the long evenings, a garden that kept the table in beans and apples through the autumn, and a fire that Mrs. Lowther never permitted to die before the household was abed.",
+      word: "wanted",
+      resolver: "There were books enough",
+      key: "lacked",
+      modern: ["desired", "“Wanted” now usually means desired, but a house cannot desire anything; the list that follows shows what the parsonage had, not what it wished for."],
+      others: [
+        ["demanded", "Nothing suggests the house required upkeep or effort; the text lists the comforts it supplied."],
+        ["concealed", "The books, garden, and fire are described openly; nothing is hidden."],
+      ],
+      why: "The sentences that follow list everything the family needed, so the parsonage “wanted,” or lacked, nothing.",
+    },
+    {
+      scene: "cs-period-letter-discover",
+      header: WIC_PERIOD_STORY,
+      text: "For three weeks Eleanor kept the letter in her workbox and said nothing of it, though her sister's questions grew daily more pointed. She had resolved not to discover its contents to anyone until she had spoken with her father, and she held to that resolution even when Harriet, in a fit of temper, accused her of hiding a secret engagement.",
+      word: "discover",
+      resolver: "accused her of hiding",
+      key: "reveal",
+      modern: ["find out", "“Discover” now usually means find out, but Eleanor already knows what the letter says; the question is whether she will tell anyone."],
+      others: [
+        ["examine", "Eleanor has kept and presumably read the letter; her resolution concerns other people, “to anyone,” not her own reading of it."],
+        ["dispute", "Nothing suggests she disagrees with the letter; she refuses to share it, which is why Harriet accuses her of hiding something."],
+      ],
+      why: "Eleanor says nothing of the letter and is accused of hiding a secret, so she resolved not to “discover,” or reveal, its contents to anyone.",
+    },
+    {
+      scene: "cs-period-captain-sensible",
+      header: WIC_PERIOD_STORY,
+      text: "Captain Harlowe was sensible of the honor the town meant to do him, and he thanked the committee warmly; but he confessed to his sister that evening that he would rather face another winter at sea than sit through a dinner at which he must hear his own conduct praised for two hours together.",
+      word: "sensible",
+      resolver: "thanked the committee warmly",
+      key: "aware",
+      modern: ["reasonable", "“Sensible” now usually means reasonable, but “sensible of the honor” describes his recognition of the town's intention, which he acknowledges by thanking the committee."],
+      others: [
+        ["unworthy", "His dread of being praised may suggest modesty, but “sensible of” describes his recognition of the honor, not a judgment that he does not deserve it."],
+        ["weary", "He dreads the long dinner, but that complaint comes later, to his sister; toward the honor itself he is grateful."],
+      ],
+      why: "Harlowe recognizes the honor and thanks the committee for it, so he was “sensible,” or aware, of it, even though he dreads the dinner.",
+    },
+    {
+      scene: "cs-period-primrose-conceit",
+      header: WIC_PERIOD_ESSAY,
+      text: "The old gardeners of the county had a pretty conceit that the first primrose of the year must be picked by a child, or the season would turn sour. No one, I think, quite believed it; yet I have seen a grown farmer stand back from a bank of primroses with his hands behind him until his small daughter could be fetched from the house.",
+      word: "conceit",
+      resolver: "No one, I think, quite believed it",
+      key: "whimsical belief",
+      modern: ["vain pride", "“Conceit” now usually means vanity, but the gardeners are not proud of themselves; they share an imaginative belief about primroses."],
+      others: [
+        ["old grievance", "Nothing in the text is a complaint; it describes a belief about who should pick the first flower."],
+        ["mere jest", "No one quite believed it, but the farmer still acts on it, so it is more than a joke."],
+      ],
+      why: "The gardeners share an imaginative belief that no one quite credits yet many honor, so a “conceit” here is a whimsical belief.",
+    },
+    {
+      scene: "cs-period-surgeon-mean-street",
+      header: WIC_PERIOD_STORY,
+      text: "The house in which the great surgeon was born stood at the end of a mean street near the tannery, among lodgings let by the week to carters and laborers. Visitors who came to see it after his death were often surprised, having supposed that so distinguished a man must have sprung from a family of some consequence.",
+      word: "mean",
+      resolver: "a family of some consequence",
+      key: "humble",
+      modern: ["unkind", "“Mean” now usually means unkind, but a street cannot be unkind; the lodgings for carters and laborers mark it as poor."],
+      others: [
+        ["average", "“Mean” can name an average, but the visitors' surprise shows the street was lower than they expected of a distinguished man's birthplace, not merely ordinary."],
+        ["narrow", "Old streets are often narrow, but the text describes the neighborhood's poverty, not its width."],
+      ],
+      why: "Weekly lodgings for laborers near a tannery, and visitors' surprise that he had not come from a family of consequence, show the street was “mean,” or humble.",
+    },
+    {
+      scene: "cs-period-doctor-presently",
+      header: WIC_PERIOD_STORY,
+      text: "The doctor, the maid explained as she showed Thomas into the cold front parlor, was with another patient but would come to him presently. Thomas sat on the edge of a horsehair chair and watched the clock on the mantel; before its hands had moved a quarter of an hour, the door opened and the doctor came in, drying his hands on a towel.",
+      word: "presently",
+      resolver: "before its hands had moved a quarter of an hour",
+      key: "soon",
+      modern: ["at this moment", "“Presently” is now often used to mean at present, but the doctor was with another patient and arrived only after Thomas had waited."],
+      others: [
+        ["in person", "Nothing suggests the doctor might have sent someone else; the text concerns when he would come."],
+        ["reluctantly", "The doctor arrives within a quarter of an hour, still drying his hands; nothing shows unwillingness."],
+      ],
+      why: "The doctor was busy but arrived within a quarter of an hour, so he would come “presently,” or soon.",
+    },
+    {
+      scene: "cs-period-falls-awful",
+      header: WIC_PERIOD_ESSAY,
+      text: "I had read a great deal about the falls before I saw them, and I expected to be disappointed, as travelers commonly are. I was not. The river, gathering itself at the lip of the gorge, went over with a slow and awful weight, and the roar of it came up through the soles of my boots, so that I stood a long while without speaking, a good deal humbled.",
+      word: "awful",
+      resolver: "a good deal humbled",
+      key: "awe-inspiring",
+      modern: ["unpleasant", "“Awful” now usually means very bad, but the writer was not disappointed; the falls left him silent and humbled."],
+      others: [
+        ["dangerous", "Great falls can be dangerous, but the writer's response is silent wonder, not fear for his safety."],
+        ["slow-moving", "“Slow” comes just before the word, but the roar that shakes the ground shows immense force, not a sluggish current."],
+      ],
+      why: "The writer, expecting disappointment, stood silent and humbled before the falls, so their weight was “awful” in the older sense: awe-inspiring.",
+    },
+    {
+      scene: "cs-period-candid-reader",
+      header: WIC_PERIOD_ESSAY,
+      text: "I do not ask the reader to agree with every judgment in these pages; I ask only that he be candid. Let him weigh the evidence for the old bridge as fairly as the evidence against it, and set aside for an hour the opinions he formed from the newspapers, and I am content to abide by whatever conclusion he reaches.",
+      word: "candid",
+      resolver: "as fairly as the evidence against it",
+      key: "impartial",
+      modern: ["outspoken", "“Candid” now usually means frank, but the writer asks the reader to weigh evidence fairly and set aside prior opinions, not to speak his mind."],
+      others: [
+        ["patient", "The writer asks for an hour, but the request that follows is to weigh both sides fairly, not simply to take time."],
+        ["agreeable", "The writer says outright that he does not ask the reader to agree with him."],
+      ],
+      why: "The writer asks the reader to weigh evidence on both sides fairly and set aside earlier opinions, so to be “candid” is to be impartial.",
+    },
+    {
+      scene: "cs-period-curious-clock",
+      header: WIC_PERIOD_STORY,
+      text: "On the mantel stood a clock of curious workmanship, its case carved with vines so fine that one could count the veins of every leaf, and its dial set with small enamel figures of the seasons that turned, one after another, as the hours passed. Old Mr. Pryor would let no one wind it but himself.",
+      word: "curious",
+      resolver: "count the veins of every leaf",
+      key: "intricate",
+      modern: ["inquisitive", "“Curious” now usually means eager to know, but workmanship cannot be inquisitive; the description is of finely detailed carving."],
+      others: [
+        ["costly", "Such a clock may well have been expensive, but the text describes the fineness of the work, not its price."],
+        ["ancient", "Mr. Pryor is old, but nothing dates the clock; the description concerns its detailed craftsmanship."],
+      ],
+      why: "Carving so fine that one can count the veins of every leaf, and turning enamel figures, show workmanship that is “curious” in the older sense: intricate.",
+    },
+    {
+      scene: "cs-period-lieutenant-interest",
+      header: WIC_PERIOD_STORY,
+      text: "Young Farrant had served eight years as a lieutenant without promotion, for he had no interest at the Admiralty: his father was a country curate who knew no one of consequence, and every captain's berth that fell vacant went to some admiral's nephew or some lord's godson.",
+      word: "interest",
+      resolver: "knew no one of consequence",
+      key: "influence",
+      modern: ["curiosity", "“Interest” now usually means curiosity, but Farrant's lack of promotion is explained by his father's lack of connections, not by his own attention."],
+      others: [
+        ["enthusiasm", "Nothing suggests Farrant was indifferent to the navy; the text blames his lack of connections."],
+        ["investment", "“Interest” can mean a financial stake, but the text explains promotion by family connections, not money."],
+      ],
+      why: "Promotions went to admirals' nephews and lords' godsons, and Farrant's father knew no one of consequence, so he had no “interest,” or influence, at the Admiralty.",
+    },
+    {
+      scene: "cs-period-housemaid-character",
+      header: WIC_PERIOD_STORY,
+      text: "The new housemaid arrived at Thornbury on a wet Tuesday with one trunk and an excellent character from her last mistress, who wrote that in six years the girl had never broken a dish, told a falsehood, or been late to prayers. Mrs. Pell read the letter twice and engaged her on the spot.",
+      word: "character",
+      resolver: "Mrs. Pell read the letter twice",
+      key: "reference",
+      modern: ["personality", "“Character” now usually means personality, but this character was written by her last mistress and read by Mrs. Pell."],
+      others: [
+        ["wardrobe", "She arrived with one trunk, but the character came “from her last mistress,” who wrote about the girl's conduct."],
+        ["education", "Nothing suggests her mistress taught her; the mistress wrote an account of her conduct."],
+      ],
+      why: "The character came from her last mistress, who wrote about the girl's conduct, and Mrs. Pell read it before hiring her, so it was a reference: a written account of her conduct.",
+    },
+  ];
+
+  const wicPeriodSense = {
+    id: "wic-period-older-sense",
+    sectionKey: "sat-reading-writing",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    subskill: "meaning in context",
+    difficulty: "Hard",
+    title: "Word used in an older sense in period prose",
+    recognize:
+      "In prose written in an older style, a familiar word carries a sense now old-fashioned; its modern meaning is offered and does not fit, and the surrounding detail settles the older sense.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    tricks: ["common-meaning", "word-association"],
+    build(t) {
+      const topic = t.pick(WIC_PERIOD_TOPICS);
+      const wrong = [topic.modern, ...topic.others];
+      const content = `${topic.header}\n\n${topic.text}`;
+      return {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "passage", content },
+        stem: WIC_meaningStem(topic.word),
+        correct: topic.key,
+        wrong,
+        explanation: topic.why,
+        steps: [
+          `Set aside the meaning “${topic.word}” usually has today and ask whether it can describe what the text shows.`,
+          "Find the detail that shows what the word must mean here, often a sentence or two away.",
+          "Choose the sense that detail requires, even if it is unfamiliar.",
+        ],
+        principles: [
+          "Older prose often uses familiar words in senses now old-fashioned; the context, not the modern meaning, decides.",
+        ],
+        trap: `Choosing “${topic.modern[0]},” the word's usual modern meaning, which the text's details rule out.`,
+        hint: "Which detail in the text shows what the word has to mean here?",
+        estimatedSeconds: 95,
+        // The word occurs once, the settling detail is in the passage, the
+        // modern-sense distractor discusses the word itself, and the key is
+        // not simply repeated from the passage.
+        verify: () =>
+          WIC_occurrences(topic.text, topic.word) === 1 &&
+          topic.text.includes(topic.resolver) &&
+          wrong[0] === topic.modern &&
+          WIC_namesWord(topic.modern[1], topic.word) &&
+          WIC_occurrences(topic.text, topic.key) === 0 &&
+          new Set([topic.key, ...wrong.map(([text]) => text)]).size === 4,
+      };
+    },
+  };
+
   return [
     wicRestatementBlank,
     wicMagnitudeBlank,
@@ -1601,5 +2280,8 @@
     wicFigurative,
     wicConnotationBlank,
     wicContronym,
+    wicAcademicEvaluation,
+    wicAcademicStance,
+    wicPeriodSense,
   ];
 });
