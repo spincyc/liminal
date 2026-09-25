@@ -3,22 +3,32 @@
 
 // Gate for question families (templates). Generates many repetitions of every
 // family and fails on anything a student would notice: a wrong key, a broken
-// choice, a method named in the stem, too few distinct repetitions, a
-// "not drawn to scale" figure with no answer the drawing lures toward, a
-// passage outside the real test's length, or too few templates for a run to
-// take at most one of each.
+// choice, a method named in the stem, an answer tell, too few distinct items,
+// a "not drawn to scale" figure with no answer the drawing lures toward, a
+// figure the renderer would damage, a passage outside the real test's length,
+// or too few templates for a run to take at most one of each. The numbered
+// checks are documented in docs/question-templates.md; their measurements live
+// in tools/lib/tells.js.
+//
+// Every family is instantiated on integer seeds 0..reps-1 and on as many
+// runtime-shaped seeds "<run>.<template>.<attempt>" (the shape runs.js uses),
+// so a defect that only runtime seeds reach is caught before students see it.
 //
 //   node tools/check-families.js                          # every section
 //   node tools/check-families.js --section sat-reading-writing
 //   node tools/check-families.js --section sat-math --file geometry
 //   node tools/check-families.js --family <id>
 //   node tools/check-families.js --sample [<id>] [--seed <s>] [--svg-dir <dir>]
-//   node tools/check-families.js --reps 500
+//   node tools/check-families.js --reps 500               # per seed shape (default 300)
+//   node tools/check-families.js --tells                  # print every measurement
+//   node tools/check-families.js --json <file>            # write them as JSON
 //   node tools/check-families.js --matrix                 # skill x difficulty coverage
 
 const fs = require("fs");
 const path = require("path");
 const S = require("../src/lib/families/shared");
+const T = require("./lib/tells");
+const { sanitizeSvgTree } = require("../src/app/render");
 const FAMILIES_ROOT = path.join(__dirname, "..", "src", "lib", "families");
 
 const args = process.argv.slice(2);
@@ -28,7 +38,11 @@ const option = (name, fallback) => {
 };
 const flag = (name) => args.includes(name);
 
-const REPS = Number(option("--reps", 200));
+const REPS = Number(option("--reps", 300));
+if (!Number.isInteger(REPS) || REPS < 1) {
+  console.error("--reps needs a positive whole number");
+  process.exit(1);
+}
 const catalog = require("../content/catalog.json");
 
 // Each section's families, and what it takes for a run to draw at most one
@@ -40,7 +54,11 @@ const SECTIONS = {
     numericShare: [0.2, 0.4],
     minNotToScaleFamilies: 3,
     minSurfaceForms: 2,
+    // Check 9: distinct items (stimulus, stem and the set of choices) as a
+    // share of the first LIMITS.varietyWindow draws.
     minDistinctShare: 0.75,
+    // Check 8: the blind hub strategy applies to Math.
+    hub: true,
     // A Math module is 22 questions and a section 44, so each tier must fill a
     // module and the section must fill itself without repeating a template.
     templateTargets: { total: 66, perDifficulty: { Easy: 22, Medium: 22, Hard: 22 }, perCell: 2 },
@@ -50,9 +68,53 @@ const SECTIONS = {
     passageWords: [25, 150],
     pairedWords: [25, 150],
     minScenes: 8,
-    maxLongestIsKey: 0.4,
+    // Check 9: a template must hold at least this many distinct items.
+    minDistinct: 10,
+    // Check 7: these domains must declare the grammatical features their
+    // choices vary on.
+    featureDomains: ["Standard English Conventions"],
+    // Check 10: the skill whose choices are transition words.
+    transitionsSkill: "Transitions",
     templateTargets: { total: 81, perDifficulty: { Easy: 27, Medium: 27, Hard: 27 }, perSkill: 6, perCell: 2 },
   },
+};
+
+// Thresholds of the numbered checks (docs/question-templates.md). Never
+// loosen one to make content pass. Shares of a template's repetitions are
+// judged only once at least `minSample` repetitions qualify, so a template
+// that is mostly numeric-response is not failed on a handful of choices.
+const LIMITS = {
+  minSample: 100,
+  position: [0.15, 0.35], // 2
+  textWords: 3, // 3, 5: choices averaging at least this many words are text
+  longestKey: 0.4, // 3
+  shortestKey: 0.4, // 3
+  extremeKey: [0.15, 0.85], // 4
+  openerFrequency: 0.25, // 5
+  openerKeyShare: 0.6, // 5
+  recurringFrequency: 0.2, // 6
+  recurringKeyShare: 0.75, // 6
+  featureAlone: 0.4, // 7
+  varietyWindow: 200, // 9: Math's distinct share is over the first 200 draws (100 of each seed shape)
+  hubTemplate: 0.5, // 8
+  hubTier: 0.32, // 8
+  transitionAppearances: 20, // 10
+  transitionKeyShare: [0.1, 0.6], // 10
+};
+
+const CHECK_NAMES = {
+  1: "builds, verifies, no modelled mistake on the key",
+  2: "key position",
+  3: "longest or shortest choice is the key",
+  4: "key is an extreme value",
+  5: "opener marks the key",
+  6: "recurring choice marks the key",
+  7: "declared features: key is the odd one out",
+  8: "blind hub strategy",
+  9: "variety",
+  10: "transition words",
+  11: "figures",
+  12: "template counts",
 };
 
 const RUBRIC_FACTORS = ["steps", "concept", "interpretation", "distractors", "abstraction", "synthesis", "trap"];
@@ -220,9 +282,25 @@ function passageTexts(content) {
   return /^Text 1\s*$/m.test(content) ? parts : [String(content)];
 }
 
+// A numeric key is what a student could enter in the answer grid: a plain
+// decimal, or an exact fraction in lowest terms where the decimal would
+// repeat, in at most 5 characters (6 with a minus sign).
+function numericKeyError(key) {
+  const text = String(key);
+  const fraction = /^-?(\d+)\/(\d+)$/.exec(text);
+  if (fraction) {
+    const [top, bottom] = [Number(fraction[1]), Number(fraction[2])];
+    if (bottom < 2) return `numeric key "${text}" has a denominator below 2`;
+    if (S.gcd(top, bottom) !== 1) return `numeric key "${text}" is not in lowest terms`;
+  } else if (!/^-?(\d+(\.\d+)?|\.\d+)$/.test(text)) {
+    return `numeric key "${text}" is neither a plain decimal nor a fraction`;
+  }
+  if (text.replace("-", "").length > 5) return `numeric key "${text}" does not fit the 5-character grid`;
+  return null;
+}
+
 function recordErrors(family, record, config) {
   const errors = [];
-  if (!record.verified) errors.push("verify() returned false");
   if (!config.responseTypes.includes(record.responseType)) errors.push(`responseType ${record.responseType} not allowed`);
   const text = strings(record);
   if (text.some((value) => typeof value !== "string" || !value.trim())) errors.push("empty text field");
@@ -246,9 +324,8 @@ function recordErrors(family, record, config) {
       errors.push("the key is the only choice that does not share the others' opening word");
     }
   } else {
-    const key = record.correctAnswer;
-    if (!/^-?(\d+(\.\d+)?|\.\d+)$/.test(key)) errors.push(`numeric key "${key}" is not a plain decimal`);
-    else if (key.replace("-", "").length > 5) errors.push(`numeric key "${key}" does not fit the 5-character grid`);
+    const problem = numericKeyError(record.correctAnswer);
+    if (problem) errors.push(problem);
   }
   if (record.stimulus) {
     if (!record.stimulus.type || !record.stimulus.content) errors.push("stimulus needs type and content");
@@ -284,63 +361,79 @@ function shapeOf(record) {
   return base.replace(/[−-]?\d+(\.\d+)?/g, "#").replace(/\s+/g, " ").trim();
 }
 
+// Runtime-shaped seed number `rep` for a template: "<run>.<template>.<attempt>",
+// with a base-36 run seed like app.js draws and attempts 0-2 like runs.js tries.
+function runtimeSeed(templateId, rep) {
+  const run = (S.hashString(`gate-run|${rep}`) % 36 ** 6).toString(36);
+  return `${run}.${templateId}.${rep % 3}`;
+}
+
+function seedsFor(family) {
+  const seeds = [];
+  for (let rep = 0; rep < REPS; rep += 1) seeds.push(rep, runtimeSeed(family.id, rep));
+  return seeds;
+}
+
+// What check 10 needs from a Transitions record, kept after the family is done.
+const slim = (record) => ({ templateId: record.templateId, choices: record.choices, correctAnswer: record.correctAnswer });
+
 function checkFamily(family, ids, config) {
-  const failures = metaErrors(family, ids);
+  const failures = metaErrors(family, ids).map((message) => ({ check: null, message }));
   const tally = { mc: 0, numeric: 0, figures: 0, notToScale: 0 };
-  const exact = new Set();
   const shapes = new Set();
   const scenes = new Set();
-  const positions = [0, 0, 0, 0];
-  let longestIsKey = 0;
+  const entries = [];
+  const transitions = [];
   const instanceErrors = new Map();
+  const figureErrors = new Map();
+  const count = (map, message) => map.set(message, (map.get(message) || 0) + 1);
   if (typeof family.build === "function") {
-    for (let rep = 0; rep < REPS; rep += 1) {
+    seedsFor(family).forEach((seed) => {
       let record;
       try {
-        record = S.instantiate(family, rep);
+        record = S.instantiate(family, seed);
       } catch (error) {
-        const message = `throws: ${error.message.split("\n")[0]}`;
-        instanceErrors.set(message, (instanceErrors.get(message) || 0) + 1);
-        continue;
+        entries.push({ seed, error });
+        return;
       }
-      recordErrors(family, record, config).forEach((message) =>
-        instanceErrors.set(message, (instanceErrors.get(message) || 0) + 1),
-      );
-      exact.add(`${record.stem}|${(record.choices || []).join("|")}|${record.figure ? record.figure.svg : ""}|${record.stimulus ? record.stimulus.content : ""}`);
+      entries.push({ seed, record });
+      recordErrors(family, record, config).forEach((message) => count(instanceErrors, message));
       shapes.add(shapeOf(record));
       if (record.scene) scenes.add(record.scene);
       if (record.responseType === "numeric") tally.numeric += 1;
       else {
         tally.mc += 1;
-        if (record.correctAnswer >= 0) positions[record.correctAnswer] += 1;
-        const lengths = record.choices.map((choice) => choice.length);
-        const longest = Math.max(...lengths);
-        if (lengths.filter((length) => length === longest).length === 1 &&
-          lengths[record.correctAnswer] === longest) longestIsKey += 1;
+        if (config.transitionsSkill === family.skill && Array.isArray(record.choices)) transitions.push(slim(record));
       }
       if (record.figure) {
         tally.figures += 1;
         if (record.figure.notToScale) tally.notToScale += 1;
+        if (record.figure.svg) T.figureProblems(record.figure.svg, sanitizeSvgTree).forEach((message) => count(figureErrors, message));
       }
-    }
+    });
   }
-  instanceErrors.forEach((count, message) => failures.push(`${message} (${count}/${REPS})`));
-  if (config.minDistinctShare && exact.size < REPS * config.minDistinctShare) {
-    failures.push(`only ${exact.size}/${REPS} distinct repetitions`);
-  }
+  const measure = T.measureTemplate(entries, { window: LIMITS.varietyWindow });
+  const records = measure.records;
+  instanceErrors.forEach((times, message) => failures.push({ check: null, message: `${message} (${times}/${records})` }));
+  failures.push(...T.templateFailures(measure, LIMITS, {
+    math: Boolean(config.hub),
+    requireFeatures: (config.featureDomains || []).includes(family.domain),
+    minDistinct: config.minDistinct,
+    minDistinctShare: config.minDistinctShare,
+  }));
+  figureErrors.forEach((times, message) =>
+    failures.push({ check: 11, message: `${message} (${times}/${tally.figures} figures)`, value: times / tally.figures }));
   if (config.minSurfaceForms && shapes.size < config.minSurfaceForms) {
-    failures.push("only 1 surface form; vary the question asked or its presentation");
+    failures.push({ check: null, message: "only 1 surface form; vary the question asked or its presentation" });
   }
   if (config.minScenes && scenes.size < config.minScenes) {
-    failures.push(`only ${scenes.size} scenes; a template needs at least ${config.minScenes}`);
+    failures.push({ check: null, message: `only ${scenes.size} scenes; a template needs at least ${config.minScenes}` });
   }
-  if (config.maxLongestIsKey && tally.mc && longestIsKey / tally.mc > config.maxLongestIsKey) {
-    failures.push(`longest choice is the key ${Math.round((longestIsKey / tally.mc) * 100)}% of the time`);
+  if ((family.tricks || []).includes("not-to-scale-figure") && tally.notToScale < records * 0.5) {
+    failures.push({ check: null, message: "declares not-to-scale-figure but under half its items carry one" });
   }
-  if ((family.tricks || []).includes("not-to-scale-figure") && tally.notToScale < REPS * 0.5) {
-    failures.push("declares not-to-scale-figure but under half its items carry one");
-  }
-  return { family, failures, tally, distinct: exact.size, forms: shapes.size, scenes: scenes.size, positions, longestIsKey };
+  failures.sort((left, right) => (left.check || 0) - (right.check || 0));
+  return { family, failures, tally, measure, forms: shapes.size, scenes: scenes.size, transitions };
 }
 
 function templateTargetFailures(families, targets) {
@@ -380,25 +473,46 @@ function templateTargetFailures(families, targets) {
   return failures;
 }
 
+const pct = (share) => (share === null || share === undefined ? "  -" : `${Math.round(share * 100)}`.padStart(3));
+const formatFailure = (failure) => `${failure.check ? `[${failure.check}] ` : ""}${failure.message}`;
+
+// Check 10: every transition offered often enough is the key sometimes, but
+// not most of the time, across the skill's templates.
+function transitionFailures(records) {
+  const [low, high] = LIMITS.transitionKeyShare;
+  return Object.entries(T.choiceKeyShares(records))
+    .filter(([, tally]) => tally.appearances >= LIMITS.transitionAppearances)
+    .map(([text, tally]) => ({ text, ...tally, share: tally.key / tally.appearances }))
+    .filter((entry) => entry.share < low || entry.share > high)
+    .sort((left, right) => left.share - right.share)
+    .map((entry) => ({
+      check: 10,
+      message: `"${entry.text}" is the key in ${Math.round(entry.share * 100)}% of its ${entry.appearances} appearances (want ${low * 100}-${high * 100}%)`,
+      value: entry.share,
+      templates: [...entry.templates].sort(),
+    }));
+}
+
 function report(sectionKey, config, results) {
   let failed = 0;
   const totals = { mc: 0, numeric: 0, positions: [0, 0, 0, 0], longestIsKey: 0, notToScaleFamilies: 0 };
   console.log(`\n# ${sectionKey}`);
   results.forEach((result) => {
-    const { family, failures, tally, distinct, forms, scenes } = result;
+    const { family, failures, tally, measure, forms, scenes } = result;
     const rubricTotal = RUBRIC_FACTORS.reduce((sum, factor) => sum + ((family.rubric || {})[factor] || 0), 0);
     const status = failures.length ? "FAIL" : "PASS";
     if (failures.length) failed += 1;
     console.log(
       `${status}  ${family.id.padEnd(40)} ${family.file.padEnd(20)} ${(family.difficulty || "Hard").padEnd(6)} rubric ${String(rubricTotal).padStart(2)}` +
-        `  reps ${distinct}/${REPS}  forms ${String(forms).padStart(3)}  scenes ${String(scenes).padStart(3)}  mc/num ${tally.mc}/${tally.numeric}` +
+        `  items ${measure.distinct}/${measure.reps}  forms ${String(forms).padStart(3)}  scenes ${String(scenes).padStart(3)}  mc/num ${tally.mc}/${tally.numeric}` +
         `  fig ${tally.figures} (nts ${tally.notToScale})`,
     );
-    failures.slice(0, 6).forEach((failure) => console.log(`        - ${failure}`));
+    failures.slice(0, 8).forEach((failure) => console.log(`        - ${formatFailure(failure)}`));
+    if (failures.length > 8) console.log(`        - and ${failures.length - 8} more`);
     totals.mc += tally.mc;
     totals.numeric += tally.numeric;
-    result.positions.forEach((count, index) => (totals.positions[index] += count));
-    totals.longestIsKey += result.longestIsKey;
+    measure.positions.forEach((count, index) => (totals.positions[index] += count));
+    totals.longestIsKey += measure.longestKey;
     if ((family.tricks || []).includes("not-to-scale-figure")) totals.notToScaleFamilies += 1;
   });
   const all = totals.mc + totals.numeric;
@@ -408,24 +522,134 @@ function report(sectionKey, config, results) {
     if (config.numericShare) {
       const [low, high] = config.numericShare;
       const share = totals.numeric / all;
-      if (share < low || share > high) aggregate.push(`numeric share ${(share * 100).toFixed(1)}% outside ${low * 100}-${high * 100}%`);
+      if (share < low || share > high) aggregate.push({ check: null, message: `numeric share ${(share * 100).toFixed(1)}% outside ${low * 100}-${high * 100}%` });
     }
     totals.positions.forEach((count, index) => {
       const share = totals.mc ? count / totals.mc : 0;
-      if (share < 0.18 || share > 0.32) aggregate.push(`answer position ${"ABCD"[index]} at ${(share * 100).toFixed(1)}%`);
+      if (share < 0.18 || share > 0.32) aggregate.push({ check: 2, message: `answer position ${"ABCD"[index]} at ${(share * 100).toFixed(1)}% across the section` });
     });
-    if (totals.mc && totals.longestIsKey / totals.mc > 0.4) aggregate.push("longest choice is the key over 40% of the time");
+    if (totals.mc && totals.longestIsKey / totals.mc > 0.4) aggregate.push({ check: 3, message: "longest choice is the key over 40% of the time across the section" });
     if (config.minNotToScaleFamilies && totals.notToScaleFamilies < config.minNotToScaleFamilies) {
-      aggregate.push(`only ${totals.notToScaleFamilies} families use not-to-scale figures; need ${config.minNotToScaleFamilies}`);
+      aggregate.push({ check: null, message: `only ${totals.notToScaleFamilies} families use not-to-scale figures; need ${config.minNotToScaleFamilies}` });
     }
   }
-  if (complete) aggregate.push(...templateTargetFailures(results.map((result) => result.family), config.templateTargets));
+  // Check 8, per tier: a whole module of one tier must not yield to the blind strategy.
+  const tiers = config.hub && complete
+    ? T.hubByTier(results.map((result) => ({ difficulty: result.family.difficulty || "Hard", measure: result.measure })))
+    : {};
+  Object.entries(tiers).forEach(([difficulty, tier]) => {
+    if (tier.share > LIMITS.hubTier) {
+      aggregate.push({ check: 8, message: `blind hub strategy scores ${Math.round(tier.share * 100)}% on ${difficulty} multiple choice (want at most ${LIMITS.hubTier * 100}%)`, value: tier.share, tier: difficulty });
+    }
+  });
+  const transitions = config.transitionsSkill && !option("--family", null)
+    ? transitionFailures(results.flatMap((result) => result.transitions))
+    : [];
+  aggregate.push(...transitions);
+  if (complete) {
+    aggregate.push(...templateTargetFailures(results.map((result) => result.family), config.templateTargets)
+      .map((message) => ({ check: 12, message })));
+  }
   console.log(
     `${results.length - failed}/${results.length} families pass; numeric ${all ? ((totals.numeric / all) * 100).toFixed(1) : 0}%` +
-      `; key positions ${totals.positions.join("/")}`,
+      `; key positions ${totals.positions.join("/")}` +
+      (Object.keys(tiers).length ? `; hub by tier ${Object.entries(tiers).map(([tier, value]) => `${tier} ${Math.round(value.share * 100)}%`).join(", ")}` : ""),
   );
-  aggregate.forEach((message) => console.log(`AGGREGATE FAIL: ${message}`));
-  return failed === 0 && aggregate.length === 0;
+  aggregate.forEach((failure) => console.log(`AGGREGATE FAIL: ${formatFailure(failure)}${failure.templates ? ` [${failure.templates.join(", ")}]` : ""}`));
+  return { ok: failed === 0 && aggregate.length === 0, aggregate, tiers };
+}
+
+// One row per template of every measurement, for --tells.
+function printTells(sectionKey, config, results) {
+  console.log(`\n# ${sectionKey} measurements (% of multiple-choice reps unless noted)`);
+  console.log(
+    `${"template".padEnd(40)} tier   mc/num    A   B   C   D  wrds long shrt  ext  hub item  opener(key%)            recurring(key%)          feature(alone%)`,
+  );
+  results.forEach(({ family, measure }) => {
+    const s = T.shares(measure);
+    const top = (entries, share) => {
+      const [name, tally] = entries.sort((left, right) => share(right[1]) - share(left[1]))[0] || [];
+      return name ? `${name.slice(0, 16)}(${Math.round(share(tally) * 100)})` : "-";
+    };
+    const openers = Object.entries(measure.openers).filter(([, tally]) => tally.occurrences >= LIMITS.openerFrequency * measure.mc);
+    const recurring = Object.entries(measure.recurring).filter(([, tally]) => tally.reps >= LIMITS.recurringFrequency * measure.mc);
+    console.log(
+      `${family.id.padEnd(40)} ${(family.difficulty || "Hard").padEnd(6)} ${`${measure.mc}/${measure.numeric}`.padStart(7)}  ` +
+        `${s.positions.map(pct).join(" ")}  ${s.averageChoiceWords === null ? "   -" : s.averageChoiceWords.toFixed(1).padStart(4)} ` +
+        `${pct(s.longestKey)}  ${pct(s.shortestKey)}  ${pct(s.extremeKey)}  ${pct(config.hub ? s.hub : null)} ${String(measure.distinct).padStart(4)}  ` +
+        `${top(openers, (tally) => tally.key / tally.occurrences).padEnd(22)}  ${top(recurring, (tally) => tally.key / tally.reps).padEnd(22)}  ` +
+        `${top(Object.entries(measure.features), (tally) => tally.keyAlone / tally.reps)}`,
+    );
+  });
+}
+
+// Everything measured, for --json: one entry per template plus the section's
+// aggregate results.
+function jsonSection(sectionKey, results, outcome) {
+  const round = (value) => Math.round(value * 1000) / 1000;
+  // Only the openers and choices frequent enough for checks 5 and 6.
+  const frequent = (tallies, count, minimum) => Object.fromEntries(Object.entries(tallies)
+    .filter(([, tally]) => count(tally) >= minimum)
+    .map(([name, tally]) => [name, { ...tally, keyShare: round(tally.key / count(tally)) }]));
+  return {
+    sectionKey,
+    tiers: outcome.tiers,
+    aggregate: outcome.aggregate,
+    templates: results.map(({ family, measure, failures, tally, forms, scenes }) => ({
+      id: family.id,
+      domain: family.domain,
+      skill: family.skill,
+      difficulty: family.difficulty || "Hard",
+      file: family.file,
+      reps: measure.reps,
+      records: measure.records,
+      throws: measure.throws,
+      unverified: measure.unverified,
+      keyEqualDistractors: measure.keyEqual,
+      mc: measure.mc,
+      numeric: measure.numeric,
+      distinct: measure.distinct,
+      windowDistinct: measure.windowDistinct,
+      windowRecords: measure.windowRecords,
+      forms,
+      scenes,
+      figures: tally.figures,
+      notToScale: tally.notToScale,
+      numericChoiceReps: measure.numericChoiceReps,
+      ...T.shares(measure),
+      openers: frequent(measure.openers, (tally) => tally.occurrences, LIMITS.openerFrequency * measure.mc),
+      recurring: frequent(measure.recurring, (tally) => tally.reps, LIMITS.recurringFrequency * measure.mc),
+      features: Object.fromEntries(Object.entries(measure.features).map(([name, tally]) =>
+        [name, { ...tally, aloneShare: round(tally.keyAlone / tally.reps) }])),
+      failures,
+    })),
+  };
+}
+
+// The failing templates of each numbered check, for follow-up work.
+function printSummary(sectionsOut) {
+  const byCheck = new Map();
+  sectionsOut.forEach(({ sectionKey, results, outcome }) => {
+    results.forEach(({ family, failures }) => failures.forEach((failure) => {
+      const key = failure.check || "other";
+      if (!byCheck.has(key)) byCheck.set(key, new Map());
+      const ids = byCheck.get(key);
+      const line = ids.get(family.id);
+      ids.set(family.id, line ? `${line}; ${failure.message}` : `${sectionKey}/${family.id}: ${failure.message}`);
+    }));
+    outcome.aggregate.forEach((failure) => {
+      const key = failure.check || "other";
+      if (!byCheck.has(key)) byCheck.set(key, new Map());
+      byCheck.get(key).set(`${sectionKey}|${failure.message}`, `${sectionKey} (section): ${failure.message}`);
+    });
+  });
+  if (!byCheck.size) return;
+  console.log("\n# Failures by check");
+  [...byCheck.keys()].sort((left, right) => (left === "other") - (right === "other") || left - right).forEach((check) => {
+    const lines = [...byCheck.get(check).values()];
+    console.log(`${check === "other" ? "other checks" : `check ${check} (${CHECK_NAMES[check]})`}: ${lines.length}`);
+    lines.forEach((line) => console.log(`  ${line}`));
+  });
 }
 
 function printSample(families) {
@@ -460,6 +684,10 @@ function printSample(families) {
     console.log(`explanation: ${record.explanation}`);
     record.solutionSteps.forEach((step, index) => console.log(`  ${index + 1}. ${step}`));
     console.log(`trap: ${record.trap}`);
+    if (record.choiceFeatures) {
+      record.choiceFeatures.forEach((features, index) => console.log(`  features ${"ABCD"[index]}: ${JSON.stringify(features)}`));
+    }
+    if (record.keyEqualDistractors) console.log(`key-equal distractors dropped: ${record.keyEqualDistractors}`);
     console.log(`verified: ${record.verified}`);
   });
 }
@@ -476,7 +704,9 @@ function printMatrix(sectionKey, families) {
 
 const onlySection = option("--section", null);
 const onlyFamily = option("--family", null);
+const jsonFile = option("--json", null);
 const sections = Object.entries(SECTIONS).filter(([key]) => !onlySection || key === onlySection);
+const checked = [];
 let ok = true;
 for (const [sectionKey, config] of sections) {
   const families = loadFamilies(sectionKey).filter((family) => !onlyFamily || family.id === onlyFamily);
@@ -492,6 +722,28 @@ for (const [sectionKey, config] of sections) {
   }
   if (!families.length && onlyFamily) continue;
   const ids = new Set();
-  if (!report(sectionKey, config, families.map((family) => checkFamily(family, ids, config)))) ok = false;
+  const results = families.map((family) => checkFamily(family, ids, config));
+  const outcome = report(sectionKey, config, results);
+  if (!outcome.ok) ok = false;
+  checked.push({ sectionKey, results, outcome });
 }
-if (!flag("--sample") && !flag("--matrix")) process.exit(ok ? 0 : 1);
+if (!flag("--sample") && !flag("--matrix")) {
+  if (onlyFamily && !checked.some((section) => section.results.length)) {
+    console.error(`no family "${onlyFamily}"`);
+    process.exit(1);
+  }
+  if (flag("--tells")) checked.forEach(({ sectionKey, results }) => printTells(sectionKey, SECTIONS[sectionKey], results));
+  printSummary(checked);
+  if (jsonFile) {
+    const output = {
+      reps: REPS,
+      seeds: "integers 0..reps-1 and as many runtime-shaped seeds <run>.<template>.<attempt>",
+      limits: LIMITS,
+      sections: checked.map(({ sectionKey, results, outcome }) => jsonSection(sectionKey, results, outcome)),
+    };
+    fs.writeFileSync(jsonFile, `${JSON.stringify(output, null, 2)}\n`);
+    console.log(`\nWrote ${jsonFile}`);
+  }
+  console.log(`\nreps per template: ${REPS} integer + ${REPS} runtime-shaped seeds`);
+  process.exit(ok ? 0 : 1);
+}

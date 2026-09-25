@@ -1,0 +1,434 @@
+"use strict";
+
+// Answer-tell and construct-validity measurements for the families gate
+// (tools/check-families.js). Pure functions over instantiated question
+// records, so each measure is unit-tested on hand-made items
+// (test/tells.test.js). A "tell" is anything that finds the key without
+// solving the problem: its position, its length, its opening words, a phrase
+// that is always the key, the one grammatical form the other choices do not
+// share, or, in Math, the value every distractor is built around.
+//
+// measureTemplate(records) summarizes one template's repetitions;
+// templateFailures(measure, limits) applies the numbered checks of
+// docs/question-templates.md; the section-level helpers cover difficulty
+// tiers, the Transitions skill, and figures.
+
+const { numericValue } = require("./expr");
+const { parseXml } = require("./svg-tree");
+
+const LETTERS = "ABCD";
+
+/* ----------------------------------------------------------- choice forms */
+
+const words = (text) => String(text).trim().split(/\s+/).filter(Boolean);
+
+// First two words, lower-cased, without punctuation: "By suggesting that…"
+// and "by suggesting, …" share the opener "by suggesting".
+function opener(choice) {
+  const tokens = (String(choice).toLowerCase().match(/[\p{L}\p{N}]+(?:['’-][\p{L}\p{N}]+)*/gu) || []);
+  return tokens.slice(0, 2).join(" ");
+}
+
+// A choice as a student would recognize it again: case, spacing, curly quotes
+// and trailing punctuation ignored, so "However," and "however" are one string.
+function normalizeChoice(choice) {
+  return String(choice)
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[“”]/g, '"')
+    .replace(/[‘’]/g, "'")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/[.,;:!?]+$/, "")
+    .trim();
+}
+
+// One item as a student meets it, ignoring the order of its choices.
+function itemIdentity(record) {
+  return JSON.stringify([
+    record.stimulus ? record.stimulus.content : "",
+    record.stem,
+    (record.choices || []).slice().sort(),
+  ]);
+}
+
+/* ------------------------------------------------ blind "hub" strategy */
+
+// The cold review's blind Math strategy (lane-math/meta.js), which never reads
+// the stem: distractors are usually built by varying the key, so the key tends
+// to share the most numbers and symbols with the other choices. Score each
+// choice by the tokens (numbers, letters, √ π ² ³) it shares with the others.
+// When all four choices are numbers, keep the two middle values and, of those,
+// the higher score; otherwise keep the highest score. Returns the kept
+// choices; a student guessing among them earns 1/kept.length when the key is
+// kept.
+function hubCandidates(choices) {
+  const tokens = choices.map((choice) =>
+    new Set(String(choice).replace(/−/g, "-").match(/\d+(\.\d+)?|[a-zA-Z]+|[√π²³]/g) || []));
+  const score = tokens.map((mine, index) => tokens.reduce((sum, theirs, other) =>
+    sum + (index === other ? 0 : [...mine].filter((token) => theirs.has(token)).length), 0));
+  const values = choices.map(numericValue);
+  if (values.every((value) => value !== null)) {
+    const order = [0, 1, 2, 3].sort((left, right) => values[left] - values[right]);
+    const middle = [order[1], order[2]];
+    const best = Math.max(...middle.map((index) => score[index]));
+    return middle.filter((index) => score[index] === best);
+  }
+  const best = Math.max(...score);
+  return choices.map((unused, index) => index).filter((index) => score[index] === best);
+}
+
+function hubCredit(choices, key) {
+  const kept = hubCandidates(choices);
+  return kept.includes(key) ? 1 / kept.length : 0;
+}
+
+/* ------------------------------------------------------------ measuring */
+
+const close = (left, right) => Math.abs(left - right) <= 1e-9 * Math.max(1, Math.abs(left), Math.abs(right));
+
+// True when the key is the smallest or largest of four numeric values.
+function keyIsExtreme(values, key) {
+  const others = values.filter((unused, index) => index !== key);
+  const value = values[key];
+  return others.every((other) => value < other || close(value, other)) ||
+    others.every((other) => value > other || close(value, other));
+}
+
+// Problems with a record's declared choice features: every choice needs an
+// object, all with the same feature names.
+function featureShapeError(record) {
+  const features = record.choiceFeatures;
+  if (!Array.isArray(features) || features.length !== record.choices.length) return "choiceFeatures must list one entry per choice";
+  if (features.some((entry) => !entry || typeof entry !== "object")) return "choiceFeatures has a choice with no features";
+  const names = Object.keys(features[0]).sort().join("|");
+  if (!names) return "choiceFeatures declares no features";
+  if (features.some((entry) => Object.keys(entry).sort().join("|") !== names)) {
+    return "choiceFeatures names differ between choices";
+  }
+  return null;
+}
+
+// A dictionary safe for any key, even "constructor" or "__proto__".
+const dictionary = () => Object.create(null);
+
+// Summarizes a template's repetitions. `entries` are { seed, record } or
+// { seed, error }. Counts, not verdicts: templateFailures applies the limits.
+// A share of distinct items falls as draws grow (a template has finitely many
+// items), so the variety share is taken over the first `options.window`
+// records, keeping it independent of how many repetitions a run makes.
+function measureTemplate(entries, options) {
+  const window = (options && options.window) || Infinity;
+  const m = {
+    reps: entries.length,
+    throws: 0,
+    throwSeeds: [],
+    throwMessages: dictionary(),
+    unverified: 0,
+    unverifiedSeeds: [],
+    keyEqual: 0,
+    keyEqualSeeds: [],
+    records: 0,
+    windowRecords: 0,
+    windowDistinct: 0,
+    mc: 0,
+    numeric: 0,
+    distinct: 0,
+    positions: [0, 0, 0, 0],
+    choiceWords: 0,
+    longestKey: 0,
+    shortestKey: 0,
+    numericChoiceReps: 0,
+    extremeKey: 0,
+    hub: 0,
+    openers: dictionary(),
+    recurring: dictionary(),
+    features: dictionary(),
+    featureReps: 0,
+    featureErrors: dictionary(),
+  };
+  const identities = new Set();
+  entries.forEach(({ seed, record, error }) => {
+    if (error) {
+      m.throws += 1;
+      if (m.throwSeeds.length < 3) m.throwSeeds.push(String(seed));
+      const message = String(error.message || error).split("\n")[0];
+      m.throwMessages[message] = (m.throwMessages[message] || 0) + 1;
+      return;
+    }
+    m.records += 1;
+    identities.add(itemIdentity(record));
+    if (m.records <= window) {
+      m.windowRecords = m.records;
+      m.windowDistinct = identities.size;
+    }
+    if (record.verified === false) {
+      m.unverified += 1;
+      if (m.unverifiedSeeds.length < 3) m.unverifiedSeeds.push(String(seed));
+    }
+    if (record.keyEqualDistractors) {
+      m.keyEqual += 1;
+      if (m.keyEqualSeeds.length < 3) m.keyEqualSeeds.push(String(seed));
+    }
+    if (record.responseType !== "multiple-choice" || !Array.isArray(record.choices)) {
+      m.numeric += 1;
+      return;
+    }
+    const { choices } = record;
+    const key = record.correctAnswer;
+    m.mc += 1;
+    if (key >= 0 && key < 4) m.positions[key] += 1;
+    m.choiceWords += choices.reduce((sum, choice) => sum + words(choice).length, 0);
+    const lengths = choices.map((choice) => choice.length);
+    const longest = Math.max(...lengths);
+    const shortest = Math.min(...lengths);
+    if (lengths[key] === longest && lengths.filter((length) => length === longest).length === 1) m.longestKey += 1;
+    if (lengths[key] === shortest && lengths.filter((length) => length === shortest).length === 1) m.shortestKey += 1;
+    const values = choices.map(numericValue);
+    if (values.every((value) => value !== null)) {
+      m.numericChoiceReps += 1;
+      if (keyIsExtreme(values, key)) m.extremeKey += 1;
+    }
+    m.hub += hubCredit(choices, key);
+    choices.forEach((choice, index) => {
+      const start = opener(choice);
+      if (!start) return;
+      const tally = (m.openers[start] = m.openers[start] || { occurrences: 0, key: 0 });
+      tally.occurrences += 1;
+      if (index === key) tally.key += 1;
+    });
+    new Set(choices.map(normalizeChoice)).forEach((text) => {
+      const tally = (m.recurring[text] = m.recurring[text] || { reps: 0, key: 0 });
+      tally.reps += 1;
+      if (normalizeChoice(choices[key]) === text) tally.key += 1;
+    });
+    if (record.choiceFeatures) {
+      const problem = featureShapeError(record);
+      if (problem) {
+        m.featureErrors[problem] = (m.featureErrors[problem] || 0) + 1;
+        return;
+      }
+      m.featureReps += 1;
+      Object.keys(record.choiceFeatures[key]).forEach((name) => {
+        const value = record.choiceFeatures[key][name];
+        const tally = (m.features[name] = m.features[name] || { reps: 0, keyAlone: 0 });
+        tally.reps += 1;
+        const shared = record.choiceFeatures.some((entry, index) => index !== key && entry[name] === value);
+        if (!shared) tally.keyAlone += 1;
+      });
+    }
+  });
+  m.distinct = identities.size;
+  return m;
+}
+
+/* ------------------------------------------------------------- verdicts */
+
+const percent = (share) => `${Math.round(share * 100)}%`;
+const seedList = (seeds) => (seeds.length ? ` (e.g. seed ${seeds.map((seed) => JSON.stringify(seed)).join(", ")})` : "");
+
+// Derived shares, rounded for reports and JSON.
+function shares(m) {
+  const round = (value) => Math.round(value * 1000) / 1000;
+  const of = (count, total) => (total ? round(count / total) : null);
+  return {
+    positions: m.positions.map((count) => of(count, m.mc)),
+    averageChoiceWords: m.mc ? round(m.choiceWords / (4 * m.mc)) : null,
+    longestKey: of(m.longestKey, m.mc),
+    shortestKey: of(m.shortestKey, m.mc),
+    numericChoiceShare: of(m.numericChoiceReps, m.mc),
+    extremeKey: of(m.extremeKey, m.numericChoiceReps),
+    hub: of(m.hub, m.mc),
+    distinctShare: of(m.windowDistinct, m.windowRecords),
+  };
+}
+
+// The numbered per-template checks. `limits` holds the thresholds (the gate
+// passes the documented ones); `context` says which section-specific checks
+// apply: { math, requireFeatures, minDistinct, minDistinctShare }.
+// Returns [{ check, message, value }].
+function templateFailures(m, limits, context) {
+  const settings = context || {};
+  const failures = [];
+  const fail = (check, message, value) => failures.push({ check, message, value });
+  const s = shares(m);
+
+  // 1. Every repetition builds, verifies, and keeps every modelled mistake off the key.
+  if (m.throws) {
+    const [message] = Object.keys(m.throwMessages);
+    fail(1, `throws in ${m.throws}/${m.reps} reps: ${message}${seedList(m.throwSeeds)}`, m.throws / m.reps);
+  }
+  if (m.unverified) fail(1, `verify() false in ${m.unverified}/${m.records} reps${seedList(m.unverifiedSeeds)}`, m.unverified / m.records);
+  if (m.keyEqual) {
+    fail(1, `a modelled mistake equals the key in ${m.keyEqual}/${m.records} reps${seedList(m.keyEqualSeeds)}`, m.keyEqual / m.records);
+  }
+
+  const sampled = m.mc >= limits.minSample;
+  // 2. Key position.
+  if (sampled) {
+    s.positions.forEach((share, index) => {
+      if (share < limits.position[0] || share > limits.position[1]) {
+        fail(2, `key is ${LETTERS[index]} in ${percent(share)} of reps (want ${percent(limits.position[0])}-${percent(limits.position[1])})`, share);
+      }
+    });
+  }
+
+  // 3. Text choices: the key is not reliably the longest or the shortest.
+  const text = sampled && s.averageChoiceWords >= limits.textWords;
+  if (text) {
+    if (s.longestKey > limits.longestKey) fail(3, `key is the unique longest choice in ${percent(s.longestKey)} of reps`, s.longestKey);
+    if (s.shortestKey > limits.shortestKey) fail(3, `key is the unique shortest choice in ${percent(s.shortestKey)} of reps`, s.shortestKey);
+  }
+
+  // 4. Numeric choices: the key is an extreme value neither always nor never.
+  if (m.numericChoiceReps >= limits.minSample) {
+    const [low, high] = limits.extremeKey;
+    if (s.extremeKey < low || s.extremeKey > high) {
+      fail(4, `key is the smallest or largest value in ${percent(s.extremeKey)} of ${m.numericChoiceReps} numeric-choice reps (want ${percent(low)}-${percent(high)})`, s.extremeKey);
+    }
+  }
+
+  // 5. Openers: a frequent opening is not a key marker.
+  if (text) {
+    Object.entries(m.openers)
+      .filter(([, tally]) => tally.occurrences >= limits.openerFrequency * m.mc)
+      .forEach(([start, tally]) => {
+        const share = tally.key / tally.occurrences;
+        if (share > limits.openerKeyShare) {
+          fail(5, `opener "${start}" is the key in ${percent(share)} of its ${tally.occurrences} uses`, share);
+        }
+      });
+  }
+
+  // 6. A recurring choice is not a key marker.
+  if (sampled) {
+    Object.entries(m.recurring)
+      .filter(([, tally]) => tally.reps >= limits.recurringFrequency * m.mc)
+      .forEach(([choice, tally]) => {
+        const share = tally.key / tally.reps;
+        if (share > limits.recurringKeyShare) {
+          fail(6, `choice "${choice.slice(0, 60)}" recurs in ${percent(tally.reps / m.mc)} of reps and is the key in ${percent(share)} of them`, share);
+        }
+      });
+  }
+
+  // 7. Declared features: the key is not the odd one out.
+  Object.entries(m.featureErrors).forEach(([problem, count]) => fail(7, `${problem} (${count} reps)`, count));
+  if (settings.requireFeatures && m.mc && m.featureReps < m.mc) {
+    fail(7, `declares choice features in ${m.featureReps}/${m.mc} reps; templates in this domain must declare the features their choices vary on`, m.featureReps / m.mc);
+  }
+  Object.entries(m.features).forEach(([name, tally]) => {
+    const share = tally.keyAlone / tally.reps;
+    if (tally.reps >= limits.minSample && share > limits.featureAlone) {
+      fail(7, `the key alone has its "${name}" value in ${percent(share)} of reps`, share);
+    }
+  });
+
+  // 8. Blind hub strategy (Math).
+  if (settings.math && sampled && s.hub > limits.hubTemplate) {
+    fail(8, `blind hub strategy scores ${percent(s.hub)} (want at most ${percent(limits.hubTemplate)})`, s.hub);
+  }
+
+  // 9. Variety: distinct items, not reorderings.
+  if (settings.minDistinctShare && m.windowRecords && s.distinctShare < settings.minDistinctShare) {
+    fail(9, `only ${m.windowDistinct} distinct items in ${m.windowRecords} draws (want ${percent(settings.minDistinctShare)})`, s.distinctShare);
+  }
+  if (settings.minDistinct && m.distinct < settings.minDistinct) {
+    fail(9, `only ${m.distinct} distinct items (want at least ${settings.minDistinct})`, m.distinct);
+  }
+  return failures;
+}
+
+/* --------------------------------------------------------- section level */
+
+// Blind hub accuracy per difficulty tier: rows of { difficulty, measure }.
+function hubByTier(rows) {
+  const tiers = {};
+  rows.forEach(({ difficulty, measure }) => {
+    const tier = (tiers[difficulty] = tiers[difficulty] || { mc: 0, hub: 0 });
+    tier.mc += measure.mc;
+    tier.hub += measure.hub;
+  });
+  return Object.fromEntries(Object.entries(tiers).map(([difficulty, tier]) =>
+    [difficulty, { mc: tier.mc, share: tier.mc ? Math.round((tier.hub / tier.mc) * 1000) / 1000 : null }]));
+}
+
+// Transition words and phrases across a skill's records: how often each is
+// offered and how often it is the key. `records` are MC records.
+function choiceKeyShares(records) {
+  const tallies = dictionary();
+  records.forEach((record) => {
+    record.choices.forEach((choice, index) => {
+      const text = normalizeChoice(choice);
+      const tally = (tallies[text] = tallies[text] || { appearances: 0, key: 0, templates: new Set() });
+      tally.appearances += 1;
+      if (index === record.correctAnswer) tally.key += 1;
+      tally.templates.add(record.templateId);
+    });
+  });
+  return tallies;
+}
+
+// Figure problems a student would see: NaN or undefined drawn into the SVG,
+// markup the browser cannot parse (the app then shows only the alt text), or
+// anything render.js's sanitizer would strip. `sanitize` is render.js's
+// sanitizeSvgTree. The root's xmlns, role and aria-label are dropped by
+// design (the renderer sets them itself), so they are not losses.
+const RENDERER_OWNED = new Set(["xmlns", "role", "aria-label"]);
+
+function figureProblems(svg, sanitize) {
+  const problems = [];
+  const bad = /NaN|Infinity|undefined/.exec(String(svg));
+  if (bad) problems.push(`"${bad[0]}" in the SVG`);
+  let tree;
+  try {
+    tree = parseXml(svg);
+  } catch (error) {
+    problems.push(`SVG does not parse as XML: ${error.message}`);
+    return problems;
+  }
+  const clean = sanitize(tree);
+  if (!clean) {
+    problems.push("sanitizer rejects the SVG root");
+    return problems;
+  }
+  const lost = [];
+  (function compare(before, after, isRoot) {
+    const kept = new Set((after ? after.attributes : []).map((attribute) => attribute.name));
+    before.attributes.forEach((attribute) => {
+      if (isRoot && (RENDERER_OWNED.has(attribute.name) || attribute.name.startsWith("xmlns:"))) return;
+      if (!kept.has(attribute.name)) lost.push(`${before.name}@${attribute.name}`);
+    });
+    // The sanitizer keeps surviving children in order, so walk both lists.
+    const survivors = after ? after.children.slice() : [];
+    before.children.forEach((child) => {
+      if (typeof child.text === "string") {
+        if (survivors[0] && typeof survivors[0].text === "string") survivors.shift();
+        else if (child.text.trim()) lost.push(`text inside <${before.name}>`);
+        return;
+      }
+      if (survivors[0] && survivors[0].name === child.name && typeof survivors[0].text !== "string") {
+        compare(child, survivors.shift(), false);
+      } else lost.push(`<${child.name}>`);
+    });
+  })(tree, clean, true);
+  // Values stay out of the message so the gate can count figures per problem.
+  const kinds = [...new Set(lost)];
+  if (kinds.length) problems.push(`sanitizer drops ${kinds.slice(0, 3).join(", ")}${kinds.length > 3 ? ` and ${kinds.length - 3} more` : ""}`);
+  return problems;
+}
+
+module.exports = {
+  choiceKeyShares,
+  figureProblems,
+  hubByTier,
+  hubCandidates,
+  hubCredit,
+  itemIdentity,
+  keyIsExtreme,
+  measureTemplate,
+  normalizeChoice,
+  opener,
+  shares,
+  templateFailures,
+};
