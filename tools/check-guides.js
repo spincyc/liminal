@@ -4,6 +4,9 @@
 /**
  * Validates the content/study-guides/ markdown library:
  *   - every relative Markdown link resolves to a file that exists
+ *   - every link into the Learn page (learn.html#<pageId>[/<anchor>], written
+ *     relative or as the live site's URL) names a page and anchor that exist
+ *     in content/learn
  *   - every guide is reachable from content/study-guides/README.md
  *   - no guide is empty or missing a top-level heading
  *
@@ -13,6 +16,8 @@
 
 const fs = require("fs");
 const path = require("path");
+const Learn = require("../src/lib/learn-markup");
+const { readTree, loadLearn } = require("./build-learn");
 
 const root = path.join(__dirname, "..");
 const guidesDir = path.join(root, "content", "study-guides");
@@ -30,17 +35,45 @@ function listMarkdown(dir) {
   return out;
 }
 
-// Relative Markdown links, ignoring images and absolute/anchor-only targets.
-function linksIn(contents) {
+function linkTargets(contents) {
   const found = [];
   const pattern = /\[[^\]]*\]\(([^)]+)\)/g;
   let match;
-  while ((match = pattern.exec(contents)) !== null) {
-    const target = match[1].trim();
-    if (/^(https?:|mailto:|#)/.test(target)) continue;
-    found.push(target.split("#")[0]);
-  }
-  return found.filter(Boolean);
+  while ((match = pattern.exec(contents)) !== null) found.push(match[1].trim());
+  return found;
+}
+
+// A link into the Learn page: the live site's learn.html, or any relative
+// path ending in learn.html. Returns its hash (without "#"), or null.
+const LIVE_LEARN = "https://spincyc.github.io/liminal/learn.html";
+function learnHash(target) {
+  const cut = target.indexOf("#");
+  const file = cut < 0 ? target : target.slice(0, cut);
+  if (file !== LIVE_LEARN && !/^(?![a-z][a-z0-9+.-]*:)(?:.*\/)?learn\.html$/i.test(file)) return null;
+  return cut < 0 ? "" : target.slice(cut + 1);
+}
+
+// Relative Markdown links, ignoring images, absolute and anchor-only
+// targets, and links into the Learn page (checked by learnLinksIn).
+function linksIn(contents) {
+  return linkTargets(contents)
+    .filter((target) => !/^(https?:|mailto:|#)/.test(target) && learnHash(target) === null)
+    .map((target) => target.split("#")[0])
+    .filter(Boolean);
+}
+
+function learnLinksIn(contents) {
+  return linkTargets(contents).filter((target) => learnHash(target) !== null);
+}
+
+// The Learn pages, parsed once and only when a guide links to one.
+let learnPages = null;
+function learnTargetExists(hash) {
+  if (!hash) return true;
+  if (!learnPages) learnPages = loadLearn(readTree(path.join(root, "content", "learn"))).pages;
+  const target = Learn.route(hash, learnPages);
+  if (target.view !== "page") return false;
+  return !target.anchor || Learn.anchors(learnPages[target.id].blocks).has(target.anchor);
 }
 
 if (!fs.existsSync(guidesDir)) {
@@ -69,6 +102,12 @@ for (const file of files) {
       errors.push(`${rel}: broken link -> ${target}`);
     } else if (resolved.startsWith(guidesDir)) {
       reachable.add(resolved);
+    }
+  }
+
+  for (const target of learnLinksIn(contents)) {
+    if (!learnTargetExists(learnHash(target))) {
+      errors.push(`${rel}: broken Learn link -> ${target} (no such page or anchor in content/learn)`);
     }
   }
 }
