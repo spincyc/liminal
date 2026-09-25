@@ -193,4 +193,4 @@ Every one of those is a habit, trainable in two to three weeks.
 | Adding/deleting sentences, transitions, opening and closing lines, paragraph order | [Production of Writing](01-production-of-writing.md) |
 | Wordiness, redundancy, word choice, tone, style | [Knowledge of Language](02-knowledge-of-language.md) |
 | Commas, semicolons, verbs, pronouns, modifiers, fragments | [Conventions of Standard English](03-conventions-of-standard-english.md) |
-| The underlying rules themselves | [Grammar reference](../../sat/reading-writing/05-grammar-reference.md) |
+| The underlying rules themselves | [Grammar reference](04-grammar-reference.md) |

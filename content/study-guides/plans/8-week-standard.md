@@ -19,6 +19,11 @@ read [Drill protocols](drill-protocols.md).
 
 Four full practice tests: weeks 1, 3, 6, and 7.
 
+**Full practice tests are official tests.** For the SAT, use the full-length
+practice tests in College Board's Bluebook app; for the ACT, ACT's official
+practice tests. Their scores are the only honest estimate you have. Liminal's
+accuracy is practice feedback on its own questions, not a score.
+
 ---
 
 ## Phase I — Foundation (weeks 1-2)
@@ -31,7 +36,7 @@ Four full practice tests: weeks 1, 3, 6, and 7.
 | 2 | Classify every miss. Complete [diagnostic routing](diagnostic-routing.md). Build your target list. | 2 h |
 | 3 | Read [How questions are built](../04-how-questions-are-built.md) + [Universal answer patterns](../05-universal-answer-patterns.md). 20 mixed items applying them. | 2 h |
 | 4 | Read the overview for each section you're testing. 20 items in your weakest domain. | 1.5 h |
-| 5 | Grammar block: read [SEC](../sat/reading-writing/04-standard-english-conventions.md) or [ACT Conventions](../act/english/03-conventions-of-standard-english.md). 25 items untimed. | 1.5 h |
+| 5 | Grammar block: read SAT [Boundaries](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/standard-english-conventions/boundaries) and [Form, Structure, and Sense](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/standard-english-conventions/form-structure-and-sense) or [ACT Conventions](../act/english/03-conventions-of-standard-english.md). 25 items untimed. | 1.5 h |
 | 6 | Missed-items + 20 mixed | 1 h |
 | 7 | Rest | — |
 
@@ -45,13 +50,13 @@ while building them.
 | 1 | Weak domain 1: read the guide, 20 items untimed writing every step | 1.5 h |
 | 2 | Grammar: 30 items, join table and forbidden-comma list | 1.5 h |
 | 3 | Weak domain 1: 25 more items | 1.5 h |
-| 4 | Formula reference — **handwrite it once**. 20 items applying it. | 1.5 h |
+| 4 | Formula reference (SAT: [Math formulas to know](https://spincyc.github.io/liminal/learn.html#sat/general/math-reference); ACT: [formula reference](../act/math/07-formula-reference.md)) — **handwrite it once**. 20 items applying it. | 1.5 h |
 | 5 | Weak domain 2: read the guide, 20 items untimed | 1.5 h |
 | 6 | Missed-items + weekly audit | 1 h |
 | 7 | Rest | — |
 
 **Also start this week:** if SAT, daily 20-minute
-[Desmos practice](../sat/math/06-desmos-playbook.md). If ACT Science, the
+[Desmos practice](https://spincyc.github.io/liminal/learn.html#sat/general/desmos/practice-protocol). If ACT Science, the
 [orientation habit](../act/science/00-overview.md), narrated aloud.
 
 ---
@@ -127,7 +132,7 @@ Content is in place. Now make it work at real pace.
 | 2 | **Mixed-mode** drill, 40 items, real timing | 1.5 h |
 | 3 | Weakest remaining domain: 25 items timed | 1.5 h |
 | 4 | Compressed: one section at **90% of real time** | 1 h |
-| 5 | Missed-items + flagged review | 1 h |
+| 5 | Missed-items + marked-for-review items | 1 h |
 | 6 | **Full practice test** | 3 h |
 | 7 | Same-day impressions. Rest. | 0.5 h |
 

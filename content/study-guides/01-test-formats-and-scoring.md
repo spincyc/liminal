@@ -6,6 +6,15 @@ describes formats that no longer exist. If a resource mentions a 5-choice ACT
 Math section, a required ACT Science section, or a paper SAT with a no-calculator
 module, it is out of date.
 
+> **Verify before you rely on this.** Formats, scoring rules, and score-release
+> timing below were checked against College Board and ACT pages on
+> 2026-09-25. Confirm them at
+> [satsuite.collegeboard.org](https://satsuite.collegeboard.org/sat/whats-on-the-test/structure)
+> and [act.org](https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/act-exam-sections-and-structure.html)
+> before you plan around them. The app's
+> [Learn pages](https://spincyc.github.io/liminal/learn.html#sat/general/format-and-scoring)
+> keep the SAT numbers with their sources.
+
 ---
 
 ## The digital SAT
@@ -20,8 +29,9 @@ module, it is out of date.
 | **Total** | **4** | **98** | **2 h 14 min** |
 
 The test is taken on a computer in the Bluebook application, either on your own
-device or one you borrow from the test center. Borrowing requires registering at
-least 30 days ahead.
+device or one you borrow from College Board. Borrowing has to be requested well
+ahead of test day (about 30 days as of 2026); check the current deadline when
+you register.
 
 ### Adaptivity — what it actually means
 
@@ -36,12 +46,16 @@ question.
 
 Consequences that actually matter for strategy:
 
-- **You cannot reach the top of the scale from the lower-difficulty Module 2.**
-  Module 1 therefore carries outsized weight. Do not "warm up" through it.
+- **Module 1 decides your route.** College Board has not published the routing
+  rule or the score range each Module 2 allows. It is widely believed that the
+  easier Module 2 caps how high the section score can go; treat that as an
+  estimate, not a published fact. Either way, do not "warm up" through
+  Module 1.
 - **Within a module, you can move freely.** Skip, flag, come back, change
   answers. Adaptivity happens *between* modules, never inside one.
-- **Getting a hard Module 2 is good news.** Students routinely panic when
-  Module 2 feels brutal. It means you did well.
+- **A hard-feeling Module 2 is usually good news.** Students routinely panic
+  when Module 2 feels brutal; that is consistent with the harder route. You
+  cannot know for sure during the test, so keep working question by question.
 - **Reading and Writing adapts independently of Math.** A weak RW Module 1 does
   not affect your Math routing.
 
@@ -49,12 +63,16 @@ Consequences that actually matter for strategy:
 
 - Each section scores **200-800**. Total **400-1600**.
 - There is **no penalty for wrong answers**. Never leave anything blank.
-- Roughly **4 questions per section are unscored pretest items** being trialed
-  for future tests. You cannot identify them. This is one reason a single
-  brutal-seeming question should never rattle you.
-- Raw-to-scaled conversion varies by form. There is no fixed "X questions wrong
-  equals Y score" table, though the relationship is stable enough that practice
-  test estimates are usually within about 20-30 points.
+- **2 questions per module (4 per section) are unscored pretest items** being
+  trialed for future tests. You cannot identify them. This is one reason a
+  single brutal-seeming question should never rattle you.
+- Scoring is not a simple count. College Board's model weighs which questions
+  you got right and how hard they are, so two students with the same number
+  correct on different forms can get different scores, and there is no fixed
+  "X wrong equals Y score" table.
+- The only honest score check is a full-length official practice test in
+  Bluebook, scored by College Board, and even that is an estimate. Liminal's
+  accuracy is practice feedback, not a score.
 
 ### Reading and Writing specifics
 
@@ -64,20 +82,22 @@ Consequences that actually matter for strategy:
   Craft and Structure first, then Information and Ideas, then Standard English
   Conventions, then Expression of Ideas. Knowing this order lets you predict
   what is coming and manage energy.
-- One or two questions per module involve a **paired passage** (Cross-Text
-  Connections), and a few involve **tables or graphs** (quantitative Command of
-  Evidence).
+- Some questions involve a **pair of short texts** (Cross-Text Connections),
+  and some involve **tables or graphs** (quantitative Command of Evidence).
+  Exact counts per module are not published.
 
 ### Math specifics
 
 - **Calculator permitted throughout.** There is a built-in Desmos graphing
-  calculator, and you may also bring an approved handheld. See the
-  [Desmos playbook](sat/math/06-desmos-playbook.md) — used well, it converts a
-  large fraction of algebra questions into graph-reading questions.
+  calculator, and you may also bring an approved handheld. See
+  [Desmos](https://spincyc.github.io/liminal/learn.html#sat/general/desmos) —
+  used well, it converts a large fraction of algebra questions into
+  graph-reading questions.
 - About **75% multiple choice, 25% student-produced response** ("grid-ins").
 - A **reference sheet** with common geometry formulas is provided on screen.
-  It is short. See [Formula reference](sat/math/05-formula-reference.md) for
-  what is *not* on it and must be memorized.
+  It is short. See
+  [Math formulas to know](https://spincyc.github.io/liminal/learn.html#sat/general/math-reference)
+  for what is *not* on it and must be memorized.
 - Questions within each module run **roughly easy to hard**. The last few
   questions of a module are the hardest ones you will see at that difficulty
   tier.
@@ -89,11 +109,13 @@ Losing a point to a formatting error is the most avoidable mistake on the test.
 - Up to **5 characters** for a positive answer, **6** including a negative sign.
 - **No commas, no percent signs, no dollar signs, no units.**
 - Fractions and decimals both accepted. Improper fractions are fine; mixed
-  numbers are **not** — `3 1/2` will be read as `31/2`. Enter `7/2` or `3.5`.
-- Repeating decimals must **fill the grid**, either truncated or rounded:
-  `2/3` → `.6666` or `.6667`, not `.67`.
+  numbers are **not** accepted — enter 3½ as `7/2` or `3.5` (both `3 1/2` and
+  `31/2` get no credit).
+- A fraction that doesn't fit becomes a decimal; a decimal that doesn't fit is
+  truncated or rounded at the fourth digit: `2/3` → `.6666` or `.6667`, not
+  `.67`.
 - If a question has multiple valid answers, enter **one**.
-- Negative answers are permitted on the SAT (unlike some older formats).
+- Negative answers are permitted.
 
 ---
 
@@ -134,6 +156,10 @@ If you took the ACT before the redesign, four things are different:
 - **Writing**, if taken, gets a **2-12** score from four rubric domains and
   combines with English and Reading into an **ELA score**.
 - **No penalty for wrong answers.** Never leave anything blank.
+- **Some questions in each section are unscored field-test items**: as of
+  2026, ACT lists 40 of 50 English, 41 of 45 Math, 27 of 36 Reading, and 34 of
+  40 Science questions as scored. You cannot tell which are which, so treat
+  every question as scored.
 
 ### Should you take Science and Writing?
 
@@ -205,8 +231,8 @@ as you see it online. Confirm per school — do not assume.
 
 | Test | Typical release |
 | --- | --- |
-| SAT | About 2 weeks after test day |
-| ACT | 2-4 weeks after test day; multiple-choice scores often come first, with Writing later |
+| SAT | About 2 weeks after test day; College Board posts the date for each administration |
+| ACT | ACT posts a score release date for each national date (10 to 17 days after the test for 2026-27); a small share take longer, and Writing scores can arrive later |
 
 Build your calendar off the **late** end of these ranges, not the early end. See
 [Registration and test day](02-registration-and-test-day.md) for how to work

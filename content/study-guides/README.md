@@ -1,9 +1,16 @@
 # Liminal Study Guides
 
-A complete, self-contained study library for the digital SAT and the enhanced
-ACT. This is the *knowledge* half of Liminal: the question bank in
-`content/banks/` gives you 4,025 items to practice on, and these guides tell you
-what to actually know, what patterns to look for, and how to work.
+A self-contained study library for the digital SAT and the enhanced ACT. This
+is the *knowledge* half of Liminal: the app's practice sets give you questions
+(ACT sections draw from fixed banks of 575 questions each; SAT sections are
+built from question templates that generate fresh versions), and these guides
+tell you what to actually know, what patterns to look for, and how to work.
+
+**SAT skills now live in the app.** Every SAT catalog skill has a page in the
+[Learn section](https://spincyc.github.io/liminal/learn.html) of the site, with the method, original worked examples,
+traps, and when each shortcut fails. The Markdown sources are in
+[`content/learn/`](../learn/). This library keeps the cross-test foundations,
+the study plans, and the ACT guides.
 
 Everything here is original material. Nothing reproduces official test
 questions.
@@ -50,28 +57,37 @@ Read these regardless of which test you are taking.
 
 ## SAT
 
+The SAT guides moved into the app's Learn pages, one page per catalog skill.
+
+### General
+
+| Learn page | What it covers |
+| --- | --- |
+| [Format and scoring](https://spincyc.github.io/liminal/learn.html#sat/general/format-and-scoring) | Structure, domains, adaptive modules, scoring, answer-entry rules, reference sheet |
+| [Modules and pacing](https://spincyc.github.io/liminal/learn.html#sat/general/modules-and-pacing) | Why Module 1 matters, time budgets, checkpoints |
+| [SAT Math plan from around 500](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan) | Skill order, mastery gate, official practice tests |
+| [Error log](https://spincyc.github.io/liminal/learn.html#sat/general/error-log) | The four error types, the rule column, Review and Progress |
+| [Desmos](https://spincyc.github.io/liminal/learn.html#sat/general/desmos) | Solving, systems, sliders, statistics, regressions |
+| [Math formulas to know](https://spincyc.github.io/liminal/learn.html#sat/general/math-reference) | Everything not on the reference sheet, with links |
+| [Answer tells](https://spincyc.github.io/liminal/learn.html#sat/general/answer-tells) | What tells are worth (little) and what works instead |
+
 ### Reading and Writing — 54 questions, 64 minutes
 
-| Guide | Catalog domain | Skills |
-| --- | --- | --- |
-| [Overview](sat/reading-writing/00-overview.md) | — | Section shape, order of difficulty, pacing |
-| [Information and Ideas](sat/reading-writing/01-information-and-ideas.md) | Information and Ideas | Central Ideas and Details; Inferences; Command of Evidence |
-| [Craft and Structure](sat/reading-writing/02-craft-and-structure.md) | Craft and Structure | Words in Context; Text Structure and Purpose; Cross-Text Connections |
-| [Expression of Ideas](sat/reading-writing/03-expression-of-ideas.md) | Expression of Ideas | Rhetorical Synthesis; Transitions |
-| [Standard English Conventions](sat/reading-writing/04-standard-english-conventions.md) | Standard English Conventions | Boundaries; Form, Structure, and Sense |
-| [Grammar reference](sat/reading-writing/05-grammar-reference.md) | — | Every rule the SAT tests, with worked examples |
+| Domain | Skill pages |
+| --- | --- |
+| Craft and Structure | [Words in Context](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/craft-and-structure/words-in-context); [Text Structure and Purpose](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/craft-and-structure/text-structure-and-purpose); [Cross-Text Connections](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/craft-and-structure/cross-text-connections) |
+| Information and Ideas | [Central Ideas and Details](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/information-and-ideas/central-ideas-and-details); [Command of Evidence](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/information-and-ideas/command-of-evidence); [Inferences](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/information-and-ideas/inferences) |
+| Standard English Conventions | [Boundaries](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/standard-english-conventions/boundaries); [Form, Structure, and Sense](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/standard-english-conventions/form-structure-and-sense) |
+| Expression of Ideas | [Rhetorical Synthesis](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/expression-of-ideas/rhetorical-synthesis); [Transitions](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/expression-of-ideas/transitions) |
 
 ### Math — 44 questions, 70 minutes
 
-| Guide | Catalog domain | Skills |
-| --- | --- | --- |
-| [Overview](sat/math/00-overview.md) | — | Section shape, calculator policy, grid-in rules |
-| [Algebra](sat/math/01-algebra.md) | Algebra | Linear equations, functions, systems, inequalities |
-| [Advanced Math](sat/math/02-advanced-math.md) | Advanced Math | Equivalent expressions, nonlinear equations and systems, nonlinear functions |
-| [Problem-Solving and Data Analysis](sat/math/03-problem-solving-and-data-analysis.md) | Problem-Solving and Data Analysis | Ratios, percentages, one- and two-variable data, probability, inference |
-| [Geometry and Trigonometry](sat/math/04-geometry-and-trigonometry.md) | Geometry and Trigonometry | Area and volume, lines and angles, right triangles, circles |
-| [Formula reference](sat/math/05-formula-reference.md) | — | Given formulas, and the far longer list you must memorize |
-| [Desmos playbook](sat/math/06-desmos-playbook.md) | — | Turning algebra problems into graphing problems |
+| Domain | Skill pages |
+| --- | --- |
+| Algebra | [Linear equations in one variable](https://spincyc.github.io/liminal/learn.html#sat-math/algebra/linear-equations-in-one-variable); [Linear functions](https://spincyc.github.io/liminal/learn.html#sat-math/algebra/linear-functions); [Linear equations in two variables](https://spincyc.github.io/liminal/learn.html#sat-math/algebra/linear-equations-in-two-variables); [Systems of two linear equations](https://spincyc.github.io/liminal/learn.html#sat-math/algebra/systems-of-two-linear-equations); [Linear inequalities](https://spincyc.github.io/liminal/learn.html#sat-math/algebra/linear-inequalities) |
+| Advanced Math | [Equivalent expressions](https://spincyc.github.io/liminal/learn.html#sat-math/advanced-math/equivalent-expressions); [Nonlinear equations](https://spincyc.github.io/liminal/learn.html#sat-math/advanced-math/nonlinear-equations); [Systems of equations](https://spincyc.github.io/liminal/learn.html#sat-math/advanced-math/systems-of-equations); [Nonlinear functions](https://spincyc.github.io/liminal/learn.html#sat-math/advanced-math/nonlinear-functions) |
+| Problem-Solving and Data Analysis | [Ratios, rates, and units](https://spincyc.github.io/liminal/learn.html#sat-math/problem-solving-and-data-analysis/ratios-rates-and-units); [Percentages](https://spincyc.github.io/liminal/learn.html#sat-math/problem-solving-and-data-analysis/percentages); [One-variable data](https://spincyc.github.io/liminal/learn.html#sat-math/problem-solving-and-data-analysis/one-variable-data); [Two-variable data](https://spincyc.github.io/liminal/learn.html#sat-math/problem-solving-and-data-analysis/two-variable-data); [Probability](https://spincyc.github.io/liminal/learn.html#sat-math/problem-solving-and-data-analysis/probability); [Statistical inference](https://spincyc.github.io/liminal/learn.html#sat-math/problem-solving-and-data-analysis/statistical-inference) |
+| Geometry and Trigonometry | [Area and volume](https://spincyc.github.io/liminal/learn.html#sat-math/geometry-and-trigonometry/area-and-volume); [Lines, angles, and triangles](https://spincyc.github.io/liminal/learn.html#sat-math/geometry-and-trigonometry/lines-angles-and-triangles); [Right triangles and trigonometry](https://spincyc.github.io/liminal/learn.html#sat-math/geometry-and-trigonometry/right-triangles-and-trigonometry); [Circles](https://spincyc.github.io/liminal/learn.html#sat-math/geometry-and-trigonometry/circles) |
 
 ---
 
@@ -85,6 +101,7 @@ Read these regardless of which test you are taking.
 | [Production of Writing](act/english/01-production-of-writing.md) | Production of Writing | Topic Development; Organization, Unity, and Cohesion |
 | [Knowledge of Language](act/english/02-knowledge-of-language.md) | Knowledge of Language | Effective Language Use |
 | [Conventions of Standard English](act/english/03-conventions-of-standard-english.md) | Conventions of Standard English | Sentence Structure and Formation; Usage; Punctuation |
+| [Grammar reference](act/english/04-grammar-reference.md) | — | Every rule ACT English tests, with examples |
 
 ### Mathematics — 45 questions, 50 minutes
 
@@ -141,15 +158,16 @@ Read these regardless of which test you are taking.
 
 ## How these guides connect to the app
 
-Every domain guide names the exact catalog domain and skills it covers, so you
-can read a guide and then filter the app to precisely that material.
+Every ACT domain guide names the exact catalog domain and skills it covers,
+and every SAT Learn page is one catalog skill, so you can read about a skill
+and then filter the app to precisely that material.
 
-- Guides map to `content/catalog.json` domains and skills.
-- The [Answer Signs](../guides/answer-signs.js) view in the app is the
-  condensed, in-browser version of
-  [05 — Universal answer patterns](05-universal-answer-patterns.md) and the
-  per-section pattern sections. The guides here are longer and include worked
-  reasoning; Answer Signs is the quick-reference card.
+- Guides and Learn pages map to `content/catalog.json` domains and skills.
+- The Study tips view in the app (data in
+  [`content/guides/answer-signs.js`](../guides/answer-signs.js)) is the
+  condensed, in-browser card of tells, each with its caution. The
+  [Answer tells](https://spincyc.github.io/liminal/learn.html#sat/general/answer-tells)
+  page explains how little tells are worth.
 - Practice sessions filter by section, domain, skill, and difficulty. Guides are
   organized the same way on purpose.
 

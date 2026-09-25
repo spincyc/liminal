@@ -4,7 +4,7 @@ Logistics lose more points than people admit. A missed deadline costs you an
 entire testing cycle; a forgotten calculator costs you a section.
 
 > **Verify before you rely on this.** Dates, fees, and policies change. This
-> file reflects the published 2026-27 schedule as of August 2026. Always confirm
+> file reflects the published 2026-27 schedule, rechecked on 2026-09-25. Always confirm
 > against [satsuite.collegeboard.org](https://satsuite.collegeboard.org/sat/registration/dates-deadlines)
 > and [act.org](https://www.act.org/content/act/en/products-and-services/the-act/registration/test-dates.html).
 
@@ -31,16 +31,19 @@ All deadlines expire 11:59 p.m. Eastern. Late registration adds a fee.
 
 | Test date | Registration deadline | Late deadline | Scores approx. |
 | --- | --- | --- | --- |
-| Sept 19, 2026 | Aug 14, 2026 | Sept 1, 2026 | Early-mid Oct |
-| Oct 17, 2026 | Sept 11, 2026 | Sept 29, 2026 | Early-mid Nov |
-| Dec 12, 2026 | Nov 6, 2026 | Nov 29, 2026 | Early Jan |
-| Feb 27, 2027 | Jan 22, 2027 | Feb 9, 2027 | Late Mar |
-| Apr 10, 2027 | Mar 5, 2027 | Mar 23, 2027 | Early May |
-| June 12, 2027 | May 7, 2027 | May 25, 2027 | Early July |
-| July 10, 2027 | June 4, 2027 | June 22, 2027 | Early Aug |
+| Sept 19, 2026 | Aug 14, 2026 | Sept 1, 2026 | Oct 6, 2026 |
+| Oct 17, 2026 | Sept 11, 2026 | Sept 29, 2026 | Oct 27, 2026 |
+| Dec 12, 2026 | Nov 6, 2026 | Nov 29, 2026 | Dec 22, 2026 |
+| Feb 27, 2027 | Jan 22, 2027 | Feb 9, 2027 | Mar 16, 2027 |
+| Apr 10, 2027 | Mar 5, 2027 | Mar 23, 2027 | Apr 20, 2027 |
+| June 12, 2027 | May 7, 2027 | May 25, 2027 | June 23, 2027 |
+| July 10, 2027 | June 4, 2027 | June 22, 2027 | July 20, 2027 |
 
-All deadlines expire 11:59 p.m. Central. The ACT is not offered in New York on
-the July date.
+ACT's score column is its published first release date for each test; ACT
+says most scores post within a few weeks and some take longer, especially
+with Writing. All deadlines expire 11:59 p.m. Central. July testing becomes
+available in New York in 2027, with test centers still being added; check
+that a center near you is listed before counting on that date.
 
 ---
 
@@ -50,19 +53,21 @@ This is the calculation that actually determines your test date. Do it first.
 
 ```
 Application deadline
-  − 1 week safety margin
-  − score release lag (SAT ~2 weeks, ACT ~2-4 weeks)
+  − 1 to 2 weeks safety margin
+  − score release lag (about 2 weeks for both tests; check the posted date)
   = latest usable test date
 ```
 
 **Worked example, Nov 1 deadline:**
 
-- Latest usable SAT: subtract 3 weeks → **Oct 3 is safe, Nov 7 is not.**
-- Latest usable ACT: subtract 5 weeks → **Sept 19 is safe, Oct 17 is a gamble.**
+- Latest usable SAT: **Oct 3 is safe, Nov 7 is not.**
+- Latest usable ACT: **Sept 19 is safe. Oct 17 (scores posted Oct 27) is
+  tight**: a delayed score, a Writing score, or a slow official report to the
+  college can push it past the deadline.
 
-The asymmetry catches people. The ACT's slower score release means its
-effective deadline is roughly two weeks earlier than the SAT's for the same
-application date.
+Plan from the posted release dates, not from averages, and add the time a
+college needs to receive an official report unless it accepts self-reported
+scores.
 
 **Caveats that can rescue a late date:**
 
@@ -202,8 +207,9 @@ unusual. **Bring fresh batteries** — a dead calculator mid-section is a
 catastrophe and the proctor cannot help you.
 
 For the SAT, the built-in Desmos calculator is genuinely excellent and worth
-learning even if you bring a handheld. See the
-[Desmos playbook](sat/math/06-desmos-playbook.md).
+learning even if you bring a handheld. See
+[Desmos](https://spincyc.github.io/liminal/learn.html#sat/general/desmos) in
+the app's Learn pages.
 
 ---
 
@@ -213,8 +219,8 @@ learning even if you bring a handheld. See the
 | --- | --- |
 | Night before | Lay everything out. Sleep. Do not study. |
 | 6:30-7:00 a.m. | Wake, eat real protein, not just sugar |
-| 7:30 a.m. | Arrive at the center |
-| 8:00 a.m. | Doors typically close — late arrivals are turned away |
+| 7:30 a.m. | Arrive at the center (use the arrival time on your admission ticket) |
+| About 8:00 a.m. | Doors typically close — late arrivals are turned away |
 | 8:00-8:45 a.m. | Check-in, seating, instructions, setup |
 | 8:45 a.m. onward | Testing begins |
 | Mid-test | Scheduled break — eat, drink, move, use the restroom |

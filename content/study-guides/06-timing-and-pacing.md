@@ -1,9 +1,15 @@
 # Timing and Pacing
 
-Most students who miss their target score do not lack knowledge. They run out of
-time, rush the back half, and make errors they would never make untimed.
+Many students who miss their target score run out of time, rush the back half,
+and make errors they would never make untimed. Others miss questions they
+couldn't do even with unlimited time; that is a content gap, and no pacing
+method fixes it (redo a few misses untimed to tell which you have).
 
 Pacing is a trainable skill with a specific method. This file is that method.
+
+> **Verify before you rely on this.** Section lengths and times below were
+> rechecked on 2026-09-25 against College Board and ACT; confirm them before
+> test day.
 
 ---
 
@@ -162,6 +168,10 @@ roughly three easy questions elsewhere.
 
 Questions are grouped by domain in a fixed order: **Craft and Structure →
 Information and Ideas → Standard English Conventions → Expression of Ideas**.
+Within each domain they run roughly easy to hard, so difficulty rises and
+falls several times in a module. Unlike Math, the last questions (Expression of
+Ideas) start easy again: if you are behind, skip within a hard group, not the
+end of the module.
 
 Two strategies exploit this:
 
@@ -188,8 +198,9 @@ question 22 — those middle questions are far more likely to be gettable.
 
 **Use Desmos aggressively for speed**, not just for hard problems. Graphing a
 system of equations is often faster than solving it by hand, and it removes
-arithmetic-error risk. See the
-[Desmos playbook](sat/math/06-desmos-playbook.md).
+arithmetic-error risk. See
+[Desmos](https://spincyc.github.io/liminal/learn.html#sat/general/desmos) in the
+app's Learn pages.
 
 ### ACT English — the fastest section
 

@@ -42,9 +42,9 @@ determines *what kind* of studying you should do.
 
 | Dominant type | What it means | Your plan |
 | --- | --- | --- |
-| **Content** (>40%) | Real knowledge gaps | Domain guides + targeted drilling. The most straightforward case. |
+| **Content** (>40%) | Real knowledge gaps | SAT: the skill pages in [Learn](https://spincyc.github.io/liminal/learn.html); ACT: domain guides. Then targeted drilling. The most straightforward case, and the usual one around 500 in SAT Math. |
 | **Process** (>40%) | You know things but misapply them | Untimed drilling, writing every step. Do **not** add speed work yet. |
-| **Careless** (>35%) | Mechanics problem | **Stop studying content.** Two weeks of habit work. Highest ROI available. |
+| **Careless** (>35%) | Mechanics problem | Two weeks of habit work before new content, if your Easy and Medium accuracy is otherwise solid. Check first that "careless" misses aren't content you can't redo with the explanation hidden. |
 | **Time** (>30%) | Pacing failure | Checkpoint discipline, the 30-second rule, compressed practice. |
 | **Even spread** | Broad weakness | Follow a full plan start to finish. |
 
@@ -112,10 +112,10 @@ students routinely miss.
 | --- | --- |
 | Is SAT/ACT grammar accuracy below 85%? | Fix it first. Finite rules, 2-3 weeks, large gain. |
 | Do you know the ACT formulas cold? | If not, handwrite [the reference](../act/math/07-formula-reference.md). No sheet is provided. |
-| Are you fluent with Desmos? | If not, one week of [practice](../sat/math/06-desmos-playbook.md) is worth real points on SAT Math. |
+| Are you fluent with Desmos? | If not, one week of [practice](https://spincyc.github.io/liminal/learn.html#sat/general/desmos/practice-protocol) is worth real points on SAT Math. |
 | Do you orient before reading ACT Science figures? | If not, adopt the 10-second habit. Halves the error rate for most students. |
 | Do you predict before looking at reading choices? | If not, start. It's the main defense against distractors. |
-| Are your misses concentrated at section ends? | Pacing, not content. |
+| Are your misses concentrated at section ends? | If you also ran short of time, pacing. On SAT Math the last questions are the hardest, so misses there may be content; redo them untimed to tell. |
 | Do you skip "EXCEPT" and "must be true" questions? | They're formulaic. Learn the two methods. |
 
 ---

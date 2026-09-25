@@ -24,7 +24,14 @@ read [Drill protocols](drill-protocols.md). The schedule below assumes both.
 | Prediction habits on reading | |
 
 If your diagnostic shows deep content gaps and you have four weeks, **accept
-that** and maximize the left column. That's still a meaningful gain.
+that** and maximize the left column, then add the highest-share content you
+can: for SAT Math, linear equations and functions first. If your date can
+move, a longer plan that builds content usually gains more.
+
+**Full practice tests are official tests.** For the SAT, use the full-length
+practice tests in College Board's Bluebook app; for the ACT, ACT's official
+practice tests. Their scores are the only honest estimate you have. Liminal's
+accuracy is practice feedback on its own questions, not a score.
 
 ---
 
@@ -37,7 +44,7 @@ that** and maximize the left column. That's still a meaningful gain.
 | 1 | Full timed section of each weak section. Classify every miss. | 2 h |
 | 2 | Read [How questions are built](../04-how-questions-are-built.md) and [Universal answer patterns](../05-universal-answer-patterns.md). 20 mixed items applying them. | 1.5 h |
 | 3 | Top weak domain: read the guide, 20 items untimed | 1.5 h |
-| 4 | Grammar block — [SEC](../sat/reading-writing/04-standard-english-conventions.md) or [ACT Conventions](../act/english/03-conventions-of-standard-english.md). 30 items. | 1.5 h |
+| 4 | Grammar block — SAT [Boundaries](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/standard-english-conventions/boundaries) and [Form, Structure, and Sense](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/standard-english-conventions/form-structure-and-sense) or [ACT Conventions](../act/english/03-conventions-of-standard-english.md). 30 items. | 1.5 h |
 | 5 | Second weak domain: read the guide, 20 items untimed | 1.5 h |
 | 6 | Missed-items review + 20 mixed items | 1 h |
 | 7 | Rest, or light review of your rules list | — |
@@ -69,7 +76,7 @@ Drill at about 80% speed while building these. Speed returns; the habits stay.
 | 7 | Same-day impressions (30 min). Rest. | 0.5 h |
 
 **Also this week:** if you're taking the SAT, one week of 20-minute daily
-[Desmos practice](../sat/math/06-desmos-playbook.md). If ACT Science,
+[Desmos practice](https://spincyc.github.io/liminal/learn.html#sat/general/desmos/practice-protocol). If ACT Science,
 adopt the [orientation habit](../act/science/00-overview.md) and narrate it
 aloud on every figure.
 
@@ -85,7 +92,7 @@ aloud on every figure.
 | 2 | Pacing drills: 2 sections at real timing with [checkpoints](../06-timing-and-pacing.md) | 1.5 h |
 | 3 | Weakest remaining domain: 25 items timed | 1.5 h |
 | 4 | Mixed-mode drill, 40 items, real timing | 1.5 h |
-| 5 | Missed-items + flagged review | 1 h |
+| 5 | Missed-items + marked-for-review items | 1 h |
 | 6 | Compressed practice: one section at **90% of real time** | 1 h |
 | 7 | Rest | — |
 

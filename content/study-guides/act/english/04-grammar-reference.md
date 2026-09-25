@@ -1,12 +1,17 @@
-# Grammar Reference
+# ACT Grammar Reference
 
-Every grammar rule tested on the SAT and ACT, with examples. This is a reference
-to look things up in, not a document to read start to finish.
+Every grammar rule tested on ACT English, with examples. This is a reference
+to look things up in, not a document to read start to finish. For the
+ACT-specific strategy, see
+[Conventions of Standard English](03-conventions-of-standard-english.md).
 
-Applies to **both tests**. ACT English tests the same rule set with somewhat
-more emphasis on punctuation volume and rhetorical questions; see
-[ACT Conventions of Standard English](../../act/english/03-conventions-of-standard-english.md)
-for the ACT-specific framing.
+**SAT students:** the SAT tests a narrower official list — sentence
+boundaries, subject-verb and pronoun agreement, verb form and tense, modifier
+placement, and plurals and possessives. It does not test concision, idioms,
+word choice, who/whom, fewer/less, or comparisons. Use the app's Learn pages
+for [Boundaries](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/standard-english-conventions/boundaries)
+and [Form, Structure, and Sense](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/standard-english-conventions/form-structure-and-sense)
+instead of sections 6-8 below.
 
 ---
 
@@ -196,7 +201,7 @@ That last pattern — a colon after *are*, *include*, *such as*, or *for example
 
 Dashes are the strongest interrupter, commas the mildest, parentheses the most
 aside-like. All three are grammatically interchangeable for non-essential
-material; the SAT and ACT test only that you pair them correctly.
+material; the tests check only that you pair them correctly.
 
 ### Apostrophe
 
@@ -338,12 +343,14 @@ The past participle (used with *has/have/had*) differs from the simple past.
 
 A pronoun matches its antecedent in **number**.
 
-> ✗ *Each student must bring **their** book.* (on these tests)
-> ✓ *Each student must bring **his or her** book.*
 > ✓ *Students must bring **their** books.*
+> ✓ *The company announced **its** results.* (not *their*)
 
-Organizations are **it**:
-> ✓ *The company announced **its** results.*
+Singular *they* after words like *each student* is traditionally marked
+wrong but is now accepted by many style guides, so a question rarely hinges on
+it. Questions that test agreement use antecedents whose number is clear.
+
+Organizations are **it**, as in the last example above.
 
 ### Ambiguity
 
@@ -506,9 +513,9 @@ Tested regularly. The right preposition is a matter of convention.
 
 ## 8. Concision and redundancy
 
-Both tests treat wordiness as an **error**, not a style preference. When two
+ACT English treats wordiness as an **error**, not a style preference. When two
 choices are grammatically correct and mean the same thing, the shorter one is
-credited.
+credited. (The SAT does not test concision.)
 
 ### Redundant pairs
 
@@ -542,9 +549,9 @@ Each of these says one thing twice:
 
 ### The "DELETE" option
 
-When *"DELETE the underlined portion"* or *"OMIT"* appears as a choice, it is
-credited more often than 25% of the time — redundancy and irrelevance are heavily
-tested.
+When *"DELETE the underlined portion"* or *"OMIT"* appears as a choice (on the
+ACT only), treat it as a real candidate — redundancy and irrelevance are tested
+there.
 
 **Take it when** the material repeats something already stated, is irrelevant to
 the paragraph, or merely decorates.
@@ -572,5 +579,5 @@ When you can't identify what's being tested, run down this list:
 
 ---
 
-**Back to:** [Standard English Conventions](04-standard-english-conventions.md) ·
-[SAT RW overview](00-overview.md)
+**Back to:** [Conventions of Standard English](03-conventions-of-standard-english.md) ·
+[ACT English overview](00-overview.md)

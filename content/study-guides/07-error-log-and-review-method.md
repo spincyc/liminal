@@ -31,9 +31,12 @@ You lacked a fact, rule, formula, or concept.
 **Signal:** even with unlimited time and the answer explanation in front of you,
 you'd have needed to learn something new.
 
-**Fix:** learn it. Make a flashcard. Then do 10-15 items on that specific skill.
-This is the most straightforward error type and the least common above a mid
-score range.
+**Fix:** learn it. For the SAT, read the skill's page in the app's
+[Learn section](https://spincyc.github.io/liminal/learn.html) and work its
+examples; for the ACT, the matching guide in [`act/`](README.md#act). Then do
+10-15 items on that specific skill. This is the most straightforward error
+type. It becomes less common as scores rise, but for a student around 500 in
+SAT Math it is usually the largest bucket, and the most direct one to fix.
 
 ### 2. Process error — *"I knew it but did it wrong"*
 
@@ -62,9 +65,11 @@ bubbled wrong, transcribed wrong.
 - Check sign and magnitude before selecting
 - On the last line, reread the question stem
 
-**This is the highest-value error type to attack.** For most mid-to-high
-scorers, careless errors are the largest single bucket, and they're fixable in a
-week or two. A student losing 6 points a section to carelessness is losing more
+**For mid-to-high scorers this is often the highest-value error type to
+attack.** Above a middling score, careless errors are frequently the largest
+single bucket, and they're fixable in a week or two. Don't use the label to
+avoid studying: if you can't redo the question with the explanation hidden,
+it was content or process, not carelessness. A student losing 6 points a section to carelessness is losing more
 than they'd gain from a month of content study.
 
 Do not dismiss these as "silly mistakes I won't make on the real test." You will
@@ -91,7 +96,7 @@ or a plain text file all work.
 | Field | Example |
 | --- | --- |
 | Date | 2026-08-14 |
-| Item ID | `sat-math-0312` |
+| Item ID | `act-mathematics-0312`, or for a generated SAT question `sat-math:<template>:<seed>` |
 | Section / Domain / Skill | SAT Math / Algebra / Systems |
 | Error type | Careless |
 | What I did | Solved for x, question asked for x + y |
@@ -135,8 +140,9 @@ was careless or time. If you still can't, it's content or process.
 **2. Read the explanation fully**, even if you now understand. The explanation
 often shows a faster method than yours.
 
-**3. Read why the other choices are wrong.** This is where the real learning is.
-The app gives per-distractor rationales for every multiple-choice item. Wrong
+**3. Work out why the other choices are wrong.** This is where the real
+learning is. Where the app explains the wrong choices, read those explanations;
+where it doesn't, find the mistake that produces each one. Wrong
 answers teach you the writer's toolkit — which is the subject of
 [How questions are built](04-how-questions-are-built.md).
 
@@ -160,8 +166,8 @@ Flag any item where you:
 - Got it right by a method you couldn't repeat
 
 A right answer for the wrong reason is a future wrong answer. On the real test
-the same item will land differently. The app's flag feature exists for this;
-use it during the drill, not after.
+the same item will land differently. The app's **Mark for review** button
+exists for this; use it during the drill, not after.
 
 ---
 
@@ -176,7 +182,8 @@ remember the answer rather than the method.
 | 2nd | 10 days later | Is it durable |
 | 3rd | 3-4 weeks later | Is it automatic |
 
-The app's **Missed** session mode pulls your incorrect items. Use it as the
+The app's **Review** view lists your missed and marked questions, and the
+**Missed-question review** practice mode builds a set from them. Use it as the
 first 10 minutes of every study session — before new material, while you're
 fresh.
 
@@ -268,7 +275,9 @@ That's it. Fifteen seconds per miss. It works.
 
 ---
 
-**Next:** pick a section and start — [SAT Reading and Writing](sat/reading-writing/00-overview.md),
-[SAT Math](sat/math/00-overview.md), [ACT English](act/english/00-overview.md),
+**Next:** pick a section and start — SAT skills in the app's
+[Learn section](https://spincyc.github.io/liminal/learn.html) (see its
+[error log page](https://spincyc.github.io/liminal/learn.html#sat/general/error-log)),
+[ACT English](act/english/00-overview.md),
 [ACT Math](act/math/00-overview.md), [ACT Reading](act/reading/00-overview.md),
 [ACT Science](act/science/00-overview.md).

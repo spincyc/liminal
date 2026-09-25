@@ -11,7 +11,7 @@ Target: **20-25 seconds per question at 90%+ accuracy.** That banks the time you
 need for [Production of Writing](01-production-of-writing.md).
 
 The complete rule set with examples is in the
-[grammar reference](../../sat/reading-writing/05-grammar-reference.md). This file
+[grammar reference](04-grammar-reference.md). This file
 covers ACT-specific strategy and the highest-frequency patterns.
 
 ---
@@ -342,4 +342,4 @@ total and have the rest of the section for rhetoric.
 ---
 
 **Back to:** [ACT English overview](00-overview.md) ·
-[Grammar reference](../../sat/reading-writing/05-grammar-reference.md)
+[Grammar reference](04-grammar-reference.md)

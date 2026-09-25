@@ -188,7 +188,7 @@ Watch specifically for:
 | Parallelism | In lists and comparisons |
 
 The rules are in the
-[grammar reference](../../sat/reading-writing/05-grammar-reference.md).
+[grammar reference](../english/04-grammar-reference.md).
 
 ### Proofreading (final 5 minutes)
 
