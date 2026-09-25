@@ -335,6 +335,89 @@
     return fn;
   }
 
+  // The value a choice shows: numbers, and strings such as "−3/4" or "2.5";
+  // NaN for anything else (points, expressions, words).
+  function choiceValue(value) {
+    if (typeof value === "number") return value;
+    const text = String(value).replace(/−/g, "-").replace(/(\d),(?=\d{3})/g, "$1");
+    const match = text.match(/^(-?\d+(?:\.\d+)?)(?:\/(\d+(?:\.\d+)?))?$/);
+    return match ? Number(match[1]) / (match[2] ? Number(match[2]) : 1) : NaN;
+  }
+
+  // True when a modelled mistake prints exactly as the key does. Such a draw
+  // is rejected and redrawn: a mistake that lands on the key is not a
+  // distractor, and dropping it silently would leave a weaker set.
+  const collides = (key, wrong) => wrong.some(([value]) => S.label(value) === S.label(key));
+
+  // Chooses `count` of the modelled mistakes so that the key's rank among the
+  // four shown values is spread evenly: smallest, largest, or in between about
+  // as often as chance makes it, so neither the extremes nor the middle give
+  // the key away. Non-numeric choices are sampled at random instead.
+  function spreadAround(t, key, wrong, count = 3) {
+    const seen = new Set([S.label(key)]);
+    const pool = wrong.filter(([value]) => {
+      const text = S.label(value);
+      if (seen.has(text) || S.BAD_TEXT.test(text)) return false;
+      seen.add(text);
+      return true;
+    });
+    if (pool.length <= count) return pool;
+    const keyValue = choiceValue(key);
+    const values = pool.map(([value]) => choiceValue(value));
+    if (!Number.isFinite(keyValue) || values.some((value) => !Number.isFinite(value))) return t.sample(pool, count);
+    const byRank = new Map();
+    const walk = (start, chosen) => {
+      if (chosen.length === count) {
+        const rank = chosen.filter((index) => values[index] < keyValue).length;
+        if (!byRank.has(rank)) byRank.set(rank, []);
+        byRank.get(rank).push(chosen.slice());
+        return;
+      }
+      for (let index = start; index < pool.length; index += 1) {
+        chosen.push(index);
+        walk(index + 1, chosen);
+        chosen.pop();
+      }
+    };
+    walk(0, []);
+    const ranks = [...byRank.keys()].sort((a, b) => a - b);
+    return t.pick(byRank.get(t.pick(ranks))).map((index) => pool[index]);
+  }
+
+  // "−3/4" for "3/4", −5 for 5.
+  const negateChoice = (value) => (typeof value === "number"
+    ? -value
+    : String(value).startsWith(MINUS) ? String(value).slice(1) : `${MINUS}${value}`);
+
+  // Like spreadAround, but the key never sits in the only ± pair. When the
+  // modelled mistakes include the key's negation (a sign slip), half the time
+  // it is shown with another mistake and that mistake's negation (the same
+  // mistake plus the sign slip, `signSlip` completing "it also …"); otherwise
+  // the negation is left out and the rest are spread around the key.
+  function spreadWithMirror(t, key, wrong, signSlip) {
+    const keyValue = choiceValue(key);
+    const isMirror = ([value]) => Number.isFinite(keyValue) && keyValue !== 0 &&
+      Math.abs(choiceValue(value) + keyValue) < 1e-9;
+    const mirror = wrong.find(isMirror);
+    const rest = wrong.filter((entry) => !isMirror(entry));
+    if (mirror && t.chance(0.5)) {
+      const partners = rest.filter(([value]) => {
+        const shown = choiceValue(value);
+        return Number.isFinite(shown) && shown !== 0 && Math.abs(Math.abs(shown) - Math.abs(keyValue)) > 1e-9 &&
+          S.label(value) !== S.label(key);
+      });
+      // The partner pair lies inside the key's pair or outside it about
+      // equally often, so the key is an extreme value half the time.
+      const inner = partners.filter(([value]) => Math.abs(choiceValue(value)) < Math.abs(keyValue));
+      const outer = partners.filter(([value]) => Math.abs(choiceValue(value)) > Math.abs(keyValue));
+      if (inner.length && outer.length) {
+        const [value, reason] = t.pick(t.pick([inner, outer]));
+        return [mirror, [value, reason], [negateChoice(value), `${reason.replace(/\.$/, "")}; it also ${signSlip}.`]];
+      }
+    }
+    return spreadAround(t, key, distinctWrong(key, rest) >= 3 ? rest : wrong);
+  }
+
   // The line through the first two shown points, checked against the rest.
   // Verification rebuilds f from what the student sees, not from m and b0.
   function lineFrom(points) {
@@ -348,6 +431,6 @@
     clean, terminates, fitsGrid, whole, commas, usd, money, distinctWrong, commaChoices,
     responseFor, xTerm, standardForm, moveText, compile, holds, sidesOf, readPoint, exact,
     fitsGridHard, round2, commasHard, usdHard, commaChoicesHard, distinctWrongHard, compileHard,
-    lineFrom, lineCoefficients, cramer, slopeTerm,
+    lineFrom, lineCoefficients, cramer, slopeTerm, choiceValue, collides, spreadAround, negateChoice, spreadWithMirror,
   };
 });
