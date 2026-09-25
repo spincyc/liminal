@@ -1,137 +1,148 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-test="SAT">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
     <meta
       name="description"
       content="Build and download printable two-column SAT and ACT practice booklets with a bubble answer sheet and a separate answer key."
     />
     <title>Printable booklets — Liminal</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
     <link rel="stylesheet" href="styles/app.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <header class="topbar">
-      <a class="brand" href="index.html" aria-label="Liminal home">
-        <span class="brand-mark" aria-hidden="true">L</span>
-        <span>
-          <strong>Liminal</strong>
-          <small>Independent SAT &amp; ACT practice</small>
-        </span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a class="nav-link" href="index.html">Practice</a>
-        <a class="nav-link active" href="print.html" aria-current="page">Booklets</a>
-      </nav>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="index.html#practice" data-view="setup">
+          <span class="brand-name">Liminal</span>
+          <span class="brand-sub">Independent <span data-test-name>SAT</span> practice</span>
+        </a>
+        <div class="test-switch" role="group" aria-label="Test">
+          <button class="test-switch-option" type="button" data-test-option="SAT" aria-pressed="true">SAT</button>
+          <button class="test-switch-option" type="button" data-test-option="ACT" aria-pressed="false">ACT</button>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="index.html#practice" data-view="setup">Practice</a>
+          <a class="nav-link" href="index.html#progress" data-view="dashboard">Progress</a>
+          <a class="nav-link" href="index.html#review" data-view="review">Review</a>
+          <a class="nav-link" href="index.html#tips" data-view="signs"><span class="nav-full">Study tips</span><span class="nav-short" aria-hidden="true">Tips</span></a>
+          <a class="nav-link" href="print.html" data-view="booklets" aria-current="page">Booklets</a>
+        </nav>
+      </div>
     </header>
 
-    <main id="main">
-      <section class="view active">
-        <div class="hero">
-          <div>
-            <p class="eyebrow">Paper practice</p>
-            <h1 tabindex="-1">Print a test booklet.</h1>
-            <p class="hero-copy">
-              A two-column booklet with directions, a section schedule, and a
-              bubble answer sheet — plus a separate answer key, so a form can be
-              sat honestly. Download it, print it, or save it as a PDF.
-            </p>
-          </div>
-        </div>
+    <main id="main" class="site-main" tabindex="-1">
+      <header class="page-head">
+        <h1 tabindex="-1">Printable booklets</h1>
+        <p class="lede">
+          A two-column <span data-test-name>SAT</span> test booklet with
+          directions, a section schedule, and a bubble answer sheet, plus a
+          separate answer key. Print it, or save it as a PDF.
+        </p>
+      </header>
 
-        <div class="booklet-layout">
-          <section class="panel" aria-labelledby="formHeading">
-            <p class="eyebrow">Step one</p>
-            <h2 id="formHeading">Choose a form</h2>
-            <div id="formGrid" class="form-grid" role="radiogroup"
-              aria-labelledby="formHeading"></div>
-          </section>
+      <div class="booklet-grid">
+        <section class="card" aria-labelledby="formHeading">
+          <p class="step">Step 1 of 3</p>
+          <h2 id="formHeading">Choose a form</h2>
+          <div id="formGrid" class="option-list" role="radiogroup" aria-labelledby="formHeading"></div>
+        </section>
 
-          <aside class="side-stack">
-            <section class="panel" aria-labelledby="buildHeading">
-              <p class="eyebrow">Step two</p>
-              <h2 id="buildHeading">Build and download</h2>
-              <p id="formSummary" class="field-note"></p>
+        <div class="side-stack">
+          <section class="card" aria-labelledby="buildHeading">
+            <p class="step">Step 2 of 3</p>
+            <h2 id="buildHeading">Build and download</h2>
+            <p id="formSummary" class="muted"></p>
 
-              <label class="print-label" for="seedInput">Form seed</label>
-              <input id="seedInput" type="text" autocomplete="off" spellcheck="false" />
-              <p class="field-note">
+            <div class="field">
+              <label for="seedInput">Form seed</label>
+              <div class="input-row">
+                <input id="seedInput" type="text" autocomplete="off" spellcheck="false"
+                  aria-describedby="seedNote" />
+                <button id="rerollBtn" class="button secondary" type="button">New seed</button>
+              </div>
+              <p id="seedNote" class="field-note">
                 The seed decides which questions are drawn. Keep it to rebuild the
                 identical test; change it for a fresh one.
               </p>
-              <button id="rerollBtn" class="button" type="button">New seed</button>
+            </div>
 
-              <h3 class="print-subhead">Test booklet</h3>
-              <div class="print-actions">
-                <button id="openTestBtn" class="button primary" type="button">
-                  Open to print
-                </button>
-                <button id="downloadTestBtn" class="button" type="button">
-                  Download
-                </button>
+            <h3 class="subhead">Test booklet</h3>
+            <div class="card-actions">
+              <button id="openTestBtn" class="button primary" type="button">Open to print</button>
+              <button id="downloadTestBtn" class="button secondary" type="button">Download</button>
+            </div>
+
+            <h3 class="subhead">Answer key and explanations</h3>
+            <div class="card-actions">
+              <button id="openKeyBtn" class="button secondary" type="button">Open to print</button>
+              <button id="downloadKeyBtn" class="button secondary" type="button">Download</button>
+            </div>
+
+            <div id="printStatus" class="status-line" role="status" aria-live="polite"></div>
+            <p class="note">
+              Downloads are self-contained web pages. Open one in any browser and
+              print it to get a PDF; there is nothing else to install.
+            </p>
+          </section>
+
+          <section class="card" aria-labelledby="shareHeading">
+            <p class="step">Step 3 of 3</p>
+            <h2 id="shareHeading">Share this form</h2>
+            <p>
+              Anyone who opens this link builds the same test from the same seed,
+              so your results are comparable.
+            </p>
+            <div class="field">
+              <label for="shareLink">Link to this form</label>
+              <div class="input-row">
+                <input id="shareLink" type="text" readonly />
+                <button id="copyLinkBtn" class="button secondary" type="button">Copy link</button>
               </div>
-
-              <h3 class="print-subhead">Answer key and explanations</h3>
-              <div class="print-actions">
-                <button id="openKeyBtn" class="button" type="button">
-                  Open to print
-                </button>
-                <button id="downloadKeyBtn" class="button" type="button">
-                  Download
-                </button>
-              </div>
-
-              <div id="printStatus" class="status-line" role="status" aria-live="polite"></div>
-              <small>
-                Downloads are self-contained web pages. Open one in any browser
-                and print it to get a PDF — nothing else to install.
-              </small>
-            </section>
-
-            <section class="panel" aria-labelledby="shareHeading">
-              <p class="eyebrow">Step three</p>
-              <h2 id="shareHeading">Share this form</h2>
-              <p>
-                Send this link and anyone who opens it builds the same test from
-                the same seed, so your scores are comparable.
-              </p>
-              <label class="print-label" for="shareLink">Link to this form</label>
-              <input id="shareLink" type="text" readonly />
-              <button id="copyLinkBtn" class="button" type="button">Copy link</button>
-              <small>
-                The link carries the form and seed only. No answers, no scores,
-                and nothing about your progress.
-              </small>
-            </section>
-          </aside>
+            </div>
+            <p class="note">
+              The link carries the form and seed only: no answers, no scores, and
+              nothing about your progress.
+            </p>
+          </section>
         </div>
+      </div>
 
-        <section class="panel notice" aria-labelledby="honestHeading">
-          <h2 id="honestHeading">What these booklets are worth</h2>
-          <p>
-            Use them for pacing, endurance, and answer-sheet practice. The
-            question banks are generated from a limited set of templates, so
-            accuracy on a form runs well above what the same student would score
-            on an official test. Time yourself honestly; treat the percentage as
-            practice feedback, not a score prediction. These forms are original
-            content and are not affiliated with, endorsed by, or published by the
-            College Board or ACT, Inc.
-          </p>
-        </section>
+      <section class="notice booklet-notice" aria-labelledby="honestHeading">
+        <h2 id="honestHeading">What these booklets are worth</h2>
+        <p>
+          Use them for pacing, endurance, and answer-sheet practice. The question
+          banks are generated from a limited set of templates, so accuracy on a
+          form runs well above what the same student would score on an official
+          test. Time yourself honestly, and treat the percentage as practice
+          feedback, not a score prediction.
+        </p>
       </section>
     </main>
 
-    <footer class="footer">
-      <p>
-        Original practice content. Independent of the College Board and ACT, Inc.
-      </p>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <p>
+          Private by design: no account and no server. Progress stays in this
+          browser on this device.
+        </p>
+        <p>
+          Independent educational practice. Not affiliated with, endorsed by, or
+          sponsored by College Board or ACT, Inc. SAT® is a registered trademark
+          of College Board. ACT® is a registered trademark of ACT, Inc. All
+          questions and passages here are original.
+        </p>
+      </div>
     </footer>
 
     <script src="content/catalog.js"></script>
     <script src="lib/core.js"></script>
     <script src="lib/booklet.js"></script>
+    <script src="app/site.js"></script>
     <script src="app/print.js"></script>
   </body>
 </html>

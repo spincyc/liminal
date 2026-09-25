@@ -432,6 +432,9 @@
       first.sectionKey || "";
     const title = options.title || (resumeShell && resumeShell.title) || first.section ||
       "Practice set";
+    // A template run's code (template mask and seed), shown in the report so
+    // the exact set can be named and rebuilt.
+    const runCode = options.runCode || (resumeShell && resumeShell.runCode) || null;
     const mathSection = isMathSection(sectionKey);
     const tools = Object.assign(
       { calculator: mathSection, reference: mathSection },
@@ -456,6 +459,7 @@
         version: SHELL_VERSION,
         title,
         sectionKey,
+        runCode,
         tools,
         directions,
         view,
@@ -1624,7 +1628,11 @@
       const report = session.summary();
       const heading = h("h2", { className: "lm-page-title", tabindex: "-1", id: "lm-qnum", text: "Your results" });
       const children = [
-        h("p", { className: "lm-eyebrow", text: `${title} · ${report.feedback === "instant" ? "Instant feedback" : "Feedback at the end"}` }),
+        h("p", {
+          className: "lm-eyebrow",
+          text: `${title} · ${report.feedback === "instant" ? "Instant feedback" : "Feedback at the end"}` +
+            (runCode ? ` · Set code ${runCode}` : ""),
+        }),
         heading,
       ];
       if (timeUpNotice || report.finishReason === "time") {

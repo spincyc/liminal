@@ -3,6 +3,9 @@
 
   const catalog = window.PRACTICE_CATALOG;
   const core = window.PracticeCore;
+  const site = window.LiminalSite;
+  const runs = window.LiminalRuns;
+  const mask = window.LiminalTemplateMask;
   // Namespaced: every project site under one github.io account shares a single
   // localStorage origin.
   const STORAGE_KEY = "liminal:progress:v2";
@@ -17,18 +20,32 @@
     "act-reading": 36,
     "act-science": 40,
   };
+  // The quick path in the Hard math reps card; the practice form's Hard math
+  // reps mode sets any count, feedback, or timer.
+  const HARD_REPS_DEFAULT_COUNT = 10;
+
   const views = {
     setup: document.getElementById("setupView"),
     dashboard: document.getElementById("dashboardView"),
     review: document.getElementById("reviewView"),
     signs: document.getElementById("signsView"),
   };
+  // The address bar names the view, so every nav link is a real link that
+  // works from the booklet page too.
+  const VIEW_BY_HASH = {
+    practice: "setup",
+    progress: "dashboard",
+    review: "review",
+    tips: "signs",
+  };
 
   const elements = {
     form: document.getElementById("practiceForm"),
+    setupLede: document.getElementById("setupLede"),
     section: document.getElementById("sectionSelect"),
     sectionNote: document.getElementById("sectionNote"),
     mode: document.getElementById("modeSelect"),
+    modeNote: document.getElementById("modeNote"),
     count: document.getElementById("countInput"),
     countPicks: document.getElementById("countPicks"),
     feedbackMode: document.getElementById("feedbackSelect"),
@@ -38,6 +55,9 @@
     resumeText: document.getElementById("resumeText"),
     resumeBtn: document.getElementById("resumeBtn"),
     discardSession: document.getElementById("discardSessionBtn"),
+    filterDetails: document.getElementById("filterDetails"),
+    filterSummary: document.getElementById("filterSummary"),
+    filterHint: document.getElementById("filterHint"),
     domain: document.getElementById("domainSelect"),
     skill: document.getElementById("skillSelect"),
     search: document.getElementById("searchInput"),
@@ -46,9 +66,10 @@
     start: document.getElementById("startBtn"),
     recommendText: document.getElementById("recommendText"),
     recommendBtn: document.getElementById("recommendBtn"),
+    hardRepsBtn: document.getElementById("hardRepsBtn"),
+    hardRepsCustomize: document.getElementById("hardRepsCustomizeBtn"),
+    hardRepsStatus: document.getElementById("hardRepsStatus"),
     miniTestOptions: document.getElementById("miniTestOptions"),
-    miniTestSummary: document.getElementById("miniTestSummary"),
-    miniTestStart: document.getElementById("miniTestStartBtn"),
     miniTestStatus: document.getElementById("miniTestStatus"),
     dashboardStats: document.getElementById("dashboardStats"),
     skillTableWrap: document.getElementById("skillTableWrap"),
@@ -56,8 +77,9 @@
     masterySort: document.getElementById("masterySort"),
     masteryNote: document.getElementById("masteryNote"),
     clearProgress: document.getElementById("clearProgressBtn"),
+    missedTab: document.getElementById("missedTab"),
+    flaggedTab: document.getElementById("flaggedTab"),
     reviewList: document.getElementById("reviewList"),
-    home: document.getElementById("homeLink"),
     signsDisclaimer: document.getElementById("signsDisclaimer"),
     signsPrinciples: document.getElementById("signsPrinciples"),
     signsFilter: document.getElementById("signsFilter"),
@@ -70,10 +92,12 @@
   let activeReviewList = "missed";
   let masteryRows = [];
   let clearArmed = false;
+  let clearTimer = null;
   let bankRequestId = 0;
+  let currentView = "setup";
   const bankPromises = new Map();
-
-  let selectedBlueprintId = "sat";
+  // The last section chosen for each test, so switching back restores it.
+  const sectionByTest = { SAT: "sat-reading-writing", ACT: "act-english" };
 
   function emptyProgress() {
     return {
@@ -110,10 +134,37 @@
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
     } catch (error) {
-      elements.bankStatus.className = "status-line error";
-      elements.bankStatus.textContent =
-        "Progress could not be saved in this browser. Practice can continue.";
+      setStatus(elements.bankStatus, "Progress could not be saved in this browser. Practice can continue.", "error");
     }
+  }
+
+  function setStatus(node, message, kind) {
+    node.className = `status-line${kind ? ` ${kind}` : ""}`;
+    node.textContent = message || "";
+  }
+
+  /* ------------------------------------------------------------ test scope */
+
+  function currentTest() {
+    return site.getTest();
+  }
+
+  function testSections(test) {
+    return catalog.sections.filter((section) => section.test === (test || currentTest()));
+  }
+
+  // Attempts carry their section; older records fall back to the question id,
+  // which starts with the test too.
+  function attemptTest(attempt) {
+    return site.testOf(attempt.sectionKey) || site.testOf(attempt.questionId);
+  }
+
+  function testAttempts(test) {
+    return progress.attempts.filter((attempt) => attemptTest(attempt) === (test || currentTest()));
+  }
+
+  function formatNumber(value) {
+    return Number(value).toLocaleString("en-US");
   }
 
   function sectionByKey(key) {
@@ -121,13 +172,30 @@
   }
 
   function populateSections() {
-    catalog.sections.forEach((section) => {
+    const sections = testSections();
+    elements.section.innerHTML = "";
+    sections.forEach((section) => {
       const option = document.createElement("option");
       option.value = section.key;
-      option.textContent = `${section.test} — ${section.shortLabel} (${catalog.targetPerSection})`;
+      option.textContent = section.shortLabel;
       elements.section.appendChild(option);
     });
-    elements.section.value = "sat-reading-writing";
+    const remembered = sectionByTest[currentTest()];
+    elements.section.value = sections.some((section) => section.key === remembered)
+      ? remembered
+      : sections[0].key;
+  }
+
+  function renderSetupCopy() {
+    const test = currentTest();
+    const sections = testSections(test);
+    const essay = (section) => (section.responseTypes || []).includes("essay");
+    const questions = sections.filter((section) => !essay(section)).length * catalog.targetPerSection;
+    const prompts = sections.filter(essay).length * catalog.targetPerSection;
+    elements.setupLede.textContent =
+      `Build a set from ${formatNumber(questions)} original ${test} questions` +
+      (prompts ? ` and ${formatNumber(prompts)} writing prompts` : "") +
+      ". Every set opens in the digital test screen.";
   }
 
   function loadBank(sectionKey) {
@@ -154,48 +222,43 @@
     return pending;
   }
 
-  async function loadAllBanks() {
-    const banks = await Promise.all(catalog.sections.map((section) => loadBank(section.key)));
+  async function loadTestBanks(test) {
+    const banks = await Promise.all(testSections(test).map((section) => loadBank(section.key)));
     return banks.flat();
   }
 
   async function changeSection() {
     const requestId = ++bankRequestId;
     const section = sectionByKey(elements.section.value);
+    sectionByTest[section.test] = section.key;
     elements.start.disabled = true;
     elements.recommendBtn.disabled = true;
-    elements.bankStatus.className = "status-line loading";
-    elements.bankStatus.textContent = `Loading ${section.test} ${section.shortLabel}…`;
+    elements.matchCount.className = "match-count";
+    elements.matchCount.textContent = "";
+    setStatus(elements.bankStatus, `Loading ${section.test} ${section.shortLabel}…`, "loading");
     elements.sectionNote.textContent = section.optional
-      ? "This is an optional ACT section and is not part of the current Composite score."
+      ? "An optional ACT section. It is not part of the ACT Composite score."
       : section.test === "ACT"
-        ? "This required section contributes to the current ACT Composite score."
-        : "This is one of the digital SAT's two sections.";
+        ? "A required section that counts toward the ACT Composite score."
+        : "One of the digital SAT's two sections.";
     try {
       const bank = await loadBank(section.key);
-      if (section.key === "sat-math") {
-        await loadHardFamilies().catch((error) => console.warn(error.message));
-      }
+      if (usesTemplates(section.key)) await sectionTemplates(section.key);
       if (requestId !== bankRequestId) return;
       currentBank = bank;
-      const hardOption = elements.mode.querySelector('option[value="hard-reps"]');
-      const hardAvailable = section.key === "sat-math" && (window.SAT_MATH_HARD_FAMILIES || []).length > 0;
-      hardOption.hidden = !hardAvailable;
-      hardOption.disabled = !hardAvailable;
-      if (!hardAvailable && elements.mode.value === "hard-reps") elements.mode.value = "targeted";
       populateTaxonomy();
       updateMatches();
       updateRecommendation();
-      elements.bankStatus.className = "status-line success";
-      elements.bankStatus.textContent =
-        `${currentBank.length} validated original items ready. Content version ${catalog.contentVersion}.`;
+      setStatus(elements.bankStatus, "");
     } catch (error) {
       if (requestId !== bankRequestId) return;
       currentBank = [];
-      elements.matchCount.textContent = "Unavailable";
-      elements.bankStatus.className = "status-line error";
-      elements.bankStatus.textContent =
-        `${error.message} If this file is open locally, confirm the site was built with npm run build.`;
+      elements.matchCount.textContent = "";
+      setStatus(
+        elements.bankStatus,
+        `${error.message} If this file is open locally, confirm the site was built with npm run build.`,
+        "error",
+      );
     }
   }
 
@@ -231,11 +294,12 @@
     });
   }
 
+  function difficultyInputs() {
+    return Array.from(document.querySelectorAll('input[name="difficulty"]'));
+  }
+
   function selectedDifficulties() {
-    return Array.from(
-      document.querySelectorAll('input[name="difficulty"]:checked'),
-      (input) => input.value,
-    );
+    return difficultyInputs().filter((input) => input.checked).map((input) => input.value);
   }
 
   function latestMissedIds() {
@@ -252,90 +316,222 @@
     return null;
   }
 
-  /* ------------------------------------------------------- hard math reps */
+  /* ------------------------------------------------------ template sections */
 
-  const HARD_ID_PREFIX = "sat-math-hard:";
-  const HARD_FAMILY_FILES = [
-    "shared",
-    "algebra",
-    "advanced-quadratics",
-    "advanced-functions",
-    "data-analysis",
-    "geometry",
-  ];
-  let hardFamiliesLoading = null;
+  // SAT sections are built from templates: parameterized families that draw a
+  // fresh question each time. A run takes at most one question per template
+  // (lib/runs.js); the run is a template mask plus a seed, and every question's
+  // id names its section, template, and seed, so any past question can be
+  // rebuilt exactly. ACT sections still draw from their fixed banks.
+  // Each template section is one bundle built from
+  // src/lib/families/<test>/<section>/ (see tools/lib/families.js).
+  const TEMPLATE_SECTIONS = ["sat-math", "sat-reading-writing"];
+  // Questions generated before templates had registry bits used this prefix.
+  const LEGACY_HARD_PREFIX = "sat-math-hard:";
+  const scriptLoads = new Map();
+  const familyLoads = new Map();
 
-  // The generators are about half a megabyte, so they load only once SAT Math
-  // is chosen, in order, since each family file registers onto shared.js.
-  function loadHardFamilies() {
-    if (!hardFamiliesLoading) {
-      hardFamiliesLoading = HARD_FAMILY_FILES.reduce(
-        (chain, name) => chain.then(() => new Promise((resolve, reject) => {
-          const script = document.createElement("script");
-          script.src = `lib/families/sat-math-hard/${name}.js`;
-          script.onload = resolve;
-          script.onerror = () => reject(new Error(`Could not load ${name}.js.`));
-          document.head.appendChild(script);
-        })),
-        Promise.resolve(),
-      ).catch((error) => {
-        hardFamiliesLoading = null;
-        throw error;
-      });
+  function usesTemplates(sectionKey) {
+    return TEMPLATE_SECTIONS.includes(sectionKey);
+  }
+
+  function loadScript(file) {
+    if (!scriptLoads.has(file)) {
+      scriptLoads.set(file, new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = `lib/families/${file}.js`;
+        script.onload = resolve;
+        script.onerror = () => {
+          scriptLoads.delete(file);
+          reject(new Error(`Could not load ${file}.js.`));
+        };
+        document.head.appendChild(script);
+      }));
     }
-    return hardFamiliesLoading;
+    return scriptLoads.get(file);
   }
 
-  function hardFamilies() {
-    const families = window.SAT_MATH_HARD_FAMILIES || [];
-    return families.filter((family) =>
-      (!elements.domain.value || family.domain === elements.domain.value) &&
-      (!elements.skill.value || family.skill === elements.skill.value));
-  }
-
-  // A generated question's id names its family and seed, so any past item can
-  // be rebuilt exactly, e.g. to re-serve a missed one.
-  function hardQuestion(familyId, seed) {
-    const family = (window.SAT_MATH_HARD_FAMILIES || []).find((entry) => entry.id === familyId);
-    if (!family || !window.SAT_MATH_HARD_SHARED) return null;
-    const record = window.SAT_MATH_HARD_SHARED.instantiate(family, seed);
-    return { ...record, id: `${HARD_ID_PREFIX}${familyId}:${seed}` };
-  }
-
-  function hardQuestionById(id) {
-    if (!id.startsWith(HARD_ID_PREFIX)) return null;
-    const [familyId, seed] = id.slice(HARD_ID_PREFIX.length).split(":");
-    return hardQuestion(familyId, seed);
-  }
-
-  // Families are dealt round-robin in a shuffled order, and each family's
-  // seed counter advances, so a set never repeats a problem already served.
-  function buildHardReps(count) {
-    const families = core.deterministicShuffle(hardFamilies(), `${Date.now()}-hard`);
-    if (!families.length) return [];
-    progress.hardSeeds = progress.hardSeeds || {};
-    const questions = [];
-    for (let index = 0; questions.length < count; index += 1) {
-      const family = families[index % families.length];
-      const seed = progress.hardSeeds[family.id] || 1000;
-      progress.hardSeeds[family.id] = seed + 1;
-      const question = hardQuestion(family.id, seed);
-      if (question) questions.push(question);
-      if (index > count * 4) break;
+  // The templates are large, so a section's bundle loads the first time that
+  // section is chosen; its files register into window.LiminalFamilies.
+  function loadFamilies(sectionKey) {
+    if (!usesTemplates(sectionKey)) return Promise.resolve([]);
+    if (!familyLoads.has(sectionKey)) {
+      const loading = loadScript(sectionKey)
+        .then(() => runs.catalogTemplates(
+          (window.LiminalFamilies || {})[sectionKey] || [],
+          (window.PRACTICE_TEMPLATES || {})[sectionKey] || { templates: [] },
+        ))
+        .catch((error) => {
+          familyLoads.delete(sectionKey);
+          throw error;
+        });
+      familyLoads.set(sectionKey, loading);
     }
+    return familyLoads.get(sectionKey);
+  }
+
+  const loadedTemplates = new Map();
+
+  async function sectionTemplates(sectionKey) {
+    if (!loadedTemplates.has(sectionKey)) loadedTemplates.set(sectionKey, await loadFamilies(sectionKey));
+    return loadedTemplates.get(sectionKey);
+  }
+
+  function templatesNow(sectionKey) {
+    return loadedTemplates.get(sectionKey) || [];
+  }
+
+  // Rebuilds a generated question from its id: "<section>:<template>:<seed>",
+  // or the older "sat-math-hard:<family>:<seed>".
+  function generatedQuestion(id) {
+    const legacy = id.startsWith(LEGACY_HARD_PREFIX);
+    const parts = (legacy ? `sat-math:${id.slice(LEGACY_HARD_PREFIX.length)}` : id).split(":");
+    if (parts.length !== 3 || !usesTemplates(parts[0])) return null;
+    const [sectionKey, templateId, seed] = parts;
+    const template = templatesNow(sectionKey).find((entry) => entry.id === templateId);
+    if (!template || !window.LiminalFamilyShared) return null;
+    return { ...window.LiminalFamilyShared.instantiate(template.family, seed), id };
+  }
+
+  function isGeneratedId(id) {
+    return id.startsWith(LEGACY_HARD_PREFIX) || usesTemplates(id.split(":")[0]);
+  }
+
+  function templateSeen(sectionKey) {
+    const code = (progress.templatesSeen || {})[sectionKey];
+    try {
+      return code ? mask.fromCode(code) : mask.EMPTY;
+    } catch (error) {
+      return mask.EMPTY;
+    }
+  }
+
+  // Templates served in any run so far; a new run prefers the rest.
+  function rememberTemplates(sectionKey, runMask) {
+    progress.templatesSeen = progress.templatesSeen || {};
+    progress.templatesSeen[sectionKey] = mask.toCode(mask.union(templateSeen(sectionKey), runMask));
     saveProgress();
-    return questions;
   }
+
+  function newRunSeed() {
+    return Math.floor(Math.random() * 36 ** 6).toString(36);
+  }
+
+  // One run: at most one question per template, preferring templates not yet
+  // seen, spread across skills, never repeating a scene.
+  function buildTemplateRun(sectionKey, templates, count, filters) {
+    const seed = newRunSeed();
+    const run = runs.chooseTemplates(templates, {
+      count,
+      seed,
+      filters,
+      seen: templateSeen(sectionKey),
+    });
+    const questions = runs.drawQuestions(
+      run.templates,
+      seed,
+      window.LiminalFamilyShared.instantiate,
+      `${sectionKey}:`,
+    );
+    rememberTemplates(sectionKey, run.mask);
+    return { questions, code: runs.runCode(run.mask, seed) };
+  }
+
+  function formFilters() {
+    return {
+      domains: elements.domain.value ? [elements.domain.value] : [],
+      skills: elements.skill.value ? [elements.skill.value] : [],
+      difficulties: selectedDifficulties(),
+    };
+  }
+
+  // The Hard math card: ten Hard SAT Math templates, report at the end.
+  async function startHardRepsCard() {
+    elements.hardRepsBtn.disabled = true;
+    setStatus(elements.hardRepsStatus, "Preparing fresh hard problems…", "loading");
+    let templates;
+    try {
+      templates = await sectionTemplates("sat-math");
+    } catch (error) {
+      setStatus(elements.hardRepsStatus, `${error.message} Refresh the page and try again.`, "error");
+      elements.hardRepsBtn.disabled = false;
+      return;
+    }
+    const run = buildTemplateRun("sat-math", templates, HARD_REPS_DEFAULT_COUNT, { difficulties: ["Hard"] });
+    elements.hardRepsBtn.disabled = false;
+    setStatus(elements.hardRepsStatus, "");
+    launchTestMode({
+      title: "SAT Math — Hard",
+      sectionKey: "sat-math",
+      questions: run.questions,
+      runCode: run.code,
+      feedback: "end",
+      timeLimitSeconds: null,
+    });
+  }
+
+  // Sets the practice form to SAT Math, Hard only, so the count, feedback, and
+  // timer are the student's to choose.
+  async function customizeHardReps() {
+    if (currentTest() !== "SAT") return;
+    if (elements.section.value !== "sat-math") {
+      elements.section.value = "sat-math";
+      await changeSection();
+    }
+    elements.mode.value = "targeted";
+    difficultyInputs().forEach((input) => {
+      input.checked = input.value === "Hard";
+    });
+    updateMatches();
+    const reduceMotion = window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    elements.form.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    elements.count.focus({ preventScroll: true });
+    setStatus(elements.hardRepsStatus, "The practice form is set to SAT Math, Hard only. Choose the count, feedback, and timer there.", "success");
+  }
+
+  /* --------------------------------------------------------- practice form */
 
   function matchingQuestions() {
     const mode = elements.mode.value;
-    if (mode === "hard-reps") return [];
-    if ((mode === "missed" || mode === "flagged") && elements.section.value === "sat-math") {
+    const sectionKey = elements.section.value;
+    if ((mode === "missed" || mode === "flagged") && usesTemplates(sectionKey)) {
       const ids = mode === "missed" ? latestMissedIds() : progress.flagged;
-      const generated = ids.map(hardQuestionById).filter(Boolean);
-      return [...matchingBankQuestions(), ...generated];
+      const generated = ids
+        .filter(isGeneratedId)
+        .map(generatedQuestion)
+        .filter((question) => question && question.sectionKey === sectionKey);
+      return onePerTemplate([...matchingBankQuestions(), ...generated]);
     }
     return matchingBankQuestions();
+  }
+
+  // Keeps the first question of each template, so a review set too takes at
+  // most one question per template.
+  function onePerTemplate(questions) {
+    const seen = new Set();
+    return questions.filter((question) => {
+      const key = question.templateId || question.id;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  // Template sections build fresh runs in these modes; review modes replay
+  // specific past questions.
+  function buildsTemplateRun(mode) {
+    return usesTemplates(elements.section.value) &&
+      (mode === "targeted" || mode === "full" || mode === "adaptive");
+  }
+
+  function runFilters(mode) {
+    if (mode === "targeted") return formFilters();
+    if (mode === "adaptive") {
+      const weak = weakestSkill(elements.section.value);
+      return weak ? { skills: [weak.skill] } : {};
+    }
+    return {};
   }
 
   function matchingBankQuestions() {
@@ -350,30 +546,92 @@
     });
   }
 
+  const MODE_NOTES = {
+    targeted: "Questions you have not seen recently, narrowed by any topic filters.",
+    full: "A mix from the whole section. Topic filters are not used.",
+    adaptive: "Starts with the recommended question, then mixes the section. Topic filters are not used.",
+    missed: "Questions you answered wrong most recently in this section.",
+    flagged: "Questions you marked for review in this section.",
+  };
+
+  // Which topic filters a mode uses, so the disclosure can say why the rest
+  // are turned off.
+  function filterUse(mode) {
+    if (mode === "full" || mode === "adaptive") {
+      return { domain: false, skill: false, difficulty: false, search: false,
+        hint: "Full section mix and Recommended next draw from the whole section, so topic filters are off." };
+    }
+    if (buildsTemplateRun(mode)) {
+      return { domain: true, skill: true, difficulty: true, search: false,
+        hint: "Questions here are generated fresh from templates, so there is no text to search." };
+    }
+    return { domain: true, skill: true, difficulty: true, search: true, hint: "" };
+  }
+
+  function activeFilterCount(use) {
+    let count = 0;
+    if (use.domain && elements.domain.value) count += 1;
+    if (use.skill && elements.skill.value) count += 1;
+    if (use.difficulty && selectedDifficulties().length < difficultyInputs().length) count += 1;
+    if (use.search && elements.search.value.trim()) count += 1;
+    return count;
+  }
+
+  function renderFilterState(mode) {
+    const use = filterUse(mode);
+    elements.domain.disabled = !use.domain;
+    elements.skill.disabled = !use.skill;
+    elements.search.disabled = !use.search;
+    difficultyInputs().forEach((input) => {
+      input.disabled = !use.difficulty;
+    });
+    elements.filterHint.textContent = use.hint;
+    elements.filterHint.classList.toggle("hidden", !use.hint);
+    const count = activeFilterCount(use);
+    const anyUsed = use.domain || use.skill || use.difficulty || use.search;
+    elements.filterSummary.textContent = !anyUsed
+      ? "Not used in this mode"
+      : count
+        ? `${count} filter${count === 1 ? "" : "s"} on`
+        : "All topics";
+    elements.filterSummary.classList.toggle("is-active", anyUsed && count > 0);
+  }
+
+  function emptyReason(mode) {
+    if (mode === "missed") return "You have no missed questions in this section yet.";
+    if (mode === "flagged") return "You have not marked any questions for review in this section.";
+    return "No questions match. Loosen a filter under Narrow by topic.";
+  }
+
   function updateMatches() {
     const mode = elements.mode.value;
-    const filtersDisabled = mode === "full" || mode === "adaptive";
-    [elements.domain, elements.skill, elements.search].forEach((control) => {
-      control.disabled = filtersDisabled;
-    });
-    document.querySelectorAll('input[name="difficulty"]').forEach((input) => {
-      input.disabled = filtersDisabled;
-    });
-    if (mode === "hard-reps") {
-      const types = hardFamilies().length;
-      elements.matchCount.textContent = `${types} problem type${types === 1 ? "" : "s"}, fresh each time`;
-      elements.start.disabled = types === 0;
-      document.querySelectorAll('input[name="difficulty"]').forEach((input) => {
-        input.disabled = true;
-      });
-      elements.search.disabled = true;
-      elements.count.max = "100";
-      renderCountPicks(100, true);
+    elements.modeNote.textContent = MODE_NOTES[mode] || "";
+    renderFilterState(mode);
+    elements.matchCount.className = "match-count";
+    if (buildsTemplateRun(mode)) {
+      // A set takes at most one question per template, so the templates that
+      // match are the most questions it can hold.
+      const available = runs.available(templatesNow(elements.section.value), runFilters(mode));
+      elements.matchCount.textContent = available
+        ? `${formatNumber(available)} question template${available === 1 ? "" : "s"} match, at most one question each`
+        : "No question templates match. Loosen a filter under Narrow by topic.";
+      elements.matchCount.classList.toggle("is-empty", available === 0);
+      elements.start.disabled = available === 0;
+      elements.count.max = String(Math.max(1, available));
+      renderCountPicks(available);
       updateTimedNote();
       return;
     }
-    const matches = matchingQuestions();
-    elements.matchCount.textContent = `${matches.length} match${matches.length === 1 ? "" : "es"}`;
+    // Recommended next draws from the whole section whatever the filters say.
+    const matches = mode === "adaptive" ? currentBank : matchingQuestions();
+    if (mode === "full" || mode === "adaptive") {
+      elements.matchCount.textContent = `${formatNumber(matches.length)} questions in this section`;
+    } else if (matches.length) {
+      elements.matchCount.textContent = `${formatNumber(matches.length)} question${matches.length === 1 ? "" : "s"} match`;
+    } else {
+      elements.matchCount.textContent = emptyReason(mode);
+      elements.matchCount.classList.add("is-empty");
+    }
     elements.start.disabled = matches.length === 0 && mode !== "adaptive";
     elements.count.max = String(Math.max(1, matches.length));
     renderCountPicks(matches.length);
@@ -386,11 +644,11 @@
     const picks = [10, moduleSize, elements.section.value.startsWith("sat-") ? moduleSize * 2 : null]
       .filter((value, index, list) => value && value < available && list.indexOf(value) === index);
     elements.countPicks.innerHTML = "";
-    [...picks, ...(unlimited ? [] : ["all"])].forEach((value) => {
+    [...picks, ...(unlimited || !available ? [] : ["all"])].forEach((value) => {
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "count-pick";
-      button.textContent = value === "all" ? `All (${available})` : String(value);
+      button.className = "chip";
+      button.textContent = value === "all" ? `All ${formatNumber(available)}` : String(value);
       button.dataset.count = String(value === "all" ? available : value);
       button.setAttribute("aria-pressed", String(elements.count.value === button.dataset.count));
       button.addEventListener("click", () => {
@@ -413,11 +671,36 @@
     elements.timed.disabled = budget === null;
     if (budget === null) elements.timed.checked = false;
     elements.timedNote.textContent = budget === null
-      ? "This section is not timed per question."
-      : `${requestedCount()} questions in ${formatDuration(budget * 1000)}, the real test's pace.`;
+      ? "This section is not timed per question on the real test."
+      : `${requestedCount()} question${requestedCount() === 1 ? "" : "s"} in ` +
+        `${formatDuration(budget * 1000)}, the real test's pace.`;
+  }
+
+  // The skill with the lowest accuracy in this section, among skills with at
+  // least two answered questions.
+  function weakestSkill(sectionKey) {
+    const bySkill = {};
+    progress.attempts.forEach((attempt) => {
+      if (attempt.sectionKey !== sectionKey || typeof attempt.correct !== "boolean" || !attempt.skill) return;
+      const row = bySkill[attempt.skill] || (bySkill[attempt.skill] = { skill: attempt.skill, answered: 0, correct: 0 });
+      row.answered += 1;
+      if (attempt.correct) row.correct += 1;
+    });
+    return Object.values(bySkill)
+      .filter((row) => row.answered >= 2)
+      .sort((left, right) => left.correct / left.answered - right.correct / right.answered)[0] || null;
   }
 
   function updateRecommendation() {
+    if (usesTemplates(elements.section.value)) {
+      const weak = weakestSkill(elements.section.value);
+      elements.recommendText.textContent = weak
+        ? `Your weakest skill so far is ${weak.skill} (${weak.correct} of ${weak.answered} correct). ` +
+          "Start a set on it."
+        : "Answer a few questions in this section and a focus will appear here.";
+      elements.recommendBtn.disabled = !weak;
+      return;
+    }
     recommendation = core.recommendQuestion(
       currentBank,
       progress.attempts,
@@ -436,38 +719,60 @@
 
   /* ---------------------------------------------------------------- mini test */
 
-  function renderMiniTestOptions() {
+  function renderMiniTests() {
+    const blueprints = core.MINI_TEST_BLUEPRINTS.filter((blueprint) => blueprint.test === currentTest());
     elements.miniTestOptions.innerHTML = "";
-    core.MINI_TEST_BLUEPRINTS.forEach((blueprint) => {
+    setStatus(elements.miniTestStatus, "");
+    blueprints.forEach((blueprint, index) => {
+      const item = document.createElement("div");
+      item.className = "mini-test-item";
+      const name = document.createElement("h3");
+      name.textContent = blueprint.label;
+      const summary = document.createElement("p");
+      summary.textContent = blueprint.summary;
+      const total = core.blueprintTotal(blueprint);
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "mini-test-option";
+      button.className = `button ${index === 0 ? "primary" : "secondary"}`;
       button.dataset.blueprint = blueprint.id;
-      button.setAttribute("aria-pressed", String(blueprint.id === selectedBlueprintId));
-      if (blueprint.id === selectedBlueprintId) button.classList.add("active");
-      const name = document.createElement("strong");
-      name.textContent = blueprint.label;
-      const meta = document.createElement("span");
-      meta.textContent =
-        `${core.blueprintTotal(blueprint)} questions · ${blueprint.minutes} min`;
-      button.append(name, meta);
-      button.addEventListener("click", () => {
-        selectedBlueprintId = blueprint.id;
-        renderMiniTestOptions();
-      });
-      elements.miniTestOptions.appendChild(button);
+      button.textContent = `Start: ${total} questions, ${blueprint.minutes} min`;
+      button.setAttribute(
+        "aria-label",
+        `Start the ${blueprint.label}: ${total} questions in ${blueprint.minutes} minutes`,
+      );
+      button.addEventListener("click", () => startMiniTest(blueprint.id, button));
+      item.append(name, summary, button);
+      elements.miniTestOptions.appendChild(item);
     });
-    const active = core.blueprintById(selectedBlueprintId);
-    elements.miniTestSummary.textContent = active ? active.summary : "";
-    elements.miniTestStart.disabled = !active;
   }
 
-  async function startMiniTest() {
-    const blueprint = core.blueprintById(selectedBlueprintId);
+  async function startMiniTest(blueprintId, button) {
+    const blueprint = core.blueprintById(blueprintId);
     if (!blueprint) return;
-    elements.miniTestStart.disabled = true;
-    elements.miniTestStatus.className = "status-line loading";
-    elements.miniTestStatus.textContent = `Preparing the ${blueprint.label}…`;
+    button.disabled = true;
+    setStatus(elements.miniTestStatus, `Preparing the ${blueprint.label}…`, "loading");
+
+    if (blueprint.sections.every((entry) => usesTemplates(entry.sectionKey))) {
+      let questions;
+      try {
+        questions = await templateMiniTest(blueprint);
+      } catch (error) {
+        setStatus(elements.miniTestStatus, `${error.message} Refresh the page and try again.`, "error");
+        button.disabled = false;
+        return;
+      }
+      button.disabled = false;
+      setStatus(elements.miniTestStatus, "");
+      launchTestMode({
+        title: blueprint.label,
+        sectionKey: blueprint.sections[0].sectionKey,
+        questions,
+        feedback: "end",
+        timeLimitSeconds: blueprint.minutes * 60,
+        tools: { calculator: true, reference: true },
+      });
+      return;
+    }
 
     let bankBySection;
     try {
@@ -478,25 +783,19 @@
         blueprint.sections.map((entry, index) => [entry.sectionKey, banks[index]]),
       );
     } catch (error) {
-      elements.miniTestStatus.className = "status-line error";
-      elements.miniTestStatus.textContent =
-        `${error.message} Confirm the site was built with npm run build.`;
-      elements.miniTestStart.disabled = false;
+      setStatus(elements.miniTestStatus, `${error.message} Confirm the site was built with npm run build.`, "error");
+      button.disabled = false;
       return;
     }
 
     const questions = core.buildMiniTest(bankBySection, blueprint, `${Date.now()}-${blueprint.id}`);
+    button.disabled = false;
     if (questions.length < core.blueprintTotal(blueprint)) {
-      elements.miniTestStatus.className = "status-line error";
-      elements.miniTestStatus.textContent =
-        "Not enough items are available to build this mini test.";
-      elements.miniTestStart.disabled = false;
+      setStatus(elements.miniTestStatus, "Not enough items are available to build this mini test.", "error");
       return;
     }
 
-    elements.miniTestStatus.className = "status-line";
-    elements.miniTestStatus.textContent = "";
-    elements.miniTestStart.disabled = false;
+    setStatus(elements.miniTestStatus, "");
     const math = blueprint.sections.some((entry) => /math/.test(entry.sectionKey));
     launchTestMode({
       title: blueprint.label,
@@ -506,6 +805,25 @@
       timeLimitSeconds: blueprint.minutes * 60,
       tools: { calculator: math, reference: math && blueprint.id.startsWith("sat") },
     });
+  }
+
+  // A mini test on template sections: each section's share, split across
+  // difficulty like the bank mini tests, one question per template.
+  async function templateMiniTest(blueprint) {
+    const questions = [];
+    for (const entry of blueprint.sections) {
+      const templates = await sectionTemplates(entry.sectionKey);
+      const counts = core.allocateByWeight(
+        entry.count,
+        core.MINI_TEST_DIFFICULTY_MIX.map((tier) => tier.weight),
+      );
+      core.MINI_TEST_DIFFICULTY_MIX.forEach((tier, index) => {
+        if (!counts[index]) return;
+        const run = buildTemplateRun(entry.sectionKey, templates, counts[index], { difficulties: [tier.difficulty] });
+        questions.push(...run.questions);
+      });
+    }
+    return questions;
   }
 
   function formatDuration(ms) {
@@ -520,16 +838,21 @@
   function startSession(event) {
     if (event) event.preventDefault();
     const mode = elements.mode.value;
-    if (mode === "hard-reps") {
-      const questions = buildHardReps(requestedCount());
-      if (!questions.length) return;
+    if (buildsTemplateRun(mode)) {
+      const section = sectionByKey(elements.section.value);
+      const run = buildTemplateRun(section.key, templatesNow(section.key), requestedCount(), runFilters(mode));
+      if (!run.questions.length) {
+        setStatus(elements.bankStatus, "No question templates match this set. Loosen a filter.", "error");
+        return;
+      }
       launchTestMode({
-        title: "SAT Math — Hard reps",
-        sectionKey: "sat-math",
-        questions,
+        title: `${section.test} ${section.shortLabel}`,
+        sectionKey: section.key,
+        questions: run.questions,
+        runCode: run.code,
         feedback: elements.feedbackMode.value,
         timeLimitSeconds: elements.timed.checked
-          ? core.paceBudgetSeconds("sat-math", questions.length)
+          ? core.paceBudgetSeconds(section.key, run.questions.length)
           : null,
       });
       return;
@@ -543,8 +866,7 @@
       )];
     }
     if (!pool.length) {
-      elements.bankStatus.className = "status-line error";
-      elements.bankStatus.textContent = "No questions match this session. Adjust a filter or review list.";
+      setStatus(elements.bankStatus, "No questions match this set. Adjust a filter or choose another mode.", "error");
       return;
     }
     const count = requestedCount();
@@ -605,8 +927,7 @@
   // or all at once when the set is finished (report at the end).
   function launchTestMode(config, resume) {
     if (!window.LiminalShell) {
-      elements.bankStatus.className = "status-line error";
-      elements.bankStatus.textContent = "The test screen did not load. Refresh the page and try again.";
+      setStatus(elements.bankStatus, "The test screen did not load. Refresh the page and try again.", "error");
       return;
     }
     const math = config.sectionKey === "sat-math" || config.sectionKey === "act-mathematics";
@@ -637,12 +958,13 @@
         }
         storeActiveSession(null);
       },
+      // Back where the set started, with every count brought up to date.
       onExit() {
         storeActiveSession(null);
         renderResumeBanner();
-        showView("setup");
         updateMatches();
         updateRecommendation();
+        openView(currentView);
       },
     });
   }
@@ -683,66 +1005,109 @@
     progress.recentIds.push(question.id);
   }
 
-  function escapeHtml(value) {
-    const div = document.createElement("div");
-    div.textContent = value;
-    return div.innerHTML;
-  }
+  /* ------------------------------------------------------------------ views */
 
-  function showView(name) {
+  // focus: move focus to the view's heading (after navigation, not after a
+  // re-render the student did not ask for, such as a test switch).
+  function showView(name, options) {
+    const focus = !options || options.focus !== false;
+    const changed = name !== currentView;
+    currentView = name;
     Object.entries(views).forEach(([key, view]) => {
       view.classList.toggle("hidden", key !== name);
     });
-    document.querySelectorAll(".nav-link").forEach((button) => {
-      const selected = button.dataset.view === name;
-      button.classList.toggle("active", selected);
-      if (selected) button.setAttribute("aria-current", "page");
-      else button.removeAttribute("aria-current");
+    document.querySelectorAll(".site-nav .nav-link").forEach((link) => {
+      if (link.dataset.view === name) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
     });
-    const reduceMotion = window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    if (!focus) return;
+    if (changed || window.scrollY > 0) {
+      const reduceMotion = window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    }
     const heading = views[name].querySelector("h1");
     if (heading) requestAnimationFrame(() => heading.focus({ preventScroll: true }));
   }
 
-  async function renderDashboard() {
-    showView("dashboard");
+  function openView(name, options) {
+    if (name === "dashboard") renderDashboard(options);
+    else if (name === "review") renderReview(null, options);
+    else if (name === "signs") renderSigns(options);
+    else showView("setup", options);
+  }
+
+  function viewFromHash() {
+    return VIEW_BY_HASH[window.location.hash.replace(/^#/, "")] || null;
+  }
+
+  function hashForView(name) {
+    return `#${Object.keys(VIEW_BY_HASH).find((key) => VIEW_BY_HASH[key] === name)}`;
+  }
+
+  function onNavClick(event) {
+    const link = event.currentTarget;
+    const view = link.dataset.view;
+    if (!views[view]) return; // Booklets is another page.
+    event.preventDefault();
+    const hash = hashForView(view);
+    if (window.location.hash === hash) openView(view);
+    else window.location.hash = hash;
+  }
+
+  async function renderDashboard(options) {
+    showView("dashboard", options);
+    const test = currentTest();
     elements.dashboardStats.innerHTML =
-      '<div class="panel loading-card">Loading progress across sections…</div>';
+      '<div class="card stat-card"><span class="stat-label">Loading your progress…</span></div>';
     let questions;
     try {
-      questions = await loadAllBanks();
+      questions = await loadTestBanks(test);
     } catch (error) {
       showLoadError(elements.dashboardStats, error);
       elements.skillTableWrap.innerHTML = "";
       return;
     }
-    const summary = core.summarizeProgress(progress.attempts, questions);
-    const marked = progress.flagged.length;
-    const missed = latestMissedIds().length;
+    if (test !== currentTest()) return;
+    const attempts = testAttempts(test);
+    const summary = core.summarizeProgress(attempts, questions);
+    const marked = progress.flagged.filter((id) => site.testOf(id) === test).length;
+    const missed = latestMissedIds().filter((id) => site.testOf(id) === test).length;
     // Hard accuracy stands alone: overall accuracy on a mostly Easy and
     // Medium mix is what makes practice look better than the real test.
-    const hard = core.accuracyByDifficulty(progress.attempts, questions).Hard;
+    const hard = core.accuracyByDifficulty(attempts, questions).Hard;
+    const percent = (value) => (value === null ? "—" : `${Math.round(value * 100)}%`);
     const cards = [
-      ["Questions attempted", summary.attempted],
-      ["Overall accuracy", summary.accuracy === null ? "—" : `${Math.round(summary.accuracy * 100)}%`],
-      [
-        hard.attempted ? `Hard accuracy (${hard.attempted} tried)` : "Hard accuracy",
-        hard.accuracy === null ? "—" : `${Math.round(hard.accuracy * 100)}%`,
-      ],
-      ["Unique completed", summary.uniqueCompleted],
-      ["Marked / missed", `${marked} / ${missed}`],
+      ["Questions answered", formatNumber(summary.attempted), ""],
+      ["Overall accuracy", percent(summary.accuracy), ""],
+      ["Hard accuracy", percent(hard.accuracy),
+        hard.attempted ? `${hard.attempted} Hard question${hard.attempted === 1 ? "" : "s"} tried` : "No Hard questions yet"],
+      ["Different questions", formatNumber(summary.uniqueCompleted), ""],
+      ["Missed / marked", `${missed} / ${marked}`, missed || marked ? "review" : ""],
     ];
     elements.dashboardStats.innerHTML = "";
-    cards.forEach(([label, value]) => {
+    cards.forEach(([label, value, note]) => {
       const card = document.createElement("div");
-      card.className = "panel stat-card";
-      const strong = document.createElement("strong");
-      strong.textContent = value;
-      const span = document.createElement("span");
-      span.textContent = label;
-      card.append(strong, span);
+      card.className = "card stat-card";
+      const labelNode = document.createElement("span");
+      labelNode.className = "stat-label";
+      labelNode.textContent = label;
+      const valueNode = document.createElement("strong");
+      valueNode.className = "stat-value";
+      valueNode.textContent = value;
+      card.append(labelNode, valueNode);
+      if (note === "review") {
+        const link = document.createElement("a");
+        link.className = "stat-note";
+        link.href = "#review";
+        link.textContent = "Review them";
+        card.appendChild(link);
+      } else if (note) {
+        const noteNode = document.createElement("span");
+        noteNode.className = "stat-note";
+        noteNode.textContent = note;
+        card.appendChild(noteNode);
+      }
       elements.dashboardStats.appendChild(card);
     });
     masteryRows = Object.values(summary.bySkill);
@@ -774,7 +1139,7 @@
 
   function sectionLabel(sectionKey) {
     const section = sectionByKey(sectionKey);
-    return section ? `${section.test} — ${section.shortLabel}` : sectionKey;
+    return section ? section.shortLabel : sectionKey;
   }
 
   // Only sections the student has actually attempted are offered, so the
@@ -797,14 +1162,27 @@
       elements.masterySection.appendChild(option);
     });
     if (previous && present.includes(previous)) elements.masterySection.value = previous;
+    // Nothing to filter or sort yet: hide the controls rather than show them
+    // disabled with no reason.
+    elements.masterySection.closest(".inline-controls").classList.toggle("hidden", !masteryRows.length);
   }
 
   function renderMastery() {
     if (!masteryRows.length) {
       elements.masteryNote.textContent = "";
-      elements.skillTableWrap.innerHTML =
-        '<div class="empty-state"><strong>No scored attempts yet.</strong>' +
-        "<p>Complete a practice session to see skill-level accuracy.</p></div>";
+      elements.skillTableWrap.innerHTML = "";
+      const empty = document.createElement("div");
+      empty.className = "empty-state";
+      const title = document.createElement("strong");
+      title.textContent = `No ${currentTest()} answers yet.`;
+      const body = document.createElement("p");
+      body.textContent = "Finish a practice set and your accuracy for each skill appears here, weakest first.";
+      const link = document.createElement("a");
+      link.className = "button primary";
+      link.href = "#practice";
+      link.textContent = "Build a practice set";
+      empty.append(title, body, link);
+      elements.skillTableWrap.appendChild(empty);
       return;
     }
 
@@ -815,24 +1193,46 @@
       .sort(MASTERY_SORTS[sortKey] || MASTERY_SORTS.focus);
 
     elements.masteryNote.textContent = sortKey === "focus"
-      ? `${rows.length} skills, weakest first — accuracy weighted by how many ` +
-        "questions you have answered in each skill."
-      : `${rows.length} skills.`;
+      ? `${rows.length} skill${rows.length === 1 ? "" : "s"}, weakest first: accuracy weighted by ` +
+        "how many questions you have answered in each skill."
+      : `${rows.length} skill${rows.length === 1 ? "" : "s"}.`;
 
     const table = document.createElement("table");
+    table.className = "data-table";
     table.innerHTML =
-      "<thead><tr><th>Skill</th><th>Section</th><th>Attempts</th>" +
-      "<th>Accuracy</th><th>Next step</th></tr></thead>";
+      '<thead><tr><th scope="col">Skill</th><th scope="col">Section</th><th scope="col">Answered</th>' +
+      '<th scope="col">Accuracy</th><th scope="col">Next step</th></tr></thead>';
     const body = document.createElement("tbody");
     rows.forEach((row) => {
       const accuracy = Math.round(row.accuracy * 100);
       const tr = document.createElement("tr");
-      tr.innerHTML =
-        `<td>${escapeHtml(row.skill)}</td>` +
-        `<td class="mastery-section-cell">${escapeHtml(sectionLabel(row.sectionKey))}</td>` +
-        `<td>${row.attempted}</td>` +
-        `<td><span class="meter"><i style="width:${accuracy}%"></i></span> ${accuracy}%</td>` +
-        `<td>${accuracy < 50 ? "Rebuild with Easy" : accuracy < 80 ? "Continue at Medium" : "Try Hard"}</td>`;
+      const cells = [
+        ["Skill", row.skill],
+        ["Section", sectionLabel(row.sectionKey)],
+        ["Answered", String(row.attempted)],
+        ["Accuracy", null],
+        ["Next step", accuracy < 50 ? "Rebuild with Easy" : accuracy < 80 ? "Continue at Medium" : "Try Hard"],
+      ];
+      cells.forEach(([label, text]) => {
+        const td = document.createElement("td");
+        td.dataset.label = label;
+        if (label === "Answered") td.className = "num";
+        if (text === null) {
+          const cell = document.createElement("span");
+          cell.className = "meter-cell";
+          const meter = document.createElement("span");
+          meter.className = "meter";
+          meter.setAttribute("aria-hidden", "true");
+          const fill = document.createElement("i");
+          fill.style.width = `${accuracy}%`;
+          meter.appendChild(fill);
+          cell.append(meter, document.createTextNode(`${accuracy}%`));
+          td.appendChild(cell);
+        } else {
+          td.textContent = text;
+        }
+        tr.appendChild(td);
+      });
       body.appendChild(tr);
     });
     table.appendChild(body);
@@ -840,87 +1240,134 @@
     elements.skillTableWrap.appendChild(table);
   }
 
-  async function renderReview(listName) {
-    activeReviewList = listName || activeReviewList;
-    showView("review");
-    document.querySelectorAll(".review-tab").forEach((button) => {
-      const selected = button.dataset.list === activeReviewList;
-      button.classList.toggle("active", selected);
+  /* ------------------------------------------------------------ review lists */
+
+  function reviewIds(listName, test) {
+    const ids = listName === "missed" ? latestMissedIds() : progress.flagged;
+    return ids.filter((id) => site.testOf(id) === test);
+  }
+
+  function reviewMatches(ids, questions) {
+    const idSet = new Set(ids);
+    return [
+      ...questions.filter((question) => idSet.has(question.id)),
+      ...ids.filter(isGeneratedId).map(generatedQuestion).filter(Boolean),
+    ];
+  }
+
+  function renderReviewTabs(counts) {
+    [elements.missedTab, elements.flaggedTab].forEach((button) => {
+      const list = button.dataset.list;
+      const selected = list === activeReviewList;
       button.setAttribute("aria-selected", String(selected));
       button.tabIndex = selected ? 0 : -1;
-      if (selected) {
-        elements.reviewList.setAttribute("aria-labelledby", button.id);
+      if (selected) elements.reviewList.setAttribute("aria-labelledby", button.id);
+      button.textContent = list === "missed" ? "Missed" : "Marked for review";
+      if (counts) {
+        const count = document.createElement("span");
+        count.className = "tab-count";
+        count.textContent = `(${counts[list]})`;
+        button.appendChild(count);
       }
     });
-    elements.reviewList.innerHTML =
-      '<div class="panel loading-card">Loading saved questions…</div>';
+  }
+
+  async function renderReview(listName, options) {
+    activeReviewList = listName || activeReviewList;
+    showView("review", options);
+    const test = currentTest();
+    renderReviewTabs(null);
+    elements.reviewList.innerHTML = '<div class="card"><p class="muted">Loading saved questions…</p></div>';
     let questions;
     try {
-      questions = await loadAllBanks();
+      questions = await loadTestBanks(test);
     } catch (error) {
       showLoadError(elements.reviewList, error);
       return;
     }
-    const ids = activeReviewList === "missed"
-      ? latestMissedIds()
-      : progress[activeReviewList];
-    const idSet = new Set(ids);
-    const generatedIds = ids.filter((id) => id.startsWith(HARD_ID_PREFIX));
-    if (generatedIds.length) await loadHardFamilies().catch((error) => console.warn(error.message));
-    const matches = [
-      ...questions.filter((question) => idSet.has(question.id)),
-      ...generatedIds.map(hardQuestionById).filter(Boolean),
-    ];
+    const lists = { missed: reviewIds("missed", test), flagged: reviewIds("flagged", test) };
+    const generatedSections = new Set([...lists.missed, ...lists.flagged]
+      .filter(isGeneratedId)
+      .map((id) => (id.startsWith(LEGACY_HARD_PREFIX) ? "sat-math" : id.split(":")[0])));
+    await Promise.all([...generatedSections].map((sectionKey) =>
+      sectionTemplates(sectionKey).catch((error) => console.warn(error.message))));
+    if (test !== currentTest()) return;
+    const matchesByList = {
+      missed: reviewMatches(lists.missed, questions),
+      flagged: reviewMatches(lists.flagged, questions),
+    };
+    renderReviewTabs({ missed: matchesByList.missed.length, flagged: matchesByList.flagged.length });
+    const matches = matchesByList[activeReviewList];
+    const listLabel = activeReviewList === "flagged" ? "marked" : "missed";
     elements.reviewList.innerHTML = "";
     if (!matches.length) {
-      elements.reviewList.innerHTML =
-        `<div class="panel empty-state"><strong>No ${activeReviewList === "flagged" ? "marked" : activeReviewList} questions.</strong>` +
-        "<p>Your list will appear here as you practice.</p></div>";
+      const empty = document.createElement("div");
+      empty.className = "card empty-state";
+      const title = document.createElement("strong");
+      title.textContent = `No ${listLabel} ${test} questions.`;
+      const body = document.createElement("p");
+      body.textContent = activeReviewList === "flagged"
+        ? "Use Mark for Review during a set and the question is saved here."
+        : "Questions you answer wrong are saved here so you can try them again.";
+      const link = document.createElement("a");
+      link.className = "button primary";
+      link.href = "#practice";
+      link.textContent = "Build a practice set";
+      empty.append(title, body, link);
+      elements.reviewList.appendChild(empty);
       return;
     }
+    const toolbar = document.createElement("div");
+    toolbar.className = "review-toolbar";
     const start = document.createElement("button");
-    start.className = "button primary review-start";
+    start.type = "button";
+    start.className = "button primary";
     start.textContent = `Practice all ${matches.length}`;
     start.addEventListener("click", () => {
-      const questions = core.buildSession(matches, "all", `${Date.now()}-review`);
-      const math = questions.some((question) => /math/.test(question.sectionKey));
+      const set = core.buildSession(matches, "all", `${Date.now()}-review`);
+      const math = set.some((question) => /math/.test(question.sectionKey));
       launchTestMode({
-        title: "Review list",
-        sectionKey: questions[0].sectionKey,
-        questions,
+        title: `${test} review: ${listLabel} questions`,
+        sectionKey: set[0].sectionKey,
+        questions: set,
         feedback: "instant",
         timeLimitSeconds: null,
-        tools: { calculator: math, reference: questions.some((question) => question.sectionKey === "sat-math") },
+        tools: { calculator: math, reference: set.some((question) => question.sectionKey === "sat-math") },
       });
     });
-    elements.reviewList.appendChild(start);
+    const note = document.createElement("p");
+    note.className = "muted";
+    note.textContent = "Feedback after each question, no timer.";
+    toolbar.append(start, note);
+    elements.reviewList.appendChild(toolbar);
     matches.slice(0, 100).forEach((question) => {
       const card = document.createElement("article");
-      card.className = "panel review-item";
+      card.className = "card review-item";
       const header = document.createElement("div");
       header.className = "review-item-head";
       const tags = document.createElement("span");
-      tags.textContent = `${question.test} ${question.section} · ${question.skill}`;
+      tags.textContent = `${sectionLabel(question.sectionKey)} · ${question.skill}`;
       const id = document.createElement("small");
       id.textContent = question.id;
       header.append(tags, id);
-      const heading = document.createElement("h2");
-      heading.textContent = question.stem;
-      card.append(header, heading);
+      const stem = document.createElement("h2");
+      stem.className = "review-stem";
+      stem.textContent = question.stem;
+      card.append(header, stem);
       elements.reviewList.appendChild(card);
     });
     if (matches.length > 100) {
-      const note = document.createElement("p");
-      note.className = "field-note";
-      note.textContent = `Showing the first 100 of ${matches.length}; all are included when you practice.`;
-      elements.reviewList.appendChild(note);
+      const more = document.createElement("p");
+      more.className = "field-note";
+      more.textContent = `Showing the first 100 of ${matches.length}; all are included when you practice.`;
+      elements.reviewList.appendChild(more);
     }
   }
 
   function showLoadError(container, error) {
     container.innerHTML = "";
     const card = document.createElement("div");
-    card.className = "panel empty-state error";
+    card.className = "card empty-state";
     const heading = document.createElement("strong");
     heading.textContent = "Practice content could not be loaded.";
     const detail = document.createElement("p");
@@ -929,44 +1376,53 @@
     container.appendChild(card);
   }
 
+  function resetClearButton() {
+    clearArmed = false;
+    window.clearTimeout(clearTimer);
+    elements.clearProgress.classList.remove("is-armed");
+    elements.clearProgress.textContent = "Clear all saved progress";
+  }
+
   function clearProgress() {
     if (!clearArmed) {
       clearArmed = true;
-      elements.clearProgress.textContent = "Click again to confirm";
-      setTimeout(() => {
-        clearArmed = false;
-        elements.clearProgress.textContent = "Clear local progress";
-      }, 5000);
+      elements.clearProgress.classList.add("is-armed");
+      elements.clearProgress.textContent = "Click again to clear everything";
+      clearTimer = window.setTimeout(resetClearButton, 5000);
       return;
     }
     progress = emptyProgress();
     saveProgress();
-    clearArmed = false;
-    elements.clearProgress.textContent = "Clear local progress";
-    renderDashboard();
+    resetClearButton();
+    renderDashboard({ focus: false });
+    updateMatches();
     updateRecommendation();
   }
 
-  let signsRendered = false;
+  /* ------------------------------------------------------------- study tips */
+
   let activeSignsFilter = "all";
 
-  function renderSigns() {
-    showView("signs");
+  function signsGroupsForTest(data) {
+    const test = currentTest();
+    return (data.groups || []).filter((group) => group.test === test || /^both$/i.test(group.test));
+  }
+
+  function renderSigns(options) {
+    showView("signs", options);
     const data = window.PRACTICE_ANSWER_SIGNS;
     if (!data) {
       elements.signsGroups.innerHTML =
-        '<div class="panel empty-state"><strong>The answer-signs guide could not load.</strong>' +
+        '<div class="card empty-state"><strong>The study tips could not load.</strong>' +
         "<p>Confirm content/answer-signs.js was built.</p></div>";
       return;
     }
-    if (signsRendered) return;
-
     elements.signsDisclaimer.textContent = data.disclaimer;
 
     elements.signsPrinciples.innerHTML = "";
     (data.principles || []).forEach((principle) => {
       const card = document.createElement("div");
-      card.className = "signs-principle";
+      card.className = "principle";
       const title = document.createElement("h3");
       title.textContent = principle.title;
       const body = document.createElement("p");
@@ -975,24 +1431,24 @@
       elements.signsPrinciples.appendChild(card);
     });
 
-    buildSignsFilter(data.groups);
-    buildSignsGroups(data.groups);
+    const groups = signsGroupsForTest(data);
+    if (!groups.some((group) => group.id === activeSignsFilter)) activeSignsFilter = "all";
+    buildSignsFilter(groups);
+    buildSignsGroups(groups);
     applySignsFilter();
-    signsRendered = true;
   }
 
   function buildSignsFilter(groups) {
     elements.signsFilter.innerHTML = "";
-    const options = [{ id: "all", label: "All sections" }].concat(
-      groups.map((group) => ({ id: group.id, label: `${group.test} ${group.category}` })),
+    const options = [{ id: "all", label: `All ${currentTest()} sections` }].concat(
+      groups.map((group) => ({ id: group.id, label: group.category })),
     );
     options.forEach((option) => {
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "signs-filter-btn";
+      button.className = "chip";
       button.dataset.filter = option.id;
       button.textContent = option.label;
-      button.setAttribute("aria-pressed", String(option.id === activeSignsFilter));
       button.addEventListener("click", () => {
         activeSignsFilter = option.id;
         applySignsFilter();
@@ -1002,10 +1458,8 @@
   }
 
   function applySignsFilter() {
-    elements.signsFilter.querySelectorAll(".signs-filter-btn").forEach((button) => {
-      const selected = button.dataset.filter === activeSignsFilter;
-      button.classList.toggle("active", selected);
-      button.setAttribute("aria-pressed", String(selected));
+    elements.signsFilter.querySelectorAll(".chip").forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.dataset.filter === activeSignsFilter));
     });
     elements.signsGroups.querySelectorAll(".signs-group").forEach((group) => {
       const show = activeSignsFilter === "all" || group.dataset.group === activeSignsFilter;
@@ -1017,13 +1471,13 @@
     elements.signsGroups.innerHTML = "";
     groups.forEach((group) => {
       const section = document.createElement("section");
-      section.className = "panel signs-group";
+      section.className = "card signs-group";
       section.dataset.group = group.id;
 
       const head = document.createElement("div");
       head.className = "signs-group-head";
       const badge = document.createElement("span");
-      badge.className = `signs-badge signs-badge-${group.test.toLowerCase()}`;
+      badge.className = "badge";
       badge.textContent = group.test;
       const title = document.createElement("h2");
       title.textContent = group.title;
@@ -1033,18 +1487,17 @@
       intro.className = "signs-group-intro";
       intro.textContent = group.intro;
 
-      section.append(head, intro);
-
-      group.tells.forEach((tell) => {
-        section.appendChild(buildTellCard(tell));
-      });
+      const list = document.createElement("div");
+      list.className = "tell-list";
+      group.tells.forEach((tell) => list.appendChild(buildTellCard(tell)));
+      section.append(head, intro, list);
       elements.signsGroups.appendChild(section);
     });
   }
 
   function buildTellCard(tell) {
     const card = document.createElement("article");
-    card.className = "signs-tell";
+    card.className = "tell";
     const name = document.createElement("h3");
     name.textContent = tell.name;
     card.appendChild(name);
@@ -1057,7 +1510,7 @@
     rows.forEach(([label, value, kind]) => {
       if (!value) return;
       const row = document.createElement("p");
-      row.className = `signs-row signs-row-${kind}`;
+      row.className = `tell-${kind}`;
       const strong = document.createElement("strong");
       strong.textContent = `${label}: `;
       row.append(strong, document.createTextNode(value));
@@ -1065,6 +1518,19 @@
     });
     return card;
   }
+
+  /* ------------------------------------------------------------ test switch */
+
+  function onTestChanged() {
+    populateSections();
+    renderSetupCopy();
+    renderMiniTests();
+    setStatus(elements.hardRepsStatus, "");
+    changeSection();
+    if (currentView !== "setup") openView(currentView, { focus: false });
+  }
+
+  /* ----------------------------------------------------------------- wiring */
 
   function wireEvents() {
     elements.section.addEventListener("change", changeSection);
@@ -1076,12 +1542,12 @@
       control.addEventListener("change", updateMatches);
     });
     elements.search.addEventListener("input", updateMatches);
-    document.querySelectorAll('input[name="difficulty"]').forEach((input) => {
+    difficultyInputs().forEach((input) => {
       input.addEventListener("change", updateMatches);
     });
     elements.form.addEventListener("submit", startSession);
     elements.count.addEventListener("input", () => {
-      renderCountPicks(Number(elements.count.max) || 1, elements.mode.value === "hard-reps");
+      renderCountPicks(Number(elements.count.max) || 1);
       updateTimedNote();
     });
     elements.resumeBtn.addEventListener("click", resumeActiveSession);
@@ -1089,32 +1555,41 @@
       storeActiveSession(null);
       renderResumeBanner();
     });
-    elements.home.addEventListener("click", () => showView("setup"));
     elements.recommendBtn.addEventListener("click", () => {
       elements.mode.value = "adaptive";
       updateMatches();
       startSession();
     });
-    elements.miniTestStart.addEventListener("click", startMiniTest);
+    elements.hardRepsBtn.addEventListener("click", startHardRepsCard);
+    elements.hardRepsCustomize.addEventListener("click", customizeHardReps);
     elements.masterySection.addEventListener("change", renderMastery);
     elements.masterySort.addEventListener("change", renderMastery);
     elements.clearProgress.addEventListener("click", clearProgress);
-    document.querySelectorAll(".nav-link").forEach((button) => {
-      button.addEventListener("click", () => {
-        if (button.dataset.view === "dashboard") renderDashboard();
-        else if (button.dataset.view === "review") renderReview();
-        else if (button.dataset.view === "signs") renderSigns();
-        else showView("setup");
+    document.querySelectorAll(".site-header a[data-view]").forEach((link) => {
+      link.addEventListener("click", onNavClick);
+    });
+    window.addEventListener("hashchange", () => {
+      const view = viewFromHash();
+      if (view) openView(view);
+    });
+    [elements.missedTab, elements.flaggedTab].forEach((button, index, tabs) => {
+      button.addEventListener("click", () => renderReview(button.dataset.list, { focus: false }));
+      button.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+        const next = tabs[(index + 1) % tabs.length];
+        next.focus();
+        renderReview(next.dataset.list, { focus: false });
       });
     });
-    document.querySelectorAll(".review-tab").forEach((button) => {
-      button.addEventListener("click", () => renderReview(button.dataset.list));
-    });
+    site.onTestChange(onTestChanged);
   }
 
   populateSections();
-  renderMiniTestOptions();
+  renderSetupCopy();
+  renderMiniTests();
   wireEvents();
   renderResumeBanner();
   changeSection();
+  openView(viewFromHash() || "setup", { focus: false });
 })();

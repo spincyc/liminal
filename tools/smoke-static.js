@@ -38,12 +38,17 @@ for (const selector of [".skip-link", ":focus-visible", "@media", ".hidden"]) {
 }
 
 for (const asset of [
+  "styles/tokens.css",
   "styles/app.css",
   "styles/test-shell.css",
   "lib/core.js",
+  "lib/template-mask.js",
+  "lib/runs.js",
+  "content/templates.js",
   "lib/test-engine.js",
   "app/render.js",
   "app/test-shell.js",
+  "app/site.js",
   "app/app.js",
   "content/catalog.js",
 ]) {
@@ -140,7 +145,14 @@ const printMissing = [...new Set(printRequired)].filter((id) => !printIds.includ
 if (printMissing.length) {
   throw new Error(`print.js references missing print.html IDs: ${printMissing.join(", ")}`);
 }
-for (const asset of ["styles/app.css", "lib/core.js", "lib/booklet.js", "app/print.js"]) {
+for (const asset of [
+  "styles/tokens.css",
+  "styles/app.css",
+  "lib/core.js",
+  "lib/booklet.js",
+  "app/site.js",
+  "app/print.js",
+]) {
   if (!printHtml.includes(`"${asset}"`)) {
     throw new Error(`print.html does not load ${asset}`);
   }
@@ -150,6 +162,41 @@ for (const asset of ["styles/app.css", "lib/core.js", "lib/booklet.js", "app/pri
 }
 if (!html.includes('href="print.html"')) {
   throw new Error("index.html does not link to the booklet page.");
+}
+
+// One design system: the shared tokens load before any stylesheet that reads
+// them, and the shared header script before the page script that listens to
+// it.
+for (const [name, page, order] of [
+  ["index.html", html, ["styles/tokens.css", "styles/app.css", "styles/test-shell.css", "app/site.js", "app/app.js"]],
+  ["print.html", printHtml, ["styles/tokens.css", "styles/app.css", "app/site.js", "app/print.js"]],
+]) {
+  const positions = order.map((asset) => page.indexOf(`"${asset}"`));
+  if (positions.some((position, index) => index && position < positions[index - 1])) {
+    throw new Error(`${name} must load ${order.join(", then ")}.`);
+  }
+}
+
+// One header on every page: the same test switch and the same nav links, in
+// the same order.
+function headerContract(page) {
+  const header = (page.match(/<header class="site-header">[\s\S]*?<\/header>/) || [""])[0];
+  return {
+    tests: [...header.matchAll(/data-test-option="([^"]+)"/g)].map((match) => match[1]).join(","),
+    nav: [...header.matchAll(/class="nav-link" href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)]
+      .map((match) => `${match[1]} ${match[2].trim()}`)
+      .join(" | "),
+  };
+}
+const indexHeader = headerContract(html);
+const printHeader = headerContract(printHtml);
+if (indexHeader.tests !== "SAT,ACT" || !indexHeader.nav.includes("print.html")) {
+  throw new Error("index.html is missing the SAT | ACT switch or the Booklets link.");
+}
+if (JSON.stringify(indexHeader) !== JSON.stringify(printHeader)) {
+  throw new Error(
+    `print.html's header differs from index.html's: ${printHeader.nav} vs ${indexHeader.nav}`,
+  );
 }
 
 const bookletPath = path.join(root, "lib", "booklet.js");
@@ -215,21 +262,32 @@ console.log(
   `${signs.groups.length} answer-sign groups are present.`,
 );
 
-// The SAT Math Hard families load lazily in the browser, in this order. The
-// built copies must register every family as plain scripts and each must
-// produce a verified question.
-const familyContext = vm.createContext({});
-familyContext.self = familyContext;
-const familyFiles = ["shared", "algebra", "advanced-quadratics", "advanced-functions", "data-analysis", "geometry"];
-for (const name of familyFiles) {
-  const file = path.join(root, "lib", "families", "sat-math-hard", `${name}.js`);
-  if (!app.includes(`"${name}"`)) throw new Error(`app.js does not load the ${name} family file.`);
-  vm.runInContext(fs.readFileSync(file, "utf8"), familyContext, { filename: file });
+// SAT sections are built from templates, one bundle per section that loads
+// lazily in the browser. Each built bundle must register its templates as a
+// plain script, every template must be in the section's registry, and each
+// must produce a verified question.
+const templateContext = vm.createContext({ window: {} });
+const templatesPath = path.join(root, "content", "templates.js");
+vm.runInContext(fs.readFileSync(templatesPath, "utf8"), templateContext, { filename: templatesPath });
+const registries = templateContext.window.PRACTICE_TEMPLATES || {};
+const familyCounts = [];
+for (const sectionKey of ["sat-math", "sat-reading-writing"]) {
+  if (!app.includes(`"${sectionKey}"`)) throw new Error(`app.js does not list the ${sectionKey} template bundle.`);
+  const bundlePath = path.join(root, "lib", "families", `${sectionKey}.js`);
+  if (!fs.existsSync(bundlePath)) throw new Error(`Template bundle is missing: lib/families/${sectionKey}.js`);
+  const context = vm.createContext({});
+  context.self = context;
+  vm.runInContext(fs.readFileSync(bundlePath, "utf8"), context, { filename: bundlePath });
+  const families = (context.LiminalFamilies || {})[sectionKey] || [];
+  if (families.length === 0) throw new Error(`No ${sectionKey} templates registered.`);
+  const registered = new Set(((registries[sectionKey] || {}).templates || [])
+    .filter((entry) => !entry.retired)
+    .map((entry) => entry.id));
+  for (const family of families) {
+    if (!registered.has(family.id)) throw new Error(`${sectionKey} template ${family.id} is not in the registry.`);
+    const record = context.LiminalFamilyShared.instantiate(family, "smoke");
+    if (!record.verified) throw new Error(`${sectionKey} template ${family.id} produced an unverified question.`);
+  }
+  familyCounts.push(`${families.length} ${sectionKey}`);
 }
-const hardFamilies = familyContext.SAT_MATH_HARD_FAMILIES || [];
-if (hardFamilies.length === 0) throw new Error("No SAT Math Hard families registered.");
-for (const family of hardFamilies) {
-  const record = familyContext.SAT_MATH_HARD_SHARED.instantiate(family, "smoke");
-  if (!record.verified) throw new Error(`Hard family ${family.id} produced an unverified question.`);
-}
-console.log(`Static smoke: ${hardFamilies.length} SAT Math Hard families load as browser scripts.`);
+console.log(`Static smoke: template bundles load as browser scripts (${familyCounts.join(", ")}).`);

@@ -21,25 +21,30 @@ common trap, and, for multiple choice, why each wrong option is wrong.
 
 ## Practice
 
+- **One test at a time.** An SAT | ACT switch in the header scopes every page
+  to one test: sections, mini tests, booklets, study tips, progress, and
+  review lists.
+- **SAT questions from templates.** SAT Math and SAT Reading and Writing are
+  generated fresh from question templates, each a distinct question design
+  with the real test's traps built in, including figures not drawn to scale.
+  A set takes at most one question per template and at most one per topic,
+  prefers templates you have not seen, and shows a set code that rebuilds it
+  exactly. See [`docs/question-templates.md`](docs/question-templates.md).
 - **Digital test mode.** Every set runs in a full-screen test screen modeled
   on the real digital test: a timer you can hide with a five-minute alert, a
   question navigator, Mark for Review, an answer eliminator, a review page
   before you finish, figures, a reference sheet, and a calculator link.
 - **Your choice of feedback.** Check each answer as you go, or answer the
   whole set and get a report at the end.
-- **Any number of questions,** with quick picks for a real module (22 Math,
-  27 Reading and Writing), and an optional timer at real-test pace.
-- **Hard math reps.** Genuinely hard SAT Math problems generated fresh every
-  set from 27 problem types, each carrying the real test's traps, including
-  figures not drawn to scale. See
-  [`docs/hard-math-families.md`](docs/hard-math-families.md).
-- **Progress that stays.** Attempts, Hard accuracy on its own, missed and
-  marked-for-review lists, and an unfinished set you can resume after closing
-  the tab.
+- **Any number of questions,** up to the number of templates that match,
+  with quick picks for a real module (22 Math, 27 Reading and Writing), and
+  an optional timer at real-test pace.
+- **Progress that stays.** Attempts, Hard accuracy on its own, the templates
+  you have seen, missed and marked-for-review lists, and an unfinished set you
+  can resume after closing the tab.
 
-The fixed SAT Math bank's own Hard items are easier than the real test's
-hardest questions; use Hard math reps for that tier. Accuracy here is not a
-scaled score. See [`docs/roadmap.md`](docs/roadmap.md) for what is next.
+Accuracy here is not a scaled score. See [`docs/roadmap.md`](docs/roadmap.md)
+for what is next.
 
 ## Privacy
 

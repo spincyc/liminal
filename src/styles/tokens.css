@@ -1,0 +1,68 @@
+/* Shared design tokens. One visual language for every page and for the
+   digital test mode, taken from the test screen: light, plain system sans,
+   one blue accent, neutral greys. Load this file before app.css and
+   test-shell.css; both read these properties and define no colors of their
+   own. Light theme only, like the real test. */
+
+:root {
+  color-scheme: light;
+
+  /* Type */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --text-xs: 0.8125rem; /* 13px, the smallest text anywhere */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px body */
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --leading: 1.5;
+  --leading-tight: 1.25;
+
+  /* Color */
+  --color-page: #f5f6f8;
+  --color-surface: #fff;
+  --color-ink: #1a1c20;
+  --color-muted: #4d525b;
+  --color-line: #d3d6dc;
+  --color-line-strong: #6b717b;
+  --color-soft: #f2f3f5;
+  --color-softer: #f8f9fa;
+  --color-accent: #2447b3;
+  --color-accent-hover: #1b3790;
+  --color-accent-soft: #e8edfb;
+  --color-on-accent: #fff;
+  --color-good: #1a6e37;
+  --color-good-soft: #e7f3ea;
+  --color-bad: #ad2620;
+  --color-bad-soft: #fbeceb;
+  --color-disabled: #e3e6ec;
+  --color-disabled-ink: #596069;
+
+  /* Shape and depth */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --shadow-bar: 0 1px 3px rgba(20, 24, 31, 0.06);
+  --shadow-card: 0 4px 18px rgba(20, 24, 31, 0.08);
+
+  /* Focus and targets */
+  --focus-width: 3px;
+  --focus-offset: 2px;
+  --tap: 44px;
+  --bar-h: 64px;
+
+  /* Layout */
+  --page-max: 1180px;
+  --gutter: 24px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: 16px;
+  }
+}

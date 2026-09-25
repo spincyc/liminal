@@ -22,7 +22,7 @@ on the real test. The SAT Math Hard tier explains most of the gap (measured
 
 ## Done
 
-- **Hard SAT Math families** (`src/lib/families/sat-math-hard/`, 27 types),
+- **Hard SAT Math templates** (27 types, now in `src/lib/families/sat/math/`),
   served fresh in the *Hard math reps* mode; each attempt records its family
   and seed, so a missed or marked problem can be rebuilt and practiced again.
 - **Digital test mode** for every session, with a *Feedback* choice (after
@@ -31,58 +31,45 @@ on the real test. The SAT Math Hard tier explains most of the gap (measured
 - **Hard accuracy on its own** on the Progress view and in every report.
 - **Figures** rendered from sanitized SVG with the not-to-scale note.
 - **Equivalent numeric answers**: fractions, decimals, and the U+2212 minus.
+- **Templates for all of SAT** (2026-09-25): SAT Math (Easy, Medium, Hard) and
+  SAT Reading and Writing are generated from templates; a run takes at most
+  one question per template and per topic, is described by a template mask
+  and seed, and prefers templates not yet seen. This replaces the fixed SAT
+  banks for practice, which fixes the method-naming stems and the
+  one-frame-per-skill Reading and Writing items.
+- **One design across the site**, shared with the test mode, and an SAT | ACT
+  switch that scopes every page to one test.
 
 ## Next
 
-1. **Stop naming the method.** Remove the structure suffix and the filler from
-   SAT Math stems, and let the near-duplicate gate report the true size of the
-   bank rather than tuning it away.
-2. **Fix the difficulty gate** to compare measures a generator cannot set per
-   tier, such as solution length or blind solvability.
-3. **A test screen that feels like the real one.** A review against the
-   College Board's Bluebook app (2026-09-25) found the practice screen looked
-   nothing like the real test. The digital test mode addresses the first
-   tier; still missing afterwards:
-   - Module structure on screen: two modules per section at real counts and
-     times (Reading and Writing 27 questions / 32 minutes, Math 22 / 35), a
-     review page between them, and the break between sections.
-   - Typeset math (fractions and exponents are plain text today).
-   - Highlights and notes, and a line reader, for Reading and Writing.
-   - An embedded graphing calculator. Desmos requires an API key and would
-     be the project's first external dependency, so the calculator opens
-     desmos.com in a new window instead.
-   - Adaptive Module 2, which the app does not attempt.
-4. **Split `src/lib/core.js` into focused modules** (filtering, scoring,
+1. **Booklets and printed forms from templates.** Printable SAT booklets
+   still draw from the old fixed SAT banks, which name the method in math
+   stems and repeat one frame per Reading and Writing skill. Build them from
+   template runs instead, then retire the fixed SAT banks.
+2. **Module and full-length simulations on screen.** Two modules per section
+   at real counts and times (Reading and Writing 27 questions / 32 minutes,
+   Math 22 / 35), a review page between them, and a break between sections,
+   built from template runs.
+3. **More of the real test's tools.** Typeset math (fractions and exponents
+   are plain text today); highlights, notes, and a line reader for Reading and
+   Writing; an embedded graphing calculator (Desmos needs an API key and would
+   be the first external dependency, so the calculator opens desmos.com in a
+   new window instead). Adaptive Module 2 is not attempted.
+4. **More templates.** Grow each skill past the gate's floor so skill drills
+   rarely hit the cap, and add a second batch of topics to each Reading and
+   Writing template.
+5. **ACT templates.** ACT sections still use fixed banks with the same
+   weaknesses the SAT banks had.
+6. **Stronger construct-validity gates.** Reject multiple-choice options that
+   are one expression written two ways (evaluate each algebraic choice at
+   several values of x), and cap test-wiseness tells per template: topic-word
+   overlap with the stem and eliminating absolutes, alongside the longest
+   choice.
+7. **Split `src/lib/core.js` into focused modules** (filtering, scoring,
    sessions, analytics, recommendation, storage) behind the same tests, and
-   `src/app/app.js` into view components, so pieces can be reused.
-5. **Carry progress between devices.** Local storage is per browser. A
+   `src/app/app.js` into view components.
+8. **Carry progress between devices.** Local storage is per browser. A
    download-and-restore progress file works without a server.
-6. **Reading and Writing content.** The same review found only 63 distinct
-   question stems across 575 items, the identical key on all 52 Cross-Text
-   items, the longest choice keyed 55% of the time when one choice is
-   longest (chance is 25%), and passages with a median of 32 words. Like SAT
-   Math, it rewards recognizing answer patterns over reading. It needs the
-   same treatment as the math families: authored passages and generators
-   built to the calibration rubric.
-7. **Module and full-length simulations.** A related SAT-only prototype
-   assembled 22- and 27-question module tests and a four-module, 98-question
-   simulation with official times and per-module domain quotas. Build the
-   same on the digital test mode, with a break screen between sections.
-8. **Stronger construct-validity gates.** The same prototype rejected
-   multiple-choice options that are one expression written two ways (by
-   evaluating each algebraic choice at several values of x) and capped three
-   test-wiseness tells per skill at 40%: topic-word overlap with the stem,
-   the longest choice, and eliminating absolutes. Add both to the gates.
-9. **Easy and Medium SAT content.** That prototype's in-browser generators
-   cover the 31 official skill categories with clean stems (no method names)
-   and gated item variety. They are a candidate replacement for the fixed
-   SAT banks' Easy and Medium tiers after a sample review; their Hard tiers
-   are not (see below).
-
-10. **Remove quiz-era styles.** The old question and results screens are
-    gone; about 40 class selectors in `src/styles/app.css` served only them.
-    Some classes are built dynamically, so prune rule by rule with a browser
-    check, not by a text search.
 
 ## Decided
 

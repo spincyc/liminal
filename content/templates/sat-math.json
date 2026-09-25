@@ -1,0 +1,478 @@
+{
+  "sectionKey": "sat-math",
+  "note": "Bit positions are permanent: append new templates, retire removed ones, never renumber.",
+  "templates": [
+    {
+      "id": "linear-equation-solve",
+      "bit": 0
+    },
+    {
+      "id": "linear-equation-context-meaning",
+      "bit": 1
+    },
+    {
+      "id": "equation-solution-count",
+      "bit": 2
+    },
+    {
+      "id": "linear-equation-word-model",
+      "bit": 3
+    },
+    {
+      "id": "literal-equation-rearrange",
+      "bit": 4
+    },
+    {
+      "id": "linear-expression-from-equation",
+      "bit": 5
+    },
+    {
+      "id": "function-value-and-input",
+      "bit": 6
+    },
+    {
+      "id": "slope-from-two-points",
+      "bit": 7
+    },
+    {
+      "id": "line-intercept-read",
+      "bit": 8
+    },
+    {
+      "id": "function-constant-from-value",
+      "bit": 9
+    },
+    {
+      "id": "perpendicular-line-through-point",
+      "bit": 10
+    },
+    {
+      "id": "linear-function-transformation",
+      "bit": 11
+    },
+    {
+      "id": "linear-function-identity",
+      "bit": 12
+    },
+    {
+      "id": "point-on-line",
+      "bit": 13
+    },
+    {
+      "id": "standard-form-slope",
+      "bit": 14
+    },
+    {
+      "id": "two-variable-equation-model",
+      "bit": 15
+    },
+    {
+      "id": "linear-graph-context",
+      "bit": 16
+    },
+    {
+      "id": "linear-model-interpretation",
+      "bit": 17
+    },
+    {
+      "id": "line-point-shift",
+      "bit": 18
+    },
+    {
+      "id": "system-from-context",
+      "bit": 19
+    },
+    {
+      "id": "system-intersection-point",
+      "bit": 20
+    },
+    {
+      "id": "system-combination-value",
+      "bit": 21
+    },
+    {
+      "id": "system-word-totals",
+      "bit": 22
+    },
+    {
+      "id": "system-parameter-solution-count",
+      "bit": 23
+    },
+    {
+      "id": "two-plan-crossover",
+      "bit": 24
+    },
+    {
+      "id": "inequality-allowed-range",
+      "bit": 25
+    },
+    {
+      "id": "linear-inequality-solve",
+      "bit": 26
+    },
+    {
+      "id": "inequality-word-limit",
+      "bit": 27
+    },
+    {
+      "id": "inequality-system-check",
+      "bit": 28
+    },
+    {
+      "id": "inequality-integer-optimization",
+      "bit": 29
+    },
+    {
+      "id": "inequality-region-corner",
+      "bit": 30
+    },
+    {
+      "id": "monomial-exponent-rules",
+      "bit": 31
+    },
+    {
+      "id": "quadratic-factor-match",
+      "bit": 32
+    },
+    {
+      "id": "rational-expression-combine",
+      "bit": 33
+    },
+    {
+      "id": "rational-exponent-rewrite",
+      "bit": 34
+    },
+    {
+      "id": "unknown-coefficient-product",
+      "bit": 35
+    },
+    {
+      "id": "expression-substitution",
+      "bit": 36
+    },
+    {
+      "id": "quadratic-square-root-solve",
+      "bit": 37
+    },
+    {
+      "id": "radical-equation-solve",
+      "bit": 38
+    },
+    {
+      "id": "absolute-value-equation",
+      "bit": 39
+    },
+    {
+      "id": "quadratic-irrational-solutions",
+      "bit": 40
+    },
+    {
+      "id": "root-sum-product",
+      "bit": 41
+    },
+    {
+      "id": "extraneous-roots",
+      "bit": 42
+    },
+    {
+      "id": "system-constant-from-solution",
+      "bit": 43
+    },
+    {
+      "id": "parabola-line-solution-check",
+      "bit": 44
+    },
+    {
+      "id": "line-parabola-solve",
+      "bit": 45
+    },
+    {
+      "id": "nonlinear-system-solve",
+      "bit": 46
+    },
+    {
+      "id": "discriminant-parameter",
+      "bit": 47
+    },
+    {
+      "id": "system-square-identity",
+      "bit": 48
+    },
+    {
+      "id": "factored-polynomial-intercepts",
+      "bit": 49
+    },
+    {
+      "id": "exponential-model-reading",
+      "bit": 50
+    },
+    {
+      "id": "quadratic-vertex-reading",
+      "bit": 51
+    },
+    {
+      "id": "projectile-height-model",
+      "bit": 52
+    },
+    {
+      "id": "exponential-table-model",
+      "bit": 53
+    },
+    {
+      "id": "vertex-from-conditions",
+      "bit": 54
+    },
+    {
+      "id": "exponential-rewrite",
+      "bit": 55
+    },
+    {
+      "id": "function-transformation-table",
+      "bit": 56
+    },
+    {
+      "id": "polynomial-factor-remainder",
+      "bit": 57
+    },
+    {
+      "id": "proportional-rate-scaling",
+      "bit": 58
+    },
+    {
+      "id": "ratio-share-of-total",
+      "bit": 59
+    },
+    {
+      "id": "rate-unit-conversion",
+      "bit": 60
+    },
+    {
+      "id": "ratio-after-change",
+      "bit": 61
+    },
+    {
+      "id": "multi-unit-rate",
+      "bit": 62
+    },
+    {
+      "id": "average-rate-two-legs",
+      "bit": 63
+    },
+    {
+      "id": "percent-of-a-quantity",
+      "bit": 64
+    },
+    {
+      "id": "percent-change-between-values",
+      "bit": 65
+    },
+    {
+      "id": "percent-of-a-subgroup",
+      "bit": 66
+    },
+    {
+      "id": "percent-change-expression",
+      "bit": 67
+    },
+    {
+      "id": "successive-percent",
+      "bit": 68
+    },
+    {
+      "id": "percent-mixture-fixed-part",
+      "bit": 69
+    },
+    {
+      "id": "list-mean-or-median",
+      "bit": 70
+    },
+    {
+      "id": "box-plot-summary",
+      "bit": 71
+    },
+    {
+      "id": "data-display-center",
+      "bit": 72
+    },
+    {
+      "id": "mean-missing-value",
+      "bit": 73
+    },
+    {
+      "id": "weighted-mean-groups",
+      "bit": 74
+    },
+    {
+      "id": "data-change-statistics",
+      "bit": 75
+    },
+    {
+      "id": "best-fit-line-equation",
+      "bit": 76
+    },
+    {
+      "id": "scatterplot-shape-and-count",
+      "bit": 77
+    },
+    {
+      "id": "scatterplot-fit-reading",
+      "bit": 78
+    },
+    {
+      "id": "two-group-fit-lines",
+      "bit": 79
+    },
+    {
+      "id": "uneven-table-growth",
+      "bit": 80
+    },
+    {
+      "id": "fit-slope-rescaled-units",
+      "bit": 81
+    },
+    {
+      "id": "two-way-table-chance",
+      "bit": 82
+    },
+    {
+      "id": "expected-count-from-probability",
+      "bit": 83
+    },
+    {
+      "id": "frequency-distribution-probability",
+      "bit": 84
+    },
+    {
+      "id": "two-way-or-neither",
+      "bit": 85
+    },
+    {
+      "id": "conditional-two-way",
+      "bit": 86
+    },
+    {
+      "id": "probability-after-change",
+      "bit": 87
+    },
+    {
+      "id": "sampling-method-choice",
+      "bit": 88
+    },
+    {
+      "id": "margin-and-sample-size",
+      "bit": 89
+    },
+    {
+      "id": "sample-proportion-estimate",
+      "bit": 90
+    },
+    {
+      "id": "mark-recapture-estimate",
+      "bit": 91
+    },
+    {
+      "id": "sample-inference",
+      "bit": 92
+    },
+    {
+      "id": "two-estimates-compare",
+      "bit": 93
+    },
+    {
+      "id": "altitude-area",
+      "bit": 94
+    },
+    {
+      "id": "rectilinear-floor-plan",
+      "bit": 95
+    },
+    {
+      "id": "volume-to-dimension",
+      "bit": 96
+    },
+    {
+      "id": "volume-unit-conversion",
+      "bit": 97
+    },
+    {
+      "id": "scaling-area-volume",
+      "bit": 98
+    },
+    {
+      "id": "displacement-and-transfer",
+      "bit": 99
+    },
+    {
+      "id": "angle-pair-single-step",
+      "bit": 100
+    },
+    {
+      "id": "triangle-side-bounds",
+      "bit": 101
+    },
+    {
+      "id": "crossing-similar-triangles",
+      "bit": 102
+    },
+    {
+      "id": "shared-height-area-ratio",
+      "bit": 103
+    },
+    {
+      "id": "similar-triangles-parallel",
+      "bit": 104
+    },
+    {
+      "id": "angle-chase-not-to-scale",
+      "bit": 105
+    },
+    {
+      "id": "right-triangle-ratio-read",
+      "bit": 106
+    },
+    {
+      "id": "special-right-triangle",
+      "bit": 107
+    },
+    {
+      "id": "pythagorean-two-step",
+      "bit": 108
+    },
+    {
+      "id": "trig-context-length",
+      "bit": 109
+    },
+    {
+      "id": "trig-similar-cofunction",
+      "bit": 110
+    },
+    {
+      "id": "unit-circle-quadrant",
+      "bit": 111
+    },
+    {
+      "id": "circle-measure-basic",
+      "bit": 112
+    },
+    {
+      "id": "circle-measure-convert",
+      "bit": 113
+    },
+    {
+      "id": "circle-equation-features",
+      "bit": 114
+    },
+    {
+      "id": "tangent-radius-right-angle",
+      "bit": 115
+    },
+    {
+      "id": "arc-sector-inscribed",
+      "bit": 116
+    },
+    {
+      "id": "circle-equation-complete-square",
+      "bit": 117
+    }
+  ]
+}

@@ -1,25 +1,27 @@
 /* Digital test mode. Every rule is scoped under .lm-shell so nothing leaks
    into the rest of the app, and the shell resets the app's global element
    rules (main, footer, table, focus) it would otherwise inherit. Light
-   theme on purpose: the test screen is always white with dark text. */
+   theme on purpose: the test screen is always white with dark text.
+   Colors, type, and radii come from the shared tokens in tokens.css, which
+   must load first, so the site and the test screen read as one product. */
 
 .lm-shell {
-  --lm-ink: #1a1c20;
-  --lm-muted: #4d525b;
-  --lm-line: #d3d6dc;
-  --lm-line-strong: #6b717b;
-  --lm-soft: #f2f3f5;
-  --lm-softer: #f8f9fa;
-  --lm-accent: #2447b3;
-  --lm-accent-hover: #1b3790;
-  --lm-accent-soft: #e8edfb;
-  --lm-good: #1a6e37;
-  --lm-good-soft: #e7f3ea;
-  --lm-bad: #ad2620;
-  --lm-bad-soft: #fbeceb;
-  --lm-flag: #ad2620;
-  --lm-radius: 10px;
-  --lm-bar-h: 64px;
+  --lm-ink: var(--color-ink);
+  --lm-muted: var(--color-muted);
+  --lm-line: var(--color-line);
+  --lm-line-strong: var(--color-line-strong);
+  --lm-soft: var(--color-soft);
+  --lm-softer: var(--color-softer);
+  --lm-accent: var(--color-accent);
+  --lm-accent-hover: var(--color-accent-hover);
+  --lm-accent-soft: var(--color-accent-soft);
+  --lm-good: var(--color-good);
+  --lm-good-soft: var(--color-good-soft);
+  --lm-bad: var(--color-bad);
+  --lm-bad-soft: var(--color-bad-soft);
+  --lm-flag: var(--color-bad);
+  --lm-radius: var(--radius);
+  --lm-bar-h: var(--bar-h);
 
   position: fixed;
   z-index: 2147483000;
@@ -30,11 +32,10 @@
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
-  background: #fff;
+  background: var(--color-surface);
   color: var(--lm-ink);
   color-scheme: light;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    "Noto Sans", sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
   font-weight: 400;
   letter-spacing: normal;
@@ -1315,9 +1316,9 @@
 }
 
 .lm-shell .lm-btn-primary:disabled {
-  border-color: #e3e6ec;
-  background: #e3e6ec;
-  color: #596069;
+  border-color: var(--color-disabled);
+  background: var(--color-disabled);
+  color: var(--color-disabled-ink);
   opacity: 1;
 }
 

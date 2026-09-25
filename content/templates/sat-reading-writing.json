@@ -1,0 +1,350 @@
+{
+  "sectionKey": "sat-reading-writing",
+  "note": "Bit positions are permanent: append new templates, retire removed ones, never renumber.",
+  "templates": [
+    {
+      "id": "central-idea-stated-claim",
+      "bit": 0
+    },
+    {
+      "id": "detail-stated-reason-paraphrased",
+      "bit": 1
+    },
+    {
+      "id": "detail-literary-explicit-fact",
+      "bit": 2
+    },
+    {
+      "id": "central-idea-corrected-belief",
+      "bit": 3
+    },
+    {
+      "id": "central-idea-literary-passage",
+      "bit": 4
+    },
+    {
+      "id": "central-idea-author-qualifies-source",
+      "bit": 5
+    },
+    {
+      "id": "detail-finding-versus-expectation",
+      "bit": 6
+    },
+    {
+      "id": "inference-rule-applied-to-case",
+      "bit": 7
+    },
+    {
+      "id": "inference-completion-cause-effect",
+      "bit": 8
+    },
+    {
+      "id": "inference-completion-controlled-comparison",
+      "bit": 9
+    },
+    {
+      "id": "inference-character-shown-by-action",
+      "bit": 10
+    },
+    {
+      "id": "inference-completion-competing-explanations",
+      "bit": 11
+    },
+    {
+      "id": "inference-completion-limits-of-evidence",
+      "bit": 12
+    },
+    {
+      "id": "inference-combine-separated-premises",
+      "bit": 13
+    },
+    {
+      "id": "evidence-quotation-single-claim",
+      "bit": 14
+    },
+    {
+      "id": "quantitative-table-extreme-value",
+      "bit": 15
+    },
+    {
+      "id": "evidence-finding-supports-mechanism",
+      "bit": 16
+    },
+    {
+      "id": "quantitative-table-change-for-one-group",
+      "bit": 17
+    },
+    {
+      "id": "quantitative-table-weakens-trend",
+      "bit": 18
+    },
+    {
+      "id": "evidence-finding-weakens-causal-claim",
+      "bit": 19
+    },
+    {
+      "id": "evidence-quotation-two-part-claim",
+      "bit": 20
+    },
+    {
+      "id": "quantitative-table-difference-in-benefit",
+      "bit": 21
+    },
+    {
+      "id": "wic-restatement-blank",
+      "bit": 22
+    },
+    {
+      "id": "wic-magnitude-blank",
+      "bit": 23
+    },
+    {
+      "id": "wic-relation-direction-blank",
+      "bit": 24
+    },
+    {
+      "id": "wic-uncommon-sense",
+      "bit": 25
+    },
+    {
+      "id": "wic-contrast-blank",
+      "bit": 26
+    },
+    {
+      "id": "wic-figurative-meaning",
+      "bit": 27
+    },
+    {
+      "id": "wic-connotation-blank",
+      "bit": 28
+    },
+    {
+      "id": "wic-opposite-senses",
+      "bit": 29
+    },
+    {
+      "id": "tsp-main-purpose-explain",
+      "bit": 30
+    },
+    {
+      "id": "tsp-function-example",
+      "bit": 31
+    },
+    {
+      "id": "tsp-function-concession",
+      "bit": 32
+    },
+    {
+      "id": "tsp-literary-purpose",
+      "bit": 33
+    },
+    {
+      "id": "tsp-literary-structure",
+      "bit": 34
+    },
+    {
+      "id": "tsp-structure-view-complication",
+      "bit": 35
+    },
+    {
+      "id": "tsp-function-foil",
+      "bit": 36
+    },
+    {
+      "id": "tsp-purpose-evaluate-source",
+      "bit": 37
+    },
+    {
+      "id": "cross-text-shared-claim",
+      "bit": 38
+    },
+    {
+      "id": "cross-text-problem-solution",
+      "bit": 39
+    },
+    {
+      "id": "cross-text-counterexample",
+      "bit": 40
+    },
+    {
+      "id": "cross-text-extends",
+      "bit": 41
+    },
+    {
+      "id": "cross-text-apply-explanation",
+      "bit": 42
+    },
+    {
+      "id": "cross-text-method-challenge",
+      "bit": 43
+    },
+    {
+      "id": "cross-text-difference-in-view",
+      "bit": 44
+    },
+    {
+      "id": "cross-text-common-ground",
+      "bit": 45
+    },
+    {
+      "id": "notes-shared-feature",
+      "bit": 46
+    },
+    {
+      "id": "notes-contrast-two-subjects",
+      "bit": 47
+    },
+    {
+      "id": "notes-date-and-place",
+      "bit": 48
+    },
+    {
+      "id": "notes-introduce-to-newcomers",
+      "bit": 49
+    },
+    {
+      "id": "notes-explain-benefit",
+      "bit": 50
+    },
+    {
+      "id": "notes-generalize-category",
+      "bit": 51
+    },
+    {
+      "id": "notes-finding-and-significance",
+      "bit": 52
+    },
+    {
+      "id": "notes-similarity-despite-difference",
+      "bit": 53
+    },
+    {
+      "id": "notes-result-versus-expectation",
+      "bit": 54
+    },
+    {
+      "id": "transition-consequence",
+      "bit": 55
+    },
+    {
+      "id": "transition-contrast-two-subjects",
+      "bit": 56
+    },
+    {
+      "id": "transition-instance-mid-passage",
+      "bit": 57
+    },
+    {
+      "id": "transition-further-point",
+      "bit": 58
+    },
+    {
+      "id": "transition-parallel-case",
+      "bit": 59
+    },
+    {
+      "id": "transition-later-step",
+      "bit": 60
+    },
+    {
+      "id": "transition-despite-drawback",
+      "bit": 61
+    },
+    {
+      "id": "transition-concede-then-return",
+      "bit": 62
+    },
+    {
+      "id": "transition-plain-restatement",
+      "bit": 63
+    },
+    {
+      "id": "sec-join-independent-clauses",
+      "bit": 64
+    },
+    {
+      "id": "sec-colon-before-list",
+      "bit": 65
+    },
+    {
+      "id": "sec-intro-clause-comma",
+      "bit": 66
+    },
+    {
+      "id": "sec-conjunctive-adverb-join",
+      "bit": 67
+    },
+    {
+      "id": "sec-no-colon-after-verb",
+      "bit": 68
+    },
+    {
+      "id": "sec-no-comma-subject-verb",
+      "bit": 69
+    },
+    {
+      "id": "sec-series-semicolons",
+      "bit": 70
+    },
+    {
+      "id": "sec-relative-vs-pronoun-clause",
+      "bit": 71
+    },
+    {
+      "id": "sec-closing-mark-match",
+      "bit": 72
+    },
+    {
+      "id": "sec-essential-clause-context",
+      "bit": 73
+    },
+    {
+      "id": "sec-adverb-interrupts-clause",
+      "bit": 74
+    },
+    {
+      "id": "sec-sva-compound-subject",
+      "bit": 75
+    },
+    {
+      "id": "sec-their-theyre-there",
+      "bit": 76
+    },
+    {
+      "id": "sec-irregular-past-participle",
+      "bit": 77
+    },
+    {
+      "id": "sec-parallel-series",
+      "bit": 78
+    },
+    {
+      "id": "sec-sva-attractor",
+      "bit": 79
+    },
+    {
+      "id": "sec-sva-inverted",
+      "bit": 80
+    },
+    {
+      "id": "sec-parallel-paired",
+      "bit": 81
+    },
+    {
+      "id": "sec-pronoun-distant-antecedent",
+      "bit": 82
+    },
+    {
+      "id": "sec-verb-tense-frame",
+      "bit": 83
+    },
+    {
+      "id": "sec-finite-or-nonfinite",
+      "bit": 84
+    },
+    {
+      "id": "sec-dangling-modifier",
+      "bit": 85
+    }
+  ]
+}

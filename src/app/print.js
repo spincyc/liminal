@@ -3,6 +3,7 @@
 
   const core = window.PracticeCore;
   const booklet = window.PracticeBooklet;
+  const site = window.LiminalSite;
 
   const elements = {
     formGrid: document.getElementById("formGrid"),
@@ -19,7 +20,17 @@
   };
 
   const bankPromises = new Map();
-  let selectedId = core.ALL_BLUEPRINTS[0].id;
+  let selectedId = null;
+
+  // Only the forms of the test chosen in the header are offered.
+  function testBlueprints() {
+    return core.ALL_BLUEPRINTS.filter((blueprint) => blueprint.test === site.getTest());
+  }
+
+  function ensureSelection() {
+    const forms = testBlueprints();
+    if (!forms.some((blueprint) => blueprint.id === selectedId)) selectedId = forms[0].id;
+  }
 
   /* ------------------------------------------------------------------ state */
 
@@ -42,10 +53,16 @@
     return seed;
   }
 
+  // A shared link names its form, and the form names its test: opening an
+  // ACT link switches the site to ACT.
   function readUrl() {
     const params = new URLSearchParams(window.location.search);
-    const form = params.get("form");
-    if (form && core.blueprintById(form)) selectedId = form;
+    const form = core.blueprintById(params.get("form") || "");
+    if (form) {
+      selectedId = form.id;
+      site.setTest(form.test);
+    }
+    ensureSelection();
     const seed = (params.get("seed") || "").trim();
     elements.seedInput.value = seed || randomSeed();
   }
@@ -68,36 +85,51 @@
 
   /* --------------------------------------------------------------- rendering */
 
+  // Real radio buttons: the choice is a selection, separate from the build
+  // and download actions, and arrow keys move between forms.
   function renderForms() {
     elements.formGrid.innerHTML = "";
-    core.ALL_BLUEPRINTS.forEach((blueprint) => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "form-card";
-      button.setAttribute("role", "radio");
-      const active = blueprint.id === selectedId;
-      button.setAttribute("aria-checked", active ? "true" : "false");
-      button.classList.toggle("active", active);
+    testBlueprints().forEach((blueprint) => {
+      const option = document.createElement("label");
+      option.className = "option-card";
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = "form";
+      input.value = blueprint.id;
+      input.checked = blueprint.id === selectedId;
 
-      const title = document.createElement("strong");
+      const body = document.createElement("span");
+      body.className = "option-body";
+      const title = document.createElement("span");
+      title.className = "option-title";
       title.textContent = blueprint.label;
       const meta = document.createElement("span");
-      meta.className = "form-meta";
+      meta.className = "option-meta";
       meta.textContent =
         `${core.blueprintTotal(blueprint)} questions · ${blueprint.minutes} minutes · ` +
         `${blueprint.sections.length} section${blueprint.sections.length === 1 ? "" : "s"}`;
       const summary = document.createElement("span");
-      summary.className = "form-summary";
+      summary.className = "option-desc";
       summary.textContent = blueprint.summary;
+      body.append(title, meta, summary);
 
-      button.append(title, meta, summary);
-      button.addEventListener("click", () => {
+      option.append(input, body);
+      input.addEventListener("change", () => {
+        if (!input.checked) return;
         selectedId = blueprint.id;
-        renderForms();
+        markSelected();
         updateSummary();
         updateShareLink();
       });
-      elements.formGrid.appendChild(button);
+      elements.formGrid.appendChild(option);
+    });
+    markSelected();
+  }
+
+  function markSelected() {
+    elements.formGrid.querySelectorAll(".option-card").forEach((option) => {
+      const input = option.querySelector("input");
+      option.classList.toggle("is-selected", input.value === selectedId);
     });
   }
 
@@ -105,9 +137,9 @@
     const blueprint = core.blueprintById(selectedId);
     if (!blueprint) return;
     const parts = blueprint.sections.map(
-      (entry) => `${entry.label} ${entry.count}q/${entry.minutes}min`,
+      (entry) => `${entry.label}, ${entry.count} questions in ${entry.minutes} min`,
     );
-    elements.formSummary.textContent = `${blueprint.label}: ${parts.join(" · ")}.`;
+    elements.formSummary.textContent = `${blueprint.label}: ${parts.join("; ")}.`;
   }
 
   function setStatus(message, kind) {
@@ -251,6 +283,14 @@
   elements.openKey.addEventListener("click", () => openBooklet("key"));
   elements.downloadKey.addEventListener("click", () => downloadBooklet("key"));
   elements.copyLink.addEventListener("click", copyShareLink);
+  elements.shareLink.addEventListener("focus", () => elements.shareLink.select());
+  site.onTestChange(() => {
+    ensureSelection();
+    renderForms();
+    updateSummary();
+    updateShareLink();
+    setStatus("");
+  });
 
   readUrl();
   renderForms();
