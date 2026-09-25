@@ -12,9 +12,68 @@
 
   const { MINUS, num, frac, table } = S;
   const {
-    DATA, tidy, isClean, fitsGrid, fmt, sum, range, retry, pack, parseTable, parseNumber,
-    fractionValue, close, DOMAIN, offerHard, finish, r1, seg, chartText,
+    DATA, tidy, isClean, fitsGrid, fmt, sum, range, retry, parseTable, parseNumber,
+    fractionValue, close, DOMAIN, offerHard, finish, r1, seg, chartText, spreadRank,
   } = C;
+
+  // Wrong answers that are probabilities, given as [numerator, denominator,
+  // reason] in trap order. Keeps only values strictly between 0 and 1 (a
+  // "probability" of 2 is a free elimination), redraws (null) when a modelled
+  // mistake equals the key in value, and spreads the key's rank among the
+  // four. With `reduce` false every fraction prints as counted, part/whole,
+  // so the key is never the only reduced fraction.
+  function probabilityWrong(t, top, bottom, candidates, { reduce = true, keep = 0 } = {}) {
+    const text = (a, b) => (reduce ? frac(a, b) : `${fmt(a)}/${fmt(b)}`);
+    const keyValue = top / bottom;
+    const shown = new Map();
+    const pool = [];
+    for (const [a, b, reason] of candidates) {
+      if (!(Number.isInteger(a) && Number.isInteger(b) && a > 0 && a < b)) continue;
+      const value = a / b;
+      if (close(value, keyValue, 1e-9)) return null;
+      if (!shown.has(value)) shown.set(value, text(a, b));
+      pool.push([value, reason]);
+    }
+    return spreadRank(t, keyValue, pool, { keep, show: (value) => (value === keyValue ? text(top, bottom) : shown.get(value)) });
+  }
+
+  // Finishes a probability item: a decimal key for numeric entry when it fits
+  // the grid exactly, otherwise multiple choice with fraction choices. Null
+  // (redraw) when the distractors cannot be formed.
+  function finishProbability(t, top, bottom, wantNumeric, candidates, fields, options = {}) {
+    const decimal = tidy(top / bottom);
+    const numeric = wantNumeric && fitsGrid(decimal) && isClean(decimal, 3);
+    const wrong = probabilityWrong(t, top, bottom, candidates, options);
+    if (!wrong) return null;
+    const keyText = options.reduce === false ? `${fmt(top)}/${fmt(bottom)}` : frac(top, bottom);
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      correct: numeric ? decimal : keyText,
+      wrong: numeric ? [] : wrong,
+      ...fields,
+    };
+  }
+
+  // Whole-number wrong answers spread around a whole-number key; null when
+  // a modelled mistake lands on the key.
+  function countWrong(t, key, candidates) {
+    const show = (value) => (Number.isInteger(tidy(value)) && value > 0 ? fmt(tidy(value)) : null);
+    if (candidates.some(([value]) => show(value) === show(key))) return null;
+    return spreadRank(t, key, candidates, { show });
+  }
+
+  // Finishes an item with a whole-number key: numeric entry, or multiple
+  // choice with whole-number wrong answers from countWrong. Null to redraw.
+  function finishCount(t, numeric, key, candidates, fields) {
+    const wrong = countWrong(t, key, candidates);
+    if (!wrong || (numeric && !fitsGrid(key))) return null;
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      correct: numeric ? key : fmt(key),
+      wrong: numeric ? [] : wrong,
+      ...fields,
+    };
+  }
 
   /* ========================================= two-way-table-chance (Easy) */
 
@@ -147,7 +206,9 @@
     "P(B given A) and P(A given B) share a numerator but have different denominators.",
   ];
 
-  function conditionalTable(t, numeric) {
+  // `hidden`: leave out a row or column the question depends on, so it must be
+  // rebuilt from the totals first (Hard); otherwise show the whole table.
+  function conditionalTable(t, numeric, hidden) {
     const ctx = t.pick(TWO_WAY);
     return retry(() => {
       const R = ctx.rows.length;
@@ -173,20 +234,26 @@
       const omitChoices = [];
       if (condSize === 3) condIdx.forEach((c) => omitChoices.push({ onRowDim: onRow, index: c }));
       if (eventSize === 3) omitChoices.push({ onRowDim: !onRow, index: ei });
-      const omit = omitChoices.length && t.chance(0.5) ? t.pick(omitChoices) : null;
+      const omit = hidden && omitChoices.length ? t.pick(omitChoices) : null;
+      if (hidden && !omit) return null;
       const condLabels = onRow ? ctx.rows : ctx.cols;
       const eventLabels = onRow ? ctx.cols : ctx.rows;
       const candidates = [
-        [frac(joint, eventTotal), `Divides by the ${eventTotal} in the ${eventLabels[ei]} ${onRow ? "column" : "row"}, which answers the reverse question.`],
-        [frac(joint, N), `Divides by all ${N} ${ctx.who} instead of only those in the given group.`],
+        [joint, eventTotal, `Divides by the ${eventTotal} in the ${eventLabels[ei]} ${onRow ? "column" : "row"}, which answers the reverse question.`],
+        [joint, N, `Divides by all ${N} ${ctx.who} instead of only those in the given group.`],
       ];
       if (negate) {
         const part = condIdx[0];
-        candidates.push([frac(at(part, ei), totalOf(part)), `Uses only the ${condLabels[part]} ${onRow ? "row" : "column"} as the condition, leaving out ${condLabels[condIdx[1]]}.`]);
+        candidates.push([at(part, ei), totalOf(part), `Uses only the ${condLabels[part]} ${onRow ? "row" : "column"} as the condition, leaving out ${condLabels[condIdx[1]]}.`]);
       }
-      candidates.push([frac(condTotal - joint, condTotal), "Counts the members of the given group who do not have the stated outcome."]);
-      const wrong = offerHard(key, candidates);
-      if (wrong.length < 3) return null;
+      candidates.push(
+        [condTotal - joint, condTotal, "Counts the members of the given group who do not have the stated outcome."],
+        [eventTotal, N, "Ignores the condition and gives the share of everyone with the outcome."],
+        [condTotal, N, "Gives the probability of the condition itself instead of the outcome within it."],
+        [eventTotal - joint, N - condTotal, "Finds the probability for everyone outside the given group instead."],
+      );
+      const wrong = probabilityWrong(t, joint, condTotal, [candidates[0], ...t.shuffle(candidates.slice(1))]);
+      if (!wrong) return null;
       const decimal = tidy(joint / condTotal);
       const asNumber = numeric && fitsGrid(decimal) && isClean(decimal, 3);
       // Build the displayed table.
@@ -331,15 +398,19 @@
       const condTotal = inGroup[0] + inGroup[1];
       const hit = inGroup[gi];
       const key = frac(hit, condTotal);
+      // A test prints such a probability with a modest denominator.
+      if (condTotal / S.gcd(hit, condTotal) > 60) return null;
       const rate = gi === 0 ? r1 : r2;
       const share = gi === 0 ? s1 : 100 - s1;
-      const wrong = offerHard(key, [
-        [frac(yes ? rate : 100 - rate, 100), `Gives the probability that one of the ${ctx.things} ${ctx.from[gi]} ${ctx.has[yes ? 0 : 1]}: the reverse condition.`],
-        [frac(hit, N), `Divides by all ${fmt(N)} ${ctx.things} instead of only the ${fmt(condTotal)} that meet the condition.`],
-        [frac(share, 100), `Gives the share of all ${ctx.things} that were ${ctx.from[gi]}, ignoring the condition.`],
-        [frac(inGroup[1 - gi], condTotal), `Finds the probability for the ${ctx.things} ${ctx.from[1 - gi]} instead.`],
+      const wrong = probabilityWrong(t, hit, condTotal, [
+        [yes ? rate : 100 - rate, 100, `Gives the probability that one of the ${ctx.things} ${ctx.from[gi]} ${ctx.has[yes ? 0 : 1]}: the reverse condition.`],
+        [hit, N, `Divides by all ${fmt(N)} ${ctx.things} instead of only the ${fmt(condTotal)} that meet the condition.`],
+        [share, 100, `Gives the share of all ${ctx.things} that were ${ctx.from[gi]}, ignoring the condition.`],
+        [inGroup[1 - gi], condTotal, `Finds the probability for the ${ctx.things} ${ctx.from[1 - gi]} instead.`],
+        [condTotal, N, `Gives the share of all ${fmt(N)} ${ctx.things} that meet the condition, ignoring the source.`],
+        [yes ? rate : 100 - rate, yes ? r1 + r2 : 200 - r1 - r2, "Compares the two percents as if the two groups were the same size."],
       ]);
-      if (wrong.length < 3) return null;
+      if (!wrong) return null;
       const decimal = tidy(hit / condTotal);
       const asNumber = numeric && fitsGrid(decimal) && isClean(decimal, 3);
       return finish(asNumber, {
@@ -428,19 +499,22 @@
       const other = line[1 - xPos];
       const outside = sum(grid.flat()) - lineTotal;
       const f = p / q;
-      const candidates = [];
       // The given probability assigned to the other category of the line.
       const swapped = e === xPos ? (other * (1 - f)) / f : (other * f) / (1 - f);
-      if (Number.isInteger(tidy(swapped)) && swapped > 0) candidates.push([num(tidy(swapped)), "Assigns the given probability to the other category in the condition."]);
       // Everyone in the table as the denominator.
       const grand = e === xPos ? (f * (other + outside)) / (1 - f) : other / f - other - outside;
-      if (Number.isInteger(tidy(grand)) && grand > 0) candidates.push([num(tidy(grand)), "Uses the whole table as the denominator instead of only the group in the condition."]);
-      candidates.push([num(lineTotal), `Stops at the total of the condition's ${onRow ? "row" : "column"}, x + ${other}, instead of x.`]);
       // Reading p/q as a part-to-part ratio (the outcome to the rest of the line).
       const odds = e === xPos ? other * f : other / f;
-      if (Number.isInteger(tidy(odds)) && odds > 0) candidates.push([num(tidy(odds)), `Treats ${p}/${q} as the ratio of the two cells in the ${onRow ? "row" : "column"} instead of a part of its total.`]);
-      const wrong = offerHard(num(x), candidates);
-      if (!numeric && wrong.length < 3) return null;
+      const mistakes = [
+        [swapped, "Assigns the given probability to the other category in the condition."],
+        [grand, "Uses the whole table as the denominator instead of only the group in the condition."],
+        [lineTotal, `Stops at the total of the condition's ${onRow ? "row" : "column"}, x + ${other}, instead of x.`],
+        [odds, `Treats ${p}/${q} as the ratio of the two cells in the ${onRow ? "row" : "column"} instead of a part of its total.`],
+        [other, `Gives the other cell in the condition's ${onRow ? "row" : "column"}, ${other}.`],
+      ];
+      if (mistakes.some(([value]) => close(value, x))) return null;
+      const wrong = numeric ? [] : countWrong(t, x, mistakes);
+      if (!wrong) return null;
       const shown = grid.map((row, r) => row.map((value, c) => (r === hr && c === hc ? "x" : value)));
       const decimalOk = isClean(f, 2);
       const given = decimalOk && t.chance(0.4) ? num(f) : `${p}/${q}`;
@@ -492,28 +566,26 @@
         "For an item selected at random, probability = (number of favorable items) ÷ (total number of items).",
         "The probability that an event does not happen is 1 minus the probability that it does.",
       ];
-      const finishWith = (part, whole, keyCandidates, fields) => {
-        const value = part / whole;
-        const numeric = wantNumeric && fitsGrid(value) && isClean(value, 3);
-        return pack(numeric, tidy(value), frac(part, whole), keyCandidates, {
-          ...fields,
-          principles,
-          estimatedSeconds: 60,
-        });
-      };
+      const finishWith = (part, whole, keyCandidates, fields) => finishProbability(t, part, whole, wantNumeric, keyCandidates, {
+        ...fields,
+        principles,
+        estimatedSeconds: 60,
+      });
       if (form === "bag") {
         const bag = t.pick(BAGS);
         return retry(() => {
           const counts = [t.int(3, 16), t.int(3, 16), t.int(3, 16)];
           const T = sum(counts);
           const i = t.int(0, 2);
+          const other = (i + t.int(1, 2)) % 3;
           const negate = t.chance(0.4);
           const part = negate ? T - counts[i] : counts[i];
           return finishWith(part, T, [
-            [frac(part, T - part), `Divides by the number of ${bag.noun}s that are ${negate ? bag.is[i] : bag.not[i]} instead of by all ${T}.`],
-            [frac(T - part, T), `Gives the probability that the ${bag.noun} is ${negate ? bag.is[i] : bag.not[i]}.`],
-            [negate ? "2/3" : "1/3", "Treats the three kinds as equally likely, ignoring how many there are of each."],
-            [frac(part, T + part), "Adds the favorable count to the total."],
+            [part, T - part, `Divides by the number of ${bag.noun}s that are ${negate ? bag.is[i] : bag.not[i]} instead of by all ${T}.`],
+            [T - part, T, `Gives the probability that the ${bag.noun} is ${negate ? bag.is[i] : bag.not[i]}.`],
+            [negate ? 2 : 1, 3, "Treats the three kinds as equally likely, ignoring how many there are of each."],
+            [part, T + part, "Adds the favorable count to the total."],
+            [counts[other], T, `Uses the ${counts[other]} ${bag.is[other].replace(/^a /, "")} ${bag.noun}s instead.`],
           ], {
             stimulus: null,
             figure: null,
@@ -522,7 +594,7 @@
             steps: [
               `Total: ${counts.join(" + ")} = ${T}.`,
               `Favorable: ${negate ? `${T} ${MINUS} ${counts[i]} = ${part}` : part}.`,
-              `Probability: ${part}/${T} = ${frac(part, T)}.`,
+              `Probability: ${part}/${T}${frac(part, T) === `${part}/${T}` ? "" : ` = ${frac(part, T)}`}.`,
             ],
             trap: `Dividing by the other ${T - part} ${bag.noun}s instead of all ${T} compares two parts rather than a part with the whole.`,
             hint: `How many ${bag.noun}s are there in all?`,
@@ -544,6 +616,8 @@
         const T = sum(rowTotals);
         const i = t.int(0, R - 1);
         const j = t.int(0, C - 1);
+        const i2 = (i + t.int(1, R - 1)) % R;
+        const j2 = (j + t.int(1, C - 1)) % C;
         const withTotals = t.chance(0.5);
         const headers = [scene.corner, ...scene.cols].concat(withTotals ? ["Total"] : []);
         const body = scene.rows.map((rowName, r) => [rowName, ...counts[r]].concat(withTotals ? [rowTotals[r]] : []));
@@ -557,20 +631,23 @@
           part = counts[i][j];
           event = scene.cell(i, j);
           candidates = [
-            [frac(part, rowTotals[i]), `Divides by the ${rowTotals[i]} ${scene.things} in the ${scene.rows[i]} row, as if the ${scene.thing} were selected from that row only.`],
-            [frac(part, colTotals[j]), `Divides by the ${colTotals[j]} ${scene.things} in the ${scene.cols[j]} column, as if the ${scene.thing} were selected from that column only.`],
-            [frac(rowTotals[i], T), `Counts the whole ${scene.rows[i]} row, ignoring the second condition.`],
-            [frac(part, T - part), `Divides by the ${T - part} other ${scene.things} instead of by all ${T}.`],
+            [part, rowTotals[i], `Divides by the ${rowTotals[i]} ${scene.things} in the ${scene.rows[i]} row, as if the ${scene.thing} were selected from that row only.`],
+            [part, colTotals[j], `Divides by the ${colTotals[j]} ${scene.things} in the ${scene.cols[j]} column, as if the ${scene.thing} were selected from that column only.`],
+            [counts[i][j2], T, `Reads the ${scene.cols[j2]} cell of the ${scene.rows[i]} row instead of the ${scene.cols[j]} cell.`],
+            [counts[i2][j], T, `Reads the ${scene.rows[i2]} row of the ${scene.cols[j]} column instead of the ${scene.rows[i]} row.`],
+            [rowTotals[i], T, `Counts the whole ${scene.rows[i]} row, ignoring the second condition.`],
+            [part, T - part, `Divides by the ${T - part} other ${scene.things} instead of by all ${T}.`],
           ];
           matches = (r, c) => r === i && c === j;
         } else {
           part = form === "complement" ? T - colTotals[j] : colTotals[j];
           event = form === "complement" ? scene.colNot(j) : scene.colIs(j);
           candidates = [
-            [frac(T - part, T), `Gives the probability that the ${scene.thing} ${form === "complement" ? scene.colIs(j) : scene.colNot(j)}.`],
-            [frac(part, T - part), `Divides by the ${T - part} other ${scene.things} instead of by all ${T}.`],
-            [frac(counts[i][j], T), `Counts only the ${scene.rows[i]} row of the ${scene.cols[j]} column.`],
-            [form === "complement" ? frac(C - 1, C) : frac(1, C), `Treats the ${C} categories as equally likely, ignoring the counts.`],
+            [T - part, T, `Gives the probability that the ${scene.thing} ${form === "complement" ? scene.colIs(j) : scene.colNot(j)}.`],
+            [part, T - part, `Divides by the ${T - part} other ${scene.things} instead of by all ${T}.`],
+            [counts[i][j], T, `Counts only the ${scene.rows[i]} row of the ${scene.cols[j]} column.`],
+            [form === "complement" ? C - 1 : 1, C, `Treats the ${C} categories as equally likely, ignoring the counts.`],
+            [form === "complement" ? T - colTotals[j2] : colTotals[j2], T, `Uses the ${scene.cols[j2]} column instead of the ${scene.cols[j]} column.`],
           ];
           matches = (r, c) => (form === "complement" ? c !== j : c === j);
         }
@@ -588,7 +665,7 @@
               : form === "complement"
                 ? `Favorable: everyone outside the ${scene.cols[j]} column, ${T} ${MINUS} ${colTotals[j]} = ${part}.`
                 : `Favorable: the ${scene.cols[j]} column total, ${part}.`,
-            `Probability: ${part}/${T} = ${frac(part, T)}.`,
+            `Probability: ${part}/${T}${frac(part, T) === `${part}/${T}` ? "" : ` = ${frac(part, T)}`}.`,
           ],
           trap: form === "cell"
             ? `Dividing by a row or column total answers a question about selecting from that row or column, not from all ${T} ${scene.things}.`
@@ -621,9 +698,29 @@
     tricks: ["percent-base", "reversed-condition", "wrong-quantity", "part-vs-whole"],
     build(t) {
       const form = t.int(0, 2);
-      if (form === 0) return { estimatedSeconds: 110, ...conditionalTable(t, t.chance(0.4)) };
+      if (form === 0) return { estimatedSeconds: 110, ...conditionalTable(t, t.chance(0.4), true) };
       if (form === 1) return { estimatedSeconds: 115, ...conditionalWords(t, t.chance(0.4)) };
       return { estimatedSeconds: 110, ...conditionalMissingCell(t, t.chance(0.55)) };
+    },
+  };
+
+  // The whole table is shown: the condition picks the row or column to divide
+  // by, and the reverse question is the trap. Split from conditional-two-way,
+  // whose hidden-row, percent, and unknown-cell forms are Hard.
+  const conditionalTableRead = {
+    id: "conditional-table-probability",
+    domain: DATA,
+    skill: "Probability",
+    subskill: "conditional probability",
+    difficulty: "Medium",
+    title: "Conditional probability read from a complete two-way table",
+    recognize:
+      "The condition names the group that can be selected; its row or column total is the denominator, and the cell where it " +
+      "meets the outcome is the numerator.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 2 },
+    tricks: ["reversed-condition", "part-vs-whole"],
+    build(t) {
+      return { estimatedSeconds: 90, ...conditionalTable(t, t.chance(0.4), false) };
     },
   };
 
@@ -693,16 +790,17 @@
       const down = tidy((N * p) / 10);
       const percent = Math.round(p * 100);
       const candidates = [
-        [num(not ? yes : N - yes), `Finds the expected number of ${scene.things} with the opposite outcome.`],
-        asFraction && a > 1 ? [shownWhole(N / b), `Finds 1/${b} of ${fmt(N)} and stops, without multiplying by ${a}.`] : null,
-        asFraction ? [shownWhole((N * a) / (a + b)), `Reads ${pText} as a ratio of ${a} to ${b} between the two outcomes, not a part of the whole.`] : null,
-        asFraction ? [shownWhole((N * b) / a), `Divides ${fmt(N)} by the probability instead of multiplying.`] : null,
-        !asFraction && up <= N ? [shownWhole(not ? N - up : up), `Misplaces the decimal point, using ${num(tidy(p * 10))} for the probability ${pText}.`] : null,
-        !asFraction ? [shownWhole(not ? N - down : down), `Misplaces the decimal point, using ${num(tidy(p / 10))} for the probability ${pText}.`] : null,
-        !asFraction ? [shownWhole(not ? 100 - percent : percent), `Gives the probability as a percent, ${not ? 100 - percent : percent}, instead of a number of ${scene.things}.`] : null,
+        [not ? yes : N - yes, `Finds the expected number of ${scene.things} with the opposite outcome.`],
+        asFraction && a > 1 ? [N / b, `Finds 1/${b} of ${fmt(N)} and stops, without multiplying by ${a}.`] : null,
+        asFraction ? [(N * a) / (a + b), `Reads ${pText} as a ratio of ${a} to ${b} between the two outcomes, not a part of the whole.`] : null,
+        asFraction ? [(N * b) / a, `Divides ${fmt(N)} by the probability instead of multiplying.`] : null,
+        !asFraction && up <= N ? [not ? N - up : up, `Misplaces the decimal point, using ${num(tidy(p * 10))} for the probability ${pText}.`] : null,
+        !asFraction ? [not ? N - down : down, `Misplaces the decimal point, using ${num(tidy(p / 10))} for the probability ${pText}.`] : null,
+        !asFraction ? [not ? 100 - percent : percent, `Gives the probability as a percent, ${not ? 100 - percent : percent}, instead of a number of ${scene.things}.`] : null,
+        [N, `Gives the number of ${scene.things} in all instead of the expected number with the outcome.`],
       ].filter(Boolean);
       const trapValue = not ? yes : N - yes;
-      return pack(numeric, key, fmt(key), candidates, {
+      return finishCount(t, numeric, key, candidates, {
         stimulus: null,
         figure: null,
         stem: `${scene.given(pText)} ${scene.ask(N, not)}`,
@@ -736,9 +834,6 @@
     });
   }
 
-  // Whole-number counts only, as choice text.
-  const shownWhole = (value) => (Number.isInteger(value) && value > 0 ? fmt(value) : null);
-
   function expectedSpinner(t, numeric) {
     const spinner = t.pick(SPINNERS);
     return retry(() => {
@@ -751,11 +846,13 @@
       if ((N * c0) % total) return null;
       const key = (N * c0) / total;
       const target = spinner.label ? spinner.label[0] : spinner.colors[0];
-      return pack(numeric, key, fmt(key), [
-        [shownWhole((N * c1) / total), `Uses the ${c1} ${spinner.short[1]} sections instead of the ${c0} ${spinner.short[0]} sections.`],
-        [shownWhole(N / 3), `Treats the three kinds of sections as equally likely, ignoring that there are ${c0}, ${c1}, and ${c2}.`],
-        [shownWhole((N * c0) / (total - c0)), `Divides by the ${total - c0} other sections instead of all ${total}.`],
-        [shownWhole(N - key), `Finds the expected number of spins that do not land on ${target}.`],
+      return finishCount(t, numeric, key, [
+        [(N * c1) / total, `Uses the ${c1} ${spinner.short[1]} sections instead of the ${c0} ${spinner.short[0]} sections.`],
+        [N / 3, `Treats the three kinds of sections as equally likely, ignoring that there are ${c0}, ${c1}, and ${c2}.`],
+        [(N * c0) / (total - c0), `Divides by the ${total - c0} other sections instead of all ${total}.`],
+        [N - key, `Finds the expected number of spins that do not land on ${target}.`],
+        [(N * c2) / total, `Uses the ${c2} sections of the third kind instead of the ${c0} ${spinner.short[0]} sections.`],
+        [N / c0, `Divides the ${fmt(N)} spins by the ${c0} sections instead of multiplying by their share.`],
       ], {
         stimulus: null,
         figure: null,
@@ -901,17 +998,19 @@
       const categories = scene.values.filter((v) => rule.test(v, k)).length;
       if (categories < 2) return null;
       const asBars = t.chance(0.5);
-      const key = frac(fav, N);
       const decimal = tidy(fav / N);
       const includesK = rule.test(k, k);
-      const candidates = [
-        [frac(favTwin, N), `${includesK ? "Leaves out" : "Includes"} the ${scene.things} with exactly ${k}; "${rule.words} ${k}" ${includesK ? "includes" : "does not include"} ${k}.`],
-        [frac(N - fav, N), `Gives the probability of the opposite event, the ${scene.things} not counted.`],
-        [frac(categories, scene.values.length), `Counts the ${categories} values that qualify out of ${scene.values.length}, instead of the ${scene.things} with those values.`],
-        [frac(fav, N - fav), `Divides by the ${N - fav} ${scene.things} that do not qualify instead of by all ${N}.`],
-      ];
-      const wrong = offerHard(key, candidates);
-      if (!numeric && wrong.length < 3) return null;
+      const exactly = counts[scene.values.indexOf(k)];
+      const wrong = probabilityWrong(t, fav, N, [
+        [favTwin, N, `${includesK ? "Leaves out" : "Includes"} the ${scene.things} with exactly ${k}; "${rule.words} ${k}" ${includesK ? "includes" : "does not include"} ${k}.`],
+        [N - fav, N, `Gives the probability of the opposite event, the ${scene.things} not counted.`],
+        [categories, scene.values.length, `Counts the ${categories} values that qualify out of ${scene.values.length}, instead of the ${scene.things} with those values.`],
+        [fav, N - fav, `Divides by the ${N - fav} ${scene.things} that do not qualify instead of by all ${N}.`],
+        [exactly, N, `Counts only the ${scene.things} with exactly ${k}.`],
+        [fav, N + exactly, `Counts the ${exactly} ${scene.things} with exactly ${k} twice in the total.`],
+      ]);
+      if (!wrong) return null;
+      const key = frac(fav, N);
       if (numeric && !(fitsGrid(decimal) && isClean(decimal, 3))) return null;
       const alt =
         `Bar graph. The horizontal axis shows ${scene.head.toLowerCase()}: ${scene.values.join(", ")}. The vertical axis shows the number of ` +
@@ -981,7 +1080,7 @@
       intro: "The table shows the drink orders at a café one morning, by temperature and size.",
       rowHead: "Temperature", rows: ["Hot", "Iced"], cols: ["Small", "Medium", "Large"], things: "orders", thing: "order",
       or: (i, j) => `is for ${["a hot", "an iced"][i]} drink or is ${["small", "medium", "large"][j]}`,
-      neither: (i, j) => `is neither for ${["a hot", "an iced"][i]} drink nor ${["small", "medium", "large"][j]}`,
+      neither: (i, j) => `is not for ${["a hot", "an iced"][i]} drink and is not ${["small", "medium", "large"][j]}`,
     },
     {
       intro: "The table shows the books checked out from a library on Saturday, by type of book and the age group of the reader.",
@@ -1030,25 +1129,31 @@
       const either = rowTotals[i] + colTotals[j] - both;
       const neitherForm = t.chance(0.45);
       const part = neitherForm ? N - either : either;
-      const key = frac(part, N);
       const decimal = tidy(part / N);
-      // A probability outside 0 to 1 is not a choice the test would print.
-      const inRange = (top, bottom) => (top > 0 && top < bottom ? frac(top, bottom) : null);
+      const row = rowTotals[i];
+      const col = colTotals[j];
+      // Every choice prints as counted, over its own whole, so the key is
+      // never marked out as the only reduced (or unreduced) fraction.
       const candidates = neitherForm
         ? [
-          [inRange(N - rowTotals[i] - colTotals[j], N), `Subtracts both totals from ${N} without adding back the ${both} ${scene.things} subtracted twice.`],
-          [frac(either, N), "Gives the probability of the opposite event: one description or the other fits."],
-          [frac(N - both, N), `Removes only the ${both} ${scene.things} that fit both descriptions.`],
-          [frac(part, N - rowTotals[i]), `Divides by the ${N - rowTotals[i]} ${scene.things} outside the ${scene.rows[i]} row instead of by all ${N}.`],
+          [N - row - col, N, `Subtracts both totals from ${N} without adding back the ${both} ${scene.things} subtracted twice.`],
+          [either, N, "Gives the probability of the opposite event: one description or the other fits."],
+          [N - both, N, `Removes only the ${both} ${scene.things} that fit both descriptions.`],
+          [part, N - row, `Divides by the ${N - row} ${scene.things} outside the ${scene.rows[i]} row instead of by all ${N}.`],
+          [N - row, N, `Removes only the ${scene.rows[i]} row, forgetting the ${scene.cols[j]} column.`],
+          [N - col, N, `Removes only the ${scene.cols[j]} column, forgetting the ${scene.rows[i]} row.`],
         ]
         : [
-          [inRange(rowTotals[i] + colTotals[j], N), `Adds the row and column totals, counting the ${both} ${scene.things} in both twice.`],
-          [frac(both, N), "Counts only the ones that fit both descriptions; \"or\" includes those that fit either."],
-          [frac(either - both, N), `Leaves out the ${both} ${scene.things} that fit both descriptions.`],
-          [frac(rowTotals[i], N), `Counts only the ${scene.rows[i]} row.`],
+          [row + col, N, `Adds the row and column totals, counting the ${both} ${scene.things} in both twice.`],
+          [both, N, "Counts only the ones that fit both descriptions; \"or\" includes those that fit either."],
+          [either - both, N, `Leaves out the ${both} ${scene.things} that fit both descriptions.`],
+          [row, N, `Counts only the ${scene.rows[i]} row.`],
+          [col, N, `Counts only the ${scene.cols[j]} column.`],
+          [either, N + both, `Adds the ${both} ${scene.things} in both to the total as well.`],
         ];
-      const wrong = offerHard(key, candidates);
-      if (!numeric && wrong.length < 3) return null;
+      const wrong = probabilityWrong(t, part, N, candidates, { reduce: false });
+      if (!wrong) return null;
+      const key = `${fmt(part)}/${fmt(N)}`;
       if (numeric && !(fitsGrid(decimal) && isClean(decimal, 3))) return null;
       const withTotals = t.chance(0.5);
       const content = table(
@@ -1179,21 +1284,27 @@
       // The reflex: change the count but keep the old total.
       const forgot = tidy(k / Math.abs(r2 / n2 - r / n));
       if (!Number.isInteger(forgot) || forgot === n) return null;
+      const opposite = kind.startsWith("add") ? -k : k;
       const candidates = ask === "total"
         ? [
-          [Number.isInteger(tidy(forgot)) ? num(tidy(forgot)) : null, `Changes the number of ${scene.many(changed)} but not the total number of ${scene.nouns} in the second probability.`],
-          [num(n2), `Gives the number of ${scene.nouns} after the change, not before.`],
-          [num(r), `Gives the number of ${scene.many(x)} before the change, not the total.`],
-          [num(n - r), `Gives the number of ${scene.many(y)} before the change, not the total.`],
+          [forgot, `Changes the number of ${scene.many(changed)} but not the total number of ${scene.nouns} in the second probability.`],
+          [n2, `Gives the number of ${scene.nouns} after the change, not before.`],
+          [r, `Gives the number of ${scene.many(x)} before the change, not the total.`],
+          [n - r, `Gives the number of ${scene.many(y)} before the change, not the total.`],
+          [n - opposite, `Applies the change in the wrong direction, ${kind.startsWith("add") ? "subtracting" : "adding"} the ${k} ${scene.many(changed)}.`],
         ]
         : [
-          [Number.isInteger(tidy((forgot * r) / n)) ? num(tidy((forgot * r) / n)) : null, `Changes the number of ${scene.many(changed)} but not the total number of ${scene.nouns} in the second probability.`],
-          [num(n), `Gives the total number of ${scene.nouns} before the change.`],
-          [num(r2), `Gives the number of ${scene.many(x)} after the change, not before.`],
-          [num(n - r), `Gives the number of ${scene.many(y)}, not ${scene.many(x)}.`],
+          [(forgot * r) / n, `Changes the number of ${scene.many(changed)} but not the total number of ${scene.nouns} in the second probability.`],
+          [n, `Gives the total number of ${scene.nouns} before the change.`],
+          kind.endsWith("X") ? [r2, `Gives the number of ${scene.many(x)} after the change, not before.`] : null,
+          [n - r, `Gives the number of ${scene.many(y)}, not ${scene.many(x)}.`],
+          [n2, `Gives the total number of ${scene.nouns} after the change.`],
+          [kind.endsWith("X") ? r - opposite : null, `Applies the change in the wrong direction, ${kind.startsWith("add") ? "subtracting" : "adding"} the ${k} ${scene.many(changed)}.`],
         ];
-      const wrong = offerHard(num(key), candidates);
-      if (!numeric && wrong.length < 3) return null;
+      const mistakes = candidates.filter((entry) => entry && entry[0] !== null && entry[1]);
+      if (mistakes.some(([value]) => close(value, key))) return null;
+      const wrong = numeric ? [] : countWrong(t, key, mistakes);
+      if (!wrong) return null;
       const question = ask === "total"
         ? `How many ${scene.nouns} were in the ${scene.container} before the ${scene.many(changed)} were ${kind.startsWith("add") ? "added" : "removed"}?`
         : `How many ${scene.many(x)} were in the ${scene.container} before the ${scene.many(changed)} were ${kind.startsWith("add") ? "added" : "removed"}?`;
@@ -1260,13 +1371,17 @@
       const forgot = tidy(pv * (r + s) - r);
       const ratio = pv * s - r;
       if (!Number.isInteger(forgot) || forgot <= 0) return null;
-      const wrong = offerHard(num(add), [
-        [num(forgot), `Keeps the original total of ${r + s} in the denominator; adding ${scene.many(x)} also raises the total.`],
-        [ratio > 0 && Number.isInteger(tidy(ratio)) ? num(tidy(ratio)) : null, `Treats ${p} as the ratio of ${scene.many(x)} to ${scene.many(y)} instead of ${scene.many(x)} to all ${scene.nouns}.`],
-        [num(bottom), `Gives the new total number of ${scene.nouns}, not the number added.`],
-        [num(top), `Gives the new number of ${scene.many(x)}, not the number added.`],
-      ]);
-      if (!numeric && wrong.length < 3) return null;
+      const mistakes = [
+        [forgot, `Keeps the original total of ${r + s} in the denominator; adding ${scene.many(x)} also raises the total.`],
+        [ratio > 0 ? ratio : null, `Treats ${p} as the ratio of ${scene.many(x)} to ${scene.many(y)} instead of ${scene.many(x)} to all ${scene.nouns}.`],
+        [bottom, `Gives the new total number of ${scene.nouns}, not the number added.`],
+        [top, `Gives the new number of ${scene.many(x)}, not the number added.`],
+        [tidy(pv * (r + s)), `Finds how many ${scene.many(x)} would give that probability out of the original ${r + s} ${scene.nouns}, not the number to add.`],
+        [s, `Gives the number of ${scene.many(y)} in the ${scene.container}.`],
+      ].filter(([value]) => value !== null);
+      if (mistakes.some(([value]) => close(value, add))) return null;
+      const wrong = numeric ? [] : countWrong(t, add, mistakes);
+      if (!wrong) return null;
       return finish(numeric, {
         stimulus: null,
         figure: null,
@@ -1319,5 +1434,261 @@
     },
   };
 
-  return [tableChance, expectedCount, frequencyProbability, unionTwoWay, conditionalTwoWay, afterChange];
+  /* =============================== two-way-unknown-cells (Hard) */
+
+  // A two-way table with two cells written in x: a stated probability fixes
+  // x, but only through the right denominator, and the question then asks
+  // for something else.
+  const UNKNOWN_SCENES = [
+    {
+      intro: "The table shows the members of a science club, by grade and by the type of project each member chose, where x is a positive integer.",
+      rowHead: "Grade", rows: ["Grade 9", "Grade 10"], cols: ["Robotics", "Biology"], thing: "member",
+      rowIs: ["is in grade 9", "is in grade 10"], colIs: ["chose robotics", "chose biology"],
+      pickRow: ["a member in grade 9", "a member in grade 10"], pickCol: ["a member who chose robotics", "a member who chose biology"],
+      pickAll: "a member of the club",
+    },
+    {
+      intro: "The table shows the books on a library cart, by type and by cover, where x is a positive integer.",
+      rowHead: "Type", rows: ["Fiction", "Nonfiction"], cols: ["Hardcover", "Paperback"], thing: "book",
+      rowIs: ["is fiction", "is nonfiction"], colIs: ["is a hardcover", "is a paperback"],
+      pickRow: ["a fiction book", "a nonfiction book"], pickCol: ["a hardcover book", "a paperback book"],
+      pickAll: "a book from the cart",
+    },
+    {
+      intro: "The table shows the results of a germination test of two varieties of seeds, where x is a positive integer.",
+      rowHead: "Variety", rows: ["Variety A", "Variety B"], cols: ["Sprouted", "Did not sprout"], thing: "seed",
+      rowIs: ["is from variety A", "is from variety B"], colIs: ["sprouted", "did not sprout"],
+      pickRow: ["a seed from variety A", "a seed from variety B"], pickCol: ["a seed that sprouted", "a seed that did not sprout"],
+      pickAll: "a seed from the test",
+    },
+    {
+      intro: "The table shows the tickets sold for a concert, by section and by type, where x is a positive integer.",
+      rowHead: "Section", rows: ["Floor", "Balcony"], cols: ["Adult", "Student"], thing: "ticket",
+      rowIs: ["is for the floor", "is for the balcony"], colIs: ["is an adult ticket", "is a student ticket"],
+      pickRow: ["a floor ticket", "a balcony ticket"], pickCol: ["an adult ticket", "a student ticket"],
+      pickAll: "one of the tickets",
+    },
+  ];
+
+  // A probability question on a 2 × 2 table: `kind` "row" (given a row),
+  // "col" (given a column), or "all" (joint, from everyone); cell (r, c).
+  function unknownQuestion(scene, kind, r, c) {
+    if (kind === "row") return { cond: scene.pickRow[r], event: scene.colIs[c] };
+    if (kind === "col") return { cond: scene.pickCol[c], event: scene.rowIs[r] };
+    return { cond: scene.pickAll, event: `${scene.rowIs[r]} and ${scene.colIs[c].replace(/^is /, "")}` };
+  }
+
+  // [numerator, denominator] of that probability for a grid of counts, or for
+  // a neighbouring mistake: "rowAsCol" divides by the column, "odds" by the
+  // rest of the group, "grand" by everyone.
+  function unknownProbability(grid, kind, r, c, mistake = null) {
+    const cell = grid[r][c];
+    const row = grid[r][0] + grid[r][1];
+    const col = grid[0][c] + grid[1][c];
+    const all = row + grid[1 - r][0] + grid[1 - r][1];
+    const right = { row, col, all }[kind];
+    if (!mistake) return [cell, right];
+    if (mistake === "odds") return [cell, right - cell];
+    if (mistake === "grand") return [cell, all];
+    if (mistake === "swap") return [cell, kind === "row" ? col : row];
+    return null;
+  }
+
+  const unknownCells = {
+    id: "two-way-unknown-cells",
+    domain: DATA,
+    skill: "Probability",
+    subskill: "conditional probability",
+    difficulty: "Hard",
+    title: "Two-way table with unknown cells and a stated probability",
+    recognize:
+      "The stated probability is (cell) ÷ (the group it is chosen from); write that ratio with x, solve, and then answer the " +
+      "question actually asked, which usually needs a different cell and a different group.",
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 2, trap: 1 },
+    tricks: ["reversed-condition", "part-vs-whole", "intermediate-value"],
+    build(t) {
+      const scene = t.pick(UNKNOWN_SCENES);
+      const askX = t.chance(0.35);
+      const numeric = t.chance(askX ? 0.5 : 0.3);
+      return retry(() => {
+        const x = t.int(3, 18);
+        // Two cells in x: in one row, in one column, or on a diagonal.
+        const layout = t.pick(["row", "col", "diag"]);
+        const lr = t.int(0, 1);
+        const cellsInX = layout === "row" ? [[lr, 0], [lr, 1]] : layout === "col" ? [[0, lr], [1, lr]] : [[0, lr], [1, 1 - lr]];
+        const forms = [[0, 0], [0, 0]].map((row) => row.map(() => ({ a: 0, b: t.int(4, 40) })));
+        cellsInX.forEach(([r, c]) => {
+          forms[r][c] = { a: t.int(1, 3), b: t.chance(0.3) ? 0 : t.int(-6, 12) };
+        });
+        const at = (value) => forms.map((row) => row.map(({ a, b }) => a * value + b));
+        const grid = at(x);
+        if (grid.flat().some((count) => count < 3) || new Set(grid.flat()).size < 4) return null;
+        const label = ({ a, b }) => (a ? S.lin(a, b) : num(b));
+        // The stated probability must involve x, and pin it down exactly.
+        const kinds = ["row", "col", "all"];
+        const given = { kind: t.pick(kinds), r: t.int(0, 1), c: t.int(0, 1) };
+        const solve = (mistake) => {
+          const [top, bottom] = unknownProbability(grid, given.kind, given.r, given.c, mistake);
+          const found = [];
+          for (let value = 1; value <= 300; value += 1) {
+            const g = at(value);
+            if (g.flat().some((count) => count <= 0)) continue;
+            const [a, b] = unknownProbability(g, given.kind, given.r, given.c, mistake);
+            if (a * bottom === b * top && b > 0) found.push(value);
+          }
+          return found;
+        };
+        const [gTop, gBottom] = unknownProbability(grid, given.kind, given.r, given.c);
+        if (gBottom / S.gcd(gTop, gBottom) > 24 || gTop === gBottom) return null;
+        const g = S.gcd(gTop, gBottom);
+        const givenText = `${gTop / g}/${gBottom / g}`;
+        // Every x that fits the stated probability read correctly.
+        const solutions = [];
+        for (let value = 1; value <= 300; value += 1) {
+          const trial = at(value);
+          if (trial.flat().some((count) => count <= 0)) continue;
+          const [a, b] = unknownProbability(trial, given.kind, given.r, given.c);
+          if (a * (gBottom / g) === b * (gTop / g)) solutions.push(value);
+        }
+        if (solutions.length !== 1 || solutions[0] !== x) return null;
+        // The x a neighbouring reading would give, when it gives one.
+        const misread = (mistake) => {
+          const found = [];
+          for (let value = 1; value <= 300; value += 1) {
+            const trial = at(value);
+            if (trial.flat().some((count) => count <= 0)) continue;
+            const pair = unknownProbability(trial, given.kind, given.r, given.c, mistake);
+            if (pair && pair[0] * (gBottom / g) === pair[1] * (gTop / g)) found.push(value);
+          }
+          return found.length === 1 && found[0] !== x ? found[0] : null;
+        };
+        const wrongX = {
+          odds: misread("odds"),
+          grand: given.kind === "all" ? null : misread("grand"),
+          swap: given.kind === "all" ? null : misread("swap"),
+        };
+        const q = unknownQuestion(scene, given.kind, given.r, given.c);
+        const content = table([scene.rowHead, ...scene.cols], forms.map((row, r) => [scene.rows[r], ...row.map(label)]));
+        const statement = `If ${q.cond} is selected at random, the probability that the ${scene.thing} ${q.event} is ${givenText}.`;
+        const denominatorWords = { row: "the row", col: "the column", all: "the whole table" };
+        const setup = `${label(forms[given.r][given.c])} divided by the total of ${denominatorWords[given.kind]} it is chosen from equals ${givenText}`;
+        const reasons = {
+          odds: `Reads ${givenText} as the ratio of the ${scene.thing}s with the outcome to those without it, instead of to the whole group.`,
+          grand: "Divides by the whole table instead of by the group named in the condition.",
+          swap: `Divides by the ${given.kind === "row" ? "column" : "row"} total instead of the ${given.kind === "row" ? "row" : "column"} named in the condition.`,
+        };
+        const common = {
+          stimulus: { type: "table", content },
+          figure: null,
+          principles: [
+            "A probability for one member chosen at random from a group is (number with the outcome) ÷ (number in the group).",
+            "When cells are written in terms of x, a stated probability becomes an equation in x; solve it before answering the question asked.",
+          ],
+          estimatedSeconds: 150,
+        };
+        const solveStep = `Write the stated probability with x: ${setup}. Solving gives x = ${x}.`;
+        if (askX) {
+          // The count in a cell written in x, which a student may report
+          // instead of x itself.
+          const [cr, cc] = cellsInX.find(([r, c]) => forms[r][c].a && (forms[r][c].a !== 1 || forms[r][c].b !== 0)) || [];
+          const mistakes = [
+            [wrongX.swap, reasons.swap],
+            [wrongX.grand, reasons.grand],
+            [wrongX.odds, reasons.odds],
+            [cr === undefined ? null : grid[cr][cc], cr === undefined ? "" : `Gives the number in the ${scene.rows[cr]} and ${scene.cols[cc]} cell, ${label(forms[cr][cc])}, instead of x.`],
+            [x + 1, "Makes an arithmetic slip solving the equation."],
+            [x - 1, "Makes an arithmetic slip solving the equation."],
+          ].filter(([value]) => value !== null && value > 0);
+          // At least one wrong x must come from a misread probability, not a slip.
+          if ([wrongX.swap, wrongX.grand, wrongX.odds].every((value) => value === null)) return null;
+          if (mistakes.some(([value]) => value === x)) return null;
+          const wrong = numeric ? [] : countWrong(t, x, mistakes);
+          if (!wrong) return null;
+          return {
+            ...common,
+            responseType: numeric ? "numeric" : "multiple-choice",
+            stem: `${scene.intro} ${statement} What is the value of x?`,
+            correct: numeric ? x : fmt(x),
+            wrong,
+            explanation: `${solveStep} Check: the cells are ${grid.flat().join(", ")}, and the stated probability is ${gTop}/${gBottom}${gTop / g === gTop ? "" : ` = ${givenText}`}.`,
+            steps: [
+              `The condition names the group: ${denominatorWords[given.kind]} for ${q.cond}.`,
+              solveStep,
+              `Check: with x = ${x}, the probability is ${gTop}/${gBottom}${gTop / g === gTop ? "" : ` = ${givenText}`}.`,
+            ],
+            trap: "Dividing by the wrong group, or reading the probability as a part-to-part ratio, gives a different equation and a different x.",
+            hint: "Which cells can be selected once the condition is applied?",
+            verify: () => {
+              const cells = parseTable(content).slice(1).map((row) => row.slice(1));
+              const value = (text, v) => {
+                const clean = text.replace(MINUS, "-").replace(/\s/g, "");
+                const m = /^(\d*)x([+-]\d+)?$/.exec(clean);
+                return m ? (m[1] === "" ? 1 : Number(m[1])) * v + (m[2] ? Number(m[2]) : 0) : Number(clean);
+              };
+              const fits = [];
+              for (let v = 1; v <= 300; v += 1) {
+                const trial = cells.map((row) => row.map((text) => value(text, v)));
+                if (trial.flat().some((count) => count <= 0)) continue;
+                const [a, b] = unknownProbability(trial, given.kind, given.r, given.c);
+                if (close(a / b, gTop / gBottom)) fits.push(v);
+              }
+              return fits.length === 1 && fits[0] === x;
+            },
+          };
+        }
+        // Ask a different probability, which needs x first.
+        const asked = { kind: t.pick(kinds), r: t.int(0, 1), c: t.int(0, 1) };
+        if (asked.kind === given.kind && asked.r === given.r && asked.c === given.c) return null;
+        // Not the complement within the same group, which 1 minus the stated
+        // probability answers without x.
+        if (asked.kind === given.kind && ((asked.kind === "row" && asked.r === given.r) || (asked.kind === "col" && asked.c === given.c))) return null;
+        const [top, bottom] = unknownProbability(grid, asked.kind, asked.r, asked.c);
+        if (close(top / bottom, gTop / gBottom)) return null;
+        // The question must need x: its answer changes when x does.
+        const [nextTop, nextBottom] = unknownProbability(at(x + 1), asked.kind, asked.r, asked.c);
+        if (close(nextTop / nextBottom, top / bottom)) return null;
+        const aq = unknownQuestion(scene, asked.kind, asked.r, asked.c);
+        const withX = (value) => (value === null ? null : unknownProbability(at(value), asked.kind, asked.r, asked.c));
+        const candidates = [
+          [...(withX(wrongX.swap) || [0, 1]), `Finds x by dividing by the ${given.kind === "row" ? "column" : "row"} total in the stated probability, then answers correctly.`],
+          [...(withX(wrongX.odds) || [0, 1]), `Finds x by reading ${givenText} as a part-to-part ratio, then answers correctly.`],
+          [...(withX(wrongX.grand) || [0, 1]), "Finds x by dividing by the whole table in the stated probability, then answers correctly."],
+          [...unknownProbability(grid, asked.kind, asked.r, asked.c, asked.kind === "all" ? "odds" : "swap"), asked.kind === "all"
+            ? "Divides by everyone else instead of by the whole table."
+            : `Divides by the ${asked.kind === "row" ? "column" : "row"} total instead of the group named in the question.`],
+          [...unknownProbability(grid, asked.kind, asked.r, asked.c, "grand"), "Divides by the whole table instead of by the group named in the question."],
+          [gTop, gBottom, "Repeats the stated probability instead of answering the question asked."],
+          [bottom - top, bottom, "Gives the probability of the other outcome in the question's group."],
+        ];
+        const item = finishProbability(t, top, bottom, numeric, candidates, {
+          ...common,
+          stem: `${scene.intro} ${statement} If ${aq.cond} is selected at random, what is the probability that the ${scene.thing} ${aq.event}?`,
+          explanation:
+            `${solveStep} So the cells are ${scene.rows[0]}: ${grid[0].join(" and ")}; ${scene.rows[1]}: ${grid[1].join(" and ")}. ` +
+            `The question's group has ${bottom}, and ${top} of them have the outcome: ${top}/${bottom}${frac(top, bottom) === `${top}/${bottom}` ? "" : ` = ${frac(top, bottom)}`}.`,
+          steps: [
+            solveStep,
+            `Fill in the table: ${scene.rows[0]} ${grid[0].join(", ")}; ${scene.rows[1]} ${grid[1].join(", ")}.`,
+            `The question's condition, ${aq.cond}, leaves ${bottom} to choose from.`,
+            `Of those, ${top} fit: ${top}/${bottom}${frac(top, bottom) === `${top}/${bottom}` ? "" : ` = ${frac(top, bottom)}`}.`,
+          ],
+          trap: `x = ${x} is only a step, and the stated probability, ${givenText}, answers a different question.`,
+          hint: "What equation does the stated probability give, and which group does the question choose from?",
+        });
+        if (!item) return null;
+        return {
+          ...item,
+          verify: () => {
+            // Solve for x from the stated probability by brute force, then count.
+            const fits = solve(null);
+            if (fits.length !== 1) return false;
+            const [a, b] = unknownProbability(at(fits[0]), asked.kind, asked.r, asked.c);
+            return close(a / b, top / bottom) && (numeric || close(fractionValue(item.correct), top / bottom));
+          },
+        };
+      });
+    },
+  };
+
+  return [tableChance, expectedCount, frequencyProbability, unionTwoWay, conditionalTableRead, conditionalTwoWay, unknownCells, afterChange];
 });

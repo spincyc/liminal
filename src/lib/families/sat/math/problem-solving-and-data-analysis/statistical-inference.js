@@ -12,40 +12,62 @@
 
   const { MINUS, num, frac, table } = S;
   const {
-    DATA, fmt, shown, sum, range, retry, pack, parseTable, parseNumber, DOMAIN, offerHard, finish, tidy, isClean, close,
+    DATA, fmt, sum, range, retry, parseTable, parseNumber, DOMAIN, offerHard, finish, tidy, isClean, close, fitsGrid, packRanked,
   } = C;
+
+  // Text choices: null when a modelled mistake reads the same as the key.
+  function offerStrict(keyText, candidates) {
+    if (candidates.some(([text]) => text === keyText)) return null;
+    return offerHard(keyText, candidates);
+  }
+
+  // Half-width, in percentage points, of a 95% interval for a sample percent
+  // p from a random sample of n: the margin a survey would report.
+  const percentMargin = (p, n) => Math.round(196 * Math.sqrt((p / 100) * (1 - p / 100) / n));
+
+  // The same for a sample mean, given the population's standard deviation,
+  // rounded to `places` decimals.
+  const meanMargin = (sd, n, places = 1) => Math.round(((1.96 * sd) / Math.sqrt(n)) * 10 ** places) / 10 ** places;
 
   /* =================================== sample-proportion-estimate (Medium) */
 
+  // `does` and `doesNot` are plural present-tense predicates, so every stem
+  // reads "... of the households use electricity ..." whatever the category.
   const SAMPLE_SCENES = [
     {
       intro: (N, n) => `A city has ${fmt(N)} households. A random sample of ${n} of these households was surveyed about the main fuel used to heat their homes. The table summarizes the results.`,
       head: ["Main heating fuel", "Number of households"], cats: ["Natural gas", "Electricity", "Heating oil", "Wood"],
-      does: (c) => `use ${c.toLowerCase()} as their main heating fuel`, whole: "households in the city", N: [8000, 60000],
+      does: (c) => `use ${c.toLowerCase()} as their main heating fuel`,
+      doesNot: (c) => `do not use ${c.toLowerCase()} as their main heating fuel`,
+      whole: "households in the city", one: "household", N: [8000, 60000],
     },
     {
       intro: (N, n) => `A high school has ${fmt(N)} students. A random sample of ${n} of these students was asked how they usually get to school. The table summarizes the results.`,
       head: ["Usual way to school", "Number of students"], cats: ["Bus", "Car", "Walk", "Bicycle"],
       does: (c) => ({ Bus: "usually take the bus", Car: "usually ride in a car", Walk: "usually walk", Bicycle: "usually ride a bicycle" })[c],
-      whole: "students at the school", N: [900, 3600],
+      doesNot: (c) => ({ Bus: "do not usually take the bus", Car: "do not usually ride in a car", Walk: "do not usually walk", Bicycle: "do not usually ride a bicycle" })[c],
+      whole: "students at the school", one: "student", that: "who", N: [900, 3600],
     },
     {
       intro: (N, n) => `A factory produced ${fmt(N)} light bulbs last week. A random sample of ${n} of these bulbs was inspected. The table summarizes the results.`,
       head: ["Result", "Number of bulbs"], cats: ["No defect", "Minor defect", "Major defect"],
       does: (c) => ({ "No defect": "have no defect", "Minor defect": "have a minor defect", "Major defect": "have a major defect" })[c],
-      whole: "bulbs produced last week", N: [6000, 48000],
+      doesNot: (c) => ({ "No defect": "have a defect", "Minor defect": "do not have a minor defect", "Major defect": "do not have a major defect" })[c],
+      whole: "bulbs produced last week", one: "bulb", N: [6000, 48000],
     },
     {
       intro: (N, n) => `An orchard has ${fmt(N)} apple trees. A random sample of ${n} of these trees was inspected for signs of disease. The table summarizes the results.`,
       head: ["Condition", "Number of trees"], cats: ["Healthy", "Leaf spots", "Fruit rot", "Bark damage"],
       does: (c) => ({ Healthy: "are healthy", "Leaf spots": "have leaf spots", "Fruit rot": "have fruit rot", "Bark damage": "have bark damage" })[c],
-      whole: "trees in the orchard", N: [2000, 20000],
+      doesNot: (c) => ({ Healthy: "are not healthy", "Leaf spots": "do not have leaf spots", "Fruit rot": "do not have fruit rot", "Bark damage": "do not have bark damage" })[c],
+      whole: "trees in the orchard", one: "tree", N: [2000, 20000],
     },
     {
       intro: (N, n) => `A town has ${fmt(N)} registered voters. A random sample of ${n} of these voters was asked which of three proposals for a new library they prefer. The table summarizes the results.`,
       head: ["Response", "Number of voters"], cats: ["Proposal A", "Proposal B", "Proposal C", "No preference"],
-      does: (c) => (c === "No preference" ? "have no preference" : `prefer ${c.toLowerCase().replace("proposal", "Proposal")}`),
-      whole: "registered voters in the town", N: [4000, 40000],
+      does: (c) => (c === "No preference" ? "have no preference" : `prefer ${c}`),
+      doesNot: (c) => (c === "No preference" ? "prefer one of the proposals" : `do not prefer ${c}`),
+      whole: "registered voters in the town", one: "voter", that: "who", N: [4000, 40000],
     },
   ];
 
@@ -65,39 +87,36 @@
       const N = t.int(ctx.low, ctx.high) * ctx.step;
       const n = t.pick([200, 250, 300, 400, 500, 600, 800, 1000]);
       const p = t.int(12, 88);
-      const m = t.int(2, 6);
-      if ((n * p) % 100) return null;
+      const m = percentMargin(p, n);
+      if ((n * p) % 100 || m < 2) return null;
       const lo = (N * (p - m)) / 100;
       const hi = (N * (p + m)) / 100;
+      const point = (N * p) / 100;
       if (!Number.isInteger(lo) || !Number.isInteger(hi)) return null;
-      const between = (a, b) => `Between ${fmt(a)} and ${fmt(b)}`;
+      const between = (a, b) => (Number.isInteger(a) && Number.isInteger(b) && a > 0 ? `Between ${fmt(a)} and ${fmt(b)}` : null);
       const key = between(lo, hi);
-      const sampleLo = (n * (p - m)) / 100;
-      const sampleHi = (n * (p + m)) / 100;
-      const relLo = (N * p * (100 - m)) / 10000;
-      const relHi = (N * p * (100 + m)) / 10000;
       const candidates = t.shuffle([
-        Number.isInteger(sampleLo) && Number.isInteger(sampleHi)
-          ? [between(sampleLo, sampleHi), `Applies the interval to the ${fmt(n)} people surveyed instead of all ${fmt(N)} ${ctx.popShort}.`] : null,
-        Number.isInteger(relLo) && Number.isInteger(relHi)
-          ? [between(relLo, relHi), `Treats the margin of error as ${m}% of the estimate instead of ${m} percentage points.`] : null,
+        [between((n * (p - m)) / 100, (n * (p + m)) / 100), `Applies the interval to the ${fmt(n)} people surveyed instead of all ${fmt(N)} ${ctx.popShort}.`],
+        [between((N * p * (100 - m)) / 10000, (N * p * (100 + m)) / 10000), `Treats the margin of error as ${m}% of the estimate instead of ${m} percentage points.`],
         [between((N * (100 - p - m)) / 100, (N * (100 - p + m)) / 100), `Gives the plausible number who ${ctx.notAttr}, the opposite group.`],
-      ].filter(Boolean));
-      candidates.push([`Exactly ${fmt((N * p) / 100)}`, "Treats the sample estimate as the exact population value, ignoring the margin of error."]);
-      const wrong = offerHard(key, candidates);
-      if (!numeric && wrong.length < 3) return null;
+        [between(point - m, point + m), `Treats the margin of error as ${m} people instead of ${m} percentage points of all ${fmt(N)}.`],
+      ].filter(([text]) => text));
+      candidates.push([`Exactly ${fmt(point)}`, "Treats the sample estimate as the exact population value, ignoring the margin of error."]);
+      const wrong = offerStrict(key, candidates);
+      if (!wrong || (!numeric && wrong.length < 3)) return null;
       const greatest = t.chance(0.5);
       const ask = numeric
         ? `Based on these results, what is the ${greatest ? "greatest" : "least"} plausible number of ${ctx.popShort} who ${ctx.attr}?`
         : `Based on these results, which of the following ranges is most plausible for the number of ${ctx.popShort} who ${ctx.attr}?`;
       const answer = greatest ? hi : lo;
+      if (numeric && !fitsGrid(answer)) return null;
       return finish(numeric, {
         stimulus: null,
         stem:
           `${ctx.sampler} surveyed a random sample of ${fmt(n)} of the ${fmt(N)} ${ctx.pop}. Of those surveyed, ${p}% said they ` +
           `${ctx.attr}. The margin of error for this estimate is ${m} percentage points. ${ask}`,
         correct: numeric ? answer : key,
-        wrong,
+        wrong: numeric ? [] : wrong.slice(0, 3),
         explanation:
           `The plausible population percent is ${p}% ± ${m} percentage points, from ${p - m}% to ${p + m}%. Applied to all ` +
           `${fmt(N)} ${ctx.pop}, that is ${fmt(lo)} to ${fmt(hi)}.`,
@@ -136,7 +155,7 @@
     },
     {
       intro: (n, p) => `An online store surveyed a random sample of ${n} of its customers, and ${p}% of them said they want faster shipping.`,
-      pop: "the store's customers", wider: "customers of all stores", sampled: "the customers surveyed", verb: "want faster shipping",
+      pop: "the store's customers", wider: "customers of all online stores", sampled: "the customers surveyed", verb: "want faster shipping",
     },
     {
       intro: (n, p) => `A town surveyed a random sample of ${n} of its households, and ${p}% of them reported owning a pet.`,
@@ -146,55 +165,68 @@
       intro: (n, p) => `An airline surveyed a random sample of ${n} of its passengers, and ${p}% of them said they want window seats.`,
       pop: "the airline's passengers", wider: "passengers on all airlines", sampled: "the passengers surveyed", verb: "want window seats",
     },
+    {
+      intro: (n, p) => `A museum surveyed a random sample of ${n} of its members, and ${p}% of them said they would attend evening hours.`,
+      pop: "the museum's members", wider: "all museum visitors in the country", sampled: "the members surveyed", verb: "would attend evening hours",
+    },
   ];
 
+  // Two ways to overreach, crossed with each other: every choice differs from
+  // two others in one respect, so no choice is the "center" of the others.
   function inferenceConclusion(t) {
     const ctx = t.pick(SCOPES);
-    const n = t.pick([150, 200, 250, 300, 400, 500]);
-    const p = t.int(15, 85);
-    const m = t.int(3, 7);
-    const lo = p - m;
-    const hi = p + m;
-    const key = `It is plausible that between ${lo}% and ${hi}% of ${ctx.pop} ${ctx.verb}.`;
-    const pool = t.shuffle([
-      [`It is plausible that between ${lo}% and ${hi}% of ${ctx.wider} ${ctx.verb}.`, `Extends the result to ${ctx.wider}, but the sample was drawn only from ${ctx.pop}.`],
-      [`It is guaranteed that between ${lo}% and ${hi}% of ${ctx.pop} ${ctx.verb}.`, "A margin of error gives plausible values, not a guarantee; the true percent could fall outside it."],
-      [`The margin of error means that ${m}% of ${ctx.sampled} answered inaccurately.`, "Reads the margin of error as a share of wrong answers; it measures the uncertainty of estimating the population from a random sample."],
-      [`Exactly ${p}% of ${ctx.pop} ${ctx.verb}.`, "Treats the sample percent as the exact population percent, ignoring the margin of error."],
-    ]);
-    const wrong = pool.slice(0, 3);
-    return finish(false, {
-      stimulus: null,
-      stem: `${ctx.intro(n, p)} The margin of error for this estimate is ${m} percentage points. Which of the following is the most appropriate conclusion?`,
-      correct: key,
-      wrong,
-      explanation:
-        `A random sample of ${ctx.pop} supports conclusions about ${ctx.pop} only. The margin of error makes ${lo}% to ${hi}% the ` +
-        "plausible range for that population, which is a statement of plausibility, not certainty.",
-      steps: [
-        `Identify the population sampled: ${ctx.pop}.`,
-        `Build the interval: ${p}% ± ${m} gives ${lo}% to ${hi}%.`,
-        "Recognize that the interval describes plausible values for the population, not a guarantee and not the sample itself.",
-        "Choose the statement that matches both the population and the level of certainty.",
-      ],
-      principles: [
-        "Results from a random sample generalize only to the population that was sampled.",
-        "A margin of error gives a range of plausible values for the population; it does not make any value certain.",
-      ],
-      trap: "The most confident-sounding statements overreach: in scope (a wider population) or in certainty (\"guaranteed\", \"exactly\").",
-      hint: "Who could have been chosen for the sample, and how sure can the survey make you?",
-      verify: () => {
-        // Re-read the survey from the stem, then judge every statement.
-        const stem = `${ctx.intro(n, p)} The margin of error for this estimate is ${m} percentage points.`;
-        const estimate = Number(stem.match(/(\d+)% of them/)[1]);
-        const margin = Number(stem.match(/is (\d+) percentage points/)[1]);
-        const supported = (text) => {
-          const bounds = text.match(/plausible that between (\d+)% and (\d+)% of (.+?) (?:would|eat|want|own|prefer)/);
-          return Boolean(bounds) && Number(bounds[1]) === estimate - margin && Number(bounds[2]) === estimate + margin &&
-            bounds[3] === ctx.pop;
-        };
-        return supported(key) && wrong.every(([text]) => !supported(text));
-      },
+    return retry(() => {
+      const n = t.pick([150, 200, 250, 300, 400, 500]);
+      const p = t.int(15, 85);
+      const m = percentMargin(p, n);
+      const lo = p - m;
+      const hi = p + m;
+      const scopeWrong = t.chance(0.5) ? "wider" : "sampled";
+      const who = { right: ctx.pop, wider: ctx.wider, sampled: ctx.sampled };
+      const say = (sure, scope) =>
+        `It is ${sure ? "certain" : "plausible"} that between ${lo}% and ${hi}% of ${who[scope]} ${ctx.verb}.`;
+      const key = say(false, "right");
+      const scopeReason = scopeWrong === "wider"
+        ? `extends the result to ${ctx.wider}, but the sample was drawn only from ${ctx.pop}`
+        : `describes ${ctx.sampled}, whose percent is known exactly (${p}%); the interval describes all of ${ctx.pop}`;
+      const wrong = [
+        [say(false, scopeWrong), `${scopeReason[0].toUpperCase()}${scopeReason.slice(1)}.`],
+        [say(true, "right"), "A margin of error gives plausible values, not a guarantee; the true percent could fall outside it."],
+        [say(true, scopeWrong), `Overreaches twice: claims certainty, and ${scopeReason}.`],
+      ];
+      return finish(false, {
+        stimulus: null,
+        stem: `${ctx.intro(n, p)} The margin of error for this estimate is ${m} percentage points. Which of the following is the most appropriate conclusion?`,
+        correct: key,
+        wrong,
+        explanation:
+          `A random sample of ${ctx.pop} supports conclusions about ${ctx.pop} only. The margin of error makes ${lo}% to ${hi}% the ` +
+          "plausible range for that population, which is a statement of plausibility, not certainty.",
+        steps: [
+          `Identify the population sampled: ${ctx.pop}.`,
+          `Build the interval: ${p}% ± ${m} gives ${lo}% to ${hi}%.`,
+          "Recognize that the interval describes plausible values for the population, not a guarantee and not the sample itself.",
+          "Choose the statement that matches both the population and the level of certainty.",
+        ],
+        principles: [
+          "Results from a random sample generalize only to the population that was sampled.",
+          "A margin of error gives a range of plausible values for the population; it does not make any value certain.",
+        ],
+        trap: "The most confident-sounding statements overreach: in scope (a different group) or in certainty (\"certain\").",
+        hint: "Who could have been chosen for the sample, and how sure can the survey make you?",
+        verify: () => {
+          // Re-read the survey from the stem, then judge every statement.
+          const stem = `${ctx.intro(n, p)} The margin of error for this estimate is ${m} percentage points.`;
+          const estimate = Number(stem.match(/(\d+)% of them/)[1]);
+          const margin = Number(stem.match(/is (\d+) percentage points/)[1]);
+          const supported = (text) => {
+            const bounds = text.match(/^It is plausible that between (\d+)% and (\d+)% of (.+) (?:would|eat|want|own|prefer)/);
+            return Boolean(bounds) && Number(bounds[1]) === estimate - margin && Number(bounds[2]) === estimate + margin &&
+              bounds[3] === ctx.pop;
+          };
+          return supported(key) && wrong.every(([text]) => !supported(text));
+        },
+      });
     });
   }
 
@@ -385,80 +417,96 @@
         const [x, y] = t.sample(range(0, k - 1), 2);
         const cx = scaled[x];
         const cy = scaled[y];
-        if (form === "difference" && cx <= cy) return null;
+        if (form === "difference" && cx - cy < 2) return null;
         const stimulus = { type: "table", content: table(scene.head, scene.cats.map((cat, index) => [cat, scaled[index]])) };
         const est = (count) => count * mult;
         const principles = [
           "In a random sample, the fraction of the sample with a characteristic estimates the fraction of the population with it.",
           "Estimated number in the population = (count in sample ÷ sample size) × population size.",
         ];
-        const ratioStep = `Each sampled ${scene.whole.split(" ")[0].replace(/s$/, "")} stands for ${fmt(N)} ÷ ${n} = ${mult} in the population.`;
+        const ratioStep = `Each sampled ${scene.one} stands for ${fmt(N)} ÷ ${n} = ${fmt(mult)} in the population.`;
         const common = { stimulus, figure: null, principles, estimatedSeconds: 95 };
         const sampleCheck = () => {
           const rows = parseTable(stimulus.content).slice(1);
           return sum(rows.map((row) => parseNumber(row[1]))) === n;
         };
+        // A best estimate is a whole number, so a mistake's result is rounded
+        // as a student making it would round it.
+        const whole = (value) => (value >= 1 ? fmt(Math.round(value)) : null);
         if (form === "one") {
           const key = est(cx);
-          return pack(numeric, key, fmt(key), [
-            [shown((N * cx) / 100, 0), `Treats the sample count, ${cx}, as a percent of the ${fmt(N)} ${scene.whole}.`],
-            [shown(N - key, 0), `Estimates the ${scene.whole} that do not ${scene.does(scene.cats[x]).replace(/^(use|usually|have|are|prefer)/, "$1")}, the rest of the population.`.replace(" not are ", " are not ")],
-            [shown((N * cx) / (n - cx), 0), `Divides by the ${n - cx} sampled that are not in the group instead of by the whole sample of ${n}.`],
-            [shown(cx, 0), `Gives the number in the sample, ${cx}, without scaling it up to the population.`],
+          return packRanked(t, numeric, key, [
+            [cx, `Gives the number in the sample, ${cx}, without scaling it up to the population.`],
+            [N - key, `Estimates the ${scene.whole} ${scene.that || "that"} ${scene.doesNot(scene.cats[x])}, the rest of the population.`],
+            [(N * cx) / (n - cx), `Divides by the ${n - cx} sampled that are not in the group instead of by the whole sample of ${n}.`],
+            [(N * cx) / 100, `Treats the sample count, ${cx}, as a percent of the ${fmt(N)} ${scene.whole}.`],
+            [est(cx) / 10, "Misplaces a decimal point when scaling the sample count up to the population."],
+            [est(cx) * 10, "Misplaces a decimal point when scaling the sample count up to the population."],
+            [N - cx, `Subtracts the sample count, ${cx}, from the population instead of scaling it up.`],
+            [mult, `Gives the number of ${scene.whole.split(" ")[0]} each sampled ${scene.one} stands for, ${fmt(N)} ÷ ${n}, a step on the way.`],
           ], {
             ...common,
-            stem: `${scene.intro(N, n)} Based on the sample, what is the best estimate of the number of ${scene.whole} that ${scene.does(scene.cats[x])}?`,
+            stem: `${scene.intro(N, n)} Based on the sample, what is the best estimate of the number of ${scene.whole} ${scene.that || "that"} ${scene.does(scene.cats[x])}?`,
             explanation: `In the sample, ${cx} of ${n} ${scene.does(scene.cats[x])}, a fraction of ${frac(cx, n)}. Applied to all ${fmt(N)}: ${frac(cx, n)} × ${fmt(N)} = ${fmt(key)}.`,
             steps: [
               `Sample fraction: ${cx}/${n} = ${frac(cx, n)}.`,
               ratioStep,
-              `Estimate: ${cx} × ${mult} = ${fmt(key)}.`,
+              `Estimate: ${cx} × ${fmt(mult)} = ${fmt(key)}.`,
             ],
             trap: `${cx} is a count in the sample of ${n}; it must be scaled up to the population of ${fmt(N)}.`,
             hint: "What fraction of the sample is in the group?",
             verify: () => sampleCheck() && key * n === N * cx,
-          });
+          }, { show: whole, places: 9 });
         }
         if (form === "difference") {
           const key = est(cx - cy);
-          return pack(numeric, key, fmt(key), [
-            [shown(cx - cy, 0), `Gives the difference in the sample, ${cx} ${MINUS} ${cy}, without scaling it up to the population.`],
-            [shown(est(cx), 0), `Estimates only the ${scene.whole} that ${scene.does(scene.cats[x])}, without subtracting.`],
-            [shown(est(cx + cy), 0), "Adds the two groups instead of finding how many more are in one."],
-            [shown((N * (cx - cy)) / 100, 0), `Treats the sample difference, ${cx - cy}, as a percent of ${fmt(N)}.`],
+          return packRanked(t, numeric, key, [
+            [cx - cy, `Gives the difference in the sample, ${cx} ${MINUS} ${cy}, without scaling it up to the population.`],
+            [est(cx), `Estimates only the ${scene.whole} ${scene.that || "that"} ${scene.does(scene.cats[x])}, without subtracting.`],
+            [est(cx + cy), "Adds the two groups instead of finding how many more are in one."],
+            [(N * (cx - cy)) / 100, `Treats the sample difference, ${cx - cy}, as a percent of ${fmt(N)}.`],
+            [est(cy), `Estimates only the ${scene.whole} ${scene.that || "that"} ${scene.does(scene.cats[y])}.`],
+            [est(cx - cy) * 10, "Misplaces a decimal point when scaling the difference up to the population."],
+            [est(cx - cy) / 10, "Misplaces a decimal point when scaling the difference up to the population."],
+            [(N * (cx - cy)) / (n - cx - cy), `Divides by the ${n - cx - cy} sampled in neither group instead of by the whole sample of ${n}.`],
           ], {
             ...common,
-            stem: `${scene.intro(N, n)} Based on the sample, how many more of the ${scene.whole} would be expected to ${scene.does(scene.cats[x])} than to ${scene.does(scene.cats[y])}?`,
-            explanation: `In the sample, ${cx} ${MINUS} ${cy} = ${cx - cy} more ${scene.does(scene.cats[x])}. Each sampled one stands for ${mult} in the population, so the estimate is ${cx - cy} × ${mult} = ${fmt(key)}.`,
+            stem: `${scene.intro(N, n)} Based on the sample, what is the best estimate of how many more of the ${scene.whole} ${scene.does(scene.cats[x])} than ${scene.does(scene.cats[y])}?`,
+            explanation: `In the sample, ${cx} ${MINUS} ${cy} = ${cx - cy} more ${scene.does(scene.cats[x])}. Each sampled ${scene.one} stands for ${fmt(mult)} in the population, so the estimate is ${cx - cy} × ${fmt(mult)} = ${fmt(key)}.`,
             steps: [
               `Difference in the sample: ${cx} ${MINUS} ${cy} = ${cx - cy}.`,
               ratioStep,
-              `Estimate: ${cx - cy} × ${mult} = ${fmt(key)}.`,
+              `Estimate: ${cx - cy} × ${fmt(mult)} = ${fmt(key)}.`,
             ],
             trap: `${cx - cy} is the difference in the sample of ${n}; the question is about all ${fmt(N)}.`,
-            hint: "How many members of the population does each person or item in the sample represent?",
+            hint: `How many ${scene.whole.split(" ")[0]} does each one in the sample represent?`,
             verify: () => sampleCheck() && key * n === N * (cx - cy),
-          });
+          }, { show: whole, places: 9 });
         }
         const key = est(cx + cy);
-        return pack(numeric, key, fmt(key), [
-          [shown(cx + cy, 0), `Gives the number in the sample, ${cx + cy}, without scaling it up to the population.`],
-          [shown(est(cx), 0), `Estimates only the ${scene.whole} that ${scene.does(scene.cats[x])}.`],
-          [shown(N - key, 0), `Estimates the ${scene.whole} in neither group, the rest of the population.`],
-          [shown((N * (cx + cy)) / 100, 0), `Treats the sample count, ${cx + cy}, as a percent of ${fmt(N)}.`],
+        return packRanked(t, numeric, key, [
+          [cx + cy, `Gives the number in the sample, ${cx + cy}, without scaling it up to the population.`],
+          [est(cx), `Estimates only the ${scene.whole} ${scene.that || "that"} ${scene.does(scene.cats[x])}.`],
+          [N - key, `Estimates the ${scene.whole} in neither group, the rest of the population.`],
+          [(N * (cx + cy)) / 100, `Treats the sample count, ${cx + cy}, as a percent of ${fmt(N)}.`],
+          [est(Math.abs(cx - cy)), "Subtracts the two groups instead of combining them."],
+          [est(cx + cy) / 10, "Misplaces a decimal point when scaling the sample count up to the population."],
+          [est(cx + cy) * 10, "Misplaces a decimal point when scaling the sample count up to the population."],
+          [N - (cx + cy), `Subtracts the sample count, ${cx + cy}, from the population instead of scaling it up.`],
+          [est(cy), `Estimates only the ${scene.whole} ${scene.that || "that"} ${scene.does(scene.cats[y])}.`],
         ], {
           ...common,
-          stem: `${scene.intro(N, n)} Based on the sample, how many of the ${scene.whole} would be expected to either ${scene.does(scene.cats[x])} or ${scene.does(scene.cats[y])}?`,
+          stem: `${scene.intro(N, n)} Based on the sample, what is the best estimate of the number of ${scene.whole} ${scene.that || "that"} either ${scene.does(scene.cats[x])} or ${scene.does(scene.cats[y])}?`,
           explanation: `In the sample, ${cx} + ${cy} = ${cx + cy} of ${n} are in one of the two groups, a fraction of ${frac(cx + cy, n)}. Applied to all ${fmt(N)}: ${fmt(key)}.`,
           steps: [
             `Count in the sample: ${cx} + ${cy} = ${cx + cy}.`,
             ratioStep,
-            `Estimate: ${cx + cy} × ${mult} = ${fmt(key)}.`,
+            `Estimate: ${cx + cy} × ${fmt(mult)} = ${fmt(key)}.`,
           ],
-          trap: `${cx + cy} is a count in the sample; each sampled one stands for ${mult} in the population.`,
+          trap: `${cx + cy} is a count in the sample; each sampled ${scene.one} stands for ${fmt(mult)} in the population.`,
           hint: "What fraction of the sample is in either group?",
           verify: () => sampleCheck() && key * n === N * (cx + cy),
-        });
+        }, { show: whole, places: 9 });
       });
     },
   };
@@ -468,11 +516,12 @@
     domain: DOMAIN,
     skill: "Statistical inference",
     subskill: "margin of error",
+    difficulty: "Medium",
     title: "What a sample and its margin of error support",
     recognize:
       "A random sample supports plausible values for the population it came from, within the margin of error in percentage " +
       "points; cause needs random assignment, generalizing needs random selection, and nothing is certain.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["must-vs-could", "context-constraint", "reversed-condition", "percent-base"],
     build(t) {
       const form = t.int(0, 2);
@@ -497,42 +546,82 @@
     {
       who: "The city council", goal: "estimate the percent of the city's adult residents who support building a new public pool",
       popShort: "the city's adult residents", place: "library visitors on one morning", part: "residents of one neighborhood",
-      random: (n) => `${n} adults selected at random from a list of all adult residents of the city`,
-      convenience: (n) => `the first ${n} adults to enter the city's public library on a Monday morning`,
-      volunteer: (m) => `the ${fmt(m)} adults responding to an invitation posted on the city's official website`,
-      subgroup: (n) => `${n} adults selected at random from the residents of one neighborhood of the city`,
+      members: "adults", partAll: "All adults living in that neighborhood", popAll: "All adult residents of the city", wider: "All adults in the state",
+      finding: (x) => `${x}% of the adults surveyed support building a new public pool`,
+      random: (n) => `${n} adults chosen at random from a complete list of the city's residents`,
+      convenience: (n) => `the first ${n} adults to enter the public library on a Monday morning`,
+      volunteer: (m) => `the ${fmt(m)} adults who answered an invitation on the city's website`,
+      subgroup: (n) => `${n} adults selected at random from the residents of one neighborhood`,
     },
     {
       who: "A principal", goal: "estimate the mean number of hours per week that the school's students spend on homework",
       popShort: "the school's students", place: "students in the library after classes", part: "students in the honors classes",
-      random: (n) => `${n} students selected at random from a list of all students enrolled at the school`,
-      convenience: (n) => `the first ${n} students to arrive at the school library after classes on Tuesday`,
-      volunteer: (m) => `the ${fmt(m)} students returning a survey left on a table in the school cafeteria`,
-      subgroup: (n) => `${n} students selected at random from the students enrolled in the school's honors classes`,
+      members: "students", partAll: "All students taking honors classes", popAll: "All students at the school", wider: "All high school students in the state",
+      finding: (x) => `the students surveyed spend a mean of ${num(x / 5)} hours per week on homework`,
+      random: (n) => `${n} students chosen at random from the school's full enrollment list`,
+      convenience: (n) => `the first ${n} students to arrive at the library after classes`,
+      volunteer: (m) => `the ${fmt(m)} students who returned a survey left on a cafeteria table`,
+      subgroup: (n) => `${n} students selected at random from the school's honors classes`,
     },
     {
       who: "A store manager", goal: "estimate the percent of the store's customers who would use a same-day delivery service",
       popShort: "the store's customers", place: "Saturday-morning shoppers", part: "customers living near the store",
-      random: (n) => `${n} customers selected at random from the store's list of all its customers`,
-      convenience: (n) => `the first ${n} customers to walk into the store after it opens on a Saturday morning`,
+      members: "customers", partAll: "All customers living within a mile", popAll: "All of the store's customers", wider: "All shoppers in the region",
+      finding: (x) => `${x}% of the customers surveyed would use a same-day delivery service`,
+      random: (n) => `${n} customers chosen at random from the store's complete customer list`,
+      convenience: (n) => `the first ${n} customers to walk in after the store opens on Saturday`,
       volunteer: (m) => `the ${fmt(m)} customers responding to a pop-up message on the store's website`,
-      subgroup: (n) => `${n} customers selected at random from those who live within one mile of the store`,
+      subgroup: (n) => `${n} customers selected at random from those living within a mile`,
     },
     {
       who: "A park manager", goal: "estimate the percent of this season's visitors to the park who would pay for a guided tour",
       popShort: "this season's visitors to the park", place: "visitors at one entrance on one day", part: "annual pass holders",
-      random: (n) => `${n} visitors selected at random from all of this season's ticket buyers`,
-      convenience: (n) => `the first ${n} visitors to arrive at the park's north entrance on a Sunday morning`,
-      volunteer: (m) => `the ${fmt(m)} visitors mailing back a comment card handed out at the park's gates`,
-      subgroup: (n) => `${n} visitors selected at random from those who bought annual passes this season`,
+      members: "visitors", partAll: "All annual pass holders", popAll: "All of this season's park visitors", wider: "All visitors to parks in the state",
+      finding: (x) => `${x}% of the visitors surveyed would pay for a guided tour`,
+      random: (n) => `${n} visitors chosen at random from all of this season's ticket buyers`,
+      convenience: (n) => `the first ${n} visitors to arrive at the north entrance on a Sunday`,
+      volunteer: (m) => `the ${fmt(m)} visitors mailing back a comment card handed out at the gates`,
+      subgroup: (n) => `${n} visitors selected at random from this season's annual pass holders`,
     },
     {
       who: "A transit agency", goal: "estimate the percent of its riders who want later evening bus service",
       popShort: "the agency's riders", place: "riders at one downtown stop", part: "riders of one route",
-      random: (n) => `${n} riders selected at random from a list of all registered fare-card holders`,
-      convenience: (n) => `the first ${n} riders to board a bus at the main downtown stop on a weekday morning`,
+      members: "riders", partAll: "All riders of that route", popAll: "All of the agency's riders", wider: "All bus riders in the country",
+      finding: (x) => `${x}% of the riders surveyed want later evening bus service`,
+      random: (n) => `${n} riders chosen at random from all registered fare-card holders`,
+      convenience: (n) => `the first ${n} riders to board at the main downtown stop on a weekday`,
       volunteer: (m) => `the ${fmt(m)} riders responding to a post on the agency's social media page`,
-      subgroup: (n) => `${n} riders selected at random from the fare-card holders who ride one particular route`,
+      subgroup: (n) => `${n} riders selected at random from the fare-card holders on one route`,
+    },
+    {
+      who: "A hospital", goal: "estimate the percent of its patients who are satisfied with how appointments are scheduled",
+      popShort: "the hospital's patients", place: "patients in one waiting room on one afternoon", part: "patients of the children's clinic",
+      members: "patients", partAll: "All children's clinic patients", popAll: "All of the hospital's patients", wider: "All hospital patients in the state",
+      finding: (x) => `${x}% of the patients surveyed are satisfied with how appointments are scheduled`,
+      random: (n) => `${n} patients chosen at random from the hospital's complete patient list`,
+      convenience: (n) => `the first ${n} patients to check in at the main waiting room on a Monday`,
+      volunteer: (m) => `the ${fmt(m)} patients responding to a survey link printed on their bills`,
+      subgroup: (n) => `${n} patients selected at random from those seen at the children's clinic`,
+    },
+    {
+      who: "A public library", goal: "estimate the mean number of books its cardholders borrow per month",
+      popShort: "the library's cardholders", place: "cardholders at the library on one Saturday", part: "cardholders who are college students",
+      members: "cardholders", partAll: "All cardholders in college", popAll: "All of the library's cardholders", wider: "All library users in the country",
+      finding: (x) => `the cardholders surveyed borrow a mean of ${num(x / 10)} books per month`,
+      random: (n) => `${n} cardholders chosen at random from a complete list of cardholders`,
+      convenience: (n) => `the first ${n} cardholders to check out books on a Saturday morning`,
+      volunteer: (m) => `the ${fmt(m)} cardholders responding to a poll on the library's website`,
+      subgroup: (n) => `${n} cardholders selected at random from those who are college students`,
+    },
+    {
+      who: "A streaming service", goal: "estimate the percent of its subscribers who would pay for an ad-free plan",
+      popShort: "the service's subscribers", place: "subscribers who call the help line on one day", part: "subscribers who joined in the past month",
+      members: "subscribers", partAll: "All subscribers who joined last month", popAll: "All of the service's subscribers", wider: "All people who stream videos",
+      finding: (x) => `${x}% of the subscribers surveyed would pay for an ad-free plan`,
+      random: (n) => `${n} subscribers chosen at random from the complete subscriber list`,
+      convenience: (n) => `the first ${n} subscribers to call the help line on a Tuesday morning`,
+      volunteer: (m) => `the ${fmt(m)} subscribers answering a pop-up question after an episode`,
+      subgroup: (n) => `${n} subscribers selected at random from those who joined last month`,
     },
   ];
 
@@ -542,21 +631,34 @@
     subgroup: (scene) => `The selection is random, but only among ${scene.part}, who may differ from the rest of ${scene.popShort}.`,
   };
 
-  // Reasons a result may not generalize, kept within a few characters of one another.
+  // Reasons a result may not generalize, two wordings each, so no one
+  // sentence recurs across items; `part` and `self` are both offered every
+  // time, one as the key.
   const REASONS = {
-    part: "The sample was drawn from only one part of the whole population.",
-    self: "The people surveyed decided for themselves whether to respond.",
-    size: "The sample was too small to represent a population of this size.",
-    all: "The survey did not include every single member of the population.",
-    percent: "The results were reported as a percent instead of as a count.",
+    part: ["The sample came from only one part of the population.", "The survey could reach only one part of the population."],
+    self: ["The people surveyed decided for themselves whether to respond.", "The respondents chose themselves by deciding to answer."],
+    size: ["The sample was too small for a population of this size.", "The survey reached too few people for its results to be useful."],
+    all: ["The survey did not include every member of the population.", "The survey left some members of the population out."],
+    percent: ["The results were reported as a percent, not as a count.", "The survey asked each person only a single question."],
   };
+
+  // Sample sizes for the four methods, all different, so no choice shares
+  // its number with another.
+  function methodSizes(t) {
+    const sizes = t.sample(range(4, 25).map((k) => 20 * k), 3);
+    return { n: sizes, m: 100 * t.int(8, 30) };
+  }
 
   function methodChoiceItem(t) {
     const scene = t.pick(SAMPLING_SCENES);
-    const n = t.pick([100, 120, 150, 200, 250, 300, 400]);
-    const m = t.pick([800, 900, 1000, 1200, 1500, 2000]);
-    const phrase = (method) => scene[method](method === "volunteer" ? m : n);
-    const say = (method) => `Surveying ${phrase(method)}`;
+    const { n, m } = methodSizes(t);
+    const size = { random: n[0], convenience: n[1], subgroup: n[2], volunteer: m };
+    // Half the time the one-part method is worded like the random one, so
+    // wording alone never singles out the key.
+    const mirror = t.chance(0.5);
+    const say = (method) => (method === "subgroup" && mirror
+      ? `Surveying ${size.subgroup} ${scene.members} chosen at random from a list of ${scene.part} only`
+      : `Surveying ${scene[method](size[method])}`);
     const keyText = say("random");
     const wrongMethods = ["convenience", "volunteer", "subgroup"];
     return {
@@ -581,7 +683,7 @@
         "A random sample from the whole population tends to represent it; convenience samples and volunteers tend not to.",
         "A larger sample does not correct a biased way of choosing it.",
       ],
-      trap: `The ${fmt(m)} volunteers outnumber the ${n} people in the random sample, but who is chosen matters more than how many.`,
+      trap: `The ${fmt(m)} volunteers outnumber the ${n[0]} people in the random sample, but who is chosen matters more than how many.`,
       hint: "Could every member of the population have ended up in the sample, and did chance decide who did?",
       estimatedSeconds: 60,
       verify: () => {
@@ -595,12 +697,21 @@
   function methodFlawItem(t) {
     const scene = t.pick(SAMPLING_SCENES);
     const method = t.pick(["convenience", "volunteer", "subgroup"]);
-    const n = t.pick([100, 120, 150, 200, 250, 300, 400]);
-    const m = t.pick([800, 900, 1000, 1200, 1500, 2000]);
-    const size = method === "volunteer" ? m : n;
+    const { n, m } = methodSizes(t);
+    const size = method === "volunteer" ? m : n[0];
     const facts = METHOD_FACTS[method];
     const keyName = facts.self ? "self" : "part";
+    const otherName = facts.self ? "part" : "self";
     const described = scene[method](size);
+    const word = (name) => t.pick(REASONS[name]);
+    const why = {
+      self: "Misdescribes this survey: chance, not the people themselves, decided who among those eligible was surveyed.",
+      part: `Misdescribes this survey: anyone among ${scene.popShort} could have responded; the trouble is that they chose themselves.`,
+      size: `A well-chosen sample of ${fmt(size)} can represent a large population; the trouble is how these people were chosen.`,
+      all: "A sample never includes everyone; that is what makes it a sample, and a good one still gives a useful estimate.",
+      percent: "Nothing about how the results were reported biases them; the way the sample was chosen does.",
+    };
+    const extras = t.sample(["size", "all", "percent"], 2);
     return {
       responseType: "multiple-choice",
       stimulus: null,
@@ -608,12 +719,8 @@
       stem:
         `${scene.who} wanted to ${scene.goal}, so ${described} were surveyed. Which of the following is the best reason the ` +
         `results may not be a good estimate for all of ${scene.popShort}?`,
-      correct: REASONS[keyName],
-      wrong: [
-        [REASONS.size, `A well-chosen sample of ${fmt(size)} can represent a large population; the trouble is how these people were chosen.`],
-        [REASONS.all, "A sample never includes everyone; that is what makes it a sample, and a good one still gives a useful estimate."],
-        [REASONS.percent, "Reporting a percent does nothing to bias the result; the way the sample was chosen does."],
-      ],
+      correct: word(keyName),
+      wrong: [otherName, ...extras].map((name) => [word(name), why[name]]),
       explanation: facts.self
         ? "The people surveyed decided for themselves whether to respond, and people who choose to respond may hold different views from those who do not."
         : `Only ${method === "convenience" ? scene.place : scene.part} could be chosen, and they may differ from the rest of ${scene.popShort}.`,
@@ -631,7 +738,54 @@
       estimatedSeconds: 60,
       verify: () => {
         const expected = facts.self ? "self" : !facts.whole ? "part" : null;
-        return expected === keyName && size >= 100;
+        return expected === keyName && size >= 80;
+      },
+    };
+  }
+
+  // To which group does a random sample's result extend? Exactly the group
+  // it was drawn from at random: not only the people surveyed, not a wider one.
+  function methodScopeItem(t) {
+    const scene = t.pick(SAMPLING_SCENES);
+    const fromPart = t.chance(0.5);
+    const { n } = methodSizes(t);
+    const x = t.int(18, 82);
+    const surveyed = `Only the ${n[0]} ${scene.members} who were surveyed`;
+    const choices = { surveyed, part: scene.partAll, pop: scene.popAll, wider: scene.wider };
+    const keyName = fromPart ? "part" : "pop";
+    const why = {
+      surveyed: "Too narrow: a random sample stands for the whole group it was drawn from, not only the people who happened to be chosen.",
+      part: `Too narrow: the sample was drawn at random from all of ${scene.popShort}, not only ${scene.part}.`,
+      pop: `Too broad: only ${scene.part} could have been chosen, and they may differ from the rest of ${scene.popShort}.`,
+      wider: `Too broad: no one outside ${fromPart ? scene.part : scene.popShort} could have been chosen.`,
+    };
+    return {
+      responseType: "multiple-choice",
+      stimulus: null,
+      figure: null,
+      stem:
+        `${scene.who} surveyed ${scene[fromPart ? "subgroup" : "random"](n[0])} and found that ${scene.finding(x)}. ` +
+        "To which of the following groups can the results of this survey most appropriately be generalized?",
+      correct: choices[keyName],
+      wrong: Object.keys(choices).filter((name) => name !== keyName).map((name) => [choices[name], why[name]]),
+      explanation:
+        `The ${scene.members} were chosen at random from ${fromPart ? scene.part : `all of ${scene.popShort}`}, so the results extend to ` +
+        `that group and no further: ${choices[keyName].charAt(0).toLowerCase()}${choices[keyName].slice(1)}.`,
+      steps: [
+        `Find the group the sample was chosen from at random: ${fromPart ? scene.part : `all of ${scene.popShort}`}.`,
+        "A random sample represents the whole of that group, not only the people chosen.",
+        "It says nothing certain about people who could not have been chosen.",
+      ],
+      principles: [
+        "Results from a random sample generalize to the population the sample was drawn from, and only to it.",
+        "The people surveyed stand in for everyone who could have been chosen.",
+      ],
+      trap: "The group that sounds most useful is often wider than the group the sample was drawn from.",
+      hint: "Who could have been chosen for this sample?",
+      estimatedSeconds: 55,
+      verify: () => {
+        const facts = METHOD_FACTS[fromPart ? "subgroup" : "random"];
+        return facts.random && facts.whole === !fromPart && choices[keyName] === (fromPart ? scene.partAll : scene.popAll);
       },
     };
   }
@@ -649,44 +803,50 @@
     rubric: { steps: 0, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["neighbouring-rule", "context-constraint"],
     build(t) {
-      return t.chance(0.55) ? methodChoiceItem(t) : methodFlawItem(t);
+      const roll = t.random();
+      if (roll < 0.4) return methodChoiceItem(t);
+      return roll < 0.7 ? methodFlawItem(t) : methodScopeItem(t);
     },
   };
 
   /* ================================= margin-and-sample-size (Easy) */
 
+  // Percent scenes derive the margin from the estimate and the sample size;
+  // mean scenes (in tenths) from a typical standard deviation `sd`.
   const MARGIN_SCENES = [
     {
       members: "students", popShort: "the students at a large university", kind: "percent",
-      stat: "the percent of students who use the campus gym at least once a week", unit: "%", values: [18, 72], margins: [2, 3, 4, 5],
+      stat: "the percent of students who use the campus gym at least once a week", unit: "%", values: [18, 72],
       statAll: "the percent of all the university's students who use the campus gym at least once a week",
     },
     {
       members: "adults", popShort: "the adults in a state", kind: "percent",
-      stat: "the percent of adults who have a public library card", unit: "%", values: [30, 70], margins: [2, 3, 4],
+      stat: "the percent of adults who have a public library card", unit: "%", values: [30, 70],
       statAll: "the percent of all adults in the state who have a public library card",
     },
     {
       members: "employees", popShort: "the employees of a large company", kind: "mean",
-      stat: "the mean one-way commute time, in minutes, of the company's employees", unit: " minutes", values: [180, 420], margins: [8, 10, 12, 15, 20], scale: 10,
+      stat: "the mean one-way commute time, in minutes, of the company's employees", unit: " minutes", unitOne: " minute", values: [180, 420], sd: 150, scale: 10,
       statAll: "the mean one-way commute time, in minutes, of all the company's employees",
     },
     {
       members: "households", popShort: "the households in a city", kind: "mean",
-      stat: "the mean number of hours per week that each household's television is on", unit: " hours", values: [150, 350], margins: [5, 8, 10, 12], scale: 10,
+      stat: "the mean number of hours per week that each household's television is on", unit: " hours", unitOne: " hour", values: [150, 350], sd: 100, scale: 10,
       statAll: "the mean number of hours per week that the television is on, for all households in the city",
     },
     {
       members: "trees", popShort: "the pine trees in a forest", kind: "mean",
-      stat: "the mean height, in feet, of the pine trees in the forest", unit: " feet", values: [450, 800], margins: [10, 15, 20, 25], scale: 10,
+      stat: "the mean height, in feet, of the pine trees in the forest", unit: " feet", unitOne: " foot", values: [450, 800], sd: 80, scale: 10,
       statAll: "the mean height, in feet, of all the pine trees in the forest",
     },
   ];
 
   function sizeItem(t) {
     const scene = t.pick(MARGIN_SCENES);
-    const [small, big] = t.sample([100, 150, 200, 300, 400, 500, 800, 1000, 1200, 1500], 2).sort((a, b) => a - b);
-    if (big < 2 * small) return sizeItem(t);
+    const [small, big] = retry(() => {
+      const pair = t.sample([100, 150, 200, 300, 400, 500, 800, 1000, 1200, 1500], 2).sort((a, b) => a - b);
+      return pair[1] >= 2 * pair[0] ? pair : null;
+    });
     const firstBig = t.chance(0.5);
     const [n1, n2] = firstBig ? [big, small] : [small, big];
     const statWord = scene.kind === "percent" ? "percent" : "mean";
@@ -694,7 +854,7 @@
       key: `The estimate from the sample of ${fmt(big)} ${scene.members} likely has the smaller margin of error.`,
       reversed: `The estimate from the sample of ${fmt(small)} ${scene.members} likely has the smaller margin of error.`,
       equal: "The two estimates likely have equal margins of error, since both samples come from the same population.",
-      certain: `The estimate from the sample of ${fmt(big)} ${scene.members} is certain to equal the population ${statWord}.`,
+      certain: `Neither estimate has a margin of error, since both samples were chosen at random from the ${scene.members}.`,
     };
     return {
       responseType: "multiple-choice",
@@ -708,7 +868,7 @@
       wrong: [
         [say.reversed, "Reverses the relationship: a larger random sample gives a more precise estimate, so a smaller margin of error."],
         [say.equal, "The margin of error depends on the size of the sample, not only on the population it comes from."],
-        [say.certain, "A larger sample narrows the margin of error but never removes it; no sample makes the estimate certain."],
+        [say.certain, `Random selection makes an estimate fair, not exact; every sample ${statWord} has a margin of error.`],
       ],
       explanation:
         `A larger random sample varies less from sample to sample, so its estimate is more precise and its margin of error is ` +
@@ -737,83 +897,87 @@
   function plausibleItem(t, numeric) {
     const scene = t.pick(MARGIN_SCENES);
     const scale = scene.scale || 1;
-    const est = t.int(scene.values[0], scene.values[1]);
-    const margin = t.pick(scene.margins);
-    const n = t.pick([150, 200, 250, 300, 400, 500, 600]);
-    const text = (value) => `${num(value / scale)}${scene.kind === "percent" ? "%" : ""}`;
-    const estimateText = `${num(est / scale)}${scene.unit}`;
-    const marginText = scene.kind === "percent" ? `${margin} percentage points` : `${num(margin / scale)}${scene.unit}`;
-    const intro =
-      `A random sample of ${n} of ${scene.popShort} was used to estimate ${scene.stat}. The estimate was ${estimateText}, ` +
-      `with a margin of error of ${marginText}.`;
-    const principles = [
-      "An estimate with a margin of error gives a range of plausible values: the estimate minus the margin to the estimate plus the margin.",
-      "Values outside that range are not plausible for the population, based on the sample.",
-    ];
-    if (numeric) {
-      const greatest = t.chance(0.5);
-      const key = (est + (greatest ? margin : -margin)) / scale;
-      return {
-        responseType: "numeric",
+    return retry(() => {
+      const est = t.int(scene.values[0], scene.values[1]);
+      const n = t.pick([150, 200, 250, 300, 400, 500, 600]);
+      const margin = scene.kind === "percent" ? percentMargin(est, n) : Math.round((1.96 * scene.sd) / Math.sqrt(n));
+      if (margin < 3) return null;
+      const text = (value) => (value > 0 ? `${num(tidy(value / scale))}${scene.kind === "percent" ? "%" : ""}` : null);
+      const estimateText = `${num(est / scale)}${scene.unit}`;
+      const marginText = scene.kind === "percent" ? `${margin} percentage points` : `${num(margin / scale)}${margin === scale ? scene.unitOne : scene.unit}`;
+      const intro =
+        `A random sample of ${n} of ${scene.popShort} was used to estimate ${scene.stat}. The estimate was ${estimateText}, ` +
+        `with a margin of error of ${marginText}.`;
+      const principles = [
+        "An estimate with a margin of error gives a range of plausible values: the estimate minus the margin to the estimate plus the margin.",
+        "Values outside that range are not plausible for the population, based on the sample.",
+      ];
+      if (numeric) {
+        const greatest = t.chance(0.5);
+        const key = tidy((est + (greatest ? margin : -margin)) / scale);
+        return {
+          responseType: "numeric",
+          stimulus: null,
+          figure: null,
+          stem: `${intro} Based on these results, what is the ${greatest ? "greatest" : "least"} plausible value for ${scene.statAll}?`,
+          correct: key,
+          explanation: `The plausible values run from ${text(est - margin)} to ${text(est + margin)}, so the ${greatest ? "greatest" : "least"} is ${num(key)}.`,
+          steps: [
+            `Plausible range: ${estimateText} ${MINUS} ${marginText} to ${estimateText} + ${marginText}.`,
+            `That is ${text(est - margin)} to ${text(est + margin)}.`,
+            `The ${greatest ? "greatest" : "least"} plausible value is ${num(key)}.`,
+          ],
+          principles,
+          trap: `The estimate, ${num(est / scale)}, is the most likely single value, but the question asks for the ${greatest ? "top" : "bottom"} of the plausible range.`,
+          hint: "How far from the estimate can a plausible value be?",
+          estimatedSeconds: 50,
+          verify: () => {
+            const numbers = intro.match(/estimate was ([\d.]+)[^,]*, with a margin of error of ([\d.]+)/);
+            const center = Number(numbers[1]);
+            const width = Number(numbers[2]);
+            return close(greatest ? center + width : center - width, key);
+          },
+        };
+      }
+      const inside = est + t.pick([-1, 1]) * t.int(1, margin - 1);
+      const k = () => t.int(1, Math.max(1, Math.round(margin / 2)));
+      const outside = "Lies outside the plausible range, more than the margin of error from the estimate.";
+      const item = packRanked(t, false, inside, [
+        [est + margin + k(), `${outside} It is just above ${text(est + margin)}.`],
+        [est - margin - k(), `${outside} It is just below ${text(est - margin)}.`],
+        [est + 2 * margin, "Moves twice the margin of error above the estimate, outside the plausible range."],
+        [est - 2 * margin, "Moves twice the margin of error below the estimate, outside the plausible range."],
+        [est + margin + margin / 2 + k(), `${outside} It is above ${text(est + margin)}.`],
+        [est - margin - margin / 2 - k(), `${outside} It is below ${text(est - margin)}.`],
+        [margin, "Gives the margin of error itself, which is a distance, not a value of the statistic."],
+      ], {
         stimulus: null,
         figure: null,
-        stem: `${intro} Based on these results, what is the ${greatest ? "greatest" : "least"} plausible value for ${scene.statAll}?`,
-        correct: tidy(key),
-        explanation: `The plausible values run from ${text(est - margin)} to ${text(est + margin)}, so the ${greatest ? "greatest" : "least"} is ${num(tidy(key))}.`,
+        stem: `${intro} Which of the following is a plausible value for ${scene.statAll}?`,
+        explanation:
+          `The plausible values run from ${text(est - margin)} to ${text(est + margin)}. Only ${text(inside)} lies in that range.`,
         steps: [
-          `Plausible range: ${estimateText} ${MINUS} ${marginText} to ${estimateText} + ${marginText}.`,
-          `That is ${text(est - margin)} to ${text(est + margin)}.`,
-          `The ${greatest ? "greatest" : "least"} plausible value is ${num(tidy(key))}.`,
+          `Plausible range: ${text(est - margin)} to ${text(est + margin)}.`,
+          "Check each choice against the range.",
+          `${text(inside)} is inside it; the others are outside.`,
         ],
         principles,
-        trap: `The estimate, ${num(est / scale)}, is the most likely single value, but the question asks for the ${greatest ? "top" : "bottom"} of the plausible range.`,
-        hint: "How far from the estimate can a plausible value be?",
-        estimatedSeconds: 50,
+        trap: "A value need not equal the estimate to be plausible, and a value just past the margin is not plausible.",
+        hint: "What range of values does the margin of error allow?",
+        estimatedSeconds: 55,
+      }, { show: text, places: 9 });
+      if (!item) return null;
+      return {
+        ...item,
         verify: () => {
           const numbers = intro.match(/estimate was ([\d.]+)[^,]*, with a margin of error of ([\d.]+)/);
           const center = Number(numbers[1]);
           const width = Number(numbers[2]);
-          return close(greatest ? center + width : center - width, key);
+          const within = (choice) => Math.abs(parseFloat(choice) - center) <= width + 1e-9;
+          return within(item.correct) && item.wrong.every(([choice]) => !within(choice));
         },
       };
-    }
-    const inside = est + t.pick([-1, 1]) * t.int(1, margin - 1);
-    const above = est + margin + t.int(1, margin);
-    const below = est - margin - t.int(1, margin);
-    const twice = est + (t.chance(0.5) ? 2 : -2) * margin;
-    const wrong = [
-      [text(above), `Lies more than the margin of error above the estimate, outside the plausible range.`],
-      [text(below), `Lies more than the margin of error below the estimate, outside the plausible range.`],
-      [text(twice), "Moves twice the margin of error from the estimate, outside the plausible range."],
-      [text(margin), "Gives the margin of error itself, which is a distance, not a value of the statistic."],
-    ].filter(([value]) => value !== text(inside));
-    return {
-      responseType: "multiple-choice",
-      stimulus: null,
-      figure: null,
-      stem: `${intro} Which of the following is a plausible value for ${scene.statAll}?`,
-      correct: text(inside),
-      wrong,
-      explanation:
-        `The plausible values run from ${text(est - margin)} to ${text(est + margin)}. Only ${text(inside)} lies in that range.`,
-      steps: [
-        `Plausible range: ${text(est - margin)} to ${text(est + margin)}.`,
-        "Check each choice against the range.",
-        `${text(inside)} is inside it; the others are outside.`,
-      ],
-      principles,
-      trap: "A value need not equal the estimate to be plausible, and a value just past the margin is not plausible.",
-      hint: "What range of values does the margin of error allow?",
-      estimatedSeconds: 55,
-      verify: () => {
-        const numbers = intro.match(/estimate was ([\d.]+)[^,]*, with a margin of error of ([\d.]+)/);
-        const center = Number(numbers[1]);
-        const width = Number(numbers[2]);
-        const value = (choice) => parseFloat(choice);
-        const within = (choice) => Math.abs(value(choice) - center) <= width + 1e-9;
-        return within(text(inside)) && wrong.every(([choice]) => !within(choice));
-      },
-    };
+    });
   }
 
   const marginSize = {
@@ -847,7 +1011,7 @@
     {
       animals: "deer", place: "a forest", where: "in the forest",
       first: (M) => `To estimate the number of deer in a forest, wildlife officers captured ${M} deer, fitted each with a collar, and released them.`,
-      second: (C) => `Later, the officers photographed ${C} different deer with trail cameras`, marked: "collared", unmarked: "without collars",
+      second: (C) => `Later, the officers photographed ${C} different deer with trail cameras`, marked: "collared", unmarked: "uncollared",
       assume: "Assume that the collared deer mixed evenly with the others and that the deer population did not change in between.",
     },
     {
@@ -889,20 +1053,26 @@
         : `Based on these results, what is the best estimate of the number of ${scene.animals} ${scene.where} that are ${scene.unmarked}?`;
       const candidates = form === "total"
         ? [
-          [shown(M + C - R, 0), `Counts the different ${scene.animals} seen in the two samples instead of estimating the whole population.`],
-          [shown(N - M, 0), `Estimates only the ${scene.unmarked} ${scene.animals}, leaving out the ${M} that were ${scene.marked}.`],
-          [shown((M * C) / (C - R), 0), `Divides by the ${C - R} ${scene.unmarked} ${scene.animals} in the second sample instead of the ${R} ${scene.marked} ones.`],
-          [shown((M * R) / C, 0), "Sets up the proportion upside down."],
-          [shown(M * C, 0), `Multiplies ${M} by ${C} without dividing by the ${R} that were ${scene.marked}.`],
+          [M + C - R, `Counts the different ${scene.animals} seen in the two samples instead of estimating the whole population.`],
+          [N - M, `Estimates only the ${scene.unmarked} ${scene.animals}, leaving out the ${M} that were ${scene.marked}.`],
+          [(M * C) / (C - R), `Divides by the ${C - R} ${scene.unmarked} ${scene.animals} in the second sample instead of the ${R} ${scene.marked} ones.`],
+          [(M * R) / C, "Sets up the proportion upside down."],
+          [M * C, `Multiplies ${M} by ${C} without dividing by the ${R} that were ${scene.marked}.`],
+          [N + M, `Adds the ${M} ${scene.marked} ${scene.animals} to the estimate as if they were not already counted in it.`],
+          [N + C, `Adds the ${C} ${scene.animals} in the second sample to the estimate as if they were not already counted in it.`],
         ]
         : [
-          [shown(N, 0), `Gives the estimate of all the ${scene.animals}, a step on the way; ${M} of them are ${scene.marked}.`],
-          [shown(C - R, 0), `Gives the number of ${scene.unmarked} ${scene.animals} in the second sample, without scaling it up.`],
-          [shown(N - R, 0), `Subtracts the ${R} ${scene.marked} ${scene.animals} in the second sample instead of all ${M} ${scene.marked}.`],
-          [shown(N - C, 0), `Subtracts the second sample of ${C}.`],
+          [N, `Gives the estimate of all the ${scene.animals}, a step on the way; ${M} of them are ${scene.marked}.`],
+          [C - R, `Gives the number of ${scene.unmarked} ${scene.animals} in the second sample, without scaling it up.`],
+          [N - R, `Subtracts the ${R} ${scene.marked} ${scene.animals} in the second sample instead of all ${M} ${scene.marked}.`],
+          [N - C, `Subtracts the second sample of ${C}.`],
+          [(M * (C - R)) / C, `Scales the ${scene.unmarked} share of the second sample, ${C - R}/${C}, by the ${M} ${scene.marked} ${scene.animals} instead of by the whole population.`],
         ];
       const setup = `${M}/N = ${asPercent ? `${num(tidy(pct))}/100` : `${R}/${C}`}`;
-      return pack(numeric, key, fmt(key), candidates, {
+      // A best estimate is a whole number, so a mistake's result is rounded
+      // as a student making it would round it.
+      const whole = (value) => (value >= 1 ? fmt(Math.round(value)) : null);
+      return packRanked(t, numeric, key, candidates, {
         stimulus: null,
         figure: null,
         stem: `${scene.first(M)} ${scene.second(C)}${found}. ${scene.assume} ${ask}`,
@@ -936,7 +1106,7 @@
           }
           return size !== null && (form === "total" ? size : size - M) === key;
         },
-      });
+      }, { show: whole, places: 9 });
     });
   }
 
@@ -959,116 +1129,132 @@
 
   /* =============================== two-estimates-compare (Hard) */
 
+  // Percent scenes derive each margin from the sample percent and size; mean
+  // scenes from a typical standard deviation (in tenths) and the size, so a
+  // larger sample never carries an unexplained larger margin.
   const COMPARE_SCENES = [
     {
-      kind: "percent", groups: ["School A", "School B"],
+      kind: "percent", groups: ["School A", "School B"], sizes: [150, 200, 250, 300, 400, 500],
       intro: (n1, n2) => `A researcher surveyed a random sample of ${n1} students at School A and a separate random sample of ${n2} students at School B, asking whether they walk to school.`,
       estimate: (g, v, m) => `At ${g}, ${v}% of the students surveyed walk to school, with a margin of error of ${m} percentage points`,
       same: "It is plausible that the same percent of students at School A and at School B walk to school.",
       greater: (hi, lo) => `It is likely that a greater percent of students at ${hi} than at ${lo} walk to school.`,
-      exact: (hi, lo, d) => `It is certain that the percent at ${hi} is exactly ${d} points greater than at ${lo}.`,
+      definite: (hi, lo) => `The percent of all students at ${hi} who walk to school is greater than the percent at ${lo}.`,
+      exact: (hi, lo, d) => `It is certain that the percent at ${hi} is exactly ${S.plural(Number(d), "percentage point")} greater than at ${lo}.`,
     },
     {
-      kind: "percent", groups: ["Easton", "Westfield"],
-      intro: (n1, n2) => `A polling firm surveyed a random sample of ${n1} residents of Easton and a separate random sample of ${n2} residents of Westfield about a proposed bike lane.`,
+      kind: "percent", groups: ["Easton", "Westfield"], sizes: [300, 400, 500, 600, 800, 1000],
+      intro: (n1, n2) => `A polling firm surveyed a random sample of ${fmt(n1)} residents of Easton and a separate random sample of ${fmt(n2)} residents of Westfield about a proposed bike lane.`,
       estimate: (g, v, m) => `In ${g}, ${v}% of those surveyed support the bike lane, with a margin of error of ${m} percentage points`,
       same: "It is plausible that the same percent of residents in Easton and in Westfield support the bike lane.",
       greater: (hi, lo) => `It is likely that a greater percent of residents in ${hi} than in ${lo} support the bike lane.`,
-      exact: (hi, lo, d) => `It is certain that support in ${hi} is exactly ${d} points higher than in ${lo}.`,
+      definite: (hi, lo) => `The percent of all residents of ${hi} who support the bike lane is greater than the percent in ${lo}.`,
+      exact: (hi, lo, d) => `It is certain that support in ${hi} is exactly ${S.plural(Number(d), "percentage point")} higher than in ${lo}.`,
     },
     {
-      kind: "percent", groups: ["the Main Street store", "the Oak Street store"],
+      kind: "percent", groups: ["the Main Street store", "the Oak Street store"], sizes: [150, 200, 250, 300, 400],
       intro: (n1, n2) => `A bakery surveyed a random sample of ${n1} customers at its Main Street store and a separate random sample of ${n2} customers at its Oak Street store.`,
       estimate: (g, v, m) => `At ${g}, ${v}% of the customers surveyed were satisfied, with a margin of error of ${m} percentage points`,
       same: "It is plausible that the same percent of customers at the Main Street and Oak Street stores are satisfied.",
       greater: (hi, lo) => `It is likely that a greater percent of customers at ${hi} than at ${lo} are satisfied.`,
-      exact: (hi, lo, d) => `It is certain that satisfaction at ${hi} is exactly ${d} points higher than at ${lo}.`,
+      definite: (hi, lo) => `The percent of all customers at ${hi} who are satisfied is greater than the percent at ${lo}.`,
+      exact: (hi, lo, d) => `It is certain that satisfaction at ${hi} is exactly ${S.plural(Number(d), "percentage point")} higher than at ${lo}.`,
     },
     {
-      kind: "mean", groups: ["Office P", "Office Q"], unit: "minutes", base: [180, 320], margins: [8, 10, 12, 15, 20],
+      kind: "mean", groups: ["Office P", "Office Q"], unit: "minute", base: [180, 320], sd: 120, gapMax: 64, sizes: [60, 80, 100, 120, 150, 200],
       intro: (n1, n2) => `A company recorded the one-way commute times of a random sample of ${n1} employees at Office P and a separate random sample of ${n2} employees at Office Q.`,
       estimate: (g, v, m) => `For ${g}, the mean commute time in the sample was ${v} minutes, with a margin of error of ${m} minutes`,
       same: "It is plausible that the mean commute times of all employees at Office P and Office Q are equal.",
       greater: (hi, lo) => `It is likely that the mean commute time of all employees at ${hi} is greater than at ${lo}.`,
-      exact: (hi, lo, d) => `It is certain that the mean commute at ${hi} is exactly ${d} minutes longer than at ${lo}.`,
+      definite: (hi, lo) => `The mean commute time of all employees at ${hi} is greater than the mean at ${lo}.`,
+      exact: (hi, lo, d) => `It is certain that the mean commute at ${hi} is exactly ${S.plural(Number(d), "minute")} longer than at ${lo}.`,
     },
     {
-      kind: "mean", groups: ["the 9th graders", "the 12th graders"], unit: "hours", base: [60, 70], margins: [2, 3, 4, 5, 6],
+      kind: "mean", groups: ["the 9th graders", "the 12th graders"], unit: "hour", base: [60, 75], sd: 11, gapMax: 9, sizes: [40, 50, 60, 80, 100, 120],
       intro: (n1, n2) => `A school nurse asked a random sample of ${n1} of the school's 9th graders and a separate random sample of ${n2} of its 12th graders how many hours they slept the night before.`,
       estimate: (g, v, m) => `For ${g}, the sample mean was ${v} hours, with a margin of error of ${m} hours`,
       same: "It is plausible that the mean hours of sleep of all 9th graders and all 12th graders at the school are equal.",
       greater: (hi, lo) => `It is likely that the mean hours of sleep of all ${hi.replace("the ", "")} at the school is greater than that of all ${lo.replace("the ", "")}.`,
-      exact: (hi, lo, d) => `It is certain that ${hi} at the school sleep exactly ${d} hours more, on average, than ${lo}.`,
+      definite: (hi, lo) => `The mean hours of sleep of all ${hi.replace("the ", "")} at the school is greater than that of all ${lo.replace("the ", "")}.`,
+      exact: (hi, lo, d) => `It is certain that ${hi} at the school sleep exactly ${S.plural(Number(d), "hour")} more, on average, than ${lo}.`,
     },
   ];
 
   function compareItem(t) {
     const scene = t.pick(COMPARE_SCENES);
+    const overlap = t.chance(0.5);
+    // Overlapping items mostly put the gap between the two margins: one
+    // estimate lies outside the other's narrow range, yet the ranges share values.
+    const subtle = t.chance(0.7);
     return retry(() => {
-      const overlap = t.chance(0.5);
       // Work in tenths for means, whole points for percents.
       const scale = scene.kind === "mean" ? 10 : 1;
-      const m1 = scene.kind === "mean" ? t.pick(scene.margins) : t.int(2, 6);
-      const m2 = scene.kind === "mean" ? t.pick(scene.margins) : t.int(2, 6);
-      const sumM = m1 + m2;
-      // Overlapping: the gap exceeds each margin alone (so it looks decisive) but not their sum.
-      if (overlap && Math.max(m1, m2) + 1 > sumM - 1) return null;
-      const gap = overlap ? t.int(Math.max(m1, m2) + 1, sumM - 1) : t.int(sumM + 1, sumM + Math.max(2, Math.round(sumM / 2)));
-      // A whole-number difference of means would print as "exactly 1 hours".
-      if (scene.kind === "mean" && gap % 10 === 0) return null;
+      const [n1, n2] = [t.pick(scene.sizes), t.pick(scene.sizes)];
       const low = scene.kind === "mean" ? t.int(scene.base[0], scene.base[1]) : t.int(20, 70);
+      // Up to a little past the widest pair of margins the scene can produce.
+      const gap = t.int(1, scene.gapMax || 18);
       const high = low + gap;
-      if (scene.kind === "percent" && high > 90) return null;
+      if (scene.kind === "percent" && high > 85) return null;
       const hiIndex = t.int(0, 1);
       const values = hiIndex === 0 ? [high, low] : [low, high];
-      const margins = [m1, m2];
+      const margins = values.map((v, g) => (scene.kind === "mean"
+        ? Math.round((1.96 * scene.sd) / Math.sqrt([n1, n2][g]))
+        : percentMargin(v, [n1, n2][g])));
+      const [small, big] = margins.slice().sort((a, b) => a - b);
+      if (overlap) {
+        if (gap >= big) return null;
+        if (subtle && big - small >= 2 && !(gap > small)) return null;
+      } else if (gap <= small + big || gap > small + big + Math.max(3, Math.round(big / 2))) return null;
       const show = (value) => num(value / scale);
       const [hi, lo] = hiIndex === 0 ? scene.groups : [scene.groups[1], scene.groups[0]];
-      const loGroup = scene.groups[1 - hiIndex];
       const d = show(gap);
       const statements = {
         same: scene.same,
         greater: scene.greater(hi, lo),
         reversed: scene.greater(lo, hi),
+        definite: scene.definite(hi, lo),
+        definiteReversed: scene.definite(lo, hi),
         exact: scene.exact(hi, lo, d),
       };
       const keyName = overlap ? "same" : "greater";
-      const n1 = t.pick([200, 250, 300, 400, 500, 600]);
-      const n2 = t.pick([200, 250, 300, 400, 500, 600]);
       const lines = [0, 1].map((g) => scene.estimate(scene.groups[g], show(values[g]), show(margins[g])));
       const stem = `${scene.intro(n1, n2)} ${lines[0]}. ${lines[1]}. Which of the following conclusions is best supported by these results?`;
       const ranges = [0, 1].map((g) => `${show(values[g] - margins[g])} to ${show(values[g] + margins[g])}`);
       const reasons = {
         same: `The plausible ranges, ${ranges[0]} and ${ranges[1]}, do not overlap, so equal values are not plausible.`,
-        greater: `The plausible ranges, ${ranges[0]} and ${ranges[1]}, overlap, so the difference in the samples could be due to chance.`,
         reversed: `Reverses the comparison: the estimate for ${hi} is the greater one.`,
+        definite: `The plausible ranges, ${ranges[0]} and ${ranges[1]}, overlap, so the data do not show a difference; the gap between the samples could be due to chance.`,
+        definiteReversed: `Reverses the comparison, and states as fact what a sample can only make likely.`,
         exact: `The difference between the samples, ${d}, is only an estimate; the margins of error rule out certainty.`,
       };
+      const wrongNames = overlap
+        ? ["definite", "reversed", "exact"]
+        : ["same", "reversed", t.pick(["exact", "definiteReversed"])];
       return {
         responseType: "multiple-choice",
         stimulus: null,
         figure: null,
         stem,
         correct: statements[keyName],
-        wrong: ["same", "greater", "reversed", "exact"].filter((name) => name !== keyName).map((name) => [statements[name], reasons[name]]),
+        wrong: wrongNames.map((name) => [statements[name], reasons[name]]),
         explanation:
           `Each estimate plus or minus its margin gives the plausible values: ${ranges[0]} for ${scene.groups[0]} and ${ranges[1]} for ` +
           `${scene.groups[1]}. ${overlap
             ? `The ranges overlap (${show(high - margins[hiIndex])} is below ${show(low + margins[1 - hiIndex])}), so a common value is plausible for both, even though the sample estimates differ by ${d}.`
-            : `The ranges do not overlap (${show(high - margins[hiIndex])} is above ${show(low + margins[1 - hiIndex])}), so the value for ${hi} is likely greater than for ${loGroup}.`}`,
+            : `The ranges do not overlap (${show(high - margins[hiIndex])} is above ${show(low + margins[1 - hiIndex])}), so the value for ${hi} is likely greater than for ${lo}, though not certainly and not by an exact amount.`}`,
         steps: [
           `Plausible values for ${scene.groups[0]}: ${ranges[0]}.`,
           `Plausible values for ${scene.groups[1]}: ${ranges[1]}.`,
           overlap
-            ? `The ranges overlap, so equal values are plausible; the data do not show a difference.`
+            ? "The ranges overlap, so equal values are plausible; the data do not show a difference."
             : `The ranges do not overlap, so a difference is likely, with ${hi} greater.`,
         ],
         principles: [
           "An estimate with a margin of error gives a range of plausible values for the population.",
-          "When two groups' plausible ranges overlap, the groups may have the same value; when they do not, a difference is likely.",
+          "When two groups' plausible ranges overlap, the groups may have the same value; when they do not, a difference is likely but not certain.",
         ],
         trap: overlap
-          ? `The estimates differ by ${d}, more than either margin alone, but the ranges still overlap because the margins add.`
+          ? `The estimate for ${lo} may fall outside ${hi}'s range, but the question is whether the two ranges share any values; they do.`
           : "A difference supported by the data is still an estimate: likely, not certain, and not exact.",
         hint: "Write each estimate as a range. Do the ranges share any values?",
         estimatedSeconds: 115,
@@ -1076,7 +1262,12 @@
           const found = [...stem.matchAll(/ ([\d.]+)(?:%| minutes| hours)[^.]*?margin of error of ([\d.]+)/g)].map((match) => [Number(match[1]), Number(match[2])]);
           if (found.length !== 2) return false;
           const [[a, ea], [b, eb]] = found;
-          const overlaps = a - ea <= b + eb && b - eb <= a + ea;
+          const diff = Math.abs(a - b);
+          // Only clear cases: overlapping ranges with the gap under the larger
+          // margin (not significant), or separate ranges (significant).
+          const overlaps = diff <= Math.max(ea, eb) - 1e-9;
+          const separate = diff > ea + eb + 1e-9;
+          if (!overlaps && !separate) return false;
           const higher = a > b ? scene.groups[0] : scene.groups[1];
           const expected = overlaps ? scene.same : scene.greater(higher, higher === scene.groups[0] ? scene.groups[1] : scene.groups[0]);
           return expected === statements[keyName];
@@ -1102,5 +1293,212 @@
     },
   };
 
-  return [methodChoice, marginSize, sampleEstimate, markRecapture, sampleInference, twoEstimates];
+  /* ================================= interval-mean-scope (Hard) */
+
+  // A margin of error for a mean describes the population mean, not the
+  // individual values, which the sample's range shows vary far more. Values
+  // are integers in 1/scale units: `center` bounds the sample mean and
+  // `below`/`above` the sample's range around it. The margin of error follows
+  // from a standard deviation consistent with that range (about range ÷ 4.6
+  // for samples of this size) and the sample size, so the interval is always
+  // far narrower than the individual values. `total` scenes also ask about a
+  // total.
+  const MEAN_SCENES = [
+    {
+      scale: 100, center: [496, 504], below: [8, 14], above: [8, 14], sizes: [40, 50, 60, 80], pops: [1200, 1600, 2000, 2400],
+      intro: (n, N) => `A quality inspector selected a random sample of ${n} of the ${fmt(N)} bags of flour that a mill packed last week and weighed each one.`,
+      sample: (m, lo, hi) => `The mean weight of the bags in the sample was ${m} pounds, and their weights ranged from ${lo} to ${hi} pounds.`,
+      margin: (E) => `The margin of error for estimating the mean weight of all the bags the mill packed last week is ${E} pounds.`,
+      mean: { pop: "the mean weight of all the bags the mill packed last week is", wider: "the mean weight of all bags of flour sold in the state is" },
+      most: { pop: "most of the individual bags the mill packed last week weigh", wider: "most individual bags of flour sold in the state weigh" },
+      unit: "pounds", ones: "bags", total: "total weight, in pounds, of all the bags the mill packed last week",
+    },
+    {
+      scale: 100, center: [101, 103], below: [5, 8], above: [5, 8], sizes: [40, 50, 60], pops: [1500, 2000, 2500, 3000],
+      intro: (n, N) => `A juice plant filled ${fmt(N)} cartons on Monday. An inspector measured the volume of juice in a random sample of ${n} of these cartons.`,
+      sample: (m, lo, hi) => `The mean volume in the sample was ${m} liters, and the volumes ranged from ${lo} to ${hi} liters.`,
+      margin: (E) => `The margin of error for estimating the mean volume of juice in all the cartons filled on Monday is ${E} liter.`,
+      mean: { pop: "the mean volume of juice in all the cartons filled on Monday is", wider: "the mean volume of juice in all cartons sold in the country is" },
+      most: { pop: "most of the individual cartons filled on Monday each contain", wider: "most individual juice cartons sold in the country contain" },
+      unit: "liters", ones: "cartons", total: "total volume, in liters, of juice in all the cartons filled on Monday",
+    },
+    {
+      scale: 10, center: [1050, 1300], below: [400, 650], above: [400, 650], sizes: [20, 25, 30], pops: [60, 80, 90, 120],
+      intro: (n, N) => `A delivery company has ${N} vans. On one day, the company recorded the distance driven by a random sample of ${n} of the vans.`,
+      sample: (m, lo, hi) => `The mean distance for the sample was ${m} miles, and the distances ranged from ${lo} to ${hi} miles.`,
+      margin: (E) => `The margin of error for estimating the mean distance driven that day by all the company's vans is ${E} miles.`,
+      mean: { pop: "the mean distance that all the company's vans drove that day is", wider: "the mean distance that all delivery vans in the city drove that day is" },
+      most: { pop: "most of the individual vans in the company's fleet drove that day", wider: "most of the individual delivery vans in the city drove that day" },
+      unit: "miles", ones: "vans", total: "total distance, in miles, driven that day by all the company's vans",
+    },
+    {
+      scale: 10, center: [150, 180], below: [25, 40], above: [25, 40], sizes: [40, 50, 60],
+      intro: (n) => `A lab tested the battery life of a random sample of ${n} phones of one model.`,
+      sample: (m, lo, hi) => `The mean battery life in the sample was ${m} hours, and the battery lives ranged from ${lo} to ${hi} hours.`,
+      margin: (E) => `The margin of error for estimating the mean battery life of all phones of this model is ${E} hours.`,
+      mean: { pop: "the mean battery life of all phones of this model is", wider: "the mean battery life of all phones the company makes is" },
+      most: { pop: "most individual phones of this model have a battery life", wider: "most individual phones the company makes have a battery life" },
+      unit: "hours", ones: "phones",
+    },
+    {
+      scale: 10, center: [65, 75], below: [18, 26], above: [16, 24], sizes: [100, 120, 150, 200],
+      intro: (n) => `A school nurse asked a random sample of ${n} students at a large high school how many hours they slept the night before.`,
+      sample: (m, lo, hi) => `The mean for the sample was ${m} hours, and the students' answers ranged from ${lo} to ${hi} hours.`,
+      margin: (E) => `The margin of error for estimating the mean sleep time of all the school's students that night is ${E} hours.`,
+      mean: { pop: "the mean sleep time of all the school's students that night is", wider: "the mean sleep time of all high school students in the state that night is" },
+      most: { pop: "most of the school's individual students slept that night for", wider: "most individual high school students in the state slept that night for" },
+      unit: "hours", ones: "students",
+    },
+    {
+      scale: 10, center: [220, 320], below: [150, 190], above: [300, 450], sizes: [60, 80, 100, 120],
+      intro: (n) => `A company surveyed a random sample of ${n} of its employees about the length of their one-way commutes.`,
+      sample: (m, lo, hi) => `The mean commute time in the sample was ${m} minutes, and the commute times ranged from ${lo} to ${hi} minutes.`,
+      margin: (E) => `The margin of error for estimating the mean commute time of all the company's employees is ${E} minutes.`,
+      mean: { pop: "the mean commute time of all the company's employees is", wider: "the mean commute time of all workers in the city is" },
+      most: { pop: "most individual employees of the company have commute times", wider: "most individual workers in the city have commute times" },
+      unit: "minutes", ones: "employees",
+    },
+  ];
+
+  function meanScopeConclusion(t, scene, n, N, m, E, lo, hi, show) {
+    // Two ways to overreach crossed with each other (see inferenceConclusion).
+    const axis = t.pick(["sure", "scope"]);
+    const low = show(m - E);
+    const high = show(m + E);
+    const say = (kind, sure, scope) =>
+      `It is ${sure ? "guaranteed" : "plausible"} that ${scene[kind][scope]} between ${low} and ${high} ${scene.unit}.`;
+    const key = say("mean", false, "pop");
+    const individuals = `Applies the interval to individual ${scene.ones}: it estimates their mean, and the sample's values, from ${show(lo)} to ${show(hi)}, show that individual ${scene.ones} vary far more.`;
+    const wrong = axis === "sure"
+      ? [
+        [say("most", false, "pop"), individuals],
+        [say("mean", true, "pop"), "A margin of error gives plausible values for the mean, not a guarantee; the true mean could lie outside it."],
+        [say("most", true, "pop"), `Applies the interval to individual ${scene.ones}, and claims certainty besides.`],
+      ]
+      : [
+        [say("most", false, "pop"), individuals],
+        [say("mean", false, "wider"), "Extends the result beyond the group the sample was drawn from at random."],
+        [say("most", false, "wider"), `Applies the interval to individual ${scene.ones}, and extends it beyond the group sampled.`],
+      ];
+    const stem = `${scene.intro(n, N)} ${scene.sample(show(m), show(lo), show(hi))} ${scene.margin(show(E))} ` +
+      "Which of the following is the most appropriate conclusion based on these results?";
+    return {
+      responseType: "multiple-choice",
+      stimulus: null,
+      figure: null,
+      stem,
+      correct: key,
+      wrong,
+      explanation:
+        `The margin of error describes how precisely the sample mean estimates the population mean, so the plausible values for ` +
+        `that mean are ${show(m)} ± ${show(E)}, from ${low} to ${high}. It says nothing about most individual ${scene.ones}: the ` +
+        `sample's own values run from ${show(lo)} to ${show(hi)}, far wider than the interval.`,
+      steps: [
+        `Plausible values for the population mean: ${show(m)} ${MINUS} ${show(E)} = ${low} to ${show(m)} + ${show(E)} = ${high}.`,
+        `The interval is about the mean of the population sampled, not about individual ${scene.ones}, whose values vary from ${show(lo)} to ${show(hi)} in the sample alone.`,
+        "It gives plausible values, not certain ones, and only for the group the sample was drawn from.",
+      ],
+      principles: [
+        "A margin of error for a sample mean gives plausible values for the population mean, not a range for individual values.",
+        "Individual values vary much more than a sample mean does; the larger the sample, the narrower the interval for the mean.",
+      ],
+      trap: `The interval ${low} to ${high} looks like a range of values, but it is a range for the mean; individual ${scene.ones} in the sample alone ran from ${show(lo)} to ${show(hi)}.`,
+      hint: "Is the margin of error about individual values or about something else?",
+      estimatedSeconds: 110,
+      verify: () => {
+        const numbers = stem.replace(/,(\d{3})/g, "$1").match(/sample was ([\d.]+) .*ranged from ([\d.]+) to ([\d.]+) .*? is ([\d.]+) \w+\. Which/);
+        if (!numbers) return false;
+        const [center, , , width] = numbers.slice(1).map(Number);
+        const right = (text) => text.startsWith("It is plausible that ") && text.includes(scene.mean.pop) &&
+          text.includes(`between ${num(tidy(center - width))} and ${num(tidy(center + width))} `);
+        return right(key) && wrong.every(([text]) => !right(text));
+      },
+    };
+  }
+
+  function meanScopeTotal(t, scene, n, N, m, E, lo, hi, show, numeric) {
+    const greatest = t.chance(0.5);
+    const sign = greatest ? 1 : -1;
+    // Totals in the scene's units, from integer values in 1/scale units.
+    const total = (value) => tidy((N * value) / scene.scale);
+    const key = total(m + sign * E);
+    const stem = `${scene.intro(n, N)} ${scene.sample(show(m), show(lo), show(hi))} ${scene.margin(show(E))} ` +
+      `Based on these results, what is the ${greatest ? "greatest" : "least"} plausible value for the ${scene.total}?`;
+    const text = (value) => (value > 0 ? fmt(tidy(value)) : null);
+    const fields = {
+      stimulus: null,
+      figure: null,
+      stem,
+      explanation:
+        `The plausible values for the mean are ${show(m)} ± ${show(E)}, from ${show(m - E)} to ${show(m + E)} ${scene.unit} per ` +
+        `${scene.ones.replace(/s$/, "")}. The total for all ${fmt(N)} ${scene.ones} is ${fmt(N)} times the mean, so its ${greatest ? "greatest" : "least"} ` +
+        `plausible value is ${fmt(N)} × ${show(m + sign * E)} = ${fmt(key)}.`,
+      steps: [
+        `Plausible mean: ${show(m)} ${greatest ? "+" : MINUS} ${show(E)} = ${show(m + sign * E)} at the ${greatest ? "top" : "bottom"} of the range.`,
+        `The total is the number of ${scene.ones} times their mean: ${fmt(N)} × ${show(m + sign * E)}.`,
+        `${fmt(N)} × ${show(m + sign * E)} = ${fmt(key)}.`,
+      ],
+      principles: [
+        "A margin of error for a sample mean gives plausible values for the population mean.",
+        "A total over a population is its size times its mean, so the whole interval for the mean scales by the size.",
+      ],
+      trap: `Adding the margin of error, ${show(E)}, to the estimated total treats it as a margin for the total; it is a margin for the mean of each ${scene.ones.replace(/s$/, "")}, so it scales by ${fmt(N)} too.`,
+      hint: "What is the total in terms of the mean, and what range of means is plausible?",
+      estimatedSeconds: 120,
+    };
+    const item = packRanked(t, numeric, key, [
+      [total(m) + sign * E / scene.scale, `Adds the margin of error, ${show(E)}, to the estimated total once instead of scaling it by the ${fmt(N)} ${scene.ones}.`],
+      [total(m), `Gives the estimated total, ${fmt(total(m))}, ignoring the margin of error.`],
+      [total(greatest ? hi : lo), `Uses the ${greatest ? "largest" : "smallest"} value in the sample, ${show(greatest ? hi : lo)}, as if every ${scene.ones.replace(/s$/, "")} matched it; the interval for the mean is much narrower.`],
+      [total(m + 2 * sign * E), "Moves twice the margin of error from the estimate."],
+      [total(m - sign * E), `Gives the ${greatest ? "least" : "greatest"} plausible total instead.`],
+      [tidy((n * (m + sign * E)) / scene.scale), `Multiplies by the ${n} ${scene.ones} in the sample instead of all ${fmt(N)}.`],
+    ], fields, { show: text, places: 9 });
+    if (!item) return null;
+    return {
+      ...item,
+      verify: () => {
+        const clean = stem.replace(/,(\d{3})/g, "$1");
+        const size = Number(clean.match(/(?:of the|filled|has) (\d+) /)[1]);
+        const [center, width] = [Number(clean.match(/(?:sample was|for the sample was) ([\d.]+)/)[1]), Number(clean.match(/ is ([\d.]+) \w+\. Based/)[1])];
+        return close(size * (center + sign * width), key, 1e-9) &&
+          (numeric || item.wrong.every(([choice]) => !close(parseNumber(choice), key, 1e-9)));
+      },
+    };
+  }
+
+  const intervalMeanScope = {
+    id: "interval-mean-scope",
+    domain: DATA,
+    skill: "Statistical inference",
+    subskill: "margin of error",
+    difficulty: "Hard",
+    title: "What a margin of error for a mean describes",
+    recognize:
+      "The margin of error bounds the population mean, not individual values, which vary far more; it gives plausible values, " +
+      "not certain ones, for the population sampled; a total is the size times the mean, so the whole interval scales.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["must-vs-could", "wrong-quantity", "neighbouring-rule"],
+    build(t) {
+      const withTotal = t.chance(0.45);
+      const scene = t.pick(withTotal ? MEAN_SCENES.filter((entry) => entry.total) : MEAN_SCENES);
+      const numeric = withTotal && t.chance(0.4);
+      return retry(() => {
+        const n = t.pick(scene.sizes);
+        const N = scene.pops ? t.pick(scene.pops) : null;
+        const m = t.int(scene.center[0], scene.center[1]);
+        const lo = m - t.int(scene.below[0], scene.below[1]);
+        const hi = m + t.int(scene.above[0], scene.above[1]);
+        const E = Math.round((1.96 * ((hi - lo) / 4.6)) / Math.sqrt(n));
+        if (E < 1) return null;
+        const show = (value) => num(tidy(value / scene.scale));
+        const item = withTotal
+          ? meanScopeTotal(t, scene, n, N, m, E, lo, hi, show, numeric)
+          : meanScopeConclusion(t, scene, n, N, m, E, lo, hi, show);
+        return item && (!numeric || fitsGrid(item.correct)) ? item : null;
+      });
+    },
+  };
+
+  return [methodChoice, marginSize, sampleEstimate, markRecapture, sampleInference, twoEstimates, intervalMeanScope];
 });

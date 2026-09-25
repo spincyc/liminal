@@ -10,18 +10,18 @@
 
   // Percentages templates (Problem-Solving and Data Analysis), ordered Easy, Medium, Hard.
 
-  const { MINUS, num } = S;
+  const { MINUS, money, article, plural } = S;
+  // Every printed number is grouped by thousands ("1,750 milliliters").
+  const num = S.grouped;
   const {
-    DATA, tidy, isClean, fitsGrid, fmt, shown, retry, pack, close, DOMAIN, offerHard, finish,
+    DATA, tidy, isClean, fitsGrid, fmt, shown, retry, pack, close, DOMAIN, offerHard, finish, packRanked,
   } = C;
 
-  // "$96" or "$76.80".
-  function money(value) {
-    const v = tidy(value);
-    if (Number.isInteger(v)) return `$${fmt(v)}`;
-    const [whole, cents] = v.toFixed(2).split(".");
-    return `$${fmt(Number(whole))}.${cents}`;
-  }
+  // Every modelled mistake that prints as the key redraws the item.
+  const packStrict = (numeric, keyValue, keyText, candidates, fields) => pack(numeric, keyValue, keyText, candidates, fields, true);
+
+  // "a 12% increase", "an 18% tip": the article agrees with the number as it is read.
+  const aPercent = (value) => `${article(value)} ${num(value)}%`;
 
   /* ======================================== percent-of-a-quantity (Easy) */
 
@@ -58,11 +58,13 @@
     },
   ];
 
+  // Each scene's percents are ones the setting really uses: sales tax stays
+  // under 10%, tips run 15-25%, discounts up to half off.
   const PRICE_SCENES = [
-    { up: false, stem: (P, p, numeric) => `A jacket that regularly costs ${money(P)} is on sale for ${p}% off the regular price. What is the sale price of the jacket${numeric ? ", in dollars" : ""}?`, change: "discount" },
-    { up: false, stem: (P, p, numeric) => `The regular price of a lamp is ${money(P)}. During a sale, the price is reduced by ${p}%. What is the sale price of the lamp${numeric ? ", in dollars" : ""}?`, change: "discount" },
-    { up: true, stem: (P, p, numeric) => `The price of a bicycle is ${money(P)} before tax. A sales tax of ${p}% is added to this price. What is the total cost of the bicycle, including tax${numeric ? ", in dollars" : ""}?`, change: "tax" },
-    { up: true, stem: (P, p, numeric) => `The bill for a group's dinner is ${money(P)}. The group adds a ${p}% tip to the bill. What is the total amount the group pays${numeric ? ", in dollars" : ""}?`, change: "tip" },
+    { up: false, percents: [10, 15, 20, 25, 30, 35, 40, 50], stem: (P, p, numeric) => `A jacket that regularly costs ${money(P)} is on sale for ${p}% off the regular price. What is the sale price of the jacket${numeric ? ", in dollars" : ""}?`, change: "discount" },
+    { up: false, percents: [5, 10, 15, 20, 25, 30, 40], stem: (P, p, numeric) => `The regular price of a lamp is ${money(P)}. During a sale, the price is reduced by ${p}%. What is the sale price of the lamp${numeric ? ", in dollars" : ""}?`, change: "discount" },
+    { up: true, percents: [4, 5, 6, 7, 8, 9], stem: (P, p, numeric) => `The price of a bicycle is ${money(P)} before tax. A sales tax of ${p}% is added to this price. What is the total cost of the bicycle, including tax${numeric ? ", in dollars" : ""}?`, change: "tax" },
+    { up: true, percents: [15, 18, 20, 22, 25], stem: (P, p, numeric) => `The bill for a group's dinner is ${money(P)}. The group adds ${aPercent(p)} tip to the bill. What is the total amount the group pays${numeric ? ", in dollars" : ""}?`, change: "tip" },
   ];
 
   const PERCENTS = [5, 8, 12, 15, 20, 25, 30, 35, 40, 45, 55, 60, 65, 70, 75, 85];
@@ -81,10 +83,11 @@
 
   const PERCENT_SIZES = [10, 20, 25, 30, 40, 50, 60, 75];
 
-  // A signed percent change; decreases stop at 60%.
-  function drawChange(t) {
-    const size = t.pick(PERCENT_SIZES);
-    return size > 60 || t.chance(0.5) ? size : -size;
+  // A signed percent change from the setting's own sizes (all sizes by
+  // default); decreases stop at 60%, and `upOnly` settings only rise.
+  function drawChange(t, sizes = PERCENT_SIZES, upOnly = false) {
+    const size = t.pick(sizes);
+    return upOnly || size > 60 || t.chance(0.5) ? size : -size;
   }
 
   const changed = (c) => `${c > 0 ? "increased" : "decreased"} by ${Math.abs(c)}%`;
@@ -97,7 +100,7 @@
 
   const TIMELINES = [
     {
-      money: false, low: 800, high: 20000, step: 20,
+      money: false, low: 800, high: 20000, step: 20, sizes: [10, 20, 25, 30, 40, 50],
       story: (c1, c2) => `The number of visitors to a science museum ${changed(c1)} from 2021 to 2022 and then ${changed(c2)} from 2022 to 2023.`,
       final: (v) => `The museum had ${fmt(v)} visitors in 2023.`,
       ask: "How many visitors did the museum have in 2021?",
@@ -105,7 +108,7 @@
       start: "2021 number", mid: "2022 number", end: "2023 number",
     },
     {
-      money: false, low: 2000, high: 60000, step: 100,
+      money: false, low: 2000, high: 60000, step: 100, sizes: [4, 5, 6, 8, 10, 12, 15, 20, 25],
       story: (c1, c2) => `The population of Millbrook ${changed(c1)} from 2010 to 2015 and then ${changed(c2)} from 2015 to 2020.`,
       final: (v) => `In 2020, the population of Millbrook was ${fmt(v)}.`,
       ask: "What was the population of Millbrook in 2010?",
@@ -113,7 +116,7 @@
       start: "2010 population", mid: "2015 population", end: "2020 population",
     },
     {
-      money: true, low: 40, high: 900, step: 4,
+      money: true, low: 40, high: 900, step: 4, sizes: [10, 20, 25, 30, 40, 50],
       story: (c1, c2) => `A store ${verbOf(c1)} the price of a coat by ${Math.abs(c1)}%. A month later, the store ${verbOf(c2)} the new price by ${Math.abs(c2)}%.`,
       final: (v) => `After both changes, the price of the coat was ${money(v)}.`,
       ask: "What was the price of the coat, in dollars, before either change?",
@@ -121,7 +124,7 @@
       start: "original price", mid: "price after the first change", end: "final price",
     },
     {
-      money: true, low: 600, high: 4000, step: 20,
+      money: true, low: 600, high: 4000, step: 20, sizes: [2, 3, 4, 5, 6, 8, 10, 12], upOnly: true,
       story: (c1, c2) => `When a lease was renewed in 2023, the monthly rent for an apartment ${changed(c1)}. When the lease was renewed in 2024, the monthly rent ${changed(c2)}.`,
       final: (v) => `After the 2024 renewal, the monthly rent was ${money(v)}.`,
       ask: "What was the monthly rent, in dollars, before the 2023 renewal?",
@@ -129,7 +132,7 @@
       start: "rent before 2023", mid: "rent after the 2023 renewal", end: "rent after the 2024 renewal",
     },
     {
-      money: false, low: 400, high: 30000, step: 20,
+      money: false, low: 400, high: 30000, step: 20, sizes: [10, 20, 25, 40, 50, 60, 75],
       story: (c1, c2) => `The number of subscribers to a podcast ${changed(c1)} from March to April and then ${changed(c2)} from April to May.`,
       final: (v) => `The podcast had ${fmt(v)} subscribers in May.`,
       ask: "How many subscribers did the podcast have in March?",
@@ -137,7 +140,7 @@
       start: "March number", mid: "April number", end: "May number",
     },
     {
-      money: false, low: 1000, high: 24000, step: 50,
+      money: false, low: 1000, high: 24000, step: 50, sizes: [4, 5, 6, 8, 10, 12, 15, 20],
       story: (c1, c2) => `Enrollment at a community college ${changed(c1)} from fall 2020 to fall 2021 and then ${changed(c2)} from fall 2021 to fall 2022.`,
       final: (v) => `In fall 2022, the college enrolled ${fmt(v)} students.`,
       ask: "How many students did the college enroll in fall 2020?",
@@ -156,42 +159,37 @@
     const show = ctx.money ? money : fmt;
     const places = ctx.money ? 2 : 0;
     return retry(() => {
-      const c1 = drawChange(t);
-      const c2 = drawChange(t);
+      const c1 = drawChange(t, ctx.sizes, ctx.upOnly);
+      const c2 = drawChange(t, ctx.sizes, ctx.upOnly);
       const start = t.int(Math.ceil(ctx.low / ctx.step), Math.floor(ctx.high / ctx.step)) * ctx.step;
       const mid = tidy((start * (100 + c1)) / 100);
       const end = tidy((mid * (100 + c2)) / 100);
       if (!Number.isInteger(mid) || !Number.isInteger(end)) return null;
       const product = tidy(((100 + c1) * (100 + c2)) / 10000);
       const combined = c1 + c2;
-      const candidates = [];
       const summed = tidy((end * 100) / (100 + combined));
-      const summedClean = 100 + combined > 0 && isClean(summed, places);
       // Multiple choice always offers the add-the-percents reflex.
-      if (!numeric && !summedClean) return null;
-      if (summedClean) {
-        candidates.push([show(summed), combined === 0
-          ? `Assumes the ${Math.abs(c1)}% ${nounOf(c1)} and the ${Math.abs(c2)}% ${nounOf(c2)} cancel, but they are percents of different amounts.`
-          : `Adds the percents into one change of ${combined > 0 ? "" : MINUS}${Math.abs(combined)}% and undoes it, but the ${Math.abs(c2)}% is a percent of the ${ctx.mid}.`]);
-      }
+      if (!numeric && !(100 + combined > 0 && isClean(summed, places))) return null;
       const flipped = tidy((end * (100 - c2) * (100 - c1)) / 10000);
-      if (isClean(flipped, places) && flipped > 0) {
-        candidates.push([show(flipped),
-          `Undoes each change with the opposite percent of the later amount (a ${Math.abs(c2)}% ${nounOf(-c2)}, then a ${Math.abs(c1)}% ${nounOf(-c1)}), so each percent has the wrong base.`]);
-      }
-      candidates.push([show(mid), `Undoes only the ${Math.abs(c2)}% ${nounOf(c2)}, which gives the ${ctx.mid}, not the ${ctx.start}.`]);
       const forward = tidy(end * product);
-      if (isClean(forward, places)) candidates.push([show(forward), "Applies both changes to the final amount again instead of undoing them."]);
-      const wrong = offerHard(show(start), candidates);
-      if (!numeric && wrong.length < 3) return null;
+      const firstOnly = tidy((end * 100) / (100 + c1));
+      // Every modelled slip must print as a real amount, so the key's rank
+      // among them can land anywhere, not only where the few clean ones sit.
+      if (!numeric && [summed, flipped, mid, forward, firstOnly].some((value) => !(value > 0 && isClean(value, places)))) return null;
       const both = `${multiplier(c1)} × ${multiplier(c2)} = ${num(product)}`;
-      return finish(numeric, {
+      return packRanked(t, numeric, start, [
+        [summed, combined === 0
+          ? `Assumes the ${Math.abs(c1)}% ${nounOf(c1)} and the ${Math.abs(c2)}% ${nounOf(c2)} cancel, but they are percents of different amounts.`
+          : `Adds the percents into one change of ${combined > 0 ? "" : MINUS}${Math.abs(combined)}% and undoes it, but the ${Math.abs(c2)}% is a percent of the ${ctx.mid}.`],
+        [flipped, `Undoes each change with the opposite percent of the later amount (${aPercent(Math.abs(c2))} ${nounOf(-c2)}, then ${aPercent(Math.abs(c1))} ${nounOf(-c1)}), so each percent has the wrong base.`],
+        [mid, `Undoes only the ${Math.abs(c2)}% ${nounOf(c2)}, which gives the ${ctx.mid}, not the ${ctx.start}.`],
+        [forward, "Applies both changes to the final amount again instead of undoing them."],
+        [firstOnly, `Undoes only the ${Math.abs(c1)}% ${nounOf(c1)}, as if the ${Math.abs(c2)}% ${nounOf(c2)} had not happened.`],
+      ], {
         stimulus: null,
         stem: `${ctx.story(c1, c2)} ${ctx.final(end)} ${ctx.ask}`,
-        correct: numeric ? start : show(start),
-        wrong,
         explanation:
-          `A ${Math.abs(c1)}% ${nounOf(c1)} multiplies an amount by ${multiplier(c1)}, and a ${Math.abs(c2)}% ${nounOf(c2)} multiplies ` +
+          `${cap(aPercent(Math.abs(c1)))} ${nounOf(c1)} multiplies an amount by ${multiplier(c1)}, and ${aPercent(Math.abs(c2))} ${nounOf(c2)} multiplies ` +
           `the new amount by ${multiplier(c2)}. Together they multiply the ${ctx.start} by ${both}, so the ${ctx.start} was ` +
           `${show(end)} ÷ ${num(product)} = ${show(start)}.`,
         steps: [
@@ -204,7 +202,7 @@
         trap: `Adding the percents (${combined > 0 ? "+" : combined < 0 ? MINUS : ""}${Math.abs(combined)}%) or undoing each change with the opposite percent treats every percent as a percent of the same amount; they are not.`,
         hint: "Each percent is a percent of a different amount. Describe each change by what it multiplies the amount by.",
         verify: () => S.approx(start * (1 + c1 / 100) * (1 + c2 / 100), end) && start > 0,
-      });
+      }, { show: numeric ? fmt : show, places });
     });
   }
 
@@ -251,12 +249,14 @@
     },
   ];
 
+  const CHAIN_SIZES = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 75, 80];
+
   function percentChain(t, numeric) {
     const ctx = t.pick(TRIADS);
     const [X, Y, Z] = ctx.names;
     return retry(() => {
-      const a = drawChange(t);
-      const b = drawChange(t);
+      const a = drawChange(t, CHAIN_SIZES);
+      const b = drawChange(t, CHAIN_SIZES);
       const ratio = tidy(((100 + a) * (100 + b)) / 100);
       if (ratio === 100) return null;
       const askOf = t.chance(0.5);
@@ -268,33 +268,30 @@
       const baseFirst = tidy((100 * (100 + b)) / (100 - a));
       const baseSecond = tidy((100 * (100 + a)) / (100 - b));
       const reverse = tidy(10000 / ratio);
-      const ok = (value) => value > 0 && isClean(value, 2);
       const candidates = [];
       if (askOf) {
-        if (ok(summed)) candidates.push([num(summed), `Adds the percents, 100 + (${num(a)}) + (${num(b)}), though they are percents of different amounts.`]);
-        candidates.push([num(gap), `Gives the percent by which ${ctx.of(X)} differs from ${ctx.of(Z)}, not ${ctx.of(X)} as a percent of ${ctx.of(Z)}.`]);
-        if (ok(baseFirst)) candidates.push([num(baseFirst), `Takes the ${Math.abs(a)}% of ${ctx.of(X)} instead of ${ctx.of(Y)}, the amount it is compared with.`]);
-        if (ok(baseSecond)) candidates.push([num(baseSecond), `Takes the ${Math.abs(b)}% of ${ctx.of(Y)} instead of ${ctx.of(Z)}, the amount it is compared with.`]);
-        if (ok(reverse)) candidates.push([num(reverse), `Finds ${ctx.of(Z)} as a percent of ${ctx.of(X)}, the reverse comparison.`]);
+        candidates.push([summed, `Adds the percents, 100 + (${num(a)}) + (${num(b)}), though they are percents of different amounts.`]);
+        candidates.push([gap, `Gives the percent by which ${ctx.of(X)} differs from ${ctx.of(Z)}, not ${ctx.of(X)} as a percent of ${ctx.of(Z)}.`]);
+        candidates.push([baseFirst, `Takes the ${Math.abs(a)}% of ${ctx.of(X)} instead of ${ctx.of(Y)}, the amount it is compared with.`]);
+        candidates.push([baseSecond, `Takes the ${Math.abs(b)}% of ${ctx.of(Y)} instead of ${ctx.of(Z)}, the amount it is compared with.`]);
+        candidates.push([reverse, `Finds ${ctx.of(Z)} as a percent of ${ctx.of(X)}, the reverse comparison.`]);
+        candidates.push([100 + a, `Applies only the first comparison, between ${ctx.of(X)} and ${ctx.of(Y)}.`]);
+        candidates.push([100 + b, `Applies only the second comparison, between ${ctx.of(Y)} and ${ctx.of(Z)}.`]);
       } else {
         const summedGap = Math.abs(a + b);
         if (summedGap > 0 && Math.sign(a + b) === Math.sign(ratio - 100)) {
-          candidates.push([num(summedGap), `Combines the two percents, ${num(a)} and ${num(b)}, as if both were percents of the same amount.`]);
+          candidates.push([summedGap, `Combines the two percents, ${num(a)} and ${num(b)}, as if both were percents of the same amount.`]);
         }
-        candidates.push([num(ratio), `Gives ${ctx.of(X)} as a percent of ${ctx.of(Z)} instead of the percent by which they differ.`]);
-        if (ok(baseFirst) && baseFirst !== 100) candidates.push([num(tidy(Math.abs(baseFirst - 100))), `Takes the ${Math.abs(a)}% of ${ctx.of(X)} instead of ${ctx.of(Y)}, the amount it is compared with.`]);
-        if (ok(baseSecond) && baseSecond !== 100) candidates.push([num(tidy(Math.abs(baseSecond - 100))), `Takes the ${Math.abs(b)}% of ${ctx.of(Y)} instead of ${ctx.of(Z)}, the amount it is compared with.`]);
-        if (ok(reverse)) candidates.push([num(tidy(Math.abs(reverse - 100))), `Measures the difference as a percent of ${ctx.of(X)} instead of ${ctx.of(Z)}.`]);
+        candidates.push([ratio, `Gives ${ctx.of(X)} as a percent of ${ctx.of(Z)} instead of the percent by which they differ.`]);
+        candidates.push([tidy(Math.abs(baseFirst - 100)), `Takes the ${Math.abs(a)}% of ${ctx.of(X)} instead of ${ctx.of(Y)}, the amount it is compared with.`]);
+        candidates.push([tidy(Math.abs(baseSecond - 100)), `Takes the ${Math.abs(b)}% of ${ctx.of(Y)} instead of ${ctx.of(Z)}, the amount it is compared with.`]);
+        candidates.push([tidy(Math.abs(reverse - 100)), `Measures the difference as a percent of ${ctx.of(X)} instead of ${ctx.of(Z)}.`]);
       }
-      const wrong = offerHard(num(key), candidates);
-      if (!numeric && wrong.length < 3) return null;
       const yValue = 100 + b;
       const text = `${ctx.link(X, a, Y)}, and ${ctx.link(Y, b, Z)}`;
-      return finish(numeric, {
+      return packRanked(t, numeric, key, candidates, {
         stimulus: null,
         stem: `${ctx.intro(text)} ${askOf ? ctx.askOf : ctx.askDiff(word)}`,
-        correct: key,
-        wrong,
         explanation:
           `Suppose ${ctx.of(Z)} is 100. Then ${ctx.of(Y)} is 100 × ${multiplier(b)} = ${num(yValue)}, and ${ctx.of(X)} is ` +
           `${num(yValue)} × ${multiplier(a)} = ${num(ratio)}. So ${ctx.of(X)} is ${num(ratio)}% of ${ctx.of(Z)}, which is ` +
@@ -321,60 +318,67 @@
           const expected = askOf ? percent : Math.abs(percent - 100);
           return S.approx(expected, key) && (askOf || (percent > 100) === (word === ctx.up));
         },
-      });
+      }, { show: num });
     });
   }
 
   function percentRestore(t, numeric) {
-    const ctx = t.pick(TIMELINES);
     return retry(() => {
-      const c1 = drawChange(t);
-      const c2 = drawChange(t);
+      const ctx = t.pick(TIMELINES);
+      const c1 = drawChange(t, ctx.sizes, ctx.upOnly);
+      const c2 = drawChange(t, ctx.sizes, ctx.upOnly);
       const product = (100 + c1) * (100 + c2);
       if (product === 10000) return null;
-      const need = tidy((1000000 - 100 * product) / product);
-      const key = Math.abs(need);
-      if (!isClean(key, 2) || !fitsGrid(key)) return null;
+      const need = (1000000 - 100 * product) / product;
+      const exactKey = tidy(Math.abs(need));
+      // Most pairs of changes restore by a percent that does not terminate;
+      // those are asked as "closest to", with every choice to the nearest
+      // whole percent. A student-produced answer must be exact.
+      const exact = isClean(exactKey, 2) && fitsGrid(exactKey);
+      if (numeric && !exact) return null;
+      const round = (value) => (exact ? tidy(value) : Math.round(value));
+      const key = round(exactKey);
+      if (key === 0) return null;
+      const about = exact ? "" : "about ";
       const verb = need > 0 ? "increased" : "decreased";
       const net = tidy(Math.abs(product - 10000) / 100);
-      const lastOnly = tidy(Math.abs((100 * c2) / (100 + c2)));
-      const candidates = [];
-      candidates.push([num(net), `Reuses the net change, ${num(net)}%, which is a percent of the ${ctx.start}, as a percent of the ${ctx.end}.`]);
-      if (c1 + c2 !== 0 && Math.sign(-(c1 + c2)) === Math.sign(need)) {
-        candidates.push([num(Math.abs(c1 + c2)), `Reverses the sum of the two changes, ${num(c1)}% and ${num(c2)}%, as if they were percents of one amount.`]);
-      }
-      if (isClean(lastOnly, 2)) candidates.push([num(lastOnly), `Undoes only the second change, which returns to the ${ctx.mid}, not the ${ctx.start}.`]);
-      const firstOnly = tidy(Math.abs((100 * c1) / (100 + c1)));
-      if (isClean(firstOnly, 2)) candidates.push([num(firstOnly), `Undoes only the first change, as if the second had not happened.`]);
-      const wrong = offerHard(num(key), candidates);
-      if (!numeric && wrong.length < 3) return null;
+      const lastOnly = round(Math.abs((100 * c2) / (100 + c2)));
+      const firstOnly = round(Math.abs((100 * c1) / (100 + c1)));
+      const candidates = [
+        [net, `Reuses the net change, ${num(net)}%, which is a percent of the ${ctx.start}, as a percent of the ${ctx.end}.`],
+        [c1 + c2 !== 0 && Math.sign(-(c1 + c2)) === Math.sign(need) ? Math.abs(c1 + c2) : NaN,
+          `Reverses the sum of the two changes, ${num(c1)}% and ${num(c2)}%, as if they were percents of one amount.`],
+        [lastOnly, `Undoes only the second change, which returns to the ${ctx.mid}, not the ${ctx.start}.`],
+        [firstOnly, `Undoes only the first change, as if the second had not happened.`],
+      ];
       const combined = tidy(product / 10000);
-      const inverse = tidy(10000 / product);
-      return finish(numeric, {
+      const inverse = 10000 / product;
+      const stem = `${ctx.story(c1, c2)} ${ctx.restore(verb)}`;
+      return packRanked(t, numeric, key, candidates, {
         stimulus: null,
-        stem: `${ctx.story(c1, c2)} ${ctx.restore(verb)}`,
-        correct: key,
-        wrong,
+        stem: exact ? stem : stem.replace("What is the value of p?", "Which of the following is closest to the value of p?"),
         explanation:
           `The two changes multiply the ${ctx.start} by ${multiplier(c1)} × ${multiplier(c2)} = ${num(combined)}. To return to it, the ` +
-          `${ctx.end} must be multiplied by 1 ÷ ${num(combined)} = ${num(inverse)}, which is a ${num(key)}% ${need > 0 ? "increase" : "decrease"}.`,
+          `${ctx.end} must be multiplied by 1 ÷ ${num(combined)} = ${about}${num(inverse)}, which is ${about}${aPercent(key)} ${need > 0 ? "increase" : "decrease"}.`,
         steps: [
           `Write the changes as multipliers: ${multiplier(c1)} and ${multiplier(c2)}.`,
           `Combine them: the ${ctx.end} is ${num(combined)} times the ${ctx.start}.`,
-          `The multiplier that undoes this is 1 ÷ ${num(combined)} = ${num(inverse)}.`,
-          `A multiplier of ${num(inverse)} is a change of ${need > 0 ? "+" : MINUS}${num(key)}%, so p = ${num(key)}.`,
+          `The multiplier that undoes this is 1 ÷ ${num(combined)} = ${about}${num(inverse)}.`,
+          `A multiplier of ${about}${num(inverse)} is a change of ${need > 0 ? "+" : MINUS}${about}${num(key)}%, so p is ${about}${num(key)}.`,
         ],
         principles: PERCENT_PRINCIPLES,
-        trap: `The net change is ${num(net)}% of the ${ctx.start}, but the change back is a percent of the ${ctx.end}, a different base, so it is ${num(key)}%, not ${num(net)}%.`,
+        trap: `The net change is ${num(net)}% of the ${ctx.start}, but the change back is a percent of the ${ctx.end}, a different base, so it is ${about}${num(key)}%, not ${num(net)}%.`,
         hint: "The change back is a percent of the latest amount. How does the latest amount compare with the original?",
         verify: () => {
+          // Follow an amount through both changes, then measure the gap back
+          // to where it started as a percent of the latest amount.
           let amount = 1000;
           amount += (amount * c1) / 100;
           amount += (amount * c2) / 100;
-          amount += (amount * (need > 0 ? key : -key)) / 100;
-          return S.approx(amount, 1000);
+          const back = (100 * Math.abs(1000 - amount)) / amount;
+          return (amount < 1000) === (need > 0) && (exact ? close(back, key) : Math.abs(back - key) <= 0.5);
         },
-      });
+      }, { show: num });
     });
   }
 
@@ -400,20 +404,23 @@
       if (form === "price") {
         const scene = t.pick(PRICE_SCENES);
         return retry(() => {
-          const p = t.pick([5, 8, 10, 15, 20, 25, 30, 35, 40]);
+          const p = t.pick(scene.percents);
           const Pr = t.pick([20, 24, 40, 48, 60, 75, 80, 90, 120, 150, 180, 240, 300, 360]);
           const change = tidy((Pr * p) / 100);
           if (!isClean(change, 2)) return null;
           const key = tidy(scene.up ? Pr + change : Pr - change);
           const other = tidy(scene.up ? Pr - change : Pr + change);
           const show = numeric ? fmt : money;
+          const tenfold = tidy(scene.up ? Pr + 10 * change : Pr - 10 * change);
           const candidates = [
-            [show(change), `Gives the amount of the ${scene.change}, ${p}% of ${money(Pr)}, instead of the ${scene.up ? "total" : "sale price"}.`],
-            [show(other), scene.up ? `Subtracts the ${p}% ${scene.change} instead of adding it.` : `Adds ${p}% to the price instead of subtracting it.`],
-            [Pr > p ? show(scene.up ? Pr + p : Pr - p) : null, `${scene.up ? "Adds" : "Subtracts"} ${p} dollars instead of ${p}% of the price.`],
+            [change, `Gives the amount of the ${scene.change}, ${p}% of ${money(Pr)}, instead of the ${scene.up ? "total" : "sale price"}.`],
+            [other, scene.up ? `Subtracts the ${p}% ${scene.change} instead of adding it.` : `Adds ${p}% to the price instead of subtracting it.`],
+            [scene.up ? Pr + p : Pr - p, `${scene.up ? "Adds" : "Subtracts"} ${p} dollars instead of ${p}% of the price.`],
+            [tenfold, `Writes ${p}% as ${num(p / 10)} instead of ${num(p / 100)}, so the ${scene.change} comes out ten times too large.`],
+            [Pr, `Gives the ${scene.up ? "price before the " + scene.change : "regular price"}, leaving out the ${scene.change}.`],
           ];
           const word = scene.up ? "increases" : "decreases";
-          return pack(numeric, key, show(key), candidates, {
+          return packRanked(t, numeric, key, candidates, {
             stimulus: null,
             figure: null,
             stem: scene.stem(Pr, p, numeric),
@@ -430,7 +437,7 @@
             hint: `How many dollars is the ${scene.change}, and what happens to the price because of it?`,
             estimatedSeconds: 60,
             verify: () => close((scene.up ? key - Pr : Pr - key) * 100, Pr * p),
-          });
+          }, { show });
         });
       }
       const scene = t.pick(COUNT_SCENES);
@@ -440,11 +447,16 @@
         if (!N || N === 100) return null;
         const k = (N * p) / 100;
         if (form === "part") {
-          return pack(numeric, k, fmt(k), [
-            [shown(N - k, 0), `Gives the number of ${scene.no}, the other ${100 - p}%.`],
-            [shown(N + k, 0), `Increases ${fmt(N)} by ${p}% instead of finding ${p}% of ${fmt(N)}.`],
-            [isClean(k / 10, 1) ? shown(k / 10, 1) : shown(k * 10, 0), `Misplaces the decimal point in writing ${p}% as a decimal.`],
-            [shown(N - p, 0), `Subtracts ${p} from ${fmt(N)}, treating the percent as a count.`],
+          return packRanked(t, numeric, k, [
+            [N - k, `Gives the number of ${scene.no}, the other ${100 - p}%.`],
+            [N + k, `Increases ${fmt(N)} by ${p}% instead of finding ${p}% of ${fmt(N)}.`],
+            // One decimal slip at most, so the key is not the middle of a tenfold ladder.
+            ...t.sample([
+              [k / 10, `Writes ${p}% as ${num(p / 1000)} instead of ${num(p / 100)}, misplacing the decimal point.`],
+              [k * 10, `Writes ${p}% as ${num(p / 10)} instead of ${num(p / 100)}, misplacing the decimal point.`],
+            ], 1),
+            [N - p, `Subtracts ${p} from ${fmt(N)}, treating the percent as a count.`],
+            [p, `Gives the percent, ${p}, as if it were the number of ${scene.no.replace(/ (who|that) (do not|are not|did not).*$/, "")}.`],
           ], {
             stimulus: null,
             figure: null,
@@ -460,16 +472,17 @@
             hint: `Which number is the whole that the ${p}% is taken of?`,
             estimatedSeconds: 55,
             verify: () => k * 100 === N * p,
-          });
+          }, { places: 1 });
         }
         if (form === "percent") {
-          const keyText = numeric ? fmt(p) : `${p}%`;
           const reversed = (100 * N) / k;
-          return pack(numeric, p, keyText, [
-            [`${100 - p}%`, `Gives the percent of ${scene.no}.`],
-            [isClean(k / N, 3) ? `${num(tidy(k / N))}%` : null, `Gives the fraction ${fmt(k)}/${fmt(N)} as a decimal, without multiplying by 100 to make a percent.`],
-            [isClean(reversed, 2) ? `${fmt(reversed)}%` : null, `Divides ${fmt(N)} by ${fmt(k)}; the percent compares the part with the whole, not the whole with the part.`],
-            [k !== p && k < 100 ? `${fmt(k)}%` : null, `Gives the count, ${fmt(k)}, as if it were the percent.`],
+          return packRanked(t, numeric, p, [
+            [100 - p, `Gives the percent of ${scene.no}.`],
+            [tidy(k / N), `Gives the fraction ${fmt(k)}/${fmt(N)} as a decimal, without multiplying by 100 to make a percent.`],
+            [reversed, `Divides ${fmt(N)} by ${fmt(k)}; the percent compares the part with the whole, not the whole with the part.`],
+            [k < 100 ? k : NaN, `Gives the count, ${fmt(k)}, as if it were the percent.`],
+            [tidy((100 * k) / (N - k)), `Compares the part with the rest, ${fmt(N - k)}, instead of with the whole.`],
+            [tidy(p / 10), `Multiplies ${fmt(k)}/${fmt(N)} = ${num(tidy(k / N))} by 10 instead of 100 to write it as a percent.`],
           ], {
             stimulus: null,
             figure: null,
@@ -485,14 +498,15 @@
             hint: "Which number is the part, and which is the whole?",
             estimatedSeconds: 60,
             verify: () => p * N === 100 * k,
-          });
+          }, { show: (value) => (numeric ? fmt(value) : `${num(value)}%`), places: 3 });
         }
         const complementWhole = (100 * k) / (100 - p);
-        return pack(numeric, N, fmt(N), [
-          [shown((k * p) / 100, 2), `Takes ${p}% of ${fmt(k)}; ${fmt(k)} is already the part, and the whole is unknown.`],
-          [shown(N - k, 0), `Gives the number of ${scene.no}, the rest of the whole.`],
-          [shown((k * (100 + p)) / 100, 2), `Increases ${fmt(k)} by ${p}%, but ${fmt(k)} is ${p}% of the whole, not 100%.`],
-          [shown(complementWhole, 0), `Treats ${fmt(k)} as the other ${100 - p}% of the whole.`],
+        return packRanked(t, numeric, N, [
+          [(k * p) / 100, `Takes ${p}% of ${fmt(k)}; ${fmt(k)} is already the part, and the whole is unknown.`],
+          [N - k, `Gives the number of ${scene.no}, the rest of the whole.`],
+          [(k * (100 + p)) / 100, `Increases ${fmt(k)} by ${p}%, but ${fmt(k)} is ${p}% of the whole, not 100%.`],
+          [Number.isInteger(complementWhole) ? complementWhole : NaN, `Treats ${fmt(k)} as the other ${100 - p}% of the whole.`],
+          [10 * N, `Writes ${p}% as ${num(p / 1000)} instead of ${num(p / 100)} before dividing, which makes the whole ten times too large.`],
         ], {
           stimulus: null,
           figure: null,
@@ -518,17 +532,39 @@
     domain: DOMAIN,
     skill: "Percentages",
     subskill: "percent change",
-    title: "Successive and chained percent changes",
+    difficulty: "Hard",
+    title: "Chained comparisons and the change that restores an amount",
     recognize:
       "Every percent is a percent of the amount just before it, so changes and comparisons combine by multiplying their " +
-      "multipliers; a change is undone by dividing, never by the opposite percent.",
+      "multipliers; the change that restores an amount is a percent of the latest amount, so it is found by dividing.",
+    // Hard: the chain has no amounts at all, and the restoring change is a
+    // percent of a base the stem never names; adding or reversing the
+    // given percents produces offered answers.
     rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
     tricks: ["percent-base", "neighbouring-rule", "intermediate-value", "wrong-quantity"],
     build(t) {
-      const form = t.int(0, 2);
       const numeric = t.chance(0.45);
-      const instance = [percentReverse, percentChain, percentRestore][form](t, numeric);
+      const instance = t.chance(0.5) ? percentChain(t, numeric) : percentRestore(t, numeric);
       return { estimatedSeconds: 100, ...instance };
+    },
+  };
+
+  const successivePercentUndo = {
+    id: "successive-percent-undo",
+    domain: DATA,
+    skill: "Percentages",
+    subskill: "percent change",
+    difficulty: "Medium",
+    title: "The amount before two percent changes",
+    recognize:
+      "Each change multiplies the amount just before it, so the two multipliers combine by multiplying; the original is " +
+      "the final amount divided by that product, not the result of adding or reversing the percents.",
+    // Medium: the amounts are concrete and the question names what is
+    // wanted; the work is two multipliers and one division.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    tricks: ["percent-base", "intermediate-value"],
+    build(t) {
+      return { estimatedSeconds: 95, ...percentReverse(t, t.chance(0.4)) };
     },
   };
 
@@ -648,23 +684,34 @@
         }
         const pct = (value) => (numeric ? fmt(value) : `${num(value)}%`);
         const baseNew = tidy((diff * 100) / b);
+        // Process slips first; at most one slip that is a plain transform of
+        // the key (the decimal point, or new as a percent of old), so the key
+        // is not the one value every other choice is built from.
+        const transform = t.pick([
+          [up ? 100 + size : 100 - size, `Gives the new amount as a percent of the original amount, not the percent change.`],
+          [tidy(size / 100), `Finds the change as the decimal ${num(size / 100)} and writes it as a percent without multiplying by 100.`],
+          [tidy(size / 10), `Multiplies ${num(size / 100)} by 10 instead of 100 to write it as a percent.`],
+        ]);
         const candidates = [
-          [isClean(baseNew, 2) ? pct(baseNew) : null, `Divides the change, ${show(diff)}, by the new amount, ${show(b)}, instead of by the original amount, ${show(a)}.`],
-          [pct(up ? 100 + size : 100 - size), `Gives the new amount as a percent of the original amount, not the percent change.`],
-          [`${num(size / 100)}%`, `Finds the change as the decimal ${num(size / 100)} and writes it as a percent without multiplying by 100.`],
-          [diff < 100 && diff !== size ? pct(diff) : null, `Gives the change itself, ${show(diff)}, as if it were the percent.`],
-          ...others.map((other) => [other.size !== size ? pct(other.size) : null, "Reads the values from a different row of the table."]),
+          [baseNew, `Divides the change, ${show(diff)}, by the new amount, ${show(b)}, instead of by the original amount, ${show(a)}.`],
+          [tidy(10000 / size), `Divides the original amount by the change, ${show(a)} ÷ ${show(diff)}, instead of the change by the original amount.`],
+          [tidy((200 * diff) / (a + b)), `Divides the change by the average of the two amounts, ${show(tidy((a + b) / 2))}, instead of by the original amount.`],
+          [diff < 100 ? diff : NaN, `Gives the change itself, ${show(diff)}, as if it were the percent.`],
+          [tidy(diff / 100), `Divides the change by 100 instead of by the original amount, ${show(a)}.`],
+          [tidy((100 * a) / b), `Divides the original amount by the new amount, ${show(a)} ÷ ${show(b)}, and writes that as a percent.`],
+          ...others.map((other) => [other.size, "Reads the values from a different row of the table."]),
+          transform,
         ];
         const stem = numeric
           ? `${lead} If ${subject} ${verb}d by p%${span}, what is the value of p?`
           : `${lead} By what percent did ${subject} ${verb}${span}?`;
-        return pack(numeric, size, pct(size), candidates, {
+        return packRanked(t, numeric, size, candidates, {
           stimulus,
           figure: null,
           stem,
           explanation:
             `The change is ${show(b)} ${MINUS} ${show(a)} = ${up ? "" : MINUS}${show(diff)}. As a fraction of the original amount, ` +
-            `${show(diff)} ÷ ${show(a)} = ${num(size / 100)}, which is a ${num(size)}% ${verb}.`,
+            `${show(diff)} ÷ ${show(a)} = ${num(size / 100)}, which is ${aPercent(size)} ${verb}.`,
           steps: [
             `Find the change: ${show(diff)}.`,
             `Divide by the original amount, ${show(a)}: ${num(size / 100)}.`,
@@ -687,7 +734,7 @@
             }
             return close(old + (old * (up ? size : -size)) / 100, now);
           },
-        });
+        }, { show: pct, places: 3 });
       });
     },
   };
@@ -870,7 +917,7 @@
             [shown((N * Math.abs(a - b)) / 100, 0), `Combines the percents by subtracting, ${Math.max(a, b)}% ${MINUS} ${Math.min(a, b)}%, and takes that of ${fmt(N)}.`],
             ...otherShares.map((other) => [shown((N * other * b) / 10000, 0), "Reads the percent from a different row of the table."]),
           ];
-          return pack(numeric, key, fmt(key), candidates, {
+          return packStrict(numeric, key, fmt(key), candidates, {
             stimulus,
             figure: null,
             stem: `${lead} ${inTable ? ctx.count(row) : ctx.count}`,
@@ -903,7 +950,7 @@
             ...otherShares.map((other) => [isClean((other * b) / 100, 2) ? pct(tidy((other * b) / 100)) : null, "Reads the percent from a different row of the table."]),
           ];
           const phrase = inTable ? ctx.pct(row) : ctx.pct;
-          return pack(numeric, share, pct(share), candidates, {
+          return packStrict(numeric, share, pct(share), candidates, {
             stimulus,
             figure: null,
             stem: numeric ? `${lead} If p% ${phrase}, what is the value of p?` : `${lead} What percent ${phrase}?`,
@@ -930,7 +977,7 @@
           [shown((x * a * b) / 10000, 2), `Applies both percents to ${fmt(x)} instead of undoing them.`],
           [shown((x * 100) / Math.abs(a - b), 0), `Subtracts the percents and divides by ${Math.abs(a - b)}%.`],
         ];
-        return pack(numeric, N, fmt(N), candidates, {
+        return packStrict(numeric, N, fmt(N), candidates, {
           stimulus: null,
           figure: null,
           stem: `${ctx.openNoN(a)} ${ctx.second(b)} ${ctx.whole(x)}`,
@@ -998,6 +1045,34 @@
       askK: "The number of visitors to the website in March can be written as km, where k is a constant. What is the value of k?",
       what: "the number of visitors in March",
     },
+    {
+      v: "p", first: [-1, [5, 10, 15, 20, 25, 30]], second: [1, [5, 10, 15, 20, 25]],
+      story: (a, b) => `The number of trout in a lake was p at the start of a year. The number decreased by ${a}% during the year, and then a stocking program increased the new number by ${b}%.`,
+      ask: "Which expression represents the number of trout after the stocking program?",
+      askK: "The number of trout after the stocking program can be written as kp, where k is a constant. What is the value of k?",
+      what: "the number of trout after stocking",
+    },
+    {
+      v: "s", first: [1, [2, 3, 4, 5, 6, 8, 10]], second: [1, [2, 3, 4, 5, 6, 8, 10]],
+      story: (a, b) => `An employee's annual salary was s dollars. The salary increased by ${a}% after one year and then by ${b}% of the new salary after the second year.`,
+      ask: "Which expression represents the employee's annual salary, in dollars, after the two increases?",
+      askK: "The employee's annual salary, in dollars, after the two increases can be written as ks, where k is a constant. What is the value of k?",
+      what: "the salary after two increases",
+    },
+    {
+      v: "w", first: [-1, [10, 20, 25, 30, 40, 50]], second: [-1, [10, 20, 25, 30, 40]],
+      story: (a, b) => `A block of ice had a mass of w kilograms. In the first hour, ${a}% of its mass melted, and in the second hour, ${b}% of the remaining mass melted.`,
+      ask: "Which expression represents the mass, in kilograms, of the ice after the second hour?",
+      askK: "The mass, in kilograms, of the ice after the second hour can be written as kw, where k is a constant. What is the value of k?",
+      what: "the mass after two hours",
+    },
+    {
+      v: "q", first: [1, [10, 20, 25, 30, 40, 50, 60]], second: [-1, [10, 15, 20, 25, 30, 40]],
+      story: (a, b) => `A factory produced q units in its first month. Production increased by ${a}% in the second month and then fell by ${b}% in the third month compared with the second month.`,
+      ask: "Which expression represents the number of units produced in the third month?",
+      askK: "The number of units produced in the third month can be written as kq, where k is a constant. What is the value of k?",
+      what: "the third month's production",
+    },
   ];
 
   // One change already applied; the amount before it is wanted.
@@ -1024,13 +1099,43 @@
     },
     {
       v: "t", sign: 1, sizes: [15, 18, 20, 22, 25],
-      story: (p) => `A restaurant bill came to t dollars after a ${p}% tip was added to the cost of the meal.`,
+      story: (p) => `A restaurant bill came to t dollars after ${aPercent(p)} tip was added to the cost of the meal.`,
       ask: "Which expression represents the cost, in dollars, of the meal before the tip?",
     },
     {
       v: "h", sign: -1, sizes: [2, 3, 4, 5, 6, 8],
       story: (p) => `After a wool sweater was washed, its length decreased by ${p}% to h inches.`,
       ask: "Which expression represents the length, in inches, of the sweater before it was washed?",
+    },
+    {
+      v: "c", sign: -1, sizes: [10, 15, 20, 25, 30, 40, 50, 60],
+      story: (p) => `A used textbook sells for c dollars, which is ${p}% less than the price of the book when new.`,
+      ask: "Which expression represents the price, in dollars, of the book when new?",
+    },
+    {
+      v: "m", sign: 1, sizes: [3, 4, 5, 6, 8, 10, 12, 15, 20],
+      story: (p) => `After ${aPercent(p)} raise, Jada's monthly salary is m dollars.`,
+      ask: "Which expression represents Jada's monthly salary, in dollars, before the raise?",
+    },
+    {
+      v: "k", sign: -1, sizes: [5, 8, 10, 12, 15, 20, 25],
+      story: (p) => `Over one year, the value of a car decreased by ${p}% to k dollars.`,
+      ask: "Which expression represents the value, in dollars, of the car at the start of the year?",
+    },
+    {
+      v: "n", sign: 1, sizes: [10, 20, 25, 30, 40, 50, 60, 75],
+      story: (p) => `A school's robotics club has n members this year, which is ${p}% more than the number of members last year.`,
+      ask: "Which expression represents the number of members the club had last year?",
+    },
+    {
+      v: "d", sign: -1, sizes: [10, 15, 20, 25, 30, 35, 40],
+      story: (p) => `A hiker's average speed on a steep trail was ${p}% less than her average speed on flat ground. Her average speed on the steep trail was d kilometers per hour.`,
+      ask: "Which expression represents her average speed, in kilometers per hour, on flat ground?",
+    },
+    {
+      v: "A", sign: 1, sizes: [5, 10, 15, 20, 25, 40, 50],
+      story: (p) => `The area of a town's park was increased by ${p}%. The area of the park after the increase is A acres.`,
+      ask: "Which expression represents the area, in acres, of the park before the increase?",
     },
   ];
 
@@ -1066,7 +1171,7 @@
     rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["percent-base", "equivalent-form", "neighbouring-rule"],
     build(t) {
-      const undo = t.chance(0.45);
+      const undo = t.chance(0.3);
       // A constant that undoes a change rarely terminates, so only the
       // two-change form asks for one.
       const numeric = !undo && t.chance(0.35);
@@ -1078,10 +1183,12 @@
           const v = ctx.v;
           const opposite = tidy(1 - (ctx.sign * p) / 100);
           const keyText = `${v}/${num(m)}`;
+          // The four choices cross two decisions, divide or multiply and by
+          // which multiplier, so no choice is the one the others vary around.
           const candidates = [
-            [`${num(opposite)}${v}`, `Undoes the ${p}% ${ctx.sign > 0 ? "increase" : "decrease"} with a ${p}% ${ctx.sign > 0 ? "decrease" : "increase"}, but that ${p}% would be a percent of the later amount, not the original.`],
+            [`${v}/${num(opposite)}`, `Divides by ${num(opposite)}, the multiplier for ${aPercent(p)} ${ctx.sign > 0 ? "decrease" : "increase"}, instead of by ${num(m)}, the multiplier for the change that happened.`],
+            [`${num(opposite)}${v}`, `Undoes the ${p}% ${ctx.sign > 0 ? "increase" : "decrease"} with ${aPercent(p)} ${ctx.sign > 0 ? "decrease" : "increase"}, but that ${p}% would be a percent of the later amount, not the original.`],
             [`${num(m)}${v}`, `Applies the ${p}% ${ctx.sign > 0 ? "increase" : "decrease"} again instead of undoing it.`],
-            [`${v} ${ctx.sign > 0 ? MINUS : "+"} ${num(p / 100)}`, `${ctx.sign > 0 ? "Subtracts" : "Adds"} ${num(p / 100)} as a number instead of changing ${v} by a percent.`],
           ];
           const check = () => {
             const original = 400;
@@ -1090,7 +1197,7 @@
               candidates.every(([text]) => !close(evalExpression(text, v, later), original));
           };
           if (!check()) return null;
-          return pack(false, null, keyText, candidates, {
+          return packStrict(false, null, keyText, candidates, {
             stimulus: null,
             figure: null,
             stem: `${ctx.story(p)} ${ctx.ask}`,
@@ -1130,17 +1237,26 @@
         const times = (x) => (x === 1 ? v : `${num(x)}${v}`);
         const form = (x, y) => (product ? `${num(x)}(${num(y)})${v}` : times(tidy(x * y)));
         const keyText = form(m1, m2);
+        const flipFirst = tidy(1 - (s1 * p) / 100);
         const partial = [form(partOnly, m2), `Uses ${num(partOnly)}, the ${p}% that ${s1 > 0 ? "is added" : "is taken off"}, instead of ${num(m1)}, the multiplier for the whole amount after the change.`];
-        const candidates = [
-          [times(combined), s1 * p + s2 * q === 0
-            ? `Assumes the ${p}% increase and the ${q}% decrease cancel, but the second percent is a percent of the changed amount.`
-            : `Combines the ${p}% and ${q}% changes into one change of ${s1 * p + s2 * q > 0 ? "+" : MINUS}${Math.abs(s1 * p + s2 * q)}%, but the second percent is a percent of the changed amount.`],
-          // Keeping the discount instead of the price after it is a real slip; keeping only an increase is not.
-          ...(s1 < 0 ? [partial] : []),
-          [`${num(m1)}${v} ${s2 > 0 ? "+" : MINUS} ${num(q / 100)}`, `${s2 > 0 ? "Adds" : "Subtracts"} ${num(q / 100)} as a number instead of changing the amount by ${q}%.`],
-          [form(m1, flipped), `Applies the ${q}% change in the wrong direction.`],
-          ...(s1 > 0 ? [partial] : []),
-        ];
+        // In product form the choices cross the direction of each change
+        // (a 2 x 2 grid), so no choice is the one the others vary around.
+        const candidates = product
+          ? [
+            [form(flipFirst, m2), `Applies the ${p}% change in the wrong direction.`],
+            [form(m1, flipped), `Applies the ${q}% change in the wrong direction.`],
+            [form(flipFirst, flipped), "Applies both changes in the wrong direction."],
+          ]
+          : [
+            [times(combined), s1 * p + s2 * q === 0
+              ? `Assumes the ${p}% increase and the ${q}% decrease cancel, but the second percent is a percent of the changed amount.`
+              : `Combines the ${p}% and ${q}% changes into one change of ${s1 * p + s2 * q > 0 ? "+" : MINUS}${Math.abs(s1 * p + s2 * q)}%, but the second percent is a percent of the changed amount.`],
+            // Keeping the discount instead of the price after it is a real slip; keeping only an increase is not.
+            ...(s1 < 0 ? [partial] : []),
+            [`${num(m1)}${v} ${s2 > 0 ? "+" : MINUS} ${num(q / 100)}`, `${s2 > 0 ? "Adds" : "Subtracts"} ${num(q / 100)} as a number instead of changing the amount by ${q}%.`],
+            [form(m1, flipped), `Applies the ${q}% change in the wrong direction.`],
+            ...(s1 > 0 ? [partial] : []),
+          ];
         const check = () => {
           const start = 500;
           const afterFirst = start + (start * s1 * p) / 100;
@@ -1150,7 +1266,7 @@
             (numeric || candidates.every(([text]) => !close(evalExpression(text, v, start), afterSecond)));
         };
         if (!check()) return null;
-        return pack(numeric, k, keyText, candidates, {
+        return packStrict(numeric, k, keyText, candidates, {
           stimulus: null,
           figure: null,
           stem: `${ctx.story(p, q)} ${numeric ? ctx.askK : ctx.ask}`,
@@ -1244,17 +1360,21 @@
     domain: DOMAIN,
     skill: "Percentages",
     subskill: "percent applications",
+    difficulty: "Medium",
     title: "Mixtures in which one part stays fixed",
     recognize:
       "Only one component is added or removed, so the other component's amount does not change: find that amount from " +
       "the original percent, then find the total that makes it the right percent afterward.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
+    // Medium: once the unchanged component is spotted the rest is two
+    // steps, and the stem says which component is added or removed.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
     tricks: ["percent-base", "intermediate-value", "wrong-quantity"],
     build(t) {
       const ctx = t.pick(MIXTURES);
       const askTotal = t.chance(0.5);
       const numeric = t.chance(0.35);
       const namedFixed = ctx.kind === "dilute" || ctx.kind === "boil";
+      const amount = (value) => plural(tidy(value), ctx.unit.slice(0, -1), ctx.unit);
       const adding = ctx.kind === "dilute" || ctx.kind === "enrich";
       return retry(() => {
         const V = t.int(Math.ceil(ctx.V[0] / ctx.V[2]), Math.floor(ctx.V[1] / ctx.V[2])) * ctx.V[2];
@@ -1276,38 +1396,37 @@
         const signed = (d) => tidy(adding ? V + d : V - d);
         const asked = (d) => (askTotal ? signed(d) : d);
         const candidates = [
-          [shown(asked(points)), `Takes the ${gap}-percentage-point change as ${gap}% of the original ${fmt(V)} ${ctx.unit}, but the ${ctx.fixed} amount is what stays fixed.`],
-          [shown(askTotal ? delta : T), askTotal
+          [asked(points), `Takes the ${gap}-percentage-point change as ${gap}% of the original ${fmt(V)} ${ctx.unit}, but the ${ctx.fixed} amount is what stays fixed.`],
+          [askTotal ? delta : T, askTotal
             ? `Gives the amount of ${ctx.changed} ${adding ? "added" : "removed"}, not the amount of ${ctx.mix} afterward.`
             : `Gives the amount of ${ctx.mix} afterward, not the amount of ${ctx.changed} ${adding ? "added" : "removed"}.`],
         ];
         if (ctx.kind === "dilute") {
           const relative = tidy((V * gap) / p);
-          candidates.push([shown(asked(relative)), `Changes the amount by ${gap}/${p} of ${fmt(V)}, the fraction by which the percent falls, instead of keeping the ${ctx.fixed} fixed.`]);
+          candidates.push([asked(relative), `Changes the amount by ${gap}/${p} of ${fmt(V)}, the fraction by which the percent falls, instead of keeping the ${ctx.fixed} fixed.`]);
         }
         if (ctx.kind === "dry") {
           const misread = tidy((I * 100) / q);
-          if (misread < V) candidates.push([shown(askTotal ? misread : tidy(V - misread)), `Treats ${q}% as the share of the ${ctx.fixed} afterward, but ${q}% is the share of water.`]);
+          if (misread < V) candidates.push([askTotal ? misread : tidy(V - misread), `Treats ${q}% as the share of the ${ctx.fixed} afterward, but ${q}% is the share of water.`]);
         }
         if (ctx.kind === "enrich") {
-          candidates.push([shown(asked(tidy((V * q) / 100))), `Adds ${q}% of the original ${fmt(V)} ${ctx.unit} as ${ctx.changed}.`]);
+          candidates.push([asked(tidy((V * q) / 100)), `Adds ${q}% of the original ${fmt(V)} ${ctx.unit} as ${ctx.changed}.`]);
         }
-        candidates.push([shown(gap, 0) && gap !== key ? shown(asked(gap)) : null, `Treats the ${gap}-percentage-point change as ${gap} ${ctx.unit}.`]);
-        candidates.push([shown(I), `Stops at the amount of ${ctx.fixed}, ${num(I)} ${ctx.unit}, which is the quantity that stays fixed.`]);
-        const wrong = offerHard(num(key), candidates);
-        if (!numeric && wrong.length < 3) return null;
-        return finish(numeric, {
+        candidates.push([asked(gap), `Treats the ${gap}-percentage-point change as ${amount(gap)}.`]);
+        candidates.push([I, `Stops at the amount of ${ctx.fixed}, ${amount(I)}, which is the quantity that stays fixed.`]);
+        candidates.push([askTotal ? V : tidy(V * p / 100), askTotal
+          ? `Keeps the original ${fmt(V)} ${ctx.unit}, as if changing the percent did not change the total.`
+          : `Gives ${p}% of the original ${fmt(V)} ${ctx.unit} instead of the amount of ${ctx.changed} ${adding ? "added" : "removed"}.`]);
+        return packRanked(t, numeric, key, candidates, {
           stimulus: null,
           stem: ctx.text(V, p, q, askTotal),
-          correct: numeric ? key : num(key),
-          wrong,
           explanation:
-            `Only ${ctx.changed} is ${adding ? "added" : "removed"}, so the amount of ${ctx.fixed} stays at ${fixedShare}% of ${fmt(V)} = ${num(I)} ${ctx.unit}. ` +
-            `Afterward that ${num(I)} ${ctx.unit} is ${fixedShareAfter}% of the ${ctx.mix}, so there are ${num(I)} ÷ ${num(fixedShareAfter / 100)} = ${num(T)} ${ctx.unit} of ${ctx.mix}, ` +
-            `and ${num(delta)} ${ctx.unit} of ${ctx.changed} ${adding ? "was added" : "was removed"}.`,
+            `Only ${ctx.changed} is ${adding ? "added" : "removed"}, so the amount of ${ctx.fixed} stays at ${fixedShare}% of ${fmt(V)} = ${amount(I)}. ` +
+            `Afterward that ${amount(I)} is ${fixedShareAfter}% of the ${ctx.mix}, so there are ${num(I)} ÷ ${num(fixedShareAfter / 100)} = ${amount(T)} of ${ctx.mix}, ` +
+            `and ${amount(delta)} of ${ctx.changed} ${adding ? "was added" : "was removed"}.`,
           steps: [
-            `The amount of ${ctx.fixed} does not change: ${fixedShare}% of ${fmt(V)} = ${num(I)} ${ctx.unit}.`,
-            `Afterward it is ${fixedShareAfter}% of the ${ctx.mix}: ${num(I)} ÷ ${num(fixedShareAfter / 100)} = ${num(T)} ${ctx.unit}.`,
+            `The amount of ${ctx.fixed} does not change: ${fixedShare}% of ${fmt(V)} = ${amount(I)}.`,
+            `Afterward it is ${fixedShareAfter}% of the ${ctx.mix}: ${num(I)} ÷ ${num(fixedShareAfter / 100)} = ${amount(T)}.`,
             `Change in ${ctx.changed}: ${adding ? `${num(T)} ${MINUS} ${fmt(V)}` : `${fmt(V)} ${MINUS} ${num(T)}`} = ${num(delta)}.`,
             `The question asks for ${askTotal ? `the ${ctx.mix} afterward` : `the ${ctx.changed} ${adding ? "added" : "removed"}`}: ${num(key)}.`,
           ],
@@ -1324,10 +1443,289 @@
             const named = (V * p) / 100 + (namedFixed ? 0 : adding ? d : -d);
             return total > 0 && close((named / total) * 100, q);
           },
-        });
+        }, { show: num, places: 2 });
       });
     },
   };
 
-  return [percentQuantity, percentChangeValues, percentSubgroup, percentExpression, successivePercent, percentMixture];
+  /* ================================ percent-of-equals-percent-of (Hard) */
+
+  // p% of one amount equals q% of another. The equation fixes the ratio of
+  // the amounts, inversely: the amount taken at the smaller percent is the
+  // larger amount.
+  const EQUAL_SHARES = [
+    {
+      x: "x", y: "y",
+      open: (p, q) => `For positive numbers x and y, ${p}% of x is equal to ${q}% of y.`,
+      askShare: "What percent of x + y is x?",
+      askTotal: (T) => `If x + y = ${fmt(T)}, what is the value of y?`,
+      askLess: (word) => `The value of y is what percent ${word} than the value of x?`,
+      yName: "y", xName: "x",
+    },
+    {
+      x: "juniors", y: "seniors",
+      open: (p, q) => `At a high school, ${p}% of the juniors and ${q}% of the seniors are in the school choir, and the choir has the same number of juniors as seniors.`,
+      askShare: "What percent of all the juniors and seniors at the school are juniors?",
+      askTotal: (T) => `The school has ${fmt(T)} juniors and seniors in all. How many seniors does the school have?`,
+      askLess: (word) => `The number of seniors at the school is what percent ${word} than the number of juniors?`,
+      yName: "the number of seniors", xName: "the number of juniors",
+    },
+    {
+      x: "road budget", y: "park budget",
+      open: (p, q) => `A town spent ${p}% of its road budget and ${q}% of its park budget on repairs, and the two amounts spent on repairs were equal.`,
+      askShare: "The road budget is what percent of the two budgets combined?",
+      askTotal: (T) => `The two budgets total ${money(T)}. What is the park budget, in dollars?`,
+      askLess: (word) => `The park budget is what percent ${word} than the road budget?`,
+      yName: "the park budget", xName: "the road budget",
+    },
+    {
+      x: "morning riders", y: "evening riders",
+      open: (p, q) => `On a bus route, ${p}% of the morning riders and ${q}% of the evening riders paid with a transit card, and the same number of riders paid with a transit card in the morning as in the evening.`,
+      askShare: "The morning riders were what percent of all the morning and evening riders?",
+      askTotal: (T) => `There were ${fmt(T)} morning and evening riders in all. How many evening riders were there?`,
+      askLess: (word) => `The number of evening riders was what percent ${word} than the number of morning riders?`,
+      yName: "the number of evening riders", xName: "the number of morning riders",
+    },
+  ];
+
+  const EQUAL_PERCENTS = [10, 12, 15, 16, 20, 24, 25, 30, 32, 36, 40, 45, 48, 50, 60, 64, 75, 80];
+
+  const percentEqualsPercent = {
+    id: "percent-of-equals-percent-of",
+    domain: DOMAIN,
+    skill: "Percentages",
+    subskill: "percent applications",
+    difficulty: "Hard",
+    title: "One percent of an amount equal to another percent of another",
+    recognize:
+      "p% of x = q% of y means px = qy, so x : y = q : p: the amount taken at the smaller percent is the larger amount. " +
+      "Turn the equation into that ratio before asking what fraction or percent of the total each amount is.",
+    // Hard: no amount is given, the relationship runs inversely (the larger
+    // percent goes with the smaller amount), and the question asks about a
+    // total or a percent difference the equation never mentions.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["reversed-condition", "percent-base", "part-vs-whole"],
+    build(t) {
+      const ctx = t.pick(EQUAL_SHARES);
+      const form = t.pick(["share", "total", "less"]);
+      const numeric = form === "total" ? t.chance(0.55) : t.chance(0.25);
+      return retry(() => {
+        const [p, q] = t.sample(EQUAL_PERCENTS, 2);
+        // p x = q y  =>  x : y = q : p.
+        const g = S.gcd(p, q);
+        const rx = q / g;
+        const ry = p / g;
+        if (rx + ry > 25) return null;
+        const pct = (value) => (numeric ? fmt(value) : `${num(value)}%`);
+        const ratioStep = `${p}x = ${q}y, so x : y = ${q} : ${p} = ${rx} : ${ry}.`;
+        const named = ctx.x === "x" ? "" : `Let x be ${ctx.xName} and y be ${ctx.yName}. `;
+        const principles = [
+          "If p% of x equals q% of y, then px = qy, so x : y = q : p; the larger percent goes with the smaller amount.",
+          "A part of a total uses the sum of the ratio's terms as the whole.",
+        ];
+        const hint = "Write the equal amounts as an equation. Which of the two amounts must be larger?";
+        if (form === "share") {
+          const key = tidy((100 * rx) / (rx + ry));
+          if (!isClean(key, 2)) return null;
+          return packRanked(t, numeric, key, [
+            [tidy((100 * ry) / (rx + ry)), `Pairs the larger percent with the larger amount, so x : y = ${p} : ${q}; the amount taken at the larger percent is the smaller one.`],
+            [tidy((100 * rx) / ry), `Gives x as a percent of y instead of as a percent of x + y.`],
+            [tidy((100 * p) / (p + q)), `Uses the percents themselves as the shares, ${p} out of ${p} + ${q}, which pairs them with the wrong amounts.`],
+            [50, "Assumes that because the two parts are equal, the two amounts are equal too."],
+            [tidy((100 * ry) / rx), `Gives y as a percent of x.`],
+          ], {
+            stimulus: null,
+            stem: `${ctx.open(p, q)} ${ctx.askShare}`,
+            explanation:
+              `${named}${ratioStep} So x is ${rx} of every ${rx + ry} parts of x + y: ${rx}/${rx + ry} = ${num(key / 100)}, or ${num(key)}%.`,
+            steps: [
+              `Set the amounts equal: ${num(p / 100)}x = ${num(q / 100)}y.`,
+              `Solve for the ratio: x : y = ${q} : ${p} = ${rx} : ${ry}.`,
+              `x is ${rx} of ${rx + ry} parts of the total: ${rx}/${rx + ry} = ${num(key)}%.`,
+            ],
+            principles,
+            trap: `The percent attached to x is not x's share: x is taken at ${p}%, so x : y = ${q} : ${p}, and pairing ${p} with x reverses the ratio.`,
+            hint,
+            estimatedSeconds: 110,
+            verify: () => {
+              // Any x, y with p% of x = q% of y give the same share.
+              const x = 1000;
+              const y = (p * x) / q;
+              return close((100 * x) / (x + y), key);
+            },
+          }, { show: pct });
+        }
+        if (form === "total") {
+          const unit = t.int(4, 60) * (ctx.x === "road budget" ? 500 : 5);
+          const T = unit * (rx + ry);
+          const key = unit * ry;
+          const show = numeric ? fmt : ctx.x === "road budget" ? money : fmt;
+          return packRanked(t, numeric, key, [
+            [unit * rx, `Splits the total in the ratio of the percents, ${p} : ${q}, which pairs the larger percent with the larger amount; this is x, not y.`],
+            [tidy((T * q) / 100), `Takes ${q}% of the total instead of finding y's share of it.`],
+            [tidy((T * p) / 100), `Takes ${p}% of the total instead of finding y's share of it.`],
+            [T / 2, "Splits the total equally, as if equal parts meant equal amounts."],
+            [unit, `Stops at the size of one share, ${fmt(T)} ÷ ${rx + ry} = ${fmt(unit)}.`],
+          ], {
+            stimulus: null,
+            stem: `${ctx.open(p, q)} ${ctx.askTotal(T)}`,
+            explanation:
+              `${named}${ratioStep} The total is ${rx + ry} equal shares of ${fmt(T)} ÷ ${rx + ry} = ${fmt(unit)}, and y is ${ry} of them: ${ry} × ${fmt(unit)} = ${fmt(key)}.`,
+            steps: [
+              `Set the amounts equal: ${num(p / 100)}x = ${num(q / 100)}y, so x : y = ${rx} : ${ry}.`,
+              `One share: ${fmt(T)} ÷ ${rx + ry} = ${fmt(unit)}.`,
+              `y = ${ry} × ${fmt(unit)} = ${fmt(key)}.`,
+            ],
+            principles,
+            trap: `Splitting ${fmt(T)} in the ratio ${p} : ${q} gives y the larger share, but y is taken at the ${q > p ? "larger" : "smaller"} percent, so it is the ${q > p ? "smaller" : "larger"} amount.`,
+            hint,
+            estimatedSeconds: 110,
+            verify: () => {
+              const x = T - key;
+              return close((p / 100) * x, (q / 100) * key) && x > 0;
+            },
+          }, { show, places: 2 });
+        }
+        // y compared with x as a percent of x.
+        if (rx === ry) return null;
+        const less = ry < rx;
+        const word = less ? "less" : "greater";
+        const key = tidy((100 * Math.abs(rx - ry)) / rx);
+        if (!isClean(key, 2)) return null;
+        return packRanked(t, numeric, key, [
+          [Math.abs(p - q), `Subtracts the percents, ${Math.max(p, q)} ${MINUS} ${Math.min(p, q)}, as if they measured y against x.`],
+          [tidy((100 * Math.abs(rx - ry)) / ry), `Measures the difference as a percent of y instead of x, the amount after "than".`],
+          [tidy((100 * ry) / rx), `Gives y as a percent of x instead of the percent by which they differ.`],
+          [tidy((100 * Math.abs(p - q)) / Math.max(p, q)), `Compares the percents, ${Math.abs(p - q)} out of ${Math.max(p, q)}, instead of the amounts.`],
+        ], {
+          stimulus: null,
+          stem: `${ctx.open(p, q)} ${ctx.askLess(word)}`,
+          explanation:
+            `${named}${ratioStep} So y is ${ry}/${rx} of x, which is ${num(tidy((100 * ry) / rx))}% of x: ${key}% ${word}.`,
+          steps: [
+            `Set the amounts equal: ${num(p / 100)}x = ${num(q / 100)}y, so y = (${p}/${q})x = (${ry}/${rx})x.`,
+            `As a percent of x: ${ry}/${rx} = ${num(tidy((100 * ry) / rx))}%.`,
+            `The difference from 100% is ${num(key)}%, so y is ${num(key)}% ${word} than x.`,
+          ],
+          principles: principles.concat(['"A is p% less than B" measures the difference as a percent of B, the amount after "than".']),
+          trap: `The percents differ by ${Math.abs(p - q)} points, but a percent difference between the amounts is measured against x: ${num(key)}%.`,
+          hint,
+          estimatedSeconds: 110,
+          verify: () => {
+            const x = 1200;
+            const y = (p * x) / q;
+            return close((100 * Math.abs(x - y)) / x, key) && (y < x) === less;
+          },
+        }, { show: pct });
+      });
+    },
+  };
+
+  /* ===================================== percent-base-reversal (Hard) */
+
+  // "A is p% more than B" read back the other way: the same difference is a
+  // different percent of the other amount.
+  const REVERSALS = [
+    { a: "the price of a blender at store A", aRef: "the price at store A", b: "the price of the blender at store B", bRef: "the price at store B" },
+    { a: "the height of the oak tree", b: "the height of the maple tree" },
+    { a: "the population of Easton", b: "the population of Weston" },
+    { a: "Kiran's monthly salary", b: "Lena's monthly salary" },
+    { a: "this year's attendance at a festival", aRef: "this year's attendance", b: "last year's attendance" },
+    { a: "the length of the red trail", b: "the length of the blue trail" },
+    { a: "the mass of box P", b: "the mass of box Q" },
+    { a: "the number of members of the chess club", b: "the number of members of the debate club" },
+  ];
+
+  const percentBaseReversal = {
+    id: "percent-base-reversal",
+    domain: DOMAIN,
+    skill: "Percentages",
+    subskill: "percent change",
+    difficulty: "Hard",
+    title: "A percent comparison read in the other direction",
+    recognize:
+      '"A is p% more than B" takes the percent of B. Read the other way, the same difference is a percent of A, so it is a ' +
+      "different percent: give B a convenient value and compare directly.",
+    // Hard: the intuitive answer (the same percent) is wrong, and no amount
+    // is given, so the student must choose a base before any arithmetic.
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["percent-base", "reversed-condition"],
+    build(t) {
+      const pick = t.pick(REVERSALS);
+      // Later mentions may shorten the phrases ("the price at store A").
+      const ctx = { ...pick, a: pick.aRef || pick.a, b: pick.bRef || pick.b, first: pick.a, firstB: pick.b };
+      const up = t.chance(0.5);
+      const ask = t.pick(["reverse", "reverse", "ratio"]);
+      const numeric = t.chance(0.25);
+      return retry(() => {
+        // up: A = B(1 + p/100); down: A = B(1 - p/100).
+        const p = up ? t.int(1, 30) * 5 : t.int(1, 16) * 5;
+        const value = up ? 100 + p : 100 - p;
+        const reverse = tidy((100 * p) / value);
+        const ratioBA = tidy((100 * 100) / value);
+        const key = ask === "reverse" ? reverse : ratioBA;
+        // Multiple choice rounds to the nearest whole percent when the exact
+        // percent does not terminate; a student-produced answer must be exact.
+        const exact = isClean(key, 2);
+        if (numeric && !exact) return null;
+        const round = (x) => (exact ? tidy(x) : Math.round(x));
+        const shownKey = round(key);
+        const about = exact ? "" : "about ";
+        const pct = (x) => (numeric ? fmt(x) : `${num(x)}%`);
+        const compare = `${cap(ctx.first)} is ${p}% ${up ? "greater" : "less"} than ${ctx.firstB}.`;
+        const stem = ask === "reverse"
+          ? `${compare} ${exact ? "By what percent" : "By approximately what percent"} is ${ctx.b} ${up ? "less" : "greater"} than ${ctx.a}?`
+          : `${compare} ${cap(ctx.b)} is ${exact ? "what" : "approximately what"} percent of ${ctx.a}?`;
+        const mirror = 100 + (up ? -p : p);
+        const candidates = ask === "reverse"
+          ? [
+            [p, `Uses the same ${p}%, but read the other way the difference is measured against ${ctx.a}, not ${ctx.b}.`],
+            [round(ratioBA), `Gives ${ctx.b} as a percent of ${ctx.a} instead of the percent by which they differ.`],
+            [value, `Gives ${ctx.a} as a percent of ${ctx.b}.`],
+            [mirror > 0 ? round((100 * p) / mirror) : NaN, `Divides the difference, ${p}, by ${mirror}, the rule for the comparison in the other direction.`],
+          ]
+          : [
+            [mirror, `Reverses the comparison by ${up ? "subtracting" : "adding"} the same ${p}%, but that ${p}% would be a percent of ${ctx.a}, not ${ctx.b}.`],
+            [value, `Gives ${ctx.a} as a percent of ${ctx.b}, the comparison as stated.`],
+            [round(reverse), `Gives the percent by which the two differ instead of ${ctx.b} as a percent of ${ctx.a}.`],
+            [p, `Gives the percent in the comparison, ${p}%, instead of the ratio of the amounts.`],
+          ];
+        return packRanked(t, numeric, shownKey, candidates, {
+          stimulus: null,
+          stem,
+          explanation:
+            `Let ${ctx.b} be 100. Then ${ctx.a} is 100 ${up ? "+" : MINUS} ${p} = ${value}. ` +
+            (ask === "reverse"
+              ? `The difference, ${p}, as a fraction of ${ctx.a} is ${p}/${value}, which is ${about}${num(shownKey)}%.`
+              : `${cap(ctx.b)} is 100/${value} of ${ctx.a}, which is ${about}${num(shownKey)}%.`),
+          steps: [
+            `Give ${ctx.b} a convenient value: 100.`,
+            `Then ${ctx.a} is ${value}.`,
+            ask === "reverse"
+              ? `Compare the difference with ${ctx.a}, the amount after "than": ${p} ÷ ${value}.`
+              : `Compare with ${ctx.a}: 100 ÷ ${value}.`,
+            `As a percent: ${about}${num(shownKey)}%.`,
+          ],
+          principles: [
+            '"A is p% more than B" means A = B(1 + p/100); the percent is taken of B, the amount after "than".',
+            "Reversing a comparison changes the base, so the percent changes too.",
+          ],
+          trap: `Read backward, the difference is compared with ${ctx.a}, a different base, so the percent is not ${p}.`,
+          hint: `Give ${ctx.b} a convenient value. What is ${ctx.a} then?`,
+          estimatedSeconds: 95,
+          verify: () => {
+            const B = 2000;
+            const A = B + (B * (up ? p : -p)) / 100;
+            const actual = ask === "reverse" ? (100 * Math.abs(A - B)) / A : (100 * B) / A;
+            return Math.abs(actual - shownKey) < (exact ? 1e-6 : 0.5);
+          },
+        }, { show: pct, places: 2 });
+      });
+    },
+  };
+
+  return [
+    percentQuantity, percentChangeValues, percentSubgroup, percentExpression, successivePercentUndo, percentMixture,
+    successivePercent, percentEqualsPercent, percentBaseReversal,
+  ];
 });

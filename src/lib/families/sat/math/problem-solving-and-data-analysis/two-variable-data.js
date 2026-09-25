@@ -13,7 +13,20 @@
   const { MINUS, num } = S;
   const {
     DATA, tidy, isClean, fmt, shown, range, retry, pack, close, r1, seg, chartText, dataDot, parseTable, parseNumber, offerHard,
+    packRanked, statementGrid, fitsGrid,
   } = C;
+
+  // "+ 1,250" or "− 1,250": a signed term with thousands separators.
+  const signedGrouped = (value) => `${value < 0 ? MINUS : "+"} ${fmt(Math.abs(value))}`;
+
+  // Puts a unit after exactly 1 in the singular: "1 inches" -> "1 inch".
+  const SINGULAR = { inches: "inch", centimeters: "centimeter", points: "point", years: "year", weeks: "week", days: "day",
+    hours: "hour", degrees: "degree", feet: "foot", miles: "mile", employees: "employee", grams: "gram" };
+  const agree = (text) => text.replace(/(^|[^\d.,])1 (inches|centimeters|points|years|weeks|days|hours|degrees|feet|miles|employees|grams)\b/g,
+    (match, before, unit) => `${before}1 ${SINGULAR[unit]}`);
+
+  // An axis title inside a sentence: "Temperature (°F)" -> "temperature (°F)".
+  const inSentence = (title) => title.charAt(0).toLowerCase() + title.slice(1);
 
   const gridLine = (p, q) =>
     `<line x1="${r1(p[0])}" y1="${r1(p[1])}" x2="${r1(q[0])}" y2="${r1(q[1])}" stroke="currentColor" stroke-width="1" stroke-opacity="0.25"/>`;
@@ -24,7 +37,7 @@
   // optional line of best fit y = m·x + b clipped to the grid.
   const PLOT = { left: 66, right: 382, top: 16, bottom: 232 };
 
-  function scatterPlot({ xMax, xStep, yMax, yStep, points, fit, xTitle, yTitle, alt }) {
+  function scatterPlot({ xMax, xStep, yMax, yStep, points, fit, curve, xTitle, yTitle, alt }) {
     const { left, right, top, bottom } = PLOT;
     const px = (x) => left + (x / xMax) * (right - left);
     const py = (y) => bottom - (y / yMax) * (bottom - top);
@@ -39,7 +52,7 @@
     for (let j = 0; j <= ny; j += 1) {
       const y = py(j * yStep);
       if (j > 0) parts.push(gridLine([left, y], [right, y]));
-      parts.push(chartText(left - 7, y, num(tidy(j * yStep)), "end", 12));
+      parts.push(chartText(left - 7, y, fmt(tidy(j * yStep)), "end", 12));
     }
     parts.push(seg([left, bottom], [right, bottom], 1.5), seg([left, bottom], [left, top], 1.5));
     points.forEach(([x, y]) => parts.push(dataDot(px(x), py(y), SCATTER_RADIUS)));
@@ -53,6 +66,11 @@
         x1 = Math.min(xMax, Math.max(...edges));
       }
       parts.push(seg([px(x0), py(m * x0 + b)], [px(x1), py(m * x1 + b)], 2));
+    }
+    if (curve) {
+      // A fitted curve y = curve(x), sampled finely and kept inside the grid.
+      const samples = range(0, 80).map((k) => (k / 80) * xMax).filter((x) => curve(x) >= 0 && curve(x) <= yMax);
+      parts.push(`<polyline points="${samples.map((x) => `${r1(px(x))},${r1(py(curve(x)))}`).join(" ")}" fill="none" stroke="currentColor" stroke-width="2"/>`);
     }
     parts.push(chartText((left + right) / 2, 270, xTitle, "middle", 13));
     parts.push(chartText(17, (top + bottom) / 2, yTitle, "middle", 13, -90));
@@ -241,8 +259,8 @@
           return [x, Math.max(yStep * 0.2, Math.min(yMax - yStep * 0.2, m * x + b + offset))];
         });
         const alt =
-          `Scatterplot of ${scene.count} points with ${scene.xTitle.toLowerCase()} on the horizontal axis (0 to ${scene.xMax}) ` +
-          `and ${scene.yTitle.toLowerCase()} on the vertical axis (0 to ${yMax}). The points ${m > 0 ? "rise" : "fall"} from left to right, ` +
+          `Scatterplot of ${scene.count} points with ${inSentence(scene.xTitle)} on the horizontal axis (0 to ${scene.xMax}) ` +
+          `and ${inSentence(scene.yTitle)} on the vertical axis (0 to ${yMax}). The points ${m > 0 ? "rise" : "fall"} from left to right, ` +
           `and a line of best fit passes through them from about (0, ${num(b)}) to (${scene.xMax}, ${num(tidy(m * scene.xMax + b))}).`;
         const figure = withPlot
           ? scatterPlot({ xMax: scene.xMax, xStep: scene.xStep, yMax, yStep, points, fit: [m, b], xTitle: scene.xTitle, yTitle: scene.yTitle, alt })
@@ -264,11 +282,14 @@
           const v = t.int(2, scene.xMax + 2);
           const key = tidy(m * v + b);
           if (key <= 0) return null;
-          return pack(numeric, key, fmt(key), [
-            [shown(m * v, 1), `Multiplies ${v} by the slope but leaves out the ${num(b)} from the intercept.`],
-            [shown(b * v + m, 1), "Swaps the slope and the intercept."],
-            [shown(b + v, 1), `Adds ${v} to the intercept instead of multiplying ${v} by the slope.`],
-            [shown((v - b) / m, 1), `Solves ${num(v)} = ${S.lin(m, b)} for x, treating ${v} as the value of y.`],
+          return packRanked(t, numeric, key, [
+            [m * v, `Multiplies ${v} by the slope but leaves out the ${num(b)} from the intercept.`],
+            [b * v + m, "Swaps the slope and the intercept."],
+            [b + v, `Adds ${v} to the intercept instead of multiplying ${v} by the slope.`],
+            [(v - b) / m, `Solves ${num(v)} = ${S.lin(m, b)} for x, treating ${v} as the value of y.`],
+            [m * (v + 1) + b, `Substitutes ${v + 1} for x, one more than the value given.`],
+            [m * (v - 1) + b, `Substitutes ${v - 1} for x, one less than the value given.`],
+            [m * v - b, `Subtracts the intercept, ${num(b)}, instead of adding it.`],
           ], {
             ...common,
             stem: `${intro} ${scene.predict(v)}`,
@@ -281,20 +302,42 @@
             trap: `Leaving out the intercept gives ${num(tidy(m * v))}; the prediction is the whole expression ${S.lin(m, b)}.`,
             hint: "Which variable stands for the given quantity?",
             verify: () => close(lineAt(v), key, 0.01),
-          });
+          }, { places: 1 });
         }
-        const keyText = form === "slope" ? scene.rate(m) : scene.zero(b);
-        const candidates = form === "slope"
-          ? [
-            [scene.zero(m), `Reads the slope, ${num(m)}, as the starting value; the slope is a rate of change.`],
-            [scene.rateBack(m), "Reverses the roles of x and y: the slope is the change in y for each unit of x."],
-            [scene.rate(b), `Uses the intercept, ${num(b)}, as the rate of change.`],
-          ]
-          : [
-            [scene.rate(b), `Reads the y-intercept, ${num(b)}, as a rate of change.`],
-            [scene.zero(m), `Uses the slope, ${num(m)}, as the starting value.`],
-            [scene.zeroBack(b), "Reverses the roles of x and y: the intercept is the value of y when x = 0."],
-          ];
+        // Every choice pairs one of the two numbers with one reading, the full
+        // 2 × 2 grid, so no choice is the one the others vary around. The
+        // readings: a rate and a starting value, or a reading and its reverse.
+        const reverse = t.chance(0.5);
+        const readings = form === "slope"
+          ? (reverse ? [scene.rate, scene.rateBack] : [scene.rate, scene.zero])
+          : (reverse ? [scene.zero, scene.zeroBack] : [scene.zero, scene.rate]);
+        const target = form === "slope" ? "m" : "b";
+        const numbers = { m: num(m), b: num(b) };
+        // Reasons by cell: [reading index][number].
+        const why = form === "slope"
+          ? {
+            0: { b: `Uses the intercept, ${numbers.b}, as the rate of change.` },
+            1: {
+              m: reverse ? "Reverses the roles of x and y: the slope is the change in y for each unit of x." : `Reads the slope, ${numbers.m}, as a starting value; the slope is a rate of change.`,
+              b: reverse ? `Uses the intercept, ${numbers.b}, and reverses the roles of x and y.` : `Describes the intercept, ${numbers.b}, the starting value; the question asks about ${numbers.m}.`,
+            },
+          }
+          : {
+            0: { m: `Uses the slope, ${numbers.m}, as the starting value.` },
+            1: {
+              b: reverse ? "Reverses the roles of x and y: the intercept is the value of y when x = 0." : `Reads the y-intercept, ${numbers.b}, as a rate of change.`,
+              m: reverse ? `Uses the slope, ${numbers.m}, and reverses the roles of x and y.` : `Describes the slope, ${numbers.m}, the rate of change; the question asks about ${numbers.b}.`,
+            },
+          };
+        const grid = statementGrid((i, j) => {
+          const which = j === 0 ? "m" : "b";
+          const text = readings[i](which === "m" ? m : b);
+          const truth = i === 0 && which === target;
+          return [text, truth ? "" : why[i][which], truth];
+        });
+        if (!grid || new Set([grid.correct, ...grid.wrong.map(([text]) => text)]).size < 4) return null;
+        const keyText = grid.correct;
+        const candidates = grid.wrong;
         return pack(false, null, keyText, candidates, {
           ...common,
           stem: `${intro} Which of the following is the best interpretation of ${form === "slope" ? num(m) : num(b)} in this context?`,
@@ -304,7 +347,7 @@
           steps: [
             `${form === "slope" ? num(m) : num(b)} is the ${form === "slope" ? "coefficient of x, the slope" : "constant term, the y-intercept"}.`,
             form === "slope"
-              ? `The slope is the change in y (${scene.yTitle.toLowerCase()}) for each increase of 1 in x.`
+              ? `The slope is the change in y (${inSentence(scene.yTitle)}) for each increase of 1 in x.`
               : "The y-intercept is the value of y when x = 0.",
             `In context: ${keyText}`,
           ],
@@ -319,7 +362,7 @@
               ? close(slope, m, 0.02) && keyText === scene.rate(m)
               : close(start, b, 0.02) && keyText === scene.zero(b);
           },
-        });
+        }, true);
       });
     },
   };
@@ -370,8 +413,8 @@
         if (form === "residual") cells.push([xa, yaCells]);
         const points = cells.map(([x, y]) => [x * xStep, y * yStep]);
         const alt =
-          `Scatterplot of ${points.length} points with ${scene.xTitle.toLowerCase()} on the horizontal axis, 0 to ${xMax} with gridlines every ${xStep}, ` +
-          `and ${scene.yTitle.toLowerCase()} on the vertical axis, 0 to ${yMax} with gridlines every ${yStep}. A line of best fit passes through ` +
+          `Scatterplot of ${points.length} points with ${inSentence(scene.xTitle)} on the horizontal axis, 0 to ${xMax} with gridlines every ${xStep}, ` +
+          `and ${inSentence(scene.yTitle)} on the vertical axis, 0 to ${yMax} with gridlines every ${yStep}. A line of best fit passes through ` +
           `(0, ${B}) and (${xMax}, ${num(tidy(endCells * yStep))})` +
           (form === "residual" ? `; the data point at x = ${xa * xStep} is at y = ${num(tidy(yaCells * yStep))}.` : ".");
         const figure = scatterPlot({ xMax, xStep, yMax, yStep, points, fit: [m, B], xTitle: scene.xTitle, yTitle: scene.yTitle, alt });
@@ -389,12 +432,13 @@
           const predicted = tidy(ypCells * yStep);
           const key = tidy(d * yStep);
           const x = xa * xStep;
-          return pack(numeric, key, fmt(key), [
-            [yStep !== 1 ? shown(d, 0) : null, `Counts ${d} grid squares between the point and the line without using the vertical scale, ${yStep} per square.`],
-            [shown(predicted), `Gives the predicted value, ${num(predicted)}, instead of the difference.`],
-            [shown(actual), `Gives the actual value, ${num(actual)}, instead of the difference.`],
-            [shown(key + yStep), "Reads the point or the line one gridline off."],
-            [shown(key - yStep), "Reads the point or the line one gridline off."],
+          return packRanked(t, numeric, key, [
+            [yStep !== 1 ? d : NaN, `Counts ${d} grid squares between the point and the line without using the vertical scale, ${yStep} per square.`],
+            [predicted, `Gives the predicted value, ${num(predicted)}, instead of the difference.`],
+            [actual, `Gives the actual value, ${num(actual)}, instead of the difference.`],
+            [key + yStep, "Reads the point or the line one gridline off."],
+            [key - yStep, "Reads the point or the line one gridline off."],
+            [key + 2 * yStep, "Reads the point and the line each one gridline off."],
           ], {
             ...common,
             stem: `${intro} ${scene.residual(x, more)}`,
@@ -420,13 +464,27 @@
           const eq = (slope, intercept) => `y = ${S.lin(slope, intercept)}`;
           const keyText = eq(m, B);
           const inverse = tidy(1 / m);
-          return pack(false, null, keyText, [
-            [eq(-m, B), `Gives the slope the wrong sign; the line ${m > 0 ? "rises" : "falls"} from left to right.`],
-            [q !== m ? eq(q, B) : null, "Counts grid squares for the slope without using the scales on the axes."],
-            [isClean(inverse, 2) ? eq(inverse, B) : null, "Uses the change in x divided by the change in y, the reciprocal of the slope."],
-            [eq(m, tidy(B + m * xStep)), `Uses the line's value at x = ${xStep} as the y-intercept.`],
-            [yStep !== 1 ? eq(m, bCells) : null, "Reads the y-intercept in grid squares instead of with the vertical scale."],
-          ], {
+          // One wrong slope and one wrong intercept, crossed: the full 2 × 2
+          // grid, so no choice is the one the others vary around.
+          const slopes = [
+            [q !== m ? q : null, "counts grid squares for the slope without using the scales on the axes"],
+            [isClean(inverse, 2) && inverse !== m ? inverse : null, "uses the change in x divided by the change in y, the reciprocal of the slope"],
+            [-m, `gives the slope the wrong sign, though the line ${m > 0 ? "rises" : "falls"} from left to right`],
+          ].filter(([value]) => value !== null);
+          const intercepts = [
+            [tidy(B + m * xStep), `uses the line's value at x = ${xStep} as the y-intercept`],
+            [yStep !== 1 ? bCells : null, "reads the y-intercept in grid squares instead of with the vertical scale"],
+          ].filter(([value]) => value !== null && value !== B);
+          const [badSlope, slopeWhy] = t.pick(slopes);
+          const [badStart, startWhy] = t.pick(intercepts);
+          const cap = (text) => `${text.charAt(0).toUpperCase()}${text.slice(1)}.`;
+          const grid = statementGrid((i, j) => [
+            eq(i ? badSlope : m, j ? badStart : B),
+            i && j ? cap(`${slopeWhy}, and ${startWhy}`) : i ? cap(slopeWhy) : cap(startWhy),
+            !i && !j,
+          ]);
+          if (!grid) return null;
+          return pack(false, null, keyText, grid.wrong, {
             ...common,
             stem: `${intro} Which of the following is an equation of the line of best fit shown?`,
             explanation: `${slopeStep} The line crosses the y-axis at ${B}, so its equation is ${keyText}.`,
@@ -446,7 +504,7 @@
               const parsedIntercept = constant ? Number(constant) : 0;
               return close(slope, parsedSlope, 0.01) && close(intercept, parsedIntercept, 0.01);
             },
-          });
+          }, true);
         }
 
         const j = t.pick([2, 4, 6, 8, 12]);
@@ -454,11 +512,13 @@
         const key = tidy(m * xb + B);
         if (key <= 0) return null;
         const edge = tidy(endCells * yStep);
-        return pack(numeric, key, fmt(key), [
-          [shown(m * xb, 2), `Multiplies ${xb} by the slope but leaves out the intercept, ${B}.`],
-          [shown(q * xb + B, 2), "Counts grid squares for the slope without using the scales on the axes."],
-          [shown(edge), `Gives the predicted value at x = ${xMax}, the right edge of the graph, instead of at x = ${xb}.`],
-          [shown(xb / m + B, 2), "Uses the change in x divided by the change in y as the slope."],
+        return packRanked(t, numeric, key, [
+          [m * xb, `Multiplies ${xb} by the slope but leaves out the intercept, ${B}.`],
+          [q * xb + B, "Counts grid squares for the slope without using the scales on the axes."],
+          [edge, `Gives the predicted value at x = ${xMax}, the right edge of the graph, instead of at x = ${xb}.`],
+          [xb / m + B, "Uses the change in x divided by the change in y as the slope."],
+          [m * xb - B, `Subtracts the intercept, ${B}, instead of adding it.`],
+          [m * (xb + xStep) + B, `Substitutes ${xb + xStep}, one gridline past x = ${xb}.`],
         ], {
           ...common,
           stem: `${intro} ${scene.predict(xb)}`,
@@ -494,6 +554,13 @@
     downLinear: "Decreasing linear",
     upExp: "Increasing exponential",
     downExp: "Decreasing exponential",
+  };
+
+  const PATTERN_CHANGES = {
+    upLinear: "y increases by about the same amount each time",
+    downLinear: "y decreases by about the same amount each time",
+    upExp: "y increases by larger and larger amounts",
+    downExp: "y decreases by smaller and smaller amounts",
   };
 
   // Each pattern's distractors, strongest first.
@@ -603,10 +670,26 @@
     },
   ];
 
+  const PATTERN_LEADS = [
+    (n) => `The scatterplot shows the relationship between two variables, x and y, for ${n} data points.`,
+    (n) => `A researcher plotted ${n} data points to show how the variable y is related to the variable x.`,
+    (n) => `The scatterplot shows ${n} data points for the variables x and y.`,
+    (n) => `The scatterplot shows the values of two variables, x and y, recorded for each of ${n} objects.`,
+  ];
+
   function patternItem(t) {
+    return retry(() => {
+      const item = patternDraw(t);
+      return item.verify() ? item : null;
+    });
+  }
+
+  function patternDraw(t) {
     const pattern = t.pick(Object.keys(PATTERNS));
-    const count = t.int(12, 15);
+    const count = t.int(10, 16);
+    // Points across the whole range, so the shape (straight or bending) shows.
     const xs = t.sample(range(1, 19).map((index) => index / 2), count);
+    if (Math.min(...xs) > 1.5 || Math.max(...xs) < 8.5) return { verify: () => false };
     const tenths = patternTenths(t, pattern, xs);
     const yTop = t.pick([10, 20, 50, 100, 200, 500, 1000]);
     const points = xs.map((x, index) => [x, (tenths[index] * yTop) / 10]);
@@ -614,20 +697,23 @@
       `Scatterplot of ${count} points with x from 0 to 10 on the horizontal axis and y from 0 to ${fmt(yTop)} on the vertical axis. ` +
       `The points are at approximately ${altPoints(points, yTop)}.`;
     const figure = scatterPlot({ xMax: 10, xStep: 1, yMax: yTop, yStep: yTop / 10, points, fit: null, xTitle: "x", yTitle: "y", alt });
+    const lead = t.pick(PATTERN_LEADS)(count);
     const keyText = PATTERNS[pattern];
     const rising = pattern.startsWith("up");
     const curved = pattern.endsWith("Exp");
-    const ask = t.pick([
-      "Which of the following best describes the relationship between x and y?",
-      "Which of the following best describes how y changes as x increases?",
-    ]);
+    // Two wordings: named patterns, or how y changes as x increases.
+    const described = t.chance(0.5);
+    const ask = described
+      ? "Which of the following best describes how y changes as x increases?"
+      : "Which of the following best describes the relationship between x and y?";
+    const say = (name) => (described ? PATTERN_CHANGES[name] : PATTERNS[name]);
     return {
       responseType: "multiple-choice",
       stimulus: null,
       figure,
-      stem: `The scatterplot shows the relationship between two variables, x and y, for ${count} data points. ${ask}`,
-      correct: keyText,
-      wrong: PATTERN_WRONG[pattern].map(([name, reason]) => [PATTERNS[name], reason]),
+      stem: `${lead} ${ask}`,
+      correct: say(pattern),
+      wrong: PATTERN_WRONG[pattern].map(([name, reason]) => [say(name), reason]),
       explanation:
         `The points ${rising ? "rise" : "fall"} from left to right, so y ${rising ? "increases" : "decreases"} as x increases. ` +
         (curved
@@ -698,21 +784,22 @@
       const closeOnAsked = (sides[near] > 0) === more;
       const closeX = num(tidy(xs[near] * xStep));
       const alt =
-        `Scatterplot of ${n} points with ${scene.xTitle.toLowerCase()} on the horizontal axis, 0 to ${xMax}, and ` +
-        `${scene.yTitle.toLowerCase()} on the vertical axis, 0 to ${yMax}. A line of best fit passes through (0, ${B}) and ` +
+        `Scatterplot of ${n} points with ${inSentence(scene.xTitle)} on the horizontal axis, 0 to ${xMax}, and ` +
+        `${inSentence(scene.yTitle)} on the vertical axis, 0 to ${yMax}. A line of best fit passes through (0, ${B}) and ` +
         `(${xMax}, ${num(tidy(endCells * yStep))}). The points are at approximately ${altPoints(points, yMax)}.`;
       const figure = scatterPlot({ xMax, xStep, yMax, yStep, points, fit: [m, B], xTitle: scene.xTitle, yTitle: scene.yTitle, alt });
       const side = more ? "above" : "below";
-      return pack(numeric, key, num(key), [
-        [num(n - key), `Counts the points ${more ? "below" : "above"} the line, where the actual value is ${more ? "less" : "greater"} than the predicted value.`],
-        [num(n), "Counts every data point instead of only those on one side of the line."],
-        [num(closeOnAsked ? key - 1 : key + 1), closeOnAsked
+      return packRanked(t, numeric, key, [
+        [n - key, `Counts the points ${more ? "below" : "above"} the line, where the actual value is ${more ? "less" : "greater"} than the predicted value.`],
+        [n, "Counts every data point instead of only those on one side of the line."],
+        [closeOnAsked ? key - 1 : key + 1, closeOnAsked
           ? `Leaves out the point just ${side} the line at x = ${closeX}.`
           : `Counts the point just ${more ? "below" : "above"} the line at x = ${closeX} as if it were ${side} the line.`],
+        [n - key + (closeOnAsked ? 1 : -1), `Counts the points ${more ? "below" : "above"} the line and misplaces the point closest to it.`],
       ], {
         stimulus: null,
         figure,
-        stem: `The scatterplot shows ${scene.about(n)}, and a line of best fit for the data. ${scene.ask(more)}`,
+        stem: `The scatterplot shows ${scene.about(n)}. A line of best fit for the data, y = ${S.lin(m, B)}, is also shown. ${scene.ask(more)}`,
         explanation:
           `The line of best fit gives the predicted value at each x, and each point gives an actual value. An actual value is ` +
           `${more ? "greater" : "less"} than predicted when its point lies ${side} the line; ${key} of the ${n} points do.`,
@@ -732,7 +819,7 @@
           if (!line || seen.length !== n) return false;
           return seen.filter(([x, y]) => (more ? y > line(x) : y < line(x))).length === key;
         },
-      });
+      }, { show: num, places: 0 });
     });
   }
 
@@ -749,7 +836,7 @@
     rubric: { steps: 0, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["reversed-condition", "wrong-quantity"],
     build(t) {
-      if (t.chance(0.45)) return patternItem(t);
+      if (t.chance(0.35)) return patternItem(t);
       return countItem(t, t.chance(0.5));
     },
   };
@@ -765,6 +852,7 @@
       diff: (x, hi, lo) => `Based on the lines of best fit, how much greater, in centimeters, is the predicted height of a ${hi} plant than that of a ${lo} plant ${x} weeks after planting?`,
       start: (g) => `${g} has the greater predicted height at planting`,
       rate: (g) => `${g} has the greater predicted growth per week`,
+      cross: "Based on the lines of best fit, how many weeks after planting would plants of the two varieties have the same predicted height?",
     },
     {
       sign: -1, xSteps: [1, 2], ySteps: [2, 3], startCells: [6, 11], names: ["Model P", "Model Q"], lower: ["model P", "model Q"],
@@ -774,6 +862,7 @@
       diff: (x, hi, lo) => `Based on the lines of best fit, how much greater, in thousands of dollars, is the predicted value of a ${hi} car than that of a ${lo} car when both are ${x} years old?`,
       start: (g) => `${g} has the greater predicted value when new`,
       rate: (g) => `${g} has the greater predicted loss in value per year`,
+      cross: "Based on the lines of best fit, at what age, in years, would cars of the two models have the same predicted value?",
     },
     {
       sign: 1, xSteps: [1, 2], ySteps: [10, 20], startCells: [1, 6], names: ["Store J", "Store K"], lower: ["store J", "store K"],
@@ -783,6 +872,7 @@
       diff: (x, hi, lo) => `Based on the lines of best fit, how many more orders are predicted for ${hi} than for ${lo} ${x} weeks after opening?`,
       start: (g) => `${g} has the greater predicted number of orders at opening`,
       rate: (g) => `${g} has the greater predicted increase in orders per week`,
+      cross: "Based on the lines of best fit, how many weeks after opening would the two stores have the same predicted number of orders?",
     },
     {
       sign: -1, xSteps: [2, 5], ySteps: [1, 2], startCells: [5, 11], names: ["Lake R", "Lake S"], lower: ["lake R", "lake S"],
@@ -792,6 +882,7 @@
       diff: (x, hi, lo) => `Based on the lines of best fit, how much greater, in feet, is the predicted water depth of ${hi} than that of ${lo} ${x} days after the dry spell began?`,
       start: (g) => `${g} has the greater predicted depth when the dry spell began`,
       rate: (g) => `${g} has the greater predicted drop in depth per day`,
+      cross: "Based on the lines of best fit, how many days after the dry spell began would the two lakes have the same predicted depth?",
     },
   ];
 
@@ -870,7 +961,13 @@
       const xStep = t.pick(scene.xSteps);
       const yStep = t.pick(scene.ySteps);
       const slopesCells = t.sample([0.25, 0.5, 0.75, 1, 1.25], 2).map((q) => scene.sign * q);
-      const starts = t.sample(range(scene.startCells[0], scene.startCells[1]), 2);
+      // The "cross" form builds the lines through a shared gridline point.
+      const crossCells = t.int(2, 6);
+      const crossLevel = t.int(2, 10);
+      const starts = form === "cross"
+        ? slopesCells.map((q) => crossLevel - q * crossCells)
+        : t.sample(range(scene.startCells[0], scene.startCells[1]), 2);
+      if (starts.some((b) => !Number.isInteger(b) || b < 1 || b > Y_CELLS - 1)) return null;
       if (Math.abs(starts[0] - starts[1]) < 2) return null;
       const ends = starts.map((b, index) => b + slopesCells[index] * X_CELLS);
       if (ends.some((end) => end < 0.5 || end > Y_CELLS - 0.5)) return null;
@@ -896,7 +993,7 @@
           return { points, fit: fits[g], name: scene.names[g] };
         });
         const alt =
-          `Scatterplot with ${scene.xTitle.toLowerCase()} on the horizontal axis, 0 to ${xMax}, and ${scene.yTitle.toLowerCase()} ` +
+          `Scatterplot with ${inSentence(scene.xTitle)} on the horizontal axis, 0 to ${xMax}, and ${inSentence(scene.yTitle)} ` +
           `on the vertical axis, 0 to ${yMax}. ${scene.names[0]} points are filled, with a solid line of best fit from ` +
           `(0, ${fits[0][1]}) to (${xMax}, ${num(predict(0, xMax))}). ${scene.names[1]} points are hollow, with a dashed line ` +
           `of best fit from (0, ${fits[1][1]}) to (${xMax}, ${num(predict(1, xMax))}).`;
@@ -957,6 +1054,41 @@
         };
       }
 
+      if (form === "cross") {
+        const X = crossCells * xStep;
+        const level = tidy(crossLevel * yStep);
+        const gapStart = Math.abs(fits[0][1] - fits[1][1]);
+        const slopeGap = Math.abs(fits[0][0] - fits[1][0]);
+        const stem = `${intro}${figure ? "" : ` ${lineSentence}`} ${scene.cross}`;
+        return packRanked(t, numeric, X, [
+          [gapStart, "Gives the difference between the starting values instead of where the lines meet."],
+          [xStep !== 1 ? crossCells : NaN, `Counts ${crossCells} gridlines across without using the horizontal scale, ${xStep} per gridline.`],
+          [level, `Gives the shared predicted value, ${num(level)}, instead of the value of x where it occurs.`],
+          [gapStart / (Math.abs(fits[0][0]) + Math.abs(fits[1][0])), "Adds the two slopes instead of subtracting them when solving for the crossing."],
+          [X + xStep, "Reads the crossing one gridline too far to the right."],
+          [X - xStep, "Reads the crossing one gridline too far to the left."],
+        ], {
+          ...common,
+          stem,
+          explanation:
+            `The predictions are equal where ${S.lin(fits[0][0], fits[0][1])} = ${S.lin(fits[1][0], fits[1][1])}. The starting values differ by ` +
+            `${num(gapStart)} and the slopes by ${num(slopeGap)}, so the lines meet at x = ${num(gapStart)} ÷ ${num(slopeGap)} = ${num(X)}, where both predict ${num(level)}.`,
+          steps: [
+            `Set the two predictions equal: ${S.lin(fits[0][0], fits[0][1])} = ${S.lin(fits[1][0], fits[1][1])}.`,
+            `Collect terms: ${num(slopeGap)}x = ${num(gapStart)}.`,
+            `x = ${num(X)}; both lines predict ${num(level)} there.`,
+          ],
+          trap: `The shared value, ${num(level)}, is a step on the way; the question asks when it happens.`,
+          hint: "Where do the two lines meet?",
+          verify: () => {
+            const lines = recovered(stem);
+            if (!lines || lines.some((line) => !line)) return false;
+            const x = (lines[1][1] - lines[0][1]) / (lines[0][0] - lines[1][0]);
+            return close(x, X, 0.01);
+          },
+        }, { places: 2 });
+      }
+
       const cells = range(1, X_CELLS - 1).filter((c) => Math.abs(predict(0, c * xStep) - predict(1, c * xStep)) >= yStep);
       if (!cells.length) return null;
       const X = t.pick(cells) * xStep;
@@ -964,11 +1096,13 @@
       const lo = 1 - hi;
       const key = tidy(predict(hi, X) - predict(lo, X));
       const stem = `${intro} ${lineSentence} ${scene.diff(X, scene.lower[hi], scene.lower[lo])}`;
-      return pack(numeric, key, fmt(key), [
-        [shown(predict(hi, X)), `Gives the predicted value for ${scene.lower[hi]} alone, ${num(predict(hi, X))}, which is a step on the way.`],
-        [shown(Math.abs(fits[0][0] - fits[1][0]) * X), "Multiplies the difference in slopes by x but leaves out the difference in the starting values."],
-        [shown(Math.abs(fits[0][1] - fits[1][1])), "Gives the difference between the predictions at x = 0 instead of at the given x."],
-        [shown(predict(lo, X)), `Gives the predicted value for ${scene.lower[lo]} alone.`],
+      return packRanked(t, numeric, key, [
+        [predict(hi, X), `Gives the predicted value for ${scene.lower[hi]} alone, ${num(predict(hi, X))}, which is a step on the way.`],
+        [Math.abs(fits[0][0] - fits[1][0]) * X, "Multiplies the difference in slopes by x but leaves out the difference in the starting values."],
+        [Math.abs(fits[0][1] - fits[1][1]), "Gives the difference between the predictions at x = 0 instead of at the given x."],
+        [predict(lo, X), `Gives the predicted value for ${scene.lower[lo]} alone.`],
+        [tidy(predict(hi, X + xStep) - predict(lo, X + xStep)), `Compares the predictions one gridline past x = ${X}.`],
+        [tidy(predict(hi, X - xStep) - predict(lo, X - xStep)), `Compares the predictions one gridline before x = ${X}.`],
       ], {
         ...common,
         stem,
@@ -1005,12 +1139,12 @@
     rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["intermediate-value", "wrong-quantity", "reversed-condition"],
     build(t) {
-      const form = t.chance(0.45) ? "compare" : "difference";
-      return groupLinesItem(t, form, form === "difference" && t.chance(0.5));
+      const form = t.pick(["compare", "difference", "difference", "cross", "cross"]);
+      return groupLinesItem(t, form, form !== "compare" && t.chance(0.45));
     },
   };
 
-  /* ================================== uneven-table-growth (Hard) */
+  /* ================================ uneven-table-growth (Medium) */
 
   const GROWTH_SCENES = [
     {
@@ -1121,7 +1255,7 @@
         if (!keyText) return null;
         const wrong = offerHard(keyText, candidates);
         if (wrong.length < 3) return null;
-        const perText = exponential ? `multiplies by ${num(rate)}` : `changes by ${num(rate)}`;
+        const perText = exponential ? `multiplies by ${fmt(rate)}` : `changes by ${fmt(rate)}`;
         return {
           ...common,
           responseType: "multiple-choice",
@@ -1131,15 +1265,15 @@
           explanation:
             `The rows are not evenly spaced, so compare changes per ${scene.unit}. ` +
             (exponential
-              ? `From ${scene.unit} ${xs[oneIndex]} to ${xs[oneIndex + 1]} the value is multiplied by ${num(rate)}, and across the ${g}-${scene.unit} gap by ${num(tidy(gapRatio))} = ${num(rate)}${S.sup(g)}. The value ${perText} each ${scene.unit}: ${keyText.charAt(0).toLowerCase()}${keyText.slice(1)}`
-              : `From ${scene.unit} ${xs[oneIndex]} to ${xs[oneIndex + 1]} the value changes by ${num(firstStep)}, and across the ${g}-${scene.unit} gap by ${num(gapChange)} = ${g} × ${num(rate)}. The change per ${scene.unit} is the same, so ${keyText.charAt(0).toLowerCase()}${keyText.slice(1)}`),
+              ? `From ${scene.unit} ${xs[oneIndex]} to ${xs[oneIndex + 1]} the value is multiplied by ${fmt(rate)}, and across the ${g}-${scene.unit} gap by ${num(tidy(gapRatio))} = ${fmt(rate)}${S.sup(g)}. The value ${perText} each ${scene.unit}: ${keyText.charAt(0).toLowerCase()}${keyText.slice(1)}`
+              : `From ${scene.unit} ${xs[oneIndex]} to ${xs[oneIndex + 1]} the value changes by ${fmt(firstStep)}, and across the ${g}-${scene.unit} gap by ${fmt(gapChange)} = ${g} × ${fmt(rate)}. The change per ${scene.unit} is the same, so ${keyText.charAt(0).toLowerCase()}${keyText.slice(1)}`),
           steps: [
             `Note the gaps between rows: ${xs.slice(1).map((x, index) => x - xs[index]).join(", ")} ${scene.unit}s.`,
             exponential
-              ? `Change per ${scene.unit} as a factor: ${fmt(ys[oneIndex + 1])} ÷ ${fmt(ys[oneIndex])} = ${num(rate)}, and ${fmt(ys[gapIndex + 1])} ÷ ${fmt(ys[gapIndex])} = ${num(tidy(gapRatio))} = ${num(rate)}${S.sup(g)}.`
-              : `Change per ${scene.unit} as an amount: ${num(firstStep)} ÷ 1 = ${num(rate)}, and ${num(gapChange)} ÷ ${g} = ${num(rate)}.`,
+              ? `Change per ${scene.unit} as a factor: ${fmt(ys[oneIndex + 1])} ÷ ${fmt(ys[oneIndex])} = ${fmt(rate)}, and ${fmt(ys[gapIndex + 1])} ÷ ${fmt(ys[gapIndex])} = ${num(tidy(gapRatio))} = ${fmt(rate)}${S.sup(g)}.`
+              : `Change per ${scene.unit} as an amount: ${fmt(firstStep)} ÷ 1 = ${fmt(rate)}, and ${fmt(gapChange)} ÷ ${g} = ${fmt(rate)}.`,
             exponential
-              ? `A constant factor of ${num(rate)} is a ${percentText(pctOf(rate))} ${up ? "increase" : "decrease"} each ${scene.unit}.`
+              ? `A constant factor of ${fmt(rate)} is a ${percentText(pctOf(rate))} ${up ? "increase" : "decrease"} each ${scene.unit}.`
               : `A constant amount each ${scene.unit} is linear change of ${fmt(Math.abs(rate))} ${scene.amount} each ${scene.unit}.`,
           ],
           trap: exponential
@@ -1159,6 +1293,9 @@
 
       // Counts of people or things are whole; money and volume may not be.
       const shown = (value) => C.shown(value, scene.whole ? 0 : 2);
+      // A mistake's result as a student would write it: rounded to a whole
+      // count, or to hundredths for money and volume.
+      const roundedShow = (value) => fmt(Math.round(value * (scene.whole ? 1 : 100)) / (scene.whole ? 1 : 100));
       const either = `The ${scene.noun} changed either by the same amount each ${scene.unit} or by the same percent each ${scene.unit}.`;
       const verify = (X, key) => () => {
         const model = recoverModel();
@@ -1176,27 +1313,31 @@
         const yl = ys[li];
         const yr = ys[li + 1];
         const even = tidy(yl + ((yr - yl) * d) / gap);
-        return pack(numeric, key, fmt(key), [
-          [shown(even), `Assumes the ${scene.noun} changed by the same amount each ${scene.unit} between ${scene.unit}s ${xl} and ${xr}.`],
-          [shown(yl * (1 + (yr / yl - 1) / gap) ** d), `Splits the percent change from ${scene.unit} ${xl} to ${scene.unit} ${xr} evenly over the ${gap} ${scene.unit}s; percent changes compound.`],
-          [shown(yl * (yr / yl) ** d), `Applies the whole change from ${scene.unit} ${xl} to ${scene.unit} ${xr} to each ${scene.unit}.`],
-          [shown(yl + firstStep * d), `Adds the change from ${scene.unit} ${xs[oneIndex]} to ${scene.unit} ${xs[oneIndex + 1]} each ${scene.unit}, as if the change were a constant amount.`],
+        return packRanked(t, numeric, key, [
+          [even, `Assumes the ${scene.noun} changed by the same amount each ${scene.unit} between ${scene.unit}s ${xl} and ${xr}.`],
+          [yl * (1 + (yr / yl - 1) / gap) ** d, `Splits the percent change from ${scene.unit} ${xl} to ${scene.unit} ${xr} evenly over the ${gap} ${scene.unit}s; percent changes compound.`],
+          [yl * (yr / yl) ** d, `Applies the whole change from ${scene.unit} ${xl} to ${scene.unit} ${xr} to each ${scene.unit}.`],
+          [yl + firstStep * d, `Adds the change from ${scene.unit} ${xs[oneIndex]} to ${scene.unit} ${xs[oneIndex + 1]} each ${scene.unit}, as if the change were a constant amount.`],
+          [f(X + 1), `Counts one ${scene.unit} too many past ${scene.unit} ${xl}.`],
+          [f(X - 1), `Counts one ${scene.unit} too few past ${scene.unit} ${xl}.`],
+          [yr * rate ** d, `Starts from ${scene.unit} ${xr} instead of ${scene.unit} ${xl}, applying the factor forward.`],
+          [yl / rate ** d, `Divides by the factor for each ${scene.unit} instead of multiplying.`],
         ], {
           ...common,
           stem: `${intro} ${either} What was the ${scene.noun} ${scene.at(X)}?`,
           explanation:
-            `A one-${scene.unit} step multiplies the value by ${num(rate)} (${fmt(ys[oneIndex + 1])} ÷ ${fmt(ys[oneIndex])}), and the ` +
-            `${gap}-${scene.unit} gap multiplies it by ${num(tidy(yr / yl))} = ${num(rate)}${S.sup(gap)}, so the change is by the same percent each ` +
-            `${scene.unit}. ${scene.at(X).charAt(0).toUpperCase()}${scene.at(X).slice(1)}, the value is ${fmt(yl)} × ${num(rate)}${d > 1 ? S.sup(d) : ""} = ${fmt(key)}.`,
+            `A one-${scene.unit} step multiplies the value by ${fmt(rate)} (${fmt(ys[oneIndex + 1])} ÷ ${fmt(ys[oneIndex])}), and the ` +
+            `${gap}-${scene.unit} gap multiplies it by ${num(tidy(yr / yl))} = ${fmt(rate)}${S.sup(gap)}, so the change is by the same percent each ` +
+            `${scene.unit}. ${scene.at(X).charAt(0).toUpperCase()}${scene.at(X).slice(1)}, the value is ${fmt(yl)} × ${fmt(rate)}${d > 1 ? S.sup(d) : ""} = ${fmt(key)}.`,
           steps: [
-            `Compare a one-${scene.unit} step with the ${gap}-${scene.unit} gap: factors ${num(rate)} and ${num(tidy(yr / yl))} = ${num(rate)}${S.sup(gap)}.`,
-            `So the ${scene.noun} is multiplied by ${num(rate)} each ${scene.unit}.`,
-            `${scene.at(X).charAt(0).toUpperCase()}${scene.at(X).slice(1)}: ${fmt(yl)} × ${num(rate)}${d > 1 ? S.sup(d) : ""} = ${fmt(key)}.`,
+            `Compare a one-${scene.unit} step with the ${gap}-${scene.unit} gap: factors ${fmt(rate)} and ${num(tidy(yr / yl))} = ${fmt(rate)}${S.sup(gap)}.`,
+            `So the ${scene.noun} is multiplied by ${fmt(rate)} each ${scene.unit}.`,
+            `${scene.at(X).charAt(0).toUpperCase()}${scene.at(X).slice(1)}: ${fmt(yl)} × ${fmt(rate)}${d > 1 ? S.sup(d) : ""} = ${fmt(key)}.`,
           ],
           trap: `Filling the gap by equal amounts gives ${fmt(even)}; the change is by equal factors.`,
           hint: `How many ${scene.unit}s apart are the rows, and what happens in one ${scene.unit}?`,
           verify: verify(X, key),
-        });
+        }, { places: 9, show: roundedShow });
       }
 
       // Linear: a value past the table, where the last row-to-row change misleads.
@@ -1204,31 +1345,38 @@
       const ahead = t.int(1, 2);
       const X = last + ahead;
       const key = f(X);
+      // A quantity that cannot go below zero (a count, a value, a volume)
+      // must still be positive where the question asks about it.
+      if (!(key > 0) || key < 0.2 * ys[0]) return null;
       const yLast = ys[ys.length - 1];
       const lastGap = last - xs[xs.length - 2];
       const lastChange = yLast - ys[ys.length - 2];
       const rowAverage = (yLast - ys[0]) / (ys.length - 1);
-      return pack(numeric, key, fmt(key), [
-        [shown(yLast + (lastGap > 1 ? lastChange : gapChange) * ahead), `Treats a change between rows ${lastGap > 1 ? lastGap : g} ${scene.unit}s apart as the change for one ${scene.unit}.`],
-        [shown(yLast * (ys[oneIndex + 1] / ys[oneIndex]) ** ahead), `Assumes the ${scene.noun} changed by the same percent each ${scene.unit}, using the change from ${scene.unit} ${xs[oneIndex]} to ${scene.unit} ${xs[oneIndex + 1]}.`],
-        [shown(yLast + rowAverage * ahead), "Averages the changes from row to row without dividing by the number of units between rows."],
-        [shown(yLast + rate * (ahead + 1)), `Counts one ${scene.unit} too many past ${scene.unit} ${last}.`],
+      return packRanked(t, numeric, key, [
+        [yLast + (lastGap > 1 ? lastChange : gapChange) * ahead, `Treats a change between rows ${lastGap > 1 ? lastGap : g} ${scene.unit}s apart as the change for one ${scene.unit}.`],
+        [yLast * (ys[oneIndex + 1] / ys[oneIndex]) ** ahead, `Assumes the ${scene.noun} changed by the same percent each ${scene.unit}, using the change from ${scene.unit} ${xs[oneIndex]} to ${scene.unit} ${xs[oneIndex + 1]}.`],
+        [yLast + rowAverage * ahead, "Averages the changes from row to row without dividing by the number of units between rows."],
+        [yLast + rate * (ahead + 1), `Counts one ${scene.unit} too many past ${scene.unit} ${last}.`],
+        [yLast + rate * (ahead - 1), `Counts one ${scene.unit} too few past ${scene.unit} ${last}.`],
+        [yLast - rate * ahead, "Changes the value in the wrong direction."],
+        [yLast + 2 * rate * ahead, `Doubles the change per ${scene.unit}.`],
+        [yLast + (rate * ahead) / g, `Divides the change per ${scene.unit} by ${g}, the width of the widest gap.`],
       ], {
         ...common,
         stem: `${intro} ${either} If the ${scene.noun} continues to change in the same way, what will it be ${scene.at(X)}?`,
         explanation:
-          `A one-${scene.unit} step changes the value by ${num(firstStep)}, and the ${g}-${scene.unit} gap changes it by ${num(gapChange)} = ` +
-          `${g} × ${num(rate)}, so the change is the same amount, ${num(rate)}, each ${scene.unit}. ${scene.at(X).charAt(0).toUpperCase()}${scene.at(X).slice(1)}, ` +
-          `the value is ${fmt(yLast)} ${S.signed(rate * ahead)} = ${fmt(key)}.`,
+          `A one-${scene.unit} step changes the value by ${fmt(firstStep)}, and the ${g}-${scene.unit} gap changes it by ${fmt(gapChange)} = ` +
+          `${g} × ${fmt(rate)}, so the change is the same amount, ${fmt(rate)}, each ${scene.unit}. ${scene.at(X).charAt(0).toUpperCase()}${scene.at(X).slice(1)}, ` +
+          `the value is ${fmt(yLast)} ${signedGrouped(rate * ahead)} = ${fmt(key)}.`,
         steps: [
-          `Compare a one-${scene.unit} step with the ${g}-${scene.unit} gap: changes ${num(firstStep)} and ${num(gapChange)} = ${g} × ${num(rate)}.`,
-          `So the ${scene.noun} changes by ${num(rate)} each ${scene.unit}.`,
-          `${scene.at(X).charAt(0).toUpperCase()}${scene.at(X).slice(1)}: ${fmt(yLast)} ${S.signed(rate * ahead)} = ${fmt(key)}.`,
+          `Compare a one-${scene.unit} step with the ${g}-${scene.unit} gap: changes ${fmt(firstStep)} and ${fmt(gapChange)} = ${g} × ${fmt(rate)}.`,
+          `So the ${scene.noun} changes by ${fmt(rate)} each ${scene.unit}.`,
+          `${scene.at(X).charAt(0).toUpperCase()}${scene.at(X).slice(1)}: ${fmt(yLast)} ${signedGrouped(rate * ahead)} = ${fmt(key)}.`,
         ],
-        trap: `The row-to-row changes differ only because the rows are unevenly spaced; per ${scene.unit}, the change is always ${num(rate)}.`,
+        trap: `The row-to-row changes differ only because the rows are unevenly spaced; per ${scene.unit}, the change is always ${fmt(rate)}.`,
         hint: `How many ${scene.unit}s apart are the rows, and what happens in one ${scene.unit}?`,
         verify: verify(X, key),
-      });
+      }, { places: 9, show: roundedShow });
     });
   }
 
@@ -1237,12 +1385,12 @@
     domain: DATA,
     skill: "Two-variable data",
     subskill: "linear models",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Linear or exponential change from unevenly spaced data",
     recognize:
       "The rows are unevenly spaced, so row-to-row changes mislead: divide each change by its gap (linear) or take the gap-th root " +
       "of each ratio (exponential), and whichever is constant per unit identifies the model.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 0, synthesis: 0, trap: 2 },
     tricks: ["neighbouring-rule", "wrong-quantity"],
     build(t) {
       const form = t.chance(0.5) ? "describe" : "predict";
@@ -1336,8 +1484,8 @@
           return [x, Math.max(yStep * 0.2, Math.min(yMax - yStep * 0.2, m * x + b + offset))];
         });
         const alt =
-          `Scatterplot of ${scene.count} points with ${scene.xTitle.toLowerCase()} on the horizontal axis (0 to ${scene.xMax}) and ` +
-          `${scene.yTitle.toLowerCase()} on the vertical axis (0 to ${yMax}). A line of best fit passes from about (0, ${b}) to ` +
+          `Scatterplot of ${scene.count} points with ${inSentence(scene.xTitle)} on the horizontal axis (0 to ${scene.xMax}) and ` +
+          `${inSentence(scene.yTitle)} on the vertical axis (0 to ${yMax}). A line of best fit passes from about (0, ${b}) to ` +
           `(${scene.xMax}, ${num(tidy(m * scene.xMax + b))}).`;
         figure = scatterPlot({ xMax: scene.xMax, xStep: scene.xStep, yMax, yStep, points, fit: [m, b], xTitle: scene.xTitle, yTitle: scene.yTitle, alt });
       }
@@ -1369,12 +1517,15 @@
             : `One year of experience is one unit of x, so the predicted change in y is ${num(M)}.`,
           `${cap(scene.yConv(change, true))}.`,
         ];
-        return pack(numeric, key, keyText, [
-          [clean3(M), `Reads the slope, ${num(M)}, without converting either variable's units.`],
-          [clean3(M * scene.perY), "Converts the units of y but not the units of x."],
-          [clean3(M * scene.perX), "Converts the units of x but not the units of y."],
-          [clean3(M / (scene.perX * scene.perY)), "Applies both conversions upside down, dividing where it should multiply."],
-          ...(scene.extraPer ? scene.extraPer(M).map(([value, reason]) => [clean3(value), reason]) : []),
+        return packRanked(t, numeric, key, [
+          [M, `Reads the slope, ${num(M)}, without converting either variable's units.`],
+          // Mistakes about x exist only where x needs converting.
+          [scene.perX !== 1 ? M * scene.perY : NaN, "Converts the units of y but not the units of x."],
+          [M * scene.perX, "Converts the units of x but not the units of y."],
+          [M / (scene.perX * scene.perY), "Applies both conversions upside down, dividing where it should multiply."],
+          ...(scene.extraPer ? scene.extraPer(M) : []),
+          [scene.perX !== 1 ? (M * scene.perY) / scene.perX : NaN, "Converts the units of y correctly but the units of x upside down."],
+          [(M * scene.perX) / scene.perY, "Converts the units of x correctly but the units of y upside down."],
         ], {
           ...common,
           stem: `${intro} ${scene.perUnit}`,
@@ -1387,7 +1538,7 @@
             if (!line) return false;
             return close(Math.abs(line(5 + scene.perX) - line(5)) * scene.perY, key, 0.01);
           },
-        });
+        }, { places: 3, show: clean3 });
       }
 
       const D = t.pick(scene.diffs);
@@ -1402,12 +1553,15 @@
         `Predicted difference in y: ${num(M)} × ${num(dx)} = ${num(change)}.`,
         `${cap(scene.yConv(change, false))}.`,
       ];
-      return pack(numeric, key, keyText, [
-        [clean3(M * D * scene.pairY), `Multiplies the slope by ${fmt(D)} without converting it to the model's units for x.`],
-        [clean3(change), "Leaves the difference in the model's units for y."],
-        [clean3(valueAt), `Gives the predicted value itself at x = ${num(dx)}, not the difference between two predictions.`],
-        [clean3(M * D), "Multiplies the slope by the difference without converting either unit."],
-        ...(scene.extraPair ? scene.extraPair(M, D).map(([value, reason]) => [clean3(value), reason]) : []),
+      return packRanked(t, numeric, key, [
+        // Mistakes about x exist only where x needs converting.
+        [scene.toModel !== 1 ? M * D * scene.pairY : NaN, `Multiplies the slope by ${fmt(D)} without converting it to the model's units for x.`],
+        [change, "Leaves the difference in the model's units for y."],
+        [valueAt, `Gives the predicted value itself at x = ${num(dx)}, not the difference between two predictions.`],
+        [M * D, "Multiplies the slope by the difference without converting either unit."],
+        ...(scene.extraPair ? scene.extraPair(M, D) : []),
+        [scene.toModel !== 1 ? (M * D * scene.pairY) / scene.toModel : NaN, `Converts the difference of ${fmt(D)} to the model's units the wrong way.`],
+        [change / scene.pairY, "Converts the difference in y the wrong way."],
       ], {
         ...common,
         stem: `${intro} ${scene.pair(D)}`,
@@ -1422,7 +1576,7 @@
           if (!line) return false;
           return close(Math.abs(line(3 + dx) - line(3)) * scene.pairY, key, 0.01);
         },
-      });
+      }, { places: 3, show: clean3 });
     });
   }
 
@@ -1444,5 +1598,452 @@
     },
   };
 
-  return [bestFitEquation, shapeAndCount, scatterReading, twoGroupLines, unevenTable, rescaledSlope];
+  /* ================================= outlier-removal-fit (Hard) */
+
+  // A point far from the trend near one end pulls that end of the line of
+  // best fit toward itself; removing it lets the line swing back. The student
+  // must reason about where the point sits, not compute.
+  const OUTLIER_SCENES = [
+    {
+      sign: 1, xSteps: [1, 2], ySteps: [5, 10], xTitle: "Number of employees", yTitle: "Sales (thousands of dollars)",
+      about: (n) => `the numbers of employees and the monthly sales, in thousands of dollars, of ${n} stores`, far: "employees",
+    },
+    {
+      sign: -1, xSteps: [1], ySteps: [1, 2], xTitle: "Age of car (years)", yTitle: "Price (thousands of dollars)",
+      about: (n) => `the ages and prices, in thousands of dollars, of ${n} used cars`, far: "years",
+    },
+    {
+      sign: 1, xSteps: [1, 2], ySteps: [5, 10], xTitle: "Hours studied", yTitle: "Test score (points)",
+      about: (n) => `the numbers of hours ${n} students studied for a test and their scores on the test`, far: "hours",
+    },
+    {
+      sign: -1, xSteps: [1, 2], ySteps: [1, 2], xTitle: "Elevation (hundreds of meters)", yTitle: "Temperature (°C)",
+      about: (n) => `the elevations, in hundreds of meters, and the noon temperatures, in degrees Celsius, at ${n} weather stations`, far: "hundred meters",
+    },
+    {
+      sign: 1, xSteps: [2, 5], ySteps: [2, 5], xTitle: "Age of tree (years)", yTitle: "Height (feet)",
+      about: (n) => `the ages, in years, and the heights, in feet, of ${n} maple trees in a park`, far: "years",
+    },
+    {
+      sign: -1, xSteps: [1], ySteps: [1, 2], xTitle: "Distance from city center (miles)", yTitle: "Rent (hundreds of dollars)",
+      about: (n) => `the distances from the city center, in miles, and the monthly rents, in hundreds of dollars, of ${n} apartments`, far: "miles",
+    },
+  ];
+
+  // Least-squares slope and intercept of y on x.
+  function fitLine(points) {
+    const { slope, at } = leastSquares(points);
+    return { slope, intercept: at(0), at };
+  }
+
+  const outlierRemoval = {
+    id: "outlier-removal-fit",
+    domain: DATA,
+    skill: "Two-variable data",
+    subskill: "scatterplots",
+    difficulty: "Hard",
+    title: "How removing a data point moves the line of best fit",
+    recognize:
+      "A point far from the trend near one end of the data pulls that end of the line toward it. Removing it lets that end " +
+      "swing back: decide which way the slope turns, then how the line's value moves at the far end or at x = 0.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
+    tricks: ["reversed-condition", "wrong-quantity"],
+    build(t) {
+      const askIntercept = t.chance(0.5);
+      // Drawn once, outside the retry loop, so the answer's direction stays
+      // even: removing a high point at the right end, or a low one at the
+      // left, lowers the slope; the other two raise it.
+      const right = t.chance(0.5);
+      const wantUp = t.chance(0.5);
+      const above = right ? !wantUp : wantUp;
+      return retry(() => {
+        // The scene may change between tries; the answer's direction may not.
+        const scene = t.pick(OUTLIER_SCENES);
+        const xStep = t.pick(scene.xSteps);
+        const yStep = t.pick(scene.ySteps);
+        const q = scene.sign * t.pick([0.5, 0.75, 1]);
+        const bCells = scene.sign > 0 ? t.int(1, 5) : t.int(7, 11);
+        const endCells = bCells + q * X_CELLS;
+        if (endCells < 1.5 || endCells > Y_CELLS - 1.5) return null;
+        const n = t.int(9, 12);
+        // Trend points at distinct half-cell x values, away from the outlier's column.
+        const ox = right ? t.int(6, 7) : t.int(1, 2);
+        const trendAt = (x) => bCells + q * x;
+        const oy = trendAt(ox) + (above ? 1 : -1) * t.int(3, 5);
+        if (!Number.isInteger(oy) || oy < 0.5 || oy > Y_CELLS - 0.5) return null;
+        const slots = range(1, 2 * X_CELLS - 1).map((index) => index / 2).filter((x) => Math.abs(x - ox) >= 1);
+        const xs = t.sample(slots, n).sort((a, b) => a - b);
+        // Spread across the whole range, so the trend is plain and one point stands out.
+        const gaps = xs.slice(1).map((x, index) => x - xs[index]);
+        if (xs[0] > 1 || xs[n - 1] < 7 || gaps.some((gap) => gap > 1.5 && !(xs[gaps.indexOf(gap)] < ox && ox < xs[gaps.indexOf(gap) + 1]))) return null;
+        const cells = xs.map((x, index) => [x, trendAt(x) + (index % 2 ? 1 : -1) * (0.2 + t.random() * 0.6)]);
+        if (cells.some(([, y]) => y < 0.3 || y > Y_CELLS - 0.3)) return null;
+        const points = cells.map(([x, y]) => [x * xStep, y * yStep]).concat([[ox * xStep, oy * yStep]]);
+        const all = fitLine(points);
+        const rest = fitLine(points.slice(0, -1));
+        // Only the chosen point is far from the line drawn through all of them.
+        const off = (x, y) => Math.abs(y - all.at(x)) / yStep;
+        if (points.slice(0, -1).some(([x, y]) => off(x, y) > 1.3) || off(ox * xStep, oy * yStep) < 2.4) return null;
+        const X0 = ox * xStep;
+        const Y0 = oy * yStep;
+        // The far end: the other side of the data from the outlier.
+        const farX = (right ? 0 : X_CELLS) * xStep;
+        const slopeUp = rest.slope > all.slope;
+        if (slopeUp !== wantUp) return null;
+        const otherUp = askIntercept ? rest.intercept > all.intercept : rest.at(farX) > all.at(farX);
+        // Only clear cases, so reading the drawing cannot flip the answer.
+        const clear = Math.abs(rest.slope - all.slope) >= 0.12 * Math.abs(all.slope) &&
+          Math.abs((askIntercept ? rest.intercept - all.intercept : rest.at(farX) - all.at(farX))) >= 0.4 * yStep;
+        if (!clear) return null;
+        const xMax = X_CELLS * xStep;
+        const yMax = Y_CELLS * yStep;
+        const alt =
+          `Scatterplot of ${n + 1} points with ${inSentence(scene.xTitle)} on the horizontal axis, 0 to ${xMax}, and ` +
+          `${inSentence(scene.yTitle)} on the vertical axis, 0 to ${yMax}. A line of best fit for all the points is drawn. Most points lie close to ` +
+          `the line; the point at (${num(X0)}, ${num(Y0)}) lies far ${above ? "above" : "below"} it.`;
+        const figure = scatterPlot({ xMax, xStep, yMax, yStep, points, fit: [tidy(all.slope), tidy(all.intercept)], xTitle: scene.xTitle, yTitle: scene.yTitle, alt });
+        const otherWords = askIntercept ? "the y-intercept" : `the predicted value at x = ${num(farX)}`;
+        // Different words for the two effects, so no choice shares more words
+        // with the others than the rest do.
+        const say = (up1, up2) =>
+          `The slope would ${up1 ? "increase" : "decrease"}, and ${otherWords} would be ${up2 ? "greater" : "less"}.`;
+        const pull = right ? "right" : "left";
+        const grid = statementGrid((i, j) => {
+          const up1 = i === 0 ? slopeUp : !slopeUp;
+          const up2 = j === 0 ? otherUp : !otherUp;
+          const reason = i && j
+            ? "Reverses both effects: removing the point lets the line swing away from where the point was pulling it."
+            : i
+              ? `Turns the line the wrong way: the point at the ${pull} end pulls that end ${above ? "up" : "down"}, so removing it moves that end ${above ? "down" : "up"}.`
+              : `Gets the slope right but not the other end: the line pivots near the middle of the data, so ${otherWords} moves the opposite way to the ${pull} end.`;
+          return [say(up1, up2), reason, i === 0 && j === 0];
+        });
+        const stem =
+          `The scatterplot shows ${scene.about(n + 1)}, and a line of best fit for all ${n + 1} points. If the data point at ` +
+          `(${num(X0)}, ${num(Y0)}) is removed and a new line of best fit is found for the other ${n} points, which of the following ` +
+          `best describes how the new line compares with the one shown?`;
+        return {
+          responseType: "multiple-choice",
+          stimulus: null,
+          figure,
+          stem,
+          correct: grid.correct,
+          wrong: grid.wrong,
+          explanation:
+            `The point at (${num(X0)}, ${num(Y0)}) is far ${above ? "above" : "below"} the trend near the ${pull} end of the data, so it ` +
+            `pulls that end of the line ${above ? "up" : "down"}. Without it, the ${pull} end moves ${above ? "down" : "up"}: the line turns so its ` +
+            `slope ${slopeUp ? "increases" : "decreases"}, and the other end, including ${otherWords}, moves ${otherUp ? "up" : "down"}.`,
+          steps: [
+            `Locate the point: near the ${pull} end, far ${above ? "above" : "below"} the other points.`,
+            `Removing it lets the ${pull} end of the line move ${above ? "down" : "up"}, so the slope ${slopeUp ? "increases" : "decreases"}.`,
+            `The line pivots near the middle of the data, so the opposite end moves ${otherUp ? "up" : "down"}: ${otherWords} would be ${otherUp ? "greater" : "less"}.`,
+          ],
+          principles: [
+            "A point far from the trend near one end of the data has a strong pull on the slope of the line of best fit.",
+            "A line of best fit passes through the mean of the data, so when one end moves one way, the other end moves the other way.",
+          ],
+          trap: `The ${above ? "high" : "low"} point makes its end of the line ${above ? "higher" : "lower"}; removing it moves that end the other way, and the far end moves opposite to it.`,
+          hint: "Which end of the line is the point pulling, and which way?",
+          estimatedSeconds: 110,
+          verify: () => {
+            // Refit both lines from the points in the drawing itself.
+            const seen = readScatter(figure.svg, xMax, yMax).points;
+            if (seen.length !== n + 1) return false;
+            const target = seen.findIndex(([x, y]) => Math.abs(x - X0) < 0.05 * xStep && Math.abs(y - Y0) < 0.05 * yStep);
+            if (target < 0) return false;
+            const before = fitLine(seen);
+            const after = fitLine(seen.filter((unused, index) => index !== target));
+            const first = after.slope > before.slope;
+            const second = askIntercept ? after.intercept > before.intercept : after.at(farX) > before.at(farX);
+            return grid.correct === say(first, second);
+          },
+        };
+      });
+    },
+  };
+
+  /* ============================ exponential-fit-interpretation (Hard) */
+
+  // An exponential model fitted to data: a percent change per unit compounds,
+  // so over k units it is not k times the one-unit change.
+  const GROWTH_FITS = [
+    {
+      growth: true, a: [200, 600], step: 50, unit: "hour", xMax: 8, xTitle: "Time (hours)", yTitle: "Number of bacteria",
+      about: "the number of bacteria in a culture at different times after it was started", noun: "number of bacteria", things: "bacteria",
+      xIs: "the number of hours after the culture was started",
+    },
+    {
+      growth: true, a: [1000, 3000], step: 500, unit: "month", xMax: 8, xTitle: "Time (months)", yTitle: "Active users",
+      about: "the number of active users of a new app at the end of different months after its launch", noun: "number of active users", things: "users",
+      xIs: "the number of months after the launch",
+    },
+    {
+      growth: false, a: [20, 40], step: 1, unit: "year", xMax: 8, xTitle: "Age (years)", yTitle: "Value (thousands of dollars)",
+      about: "the ages and values, in thousands of dollars, of used cars of one model", noun: "value of a car", things: "thousand dollars",
+      xIs: "the age of the car, in years",
+    },
+    {
+      growth: false, a: [300, 600], step: 50, unit: "hour", xMax: 8, xTitle: "Time (hours)", yTitle: "Medication (milligrams)",
+      about: "the amount of a medication, in milligrams, in patients' bloodstreams at different times after a dose", noun: "amount of medication", things: "milligrams",
+      xIs: "the number of hours after the dose",
+    },
+    {
+      growth: false, a: [80, 160], step: 10, unit: "day", xMax: 8, xTitle: "Time (days)", yTitle: "Mass (grams)",
+      about: "the mass, in grams, of a radioactive sample measured on different days", noun: "mass of the sample", things: "grams",
+      xIs: "the number of days after the first measurement",
+    },
+  ];
+
+  const expFitInterpretation = {
+    id: "exponential-fit-interpretation",
+    domain: DATA,
+    skill: "Two-variable data",
+    subskill: "scatterplots",
+    difficulty: "Hard",
+    title: "Compounding in an exponential model fitted to data",
+    recognize:
+      "In y = a·b^x the predicted value is multiplied by b for each unit of x, so over k units it is multiplied by b^k; the " +
+      "percent change over k units is b^k − 1, not k times the one-unit percent.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["neighbouring-rule", "wrong-quantity", "percent-base"],
+    build(t) {
+      const scene = t.pick(GROWTH_FITS);
+      const form = t.pick(["change", "change", "ratio"]);
+      const numeric = form === "change" && t.chance(0.35);
+      return retry(() => {
+        const b = t.pick(scene.growth ? [1.1, 1.2, 1.25, 1.3, 1.5] : [0.9, 0.8, 0.75, 0.7, 0.6]);
+        const k = t.pick([2, 3]);
+        const a = t.int(scene.a[0] / scene.step, scene.a[1] / scene.step) * scene.step;
+        const factor = tidy(b ** k);
+        const pct = tidy(Math.abs(factor - 1) * 100);
+        if (!isClean(pct, 1)) return null;
+        const per = tidy(Math.abs(b - 1) * 100);
+        const model = (x) => a * b ** x;
+        // Keep the vertical scale under 10,000 so its labels stay short.
+        const xMax = range(5, scene.xMax).filter((x) => model(x) * 1.15 < 10000).pop();
+        if (!xMax) return null;
+        // The data: the model plus a little scatter, at whole units.
+        const xs = range(0, xMax);
+        const ys = xs.map((x) => model(x) * (1 + (t.random() * 2 - 1) * 0.06));
+        const top = Math.max(...ys) * 1.1;
+        // A 1, 2, or 5 times a power of ten, giving at most 10 gridlines.
+        const power = 10 ** Math.floor(Math.log10(top / 10));
+        const yStep = [1, 2, 5, 10].map((m) => m * power).find((step) => top / step <= 10);
+        const yMax = Math.ceil(top / yStep) * yStep;
+        const equation = `y = ${fmt(a)}(${num(b)})^x`;
+        const alt =
+          `Scatterplot of ${xs.length} points with ${inSentence(scene.xTitle)} on the horizontal axis, 0 to ${xMax}, and ` +
+          `${inSentence(scene.yTitle)} on the vertical axis, 0 to ${fmt(yMax)}. The points ${scene.growth ? "rise more and more steeply" : "fall steeply at first and then level off"}, ` +
+          "and a curve of best fit passes close to them.";
+        const figure = scatterPlot({
+          xMax, xStep: 1, yMax, yStep, points: xs.map((x, index) => [x, ys[index]]), fit: null, curve: model,
+          xTitle: scene.xTitle, yTitle: scene.yTitle, alt,
+        });
+        const intro =
+          `The scatterplot shows ${scene.about}. An exponential model for the data is ${equation}, where y is the predicted ` +
+          `${scene.noun} and x is ${scene.xIs}.`;
+        const word = scene.growth ? "increase" : "decrease";
+        const units = `${k} ${scene.unit}s`;
+        const common = {
+          stimulus: null,
+          figure,
+          principles: [
+            "In an exponential model y = a·b^x, each increase of 1 in x multiplies the predicted value by b.",
+            "Over k units the predicted value is multiplied by b^k, so percent changes compound rather than add.",
+          ],
+          estimatedSeconds: 110,
+        };
+        const steps = [
+          `Each ${scene.unit} multiplies the predicted value by ${num(b)}.`,
+          `Over ${units}: ${num(b)}${S.sup(k)} = ${num(factor)}.`,
+        ];
+        const check = (stem) => () => {
+          // Re-read the model from the stem and compare two predictions k apart.
+          const found = /y = ([\d,]+)\(([\d.]+)\)\^x/.exec(stem);
+          if (!found) return false;
+          const [start, base] = [Number(found[1].replace(/,/g, "")), Number(found[2])];
+          const ratio = (start * base ** (5 + k)) / (start * base ** 5);
+          return form === "ratio" ? close(ratio * 100, factor * 100, 1e-9) : close(Math.abs(ratio - 1) * 100, pct, 1e-9);
+        };
+        const percent = (value) => `${num(tidy(value))}%`;
+        if (form === "change") {
+          const stem = `${intro} According to the model, by what percent does the predicted ${scene.noun} ${word} every ${units}?`;
+          const item = packRanked(t, numeric, pct, [
+            // A decrease of more than 100% is impossible, so it is not offered.
+            [scene.growth || k * per < 100 ? k * per : NaN, `Adds the ${per}% ${word} once for each of the ${units}; percent changes compound, so they do not add.`],
+            [per, `Gives the ${word} for one ${scene.unit}, not for ${units}.`],
+            [factor * 100, `Gives the predicted value after ${units} as a percent of the starting value, not the percent ${word}.`],
+            [per ** k / 100 ** (k - 1), `Raises the percent ${word}, ${per}%, to the power ${k} instead of the factor ${num(b)}.`],
+          ], {
+            ...common,
+            stem,
+            explanation: `${steps.join(" ")} A factor of ${num(factor)} is ${S.article(pct)} ${percent(pct)} ${word}.`,
+            steps: [...steps, `A factor of ${num(factor)} means ${S.article(pct)} ${percent(pct)} ${word}.`],
+            trap: `${k} × ${per}% = ${k * per}% adds percents that compound; the ${word} over ${units} is ${percent(pct)}.`,
+            hint: `What does the model multiply the predicted value by over ${units}?`,
+            verify: check(stem),
+          }, { places: 2, show: numeric ? fmt : percent });
+          return item;
+        }
+        const x1 = t.int(1, 4);
+        const stem =
+          `${intro} According to the model, the predicted ${scene.noun} at x = ${x1 + k} is what percent of the predicted ${scene.noun} at x = ${x1}?`;
+        return packRanked(t, false, factor * 100, [
+          [(1 + k * (b - 1)) * 100, `Adds the one-${scene.unit} percent change ${k} times instead of compounding it.`],
+          [b * 100, `Uses the change for one ${scene.unit}, though the values are ${units} apart.`],
+          [pct, `Gives the percent ${word}, not the later value as a percent of the earlier one.`],
+          [(b ** (x1 + k)) * 100, `Applies the factor ${x1 + k} times, from x = 0, instead of ${k} times.`],
+          [(1 / factor) * 100, `Compares the values the other way around, the earlier one as a percent of the later one.`],
+        ], {
+          ...common,
+          stem,
+          explanation: `${steps.join(" ")} The predicted value at x = ${x1 + k} is ${num(factor)} times the value at x = ${x1}, which is ${percent(factor * 100)} of it.`,
+          steps: [...steps, `${num(factor)} = ${percent(factor * 100)}.`],
+          trap: `The ${word} is ${per}% each ${scene.unit}, but over ${units} the factors multiply: ${num(b)}${S.sup(k)}, not 1 ${scene.growth ? "+" : MINUS} ${k} × ${num(tidy(Math.abs(b - 1)))}.`,
+          hint: `How many times is the factor ${num(b)} applied between x = ${x1} and x = ${x1 + k}?`,
+          verify: check(stem),
+        }, { places: 2, show: percent });
+      });
+    },
+  };
+
+  /* ===================================== fit-model-choice (Medium) */
+
+  // Linear or exponential, and the value at x = 0, which the table (starting
+  // at x = 1) does not show.
+  const MODEL_SCENES = [
+    { xHead: "Day", yHead: "Plants", about: "the number of plants in a garden bed on selected days after planting" },
+    { xHead: "Week", yHead: "Members", about: "the number of members of a new online club at the end of each of its first five weeks" },
+    { xHead: "Hour", yHead: "Cells", about: "the number of cells in a sample at the end of each of the first five hours of an experiment" },
+    { xHead: "Year", yHead: "Value (dollars)", about: "the value, in dollars, of a piece of equipment at the end of each of the first five years after it was bought" },
+    { xHead: "Month", yHead: "Visitors", about: "the number of visitors to a park in each of the first five months after it opened" },
+  ];
+
+  const fitModelChoice = {
+    id: "fit-model-choice",
+    domain: DATA,
+    skill: "Two-variable data",
+    subskill: "linear models",
+    difficulty: "Medium",
+    title: "Choosing a linear or exponential model for a table",
+    recognize:
+      "Equal differences for equal steps in x mean a linear model; equal ratios mean an exponential one. The equation's " +
+      "constant is the value at x = 0, one step before the table starts.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["neighbouring-rule", "intermediate-value"],
+    build(t) {
+      const scene = t.pick(MODEL_SCENES);
+      const exponential = t.chance(0.5);
+      return retry(() => {
+        let y0;
+        let rate;
+        if (exponential) {
+          const option = t.pick([{ b: 2, starts: range(3, 12) }, { b: 3, starts: range(2, 6) }, { b: 1.5, starts: [32, 64, 96] },
+            { b: 0.5, starts: [64, 128, 192, 256, 320] }, { b: 0.75, starts: [1024, 2048] }]);
+          y0 = t.pick(option.starts);
+          rate = option.b;
+        } else {
+          y0 = t.int(10, 90);
+          rate = t.nonzero(-12, 15);
+        }
+        const f = (x) => (exponential ? y0 * rate ** x : y0 + rate * x);
+        const xs = [1, 2, 3, 4, 5];
+        const ys = xs.map(f);
+        if (ys.some((y) => y <= 0 || !Number.isInteger(tidy(y)))) return null;
+        // The other family, with its rate from the first two rows; both
+        // families appear with the right start and with the x = 1 value, the
+        // full 2 × 2 grid, so no choice is the one the others vary around.
+        const firstDiff = ys[1] - ys[0];
+        const firstRatio = tidy(ys[1] / ys[0]);
+        if (!exponential && !isClean(firstRatio, 2)) return null;
+        const lin = (m, c) => `y = ${S.lin(m, c).replace(/\d{4,}/g, (digits) => fmt(Number(digits)))}`;
+        const expo = (c, b) => `y = ${fmt(c)}(${num(b)})^x`;
+        const right = exponential
+          ? { key: expo(y0, rate), keyShift: expo(ys[0], rate), other: lin(firstDiff, y0), otherShift: lin(firstDiff, ys[0]) }
+          : { key: lin(rate, y0), keyShift: lin(rate, ys[0]), other: expo(y0, firstRatio), otherShift: expo(ys[0], firstRatio) };
+        const family = exponential ? "exponential" : "linear";
+        const otherFamily = exponential ? "linear" : "exponential";
+        const changes = exponential
+          ? `the differences change (${num(firstDiff)}, ${num(ys[2] - ys[1])}, …), so the change is not a constant amount`
+          : `the ratios change (${num(firstRatio)}, ${num(tidy(ys[2] / ys[1]))}, …), so the change is not a constant percent`;
+        const reasons = {
+          keyShift: `Uses ${fmt(ys[0])}, the value at x = 1, as the value at x = 0.`,
+          other: `Chooses the ${otherFamily} form, using the first two rows; ${changes}.`,
+          otherShift: `Chooses the ${otherFamily} form and also uses the value at x = 1 as the value at x = 0.`,
+        };
+        const grid = statementGrid((i, j) => {
+          const text = i === 0 ? (j === 0 ? right.key : right.keyShift) : (j === 0 ? right.other : right.otherShift);
+          const reason = i === 0 ? reasons.keyShift : j === 0 ? reasons.other : reasons.otherShift;
+          return [text, i === 0 && j === 0 ? "" : reason, i === 0 && j === 0];
+        });
+        if (!grid || new Set([grid.correct, ...grid.wrong.map(([text]) => text)]).size < 4) return null;
+        const content = S.table([scene.xHead, scene.yHead], xs.map((x, index) => [x, fmt(ys[index])]));
+        const diffs = ys.slice(1).map((y, index) => tidy(y - ys[index]));
+        const ratios = ys.slice(1).map((y, index) => tidy(y / ys[index]));
+        return pack(false, null, grid.correct, grid.wrong, {
+          stimulus: { type: "table", content },
+          figure: null,
+          stem: `The table shows ${scene.about}. Which of the following equations models the relationship between x, the ${scene.xHead.toLowerCase()}, and y, the ${inSentence(scene.yHead).replace(/ \(.*\)$/, "")}?`,
+          explanation: exponential
+            ? `Each row is ${num(rate)} times the one before (${ratios.map(num).join(", ")}), so the model is exponential with factor ${num(rate)}. ` +
+              `One step before x = 1, the value is ${fmt(ys[0])} ÷ ${num(rate)} = ${fmt(y0)}, so y = ${fmt(y0)}(${num(rate)})^x.`
+            : `Each row changes by ${num(rate)} (${diffs.map(num).join(", ")}), so the model is linear with slope ${num(rate)}. ` +
+              `One step before x = 1, the value is ${fmt(ys[0])} ${S.signed(-rate)} = ${fmt(y0)}, so ${lin(rate, y0)}.`,
+          steps: [
+            `Differences between rows: ${diffs.map(num).join(", ")}; ratios: ${ratios.map((r) => num(r)).join(", ")}.`,
+            exponential ? `The ratios are constant, so the model is ${family}.` : `The differences are constant, so the model is ${family}.`,
+            `The value at x = 0 is one step back from x = 1: ${fmt(y0)}.`,
+          ],
+          principles: [
+            "Constant differences over equal steps in x mean a linear model; constant ratios mean an exponential model.",
+            "In y = mx + b or y = a(b)^x, the constant b or a is the value of y when x = 0.",
+          ],
+          trap: `The table starts at x = 1, so ${fmt(ys[0])} is not the value at x = 0.`,
+          hint: "Compare the changes from row to row, as amounts and as ratios.",
+          estimatedSeconds: 90,
+          verify: () => {
+            // Evaluate each choice at the table's x-values; exactly the key fits every row.
+            const rows = parseTable(content).slice(1).map((row) => row.map(parseNumber));
+            const value = (text, x) => {
+              const e = /^y = ([\d,.]+)\(([\d.]+)\)\^x$/.exec(text);
+              if (e) return Number(e[1].replace(/,/g, "")) * Number(e[2]) ** x;
+              const l = /^y = (−?[\d.,]*)x(?: ([+−]) ([\d.,]+))?$/.exec(text);
+              if (!l) return NaN;
+              const m = l[1] === "" ? 1 : l[1] === MINUS ? -1 : Number(l[1].replace(MINUS, "-").replace(/,/g, ""));
+              return m * x + (l[2] ? (l[2] === "+" ? 1 : -1) * Number(l[3].replace(/,/g, "")) : 0);
+            };
+            const fits = (text) => rows.every(([x, y]) => close(value(text, x), y, 1e-9));
+            return fits(grid.correct) && grid.wrong.every(([text]) => !fits(text));
+          },
+        }, true);
+      });
+    },
+  };
+
+  // Every item's text passes through agree(), so a quantity of exactly 1
+  // takes a singular unit wherever a template's numbers happen to land on it.
+  function withAgreement(family) {
+    const fix = (value) => (typeof value === "string" ? agree(value) : value);
+    return {
+      ...family,
+      build(t) {
+        const item = family.build(t);
+        return {
+          ...item,
+          stem: fix(item.stem),
+          correct: fix(item.correct),
+          wrong: (item.wrong || []).map(([text, reason]) => [fix(text), fix(reason)]),
+          explanation: fix(item.explanation),
+          steps: (item.steps || []).map(fix),
+          trap: fix(item.trap),
+          hint: fix(item.hint),
+        };
+      },
+    };
+  }
+
+  return [
+    bestFitEquation, shapeAndCount, scatterReading, twoGroupLines, fitModelChoice, unevenTable, rescaledSlope, outlierRemoval,
+    expFitInterpretation,
+  ].map(withAgreement);
 });

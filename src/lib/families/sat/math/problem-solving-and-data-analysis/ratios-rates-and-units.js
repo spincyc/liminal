@@ -10,10 +10,21 @@
 
   // Ratios, rates, and units templates (Problem-Solving and Data Analysis), ordered Easy, Medium, Hard.
 
-  const { MINUS, num, frac, table } = S;
+  const { MINUS, frac, table, plural, money } = S;
+  // Every printed number is grouped by thousands ("1,440 minutes").
+  const num = S.grouped;
   const {
-    DATA, tidy, isClean, fmt, shown, retry, pack, close, DOMAIN, about, offerHard, finish,
+    DATA, tidy, isClean, fmt, shown, retry, pack, close, DOMAIN, about, finish, packRanked,
   } = C;
+
+  // Every modelled mistake that prints as the key redraws the item.
+  const packStrict = (numeric, keyValue, keyText, candidates, fields) => pack(numeric, keyValue, keyText, candidates, fields, true);
+
+  // A value a test would print as a whole number, or NaN so it drops out.
+  const whole = (value) => (Number.isInteger(tidy(value)) ? tidy(value) : NaN);
+
+  // A positive value with at most `places` decimals, or NaN so it drops out.
+  const clean = (value, places = 2) => (value > 0 && isClean(value, places) ? tidy(value) : NaN);
 
   /* ==================================== proportional-rate-scaling (Easy) */
 
@@ -99,10 +110,11 @@
           stem: `A pump removes water from a flooded basement at a constant rate of ${R} gallons per minute. There are ${fmt(G)} gallons of water in the basement. How many hours will it take the pump to remove all of the water?`,
           key: H,
           candidates: [
-            [shown(minutes), `Stops at the time in minutes, ${fmt(G)} ÷ ${R} = ${fmt(minutes)}, without converting to hours.`],
-            [shown(minutes / 100), `Converts ${fmt(minutes)} minutes to hours by moving the decimal point, as if an hour had 100 minutes.`],
-            [shown((G * 60) / R), "Multiplies by 60 instead of dividing, converting between minutes and hours in the wrong direction."],
-            [shown(R * 60), `Gives the pump's rate in gallons per hour, ${R} × 60, instead of the time.`],
+            [clean(minutes), `Stops at the time in minutes, ${fmt(G)} ÷ ${R} = ${fmt(minutes)}, without converting to hours.`],
+            [clean(minutes / 100), `Converts ${fmt(minutes)} minutes to hours by moving the decimal point, as if an hour had 100 minutes.`],
+            [clean((G * 60) / R), "Multiplies by 60 instead of dividing, converting between minutes and hours in the wrong direction."],
+            [clean(R * 60), `Gives the pump's rate in gallons per hour, ${R} × 60, instead of the time.`],
+            [clean(minutes / 3600, 3), `Divides the ${fmt(minutes)} minutes by 3,600, as if they were seconds, instead of by 60.`],
           ],
           explanation: `At ${R} gallons per minute, ${fmt(G)} gallons take ${fmt(G)} ÷ ${R} = ${fmt(minutes)} minutes, and ${fmt(minutes)} minutes is ${fmt(minutes)} ÷ 60 = ${num(H)} hours.`,
           steps: [
@@ -124,10 +136,11 @@
           stem: `A computer downloads a file at a constant rate of ${R} megabytes per second. The file is ${fmt(F)} megabytes. How many minutes does the download take?`,
           key: M,
           candidates: [
-            [shown(seconds), `Stops at the time in seconds, ${fmt(F)} ÷ ${R} = ${fmt(seconds)}, without converting to minutes.`],
-            [shown(seconds / 100), `Converts ${fmt(seconds)} seconds to minutes by moving the decimal point, as if a minute had 100 seconds.`],
-            [shown((F * 60) / R), "Multiplies by 60 instead of dividing, converting between seconds and minutes in the wrong direction."],
-            [shown(R * 60), `Gives the download rate in megabytes per minute, ${R} × 60, instead of the time.`],
+            [clean(seconds), `Stops at the time in seconds, ${fmt(F)} ÷ ${R} = ${fmt(seconds)}, without converting to minutes.`],
+            [clean(seconds / 100), `Converts ${fmt(seconds)} seconds to minutes by moving the decimal point, as if a minute had 100 seconds.`],
+            [clean((F * 60) / R), "Multiplies by 60 instead of dividing, converting between seconds and minutes in the wrong direction."],
+            [clean(R * 60), `Gives the download rate in megabytes per minute, ${R} × 60, instead of the time.`],
+            [clean(seconds / 3600, 3), `Divides the ${fmt(seconds)} seconds by 3,600, which converts seconds to hours, not minutes.`],
           ],
           explanation: `At ${R} megabytes per second, ${fmt(F)} megabytes take ${fmt(F)} ÷ ${R} = ${fmt(seconds)} seconds, which is ${fmt(seconds)} ÷ 60 = ${num(M)} minutes.`,
           steps: [
@@ -152,10 +165,12 @@
           stem: `A machine produces ${Pn} bolts every ${M} minutes. At this rate, how many bolts does the machine produce in ${H} hours?`,
           key,
           candidates: [
-            [shown((Pn * H) / M, 0), `Divides by ${M} and multiplies by ${H} without converting ${H} hours to minutes.`],
-            [shown(Pn * 60 * H, 0), `Treats ${Pn} bolts as the number made each minute, ignoring that they take ${M} minutes.`],
-            [shown(perHour, 0), `Stops at the number made in one hour, ${fmt(perHour)}.`],
-            [shown(Pn * H, 0), `Multiplies ${Pn} by ${H}, as if ${Pn} bolts were made each hour.`],
+            [clean((Pn * H) / M, 0), `Divides by ${M} and multiplies by ${H} without converting ${H} hours to minutes.`],
+            [clean(Pn * 60 * H, 0), `Treats ${Pn} bolts as the number made each minute, ignoring that they take ${M} minutes.`],
+            [clean(perHour, 0), `Stops at the number made in one hour, ${fmt(perHour)}.`],
+            [clean(Pn * H, 0), `Multiplies ${Pn} by ${H}, as if ${Pn} bolts were made each hour.`],
+            [clean(Pn * 60 * H * M, 0), `Multiplies by the ${M} minutes instead of dividing by them.`],
+            [clean((Pn * 3600 * H) / M, 0), `Converts ${H} hours to seconds, ${num(3600 * H)}, instead of minutes.`],
           ],
           explanation: `${H} hours is ${H * 60} minutes, which is ${(H * 60) / M} periods of ${M} minutes. The machine makes ${Pn} bolts in each, so ${(H * 60) / M} × ${Pn} = ${fmt(key)} bolts.`,
           steps: [
@@ -177,15 +192,17 @@
           stem: `A leaking faucet drips water at a constant rate of ${D} milliliters per minute. How many liters of water drip from the faucet in ${H} hours? (1 liter = 1,000 milliliters)`,
           key,
           candidates: [
-            [shown(ml), `Stops at the amount in milliliters, ${D} × ${H * 60} = ${fmt(ml)}.`],
-            [shown((D * H) / 1000, 3), `Multiplies ${D} by ${H} without converting hours to minutes.`],
-            [shown(ml / 100), "Divides by 100 instead of 1,000 to convert milliliters to liters."],
-            [shown((D * 60) / 1000, 3), "Stops at the number of liters that drip in one hour."],
+            [clean(ml), `Stops at the amount in milliliters, ${D} × ${num(H * 60)} = ${fmt(ml)}.`],
+            [clean((D * H) / 1000, 3), `Multiplies ${D} by ${H} without converting hours to minutes.`],
+            [clean(ml / 100), "Divides by 100 instead of 1,000 to convert milliliters to liters."],
+            [clean((D * 60) / 1000, 3), "Stops at the number of liters that drip in one hour."],
+            [clean((D * 3600 * H) / 1000, 3), "Multiplies by 3,600, the number of seconds in an hour, instead of 60 minutes per hour."],
+            [clean(ml / 1e6, 3), "Divides by 1,000 twice, converting milliliters past liters."],
           ],
-          explanation: `In ${H} hours there are ${H * 60} minutes, so ${D} × ${H * 60} = ${fmt(ml)} milliliters drip. That is ${fmt(ml)} ÷ 1,000 = ${num(key)} liters.`,
+          explanation: `In ${H} hours there are ${num(H * 60)} minutes, so ${D} × ${num(H * 60)} = ${fmt(ml)} milliliters drip. That is ${fmt(ml)} ÷ 1,000 = ${num(key)} liters.`,
           steps: [
-            `Convert the time: ${H} hours = ${H * 60} minutes.`,
-            `Milliliters: ${D} × ${H * 60} = ${fmt(ml)}.`,
+            `Convert the time: ${H} hours = ${num(H * 60)} minutes.`,
+            `Milliliters: ${D} × ${num(H * 60)} = ${fmt(ml)}.`,
             `Liters: ${fmt(ml)} ÷ 1,000 = ${num(key)}.`,
           ],
           trap: "Two conversions are needed, hours to minutes and milliliters to liters; skipping either gives an answer off by a factor of 60 or 1,000.",
@@ -201,16 +218,18 @@
           stem: `A runner runs at a constant speed of ${V} kilometers per hour. How many meters does the runner run in ${T} minutes? (1 kilometer = 1,000 meters)`,
           key,
           candidates: [
-            [shown((V * T) / 60, 2), `Stops at the distance in kilometers, ${V} × ${T}/60.`],
-            [shown(V * 1000 * T, 0), `Converts kilometers to meters but multiplies by ${T} without converting minutes to hours.`],
-            [shown(V * 1000, 0), "Gives the number of meters in one hour."],
-            [shown(V * T, 0), `Multiplies ${V} by ${T} without converting either unit.`],
+            [clean((V * T) / 60, 2), `Stops at the distance in kilometers, ${V} × ${T}/60.`],
+            [clean(V * 1000 * T, 0), `Converts kilometers to meters but multiplies by ${T} without converting minutes to hours.`],
+            [clean(V * 1000, 0), "Gives the number of meters in one hour."],
+            [clean(V * T, 0), `Multiplies ${V} by ${T} without converting either unit.`],
+            [clean((V * 100 * T) / 60, 2), "Converts kilometers to meters by multiplying by 100 instead of 1,000."],
+            [clean((V * 1000 * 60) / T, 2), `Divides by ${T}/60 of an hour instead of multiplying by it.`],
           ],
-          explanation: `${T} minutes is ${T}/60 of an hour, so the runner covers ${V} × ${T}/60 = ${num((V * T) / 60)} kilometers, which is ${num((V * T) / 60)} × 1,000 = ${fmt(key)} meters.`,
+          explanation: `${T} minutes is ${T}/60 of an hour, so the runner covers ${V} × ${T}/60 = ${plural(tidy((V * T) / 60), "kilometer")}, which is ${num(tidy((V * T) / 60))} × 1,000 = ${fmt(key)} meters.`,
           steps: [
             `Convert the time: ${T} minutes = ${T}/60 hour.`,
-            `Kilometers: ${V} × ${T}/60 = ${num((V * T) / 60)}.`,
-            `Meters: ${num((V * T) / 60)} × 1,000 = ${fmt(key)}.`,
+            `Kilometers: ${V} × ${T}/60 = ${num(tidy((V * T) / 60))}.`,
+            `Meters: ${num(tidy((V * T) / 60))} × 1,000 = ${fmt(key)}.`,
           ],
           trap: "The speed is in kilometers per hour, but the time is in minutes and the answer is in meters; both units must change.",
           hint: "What fraction of an hour is the time given?",
@@ -224,19 +243,21 @@
         const W = t.pick([1.5, 2, 2.5, 3, 4, 5]);
         const key = tidy(C * 16 * W);
         return {
-          stem: `Coffee beans cost $${num(C)} per ounce. At this price, what is the cost, in dollars, of ${num(W)} pounds of coffee beans? (1 pound = 16 ounces)`,
+          stem: `Coffee beans cost ${money(C)} per ounce. At this price, what is the cost, in dollars, of ${num(W)} pounds of coffee beans? (1 pound = 16 ounces)`,
           key,
+          show: money,
           candidates: [
-            [shown(C * W), `Multiplies the price per ounce by ${num(W)} without converting pounds to ounces.`],
-            [shown(C * 16), "Stops at the price of one pound."],
-            [shown((C * W) / 16), "Divides by 16 instead of multiplying, converting in the wrong direction."],
-            [shown(C * 10 * W), "Uses 10 ounces per pound."],
+            [clean(C * W), `Multiplies the price per ounce by ${num(W)} without converting pounds to ounces.`],
+            [clean(C * 16), "Stops at the price of one pound."],
+            [clean((C * W) / 16), "Divides by 16 instead of multiplying, converting in the wrong direction."],
+            [clean(C * 10 * W), "Uses 10 ounces per pound."],
+            [clean((16 * W) / C), `Divides the ${num(16 * W)} ounces by the price per ounce instead of multiplying.`],
           ],
-          explanation: `${num(W)} pounds is ${num(W)} × 16 = ${num(W * 16)} ounces, and ${num(W * 16)} ounces at $${num(C)} each cost ${num(W * 16)} × ${num(C)} = ${num(key)} dollars.`,
+          explanation: `${num(W)} pounds is ${num(W)} × 16 = ${num(W * 16)} ounces, and ${num(W * 16)} ounces at ${money(C)} each cost ${num(W * 16)} × ${num(C)} = ${money(key)}.`,
           steps: [
             `Convert to ounces: ${num(W)} × 16 = ${num(W * 16)}.`,
             `Multiply by the price per ounce: ${num(W * 16)} × ${num(C)} = ${num(key)}.`,
-            `Check: ${num(key)} ÷ ${num(W)} = ${num(tidy(key / W))} dollars per pound, which is 16 × $${num(C)}.`,
+            `Check: ${money(key)} ÷ ${num(W)} = ${money(tidy(key / W))} per pound, which is 16 × ${money(C)}.`,
           ],
           trap: "The price is per ounce but the amount is in pounds; each pound holds 16 ounces.",
           hint: "How many ounces are being bought?",
@@ -249,15 +270,18 @@
         const feet = yards * 3;
         const key = tidy(C * yards);
         return {
-          stem: `Ribbon costs $${num(C)} per yard. What is the cost, in dollars, of ${feet} feet of ribbon? (1 yard = 3 feet)`,
+          stem: `Ribbon costs ${money(C)} per yard. What is the cost, in dollars, of ${feet} feet of ribbon? (1 yard = 3 feet)`,
           key,
+          show: money,
           candidates: [
-            [shown(C * feet), `Multiplies the price per yard by ${feet} without converting feet to yards.`],
-            [shown(C * feet * 3), "Multiplies by 3 instead of dividing, converting in the wrong direction."],
-            [shown(yards, 0), `Stops at the length in yards, ${feet} ÷ 3 = ${yards}.`],
-            [shown(C * 3), "Gives the cost of 3 yards."],
+            [clean(C * feet), `Multiplies the price per yard by ${feet} without converting feet to yards.`],
+            [clean(C * feet * 3), "Multiplies by 3 instead of dividing, converting in the wrong direction."],
+            [clean(yards, 0), `Stops at the length in yards, ${feet} ÷ 3 = ${yards}, and gives it as the cost.`],
+            [clean(C * 3), "Gives the cost of 3 yards."],
+            [clean(C / 3), "Gives the price of one foot of ribbon."],
+            [clean((C * yards) / 3), "Converts feet to yards and then divides by 3 again."],
           ],
-          explanation: `${feet} feet is ${feet} ÷ 3 = ${yards} yards, and ${yards} yards at $${num(C)} per yard cost ${yards} × ${num(C)} = ${num(key)} dollars.`,
+          explanation: `${feet} feet is ${feet} ÷ 3 = ${yards} yards, and ${yards} yards at ${money(C)} per yard cost ${yards} × ${num(C)} = ${money(key)}.`,
           steps: [
             `Convert to yards: ${feet} ÷ 3 = ${yards}.`,
             `Multiply by the price per yard: ${yards} × ${num(C)} = ${num(key)}.`,
@@ -304,23 +328,19 @@
         const exact = sqYd / C;
         if (Number.isInteger(exact) || exact < 2 || exact > 90) return null;
         const key = Math.ceil(exact);
-        const tail = t.shuffle([
-          [num(Math.ceil(sqFt / C)), "Treats the area in square feet as if it were in square yards."],
-          [num(sqYd), `Stops at the area in square yards, ${fmt(sqYd)}, without dividing by the coverage of one ${ctx.item}.`],
-        ]);
-        const wrong = offerHard(num(key), [
-          [num(Math.ceil(sqFt / 3 / C)), "Divides square feet by 3, but a square yard is 3 × 3 = 9 square feet."],
-          [num(Math.floor(exact)), `Rounds ${about(exact)} down, which would leave part of the ${ctx.noun} untreated.`],
-          ...tail,
-        ]);
-        if (!numeric && wrong.length < 3) return null;
-        return finish(numeric, {
+        const perimeter = (2 * (L + W)) / 3;
+        return packRanked(t, numeric, key, [
+          [Math.ceil(sqFt / 3 / C), "Divides square feet by 3, but a square yard is 3 × 3 = 9 square feet."],
+          [Math.floor(exact), `Rounds ${about(exact)} down, which would leave part of the ${ctx.noun} untreated.`],
+          [Math.ceil(sqFt / C), "Treats the area in square feet as if it were in square yards."],
+          [sqYd, `Stops at the area in square yards, ${fmt(sqYd)}, without dividing by the coverage of one ${ctx.item}.`],
+          [Math.ceil(perimeter / C), `Uses the distance around the ${ctx.noun}, ${fmt(perimeter)} yards, instead of its area.`],
+          [Math.ceil(sqYd / (9 * C)), `Converts the coverage to ${fmt(9 * C)} square feet but divides the area in square yards by it, mixing the two units.`],
+        ], {
           stimulus: null,
           stem:
             `${ctx.region} measures ${L} feet by ${W} feet. ${ctx.coverage} ${C} square yards. What is the least number of ` +
             `${ctx.items} needed to ${ctx.verb} the entire ${ctx.noun}? (1 yard = 3 feet)`,
-          correct: key,
-          wrong,
           explanation:
             `The ${ctx.noun} is ${L / 3} yards by ${W / 3} yards, so its area is ${fmt(sqYd)} square yards. ` +
             `${fmt(sqYd)} ÷ ${C} = ${about(exact)}, and a partial ${ctx.item} still has to be bought, so ${key} ${ctx.items} are needed.`,
@@ -337,7 +357,7 @@
             const yards = (L / 3) * (W / 3);
             return (key - 1) * C < yards && yards <= key * C;
           },
-        });
+        }, { places: 2 });
       });
     }
     const ctx = t.pick(TILE_ROOMS);
@@ -352,20 +372,19 @@
       const key = Math.ceil(tiles / k);
       if (key > 999) return null;
       const linear = Math.ceil((L * W * 12) / (s * s) / k);
-      const wrong = offerHard(num(key), [
-        [num(linear), "Converts square feet to square inches by multiplying by 12 instead of 12 × 12 = 144."],
-        [num(Math.floor(tiles / k)), `Rounds ${about(tiles / k)} down, which leaves the floor short of ${ctx.tile}.`],
-        [num(tiles), `Stops at the number of ${ctx.tile}, ${fmt(tiles)}, instead of the number of boxes.`],
-      ]);
-      if (!numeric && wrong.length < 3) return null;
-      return finish(numeric, {
+      return packRanked(t, numeric, key, [
+        [linear, "Converts square feet to square inches by multiplying by 12 instead of 12 × 12 = 144."],
+        [Math.floor(tiles / k), `Rounds ${about(tiles / k)} down, which leaves the floor short of ${ctx.tile}.`],
+        [tiles, `Stops at the number of ${ctx.tile}, ${fmt(tiles)}, instead of the number of boxes.`],
+        [Math.ceil((144 * L * W) / s / k), `Divides the area in square inches by ${s}, the side of one tile, instead of by its area, ${s} × ${s}.`],
+        [Math.ceil((12 * L * W) / s / k), `Treats each ${ctx.tile.slice(0, -1)} as covering ${s}/12 square foot, its side in feet, instead of (${s}/12)² square foot.`],
+        [L * W, `Stops at the area of the floor in square feet, ${fmt(L * W)}.`],
+      ], {
         stimulus: null,
         stem:
           `${ctx.region} measures ${L} feet by ${W} feet. It will be covered, with no gaps, overlaps, or cut pieces, by square ` +
           `${ctx.tile} that are ${s} inches on each side. The ${ctx.tile} are sold only in boxes of ${k}. What is the least ` +
           `number of boxes needed? (1 foot = 12 inches)`,
-        correct: key,
-        wrong,
         explanation:
           `In inches it measures ${12 * L} by ${12 * W}, so it takes ${(12 * L) / s} × ${(12 * W) / s} = ${fmt(tiles)} ${ctx.tile}. ` +
           `${fmt(tiles)} ÷ ${k} = ${about(tiles / k)}, and a partly used box must still be bought: ${key} boxes.`,
@@ -383,7 +402,7 @@
           const count = areaInches / (s * s);
           return count === tiles && (key - 1) * k < count && count <= key * k;
         },
-      });
+      }, { places: 0 });
     });
   }
 
@@ -405,22 +424,17 @@
         const cubicYards = cubicFeet / 27;
         if (Number.isInteger(cubicYards) || cubicYards < 1.2 || cubicYards > 60) return null;
         const key = Math.ceil(cubicYards);
-        const candidates = [
-          [num(Math.ceil(cubicFeet / 9)), "Divides cubic feet by 9, the square-yard factor; a cubic yard is 3 × 3 × 3 = 27 cubic feet."],
-          [num(Math.floor(cubicYards)), `Rounds ${about(cubicYards)} down, which would not be enough concrete.`],
-          [num(Math.ceil((L * W * T) / 27)), `Uses the thickness, ${T} inches, as if it were ${T} feet.`],
-        ];
-        if (Number.isInteger(cubicFeet)) candidates.push([num(cubicFeet), "Stops at the volume in cubic feet."]);
-        const wrong = offerHard(num(key), candidates);
-        if (!numeric && wrong.length < 3) return null;
-        return finish(numeric, {
+        return packRanked(t, numeric, key, [
+          [Math.ceil(cubicFeet / 9), "Divides cubic feet by 9, the square-yard factor; a cubic yard is 3 × 3 × 3 = 27 cubic feet."],
+          [Math.floor(cubicYards), `Rounds ${about(cubicYards)} down, which would not be enough concrete.`],
+          [Math.ceil((L * W * T) / 27), `Uses the thickness, ${T} inches, as if it were ${T} feet.`],
+          [Math.ceil(cubicFeet), "Rounds the volume in cubic feet up and never converts it to cubic yards."],
+        ], {
           stimulus: null,
           stem:
             `${ctx.region} will be ${L} feet long, ${W} feet wide, and ${T} inches thick. Concrete is sold only in whole cubic ` +
             `yards. What is the least number of cubic yards of concrete that must be bought to pour the ${ctx.noun}? ` +
             `(1 yard = 3 feet and 1 foot = 12 inches)`,
-          correct: key,
-          wrong,
           explanation:
             `The thickness is ${T}/12 foot, so the volume is ${L} × ${W} × ${T}/12 = ${about(cubicFeet)} cubic feet. A cubic ` +
             `yard is 27 cubic feet, so that is ${about(cubicYards)} cubic yards; buying whole cubic yards means ${key}.`,
@@ -437,7 +451,7 @@
             const yards = (L / 3) * (W / 3) * (T / 36);
             return key - 1 < yards - 1e-9 && yards <= key + 1e-9;
           },
-        });
+        }, { places: 0 });
       });
     }
     return retry(() => {
@@ -451,21 +465,18 @@
       const exact = liters / c;
       if (isClean(exact, 0) || exact < 3) return null;
       const key = Math.ceil(exact);
-      const wrong = offerHard(num(key), [
-        [num(Math.ceil((L * W * depth) / 100 / c)), "Divides cubic centimeters by 100 instead of 1,000 to get liters."],
-        [num(Math.floor(exact)), `Rounds ${about(exact)} down, which leaves the water short of the level.`],
-        [num(Math.ceil((L * W * H) / 1000 / c)), `Fills the aquarium to the top instead of to ${g} centimeters below it.`],
-        [num(tidy(liters)), `Stops at the volume in liters, ${num(tidy(liters))}, instead of the number of fillings.`],
-      ]);
-      if (!numeric && wrong.length < 3) return null;
-      return finish(numeric, {
+      return packRanked(t, numeric, key, [
+        [Math.ceil((L * W * depth) / 100 / c), "Divides cubic centimeters by 100 instead of 1,000 to get liters."],
+        [Math.floor(exact), `Rounds ${about(exact)} down, which leaves the water short of the level.`],
+        [Math.ceil((L * W * H) / 1000 / c), `Fills the aquarium to the top instead of to ${g} centimeters below it.`],
+        [tidy(liters), `Stops at the volume in liters, ${num(tidy(liters))}, instead of the number of fillings.`],
+        [Math.ceil((L * W * g) / 1000 / c), `Uses the ${g} centimeters left empty at the top as the depth of the water.`],
+      ], {
         stimulus: null,
         stem:
           `The interior of a rectangular aquarium is ${L} centimeters long, ${W} centimeters wide, and ${H} centimeters tall. ` +
           `It will be filled with water to a level ${g} centimeters below the top, using a bucket that holds ${num(c)} liters. ` +
           `What is the least number of times the bucket must be filled? (1 liter = 1,000 cubic centimeters)`,
-        correct: key,
-        wrong,
         explanation:
           `The water is ${depth} centimeters deep, so its volume is ${L} × ${W} × ${depth} = ${fmt(L * W * depth)} cubic ` +
           `centimeters, or ${num(tidy(liters))} liters. ${num(tidy(liters))} ÷ ${num(c)} = ${about(exact)}, so the bucket must be filled ${key} times.`,
@@ -482,7 +493,7 @@
           const litersCheck = (L / 10) * (W / 10) * (depth / 10);
           return (key - 1) * c < litersCheck && litersCheck <= key * c;
         },
-      });
+      }, { places: 1 });
     });
   }
 
@@ -497,23 +508,20 @@
       const exact = liters / B;
       if (Number.isInteger(exact) || exact < 2 || exact > 99) return null;
       const key = Math.ceil(exact);
-      const wrong = offerHard(num(key), [
-        [num(Math.ceil((10 * liters) / B)), "Converts millimeters to meters by dividing by 100 instead of 1,000."],
-        [num(Math.floor(exact)), `Rounds ${about(exact)} down, which leaves some water with nowhere to go.`],
-        [num(Math.ceil((L * W * r) / B)), `Uses the rain from one hour only, ignoring the ${h}-hour duration.`],
-        [num(liters), `Stops at the volume of rain in liters, ${fmt(liters)}.`],
-      ]);
-      if (!numeric && wrong.length < 3) return null;
       const depthMm = r * h;
-      return finish(numeric, {
+      return packRanked(t, numeric, key, [
+        [Math.ceil((10 * liters) / B), "Converts millimeters to meters by dividing by 100 instead of 1,000."],
+        [Math.floor(exact), `Rounds ${about(exact)} down, which leaves some water with nowhere to go.`],
+        [Math.ceil((L * W * r) / B), `Uses the rain from one hour only, ignoring the ${h}-hour duration.`],
+        [liters, `Stops at the volume of rain in liters, ${fmt(liters)}.`],
+        [Math.ceil((1000 * liters) / B), `Uses the depth of rain, ${depthMm} millimeters, as if it were ${depthMm} meters.`],
+      ], {
         stimulus: null,
         stem:
           `Rain fell at a constant rate of ${r} millimeters per hour for ${h} hours on a flat rectangular roof that measures ` +
           `${L} meters by ${W} meters. All of the rain that fell on the roof was collected in barrels that each hold ${B} ` +
           `liters. What is the least number of barrels needed to hold all of the collected rain? ` +
           `(1 meter = 1,000 millimeters and 1 cubic meter = 1,000 liters)`,
-        correct: key,
-        wrong,
         explanation:
           `In ${h} hours, ${r} × ${h} = ${depthMm} millimeters, or ${num(depthMm / 1000)} meter, of rain fell. The volume is ` +
           `${L} × ${W} × ${num(depthMm / 1000)} = ${num(tidy(liters / 1000))} cubic meters = ${fmt(liters)} liters, and ` +
@@ -533,7 +541,7 @@
           const litersCheck = cubicMm / 1e6;
           return (key - 1) * B < litersCheck && litersCheck <= key * B;
         },
-      });
+      }, { places: 0 });
     });
   }
 
@@ -582,19 +590,19 @@
         const change = c - B0;
         const candidates = findA
           ? [
-            [shown(A0 + change, 0), `${change > 0 ? "Adds" : "Subtracts"} the change in ${scene.b}, ${Math.abs(change)}, ${change > 0 ? "to" : "from"} the ${scene.a}, as if both quantities changed by the same amount; at a constant rate they change by the same factor.`],
-            [shown(A0 * c, 0), `Multiplies ${fmt(A0)} by ${c}, treating ${fmt(A0)} ${scene.a} as the amount for one ${scene.per} instead of for ${B0} ${scene.b}.`],
-            [shown(r, 0), `Stops at the unit rate, ${r} ${scene.a} per ${scene.per}, without scaling it to ${c} ${scene.b}.`],
-            [shown((A0 * B0) / c, 0), `Scales by ${B0}/${c}, the ratio of the two amounts upside down.`],
+            [A0 + change, `${change > 0 ? "Adds" : "Subtracts"} the change in ${scene.b}, ${Math.abs(change)}, ${change > 0 ? "to" : "from"} the ${scene.a}, as if both quantities changed by the same amount; at a constant rate they change by the same factor.`],
+            [A0 * c, `Multiplies ${fmt(A0)} by ${c}, treating ${fmt(A0)} ${scene.a} as the amount for one ${scene.per} instead of for ${B0} ${scene.b}.`],
+            [r, `Stops at the unit rate, ${r} ${scene.a} per ${scene.per}, without scaling it to ${c} ${scene.b}.`],
+            [whole((A0 * B0) / c), `Scales by ${B0}/${c}, the ratio of the two amounts upside down.`],
           ]
           : [
-            [shown(Aq / A0, 0), `Finds that ${fmt(Aq)} is ${fmt(Aq / A0)} times ${fmt(A0)} and stops; the ${scene.b} must be multiplied by that factor too.`],
-            [shown(Aq / B0, 0), `Divides ${fmt(Aq)} by ${B0} instead of by the rate, ${r} ${scene.a} per ${scene.per}.`],
-            [shown(r, 0), `Gives the unit rate, ${r} ${scene.a} per ${scene.per}, instead of the number of ${scene.b}.`],
-            [shown(r * Aq, 0), `Multiplies ${fmt(Aq)} by the rate instead of dividing by it.`],
+            [whole(Aq / A0), `Finds that ${fmt(Aq)} is ${fmt(Aq / A0)} times ${fmt(A0)} and stops; the ${scene.b} must be multiplied by that factor too.`],
+            [whole(Aq / B0), `Divides ${fmt(Aq)} by ${B0} instead of by the rate, ${r} ${scene.a} per ${scene.per}.`],
+            [r, `Gives the unit rate, ${r} ${scene.a} per ${scene.per}, instead of the number of ${scene.b}.`],
+            [r * Aq, `Multiplies ${fmt(Aq)} by the rate instead of dividing by it.`],
           ];
         const rateStep = `The rate is ${fmt(A0)} ÷ ${B0} = ${r} ${scene.a} per ${scene.per}.`;
-        return pack(numeric, key, fmt(key), candidates, {
+        return packRanked(t, numeric, key, candidates, {
           stimulus,
           figure: null,
           stem,
@@ -620,7 +628,7 @@
             const rowsAgree = !rows || rows.every(([bb, aa]) => aa * B0 === A0 * bb);
             return forward && rowsAgree;
           },
-        });
+        }, { places: 0 });
       });
     },
   };
@@ -643,7 +651,8 @@
       return retry(() => {
         const scene = t.pick(CONVERSIONS[kind])(t);
         const key = scene.key;
-        return pack(numeric, key, fmt(key), scene.candidates, {
+        const show = numeric ? fmt : scene.show || fmt;
+        return packRanked(t, numeric, key, scene.candidates, {
           stimulus: null,
           figure: null,
           stem: scene.stem,
@@ -657,7 +666,7 @@
           hint: scene.hint,
           estimatedSeconds: 90,
           verify: () => scene.check(key),
-        });
+        }, { show, places: 3 });
       });
     },
   };
@@ -667,11 +676,14 @@
     domain: DOMAIN,
     skill: "Ratios, rates, and units",
     subskill: "unit conversion",
+    difficulty: "Medium",
     title: "Multi-step conversions with area and volume units",
     recognize:
       "Area and volume units convert by the square and the cube of the length factor, every quantity must be in one unit " +
       "system before combining, and a count of whole containers rounds up.",
-    rubric: { steps: 2, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 2, trap: 2 },
+    // Medium: the conversion factors are printed and the structure is a
+    // chain of steps; nothing has to be recognized before computing.
+    rubric: { steps: 2, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 1, trap: 2 },
     tricks: ["unit-mismatch", "rounding-direction", "intermediate-value", "wrong-quantity"],
     build(t) {
       const form = t.int(0, 2);
@@ -796,6 +808,8 @@
         const b = t.int(2, 9);
         if (a === b || S.gcd(a, b) !== 1) return null;
         const r = [a, b];
+        // A one-share difference would make "how many more" a single division.
+        if (form === "more" && Math.abs(a - b) < 2) return null;
         const i = form === "more" ? (a > b ? 0 : 1) : t.int(0, 1);
         const j = 1 - i;
         const shares = a + b;
@@ -816,11 +830,15 @@
         const hint = "Into how many equal shares does the ratio divide the whole?";
         if (form === "fraction") {
           const keyText = S.frac(r[i], shares);
-          return pack(false, null, keyText, [
-            [S.frac(r[i], r[j]), `Compares the ${scene.names[i]} with the ${scene.names[j]}, a part-to-part ratio, instead of with the whole.`],
+          // A fraction of a whole is below 1, so part-to-part ratios above 1
+          // would be free eliminations; one share of the whole replaces them.
+          const partial = [
+            [r[i] < r[j] ? S.frac(r[i], r[j]) : null, `Compares the ${scene.names[i]} with the ${scene.names[j]}, a part-to-part ratio, instead of with the whole.`],
             [S.frac(r[j], shares), `Gives the fraction that is ${scene.names[j]}, the other part.`],
-            [S.frac(r[j], r[i]), `Compares the ${scene.names[j]} with the ${scene.names[i]}, a part-to-part ratio turned upside down.`],
-          ], {
+            [r[j] < r[i] ? S.frac(r[j], r[i]) : null, `Compares the ${scene.names[j]} with the ${scene.names[i]}, a part-to-part ratio turned upside down.`],
+            [S.frac(1, shares), `Gives the fraction that one share is of the whole, without counting the ${r[i]} shares that are ${scene.names[i]}.`],
+          ].filter(([text]) => text);
+          return packStrict(false, null, keyText, partial, {
             stimulus: null,
             figure: null,
             stem: `${intro} ${scene.askFrac(scene.names[i])}`,
@@ -841,10 +859,13 @@
         }
         if (form === "part") {
           const key = parts[i];
-          return pack(numeric, key, fmt(key), [
-            [shown(T * r[i] / r[j], 0), `Takes ${r[i]}/${r[j]} of ${fmt(T)}, treating the part-to-part ratio as a fraction of the whole.`],
-            [shown(parts[j], 0), `Gives the amount of ${scene.names[j]}, the other part.`],
-            [shown(m, 0), `Stops at the size of one share, ${fmt(T)} ÷ ${shares} = ${fmt(m)}.`],
+          return packRanked(t, numeric, key, [
+            [whole(T * r[i] / r[j]), `Takes ${r[i]}/${r[j]} of ${fmt(T)}, treating the part-to-part ratio as a fraction of the whole.`],
+            [parts[j], `Gives the amount of ${scene.names[j]}, the other part.`],
+            [m, `Stops at the size of one share, ${fmt(T)} ÷ ${shares} = ${fmt(m)}.`],
+            [whole(T / r[i]), `Divides ${fmt(T)} by ${r[i]}, the ${scene.names[i]}'s term of the ratio, instead of by ${shares} shares.`],
+            [T, `Gives the whole, ${fmt(T)}, instead of the part that is ${scene.names[i]}.`],
+            [whole(T / 2), `Splits the whole equally between the two kinds, ignoring the ratio.`],
           ], {
             stimulus: null,
             figure: null,
@@ -868,11 +889,13 @@
         if (form === "total") {
           const x = parts[i];
           const key = T;
-          return pack(numeric, key, fmt(key), [
-            [shown(x * shares / r[j], 0), `Divides by ${r[j]}, the ${scene.names[j]}'s number of shares, instead of by ${r[i]}.`],
-            [shown(x * shares, 0), `Multiplies ${fmt(x)} by ${shares}, treating ${fmt(x)} as one share instead of ${r[i]} shares.`],
-            [shown(parts[j], 0), `Gives the amount of ${scene.names[j]}, not the whole.`],
-            [shown(m, 0), `Stops at the size of one share, ${fmt(x)} ÷ ${r[i]} = ${fmt(m)}.`],
+          return packRanked(t, numeric, key, [
+            [whole(x * shares / r[j]), `Divides by ${r[j]}, the ${scene.names[j]}'s number of shares, instead of by ${r[i]}.`],
+            [x * shares, `Multiplies ${fmt(x)} by ${shares}, treating ${fmt(x)} as one share instead of ${r[i]} shares.`],
+            [parts[j], `Gives the amount of ${scene.names[j]}, not the whole.`],
+            [m, `Stops at the size of one share, ${fmt(x)} ÷ ${r[i]} = ${fmt(m)}.`],
+            [x + r[j], `Adds the ${scene.names[j]}'s term of the ratio, ${r[j]}, to ${fmt(x)}, as if it were a count.`],
+            [T + x, `Finds the whole, ${fmt(T)}, and then adds the ${fmt(x)} ${scene.names[i]} again, counting them twice.`],
           ], {
             stimulus: null,
             figure: null,
@@ -896,16 +919,18 @@
           });
         }
         const key = parts[i] - parts[j];
-        return pack(numeric, key, fmt(key), [
-          [shown(r[i] - r[j], 0), `Gives the difference between the ratio's terms, ${r[i]} ${MINUS} ${r[j]}, not between the amounts.`],
-          [shown(parts[i], 0), `Gives the amount of ${scene.names[i]} instead of the difference.`],
-          [shown(parts[j], 0), `Gives the amount of ${scene.names[j]} instead of the difference.`],
-          [shown(T * (r[i] - r[j]) / r[i], 0), `Takes (${r[i]} ${MINUS} ${r[j]})/${r[i]} of the whole, using the larger part's shares as the whole.`],
+        return packRanked(t, numeric, key, [
+          [r[i] - r[j], `Gives the difference between the ratio's terms, ${r[i]} ${MINUS} ${r[j]}, not between the amounts.`],
+          [parts[i], `Gives the amount of ${scene.names[i]} instead of the difference.`],
+          [parts[j], `Gives the amount of ${scene.names[j]} instead of the difference.`],
+          [whole(T * (r[i] - r[j]) / r[i]), `Takes (${r[i]} ${MINUS} ${r[j]})/${r[i]} of the whole, using the larger part's shares as the whole.`],
+          [m, `Stops at the size of one share, ${fmt(T)} ÷ ${shares} = ${fmt(m)}.`],
+          [T, `Gives the whole, ${fmt(T)}, instead of the difference between the parts.`],
         ], {
           stimulus: null,
           figure: null,
           stem: `${intro} ${scene.total(T)} How many more ${what(i)} than ${what(j)} are ${scene.place}?`,
-          explanation: `${shareStep} One share is ${fmt(T)} ÷ ${shares} = ${fmt(m)}. The ${scene.names[i]} ${scene.be || "are"} ${r[i]} ${MINUS} ${r[j]} = ${r[i] - r[j]} shares more than the ${scene.names[j]}: ${r[i] - r[j]} × ${fmt(m)} = ${fmt(key)}.`,
+          explanation: `${shareStep} One share is ${fmt(T)} ÷ ${shares} = ${fmt(m)}. The ${scene.names[i]} ${scene.be || "are"} ${r[i]} ${MINUS} ${r[j]} = ${plural(r[i] - r[j], "share")} more than the ${scene.names[j]}: ${r[i] - r[j]} × ${fmt(m)} = ${fmt(key)}.`,
           steps: [
             `One share: ${fmt(T)} ÷ ${shares} = ${fmt(m)}.`,
             `Parts: ${a} × ${fmt(m)} = ${fmt(parts[0])} and ${b} × ${fmt(m)} = ${fmt(parts[1])}.`,
@@ -1047,7 +1072,7 @@
         const cross = i === 0
           ? `${nr[1]}(${a}k ${sign} ${d}) = ${nr[0]}(${b}k)`
           : `${nr[1]}(${a}k) = ${nr[0]}(${b}k ${sign} ${d})`;
-        return pack(numeric, key, fmt(key), candidates, {
+        return packStrict(numeric, key, fmt(key), candidates, {
           stimulus: null,
           figure: null,
           stem: `${scene.before(words(a, b))} ${change} ${scene.after(words(nr[0], nr[1]))} ${askText}`,
@@ -1160,7 +1185,6 @@
 
   function averageRoundTrip(t, numeric) {
     const ctx = t.pick(TRIPS);
-    const findReturn = t.chance(0.45);
     return retry(() => {
       const v1 = t.int(ctx.v[0], ctx.v[1]);
       const v2 = t.int(ctx.v[0], ctx.v[1]);
@@ -1169,61 +1193,26 @@
       const t1 = D / v1;
       const t2 = D / v2;
       if (!isClean(t1, 2) || !isClean(t2, 2)) return null;
-      const avg = tidy((2 * D) / (t1 + t2));
-      if (!isClean(avg, 2)) return null;
+      const key = tidy((2 * D) / (t1 + t2));
+      if (!isClean(key, 2)) return null;
       const mean = tidy((v1 + v2) / 2);
       const totalTime = tidy(t1 + t2);
-      if (findReturn) {
-        const key = v2;
-        const reflex = tidy(2 * avg - v1);
-        const candidates = [
-          [reflex > 0 ? shown(reflex) : null, `Treats ${num(avg)} as the mean of the two speeds, so the return speed would be 2(${num(avg)}) ${MINUS} ${v1}; the two legs take different times.`],
-          [shown(tidy(t2)), `Stops at the time for ${ctx.legBack}, ${num(tidy(t2))} hours.`],
-          [shown(tidy(2 * v2)), `Divides the round-trip distance, ${2 * D} ${ctx.unit}, by the time for ${ctx.legBack} alone.`],
-          [shown(totalTime), `Gives the total time for the round trip, ${num(totalTime)} hours.`],
-        ];
-        const wrong = offerHard(num(key), candidates);
-        if (numeric ? !C.fitsGrid(key) : wrong.length < 3) return null;
-        return finish(numeric, {
-          stimulus: null,
-          stem: `${ctx.out(D, v1)} ${ctx.backPlain} The average speed for ${ctx.whole} was ${num(avg)} ${ctx.rate}. What was the average speed, in ${ctx.rate}, for ${ctx.legBack}?`,
-          correct: numeric ? key : num(key),
-          wrong,
-          explanation:
-            `The round trip is ${2 * D} ${ctx.unit} at an average of ${num(avg)} ${ctx.rate}, so it took ${2 * D} ÷ ${num(avg)} = ${num(totalTime)} hours. ` +
-            `The first leg took ${D} ÷ ${v1} = ${num(tidy(t1))} hours, leaving ${num(tidy(t2))} hours for the ${D} ${ctx.unit} back: ${D} ÷ ${num(tidy(t2))} = ${key} ${ctx.rate}.`,
-          steps: [
-            `Total time: ${2 * D} ÷ ${num(avg)} = ${num(totalTime)} hours.`,
-            `First leg: ${D} ÷ ${v1} = ${num(tidy(t1))} hours.`,
-            `Return leg: ${num(totalTime)} ${MINUS} ${num(tidy(t1))} = ${num(tidy(t2))} hours.`,
-            `Return speed: ${D} ÷ ${num(tidy(t2))} = ${key}.`,
-          ],
-          principles: AVERAGE_PRINCIPLES,
-          trap: `The average speed is not the mean of the two speeds, because the slower leg lasts longer; assuming it is gives ${num(reflex)}.`,
-          hint: "How long did the whole round trip take, and how much of that time was the first leg?",
-          verify: () => close((2 * D) / (D / v1 + D / key), avg),
-        });
-      }
-      const key = avg;
-      const candidates = [
-        [shown(mean), `Averages the two speeds, ${v1} and ${v2}, though the ${v1 < v2 ? "first" : "second"} leg, the slower one, lasts longer.`],
-        [shown(tidy(D / totalTime)), `Divides the one-way distance, ${D} ${ctx.unit}, by the total time; the round trip is ${2 * D} ${ctx.unit}.`],
-        [shown(totalTime), `Stops at the total time, ${num(totalTime)} hours.`],
-        [shown(2 * D, 0), `Stops at the total distance, ${2 * D} ${ctx.unit}.`],
-      ];
-      const wrong = offerHard(num(key), candidates);
-      if (numeric ? !C.fitsGrid(key) : wrong.length < 3) return null;
-      return finish(numeric, {
+      return packRanked(t, numeric, key, [
+        [mean, `Averages the two speeds, ${v1} and ${v2}, though the ${v1 < v2 ? "first" : "second"} leg, the slower one, lasts longer.`],
+        [tidy(D / totalTime), `Divides the one-way distance, ${D} ${ctx.unit}, by the total time; the round trip is ${2 * D} ${ctx.unit}.`],
+        [totalTime, `Stops at the total time, ${plural(totalTime, "hour")}.`],
+        [2 * D, `Stops at the total distance, ${2 * D} ${ctx.unit}.`],
+        [Math.min(v1, v2), `Gives the slower of the two speeds, as if the whole trip were made at that speed.`],
+        [2 * Math.max(v1, v2), `Divides the round-trip distance by the time for the faster leg alone.`],
+      ], {
         stimulus: null,
         stem: `${ctx.out(D, v1)} ${ctx.back(v2)} What was the average speed, in ${ctx.rate}, for ${ctx.whole}?`,
-        correct: numeric ? key : num(key),
-        wrong,
         explanation:
-          `The trip out took ${D} ÷ ${v1} = ${num(tidy(t1))} hours and the trip back took ${D} ÷ ${v2} = ${num(tidy(t2))} hours. ` +
+          `The trip out took ${D} ÷ ${v1} = ${plural(tidy(t1), "hour")} and the trip back took ${D} ÷ ${v2} = ${plural(tidy(t2), "hour")}. ` +
           `The average speed is the total distance over the total time: ${2 * D} ÷ ${num(totalTime)} = ${num(key)} ${ctx.rate}.`,
         steps: [
-          `Time out: ${D} ÷ ${v1} = ${num(tidy(t1))} hours; time back: ${D} ÷ ${v2} = ${num(tidy(t2))} hours.`,
-          `Total time: ${num(totalTime)} hours; total distance: ${2 * D} ${ctx.unit}.`,
+          `Time out: ${D} ÷ ${v1} = ${plural(tidy(t1), "hour")}; time back: ${D} ÷ ${v2} = ${plural(tidy(t2), "hour")}.`,
+          `Total time: ${plural(totalTime, "hour")}; total distance: ${2 * D} ${ctx.unit}.`,
           `Average speed: ${2 * D} ÷ ${num(totalTime)} = ${num(key)}.`,
         ],
         principles: AVERAGE_PRINCIPLES,
@@ -1231,7 +1220,7 @@
         hint: "How long did each leg take?",
         // The closed form for equal distances: twice the product over the sum.
         verify: () => close((2 * v1 * v2) / (v1 + v2), key) && !close(key, mean),
-      });
+      }, { show: num });
     });
   }
 
@@ -1251,34 +1240,32 @@
       if (!isClean(key, 2)) return null;
       const mean = tidy((v1 + v2) / 2);
       const byDistance = tidy((d1 * v1 + d2 * v2) / (d1 + d2));
-      const candidates = [
-        [shown(mean), `Averages the two speeds, ${v1} and ${v2}, though the two parts of the trip took different times.`],
-        [shown(byDistance), `Weights each speed by its distance instead of its time.`],
-        [shown(tidy((2 * v1 * v2) / (v1 + v2))), `Uses 2(${v1})(${v2})/(${v1} + ${v2}), which holds only when both parts cover the same distance.`],
-        [shown(d1 + d2, 0), `Stops at the total distance, ${d1 + d2} ${ctx.unit}.`],
-        [shown(tidy(t1 + t2)), `Stops at the total time, ${num(tidy(t1 + t2))} hours.`],
-      ];
-      const wrong = offerHard(num(key), candidates);
-      if (numeric ? !C.fitsGrid(key) : wrong.length < 3) return null;
-      return finish(numeric, {
+      return packRanked(t, numeric, key, [
+        [mean, `Averages the two speeds, ${v1} and ${v2}, though the two parts of the trip took different times.`],
+        [byDistance, `Weights each speed by its distance instead of its time.`],
+        [tidy((2 * v1 * v2) / (v1 + v2)), `Uses 2(${v1})(${v2})/(${v1} + ${v2}), which holds only when both parts cover the same distance.`],
+        [d1 + d2, `Stops at the total distance, ${d1 + d2} ${ctx.unit}.`],
+        [tidy(t1 + t2), `Stops at the total time, ${plural(tidy(t1 + t2), "hour")}.`],
+        [tidy((d1 + d2) / 2), `Divides the total distance by 2, the number of parts, instead of by the total time.`],
+        [v1 + v2, `Adds the two speeds.`],
+        [t1 > t2 ? v1 : v2, `Gives the speed of the part that took longer, as if it set the average.`],
+      ], {
         stimulus: null,
         stem: `${ctx.story(t1, v1, d2, v2)} ${ctx.ask}`,
-        correct: numeric ? key : num(key),
-        wrong,
         explanation:
           `The first part covered ${v1} × ${num(t1)} = ${d1} ${ctx.unit}, and the second part took ${d2} ÷ ${v2} = ${hours(t2)}. ` +
-          `In all, ${d1 + d2} ${ctx.unit} in ${num(tidy(t1 + t2))} hours: ${d1 + d2} ÷ ${num(tidy(t1 + t2))} = ${num(key)} ${ctx.rate}.`,
+          `In all, ${d1 + d2} ${ctx.unit} in ${plural(tidy(t1 + t2), "hour")}: ${d1 + d2} ÷ ${num(tidy(t1 + t2))} = ${num(key)} ${ctx.rate}.`,
         steps: [
           `Distance of the first part: ${v1} × ${num(t1)} = ${d1}.`,
           `Time of the second part: ${d2} ÷ ${v2} = ${num(t2)}.`,
-          `Totals: ${d1 + d2} ${ctx.unit} in ${num(tidy(t1 + t2))} hours.`,
+          `Totals: ${d1 + d2} ${ctx.unit} in ${plural(tidy(t1 + t2), "hour")}.`,
           `Average speed: ${d1 + d2} ÷ ${num(tidy(t1 + t2))} = ${num(key)}.`,
         ],
         principles: AVERAGE_PRINCIPLES,
         trap: `Averaging ${v1} and ${v2} gives ${num(mean)}, which would be right only if both parts took the same time.`,
         hint: "Put both parts in the same terms: how far did each go, and how long did each take?",
         verify: () => close(key * (t1 + d2 / v2), v1 * t1 + d2),
-      });
+      }, { show: num });
     });
   }
 
@@ -1298,34 +1285,31 @@
       if (!isClean(key, 2)) return null;
       const mean = tidy((e1 + e2) / 2);
       const byDistance = tidy((d1 * e1 + d2 * e2) / (d1 + d2));
-      const candidates = [
-        [shown(mean), `Averages ${e1} and ${e2}, as if the same amount of gasoline were used on each part.`],
-        [shown(byDistance), "Weights each rate by the miles driven, but miles per gallon must be averaged over gallons."],
-        [shown(tidy((2 * e1 * e2) / (e1 + e2))), `Uses 2(${e1})(${e2})/(${e1} + ${e2}), which holds only when both parts cover the same number of miles.`],
-        [shown(g1 + g2, 0), `Stops at the total gasoline used, ${g1 + g2} gallons.`],
-        [shown(tidy((d1 + d2) / 2)), "Divides the total miles by 2, the number of parts of the trip."],
-      ];
-      const wrong = offerHard(num(key), candidates);
-      if (numeric ? !C.fitsGrid(key) : wrong.length < 3) return null;
-      return finish(numeric, {
+      return packRanked(t, numeric, key, [
+        [mean, `Averages ${e1} and ${e2}, as if the same amount of gasoline were used on each part.`],
+        [byDistance, "Weights each rate by the miles driven, but miles per gallon must be averaged over gallons."],
+        [tidy((2 * e1 * e2) / (e1 + e2)), `Uses 2(${e1})(${e2})/(${e1} + ${e2}), which holds only when both parts cover the same number of miles.`],
+        [g1 + g2, `Stops at the total gasoline used, ${g1 + g2} gallons.`],
+        [tidy((d1 + d2) / 2), "Divides the total miles by 2, the number of parts of the trip."],
+        [e1 + e2, `Adds the two rates, ${e1} and ${e2}.`],
+        [d1 > d2 ? e1 : e2, "Gives the rate for the part with more miles, as if it set the average."],
+      ], {
         stimulus: null,
         stem: `${ctx.story(d1, e1, d2, e2)} ${ctx.ask}`,
-        correct: numeric ? key : num(key),
-        wrong,
         explanation:
           `The first part used ${d1} ÷ ${e1} = ${g1} gallons and the second used ${d2} ÷ ${e2} = ${g2} gallons. In all, ` +
-          `${d1 + d2} miles on ${g1 + g2} gallons: ${d1 + d2} ÷ ${g1 + g2} = ${num(key)} miles per gallon.`,
+          `${num(d1 + d2)} miles on ${g1 + g2} gallons: ${num(d1 + d2)} ÷ ${g1 + g2} = ${num(key)} miles per gallon.`,
         steps: [
           `Gasoline for the first part: ${d1} ÷ ${e1} = ${g1} gallons.`,
           `Gasoline for the second part: ${d2} ÷ ${e2} = ${g2} gallons.`,
-          `Totals: ${d1 + d2} miles and ${g1 + g2} gallons.`,
-          `Overall: ${d1 + d2} ÷ ${g1 + g2} = ${num(key)}.`,
+          `Totals: ${num(d1 + d2)} miles and ${g1 + g2} gallons.`,
+          `Overall: ${num(d1 + d2)} ÷ ${g1 + g2} = ${num(key)}.`,
         ],
         principles: AVERAGE_PRINCIPLES,
         trap: `Averaging ${e1} and ${e2} gives ${num(mean)}, but more gasoline was burned at ${Math.min(e1, e2)} miles per gallon than the plain average allows for.`,
         hint: "How many gallons did each part of the driving use?",
         verify: () => close(key * (d1 / e1 + d2 / e2), d1 + d2),
-      });
+      }, { show: num });
     });
   }
 
@@ -1334,20 +1318,401 @@
     domain: DOMAIN,
     skill: "Ratios, rates, and units",
     subskill: "unit rates",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Average rate over two unequal parts",
     recognize:
       "An average rate is a total over a total, so parts that last different times cannot be averaged as plain rates: find " +
       "each part's time (or fuel) first, then divide the total distance by the total.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
+    // Medium: both rates and both amounts are given, so the work is a
+    // two-step total-over-total once the mean-of-speeds reflex is resisted.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
     tricks: ["unweighted-average", "intermediate-value", "wrong-quantity"],
     build(t) {
       const form = t.pick([0, 0, 1, 2]);
       const numeric = t.chance(0.35);
       const instance = [averageRoundTrip, averageMixedLegs, averageFuel][form](t, numeric);
-      return { estimatedSeconds: 110, ...instance };
+      return { estimatedSeconds: 100, ...instance };
     },
   };
 
-  return [rateScaling, ratioShare, rateConversion, ratioAfterChange, multiUnitRate, averageRate];
+  /* ================================= average-rate-required-leg (Hard) */
+
+  // The whole trip's average is given and one leg's speed is wanted: the
+  // average fixes the total time, and the unknown leg gets what is left.
+  function requiredReturn(t, numeric) {
+    const ctx = t.pick(TRIPS);
+    return retry(() => {
+      const v1 = t.int(ctx.v[0], ctx.v[1]);
+      const v2 = t.int(ctx.v[0], ctx.v[1]);
+      if (Math.abs(v1 - v2) < 4 || (ctx.outSlower && v1 > v2)) return null;
+      const D = t.int(Math.ceil(ctx.D[0] / ctx.Dstep), Math.floor(ctx.D[1] / ctx.Dstep)) * ctx.Dstep;
+      const t1 = D / v1;
+      const t2 = D / v2;
+      if (!isClean(t1, 2) || !isClean(t2, 2)) return null;
+      const avg = tidy((2 * D) / (t1 + t2));
+      if (!isClean(avg, 2)) return null;
+      const key = v2;
+      const reflex = tidy(2 * avg - v1);
+      const totalTime = tidy(t1 + t2);
+      return packRanked(t, numeric, key, [
+        [reflex, `Treats ${num(avg)} as the mean of the two speeds, so the return speed would be 2(${num(avg)}) ${MINUS} ${v1}; the two legs take different times.`],
+        [tidy(t2), `Stops at the time for ${ctx.legBack}, ${plural(tidy(t2), "hour")}.`],
+        [tidy(2 * v2), `Divides the round-trip distance, ${2 * D} ${ctx.unit}, by the time for ${ctx.legBack} alone.`],
+        [totalTime, `Gives the total time for the round trip, ${plural(totalTime, "hour")}.`],
+        [avg, `Assumes ${ctx.legBack} was made at the round-trip average, ${num(avg)} ${ctx.rate}.`],
+        [tidy((2 * D) / t1), `Divides the round-trip distance by the time for the first leg instead of the second.`],
+      ], {
+        stimulus: null,
+        stem: `${ctx.out(D, v1)} ${ctx.backPlain} The average speed for ${ctx.whole} was ${num(avg)} ${ctx.rate}. What was the average speed, in ${ctx.rate}, for ${ctx.legBack}?`,
+        explanation:
+          `The round trip is ${2 * D} ${ctx.unit} at an average of ${num(avg)} ${ctx.rate}, so it took ${2 * D} ÷ ${num(avg)} = ${plural(totalTime, "hour")}. ` +
+          `The first leg took ${D} ÷ ${v1} = ${plural(tidy(t1), "hour")}, leaving ${plural(tidy(t2), "hour")} for the ${D} ${ctx.unit} back: ${D} ÷ ${num(tidy(t2))} = ${key} ${ctx.rate}.`,
+        steps: [
+          `Total time: ${2 * D} ÷ ${num(avg)} = ${plural(totalTime, "hour")}.`,
+          `First leg: ${D} ÷ ${v1} = ${plural(tidy(t1), "hour")}.`,
+          `Return leg: ${num(totalTime)} ${MINUS} ${num(tidy(t1))} = ${plural(tidy(t2), "hour")}.`,
+          `Return speed: ${D} ÷ ${num(tidy(t2))} = ${key}.`,
+        ],
+        principles: AVERAGE_PRINCIPLES,
+        trap: `The average speed is not the mean of the two speeds, because the slower leg lasts longer; assuming it is gives ${num(reflex)}.`,
+        hint: "How long did the whole round trip take, and how much of that time was the first leg?",
+        verify: () => close((2 * D) / (D / v1 + D / key), avg),
+      }, { show: num });
+    });
+  }
+
+  const RACES = [
+    {
+      unit: "kilometers", rate: "kilometers per hour", v: [6, 16], D: [8, 42],
+      story: (D, d1, v1, V) => `A runner completed ${S.article(D)} ${D}-kilometer race. The runner covered the first ${d1} kilometers at an average speed of ${v1} kilometers per hour, and the runner's average speed for the entire race was ${num(V)} kilometers per hour.`,
+      ask: (rest) => `What was the runner's average speed, in kilometers per hour, for the last ${rest} kilometers?`,
+      part: "the last part of the race",
+    },
+    {
+      unit: "miles", rate: "miles per hour", v: [30, 70], D: [60, 300],
+      story: (D, d1, v1, V) => `A bus made ${S.article(D)} ${D}-mile trip. It traveled the first ${d1} miles at an average speed of ${v1} miles per hour, and its average speed for the whole trip was ${num(V)} miles per hour.`,
+      ask: (rest) => `What was the bus's average speed, in miles per hour, for the remaining ${rest} miles?`,
+      part: "the rest of the trip",
+    },
+    {
+      unit: "kilometers", rate: "kilometers per hour", v: [12, 40], D: [30, 150],
+      story: (D, d1, v1, V) => `A cyclist rode ${S.article(D)} ${D}-kilometer route. The cyclist rode the first ${d1} kilometers at an average speed of ${v1} kilometers per hour, and the average speed for the whole route was ${num(V)} kilometers per hour.`,
+      ask: (rest) => `What was the cyclist's average speed, in kilometers per hour, for the remaining ${rest} kilometers?`,
+      part: "the rest of the route",
+    },
+  ];
+
+  function requiredRest(t, numeric) {
+    const ctx = t.pick(RACES);
+    return retry(() => {
+      const v1 = t.int(ctx.v[0], ctx.v[1]);
+      const v2 = t.int(ctx.v[0], ctx.v[1]);
+      if (Math.abs(v1 - v2) < 3) return null;
+      const t1 = t.pick([0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3]);
+      const t2 = t.pick([0.25, 0.5, 0.75, 1, 1.5, 2, 2.5]);
+      const d1 = v1 * t1;
+      const d2 = v2 * t2;
+      const D = d1 + d2;
+      if (!Number.isInteger(d1) || !Number.isInteger(d2) || d1 === d2 || D < ctx.D[0] || D > ctx.D[1]) return null;
+      const V = tidy(D / (t1 + t2));
+      if (!isClean(V, 2)) return null;
+      const key = v2;
+      const reflex = tidy(2 * V - v1);
+      const byDistance = tidy((V * D - v1 * d1) / d2);
+      const totalTime = tidy(t1 + t2);
+      return packRanked(t, numeric, key, [
+        [byDistance, `Treats ${num(V)} as the average of the two speeds weighted by distance, ${d1} and ${d2} ${ctx.unit}, but the speeds must be weighted by time.`],
+        [reflex, `Treats ${num(V)} as the plain mean of the two speeds, so the second speed would be 2(${num(V)}) ${MINUS} ${v1}.`],
+        [tidy(t2), `Stops at the time for ${ctx.part}, ${plural(tidy(t2), "hour")}.`],
+        [tidy(d2 / totalTime), `Divides the remaining ${d2} ${ctx.unit} by the total time, ${plural(totalTime, "hour")}.`],
+        [tidy(d2 / t1), `Divides the remaining ${d2} ${ctx.unit} by the time for the first part, ${plural(t1, "hour")}.`],
+      ], {
+        stimulus: null,
+        stem: `${ctx.story(D, d1, v1, V)} ${ctx.ask(d2)}`,
+        explanation:
+          `At an average of ${num(V)} ${ctx.rate}, the whole ${D} ${ctx.unit} took ${D} ÷ ${num(V)} = ${plural(totalTime, "hour")}. ` +
+          `The first ${d1} ${ctx.unit} took ${d1} ÷ ${v1} = ${plural(t1, "hour")}, leaving ${plural(t2, "hour")} for the last ${d2} ${ctx.unit}: ` +
+          `${d2} ÷ ${num(t2)} = ${key} ${ctx.rate}.`,
+        steps: [
+          `Total time from the overall average: ${D} ÷ ${num(V)} = ${plural(totalTime, "hour")}.`,
+          `Time for the first ${d1} ${ctx.unit}: ${d1} ÷ ${v1} = ${plural(t1, "hour")}.`,
+          `Time left: ${num(totalTime)} ${MINUS} ${num(t1)} = ${plural(t2, "hour")}.`,
+          `Speed for the rest: ${d2} ÷ ${num(t2)} = ${key}.`,
+        ],
+        principles: AVERAGE_PRINCIPLES,
+        trap: `An average speed is total distance over total time, so it is not a mean of the two speeds by distance or by count; weighting by distance gives ${num(byDistance)}.`,
+        hint: "What does the average speed for the whole distance say about the total time?",
+        verify: () => {
+          // Rebuild the trip from the key and recompute the overall average.
+          const time = d1 / v1 + (D - d1) / key;
+          return close(D / time, V) && D - d1 === d2;
+        },
+      }, { show: num });
+    });
+  }
+
+  const requiredLeg = {
+    id: "average-rate-required-leg",
+    domain: DOMAIN,
+    skill: "Ratios, rates, and units",
+    subskill: "unit rates",
+    difficulty: "Hard",
+    title: "The speed one part must have for a given overall average",
+    recognize:
+      "The overall average speed is not a mean of the two speeds; it fixes the total time (total distance ÷ average). " +
+      "Subtract the known part's time, then divide the remaining distance by the time left.",
+    // Hard: the average is given and a part's rate is asked, so the
+    // student must see that an average rate fixes a total time; averaging
+    // the speeds, by count or by distance, produces an offered answer.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    tricks: ["unweighted-average", "intermediate-value", "wrong-quantity"],
+    build(t) {
+      const numeric = t.chance(0.35);
+      const instance = t.chance(0.5) ? requiredReturn(t, numeric) : requiredRest(t, numeric);
+      return { estimatedSeconds: 120, ...instance };
+    },
+  };
+
+  /* ======================================== density-cube-edge (Hard) */
+
+  // A solid cube's mass and its material's density; the edge (or the
+  // surface area) is wanted. Density turns mass into volume, and a cube's
+  // volume gives its edge only through a cube root.
+  const MATERIALS = [
+    { name: "a type of pine wood", system: "si", d: [400, 450, 480, 500, 520, 560, 600, 640] },
+    { name: "a type of oak wood", system: "si", d: [680, 700, 720, 750, 800, 840] },
+    { name: "a type of concrete", system: "si", d: [2000, 2200, 2240, 2400, 2500] },
+    { name: "a type of plastic", system: "cgs", d: [0.9, 0.95, 1.2, 1.25, 1.4, 1.5] },
+    { name: "a type of stone", system: "cgs", d: [2.4, 2.5, 2.6, 2.7, 2.8, 3] },
+    { name: "a metal alloy", system: "cgs", d: [4, 4.5, 6.4, 7.5, 8] },
+  ];
+
+  const EDGES = [4, 5, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 28, 30, 32, 35, 40, 45, 50, 60];
+
+  function densityCube(t, numeric) {
+    const ctx = t.pick(MATERIALS);
+    const askArea = t.chance(0.4);
+    return retry(() => {
+      const d = t.pick(ctx.d);
+      const e = t.pick(EDGES);
+      const cm3 = e ** 3;
+      // Mass in kilograms: kg/m^3 times m^3, or g/cm^3 times cm^3 over 1,000.
+      const M = tidy(ctx.system === "si" ? (d * cm3) / 1e6 : (d * cm3) / 1000);
+      if (!isClean(M, 3) || M < 0.1 || M > 3000) return null;
+      const densityText = ctx.system === "si"
+        ? `${num(d)} kilograms per cubic meter`
+        : `${num(d)} grams per cubic centimeter`;
+      const key = askArea ? 6 * e * e : e;
+      const volumeText = ctx.system === "si" ? `${num(M)} ÷ ${num(d)} = ${num(tidy(cm3 / 1e6))} cubic meter` : `${fmt(M * 1000)} ÷ ${num(d)} = ${fmt(cm3)} cubic centimeters`;
+      const inCm = ctx.system === "si" ? `${num(tidy(cm3 / 1e6))} × 1,000,000 = ${fmt(cm3)} cubic centimeters` : `${fmt(cm3)} cubic centimeters`;
+      // The unit slip: meters for centimeters (si), or kilograms read as grams (cgs).
+      const slipEdge = ctx.system === "si" ? e / 100 : e / 10;
+      const slipReason = ctx.system === "si"
+        ? `Takes the cube root of the volume in cubic meters, ${num(tidy(cm3 / 1e6))}, which gives the edge in meters, not centimeters.`
+        : `Divides the mass in kilograms by the density in grams per cubic centimeter without converting ${num(M)} kilograms to ${fmt(M * 1000)} grams.`;
+      const candidates = askArea
+        ? [
+          [e * e, "Gives the area of one face of the cube, not all six."],
+          [cm3, `Stops at the volume, ${fmt(cm3)} cubic centimeters.`],
+          [4 * e * e, "Counts only four faces of the cube."],
+          [e, "Stops at the length of an edge."],
+          [tidy(6 * slipEdge * slipEdge), `${slipReason} Six faces of that edge give this area.`],
+          [6 * cm3 / e / 2, `Uses 3 × (edge)², half the surface area.`],
+          [6 * cm3, "Multiplies the volume by 6, the number of faces, instead of multiplying the area of one face by 6."],
+          [36 * e * e, `Squares 6 × ${e} instead of multiplying ${e}² by 6.`],
+        ]
+        : [
+          [slipEdge, slipReason],
+          [cm3, `Stops at the volume, ${fmt(cm3)} cubic centimeters, without taking its cube root.`],
+          [e * e, "Gives the area of one face instead of the length of an edge."],
+          [tidy(cm3 / 3), `Divides the volume by 3 instead of taking its cube root.`],
+          [ctx.system === "si" ? e / 10 : e * 10, ctx.system === "si"
+            ? "Converts the edge from meters to centimeters by multiplying by 10 instead of 100."
+            : "Converts the mass from kilograms to grams twice."],
+        ];
+      const mass = ctx.system === "si" ? `${num(M)} kilograms` : `${num(M)} kilograms`;
+      return packRanked(t, numeric, key, candidates, {
+        stimulus: null,
+        stem:
+          `A solid cube is made of ${ctx.name} that has a density of ${densityText}. The mass of the cube is ${mass}. ` +
+          (askArea ? "What is the total surface area, in square centimeters, of the cube?" : "What is the length, in centimeters, of each edge of the cube?"),
+        explanation:
+          `Volume = mass ÷ density: ${volumeText}` + (ctx.system === "si" ? `, which is ${inCm}` : "") + `. ` +
+          `A cube's volume is its edge cubed, so the edge is the cube root of ${fmt(cm3)}: ${e} centimeters.` +
+          (askArea ? ` Its six square faces have a total area of 6 × ${e}² = ${fmt(key)} square centimeters.` : ""),
+        steps: [
+          `Volume = mass ÷ density: ${volumeText}.`,
+          ctx.system === "si" ? `In cubic centimeters: ${inCm} (a cubic meter is 100 × 100 × 100 cubic centimeters).` : `The mass in grams is ${fmt(M * 1000)}, matching the density's units.`,
+          `Edge: the number whose cube is ${fmt(cm3)} is ${e}.`,
+          askArea ? `Surface area: 6 × ${e} × ${e} = ${fmt(key)}.` : `The edge is ${e} centimeters.`,
+        ],
+        principles: [
+          "Density = mass ÷ volume, so volume = mass ÷ density, in matching units.",
+          "A cube with edge s has volume s³ and surface area 6s²; a cubic meter is 100³ = 1,000,000 cubic centimeters.",
+        ],
+        trap: askArea
+          ? `The volume, ${fmt(cm3)}, is a step on the way; the edge comes from its cube root, and the surface area counts all six faces.`
+          : `The volume, ${fmt(cm3)}, is not the edge: the edge is its cube root, measured in centimeters.`,
+        hint: "What does the density say about the volume of the cube?",
+        estimatedSeconds: 120,
+        verify: () => {
+          const edge = askArea ? Math.sqrt(key / 6) : key;
+          const massBack = ctx.system === "si" ? d * (edge / 100) ** 3 : (d * edge ** 3) / 1000;
+          return close(massBack, M) && Number.isInteger(edge);
+        },
+      }, { show: fmt, places: 3 });
+    });
+  }
+
+  const densityCubeEdge = {
+    id: "density-cube-edge",
+    domain: DOMAIN,
+    skill: "Ratios, rates, and units",
+    subskill: "unit conversion",
+    difficulty: "Hard",
+    title: "A cube's size from its mass and density",
+    recognize:
+      "Density links mass and volume (volume = mass ÷ density, in matching units); a cube's edge is the cube root of its " +
+      "volume, and a cubic meter is 100³ cubic centimeters, not 100.",
+    // Hard: nothing asks for a volume, yet the volume, a cube root, and a
+    // cubed unit factor all stand between the given mass and the answer.
+    rubric: { steps: 2, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 2, trap: 1 },
+    tricks: ["intermediate-value", "unit-mismatch", "neighbouring-rule"],
+    build(t) {
+      return densityCube(t, t.chance(0.35));
+    },
+  };
+
+  /* ======================================== combined-work-rate (Hard) */
+
+  const CREWS = [
+    { a: "Pump A", b: "Pump B", job: "fill an empty tank", unit: "hours", one: "hour" },
+    { a: "Printer P", b: "Printer Q", job: "print a batch of flyers", unit: "minutes", one: "minute" },
+    { a: "Rosa", b: "Kai", job: "paint a fence", unit: "hours", one: "hour" },
+    { a: "Snowplow X", b: "Snowplow Y", job: "clear a parking lot", unit: "hours", one: "hour" },
+    { a: "Machine A", b: "Machine B", job: "sort a shipment of packages", unit: "minutes", one: "minute" },
+  ];
+
+  function workRate(t, numeric) {
+    const ctx = t.pick(CREWS);
+    const form = t.pick(["together", "together", "alone", "staged"]);
+    const scale = ctx.unit === "minutes" ? 5 : 1;
+    return retry(() => {
+      const a = t.int(2, 24) * scale;
+      const b = t.int(2, 24) * scale;
+      if (a === b) return null;
+      const c = tidy((a * b) / (a + b));
+      if (!isClean(c, 2)) return null;
+      const u = ctx.unit;
+      const both = `${ctx.a} and ${ctx.b}`;
+      const rates = `${ctx.a} works at a rate of 1/${a} of the job per ${ctx.one} and ${ctx.b} at 1/${b}`;
+      if (form === "together") {
+        return packRanked(t, numeric, c, [
+          [tidy((a + b) / 2), `Averages the two times, ${a} and ${b}; working together is faster than either alone.`],
+          [a + b, `Adds the two times, as if one worked after the other.`],
+          [Math.min(a, b), `Gives the faster time alone, ${Math.min(a, b)} ${u}; the second helper shortens it.`],
+          [tidy(Math.min(a, b) / 2), `Halves the faster time, as if both worked at the faster rate.`],
+          [Math.abs(a - b), `Subtracts the two times.`],
+        ], {
+          stimulus: null,
+          stem: `Working alone at a constant rate, ${ctx.a} can ${ctx.job} in ${a} ${u}. Working alone at a constant rate, ${ctx.b} can ${ctx.job} in ${b} ${u}. ` +
+            `At these rates, how many ${u} would it take ${both} working together to ${ctx.job}?`,
+          explanation:
+            `${rates}. Together they do 1/${a} + 1/${b} = ${S.frac(a + b, a * b)} of the job per ${ctx.one}, so the whole job takes ` +
+            `${S.frac(a * b, a + b)} = ${plural(c, ctx.one)}.`,
+          steps: [
+            `Rates: 1/${a} and 1/${b} of the job per ${ctx.one}.`,
+            `Combined rate: 1/${a} + 1/${b} = ${S.frac(a + b, a * b)} of the job per ${ctx.one}.`,
+            `Time for one whole job: 1 ÷ ${S.frac(a + b, a * b)} = ${plural(c, ctx.one)}.`,
+          ],
+          principles: WORK_PRINCIPLES,
+          trap: `Rates add, times do not: averaging ${a} and ${b} gives ${num(tidy((a + b) / 2))}, longer than the faster one alone.`,
+          hint: `What fraction of the job does each do in one ${ctx.one}?`,
+          verify: () => close(c / a + c / b, 1),
+        }, { show: num });
+      }
+      if (form === "alone") {
+        // Together time and one solo time are given; the other solo time is wanted.
+        return packRanked(t, numeric, b, [
+          [tidy(a - c), `Subtracts the together time from ${ctx.a}'s time; rates subtract, times do not.`],
+          [tidy(2 * c), `Doubles the together time, as if both worked at the same rate.`],
+          [tidy((a * c) / (a + c)), `Adds the rates 1/${a} and 1/${num(c)} instead of subtracting them.`],
+          [a, `Assumes ${ctx.b} works at the same rate as ${ctx.a}.`],
+          [tidy(a + c), `Adds the two times.`],
+        ], {
+          stimulus: null,
+          stem: `Working alone at a constant rate, ${ctx.a} can ${ctx.job} in ${a} ${u}. Working together at constant rates, ${both} can ${ctx.job} in ${num(c)} ${u}. ` +
+            `How many ${u} would it take ${ctx.b}, working alone, to ${ctx.job}?`,
+          explanation:
+            `Together they do 1/${num(c)} of the job per ${ctx.one} and ${ctx.a} alone does 1/${a}, so ${ctx.b} does ` +
+            `1/${num(c)} ${MINUS} 1/${a} = 1/${b} of the job per ${ctx.one}, and alone needs ${b} ${u}.`,
+          steps: [
+            `Combined rate: 1/${num(c)} of the job per ${ctx.one}.`,
+            `${ctx.b}'s rate: 1/${num(c)} ${MINUS} 1/${a} = 1/${b}.`,
+            `${ctx.b} alone: ${b} ${u}.`,
+          ],
+          principles: WORK_PRINCIPLES,
+          trap: `${num(tidy(a - c))} subtracts times; it is the rates, 1/${num(c)} and 1/${a}, that subtract.`,
+          hint: `How much of the job does the pair do in one ${ctx.one}, and how much of that is ${ctx.a}'s share?`,
+          verify: () => close(1 / a + 1 / b, 1 / c),
+        }, { show: num });
+      }
+      // Staged: one works alone for h, then both finish the job.
+      const h = t.int(1, Math.max(1, Math.floor((a - 1) / scale))) * scale;
+      if (h >= a) return null;
+      const rest = tidy((1 - h / a) * c);
+      if (!isClean(rest, 2) || rest <= 0) return null;
+      return packRanked(t, numeric, rest, [
+        [c, `Gives the time for the pair to do the whole job, ignoring the part ${ctx.a} did alone.`],
+        [tidy(c - h), `Subtracts the ${plural(h, ctx.one)} from the time the pair would need for the whole job; time alone is slower than time together.`],
+        [tidy(h + rest), `Gives the total time since ${ctx.a} started, not the time the two worked together.`],
+        [tidy((a - h) / 2), `Halves ${ctx.a}'s remaining time, as if ${ctx.b} worked at the same rate.`],
+        [tidy(a - h), `Gives the time ${ctx.a} alone would need to finish.`],
+      ], {
+        stimulus: null,
+        stem: `Working alone at a constant rate, ${ctx.a} can ${ctx.job} in ${a} ${u}, and working alone at a constant rate, ${ctx.b} can do it in ${b} ${u}. ` +
+          `${ctx.a} works alone for ${plural(h, ctx.one)}, and then ${ctx.b} joins in. At these rates, how many ${u} do ${both} work together to finish the job?`,
+        explanation:
+          `In ${plural(h, ctx.one)} alone, ${ctx.a} does ${S.frac(h, a)} of the job, leaving ${S.frac(a - h, a)}. Together they do ${S.frac(a + b, a * b)} of the job ` +
+          `per ${ctx.one}, so the rest takes ${S.frac(a - h, a)} ÷ ${S.frac(a + b, a * b)} = ${plural(rest, ctx.one)}.`,
+        steps: [
+          `${ctx.a} alone: ${h} × 1/${a} = ${S.frac(h, a)} of the job.`,
+          `Left: 1 ${MINUS} ${S.frac(h, a)} = ${S.frac(a - h, a)}.`,
+          `Combined rate: 1/${a} + 1/${b} = ${S.frac(a + b, a * b)} per ${ctx.one}.`,
+          `Time together: ${S.frac(a - h, a)} ÷ ${S.frac(a + b, a * b)} = ${num(rest)}.`,
+        ],
+        principles: WORK_PRINCIPLES,
+        trap: `Time spent alone is not time saved from the pair's schedule: ${ctx.a} alone works more slowly than the pair, so subtracting ${h} from ${num(c)} is wrong.`,
+        hint: `How much of the job is done before ${ctx.b} joins?`,
+        verify: () => close(h / a + rest / a + rest / b, 1),
+      }, { show: num });
+    });
+  }
+
+  const WORK_PRINCIPLES = [
+    "A job done alone in t units of time is done at a rate of 1/t of the job per unit; rates of helpers working together add.",
+    "Times do not add or average: the time together is 1 divided by the combined rate.",
+  ];
+
+  const combinedWorkRate = {
+    id: "combined-work-rate",
+    domain: DOMAIN,
+    skill: "Ratios, rates, and units",
+    subskill: "unit rates",
+    difficulty: "Hard",
+    title: "Two workers or machines sharing one job",
+    recognize:
+      "Turn each time into a rate (the fraction of the job done per unit of time); rates of workers together add, and the " +
+      "time is the work left divided by the combined rate.",
+    // Hard: the given quantities are times, but only rates combine, so the
+    // problem must be recast before any arithmetic; averaging or adding the
+    // times gives offered answers.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["neighbouring-rule", "unweighted-average", "intermediate-value"],
+    build(t) {
+      return { estimatedSeconds: 115, ...workRate(t, t.chance(0.35)) };
+    },
+  };
+
+  return [rateScaling, ratioShare, rateConversion, ratioAfterChange, multiUnitRate, averageRate, requiredLeg, densityCubeEdge, combinedWorkRate];
 });

@@ -10,47 +10,14 @@
 
   // One-variable data templates (Problem-Solving and Data Analysis), ordered Easy, Medium, Hard.
 
-  const { MINUS, num, table } = S;
+  const { MINUS, table, plural } = S;
+  // Every printed number is grouped by thousands ("1,188").
+  const num = S.grouped;
   const {
-    DATA, tidy, isClean, fmt, shown, sum, range, retry, pack, parseTable, parseNumber, close, seg,
-    chartText, dataDot, DOMAIN, about, offerHard, finish,
+    DATA, tidy, isClean, fmt, shown, sum, range, retry, pack, parseTable, parseNumber, close,
+    DOMAIN, about, finish, packRanked, statementGrid, dotPlot, readDotPlot, boxPlot, readBoxPlot,
+    stackedDotPlots, readStackedDotPlots, stackedBoxPlots, readStackedBoxPlots, histogram, readHistogram,
   } = C;
-
-  const DOT_RADIUS = 6.5;
-
-  // Dot plot: one column of dots above each value on a number line.
-  function dotPlot(values, freqs, title, alt) {
-    const left = 60;
-    const right = 340;
-    const gap = (right - left) / (values.length - 1);
-    const height = 96 + Math.max(...freqs) * 17;
-    const axisY = height - 52;
-    const xs = values.map((_, index) => left + index * gap);
-    const parts = [seg([left - 30, axisY], [right + 30, axisY], 1.5)];
-    values.forEach((value, index) => {
-      parts.push(seg([xs[index], axisY], [xs[index], axisY + 6], 1.5));
-      parts.push(chartText(xs[index], axisY + 19, num(value), "middle", 14));
-      for (let row = 0; row < freqs[index]; row += 1) {
-        parts.push(dataDot(xs[index], axisY - 13 - row * 17, DOT_RADIUS));
-      }
-    });
-    parts.push(chartText(200, height - 14, title, "middle", 14));
-    return { figure: { svg: S.svg(400, height, parts, alt), alt, notToScale: false }, xs };
-  }
-
-  // Reads a dot plot back into counts per column, from the SVG itself.
-  function readDotPlot(svg, xs) {
-    const counts = xs.map(() => 0);
-    const pattern = new RegExp(`<circle cx="([\\d.]+)" cy="([\\d.]+)" r="${DOT_RADIUS}"`, "g");
-    let match;
-    while ((match = pattern.exec(svg))) {
-      const cx = Number(match[1]);
-      const index = xs.findIndex((x) => Math.abs(x - cx) < 0.2);
-      if (index < 0) return null;
-      counts[index] += 1;
-    }
-    return counts;
-  }
 
   /* ========================================= data-display-center (Medium) */
 
@@ -71,8 +38,6 @@
   }
 
   const expand = (values, counts) => values.flatMap((value, index) => Array(counts[index]).fill(value));
-
-  const plural = (count, one, many = `${one}s`) => `${fmt(count)} ${count === 1 ? one : many}`;
 
   const mean = (list) => sum(list) / list.length;
 
@@ -159,20 +124,17 @@
       const m1 = above ? M + d1 : M - d1;
       const m2 = above ? M - d2 : M + d2;
       const side = above ? "above" : "below";
-      const wrong = offerHard(num(n2), [
-        [num(reversed), `Pairs each group with the other group's distance from ${M}; the group farther from the combined mean must be the smaller one.`],
-        [num(n1 + n2), `Gives the number of ${ctx.members} in both groups together, not the number ${ctx.g[1]}.`],
-        [num(n1 * d1), `Stops at ${n1} × ${d1} = ${n1 * d1}, the total amount the ${ctx.members} ${ctx.g[0]} are ${side} the combined mean.`],
-      ]);
-      if (!numeric && wrong.length < 3) return null;
-      return finish(numeric, {
+      return packRanked(t, numeric, n2, [
+        [reversed, `Pairs each group with the other group's distance from ${M}; the group farther from the combined mean must be the smaller one.`],
+        [n1 + n2, `Gives the number of ${ctx.members} in both groups together, not the number ${ctx.g[1]}.`],
+        [n1 * d1, `Stops at ${n1} × ${d1} = ${n1 * d1}, the total amount the ${ctx.members} ${ctx.g[0]} are ${side} the combined mean.`],
+        [n1, `Assumes the two groups are the same size, as if ${M} were the average of the two group means.`],
+      ], {
         stimulus: null,
         stem:
           `The ${n1} ${ctx.members} ${ctx.g[0]} have a mean ${ctx.measure} of ${m1} ${ctx.unit}, and the ${ctx.members} ${ctx.g[1]} ` +
           `have a mean ${ctx.measure} of ${m2} ${ctx.unit}. All the ${ctx.members} ${ctx.both} together have a mean ${ctx.measure} ` +
           `of ${M} ${ctx.unit}. How many ${ctx.members} are ${ctx.g[1]}?`,
-        correct: n2,
-        wrong,
         explanation:
           `Let n be the number ${ctx.g[1]}. The combined total equals the sum of the group totals: ${n1}(${m1}) + ${m2}n = ${M}(${n1} + n). ` +
           `So ${n1}(${m1} ${MINUS} ${M}) = n(${M} ${MINUS} ${m2}), which gives ${num(n1 * (m1 - M))} = ${num(M - m2)}n and n = ${n2}.`,
@@ -190,7 +152,7 @@
           const second = valuesWithMean(n2, m2);
           return S.approx(mean(first.concat(second)), M) && first.length === n1;
         },
-      });
+      }, { show: num, places: 0 });
     });
   }
 
@@ -211,19 +173,18 @@
         if (!isClean(M, 1)) return null;
         const unweighted = tidy(2 * M - m1);
         const perAll = tidy((n2 * m2) / N);
-        const candidates = [[num(unweighted), `Treats ${num(M)} as the average of the two group means, which ignores that the groups differ in size.`]];
-        if (isClean(perAll, 2)) candidates.push([num(perAll), `Divides the second group's total, ${num(n2 * m2)}, by all ${N} ${ctx.members} instead of by ${n2}.`]);
-        candidates.push([num(n2 * m2), `Stops at the second group's total, ${num(n2 * m2)} ${ctx.unit}, without dividing by its size.`]);
-        const wrong = offerHard(num(m2), candidates);
-        if (!numeric && wrong.length < 3) return null;
-        return finish(numeric, {
+        return packRanked(t, numeric, m2, [
+          [unweighted, `Treats ${num(M)} as the average of the two group means, which ignores that the groups differ in size.`],
+          [perAll, `Divides the second group's total, ${num(n2 * m2)}, by all ${N} ${ctx.members} instead of by ${n2}.`],
+          [n2 * m2, `Stops at the second group's total, ${num(n2 * m2)} ${ctx.unit}, without dividing by its size.`],
+          [M, `Gives the mean of all ${N} ${ctx.members}, not of the ${ctx.members} ${ctx.g[1]}.`],
+          [tidy((N * M - n1 * m1) / n1), `Divides the second group's total by ${n1}, the size of the first group.`],
+        ], {
           stimulus: null,
           stem:
             `A total of ${N} ${ctx.members} are ${ctx.both}. The ${n1} ${ctx.members} ${ctx.g[0]} have a mean ${ctx.measure} of ` +
             `${m1} ${ctx.unit}, and all ${N} have a mean ${ctx.measure} of ${num(M)} ${ctx.unit}. What is the mean ${ctx.measure}, in ` +
             `${ctx.unit}, of the ${ctx.members} ${ctx.g[1]}?`,
-          correct: m2,
-          wrong,
           explanation:
             `All ${N} ${ctx.members} total ${N} × ${num(M)} = ${num(N * M)}, and the ${n1} ${ctx.g[0]} total ${n1} × ${m1} = ${num(n1 * m1)}. ` +
             `The remaining ${n2} total ${num(n2 * m2)}, so their mean is ${num(n2 * m2)} ÷ ${n2} = ${m2}.`,
@@ -240,7 +201,7 @@
             const all = valuesWithMean(n1, m1).concat(valuesWithMean(n2, m2));
             return all.length === N && S.approx(mean(all), M);
           },
-        });
+        }, { show: num });
       }
       if (variant === 1) {
         // Only the share of the first group is known.
@@ -253,21 +214,19 @@
         const unweighted = tidy(2 * M - m1);
         const swapped = tidy((100 * M - (100 - p) * m1) / p);
         const partial = tidy(M - (p * m1) / 100);
-        const candidates = [[num(unweighted), `Treats ${num(M)} as the average of the two group means, ignoring that the groups are ${p}% and ${100 - p}% of the total.`]];
-        if (isClean(swapped, 2) && swapped > 0) candidates.push([num(swapped), `Gives the ${p}% weight to the second group instead of the first.`]);
-        if (isClean(partial, 2)) candidates.push([num(partial), `Stops at ${num(M)} ${MINUS} ${num(p / 100)}(${m1}) = ${num(partial)}, the second group's share of the overall mean, before dividing by ${num((100 - p) / 100)}.`]);
-        const wrong = offerHard(num(m2), candidates);
-        if (!numeric && wrong.length < 3) return null;
         const w1 = num(p / 100);
         const w2 = num((100 - p) / 100);
-        return finish(numeric, {
+        return packRanked(t, numeric, m2, [
+          [unweighted, `Treats ${num(M)} as the average of the two group means, ignoring that the groups are ${p}% and ${100 - p}% of the total.`],
+          [swapped, `Gives the ${p}% weight to the second group instead of the first.`],
+          [partial, `Stops at ${num(M)} ${MINUS} ${num(p / 100)}(${m1}) = ${num(partial)}, the second group's share of the overall mean, before dividing by ${num((100 - p) / 100)}.`],
+          [M, `Gives the mean of all the ${ctx.members}, not of the ${ctx.members} ${ctx.g[1]}.`],
+        ], {
           stimulus: null,
           stem:
             `Of the ${ctx.members} ${ctx.both}, ${p}% are ${ctx.g[0]} and the rest are ${ctx.g[1]}. The ${ctx.members} ${ctx.g[0]} ` +
             `have a mean ${ctx.measure} of ${m1} ${ctx.unit}, and all the ${ctx.members} ${ctx.both} have a mean ${ctx.measure} of ` +
             `${num(M)} ${ctx.unit}. What is the mean ${ctx.measure}, in ${ctx.unit}, of the ${ctx.members} ${ctx.g[1]}?`,
-          correct: m2,
-          wrong,
           explanation:
             `The overall mean weights each group by its share: ${num(M)} = ${w1}(${m1}) + ${w2}x. So ${w2}x = ${num(M)} ${MINUS} ` +
             `${num((p * m1) / 100)} = ${num(partial)}, and x = ${num(partial)} ÷ ${w2} = ${m2}.`,
@@ -287,7 +246,7 @@
             const all = valuesWithMean(size1, m1).concat(valuesWithMean(size2, m2));
             return S.approx(mean(all), M);
           },
-        });
+        }, { show: num });
       }
       // Three groups in a table; one mean is x.
       const sizes = [t.int(5, 30), t.int(5, 30), t.int(5, 30)];
@@ -303,20 +262,18 @@
       const unweighted = 3 * M - means[others[0]] - means[others[1]];
       const hiddenTotal = sizes[hidden] * x;
       const perAll = tidy(hiddenTotal / N);
-      const candidates = [[num(unweighted), `Treats ${M} as the plain average of the three group means, ignoring the group sizes.`]];
-      if (isClean(perAll, 2)) candidates.push([num(perAll), `Divides the total for ${name} by all ${N} ${ctx.members} instead of by ${sizes[hidden]}.`]);
-      candidates.push([num(hiddenTotal), `Stops at the total for ${name}, ${num(hiddenTotal)}, without dividing by its size.`]);
-      const wrong = offerHard(num(x), candidates);
-      if (!numeric && wrong.length < 3) return null;
       const rows = [0, 1, 2].map((index) => [ctx.names[index], sizes[index], index === hidden ? "x" : means[index]]);
       const knownTotal = sum(others.map((index) => sizes[index] * means[index]));
-      return finish(numeric, {
+      return packRanked(t, numeric, x, [
+        [unweighted, `Treats ${M} as the plain average of the three group means, ignoring the group sizes.`],
+        [perAll, `Divides the total for ${name} by all ${N} ${ctx.members} instead of by ${sizes[hidden]}.`],
+        [hiddenTotal, `Stops at the total for ${name}, ${num(hiddenTotal)}, without dividing by its size.`],
+        [M, `Gives the mean of all ${N} ${ctx.members}, not the mean for ${name}.`],
+      ], {
         stimulus: { type: "table", content: table([ctx.header, `Number of ${ctx.members}`, `Mean ${ctx.measure} (${ctx.unit})`], rows) },
         stem:
           `The table shows the number of ${ctx.members} and the mean ${ctx.measure} for each of three ${ctx.noun}. The mean ` +
           `${ctx.measure} of all ${N} ${ctx.members} is ${M} ${ctx.unit}. What is the value of x?`,
-        correct: x,
-        wrong,
         explanation:
           `All ${N} ${ctx.members} total ${N} × ${M} = ${num(N * M)}. The two known ${ctx.noun} total ${num(knownTotal)}, so the ` +
           `total for ${name} is ${num(N * M - knownTotal)}, and x = ${num(N * M - knownTotal)} ÷ ${sizes[hidden]} = ${x}.`,
@@ -339,7 +296,7 @@
           });
           return count === N && S.approx(total / count, M);
         },
-      });
+      }, { show: num });
     });
   }
 
@@ -361,18 +318,15 @@
       const unweighted = adding ? 2 * after - m : 2 * m - after;
       const oldCount = adding ? (n * after - n * m) / k : (n * m - n * after) / k;
       const candidates = [
-        [num(unweighted), adding
+        [unweighted, adding
           ? `Treats ${after} as the average of ${m} and the added group's mean, as if the two groups were the same size.`
           : `Treats ${m} as the average of ${after} and the removed group's mean, as if the two groups were the same size.`],
-      ];
-      if (isClean(oldCount, 2) && oldCount > 0) {
-        candidates.push([num(tidy(oldCount)), adding
+        [tidy(oldCount), adding
           ? `Multiplies the new mean by the old count, ${n}, instead of ${n + k}.`
-          : `Multiplies the new mean by the old count, ${n}, instead of ${n - k}.`]);
-      }
-      candidates.push([num(k * x), `Stops at the total of the ${k} ${adding ? "added" : "removed"} ${ctx.members}, ${num(k * x)}, without dividing by ${k}.`]);
-      const wrong = offerHard(num(x), candidates);
-      if (!numeric && wrong.length < 3) return null;
+          : `Multiplies the new mean by the old count, ${n}, instead of ${n - k}.`],
+        [k * x, `Stops at the total of the ${k} ${adding ? "added" : "removed"} ${ctx.members}, ${num(k * x)}, without dividing by ${k}.`],
+        [after, `Gives the mean after the change, not the mean of the ${k} ${adding ? "added" : "removed"} ${ctx.members}.`],
+      ];
       const oldTotal = n * m;
       const newTotal = newCount * after;
       const stem = adding
@@ -382,11 +336,9 @@
         : `The ${n} ${ctx.members} ${ctx.g[0]} have a mean ${ctx.measure} of ${m} ${ctx.unit}. After the data for ${k} of these ` +
           `${ctx.members} are removed, the mean ${ctx.measure} of the remaining ${n - k} is ${after} ${ctx.unit}. What is the mean ` +
           `${ctx.measure}, in ${ctx.unit}, of the ${k} ${ctx.members} whose data were removed?`;
-      return finish(numeric, {
+      return packRanked(t, numeric, x, candidates, {
         stimulus: null,
         stem,
-        correct: x,
-        wrong,
         explanation: adding
           ? `The original total is ${n} × ${m} = ${num(oldTotal)} and the new total is ${n + k} × ${after} = ${num(newTotal)}. ` +
             `The ${k} added ${ctx.members} account for ${num(newTotal)} ${MINUS} ${num(oldTotal)} = ${num(k * x)}, a mean of ${x}.`
@@ -407,7 +359,7 @@
           const all = base.concat(moved);
           return adding ? S.approx(mean(all), after) : S.approx(mean(all), m) && all.length === n;
         },
-      });
+      }, { show: num });
     });
   }
 
@@ -440,6 +392,16 @@
       who: (v) => `with ${plural(v, "person", "people")}`,
     },
   ];
+
+  // The value at a 1-based position of the ordered data a frequency table describes.
+  function valueAt(values, counts, position) {
+    let seen = 0;
+    for (let index = 0; index < values.length; index += 1) {
+      seen += counts[index];
+      if (position <= seen) return values[index];
+    }
+    return NaN;
+  }
 
   // Median from a frequency table by locating the middle position(s).
   function medianFromCounts(values, counts) {
@@ -492,21 +454,19 @@
       const countsMedian = median(after);
       const newMean = tidy(sum(values.map((v, index) => v * after[index])) / sum(after));
       if ([valuesMedian, countsMedian].includes(key)) return null;
-      const candidates = [
-        [num(oldMedian), `Keeps the median of the original data, ${num(oldMedian)}; the change moves the middle position.`],
-        [num(countsMedian), "Takes the median of the frequency column, treating the counts as if they were the data values."],
-        [num(valuesMedian), "Takes the middle of the listed values, ignoring how many times each value occurs."],
-      ];
-      if (isClean(newMean, 2)) candidates.push([num(newMean), "Gives the mean of the revised data instead of its median."]);
-      const wrong = offerHard(num(key), candidates);
-      if (!numeric && wrong.length < 3) return null;
       const n = sum(after);
       const middle = n % 2 ? `position ${(n + 1) / 2}` : `positions ${n / 2} and ${n / 2 + 1}`;
-      return finish(numeric, {
+      const candidates = [
+        [oldMedian, `Keeps the median of the original data, ${num(oldMedian)}; the change moves the middle position.`],
+        [countsMedian, "Takes the median of the frequency column, treating the counts as if they were the data values."],
+        [valuesMedian, "Takes the middle of the listed values, ignoring how many times each value occurs."],
+        [newMean, "Gives the mean of the revised data instead of its median."],
+        [total % 2 ? valueAt(values, after, (total + 1) / 2) : NaN,
+          `Counts to position ${(total + 1) / 2}, the middle of the original ${total} values, in the revised data; the middle moved when the count changed to ${n}.`],
+      ];
+      return packRanked(t, numeric, key, candidates, {
         stimulus: { type: "table", content: table([ctx.header, "Frequency"], values.map((v, index) => [v, before[index]])) },
         stem: `The frequency table summarizes ${ctx.subject}. ${event} What is the median of the data after this change?`,
-        correct: key,
-        wrong,
         explanation:
           `After the change the frequencies are ${after.join(", ")}, for ${n} values in all. The median is at ${middle} in ` +
           `order; counting up the frequencies from ${values[0]}, that is ${num(key)}.`,
@@ -530,7 +490,7 @@
           });
           return median(data) === key && data.length === n;
         },
-      });
+      }, { show: num, positive: false });
     });
   }
 
@@ -540,11 +500,6 @@
     { intro: (n) => `The list gives the numbers of minutes that ${n} students spent on homework one evening.`, low: 10, high: 90 },
     { intro: (n) => `The list gives the numbers of points a basketball player scored in ${n} games.`, low: 4, high: 36 },
   ];
-
-  // Statements about how a statistic moved: "The mean increased."
-  const STAT_NAMES = { mean: "mean", median: "median", range: "range", sd: "standard deviation" };
-
-  const moved = (stat, dir) => `The ${STAT_NAMES[stat]} ${dir > 0 ? "increased" : dir < 0 ? "decreased" : "did not change"}.`;
 
   function statDirections(before, after) {
     return {
@@ -564,22 +519,69 @@
       return copy;
     }
     if (event.kind === "add-mean") return list.concat([mean(list)]);
-    if (event.kind === "drop-max") {
+    if (event.kind === "drop-min") {
       const copy = list.slice();
-      copy.splice(copy.indexOf(Math.max(...copy)), 1);
+      copy.splice(copy.indexOf(Math.min(...copy)), 1);
       return copy;
     }
     return list.map((value) => value + event.shift);
   }
 
-  function statsWhichTrue(t) {
+  // Statements about how a statistic moved, all of one shape so no wording
+  // marks the key: "The median is greater than before." Each direction is
+  // two words ("greater than", "less than", "unchanged from"), so no choice
+  // shares more words with the others than its neighbours do.
+  const STAT_NAMES = { mean: "mean", median: "median", range: "range", sd: "standard deviation" };
+
+  const DIRECTION_WORDS = { 1: "greater than", "-1": "less than", 0: "unchanged from" };
+
+  const moved = (stat, dir) => `The ${STAT_NAMES[stat]} is ${DIRECTION_WORDS[dir]} before.`;
+
+  // Why each statistic moves as it does under each change, for the
+  // rationale of a false statement about it.
+  const WHY = {
+    "raise-max": {
+      mean: () => "the sum grows while the count stays the same, so the mean increases",
+      median: () => "the corrected value is still the greatest, so the middle value does not move",
+      range: () => "the greatest value sets the range, so the range increases",
+      sd: () => "the greatest value moves farther from the others, so the spread increases",
+    },
+    "add-mean": {
+      mean: () => "adding a value equal to the mean adds the mean to the sum and 1 to the count, so the mean is unchanged",
+      median: (list) => `the mean (${about(mean(list))}) is not the median (${num(median(list))}), so the added value shifts the middle toward the mean`,
+      range: () => "the least and greatest values do not change, so neither does the range",
+      sd: () => "the new value has no deviation, but the same squared deviations are now shared by one more value, so the standard deviation decreases",
+    },
+    "drop-min": {
+      mean: () => "removing the least value raises the mean",
+      median: () => "removing a value below the middle shifts the middle position up",
+      range: () => "the removed value set the range, so the range decreases",
+      sd: () => "the value farthest from the mean is gone, so the spread decreases",
+    },
+    shift: {
+      mean: () => "every value rises by the same amount, so the mean rises by that amount",
+      median: () => "the middle value rises by the same amount as every other value",
+      range: () => "the least and greatest values rise by the same amount, so their difference is unchanged",
+      sd: () => "every distance from the mean is unchanged, so the standard deviation is unchanged",
+    },
+  };
+
+  const KEY_STAT = { "raise-max": "median", "add-mean": "sd", "drop-min": "median", shift: "range" };
+
+  const wordCount = (stat) => STAT_NAMES[stat].split(" ").length;
+
+  function statsWhichTrue(t, kinds) {
     const ctx = t.pick(LISTS);
-    const kind = t.pick(["raise-max", "add-mean", "drop-max", "shift"]);
+    const kind = t.pick(kinds);
     return retry(() => {
       const n = t.pick([7, 8, 9, 10, 11]);
-      const cap = kind === "drop-max" ? Math.round((ctx.low + ctx.high) / 2) + 6 : ctx.high;
-      const pool = t.sample(range(ctx.low, cap), n - (kind === "drop-max" ? 1 : 0));
-      if (kind === "drop-max") pool.push(Math.max(...pool) + t.int(15, 30));
+      const floor = kind === "drop-min" ? Math.round((ctx.low + ctx.high) / 2) - 6 : ctx.low;
+      const pool = t.sample(range(floor, ctx.high), n - (kind === "drop-min" ? 1 : 0));
+      if (kind === "drop-min") {
+        const low = Math.min(...pool) - t.int(15, 30);
+        if (low < 1) return null;
+        pool.push(low);
+      }
       const list = pool;
       let event;
       let text;
@@ -592,9 +594,9 @@
         if (!Number.isInteger(mean(list)) || mean(list) === median(list)) return null;
         event = { kind };
         text = `One more value, equal to the mean of the ${n} values, is added to the list.`;
-      } else if (kind === "drop-max") {
+      } else if (kind === "drop-min") {
         event = { kind };
-        text = `The greatest value in the list, ${Math.max(...list)}, was entered by mistake and is removed.`;
+        text = `The least value in the list, ${Math.min(...list)}, was entered by mistake and is removed.`;
       } else {
         const shift = t.int(2, 9);
         event = { kind, shift };
@@ -603,49 +605,33 @@
       const after = applyEvent(list, event);
       const dirs = statDirections(list, after);
       if (dirs.sd !== dirs.sdSample) return null;
-      const say = (stat, dir) => moved(stat, dir);
-      let key;
-      let falses;
-      if (kind === "raise-max") {
-        key = say("median", 0);
-        falses = [
-          [say("sd", 0), "Assumes correcting one value leaves the spread alone; moving the greatest value farther out increases it.", true],
-          [say("median", 1), "Treats the median like the mean; the corrected value stays the greatest, so the middle value is unchanged.", true],
-          [say("mean", 0), "Treats the mean as resistant like the median; the mean uses every value, so it increases."],
-          [say("range", 0), "Overlooks that the greatest value sets the range, so the range increases."],
-        ];
-      } else if (kind === "add-mean") {
-        key = say("sd", -1);
-        falses = [
-          [say("sd", 0), "Assumes a value with no deviation leaves the spread alone; the same squared deviations are now shared by one more value.", true],
-          [say("median", 0), `Assumes a central value leaves the middle alone; the mean (${num(mean(list))}) is not the median (${num(median(list))}), so the middle shifts.`, true],
-          [say("range", -1), "Assumes a central value narrows the range; the least and greatest values are unchanged."],
-          [say("sd", 1), "Assumes more values always means more spread."],
-        ];
-      } else if (kind === "drop-max") {
-        key = say("median", -1);
-        falses = [
-          [say("median", 0), "Relies on the median resisting outliers; removing a value still shifts the middle position down.", true],
-          [say("mean", 0), "Assumes one value among many has no effect on the mean; removing the largest value lowers it.", true],
-          [say("sd", 1), "Assumes fewer values means more variability; the value farthest from the mean is gone."],
-          [say("range", 0), "Overlooks that the removed value set the range."],
-        ];
-      } else {
-        key = say("range", 0);
-        falses = [
-          [say("sd", 1), "Treats adding a constant like multiplying; every value moves the same amount, so distances from the mean are unchanged.", true],
-          [say("range", 1), "Assumes larger values give a larger range; the greatest and least values rise by the same amount."],
-          [say("median", 0), "Assumes only the mean responds; the middle value also rises by the constant.", true],
-          [say("mean", 0), "Overlooks that every value, and therefore the mean, rises by the constant."],
-        ];
-      }
-      const truth = (statement) => ["mean", "median", "range", "sd"].some((stat) => statement === say(stat, dirs[stat]));
-      if (!truth(key) || falses.some(([statement]) => truth(statement))) return null;
-      const forced = falses.filter((entry) => entry[2]);
-      const optional = t.shuffle(falses.filter((entry) => !entry[2])).slice(0, 3 - forced.length);
-      const wrong = forced.concat(optional).map(([statement, reason]) => [statement, reason]);
-      const shown = t.chance(0.5) ? list.slice().sort((a, b) => a - b) : t.shuffle(list);
-      const content = shown.join(", ");
+      // The choices are a 2 x 2 grid: two statistics crossed with two
+      // directions, exactly one cell true.
+      // Usually the statistic the change is known for, sometimes another,
+      // so no statement is always the key.
+      const keyStat = t.chance(kind === "shift" ? 0.75 : 0.35)
+        ? t.pick(["mean", "median", "range", "sd"].filter((stat) => stat !== KEY_STAT[kind]))
+        : KEY_STAT[kind];
+      const keyDir = dirs[keyStat];
+      const others = ["mean", "median", "range", "sd"].filter((stat) => stat !== keyStat && dirs[stat] !== keyDir);
+      if (!others.length) return null;
+      const matched = others.filter((stat) => wordCount(stat) === wordCount(keyStat));
+      const otherStat = t.pick(matched.length && t.chance(0.8) ? matched : others);
+      const otherDir = [1, -1, 0].find((dir) => dir !== keyDir && dir !== dirs[otherStat]);
+      const rows = t.shuffle([keyStat, otherStat]);
+      const cols = t.shuffle([keyDir, otherDir]);
+      const why = (stat) => WHY[kind][stat](list);
+      const grid = statementGrid((i, j) => {
+        const stat = rows[i];
+        const dir = cols[j];
+        const truth = dirs[stat] === dir;
+        return [moved(stat, dir), `Claims the ${STAT_NAMES[stat]} is ${DIRECTION_WORDS[dir]} before, but ${why(stat)}.`, truth];
+      });
+      if (!grid) return null;
+      const key = grid.correct;
+      const wrong = grid.wrong;
+      const shownList = t.chance(0.5) ? list.slice().sort((a, b) => a - b) : t.shuffle(list);
+      const content = shownList.join(", ");
       return finish(false, {
         stimulus: { type: "text", content },
         stem: `${ctx.intro(n)} ${text} Which of the following statements about the data after this change is true?`,
@@ -654,7 +640,7 @@
         explanation:
           `Before: mean ${about(mean(list))}, median ${num(median(list))}, range ${spread(list)}. After: mean ` +
           `${about(mean(after))}, median ${num(median(after))}, range ${num(spread(after))}. The standard deviation ` +
-          `${dirs.sd > 0 ? "increased" : dirs.sd < 0 ? "decreased" : "did not change"}. Only "${key}" is true.`,
+          `${dirs.sd > 0 ? "increased" : dirs.sd < 0 ? "decreased" : "did not change"}. Only "${key}" is true: ${why(keyStat)}.`,
         steps: [
           "Sort the values and find the original median, mean, and range.",
           "Apply the change and recompute each statistic.",
@@ -671,7 +657,8 @@
           const parsed = content.split(", ").map(parseNumber);
           const redone = applyEvent(parsed, event);
           const check = statDirections(parsed, redone);
-          const holds = (statement) => ["mean", "median", "range", "sd"].some((stat) => statement === say(stat, check[stat]));
+          const holds = (statement) => ["mean", "median", "range", "sd"].some((stat) => [1, -1, 0].some((dir) =>
+            statement === moved(stat, dir) && check[stat] === dir));
           return holds(key) && wrong.every(([statement]) => !holds(statement));
         },
       });
@@ -709,17 +696,27 @@
       if ((sdFirst > sdSecond) === (freqFirst > freqSecond) || Math.abs(freqFirst - freqSecond) < 0.5) return null;
       const bigger = sdFirst > sdSecond ? A : B;
       const smaller = bigger === A ? B : A;
-      const key = `The standard deviation for ${bigger} is greater.`;
-      const wrong = [
-        [`The standard deviation for ${smaller} is greater.`, `Compares the frequency columns as if they were the data: the counts for ${smaller} vary more, but the counts are not the values.`],
-        ["The two standard deviations are equal.", "Assumes the same values, mean, and range force the same spread; the standard deviation depends on how many values sit far from the mean."],
-        ["There is not enough information to compare them.", "Assumes an exact calculation is needed; the table shows which data set has more of its values far from the shared center."],
-      ];
+      // A 2 x 2 grid of claims, {standard deviation, mean value} x {A, B},
+      // so the key is not the one choice the others vary around. The means
+      // are equal (both sets are symmetric about the same value).
+      const grid = statementGrid((i, j) => {
+        const stat = ["standard deviation", "mean value"][i];
+        const name = [A, B][j];
+        if (i === 0) {
+          return name === bigger
+            ? [`The data for ${name} have the greater ${stat}.`, "", true]
+            : [`The data for ${name} have the greater ${stat}.`, `Compares the frequency columns as if they were the data: the counts for ${smaller} vary more, but the counts are not the values.`, false];
+        }
+        return [`The data for ${name} have the greater ${stat}.`,
+          `Both data sets are symmetric about ${values[2]}, so their means are equal; the difference between them is in spread, not center.`, false];
+      });
+      const key = grid.correct;
+      const wrong = grid.wrong;
       const rows = values.map((value, index) => [value, first[index], second[index]]);
       const edge = bigger === A ? first : second;
       return finish(false, {
         stimulus: { type: "table", content: table([ctx.header, `${A} frequency`, `${B} frequency`], rows) },
-        stem: `The table summarizes ${ctx.subject}. Which statement correctly compares the standard deviations of the two data sets?`,
+        stem: `The table summarizes ${ctx.subject}. Which of the following statements about the two data sets is true?`,
         correct: key,
         wrong,
         explanation:
@@ -771,88 +768,109 @@
   function statsMustBeTrue(t) {
     const n = t.int(5, 15);
     const scenario = t.int(0, 2);
-    const d = t.int(4, 30);
+    // Each scenario is a 2 x 2 grid {two statistics} x {two directions}:
+    // one cell holds for every allowed data set, at least one other can hold
+    // for some (the must-versus-could trap), and the rest never hold.
+    const tests = {
+      mean: (b, a) => direction(mean(b), mean(a)),
+      median: (b, a) => direction(median(b), median(a)),
+      sd: (b, a) => direction(stdev(b, false), stdev(a, false)),
+    };
     let event;
     let apply;
-    let key;
-    let could;
-    let falses;
+    let rows;
+    let cols;
+    let why;
     if (scenario === 0) {
-      event = `The greatest value in the data set is increased by ${d}.`;
-      apply = (set) => set.map((value) => (value === Math.max(...set) ? value + d : value));
-      key = ["The median does not change.", (b, a) => median(a) === median(b)];
-      could = ["The mean becomes greater than the median.", (b, a) => mean(a) > median(a) && !(mean(b) > median(b)),
-        `This can happen, but when the mean starts far enough below the median, an increase of ${d}/${n} does not lift it past the median.`];
-      falses = [
-        [`The mean increases by ${d}.`, (b, a) => S.approx(mean(a) - mean(b), d), `The sum increases by ${d}, so the mean increases by ${d}/${n}, not ${d}.`],
-        ["The standard deviation does not change.", (b, a) => S.approx(stdev(a), stdev(b)), "Moving the greatest value farther from the others always increases the spread."],
-        ["The range does not change.", (b, a) => spread(a) === spread(b), `The greatest value sets the range, so the range increases by ${d}.`],
-      ];
-    } else if (scenario === 1) {
       event = "One more value, equal to the mean of the original values, is added to the data set.";
       apply = (set) => set.concat([mean(set)]);
-      key = ["The mean does not change.", (b, a) => S.approx(mean(a), mean(b))];
-      could = ["The median does not change.", (b, a) => S.approx(median(a), median(b)),
-        "True only for some data sets, such as when the mean equals the median; otherwise the middle shifts toward the mean."];
-      falses = [
-        ["The standard deviation does not change.", (b, a) => S.approx(stdev(a), stdev(b)), "The new value adds no deviation, but the squared deviations are now shared by one more value, so the standard deviation decreases."],
-        ["The sum of the values does not change.", (b, a) => S.approx(sum(a), sum(b)), "Confuses the sum with the mean: the average is unchanged, but the sum grows by the added value."],
-      ];
-    } else {
+      rows = ["mean", "median"];
+      cols = [0, 1];
+      why = {
+        mean: "adding a value equal to the mean adds the mean to the sum and 1 to the count, so the mean never changes",
+        median: "the median moves toward the mean unless the two are equal, so it can stay the same or move, depending on the data",
+      };
+    } else if (scenario === 1) {
       event = "The least value in the data set is removed.";
       apply = (set) => set.filter((value) => value !== Math.min(...set));
-      key = ["The mean increases.", (b, a) => mean(a) > mean(b) + 1e-9];
-      could = ["The standard deviation decreases.", (b, a) => stdev(a) < stdev(b) - 1e-9,
-        "Usually true, but not always: if a far outlier remains at the top, removing the least value can increase the spread."];
-      falses = [
-        ["The median does not change.", (b, a) => S.approx(median(a), median(b)), "The median resists extreme values, but removing any value shifts the middle position up."],
-        ["The range does not change.", (b, a) => spread(a) === spread(b), "The least value sets the range; without it the range shrinks."],
-      ];
+      rows = ["mean", "sd"];
+      cols = [1, -1];
+      why = {
+        mean: "the removed value is below the mean (it is the least of different values), so the mean always increases",
+        sd: "the spread usually shrinks, but if a far outlier remains at the top, removing the least value can widen it",
+      };
+    } else {
+      event = "One more value, equal to the median of the original values, is added to the data set.";
+      apply = (set) => set.concat([median(set)]);
+      rows = ["median", "mean"];
+      cols = [0, 1];
+      why = {
+        median: "a new value at the median keeps the middle of the data at that value, so the median never changes",
+        mean: "the mean moves toward the median, up or down depending on which side of the median it starts",
+      };
     }
-    const chosen = t.shuffle(falses).slice(0, 2);
-    const wrong = [[could[0], could[2]], ...chosen.map(([statement, , reason]) => [statement, reason])];
+    const mustRow = rows[0];
+    const mustDir = scenario === 1 ? 1 : 0;
+    const sets = randomSets(`${scenario}|${n}`, n);
+    const low = Math.floor(n / 2);
+    sets.push(range(1, n));
+    sets.push(range(1, n - 1).concat([1000]));
+    sets.push(range(1, low).concat(range(1000, 1000 + n - low - 1)));
+    sets.push([1, 2, 3, 4, 400].concat(range(401, 400 + n - 5)));
+    sets.push([1].concat(range(50, 48 + n - 1)).concat([5000]));
+    const pairs = sets.filter((set) => set.length === n && new Set(set).size === n).map((set) => [set, apply(set)]);
+    const status = (stat, dir) => {
+      const hits = pairs.filter(([b, a]) => tests[stat](b, a) === dir).length;
+      return hits === pairs.length ? "must" : hits ? "could" : "never";
+    };
+    const statement = (stat, dir) => moved(stat, dir).replace("before", "in the original data set");
+    const grid = statementGrid((i, j) => {
+      const stat = rows[i];
+      const dir = cols[j];
+      const kind = status(stat, dir);
+      const reason = kind === "could"
+        ? `This can happen for some data sets but not all: ${why[stat]}.`
+        : `This never happens: ${why[stat]}.`;
+      return [statement(stat, dir), reason, kind === "must"];
+    });
+    const key = statement(mustRow, mustDir);
+    if (!grid || grid.correct !== key) throw new Error("must-be-true grid is not well formed");
+    const couldText = grid.wrong.find(([, reason]) => reason.startsWith("This can happen"));
     return finish(false, {
       stimulus: null,
       stem: `A data set consists of ${n} different positive integers. ${event} Which of the following statements must be true about the new data set?`,
-      correct: key[0],
-      wrong,
-      explanation: scenario === 0
-        ? `The greatest value stays the greatest, so the order of the other values, and the middle one, are unchanged: the median does not change. ` +
-          `The mean rises by only ${d}/${n}, and whether it passes the median depends on the data.`
-        : scenario === 1
-          ? "Adding a value equal to the mean adds exactly the mean to the sum and 1 to the count, so the mean is unchanged. " +
-            "The median stays the same only for some data sets."
-          : "The removed value is below the mean (it is the least of different values), so removing it raises the mean. " +
-            "The standard deviation usually falls, but not always.",
+      correct: key,
+      wrong: grid.wrong,
+      explanation: `${cap1(why[mustRow])}. ${couldText ? `By contrast, "${couldText[0]}" holds only for some data sets.` : ""}`.trim(),
       steps: [
-        "Decide what each statistic depends on: every value (mean, sum, standard deviation), the middle position (median), or the extremes (range).",
+        "Decide what each statistic depends on: every value (mean, standard deviation) or the middle position (median).",
         "Test each statement against the change for every possible data set, not one convenient example.",
         "A statement that fails for even one allowed data set does not have to be true.",
-        `Only "${key[0]}" holds for every data set.`,
+        `Only "${key}" holds for every data set.`,
       ],
       principles: [
         "\"Must be true\" requires the statement to hold for every data set that fits the description.",
         "The mean changes whenever the sum changes relative to the count; the median changes only when the middle position's value changes.",
       ],
-      trap: `"${could[0]}" can be true, which makes it tempting, but a single counterexample rules it out.`,
+      trap: couldText
+        ? `"${couldText[0]}" can be true, which makes it tempting, but a single counterexample rules it out.`
+        : "A statement that holds for one example data set need not hold for all of them.",
       hint: "For each statement, try to build a data set that fits the description but makes the statement false.",
       verify: () => {
-        const sets = randomSets(`${scenario}|${n}|${d}`, n);
-        // Witnesses on both sides of the "could" statement, whatever n is.
-        const low = Math.floor(n / 2);
-        sets.push(range(1, n));
-        sets.push(range(1, n - 1).concat([1000]));
-        sets.push(range(1, low).concat(range(1000, 1000 + n - low - 1)));
-        sets.push([1, 2, 3, 4, 400].concat(range(401, 400 + n - 5)));
-        const pairs = sets.filter((set) => set.length === n && new Set(set).size === n).map((set) => [set, apply(set)]);
-        const always = pairs.every(([b, a]) => key[1](b, a));
-        const couldYes = pairs.some(([b, a]) => could[1](b, a));
-        const couldNo = pairs.some(([b, a]) => !could[1](b, a));
-        const neverAlways = chosen.every(([, test]) => pairs.some(([b, a]) => !test(b, a)));
-        return always && couldYes && couldNo && neverAlways;
+        // Fresh data sets, drawn independently of the build's.
+        const fresh = randomSets(`verify|${scenario}|${n}`, n)
+          .filter((set) => new Set(set).size === n).map((set) => [set, apply(set)]);
+        const always = fresh.every(([b, a]) => tests[mustRow](b, a) === mustDir);
+        const others = grid.wrong.map(([text]) => {
+          const cell = rows.flatMap((stat) => cols.map((dir) => [stat, dir])).find(([stat, dir]) => statement(stat, dir) === text);
+          return cell && pairs.some(([b, a]) => tests[cell[0]](b, a) !== cell[1]);
+        });
+        return always && others.every(Boolean);
       },
     });
   }
+
+  const cap1 = (text) => text.charAt(0).toUpperCase() + text.slice(1);
 
   const displayCenter = {
     id: "data-display-center",
@@ -901,20 +919,27 @@
         const key = askMean ? mean : median;
         if (askMean ? (!isClean(mean, 2) || close(mean, unweighted)) : close(median, listedMiddle)) return null;
         const stat = askMean ? "mean" : "median";
+        const upperMiddle = n % 2 ? null : valueAt(n / 2 + 1);
         const candidates = askMean
           ? [
-            [shown(unweighted), `Averages the ${width} listed values without weighting each by how often it occurs.`],
-            [shown(total / width), `Divides the total, ${total}, by the ${width} different values instead of by the ${n} data values.`],
-            [shown(median, 1), "Gives the median instead of the mean."],
-            [shown(n / width), "Averages the frequencies instead of the data values."],
-            [shown(total, 0), `Stops at the total, ${total}, without dividing by the number of values.`],
+            [tidy(unweighted), `Averages the ${width} listed values without weighting each by how often it occurs.`],
+            [tidy(total / width), `Divides the total, ${total}, by the ${width} different values instead of by the ${n} data values.`],
+            [median, "Gives the median instead of the mean."],
+            [tidy(n / width), "Averages the frequencies instead of the data values."],
+            [total, `Stops at the total, ${total}, without dividing by the number of values.`],
+            [tidy(total / (n - 1)), `Divides the total by ${n - 1} instead of by the ${n} data values.`],
+            [n, `Gives the number of data values, ${n}, instead of their mean.`],
+            [tidy(total / (n + 1)), `Divides the total by ${n + 1} instead of by the ${n} data values.`],
+            [mode === null ? NaN : mode, "Gives the value that occurs most often (the mode) instead of the mean."],
           ]
           : [
-            [shown(listedMiddle, 1), "Takes the middle of the listed values, ignoring how many times each occurs."],
-            [mode === null ? null : shown(mode, 0), "Gives the value that occurs most often (the mode), not the middle value."],
-            [isClean(mean, 2) ? shown(mean) : null, "Gives the mean instead of the median."],
-            [lowerMiddle === null ? null : shown(lowerMiddle, 0), `Takes value number ${n / 2} alone; with ${n} values the median is the average of values ${n / 2} and ${n / 2 + 1}.`],
-            [asPlot ? null : shown(medianOf(freqs), 1), "Finds the median of the frequency column instead of the data."],
+            [listedMiddle, "Takes the middle of the listed values, ignoring how many times each occurs."],
+            [mode === null ? NaN : mode, "Gives the value that occurs most often (the mode), not the middle value."],
+            [mean, "Gives the mean instead of the median."],
+            [lowerMiddle === null ? NaN : lowerMiddle, `Takes value number ${n / 2} alone; with ${n} values the median is the average of values ${n / 2} and ${n / 2 + 1}.`],
+            [upperMiddle === null ? NaN : upperMiddle, `Takes value number ${n / 2 + 1} alone; with ${n} values the median is the average of values ${n / 2} and ${n / 2 + 1}.`],
+            [asPlot ? NaN : medianOf(freqs), "Finds the median of the frequency column instead of the data."],
+            [n % 2 ? valueAt((n + 1) / 2 + 1) : NaN, `Counts to value number ${(n + 1) / 2 + 1}, one past the middle of the ${n} values.`],
           ];
         const title = asPlot ? "dot plot" : "frequency table";
         const alt =
@@ -928,7 +953,7 @@
           ? `the median is value number ${(n + 1) / 2}, which is ${num(median)}`
           : `the median is the average of values ${n / 2} and ${n / 2 + 1}, which is ${num(median)}`;
         const weighted = values.map((value, index) => `${value}(${freqs[index]})`).join(" + ");
-        return pack(numeric, key, fmt(tidy(key)), candidates, {
+        return packRanked(t, numeric, tidy(key), candidates, {
           stimulus,
           figure: plot ? plot.figure : null,
           stem: `The ${title} ${asPlot ? "shows" : "summarizes"} ${scene.about(n)}. What is the ${stat} of the data?`,
@@ -962,7 +987,7 @@
             const value = askMean ? sum(data) / data.length : medianOf(data);
             return data.length === n && close(value, key);
           },
-        });
+        }, { positive: false });
       });
     },
   };
@@ -991,18 +1016,40 @@
     domain: DOMAIN,
     skill: "One-variable data",
     subskill: "distributions",
+    difficulty: "Hard",
     title: "How a data change moves each statistic",
     recognize:
       "Each statistic depends on something different: the mean and standard deviation on every value, the median on the " +
       "middle position, the range on the extremes, and a frequency table's data on its values repeated by their counts.",
+    // Hard: the student must decide, for a change described in words, which
+    // statistic must move and which only could; no computation settles it.
     rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["must-vs-could", "part-vs-whole", "neighbouring-rule", "wrong-quantity"],
     build(t) {
-      const form = t.int(0, 3);
-      if (form === 0) return { estimatedSeconds: 110, ...statsNewMedian(t, t.chance(0.6)) };
-      if (form === 1) return { estimatedSeconds: 110, ...statsWhichTrue(t) };
-      if (form === 2) return { estimatedSeconds: 95, ...statsCompareSpread(t) };
+      const form = t.int(0, 2);
+      if (form === 0) return { estimatedSeconds: 110, ...statsWhichTrue(t, ["raise-max", "add-mean", "drop-min"]) };
+      if (form === 1) return { estimatedSeconds: 95, ...statsCompareSpread(t) };
       return { estimatedSeconds: 100, ...statsMustBeTrue(t) };
+    },
+  };
+
+  const dataChangeMedian = {
+    id: "data-change-median",
+    domain: DATA,
+    skill: "One-variable data",
+    subskill: "distributions",
+    difficulty: "Medium",
+    title: "The center and spread after a change to the data",
+    recognize:
+      "Rebuild the data after the change: a frequency table's data are its values repeated by their counts, so recount " +
+      "and find the new middle position; adding a constant to every value moves the center but not the spread.",
+    // Medium: the change is stated exactly and the new statistic can be
+    // found directly; the trap is using the frequency column as the data.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["part-vs-whole", "neighbouring-rule"],
+    build(t) {
+      if (t.chance(0.65)) return { estimatedSeconds: 100, ...statsNewMedian(t, t.chance(0.5)) };
+      return { estimatedSeconds: 90, ...statsWhichTrue(t, ["shift"]) };
     },
   };
 
@@ -1087,21 +1134,26 @@
         const middleText = n % 2
           ? `the middle value is value number ${(n + 1) / 2}, ${num(med)}`
           : `the two middle values are ${sorted[n / 2 - 1]} and ${sorted[n / 2]}, whose average is ${num(med)}`;
+        const middle = Math.floor(n / 2);
         const candidates = askMedian
           ? [
-            [shown(listed, 1), `Takes the middle of the values in the order ${inTable ? "the table lists them" : "they are listed"}, without first putting them in order.`],
-            [shown(avg), "Gives the mean of the data instead of the median."],
-            n % 2 ? null : [shown(sorted[n / 2 - 1], 0), `Uses only one of the two middle values, ${sorted[n / 2 - 1]}, instead of their average.`],
-            [shown(mid, 1), "Averages the least and greatest values instead of finding the middle value."],
-            n % 2 ? null : [shown(sorted[n / 2], 0), `Uses only one of the two middle values, ${sorted[n / 2]}, instead of their average.`],
-          ].filter(Boolean)
+            [listed, `Takes the middle of the values in the order ${inTable ? "the table lists them" : "they are listed"}, without first putting them in order.`],
+            [avg, "Gives the mean of the data instead of the median."],
+            [n % 2 ? NaN : sorted[n / 2 - 1], `Uses only one of the two middle values, ${sorted[n / 2 - 1]}, instead of their average.`],
+            [mid, "Averages the least and greatest values instead of finding the middle value."],
+            [n % 2 ? NaN : sorted[n / 2], `Uses only one of the two middle values, ${sorted[n / 2]}, instead of their average.`],
+            [n % 2 ? sorted[middle - 1] : NaN, `Counts to value number ${middle}, one short of the middle of ${n} values.`],
+            [n % 2 ? sorted[middle + 1] : NaN, `Counts to value number ${middle + 2}, one past the middle of ${n} values.`],
+          ]
           : [
-            [shown(total, 0), `Stops at the sum of the values, ${fmt(total)}, without dividing by ${n}.`],
-            [shown(med, 1), "Gives the median of the data instead of the mean."],
-            [shown(tidy(total / (n - 1))), `Divides the sum by ${n - 1} instead of by the ${n} values.`],
-            [shown(mid, 1), "Averages only the least and greatest values."],
+            [total, `Stops at the sum of the values, ${fmt(total)}, without dividing by ${n}.`],
+            [med, "Gives the median of the data instead of the mean."],
+            [tidy(total / (n - 1)), `Divides the sum by ${n - 1} instead of by the ${n} values.`],
+            [mid, "Averages only the least and greatest values."],
+            [tidy(total / (n + 1)), `Divides the sum by ${n + 1} instead of by the ${n} values.`],
+            [listed, `Takes the middle value of the ${inTable ? "table" : "list"} as written instead of computing the mean.`],
           ];
-        return pack(numeric, key, fmt(key), candidates, {
+        return packRanked(t, numeric, key, candidates, {
           stimulus,
           figure: null,
           stem: `${ctx.intro(n)} What is the ${askMedian ? "median" : "mean"} of the data?`,
@@ -1134,7 +1186,7 @@
               ? close(trimmedMiddle(parsed), key)
               : close(sum(parsed.map((value) => value - key)), 0);
           },
-        });
+        }, { places: 2 });
       });
     },
   };
@@ -1148,48 +1200,11 @@
     { title: "Age (years)", about: "the ages, in years, of the people at a family reunion", starts: [0], steps: [5, 8], max: 100 },
     { title: "High temperature (°F)", about: "the daily high temperatures, in degrees Fahrenheit, in a city during one month", starts: [40, 50, 60], steps: [2], max: 100 },
     { title: "Commute distance (miles)", about: "the distances, in miles, that the employees of a company commute to work", starts: [0], steps: [2, 3], max: 40 },
+    { title: "Price (dollars)", about: "the prices, in dollars, of the backpacks sold at a store", starts: [10, 20], steps: [2, 4, 5], max: 90 },
+    { title: "Time (seconds)", about: "the times, in seconds, that the runners on a track team took to run 400 meters", starts: [50, 55, 60], steps: [1, 2], max: 90 },
+    { title: "Rainfall (millimeters)", about: "the monthly rainfall totals, in millimeters, for a city over several years", starts: [0, 10], steps: [5, 10], max: 160 },
+    { title: "Mass (grams)", about: "the masses, in grams, of the apples picked from one tree", starts: [100, 120], steps: [5, 10], max: 260 },
   ];
-
-  const BOX = { left: 40, right: 360, top: 40, bottom: 76, whisker: 58, axis: 110 };
-
-  function boxPlot(values, ticks, title, alt) {
-    const at = (value) => BOX.left + ((value - ticks[0]) / (ticks[ticks.length - 1] - ticks[0])) * (BOX.right - BOX.left);
-    const [low, q1, med, q3, high] = values.map(at);
-    const parts = [seg([BOX.left - 15, BOX.axis], [BOX.right + 15, BOX.axis], 1.5)];
-    ticks.forEach((tick) => {
-      parts.push(seg([at(tick), BOX.axis], [at(tick), BOX.axis + 6], 1.5));
-      parts.push(chartText(at(tick), BOX.axis + 20, num(tick), "middle", 12));
-    });
-    parts.push(
-      `<rect x="${C.r1(q1)}" y="${BOX.top}" width="${C.r1(q3 - q1)}" height="${BOX.bottom - BOX.top}" fill="none" stroke="currentColor" stroke-width="2"/>`,
-      seg([med, BOX.top], [med, BOX.bottom], 2.5),
-      seg([low, BOX.whisker], [q1, BOX.whisker], 2),
-      seg([q3, BOX.whisker], [high, BOX.whisker], 2),
-      seg([low, BOX.whisker - 10], [low, BOX.whisker + 10], 2),
-      seg([high, BOX.whisker - 10], [high, BOX.whisker + 10], 2),
-      chartText(200, BOX.axis + 48, title, "middle", 13),
-    );
-    return { svg: S.svg(400, BOX.axis + 62, parts, alt), alt, notToScale: false };
-  }
-
-  // Reads the five-number summary back from the drawing: the tick labels fix
-  // the scale, the box gives the quartiles, and the upright strokes above the
-  // axis are the whisker ends and the median.
-  function readBoxPlot(svg) {
-    const labels = [...svg.matchAll(/<text x="([\d.]+)"[^>]*>([^<]+)<\/text>/g)]
-      .filter((match) => /^\d+(\.\d+)?$/.test(match[2]))
-      .map((match) => [Number(match[1]), Number(match[2])]);
-    const [[x0, v0], [x1, v1]] = [labels[0], labels[labels.length - 1]];
-    // Drawn positions are rounded to a tenth of a pixel; every value sits on a whole number.
-    const value = (x) => Math.round(v0 + ((x - x0) * (v1 - v0)) / (x1 - x0));
-    const box = svg.match(/<rect x="([\d.]+)" y="[\d.]+" width="([\d.]+)"/);
-    const uprights = [...svg.matchAll(/<line x1="([\d.]+)" y1="([\d.]+)" x2="([\d.]+)" y2="([\d.]+)"/g)]
-      .filter((match) => match[1] === match[3] && Number(match[4]) < BOX.axis)
-      .map((match) => Number(match[1]));
-    const xs = [...new Set(uprights)].sort((p, q) => p - q);
-    if (!box || xs.length !== 3) return null;
-    return [value(xs[0]), value(Number(box[1])), value(xs[1]), value(Number(box[1]) + Number(box[2])), value(xs[2])];
-  }
 
   const boxPlotSummary = {
     id: "box-plot-summary",
@@ -1225,30 +1240,36 @@
         const key = ask === "median" ? med : ask === "iqr" ? iqr : spreadAll;
         const candidates = ask === "median"
           ? [
-            [shown(q1, 0), "Reads the left edge of the box, the first quartile, instead of the line inside the box."],
-            [shown(q3, 0), "Reads the right edge of the box, the third quartile, instead of the line inside the box."],
-            [shown((q1 + q3) / 2, 1), "Takes the center of the box; the median is marked by the line inside the box, which need not be centered."],
-            [shown((low + high) / 2, 1), "Takes the value halfway between the least and greatest values."],
+            [q1, "Reads the left edge of the box, the first quartile, instead of the line inside the box."],
+            [q3, "Reads the right edge of the box, the third quartile, instead of the line inside the box."],
+            [tidy((q1 + q3) / 2), "Takes the center of the box; the median is marked by the line inside the box, which need not be centered."],
+            [tidy((low + high) / 2), "Takes the value halfway between the least and greatest values."],
+            [low, "Reads the end of the left whisker, the least value, instead of the line inside the box."],
+            [high, "Reads the end of the right whisker, the greatest value, instead of the line inside the box."],
           ]
           : ask === "iqr"
             ? [
-              [shown(spreadAll, 0), "Gives the range, from the least to the greatest value, instead of the width of the box."],
-              [shown(q3 - med, 0), "Measures only from the median to the third quartile, half of the box."],
-              [shown(med - q1, 0), "Measures only from the first quartile to the median, half of the box."],
-              [shown(q3, 0), "Gives the third quartile itself instead of the distance across the box."],
+              [spreadAll, "Gives the range, from the least to the greatest value, instead of the width of the box."],
+              [q3 - med, "Measures only from the median to the third quartile, half of the box."],
+              [med - q1, "Measures only from the first quartile to the median, half of the box."],
+              [q3, "Gives the third quartile itself instead of the distance across the box."],
+              [high - q3, "Measures the right whisker instead of the box."],
+              [q3 - low, "Measures from the least value to the third quartile instead of across the box."],
             ]
             : [
-              [shown(iqr, 0), "Gives the interquartile range, the width of the box, instead of the distance between the whisker ends."],
-              [shown(high, 0), "Gives the greatest value instead of the difference between the greatest and least values."],
-              [shown(high - med, 0), "Measures from the median to the greatest value instead of from the least value."],
-              [shown(high - q1, 0), "Measures from the left edge of the box instead of from the least value."],
+              [iqr, "Gives the interquartile range, the width of the box, instead of the distance between the whisker ends."],
+              [high, "Gives the greatest value instead of the difference between the greatest and least values."],
+              [high - med, "Measures from the median to the greatest value instead of from the least value."],
+              [high - q1, "Measures from the left edge of the box instead of from the least value."],
+              [high + low, "Adds the least and greatest values instead of subtracting."],
+              [q3 - low, "Measures from the least value to the right edge of the box instead of to the greatest value."],
             ];
         const alt =
           `Box plot titled ${ctx.title} on a number line from ${ticks[0]} to ${ticks[count - 1]} marked every ${step}. ` +
           `The left whisker starts at ${low}, the box runs from ${q1} to ${q3} with a line at ${med}, and the right whisker ends at ${high}.`;
         const figure = boxPlot(five, ticks, ctx.title, alt);
         const statName = ask === "median" ? "median" : ask === "iqr" ? "interquartile range" : "range";
-        return pack(numeric, key, fmt(key), candidates, {
+        return packRanked(t, numeric, key, candidates, {
           stimulus: null,
           figure,
           stem: `The box plot summarizes ${ctx.about}. What is the ${statName} of the data?`,
@@ -1283,7 +1304,7 @@
             const again = ask === "median" ? c : ask === "iqr" ? d - b : e - a;
             return close(again, key) && a < b && b < c && c < d && d < e;
           },
-        });
+        }, { places: 1 });
       });
     },
   };
@@ -1336,12 +1357,13 @@
     domain: DATA,
     skill: "One-variable data",
     subskill: "mean and median",
-    difficulty: "Medium",
+    difficulty: "Easy",
     title: "A missing value from the mean",
     recognize:
       "The mean fixes the sum: the values must add up to the mean times the number of values, so the unknown is that total " +
       "minus the known values (divided by how many times the unknown appears).",
-    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    // Easy: one relation (sum = mean × count) applied once.
+    rubric: { steps: 1, concept: 0, interpretation: 0, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["intermediate-value", "wrong-quantity"],
     build(t) {
       const inTable = t.chance(0.35);
@@ -1363,16 +1385,18 @@
         const short = (n - 1) * M - knownSum;
         const candidates = twice
           ? [
-            [shown(2 * x, 0), `Stops at ${fmt(total)} ${MINUS} ${fmt(knownSum)} = ${fmt(2 * x)}, the sum of the two values equal to x.`],
-            [shown(total, 0), `Stops at the total of all ${n} values, ${n} × ${M} = ${fmt(total)}.`],
-            [shown(M, 0), `Assumes x equals the mean, ${M}.`],
-            [shown(knownMean), `Gives the mean of the ${n - 2} known values.`],
+            [2 * x, `Stops at ${fmt(total)} ${MINUS} ${fmt(knownSum)} = ${fmt(2 * x)}, the sum of the two values equal to x.`],
+            [total, `Stops at the total of all ${n} values, ${n} × ${M} = ${fmt(total)}.`],
+            [M, `Assumes x equals the mean, ${M}.`],
+            [knownMean, `Gives the mean of the ${n - 2} known values.`],
+            [tidy((total - knownSum) / n), `Divides ${fmt(total)} ${MINUS} ${fmt(knownSum)} by ${n}, the number of values, instead of by 2.`],
           ]
           : [
-            [shown(total, 0), `Stops at the total of all ${n} values, ${n} × ${fmt(M)} = ${fmt(total)}.`],
-            [short > 0 ? shown(short, 0) : null, `Multiplies the mean by ${n - 1}, the number of known values, instead of by ${n}.`],
-            [shown(M, 0), `Assumes the missing value equals the mean, ${fmt(M)}.`],
-            [shown(knownMean), `Gives the mean of the ${n - 1} known values.`],
+            [total, `Stops at the total of all ${n} values, ${n} × ${fmt(M)} = ${fmt(total)}.`],
+            [short, `Multiplies the mean by ${n - 1}, the number of known values, instead of by ${n}.`],
+            [M, `Assumes the missing value equals the mean, ${fmt(M)}.`],
+            [knownMean, `Gives the mean of the ${n - 1} known values.`],
+            [tidy(2 * M - knownMean), `Balances x against the mean of the known values, ${num(knownMean)}, as if the known values were one value: 2(${fmt(M)}) ${MINUS} ${num(knownMean)}.`],
           ];
         let stimulus;
         let lead;
@@ -1389,7 +1413,7 @@
           stimulus = { type: "text", content: shownList.join(", ") };
           lead = twice ? ctx.two(n) : ctx.one(n);
         }
-        return pack(numeric, x, fmt(x), candidates, {
+        return packRanked(t, numeric, x, candidates, {
           stimulus,
           figure: null,
           stem: `${lead} ${ctx.mean(n, M)} What is the value of ${letter}?`,
@@ -1417,10 +1441,585 @@
             const filled = entries.map((entry) => (entry === letter ? x : parseNumber(entry)));
             return entries.filter((entry) => entry === letter).length === copies && close(mean(filled), M);
           },
+        }, { places: 2 });
+      });
+    },
+  };
+
+  /* ============================================= could-be-median (Hard) */
+
+  // A data set with one unknown value x. However large or small x is, it can
+  // move the middle of the ordered data by at most one position, so the
+  // median is trapped between two known values (or their half-way points).
+  const UNKNOWN_LISTS = [
+    { intro: (n) => `The list gives the numbers of emails a manager received on each of ${n} days, where x is the number received on one of the days.`, low: 8, high: 60, whole: true },
+    { intro: (n) => `The list gives the ages, in years, of the ${n} members of a hiking club, where x is the age of one member.`, low: 18, high: 70, whole: true },
+    { intro: (n) => `The list gives the numbers of points a team scored in each of ${n} games, where x is the number scored in one game.`, low: 40, high: 110, whole: true },
+    { intro: (n) => `The list gives the numbers of pages in ${n} books on a shelf, where x is the number of pages in one book.`, low: 120, high: 480, whole: true },
+    { intro: (n) => `The list gives the numbers of students in ${n} classes at a school, where x is the number of students in one class.`, low: 14, high: 34, whole: true },
+  ];
+
+  // Every median the data can have as x runs over whole numbers from lo to hi.
+  function achievableMedians(known, lo, hi) {
+    const found = new Set();
+    for (let x = lo; x <= hi; x += 1) found.add(tidy(median(known.concat([x]))));
+    return found;
+  }
+
+  const couldBeMedian = {
+    id: "could-be-median",
+    domain: DOMAIN,
+    skill: "One-variable data",
+    subskill: "mean and median",
+    difficulty: "Hard",
+    title: "Which medians an unknown value allows",
+    recognize:
+      "Order the known values and find which positions the middle can occupy: x can shift the middle by at most one place, " +
+      "so the median lies between two neighbouring known values (or, for an even count, between their half-way points).",
+    // Hard: nothing can be computed until the student sees that x can only
+    // slide the middle between two neighbours; the median of the known
+    // values alone, and values one place off, are offered.
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["must-vs-could", "wrong-quantity", "intermediate-value"],
+    build(t) {
+      const ctx = t.pick(UNKNOWN_LISTS);
+      const form = t.pick(["could", "could", "extreme", "which-x"]);
+      const numeric = form === "extreme" && t.chance(0.7);
+      return retry(() => {
+        const total = t.int(7, 12);
+        const known = t.sample(range(ctx.low, ctx.high), total - 1).sort((a, b) => a - b);
+        // x is a whole number in the context's range, as the list implies.
+        const lo = 1;
+        const hi = ctx.high * 3;
+        const medians = achievableMedians(known, lo, hi);
+        const least = Math.min(...medians);
+        const greatest = Math.max(...medians);
+        if (greatest - least < 2) return null;
+        const inside = [...medians].filter((value) => value > least && value < greatest);
+        const k = (i) => known[i - 1];
+        const odd = total % 2 === 1;
+        const m = Math.floor(total / 2);
+        const listText = t.shuffle(known.map(String).concat(["x"])).join(", ");
+        const stimulus = { type: "text", content: listText };
+        const bounds = odd
+          ? `With ${total} values the median is value number ${m + 1} in order. Among the ${total - 1} known values, numbers ${m} and ${m + 1} are ${k(m)} and ${k(m + 1)}; if x is ${k(m)} or less the median is ${k(m)}, if x is ${k(m + 1)} or more it is ${k(m + 1)}, and in between it is x itself.`
+          : `With ${total} values the median is the average of values ${m} and ${m + 1} in order. If x is ${k(m - 1)} or less the median is (${k(m - 1)} + ${k(m)})/2 = ${num(least)}; if x is ${k(m + 1)} or more it is (${k(m)} + ${k(m + 1)})/2 = ${num(greatest)}; in between it is (x + ${k(m)})/2.`;
+        const principles = [
+          "One value can move the middle of ordered data by at most one position, so it can move the median only between the neighbouring values.",
+          "The median of an odd number of values is one of the values; of an even number, the average of the two middle values.",
+        ];
+        const hint = "Try x very small and x very large. What is the median in each case?";
+        const outside = [
+          [odd ? k(m - 1) : tidy((k(m - 1) + k(m - 2)) / 2), `Could be the median only if x moved the middle down two places; even with x as small as possible the median is ${num(least)}.`],
+          [odd ? k(m + 2) : tidy((k(m + 1) + k(m + 2)) / 2), `Could be the median only if x moved the middle up two places; even with x as large as possible the median is ${num(greatest)}.`],
+          [k(1), "Treats x as able to move the median anywhere; x shifts the middle by at most one position."],
+          [k(total - 1), "Treats x as able to move the median anywhere; x shifts the middle by at most one position."],
+          [odd && (k(m) + k(m + 1)) % 2 ? tidy((k(m) + k(m + 1)) / 2) : NaN,
+            `Averages the two middle known values, as for an even count; with x there are ${total} values, so the median is one of the values, a whole number.`],
+          [tidy(mean(known)), "Gives the mean of the known values, which need not be a possible median."],
+        ].filter(([value]) => Number.isFinite(value) && !medians.has(tidy(value)));
+        if (form === "could") {
+          const key = t.pick(inside.length && t.chance(0.6) ? inside : [least, greatest]);
+          return packRanked(t, false, key, outside, {
+            stimulus,
+            stem: `${ctx.intro(total)} Which of the following could be the median of the ${total} values?`,
+            explanation: `${bounds} So the median can be any of the values from ${num(least)} to ${num(greatest)} that x allows, and ${num(key)} is one of them.`,
+            steps: [
+              "Put the known values in order.",
+              `Find the middle position${odd ? "" : "s"} of all ${total} values.`,
+              `Try x very small: the median is ${num(least)}. Try x very large: the median is ${num(greatest)}.`,
+              `The median can only be between those: ${num(key)} is possible.`,
+            ],
+            principles,
+            trap: `x cannot move the middle past its neighbours, so values beyond ${num(least)} to ${num(greatest)} are impossible, however extreme x is.`,
+            hint,
+            estimatedSeconds: 120,
+            verify: () => {
+              const again = achievableMedians(listText.split(", ").filter((v) => v !== "x").map(parseNumber), lo, hi);
+              return again.has(tidy(key)) && outside.every(([value]) => !again.has(tidy(value)));
+            },
+          }, { show: num, places: 1 });
+        }
+        if (form === "extreme") {
+          const askMost = t.chance(0.5);
+          const key = askMost ? greatest : least;
+          return packRanked(t, numeric, key, [
+            [askMost ? least : greatest, `Gives the ${askMost ? "least" : "greatest"} possible median instead of the ${askMost ? "greatest" : "least"}.`],
+            [tidy(median(known)), `Gives the median of the ${total - 1} known values, leaving x out.`],
+            [askMost ? k(total - 1) : k(1), `Assumes an extreme x makes the ${askMost ? "greatest" : "least"} known value the median; x moves the middle by only one place.`],
+            [askMost ? (odd ? k(m + 2) : tidy((k(m + 1) + k(m + 2)) / 2)) : (odd ? k(m - 1) : tidy((k(m - 1) + k(m - 2)) / 2)),
+              `Moves the middle two places instead of one.`],
+            [tidy(mean(known)), "Gives the mean of the known values."],
+          ], {
+            stimulus,
+            stem: `${ctx.intro(total)} What is the ${askMost ? "greatest" : "least"} possible value of the median of the ${total} values?`,
+            explanation: `${bounds} The ${askMost ? "greatest" : "least"} possible median is ${num(key)}.`,
+            steps: [
+              "Put the known values in order.",
+              `Find the middle position${odd ? "" : "s"} of all ${total} values.`,
+              `Make x as ${askMost ? "large" : "small"} as possible: it sits at the ${askMost ? "top" : "bottom"} of the list.`,
+              `The median is then ${num(key)}.`,
+            ],
+            principles,
+            trap: `x can push the middle only one place, so the ${askMost ? "greatest" : "least"} known value is not the answer.`,
+            hint,
+            estimatedSeconds: 110,
+            verify: () => {
+              const again = achievableMedians(listText.split(", ").filter((v) => v !== "x").map(parseNumber), lo, hi);
+              return close((askMost ? Math.max : Math.min)(...again), key);
+            },
+          }, { show: num, places: 1 });
+        }
+        // Which x gives a stated median.
+        const M = t.pick([least, greatest].concat(inside.filter((value) => Number.isInteger(value) || !odd)));
+        const works = (x) => close(median(known.concat([x])), M);
+        const options = range(Math.max(1, k(1) - 5), k(total - 1) + 5);
+        const good = options.filter(works);
+        const bad = options.filter((x) => !works(x));
+        if (!good.length || bad.length < 3) return null;
+        const key = t.pick(good);
+        const nearBad = bad.filter((x) => Math.abs(x - key) <= Math.max(6, k(m + 1) - k(m)));
+        const pool = t.shuffle(nearBad.length >= 3 ? nearBad : bad).slice(0, 8);
+        const why = (x) => `If x = ${x}, the median of the ${total} values is ${num(tidy(median(known.concat([x]))))}, not ${num(M)}.`;
+        return packRanked(t, false, key, pool.map((x) => [x, why(x)]), {
+          stimulus,
+          stem: `${ctx.intro(total)} The median of the ${total} values is ${num(M)}. Which of the following could be the value of x?`,
+          explanation: `${bounds} A median of ${num(M)} ${good.length > 1 ? `needs x to be ${key <= M ? "at most" : "at least"} ${num(key <= M ? Math.max(...good) : Math.min(...good))}` : `needs x = ${num(key)}`}; of the choices, only ${num(key)} does that.`,
+          steps: [
+            "Put the known values in order and find the middle position.",
+            `Work out what the median is when x is small, large, and in between.`,
+            `A median of ${num(M)} happens only when ${good.length > 1 ? `x is ${key <= M ? "at most" : "at least"} ${num(key <= M ? Math.max(...good) : Math.min(...good))}` : `x = ${num(key)}`}.`,
+            `Only ${num(key)} qualifies.`,
+          ],
+          principles,
+          trap: `A value near ${num(M)} is not automatically a possible x; check where it lands in the ordered list.`,
+          hint,
+          estimatedSeconds: 120,
+          verify: () => {
+            const values = listText.split(", ").filter((v) => v !== "x").map(parseNumber);
+            return close(median(values.concat([key])), M) && pool.every((x) => x === key || !close(median(values.concat([x])), M));
+          },
+        }, { show: num, places: 1 });
+      });
+    },
+  };
+
+  /* ===================================== histogram-class-intervals (Medium) */
+
+  // A histogram of equal-width classes. The classes hold counts, not values,
+  // so the median is located by counting up to the middle position, and "less
+  // than" a boundary means every class entirely below it.
+  // `atLeast(v)` and `under(v)` finish "How many of the <what> ...?".
+  const HISTOGRAMS = [
+    { title: "Time (minutes)", about: "the times, in minutes, that the runners in a race took to finish", starts: [20, 25, 30], widths: [5, 10], what: "runners",
+      atLeast: (v) => `took at least ${v} minutes to finish`, under: (v) => `took less than ${v} minutes to finish` },
+    { title: "Height (centimeters)", about: "the heights, in centimeters, of the plants in a garden plot", starts: [10, 20, 30], widths: [5, 10], what: "plants",
+      atLeast: (v) => `were at least ${v} centimeters tall`, under: (v) => `were less than ${v} centimeters tall` },
+    { title: "Score", about: "the scores of the students in a class on a 100-point exam", starts: [40, 50], widths: [10], what: "students",
+      atLeast: (v) => `scored at least ${v} points`, under: (v) => `scored less than ${v} points` },
+    { title: "Age (years)", about: "the ages, in years, of the people attending a concert", starts: [10, 15, 20], widths: [5, 10], what: "people",
+      atLeast: (v) => `were at least ${v} years old`, under: (v) => `were younger than ${v} years old` },
+    { title: "Rainfall (millimeters)", about: "the rainfall totals, in millimeters, recorded by the weather stations in a region one month", starts: [0], widths: [20, 25], what: "stations",
+      atLeast: (v) => `recorded at least ${v} millimeters of rain`, under: (v) => `recorded less than ${v} millimeters of rain` },
+    { title: "Price (dollars)", about: "the prices, in dollars, of the used cameras listed for sale on a website", starts: [0, 50], widths: [50, 100], what: "cameras",
+      atLeast: (v) => `were priced at $${v} or more`, under: (v) => `were priced under $${v}` },
+  ];
+
+  const histogramIntervals = {
+    id: "histogram-class-intervals",
+    domain: DATA,
+    skill: "One-variable data",
+    subskill: "distributions",
+    difficulty: "Medium",
+    title: "Reading a histogram of class intervals",
+    recognize:
+      "Each bar counts the values in one class; add bar heights to count values below a boundary, and find the class that " +
+      "holds the middle position (not the tallest bar or the middle class) for the median.",
+    // Medium: counting through the bars to a position is a plan, and the
+    // tallest bar and the middle class are both offered.
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["neighbouring-rule", "intermediate-value"],
+    build(t) {
+      const ctx = t.pick(HISTOGRAMS);
+      const form = t.pick(["median", "median", "below", "percent"]);
+      const numeric = form !== "median" && t.chance(0.5);
+      return retry(() => {
+        const width = t.pick(ctx.widths);
+        const start = t.pick(ctx.starts);
+        const classes = t.int(5, 6);
+        const edges = range(0, classes).map((index) => start + index * width);
+        const counts = edges.slice(1).map(() => t.int(1, 12));
+        const total = sum(counts);
+        if (total < 15 || total > 60) return null;
+        const cumulative = counts.map((_, index) => sum(counts.slice(0, index + 1)));
+        const classOf = (position) => cumulative.findIndex((reach) => position <= reach);
+        const label = (index) => `${num(edges[index])} to ${num(edges[index + 1])}`;
+        const alt =
+          `Histogram titled ${ctx.title} with ${classes} bars over classes of width ${width} from ${edges[0]} to ${edges[classes]}. ` +
+          `Bar heights, in order: ${counts.join(", ")}.`;
+        const figure = histogram(edges, counts, ctx.title, alt);
+        const readBack = () => readHistogram(figure.svg, classes);
+        const intro = `The histogram summarizes ${ctx.about}. Each class includes its left endpoint but not its right endpoint.`;
+        const principles = [
+          "In a histogram each bar's height is the number of values in its class; the values themselves are not shown.",
+          "The median is the value at the middle position of the ordered data, found by adding bar heights from the left.",
+        ];
+        if (form === "median") {
+          // The two middle positions must fall in one class, so the class of
+          // the median is certain.
+          const low = classOf(Math.floor((total + 1) / 2));
+          const high = classOf(Math.ceil((total + 1) / 2));
+          if (low !== high) return null;
+          const tallest = counts.indexOf(Math.max(...counts));
+          const middleClass = Math.floor(classes / 2);
+          if (counts.filter((count) => count === counts[tallest]).length > 1) return null;
+          const inClass = (index) => edges[index] + t.int(1, width - 1);
+          const key = inClass(low);
+          const others = [
+            [tallest, "Picks a value in the class with the tallest bar, which holds the most values (the mode class), not the middle one."],
+            [middleClass, "Picks a value in the middle class of the histogram, ignoring how many values each class holds."],
+            [classOf(Math.ceil(total / 4)), "Counts to a quarter of the way through the data instead of halfway."],
+            [classOf(Math.ceil((3 * total) / 4)), "Counts to three-quarters of the way through the data instead of halfway."],
+            [low > 0 ? low - 1 : low + 1, `Picks the class next to the one that holds position ${Math.ceil((total + 1) / 2)}.`],
+            [low < classes - 1 ? low + 1 : low - 1, `Picks the class next to the one that holds position ${Math.ceil((total + 1) / 2)}.`],
+          ].filter(([index]) => index !== low);
+          // One value from each tempting class, then a second value from
+          // every other class, so wrong values can lie on either side.
+          const seen = new Set();
+          const candidates = [];
+          others.forEach(([index, reason]) => {
+            if (seen.has(index)) return;
+            seen.add(index);
+            candidates.push([inClass(index), reason]);
+          });
+          range(0, classes - 1).filter((index) => index !== low).forEach((index) => {
+            candidates.push([inClass(index), `Lies in the class from ${label(index)}, but the running count reaches the middle position in the class from ${label(low)}.`]);
+          });
+          return packRanked(t, false, key, candidates, {
+            stimulus: null,
+            figure,
+            stem: `${intro} Which of the following could be the median of the data?`,
+            explanation:
+              `There are ${counts.join(" + ")} = ${total} values, so the median is value number ${total % 2 ? (total + 1) / 2 : `${total / 2} and ${total / 2 + 1}`} in order. ` +
+              `Adding bar heights from the left, the running totals are ${cumulative.join(", ")}, so the median falls in the class from ${label(low)}. ` +
+              `Only ${num(key)} is in that class.`,
+            steps: [
+              `Total count: ${counts.join(" + ")} = ${total}.`,
+              `Middle position: ${total % 2 ? (total + 1) / 2 : `${total / 2} and ${total / 2 + 1}`}.`,
+              `Running totals: ${cumulative.join(", ")}; the middle falls in the class ${label(low)}.`,
+              `The only choice in that class is ${num(key)}.`,
+            ],
+            principles,
+            trap: "The tallest bar and the middle class are both tempting, but the median sits where the running count reaches the middle position.",
+            hint: "How many values are there, and which one is in the middle?",
+            estimatedSeconds: 100,
+            verify: () => {
+              const read = readBack();
+              if (!read) return false;
+              // Rebuild one data set the histogram could describe and take its median's class.
+              const data = read.flatMap((count, index) => Array(count).fill(edges[index] + width / 2));
+              const cls = edges.findIndex((edge, index) => index < classes && median(data) >= edge && median(data) < edges[index + 1]);
+              return cls === low && key >= edges[low] && key < edges[low + 1] &&
+                candidates.every(([value]) => !(value >= edges[low] && value < edges[low + 1]));
+            },
+          }, { show: num, places: 0 });
+        }
+        const cut = t.int(1, classes - 1);
+        const below = cumulative[cut - 1];
+        if (form === "below") {
+          const atLeast = t.chance(0.5);
+          const key = atLeast ? total - below : below;
+          return packRanked(t, numeric, key, [
+            [counts[atLeast ? cut : cut - 1], `Counts only the class ${atLeast ? "starting at" : "just below"} ${num(edges[cut])}, not every class ${atLeast ? "at or above" : "below"} it.`],
+            [atLeast ? below : total - below, `Counts the values ${atLeast ? "below" : "at or above"} ${num(edges[cut])} instead.`],
+            [atLeast ? total - below + counts[cut - 1] : below + counts[cut], `Includes the class on the other side of ${num(edges[cut])} as well.`],
+            [total, "Gives the total number of values."],
+            [cut, `Counts the classes ${atLeast ? "at or above" : "below"} ${num(edges[cut])} instead of the values in them.`],
+          ], {
+            stimulus: null,
+            figure,
+            stem: `${intro} How many of the ${ctx.what} ${atLeast ? ctx.atLeast(num(edges[cut])) : ctx.under(num(edges[cut]))}?`,
+            explanation:
+              `The classes ${atLeast ? "at or above" : "below"} ${num(edges[cut])} hold ${(atLeast ? counts.slice(cut) : counts.slice(0, cut)).join(" + ")} = ${key} values.`,
+            steps: [
+              `Find the boundary ${num(edges[cut])} on the horizontal axis.`,
+              `Add the heights of the bars ${atLeast ? "to its right" : "to its left"}: ${(atLeast ? counts.slice(cut) : counts.slice(0, cut)).join(" + ")} = ${key}.`,
+            ],
+            principles,
+            trap: `Only whole classes lie ${atLeast ? "at or above" : "below"} ${num(edges[cut])}; stopping at one bar undercounts.`,
+            hint: `Which bars are entirely ${atLeast ? "at or above" : "below"} ${num(edges[cut])}?`,
+            estimatedSeconds: 80,
+            verify: () => {
+              const read = readBack();
+              if (!read) return false;
+              const count = sum(read.filter((_, index) => (atLeast ? edges[index] >= edges[cut] : edges[index + 1] <= edges[cut])));
+              return count === key;
+            },
+          }, { show: num, places: 0 });
+        }
+        // Percent of the values below a boundary.
+        const key = tidy((100 * below) / total);
+        if (!isClean(key, 1)) return null;
+        const pct = (value) => (numeric ? fmt(value) : `${num(value)}%`);
+        return packRanked(t, numeric, key, [
+          [below, `Gives the number of values, ${below}, instead of the percent.`],
+          [tidy(100 - key), `Gives the percent at or above ${num(edges[cut])} instead.`],
+          [tidy((100 * counts[cut - 1]) / total), `Uses only the class just below ${num(edges[cut])}.`],
+          [tidy((100 * cut) / classes), `Uses the fraction of the classes, ${cut} of ${classes}, instead of the fraction of the values.`],
+          [tidy((100 * (below + counts[cut])) / total), `Includes the class starting at ${num(edges[cut])}.`],
+        ], {
+          stimulus: null,
+          figure,
+          stem: numeric
+            ? `${intro} If p% of the ${ctx.what} ${ctx.under(num(edges[cut]))}, what is the value of p?`
+            : `${intro} What percent of the ${ctx.what} ${ctx.under(num(edges[cut]))}?`,
+          explanation:
+            `The classes below ${num(edges[cut])} hold ${counts.slice(0, cut).join(" + ")} = ${below} of the ${total} values, and ${below}/${total} = ${num(key / 100)}, or ${num(key)}%.`,
+          steps: [
+            `Count the values below ${num(edges[cut])}: ${counts.slice(0, cut).join(" + ")} = ${below}.`,
+            `Count all the values: ${total}.`,
+            `Percent: ${below} ÷ ${total} × 100 = ${num(key)}.`,
+          ],
+          principles,
+          trap: "The percent is a share of the values, so count bar heights, not bars.",
+          hint: `What fraction of all the values lie below ${num(edges[cut])}?`,
+          estimatedSeconds: 90,
+          verify: () => {
+            const read = readBack();
+            return Boolean(read) && close((100 * sum(read.slice(0, cut))) / sum(read), key);
+          },
+        }, { show: pct, places: 1 });
+      });
+    },
+  };
+
+  /* ======================================== compare-spread-plots (Medium) */
+
+  // Two groups drawn over one scale. The choices cross two statistics with
+  // the two groups (a 2 x 2 grid): one statistic differs and the other is
+  // equal, so exactly one statement is true.
+  // `about(a, b)` names the two groups' sizes, which the plots do not show.
+  const BOX_PAIRS = [
+    { title: "Points scored", names: ["Team A", "Team B"], about: (a, b) => `the numbers of points Team A scored in each of its ${a} games and Team B scored in each of its ${b} games last season`, start: [40, 50], step: [2, 5] },
+    { title: "Commute time (minutes)", names: ["Town P", "Town Q"], about: (a, b) => `the commute times, in minutes, of ${a} workers surveyed in Town P and ${b} workers surveyed in Town Q`, start: [0, 5], step: [5] },
+    { title: "Height (centimeters)", names: ["Plot 1", "Plot 2"], about: (a, b) => `the heights, in centimeters, of the ${a} sunflowers in Plot 1 and the ${b} sunflowers in Plot 2 of a garden`, start: [100, 120], step: [5, 10] },
+    { title: "Test score", names: ["Class A", "Class B"], about: (a, b) => `the scores of the ${a} students in Class A and the ${b} students in Class B on the same test`, start: [40, 50], step: [5] },
+  ];
+
+  const DOT_PAIRS = [
+    { title: "Number of books", names: ["Group A", "Group B"], about: (a, b) => `the numbers of books read over the summer by the ${a} students in Group A and the ${b} students in Group B`, values: [0, 6] },
+    { title: "Hours of practice", names: ["Band", "Choir"], about: (a, b) => `the numbers of hours that the ${a} members of a band and the ${b} members of a choir practiced last week`, values: [1, 7] },
+    { title: "Goals scored", names: ["Team X", "Team Y"], about: (a, b) => `the numbers of goals Team X scored in each of its ${a} games and Team Y scored in each of its ${b} games`, values: [0, 6] },
+    { title: "Quiz score", names: ["Section 1", "Section 2"], about: (a, b) => `the scores of the ${a} students in Section 1 and the ${b} students in Section 2 of a course on a 10-point quiz`, values: [4, 10] },
+  ];
+
+  const BOX_STATS = {
+    median: (five) => five[2],
+    range: (five) => five[4] - five[0],
+    iqr: (five) => five[3] - five[1],
+  };
+
+  const DOT_STATS = { median, range: spread, mean };
+
+  const STAT_WORDS = { median: "median", range: "range", iqr: "interquartile range", mean: "mean" };
+
+  const compareSpreadPlots = {
+    id: "compare-spread-plots",
+    domain: DATA,
+    skill: "One-variable data",
+    subskill: "spread",
+    difficulty: "Medium",
+    title: "Comparing two distributions from their plots",
+    recognize:
+      "Read each statistic from its own feature: the median from the line in the box (or the middle dot), the range from the " +
+      "whisker ends (or the end dots), the interquartile range from the width of the box. A longer whisker is not a wider box.",
+    // Medium: two displays must be read and compared, and a near miss (the
+    // longer whiskers, the taller stack) points at the wrong statistic.
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["neighbouring-rule", "wrong-quantity"],
+    build(t) {
+      const boxes = t.chance(0.6);
+      const ctx = boxes ? t.pick(BOX_PAIRS) : t.pick(DOT_PAIRS);
+      // Half the items ask how much one statistic differs, with the
+      // neighbouring statistics' differences offered.
+      const howMuch = t.chance(0.5);
+      const numeric = howMuch && t.chance(0.3);
+      return retry(() => {
+        let figure;
+        let stats;
+        let readBack;
+        let names = ctx.names;
+        let statKeys;
+        let ends;
+        let sizes;
+        let quartileGaps = [];
+        if (boxes) {
+          const start = t.pick(ctx.start);
+          const step = t.pick(ctx.step);
+          const ticks = range(0, 12).map((index) => start + index * step);
+          const five = () => t.sample(range(0, 12), 5).sort((a, b) => a - b).map((index) => ticks[index]);
+          const A = five();
+          const B = five();
+          statKeys = ["median", "range", "iqr"];
+          stats = statKeys.map((stat) => [BOX_STATS[stat](A), BOX_STATS[stat](B)]);
+          const alt =
+            `Two box plots titled ${ctx.title} on a shared number line from ${ticks[0]} to ${ticks[12]}. ` +
+            `${names[0]}: least ${A[0]}, first quartile ${A[1]}, median ${A[2]}, third quartile ${A[3]}, greatest ${A[4]}. ` +
+            `${names[1]}: least ${B[0]}, first quartile ${B[1]}, median ${B[2]}, third quartile ${B[3]}, greatest ${B[4]}.`;
+          figure = stackedBoxPlots([{ name: names[0], five: A }, { name: names[1], five: B }], ticks, ctx.title, alt);
+          ends = [[A[0], A[4]], [B[0], B[4]]];
+          sizes = [t.int(12, 40), t.int(12, 40)];
+          quartileGaps = [
+            [Math.abs(A[1] - B[1]), "Compares only the first quartiles, the left edges of the boxes."],
+            [Math.abs(A[3] - B[3]), "Compares only the third quartiles, the right edges of the boxes."],
+          ];
+          readBack = () => {
+            const read = readStackedBoxPlots(figure.svg, 2);
+            return read && read.every(Boolean) ? statKeys.map((stat) => [BOX_STATS[stat](read[0]), BOX_STATS[stat](read[1])]) : null;
+          };
+        } else {
+          const values = range(ctx.values[0], ctx.values[1]);
+          const draw = () => values.map(() => t.int(0, 4));
+          const fa = draw();
+          const fb = draw();
+          if (sum(fa) < 6 || sum(fb) < 6 || sum(fa) > 16 || sum(fb) > 16) return null;
+          const A = expand(values, fa);
+          const B = expand(values, fb);
+          statKeys = ["median", "range", "mean"];
+          stats = statKeys.map((stat) => [tidy(DOT_STATS[stat](A)), tidy(DOT_STATS[stat](B))]);
+          const alt =
+            `Two dot plots titled ${ctx.title} over the values ${values[0]} to ${values[values.length - 1]}. ` +
+            `${names[0]}, dots per value: ${values.map((v, i) => `${v}: ${fa[i]}`).join("; ")}. ` +
+            `${names[1]}, dots per value: ${values.map((v, i) => `${v}: ${fb[i]}`).join("; ")}.`;
+          const plot = stackedDotPlots(values, [{ name: names[0], freqs: fa }, { name: names[1], freqs: fb }], ctx.title, alt);
+          figure = plot.figure;
+          ends = [[Math.min(...A), Math.max(...A)], [Math.min(...B), Math.max(...B)]];
+          sizes = [A.length, B.length];
+          readBack = () => {
+            const read = readStackedDotPlots(figure.svg, plot.xs, plot.baselines);
+            if (!read) return null;
+            const [dataA, dataB] = read.map((freqs) => expand(values, freqs));
+            return statKeys.map((stat) => [tidy(DOT_STATS[stat](dataA)), tidy(DOT_STATS[stat](dataB))]);
+          };
+        }
+        const differ = statKeys.filter((_, i) => stats[i][0] !== stats[i][1]);
+        const at = (stat) => stats[statKeys.indexOf(stat)];
+        const describe = (stat) => `${names[0]} ${num(at(stat)[0])}, ${names[1]} ${num(at(stat)[1])}`;
+        const unit = ctx.title.includes("(") ? ctx.title.replace(/^.*\((.*)\)$/, "$1") : "";
+        if (howMuch) {
+          if (!differ.length) return null;
+          const keyStat = t.pick(differ.filter((stat) => stat !== "mean").length ? differ.filter((stat) => stat !== "mean") : differ);
+          const [a, b] = at(keyStat);
+          const hi = a > b ? 0 : 1;
+          const key = tidy(Math.abs(a - b));
+          const candidates = statKeys.filter((stat) => stat !== keyStat).map((stat) => [tidy(Math.abs(at(stat)[0] - at(stat)[1])),
+            `Gives the difference between the ${STAT_WORDS[stat]}s (${describe(stat)}), not the ${STAT_WORDS[keyStat]}s.`]);
+          candidates.push(
+            [at(keyStat)[hi], `Gives the ${STAT_WORDS[keyStat]} for ${names[hi]} alone instead of the difference.`],
+            [at(keyStat)[1 - hi], `Gives the ${STAT_WORDS[keyStat]} for ${names[1 - hi]} alone instead of the difference.`],
+            [Math.abs(ends[0][1] - ends[1][1]), "Compares only the greatest values of the two data sets."],
+            [Math.abs(ends[0][0] - ends[1][0]), "Compares only the least values of the two data sets."],
+            ...quartileGaps,
+          );
+          return packRanked(t, numeric, key, candidates, {
+            stimulus: null,
+            figure,
+            stem: `The ${boxes ? "box plots" : "dot plots"} summarize ${ctx.about(...sizes)}. ` +
+              `How much greater is the ${STAT_WORDS[keyStat]} of the data for ${names[hi]} than the ${STAT_WORDS[keyStat]} of the data for ${names[1 - hi]}${unit && boxes ? `, in ${unit}` : ""}?`,
+            explanation: `${cap1(STAT_WORDS[keyStat])}s: ${describe(keyStat)}. The difference is ${num(at(keyStat)[hi])} ${MINUS} ${num(at(keyStat)[1 - hi])} = ${num(key)}.`,
+            steps: [
+              boxes
+                ? "Read the five-number summary of each box plot: whisker ends, box edges, and the line in the box."
+                : "Count the dots at each value for each group.",
+              `Find each ${STAT_WORDS[keyStat]}: ${describe(keyStat)}.`,
+              `Subtract: ${num(at(keyStat)[hi])} ${MINUS} ${num(at(keyStat)[1 - hi])} = ${num(key)}.`,
+            ],
+            principles: [
+              "Range = greatest − least; interquartile range = third quartile − first quartile; the median is the middle value.",
+              "Each statistic is read from its own feature of the plot.",
+            ],
+            trap: keyStat === "iqr"
+              ? "The interquartile range is the width of the box alone; the whiskers belong to the range."
+              : keyStat === "range"
+                ? "The range runs from whisker end to whisker end (least to greatest), not across the box."
+                : "Compare the statistic asked about; another feature of the plots may differ by a different amount.",
+            hint: `Which feature of each plot shows the ${STAT_WORDS[keyStat]}?`,
+            estimatedSeconds: 90,
+            verify: () => {
+              const read = readBack();
+              if (!read) return false;
+              const i = statKeys.indexOf(keyStat);
+              return close(read[i][hi] - read[i][1 - hi], key);
+            },
+          }, { show: num, places: 2 });
+        }
+        // One statistic differs (the key's), another is equal.
+        const equal = statKeys.filter((_, i) => stats[i][0] === stats[i][1]);
+        if (!differ.length || !equal.length) return null;
+        const keyStat = t.pick(differ);
+        const otherStat = t.pick(equal);
+        const bigger = at(keyStat)[0] > at(keyStat)[1] ? 0 : 1;
+        const phrase = (stat, who) => `The data for ${names[who]} have the greater ${STAT_WORDS[stat]}.`;
+        const reasonOther = (stat) => {
+          if (stat === "iqr") return `The boxes have the same width, so the interquartile ranges are equal (${describe(stat)}).`;
+          if (stat === "range") return `The two data sets span the same distance from least to greatest (${describe(stat)}).`;
+          if (stat === "median") return `The medians are equal (${describe(stat)}).`;
+          return `The means are equal (${describe(stat)}).`;
+        };
+        const rows = t.shuffle([keyStat, otherStat]);
+        const grid = statementGrid((i, j) => {
+          const stat = rows[i];
+          if (stat === keyStat) {
+            return j === bigger
+              ? [phrase(stat, j), "", true]
+              : [phrase(stat, j), `Reverses the comparison: ${describe(stat)}.`, false];
+          }
+          return [phrase(stat, j), reasonOther(stat), false];
+        });
+        if (!grid) return null;
+        const trap = keyStat === "iqr"
+          ? "A longer whisker is not a wider box: the interquartile range is the width of the box alone."
+          : keyStat === "range"
+            ? "The range runs from the least value to the greatest, whisker end to whisker end, not across the box."
+            : "Compare the statistic the statement names; a difference in another feature does not settle it.";
+        return finish(false, {
+          stimulus: null,
+          figure,
+          stem: `The ${boxes ? "box plots" : "dot plots"} summarize ${ctx.about(...sizes)}. Which of the following statements is true?`,
+          correct: grid.correct,
+          wrong: grid.wrong,
+          explanation:
+            `${cap1(STAT_WORDS[keyStat])}: ${describe(keyStat)}, so "${grid.correct}" is true. ` +
+            `${cap1(STAT_WORDS[otherStat])}: ${describe(otherStat)}, so neither statement about it is true.`,
+          steps: [
+            boxes
+              ? "Read the five-number summary of each box plot: whisker ends, box edges, and the line in the box."
+              : "Count the dots at each value for each group.",
+            `Compare the ${STAT_WORDS[keyStat]}: ${describe(keyStat)}.`,
+            `Compare the ${STAT_WORDS[otherStat]}: ${describe(otherStat)}.`,
+            `Only "${grid.correct}" is true.`,
+          ],
+          principles: [
+            "Range = greatest − least; interquartile range = third quartile − first quartile; the median is the middle value.",
+            "Two data sets can differ in one statistic and agree in another; each statement must be checked against its own statistic.",
+          ],
+          trap,
+          hint: "For each statement, which feature of the plots shows that statistic?",
+          estimatedSeconds: 95,
+          verify: () => {
+            const read = readBack();
+            if (!read) return false;
+            const holds = (text) => statKeys.some((stat, i) => [0, 1].some((who) =>
+              text === phrase(stat, who) && read[i][who] > read[i][1 - who]));
+            return holds(grid.correct) && grid.wrong.every(([text]) => !holds(text));
+          },
         });
       });
     },
   };
 
-  return [listCenter, boxPlotSummary, displayCenter, meanMissing, weightedMeanGroups, dataChangeStatistics];
+  return [
+    listCenter, boxPlotSummary, meanMissing, displayCenter, dataChangeMedian, histogramIntervals,
+    compareSpreadPlots, weightedMeanGroups, dataChangeStatistics, couldBeMedian,
+  ];
 });
