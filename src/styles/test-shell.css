@@ -1862,6 +1862,86 @@
   margin-top: 20px;
 }
 
+.lm-shell .lm-btn-danger {
+  border-color: var(--lm-bad);
+  color: var(--lm-bad);
+}
+
+.lm-shell .lm-btn-danger:hover {
+  border-color: var(--lm-bad);
+  background: var(--lm-bad-soft);
+}
+
+/* ------------------------------------------------ sections, Learn, next steps */
+
+/* The current section of a set that spans sections, under the title. */
+.lm-shell .lm-section-label {
+  margin: 0;
+  color: var(--lm-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.lm-shell .lm-section-start {
+  background: var(--lm-accent-soft);
+  color: var(--lm-ink);
+}
+
+.lm-shell .lm-hint:focus {
+  outline: none;
+}
+
+.lm-shell .lm-hint:focus-visible {
+  outline: var(--focus-width) solid var(--lm-accent);
+  outline-offset: var(--focus-offset);
+}
+
+.lm-shell .lm-learn {
+  margin: 12px 0 0;
+}
+
+.lm-shell .lm-learn-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--lm-accent);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lm-shell .lm-report-note {
+  margin: 16px 0 0;
+  color: var(--lm-ink);
+  font-size: 0.92rem;
+}
+
+.lm-shell .lm-next-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.lm-shell .lm-next-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  max-width: 100%;
+}
+
+.lm-shell .lm-next-action .lm-btn {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+.lm-shell .lm-next-note {
+  margin: 0;
+  color: var(--lm-muted);
+  font-size: 0.88rem;
+}
+
 /* ------------------------------------------------------ narrower screens */
 
 @media (max-width: 900px) {

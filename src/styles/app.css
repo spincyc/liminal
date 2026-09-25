@@ -119,8 +119,11 @@ body {
   box-shadow: var(--shadow-bar);
 }
 
+/* The header wraps rather than scroll: at large text sizes or narrow widths
+   the nav moves to its own row, and its links wrap onto more rows. */
 .site-header-inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px 24px;
   max-width: var(--page-max);
@@ -201,8 +204,10 @@ body {
 
 .site-nav {
   display: flex;
+  flex-wrap: wrap;
   align-self: stretch;
   gap: 4px;
+  min-width: 0;
   margin-left: auto;
 }
 
@@ -1048,7 +1053,84 @@ a.stat-note {
   line-clamp: 3;
 }
 
+/* Notes under the stat cards: what the numbers leave out. */
+.dashboard-notes {
+  display: grid;
+  gap: 6px;
+  margin: -8px 0 24px;
+}
+
+.meter-note {
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+
+.row-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0 12px;
+}
+
+.row-links a,
+.review-item-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  color: var(--color-accent);
+  font-weight: var(--weight-bold);
+}
+
+.review-item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 16px;
+  margin-top: 4px;
+}
+
+/* ------------------------------------------------------------- retake card */
+
+.retake-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.retake-form > label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+}
+
+.retake-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.retake-row input {
+  flex: 1 1 12rem;
+  min-width: 0;
+  font-family: var(--font-mono);
+}
+
+.code-sample {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  overflow-wrap: anywhere;
+}
+
 /* -------------------------------------------------------- study tips view */
+
+.learn-note {
+  margin-top: 12px;
+  color: var(--color-ink);
+}
+
+.learn-note a {
+  color: var(--color-accent);
+  font-weight: var(--weight-bold);
+}
 
 .card + .signs-filter,
 .notice + .card {
@@ -1263,13 +1345,16 @@ a.stat-note {
   }
 }
 
-/* Narrow screens: brand and switch on one row, the nav as a single row of
-   tabs beneath (scrollable only if a very narrow screen cannot fit it). */
+/* Narrow screens: brand and switch on one row, the nav as a row of tabs
+   beneath that wraps onto a second row rather than scroll. */
 @media (max-width: 900px) {
   .site-header-inner {
-    flex-wrap: wrap;
     gap: 0 12px;
     padding-top: 8px;
+  }
+
+  .brand-sub {
+    white-space: normal;
   }
 
   .test-switch {
@@ -1279,16 +1364,10 @@ a.stat-note {
   .site-nav {
     order: 3;
     flex: 1 0 100%;
-    gap: 8px;
+    gap: 0 8px;
     margin: 6px calc(-1 * var(--gutter)) 0;
     padding: 0 calc(var(--gutter) - 8px);
-    overflow-x: auto;
     border-top: 1px solid var(--color-line);
-    scrollbar-width: none;
-  }
-
-  .site-nav::-webkit-scrollbar {
-    display: none;
   }
 
   .nav-link {
@@ -1298,6 +1377,8 @@ a.stat-note {
   }
 }
 
+/* Six links fit one row down to about 380px: tighter padding, then smaller
+   text. Below that they sit in a 3 by 2 grid rather than wrap unevenly. */
 @media (max-width: 480px) {
   .site-nav {
     justify-content: space-between;
@@ -1305,7 +1386,8 @@ a.stat-note {
   }
 
   .nav-link {
-    padding: 3px 6px 0;
+    padding: 3px 4px 0;
+    font-size: var(--text-sm);
   }
 
   .nav-full {
@@ -1324,6 +1406,24 @@ a.stat-note {
 
   .site-main {
     padding-top: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-link {
+    padding: 3px 2px 0;
+    font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 372px) {
+  .site-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .nav-link {
+    justify-content: center;
   }
 }
 

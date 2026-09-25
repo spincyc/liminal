@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
     <meta
       name="description"
       content="Independent SAT and ACT practice with original questions, detailed answer guides, and private on-device progress."
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/tokens.css" />
     <link rel="stylesheet" href="styles/app.css" />
     <link rel="stylesheet" href="styles/test-shell.css" />
+    <link rel="stylesheet" href="styles/math.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -28,6 +29,7 @@
         </div>
         <nav class="site-nav" aria-label="Primary">
           <a class="nav-link" href="index.html#practice" data-view="setup" aria-current="page">Practice</a>
+          <a class="nav-link" href="learn.html" data-view="learn">Learn</a>
           <a class="nav-link" href="index.html#progress" data-view="dashboard">Progress</a>
           <a class="nav-link" href="index.html#review" data-view="review">Review</a>
           <a class="nav-link" href="index.html#tips" data-view="signs"><span class="nav-full">Study tips</span><span class="nav-short" aria-hidden="true">Tips</span></a>
@@ -53,12 +55,13 @@
           </div>
           <div class="actions">
             <button id="resumeBtn" class="button primary" type="button">Resume</button>
-            <button id="discardSessionBtn" class="button secondary" type="button">Discard</button>
+            <button id="discardSessionBtn" class="button secondary" type="button">Discard set</button>
           </div>
         </div>
+        <div id="sessionStatus" class="status-line" role="status" aria-live="polite"></div>
 
         <div class="practice-grid">
-          <form id="practiceForm" class="card builder" aria-labelledby="builderHeading">
+          <form id="practiceForm" class="card builder" aria-labelledby="builderHeading" novalidate>
             <h2 id="builderHeading">Build a practice set</h2>
 
             <div class="field-grid">
@@ -206,6 +209,30 @@
               </p>
             </section>
 
+            <section class="card" aria-labelledby="retakeHeading" data-test-only="SAT">
+              <h2 id="retakeHeading">Retake a set</h2>
+              <p>
+                Every SAT set's report shows a set code, such as
+                <span class="code-sample">math-3f9k2-a8x1q</span>. Enter one to
+                take the same questions again.
+              </p>
+              <form id="retakeForm" class="retake-form" novalidate>
+                <label for="retakeInput">Set code</label>
+                <div class="retake-row">
+                  <input
+                    id="retakeInput"
+                    type="text"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                    aria-describedby="retakeStatus"
+                  />
+                  <button id="retakeBtn" class="button secondary" type="submit">Retake</button>
+                </div>
+              </form>
+              <div id="retakeStatus" class="status-line" role="status" aria-live="polite"></div>
+            </section>
+
             <section class="card" aria-labelledby="printHeading">
               <h2 id="printHeading">Printable booklet</h2>
               <p>
@@ -230,6 +257,7 @@
           </p>
         </header>
         <div id="dashboardStats" class="stats-grid"></div>
+        <div id="dashboardNotes" class="dashboard-notes hidden"></div>
         <section class="card" aria-labelledby="masteryHeading">
           <div class="card-head">
             <h2 id="masteryHeading">Skill performance</h2>
@@ -295,6 +323,10 @@
           </p>
         </header>
         <p id="signsDisclaimer" class="notice" role="note"></p>
+        <p class="learn-note" data-test-only="SAT">
+          For how to solve each kind of SAT question, with worked examples and
+          the cases where a shortcut fails, see <a href="learn.html">Learn</a>.
+        </p>
         <section class="card" aria-labelledby="signsPrinciplesHeading">
           <h2 id="signsPrinciplesHeading">Principles for every section</h2>
           <div id="signsPrinciples" class="principle-grid"></div>
@@ -326,10 +358,15 @@
     <script src="lib/template-mask.js"></script>
     <script src="lib/runs.js"></script>
     <script src="lib/test-engine.js"></script>
+    <script src="lib/progress.js"></script>
+    <script src="lib/practice.js"></script>
     <script src="app/render.js"></script>
     <script src="app/test-shell.js"></script>
-    <script src="lib/booklet.js"></script>
     <script src="app/site.js"></script>
+    <script src="app/views/practice.js"></script>
+    <script src="app/views/progress.js"></script>
+    <script src="app/views/review.js"></script>
+    <script src="app/views/tips.js"></script>
     <script src="app/app.js"></script>
   </body>
 </html>

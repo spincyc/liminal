@@ -16,6 +16,9 @@
   const SVG_NS = "http://www.w3.org/2000/svg";
   const CALCULATOR_URL = "https://www.desmos.com/calculator";
   const SAVE_EVERY_MS = 15000;
+  // Typing an answer changes the state on every keystroke; snapshots are
+  // written once the typing pauses, and at once when the page is hidden.
+  const SAVE_DEBOUNCE_MS = 600;
   const DEFAULT_LETTERS = ["A", "B", "C", "D", "E"];
 
   const DIRECTIONS = {
@@ -370,6 +373,19 @@
 
   /* ------------------------------------------------------------ the shell */
 
+  // Whether a saved snapshot can be resumed, so an app never offers a
+  // Resume button that cannot work.
+  function canResume(snapshot) {
+    const Engine = root.LiminalTestEngine;
+    if (!Engine || !snapshot || typeof snapshot !== "object") return false;
+    const inner = snapshot.schema === SHELL_SCHEMA ? snapshot.session : snapshot;
+    try {
+      return Boolean(Engine.restore(inner, { now: () => Date.now() }));
+    } catch (error) {
+      return false;
+    }
+  }
+
   function start(options) {
     if (active) active.close();
     const controller = createShell(options || {});
@@ -406,6 +422,11 @@
     let session = null;
     if (resume) {
       session = Engine.restore(resumeShell ? resumeShell.session : resume, { now });
+      if (!session) {
+        const error = new Error("This saved set could not be restored.");
+        error.code = "restore-failed";
+        throw error;
+      }
     }
     let view = "question";
     let timerHidden = false;
@@ -421,20 +442,23 @@
         feedback: options.feedback,
         timeLimitSeconds: options.timeLimitSeconds,
         alertSeconds: options.alertSeconds,
+        marked: options.marked,
         now,
       });
     }
     if (session.state.finished && view !== "answers") view = "report";
     if (!session.state.finished && (view === "report" || view === "answers")) view = "question";
+    if (view !== "question") session.leaveQuestion();
 
     const first = session.state.questions[0];
     const sectionKey = options.sectionKey || (resumeShell && resumeShell.sectionKey) ||
       first.sectionKey || "";
     const title = options.title || (resumeShell && resumeShell.title) || first.section ||
       "Practice set";
-    // A template run's code (template mask and seed), shown in the report so
-    // the exact set can be named and rebuilt.
-    const runCode = options.runCode || (resumeShell && resumeShell.runCode) || null;
+    // A template run's set code (section, template mask, and seed), shown in
+    // the report so the exact set can be named and built again.
+    const runCode = options.setCode || options.runCode ||
+      (resumeShell && (resumeShell.setCode || resumeShell.runCode)) || null;
     const mathSection = isMathSection(sectionKey);
     const tools = Object.assign(
       { calculator: mathSection, reference: mathSection },
@@ -442,18 +466,23 @@
       options.tools || {},
     );
     const directions = options.directions || (resumeShell && resumeShell.directions) || null;
-    const exitMessage = options.exitMessage ||
-      "Leave this session and go back to the practice setup? The timer stops.";
+    // A set that spans sections (a mini test) switches directions and tools
+    // at each section boundary, as the real test does.
+    const mixed = new Set(session.state.questions.map((question) => question.sectionKey).filter(Boolean)).size > 1;
+    const learnHref = typeof options.learnHref === "function" ? options.learnHref : null;
 
     let timeUpNotice = false;
     let openPanel = null;
     let lastSave = now();
+    let saveTimer = null;
     let lastStimulusKey = null;
     let timerId = null;
     let closed = false;
     const refs = {};
 
-    function snapshot() {
+    // `paused`: the student chose Save and exit, so a timed set's clock
+    // waits for them instead of running while the set is put away.
+    function snapshot(settings) {
       return {
         schema: SHELL_SCHEMA,
         version: SHELL_VERSION,
@@ -465,16 +494,35 @@
         view,
         timerHidden,
         finished: session.state.finished,
-        session: session.serialize(),
+        session: session.serialize({ paused: Boolean(settings && settings.paused) }),
       };
     }
 
-    // Snapshots stop once the report has been delivered, so an app that
-    // clears its saved session in onFinish does not see it written back.
-    function save(force) {
+    // Writes a snapshot now. Snapshots stop once the report has been
+    // delivered, so an app that clears its saved session in onFinish does
+    // not see it written back.
+    function flushSave(settings) {
+      if (saveTimer !== null) {
+        root.clearTimeout(saveTimer);
+        saveTimer = null;
+      }
+      const force = Boolean(settings && settings.force);
       if (closed || (session.state.reported && !force)) return;
       lastSave = now();
-      call("onSave", snapshot());
+      call("onSave", snapshot(settings));
+    }
+
+    // Asks for a snapshot soon; repeated changes share one write.
+    function save(force) {
+      if (force) {
+        flushSave({ force: true });
+        return;
+      }
+      if (closed || session.state.reported || saveTimer !== null) return;
+      saveTimer = root.setTimeout(() => {
+        saveTimer = null;
+        flushSave();
+      }, SAVE_DEBOUNCE_MS);
     }
 
     /* ---- frame */
@@ -535,10 +583,12 @@
       : null;
     refs.reportButton = toolButton("list", "Report", () => showView("report"));
     refs.exitButton = toolButton("close", "Exit", requestExit);
+    refs.sectionLabel = h("p", { className: "lm-section-label", hidden: true });
 
     refs.top = h("header", { className: "lm-top" }, [
       h("div", { className: "lm-top-left" }, [
         h("h1", { className: "lm-title", text: title }),
+        refs.sectionLabel,
         refs.directionsToggle,
       ]),
       h("div", { className: "lm-top-center" }, [refs.timer, refs.timerToggle, refs.centerLabel]),
@@ -662,16 +712,45 @@
       return String(question.correctAnswer);
     }
 
+    // The section of the question on screen; one section for most sets.
+    function currentSectionKey() {
+      const question = session.state.questions[session.state.index];
+      return (mixed && question && question.sectionKey) || sectionKey;
+    }
+
+    // In a mixed set the calculator belongs to math sections and the
+    // reference sheet to SAT Math only.
+    function toolAvailable(name) {
+      if (!tools[name]) return false;
+      if (!mixed) return true;
+      const key = currentSectionKey();
+      return name === "calculator" ? isMathSection(key) : key === "sat-math";
+    }
+
+    function mathOptions(question) {
+      return isMathSection((question && question.sectionKey) || sectionKey) ? { math: true } : undefined;
+    }
+
+    // Plain math text (a step, a rationale, a hint) with exponents, fractions,
+    // and roots typeset; other sections keep plain text.
+    function mathText(tag, question, text, props) {
+      if (mathOptions(question) && typeof Render.appendMath === "function") {
+        return Render.appendMath(h(tag, props || {}), String(text));
+      }
+      return h(tag, Object.assign({}, props || {}, { text }));
+    }
+
     function directionsFor() {
       if (Array.isArray(directions)) return directions;
       if (typeof directions === "string") return [directions];
-      return DIRECTIONS[sectionKey] || [
+      return DIRECTIONS[currentSectionKey()] || [
         "Choose the best answer to each question. Use Mark for Review to flag a question and return to it from the question navigator.",
       ];
     }
 
     function hasNumeric() {
-      return session.state.questions.some((question) => question.responseType === "numeric");
+      return session.state.questions.some((question) => question.responseType === "numeric" &&
+        (!mixed || question.sectionKey === currentSectionKey()));
     }
 
     function sprRulesPanel(open) {
@@ -774,6 +853,8 @@
     }
 
     /* ---- dialogs */
+    // `settings.alternative` adds a third, secondary choice ({ text,
+    // onChoose }) between Cancel and the confirming action.
     function confirmDialog(settings) {
       const dialog = refs.dialog;
       const cancel = h("button", {
@@ -782,6 +863,14 @@
         text: settings.cancel || "Cancel",
         onClick: () => dialog.close("cancel"),
       });
+      const alternative = settings.alternative
+        ? h("button", {
+          type: "button",
+          className: "lm-btn lm-btn-secondary lm-btn-danger",
+          text: settings.alternative.text,
+          onClick: () => dialog.close("alternative"),
+        })
+        : null;
       const confirm = h("button", {
         type: "button",
         className: "lm-btn lm-btn-primary",
@@ -791,13 +880,13 @@
       dialog.replaceChildren(
         h("h2", { id: "lm-dialog-title", className: "lm-dialog-title", text: settings.title }),
         h("p", { className: "lm-dialog-text", text: settings.text }),
-        h("div", { className: "lm-dialog-actions" }, [cancel, confirm]),
+        h("div", { className: "lm-dialog-actions" }, [cancel, alternative, confirm]),
       );
       const opener = document.activeElement;
       dialog.returnValue = "";
       dialog.onclose = () => {
-        const confirmed = dialog.returnValue === "confirm";
-        if (confirmed) settings.onConfirm();
+        if (dialog.returnValue === "confirm") settings.onConfirm();
+        else if (dialog.returnValue === "alternative") settings.alternative.onChoose();
         else if (opener && opener.isConnected) opener.focus();
       };
       if (typeof dialog.showModal === "function") {
@@ -815,24 +904,34 @@
       }
     }
 
+    // Leaving never throws a set away by default: Save and exit keeps it to
+    // resume from the Practice page; Discard set is its own choice.
     function requestExit() {
       if (session.state.finished) {
-        exit();
+        exit("done");
         return;
       }
+      const unchecked = session.state.feedback === "instant"
+        ? "Answers you have already checked stay in your progress; the rest of this set is thrown away."
+        : "None of this set's answers are recorded.";
       confirmDialog({
-        title: "Exit digital test mode?",
-        text: exitMessage,
+        title: "Leave this set?",
+        text: "Save and exit keeps every answer so far: resume the set from the Practice page" +
+          `${session.state.timeLimitSeconds ? ", and the timer picks up where it stopped" : ""}. ` +
+          `Discard set ends it for good. ${unchecked}`,
         cancel: "Keep testing",
-        confirm: "Exit",
-        onConfirm: exit,
+        alternative: { text: "Discard set", onChoose: () => exit("discard") },
+        confirm: "Save and exit",
+        onConfirm: () => exit("save"),
       });
     }
 
-    function exit() {
-      save();
+    // reason: "save" (resumable, clock paused), "discard", or "done" (the
+    // report was already delivered).
+    function exit(reason) {
+      if (reason === "save") flushSave({ paused: true, force: true });
       teardown();
-      call("onExit");
+      call("onExit", { reason });
     }
 
     /* ---- navigation */
@@ -847,6 +946,7 @@
     function onBack() {
       if (view === "review") {
         view = "question";
+        session.enterQuestion();
         save();
         render();
         return;
@@ -865,7 +965,7 @@
         return;
       }
       if (view === "report") {
-        exit();
+        exit("done");
         return;
       }
       if (session.isLast()) {
@@ -878,6 +978,9 @@
     function showView(name) {
       closePanel(false);
       view = name;
+      // Only a question on screen gathers time.
+      if (name === "question") session.enterQuestion();
+      else session.leaveQuestion();
       save();
       render();
     }
@@ -1061,7 +1164,7 @@
       });
       question.choices.forEach((choice, choiceIndex) => {
         const letter = letters[choiceIndex] || String(choiceIndex + 1);
-        const text = h("span", { className: "lm-choice-text" }, [Render.renderText(choice)]);
+        const text = h("span", { className: "lm-choice-text" }, [Render.renderText(choice, mathOptions(question))]);
         const button = h("button", {
           type: "button",
           className: "lm-choice",
@@ -1191,16 +1294,17 @@
     function explanationBlock(question, index, full) {
       const parts = [];
       const response = session.state.responses[index];
+      const math = mathOptions(question);
       if (question.explanation) {
         parts.push(h("section", { className: "lm-exp-section" }, [
           h("h3", { text: "Explanation" }),
-          Render.renderText(question.explanation),
+          Render.renderText(question.explanation, math),
         ]));
       }
       if (Array.isArray(question.solutionSteps) && question.solutionSteps.length) {
         parts.push(h("section", { className: "lm-exp-section" }, [
           h("h3", { text: "Steps" }),
-          h("ol", { className: "lm-steps" }, question.solutionSteps.map((step) => h("li", { text: step }))),
+          h("ol", { className: "lm-steps" }, question.solutionSteps.map((step) => mathText("li", question, step))),
         ]));
       }
       const rationales = Array.isArray(question.distractorRationales) ? question.distractorRationales : [];
@@ -1214,7 +1318,7 @@
             .sort((a, b) => a.index - b.index)
             .map((item) => h("li", { className: item.index === chosen ? "is-yours" : "" }, [
               h("strong", { text: `${letterOf(question, index, item.index)}${item.index === chosen ? " (your answer)" : ""}: ` }),
-              item.reason,
+              mathText("span", question, item.reason),
             ]))),
         ]));
       } else if (chosen !== null && chosen !== Number(question.correctAnswer)) {
@@ -1222,23 +1326,41 @@
         if (rationale) {
           parts.push(h("section", { className: "lm-exp-section" }, [
             h("h3", { text: `Why ${letterOf(question, index, chosen)} is wrong` }),
-            h("p", { text: rationale.reason }),
+            mathText("p", question, rationale.reason),
           ]));
         }
       }
       if (full && question.trap) {
         parts.push(h("section", { className: "lm-exp-section" }, [
           h("h3", { text: "Common trap" }),
-          h("p", { text: question.trap }),
+          mathText("p", question, question.trap),
         ]));
       }
       if (full && question.strategy) {
         parts.push(h("section", { className: "lm-exp-section" }, [
           h("h3", { text: "Approach" }),
-          h("p", { text: question.strategy }),
+          mathText("p", question, question.strategy),
         ]));
       }
+      const learn = learnLink(question);
+      if (learn) parts.push(learn);
       return h("div", { className: "lm-explanation" }, parts);
+    }
+
+    // "Learn: <skill> — <subskill>", opening the skill's Learn page in a new
+    // tab so the set stays open.
+    function learnLink(question) {
+      const href = learnHref ? call("learnHref", question) : null;
+      if (!href || !question.skill) return null;
+      const label = question.subskill ? `${question.skill} — ${question.subskill}` : question.skill;
+      return h("p", { className: "lm-learn" }, [
+        h("a", {
+          className: "lm-learn-link",
+          href,
+          target: "_blank",
+          rel: "noopener",
+        }, [`Learn: ${label}`, h("span", { className: "lm-sr-only", text: " (opens in a new tab)" })]),
+      ]);
     }
 
     function verdictBanner(question, index) {
@@ -1261,9 +1383,9 @@
     }
 
     function buildInstantArea(question, index) {
-      refs.hintBox = h("div", { className: "lm-hint", hidden: true }, [
+      refs.hintBox = h("div", { className: "lm-hint", hidden: true, tabindex: "-1" }, [
         h("h3", { text: "Hint" }),
-        h("p", { text: question.hint || "No hint for this question." }),
+        mathText("p", question, question.hint || "No hint for this question."),
       ]);
       refs.hintButton = h("button", {
         type: "button",
@@ -1274,6 +1396,12 @@
           save();
           syncQuestion();
           if (refs.hintBox && !refs.hintBox.hidden) announce(question.hint || "No hint for this question.");
+          // The Hint button hides once used: keep focus on the question.
+          if (refs.checkButton && !refs.checkButton.disabled && !refs.checkButton.hidden) {
+            refs.checkButton.focus();
+          } else if (refs.hintBox) {
+            refs.hintBox.focus();
+          }
         },
       }, [icon("bulb"), "Hint"]);
       refs.checkButton = h("button", {
@@ -1287,13 +1415,18 @@
           const verdict = verdictBanner(question, item);
           save();
           call("onAnswer", {
+            index: item,
             question,
             response: session.state.responses[item],
             correct: session.isCorrect(item),
+            hinted: session.state.hinted[item],
+            timeMs: session.state.timeMs[item],
           });
           syncQuestion();
           announce(verdict.text);
           if (refs.feedback) refs.feedback.scrollIntoView({ block: "nearest", behavior: "smooth" });
+          // The Check button is gone now; the next step is the next question.
+          refs.nextButton.focus({ preventScroll: true });
         },
       });
       refs.feedback = h("div", { className: "lm-feedback" });
@@ -1301,6 +1434,26 @@
         refs.hintBox,
         h("div", { className: "lm-instant-actions" }, [refs.hintButton, refs.checkButton]),
         refs.feedback,
+      ]);
+    }
+
+    // In a mixed set, the first question of each section says where the
+    // section starts and which tools it has.
+    function sectionBoundary(index) {
+      if (!mixed || view !== "question") return null;
+      const questions = session.state.questions;
+      const current = questions[index];
+      if (index > 0 && questions[index - 1].sectionKey === current.sectionKey) return null;
+      let last = index;
+      while (last + 1 < questions.length && questions[last + 1].sectionKey === current.sectionKey) last += 1;
+      const name = current.section || current.sectionKey;
+      const toolsText = toolAvailable("calculator")
+        ? toolAvailable("reference")
+          ? " The calculator and the reference sheet are available."
+          : " The calculator is available."
+        : " No calculator in this section.";
+      return h("div", { className: "lm-notice lm-section-start", role: "note" }, [
+        h("p", { text: `${name} section: questions ${index + 1}–${last + 1}.${toolsText}` }),
       ]);
     }
 
@@ -1317,11 +1470,11 @@
       const parts = stimulusFor(question);
       const underlines = question.sectionKey === "act-english";
       const stimulusNode = parts.stimulus
-        ? Render.renderStimulus(parts.stimulus, { underlines })
+        ? Render.renderStimulus(parts.stimulus, Object.assign({ underlines }, mathOptions(question)))
         : null;
       const figureNode = question.figure ? Render.renderFigure(question.figure) : null;
       const header = buildQuestionHeader(question, index, reviewing);
-      const stem = h("div", { className: "lm-stem", id: "lm-stem" }, [Render.renderText(parts.stem)]);
+      const stem = h("div", { className: "lm-stem", id: "lm-stem" }, [Render.renderText(parts.stem, mathOptions(question))]);
       const answer = question.responseType === "multiple-choice" && Array.isArray(question.choices)
         ? buildChoices(question, index, reviewing)
         : buildNumeric(question, index, reviewing);
@@ -1332,6 +1485,8 @@
       }
 
       const questionPane = h("div", { className: "lm-question-pane" }, [header]);
+      const boundary = sectionBoundary(index);
+      if (boundary) questionPane.appendChild(boundary);
       if (reviewing) questionPane.appendChild(taxonomyLine(question));
       const split = !math && (stimulusNode || figureNode);
       if (!split) {
@@ -1669,8 +1824,34 @@
           statBlock("Time used", timeValue, timeNote),
         ]),
       ]));
+      const hintedCorrect = report.items.filter((item) => item.correct && item.hinted).length;
+      if (hintedCorrect) {
+        children.push(h("p", { className: "lm-report-note", text:
+          `${hintedCorrect} of your correct answers came after a hint. Progress counts them apart: they show you can follow the method, not yet that you can find it.` }));
+      }
       children.push(h("p", { className: "lm-caveat", text:
         "This is accuracy on one practice set, not a scaled score. The real test adapts its second module to your first, weights questions differently, and draws on a wider range of difficulty, so a percent correct here does not convert to an SAT or ACT score." }));
+
+      const actions = typeof options.reportActions === "function"
+        ? (call("reportActions", report) || []).filter((action) => action && action.label && typeof action.run === "function")
+        : [];
+      if (actions.length) {
+        children.push(h("section", { className: "lm-report-section lm-next-steps" }, [
+          h("h3", { text: "Keep going" }),
+          h("div", { className: "lm-next-actions" }, actions.map((action, index) => h("div", { className: "lm-next-action" }, [
+            h("button", {
+              type: "button",
+              className: `lm-btn ${index === 0 ? "lm-btn-primary" : "lm-btn-outline"}`,
+              text: action.label,
+              onClick: () => {
+                exit("done");
+                action.run();
+              },
+            }),
+            action.note ? h("p", { className: "lm-next-note", text: action.note }) : null,
+          ]))),
+        ]));
+      }
 
       if (report.byDifficulty.length) {
         children.push(h("section", { className: "lm-report-section" }, [
@@ -1790,8 +1971,12 @@
         refs.exitButton.title = exitLabel;
         refs.exitButton.querySelector(".lm-tool-label").textContent = exitLabel;
       }
-      if (refs.calcButton) refs.calcButton.hidden = view === "report";
-      if (refs.refButton) refs.refButton.hidden = view === "report";
+      if (refs.calcButton) refs.calcButton.hidden = view === "report" || !toolAvailable("calculator");
+      if (refs.refButton) refs.refButton.hidden = view === "report" || !toolAvailable("reference");
+      if (openPanel === "reference" && !toolAvailable("reference")) closePanel(false);
+      const current = session.state.questions[session.state.index];
+      refs.sectionLabel.hidden = !mixed || view === "report";
+      refs.sectionLabel.textContent = mixed ? (current.section || currentSectionKey()) : "";
       if (finished) refs.alert.hidden = true;
       updateTimer();
       updateBottom();
@@ -1846,11 +2031,11 @@
     }
 
     function onVisibility() {
-      if (document.visibilityState === "hidden") save();
+      if (document.visibilityState === "hidden") flushSave();
     }
 
     function onPageHide() {
-      save();
+      flushSave();
     }
 
     /* ---- lifecycle */
@@ -1870,6 +2055,7 @@
       if (closed) return;
       closed = true;
       if (timerId !== null) root.clearInterval(timerId);
+      if (saveTimer !== null) root.clearTimeout(saveTimer);
       document.removeEventListener("keydown", onKeyDown, true);
       document.removeEventListener("pointerdown", onDocumentPointer, true);
       document.removeEventListener("visibilitychange", onVisibility);
@@ -1903,7 +2089,7 @@
           timerHidden = false;
         }
         render();
-        save();
+        flushSave();
         timerId = root.setInterval(onTick, 250);
       } else {
         timeUp();
@@ -1923,6 +2109,7 @@
     SHELL_VERSION,
     DIRECTIONS,
     SPR_RULES,
+    canResume,
     start,
     formatClock,
   };
