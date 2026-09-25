@@ -214,3 +214,83 @@ test("helpers for review sets, filters, and registries", () => {
   assert.equal(Practice.templateCount({ templates: [{ id: "a" }, { id: "b", retired: true }] }), 1);
   assert.ok(/^[0-9a-z]+$/.test(Practice.newRunSeed()));
 });
+
+test("a skill drill takes several seeds per template, never the same item twice", () => {
+  const drill = Practice.buildDrill({
+    sectionKey: "sat-math", templates: mathTemplates, skill: "Circles", difficulty: "Hard", count: 10, seed: "d1",
+    instantiate: S.instantiate,
+  });
+  assert.equal(drill.templates, 2, "two templates hold this skill and tier");
+  assert.equal(drill.questions.length, 10);
+  assert.ok(drill.questions.every((question) => question.skill === "Circles" && question.difficulty === "Hard"));
+  assert.equal(new Set(drill.questions.map((question) => question.id)).size, 10);
+  assert.equal(new Set(drill.questions.map(Practice.itemKey)).size, 10, "every item distinct");
+  // Round by round, so the two templates alternate rather than bunch.
+  const counts = {};
+  drill.questions.forEach((question) => { counts[question.templateId] = (counts[question.templateId] || 0) + 1; });
+  assert.deepEqual(Object.values(counts), [5, 5]);
+  assert.equal(drill.served.length, 5);
+  drill.served.forEach((round) => {
+    assert.equal(round.templateIds.length, 2);
+    assert.ok(round.mask && round.mask !== "0");
+  });
+  // Rebuildable from ids, like any generated question.
+  const [first] = drill.questions;
+  const parsed = Progress.parseQuestionId(first.id);
+  const template = mathTemplates.find((entry) => entry.id === parsed.templateId);
+  assert.equal(S.instantiate(template.family, parsed.seed).stem, first.stem);
+  // The same seed gives the same drill.
+  const again = Practice.buildDrill({
+    sectionKey: "sat-math", templates: mathTemplates, skill: "Circles", difficulty: "Hard", count: 10, seed: "d1",
+    instantiate: S.instantiate,
+  });
+  assert.deepEqual(again.questions.map((question) => question.id), drill.questions.map((question) => question.id));
+});
+
+test("a drill shows scenes new to the student first", () => {
+  const options = {
+    sectionKey: "sat-reading-writing", templates: rwTemplates, skill: "Words in Context", difficulty: "Hard",
+    count: 8, seed: "w", instantiate: S.instantiate,
+  };
+  const first = Practice.buildDrill(options);
+  const scenes = first.questions.map((question) => question.scene).filter(Boolean);
+  assert.equal(new Set(scenes).size, scenes.length, "no scene twice in one drill");
+  let progress = Progress.empty();
+  first.served.forEach((round) => { progress = Progress.serveTemplates(progress, "sat-reading-writing", round); });
+  const second = Practice.buildDrill({ ...options, seed: "x", history: Progress.historyFor(progress, "sat-reading-writing") });
+  const again = second.questions.filter((question) => scenes.includes(question.scene));
+  assert.deepEqual(again.map((question) => question.scene), [], "the next drill moves on to unseen scenes");
+});
+
+test("a drill covers every tier when none is chosen, and is empty when nothing matches", () => {
+  const all = Practice.buildDrill({
+    sectionKey: "sat-math", templates: mathTemplates, skill: "Circles", count: 12, seed: "e", instantiate: S.instantiate,
+  });
+  assert.equal(all.templates, 6);
+  assert.deepEqual([...new Set(all.questions.map((question) => question.difficulty))].sort(), ["Easy", "Hard", "Medium"]);
+  const none = Practice.buildDrill({
+    sectionKey: "sat-math", templates: mathTemplates, skill: "Not a skill", count: 5, instantiate: S.instantiate,
+  });
+  assert.deepEqual(none, { questions: [], templates: 0, served: [] });
+});
+
+test("a module run keeps the module's order and names every template it chose", () => {
+  const run = Practice.buildModuleRun({
+    sectionKey: "sat-math", module: "h", templates: mathTemplates, seed: "mod1", instantiate: S.instantiate,
+  });
+  assert.equal(run.spec.size, 22);
+  assert.equal(run.questions.length, 22);
+  assert.deepEqual(run.chosenIds, run.templateIds);
+  const tiers = run.questions.map((question) => ["Easy", "Medium", "Hard"].indexOf(question.difficulty));
+  assert.deepEqual(tiers, tiers.slice().sort((a, b) => a - b), "Math runs Easy to Hard");
+  assert.equal(run.setCode, `math-${run.code}`);
+  // Its set code rebuilds the same questions as a practice set.
+  const again = Practice.rebuildRun({ code: run.setCode, templates: mathTemplates, instantiate: S.instantiate });
+  assert.deepEqual(again.questions.map((question) => question.id).sort(), run.questions.map((question) => question.id).sort());
+  // Excluded templates and avoided scenes stay out.
+  const next = Practice.buildModuleRun({
+    sectionKey: "sat-math", module: "e", templates: mathTemplates, seed: "mod2", exclude: run.chosenIds,
+    instantiate: S.instantiate,
+  });
+  assert.deepEqual(next.chosenIds.filter((id) => run.chosenIds.includes(id)), []);
+});

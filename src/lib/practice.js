@@ -1,7 +1,8 @@
 // Building practice sets, and the small naming rules around them: set codes,
 // Learn links, and the practice deep link. Pure logic with no DOM access;
 // loads in Node and as a plain browser script (window.LiminalPractice, after
-// PracticeCore, LiminalTemplateMask, LiminalRuns, and LiminalProgress).
+// PracticeCore, LiminalTemplateMask, LiminalRuns, LiminalModules, and
+// LiminalProgress).
 //
 // SAT sections are built from templates (docs/question-templates.md): a run
 // takes at most one question per template, chosen by lib/runs.js from the
@@ -13,12 +14,14 @@
       Core: require("./core"),
       Mask: require("./template-mask"),
       Runs: require("./runs"),
+      Modules: require("./modules"),
       Progress: require("./progress"),
     }
     : {
       Core: root.PracticeCore,
       Mask: root.LiminalTemplateMask,
       Runs: root.LiminalRuns,
+      Modules: root.LiminalModules,
       Progress: root.LiminalProgress,
     };
   const api = factory(deps);
@@ -27,7 +30,7 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function (deps) {
   "use strict";
 
-  const { Core, Mask, Runs, Progress } = deps;
+  const { Core, Mask, Runs, Modules, Progress } = deps;
 
   const TEMPLATE_SECTIONS = Progress.TEMPLATE_SECTIONS;
   // Sections with Learn pages (content/learn/<section>/...).
@@ -313,6 +316,123 @@
     return { questions, runs };
   }
 
+  // One module of an on-screen SAT test (lib/simulation.js): the module
+  // blueprint's templates (lib/modules.js), templates served least recently
+  // first, never one in `exclude` (the test's earlier modules). Scenes the
+  // student has seen, and `avoidScenes` (the earlier modules' scenes), are
+  // drawn around when a template has others. `options`: { sectionKey,
+  // module ("1", "h", or "e"), templates, seed?, history, exclude?,
+  // avoidScenes?, instantiate }. Returns a run like buildTemplateRun's, with
+  // the questions in module order, plus `spec`, `chosenIds` (every template
+  // chosen, drawn or not), and `shortfalls` (lib/modules.js chooseModule).
+  function buildModuleRun(options) {
+    const settings = options || {};
+    const templates = settings.templates || [];
+    const history = settings.history || { serve: 0, lastServed: {}, scenes: {}, mask: "0" };
+    const seed = settings.seed || newRunSeed();
+    const spec = Modules.moduleSpec(settings.sectionKey, settings.module || "1");
+    const chosen = Modules.chooseModule(templates, spec, {
+      seed,
+      exclude: settings.exclude || [],
+      recency: recencyFor(history, templates),
+    });
+    // runs.drawQuestions ranks a template's seen scenes oldest first, so the
+    // other modules' scenes go last: avoided before anything else it has seen.
+    const avoid = (settings.avoidScenes || []).filter(Boolean).map(String);
+    const seenScenes = {};
+    chosen.templates.forEach((template) => {
+      const past = ((history.scenes || {})[template.id] || []).filter((scene) => !avoid.includes(scene));
+      seenScenes[template.id] = past.concat(avoid);
+    });
+    const drawn = Runs.drawQuestions(chosen.templates, seed, settings.instantiate,
+      `${settings.sectionKey}:`, { seenScenes });
+    const run = describeRun(settings.sectionKey, chosen.mask, seed, drawn, templates);
+    const byTemplate = new Map(run.questions.map((question) => [question.templateId, question]));
+    run.questions = chosen.templates.map((template) => byTemplate.get(template.id)).filter(Boolean);
+    run.templateIds = run.questions.map((question) => question.templateId);
+    run.spec = spec;
+    run.chosenIds = chosen.templates.map((template) => template.id);
+    run.shortfalls = chosen.shortfalls;
+    return run;
+  }
+
+  // What makes two drawn questions the same item for a student: stimulus,
+  // stem, and the set of choices, whatever their order.
+  function itemKey(question) {
+    const stimulus = question && question.stimulus ? question.stimulus.content : null;
+    const choices = Array.isArray(question && question.choices) ? question.choices.map(String).sort() : [];
+    return JSON.stringify([stimulus || null, (question && question.stem) || "", choices]);
+  }
+
+  // Rounds a drill may run past its count before it stops, when later
+  // rounds only repeat items it already holds.
+  const DRILL_SPARE_ROUNDS = 3;
+
+  // A drill: `count` questions on one skill, at one tier or every tier
+  // (`difficulty` null). A skill may have only two or three templates at a
+  // tier, so a drill takes rounds: each round draws one question from every
+  // template with a fresh seed ("<seed>" plus the round in base 36), scenes
+  // the student or this drill has shown going last, and keeps the questions
+  // that are not an item already in the drill. Templates served least
+  // recently lead each round. `options`: { sectionKey, templates, skill,
+  // difficulty?, count, seed?, history, instantiate }. Returns { questions,
+  // templates (how many templates match), served: one { templateIds, scenes,
+  // mask } per round for Progress.serveTemplates }.
+  function buildDrill(options) {
+    const settings = options || {};
+    const history = settings.history || { serve: 0, lastServed: {}, scenes: {}, mask: "0" };
+    const pool = (settings.templates || []).filter((template) =>
+      template.skill === settings.skill &&
+      (!settings.difficulty || template.difficulty === settings.difficulty));
+    const count = Math.max(0, Math.trunc(Number(settings.count) || 0));
+    const result = { questions: [], templates: pool.length, served: [] };
+    if (!pool.length || !count) return result;
+    const seed = settings.seed || newRunSeed();
+    const recency = recencyFor(history, pool);
+    const freshness = (templateId) => (Object.prototype.hasOwnProperty.call(recency, templateId)
+      ? recency[templateId]
+      : -1);
+    const seenScenes = {};
+    Object.keys(history.scenes || {}).forEach((id) => {
+      seenScenes[id] = history.scenes[id].slice();
+    });
+    const byId = new Map(pool.map((template) => [template.id, template]));
+    const keys = new Set();
+    let idle = 0;
+    for (let round = 0; result.questions.length < count && idle < DRILL_SPARE_ROUNDS; round += 1) {
+      const drawn = Runs.drawQuestions(pool, `${seed}${round.toString(36)}`, settings.instantiate,
+        `${settings.sectionKey}:`, { seenScenes });
+      const ordered = Array.from(drawn)
+        .map((question, place) => ({ question, place }))
+        .sort((left, right) => freshness(left.question.templateId) - freshness(right.question.templateId) ||
+          left.place - right.place)
+        .map((entry) => entry.question);
+      const served = { templateIds: [], scenes: {} };
+      ordered.forEach((question) => {
+        if (result.questions.length >= count) return;
+        const key = itemKey(question);
+        if (keys.has(key)) return;
+        keys.add(key);
+        result.questions.push(question);
+        served.templateIds.push(question.templateId);
+        if (question.scene) {
+          served.scenes[question.templateId] = question.scene;
+          seenScenes[question.templateId] = (seenScenes[question.templateId] || [])
+            .filter((scene) => scene !== question.scene)
+            .concat(question.scene);
+        }
+      });
+      if (served.templateIds.length) {
+        served.mask = Mask.toCode(Mask.fromBits(served.templateIds.map((id) => byId.get(id).bit)));
+        result.served.push(served);
+        idle = 0;
+      } else {
+        idle += 1;
+      }
+    }
+    return result;
+  }
+
   // Keeps the first question of each template, so a review set too takes at
   // most one question per template.
   function onePerTemplate(questions) {
@@ -367,6 +487,9 @@
     buildTemplateRun,
     rebuildRun,
     templateMiniTest,
+    buildModuleRun,
+    buildDrill,
+    itemKey,
     onePerTemplate,
     runFilters,
     missedTemplateIds,
