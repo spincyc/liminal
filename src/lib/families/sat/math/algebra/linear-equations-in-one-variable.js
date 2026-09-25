@@ -14,6 +14,7 @@
   const {
     clean, terminates, commas, usd, money, distinctWrong, commaChoices, responseFor, xTerm,
     moveText, compile, holds, sidesOf, fitsGridHard, usdHard, distinctWrongHard, compileHard,
+    collides, spreadAround, spreadWithMirror, cramer,
   } = C;
 
   /* ------------------------------------------------------ linear-equation-solve */
@@ -36,6 +37,8 @@
         [(d - b) / (a + c), `Moves ${cTerm} to the left side without changing its sign, getting ${lin(a + c, 0)}.`],
         [d - b, `Stops at ${lin(k, 0)} = ${num(d - b)}, before dividing by ${k}.`],
         [(b - d) / k, `Computes ${num(b)} ${MINUS} ${paren(d)} instead of ${num(d)} ${MINUS} ${paren(b)}, which flips the sign.`],
+        [(d - b) / a, `Divides by ${a}, the x-coefficient on the left, instead of by ${k}, the coefficient after collecting x-terms.`],
+        [(d + b) / (a + c), `Moves both ${num(b)} and ${cTerm} across the equals sign without changing their signs.`],
       ],
       steps: [
         `${moveText(c, "x")}: ${lin(k, b)} = ${num(d)}.`,
@@ -64,6 +67,7 @@
         [x0 + 2 * q, `Moves ${num(q)} across the equals sign without changing its sign.`],
         [(r - q) / p, `Multiplies only x by ${p}, as if the equation were ${p}x ${signed(q)} = ${num(r)}.`],
         [p * x0, `Distributes and moves ${num(p * q)} correctly, then stops before dividing by ${p}.`],
+        [r - q, `Ignores the factor ${p} and solves x ${signed(q)} = ${num(r)}.`],
       ],
       steps: [
         `Divide both sides by ${p}: ${inner} = ${num(x0 + q)}.`,
@@ -89,6 +93,8 @@
         [p * (r + q), `Moves ${num(q)} across the equals sign without changing its sign.`],
         [p * r - q, `Multiplies both sides by ${p} but forgets to multiply ${num(q)}.`],
         [(r - q) / p, `Divides by ${p} instead of multiplying by ${p}.`],
+        [p * (q - r), `Computes ${num(q)} ${MINUS} ${paren(r)} instead of ${num(r)} ${MINUS} ${paren(q)}, which flips the sign.`],
+        [p * r, `Ignores the ${signed(q)} and multiplies ${num(r)} by ${p}.`],
       ],
       steps: [
         `${moveText(q)}: x/${p} = ${num(m)}.`,
@@ -144,7 +150,7 @@
         rate: "The amount, in dollars, withdrawn each week",
         total: "The balance, in dollars, after w weeks",
         count: "The number of weeks of withdrawals",
-        part: "The total amount, in dollars, withdrawn in w weeks",
+        part: "The sum of Nadia's withdrawals over w weeks",
       },
     },
     {
@@ -189,7 +195,7 @@
         rate: "The number of feet the hiker climbs each hour",
         total: "The hiker's elevation, in feet, after h hours",
         count: "The number of hours the hiker has climbed",
-        part: "The number of feet the hiker climbs in h hours",
+        part: "The height gained during h hours of climbing",
       },
     },
   ];
@@ -351,23 +357,6 @@
     return misses.every(Boolean);
   }
 
-  // Exact fractions for scale factors: { n, d } in lowest terms, d > 0.
-  function ratio(n, d = 1) {
-    const divisor = S.gcd(n, d);
-    const sign = d < 0 ? -1 : 1;
-    return { n: (sign * n) / divisor, d: (sign * d) / divisor };
-  }
-
-  const ratioTimes = (x, y) => ratio(x.n * y.n, x.d * y.d);
-
-  const ratioPlus = (x, y) => ratio(x.n * y.d + y.n * x.d, x.d * y.d);
-
-  const ratioPow = (x, e) => (e >= 0 ? ratio(x.n ** e, x.d ** e) : ratio(x.d ** -e, x.n ** -e));
-
-  const ratioValue = (x) => x.n / x.d;
-
-  const ratioText = (x) => frac(x.n, x.d);
-
   /* -------------------------------------------------- literal-equation-rearrange */
 
   // y = (pA ± qB)/(rC), invented but plausible weighted-rate formulas.
@@ -394,59 +383,51 @@
     },
   ];
 
-  // c = (a + kx)/(v + x): x appears in the numerator and the denominator.
+  // o = (a + Kx)/(V + x): x appears in the numerator and the denominator.
   const mixtureScenes = [
     {
-      out: "c", total: "a", base: "v", ks: [0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.6, 0.65, 0.7, 0.75, 0.8],
-      text: (k) =>
-        "A tank holds v liters of a solution that contains a liters of pure acid. After x liters of a solution " +
+      out: "c", total: "a", bases: [20, 25, 30, 40, 50, 60, 80],
+      ks: [0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.6, 0.65, 0.7, 0.75, 0.8],
+      text: (k, V) =>
+        `A tank holds ${V} liters of a solution that contains a liters of pure acid. After x liters of a solution ` +
         `that is ${num(clean(k * 100))}% acid are added, the fraction of the mixture that is acid is c, as given by the equation.`,
     },
     {
-      out: "m", total: "s", base: "n", ks: [84, 86, 88, 90, 92, 94, 95, 96, 98],
-      text: (k) =>
-        `A student has earned a total of s points on n quizzes. If the student earns ${k} points on each of the ` +
+      out: "m", total: "s", bases: [6, 8, 10, 12, 15, 16, 20], ks: [84, 86, 88, 90, 92, 94, 95, 96, 98],
+      text: (k, V) =>
+        `A student has earned a total of s points on ${V} quizzes. If the student earns ${k} points on each of the ` +
         "next x quizzes, the student's mean score on all the quizzes will be m, as given by the equation.",
     },
     {
-      out: "p", total: "d", base: "w", ks: [6, 7, 8, 9, 11, 12, 13, 14, 15, 16],
-      text: (k) =>
-        "A coffee roaster has w pounds of a blend with a total value of d dollars. After x pounds of beans worth " +
+      out: "p", total: "d", bases: [20, 30, 40, 50, 60, 75], ks: [6, 7, 8, 9, 11, 12, 13, 14, 15, 16],
+      text: (k, V) =>
+        `A coffee roaster has ${V} pounds of a blend with a total value of d dollars. After x pounds of beans worth ` +
         `${usdHard(k)} per pound are mixed in, the value of the blend, in dollars per pound, is p, as given by the equation.`,
     },
   ];
 
-  // Power-law formulas for the "how many times" form. vars: exponent of each input.
-  const powerScenes = [
+  // out = c·ab/(a + b): a combined rate whose target sits in a product and a sum.
+  // neighbour(target, other) is the answer the rule next door gives.
+  const harmonicScenes = [
     {
-      out: "L", K: [0.6, 0.8, 1.2, 1.5], formula: (K) => `L = ${num(K)}wd²/s`, vars: { w: 1, d: 2, s: -1 },
-      names: { w: "width", d: "depth", s: "span" }, outName: "maximum load",
-      text: "The given formula models the maximum load L, in kilograms, that a wooden beam can support, where w is " +
-        "the beam's width and d is its depth, both in centimeters, and s is the length of its span, in meters.",
+      out: "s", c: "2", pair: ["a", "b"],
+      text: "A car travels from one town to another at an average speed of a miles per hour and returns along the same " +
+        "route at an average speed of b miles per hour. The average speed s, in miles per hour, for the whole trip is " +
+        "given by the equation.",
+      neighbour: (target, other) => [`2s ${MINUS} ${other}`, "Treats s as the ordinary average of the two speeds, (a + b)/2."],
     },
     {
-      out: "F", K: [0.3, 0.4, 0.6, 0.65], formula: (K) => `F = ${num(K)}Av²`, vars: { A: 1, v: 2 },
-      names: { A: "area", v: "speed" }, outName: "drag force",
-      text: "The given formula models the drag force F, in newtons, on a flat panel moving through air, where A is " +
-        "the panel's area, in square meters, and v is its speed, in meters per second.",
+      out: "R", c: "", pair: ["a", "b"],
+      text: "When two resistors with resistances of a ohms and b ohms are connected in parallel, their combined " +
+        "resistance R, in ohms, is given by the equation.",
+      neighbour: (target, other) => [`R ${MINUS} ${other}`, "Uses the rule for resistors connected in series, R = a + b."],
     },
     {
-      out: "I", K: [8, 12, 15, 20], formula: (K) => `I = ${num(K)}P/d²`, vars: { P: 1, d: -2 },
-      names: { P: "power", d: "distance from the lamp" }, outName: "light intensity",
-      text: "The given formula models the light intensity I, in lux, at a point d meters from a lamp whose power is P watts.",
+      out: "T", c: "", pair: ["h", "k"],
+      text: "Working alone, one pump can fill a tank in h hours, and a second pump can fill the same tank in k hours. " +
+        "Working together, the two pumps fill the tank in T hours, as given by the equation.",
+      neighbour: (target, other) => [`T ${MINUS} ${other}`, "Treats the time for both pumps together as the sum of their times alone."],
     },
-    {
-      out: "Q", K: [0.4, 0.8, 2.5], formula: (K) => `Q = ${num(K)}r⁴p/L`, vars: { r: 4, p: 1, L: -1 },
-      names: { r: "radius", p: "pressure difference", L: "length" }, outName: "flow rate",
-      text: "The given formula models the rate Q at which a liquid flows through a narrow pipe, where r is the " +
-        "pipe's radius, p is the pressure difference between its ends, and L is its length.",
-    },
-  ];
-
-  const CHANGES = [
-    { factor: ratio(2), word: "doubled", gerund: "Doubling" },
-    { factor: ratio(3), word: "tripled", gerund: "Tripling" },
-    { factor: ratio(1, 2), word: "halved", gerund: "Halving" },
   ];
 
   const listLetters = (letters) =>
@@ -475,8 +456,9 @@
         const made = [solveBothSides, solveGrouped, solveFraction][variant](t);
         if (!made) continue;
         const { equation, key } = made;
-        const wrong = made.wrong.filter(([value]) => Number.isInteger(value) && value !== key);
-        if (distinctWrong(key, wrong) < 3) continue;
+        const modelled = made.wrong.filter(([value]) => Number.isInteger(value));
+        if (collides(key, modelled) || distinctWrong(key, modelled) < 3) continue;
+        const wrong = spreadWithMirror(t, key, modelled, "ends with the sign of the result reversed");
         return {
           responseType: numeric ? "numeric" : "multiple-choice",
           estimatedSeconds: 55,
@@ -603,10 +585,15 @@
         const expanded = lin(s, p * q);
         if (form === "count") {
           const kind = t.pick(["none", "many", "one"]);
-          const u = kind === "none" ? p * q + t.nonzero(-6, 6) : p * q;
+          // For exactly one solution the constants may match (the solution is
+          // then x = 0) or differ (any other solution), so "one" is not a
+          // pattern of matching constants.
+          const sameConstant = kind === "many" || (kind === "one" && t.chance(0.35));
+          const u = sameConstant ? p * q : p * q + t.nonzero(-6, 6);
           const sRight = kind === "one" ? s + t.pick([-2, -1, 1, 2]) : s;
-          if (sRight === 0) continue;
+          if (sRight === 0 || u === 0) continue;
           const equation = `${left} = ${lin(sRight, u)}`;
+          const x1 = frac(u - p * q, s - sRight);
           const general = "Treats the equation as having a solution for each x-term; a linear equation has zero, one, or infinitely many solutions.";
           const reasons = {
             none: {
@@ -619,11 +606,17 @@
               one: `Multiplies only ${num(q)} by ${p}, so the two sides seem to differ.`,
               two: general,
             },
-            one: {
-              many: `Sees the same constant, ${num(u)}, on both sides and stops, without comparing the x-coefficients ${s} and ${sRight}.`,
-              none: `Reaches ${lin(s - sRight, 0)} = 0 and reads it as no solution; x = 0 is a solution.`,
-              two: general,
-            },
+            one: sameConstant
+              ? {
+                many: `Sees the same constant, ${num(u)}, on both sides and stops, without comparing the x-coefficients ${num(s)} and ${num(sRight)}.`,
+                none: `Reaches ${lin(s - sRight, 0)} = 0 and reads it as no solution; x = 0 is a solution.`,
+                two: general,
+              }
+              : {
+                none: `Sees that the constants ${num(p * q)} and ${num(u)} differ and stops, without checking that the x-coefficients ${num(s)} and ${num(sRight)} differ too.`,
+                many: "Treats an equation with x on both sides as true for every x, without simplifying either side.",
+                two: general,
+              },
           }[kind];
           const wrong = Object.entries(reasons).map(([other, reason]) => [COUNT[other], reason]);
           return {
@@ -636,7 +629,7 @@
             explanation:
               `The left side simplifies to ${expanded}. ` +
               (kind === "one"
-                ? `The x-coefficients ${s} and ${sRight} differ, so exactly one value of x works (x = 0).`
+                ? `The x-coefficients ${num(s)} and ${num(sRight)} differ, so exactly one value of x works (x = ${x1}).`
                 : kind === "many"
                   ? `That is exactly the right side, so every value of x is a solution.`
                   : `The x-terms match but the constants ${num(p * q)} and ${num(u)} do not, so no value of x works.`),
@@ -644,7 +637,7 @@
               `Distribute: ${p}(x ${signed(q)}) = ${lin(p, p * q)}.`,
               `Combine: the left side is ${expanded}; the right side is ${lin(sRight, u)}.`,
               kind === "one"
-                ? `Different x-coefficients: exactly one solution.`
+                ? `Different x-coefficients: exactly one solution, x = ${x1}.`
                 : kind === "many"
                   ? "Identical sides: infinitely many solutions."
                   : "Same x-coefficient, different constants: no solution.",
@@ -662,13 +655,14 @@
           const equation = `${left} = kx ${signed(u)}`;
           if (u === 0) continue;
           const key = s;
-          const wrong = [
+          const modelled = [
             [p, `Leaves out the ${lin(r, 0)} term when combining.`],
             [p - r, `Combines ${p}x and ${lin(r, 0)} with the wrong sign.`],
-            [-s, `Moves kx to the left side without changing its sign, so it solves ${s} + k = 0.`],
+            [-s, `Moves kx to the left side without changing its sign, so it solves ${num(s)} + k = 0.`],
             [p * q, "Matches the constant terms instead of the x-coefficients."],
           ];
-          if (!numeric && distinctWrong(key, wrong) < 3) continue;
+          if (collides(key, modelled) || distinctWrong(key, modelled) < 3) continue;
+          const wrong = spreadWithMirror(t, key, modelled, "ends with the sign of the result reversed");
           return {
             responseType: numeric ? "numeric" : "multiple-choice",
             estimatedSeconds: 85,
@@ -692,13 +686,14 @@
         }
         const equation = `${left} = ${lin(s, 0)} + k`;
         const key = p * q;
-        const wrong = [
+        const modelled = [
           [q, `Multiplies only x by ${p}, leaving the constant as ${num(q)}.`],
           [-key, `Changes the sign of ${num(key)} while matching it.`],
           [p + q, `Adds ${p} and ${num(q)} instead of multiplying them.`],
           [key + r, `Folds the ${lin(r, 0)} term into the constant.`],
         ];
-        if (!numeric && distinctWrong(key, wrong) < 3) continue;
+        if (collides(key, modelled) || distinctWrong(key, modelled) < 3) continue;
+        const wrong = spreadWithMirror(t, key, modelled, "changes the sign of the constant it matches");
         return {
           responseType: numeric ? "numeric" : "multiple-choice",
           estimatedSeconds: 80,
@@ -728,12 +723,12 @@
     domain: "Algebra",
     skill: "Linear equations in one variable",
     subskill: "solve",
-    difficulty: "Medium",
+    difficulty: "Easy",
     title: "Linear equation written from a pricing or rate story",
     recognize:
       "The total is a fixed part plus a rate times a count; take the fixed part away before dividing by the rate, " +
       "and answer with the quantity the question names, not the dollars on the way.",
-    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 0 },
     tricks: ["intermediate-value", "wrong-quantity"],
     build(t) {
       const askRate = t.chance(0.3);
@@ -844,238 +839,327 @@
     domain: "Algebra",
     skill: "Linear equations in one variable",
     subskill: "solve",
+    difficulty: "Medium",
     title: "Solving a context formula for one of its variables",
     recognize:
       "The formula is an equation in the target variable with every other letter a constant: clear the fraction, " +
-      "collect every term with the target on one side (factoring it out if it appears twice), and only then divide.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 1 },
+      "move the term that does not contain the target, and divide last, dividing every term.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 2, synthesis: 0, trap: 1 },
     tricks: ["equivalent-form", "sign-error"],
     build(t) {
-      const variant = t.int(0, 2);
-
-      if (variant === 0) {
-        for (;;) {
-          const scene = t.pick(formulaScenes);
-          const [p, q, r] = [t.pick([2, 3, 4, 5, 7]), t.pick([2, 3, 4, 5, 7, 9]), t.pick([2, 3, 4, 5, 7])];
-          if (S.gcd(p, q) !== 1 || S.gcd(p, r) !== 1 || S.gcd(q, r) !== 1) continue;
-          const { y, A, B, C, sign } = scene;
-          const op = sign > 0 ? "+" : MINUS;
-          const anti = sign > 0 ? MINUS : "+";
-          const formula = `${y} = (${p}${A} ${op} ${q}${B})/(${r}${C})`;
-          const target = t.pick(["A", "B", "C"]);
-          const ryC = `${r}${y}${C}`;
-          let key;
-          let options;
-          let letter;
-          let work;
-          if (target === "A") {
-            letter = A;
-            key = t.chance(0.5) ? `(${ryC} ${anti} ${q}${B})/${p}` : `${ryC}/${p} ${anti} ${q}${B}/${p}`;
+      for (;;) {
+        const scene = t.pick(formulaScenes);
+        const [p, q, r] = [t.pick([2, 3, 4, 5, 7]), t.pick([2, 3, 4, 5, 7, 9]), t.pick([2, 3, 4, 5, 7])];
+        if (S.gcd(p, q) !== 1 || S.gcd(p, r) !== 1 || S.gcd(q, r) !== 1) continue;
+        const { y, A, B, C, sign } = scene;
+        const op = sign > 0 ? "+" : MINUS;
+        const anti = sign > 0 ? MINUS : "+";
+        const formula = `${y} = (${p}${A} ${op} ${q}${B})/(${r}${C})`;
+        const target = t.pick(["A", "B", "C"]);
+        const ryC = `${r}${y}${C}`;
+        let key;
+        let options;
+        let letter;
+        let work;
+        if (target === "A") {
+          letter = A;
+          key = t.chance(0.5) ? `(${ryC} ${anti} ${q}${B})/${p}` : `(${ryC})/${p} ${anti} (${q}${B})/${p}`;
+          options = [
+            [`(${ryC} ${op} ${q}${B})/${p}`, `Moves ${q}${B} across the equals sign without changing its sign.`],
+            [`(${ryC})/${p} ${anti} ${q}${B}`, `Divides only the first term by ${p}.`],
+            [`(${r}${C}(${y} ${anti} ${q}${B}))/${p}`, `Moves ${q}${B} before multiplying both sides by ${r}${C}.`],
+            [`${p}(${ryC} ${anti} ${q}${B})`, `Multiplies by ${p} instead of dividing by it.`],
+          ];
+          work = [
+            `Multiply both sides by ${r}${C}: ${ryC} = ${p}${A} ${op} ${q}${B}.`,
+            `${sign > 0 ? "Subtract" : "Add"} ${q}${B}: ${p}${A} = ${ryC} ${anti} ${q}${B}.`,
+            `Divide every term by ${p}: ${A} = ${key}.`,
+          ];
+        } else if (target === "B") {
+          letter = B;
+          if (sign > 0) {
+            key = `(${ryC} ${MINUS} ${p}${A})/${q}`;
             options = [
-              [`(${ryC} ${op} ${q}${B})/${p}`, `Moves ${q}${B} across the equals sign without changing its sign.`],
-              [`${ryC}/${p} ${anti} ${q}${B}`, `Divides only the first term by ${p}.`],
-              [`${r}${C}(${y} ${anti} ${q}${B})/${p}`, `Moves ${q}${B} before multiplying both sides by ${r}${C}.`],
-              [`${p}(${ryC} ${anti} ${q}${B})`, `Multiplies by ${p} instead of dividing by it.`],
-            ];
-            work = [
-              `Multiply both sides by ${r}${C}: ${ryC} = ${p}${A} ${op} ${q}${B}.`,
-              `${sign > 0 ? "Subtract" : "Add"} ${q}${B}: ${p}${A} = ${ryC} ${anti} ${q}${B}.`,
-              `Divide every term by ${p}: ${A} = ${key}.`,
-            ];
-          } else if (target === "B") {
-            letter = B;
-            if (sign > 0) {
-              key = `(${ryC} ${MINUS} ${p}${A})/${q}`;
-              options = [
-                [`(${ryC} + ${p}${A})/${q}`, `Moves ${p}${A} across the equals sign without changing its sign.`],
-                [`(${p}${A} ${MINUS} ${ryC})/${q}`, "Subtracts in the wrong order, which reverses the sign of the result."],
-                [`${ryC}/${q} ${MINUS} ${p}${A}`, `Divides only the first term by ${q}.`],
-                [`${r}${C}(${y} ${MINUS} ${p}${A})/${q}`, `Moves ${p}${A} before multiplying both sides by ${r}${C}.`],
-              ];
-            } else {
-              key = `(${p}${A} ${MINUS} ${ryC})/${q}`;
-              options = [
-                [`(${ryC} ${MINUS} ${p}${A})/${q}`, `Drops the negative sign on ${q}${B} when isolating it.`],
-                [`(${p}${A} + ${ryC})/${q}`, `Moves ${ryC} across the equals sign without changing its sign.`],
-                [`${p}${A}/${q} ${MINUS} ${ryC}`, `Divides only the first term by ${q}.`],
-                [`${r}${C}(${p}${A} ${MINUS} ${y})/${q}`, `Moves ${p}${A} before multiplying both sides by ${r}${C}.`],
-              ];
-            }
-            work = [
-              `Multiply both sides by ${r}${C}: ${ryC} = ${p}${A} ${op} ${q}${B}.`,
-              sign > 0
-                ? `Subtract ${p}${A}: ${q}${B} = ${ryC} ${MINUS} ${p}${A}.`
-                : `Add ${q}${B} and subtract ${ryC}: ${q}${B} = ${p}${A} ${MINUS} ${ryC}.`,
-              `Divide by ${q}: ${B} = ${key}.`,
+              [`(${ryC} + ${p}${A})/${q}`, `Moves ${p}${A} across the equals sign without changing its sign.`],
+              [`(${p}${A} ${MINUS} ${ryC})/${q}`, "Subtracts in the wrong order, which reverses the sign of the result."],
+              [`(${ryC})/${q} ${MINUS} ${p}${A}`, `Divides only the first term by ${q}.`],
+              [`(${r}${C}(${y} ${MINUS} ${p}${A}))/${q}`, `Moves ${p}${A} before multiplying both sides by ${r}${C}.`],
             ];
           } else {
-            letter = C;
-            const top = `${p}${A} ${op} ${q}${B}`;
-            key = `(${top})/(${r}${y})`;
+            key = `(${p}${A} ${MINUS} ${ryC})/${q}`;
             options = [
-              [`${r}${y}/(${top})`, `Inverts the whole fraction, which gives 1/${C} rather than ${C}.`],
-              [`${r}(${top})/${y}`, `Moves ${r} to the numerator instead of dividing by it.`],
-              [`${y}(${top})/${r}`, `Multiplies by ${y} instead of dividing by it.`],
-              [`(${top})/${y} ${MINUS} ${r}`, `Subtracts ${r} instead of dividing by it.`],
-            ];
-            work = [
-              `Multiply both sides by ${r}${C}: ${r}${y}${C} = ${top}.`,
-              `The target ${C} is now a factor on one side, multiplied by ${r}${y}.`,
-              `Divide both sides by ${r}${y}: ${C} = ${key}.`,
+              [`(${ryC} ${MINUS} ${p}${A})/${q}`, `Drops the negative sign on ${q}${B} when isolating it.`],
+              [`(${p}${A} + ${ryC})/${q}`, `Moves ${ryC} across the equals sign without changing its sign.`],
+              [`(${p}${A})/${q} ${MINUS} ${ryC}`, `Divides only the first term by ${q}.`],
+              [`(${r}${C}(${p}${A} ${MINUS} ${y}))/${q}`, `Moves ${p}${A} before multiplying both sides by ${r}${C}.`],
             ];
           }
-          const wrong = t.sample(options, 3);
-          const others = [y, A, B, C].filter((entry) => entry !== letter).sort((u, v) => u.toLowerCase().localeCompare(v.toLowerCase()));
+          work = [
+            `Multiply both sides by ${r}${C}: ${ryC} = ${p}${A} ${op} ${q}${B}.`,
+            sign > 0
+              ? `Subtract ${p}${A}: ${q}${B} = ${ryC} ${MINUS} ${p}${A}.`
+              : `Add ${q}${B} and subtract ${ryC}: ${q}${B} = ${p}${A} ${MINUS} ${ryC}.`,
+            `Divide by ${q}: ${B} = ${key}.`,
+          ];
+        } else {
+          letter = C;
+          const top = `${p}${A} ${op} ${q}${B}`;
+          key = `(${top})/(${r}${y})`;
+          options = [
+            [`(${r}${y})/(${top})`, `Inverts the whole fraction, which gives 1/${C} rather than ${C}.`],
+            [`(${r}(${top}))/${y}`, `Moves ${r} to the numerator instead of dividing by it.`],
+            [`(${y}(${top}))/${r}`, `Multiplies by ${y} instead of dividing by it.`],
+            [`(${top})/${y} ${MINUS} ${r}`, `Subtracts ${r} instead of dividing by it.`],
+          ];
+          work = [
+            `Multiply both sides by ${r}${C}: ${r}${y}${C} = ${top}.`,
+            `The target ${C} is now a factor on one side, multiplied by ${r}${y}.`,
+            `Divide both sides by ${r}${y}: ${C} = ${key}.`,
+          ];
+        }
+        const wrong = t.sample(options, 3);
+        const others = [y, A, B, C].filter((entry) => entry !== letter).sort((u, v) => u.toLowerCase().localeCompare(v.toLowerCase()));
+        return {
+          responseType: "multiple-choice",
+          estimatedSeconds: 95,
+          stimulus: { type: "equations", content: formula },
+          stem: `${scene.text} Which of the following correctly expresses ${letter} in terms of ${listLetters(others)}?`,
+          correct: key,
+          wrong,
+          explanation: `${work.join(" ")} Each other choice fails when numbers are substituted back into the formula.`,
+          steps: work,
+          principles: [
+            "Undo operations in the reverse of the order they were applied to the target variable.",
+            "Dividing a sum by a number divides every term of the sum.",
+          ],
+          trap: "Each wrong choice is a rearrangement that looks right term by term but breaks one algebra step.",
+          hint: "Clear the fraction before moving anything else.",
+          verify: () => solvesFor(formula, letter, key, options.map(([text]) => text)),
+        };
+      }
+    },
+  };
+
+  // Two mistakes at once, as one reason: "Makes two slips: it …, and it …."
+  const twoSlips = (first, second) => `Makes two slips: it ${first}, and it ${second}.`;
+
+  const literalFactor = {
+    id: "literal-equation-factor-target",
+    domain: "Algebra",
+    skill: "Linear equations in one variable",
+    subskill: "solve",
+    difficulty: "Hard",
+    title: "Solving for a variable that appears in more than one term",
+    recognize:
+      "The target appears in two places, so no single move isolates it: clear any fraction, gather every term that " +
+      "contains the target on one side and everything else on the other, factor the target out, and divide by the " +
+      "whole factor.",
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["equivalent-form", "sign-error", "neighbouring-rule"],
+    build(t) {
+      const form = t.pick(["mixture", "mixture", "abstract", "abstract", "harmonic"]);
+
+      if (form === "mixture") {
+        // o = (a + Kx)/(V + x), solved for x. Each wrong choice is the key with
+        // one slip in the numerator, one in the denominator, or both.
+        for (;;) {
+          const scene = t.pick(mixtureScenes);
+          const k = t.pick(scene.ks);
+          const V = t.pick(scene.bases);
+          const K = num(k);
+          const { out: o, total: a } = scene;
+          const formula = `${o} = (${a} + ${K}x)/(${V} + x)`;
+          const up = t.chance(0.5);
+          const top = {
+            ok: up ? `${a} ${MINUS} ${V}${o}` : `${V}${o} ${MINUS} ${a}`,
+            flip: up ? `${V}${o} ${MINUS} ${a}` : `${a} ${MINUS} ${V}${o}`,
+            plus: up ? `${a} + ${V}${o}` : `${V}${o} + ${a}`,
+            drop: up ? `${a} ${MINUS} ${V}` : `${V} ${MINUS} ${a}`,
+          };
+          const bottom = {
+            ok: up ? `${o} ${MINUS} ${K}` : `${K} ${MINUS} ${o}`,
+            flip: up ? `${K} ${MINUS} ${o}` : `${o} ${MINUS} ${K}`,
+            plus: up ? `${o} + ${K}` : `${K} + ${o}`,
+          };
+          const topSlip = {
+            flip: "reverses the subtraction in the numerator only",
+            plus: `moves ${up ? `${V}${o}` : a} across the equals sign without changing its sign`,
+            drop: `multiplies only x, not ${V}, by ${o} when clearing the fraction`,
+          };
+          const bottomSlip = {
+            flip: "reverses the subtraction in the denominator only",
+            plus: "collects the x-terms with the wrong sign on one of them",
+          };
+          const eTop = t.pick(["flip", "plus", "drop"]);
+          const eBottom = eTop === "flip" ? "plus" : t.pick(["flip", "plus"]);
+          const cap = (text) => `${text.charAt(0).toUpperCase()}${text.slice(1)}.`;
+          const one = (slip) => (slip === "flip" ? " That gives the negative of the correct expression." : "");
+          const key = `(${top.ok})/(${bottom.ok})`;
+          const wrong = [
+            [`(${top[eTop]})/(${bottom.ok})`, `${cap(topSlip[eTop])}${one(eTop)}`],
+            [`(${top.ok})/(${bottom[eBottom]})`, `${cap(bottomSlip[eBottom])}${one(eBottom)}`],
+            [`(${top[eTop]})/(${bottom[eBottom]})`, twoSlips(topSlip[eTop], bottomSlip[eBottom])],
+          ];
+          if (collides(key, wrong)) continue;
+          const work = [
+            `Multiply both sides by (${V} + x): ${V}${o} + ${o}x = ${a} + ${K}x.`,
+            `Collect the x-terms on one side: ${o}x ${MINUS} ${K}x = ${a} ${MINUS} ${V}${o}.`,
+            `Factor out x: x(${o} ${MINUS} ${K}) = ${a} ${MINUS} ${V}${o}.`,
+            `Divide: x = (${a} ${MINUS} ${V}${o})/(${o} ${MINUS} ${K})` +
+              (up ? "." : `, which equals ${key} after multiplying the numerator and denominator by ${MINUS}1.`),
+          ];
           return {
             responseType: "multiple-choice",
-            estimatedSeconds: 95,
+            estimatedSeconds: 115,
             stimulus: { type: "equations", content: formula },
-            stem: `${scene.text} Which of the following correctly expresses ${letter} in terms of ${listLetters(others)}?`,
+            stem: `${scene.text(k, V)} Which of the following correctly expresses x in terms of ${a} and ${o}?`,
             correct: key,
             wrong,
-            explanation: `${work.join(" ")} Each other choice fails when numbers are substituted back into the formula.`,
+            explanation: work.join(" "),
             steps: work,
             principles: [
-              "Undo operations in the reverse of the order they were applied to the target variable.",
-              "Dividing a sum by a number divides every term of the sum.",
+              "When the target variable appears in more than one term, collect those terms and factor it out.",
+              "Negating both the numerator and the denominator leaves a fraction unchanged; negating only one does not.",
             ],
-            trap: "Each wrong choice is a rearrangement that looks right term by term but breaks one algebra step.",
-            hint: "Clear the fraction before moving anything else.",
-            verify: () => solvesFor(formula, letter, key, options.map(([text]) => text)),
+            trap: "x appears twice, so it cannot be isolated in one move; and a choice that negates only half of the fraction looks equivalent but is not.",
+            hint: "Get every term that contains x onto one side first.",
+            verify: () => solvesFor(formula, "x", key, wrong.map(([text]) => text)),
           };
         }
       }
 
-      if (variant === 1) {
-        const scene = t.pick(mixtureScenes);
-        const k = t.pick(scene.ks);
-        const K = num(k);
-        const { out: o, total: a, base: v } = scene;
-        const formula = `${o} = (${a} + ${K}x)/(${v} + x)`;
-        const flipped = t.chance(0.5);
-        const key = flipped ? `(${o}${v} ${MINUS} ${a})/(${K} ${MINUS} ${o})` : `(${a} ${MINUS} ${o}${v})/(${o} ${MINUS} ${K})`;
-        const halfFlip = flipped
-          ? `(${a} ${MINUS} ${o}${v})/(${K} ${MINUS} ${o})`
-          : `(${o}${v} ${MINUS} ${a})/(${o} ${MINUS} ${K})`;
-        const options = flipped
-          ? [
-            [`(${o}${v} + ${a})/(${K} ${MINUS} ${o})`, `Moves ${a} across the equals sign without changing its sign.`],
-            [`(${o}${v} ${MINUS} ${a})/(${K} + ${o})`, "Collects the x-terms with the wrong sign on one of them."],
-            [`(${v} ${MINUS} ${a})/(${K} ${MINUS} ${o})`, `Multiplies only x, not ${v}, by ${o} when clearing the fraction.`],
-          ]
-          : [
-            [`(${a} + ${o}${v})/(${o} ${MINUS} ${K})`, `Moves ${o}${v} across the equals sign without changing its sign.`],
-            [`(${a} ${MINUS} ${o}${v})/(${o} + ${K})`, "Collects the x-terms with the wrong sign on one of them."],
-            [`(${a} ${MINUS} ${v})/(${o} ${MINUS} ${K})`, `Multiplies only x, not ${v}, by ${o} when clearing the fraction.`],
-          ];
-        const wrong = [
-          [halfFlip, "Reverses the subtraction in the numerator only, which gives the negative of the correct expression."],
-          ...t.sample(options, 2),
+      if (form === "harmonic") {
+        // out = c·ab/(a + b), solved for one of a and b.
+        const scene = t.pick(harmonicScenes);
+        const [target, other] = t.shuffle(scene.pair);
+        const { out: o, c } = scene;
+        const formula = `${o} = (${c}${scene.pair[0]}${scene.pair[1]})/(${scene.pair[0]} + ${scene.pair[1]})`;
+        const key = `(${o}${other})/(${c}${other} ${MINUS} ${o})`;
+        const options = [
+          [`(${o}${other})/(${o} ${MINUS} ${c}${other})`,
+            `Gathers the terms containing ${target} but changes the signs on only one side, which gives the negative of the correct expression.`],
+          [`(${o}${other})/(${c}${other} + ${o})`, `Moves ${o}${target} across the equals sign without changing its sign.`],
+          [`(${c}${other} ${MINUS} ${o})/(${o}${other})`, `Inverts the fraction in the last step, which gives 1/${target} rather than ${target}.`],
+          scene.neighbour(target, other),
         ];
+        const wrong = t.sample(options, 3);
         const work = [
-          `Multiply both sides by (${v} + x): ${o}${v} + ${o}x = ${a} + ${K}x.`,
-          `Collect the x-terms on one side: ${o}x ${MINUS} ${K}x = ${a} ${MINUS} ${o}${v}.`,
-          `Factor out x: x(${o} ${MINUS} ${K}) = ${a} ${MINUS} ${o}${v}.`,
-          `Divide: x = (${a} ${MINUS} ${o}${v})/(${o} ${MINUS} ${K})` +
-            (flipped ? `, which equals ${key} after multiplying the numerator and denominator by ${MINUS}1.` : "."),
+          `Multiply both sides by (${scene.pair[0]} + ${scene.pair[1]}): ${o}${target} + ${o}${other} = ${c}${target}${other}.`,
+          `Gather the terms containing ${target}: ${o}${other} = ${c}${target}${other} ${MINUS} ${o}${target}.`,
+          `Factor out ${target}: ${o}${other} = ${target}(${c}${other} ${MINUS} ${o}).`,
+          `Divide: ${target} = ${key}.`,
         ];
         return {
           responseType: "multiple-choice",
           estimatedSeconds: 110,
           stimulus: { type: "equations", content: formula },
-          stem: `${scene.text(k)} Which of the following correctly expresses x in terms of ${listLetters([a, o, v].sort())}?`,
+          stem: `${scene.text} Which of the following correctly expresses ${target} in terms of ${listLetters([o, other].sort())}?`,
           correct: key,
-          wrong: wrong.concat(options),
+          wrong,
           explanation: work.join(" "),
           steps: work,
           principles: [
             "When the target variable appears in more than one term, collect those terms and factor it out.",
-            "Negating both the numerator and the denominator leaves a fraction unchanged; negating only one does not.",
+            "Dividing both sides by a sum divides by the whole sum, not by one of its terms.",
           ],
-          trap: "x appears twice, so it cannot be isolated in one move; and a choice that negates only half of the fraction looks equivalent but is not.",
-          hint: "Get every term that contains x onto one side first.",
-          verify: () => solvesFor(formula, "x", key, [halfFlip, ...options.map(([text]) => text)]),
+          trap: `${target} is in the numerator and the denominator, so clearing the fraction leaves it in two terms that must be factored together.`,
+          hint: `Clear the fraction, then get every term that contains ${target} on the same side.`,
+          verify: () => solvesFor(formula, target, key, options.map(([text]) => text)),
         };
       }
 
-      // How many times the output changes when two inputs are scaled.
+      // m1(Ax + c1) = m2(Bx + c2) with letter constants A and B.
       for (;;) {
-        const scene = t.pick(powerScenes);
-        const K = t.pick(scene.K);
-        const letters = Object.keys(scene.vars);
-        const [first, second] = t.sample(letters, 2);
-        const [c1, c2] = [t.pick(CHANGES), t.pick(CHANGES)];
-        const e1 = scene.vars[first];
-        const e2 = scene.vars[second];
-        const effect1 = ratioPow(c1.factor, e1);
-        const effect2 = ratioPow(c2.factor, e2);
-        const key = ratioTimes(effect1, effect2);
-        if (key.n === key.d) continue;
-        const flat = (e) => Math.sign(e);
-        const candidates = [];
-        if (Math.abs(e1) > 1 || Math.abs(e2) > 1) {
-          candidates.push([
-            ratioTimes(ratioPow(c1.factor, flat(e1)), ratioPow(c2.factor, flat(e2))),
-            "Ignores the exponent, treating every input as if it appeared to the first power.",
-          ]);
-        }
-        if (e1 < 0 || e2 < 0) {
-          const denominator = e1 < 0 ? first : second;
-          candidates.push([
-            ratioTimes(ratioPow(c1.factor, Math.abs(e1)), ratioPow(c2.factor, Math.abs(e2))),
-            `Treats ${denominator}, which is in the denominator, as if it were in the numerator.`,
-          ]);
-        }
-        candidates.push([effect1, `Applies only the change to the ${scene.names[first]}.`]);
-        candidates.push([effect2, `Applies only the change to the ${scene.names[second]}.`]);
-        candidates.push([ratioPlus(effect1, effect2), "Adds the two effects instead of multiplying them."]);
-        const wrong = candidates.map(([value, reason]) => [ratioText(value), reason]);
-        const keyText = ratioText(key);
-        if (distinctWrongHard(keyText, wrong) < 3) continue;
-        const keyValue = ratioValue(key);
-        const numeric = fitsGridHard(keyValue) && t.chance(0.5);
-        const rest = letters.filter((letter) => letter !== first && letter !== second);
-        const formula = scene.formula(K);
-        const describe = (letter, change, exponent, effect) => {
-          const detail = [];
-          if (Math.abs(exponent) === 2) detail.push("squared");
-          else if (Math.abs(exponent) > 2) detail.push(`raised to the power ${Math.abs(exponent)}`);
-          if (exponent < 0) detail.push("in the denominator");
-          return `${change.gerund} ${letter}${detail.length ? `, which is ${detail.join(" and ")},` : ""} ` +
-            `multiplies ${scene.out} by ${ratioText(effect)}.`;
+        const [A, B] = t.pick([["a", "b"], ["c", "d"], ["k", "n"], ["p", "r"]]);
+        const scaleLeft = t.chance(0.5);
+        const m1 = scaleLeft ? t.int(2, 6) : 1;
+        const m2 = scaleLeft ? 1 : t.int(2, 6);
+        const c1 = t.nonzero(-9, 9);
+        const c2 = t.nonzero(-12, 12);
+        const N = m2 * c2 - m1 * c1;
+        const sign = m2 * c2 + m1 * c1;
+        const drop = scaleLeft ? m2 * c2 - c1 : c2 - m1 * c1;
+        if (N === 0 || [sign, drop].some((value) => value === 0 || Math.abs(value) === Math.abs(N)) || sign === drop) continue;
+        const side = (m, letter, constant) => (m === 1
+          ? `${letter}x ${signed(constant)}`
+          : `${m}(${letter}x ${signed(constant)})`);
+        const equation = `${side(m1, A, c1)} = ${side(m2, B, c2)}`;
+        const term = (m, letter) => `${m === 1 ? "" : m}${letter}`;
+        // Orientation: the key is N/(m1A − m2B) or −N/(m2B − m1A).
+        const up = N > 0 ? t.chance(0.75) : t.chance(0.25);
+        const s = up ? 1 : -1;
+        const minus = (u, v) => `${u} ${MINUS} ${v}`;
+        const bottom = {
+          ok: up ? minus(term(m1, A), term(m2, B)) : minus(term(m2, B), term(m1, A)),
+          flip: up ? minus(term(m2, B), term(m1, A)) : minus(term(m1, A), term(m2, B)),
+          plus: `${term(m1, A)} + ${term(m2, B)}`,
+          // Not distributing the factor to the x-term leaves A − B.
+          drop: up ? minus(A, B) : minus(B, A),
         };
+        // A denominator slip of "+" has no orientation, so its numerator is
+        // the unoriented one the slip itself produces.
+        const raw = { ok: N, sign, drop };
+        const topFor = (which, below) => num(below === "plus" ? raw[which] : s * raw[which]);
+        const bottomSlip = {
+          flip: "reverses the subtraction in the denominator only, which negates the whole expression",
+          plus: `moves ${term(m2, B)}x across the equals sign without changing its sign`,
+          drop: `multiplies only the constant, not ${scaleLeft ? `${A}x` : `${B}x`}, by ${scaleLeft ? m1 : m2}`,
+        };
+        const topSlip = {
+          sign: "moves a constant across the equals sign without changing its sign",
+          drop: `multiplies only ${scaleLeft ? `${A}x` : `${B}x`}, not the constant, by ${scaleLeft ? m1 : m2}`,
+        };
+        const eTop = t.pick(["sign", "drop"]);
+        const eBottom = t.pick(["flip", "plus", "drop"]);
+        if (eTop === "drop" && eBottom === "drop") continue;
+        const cap = (text) => `${text.charAt(0).toUpperCase()}${text.slice(1)}.`;
+        const fracText = (n, d) => `${n}/(${d})`;
+        const key = fracText(topFor("ok", "ok"), bottom.ok);
+        const wrong = [
+          [fracText(topFor(eTop, "ok"), bottom.ok), cap(topSlip[eTop])],
+          [fracText(topFor("ok", eBottom), bottom[eBottom]), cap(bottomSlip[eBottom])],
+          [fracText(topFor(eTop, eBottom), bottom[eBottom]), twoSlips(topSlip[eTop], bottomSlip[eBottom])],
+        ];
+        if (collides(key, wrong)) continue;
+        const expandedLeft = m1 === 1 ? `${A}x ${signed(c1)}` : `${m1}${A}x ${signed(m1 * c1)}`;
+        const expandedRight = m2 === 1 ? `${B}x ${signed(c2)}` : `${m2}${B}x ${signed(m2 * c2)}`;
+        const work = [
+          `Distribute: ${expandedLeft} = ${expandedRight}.`,
+          `Gather the x-terms on the left and the constants on the right: ${term(m1, A)}x ${MINUS} ${term(m2, B)}x = ${num(m2 * c2)} ${MINUS} ${paren(m1 * c1)} = ${num(N)}.`,
+          `Factor out x: x(${minus(term(m1, A), term(m2, B))}) = ${num(N)}.`,
+          `Divide: x = ${fracText(num(N), minus(term(m1, A), term(m2, B)))}${up ? "" : `, which equals ${key}`}.`,
+        ];
         return {
-          responseType: numeric ? "numeric" : "multiple-choice",
-          estimatedSeconds: 90,
-          stimulus: { type: "equations", content: formula },
+          responseType: "multiple-choice",
+          estimatedSeconds: 110,
+          stimulus: { type: "equations", content: equation },
           stem:
-            `${scene.text} If the ${scene.names[first]} is ${c1.word} and the ${scene.names[second]} is ${c2.word}` +
-            `${rest.length ? `, while the ${scene.names[rest[0]]} stays the same` : ""}, the new ${scene.outName} ` +
-            `is how many times the original ${scene.outName}?`,
-          correct: numeric ? keyValue : keyText,
+            `In the given equation, ${A} and ${B} are constants, and the equation has exactly one solution. Which of the ` +
+            `following expresses x in terms of ${A} and ${B}?`,
+          correct: key,
           wrong,
-          explanation:
-            `${describe(first, c1, e1, effect1)} ${describe(second, c2, e2, effect2)} The effects multiply: ` +
-            `${ratioText(effect1)} × ${ratioText(effect2)} = ${keyText}${numeric && key.d !== 1 ? ` = ${num(keyValue)}` : ""}.`,
-          steps: [
-            describe(first, c1, e1, effect1),
-            describe(second, c2, e2, effect2),
-            `Multiply the effects: ${ratioText(effect1)} × ${ratioText(effect2)} = ${keyText}.`,
-          ],
+          explanation: work.join(" "),
+          steps: work,
           principles: [
-            "Scaling an input that appears as xⁿ scales the output by the factor raised to the n.",
-            "Scaling an input in the denominator by c scales the output by 1/c (to the matching power).",
+            "When the variable appears on both sides, gather its terms and factor it out; the factor is what you divide by.",
+            "Constants that are letters are treated like numbers: they stay attached to x until x is factored out.",
           ],
-          trap: "Doubling one input and halving another cancel only when they enter the formula the same way; powers and denominators change that.",
-          hint: "Follow each change through the formula separately, then combine them.",
+          trap: "The letters make the x-terms look unlike, but they still have to be gathered and factored before dividing.",
+          hint: "Treat the letters as if they were numbers you do not know yet.",
           verify: () => {
-            const [output, right] = formula.split(" = ");
-            const model = compileHard(right);
-            const base = probe(letters, 1);
-            const changed = { ...base };
-            changed[first] *= ratioValue(c1.factor);
-            changed[second] *= ratioValue(c2.factor);
-            return output === scene.out && approx(model(changed) / model(base), keyValue, 1e-9);
+            // Solve the displayed equation numerically at sample values of the
+            // constants, then compare with each displayed choice.
+            const [left, right] = sidesOf(equation);
+            const choiceAt = (text, values) => compile(text)(values);
+            const same = (value, x) => Number.isFinite(value) && approx(value, x);
+            return [[1.37, 0.41], [-2.29, 3.07], [0.83, -1.91]].every(([u, v]) => {
+              const values = { [A]: u, [B]: v };
+              const gap = (x) => left({ ...values, x }) - right({ ...values, x });
+              const slope = gap(1) - gap(0);
+              if (approx(slope, 0)) return false;
+              const x = -gap(0) / slope;
+              return same(choiceAt(key, values), x) && wrong.every(([text]) => !same(choiceAt(text, values), x));
+            });
           },
         };
       }
@@ -1096,12 +1180,12 @@
     domain: "Algebra",
     skill: "Linear equations in one variable",
     subskill: "solve",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Value of a linear expression found without solving for x",
     recognize:
       "One expression in x runs through the whole equation, sometimes multiplied out; solve for that expression as a " +
       "single unknown, then scale it to the expression the question names. The value of x is never needed.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["intermediate-value", "wrong-quantity", "sign-error"],
     build(t) {
       const form = t.pick(["repeated", "expanded", "fractions"]);
@@ -1173,7 +1257,7 @@
             ];
           }
         }
-        if (!numeric && distinctWrongHard(key, wrong) < 3) continue;
+        if (collides(key, wrong) || (!numeric && distinctWrongHard(key, wrong) < 3)) continue;
         return {
           responseType: numeric ? "numeric" : "multiple-choice",
           estimatedSeconds: 100,
@@ -1203,5 +1287,435 @@
     },
   };
 
-  return [equationSolve, contextMeaning, solutionCount, wordModel, literalRearrange, expressionFromEquation];
+
+  /* ------------------------------------------------ linear-equation-unknown-constants */
+
+  // Affine coefficients [A, B, C] of g(u, v) = A·u + B·v − C, read by sampling.
+  function affine(g) {
+    const g0 = g(0, 0);
+    return [g(1, 0) - g0, g(0, 1) - g0, -g0];
+  }
+
+  const unknownConstants = {
+    id: "linear-equation-unknown-constants",
+    domain: "Algebra",
+    skill: "Linear equations in one variable",
+    subskill: "no or infinite solutions",
+    difficulty: "Hard",
+    title: "Unknown constants fixed by how many solutions an equation has",
+    recognize:
+      "A condition on how many solutions an equation has, or a solution that works for every value of a constant, " +
+      "is a condition on the coefficients, not on x: simplify both sides, then match the x-coefficients and the " +
+      "constants, or find the x that makes the constant's term vanish.",
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["reversed-condition", "sign-error", "intermediate-value"],
+    build(t) {
+      const form = t.pick(["infinite", "infinite", "none", "every"]);
+      const numeric = form !== "none" && t.chance(0.4);
+      for (;;) {
+        if (form === "infinite") {
+          const shape = t.pick(["split", "scaled"]);
+          const ask = shape === "split" ? t.pick(["sum", "sum", "product", "b"]) : t.pick(["sum", "product"]);
+          let equation;
+          let a0;
+          let b0;
+          let slipA;
+          let slipB;
+          let both;
+          let steps;
+          if (shape === "split") {
+            // a(x − p) + qx = rx + b: a + q = r and −pa = b.
+            const p = t.nonzero(-7, 7);
+            const q = t.nonzero(-6, 6);
+            const r = t.nonzero(-9, 9);
+            a0 = r - q;
+            if (Math.abs(a0) < 2 || Math.abs(p) < 2) continue;
+            b0 = -a0 * p;
+            const aWrong = r + q;
+            if (aWrong === 0 || aWrong === a0) continue;
+            const left = `a(x ${signed(-p)}) ${xTerm(q)}`;
+            const right = `${lin(r, 0)} + b`;
+            equation = t.chance(0.7) ? `${left} = ${right}` : `${right} = ${left}`;
+            slipA = { a: aWrong, b: -aWrong * p, text: `moves ${lin(q, 0)} across the equals sign without changing its sign, so a = ${num(aWrong)}` };
+            slipB = { a: a0, b: a0 * p, text: `multiplies out a(x ${signed(-p)}) as ax ${signed(p)}a, so b = ${num(a0 * p)}` };
+            both = { a: aWrong, b: aWrong * p };
+            steps = [
+              `Multiply out the side with a: a(x ${signed(-p)}) ${xTerm(q)} = (a ${signed(q)})x ${signed(-p)}a.`,
+              `Infinitely many solutions means both sides are the same expression: a ${signed(q)} = ${num(r)} and ${num(-p)}a = b.`,
+              `So a = ${num(a0)} and b = ${num(-p)}(${num(a0)}) = ${num(b0)}.`,
+            ];
+          } else {
+            // ax + c = m(ux + b): a = mu and c = mb.
+            const m = t.int(2, 6);
+            const u = t.nonzero(-5, 5);
+            b0 = t.nonzero(-9, 9);
+            a0 = m * u;
+            const c = m * b0;
+            if (Math.abs(u) < 2 && t.chance(0.5)) continue;
+            if (a0 === u || c === b0) continue;
+            const left = `ax ${signed(c)}`;
+            const right = `${m}(${lin(u, 0)} + b)`;
+            equation = t.chance(0.7) ? `${left} = ${right}` : `${right} = ${left}`;
+            slipA = { a: u, b: b0, text: `multiplies only b by ${m}, not ${lin(u, 0)}, so a = ${num(u)}` };
+            slipB = { a: a0, b: c, text: `matches b with ${num(c)} directly, without dividing by ${m}` };
+            both = { a: u, b: c };
+            steps = [
+              `Multiply out the right side: ${m}(${lin(u, 0)} + b) = ${lin(m * u, 0)} + ${m}b.`,
+              `Infinitely many solutions means both sides are the same expression: a = ${num(m * u)} and ${m}b = ${num(c)}.`,
+              `So a = ${num(a0)} and b = ${num(c)} ÷ ${m} = ${num(b0)}.`,
+            ];
+          }
+          const value = ({ a, b }) => (ask === "sum" ? a + b : ask === "product" ? a * b : b);
+          const key = value({ a: a0, b: b0 });
+          const wrong = [
+            [value(slipA), `${slipA.text.charAt(0).toUpperCase()}${slipA.text.slice(1)}.`],
+            [value(slipB), `${slipB.text.charAt(0).toUpperCase()}${slipB.text.slice(1)}.`],
+            [value(both), `Makes two slips: it ${slipA.text}, and it ${slipB.text.replace(/, so b = .*$/, "")}.`],
+          ];
+          if (collides(key, wrong) || distinctWrong(key, wrong) < 3 || Math.abs(key) > 999) continue;
+          const askText = ask === "sum" ? "a + b" : ask === "product" ? "ab" : "b";
+          return {
+            responseType: numeric ? "numeric" : "multiple-choice",
+            estimatedSeconds: 105,
+            stimulus: { type: "equations", content: equation },
+            stem: `In the given equation, a and b are constants. If the equation has infinitely many solutions, what is the value of ${askText}?`,
+            correct: key,
+            wrong: numeric ? [] : wrong,
+            explanation: `${steps.join(" ")}${ask === "b" ? "" : ` Then ${askText} = ${num(key)}.`}`,
+            steps: ask === "b" ? steps : [...steps, `${askText} = ${num(key)}.`],
+            principles: [
+              "ax + b = cx + d has infinitely many solutions exactly when a = c and b = d.",
+              "A constant multiplied into parentheses multiplies every term inside.",
+            ],
+            trap: "Matching the x-terms fixes only one constant; the constant terms must match too, after every product is multiplied out.",
+            hint: "What must be true of two expressions that are equal for every value of x?",
+            verify: () => {
+              // Solve for (a, b) from the displayed text: the x-coefficient and
+              // the constant of (left − right) must both vanish.
+              const [left, right] = sidesOf(equation);
+              const gap = (a, b, x) => left({ a, b, x }) - right({ a, b, x });
+              const solved = cramer(
+                affine((a, b) => gap(a, b, 1) - gap(a, b, 0)),
+                affine((a, b) => gap(a, b, 0)),
+              );
+              return Boolean(solved) && approx(value({ a: solved[0], b: solved[1] }), key) &&
+                wrong.every(([shown]) => !approx(shown, key));
+            },
+          };
+        }
+
+        if (form === "none") {
+          // a(x − p) + qx = rx + b with no solution: a = r − q and b ≠ −pa.
+          const p = t.nonzero(-7, 7);
+          const q = t.nonzero(-6, 6);
+          const r = t.nonzero(-9, 9);
+          const a0 = r - q;
+          const aWrong = r + q;
+          if (Math.abs(a0) < 2 || Math.abs(p) < 2 || aWrong === a0 || aWrong === 0) continue;
+          const bSame = -a0 * p;
+          const bOther = bSame + t.nonzero(-6, 6);
+          const equation = `a(x ${signed(-p)}) ${xTerm(q)} = ${lin(r, 0)} + b`;
+          const pair = (a, b) => `a = ${num(a)} and b = ${num(b)}`;
+          const key = pair(a0, bOther);
+          const wrong = [
+            [pair(a0, bSame), "With these values the two sides are the same expression, so every value of x is a solution, not none."],
+            [pair(aWrong, bOther), `a = ${num(aWrong)} comes from moving ${lin(q, 0)} without changing its sign; then the x-coefficients differ and there is exactly one solution.`],
+            [pair(aWrong, bSame), `a = ${num(aWrong)} leaves the x-coefficients different, so the equation has exactly one solution.`],
+          ];
+          if (collides(key, wrong)) continue;
+          const numbers = (text) => text.match(/−?\d+/g).map((part) => Number(part.replace(MINUS, "-")));
+          return {
+            responseType: "multiple-choice",
+            estimatedSeconds: 105,
+            stimulus: { type: "equations", content: equation },
+            stem: "In the given equation, a and b are constants. If the equation has no solution, which of the following could be the values of a and b?",
+            correct: key,
+            wrong,
+            explanation:
+              `Multiplied out, the left side is (a ${signed(q)})x ${signed(-p)}a. No solution means the x-terms cancel but the ` +
+              `constants do not: a ${signed(q)} = ${num(r)}, so a = ${num(a0)}, and ${num(-p)}a = ${num(bSame)} must differ from b. ` +
+              `Only ${key} does both.`,
+            steps: [
+              `Multiply out: a(x ${signed(-p)}) ${xTerm(q)} = (a ${signed(q)})x ${signed(-p)}a.`,
+              `No solution needs equal x-coefficients: a ${signed(q)} = ${num(r)}, so a = ${num(a0)}.`,
+              `It also needs different constants: b ≠ ${num(-p)}(${num(a0)}) = ${num(bSame)}.`,
+              `So a = ${num(a0)} with any b other than ${num(bSame)}: ${key}.`,
+            ],
+            principles: [
+              "ax + b = cx + d has no solution exactly when a = c and b ≠ d.",
+              "If the x-coefficients differ, the equation has exactly one solution whatever the constants are.",
+            ],
+            trap: "Values that make the two sides identical give infinitely many solutions, the opposite of no solution.",
+            hint: "Compare the x-coefficients first, then the constants.",
+            verify: () => {
+              const kinds = [key, ...wrong.map(([text]) => text)].map((text) => {
+                const [a, b] = numbers(text);
+                return countOf(equation, { a, b });
+              });
+              return kinds[0] === "none" && kinds.slice(1).every((kind) => kind !== "none");
+            },
+          };
+        }
+
+        // k(x − s) + qx = rx + c: x = s is a solution for every k only if c = (q − r)s.
+        const s = t.nonzero(-8, 8);
+        const q = t.nonzero(-7, 7);
+        const r = t.nonzero(-9, 9);
+        if (Math.abs(s) < 2 || q === r || Math.abs(q) === Math.abs(r)) continue;
+        const key = (q - r) * s;
+        const equation = `k(x ${signed(-s)}) ${xTerm(q)} = ${lin(r, 0)} + c`;
+        const modelled = [
+          [-key, `Uses x = ${num(-s)}; the k-term vanishes only where x ${signed(-s)} = 0, that is, at x = ${num(s)}.`],
+          [(q + r) * s, `Moves ${num(r * s)} across the equals sign without changing its sign.`],
+          [-r * s, `Leaves out the ${lin(q, 0)} term when substituting x = ${num(s)}.`],
+          [q * s, `Leaves out the ${lin(r, 0)} term when substituting x = ${num(s)}.`],
+        ];
+        if (collides(key, modelled) || distinctWrong(key, modelled) < 3 || key === 0) continue;
+        const wrong = spreadWithMirror(t, key, modelled, `uses x = ${num(-s)} instead of x = ${num(s)}`);
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 110,
+          stimulus: { type: "equations", content: equation },
+          stem:
+            "In the given equation, k and c are constants. There is a value of x that is a solution to the equation for " +
+            "every value of k. What is the value of c?",
+          correct: key,
+          wrong: numeric ? [] : wrong,
+          explanation:
+            `Only the term k(x ${signed(-s)}) depends on k, so a solution that works for every k must make it 0: x = ${num(s)}. ` +
+            `Substituting, ${num(q * s)} = ${num(r * s)} + c, so c = ${num(key)}.`,
+          steps: [
+            `The only part of the equation that changes with k is k(x ${signed(-s)}).`,
+            `For one x to work whatever k is, that term must be 0 there: x = ${num(s)}.`,
+            `Substitute x = ${num(s)}: ${q === 1 ? "" : q === -1 ? MINUS : num(q)}(${num(s)}) = ${r === 1 ? "" : r === -1 ? MINUS : num(r)}(${num(s)}) + c, so ${num(q * s)} = ${num(r * s)} + c.`,
+            `c = ${num(q * s)} ${MINUS} ${paren(r * s)} = ${num(key)}.`,
+          ],
+          principles: [
+            "An expression k·E is 0 for every value of k only when E = 0.",
+            "A value that solves an equation for every value of a constant must make that constant's term vanish.",
+          ],
+          trap: "Trying one convenient value of k gives a solution for that k only; the condition is about every k at once.",
+          hint: "Which part of the equation is affected when k changes?",
+          verify: () => {
+            // Search c directly: solve the displayed equation at two unrelated
+            // values of k and keep the c for which both solutions agree.
+            const [left, right] = sidesOf(equation);
+            const solve = (k, c) => {
+              const gap = (x) => left({ k, c, x }) - right({ k, c, x });
+              const slope = gap(1) - gap(0);
+              return approx(slope, 0) ? NaN : -gap(0) / slope;
+            };
+            const found = [];
+            for (let c = -400; c <= 400; c += 1) {
+              if (approx(solve(1.37, c), solve(-2.91, c)) && approx(solve(5.3, c), solve(1.37, c))) found.push(c);
+            }
+            return found.length === 1 && found[0] === key;
+          },
+        };
+      }
+    },
+  };
+
+  /* ------------------------------------------------- linear-equation-two-quantities */
+
+  // P starts at P0 and falls by p per unit of time from time 0; Q holds at Q0
+  // until time d, then rises by q per unit of time. Time t counts from P's start.
+  const pairScenes = [
+    {
+      unit: "liters", time: "minutes", P: "tank A", Q: "tank B", clock: "noon",
+      setup: (v) =>
+        `At noon, tank A contains ${commas(v.P0)} liters of water, and water begins draining from it at a constant rate of ` +
+        `${v.p} liters per minute. Tank B contains ${commas(v.Q0)} liters of water; beginning ${v.d} minutes after noon, ` +
+        `water flows into tank B at a constant rate of ${v.q} liters per minute.`,
+      ratio: (X, Y, k) => `${X} contains ${TIMES[k]} as much water as ${Y}`,
+      diff: (X, Y, D) => `${X} contains ${commas(D)} more liters of water than ${Y}`,
+      amount: (X) => `how many liters of water does ${X} contain`,
+      ranges: { p: [6, 20], q: [8, 30], d: [3, 12], t: [8, 40], Q0: [10, 120], step: 5 },
+    },
+    {
+      unit: "gallons", time: "hours", P: "pool A", Q: "pool B", clock: "8:00 a.m.",
+      setup: (v) =>
+        `At 8:00 a.m., pool A contains ${commas(v.P0)} gallons of water, and a pump begins removing water from it at a ` +
+        `constant rate of ${v.p} gallons per hour. Pool B contains ${commas(v.Q0)} gallons of water; beginning ${v.d} ` +
+        `hours after 8:00 a.m., a hose adds water to pool B at a constant rate of ${v.q} gallons per hour.`,
+      ratio: (X, Y, k) => `${X} contains ${TIMES[k]} as much water as ${Y}`,
+      diff: (X, Y, D) => `${X} contains ${commas(D)} more gallons of water than ${Y}`,
+      amount: (X) => `how many gallons of water does ${X} contain`,
+      ranges: { p: [40, 160], q: [50, 200], d: [2, 5], t: [4, 16], Q0: [200, 1500], step: 10 },
+    },
+    {
+      unit: "feet", time: "minutes", P: "balloon A", Q: "balloon B", clock: "the start",
+      setup: (v) =>
+        `At the start of an observation, balloon A is ${commas(v.P0)} feet above the ground and begins descending at a ` +
+        `constant rate of ${v.p} feet per minute. Balloon B is ${commas(v.Q0)} feet above the ground; beginning ${v.d} ` +
+        `minutes after the start, it rises at a constant rate of ${v.q} feet per minute.`,
+      ratio: (X, Y, k) => `${X} is ${TIMES[k]} as high above the ground as ${Y}`,
+      diff: (X, Y, D) => `${X} is ${commas(D)} feet higher than ${Y}`,
+      amount: (X) => `how many feet above the ground is ${X}`,
+      ranges: { p: [10, 40], q: [15, 60], d: [2, 10], t: [6, 30], Q0: [50, 600], step: 10 },
+    },
+  ];
+
+  const TIMES = { 2: "twice", 3: "three times" };
+
+  const twoQuantities = {
+    id: "linear-equation-two-quantities",
+    domain: "Algebra",
+    skill: "Linear equations in one variable",
+    subskill: "solve",
+    difficulty: "Hard",
+    title: "Two changing quantities compared at one moment",
+    recognize:
+      "Write each quantity as a function of the same time variable, counting the second one's change only from when " +
+      "it starts (t minus the delay); then turn the comparison into an equation, keeping straight which quantity is " +
+      "the multiple, or which one is larger.",
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["reversed-condition", "wrong-quantity", "sign-error"],
+    build(t) {
+      const form = t.pick(["equation", "equation", "time", "amount"]);
+      for (;;) {
+        const scene = t.pick(pairScenes);
+        const R = scene.ranges;
+        const step = (low, high) => R.step * t.int(Math.ceil(low / R.step), Math.floor(high / R.step));
+        const v = {
+          p: t.int(R.p[0], R.p[1]),
+          q: t.int(R.q[0], R.q[1]),
+          d: t.int(R.d[0], R.d[1]),
+          Q0: step(R.Q0[0], R.Q0[1]),
+        };
+        const t0 = t.int(Math.max(R.t[0], v.d + 2), R.t[1]);
+        const relation = t.pick(["ratio", "ratio", "diff"]);
+        const aFirst = t.chance(0.5);
+        const [X, Y] = aFirst ? ["P", "Q"] : ["Q", "P"];
+        const Qat = (time) => v.Q0 + v.q * Math.max(0, time - v.d);
+        const k = t.pick([2, 3]);
+        const D = relation === "diff" ? R.step * t.int(2, 12) : 0;
+        // Choose P0 so the stated comparison holds at t0.
+        const Q1 = Qat(t0);
+        let P1;
+        if (relation === "ratio") P1 = X === "P" ? k * Q1 : Q1 / k;
+        else P1 = X === "P" ? Q1 + D : Q1 - D;
+        if (!Number.isInteger(P1) || P1 <= 0) continue;
+        v.P0 = P1 + v.p * t0;
+        if (v.P0 % R.step !== 0 || v.P0 > 9000) continue;
+        const Pat = (time) => v.P0 - v.p * time;
+        const holds = (time) => {
+          const [x, y] = X === "P" ? [Pat(time), Qat(time)] : [Qat(time), Pat(time)];
+          return relation === "ratio" ? x - k * y : x - y - D;
+        };
+        // The comparison must happen once, after Q starts changing, while P is positive.
+        let changes = 0;
+        for (let time = 0; time < 2 * t0 + 20; time += 0.25) {
+          const [h1, h2] = [holds(time), holds(time + 0.25)];
+          if (h1 === 0 || h1 * h2 < 0) changes += 1;
+        }
+        if (changes !== 1 || Pat(t0) <= 0 || Math.abs(holds(t0)) > 1e-9) continue;
+        const names = { P: scene.P, Q: scene.Q };
+        const relText = relation === "ratio" ? scene.ratio(names[X], names[Y], k) : scene.diff(names[X], names[Y], D);
+        const Ptext = `${commas(v.P0)} ${MINUS} ${v.p}t`;
+        const Qtext = (shift) => `${commas(v.Q0)} + ${v.q}${shift}`;
+        const lag = { ok: `(t ${MINUS} ${v.d})`, none: "t", plus: `(t + ${v.d})` };
+        // How each timing slip writes the two quantities.
+        const timed = {
+          ok: { P: Ptext, Q: Qtext(lag.ok) },
+          none: { P: Ptext, Q: Qtext(lag.none) },
+          plus: { P: Ptext, Q: Qtext(lag.plus) },
+          swap: { P: `${commas(v.P0)} ${MINUS} ${v.p}(t ${MINUS} ${v.d})`, Q: Qtext("t") },
+          amount: { P: Ptext, Q: `${commas(v.Q0)} + ${v.q}t ${MINUS} ${v.d}` },
+        };
+        const lagSlip = t.pick(["none", "plus", "plus", "swap", "swap", "amount", "amount"]);
+        const build = (reversed, shift) => {
+          const texts = timed[shift];
+          const [first, second] = reversed ? [Y, X] : [X, Y];
+          return relation === "ratio"
+            ? `${texts[first]} = ${k}(${texts[second]})`
+            : `(${texts[first]}) ${MINUS} (${texts[second]}) = ${commas(D)}`;
+        };
+        const lagWhy = {
+          none: `measures ${names.Q}'s change from t = 0, though it begins ${v.d} ${scene.time} later`,
+          plus: `adds the ${v.d}-${scene.time.replace(/s$/, "")} delay instead of subtracting it`,
+          swap: `applies the ${v.d}-${scene.time.replace(/s$/, "")} delay to ${names.P} instead of ${names.Q}`,
+          amount: `subtracts the delay from the amount, ${v.q}t ${MINUS} ${v.d}, instead of from the time, ${v.q}(t ${MINUS} ${v.d})`,
+        }[lagSlip];
+        const relWhy = relation === "ratio"
+          ? `reverses the comparison, treating ${names[Y]} as the one that is ${TIMES[k]} as large`
+          : `subtracts in the wrong order, which finds when ${names[Y]} is ${commas(D)} ${scene.unit} ahead`;
+        const upper = (text) => `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
+        const cap = (text) => `${upper(text)}.`;
+        const key = build(false, "ok");
+        const wrong = [
+          [build(true, "ok"), cap(relWhy)],
+          [build(false, lagSlip), cap(lagWhy)],
+          [build(true, lagSlip), `Makes two slips: it ${relWhy}, and it ${lagWhy}.`],
+        ];
+        // A slip whose equation still has the key's solution would be a second key.
+        if (collides(key, wrong) || wrong.some(([text]) => holdsText(text, t0))) continue;
+        const models = [
+          `${upper(names.P)} after t ${scene.time}: ${Ptext}.`,
+          `${upper(names.Q)} after t ${scene.time} (t ≥ ${v.d}): ${Qtext(lag.ok)}.`,
+          `The comparison: ${key}.`,
+        ];
+        const solveStep = `Solving gives t = ${t0}.`;
+        const common = {
+          estimatedSeconds: 125,
+          stimulus: null,
+          principles: [
+            "A quantity that starts changing d time units late has changed for t − d units at time t.",
+            "\"X is k times Y\" is X = kY; \"X is D more than Y\" is X − Y = D.",
+          ],
+          trap: `${upper(names.Q)} starts changing ${v.d} ${scene.time} late, and the comparison has a direction; each slip gives a different, wrong equation.`,
+          hint: "Write an expression in t for each quantity, starting from the moment each one begins to change.",
+        };
+        const lead = scene.setup(v);
+        if (form === "equation") {
+          return {
+            ...common,
+            responseType: "multiple-choice",
+            stem:
+              `${lead} Which equation can be solved for t, the number of ${scene.time} after ${scene.clock}, at which ` +
+              `${relText}?`,
+            correct: key,
+            wrong,
+            explanation: models.join(" "),
+            steps: models,
+            verify: () => {
+              // The key must hold at the simulated time and have one solution; no wrong equation holds there.
+              const at = (text) => holds(t0) === 0 && holdsText(text, t0);
+              const [left, right] = sidesOf(key);
+              const slope = (left({ t: 1 }) - right({ t: 1 })) - (left({ t: 0 }) - right({ t: 0 }));
+              return at(key) && !approx(slope, 0) && wrong.every(([text]) => !holdsText(text, t0));
+            },
+          };
+        }
+        const answer = form === "time" ? t0 : Pat(t0);
+        return {
+          ...common,
+          responseType: "numeric",
+          stem: form === "time"
+            ? `${lead} What is the number of ${scene.time} after ${scene.clock} at which ${relText}?`
+            : `${lead} At the time when ${relText}, ${scene.amount(names.P)}?`,
+          correct: answer,
+          explanation: `${models.join(" ")} ${solveStep}${form === "time" ? "" : ` Then ${names.P} holds ${commas(v.P0)} ${MINUS} ${v.p}(${t0}) = ${commas(Pat(t0))}.`}`,
+          steps: form === "time" ? [...models, solveStep] : [...models, solveStep, `${upper(names.P)}: ${commas(v.P0)} ${MINUS} ${v.p}(${t0}) = ${commas(Pat(t0))}.`],
+          verify: () => {
+            // Step through time in the story itself and find where the comparison holds.
+            const found = [];
+            for (let time = 0; time <= 400; time += 1) if (holds(time) === 0) found.push(time);
+            return found.length === 1 && found[0] === t0 && (form === "time" || approx(Pat(found[0]), answer));
+          },
+        };
+      }
+    },
+  };
+
+  // True when the displayed equation in t holds at the given time.
+  function holdsText(text, time) {
+    const [left, right] = sidesOf(text);
+    return approx(left({ t: time }), right({ t: time }));
+  }
+
+  return [
+    equationSolve, contextMeaning, wordModel, solutionCount, expressionFromEquation, literalRearrange,
+    literalFactor, unknownConstants, twoQuantities,
+  ];
 });
