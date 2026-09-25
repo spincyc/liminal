@@ -270,6 +270,34 @@
     return P.rightAngle(vertex[0], vertex[1], u[0], u[1], v[0], v[1], size);
   }
 
+  // Estimated boxes of a figure's text labels (about 0.56 em per character),
+  // for checking that labels neither overprint nor leave the drawing.
+  function textBoxes(parts) {
+    const out = [];
+    const pattern = /<text x="([-\d.]+)" y="([-\d.]+)"([^>]*)>(.*?)<\/text>/g;
+    let match;
+    const markup = parts.join("");
+    while ((match = pattern.exec(markup))) {
+      const size = Number((/font-size="([\d.]+)"/.exec(match[3]) || [0, 16])[1]);
+      const anchor = (/text-anchor="(\w+)"/.exec(match[3]) || [0, "start"])[1];
+      const width = 0.56 * size * [...match[4].replace(/<[^>]+>/g, "").replace(/&[a-z]+;/g, "x")].length;
+      const x = Number(match[1]);
+      const x0 = anchor === "middle" ? x - width / 2 : anchor === "end" ? x - width : x;
+      out.push({ x0, x1: x0 + width, y0: Number(match[2]) - 0.36 * size, y1: Number(match[2]) + 0.36 * size });
+    }
+    return out;
+  }
+
+  // True when two labels overlap or a label runs outside a width × height drawing.
+  function labelsClash(parts, width, height) {
+    const boxes = textBoxes(parts);
+    return boxes.some((box, index) =>
+      box.x0 < 2 || box.x1 > width - 2 || box.y0 < 2 || box.y1 > height - 2 ||
+      boxes.slice(index + 1).some((other) =>
+        Math.min(box.x1, other.x1) - Math.max(box.x0, other.x0) > 1 &&
+        Math.min(box.y1, other.y1) - Math.max(box.y0, other.y0) > 1));
+  }
+
   const DOMAIN = "Geometry and Trigonometry";
 
   // Screen direction `degrees` counterclockwise from east.
@@ -281,39 +309,154 @@
     return `<line x1="${r1(p[0])}" y1="${r1(p[1])}" x2="${r1(q[0])}" y2="${r1(q[1])}" stroke="currentColor" stroke-width="${width}" stroke-linecap="round"/>`;
   }
 
-  // Keeps wrong answers that are finite, at most two decimals, and distinct
-  // from the key and from each other, in order. When the key is a whole
-  // number, decimal wrong answers (easy to eliminate on sight) are dropped
-  // if enough whole ones remain; the list's first entry, the figure-based
-  // lure in every list that has one, is always kept when it is present.
-  function distinctWrong(correct, list) {
-    const seen = new Set([S.label(correct)]);
-    const out = [];
-    list.forEach(([value, reason], position) => {
-      if (value === null || value === undefined) return;
-      if (typeof value === "number" &&
-        (!Number.isFinite(value) || Math.abs(value * 100 - Math.round(value * 100)) > 1e-7)) return;
-      const text = S.label(value);
-      if (seen.has(text) || S.BAD_TEXT.test(text)) return;
-      seen.add(text);
-      out.push([value, reason, position]);
-    });
-    if (typeof correct === "number" && Number.isInteger(correct)) {
-      const whole = out.filter(([value, , position]) =>
-        position === 0 || typeof value !== "number" || Number.isInteger(value));
-      if (whole.length >= 3) return whole;
-    }
-    return out;
-  }
-
   const fitsGridHard = (value) =>
     Number.isFinite(value) && S.answerKey(round4(value)).replace("-", "").length <= 5;
+
+  /* ------------------------------------------------------------ key rank */
+
+  // Chooses three wrong answers so that the key's rank among four numeric
+  // choices is spread over smallest to largest. When every wrong answer is a
+  // near miss on one side, the key sits in the middle and a blind "pick an
+  // inner value" strategy beats chance. `candidates` are [value, reason]
+  // pairs in trap order (strongest first); `show` turns a value into choice
+  // text (null drops it); the first `keep` candidates are always offered.
+  // Returns [text, reason] pairs, or null (so `retry` draws again) when a
+  // modelled mistake lands on the key or no rank can be filled.
+  function spreadRank(t, key, candidates, { keep = 0, show = (value) => value } = {}) {
+    const keyText = String(show(key));
+    const pool = [];
+    const seen = new Set();
+    for (const [index, [value, reason]] of candidates.entries()) {
+      const text = Number.isFinite(value) ? show(value) : null;
+      if (text === null || text === undefined) {
+        if (index < keep) return null;
+        continue;
+      }
+      if (String(text) === keyText) return null;
+      if (seen.has(String(text))) continue;
+      seen.add(String(text));
+      pool.push({ value, reason, text, kept: index < keep });
+    }
+    const below = pool.filter((entry) => entry.value < key);
+    const above = pool.filter((entry) => entry.value > key);
+    const keptBelow = below.filter((entry) => entry.kept).length;
+    const keptAbove = above.filter((entry) => entry.kept).length;
+    const ranks = [0, 1, 2, 3].filter((rank) =>
+      rank >= keptBelow && 3 - rank >= keptAbove && below.length >= rank && above.length >= 3 - rank);
+    if (!ranks.length) return null;
+    const rank = t.pick(ranks);
+    const take = (side, count) => side.filter((entry) => entry.kept)
+      .concat(side.filter((entry) => !entry.kept)).slice(0, count);
+    const chosen = new Set([...take(below, rank), ...take(above, 3 - rank)]);
+    return pool.filter((entry) => chosen.has(entry)).map((entry) => [entry.text, entry.reason]);
+  }
+
+  // The number a printed choice stands for: "1,024", "−3.5", "7/3", "4√3",
+  // "√5", "−√3/2", "12π", "5π/3", "π/2", "40%". NaN for anything else
+  // (equations, points, words), so rank spreading leaves those alone.
+  function choiceValue(choice) {
+    if (typeof choice === "number") return choice;
+    const text = String(choice).replace(/,/g, "").replace(/%$/, "").trim();
+    // A sum or difference of terms, such as "18π − 36".
+    const terms = text.split(/ (?=[+−] )/);
+    if (terms.length > 1) {
+      return terms.reduce((total, term) => {
+        const signed = term.replace(/^\+ /, "").replace(/^− /, "−");
+        return total + choiceValue(signed);
+      }, 0);
+    }
+    const match = /^([−-]?)(\d+(?:\.\d+)?)?(√\d+)?(π)?(?:\/(\d+(?:\.\d+)?))?$/.exec(text);
+    if (!match || (!match[2] && !match[3] && !match[4])) return NaN;
+    const [, sign, coefficient, root, pi, denominator] = match;
+    const base = coefficient === undefined ? 1 : Number(coefficient);
+    const extra = (root ? Math.sqrt(Number(root.slice(1))) : 1) * (pi ? Math.PI : 1);
+    return (sign ? -1 : 1) * base * extra / (denominator === undefined ? 1 : Number(denominator));
+  }
+
+  // Three wrong choices from [choice, reason] candidates (numbers or printed
+  // text, strongest trap first), chosen so the key's rank among the four
+  // values is spread (see spreadRank). The first `keep` are always offered
+  // (a not-to-scale lure). Numbers with more than two decimals are not
+  // printed; with `whole`, a whole-number key gets whole-number wrong
+  // answers when three remain, so a decimal cannot be eliminated on sight.
+  // Returns null, so the caller draws again, when a modelled mistake prints
+  // the same as the key or no rank can be filled; choices that are not
+  // numbers keep their order.
+  function spreadWrong(t, correct, candidates, { keep = 0, whole = false, positive = false } = {}) {
+    const keyText = S.label(correct);
+    const pool = [];
+    const seen = new Set([keyText]);
+    for (const [index, [value, reason]] of candidates.entries()) {
+      const usable = value !== null && value !== undefined &&
+        (typeof value !== "number" || (Number.isFinite(value) && isClean(value, 2) && (!positive || value > 0))) &&
+        !S.BAD_TEXT.test(S.label(value));
+      if (!usable) {
+        if (index < keep) return null;
+        continue;
+      }
+      const text = S.label(value);
+      if (text === keyText) return null;
+      if (seen.has(text)) continue;
+      seen.add(text);
+      pool.push({ value, reason, number: choiceValue(value), kept: index < keep });
+    }
+    const key = choiceValue(correct);
+    if (whole && Number.isInteger(key)) {
+      // Only plain decimals are dropped; a radical or a multiple of π is a
+      // form the test prints, not a giveaway.
+      const plainDecimal = (entry) => !/[√π/]/.test(S.label(entry.value)) && !Number.isInteger(entry.number);
+      const integral = pool.filter((entry) => entry.kept || !plainDecimal(entry));
+      if (integral.length >= 3) pool.splice(0, pool.length, ...integral);
+    }
+    if (!Number.isFinite(key) || pool.some((entry) => !Number.isFinite(entry.number))) {
+      return pool.length >= 3 ? pool.slice(0, 3).map((entry) => [entry.value, entry.reason]) : null;
+    }
+    const chosen = spreadRank(t, key, pool.map((entry) => [entry.number, entry]), {
+      keep,
+      show: (number) => {
+        const entry = pool.find((item) => item.number === number);
+        return entry ? S.label(entry.value) : S.label(number);
+      },
+    });
+    return chosen ? chosen.map(([, entry]) => [entry.value, entry.reason]) : null;
+  }
+
+  // True when a modelled mistake prints the same as the key: the draw must
+  // be redone, since dropping it would silently lose a trap (or leave a
+  // rationale calling the key wrong).
+  const collides = (correct, candidates) => candidates.some(([value]) =>
+    value !== null && value !== undefined && S.label(value) === S.label(correct));
+
+  // Wrong answers for an item that is multiple choice or a grid-in: the
+  // spread list, [] for a grid-in whose list cannot be spread (it offers no
+  // choices), or null when the draw must be redone.
+  function wrongFor(t, numeric, correct, candidates, options = {}) {
+    if (collides(correct, candidates)) return null;
+    const wrong = spreadWrong(t, correct, candidates, options);
+    if (wrong) return wrong;
+    return numeric ? [] : null;
+  }
+
+  // pack() with the wrong answers spread around the key; null when a
+  // modelled mistake lands on the key, for numeric items too.
+  function packSpread(t, numeric, keyValue, keyText, candidates, fields, options = {}) {
+    const wrong = spreadWrong(t, keyText, candidates, options);
+    if (!wrong && (!numeric || collides(keyText, candidates))) return null;
+    if (numeric && !fitsGrid(keyValue)) return null;
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      correct: numeric ? keyValue : keyText,
+      wrong: wrong || [],
+      ...fields,
+    };
+  }
 
   return {
     P, GEO, tidy, isClean, fitsGrid, fmt, shown, range, retry, pack, fractionValue, radical, surd,
     surdValue, piFraction, add,
     sub, mul, unit, lerp, mid, dist, dot, toRad, toDeg, centroid, close, angleAt, shoelace,
     fitPoints, r1, seg, measure, unitText, name, nameAway, anchorFor, normalAway, sideLabel, angleArc,
-    angleLabel, rightMark, DOMAIN, heading, round4, segHard, distinctWrong, fitsGridHard,
+    angleLabel, rightMark, DOMAIN, heading, round4, segHard, fitsGridHard, spreadRank,
+    choiceValue, spreadWrong, packSpread, collides, wrongFor, textBoxes, labelsClash,
   };
 });

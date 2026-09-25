@@ -12,9 +12,9 @@
 
   const { MINUS, num } = S;
   const {
-    P, GEO, isClean, fmt, shown, retry, pack, add, sub, mul, unit, lerp, mid, dist, toRad, centroid,
-    close, angleAt, shoelace, fitPoints, r1, seg, measure, name, nameAway, normalAway, sideLabel,
-    angleArc, angleLabel, DOMAIN, heading, segHard, distinctWrong,
+    P, GEO, isClean, fmt, shown, retry, add, sub, mul, unit, lerp, mid, dist, toRad, centroid, close, angleAt,
+    shoelace, fitPoints, r1, seg, measure, name, nameAway, normalAway, sideLabel, angleArc, angleLabel, DOMAIN,
+    heading, segHard, packSpread, wrongFor, round4, labelsClash, surd,
   } = C;
 
   function polyline(points, width = 1.5) {
@@ -55,7 +55,10 @@
     { a: ["bot", "LL"], b: ["bot", "LR"], kind: "a linear pair" },
   ];
 
-  function transversalFigure(phi, marks) {
+  // Names for the two parallel lines and the transversal.
+  const LINE_NAMES = [["ℓ", "m", "t"], ["p", "q", "r"], ["j", "k", "n"], ["a", "b", "c"]];
+
+  function transversalFigure(phi, marks, lines = LINE_NAMES[0]) {
     const yl = 86;
     const ym = 196;
     const up = [Math.cos(toRad(phi)), -Math.sin(toRad(phi))];
@@ -70,9 +73,9 @@
       seg(topEnd, add(T2, mul(up, -56))),
       arrow([14, yl], [386, yl], 0.08),
       arrow([14, ym], [386, ym], 0.08),
-      P.text(376, yl - 14, "ℓ"),
-      P.text(376, ym - 14, "m"),
-      P.text(topEnd[0] + (up[0] >= 0 ? 12 : -12), topEnd[1] + 2, "t"),
+      P.text(376, yl - 14, lines[0]),
+      P.text(376, ym - 14, lines[1]),
+      P.text(topEnd[0] + (up[0] >= 0 ? 12 : -12), topEnd[1] + 2, lines[2]),
     ];
     const at = { top: T1, bot: T2 };
     marks.forEach(({ where, quad, text }) => {
@@ -161,13 +164,33 @@
   const MIDPOINT_RATIOS = [[1, 2], [2, 1], [2, 3], [3, 2], [3, 4], [4, 3], [3, 5], [5, 3]];
 
   // Apex X at the top, base YZ at the bottom, M on XY and N on XZ. With
-  // `fraction` (XM/XY) the cut is drawn where it really is; without it, M and
-  // N are drawn at the midpoints so MN reads as a midsegment.
-  function cutFigure(t, names, onLeft, shown, fraction = null) {
+  // `fraction` (XM/XY) and `dims` ({ whole, base }: the labeled side and the
+  // base, in the item's units) the triangle is built from those lengths, so
+  // every labeled length is drawn to one scale; without them, M and N are
+  // drawn at the midpoints so MN reads as a midsegment. Returns null when the
+  // lengths make a triangle too flat or too narrow to draw well.
+  function cutFigure(t, names, onLeft, shown, fraction = null, dims = null) {
     const [X, Y, Z, M, N] = names;
-    const A = [t.int(150, 250), 40];
-    const B = [t.int(34, 70), 244];
-    const C = [t.int(330, 366), 244];
+    let A;
+    let B;
+    let C;
+    if (fraction === null) {
+      A = [t.int(150, 250), 40];
+      B = [t.int(34, 70), 244];
+      C = [t.int(330, 366), 244];
+    } else {
+      const theta = toRad(t.int(50, 78));
+      const Ym = [0, 0];
+      const Zm = [dims.base, 0];
+      const Xm = onLeft
+        ? [dims.whole * Math.cos(theta), dims.whole * Math.sin(theta)]
+        : [dims.base - dims.whole * Math.cos(theta), dims.whole * Math.sin(theta)];
+      const height = Xm[1];
+      const angles = [angleAt(Xm, Ym, Zm), angleAt(Ym, Xm, Zm), angleAt(Zm, Xm, Ym)];
+      if (height < 0.42 * dims.base || height > 1.25 * dims.base || Math.min(...angles) < 32) return null;
+      const map = fitPoints([Xm, Ym, Zm], 400, 280, 46);
+      [A, B, C] = [Xm, Ym, Zm].map(map);
+    }
     const f = fraction === null ? t.pick([0.48, 0.5, 0.52]) : fraction;
     const D = lerp(A, B, f);
     const E = lerp(A, C, f);
@@ -251,7 +274,7 @@
   // Parallel lines ℓ (top) and m, crossed by t. With `phiTrue` (t's true
   // inclination) the figure is drawn to scale; without it, t is drawn within
   // a few degrees of perpendicular so every angle looks like a right angle.
-  function transversalFigureHard(t, marks, phiTrue = null) {
+  function transversalFigureHard(t, marks, phiTrue = null, lines = LINE_NAMES[0]) {
     const yl = 86;
     const ym = 196;
     const phiDrawn = phiTrue === null ? 90 + t.pick([-1, 1]) * t.int(3, 6) : phiTrue;
@@ -269,9 +292,9 @@
       segHard(topEnd, add(T2, mul(up, -reach))),
       arrows([14, yl], [386, yl], 1, 0.08),
       arrows([14, ym], [386, ym], 1, 0.08),
-      P.text(376, yl - 14, "ℓ"),
-      P.text(376, ym - 14, "m"),
-      P.text(topEnd[0] + (up[0] >= 0 ? 12 : -12), topEnd[1] + 2, "t"),
+      P.text(376, yl - 14, lines[0]),
+      P.text(376, ym - 14, lines[1]),
+      P.text(topEnd[0] + (up[0] >= 0 ? 12 : -12), topEnd[1] + 2, lines[2]),
     ];
     marks.forEach(({ at, quad, text }) => {
       const vertex = at === "top" ? T1 : T2;
@@ -284,19 +307,24 @@
       parts.push(angleLabel(vertex, p, q, text, gap));
     });
     const described = marks
-      .map(({ at, quad, text }) => `at line ${at === "top" ? "ℓ" : "m"}, the angle ${QUAD_WORDS[quad]} is labeled ${text}`)
+      .map(({ at, quad, text }) => `at line ${at === "top" ? lines[0] : lines[1]}, the angle ${QUAD_WORDS[quad].replace(/ t$/, ` ${lines[2]}`)} is labeled ${text}`)
       .join("; ");
     const alt =
-      `Horizontal lines ℓ (top) and m (bottom), marked parallel with arrows, are crossed by line t` +
+      `Horizontal lines ${lines[0]} (top) and ${lines[1]} (bottom), marked parallel with arrows, are crossed by line ${lines[2]}` +
       (phiTrue === null
         ? `, which is drawn almost perpendicular to them, so every angle at the two intersections looks like a right angle. `
         : `, which is drawn to scale, slanting ${phiTrue < 90 ? "up to the right" : "up to the left"}. `) +
       `${described.charAt(0).toUpperCase()}${described.slice(1)}.`;
+    if (labelsClash(parts, 400, 270)) return null;
     return { svg: S.svg(400, 270, parts, alt), alt, notToScale: phiTrue === null };
   }
 
   function transversalItem(t, numeric, accurate) {
+    // A figure not drawn to scale always offers the answer its drawing suggests.
+    const choose = (correct, list) => wrongFor(t, numeric, correct, list, { keep: accurate ? 0 : 1, whole: true, positive: true });
     for (;;) {
+      const lines = t.pick(LINE_NAMES);
+      const [L1, L2, L3] = lines;
       // Not to scale: t is drawn near 90°, so keep its true inclination 12°–28°
       // away from that; to scale: any clearly slanted inclination.
       const phi = accurate
@@ -324,8 +352,8 @@
       // A drawing to scale shows every angle's size, so it asks only for x.
       const askY = !accurate && t.chance(0.45);
       const intro = t.pick([
-        "In the figure shown, line ℓ is parallel to line m.",
-        "In the figure shown, lines ℓ and m are parallel, and line t intersects both of them.",
+        `In the figure shown, line ${L1} is parallel to line ${L2}.`,
+        `In the figure shown, lines ${L1} and ${L2} are parallel, and line ${L3} intersects both of them.`,
       ]);
       const relationText = supp
         ? `The angles labeled ${e1} and ${e2} are ${pair.kind} angles, so they are supplementary${accurate ? "" : ", even though the figure makes them look equal"}.`
@@ -354,8 +382,8 @@
         if (!accurate && (!Number.isInteger(xFig) || xFig <= 0)) continue;
         // Sign slip while solving a1x + b1 = a2x + b2.
         const xSlip = supp ? null : (b1 + b2) / (a1 - a2);
-        const wrong = distinctWrong(x, [
-          [accurate ? null : xFig, `Sets ${e1} equal to 90 because line t looks perpendicular to ℓ and m in the figure; the figure is not drawn to scale.`],
+        const wrong = choose(x, [
+          [accurate ? null : xFig, `Sets ${e1} equal to 90 because line ${L3} looks perpendicular to ${L1} and ${L2} in the figure; the figure is not drawn to scale.`],
           [swapOk ? xSwap : null, supp
             ? `Sets the two labeled angles equal, but ${pair.kind} angles are supplementary.`
             : `Makes the two labeled angles add to 180°, but ${pair.kind} angles are equal.`],
@@ -364,26 +392,31 @@
           [supp && Number.isInteger((90 - b1 - b2) / (a1 + a2)) ? (90 - b1 - b2) / (a1 + a2) : null,
             `Makes the two labeled angles complementary (sum 90°) instead of supplementary.`],
           [xSlip !== null && Number.isInteger(xSlip) ? xSlip : null, "Moves a constant to the other side without changing its sign while solving."],
-        ]).filter(([value]) => typeof value !== "number" || value > 0);
-        if (!numeric && wrong.length < 3) continue;
+        ]);
+        if (!wrong) continue;
+        const figure = transversalFigureHard(t, [{ at: "top", quad: pair.top, text: e1 }, { at: "bot", quad: pair.bot, text: e2 }], accurate ? phi : null, lines);
+        if (!figure) continue;
         return {
           ...common,
-          figure: transversalFigureHard(t, [{ at: "top", quad: pair.top, text: e1 }, { at: "bot", quad: pair.bot, text: e2 }], accurate ? phi : null),
-          stem: `${intro} What is the value of x?`,
+          figure,
+          // A grid-in names the labeled angles in words too.
+          stem: numeric
+            ? `${intro} The angles labeled ${e1} and ${e2} are formed where line ${L3} crosses lines ${L1} and ${L2}. What is the value of x?`
+            : `${intro} What is the value of x?`,
           correct: x,
           wrong,
           explanation:
             `${relationText} ${solveStep} Each angle then measures ${th1}° and ${th2}°` +
-            (accurate ? ", as the figure shows." : "; line t only looks perpendicular because the figure is not drawn to scale."),
+            (accurate ? ", as the figure shows." : `; line ${L3} only looks perpendicular because the figure is not drawn to scale.`),
           steps: [
-            `Locate the labeled angles: one is ${QUAD_WORDS[pair.top].replace("the line", "ℓ")}, the other ${QUAD_WORDS[pair.bot].replace("the line", "m")}.`,
+            `Locate the labeled angles: one is ${QUAD_WORDS[pair.top].replace("the line", L1).replace(/ t$/, ` ${L3}`)}, the other ${QUAD_WORDS[pair.bot].replace("the line", L2).replace(/ t$/, ` ${L3}`)}.`,
             `They are ${pair.kind} angles, so they are ${supp ? "supplementary" : "equal"}.`,
             `Write the equation: ${supp ? `(${S.lin(a1, b1)}) + (${S.lin(a2, b2)}) = 180` : equation}.`,
             `Solve: x = ${x}.`,
           ],
           trap: accurate
             ? `${supp ? "Setting the angles equal" : "Making the angles add to 180°"} uses the wrong relationship; ${pair.kind} angles are ${supp ? "supplementary" : "equal"}.`
-            : `Line t looks perpendicular in the figure, which is not drawn to scale, so both angles look like 90°. ` +
+            : `Line ${L3} looks perpendicular in the figure, which is not drawn to scale, so both angles look like 90°. ` +
               `${supp ? "Setting them equal" : "Making them add to 180°"} uses the wrong relationship.`,
           verify: () => close(a1 * x + b1, geometry(pair.top)) && close(a2 * x + b2, geometry(pair.bot)),
         };
@@ -403,24 +436,28 @@
         const candidate = vertical ? swapped : 180 - swapped;
         if (swapped > 0 && swapped < 180 && candidate > 0 && candidate < 180) ySwap = candidate;
       }
-      const wrong = distinctWrong(y, [
-        [90, "Reads the angle marked y° as a right angle because line t looks perpendicular in the figure; the figure is not drawn to scale."],
+      const wrong = choose(y, [
+        [90, `Reads the angle marked y° as a right angle because line ${L3} looks perpendicular in the figure; the figure is not drawn to scale.`],
         [ySwap, supp
           ? `Sets the two labeled angles equal instead of supplementary, then carries the wrong x through to y.`
           : `Makes the two labeled angles add to 180° instead of setting them equal, then carries the wrong x through to y.`],
         [180 - y, `Gives the supplement of y; the angle marked y° and the angle labeled ${ownExpr} ${vertical ? "are vertical angles" : "form a linear pair"}.`],
         [x, "Gives the value of x instead of y."],
       ]);
-      if (!numeric && wrong.length < 3) continue;
+      if (!wrong) continue;
       const marks = [
         { at: "top", quad: pair.top, text: e1 },
         { at: "bot", quad: pair.bot, text: e2 },
         { at: atTop ? "top" : "bot", quad: q3, text: "y°" },
       ];
+      const figure = transversalFigureHard(t, marks, null, lines);
+      if (!figure) continue;
       return {
         ...common,
-        figure: transversalFigureHard(t, marks),
-        stem: `${intro} What is the value of y?`,
+        figure,
+        stem: numeric
+          ? `${intro} The angles labeled ${e1}, ${e2}, and y° are formed where line ${L3} crosses lines ${L1} and ${L2}. What is the value of y?`
+          : `${intro} What is the value of y?`,
         correct: y,
         wrong,
         explanation:
@@ -433,7 +470,7 @@
           `The angle labeled ${ownExpr} measures ${ownValue}°.`,
           vertical ? `y° is vertical to it: y = ${ownValue}.` : `y° forms a linear pair with it: y = 180 − ${ownValue} = ${y}.`,
         ],
-        trap: "Line t looks perpendicular in the figure, which is not drawn to scale, so y looks like 90.",
+        trap: `Line ${L3} looks perpendicular in the figure, which is not drawn to scale, so y looks like 90.`,
         verify: () =>
           close(a1 * x + b1, geometry(pair.top)) && close(a2 * x + b2, geometry(pair.bot)) && close(y, geometry(q3)),
       };
@@ -502,6 +539,8 @@
   }
 
   function isoscelesItem(t, numeric, accurate) {
+    // A figure not drawn to scale always offers the answer its drawing suggests.
+    const choose = (correct, list) => wrongFor(t, numeric, correct, list, { keep: accurate ? 0 : 1, whole: true, positive: true });
     for (;;) {
       const names = t.pick(ISO_NAMES);
       const [A, B, C, D] = names;
@@ -576,7 +615,7 @@
       };
       if (askX) {
         if (!accurate && (!Number.isInteger(xFig) || xFig <= 0)) continue;
-        const wrong = distinctWrong(x, [
+        const wrong = choose(x, [
           [accurate ? null : xFig, look === "right"
             ? `Sets ${apexText} equal to 90 because angle ${B}${A}${C} looks like a right angle in the figure; the figure is not drawn to scale.`
             : `Sets ${apexText} equal to 60 because the triangle looks equilateral in the figure; the figure is not drawn to scale.`],
@@ -585,10 +624,18 @@
           [baseAngle, `Gives the measure of angle ${A}${B}${C} instead of the value of x.`],
           [apex, `Gives the measure of angle ${B}${A}${C} instead of the value of x.`],
         ]);
-        if (!numeric && wrong.length < 3) continue;
-        return { ...common, stem: `${intro} What is the value of x?`, correct: x, wrong, verify: check };
+        if (!wrong) continue;
+        return {
+          ...common,
+          stem: numeric
+            ? `${intro} Angle ${B}${A}${C} measures ${apexText}, and angle ${A}${C}${D} measures ${extText}. What is the value of x?`
+            : `${intro} What is the value of x?`,
+          correct: x,
+          wrong,
+          verify: check,
+        };
       }
-      const wrong = distinctWrong(baseAngle, [
+      const wrong = choose(baseAngle, [
         [look === "right" ? 45 : 60, look === "right"
           ? `Reads angle ${B}${A}${C} as a right angle, as the figure suggests, making each base angle 45°; the figure is not drawn to scale.`
           : "Treats the triangle as equilateral because it looks equilateral in the figure; the figure is not drawn to scale."],
@@ -598,7 +645,7 @@
         [x, "Gives the value of x instead of the angle's measure."],
         [ext, `Gives the measure of exterior angle ${A}${C}${D} instead of angle ${A}${B}${C}.`],
       ]);
-      if (!numeric && wrong.length < 3) continue;
+      if (!wrong) continue;
       return {
         ...common,
         stem: `${intro} What is the measure, in degrees, of angle ${A}${B}${C}?`,
@@ -614,7 +661,7 @@
   // Parallel lines with a bend point between them. With `truth` ({ alpha,
   // beta }) the bend is drawn to scale; otherwise it is drawn so the angle at
   // the bend looks like a right angle and the two outer angles look equal.
-  function bendFigure(t, names, labels, truth = null) {
+  function bendFigure(t, names, labels, truth = null, lines = LINE_NAMES[0]) {
     const [Qn, Pn, Rn] = names;
     const yl = 52;
     const ym = 212;
@@ -629,40 +676,48 @@
     const det = ca * sb + cb * sa;
     const s = ((rx - qx) * sb + (ym - yl) * cb) / det;
     const flip = t.chance(0.5);
-    const fx = (point) => (flip ? [400 - point[0], point[1]] : point);
-    const Q = fx([qx, yl]);
-    const R = fx([rx, ym]);
-    const Pt = fx([qx + s * ca, yl + s * sa]);
     const toward = [flip ? -1 : 1, 0];
     // Labels sit far enough along each bisector to clear both rays.
     const gap = (vertex, p, q, least) => Math.max(least, 15 / Math.sin(toRad(angleAt(vertex, p, q) / 2)));
-    const parts = [
-      segHard([12, yl], [388, yl]),
-      segHard([12, ym], [388, ym]),
-      segHard(Q, Pt),
-      segHard(Pt, R),
-      arrows(fx([12, yl]), fx([388, yl]), 1, 0.85),
-      arrows(fx([12, ym]), fx([388, ym]), 1, 0.85),
-      P.text(flip ? 22 : 378, yl - 14, "ℓ"),
-      P.text(flip ? 22 : 378, ym - 14, "m"),
-      angleArc(Q, add(Q, toward), Pt, 20),
-      angleArc(R, add(R, toward), Pt, 20),
-      angleArc(Pt, Q, R, 18),
-      angleLabel(Q, add(Q, toward), Pt, labels.Q, gap(Q, add(Q, toward), Pt, 38)),
-      angleLabel(R, add(R, toward), Pt, labels.R, gap(R, add(R, toward), Pt, 38)),
-      angleLabel(Pt, Q, R, labels.P, gap(Pt, Q, R, 32)),
-      name(add(Q, [0, -15]), Qn),
-      name(add(R, [0, 17]), Rn),
-      name(add(Pt, [flip ? -15 : 15, 0]), Pn),
-    ];
-    const alt =
-      `Horizontal parallel lines ℓ (top) and m (bottom), marked with arrows. Point ${Qn} is on ℓ, point ${Rn} is on m, and point ${Pn} ` +
-      `lies between the lines; segments ${Qn}${Pn} and ${Pn}${Rn} form a bend. The angle between ℓ and ${Qn}${Pn} is labeled ${labels.Q}, ` +
-      `the angle between m and ${Rn}${Pn} is labeled ${labels.R}, and angle ${Qn}${Pn}${Rn} is labeled ${labels.P}. ` +
-      (truth
-        ? "The figure is drawn to scale."
-        : `The bend is drawn so that angle ${Qn}${Pn}${Rn} looks like a right angle and the angles at ${Qn} and ${Rn} look equal.`);
-    return { svg: S.svg(400, 264, parts, alt), alt, notToScale: !truth };
+    // The bend slides along the lines until no label overprints another or
+    // runs off the drawing.
+    for (const dx of [0, 30, 60, 90, 120, -30]) {
+      const fx = (point) => (flip ? [400 - point[0] - dx, point[1]] : [point[0] + dx, point[1]]);
+      const Q = fx([qx, yl]);
+      const R = fx([rx, ym]);
+      const Pt = fx([qx + s * ca, yl + s * sa]);
+      if ([Q, R, Pt].some(([x]) => x < 24 || x > 376)) continue;
+      const parts = [
+        segHard([12, yl], [388, yl]),
+        segHard([12, ym], [388, ym]),
+        segHard(Q, Pt),
+        segHard(Pt, R),
+        arrows(flip ? [388, yl] : [12, yl], flip ? [12, yl] : [388, yl], 1, 0.85),
+        arrows(flip ? [388, ym] : [12, ym], flip ? [12, ym] : [388, ym], 1, 0.85),
+        P.text(flip ? 22 : 378, yl - 14, lines[0]),
+        P.text(flip ? 22 : 378, ym - 14, lines[1]),
+        angleArc(Q, add(Q, toward), Pt, 20),
+        angleArc(R, add(R, toward), Pt, 20),
+        angleArc(Pt, Q, R, 18),
+        angleLabel(Q, add(Q, toward), Pt, labels.Q, gap(Q, add(Q, toward), Pt, 38)),
+        angleLabel(R, add(R, toward), Pt, labels.R, gap(R, add(R, toward), Pt, 38)),
+        angleLabel(Pt, Q, R, labels.P, gap(Pt, Q, R, 32)),
+        name(add(Q, [0, -15]), Qn),
+        name(add(R, [0, 17]), Rn),
+        name(add(Pt, [flip ? -15 : 15, 0]), Pn),
+      ];
+      if (labelsClash(parts, 400, 264)) continue;
+      const [l1, l2] = lines;
+      const alt =
+        `Horizontal parallel lines ${l1} (top) and ${l2} (bottom), marked with arrows. Point ${Qn} is on ${l1}, point ${Rn} is on ${l2}, and point ${Pn} ` +
+        `lies between the lines; segments ${Qn}${Pn} and ${Pn}${Rn} form a bend. The angle between ${l1} and ${Qn}${Pn} is labeled ${labels.Q}, ` +
+        `the angle between ${l2} and ${Rn}${Pn} is labeled ${labels.R}, and angle ${Qn}${Pn}${Rn} is labeled ${labels.P}. ` +
+        (truth
+          ? "The figure is drawn to scale."
+          : `The bend is drawn so that angle ${Qn}${Pn}${Rn} looks like a right angle and the angles at ${Qn} and ${Rn} look equal.`);
+      return { svg: S.svg(400, 264, parts, alt), alt, notToScale: !truth };
+    }
+    return null;
   }
 
   function bendGeometry(alpha, beta) {
@@ -677,8 +732,12 @@
   }
 
   function bendItem(t, numeric, accurate) {
+    // A figure not drawn to scale always offers the answer its drawing suggests.
+    const choose = (correct, list) => wrongFor(t, numeric, correct, list, { keep: accurate ? 0 : 1, whole: true, positive: true });
     for (;;) {
       const names = t.pick(BEND_NAMES);
+      const lines = t.pick(LINE_NAMES);
+      const [L1, L2] = lines;
       const [Qn, Pn, Rn] = names;
       // Not to scale: both outer angles are drawn near 45° and the bend near
       // 90°, so keep each outer angle within 15° of 45° and the bend 12°–28°
@@ -690,9 +749,9 @@
       // A drawing to scale shows every angle's size, so it asks only for x in an expression.
       const kind = accurate ? "expr" : t.pick(["bend", "arm", "expr"]);
       const angleName = `${Qn}${Pn}${Rn}`;
-      const intro = "In the figure shown, line ℓ is parallel to line m.";
+      const intro = `In the figure shown, line ${L1} is parallel to line ${L2}.`;
       const auxiliary =
-        `Draw a line through ${Pn} parallel to ℓ and m. It splits angle ${angleName} into two parts: one is an alternate interior ` +
+        `Draw a line through ${Pn} parallel to ${L1} and ${L2}. It splits angle ${angleName} into two parts: one is an alternate interior ` +
         `angle to the angle at ${Qn}, the other to the angle at ${Rn}. So angle ${angleName} equals the sum of the angles at ${Qn} and ${Rn}.`;
       const triReason = `Treats the angles at ${Qn}, ${Pn}, and ${Rn} as the three angles of a triangle, making them sum to 180°.`;
       const fullReason = `Makes the three angles sum to 360°, which holds only when the angles at ${Qn} and ${Rn} are measured on the other side of the segments.`;
@@ -711,21 +770,25 @@
       if (kind === "bend") {
         const labels = { Q: `${alpha}°`, R: `${beta}°`, P: "x°" };
         const larger = Math.max(alpha, beta);
-        const wrong = distinctWrong(sum, [
+        const wrong = choose(sum, [
           [90, `Reads angle ${angleName} as a right angle, as it looks in the figure; the figure is not drawn to scale.`],
           [180 - sum, triReason],
           [larger, `Matches angle ${angleName} with the ${larger}° angle alone, missing the part of it that matches the other marked angle.`],
         ]);
-        if (!numeric && wrong.length < 3) continue;
+        if (!wrong) continue;
+        const figure = bendFigure(t, names, labels, null, lines);
+        if (!figure) continue;
         return {
           ...common,
-          figure: bendFigure(t, names, labels),
-          stem: `${intro} What is the value of x?`,
+          figure,
+          stem: numeric
+            ? `${intro} The angle between line ${L1} and segment ${Qn}${Pn} measures ${alpha}°, and the angle between line ${L2} and segment ${Rn}${Pn} measures ${beta}°. What is the value of x?`
+            : `${intro} What is the value of x?`,
           correct: sum,
           wrong,
           explanation: `${auxiliary} x = ${alpha} + ${beta} = ${sum}. The angle only looks like a right angle because the figure is not drawn to scale.`,
           steps: [
-            `Add a line through ${Pn} parallel to ℓ and m.`,
+            `Add a line through ${Pn} parallel to ${L1} and ${L2}.`,
             `The upper part of angle ${angleName} equals the ${alpha}° angle (alternate interior angles).`,
             `The lower part equals the ${beta}° angle (alternate interior angles).`,
             `x = ${alpha} + ${beta} = ${sum}.`,
@@ -737,22 +800,26 @@
 
       if (kind === "arm") {
         const labels = { Q: "x°", R: `${beta}°`, P: `${sum}°` };
-        const wrong = distinctWrong(alpha, [
+        const wrong = choose(alpha, [
           [beta, `Takes the angles at ${Qn} and ${Rn} as equal because they look equal in the figure; the figure is not drawn to scale.`],
           [180 - sum - beta > 0 ? 180 - sum - beta : null, triReason],
           [360 - sum - beta < 180 ? 360 - sum - beta : null, fullReason],
           [sum, `Gives the measure of angle ${angleName} instead of x.`],
         ]);
-        if (!numeric && wrong.length < 3) continue;
+        if (!wrong) continue;
+        const figure = bendFigure(t, names, labels, null, lines);
+        if (!figure) continue;
         return {
           ...common,
-          figure: bendFigure(t, names, labels),
-          stem: `${intro} What is the value of x?`,
+          figure,
+          stem: numeric
+            ? `${intro} Angle ${angleName} measures ${sum}°, and the angle between line ${L2} and segment ${Rn}${Pn} measures ${beta}°. What is the value of x?`
+            : `${intro} What is the value of x?`,
           correct: alpha,
           wrong,
           explanation: `${auxiliary} So x + ${beta} = ${sum}, and x = ${alpha}. The angles at ${Qn} and ${Rn} only look equal because the figure is not drawn to scale.`,
           steps: [
-            `Add a line through ${Pn} parallel to ℓ and m.`,
+            `Add a line through ${Pn} parallel to ${L1} and ${L2}.`,
             `Angle ${angleName} is the sum of the angles at ${Qn} and ${Rn}: ${sum} = x + ${beta}.`,
             `Solve: x = ${sum} − ${beta} = ${alpha}.`,
           ],
@@ -777,7 +844,7 @@
       const xOne = (b1 - b3) / (a3 - a1);
       // A wrong x is only believable if it leaves every marked angle between 0° and 180°.
       const real = (value) => [a1 * value + b1, a3 * value + b3].every((angle) => angle > 0 && angle < 180);
-      const wrong = distinctWrong(x, [
+      const wrong = choose(x, [
         [accurate ? null : xFig, `Sets ${labels.P} equal to 90 because angle ${angleName} looks like a right angle in the figure; the figure is not drawn to scale.`],
         [Number.isInteger(xTri) && xTri > 0 && real(xTri) ? xTri : null, triReason],
         [Number.isInteger(xFull) && real(xFull) ? xFull : null, fullReason],
@@ -786,18 +853,22 @@
         [sum, `Gives the measure of angle ${angleName} instead of the value of x.`],
         [alpha, `Gives the measure of the angle at ${Qn} instead of the value of x.`],
       ]);
-      if (!numeric && wrong.length < 3) continue;
+      if (!wrong) continue;
+      const figure = bendFigure(t, names, labels, accurate ? { alpha, beta } : null, lines);
+      if (!figure) continue;
       return {
         ...common,
-        figure: bendFigure(t, names, labels, accurate ? { alpha, beta } : null),
-        stem: `${intro} What is the value of x?`,
+        figure,
+        stem: numeric
+          ? `${intro} The angles labeled ${labels.Q}, ${labels.R}, and ${labels.P} are at ${Qn}, ${Rn}, and ${Pn}, respectively. What is the value of x?`
+          : `${intro} What is the value of x?`,
         correct: x,
         wrong,
         explanation:
           `${auxiliary} So (${S.lin(a1, b1)}) + ${beta} = ${S.lin(a3, b3)}, which gives x = ${x}. The angle at ${Pn} measures ${sum}°` +
           (accurate ? "." : `, not the 90° it appears to be in the figure.`),
         steps: [
-          `Add a line through ${Pn} parallel to ℓ and m.`,
+          `Add a line through ${Pn} parallel to ${L1} and ${L2}.`,
           `Angle ${angleName} is the sum of the angles at ${Qn} and ${Rn}.`,
           `Equation: ${S.lin(a1, b1 + beta)} = ${S.lin(a3, b3)}.`,
           `Solve: x = ${x}.`,
@@ -824,7 +895,9 @@
     tricks: ["neighbouring-rule", "intermediate-value"],
     build(t) {
       const form = t.pick(["parallel", "parallel", "exterior", "remote"]);
-      const numeric = t.chance(0.4);
+      // A grid-in states the given angles in its stem; the transversal
+      // figure's labels cannot be restated naturally, so it stays multiple choice.
+      const numeric = form !== "parallel" && t.chance(0.55);
       return retry(() => {
         if (form === "parallel") {
           const phi = t.chance(0.5) ? t.int(35, 80) : t.int(100, 145);
@@ -834,25 +907,29 @@
           const a = quadMeasure(given[1], phi);
           const key = quadMeasure(asked[1], phi);
           const equal = key === a;
+          const lines = t.pick(LINE_NAMES);
+          const [ln1, ln2, ln3] = lines;
           const marks = [
             { where: given[0], quad: given[1], text: `${a}°` },
             { where: asked[0], quad: asked[1], text: "x°" },
           ];
-          const drawn = transversalFigure(phi, marks);
-          const describe = ({ where, quad }) => `at line ${where === "top" ? "ℓ" : "m"}, the angle ${QUAD_WORDS[quad]}`;
+          const drawn = transversalFigure(phi, marks, lines);
+          const quadWords = (quad) => QUAD_WORDS[quad].replace(/ t$/, ` ${ln3}`);
+          const describe = ({ where, quad }) => `at line ${where === "top" ? ln1 : ln2}, the angle ${quadWords(quad)}`;
           const alt =
-            `Horizontal lines ℓ (top) and m (bottom), marked parallel with arrows, crossed by line t, which slants ${phi < 90 ? "up to the right" : "up to the left"}. ` +
+            `Horizontal lines ${ln1} (top) and ${ln2} (bottom), marked parallel with arrows, crossed by line ${ln3}, which slants ${phi < 90 ? "up to the right" : "up to the left"}. ` +
             `${describe(marks[0]).charAt(0).toUpperCase()}${describe(marks[0]).slice(1)} is labeled ${a}°; ${describe(marks[1])} is labeled x°. The figure is drawn to scale.`;
           const figure = { svg: S.svg(400, 270, drawn.parts, alt), alt, notToScale: false };
-          return pack(numeric, key, fmt(key), [
+          return packSpread(t, numeric, key, fmt(key), [
             [shown(equal ? 180 - a : a, 0), equal ? `Treats the angles as supplementary; ${pair.kind} are equal.` : `Treats the angles as equal; ${pair.kind} are supplementary.`],
             [shown(Math.abs(90 - a), 0), "Treats the angles as complementary; no right angle is involved."],
             [shown(360 - a, 0), "Subtracts from 360°, as if the two angles made a full turn."],
-            [shown(180 - key / 2, 0), "Halves an angle for no reason."],
+            [shown(a / 2, 1), `Halves the ${a}° angle, as if the transversal bisected it.`],
+            [shown(180 - key / 2, 0), `Halves the angle marked x° and subtracts from 180°, mixing up the two relationships.`],
           ], {
             stimulus: null,
             figure,
-            stem: `In the figure shown, line ℓ is parallel to line m${pair.kind === "vertical angles" || pair.kind === "a linear pair" ? "" : ", and line t intersects both lines"}. What is the value of x?`,
+            stem: `In the figure shown, line ${ln1} is parallel to line ${ln2}${pair.kind === "vertical angles" || pair.kind === "a linear pair" ? "" : `, and line ${ln3} intersects both lines`}. What is the value of x?`,
             explanation: `The angle labeled x° and the ${a}° angle are ${pair.kind}, so ${equal ? `they are equal: x = ${a}` : `they are supplementary: x = 180 ${MINUS} ${a} = ${key}`}.`,
             steps: [
               `Locate both angles: ${describe(marks[0])}, and ${describe(marks[1])}.`,
@@ -924,10 +1001,14 @@
             [shown(180 - ext, 0) === shown(gamma, 0) ? null : shown(180 - ext, 0), "Subtracts the exterior angle from 180°."],
             [shown(ext / 2, 1), "Halves the exterior angle."],
           ];
-        return pack(numeric, key, fmt(key), candidates, {
+        return packSpread(t, numeric, key, fmt(key), candidates, {
           stimulus: null,
           figure,
-          stem: `In the figure shown, points ${B}, ${C}, and ${D} lie on a line. What is the value of x?`,
+          stem: numeric
+            ? askExterior
+              ? `In triangle ${A}${B}${C} shown, side ${B}${C} is extended to point ${D}. The measure of angle ${B}${A}${C} is ${alpha}°, and the measure of angle ${A}${B}${C} is ${beta}°. What is the value of x?`
+              : `In triangle ${A}${B}${C} shown, side ${B}${C} is extended to point ${D}. The measure of angle ${B}${A}${C} is ${alpha}°, and the measure of angle ${A}${C}${D} is ${ext}°. What is the value of x?`
+            : `In the figure shown, points ${B}, ${C}, and ${D} lie on a line. What is the value of x?`,
           explanation: askExterior
             ? `The exterior angle ${A}${C}${D} equals the sum of the two remote interior angles: x = ${alpha} + ${beta} = ${ext}.`
             : `The exterior angle ${A}${C}${D} equals the sum of the two remote interior angles: ${ext} = ${alpha} + x, so x = ${ext} ${MINUS} ${alpha} = ${beta}.`,
@@ -1036,11 +1117,13 @@
               [shown(AB + CE - AC, 2), `Adds the difference ${C}${E} ${MINUS} ${A}${C} to ${A}${B}, as if the triangles differed by a fixed amount instead of by a ratio.`],
               [shown((AB * (AC + CE)) / AC, 2), `Uses the whole segment ${A}${E} in place of ${C}${E}.`],
               [shown((AB * CE) / (AC + CE), 2), `Compares ${C}${E} with the whole segment ${A}${E} instead of with ${A}${C}.`],
+              [shown((AB * CE * CE) / (AC * AC), 2), "Squares the scale factor, as for areas; lengths scale by the factor itself."],
+              [shown((AB * Math.abs(CE - AC)) / AC, 2), `Multiplies ${A}${B} by (${C}${E} − ${A}${C})/${A}${C}, the fraction by which the sides change, instead of by the scale factor.`],
             ];
-            explanation = `Triangles ${A}${B}${C} and ${E}${D}${C} are similar, with ${A} matching ${E} and ${B} matching ${D}. The scale factor from the top triangle to the bottom one is ${C}${E}/${A}${C} = ${num(labels.CE)}/${num(labels.AC)} = ${factor}, so ${D}${E} = ${factor} × ${num(labels.AB)} = ${num(key)}.`;
+            explanation = `Triangles ${A}${B}${C} and ${E}${D}${C} are similar, with ${A} matching ${E} and ${B} matching ${D}. The scale factor from the top triangle to the bottom one is ${C}${E}/${A}${C} = ${num(labels.CE)} ÷ ${num(labels.AC)} = ${factor}, so ${D}${E} = ${factor} × ${num(labels.AB)} = ${num(key)}.`;
             steps = [
               `Angles ${A}${C}${B} and ${E}${C}${D} are vertical angles, and angles ${A} and ${E} are alternate interior angles, so the triangles are similar with ${A} ↔ ${E}, ${B} ↔ ${D}.`,
-              `${A}${C} corresponds to ${E}${C}, so the scale factor is ${num(labels.CE)}/${num(labels.AC)} = ${factor}.`,
+              `${A}${C} corresponds to ${E}${C}, so the scale factor is ${num(labels.CE)} ÷ ${num(labels.AC)} = ${factor}.`,
               `${D}${E} corresponds to ${A}${B}: ${D}${E} = ${factor} × ${num(labels.AB)} = ${num(key)}.`,
             ];
             trap = `The factor is ${C}${E}/${A}${C}, bottom over top; inverting it gives ${num(round((AB * AC) / CE))}.`;
@@ -1054,11 +1137,13 @@
               [shown(DE + BC - CD, 2), `Adds the difference ${B}${C} ${MINUS} ${C}${D} to ${D}${E}, as if the triangles differed by a fixed amount instead of by a ratio.`],
               [shown((DE * (BC + CD)) / CD, 2), `Uses the whole segment ${B}${D} in place of ${B}${C}.`],
               [shown((DE * BC) / (BC + CD), 2), `Compares ${B}${C} with the whole segment ${B}${D} instead of with ${C}${D}.`],
+              [shown((DE * BC * BC) / (CD * CD), 2), "Squares the scale factor, as for areas; lengths scale by the factor itself."],
+              [shown((DE * Math.abs(BC - CD)) / CD, 2), `Multiplies ${D}${E} by (${B}${C} − ${C}${D})/${C}${D}, the fraction by which the sides change, instead of by the scale factor.`],
             ];
-            explanation = `Triangles ${A}${B}${C} and ${E}${D}${C} are similar, with ${B} matching ${D}. The scale factor from the bottom triangle to the top one is ${B}${C}/${C}${D} = ${num(labels.BC)}/${num(labels.CD)} = ${S.frac(p, q)}, so ${A}${B} = ${S.frac(p, q)} × ${num(labels.DE)} = ${num(key)}.`;
+            explanation = `Triangles ${A}${B}${C} and ${E}${D}${C} are similar, with ${B} matching ${D}. The scale factor from the bottom triangle to the top one is ${B}${C}/${C}${D} = ${num(labels.BC)} ÷ ${num(labels.CD)} = ${S.frac(p, q)}, so ${A}${B} = ${S.frac(p, q)} × ${num(labels.DE)} = ${num(key)}.`;
             steps = [
               `Angles ${A}${C}${B} and ${E}${C}${D} are vertical angles, and angles ${B} and ${D} are alternate interior angles, so the triangles are similar with ${B} ↔ ${D}, ${A} ↔ ${E}.`,
-              `${B}${C} corresponds to ${D}${C}, so the scale factor is ${num(labels.BC)}/${num(labels.CD)} = ${S.frac(p, q)}.`,
+              `${B}${C} corresponds to ${D}${C}, so the scale factor is ${num(labels.BC)} ÷ ${num(labels.CD)} = ${S.frac(p, q)}.`,
               `${A}${B} corresponds to ${D}${E}: ${A}${B} = ${S.frac(p, q)} × ${num(labels.DE)} = ${num(key)}.`,
             ];
             trap = `The factor is ${B}${C}/${C}${D}, top over bottom; inverting it gives ${num(round((DE * CD) / BC))}.`;
@@ -1075,7 +1160,7 @@
             [shown(AE / 2, 2), `Assumes ${C} is the midpoint of ${A}${E}.`],
             [shown((AE * DE) / AB, 2), `Scales the whole segment ${A}${E} by ${D}${E}/${A}${B}.`],
           ];
-          explanation = `Triangles ${A}${B}${C} and ${E}${D}${C} are similar, so ${A}${C}/${C}${E} = ${A}${B}/${E}${D} = ${num(labels.AB)}/${num(labels.DE)} = ${S.frac(p, q)}. So ${A}${E} splits into ${p} + ${q} = ${p + q} equal parts, ${p} of them in ${A}${C}: ${A}${C} = ${num(AE)} × ${p}/${p + q} = ${num(key)}.`;
+          explanation = `Triangles ${A}${B}${C} and ${E}${D}${C} are similar, so ${A}${C}/${C}${E} = ${A}${B}/${E}${D} = ${num(labels.AB)} ÷ ${num(labels.DE)} = ${S.frac(p, q)}. So ${A}${E} splits into ${p} + ${q} = ${p + q} equal parts, ${p} of them in ${A}${C}: ${A}${C} = ${num(AE)} × ${p}/${p + q} = ${num(key)}.`;
           steps = [
             `The triangles are similar with ${A} ↔ ${E}, so ${A}${C} : ${C}${E} = ${A}${B} : ${E}${D} = ${p} : ${q}.`,
             `${A}${E} = ${A}${C} + ${C}${E} is ${p} + ${q} = ${p + q} parts, each ${num(AE)} ÷ ${p + q} = ${num(round(AE / (p + q)))}.`,
@@ -1093,8 +1178,9 @@
             [shown(P1 * k * k, 2), "Squares the scale factor, as for areas; perimeters scale by the factor itself."],
             [shown(P1 / k, 2), "Uses the scale factor upside down."],
             [shown(P1 + 3 * (DE - AB), 2), "Adds the same difference to each side instead of scaling each side."],
+            [shown(P1 * Math.abs(k - 1), 2), "Finds only the change in perimeter, (scale factor − 1) × perimeter, instead of the new perimeter."],
           ];
-          explanation = `The triangles are similar with scale factor ${D}${E}/${A}${B} = ${num(labels.DE)}/${num(labels.AB)} = ${factor}, and every length, including the perimeter, scales by it: ${factor} × ${num(P1)} = ${num(key)}.`;
+          explanation = `The triangles are similar with scale factor ${D}${E}/${A}${B} = ${num(labels.DE)} ÷ ${num(labels.AB)} = ${factor}, and every length, including the perimeter, scales by it: ${factor} × ${num(P1)} = ${num(key)}.`;
           steps = [
             `The triangles are similar: vertical angles at ${C}, alternate interior angles at the parallel segments.`,
             `Scale factor: ${D}${E}/${A}${B} = ${factor}.`,
@@ -1128,10 +1214,14 @@
           `Segment ${A}${B} at the top and segment ${D}${E} at the bottom, marked parallel with arrows. Segments ${A}${E} and ${B}${D} cross at ${C}, ` +
           `forming triangle ${A}${B}${C} above ${C} and triangle ${C}${D}${E} below it; ${D} is below ${A}'s side and ${E} below ${B}'s side. ` +
           `Labeled lengths: ${words.join(", ")}. The figure is drawn to scale.`;
-        return pack(numeric, key, fmt(key), candidates, {
+        // A grid-in (and some multiple-choice items) also states the labeled
+        // lengths, so the question is complete in words.
+        const statesLengths = form === "side" && (numeric || t.chance(0.3));
+        const stated = statesLengths ? ` In the figure, ${words.slice(0, -1).join(", ")}, and ${words[words.length - 1]}.` : "";
+        return packSpread(t, numeric, key, fmt(key), candidates, {
           stimulus: null,
           figure: { svg: S.svg(400, 280, parts, alt), alt, notToScale: false },
-          stem,
+          stem: stated ? stem.replace(/(\.) (What|If|The)/, `.${stated} $2`) : stem,
           explanation,
           steps,
           principles: [
@@ -1152,12 +1242,13 @@
     domain: DOMAIN,
     skill: "Lines, angles, and triangles",
     subskill: "similarity",
+    difficulty: "Medium",
     title: "Parallel cut in a triangle: part versus whole side",
     recognize:
       "A segment parallel to one side cuts off a smaller triangle similar to the whole. The scale factor " +
       "compares a part of a side with the whole side, and areas scale by its square. Trust a figure drawn to scale; " +
       "when it is marked not drawn to scale, apparent midpoints mean nothing.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
     tricks: ["not-to-scale-figure", "part-vs-whole", "neighbouring-rule", "intermediate-value"],
     build(t) {
       // Chosen once, outside the retry loop, so retries do not tilt the mix.
@@ -1191,7 +1282,10 @@
         const k = S.frac(near, whole);
         // The drawing lure exists only when the figure is not drawn to scale.
         const lure = (value, reason) => (accurate ? [null, reason] : [value, reason]);
-        const figureFor = (shown) => cutFigure(t, names, onLeft, shown, accurate ? p / (p + q) : null);
+        const figureFor = (shown) => cutFigure(t, names, onLeft, shown, accurate ? p / (p + q) : null, { whole, base });
+        // Wrong answers spread around the key; the drawing's lure is always
+        // offered when the figure is not drawn to scale.
+        const choose = (correct, list) => wrongFor(t, numeric, correct, list, { keep: accurate ? 0 : 1, whole: true, positive: true });
         const figureNote = (text) => (accurate ? "" : ` ${text}`);
 
         const intro = t.pick([
@@ -1228,23 +1322,25 @@
             [["near", nearName, near], ["far", farName, far], ["cut", cutName, cut]],
             `What is the length of ${baseName}?`,
           );
-          const wrong = distinctWrong(base, [
+          const figure = figureFor(shown);
+          if (!figure) continue;
+          const wrong = choose(base, [
             lure(2 * cut, `Treats ${cutName} as a midsegment because ${M} and ${N} look like midpoints in the figure; the figure is not drawn to scale.`),
             [(cut * far) / near, `Uses ${nearName}/${farName}, a part-to-part ratio, as the scale factor instead of ${nearName}/${wholeName}.`],
             [cut + far, `Adds ${farName} to ${cutName}, as if the triangle grew by equal amounts instead of in proportion.`],
             [(cut * whole) / far, `Scales ${cutName} by ${wholeName}/${farName}, pairing it with the wrong part of the side.`],
             [whole, `Finds the whole side ${wholeName} = ${whole} on the way and stops there instead of scaling ${cutName}.`],
           ]);
-          if (!numeric && wrong.length < 3) continue;
+          if (!wrong) continue;
           return {
             ...common,
-            figure: figureFor(shown),
+            figure,
             stem: text,
             correct: base,
-            wrong,
+            wrong: wrong || [],
             explanation:
               `${similarStep} The scale factor compares ${nearName} with the whole side ${wholeName}, not with ${farName}: ` +
-              `${nearName}/${wholeName} = ${near}/${whole} = ${k}. So ${baseName} = ${cut} ÷ ${k} = ${base}.` +
+              `${nearName}/${wholeName} = ${near}/${whole}${`${near}/${whole}` === k ? "" : ` = ${k}`}. So ${baseName} = ${cut} ÷ ${k} = ${base}.` +
               figureNote(`The figure makes ${cutName} look like a midsegment, but ${nearName} ≠ ${farName}, so ${baseName} is not twice ${cutName}.`),
             steps: [
               similarStep,
@@ -1266,21 +1362,23 @@
             [["near", nearName, near], ["far", farName, far], ["base", baseName, base]],
             `What is the length of ${cutName}?`,
           );
-          const wrong = distinctWrong(cut, [
+          const figure = figureFor(shown);
+          if (!figure) continue;
+          const wrong = choose(cut, [
             lure(base / 2, `Takes ${cutName} as half of ${baseName} because ${M} and ${N} look like midpoints in the figure; the figure is not drawn to scale.`),
             [(base * near) / far, `Uses ${nearName}/${farName}, a part-to-part ratio, as the scale factor instead of ${nearName}/${wholeName}.`],
             [base - far, `Subtracts ${farName} from ${baseName}, shrinking by a fixed amount instead of by a ratio.`],
             [(base * far) / whole, `Uses ${farName}/${wholeName}, which pairs ${cutName} with the wrong part of side ${wholeName}.`],
           ]);
-          if (!numeric && wrong.length < 3) continue;
+          if (!wrong) continue;
           return {
             ...common,
-            figure: figureFor(shown),
+            figure,
             stem: text,
             correct: cut,
             wrong,
             explanation:
-              `${similarStep} The scale factor is ${nearName}/${wholeName} = ${near}/${whole} = ${k}, so ${cutName} = ${k} × ${base} = ${cut}.` +
+              `${similarStep} The scale factor is ${nearName}/${wholeName} = ${near}/${whole}${`${near}/${whole}` === k ? "" : ` = ${k}`}, so ${cutName} = ${k} × ${base} = ${cut}.` +
               figureNote(`The figure is not drawn to scale; ${cutName} only looks like half of ${baseName}.`),
             steps: [similarStep, wholeStep, `Corresponding sides share that factor: ${cutName} = ${k} × ${baseName}.`, `${cutName} = ${k} × ${base} = ${cut}.`],
             principles,
@@ -1298,17 +1396,19 @@
             `What is the length of ${farName}?`,
           );
           const factor = S.frac(cut, base);
-          const wrong = distinctWrong(far, [
+          const figure = figureFor(shown);
+          if (!figure) continue;
+          const wrong = choose(far, [
             [near, accurate
               ? `Finds ${wholeName} = ${whole}, then takes ${farName} as ${wholeName} × ${cutName}/${baseName}; that product is ${nearName}, not ${farName}.`
               : `Takes ${cutPoint} as the midpoint of ${wholeName}, as it appears in the figure, so ${farName} = ${nearName}; the figure is not drawn to scale.`],
             [whole, `Finds the whole side ${wholeName} and stops; ${farName} is only the part below ${cutPoint}.`],
             [base - cut, `Takes ${farName} as ${baseName} − ${cutName}, as if the side grew by the same amount as the parallel segments instead of in proportion.`],
           ]);
-          if (!numeric && wrong.length < 3) continue;
+          if (!wrong) continue;
           return {
             ...common,
-            figure: figureFor(shown),
+            figure,
             stem: text,
             correct: far,
             wrong,
@@ -1336,6 +1436,7 @@
           const askQuad = t.chance(0.6);
           const areaIntro = `${intro} The area of ${small} is ${smallArea}.`;
           const figure = figureFor({ near, far });
+          if (!figure) continue;
           const kk = S.frac(near * near, whole * whole);
           const steps = [
             similarStep,
@@ -1344,13 +1445,13 @@
             `area(${big}) = ${smallArea} ÷ ${kk} = ${bigArea}.`,
           ];
           if (askQuad) {
-            const wrong = distinctWrong(quadArea, [
+            const wrong = choose(quadArea, [
               lure(3 * smallArea, `Treats ${cutName} as a midsegment, as the figure suggests, so ${big} looks 4 times as large as ${small}; the figure is not drawn to scale.`),
               [bigArea, `Finds the area of ${big} and stops before subtracting ${small}.`],
               [p * q * w, `Scales the area by the length ratio ${wholeName}/${nearName} instead of its square.`],
               [q * q * w, `Scales by (${farName}/${nearName})², a part-to-part ratio of sides.`],
             ]);
-            if (!numeric && wrong.length < 3) continue;
+            if (!wrong) continue;
             return {
               ...common,
               figure,
@@ -1371,13 +1472,13 @@
               },
             };
           }
-          const wrong = distinctWrong(bigArea, [
+          const wrong = choose(bigArea, [
             lure(4 * smallArea, `Treats ${cutName} as a midsegment, as the figure suggests, making ${big} 4 times as large; the figure is not drawn to scale.`),
             [p * (p + q) * w, `Scales the area by the length ratio ${wholeName}/${nearName} instead of its square.`],
             [quadArea, `Finds only the area of ${quad}, the part of ${big} below ${cutName}.`],
             [smallArea + q * q * w, `Adds a triangle scaled by (${farName}/${nearName})², treating the lower strip as similar to ${small}.`],
           ]);
-          if (!numeric && wrong.length < 3) continue;
+          if (!wrong) continue;
           return {
             ...common,
             figure,
@@ -1399,12 +1500,18 @@
           };
         }
 
-        // ratio: what fraction of an area the small triangle is.
+        // ratio: what fraction of an area the small triangle is. Every
+        // choice is a proper fraction: an area that is part of another is less
+        // than it, so a choice of 1 or more could be eliminated on sight.
         const toQuad = t.chance(0.45);
         const pp = p * p;
         const ww = (p + q) * (p + q);
+        if (toQuad && 2 * pp >= ww) continue;
         const correct = toQuad ? S.frac(pp, ww - pp) : S.frac(pp, ww);
-        const wrong = distinctWrong(
+        const proper = (entry) => [entry[0] !== null && C.fractionValue(entry[0]) < 1 ? entry[0] : null, entry[1]];
+        const figure = figureFor({ near, far });
+        if (!figure) continue;
+        const wrong = choose(
           correct,
           toQuad
             ? [
@@ -1412,33 +1519,35 @@
               [S.frac(pp, ww), `Compares ${small} with all of ${big} instead of with the quadrilateral.`],
               [S.frac(p, q), `Uses the part-to-part length ratio ${nearName}/${farName} as if it were an area ratio.`],
               [S.frac(pp, q * q), `Squares ${nearName}/${farName}, a ratio of two parts of a side rather than part to whole.`],
-            ]
+              [S.frac(p ** 3, (p + q) ** 3 - p ** 3), "Cubes the length ratio, as for the volumes of similar solids, instead of squaring it."],
+            ].map(proper)
             : [
               lure("1/4", `Treats ${cutName} as a midsegment, as the figure suggests, so the small triangle looks like a quarter of the large one; the figure is not drawn to scale.`),
               [S.frac(p, p + q), `Uses the length ratio ${nearName}/${wholeName} without squaring it for area.`],
               [S.frac(pp, ww - pp), `Compares ${small} with ${quad} instead of with the whole triangle.`],
               [S.frac(pp, q * q), `Squares ${nearName}/${farName}, a ratio of two parts of a side rather than part to whole.`],
-            ],
+              [S.frac(p ** 3, (p + q) ** 3), "Cubes the length ratio, as for the volumes of similar solids, instead of squaring it."],
+            ].map(proper),
         );
-        if (wrong.length < 3) continue;
+        if (!wrong) continue;
         const target = toQuad ? quad : big;
         return {
           ...common,
           responseType: "multiple-choice",
-          figure: figureFor({ near, far }),
+          figure,
           stem: `${intro} The area of ${small} is what fraction of the area of ${target}?`,
           correct,
           wrong,
           explanation:
             `${similarStep} The scale factor is ${nearName}/${wholeName} = ${k}, so area(${small})/area(${big}) = (${k})² = ${S.frac(pp, ww)}. ` +
             (toQuad
-              ? `Take ${pp} parts for the small triangle and ${ww} for the whole; the quadrilateral holds ${ww} − ${pp} = ${ww - pp} parts, so the fraction is ${correct}.`
+              ? `Take ${pp} parts for the small triangle and ${ww} for the whole; the quadrilateral holds ${ww} − ${pp} = ${ww - pp} parts, so the fraction is ${pp}/${ww - pp}${`${pp}/${ww - pp}` === correct ? "" : ` = ${correct}`}.`
               : `That is the requested fraction, ${correct}.`),
           steps: [
             similarStep,
             wholeStep,
             `Square the factor for areas: (${k})² = ${S.frac(pp, ww)}.`,
-            toQuad ? `The quadrilateral is the rest: ${ww - pp} parts of ${ww}, so the fraction is ${pp}/${ww - pp} = ${correct}.` : `The fraction is ${correct}.`,
+            toQuad ? `The quadrilateral is the rest: ${ww - pp} parts of ${ww}, so the fraction is ${pp}/${ww - pp}${`${pp}/${ww - pp}` === correct ? "" : ` = ${correct}`}.` : `The fraction is ${correct}.`,
           ],
           principles: principles.concat(["Areas of similar figures are in the ratio of the square of the scale factor."]),
           trap:
@@ -1459,11 +1568,12 @@
     domain: DOMAIN,
     skill: "Lines, angles, and triangles",
     subskill: "angle relationships",
+    difficulty: "Medium",
     title: "Angle chase through a misleading figure",
     recognize:
       "Decide which angle relationships the given facts guarantee (parallel lines, congruent sides) before computing. " +
       "A figure without the not-to-scale note can be trusted; with it, the angle that looks right, or looks equal to another, usually is not.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["not-to-scale-figure", "neighbouring-rule", "wrong-quantity"],
     build(t) {
       const form = t.pick(["transversal", "isosceles", "bend"]);
@@ -1504,7 +1614,7 @@
     tricks: ["context-constraint", "wrong-quantity"],
     build(t) {
       const form = t.pick(["could", "could", "greatest", "least"]);
-      const numeric = form !== "could" && t.chance(0.55);
+      const numeric = form !== "could" && t.chance(0.7);
       const withContext = t.chance(0.4);
       return retry(() => {
         const a = t.int(3, 14);
@@ -1527,16 +1637,23 @@
         if (form === "could") {
           const key = t.int(low + 1, high - 1);
           if (key === a || key === b) return null;
-          const outside = t.chance(0.5)
-            ? [high + t.int(1, 6), `Is longer than the other two sides combined (${high}), so the sides cannot meet.`]
-            : [low > 2 ? t.int(1, low - 1) : null, `Is shorter than the difference of the other two sides (${low}), so the sides cannot meet.`];
-          return pack(false, key, fmt(key), [
-            [fmt(low), `Equals the difference ${b} − ${a}; a third side that short makes the triangle collapse into a segment.`],
-            [fmt(high), `Equals the sum ${a} + ${b}; the three sides would lie flat along one segment.`],
-            [outside[0] === null ? null : fmt(outside[0]), outside[1]],
-            [fmt(high + 1), `Is longer than the other two sides combined (${high}), so the sides cannot meet.`],
-          ], {
+          // Wrong lengths fall outside the interval on either side, as many
+          // below as the key's rank, so the key is not always in the middle.
+          const below = [[low, `Equals the difference ${b} − ${a}; a third side that short makes the triangle collapse into a segment.`]];
+          for (let value = low - t.int(1, 2); value >= 1 && below.length < 3; value -= t.int(1, 2)) {
+            below.push([value, `Is shorter than the difference of the other two sides (${low}), so the sides cannot meet.`]);
+          }
+          const above = [[high, `Equals the sum ${a} + ${b}; the three sides would lie flat along one segment.`]];
+          for (let value = high + t.int(1, 3); above.length < 3; value += t.int(1, 3)) {
+            above.push([value, `Is longer than the other two sides combined (${high}), so the sides cannot meet.`]);
+          }
+          const rank = t.pick([0, 1, 2, 3].filter((count) => count <= below.length));
+          const wrong = [...below.slice(0, rank), ...above.slice(0, 3 - rank)];
+          return {
             ...common,
+            responseType: "multiple-choice",
+            correct: fmt(key),
+            wrong: wrong.map(([value, reason]) => [fmt(value), reason]),
             stem: ctx
               ? `${ctx.lead(p, q)} Which of the following could be the length, in ${ctx.unit}, of ${ctx.what}?`
               : `A triangle has two sides of lengths ${p} and ${q}. Which of the following could be the length of the third side?`,
@@ -1544,9 +1661,8 @@
               `The third side must be longer than ${b} − ${a} = ${low} and shorter than ${a} + ${b} = ${high}. Of the choices, only ${key} is strictly between them.`,
             steps: [`Longer than the difference: more than ${b} − ${a} = ${low}.`, `Shorter than the sum: less than ${a} + ${b} = ${high}.`, `Only ${key} satisfies ${range}.`],
             trap: `A third side of exactly ${low} or ${high} does not make a triangle: the sides would lie flat.`,
-            verify: () => closes(a, b, key) &&
-              [low, high, high + 1, outside[0]].every((value) => value === null || !closes(a, b, value)),
-          });
+            verify: () => closes(a, b, key) && wrong.every(([value]) => !closes(a, b, value)),
+          };
         }
         const greatest = form === "greatest";
         const key = greatest ? high - 1 : low + 1;
@@ -1554,7 +1670,7 @@
         const stem = ctx
           ? `${ctx.lead(p, q)} The length of ${ctx.what} is a whole number of ${ctx.unit}. What is the ${ask} possible length, in ${ctx.unit}, of ${ctx.what}?`
           : `The lengths of the sides of a triangle are ${p}, ${q}, and x, where x is an integer. What is the ${ask} possible value of x?`;
-        return pack(numeric, key, fmt(key), greatest
+        return packSpread(t, numeric, key, fmt(key), greatest
           ? [
             [fmt(high), `Equals the sum ${a} + ${b}; a side that long makes the triangle flatten into a segment.`],
             [fmt(b), `Assumes the third side can be no longer than the longest given side, ${b}.`],
@@ -1659,11 +1775,13 @@
         if (form === "whole") {
           const Ag = area[side];
           const key = (m + n) * u;
-          return pack(numeric, key, fmt(key), [
+          return packSpread(t, numeric, key, fmt(key), [
             [shown(area[other], 2), `Gives the area of triangle ${tri[other]}, only part of triangle ${tri.whole}.`],
             [shown((Ag * (g + o) ** 2) / (g * g), 2), `Squares the ratio of the bases, as for similar triangles; triangles ${tri[side]} and ${tri.whole} share a height but are not similar.`],
             [shown((Ag * (g + o)) / o, 2), `Scales by ${B}${Cn}/${seg1[other]}, matching triangle ${tri[side]} with the wrong part of the base.`],
             [shown(Ag + o, 2), `Adds the length ${seg1[other]} to the area.`],
+            [shown(2 * Ag, 2), `Doubles the area of triangle ${tri[side]}, as if ${D} were the midpoint of ${B}${Cn}.`],
+            [shown(Ag * (g + o), 2), `Multiplies the area by ${B}${Cn} = ${g + o} instead of by the ratio of the bases.`],
           ], {
             ...common,
             stem: `${intro} The area of triangle ${tri[side]} is ${fmt(Ag)}. What is the area of triangle ${tri.whole}?`,
@@ -1681,7 +1799,7 @@
         if (form === "part") {
           const K = (m + n) * u;
           const key = area[side];
-          return pack(numeric, key, fmt(key), [
+          return packSpread(t, numeric, key, fmt(key), [
             [shown(area[other], 2), `Gives the area of triangle ${tri[other]} instead of triangle ${tri[side]}.`],
             [shown((K * g) / o, 2), `Uses ${seg1[side]}/${seg1[other]}, a ratio of the two parts of the base, instead of ${seg1[side]}/${B}${Cn}.`],
             [shown((K * g * g) / (g + o) ** 2, 2), `Squares the ratio of the bases, as for similar triangles; these triangles share a height but are not similar.`],
@@ -1702,7 +1820,7 @@
         // length: the areas of both parts and BC given; one part of the base asked.
         const key = g;
         const h = 2 * u;
-        return pack(numeric, key, fmt(key), [
+        return packSpread(t, numeric, key, fmt(key), [
           [shown(o, 2), `Gives the length of ${seg1[other]} instead of ${seg1[side]}.`],
           [shown(((m + n) * area[side]) / area[other], 2), `Takes ${fmt(area[side])}/${fmt(area[other])}, the ratio of the two areas, as the fraction of ${B}${Cn} instead of ${fmt(area[side])}/${fmt(area[side] + area[other])}.`],
           [h === m + n ? null : shown(h, 2), `Finds the height of the triangles, ${h}, and stops.`],
@@ -1727,5 +1845,602 @@
     },
   };
 
-  return [anglePair, sideBounds, crossingSimilar, sharedHeight, similarTriangles, angleChase];
+  /* ============================= altitude-hypotenuse-similarity (Hard) */
+
+  // A printable length: a whole number, a two-place decimal, or a radical.
+  const lengthText = (value) => {
+    if (!Number.isFinite(value) || value <= 0) return null;
+    if (isClean(value, 2)) return round4(value);
+    return surd(value);
+  };
+
+  const ALTITUDE_NAMES = [["A", "B", "C", "D"], ["P", "Q", "R", "S"], ["J", "K", "L", "M"], ["E", "F", "G", "H"]];
+
+  const altitudeHypotenuse = {
+    id: "altitude-hypotenuse-similarity",
+    domain: GEO,
+    skill: "Lines, angles, and triangles",
+    subskill: "similarity",
+    difficulty: "Hard",
+    title: "The altitude to the hypotenuse",
+    recognize:
+      "The altitude to the hypotenuse splits a right triangle into two triangles similar to it and to each other. Match " +
+      "angles to pair sides: the altitude is the geometric mean of the two parts of the hypotenuse, and each leg is the " +
+      "geometric mean of the hypotenuse and the part next to it. The Pythagorean theorem alone leaves two unknowns.",
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["neighbouring-rule", "part-vs-whole", "wrong-quantity"],
+    build(t) {
+      const ask = t.pick(["altitude", "leg", "part", "hypotenuse"]);
+      const numeric = t.chance(0.3);
+      return retry(() => {
+        const [A, B, Cn, D] = t.pick(ALTITUDE_NAMES);
+        // AD = s·m², DB = s·n², so CD = s·m·n; AC = s·m·√(m² + n²).
+        const s = t.pick([1, 1, 2, 3, 4, 5]);
+        const m = t.int(1, 5);
+        const n = t.int(1, 6);
+        if (m === n) return null;
+        const AD = s * m * m;
+        const DB = s * n * n;
+        const AB = AD + DB;
+        const CD = s * m * n;
+        const AC = Math.sqrt(AD * AB);
+        const BC = Math.sqrt(DB * AB);
+        if (AB > 80 || AB < 5) return null;
+        const text = { AD, DB, AB, CD, AC: lengthText(AC), BC: lengthText(BC) };
+        if (!text.AC || !text.BC) return null;
+        const seg2 = (key) => ({ AD: `${A}${D}`, DB: `${D}${B}`, AB: `${A}${B}`, CD: `${Cn}${D}`, AC: `${A}${Cn}`, BC: `${B}${Cn}` }[key]);
+        let given;
+        let key;
+        let keyValue;
+        let list;
+        let explanation;
+        let steps;
+        if (ask === "altitude") {
+          given = ["AD", "DB"];
+          keyValue = CD;
+          key = CD;
+          list = [
+            [(AD + DB) / 2, `Averages ${seg2("AD")} and ${seg2("DB")}; the altitude is their geometric mean, not their average.`],
+            [DB > AD ? Math.sqrt(DB * DB - AD * AD) : null, `Treats ${seg2("CD")} as a leg of a right triangle with hypotenuse ${seg2("DB")} and other leg ${seg2("AD")}; those segments are not in one right triangle.`],
+            [Math.sqrt(AD * AD + DB * DB), `Adds the squares of ${seg2("AD")} and ${seg2("DB")}, as if they were legs of one right triangle.`],
+            [AC, `Gives ${seg2("AC")}, the hypotenuse of triangle ${A}${Cn}${D}, instead of the altitude.`],
+            [Math.abs(DB - AD), `Subtracts ${seg2("AD")} from ${seg2("DB")}.`],
+          ];
+          explanation =
+            `Triangles ${A}${D}${Cn} and ${Cn}${D}${B} are similar (each shares an acute angle with triangle ${A}${Cn}${B}), with ${A}${D} matching ${Cn}${D} ` +
+            `and ${Cn}${D} matching ${D}${B}. So ${A}${D}/${Cn}${D} = ${Cn}${D}/${D}${B}, which gives ${Cn}${D}² = ${AD} × ${DB} = ${fmt(AD * DB)} and ${Cn}${D} = ${CD}.`;
+          steps = [
+            `Angle ${A} is in both triangle ${A}${D}${Cn} and triangle ${A}${Cn}${B}, and angle ${B} is in both triangle ${Cn}${D}${B} and triangle ${A}${Cn}${B}, so all three right triangles are similar.`,
+            `In triangles ${A}${D}${Cn} and ${Cn}${D}${B}: ${A}${D}/${Cn}${D} = ${Cn}${D}/${D}${B}.`,
+            `${Cn}${D}² = ${AD} × ${DB} = ${fmt(AD * DB)}, so ${Cn}${D} = ${CD}.`,
+          ];
+        } else if (ask === "leg") {
+          given = ["AD", "AB"];
+          keyValue = AC;
+          key = text.AC;
+          list = [
+            [Math.sqrt(AB * AB - AD * AD), `Treats ${seg2("AD")} and ${seg2("AB")} as a leg and the hypotenuse of one right triangle; ${seg2("AB")} is not a side of triangle ${A}${D}${Cn}.`],
+            [(AD + AB) / 2, `Averages ${seg2("AD")} and ${seg2("AB")}; the leg is their geometric mean.`],
+            [CD, `Gives ${seg2("CD")}, the altitude, instead of the leg ${seg2("AC")}.`],
+            [BC, `Pairs ${seg2("AB")} with ${seg2("DB")} instead of ${seg2("AD")}, which gives ${seg2("BC")}.`],
+            [DB, `Gives ${seg2("DB")}, the rest of the hypotenuse.`],
+          ];
+          explanation =
+            `Triangle ${A}${D}${Cn} is similar to triangle ${A}${Cn}${B} (they share angle ${A}), with ${A}${D} matching ${A}${Cn} and ${A}${Cn} matching ${A}${B}. ` +
+            `So ${A}${D}/${A}${Cn} = ${A}${Cn}/${A}${B}, which gives ${A}${Cn}² = ${AD} × ${AB} = ${fmt(AD * AB)} and ${A}${Cn} = ${S.label(text.AC)}.`;
+          steps = [
+            `Triangles ${A}${D}${Cn} and ${A}${Cn}${B} share angle ${A} and each has a right angle, so they are similar.`,
+            `Corresponding sides: ${A}${D}/${A}${Cn} = ${A}${Cn}/${A}${B}.`,
+            `${A}${Cn}² = ${AD} × ${AB} = ${fmt(AD * AB)}, so ${A}${Cn} = ${S.label(text.AC)}.`,
+          ];
+        } else if (ask === "part") {
+          given = ["CD", "AD"];
+          keyValue = DB;
+          key = DB;
+          list = [
+            [(AD * AD) / CD, `Sets up the proportion upside down, ${D}${B}/${Cn}${D} = ${Cn}${D}/${A}${D} read as ${D}${B} = ${A}${D}²/${Cn}${D}.`],
+            [CD > AD ? Math.sqrt(CD * CD - AD * AD) : null, `Treats ${seg2("DB")} as a leg of a right triangle with hypotenuse ${seg2("CD")}.`],
+            [AC, `Gives ${seg2("AC")}, the hypotenuse of triangle ${A}${D}${Cn}.`],
+            [2 * CD - AD, `Assumes ${seg2("CD")} is the average of ${seg2("AD")} and ${seg2("DB")}.`],
+            [AB, `Gives the whole hypotenuse ${seg2("AB")} instead of ${seg2("DB")}.`],
+          ];
+          explanation =
+            `Triangles ${A}${D}${Cn} and ${Cn}${D}${B} are similar, with ${A}${D} matching ${Cn}${D} and ${Cn}${D} matching ${D}${B}: ` +
+            `${A}${D}/${Cn}${D} = ${Cn}${D}/${D}${B}, so ${D}${B} = ${CD}² ÷ ${AD} = ${DB}.`;
+          steps = [
+            `Triangles ${A}${D}${Cn}, ${Cn}${D}${B}, and ${A}${Cn}${B} are similar right triangles.`,
+            `${A}${D}/${Cn}${D} = ${Cn}${D}/${D}${B}.`,
+            `${D}${B} = ${CD}² ÷ ${AD} = ${fmt(CD * CD)} ÷ ${AD} = ${DB}.`,
+          ];
+        } else {
+          given = ["AC", "AD"];
+          keyValue = AB;
+          key = AB;
+          list = [
+            [Math.sqrt(AC * AC + AD * AD), `Adds the squares of ${seg2("AC")} and ${seg2("AD")}, as if ${seg2("AB")} were the hypotenuse of a right triangle with those legs.`],
+            [AC + AD, `Adds ${seg2("AC")} and ${seg2("AD")}.`],
+            [CD, `Gives ${seg2("CD")}, the other leg of triangle ${A}${D}${Cn}.`],
+            [DB, `Gives ${seg2("DB")} instead of the whole hypotenuse ${seg2("AB")}.`],
+            [(AD * AD) / AC, `Sets up the proportion upside down, reading ${seg2("AD")}/${seg2("AC")} = ${seg2("AC")}/${seg2("AB")} as ${seg2("AB")} = ${seg2("AD")}²/${seg2("AC")}.`],
+          ];
+          explanation =
+            `Triangle ${A}${D}${Cn} is similar to triangle ${A}${Cn}${B}, so ${A}${D}/${A}${Cn} = ${A}${Cn}/${A}${B}. ` +
+            `Then ${A}${B} = ${A}${Cn}² ÷ ${A}${D} = ${fmt(Math.round(AC * AC))} ÷ ${AD} = ${AB}.`;
+          steps = [
+            `Triangles ${A}${D}${Cn} and ${A}${Cn}${B} share angle ${A} and each has a right angle, so they are similar.`,
+            `${A}${D}/${A}${Cn} = ${A}${Cn}/${A}${B}.`,
+            `${A}${B} = ${A}${Cn}² ÷ ${A}${D} = ${fmt(Math.round(AC * AC))} ÷ ${AD} = ${AB}.`,
+          ];
+        }
+        if (numeric && typeof key !== "number") return null;
+        const printed = list.map(([value, reason]) => [value === null ? null : lengthText(value), reason]);
+        const wrong = wrongFor(t, numeric, key, printed, { whole: true, positive: true });
+        if (!wrong) return null;
+        // Figure: hypotenuse along the bottom, drawn to scale.
+        const model = { A: [0, 0], B: [AB, 0], D: [AD, 0], C: [AD, CD] };
+        const map = fitPoints(Object.values(model), 400, 260, 46);
+        const sc = Object.fromEntries(Object.entries(model).map(([k2, p]) => [k2, map(p)]));
+        const G = centroid([sc.A, sc.B, sc.C]);
+        const parts = [
+          P.polygon([sc.A, sc.B, sc.C]),
+          seg(sc.C, sc.D, 1.8),
+          C.rightMark(sc.C, sc.A, sc.B, 11),
+          C.rightMark(sc.D, sc.B, sc.C, 10),
+          nameAway(sc.A, G, A), nameAway(sc.B, G, B), name(add(sc.C, [0, -15]), Cn), name(add(sc.D, [0, 18]), D),
+        ];
+        const labelFor = {
+          AD: () => measure(add(mid(sc.A, sc.D), [0, 18]), num(AD)),
+          DB: () => measure(add(mid(sc.D, sc.B), [0, 18]), num(DB)),
+          CD: () => measure(add(mid(sc.C, sc.D), [-8, 0]), num(CD), "end"),
+          AC: () => sideLabel(sc.A, sc.C, sc.B, S.label(text.AC)),
+          AB: null,
+        };
+        const onFigure = given.filter((k2) => labelFor[k2]);
+        onFigure.forEach((k2) => parts.push(labelFor[k2]()));
+        if (labelsClash(parts, 400, 260)) return null;
+        const givenText = given.map((k2) => `${seg2(k2)} = ${S.label(text[k2])}`);
+        const alt =
+          `Right triangle ${A}${Cn}${B} with the right angle at ${Cn} and hypotenuse ${A}${B} along the bottom. Segment ${Cn}${D} is drawn from ${Cn} ` +
+          `to ${D} on ${A}${B}, perpendicular to ${A}${B}. ${onFigure.map((k2) => `${seg2(k2)} is labeled ${S.label(text[k2])}`).join(", and ")}. The figure is drawn to scale.`;
+        const askName = { altitude: seg2("CD"), leg: seg2("AC"), part: seg2("DB"), hypotenuse: seg2("AB") }[ask];
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 120,
+          stimulus: null,
+          figure: { svg: S.svg(400, 260, parts, alt), alt, notToScale: false },
+          stem:
+            `In the figure shown, triangle ${A}${Cn}${B} has a right angle at ${Cn}, and ${Cn}${D} is perpendicular to ${A}${B}. ` +
+            `If ${givenText.join(" and ")}, what is the length of ${askName}?`,
+          correct: key,
+          wrong,
+          hint: `Which triangles in the figure have the same angles as triangle ${A}${Cn}${B}?`,
+          explanation,
+          steps,
+          principles: [
+            "The altitude to the hypotenuse of a right triangle forms two triangles similar to the original triangle and to each other.",
+            "Corresponding sides of similar triangles are proportional; pair sides that are opposite equal angles.",
+          ],
+          trap: `With only the Pythagorean theorem there are two unknowns; averaging the parts, or treating ${seg2("AD")} and ${seg2("AB")} as sides of one right triangle, gives an offered wrong answer.`,
+          verify: () => {
+            // Measure the constructed triangle: right angle at C, CD ⊥ AB.
+            const right = close(angleAt(model.C, model.A, model.B), 90) && close(angleAt(model.D, model.B, model.C), 90);
+            const measured = { altitude: dist(model.C, model.D), leg: dist(model.A, model.C), part: dist(model.D, model.B), hypotenuse: dist(model.A, model.B) }[ask];
+            return right && close(measured, keyValue) && close(C.surdValue(S.label(key)), keyValue);
+          },
+        };
+      });
+    },
+  };
+
+  /* ==================================== nonparallel-similarity (Hard) */
+
+  const ANTI_NAMES = [["A", "B", "C", "D", "E"], ["P", "Q", "R", "S", "T"], ["J", "K", "L", "M", "N"], ["F", "G", "H", "J", "K"]];
+
+  const antiparallel = {
+    id: "nonparallel-similarity",
+    domain: GEO,
+    skill: "Lines, angles, and triangles",
+    subskill: "similarity",
+    difficulty: "Hard",
+    title: "Similar triangles matched by angles, not by position",
+    recognize:
+      "Two marked equal angles make the small triangle similar to the large one, but the segment is not parallel to the " +
+      "third side: match vertices by the equal angles, so the side next to the shared angle in one triangle pairs with " +
+      "the side across from it in the other. The side-splitter proportion for parallel lines does not apply.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    tricks: ["neighbouring-rule", "part-vs-whole", "wrong-quantity"],
+    build(t) {
+      const ask = t.pick(["DB", "EC", "DE"]);
+      const numeric = t.chance(0.3);
+      return retry(() => {
+        const [A, B, Cn, D, E] = t.pick(ANTI_NAMES);
+        const b = t.int(6, 20); // AB
+        const c = t.int(6, 20); // AC
+        if (Math.abs(b - c) < 3) return null;
+        const [r, q] = t.pick([[1, 2], [1, 3], [2, 3], [1, 4], [3, 4], [2, 5], [3, 5], [4, 5]]);
+        const k = r / q;
+        // Triangle AED ~ triangle ABC with E ↔ B and D ↔ C: AE = k·AB, AD = k·AC.
+        const AE = k * b;
+        const AD = k * c;
+        if (!Number.isInteger(AE) || !Number.isInteger(AD) || AD >= b - 1 || AE >= c - 1) return null;
+        // Build the triangle from three whole-number sides, so a stated BC
+        // matches the drawing.
+        const BC = t.int(Math.abs(b - c) + 2, b + c - 2);
+        const alpha = Math.acos((b * b + c * c - BC * BC) / (2 * b * c)) * 180 / Math.PI;
+        if (alpha < 40 || alpha > 85) return null;
+        const half = toRad(alpha / 2);
+        const model = { A: [0, 0], B: [-b * Math.sin(half), -b * Math.cos(half)], C: [c * Math.sin(half), -c * Math.cos(half)] };
+        model.D = lerp(model.A, model.B, AD / b);
+        model.E = lerp(model.A, model.C, AE / c);
+        const angB = angleAt(model.B, model.A, model.C);
+        const angC = angleAt(model.C, model.A, model.B);
+        if (Math.min(angB, angC) < 32) return null;
+        let key;
+        let given;
+        let list;
+        let explanation;
+        let steps;
+        const parallelNote = `that proportion needs ${D}${E} parallel to ${B}${Cn}, and it is not`;
+        if (ask === "DB") {
+          // Given AD, AE, AC; AB = AE·AC/AD.
+          key = b - AD;
+          const wrongAB = (AD * c) / AE;
+          given = [`${A}${D} = ${AD}`, `${A}${E} = ${AE}`, `${A}${Cn} = ${c}`];
+          list = [
+            [wrongAB - AD, `Uses the parallel-line proportion ${A}${D}/${A}${B} = ${A}${E}/${A}${Cn}; ${parallelNote}.`],
+            [b, `Finds ${A}${B} = ${b} and stops; ${D}${B} is the part of ${A}${B} beyond ${D}.`],
+            [c - AD, `Subtracts ${A}${D} from ${A}${Cn} instead of from ${A}${B}.`],
+            [wrongAB, `Uses the parallel-line proportion and gives ${A}${B} instead of ${D}${B}.`],
+            [c - AE, `Gives ${E}${Cn}, the part of ${A}${Cn} beyond ${E}.`],
+          ];
+          explanation =
+            `Angle ${A} is shared and angle ${A}${E}${D} = angle ${A}${B}${Cn}, so triangle ${A}${E}${D} is similar to triangle ${A}${B}${Cn} with ${E} ↔ ${B} and ${D} ↔ ${Cn}. ` +
+            `Then ${A}${E}/${A}${B} = ${A}${D}/${A}${Cn}: ${AE}/${A}${B} = ${AD}/${c}, so ${A}${B} = ${AE} × ${c} ÷ ${AD} = ${b} and ${D}${B} = ${b} − ${AD} = ${key}.`;
+          steps = [
+            `Match by angles: ${A} ↔ ${A}, ${E} ↔ ${B}, ${D} ↔ ${Cn}, so triangle ${A}${E}${D} ~ triangle ${A}${B}${Cn}.`,
+            `${A}${E}/${A}${B} = ${A}${D}/${A}${Cn}, so ${A}${B} = ${AE} × ${c} ÷ ${AD} = ${b}.`,
+            `${D}${B} = ${A}${B} − ${A}${D} = ${b} − ${AD} = ${key}.`,
+          ];
+        } else if (ask === "EC") {
+          // Given AD, AE, AB; AC = AD·AB/AE.
+          key = c - AE;
+          const wrongAC = (AE * b) / AD;
+          given = [`${A}${D} = ${AD}`, `${A}${E} = ${AE}`, `${A}${B} = ${b}`];
+          list = [
+            [wrongAC - AE, `Uses the parallel-line proportion ${A}${D}/${A}${B} = ${A}${E}/${A}${Cn}; ${parallelNote}.`],
+            [c, `Finds ${A}${Cn} = ${c} and stops; ${E}${Cn} is the part of ${A}${Cn} beyond ${E}.`],
+            [b - AE, `Subtracts ${A}${E} from ${A}${B} instead of from ${A}${Cn}.`],
+            [wrongAC, `Uses the parallel-line proportion and gives ${A}${Cn} instead of ${E}${Cn}.`],
+            [b - AD, `Gives ${D}${B}, the part of ${A}${B} beyond ${D}.`],
+          ];
+          explanation =
+            `Angle ${A} is shared and angle ${A}${E}${D} = angle ${A}${B}${Cn}, so triangle ${A}${E}${D} is similar to triangle ${A}${B}${Cn} with ${E} ↔ ${B} and ${D} ↔ ${Cn}. ` +
+            `Then ${A}${D}/${A}${Cn} = ${A}${E}/${A}${B}: ${AD}/${A}${Cn} = ${AE}/${b}, so ${A}${Cn} = ${AD} × ${b} ÷ ${AE} = ${c} and ${E}${Cn} = ${c} − ${AE} = ${key}.`;
+          steps = [
+            `Match by angles: ${A} ↔ ${A}, ${E} ↔ ${B}, ${D} ↔ ${Cn}, so triangle ${A}${E}${D} ~ triangle ${A}${B}${Cn}.`,
+            `${A}${D}/${A}${Cn} = ${A}${E}/${A}${B}, so ${A}${Cn} = ${AD} × ${b} ÷ ${AE} = ${c}.`,
+            `${E}${Cn} = ${A}${Cn} − ${A}${E} = ${c} − ${AE} = ${key}.`,
+          ];
+        } else {
+          // Given AD, AE, AB, BC; DE = BC·AE/AB.
+          const BCtext = BC;
+          key = (BC * AE) / b;
+          given = [`${A}${D} = ${AD}`, `${A}${E} = ${AE}`, `${A}${B} = ${b}`, `${B}${Cn} = ${BCtext}`];
+          list = [
+            [(BC * AD) / b, `Pairs ${D}${E} with ${B}${Cn} through ${A}${D}/${A}${B}, as if ${D}${E} were parallel to ${B}${Cn}.`],
+            [(BC * b) / AE, `Uses the scale factor upside down.`],
+            [BC - (b - AE), `Subtracts the difference ${A}${B} − ${A}${E} from ${B}${Cn}, as if the triangles differed by a fixed amount.`],
+            [(BC * AE * AE) / (b * b), "Squares the scale factor, as for areas."],
+          ];
+          explanation =
+            `Triangle ${A}${E}${D} is similar to triangle ${A}${B}${Cn} with ${E} ↔ ${B} and ${D} ↔ ${Cn}, so ${E}${D} corresponds to ${B}${Cn} and the scale factor is ` +
+            `${A}${E}/${A}${B} = ${AE}/${b}. So ${D}${E} = ${BCtext} × ${AE}/${b} = ${num(round4(key))}.`;
+          steps = [
+            `Match by angles: ${E} ↔ ${B}, ${D} ↔ ${Cn}, so triangle ${A}${E}${D} ~ triangle ${A}${B}${Cn}.`,
+            `Scale factor: ${A}${E}/${A}${B} = ${AE}/${b} (not ${A}${D}/${A}${B}).`,
+            `${D}${E} = ${BCtext} × ${AE}/${b} = ${num(round4(key))}.`,
+          ];
+        }
+        if (!isClean(key, 2) || key <= 0) return null;
+        key = round4(key);
+        const printed = list.map(([value, reason]) => [Number.isFinite(value) && value > 0 && isClean(value, 2) ? round4(value) : null, reason]);
+        // The parallel-line answer is the trap this item exists for: always offered.
+        if (printed[0][0] === null) return null;
+        const wrong = wrongFor(t, numeric, key, printed, { keep: 1, positive: true });
+        if (!wrong) return null;
+        if (numeric && !C.fitsGrid(key)) return null;
+        // Figure to scale; the equal angles are marked with a single arc each.
+        const pts = [model.A, model.B, model.C, model.D, model.E];
+        const map = fitPoints(pts, 400, 270, 44);
+        const [As, Bs, Cs, Ds, Es] = pts.map(map);
+        const G = centroid([As, Bs, Cs]);
+        const parts = [
+          P.polygon([As, Bs, Cs]),
+          segHard(Ds, Es),
+          angleArc(Es, As, Ds, 16),
+          angleArc(Bs, As, Cs, 16),
+          nameAway(As, G, A), nameAway(Bs, G, B), nameAway(Cs, G, Cn),
+          name(add(Ds, mul(normalAway(As, Bs, G), 15)), D),
+          name(add(Es, mul(normalAway(As, Cs, G), 15)), E),
+        ];
+        if (labelsClash(parts, 400, 270)) return null;
+        const alt =
+          `Triangle ${A}${B}${Cn} with ${A} at the top. Point ${D} is on side ${A}${B} and point ${E} is on side ${A}${Cn}, and segment ${D}${E} is drawn; ` +
+          `${D}${E} is not parallel to ${B}${Cn}. Angle ${A}${E}${D} and angle ${A}${B}${Cn} are each marked with one arc, showing they are equal. The figure is drawn to scale.`;
+        const askName = { DB: `${D}${B}`, EC: `${E}${Cn}`, DE: `${D}${E}` }[ask];
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 125,
+          stimulus: null,
+          figure: { svg: S.svg(400, 270, parts, alt), alt, notToScale: false },
+          stem:
+            `In the figure shown, ${D} lies on ${A}${B}, ${E} lies on ${A}${Cn}, and angle ${A}${E}${D} has the same measure as angle ${A}${B}${Cn}. ` +
+            `If ${given.slice(0, -1).join(", ")}, and ${given[given.length - 1]}, what is the length of ${askName}?`,
+          correct: key,
+          wrong,
+          hint: `Which angle of triangle ${A}${E}${D} matches angle ${Cn}?`,
+          explanation,
+          steps,
+          principles: [
+            "Two triangles with two pairs of equal angles are similar; corresponding sides lie opposite equal angles.",
+            "The side-splitter proportion (a segment parallel to a side divides the other two sides proportionally) needs parallel lines.",
+          ],
+          trap: `The figure looks like a parallel cut, but ${D}${E} is not parallel to ${B}${Cn}: ${A}${D} pairs with ${A}${Cn} and ${A}${E} with ${A}${B}.`,
+          verify: () => {
+            const equal = close(angleAt(model.E, model.A, model.D), angleAt(model.B, model.A, model.C), 1e-9);
+            const measured = { DB: dist(model.D, model.B), EC: dist(model.E, model.C), DE: dist(model.D, model.E) }[ask];
+            return equal && close(measured, key, 1e-6) && close(dist(model.A, model.D), AD) && close(dist(model.A, model.E), AE);
+          },
+        };
+      });
+    },
+  };
+
+  /* ====================================== regular-polygon-angles (Hard) */
+
+  const POLYGON_WORDS = {
+    3: "equilateral triangle", 4: "square", 5: "regular pentagon", 6: "regular hexagon", 8: "regular octagon",
+    9: "regular nonagon", 10: "regular decagon", 12: "regular 12-sided polygon", 15: "regular 15-sided polygon",
+    18: "regular 18-sided polygon", 20: "regular 20-sided polygon", 24: "regular 24-sided polygon",
+  };
+
+  const interiorAngle = (n) => 180 - 360 / n;
+
+  // Draws two regular polygons that share side PQ, on opposite sides of it,
+  // and marks the angle at P between their other sides at P.
+  function sharedSideFigure(n1, n2, label, names) {
+    const [Pn, Qn] = names;
+    const polygonFrom = (n, sign) => {
+      const pts = [[0, 0], [1, 0]];
+      let heading = 0;
+      for (let index = 2; index < n; index += 1) {
+        heading += sign * (360 / n);
+        const last = pts[pts.length - 1];
+        pts.push([last[0] + Math.cos(toRad(heading)), last[1] + Math.sin(toRad(heading))]);
+      }
+      return pts;
+    };
+    const upper = polygonFrom(n1, 1);
+    const lower = polygonFrom(n2, -1);
+    const all = upper.concat(lower);
+    const map = fitPoints(all, 400, 280, 40);
+    const U = upper.map(map);
+    const L = lower.map(map);
+    // At P = (0, 0): the other side of the upper polygon runs to its last vertex, of the lower to its last vertex.
+    const Ps = U[0];
+    const Qs = U[1];
+    const up = U[U.length - 1];
+    const down = L[L.length - 1];
+    const parts = [
+      P.polygon(U),
+      P.polygon(L),
+      angleArc(Ps, up, down, 18),
+      angleLabel(Ps, up, down, label, 34),
+      name(add(Ps, [8, 14]), Pn),
+      name(add(Qs, [8, 14]), Qn),
+    ];
+    return { parts, ok: !labelsClash(parts, 400, 280) };
+  }
+
+  const polygonAngles = {
+    id: "regular-polygon-angles",
+    domain: GEO,
+    skill: "Lines, angles, and triangles",
+    subskill: "angle relationships",
+    difficulty: "Hard",
+    title: "Angles of regular polygons",
+    recognize:
+      "Work with exterior angles: in any polygon they add to 360°, each interior angle and its exterior angle add to 180°, " +
+      "and a regular polygon with n sides has exterior angles of 360°/n. Turn every condition into a statement about the " +
+      "exterior angle, then n = 360 ÷ (exterior angle).",
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity"],
+    build(t) {
+      const form = t.pick(["ratio", "ratio", "difference", "double", "shared"]);
+      const numeric = t.chance(0.35);
+      const common = {
+        principles: [
+          "The exterior angles of any convex polygon add to 360°; a regular polygon with n sides has exterior angles of 360°/n.",
+          "At each vertex, the interior angle and the exterior angle add to 180°.",
+        ],
+        hint: "What is true of the exterior angles of every polygon?",
+        estimatedSeconds: 115,
+        stimulus: null,
+      };
+      return retry(() => {
+        if (form === "ratio") {
+          // Interior : exterior = a : b, so the exterior angle is 180b/(a + b).
+          // Whole-number sides need b = 1 (n = 2a + 2) or b = 2 with a odd (n = a + 2).
+          const [a, b] = t.chance(0.6) ? [t.int(2, 17), 1] : [2 * t.int(1, 15) + 1, 2];
+          const e = (180 * b) / (a + b);
+          const n = 360 / e;
+          if (!Number.isInteger(n) || !isClean(e, 2)) return null;
+          const k = a / b;
+          const asTimes = b === 1 && t.chance(0.6);
+          const wrong = wrongFor(t, numeric, n, [
+            [n / 2, "Divides 180° by the exterior angle instead of 360°; the exterior angles, one at each vertex, add to 360°."],
+            [b === 1 ? 2 * a : Number.isInteger(360 / ((180 * b) / a)) ? 360 / ((180 * b) / a) : null, `Takes the exterior angle to be ${b === 1 ? `180°/${a}` : `${b}/${a} of 180°`}, leaving the exterior angle out of the 180°.`],
+            [round4(e), "Gives the measure of each exterior angle instead of the number of sides."],
+            [round4(180 - e), "Gives the measure of each interior angle instead of the number of sides."],
+            [a + b, `Adds the parts of the ratio, ${a} + ${b}, and stops.`],
+            [a + 2, `Adds 2 to ${a}, borrowing the n − 2 from the interior-angle sum.`],
+          ], { whole: true, positive: true });
+          if (!wrong) return null;
+          const relation = asTimes
+            ? t.pick([
+              `Each interior angle of a regular polygon is ${a} times as large as each of its exterior angles.`,
+              `The measure of each interior angle of a regular polygon is ${a} times the measure of each exterior angle.`,
+              `In a regular polygon, each exterior angle measures 1/${a} of each interior angle.`,
+            ])
+            : t.pick([
+              `In a regular polygon, the ratio of the measure of each interior angle to the measure of each exterior angle is ${a} to ${b}.`,
+              `The measures of each interior angle and each exterior angle of a regular polygon are in the ratio ${a} : ${b}.`,
+            ]);
+          return {
+            ...common,
+            responseType: numeric ? "numeric" : "multiple-choice",
+            figure: null,
+            stem: `${relation} How many sides does the polygon have?`,
+            correct: n,
+            wrong,
+            explanation:
+              `Write the exterior angle as ${b}u and the interior angle as ${a}u. They add to 180°, so ${a + b}u = 180 and the exterior angle is ${num(round4(e))}°. ` +
+              `The exterior angles add to 360°, so the polygon has 360 ÷ ${num(round4(e))} = ${n} sides.`,
+            steps: [
+              `Interior + exterior = 180°: ${a}u + ${b}u = 180, so u = ${num(round4(180 / (a + b)))}.`,
+              b === 1 ? `Exterior angle: u = ${num(round4(e))}°.` : `Exterior angle: ${b} × ${num(round4(180 / (a + b)))} = ${num(round4(e))}°.`,
+              `n = 360 ÷ ${num(round4(e))} = ${n}.`,
+            ],
+            trap: `${num(round4(e))}° is the exterior angle, a step on the way; and 180 ÷ e counts only half of the turn around the polygon.`,
+            verify: () => {
+              let sides = 3;
+              while (sides < 400 && !close(interiorAngle(sides), k * (360 / sides))) sides += 1;
+              return sides === n;
+            },
+          };
+        }
+        if (form === "double") {
+          // Polygon A has twice as many sides as polygon B, and each interior
+          // angle of A is d° larger: B's exterior angle is 2d.
+          const d = t.pick([10, 12, 15, 18, 20, 30, 36, 45, 60]);
+          const nB = 180 / d;
+          const nA = 2 * nB;
+          const askA = t.chance(0.5);
+          const key = askA ? nA : nB;
+          const [A1, B1] = t.pick([["A", "B"], ["P", "Q"], ["M", "N"], ["X", "Y"]]);
+          const wrong = wrongFor(t, numeric, key, [
+            [askA ? nB : nA, askA ? `Gives the number of sides of polygon ${B1} instead of polygon ${A1}.` : `Gives the number of sides of polygon ${A1} instead of polygon ${B1}.`],
+            [Number.isInteger(360 / d) ? (askA ? 2 * (360 / d) : 360 / d) : null, `Takes ${d}° to be an exterior angle of polygon ${B1} instead of half of it.`],
+            [askA ? 180 - 360 / nA : 180 - 360 / nB, `Gives the interior angle of polygon ${askA ? A1 : B1} instead of its number of sides.`],
+            [askA ? 360 / nA : 360 / nB, `Gives the exterior angle of polygon ${askA ? A1 : B1} instead of its number of sides.`],
+            [Number.isInteger(90 / d) && 90 / d > 2 ? (askA ? 2 * (90 / d) : 90 / d) : null, `Sets the exterior angle of polygon ${B1} equal to ${d}°/2 instead of 2 × ${d}°.`],
+          ], { whole: true, positive: true });
+          if (!wrong) return null;
+          return {
+            ...common,
+            responseType: numeric ? "numeric" : "multiple-choice",
+            figure: null,
+            stem: t.pick([
+              `Regular polygon ${A1} has twice as many sides as regular polygon ${B1}. Each interior angle of polygon ${A1} is ${d}° greater than each interior angle of polygon ${B1}. `,
+              `The number of sides of regular polygon ${A1} is 2 times the number of sides of regular polygon ${B1}, and each interior angle of ${A1} measures ${d}° more than each interior angle of ${B1}. `,
+            ]) + `How many sides does polygon ${askA ? A1 : B1} have?`,
+            correct: key,
+            wrong,
+            explanation:
+              `Doubling the number of sides halves the exterior angle. If ${B1}'s exterior angle is e, ${A1}'s is e/2, and ${A1}'s interior angle is larger by e − e/2 = e/2. ` +
+              `So e/2 = ${d}, e = ${2 * d}°, and ${B1} has 360 ÷ ${2 * d} = ${nB} sides; ${A1} has ${nA}.`,
+            steps: [
+              `Exterior angles: ${B1} has e, ${A1} has e/2 (twice the sides, same 360° total).`,
+              `A larger interior angle by ${d}° means a smaller exterior angle by ${d}°: e − e/2 = ${d}, so e = ${2 * d}°.`,
+              `${B1}: 360 ÷ ${2 * d} = ${nB} sides; ${A1}: ${nA} sides.`,
+            ],
+            trap: `${d}° is the difference of the exterior angles, which is half of ${B1}'s exterior angle, not ${B1}'s exterior angle itself.`,
+            verify: () => nA === 2 * nB && close(interiorAngle(nA) - interiorAngle(nB), d),
+          };
+        }
+        if (form === "difference") {
+          const m = t.pick([3, 4, 5, 6, 8, 9, 10, 12]);
+          const n = t.pick([4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24].filter((value) => value > m));
+          if (!n) return null;
+          const d = interiorAngle(n) - interiorAngle(m);
+          if (!Number.isInteger(d) || d <= 0) return null;
+          const label = t.pick(["Q", "P", "R", "T", "X"]);
+          const wrongExt = 360 / (360 / m + d);
+          const wrong = wrongFor(t, numeric, n, [
+            [Number.isInteger(wrongExt) && wrongExt > 2 ? wrongExt : null, `Adds ${d}° to the exterior angle instead of subtracting it; a larger interior angle means a smaller exterior angle.`],
+            [interiorAngle(n), "Gives the measure of each interior angle of the polygon instead of its number of sides."],
+            [360 / n === Math.round(360 / n) ? 360 / n : null, "Gives the exterior angle of the polygon instead of its number of sides."],
+            [m + 1, `Assumes a polygon with one more side than the ${POLYGON_WORDS[m].replace("regular ", "")}.`],
+            [Number.isInteger(360 / d) ? 360 / d : null, `Divides 360° by the difference, ${d}°, as if it were an exterior angle.`],
+          ], { whole: true, positive: true });
+          if (!wrong) return null;
+          return {
+            ...common,
+            responseType: numeric ? "numeric" : "multiple-choice",
+            figure: null,
+            stem: t.pick([
+              `Each interior angle of regular polygon ${label} is ${d}° greater than each interior angle of ${S.article(POLYGON_WORDS[m])} ${POLYGON_WORDS[m]}. How many sides does polygon ${label} have?`,
+              `The measure of each interior angle of regular polygon ${label} is ${d}° more than the measure of each interior angle of ${S.article(POLYGON_WORDS[m])} ${POLYGON_WORDS[m]}. How many sides does polygon ${label} have?`,
+              `${S.article(POLYGON_WORDS[m]) === "an" ? "An" : "A"} ${POLYGON_WORDS[m]} and regular polygon ${label} are drawn. Each interior angle of polygon ${label} is ${d}° larger than each interior angle of the ${POLYGON_WORDS[m].replace("regular ", "")}. How many sides does polygon ${label} have?`,
+            ]),
+            correct: n,
+            wrong,
+            explanation:
+              `Each exterior angle of the ${POLYGON_WORDS[m]} is 360° ÷ ${m} = ${num(360 / m)}°. Interior angles that are ${d}° greater have exterior angles ` +
+              `that are ${d}° smaller: ${num(360 / m)} − ${d} = ${num(360 / n)}°. So Q has 360 ÷ ${num(360 / n)} = ${n} sides.`,
+            steps: [
+              `Exterior angle of the ${POLYGON_WORDS[m]}: 360 ÷ ${m} = ${num(360 / m)}°.`,
+              `Q's exterior angle is ${d}° smaller: ${num(360 / m)} − ${d} = ${num(360 / n)}°.`,
+              `Sides of Q: 360 ÷ ${num(360 / n)} = ${n}.`,
+            ],
+            trap: "A larger interior angle goes with a smaller exterior angle; adding the difference to the exterior angle moves the wrong way.",
+            verify: () => close(interiorAngle(n) - interiorAngle(m), d) && Number.isInteger(n),
+          };
+        }
+        // shared: a square (or other known polygon) and an unknown regular
+        // polygon share a side; the angle between their other sides is given.
+        const known = t.pick([3, 4, 5, 6, 8]);
+        const n = t.pick([3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20].filter((value) => value !== known));
+        const x = 360 - interiorAngle(known) - interiorAngle(n);
+        if (!Number.isInteger(x) || x <= 0 || x >= 180) return null;
+        const names = t.pick([["P", "Q"], ["A", "B"], ["M", "N"], ["J", "K"], ["R", "S"], ["E", "F"]]);
+        const drawn = sharedSideFigure(known, n, `${x}°`, names);
+        if (!drawn.ok) return null;
+        const intN = interiorAngle(n);
+        const alt =
+          `${S.article(POLYGON_WORDS[known]) === "an" ? "An" : "A"} ${POLYGON_WORDS[known]} above segment ${names[0]}${names[1]} and a regular polygon below it share side ${names[0]}${names[1]}. ` +
+          `At ${names[0]}, the angle between the other side of the ${POLYGON_WORDS[known].replace("regular ", "")} and the other side of the lower polygon, outside both polygons, is labeled ${x}°. ` +
+          "The figure is drawn to scale.";
+        const wrong = wrongFor(t, numeric, n, [
+          [Number.isInteger(360 / (180 - x)) && 360 / (180 - x) > 2 ? 360 / (180 - x) : null, `Treats ${x}° as the interior angle of the lower polygon; it is the angle left over after both interior angles at ${names[0]}.`],
+          [intN, "Gives the interior angle of the lower polygon instead of its number of sides."],
+          [360 / n, "Gives the exterior angle of the lower polygon instead of its number of sides."],
+          [Number.isInteger(360 / x) && 360 / x > 2 ? 360 / x : null, `Treats ${x}° as an exterior angle of the lower polygon.`],
+        ], { whole: true, positive: true });
+        if (!wrong) return null;
+        return {
+          ...common,
+          responseType: numeric ? "numeric" : "multiple-choice",
+          figure: { svg: S.svg(400, 280, drawn.parts, alt), alt, notToScale: false },
+          stem:
+            `In the figure shown, ${S.article(POLYGON_WORDS[known])} ${POLYGON_WORDS[known]} and a regular polygon share side ${names[0]}${names[1]}. The angle marked at ${names[0]} measures ${x}°. ` +
+            "How many sides does the regular polygon below the shared side have?",
+          correct: n,
+          wrong,
+          explanation:
+            `The angles around ${names[0]} add to 360°: ${num(interiorAngle(known))}° from the ${POLYGON_WORDS[known].replace("regular ", "")}, ${x}° marked, and the lower polygon's interior angle. ` +
+            `So that interior angle is 360 − ${num(interiorAngle(known))} − ${x} = ${num(intN)}°, its exterior angle is 180 − ${num(intN)} = ${num(360 / n)}°, and the polygon has 360 ÷ ${num(360 / n)} = ${n} sides.`,
+          steps: [
+            `Around ${names[0]}: ${num(interiorAngle(known))} + ${x} + (interior angle) = 360, so the interior angle is ${num(intN)}°.`,
+            `Exterior angle: 180 − ${num(intN)} = ${num(360 / n)}°.`,
+            `n = 360 ÷ ${num(360 / n)} = ${n}.`,
+          ],
+          trap: `${x}° is not an angle of either polygon; it is what remains of the full turn at ${names[0]}.`,
+          verify: () => close(360 - interiorAngle(known) - interiorAngle(n), x) && close(360 / (180 - intN), n),
+        };
+      });
+    },
+  };
+
+  return [anglePair, sideBounds, crossingSimilar, sharedHeight, similarTriangles, angleChase, altitudeHypotenuse, antiparallel, polygonAngles];
 });

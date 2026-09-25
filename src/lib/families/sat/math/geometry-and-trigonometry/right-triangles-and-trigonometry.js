@@ -12,10 +12,10 @@
 
   const { MINUS, num, frac } = S;
   const {
-    P, GEO, tidy, isClean, fitsGrid, fmt, shown, retry, pack, fractionValue, radical, surd, surdValue,
-    piFraction, add, sub, mul, unit, lerp, mid, dist, toRad, toDeg, centroid, close, angleAt, shoelace,
-    fitPoints, seg, measure, unitText, name, nameAway, anchorFor, normalAway, sideLabel, angleArc, angleLabel,
-    rightMark, DOMAIN, distinctWrong,
+    P, GEO, tidy, isClean, fitsGrid, fmt, shown, retry, fractionValue, radical, surd, surdValue, piFraction,
+    add, sub, mul, unit, lerp, mid, dist, toRad, centroid, close, angleAt, shoelace, fitPoints, seg, measure,
+    unitText, name, nameAway, anchorFor, normalAway, sideLabel, angleArc, angleLabel, rightMark, DOMAIN,
+    packSpread, wrongFor,
   } = C;
 
   // Congruence tick marks across segment pq.
@@ -45,7 +45,7 @@
 
   /* ====================================== pythagorean-two-step (Medium) */
 
-  const PYTH_TRIPLES = [[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [20, 21, 29], [9, 40, 41]];
+  const PYTH_TRIPLES = [[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [20, 21, 29], [9, 40, 41], [12, 35, 37]];
 
   /* ===================================== trig ratios, similarity, cofunction */
 
@@ -122,16 +122,19 @@
         const keyText = frac(top, bottom);
         const value = top / bottom;
         const numeric = wantNumeric && fitsGrid(value) && isClean(value, 3);
-        const wrongFor = {
+        // Every item offers the same four ratios, opposite or adjacent over
+        // hypotenuse or over the other leg (sin, cos, tan, and the tangent of the
+        // other angle), so no choice stands out by sharing more sides with the rest.
+        const choicesFor = {
           sin: [
             [frac(adj, hyp), `Uses the leg adjacent to angle ${angle}; that ratio is cos ${angle}.`],
             [frac(opp, adj), `Divides by the adjacent leg instead of the hypotenuse; that ratio is tan ${angle}.`],
-            [frac(hyp, opp), "Inverts the ratio, hypotenuse over opposite."],
+            [frac(adj, opp), `Divides the adjacent leg by the opposite leg; that ratio is the tangent of the other acute angle.`],
           ],
           cos: [
             [frac(opp, hyp), `Uses the leg opposite angle ${angle}; that ratio is sin ${angle}.`],
             [frac(adj, opp), "Divides the adjacent leg by the opposite leg instead of by the hypotenuse."],
-            [frac(hyp, adj), "Inverts the ratio, hypotenuse over adjacent."],
+            [frac(opp, adj), `Divides the two legs; that ratio is tan ${angle}, not cos ${angle}.`],
           ],
           tan: [
             [frac(adj, opp), `Inverts the ratio: adjacent over opposite is the tangent of the other acute angle.`],
@@ -174,17 +177,19 @@
         const oppName = atU ? `${Rn}${Vn}` : `${Rn}${Un}`;
         const adjName = atU ? `${Rn}${Un}` : `${Rn}${Vn}`;
         const ratioWords = { sin: "opposite/hypotenuse", cos: "adjacent/hypotenuse", tan: "opposite/adjacent" }[fn];
-        return pack(numeric, tidy(value), keyText, wrongFor, {
+        // "8/17", or "6/10 = 3/5" when the ratio reduces.
+        const ratioValue = `${top}/${bottom}` === keyText ? keyText : `${top}/${bottom} = ${keyText}`;
+        return packSpread(t, numeric, tidy(value), keyText, choicesFor, {
           stimulus: null,
           figure,
           stem,
           explanation:
             `From angle ${angle}, the opposite leg is ${oppName} = ${opp}, the adjacent leg is ${adjName} = ${adj}, and the hypotenuse is ${Un}${Vn} = ${hyp}. ` +
-            `${fn} ${angle} = ${ratioWords} = ${top}/${bottom} = ${keyText}.`,
+            `${fn} ${angle} = ${ratioWords} = ${ratioValue}.`,
           steps: [
             `The hypotenuse is across from the right angle: ${Un}${Vn} = ${hyp}.`,
             `From angle ${angle}: opposite ${oppName} = ${opp}, adjacent ${adjName} = ${adj}.`,
-            `${fn} ${angle} = ${ratioWords} = ${top}/${bottom} = ${keyText}.`,
+            `${fn} ${angle} = ${ratioWords} = ${ratioValue}.`,
           ],
           principles: [
             "In a right triangle, sin = opposite/hypotenuse, cos = adjacent/hypotenuse, and tan = opposite/adjacent, all measured from the named acute angle.",
@@ -216,8 +221,8 @@
     rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 1, trap: 1 },
     tricks: ["intermediate-value", "neighbouring-rule", "part-vs-whole"],
     build(t) {
-      const form = t.pick(["rectangle", "rectangle", "isosceles", "leg"]);
-      const numeric = form !== "leg" && t.chance(0.4);
+      const form = t.pick(["rectangle", "isosceles", "rhombus"]);
+      const numeric = t.chance(0.4);
       const principles = [
         "In a right triangle with legs a and b and hypotenuse c, a² + b² = c².",
         "A diagonal of a rectangle is the hypotenuse of a right triangle whose legs are the length and the width.",
@@ -226,8 +231,8 @@
         const names = t.pick([["A", "B", "C", "D"], ["P", "Q", "R", "S"], ["J", "K", "L", "M"], ["E", "F", "G", "H"]]);
         const [A, B, C, D] = names;
         if (form === "rectangle") {
-          const [x, y, z] = t.pick(PYTH_TRIPLES.slice(0, 5));
-          const k = z <= 13 ? t.int(1, 3) : 1;
+          const [x, y, z] = t.pick(PYTH_TRIPLES);
+          const k = z <= 13 ? t.int(1, 4) : 1;
           const [L, w] = t.chance(0.5) ? [x * k, y * k] : [y * k, x * k];
           const d = z * k;
           const askArea = t.chance(0.5);
@@ -247,24 +252,27 @@
             measure(add(mid(As, Cs), mul(n, 11)), num(d), anchorFor(n)),
           ];
           const alt = `Rectangle ${A}${B}${C}${D} with ${A}${B} along the bottom labeled ${L} and diagonal ${A}${C} labeled ${d}. The figure is drawn to scale.`;
-          return pack(numeric, key, fmt(key), askArea
+          return packSpread(t, numeric, key, fmt(key), askArea
             ? [
               [shown(L * d, 0), `Uses the diagonal, ${d}, as the width.`],
               [shown(w, 0), `Stops at the width, ${w}.`],
               [shown((L * w) / 2, 1), "Takes half of length × width, the area of one of the triangles."],
               [shown(2 * (L + w), 0), "Gives the perimeter instead of the area."],
+              [shown(d * w, 0), `Multiplies the diagonal by the width, using ${d} in place of the length ${L}.`],
             ]
             : [
               [shown(2 * (L + d), 0), `Uses the diagonal, ${d}, as the width.`],
               [shown(L + w, 0), "Adds one length and one width, which is half the perimeter."],
               [shown(w, 0), `Stops at the width, ${w}.`],
               [shown(L * w, 0), "Gives the area instead of the perimeter."],
+              [shown(L + w + d, 0), `Adds the sides of triangle ${A}${B}${C} instead of the four sides of the rectangle.`],
+              [shown(2 * (L + d + w), 0), "Adds the diagonal to the length and width before doubling."],
             ], {
             stimulus: null,
             figure: { svg: S.svg(400, 250, parts, alt), alt, notToScale: false },
             stem: `In rectangle ${A}${B}${C}${D} shown, ${A}${B} = ${L} and diagonal ${A}${C} = ${d}. What is the ${askArea ? "area" : "perimeter"} of the rectangle?`,
             explanation:
-              `Triangle ${A}${B}${C} has a right angle at ${B}, so ${B}${C}² = ${d}² ${MINUS} ${L}² = ${d * d} ${MINUS} ${L * L} = ${w * w}, and ${B}${C} = ${w}. ` +
+              `Triangle ${A}${B}${C} has a right angle at ${B}, so ${B}${C}² = ${d}² ${MINUS} ${L}² = ${fmt(d * d)} ${MINUS} ${fmt(L * L)} = ${fmt(w * w)}, and ${B}${C} = ${w}. ` +
               (askArea ? `The area is ${L} × ${w} = ${key}.` : `The perimeter is 2(${L} + ${w}) = ${key}.`),
             steps: [
               `The diagonal makes right triangle ${A}${B}${C} with legs ${A}${B} and ${B}${C}.`,
@@ -280,8 +288,8 @@
           });
         }
         if (form === "isosceles") {
-          const [x, y, z] = t.pick(PYTH_TRIPLES.slice(0, 5));
-          const k = z <= 13 ? t.int(1, 3) : 1;
+          const [x, y, z] = t.pick(PYTH_TRIPLES);
+          const k = z <= 13 ? t.int(1, 4) : 1;
           const [half, h] = t.chance(0.5) ? [x * k, y * k] : [y * k, x * k];
           const s = z * k;
           const base = 2 * half;
@@ -298,12 +306,13 @@
           ];
           const alt = `Triangle ${A}${B}${C} with base ${B}${C} labeled ${base}; sides ${A}${B} and ${A}${C} are each labeled ${s} and marked congruent. The figure is drawn to scale.`;
           const fullBase = s > base && Number.isInteger(Math.sqrt(s * s - base * base)) ? (base * Math.sqrt(s * s - base * base)) / 2 : null;
-          return pack(numeric, key, fmt(key), [
+          return packSpread(t, numeric, key, fmt(key), [
             [shown(base * h, 0), "Finds the height correctly but forgets the 1/2 in the area formula."],
             [shown(half * s, 0), `Uses the side length ${s} as the height.`],
             [shown(h, 0), `Stops at the height, ${h}.`],
             [fullBase === null ? null : shown(fullBase, 1), `Uses the whole base, ${base}, instead of half of it, as a leg of the right triangle.`],
             [shown(2 * s + base, 0), "Gives the perimeter instead of the area."],
+            [shown((half * h) / 2, 1), "Multiplies half the base by the height and then takes half again."],
           ], {
             stimulus: null,
             figure: { svg: S.svg(400, 250, parts, alt), alt, notToScale: false },
@@ -326,68 +335,161 @@
             verify: () => close(dist(Am, Bm), s) && close(dist(Am, Cm), s) && close(shoelace([Am, Bm, Cm]), key),
           });
         }
-        const c = t.int(4, 15);
-        const a = t.int(2, c - 1);
-        const x2 = c * c - a * a;
-        const keyText = radical(x2);
-        if (typeof keyText === "number") return null;
-        const sumText = radical(c * c + a * a);
-        const Rm = [0, 0]; const Um = [a, 0]; const Vm = [0, Math.sqrt(x2)];
-        const flip = t.chance(0.5);
-        const pts = [Rm, Um, Vm].map(([px, py]) => [flip ? -px : px, py]);
-        const map = fitPoints(pts, 400, 250, 44);
-        const [Rs, Us, Vs] = pts.map(map);
-        const G = centroid([Rs, Us, Vs]);
+        // Rhombus: the diagonals bisect each other at right angles, so half of
+        // each diagonal and a side make a right triangle.
+        const [x, y, z] = t.pick(PYTH_TRIPLES);
+        const k = z <= 13 ? t.int(1, 3) : 1;
+        const [hx, hy] = t.chance(0.5) ? [x * k, y * k] : [y * k, x * k];
+        const side = z * k;
+        const d1 = 2 * hx;
+        const d2 = 2 * hy;
+        const variant = t.pick(["perimeter", "diagonal", "area"]);
+        const Am = [-hx, 0]; const Bm = [0, hy]; const Cm = [hx, 0]; const Dm = [0, -hy];
+        const map = fitPoints([Am, Bm, Cm, Dm], 400, 250, 40);
+        const [As, Bs, Cs, Ds] = [Am, Bm, Cm, Dm].map(map);
+        const Os = mid(As, Cs);
+        const G = Os;
         const parts = [
-          P.polygon([Rs, Us, Vs]), rightMark(Rs, Us, Vs),
-          nameAway(Rs, G, A), nameAway(Us, G, B), nameAway(Vs, G, C),
-          sideLabel(Rs, Us, G, num(a)), sideLabel(Us, Vs, G, num(c)), sideLabel(Rs, Vs, G, "x"),
+          P.polygon([As, Bs, Cs, Ds]),
+          seg(As, Cs, 1.5), seg(Bs, Ds, 1.5),
+          rightMark(Os, Cs, Bs, 10),
+          nameAway(As, G, A), nameAway(Bs, G, B), nameAway(Cs, G, C), nameAway(Ds, G, D),
         ];
-        const alt = `Right triangle ${A}${B}${C} with the right angle at ${A}. Leg ${A}${B} is labeled ${a}, hypotenuse ${B}${C} is labeled ${c}, and leg ${A}${C} is labeled x. The figure is drawn to scale.`;
-        return pack(false, null, keyText, [
-          [typeof sumText === "number" ? String(sumText) : sumText, `Adds the squares, ${c}² + ${a}², as if x were the hypotenuse.`],
-          [String(c - a), `Subtracts the lengths, ${c} ${MINUS} ${a}, instead of their squares.`],
-          [String(x2), `Stops at x² = ${x2} without taking the square root.`],
-          [`√${c - a}`, `Takes the square root of ${c} ${MINUS} ${a} instead of ${c}² ${MINUS} ${a}².`],
-        ], {
+        const alt = `Rhombus ${A}${B}${C}${D} with its diagonals ${A}${C} and ${B}${D} drawn, crossing at a right angle. The figure is drawn to scale.`;
+        const figure = { svg: S.svg(400, 250, parts, alt), alt, notToScale: false };
+        const rhombusSteps = `The diagonals of a rhombus bisect each other at right angles, so half of ${A}${C} (${hx}), half of ${B}${D} (${hy}), and a side form a right triangle`;
+        const common = {
           stimulus: null,
-          figure: { svg: S.svg(400, 250, parts, alt), alt, notToScale: false },
-          stem: `In the right triangle shown, what is the value of x?`,
-          explanation: `The hypotenuse is ${c}, across from the right angle, so x² + ${a}² = ${c}². Then x² = ${c * c} ${MINUS} ${a * a} = ${x2}, and x = √${x2} = ${keyText}.`,
-          steps: [
-            `The side across from the right angle, ${c}, is the hypotenuse; x is a leg.`,
-            `x² = ${c}² ${MINUS} ${a}² = ${c * c} ${MINUS} ${a * a} = ${x2}.`,
-            `x = √${x2} = ${keyText}.`,
+          figure,
+          principles: [
+            principles[0],
+            "The diagonals of a rhombus are perpendicular and bisect each other; its area is half the product of the diagonals.",
           ],
-          principles,
-          trap: `x is a leg, not the hypotenuse, so the squares are subtracted; adding them gives ${sumText}.`,
-          hint: "Which side is across from the right angle?",
-          estimatedSeconds: 85,
-          verify: () => close(dist(Um, Vm), c) && close(surdValue(keyText), dist(Rm, Vm)),
+          estimatedSeconds: 100,
+          hint: "Where do the diagonals of a rhombus meet, and at what angle?",
+        };
+        if (variant === "perimeter") {
+          const key = 4 * side;
+          return packSpread(t, numeric, key, fmt(key), [
+            [shown(8 * side, 0), `Uses the whole diagonals, ${d1} and ${d2}, as the legs of the right triangle instead of half of each.`],
+            [shown(side, 0), `Stops at the length of one side, ${side}.`],
+            [shown(2 * (d1 + d2), 0), "Takes each side to be the average of the two diagonals."],
+            [shown((d1 * d2) / 2, 0), "Gives the area of the rhombus instead of its perimeter."],
+            [shown(2 * (hx + hy), 0), "Adds the four half-diagonals, which run from the center, not around the rhombus."],
+            [shown(4 * (hx + hy), 0), "Takes each side to be the sum of the half-diagonals instead of the hypotenuse of the right triangle they form."],
+          ], {
+            ...common,
+            stem: `In rhombus ${A}${B}${C}${D} shown, the diagonals have lengths ${A}${C} = ${d1} and ${B}${D} = ${d2}. What is the perimeter of the rhombus?`,
+            explanation: `${rhombusSteps}. Each side is √(${hx}² + ${hy}²) = √${side * side} = ${side}, so the perimeter is 4 × ${side} = ${key}.`,
+            steps: [
+              `${rhombusSteps}: legs ${hx} and ${hy}.`,
+              `Side: √(${hx}² + ${hy}²) = ${side}.`,
+              `Perimeter: 4 × ${side} = ${key}.`,
+            ],
+            trap: `The legs of the right triangle are half-diagonals, ${hx} and ${hy}, not ${d1} and ${d2}; and ${side} is one side, not the perimeter.`,
+            verify: () => close(dist(Am, Bm) + dist(Bm, Cm) + dist(Cm, Dm) + dist(Dm, Am), key) && close(dist(Am, Cm), d1),
+          });
+        }
+        if (variant === "diagonal") {
+          const key = d2;
+          const fullLeg = side * side - d1 * d1 > 0 ? Math.sqrt(side * side - d1 * d1) : null;
+          return packSpread(t, numeric, key, fmt(key), [
+            [shown(hy, 0), `Finds half of ${B}${D}, ${hy}, and stops.`],
+            [fullLeg !== null ? shown(fullLeg, 0) : null, `Uses the whole diagonal ${A}${C} = ${d1}, not half of it, as a leg of the right triangle.`],
+            [shown(2 * Math.sqrt(side * side + hx * hx), 0), "Adds the squares instead of subtracting them, as if the side were a leg."],
+            [shown(d1, 0), "Assumes the two diagonals are equal, as they are in a square."],
+            [shown(side + hx, 0), `Adds the side and half of ${A}${C} instead of using the Pythagorean theorem.`],
+            [shown(2 * (side - hx), 0), `Subtracts the lengths, ${side} − ${hx}, instead of their squares, then doubles.`],
+          ], {
+            ...common,
+            stem: `In rhombus ${A}${B}${C}${D} shown, each side has length ${side} and diagonal ${A}${C} has length ${d1}. What is the length of diagonal ${B}${D}?`,
+            explanation: `${rhombusSteps}. Half of ${B}${D} is √(${side}² − ${hx}²) = √${hy * hy} = ${hy}, so ${B}${D} = 2 × ${hy} = ${key}.`,
+            steps: [
+              `${rhombusSteps}: hypotenuse ${side}, one leg ${hx}.`,
+              `Other leg: √(${side}² − ${hx}²) = ${hy}.`,
+              `${B}${D} = 2 × ${hy} = ${key}.`,
+            ],
+            trap: `${hy} is only half of ${B}${D}, and the right triangle uses half of ${A}${C}, ${hx}, not all of it.`,
+            verify: () => close(dist(Am, Bm), side) && close(dist(Bm, Dm), key),
+          });
+        }
+        const key = (d1 * d2) / 2;
+        return packSpread(t, numeric, key, fmt(key), [
+          [shown(d1 * d2, 0), "Multiplies the diagonals without taking half."],
+          [shown(side * side, 0), "Squares the side, as if the rhombus were a square."],
+          [shown((hx * hy) / 2, 1), "Multiplies the half-diagonals and takes half again; that is the area of one of the four right triangles."],
+          [shown(side * d1, 0), `Multiplies the side by diagonal ${A}${C}, treating the diagonal as a height.`],
+          [shown(side * d1 / 2, 1), `Takes half of the side times diagonal ${A}${C}.`],
+        ], {
+          ...common,
+          stem: `In rhombus ${A}${B}${C}${D} shown, each side has length ${side} and diagonal ${A}${C} has length ${d1}. What is the area of the rhombus?`,
+          explanation: `${rhombusSteps}. Half of ${B}${D} is √(${side}² − ${hx}²) = ${hy}, so ${B}${D} = ${d2}. The area is half the product of the diagonals: (1/2)(${d1})(${d2}) = ${fmt(key)}.`,
+          steps: [
+            `${rhombusSteps}: hypotenuse ${side}, one leg ${hx}; the other leg is ${hy}.`,
+            `${B}${D} = 2 × ${hy} = ${d2}.`,
+            `Area = (1/2)(${d1})(${d2}) = ${fmt(key)}.`,
+          ],
+          trap: "A rhombus is not a square: its area is half the product of its diagonals, not the square of its side.",
+          verify: () => close(shoelace([Am, Bm, Cm, Dm]), key) && close(dist(Am, Bm), side),
         });
       });
     },
   };
 
-  const trigCofunction = {
-    id: "trig-similar-cofunction",
-    domain: DOMAIN,
-    skill: "Right triangles and trigonometry",
-    subskill: "trigonometric ratios",
-    title: "Trig ratios through similarity and cofunctions",
-    recognize:
-      "A trig ratio belongs to an angle, not a triangle: follow the stated correspondence to the matching angle, " +
-      "use the fact that similar triangles share ratios, and remember sin of one acute angle equals cos of the other (they sum to 90°).",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
-    tricks: ["neighbouring-rule", "wrong-quantity", "context-constraint", "part-vs-whole"],
-    build(t) {
-      const form = t.pick(["ratio", "ratio", "ratio", "side", "side", "cofunction", "cofunction", "cofunction"]);
-      // Chosen once, outside the retry loops, so a multiple-choice attempt
-      // that lacks good distractors does not tilt the mix toward numeric.
-      const numeric = form === "cofunction" ? t.chance(0.4) : form === "side" ? t.chance(0.5) : false;
-
-      if (form === "cofunction") {
-        for (;;) {
+  // Degree form: two angle expressions in x with sin of one equal to cos of
+  // the other. Radian form: sin x = cos(mπ/n) with x acute.
+  function cofunctionItem(t, form, numeric) {
+    if (form === "radians") {
+      for (;;) {
+        // The given angle is under π/4, so x = π/2 − (given) is not the
+        // smallest choice by default.
+        const n = t.pick([5, 8, 9, 10, 12, 18]);
+        const m = t.int(1, Math.floor((n - 1) / 4) || 1);
+        if (4 * m >= n) continue;
+        const given = piFraction(m, n);
+        const key = piFraction(n - 2 * m, 2 * n);
+        const presentation = t.int(0, 2);
+        const equation = [`sin x = cos(${given})`, `cos x = sin(${given})`, `sin(${given}) − cos x = 0`][presentation];
+        const wrong = wrongFor(t, false, key, [
+          [given, "Sets x equal to the given angle, as if sine and cosine of one angle were equal."],
+          [piFraction(n - m, n), "Makes the two angles supplementary (sum π) instead of complementary (sum π/2)."],
+          [piFraction(n + 2 * m, 2 * n), presentation === 0
+            ? `Adds the given angle to π/2; sin(${piFraction(n + 2 * m, 2 * n)}) does equal cos(${given}), but that angle is not between 0 and π/2.`
+            : `Adds the given angle to π/2 instead of subtracting it; cos(${piFraction(n + 2 * m, 2 * n)}) is the negative of sin(${given}).`],
+          [piFraction(1, 4), "Assumes sine equals cosine only when the angle is π/4."],
+          [piFraction(2 * (n - m), n), "Subtracts the given angle from 2π, as if reflecting it across the x-axis."],
+        ]);
+        if (!wrong) continue;
+        return {
+          responseType: "multiple-choice",
+          estimatedSeconds: 90,
+          stimulus: { type: "equations", content: equation },
+          figure: null,
+          stem: "In the given equation, x is measured in radians and 0 < x < π/2. What is the value of x?",
+          correct: key,
+          wrong,
+          hint: "In a right triangle, the sine of one acute angle is the cosine of which angle?",
+          explanation:
+            `For acute angles, sin A = cos B exactly when A + B = π/2. So x + ${given} = π/2, and x = π/2 − ${given} = ${key}.`,
+          steps: [
+            "Sine of an acute angle equals cosine of its complement: sin x = cos(π/2 − x).",
+            `x + ${given} = π/2.`,
+            `x = π/2 − ${given} = ${key}.`,
+          ],
+          principles: [
+            "sin θ = cos(π/2 − θ) for every angle θ; in degrees, sin θ = cos(90° − θ).",
+            "For two acute angles, sin A = cos B exactly when A + B = π/2.",
+          ],
+          trap: "Setting x equal to the given angle, or making the angles supplementary, uses the wrong relationship.",
+          verify: () => {
+            const x = ((n - 2 * m) / (2 * n)) * Math.PI;
+            return x > 0 && x < Math.PI / 2 && Math.abs(Math.sin(x) - Math.cos((m / n) * Math.PI)) < 1e-12;
+          },
+        };
+      }
+    }
+    {
+      for (;;) {
           const theta = t.int(12, 78);
           if (theta === 45) continue;
           const x = t.int(3, 20);
@@ -407,9 +509,11 @@
           ][presentation];
           const xEq = (b2 - b1) / (a1 - a2);
           const x180 = (180 - b1 - b2) / (a1 + a2);
-          const askAngle = t.chance(0.35);
+          const askAngle = t.chance(0.6);
           const correct = askAngle ? theta : x;
-          const wrong = distinctWrong(
+          const wrong = wrongFor(
+            t,
+            numeric,
             correct,
             askAngle
               ? [
@@ -424,9 +528,12 @@
                 [x180, "Makes the two angles supplementary (sum 180°); sine equals cosine for complementary angles."],
                 [theta, `Gives the value of ${e1}, the angle, instead of x.`],
                 [90 - theta, `Gives the value of ${e2} instead of x.`],
+                [Number.isInteger((45 - b1) / a1) ? (45 - b1) / a1 : null, `Sets ${e1} equal to 45, as if sine equaled cosine only at 45°.`],
+                [Number.isInteger(90 / (a1 + a2)) ? 90 / (a1 + a2) : null, "Sets the sum of the x-terms equal to 90 and leaves out the constants."],
               ],
-          ).filter(([value]) => typeof value !== "number" || value > 0);
-          if (!numeric && wrong.length < 3) continue;
+            { positive: true, whole: true },
+          );
+          if (!wrong) continue;
           return {
             responseType: numeric ? "numeric" : "multiple-choice",
             estimatedSeconds: 95,
@@ -459,6 +566,43 @@
           };
         }
       }
+  }
+
+  const cofunctionAngles = {
+    id: "cofunction-complementary-angles",
+    domain: DOMAIN,
+    skill: "Right triangles and trigonometry",
+    subskill: "trigonometric ratios",
+    difficulty: "Medium",
+    title: "Sine and cosine of complementary angles",
+    recognize:
+      "For acute angles, sin A = cos B exactly when A + B = 90° (π/2 radians): set the two angles to add to a right angle, " +
+      "never equal to each other and never to 180°.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["neighbouring-rule", "wrong-quantity"],
+    build(t) {
+      const form = t.pick(["degrees", "degrees", "radians"]);
+      const numeric = form === "degrees" && t.chance(0.4);
+      return cofunctionItem(t, form, numeric);
+    },
+  };
+
+  const trigCofunction = {
+    id: "trig-similar-cofunction",
+    domain: DOMAIN,
+    skill: "Right triangles and trigonometry",
+    subskill: "trigonometric ratios",
+    title: "Trig ratios through similar triangles",
+    recognize:
+      "A trig ratio belongs to an angle, not a triangle: follow the stated correspondence to the matching angle, " +
+      "use the fact that similar triangles share ratios, and let one ratio fix the shape (all three sides up to scale).",
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["neighbouring-rule", "wrong-quantity", "context-constraint", "part-vs-whole"],
+    build(t) {
+      const form = t.pick(["ratio", "ratio", "ratio", "side", "side"]);
+      // Chosen once, outside the retry loop, so a multiple-choice attempt
+      // that lacks good distractors does not tilt the mix toward numeric.
+      const numeric = form === "side" ? t.chance(0.5) : false;
 
       for (;;) {
         const [p0, q0, h0] = t.pick(TRIPLES);
@@ -508,18 +652,22 @@
           const asked = image[target];
           const naive = ["A", "B", "C"][letters.indexOf(asked)];
           const correct = ratioText(target, fn);
-          const list = [
-            [ratioText(other, fn), `Matches angle ${asked} with angle ${other}, as alphabetical order suggests; the stated correspondence pairs ${asked} with ${target}.`],
-            [ratioText(target, OTHER_FUNCTION[fn]), fn === "tan"
-              ? `Divides by the hypotenuse instead of the adjacent leg, giving sin ${target}.`
-              : `Uses the ${fn === "sin" ? "adjacent" : "opposite"} side, which gives ${OTHER_FUNCTION[fn]} ${target} instead of ${fn} ${target}.`],
-            [fn === "tan" ? ratioText(other, "sin") : ratioText(target, "tan"), fn === "tan"
-              ? `Matches angle ${asked} with angle ${other}, as alphabetical order suggests, and divides by the hypotenuse (sin ${other}).`
-              : `Divides one leg by the other, giving tan ${target}, instead of using the hypotenuse.`],
-            [useFigure ? null : ratioText(givenVertex, givenFn), `Repeats the given ratio, which describes angle ${givenVertex}, not the angle matched with ${asked}.`],
-          ];
-          const wrong = distinctWrong(correct, list);
-          if (wrong.length < 3) continue;
+          // The four ratios of the legs and hypotenuse seen from angle
+          // `target`: sin, cos, and tan of it, and tan of the other acute
+          // angle. The key is one; the other three are the wrong answers, so
+          // no choice shares more sides with the rest than the key does.
+          const seen = { sin: ratioText(target, "sin"), cos: ratioText(target, "cos"), tan: ratioText(target, "tan"), cot: ratioText(other, "tan") };
+          const reasonFor = (name) => {
+            const asOther = { sin: "cos", cos: "sin", cot: "tan" }[name];
+            if (asOther === fn) {
+              return `Matches angle ${asked} with angle ${other}, as alphabetical order suggests (that is ${fn} ${other}); the stated correspondence pairs ${asked} with ${target}.`;
+            }
+            if (name === "cot") return `Divides the leg next to angle ${target} by the leg across from it, which is tan ${other}, not ${fn} ${target}.`;
+            return `Gives ${name} ${target} instead of ${fn} ${target}: ${{ sin: "opposite over hypotenuse", cos: "adjacent over hypotenuse", tan: "opposite over adjacent" }[name]}.`;
+          };
+          const list = Object.entries(seen).filter(([name]) => name !== fn).map(([name, text]) => [text, reasonFor(name)]);
+          const wrong = wrongFor(t, false, correct, list);
+          if (!wrong) continue;
           return {
             responseType: "multiple-choice",
             estimatedSeconds: 110,
@@ -577,13 +725,14 @@
         if (naive === correct) continue;
         // Given side matched with the wrong side of ABC, asked side matched correctly.
         const misScaled = (givenLength / side[sideOf(thirdPair)]) * side[sideOf(askedPair)];
-        const wrong = distinctWrong(correct, [
+        const wrong = wrongFor(t, numeric, correct, [
           [scale * side[sideOf(thirdPair)], `Matches ${askedPair} with side ${sideOf(thirdPair)} of triangle ABC; under the stated correspondence it matches ${sideOf(askedPair)}.`],
           [Number.isInteger(naive) ? naive : null, `Pairs the vertices of the two triangles in alphabetical order instead of by the stated correspondence.`],
           [side[sideOf(askedPair)], `Gives the length of the corresponding side of triangle ABC without scaling by ${scale}.`],
           [Number.isInteger(misScaled) ? misScaled : null, `Matches ${givenPair} with side ${sideOf(thirdPair)} of triangle ABC, which gives the wrong scale factor.`],
-        ]);
-        if (!numeric && wrong.length < 3) continue;
+          [givenLength, `Gives the given length ${givenPair} instead of ${askedPair}.`],
+        ], { positive: true, whole: true });
+        if (!wrong) continue;
         return {
           responseType: numeric ? "numeric" : "multiple-choice",
           estimatedSeconds: 120,
@@ -637,31 +786,31 @@
   };
 
   // Wrong answers for finding side `asked` from side `given`: the third side,
-  // the other special triangle's ratio, and multiplying where dividing belongs.
+  // then the given side times each wrong factor a student might reach for
+  // (2, √3, √2, and their reciprocals, the other special triangle's ratio).
+  // Values are lengths; the caller prints them and spreads them around the key.
+  const FACTORS = [
+    [2, (side) => `Doubles the ${side}`], [1 / 2, (side) => `Halves the ${side}`],
+    [R3, (side) => `Multiplies the ${side} by √3`], [1 / R3, (side) => `Divides the ${side} by √3`],
+    [R2, (side) => `Multiplies the ${side} by √2`], [1 / R2, (side) => `Divides the ${side} by √2`],
+    [2 / R3, (side) => `Multiplies the ${side} by 2/√3`], [R3 / 2, (side) => `Multiplies the ${side} by √3/2`],
+  ];
+
   function specialWrong(kind, given, asked, sides, names) {
     const g = sides[given];
-    if (kind === "45") {
-      return asked === "hyp"
-        ? [
-          [2 * g, `Doubles the ${names.leg} instead of multiplying it by √2.`],
-          [g * R3, "Multiplies by √3, as in a 30°-60°-90° triangle."],
-          [g, names.leg === "leg" ? "Gives the length of the other leg, which equals the given leg." : "Gives the side length instead of the diagonal."],
-        ]
-        : [
-          [g * R2, `Multiplies the ${names.hyp} by √2 instead of dividing by √2.`],
-          [g / 2, `Halves the ${names.hyp}, as for the shorter leg of a 30°-60°-90° triangle.`],
-          [(g / 2) * R3, "Uses the 30°-60°-90° ratio instead of the 45°-45°-90° ratio."],
-        ];
-    }
-    const other = ["short", "long", "hyp"].find((key) => key !== given && key !== asked);
-    const list = [[sides[other], `Gives the ${names[other]} instead of the ${names[asked]}.`]];
-    const pair = `${given}>${asked}`;
-    if (pair === "short>hyp") list.push([g * R2, `Multiplies the ${names.short} by √2, as in a 45°-45°-90° triangle.`], [g / 2, `Halves the ${names.short} instead of doubling it.`]);
-    if (pair === "short>long") list.push([g * R2, `Multiplies the ${names.short} by √2, as in a 45°-45°-90° triangle.`], [g * 3, "Multiplies by 3 instead of by √3."]);
-    if (pair === "long>short") list.push([g * R3, `Multiplies the ${names.long} by √3 instead of dividing by √3.`], [g / 2, `Halves the ${names.long}, as if it were the ${names.hyp}.`]);
-    if (pair === "long>hyp") list.push([2 * g, `Doubles the ${names.long}, as if it were the ${names.short}.`], [g * R2, "Multiplies by √2, as in a 45°-45°-90° triangle."]);
-    if (pair === "hyp>short") list.push([2 * g, `Doubles the ${names.hyp} instead of halving it.`], [g / R2, "Divides by √2, as in a 45°-45°-90° triangle."]);
-    if (pair === "hyp>long") list.push([g * R3, `Multiplies the ${names.hyp} by √3 without halving it.`], [g / R2, "Divides by √2, as in a 45°-45°-90° triangle."]);
+    const factor = sides[asked] / g;
+    const list = [];
+    const other = kind === "45" ? (given === "leg" ? "leg" : null) : ["short", "long", "hyp"].find((key) => key !== given && key !== asked);
+    if (other && other !== given) list.push([sides[other], `Gives the ${names[other]} instead of the ${names[asked]}.`]);
+    if (kind === "45" && given === "leg" && asked === "hyp") list.push([g, "Gives the length of the other leg, which equals the given leg."]);
+    const rule = kind === "45" ? "In a 45°-45°-90° triangle the sides are in the ratio 1 : 1 : √2" : "In a 30°-60°-90° triangle the sides are in the ratio 1 : √3 : 2";
+    FACTORS.forEach(([f, verb]) => {
+      if (Math.abs(f - factor) < 1e-9) return;
+      const mix = (kind === "45" && (Math.abs(f - R3) < 1e-9 || Math.abs(f - 1 / R3) < 1e-9 || f === 2 || f === 1 / 2))
+        ? "the 30°-60°-90° ratio"
+        : (kind === "30" && (Math.abs(f - R2) < 1e-9 || Math.abs(f - 1 / R2) < 1e-9)) ? "the 45°-45°-90° ratio" : null;
+      list.push([g * f, `${verb(names[given])}${mix ? `, using ${mix}` : ""}; ${rule.charAt(0).toLowerCase()}${rule.slice(1)}.`]);
+    });
     return list;
   }
 
@@ -682,7 +831,7 @@
       const presentation = t.pick(["figure", "figure", "figure", "text", "text", "shape"]);
       const wantNumeric = t.chance(0.4);
       return retry(() => {
-        const k = t.int(2, 12);
+        const k = t.int(2, 20);
         const rooted = t.chance(0.35);
         // Base length: the shorter leg (30°-60°-90°) or a leg (45°-45°-90°).
         const base = rooted ? k * (kind === "30" ? R3 : R2) : k;
@@ -697,7 +846,9 @@
         const givenText = surd(sides[given]);
         const keyText = surd(sides[asked]);
         if (!givenText || !keyText) return null;
-        const numeric = wantNumeric && typeof radical(Math.round(sides[asked] ** 2)) === "number";
+        // A figure-only stem would repeat word for word as a grid-in, so a
+        // figure item is multiple choice.
+        const numeric = wantNumeric && presentation !== "figure" && typeof radical(Math.round(sides[asked] ** 2)) === "number";
         const namesKind = presentation === "shape" ? (kind === "30" ? "equilateral" : "square") : "triangle";
         const names = SIDE_NAMES[namesKind];
         const wrong = specialWrong(kind, given, asked, sides, names).map(([value, reason]) => [surd(value), reason]);
@@ -769,7 +920,7 @@
           "leg>hyp": `the hypotenuse is √2 times a leg: ${givenText} × √2 = ${keyText}`,
           "hyp>leg": `each leg is the hypotenuse divided by √2: ${givenText} ÷ √2 = ${keyText}`,
         }[`${given}>${asked}`];
-        return pack(numeric, surdValue(keyText), keyText, wrong, {
+        return packSpread(t, numeric, surdValue(keyText), keyText, wrong, {
           stimulus: null,
           figure,
           stem,
@@ -808,7 +959,7 @@
     {
       units: "feet", unit: "foot", short: "ft", angles: [50, 80],
       given: {
-        hyp: (v, a) => `A ${v}-foot ladder leans against a vertical wall and makes an angle of ${a}° with the level ground.`,
+        hyp: (v, a) => `${S.article(v) === "an" ? "An" : "A"} ${v}-foot ladder leans against a vertical wall and makes an angle of ${a}° with the level ground.`,
         opp: (v, a) => `A ladder leans against a vertical wall. The top of the ladder touches the wall ${v} feet above the level ground, and the ladder makes an angle of ${a}° with the ground.`,
       },
       ask: {
@@ -917,12 +1068,20 @@
           [fn !== "tan" ? (op === "×" ? length * f.tan : length / f.tan) : (op === "×" ? length * f.sin : length / f.sin),
             fn !== "tan" ? `Uses tan ${angle}°, a ratio of the two legs, where the hypotenuse is involved.` : `Uses sin ${angle}° where the hypotenuse is not involved; the two legs are related by the tangent.`],
         ];
+        candidates.push(
+          [length, `Gives the known length, ${length}, as if the two sides were equal.`],
+          [fn === "tan" ? (op === "×" ? length * f.cos : length / f.cos) : (op === "×" ? length / f[fn === "sin" ? "cos" : "sin"] : length * f[fn === "sin" ? "cos" : "sin"]),
+            fn === "tan"
+              ? `Uses cos ${angle}°, pairing the side along the ground with the hypotenuse, where the two legs are involved.`
+              : `Uses ${fn === "sin" ? "cos" : "sin"} ${angle}° and also ${op === "×" ? "divides by it instead of multiplying" : "multiplies by it instead of dividing"}.`],
+        );
         // Choices print to the tenth, as the question asks: 15.0, not 15.
-        const wrong = distinctWrong(key.toFixed(1), candidates.map(([value, reason]) => {
+        const printed = candidates.map(([value, reason]) => {
           const shownValue = tenth(value);
           return [Number.isFinite(value) && shownValue > 0 && shownValue < 20 * length ? shownValue.toFixed(1) : null, reason];
-        }));
-        if (!numeric && wrong.length < 3) return null;
+        });
+        const wrong = wrongFor(t, numeric, key.toFixed(1), printed);
+        if (!wrong) return null;
         let figure = null;
         if (withFigure) {
           const adj = given === "adj" ? length : asked === "adj" ? exact : given === "hyp" ? length * f.cos : length / f.tan;
@@ -1080,15 +1239,25 @@
           const sign = Math.sign(top / bottom);
           const swapped = askedFn === "tan" ? S.frac(sign * Math.abs(x), Math.abs(y)) : S.frac(sign * Math.abs(askedFn === "sin" ? x : y), h);
           const thirdFn = ["sin", "cos", "tan"].find((fn) => fn !== givenFn && fn !== askedFn);
-          const wrong = distinctWrong(correct, [
-            [S.frac(-top, bottom), `Has the right size but the wrong sign: in ${quad.words}, ${askedFn} θ is ${sign > 0 ? "positive" : "negative"}.`],
+          // Two signs times two sizes: the right size and one wrong size, each
+          // with both signs, so neither the sign nor the size can be guessed
+          // from the other choices.
+          const sizes = [
             [swapped, askedFn === "tan"
-              ? "Divides the adjacent side by the opposite side, turning the tangent upside down."
-              : `Uses the ${askedFn === "sin" ? "adjacent" : "opposite"} side over the hypotenuse, which is the size of ${askedFn === "sin" ? "cos" : "sin"} θ.`],
-            [S.frac(...parts[thirdFn]), `Gives ${thirdFn} θ instead of ${askedFn} θ.`],
-            [S.frac(bottom, top), `Turns ${askedFn} θ upside down.`],
+              ? "Divides the adjacent side by the opposite side, turning the tangent upside down"
+              : `Uses the ${askedFn === "sin" ? "adjacent" : "opposite"} side over the hypotenuse, which is the size of ${askedFn === "sin" ? "cos" : "sin"} θ`],
+            [S.frac(sign * Math.abs(parts[thirdFn][0]), Math.abs(parts[thirdFn][1])), `Gives the size of ${thirdFn} θ instead of ${askedFn} θ`],
+            [S.frac(sign * Math.abs(bottom), Math.abs(top)), `Turns ${askedFn} θ upside down`],
+          ].filter(([text]) => text !== correct && text !== S.frac(-top, bottom));
+          if (!sizes.length) continue;
+          const [otherText, otherReason] = t.pick(sizes);
+          const flip = (text) => (text.startsWith(MINUS) ? text.slice(1) : `${MINUS}${text}`);
+          const wrong = wrongFor(t, false, correct, [
+            [S.frac(-top, bottom), `Has the right size but the wrong sign: in ${quad.words}, ${askedFn} θ is ${sign > 0 ? "positive" : "negative"}.`],
+            [otherText, `${otherReason}.`],
+            [flip(otherText), `${otherReason}, and gives it the wrong sign for ${quad.words}.`],
           ]);
-          if (wrong.length < 3) continue;
+          if (!wrong) continue;
           const interval = t.chance(0.7) ? quad.radians : quad.degrees;
           const inline = t.chance(0.5);
           return {
@@ -1143,18 +1312,26 @@
           const keyText = surd(value);
           const numeric = typeof radical(Math.round(value * value)) === "number" && t.chance(0.5);
           const otherSize = axis === "x" ? size.y : size.x;
+          // Two signs times two sizes, as in the ratio form.
+          const sizes = ref === 45
+            ? [
+              [r / 2, "Uses 1/2 as the value of cos 45° and sin 45°; they equal √2/2"],
+              [(r / 2) * R3, "Uses √3/2, the value for a 30° or 60° angle, instead of √2/2"],
+              [r, `Gives the radius instead of the ${axis}-coordinate`],
+            ]
+            : [
+              [otherSize, `Mixes up sine and cosine: that is the size of the ${axis === "x" ? "y" : "x"}-coordinate`],
+              [(r / 2) * R2, "Uses √2/2, the value for a 45° angle"],
+            ];
+          const [otherSizeValue, otherReason] = t.pick(sizes);
           const list = [
             [surd(-value), `Has the right size but the wrong sign: in ${quad.words}, the ${axis}-coordinate is ${sign > 0 ? "positive" : "negative"}.`],
-            ref === 45
-              ? [surd((sign * r) / 2), "Uses 1/2 as the value of cos 45° and sin 45°; they equal √2/2."]
-              : [surd(sign * otherSize), `Mixes up sine and cosine: that is the size of the ${axis === "x" ? "y" : "x"}-coordinate.`],
-            ref === 45
-              ? [surd(((sign * r) / 2) * R3), "Uses √3/2, the value for a 30° or 60° angle, instead of √2/2."]
-              : [surd(((sign * r) / 2) * R2), "Uses √2/2, the value for a 45° angle."],
-            [surd(sign * r), `Gives the radius, with the sign of the ${axis}-coordinate, instead of the coordinate.`],
+            [surd(sign * otherSizeValue), `${otherReason}.`],
+            [surd(-sign * otherSizeValue), `${otherReason}, and gives it the wrong sign for ${quad.words}.`],
           ];
-          const wrong = distinctWrong(keyText, list);
-          if (!keyText || (!numeric && wrong.length < 3)) continue;
+          if (!keyText) continue;
+          const wrong = wrongFor(t, numeric, keyText, list);
+          if (!wrong) continue;
           const inDegrees = t.chance(0.2);
           const angleText = inDegrees ? `${angle.degrees}°` : `${angle.text} radians`;
           const alt =
@@ -1196,13 +1373,23 @@
         const yText = surd(yP);
         const refText = piFraction(ref, 180);
         const swapRef = 90 - ref;
-        const wrong = distinctWrong(angle.text, [
-          [refText, `Gives the reference angle, the acute angle between ray OP and the x-axis, instead of the angle from the positive x-axis.`],
-          [piFraction(360 - angle.degrees, 180), "Measures the angle clockwise from the positive x-axis instead of counterclockwise."],
-          [ref === 45 ? null : standardAngle(swapRef, q).text, "Swaps x and y, finding the angle whose tangent is x/y instead of y/x."],
-          [piFraction((angle.degrees + 180) % 360, 180), "Reverses the signs of both coordinates, placing P in the opposite quadrant."],
-        ]);
-        if (wrong.length < 3) continue;
+        // Every choice has a plausible reference angle: the right quadrant or
+        // a wrong one, with the right reference angle or the swapped one.
+        const inQuadrant = (reference, quadrant) =>
+          piFraction(quadrant === 1 ? reference : quadrant === 2 ? 180 - reference : quadrant === 3 ? 180 + reference : 360 - reference, 180);
+        const quadrantReason = (quadrant) => quadrant === 1
+          ? `Gives the reference angle, the acute angle between ray OP and the x-axis, instead of the angle from the positive x-axis.`
+          : `Places P in Quadrant ${["I", "II", "III", "IV"][quadrant - 1]}; the signs of its coordinates put it in ${quad.words}.`;
+        const otherQuadrant = t.pick([1, 2, 3, 4].filter((value) => value !== q));
+        const list = ref === 45
+          ? [1, 2, 3, 4].filter((value) => value !== q).map((value) => [inQuadrant(45, value), quadrantReason(value)])
+          : [
+            [inQuadrant(swapRef, q), "Swaps x and y, finding the angle whose tangent is x/y instead of y/x."],
+            [inQuadrant(ref, otherQuadrant), quadrantReason(otherQuadrant)],
+            [inQuadrant(swapRef, otherQuadrant), `Swaps x and y and also ${quadrantReason(otherQuadrant).charAt(0).toLowerCase()}${quadrantReason(otherQuadrant).slice(1)}`],
+          ];
+        const wrong = wrongFor(t, false, angle.text, list);
+        if (!wrong) continue;
         const alt =
           `A coordinate plane with a circle centered at the origin O. Point P, labeled (${xText}, ${yText}), lies on the circle in ${quad.words}, ` +
           "and ray OP is drawn with an arc marking the angle from the positive x-axis to OP. The figure is drawn to scale.";
@@ -1236,5 +1423,159 @@
     },
   };
 
-  return [ratioRead, specialRight, pythagoreanTwoStep, trigContext, trigCofunction, unitCircle];
+  /* ====================================== two-observer-elevation (Hard) */
+
+  // Angle pairs (farther, nearer) with exact tangents: tan 30° = 1/√3,
+  // tan 45° = 1, tan 60° = √3. For each, the height h and the nearer
+  // distance x per unit of separation d, as "a + b√3" over a denominator.
+  const ELEVATION_PAIRS = [
+    { far: 30, near: 60, h: [0, 1, 2], x: [1, 0, 2] }, // h = d√3/2, x = d/2
+    { far: 30, near: 45, h: [1, 1, 2], x: [1, 1, 2] }, // h = x = d(1 + √3)/2
+    { far: 45, near: 60, h: [3, 1, 2], x: [1, 1, 2] }, // h = d(3 + √3)/2, x = d(1 + √3)/2
+  ];
+
+  const tanDeg = (degrees) => Math.tan(toRad(degrees));
+
+  // "5√3", "12", "5 + 5√3", or "15 + 5√3" for d·(a + b√3)/c; null unless whole.
+  function rootForm(d, [a, b, c]) {
+    const whole = (d * a) / c;
+    const root = (d * b) / c;
+    if (!Number.isInteger(whole) || !Number.isInteger(root)) return null;
+    const rootText = root === 0 ? "" : `${root === 1 ? "" : fmt(root)}√3`;
+    if (!whole) return rootText || "0";
+    return rootText ? `${fmt(whole)} + ${rootText}` : fmt(whole);
+  }
+
+  const SIGHT_SCENES = [
+    { object: "a vertical tower", top: "the top of the tower", people: "Two surveyors", units: "meters", ask: "the height of the tower" },
+    { object: "a vertical flagpole", top: "the top of the flagpole", people: "Two students", units: "feet", ask: "the height of the flagpole" },
+    { object: "a vertical lighthouse", top: "the top of the lighthouse", people: "Two observers", units: "meters", ask: "the height of the lighthouse" },
+    { object: "a vertical cliff", top: "the top of the cliff", people: "Two hikers", units: "feet", ask: "the height of the cliff" },
+    { object: "a vertical radio antenna", top: "the top of the antenna", people: "Two engineers", units: "meters", ask: "the height of the antenna" },
+    { object: "a vertical wall of a building", top: "the top of the wall", people: "Two painters", units: "feet", ask: "the height of the wall" },
+  ];
+
+  const twoObservers = {
+    id: "two-observer-elevation",
+    domain: DOMAIN,
+    skill: "Right triangles and trigonometry",
+    subskill: "trigonometric ratios",
+    difficulty: "Hard",
+    title: "One height seen from two places",
+    recognize:
+      "Neither right triangle can be solved alone: the height and the nearer distance are both unknown. Write the height " +
+      "twice, once from each angle (h = x tan β and h = (x + d) tan α), and solve the pair; the special angles make the " +
+      "tangents exact.",
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 1, trap: 1 },
+    tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity"],
+    build(t) {
+      const askHeight = t.chance(0.65);
+      return retry(() => {
+        const pair = t.pick(ELEVATION_PAIRS);
+        const scene = t.pick(SIGHT_SCENES);
+        const d = 2 * t.int(3, 45);
+        const tf = tanDeg(pair.far);
+        const tn = tanDeg(pair.near);
+        const x = (d * tf) / (tn - tf);
+        const h = x * tn;
+        const keyText = rootForm(d, askHeight ? pair.h : pair.x);
+        if (!keyText) return null;
+        const keyValue = askHeight ? h : x;
+        const numeric = Number.isInteger(Math.round(keyValue * 1e9) / 1e9) && t.chance(0.5);
+        // Wrong answers as values, printed in the same a + b√3 form when exact.
+        const exact = (value) => {
+          for (const c of [1, 2, 3, 4, 6]) {
+            for (let b = -60; b <= 60; b += 1) {
+              const a = value * c - b * Math.sqrt(3) * 1;
+              if (Math.abs(a - Math.round(a)) < 1e-6) {
+                const text = rootForm(1, [Math.round(a), b, c]);
+                if (text && !text.includes("−") && Math.abs(C.choiceValue(text) - value) < 1e-6) return text;
+              }
+            }
+          }
+          return null;
+        };
+        const list = askHeight
+          ? [
+            [d * tn, `Uses only the nearer angle, ${pair.near}°, with the distance between the people, ${d}, as if the nearer person stood ${d} ${scene.units} from the base.`],
+            [d * tf, `Uses only the farther angle, ${pair.far}°, with ${d} as its whole horizontal distance.`],
+            [(d * tf * tn) / (tf + tn), "Places the two people on opposite sides of the base instead of on the same side."],
+            [d * (tn - tf), "Subtracts the two tangents and multiplies by the distance between the people."],
+            [x, "Finds the nearer person's distance from the base and stops."],
+            [h / Math.sin(toRad(pair.near)), "Gives the length of the nearer line of sight, the hypotenuse, instead of the height."],
+          ]
+          : [
+            [d, "Assumes the nearer person is as far from the base as the two people are from each other."],
+            [h, `Gives ${scene.ask} instead of the nearer person's distance from the base.`],
+            [x + d, "Gives the farther person's distance from the base."],
+            [d * tf, `Uses only the farther angle, ${pair.far}°, with ${d} as its horizontal distance.`],
+          ];
+        const printed = list.map(([value, reason]) => [value > 0 ? (Number.isInteger(Math.round(value * 1e9) / 1e9) ? Math.round(value) : exact(value)) : null, reason]);
+        const wrong = wrongFor(t, numeric, numeric ? Math.round(keyValue) : keyText, printed, { positive: true });
+        if (!wrong) return null;
+        // Figure to scale: ground, the object, both lines of sight.
+        const model = { F: [-(x + d), 0], N: [-x, 0], B: [0, 0], T: [0, h] };
+        const map = fitPoints(Object.values(model), 400, 250, 40);
+        const sc = Object.fromEntries(Object.entries(model).map(([k, p]) => [k, map(p)]));
+        const parts = [
+          seg([12, sc.B[1]], [388, sc.B[1]], 1.5),
+          seg(sc.B, sc.T, 3),
+          seg(sc.F, sc.T, 1.5, true),
+          seg(sc.N, sc.T, 1.5, true),
+          P.dot(sc.F[0], sc.F[1]), P.dot(sc.N[0], sc.N[1]),
+          angleArc(sc.F, sc.B, sc.T, 22),
+          angleLabel(sc.F, sc.B, sc.T, `${pair.far}°`, 44, 14),
+          angleArc(sc.N, sc.B, sc.T, 20),
+          angleLabel(sc.N, sc.B, sc.T, `${pair.near}°`, 38, 14),
+          unitText(add(mid(sc.F, sc.N), [0, 16]), `${d} ${scene.units === "meters" ? "m" : "ft"}`, "middle", 14),
+          C.rightMark(sc.B, sc.T, [sc.B[0] - 10, sc.B[1]], 9),
+        ];
+        if (C.labelsClash(parts, 400, 250)) return null;
+        const alt =
+          `Level ground with ${scene.object} at the right. Two points on the ground to the left of it are ${d} ${scene.units} apart; dashed lines of sight run from each point to ${scene.top}. ` +
+          `The angle of elevation is marked ${pair.far}° at the farther point and ${pair.near}° at the nearer point. The figure is drawn to scale.`;
+        const asked = askHeight ? `${scene.ask}` : `the distance from the nearer person to the base of ${scene.object.replace(/^a vertical /, "the ")}`;
+        const stem =
+          `${scene.people} stand on level ground in a straight line with the base of ${scene.object}, on the same side of it and ${d} ${scene.units} apart, as shown. ` +
+          `From the farther person, the angle of elevation to ${scene.top} is ${pair.far}°; from the nearer person, it is ${pair.near}°. ` +
+          (numeric
+            ? `What is ${asked}, in ${scene.units}?`
+            : `Which of the following is ${asked}, in ${scene.units}?`);
+        const hText = rootForm(d, pair.h);
+        const xText = rootForm(d, pair.x);
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 140,
+          stimulus: null,
+          figure: { svg: S.svg(400, 250, parts, alt), alt, notToScale: false },
+          stem,
+          correct: numeric ? Math.round(keyValue) : keyText,
+          wrong,
+          hint: "Call the nearer distance x. How can the height be written using each angle?",
+          explanation:
+            `Let x be the nearer person's distance from the base and h the height. From the nearer person, h = x tan ${pair.near}°; from the farther person, ` +
+            `h = (x + ${d}) tan ${pair.far}°. With tan 30° = 1/√3, tan 45° = 1, and tan 60° = √3, setting the two equal gives x = ${xText} and h = ${hText}.`,
+          steps: [
+            `Nearer triangle: h = x · tan ${pair.near}°.`,
+            `Farther triangle: h = (x + ${d}) · tan ${pair.far}°.`,
+            `Solve: x = ${xText}, h = ${hText}.`,
+          ],
+          principles: [
+            "tan θ = opposite/adjacent in a right triangle; tan 30° = 1/√3, tan 45° = 1, tan 60° = √3.",
+            "Two right triangles that share a side give two equations for the same unknown.",
+          ],
+          trap: `The ${d} ${scene.units} is the distance between the people, not either person's distance from the base, so neither triangle can be solved by itself.`,
+          verify: () => {
+            // Measure the constructed angles and lengths.
+            const atF = angleAt(model.F, model.B, model.T);
+            const atN = angleAt(model.N, model.B, model.T);
+            const measured = askHeight ? dist(model.B, model.T) : dist(model.N, model.B);
+            return close(atF, pair.far, 1e-9) && close(atN, pair.near, 1e-9) && close(measured, C.choiceValue(keyText), 1e-9);
+          },
+        };
+      });
+    },
+  };
+
+  return [ratioRead, specialRight, pythagoreanTwoStep, trigContext, cofunctionAngles, trigCofunction, unitCircle, twoObservers];
 });
