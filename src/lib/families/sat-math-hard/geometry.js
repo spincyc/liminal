@@ -159,8 +159,18 @@
 
   const bisector = (vertex, p, q) => unit(add(unit(sub(p, vertex)), unit(sub(q, vertex))));
 
+  // Label on the bisector of the angle at `vertex`. A narrow angle whose
+  // bisector is not near horizontal gets a centered label placed deep enough
+  // that the wedge is wide enough to hold it; otherwise the text runs away
+  // from the vertex along the bisector's horizontal direction.
   function angleLabel(vertex, p, q, text, gap = 30, size = 15) {
     const b = bisector(vertex, p, q);
+    const angle = angleAt(vertex, p, q);
+    if (angle < 75 && Math.abs(b[0]) < 0.8) {
+      const halfWidth = 0.3 * size * String(text).length;
+      const depth = Math.max(gap, (halfWidth + 4) / Math.tan(toRad(angle / 2)));
+      return measure(add(vertex, mul(b, depth)), text, "middle", size);
+    }
     return measure(add(vertex, mul(b, gap)), text, anchorFor(b), size);
   }
 
@@ -202,23 +212,23 @@
   // Keeps wrong answers that are finite, at most two decimals, and distinct
   // from the key and from each other, in order. When the key is a whole
   // number, decimal wrong answers (easy to eliminate on sight) are dropped
-  // if enough whole ones remain; the first entry, the figure-based lure in
-  // every list that has one, is always kept.
+  // if enough whole ones remain; the list's first entry, the figure-based
+  // lure in every list that has one, is always kept when it is present.
   function distinctWrong(correct, list) {
     const seen = new Set([S.label(correct)]);
     const out = [];
-    list.forEach(([value, reason]) => {
+    list.forEach(([value, reason], position) => {
       if (value === null || value === undefined) return;
       if (typeof value === "number" &&
         (!Number.isFinite(value) || Math.abs(value * 100 - Math.round(value * 100)) > 1e-7)) return;
       const text = S.label(value);
       if (seen.has(text) || S.BAD_TEXT.test(text)) return;
       seen.add(text);
-      out.push([value, reason]);
+      out.push([value, reason, position]);
     });
     if (typeof correct === "number" && Number.isInteger(correct)) {
-      const whole = out.filter(([value], index) =>
-        index === 0 || typeof value !== "number" || Number.isInteger(value));
+      const whole = out.filter(([value, , position]) =>
+        position === 0 || typeof value !== "number" || Number.isInteger(value));
       if (whole.length >= 3) return whole;
     }
     return out;
@@ -235,16 +245,21 @@
     ["J", "K", "L", "M", "N"],
     ["R", "S", "T", "U", "V"],
   ];
+  // All part ratios (XM : MY) for figures drawn to scale; for figures drawn
+  // with M at the midpoint, only ratios whose true fraction XM/XY lies
+  // between 1/3 and 2/3, so the drawing is noticeably but not absurdly off.
   const PART_RATIOS = [[1, 2], [2, 1], [1, 3], [3, 1], [2, 3], [3, 2], [3, 4], [4, 3], [2, 5], [5, 2], [3, 5], [5, 3]];
+  const MIDPOINT_RATIOS = [[1, 2], [2, 1], [2, 3], [3, 2], [3, 4], [4, 3], [3, 5], [5, 3]];
 
-  // Apex X at the top, base YZ at the bottom, M on XY and N on XZ drawn at
-  // the midpoints, so MN reads as a midsegment whatever the true ratio is.
-  function cutFigure(t, names, onLeft, shown) {
+  // Apex X at the top, base YZ at the bottom, M on XY and N on XZ. With
+  // `fraction` (XM/XY) the cut is drawn where it really is; without it, M and
+  // N are drawn at the midpoints so MN reads as a midsegment.
+  function cutFigure(t, names, onLeft, shown, fraction = null) {
     const [X, Y, Z, M, N] = names;
     const A = [t.int(150, 250), 40];
     const B = [t.int(34, 70), 244];
     const C = [t.int(330, 366), 244];
-    const f = t.pick([0.48, 0.5, 0.52]);
+    const f = fraction === null ? t.pick([0.48, 0.5, 0.52]) : fraction;
     const D = lerp(A, B, f);
     const E = lerp(A, C, f);
     const G = centroid([A, B, C]);
@@ -282,8 +297,10 @@
       `Triangle ${X}${Y}${Z} with ${X} at the top and ${Y}${Z} as the base. ${M} is on side ${X}${Y}, ` +
       `${N} is on side ${X}${Z}, and arrow marks show ${M}${N} parallel to ${Y}${Z}.` +
       `${words.length ? ` Labeled lengths: ${words.join(", ")}.` : ""} ` +
-      `${M} and ${N} are drawn at the midpoints of their sides, so ${M}${N} looks like half of ${Y}${Z}.`;
-    return { svg: S.svg(400, 280, parts, alt), alt, notToScale: true };
+      (fraction === null
+        ? `${M} and ${N} are drawn at the midpoints of their sides, so ${M}${N} looks like half of ${Y}${Z}.`
+        : `The figure is drawn to scale.`);
+    return { svg: S.svg(400, 280, parts, alt), alt, notToScale: fraction === null };
   }
 
   // Builds a real triangle whose side through the cut has length `side`,
@@ -311,21 +328,23 @@
     title: "Parallel cut in a triangle: part versus whole side",
     recognize:
       "A segment parallel to one side cuts off a smaller triangle similar to the whole. The scale factor " +
-      "compares a part of a side with the whole side, areas scale by its square, and apparent midpoints in a " +
-      "figure not drawn to scale mean nothing.",
+      "compares a part of a side with the whole side, and areas scale by its square. Trust a figure drawn to scale; " +
+      "when it is marked not drawn to scale, apparent midpoints mean nothing.",
     rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
     tricks: ["not-to-scale-figure", "part-vs-whole", "neighbouring-rule", "intermediate-value"],
     build(t) {
+      // Chosen once, outside the retry loop, so retries do not tilt the mix.
+      const form = t.pick(["base", "base", "cut", "part", "part", "area", "area", "ratio"]);
+      const numeric = form !== "ratio" && t.chance(0.34);
+      const accurate = t.chance(0.35);
       for (;;) {
         const names = t.pick(TRIANGLE_NAMES);
         const [X, Y, Z, M, N] = names;
-        const [p, q] = t.pick(PART_RATIOS);
+        const [p, q] = t.pick(accurate ? PART_RATIOS : MIDPOINT_RATIOS);
         const onLeft = t.chance(0.5);
         const u = t.int(1, 4);
         const m = t.int(2, 6);
         const w = p === 1 ? t.int(2, 6) : t.int(1, 5);
-        const form = t.pick(["base", "base", "cut", "part", "part", "area", "area", "ratio"]);
-        const numeric = form !== "ratio" && t.chance(0.34);
         const inText = (form === "base" || form === "cut" || form === "part") && t.chance(0.3);
 
         const near = p * u;
@@ -338,10 +357,15 @@
         const wholeName = onLeft ? X + Y : X + Z;
         const cutName = M + N;
         const baseName = Y + Z;
+        const cutPoint = onLeft ? M : N;
         const small = `triangle ${X}${M}${N}`;
         const big = `triangle ${X}${Y}${Z}`;
         const quad = `quadrilateral ${M}${Y}${Z}${N}`;
         const k = S.frac(near, whole);
+        // The drawing lure exists only when the figure is not drawn to scale.
+        const lure = (value, reason) => (accurate ? [null, reason] : [value, reason]);
+        const figureFor = (shown) => cutFigure(t, names, onLeft, shown, accurate ? p / (p + q) : null);
+        const figureNote = (text) => (accurate ? "" : ` ${text}`);
 
         const intro = t.pick([
           `In triangle ${X}${Y}${Z} shown, points ${M} and ${N} lie on sides ${X}${Y} and ${X}${Z}, respectively, and ${cutName} is parallel to ${baseName}.`,
@@ -378,22 +402,23 @@
             `What is the length of ${baseName}?`,
           );
           const wrong = distinctWrong(base, [
-            [2 * cut, `Treats ${cutName} as a midsegment because ${M} and ${N} look like midpoints in the figure; the figure is not drawn to scale.`],
+            lure(2 * cut, `Treats ${cutName} as a midsegment because ${M} and ${N} look like midpoints in the figure; the figure is not drawn to scale.`),
             [(cut * far) / near, `Uses ${nearName}/${farName}, a part-to-part ratio, as the scale factor instead of ${nearName}/${wholeName}.`],
             [cut + far, `Adds ${farName} to ${cutName}, as if the triangle grew by equal amounts instead of in proportion.`],
             [(cut * whole) / far, `Scales ${cutName} by ${wholeName}/${farName}, pairing it with the wrong part of the side.`],
+            [whole, `Finds the whole side ${wholeName} = ${whole} on the way and stops there instead of scaling ${cutName}.`],
           ]);
           if (!numeric && wrong.length < 3) continue;
           return {
             ...common,
-            figure: cutFigure(t, names, onLeft, shown),
+            figure: figureFor(shown),
             stem: text,
             correct: base,
             wrong,
             explanation:
               `${similarStep} The scale factor compares ${nearName} with the whole side ${wholeName}, not with ${farName}: ` +
-              `${nearName}/${wholeName} = ${near}/${whole} = ${k}. So ${baseName} = ${cut} ÷ ${k} = ${base}. The figure makes ` +
-              `${cutName} look like a midsegment, but ${nearName} ≠ ${farName}, so ${baseName} is not twice ${cutName}.`,
+              `${nearName}/${wholeName} = ${near}/${whole} = ${k}. So ${baseName} = ${cut} ÷ ${k} = ${base}.` +
+              figureNote(`The figure makes ${cutName} look like a midsegment, but ${nearName} ≠ ${farName}, so ${baseName} is not twice ${cutName}.`),
             steps: [
               similarStep,
               wholeStep,
@@ -402,7 +427,7 @@
             ],
             principles,
             trap:
-              `The figure is not drawn to scale: ${M} and ${N} look like midpoints, which suggests ${baseName} = 2 × ${cut} = ${2 * cut}. ` +
+              (accurate ? "" : `The figure is not drawn to scale: ${M} and ${N} look like midpoints, which suggests ${baseName} = 2 × ${cut} = ${2 * cut}. `) +
               `Using ${nearName}/${farName} instead of ${nearName}/${wholeName} gives ${num((cut * far) / near)}.`,
             verify: () => close(parallelCut(near + far, base, near).cut, cut),
           };
@@ -415,7 +440,7 @@
             `What is the length of ${cutName}?`,
           );
           const wrong = distinctWrong(cut, [
-            [base / 2, `Takes ${cutName} as half of ${baseName} because ${M} and ${N} look like midpoints in the figure; the figure is not drawn to scale.`],
+            lure(base / 2, `Takes ${cutName} as half of ${baseName} because ${M} and ${N} look like midpoints in the figure; the figure is not drawn to scale.`),
             [(base * near) / far, `Uses ${nearName}/${farName}, a part-to-part ratio, as the scale factor instead of ${nearName}/${wholeName}.`],
             [base - far, `Subtracts ${farName} from ${baseName}, shrinking by a fixed amount instead of by a ratio.`],
             [(base * far) / whole, `Uses ${farName}/${wholeName}, which pairs ${cutName} with the wrong part of side ${wholeName}.`],
@@ -423,18 +448,18 @@
           if (!numeric && wrong.length < 3) continue;
           return {
             ...common,
-            figure: cutFigure(t, names, onLeft, shown),
+            figure: figureFor(shown),
             stem: text,
             correct: cut,
             wrong,
             explanation:
-              `${similarStep} The scale factor is ${nearName}/${wholeName} = ${near}/${whole} = ${k}, so ${cutName} = ${k} × ${base} = ${cut}. ` +
-              `The figure is not drawn to scale; ${cutName} only looks like half of ${baseName}.`,
+              `${similarStep} The scale factor is ${nearName}/${wholeName} = ${near}/${whole} = ${k}, so ${cutName} = ${k} × ${base} = ${cut}.` +
+              figureNote(`The figure is not drawn to scale; ${cutName} only looks like half of ${baseName}.`),
             steps: [similarStep, wholeStep, `Corresponding sides share that factor: ${cutName} = ${k} × ${baseName}.`, `${cutName} = ${k} × ${base} = ${cut}.`],
             principles,
             trap:
-              `${cutName} looks like half of ${baseName} in a figure that is not drawn to scale, and ${nearName}/${farName} is not the ` +
-              `scale factor because ${farName} is only part of a side.`,
+              (accurate ? "" : `${cutName} looks like half of ${baseName} in a figure that is not drawn to scale, and `) +
+              `${accurate ? "T" : "t"}he ratio ${nearName}/${farName} is not the scale factor because ${farName} is only part of a side.`,
             verify: () => close(parallelCut(near + far, base, near).cut, cut),
           };
         }
@@ -446,16 +471,17 @@
             `What is the length of ${farName}?`,
           );
           const factor = S.frac(cut, base);
-          const cutPoint = onLeft ? M : N;
           const wrong = distinctWrong(far, [
-            [near, `Takes ${cutPoint} as the midpoint of ${wholeName}, as it appears in the figure, so ${farName} = ${nearName}; the figure is not drawn to scale.`],
+            [near, accurate
+              ? `Finds ${wholeName} = ${whole}, then takes ${farName} as ${wholeName} × ${cutName}/${baseName}; that product is ${nearName}, not ${farName}.`
+              : `Takes ${cutPoint} as the midpoint of ${wholeName}, as it appears in the figure, so ${farName} = ${nearName}; the figure is not drawn to scale.`],
             [whole, `Finds the whole side ${wholeName} and stops; ${farName} is only the part below ${cutPoint}.`],
             [base - cut, `Takes ${farName} as ${baseName} − ${cutName}, as if the side grew by the same amount as the parallel segments instead of in proportion.`],
           ]);
           if (!numeric && wrong.length < 3) continue;
           return {
             ...common,
-            figure: cutFigure(t, names, onLeft, shown),
+            figure: figureFor(shown),
             stem: text,
             correct: far,
             wrong,
@@ -470,8 +496,8 @@
             ],
             principles,
             trap:
-              `${cutPoint} looks like a midpoint in the figure, which is not drawn to scale; and setting ${farName}/${nearName} = ${baseName}/${cutName} ` +
-              `gives ${whole}, which is the whole side ${wholeName}.`,
+              (accurate ? "Setting" : `${cutPoint} looks like a midpoint in the figure, which is not drawn to scale; and setting`) +
+              ` ${farName}/${nearName} = ${baseName}/${cutName} gives ${whole}, which is the whole side ${wholeName}.`,
             verify: () => close(parallelCut(near + far, base, near).cut, cut),
           };
         }
@@ -482,8 +508,7 @@
           const quadArea = bigArea - smallArea;
           const askQuad = t.chance(0.6);
           const areaIntro = `${intro} The area of ${small} is ${smallArea}.`;
-          const shown = { near, far };
-          const figure = cutFigure(t, names, onLeft, shown);
+          const figure = figureFor({ near, far });
           const kk = S.frac(near * near, whole * whole);
           const steps = [
             similarStep,
@@ -493,7 +518,7 @@
           ];
           if (askQuad) {
             const wrong = distinctWrong(quadArea, [
-              [3 * smallArea, `Treats ${cutName} as a midsegment, as the figure suggests, so ${big} looks 4 times as large as ${small}; the figure is not drawn to scale.`],
+              lure(3 * smallArea, `Treats ${cutName} as a midsegment, as the figure suggests, so ${big} looks 4 times as large as ${small}; the figure is not drawn to scale.`),
               [bigArea, `Finds the area of ${big} and stops before subtracting ${small}.`],
               [p * q * w, `Scales the area by the length ratio ${wholeName}/${nearName} instead of its square.`],
               [q * q * w, `Scales by (${farName}/${nearName})², a part-to-part ratio of sides.`],
@@ -511,8 +536,8 @@
               steps: steps.concat([`area(${quad}) = ${bigArea} − ${smallArea} = ${quadArea}.`]),
               principles: principles.concat(["Areas of similar figures are in the ratio of the square of the scale factor."]),
               trap:
-                `The figure is not drawn to scale; reading ${cutName} as a midsegment gives ${3 * smallArea}. Scaling area by the length ratio, ` +
-                `or stopping at the whole triangle, are the other reflexes.`,
+                (accurate ? "" : `The figure is not drawn to scale; reading ${cutName} as a midsegment gives ${3 * smallArea}. `) +
+                "Scaling area by the length ratio, or stopping at the whole triangle, are the common reflexes.",
               verify: () => {
                 const g = parallelCut(near + far, 10, near);
                 return close(((g.whole - g.small) * smallArea) / g.small, quadArea, 1e-9);
@@ -520,7 +545,7 @@
             };
           }
           const wrong = distinctWrong(bigArea, [
-            [4 * smallArea, `Treats ${cutName} as a midsegment, as the figure suggests, making ${big} 4 times as large; the figure is not drawn to scale.`],
+            lure(4 * smallArea, `Treats ${cutName} as a midsegment, as the figure suggests, making ${big} 4 times as large; the figure is not drawn to scale.`),
             [p * (p + q) * w, `Scales the area by the length ratio ${wholeName}/${nearName} instead of its square.`],
             [quadArea, `Finds only the area of ${quad}, the part of ${big} below ${cutName}.`],
             [smallArea + q * q * w, `Adds a triangle scaled by (${farName}/${nearName})², treating the lower strip as similar to ${small}.`],
@@ -538,8 +563,8 @@
             steps,
             principles: principles.concat(["Areas of similar figures are in the ratio of the square of the scale factor."]),
             trap:
-              `The figure is not drawn to scale; reading ${cutName} as a midsegment gives ${4 * smallArea}, and scaling area by the length ` +
-              `ratio instead of its square gives ${p * (p + q) * w}.`,
+              (accurate ? "" : `The figure is not drawn to scale; reading ${cutName} as a midsegment gives ${4 * smallArea}. `) +
+              `Scaling area by the length ratio instead of its square gives ${p * (p + q) * w}.`,
             verify: () => {
               const g = parallelCut(near + far, 10, near);
               return close((g.whole * smallArea) / g.small, bigArea, 1e-9);
@@ -556,13 +581,13 @@
           correct,
           toQuad
             ? [
-              ["1/3", `Treats ${cutName} as a midsegment, as the figure suggests, so the quadrilateral looks 3 times the small triangle; the figure is not drawn to scale.`],
+              lure("1/3", `Treats ${cutName} as a midsegment, as the figure suggests, so the quadrilateral looks 3 times the small triangle; the figure is not drawn to scale.`),
               [S.frac(pp, ww), `Compares ${small} with all of ${big} instead of with the quadrilateral.`],
               [S.frac(p, q), `Uses the part-to-part length ratio ${nearName}/${farName} as if it were an area ratio.`],
               [S.frac(pp, q * q), `Squares ${nearName}/${farName}, a ratio of two parts of a side rather than part to whole.`],
             ]
             : [
-              ["1/4", `Treats ${cutName} as a midsegment, as the figure suggests, so the small triangle looks like a quarter of the large one; the figure is not drawn to scale.`],
+              lure("1/4", `Treats ${cutName} as a midsegment, as the figure suggests, so the small triangle looks like a quarter of the large one; the figure is not drawn to scale.`),
               [S.frac(p, p + q), `Uses the length ratio ${nearName}/${wholeName} without squaring it for area.`],
               [S.frac(pp, ww - pp), `Compares ${small} with ${quad} instead of with the whole triangle.`],
               [S.frac(pp, q * q), `Squares ${nearName}/${farName}, a ratio of two parts of a side rather than part to whole.`],
@@ -573,7 +598,7 @@
         return {
           ...common,
           responseType: "multiple-choice",
-          figure: cutFigure(t, names, onLeft, { near, far }),
+          figure: figureFor({ near, far }),
           stem: `${intro} The area of ${small} is what fraction of the area of ${target}?`,
           correct,
           wrong,
@@ -589,7 +614,9 @@
             toQuad ? `The quadrilateral is the rest: ${ww - pp} parts of ${ww}, so the fraction is ${pp}/${ww - pp} = ${correct}.` : `The fraction is ${correct}.`,
           ],
           principles: principles.concat(["Areas of similar figures are in the ratio of the square of the scale factor."]),
-          trap: `The figure is not drawn to scale, so the midsegment reading (${toQuad ? "1/3" : "1/4"}) is wrong, and a length ratio is not an area ratio.`,
+          trap:
+            (accurate ? "" : `The figure is not drawn to scale, so the midsegment reading (${toQuad ? "1/3" : "1/4"}) is wrong. `) +
+            "A length ratio is not an area ratio.",
           verify: () => {
             const g = parallelCut(near + far, 10, near);
             const value = toQuad ? g.small / (g.whole - g.small) : g.small / g.whole;
@@ -629,48 +656,61 @@
     { top: "LR", bot: "LR", rel: "equal", kind: "corresponding" },
   ];
 
-  // Parallel lines ℓ (top) and m, with t drawn within a few degrees of
-  // perpendicular so every angle looks like a right angle.
-  function transversalFigure(t, marks) {
+  // Parallel lines ℓ (top) and m, crossed by t. With `phiTrue` (t's true
+  // inclination) the figure is drawn to scale; without it, t is drawn within
+  // a few degrees of perpendicular so every angle looks like a right angle.
+  function transversalFigure(t, marks, phiTrue = null) {
     const yl = 86;
     const ym = 196;
-    const phiDrawn = 90 + t.pick([-1, 1]) * t.int(3, 6);
+    const phiDrawn = phiTrue === null ? 90 + t.pick([-1, 1]) * t.int(3, 6) : phiTrue;
     const up = heading(phiDrawn);
-    const T1 = [t.int(180, 220), yl];
+    // Center the crossing segment horizontally so steep and shallow t both fit.
+    const run = (ym - yl) / Math.tan(toRad(phiDrawn));
+    const T1 = [200 + run / 2 + t.int(-12, 12), yl];
     const T2 = add(T1, mul(up, -(ym - yl) / Math.sin(toRad(phiDrawn))));
     const rays = { right: [1, 0], left: [-1, 0], up, down: mul(up, -1) };
-    const topEnd = add(T1, mul(up, 62));
+    const reach = phiTrue === null ? 62 : 50;
+    const topEnd = add(T1, mul(up, reach));
     const parts = [
       seg([14, yl], [386, yl]),
       seg([14, ym], [386, ym]),
-      seg(topEnd, add(T2, mul(up, -62))),
-      arrows([14, yl], [386, yl], 1, 0.12),
-      arrows([14, ym], [386, ym], 1, 0.12),
+      seg(topEnd, add(T2, mul(up, -reach))),
+      arrows([14, yl], [386, yl], 1, 0.08),
+      arrows([14, ym], [386, ym], 1, 0.08),
       P.text(376, yl - 14, "ℓ"),
       P.text(376, ym - 14, "m"),
-      P.text(topEnd[0] + 13, topEnd[1] + 4, "t"),
+      P.text(topEnd[0] + (up[0] >= 0 ? 12 : -12), topEnd[1] + 2, "t"),
     ];
     marks.forEach(({ at, quad, text }) => {
       const vertex = at === "top" ? T1 : T2;
       const [first, second] = QUAD_RAYS[quad];
       const p = add(vertex, rays[first]);
       const q = add(vertex, rays[second]);
+      // Keep the label clear of both rays, however narrow the angle.
+      const gap = Math.max(28, 15 / Math.sin(toRad(angleAt(vertex, p, q) / 2)));
       parts.push(angleArc(vertex, p, q, 15));
-      parts.push(angleLabel(vertex, p, q, text, 28));
+      parts.push(angleLabel(vertex, p, q, text, gap));
     });
     const described = marks
       .map(({ at, quad, text }) => `at line ${at === "top" ? "ℓ" : "m"}, the angle ${QUAD_WORDS[quad]} is labeled ${text}`)
       .join("; ");
     const alt =
-      `Horizontal lines ℓ (top) and m (bottom), marked parallel with arrows, are crossed by line t, which is drawn ` +
-      `almost perpendicular to them, so every angle at the two intersections looks like a right angle. ${described.charAt(0).toUpperCase()}${described.slice(1)}.`;
-    return { svg: S.svg(400, 270, parts, alt), alt, notToScale: true };
+      `Horizontal lines ℓ (top) and m (bottom), marked parallel with arrows, are crossed by line t` +
+      (phiTrue === null
+        ? `, which is drawn almost perpendicular to them, so every angle at the two intersections looks like a right angle. `
+        : `, which is drawn to scale, slanting ${phiTrue < 90 ? "up to the right" : "up to the left"}. `) +
+      `${described.charAt(0).toUpperCase()}${described.slice(1)}.`;
+    return { svg: S.svg(400, 270, parts, alt), alt, notToScale: phiTrue === null };
   }
 
-  function transversalItem(t, numeric) {
+  function transversalItem(t, numeric, accurate) {
     for (;;) {
-      const phi = t.chance(0.5) ? t.int(38, 76) : t.int(104, 142);
-      const pair = t.chance(0.6) ? t.pick(PAIRS.slice(0, 4)) : t.pick(PAIRS.slice(4));
+      // Not to scale: t is drawn near 90°, so keep its true inclination 12°–28°
+      // away from that; to scale: any clearly slanted inclination.
+      const phi = accurate
+        ? (t.chance(0.5) ? t.int(38, 76) : t.int(104, 142))
+        : (t.chance(0.5) ? t.int(62, 78) : t.int(102, 118));
+      const pair = t.chance(accurate ? 0.7 : 0.6) ? t.pick(PAIRS.slice(0, 4)) : t.pick(PAIRS.slice(4));
       const th1 = quadMeasure(pair.top, phi);
       const th2 = quadMeasure(pair.bot, phi);
       const x = t.int(6, 24);
@@ -689,13 +729,14 @@
       const swapOk = Number.isInteger(xSwap) && xSwap >= 2 &&
         [a1 * xSwap + b1, a2 * xSwap + b2].every((value) => value > 5 && value < 175);
       if (!numeric && !swapOk) continue;
-      const askY = t.chance(0.45);
+      // A drawing to scale shows every angle's size, so it asks only for x.
+      const askY = !accurate && t.chance(0.45);
       const intro = t.pick([
         "In the figure shown, line ℓ is parallel to line m.",
         "In the figure shown, lines ℓ and m are parallel, and line t intersects both of them.",
       ]);
       const relationText = supp
-        ? `The angles labeled ${e1} and ${e2} are ${pair.kind} angles, so they are supplementary, even though the figure makes them look equal.`
+        ? `The angles labeled ${e1} and ${e2} are ${pair.kind} angles, so they are supplementary${accurate ? "" : ", even though the figure makes them look equal"}.`
         : `The angles labeled ${e1} and ${e2} are ${pair.kind} angles, so they are equal.`;
       const equation = supp ? `${S.lin(a1 + a2, b1 + b2)} = 180` : `${S.lin(a1, b1)} = ${S.lin(a2, b2)}`;
       const solveStep = `${supp ? `${S.lin(a1, b1)} + ${S.lin(a2, b2)} = 180` : equation}, so x = ${x}.`;
@@ -708,50 +749,55 @@
         responseType: numeric ? "numeric" : "multiple-choice",
         estimatedSeconds: 110,
         stimulus: null,
-        hint: "Which labeled angles are guaranteed equal by the parallel lines, and which only look equal?",
+        hint: "Which labeled angles are guaranteed equal by the parallel lines, and which are not?",
         principles: [
           "When a line crosses two parallel lines, corresponding, alternate interior, and alternate exterior angles are equal.",
           "Same-side interior angles, and same-side exterior angles, are supplementary.",
-          "A figure marked not drawn to scale can make angles look right or equal when they are not.",
+          "A figure marked not drawn to scale can make angles look right or equal when they are not; a figure without that note can be trusted.",
         ],
       };
 
       if (!askY) {
         const xFig = (90 - b1) / a1;
-        if (!Number.isInteger(xFig) || xFig <= 0) continue;
+        if (!accurate && (!Number.isInteger(xFig) || xFig <= 0)) continue;
+        // Sign slip while solving a1x + b1 = a2x + b2.
+        const xSlip = supp ? null : (b1 + b2) / (a1 - a2);
         const wrong = distinctWrong(x, [
-          [xFig, `Sets ${e1} equal to 90 because line t looks perpendicular to ℓ and m in the figure; the figure is not drawn to scale.`],
+          [accurate ? null : xFig, `Sets ${e1} equal to 90 because line t looks perpendicular to ℓ and m in the figure; the figure is not drawn to scale.`],
           [swapOk ? xSwap : null, supp
             ? `Sets the two labeled angles equal, but ${pair.kind} angles are supplementary.`
             : `Makes the two labeled angles add to 180°, but ${pair.kind} angles are equal.`],
           [th1, `Gives the measure of the angle labeled ${e1}, not the value of x.`],
+          [th2, `Gives the measure of the angle labeled ${e2}, not the value of x.`],
           [supp && Number.isInteger((90 - b1 - b2) / (a1 + a2)) ? (90 - b1 - b2) / (a1 + a2) : null,
             `Makes the two labeled angles complementary (sum 90°) instead of supplementary.`],
+          [xSlip !== null && Number.isInteger(xSlip) ? xSlip : null, "Moves a constant to the other side without changing its sign while solving."],
         ]).filter(([value]) => typeof value !== "number" || value > 0);
         if (!numeric && wrong.length < 3) continue;
         return {
           ...common,
-          figure: transversalFigure(t, [{ at: "top", quad: pair.top, text: e1 }, { at: "bot", quad: pair.bot, text: e2 }]),
+          figure: transversalFigure(t, [{ at: "top", quad: pair.top, text: e1 }, { at: "bot", quad: pair.bot, text: e2 }], accurate ? phi : null),
           stem: `${intro} What is the value of x?`,
           correct: x,
           wrong,
           explanation:
-            `${relationText} ${solveStep} Each angle then measures ${th1}° and ${th2}°; line t only looks perpendicular because ` +
-            `the figure is not drawn to scale.`,
+            `${relationText} ${solveStep} Each angle then measures ${th1}° and ${th2}°` +
+            (accurate ? ", as the figure shows." : "; line t only looks perpendicular because the figure is not drawn to scale."),
           steps: [
             `Locate the labeled angles: one is ${QUAD_WORDS[pair.top].replace("the line", "ℓ")}, the other ${QUAD_WORDS[pair.bot].replace("the line", "m")}.`,
             `They are ${pair.kind} angles, so they are ${supp ? "supplementary" : "equal"}.`,
             `Write the equation: ${supp ? `(${S.lin(a1, b1)}) + (${S.lin(a2, b2)}) = 180` : equation}.`,
             `Solve: x = ${x}.`,
           ],
-          trap:
-            `Line t looks perpendicular in the figure, which is not drawn to scale, so both angles look like 90°. ` +
-            `${supp ? "Setting them equal" : "Making them add to 180°"} uses the wrong relationship.`,
+          trap: accurate
+            ? `${supp ? "Setting the angles equal" : "Making the angles add to 180°"} uses the wrong relationship; ${pair.kind} angles are ${supp ? "supplementary" : "equal"}.`
+            : `Line t looks perpendicular in the figure, which is not drawn to scale, so both angles look like 90°. ` +
+              `${supp ? "Setting them equal" : "Making them add to 180°"} uses the wrong relationship.`,
           verify: () => close(a1 * x + b1, geometry(pair.top)) && close(a2 * x + b2, geometry(pair.bot)),
         };
       }
 
-      // Third angle y at one of the intersections.
+      // Third angle y at one of the intersections (not-to-scale figures only).
       const atTop = t.chance(0.5);
       const own = atTop ? pair.top : pair.bot;
       const q3 = t.pick(["UR", "UL", "LL", "LR"].filter((quad) => quad !== own));
@@ -805,16 +851,29 @@
   const ISO_NAMES = [["A", "B", "C", "D"], ["P", "Q", "R", "S"], ["J", "K", "L", "M"]];
 
   // Isosceles triangle (apex top) with the base extended past the right
-  // vertex; drawn so the apex looks right-angled or the triangle equilateral.
-  function isoscelesFigure(t, look, names, apexText, extText) {
+  // vertex. With `apexTrue` it is drawn to scale; otherwise it is drawn so the
+  // apex looks right-angled or the triangle looks equilateral.
+  function isoscelesFigure(t, look, names, apexText, extText, apexTrue = null) {
     const [A, B, C, D] = names;
     const baseY = 214;
-    const w = look === "right" ? t.int(92, 100) : t.int(78, 86);
-    const height = w * Math.tan(toRad(look === "right" ? 45 + t.pick([-2, -1, 1, 2]) : 60 + t.pick([-1, 0, 1])));
+    let w;
+    let height;
+    if (apexTrue === null) {
+      w = look === "right" ? t.int(92, 100) : t.int(78, 86);
+      height = w * Math.tan(toRad(look === "right" ? 45 + t.pick([-2, -1, 1, 2]) : 60 + t.pick([-1, 0, 1])));
+    } else {
+      const slope = Math.tan(toRad(apexTrue / 2));
+      w = Math.min(100, 165 * slope);
+      height = w / slope;
+    }
     const Bp = [t.int(44, 66), baseY];
     const Cp = [Bp[0] + 2 * w, baseY];
     const Ap = [Bp[0] + w, baseY - height];
     const Dp = [Cp[0] + 88, baseY];
+    // Apex label deep enough that the triangle is wide enough to hold it.
+    const depth = apexTrue === null
+      ? (look === "right" ? 44 : 60)
+      : Math.min(0.72 * height, Math.max(44, 42 / Math.tan(toRad(apexTrue / 2))));
     const parts = [
       seg(Ap, Bp),
       seg(Ap, Cp),
@@ -822,7 +881,7 @@
       ticks(Ap, Bp),
       ticks(Ap, Cp),
       angleArc(Ap, Bp, Cp, 18),
-      measure(add(Ap, [0, look === "right" ? 44 : 60]), apexText, "middle", 14),
+      measure(add(Ap, [0, depth]), apexText, "middle", 14),
       angleArc(Cp, Ap, Dp, 16),
       angleLabel(Cp, Ap, Dp, extText, 30, 14),
       name(add(Ap, [0, -15]), A),
@@ -833,10 +892,12 @@
     const alt =
       `Triangle ${A}${B}${C} with ${A} at the top; tick marks show ${A}${B} = ${A}${C}. Side ${B}${C} is extended past ${C} to ${D}. ` +
       `Angle ${B}${A}${C} is labeled ${apexText} and exterior angle ${A}${C}${D} is labeled ${extText}. ` +
-      (look === "right"
-        ? `The triangle is drawn so that angle ${B}${A}${C} looks like a right angle.`
-        : "The triangle is drawn so that it looks equilateral.");
-    return { svg: S.svg(400, 250, parts, alt), alt, notToScale: true };
+      (apexTrue !== null
+        ? "The figure is drawn to scale."
+        : look === "right"
+          ? `The triangle is drawn so that angle ${B}${A}${C} looks like a right angle.`
+          : "The triangle is drawn so that it looks equilateral.");
+    return { svg: S.svg(400, 250, parts, alt), alt, notToScale: apexTrue === null };
   }
 
   function isoscelesGeometry(apexDegrees) {
@@ -848,14 +909,18 @@
     return { base: angleAt(B, A, C), ext: angleAt(C, A, D), equalSides: close(dist(A, B), dist(A, C)) };
   }
 
-  function isoscelesItem(t, numeric) {
+  function isoscelesItem(t, numeric, accurate) {
     for (;;) {
       const names = t.pick(ISO_NAMES);
       const [A, B, C, D] = names;
       const look = t.pick(["right", "equilateral"]);
-      const apex = t.pick(look === "right"
-        ? [36, 40, 44, 48, 52, 56, 64, 68, 112, 116, 120, 124, 128, 132]
-        : [28, 32, 36, 40, 44, 84, 88, 92, 96, 100, 104, 108, 112, 116]);
+      // Not to scale: the true vertex angle stays 16°–26° from the look it
+      // imitates. To scale: any vertex angle the drawing can hold.
+      const apex = t.pick(accurate
+        ? [44, 48, 52, 56, 64, 68, 72, 76, 80, 84, 96, 100, 104, 108, 112, 116, 120, 124, 128]
+        : look === "right"
+          ? [64, 68, 72, 76, 104, 108, 112, 116]
+          : [36, 40, 44, 76, 80, 84]);
       const baseAngle = 90 - apex / 2;
       const ext = 90 + apex / 2;
       const x = t.int(8, 30);
@@ -865,7 +930,8 @@
       const b = apex - a * x;
       const d = ext - c * x;
       if (!b || !d || Math.abs(b) > 70 || Math.abs(d) > 70) continue;
-      const askX = t.chance(0.4);
+      // A drawing to scale shows the angles' sizes, so it asks only for x.
+      const askX = accurate || t.chance(0.4);
       const apexText = degExpr(a, b);
       const extText = degExpr(c, d);
       const lookAngle = look === "right" ? 90 : 60;
@@ -891,8 +957,10 @@
           `Because ${A}${B} = ${A}${C}, the base angles at ${B} and ${C} are equal. Angle ${A}${C}${D} is supplementary to angle ${A}${C}${B}, ` +
           `so each base angle is 180 − (${S.lin(c, d)}). The exterior angle also equals the sum of the two remote interior angles: ` +
           `${S.lin(c, d)} = (${S.lin(a, b)}) + 180 − (${S.lin(c, d)}). This simplifies to ${S.lin(2 * c - a, 2 * d - b)} = 180, so x = ${x}. ` +
-          `Then angle ${B}${A}${C} = ${apex}°, angle ${A}${C}${D} = ${ext}°, and angle ${A}${B}${C} = ${baseAngle}°. The figure is not drawn to scale: ` +
-          (look === "right" ? `angle ${B}${A}${C} only looks like a right angle.` : "the triangle only looks equilateral."),
+          `Then angle ${B}${A}${C} = ${apex}°, angle ${A}${C}${D} = ${ext}°, and angle ${A}${B}${C} = ${baseAngle}°.` +
+          (accurate
+            ? ""
+            : ` The figure is not drawn to scale: ${look === "right" ? `angle ${B}${A}${C} only looks like a right angle.` : "the triangle only looks equilateral."}`),
         steps: [
           `${A}${B} = ${A}${C}, so angle ${A}${B}${C} = angle ${A}${C}${B}; call each b.`,
           `Linear pair at ${C}: b = 180 − (${S.lin(c, d)}).`,
@@ -903,20 +971,21 @@
           "Angles opposite congruent sides of a triangle are congruent.",
           "An exterior angle of a triangle equals the sum of the two remote interior angles and is supplementary to the adjacent interior angle.",
         ],
-        trap:
-          look === "right"
+        trap: accurate
+          ? `Taking angles ${A} and ${B} as the equal pair, or treating angle ${A}${C}${D} as supplementary to the vertex angle, sets up the wrong equation.`
+          : look === "right"
             ? `Angle ${B}${A}${C} looks like a right angle in the figure, which is not drawn to scale; it measures ${apex}°.`
             : `The triangle looks equilateral in the figure, which is not drawn to scale; its angles are ${apex}°, ${baseAngle}°, and ${baseAngle}°.`,
-        figure: isoscelesFigure(t, look, names, apexText, extText),
+        figure: isoscelesFigure(t, look, names, apexText, extText, accurate ? apex : null),
       };
       const check = () => {
         const g = isoscelesGeometry(a * x + b);
         return g.equalSides && close(g.ext, c * x + d) && close(g.base, baseAngle);
       };
       if (askX) {
-        if (!Number.isInteger(xFig) || xFig <= 0) continue;
+        if (!accurate && (!Number.isInteger(xFig) || xFig <= 0)) continue;
         const wrong = distinctWrong(x, [
-          [xFig, look === "right"
+          [accurate ? null : xFig, look === "right"
             ? `Sets ${apexText} equal to 90 because angle ${B}${A}${C} looks like a right angle in the figure; the figure is not drawn to scale.`
             : `Sets ${apexText} equal to 60 because the triangle looks equilateral in the figure; the figure is not drawn to scale.`],
           [Number.isInteger(xMis) && xMis > 0 ? xMis : null, misReason],
@@ -950,14 +1019,15 @@
 
   const BEND_NAMES = [["Q", "P", "R"], ["A", "B", "C"], ["J", "K", "L"], ["E", "F", "G"]];
 
-  // Parallel lines with a bend point between them, drawn so the angle at the
-  // bend looks like a right angle and the two outer angles look equal.
-  function bendFigure(t, names, labels) {
+  // Parallel lines with a bend point between them. With `truth` ({ alpha,
+  // beta }) the bend is drawn to scale; otherwise it is drawn so the angle at
+  // the bend looks like a right angle and the two outer angles look equal.
+  function bendFigure(t, names, labels, truth = null) {
     const [Qn, Pn, Rn] = names;
     const yl = 52;
     const ym = 212;
-    const alphaDrawn = t.int(42, 48);
-    const betaDrawn = 90 - alphaDrawn + t.int(-2, 2);
+    const alphaDrawn = truth ? truth.alpha : t.int(42, 48);
+    const betaDrawn = truth ? truth.beta : 90 - alphaDrawn + t.int(-2, 2);
     const qx = t.int(62, 100);
     const rx = t.int(62, 100);
     const ca = Math.cos(toRad(alphaDrawn));
@@ -972,6 +1042,8 @@
     const R = fx([rx, ym]);
     const Pt = fx([qx + s * ca, yl + s * sa]);
     const toward = [flip ? -1 : 1, 0];
+    // Labels sit far enough along each bisector to clear both rays.
+    const gap = (vertex, p, q, least) => Math.max(least, 15 / Math.sin(toRad(angleAt(vertex, p, q) / 2)));
     const parts = [
       seg([12, yl], [388, yl]),
       seg([12, ym], [388, ym]),
@@ -984,9 +1056,9 @@
       angleArc(Q, add(Q, toward), Pt, 20),
       angleArc(R, add(R, toward), Pt, 20),
       angleArc(Pt, Q, R, 18),
-      angleLabel(Q, add(Q, toward), Pt, labels.Q, 38),
-      angleLabel(R, add(R, toward), Pt, labels.R, 38),
-      angleLabel(Pt, Q, R, labels.P, 32),
+      angleLabel(Q, add(Q, toward), Pt, labels.Q, gap(Q, add(Q, toward), Pt, 38)),
+      angleLabel(R, add(R, toward), Pt, labels.R, gap(R, add(R, toward), Pt, 38)),
+      angleLabel(Pt, Q, R, labels.P, gap(Pt, Q, R, 32)),
       name(add(Q, [0, -15]), Qn),
       name(add(R, [0, 17]), Rn),
       name(add(Pt, [flip ? -15 : 15, 0]), Pn),
@@ -994,9 +1066,11 @@
     const alt =
       `Horizontal parallel lines ℓ (top) and m (bottom), marked with arrows. Point ${Qn} is on ℓ, point ${Rn} is on m, and point ${Pn} ` +
       `lies between the lines; segments ${Qn}${Pn} and ${Pn}${Rn} form a bend. The angle between ℓ and ${Qn}${Pn} is labeled ${labels.Q}, ` +
-      `the angle between m and ${Rn}${Pn} is labeled ${labels.R}, and angle ${Qn}${Pn}${Rn} is labeled ${labels.P}. The bend is drawn so ` +
-      `that angle ${Qn}${Pn}${Rn} looks like a right angle and the angles at ${Qn} and ${Rn} look equal.`;
-    return { svg: S.svg(400, 264, parts, alt), alt, notToScale: true };
+      `the angle between m and ${Rn}${Pn} is labeled ${labels.R}, and angle ${Qn}${Pn}${Rn} is labeled ${labels.P}. ` +
+      (truth
+        ? "The figure is drawn to scale."
+        : `The bend is drawn so that angle ${Qn}${Pn}${Rn} looks like a right angle and the angles at ${Qn} and ${Rn} look equal.`);
+    return { svg: S.svg(400, 264, parts, alt), alt, notToScale: !truth };
   }
 
   function bendGeometry(alpha, beta) {
@@ -1010,15 +1084,19 @@
     };
   }
 
-  function bendItem(t, numeric) {
+  function bendItem(t, numeric, accurate) {
     for (;;) {
       const names = t.pick(BEND_NAMES);
       const [Qn, Pn, Rn] = names;
-      const alpha = t.int(18, 72);
-      const beta = t.int(18, 72);
+      // Not to scale: both outer angles are drawn near 45° and the bend near
+      // 90°, so keep each outer angle within 15° of 45° and the bend 12°–28°
+      // from 90°. To scale: a wider range, drawn as it is.
+      const alpha = accurate ? t.int(24, 70) : t.int(30, 60);
+      const beta = accurate ? t.int(24, 70) : t.int(30, 60);
       const sum = alpha + beta;
-      if (Math.abs(sum - 90) < 14 || sum > 135 || Math.abs(alpha - beta) < 9) continue;
-      const kind = t.pick(["bend", "arm", "expr"]);
+      if (accurate ? Math.abs(sum - 90) < 8 || sum > 135 : Math.abs(sum - 90) < 12 || Math.abs(sum - 90) > 28 || Math.abs(alpha - beta) < 9) continue;
+      // A drawing to scale shows every angle's size, so it asks only for x in an expression.
+      const kind = accurate ? "expr" : t.pick(["bend", "arm", "expr"]);
       const angleName = `${Qn}${Pn}${Rn}`;
       const intro = "In the figure shown, line ℓ is parallel to line m.";
       const auxiliary =
@@ -1100,35 +1178,41 @@
       if (!b1 || !b3 || Math.abs(b1) > 70 || Math.abs(b3) > 70) continue;
       const labels = { Q: degExpr(a1, b1), R: `${beta}°`, P: degExpr(a3, b3) };
       const xFig = (90 - b3) / a3;
-      if (!Number.isInteger(xFig) || xFig <= 0) continue;
+      if (!accurate && (!Number.isInteger(xFig) || xFig <= 0)) continue;
       const xTri = (180 - b1 - beta - b3) / (a1 + a3);
       const xFull = (360 - b1 - beta - b3) / (a1 + a3);
+      // Bend angle matched with the angle at Q alone.
+      const xOne = (b1 - b3) / (a3 - a1);
       // A wrong x is only believable if it leaves every marked angle between 0° and 180°.
       const real = (value) => [a1 * value + b1, a3 * value + b3].every((angle) => angle > 0 && angle < 180);
       const wrong = distinctWrong(x, [
-        [xFig, `Sets ${labels.P} equal to 90 because angle ${angleName} looks like a right angle in the figure; the figure is not drawn to scale.`],
+        [accurate ? null : xFig, `Sets ${labels.P} equal to 90 because angle ${angleName} looks like a right angle in the figure; the figure is not drawn to scale.`],
         [Number.isInteger(xTri) && xTri > 0 && real(xTri) ? xTri : null, triReason],
         [Number.isInteger(xFull) && real(xFull) ? xFull : null, fullReason],
+        [Number.isInteger(xOne) && xOne > 0 && real(xOne) ? xOne : null,
+          `Sets angle ${angleName} equal to the angle at ${Qn} alone, missing the part that matches the ${beta}° angle.`],
         [sum, `Gives the measure of angle ${angleName} instead of the value of x.`],
         [alpha, `Gives the measure of the angle at ${Qn} instead of the value of x.`],
       ]);
       if (!numeric && wrong.length < 3) continue;
       return {
         ...common,
-        figure: bendFigure(t, names, labels),
+        figure: bendFigure(t, names, labels, accurate ? { alpha, beta } : null),
         stem: `${intro} What is the value of x?`,
         correct: x,
         wrong,
         explanation:
-          `${auxiliary} So (${S.lin(a1, b1)}) + ${beta} = ${S.lin(a3, b3)}, which gives x = ${x}. The angle at ${Pn} measures ${sum}°, ` +
-          `not the 90° it appears to be in the figure.`,
+          `${auxiliary} So (${S.lin(a1, b1)}) + ${beta} = ${S.lin(a3, b3)}, which gives x = ${x}. The angle at ${Pn} measures ${sum}°` +
+          (accurate ? "." : `, not the 90° it appears to be in the figure.`),
         steps: [
           `Add a line through ${Pn} parallel to ℓ and m.`,
           `Angle ${angleName} is the sum of the angles at ${Qn} and ${Rn}.`,
           `Equation: ${S.lin(a1, b1 + beta)} = ${S.lin(a3, b3)}.`,
           `Solve: x = ${x}.`,
         ],
-        trap: `Angle ${angleName} looks like a right angle in the figure, which is not drawn to scale; it measures ${sum}°.`,
+        trap: accurate
+          ? `The three marked angles do not form a triangle, and angle ${angleName} matches both outer angles, not just one.`
+          : `Angle ${angleName} looks like a right angle in the figure, which is not drawn to scale; it measures ${sum}°.`,
         verify: () => close(g().atQ, a1 * x + b1) && close(g().atP, a3 * x + b3) && close(g().atR, beta),
       };
     }
@@ -1141,18 +1225,20 @@
     subskill: "angle relationships",
     title: "Angle chase through a misleading figure",
     recognize:
-      "Decide which angle relationships the given facts guarantee (parallel lines, congruent sides) before " +
-      "computing, and ignore what the drawing suggests: the angle that looks right, or looks equal to another, usually is not.",
+      "Decide which angle relationships the given facts guarantee (parallel lines, congruent sides) before computing. " +
+      "A figure without the not-to-scale note can be trusted; with it, the angle that looks right, or looks equal to another, usually is not.",
     rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["not-to-scale-figure", "neighbouring-rule", "wrong-quantity"],
     build(t) {
       const form = t.pick(["transversal", "isosceles", "bend"]);
       const numeric = t.chance(0.3);
-      if (form === "transversal") return transversalItem(t, numeric);
-      if (form === "isosceles") return isoscelesItem(t, numeric);
-      return bendItem(t, numeric);
+      const accurate = t.chance(0.35);
+      if (form === "transversal") return transversalItem(t, numeric, accurate);
+      if (form === "isosceles") return isoscelesItem(t, numeric, accurate);
+      return bendItem(t, numeric, accurate);
     },
   };
+
 
   /* ========================================== 3. arcs, sectors, inscribed */
 
@@ -1202,7 +1288,6 @@
   }
 
   const ARC_NAMES = [["A", "B", "C"], ["P", "Q", "R"], ["J", "K", "L"], ["D", "E", "F"], ["M", "N", "P"]];
-  const PI_DEGREES = [20, 30, 36, 40, 60, 120, 135, 144, 150, 160];
   const PLAIN_RADIANS = [0.5, 0.6, 0.8, 1.2, 2, 2.4, 2.5];
 
   const arcSector = {
@@ -1219,6 +1304,9 @@
     build(t) {
       const [nA, nB, nC] = t.pick(ARC_NAMES);
       const form = t.pick(["arcFromAngle", "arcFromAngle", "inscribed", "inscribed", "sector", "sector", "plain"]);
+      // About 4/7 of items can be drawn to scale without the drawing settling
+      // the answer (arc lengths and areas, not a drawn angle); 61% of those are.
+      const toScale = t.chance(0.61);
       const principles = [
         "An inscribed angle measures half of the central angle that intercepts the same arc.",
         "Arc length is (central angle ÷ 360°) × 2πr; sector area is (central angle ÷ 360°) × πr².",
@@ -1230,10 +1318,15 @@
         if (inscribed) {
           // Inscribed angle ACB given; A and B drawn almost opposite, so the
           // angle at C looks like a right angle and arc AB like a semicircle.
-          const theta = t.pick([20, 24, 30, 36, 40, 45, 50, 54, 60]);
+          // Not to scale, A and B are drawn nearly opposite (angle ACB near
+          // 85°), so the true angle stays within about 30° of that.
+          const accurate = toScale;
+          // Drawn to scale, angles under 30° put the chords (and the label)
+          // on top of the center, so the list starts at 30°.
+          const theta = t.pick(accurate ? [30, 36, 40, 45, 50, 54, 60] : [54, 60, 70, 72]);
           const r = t.pick([2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18].filter((value) => (theta * value) % 90 === 0));
           const arc = piText(theta * r, 90);
-          const drawnHalf = t.int(83, 87);
+          const drawnHalf = accurate ? theta : t.int(83, 87);
           const center = t.int(248, 292);
           const [first, second] = t.shuffle([nA, nB]);
           const Cdeg = center + 180 + t.int(-32, 32);
@@ -1245,13 +1338,15 @@
             seg(Cp, Ap),
             seg(Cp, Bp),
             angleArc(Cp, Ap, Bp, 18),
-            angleLabel(Cp, Ap, Bp, `${theta}°`, 34),
+            angleLabel(Cp, Ap, Bp, `${theta}°`, Math.max(34, 15 / Math.sin(toRad(theta / 2)))),
           ]);
           const alt =
             `Circle with center O. Points ${nA}, ${nB}, and ${nC} lie on the circle, with chords ${nC}${nA} and ${nC}${nB}; angle ${nA}${nC}${nB} is labeled ${theta}°. ` +
-            `${nA} and ${nB} are drawn almost directly opposite each other, so angle ${nA}${nC}${nB} looks like a right angle and arc ${nA}${nB} looks like a semicircle.`;
+            (accurate
+              ? "The figure is drawn to scale."
+              : `${nA} and ${nB} are drawn almost directly opposite each other, so angle ${nA}${nC}${nB} looks like a right angle and arc ${nA}${nB} looks like a semicircle.`);
           const wrong = distinctWrong(arc, [
-            [piText(r), `Takes ${nA}${nB} as a diameter because it looks like one in the figure, making arc ${nA}${nB} a semicircle; the figure is not drawn to scale.`],
+            [accurate ? null : piText(r), `Takes ${nA}${nB} as a diameter because it looks like one in the figure, making arc ${nA}${nB} a semicircle; the figure is not drawn to scale.`],
             [piText(theta * r, 180), `Uses ${theta}° as the central angle; an inscribed angle is half the central angle, so the arc is twice as long.`],
             [piText(180 * r - theta * r, 90), `Finds the length of the arc that contains ${nC}.`],
             [piText(theta * r * r, 180), `Computes the area of sector ${nA}O${nB} instead of the length of arc ${nA}${nB}.`],
@@ -1261,15 +1356,15 @@
             responseType: "multiple-choice",
             estimatedSeconds: 105,
             stimulus: null,
-            figure: { svg: S.svg(400, 300, parts, alt), alt, notToScale: true },
+            figure: { svg: S.svg(400, 300, parts, alt), alt, notToScale: !accurate },
             stem: `Points ${nA}, ${nB}, and ${nC} lie on the circle shown, which has center O and radius ${r}. What is the length of the arc ${nA}${nB} that does not contain ${nC}?`,
             correct: arc,
             wrong,
             hint: `Which angle at the center cuts off the same arc as angle ${nA}${nC}${nB}?`,
             explanation:
               `Angle ${nA}${nC}${nB} is inscribed, so the central angle ${nA}O${nB} that intercepts the same arc measures 2 × ${theta}° = ${2 * theta}°. ` +
-              `The arc is ${2 * theta}/360 of the circumference 2π(${r}) = ${piText(2 * r)}, which is ${arc}. The figure is not drawn to scale: ` +
-              `${nA}${nB} only looks like a diameter.`,
+              `The arc is ${2 * theta}/360 of the circumference 2π(${r}) = ${piText(2 * r)}, which is ${arc}.` +
+              (accurate ? "" : ` The figure is not drawn to scale: ${nA}${nB} only looks like a diameter.`),
             steps: [
               `Angle ${nA}${nC}${nB} is an inscribed angle of ${theta}°.`,
               `The central angle on the same arc is ${2 * theta}°.`,
@@ -1277,7 +1372,9 @@
               `Arc ${nA}${nB} = (${2 * theta}/360) × ${piText(2 * r)} = ${arc}.`,
             ],
             principles,
-            trap: `${nA}${nB} looks like a diameter in the figure, which is not drawn to scale; and ${theta}° is inscribed, not central.`,
+            trap: accurate
+              ? `${theta}° is an inscribed angle, not a central one, so the arc it cuts off is twice as large a fraction of the circle as ${theta}/360.`
+              : `${nA}${nB} looks like a diameter in the figure, which is not drawn to scale; and ${theta}° is inscribed, not central.`,
             verify: () => {
               const A = [r * Math.cos(toRad(-theta)), r * Math.sin(toRad(-theta))];
               const B = [r * Math.cos(toRad(theta)), r * Math.sin(toRad(theta))];
@@ -1287,11 +1384,14 @@
           };
         }
         // Central angle given in degrees; drawn as a right angle.
-        const c = t.pick([40, 45, 60, 72, 120, 135, 144, 150]);
+        // Not to scale, angle AOB is drawn near 90°, so the true angle stays
+        // within 30° of that.
+        const accurate = toScale;
+        const c = t.pick(accurate ? [40, 45, 60, 72, 120, 135, 144, 150] : [60, 72, 108, 120]);
         const r = t.pick([3, 4, 5, 6, 8, 9, 10, 12, 15, 18].filter((value) => (c * value) % 180 === 0));
         const arc = piText(c * r, 180);
         const start = t.int(-15, 40);
-        const drawn = t.int(87, 93);
+        const drawn = accurate ? c : t.int(87, 93);
         const points = { [nA]: start, [nB]: start + drawn };
         const Ap = onCircle(points[nA]);
         const Bp = onCircle(points[nB]);
@@ -1299,14 +1399,14 @@
           seg(O, Ap),
           seg(O, Bp),
           angleArc(O, Ap, Bp, 18),
-          angleLabel(O, Ap, Bp, `${c}°`, 32),
+          angleLabel(O, Ap, Bp, `${c}°`, Math.max(32, 15 / Math.sin(toRad(drawn / 2)))),
           sideLabel(O, Ap, Bp, num(r), 12),
         ]);
         const alt =
           `Circle with center O and radii O${nA} and O${nB}. Radius O${nA} is labeled ${r} and angle ${nA}O${nB} is labeled ${c}°. ` +
-          `Angle ${nA}O${nB} is drawn as a right angle, so arc ${nA}${nB} looks like a quarter of the circle.`;
+          (accurate ? "The figure is drawn to scale." : `Angle ${nA}O${nB} is drawn as a right angle, so arc ${nA}${nB} looks like a quarter of the circle.`);
         const wrong = distinctWrong(arc, [
-          [piText(r, 2), `Treats angle ${nA}O${nB} as a right angle, as it looks in the figure, making arc ${nA}${nB} a quarter circle; the figure is not drawn to scale.`],
+          [accurate ? null : piText(r, 2), `Treats angle ${nA}O${nB} as a right angle, as it looks in the figure, making arc ${nA}${nB} a quarter circle; the figure is not drawn to scale.`],
           [piText(2 * c * r, 180), `Treats the ${c}° angle as inscribed and doubles it; angle ${nA}O${nB} is a central angle.`],
           [piText(c * r * r, 360), `Computes the area of sector ${nA}O${nB} instead of the length of arc ${nA}${nB}.`],
           [piText(360 * r - c * r, 180), "Finds the length of the major arc instead of the minor arc."],
@@ -1316,21 +1416,23 @@
           responseType: "multiple-choice",
           estimatedSeconds: 95,
           stimulus: null,
-          figure: { svg: S.svg(400, 300, parts, alt), alt, notToScale: true },
+          figure: { svg: S.svg(400, 300, parts, alt), alt, notToScale: !accurate },
           stem: `In the circle shown with center O, what is the length of minor arc ${nA}${nB}?`,
           correct: arc,
           wrong,
           hint: "What fraction of the whole circle does the marked angle cut off?",
           explanation:
             `Angle ${nA}O${nB} is a central angle of ${c}°, so minor arc ${nA}${nB} is ${c}/360 of the circumference 2π(${r}) = ${piText(2 * r)}: ` +
-            `${arc}. The angle is drawn close to 90°, but the figure is not drawn to scale.`,
+            `${arc}.${accurate ? "" : " The angle is drawn close to 90°, but the figure is not drawn to scale."}`,
           steps: [
             `Angle ${nA}O${nB} is central, so the arc is ${c}/360 of the circle.`,
             `Circumference: 2π(${r}) = ${piText(2 * r)}.`,
             `Arc ${nA}${nB} = (${c}/360) × ${piText(2 * r)} = ${arc}.`,
           ],
           principles,
-          trap: `Angle ${nA}O${nB} looks like a right angle in the figure, which is not drawn to scale; it measures ${c}°.`,
+          trap: accurate
+            ? `Angle ${nA}O${nB} is a central angle, so the arc is ${c}/360 of the circumference; doubling it, or using the area formula, answers a different question.`
+            : `Angle ${nA}O${nB} looks like a right angle in the figure, which is not drawn to scale; it measures ${c}°.`,
           verify: () => close(polylineArc(r, toRad(c)), (c * r * Math.PI) / 180, 1e-5),
         };
       }
@@ -1338,7 +1440,9 @@
       if (form === "inscribed") {
         // Central angle given in radians, or through an arc length; asked
         // for the inscribed angle in degrees. Drawn with AOB a right angle.
-        const c = t.pick(PI_DEGREES);
+        // Always not to scale (a drawn angle would give the answer away), with
+        // the true central angle within 30° of the right angle it is drawn as.
+        const c = t.pick([60, 72, 108, 120]);
         const viaArc = t.chance(0.45);
         const numeric = t.chance(0.4);
         const r = t.pick([2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18].filter((value) => (c * value) % 180 === 0));
@@ -1415,11 +1519,15 @@
 
       if (form === "sector") {
         // Shaded sector with area given as a multiple of π; drawn as a quarter.
-        const c = t.pick([30, 40, 45, 60, 72, 120, 135, 144, 150]);
+        // Asking for the angle keeps the figure not to scale (a drawn angle would
+        // give it away); asking for the arc may be drawn to scale.
+        const askAngle = t.chance(0.5);
+        const accurate = toScale && !askAngle;
+        const c = t.pick(accurate ? [30, 40, 45, 60, 72, 120, 135, 144, 150] : [60, 72, 108, 120]);
         const r = t.pick([2, 3, 4, 5, 6, 8, 9, 10, 12].filter((value) => (c * value * value) % 360 === 0));
         const areaText = piText(c * r * r, 360);
         const start = t.int(10, 60);
-        const drawn = t.int(87, 93);
+        const drawn = accurate ? c : t.int(87, 93);
         const points = { [nA]: start, [nB]: start + drawn };
         const Ap = onCircle(points[nA]);
         const Bp = onCircle(points[nB]);
@@ -1430,9 +1538,8 @@
         ]);
         const alt =
           `Circle with center O and radii O${nA} and O${nB}; sector ${nA}O${nB} is shaded and radius O${nA} is labeled ${r}. ` +
-          "The shaded sector is drawn as a quarter of the circle.";
-        const figure = { svg: S.svg(400, 300, parts, alt), alt, notToScale: true };
-        const askAngle = t.chance(0.5);
+          (accurate ? "The figure is drawn to scale." : "The shaded sector is drawn as a quarter of the circle.");
+        const figure = { svg: S.svg(400, 300, parts, alt), alt, notToScale: !accurate };
         const intro = `In the circle shown with center O, the shaded sector has area ${areaText}.`;
         if (askAngle) {
           const answer = piText(c, 180);
@@ -1467,7 +1574,7 @@
         }
         const answer = piText(c * r, 180);
         const wrong = distinctWrong(answer, [
-          [piText(r, 2), "Treats the sector as a quarter circle, as it looks in the figure; the figure is not drawn to scale."],
+          [accurate ? null : piText(r, 2), "Treats the sector as a quarter circle, as it looks in the figure; the figure is not drawn to scale."],
           [piText(c * r, 360), "Divides the area by r without doubling; a sector's area is half of r times its arc length."],
           [piText(c, 180), "Stops at the central angle in radians instead of multiplying by the radius."],
           [piText(360 * r - c * r, 180), "Finds the length of the arc bounding the unshaded region."],
@@ -1484,14 +1591,16 @@
           hint: "The arc and the sector are the same fraction of different wholes.",
           explanation:
             `The circle's area is ${piText(r * r)}, so the shaded sector is ${areaText} ÷ ${piText(r * r)} = ${S.frac(c, 360)} of the circle. ` +
-            `Arc ${nA}${nB} is the same fraction of the circumference ${piText(2 * r)}: ${answer}. The sector only looks like a quarter circle.`,
+            `Arc ${nA}${nB} is the same fraction of the circumference ${piText(2 * r)}: ${answer}.${accurate ? "" : " The sector only looks like a quarter circle."}`,
           steps: [
             `Fraction shaded: ${areaText} ÷ ${piText(r * r)} = ${S.frac(c, 360)}.`,
             `Circumference: ${piText(2 * r)}.`,
             `Arc ${nA}${nB} = ${S.frac(c, 360)} × ${piText(2 * r)} = ${answer}.`,
           ],
           principles,
-          trap: "The sector looks like a quarter circle in the figure, which is not drawn to scale; the fraction comes from the given area.",
+          trap: accurate
+            ? "The area and the arc are the same fraction of different wholes; dividing the area by r skips the factor of 2 in A = rs/2."
+            : "The sector looks like a quarter circle in the figure, which is not drawn to scale; the fraction comes from the given area.",
           verify: () => {
             const turn = (c / 180) * Math.PI;
             return close(polygonSector(r, turn), (c * r * r * Math.PI) / 360, 1e-5) && close(polylineArc(r, turn), (c * r * Math.PI) / 180, 1e-5);
@@ -1500,7 +1609,10 @@
       }
 
       // plain: angle given as a radian number with no π.
-      const theta = t.pick(PLAIN_RADIANS);
+      // Not to scale, the sector is drawn as a quarter circle, so the true angle
+      // stays within about 35° of 90° (1 to 2 radians).
+      const accurate = toScale;
+      const theta = t.pick(accurate ? PLAIN_RADIANS : [1, 1.1, 1.2, 1.9, 2]);
       const r = t.int(2, 12);
       const arcValue = round4(r * theta);
       const areaValue = round4((r * r * theta) / 2);
@@ -1509,7 +1621,7 @@
       if (!fitsGrid(answer)) return this.build(t);
       const numeric = t.chance(0.6);
       const start = t.int(10, 60);
-      const drawn = t.int(87, 93);
+      const drawn = accurate ? toDeg(theta) : t.int(87, 93);
       const points = { [nA]: start, [nB]: start + drawn };
       const Ap = onCircle(points[nA]);
       const Bp = onCircle(points[nB]);
@@ -1520,19 +1632,19 @@
       ]);
       const alt =
         `Circle with center O and radii O${nA} and O${nB}; sector ${nA}O${nB} is shaded and radius O${nA} is labeled ${r}. ` +
-        "The shaded sector is drawn as a quarter of the circle.";
+        (accurate ? "The figure is drawn to scale." : "The shaded sector is drawn as a quarter of the circle.");
       const tenths = Math.round(theta * 10);
       const wrong = distinctWrong(
         answer,
         askArea
           ? [
-            [piText(r * r, 4), "Treats the shaded sector as a quarter circle, as it looks in the figure; the figure is not drawn to scale."],
+            [accurate ? null : piText(r * r, 4), "Treats the shaded sector as a quarter circle, as it looks in the figure; the figure is not drawn to scale."],
             [arcValue, "Computes the arc length rθ instead of the sector's area."],
             [round4(r * r * theta), "Uses r²θ, dropping the factor 1/2 in the sector-area formula."],
             [piText(tenths * r * r, 3600), `Treats ${num(theta)} as a degree measure and uses (θ/360)πr².`],
           ]
           : [
-            [piText(r, 2), "Treats the arc as a quarter of the circle, as it looks in the figure; the figure is not drawn to scale."],
+            [accurate ? null : piText(r, 2), "Treats the arc as a quarter of the circle, as it looks in the figure; the figure is not drawn to scale."],
             [areaValue, "Computes the sector's area instead of the arc length."],
             [piText(tenths * 2 * r, 3600), `Treats ${num(theta)} as a degree measure and uses (θ/360)2πr.`],
             [round4(r * r * theta), "Multiplies by r² instead of r."],
@@ -1543,19 +1655,21 @@
         responseType: numeric ? "numeric" : "multiple-choice",
         estimatedSeconds: 95,
         stimulus: null,
-        figure: { svg: S.svg(400, 300, parts, alt), alt, notToScale: true },
+        figure: { svg: S.svg(400, 300, parts, alt), alt, notToScale: !accurate },
         stem: `In the circle shown with center O, angle ${nA}O${nB} measures ${num(theta)} radians. What is the ${askArea ? "area of the shaded sector" : `length of minor arc ${nA}${nB}`}?`,
         correct: answer,
         wrong,
         hint: "Is the given angle in degrees or radians, and which formula expects that unit?",
         explanation: askArea
-          ? `With the angle in radians, the sector's area is r²θ/2 = (${r})²(${num(theta)})/2 = ${num(areaValue)}. The angle is about ${Math.round(toDeg(theta))}°, not the 90° it appears to be.`
-          : `With the angle in radians, arc length is s = rθ = ${r} × ${num(theta)} = ${num(arcValue)}. The angle is about ${Math.round(toDeg(theta))}°, not the 90° it appears to be.`,
+          ? `With the angle in radians, the sector's area is r²θ/2 = (${r})²(${num(theta)})/2 = ${num(areaValue)}. The angle is about ${Math.round(toDeg(theta))}°${accurate ? "." : ", not the 90° it appears to be."}`
+          : `With the angle in radians, arc length is s = rθ = ${r} × ${num(theta)} = ${num(arcValue)}. The angle is about ${Math.round(toDeg(theta))}°${accurate ? "." : ", not the 90° it appears to be."}`,
         steps: askArea
           ? [`The angle ${num(theta)} is in radians (no degree sign).`, "Sector area in radians: A = r²θ/2.", `A = ${r * r} × ${num(theta)} ÷ 2 = ${num(areaValue)}.`]
           : [`The angle ${num(theta)} is in radians (no degree sign).`, "Arc length in radians: s = rθ.", `s = ${r} × ${num(theta)} = ${num(arcValue)}.`],
         principles,
-        trap: `The sector is drawn as a quarter circle, but the figure is not drawn to scale; ${num(theta)} radians is about ${Math.round(toDeg(theta))}°. Treating ${num(theta)} as degrees gives a tiny multiple of π.`,
+        trap: accurate
+          ? `${num(theta)} radians is about ${Math.round(toDeg(theta))}°; treating ${num(theta)} as degrees gives a tiny multiple of π, and mixing up arc length and sector area answers the other question.`
+          : `The sector is drawn as a quarter circle, but the figure is not drawn to scale; ${num(theta)} radians is about ${Math.round(toDeg(theta))}°. Treating ${num(theta)} as degrees gives a tiny multiple of π.`,
         verify: () =>
           askArea ? close(polygonSector(r, theta), areaValue, 1e-5) : close(polylineArc(r, theta), arcValue, 1e-5),
       };
