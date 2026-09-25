@@ -1,478 +1,714 @@
 {
   "sectionKey": "sat-math",
-  "note": "Bit positions are permanent: append new templates, retire removed ones, never renumber.",
+  "note": "Bit positions are permanent: append new templates, retire removed ones, never renumber. A version goes up when the template's fingerprint (what it builds for fixed seeds) changes.",
   "templates": [
     {
       "id": "linear-equation-solve",
-      "bit": 0
+      "bit": 0,
+      "version": 1,
+      "fingerprint": "742837d11227b86d"
     },
     {
       "id": "linear-equation-context-meaning",
-      "bit": 1
+      "bit": 1,
+      "version": 1,
+      "fingerprint": "c8c2764c53dc27a0"
     },
     {
       "id": "equation-solution-count",
-      "bit": 2
+      "bit": 2,
+      "version": 1,
+      "fingerprint": "bcdb3bcc85e799cc"
     },
     {
       "id": "linear-equation-word-model",
-      "bit": 3
+      "bit": 3,
+      "version": 1,
+      "fingerprint": "80133db91fb2a235"
     },
     {
       "id": "literal-equation-rearrange",
-      "bit": 4
+      "bit": 4,
+      "version": 1,
+      "fingerprint": "d13bba0c3148f8b5"
     },
     {
       "id": "linear-expression-from-equation",
-      "bit": 5
+      "bit": 5,
+      "version": 1,
+      "fingerprint": "a728e0dad01fa1f2"
     },
     {
       "id": "function-value-and-input",
-      "bit": 6
+      "bit": 6,
+      "version": 1,
+      "fingerprint": "ee20dedcaf3eb0fd"
     },
     {
       "id": "slope-from-two-points",
-      "bit": 7
+      "bit": 7,
+      "version": 1,
+      "fingerprint": "97690522016d2add"
     },
     {
       "id": "line-intercept-read",
-      "bit": 8
+      "bit": 8,
+      "version": 1,
+      "fingerprint": "55ec553b3d91254c"
     },
     {
       "id": "function-constant-from-value",
-      "bit": 9
+      "bit": 9,
+      "version": 1,
+      "fingerprint": "39790e3546aadd22"
     },
     {
       "id": "perpendicular-line-through-point",
-      "bit": 10
+      "bit": 10,
+      "version": 1,
+      "fingerprint": "b5517c7d28c3efd6"
     },
     {
       "id": "linear-function-transformation",
-      "bit": 11
+      "bit": 11,
+      "version": 1,
+      "fingerprint": "74a71587c8e8c484"
     },
     {
       "id": "linear-function-identity",
-      "bit": 12
+      "bit": 12,
+      "version": 1,
+      "fingerprint": "39b815c28dbf5c96"
     },
     {
       "id": "point-on-line",
-      "bit": 13
+      "bit": 13,
+      "version": 1,
+      "fingerprint": "205659ac337284ad"
     },
     {
       "id": "standard-form-slope",
-      "bit": 14
+      "bit": 14,
+      "version": 1,
+      "fingerprint": "383aa228605cafd0"
     },
     {
       "id": "two-variable-equation-model",
-      "bit": 15
+      "bit": 15,
+      "version": 1,
+      "fingerprint": "463e11330de09031"
     },
     {
       "id": "linear-graph-context",
-      "bit": 16
+      "bit": 16,
+      "version": 1,
+      "fingerprint": "54a806e0b18d80ea"
     },
     {
       "id": "linear-model-interpretation",
-      "bit": 17
+      "bit": 17,
+      "version": 1,
+      "fingerprint": "5913338c66e997e8"
     },
     {
       "id": "line-point-shift",
-      "bit": 18
+      "bit": 18,
+      "version": 1,
+      "fingerprint": "f8d172fb417e5451"
     },
     {
       "id": "system-from-context",
-      "bit": 19
+      "bit": 19,
+      "version": 1,
+      "fingerprint": "ce25f6b6bc8a3f9c"
     },
     {
       "id": "system-intersection-point",
-      "bit": 20
+      "bit": 20,
+      "version": 1,
+      "fingerprint": "6d3d390f88ab3202"
     },
     {
       "id": "system-combination-value",
-      "bit": 21
+      "bit": 21,
+      "version": 1,
+      "fingerprint": "ceb29546a59eecc1"
     },
     {
       "id": "system-word-totals",
-      "bit": 22
+      "bit": 22,
+      "version": 1,
+      "fingerprint": "4b7fbe5c7e3e122e"
     },
     {
       "id": "system-parameter-solution-count",
-      "bit": 23
+      "bit": 23,
+      "version": 1,
+      "fingerprint": "7cb58f0932c36c65"
     },
     {
       "id": "two-plan-crossover",
-      "bit": 24
+      "bit": 24,
+      "version": 1,
+      "fingerprint": "9ff1ce7d8a721d19"
     },
     {
       "id": "inequality-allowed-range",
-      "bit": 25
+      "bit": 25,
+      "version": 1,
+      "fingerprint": "6efc8ee4daee7d1f"
     },
     {
       "id": "linear-inequality-solve",
-      "bit": 26
+      "bit": 26,
+      "version": 1,
+      "fingerprint": "6e369cd1e554274c"
     },
     {
       "id": "inequality-word-limit",
-      "bit": 27
+      "bit": 27,
+      "version": 1,
+      "fingerprint": "9d6066004c8738ad"
     },
     {
       "id": "inequality-system-check",
-      "bit": 28
+      "bit": 28,
+      "version": 1,
+      "fingerprint": "9fedcef215ec13c9"
     },
     {
       "id": "inequality-integer-optimization",
-      "bit": 29
+      "bit": 29,
+      "version": 1,
+      "fingerprint": "098821ee5e9e1f78"
     },
     {
       "id": "inequality-region-corner",
-      "bit": 30
+      "bit": 30,
+      "version": 1,
+      "fingerprint": "af730ac117f16b74"
     },
     {
       "id": "monomial-exponent-rules",
-      "bit": 31
+      "bit": 31,
+      "version": 1,
+      "fingerprint": "036f1472dedb1c95"
     },
     {
       "id": "quadratic-factor-match",
-      "bit": 32
+      "bit": 32,
+      "version": 1,
+      "fingerprint": "ed9150f97b7580c2"
     },
     {
       "id": "rational-expression-combine",
-      "bit": 33
+      "bit": 33,
+      "version": 1,
+      "fingerprint": "40560983f2e6ac23"
     },
     {
       "id": "rational-exponent-rewrite",
-      "bit": 34
+      "bit": 34,
+      "version": 1,
+      "fingerprint": "a5590048bef62c80"
     },
     {
       "id": "unknown-coefficient-product",
-      "bit": 35
+      "bit": 35,
+      "version": 1,
+      "fingerprint": "0bb88be9f8f1a1c6"
     },
     {
       "id": "expression-substitution",
-      "bit": 36
+      "bit": 36,
+      "version": 1,
+      "fingerprint": "8b0c57f710c4dcc6"
     },
     {
       "id": "quadratic-square-root-solve",
-      "bit": 37
+      "bit": 37,
+      "version": 1,
+      "fingerprint": "09f7398b26bd5c20"
     },
     {
       "id": "radical-equation-solve",
-      "bit": 38
+      "bit": 38,
+      "version": 1,
+      "fingerprint": "e40bc2a7ca895975"
     },
     {
       "id": "absolute-value-equation",
-      "bit": 39
+      "bit": 39,
+      "version": 1,
+      "fingerprint": "27edfd934148ce64"
     },
     {
       "id": "quadratic-irrational-solutions",
-      "bit": 40
+      "bit": 40,
+      "version": 1,
+      "fingerprint": "522e8f01e0d7b34f"
     },
     {
       "id": "root-sum-product",
-      "bit": 41
+      "bit": 41,
+      "version": 1,
+      "fingerprint": "8fd936b62fc62bd0"
     },
     {
       "id": "extraneous-roots",
-      "bit": 42
+      "bit": 42,
+      "version": 1,
+      "fingerprint": "9885a7410bbbc980"
     },
     {
       "id": "system-constant-from-solution",
-      "bit": 43
+      "bit": 43,
+      "version": 1,
+      "fingerprint": "2e6b205925fba77c"
     },
     {
       "id": "parabola-line-solution-check",
-      "bit": 44
+      "bit": 44,
+      "version": 1,
+      "fingerprint": "e5e4a089c6756d7d"
     },
     {
       "id": "line-parabola-solve",
-      "bit": 45
+      "bit": 45,
+      "version": 1,
+      "fingerprint": "85796ae7c0c66551"
     },
     {
       "id": "nonlinear-system-solve",
-      "bit": 46
+      "bit": 46,
+      "version": 1,
+      "fingerprint": "4fd759be45d22b2f"
     },
     {
       "id": "discriminant-parameter",
-      "bit": 47
+      "bit": 47,
+      "version": 1,
+      "fingerprint": "e025e9b689a94aaf"
     },
     {
       "id": "system-square-identity",
-      "bit": 48
+      "bit": 48,
+      "version": 1,
+      "fingerprint": "c1f047a8e0dd9ef6"
     },
     {
       "id": "factored-polynomial-intercepts",
-      "bit": 49
+      "bit": 49,
+      "version": 1,
+      "fingerprint": "19e8a0882fbd161f"
     },
     {
       "id": "exponential-model-reading",
-      "bit": 50
+      "bit": 50,
+      "version": 1,
+      "fingerprint": "0d877276d7dee1c0"
     },
     {
       "id": "quadratic-vertex-reading",
-      "bit": 51
+      "bit": 51,
+      "version": 1,
+      "fingerprint": "e06dbf11cede8ee0"
     },
     {
       "id": "projectile-height-model",
-      "bit": 52
+      "bit": 52,
+      "version": 1,
+      "fingerprint": "b2c5e4e45080b697"
     },
     {
       "id": "exponential-table-model",
-      "bit": 53
+      "bit": 53,
+      "version": 1,
+      "fingerprint": "ae829bfe9d28030f"
     },
     {
       "id": "vertex-from-conditions",
-      "bit": 54
+      "bit": 54,
+      "version": 1,
+      "fingerprint": "64b457bf1e890cb1"
     },
     {
       "id": "exponential-rewrite",
-      "bit": 55
+      "bit": 55,
+      "version": 1,
+      "fingerprint": "20e6e3982e1b18e4"
     },
     {
       "id": "function-transformation-table",
-      "bit": 56
+      "bit": 56,
+      "version": 1,
+      "fingerprint": "5371617e54d099e7"
     },
     {
       "id": "polynomial-factor-remainder",
-      "bit": 57
+      "bit": 57,
+      "version": 1,
+      "fingerprint": "ca878380b73eece9"
     },
     {
       "id": "proportional-rate-scaling",
-      "bit": 58
+      "bit": 58,
+      "version": 1,
+      "fingerprint": "f3dd715a2e0b8a91"
     },
     {
       "id": "ratio-share-of-total",
-      "bit": 59
+      "bit": 59,
+      "version": 1,
+      "fingerprint": "47bc6c5534620bcc"
     },
     {
       "id": "rate-unit-conversion",
-      "bit": 60
+      "bit": 60,
+      "version": 1,
+      "fingerprint": "7d282d2859fa02d8"
     },
     {
       "id": "ratio-after-change",
-      "bit": 61
+      "bit": 61,
+      "version": 1,
+      "fingerprint": "d52210b0a12cbf8b"
     },
     {
       "id": "multi-unit-rate",
-      "bit": 62
+      "bit": 62,
+      "version": 1,
+      "fingerprint": "a0c12483803e6ff7"
     },
     {
       "id": "average-rate-two-legs",
-      "bit": 63
+      "bit": 63,
+      "version": 1,
+      "fingerprint": "e9b546743499b05e"
     },
     {
       "id": "percent-of-a-quantity",
-      "bit": 64
+      "bit": 64,
+      "version": 1,
+      "fingerprint": "b33c1ed18eaa23c3"
     },
     {
       "id": "percent-change-between-values",
-      "bit": 65
+      "bit": 65,
+      "version": 1,
+      "fingerprint": "05765ebba3aaffd7"
     },
     {
       "id": "percent-of-a-subgroup",
-      "bit": 66
+      "bit": 66,
+      "version": 1,
+      "fingerprint": "5f6981cff8caaadd"
     },
     {
       "id": "percent-change-expression",
-      "bit": 67
+      "bit": 67,
+      "version": 1,
+      "fingerprint": "c1f9433fc8360cb0"
     },
     {
       "id": "successive-percent",
-      "bit": 68
+      "bit": 68,
+      "version": 1,
+      "fingerprint": "658e87bab5fda391"
     },
     {
       "id": "percent-mixture-fixed-part",
-      "bit": 69
+      "bit": 69,
+      "version": 1,
+      "fingerprint": "5bc17e9ec55ca5b2"
     },
     {
       "id": "list-mean-or-median",
-      "bit": 70
+      "bit": 70,
+      "version": 1,
+      "fingerprint": "fe5003d8f21aeee7"
     },
     {
       "id": "box-plot-summary",
-      "bit": 71
+      "bit": 71,
+      "version": 1,
+      "fingerprint": "ba617af2b025c31d"
     },
     {
       "id": "data-display-center",
-      "bit": 72
+      "bit": 72,
+      "version": 1,
+      "fingerprint": "5af8d28d243a0af1"
     },
     {
       "id": "mean-missing-value",
-      "bit": 73
+      "bit": 73,
+      "version": 1,
+      "fingerprint": "aa75fa4219d02081"
     },
     {
       "id": "weighted-mean-groups",
-      "bit": 74
+      "bit": 74,
+      "version": 1,
+      "fingerprint": "2ce7965be4b20892"
     },
     {
       "id": "data-change-statistics",
-      "bit": 75
+      "bit": 75,
+      "version": 1,
+      "fingerprint": "ca0e8fa0155dd500"
     },
     {
       "id": "best-fit-line-equation",
-      "bit": 76
+      "bit": 76,
+      "version": 1,
+      "fingerprint": "4c0d1a02ceb6619e"
     },
     {
       "id": "scatterplot-shape-and-count",
-      "bit": 77
+      "bit": 77,
+      "version": 1,
+      "fingerprint": "690704f77c218476"
     },
     {
       "id": "scatterplot-fit-reading",
-      "bit": 78
+      "bit": 78,
+      "version": 1,
+      "fingerprint": "5ebf24cf30c3bd4a"
     },
     {
       "id": "two-group-fit-lines",
-      "bit": 79
+      "bit": 79,
+      "version": 1,
+      "fingerprint": "79311b2a4cb9b894"
     },
     {
       "id": "uneven-table-growth",
-      "bit": 80
+      "bit": 80,
+      "version": 1,
+      "fingerprint": "540704dc8743e3f9"
     },
     {
       "id": "fit-slope-rescaled-units",
-      "bit": 81
+      "bit": 81,
+      "version": 1,
+      "fingerprint": "28e44448cde6a72a"
     },
     {
       "id": "two-way-table-chance",
-      "bit": 82
+      "bit": 82,
+      "version": 1,
+      "fingerprint": "7510185e2113cc7e"
     },
     {
       "id": "expected-count-from-probability",
-      "bit": 83
+      "bit": 83,
+      "version": 1,
+      "fingerprint": "a60c95209b4f95e7"
     },
     {
       "id": "frequency-distribution-probability",
-      "bit": 84
+      "bit": 84,
+      "version": 1,
+      "fingerprint": "ebf73f826211bc12"
     },
     {
       "id": "two-way-or-neither",
-      "bit": 85
+      "bit": 85,
+      "version": 1,
+      "fingerprint": "281cc5b3ef2c8eb5"
     },
     {
       "id": "conditional-two-way",
-      "bit": 86
+      "bit": 86,
+      "version": 1,
+      "fingerprint": "46b2a1643c351782"
     },
     {
       "id": "probability-after-change",
-      "bit": 87
+      "bit": 87,
+      "version": 1,
+      "fingerprint": "ee21a3ba8cdfd436"
     },
     {
       "id": "sampling-method-choice",
-      "bit": 88
+      "bit": 88,
+      "version": 1,
+      "fingerprint": "3e2fef8d343425f6"
     },
     {
       "id": "margin-and-sample-size",
-      "bit": 89
+      "bit": 89,
+      "version": 1,
+      "fingerprint": "537d4eafdfbae49c"
     },
     {
       "id": "sample-proportion-estimate",
-      "bit": 90
+      "bit": 90,
+      "version": 1,
+      "fingerprint": "c3da9de8711e8fed"
     },
     {
       "id": "mark-recapture-estimate",
-      "bit": 91
+      "bit": 91,
+      "version": 1,
+      "fingerprint": "fcdd55d13164b6cc"
     },
     {
       "id": "sample-inference",
-      "bit": 92
+      "bit": 92,
+      "version": 1,
+      "fingerprint": "8e9ae8c3ea9deba1"
     },
     {
       "id": "two-estimates-compare",
-      "bit": 93
+      "bit": 93,
+      "version": 1,
+      "fingerprint": "12a8f89fcd21f214"
     },
     {
       "id": "altitude-area",
-      "bit": 94
+      "bit": 94,
+      "version": 1,
+      "fingerprint": "e3b2eee2931d4a80"
     },
     {
       "id": "rectilinear-floor-plan",
-      "bit": 95
+      "bit": 95,
+      "version": 1,
+      "fingerprint": "6cef37b5cfb9aabc"
     },
     {
       "id": "volume-to-dimension",
-      "bit": 96
+      "bit": 96,
+      "version": 1,
+      "fingerprint": "1b0df1d22885273a"
     },
     {
       "id": "volume-unit-conversion",
-      "bit": 97
+      "bit": 97,
+      "version": 1,
+      "fingerprint": "ccb6da7e03028ebf"
     },
     {
       "id": "scaling-area-volume",
-      "bit": 98
+      "bit": 98,
+      "version": 1,
+      "fingerprint": "a596497f17711986"
     },
     {
       "id": "displacement-and-transfer",
-      "bit": 99
+      "bit": 99,
+      "version": 1,
+      "fingerprint": "6513d55b110d9827"
     },
     {
       "id": "angle-pair-single-step",
-      "bit": 100
+      "bit": 100,
+      "version": 1,
+      "fingerprint": "d0a4436662c7476e"
     },
     {
       "id": "triangle-side-bounds",
-      "bit": 101
+      "bit": 101,
+      "version": 1,
+      "fingerprint": "71c816a35956f730"
     },
     {
       "id": "crossing-similar-triangles",
-      "bit": 102
+      "bit": 102,
+      "version": 1,
+      "fingerprint": "c079bed0304c1487"
     },
     {
       "id": "shared-height-area-ratio",
-      "bit": 103
+      "bit": 103,
+      "version": 1,
+      "fingerprint": "a308581cf2bf741f"
     },
     {
       "id": "similar-triangles-parallel",
-      "bit": 104
+      "bit": 104,
+      "version": 1,
+      "fingerprint": "36f81d521cc028cb"
     },
     {
       "id": "angle-chase-not-to-scale",
-      "bit": 105
+      "bit": 105,
+      "version": 1,
+      "fingerprint": "c639ac4c25b3d21c"
     },
     {
       "id": "right-triangle-ratio-read",
-      "bit": 106
+      "bit": 106,
+      "version": 1,
+      "fingerprint": "2b13e41115ff43b6"
     },
     {
       "id": "special-right-triangle",
-      "bit": 107
+      "bit": 107,
+      "version": 1,
+      "fingerprint": "cd801a73ebc7f3b0"
     },
     {
       "id": "pythagorean-two-step",
-      "bit": 108
+      "bit": 108,
+      "version": 1,
+      "fingerprint": "442e6d29f612634d"
     },
     {
       "id": "trig-context-length",
-      "bit": 109
+      "bit": 109,
+      "version": 1,
+      "fingerprint": "73da4967ff58bf83"
     },
     {
       "id": "trig-similar-cofunction",
-      "bit": 110
+      "bit": 110,
+      "version": 1,
+      "fingerprint": "f62908a647033c12"
     },
     {
       "id": "unit-circle-quadrant",
-      "bit": 111
+      "bit": 111,
+      "version": 1,
+      "fingerprint": "bbf47d332b6fc694"
     },
     {
       "id": "circle-measure-basic",
-      "bit": 112
+      "bit": 112,
+      "version": 1,
+      "fingerprint": "a2fe4817b4990e70"
     },
     {
       "id": "circle-measure-convert",
-      "bit": 113
+      "bit": 113,
+      "version": 1,
+      "fingerprint": "d689a951c43f1f99"
     },
     {
       "id": "circle-equation-features",
-      "bit": 114
+      "bit": 114,
+      "version": 1,
+      "fingerprint": "296f5c5296b34472"
     },
     {
       "id": "tangent-radius-right-angle",
-      "bit": 115
+      "bit": 115,
+      "version": 1,
+      "fingerprint": "e7508a3f95eaa32e"
     },
     {
       "id": "arc-sector-inscribed",
-      "bit": 116
+      "bit": 116,
+      "version": 1,
+      "fingerprint": "d952d5c3a63e828d"
     },
     {
       "id": "circle-equation-complete-square",
-      "bit": 117
+      "bit": 117,
+      "version": 1,
+      "fingerprint": "93bf64e47bcabb86"
     }
   ]
 }

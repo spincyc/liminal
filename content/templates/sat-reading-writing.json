@@ -1,350 +1,522 @@
 {
   "sectionKey": "sat-reading-writing",
-  "note": "Bit positions are permanent: append new templates, retire removed ones, never renumber.",
+  "note": "Bit positions are permanent: append new templates, retire removed ones, never renumber. A version goes up when the template's fingerprint (what it builds for fixed seeds) changes.",
   "templates": [
     {
       "id": "central-idea-stated-claim",
-      "bit": 0
+      "bit": 0,
+      "version": 1,
+      "fingerprint": "5ba506942daa1446"
     },
     {
       "id": "detail-stated-reason-paraphrased",
-      "bit": 1
+      "bit": 1,
+      "version": 1,
+      "fingerprint": "eeec3ce7f9dcd5ba"
     },
     {
       "id": "detail-literary-explicit-fact",
-      "bit": 2
+      "bit": 2,
+      "version": 1,
+      "fingerprint": "e9136d4924b6eb4d"
     },
     {
       "id": "central-idea-corrected-belief",
-      "bit": 3
+      "bit": 3,
+      "version": 1,
+      "fingerprint": "7a659305a6f6a6be"
     },
     {
       "id": "central-idea-literary-passage",
-      "bit": 4
+      "bit": 4,
+      "version": 1,
+      "fingerprint": "028e96ff6f2f22a9"
     },
     {
       "id": "central-idea-author-qualifies-source",
-      "bit": 5
+      "bit": 5,
+      "version": 1,
+      "fingerprint": "444d25e824ebb448"
     },
     {
       "id": "detail-finding-versus-expectation",
-      "bit": 6
+      "bit": 6,
+      "version": 1,
+      "fingerprint": "fb6a540d4b31af3d"
     },
     {
       "id": "inference-rule-applied-to-case",
-      "bit": 7
+      "bit": 7,
+      "version": 1,
+      "fingerprint": "7ceef6295eac5a38"
     },
     {
       "id": "inference-completion-cause-effect",
-      "bit": 8
+      "bit": 8,
+      "version": 1,
+      "fingerprint": "b82a106d972c6805"
     },
     {
       "id": "inference-completion-controlled-comparison",
-      "bit": 9
+      "bit": 9,
+      "version": 1,
+      "fingerprint": "aa0aeea2c79d5c20"
     },
     {
       "id": "inference-character-shown-by-action",
-      "bit": 10
+      "bit": 10,
+      "version": 1,
+      "fingerprint": "372ac2b80201fd75"
     },
     {
       "id": "inference-completion-competing-explanations",
-      "bit": 11
+      "bit": 11,
+      "version": 1,
+      "fingerprint": "472cbc5c74d4154c"
     },
     {
       "id": "inference-completion-limits-of-evidence",
-      "bit": 12
+      "bit": 12,
+      "version": 1,
+      "fingerprint": "210355f1e9184fa5"
     },
     {
       "id": "inference-combine-separated-premises",
-      "bit": 13
+      "bit": 13,
+      "version": 1,
+      "fingerprint": "29d72ac24697ab11"
     },
     {
       "id": "evidence-quotation-single-claim",
-      "bit": 14
+      "bit": 14,
+      "version": 1,
+      "fingerprint": "8d285d03c170d048"
     },
     {
       "id": "quantitative-table-extreme-value",
-      "bit": 15
+      "bit": 15,
+      "version": 1,
+      "fingerprint": "8805c5549b44024b"
     },
     {
       "id": "evidence-finding-supports-mechanism",
-      "bit": 16
+      "bit": 16,
+      "version": 1,
+      "fingerprint": "76e989e7adf0a270"
     },
     {
       "id": "quantitative-table-change-for-one-group",
-      "bit": 17
+      "bit": 17,
+      "version": 1,
+      "fingerprint": "66ff4459f9965e0e"
     },
     {
       "id": "quantitative-table-weakens-trend",
-      "bit": 18
+      "bit": 18,
+      "version": 1,
+      "fingerprint": "673836a00e858ea8"
     },
     {
       "id": "evidence-finding-weakens-causal-claim",
-      "bit": 19
+      "bit": 19,
+      "version": 1,
+      "fingerprint": "c2417ac2f52e21e5"
     },
     {
       "id": "evidence-quotation-two-part-claim",
-      "bit": 20
+      "bit": 20,
+      "version": 1,
+      "fingerprint": "0cb73b653bdd8b9f"
     },
     {
       "id": "quantitative-table-difference-in-benefit",
-      "bit": 21
+      "bit": 21,
+      "version": 1,
+      "fingerprint": "7dfe9b2d198e806a"
     },
     {
       "id": "wic-restatement-blank",
-      "bit": 22
+      "bit": 22,
+      "version": 1,
+      "fingerprint": "ac5b25566eb41830"
     },
     {
       "id": "wic-magnitude-blank",
-      "bit": 23
+      "bit": 23,
+      "version": 1,
+      "fingerprint": "5006a064c1217a33"
     },
     {
       "id": "wic-relation-direction-blank",
-      "bit": 24
+      "bit": 24,
+      "version": 1,
+      "fingerprint": "734f2c6041f3953a"
     },
     {
       "id": "wic-uncommon-sense",
-      "bit": 25
+      "bit": 25,
+      "version": 1,
+      "fingerprint": "bf065fdb90d06b94"
     },
     {
       "id": "wic-contrast-blank",
-      "bit": 26
+      "bit": 26,
+      "version": 1,
+      "fingerprint": "96fc1e7df4d411ac"
     },
     {
       "id": "wic-figurative-meaning",
-      "bit": 27
+      "bit": 27,
+      "version": 1,
+      "fingerprint": "d946b3cdd0eb481f"
     },
     {
       "id": "wic-connotation-blank",
-      "bit": 28
+      "bit": 28,
+      "version": 1,
+      "fingerprint": "609b2b89a3e3ae32"
     },
     {
       "id": "wic-opposite-senses",
-      "bit": 29
+      "bit": 29,
+      "version": 1,
+      "fingerprint": "c40f47a4e29cd611"
     },
     {
       "id": "tsp-main-purpose-explain",
-      "bit": 30
+      "bit": 30,
+      "version": 1,
+      "fingerprint": "93334f26ddc6195c"
     },
     {
       "id": "tsp-function-example",
-      "bit": 31
+      "bit": 31,
+      "version": 1,
+      "fingerprint": "9ae0653775504eda"
     },
     {
       "id": "tsp-function-concession",
-      "bit": 32
+      "bit": 32,
+      "version": 1,
+      "fingerprint": "41b455d2067d6084"
     },
     {
       "id": "tsp-literary-purpose",
-      "bit": 33
+      "bit": 33,
+      "version": 1,
+      "fingerprint": "8914032ed5cd3820"
     },
     {
       "id": "tsp-literary-structure",
-      "bit": 34
+      "bit": 34,
+      "version": 1,
+      "fingerprint": "c66d4788009d2db1"
     },
     {
       "id": "tsp-structure-view-complication",
-      "bit": 35
+      "bit": 35,
+      "version": 1,
+      "fingerprint": "7be54b7c719f15b2"
     },
     {
       "id": "tsp-function-foil",
-      "bit": 36
+      "bit": 36,
+      "version": 1,
+      "fingerprint": "70aac369e5ae5516"
     },
     {
       "id": "tsp-purpose-evaluate-source",
-      "bit": 37
+      "bit": 37,
+      "version": 1,
+      "fingerprint": "e32e89756159d50d"
     },
     {
       "id": "cross-text-shared-claim",
-      "bit": 38
+      "bit": 38,
+      "version": 1,
+      "fingerprint": "983612abc6d94b85"
     },
     {
       "id": "cross-text-problem-solution",
-      "bit": 39
+      "bit": 39,
+      "version": 1,
+      "fingerprint": "0509ff47d520ee43"
     },
     {
       "id": "cross-text-counterexample",
-      "bit": 40
+      "bit": 40,
+      "version": 1,
+      "fingerprint": "b956168300a1f5ce"
     },
     {
       "id": "cross-text-extends",
-      "bit": 41
+      "bit": 41,
+      "version": 1,
+      "fingerprint": "661bc3f7923beffb"
     },
     {
       "id": "cross-text-apply-explanation",
-      "bit": 42
+      "bit": 42,
+      "version": 1,
+      "fingerprint": "dd7273afc80a8396"
     },
     {
       "id": "cross-text-method-challenge",
-      "bit": 43
+      "bit": 43,
+      "version": 1,
+      "fingerprint": "56d7ae4908dc4aad"
     },
     {
       "id": "cross-text-difference-in-view",
-      "bit": 44
+      "bit": 44,
+      "version": 1,
+      "fingerprint": "75a5b633bd98cd9a"
     },
     {
       "id": "cross-text-common-ground",
-      "bit": 45
+      "bit": 45,
+      "version": 1,
+      "fingerprint": "344867e650f46a4f"
     },
     {
       "id": "notes-shared-feature",
-      "bit": 46
+      "bit": 46,
+      "version": 1,
+      "fingerprint": "084c039e69405cc0"
     },
     {
       "id": "notes-contrast-two-subjects",
-      "bit": 47
+      "bit": 47,
+      "version": 1,
+      "fingerprint": "783605a4008ca6d2"
     },
     {
       "id": "notes-date-and-place",
-      "bit": 48
+      "bit": 48,
+      "version": 1,
+      "fingerprint": "89b9ece24ca16c3d"
     },
     {
       "id": "notes-introduce-to-newcomers",
-      "bit": 49
+      "bit": 49,
+      "version": 1,
+      "fingerprint": "b892e27ee6ec5471"
     },
     {
       "id": "notes-explain-benefit",
-      "bit": 50
+      "bit": 50,
+      "version": 1,
+      "fingerprint": "7eaf9c744cb6df3d"
     },
     {
       "id": "notes-generalize-category",
-      "bit": 51
+      "bit": 51,
+      "version": 1,
+      "fingerprint": "b8bc81be479e3ce6"
     },
     {
       "id": "notes-finding-and-significance",
-      "bit": 52
+      "bit": 52,
+      "version": 1,
+      "fingerprint": "be41ca52de2a9f4c"
     },
     {
       "id": "notes-similarity-despite-difference",
-      "bit": 53
+      "bit": 53,
+      "version": 1,
+      "fingerprint": "68aa8f38e7805604"
     },
     {
       "id": "notes-result-versus-expectation",
-      "bit": 54
+      "bit": 54,
+      "version": 1,
+      "fingerprint": "1c2297f0e1449c6e"
     },
     {
       "id": "transition-consequence",
-      "bit": 55
+      "bit": 55,
+      "version": 1,
+      "fingerprint": "6447edf9c0f7254f"
     },
     {
       "id": "transition-contrast-two-subjects",
-      "bit": 56
+      "bit": 56,
+      "version": 1,
+      "fingerprint": "85b66e42b686747d"
     },
     {
       "id": "transition-instance-mid-passage",
-      "bit": 57
+      "bit": 57,
+      "version": 1,
+      "fingerprint": "d911f3651810add0"
     },
     {
       "id": "transition-further-point",
-      "bit": 58
+      "bit": 58,
+      "version": 1,
+      "fingerprint": "79f29c8ee51452dd"
     },
     {
       "id": "transition-parallel-case",
-      "bit": 59
+      "bit": 59,
+      "version": 1,
+      "fingerprint": "dc08668107a54dba"
     },
     {
       "id": "transition-later-step",
-      "bit": 60
+      "bit": 60,
+      "version": 1,
+      "fingerprint": "5930866bd5ace64c"
     },
     {
       "id": "transition-despite-drawback",
-      "bit": 61
+      "bit": 61,
+      "version": 1,
+      "fingerprint": "ee7660c126379114"
     },
     {
       "id": "transition-concede-then-return",
-      "bit": 62
+      "bit": 62,
+      "version": 1,
+      "fingerprint": "e55bdd624e0d7fe8"
     },
     {
       "id": "transition-plain-restatement",
-      "bit": 63
+      "bit": 63,
+      "version": 1,
+      "fingerprint": "cb220ba2cb2189d8"
     },
     {
       "id": "sec-join-independent-clauses",
-      "bit": 64
+      "bit": 64,
+      "version": 1,
+      "fingerprint": "6ee32e511411a57a"
     },
     {
       "id": "sec-colon-before-list",
-      "bit": 65
+      "bit": 65,
+      "version": 1,
+      "fingerprint": "23355c5d3efc30ee"
     },
     {
       "id": "sec-intro-clause-comma",
-      "bit": 66
+      "bit": 66,
+      "version": 1,
+      "fingerprint": "a73ce3de4e857d86"
     },
     {
       "id": "sec-conjunctive-adverb-join",
-      "bit": 67
+      "bit": 67,
+      "version": 1,
+      "fingerprint": "e4701e580d5a01af"
     },
     {
       "id": "sec-no-colon-after-verb",
-      "bit": 68
+      "bit": 68,
+      "version": 1,
+      "fingerprint": "00841493fa90d684"
     },
     {
       "id": "sec-no-comma-subject-verb",
-      "bit": 69
+      "bit": 69,
+      "version": 1,
+      "fingerprint": "e560e5d7cdde8509"
     },
     {
       "id": "sec-series-semicolons",
-      "bit": 70
+      "bit": 70,
+      "version": 1,
+      "fingerprint": "9292b3b9c770a94d"
     },
     {
       "id": "sec-relative-vs-pronoun-clause",
-      "bit": 71
+      "bit": 71,
+      "version": 1,
+      "fingerprint": "ffe6ba95db181c69"
     },
     {
       "id": "sec-closing-mark-match",
-      "bit": 72
+      "bit": 72,
+      "version": 1,
+      "fingerprint": "c5797b78a758b695"
     },
     {
       "id": "sec-essential-clause-context",
-      "bit": 73
+      "bit": 73,
+      "version": 1,
+      "fingerprint": "af1928285ba5ad7e"
     },
     {
       "id": "sec-adverb-interrupts-clause",
-      "bit": 74
+      "bit": 74,
+      "version": 1,
+      "fingerprint": "29aa9cdf27c29fda"
     },
     {
       "id": "sec-sva-compound-subject",
-      "bit": 75
+      "bit": 75,
+      "version": 1,
+      "fingerprint": "087d90d4c381af66"
     },
     {
       "id": "sec-their-theyre-there",
-      "bit": 76
+      "bit": 76,
+      "version": 1,
+      "fingerprint": "2c1af3490eab0d04"
     },
     {
       "id": "sec-irregular-past-participle",
-      "bit": 77
+      "bit": 77,
+      "version": 1,
+      "fingerprint": "6d2584e686dfa1d9"
     },
     {
       "id": "sec-parallel-series",
-      "bit": 78
+      "bit": 78,
+      "version": 1,
+      "fingerprint": "9c3cbfb135eb81ce"
     },
     {
       "id": "sec-sva-attractor",
-      "bit": 79
+      "bit": 79,
+      "version": 1,
+      "fingerprint": "910294304ab0052d"
     },
     {
       "id": "sec-sva-inverted",
-      "bit": 80
+      "bit": 80,
+      "version": 1,
+      "fingerprint": "1ea81fd21c5daf1d"
     },
     {
       "id": "sec-parallel-paired",
-      "bit": 81
+      "bit": 81,
+      "version": 1,
+      "fingerprint": "1adeee1f56148fbc"
     },
     {
       "id": "sec-pronoun-distant-antecedent",
-      "bit": 82
+      "bit": 82,
+      "version": 1,
+      "fingerprint": "d7265d2153fb0849"
     },
     {
       "id": "sec-verb-tense-frame",
-      "bit": 83
+      "bit": 83,
+      "version": 1,
+      "fingerprint": "9baf950971879c81"
     },
     {
       "id": "sec-finite-or-nonfinite",
-      "bit": 84
+      "bit": 84,
+      "version": 1,
+      "fingerprint": "1ea4141c47fd2ee0"
     },
     {
       "id": "sec-dangling-modifier",
-      "bit": 85
+      "bit": 85,
+      "version": 1,
+      "fingerprint": "bcfa6f7a585be2ff"
     }
   ]
 }

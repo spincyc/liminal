@@ -7,11 +7,21 @@
 // marked retired and keeps its bit, and nothing is ever renumbered, so a
 // stored run or history mask always means the same templates.
 //
-//   node tools/update-templates.js           # append new templates
+// Each entry also carries the template's `version` and `fingerprint` (a hash
+// of what it builds for fixed seeds; tools/lib/fingerprint.js). When a live
+// template's fingerprint changes, its version goes up by one: an old question
+// id or run code then rebuilds a different question, and the version tells
+// which one a stored attempt saw. A missing version means 1. The rules live
+// in tools/lib/registry.js.
+//
+//   node tools/update-templates.js           # append, retire, re-version
 //   node tools/update-templates.js --check   # fail if a registry is stale
 
 const fs = require("node:fs");
 const path = require("node:path");
+const { instantiate } = require("../src/lib/families/shared");
+const { templateFingerprint } = require("./lib/fingerprint");
+const { registryProblems, updateRegistry } = require("./lib/registry");
 
 const ROOT = path.resolve(__dirname, "..");
 const CHECK = process.argv.includes("--check");
@@ -30,62 +40,27 @@ function loadRegistry(sectionKey) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
 }
 
-function problems(registry) {
-  const errors = [];
-  const ids = new Set();
-  const bits = new Set();
-  registry.templates.forEach((entry) => {
-    if (ids.has(entry.id)) errors.push(`duplicate template id ${entry.id}`);
-    if (bits.has(entry.bit)) errors.push(`bit ${entry.bit} is used twice`);
-    if (!Number.isInteger(entry.bit) || entry.bit < 0) errors.push(`${entry.id} has an invalid bit`);
-    ids.add(entry.id);
-    bits.add(entry.bit);
-  });
-  return errors;
-}
-
 let failed = false;
 for (const [sectionKey, indexFile] of Object.entries(SECTIONS)) {
   const families = require(path.join(ROOT, indexFile));
-  const live = new Set(families.map((family) => family.id));
-  const registry = loadRegistry(sectionKey);
-  const known = new Map(registry.templates.map((entry) => [entry.id, entry]));
-  let nextBit = registry.templates.reduce((max, entry) => Math.max(max, entry.bit + 1), 0);
-  const changes = [];
-  families.forEach((family) => {
-    const entry = known.get(family.id);
-    if (!entry) {
-      registry.templates.push({ id: family.id, bit: nextBit });
-      changes.push(`+ ${family.id} (bit ${nextBit})`);
-      nextBit += 1;
-    } else if (entry.retired) {
-      delete entry.retired;
-      changes.push(`restored ${family.id}`);
-    }
-  });
-  registry.templates.forEach((entry) => {
-    if (!live.has(entry.id) && !entry.retired) {
-      entry.retired = true;
-      changes.push(`retired ${entry.id} (bit ${entry.bit} stays reserved)`);
-    }
-  });
-  const errors = problems(registry);
+  const { registry, changes } = updateRegistry(
+    { sectionKey, ...loadRegistry(sectionKey) },
+    families,
+    (family) => templateFingerprint(family, instantiate),
+  );
+  const errors = registryProblems(registry);
   errors.forEach((error) => console.error(`${sectionKey}: ${error}`));
   if (errors.length) failed = true;
   const active = registry.templates.filter((entry) => !entry.retired).length;
   if (CHECK) {
     if (changes.length) {
       console.error(`${sectionKey}: registry is stale (${changes.length} changes); run node tools/update-templates.js`);
+      changes.slice(0, 5).forEach((change) => console.error(`  ${change}`));
       failed = true;
     } else console.log(`${sectionKey}: ${active} templates registered.`);
     continue;
   }
-  const output = {
-    sectionKey,
-    note: "Bit positions are permanent: append new templates, retire removed ones, never renumber.",
-    templates: registry.templates,
-  };
-  fs.writeFileSync(registryPath(sectionKey), `${JSON.stringify(output, null, 2)}\n`);
+  fs.writeFileSync(registryPath(sectionKey), `${JSON.stringify(registry, null, 2)}\n`);
   console.log(`${sectionKey}: ${active} templates${changes.length ? `; ${changes.length} changes` : ""}.`);
   changes.slice(0, 5).forEach((change) => console.log(`  ${change}`));
 }
