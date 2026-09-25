@@ -50,6 +50,25 @@
       "as necessary. A calculator is not permitted on this section.",
   };
 
+  // Real-test seconds per question from official section timing: SAT Reading
+  // and Writing 32 min / 27, SAT Math 35 min / 22; ACT English 35 / 50,
+  // Mathematics 50 / 45, Reading 40 / 36, Science 40 / 40.
+  const SECONDS_PER_QUESTION = {
+    "sat-reading-writing": (32 * 60) / 27,
+    "sat-math": (35 * 60) / 22,
+    "act-english": (35 * 60) / 50,
+    "act-mathematics": (50 * 60) / 45,
+    "act-reading": (40 * 60) / 36,
+    "act-science": (40 * 60) / 40,
+  };
+
+  // Time budget, in whole seconds, for `count` questions at real-test pace, or
+  // null for a section the real test does not pace per question.
+  function paceBudgetSeconds(sectionKey, count) {
+    const perQuestion = SECONDS_PER_QUESTION[sectionKey];
+    return perQuestion && count > 0 ? Math.round(perQuestion * count) : null;
+  }
+
   function section(sectionKey, count, minutes, label) {
     return {
       sectionKey,
@@ -383,15 +402,28 @@
     });
   }
 
+  // A typed response may be a decimal or a fraction, with an ASCII hyphen or a
+  // U+2212 minus sign, as the real answer grid accepts. NaN when it is neither.
+  function parseNumericResponse(value) {
+    const text = String(value === null || value === undefined ? "" : value)
+      .trim()
+      .replace(/\u2212/g, "-")
+      .replace(/[,\s]/g, "");
+    const fraction = /^(-?)(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/.exec(text);
+    if (fraction) {
+      const denominator = Number(fraction[3]);
+      return denominator ? (fraction[1] ? -1 : 1) * Number(fraction[2]) / denominator : NaN;
+    }
+    return /^-?(\d+\.?\d*|\.\d+)$/.test(text) ? Number(text) : NaN;
+  }
+
   function numericEqual(actual, expected) {
-    const normalizedActual = normalize(actual).replace(/,/g, "");
-    const normalizedExpected = normalize(expected).replace(/,/g, "");
-    const actualNumber = Number(normalizedActual);
-    const expectedNumber = Number(normalizedExpected);
+    const actualNumber = parseNumericResponse(actual);
+    const expectedNumber = parseNumericResponse(expected);
     if (Number.isFinite(actualNumber) && Number.isFinite(expectedNumber)) {
       return Math.abs(actualNumber - expectedNumber) <= 0.001;
     }
-    return normalizedActual === normalizedExpected;
+    return normalize(actual).replace(/,/g, "") === normalize(expected).replace(/,/g, "");
   }
 
   function scoreResponse(question, response) {
@@ -628,6 +660,9 @@
     filterQuestions,
     normalize,
     numericEqual,
+    parseNumericResponse,
+    paceBudgetSeconds,
+    SECONDS_PER_QUESTION,
     questionFamily,
     recommendQuestion,
     scoreResponse,

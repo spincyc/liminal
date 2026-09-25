@@ -265,3 +265,22 @@ test("summarizeMiniTest counts a blank answer as incorrect, not skipped", () => 
   assert.equal(summary.accuracy, 0);
   assert.equal(summary.items[0].answered, false);
 });
+
+test("numeric responses accept fractions, the U+2212 minus, and thousands commas", () => {
+  const key = { responseType: "numeric", correctAnswer: "-1.75" };
+  assert.equal(core.scoreResponse(key, "-7/4"), true);
+  assert.equal(core.scoreResponse(key, "\u22121.75"), true);
+  assert.equal(core.scoreResponse(key, "7/4"), false);
+  assert.equal(core.scoreResponse({ responseType: "numeric", correctAnswer: "1000" }, "1,000"), true);
+  assert.equal(core.scoreResponse({ responseType: "numeric", correctAnswer: "0.6667" }, "2/3"), true);
+  assert.equal(core.scoreResponse({ responseType: "numeric", correctAnswer: "50\u00b0" }, "50"), true);
+  assert.ok(Number.isNaN(core.parseNumericResponse("3/0")));
+  assert.ok(Number.isNaN(core.parseNumericResponse("abc")));
+});
+
+test("pace budgets follow real-test seconds per question", () => {
+  assert.equal(core.paceBudgetSeconds("sat-math", 22), 35 * 60);
+  assert.equal(core.paceBudgetSeconds("sat-reading-writing", 27), 32 * 60);
+  assert.equal(core.paceBudgetSeconds("act-writing", 1), null);
+  assert.equal(core.paceBudgetSeconds("sat-math", 0), null);
+});
