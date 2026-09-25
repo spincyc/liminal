@@ -60,6 +60,7 @@ for (const asset of [
   "content/templates.js",
   "lib/test-engine.js",
   "lib/progress.js",
+  "lib/review-queue.js",
   "lib/practice.js",
   "app/render.js",
   "app/test-shell.js",
