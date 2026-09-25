@@ -130,8 +130,10 @@ test("links must reach an existing page and anchor", () => {
 });
 
 test("markup errors surface with their file and line", () => {
-  const result = run(edit(goodTree(), LINEAR, "A point is a solution", "A <em>point</em> is a solution"));
-  expectError(result, /linear-inequalities\.md:62: raw HTML is not allowed/);
+  const tree = goodTree();
+  const line = tree.files[LINEAR].split("\n").findIndex((text) => text.startsWith("A point is a solution")) + 1;
+  const result = run(edit(tree, LINEAR, "A point is a solution", "A <em>point</em> is a solution"));
+  expectError(result, new RegExp(`linear-inequalities\\.md:${line}: raw HTML is not allowed`));
 });
 
 test("the bundle lists sections in catalog order with facts filled in and no source lines", () => {

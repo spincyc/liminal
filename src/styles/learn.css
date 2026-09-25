@@ -346,7 +346,7 @@
   text-align: right;
 }
 
-/* A table too wide for its column shows each row as label: value pairs
+/* A table too wide for its column shows each row as label and value pairs
    (learn.js adds .is-stacked after measuring). */
 .learn-table-wrap.is-stacked :is(table, thead, tbody, tr, th, td) {
   display: block;
@@ -380,8 +380,14 @@
   text-align: left;
 }
 
-.learn-table-wrap.is-stacked td::before {
-  content: attr(data-label);
+/* Each cell's column label (typeset like the header it copies) shows only
+   when rows stack. */
+.learn-cell-label {
+  display: none;
+}
+
+.learn-table-wrap.is-stacked .learn-cell-label {
+  display: block;
   color: var(--color-muted);
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);

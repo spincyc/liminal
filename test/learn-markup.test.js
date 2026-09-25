@@ -5,6 +5,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 const Learn = require("../src/lib/learn-markup");
+const Render = require("../src/app/render");
 
 const FIXTURES = path.join(__dirname, "fixtures", "learn");
 const FRONT = "---\nid: sat/general/sample\ntitle: Sample\n---\n# Sample\n\n";
@@ -227,4 +228,37 @@ test("link and practice addresses follow the Learn contract", () => {
   assert.equal(Learn.linkHref({ url: "https://evil.example/" }), null);
   assert.equal(Learn.linkHref({ url: "https://collegeboard.org.evil.example/" }), null);
   assert.equal(Learn.linkHref({ page: "a/b\"><x" }), null);
+});
+
+test("Math pages typeset prose runs only: never code, facts, headings, labels or ``` blocks", () => {
+  assert.equal(Learn.typesetsMath({ kind: "skill", section: "sat-math" }), true);
+  assert.equal(Learn.typesetsMath({ kind: "skill", section: "sat-reading-writing" }), false);
+  assert.equal(Learn.typesetsMath({ kind: "general" }), false);
+  assert.equal(Learn.typesetsMath(null), false);
+
+  const source = fs.readFileSync(path.join(FIXTURES, "sat-math", "algebra", "linear-inequalities.md"), "utf8");
+  const { blocks } = Learn.parse(source);
+  const runs = [];
+  Learn.proseRuns(blocks, (text) => runs.push(text));
+  const has = (pattern) => runs.some((text) => pattern.test(text));
+  // Prose in a paragraph, a table cell, and callout text is typeset.
+  assert.ok(has(/When x\^2 ≤ 9/));
+  assert.ok(runs.includes("x^(3/2) · x^(1/2)"));
+  assert.ok(has(/Check x = 9: \(9 − 1\)\/2 = 4/));
+  // Inline code, facts, headings, callout labels and ``` blocks are not.
+  assert.ok(!has(/x\^2 <= 9/));
+  assert.ok(!has(/tools\/check-learn/));
+  assert.ok(!has(/70 minutes|sat-math-minutes/));
+  assert.ok(!runs.includes("Powers and fractions"));
+  assert.ok(!runs.includes("Example"));
+  assert.ok(!has(/^\s*x − 1 > 6/m));
+
+  // What the renderer then draws from those runs.
+  const types = new Set();
+  const collect = (nodes) => nodes.forEach((node) => {
+    types.add(node.type);
+    ["children", "num", "den"].forEach((key) => node[key] && collect(node[key]));
+  });
+  runs.forEach((text) => collect(Render.mathTokens(text)));
+  assert.deepEqual(["sup", "frac", "root"].filter((type) => types.has(type)), ["sup", "frac", "root"]);
 });

@@ -4,10 +4,13 @@
   // The Learn page: an index of the SAT lessons, and one lesson at a time,
   // routed by the hash: "#<pageId>" or "#<pageId>/<anchor>". Lessons arrive
   // prebuilt as block trees (tools/build-learn.js). Every string reaches the
-  // page as a text node or through textContent, and every href comes from
-  // LiminalLearn, which re-checks it; nothing is ever parsed as HTML.
+  // page as a text node, through textContent, or through
+  // LiminalRender.appendMath (which builds math from elements and text
+  // nodes), and every href comes from LiminalLearn, which re-checks it;
+  // nothing is ever parsed as HTML.
 
   const learn = window.LiminalLearn;
+  const render = window.LiminalRender;
   const data = window.LIMINAL_LEARN || { pages: {}, index: [] };
   const view = document.getElementById("learnView");
   const status = document.getElementById("learnStatus");
@@ -52,15 +55,22 @@
 
   /* ------------------------------------------------------------- inline */
 
-  function renderInline(parent, content) {
+  // Prose text, typeset as math when `math` is set (see
+  // LiminalLearn.proseRuns for exactly which text that is).
+  function appendText(parent, text, math) {
+    if (math && render && render.appendMath) render.appendMath(parent, text);
+    else parent.append(document.createTextNode(text));
+  }
+
+  function renderInline(parent, content, math) {
     (content || []).forEach((node) => {
       if (typeof node === "string") {
-        parent.append(document.createTextNode(node));
+        appendText(parent, node, math);
         return;
       }
       if (node.type === "strong" || node.type === "em") {
         const child = el(node.type === "strong" ? "strong" : "em");
-        renderInline(child, node.content);
+        renderInline(child, node.content, math);
         parent.append(child);
       } else if (node.type === "code") {
         parent.append(el("code", null, String(node.text)));
@@ -70,7 +80,7 @@
         const href = learn.linkHref(node);
         const child = el(href ? "a" : "span");
         if (href) child.setAttribute("href", href);
-        renderInline(child, node.content);
+        renderInline(child, node.content, math);
         parent.append(child);
       }
       // Any other node type is dropped, never guessed at.
@@ -79,18 +89,17 @@
 
   /* ------------------------------------------------------------- blocks */
 
-  function renderTable(block) {
+  function renderTable(block, math) {
     const wrap = el("div", "learn-table-wrap");
     const table = el("table", "learn-table");
     // Explicit roles keep the table's semantics when stacked rows change
     // its display.
     table.setAttribute("role", "table");
     const align = block.align || [];
-    const labels = block.head.map((cell) => learn.plainText(cell));
     const cellFor = (tag, content, column) => {
       const cell = el(tag);
       if (align[column] === "center" || align[column] === "right") cell.classList.add(`align-${align[column]}`);
-      renderInline(cell, content);
+      renderInline(cell, content, math);
       return cell;
     };
     const head = el("thead");
@@ -110,9 +119,17 @@
       const tr = el("tr");
       tr.setAttribute("role", "row");
       row.forEach((content, column) => {
-        const cell = cellFor("td", content, column);
+        // Each cell carries its column's label, shown only when the rows
+        // stack; screen readers get the column header instead.
+        const cell = el("td");
         cell.setAttribute("role", "cell");
-        cell.dataset.label = labels[column] || "";
+        if (align[column] === "center" || align[column] === "right") cell.classList.add(`align-${align[column]}`);
+        const label = el("span", "learn-cell-label");
+        label.setAttribute("aria-hidden", "true");
+        renderInline(label, block.head[column], math);
+        const value = el("span", "learn-cell-value");
+        renderInline(value, content, math);
+        cell.append(label, value);
         tr.append(cell);
       });
       body.append(tr);
@@ -123,11 +140,11 @@
     return wrap;
   }
 
-  function renderCallout(block) {
+  function renderCallout(block, math) {
     const kind = KINDS.has(block.kind) ? block.kind : "note";
     const box = el("div", `callout callout-${kind}`);
     box.append(el("p", "callout-label", String(block.label || "")));
-    renderBlocks(box, block.blocks);
+    renderBlocks(box, block.blocks, math);
     return box;
   }
 
@@ -143,29 +160,31 @@
     return heading;
   }
 
-  function renderBlocks(parent, blocks) {
+  // `math` is whether the page typesets math; only prose blocks use it.
+  function renderBlocks(parent, blocks, math) {
     (blocks || []).forEach((block) => {
+      const prose = Boolean(math) && learn.isProseBlock(block);
       if (block.type === "heading") {
         parent.append(renderHeading(block));
       } else if (block.type === "paragraph") {
         const paragraph = el("p");
-        renderInline(paragraph, block.content);
+        renderInline(paragraph, block.content, prose);
         parent.append(paragraph);
       } else if (block.type === "list") {
         const list = el(block.ordered ? "ol" : "ul", "learn-list");
         if (block.ordered && Number.isInteger(block.start)) list.start = block.start;
         block.items.forEach((content) => {
           const item = el("li");
-          renderInline(item, content);
+          renderInline(item, content, prose);
           list.append(item);
         });
         parent.append(list);
       } else if (block.type === "table") {
-        parent.append(renderTable(block));
+        parent.append(renderTable(block, prose));
       } else if (block.type === "pre") {
         parent.append(el("pre", "learn-pre", String(block.text)));
       } else if (block.type === "callout") {
-        parent.append(renderCallout(block));
+        parent.append(renderCallout(block, math));
       }
     });
   }
@@ -344,7 +363,7 @@
     const article = el("article", "learn-article card");
     article.setAttribute("aria-labelledby", "learnTitle");
     title.id = "learnTitle";
-    renderBlocks(article, titleBlock ? blocks.slice(1) : blocks);
+    renderBlocks(article, titleBlock ? blocks.slice(1) : blocks, learn.typesetsMath(page));
     const facts = factsNote(page);
     if (facts) article.append(facts);
     const endPractice = practiceLink(page);

@@ -52,6 +52,29 @@ and [linear functions](learn:sat-math/algebra/linear-functions#slope).
 | take \|x\| of both sides | not an allowed step |
 | compare |x − 3| with 5 | split into two inequalities |
 
+### Powers and fractions {#powers-and-fractions}
+
+When x^2 ≤ 9, x lies between −3 and 3, and x² = 9 has two solutions.
+Dividing both sides of 3x ≤ 12 by 3 gives x ≤ 12/3, so x ≤ 4. Typed code
+such as `x^2 <= 9` stays as written.
+
+| Expression | Value at x = 2 |
+| --- | --- |
+| x^3 | 8 |
+| (x + 1)/3 | 1 |
+| √(x + 7) | 3 |
+| x^(3/2) · x^(1/2) | 4 |
+
+> **Example.** Solve (x − 1)/2 > 3.
+>
+> ```
+> (x − 1)/2 > 3
+>     x − 1 > 6
+>         x > 7
+> ```
+>
+> Multiply by 2, then add 1: x > 7. Check x = 9: (9 − 1)/2 = 4, and 4 > 3.
+
 ### A note on notation {#notation}
 
 Write "at most" as ≤ and "fewer than" as <. An open circle on a number

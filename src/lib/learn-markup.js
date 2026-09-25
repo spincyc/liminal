@@ -6,7 +6,8 @@
 // data only: text stays text, links are checked targets rather than URLs to
 // trust, and there is no path for markup to reach the page as HTML. Pure
 // logic with no DOM access; loads in Node and as a plain browser script
-// (window.LiminalLearn), where the route and link helpers serve learn.js.
+// (window.LiminalLearn), where the route, link and math-eligibility helpers
+// serve learn.js.
 //
 // The subset, in full:
 //   front matter   --- / key: value / --- with id, title, and on skill
@@ -759,6 +760,45 @@
     return found;
   }
 
+  /* ------------------------------------------------------------ math */
+
+  // SAT Math skill pages typeset their prose (LiminalRender.appendMath
+  // draws x^2, 12/3 and √(x + 7)); every other page shows text as written,
+  // so "and/or" or "1/2 of the class" on a Reading and Writing page stays
+  // prose. Takes a built page record ({ kind, section }).
+  function typesetsMath(page) {
+    return Boolean(page) && page.kind === "skill" && page.section === "sat-math";
+  }
+
+  // Blocks whose inline text is prose. Headings and callout labels stay
+  // plain (headings also feed the contents list), and ``` blocks keep
+  // their aligned work exactly as written.
+  const PROSE_BLOCKS = new Set(["paragraph", "list", "table"]);
+
+  function isProseBlock(block) {
+    return Boolean(block) && PROSE_BLOCKS.has(block.type);
+  }
+
+  // Calls visit(text) for every string a Math page typesets: prose in
+  // paragraphs, list items, table cells and callouts, including bold,
+  // italic and link text, but never inline code or fact values.
+  function proseRuns(blocks, visit) {
+    const inline = (content) => (content || []).forEach((node) => {
+      if (typeof node === "string") visit(node);
+      else if (node.type === "strong" || node.type === "em" || node.type === "link") inline(node.content);
+    });
+    (blocks || []).forEach((block) => {
+      if (block.type === "callout") {
+        proseRuns(block.blocks, visit);
+      } else if (isProseBlock(block)) {
+        if (block.content) inline(block.content);
+        (block.items || []).forEach(inline);
+        (block.head || []).forEach(inline);
+        (block.rows || []).forEach((row) => row.forEach(inline));
+      }
+    });
+  }
+
   /* ---------------------------------------------------- routes and links */
 
   function pageHash(pageId, anchor) {
@@ -827,6 +867,9 @@
     anchors,
     outline,
     sections,
+    typesetsMath,
+    isProseBlock,
+    proseRuns,
     isAllowedUrl,
     pageHash,
     learnHref,
