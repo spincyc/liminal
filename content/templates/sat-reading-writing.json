@@ -281,242 +281,244 @@
     {
       "id": "notes-shared-feature",
       "bit": 46,
-      "version": 1,
-      "fingerprint": "084c039e69405cc0"
+      "version": 2,
+      "fingerprint": "1e6aeae11dc06acd"
     },
     {
       "id": "notes-contrast-two-subjects",
       "bit": 47,
-      "version": 1,
-      "fingerprint": "783605a4008ca6d2"
+      "version": 2,
+      "fingerprint": "4c3d5abfb7b936b3"
     },
     {
       "id": "notes-date-and-place",
       "bit": 48,
-      "version": 1,
-      "fingerprint": "89b9ece24ca16c3d"
+      "version": 2,
+      "fingerprint": "e5691fe95ab00941"
     },
     {
       "id": "notes-introduce-to-newcomers",
       "bit": 49,
-      "version": 1,
-      "fingerprint": "b892e27ee6ec5471"
+      "version": 2,
+      "fingerprint": "adfd3f1087ac5df4"
     },
     {
       "id": "notes-explain-benefit",
       "bit": 50,
-      "version": 1,
-      "fingerprint": "7eaf9c744cb6df3d"
+      "version": 2,
+      "fingerprint": "68f65c1b24dfdb96"
     },
     {
       "id": "notes-generalize-category",
       "bit": 51,
-      "version": 1,
-      "fingerprint": "b8bc81be479e3ce6"
+      "version": 2,
+      "fingerprint": "efaf093dd2c50d7f"
     },
     {
       "id": "notes-finding-and-significance",
       "bit": 52,
-      "version": 1,
-      "fingerprint": "be41ca52de2a9f4c"
+      "version": 2,
+      "fingerprint": "4c2b4947b1cecc42"
     },
     {
       "id": "notes-similarity-despite-difference",
       "bit": 53,
-      "version": 1,
-      "fingerprint": "68aa8f38e7805604"
+      "version": 2,
+      "fingerprint": "ae610c1ba3bda7f7"
     },
     {
       "id": "notes-result-versus-expectation",
       "bit": 54,
-      "version": 1,
-      "fingerprint": "1c2297f0e1449c6e"
+      "version": 2,
+      "fingerprint": "c82d50d5b200c312"
     },
     {
       "id": "transition-consequence",
       "bit": 55,
-      "version": 1,
-      "fingerprint": "6447edf9c0f7254f"
+      "version": 2,
+      "fingerprint": "1fa81dfe8a184213"
     },
     {
       "id": "transition-contrast-two-subjects",
       "bit": 56,
-      "version": 1,
-      "fingerprint": "85b66e42b686747d"
+      "version": 2,
+      "fingerprint": "747cf9f2fdf37472"
     },
     {
       "id": "transition-instance-mid-passage",
       "bit": 57,
-      "version": 1,
-      "fingerprint": "d911f3651810add0"
+      "version": 2,
+      "fingerprint": "73dfaa6ce8db1e7d"
     },
     {
       "id": "transition-further-point",
       "bit": 58,
-      "version": 1,
-      "fingerprint": "79f29c8ee51452dd"
+      "version": 2,
+      "fingerprint": "96883ac7750ed347"
     },
     {
       "id": "transition-parallel-case",
       "bit": 59,
-      "version": 1,
-      "fingerprint": "dc08668107a54dba"
+      "version": 2,
+      "fingerprint": "4e4f979020e167b7"
     },
     {
       "id": "transition-later-step",
       "bit": 60,
-      "version": 1,
-      "fingerprint": "5930866bd5ace64c"
+      "version": 2,
+      "fingerprint": "2714ee805d38c25f"
     },
     {
       "id": "transition-despite-drawback",
       "bit": 61,
-      "version": 1,
-      "fingerprint": "ee7660c126379114"
+      "version": 2,
+      "fingerprint": "4a7d537af4add714"
     },
     {
       "id": "transition-concede-then-return",
       "bit": 62,
-      "version": 1,
-      "fingerprint": "e55bdd624e0d7fe8"
+      "version": 2,
+      "fingerprint": "644d9c0dca5c3c94"
     },
     {
       "id": "transition-plain-restatement",
       "bit": 63,
-      "version": 1,
-      "fingerprint": "cb220ba2cb2189d8"
+      "version": 2,
+      "fingerprint": "27925f56c8465754"
     },
     {
       "id": "sec-join-independent-clauses",
       "bit": 64,
-      "version": 1,
-      "fingerprint": "6ee32e511411a57a"
+      "version": 2,
+      "fingerprint": "d5394f914160c0fd"
     },
     {
       "id": "sec-colon-before-list",
       "bit": 65,
-      "version": 1,
-      "fingerprint": "23355c5d3efc30ee"
+      "version": 2,
+      "fingerprint": "1e2034beaf220dca"
     },
     {
       "id": "sec-intro-clause-comma",
       "bit": 66,
-      "version": 1,
-      "fingerprint": "a73ce3de4e857d86"
+      "version": 2,
+      "fingerprint": "8dc26420b4a4cd3d"
     },
     {
       "id": "sec-conjunctive-adverb-join",
       "bit": 67,
-      "version": 1,
-      "fingerprint": "e4701e580d5a01af"
+      "version": 2,
+      "fingerprint": "21441bbc502fcfca"
     },
     {
       "id": "sec-no-colon-after-verb",
       "bit": 68,
-      "version": 1,
-      "fingerprint": "00841493fa90d684"
+      "version": 2,
+      "fingerprint": "4bb2ee2baea0eb4e"
     },
     {
       "id": "sec-no-comma-subject-verb",
       "bit": 69,
-      "version": 1,
-      "fingerprint": "e560e5d7cdde8509"
+      "version": 2,
+      "fingerprint": "77dc434c645b8aa1"
     },
     {
       "id": "sec-series-semicolons",
       "bit": 70,
-      "version": 1,
-      "fingerprint": "9292b3b9c770a94d"
+      "version": 2,
+      "fingerprint": "9e3a0e7fa152d770"
     },
     {
       "id": "sec-relative-vs-pronoun-clause",
       "bit": 71,
-      "version": 1,
-      "fingerprint": "ffe6ba95db181c69"
+      "version": 2,
+      "fingerprint": "508f1967e5c3cd23"
     },
     {
       "id": "sec-closing-mark-match",
       "bit": 72,
-      "version": 1,
-      "fingerprint": "c5797b78a758b695"
+      "version": 2,
+      "fingerprint": "67e0bf8b21ca2559"
     },
     {
       "id": "sec-essential-clause-context",
       "bit": 73,
-      "version": 1,
-      "fingerprint": "af1928285ba5ad7e"
+      "version": 2,
+      "fingerprint": "433dc3564ceb9ad8"
     },
     {
       "id": "sec-adverb-interrupts-clause",
       "bit": 74,
-      "version": 1,
-      "fingerprint": "29aa9cdf27c29fda"
+      "version": 2,
+      "fingerprint": "f66ab25d4c5a394d"
     },
     {
       "id": "sec-sva-compound-subject",
       "bit": 75,
-      "version": 1,
-      "fingerprint": "087d90d4c381af66"
+      "version": 2,
+      "fingerprint": "d1c67aa51c8b89cc"
     },
     {
       "id": "sec-their-theyre-there",
       "bit": 76,
-      "version": 1,
-      "fingerprint": "2c1af3490eab0d04"
+      "version": 2,
+      "fingerprint": "343324f27b4f1f9d"
     },
     {
       "id": "sec-irregular-past-participle",
       "bit": 77,
-      "version": 1,
-      "fingerprint": "6d2584e686dfa1d9"
+      "version": 2,
+      "fingerprint": "9ea750edc28bd23d"
     },
     {
       "id": "sec-parallel-series",
       "bit": 78,
       "version": 1,
-      "fingerprint": "9c3cbfb135eb81ce"
+      "fingerprint": "9c3cbfb135eb81ce",
+      "retired": true
     },
     {
       "id": "sec-sva-attractor",
       "bit": 79,
-      "version": 1,
-      "fingerprint": "910294304ab0052d"
+      "version": 2,
+      "fingerprint": "cd851383e0da4a04"
     },
     {
       "id": "sec-sva-inverted",
       "bit": 80,
-      "version": 1,
-      "fingerprint": "1ea81fd21c5daf1d"
+      "version": 2,
+      "fingerprint": "f36ac98acd0a093f"
     },
     {
       "id": "sec-parallel-paired",
       "bit": 81,
       "version": 1,
-      "fingerprint": "1adeee1f56148fbc"
+      "fingerprint": "1adeee1f56148fbc",
+      "retired": true
     },
     {
       "id": "sec-pronoun-distant-antecedent",
       "bit": 82,
-      "version": 1,
-      "fingerprint": "d7265d2153fb0849"
+      "version": 2,
+      "fingerprint": "830c06fa63f1f3dc"
     },
     {
       "id": "sec-verb-tense-frame",
       "bit": 83,
-      "version": 1,
-      "fingerprint": "9baf950971879c81"
+      "version": 2,
+      "fingerprint": "7509912be7247b73"
     },
     {
       "id": "sec-finite-or-nonfinite",
       "bit": 84,
-      "version": 1,
-      "fingerprint": "1ea4141c47fd2ee0"
+      "version": 2,
+      "fingerprint": "7c46564f5d3a192f"
     },
     {
       "id": "sec-dangling-modifier",
       "bit": 85,
-      "version": 1,
-      "fingerprint": "bcfa6f7a585be2ff"
+      "version": 2,
+      "fingerprint": "2615c5bcc284b652"
     },
     {
       "id": "central-idea-period-prose",
@@ -607,6 +609,72 @@
       "bit": 100,
       "version": 1,
       "fingerprint": "1ee1991d370e4f09"
+    },
+    {
+      "id": "notes-difference-on-named-feature",
+      "bit": 101,
+      "version": 1,
+      "fingerprint": "0a4a7cf1b4f198ff"
+    },
+    {
+      "id": "notes-size-of-difference",
+      "bit": 102,
+      "version": 1,
+      "fingerprint": "1a83de73dec1cb13"
+    },
+    {
+      "id": "transition-elaboration-kind",
+      "bit": 103,
+      "version": 1,
+      "fingerprint": "23fbd42d5b1b1f83"
+    },
+    {
+      "id": "transition-instead-or-despite",
+      "bit": 104,
+      "version": 1,
+      "fingerprint": "977f82b2845de8f3"
+    },
+    {
+      "id": "sec-title-or-appositive",
+      "bit": 105,
+      "version": 1,
+      "fingerprint": "6933a9ad92adfe63"
+    },
+    {
+      "id": "sec-quotation-commas",
+      "bit": 106,
+      "version": 1,
+      "fingerprint": "17e70fcae2c93c8e"
+    },
+    {
+      "id": "sec-supplement-opening-mark",
+      "bit": 107,
+      "version": 1,
+      "fingerprint": "4ffc0519e1f6834b"
+    },
+    {
+      "id": "sec-sva-long-subject",
+      "bit": 108,
+      "version": 1,
+      "fingerprint": "02725212c3302dba"
+    },
+    {
+      "id": "sec-possessive-or-plural",
+      "bit": 109,
+      "version": 1,
+      "fingerprint": "af42374250d16a7c"
+    },
+    {
+      "id": "sec-conditional-verb-forms",
+      "bit": 110,
+      "version": 1,
+      "fingerprint": "49a1036ca4cdf7ab"
+    },
+    {
+      "id": "sec-supplement-or-main-verb",
+      "bit": 111,
+      "version": 1,
+      "fingerprint": "d037ee22e3a72c9f"
     }
   ]
 }
