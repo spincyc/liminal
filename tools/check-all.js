@@ -4,19 +4,22 @@
 // The full gate: syntax, complete content validation, a fresh build, a smoke
 // test of the built site, the study-guide links, and the unit tests.
 
+const fs = require("node:fs");
+const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 
+// Every browser script under src/, so a new module is syntax-checked without
+// anyone remembering to list it.
+function scripts(directory) {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const file = path.join(directory, entry.name);
+    if (entry.isDirectory()) return scripts(file);
+    return entry.name.endsWith(".js") ? [file] : [];
+  });
+}
+
 const checks = [
-  ["node", ["--check", "src/app/app.js"]],
-  ["node", ["--check", "src/app/print.js"]],
-  ["node", ["--check", "src/app/site.js"]],
-  ["node", ["--check", "src/lib/core.js"]],
-  ["node", ["--check", "src/lib/booklet.js"]],
-  ["node", ["--check", "src/lib/template-mask.js"]],
-  ["node", ["--check", "src/lib/runs.js"]],
-  ["node", ["--check", "src/lib/test-engine.js"]],
-  ["node", ["--check", "src/app/render.js"]],
-  ["node", ["--check", "src/app/test-shell.js"]],
+  ...scripts("src").sort().map((file) => ["node", ["--check", file]]),
   ["node", ["tools/validate-content.js", "--complete"]],
   ["node", ["tools/check-answer-positions.js"]],
   ["node", ["tools/update-templates.js", "--check"]],
