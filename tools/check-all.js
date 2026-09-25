@@ -2,7 +2,8 @@
 "use strict";
 
 // The full gate: syntax, complete content validation, a fresh build, a smoke
-// test of the built site, the study-guide links, and the unit tests.
+// test of the built site, the study-guide links, the Learn pages, and the
+// unit tests.
 
 const fs = require("node:fs");
 const path = require("node:path");
@@ -27,6 +28,7 @@ const checks = [
   ["node", ["tools/build.js"]],
   ["node", ["tools/smoke-static.js"]],
   ["node", ["tools/check-guides.js"]],
+  ["node", ["tools/check-learn.js"]],
   ["node", ["--test", "test/**/*.test.js"]],
 ];
 
