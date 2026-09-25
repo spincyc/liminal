@@ -39,7 +39,11 @@ for (const selector of [".skip-link", ":focus-visible", "@media", ".hidden"]) {
 
 for (const asset of [
   "styles/app.css",
+  "styles/test-shell.css",
   "lib/core.js",
+  "lib/test-engine.js",
+  "app/render.js",
+  "app/test-shell.js",
   "app/app.js",
   "content/catalog.js",
 ]) {
@@ -210,3 +214,22 @@ console.log(
   `${practiceCore.FULL_TEST_BLUEPRINTS.length} printable full-length forms, and ` +
   `${signs.groups.length} answer-sign groups are present.`,
 );
+
+// The SAT Math Hard families load lazily in the browser, in this order. The
+// built copies must register every family as plain scripts and each must
+// produce a verified question.
+const familyContext = vm.createContext({});
+familyContext.self = familyContext;
+const familyFiles = ["shared", "algebra", "advanced-quadratics", "advanced-functions", "data-analysis", "geometry"];
+for (const name of familyFiles) {
+  const file = path.join(root, "lib", "families", "sat-math-hard", `${name}.js`);
+  if (!app.includes(`"${name}"`)) throw new Error(`app.js does not load the ${name} family file.`);
+  vm.runInContext(fs.readFileSync(file, "utf8"), familyContext, { filename: file });
+}
+const hardFamilies = familyContext.SAT_MATH_HARD_FAMILIES || [];
+if (hardFamilies.length === 0) throw new Error("No SAT Math Hard families registered.");
+for (const family of hardFamilies) {
+  const record = familyContext.SAT_MATH_HARD_SHARED.instantiate(family, "smoke");
+  if (!record.verified) throw new Error(`Hard family ${family.id} produced an unverified question.`);
+}
+console.log(`Static smoke: ${hardFamilies.length} SAT Math Hard families load as browser scripts.`);

@@ -9,6 +9,7 @@
     />
     <title>Liminal — SAT &amp; ACT Practice</title>
     <link rel="stylesheet" href="styles/app.css" />
+    <link rel="stylesheet" href="styles/test-shell.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -47,6 +48,18 @@
           </div>
         </div>
 
+        <div id="resumeBanner" class="panel resume-banner hidden" role="region" aria-labelledby="resumeHeading">
+          <div>
+            <p class="eyebrow">Unfinished set</p>
+            <h2 id="resumeHeading">Pick up where you left off</h2>
+            <p id="resumeText" class="field-note"></p>
+          </div>
+          <div class="resume-actions">
+            <button id="resumeBtn" class="button primary" type="button">Resume</button>
+            <button id="discardSessionBtn" class="button secondary" type="button">Discard</button>
+          </div>
+        </div>
+
         <div class="layout-grid">
           <form id="practiceForm" class="panel builder">
             <div class="panel-heading">
@@ -68,22 +81,43 @@
                 <label for="modeSelect">Practice mode</label>
                 <select id="modeSelect">
                   <option value="targeted">Targeted practice</option>
+                  <option value="hard-reps" hidden disabled>Hard math reps (fresh problems)</option>
                   <option value="full">Full section mix</option>
                   <option value="adaptive">Recommended next</option>
                   <option value="missed">Missed-question review</option>
-                  <option value="bookmarked">Bookmarked questions</option>
-                  <option value="flagged">Flagged questions</option>
+                  <option value="flagged">Marked for review</option>
                 </select>
               </div>
 
               <div class="field">
-                <label for="countSelect">Session length</label>
-                <select id="countSelect">
-                  <option value="10">10 questions</option>
-                  <option value="20" selected>20 questions</option>
-                  <option value="40">40 questions</option>
-                  <option value="all">All matching</option>
+                <label for="countInput">Questions</label>
+                <input
+                  id="countInput"
+                  class="numeric-input count-input"
+                  type="number"
+                  min="1"
+                  step="1"
+                  value="20"
+                  inputmode="numeric"
+                />
+                <div id="countPicks" class="count-picks" role="group" aria-label="Question count shortcuts"></div>
+              </div>
+
+              <div class="field">
+                <label for="feedbackSelect">Feedback</label>
+                <select id="feedbackSelect">
+                  <option value="instant">After each question</option>
+                  <option value="end">Report at the end</option>
                 </select>
+              </div>
+
+              <div class="field">
+                <span class="field-label" id="timedLabel">Timing</span>
+                <label class="toggle-line">
+                  <input id="timedCheck" type="checkbox" aria-describedby="timedNote" />
+                  Time me at real test pace
+                </label>
+                <p id="timedNote" class="field-note"></p>
               </div>
 
               <div class="field">
@@ -187,122 +221,6 @@
         </div>
       </section>
 
-      <section id="quizView" class="view hidden" aria-labelledby="questionHeading">
-        <div class="quiz-shell">
-          <div class="quiz-topline">
-            <button id="exitBtn" class="text-button" type="button">← Exit session</button>
-            <div class="question-tools">
-              <button id="bookmarkBtn" class="icon-button" type="button" aria-pressed="false">
-                ☆ <span>Bookmark</span>
-              </button>
-              <button id="flagBtn" class="icon-button" type="button" aria-pressed="false">
-                ⚑ <span>Flag</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="progress-row">
-            <div>
-              <span id="progressLabel">Question 1 of 10</span>
-              <small id="questionId"></small>
-            </div>
-            <strong id="scoreLabel">0 correct</strong>
-            <strong id="miniTestClock" class="mini-test-clock hidden"
-              role="timer" aria-live="off">28:00</strong>
-          </div>
-          <div
-            class="progress-bar"
-            role="progressbar"
-            aria-label="Session progress"
-            aria-valuemin="0"
-            aria-valuemax="100"
-            aria-valuenow="0"
-          >
-            <span id="progressFill"></span>
-          </div>
-
-          <nav id="miniTestNav" class="mini-test-nav hidden" aria-label="Mini test questions"></nav>
-
-          <article class="panel question-card">
-            <div id="tags" class="tags"></div>
-            <div id="stimulus" class="stimulus hidden"></div>
-            <h1 id="questionHeading" class="question-stem" tabindex="-1"></h1>
-
-            <button id="hintBtn" class="hint-button" type="button" aria-expanded="false">
-              Need a hint?
-            </button>
-            <div id="hintPanel" class="hint-panel hidden"></div>
-
-            <div id="responseArea"></div>
-            <div id="responseStatus" class="sr-only" aria-live="polite"></div>
-
-            <div id="feedback" class="feedback hidden" aria-live="polite">
-              <div id="verdict" class="verdict"></div>
-              <p id="conciseExplanation"></p>
-
-              <div class="guide-grid">
-                <section>
-                  <h2>Step-by-step</h2>
-                  <ol id="solutionSteps"></ol>
-                </section>
-                <section>
-                  <h2>Fastest reliable approach</h2>
-                  <p id="strategyText"></p>
-                  <h2>Common trap</h2>
-                  <p id="trapText"></p>
-                </section>
-              </div>
-
-              <section id="distractorSection">
-                <h2>Why the other options miss</h2>
-                <ul id="distractorList" class="rationale-list"></ul>
-              </section>
-
-              <section>
-                <h2>Principles to remember</h2>
-                <ul id="principleList"></ul>
-              </section>
-            </div>
-
-            <div class="question-actions">
-              <button id="prevBtn" class="button secondary hidden" type="button">
-                ← Previous
-              </button>
-              <button id="submitBtn" class="button primary" type="button" disabled>
-                Check answer
-              </button>
-              <button id="nextBtn" class="button primary hidden" type="button">
-                Next question →
-              </button>
-              <button id="finishTestBtn" class="button secondary hidden" type="button">
-                Finish and review
-              </button>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="resultsView" class="view hidden" aria-labelledby="resultsHeading">
-        <div class="panel results-panel">
-          <p class="eyebrow">Session complete</p>
-          <h1 id="resultsHeading" tabindex="-1">Nice work.</h1>
-          <div class="result-score">
-            <strong id="finalScore">0%</strong>
-            <span id="finalScoreLabel">0 of 0 correct</span>
-          </div>
-          <p id="resultsMessage"></p>
-          <div id="miniTestReport" class="mini-test-report hidden"></div>
-          <div id="resultsBreakdown" class="breakdown"></div>
-          <div class="button-row">
-            <button id="reviewAllBtn" class="button primary hidden" type="button">
-              Review all questions
-            </button>
-            <button id="practiceAgainBtn" class="button primary" type="button">Practice again</button>
-            <button id="reviewSessionBtn" class="button secondary" type="button">Review missed</button>
-          </div>
-        </div>
-      </section>
-
       <section id="dashboardView" class="view hidden" aria-labelledby="dashboardHeading">
         <div class="view-heading">
           <div>
@@ -348,10 +266,8 @@
         <div class="review-tabs" role="tablist" aria-label="Review lists">
           <button id="missedTab" class="review-tab active" data-list="missed" role="tab"
             aria-controls="reviewList" aria-selected="true" type="button">Missed</button>
-          <button id="bookmarkedTab" class="review-tab" data-list="bookmarked" role="tab"
-            aria-controls="reviewList" aria-selected="false" type="button">Bookmarked</button>
           <button id="flaggedTab" class="review-tab" data-list="flagged" role="tab"
-            aria-controls="reviewList" aria-selected="false" type="button">Flagged</button>
+            aria-controls="reviewList" aria-selected="false" type="button">Marked for review</button>
         </div>
         <div id="reviewList" class="review-list" role="tabpanel" aria-labelledby="missedTab"></div>
       </section>
@@ -392,6 +308,9 @@
     <script src="content/catalog.js"></script>
     <script src="content/answer-signs.js"></script>
     <script src="lib/core.js"></script>
+    <script src="lib/test-engine.js"></script>
+    <script src="app/render.js"></script>
+    <script src="app/test-shell.js"></script>
     <script src="lib/booklet.js"></script>
     <script src="app/app.js"></script>
   </body>

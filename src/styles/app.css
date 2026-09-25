@@ -1454,7 +1454,7 @@ textarea {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 15px;
   margin-bottom: 20px;
 }
@@ -1930,4 +1930,86 @@ footer p {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+/* ------------------------------------------------ session builder additions */
+
+.field-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--navy-800);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.count-picks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.count-pick {
+  min-width: 44px;
+  min-height: 34px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--surface-alt);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.count-pick[aria-pressed="true"] {
+  border-color: rgba(216, 182, 109, 0.65);
+  color: var(--gold-pale);
+}
+
+.field .toggle-line {
+  display: flex;
+  min-height: 49px;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.toggle-line input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--gold);
+}
+
+.resume-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 20px 24px;
+  border-color: rgba(216, 182, 109, 0.45);
+}
+
+.resume-banner h2 {
+  margin: 4px 0;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.count-input {
+  max-width: none;
+  margin-top: 0;
 }

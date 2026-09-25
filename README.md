@@ -19,8 +19,27 @@ common trap, and, for multiple choice, why each wrong option is wrong.
 | ACT Science | 575 |
 | ACT Writing | 575 |
 
-The SAT Math Hard tier is being rebuilt: the current Hard items are easier
-than the real test's hardest questions. See [`docs/roadmap.md`](docs/roadmap.md).
+## Practice
+
+- **Digital test mode.** Every set runs in a full-screen test screen modeled
+  on the real digital test: a timer you can hide with a five-minute alert, a
+  question navigator, Mark for Review, an answer eliminator, a review page
+  before you finish, figures, a reference sheet, and a calculator link.
+- **Your choice of feedback.** Check each answer as you go, or answer the
+  whole set and get a report at the end.
+- **Any number of questions,** with quick picks for a real module (22 Math,
+  27 Reading and Writing), and an optional timer at real-test pace.
+- **Hard math reps.** Genuinely hard SAT Math problems generated fresh every
+  set from 27 problem types, each carrying the real test's traps, including
+  figures not drawn to scale. See
+  [`docs/hard-math-families.md`](docs/hard-math-families.md).
+- **Progress that stays.** Attempts, Hard accuracy on its own, missed and
+  marked-for-review lists, and an unfinished set you can resume after closing
+  the tab.
+
+The fixed SAT Math bank's own Hard items are easier than the real test's
+hardest questions; use Hard math reps for that tier. Accuracy here is not a
+scaled score. See [`docs/roadmap.md`](docs/roadmap.md) for what is next.
 
 ## Privacy
 

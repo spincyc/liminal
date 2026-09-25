@@ -368,6 +368,29 @@
     return summary;
   }
 
+  // Accuracy per difficulty tier. Attempts carry their own difficulty (so
+  // generated questions that are in no bank still count); older attempts
+  // fall back to the bank record.
+  function accuracyByDifficulty(attempts, questions) {
+    const byId = new Map((questions || []).map((question) => [question.id, question]));
+    const tiers = {};
+    DIFFICULTY_ORDER.forEach((tier) => {
+      tiers[tier] = { attempted: 0, correct: 0, accuracy: null };
+    });
+    (attempts || []).forEach((attempt) => {
+      if (attempt.correct !== true && attempt.correct !== false) return;
+      const difficulty = attempt.difficulty ||
+        (byId.get(attempt.questionId) || {}).difficulty;
+      if (!tiers[difficulty]) return;
+      tiers[difficulty].attempted += 1;
+      if (attempt.correct) tiers[difficulty].correct += 1;
+    });
+    Object.values(tiers).forEach((tier) => {
+      tier.accuracy = tier.attempted ? tier.correct / tier.attempted : null;
+    });
+    return tiers;
+  }
+
   function normalize(value) {
     return String(value || "")
       .normalize("NFKD")
@@ -445,7 +468,10 @@
       recent: [],
     };
     attempts.forEach((attempt) => {
-      const question = byId.get(attempt.questionId);
+      // Generated questions are in no bank; their attempts carry their own
+      // section and skill.
+      const question = byId.get(attempt.questionId) ||
+        (attempt.skill ? { sectionKey: attempt.sectionKey, skill: attempt.skill } : null);
       if (!question) return;
       summary.uniqueCompleted.add(attempt.questionId);
       if (attempt.correct === true) summary.correct += 1;
@@ -660,6 +686,7 @@
     filterQuestions,
     normalize,
     numericEqual,
+    accuracyByDifficulty,
     parseNumericResponse,
     paceBudgetSeconds,
     SECONDS_PER_QUESTION,

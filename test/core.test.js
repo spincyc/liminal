@@ -284,3 +284,26 @@ test("pace budgets follow real-test seconds per question", () => {
   assert.equal(core.paceBudgetSeconds("act-writing", 1), null);
   assert.equal(core.paceBudgetSeconds("sat-math", 0), null);
 });
+
+test("accuracyByDifficulty counts generated attempts and falls back to the bank", () => {
+  const bank = [{ id: "q1", difficulty: "Easy" }, { id: "q2", difficulty: "Hard" }];
+  const tiers = core.accuracyByDifficulty([
+    { questionId: "q1", correct: true },
+    { questionId: "q2", correct: false },
+    { questionId: "gen-1", difficulty: "Hard", correct: true },
+    { questionId: "gen-2", difficulty: "Hard", correct: null },
+  ], bank);
+  assert.deepEqual(tiers.Easy, { attempted: 1, correct: 1, accuracy: 1 });
+  assert.deepEqual(tiers.Hard, { attempted: 2, correct: 1, accuracy: 0.5 });
+  assert.equal(tiers.Medium.accuracy, null);
+});
+
+test("summarizeProgress counts generated attempts by their own skill", () => {
+  const summary = core.summarizeProgress([
+    { questionId: "gen-1", sectionKey: "sat-math", skill: "Circles", correct: true },
+    { questionId: "gen-2", sectionKey: "sat-math", skill: "Circles", correct: false },
+  ], []);
+  assert.equal(summary.uniqueCompleted, 2);
+  assert.equal(summary.correct, 1);
+  assert.equal(summary.bySkill["sat-math|Circles"].attempted, 2);
+});

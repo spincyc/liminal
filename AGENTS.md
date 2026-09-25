@@ -68,18 +68,29 @@ For a coherent content batch:
 
 ## Application notes
 
-- The browser app has no module loader: `index.html` loads the generated
-  catalog, `lib/core.js`, `lib/booklet.js`, then `app/app.js`; section banks
-  load on demand from `content/<section>.js`.
-- Content strings render as text, never as trusted HTML.
-- Progress is private, versioned `localStorage` data under the
-  `liminal:progress:*` key.
+- The browser app has no module loader. `index.html` loads the generated
+  catalog, `lib/core.js`, `lib/test-engine.js`, `app/render.js`,
+  `app/test-shell.js`, `lib/booklet.js`, then `app/app.js`. Section banks load
+  on demand from `content/<section>.js`, and the SAT Math Hard families load
+  from `lib/families/sat-math-hard/` once SAT Math is chosen.
+- Every session runs in the digital test mode (`window.LiminalShell`): the
+  setup view builds a question list and calls `LiminalShell.start` with a
+  feedback mode (`instant` or `end`), an optional time limit, and callbacks.
+  `src/lib/test-engine.js` holds the session logic and has no DOM access;
+  `src/app/render.js` renders stimuli and sanitizes figure SVG through an
+  allow-list. Never show domain, skill, difficulty, or IDs during a session.
+- Content strings render as text, never as trusted HTML. Figures are parsed
+  as SVG data and rebuilt element by element.
+- Browser storage: `liminal:progress:v2` holds attempts (each carries its
+  section, skill, domain, and difficulty, plus family and seed for generated
+  questions) and the marked-for-review list; `liminal:session:v1` holds an
+  unfinished set so it can resume after a reload.
+- A generated question's id is `sat-math-hard:<family>:<seed>`, so it can be
+  rebuilt exactly; never store generated questions in a bank.
 - Do not claim that the recommendation logic implements official SAT
-  adaptivity, ACT scoring, or score prediction. Mini tests report accuracy
-  only; they must never estimate a scaled SAT total or an ACT Composite.
-- `sessionKind` in `src/app/app.js` switches the quiz view between `practice`
-  (check as you go), `test` (no feedback, timer, free navigation), and `review`
-  (answer guide open). A new quiz control must handle all three.
+  adaptivity, ACT scoring, or score prediction, and do not add scaled score
+  estimates (see "Decided" in `docs/roadmap.md`). Reports show accuracy, with
+  Hard accuracy on its own.
 - `content/guides/answer-signs.js` powers the Answer Signs view. It is a study
   guide of probabilistic tells, not a question bank: never run it through the
   generators, and keep every tell's caution and the disclaimer.
@@ -87,6 +98,8 @@ For a coherent content batch:
   reachable from its `README.md`; `npm run check:guides` enforces this.
   Heuristics state when they fail; time-sensitive facts carry a
   verify-before-relying note.
+- SAT Math Hard families follow `docs/hard-math-families.md` and pass
+  `npm run check:hard-math`.
 
 ## Context hygiene
 
@@ -106,8 +119,10 @@ git diff --check
 
 Test major interactions in a current browser when one is available: section
 loading, targeted and full sessions, each response type, hints, answer guides,
-results, review lists, progress, keyboard operation, phone width, and dark
-mode. Report unavailable tooling rather than installing it.
+the digital test mode in both feedback modes (timer, navigator, review page,
+eliminator, figures, numeric entry, report), resuming after a reload, review
+lists, progress, keyboard operation, and phone width. Report unavailable
+tooling rather than installing it.
 
 ## Editing and completion
 
