@@ -162,6 +162,8 @@ readiness.
 2. Each of A–D is the key in 15–35% of multiple-choice draws.
 3. Text choices (averaging at least 3 words): the key is the unique longest
    choice in at most 40% of draws, and the unique shortest in at most 40%.
+   Reading and Writing choices shorter than that (a mark, a verb form, a
+   transition) are judged the same way by their characters.
 4. When all four choices are numbers, the key is the smallest or largest value
    in 15–85% of those draws.
 5. Text choices: an opening (first two words, lower-cased) used in at least
@@ -171,11 +173,11 @@ readiness.
 7. For each declared feature, the key is the only choice with its value in at
    most 40% of draws. Standard English Conventions templates declare features
    on every draw, with the same names on every choice.
-8. Math: the blind "hub" strategy scores at most 50% on a template and at most
-   32% over each tier's multiple choice. The strategy never reads the stem: it
-   scores each choice by the numbers and symbols it shares with the other
-   choices, keeps the two middle values when all four are numbers, and
-   guesses among the best-scoring.
+8. The blind "hub" strategy scores at most 50% on a template and at most
+   32% over each tier's multiple choice, in both sections. The strategy
+   never reads the stem: it scores each choice by the numbers, symbols and
+   words it shares with the other choices, keeps the two middle values when
+   all four are numbers, and guesses among the best-scoring.
 9. Items count as distinct when their stimulus, stem or set of choices
    differ; reordering choices is not variety. Math: at least 75% distinct over
    the first 200 draws. Reading and Writing: at least 10 distinct items per
@@ -194,6 +196,12 @@ readiness.
     template and at most 32% over each tier's multiple choice, in every
     section. When no choice or every choice has a look-alike, the strategy
     guesses among all four.
+14. Most-similar pair (Reading and Writing text choices): a blind strategy
+    that guesses between the two choices sharing the most words (by the
+    share of their words in common) scores at most 40% on a template and at
+    most 30% over each tier. A distractor written by editing the key shares
+    most of its words, so write distractors that are as close to one another
+    as to the key.
 
 Also enforced:
 
@@ -241,6 +249,11 @@ The gate measures tells; these construction patterns avoid them.
 - **Rhetorical Synthesis.** Choices are grounded word by word against the
   notes (`ungroundedWords` in `expression-of-ideas/common.js`, with per-topic
   `allow` lists), so no distractor adds a fact the notes lack.
+- **Edit the distractors from each other, not only from the key.** In
+  Reading and Writing, a distractor that is the key with one phrase changed
+  puts the key in the most-similar pair (check 14) and at the hub (check
+  8). Give each distractor a sibling: two wrong answers that share a frame,
+  and the key sharing a frame with one of them.
 - **Pair the distractors too.** A slip that is one change from the key
   (the negation, the reciprocal, double) leaves the key in a look-alike
   pair; give a distractor its own look-alike, or offer slips of the slip,

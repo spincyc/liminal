@@ -25,6 +25,8 @@ const LIMITS = {
   hubTier: 0.32,
   pairTemplate: 0.5,
   pairTier: 0.32,
+  similarTemplate: 0.4,
+  similarTier: 0.3,
 };
 
 let counter = 0;
@@ -197,7 +199,7 @@ test("check 8 fails a Math template the blind hub strategy beats", () => {
   });
   const measure = T.measureTemplate(entries);
   assert.equal(T.shares(measure).hub, 1);
-  assert.deepEqual(checks(T.templateFailures(measure, LIMITS, { math: true })), [8]);
+  assert.deepEqual(checks(T.templateFailures(measure, LIMITS, { hub: true })), [8]);
   assert.deepEqual(checks(T.templateFailures(measure, LIMITS, {})), []);
   const tiers = T.hubByTier([{ difficulty: "Hard", measure }, { difficulty: "Hard", measure: T.measureTemplate(many(200, (index) => mc(["1", "2", "3", "4"], index % 4))) }]);
   assert.equal(tiers.Hard.mc, 400);
@@ -238,6 +240,44 @@ test("check 13 fails a template whose key sits in its look-alike pair", () => {
   assert.ok(!checks(T.templateFailures(measure, LIMITS, {})).includes(13), "50% is the template limit");
   const tiers = T.hubByTier([{ difficulty: "Medium", measure }], "pair");
   assert.equal(tiers.Medium.share, 0.5);
+});
+
+test("the most-similar pair is the two choices sharing the most words", () => {
+  assert.equal(T.wordOverlap("The bird sings at dawn", "the bird sings at dusk"), 4 / 6);
+  assert.equal(T.wordOverlap("", ""), 1);
+  const choices = ["The finding supports the claim", "The finding weakens the claim", "It is unrelated to rainfall", "Nobody measured anything"];
+  assert.deepEqual(T.similarCandidates(choices).sort(), [0, 1]);
+  assert.equal(T.similarCredit(choices, 1), 0.5);
+  assert.equal(T.similarCredit(choices, 2), 0);
+  assert.deepEqual(T.similarCandidates(["a b", "a b", "a b", "a b"]), [0, 1, 2, 3], "a tie across all four says nothing");
+});
+
+test("check 14 fails a template whose key sits in its most-similar pair", () => {
+  const edited = many(200, (index) => {
+    const key = index % 4;
+    const choices = ["Rainfall rose sharply in spring", "Farmers planted early that year", "Prices fell across the region"];
+    // The key is the first choice with one word changed.
+    choices.splice(key, 0, key === 0 ? "Rainfall rose slowly in spring" : choices[0].replace("sharply", "slowly"));
+    return mc(choices, key);
+  });
+  const measure = T.measureTemplate(edited);
+  assert.equal(T.shares(measure).similar, 0.5);
+  assert.ok(checks(T.templateFailures(measure, LIMITS, { similar: true })).includes(14));
+  assert.ok(!checks(T.templateFailures(measure, LIMITS, {})).includes(14), "only where the section asks for it");
+  assert.equal(T.hubByTier([{ difficulty: "Easy", measure }], "similar").Easy.share, 0.5);
+});
+
+test("check 3 judges short text choices by characters", () => {
+  const marks = many(200, (index) => {
+    const key = index % 4;
+    const choices = ["cut, so", "cut so", "cut; so"];
+    choices.splice(key, 0, "cut, and so");
+    return mc(choices, key);
+  });
+  const measure = T.measureTemplate(marks);
+  assert.equal(T.shares(measure).longestKeyChars, 1);
+  assert.ok(checks(T.templateFailures(measure, LIMITS, { shortText: true })).includes(3));
+  assert.ok(!checks(T.templateFailures(measure, LIMITS, {})).includes(3), "word-count check 3 skips choices this short");
 });
 
 test("check 9 counts items, not choice orders", () => {

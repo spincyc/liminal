@@ -6,8 +6,8 @@
 // (test/tells.test.js). A "tell" is anything that finds the key without
 // solving the problem: its position, its length, its opening words, a phrase
 // that is always the key, the one grammatical form the other choices do not
-// share, a pair of look-alike choices the key belongs to, or, in Math, the
-// value every distractor is built around.
+// share, a pair of look-alike choices the key belongs to, the two most alike
+// choices, or the choice every distractor is built around.
 //
 // measureTemplate(records) summarizes one template's repetitions;
 // templateFailures(measure, limits) applies the numbered checks of
@@ -139,6 +139,50 @@ function pairCredit(choices, key) {
   return kept.includes(key) ? 1 / kept.length : 0;
 }
 
+/* ------------------------------------------- blind most-similar pair */
+
+// Words of a text choice, lower-cased, as a set.
+const wordSet = (text) => new Set(String(text).toLowerCase().match(/[\p{L}\p{N}]+(?:['’-][\p{L}\p{N}]+)*/gu) || []);
+
+// Shared words over all words (Jaccard), 1 for two empty choices.
+function wordOverlap(left, right) {
+  const a = wordSet(left);
+  const b = wordSet(right);
+  let shared = 0;
+  a.forEach((word) => {
+    if (b.has(word)) shared += 1;
+  });
+  const union = a.size + b.size - shared;
+  return union ? shared / union : 1;
+}
+
+// The blind most-similar strategy for text choices: find the two choices
+// that share the most words and guess between them. A distractor written
+// by editing the key shares most of its words, so the key tends to sit in
+// that pair. Tied pairs pool their choices; a tie across all four says
+// nothing. Returns the choices guessed among.
+function similarCandidates(choices) {
+  let best = -1;
+  let members = new Set();
+  choices.forEach((left, i) => choices.forEach((right, j) => {
+    if (j <= i) return;
+    const overlap = wordOverlap(left, right);
+    if (overlap > best + 1e-12) {
+      best = overlap;
+      members = new Set([i, j]);
+    } else if (Math.abs(overlap - best) <= 1e-12) {
+      members.add(i);
+      members.add(j);
+    }
+  }));
+  return members.size && members.size < choices.length ? [...members] : choices.map((unused, index) => index);
+}
+
+function similarCredit(choices, key) {
+  const kept = similarCandidates(choices);
+  return kept.includes(key) ? 1 / kept.length : 0;
+}
+
 /* ------------------------------------------------------------ measuring */
 
 const close = (left, right) => Math.abs(left - right) <= 1e-9 * Math.max(1, Math.abs(left), Math.abs(right));
@@ -194,6 +238,11 @@ function measureTemplate(entries, options) {
     choiceWords: 0,
     longestKey: 0,
     shortestKey: 0,
+    textChoiceReps: 0,
+    shortTextReps: 0,
+    longestKeyChars: 0,
+    shortestKeyChars: 0,
+    similar: 0,
     numericChoiceReps: 0,
     extremeKey: 0,
     hub: 0,
@@ -248,6 +297,17 @@ function measureTemplate(entries, options) {
     }
     m.hub += hubCredit(choices, key);
     m.pair += pairCredit(choices, key);
+    if (!values.every((value) => value !== null)) {
+      m.textChoiceReps += 1;
+      m.similar += similarCredit(choices, key);
+      // Short text choices (a mark, a verb form, a transition) are judged by
+      // their characters, since a word count cannot tell them apart.
+      if (choices.reduce((sum, choice) => sum + words(choice).length, 0) < 3 * choices.length) {
+        m.shortTextReps += 1;
+        if (lengths[key] === longest && lengths.filter((length) => length === longest).length === 1) m.longestKeyChars += 1;
+        if (lengths[key] === shortest && lengths.filter((length) => length === shortest).length === 1) m.shortestKeyChars += 1;
+      }
+    }
     choices.forEach((choice, index) => {
       const start = opener(choice);
       if (!start) return;
@@ -298,6 +358,9 @@ function shares(m) {
     extremeKey: of(m.extremeKey, m.numericChoiceReps),
     hub: of(m.hub, m.mc),
     pair: of(m.pair, m.mc),
+    similar: of(m.similar, m.textChoiceReps),
+    longestKeyChars: of(m.longestKeyChars, m.shortTextReps),
+    shortestKeyChars: of(m.shortestKeyChars, m.shortTextReps),
     distinctShare: of(m.windowDistinct, m.windowRecords),
   };
 }
@@ -337,6 +400,16 @@ function templateFailures(m, limits, context) {
   if (text) {
     if (s.longestKey > limits.longestKey) fail(3, `key is the unique longest choice in ${percent(s.longestKey)} of reps`, s.longestKey);
     if (s.shortestKey > limits.shortestKey) fail(3, `key is the unique shortest choice in ${percent(s.shortestKey)} of reps`, s.shortestKey);
+  }
+
+  // 3, short text choices: the same, by characters.
+  if (settings.shortText && m.shortTextReps >= limits.minSample) {
+    if (s.longestKeyChars > limits.longestKey) {
+      fail(3, `key is the unique longest short choice (by characters) in ${percent(s.longestKeyChars)} of reps`, s.longestKeyChars);
+    }
+    if (s.shortestKeyChars > limits.shortestKey) {
+      fail(3, `key is the unique shortest short choice (by characters) in ${percent(s.shortestKeyChars)} of reps`, s.shortestKeyChars);
+    }
   }
 
   // 4. Numeric choices: the key is an extreme value neither always nor never.
@@ -383,9 +456,14 @@ function templateFailures(m, limits, context) {
     }
   });
 
-  // 8. Blind hub strategy (Math).
-  if (settings.math && sampled && s.hub > limits.hubTemplate) {
+  // 8. Blind hub strategy.
+  if (settings.hub && sampled && s.hub > limits.hubTemplate) {
     fail(8, `blind hub strategy scores ${percent(s.hub)} (want at most ${percent(limits.hubTemplate)})`, s.hub);
+  }
+
+  // 14. Blind most-similar pair strategy (text choices).
+  if (settings.similar && m.textChoiceReps >= limits.minSample && s.similar > limits.similarTemplate) {
+    fail(14, `blind most-similar pair strategy scores ${percent(s.similar)} (want at most ${percent(limits.similarTemplate)})`, s.similar);
   }
 
   // 13. Blind look-alike pair strategy (every section).
@@ -406,14 +484,15 @@ function templateFailures(m, limits, context) {
 /* --------------------------------------------------------- section level */
 
 // A blind strategy's accuracy per difficulty tier: rows of { difficulty,
-// measure }; `field` is the measure's credit total ("hub" by default, or
-// "pair").
+// measure }; `field` is the measure's credit total ("hub" by default,
+// "pair", or "similar", which is judged over text-choice repetitions).
 function hubByTier(rows, field) {
   const credit = field || "hub";
+  const base = credit === "similar" ? "textChoiceReps" : "mc";
   const tiers = {};
   rows.forEach(({ difficulty, measure }) => {
     const tier = (tiers[difficulty] = tiers[difficulty] || { mc: 0, credit: 0 });
-    tier.mc += measure.mc;
+    tier.mc += measure[base];
     tier.credit += measure[credit];
   });
   return Object.fromEntries(Object.entries(tiers).map(([difficulty, tier]) =>
@@ -500,5 +579,8 @@ module.exports = {
   pairCandidates,
   pairCredit,
   shares,
+  similarCandidates,
+  similarCredit,
+  wordOverlap,
   templateFailures,
 };
