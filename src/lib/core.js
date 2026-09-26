@@ -221,13 +221,41 @@
     return counts;
   }
 
+  // Whole passages for a section whose questions share passages (ACT
+  // English and Reading): passages in a seeded order, each with its
+  // questions in passage order, until `count` is filled; the last passage
+  // gives only as many of its first questions as are needed. A set of 36
+  // Reading questions then reads four passages, as the real test does,
+  // instead of thirty.
+  function drawPassageSets(questions, count, seed) {
+    const byPassage = new Map();
+    questions.forEach((question) => {
+      if (!byPassage.has(question.passageId)) byPassage.set(question.passageId, []);
+      byPassage.get(question.passageId).push(question);
+    });
+    const order = deterministicShuffle([...byPassage.keys()], `${seed}-passages`);
+    const chosen = [];
+    for (const passageId of order) {
+      if (chosen.length >= count) break;
+      const items = byPassage.get(passageId).slice().sort((left, right) => (left.id < right.id ? -1 : left.id > right.id ? 1 : 0));
+      chosen.push(...items.slice(0, count - chosen.length));
+    }
+    return chosen;
+  }
+
+  const sharesPassages = (questions) => questions.length > 0 && questions.every((question) => question.passageId);
+
   // Draws `count` scoreable items from one section, spread across difficulty
-  // tiers and backfilled when a tier is short.
+  // tiers and backfilled when a tier is short. A section whose questions
+  // share passages draws whole passages instead (drawPassageSets), since its
+  // difficulty labels are not verified and scattered questions from thirty
+  // passages are nothing like the test.
   function drawSectionItems(bank, count, seed, excludeIds) {
     const blocked = excludeIds || new Set();
     const scoreable = bank.filter(
       (question) => question.responseType !== "essay" && !blocked.has(question.id),
     );
+    if (sharesPassages(scoreable)) return drawPassageSets(scoreable, count, seed);
     const targets = allocateByWeight(
       count,
       MINI_TEST_DIFFICULTY_MIX.map((entry) => entry.weight),
@@ -744,13 +772,23 @@
   // Builds a session that avoids recently served questions and spreads across
   // template families, so refreshing the page does not recycle the same items
   // and one family cannot dominate. Both constraints relax rather than fail
-  // when the filtered pool is too small to honour them.
+  // when the filtered pool is too small to honour them. With
+  // `options.passageSets`, a pool whose questions share passages is drawn as
+  // whole passages instead (drawPassageSets), as a timed set should be.
   function buildSession(questions, count, seed, options) {
     const settings = options || {};
     const avoid = new Set(settings.avoidIds || []);
     const target = count === "all"
       ? questions.length
       : Math.max(1, Number(count) || 10);
+
+    // `passageSets`: whole passages, recently served ones last.
+    if (settings.passageSets && sharesPassages(questions)) {
+      const fresh = questions.filter((question) => !avoid.has(question.id));
+      const served = questions.filter((question) => avoid.has(question.id));
+      const first = drawPassageSets(fresh, target, seed);
+      return first.length >= target ? first : first.concat(drawPassageSets(served, target - first.length, `${seed}-again`));
+    }
 
     const shuffled = deterministicShuffle(questions, seed);
     const fresh = shuffled.filter((question) => !avoid.has(question.id));
@@ -801,6 +839,7 @@
     buildSession,
     buildTestForm,
     drawSectionItems,
+    drawPassageSets,
     chooseDifficulty,
     deterministicShuffle,
     filterQuestions,

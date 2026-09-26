@@ -388,3 +388,25 @@ test("summarizeProgress counts generated attempts by their own skill", () => {
   assert.equal(summary.correct, 1);
   assert.equal(summary.bySkill["sat-math|Circles"].attempted, 2);
 });
+
+test("sections that share passages are drawn as whole passages", () => {
+  const bank = [];
+  ["p1", "p2", "p3"].forEach((passageId, p) => {
+    for (let i = 1; i <= 4; i += 1) {
+      bank.push({ id: `act-reading-${p}${i}`, passageId, sectionKey: "act-reading", responseType: "multiple-choice",
+        difficulty: ["Easy", "Medium", "Hard"][i % 3], skill: "Main idea", subskill: "x" });
+    }
+  });
+  const drawn = core.drawSectionItems(bank, 6, "seed");
+  const passages = drawn.map((question) => question.passageId);
+  assert.equal(drawn.length, 6);
+  assert.equal(new Set(passages).size, 2, "one whole passage and the start of another");
+  assert.deepEqual(passages.slice(0, 4), Array(4).fill(passages[0]));
+  assert.deepEqual(drawn.slice(0, 4).map((question) => question.id), drawn.slice(0, 4).map((question) => question.id).slice().sort(),
+    "questions keep passage order");
+  const session = core.buildSession(bank, 8, "seed", { passageSets: true });
+  assert.equal(new Set(session.map((question) => question.passageId)).size, 2);
+  const avoided = core.buildSession(bank, 4, "seed", { passageSets: true, avoidIds: bank.filter((q) => q.passageId !== "p3").map((q) => q.id) });
+  assert.deepEqual([...new Set(avoided.map((question) => question.passageId))], ["p3"], "recently served passages come last");
+  assert.ok(new Set(core.buildSession(bank, 6, "seed").map((question) => question.passageId)).size >= 2);
+});
