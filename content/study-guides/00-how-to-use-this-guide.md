@@ -185,9 +185,10 @@ Realistic movement from serious, well-run prep:
 Where the gains come from depends on where you start. From a low or middling
 score (around 500 in SAT Math, for example), most of the gain is content: the
 Easy and Medium skills you cannot do yet. From a high score, it is mostly
-careless errors and pacing. Either way, the last five questions of a math
-section are worth exactly as much as the first five, and the first five are
-much easier to secure. For SAT Math from around 500, see the
+careless errors and pacing. Either way, a question pays only when you get it
+right, and the first five questions of a module are much easier to secure
+than the last five. (The SAT does not weight every question the same, so
+this is about expected points, not equal value.) For SAT Math from around 500, see the
 [Learn plan](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan).
 
 If you are retaking, look at your actual score report first. It tells you which
