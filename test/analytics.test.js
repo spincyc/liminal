@@ -41,8 +41,9 @@ function attempt(fields) {
     hinted: false,
     timeMs: 60000,
     sessionId: "s1",
-    // An hour apart, so a gate window of 30 spans more than one day.
-    timestamp: counter * 3600 * 1000,
+    // Three hours apart, so any 15 answers span at least two calendar days
+    // in every time zone (the gate and Mastered windows need two).
+    timestamp: counter * 3 * 3600 * 1000,
   }, fields);
 }
 
