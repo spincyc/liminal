@@ -275,6 +275,18 @@ for (const page of ["print.html", "learn.html"]) {
   }
 }
 
+// Every page names its icon, which is built with it, so no page asks the
+// server for a favicon.ico that is not there.
+for (const page of ["index.html", "learn.html", "print.html"]) {
+  const file = path.join(root, page);
+  if (!fs.existsSync(file)) continue;
+  const icon = (fs.readFileSync(file, "utf8").match(/<link rel="icon" href="([^"]+)"/) || [])[1];
+  if (!icon) throw new Error(`${page} does not link a favicon.`);
+  if (!icon.startsWith("data:") && !fs.existsSync(path.join(root, icon))) {
+    throw new Error(`${page}'s favicon is missing: ${icon}`);
+  }
+}
+
 const bookletPath = path.join(root, "lib", "booklet.js");
 const bookletModule = { exports: {} };
 vm.runInContext(

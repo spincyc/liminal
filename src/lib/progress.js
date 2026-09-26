@@ -54,8 +54,6 @@
   const SOURCES = ["template", "bank", "legacy-bank"];
   const ERROR_REASONS = ["content", "process", "careless", "time"];
   const DIFFICULTIES = ["Easy", "Medium", "Hard"];
-  // A skill needs this many counted answers before it can be called weakest.
-  const WEAK_SKILL_MIN_ATTEMPTS = 2;
   // Sections built from templates; a generated question's id is
   // "<section>:<template>:<seed>", or "sat-math-hard:<family>:<seed>" from
   // before templates had registry bits.
@@ -896,18 +894,6 @@
     return summary;
   }
 
-  // The skill with the lowest accuracy among those with enough counted
-  // answers, in the given sections; ties go to the skill answered more.
-  // `options.current` re-tiers template attempts (see withCurrentTemplates).
-  function weakestSkill(progress, filter, options) {
-    const settings = options || {};
-    const minimum = settings.minAttempts || WEAK_SKILL_MIN_ATTEMPTS;
-    const attempts = withCurrentTemplates(attemptsFor(progress, filter), settings.current);
-    return Object.values(stats(attempts).bySkill)
-      .filter((row) => row.attempted >= minimum)
-      .sort((left, right) => left.accuracy - right.accuracy || right.attempted - left.attempted)[0] || null;
-  }
-
   return {
     STORAGE_KEY,
     LEGACY_KEY,
@@ -916,7 +902,6 @@
     SOURCES,
     ERROR_REASONS,
     TEMPLATE_SECTIONS,
-    WEAK_SKILL_MIN_ATTEMPTS,
     // identity
     testOf,
     parseQuestionId,
@@ -963,6 +948,5 @@
     historyFor,
     recentlyServedIds,
     stats,
-    weakestSkill,
   };
 });

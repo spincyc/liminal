@@ -135,13 +135,9 @@
       return section ? `${section.test} ${section.shortLabel}` : sectionKey;
     }
 
-    // Sections a skill map can describe: scored ones (the essay is not).
-    function mapSections(test) {
-      return ctx.testSections(test).filter((section) =>
-        (section.responseTypes || []).some((type) => type !== "essay"));
-    }
-
-    function studyLinks(row) {
+    // Learn and Practice links for a skill; Practice opens the drill at the
+    // skill's next level (the drill's own default).
+    function studyLinks(row, level) {
       const cell = el("span", "row-links");
       const learn = practice.learnHref({ sectionKey: row.sectionKey, domain: row.domain, skill: row.skill });
       if (learn) {
@@ -151,9 +147,9 @@
         cell.appendChild(link);
       }
       if (ctx.sectionByKey(row.sectionKey)) {
-        const link = el("a", null, "Practice");
+        const link = el("a", null, level ? `Practice at ${level}` : "Practice");
         link.href = practice.practiceHash(row.sectionKey, row.skill);
-        link.setAttribute("aria-label", `Practice ${row.skill}`);
+        link.setAttribute("aria-label", `Practice ${row.skill}${level ? ` at ${level}` : ""}`);
         cell.appendChild(link);
       }
       return cell;
@@ -360,20 +356,21 @@
       return Progress.testOf(session.sectionKey || (session.sections || [])[0]);
     }
 
+    // The skill map and the next step come from ctx.guide, as on every
+    // page. Only sections built from templates carry difficulty labels worth
+    // trusting; the fixed ACT banks' Hard differs from Easy by label only.
     function buildModel(test, progress, attempts) {
-      const sections = mapSections(test);
-      // Only sections built from templates carry difficulty labels worth
-      // trusting; the fixed ACT banks' Hard differs from Easy by label only.
-      const rows = Analytics.skillMap(attempts, sections, { tiered: practice.usesTemplates });
+      const guide = ctx.guide(test, attempts);
       const trend = Analytics.sessionTrend(progress.sessions, attempts, (session) => sessionTest(session) === test);
       return {
         test,
-        tiered: sections.some((section) => practice.usesTemplates(section.key)),
+        tiered: guide.sections.some((section) => practice.usesTemplates(section.key)),
         progress,
         attempts,
-        sections,
+        sections: guide.sections,
         summary: Progress.stats(attempts),
-        rows,
+        rows: guide.rows,
+        guide,
         trend,
       };
     }
@@ -452,9 +449,14 @@
       const missed = Progress.missedIds(progress, { test }).length;
       const marked = Progress.markedIds(progress, { test }).length;
       const states = Analytics.stateCounts(rows);
+      // Counted: every question the accuracy model counts, a blank as wrong;
+      // answered: the ones with an answer, as the weekly count below counts.
+      const answered = summary.attempted - summary.unanswered;
       elements.stats.replaceChildren(
-        card("Questions answered", ctx.formatNumber(summary.attempted),
-          summary.unanswered ? `${summary.unanswered} left blank, counted wrong` : ""),
+        card("Questions counted", ctx.formatNumber(summary.attempted),
+          summary.unanswered
+            ? `${ctx.formatNumber(answered)} answered, ${ctx.formatNumber(summary.unanswered)} left blank (counted wrong)`
+            : "Each counted once, at its first answer"),
         card("Overall accuracy", percent(summary.accuracy), ""),
         // Hard accuracy stands alone: overall accuracy on a mostly Easy and
         // Medium mix is what makes practice look better than the real test.
@@ -509,20 +511,26 @@
       start.card.classList.toggle("is-start", fresh.length > 0);
       start.heading.textContent = fresh.length ? "Start here" : "Diagnostic";
       const { count: size } = Analytics.DIAGNOSTIC;
+      // Honest about its reach: twenty questions place a student by domain;
+      // they cannot grade a section's skills.
       start.intro.textContent = (fresh.length
-        ? `A ${size}-question diagnostic shows where you stand before you practise, and fills your skill map so this page can say what to study first. `
-        : `Take a ${size}-question diagnostic again at any time to see where your skills stand now. `) +
-        "It mixes Medium and Hard questions across all four domains in the real test's proportions. " +
+        ? `A ${size}-question diagnostic shows where you stand by domain before you practise. `
+        : `Take a ${size}-question diagnostic again at any time to see where you stand by domain now. `) +
+        "It mixes Medium and Hard questions across all four domains in the real test's proportions, which is at most " +
+        "two questions in any skill: too few to grade a skill, so it does not fill your skill map. For Math it sets " +
+        "where the Math plan starts. It is not a score; an official practice test in Bluebook is. " +
         "There is no timer, though each question is timed for your pacing; answers and explanations come at the end.";
       start.list.replaceChildren(...sections.map((section) => {
         const item = el("div", "start-item");
         const text = el("div", "start-text");
         text.appendChild(el("strong", null, `${section.test} ${section.shortLabel}`));
         const last = model.trend.filter((point) => point.kind === "diagnostic" && point.sectionKey === section.key).pop();
+        const placement = model.guide.placements[section.key];
         let detail;
         if (last) {
           detail = `Last diagnostic ${dayLabel(last.finishedAt)}: ${percent(last.accuracy)} correct` +
             (last.hard.attempted ? `, Hard ${percent(last.hard.accuracy)}.` : ".");
+          if (placement && placement.stage) detail += ` The Math plan starts at stage ${placement.stage}.`;
         } else {
           detail = sectionAnswered(section.key) ? "No diagnostic taken yet." : "No answers yet. Start here.";
         }
@@ -538,44 +546,15 @@
     }
 
     async function startDiagnostic(section, button) {
-      // Ask before anything is recorded as served.
-      if (ctx.confirmReplace && !(await ctx.confirmReplace("set"))) return;
-      const name = `${section.test} ${section.shortLabel}`;
       button.disabled = true;
-      ctx.setStatus(start.status, `Preparing the ${name} diagnostic…`, "loading");
-      let templates;
+      ctx.setStatus(start.status, `Preparing the ${ctx.sectionName(section.key)} diagnostic…`, "loading");
       try {
-        templates = await ctx.sectionTemplates(section.key);
+        await ctx.startDiagnostic(section.key);
+        ctx.setStatus(start.status, "");
       } catch (error) {
-        button.disabled = false;
         ctx.setStatus(start.status, `${error.message} Refresh the page and try again.`, "error");
-        return;
-      }
-      const chosen = Analytics.chooseDiagnostic(templates, {
-        weights: practice.domainWeights(section),
-        recency: practice.recencyFor(Progress.historyFor(ctx.store.get(), section.key), templates),
-        seed: practice.newRunSeed(),
-      });
-      button.disabled = false;
-      if (!chosen.templates.length) {
-        ctx.setStatus(start.status, "No Medium or Hard templates are available for this section.", "error");
-        return;
-      }
-      const run = ctx.buildRun({ sectionKey: section.key, count: chosen.templates.length, templates: chosen.templates });
-      ctx.setStatus(start.status, "");
-      try {
-        ctx.launch({
-          title: `${name} diagnostic`,
-          sectionKey: section.key,
-          kind: "diagnostic",
-          questions: Analytics.orderByTier(run.questions),
-          runCode: run.code,
-          setCode: run.setCode,
-          feedback: "end",
-          timeLimitSeconds: null,
-        });
-      } catch (error) {
-        ctx.setStatus(start.status, error.message, "error");
+      } finally {
+        button.disabled = false;
       }
     }
 
@@ -617,17 +596,20 @@
         plan.countdown.textContent = `Your test date (${dayLabel(Analytics.parseDate(saved.testDate).getTime())}) has passed. Set the next one.`;
       }
 
-      // Each test has its own goal, counted from that test's answers.
+      // Each test has its own goal, counted from that test's answers: every
+      // question answered since Monday, a Review question answered again
+      // included; blanks are not.
       const done = Analytics.weekCount(model.attempts);
+      const counts = "Weeks start on Monday. Every question you answer counts, Review ones included; blanks do not.";
       plan.week.replaceChildren(el("h3", null, "This week"));
       if (goal) {
-        plan.week.appendChild(meter(done / goal, `${ctx.formatNumber(done)} of ${ctx.formatNumber(goal)}`));
+        plan.week.appendChild(meter(done / goal, `${ctx.formatNumber(done)} of ${ctx.formatNumber(goal)} answered`));
         plan.week.appendChild(el("p", "muted", done >= goal
-          ? "Goal met for this week. Weeks start on Monday."
-          : `${ctx.formatNumber(goal - done)} to go. Weeks start on Monday; blanks do not count.`));
+          ? `Goal met for this week. ${counts}`
+          : `${ctx.formatNumber(goal - done)} to go. ${counts}`));
       } else {
         plan.week.appendChild(el("p", "muted",
-          `${count(done, "question")} answered since Monday. Set a weekly goal to track it.`));
+          `${count(done, "question")} answered since Monday. ${counts} Set a weekly goal to track it.`));
       }
 
       renderFocus();
@@ -666,32 +648,34 @@
       }
     }
 
+    // The one next step (ctx.guide), in the words Practice and every report
+    // use. Before any answer, the diagnostic above comes first.
     function renderFocus() {
-      const keys = model.sections.filter((section) => !section.optional).map((section) => section.key);
-      const focus = Analytics.nextFocus(model.rows, { sectionKeys: keys });
       plan.focus.replaceChildren(el("h3", null, "Next focus"));
-      if (!focus) {
-        plan.focus.appendChild(el("p", "muted", "Answer a few questions and your next focus appears here."));
+      const step = model.summary.attempted || model.guide.dueCount ? model.guide.step() : null;
+      if (!step) {
+        plan.focus.appendChild(el("p", "muted", model.sections.some((section) => practice.usesTemplates(section.key))
+          ? "No answers yet. Take the diagnostic above, and your next step appears here."
+          : "Answer a few questions and your next step appears here."));
         return;
       }
-      const { row } = focus;
+      const words = ctx.stepWords(step);
       const line = el("p");
-      line.appendChild(el("strong", null, row.skill));
-      line.append(` (${sectionName(row.sectionKey)}, ${row.domain}). `);
-      let reason;
-      if (focus.reason === "weakest") {
-        reason = `Your weakest skill with enough answers: ${percent(row.accuracy)} correct over ${count(row.attempted, "answer")}` +
-          (row.gate.attempted
-            ? `, ${row.gate.correct} of your last ${row.gate.attempted} Medium. `
-            : ". ") +
-          `The gate is ${Analytics.GATE.correct} of your last ${Analytics.GATE.window} Medium questions.`;
-      } else if (!row.attempted) {
-        reason = "Your least practised skill: not started yet.";
-      } else {
-        reason = `Your least practised skill: ${count(row.attempted, "answer")} so far.`;
+      line.appendChild(el("strong", null, words.title));
+      if (words.section) line.append(` (${words.section})`);
+      line.append(`. ${words.reason}`);
+      plan.focus.appendChild(line);
+      if (words.level) plan.focus.appendChild(el("p", "muted", words.level));
+      if (words.then) plan.focus.appendChild(el("p", "muted", words.then));
+      if (step.kind === "review") {
+        const links = el("span", "row-links");
+        const link = el("a", null, "Open Review");
+        link.href = "#review";
+        links.appendChild(link);
+        plan.focus.appendChild(links);
+      } else if (step.kind === "skill") {
+        plan.focus.appendChild(studyLinks(step.row, step.level));
       }
-      line.append(reason);
-      plan.focus.append(line, studyLinks(row));
     }
 
     function savePlan(event) {

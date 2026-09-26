@@ -33,6 +33,8 @@
   const Modules = window.LiminalModules;
   const Simulation = window.LiminalSimulation;
   const SessionStore = window.LiminalSessionStore;
+  const Analytics = window.LiminalAnalytics;
+  const ReviewQueue = window.LiminalReviewQueue;
 
   // localStorage can throw on access when a browser blocks site data; the
   // app then keeps progress in memory for this visit.
@@ -149,6 +151,21 @@
 
   function registry(sectionKey) {
     return (window.PRACTICE_TEMPLATES || {})[sectionKey] || { templates: [] };
+  }
+
+  // Sections a skill map can describe: scored ones (the essay is not).
+  function scoredSections(test) {
+    return testSections(test).filter((section) =>
+      (section.responseTypes || []).some((type) => type !== "essay"));
+  }
+
+  function sectionName(sectionKey) {
+    const section = sectionByKey(sectionKey);
+    return section ? `${section.test} ${section.shortLabel}` : sectionKey;
+  }
+
+  function plural(value, one, many) {
+    return `${formatNumber(value)} ${value === 1 ? one : many || `${one}s`}`;
   }
 
   /* ------------------------------------------------------------- content */
@@ -307,6 +324,247 @@
     return ids
       .map((id) => (Progress.parseQuestionId(id) ? rebuildQuestion(id) : bankById.get(id)))
       .filter(Boolean);
+  }
+
+  /* ----------------------------------------------------------- next step */
+
+  // One next step on every page (Analytics.nextStep): Progress, Practice's
+  // Recommended next and Start here, a report's "Keep going", and the
+  // drill's default level all read it from here, in the same words.
+
+  // Review questions due now in `test`, as the Review view counts them: a
+  // template no longer in its registry cannot be drawn again and is left
+  // out.
+  function reviewDueCount(progress, test) {
+    if (!ReviewQueue) return 0;
+    const info = Progress.registryTemplateInfo(window.PRACTICE_TEMPLATES || {});
+    const attempts = Progress.withCurrentTemplates(Progress.attemptsFor(progress, { test }), info);
+    const live = (entry) => entry.source !== "template" || Boolean((info[entry.sectionKey] || {})[entry.templateId]);
+    return ReviewQueue.summarize(ReviewQueue.build(attempts), Date.now(), { skip: (entry) => !live(entry) }).due.length;
+  }
+
+  // The engine's inputs for a test from the saved record. `prepared` is
+  // the test's attempts already re-tiered (the Progress view's, which may
+  // fill in skills from the banks). Returns { test, sections, rows,
+  // placements, dueCount, recentSection, step(sectionKeys?), row(sectionKey,
+  // skill) }; step() without keys covers the test's required sections.
+  function guide(test, prepared) {
+    const which = test || currentTest();
+    const progress = store.get();
+    const attempts = prepared ||
+      Progress.withCurrentTemplates(Progress.attemptsFor(progress, { test: which }), templateInfo());
+    const sections = scoredSections(which);
+    const keys = sections.filter((section) => !section.optional).map((section) => section.key);
+    const rows = Analytics.skillMap(attempts, sections, { tiered: practice.usesTemplates });
+    const placements = Analytics.placements(attempts, progress.sessions, sections);
+    const dueCount = reviewDueCount(progress, which);
+    const recentSection = Analytics.recentSection(attempts, keys);
+    return {
+      test: which,
+      sections,
+      rows,
+      placements,
+      dueCount,
+      recentSection,
+      step: (sectionKeys) => Analytics.nextStep(rows, {
+        sectionKeys: sectionKeys && sectionKeys.length ? sectionKeys : keys,
+        dueCount,
+        placements,
+        recentSection,
+      }),
+      row: (sectionKey, skill) => rows.find((row) => row.sectionKey === sectionKey && row.skill === skill) || null,
+    };
+  }
+
+  function stageTitle(stage) {
+    return stage.title.charAt(0).toLowerCase() + stage.title.slice(1);
+  }
+
+  // Why a skill step names its skill.
+  function stepReason(step) {
+    const { row } = step;
+    const plan = Analytics.PLANS[step.sectionKey];
+    switch (step.reason) {
+      case "plan": {
+        const stage = step.stage;
+        if (step.returned) {
+          return `Every skill from stage ${step.startStage} of the ${plan.name} on is at the gate, so the plan comes ` +
+            `back to stage ${stage.stage} (${stageTitle(stage)}), which your diagnostic let you pass over.`;
+        }
+        if (stage.stage < step.startStage) {
+          return `Stage ${stage.stage} of the ${plan.name} (${stageTitle(stage)}). Your diagnostic started you at ` +
+            `stage ${step.startStage}, but you have practised this skill and it is not yet at the gate.`;
+        }
+        return `Stage ${stage.stage} of the ${plan.name} (${stageTitle(stage)}): the first skill in it not yet at the gate.` +
+          (step.startStage > 1 ? ` Your diagnostic started you at stage ${step.startStage}.` : "");
+      }
+      case "plan-hard":
+        return `Every skill in the ${plan.name} is at the gate, so Hard questions come next, in plan order.`;
+      case "weakest":
+        return `Your weakest skill with enough answers to judge: ${row.correct} of ${row.attempted} right.`;
+      case "lowest-accuracy":
+        return `Your lowest accuracy among skills with ${Analytics.MIN_ATTEMPTS} or more answers: ` +
+          `${row.correct} of ${row.attempted} right.`;
+      case "hard":
+        return "Every skill here is at the gate or Mastered; this one has the weakest Hard answers.";
+      default:
+        return row.attempted
+          ? `The skill you have practised least: ${plural(row.attempted, "answer")} so far.`
+          : "The skill you have practised least: not started yet.";
+    }
+  }
+
+  // Why a skill step names its level.
+  function levelReason(step) {
+    const { row } = step;
+    const tallyText = (tally) => (tally.attempted ? `you have ${tally.correct} of ${tally.attempted}` : "none yet");
+    switch (step.levelWhy) {
+      case "not-routine": {
+        const { correct, window } = Analytics.ROUTINE;
+        return `Easy until the method is routine: ${correct} of your last ${window} Easy answers right ` +
+          `(${tallyText(row.routine.easy)}).`;
+      }
+      case "routine":
+        return `Medium toward the gate: ${Analytics.GATE.correct} of your last ${Analytics.GATE.window} Medium ` +
+          `answers right, over two days and two question designs (${tallyText(row.gate)}).`;
+      case "at-gate":
+        return `At the gate, so Hard next, toward Mastered: ${Analytics.HARD_BAR.correct} of your last ` +
+          `${Analytics.HARD_BAR.window} Hard answers right (${tallyText(row.hardBar)}).`;
+      case "mastered":
+        return "Mastered: keep it alive with a few questions a week.";
+      default:
+        return "Difficulty labels in this section are not verified, so the step has no level.";
+    }
+  }
+
+  // Why a skill's next level is what it is, for the drill's level note.
+  function levelWords(row) {
+    return levelReason({ row, levelWhy: Analytics.skillLevel(row).why });
+  }
+
+  // The words for a next step, the same on every page: { title, section,
+  // reason, level, then }, plain text; null without a step.
+  function stepWords(step) {
+    if (!step) return null;
+    if (step.kind === "review") {
+      const then = stepWords(step.then);
+      return {
+        title: `Review: ${plural(step.dueCount, "missed question")} due`,
+        section: "",
+        reason: "Missed questions come back on a spaced schedule, and each session starts with them.",
+        level: "",
+        then: then ? `Then: ${then.title} (${then.section}).` : "",
+      };
+    }
+    if (step.kind === "mixed") {
+      return {
+        title: "Keep every skill alive",
+        section: sectionName(step.sectionKey),
+        reason: "Every skill here is Mastered. Mix them in a timed set each week, and measure with an official practice test.",
+        level: "",
+        then: "",
+      };
+    }
+    return {
+      title: step.level ? `${step.skill}, ${step.level}` : step.skill,
+      section: `${sectionName(step.sectionKey)}, ${step.domain}`,
+      reason: stepReason(step),
+      level: levelReason(step),
+      then: "",
+    };
+  }
+
+  function goToView(hash) {
+    if (window.location.hash === `#${hash}`) openView(viewByHash[hash]);
+    else window.location.hash = `#${hash}`;
+  }
+
+  // Starts a next step: Review opens the Review page; a skill opens a
+  // drill at its level (every level when that level has no questions).
+  // Resolves like startDrill: the questions it opened with, 0, or null.
+  async function startStep(step) {
+    if (!step || step.kind === "mixed") return 0;
+    if (step.kind === "review") {
+      goToView("review");
+      return null;
+    }
+    const request = { sectionKey: step.sectionKey, skill: step.skill, difficulty: step.level, count: DRILL_COUNT };
+    const opened = await startDrill(request);
+    if (opened === 0 && step.level) return startDrill(Object.assign(request, { difficulty: null }));
+    return opened;
+  }
+
+  // The "Start here" diagnostic for one template section: Medium and Hard
+  // questions in the real test's domain mix, answers at the end, no timer
+  // (lib/analytics.js chooseDiagnostic). Asks first when a set is saved.
+  // Resolves true when it opened, false when the student kept the saved
+  // set; rejects when the templates cannot load or none fit.
+  async function startDiagnostic(sectionKey) {
+    if (!(await confirmReplace("set"))) return false;
+    const section = sectionByKey(sectionKey);
+    const templates = await sectionTemplates(sectionKey);
+    const chosen = Analytics.chooseDiagnostic(templates, {
+      weights: practice.domainWeights(section),
+      recency: practice.recencyFor(Progress.historyFor(store.get(), sectionKey), templates),
+      seed: practice.newRunSeed(),
+    });
+    if (!chosen.templates.length) throw new Error("No Medium or Hard templates are available for this section.");
+    const run = buildRun({ sectionKey, count: chosen.templates.length, templates: chosen.templates });
+    launch({
+      title: `${sectionName(sectionKey)} diagnostic`,
+      sectionKey,
+      kind: "diagnostic",
+      questions: Analytics.orderByTier(run.questions),
+      runCode: run.code,
+      setCode: run.setCode,
+      feedback: "end",
+      timeLimitSeconds: null,
+    });
+    return true;
+  }
+
+  const DIAGNOSTIC_CAVEAT = "This is accuracy on practice questions, not a scaled score, and too few questions to " +
+    "grade any one skill. For a score, take an official full-length practice test in Bluebook.";
+
+  // The diagnostic's report notes, read once its answers are recorded: what
+  // it can tell (domains, not skills) and, for Math, where the plan starts.
+  function diagnosticNotes(meta) {
+    const section = sectionByKey(meta.sectionKey);
+    if (!section) return [];
+    const placement = guide(section.test).placements[section.key];
+    if (!placement || placement.sessionId !== meta.sessionId) return [];
+    const skills = section.domains.reduce((total, domain) => total + Object.keys(domain.skills || {}).length, 0);
+    const stages = Analytics.planStages(section);
+    const notes = [
+      `This diagnostic ${stages.length ? `places you in the ${Analytics.PLANS[section.key].name}` : "shows where you stand by domain"}; ` +
+      `it does not grade skills. ${placement.attempted} questions over ${skills} skills is at most two in any one ` +
+      "skill, too few to judge it, so read it by domain (By domain, below).",
+    ];
+    const { minQuestions, accuracy } = Analytics.PLACEMENT;
+    const list = (rows) => (rows.length
+      ? rows.map((row) => `${row.domain} (${row.correct} of ${row.attempted})`).join(", ")
+      : "none");
+    notes.push(`A domain counts as shown when at least ${Math.round(accuracy * 100)}% of at least ${minQuestions} ` +
+      `of its questions were right. Shown: ${list(placement.domains.filter((row) => row.shown))}. ` +
+      `Not yet shown: ${list(placement.domains.filter((row) => !row.shown))}.`);
+    if (stages.length) {
+      const start = stages[placement.stage - 1];
+      if (placement.allShown) {
+        notes.push("Every domain was shown, so no stage is passed over: the plan starts at stage 1, and skills you " +
+          "already know will reach the gate quickly.");
+      } else if (placement.stage === 1) {
+        notes.push(`The plan starts at stage 1 (${stageTitle(start)}), since not every domain in it was shown.`);
+      } else {
+        notes.push(`Stage${placement.skipped.length > 1 ? "s" : ""} ${placement.skipped.join(" and ")} cover only ` +
+          `domains you showed, so the plan starts at stage ${start.stage} (${stageTitle(start)}). A skill from an ` +
+          "earlier stage comes back once you practise it and it is short of the gate, and all of them once the " +
+          "later stages are at the gate.");
+      }
+    } else {
+      notes.push(`Until a skill has ${Analytics.MIN_ATTEMPTS} answers, your next step here is the skill you have ` +
+        "practised least, from your weakest domain; after that, your weakest skill.");
+    }
+    return notes;
   }
 
   /* ---------------------------------------------------------------- runs */
@@ -581,6 +839,8 @@
       onFinish(result) {
         recordFinish(meta, result);
         sessions.clear(slot, owner);
+        // The report reads its notes when it draws, after this.
+        if (meta.kind === "diagnostic") options.reportNotes.push(...diagnosticNotes(meta));
       },
       reportActions: (report) => reportActions(meta, report),
       onExit(detail) {
@@ -591,6 +851,7 @@
         closeScreen();
       },
     };
+    if (meta.kind === "diagnostic") Object.assign(options, { reportNotes: [], caveat: DIAGNOSTIC_CAVEAT });
     if (meta.simulation) Object.assign(options, moduleOptions(meta), { notice, openDirections });
     shellOpen = true;
     try {
@@ -1162,34 +1423,39 @@
     return questions.length;
   }
 
-  function drillSkill(row) {
-    return startDrill({ sectionKey: row.sectionKey, skill: row.skill, count: DRILL_COUNT });
+  // A report's button for the next step, or null when there is none.
+  function stepAction(step) {
+    const words = stepWords(step);
+    if (!words || step.kind === "mixed") return null;
+    const note = step.kind === "review"
+      ? `${words.reason} ${words.then}`
+      : `${words.section}. ${words.reason} ${words.level} ${DRILL_COUNT} questions, feedback after each.`;
+    return {
+      label: `Next step: ${words.title}`,
+      note: note.trim(),
+      run: () => startStep(step).catch((error) => console.error(error)),
+    };
   }
 
+  // After a report: practise what was missed, and the next step for the
+  // report's sections, which after a diagnostic comes first.
   function reportActions(meta, report) {
-    const actions = [];
+    let missedAction = null;
     const missed = report.items.filter((item) => !(item.answered && item.correct && !item.hinted));
     if (missed.length) {
       const fresh = missed.every((item) => item.question.templateId);
-      actions.push({
+      missedAction = {
         label: `Practice what I missed (${missed.length})`,
         note: fresh
           ? "New questions built the same way, with feedback after each."
           : "The same questions again, with feedback after each.",
         run: () => practiceMissed(meta, missed).catch((error) => console.error(error)),
-      });
+      };
     }
     const sectionKeys = [...new Set(report.items.map((item) => item.question.sectionKey).filter(Boolean))];
-    const weakest = Progress.weakestSkill(store.get(), { sectionKeys }, { current: templateInfo() });
-    if (weakest) {
-      actions.push({
-        label: `Drill my weakest skill: ${weakest.skill}`,
-        note: `${Math.round(weakest.accuracy * 100)}% correct over ${weakest.attempted} answers so far. ` +
-          `${DRILL_COUNT} questions at every level, feedback after each.`,
-        run: () => drillSkill(weakest).catch((error) => console.error(error)),
-      });
-    }
-    return actions;
+    const test = Progress.testOf(sectionKeys[0] || meta.sectionKey);
+    const next = stepAction(guide(test).step(sectionKeys));
+    return (meta.kind === "diagnostic" ? [next, missedAction] : [missedAction, next]).filter(Boolean);
   }
 
   /* ---------------------------------------------------------------- views */
@@ -1210,8 +1476,10 @@
     setStatus,
     currentTest,
     testSections,
+    scoredSections,
     sectionByKey,
     sectionLabel,
+    sectionName,
     registry,
     loadBank,
     bankIfLoaded,
@@ -1229,6 +1497,11 @@
     describeSaved,
     startTest,
     startDrill,
+    startDiagnostic,
+    guide,
+    stepWords,
+    levelWords,
+    startStep,
     DRILL_COUNT,
     activeSession,
     showView,

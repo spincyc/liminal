@@ -1,5 +1,7 @@
 "use strict";
 
+const fs = require("node:fs");
+const path = require("node:path");
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const Analytics = require("../src/lib/analytics");
@@ -167,9 +169,12 @@ test("answers to skills no longer in the catalog still show", () => {
   assert.deepEqual(Analytics.sortSkills(rows, "domain").map((row) => row.skill),
     ["Linear functions", "Linear inequalities", "Retired skill", "Circles"]);
   assert.equal(rowFor(rows, "Retired skill").state, "not-enough-data");
+  assert.equal(rowFor(rows, "Retired skill").inCatalog, false);
+  assert.equal(rowFor(rows, "Linear functions").inCatalog, true);
+  assert.notEqual(Analytics.nextStep(rows).skill, "Retired skill", "a skill no longer in the catalog is never the next step");
 });
 
-test("sorting by need puts weak skills with evidence first; the next focus follows", () => {
+test("sorting by need puts weak skills with evidence first", () => {
   const attempts = [
     ...many(6, { skill: "Linear functions" }),
     ...many(4, { skill: "Linear functions", correct: false }), // 60%, building
@@ -181,16 +186,6 @@ test("sorting by need puts weak skills with evidence first; the next focus follo
     ["Linear inequalities", "Linear functions", "Circles"]);
   assert.deepEqual(Analytics.sortSkills(rows, "domain").map((row) => row.skill),
     ["Linear functions", "Linear inequalities", "Circles"]);
-  const focus = Analytics.nextFocus(rows);
-  assert.equal(focus.reason, "weakest");
-  assert.equal(focus.row.skill, "Linear inequalities");
-
-  // Without a building skill, the least practised skill is next.
-  const fresh = Analytics.skillMap(many(3, { skill: "Linear functions" }), SECTIONS);
-  const least = Analytics.nextFocus(fresh);
-  assert.equal(least.reason, "least-practised");
-  assert.equal(least.row.skill, "Linear inequalities");
-  assert.equal(Analytics.nextFocus(fresh, { sectionKeys: ["sat-reading-writing"] }), null);
   assert.deepEqual(Analytics.stateCounts(rows),
     { "not-started": 0, "not-enough-data": 1, building: 2, "at-gate": 0, mastered: 0, "accuracy-only": 0 });
 });
@@ -446,7 +441,8 @@ test("skills in sections with unverified difficulty labels show accuracy only", 
   const rows = Analytics.skillMap(answers, act, { tiered: (key) => key.startsWith("sat-") });
   assert.deepEqual([rows[0].tiered, rows[0].state], [false, "accuracy-only"]);
   assert.equal(Analytics.STATE_LABELS["accuracy-only"], "Accuracy only");
-  assert.equal(Analytics.nextFocus(rows).row.skill, "Punctuation");
+  const step = Analytics.nextStep(rows);
+  assert.deepEqual([step.skill, step.reason, step.level, step.levelWhy], ["Punctuation", "lowest-accuracy", null, "accuracy-only"]);
   assert.deepEqual([Analytics.skillMap(answers.slice(0, 3), act, { tiered: () => false })[0].state], ["not-enough-data"]);
 });
 
@@ -460,4 +456,241 @@ test("first-sight accuracy takes each design's first answer only", () => {
   ];
   assert.deepEqual(Analytics.firstSight(attempts, "Hard"), { attempted: 2, correct: 1, accuracy: 0.5 });
   assert.deepEqual(Analytics.firstSight(attempts), { attempted: 3, correct: 1, accuracy: 1 / 3 });
+});
+
+/* -------------------------------------------------------------- next step */
+
+const mathSection = section("sat-math");
+const MATH_PLAN = Analytics.PLANS["sat-math"];
+const planSkills = MATH_PLAN.stages.flatMap((stage) => stage.skills);
+const domainOfSkill = (skill) => mathSection.domains.find((domain) => Object.keys(domain.skills).includes(skill)).name;
+
+// Answers in one SAT Math skill, in its catalog domain.
+function mathAnswers(count, skill, fields) {
+  return many(count, Object.assign({ skill, domain: domainOfSkill(skill) }, fields));
+}
+
+// Thirty right Medium answers an hour apart, each its own design: the gate.
+const atGate = (skill) => mathAnswers(30, skill, {});
+// Then 15 right Hard answers over two days: Mastered.
+function mastered(skill) {
+  const gate = atGate(skill);
+  const firstDay = mathAnswers(8, skill, { difficulty: "Hard" });
+  counter += 24;
+  return [...gate, ...firstDay, ...mathAnswers(7, skill, { difficulty: "Hard" })];
+}
+const mathStep = (attempts, options) => Analytics.nextStep(Analytics.skillMap(attempts, [mathSection]), options);
+
+test("the SAT Math plan lists every catalog skill exactly once, in four stages", () => {
+  const catalogSkills = mathSection.domains.flatMap((domain) => Object.keys(domain.skills));
+  assert.deepEqual(planSkills.slice().sort(), catalogSkills.slice().sort());
+  assert.equal(new Set(planSkills).size, planSkills.length, "no skill twice");
+  assert.deepEqual(MATH_PLAN.stages.map((stage) => stage.stage), [1, 2, 3, 4]);
+  assert.deepEqual(Analytics.planStages(mathSection).map((stage) => stage.domains), [
+    ["Algebra", "Problem-Solving and Data Analysis"],
+    ["Algebra", "Problem-Solving and Data Analysis"],
+    ["Advanced Math"],
+    ["Problem-Solving and Data Analysis", "Geometry and Trigonometry"],
+  ]);
+  assert.deepEqual(Analytics.planStages(section("sat-reading-writing")), [], "no plan for Reading and Writing");
+});
+
+test("the plan's stages follow the sequence on the Learn page", () => {
+  const page = fs.readFileSync(path.join(__dirname, "..", "content", "learn", "sat", "general", "math-plan.md"), "utf8");
+  const start = page.indexOf("## The sequence");
+  const sequence = page.slice(start, page.indexOf("For each skill", start));
+  const stageLines = sequence.split("\n").filter((line) => /^\d+\. /.test(line));
+  assert.equal(stageLines.length, MATH_PLAN.stages.length, "one numbered line per stage");
+  const bySlug = new Map(planSkills.map((skill) => [Practice.slug(skill), skill]));
+  stageLines.forEach((line, index) => {
+    const linked = [...line.matchAll(/learn:sat-math\/[a-z0-9-]+\/([a-z0-9-]+)/g)].map((match) => bySlug.get(match[1]));
+    assert.ok(linked.length && linked.every(Boolean), `stage ${index + 1} links catalog skills`);
+    assert.deepEqual(MATH_PLAN.stages[index].skills.slice(0, linked.length), linked,
+      `stage ${index + 1} starts with the skills the page links, in its order`);
+  });
+});
+
+test("a skill is practised at Easy until routine, then Medium to the gate, then Hard", () => {
+  const skill = "Linear equations in one variable";
+  const level = (attempts) => Analytics.skillLevel(rowFor(Analytics.skillMap(attempts, [mathSection]), skill));
+  assert.deepEqual(level([]), { level: "Easy", why: "not-routine" });
+  // Routine: 8 of the last 10 Easy first answers.
+  assert.deepEqual(level([...mathAnswers(3, skill, { difficulty: "Easy", correct: false }), ...mathAnswers(7, skill, { difficulty: "Easy" })]),
+    { level: "Easy", why: "not-routine" }, "7 of 10 is not routine");
+  assert.deepEqual(level([...mathAnswers(2, skill, { difficulty: "Easy", correct: false }), ...mathAnswers(8, skill, { difficulty: "Easy" })]),
+    { level: "Medium", why: "routine" });
+  assert.deepEqual(level(mathAnswers(9, skill, { difficulty: "Easy" })), { level: "Easy", why: "not-routine" }, "needs ten");
+  // Or 8 of the last 10 Medium: a student sure at Medium is not sent back.
+  assert.deepEqual(level([...mathAnswers(2, skill, { correct: false }), ...mathAnswers(8, skill, {})]),
+    { level: "Medium", why: "routine" });
+  // Hints do not count as right.
+  assert.deepEqual(level(mathAnswers(10, skill, { difficulty: "Easy", hinted: true })), { level: "Easy", why: "not-routine" });
+  assert.deepEqual(level(atGate(skill)), { level: "Hard", why: "at-gate" });
+  assert.deepEqual(level(mastered(skill)), { level: "Hard", why: "mastered" });
+  assert.deepEqual(Analytics.skillLevel({ tiered: false, state: "accuracy-only" }), { level: null, why: "accuracy-only" });
+});
+
+test("SAT Math's next step is the first skill in plan order not yet at the gate", () => {
+  let step = mathStep([]);
+  assert.deepEqual([step.kind, step.skill, step.level, step.reason, step.stage.stage, step.startStage],
+    ["skill", "Linear equations in one variable", "Easy", "plan", 1, 1]);
+  // A weak skill elsewhere does not pull the step off the plan.
+  step = mathStep(mathAnswers(10, "Circles", { correct: false }));
+  assert.equal(step.skill, "Linear equations in one variable");
+  // Routine: the same skill, at Medium.
+  step = mathStep(mathAnswers(10, "Linear equations in one variable", { difficulty: "Easy" }));
+  assert.deepEqual([step.skill, step.level, step.levelWhy], ["Linear equations in one variable", "Medium", "routine"]);
+  // At the gate: the next skill in the page's order, at Easy.
+  step = mathStep(atGate("Linear equations in one variable"));
+  assert.deepEqual([step.skill, step.level], ["Linear functions", "Easy"]);
+  step = mathStep([...atGate("Linear equations in one variable"), ...atGate("Linear functions"),
+    ...atGate("Linear equations in two variables")]);
+  assert.equal(step.skill, "Percentages", "the page's order, not the catalog's");
+  // Every skill at the gate: Hard, in plan order.
+  const allAtGate = planSkills.flatMap(atGate);
+  step = mathStep(allAtGate);
+  assert.deepEqual([step.skill, step.level, step.reason, step.levelWhy], ["Linear equations in one variable", "Hard", "plan-hard", "at-gate"]);
+  step = mathStep([...mastered("Linear equations in one variable"), ...planSkills.slice(1).flatMap(atGate)]);
+  assert.equal(step.skill, "Linear functions");
+  // Every skill mastered: a mix.
+  assert.deepEqual(mathStep(planSkills.flatMap(mastered)), { kind: "mixed", reason: "all-mastered", sectionKey: "sat-math" });
+});
+
+test("Review comes first whenever questions are due", () => {
+  const step = mathStep([], { dueCount: 3 });
+  assert.deepEqual([step.kind, step.dueCount, step.then.skill, step.then.level], ["review", 3, "Linear equations in one variable", "Easy"]);
+  assert.equal(mathStep([], { dueCount: 0 }).kind, "skill");
+  assert.equal(Analytics.nextStep([], { dueCount: 3 }), null, "no rows, no step");
+});
+
+// A Math diagnostic's answers: `right` of `count` in each domain, at most
+// two per skill, taken from the domain's catalog skills in order.
+function diagnostic(id, results, finishedAt) {
+  const answers = [];
+  Object.entries(results).forEach(([domain, [right, count]]) => {
+    const skills = Object.keys(mathSection.domains.find((entry) => entry.name === domain).skills);
+    for (let index = 0; index < count; index += 1) {
+      answers.push(attempt({
+        sessionId: id, domain, skill: skills[index % skills.length], correct: index < right,
+        difficulty: index % 2 ? "Hard" : "Medium",
+      }));
+    }
+  });
+  return { answers, session: { id, kind: "diagnostic", sectionKey: "sat-math", finishedAt: finishedAt || counter } };
+}
+
+test("the diagnostic places a student in the plan by domain, not by skill", () => {
+  const strong = diagnostic("d1", {
+    Algebra: [6, 7], "Advanced Math": [2, 7], "Problem-Solving and Data Analysis": [3, 3], "Geometry and Trigonometry": [1, 3],
+  });
+  const placement = Analytics.diagnosticPlacement(strong.answers, [strong.session], mathSection);
+  assert.deepEqual(placement.domains.map((row) => [row.domain, row.correct, row.attempted, row.shown]), [
+    ["Algebra", 6, 7, true],
+    ["Advanced Math", 2, 7, false],
+    ["Problem-Solving and Data Analysis", 3, 3, true],
+    ["Geometry and Trigonometry", 1, 3, false],
+  ]);
+  assert.deepEqual([placement.stage, placement.skipped, placement.allShown, placement.attempted], [3, [1, 2], false, 20]);
+  assert.ok(Analytics.skillMap(strong.answers, [mathSection]).every((row) => row.attempted <= 2), "at most two per skill");
+
+  // With no other evidence, the plan starts at stage 3.
+  const placements = { "sat-math": placement };
+  let step = mathStep(strong.answers, { placements });
+  assert.deepEqual([step.skill, step.level, step.stage.stage, step.startStage, step.returned],
+    ["Equivalent expressions", "Easy", 3, 3, false]);
+  // A skill from a stage passed over comes back once it is practised and short of the gate.
+  step = mathStep([...strong.answers, ...mathAnswers(5, "Linear functions", { difficulty: "Easy", correct: false })], { placements });
+  assert.deepEqual([step.skill, step.stage.stage, step.returned], ["Linear functions", 1, false]);
+  // Once stages 3 and 4 are at the gate, the plan comes back to stage 1.
+  const later = MATH_PLAN.stages.filter((stage) => stage.stage >= 3).flatMap((stage) => stage.skills).flatMap(atGate);
+  step = mathStep([...strong.answers, ...later], { placements });
+  assert.deepEqual([step.skill, step.stage.stage, step.returned], ["Linear equations in one variable", 1, true]);
+
+  // A weak domain in stage 1 starts the plan there; 2 of 2 is too few to show a domain.
+  const weak = diagnostic("d2", {
+    Algebra: [2, 7], "Advanced Math": [7, 7], "Problem-Solving and Data Analysis": [2, 2], "Geometry and Trigonometry": [2, 2],
+  });
+  const low = Analytics.diagnosticPlacement(weak.answers, [weak.session], mathSection);
+  assert.deepEqual([low.stage, low.skipped, low.domains.find((row) => row.domain === "Problem-Solving and Data Analysis").shown],
+    [1, [], false]);
+  // Every domain shown passes over nothing.
+  const all = diagnostic("d3", {
+    Algebra: [7, 7], "Advanced Math": [6, 7], "Problem-Solving and Data Analysis": [3, 3], "Geometry and Trigonometry": [3, 3],
+  });
+  assert.deepEqual(Object.values(Analytics.placements(all.answers, [all.session], [mathSection]))
+    .map((entry) => [entry.stage, entry.allShown]), [[1, true]]);
+
+  // The latest finished diagnostic counts; a discarded one never does.
+  const both = [strong.session, Object.assign({}, weak.session, { finishedAt: strong.session.finishedAt + 1 })];
+  assert.equal(Analytics.diagnosticPlacement([...strong.answers, ...weak.answers], both, mathSection).sessionId, "d2");
+  const discarded = Object.assign({}, weak.session, { kind: "discarded", discardedKind: "diagnostic", finishedAt: 1e12 });
+  assert.equal(Analytics.diagnosticPlacement(weak.answers, [strong.session, discarded], mathSection).sessionId, "d1");
+  assert.equal(Analytics.diagnosticPlacement(strong.answers, [], mathSection), null, "no diagnostic, no placement");
+  // Reading and Writing is read by domain, with no stage.
+  const rwSection = section("sat-reading-writing");
+  const rw = { id: "r1", kind: "diagnostic", sectionKey: rwSection.key, finishedAt: 5 };
+  const rwAnswers = [attempt({ sectionKey: rwSection.key, sessionId: "r1", domain: rwSection.domains[0].name, skill: "Inferences" })];
+  assert.deepEqual([Analytics.diagnosticPlacement(rwAnswers, [rw], rwSection).stage,
+    Analytics.diagnosticPlacement(rwAnswers, [rw], rwSection).domains[0].attempted], [null, 1]);
+});
+
+const RW_SECTIONS = [{
+  key: "sat-reading-writing",
+  domains: [
+    { name: "Information and Ideas", target: 26, skills: { "Central Ideas and Details": ["a"], Inferences: ["b"] } },
+    { name: "Craft and Structure", target: 28, skills: { "Words in Context": ["c"] } },
+  ],
+}];
+const rw = (count, skill, fields) => many(count, Object.assign({
+  sectionKey: "sat-reading-writing",
+  skill,
+  domain: skill === "Words in Context" ? "Craft and Structure" : "Information and Ideas",
+}, fields));
+const rwStep = (attempts, options) => Analytics.nextStep(Analytics.skillMap(attempts, RW_SECTIONS), options);
+
+test("Reading and Writing's next step is the weakest skill with evidence, else the least practised", () => {
+  let step = rwStep([]);
+  assert.deepEqual([step.skill, step.reason, step.level], ["Central Ideas and Details", "least-practised", "Easy"]);
+  // The least practised, from the weakest domain first.
+  step = rwStep([...rw(1, "Inferences"), ...rw(1, "Inferences", { correct: false }), ...rw(1, "Central Ideas and Details", { correct: false })]);
+  assert.deepEqual([step.skill, step.reason], ["Words in Context", "least-practised"]);
+  step = rwStep([...rw(1, "Inferences", { correct: false }), ...rw(1, "Words in Context")]);
+  assert.deepEqual([step.skill, step.reason], ["Central Ideas and Details", "least-practised"], "Information and Ideas is weaker");
+  // With enough answers, the weakest below the gate.
+  step = rwStep([...rw(3, "Inferences"), ...rw(3, "Inferences", { correct: false }), ...rw(5, "Words in Context"), ...rw(1, "Words in Context", { correct: false })]);
+  assert.deepEqual([step.skill, step.reason], ["Inferences", "weakest"]);
+  // Every skill at the gate: the weakest Hard.
+  const gate = (skill) => rw(30, skill);
+  step = rwStep([...gate("Central Ideas and Details"), ...gate("Inferences"), ...gate("Words in Context"),
+    ...rw(2, "Inferences", { difficulty: "Hard", correct: false })]);
+  assert.deepEqual([step.reason, step.level], ["hard", "Hard"]);
+  assert.equal(step.skill, "Central Ideas and Details", "no Hard answers yet is the weakest");
+});
+
+test("ACT's next step is the lowest accuracy with enough answers, with no level", () => {
+  const act = [{ key: "act-english", domains: [{ name: "Conventions", target: 50, skills: { Punctuation: ["a"], Usage: ["b"], Sentences: ["c"] } }] }];
+  const answers = (count, skill, fields) => many(count, Object.assign({ sectionKey: "act-english", domain: "Conventions", skill, source: "bank" }, fields));
+  const step = (attempts) => Analytics.nextStep(Analytics.skillMap(attempts, act, { tiered: () => false }));
+  assert.deepEqual([step([]).skill, step([]).reason, step([]).level], ["Punctuation", "least-practised", null]);
+  assert.deepEqual([step([...answers(4, "Punctuation", { correct: false }), ...answers(2, "Usage")]).skill], ["Sentences"],
+    "under five answers is least practised");
+  const both = [...answers(5, "Punctuation", { correct: false }), ...answers(4, "Usage"), ...answers(2, "Usage", { correct: false }),
+    ...answers(1, "Sentences")];
+  assert.deepEqual([step(both).skill, step(both).reason, step(both).levelWhy], ["Punctuation", "lowest-accuracy", "accuracy-only"]);
+});
+
+test("with several sections in view, the step is in the section last answered", () => {
+  const sections = [...RW_SECTIONS, mathSection];
+  const attempts = [...rw(3, "Inferences"), ...mathAnswers(2, "Circles")];
+  const rows = Analytics.skillMap(attempts, sections);
+  assert.equal(Analytics.recentSection(attempts, ["sat-reading-writing", "sat-math"]), "sat-math");
+  assert.equal(Analytics.recentSection(attempts, ["sat-reading-writing"]), "sat-reading-writing");
+  assert.equal(Analytics.recentSection([], ["sat-math"]), null);
+  assert.equal(Analytics.nextStep(rows, { recentSection: "sat-math" }).sectionKey, "sat-math");
+  assert.equal(Analytics.nextStep(rows, { recentSection: "sat-reading-writing" }).sectionKey, "sat-reading-writing");
+  assert.equal(Analytics.nextStep(rows, { sectionKeys: ["sat-reading-writing"], recentSection: "sat-math" }).sectionKey,
+    "sat-reading-writing", "a section out of view is never chosen");
+  // Without a recent section: the first with answers, else the one with a plan.
+  assert.equal(Analytics.nextStep(Analytics.skillMap(mathAnswers(1, "Circles"), sections)).sectionKey, "sat-math");
+  assert.equal(Analytics.nextStep(Analytics.skillMap([], sections)).sectionKey, "sat-math");
 });

@@ -276,11 +276,12 @@ test("template attempts count under the current template's tier and flag revisio
     attempt("5", { questionId: "a", templateId: "t1", skill: "Old", correct: false }),
     attempt("6", { questionId: "b", templateId: "t1", skill: "Old", correct: false }),
   ]);
-  assert.equal(Progress.weakestSkill(progress, { sectionKey: "sat-math" }, { current }).skill, "Linear functions");
+  const relabelled = Progress.stats(Progress.withCurrentTemplates(Progress.attemptsFor(progress, { sectionKey: "sat-math" }), current));
+  assert.deepEqual(Object.keys(relabelled.bySkill), ["sat-math|Linear functions"], "answers count under the template's skill now");
   assert.equal(Progress.latestAttempts(progress, { sectionKey: "sat-math" }).get("b").id, "6");
 });
 
-test("missed ids follow each question's latest answer; weakest skill needs evidence", () => {
+test("missed ids follow each question's latest answer", () => {
   let progress = Progress.empty({ epoch: "e1" });
   progress = Progress.recordAttempts(progress, [
     attempt("1", { questionId: "sat-math:a:1", correct: false }),
@@ -298,9 +299,6 @@ test("missed ids follow each question's latest answer; weakest skill needs evide
   assert.deepEqual(Progress.missedIds(progress, { test: "SAT" }), ["sat-math:b:1", "sat-math:c:1", "sat-math:d:1", "sat-math:f:1"],
     "a correct answer after a hint is a miss");
   assert.deepEqual(Progress.missedIds(progress, { sectionKey: "act-english" }), ["act-english-0001"]);
-  const weakest = Progress.weakestSkill(progress, { sectionKey: "sat-math" });
-  assert.equal(weakest.skill, "Circles");
-  assert.equal(Progress.weakestSkill(progress, { sectionKey: "act-english" }), null, "one answer is not enough");
 });
 
 test("errors can be tagged and sessions recorded once", () => {

@@ -1,9 +1,10 @@
-// What the Progress view tells a student to study next: the skill map and
-// its practice states, the next focus, pacing, the trend across finished
-// sets, the weekly plan's counts, and the templates of the "Start here"
-// diagnostic. Pure logic with no DOM access; loads in Node and as a plain
-// browser script (window.LiminalAnalytics, after window.LiminalRuns and
-// window.LiminalProgress).
+// What to study next, told the same way on every page: the skill map and
+// its practice states, the one next step (nextStep, which follows the SAT
+// Math plan in Learn), the "Start here" diagnostic and where it places a
+// student in the plan, pacing, the trend across finished sets, and the
+// weekly plan's counts. Pure logic with no DOM access; loads in Node and as
+// a plain browser script (window.LiminalAnalytics, after window.LiminalRuns
+// and window.LiminalProgress).
 //
 // Every accuracy here comes from LiminalProgress.stats, the one accuracy
 // model: the retired fixed SAT banks are left out, a blank counts as wrong,
@@ -56,8 +57,57 @@
     mastered: "Mastered",
     "accuracy-only": "Accuracy only",
   };
+  // "Routine", the step before the gate in the SAT Math plan's per-skill
+  // loop (practise at Easy until the method is routine, then at Medium): at
+  // least 8 correct of the skill's last 10 Easy first answers, or of its
+  // last 10 Medium first answers, so a student already sure at Medium is not
+  // sent back to Easy. No spread over days or designs: the gate that follows
+  // asks for that, and a student who is right 60% of the time rarely meets
+  // 8 of 10.
+  const ROUTINE = { tiers: ["Easy", "Medium"], window: 10, correct: 8, days: 1, templates: 1 };
   // The "Start here" diagnostic: this many questions at these tiers.
   const DIAGNOSTIC = { count: 20, tiers: ["Medium", "Hard"] };
+  // Twenty questions over a section's skills is at most two in any skill,
+  // too few to judge one, so the diagnostic is read by domain: a domain is
+  // shown when at least 80% of at least 3 of its questions were right.
+  const PLACEMENT = { minQuestions: 3, accuracy: 0.8 };
+  // The sequence of the SAT Math plan in Learn
+  // (content/learn/sat/general/math-plan.md, "The sequence"): four stages,
+  // each a list of catalog skill names in the page's order. Stage 4's
+  // Geometry and Trigonometry skills start, as the page says, with right
+  // triangles and circles; the other two follow in catalog order.
+  // test/analytics.test.js holds this list to the catalog (every SAT Math
+  // skill exactly once) and to the page's links.
+  const PLANS = {
+    "sat-math": {
+      name: "SAT Math plan",
+      learnPage: "sat/general/math-plan",
+      stages: [
+        {
+          stage: 1,
+          title: "Linear equations and functions, with percents and ratios",
+          skills: ["Linear equations in one variable", "Linear functions", "Linear equations in two variables",
+            "Percentages", "Ratios, rates, and units"],
+        },
+        {
+          stage: 2,
+          title: "Systems, inequalities and models",
+          skills: ["Systems of two linear equations", "Linear inequalities", "Two-variable data", "One-variable data"],
+        },
+        {
+          stage: 3,
+          title: "Equivalent expressions, quadratics and exponentials",
+          skills: ["Equivalent expressions", "Nonlinear equations", "Nonlinear functions", "Systems of equations"],
+        },
+        {
+          stage: 4,
+          title: "Probability, statistics, geometry and trigonometry",
+          skills: ["Probability", "Statistical inference", "Right triangles and trigonometry", "Circles",
+            "Area and volume", "Lines, angles, and triangles"],
+        },
+      ],
+    },
+  };
   // A pacing row needs this many timed answers before it is listed.
   const PACE_MIN = 3;
   const DAY_MS = 24 * 60 * 60 * 1000;
@@ -171,13 +221,16 @@
   // One row per skill of `sections` (catalog sections, in order), domain by
   // domain in catalog order, including skills not started. `attempts` should
   // already be re-tiered (LiminalProgress.withCurrentTemplates). A row:
-  //   { sectionKey, domain, skill, order, attempted, correct, hintedCorrect,
-  //     unanswered, accuracy, medium, hard, gate, hardBar, state }
-  // medium and hard: { attempted, correct, accuracy } over every answer at
-  // that tier; gate and hardBar: the same over the last GATE.window Medium
-  // and HARD_BAR.window Hard first answers, plus `window`, `needed` (correct
-  // answers the bar asks for) and `met`. Skills answered but no longer in
-  // the catalog follow their section's catalog skills.
+  //   { sectionKey, domain, skill, order, inCatalog, attempted, correct,
+  //     hintedCorrect, unanswered, accuracy, easy, medium, hard, gate,
+  //     hardBar, routine, state }
+  // easy, medium and hard: { attempted, correct, accuracy } over every
+  // answer at that tier; gate and hardBar: the same over the last
+  // GATE.window Medium and HARD_BAR.window Hard first answers, plus
+  // `window`, `needed` (correct answers the bar asks for) and `met`;
+  // routine: { easy, medium, met }, the ROUTINE windows over the last Easy
+  // and Medium first answers. Skills answered but no longer in the catalog
+  // follow their section's catalog skills, with inCatalog false.
   // `options.tiered(sectionKey)` says whether a section's difficulty
   // labels can be trusted (default: all can); rows of other sections carry
   // tiered: false and never reach the gate.
@@ -186,10 +239,11 @@
     const list = (attempts || []).filter((attempt) => attempt && attempt.skill);
     const all = Progress.stats(list).bySkill;
     const atTier = (tier) => Progress.stats(list.filter((attempt) => attempt.difficulty === tier)).bySkill;
+    const easy = atTier("Easy");
     const medium = atTier(GATE.tier);
     const hard = atTier(HARD_BAR.tier);
     // Each skill's first answers to each question, oldest first, by tier.
-    const firstAnswers = { [GATE.tier]: new Map(), [HARD_BAR.tier]: new Map() };
+    const firstAnswers = Object.fromEntries(TIERS.map((tier) => [tier, new Map()]));
     const seen = new Set();
     list.filter(counted).sort(byTime).forEach((attempt) => {
       if (seen.has(attempt.questionId)) return;
@@ -203,27 +257,33 @@
 
     const rows = [];
     const placed = new Set();
-    function addRow(sectionKey, domain, skill, order) {
+    function addRow(sectionKey, domain, skill, order, inCatalog) {
       const key = skillKey(sectionKey, skill);
       if (placed.has(key)) return;
       placed.add(key);
       const overall = all[key];
-      const gate = windowTally(firstAnswers[GATE.tier].get(key) || [], GATE);
-      const hardBar = windowTally(firstAnswers[HARD_BAR.tier].get(key) || [], HARD_BAR);
+      const firsts = (tier) => firstAnswers[tier].get(key) || [];
+      const gate = windowTally(firsts(GATE.tier), GATE);
+      const hardBar = windowTally(firsts(HARD_BAR.tier), HARD_BAR);
+      const routine = Object.fromEntries(ROUTINE.tiers.map((tier) => [tier.toLowerCase(), windowTally(firsts(tier), ROUTINE)]));
+      routine.met = ROUTINE.tiers.some((tier) => routine[tier.toLowerCase()].met);
       const row = {
         sectionKey,
         domain,
         skill,
         order,
+        inCatalog,
         attempted: overall ? overall.attempted : 0,
         correct: overall ? overall.correct : 0,
         hintedCorrect: overall ? overall.hintedCorrect : 0,
         unanswered: overall ? overall.unanswered : 0,
         accuracy: overall ? overall.accuracy : null,
+        easy: tally(easy[key]),
         medium: tally(medium[key]),
         hard: tally(hard[key]),
         gate,
         hardBar,
+        routine,
       };
       row.tiered = Boolean(tiered(sectionKey));
       row.state = skillState(row);
@@ -234,7 +294,7 @@
       const domains = section.domains || [];
       domains.forEach((domain, domainIndex) => {
         Object.keys(domain.skills || {}).forEach((skill, skillIndex) => {
-          addRow(section.key, domain.name, skill, [sectionIndex, domainIndex, skillIndex]);
+          addRow(section.key, domain.name, skill, [sectionIndex, domainIndex, skillIndex], true);
         });
       });
       Object.values(all)
@@ -243,7 +303,7 @@
         .forEach((row) => {
           const domainIndex = domains.findIndex((domain) => domain.name === row.domain);
           addRow(section.key, row.domain, row.skill,
-            [sectionIndex, domainIndex < 0 ? domains.length : domainIndex, Number.MAX_SAFE_INTEGER]);
+            [sectionIndex, domainIndex < 0 ? domains.length : domainIndex, Number.MAX_SAFE_INTEGER], false);
         });
     });
     return rows;
@@ -283,18 +343,6 @@
     return (rows || []).slice().sort(by === "domain" ? compareOrder : byNeed);
   }
 
-  // What to study next: the weakest skill with enough answers that is below
-  // the gate, otherwise the least practised skill. `sectionKeys` narrows the
-  // choice. Returns { row, reason: "weakest" | "least-practised" } or null.
-  function nextFocus(rows, options) {
-    const keys = options && options.sectionKeys;
-    const pool = (rows || []).filter((row) => !keys || keys.includes(row.sectionKey));
-    const weak = pool.filter((row) => NEED_GROUP[row.state] === 0).sort(byNeed)[0];
-    if (weak) return { row: weak, reason: "weakest" };
-    const least = pool.slice().sort((left, right) => left.attempted - right.attempted || compareOrder(left, right))[0];
-    return least ? { row: least, reason: "least-practised" } : null;
-  }
-
   // Counts of rows per state: { [state]: n }.
   function stateCounts(rows) {
     const counts = Object.fromEntries(STATES.map((state) => [state, 0]));
@@ -302,6 +350,232 @@
       counts[row.state] += 1;
     });
     return counts;
+  }
+
+  /* ------------------------------------------------------------ next step */
+
+  // The one next step every page names (Progress, Practice, a set's
+  // report, the drill's default level). Practice guidance only: nothing
+  // here estimates a score.
+
+  function atOrPastGate(row) {
+    return row.state === "at-gate" || row.state === "mastered";
+  }
+
+  // The level a skill is practised at next, and why: in a section whose
+  // tiers are trusted, Easy until the skill is routine (ROUTINE), then
+  // Medium toward the gate, then Hard; no level where tiers are not
+  // trusted (the fixed ACT banks). Returns { level, why } with why one of
+  // "accuracy-only", "not-routine", "routine", "at-gate", "mastered".
+  function skillLevel(row) {
+    if (!row || row.tiered === false) return { level: null, why: "accuracy-only" };
+    if (row.state === "mastered") return { level: "Hard", why: "mastered" };
+    if (row.state === "at-gate") return { level: "Hard", why: "at-gate" };
+    if (row.routine && row.routine.met) return { level: "Medium", why: "routine" };
+    return { level: "Easy", why: "not-routine" };
+  }
+
+  // A section's plan as stages with their catalog domains:
+  // [{ stage, title, skills, domains }], or [] without a plan.
+  function planStages(section) {
+    const plan = section && PLANS[section.key];
+    if (!plan) return [];
+    const domainOf = new Map();
+    (section.domains || []).forEach((domain) => {
+      Object.keys(domain.skills || {}).forEach((skill) => domainOf.set(skill, domain.name));
+    });
+    return plan.stages.map((stage) => Object.assign({}, stage, {
+      domains: [...new Set(stage.skills.map((skill) => domainOf.get(skill)).filter(Boolean))],
+    }));
+  }
+
+  // What a section's latest finished "Start here" diagnostic shows (a
+  // discarded one does not count): accuracy by domain through the accuracy
+  // model, which domains it showed (PLACEMENT), and, for a section with a
+  // plan, the stage the plan starts at: the first stage with a domain it did
+  // not show, or stage 1 when it showed them all. `attempts` should carry
+  // current tiers and taxonomy. Returns null before any diagnostic:
+  //   { sectionKey, sessionId, finishedAt, attempted, correct, accuracy,
+  //     domains: [{ domain, attempted, correct, accuracy, shown }],
+  //     stage (null without a plan), skipped: [stage numbers], allShown }
+  function diagnosticPlacement(attempts, sessions, section) {
+    if (!section) return null;
+    const diagnostic = (sessions || [])
+      .filter((session) => session && session.kind === "diagnostic" && session.sectionKey === section.key)
+      .sort((left, right) => (Number(left.finishedAt) || 0) - (Number(right.finishedAt) || 0))
+      .pop();
+    if (!diagnostic) return null;
+    const summary = Progress.stats((attempts || []).filter((attempt) => attempt && attempt.sessionId === diagnostic.id));
+    const domains = (section.domains || []).map((domain) => {
+      const row = tally(summary.byDomain[skillKey(section.key, domain.name)]);
+      row.shown = row.attempted >= PLACEMENT.minQuestions && row.correct >= PLACEMENT.accuracy * row.attempted;
+      return Object.assign({ domain: domain.name }, row);
+    });
+    const shown = new Set(domains.filter((row) => row.shown).map((row) => row.domain));
+    const stages = planStages(section);
+    const first = stages.find((stage) => stage.domains.some((domain) => !shown.has(domain)));
+    return {
+      sectionKey: section.key,
+      sessionId: diagnostic.id,
+      finishedAt: Number(diagnostic.finishedAt) || null,
+      attempted: summary.attempted,
+      correct: summary.correct,
+      accuracy: summary.accuracy,
+      domains,
+      stage: stages.length ? (first ? first.stage : 1) : null,
+      skipped: first ? stages.filter((stage) => stage.stage < first.stage).map((stage) => stage.stage) : [],
+      allShown: Boolean(stages.length && !first),
+    };
+  }
+
+  // { [sectionKey]: diagnosticPlacement } for the catalog `sections`.
+  function placements(attempts, sessions, sections) {
+    const result = {};
+    (sections || []).forEach((section) => {
+      const placement = diagnosticPlacement(attempts, sessions, section);
+      if (placement) result[section.key] = placement;
+    });
+    return result;
+  }
+
+  // The section of the latest answer among `sectionKeys`, or null: the
+  // section a student is working in, which a page showing several names
+  // the next step for.
+  function recentSection(attempts, sectionKeys) {
+    let latest = null;
+    (attempts || []).forEach((attempt) => {
+      if (!attempt) return;
+      const key = sectionOf(attempt);
+      if (sectionKeys && !sectionKeys.includes(key)) return;
+      if (!latest || (Number(attempt.timestamp) || 0) >= (Number(latest.timestamp) || 0)) latest = attempt;
+    });
+    return latest ? sectionOf(latest) : null;
+  }
+
+  function skillStep(row, reason, extra) {
+    const { level, why } = skillLevel(row);
+    return Object.assign({
+      kind: "skill",
+      sectionKey: row.sectionKey,
+      domain: row.domain,
+      skill: row.skill,
+      row,
+      reason,
+      level,
+      levelWhy: why,
+    }, extra || {});
+  }
+
+  // Accuracy per domain from skill rows, so the least practised skills can
+  // be taken from the weakest domain first.
+  function domainAccuracy(rows) {
+    const totals = new Map();
+    rows.forEach((row) => {
+      const entry = totals.get(row.domain) || { attempted: 0, correct: 0 };
+      entry.attempted += row.attempted;
+      entry.correct += row.correct;
+      totals.set(row.domain, entry);
+    });
+    return (domain) => {
+      const entry = totals.get(domain);
+      return entry && entry.attempted ? entry.correct / entry.attempted : Infinity;
+    };
+  }
+
+  function leastPractised(rows) {
+    const accuracy = domainAccuracy(rows);
+    return rows.slice().sort((left, right) => left.attempted - right.attempted ||
+      accuracy(left.domain) - accuracy(right.domain) || compareOrder(left, right))[0] || null;
+  }
+
+  function weakest(rows) {
+    return rows.slice().sort((left, right) => left.accuracy - right.accuracy ||
+      right.attempted - left.attempted || compareOrder(left, right))[0] || null;
+  }
+
+  // A section with a plan: the first skill in plan order not yet at the
+  // gate, at its level. The diagnostic's placement starts the walk at its
+  // stage: a skill in an earlier stage is passed over while it has fewer
+  // than MIN_ATTEMPTS answers (the diagnostic asks at most two per skill),
+  // and comes back once the later stages are at the gate. When every skill
+  // is at the gate, Hard in plan order; when every one is mastered, a mix.
+  function planStep(rows, plan, placement) {
+    const stageOf = new Map();
+    const position = new Map();
+    plan.stages.forEach((stage) => stage.skills.forEach((skill) => {
+      stageOf.set(skill, stage);
+      position.set(skill, position.size);
+    }));
+    const ordered = rows.filter((row) => row.inCatalog !== false && position.has(row.skill))
+      .sort((left, right) => position.get(left.skill) - position.get(right.skill));
+    const start = placement && placement.stage > 1 ? placement.stage : 1;
+    const placedPast = (row) => stageOf.get(row.skill).stage < start && row.attempted < MIN_ATTEMPTS;
+    const extra = (row, more) => Object.assign({ stage: stageOf.get(row.skill), startStage: start }, more);
+    let row = ordered.find((entry) => !atOrPastGate(entry) && !placedPast(entry));
+    if (row) return skillStep(row, "plan", extra(row, { returned: false }));
+    row = ordered.find((entry) => !atOrPastGate(entry));
+    if (row) return skillStep(row, "plan", extra(row, { returned: true }));
+    row = ordered.find((entry) => entry.state === "at-gate");
+    if (row) return skillStep(row, "plan-hard", extra(row, { returned: false }));
+    return ordered.length ? { kind: "mixed", reason: "all-mastered", sectionKey: ordered[0].sectionKey } : null;
+  }
+
+  // A section whose tiers are trusted but that has no plan (SAT Reading and
+  // Writing): the weakest skill with enough answers below the gate; else
+  // the least practised skill without enough answers; else, every skill at
+  // the gate, the one with the weakest Hard answers; else a mix.
+  function needStep(rows) {
+    const weak = weakest(rows.filter((row) => row.state === "building"));
+    if (weak) return skillStep(weak, "weakest");
+    const least = leastPractised(rows.filter((row) => row.state === "not-started" || row.state === "not-enough-data"));
+    if (least) return skillStep(least, "least-practised");
+    const hard = rows.filter((row) => row.state === "at-gate").sort(byNeed)[0];
+    if (hard) return skillStep(hard, "hard");
+    return rows.length ? { kind: "mixed", reason: "all-mastered", sectionKey: rows[0].sectionKey } : null;
+  }
+
+  // A section whose tiers are not trusted (accuracy only, the fixed ACT
+  // banks): the lowest-accuracy skill with enough answers, else the least
+  // practised, with no level.
+  function accuracyStep(rows) {
+    const low = weakest(rows.filter((row) => row.attempted >= MIN_ATTEMPTS));
+    if (low) return skillStep(low, "lowest-accuracy");
+    const least = leastPractised(rows);
+    return least ? skillStep(least, "least-practised") : null;
+  }
+
+  // The single next step for the skill map `rows` (skillMap). Options:
+  //   sectionKeys    the sections in view (default: every row's)
+  //   dueCount       Review questions due now; any makes Review the step
+  //   placements     { [sectionKey]: diagnosticPlacement }
+  //   recentSection  the section to name a step in when several are in view
+  //                  (recentSection()); else the first with answers, else
+  //                  the first with a plan, else the first
+  // Returns null without rows, else one of
+  //   { kind: "review", reason: "review-due", dueCount, then: <skill step> }
+  //   { kind: "skill", sectionKey, domain, skill, row, reason, level,
+  //     levelWhy, stage?, startStage?, returned? }
+  //   { kind: "mixed", reason: "all-mastered", sectionKey }
+  // where a skill step's reason is "plan", "plan-hard" (sections with a
+  // plan), "weakest", "least-practised", "hard" (trusted tiers), or
+  // "lowest-accuracy", "least-practised" (accuracy only), and its level
+  // comes from skillLevel.
+  function nextStep(rows, options) {
+    const settings = options || {};
+    const keys = settings.sectionKeys;
+    const pool = (rows || []).filter((row) => row.inCatalog !== false && (!keys || keys.includes(row.sectionKey)));
+    if (!pool.length) return null;
+    const inView = [...new Set(pool.map((row) => row.sectionKey))];
+    const answered = (key) => pool.some((row) => row.sectionKey === key && row.attempted);
+    const sectionKey = inView.includes(settings.recentSection) ? settings.recentSection
+      : inView.find(answered) || inView.find((key) => PLANS[key]) || inView[0];
+    const own = pool.filter((row) => row.sectionKey === sectionKey);
+    let step;
+    if (own.some((row) => row.tiered === false)) step = accuracyStep(own);
+    else if (PLANS[sectionKey]) step = planStep(own, PLANS[sectionKey], (settings.placements || {})[sectionKey]);
+    else step = needStep(own);
+    const due = Math.max(0, Math.trunc(Number(settings.dueCount) || 0));
+    return due ? { kind: "review", reason: "review-due", dueCount: due, then: step } : step;
   }
 
   /* ------------------------------------------------------- first sight */
@@ -781,7 +1055,10 @@
     HARD_BAR,
     STATES,
     STATE_LABELS,
+    ROUTINE,
     DIAGNOSTIC,
+    PLACEMENT,
+    PLANS,
     PACE_MIN,
     WEEKLY_MAX,
     // template info
@@ -791,9 +1068,15 @@
     skillMap,
     skillState,
     sortSkills,
-    nextFocus,
     stateCounts,
     firstSight,
+    // next step
+    skillLevel,
+    planStages,
+    diagnosticPlacement,
+    placements,
+    recentSection,
+    nextStep,
     // diagnostic
     chooseDiagnostic,
     orderByTier,

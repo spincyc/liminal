@@ -648,97 +648,6 @@
     return summary;
   }
 
-  function chooseDifficulty(skillAttempts) {
-    const recent = skillAttempts.slice(-8).filter((attempt) => attempt.correct !== null);
-    if (recent.length < 3) return "Medium";
-    const accuracy = recent.filter((attempt) => attempt.correct).length / recent.length;
-    if (accuracy >= 0.8) return "Hard";
-    if (accuracy < 0.5) return "Easy";
-    return "Medium";
-  }
-
-  function recommendQuestion(questions, attempts, options) {
-    options = options || {};
-    if (!questions.length) return null;
-    const recentIds = new Set((options.recentIds || []).slice(-12));
-    const now = options.now || Date.now();
-    const byQuestion = new Map();
-    attempts.forEach((attempt) => {
-      if (!byQuestion.has(attempt.questionId)) byQuestion.set(attempt.questionId, []);
-      byQuestion.get(attempt.questionId).push(attempt);
-    });
-
-    const dueMissed = questions.filter((question) => {
-      const history = byQuestion.get(question.id) || [];
-      const last = history[history.length - 1];
-      return last && last.correct === false && (!last.reviewAt || last.reviewAt <= now);
-    });
-    const dueCandidate = dueMissed.find((question) => !recentIds.has(question.id));
-    if (dueCandidate) {
-      return {
-        question: dueCandidate,
-        reason: `Review due: you previously missed ${dueCandidate.skill}.`,
-        kind: "review",
-      };
-    }
-
-    const bySkill = {};
-    attempts.forEach((attempt) => {
-      if (attempt.correct === null) return;
-      const question = questions.find((candidate) => candidate.id === attempt.questionId);
-      if (!question) return;
-      if (!bySkill[question.skill]) bySkill[question.skill] = [];
-      bySkill[question.skill].push(attempt);
-    });
-    const weakSkill = Object.entries(bySkill)
-      .filter((entry) => entry[1].length >= 2)
-      .map(([skill, skillAttempts]) => ({
-        skill,
-        attempts: skillAttempts,
-        accuracy: skillAttempts.filter((attempt) => attempt.correct).length /
-          skillAttempts.length,
-      }))
-      .sort((left, right) => left.accuracy - right.accuracy)[0];
-
-    if (weakSkill) {
-      const difficulty = chooseDifficulty(weakSkill.attempts);
-      const candidate = questions.find((question) =>
-        question.skill === weakSkill.skill &&
-        question.difficulty === difficulty &&
-        !recentIds.has(question.id)
-      ) || questions.find((question) =>
-        question.skill === weakSkill.skill && !recentIds.has(question.id)
-      );
-      if (candidate) {
-        return {
-          question: candidate,
-          reason:
-            `Weak-skill practice: ${Math.round(weakSkill.accuracy * 100)}% accuracy in ` +
-            `${weakSkill.skill}; ${candidate.difficulty.toLowerCase()} difficulty is the next gradual step.`,
-          kind: "weak-skill",
-        };
-      }
-    }
-
-    const unattempted = questions.find((question) =>
-      !byQuestion.has(question.id) && !recentIds.has(question.id)
-    );
-    if (unattempted) {
-      return {
-        question: unattempted,
-        reason: `New coverage: build experience in ${unattempted.skill}.`,
-        kind: "new",
-      };
-    }
-
-    const fallback = questions.find((question) => !recentIds.has(question.id)) || questions[0];
-    return {
-      question: fallback,
-      reason: `Balanced review: continue practicing ${fallback.skill}.`,
-      kind: "balanced",
-    };
-  }
-
   function deterministicShuffle(items, seed) {
     const result = items.slice();
     let state = 2166136261;
@@ -840,7 +749,6 @@
     buildTestForm,
     drawSectionItems,
     drawPassageSets,
-    chooseDifficulty,
     deterministicShuffle,
     filterQuestions,
     normalize,
@@ -852,7 +760,6 @@
     paceBudgetSeconds,
     SECONDS_PER_QUESTION,
     questionFamily,
-    recommendQuestion,
     scoreResponse,
     summarizeMiniTest,
     summarizeProgress,

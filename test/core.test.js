@@ -97,23 +97,6 @@ test("summarizeProgress calculates accuracy and weak skills", () => {
   );
 });
 
-test("recommendation prioritizes a due missed question", () => {
-  const recommendation = core.recommendQuestion(
-    questions,
-    [{ questionId: "q2", correct: false, reviewAt: 10 }],
-    { now: 20, recentIds: [] },
-  );
-  assert.equal(recommendation.question.id, "q2");
-  assert.equal(recommendation.kind, "review");
-});
-
-test("recommendation avoids recent questions when possible", () => {
-  const recommendation = core.recommendQuestion(questions, [], {
-    recentIds: ["q1"],
-  });
-  assert.notEqual(recommendation.question.id, "q1");
-});
-
 /* -------------------------------------------------------------- mini tests */
 
 const catalog = require("../content/catalog.json");

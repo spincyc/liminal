@@ -9,6 +9,7 @@
       content="Independent SAT and ACT practice with original questions, detailed answer guides, and private on-device progress."
     />
     <title>Liminal — SAT &amp; ACT Practice</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles/tokens.css" />
     <link rel="stylesheet" href="styles/app.css" />
     <link rel="stylesheet" href="styles/test-shell.css" />
@@ -75,6 +76,16 @@
           </div>
         </div>
         <div id="sessionStatus" class="status-line" role="status" aria-live="polite"></div>
+
+        <section id="startHere" class="card start-card is-start practice-start hidden" aria-labelledby="startHereHeading">
+          <div class="card-head">
+            <h2 id="startHereHeading">Start here</h2>
+            <button id="startHereHide" class="text-link" type="button" aria-describedby="startHereHeading">Hide</button>
+          </div>
+          <p id="startHereLede" class="muted"></p>
+          <ol id="startHereSteps" class="start-steps"></ol>
+          <div id="startHereStatus" class="status-line" role="status" aria-live="polite"></div>
+        </section>
 
         <section id="testArea" class="card test-area" aria-labelledby="testHeading" data-test-only="SAT">
           <div class="area-head">
@@ -162,6 +173,7 @@
                       <label class="check-chip"><input type="radio" name="drillLevel" value="Hard" /> Hard</label>
                       <label class="check-chip"><input type="radio" name="drillLevel" value="" /> All levels</label>
                     </div>
+                    <p id="drillLevelNote" class="field-note"></p>
                   </fieldset>
                   <div class="field">
                     <label for="drillCount">Questions</label>
@@ -199,7 +211,6 @@
                     <select id="modeSelect" aria-describedby="modeNote">
                       <option value="targeted">Targeted practice</option>
                       <option value="mix">Whole-section mix</option>
-                      <option value="adaptive">Recommended next</option>
                       <option value="missed">Missed-question review</option>
                       <option value="flagged">Marked for review</option>
                     </select>
@@ -294,12 +305,12 @@
                   <div>
                     <h4 id="recommendHeading">Recommended next</h4>
                     <p id="recommendText" class="muted">
-                      Answer a few questions and a suggestion based on your history will appear here.
+                      Answer a few questions and your next step appears here.
                     </p>
                   </div>
                   <button id="recommendBtn" class="button secondary" type="button" disabled
                     aria-describedby="recommendText">
-                    Start recommended set
+                    Start next step
                   </button>
                 </div>
               </form>

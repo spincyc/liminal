@@ -703,6 +703,78 @@ body {
   }
 }
 
+/* ------------------------------------------------------------- start here */
+
+/* "Start here" on Practice and Progress: a card for a student who has not
+   begun, each step a row with its text and its buttons. */
+.start-card.is-start {
+  border-color: var(--color-accent);
+  box-shadow: inset 4px 0 0 var(--color-accent), var(--shadow-bar);
+}
+
+.start-item,
+.start-step {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-softer);
+}
+
+.start-text {
+  display: grid;
+  flex: 1 1 320px;
+  gap: 2px;
+  min-width: 0;
+}
+
+.start-text .muted {
+  font-size: var(--text-sm);
+}
+
+.start-steps {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+  counter-reset: start-step;
+}
+
+.start-step {
+  counter-increment: start-step;
+}
+
+.start-step .start-text > strong::before {
+  content: counter(start-step) ". ";
+}
+
+.start-step.is-done .start-text > strong {
+  color: var(--color-muted);
+}
+
+.start-done {
+  color: var(--color-good);
+  font-size: var(--text-sm);
+}
+
+.start-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.practice-start {
+  margin-bottom: 24px;
+}
+
+.practice-start > .card-head {
+  align-items: center;
+}
+
 /* ----------------------------------------------------------- practice view */
 
 .resume-banner {
@@ -1620,6 +1692,7 @@ a.stat-note {
   }
 
   .start-row .button,
+  .start-step .button,
   .resume-banner .button,
   .page-dialog-actions .button,
   .recommend-row .button,

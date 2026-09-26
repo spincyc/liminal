@@ -1,17 +1,22 @@
 (function () {
   "use strict";
 
-  // The Practice view: "Take a test" (an SAT module, section, or the
-  // full-length test on screen), then practice sets: the skill drill, the
-  // set builder form, and the side cards (mini tests, Hard math reps, retake
-  // a set, booklets), with the unfinished test and set above them all.
+  // The Practice view: "Start here" for a student who has not begun, then
+  // "Take a test" (an SAT module, section, or the full-length test on
+  // screen), then practice sets: the skill drill, the set builder form with
+  // Recommended next (the one next step, ctx.guide), and the side cards
+  // (mini tests, Hard math reps, retake a set, booklets), with the
+  // unfinished test and set above them all. Nothing loads until the view
+  // opens, and a SAT section's template bundle only when a set needs its
+  // questions: counts come from the built registries.
   //
   // Interface: window.LiminalViews.practice(ctx) returns the view object
   // described at the top of app/app.js. `ctx` is app.js's shared context:
   // catalog, core, site, runs, Progress, practice, store, update, loaders
   // (loadBank, sectionTemplates, templatesNow, rebuildQuestion), buildRun,
   // buildMiniTest, launch, resume, confirmReplace, confirmDiscard,
-  // describeSaved, startTest, startDrill, activeSession, showView, and
+  // describeSaved, startTest, startDrill, startDiagnostic, guide,
+  // stepWords, levelWords, startStep, activeSession, showView, and
   // formatting helpers. Every start button asks ctx.confirmReplace before
   // it builds anything. Hash: #practice, or
   // #practice/<sectionKey>/<skillSlug> to open the drill set to one skill.
@@ -30,9 +35,13 @@
   const HARD_REPS_DEFAULT_COUNT = 10;
   const DEFAULT_COUNT = 20;
   const DRILL_MAX = 30;
+  // Per viewer: the tests whose "Start here" card the student hid.
+  const START_HIDDEN_KEY = "liminal:start-hidden:v1";
+  const BLUEBOOK = "https://bluebook.collegeboard.org/";
 
   function create(ctx) {
     const { core, practice, Progress } = ctx;
+    const Analytics = window.LiminalAnalytics;
     const byId = (id) => document.getElementById(id);
     const elements = {
       view: byId("setupView"),
@@ -93,18 +102,30 @@
       drillStart: byId("drillStart"),
       drillNote: byId("drillNote"),
       drillStatus: byId("drillStatus"),
+      drillLevelNote: byId("drillLevelNote"),
+      startHere: byId("startHere"),
+      startHereLede: byId("startHereLede"),
+      startHereSteps: byId("startHereSteps"),
+      startHereHide: byId("startHereHide"),
+      startHereStatus: byId("startHereStatus"),
     };
 
     let currentBank = [];
-    let recommendation = null;
+    // The next step Recommended next shows, for its button.
+    let recommended = null;
     let bankRequestId = 0;
+    // Set when the view first opens: until then nothing is loaded.
+    let ready = false;
+    // The builder's section must be loaded again when the view next opens.
+    let stale = true;
     // The count the student asked for; the field shows it, capped by what
     // the current filters can hold.
     let desiredCount = Number(elements.count.value) || DEFAULT_COUNT;
     // A retake whose templates changed waits for a second click.
     let retakePending = null;
-    // The last section chosen for each test, so switching back restores it.
-    const sectionByTest = { SAT: "sat-reading-writing", ACT: "act-english" };
+    // The last section chosen for each test, so switching back restores it;
+    // at first, the section the student last answered in.
+    const sectionByTest = {};
 
     const progress = () => ctx.store.get();
     const sectionKey = () => elements.section.value;
@@ -112,6 +133,21 @@
 
     function mathSection(key) {
       return key === "sat-math" || key === "act-mathematics";
+    }
+
+    // The next-step engine's view of the record, rebuilt when progress or
+    // the test changes.
+    let guideCache = null;
+    function guide() {
+      if (!guideCache || guideCache.test !== ctx.currentTest()) guideCache = ctx.guide(ctx.currentTest());
+      return guideCache;
+    }
+
+    // What a section's templates are for counting: the loaded ones, or the
+    // built registry's entries until a set needs the bundle.
+    function countableTemplates(key) {
+      const loaded = ctx.templatesNow(key);
+      return loaded.length ? loaded : practice.registryTemplates(ctx.registry(key));
     }
 
     /* ------------------------------------------------------------- copy */
@@ -125,7 +161,7 @@
         option.textContent = section.shortLabel;
         elements.section.appendChild(option);
       });
-      const remembered = sectionByTest[ctx.currentTest()];
+      const remembered = sectionByTest[ctx.currentTest()] || guide().recentSection;
       elements.section.value = sections.some((section) => section.key === remembered)
         ? remembered
         : sections[0].key;
@@ -172,7 +208,15 @@
       return reviewIds(mode).some((id) => !Progress.parseQuestionId(id));
     }
 
+    // A template section's bundle loads before a set is built; the form
+    // needs it sooner only to rebuild missed or marked questions.
+    function needsTemplates(mode) {
+      if (!usesTemplates() || (mode !== "missed" && mode !== "flagged")) return false;
+      return reviewIds(mode).some((id) => Progress.parseQuestionId(id));
+    }
+
     async function changeSection() {
+      stale = false;
       const requestId = ++bankRequestId;
       const section = ctx.sectionByKey(sectionKey());
       sectionByTest[section.test] = section.key;
@@ -187,7 +231,7 @@
           ? "A required section that counts toward the ACT Composite score."
           : "One of the digital SAT's two sections.";
       try {
-        if (practice.usesTemplates(section.key)) await ctx.sectionTemplates(section.key);
+        if (needsTemplates(elements.mode.value)) await ctx.sectionTemplates(section.key);
         const bank = needsBank(elements.mode.value)
           ? await ctx.loadBank(section.key)
           : ctx.bankIfLoaded(section.key) || [];
@@ -209,9 +253,12 @@
       }
     }
 
-    // Loads the retired bank when a review mode needs it, then recounts.
+    // Loads the retired bank or the templates when a review mode needs
+    // them, then recounts.
     async function changeMode() {
-      if (needsBank(elements.mode.value) && !ctx.bankIfLoaded(sectionKey())) {
+      const mode = elements.mode.value;
+      if ((needsBank(mode) && !ctx.bankIfLoaded(sectionKey())) ||
+        (needsTemplates(mode) && !ctx.templatesNow(sectionKey()).length)) {
         await changeSection();
         return;
       }
@@ -271,13 +318,7 @@
     // Template sections build fresh runs in these modes; review modes replay
     // specific past questions.
     function buildsTemplateRun(mode) {
-      return usesTemplates() && (mode === "targeted" || mode === "mix" || mode === "adaptive");
-    }
-
-    // Tiers and skills come from the current templates, so a relabeled
-    // template's old answers count where the template stands now.
-    function weakest() {
-      return Progress.weakestSkill(progress(), { sectionKey: sectionKey() }, { current: ctx.templateInfo() });
+      return usesTemplates() && (mode === "targeted" || mode === "mix");
     }
 
     // Missed and marked questions, narrowed by every topic filter, including
@@ -296,7 +337,7 @@
     function matchingBankQuestions() {
       const mode = elements.mode.value;
       if (mode === "missed" || mode === "flagged") return reviewQuestions(mode);
-      if (mode === "mix" || mode === "adaptive") return currentBank.slice();
+      if (mode === "mix") return currentBank.slice();
       return core.filterQuestions(currentBank, { ...formFilters(), query: elements.search.value });
     }
 
@@ -307,11 +348,6 @@
           : "Questions you have not seen recently, narrowed by any topic filters.";
       }
       if (mode === "mix") return "A mix from the whole section, weighted like the real test. Topic filters are not used. For the real module structure, use Take a test.";
-      if (mode === "adaptive") {
-        return usesTemplates()
-          ? `A set on your weakest skill so far: the lowest accuracy among skills with at least ${Progress.WEAK_SKILL_MIN_ATTEMPTS} answers counted. Until then, a mix of the whole section.`
-          : "Starts with the recommended question, then mixes the section. Topic filters are not used.";
-      }
       if (mode === "missed") return "Questions you answered wrong or left blank most recently in this section.";
       return "Questions you have marked for review in this section.";
     }
@@ -322,12 +358,6 @@
       if (mode === "mix") {
         return { domain: false, skill: false, difficulty: false, search: false,
           hint: "The whole-section mix draws from every topic, so topic filters are off." };
-      }
-      if (mode === "adaptive") {
-        return { domain: false, skill: false, difficulty: false, search: false,
-          hint: usesTemplates()
-            ? "Recommended next picks the skill for you, so topic filters are off."
-            : "Recommended next draws from the whole section, so topic filters are off." };
       }
       if (buildsTemplateRun(mode)) {
         return { domain: true, skill: true, difficulty: true, search: false,
@@ -389,8 +419,8 @@
       if (buildsTemplateRun(mode)) {
         // A set takes at most one question per template, so the templates
         // that match are the most questions it can hold.
-        const available = ctx.runs.available(ctx.templatesNow(sectionKey()),
-          practice.runFilters(mode, formFilters(), weakest()));
+        const available = ctx.runs.available(countableTemplates(sectionKey()),
+          practice.runFilters(mode, formFilters()));
         elements.matchCount.textContent = available
           ? `Up to ${ctx.formatNumber(available)} question${available === 1 ? "" : "s"}, one of each kind that matches`
           : "Nothing matches. Loosen a filter under Narrow by topic.";
@@ -400,7 +430,7 @@
         return;
       }
       const matches = matchingBankQuestions();
-      if (mode === "mix" || mode === "adaptive") {
+      if (mode === "mix") {
         elements.matchCount.textContent = `${ctx.formatNumber(matches.length)} questions in this section`;
       } else if (matches.length) {
         elements.matchCount.textContent = `${ctx.formatNumber(matches.length)} question${matches.length === 1 ? "" : "s"} match`;
@@ -451,30 +481,56 @@
           `${ctx.formatDuration(budget * 1000)}, the real test's pace.`;
     }
 
+    // The next step for the builder's section (ctx.guide), in the words
+    // Progress and every report use. Review comes first when any is due.
     function updateRecommendation() {
-      if (usesTemplates()) {
-        const weak = weakest();
-        elements.recommendText.textContent = weak
-          ? `Your weakest skill so far is ${weak.skill}: ${weak.correct} of ${weak.attempted} correct` +
-            `${weak.hintedCorrect ? ` without a hint (${weak.hintedCorrect} more with one)` : ""}. Start a set on it.`
-          : "Answer a few questions in this section and your weakest skill will appear here.";
-        elements.recommendBtn.disabled = !weak;
-        return;
-      }
-      recommendation = core.recommendQuestion(
-        currentBank,
-        Progress.attemptsFor(progress(), { sectionKey: sectionKey() }),
-        { recentIds: Progress.recentQuestionIds(progress(), 30) },
-      );
-      if (!recommendation) {
-        elements.recommendText.textContent = "No recommendation is available for this section.";
+      const key = sectionKey();
+      const current = guide();
+      const answered = current.rows.some((row) => row.sectionKey === key && row.attempted);
+      const step = answered || current.dueCount ? current.step([key]) : null;
+      recommended = step;
+      if (!step) {
+        elements.recommendText.textContent = practice.usesTemplates(key)
+          ? "No answers in this section yet. Take its diagnostic (Start here, or on Progress), and your next step appears here."
+          : "Answer a few questions in this section, and your next step appears here.";
+        elements.recommendBtn.textContent = "Start next step";
         elements.recommendBtn.disabled = true;
         return;
       }
-      elements.recommendText.textContent =
-        `${recommendation.reason} Next: ${recommendation.question.domain} — ` +
-        `${recommendation.question.subskill}.`;
+      const words = ctx.stepWords(step);
+      const title = document.createElement("strong");
+      title.textContent = words.title;
+      elements.recommendText.replaceChildren(title,
+        `${words.section ? ` (${words.section})` : ""}. ${[words.reason, words.level, words.then].filter(Boolean).join(" ")}`);
+      elements.recommendBtn.textContent = step.kind === "review"
+        ? "Open Review"
+        : step.kind === "mixed"
+          ? "Start a whole-section mix"
+          : `Start ${ctx.DRILL_COUNT} ${step.level ? `${step.level} ` : ""}questions`;
       elements.recommendBtn.disabled = false;
+    }
+
+    // Recommended next's button: the step's drill, Review, or, with every
+    // skill mastered, a whole-section mix.
+    async function startRecommended() {
+      const step = recommended;
+      if (!step) return;
+      if (step.kind === "mixed") {
+        elements.mode.value = "mix";
+        updateMatches();
+        startSession();
+        return;
+      }
+      elements.recommendBtn.disabled = true;
+      if (step.kind === "skill") ctx.setStatus(elements.bankStatus, "Preparing your drill…", "loading");
+      try {
+        const opened = await ctx.startStep(step);
+        ctx.setStatus(elements.bankStatus, opened === 0 ? "No questions match this step yet." : "", opened === 0 ? "error" : "");
+      } catch (error) {
+        ctx.setStatus(elements.bankStatus, `${error.message} Refresh the page and try again.`, "error");
+      } finally {
+        elements.recommendBtn.disabled = false;
+      }
     }
 
     /* ------------------------------------------------------------ launch */
@@ -502,10 +558,24 @@
       const section = ctx.sectionByKey(sectionKey());
       const title = `${section.test} ${section.shortLabel}`;
       if (buildsTemplateRun(mode)) {
+        // The section's templates load the first time a set needs them.
+        if (!ctx.templatesNow(section.key).length) {
+          elements.start.disabled = true;
+          ctx.setStatus(elements.bankStatus, "Preparing your set…", "loading");
+          try {
+            await ctx.sectionTemplates(section.key);
+          } catch (error) {
+            ctx.setStatus(elements.bankStatus, `${error.message} Refresh the page and try again.`, "error");
+            return;
+          } finally {
+            elements.start.disabled = false;
+          }
+          ctx.setStatus(elements.bankStatus, "");
+        }
         const run = ctx.buildRun({
           sectionKey: section.key,
           count: requestedCount(),
-          filters: practice.runFilters(mode, formFilters(), weakest()),
+          filters: practice.runFilters(mode, formFilters()),
         });
         if (!run.questions.length) {
           ctx.setStatus(elements.bankStatus, "Nothing matches this set. Loosen a filter.", "error");
@@ -523,11 +593,7 @@
         }, elements.bankStatus);
         return;
       }
-      let pool = matchingBankQuestions();
-      if (mode === "adaptive" && recommendation) {
-        const remaining = currentBank.filter((question) => question.id !== recommendation.question.id);
-        pool = [recommendation.question, ...core.deterministicShuffle(remaining, `${Date.now()}-adaptive`)];
-      }
+      const pool = matchingBankQuestions();
       if (!pool.length) {
         ctx.setStatus(elements.bankStatus, "No questions match this set. Adjust a filter or choose another mode.", "error");
         return;
@@ -542,13 +608,11 @@
       const filters = filterUse(mode).domain ? formFilters() : { domains: [], skills: [] };
       const passageSets = !revisiting && !filters.domains.length && !filters.skills.length &&
         pool.every((question) => question.passageId);
-      const questions = mode === "adaptive"
-        ? pool.slice(0, count)
-        : core.buildSession(pool, count, `${Date.now()}-${section.key}`, {
-          avoidIds: revisiting ? [] : Progress.recentlyServedIds(progress(), section.key),
-          spreadFamilies: !revisiting,
-          passageSets,
-        });
+      const questions = core.buildSession(pool, count, `${Date.now()}-${section.key}`, {
+        avoidIds: revisiting ? [] : Progress.recentlyServedIds(progress(), section.key),
+        spreadFamilies: !revisiting,
+        passageSets,
+      });
       // Recorded when a set is built, not when it is answered, so an
       // abandoned set still rotates its questions out.
       if (!revisiting) {
@@ -796,18 +860,39 @@
       drillLevelInputs().forEach((input) => { input.checked = input.value === value; });
     }
 
+    // The drill's default level for the chosen skill is the next step's
+    // level for it (Analytics.skillLevel): Easy until the skill is routine,
+    // Medium toward the gate, then Hard; every level where difficulty
+    // labels are not verified. The note under the level says why.
+    function applyDrillLevel() {
+      const key = elements.drillSection.value;
+      const skill = elements.drillSkill.value;
+      const row = key && skill ? guide().row(key, skill) : null;
+      if (!row) {
+        elements.drillLevelNote.textContent = "";
+        return;
+      }
+      const { level } = Analytics.skillLevel(row);
+      setDrillLevel(level || "");
+      elements.drillLevelNote.textContent = level
+        ? `Set to your next level for this skill. ${ctx.levelWords(row)}`
+        : ctx.levelWords(row);
+    }
+
     function drillCount() {
       const value = Math.round(Number(elements.drillCount.value));
       return Math.min(DRILL_MAX, Math.max(1, Number.isFinite(value) && value > 0 ? value : ctx.DRILL_COUNT));
     }
 
-    // The drill's sections follow the SAT | ACT switch; its skills are
-    // grouped by domain.
+    // The drill's sections follow the SAT | ACT switch, starting at the
+    // section last answered in; its skills are grouped by domain.
     function populateDrillSections() {
       const sections = ctx.testSections();
       const current = elements.drillSection.value;
       replaceOptions(elements.drillSection, sections.map((section) => ({ value: section.key, label: section.shortLabel })));
+      const recent = guide().recentSection;
       if (sections.some((section) => section.key === current)) elements.drillSection.value = current;
+      else if (sections.some((section) => section.key === recent)) elements.drillSection.value = recent;
       populateDrillSkills();
     }
 
@@ -829,7 +914,8 @@
       if ([...elements.drillSkill.options].some((option) => option.value === current)) {
         elements.drillSkill.value = current;
       }
-      updateDrillNote();
+      applyDrillLevel();
+      return updateDrillNote();
     }
 
     // How many questions the drill can hold. A template section repeats a
@@ -849,19 +935,14 @@
       let kinds = null;
       let matching = null;
       if (practice.usesTemplates(key)) {
-        let templates = ctx.templatesNow(key);
-        if (!templates.length) {
-          try {
-            templates = await ctx.sectionTemplates(key);
-          } catch (error) {
-            ctx.setStatus(elements.drillStatus, `${error.message} Refresh the page and try again.`, "error");
-            return;
-          }
-        }
-        if (key !== elements.drillSection.value || skill !== elements.drillSkill.value) return;
-        kinds = ctx.runs.available(templates, { skills: [skill], difficulties: level ? [level] : [] });
+        kinds = ctx.runs.available(countableTemplates(key), { skills: [skill], difficulties: level ? [level] : [] });
       } else {
         let bank = ctx.bankIfLoaded(key);
+        // A bank loads only once the view is open.
+        if (!bank && !ready) {
+          elements.drillNote.textContent = "";
+          return;
+        }
         if (!bank) {
           try {
             bank = await ctx.loadBank(key);
@@ -955,6 +1036,150 @@
       renderResumeBanner();
     }
 
+    /* ---------------------------------------------------------- start here */
+
+    // Which tests' cards the student hid, per viewer. Storage can be
+    // blocked or hold anything, so every read and write is guarded.
+    function hiddenStarts() {
+      try {
+        const value = JSON.parse(window.localStorage.getItem(START_HIDDEN_KEY) || "{}");
+        return value && typeof value === "object" ? value : {};
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function hideStart() {
+      try {
+        const value = hiddenStarts();
+        value[ctx.currentTest()] = true;
+        window.localStorage.setItem(START_HIDDEN_KEY, JSON.stringify(value));
+      } catch (error) {
+        // Hidden for this visit only.
+      }
+      startHiddenNow[ctx.currentTest()] = true;
+      renderStartHere();
+    }
+
+    const startHiddenNow = {};
+
+    function node(tag, className, text) {
+      const element = document.createElement(tag);
+      if (className) element.className = className;
+      if (text !== undefined) element.textContent = text;
+      return element;
+    }
+
+    function link(href, text, external) {
+      const anchor = node("a", null, text);
+      anchor.href = href;
+      if (external) {
+        anchor.target = "_blank";
+        anchor.rel = "noopener";
+      }
+      return anchor;
+    }
+
+    function startItem(done, title, body, extra) {
+      const item = node("li", `start-step${done ? " is-done" : ""}`);
+      const text = node("div", "start-text");
+      const heading = node("strong", null, title);
+      if (done) heading.appendChild(node("span", "start-done", " Done"));
+      text.appendChild(heading);
+      const paragraph = node("p", "muted");
+      paragraph.append(...body);
+      text.appendChild(paragraph);
+      item.appendChild(text);
+      if (extra) item.appendChild(extra);
+      return item;
+    }
+
+    function dayText(ms) {
+      return new Date(ms).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+    }
+
+    function runButton(label, primary, run) {
+      const button = node("button", `button ${primary ? "primary" : "secondary"}`, label);
+      button.type = "button";
+      button.addEventListener("click", async () => {
+        button.disabled = true;
+        ctx.setStatus(elements.startHereStatus, "Preparing…", "loading");
+        try {
+          const opened = await run(button);
+          ctx.setStatus(elements.startHereStatus, opened === 0 ? "No questions match this step yet." : "",
+            opened === 0 ? "error" : "");
+        } catch (error) {
+          ctx.setStatus(elements.startHereStatus, `${error.message} Refresh the page and try again.`, "error");
+        } finally {
+          button.disabled = false;
+        }
+      });
+      return button;
+    }
+
+    // "Start here" for a student who has not begun this test: a baseline
+    // from an official test, the diagnostic (SAT) or a mini test (ACT, which
+    // has none), then the next step. Shown while this test's record is empty
+    // or a SAT section has no diagnostic, until the student hides it.
+    function renderStartHere() {
+      const test = ctx.currentTest();
+      const current = guide();
+      const record = progress();
+      const answered = Progress.attemptsFor(record, { test }).length > 0;
+      const diagnosable = current.sections.filter((section) => practice.usesTemplates(section.key));
+      const missing = diagnosable.filter((section) => !current.placements[section.key]);
+      const hidden = hiddenStarts()[test] === true || startHiddenNow[test] === true;
+      const show = !hidden && (!answered || missing.length > 0);
+      elements.startHere.classList.toggle("hidden", !show);
+      if (!show) return;
+
+      const steps = [];
+      if (test === "SAT") {
+        elements.startHereLede.textContent = "Three steps to a plan. Liminal reports accuracy and suggests what to " +
+          "study next; it never estimates a score.";
+        const scores = record.officialScores || [];
+        const last = scores[scores.length - 1];
+        steps.push(startItem(Boolean(last), "Get a baseline score", [
+          "Take a full-length official practice test in ", link(BLUEBOOK, "Bluebook", true),
+          ", then record the score under ", link("#progress", "Progress, Official scores"), ".",
+          last ? ` Recorded: ${last.label || "an official test"} on ${last.date}.` : "",
+        ]));
+        const buttons = node("div", "start-actions");
+        diagnosable.forEach((section) => {
+          const taken = Boolean(current.placements[section.key]);
+          buttons.appendChild(runButton(`${taken ? "Retake the" : "Take the"} ${section.shortLabel} diagnostic`, !taken,
+            () => ctx.startDiagnostic(section.key)));
+        });
+        const takenText = diagnosable.filter((section) => current.placements[section.key]).map((section) => {
+          const placement = current.placements[section.key];
+          return ` ${section.shortLabel}: taken ${dayText(placement.finishedAt)}` +
+            (placement.stage ? `, the Math plan starts at stage ${placement.stage}.` : ".");
+        }).join("");
+        steps.push(startItem(!missing.length, "Take the Liminal diagnostic", [
+          `${Analytics.DIAGNOSTIC.count} Medium and Hard questions per section, no timer. It places you by domain; ` +
+          "at two questions a skill at most, it cannot grade skills.", takenText,
+        ], buttons));
+      } else {
+        elements.startHereLede.textContent = "ACT questions here come from fixed banks whose difficulty labels are " +
+          "not verified, so ACT practice reports accuracy only, never a score.";
+        steps.push(startItem(false, "Get a baseline score", [
+          "Take a full-length official ACT practice test from ACT, timed. Liminal does not estimate ACT scores.",
+        ]));
+        const blueprint = core.MINI_TEST_BLUEPRINTS.find((entry) => entry.test === "ACT");
+        steps.push(startItem(answered, "Get a first read here", [
+          "A timed mini test samples every section and reports accuracy by section and domain.",
+        ], blueprint ? runButton(`Start the ${blueprint.label}`, !answered, (button) => startMiniTest(blueprint, button)) : null));
+      }
+      const step = answered || current.dueCount ? current.step() : null;
+      const words = ctx.stepWords(step);
+      steps.push(startItem(false, "Follow your next step", words
+        ? [node("strong", null, words.title), `${words.section ? ` (${words.section})` : ""}. ${words.reason}`]
+        : ["Once you have answers, it appears here, under Recommended next below, and on Progress."],
+      step && step.kind !== "mixed" ? runButton(step.kind === "review" ? "Open Review" : "Start it", true,
+        () => ctx.startStep(step)) : null));
+      elements.startHereSteps.replaceChildren(...steps);
+    }
+
     /* --------------------------------------------------------- deep link */
 
     function scrollToCard(card, focus) {
@@ -978,14 +1203,15 @@
         return;
       }
       elements.drillSection.value = section.key;
-      populateDrillSkills(found.skill);
-      await updateDrillNote();
+      await populateDrillSkills(found.skill);
       if (elements.drillStart.disabled) {
         setDrillLevel("");
         await updateDrillNote();
       }
-      ctx.setStatus(elements.drillStatus,
-        `The drill is set to ${found.skill}. Choose a level and start.`, "success");
+      const level = drillLevel();
+      ctx.setStatus(elements.drillStatus, `The drill is set to ${found.skill}` +
+        (level ? ` at ${level}, your next level for it` : ", every level") + ". Change the level if you like, and start.",
+      "success");
       scrollToCard(elements.drillForm, elements.drillStart);
     }
 
@@ -1018,11 +1244,8 @@
       elements.resume[slot].resume.addEventListener("click", () => resumeSaved(slot));
       elements.resume[slot].discard.addEventListener("click", () => discardSaved(slot));
     });
-    elements.recommendBtn.addEventListener("click", () => {
-      elements.mode.value = "adaptive";
-      updateMatches();
-      startSession();
-    });
+    elements.recommendBtn.addEventListener("click", startRecommended);
+    elements.startHereHide.addEventListener("click", hideStart);
     elements.hardRepsBtn.addEventListener("click", startHardReps);
     elements.hardRepsCustomize.addEventListener("click", customizeHardReps);
     elements.retakeForm.addEventListener("submit", retake);
@@ -1035,7 +1258,10 @@
       ctx.setStatus(elements.drillStatus, "");
       populateDrillSkills();
     });
-    elements.drillSkill.addEventListener("change", updateDrillNote);
+    elements.drillSkill.addEventListener("change", () => {
+      applyDrillLevel();
+      updateDrillNote();
+    });
     elements.drillCount.addEventListener("input", updateDrillNote);
     elements.drillCount.addEventListener("change", () => {
       elements.drillCount.value = String(drillCount());
@@ -1043,16 +1269,22 @@
     });
     drillLevelInputs().forEach((input) => input.addEventListener("change", updateDrillNote));
 
-    function onTestChange() {
+    // The builder's section loads now when the view is on screen, else
+    // when it next opens.
+    function onTestChange(current) {
+      guideCache = null;
       populateSections();
       populateDrillSections();
       renderSetupCopy();
       renderMiniTests();
+      renderStartHere();
       ctx.setStatus(elements.hardRepsStatus, "");
       ctx.setStatus(elements.retakeStatus, "");
       ctx.setStatus(elements.testStatus, "");
       ctx.setStatus(elements.drillStatus, "");
-      changeSection();
+      ctx.setStatus(elements.startHereStatus, "");
+      if (current && ready) changeSection();
+      else stale = true;
     }
 
     populateSections();
@@ -1060,7 +1292,7 @@
     renderSetupCopy();
     renderMiniTests();
     renderResumeBanner();
-    changeSection();
+    renderStartHere();
 
     return {
       name: "setup",
@@ -1068,10 +1300,20 @@
       element: elements.view,
       open(options, params) {
         ctx.showView("setup", options);
+        ready = true;
+        if (stale) {
+          changeSection();
+          updateDrillNote();
+        }
         if (params && params.length >= 2) applyDeepLink(params);
       },
       onTestChange,
       onProgressChange() {
+        guideCache = null;
+        renderStartHere();
+        applyDrillLevel();
+        updateDrillNote();
+        if (!ready) return;
         updateMatches();
         updateRecommendation();
       },

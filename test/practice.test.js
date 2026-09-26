@@ -65,6 +65,25 @@ test("set codes name their section and reject anything else", () => {
   assert.equal(Practice.formatSetCode("act-english", "5-ab"), "5-ab");
 });
 
+test("a set code with a mistyped or cut-off prefix is refused, not built in the current section", () => {
+  const run = Practice.buildTemplateRun({
+    sectionKey: "sat-math", templates: mathTemplates, count: 5, seed: "k9", instantiate: S.instantiate,
+  });
+  const [prefix, ...rest] = run.setCode.split("-");
+  assert.equal(prefix, "math");
+  // Mistyped or cut off: three or more parts that do not start with a prefix.
+  for (const typed of [`mat-${rest.join("-")}`, `m-${rest.join("-")}`, `rw1-${rest.join("-")}`, `ath-${rest.join("-")}`]) {
+    assert.throws(() => Practice.parseSetCode(typed, "sat-reading-writing"), /does not name a section/, typed);
+  }
+  // A whole bare run code, with or without its attempts, still works.
+  assert.equal(Practice.parseSetCode(rest.join("-"), "sat-math").code, run.code);
+  const mask = Mask.fromBits([0, 3, 5]);
+  const withAttempts = `${Mask.toCode(mask)}-ab-010`;
+  assert.equal(Practice.parseSetCode(withAttempts, "sat-math").code, withAttempts);
+  // Its attempts must hold one digit per template in its mask.
+  assert.throws(() => Practice.parseSetCode(`${Mask.toCode(mask)}-ab-01`, "sat-math"), /does not name a section/);
+});
+
 test("a set drawn around seen scenes rebuilds exactly from its code", () => {
   // Reading and Writing templates name scenes. With every first-draw scene
   // marked as seen, each template steers to another attempt, which the code
@@ -200,8 +219,6 @@ test("helpers for review sets, filters, and registries", () => {
   ];
   assert.deepEqual(Practice.onePerTemplate(questions).map((question) => question.id), ["a", "c"]);
   assert.deepEqual(Practice.runFilters("targeted", { skills: ["x"] }), { skills: ["x"] });
-  assert.deepEqual(Practice.runFilters("adaptive", { skills: ["x"] }, { skill: "Circles" }), { skills: ["Circles"] });
-  assert.deepEqual(Practice.runFilters("adaptive", {}, null), {});
   assert.deepEqual(Practice.runFilters("full", { skills: ["x"] }), {});
   assert.deepEqual(Practice.missedTemplateIds([
     { question: { templateId: "t1" }, answered: true, correct: true },
@@ -213,6 +230,19 @@ test("helpers for review sets, filters, and registries", () => {
   assert.deepEqual(Practice.templateVersions({ templates: [{ id: "a", version: 3 }, { id: "b" }] }), { a: 3, b: 1 });
   assert.equal(Practice.templateCount({ templates: [{ id: "a" }, { id: "b", retired: true }] }), 1);
   assert.ok(/^[0-9a-z]+$/.test(Practice.newRunSeed()));
+});
+
+test("registry entries count templates without the section's bundle", () => {
+  const registry = { templates: [
+    { id: "a", bit: 0, version: 2, difficulty: "Easy", domain: "Algebra", skill: "Linear functions", subskill: "slope" },
+    { id: "b", bit: 1, retired: true, difficulty: "Hard" },
+    { id: "c", bit: 2 },
+  ] };
+  assert.deepEqual(Practice.registryTemplates(registry), [
+    { id: "a", bit: 0, version: 2, difficulty: "Easy", domain: "Algebra", skill: "Linear functions" },
+  ]);
+  assert.deepEqual(Practice.registryTemplates(null), []);
+  assert.equal(Runs.available(Practice.registryTemplates(registry), { skills: ["Linear functions"], difficulties: ["Easy"] }), 1);
 });
 
 test("a skill drill takes several seeds per template, never the same item twice", () => {

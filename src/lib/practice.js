@@ -125,6 +125,24 @@
     return ((registry && registry.templates) || []).filter((entry) => !entry.retired).length;
   }
 
+  // A built registry's live templates as runs.available counts them
+  // ({ id, bit, version, difficulty, domain, skill }), so Practice can say
+  // how many kinds of question match without loading a section's template
+  // bundle. Entries without a tier (a registry built without them) are
+  // left out.
+  function registryTemplates(registry) {
+    return ((registry && registry.templates) || [])
+      .filter((entry) => entry && !entry.retired && entry.difficulty)
+      .map((entry) => ({
+        id: entry.id,
+        bit: entry.bit,
+        version: Number(entry.version) || 1,
+        difficulty: entry.difficulty,
+        domain: entry.domain,
+        skill: entry.skill,
+      }));
+  }
+
   /* ----------------------------------------------------------- set codes */
 
   function formatSetCode(sectionKey, code) {
@@ -132,9 +150,25 @@
     return prefix ? `${prefix}-${code}` : code;
   }
 
+  // Whether "<mask>-<seed>-<attempts>" is a whole run code: its attempts
+  // hold one digit per template in its mask (lib/runs.js runCode).
+  function bareCodeWithAttempts(parts) {
+    if (parts.length !== 3 || !parts.every((part) => /^[0-9a-z]+$/.test(part))) return false;
+    try {
+      return Mask.size(Mask.fromCode(parts[0])) === parts[2].length;
+    } catch (error) {
+      return false;
+    }
+  }
+
   // { sectionKey, code, mask, seed } from typed text. A code without its
-  // section prefix (a bare run code) takes `fallbackSectionKey`. Throws a
-  // SyntaxError with a readable message when the text is not a set code.
+  // section prefix (a bare run code, "<mask>-<seed>" or
+  // "<mask>-<seed>-<attempts>") takes `fallbackSectionKey`. A code of three
+  // or more parts that starts with anything but a section prefix is refused
+  // unless it is a whole bare run code, so a mistyped or cut-off prefix
+  // ("mat-3f9k2-a8x1q") never builds a different set in the current section.
+  // Throws a SyntaxError with a readable message when the text is not a set
+  // code.
   function parseSetCode(text, fallbackSectionKey) {
     const clean = String(text || "").trim().toLowerCase().replace(/\s+/g, "");
     const parts = clean.split("-");
@@ -144,7 +178,7 @@
     if (prefixed && parts.length >= 3) {
       sectionKey = prefixed;
       code = parts.slice(1).join("-");
-    } else if (parts.length === 4) {
+    } else if (parts.length >= 3 && !bareCodeWithAttempts(parts)) {
       throw new SyntaxError(`"${parts[0]}" does not name a section; set codes start with math- or rw-.`);
     }
     if (!sectionKey) throw new SyntaxError("Set codes start with math- or rw-, which names their section.");
@@ -446,12 +480,9 @@
   }
 
   // The template filters a mode builds with: the form's topic filters for
-  // targeted practice, the weakest skill for Recommended next, none for a
-  // full section mix.
-  function runFilters(mode, formFilters, weakest) {
-    if (mode === "targeted") return formFilters || {};
-    if (mode === "adaptive") return weakest ? { skills: [weakest.skill] } : {};
-    return {};
+  // targeted practice, none for a whole-section mix.
+  function runFilters(mode, formFilters) {
+    return mode === "targeted" ? formFilters || {} : {};
   }
 
   // Template ids of the items a finished set missed (wrong, blank, or right
@@ -480,6 +511,7 @@
     domainWeights,
     templateVersions,
     templateCount,
+    registryTemplates,
     formatSetCode,
     parseSetCode,
     newRunSeed,
