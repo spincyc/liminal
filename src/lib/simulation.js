@@ -207,6 +207,12 @@
     return `${state.seed}${Number(index === undefined ? state.index : index).toString(36)}`;
   }
 
+  // A correct answer counts only when it came without a hint, as in the
+  // test screen's report and LiminalProgress.stats.
+  function rightWithoutHint(item) {
+    return Boolean(item.correct) && !item.hinted;
+  }
+
   /* -------------------------------------------------------------- changes */
 
   // The current module's questions are built and on screen. `info`:
@@ -264,7 +270,7 @@
     if (!state.current || state.current.sessionId !== settings.sessionId) return state;
     const next = copy(state);
     const items = copy(settings.items || []);
-    const correct = items.filter((item) => item.correct).length;
+    const correct = items.filter(rightWithoutHint).length;
     const record = Object.assign({}, next.current, {
       finishedAt: Number(settings.now) || 0,
       elapsedMs: Math.max(0, Math.round(Number(settings.elapsedMs) || 0)),
@@ -328,10 +334,33 @@
   /* ------------------------------------------------------------ resuming */
 
   const isObject = (value) => Boolean(value) && typeof value === "object" && !Array.isArray(value);
+  const isCount = (value) => Number.isFinite(value) && value >= 0;
+
+  // A finished module's record as finishModule writes it: at a module step
+  // before the one on screen, in its section, with items the report and the
+  // answer review can read.
+  function validModuleRecord(entry, steps, index) {
+    if (!isObject(entry) || !Number.isInteger(entry.step) || entry.step < 0 || entry.step >= index) return false;
+    const step = steps[entry.step];
+    if (!step || step.type !== "module" || step.sectionKey !== entry.sectionKey) return false;
+    if (!MODULE_KEYS.includes(entry.module)) return false;
+    if (typeof entry.sessionId !== "string" || !isCount(entry.elapsedMs)) return false;
+    if (entry.timeLimitSeconds !== undefined && entry.timeLimitSeconds !== null && !isCount(entry.timeLimitSeconds)) return false;
+    return Array.isArray(entry.items) && entry.items.every((item) => isObject(item) &&
+      typeof item.questionId === "string" && typeof item.answered === "boolean" &&
+      typeof item.correct === "boolean" && isCount(item.timeMs));
+  }
+
+  function validRoute(route) {
+    return isObject(route) && Object.prototype.hasOwnProperty.call(ROUTE_NAMES, route.route) &&
+      isCount(route.correct) && isCount(route.total) && isCount(route.cutoff);
+  }
 
   // A saved test made safe to continue, or null when it cannot be: the
-  // wrong schema, a plan this version does not know, or a step it cannot
-  // show.
+  // wrong schema, a plan this version does not know, a step it cannot show,
+  // or a finished module, route, or break it could not report. Anything
+  // that would make the report fail later is refused here, so a bad save is
+  // removed once instead of failing on every Resume.
   function restore(saved) {
     if (!isObject(saved) || saved.schema !== SCHEMA || saved.version !== VERSION) return null;
     if (!KINDS.includes(saved.kind) || !Array.isArray(saved.steps) || !saved.steps.length) return null;
@@ -343,10 +372,20 @@
     const index = Number(saved.index);
     if (!Number.isInteger(index) || index < 0 || index > saved.steps.length) return null;
     if (!Array.isArray(saved.modules) || !isObject(saved.routes)) return null;
+    if (!saved.modules.every((entry) => validModuleRecord(entry, saved.steps, index))) return null;
+    // One record per module step already passed, in order.
+    const passed = saved.steps.map((step, at) => (step.type === "module" && at < index ? at : null))
+      .filter((at) => at !== null);
+    if (saved.modules.length !== passed.length ||
+        saved.modules.some((entry, at) => entry.step !== passed[at])) return null;
+    if (!Object.keys(saved.routes).every((key) => Modules.SECTIONS[key] && validRoute(saved.routes[key]))) return null;
+    if (saved.rest !== null && saved.rest !== undefined &&
+        !(isObject(saved.rest) && isCount(saved.rest.startedAt) && isCount(saved.rest.endsAt))) return null;
     const state = copy(saved);
     state.current = isObject(state.current) && state.current.step === index ? state.current : null;
     try {
       currentStep(state);
+      report(state);
     } catch (error) {
       return null;
     }
@@ -363,15 +402,16 @@
     const title = runTitle(state);
     if (step.type === "done") return `${title}: finished.`;
     if (step.type === "break") return `${title}: on the break before ${step.next}.`;
-    const where = state.kind === "module" ? "" : `, module ${step.number} of ${step.count}`;
-    return `${title}${where}: ${step.title}, ${step.size} questions in ${step.minutes} minutes.`;
+    // A module test's title already names its module.
+    if (state.kind === "module") return `${title}: ${step.size} questions in ${step.minutes} minutes.`;
+    return `${title}, module ${step.number} of ${step.count}: ${step.title}, ${step.size} questions in ${step.minutes} minutes.`;
   }
 
   /* -------------------------------------------------------------- report */
 
   function tally(list) {
     const total = list.length;
-    const correct = list.filter((item) => item.correct).length;
+    const correct = list.filter(rightWithoutHint).length;
     return { total, correct, accuracy: total ? correct / total : null };
   }
 
@@ -440,8 +480,14 @@
       elapsedMs: state.modules.reduce((sum, entry) => sum + entry.elapsedMs, 0),
       timeLimitSeconds: state.modules.reduce((sum, entry) => sum + (entry.timeLimitSeconds || 0), 0),
       modules,
-      sections: sectionKeys.map((sectionKey) => Object.assign({ sectionKey, label: sectionLabel(sectionKey) },
-        tally(items.filter((item) => item.sectionKey === sectionKey)))),
+      // Each section on its own, with its Hard questions: the real test
+      // scores the two sections separately.
+      sections: sectionKeys.map((sectionKey) => {
+        const own = items.filter((item) => item.sectionKey === sectionKey);
+        return Object.assign({ sectionKey, label: sectionLabel(sectionKey) }, tally(own), {
+          hard: tally(own.filter((item) => item.difficulty === "Hard")),
+        });
+      }),
       byDomain,
       byTier,
       routes,

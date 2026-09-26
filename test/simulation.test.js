@@ -252,6 +252,9 @@ test("a test saved mid-module resumes at that module with its questions and excl
   assert.deepEqual(Simulation.usedScenes(restored, RW), ["harbor"]);
   assert.deepEqual(Simulation.usedTemplateIds(restored, MATH), []);
   assert.match(Simulation.describe(restored), /^Full-length SAT, module 2 of 4: Section 1, Module 2/);
+  const single = Simulation.create({ kind: "module", sectionKey: MATH, module: "h", seed: "d", now: 1 });
+  assert.equal(Simulation.describe(single), "SAT Math: Module 2, harder: 22 questions in 35 minutes.",
+    "a module test is named once");
 
   // A result for another module changes nothing; the live one advances.
   const stray = Simulation.finishModule(restored, { sessionId: "other", items: [] });
@@ -384,5 +387,59 @@ test("compact items keep what routing and review need, and never trust a stray c
   assert.deepEqual(item, {
     questionId: "sat-math:x:1", sectionKey: MATH, domain: "Algebra", skill: "s", difficulty: "Hard",
     response: null, answered: false, correct: false, marked: true, hinted: false, timeMs: 13,
+  });
+});
+
+test("the full-length report gives each section its own count and Hard count", () => {
+  let state = Simulation.create({ kind: "full", seed: "p", now: 1 });
+  state = play(play(play(play(play(state, 18, 10), 9, 20), 0, 30), 10, 40), 11, 50);
+  const report = Simulation.report(state);
+  const items = state.modules.flatMap((entry) => entry.items.map((item) => Object.assign({ sectionKey: entry.sectionKey }, item)));
+  const hardIn = (key) => items.filter((item) => item.sectionKey === key && item.difficulty === "Hard");
+  assert.deepEqual(report.sections.map((row) => [row.label, row.correct, row.total, row.hard.total, row.hard.correct]), [
+    ["Reading and Writing", 27, 54, hardIn(RW).length, hardIn(RW).filter((item) => item.correct).length],
+    ["Math", 21, 44, hardIn(MATH).length, hardIn(MATH).filter((item) => item.correct).length],
+  ]);
+});
+
+test("a hinted right answer never counts toward routing or the report", () => {
+  let state = Simulation.create({ kind: "section", sectionKey: MATH, seed: "h", now: 1 });
+  state = Simulation.beginModule(state, { sessionId: "m1", templateIds: [], questionIds: [], now: 2 });
+  const items = fakeItems(MATH, 22, 14).map((item, index) => Object.assign(item, { hinted: index < 2 }));
+  state = Simulation.finishModule(state, {
+    sessionId: "m1", items: Simulation.compactItems(items), elapsedMs: 1, finishReason: "user", now: 3,
+  });
+  assert.equal(state.routes[MATH].correct, 12, "14 right, 2 of them after a hint");
+  assert.equal(state.routes[MATH].route, "e", "12 of 22 is below the cutoff of 14");
+  assert.equal(Simulation.report(state).correct, 12);
+});
+
+test("restore refuses a saved test whose finished modules the report could not read", () => {
+  let state = Simulation.create({ kind: "full", seed: "v", now: 1 });
+  state = play(play(state, 18, 10), 9, 20);
+  assert.ok(Simulation.restore(state), "a sound save restores");
+  const broken = (change) => {
+    const copy = JSON.parse(JSON.stringify(state));
+    change(copy);
+    return copy;
+  };
+  const refused = [
+    broken((saved) => { delete saved.modules[0].items; }),
+    broken((saved) => { saved.modules[0].items = "27 items"; }),
+    broken((saved) => { saved.modules[1].items[3] = null; }),
+    broken((saved) => { saved.modules[0].items[0].questionId = 7; }),
+    broken((saved) => { saved.modules[0].elapsedMs = "ten minutes"; }),
+    broken((saved) => { saved.modules[0].step = 3; }),
+    broken((saved) => { saved.modules[0].sectionKey = MATH; }),
+    broken((saved) => { saved.modules[0].module = "routed"; }),
+    broken((saved) => { saved.modules.pop(); }),
+    broken((saved) => { saved.modules.push(saved.modules[0]); }),
+    broken((saved) => { saved.routes[RW] = { route: "x", correct: 1, total: 2, cutoff: 1 }; }),
+    broken((saved) => { saved.routes["act-english"] = saved.routes[RW]; }),
+    broken((saved) => { saved.rest = { startedAt: "soon" }; }),
+  ];
+  refused.forEach((saved, index) => {
+    assert.equal(Simulation.restore(saved), null, `case ${index}`);
+    assert.equal(Simulation.canResume(saved), false, `case ${index}`);
   });
 });
