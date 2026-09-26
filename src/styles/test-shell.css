@@ -682,6 +682,11 @@
   color: var(--lm-muted);
 }
 
+/* Right only after a hint: not counted as correct, so never green. */
+.lm-shell .lm-verdict-tag.is-hinted {
+  color: var(--lm-ink);
+}
+
 .lm-shell .lm-marked-tag {
   color: var(--lm-ink);
   font-weight: 600;
@@ -1484,6 +1489,12 @@
   color: var(--lm-ink);
 }
 
+.lm-shell .lm-verdict.is-hinted {
+  border-left: 4px solid var(--lm-highlight-edge);
+  background: var(--lm-highlight);
+  color: var(--lm-ink);
+}
+
 .lm-shell .lm-explanation {
   margin-top: 14px;
   padding: 4px 0 0;
@@ -1692,6 +1703,11 @@
   background: var(--lm-bad);
 }
 
+.lm-shell .lm-swatch.is-hinted {
+  border: 1.5px solid var(--lm-highlight-edge);
+  background: var(--lm-highlight);
+}
+
 .lm-shell .lm-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
@@ -1737,7 +1753,14 @@
   color: #fff;
 }
 
+.lm-shell .lm-cell.is-hinted {
+  border: 1.5px solid var(--lm-highlight-edge);
+  background: var(--lm-highlight);
+  color: var(--lm-ink);
+}
+
 .lm-shell .lm-cell.is-checked-correct::after,
+.lm-shell .lm-cell.is-checked-hinted::after,
 .lm-shell .lm-cell.is-checked-wrong::after {
   position: absolute;
   right: 3px;
@@ -1755,6 +1778,10 @@
 
 .lm-shell .lm-cell.is-checked-wrong::after {
   background: #ff6b61;
+}
+
+.lm-shell .lm-cell.is-checked-hinted::after {
+  background: var(--lm-highlight-strong);
 }
 
 .lm-shell .lm-cell-pin {
@@ -1916,6 +1943,58 @@
   font-weight: 700;
 }
 
+/* A set that spans sections: one line per section, the total below. */
+.lm-shell .lm-score-card.has-sections {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+}
+
+.lm-shell .lm-score-sections {
+  text-align: left;
+}
+
+.lm-shell .lm-section-scores {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lm-shell .lm-section-scores li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 16px;
+  align-items: baseline;
+}
+
+.lm-shell .lm-section-name {
+  font-weight: 700;
+}
+
+.lm-shell .lm-section-score {
+  font-size: 1.05rem;
+  text-align: right;
+}
+
+.lm-shell .lm-section-score strong {
+  font-size: 1.5rem;
+}
+
+.lm-shell .lm-section-hard {
+  grid-column: 1 / -1;
+  color: var(--lm-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.lm-shell .lm-score-combined {
+  margin: 14px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--lm-line);
+  color: var(--lm-muted);
+  font-size: 0.9rem;
+}
+
 .lm-shell .lm-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -2054,6 +2133,12 @@
 .lm-shell .lm-result.is-omitted {
   color: var(--lm-muted);
   font-weight: 600;
+}
+
+.lm-shell .lm-result.is-hinted {
+  color: var(--lm-ink);
+  font-weight: 600;
+  white-space: normal;
 }
 
 /* ---------------------------------------------------------------- dialog */
@@ -2448,9 +2533,18 @@
     padding: 16px 14px 20px;
   }
 
-  .lm-shell .lm-score-card {
+  .lm-shell .lm-score-card,
+  .lm-shell .lm-score-card.has-sections {
     grid-template-columns: 1fr;
     padding: 18px;
+  }
+
+  .lm-shell .lm-section-scores li {
+    grid-template-columns: 1fr;
+  }
+
+  .lm-shell .lm-section-score {
+    text-align: left;
   }
 
   .lm-shell .lm-alert {

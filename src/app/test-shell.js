@@ -66,6 +66,16 @@
     ["−1/7", "-1/7, -.1428, -.1429, -0.143", "-.14, -0.14"],
   ];
 
+  // How an item ended, for the answer review, the navigator, and the
+  // report. "hinted": right, but only after a hint, so not counted.
+  const VERDICT_LABELS = {
+    correct: "Correct",
+    hinted: "Right after a hint, not counted",
+    incorrect: "Incorrect",
+    omitted: "Not answered",
+  };
+  const VERDICT_ICONS = { correct: "check", hinted: "bulb", incorrect: "cross", omitted: "warning" };
+
   let active = null;
 
   /* ------------------------------------------------------------- utilities */
@@ -190,6 +200,24 @@
 
   function percent(value) {
     return value === null || value === undefined ? "—" : `${Math.round(value * 100)}%`;
+  }
+
+  function plural(count, word) {
+    return `${count} ${word}${count === 1 ? "" : "s"}`;
+  }
+
+  // What discarding records, in words, from LiminalTestEngine.discardResult
+  // counts ({ seen, answered, blank, unseen }): every question seen, none
+  // unseen. The app's own dialogs (replacing or discarding a saved set)
+  // use the same words.
+  function describeDiscard(info) {
+    if (!info || !info.seen) return "";
+    const parts = [];
+    if (info.answered) parts.push(`${info.answered} answered`);
+    if (info.blank) parts.push(`${info.blank} left blank, which count${info.blank === 1 ? "s" : ""} as wrong`);
+    const verb = info.seen === 1 ? "is" : "are";
+    return `The ${plural(info.seen, "question")} you saw ${verb} recorded in your progress (${parts.join(" and ")})` +
+      (info.unseen ? `; the ${info.unseen} you never opened ${info.unseen === 1 ? "is" : "are"} not.` : ".");
   }
 
   function isMathSection(sectionKey) {
@@ -690,6 +718,9 @@
     // running out, delivers the result and hands over to the app
     // (onContinue) instead of showing a report, so there is no going back.
     const moduleInfo = options.module || (resumeShell && resumeShell.module) || null;
+    // A module's clock runs on the wall clock, as on test day: Save and exit
+    // does not stop it (LiminalTestEngine serialize), so time away counts.
+    if (moduleInfo && !session.state.wallClock && !session.state.finished) session.useWallClock();
     // A set that spans sections (a mini test) switches directions and tools
     // at each section boundary, as the real test does.
     const mixed = new Set(session.state.questions.map((question) => question.sectionKey).filter(Boolean)).size > 1;
@@ -734,8 +765,9 @@
       ? new root.ResizeObserver(() => { if (readerShown()) layoutReader(); })
       : null;
 
-    // `paused`: the student chose Save and exit, so a timed set's clock
-    // waits for them instead of running while the set is put away.
+    // `paused`: the student chose Save and exit, so a timed practice set's
+    // clock waits for them instead of running while the set is put away. A
+    // module's clock never waits (wallClock), so the engine ignores it there.
     function snapshot(settings) {
       return {
         schema: SHELL_SCHEMA,
@@ -1209,13 +1241,17 @@
         exit("done");
         return;
       }
+      const discard = describeDiscard(session.discardResult());
       if (moduleInfo) {
         confirmDialog({
           title: "Leave this test?",
-          text: "Save and exit keeps your place: resume the test from the Practice page" +
-            `${session.state.timeLimitSeconds ? ", and this module's timer picks up where it stopped" : ""}. ` +
-            "Discard test ends the whole test for good. Modules you already finished stay in your progress; " +
-            "this module's answers are not recorded.",
+          text: "Save and exit keeps your place: resume the test from the Practice page." +
+            (session.state.timeLimitSeconds
+              ? " This module's clock keeps running while you are away, as it would on test day; " +
+                "if it runs out, the answers you have are submitted."
+              : "") +
+            " Discard test ends the whole test for good. Modules you finished stay in your progress." +
+            (discard ? ` From this module: ${discard.charAt(0).toLowerCase()}${discard.slice(1)}` : ""),
           cancel: "Keep testing",
           alternative: { text: "Discard test", onChoose: () => exit("discard") },
           confirm: "Save and exit",
@@ -1223,14 +1259,11 @@
         });
         return;
       }
-      const unchecked = session.state.feedback === "instant"
-        ? "Answers you have already checked stay in your progress; the rest of this set is thrown away."
-        : "None of this set's answers are recorded.";
       confirmDialog({
         title: "Leave this set?",
         text: "Save and exit keeps every answer so far: resume the set from the Practice page" +
           `${session.state.timeLimitSeconds ? ", and the timer picks up where it stopped" : ""}. ` +
-          `Discard set ends it for good. ${unchecked}`,
+          `Discard set ends it for good. ${discard}`,
         cancel: "Keep testing",
         alternative: { text: "Discard set", onChoose: () => exit("discard") },
         confirm: "Save and exit",
@@ -1238,12 +1271,15 @@
       });
     }
 
-    // reason: "save" (resumable, clock paused), "discard", or "done" (the
-    // report was already delivered).
+    // reason: "save" (resumable; a practice set's clock is paused, a
+    // module's keeps running), "discard" (with `discarded`, what the app
+    // records: LiminalTestEngine.discardResult), or "done" (the report was
+    // already delivered).
     function exit(reason) {
       if (reason === "save") flushSave({ paused: true, force: true });
+      const discarded = reason === "discard" ? session.discardResult() : undefined;
       teardown();
-      call("onExit", { reason });
+      call("onExit", discarded ? { reason, discarded } : { reason });
     }
 
     /* ---- navigation */
@@ -1478,11 +1514,10 @@
       refs.markButton = null;
       refs.elimToggle = null;
       if (reviewing) {
-        const status = session.itemStatus(index);
-        const verdict = !status.answered ? "omitted" : status.correct ? "correct" : "incorrect";
+        const verdict = verdictOf(session.itemStatus(index));
         bar.appendChild(h("span", { className: `lm-verdict-tag is-${verdict}` }, [
-          icon(verdict === "correct" ? "check" : verdict === "incorrect" ? "cross" : "warning"),
-          verdict === "correct" ? "Correct" : verdict === "incorrect" ? "Incorrect" : "Not answered",
+          icon(VERDICT_ICONS[verdict]),
+          VERDICT_LABELS[verdict],
         ]));
         if (status.marked) {
           bar.appendChild(h("span", { className: "lm-marked-tag" }, [icon("bookmark"), "Marked"]));
@@ -1731,20 +1766,30 @@
       ]);
     }
 
+    // A correct answer reached after a hint is shown apart and never
+    // called plainly correct: it is not counted as correct here or in
+    // Progress.
+    function verdictOf(status) {
+      if (!status.answered) return "omitted";
+      if (!status.correct) return "incorrect";
+      return status.hinted ? "hinted" : "correct";
+    }
+
     function verdictBanner(question, index) {
-      const status = session.itemStatus(index);
+      const kind = verdictOf(session.itemStatus(index));
       const answer = correctLabel(question, index);
-      const kind = !status.answered ? "omitted" : status.correct ? "correct" : "incorrect";
       const text = kind === "correct"
         ? "Correct."
-        : kind === "incorrect"
-          ? `Incorrect. The correct answer is ${answer}.`
-          : `Not answered. The correct answer is ${answer}.`;
+        : kind === "hinted"
+          ? "Correct, with a hint — not counted as correct."
+          : kind === "incorrect"
+            ? `Incorrect. The correct answer is ${answer}.`
+            : `Not answered. The correct answer is ${answer}.`;
       return {
         kind,
         text,
         node: h("div", { className: `lm-verdict is-${kind}` }, [
-          icon(kind === "correct" ? "check" : kind === "incorrect" ? "cross" : "warning"),
+          icon(VERDICT_ICONS[kind]),
           h("p", { text }),
         ]),
       };
@@ -2561,13 +2606,16 @@
       const reviewing = view === "answers";
       const flags = [];
       let state;
+      const hintedRight = status.correct === true && status.hinted;
       if (reviewing) {
-        state = !status.answered ? "unanswered" : status.correct ? "correct" : "incorrect";
-        flags.push(state === "unanswered" ? "not answered" : state);
+        const verdict = verdictOf(status);
+        state = verdict === "omitted" ? "unanswered" : verdict;
+        flags.push(VERDICT_LABELS[verdict].toLowerCase());
       } else {
         state = status.answered ? "answered" : "unanswered";
         flags.push(state);
-        if (status.correct === true) flags.push("checked correct");
+        if (hintedRight) flags.push("checked correct after a hint, not counted");
+        else if (status.correct === true) flags.push("checked correct");
         if (status.correct === false && status.checked) flags.push("checked incorrect");
       }
       if (status.marked) flags.push("marked for review");
@@ -2581,7 +2629,9 @@
           status.marked ? "is-marked" : "",
           current ? "is-current" : "",
           big ? "is-big" : "",
-          !reviewing && status.checked ? (status.correct ? "is-checked-correct" : "is-checked-wrong") : "",
+          !reviewing && status.checked
+            ? (hintedRight ? "is-checked-hinted" : status.correct ? "is-checked-correct" : "is-checked-wrong")
+            : "",
         ].filter(Boolean).join(" "),
         "aria-label": `Question ${status.number}, ${flags.join(", ")}`,
         "aria-current": current ? "true" : null,
@@ -2595,10 +2645,12 @@
     }
 
     function legend() {
+      const anyHinted = session.state.hinted.some(Boolean);
       const items = view === "answers"
         ? [
           ["lm-legend-current", icon("pin"), "Current"],
           ["lm-legend-correct", h("span", { className: "lm-swatch is-correct" }), "Correct"],
+          anyHinted ? ["lm-legend-hinted", h("span", { className: "lm-swatch is-hinted" }), "Right after a hint"] : null,
           ["lm-legend-incorrect", h("span", { className: "lm-swatch is-incorrect" }), "Incorrect"],
           ["lm-legend-unanswered", h("span", { className: "lm-swatch is-unanswered" }), "Not answered"],
           ["lm-legend-marked", icon("bookmark", "lm-flag-icon"), "Marked"],
@@ -2731,24 +2783,54 @@
             `${formatClock(budgetMs, false)} (${diff > 0 ? `${formatClock(diff, false)} over` : "within pace"})`;
         }
       }
-      children.push(h("div", { className: "lm-score-card" }, [
-        h("div", { className: "lm-score" }, [
+      // A set that spans sections (the full-length test, a mini test)
+      // reports each section on its own, as the real test scores them, with
+      // its Hard questions; the combined count is secondary.
+      const sections = report.bySection.length > 1 ? report.bySection : null;
+      const scoreLine = (row) => [
+        h("strong", { text: `${row.correct} of ${row.total}` }),
+        ` correct (${percent(row.accuracy)})`,
+      ];
+      const headline = sections
+        ? h("div", { className: "lm-score lm-score-sections" }, [
+          h("ul", { className: "lm-section-scores" }, sections.map((row) => h("li", {}, [
+            h("span", { className: "lm-section-name", text: row.section || row.sectionKey }),
+            h("span", { className: "lm-section-score" }, scoreLine(row)),
+            h("span", {
+              className: "lm-section-hard",
+              text: row.hard.total ? `Hard: ${row.hard.correct} of ${row.hard.total}` : "No Hard questions",
+            }),
+          ]))),
+          h("p", {
+            className: "lm-score-combined",
+            text: `${sections.length === 2 ? "Both sections" : `All ${sections.length} sections`} together: ` +
+              `${report.correct} of ${report.total} (${percent(report.accuracy)}). ` +
+              "Only a count: the real test scores each section on its own.",
+          }),
+        ])
+        : h("div", { className: "lm-score" }, [
           h("p", { className: "lm-score-main" }, [
             h("strong", { text: `${report.correct} of ${report.total}` }),
             " correct",
           ]),
           h("p", { className: "lm-score-pct", text: percent(report.accuracy) }),
-        ]),
+        ]);
+      children.push(h("div", { className: `lm-score-card${sections ? " has-sections" : ""}` }, [
+        headline,
         h("dl", { className: "lm-stats" }, [
           statBlock("Answered", `${report.answered} of ${report.total}`),
+          report.hintedCorrect
+            ? statBlock("After a hint", `${report.hintedCorrect} right, not counted`)
+            : null,
           statBlock("Marked for review", String(report.marked)),
           statBlock("Time used", timeValue, timeNote),
         ]),
       ]));
-      const hintedCorrect = report.items.filter((item) => item.correct && item.hinted).length;
-      if (hintedCorrect) {
+      if (report.hintedCorrect) {
         children.push(h("p", { className: "lm-report-note", text:
-          `${hintedCorrect} of your correct answers came after a hint. Progress counts them apart: they show you can follow the method, not yet that you can find it.` }));
+          `${report.hintedCorrect} of your answers ${report.hintedCorrect === 1 ? "was" : "were"} right only after a hint, so ` +
+          `${report.hintedCorrect === 1 ? "it is" : "they are"} not counted as correct, here or in Progress: a hint shows ` +
+          "you can follow the method, not yet that you can find it. Review brings these questions back." }));
       }
       // An on-screen SAT test adds why each Module 2 went the way it did.
       (Array.isArray(options.reportNotes) ? options.reportNotes : []).forEach((text) => {
@@ -2831,8 +2913,9 @@
         h("table", { className: "lm-table lm-items-table" }, [
           h("thead", {}, [h("tr", {}, columns.map((text) => h("th", { scope: "col", text })))]),
           h("tbody", {}, report.items.map((item) => {
-            const result = !item.answered ? "Not answered" : item.correct ? "Correct" : "Incorrect";
-            const resultClass = !item.answered ? "is-omitted" : item.correct ? "is-correct" : "is-incorrect";
+            const verdict = verdictOf(item);
+            const result = VERDICT_LABELS[verdict];
+            const resultClass = `is-${verdict}`;
             return h("tr", { className: resultClass }, [
               h("th", { scope: "row", "data-label": columns[0] }, [
                 h("button", {
@@ -2849,7 +2932,7 @@
               h("td", { "data-label": columns[1], text: responseLabel(item.question, item.index, item.response) }),
               h("td", { "data-label": columns[2], text: correctLabel(item.question, item.index) }),
               h("td", { "data-label": columns[3], className: `lm-result ${resultClass}` }, [
-                icon(item.correct ? "check" : item.answered ? "cross" : "warning"), result,
+                icon(VERDICT_ICONS[verdict]), result,
               ]),
               h("td", { "data-label": columns[4], text: item.marked ? "Marked" : "—" }),
               h("td", { "data-label": columns[5], text: item.question.domain || "" }),
@@ -3069,5 +3152,6 @@
     start,
     startBreak,
     formatClock,
+    describeDiscard,
   };
 });
