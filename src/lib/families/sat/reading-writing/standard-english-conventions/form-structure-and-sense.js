@@ -614,7 +614,7 @@
     },
     {
       scene: "sec-riverside-poets-letters",
-      text: "Historians of the Riverside Poets, a circle of writers active in Cincinnati in the 1930s, have long known that its members read one another's drafts. Today, an archive of more than three hundred letters from the poet Delia Hart to her fellow writers ______ held by the city's public library, where scholars can see how closely the poets worked together.",
+      text: "Historians of the Riverside Poets, a circle of writers active in the river port of Alder Bay in the 1930s, have long known that its members read one another's drafts. Today, an archive of more than three hundred letters from the poet Delia Hart to her fellow writers ______ held by the city's public library, where scholars can see how closely the poets worked together.",
       head: "archive", lure: "writers", tense: "present", cue: "Today",
     },
     {
@@ -624,7 +624,7 @@
     },
     {
       scene: "sec-ferreira-murals",
-      text: "In 1938, the painter Luis Ferreira covered the walls of a small post office in New Mexico with scenes of local life. Each of the twelve panels, which show farmers, miners, and railroad workers, ______ painted directly onto the wall's wet plaster that year.",
+      text: "In 1938, the painter Luis Ferreira covered the walls of a small post office in the desert town of Tolan with scenes of local life. Each of the twelve panels, which show farmers, miners, and railroad workers, ______ painted directly onto the wall's wet plaster that year.",
       head: "Each", lure: "workers", tense: "past", cue: "In 1938",
       why: "“Each of” takes a singular verb, whatever noun follows it.",
     },
@@ -854,39 +854,42 @@
   // Hard: the head noun sits in front of an appositive, a relative clause,
   // or a chain of prepositional phrases full of nouns of the other number
   // (or the sentence is inverted behind such a chain), and the tense is set
-  // in a different sentence. `lure` is the last noun before the blank.
+  // by a time the passage names while a verb of the other tense sits nearer
+  // or earlier (a "today" or "still" in a past story, a past date in a
+  // present one), so both decisions need the passage read as a whole.
+  // `lure` is the last noun before the blank.
   const LONG_SUBJECT_TOPICS = [
     {
       scene: "sec-harwell-fire-engine",
-      text: "In 1851, the town of Harwell hired its first professional fire brigade. The brigade's first engine, a hand-pumped wagon built in Boston for crews of eight to ten volunteers and pulled through the streets by teams of horses, ______ sold for scrap when the town bought a steam pumper in 1879.",
+      text: "In 1851, the town of Harwell, which today keeps a small museum of old fire engines, hired its first professional fire brigade. The brigade's first engine, a hand-pumped wagon built in Boston for crews of eight to ten volunteers and pulled through the streets by teams of horses, ______ sold for scrap when the town bought a steam pumper in 1879.",
       head: "engine", lure: "horses", tense: "past", cue: "In 1851",
     },
     {
       scene: "sec-ngalu-recordings",
-      text: "Linguists who study endangered languages often work with only a handful of fluent speakers. The recordings that the linguist Amara Oduya made with the last three speakers of Ngalu, a language once spoken in a dozen villages along the northern coast, ______ now the only complete record of its grammar.",
-      head: "recordings", lure: "coast", tense: "present", cue: "now the only complete record",
+      text: "Linguists who study endangered languages often work with only a handful of fluent speakers. The recordings that the linguist Amara Oduya made with the last three speakers of Ngalu, a language once spoken in a dozen villages along the northern coast, ______ the only complete record of its grammar, and scholars still consult them whenever a question about the language comes up.",
+      head: "recordings", lure: "coast", tense: "present", cue: "scholars still consult them",
     },
     {
       scene: "sec-kessel-summit-box",
-      text: "Hikers who reach the summit of Mount Kessel are often surprised by what they find there. At the very top of the mountain, beside a cairn of stones piled up over the decades by generations of climbers, ______ a small iron box containing a logbook that visitors sign.",
+      text: "Hikers who reach the summit of Mount Kessel are often surprised by what they find there. At the very top of the mountain, beside a cairn of stones that generations of climbers piled up over the decades, ______ a small iron box containing a logbook that visitors sign.",
       head: "box", lure: "climbers", tense: "present", cue: "are often surprised",
       why: "the sentence is inverted, so the subject, “a small iron box,” follows the verb.",
     },
     {
       scene: "sec-arden-drowned-village",
-      text: "During the drought of 1976, water levels in the Selby Reservoir fell lower than at any time since it was built. The stone walls of Arden, a farming village that had been flooded when the dam was completed in 1934, ______ visible above the water for the first time in more than forty years.",
+      text: "During the drought of 1976, water levels in the Selby Reservoir, which now supplies three towns, fell lower than at any time since it was built. The stone walls of Arden, a farming village that had been flooded when the dam was completed in 1934, ______ visible above the water for the first time in more than forty years.",
       head: "walls", lure: "1934", tense: "past", cue: "During the drought of 1976",
       lureWord: "dam",
     },
     {
       scene: "sec-hollis-orchid-house",
-      text: "The Hollis Botanical Garden is best known for its cactus collection. Its newest exhibit, a greenhouse filled with rare orchids from the cloud forests of Ecuador and Peru, ______ open to visitors every day except Monday, when gardeners mist and repot the plants.",
+      text: "The Hollis Botanical Garden is best known for its cactus collection. Its newest exhibit, a greenhouse that the garden built in 2019 and filled with rare orchids from the cloud forests of Ecuador and Peru, ______ open to visitors every day except Monday, when gardeners mist and repot the plants.",
       head: "exhibit", lure: "Peru", tense: "present", cue: "every day except Monday",
       lureWord: "orchids",
     },
     {
       scene: "sec-night-migrant-calls",
-      text: "Many songbirds migrate at night, when they are hard to see. The calls that thrushes, warblers, and sparrows make while flying over a city in the dark ______ loud enough to be recorded by microphones on rooftops, so researchers can count migrants they never see.",
+      text: "Many songbirds migrate at night, when they are hard to see; in 2018, researchers began listening for them from city rooftops. The calls that thrushes, warblers, and sparrows make while flying over a city in the dark ______ loud enough to be recorded by microphones on rooftops, so researchers can count migrants they never see.",
       head: "calls", lure: "dark", tense: "present", cue: "Many songbirds migrate at night",
     },
     {
@@ -896,27 +899,27 @@
     },
     {
       scene: "sec-college-dormitory-rules",
-      text: "The first women's college in the region opened in 1871 with forty students. The rules of conduct posted in the entrance hall of its only dormitory, a converted farmhouse, ______ strict: students could not leave the grounds without permission or receive visitors after dark.",
+      text: "The first women's college in the region, which now enrolls four thousand students, opened in 1871 with forty students. The rules of conduct posted in the entrance hall of its only dormitory, a converted farmhouse, ______ strict: students could not leave the grounds without permission or receive visitors after dark.",
       head: "rules", lure: "farmhouse", tense: "past", cue: "opened in 1871",
     },
     {
       scene: "sec-dunmore-tool-library",
-      text: "Many public libraries now lend more than books. At the Dunmore Library, a collection of more than two hundred tools, from ladders and power drills to sewing machines, ______ available to any cardholder for up to a week at a time.",
+      text: "Many public libraries now lend more than books, and the Dunmore Library began lending tools in 2015. There, a collection of more than two hundred tools, from ladders and power drills to sewing machines, ______ available to any cardholder for up to a week at a time, and most of the tools are checked out every weekend.",
       head: "collection", lure: "machines", tense: "present", cue: "now lend more than books",
     },
     {
       scene: "sec-orrin-ice-sensors",
-      text: "Scientists at the Orrin Lake research station study how the lake changes under its winter ice. The sensors that record the temperature of the water at twelve different depths beneath the ice ______ checked by a technician every morning from December to March.",
+      text: "Scientists at the Orrin Lake research station, which opened in 1962, study how the lake changes under its winter ice. The sensors that record the temperature of the water at twelve different depths beneath the ice ______ checked by a technician every morning from December to March.",
       head: "sensors", lure: "ice", tense: "present", cue: "every morning from December to March",
     },
     {
       scene: "sec-brisk-harbor-proposal",
-      text: "In 1872, the town of Brisk Harbor held a vote on whether to build a seawall. The proposal, drawn up by a committee of merchants, fishermen, and shipbuilders after two winters of damaging storms, ______ approved by a wide margin, and construction began that summer.",
+      text: "In 1872, the town of Brisk Harbor, which is still protected by the seawall it built that decade, held a vote on whether to build one. The proposal, drawn up by a committee of merchants, fishermen, and shipbuilders after two winters of damaging storms, ______ approved by a wide margin, and construction began that summer.",
       head: "proposal", lure: "storms", tense: "past", cue: "In 1872",
     },
     {
       scene: "sec-tarn-glacier-photographs",
-      text: "The first expedition to map the Tarn Glacier set out from the port of Skarn in 1911. The photographs that its surveyor, a former ship's officer named Karl Brenner, took from the edge of the ice ______ the first images of the glacier ever published.",
+      text: "The first expedition to map the Tarn Glacier, whose ice still fills most of the valley, set out from the port of Skarn in 1911. The photographs that its surveyor, a former ship's officer named Karl Brenner, took from the edge of the ice ______ the first images of the glacier ever published.",
       head: "photographs", lure: "ice", tense: "past", cue: "in 1911",
     },
   ];
@@ -1046,6 +1049,36 @@
       text: "A mature saguaro cactus, native to the Sonoran Desert, can go for months without rain. After a heavy storm, ______ able to take up hundreds of liters of water within days, its pleated stem visibly swelling as the folds spread apart.",
       antecedent: "cactus", competitors: ["months"], role: "contraction", next: "able",
     },
+    {
+      scene: "sec-great-barrier-reef-size",
+      text: "The Great Barrier Reef stretches for more than 2,300 kilometers along the coast of Queensland, Australia. Although it is built by billions of tiny coral polyps, ______ large enough to be seen by astronauts in orbit.",
+      antecedent: "Reef", competitors: ["kilometers", "polyps"], role: "contraction", next: "large",
+    },
+    {
+      scene: "sec-general-sherman-sequoia",
+      text: "The giant sequoia known as General Sherman grows in California's Sierra Nevada, surrounded by thousands of other enormous trees. Measured by the volume of wood in its trunk, ______ larger than any other living tree on Earth.",
+      antecedent: "sequoia", competitors: ["trees"], role: "contraction", next: "larger",
+    },
+    {
+      scene: "sec-okavango-inland-delta",
+      text: "The Okavango River rises in the highlands of Angola and flows southeast into Botswana, but it never reaches the sea. After spreading into a vast inland delta at the edge of the Kalahari Desert, ______ slowly lost to evaporation and to the thirsty plants along its channels.",
+      antecedent: "River", competitors: ["highlands"], role: "contraction", next: "slowly",
+    },
+    {
+      scene: "sec-swiftlet-nest-harvest",
+      text: "Edible-nest swiftlets of Southeast Asia build their nests almost entirely from strands of their own hardened saliva. Because the nests are prized for making a costly soup, ______ harvested from cave walls and from specially built nesting houses, sometimes several times a year.",
+      antecedent: "nests", competitors: ["soup"], role: "contraction", next: "harvested",
+    },
+    {
+      scene: "sec-shipworm-boring",
+      text: "Shipworms are not worms at all but clams with long, soft bodies and a small pair of shells at one end. Using the ridged edge of that pair of shells to scrape away wood, ______ capable of eating through a ship's hull or a wooden pier.",
+      antecedent: "Shipworms", competitors: ["end", "edge", "pair", "wood"], role: "contraction", next: "capable",
+    },
+    {
+      scene: "sec-leafcutter-fungus",
+      text: "Leafcutter ants carry pieces of leaves back to their underground nest, but they do not eat the leaves themselves. Instead, ______ careful to feed each piece to a fungus that grows in the nest's chambers, and the ants then eat the fungus.",
+      antecedent: "ants", competitors: ["nest"], role: "contraction", next: "careful",
+    },
   ];
 
   const PRONOUN_FORMS = {
@@ -1057,7 +1090,7 @@
   // possessive comes before a noun.
   // (an explicit list: "cramped handwriting" is a noun phrase even though
   // "cramped" ends in -ed).
-  const PREDICATE_WORDS = ["able", "unable", "likely", "ready", "packed", "programmed", "transformed", "still", "now"];
+  const PREDICATE_WORDS = ["able", "unable", "likely", "ready", "packed", "programmed", "transformed", "still", "now", "large", "larger", "slowly", "harvested", "capable", "careful"];
   const roleOf = (next) => (PREDICATE_WORDS.includes(lower(firstWordOf(next))) ? "contraction" : "possessive");
 
   const distantPronoun = {
@@ -1292,7 +1325,8 @@
   // decides. The choices cross time (present or past) with aspect (simple or
   // perfect): "past" is a narrative with a stated past date; "earlier" an
   // action finished before another past moment ("by the time", "by then");
-  // "habitual" a present-tense account of what happens each year; "span" an
+  // "habitual" a present-tense account of what happens again and again (each
+  // topic says how often, `recurs`); "span" an
   // action that runs from a past point up to now ("since", "over the past").
   const TENSE_TOPICS = [
     {
@@ -1358,19 +1392,19 @@
     {
       scene: "sec-spotted-salamanders",
       text: "Spotted salamanders spend most of the year underground in the forests of eastern North America. On the first warm, rainy nights of spring, the adults ______ to the same shallow ponds where they hatched, sometimes crossing roads in large numbers.",
-      frame: "habitual", cue: "spend most of the year",
+      frame: "habitual", cue: "spend most of the year", recurs: "every spring",
       forms: { present: "migrate", past: "migrated", presentPerfect: "have migrated", pastPerfect: "had migrated" },
     },
     {
       scene: "sec-periodical-cicadas",
       text: "Periodical cicadas in the eastern United States spend thirteen or seventeen years underground, feeding on sap from tree roots. In the spring of their final year, once the soil about twenty centimeters down warms to roughly 18°C, the nymphs ______ to the surface by the millions.",
-      frame: "habitual", cue: "spend thirteen or seventeen years",
+      frame: "habitual", cue: "spend thirteen or seventeen years", recurs: "at the end of each brood's thirteen or seventeen years underground",
       forms: { present: "emerge", past: "emerged", presentPerfect: "have emerged", pastPerfect: "had emerged" },
     },
     {
       scene: "sec-old-faithful-timing",
       text: "Yellowstone's Old Faithful is not the park's largest geyser, but it is among the most predictable. Rangers forecast each eruption by timing the one before it: when an eruption lasts longer than about two and a half minutes, the geyser usually ______ again roughly 90 minutes later.",
-      frame: "habitual", cue: "Rangers forecast each eruption",
+      frame: "habitual", cue: "Rangers forecast each eruption", recurs: "again and again, about every ninety minutes",
       forms: { present: "erupts", past: "erupted", presentPerfect: "has erupted", pastPerfect: "had erupted" },
     },
     {
@@ -1381,7 +1415,7 @@
     },
     {
       scene: "sec-leatherback-tagging",
-      text: "The marine biologist Keiko Tan began tagging leatherback turtles on the beaches of northern Trinidad in 2009. Over the past fifteen years, her team ______ more than 2,000 turtles, and the data now show where the animals feed between nesting seasons.",
+      text: "The marine biologist Keiko Tan began tagging leatherback turtles on the beaches of the island of Keld in 2009. Over the past fifteen years, her team ______ more than 2,000 turtles, and the data now show where the animals feed between nesting seasons.",
       frame: "span", cue: "Over the past fifteen years",
       forms: { present: "tags", past: "tagged", presentPerfect: "has tagged", pastPerfect: "had tagged" },
     },
@@ -1424,7 +1458,7 @@
       presentPerfect: "uses the present perfect, which connects the action to the present rather than to an earlier past moment.",
     },
     habitual: {
-      past: "shifts into the past tense, though the passage describes what happens every year in the present tense.",
+      past: "shifts into the past tense, though the passage describes, in the present tense, something that happens {recurs}.",
       presentPerfect: "uses the present perfect, which does not fit a present-tense account of what regularly happens.",
       pastPerfect: "uses the past perfect, which needs a past moment to refer back to; the passage describes a recurring present event.",
     },
@@ -1473,7 +1507,7 @@
       const choices = square(Object.keys(TENSE_NAMES).map((tense) => [
         topic.forms[tense],
         TENSE_FEATURES[tense],
-        tense === needed ? null : `${q(topic.forms[tense])} ${TENSE_REASONS[topic.frame][tense]}`,
+        tense === needed ? null : `${q(topic.forms[tense])} ${TENSE_REASONS[topic.frame][tense].replace("{recurs}", topic.recurs)}`,
       ]));
       const instance = item(topic, this, {
         ...choices,
@@ -1510,165 +1544,183 @@
     },
   };
 
-  /* ------------------------------------ verb form: conditional sentences */
+  /* ------------------------------ verb tense: two time points in the passage */
 
-  // Hard: sentences that imagine what is not or was not so. The choices cross
-  // "would" (yes or no) with the perfect (yes or no): "would have saved",
-  // "would save", "had saved", "saved". Which clause holds the blank (the
-  // "if" clause or the result) decides "would"; whether the imagined time is
-  // past or present decides the perfect. `clause` is "condition" or
-  // "result"; `time` is "past" or "present".
-  const CONDITIONAL_TOPICS = [
+  // Hard. Re-scoped on 2026-09-26 from conditional mood ("were" / "would
+  // have"), which is not one of the official Form, Structure, and Sense
+  // points, to tense and aspect in a stated time frame; the id is kept so
+  // its registry bit carries on. Each passage names two times: the one that
+  // governs the blank (`anchor`) and another that lures toward a neighbouring
+  // tense (`lure`), usually nearer the blank or in a verb the student reads
+  // first. The choices cross time (present or past) with the perfect, as in
+  // sec-verb-tense-frame, but no signal phrase such as "by the time" or
+  // "since" sits next to the blank. Frames: "before" (complete before a past
+  // moment: past perfect), "finished" (at a finished past time: simple
+  // past), "span" (from a past point up to now: present perfect), and
+  // "general" (what happens again and again, told in the present).
+  const TWO_TIME_TOPICS = [
     {
-      scene: "sec-harwell-timber-bridge",
-      text: "The Harwell Bridge, built of timber in 1880, collapsed during the great flood of 1927. Engineers who studied the wreckage later concluded that if the bridge had been built of steel, it ______ the flood with little damage.",
-      clause: "result", time: "past", cue: "if the bridge had been built of steel",
-      forms: { base: "survive", past: "survived", participle: "survived" },
+      scene: "sec-mary-rose-raised",
+      text: "The Mary Rose, a warship built for King Henry VIII, now stands in a museum in Portsmouth, England, where visitors can walk past its timbers. When divers finally raised the wreck in 1982, it ______ on the floor of the Solent for 437 years, partly protected by layers of silt.",
+      frame: "before", anchor: "When divers finally raised the wreck in 1982", lure: "now stands",
+      forms: { present: "rests", past: "rested", presentPerfect: "has rested", pastPerfect: "had rested" },
     },
     {
-      scene: "sec-ardel-mapmaker",
-      text: "The mapmaker Jonas Ardel sailed with the 1788 expedition to the Keld Islands but fell ill and was left ashore before its final voyage. Had he stayed with the ship, historians believe, the expedition ______ the islands' southern coast before the winter storms began.",
-      clause: "result", time: "past", cue: "Had he stayed with the ship",
-      forms: { base: "reach", past: "reached", participle: "reached" },
+      scene: "sec-tarn-glacier-return",
+      text: "Karl Brenner photographed the Tarn Glacier for the expedition of 1911, and scientists still use his pictures to measure how far the ice has retreated. When Brenner returned to the glacier in 1936, its front ______ nearly a kilometer up the valley.",
+      frame: "before", anchor: "When Brenner returned to the glacier in 1936", lure: "how far the ice has retreated",
+      forms: { present: "retreats", past: "retreated", presentPerfect: "has retreated", pastPerfect: "had retreated" },
     },
     {
-      scene: "sec-rejected-rail-line",
-      text: "In 1972, voters in Marlow County rejected a proposed commuter rail line by fewer than two hundred votes. If the line had been built, planners later estimated, suburban commuters ______ nearly an hour each day during the decades that followed.",
-      clause: "result", time: "past", cue: "If the line had been built",
-      forms: { base: "save", past: "saved", participle: "saved" },
+      scene: "sec-voyager-interstellar",
+      text: "NASA launched Voyager 1 in 1977, and the probe still sends faint signals home today. When it crossed into interstellar space in August 2012, Voyager 1 ______ away from the Sun for nearly thirty-five years.",
+      frame: "before", anchor: "When it crossed into interstellar space in August 2012", lure: "still sends faint signals home today",
+      forms: { present: "travels", past: "traveled", presentPerfect: "has traveled", pastPerfect: "had traveled" },
     },
     {
-      scene: "sec-glass-negatives-cellar",
-      text: "The Varden Museum's collection of glass negatives survived the fire of 1954 only because a curator had moved the boxes to the cellar the week before. If the negatives ______ in the upstairs archive, all of them would have been destroyed.",
-      clause: "condition", time: "past", cue: "would have been destroyed",
-      forms: { base: "remain", past: "remained", participle: "remained" },
+      scene: "sec-champollion-1822",
+      text: "Scholars have studied the Rosetta Stone ever since French soldiers uncovered it in 1799. In 1822, the French linguist Jean-François Champollion ______ that its hieroglyphs recorded sounds as well as ideas, the insight that let him begin to read them.",
+      frame: "finished", anchor: "In 1822", lure: "Scholars have studied the Rosetta Stone ever since",
+      forms: { present: "announces", past: "announced", presentPerfect: "has announced", pastPerfect: "had announced" },
     },
     {
-      scene: "sec-marrow-notebooks",
-      text: "The poet Ines Marrow published only one book in her lifetime and burned most of her drafts shortly before she died in 1961. Scholars often wish that she ______ her notebooks, which might have shown how her poems took shape.",
-      clause: "condition", time: "past", cue: "might have shown",
-      forms: { base: "keep", past: "kept", participle: "kept" },
+      scene: "sec-lowell-bridge-opening",
+      text: "The Lowell Street Bridge has carried traffic across the river for nearly a century, and engineers have repaired its deck many times. The bridge first ______ to traffic on a cold morning in March 1934, when the mayor walked across it at the head of a small parade.",
+      frame: "finished", anchor: "on a cold morning in March 1934", lure: "has carried traffic across the river for nearly a century",
+      forms: { present: "opens", past: "opened", presentPerfect: "has opened", pastPerfect: "had opened" },
     },
     {
-      scene: "sec-ashby-levees",
-      text: "The Tolliver River flooded the town of Ashby in 1998, damaging more than three hundred homes. According to a report issued the following year, if the town ______ its levees after a smaller flood in 1991, most of that damage could have been avoided.",
-      clause: "condition", time: "past", cue: "could have been avoided",
-      forms: { base: "raise", past: "raised", participle: "raised" },
+      scene: "sec-hollis-library-doors",
+      text: "The Hollis Public Library has welcomed readers for more than ninety years, and its reading room is still lit entirely by skylights. The library ______ its doors in 1931 with a collection of just four thousand books, most of them donated by local families.",
+      frame: "finished", anchor: "in 1931", lure: "has welcomed readers for more than ninety years",
+      forms: { present: "opens", past: "opened", presentPerfect: "has opened", pastPerfect: "had opened" },
     },
     {
-      scene: "sec-keld-reservoir",
-      text: "The island of Keld gets almost all of its fresh water from a single reservoir, which has run low in each of the last five summers. If the reservoir were twice as large, residents ______ water during dry spells, and the island could support more farms.",
-      clause: "result", time: "present", cue: "If the reservoir were twice as large",
-      forms: { base: "ration", past: "rationed", participle: "rationed" }, negative: true,
+      scene: "sec-harlow-marathon-growth",
+      text: "Only 312 runners entered the first Harlow Marathon in 1981, and most of them lived in the city itself. The number of entrants ______ more than tenfold since then, and registration now fills within hours of opening each January.",
+      frame: "span", anchor: "since then", lure: "entered the first Harlow Marathon in 1981",
+      forms: { present: "grows", past: "grew", presentPerfect: "has grown", pastPerfect: "had grown" },
     },
     {
-      scene: "sec-marlow-museum-storage",
-      text: "Most of the Marlow Museum's collection sits in storage, because its galleries can display only about a tenth of the objects it owns. If the museum's galleries were larger, visitors ______ far more of its textiles and ceramics on an ordinary afternoon.",
-      clause: "result", time: "present", cue: "If the museum's galleries were larger",
-      forms: { base: "see", past: "saw", participle: "seen" },
+      scene: "sec-selby-river-otters",
+      text: "River otters disappeared from the Selby River in the 1950s, when factories upstream dumped their waste into the water. Wildlife officers ______ otters at more than twenty places along the river since the last factory closed, and several families of otters now raise their young near the town.",
+      frame: "span", anchor: "since the last factory closed", lure: "disappeared from the Selby River in the 1950s, when factories upstream dumped",
+      forms: { present: "spot", past: "spotted", presentPerfect: "have spotted", pastPerfect: "had spotted" },
     },
     {
-      scene: "sec-killdeer-nest",
-      text: "The killdeer, a North American shorebird, lays its eggs in a shallow scrape on open gravel, where foxes and snakes can easily find them. If the bird nested in trees instead, its eggs ______ far less exposed to predators, though the chicks, which leave the nest within hours of hatching, would face a long drop.",
-      clause: "result", time: "present", cue: "If the bird nested in trees instead",
-      forms: { base: "be", past: "were", participle: "been" },
+      scene: "sec-varden-telescope-service",
+      text: "The brass telescope at the Varden Observatory arrived from London in 1864, a gift from a local merchant. Over the more than 150 years since then, it ______ thousands of visitors on public nights, and it remains in use today.",
+      frame: "span", anchor: "Over the more than 150 years since then", lure: "arrived from London in 1864",
+      forms: { present: "serves", past: "served", presentPerfect: "has served", pastPerfect: "had served" },
     },
     {
-      scene: "sec-hourly-bus-route",
-      text: "Today, the only bus route in the town of Ellisfort runs once an hour, and many residents without cars rely on neighbors for rides to work. If the route ______ every fifteen minutes, far more of those residents would take the bus.",
-      clause: "condition", time: "present", cue: "would take the bus",
-      forms: { base: "run", past: "ran", participle: "run" },
+      scene: "sec-dome-c-ice-bubbles",
+      text: "Scientists drilled a three-kilometer ice core at Dome C in Antarctica between 1996 and 2004. As each year's snow is buried and packed into ice, it ______ tiny bubbles of air, so a core like this one records the atmosphere of the past 800,000 years.",
+      frame: "general", anchor: "As each year's snow is buried and packed into ice", lure: "drilled a three-kilometer ice core at Dome C in Antarctica between 1996 and 2004",
+      forms: { present: "traps", past: "trapped", presentPerfect: "has trapped", pastPerfect: "had trapped" },
     },
     {
-      scene: "sec-observatory-sky-glow",
-      text: "The Varden Observatory's largest telescope sits at the edge of a growing city whose lights now brighten the night sky. If the skies above the observatory ______ as dark today as they were a century ago, astronomers could still use the telescope to study faint galaxies.",
-      clause: "condition", time: "present", cue: "could still use the telescope",
-      forms: { base: "be", past: "were", participle: "been" },
+      scene: "sec-monarch-march-departure",
+      text: "In 1975, researchers first located the fir forests in central Mexico where eastern monarch butterflies spend the winter. Each March, the butterflies ______ north from those forests, and it is their great-grandchildren that return the following autumn.",
+      frame: "general", anchor: "Each March", lure: "In 1975, researchers first located",
+      forms: { present: "head", past: "headed", presentPerfect: "have headed", pastPerfect: "had headed" },
     },
     {
-      scene: "sec-sonar-unit-weight",
-      text: "The research team's sonar unit weighs nearly two hundred kilograms, so it must be lowered from a crane on a large ship. If the unit ______ light enough for two divers to carry, the team could survey the shallow reefs that large ships cannot reach.",
-      clause: "condition", time: "present", cue: "could survey the shallow reefs",
-      forms: { base: "be", past: "were", participle: "been" },
+      scene: "sec-brisk-harbor-tide-pools",
+      text: "Marine biologist Hana Kekumu began counting the animals in the tide pools near Brisk Harbor in 2012. Twice a day, the falling tide ______ the pools cut off from the sea, and the animals in them must survive hours of warming water.",
+      frame: "general", anchor: "Twice a day", lure: "began counting the animals in the tide pools near Brisk Harbor in 2012",
+      forms: { present: "leaves", past: "left", presentPerfect: "has left", pastPerfect: "had left" },
     },
   ];
 
-  // The four forms of a conditional square, by "would" and perfect.
-  function conditionalForms(topic) {
-    const not = topic.negative ? " not" : "";
-    return {
-      "yes|yes": `would${not} have ${topic.forms.participle}`,
-      "yes|no": `would${not} ${topic.forms.base}`,
-      "no|yes": topic.negative ? `had not ${topic.forms.participle}` : `had ${topic.forms.participle}`,
-      "no|no": topic.negative ? `did not ${topic.forms.base}` : topic.forms.past,
-    };
-  }
+  const TWO_TIME_KEYS = { before: "pastPerfect", finished: "past", span: "presentPerfect", general: "present" };
+  // Why each wrong tense fails, by frame; {anchor} and {lure} are the
+  // topic's phrases.
+  const TWO_TIME_REASONS = {
+    before: {
+      present: "is present tense, though the action ended at a past moment: {anchor}.",
+      past: "places the action at that past moment ({anchor}) instead of before it; the action had already been going on for years by then, which calls for the past perfect.",
+      presentPerfect: "ties the action to the present, perhaps because of {lure}; but the action ended at a past moment ({anchor}), which calls for the past perfect.",
+    },
+    finished: {
+      present: "is present tense, though the action happened at a finished past time ({anchor}).",
+      presentPerfect: "cannot go with a finished past time such as {anchor}; the present perfect in {lure} describes a different span, one that runs up to now.",
+      pastPerfect: "would place this action before some later past event, but the passage names none; the action simply happened {anchor}.",
+    },
+    span: {
+      present: "cannot describe a change or a series of actions over a span of years ({anchor}).",
+      past: "treats the action as finished in the past, perhaps because of {lure}; but the span ({anchor}) runs up to the present.",
+      pastPerfect: "would end the action before another past moment, perhaps because of {lure}; but the span ({anchor}) runs up to the present.",
+    },
+    general: {
+      past: "puts a repeated, ongoing event in the past, perhaps because of {lure}; the sentence describes what happens again and again ({anchor}), told in the present tense.",
+      presentPerfect: "does not fit a present-tense account of what happens again and again ({anchor}).",
+      pastPerfect: "needs an earlier past moment to refer back to; the sentence describes what happens again and again ({anchor}).",
+    },
+  };
+  const TWO_TIME_WORDS = {
+    before: "an action that was already complete, or had been going on for a long time, at a past moment",
+    finished: "an action at a finished past time",
+    span: "an action that runs from a past point up to the present",
+    general: "something that happens again and again, told in the present tense",
+  };
+  // Words that set each frame, checked against every topic's anchor.
+  const TWO_TIME_CUES = {
+    before: /\bwhen\b.*\b\d{4}\b/i,
+    finished: /\b\d{4}\b/,
+    span: /\bsince\b/i,
+    general: /\b(each|every|twice|is)\b/i,
+  };
 
-  const conditionalVerb = {
+  const twoTimeTense = {
     id: "sec-conditional-verb-forms",
     sectionKey: "sat-reading-writing",
     domain: DOMAIN,
     skill: FORM,
     subskill: "verb form",
     difficulty: "Hard",
-    title: "Verb forms in sentences about what did not happen",
-    recognize: "The sentence imagines something contrary to fact. Decide which part holds the blank (the “if” part never takes “would”; the result does) and whether the imagined time is past (“had,” “would have”) or present (“were,” “would”).",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
-    tricks: ["neighbouring-rule", "grammatical-but-illogical"],
+    title: "Verb tense when a passage names two times",
+    recognize: "The passage names two times, and the one nearest the blank is often not the one that governs it. Find the time the blank's own sentence is about, then decide whether the action is finished at that time, ongoing up to now, or repeated.",
+    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["grammatical-but-illogical", "neighbouring-rule"],
     build(t) {
-      const topic = t.pick(CONDITIONAL_TOPICS);
-      const forms = conditionalForms(topic);
-      const needWould = topic.clause === "result" ? "yes" : "no";
-      const needPerfect = topic.time === "past" ? "yes" : "no";
-      const partName = topic.clause === "result" ? "the result of the imagined condition" : "the imagined condition itself";
-      const rows = Object.entries(forms).map(([corner, form]) => {
-        const [would, perfect] = corner.split("|");
-        const problems = [];
-        if (would !== needWould) {
-          problems.push(would === "yes"
-            ? `“would” does not belong in the condition of a contrary-to-fact sentence; the blank is ${partName}`
-            : `the blank is ${partName}, which needs “would”`);
-        }
-        if (perfect !== needPerfect) {
-          problems.push(perfect === "yes"
-            ? `the perfect places the imagined event in the past, but the sentence imagines the present (${q(topic.cue)})`
-            : `without the perfect, the form imagines the present, but the sentence imagines the past (${q(topic.cue)})`);
-        }
-        return [form, { modal: would, perfect }, problems.length ? `In ${q(form)}, ${problems.join("; and ")}.` : null];
-      });
-      const choices = square(rows);
+      const topic = t.pick(TWO_TIME_TOPICS);
+      const needed = TWO_TIME_KEYS[topic.frame];
+      const fill = (text) => text.replace("{anchor}", q(topic.anchor)).replace("{lure}", q(topic.lure));
+      const choices = square(Object.keys(TENSE_NAMES).map((tense) => [
+        topic.forms[tense],
+        TENSE_FEATURES[tense],
+        tense === needed ? null : `${q(topic.forms[tense])} ${fill(TWO_TIME_REASONS[topic.frame][tense])}`,
+      ]));
       const instance = item(topic, this, {
         ...choices,
-        explanation: `The sentence imagines something that ${topic.time === "past" ? "did not happen in the past" : "is not so now"}, and the blank is ${partName}. ${topic.clause === "result"
-          ? `The result takes “would”${topic.time === "past" ? " plus the perfect (“would have”)" : " plus the base verb"}`
-          : `The condition takes no “would”; it uses ${topic.time === "past" ? "the past perfect (“had”)" : "the simple past form (“were” for “be”)"}`}, so the answer is ${q(choices.correct)}.`,
+        explanation: `The passage names two times, and the blank's sentence is governed by ${q(topic.anchor)}, not by ${q(topic.lure)}. That time marks ${TWO_TIME_WORDS[topic.frame]}, so the verb is the ${TENSE_NAMES[needed]}, ${q(choices.correct)}.`,
         steps: [
-          "Decide whether the blank is in the imagined condition (the “if” or “wish” part) or in its result.",
-          `Decide when the imagined situation is set: ${topic.time === "past" ? "the past" : "the present"} (${q(topic.cue)}).`,
-          `Condition: “had” + participle for the past, simple past for the present. Result: “would have” + participle for the past, “would” + base verb for the present. Here: ${q(choices.correct)}.`,
+          "Confirm that every choice agrees with the subject, so tense alone decides.",
+          `Find the times the passage names: ${q(topic.lure)} and ${q(topic.anchor)}.`,
+          `The blank's sentence is governed by ${q(topic.anchor)}: ${TWO_TIME_WORDS[topic.frame]}.`,
+          `Choose the ${TENSE_NAMES[needed]}, ${q(choices.correct)}.`,
         ],
         principles: [
-          "In a sentence about what is not or was not so, “would” goes in the result clause, never in the “if” clause.",
-          "An imagined past uses “had” (condition) and “would have” (result); an imagined present uses the simple past, or “were” for “be” (condition), and “would” (result).",
+          "A verb's tense follows the time its own sentence is about, not the nearest verb or date elsewhere in the passage.",
+          "The past perfect marks an action complete (or long under way) at a past moment; the present perfect, one that runs up to now; the simple past, one at a finished past time; the simple present, what happens again and again.",
         ],
-        trap: topic.clause === "condition"
-          ? "Putting “would” into the condition because the sentence is hypothetical."
-          : "Choosing the form without “would” (or the wrong time) because it sounds natural next to the “if” clause.",
-        hint: "Is the blank in the “if” part or in what would follow from it? And is the imagined time past or present?",
+        trap: `Taking the tense from ${q(topic.lure)}, the other time the passage mentions, instead of from ${q(topic.anchor)}.`,
+        hint: "The passage mentions two times. Which one is the blank's sentence about, and is the action finished then, still going on, or repeated?",
       });
       instance.verify = () => {
-        const text = topic.text;
-        const blankAt = text.indexOf(BLANK);
-        const cueAt = text.indexOf(topic.cue);
-        // A result follows its condition's cue ("if ... had", "Had he ...",
-        // "If ... were"); a condition's cue is the result after the blank.
-        const conditionCue = /^(if|had)\b/i.test(topic.cue);
-        const resultCue = /\b(would|could|might)\b/.test(topic.cue);
-        const cueTime = /\bhad\b|\bhave (been|shown)\b/i.test(topic.cue) ? "past" : "present";
-        return hasOneBlank(text) && cueAt >= 0 &&
-          (topic.clause === "result" ? conditionCue && cueAt < blankAt : resultCue && cueAt > blankAt) &&
-          cueTime === topic.time &&
-          instance.correct === forms[`${needWould}|${needPerfect}`] &&
+        const offered = [instance.correct, ...instance.wrong.map(([form]) => form)];
+        const tenses = offered.map((form) => tenseOf(form, topic.forms));
+        const participle = topic.forms.pastPerfect.replace(/^had\s+/, "");
+        return hasOneBlank(topic.text) && topic.text.includes(topic.anchor) && topic.text.includes(topic.lure) &&
+          TWO_TIME_CUES[topic.frame].test(topic.anchor) &&
+          new RegExp(`^(has|have) ${participle}$`).test(topic.forms.presentPerfect) &&
+          topic.forms.past !== topic.forms.present &&
+          // The lure is a different time from the anchor, and no signal
+          // phrase such as "by the time" sits right before the blank.
+          topic.lure !== topic.anchor && !/\bby (the time|then)\b/i.test(blankSentence(topic.text)) &&
+          tenseOf(instance.correct, topic.forms) === needed &&
+          new Set(tenses).size === 4 && !tenses.includes(null) &&
           isSquare(instance.features);
       };
       return instance;
@@ -1720,11 +1772,32 @@
       key: "yes|past",
     },
     {
-      scene: "sec-leavitt-cepheids",
-      text: "The astronomer Henrietta Swan Leavitt, who worked at the Harvard College Observatory measuring the brightness of stars on thousands of photographic plates, ______ in 1912 that the brightest Cepheid variable stars pulse the most slowly.",
-      subject: "Henrietta Swan Leavitt", mainVerb: null, second: "tense", cue: "in 1912",
-      choices: { "yes|past": "reported", "yes|present": "reports", "no|past": "having reported", "no|present": "reporting" },
-      key: "yes|past",
+      scene: "sec-coast-redwood-fog",
+      text: "Coast redwoods, which grow only in a narrow strip of foggy land along the Pacific coast of California and southern Oregon, ______ as much as a third of their water from fog that condenses on their needles and drips to the ground.",
+      subject: "Coast redwoods", mainVerb: null, second: "tense", cue: "which grow only in a narrow strip",
+      choices: { "yes|past": "gathered", "yes|present": "gather", "no|past": "having gathered", "no|present": "gathering" },
+      key: "yes|present",
+    },
+    {
+      scene: "sec-leavitt-plates",
+      text: "The astronomer Henrietta Swan Leavitt, ______ the brightness of stars on thousands of photographic plates at the Harvard College Observatory, reported in 1912 that the brightest Cepheid variable stars pulse the most slowly.",
+      subject: "Henrietta Swan Leavitt", mainVerb: "reported", second: "voice", cue: "the brightness of stars",
+      choices: { "no|passive": "measured", "no|active": "measuring", "yes|passive": "was measured", "yes|active": "measures" },
+      key: "no|active",
+    },
+    {
+      scene: "sec-gulf-stream-winters",
+      text: "The Gulf Stream, ______ warm water from the Gulf of Mexico north along the coast of North America and then across the Atlantic, helps keep winters in western Europe milder than winters at the same latitudes in Canada.",
+      subject: "The Gulf Stream", mainVerb: "helps", second: "voice", cue: "warm water",
+      choices: { "no|passive": "carried", "no|active": "carrying", "yes|passive": "is carried", "yes|active": "carries" },
+      key: "no|active",
+    },
+    {
+      scene: "sec-red-mangrove-roots",
+      text: "Red mangroves, ______ their arching prop roots deep into the mud of tropical shorelines, shelter young fish from predators and soften the force of storm waves.",
+      subject: "Red mangroves", mainVerb: "shelter", second: "voice", cue: "their arching prop roots",
+      choices: { "no|passive": "sunk", "no|active": "sinking", "yes|passive": "are sunk", "yes|active": "sink" },
+      key: "no|active",
     },
     {
       scene: "sec-kente-strips",
@@ -1763,10 +1836,10 @@
     },
     {
       scene: "sec-dead-sea-scrolls",
-      text: "The Dead Sea Scrolls, ______ in caves near the northwestern shore of the Dead Sea between 1947 and 1956, include the oldest known manuscripts of the Hebrew Bible.",
-      subject: "The Dead Sea Scrolls", mainVerb: "include", second: "voice", cue: "between 1947 and 1956",
-      choices: { "no|passive": "found", "no|active": "finding", "yes|passive": "were found", "yes|active": "find" },
-      key: "no|passive",
+      text: "The Dead Sea Scrolls, found in caves near the northwestern shore of the Dead Sea between 1947 and 1956, ______ the oldest known manuscripts of the Hebrew Bible and are still being pieced together by scholars today.",
+      subject: "The Dead Sea Scrolls", mainVerb: null, second: "tense", cue: "are still being pieced together",
+      choices: { "yes|past": "included", "yes|present": "include", "no|past": "having included", "no|present": "including" },
+      key: "yes|present",
     },
     {
       scene: "sec-jemison-physician",
@@ -1779,7 +1852,9 @@
 
   const SECOND_REASONS = {
     tense: (form, value, topic) => `${q(form)} is ${value} tense, which does not fit the passage's time frame (${q(topic.cue)})`,
-    voice: (form, value, topic) => `${q(form)} is ${value}, but ${topic.subject.replace(/^The /, "the ")} is acted on (${q(topic.cue)}), so the form must be passive`,
+    voice: (form, value, topic) => (value === "active"
+      ? `${q(form)} is active, but ${topic.subject.replace(/^The /, "the ")} ${nounNumber(topic.subject) === "plural" ? "are" : "is"} acted on (${q(topic.cue)}), so the form must be passive`
+      : `${q(form)} is passive, but ${topic.subject.replace(/^The /, "the ")} ${nounNumber(topic.subject) === "plural" ? "act" : "acts"} on something (${q(topic.cue)}), so the form must be active`),
     perfect: (form, value) => (value === "yes"
       ? `${q(form)} marks an action completed earlier`
       : `${q(form)} does not show that this action came before the main one`),
@@ -1823,9 +1898,11 @@
       const instance = item(topic, this, {
         ...choices,
         explanation: needsFinite
-          ? `The words between the commas describe ${q(topic.subject)} but give it no verb, so the blank must supply the main verb, and the passage's time frame (${q(topic.cue)}) sets its tense: ${q(choices.correct)}.`
+          ? `The words between the commas describe ${q(topic.subject)} but give the subject no verb, so the blank must supply the main verb, and the passage's time frame (${q(topic.cue)}) sets its tense: ${q(choices.correct)}.`
           : `The sentence's main verb is ${q(topic.mainVerb)}, after the second comma, so the blank begins a modifier describing ${q(topic.subject)}. ${topic.second === "voice"
-            ? `${cap(topic.subject.replace(/^The /, "the "))} is acted on (${q(topic.cue)}), so the modifier uses the past participle`
+            ? keySecond === "passive"
+              ? `${cap(topic.subject.replace(/^The /, "the "))} ${nounNumber(topic.subject) === "plural" ? "are" : "is"} acted on (${q(topic.cue)}), so the modifier uses the past participle`
+              : `${cap(topic.subject.replace(/^The /, "the "))} ${nounNumber(topic.subject) === "plural" ? "act" : "acts"} on something (${q(topic.cue)}), so the modifier uses the present participle`
             : "The work came before the event the main verb reports, so the modifier uses the perfect participle"}: ${q(choices.correct)}.`,
         steps: [
           "Find the sentence's subject, and set aside anything enclosed in commas.",
@@ -2024,104 +2101,166 @@
   /* -------------------------------------------------- dangling modifier */
 
   // The passage ends with an opening modifier and a blank for the main
-  // clause. The choices cross the clause's subject (the person or animal the
-  // modifier describes, or `other`, something of theirs that the modifier
-  // cannot describe) with finiteness (a finite verb or an -ing form that
-  // leaves the sentence without one). `agent` is written longer than `other`
-  // so the key is never simply the shortest choice.
+  // clause. The choices cross the clause's subject (`described`, the one
+  // the modifier describes, or `other`, a noun it cannot describe) with
+  // finiteness (a finite verb, or a form that leaves the sentence without
+  // one: an -ing word, a who/which clause, or a bare participle). The
+  // described one is a person in some scenes and a thing or a group in
+  // others, and the key is active in some and passive in others, so no
+  // subject or voice is a habit. The other subject is a possessive ("Frida
+  // Kahlo's art"), the person or group who acted on the described thing
+  // (so the key's subject is not the name), or a passive whose "by" phrase
+  // holds the right noun. Each topic writes its four choices out.
   const MODIFIER_TOPICS = [
     {
       scene: "sec-carson-silent-spring",
       text: "Rachel Carson spent four years gathering research for Silent Spring, her 1962 book about the dangers of synthetic pesticides. Trained as a marine biologist and skilled at explaining science to general readers, ______.",
-      agent: "Rachel Carson", other: "her book", gist: "who was trained as a marine biologist",
-      finite: "showed how DDT moved through food chains and harmed birds",
-      nonfinite: "showing how DDT moved through food chains and harmed birds",
-    },
-    {
-      scene: "sec-wu-parity",
-      text: "In 1956, the physicists Tsung-Dao Lee and Chen-Ning Yang proposed that a basic symmetry of nature, called parity, might not hold for the weak nuclear force. Lee consulted his Columbia University colleague, the experimental physicist Chien-Shiung Wu, about how to test the idea. Known to colleagues for her meticulous technique, ______.",
-      agent: "Chien-Shiung Wu", other: "her team", gist: "who was known for her meticulous technique",
-      finite: "tested the idea using radioactive cobalt cooled to near absolute zero",
-      nonfinite: "testing the idea using radioactive cobalt cooled to near absolute zero",
+      described: "Rachel Carson", other: "Carson's book", gist: "the one who was trained as a marine biologist",
+      choices: {
+        "described|yes": "Rachel Carson showed how DDT moved through food chains and harmed birds",
+        "described|no": "Rachel Carson, who showed how DDT moved through food chains and harmed birds",
+        "other|yes": "Carson's book showed how DDT moved through food chains and harmed birds",
+        "other|no": "Carson's book showing how DDT moved through food chains and harmed birds",
+      },
     },
     {
       scene: "sec-kahlo-mirror",
       text: "After a bus accident in 1925 left her bedridden for months, Frida Kahlo taught herself to paint. Confined to her bed and working with a mirror mounted above her, ______.",
-      agent: "Frida Kahlo", other: "her art", gist: "who was confined to her bed",
-      finite: "turned to the self-portraits for which she is now best known",
-      nonfinite: "turning to the self-portraits for which she is now best known",
-    },
-    {
-      scene: "sec-chisholm-campaign",
-      text: "Shirley Chisholm served seven terms in the U.S. House of Representatives, representing a district in Brooklyn, New York. Campaigning in 1968 under the slogan “Unbought and Unbossed,” ______.",
-      agent: "Shirley Chisholm", other: "her message", gist: "who was campaigning under that slogan",
-      finite: "appealed to voters tired of party bosses and machine politics",
-      nonfinite: "appealing to voters tired of party bosses and machine politics",
-    },
-    {
-      scene: "sec-cataglyphis-ants",
-      text: "Desert ants of the genus Cataglyphis forage alone across the Sahara's sand, often traveling hundreds of meters from their nests. Unable to follow scent trails, which evaporate quickly in the heat, ______.",
-      agent: "these desert ants", other: "their brains", gist: "that cannot follow scent trails",
-      finite: "keep track of their steps and the sun's position to find their way home",
-      nonfinite: "keeping track of their steps and the sun's position to find their way home",
+      described: "Frida Kahlo", other: "Kahlo's art", gist: "the one who was confined to her bed",
+      choices: {
+        "described|yes": "Frida Kahlo turned to the self-portraits for which she is now best known",
+        "described|no": "Frida Kahlo turning to the self-portraits for which she is now best known",
+        "other|yes": "Kahlo's art turned to the self-portraits for which she is now best known",
+        "other|no": "Kahlo's art, which turned to the self-portraits for which she is now best known",
+      },
     },
     {
       scene: "sec-ibn-battuta-travels",
       text: "Ibn Battuta left his home in Tangier, Morocco, in 1325 to make the pilgrimage to Mecca, but he did not return for decades. Traveling across Africa, the Middle East, and Asia for nearly thirty years, ______.",
-      agent: "Ibn Battuta", other: "his route", gist: "who was traveling for nearly thirty years",
-      finite: "covered more ground than any other known traveler of his era",
-      nonfinite: "covering more ground than any other known traveler of his era",
-    },
-    {
-      scene: "sec-mendel-garden",
-      text: "Between 1856 and 1863, Gregor Mendel, a friar at an abbey in Brno, bred thousands of pea plants and tracked traits such as seed color. Working alone in the abbey garden and recording every plant's traits by hand, ______.",
-      agent: "Gregor Mendel", other: "his work", gist: "who was working alone in the abbey garden",
-      finite: "showed that the traits passed from parents to offspring in predictable ratios",
-      nonfinite: "showing that the traits passed from parents to offspring in predictable ratios",
+      described: "Ibn Battuta", other: "more ground", gist: "the one who traveled for nearly thirty years",
+      choices: {
+        "described|yes": "Ibn Battuta covered more ground than any other known traveler of his era",
+        "described|no": "Ibn Battuta, who covered more ground than any other known traveler of his era",
+        "other|yes": "more ground was covered by Ibn Battuta than by any other known traveler of his era",
+        "other|no": "more ground being covered by Ibn Battuta than by any other known traveler of his era",
+      },
     },
     {
       scene: "sec-tubman-journeys",
       text: "Before the Civil War, Harriet Tubman escaped slavery in Maryland and then returned about thirteen times to lead others north. Guiding small groups mostly at night and during the long nights of winter, ______.",
-      agent: "Harriet Tubman", other: "her trips", gist: "who guided the small groups",
-      finite: "brought about seventy people to freedom",
-      nonfinite: "bringing about seventy people to freedom",
+      described: "Harriet Tubman", other: "her trips", gist: "the one who guided the small groups",
+      choices: {
+        "described|yes": "Harriet Tubman brought about seventy people to freedom",
+        "described|no": "Harriet Tubman bringing about seventy people to freedom",
+        "other|yes": "her trips brought about seventy people to freedom",
+        "other|no": "her trips, which brought about seventy people to freedom",
+      },
+    },
+    {
+      scene: "sec-wu-parity",
+      text: "In 1956, the physicists Tsung-Dao Lee and Chen-Ning Yang proposed that a basic symmetry of nature, called parity, might not hold for the weak nuclear force, and they needed an experiment to test the idea. Their Columbia University colleague Chien-Shiung Wu was a natural choice. Known to colleagues for her meticulous technique, ______.",
+      described: "Chien-Shiung Wu", other: "Lee", gist: "the one known for her meticulous technique",
+      choices: {
+        "described|yes": "Chien-Shiung Wu was asked by Lee to design the experiment",
+        "described|no": "Chien-Shiung Wu, asked by Lee to design the experiment",
+        "other|yes": "Lee asked Chien-Shiung Wu to design the experiment",
+        "other|no": "Lee asking Chien-Shiung Wu to design the experiment",
+      },
+    },
+    {
+      scene: "sec-hopper-recalled",
+      text: "Grace Hopper helped create some of the first programming languages that used words instead of numbers, and she retired from the U.S. Navy in 1966. Recalled to active duty the next year, at the age of sixty, ______.",
+      described: "Grace Hopper", other: "Navy officials", gist: "the one who was recalled to active duty",
+      choices: {
+        "described|yes": "Grace Hopper was put in charge of standardizing the Navy's computer languages",
+        "described|no": "Grace Hopper, put in charge of standardizing the Navy's computer languages",
+        "other|yes": "Navy officials put Grace Hopper in charge of standardizing their computer languages",
+        "other|no": "Navy officials putting Grace Hopper in charge of standardizing their computer languages",
+      },
+    },
+    {
+      scene: "sec-coleman-le-crotoy",
+      text: "No flight school in the United States would admit Bessie Coleman, a Black woman from Texas, so she learned French and sailed to France in 1920. Welcomed by an aviation school at Le Crotoy, on the coast of the English Channel, ______.",
+      described: "Bessie Coleman", other: "French instructors", gist: "the one the school welcomed",
+      choices: {
+        "described|yes": "Bessie Coleman was taught to fly a fragile biplane",
+        "described|no": "Bessie Coleman, taught to fly a fragile biplane",
+        "other|yes": "French instructors taught Bessie Coleman to fly a fragile biplane",
+        "other|no": "French instructors teaching Bessie Coleman to fly a fragile biplane",
+      },
+    },
+    {
+      scene: "sec-hubble-orbit",
+      text: "The Hubble Space Telescope was carried into orbit by the space shuttle Discovery in 1990, and astronauts repaired and upgraded it on five later missions. Circling about 540 kilometers above the ground, ______.",
+      described: "the telescope", other: "its images", gist: "the telescope, which circles above the ground",
+      choices: {
+        "described|yes": "the telescope takes images free of the blurring caused by Earth's atmosphere",
+        "described|no": "the telescope taking images free of the blurring caused by Earth's atmosphere",
+        "other|yes": "its images are free of the blurring caused by Earth's atmosphere",
+        "other|no": "its images, which are free of the blurring caused by Earth's atmosphere",
+      },
+    },
+    {
+      scene: "sec-cataglyphis-ants",
+      text: "Desert ants of the genus Cataglyphis forage alone across the Sahara's sand, often traveling hundreds of meters from their nests. Unable to follow scent trails, which evaporate quickly in the heat, ______.",
+      described: "these desert ants", other: "their brains", gist: "the ants, which cannot follow scent trails",
+      choices: {
+        "described|yes": "these desert ants keep track of their steps and the sun's position to find their way home",
+        "described|no": "these desert ants keeping track of their steps and the sun's position to find their way home",
+        "other|yes": "their brains keep track of their steps and the sun's position to find their way home",
+        "other|no": "their brains, which keep track of their steps and the sun's position to find their way home",
+      },
     },
     {
       scene: "sec-humpback-song",
       text: "Male humpback whales sing complex songs that can last for hours, and all the males in a population sing nearly the same song. Listening closely to one another and copying each new variation, ______.",
-      agent: "the male whales", other: "their calls", gist: "who listen to one another and copy each variation",
-      finite: "gradually transform the song until, after several years, it is entirely new",
-      nonfinite: "gradually transforming the song until, after several years, it is entirely new",
+      described: "the male whales", other: "their calls", gist: "the whales, which listen to one another",
+      choices: {
+        "described|yes": "the male whales gradually transform the song until, after several years, it is entirely new",
+        "described|no": "the male whales gradually transforming the song until, after several years, it is entirely new",
+        "other|yes": "their calls gradually transform the song until, after several years, it is entirely new",
+        "other|no": "their calls, which gradually transform the song until, after several years, it is entirely new",
+      },
     },
     {
-      scene: "sec-hadid-aquatics",
-      text: "Zaha Hadid, the first woman to win the Pritzker Architecture Prize, was known for buildings that seem to flow rather than stand. Trained as a mathematician in Beirut before studying architecture in London, ______.",
-      agent: "Zaha Hadid", other: "her firm", gist: "who was trained as a mathematician",
-      finite: "designed the London Aquatics Centre with a roof that curves like a wave",
-      nonfinite: "designing the London Aquatics Centre with a roof that curves like a wave",
+      scene: "sec-tarn-glacier-photographs",
+      text: "In 1911, an expedition set out from the port of Skarn to map the Tarn Glacier, and its surveyor, Karl Brenner, took hundreds of photographs. Taken from the very edge of the ice, ______.",
+      described: "Karl Brenner's photographs", other: "Karl Brenner", gist: "the photographs, which were taken from the edge of the ice",
+      choices: {
+        "described|yes": "Karl Brenner's photographs became the first images of the glacier ever to be published",
+        "described|no": "Karl Brenner's photographs, which became the first images of the glacier ever to be published",
+        "other|yes": "Karl Brenner made the first images of the glacier ever to be published",
+        "other|no": "Karl Brenner making the first images of the glacier ever to be published",
+      },
     },
     {
-      scene: "sec-merian-suriname",
-      text: "In 1699, the naturalist and artist Maria Sibylla Merian sailed from Amsterdam to Suriname to study its insects. Raising caterpillars in her own studio and sketching every stage of their growth, ______.",
-      agent: "Maria Sibylla Merian", other: "her paintings", gist: "who raised the caterpillars and sketched them",
-      finite: "depicted each insect on the plant that its caterpillars fed on",
-      nonfinite: "depicting each insect on the plant that its caterpillars fed on",
+      scene: "sec-otzi-iceman",
+      text: "In September 1991, Helmut and Erika Simon, two hikers crossing a high pass in the Ötztal Alps near the border between Austria and Italy, spotted a human body in the melting ice. Frozen in the glacier for more than five thousand years, ______.",
+      described: "the body", other: "the Simons", gist: "the body, which had been frozen in the glacier",
+      choices: {
+        "described|yes": "the body was found almost perfectly preserved",
+        "described|no": "the body, found almost perfectly preserved",
+        "other|yes": "the Simons found the body almost perfectly preserved",
+        "other|no": "the Simons finding the body almost perfectly preserved",
+      },
     },
     {
-      scene: "sec-farouk-migration",
-      text: "Sociologist Nadia Farouk interviewed more than two hundred families who had moved from villages in southern Egypt to Cairo during the 1990s. Having grown up in a village near Aswan herself, ______.",
-      agent: "Nadia Farouk", other: "her study", gist: "who grew up in a village near Aswan",
-      finite: "paid close attention to why so many newcomers settled near relatives from home",
-      nonfinite: "paying close attention to why so many newcomers settled near relatives from home",
-    },
-    {
-      scene: "sec-caledonian-crows",
-      text: "New Caledonian crows are among the few animals known to make tools, and they shape them from the stiff, barbed leaves of the pandanus tree. Working with only their beaks, ______.",
-      agent: "New Caledonian crows", other: "their tools", gist: "that work with only their beaks",
-      finite: "pull insects out of crevices with narrow strips cut from the leaves",
-      nonfinite: "pulling insects out of crevices with narrow strips cut from the leaves",
+      scene: "sec-lascaux-discovery",
+      text: "The cave of Lascaux in southwestern France holds hundreds of paintings of horses, bulls, and stags, some of them more than five meters long. Hidden underground for about seventeen thousand years, ______.",
+      described: "the paintings", other: "Marcel Ravidat and three friends", gist: "the paintings, which were hidden underground",
+      choices: {
+        "described|yes": "the paintings were discovered in 1940 by Marcel Ravidat and three friends",
+        "described|no": "the paintings, discovered in 1940 by Marcel Ravidat and three friends",
+        "other|yes": "Marcel Ravidat and three friends discovered the paintings in 1940",
+        "other|no": "Marcel Ravidat and three friends discovering the paintings in 1940",
+      },
     },
   ];
+
+  // What follows a choice's subject when the choice has no finite main
+  // verb: a comma and a who/which clause, participle, or appositive, or an
+  // -ing word (after an optional adverb). Finite choices never do either.
+  const leavesNoVerb = (rest) => /^,\s[a-z]/.test(rest) || /^\s(gradually\s)?\w+ing\b/.test(rest);
 
   const danglingModifier = {
     id: "sec-dangling-modifier",
@@ -2131,45 +2270,49 @@
     subskill: "modifier placement",
     difficulty: "Hard",
     title: "Subject named by an opening modifier",
-    recognize: "An opening modifier describes whatever noun comes right after its comma, so the main clause must begin with the one the modifier describes and still needs a finite verb of its own.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    recognize: "An opening modifier describes whatever noun comes right after its comma, so the main clause must begin with the one the modifier describes (which may be a thing, not the person the passage is about) and still needs a finite verb of its own.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
     tricks: ["dangling-modifier", "grammatical-but-illogical"],
     build(t) {
       const topic = t.pick(MODIFIER_TOPICS);
       const modifier = blankSentence(topic.text).replace(/,\s*$/, "");
-      const name = topic.agent.replace(/^(the|these) /, "");
-      const rows = [];
-      [["agent", topic.agent], ["other", topic.other]].forEach(([role, subject]) => ["yes", "no"].forEach((finite) => {
-        const text = `${subject} ${finite === "yes" ? topic.finite : topic.nonfinite}`;
+      const rows = Object.entries(topic.choices).map(([corner, text]) => {
+        const [role, finite] = corner.split("|");
+        const subject = role === "described" ? topic.described : topic.other;
         const problems = [];
-        if (role === "other") problems.push(`it makes ${q(subject)} the subject, so the opening phrase would describe ${q(subject)}; the phrase describes the one ${topic.gist}, ${name}`);
-        if (finite === "no") problems.push(`${q(topic.nonfinite.split(" ")[0])} is not a finite verb, so the sentence would have no main verb`);
-        rows.push([text, { subject: role, finite }, problems.length ? `${cap(problems.join("; and "))}.` : null]);
-      }));
+        if (role === "other") problems.push(`it makes ${q(subject)} the subject, so the opening phrase would describe ${q(subject)}; the phrase describes ${topic.gist}`);
+        if (finite === "no") problems.push(`it gives ${q(subject)} no finite verb (an -ing word, a who or which clause, or a bare participle cannot be one), so the sentence would have no main verb`);
+        return [text, { subject: role, finite }, problems.length ? `${cap(problems.join("; and "))}.` : null];
+      });
       const choices = square(rows);
       const instance = item(topic, this, {
         ...choices,
-        explanation: `The opening phrase, ${q(modifier)}, describes ${name}, so ${topic.agent} must be the subject that comes right after the comma, and the clause needs a finite verb (${q(topic.finite.split(" ")[0])}). ${cap(topic.other)} is not what the opening phrase describes.`,
+        explanation: `The opening phrase, ${q(modifier)}, describes ${topic.gist}, so ${q(topic.described)} must be the subject that comes right after the comma, and the clause needs a finite verb. The opening phrase does not describe ${q(topic.other)}. The answer is ${q(choices.correct)}.`,
         steps: [
           "Ask who or what the opening phrase describes.",
-          `Only ${name} fits: the one ${topic.gist}.`,
-          `Choose the clause whose subject, right after the comma, is ${topic.agent}, and whose verb is finite.`,
+          `Only ${q(topic.described)} fits: ${topic.gist}.`,
+          `Choose the clause whose subject, right after the comma, is ${q(topic.described)}, and whose verb is finite.`,
         ],
         principles: [
-          "An introductory modifier describes the subject of the main clause that follows it.",
-          "A possessive such as “her book” makes the book, not the person, the subject; the clause also needs a finite verb.",
+          "An introductory modifier describes the subject of the main clause that follows it, whether that subject is a person or a thing.",
+          "A possessive (“Kahlo's art”) makes the thing owned the subject, and a passive clause makes the thing acted on the subject; a name inside a “by” phrase or a possessive is not the subject.",
+          "The main clause also needs a finite verb; an -ing word, a who or which clause, or a bare participle cannot be one.",
         ],
-        trap: `Picking a clause that mentions ${name} only through ${q(topic.other)}, or one whose -ing verb leaves the sentence without a main verb.`,
-        hint: "Who is doing what the opening phrase describes? That noun has to come right after the comma, followed by a real verb.",
+        trap: `Picking the clause that begins with ${q(topic.other)}, which sounds right because it names someone or something from the passage, though the opening phrase does not describe it; or picking a clause with no finite verb.`,
+        hint: "Who or what is doing, or undergoing, what the opening phrase describes? That noun has to come right after the comma, followed by a real verb.",
       });
-      instance.verify = () => hasOneBlank(topic.text) &&
-        /,["”]? ______\.$/.test(topic.text) &&
-        lower(beforeBlank(topic.text)).includes(lower(lastWordOf(topic.agent))) &&
-        instance.correct === `${topic.agent} ${topic.finite}` &&
-        topic.agent.length > topic.other.length &&
-        topic.nonfinite.split(" ").some((word) => /ing$/.test(word)) &&
-        !/^(her|his|their|its)\b/.test(topic.agent) && /^(her|his|their|its)\b/.test(topic.other) &&
-        isSquare(instance.features);
+      instance.verify = () => {
+        const offered = Object.entries(topic.choices);
+        return hasOneBlank(topic.text) &&
+          /,["”]? ______\.$/.test(topic.text) &&
+          lower(beforeBlank(topic.text)).includes(lower(lastWordOf(topic.described))) &&
+          instance.correct === topic.choices["described|yes"] &&
+          offered.every(([corner, text]) => {
+            const subject = corner.startsWith("described") ? topic.described : topic.other;
+            return text.startsWith(subject) && leavesNoVerb(text.slice(subject.length)) === corner.endsWith("|no");
+          }) &&
+          isSquare(instance.features);
+      };
       return instance;
     },
   };
@@ -2184,7 +2327,7 @@
     distantPronoun,
     possessiveOrPlural,
     tenseFrame,
-    conditionalVerb,
+    twoTimeTense,
     finiteVerb,
     supplementOrMainVerb,
     danglingModifier,

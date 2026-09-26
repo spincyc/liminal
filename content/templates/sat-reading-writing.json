@@ -389,68 +389,68 @@
     {
       "id": "sec-join-independent-clauses",
       "bit": 64,
-      "version": 2,
-      "fingerprint": "d5394f914160c0fd"
+      "version": 3,
+      "fingerprint": "2f55b23f9fa204a8"
     },
     {
       "id": "sec-colon-before-list",
       "bit": 65,
-      "version": 2,
-      "fingerprint": "1e2034beaf220dca"
+      "version": 3,
+      "fingerprint": "62a29fa6287d547e"
     },
     {
       "id": "sec-intro-clause-comma",
       "bit": 66,
-      "version": 2,
-      "fingerprint": "8dc26420b4a4cd3d"
+      "version": 3,
+      "fingerprint": "aa5099d22fdb0237"
     },
     {
       "id": "sec-conjunctive-adverb-join",
       "bit": 67,
-      "version": 2,
-      "fingerprint": "21441bbc502fcfca"
+      "version": 3,
+      "fingerprint": "a199d4a5ea4b6c63"
     },
     {
       "id": "sec-no-colon-after-verb",
       "bit": 68,
-      "version": 2,
-      "fingerprint": "4bb2ee2baea0eb4e"
+      "version": 3,
+      "fingerprint": "520b3965c55ed164"
     },
     {
       "id": "sec-no-comma-subject-verb",
       "bit": 69,
-      "version": 2,
-      "fingerprint": "77dc434c645b8aa1"
+      "version": 3,
+      "fingerprint": "0cb2fb3fe86806a5"
     },
     {
       "id": "sec-series-semicolons",
       "bit": 70,
-      "version": 2,
-      "fingerprint": "9e3a0e7fa152d770"
+      "version": 3,
+      "fingerprint": "84bc5c0cc75a6a78"
     },
     {
       "id": "sec-relative-vs-pronoun-clause",
       "bit": 71,
-      "version": 2,
-      "fingerprint": "508f1967e5c3cd23"
+      "version": 3,
+      "fingerprint": "301b8c354a800162"
     },
     {
       "id": "sec-closing-mark-match",
       "bit": 72,
-      "version": 2,
-      "fingerprint": "67e0bf8b21ca2559"
+      "version": 3,
+      "fingerprint": "42f14246d427ad05"
     },
     {
       "id": "sec-essential-clause-context",
       "bit": 73,
-      "version": 2,
-      "fingerprint": "433dc3564ceb9ad8"
+      "version": 3,
+      "fingerprint": "fabccc94625116f1"
     },
     {
       "id": "sec-adverb-interrupts-clause",
       "bit": 74,
-      "version": 2,
-      "fingerprint": "f66ab25d4c5a394d"
+      "version": 3,
+      "fingerprint": "47f4d09065666b41"
     },
     {
       "id": "sec-sva-compound-subject",
@@ -499,26 +499,26 @@
     {
       "id": "sec-pronoun-distant-antecedent",
       "bit": 82,
-      "version": 2,
-      "fingerprint": "830c06fa63f1f3dc"
+      "version": 3,
+      "fingerprint": "a544ac80f15f70db"
     },
     {
       "id": "sec-verb-tense-frame",
       "bit": 83,
-      "version": 2,
-      "fingerprint": "7509912be7247b73"
+      "version": 3,
+      "fingerprint": "c8bad5ca77bbb8af"
     },
     {
       "id": "sec-finite-or-nonfinite",
       "bit": 84,
-      "version": 2,
-      "fingerprint": "7c46564f5d3a192f"
+      "version": 3,
+      "fingerprint": "614add434acfb8fa"
     },
     {
       "id": "sec-dangling-modifier",
       "bit": 85,
-      "version": 2,
-      "fingerprint": "2615c5bcc284b652"
+      "version": 3,
+      "fingerprint": "a6128bd117cc1171"
     },
     {
       "id": "central-idea-period-prose",
@@ -637,8 +637,8 @@
     {
       "id": "sec-title-or-appositive",
       "bit": 105,
-      "version": 1,
-      "fingerprint": "6933a9ad92adfe63"
+      "version": 2,
+      "fingerprint": "fafd8c7ab4473c8e"
     },
     {
       "id": "sec-quotation-commas",
@@ -655,8 +655,8 @@
     {
       "id": "sec-sva-long-subject",
       "bit": 108,
-      "version": 1,
-      "fingerprint": "02725212c3302dba"
+      "version": 2,
+      "fingerprint": "609a31ee889d4d22"
     },
     {
       "id": "sec-possessive-or-plural",
@@ -667,14 +667,32 @@
     {
       "id": "sec-conditional-verb-forms",
       "bit": 110,
-      "version": 1,
-      "fingerprint": "49a1036ca4cdf7ab"
+      "version": 2,
+      "fingerprint": "0389bd2e3f3a50d8"
     },
     {
       "id": "sec-supplement-or-main-verb",
       "bit": 111,
       "version": 1,
       "fingerprint": "d037ee22e3a72c9f"
+    },
+    {
+      "id": "sec-however-attachment",
+      "bit": 112,
+      "version": 1,
+      "fingerprint": "a9932c87b5763f24"
+    },
+    {
+      "id": "sec-colon-explanation",
+      "bit": 113,
+      "version": 1,
+      "fingerprint": "2d5055b9ae3eb96c"
+    },
+    {
+      "id": "sec-sentence-boundary-capitals",
+      "bit": 114,
+      "version": 1,
+      "fingerprint": "d403bca1bce2177a"
     }
   ]
 }
