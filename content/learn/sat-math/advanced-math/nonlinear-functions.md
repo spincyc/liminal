@@ -12,8 +12,9 @@ and falls around a vertex, an exponential grows by a constant factor, a
 polynomial can turn several times. This skill asks you to read these
 functions from equations, tables and graphs, and to interpret them in
 context. It is part of Advanced Math, {{fact:sat-math-advanced}} of the Math
-section. Hard questions ask which form of a function displays a feature, or
-make you translate a sentence such as "triples every 4 hours" into a rule.
+section. Hard questions pin a quadratic down from indirect conditions,
+rewrite an exponential for a new period, or build one function from another
+function's table or graph.
 
 ## Quadratic functions {#quadratic-functions}
 
@@ -146,9 +147,21 @@ Transformations move a graph without changing its shape:
 
 ## What Hard looks like {#hard}
 
-- Choosing the form of a function that shows a feature (a maximum, an initial value, a rate per month) as a constant.
-- Interpreting a constant in context: in h(t) = −4.9(t − 3)² + 50, the 50 is the greatest height and the 3 is when it happens.
-- Rewriting an exponential for a different time step.
+- A quadratic pinned down by indirect conditions. A vertex points to a(x − h)² + k, zeros to a(x − r)(x − s), and two inputs with equal outputs to an axis of symmetry halfway between them. Choose the form first, then let one more point fix a.
+- An exponential rewritten for a different period. The base applies once per period, so a new period raises the base to a power; the percent never scales along with the period.
+- A function built from another one given as a table or a graph, such as g(x) = f(x − 2) + 3. Find the input f actually receives (inside changes go opposite to their sign), read f there, and apply the outside change last.
+- Factor and remainder conditions. x − a is a factor exactly when p(a) = 0, and the remainder on division by x − a is p(a). Only a stated zero forces a factor.
+- A graph matched to its definition. Test each candidate against every feature: its zeros and whether the graph crosses or touches there, the y-intercept, the end behavior, and any level it approaches.
+
+> **Example.** A quadratic f has f(1) = f(7), a minimum value of −9, and
+> f(0) = 7. What is f(x)?
+>
+> Equal outputs at 1 and 7 put the axis of symmetry halfway, at x = 4, so
+> the vertex is (4, −9) and f(x) = a(x − 4)² − 9.
+>
+> f(0) = 16a − 9 = 7, so a = 1 and f(x) = (x − 4)² − 9.
+>
+> Check: f(1) = 9 − 9 = 0 and f(7) = 9 − 9 = 0.
 
 > **Example.** A population is modeled by P(t) = `800·1.44^t`, with t in
 > years. By what percent does it grow every half year?

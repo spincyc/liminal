@@ -11,8 +11,9 @@ A nonlinear equation has its variable squared, under a root, inside an
 absolute value or in a denominator, so it can have two solutions, one, or
 none. This skill is part of Advanced Math, {{fact:sat-math-advanced}} of the
 Math section. Easy questions ask you to solve a factorable quadratic. Hard
-ones ask how many solutions an equation has, hide an extraneous solution, or
-make you see a structure (a repeated factor, a square) before you calculate.
+ones ask for the sum or product of the solutions without the solutions, ask
+how many solutions an equation has once denominators or absolute values are
+dealt with, or make you check which cases survive.
 
 ## Quadratic equations {#quadratic-equations}
 
@@ -128,9 +129,57 @@ means x is 7 away from 3, so x = 10 or x = −4. If |x − a| = 4 has solutions
 > `y=19`, then click the two intersections. Desmos reads the bars as absolute
 > value. See [Desmos for solving by graphing](learn:sat/general/desmos#solve-by-graphing).
 
+### When the other side has x {#absolute-value-with-x}
+
+An absolute value is never negative, so |A| = B, where B contains x, can hold
+only where B ≥ 0. Solve both cases, A = B and A = −B, then keep only the
+candidates that make B nonnegative.
+
+> **Example.** How many solutions does |x − 4| = 2x + 1 have?
+>
+> Case 1: x − 4 = 2x + 1, so x = −5. Then 2x + 1 = −9, which is negative,
+> so x = −5 fails. (Check: |−9| = 9, not −9.)
+>
+> Case 2: x − 4 = −(2x + 1), so 3x = 3 and x = 1. Then 2x + 1 = 3, and
+> |1 − 4| = 3. It works.
+>
+> One solution: x = 1.
+
+Two special shapes:
+
+- |A| = |B|: then A = B or A = −B. Both sides are absolute values, so no candidate needs the sign check.
+- |A| = −A: this holds for every x that makes A ≤ 0, so there are infinitely many solutions. |A| = A holds for every x that makes A ≥ 0.
+
+> **Example.** How many solutions does |2x − 6| = 6 − 2x have?
+>
+> The right side is the opposite of the inside: 6 − 2x = −(2x − 6). So the
+> equation holds whenever 2x − 6 ≤ 0, that is, for every x ≤ 3.
+>
+> Infinitely many. Check x = 0: |−6| = 6 and 6 − 0 = 6. Check x = 5: |4| = 4
+> but 6 − 10 = −4, so x = 5 is not a solution.
+
+> **Trap.** Counting two solutions because there are two cases. A case can
+> give a candidate that fails the sign check, or give no single number at
+> all.
+
 ## What Hard looks like {#hard}
 
-Hard nonlinear equations reward seeing structure first.
+Hard nonlinear equations reward seeing structure first:
+
+- The sum, product, or sum of squares of the solutions, after the equation is rearranged. Move every term to one side first, then use −b/a and c/a; r² + s² = (r + s)² − 2rs.
+- A rational equation whose count of solutions depends on what clearing the denominator leaves: two roots, one root that the original excludes, an identity, or a false statement.
+- An absolute value equal to an expression in x, where each case must pass the sign check (see [when the other side has x](#absolute-value-with-x)).
+
+> **Example.** The solutions of (x + 2)(x − 5) = 3x − 4 are r and s. What is
+> r² + s²?
+>
+> Don't read −2 and 5 off the factors: the right side isn't 0. Expand and
+> collect: x² − 3x − 10 = 3x − 4, so x² − 6x − 6 = 0.
+>
+> r + s = 6 and rs = −6, so r² + s² = (r + s)² − 2rs = 36 + 12 = 48.
+>
+> Check: the solutions are 3 ± √15, and (3 + √15)² + (3 − √15)² =
+> 2(9 + 15) = 48.
 
 > **Example.** Solve (x − 3)² = 4(x − 3).
 >
@@ -141,15 +190,3 @@ Hard nonlinear equations reward seeing structure first.
 > so (x − 3)(x − 7) = 0.
 >
 > The solutions are x = 3 and x = 7.
-
-Another Hard shape treats a formula as an equation in one chosen letter,
-like [rearranging formulas](learn:sat-math/algebra/linear-equations-in-one-variable)
-with a square or root added.
-
-> **Example.** The volume of a cylinder is V = πr²h. Solve for r, where
-> r > 0.
->
-> Divide by πh: r² = V/(πh).
->
-> Take the square root, keeping only the positive value because r is a
-> length: r = √(V/(πh)).
