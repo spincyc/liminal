@@ -18,6 +18,7 @@
     P, GEO, tidy, isClean, fmt, shown, retry, add, sub, mul, unit, mid, dist, centroid, close, surd, shoelace,
     toRad, piFraction, fitPoints, r1, seg, measure, unitText, name, nameAway, anchorFor, normalAway, rightMark,
     DOMAIN, round4, fitsGridHard, spreadWrong, packSpread, collides, wrongFor,
+    balanceTwins,
   } = C;
 
   /* =============================================== altitude-area (Easy) */
@@ -259,7 +260,9 @@
         const common = { stimulus: null, figure, principles, estimatedSeconds: 60 };
         const footName = figureShape.footName;
         if (!reverse) {
-          return packSpread(t, numeric, area, fmt(area), triangle
+          // The slip that halves or doubles the key appears in about half
+          // the items (balanceTwins), so it is not always beside the key.
+          return packSpread(t, numeric, area, fmt(area), balanceTwins(t, area, triangle
             ? [
               [shown((b * s) / 2, 1), `Uses the slanted side ${slantName} = ${s} as the height; the height must be perpendicular to the base.`],
               [shown(b * h, 1), "Multiplies base by height without taking half."],
@@ -277,7 +280,7 @@
               [shown((b * h) / 2, 1), "Takes half of base × height, as for a triangle."],
               [shown(2 * (b + s), 1), "Gives the perimeter, not the area."],
               [shown((b * s) / 2, 1), `Uses the slanted side as the height and takes half.`],
-            ], {
+            ]), {
             ...common,
             // Lengths go in the stem as well as on the figure for a grid-in,
             // and in about a third of multiple-choice items.
@@ -299,7 +302,7 @@
         }
         const K = area;
         if (!isClean(K, 1)) return null;
-        return packSpread(t, numeric, h, fmt(h), triangle
+        return packSpread(t, numeric, h, fmt(h), balanceTwins(t, h, triangle
           ? [
             [shown(K / b, 2), `Divides the area by the base without doubling; a triangle's area is half of base × height.`],
             [shown(s, 0), `Gives the length of the slanted side ${slantName}, which is not perpendicular to the base.`],
@@ -311,7 +314,7 @@
             [shown(s, 0), `Gives the length of the slanted side ${slantName}, which is not perpendicular to the base.`],
             [shown(K / s, 2), `Divides the area by the slanted side ${slantName} instead of by the base.`],
             [shown(K - b, 2), "Subtracts the base from the area."],
-          ], {
+          ]), {
           ...common,
           stem: `In the figure shown, the area of ${polygonName} is ${num(K)}. What is the length of ${heightName}?`,
           explanation:
