@@ -5,9 +5,9 @@ title: Format and scoring
 # Format and scoring
 
 What the digital SAT is, how it is scored, and the rules for entering Math
-answers. Every number on this page comes from College Board and carries the
-date it was checked; formats and policies change, so confirm anything you
-rely on at the [SAT structure page](https://satsuite.collegeboard.org/sat/whats-on-the-test/structure)
+answers. Every official number on this page comes from College Board and
+carries the date it was checked; formats and policies change, so confirm
+anything you rely on at the [SAT structure page](https://satsuite.collegeboard.org/sat/whats-on-the-test/structure)
 before test day.
 
 ## The test at a glance {#structure}
@@ -91,7 +91,7 @@ change what to do: keep working question by question.
 - The total score runs {{fact:sat-total-scale}}; each section runs {{fact:sat-section-scale}}.
 - There is no penalty for a wrong answer, so answer every question.
 - The score is not a simple count. College Board's model uses which questions you got right, how hard those questions are, and whether your pattern of answers suggests guessing, so two students with the same number correct on different forms can get different scores.
-- College Board advises answering every question as well as you can and eliminating one or two choices when unsure; it says random guessing, such as picking the same letter every time, is unlikely to help.
+- College Board's [scoring page](https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated) puts it this way: "For most students who are trying their best on every question, it's better to guess than leave a question blank, especially if a student can eliminate one or two answer options before guessing."
 
 > **Note.** Liminal never estimates an SAT score. Its accuracy numbers are
 > practice feedback on its own questions, which are original and not
@@ -99,6 +99,21 @@ change what to do: keep working question by question.
 > full-length official practice test in Bluebook, scored by College Board
 > (see [SAT practice tests](https://satsuite.collegeboard.org/practice/practice-tests)).
 > Even those scores are estimates.
+
+## Checking against official practice {#official-practice}
+
+Liminal's Easy, Medium and Hard labels are its own judgment of each
+question design, made with a written rubric; they are not measured on real
+test takers. College Board's free practice is the check on them:
+
+- The full-length practice tests in [Bluebook](https://bluebook.collegeboard.org/), scored by College Board. These are the score gauge.
+- The [Student Question Bank](https://satsuite.collegeboard.org/practice/student-question-bank): official questions you can filter by section, domain, skill and difficulty. When Progress says a skill has passed its Medium questions here, try that skill's official Medium and Hard questions. If they go much worse, trust the official result and keep working on the skill.
+- My Practice, College Board's site where your Bluebook practice-test scores and the Student Question Bank live (start from [SAT practice](https://satsuite.collegeboard.org/practice)).
+
+After each Bluebook practice test, and after a real SAT, record the scores
+in Liminal under Progress, in Official scores. Each one sits beside your
+Liminal accuracy in the 28 days before it, so you can see whether practice
+here tracks the real test. Liminal never converts one into the other.
 
 ## Student-produced responses {#student-produced-responses}
 

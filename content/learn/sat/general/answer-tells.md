@@ -13,24 +13,27 @@ choices every time you can solve it.
 
 ## How weak they are {#how-weak}
 
-College Board advises answering every question as well as you can and
-eliminating one or two choices when you are unsure, and it says random
-guessing, such as choosing the same letter every time, is unlikely to help
-your score.
+College Board's [scoring page](https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated)
+says: "For most students who are trying their best on every question, it's
+better to guess than leave a question blank, especially if a student can
+eliminate one or two answer options before guessing." That advice is to
+eliminate what you can and then guess; it offers no pattern to look for in
+the choices.
 
-When Liminal measured its own questions in September 2026, the tells barely
-beat chance in total:
+When Liminal measured its own questions in September 2026, the tells beat
+chance, but not by enough to replace solving:
 
 | Tell | How often it picked the key | By chance |
 | --- | --- | --- |
 | Math: the key is one of the two middle numbers | 67% | 50% |
 | Reading and Writing: the key is the most hedged choice | 34% | 25% |
 
-Liminal's content checks are built to push numbers like these toward
-chance, so they may be lower by the time you read this. A tell that is right
-a third of the time is wrong two thirds of the time. And tells don't explain
-a big gap between practice and the real test; missing content and skipped
-review do.
+The middle-number tell had a real edge of 17 percentage points over chance,
+and it was still wrong one time in three. The hedged-choice tell beat chance
+by 9 points and was wrong about two times in three. Liminal's content checks
+are built to push numbers like these toward chance, so they may be lower by
+the time you read this. And tells don't explain a big gap between practice
+and the real test; missing content and skipped review do.
 
 ## Tells and when they fail {#tells}
 
