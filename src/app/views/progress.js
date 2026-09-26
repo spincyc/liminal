@@ -462,6 +462,11 @@
           "questions whose template has been revised since. They still count, under the template's current " +
           "difficulty and skill; review them to see the question as it is now.");
       }
+      if (summary.repeats) {
+        notes.push(`${ctx.formatNumber(summary.repeats)} answer${summary.repeats === 1 ? " was" : "s were"} to ` +
+          "questions you had answered before, as when Review brings a miss back. They are left out of accuracy and " +
+          "the skill map: a second try at the same question shows memory of it, not the skill.");
+      }
       if (summary.legacy) {
         notes.push(`${ctx.formatNumber(summary.legacy)} earlier answer${summary.legacy === 1 ? "" : "s"} from the retired ` +
           "fixed SAT question banks are left out: their difficulty labels ran easier than the real test.");
@@ -748,7 +753,7 @@
       table.append(head, body);
       official.tableWrap.replaceChildren(table);
       official.note.textContent = `Liminal accuracy covers the ${Analytics.COMPARISON_DAYS} days up to each test day, ` +
-        "counts a blank as wrong and a hinted answer as not correct, and is not a score.";
+        "counts a blank as wrong and a hinted answer as not correct, leaves out questions seen before, and is not a score.";
     }
 
     function addOfficial(event) {
@@ -1135,11 +1140,18 @@
           td.dataset.label = label;
           return td;
         };
+        // Answers to questions seen before are left out of the set's
+        // accuracy; say how many, so a Review set is not read as a blank.
+        const accuracyCell = (entry) => {
+          const td = cell("Accuracy", percent(entry.accuracy));
+          if (entry.repeats) td.appendChild(el("small", "cell-note", `${entry.repeats} seen before, not counted`));
+          return td;
+        };
         tr.append(
           cell("Finished", point.finishedAt ? dayLabel(point.finishedAt) : "—", "date"),
           title,
           cell("Questions", ctx.formatNumber(point.total)),
-          cell("Accuracy", percent(point.accuracy)),
+          accuracyCell(point),
           cell("Hard", point.hard.attempted ? `${percent(point.hard.accuracy)} of ${point.hard.attempted}` : "—"),
           cell("Time", point.timeMs ? ctx.formatDuration(point.timeMs) : "—"),
         );

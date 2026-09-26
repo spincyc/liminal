@@ -36,8 +36,10 @@ never recorded. Liminal is now built to keep practice honest:
   value, a fixed opening phrase, a word that is always or never right, the
   odd one out, or a choice every distractor varies. A student who never reads
   the question scores near chance.
-- **Every answer counts.** A blank counts as wrong, a correct answer after a
-  hint is shown apart, and Hard accuracy is reported on its own.
+- **Every answer counts, once.** A blank counts as wrong, a correct answer
+  after a hint is shown apart, a second answer to a question you have seen
+  (as when Review brings a miss back) is left out of accuracy, and Hard
+  accuracy is reported on its own.
 - **No score estimates.** Accuracy here is not a scaled score. Official
   practice tests in [Bluebook](https://bluebook.collegeboard.org/) are the
   score gauge.

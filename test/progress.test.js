@@ -290,7 +290,10 @@ test("missed ids follow each question's latest answer; weakest skill needs evide
       source: "bank", skill: "Style" }),
     attempt("5", { questionId: "sat-math:c:1", skill: "Circles", correct: false }),
     attempt("6", { questionId: "sat-math:d:1", skill: "Circles", correct: false }),
+    attempt("7", { questionId: "sat-math:e:1", correct: true }),
   ]);
+  assert.deepEqual(progress.attempts.map((entry) => entry.repeat), [false, true, false, false, false, false, false],
+    "the second answer to a question is a repeat");
   assert.deepEqual(Progress.missedIds(progress, { test: "SAT" }), ["sat-math:b:1", "sat-math:c:1", "sat-math:d:1"]);
   assert.deepEqual(Progress.missedIds(progress, { sectionKey: "act-english" }), ["act-english-0001"]);
   const weakest = Progress.weakestSkill(progress, { sectionKey: "sat-math" });
@@ -425,4 +428,25 @@ test("official scores stay in date order, replace by id, and follow storage acro
   assert.equal(Progress.addOfficialScore(first.get(), { date: "2026-10-04" }), first.get(), "a score needs an id");
   assert.deepEqual(Progress.normalize({ version: 3, officialScores: [{ id: "x" }, "junk", { date: "2026-01-01" }] })
     .officialScores, [{ id: "x" }]);
+});
+
+test("repeat answers are flagged once and left out of accuracy", () => {
+  // Older records get the flag from their order in time.
+  const normalized = Progress.normalize(Object.assign(Progress.empty({ epoch: "e1" }), {
+    attempts: [
+      attempt("late", { questionId: "sat-math:a:1", timestamp: 3000, correct: true }),
+      attempt("early", { questionId: "sat-math:a:1", timestamp: 1000, correct: false }),
+      attempt("other", { questionId: "sat-math:b:1", timestamp: 2000 }),
+    ],
+  }));
+  assert.deepEqual(normalized.attempts.map((entry) => [entry.id, entry.repeat]),
+    [["late", true], ["early", false], ["other", false]]);
+  const summary = Progress.stats(normalized.attempts);
+  assert.deepEqual([summary.attempted, summary.correct, summary.repeats], [2, 1, 1]);
+  assert.equal(Progress.stats(normalized.attempts, { includeRepeats: true }).attempted, 3);
+  // A stored flag is kept as it is.
+  const kept = Progress.normalize(Object.assign(Progress.empty({ epoch: "e1" }), {
+    attempts: [attempt("x", { questionId: "sat-math:a:1", repeat: false }), attempt("y", { questionId: "sat-math:a:1", repeat: false })],
+  }));
+  assert.deepEqual(kept.attempts.map((entry) => entry.repeat), [false, false]);
 });

@@ -9,6 +9,10 @@
 //             (answered: false, correct: false); append-only, unique by id.
 //             A re-practice of an earlier miss carries reviewOf (the missed
 //             question's id); the review schedule is derived from these.
+//             An answer to a question answered before carries repeat: true
+//             (set when it is recorded, and once for older records), and
+//             the accuracy model leaves it out: it tests memory of the
+//             question, not the skill.
 //   marked    question ids currently marked for review.
 //   errorLog  { [attemptId]: { reason, rule?, at } }.
 //   history   per section: a serve counter, the counter value each template
@@ -156,14 +160,14 @@
     if (!isObject(raw) || raw.version !== VERSION) return null;
     const progress = empty({ epoch: typeof raw.epoch === "string" && raw.epoch ? raw.epoch : "e0" });
     const seen = new Set();
-    progress.attempts = (Array.isArray(raw.attempts) ? raw.attempts : []).filter((attempt) => {
+    progress.attempts = markRepeats((Array.isArray(raw.attempts) ? raw.attempts : []).filter((attempt) => {
       if (!isObject(attempt) || typeof attempt.id !== "string" || typeof attempt.questionId !== "string") {
         return false;
       }
       if (seen.has(attempt.id)) return false;
       seen.add(attempt.id);
       return true;
-    });
+    }));
     progress.marked = unique(strings(raw.marked));
     progress.errorLog = isObject(raw.errorLog) ? Object.assign({}, raw.errorLog) : {};
     progress.history = normalizeHistory(raw.history);
@@ -173,6 +177,24 @@
     progress.officialScores = (Array.isArray(raw.officialScores) ? raw.officialScores : [])
       .filter((score) => isObject(score) && typeof score.id === "string");
     return progress;
+  }
+
+  // Sets `repeat` on attempts that lack it: true for every answer to a
+  // question after its earliest one. Attempts that carry the field keep it.
+  // Returns the same array when nothing needed a flag.
+  function markRepeats(attempts) {
+    if (attempts.every((attempt) => typeof attempt.repeat === "boolean")) return attempts;
+    const firstAt = new Map();
+    attempts.forEach((attempt, index) => {
+      const at = Number(attempt.timestamp) || 0;
+      const earliest = firstAt.get(attempt.questionId);
+      if (!earliest || at < earliest.at || (at === earliest.at && index < earliest.index)) {
+        firstAt.set(attempt.questionId, { at, index });
+      }
+    });
+    return attempts.map((attempt, index) => (typeof attempt.repeat === "boolean"
+      ? attempt
+      : Object.assign({}, attempt, { repeat: firstAt.get(attempt.questionId).index !== index })));
   }
 
   /* ----------------------------------------------------------- migration */
@@ -391,13 +413,19 @@
   /* ------------------------------------------------------------- changes */
 
   // Adds attempts whose ids are new; recording the same answer twice (once
-  // when checked, again when the set finishes) keeps the first.
+  // when checked, again when the set finishes) keeps the first. An answer
+  // to a question already answered is marked repeat.
   function recordAttempts(progress, attempts) {
     const ids = new Set(progress.attempts.map((attempt) => attempt.id));
+    const answered = new Set(progress.attempts.map((attempt) => attempt.questionId));
     const added = (attempts || []).filter((attempt) => {
       if (!attempt || typeof attempt.id !== "string" || ids.has(attempt.id)) return false;
       ids.add(attempt.id);
       return true;
+    }).map((attempt) => {
+      const repeat = answered.has(attempt.questionId);
+      answered.add(attempt.questionId);
+      return typeof attempt.repeat === "boolean" ? attempt : Object.assign({}, attempt, { repeat });
     });
     if (!added.length) return progress;
     return Object.assign({}, progress, { attempts: progress.attempts.concat(added) });
@@ -779,15 +807,17 @@
   }
 
   // The one accuracy model every view uses. An attempt counts when it was
-  // scored (essays are not) and did not come from the retired fixed SAT
-  // banks (`legacy` counts those left out). Unanswered counts as incorrect.
-  // A correct answer reached after a hint is counted in `hintedCorrect` and
-  // not as correct: it is not evidence of mastery. `updated` counts answers
-  // flagged by withCurrentTemplates. `includeLegacy` counts the retired
-  // banks too.
+  // scored (essays are not), did not come from the retired fixed SAT banks
+  // (`legacy` counts those left out), and is not a repeat answer to a
+  // question answered before (`repeats` counts those). Unanswered counts as
+  // incorrect. A correct answer reached after a hint is counted in
+  // `hintedCorrect` and not as correct: it is not evidence of mastery.
+  // `updated` counts answers flagged by withCurrentTemplates.
+  // `includeLegacy` counts the retired banks too; `includeRepeats` counts
+  // repeat answers, as a set's own report does.
   function stats(attempts, options) {
     const settings = options || {};
-    const summary = statRow({ legacy: 0, updated: 0, questions: 0, byDifficulty: {}, bySkill: {}, byDomain: {} });
+    const summary = statRow({ legacy: 0, repeats: 0, updated: 0, questions: 0, byDifficulty: {}, bySkill: {}, byDomain: {} });
     DIFFICULTIES.forEach((tier) => {
       summary.byDifficulty[tier] = statRow({ difficulty: tier });
     });
@@ -796,6 +826,10 @@
       if (attempt.correct !== true && attempt.correct !== false) return;
       if (attempt.source === "legacy-bank" && !settings.includeLegacy) {
         summary.legacy += 1;
+        return;
+      }
+      if (attempt.repeat === true && !settings.includeRepeats) {
+        summary.repeats += 1;
         return;
       }
       questions.add(attempt.questionId);
@@ -875,6 +909,7 @@
     serveTemplates,
     noteScenes,
     serveQuestions,
+    markRepeats,
     // records
     buildAttempt,
     summarizeSession,

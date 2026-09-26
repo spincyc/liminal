@@ -529,12 +529,21 @@
           timeMs: Number.isFinite(Number(session.timeMs)) && session.timeMs !== null ? Number(session.timeMs) : null,
           total: Number(session.total) || own.length,
         };
+        // A set made only of questions answered before (a Review set that
+        // brings misses back as they were) has no first answers: its
+        // accuracy is recall, which the trend leaves out.
+        if (summary && !summary.attempted && summary.repeats) {
+          return Object.assign(point, {
+            counted: 0, accuracy: null, hard: { attempted: 0, accuracy: null }, repeats: summary.repeats, source: "attempts",
+          });
+        }
         if (summary && summary.attempted) {
           const hard = summary.byDifficulty.Hard;
           return Object.assign(point, {
             counted: summary.attempted,
             accuracy: summary.accuracy,
             hard: { attempted: hard.attempted, accuracy: hard.accuracy },
+            repeats: summary.repeats,
             source: "attempts",
           });
         }

@@ -385,3 +385,14 @@ test("each official score sits beside accuracy over the 28 days ending on its te
   assert.deepEqual(early.sections.readingWriting, { attempted: 1, accuracy: 1, hard: { attempted: 0, accuracy: null } });
   assert.equal(rows[1].sections.math.attempted, 3, "the later window starts Sep 4 and reaches Oct 1");
 });
+
+test("the trend leaves answers to questions seen before out of a set's accuracy", () => {
+  const first = attempt({ sessionId: "s1", questionId: "sat-math:x:1", correct: false, repeat: false });
+  const again = attempt({ sessionId: "s2", questionId: "sat-math:x:1", correct: true, repeat: true });
+  const points = Analytics.sessionTrend([
+    { id: "s1", sectionKey: "sat-math", kind: "practice", finishedAt: 1, total: 1, correct: 0 },
+    { id: "s2", sectionKey: "sat-math", kind: "review", finishedAt: 2, total: 1, correct: 1 },
+  ], [first, again]);
+  assert.deepEqual(points.map((point) => [point.id, point.counted, point.accuracy, point.repeats]),
+    [["s1", 1, 0, 0], ["s2", 0, null, 1]]);
+});

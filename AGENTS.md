@@ -132,8 +132,9 @@ For a coherent ACT bank batch:
     `liminal:progress:v2` (kept as a backup; answers from the retired SAT
     banks are tagged `legacy-bank`) and merges what another tab saved.
     `LiminalProgress.stats` is the one accuracy model: legacy answers are
-    left out, a hinted correct answer is not counted as correct, and
-    template answers count at the template's current tier.
+    left out, a hinted correct answer is not counted as correct, an answer
+    to a question answered before (`repeat: true`, set when recorded) is
+    left out, and template answers count at the template's current tier.
   - `liminal:session:v1` holds an unfinished set or test so it can resume
     after a reload (`config.simulation` is a test's state; `state` is the
     module on screen, null during the break); `liminal:test:v1` holds the
