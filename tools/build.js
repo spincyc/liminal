@@ -55,7 +55,7 @@ const registries = Object.fromEntries(
       registry.templates = registry.templates.map((entry) => {
         const family = byId.get(entry.id);
         if (!family || entry.retired) return entry;
-        const { difficulty = "Hard", domain, skill, subskill } = family;
+        const { difficulty, domain, skill, subskill } = family;
         return { ...entry, difficulty, domain, skill, subskill };
       });
       return [registry.sectionKey, registry];

@@ -192,7 +192,7 @@ readiness.
 13. Look-alike pairs: a blind strategy that guesses among the choices that
     look like another choice (one change apart: a negation, a reciprocal, a
     factor of 2, the complement to 90, 100, 180 or 360, a flipped sign, or
-    one word or symbol swapped, added or dropped) scores at most 50% on a
+    one word or symbol swapped, added or dropped) scores at most 40% on a
     template and at most 32% over each tier's multiple choice, in every
     section. When no choice or every choice has a look-alike, the strategy
     guesses among all four.
@@ -202,9 +202,19 @@ readiness.
     most 30% over each tier. A distractor written by editing the key shares
     most of its words, so write distractors that are as close to one another
     as to the key.
+15. Visible text: no "a" before a number read with a vowel sound ("a 80%"),
+    no count of one with a plural unit ("1 boxes"), no coefficient of one
+    written out ("1y"), no hyphen for a minus before a superscript ("x-²"),
+    and no repeating decimal cut off on screen ("0.3333"; use a fraction or a
+    rounded value the stem asks for), in the stimulus, stem or choices.
 
 Also enforced:
 
+- Every template declares its `difficulty`; nothing defaults to Hard.
+- A "closest to", "approximately", "nearest" or "best approximation" item
+  returns `approximates`, the exact value it rounds, and its key is the
+  nearest choice to that value with every other choice at least twice as
+  far (check 1).
 - The rubric total falls in the tier's band (Easy 0–3, Medium 4–8, Hard 9–14,
   with two factors at 2 for Hard).
 - The stem never names the method, never tells the student to verify, and

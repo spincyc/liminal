@@ -333,3 +333,15 @@ test("figure SVG parses like the browser and survives the sanitizer", () => {
   assert.throws(() => parseXml('<x:svg/>'), SyntaxError);
   assert.equal(parseXml('<?xml version="1.0"?><!-- c --><svg><![CDATA[a<b]]></svg>').children[0].text, "a<b");
 });
+
+test("visible-text slips are named", () => {
+  const record = (stem, choices, stimulus) => ({ stem, choices, stimulus: stimulus ? { content: stimulus } : null });
+  assert.deepEqual(T.textSlips(record("Mix it with a 80% solution.", ["1", "2"])), ["a before a vowel-sound number"]);
+  assert.deepEqual(T.textSlips(record("An 80% solution and a 1,100-liter tank.", ["2x + 3y"])), []);
+  assert.deepEqual(T.textSlips(record("How many?", ["24 boxes and 1 boxes"])), ["1 with a plural unit"]);
+  assert.deepEqual(T.textSlips(record("Solve.", ["2.50x + 1y = 30"])), ["coefficient 1 written out"]);
+  assert.deepEqual(T.textSlips(record("Rewrite.", ["x-²y³"])), ["hyphen as minus before a superscript"]);
+  assert.deepEqual(T.textSlips(record("What is k?", ["0.3333", "1,666.6667"])), ["repeating decimal cut off"]);
+  assert.deepEqual(T.textSlips(record("Growth factor.", ["1.0005", "0.1296", "95.3125%"])), [], "exact decimals are fine");
+  assert.deepEqual(T.textSlips(record("x = 1 is a solution; the 1st term.", ["x − 1 = 0"])), []);
+});

@@ -49,6 +49,11 @@
   //                        choice order; null otherwise. Values are short
   //                        strings such as { number: "plural" }. The gate uses
   //                        them to catch a key that is the odd one out.
+  //   approximates         when build returns `approximates` (a finite
+  //                        number), the exact value a "closest to" or
+  //                        "approximately" item rounds; the gate checks that
+  //                        the key is clearly the nearest choice to it.
+  //                        Absent otherwise.
   // A numeric key is a plain decimal or an exact fraction in lowest terms
   // ("7/3", "-5/2"), where the real answer would be a repeating decimal.
   function instantiate(family, seed) {
@@ -89,6 +94,7 @@
         .concat(raw.tags || []),
       verified: Boolean(raw.verify()),
     };
+    if (Number.isFinite(raw.approximates)) record.approximates = raw.approximates;
     if (raw.responseType === "numeric") {
       return {
         ...record,

@@ -183,6 +183,30 @@ function similarCredit(choices, key) {
   return kept.includes(key) ? 1 / kept.length : 0;
 }
 
+/* ------------------------------------------------------- visible text */
+
+// Slips a student sees in the question or its choices, each a [name,
+// pattern] pair: "a" before a number read with a vowel sound ("a 80%",
+// "a 11"), a count of one with a plural unit ("1 boxes", "1 radians"), a
+// coefficient of one written out ("1y"), an ASCII hyphen as a minus before a
+// superscript ("x-²"), and a repeating decimal cut off at the screen ("0.3333",
+// "1,666.6667"), which a real test would print as a fraction or round.
+const TEXT_SLIPS = [
+  ["a before a vowel-sound number", /\ba (?:8[\d.]*%?|11|18)(?![\d,])/],
+  ["1 with a plural unit", /(?:^|[^\d.,−-])1 (?:boxes|radians|kilograms|grams|centimeters|meters|kilometers|hours|minutes|seconds|days|weeks|years|pounds|dollars|liters|milliliters|miles|feet|inches|units|people|students|points|degrees|cups|gallons)\b/],
+  ["coefficient 1 written out", /(?:^|[\s(=+−-])1[a-z](?![a-z\d])/],
+  ["hyphen as minus before a superscript", /-[⁰¹²³⁴⁵⁶⁷⁸⁹]/],
+  ["repeating decimal cut off", /\d\.\d*([1-9])\1{2,}\d?(?!\d)/],
+];
+
+// The slips in what a student reads before answering: the stimulus, the
+// stem and the choices. Returns the names found.
+function textSlips(record) {
+  const visible = [record.stimulus && record.stimulus.content, record.stem, ...(record.choices || [])]
+    .filter((text) => typeof text === "string");
+  return TEXT_SLIPS.filter(([, pattern]) => visible.some((text) => pattern.test(text))).map(([name]) => name);
+}
+
 /* ------------------------------------------------------------ measuring */
 
 const close = (left, right) => Math.abs(left - right) <= 1e-9 * Math.max(1, Math.abs(left), Math.abs(right));
@@ -574,6 +598,7 @@ module.exports = {
   keyIsExtreme,
   lookAlike,
   measureTemplate,
+  textSlips,
   normalizeChoice,
   opener,
   pairCandidates,

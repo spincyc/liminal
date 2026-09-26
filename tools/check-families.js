@@ -28,6 +28,7 @@ const fs = require("fs");
 const path = require("path");
 const S = require("../src/lib/families/shared");
 const T = require("./lib/tells");
+const { numericValue } = require("./lib/expr");
 const { sanitizeSvgTree } = require("../src/app/render");
 const FAMILIES_ROOT = path.join(__dirname, "..", "src", "lib", "families");
 
@@ -103,7 +104,7 @@ const LIMITS = {
   varietyWindow: 200, // 9: Math's distinct share is over the first 200 draws (100 of each seed shape)
   hubTemplate: 0.5, // 8
   hubTier: 0.32, // 8
-  pairTemplate: 0.5, // 13
+  pairTemplate: 0.4, // 13
   pairTier: 0.32, // 13
   similarTemplate: 0.4, // 14
   similarTier: 0.3, // 14
@@ -126,6 +127,7 @@ const CHECK_NAMES = {
   12: "template counts",
   13: "blind look-alike pair strategy",
   14: "blind most-similar pair strategy",
+  15: "visible text lint",
 };
 
 const RUBRIC_FACTORS = ["steps", "concept", "interpretation", "distractors", "abstraction", "synthesis", "trap"];
@@ -225,8 +227,11 @@ function metaErrors(family, ids) {
   if (bad) errors.push(bad);
   if (!family.title) errors.push("missing title");
   if (!family.recognize) errors.push("missing recognize");
-  const difficulty = family.difficulty || "Hard";
-  if (!DIFFICULTY_BANDS[difficulty]) errors.push(`unknown difficulty "${difficulty}"`);
+  // Declared, never defaulted: a template that forgot its tier must not
+  // become Hard, the inflation this gate exists to stop.
+  const difficulty = family.difficulty;
+  if (!difficulty) errors.push("difficulty must be declared (Easy, Medium or Hard)");
+  else if (!DIFFICULTY_BANDS[difficulty]) errors.push(`unknown difficulty "${difficulty}"`);
   const rubric = family.rubric || {};
   const scores = RUBRIC_FACTORS.map((factor) => rubric[factor]);
   if (scores.some((score) => ![0, 1, 2].includes(score))) {
@@ -341,6 +346,8 @@ function recordErrors(family, record, config) {
   if (record.stimulus) {
     if (!record.stimulus.type || !record.stimulus.content) errors.push("stimulus needs type and content");
   }
+  const approximation = approximationError(record);
+  if (approximation) errors.push(approximation);
   if (config.passageWords) {
     if (!record.stimulus) errors.push("Reading and Writing items need a stimulus");
     else {
@@ -388,6 +395,24 @@ function seedsFor(family) {
 // What check 10 needs from a Transitions record, kept after the family is done.
 const slim = (record) => ({ templateId: record.templateId, choices: record.choices, correctAnswer: record.correctAnswer });
 
+// "Closest to", "approximately" and "best approximation" items must say
+// which exact value they round (`approximates`), and the key must be the
+// nearest choice to it by a clear margin: every other choice at least twice
+// as far. A key rounded while a distractor was not can sit farther from the
+// exact value than that distractor.
+const APPROXIMATION_STEM = /closest to|approximately|nearest|best approximat/i;
+
+function approximationError(record) {
+  if (record.responseType !== "multiple-choice" || !APPROXIMATION_STEM.test(record.stem || "")) return null;
+  if (!Number.isFinite(record.approximates)) return "an approximation item must declare `approximates`, the exact value it rounds";
+  const values = (record.choices || []).map((choice) => numericValue(choice));
+  if (values.some((value) => value === null)) return null;
+  const distance = values.map((value) => Math.abs(value - record.approximates));
+  const key = distance[record.correctAnswer];
+  const clear = distance.every((gap, index) => index === record.correctAnswer || gap >= 2 * key - 1e-12);
+  return clear ? null : "the key is not clearly the nearest choice to the exact value";
+}
+
 function checkFamily(family, ids, config) {
   const failures = metaErrors(family, ids).map((message) => ({ check: null, message }));
   const tally = { mc: 0, numeric: 0, figures: 0, notToScale: 0 };
@@ -397,6 +422,7 @@ function checkFamily(family, ids, config) {
   const transitions = [];
   const instanceErrors = new Map();
   const figureErrors = new Map();
+  const slipErrors = new Map();
   const count = (map, message) => map.set(message, (map.get(message) || 0) + 1);
   if (typeof family.build === "function") {
     seedsFor(family).forEach((seed) => {
@@ -409,6 +435,7 @@ function checkFamily(family, ids, config) {
       }
       entries.push({ seed, record });
       recordErrors(family, record, config).forEach((message) => count(instanceErrors, message));
+      T.textSlips(record).forEach((name) => count(slipErrors, name));
       shapes.add(shapeOf(record));
       if (record.scene) scenes.add(record.scene);
       if (record.responseType === "numeric") tally.numeric += 1;
@@ -434,6 +461,8 @@ function checkFamily(family, ids, config) {
     minDistinct: config.minDistinct,
     minDistinctShare: config.minDistinctShare,
   }));
+  slipErrors.forEach((times, name) =>
+    failures.push({ check: 15, message: `${name} in ${times}/${records} reps`, value: times / records }));
   figureErrors.forEach((times, message) =>
     failures.push({ check: 11, message: `${message} (${times}/${tally.figures} figures)`, value: times / tally.figures }));
   if (config.minSurfaceForms && shapes.size < config.minSurfaceForms) {

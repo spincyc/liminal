@@ -42,7 +42,7 @@
         bit: entries.get(family.id).bit,
         version: entries.get(family.id).version || 1,
         family,
-        difficulty: family.difficulty || "Hard",
+        difficulty: family.difficulty,
         domain: family.domain,
         skill: family.skill,
       }));
