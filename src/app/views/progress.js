@@ -878,7 +878,9 @@
 
     function skillRow(row, showDomain) {
       const tr = el("tr");
-      const skill = el("td", "skill-name");
+      // The skill names the row for screen readers.
+      const skill = el("th", "skill-name");
+      skill.scope = "row";
       skill.appendChild(el("span", null, row.skill));
       if (showDomain) skill.appendChild(el("small", "cell-note", `${ctx.sectionLabel(row.sectionKey)} · ${row.domain}`));
       const answered = el("td", "num", ctx.formatNumber(row.attempted));
@@ -1024,7 +1026,10 @@
         body.appendChild(tr);
       });
       table.append(head, body);
-      return table;
+      // Wide at large text sizes: the table scrolls, not the page.
+      const wrap = el("div", "table-wrap");
+      wrap.appendChild(table);
+      return wrap;
     }
 
     function renderPacing() {
