@@ -452,3 +452,114 @@ test("finished parts combine into one reported session for one report and one re
   assert.equal(engine.combineFinished([{ questions: [rw], responses: [0] }], 1).timeLimitSeconds, null);
   assert.throws(() => engine.combineFinished([], 1), /at least one question/);
 });
+
+/* ------------------------------------------------ hints, sections, discard */
+
+test("a correct answer after a hint is not counted as correct anywhere in the report", () => {
+  const now = clock();
+  const session = engine.create({ questions: QUESTIONS.slice(0, 2), feedback: "instant", now });
+  session.useHint();
+  session.select(2); // right, after a hint
+  session.check();
+  session.next();
+  session.select("0.75"); // right, no hint
+  session.check();
+  session.finish();
+  const summary = session.summary();
+  assert.equal(summary.correct, 1, "1 of 2, not 2 of 2");
+  assert.equal(summary.hintedCorrect, 1);
+  assert.equal(summary.accuracy, 0.5);
+  assert.deepEqual(summary.items.map((item) => [item.correct, item.hinted, item.countedCorrect, item.hintedCorrect]),
+    [[true, true, false, true], [true, false, true, false]]);
+  assert.deepEqual(summary.byDifficulty.map((row) => [row.difficulty, row.correct, row.total]),
+    [["Easy", 0, 1], ["Hard", 1, 1]]);
+  assert.deepEqual(summary.byDomain.map((row) => [row.domain, row.correct]),
+    [["Algebra", 0], ["Advanced Math", 1]], "weakest first, the hinted one counted wrong");
+  assert.deepEqual(summary.bySection.map((row) => [row.sectionKey, row.correct, row.hintedCorrect, row.total]),
+    [["sat-math", 1, 1, 2]]);
+  // The payload the app records keeps the raw verdict and the hint, which
+  // LiminalProgress counts apart.
+  const result = session.result();
+  assert.equal(result.correct, 1);
+  assert.equal(result.hintedCorrect, 1);
+  assert.deepEqual(result.items.map((item) => [item.correct, item.hinted]), [[true, true], [true, false]]);
+});
+
+test("a set that spans sections reports each section with its Hard count, in set order", () => {
+  const mixed = [
+    question("rw1", { sectionKey: "sat-reading-writing", section: "Reading and Writing", domain: "Craft and Structure", difficulty: "Hard", correctAnswer: 1 }),
+    question("rw2", { sectionKey: "sat-reading-writing", section: "Reading and Writing", domain: "Craft and Structure", correctAnswer: 1 }),
+    question("m1", { difficulty: "Hard" }),
+    question("m2", { difficulty: "Hard" }),
+    question("m3"),
+  ];
+  const session = engine.create({ questions: mixed, now: clock() });
+  [1, 0, 2, 0, 2].forEach((choice, index) => {
+    session.goTo(index);
+    session.select(choice);
+  });
+  session.finish();
+  const summary = session.summary();
+  assert.equal(summary.correct, 3);
+  assert.deepEqual(summary.bySection.map((row) => ({
+    section: row.section, correct: row.correct, total: row.total, hard: row.hard,
+  })), [
+    { section: "Reading and Writing", correct: 1, total: 2, hard: { total: 1, correct: 1 } },
+    { section: "Math", correct: 2, total: 3, hard: { total: 2, correct: 1 } },
+  ]);
+});
+
+test("discarding records every question seen, answered or blank, and none never opened", () => {
+  const now = clock();
+  const five = ["a", "b", "c", "d", "e"].map((id) => question(id));
+  const session = engine.create({ questions: five, feedback: "instant", now });
+  session.select(2);
+  session.check(); // a: checked, right
+  session.next(); // b: seen, left blank
+  session.next();
+  session.select(0); // c: answered, wrong, not checked
+  now.advance(4_000);
+  const discarded = session.discardResult();
+  assert.deepEqual([discarded.total, discarded.seen, discarded.answered, discarded.blank, discarded.unseen],
+    [5, 3, 2, 1, 2]);
+  assert.deepEqual(discarded.items.map((item) => [item.index, item.answered, item.correct]),
+    [[0, true, true], [1, false, false], [2, true, false]]);
+  assert.equal(discarded.items[2].timeMs, 4_000, "the question on screen keeps its time");
+  assert.deepEqual(five.map((_, index) => session.isSeen(index)), [true, true, true, false, false]);
+  // Opening a set and leaving at once still saw its first question.
+  const fresh = engine.create({ questions: five, now: clock() });
+  assert.equal(fresh.discardResult().seen, 1);
+});
+
+test("a module's clock runs on the wall clock: Save and exit does not pause it", () => {
+  const now = clock();
+  const module = engine.create({ questions: QUESTIONS, timeLimitSeconds: 600, wallClock: true, now });
+  now.advance(100_000);
+  const saved = module.serialize({ paused: true }); // Save and exit
+  assert.equal(saved.paused, false);
+  assert.equal(saved.wallClock, true);
+  now.advance(200_000); // away for 200 seconds
+  const back = engine.restore(saved, { now });
+  assert.equal(back.timer().remainingSeconds, 300, "time away counts");
+  now.advance(3_600_000); // away past the limit
+  const late = engine.restore(back.serialize({ paused: true }), { now });
+  assert.equal(late.tick().expired, true);
+  assert.equal(late.state.finished, true);
+  assert.equal(late.state.finishReason, "time");
+
+  // A practice set's Save and exit still pauses its clock.
+  const practiceSet = engine.create({ questions: QUESTIONS, timeLimitSeconds: 600, now });
+  now.advance(100_000);
+  const put = practiceSet.serialize({ paused: true });
+  now.advance(3_600_000);
+  assert.equal(engine.restore(put, { now }).timer().remainingSeconds, 500);
+
+  // A module saved paused before modules ran on the wall clock resumes
+  // paused once, then keeps the wall clock.
+  const legacy = engine.restore(put, { now });
+  legacy.useWallClock();
+  const again = legacy.serialize({ paused: true });
+  assert.equal(again.paused, false);
+  now.advance(60_000);
+  assert.equal(engine.restore(again, { now }).timer().remainingSeconds, 440);
+});

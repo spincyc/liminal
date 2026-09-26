@@ -106,6 +106,9 @@
       finished: false,
       finishReason: null,
       reported: false,
+      // A module of an on-screen test runs on the wall clock, as the real
+      // test does: Save and exit never pauses it (see serialize).
+      wallClock: Boolean(settings.wallClock),
     };
   }
 
@@ -311,6 +314,12 @@
     return next;
   }
 
+  // From now on the clock cannot be paused (a module saved before modules
+  // ran on the wall clock).
+  function useWallClock(state) {
+    return state.wallClock ? state : Object.assign({}, state, { wallClock: true });
+  }
+
   function markReported(state) {
     return state.reported ? state : Object.assign({}, state, { reported: true });
   }
@@ -322,6 +331,12 @@
     const response = state.responses[index];
     if (!hasResponse(response)) return false;
     return core().scoreResponse(question, response) === true;
+  }
+
+  // A question the student has seen: it was on screen, or has an answer.
+  // Discarding a set records exactly these (discardResult).
+  function isSeen(state, index) {
+    return Boolean(state.visited[index]) || hasResponse(state.responses[index]) || Boolean(state.checked[index]);
   }
 
   // Per-question status for the navigator, the review page, and the report.
@@ -351,14 +366,17 @@
     };
   }
 
+  // Rows of { key, total, correct, accuracy } in first-seen order (or
+  // `order`), counting only answers right without a hint.
   function groupAccuracy(items, keyOf, order) {
     const groups = new Map();
     items.forEach((item) => {
       const key = keyOf(item.question);
-      if (!groups.has(key)) groups.set(key, { key, total: 0, correct: 0, accuracy: 0 });
+      if (!groups.has(key)) groups.set(key, { key, total: 0, correct: 0, hintedCorrect: 0, accuracy: 0 });
       const row = groups.get(key);
       row.total += 1;
-      if (item.correct) row.correct += 1;
+      if (item.countedCorrect) row.correct += 1;
+      if (item.hintedCorrect) row.hintedCorrect += 1;
     });
     const rows = [...groups.values()].map((row) =>
       Object.assign(row, { accuracy: row.total ? row.correct / row.total : 0 })
@@ -367,33 +385,37 @@
     return rows;
   }
 
-  // The report. Accuracy only: never a scaled score. Domain rows come from
-  // PracticeCore.summarizeMiniTest (weakest first); each item keeps its
+  // The report. Accuracy only: never a scaled score. A correct answer
+  // reached after a hint is not counted as correct anywhere in it (headline,
+  // sections, domains, tiers), as in LiminalProgress.stats; it is counted
+  // apart as hintedCorrect. Domain rows are weakest first; section rows keep
+  // the set's order, so a set that spans sections (a full-length test, a
+  // mini test) can report each section on its own. Each item keeps its
   // position so repeated IDs cannot collide.
   function summary(state, nowMs) {
     const api = core();
     const times = questionTimes(state, nowMs);
-    const keyed = state.questions.map((question, index) =>
-      Object.assign({}, question, { id: `${index}:${question.id}` })
-    );
-    const responses = new Map();
-    keyed.forEach((question, index) => {
-      if (hasResponse(state.responses[index])) responses.set(question.id, state.responses[index]);
+    const items = state.questions.map((question, index) => {
+      const answered = hasResponse(state.responses[index]);
+      const correct = isCorrect(state, index);
+      const hinted = Boolean(state.hinted[index]);
+      return {
+        index,
+        number: index + 1,
+        question,
+        response: answered ? state.responses[index] : null,
+        answered,
+        correct,
+        // Right without a hint: what every count in the report uses.
+        countedCorrect: answered && correct && !hinted,
+        hintedCorrect: answered && correct && hinted,
+        marked: state.marked[index],
+        checked: state.checked[index],
+        hinted,
+        timeMs: Math.round(times[index] || 0),
+      };
     });
-    const base = api.summarizeMiniTest(keyed, responses);
-    const items = state.questions.map((question, index) => ({
-      index,
-      number: index + 1,
-      question,
-      response: hasResponse(state.responses[index]) ? state.responses[index] : null,
-      answered: hasResponse(state.responses[index]),
-      correct: isCorrect(state, index),
-      marked: state.marked[index],
-      checked: state.checked[index],
-      hinted: state.hinted[index],
-      timeMs: Math.round(times[index] || 0),
-    }));
-    const correct = items.filter((item) => item.correct).length;
+    const correct = items.filter((item) => item.countedCorrect).length;
     // A set that mixes sections (a mini test) is paced question by question.
     const budget = typeof api.paceBudgetForQuestions === "function"
       ? api.paceBudgetForQuestions(state.questions)
@@ -401,11 +423,38 @@
         ? api.paceBudgetSeconds(state.questions[0].sectionKey, state.questions.length)
         : null;
     const elapsed = elapsedMs(state, nowMs === undefined ? 0 : nowMs);
+    const bySection = groupAccuracy(items, (question) => question.sectionKey || "").map((row) => {
+      const own = items.filter((item) => (item.question.sectionKey || "") === row.key);
+      const hard = own.filter((item) => item.question.difficulty === "Hard");
+      return {
+        sectionKey: row.key || null,
+        section: (own[0].question.section) || row.key || "",
+        total: row.total,
+        correct: row.correct,
+        hintedCorrect: row.hintedCorrect,
+        accuracy: row.accuracy,
+        hard: { total: hard.length, correct: hard.filter((item) => item.countedCorrect).length },
+      };
+    });
+    const byDomain = groupAccuracy(items, (question) => `${question.sectionKey || ""}|${question.domain}`)
+      .map((row) => {
+        const first = items.find((item) => `${item.question.sectionKey || ""}|${item.question.domain}` === row.key);
+        return {
+          domain: first.question.domain,
+          section: first.question.section,
+          sectionKey: first.question.sectionKey,
+          total: row.total,
+          correct: row.correct,
+          accuracy: row.accuracy,
+        };
+      })
+      .sort((left, right) => left.accuracy - right.accuracy);
     return {
       feedback: state.feedback,
       finishReason: state.finishReason,
       total: items.length,
       correct,
+      hintedCorrect: items.filter((item) => item.hintedCorrect).length,
       answered: items.filter((item) => item.answered).length,
       unanswered: items.filter((item) => !item.answered).length,
       marked: items.filter((item) => item.marked).length,
@@ -413,14 +462,8 @@
       elapsedMs: elapsed,
       timeLimitSeconds: state.timeLimitSeconds,
       paceBudgetSeconds: budget,
-      byDomain: base.byDomain.map((row) => ({
-        domain: row.domain,
-        section: row.section,
-        sectionKey: row.sectionKey,
-        total: row.total,
-        correct: row.correct,
-        accuracy: row.accuracy,
-      })),
+      bySection,
+      byDomain,
       byDifficulty: groupAccuracy(items, (question) => question.difficulty,
         api.DIFFICULTY_ORDER || ["Easy", "Medium", "Hard"]).map((row) => ({
         difficulty: row.key,
@@ -441,6 +484,7 @@
       timeLimitSeconds: report.timeLimitSeconds,
       finishReason: report.finishReason,
       correct: report.correct,
+      hintedCorrect: report.hintedCorrect,
       total: report.total,
       items: report.items.map((item) => ({
         index: item.index,
@@ -456,12 +500,36 @@
     };
   }
 
+  // What discarding an unfinished set records: every question the student
+  // has seen (isSeen), answered or left blank (a blank counts as wrong, as
+  // in a finished set), and nothing they never opened. Same item shape as
+  // result(); `seen`, `answered`, `blank`, and `unseen` are counts for the
+  // dialog that asks first.
+  function discardResult(state, nowMs) {
+    const full = result(state, nowMs);
+    const items = full.items.filter((item) => isSeen(state, item.index));
+    const answered = items.filter((item) => item.answered).length;
+    return {
+      feedback: full.feedback,
+      elapsedMs: full.elapsedMs,
+      timeLimitSeconds: full.timeLimitSeconds,
+      total: full.total,
+      seen: items.length,
+      answered,
+      blank: items.length - answered,
+      unseen: full.total - items.length,
+      items,
+    };
+  }
+
   /* ---------------------------------------------------------- persistence */
 
   // A snapshot freezes the elapsed time and notes the wall clock. A timed
   // set keeps counting while the page is closed or reloading, as a real
   // section clock would, unless the student paused it on purpose (`paused`,
-  // from Save and exit). An untimed set counts only time on the page.
+  // from Save and exit). A wall-clock session (a module of an on-screen
+  // test) cannot be paused: on test day a module's clock never stops, so
+  // its time away counts. An untimed set counts only time on the page.
   // Question times never count closed time.
   function serialize(state, nowMs, options) {
     const snapshot = copyState(settleQuestionTime(state, nowMs));
@@ -469,7 +537,8 @@
     snapshot.segmentStart = null;
     snapshot.questionSince = null;
     snapshot.savedAtMs = Number.isFinite(Number(nowMs)) ? Number(nowMs) : null;
-    snapshot.paused = Boolean(options && options.paused);
+    snapshot.paused = Boolean(options && options.paused) && !state.wallClock;
+    snapshot.wallClock = Boolean(state.wallClock);
     return JSON.parse(JSON.stringify(snapshot));
   }
 
@@ -510,11 +579,13 @@
         ? snapshot.finishReason
         : null,
       reported: Boolean(snapshot.reported),
+      wallClock: Boolean(snapshot.wallClock),
     };
     state.index = clampIndex(state, snapshot.index);
     state.visited[state.index] = true;
     const savedAt = Number(snapshot.savedAtMs);
-    if (state.timeLimitSeconds && !state.finished && !snapshot.paused &&
+    const paused = Boolean(snapshot.paused) && !state.wallClock;
+    if (state.timeLimitSeconds && !state.finished && !paused &&
         snapshot.savedAtMs !== null && Number.isFinite(savedAt) && nowMs > savedAt) {
       state.elapsedMs += nowMs - savedAt;
     }
@@ -703,6 +774,9 @@
       questionTimes: () => questionTimes(session.state, clock()),
       summary: () => summary(session.state, clock()),
       result: () => result(session.state, clock()),
+      discardResult: () => discardResult(session.state, clock()),
+      isSeen: (index) => isSeen(session.state, index === undefined ? session.state.index : index),
+      useWallClock: apply(useWallClock),
       serialize: (options) => serialize(session.state, clock(), options),
     });
     return session;
@@ -759,6 +833,9 @@
     counts,
     summary,
     result,
+    discardResult,
+    isSeen,
+    useWallClock,
     combineFinished,
     hasResponse,
     sanitizeNumericEntry,
