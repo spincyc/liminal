@@ -1500,5 +1500,189 @@
     },
   };
 
-  return [methodChoice, marginSize, sampleEstimate, markRecapture, sampleInference, twoEstimates, intervalMeanScope];
+  /* ================================= stratified-sample-total (Hard) */
+
+  // Two groups of known, unequal sizes, each sampled at random at its own
+  // rate. The estimate for everyone scales each group's sample by that
+  // group's size; pooling the samples treats them as one random sample of
+  // everyone, which is wrong because the rates differ (and the draw makes
+  // the pooled answer differ from the key). `intro` takes the two sizes as
+  // printed; `who` joins the property to its noun, and `ones` names it;
+  // `col` heads the table's count column. No choice is the complement of
+  // the key: two choices summing to the whole would mark the pair.
+  const STRATA_SCENES = [
+    {
+      intro: (a, b) => `A high school has ${a} ninth graders and ${b} twelfth graders.`,
+      sampled: "A random sample of students was selected from each of the two grades, and each student in the samples was asked whether they walk to school.",
+      head: "Grade", groups: ["Ninth grade", "Twelfth grade"], col: "Number who walk to school",
+      whole: "ninth and twelfth graders at the school", who: "who walk to school", ones: "students", group: (i) => ["ninth graders", "twelfth graders"][i],
+    },
+    {
+      intro: (a, b) => `A company has ${a} employees at its downtown office and ${b} employees at its airport office.`,
+      sampled: "The company surveyed a random sample of employees from each office about whether they would use a company shuttle.",
+      head: "Office", groups: ["Downtown", "Airport"], col: "Number who would use a shuttle",
+      whole: "employees at the two offices", who: "who would use a shuttle", ones: "employees", group: (i) => ["downtown employees", "airport employees"][i],
+    },
+    {
+      intro: (a, b) => `A town has ${a} households north of its river and ${b} households south of it.`,
+      sampled: "A random sample of households was selected from each side of the river, and each household in the samples was asked whether it has a vegetable garden.",
+      head: "Side of the river", groups: ["North", "South"], col: "Number with a vegetable garden",
+      whole: "households in the town", who: "that have a vegetable garden", ones: "households", group: (i) => ["households north of the river", "households south of the river"][i],
+    },
+    {
+      intro: (a, b) => `An orchard has ${a} apple trees and ${b} pear trees.`,
+      sampled: "An inspector selected a random sample of each type of tree and checked each sampled tree for leaf blight.",
+      head: "Type of tree", groups: ["Apple", "Pear"], col: "Number with leaf blight",
+      whole: "trees in the orchard", who: "that have leaf blight", ones: "trees", group: (i) => ["apple trees", "pear trees"][i],
+    },
+    {
+      intro: (a, b) => `A library has ${a} adult members and ${b} youth members.`,
+      sampled: "The library surveyed a random sample of each kind of member about whether they borrowed an e-book last month.",
+      head: "Membership", groups: ["Adult", "Youth"], col: "Number who borrowed an e-book",
+      whole: "members of the library", who: "who borrowed an e-book last month", ones: "members", group: (i) => ["adult members", "youth members"][i],
+    },
+    {
+      intro: (a, b) => `Last week a factory made ${a} parts on its day shift and ${b} parts on its night shift.`,
+      sampled: "An inspector selected a random sample of the parts made on each shift and checked each sampled part for a defect.",
+      head: "Shift", groups: ["Day", "Night"], col: "Number with a defect",
+      whole: "parts made last week", who: "that have a defect", ones: "parts", group: (i) => ["parts made on the day shift", "parts made on the night shift"][i],
+    },
+    {
+      intro: (a, b) => `Last month a state park had ${a} weekday visitors and ${b} weekend visitors.`,
+      sampled: "The park surveyed a random sample of the weekday visitors and a random sample of the weekend visitors about whether they rated their visit as excellent.",
+      head: "Day of visit", groups: ["Weekday", "Weekend"], col: "Number who rated it excellent",
+      whole: "visitors last month", who: "who rated their visit as excellent", ones: "visitors", group: (i) => ["weekday visitors", "weekend visitors"][i],
+    },
+    {
+      intro: (a, b) => `A clinic has ${a} patients under 40 years old and ${b} patients 40 years old or older.`,
+      sampled: "The clinic surveyed a random sample of patients from each age group about whether they would book appointments online.",
+      head: "Age group", groups: ["Under 40", "40 or older"], col: "Number who would book online",
+      whole: "patients at the clinic", who: "who would book appointments online", ones: "patients", group: (i) => ["patients under 40", "patients 40 or older"][i],
+    },
+  ];
+
+  function strataItem(t, scene, askPercent, numeric) {
+    return retry(() => {
+      // Each group's size is its sample size times its own scale, and the
+      // scales differ, so the groups are sampled at different rates.
+      const n = [t.int(4, 20) * 5, t.int(4, 20) * 5];
+      const k = [t.int(4, 40), t.int(4, 40)];
+      if (Math.abs(k[0] - k[1]) < 4) return null;
+      const N = [n[0] * k[0], n[1] * k[1]];
+      if (N.some((size) => size < 200 || size > 6000)) return null;
+      const x = [t.int(Math.ceil(0.1 * n[0]), Math.floor(0.9 * n[0])), t.int(Math.ceil(0.1 * n[1]), Math.floor(0.9 * n[1]))];
+      const rate = [x[0] / n[0], x[1] / n[1]];
+      if (Math.abs(rate[0] - rate[1]) < 0.2) return null;
+      const all = N[0] + N[1];
+      const total = k[0] * x[0] + k[1] * x[1];
+      const pooled = tidy(((x[0] + x[1]) * all) / (n[0] + n[1]));
+      // The trap must land far enough from the key to be a real mistake.
+      if (Math.abs(pooled - total) < 0.06 * total) return null;
+      const stimulus = {
+        type: "table",
+        content: table([scene.head, "Number sampled", scene.col], [0, 1].map((i) => [scene.groups[i], n[i], x[i]])),
+      };
+      const lead = `${scene.intro(fmt(N[0]), fmt(N[1]))} ${scene.sampled} The table shows the results.`;
+      const perGroup = [0, 1].map((i) => `${scene.group(i)}: ${x[i]}/${n[i]} of ${fmt(N[i])} = ${fmt(k[i] * x[i])}`);
+      const principles = [
+        "A random sample from one group describes that group; scale it by that group's size, not by the whole population's.",
+        "When groups are sampled at different rates, pooling the samples misweights them; estimate each group, then add.",
+      ];
+      const trap =
+        `Pooling the samples, ${x[0] + x[1]} of ${n[0] + n[1]}, treats them as one random sample of all ${fmt(all)}; ` +
+        `but ${n[0]} of ${fmt(N[0])} ${scene.group(0)} and ${n[1]} of ${fmt(N[1])} ${scene.group(1)} were sampled at different rates.`;
+      if (askPercent) {
+        const key = tidy((total / all) * 100);
+        if (!isClean(key, 1)) return null;
+        const text = (value) => (value > 0 && value < 100 && isClean(value, 1) ? `${num(tidy(value))}%` : null);
+        const item = packRanked(t, numeric, key, [
+          [tidy(((x[0] + x[1]) / (n[0] + n[1])) * 100), `Pools the two samples (${x[0] + x[1]} of ${n[0] + n[1]}), ignoring that the groups were sampled at different rates.`],
+          [tidy(((rate[0] + rate[1]) / 2) * 100), `Averages the two sample percents as if the groups were the same size; there are ${fmt(N[0])} ${scene.group(0)} and ${fmt(N[1])} ${scene.group(1)}.`],
+          [tidy(((k[1] * x[0] + k[0] * x[1]) / all) * 100), "Scales each group's sample by the other group's size."],
+          [tidy(rate[0] * 100), `Gives the percent for ${scene.group(0)} alone.`],
+          [tidy(rate[1] * 100), `Gives the percent for ${scene.group(1)} alone.`],
+        ], {
+          stimulus,
+          figure: null,
+          stem: `${lead} Based on these results, ${numeric ? "what" : "which of the following"} is the best estimate of the percent of all ${scene.whole} ${scene.who}?`,
+          explanation:
+            `Estimate each group from its own sample: ${perGroup.join("; ")}. Together that is ${fmt(total)} of ${fmt(all)}, ` +
+            `or ${num(key)}%.`,
+          steps: [
+            `Estimate each group from its own sample: ${perGroup.join("; ")}.`,
+            `Add: ${fmt(k[0] * x[0])} + ${fmt(k[1] * x[1])} = ${fmt(total)} of the ${fmt(all)} ${scene.whole}.`,
+            `${fmt(total)} ÷ ${fmt(all)} = ${num(key)}%.`,
+          ],
+          principles,
+          trap,
+          hint: "Did each sample come from the whole population, or from one group of a known size?",
+          estimatedSeconds: 130,
+        }, { show: text, places: 1, keep: 1 });
+        if (!item) return null;
+        return Object.assign(item, { verify: () => close(strataCheck(scene, stimulus.content, lead).percent, key, 1e-9) &&
+          (numeric || item.wrong.every(([choice]) => !close(parseNumber(choice.replace("%", "")), key, 1e-9))) });
+      }
+      if (!Number.isInteger(pooled)) return null;
+      const item = packRanked(t, numeric, total, [
+        [pooled, `Pools the two samples (${x[0] + x[1]} of ${n[0] + n[1]}) and scales by all ${fmt(all)}, ignoring that the groups were sampled at different rates.`],
+        [k[1] * x[0] + k[0] * x[1], "Scales each group's sample by the other group's size."],
+        [tidy(((rate[0] + rate[1]) / 2) * all), `Averages the two sample rates as if the groups were the same size; there are ${fmt(N[0])} ${scene.group(0)} and ${fmt(N[1])} ${scene.group(1)}.`],
+        // One group's estimate only: with both on offer, the key would be
+        // their sum.
+        ...[t.pick([0, 1])].map((i) => [k[i] * x[i], `Estimates the ${scene.group(i)} alone.`]),
+        [x[0] + x[1], `Counts only the ${n[0] + n[1]} ${scene.ones} sampled, not all ${fmt(all)}.`],
+      ], {
+        stimulus,
+        figure: null,
+        stem: `${lead} Based on these results, ${numeric ? "what" : "which of the following"} is the best estimate of the number of ${scene.whole} ${scene.who}?`,
+        explanation:
+          `Each sample describes only its own group, so estimate each group and add: ${perGroup.join("; ")}. ` +
+          `The estimate for all ${fmt(all)} is ${fmt(k[0] * x[0])} + ${fmt(k[1] * x[1])} = ${fmt(total)}.`,
+        steps: [
+          `${scene.groups[0]}: ${x[0]} of ${n[0]} sampled, applied to ${fmt(N[0])}, gives ${fmt(N[0])} × ${x[0]}/${n[0]} = ${fmt(k[0] * x[0])}.`,
+          `${scene.groups[1]}: ${x[1]} of ${n[1]} sampled, applied to ${fmt(N[1])}, gives ${fmt(N[1])} × ${x[1]}/${n[1]} = ${fmt(k[1] * x[1])}.`,
+          `Add the two estimates: ${fmt(total)}.`,
+        ],
+        principles,
+        trap,
+        hint: "Did each sample come from the whole population, or from one group of a known size?",
+        estimatedSeconds: 130,
+      }, { places: 0, keep: 1 });
+      if (!item) return null;
+      return Object.assign(item, { verify: () => strataCheck(scene, stimulus.content, lead).total === total &&
+        (numeric || item.wrong.every(([choice]) => parseNumber(choice) !== total)) });
+    });
+  }
+
+  // Re-reads the group sizes from the lead, where the scene's intro put
+  // them, and the samples from the table.
+  function strataCheck(scene, content, lead) {
+    const pattern = scene.intro("\u0000", "\u0001").replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+      .replace("\u0000", "([\\d,]+)").replace("\u0001", "([\\d,]+)");
+    const sizes = new RegExp(`^${pattern}`).exec(lead).slice(1, 3).map(parseNumber);
+    const rows = parseTable(content).slice(1).map((row) => row.slice(1).map(Number));
+    const total = rows.reduce((sumSoFar, [sampled, count], i) => sumSoFar + (sizes[i] * count) / sampled, 0);
+    return { total: tidy(total), percent: tidy((total / (sizes[0] + sizes[1])) * 100) };
+  }
+
+  const stratifiedTotal = {
+    id: "stratified-sample-total",
+    domain: DATA,
+    skill: "Statistical inference",
+    subskill: "samples and populations",
+    difficulty: "Hard",
+    title: "Combining random samples taken from groups of different sizes",
+    recognize:
+      "Each sample was drawn from one group of known size, at its own rate. Estimate each group from its own sample and add; " +
+      "pooling the samples, or averaging their rates, weights the groups wrongly.",
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["unweighted-average", "part-vs-whole", "wrong-quantity"],
+    build(t) {
+      const scene = t.pick(STRATA_SCENES);
+      const askPercent = t.chance(0.35);
+      return strataItem(t, scene, askPercent, t.chance(0.35));
+    },
+  };
+
+  return [methodChoice, marginSize, sampleEstimate, markRecapture, sampleInference, twoEstimates, intervalMeanScope, stratifiedTotal];
 });

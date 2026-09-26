@@ -77,8 +77,9 @@ on the real test. The SAT Math Hard tier explains most of the gap (measured
    progress file carries them. Next: with several students' files, shared
    with consent, check whether Hard accuracy tracks the official section
    scores, and re-tier templates where it does not.
-3. **Grow thin cells.** Statistical inference has only two Hard templates;
-   several Reading and Writing Hard templates are banks of 10–12 items, so a
+3. **Grow thin cells.** Statistical inference had only two Hard templates
+   (a third, combining samples from groups of different sizes, was added
+   2026-09-26); several Reading and Writing Hard templates are banks of 10–12 items, so a
    heavy user will meet repeats after many tests. Grow banks and add a
    "look-alike pair" tell check.
 4. **More of the real test's tools.** Highlights, notes and a line reader for

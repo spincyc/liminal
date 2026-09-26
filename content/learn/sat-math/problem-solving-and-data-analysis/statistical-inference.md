@@ -38,6 +38,27 @@ generalize reliably even to its own population.
 > **Trap.** The choice that generalizes too far ("most teenagers", "students
 > nationwide"). The population is set by where the random sample came from.
 
+When each of two groups is sampled separately, each sample describes only
+its own group. Estimate each group from its own sample, then add. Pooling
+the samples into one fraction works only when both groups were sampled at
+the same rate.
+
+> **Example.** A town has 2,000 households north of its river and 500 south
+> of it. A random sample of 50 northern households has 10 with a garden; a
+> random sample of 50 southern households has 30. Estimate the number of
+> households in the town with a garden.
+>
+> North: 10/50 of 2,000 = 400. South: 30/50 of 500 = 300.
+>
+> Estimate: 400 + 300 = 700 households.
+>
+> Pooling gives 40/100 of 2,500 = 1,000, far too many: the south, sampled at
+> 1 in 10, would count as much as the north, sampled at 1 in 40.
+
+> **Fails when.** Pooling is right only when the groups were sampled at the
+> same rate (the same fraction of each group). Check the rates before
+> combining.
+
 ## Margin of error {#margin-of-error}
 
 A survey reports an estimate plus or minus a margin of error. The interval
