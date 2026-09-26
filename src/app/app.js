@@ -13,8 +13,16 @@
   //   open(options, params)  render and show; params come from the hash
   //   onTestChange()    optional: the SAT | ACT switch changed
   //   onProgressChange() optional: progress changed in this tab or another
-  //   onSessionChange(problem) optional: the saved unfinished set changed;
-  //                     `problem` is a message when a test could not go on
+  //   onSessionChange(problem) optional: the saved unfinished set or test
+  //                     changed; `problem` is a message when one could not
+  //                     go on or was removed
+  //
+  // Every way to start a set or test asks before it replaces a saved one:
+  // a view calls `await ctx.confirmReplace("set" | "test")` before it
+  // builds anything (building records questions as served), and goes on
+  // only when it resolves true. ctx.startTest and ctx.startDrill ask for
+  // themselves; ctx.launch asks too when a view forgot, but by then the
+  // set's questions were already recorded as served.
 
   const catalog = window.PRACTICE_CATALOG;
   const core = window.PracticeCore;
@@ -24,12 +32,7 @@
   const practice = window.LiminalPractice;
   const Modules = window.LiminalModules;
   const Simulation = window.LiminalSimulation;
-
-  // An unfinished set, so closing the tab mid-test loses nothing. An
-  // on-screen SAT test keeps its whole state here too (config.simulation),
-  // with the module on screen as the set (`state`, null on the break or
-  // between modules).
-  const SESSION_KEY = "liminal:session:v1";
+  const SessionStore = window.LiminalSessionStore;
 
   // localStorage can throw on access when a browser blocks site data; the
   // app then keeps progress in memory for this visit.
@@ -50,6 +53,60 @@
 
   const storage = browserStorage();
   const store = Progress.createStore(storage);
+
+  /* ----------------------------------------------------- storage trouble */
+
+  // When this browser cannot save (its storage is full or blocked), the
+  // page says so and offers the progress file, which holds everything this
+  // page still has in memory. It goes away once that save works again.
+  let storageTrouble = null;
+  const storageWarning = {
+    box: document.getElementById("storageWarning"),
+    text: document.getElementById("storageWarningText"),
+    download: document.getElementById("storageDownloadBtn"),
+  };
+
+  function warnStorage(what) {
+    storageWarning.text.textContent = what === "progress"
+      ? "This browser could not save your progress, probably because its storage is full. Practice can go on, " +
+        "but what you do from now on is kept only until this page closes. Download your progress to keep it."
+      : `This browser could not save your unfinished ${what}, so it may not be there to resume after this page ` +
+        "closes, probably because its storage is full. Download your progress to keep what you have recorded.";
+    storageWarning.box.classList.remove("hidden");
+    storageTrouble = what;
+  }
+
+  // `what` ("progress", "set", "test") saved again.
+  function storageRecovered(what) {
+    if (storageTrouble !== what) return;
+    storageTrouble = null;
+    storageWarning.box.classList.add("hidden");
+  }
+
+  function downloadProgress() {
+    const file = window.LiminalProgressIO.exportFile(store.get(), Date.now());
+    const url = URL.createObjectURL(new Blob([file.text], { type: "application/json" }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = file.name;
+    link.className = "hidden";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 10000);
+  }
+
+  storageWarning.download.addEventListener("click", downloadProgress);
+
+  // The unfinished set and the unfinished test (lib/session-store.js), in
+  // two slots so neither can replace the other.
+  const sessions = SessionStore.create(storage, {
+    onError(error, slot) {
+      console.warn(`Could not save the unfinished ${slot}.`, error);
+      warnStorage(slot);
+    },
+  });
+  sessions.migrate();
 
   /* ------------------------------------------------------------- helpers */
 
@@ -205,7 +262,26 @@
     if (!parsed || !window.LiminalFamilyShared) return null;
     const template = templatesNow(parsed.sectionKey).find((entry) => entry.id === parsed.templateId);
     if (!template) return null;
-    return { ...window.LiminalFamilyShared.instantiate(template.family, parsed.seed), id };
+    return stampVersion({ ...window.LiminalFamilyShared.instantiate(template.family, parsed.seed), id });
+  }
+
+  // A template's version now: from its loaded bundle, else the registry.
+  function currentVersion(sectionKey, templateId) {
+    const template = templatesNow(sectionKey).find((entry) => entry.id === templateId);
+    if (template && template.version) return template.version;
+    return practice.templateVersions(registry(sectionKey))[templateId] || 1;
+  }
+
+  // A generated question carries the version of the template that built
+  // it, stamped as it is built, so an answer given later (a set resumed
+  // after the site changed) names the version the student actually saw.
+  function stampVersion(question) {
+    if (!question || !question.templateId || question.templateVersion) return question;
+    return { ...question, templateVersion: currentVersion(question.sectionKey, question.templateId) };
+  }
+
+  function stampVersions(questions) {
+    return (questions || []).map(stampVersion);
   }
 
   // Questions for stored ids, in the given order: generated ones rebuilt
@@ -258,7 +334,7 @@
       instantiate: window.LiminalFamilyShared.instantiate,
     });
     recordServed(run);
-    return run;
+    return { ...run, questions: stampVersions(run.questions) };
   }
 
   async function buildMiniTest(blueprint) {
@@ -276,32 +352,18 @@
       instantiate: window.LiminalFamilyShared.instantiate,
     });
     built.runs.forEach(recordServed);
-    return built.questions;
+    return stampVersions(built.questions);
   }
 
-  /* ------------------------------------------------------- unfinished set */
+  /* ------------------------------------------------ unfinished sets and tests */
 
   const activeSession = {
-    load() {
-      try {
-        const saved = JSON.parse(storage.getItem(SESSION_KEY));
-        return saved && saved.config && (saved.state || saved.config.simulation) ? saved : null;
-      } catch (error) {
-        return null;
-      }
-    },
-    store(value) {
-      try {
-        if (value) storage.setItem(SESSION_KEY, JSON.stringify(value));
-        else storage.removeItem(SESSION_KEY);
-      } catch (error) {
-        console.warn("Could not save the unfinished set.", error);
-      }
-    },
-    clear() {
-      activeSession.store(null);
-    },
-    // A saved set the test screen can actually reopen.
+    // The saved set ("set") or test ("test"), or null.
+    load: (slot) => sessions.load(slot),
+    // Removes a saved set or test that cannot be reopened (valid() false);
+    // one that can is ended with confirmDiscard, which records it.
+    clear: (slot) => sessions.clear(slot),
+    // A saved set or test the test screen can actually reopen.
     valid(saved) {
       if (!saved || !window.LiminalShell) return false;
       if (saved.config && saved.config.simulation) {
@@ -312,13 +374,22 @@
     },
   };
 
+  // The slot a launched set writes, and who owns it there.
+  function slotOf(meta) {
+    return meta.simulation ? "test" : "set";
+  }
+
+  function ownerOf(meta) {
+    return meta.simulation ? meta.simulation.id : meta.sessionId;
+  }
+
   /* ------------------------------------------------------------ recording */
 
+  // The version stamped when the question was built; a question saved
+  // before stamping falls back to the template's version now.
   function templateVersionOf(question) {
     if (!question || !question.templateId) return undefined;
-    const template = templatesNow(question.sectionKey).find((entry) => entry.id === question.templateId);
-    if (template && template.version) return template.version;
-    return practice.templateVersions(registry(question.sectionKey))[question.templateId] || 1;
+    return Number(question.templateVersion) || currentVersion(question.sectionKey, question.templateId);
   }
 
   function attemptFor(meta, item, now) {
@@ -332,7 +403,6 @@
     });
   }
 
-  let saveWarned = false;
   // Views are not re-rendered behind the test screen; closing it refreshes
   // them once.
   let shellOpen = false;
@@ -345,9 +415,11 @@
 
   function update(change) {
     const result = store.update(change);
-    if (!result.ok && !saveWarned) {
-      saveWarned = true;
+    if (!result.ok) {
       console.warn("Progress could not be saved in this browser. Practice can continue.");
+      warnStorage("progress");
+    } else if (store.saved()) {
+      storageRecovered("progress");
     }
     notifyProgress();
     return result;
@@ -383,6 +455,49 @@
     });
   }
 
+  // A discarded set or module (LiminalTestEngine.discardResult): every
+  // question the student saw is recorded, answered or blank, tagged
+  // `discarded`, and the set gets a History entry of kind "discarded" (its
+  // own kind in `discardedKind`), so leaving never hides what was seen.
+  // Questions never opened are not recorded. Items checked during an
+  // instant-feedback set were recorded when checked (same ids, kept once).
+  function recordDiscard(meta, discarded) {
+    if (!meta || !meta.sessionId || !discarded || !discarded.items.length) return;
+    const now = Date.now();
+    const marks = {};
+    discarded.items.forEach((item) => {
+      marks[item.question.id] = Boolean(item.marked);
+    });
+    update((progress) => {
+      let next = Progress.recordAttempts(progress, discarded.items.map((item) =>
+        Object.assign(attemptFor(meta, item, now), { discarded: true })));
+      next = Progress.setMarks(next, marks);
+      return Progress.recordSession(next, Object.assign(Progress.summarizeSession(
+        {
+          id: meta.sessionId,
+          sectionKey: meta.sectionKey,
+          kind: "discarded",
+          title: meta.title,
+          runCode: meta.runCode,
+          feedback: meta.feedback,
+          startedAt: meta.startedAt,
+          finishedAt: now,
+        },
+        discarded.items,
+        discarded.elapsedMs,
+      ), meta.sessionFields || {}, { discardedKind: meta.kind || "practice", questionCount: discarded.total }));
+    });
+  }
+
+  // Discards a saved set, or a saved test with the module it was on, as
+  // the test screen's Discard does, and empties its slot.
+  function discardSaved(slot, saved) {
+    const discarded = saved.state ? SessionStore.discardResult(saved, Date.now()) : null;
+    if (discarded) recordDiscard(saved.config, discarded);
+    sessions.clear(slot, SessionStore.ownerOf(saved));
+    notifySession();
+  }
+
   /* ------------------------------------------------------ digital test mode */
 
   function toolsFor(questions, sectionKey) {
@@ -409,16 +524,41 @@
   // with `simulation` is one module of an on-screen SAT test (see "SAT
   // tests" below), and may add `notice` and `openDirections` for its first
   // screen. Throws when the test screen cannot open; the caller shows why.
+  // A new set that would replace a saved one asks first (confirmReplace)
+  // and opens only if the student agrees; views should ask before they
+  // build the set, so this is the fallback.
   function launch(config, resume) {
     if (!window.LiminalShell) throw new Error("The test screen did not load. Refresh the page and try again.");
-    const { questions, notice, openDirections, ...rest } = config;
+    if (!resume && !config.simulation) {
+      const saved = activeSession.load("set");
+      if (saved && SessionStore.ownerOf(saved) !== (config.sessionId || null)) {
+        confirmReplace("set")
+          .then((go) => {
+            if (go) openScreen(config);
+          })
+          .catch((error) => {
+            console.error(error);
+            closeScreen(`The set could not open (${error.message}).`);
+          });
+        return;
+      }
+    }
+    openScreen(config, resume);
+  }
+
+  function openScreen(config, resume) {
+    const { questions: given, notice, openDirections, ...rest } = config;
+    const questions = resume ? given : stampVersions(given);
     const meta = {
       ...rest,
       sessionId: rest.sessionId || Progress.newId("s"),
       startedAt: rest.startedAt || Date.now(),
       questionCount: resume ? rest.questionCount : questions.length,
     };
+    const slot = slotOf(meta);
+    const owner = ownerOf(meta);
     const progress = store.get();
+    let replacedWarned = false;
     const options = {
       ...meta,
       questions,
@@ -427,18 +567,27 @@
       resume: resume || null,
       learnHref: practice.learnHref,
       onSave(state) {
-        activeSession.store({ config: meta, savedAt: Date.now(), state });
+        const outcome = sessions.store(slot, { config: meta, savedAt: Date.now(), state }, owner);
+        if (outcome === "saved") storageRecovered(slot);
+        // Another tab replaced this set with its own: leave that one be.
+        if (outcome === "taken" && !replacedWarned) {
+          replacedWarned = true;
+          console.warn(`Another tab started a new ${slot}, so this one is no longer saved to resume.`);
+        }
       },
       onAnswer(item) {
         update((current) => Progress.recordAttempts(current, [attemptFor(meta, item, Date.now())]));
       },
       onFinish(result) {
         recordFinish(meta, result);
-        activeSession.clear();
+        sessions.clear(slot, owner);
       },
       reportActions: (report) => reportActions(meta, report),
       onExit(detail) {
-        if (detail && detail.reason === "discard") activeSession.clear();
+        if (detail && detail.reason === "discard") {
+          recordDiscard(meta, detail.discarded);
+          sessions.clear(slot, owner);
+        }
         closeScreen();
       },
     };
@@ -452,26 +601,177 @@
     }
   }
 
-  // Reopens the saved set or test, or discards it with a reason when it
-  // cannot be reopened. Resolves to an error message, or null when it
-  // opened.
-  async function resume() {
-    const saved = activeSession.load();
-    if (!saved) return "There is no unfinished set to resume.";
+  // Reopens the saved set ("set") or test ("test"), or removes it with a
+  // reason when it cannot be reopened. Resolves to an error message, or
+  // null when it opened.
+  async function resume(slot) {
+    const what = slot === "test" ? "test" : "set";
+    const saved = activeSession.load(what);
+    if (!saved) return `There is no unfinished ${what} to resume.`;
     if (!activeSession.valid(saved)) {
-      activeSession.clear();
+      sessions.clear(what);
       notifySession();
-      return "The unfinished set could not be restored, so it was removed.";
+      return `The unfinished ${what} could not be restored, so it was removed.`;
     }
-    if (saved.config.simulation) return resumeTest(saved);
+    if (what === "test") return resumeTest(saved);
     try {
       launch({ ...saved.config, questions: [] }, saved.state);
       return null;
     } catch (error) {
-      activeSession.clear();
+      sessions.clear("set");
       notifySession();
       return `The unfinished set could not be restored (${error.message}), so it was removed.`;
     }
+  }
+
+  /* ------------------------------------------- replacing and discarding */
+
+  // A modal question on the page (the test screen has its own): resolves
+  // to "confirm", "alternative", or "cancel" ("busy" while another is
+  // open). `settings`: { title, text (a paragraph or a list), cancel,
+  // alternative?, confirm, danger? }.
+  let pageDialog = null;
+  function askOnPage(settings) {
+    if (pageDialog && pageDialog.open) return Promise.resolve("busy");
+    if (!pageDialog) {
+      pageDialog = document.createElement("dialog");
+      pageDialog.className = "page-dialog";
+      pageDialog.setAttribute("aria-labelledby", "pageDialogTitle");
+      document.body.appendChild(pageDialog);
+    }
+    const dialog = pageDialog;
+    const button = (text, value, kind) => {
+      const node = document.createElement("button");
+      node.type = "button";
+      node.className = `button ${kind}`;
+      node.textContent = text;
+      node.addEventListener("click", () => dialog.close(value));
+      return node;
+    };
+    const title = document.createElement("h2");
+    title.id = "pageDialogTitle";
+    title.textContent = settings.title;
+    const paragraphs = [].concat(settings.text).filter(Boolean).map((text) => {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = text;
+      return paragraph;
+    });
+    const cancel = button(settings.cancel || "Cancel", "cancel", "secondary");
+    const actions = document.createElement("div");
+    actions.className = "actions page-dialog-actions";
+    actions.append(cancel);
+    if (settings.alternative) actions.append(button(settings.alternative, "alternative", "secondary"));
+    actions.append(button(settings.confirm, "confirm", settings.danger ? "danger" : "primary"));
+    dialog.replaceChildren(title, ...paragraphs, actions);
+    const opener = document.activeElement;
+    return new Promise((resolve) => {
+      if (typeof dialog.showModal !== "function") {
+        const text = [settings.title, ...[].concat(settings.text).filter(Boolean)].join("\n\n");
+        resolve(window.confirm(text) ? "confirm" : "cancel");
+        return;
+      }
+      dialog.returnValue = "";
+      dialog.onclose = () => {
+        dialog.onclose = null;
+        const value = dialog.returnValue || "cancel";
+        if (value === "cancel" && opener && opener.isConnected && typeof opener.focus === "function") opener.focus();
+        resolve(value);
+      };
+      dialog.showModal();
+      cancel.focus();
+    });
+  }
+
+  // One line on a saved set or test, for the resume banner and the
+  // dialogs: what it is, how far it got, its clock, and when it was saved.
+  function describeSaved(saved) {
+    const info = SessionStore.summary(saved, Date.now());
+    const when = info.savedAt ? ` Saved ${new Date(info.savedAt).toLocaleString()}.` : "";
+    const answered = info.total ? `${info.answered} of ${info.total} answered` : "";
+    if (saved.config.simulation) {
+      const test = Simulation.describe(Simulation.restore(saved.config.simulation));
+      if (!info.total) return `${test}${when}`;
+      const clock = !info.timed ? ""
+        : info.expired
+          ? "; its time ran out while you were away, so resuming submits the answers you had"
+          : `; ${formatDuration(info.remainingMs)} left on the module clock, which keeps running`;
+      return `${test} ${answered}${clock}.${when}`;
+    }
+    const config = saved.config;
+    const feedback = config.feedback === "end" ? "report at the end" : "feedback after each question";
+    const clock = !info.timed ? ""
+      : info.expired ? ", time is up" : `, ${formatDuration(info.remainingMs)} left on the timer`;
+    return `${config.title}: ${answered}, ${feedback}${clock}.${when}`;
+  }
+
+  // What ending a saved set or test records, in the test screen's words.
+  function discardWords(slot, saved) {
+    const info = SessionStore.summary(saved, Date.now());
+    const seen = window.LiminalShell ? window.LiminalShell.describeDiscard(info) : "";
+    if (slot === "test") {
+      return "Modules you finished stay in your progress." +
+        (seen ? ` From the module you were on: ${seen.charAt(0).toLowerCase()}${seen.slice(1)}` : "");
+    }
+    return seen || "Nothing from it is recorded.";
+  }
+
+  // Before a new set or test is built: when one is saved in that slot,
+  // asks whether to end it (recording what it showed, as Discard does),
+  // resume it instead, or keep it. Resolves true when the new one may go
+  // ahead. A saved one that could not be reopened anyway is removed with a
+  // note.
+  async function confirmReplace(slot) {
+    const what = slot === "test" ? "test" : "set";
+    const saved = activeSession.load(what);
+    if (!saved) return true;
+    if (!activeSession.valid(saved)) {
+      sessions.clear(what);
+      notifySession(`An unfinished ${what} could not be restored, so it was removed.`);
+      return true;
+    }
+    const choice = await askOnPage({
+      title: `Replace your unfinished ${what}?`,
+      text: [
+        describeSaved(saved),
+        `Starting a new ${what} ends this one for good. ${discardWords(what, saved)}`,
+      ],
+      cancel: "Keep it",
+      alternative: `Resume it`,
+      confirm: `End it and start`,
+      danger: true,
+    });
+    if (choice === "alternative") {
+      const problem = await resume(what);
+      if (problem) notifySession(problem);
+      return false;
+    }
+    if (choice !== "confirm") return false;
+    discardSaved(what, saved);
+    return true;
+  }
+
+  // The resume banner's Discard: asks, then records what the saved set
+  // (or the test's module on screen) showed, as the test screen's Discard
+  // does. Resolves true when it was discarded.
+  async function confirmDiscard(slot) {
+    const what = slot === "test" ? "test" : "set";
+    const saved = activeSession.load(what);
+    if (!saved) return false;
+    if (!activeSession.valid(saved)) {
+      sessions.clear(what);
+      notifySession(`The unfinished ${what} could not be restored, so it was removed.`);
+      return false;
+    }
+    const choice = await askOnPage({
+      title: `Discard your unfinished ${what}?`,
+      text: [describeSaved(saved), `Discarding ends it for good. ${discardWords(what, saved)}`],
+      cancel: "Keep it",
+      confirm: `Discard ${what}`,
+      danger: true,
+    });
+    if (choice !== "confirm") return false;
+    discardSaved(what, saved);
+    return true;
   }
 
   /* ------------------------------------------------------------ SAT tests */
@@ -480,9 +780,10 @@
   // the full-length test. Each module is its own set in the test screen,
   // recorded when it ends (kind "module"); the break has its own screen; the
   // whole test ends in one combined report and, for a section or the full
-  // test, one more session record (kind "section" or "full"). The saved
-  // unfinished set carries the test's state, so a reload resumes at the
-  // right module and clock.
+  // test, one more session record (kind "section" or "full"). The test's
+  // own slot carries its state, so a reload resumes at the right module and
+  // clock, and no practice set can replace it. A module's clock runs on the
+  // wall clock, so Save and exit does not stop it.
 
   function sectionsIn(state) {
     return [...new Set(state.steps.filter((step) => step.sectionKey).map((step) => step.sectionKey))];
@@ -500,14 +801,18 @@
   }
 
   function storeTest(state) {
-    activeSession.store({ config: testConfig(state), savedAt: Date.now(), state: null });
+    if (sessions.store("test", { config: testConfig(state), savedAt: Date.now(), state: null }, state.id) === "saved") {
+      storageRecovered("test");
+    }
   }
 
   // `request`: { kind: "module" | "section" | "full", sectionKey?, module? }.
-  // Loads every section the test needs first, so no step waits on the
-  // network. Rejects when the templates cannot load or the test screen
-  // cannot open.
+  // Asks first when a test is saved (confirmReplace). Loads every section
+  // the test needs first, so no step waits on the network. Resolves true
+  // when it opened, false when the student kept the saved test; rejects
+  // when the templates cannot load or the test screen cannot open.
   async function startTest(request) {
+    if (!(await confirmReplace("test"))) return false;
     const state = Simulation.create({
       ...request,
       id: Progress.newId("t"),
@@ -522,6 +827,7 @@
       shellOpen = false;
       throw error;
     }
+    return true;
   }
 
   async function resumeTest(saved) {
@@ -544,7 +850,7 @@
       return null;
     } catch (error) {
       shellOpen = false;
-      activeSession.clear();
+      sessions.clear("test");
       notifySession();
       return `The unfinished test could not be restored (${error.message}), so it was removed.`;
     }
@@ -557,6 +863,9 @@
     if (step.type === "done") {
       finishTest(state).catch((error) => {
         console.error(error);
+        // Its modules are recorded; a saved test that cannot report would
+        // fail the same way on every Resume.
+        sessions.clear("test", state.id);
         closeScreen(`The test's report could not open (${error.message}). Its modules are in your progress.`);
       });
       return;
@@ -595,12 +904,13 @@
     });
     if (!run.questions.length) throw new Error("No questions could be built for this module.");
     recordServed(run);
+    const questions = stampVersions(run.questions);
     const sessionId = Progress.newId("s");
     const timeLimitSeconds = step.minutes * 60;
     const next = Simulation.beginModule(state, {
       sessionId,
       templateIds: run.chosenIds,
-      questionIds: run.questions.map((question) => question.id),
+      questionIds: questions.map((question) => question.id),
       scenes: Object.values(run.scenes),
       runCode: run.code,
       timeLimitSeconds,
@@ -610,7 +920,7 @@
       title: step.title,
       sectionKey: step.sectionKey,
       kind: "module",
-      questions: run.questions,
+      questions,
       feedback: "end",
       timeLimitSeconds,
       runCode: run.code,
@@ -673,7 +983,7 @@
           reason === "time" ? "The break is over, so this section has started." : null);
       },
       onExit(detail) {
-        if (detail && detail.reason === "discard") activeSession.clear();
+        if (detail && detail.reason === "discard") sessions.clear("test", current.id);
         closeScreen();
       },
     });
@@ -722,7 +1032,7 @@
         feedback: "end",
       }, items, summary.elapsedMs), Simulation.sessionFields(state))));
     }
-    activeSession.clear();
+    sessions.clear("test", state.id);
     const questions = await questionsForIds(Simulation.questionIds(state));
     const byId = new Map(questions.map((question) => [question.id, question]));
     // A question whose template was retired since cannot be rebuilt; the
@@ -778,6 +1088,7 @@
   // New questions from the templates of what was missed; bank questions
   // (no templates) come back as they were.
   async function practiceMissed(meta, items) {
+    if (!(await confirmReplace("set"))) return;
     const questions = [];
     const bySection = new Map();
     items.forEach((item) => {
@@ -820,7 +1131,7 @@
         update((progress) => drill.served.reduce((current, round) =>
           Progress.serveTemplates(current, request.sectionKey, round), progress));
       }
-      return drill.questions;
+      return stampVersions(drill.questions);
     }
     const bank = await loadBank(request.sectionKey);
     const filters = { skills: [request.skill], difficulties: request.difficulty ? [request.difficulty] : [] };
@@ -832,9 +1143,11 @@
   }
 
   // A drill on one skill, feedback after each question unless the request
-  // asks for the end (`feedback: "end"`). Resolves to the number of
-  // questions it opened with (0 when nothing matched).
+  // asks for the end (`feedback: "end"`). Asks first when a set is saved.
+  // Resolves to the number of questions it opened with (0 when nothing
+  // matched), or null when the student kept the saved set.
   async function startDrill(request) {
+    if (!(await confirmReplace("set"))) return null;
     const questions = await drillQuestions(request);
     if (!questions.length) return 0;
     const section = sectionByKey(request.sectionKey);
@@ -911,6 +1224,9 @@
     buildMiniTest,
     launch,
     resume,
+    confirmReplace,
+    confirmDiscard,
+    describeSaved,
     startTest,
     startDrill,
     DRILL_COUNT,
@@ -1001,7 +1317,7 @@
       store.refresh();
       notifyProgress();
     }
-    if (event.key === null || event.key === SESSION_KEY) notifySession();
+    if (event.key === null || Object.values(SessionStore.KEYS).includes(event.key)) notifySession();
   });
   site.onTestChange(onTestChanged);
 

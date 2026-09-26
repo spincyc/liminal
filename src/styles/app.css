@@ -728,6 +728,60 @@ body {
   margin-top: 0;
 }
 
+/* The unfinished test and the unfinished set can both be waiting. */
+.resume-banner:not(.hidden) + .resume-banner {
+  margin-top: -12px;
+}
+
+/* Storage full or blocked: says so on every view and offers the file. */
+.storage-warning {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  margin-bottom: 24px;
+  border-left-color: var(--color-bad);
+  background: var(--color-bad-soft);
+}
+
+.storage-warning p {
+  flex: 1 1 320px;
+}
+
+/* A question asked on the page (replacing or discarding a saved set or
+   test); the test screen has its own dialog. */
+.page-dialog {
+  width: min(540px, calc(100% - 32px));
+  max-height: calc(100% - 32px);
+  padding: 24px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: 0 20px 60px rgba(20, 24, 31, 0.3);
+  color: var(--color-ink);
+}
+
+.page-dialog::backdrop {
+  background: rgba(20, 24, 31, 0.45);
+}
+
+.page-dialog h2 {
+  margin: 0 0 8px;
+  font-size: var(--text-lg);
+  line-height: 1.3;
+}
+
+.page-dialog p {
+  margin: 8px 0 0;
+  overflow-wrap: break-word;
+}
+
+.page-dialog-actions {
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -1567,6 +1621,7 @@ a.stat-note {
 
   .start-row .button,
   .resume-banner .button,
+  .page-dialog-actions .button,
   .recommend-row .button,
   .danger-zone .button {
     flex: 1 1 auto;

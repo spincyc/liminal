@@ -41,6 +41,10 @@
     </header>
 
     <main id="main" class="site-main" tabindex="-1">
+      <div id="storageWarning" class="notice storage-warning hidden" role="alert">
+        <p id="storageWarningText"></p>
+        <button id="storageDownloadBtn" class="button secondary" type="button">Download my progress</button>
+      </div>
       <section id="setupView" class="view" aria-labelledby="setupHeading">
         <header class="page-head">
           <h1 id="setupHeading" tabindex="-1">Practice</h1>
@@ -50,14 +54,24 @@
           </p>
         </header>
 
-        <div id="resumeBanner" class="card resume-banner hidden" role="region" aria-labelledby="resumeHeading">
+        <div id="resumeTestBanner" class="card resume-banner hidden" role="region" aria-labelledby="resumeTestHeading">
           <div>
-            <h2 id="resumeHeading">You have an unfinished set</h2>
-            <p id="resumeText" class="muted"></p>
+            <h2 id="resumeTestHeading">You have an unfinished test</h2>
+            <p id="resumeTestText" class="muted"></p>
           </div>
           <div class="actions">
-            <button id="resumeBtn" class="button primary" type="button">Resume</button>
-            <button id="discardSessionBtn" class="button secondary" type="button">Discard set</button>
+            <button id="resumeTestBtn" class="button primary" type="button">Resume test</button>
+            <button id="discardTestBtn" class="button secondary" type="button">Discard test</button>
+          </div>
+        </div>
+        <div id="resumeSetBanner" class="card resume-banner hidden" role="region" aria-labelledby="resumeSetHeading">
+          <div>
+            <h2 id="resumeSetHeading">You have an unfinished set</h2>
+            <p id="resumeSetText" class="muted"></p>
+          </div>
+          <div class="actions">
+            <button id="resumeSetBtn" class="button primary" type="button">Resume set</button>
+            <button id="discardSetBtn" class="button secondary" type="button">Discard set</button>
           </div>
         </div>
         <div id="sessionStatus" class="status-line" role="status" aria-live="polite"></div>
@@ -130,7 +144,7 @@
             <div class="main-stack">
               <form id="drillForm" class="card drill-card" aria-labelledby="drillHeading" novalidate>
                 <h3 id="drillHeading">Drill one skill</h3>
-                <p class="muted">A short set on a single skill at one level, with new numbers or a new context each time.</p>
+                <p id="drillLede" class="muted">A short set on a single skill at one level, with new numbers or a new context each time.</p>
                 <div class="field-grid">
                   <div class="field">
                     <label for="drillSection">Section</label>
@@ -184,7 +198,7 @@
                     <label for="modeSelect">Practice mode</label>
                     <select id="modeSelect" aria-describedby="modeNote">
                       <option value="targeted">Targeted practice</option>
-                      <option value="full">Whole-section mix</option>
+                      <option value="mix">Whole-section mix</option>
                       <option value="adaptive">Recommended next</option>
                       <option value="missed">Missed-question review</option>
                       <option value="flagged">Marked for review</option>
@@ -309,7 +323,7 @@
               <section id="hardRepsCard" class="card" aria-labelledby="hardRepsHeading" data-test-only="SAT">
                 <h3 id="hardRepsHeading">Hard math reps</h3>
                 <p>
-                  Ten genuinely hard SAT Math problems, generated fresh every time.
+                  Ten Hard-tier SAT Math problems, generated fresh every time.
                   No timer; a full report at the end.
                 </p>
                 <div class="card-actions">
@@ -472,6 +486,7 @@
     <script src="lib/modules.js"></script>
     <script src="lib/simulation.js"></script>
     <script src="lib/test-engine.js"></script>
+    <script src="lib/session-store.js"></script>
     <script src="lib/annotations.js"></script>
     <script src="lib/line-reader.js"></script>
     <script src="lib/progress.js"></script>

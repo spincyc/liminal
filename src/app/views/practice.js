@@ -4,14 +4,16 @@
   // The Practice view: "Take a test" (an SAT module, section, or the
   // full-length test on screen), then practice sets: the skill drill, the
   // set builder form, and the side cards (mini tests, Hard math reps, retake
-  // a set, booklets), with the resume banner above them all.
+  // a set, booklets), with the unfinished test and set above them all.
   //
   // Interface: window.LiminalViews.practice(ctx) returns the view object
   // described at the top of app/app.js. `ctx` is app.js's shared context:
   // catalog, core, site, runs, Progress, practice, store, update, loaders
   // (loadBank, sectionTemplates, templatesNow, rebuildQuestion), buildRun,
-  // buildMiniTest, launch, resume, startTest, startDrill, activeSession,
-  // showView, and formatting helpers. Hash: #practice, or
+  // buildMiniTest, launch, resume, confirmReplace, confirmDiscard,
+  // describeSaved, startTest, startDrill, activeSession, showView, and
+  // formatting helpers. Every start button asks ctx.confirmReplace before
+  // it builds anything. Hash: #practice, or
   // #practice/<sectionKey>/<skillSlug> to open the drill set to one skill.
 
   // Question counts that match a real module (SAT) or section (ACT).
@@ -45,10 +47,20 @@
       feedbackMode: byId("feedbackSelect"),
       timed: byId("timedCheck"),
       timedNote: byId("timedNote"),
-      resumeBanner: byId("resumeBanner"),
-      resumeText: byId("resumeText"),
-      resumeBtn: byId("resumeBtn"),
-      discardSession: byId("discardSessionBtn"),
+      resume: {
+        test: {
+          banner: byId("resumeTestBanner"),
+          text: byId("resumeTestText"),
+          resume: byId("resumeTestBtn"),
+          discard: byId("discardTestBtn"),
+        },
+        set: {
+          banner: byId("resumeSetBanner"),
+          text: byId("resumeSetText"),
+          resume: byId("resumeSetBtn"),
+          discard: byId("discardSetBtn"),
+        },
+      },
       sessionStatus: byId("sessionStatus"),
       filterSummary: byId("filterSummary"),
       filterHint: byId("filterHint"),
@@ -69,11 +81,11 @@
       retakeInput: byId("retakeInput"),
       retakeBtn: byId("retakeBtn"),
       retakeStatus: byId("retakeStatus"),
-      resumeHeading: byId("resumeHeading"),
       testArea: byId("testArea"),
       testModuleKind: byId("testModuleKind"),
       testStatus: byId("testStatus"),
       drillForm: byId("drillForm"),
+      drillLede: byId("drillLede"),
       drillSection: byId("drillSection"),
       drillSkill: byId("drillSkill"),
       drillCount: byId("drillCount"),
@@ -124,6 +136,10 @@
     function renderSetupCopy() {
       const test = ctx.currentTest();
       const sections = ctx.testSections(test);
+      // SAT drills are generated; ACT drills draw from fixed banks.
+      elements.drillLede.textContent = test === "SAT"
+        ? "A short set on a single skill at one level, with new numbers or a new context each time."
+        : "A short set on a single skill at one level, from the questions you have seen least recently.";
       if (test === "SAT") {
         const templates = sections.reduce(
           (total, section) => total + practice.templateCount(ctx.registry(section.key)), 0);
@@ -255,7 +271,7 @@
     // Template sections build fresh runs in these modes; review modes replay
     // specific past questions.
     function buildsTemplateRun(mode) {
-      return usesTemplates() && (mode === "targeted" || mode === "full" || mode === "adaptive");
+      return usesTemplates() && (mode === "targeted" || mode === "mix" || mode === "adaptive");
     }
 
     // Tiers and skills come from the current templates, so a relabeled
@@ -280,7 +296,7 @@
     function matchingBankQuestions() {
       const mode = elements.mode.value;
       if (mode === "missed" || mode === "flagged") return reviewQuestions(mode);
-      if (mode === "full" || mode === "adaptive") return currentBank.slice();
+      if (mode === "mix" || mode === "adaptive") return currentBank.slice();
       return core.filterQuestions(currentBank, { ...formFilters(), query: elements.search.value });
     }
 
@@ -290,7 +306,7 @@
           ? "New questions of the kinds you have seen least recently, narrowed by any topic filters."
           : "Questions you have not seen recently, narrowed by any topic filters.";
       }
-      if (mode === "full") return "A mix from the whole section, weighted like the real test. Topic filters are not used. For the real module structure, use Take a test.";
+      if (mode === "mix") return "A mix from the whole section, weighted like the real test. Topic filters are not used. For the real module structure, use Take a test.";
       if (mode === "adaptive") {
         return usesTemplates()
           ? `A set on your weakest skill so far: the lowest accuracy among skills with at least ${Progress.WEAK_SKILL_MIN_ATTEMPTS} answers counted. Until then, a mix of the whole section.`
@@ -303,7 +319,7 @@
     // Which topic filters a mode uses, so the disclosure can say why the rest
     // are turned off.
     function filterUse(mode) {
-      if (mode === "full") {
+      if (mode === "mix") {
         return { domain: false, skill: false, difficulty: false, search: false,
           hint: "The whole-section mix draws from every topic, so topic filters are off." };
       }
@@ -384,7 +400,7 @@
         return;
       }
       const matches = matchingBankQuestions();
-      if (mode === "full" || mode === "adaptive") {
+      if (mode === "mix" || mode === "adaptive") {
         elements.matchCount.textContent = `${ctx.formatNumber(matches.length)} questions in this section`;
       } else if (matches.length) {
         elements.matchCount.textContent = `${ctx.formatNumber(matches.length)} question${matches.length === 1 ? "" : "s"} match`;
@@ -477,8 +493,11 @@
       return elements.timed.checked ? core.paceBudgetSeconds(key, count) : null;
     }
 
-    function startSession(event) {
+    // The set's kind (History) is the form's mode; the whole-section mix is
+    // "mix", never "full", which is the full-length test's.
+    async function startSession(event) {
       if (event) event.preventDefault();
+      if (!(await ctx.confirmReplace("set"))) return;
       const mode = elements.mode.value;
       const section = ctx.sectionByKey(sectionKey());
       const title = `${section.test} ${section.shortLabel}`;
@@ -517,11 +536,18 @@
       // Review modes exist precisely to serve questions again, so history is
       // only avoided when the student asked for new practice.
       const revisiting = mode === "missed" || mode === "flagged";
+      // ACT English and Reading questions share passages: a set not
+      // narrowed to a domain or skill reads whole passages, as the test
+      // does (core.buildSession passageSets); a narrowed one may spread.
+      const filters = filterUse(mode).domain ? formFilters() : { domains: [], skills: [] };
+      const passageSets = !revisiting && !filters.domains.length && !filters.skills.length &&
+        pool.every((question) => question.passageId);
       const questions = mode === "adaptive"
         ? pool.slice(0, count)
         : core.buildSession(pool, count, `${Date.now()}-${section.key}`, {
           avoidIds: revisiting ? [] : Progress.recentlyServedIds(progress(), section.key),
           spreadFamilies: !revisiting,
+          passageSets,
         });
       // Recorded when a set is built, not when it is answered, so an
       // abandoned set still rotates its questions out.
@@ -540,6 +566,7 @@
 
     // The Hard math card: ten Hard SAT Math templates, report at the end.
     async function startHardReps() {
+      if (!(await ctx.confirmReplace("set"))) return;
       elements.hardRepsBtn.disabled = true;
       ctx.setStatus(elements.hardRepsStatus, "Preparing fresh hard problems…", "loading");
       try {
@@ -612,6 +639,7 @@
     }
 
     async function startMiniTest(blueprint, button) {
+      if (!(await ctx.confirmReplace("set"))) return;
       button.disabled = true;
       ctx.setStatus(elements.miniTestStatus, `Preparing the ${blueprint.label}…`, "loading");
       let questions;
@@ -716,6 +744,7 @@
       }
       resetRetake();
       ctx.setStatus(elements.retakeStatus, "");
+      if (!(await ctx.confirmReplace("set"))) return;
       const section = ctx.sectionByKey(parsed.sectionKey);
       tryLaunch({
         title: `${section.test} ${section.shortLabel}: set ${run.setCode}`,
@@ -738,6 +767,7 @@
       const request = { kind };
       if (kind !== "full") request.sectionKey = button.dataset.section;
       if (kind === "module") request.module = elements.testModuleKind.value;
+      if (!(await ctx.confirmReplace("test"))) return;
       const buttons = elements.testArea.querySelectorAll("[data-test-kind]");
       buttons.forEach((item) => { item.disabled = true; });
       ctx.setStatus(elements.testStatus, "Preparing your test…", "loading");
@@ -867,10 +897,15 @@
         feedback: elements.drillFeedback.value,
       };
       elements.drillCount.value = String(request.count);
+      if (!(await ctx.confirmReplace("set"))) return;
       elements.drillStart.disabled = true;
       ctx.setStatus(elements.drillStatus, "Preparing your drill…", "loading");
       try {
         const opened = await ctx.startDrill(request);
+        if (opened === null) {
+          ctx.setStatus(elements.drillStatus, "");
+          return;
+        }
         ctx.setStatus(elements.drillStatus, opened
           ? (opened < request.count ? `Only ${opened} questions matched, so the drill has ${opened}.` : "")
           : "No questions match this drill. Choose another level.", opened ? "" : "error");
@@ -881,44 +916,42 @@
       }
     }
 
-    /* ------------------------------------------------------ resume banner */
+    /* ---------------------------------------------------- resume banners */
 
+    // One row for the unfinished test and one for the unfinished set; each
+    // lives in its own slot, so both can be waiting at once.
     function renderResumeBanner() {
-      const saved = ctx.activeSession.load();
-      if (saved && !ctx.activeSession.valid(saved)) {
-        ctx.activeSession.clear();
-        ctx.setStatus(elements.sessionStatus,
-          "An unfinished set could not be restored, so it was removed.", "error");
-        elements.resumeBanner.classList.add("hidden");
-        return;
-      }
-      elements.resumeBanner.classList.toggle("hidden", !saved);
-      if (!saved) return;
-      const when = new Date(saved.savedAt).toLocaleString();
-      const test = saved.config.simulation;
-      elements.resumeHeading.textContent = test ? "You have an unfinished test" : "You have an unfinished set";
-      elements.discardSession.textContent = test ? "Discard test" : "Discard set";
-      elements.resumeText.textContent = test
-        ? `${window.LiminalSimulation.describe(window.LiminalSimulation.restore(test))} Saved ${when}.`
-        : `${saved.config.title}: ${saved.config.questionCount} questions, ` +
-          `${saved.config.feedback === "end" ? "report at the end" : "feedback after each question"}` +
-          `${saved.config.timeLimitSeconds ? ", timed" : ""}. Saved ${when}.`;
+      ["test", "set"].forEach((slot) => {
+        const row = elements.resume[slot];
+        let saved = ctx.activeSession.load(slot);
+        if (saved && !ctx.activeSession.valid(saved)) {
+          ctx.activeSession.clear(slot);
+          ctx.setStatus(elements.sessionStatus,
+            `An unfinished ${slot} could not be restored, so it was removed.`, "error");
+          saved = null;
+        }
+        row.banner.classList.toggle("hidden", !saved);
+        if (saved) row.text.textContent = ctx.describeSaved(saved);
+      });
     }
 
-    async function resumeSet() {
-      elements.resumeBtn.disabled = true;
-      const problem = await ctx.resume();
-      elements.resumeBtn.disabled = false;
+    async function resumeSaved(slot) {
+      const button = elements.resume[slot].resume;
+      button.disabled = true;
+      const problem = await ctx.resume(slot);
+      button.disabled = false;
       if (problem) {
         ctx.setStatus(elements.sessionStatus, problem, "error");
         renderResumeBanner();
       }
     }
 
-    function discardSet() {
-      const test = Boolean((ctx.activeSession.load() || { config: {} }).config.simulation);
-      ctx.activeSession.clear();
-      ctx.setStatus(elements.sessionStatus, `The unfinished ${test ? "test" : "set"} was discarded.`, "success");
+    async function discardSaved(slot) {
+      const discarded = await ctx.confirmDiscard(slot);
+      if (!discarded) return;
+      ctx.setStatus(elements.sessionStatus, slot === "test"
+        ? "The unfinished test was discarded. Modules you finished stay in your progress, with the questions you saw in one you had not."
+        : "The unfinished set was discarded. The questions you saw are recorded in your progress.", "success");
       renderResumeBanner();
     }
 
@@ -981,8 +1014,10 @@
       renderCountPicks(Number(elements.count.max) || 1);
       updateTimedNote();
     });
-    elements.resumeBtn.addEventListener("click", resumeSet);
-    elements.discardSession.addEventListener("click", discardSet);
+    ["test", "set"].forEach((slot) => {
+      elements.resume[slot].resume.addEventListener("click", () => resumeSaved(slot));
+      elements.resume[slot].discard.addEventListener("click", () => discardSaved(slot));
+    });
     elements.recommendBtn.addEventListener("click", () => {
       elements.mode.value = "adaptive";
       updateMatches();
