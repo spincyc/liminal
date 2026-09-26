@@ -11,8 +11,9 @@ Circle questions cover arcs, sectors and angles in a circle, the equation of
 a circle in the xy-plane, and radian measure with the unit circle. They
 belong to Geometry and Trigonometry, {{fact:sat-math-geometry}} of the Math
 section. The radius is the key length in almost every circle problem: find
-it first. Hard questions put a circle equation in expanded form, mix degrees
-and radians, or ask for a sine or cosine of an angle bigger than 90°.
+it first. Hard questions find a radius from a chord and a height, put a
+circle equation in expanded form with a common factor, or mix arcs, sectors
+and inscribed angles in degrees and radians.
 
 ## Circle measures {#circle-measures}
 
@@ -48,6 +49,41 @@ Both arc and sector are "the fraction of the circle" times the whole.
 > **Trap.** Using the diameter where the radius belongs. If a question gives
 > the diameter, halve it before using πr².
 
+An arc length and a sector area are the same fraction of different wholes:
+if a sector's area is 1/6 of the circle's area, its arc is 1/6 of the
+circumference. Find the fraction from whichever measure you have, then
+apply it to the other.
+
+### Chords and the center {#chords}
+
+The perpendicular from the center to a chord bisects the chord. So the
+radius to one end of the chord, half the chord, and the distance from the
+center to the chord make a right triangle, with the radius as the
+hypotenuse.
+
+When the center isn't given, name its unknown distance from the chord. An
+arc that rises h above a chord at its middle puts the center r − h from the
+chord, so (r − h)² + (half the chord)² = r².
+
+> **Example.** An arch is an arc of a circle. It spans 16 feet at its base
+> and rises 4 feet at its center. What is the radius?
+>
+> Half the chord is 8. The center is below the base, r − 4 from it.
+>
+> (r − 4)² + 8² = r², so r² − 8r + 16 + 64 = r². Then 8r = 80 and r = 10.
+>
+> Check: the center is 6 below the base, and 6² + 8² = 100 = 10².
+
+> **Trap.** Taking half the chord, 8, as the radius, or using r in place of
+> r − 4. The center is not on the chord.
+
+With two parallel chords, write the right triangle for each. Their
+distances from the center are linked by the gap between the chords, and
+both triangles share r², so set the two expressions for r² equal.
+
+For a polygon inside a circle (a square, a regular hexagon, an equilateral
+triangle), see [a polygon and a circle](learn:sat-math/geometry-and-trigonometry/area-and-volume#inscribed-figures).
+
 ## Circle equations {#circle-equations}
 
 ```
@@ -80,6 +116,17 @@ center and radius.
 
 A point is inside the circle when its distance from the center is less than
 r, on the circle when it equals r, and outside when it is greater.
+
+If every squared term has the same coefficient, as in
+2x² + 2y² − 12x + 4y = 12, divide the whole equation by it first. Only then
+complete the squares: x² + y² − 6x + 2y = 6 becomes
+(x − 3)² + (y + 1)² = 16, center (3, −1) and radius 4.
+
+> **Example.** Is the point (5, 2) inside that circle?
+>
+> Its squared distance from (3, −1) is (5 − 3)² + (2 + 1)² = 4 + 9 = 13.
+>
+> 13 < 16, the radius squared, so the point is inside.
 
 > **Desmos.** Type the equation as given, even in expanded form, for example
 > `x^2+y^2+8x-6y=0`. Desmos draws the circle, and you can read the center and
@@ -124,7 +171,6 @@ quadrant: x (cosine) is negative on the left, y (sine) is negative below.
 
 ## What Hard looks like {#hard}
 
-- An expanded circle equation where completing the square is the first step.
-- A tangent or inscribed angle that creates a right triangle you must notice.
-- A radian angle beyond π/2, where the sign of sine or cosine comes from the unit circle.
-- A change to an equation, such as replacing 25 with 36, and a question about what happens to the graph (the radius grows from 5 to 6; the center stays put).
+- A radius found from a chord and a height, or from two parallel chords, with the center not given. Use the right triangle from the center to the middle of each chord (see [chords and the center](#chords)).
+- A circle equation in general form, possibly with a common factor to divide out, and a question about a point inside or outside. Complete the squares, then compare squared distances with r².
+- Arcs, sectors and inscribed angles in mixed units. Name the angle first: central or inscribed, degrees or radians. An inscribed angle is half the central angle on the same arc, and s = rθ needs radians.

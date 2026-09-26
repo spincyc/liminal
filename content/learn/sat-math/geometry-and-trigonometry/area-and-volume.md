@@ -13,7 +13,9 @@ units). This skill is part of Geometry and Trigonometry,
 {{fact:sat-math-geometry}} of the Math section. Bluebook's reference sheet
 gives most basic formulas, so the questions test setup: composite shapes,
 missing dimensions found backward, and what happens to area and volume when
-every length is scaled. See [the reference sheet](learn:sat/general/format-and-scoring#reference-sheet).
+every length is scaled. Hard questions find the one length two figures
+share, or work from an area or volume ratio back to the lengths. See
+[the reference sheet](learn:sat/general/format-and-scoring#reference-sheet).
 
 ## Area {#area}
 
@@ -46,6 +48,36 @@ If every length of a figure is multiplied by k, its area is multiplied by k².
 >
 > Larger area: 8 × 9/4 = 18. The trap answer is 12, from scaling the area by
 > 3/2.
+
+### A polygon and a circle, one inside the other {#inscribed-figures}
+
+When a polygon and a circle fit together, find the one length they share
+before computing anything:
+
+| Figure | Shared length |
+| --- | --- |
+| square inside a circle (corners on the circle) | the square's diagonal is the circle's diameter |
+| circle inside a square (touching all four sides) | the square's side is the circle's diameter |
+| regular hexagon inside a circle | each side equals the radius (six equilateral triangles) |
+| equilateral triangle inside a circle | each side is √3 times the radius |
+
+> **Example.** A square is inscribed in a circle of radius 5. What is the
+> area of the square?
+>
+> The square's diagonal is a diameter, 10. A square with diagonal d has
+> side d/√2, so the side is 10/√2 = 5√2.
+>
+> Area: (5√2)² = 50. (Or: a square's area is half its diagonal squared,
+> 10²/2 = 50.)
+
+> **Trap.** Using the diameter as the square's side. That is the circle
+> inside the square, which has area 100 here, twice the right answer.
+
+A region between two circles with the same center is sometimes given only
+by a chord of the larger circle that just touches the smaller one. The
+radius to the touching point is perpendicular to the chord and bisects it,
+so R² − r² = (half the chord)², and the shaded area π(R² − r²) follows
+without either radius.
 
 ## Surface area {#surface-area}
 
@@ -98,11 +130,36 @@ is multiplied by k, the volume is multiplied by k³.
 > **Trap.** Doubling every edge of a box doubles its volume. It multiplies
 > the volume by 2³ = 8 (and the surface area by 2² = 4).
 
+The scaling runs backward too. If two similar solids have surface areas in
+the ratio 9 : 25, their lengths are in the ratio 3 : 5 (square roots), and
+their volumes in the ratio 27 : 125 (cubes). Go through the length ratio;
+never scale a volume by an area ratio.
+
+### Density {#density}
+
+Density is mass per unit of volume, so mass = density × volume and
+volume = mass ÷ density. Put the mass and the density in matching units
+first.
+
+> **Example.** A solid cube has a mass of 1 kilogram and is made of a metal
+> with a density of 8 grams per cubic centimeter. How long is each edge?
+>
+> 1 kilogram is 1,000 grams. Volume: 1,000 ÷ 8 = 125 cubic centimeters.
+>
+> A cube's volume is its edge cubed, so the edge is the cube root of 125:
+> 5 centimeters.
+>
+> Check: 5³ = 125, and 125 × 8 = 1,000 grams.
+
+> **Trap.** Dividing 1 by 8 without converting kilograms to grams, or
+> converting cubic meters to cubic centimeters by 100 instead of
+> 100³ = 1,000,000.
+
 ## What Hard looks like {#hard}
 
-- A dimension found backward from a given area or volume.
-- A composite figure or solid, where you must decide what to add and what to subtract.
-- A scale change, where lengths, areas and volumes scale by k, k² and k³.
+- A polygon and a circle, one inside the other: a square, a hexagon or an equilateral triangle in a circle, or a circle in a square. Find the shared length first (see [a polygon and a circle](#inscribed-figures)).
+- A region bounded by circles: two circles with one center and a chord of the larger touching the smaller, or equal circles packed in a square. Look for the relationship the figure forces, such as R² − r² from a right triangle, rather than each measure.
+- Similar solids with a given area or volume ratio. Go back to the length ratio first (a square root or a cube root), then forward to the measure asked: lengths scale by k, areas by k², volumes by k³.
 
 > **Example.** A cone and a cylinder have the same radius, and the cone's
 > volume equals the cylinder's. The cylinder is 5 inches tall. How tall is
