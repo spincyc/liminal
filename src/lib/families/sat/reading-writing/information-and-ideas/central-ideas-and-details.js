@@ -731,7 +731,8 @@
       key: "Nadia overcomes her fear onstage when the sight of her grandmother reminds her of playing at home.",
       narrow: "Nadia's grandmother sits in the third row of the audience during Nadia's recital.",
       opposite: "Nadia feels calm and confident onstage because she has practiced the sonata so many times at home.",
-      beyond: "Nadia decides that she will never again perform a sonata in front of an audience.",
+      beyond: "Nadia's grandmother sits in the third row of the audience so that Nadia will be able to find her easily.",
+      beyondReason: "The grandmother's seat is in the passage, but nothing says why she chose it; this invents a purpose and misses Nadia's change.",
     },
     {
       scene: "ii-lit-orchard-notebook",
@@ -742,7 +743,8 @@
       key: "Reading his aunt's record of the orchard leads Tomas to reconsider his plan to sell it.",
       narrow: "Tomas's aunt named one of the trees in her orchard after him on the day that he was born.",
       opposite: "Tomas remains determined to sell the orchard because he knows nothing about growing apples.",
-      beyond: "Tomas's aunt had always hoped that he would give up his life in the city to become a farmer.",
+      beyond: "Tomas's aunt named one of the trees in her orchard after him so that he would someday come back to farm it.",
+      beyondReason: "The aunt did name a tree after Tomas, but the passage never gives her reason; this invents a motive and misses Tomas's change of plan.",
     },
     {
       scene: "ii-lit-ferry-father",
@@ -764,7 +766,8 @@
       key: "On her bakery's final day, Mrs. Okonkwo keeps her routine for her customers before privately facing the loss.",
       narrow: "Some of the bakery's customers arrive carrying children who have grown too tall to lift.",
       opposite: "Mrs. Okonkwo is relieved that she will no longer have to bake bread early every morning.",
-      beyond: "The town's residents hold a celebration to thank Mrs. Okonkwo for her many years of work.",
+      beyond: "Some of the bakery's customers arrive carrying cakes and flowers that were bought to celebrate the last day.",
+      beyondReason: "Customers do arrive, some carrying children, but the passage mentions no cakes, flowers, or celebration.",
     },
     {
       scene: "ii-lit-new-glasses",
@@ -775,7 +778,8 @@
       key: "New glasses let Lucia see details she had never noticed, showing her how much she had been missing.",
       narrow: "After getting her glasses, Lucia can read a street sign from half a block away.",
       opposite: "Lucia is disappointed that her new glasses make familiar places look strange and unfamiliar.",
-      beyond: "Lucia realizes that her mother has been hiding serious worries from her for many years.",
+      beyond: "After getting her glasses, Lucia worries that her mother has grown old and tired since she last looked closely.",
+      beyondReason: "Lucia does notice lines around her mother's eyes, but the passage shows wonder, not worry; this adds a feeling the passage never shows.",
     },
     {
       scene: "ii-lit-chess-cousin",
@@ -797,7 +801,8 @@
       key: "Aldo hesitates a long time before opening an unexpected letter from a brother long absent from his life.",
       narrow: "The supply boat brings Aldo a bundle of mail every autumn, most of it from the harbor authority.",
       opposite: "Aldo is too busy with his evening duties at the lighthouse to take any interest in his brother's letter.",
-      beyond: "Aldo's brother writes to ask him to leave the lighthouse and return home to their family.",
+      beyond: "The supply boat brings Aldo a bundle of mail every autumn, and this year it brings his brother back as well.",
+      beyondReason: "The boat brings a letter from the brother, not the brother himself; this invents an event the passage never shows.",
     },
     {
       scene: "ii-lit-first-snow",
@@ -830,7 +835,8 @@
       key: "Left in charge of her family's stall, Rosa finds unexpected pleasure in work she usually wants to escape.",
       narrow: "Rosa's father grows small orange peppers along a fence and tests how hot they are himself.",
       opposite: "Rosa continues to count the hours until she can leave the market and go home, as she does every Saturday.",
-      beyond: "Rosa decides that she will take over her family's pepper business when she is older.",
+      beyond: "Rosa's father grows small orange peppers along the fence and plans to let Rosa sell them on her own.",
+      beyondReason: "Rosa does describe the peppers her father grows, but nothing in the passage mentions any plan of his for Rosa.",
     },
   ];
 
@@ -851,7 +857,7 @@
       const wrong = [
         [topic.narrow, "This detail does appear in the passage, but it is one moment, not what the passage as a whole is about."],
         [topic.opposite, "This misreads the character's feelings; the passage shows the reverse by the end."],
-        [topic.beyond, "Nothing in the passage states or shows this; it invents events or motives beyond the text."],
+        [topic.beyond, topic.beyondReason || "Nothing in the passage states or shows this; it invents events or motives beyond the text."],
       ];
       return mc("Medium", topic, {
         stimulus: passage(content),
@@ -1082,10 +1088,10 @@
       expected: "expected that gray squirrels would bury more acorns",
       found: "but only up to a point",
       suspect: "suspect that the time needed to dig each cache limits",
-      key: "The number of acorns buried rose with the size of the crop only until the crop became unusually large.",
+      key: "The squirrels buried more acorns in bigger crops up to a point; in the two biggest crops, they buried an average year's amount.",
       prediction: "Squirrels buried more acorns every time the acorn crop grew larger, just as the researchers had expected.",
       suspicion: "The time needed to dig each cache limited how many acorns the squirrels could store during large crops.",
-      reversed: "In the two largest crops, the squirrels buried fewer of the acorns than they had buried in an average year.",
+      reversed: "Squirrels buried more acorns as crops grew, except in the two largest crops, when they buried fewer than in an average year.",
     },
     {
       scene: "ii-hard-font-recall",
@@ -1096,7 +1102,7 @@
       found: "but a week later the two groups' recall was the same",
       suspect: "may simply have slowed students' reading",
       key: "Students who read the difficult font recalled more at first, but a week later they recalled no more than the others.",
-      prediction: "Reading a hard-to-read font led students to process the passage more deeply than students who read the passage in a clear font.",
+      prediction: "Reading the hard-to-read font took more effort, but that effort led students to process the passage more deeply.",
       suspicion: "The difficult font improved recall on the first test only because it slowed down the students' reading.",
       reversed: "Students who read the difficult font recalled more details both immediately and a week after reading.",
     },
@@ -1111,7 +1117,7 @@
       key: "Visits to cleaning stations rose with parasite abundance only among fish species that remain on one reef.",
       prediction: "Reef fish of every species visited cleaner wrasses more often on the reefs where parasites were abundant.",
       suspicion: "Fish that roam between reefs seek out the best cleaning stations on every reef that they visit.",
-      reversed: "Fish that roam between reefs visited cleaning stations more often where parasites were abundant.",
+      reversed: "Only fish that roam between reefs visited cleaning stations more often where parasites were abundant.",
     },
     {
       scene: "ii-farmers-market-signs",
@@ -1121,8 +1127,8 @@
       expected: "expected that shoppers at a farmers market would buy more produce",
       found: "Total sales did not change, but the pattern of purchases did",
       suspect: "believe the signs made shoppers less reluctant to ask vendors",
-      key: "The signs changed which stalls shoppers bought from without changing the market's total sales.",
-      prediction: "Shoppers bought more produce overall in the weeks when prices were posted on large, clear signs.",
+      key: "The signs left total sales unchanged and spread shoppers' spending across more of the stalls.",
+      prediction: "Shoppers bought more produce overall in weeks with the signs, though from the same stalls as in other weeks.",
       suspicion: "The large signs made shoppers less reluctant to ask vendors questions about their prices.",
       reversed: "In weeks with the signs, shoppers bought mostly from the stalls nearest the market's entrance.",
     },
@@ -1134,10 +1140,10 @@
       expected: "hypothesized that artificial light at night causes",
       found: "the difference was much larger on weekdays than on weekends",
       suspect: "suspect that city birds sing early partly to avoid being drowned out",
-      key: "City blackbirds began singing earlier than forest blackbirds, especially on weekdays.",
+      key: "City blackbirds began singing earlier than forest blackbirds, and the gap was largest on weekdays.",
       prediction: "Artificial light at night causes city blackbirds to begin their dawn song earlier than forest birds.",
       suspicion: "City blackbirds sing early mainly so that morning traffic noise will not drown out their songs.",
-      reversed: "City blackbirds began singing earlier on weekends than on weekdays, when streetlights were the same.",
+      reversed: "City blackbirds began singing earlier than forest birds, but mainly on weekends, when traffic was light.",
     },
     {
       scene: "ii-grafted-tomato-drought",
@@ -1149,8 +1155,8 @@
       suspect: "suspect that the wild roots send signals",
       key: "Grafted plants survived the drought better but produced no more fruit than the ungrafted plants that survived.",
       prediction: "Grafted plants produced more fruit than ungrafted plants did over the course of the dry summer in the field trial.",
-      suspicion: "Signals from the wild roots slowed the grafted plants' fruit production in exchange for survival.",
-      reversed: "Ungrafted plants lost fewer leaves during the drought than the plants that had been grafted.",
+      suspicion: "Signals from the wild roots slowed the grafted plants' fruit production, though they helped the plants survive.",
+      reversed: "Ungrafted plants lost fewer leaves during the drought, although they produced less fruit than the grafted plants.",
     },
     {
       scene: "ii-museum-audio-guide",
@@ -1162,8 +1168,8 @@
       suspect: "think the guide may lead visitors to treat undescribed objects as unimportant",
       key: "Audio-guide users spent the same total time as others but concentrated it on the objects the guide described.",
       prediction: "Visitors who used the new audio guide spent more total time in the museum than other visitors did.",
-      suspicion: "Audio-guide users concluded that the objects the guide did not describe were unimportant.",
-      reversed: "Audio-guide users passed more quickly than other visitors through the rooms whose objects the guide described.",
+      suspicion: "Audio-guide users saw the objects the guide described but concluded that the others were unimportant.",
+      reversed: "Audio-guide users spent more total time than others but passed quickly through the rooms the guide described.",
     },
     {
       // Fully invented study (invented lake and researchers); an earlier
@@ -1176,10 +1182,10 @@
       expected: "expected that after an ice storm struck",
       found: "but not in weight",
       suspect: "suspect that shorter wings let birds maneuver",
-      key: "The surviving chickadees weighed about the same as the earlier population but had slightly shorter wings.",
+      key: "The surviving chickadees matched the earlier population in average weight and had slightly shorter wings.",
       prediction: "The surviving chickadees were heavier on average than the birds the researchers had banded before the storm.",
       suspicion: "Shorter wings helped some chickadees survive the storm by letting them maneuver through ice-laden branches.",
-      reversed: "The surviving chickadees had slightly longer wings on average than the birds banded before the storm.",
+      reversed: "The survivors' wings were slightly longer than those of the birds banded before the storm, though their weight was unchanged.",
     },
     {
       scene: "ii-remote-work-traffic",
@@ -1192,7 +1198,7 @@
       key: "Rush-hour traffic fell on those days, but total daily traffic on the road changed very little.",
       prediction: "Total traffic on the main road fell on the days when the employer's staff worked from home.",
       suspicion: "Staff working from home made midday errands that they would otherwise have made on weekends.",
-      reversed: "Midday traffic on the main road fell on the days when the employer's staff worked from home.",
+      reversed: "Midday traffic fell on those days, while rush-hour traffic on the road changed very little.",
     },
     {
       scene: "ii-merchant-letter-calendars",
@@ -1202,8 +1208,8 @@
       expected: "expected that letters in a merchant family's archive would be undated",
       found: "but the dates followed two different calendars",
       suspect: "believe that later archivists misread some of these dates",
-      key: "Nearly all of the letters were precisely dated, though the dates followed two different calendars.",
-      prediction: "Most of the letters in the family's archive were undated or were dated only roughly.",
+      key: "Nearly every letter carried a precise date, written in one of two different calendars.",
+      prediction: "Most of the letters were undated, though a few carried rough dates in the older Julian calendar.",
       suspicion: "Later archivists misread some of the dates and filed a number of letters in the wrong order.",
       reversed: "The letters sent from the Netherlands were dated using the older Julian calendar.",
     },
@@ -1214,14 +1220,17 @@
     id: "detail-finding-versus-expectation",
     skill: "Central Ideas and Details",
     subskill: "supporting detail",
-    // Medium: prediction, result, and suspicion are each signposted
-    // ("expected", "but", "suspect ... have not tested"), so the student
-    // sorts three labeled parts rather than synthesizing unmarked ones.
-    difficulty: "Medium",
+    // Easy (relabeled from Medium after the 2026-09-26 cold review found it
+    // played Easy): prediction, result, and suspicion are each signposted
+    // ("expected", "suspect ... have not tested"), so the student sorts
+    // three labeled parts rather than synthesizing unmarked ones. Contrast
+    // words ("but", "though", "only") appear in about half of the keys and
+    // in a distractor of every scene, so they no longer mark the key.
+    difficulty: "Easy",
     title: "Result of a study told apart from its prediction and an untested suspicion",
     recognize:
       "The text gives a prediction, a result that qualifies it, and a suspicion not yet tested; only the qualified result is what the study found.",
-    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 1 },
+    rubric: { steps: 0, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["misattributed-view", "too-broad", "opposite-stance"],
     build(t) {
       const topic = t.pick(EXPECTED_FOUND_TOPICS);
@@ -1230,7 +1239,7 @@
         [topic.suspicion, "The researchers only suspect this and say they have not yet tested it, so it is not a finding."],
         [topic.reversed, "This contradicts part of the result as the text reports it."],
       ];
-      return mc("Medium", topic, {
+      return mc("Easy", topic, {
         stimulus: passage(topic.text),
         stem: `According to the text, what did ${topic.team} find?`,
         correct: topic.key,
@@ -1263,8 +1272,14 @@
   // a reputation, or a resolve that the closing sentences qualify or undercut,
   // often through irony and periodic syntax, so the main idea exists only in
   // the synthesis of the two. `anchors` are fragments that must occur in
-  // order. Each item carries its own three distractors and reasons: the view
-  // taken at face value, a true detail, and an overstated or shifted reading.
+  // order. Each item carries its own three distractors and reasons, all near
+  // misses (the 2026-09-26 cold review found distractors wrong on only one
+  // obvious feature): the view taken at face value, a motive or cause the
+  // text never gives, a true example promoted to the main point, or the
+  // author's point stretched a step too far. Two distractors usually share
+  // a frame, and contrast words ("yet", "though", "while") appear in keys
+  // and distractors alike, so neither the odd choice out nor a contrast word
+  // marks the key.
   const PERIOD_HEADERS = {
     fiction: "The following text is from an original story written in a nineteenth-century style.",
     essay: "The following text is from an original essay written in an early twentieth-century style.",
@@ -1276,14 +1291,14 @@
       text:
         "The Reverend Mr. Ashby held that a man’s garden was the plainest index of his mind, and his own, laid out in beds as regular as the pews of his church, was accordingly much admired. One corner alone defied him: a tangle of sweetbriar, planted by his late wife in the first summer of their marriage, which had long since overrun its border. Visitors were invariably conducted to this corner to hear it deplored, and the gardener, who had thrice offered to grub it out, had thrice been told that there was no hurry in the matter. It flourishes still; and Mr. Ashby, who deplores it every June, has never once been known to let it be cut.",
       anchors: ["plainest index of his mind", "planted by his late wife", "no hurry in the matter", "never once been known to let it be cut"],
-      key: "Mr. Ashby complains of the overgrown sweetbriar yet will not have it cut, evidently because his late wife planted it.",
+      key: "Mr. Ashby's complaints about the sweetbriar mask an attachment to it that evidently comes from his late wife's having planted it.",
       wrong: [
-        ["Mr. Ashby is so troubled by the overgrown sweetbriar that he shows it to visitors as a warning against careless gardening.",
-         "This takes Mr. Ashby’s complaints at face value and ignores that he has refused, again and again, to let the sweetbriar be cut."],
-        ["Mr. Ashby’s garden, laid out in beds as regular as the pews of his church, is much admired by those who see it.",
-         "This is a true detail from the opening, but the passage turns on the one corner that breaks that order."],
-        ["Since his wife’s death, grief has led Mr. Ashby to neglect the garden that once reflected his orderly mind.",
-         "Only one corner is overgrown; the rest of the garden is still laid out in regular beds, so the garden as a whole is not neglected."],
+        ["Mr. Ashby lets the sweetbriar grow because its disorder, shown to every visitor, makes the order of the rest of his garden more admired.",
+         "He does show visitors the corner, but the text ties the sweetbriar to his late wife and to his refusals to cut it, not to any wish to set off the rest of the garden."],
+        ["Mr. Ashby regrets that the sweetbriar spoils his orderly garden but has been too occupied to see that it is removed.",
+         "The gardener has offered three times to remove it; telling him there is “no hurry” and never letting it be cut are choices, not busyness."],
+        ["Mr. Ashby's garden, admired as the index of an orderly mind, reveals instead that grief has left him unable to manage his affairs.",
+         "Only one corner is overgrown, and by his own choice; the rest of the garden is as regular as ever, and nothing suggests he cannot manage his affairs."],
       ],
       why: "The opening says Mr. Ashby’s garden mirrors his orderly mind; the rest of the text shows the one disorder he protects. He deplores the sweetbriar to visitors but tells the gardener there is “no hurry” to remove it, and the text notes that his late wife planted it.",
     },
@@ -1293,14 +1308,14 @@
       text:
         "It is the fashion to lament that the telephone has put an end to the art of letter-writing, and the lament is uttered with a confidence that would be more becoming if the art had ever been general. It was not. For every correspondent whose letters were worth the keeping there were a thousand who wrote because the week required it, and who filled their pages with the weather, the state of their health, and assurances of an early reply. It is these letters that the telephone has abolished; and I confess I cannot find it in me to mourn them. The few who wrote well still write, and write, I suspect, rather better for having fewer rivals.",
       anchors: ["It is the fashion to lament", "if the art had ever been general", "It is these letters that the telephone has abolished", "The few who wrote well still write"],
-      key: "The telephone has ended chiefly the dutiful letter, since letter-writing as an art was always practiced by few.",
+      key: "What the telephone has ended is chiefly the dutiful letter, since the art of letter-writing was always practiced by a few.",
       wrong: [
-        ["The telephone has put an end to letter-writing as an art, a loss the author regrets even though most letters were dull.",
-         "This is the fashionable lament that the author questions; the author says the art was never general and does not mourn the lost letters."],
-        ["The telephone has had no real effect on letter-writing, since those who wrote well before still write as they always did.",
-         "The author says the telephone has abolished the routine weekly letter, so it has had an effect, only not on the few who wrote well."],
-        ["Skilled letter writers now write better than ever before, because the telephone has made their letters rare.",
-         "The author only suspects that good writers write “rather better” with fewer rivals; this aside is overstated here and is not the point of the whole text."],
+        ["The telephone has improved letter-writing as an art, since the few good correspondents now write with fewer rivals.",
+         "The author only suspects that good writers write “rather better” with fewer rivals; the essay’s point is which letters the telephone ended, and it never credits the telephone with improving the art."],
+        ["Those who lament the telephone are right that something was lost, though what was lost was the art as the many practiced it.",
+         "The author says the art was never general; the many wrote dutiful letters about the weather and their health, and the author does not mourn their loss."],
+        ["Those who lament the telephone are right to blame it, since it abolished the weekly letters that most people once wrote.",
+         "The author agrees that the telephone ended the routine weekly letter but does not count that a loss, so the fashionable blame is not endorsed."],
       ],
       why: "The author doubts the fashionable lament: letter-writing as an art was never common, and what the telephone abolished was the routine letter written from duty, which the author does not mourn.",
     },
@@ -1310,14 +1325,14 @@
       text:
         "Mrs. Hallam prided herself upon never giving advice. Advice, she said, was an impertinence, and she had seen too many families divided by it. She contented herself instead with anecdotes: of a cousin who had married in haste, of a neighbour who had let his roof go one winter too many, of a young person, not unlike the one before her, who had come to grief through a fondness for novels. These histories she related without comment, and if her hearers drew a lesson from them, that, she felt, was their affair. It was remarked in the village that no one was so seldom advised, and so thoroughly, as the visitors to Mrs. Hallam’s parlour.",
       anchors: ["prided herself upon never giving advice", "not unlike the one before her", "so seldom advised, and so thoroughly"],
-      key: "Though Mrs. Hallam claims never to give advice, her pointed anecdotes counsel her visitors as thoroughly as advice would.",
+      key: "Mrs. Hallam's anecdotes, related without comment, counsel her listeners every bit as thoroughly as the advice she disdains.",
       wrong: [
-        ["Mrs. Hallam avoids giving advice because she has seen it divide families, so she leaves visitors to reach their own conclusions.",
-         "This accepts Mrs. Hallam’s account of herself; her anecdotes are aimed at her listeners, and the village’s remark shows that they work as advice."],
-        ["Mrs. Hallam tells her visitors stories of a hasty marriage, a neglected roof, and a young person ruined by novels.",
-         "These are the anecdotes she tells, a true detail, but the point lies in what the anecdotes do."],
-        ["The village regards Mrs. Hallam as an unusually tactful host, since she never tells her guests what they ought to do.",
-         "The village’s remark is ironic: her visitors are seldom advised directly but are advised thoroughly all the same."],
+        ["Mrs. Hallam's anecdotes are meant only to amuse, and the village mistakes her pleasure in gossip for a habit of advising.",
+         "The anecdote of a young person “not unlike the one before her” is aimed at the listener, and the village’s remark confirms that her stories work as advice."],
+        ["Mrs. Hallam gives her visitors more direct advice than anyone else in the village, though she denies that she does.",
+         "She gives no direct advice; she relates stories “without comment,” which is why the village calls her visitors so seldom advised."],
+        ["Mrs. Hallam's anecdotes are meant to leave her visitors free to draw their own lessons, since she has seen advice divide families.",
+         "This accepts Mrs. Hallam’s account of herself; the anecdotes are chosen to fit her listeners, and the village’s remark shows that they advise “so thoroughly.”"],
       ],
       why: "Mrs. Hallam calls advice an impertinence, yet her anecdotes fit her listeners (a young person “not unlike the one before her”), and the village’s ironic remark that her visitors are “so seldom advised, and so thoroughly” shows that the stories work as advice.",
     },
@@ -1327,14 +1342,14 @@
       text:
         "The railway, it is said, has brought the country nearer to us; and in one sense it has, for a man may now breakfast in the city and dine among the hills. But he has not seen the country between. He has seen a green smear at the window, a station name, a cutting of raw clay, and a great deal of his newspaper. The walker who covers a tenth part of the distance comes home knowing the name of every stream he crossed and the look of the sky over each parish. I do not propose that we tear up the rails; only that we cease to confuse arriving at a place with having travelled to it.",
       anchors: ["it is said, has brought the country nearer to us", "But he has not seen the country between", "I do not propose that we tear up the rails"],
-      key: "Rail travel makes distant places easy to reach but gives travelers little of the knowledge of the land that walking provides.",
+      key: "A railway journey carries a traveler to distant places without acquainting him with the country he crosses, as walking would.",
       wrong: [
-        ["The railway does more harm than good, and travelers who care about the country should give it up and go on foot.",
-         "The author explicitly does not propose tearing up the rails; the complaint is about confusing arrival with travel, not about the railway itself."],
-        ["By letting a man breakfast in the city and dine in the hills, the railway has brought the country nearer to us.",
-         "The author grants this only “in one sense” and then argues that the railway passenger has not actually seen the country."],
-        ["Walkers learn the names of streams and parishes because they cover a tenth of the distance that railway passengers do.",
-         "The text contrasts what walkers and passengers come to know; it never says the shorter distance is the reason, and this detail is not the main idea."],
+        ["The railway has not really brought the country nearer, since a passenger sees only a green smear at the window.",
+         "The author grants that “in one sense it has”; the complaint is that the passenger does not see the country between, not that the railway fails to bring places nearer."],
+        ["Walking is the better way to travel, and those who value the country should give up the railway for their own feet.",
+         "The author explicitly does not propose tearing up the rails; the essay asks only that arriving not be confused with traveling."],
+        ["The railway passenger sees only a green smear at the window, which makes such journeys all but pointless.",
+         "The passenger does see little of the country, but the author grants the railway its speed “in one sense” and never calls its journeys pointless."],
       ],
       why: "The author grants that the railway brings places nearer “in one sense” but argues that the passenger sees nothing of the country between, unlike the walker, and closes by distinguishing arriving at a place from traveling to it.",
     },
@@ -1344,14 +1359,14 @@
       text:
         "Captain Brereton, on retiring from the sea, bought a house as far from it as the county allowed, declaring that he had seen enough salt water for three lifetimes. He took up roses, and bees, and a quarrel with the vicar about the churchyard wall. Yet the household observed that the Captain’s walks, which he undertook for his health, invariably ended upon the one hill from which a gray line of sea could be made out on a clear day; and that on such days he came home late, and silent, and uncommonly gentle with the dog.",
       anchors: ["declaring that he had seen enough salt water", "Yet the household observed", "a gray line of sea could be made out"],
-      key: "For all his declared weariness of the sea, Captain Brereton’s habits betray a lasting attachment to it.",
+      key: "Though he claims to have had enough of the sea, Captain Brereton's walks betray a lasting attachment to it.",
       wrong: [
-        ["Having tired of the sea after many years, Captain Brereton finds contentment in his roses, his bees, and village affairs.",
-         "This accepts the Captain’s declaration and his new pursuits at face value; the “Yet” sentence shows that his walks always end within sight of the sea."],
-        ["Captain Brereton regrets his retirement so deeply that he means to return to the sea as soon as his health allows.",
-         "Nothing in the text says he plans to return; the passage shows a quiet attachment, not a decision."],
-        ["Captain Brereton’s household worries that his long daily walks have grown too tiring for a man of his age.",
-         "The household notices where his walks end, not that they tire him; this invents a concern the text never mentions."],
+        ["Captain Brereton moved inland to escape painful memories of the sea, which still trouble him whenever he glimpses it.",
+         "He seeks out the view on every walk and comes home “uncommonly gentle,” which suggests fondness, not distress; the text mentions no painful memories."],
+        ["Though he claims to have had enough of the sea, Captain Brereton means to return to it once his health has recovered.",
+         "Nothing suggests a plan to go back to sea; his walks, taken “for his health,” show a quiet attachment, not a decision."],
+        ["Captain Brereton has found in roses, bees, and village quarrels an occupation that fully replaces his life at sea.",
+         "The “Yet” sentence shows that these pursuits have not replaced the sea: every walk ends where the sea can be seen."],
       ],
       why: "The Captain claims to have had enough of the sea and moves far from it, but the “Yet” sentence reveals that his walks always end where the sea can be seen and that such days leave him quiet and gentle.",
     },
@@ -1361,14 +1376,14 @@
       text:
         "There is a kind of reviewer who is called generous because he has never been known to dislike a book. I would call him something else. Praise is a currency, and like any currency it is worth precisely what it will purchase; the reviewer who scatters it upon every volume that reaches his desk has debased his coin until it will purchase nothing. The author he praises cannot tell whether he has written well, and the reader cannot tell whether to buy. It is the severe critic, oddly enough, whose occasional warmth is prized, for everyone knows that it was not given away.",
       anchors: ["called generous because he has never been known to dislike a book", "Praise is a currency", "whose occasional warmth is prized"],
-      key: "A reviewer’s praise has value only when it is given selectively, so praising every book makes it worthless.",
+      key: "Praise given to every book is worth nothing, because praise has value only when it is withheld from some books.",
       wrong: [
-        ["Reviewers should be severe with every book they read, since any warmth toward an author debases a critic’s judgment.",
-         "The author prizes the severe critic’s occasional warmth, so the text does not condemn all praise."],
-        ["The reviewer who never dislikes a book is rightly called generous, since authors depend upon his kindness.",
-         "This is the view the author sets up to reject (“I would call him something else”)."],
-        ["Severe critics are prized by authors and readers because they seldom offer any praise at all.",
-         "The text prizes the severe critic’s rare warmth, not the scarcity of praise itself, and the severe critic is an example rather than the main point."],
+        ["The reviewer who praises every book is not generous but dishonest, since he must praise books he privately dislikes.",
+         "The author’s objection is that such praise loses its value, not that the reviewer hides his real opinions; the text never mentions what he privately thinks."],
+        ["The reviewer who praises every book is less useful than the severe critic, whom readers trust about every book.",
+         "The text says the severe critic’s occasional warmth is prized, not that readers trust him about every book; the severe critic illustrates the point rather than being it."],
+        ["Praise has no real value to authors or readers, since, like any currency, it can always be debased.",
+         "Praise, like currency, is worth what it will purchase; only praise scattered on every book is debased, and the severe critic’s warmth keeps its value."],
       ],
       why: "The author rejects calling the indiscriminate reviewer generous: praise, like currency, is worth only what it will buy, so praise given to every book is worthless, while a severe critic’s rare warmth is valued.",
     },
@@ -1380,12 +1395,12 @@
       anchors: ["resolved to correct the speech of the parish", "resumed their own at the gate", "found him at work upon a glossary", "he believed his own was"],
       key: "Mr. Tolley, who came to Fenwick to correct its speech, comes instead to value that speech and to learn from it.",
       wrong: [
-        ["Mr. Tolley succeeds in improving the speech of Fenwick’s children, though the old men of the parish keep their own words.",
-         "The children use his words only in his presence and return to their own at the gate, so he has not improved their speech."],
-        ["Mr. Tolley asks the old men of the parish for the names of things that he has been unable to find in any book.",
-         "This is a true detail, but it is one step in his change of mind rather than the point of the whole passage."],
-        ["The vicar doubts that Mr. Tolley, for all his efforts, has made any progress in reforming the speech of the parish.",
-         "The vicar simply asks a question; the passage turns on Mr. Tolley’s answer, not on the vicar’s opinion."],
+        ["Mr. Tolley gives up correcting the parish's speech once he fails to change how the children talk at the school gate.",
+         "The children’s resistance is only the start; the passage turns on his collecting the old men’s words and his closing remark that his own speech is improving, which shows that he has come to value theirs."],
+        ["Mr. Tolley compiles a glossary of the parish's words in order to correct them more efficiently, as the vicar's question suggests.",
+         "His reply that his own speech is improving shows that the glossary records words he has learned from, not errors to correct."],
+        ["Though the parish's speech remains as it was, Mr. Tolley is too proud to admit to the vicar that his efforts have failed.",
+         "His reply is a wry admission, not a proud evasion: it fits his collecting the old men’s words for things he “could find in no book.”"],
       ],
       why: "Mr. Tolley arrives resolved to correct the parish’s “barbarous” speech, fails with the children, begins collecting the old men’s words, and finally says that it is his own speech that is improving.",
     },
@@ -1395,14 +1410,14 @@
       text:
         "It is a common complaint against the man of science that he has taken the wonder out of the world: that the rainbow, once explained, is no more than a trick of light in falling water. The complaint mistakes the nature of wonder. The traveller who took the rainbow for an omen wondered at it for a moment and went about his business; the physicist who knows how each drop divides the sun’s light, and why the arc must stand at just that angle from the eye, has found a thing to wonder at for the rest of his life. Explanation does not dispel the marvel; it multiplies the places where the marvel may be found.",
       anchors: ["taken the wonder out of the world", "The complaint mistakes the nature of wonder", "it multiplies the places where the marvel may be found"],
-      key: "Contrary to a common complaint, scientific explanation does not destroy wonder but gives people more to wonder at.",
+      key: "Scientific explanation, far from dispelling wonder, gives those who understand it more to wonder at.",
       wrong: [
-        ["Once it was explained as a trick of light in falling water, the rainbow lost much of the wonder it once inspired.",
-         "This is the complaint that the author says “mistakes the nature of wonder.”"],
+        ["The physicist's wonder at the rainbow lasts longer than the wonder of the traveller who took it for an omen.",
+         "This comparison is the author’s example; it supports the broader point that explanation multiplies the places where wonder may be found."],
         ["Only those who understand the physics of light are able to feel any lasting wonder at a rainbow.",
-         "The author says explanation multiplies wonder, not that it is the only source of wonder; the traveller who took the rainbow for an omen also wondered, if briefly."],
-        ["A rainbow’s arc stands at a fixed angle from the observer’s eye because each drop of water divides the sun’s light.",
-         "This is a scientific detail the author uses as an example, not the point of the passage."],
+         "The author says explanation multiplies wonder, not that it is required for lasting wonder; the claim that only physicists can feel it goes beyond the text."],
+        ["The complaint against science is partly right: explanation removes the rainbow's mystery, though it adds another kind of interest.",
+         "The author grants the complaint nothing: it “mistakes the nature of wonder,” and explanation does not dispel the marvel at all."],
       ],
       why: "The author states a common complaint, that explaining the rainbow removes its wonder, and rejects it: the physicist who understands the rainbow has more to wonder at, because explanation multiplies the marvel.",
     },
@@ -1412,14 +1427,14 @@
       text:
         "Old Pettigrew the clockmaker was reputed the most disobliging tradesman in the town. He kept no hours that a customer could rely upon, he would not be hurried, and he had been heard to tell an alderman that his watch was not worth the mending. Yet when the carter’s boy brought in a tin watch that had been his dead father’s, a thing worth perhaps a shilling, Pettigrew kept it a fortnight, returned it going sweetly in a new case, and would take nothing for it but the boy’s promise to wind it every night.",
       anchors: ["reputed the most disobliging tradesman", "his watch was not worth the mending", "Yet when the carter’s boy brought in a tin watch"],
-      key: "Pettigrew’s reputation for rudeness hides the generous care he gives a watch that is precious to its owner, whatever its price.",
+      key: "A tradesman known for disobliging his customers gives lavish, unpaid care to a cheap watch that its young owner treasures.",
       wrong: [
-        ["Pettigrew’s reputation as the town’s most disobliging tradesman is deserved, since he will not be hurried by anyone.",
-         "This accepts the reputation that the “Yet” sentence complicates by showing his care for the boy’s watch."],
-        ["Pettigrew once told an alderman that the alderman’s watch was not worth the cost of mending.",
-         "This is one example of his gruffness, not the point of the whole passage."],
-        ["Pettigrew treats customers of every rank alike, taking the same great care with each one’s watch.",
-         "He treats the alderman and the boy very differently; the passage turns on that contrast."],
+        ["Pettigrew is rude to wealthy customers and kind to poor ones like the boy, reversing the usual order of deference.",
+         "One alderman and one boy do not establish a rule about rich and poor; the boy’s watch matters because it was his dead father’s, and that is what Pettigrew honors."],
+        ["Pettigrew's reputation is undeserved, since he is in fact the most obliging tradesman in the town.",
+         "The text confirms his unreliable hours and his refusal to be hurried; it shows one act of generosity, not that he is obliging in general."],
+        ["Pettigrew mends the poor boy's watch without charge because he expects the boy to become a regular customer.",
+         "He asks only that the boy wind the watch every night; nothing suggests that he hopes for future business."],
       ],
       why: "The first sentences establish Pettigrew’s reputation; the “Yet” sentence shows him spending a fortnight on a shilling watch that had belonged to the boy’s father and refusing payment, so the reputation does not tell the whole story.",
     },
@@ -1429,14 +1444,14 @@
       text:
         "We are apt to regard a map as the land itself in small, and to trust it as we trust our eyes. Yet every map is a selection, and a selection is an opinion. The county surveyor of a century ago marked every gentleman’s park and every toll-gate, and left the common lanes, by which half the parish went to market, to be guessed at. The military engineer, surveying the same ground, recorded each ford and hill with care and did not trouble with the parks at all. Neither map was false. Each was a faithful record of what its maker thought worth knowing.",
       anchors: ["We are apt to regard a map as the land itself in small", "every map is a selection", "Neither map was false"],
-      key: "A map is not a neutral copy of the land but a faithful record of what its maker considered worth recording.",
+      key: "No map is a neutral copy of the land; each faithfully records what its maker's interests led him to include and to omit.",
       wrong: [
-        ["Old county maps cannot be trusted, since their makers deliberately left out the lanes that half the parish used.",
-         "The author says “Neither map was false”; the maps are selective, not untrustworthy or deliberately misleading."],
-        ["A map is the land itself in small and deserves the same trust that we give to our own eyes.",
-         "This is the common assumption that the author sets out to correct."],
-        ["Military maps were more accurate than county maps because engineers surveyed the ground with greater care.",
-         "The author treats both maps as faithful records of different interests, not one as more accurate than the other."],
+        ["Since every map leaves out what its maker thought unimportant, maps made for different purposes are equally false.",
+         "The author says “Neither map was false”; selection makes a map partial, not false."],
+        ["The county surveyor's map favored the gentry, while the military engineer's map was an objective record of the ground.",
+         "Each map records what its maker thought worth knowing; the engineer’s map, which ignored the parks, is as selective as the surveyor’s."],
+        ["Since every map is a selection and every selection an opinion, a map deserves no more trust than any other opinion.",
+         "The author calls each map a faithful record of what its maker valued; the point is to see what a map selects, not to distrust maps as mere opinion."],
       ],
       why: "The author corrects the habit of trusting a map as the land in small: every map selects, as the surveyor’s and the engineer’s maps of the same ground show, and each records what its maker thought worth knowing.",
     },
@@ -1446,14 +1461,14 @@
       text:
         "Henrietta had determined that her reply to Mr. Vane should be cool, and she wrote it four times before it was cool enough. The first draft thanked him too warmly for the books; the second inquired too particularly after his sister’s health; the third, though admirably cold, ran to three pages, which she perceived would never do. The fourth said merely that the books had arrived and that she was obliged to him. She sealed it with satisfaction, and then sat for the better part of an hour considering whether ‘obliged’ was not, after all, too strong a word.",
       anchors: ["determined that her reply to Mr. Vane should be cool", "the third, though admirably cold, ran to three pages", "too strong a word"],
-      key: "Henrietta’s painstaking efforts to seem indifferent to Mr. Vane reveal the very interest that she means to hide.",
+      key: "Henrietta's four careful drafts, meant to make her reply seem cool, reveal the very interest in Mr. Vane that she means to hide.",
       wrong: [
-        ["Henrietta is indifferent to Mr. Vane and wishes only to thank him briefly and politely for sending her the books.",
-         "This accepts the coolness she aims for; four drafts and an hour’s worry over one word show that she is anything but indifferent."],
-        ["Henrietta fears that her finished reply is so cold that it will offend Mr. Vane and bring their acquaintance to an end.",
-         "Her last worry is that ‘obliged’ is too strong, that is, too warm, not that the letter is too cold."],
-        ["Henrietta’s third draft of her reply to Mr. Vane was cold enough in tone but, at three pages, far too long to send.",
-         "This is a true detail about one draft, not the point of the whole passage."],
+        ["Anxious not to offend Mr. Vane, Henrietta rewrites her letter until it is as warm as good manners allow.",
+         "Her aim is coolness: she rejects a draft for thanking him “too warmly” and worries at last that ‘obliged’ is too strong."],
+        ["Henrietta's four drafts swing between encouraging Mr. Vane and discouraging him, since she cannot decide which she wishes.",
+         "Every draft is revised toward coolness; her aim never wavers, but the effort she spends on it betrays her interest."],
+        ["Henrietta's four drafts show her fear that any warmth toward Mr. Vane would be thought improper in a lady.",
+         "Nothing in the text mentions propriety; the hour spent over the word ‘obliged’ suggests that she cares how Mr. Vane will read her, which is why the note must seem cool."],
       ],
       why: "Henrietta means to write coolly, but she drafts the letter four times, rejects a cold draft for its length, and then worries for an hour that ‘obliged’ is too strong; her effort betrays the interest she wants to conceal.",
     },
@@ -1463,16 +1478,84 @@
       text:
         "When the photograph first appeared, many predicted the death of painting; what need of the painter’s slow hand, when a machine could fix a likeness in an instant? The prophecy has not been fulfilled, though it has not been entirely mistaken either. The painter of likenesses, who made his living by recording faces for the mantelpiece, has indeed been driven from the field. But painting itself, relieved of the duty of record, has turned to what no lens can supply—the painter’s own way of seeing—and has seldom been more various or more alive.",
       anchors: ["many predicted the death of painting", "has not been entirely mistaken either", "relieved of the duty of record"],
-      key: "Photography ended painting’s work of recording likenesses but left painting free to pursue what no camera can supply.",
+      key: "The photograph drove painters of likenesses from their trade while freeing painting to pursue what no lens can supply.",
       wrong: [
-        ["The photograph has had little lasting effect on painting, which has continued very much as it was before.",
-         "The author says painters of likenesses were driven from the field, so photography did change painting."],
-        ["The photograph has brought about the death of painting, just as many predicted when it first appeared.",
-         "The author says this prophecy “has not been fulfilled.”"],
-        ["Photographs are inferior to paintings because no lens can capture the painter’s own way of seeing.",
-         "The author says painting turned to what a lens cannot supply but never ranks photographs below paintings."],
+        ["The prediction that photography would kill painting proved false, since painting has seldom been more alive.",
+         "The author says the prophecy “has not been entirely mistaken,” since the painter of likenesses was driven from the field."],
+        ["Photographs record likenesses more faithfully than paintings ever did, which is why painters of likenesses were driven out.",
+         "The text says painters of likenesses were driven out but never compares how faithfully photographs and paintings record a face, and this is not the point of the whole passage."],
+        ["The prediction that photography would kill painting proved partly true, since painting has shrunk to private vision.",
+         "The author says painting has “seldom been more various or more alive”; turning to the painter’s own way of seeing is a flourishing, not a shrinking."],
       ],
       why: "The author says the prediction was partly right and partly wrong: photography drove out the painter of likenesses, but painting, freed from recording, turned to the painter’s own way of seeing.",
+    },
+    {
+      scene: "ii-cid-period-crowle-sermon",
+      kind: "fiction",
+      text:
+        "The Reverend Mr. Crowle preached, on the Sunday after Michaelmas, upon the text that godliness with contentment is great gain, and he handled it, the parish agreed, with uncommon feeling. He spoke of the vanity of preferment, of the ambitious clergyman who is never easy in the living he has, and of the peace that attends a man who asks nothing further of the world. It was not generally known in the parish, though the bishop’s secretary knew it very well, that Mr. Crowle had that same week written, for the third time, to ask for the richer living of Stoke Abbas.",
+      anchors: ["godliness with contentment is great gain", "the vanity of preferment", "for the third time, to ask for the richer living"],
+      key: "The preacher who scorns the ambitious clergyman has himself asked three times for a richer living.",
+      wrong: [
+        ["Mr. Crowle's sermon on contentment moves the parish because he speaks from his own contentment with his living.",
+         "The last sentence reveals that he has asked three times for a richer living, so he is not content with the one he holds."],
+        ["Mr. Crowle's sermon on contentment is aimed at rivals who might also be seeking the living of Stoke Abbas.",
+         "Nothing suggests that the sermon is aimed at rivals; the irony lies in the gap between what he preaches and what he does."],
+        ["Though he spoke of the vanity of preferment, Mr. Crowle has at last been granted the richer living he sought.",
+         "The text says only that he wrote, for the third time, asking for the living; it never says that he received it."],
+      ],
+      why: "The sermon praises contentment and scorns the clergyman who is “never easy in the living he has”; the last sentence reveals that Mr. Crowle has just written, for the third time, to ask for a richer living, so his own conduct undercuts what he preaches.",
+    },
+    {
+      scene: "ii-cid-period-old-books",
+      kind: "essay",
+      text:
+        "It is commonly said that the books of former ages were better than our own, and the proof offered is that we still read them. The proof proves less than it seems to. Every age produced its thousands of dull volumes, and time, which is the most diligent of critics, has quietly disposed of them; the few that survive are the few worth keeping. We compare, therefore, the best of the past with the whole of the present, and are surprised to find the present wanting. Our own dull books are not worse than our grandfathers’; they are merely not yet forgotten.",
+      anchors: ["the proof offered is that we still read them", "time, which is the most diligent of critics", "they are merely not yet forgotten"],
+      key: "The past only seems to have written better books, because time has discarded its dull ones and not yet ours.",
+      wrong: [
+        ["The books of former ages were better than our own, since only books of real merit continue to be read.",
+         "This is the common view the author sets out to question; the survival of old books reflects time’s sifting, not a better age."],
+        ["Our own age produces more dull books than earlier ages did, which is why it compares so badly with the past.",
+         "The author says every age produced its thousands of dull volumes and that ours are “not worse”; ours are simply not yet forgotten."],
+        ["Time is a more reliable critic than any reviewer, since it preserves only the books that are worth keeping.",
+         "The author calls time “the most diligent of critics” in passing; the essay’s point is the unfair comparison of the past’s best with the present’s whole, not a ranking of critics."],
+      ],
+      why: "The author questions the proof that old books are better because we still read them: time has discarded the past’s dull books, so we compare the best of the past with all of the present, whose dull books are simply not yet forgotten.",
+    },
+    {
+      scene: "ii-cid-period-temperance-letters",
+      kind: "fiction",
+      text:
+        "Miss Temperance Oakes had refused, it was said, eleven offers of marriage, and she was fond of observing that she had never once regretted her refusals. She kept, nevertheless, in the drawer of her writing-table a packet of letters tied with a faded ribbon, all in one hand and all dated from a single summer forty years before. When the writer of them died, an old man in a distant county, she put on black for a month and would give no reason for it to anyone, least of all to the nieces who had so often heard her boast.",
+      anchors: ["she had never once regretted her refusals", "a packet of letters tied with a faded ribbon", "she put on black for a month"],
+      key: "Miss Oakes's grief for the writer of one summer's letters belies her boast of never regretting a refusal.",
+      wrong: [
+        ["Miss Oakes has never regretted refusing her suitors, as her contented life without marriage shows.",
+         "This accepts her boast; the letters she keeps and the mourning she wears for their writer suggest a regret that she will not admit."],
+        ["Miss Oakes mourns the letter writer because he was a relative whose death she had kept from her nieces.",
+         "Nothing identifies the writer as a relative; letters from a single summer, tied in ribbon and kept for forty years, point to a courtship."],
+        ["Miss Oakes regrets all eleven of her refusals, though she hides that regret behind her boast.",
+         "The letters are all in one hand and from one summer; the passage suggests regret for one suitor, not for all eleven."],
+      ],
+      why: "Miss Oakes boasts that she never regretted her refusals, yet she keeps one man’s letters from a single summer forty years before and wears black for a month when he dies, giving no reason; her conduct reveals the regret that her boast denies.",
+    },
+    {
+      scene: "ii-cid-period-punctual-man",
+      kind: "essay",
+      text:
+        "The punctual man is justly admired, and I would not have him otherwise; but it is worth remarking how seldom he is loved. He arrives at the stroke of the hour, and his arrival is a reproach to everyone who is not there; he looks at his watch, and the whole company feels the look. His virtue, in short, is exercised chiefly upon other people. The man who is a little late, who apologizes handsomely and is glad to see us, has committed a fault; but he has not made us feel it, and we forgive him before he has finished his excuse.",
+      anchors: ["The punctual man is justly admired", "his arrival is a reproach to everyone who is not there", "we forgive him before he has finished his excuse"],
+      key: "Punctuality is a real virtue, yet the punctual man tends to use it against others and so wins little affection.",
+      wrong: [
+        ["Punctuality is an overrated virtue, and a man who arrives a little late is in fact more considerate than one who is on time.",
+         "The author calls the punctual man “justly admired” and lateness “a fault”; the essay says only that the late man’s manner is easier to forgive."],
+        ["The punctual man is admired but seldom loved because he looks at his watch too often when he is in company.",
+         "The watch is one example; the author’s point is that his virtue is “exercised chiefly upon other people,” of which the look at his watch is only one sign."],
+        ["People forgive lateness more readily than punctuality, since the late man apologizes and the punctual man never does.",
+         "The punctual man has committed no fault to be forgiven; the author says the late man is forgiven because he does not make others feel his fault."],
+      ],
+      why: "The author grants that the punctual man is “justly admired” but observes that he is “seldom loved,” because his punctuality works as a reproach to others; the late man’s fault is forgiven because he does not make others feel it.",
     },
   ];
 
@@ -1727,17 +1810,20 @@
     id: "central-idea-poem",
     skill: "Central Ideas and Details",
     subskill: "main idea",
-    difficulty: "Hard",
+    // Medium (relabeled from Hard after the 2026-09-26 cold review found it
+    // played Medium): the poems are accessible, and the turn is marked
+    // ("But now", "And yet", "Then I learned").
+    difficulty: "Medium",
     title: "Main idea of an original short poem with a turn",
     recognize:
       "A short poem sets up one view and then turns; the main idea joins what the speaker understands after the turn with what came before, rather than restating one image or the feeling before the turn.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["too-narrow", "too-broad", "opposite-stance"],
     build(t) {
       const topic = t.pick(POEM_TOPICS);
       const content = `${POEM_HEADER}\n\n${topic.lines}`;
       const lineCount = topic.lines.split("\n").filter((line) => line.trim()).length;
-      return mc("Hard", topic, {
+      return mc("Medium", topic, {
         stimulus: passage(content),
         stem: "Which choice best states the main idea of the text?",
         correct: topic.key,
@@ -1761,6 +1847,560 @@
     },
   };
 
+  /* ------------------------------------------------------------------ */
+  /* Central Ideas: main idea of a dense academic argument               */
+  /* ------------------------------------------------------------------ */
+
+  // Dense expository passages (Flesch-Kincaid grade 13 and above) in the
+  // register of academic prose: history, economics, biology, linguistics,
+  // art history, and the methods of the sciences. Each reports a view, then
+  // limits, reframes, or reconciles it, and the main idea is the author's
+  // position at its exact strength. Invented scholars appear only with
+  // invented places and studies (the Carrand guild, the Lwen villages,
+  // Merrow, the Saanvik islands); general claims about real fields are
+  // accurate. Each item carries its own three distractors and reasons: the
+  // view the author reports, the author's point pushed a step too far (or
+  // one side of a debate the author reconciles), and a true supporting
+  // detail. Two choices usually share a frame, and neither the longest
+  // choice nor a qualifier marks the key. `anchors` must occur in order.
+  const ACADEMIC_MAIN_TOPICS = [
+    {
+      scene: "ii-cid-acad-archive-silence",
+      text:
+        "Historians who find no mention of a practice in a community’s surviving records are often tempted to conclude that the practice was absent. Such an inference from silence is defensible, however, only when the records were produced by people who would have had reason to note the practice had it existed. The ledgers of the Carrand weavers’ guild, for instance, meticulously itemize members’ wages, dues, and fines but never mention how apprentices were instructed; to infer from this omission that instruction was haphazard or neglected would be to mistake the ledgers’ purpose, which was fiscal rather than pedagogical. Absence from a record constitutes evidence of absence only to the degree that presence would have been recorded.",
+      anchors: ["are often tempted to conclude that the practice was absent", "defensible, however, only when the records were produced", "evidence of absence only to the degree"],
+      key: "A record's silence about a practice shows its absence only if the record's keepers would have had reason to note it.",
+      wrong: [
+        ["A record's silence about a practice shows that the practice was absent, as historians have generally been right to assume.",
+         "This is the inference the author says historians are “tempted” to draw; the text allows it only when the record keepers would have noted the practice."],
+        ["Records kept for fiscal purposes, however detailed, can tell historians nothing about how a community trained its members.",
+         "The author says only that the ledgers’ silence cannot show that instruction was neglected; the text never claims such records reveal nothing at all about training."],
+        ["The Carrand guild's ledgers itemize wages and fines in detail but never mention how the guild's apprentices were instructed.",
+         "This is the author’s example, not the point it illustrates about what silence in a record can show."],
+      ],
+      why: "The author grants that historians are tempted to read silence as absence but limits the inference to records whose keepers would have noted the practice; the guild’s fiscal ledgers illustrate a silence that shows nothing about instruction.",
+    },
+    {
+      scene: "ii-cid-acad-model-organisms",
+      text:
+        "Because a handful of species, among them the fruit fly and the house mouse, have been studied with unmatched intensity, biologists are tempted to treat what is true of these model organisms as true of animals generally. Defenders of the practice note that many fundamental cellular processes are conserved across enormous evolutionary distances, so that discoveries about a fly’s cells frequently illuminate human ones. That defense is sound as far as it goes, but it licenses generalization only about processes independently known to be conserved. Traits shaped by a model organism’s peculiar way of life, including the rapid development that made it convenient to study in the first place, may be precisely the features that make it unrepresentative.",
+      anchors: ["tempted to treat what is true of these model organisms", "That defense is sound as far as it goes", "precisely the features that make it unrepresentative"],
+      key: "Model organisms reveal much about widely shared processes but may mislead about traits that suit their own ways of life.",
+      wrong: [
+        ["Model organisms reveal what is true of animals in general, since fundamental cellular processes are shared across species.",
+         "The author accepts this defense only for processes known to be conserved; traits tied to a model organism’s way of life may make it unrepresentative."],
+        ["Model organisms are so unrepresentative of animals in general that discoveries about them rarely illuminate other species.",
+         "The author grants that discoveries about a fly’s cells “frequently illuminate human ones”; the doubt is limited to certain traits."],
+        ["Many fundamental cellular processes are shared by species that are separated by enormous evolutionary distances.",
+         "This is the defenders’ supporting fact, which the author accepts, not the author’s point about its limits."],
+      ],
+      why: "The author grants the defenders’ point that shared cellular processes make model organisms informative but limits it to processes known to be conserved; traits tied to an organism’s way of life, including its rapid development, may make it unrepresentative.",
+    },
+    {
+      scene: "ii-cid-acad-price-index",
+      text:
+        "A price index intended to track the cost of living must specify which goods it follows, and the conventional solution, a fixed basket weighted by what households spent on each item in some base year, possesses an attractive simplicity. Its deficiency becomes apparent when relative prices diverge. Households confronted with a sharply more expensive item characteristically substitute a cheaper alternative, so that the base-year basket increasingly overrepresents precisely those goods whose prices have risen most. An index constructed on such a basket consequently tends to exaggerate increases in the cost of living, not because any individual price has been mismeasured but because the basket has ceased to describe what households actually purchase.",
+      anchors: ["possesses an attractive simplicity", "Its deficiency becomes apparent when relative prices diverge", "not because any individual price has been mismeasured"],
+      key: "A fixed-basket price index tends to exaggerate rises in the cost of living, since households buy less of what grows costly.",
+      wrong: [
+        ["A fixed basket of goods gives the most reliable measure of the cost of living, since it tracks the same purchases every year.",
+         "The author grants the fixed basket its simplicity but argues that tracking the same purchases is exactly its weakness once households change what they buy."],
+        ["A fixed basket gives misleading results mainly because the prices of the goods in it are recorded inaccurately.",
+         "The author says the index exaggerates “not because any individual price has been mismeasured” but because the basket no longer matches what households buy."],
+        ["Households faced with a costly item often substitute a cheaper one, which changes the mix of goods that they buy.",
+         "This is the behavior the argument rests on, not the author’s conclusion about what it does to a fixed-basket index."],
+      ],
+      why: "The author grants the fixed basket its simplicity but argues that, as households substitute away from goods that grow costly, the basket overweights those goods, so the index overstates rises in the cost of living even when every price is measured correctly.",
+    },
+    {
+      scene: "ii-cid-acad-oral-chronology",
+      text:
+        "Historians long dismissed oral traditions as unreliable because the chronologies they preserve frequently compress or rearrange events, situating a migration and a famine that were centuries apart within a single generation. The ethnographer Ruth Anyango’s study of genealogical recitations in the Lwen fishing villages suggests, however, that such compression is systematic rather than careless: reciters reproduce the succession of rulers faithfully while collapsing the uneventful intervals between them. The traditions are thus poor evidence for when events occurred but comparatively good evidence for the order in which they occurred, a distinction that earlier critics, attending exclusively to dates, neglected to draw.",
+      anchors: ["long dismissed oral traditions as unreliable", "systematic rather than careless", "poor evidence for when events occurred"],
+      key: "Oral traditions that garble dates may still record the order of events faithfully, which critics intent on dates overlooked.",
+      wrong: [
+        ["Oral traditions are unreliable sources, since they often place events that were centuries apart within a single generation.",
+         "This is the older dismissal that the author reports; Anyango’s study shows that the traditions remain good evidence for the order of events."],
+        ["Oral traditions are more reliable than written records for establishing both the order in which events occurred and their dates.",
+         "The author calls the traditions “poor evidence for when events occurred” and never compares them with written records."],
+        ["Reciters in the Lwen fishing villages keep their rulers in order but collapse the uneventful intervals between reigns.",
+         "This is the finding the author uses as evidence, not the general point it supports about what oral traditions can show."],
+      ],
+      why: "The author reports the old dismissal of oral traditions, then uses Anyango’s study to show that their distortions are systematic: they compress intervals but keep the order of events, a distinction the critics missed by attending only to dates.",
+    },
+    {
+      scene: "ii-cid-acad-introduced-species",
+      text:
+        "Ecologists have increasingly questioned whether a species’ status as native or introduced should determine how it is managed. Critics of the distinction observe that many introduced species inflict no measurable damage and that some furnish habitat for native animals deprived of their original food sources. Defenders reply, reasonably, that introduced species are disproportionately represented among those that do inflict severe damage. The controversy is less fundamental than its rhetoric suggests. Both parties implicitly concede that harm, not provenance, is what justifies intervention; they disagree chiefly about whether provenance is a sufficiently reliable early indicator of harm to warrant acting before any damage has been observed.",
+      anchors: ["whether a species’ status as native or introduced", "Defenders reply, reasonably", "harm, not provenance, is what justifies intervention"],
+      key: "Both sides of the dispute judge introduced species by their harm; they differ mainly on whether origin predicts that harm.",
+      wrong: [
+        ["Introduced species warrant more aggressive management than native ones, since origin reliably predicts ecological harm.",
+         "This takes the defenders’ side and states it more strongly than they do; the author says only that the two sides disagree about how reliable an indicator origin is."],
+        ["Whether a species is native or introduced reveals nothing about how much ecological harm that species is likely to cause.",
+         "The author calls the defenders’ reply reasonable: introduced species are overrepresented among the most harmful, so origin reveals something."],
+        ["Some introduced species cause no measurable ecological harm, and some even provide habitat for native animals.",
+         "This is one side’s evidence, not the author’s point that the two sides share a premise."],
+      ],
+      why: "The author presents both sides and then argues that they share a premise, that harm justifies intervention, so their real disagreement is chiefly whether origin is a reliable early sign of harm.",
+    },
+    {
+      scene: "ii-cid-acad-translation-fidelity",
+      text:
+        "It is commonly assumed that a translation should be judged by its fidelity to the original and that the most faithful translation reproduces its source word for word. Yet fidelity at the level of the word can engender infidelity at every other level. A pun rendered literally ceases to be a pun; a proverb translated exactly may sound, in the new language, stilted or simply bewildering; a line whose rhythm once enacted its meaning may forfeit both. The translator who departs from the original’s vocabulary in order to reproduce its effects upon a reader is arguably the more faithful, provided one grants that what a text accomplishes with its readers belongs to the text as much as what it says.",
+      anchors: ["judged by its fidelity to the original", "fidelity at the level of the word can engender infidelity", "belongs to the text as much as what it says"],
+      key: "A translator may be most faithful to a text by departing from its exact words in order to reproduce its effects on readers.",
+      wrong: [
+        ["The most faithful translation reproduces the words of its source text as exactly as the new language permits.",
+         "This is the common assumption the author questions; word-for-word fidelity can be unfaithful at every other level."],
+        ["Since reproducing the words of a source text exactly is impossible, a translator may freely change its meaning.",
+         "The author never calls exact reproduction impossible and defends departures only to reproduce a text’s effects, not to change its meaning at will."],
+        ["Translated word for word, a pun usually ceases to be a pun, and a proverb may sound stilted in the new language.",
+         "These are the author’s examples of word-for-word infidelity, not the point they support."],
+      ],
+      why: "The author questions the assumption that the most faithful translation is word for word: literal renderings can lose a text’s effects, so the translator who departs from the words to keep those effects may be the more faithful.",
+    },
+    {
+      scene: "ii-cid-acad-survey-intentions",
+      text:
+        "Surveys asking people how often they exercise, vote, or recycle consistently yield higher figures than direct observation does, a discrepancy customarily attributed to respondents’ desire to present themselves favorably. The sociologist Idris Kaleb’s follow-up interviews with survey respondents in the town of Merrow complicate this explanation. Many respondents, he found, answered not with a tally of past behavior but with a description of their customary intentions, reporting what they ordinarily meant to do in a typical week. The resulting inflation reflects a misconstrual of the question at least as much as a wish to impress, and it may therefore persist even under conditions of complete anonymity.",
+      anchors: ["customarily attributed to respondents’ desire to present themselves favorably", "complicate this explanation", "persist even under conditions of complete anonymity"],
+      key: "Self-reports may exaggerate behavior partly because respondents describe what they usually intend rather than what they did.",
+      wrong: [
+        ["Surveys overstate how often people exercise, vote, or recycle because respondents wish to present themselves favorably.",
+         "This is the customary explanation that Kaleb’s interviews complicate; the author adds a second cause that the explanation leaves out."],
+        ["Anonymous surveys would remove the inflation in self-reported behavior, since respondents would then have no one to impress.",
+         "The author says the inflation “may therefore persist even under conditions of complete anonymity.”"],
+        ["Many respondents in Merrow reported what they ordinarily meant to do in a typical week rather than what they had done.",
+         "This is Kaleb’s finding, the evidence for the author’s point rather than the point itself."],
+      ],
+      why: "The author reports the customary explanation, a wish to look good, and then uses Kaleb’s interviews to add a second cause: respondents describe their usual intentions, which is why the inflation may survive even anonymity.",
+    },
+    {
+      scene: "ii-cid-acad-attribution",
+      text:
+        "Attributions of paintings to celebrated masters were once treated as matters of connoisseurship alone, settled by experts who professed to recognize a master’s hand. Technical analysis of pigments and canvases has since overturned a number of such attributions, and it is tempting to conclude that scientific methods have simply supplanted the connoisseur. The conclusion does not follow. Pigment analysis can establish that a painting could not have been produced in a given period, but it cannot, by itself, distinguish a master’s work from that of a skilled contemporary employing identical materials. For that narrower question, stylistic judgment remains indispensable, however fallible it may be.",
+      anchors: ["settled by experts who professed to recognize a master’s hand", "The conclusion does not follow", "stylistic judgment remains indispensable"],
+      key: "Technical tests can rule some attributions out, yet telling a master from a skilled contemporary still requires stylistic judgment.",
+      wrong: [
+        ["Scientific analysis of pigments and canvas has now replaced the connoisseur's trained eye as the means of attributing paintings.",
+         "This is the conclusion the author calls tempting and then rejects: “The conclusion does not follow.”"],
+        ["Stylistic judgment, however fallible, is more reliable than technical analysis for deciding when and by whom a painting was made.",
+         "The author gives technical analysis the question of when a painting could have been made and keeps stylistic judgment for the narrower question of which hand made it."],
+        ["Pigment analysis can establish that a painting could not have been produced during some particular period of time.",
+         "This is one step in the argument, what technical analysis can do, not the author’s conclusion about the two methods."],
+      ],
+      why: "The author rejects the tempting conclusion that science has replaced the connoisseur: technical analysis can rule out a period, but only stylistic judgment, fallible as it is, can separate a master from a skilled contemporary using the same materials.",
+    },
+    {
+      scene: "ii-cid-acad-language-shift",
+      text:
+        "Accounts of language loss often emphasize coercion: schools that punished children for speaking their parents’ language, officials who would conduct business only in the dominant one. Such pressures were real and frequently brutal. Yet the linguist Oona Tervik’s study of the Saanvik islands, where no such policies were ever enforced, documents an equally rapid shift, propelled by parents who concluded on their own that their children’s prospects lay in the mainland language. The case suggests that coercion, though sufficient to precipitate language shift, is not necessary for it; perceived economic advantage can produce the same result, which may explain why abolishing coercive policies has not, by itself, reversed the decline of many languages.",
+      anchors: ["often emphasize coercion", "where no such policies were ever enforced", "though sufficient to precipitate language shift, is not necessary"],
+      key: "Language shift can be driven by parents' view of economic advantage as well as by coercion, so ending coercion may not halt it.",
+      wrong: [
+        ["Language shift is driven chiefly by coercion, as when schools and officials force speakers to abandon their language.",
+         "This is the emphasis the author reports; the Saanvik case shows a shift just as rapid with no coercion at all."],
+        ["Although coercive policies were often brutal, they have had little real effect on the decline of minority languages.",
+         "The author calls coercion “sufficient to precipitate language shift”; the point is that it is not the only cause."],
+        ["On the Saanvik islands, where no coercive policies were enforced, parents chose the mainland language for their children.",
+         "This is Tervik’s case, the evidence for the author’s point rather than the point itself."],
+      ],
+      why: "The author grants that coercion was real and can cause language shift, then uses the Saanvik case to show that parents’ sense of economic advantage can cause it too, which is why ending coercion has not by itself reversed many languages’ decline.",
+    },
+    {
+      scene: "ii-cid-acad-quake-forecast",
+      text:
+        "When a region that forecasters had assigned a low probability of a damaging earthquake experiences one, the forecast is commonly said to have failed. The judgment misconstrues what such forecasts assert. A statement that a region faces a ten percent chance of a damaging earthquake within fifty years predicts that, among many regions assigned that probability, roughly one in ten will experience such an event within the period. A single earthquake in a low-probability region is therefore entirely consistent with an accurate forecast; only the cumulative record of many regions over many decades can reveal whether the probabilities themselves were well calibrated.",
+      anchors: ["the forecast is commonly said to have failed", "misconstrues what such forecasts assert", "only the cumulative record of many regions"],
+      key: "A single quake where one was thought unlikely does not refute a forecast, since such forecasts are tested only in aggregate.",
+      wrong: [
+        ["A damaging earthquake in a region that was assigned a low probability of one shows that the region's forecast was inaccurate.",
+         "This is the common judgment that the author says “misconstrues what such forecasts assert.”"],
+        ["Earthquake forecasts cannot be evaluated at all, since any single earthquake is consistent with whatever they predict.",
+         "The author says forecasts can be evaluated, though only through the record of many regions over many decades."],
+        ["Among many regions assigned a ten percent chance of a damaging earthquake, roughly one in ten will have such an earthquake.",
+         "This explains what one forecast means; it is a step in the argument, not the author’s conclusion about judging forecasts."],
+      ],
+      why: "The author rejects the common judgment that an earthquake in a low-probability region shows a failed forecast: such a forecast describes many regions, so it can be checked only against the record of many regions over time.",
+    },
+    {
+      scene: "ii-cid-acad-citation-counts",
+      text:
+        "Citation counts are widely employed as a proxy for the quality of scientific papers, on the plausible assumption that consequential work is cited frequently. The assumption holds only imperfectly. Papers describing widely used methods accumulate citations from every study that employs those methods, whatever their theoretical significance, while papers that decisively settle a question may be cited less as the question ceases to be debated. Review articles, which synthesize others’ findings, are cited more often than most original research. Citation counts thus measure how frequently a paper proves useful to other authors, a property that overlaps with, but is not identical to, its contribution to knowledge.",
+      anchors: ["widely employed as a proxy for the quality", "The assumption holds only imperfectly", "overlaps with, but is not identical to"],
+      key: "Citation counts track a paper's usefulness to other authors, which overlaps with but is not the same as its scientific value.",
+      wrong: [
+        ["Because important work tends to be cited often, the number of times a paper is cited reliably measures its scientific quality.",
+         "This is the assumption the author says “holds only imperfectly”; methods papers and reviews are cited for reasons other than their significance."],
+        ["Citation counts bear no relation to the quality of a scientific paper, although they are widely used to judge it.",
+         "The author says usefulness to other authors “overlaps with” a paper’s contribution to knowledge, so the counts are related to quality, if imperfectly."],
+        ["Review articles, which summarize the findings of other researchers, are cited more often than most original research.",
+         "This is one of the author’s examples, not the conclusion about what citation counts measure."],
+      ],
+      why: "The author accepts that important work tends to be cited but shows that methods papers, settled questions, and reviews distort the counts, so citations measure usefulness to other authors, which overlaps with but differs from a paper’s contribution to knowledge.",
+    },
+    {
+      scene: "ii-cid-acad-ruin-conservation",
+      text:
+        "Conservators of ancient ruins confront a choice that their predecessors seldom acknowledged: whether to stabilize a structure as it now stands or to reconstruct portions that have fallen. Reconstruction appeals to visitors, who can then imagine the building in use, but it inevitably substitutes the conservator’s hypothesis for evidence that no longer exists. Stabilization preserves only what survives, yet the surviving state is itself the product of centuries of decay and plunder, no more authentic a moment in the building’s history than any other. Neither approach recovers the original; each privileges a different stage of the building’s life, and the choice between them is consequently interpretive rather than technical.",
+      anchors: ["whether to stabilize a structure as it now stands", "substitutes the conservator’s hypothesis", "interpretive rather than technical"],
+      key: "Each way of conserving a ruin presents one stage of the building's life, so choosing between them is an interpretive decision.",
+      wrong: [
+        ["Stabilizing a ruin as it stands is more faithful to history than reconstructing it, since reconstruction replaces evidence with hypothesis.",
+         "The author says the surviving state is “no more authentic a moment” than any other, so stabilization is not the more faithful choice."],
+        ["Reconstructing a ruin's fallen portions is preferable to stabilizing it, since visitors can then imagine the building in use.",
+         "The author grants reconstruction its appeal to visitors but faults it for replacing evidence with hypothesis and favors neither approach."],
+        ["The present state of an ancient ruin is the product of centuries of decay and plunder rather than of its builders' design.",
+         "This is the author’s reason for doubting stabilization, one step in the argument rather than its conclusion."],
+      ],
+      why: "The author weighs both approaches, finds that neither recovers the original, and concludes that each presents a different stage of the building’s life, so the choice between them is interpretive rather than technical.",
+    },
+    {
+      scene: "ii-cid-acad-sham-surgery",
+      text:
+        "Surgical procedures have historically been adopted on the strength of patients’ reported improvement, without the placebo-controlled trials long required of new drugs. Surgeons have objected that operating on patients merely to create a comparison group is unethical, since a sham operation imposes risks without any prospect of benefit. The objection has genuine force, but it cuts in both directions: a procedure adopted without such trials may likewise expose many patients to risk without benefit, if the improvement they report owes more to expectation than to the operation itself. The ethical cost of a sham-controlled trial must therefore be weighed against the cost of continuing to perform an operation whose value remains unknown.",
+      anchors: ["without the placebo-controlled trials long required of new drugs", "cuts in both directions", "must therefore be weighed"],
+      key: "The ethical risks of sham surgery must be weighed against those of performing operations that have never been properly tested.",
+      wrong: [
+        ["Sham-controlled surgical trials are unethical because they expose patients to the risks of surgery without any chance of benefit.",
+         "This is the surgeons’ objection; the author grants it force but argues that untested operations carry the same kind of risk."],
+        ["Surgical procedures should be tested exactly as new drugs are, whatever the ethical costs of such testing may be.",
+         "The author says the ethical cost of a trial must be weighed, not disregarded."],
+        ["Many surgical procedures were adopted without the testing required of new drugs, on the strength of patients' reports.",
+         "This is the background the author starts from, not the conclusion the passage reaches."],
+      ],
+      why: "The author grants the surgeons’ objection that sham operations impose risk without benefit but argues that untested operations may do the same, so the cost of a trial must be weighed against the cost of continuing an operation of unknown value.",
+    },
+    {
+      scene: "ii-cid-acad-dialect-prestige",
+      text:
+        "Judgments that one dialect is more correct than another are frequently presented as linguistic judgments, as though the favored dialect were more logical or more expressive than its rivals. Linguists have found little support for such claims; the grammatical patterns of stigmatized dialects prove as regular and as capable of nuance as those of standard ones. What distinguishes a prestige dialect is the social standing of its speakers rather than any property of its grammar. This conclusion does not imply that acquiring the prestige dialect is pointless, since its social advantages are real; it implies only that those advantages should be recognized as social rather than attributed to linguistic superiority.",
+      anchors: ["frequently presented as linguistic judgments", "Linguists have found little support", "should be recognized as social"],
+      key: "A dialect's prestige reflects its speakers' social standing, not its grammar, though the advantages it confers are real.",
+      wrong: [
+        ["A dialect's prestige reflects the logic and expressiveness of its grammar, which is why standard dialects carry it.",
+         "This is the view the author reports and rejects; linguists find stigmatized dialects just as regular and nuanced."],
+        ["Because no dialect is grammatically superior to another, there is little point in anyone's learning the prestige dialect.",
+         "The author says explicitly that this does not follow, since the prestige dialect’s social advantages are real."],
+        ["The grammatical patterns of stigmatized dialects are as regular and as capable of nuance as those of standard dialects.",
+         "This is the linguists’ finding on which the argument rests, not the author’s conclusion about what prestige reflects."],
+      ],
+      why: "The author rejects the idea that prestige dialects are linguistically superior, attributes their prestige to their speakers’ social standing, and adds that their social advantages are nonetheless real.",
+    },
+  ];
+
+  const academicMainIdea = {
+    ...RW,
+    id: "central-idea-academic-argument",
+    skill: "Central Ideas and Details",
+    subskill: "main idea",
+    difficulty: "Hard",
+    title: "Main idea of a dense academic argument that qualifies a view",
+    recognize:
+      "Dense academic prose reports a view and then limits, reframes, or reconciles it; the main idea is the author's position at its exact strength, not the view reported, not a stronger claim, and not one of the supporting examples.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 1, trap: 1 },
+    tricks: ["misattributed-view", "too-broad", "too-narrow"],
+    build(t) {
+      const topic = t.pick(ACADEMIC_MAIN_TOPICS);
+      return mc("Hard", topic, {
+        stimulus: passage(topic.text),
+        stem: "Which choice best states the main idea of the text?",
+        correct: topic.key,
+        wrong: topic.wrong,
+        explanation: `${topic.why} The main idea is therefore: ${topic.key}`,
+        steps: [
+          "Paraphrase each long sentence, marking which views the author reports and which the author holds.",
+          "Find where the author limits, reframes, or reconciles the reported view (\"however,\" \"does not follow,\" \"holds only imperfectly\").",
+          "Choose the statement of the author's position at its exact strength, rejecting the reported view, an overstated version, and a supporting example.",
+        ],
+        principles: [
+          "In academic prose, the view stated first is often the one the author goes on to qualify.",
+          "A main idea must be no stronger than the author's claim: \"not necessarily\" is not \"never,\" and \"overlaps with\" is not \"unrelated to.\"",
+        ],
+        trap: "Choosing the view the author reports, or the author's point pushed a step further than the text goes.",
+        hint: "What does the author grant, and what does the author say does not follow from it?",
+        verify: () =>
+          topic.wrong.length === 3 && inOrder(topic.text, topic.anchors) && allDistinct(topic.key, topic.wrong),
+      });
+    },
+  };
+
+  /* ------------------------------------------------------------------ */
+  /* Central Ideas and Details: a detail of a dense academic passage,    */
+  /* told apart from the view it answers and from misscoped versions     */
+  /* ------------------------------------------------------------------ */
+
+  // Dense expository passages (Flesch-Kincaid grade 13 and above), each
+  // with a received view, a scholar's finding that complicates it, and the
+  // scholar's own hedged conclusion. The question asks what the finding
+  // (or the scholar's claim) was. Invented scholars appear only with
+  // invented places and studies; the one real event (the 1815 Tambora
+  // eruption and the cold year that followed) is stated accurately. Each
+  // item carries its own three distractors and reasons: the received view
+  // attributed to the finding, the finding with a detail reversed or
+  // misplaced, and the scholar's hedged conclusion stated as certain or
+  // universal. `anchors` must occur in order.
+  const ACADEMIC_DETAIL_TOPICS = [
+    {
+      scene: "ii-cid-acad-d-tarnvik-lakes",
+      stem: "According to the text, what did Mørk’s analysis of the sediment cores show?",
+      text:
+        "Proponents of the view that the region’s twentieth-century warming began earlier in the mountains than in the lowlands have relied largely on photographs of glaciers, which show conspicuous retreat by the 1920s. The geochemist Lena Mørk’s analysis of sediment cores from eleven lakes in the Tarnvik range offers more direct evidence but complicates the picture: algal remains indicating longer ice-free seasons appear by the 1920s only in lakes above 1,800 meters, whereas lakes at lower elevations register no change until the 1950s. Mørk cautions, moreover, that her cores cannot establish when warming began in the lowlands themselves, which contain no comparable lakes.",
+      anchors: ["have relied largely on photographs of glaciers", "only in lakes above 1,800 meters", "cannot establish when warming began in the lowlands"],
+      key: "Signs of longer ice-free seasons appeared decades earlier in the highest lakes than in the lower ones.",
+      wrong: [
+        ["Glaciers in the Tarnvik range were retreating by the 1920s, decades before warming began in the lowlands.",
+         "The glacier photographs are the earlier evidence that others relied on, not Mørk’s finding, and Mørk says her cores cannot date warming in the lowlands."],
+        ["Lakes throughout the Tarnvik range recorded longer ice-free seasons beginning in the 1920s.",
+         "Only lakes above 1,800 meters show the change by the 1920s; lower lakes show none until the 1950s."],
+        ["Warming began in the Tarnvik range decades before it began in the region's lowlands.",
+         "Mørk cautions that her cores cannot establish when warming began in the lowlands, which have no comparable lakes."],
+      ],
+      why: "Mørk found algal signs of longer ice-free seasons by the 1920s only in lakes above 1,800 meters, with lower lakes changing only in the 1950s; she draws no conclusion about the lowlands.",
+    },
+    {
+      scene: "ii-cid-acad-d-ostvald-bonds",
+      stem: "According to the text, what did Horák find in the trading records?",
+      text:
+        "During the currency crisis of 1987 in the Republic of Ostvald, yields on government bonds rose sharply, and many commentators inferred that investors had come to doubt the government’s capacity to repay. The economist Pavel Horák’s examination of trading records offers a different account. The bonds most heavily sold were those held by foreign pension funds, which were obliged by their own regulations to divest any holding whose credit rating fell below a fixed threshold; bonds held chiefly by domestic banks, which faced no comparable rule, suffered far smaller price declines. Horák concludes that mandatory selling, rather than any widespread reassessment of the government’s creditworthiness, drove much of the rise in yields.",
+      anchors: ["many commentators inferred that investors had come to doubt", "The bonds most heavily sold were those held by foreign pension funds", "drove much of the rise in yields"],
+      key: "Bonds held mainly by foreign pension funds were the most heavily sold, while those held by domestic banks lost far less value.",
+      wrong: [
+        ["Investors came to doubt the government's ability to repay, and their doubts drove most of the rise in yields.",
+         "This is the commentators’ inference, which Horák’s records challenge; he attributes much of the rise to mandatory selling."],
+        ["Domestic banks, facing stricter rules, dumped the government's bonds faster than foreign pension funds did.",
+         "This reverses the finding: the foreign pension funds faced the selling rule, and bonds held by domestic banks fell far less."],
+        ["Investors never doubted the government's ability to repay, since all of the selling was required by rules.",
+         "Horák says mandatory selling drove “much of” the rise, not all of it; he does not claim that no investor had doubts."],
+      ],
+      why: "Horák’s records show that the bonds sold most heavily were those held by foreign pension funds, which had to sell when ratings fell, while bonds held by domestic banks, under no such rule, declined far less.",
+    },
+    {
+      scene: "ii-cid-acad-d-linholm-reading",
+      stem: "According to the text, what did Dietz find?",
+      text:
+        "It is often supposed that skilled readers move their eyes smoothly along each line of print. Eye-tracking studies have shown instead that the eyes advance in rapid jumps, pausing on most words for a fraction of a second, and that readers skip many short, predictable words entirely. In an experiment at the Linholm Institute, the psychologist Mara Dietz found that readers skipped predictable words far more often than unpredictable words of the same length, but that the difference disappeared when the words were printed in an unfamiliar typeface. Dietz argues that skipping depends on a word’s being identified before the eyes arrive at it, which an unfamiliar typeface prevents.",
+      anchors: ["Eye-tracking studies have shown instead", "the difference disappeared when the words were printed in an unfamiliar typeface", "Dietz argues that skipping depends"],
+      key: "Readers skipped predictable words more often than unpredictable ones of equal length, except in an unfamiliar font.",
+      wrong: [
+        ["Readers' eyes advance in rapid jumps and pause on most words for only a fraction of a second.",
+         "This is what earlier eye-tracking studies showed, the background to Dietz’s experiment rather than her finding."],
+        ["Readers skipped predictable words more often than unpredictable ones of equal length, especially in an unfamiliar font.",
+         "The difference disappeared in the unfamiliar typeface; it did not grow."],
+        ["Readers can identify a word before their eyes reach it only when the word is printed in a familiar font.",
+         "This is closer to Dietz’s explanation of her finding than to the finding itself, and it states the explanation more absolutely than she does."],
+      ],
+      why: "Dietz found that readers skipped predictable words more often than unpredictable words of the same length, and that the difference disappeared in an unfamiliar typeface; her claim about identifying words in advance is her explanation of that result.",
+    },
+    {
+      scene: "ii-cid-acad-d-varuna-spawning",
+      stem: "According to the text, why does Ellery doubt that predator satiation explains the synchrony on the Varuna Shelf?",
+      text:
+        "Mass spawning, in which many coral species release eggs and sperm on the same few nights each year, has often been explained as a strategy for overwhelming predators: so much spawn appears at once that fish and invertebrates can consume only a fraction of it. The marine biologist Tomasz Ellery questions whether predator satiation can account for the precise synchrony observed on the reefs of the Varuna Shelf. There, he notes, colonies of the same species spawn within minutes of one another, a precision far exceeding what satiating predators would require, whereas different species spawn hours apart. Such timing, Ellery argues, is better explained by the necessity that eggs and sperm of one species meet before they disperse.",
+      anchors: ["often been explained as a strategy for overwhelming predators", "colonies of the same species spawn within minutes of one another", "better explained by the necessity"],
+      key: "Colonies of one species spawn within minutes of one another, far more precisely than overwhelming predators would require.",
+      wrong: [
+        ["Predators on the shelf can consume only a small fraction of the spawn that is released on a single night.",
+         "This is the premise of the predator-satiation explanation that Ellery questions, not his reason for doubting it."],
+        ["Different species on the shelf all release their spawn within the same few minutes of one another.",
+         "Different species spawn hours apart; it is colonies of the same species that spawn within minutes."],
+        ["Predators on the shelf are overwhelmed by the spawn of all species together, so timing within a species hardly matters.",
+         "Ellery never argues this; his doubt rests on how much more precise the timing within a species is than satiation would require."],
+      ],
+      why: "Ellery doubts predator satiation because colonies of one species spawn within minutes of one another, far more precisely than overwhelming predators would require, while different species spawn hours apart.",
+    },
+    {
+      scene: "ii-cid-acad-d-brassel-wages",
+      stem: "According to the text, what does Ferrand claim about the union’s wage rolls?",
+      text:
+        "Historians have long cited the wage rolls of the Brassel dockworkers’ union as evidence that real wages in the port rose steadily between 1880 and 1910. The historian Adaeze Ferrand accepts the rolls’ accuracy but observes that they record only the wages of union members, whose share of the port’s workforce fell from roughly two-thirds to under one-third over the period as casual laborers, who were paid considerably less, came to predominate on the docks. The rising wages in the rolls, she argues, describe a shrinking and increasingly privileged minority; the typical dockworker of 1910 may well have earned less, in real terms, than the typical dockworker of 1880.",
+      anchors: ["as evidence that real wages in the port rose steadily", "accepts the rolls’ accuracy but observes", "may well have earned less"],
+      key: "They record wages accurately, but only for a group that shrank to a minority of the port's dockworkers.",
+      wrong: [
+        ["They show that real wages for dockworkers in the port rose steadily between 1880 and 1910.",
+         "This is what earlier historians took the rolls to show; Ferrand argues they describe only a shrinking minority of dockworkers."],
+        ["They overstate the wages that union members were actually paid between 1880 and 1910.",
+         "Ferrand accepts the rolls’ accuracy; her objection concerns whose wages they record, not the figures themselves."],
+        ["They prove that the typical dockworker of 1910 earned less, in real terms, than the typical dockworker of 1880.",
+         "Ferrand says only that the typical dockworker “may well have” earned less; she does not claim the rolls prove it."],
+      ],
+      why: "Ferrand accepts the rolls’ figures but points out that they cover only union members, whose share of the workforce fell from about two-thirds to under one-third, so the rising wages describe a shrinking minority.",
+    },
+    {
+      scene: "ii-cid-acad-d-averne-precedent",
+      stem: "According to the text, what did Ruud find in the court’s unpublished deliberations?",
+      text:
+        "Legal historians have often described the judges of the Averne high court as strict adherents of precedent, citing the frequent references to earlier rulings in their published opinions. The legal historian Selma Ruud’s reading of the court’s unpublished deliberations suggests that those references served a different function. In deliberation, the judges debated cases chiefly in terms of fairness and practical consequence, turning to precedent only when drafting the published opinion, and they occasionally cited earlier rulings whose reasoning they had privately rejected. Ruud concludes that precedent in Averne legitimated decisions reached on other grounds rather than determining them, though she concedes that the deliberations of several years have not survived.",
+      anchors: ["citing the frequent references to earlier rulings", "debated cases chiefly in terms of fairness and practical consequence", "the deliberations of several years have not survived"],
+      key: "Judges argued over fairness and consequences in deliberation and turned to precedent only when writing their opinions.",
+      wrong: [
+        ["Judges referred frequently to earlier rulings, as strict followers of precedent would be expected to do.",
+         "The frequent references appear in the published opinions and are the other historians’ evidence; the deliberations show precedent entering only at the drafting stage."],
+        ["Judges argued over earlier rulings in deliberation and turned to fairness only when writing their opinions.",
+         "This reverses the finding: fairness and consequence dominated deliberation, and precedent appeared when opinions were drafted."],
+        ["Judges never let precedent affect a decision in any year of the court's history.",
+         "Ruud concedes that the deliberations of several years are lost, so her finding cannot cover every year, and she says precedent chiefly legitimated decisions."],
+      ],
+      why: "Ruud found that in deliberation the judges argued chiefly about fairness and consequences and turned to precedent only when drafting their published opinions, sometimes citing rulings whose reasoning they had privately rejected.",
+    },
+    {
+      scene: "ii-cid-acad-d-ember-maize",
+      stem: "According to the text, what did Nwachukwu’s farm-level data show?",
+      text:
+        "When the government of the Ember Valley region began subsidizing fertilizer in 2004, average maize yields rose by nearly half within five years, and the program was widely credited with the increase. The agricultural economist Chidi Nwachukwu’s farm-level data suggest a more qualified verdict. Yields rose most on farms that had also adopted drought-tolerant seed varieties released during the same period; farms that applied subsidized fertilizer to traditional seed registered modest gains, while farms that adopted the new seed without fertilizer gained nearly as much as those that used both. Nwachukwu concludes that the seed, rather than the subsidy, accounts for most of the region’s improvement.",
+      anchors: ["the program was widely credited with the increase", "farms that applied subsidized fertilizer to traditional seed registered modest gains", "rather than the subsidy, accounts for most"],
+      key: "Farms that planted the new seed without fertilizer gained nearly as much as farms that used both.",
+      wrong: [
+        ["The fertilizer subsidy raised average maize yields across the region by nearly half within five years.",
+         "Yields did rise by nearly half, but crediting the subsidy is the widely held view that Nwachukwu’s data qualify."],
+        ["Farms that used fertilizer with traditional seed gained nearly as much as farms that used both.",
+         "Farms using fertilizer with traditional seed saw only modest gains; it was farms using the new seed without fertilizer that gained nearly as much."],
+        ["The fertilizer subsidy did nothing to raise maize yields on any of the region's farms.",
+         "Farms that applied subsidized fertilizer to traditional seed did register modest gains."],
+      ],
+      why: "Nwachukwu’s data show that farms using the new drought-tolerant seed without fertilizer gained nearly as much as farms using both, while fertilizer with traditional seed brought only modest gains.",
+    },
+    {
+      scene: "ii-cid-acad-d-kelani-loans",
+      stem: "According to the text, why does Osei infer that the two communities’ relationship was unusually close?",
+      text:
+        "Borrowed words are often treated as evidence of cultural contact, the vocabulary a language takes from another being read as an index of what the borrowers learned from the lenders. The linguist Farida Osei’s survey of the Kelani language complicates this assumption. Kelani borrowed its words for numerous trade goods from its coastal neighbors, as one would expect, but it also borrowed common verbs and even pronouns, categories that languages rarely take from one another except under prolonged and intimate contact, such as widespread bilingualism or intermarriage. Osei infers that the relationship between the two communities was far closer than the vocabulary of trade alone would suggest.",
+      anchors: ["Borrowed words are often treated as evidence of cultural contact", "it also borrowed common verbs and even pronouns", "far closer than the vocabulary of trade alone"],
+      key: "Kelani borrowed verbs and pronouns, which languages seldom borrow without prolonged and intimate contact.",
+      wrong: [
+        ["Kelani borrowed its words for many trade goods from the neighboring coastal language.",
+         "Osei says these borrowings were expected; by themselves they would suggest a less close relationship than she infers."],
+        ["Kelani lent verbs and pronouns to the coastal language, which languages seldom do without intimate contact.",
+         "The borrowing ran the other way: Kelani took the verbs and pronouns from its neighbors."],
+        ["Records of marriages show that the two communities intermarried widely over several generations.",
+         "Intermarriage is named only as one kind of intimate contact; the text mentions no marriage records."],
+      ],
+      why: "Osei infers a close relationship because Kelani borrowed not only trade words but also common verbs and pronouns, which languages rarely borrow except under prolonged, intimate contact.",
+    },
+    {
+      scene: "ii-cid-acad-d-druvna-songbirds",
+      stem: "According to the text, what did Oyelaran’s recordings show?",
+      text:
+        "Songbirds in cities frequently sing at higher pitches than members of the same species in forests, and the difference is usually attributed to adaptation: low-frequency traffic noise masks low notes, so birds that sing higher are more readily heard. The biologist Hannah Oyelaran’s recordings in the city of Druvna suggest that at least part of the shift is not inherited. Individual birds, she found, raised their pitch within minutes when recorded traffic noise was played nearby and lowered it again once the noise ceased. Oyelaran does not deny that urban populations may also be evolving; she argues only that pitch differences between city and forest birds cannot by themselves be taken as evidence of evolution.",
+      anchors: ["usually attributed to adaptation", "raised their pitch within minutes", "Oyelaran does not deny"],
+      key: "Individual birds raised the pitch of their songs within minutes of hearing traffic noise and lowered it afterward.",
+      wrong: [
+        ["City songbirds sing at higher pitches than forest birds of the same species because traffic masks low notes.",
+         "This is the usual explanation the text reports; Oyelaran’s recordings concern how individual birds respond to noise."],
+        ["Individual birds lowered the pitch of their songs within minutes of hearing traffic noise and raised it afterward.",
+         "This reverses the finding: the birds raised their pitch when the noise played and lowered it when the noise stopped."],
+        ["Urban songbird populations are not evolving higher songs, since the change in pitch is not inherited.",
+         "Oyelaran explicitly does not deny that urban populations may be evolving; she says only that pitch differences alone do not show it."],
+      ],
+      why: "Oyelaran’s recordings showed individual birds raising their pitch within minutes of hearing traffic noise and lowering it when the noise stopped, a change within one bird’s lifetime rather than an inherited one.",
+    },
+    {
+      scene: "ii-cid-acad-d-hesk-dye",
+      stem: "According to the text, what did Paskett’s chemical analysis show?",
+      text:
+        "Textiles recovered from the burial mounds at Hesk are colored with a red dye derived from madder, a plant that grows wild only far to the south, and the find has been read as evidence that Hesk’s inhabitants traded directly over long distances. The archaeologist Juno Paskett’s chemical analysis supports a more cautious reading. The dye, she found, contains traces of a mordant, the mineral salt used to fix the color to the fibers, that matches a clay deposit near Hesk itself. The textiles were therefore dyed locally, although the madder, or at least its roots, must still have come from elsewhere, perhaps through a chain of intermediaries rather than by direct trade.",
+      anchors: ["read as evidence that Hesk’s inhabitants traded directly", "matches a clay deposit near Hesk itself", "perhaps through a chain of intermediaries"],
+      key: "The dye contains a mordant matching a clay found near Hesk, so the textiles were dyed locally.",
+      wrong: [
+        ["Hesk's inhabitants traded directly with the southern peoples in whose lands madder grows wild.",
+         "This is the earlier reading of the find; Paskett’s analysis supports a more cautious one and suggests the madder may have passed through intermediaries."],
+        ["The madder in the textiles was grown in fields near Hesk that were rich in a local clay.",
+         "The local clay matches the mordant used in dyeing; the madder itself grows only far to the south and must have come from elsewhere."],
+        ["Hesk's inhabitants obtained madder from the south only through intermediaries, never by direct trade.",
+         "Paskett suggests intermediaries only as a possibility (“perhaps”); her analysis shows where the textiles were dyed, not how the madder arrived."],
+      ],
+      why: "Paskett found that the dye contains a mordant matching a clay deposit near Hesk, so the textiles were dyed locally, though the madder itself must have come from the south, perhaps through intermediaries.",
+    },
+    {
+      scene: "ii-cid-acad-d-task-forecasts",
+      stem: "According to the text, what does Brandvold claim about forecasts based on counting tasks?",
+      text:
+        "Forecasts that a new technology will eliminate a given number of jobs typically enumerate the tasks the technology can perform and the workers who currently perform them. The economist Ilse Brandvold contends that such forecasts err in two opposite directions. They overlook the new tasks that the technology itself creates, such as its maintenance and supervision, and so overstate the net loss of employment; but they also disregard the pressure that lower costs exert on competing firms that have not adopted the technology, and so understate the losses at those firms. Brandvold does not claim that the two errors cancel; she claims only that neither the direction nor the magnitude of the net effect can be inferred from a count of tasks.",
+      anchors: ["err in two opposite directions", "and so understate the losses at those firms", "Brandvold does not claim that the two errors cancel"],
+      key: "They cannot reveal either the direction or the size of a technology's net effect on employment.",
+      wrong: [
+        ["Their two errors cancel each other, so their estimates of the net loss of jobs are roughly accurate.",
+         "Brandvold says explicitly that she does not claim the two errors cancel."],
+        ["They overstate job losses, since they ignore the new tasks, such as maintenance, that a technology creates.",
+         "This is only one of the two errors; she says the forecasts also understate losses at competing firms, so their overall direction is unknown."],
+        ["They overstate losses at firms that have not adopted the technology, since those firms keep their workers.",
+         "Brandvold says the forecasts understate losses at those firms, which face pressure from their rivals’ lower costs."],
+      ],
+      why: "Brandvold identifies errors in both directions, overlooked new tasks and overlooked pressure on competing firms, and concludes only that a count of tasks cannot reveal the direction or size of the net effect.",
+    },
+    {
+      scene: "ii-cid-acad-d-vesterlund-famine",
+      stem: "According to the text, what did Kolstad find in the Vesterlund parish records?",
+      text:
+        "The eruption of Mount Tambora in Indonesia in 1815 cooled much of the Northern Hemisphere the following year, and the crop failures of 1816 are commonly blamed for the famine and emigration that followed in parts of Europe. The historian Maren Kolstad’s study of parish records from the district of Vesterlund qualifies this account for one region. There, she finds, the harvest of 1816 was poor but not disastrous; deaths and departures rose sharply only in 1817, after grain merchants, anticipating shortages elsewhere, shipped much of the district’s remaining grain to distant markets where prices were higher. The famine in Vesterlund, Kolstad argues, owed as much to trade as to weather.",
+      anchors: ["the crop failures of 1816 are commonly blamed", "the harvest of 1816 was poor but not disastrous", "owed as much to trade as to weather"],
+      key: "Deaths and departures rose sharply only in 1817, a year after the district's poor but not disastrous harvest.",
+      wrong: [
+        ["The crop failures of 1816 caused the famine and emigration that struck Vesterlund, as they did elsewhere.",
+         "This is the common account that Kolstad’s records qualify; in Vesterlund the famine followed the shipment of grain away in 1817."],
+        ["Mortality peaked in 1816, before any merchant had shipped grain out of the district.",
+         "Deaths and departures rose sharply only in 1817, after merchants had shipped the grain away."],
+        ["The weather of 1816 played no part in the famine and emigration that struck Vesterlund.",
+         "Kolstad says the famine owed as much to trade as to weather, so weather still played a part; the 1816 harvest was poor."],
+      ],
+      why: "Kolstad found that in Vesterlund the 1816 harvest was poor but not disastrous and that deaths and departures rose sharply only in 1817, after merchants shipped the district’s remaining grain away.",
+    },
+    {
+      scene: "ii-cid-acad-d-sarn-delta",
+      stem: "According to the text, what did Rautio’s survey find?",
+      text:
+        "The delta of the Sarn River has shrunk by roughly a tenth since the completion of the upstream Kellin Dam in 1962, and the dam is generally blamed, since reservoirs trap much of the sediment that rivers would otherwise carry to the sea. The geomorphologist Ade Rautio’s survey confirms that the reservoir has trapped large quantities of sediment but finds that the delta’s retreat began roughly fifteen years before the dam was completed, when sand mining, now prohibited along the lower river, first expanded. Rautio does not exonerate the dam; she argues that it accelerated a retreat already under way rather than initiating one.",
+      anchors: ["the dam is generally blamed", "began roughly fifteen years before the dam was completed", "Rautio does not exonerate the dam"],
+      key: "The delta had begun to shrink about fifteen years before the dam was completed, when sand mining expanded.",
+      wrong: [
+        ["The dam alone caused the delta's retreat, since its reservoir traps the sediment that the river once carried.",
+         "This is the general view; Rautio found that the retreat began before the dam existed, so the dam cannot be its sole cause."],
+        ["The delta's retreat began only after the dam was finished, when mining along the lower river expanded.",
+         "The retreat began about fifteen years before the dam was completed, when sand mining first expanded."],
+        ["The dam had no part in the delta's retreat, which sand mining alone caused.",
+         "Rautio does not exonerate the dam; she says it accelerated a retreat already under way."],
+      ],
+      why: "Rautio’s survey confirms that the reservoir traps sediment but finds that the delta began to retreat about fifteen years before the dam was completed, when sand mining expanded; she argues that the dam accelerated the retreat.",
+    },
+  ];
+
+  const academicDetail = {
+    ...RW,
+    id: "detail-academic-finding",
+    skill: "Central Ideas and Details",
+    subskill: "supporting detail",
+    difficulty: "Hard",
+    title: "Finding reported in dense academic prose, told apart from the view it answers",
+    recognize:
+      "In dense prose that reports a common view, a scholar's finding, and the scholar's hedged conclusion, the answer restates the finding itself with its exact scope; the common view, a reversed detail, and the conclusion stated as certain are all nearby.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["misattributed-view", "extreme-language", "opposite-stance"],
+    build(t) {
+      const topic = t.pick(ACADEMIC_DETAIL_TOPICS);
+      return mc("Hard", topic, {
+        stimulus: passage(topic.text),
+        stem: topic.stem,
+        correct: topic.key,
+        wrong: topic.wrong,
+        explanation: `${topic.why} The answer is therefore: ${topic.key}`,
+        steps: [
+          "Sort the passage into the view others hold, what the scholar found, and what the scholar concludes or concedes.",
+          "Find the sentence that answers the question and restate it with every qualifier (\"only,\" \"much of,\" \"may well\").",
+          "Choose the option that matches that sentence, rejecting the view the scholar answers, a detail reversed, and a conclusion stated more strongly than the scholar states it.",
+        ],
+        principles: [
+          "A detail question asks what this text says, so the answer must match the passage's attribution: who found, claimed, or conceded it.",
+          "Qualifiers belong to the detail; dropping \"only\" or turning \"may\" into \"proves\" changes what the text says.",
+        ],
+        trap: "Choosing the common view the passage reports, or the scholar's hedged conclusion stated as a certainty.",
+        hint: "Who says what in this passage, and how strongly?",
+        verify: () =>
+          topic.wrong.length === 3 && inOrder(topic.text, topic.anchors) && allDistinct(topic.key, topic.wrong),
+      });
+    },
+  };
+
   return [
     statedClaim,
     statedReason,
@@ -1771,5 +2411,7 @@
     expectedFound,
     periodProse,
     poemMainIdea,
+    academicMainIdea,
+    academicDetail,
   ];
 });

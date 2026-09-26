@@ -29,8 +29,8 @@
     {
       "id": "central-idea-literary-passage",
       "bit": 4,
-      "version": 2,
-      "fingerprint": "99a95f4f434e7ca7"
+      "version": 3,
+      "fingerprint": "f1ff52422d88c8d2"
     },
     {
       "id": "central-idea-author-qualifies-source",
@@ -41,20 +41,20 @@
     {
       "id": "detail-finding-versus-expectation",
       "bit": 6,
-      "version": 2,
-      "fingerprint": "7f23c08f728a2a10"
+      "version": 3,
+      "fingerprint": "ce2e4fcaa45caff0"
     },
     {
       "id": "inference-rule-applied-to-case",
       "bit": 7,
-      "version": 2,
-      "fingerprint": "194851053f9c0e2b"
+      "version": 3,
+      "fingerprint": "a30a8d1e35741eca"
     },
     {
       "id": "inference-completion-cause-effect",
       "bit": 8,
-      "version": 1,
-      "fingerprint": "b82a106d972c6805"
+      "version": 2,
+      "fingerprint": "3fa931aed2a54f4e"
     },
     {
       "id": "inference-completion-controlled-comparison",
@@ -71,8 +71,8 @@
     {
       "id": "inference-completion-competing-explanations",
       "bit": 11,
-      "version": 2,
-      "fingerprint": "5e60f55bc18f0b01"
+      "version": 3,
+      "fingerprint": "f243a15cb04cd552"
     },
     {
       "id": "inference-completion-limits-of-evidence",
@@ -83,8 +83,8 @@
     {
       "id": "inference-combine-separated-premises",
       "bit": 13,
-      "version": 2,
-      "fingerprint": "4442f7ca589f5060"
+      "version": 3,
+      "fingerprint": "0ed11fc4ae8d1286"
     },
     {
       "id": "evidence-quotation-single-claim",
@@ -107,8 +107,8 @@
     {
       "id": "quantitative-table-change-for-one-group",
       "bit": 17,
-      "version": 2,
-      "fingerprint": "b83ad22deb2702b9"
+      "version": 3,
+      "fingerprint": "20e24b75d0f94205"
     },
     {
       "id": "quantitative-table-weakens-trend",
@@ -131,8 +131,8 @@
     {
       "id": "quantitative-table-difference-in-benefit",
       "bit": 21,
-      "version": 2,
-      "fingerprint": "1c03004e80743537"
+      "version": 3,
+      "fingerprint": "5433d7b4457c117d"
     },
     {
       "id": "wic-restatement-blank",
@@ -523,8 +523,8 @@
     {
       "id": "central-idea-period-prose",
       "bit": 86,
-      "version": 1,
-      "fingerprint": "955d2b1951d77259"
+      "version": 2,
+      "fingerprint": "9f7e7bb0a5c2fe4b"
     },
     {
       "id": "central-idea-poem",
@@ -535,8 +535,8 @@
     {
       "id": "inference-period-prose",
       "bit": 88,
-      "version": 1,
-      "fingerprint": "43a9ade68e4b1ddb"
+      "version": 2,
+      "fingerprint": "5728230a5b1ee753"
     },
     {
       "id": "inference-completion-qualified-conclusion",
@@ -553,20 +553,20 @@
     {
       "id": "evidence-discriminating-finding",
       "bit": 91,
-      "version": 1,
-      "fingerprint": "cde179d4b1ec9afb"
+      "version": 2,
+      "fingerprint": "3cb91d9ab858b3f7"
     },
     {
       "id": "evidence-poem-quotation",
       "bit": 92,
-      "version": 1,
-      "fingerprint": "afdc10f170241f82"
+      "version": 2,
+      "fingerprint": "08a3b1fca4b9b126"
     },
     {
       "id": "quantitative-graph-reconcile",
       "bit": 93,
-      "version": 1,
-      "fingerprint": "36ff40a776d6c53c"
+      "version": 2,
+      "fingerprint": "920ce40f816a76d8"
     },
     {
       "id": "wic-academic-evaluation",
@@ -693,6 +693,30 @@
       "bit": 114,
       "version": 1,
       "fingerprint": "d403bca1bce2177a"
+    },
+    {
+      "id": "central-idea-academic-argument",
+      "bit": 115,
+      "version": 1,
+      "fingerprint": "142b18e6bb9a1885"
+    },
+    {
+      "id": "detail-academic-finding",
+      "bit": 116,
+      "version": 1,
+      "fingerprint": "e25a84943af70d14"
+    },
+    {
+      "id": "quantitative-rate-versus-count",
+      "bit": 117,
+      "version": 1,
+      "fingerprint": "be110f22a3521ddf"
+    },
+    {
+      "id": "evidence-excerpt-quotation",
+      "bit": 118,
+      "version": 1,
+      "fingerprint": "dbcae54db6244c64"
     }
   ]
 }

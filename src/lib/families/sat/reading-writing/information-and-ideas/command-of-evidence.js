@@ -891,15 +891,17 @@
       const content = `${table}\n\n${text}`;
       const name = topic.name || ((g) => g);
       const verb = rose ? "rose" : "fell";
-      // A group's change, in one of two wordings drawn per choice, so the
-      // key's wording never marks it.
-      const change = (g, v1, v2) => (t.chance(0.5)
+      // A group's change, in one of two wordings. The key's wording is drawn;
+      // the other group's change always takes the other wording, so the two
+      // changes are not the closest pair of choices by construction.
+      const change = (g, v1, v2, plain) => (plain
         ? `${cap1(topic.of(g))} ${verb} from ${say(v1)} in ${y1} to ${say(v2)} in ${y2}.`
         : `In ${y1}, ${topic.of(g)} was ${say(v1)}; by ${y2}, it had ${rose ? "risen" : "fallen"} to ${say(v2)}.`);
       const higher = rose ? "higher" : "lower";
       // Every choice is drawn in one of two wordings (see balancedDraw).
       const { correct, wrong } = balancedDraw(t, () => {
-        const correct = change(topic.focus, g1, g2);
+        const plain = t.chance(0.5);
+        const correct = change(topic.focus, g1, g2, plain);
         // The cross-year comparison names the claim's group and both years,
         // as the key does, but sets that group against a different one.
         const crossed = [
@@ -908,18 +910,22 @@
             : `${cap1(name(topic.focus))}'s ${y2} figure (${say(g2)}) was ${higher} than ${name(h)}'s ${y1} figure (${say(h1)}).`,
           `True, but this sets ${topic.focus} in ${y2} against ${h} in ${y1}; it does not compare ${topic.focus} with itself over time.`,
         ];
-        const optional = t.shuffle([
-          [t.chance(0.5)
-            ? `In ${y2}, ${name(topic.focus)} had the ${rose ? "highest" : "lowest"} ${topic.measure} of the three ${topic.plural}.`
-            : `Of the three ${topic.plural}, ${name(topic.focus)} had the ${rose ? "highest" : "lowest"} ${topic.measure} in ${y2}.`,
-            `True, but a ${y2} ranking says nothing about how ${topic.focus} changed since ${y1}.`],
-          [change(h, h1, h2),
-            `True, but this describes ${h}, not ${topic.focus}, the group the claim is about.`],
-          [t.chance(0.5)
-            ? `In ${y1}, ${name(topic.focus)} had a ${higher} ${topic.measure} than ${name(h)} did.`
-            : `${cap1(name(topic.focus))} had a ${higher} ${topic.measure} than ${name(h)} did in ${y1}.`,
-            `True, but comparing two groups in ${y1} says nothing about change over time.`],
-        ]).slice(0, 2);
+        // Two of these join it. The one-year comparisons come in a matched
+        // pair (the same sentence for each year), so the two closest choices
+        // are often two distractors rather than the key and its neighbour.
+        const early = t.chance(0.5);
+        const sameYear = (y) => (early
+          ? `In ${y}, ${name(topic.focus)} had a ${higher} ${topic.measure} than ${name(h)} did.`
+          : `${cap1(name(topic.focus))} had a ${higher} ${topic.measure} than ${name(h)} did in ${y}.`);
+        const ranking = [t.chance(0.5)
+          ? `In ${y2}, ${name(topic.focus)} had the ${rose ? "highest" : "lowest"} ${topic.measure} of the three ${topic.plural}.`
+          : `Of the three ${topic.plural}, ${name(topic.focus)} had the ${rose ? "highest" : "lowest"} ${topic.measure} in ${y2}.`,
+          `True, but a ${y2} ranking says nothing about how ${topic.focus} changed since ${y1}.`];
+        const other = [change(h, h1, h2, !plain),
+          `True, but this describes ${h}, not ${topic.focus}, the group the claim is about.`];
+        const first = [sameYear(y1), `True, but comparing two groups in ${y1} says nothing about change over time.`];
+        const second = [sameYear(y2), `True, but comparing two groups in ${y2} says nothing about how ${topic.focus} changed since ${y1}.`];
+        const optional = t.pick([[ranking, first], [other, first], [first, second], [other, second]]);
         return { correct, wrong: [crossed, ...optional] };
       });
       return mc("Easy", topic, {
@@ -1566,10 +1572,11 @@
 
   // Three settings, each measured with and without a treatment. The claim
   // is that the treatment's benefit was larger in setting A than in B.
-  // Every choice is true. The key gives A's and B's four values; the others
-  // give the same kind of data for A and the wrong setting, the treated
-  // values alone (A is highest, which looks like support), or the untreated
-  // values alone.
+  // Every choice is true. The key gives A's and B's four values; two others
+  // give the same kind of data for the wrong pairs (A and C, C and B), and
+  // the last gives A's treated value against the untreated values, the
+  // treated values alone (A is highest, which looks like support), or the
+  // untreated values alone.
   const BENEFIT_TOPICS = [
     {
       scene: "ii-tq3-compost-soils",
@@ -1748,30 +1755,35 @@
       const content = `${table}\n\n${topic.person} ${topic.intro}. ${claim}`;
       // Both settings' values with and without the treatment, in one of two
       // wordings drawn per choice.
-      const both = (X, Y) => (t.chance(0.5)
+      const both = (X, Y, listed = t.chance(0.5)) => (listed
         ? `With ${topic.factor}, ${topic.measure} was ${show(value[X[0]][1])} ${X[1]} and ${show(value[Y[0]][1])} ${Y[1]}; without ${topic.pronoun}, ${show(value[X[0]][0])} and ${show(value[Y[0]][0])}.`
         : `${cap1(X[1])}, ${topic.measure} went from ${show(value[X[0]][0])} without ${topic.factor} to ${show(value[X[0]][1])} with ${topic.pronoun}; ${Y[1]}, from ${show(value[Y[0]][0])} to ${show(value[Y[0]][1])}.`);
-      // Names both of the claim's settings and both conditions, as the key
-      // does, but sets the treated value in one against the untreated value
-      // in the other.
-      const crossed = () => [
-        t.chance(0.5)
-          ? `${cap1(topic.measure)} ${A[1]} with ${topic.factor} (${show(value[A[0]][1])}) was higher than ${topic.measure} ${B[1]} without ${topic.pronoun} (${show(value[B[0]][0])}).`
-          : `${cap1(A[1])} with ${topic.factor}, ${topic.measure} (${show(value[A[0]][1])}) topped the ${show(value[B[0]][0])} measured ${B[1]} without ${topic.pronoun}.`,
-        `True, but this sets a value with ${topic.factor} against a value without it; it does not show how much ${topic.factor} changed either setting.`,
-      ];
-      const { correct, wrong } = balancedDraw(t, () => ({
-        correct: both(A, B),
-        wrong: [
-          crossed(),
-          [both(A, C), `True, but it compares the gains for ${A[0]} and ${C[0]}, not for the two settings the claim names (${A[0]} and ${B[0]}).`],
-          t.chance(0.5)
-            ? [`With ${topic.factor}, ${topic.measure} was ${show(value[A[0]][1])} ${A[1]}, higher than ${show(value[B[0]][1])} ${B[1]} or ${show(value[C[0]][1])} ${C[1]}.`,
-              "True, but a high value with the treatment does not show a large improvement; the values without it are needed too."]
-            : [`Without ${topic.factor}, ${topic.measure} was ${show(value[B[0]][0])} ${B[1]} but only ${show(value[A[0]][0])} ${A[1]}.`,
-              "True, but these starting values alone say nothing about how much the treatment helped in either setting."],
-        ],
-      }));
+      const treated = () => [`With ${topic.factor}, ${topic.measure} was ${show(value[A[0]][1])} ${A[1]}, higher than ${show(value[B[0]][1])} ${B[1]} or ${show(value[C[0]][1])} ${C[1]}.`,
+        "True, but a high value with the treatment does not show a large improvement; the values without it are needed too."];
+      const untreated = () => [`Without ${topic.factor}, ${topic.measure} was ${show(value[A[0]][0])} ${A[1]}, ${show(value[B[0]][0])} ${B[1]}, and ${show(value[C[0]][0])} ${C[1]}.`,
+        "True, but these starting values alone say nothing about how much the treatment helped in either setting."];
+      // Names the claim's settings and both conditions, as the key does, but
+      // sets the treated value in A against the untreated values in B and C
+      // (both, so it shares values with every choice alike).
+      const crossed = () => [`${cap1(A[1])} with ${topic.factor}, ${topic.measure} (${show(value[A[0]][1])}) topped the ${show(value[B[0]][0])} ${B[1]} and ${show(value[C[0]][0])} ${C[1]} without ${topic.pronoun}.`,
+        `True, but this sets a value with ${topic.factor} against values without it; it does not show how much ${topic.factor} changed either setting.`];
+      // The right comparison for the wrong pair of settings, either pair.
+      const wrongPair = (X, Y, listed) => [both(X, Y, listed),
+        `True, but it compares the gains for ${X[0]} and ${Y[0]}, not for the two settings the claim names (${A[0]} and ${B[0]}).`];
+      // Both wrong pairs are offered, so the key is one of three choices of
+      // the same form and shares values with each of the others alike. The
+      // wrong pairs share a wording; the key takes the other wording in about
+      // a third of draws, which makes the two closest choices two
+      // distractors about as often as chance would.
+      const fourth = t.int(0, 2);
+      const unlike = t.chance(0.35);
+      const { correct, wrong } = balancedDraw(t, () => {
+        const listed = t.chance(0.5);
+        return {
+          correct: both(A, B, unlike ? !listed : listed),
+          wrong: [wrongPair(A, C, listed), wrongPair(C, B, listed), [crossed, treated, untreated][fourth]()],
+        };
+      });
       return mc("Medium", topic, {
         stimulus: { type: "table", content },
         stem: `Which choice most effectively uses data from the table to support ${topic.surname}'s claim?`,
@@ -1788,7 +1800,7 @@
           "\"Helped more\" is a comparison of differences, not of final values.",
           "Data about the right comparison in the wrong setting does not support a claim about a specific setting.",
         ],
-        trap: "Choosing a statement that names both settings but compares a value with the treatment to a value without it, or one that reports only the treated values.",
+        trap: "Choosing the right comparison for the wrong pair of settings, a value with the treatment set against values without it, or the treated values alone.",
         hint: "How much did the treatment change the value in each of the two settings the claim names?",
         verify: () => {
           const { rows } = readTable(content);
@@ -1804,6 +1816,404 @@
             allDistinct(correct, wrong)
           );
         },
+      });
+    },
+  };
+
+  /* ------------------------------------------------------------------ */
+  /* Command of Evidence (quantitative): a claim about a percent change  */
+  /* or a rate, among true statements about levels and counts            */
+  /* ------------------------------------------------------------------ */
+
+  // Four groups in a table, in one of two kinds of frame. Every choice is
+  // true of the table; only the key bears on the claim's own terms.
+  //   percent: values in three years. The claim is that group A grew by a
+  //     larger percentage than group B over the whole period, although B
+  //     grew by more. The key gives A's and B's first and last values.
+  //     Offered instead: the same two groups over the first decade (when A
+  //     also gained more outright, the choice a student comparing gains
+  //     rather than percentages wants), over the last decade (when B grew
+  //     by the larger percentage), and the other two groups over a decade.
+  //   rate: one year's base and count. The claim is that the rate was
+  //     higher for A than for B, although B had the larger count. The key
+  //     gives both groups' counts and bases. Offered instead: the same
+  //     comparison for A with C and for C with B, and three groups' counts
+  //     (B's the largest) or three groups' sizes.
+  // The distractors do not all share the key's series and period: each
+  // shares as much with the others as with the key (the 2026-09-26 cold
+  // review found the key was the choice every distractor was built around).
+  const RATE_PERCENT_FRAMES = [
+    {
+      scene: "ii-tq5-language-enrollment",
+      kind: "percent",
+      intro: "The table shows enrollment in four language courses in the Brookfield school district.",
+      headerFor: "Language",
+      unitHeader: "students",
+      years: [2004, 2014, 2024],
+      groups: ["Japanese", "Spanish", "French", "German"],
+      person: "Curriculum director Ana Soto",
+      surname: "Soto",
+      of: (g) => `enrollment in ${g}`,
+      unit: " students",
+      baseRange: [30, 80],
+    },
+    {
+      scene: "ii-tq5-museum-visits",
+      kind: "percent",
+      intro: "The table shows annual visits, in thousands, to four museums in the city of Harwell.",
+      headerFor: "Museum",
+      unitHeader: "thousands of visits",
+      years: [2003, 2013, 2023],
+      groups: ["Glass Museum", "Art Museum", "Rail Museum", "Maritime Museum"],
+      person: "Tourism analyst Priya Menon",
+      surname: "Menon",
+      of: (g) => `visits to the ${g}`,
+      unit: " thousand",
+      baseRange: [12, 30],
+    },
+    {
+      scene: "ii-tq5-seabird-pairs",
+      kind: "percent",
+      intro: "The table shows the number of nesting pairs of four seabird species counted on Skerra Island.",
+      headerFor: "Species",
+      unitHeader: "nesting pairs",
+      years: [2001, 2011, 2021],
+      groups: ["Puffin", "Kittiwake", "Razorbill", "Fulmar"],
+      person: "Ornithologist Ewan Blythe",
+      surname: "Blythe",
+      of: (g) => `the number of ${g.toLowerCase()} pairs`,
+      unit: " pairs",
+      baseRange: [40, 110],
+    },
+    {
+      scene: "ii-tq5-ebook-loans",
+      kind: "percent",
+      intro: "The table shows e-book loans, in thousands, at four branches of the Corran public library.",
+      headerFor: "Branch",
+      unitHeader: "thousands of loans",
+      years: [2005, 2015, 2025],
+      groups: ["Hillcrest", "Central", "Eastgate", "Riverside"],
+      person: "Library director Grace Oyelowo",
+      surname: "Oyelowo",
+      of: (g) => `e-book loans at ${g}`,
+      unit: " thousand",
+      baseRange: [8, 25],
+    },
+    {
+      scene: "ii-tq5-solar-jobs",
+      kind: "percent",
+      intro: "The table shows the number of people employed by solar installation firms in four counties.",
+      headerFor: "County",
+      unitHeader: "workers",
+      years: [2002, 2012, 2022],
+      groups: ["Pell County", "Ardis County", "Morrow County", "Tane County"],
+      person: "Labor economist Mateo Ferraz",
+      surname: "Ferraz",
+      of: (g) => `solar employment in ${g}`,
+      unit: " workers",
+      baseRange: [60, 150],
+    },
+    {
+      scene: "ii-tq5-organic-farmland",
+      kind: "percent",
+      intro: "The table shows organic farmland, in thousands of hectares, in four provinces.",
+      headerFor: "Province",
+      unitHeader: "thousands of hectares",
+      years: [2000, 2010, 2020],
+      groups: ["Arvon", "Belmark", "Coster", "Dunmore"],
+      person: "Agricultural geographer Lise Varga",
+      surname: "Varga",
+      of: (g) => `organic farmland in ${g}`,
+      unit: " thousand hectares",
+      baseRange: [10, 28],
+    },
+    {
+      scene: "ii-tq6-hospital-infections",
+      kind: "rate",
+      intro: "The table shows the number of patients treated and the number of infections recorded at four hospitals in one year.",
+      headers: ["Hospital", "Patients treated", "Infections recorded"],
+      groups: ["St. Brendan", "Northfield", "Harbor View", "Lakeside"],
+      person: "Epidemiologist Hana Ruiz",
+      surname: "Ruiz",
+      claim: (A, B) => `the rate of infection among patients was higher at ${A} than at ${B}, even though ${B} recorded more infections`,
+      pair: (g, c, b) => `${g} recorded ${c} infections among ${b} patients`,
+      pairTail: (g, c, b) => `${g}, ${c} among ${b}`,
+      counts: (g, c) => `${g} recorded ${c} infections`,
+      bases: (g, b) => `${g} treated ${b} patients`,
+      per: 1000,
+      base: [2, 6],
+    },
+    {
+      scene: "ii-tq6-orchard-blight",
+      kind: "rate",
+      intro: "The table shows the number of trees and the number of trees with blight in four orchards owned by one farm.",
+      headers: ["Orchard", "Trees", "Trees with blight"],
+      groups: ["Hillside", "Valley", "Ridge", "Creek"],
+      person: "Plant pathologist Tomas Brandt",
+      surname: "Brandt",
+      claim: (A, B) => `a larger share of trees had blight in the ${A} orchard than in the ${B} orchard, even though the ${B} orchard had more trees with blight`,
+      pair: (g, c, b) => `the ${g} orchard had ${c} trees with blight out of ${b}`,
+      pairTail: (g, c, b) => `the ${g} orchard, ${c} out of ${b}`,
+      counts: (g, c) => `the ${g} orchard had ${c} trees with blight`,
+      bases: (g, b) => `the ${g} orchard had ${b} trees`,
+      per: 100,
+      base: [3, 9],
+    },
+    {
+      scene: "ii-tq6-library-cards",
+      kind: "rate",
+      intro: "The table shows the number of residents and the number of library cards issued in four neighborhoods of one city in one year.",
+      headers: ["Neighborhood", "Residents", "Cards issued"],
+      groups: ["Elm Park", "Westbrook", "Oakdale", "Fairview"],
+      person: "City librarian Mei Tanaka",
+      surname: "Tanaka",
+      claim: (A, B) => `cards were issued at a higher rate per resident in ${A} than in ${B}, even though more cards were issued in ${B}`,
+      pair: (g, c, b) => `${g} was issued ${c} cards for ${b} residents`,
+      pairTail: (g, c, b) => `${g}, ${c} for ${b}`,
+      counts: (g, c) => `${g} was issued ${c} cards`,
+      bases: (g, b) => `${g} had ${b} residents`,
+      per: 1000,
+      base: [4, 12],
+    },
+    {
+      scene: "ii-tq6-bicycle-commuters",
+      kind: "rate",
+      intro: "The table shows the number of workers and the number of workers who commute by bicycle in four towns.",
+      headers: ["Town", "Workers", "Bicycle commuters"],
+      groups: ["Ashby", "Brookton", "Carlow", "Dunmere"],
+      person: "Urban planner Selin Arat",
+      surname: "Arat",
+      claim: (A, B) => `a larger share of workers commute by bicycle in ${A} than in ${B}, even though ${B} has more bicycle commuters`,
+      pair: (g, c, b) => `${g} has ${c} bicycle commuters among ${b} workers`,
+      pairTail: (g, c, b) => `${g}, ${c} among ${b}`,
+      counts: (g, c) => `${g} has ${c} bicycle commuters`,
+      bases: (g, b) => `${g} has ${b} workers`,
+      per: 100,
+      base: [2, 8],
+    },
+    {
+      scene: "ii-tq6-science-fair",
+      kind: "rate",
+      intro: "The table shows the number of students and the number of science fair entrants at four high schools in one district.",
+      headers: ["School", "Students", "Science fair entrants"],
+      groups: ["Adams High", "Baxter High", "Carver High", "Delmont High"],
+      person: "Science coordinator Omar Haddad",
+      surname: "Haddad",
+      claim: (A, B) => `a larger share of students entered the science fair at ${A} than at ${B}, even though ${B} had more entrants`,
+      pair: (g, c, b) => `${g} had ${c} entrants among ${b} students`,
+      pairTail: (g, c, b) => `${g}, ${c} among ${b}`,
+      counts: (g, c) => `${g} had ${c} entrants`,
+      bases: (g, b) => `${g} had ${b} students`,
+      per: 100,
+      base: [3, 9],
+    },
+    {
+      scene: "ii-tq6-warehouse-injuries",
+      kind: "rate",
+      intro: "The table shows the number of workers and the number of injuries reported at four warehouses owned by one company in one year.",
+      headers: ["Warehouse", "Workers", "Injuries reported"],
+      groups: ["Fenwick", "Galloway", "Harlow", "Ingram"],
+      person: "Safety inspector Nadia Kowal",
+      surname: "Kowal",
+      claim: (A, B) => `the injury rate among workers was higher at the ${A} warehouse than at the ${B} warehouse, even though the ${B} warehouse reported more injuries`,
+      pair: (g, c, b) => `${g} reported ${c} injuries among ${b} workers`,
+      pairTail: (g, c, b) => `${g}, ${c} among ${b}`,
+      counts: (g, c) => `${g} reported ${c} injuries`,
+      bases: (g, b) => `${g} had ${b} workers`,
+      per: 100,
+      base: [2, 7],
+    },
+  ];
+
+  // Percent frames: A small and growing fast early, B large and growing
+  // more in absolute terms but by a smaller percentage over the whole
+  // period, and by a larger percentage over the last decade. C and D are
+  // other groups of middling size. Values are whole numbers.
+  function percentValues(t, frame) {
+    const [low, high] = frame.baseRange;
+    for (let attempt = 0; attempt < 400; attempt += 1) {
+      const a0 = t.int(low, high);
+      const a2 = Math.round(a0 * (2.2 + t.int(0, 8) * 0.25));
+      const a1 = Math.round(a0 + (a2 - a0) * (0.7 + t.int(0, 3) * 0.05));
+      const b0 = Math.round(a0 * (4 + t.int(0, 8) * 0.5));
+      const b2 = Math.round(b0 * (1.25 + t.int(0, 6) * 0.05));
+      const b1 = Math.round(b0 + (b2 - b0) * (0.05 + t.int(0, 4) * 0.05));
+      const c0 = Math.round(a0 * (1.5 + t.int(0, 6) * 0.25));
+      const c1 = Math.round(c0 * (1.05 + t.int(0, 6) * 0.05));
+      const c2 = Math.round(c1 * (1.05 + t.int(0, 8) * 0.05));
+      const d0 = Math.round(a0 * (2 + t.int(0, 6) * 0.25));
+      const d1 = Math.round(d0 * (0.9 + t.int(0, 6) * 0.05));
+      const d2 = Math.round(d1 * (0.95 + t.int(0, 8) * 0.05));
+      const rows = { A: [a0, a1, a2], B: [b0, b1, b2], C: [c0, c1, c2], D: [d0, d1, d2] };
+      const all = [].concat(...Object.values(rows));
+      const pct = (x, y) => (y - x) / x;
+      const ok = new Set(all).size === all.length &&
+        pct(a0, a2) > pct(b0, b2) + 0.4 && b2 - b0 > (a2 - a0) * 1.2 &&
+        pct(b1, b2) > pct(a1, a2) + 0.05 && b2 > a2 * 1.5 &&
+        c2 !== c1 && d2 !== d1;
+      if (ok) return rows;
+    }
+    throw new Error(`${frame.scene}: could not draw values`);
+  }
+
+  // Rate frames: A's rate well above B's, B's count well above A's; C and D
+  // arranged so the offered statements about counts and bases are true.
+  function rateValues(t, frame) {
+    const per = frame.per;
+    for (let attempt = 0; attempt < 400; attempt += 1) {
+      const kA = t.int(2, 6);
+      const kB = kA * t.int(3, 5) + t.int(0, 2);
+      const rA = t.int(frame.base[0] + 2, frame.base[1] + 3);
+      const rB = t.int(Math.max(1, Math.ceil(rA * 0.35)), Math.floor(rA * 0.65));
+      const kC = t.int(Math.max(2, kA - 1), kB - 2);
+      const kD = t.int(2, kB - 2);
+      const rC = t.int(frame.base[0], frame.base[1]);
+      const rD = t.int(frame.base[0], frame.base[1]);
+      const unit = per === 100 ? 100 : 1000;
+      const row = (k, r) => [k * unit, (k * unit * r) / per];
+      const rows = { A: row(kA, rA), B: row(kB, rB), C: row(kC, rC), D: row(kD, rD) };
+      const [bA, cA] = rows.A;
+      const [bB, cB] = rows.B;
+      const [bC, cC] = rows.C;
+      const [bD] = rows.D;
+      const all = [].concat(...Object.values(rows));
+      const ok = Number.isInteger(cA) && Number.isInteger(cB) && Number.isInteger(cC) && Number.isInteger(rows.D[1]) &&
+        new Set(all).size === all.length &&
+        cA / bA > (cB / bB) * 1.3 && cB > cA * 1.3 && cB > cC && bB > bD && bB > bC;
+      if (ok) return rows;
+    }
+    throw new Error(`${frame.scene}: could not draw values`);
+  }
+
+  const ratePercent = {
+    ...RW,
+    id: "quantitative-rate-versus-count",
+    skill: "Command of Evidence",
+    subskill: "quantitative evidence",
+    difficulty: "Hard",
+    title: "Table data that support a claim about a rate or a percent change",
+    recognize:
+      "The claim is about a percent change or a rate, not a count or a level: find the two values (start and end, or count and base) for each group the claim names, and check the ratio; larger counts, larger gains, and the wrong years can all look like support.",
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["percent-base", "true-but-irrelevant", "wrong-quantity"],
+    build(t) {
+      const frame = t.pick(RATE_PERCENT_FRAMES);
+      const [A, B, C, D] = [0, 1, 2, 3].map((i) => frame.groups[i]);
+      const g = S.grouped;
+      let content;
+      let draw;
+      let why;
+      let check;
+      if (frame.kind === "percent") {
+        const rows = percentValues(t, frame);
+        const [y0, y1, y2] = frame.years;
+        const order = t.shuffle(["A", "B", "C", "D"]);
+        const name = { A, B, C, D };
+        content = `${S.table(
+          [frame.headerFor, `${y0} (${frame.unitHeader})`, `${y1} (${frame.unitHeader})`, `${y2} (${frame.unitHeader})`],
+          order.map((k) => [name[k], g(rows[k][0]), g(rows[k][1]), g(rows[k][2])]),
+        )}\n\n${frame.intro} ${frame.person} claims that between ${y0} and ${y2}, ${frame.of(A)} grew by a larger percentage than ${frame.of(B)} did, even though ${frame.of(B)} grew by more.`;
+        const u = (v) => `${g(v)}${frame.unit}`;
+        // Two groups over a span, in one of two wordings; the unit is given
+        // once per group, with its later value, and the verb is neutral,
+        // since the other groups may fall.
+        const two = (p, q, i, j, listed) => (listed
+          ? `From ${frame.years[i]} to ${frame.years[j]}, ${frame.of(name[p])} went from ${g(rows[p][i])} to ${u(rows[p][j])}; ${frame.of(name[q])}, from ${g(rows[q][i])} to ${u(rows[q][j])}.`
+          : `${cap1(frame.of(name[p]))} went from ${g(rows[p][i])} in ${frame.years[i]} to ${u(rows[p][j])} in ${frame.years[j]}; ${frame.of(name[q])}, from ${g(rows[q][i])} to ${u(rows[q][j])}.`);
+        // The key and the same two groups over each decade share values
+        // pairwise alike (a triangle); the fourth choice, two other groups
+        // over one decade, shares a year with one decade choice more than
+        // with the key. The decade choices share a wording; the key takes
+        // the other wording in about a third of draws.
+        const unlike = t.chance(0.35);
+        const late = t.chance(0.5);
+        const [p, q] = t.shuffle(["C", "D"]);
+        draw = () => {
+          const listed = t.chance(0.5);
+          return {
+            correct: two("A", "B", 0, 2, unlike ? !listed : listed),
+            wrong: [
+              [two("A", "B", 1, 2, listed),
+                `True, but this covers only ${y1} to ${y2}, when ${frame.of(B)} grew by the larger percentage; the claim concerns ${y0} to ${y2}.`],
+              [two("A", "B", 0, 1, listed),
+                `True, but this covers only ${y0} to ${y1}; the claim concerns the whole period from ${y0} to ${y2}.`],
+              [two(p, q, late ? 1 : 0, late ? 2 : 1, t.chance(0.5)),
+                `True, but it concerns ${C} and ${D}, not the two groups the claim names.`],
+            ],
+          };
+        };
+        const pctText = (k) => `${Math.round(((rows[k][2] - rows[k][0]) / rows[k][0]) * 100)} percent`;
+        why = `The claim compares percent changes from ${y0} to ${y2}. ${cap1(frame.of(A))} rose from ${u(rows.A[0])} to ${u(rows.A[2])}, about ${pctText("A")}, while ${frame.of(B)} rose from ${u(rows.B[0])} to ${u(rows.B[2])}, about ${pctText("B")}, a larger gain in absolute terms but a smaller one in percent.`;
+        check = (correct) => {
+          const { rows: body } = readTable(content);
+          const row = (label) => body.find((r) => r[0] === label);
+          const [, a0, , a2] = row(A);
+          const [, b0, b1, b2] = row(B);
+          const [, , a1] = row(A);
+          return (a2 - a0) / a0 > (b2 - b0) / b0 && b2 - b0 > a2 - a0 && (b2 - b1) / b1 > (a2 - a1) / a1 &&
+            [a0, a2, b0, b2].every((v) => correct.includes(g(v)));
+        };
+      } else {
+        const rows = rateValues(t, frame);
+        const order = t.shuffle(["A", "B", "C", "D"]);
+        const name = { A, B, C, D };
+        content = `${S.table(frame.headers, order.map((k) => [name[k], g(rows[k][0]), g(rows[k][1])]))}\n\n${frame.intro} ${frame.person} claims that ${frame.claim(A, B)}.`;
+        // The key and two wrong pairs (A with C, C with B) share values
+        // pairwise alike, and the fourth choice lists three groups' counts
+        // or sizes, so it shares values with each pair alike too. The wrong
+        // pairs share a wording; the key takes the other in about a third
+        // of draws.
+        const pairIn = (p, q, listed) => (listed
+          ? `${cap1(frame.pair(name[p], g(rows[p][1]), g(rows[p][0])))}, while ${frame.pair(name[q], g(rows[q][1]), g(rows[q][0]))}.`
+          : `${cap1(frame.pair(name[p], g(rows[p][1]), g(rows[p][0])))}; ${frame.pairTail(name[q], g(rows[q][1]), g(rows[q][0]))}.`);
+        const unlike = t.chance(0.35);
+        const fourth = t.chance(0.5)
+          ? [`${cap1(frame.counts(name.B, g(rows.B[1])))}, more than ${name.A} (${g(rows.A[1])}) or ${name.C} (${g(rows.C[1])}).`,
+            `True, but a larger count is not a larger rate; the claim concedes that ${B} had the larger count.`]
+          : [`${cap1(frame.bases(name.B, g(rows.B[0])))}, far more than ${name.A} (${g(rows.A[0])}) or ${name.C} (${g(rows.C[0])}).`,
+            "True, but sizes alone do not give a rate; the counts are needed too."];
+        draw = () => {
+          const listed = t.chance(0.5);
+          const [k1, k2] = t.chance(0.5) ? ["A", "B"] : ["B", "A"];
+          return {
+            correct: pairIn(k1, k2, unlike ? !listed : listed),
+            wrong: [
+              [pairIn(...t.shuffle(["A", "C"]), listed), `True, but it compares ${A} with ${C}; the claim compares ${A} with ${B}.`],
+              [pairIn(...t.shuffle(["C", "B"]), listed), `True, but it compares ${C} with ${B}; the claim compares ${A} with ${B}.`],
+              fourth,
+            ],
+          };
+        };
+        const rate = (k) => (rows[k][1] / rows[k][0]) * frame.per;
+        const perWord = frame.per === 100 ? "100" : "1,000";
+        why = `The claim compares rates, not counts. ${A} had ${g(rows.A[1])} out of ${g(rows.A[0])}, about ${Math.round(rate("A") * 10) / 10} per ${perWord}, while ${B} had ${g(rows.B[1])} out of ${g(rows.B[0])}, about ${Math.round(rate("B") * 10) / 10} per ${perWord}: a larger count but a lower rate.`;
+        check = (correct) => {
+          const { rows: body } = readTable(content);
+          const row = (label) => body.find((r) => r[0] === label);
+          const [, bA, cA] = row(A);
+          const [, bB, cB] = row(B);
+          return cA / bA > cB / bB && cB > cA && [bA, cA, bB, cB].every((v) => correct.includes(g(v)));
+        };
+      }
+      const { correct, wrong } = balancedDraw(t, draw);
+      return mc("Hard", frame, {
+        stimulus: { type: "table", content },
+        stem: `Which choice most effectively uses data from the table to support ${frame.surname}'s claim?`,
+        correct,
+        wrong,
+        explanation: `${why} The choice that shows this is: ${correct}`,
+        steps: [
+          "Decide what the claim compares: a percent change (the gain relative to the start) or a rate (a count relative to its base), and for which two groups over which years.",
+          "For each choice, check whether it gives both numbers needed for each of those two groups.",
+          "Compute the two percent changes or rates and confirm that they come out as the claim says; larger counts, larger gains, and other years do not decide it.",
+        ],
+        principles: [
+          "A percent change divides the gain by the starting value, so a small group can grow by a larger percentage while gaining less.",
+          "A rate divides a count by its base; the group with more events can have the lower rate.",
+        ],
+        trap: "Choosing a true statement about larger counts, larger gains, or the right groups in the wrong years.",
+        hint: "What must be divided by what to test the claim, and does the choice give you both numbers for each group?",
+        verify: () => check(correct) && allDistinct(correct, wrong),
       });
     },
   };
@@ -1835,7 +2245,7 @@
         "Both accounts predict thickening in those decades, since both events happened then, so the timing cannot favor Varga's."],
       opposite: ["The thicker layers contain abundant fragments of bark, needles, and charcoal mixed in with the silt.",
         "Bark, needles, and charcoal point to material washed off the forested slopes, which favors the logging account."],
-      aside: ["Several other glaciers in the same mountain range retreated at similar rates during the twentieth century.",
+      aside: ["Several other glaciers in the range retreated during the same decades in which this glacier retreated.",
         "This concerns other glaciers; it says nothing about where the silt in Lake Orvanne came from."],
     },
     {
@@ -1847,11 +2257,11 @@
       anchors: ["the difference arose through learning", "dense forests"],
       key: "Island males living in open grassland sing the same short song as island males living in dense forest.",
       keyWhy: "If dense forest were what shortened the song, island birds in open grassland would have no reason to sing it; the same short song in open country points to a song inherited from a few tutors, as Stell proposes.",
-      both: ["Across the islands, recorded songs consistently contain fewer notes than recordings of mainland songs.",
+      both: ["Young males on the islands learn songs with fewer notes than young males on the mainland learn.",
         "This is the difference both accounts set out to explain, so it cannot favor one of them."],
       opposite: ["On the mainland, males living in dense forest also sing noticeably shorter songs than males in open country.",
         "Shorter songs in mainland forests, where there was no small founding group, favor the idea that dense vegetation shortens songs."],
-      aside: ["Young males of this species learn their songs by listening to adult males during their first spring.",
+      aside: ["Young males on the islands, like young males on the mainland, learn their songs from adult males.",
         "Birds could learn whichever song the forest favors, so the fact that songs are learned fits both accounts and favors neither."],
     },
     {
@@ -1915,8 +2325,8 @@
         "Vessels made locally and vessels bought from the coast would both end up broken in household refuse, so this favors neither."],
       opposite: ["Several fragments bear a maker's stamp identical to stamps found at one of the coastal workshops.",
         "A coastal workshop's stamp suggests the vessels were made there and traded inland, which favors the rival account."],
-      aside: ["Blue glazes of this kind can be fired only in kilns that reach unusually high temperatures.",
-        "Without evidence of such kilns at Tel Maresh, a fact about what the glaze requires favors neither account."],
+      aside: ["The blue-glazed fragments were fired in kilns that reached unusually high temperatures.",
+        "Such kilns could have stood on the coast or at Tel Maresh; without knowing where the vessels were fired, this favors neither account."],
     },
     {
       scene: "ii-df-brannock-tea",
@@ -1979,8 +2389,8 @@
         "This restates the increase that both explanations account for, so it favors neither."],
       opposite: ["Bus ridership in Pellham rose over the same years by about the same percentage as cycling did.",
         "Commuters leaving their cars for buses as well as bicycles points to fuel costs rather than bike lanes."],
-      aside: ["Protected bike lanes cost less per kilometer to build than most other kinds of road improvements.",
-        "The cost of building the lanes says nothing about whether they caused the increase in cycling."],
+      aside: ["Twice as many Pellham residents owned bicycles in 2022 as in 2016, according to a city survey.",
+        "Commuters pushed by fuel costs and commuters drawn by new lanes would both buy bicycles, so more bicycles favors neither account."],
     },
   ];
 
@@ -2055,8 +2465,8 @@
           "This shows only that the forecast’s information is of no use to the speaker, not what the speaker values in it instead."],
         [["the forecast for the boats: the wind by region,", "the swell, the fog banks moving on the shoals."],
           "This lists what the forecast reports, its information, rather than what draws the speaker to it."],
-        [["Each night at ten I leave the kitchen light", "and sit beside the radio to hear"],
-          "This shows the speaker’s nightly habit of listening but not why the forecast matters to the speaker."],
+        [["that reads it out as if no storm could hurry it."],
+          "This describes the calm of the reading voice but not that the forecast’s information is of no use to the speaker; the line before it makes that contrast."],
       ],
     },
     {
@@ -2143,16 +2553,16 @@
         "that I was shouting louder than I’d shouted",
         "for anyone that morning, and she ran.",
       ],
-      claim: "In the poem, the speaker is more stirred by the last runner’s arrival than by the winner’s finish.",
-      key: ["that I was shouting louder than I’d shouted", "for anyone that morning, and she ran."],
-      why: "Shouting “louder than I’d shouted / for anyone that morning,” the winner included, shows the last runner moving the speaker more than the winner did.",
+      claim: "In the poem, the speaker suggests that most spectators lost interest in the race as soon as the winner had finished.",
+      key: ["The winner crossed at nine, and we all cheered,", "and cameras flashed, and then the crowd went home."],
+      why: "The crowd cheers the winner at nine “and then” goes home, leaving before the race is over, which shows the spectators’ interest ending with the winner’s finish.",
       near: [
-        [["The winner crossed at nine, and we all cheered,", "and cameras flashed, and then the crowd went home."],
-          "This shows the crowd celebrating the winner, not the speaker’s stronger response to the last runner."],
         [["I stayed. A woman came around the bend"],
-          "This shows the last runner arriving but not how the speaker responds to her compared with the winner."],
-        [["By four the barriers were being stacked,"],
-          "This marks how long after the race the runner arrives, not how the speaker feels about her arrival."],
+          "This shows the speaker staying on, the exception to the crowd, not the spectators losing interest."],
+        [["at something less than walking, and I found", "that I was shouting louder than I’d shouted"],
+          "This shows the speaker’s excitement at the last runner, not the rest of the crowd’s response to the race."],
+        [["for anyone that morning, and she ran."],
+          "This describes the last runner finding the strength to run, not what the other spectators did."],
       ],
     },
     {
@@ -2167,16 +2577,16 @@
         "No one will mention him at breakfast,",
         "which is the only thanks the work allows.",
       ],
-      claim: "In the poem, the speaker suggests that the town’s silence about the plow driver is a kind of tribute to how well he does his job.",
-      key: ["No one will mention him at breakfast,", "which is the only thanks the work allows."],
-      why: "Calling the town’s silence “the only thanks the work allows” presents that silence as the tribute a job done well earns.",
+      claim: "In the poem, the speaker emphasizes that the plow driver’s work leaves the waking town no sign that there was ever a storm.",
+      key: ["and by the time the town wakes there is nothing", "to show that anything was ever wrong:"],
+      why: "“By the time the town wakes there is nothing / to show that anything was ever wrong” says both that the town is waking and that the storm has left no trace.",
       near: [
-        [["and by the time the town wakes there is nothing", "to show that anything was ever wrong:"],
-          "This shows how thoroughly the driver works, but not how the town responds to his work."],
-        [["its orange light sliding across the ceilings,"],
-          "This shows the plow passing in the night, not the town’s silence or what that silence means."],
-        [["the road is black and ordinary and wet."],
-          "This describes the cleared road, not the town’s silence about the driver."],
+        [["Somewhere past two, the plow comes down our street,", "its orange light sliding across the ceilings,"],
+          "This gives the hour and the look of the plow passing, not what the town finds when it wakes."],
+        [["the scrape of the blade the only sound for miles,"],
+          "This describes the plow at work in the night, not the absence of any sign of the storm by morning."],
+        [["No one will mention him at breakfast,", "which is the only thanks the work allows."],
+          "This concerns how the town treats the driver, not whether any sign of the storm remains."],
       ],
     },
     {
@@ -2191,16 +2601,16 @@
         "they looked like frost upon a darkened pane.",
         "They had not gone. Our own light was the veil.",
       ],
-      claim: "In the poem, the speaker comes to see that the city’s brightness, not any real loss, had kept the stars from view.",
-      key: ["They had not gone. Our own light was the veil."],
-      why: "“They had not gone” rejects the idea that the stars were lost, and “Our own light was the veil” names the city’s brightness as what hid them.",
+      claim: "In the poem, the speaker at first regards the stars as something the city has destroyed for good.",
+      key: ["the way you tell a child there once were wolves:", "a thing the city long ago used up."],
+      why: "Speaking of the stars “the way you tell a child there once were wolves,” as “a thing the city long ago used up,” treats them as gone for good; these lines report what the speaker told the daughter for years, before the blackout.",
       near: [
-        [["For years I told my daughter there were stars", "the way you tell a child there once were wolves:"],
-          "This shows the speaker’s earlier belief that the stars were gone, the view the poem’s ending corrects."],
         [["Then the storm took the power, block by block,", "the towers first, the streetlights, then our own,"],
-          "This describes the blackout but says nothing about the stars or why they had been unseen."],
+          "This describes the blackout, not what the speaker had believed about the stars."],
         [["and there they were above the roof, so thick", "they looked like frost upon a darkened pane."],
-          "This shows the stars appearing in the dark but not the speaker’s realization that they had been there all along, hidden by the city’s light."],
+          "This shows the stars appearing, which begins to overturn the speaker’s earlier belief rather than showing it."],
+        [["They had not gone. Our own light was the veil."],
+          "This is the speaker’s later realization, which rejects the view the claim describes."],
       ],
     },
     {
@@ -2245,16 +2655,16 @@
         "Instead I find I’m keeping someone’s order,",
         "watering what she chose, as if we’d met.",
       ],
-      claim: "In the poem, the speaker’s plan to remake the garden gives way to a sense of kinship with its previous owner.",
-      key: ["Instead I find I’m keeping someone’s order,", "watering what she chose, as if we’d met."],
-      why: "“Instead” marks the abandoned plan, and tending “what she chose, as if we’d met” shows the kinship that replaces it.",
+      claim: "In the poem, the speaker finds evidence of the previous owner’s patient, unrecorded work in the garden.",
+      key: ["a rose is trained with patience up the wall", "by hands that left no name among the deeds."],
+      why: "A rose “trained with patience” shows the previous owner’s careful work, and “hands that left no name among the deeds” shows that the work went unrecorded.",
       near: [
-        [["I meant to dig it all and start again."],
-          "This states the speaker’s original plan, not the change of heart that replaces it."],
-        [["a rose is trained with patience up the wall", "by hands that left no name among the deeds."],
-          "This shows the previous owner’s care for the garden, not the speaker’s sense of connection to her."],
         [["The garden that I bought came with a stranger:"],
-          "This notes the previous owner’s presence as a stranger’s, the opposite of the kinship the speaker comes to feel."],
+          "This says the garden came with traces of someone else but shows nothing of that person’s patient work."],
+        [["Her labels, faded, lean along the border."],
+          "Faded labels show that someone once named the plants, but not the patient, unrecorded work the claim describes."],
+        [["I meant to dig it all and start again.", "Instead I find I’m keeping someone’s order,", "watering what she chose, as if we’d met."],
+          "These lines show the speaker’s change of plan and tending of what the previous owner planted, not the patient work she did."],
       ],
     },
     {
@@ -2292,11 +2702,15 @@
     id: "evidence-poem-quotation",
     skill: "Command of Evidence",
     subskill: "textual evidence",
-    difficulty: "Hard",
+    // Medium (relabeled from Hard after the 2026-09-26 cold review found it
+    // played Medium): the poems are accessible and the whole poem is shown.
+    // The key was the latest of the four quotations in 9 of 10 poems; claims
+    // now reach earlier lines too, so it is the latest in about half.
+    difficulty: "Medium",
     title: "Quotation from a poem that illustrates an interpretive claim",
     recognize:
       "The claim interprets the poem, often as a change or a two-part attitude; the right lines enact that interpretation, usually without repeating its words, while lines from before the turn or lines that echo its vocabulary show only part of it.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["too-narrow", "word-association", "true-but-irrelevant"],
     build(t) {
       const topic = t.pick(POEM_TOPICS);
@@ -2306,7 +2720,7 @@
       const wrong = topic.near.map(([lines, reason]) => [quoteLines(lines), reason]);
       // Every quotation must be consecutive lines of the poem as printed.
       const inPoem = (text) => poem.includes(text.slice(1, -1).split(" / ").join("\n"));
-      return mc("Hard", topic, {
+      return mc("Medium", topic, {
         stimulus: passage(content),
         stem: "Which quotation from the poem most effectively illustrates the claim?",
         correct,
@@ -2327,6 +2741,343 @@
           [correct, ...wrong.map(([text]) => text)].every(inPoem) &&
           content.includes(topic.claim) &&
           allDistinct(correct, wrong),
+      });
+    },
+  };
+
+  /* ------------------------------------------------------------------ */
+  /* Command of Evidence: the quotation from an original novel or play   */
+  /* excerpt that illustrates a two-part claim                           */
+  /* ------------------------------------------------------------------ */
+
+  // Each topic is an original excerpt (never from a published work) with an
+  // honest header, a two-part interpretive claim, and four quotations that
+  // are exact passages of the excerpt: `key` shows both parts, usually
+  // without the claim's words, and each near miss shows one part vividly,
+  // belongs to another speaker, or echoes the claim's subject without its
+  // point. The key sits early, in the middle, or last in the excerpt (the
+  // 2026-09-26 cold review found the poem template's key was the latest
+  // quotation 92% of the time), and it is the longest quotation in only
+  // some scenes. Quotation marks inside a quotation become single quotes.
+  const EXCERPT_HEADERS = {
+    novel: "The following text is from an original novel.",
+    play: "The following text is from an original play.",
+  };
+  const EXCERPT_TOPICS = [
+    {
+      scene: "ii-q3-novel-ferry-captain",
+      kind: "novel",
+      lines: [
+        "Captain Oduya had run the river ferry for thirty years and still checked the ropes twice before every crossing. “The river doesn’t care how long you’ve known it,” he told the new deckhand, who had laughed at the second check. That afternoon, when a boy’s hat blew over the rail, the captain brought the ferry about at half speed, tied a line around his own waist, and leaned out to hook the hat from the water. He handed it back without a word and returned to the wheel, frowning at his watch.",
+      ],
+      claim: "In the novel, the narrator portrays Captain Oduya as both unfailingly cautious and quietly kind.",
+      key: "tied a line around his own waist, and leaned out to hook the hat from the water",
+      near: [
+        ["still checked the ropes twice before every crossing",
+         "This shows his caution but nothing of his kindness."],
+        ["“The river doesn’t care how long you’ve known it,” he told the new deckhand, who had laughed at the second check",
+         "His warning to the deckhand expresses caution, not kindness."],
+        ["He handed it back without a word and returned to the wheel, frowning at his watch",
+         "Returning the hat is kind, but these words show nothing of his caution, and frowning at his watch suggests impatience rather than care."],
+      ],
+      why: "Tying a line around his own waist shows his caution even in the middle of a rescue, and leaning out to hook a boy’s hat from the water shows a kindness he never speaks of.",
+    },
+    {
+      scene: "ii-q3-play-marguerite-house",
+      kind: "play",
+      lines: [
+        "MARGUERITE: You may have the house, Jules, and everything in it. I never cared for it.",
+        "JULES: You grew up in it.",
+        "MARGUERITE: So did the damp. (She slips a small photograph from the mantel into her coat.) I’ll want nothing else.",
+        "JULES: Not even the piano? You played it every night.",
+        "MARGUERITE: Every night Father made me. Sell it. (At the door, she stops and touches the frame lightly, as if it were a sleeping animal she did not want to wake, then goes out.)",
+      ],
+      claim: "In the play, Marguerite is presented as professing indifference to the family house while revealing an attachment to it.",
+      key: "(She slips a small photograph from the mantel into her coat.) I’ll want nothing else.",
+      near: [
+        ["You may have the house, Jules, and everything in it. I never cared for it.",
+         "This shows her professed indifference but nothing of her attachment."],
+        ["Every night Father made me. Sell it.",
+         "This dismisses the piano and shows only her indifference, not any attachment."],
+        ["(At the door, she stops and touches the frame lightly, as if it were a sleeping animal she did not want to wake, then goes out.)",
+         "This gesture reveals attachment, but she professes nothing here; the claim needs both her words and what she reveals."],
+      ],
+      why: "Slipping the photograph into her coat reveals an attachment, while “I’ll want nothing else,” said in the same breath, keeps up her profession of indifference.",
+    },
+    {
+      scene: "ii-q3-novel-rival-bakery",
+      kind: "novel",
+      lines: [
+        "For eleven years Ines had sold her bread a penny cheaper than the Bellamy shop across the square, and she had never once set foot inside it. Each morning at five she unlocked her door and pretended not to watch the lights come on across the square. When the old man fell ill that winter and his windows stayed dark, she lowered her prices by another penny and left a basket of rolls, unsigned, on his step each night. “Somebody has to keep his customers from forgetting where he is,” she told her assistant, scowling.",
+      ],
+      claim: "In the novel, Ines is portrayed as both fiercely competitive with the Bellamy shop and secretly generous toward its owner.",
+      key: "she lowered her prices by another penny and left a basket of rolls, unsigned, on his step each night",
+      near: [
+        ["For eleven years Ines had sold her bread a penny cheaper than the Bellamy shop across the square, and she had never once set foot inside it",
+         "This shows her rivalry but nothing of her generosity."],
+        ["Each morning at five she unlocked her door and pretended not to watch the lights come on across the square",
+         "This shows her attention to her rival, not generosity toward him."],
+        ["“Somebody has to keep his customers from forgetting where he is,” she told her assistant, scowling",
+         "Her remark shows concern for Bellamy’s business, which cuts against competing with him; it does not show her rivalry."],
+      ],
+      why: "Lowering her prices while her rival is ill shows her competitiveness, and leaving him a basket of rolls, unsigned, shows a generosity she keeps secret.",
+    },
+    {
+      scene: "ii-q3-play-lighthouse-sisters",
+      kind: "play",
+      lines: [
+        "ROSA: They’re automating the light in March. After that, no keeper.",
+        "ELENA: Good. Forty years of climbing those stairs in the dark, in every kind of weather. Let a machine do it for a change.",
+        "ROSA: You’ll have nothing to do.",
+        "ELENA: I’ll sleep through a whole night for once. (She goes to the window and counts the flashes under her breath.) Three, four. It’s running slow again.",
+        "ROSA: It isn’t yours to worry about anymore. Let the machine do it.",
+      ],
+      claim: "In the play, Elena is portrayed as welcoming the end of her duties as keeper while remaining unable to set them aside.",
+      key: "I’ll sleep through a whole night for once. (She goes to the window and counts the flashes under her breath.)",
+      near: [
+        ["Good. Forty years of climbing those stairs in the dark, in every kind of weather. Let a machine do it for a change.",
+         "This shows Elena welcoming the change but not her inability to let her duties go."],
+        ["Three, four. It’s running slow again.",
+         "This shows her still minding the light but nothing of her welcoming the end of her duties."],
+        ["It isn’t yours to worry about anymore. Let the machine do it.",
+         "Rosa says this, not Elena; it names the duty Elena cannot set aside without showing Elena herself."],
+      ],
+      why: "Looking forward to sleeping through the night shows Elena welcoming the end of her duties, and counting the flashes under her breath, in the same moment, shows that she cannot set them aside.",
+    },
+    {
+      scene: "ii-q3-novel-violin-teacher",
+      kind: "novel",
+      lines: [
+        "Mr. Castellan never praised a student aloud. When Lucia played the sonata through without a single error, he said only, “Again, and this time listen to it.” She played it again. Afterward, while she packed her violin, he wrote the date on the first page of her music without a word, beside the dates of the few students who had played it well before her. On her way out she heard him scold the next student for rushing the opening bars. He did not look up when she said goodbye.",
+      ],
+      claim: "In the novel, Mr. Castellan is portrayed as both sparing with open praise and proud of Lucia’s playing.",
+      key: "he wrote the date on the first page of her music without a word, beside the dates of the few students who had played it well before her",
+      near: [
+        ["he said only, “Again, and this time listen to it.”",
+         "This shows how sparing he is with praise, but not that he is proud of her playing."],
+        ["she heard him scold the next student for rushing the opening bars",
+         "This shows how demanding he is with another student, not his pride in Lucia."],
+        ["He did not look up when she said goodbye.",
+         "This shows his reserve but nothing of his pride in her playing."],
+      ],
+      why: "Writing the date “without a word” shows that he keeps his praise unspoken, and placing her among “the few students who had played it well” shows his pride in her playing.",
+    },
+    {
+      scene: "ii-q3-novel-string-drawer",
+      kind: "novel",
+      lines: [
+        "Aunt Wilhelmina saved everything: string, jar lids, the backs of envelopes, the stubs of candles too short to light. My brothers mocked the drawer in which she kept the string, sorted by length, and I confess I laughed with them. But in the winter the mill closed, the drawer we had laughed at supplied the twine that tied our boots, and her jar of pennies bought the coal. She never once reminded us of our laughter; she only asked, each evening, whether anyone had found a piece of string.",
+      ],
+      claim: "In the novel, the narrator suggests that Aunt Wilhelmina’s thrift, which the family had found ridiculous, proved essential to them in hard times.",
+      key: "the drawer we had laughed at supplied the twine that tied our boots",
+      near: [
+        ["Aunt Wilhelmina saved everything: string, jar lids, the backs of envelopes, the stubs of candles too short to light",
+         "This shows how thrifty she was but not that her thrift proved essential."],
+        ["My brothers mocked the drawer in which she kept the string, sorted by length, and I confess I laughed with them",
+         "This shows the family finding her thrift ridiculous but not that it later proved essential."],
+        ["She never once reminded us of our laughter; she only asked, each evening, whether anyone had found a piece of string",
+         "This recalls the family’s laughter and her continued saving, but it does not show her thrift sustaining them in the hard winter."],
+      ],
+      why: "“The drawer we had laughed at” recalls the family’s ridicule, and its twine tying their boots in the winter the mill closed shows her thrift carrying them through hard times.",
+    },
+    {
+      scene: "ii-q3-play-chef-kitchen",
+      kind: "play",
+      lines: [
+        "GUS: Thirty years at this stove, and not one night off. Tomorrow it’s yours, if you want it.",
+        "DANA: I’ll change the menu, you know. Nobody orders the liver anymore.",
+        "GUS: Change whatever you like. It’s your kitchen now. (He picks up his knife roll, puts it down, then unrolls it and starts sharpening.) This one pulls to the left, so you have to lean into it and keep it on the stone longer than you think.",
+        "DANA: Gus. Go home.",
+        "GUS: (still sharpening) In a minute.",
+      ],
+      claim: "In the play, Gus says that he is ready to hand over his kitchen, but his actions show that he cannot yet let it go.",
+      key: "It’s your kitchen now. (He picks up his knife roll, puts it down, then unrolls it and starts sharpening.)",
+      near: [
+        ["Thirty years at this stove, and not one night off. Tomorrow it’s yours, if you want it.",
+         "Gus says he is handing over the kitchen, but nothing here shows that he cannot let it go."],
+        ["This one pulls to the left, so you have to lean into it and keep it on the stone longer than you think.",
+         "Advice about a knife shows his lingering care for the kitchen, but not his saying that he is ready to leave it."],
+        ["(still sharpening) In a minute.",
+         "This shows him lingering, but not his claim to be ready to hand the kitchen over."],
+      ],
+      why: "“It’s your kitchen now” is Gus saying he is ready, and picking up his knife roll only to unroll it and start sharpening shows that he cannot yet let the kitchen go.",
+    },
+    {
+      scene: "ii-q3-novel-parish-maps",
+      kind: "novel",
+      lines: [
+        "Tobias measured every lane in the parish twice, once walking and once with a surveyor’s chain, and redrew any sheet on which a single hedge was out of place. The maps filled three cabinets in his study. When the county surveyor asked to borrow them for the new road, Tobias said he supposed so, if the man wanted them, and went back to inking the exact bend of a stream with a single-hair brush. The maps were returned a year later, unopened, and he did not notice.",
+      ],
+      claim: "In the novel, the narrator portrays Tobias as both meticulous in his mapmaking and indifferent to whether anyone uses his maps.",
+      key: "Tobias said he supposed so, if the man wanted them, and went back to inking the exact bend of a stream with a single-hair brush",
+      near: [
+        ["Tobias measured every lane in the parish twice, once walking and once with a surveyor’s chain, and redrew any sheet on which a single hedge was out of place",
+         "This shows his meticulous work but nothing about whether he cares if anyone uses the maps."],
+        ["The maps filled three cabinets in his study.",
+         "This shows how many maps he made, not how carefully he made them or how little he cared about their use."],
+        ["The maps were returned a year later, unopened, and he did not notice.",
+         "This shows his indifference to the maps’ use but not his meticulousness."],
+      ],
+      why: "His offhand “he supposed so, if the man wanted them” shows indifference to whether the maps are used, and going straight back to inking the exact bend of a stream with a single-hair brush shows how meticulous he is.",
+    },
+    {
+      scene: "ii-q3-novel-mountain-letter",
+      kind: "novel",
+      lines: [
+        "Hana wrote to her sister every Sunday from the mountain school. This week she described the snow, which had reached the classroom windows, and the goat that had eaten a page of the headmaster’s ledger. “You would laugh to see me in three sweaters,” she wrote, “and you would be the only one laughing, since no one here has spoken to me since Tuesday.” She drew a small goat at the bottom of the page and signed her name with a flourish.",
+      ],
+      claim: "In the novel, Hana’s letter to her sister is portrayed as both cheerful in tone and revealing of her loneliness.",
+      key: "and you would be the only one laughing, since no one here has spoken to me since Tuesday.",
+      near: [
+        ["This week she described the snow, which had reached the classroom windows, and the goat that had eaten a page of the headmaster’s ledger.",
+         "This shows the letter’s cheerful news but nothing of Hana’s loneliness."],
+        ["You would laugh to see me in three sweaters,",
+         "This joke shows the letter’s cheerful tone but not the loneliness that the next words reveal."],
+        ["She drew a small goat at the bottom of the page and signed her name with a flourish.",
+         "This shows her cheerful manner, not her loneliness."],
+      ],
+      why: "The joking “you would be the only one laughing” keeps the letter’s cheerful tone, and “no one here has spoken to me since Tuesday” reveals how lonely she is.",
+    },
+    {
+      scene: "ii-q3-play-mayor-bridge",
+      kind: "play",
+      lines: [
+        "MAYOR: The bridge will be finished by June. I don’t care who gets the credit.",
+        "AIDE: The newspaper wants a photograph with Mayor Holt. He started the project.",
+        "MAYOR: Of course. Invite him. (Pause.) Put him on the left, where the sun will be in his eyes.",
+        "AIDE: Should I mention him in the speech?",
+        "MAYOR: Mention the engineers. Mention the weather. (Pause.) Mention the engineers again, and the weather twice.",
+      ],
+      claim: "In the play, the Mayor claims to be above petty rivalry while showing that she resents her predecessor’s share of the credit.",
+      key: "Of course. Invite him. (Pause.) Put him on the left, where the sun will be in his eyes.",
+      near: [
+        ["The bridge will be finished by June. I don’t care who gets the credit.",
+         "This is the Mayor’s claim to be above rivalry, with no sign yet of her resentment."],
+        ["The newspaper wants a photograph with Mayor Holt. He started the project.",
+         "The aide says this; it explains Holt’s claim to credit but shows nothing of the Mayor’s attitude."],
+        ["Mention the engineers. Mention the weather. (Pause.) Mention the engineers again, and the weather twice.",
+         "Leaving Holt out of the speech hints at resentment, but these words show nothing of her claim to be above rivalry."],
+      ],
+      why: "“Of course. Invite him” keeps up her show of generosity, while placing Holt where the sun will be in his eyes reveals the petty resentment beneath it.",
+    },
+    {
+      scene: "ii-q3-novel-new-neighbors",
+      kind: "novel",
+      lines: [
+        "Mrs. Adebayo locked her gate on moving day and left stew on the newcomers’ step that evening. She told her son that she did not care to know people who played music at such hours. When their moving van blocked the lane, she watched from behind her curtain for an hour. Two days later she sent over a second pot, larger than the first, with a note asking whether they needed anything else.",
+      ],
+      claim: "In the novel, Mrs. Adebayo is portrayed as both wary of her new neighbors and unable to resist helping them.",
+      key: "Mrs. Adebayo locked her gate on moving day and left stew on the newcomers’ step that evening.",
+      near: [
+        ["She told her son that she did not care to know people who played music at such hours.",
+         "This shows her wariness of the neighbors but not her helping them."],
+        ["When their moving van blocked the lane, she watched from behind her curtain for an hour.",
+         "Watching from behind the curtain shows wariness, not help."],
+        ["Two days later she sent over a second pot, larger than the first, with a note asking whether they needed anything else.",
+         "This shows her helping the neighbors but not her wariness of them."],
+      ],
+      why: "Locking her gate the day the family arrives shows her wariness, and leaving stew on their step that same evening shows that she cannot resist helping them.",
+    },
+    {
+      scene: "ii-q3-play-old-actor",
+      kind: "play",
+      lines: [
+        "NINA: The neighbors say you were wonderful on the stage.",
+        "VICTOR: The neighbors are very kind, and very deaf.",
+        "NINA: Forty years. You must miss it.",
+        "VICTOR: I miss nothing. Other men’s words, other men’s coats. (He sits, then stands again, then turns toward the window as though a thousand faces waited there.) Not for a moment, my dear.",
+      ],
+      claim: "In the play, Victor insists that he does not miss performing even as he performs his denial.",
+      key: "(He sits, then stands again, then turns toward the window as though a thousand faces waited there.) Not for a moment, my dear.",
+      near: [
+        ["The neighbors are very kind, and very deaf.",
+         "This joke deflects Nina’s praise; it neither denies missing the stage nor shows him performing."],
+        ["Forty years. You must miss it.",
+         "Nina says this, not Victor; it raises the question without showing his denial or his performance."],
+        ["I miss nothing. Other men’s words, other men’s coats.",
+         "This states his denial but shows nothing of his performing it."],
+      ],
+      why: "Turning to the window “as though a thousand faces waited there” shows Victor performing, and “Not for a moment, my dear” is the denial he performs.",
+    },
+    {
+      scene: "ii-q3-novel-acceptance-letter",
+      kind: "novel",
+      lines: [
+        "When the acceptance letter came, Dmitri read it once in the doorway and again on the stairs. He read it a third time aloud to the empty kitchen, grinning, and then folded it away before his parents came home. At dinner he mentioned it in the flat voice he used for grades, and when his mother cried out, he shrugged and asked for the salt. Later his sister heard him humming in his room, which he had not done in years.",
+      ],
+      claim: "In the novel, Dmitri is portrayed as both elated by his acceptance and determined to keep that elation from his family.",
+      key: "He read it a third time aloud to the empty kitchen, grinning, and then folded it away before his parents came home.",
+      near: [
+        ["When the acceptance letter came, Dmitri read it once in the doorway and again on the stairs.",
+         "Rereading the letter hints at his excitement, but nothing here shows him hiding it."],
+        ["At dinner he mentioned it in the flat voice he used for grades, and when his mother cried out, he shrugged and asked for the salt.",
+         "This shows him hiding his feelings but not the elation he hides."],
+        ["Later his sister heard him humming in his room, which he had not done in years.",
+         "This shows his happiness but not that he is trying to keep it from his family."],
+      ],
+      why: "Grinning as he reads the letter aloud to an empty kitchen shows his elation, and folding it away before his parents come home shows him keeping it from them.",
+    },
+    {
+      scene: "ii-q3-novel-flower-show",
+      kind: "novel",
+      lines: [
+        "Mr. Pryce told anyone who asked that the village flower show was a contest of vanity, and that he entered only to keep the vicar company. He said it again on the morning of the show, loudly, at the gate: a contest of vanity. He had, however, been up since four, washing each leaf of his begonia with milk and a soft brush. When the judges pinned a blue ribbon to his pot, he said that they were plainly short of better entries, and did not take his hand off the ribbon for the rest of the afternoon.",
+      ],
+      claim: "In the novel, Mr. Pryce is portrayed as publicly dismissive of the flower show but privately eager to succeed in it.",
+      key: "he said that they were plainly short of better entries, and did not take his hand off the ribbon for the rest of the afternoon",
+      near: [
+        ["Mr. Pryce told anyone who asked that the village flower show was a contest of vanity",
+         "This shows his public dismissal of the show but not his eagerness to succeed."],
+        ["He said it again on the morning of the show, loudly, at the gate: a contest of vanity.",
+         "This repeats his public dismissal without any sign of his eagerness."],
+        ["He had, however, been up since four, washing each leaf of his begonia with milk and a soft brush.",
+         "This shows his eagerness to succeed but not his public dismissal of the show."],
+      ],
+      why: "Dismissing his win as the judges’ lack of better entries keeps up his public scorn, while keeping his hand on the ribbon all afternoon shows how much the success means to him.",
+    },
+  ];
+
+  // A quotation as a choice: in double quotation marks, with any quotation
+  // marks it contains turned to single ones.
+  const quoteExcerpt = (text) => `“${text.replace(/“/g, "‘").replace(/”/g, "’")}”`;
+
+  const excerptQuotation = {
+    ...RW,
+    id: "evidence-excerpt-quotation",
+    skill: "Command of Evidence",
+    subskill: "textual evidence",
+    difficulty: "Hard",
+    title: "Quotation from a novel or play excerpt that illustrates a two-part claim",
+    recognize:
+      "Split the claim into its two parts and test each quotation in context: the answer shows both at once, often without the claim's words, while the others show one part, belong to another speaker, or only echo the claim.",
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["too-narrow", "misattributed-view", "word-association"],
+    build(t) {
+      const topic = t.pick(EXCERPT_TOPICS);
+      const excerpt = topic.lines.join("\n");
+      const content = `${EXCERPT_HEADERS[topic.kind]}\n\n${excerpt}\n\n${topic.claim}`;
+      const correct = quoteExcerpt(topic.key);
+      const wrong = topic.near.map(([text, reason]) => [quoteExcerpt(text), reason]);
+      return mc("Hard", topic, {
+        stimulus: passage(content),
+        stem: `Which quotation from the ${topic.kind === "play" ? "play" : "novel"} most effectively illustrates the claim?`,
+        correct,
+        wrong,
+        explanation: topic.why,
+        steps: [
+          "Split the claim into its two parts and restate each in your own words.",
+          "Find each quotation in the excerpt and read it in context: who speaks, and what the stage direction or surrounding sentence shows.",
+          "Choose the quotation that shows both parts at once; reject one that shows a single part, belongs to another speaker, or only repeats the claim's subject.",
+        ],
+        principles: [
+          "Evidence for a two-part claim must show both parts.",
+          "A line spoken by another character, or a line that shares the claim's words, can look like support without showing the claim.",
+        ],
+        trap: "Choosing the most vivid illustration of one part of the claim, or a line whose words echo the claim.",
+        hint: "Which lines would you point to if you had to prove both halves of the claim at once?",
+        verify: () =>
+          [topic.key, ...topic.near.map(([text]) => text)].every((text) => excerpt.includes(text)) &&
+          topic.near.length === 3 && content.includes(topic.claim) && allDistinct(correct, wrong),
       });
     },
   };
@@ -2783,8 +3534,10 @@
   //   growth (line): the claim concedes that A is still below B but says A
   //     grew more over the whole period. The key gives both series' start
   //     and end values. Offered instead: the same four-value comparison
-  //     over the first half only (when A was flat), the final levels alone,
-  //     and A's growth alone.
+  //     over the first half only (when A was flat) and over the second half
+  //     only (when A did grow more, but not over the claim's period), and
+  //     one of: the levels in the last or middle year, A's growth against
+  //     B's growth over a shorter span, or A's growth alone.
   const GRAPH_RECONCILE_FRAMES = [
     {
       scene: "ii-g2-kell-dam",
@@ -3118,11 +3871,11 @@
         // A from i to j and B from iB to j (iB differs only in the
         // mismatched-span near miss, always worded compactly to stay
         // within the choice length limit).
-        const pair = (i, j, iB = i) => {
+        const pair = (i, j, iB = i, listed = t.chance(0.5)) => {
           const compact = iB === i ? undefined : true;
           const flat = A[j] === A[i];
           const later = iB === i ? "" : `from ${cats[iB]} to ${cats[j]} `;
-          return t.chance(0.5)
+          return listed
             ? `From ${cats[i]} to ${cats[j]}, ${nA} ${flat ? `stayed at ${u(A[i])}` : `rose ${span(A[i], A[j], compact)}`}, while ${later}${nB} rose ${span(B[iB], B[j], compact)}.`
             : `${cap1(nA)} ${flat ? `stayed at ${u(A[i])}` : `went ${span(A[i], A[j], compact)}`} between ${cats[i]} and ${cats[j]}, while ${nB} went ${span(B[iB], B[j], compact)}${iB === i ? "" : ` between ${cats[iB]} and ${cats[j]}`}.`;
         };
@@ -3141,17 +3894,29 @@
             : [`${cap1(nA)} rose ${span(A[0], A[last])} between ${cats[0]} and ${cats[last]}.`,
               `True, but without ${frame.series[1]}’s values this does not show that ${frame.series[0]} grew by more.`];
         };
-        draw = () => ({
-          correct: pair(0, last),
-          wrong: [
-            [pair(0, mid), `True, but this covers only ${cats[0]} to ${cats[mid]}, when ${frame.series[0]} did not grow at all; the claim concerns the whole period.`],
-            [t.chance(0.5)
-              ? `In ${cats[last]}, ${nA} (${u(A[last])}) was still lower than ${nB} (${u(B[last])}).`
-              : `${cap1(nA)} was still lower than ${nB} in ${cats[last]}: ${u(A[last])} compared with ${u(B[last])}.`,
-              "True, but this supports only the claim’s concession about levels, not its main point about growth."],
-            third(),
-          ],
-        });
+        // The key and the same comparison over each half of the period share
+        // values pairwise alike (a triangle), so the key is not the choice
+        // the others are built around; the fourth choice is a level in the
+        // last year, a level in the middle year, or the mismatched spans.
+        const levelAt = (i) => [t.chance(0.5)
+          ? `In ${cats[i]}, ${nA} (${u(A[i])}) was still lower than ${nB} (${u(B[i])}).`
+          : `${cap1(nA)} was still lower than ${nB} in ${cats[i]}: ${u(A[i])} compared with ${u(B[i])}.`,
+          "True, but this supports only the claim’s concession about levels, not its main point about growth."];
+        // The half-period choices share a wording; the key takes the other
+        // wording in about half of draws.
+        const fourth = t.pick([() => levelAt(last), () => levelAt(mid), third]);
+        const unlike = t.chance(0.5);
+        draw = () => {
+          const listed = t.chance(0.5);
+          return {
+            correct: pair(0, last, 0, unlike ? !listed : listed),
+            wrong: [
+              [pair(0, mid, 0, listed), `True, but this covers only ${cats[0]} to ${cats[mid]}, when ${frame.series[0]} did not grow at all; the claim concerns the whole period.`],
+              [pair(mid, last, mid, listed), `True, but this covers only ${cats[mid]} to ${cats[last]}; the claim concerns growth over the whole period from ${cats[0]}.`],
+              fourth(),
+            ],
+          };
+        };
         why = `The claim’s main point is that ${frame.series[0]} grew by more than ${frame.series[1]} over the whole period. ${frame.series[0]} gained ${Math.round((A[last] - A[0]) * 1e6) / 1e6} (from ${u(A[0])} to ${u(A[last])}) while ${frame.series[1]} gained ${Math.round((B[last] - B[0]) * 1e6) / 1e6} (from ${u(B[0])} to ${u(B[last])}), and ${frame.series[0]} still ended lower, exactly as the claim says.`;
         stem = `Which choice most effectively uses data from the graph to support ${frame.target}?`;
       }
@@ -3211,9 +3976,11 @@
     weakensClaim,
     twoPartQuotation,
     benefitDifference,
+    ratePercent,
     graphComplete,
     discriminatingFinding,
     poemQuotation,
+    excerptQuotation,
     graphReconcile,
   ];
 });

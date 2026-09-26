@@ -34,7 +34,7 @@
         "Most conifers, such as pines and spruces, keep their needles through the winter. Botanists call any tree that sheds all of its leaves or needles each autumn deciduous, whatever kind of tree it is. The tamarack, a conifer common in northern bogs, turns golden in October and then drops every one of its needles, standing bare until new ones grow in spring.",
       rule: "call any tree that sheds all of its leaves or needles each autumn deciduous",
       case: "drops every one of its needles",
-      key: "Botanists would classify it as deciduous even though it is a conifer.",
+      key: "Botanists would call it deciduous even though it is a conifer.",
       reversed: "It keeps its needles through the winter, as most conifers do.",
       broad: "Like most conifers, it sheds its needles when autumn comes.",
       unsupported: "It grows only in bogs where pines and spruces cannot survive.",
@@ -48,8 +48,8 @@
       case: "forms when lava from certain volcanoes cools",
       key: "It is classified as an igneous rock.",
       reversed: "It is classified as a sedimentary rock.",
-      broad: "Most igneous rocks are probably black and glassy, as it is.",
-      unsupported: "It is harder than any other kind of rock.",
+      broad: "It is black and glassy, as most igneous rocks are.",
+      unsupported: "It is harder than most other igneous rocks.",
     },
     {
       scene: "ii-comet-without-tail",
@@ -58,10 +58,10 @@
         "A comet develops a tail only when it comes close enough to the Sun for sunlight to warm its icy nucleus, which then releases streams of gas and dust. Far from the Sun, a comet is simply a frozen chunk of ice and rock. Astronomers recently photographed Comet Varga while it was well beyond the distance at which sunlight could warm its ice, farther from the Sun than Jupiter.",
       rule: "develops a tail only when it comes close enough to the Sun",
       case: "well beyond the distance at which sunlight could warm its ice",
-      key: "It did not have a tail of gas and dust.",
-      reversed: "It had a long tail of gas and dust.",
-      broad: "It is the only comet ever photographed without a tail.",
-      unsupported: "It was moving toward Jupiter at great speed.",
+      key: "It had no tail of gas and dust when it was photographed.",
+      reversed: "Sunlight had warmed its nucleus enough to release gas and dust.",
+      broad: "Like every comet far from the Sun, it had lost all of its ice.",
+      unsupported: "It had lost its ice while passing close to Jupiter.",
     },
     {
       scene: "ii-beef-loanword",
@@ -71,9 +71,9 @@
       rule: "call a word that one language takes from another a loanword",
       case: "it developed from the French word",
       key: "It is a loanword that English took from French.",
-      reversed: "It is a word that French speakers took from English.",
-      broad: "Most English words about food probably came from French too.",
-      unsupported: "It was first used by farmers who raised cattle.",
+      reversed: "It is a word that French took from English after 1066.",
+      broad: "Most English food words came from French after 1066.",
+      unsupported: "It was first used in England by cattle farmers after 1066.",
     },
     {
       scene: "ii-platypus-mammal",
@@ -82,10 +82,10 @@
         "Biologists classify an animal as a mammal if it has hair or fur and feeds its young on milk produced by the mother. Most mammals also give birth to live young, but that is not part of the definition. The platypus of eastern Australia has dense brown fur and feeds its young on milk, yet the female lays eggs and keeps them warm for about ten days before they hatch.",
       rule: "classify an animal as a mammal if it has hair or fur and feeds its young on milk",
       case: "has dense brown fur and feeds its young on milk",
-      key: "It is a mammal even though it lays eggs.",
-      reversed: "It cannot be a mammal because it lays eggs.",
-      broad: "Like most Australian mammals, it lays eggs instead of giving birth.",
-      unsupported: "It feeds its young on milk only after they leave the nest.",
+      key: "It is a mammal, even though it lays eggs instead of giving birth.",
+      reversed: "It cannot be a mammal, since it lays eggs instead of giving birth.",
+      broad: "Like most Australian mammals, it keeps its eggs warm for ten days.",
+      unsupported: "Like most Australian mammals, it feeds its young only at night.",
     },
     {
       scene: "ii-leap-year-1900",
@@ -95,9 +95,9 @@
       rule: "a year divisible by 100 is a leap year only if it is also divisible by 400",
       case: "The year 1900 is divisible by 4 and by 100, but not by 400",
       key: "It was not a leap year under the Gregorian calendar.",
-      reversed: "It was a leap year because it is divisible by 4.",
+      reversed: "It was a leap year, since every year divisible by 4 is one.",
       broad: "Like every year divisible by 100, it was not a leap year.",
-      unsupported: "It was the first year of the Gregorian calendar.",
+      unsupported: "Like every year divisible by 400, it was skipped.",
     },
     {
       scene: "ii-argon-unreactive",
@@ -108,8 +108,8 @@
       case: "is found in that column",
       key: "It rarely forms chemical bonds with other elements.",
       reversed: "It readily forms bonds with most other elements.",
-      broad: "Like every gas in Earth's atmosphere, it rarely forms bonds.",
-      unsupported: "It is the most common gas in Earth's atmosphere.",
+      broad: "Like every gas in Earth's atmosphere, it has a full outer shell of electrons.",
+      unsupported: "It makes up more of Earth's atmosphere than any other gas does.",
     },
     {
       scene: "ii-senate-cloture-vote",
@@ -118,10 +118,10 @@
         "In the United States Senate, a filibuster, or prolonged debate meant to delay a vote, can be ended by a vote called cloture. For most legislation, cloture requires the support of three-fifths of the full Senate, which means 60 of its 100 members. In one session, a cloture vote on a transportation bill received 57 votes in favor and 43 against.",
       rule: "requires the support of three-fifths of the full Senate",
       case: "received 57 votes in favor",
-      key: "It did not end the filibuster, even though most senators voted for it.",
+      key: "It failed to end the filibuster, though most senators voted for it.",
       reversed: "It ended the filibuster because most senators supported it.",
-      broad: "Like most cloture votes, it failed to end a filibuster.",
-      unsupported: "It was the first cloture vote held that session.",
+      broad: "Like most cloture votes, it came after weeks of debate.",
+      unsupported: "It was the first cloture vote after weeks of debate.",
     },
     {
       scene: "ii-datura-moth-flowers",
@@ -132,8 +132,8 @@
       case: "large white flowers that open in the evening",
       key: "It is probably pollinated by moths that fly at night.",
       reversed: "It is probably pollinated by bees that fly during the day.",
-      broad: "Like all white flowers, it is pollinated by night-flying moths.",
-      unsupported: "It grows only in deserts where moths are common.",
+      broad: "Like all white flowers, it opens only in the evening to attract moths.",
+      unsupported: "It opens only in the evening because desert days are too hot.",
     },
     {
       scene: "ii-sonnet-structure",
@@ -205,9 +205,9 @@
       mechanism: "flooding the surrounding low ground and creating wetland habitat",
       change: "removed a series of old beaver dams",
       key: "less wetland habitat for frogs, ducks, and insects than before",
-      opposite: "more wetland habitat, since the stream could spread out freely",
-      irrelevant: "that the ranchers' cattle had grown larger than before",
-      extreme: "that no frogs, ducks, or insects remained anywhere in the region",
+      opposite: "more wetland habitat, since the stream could now spread out freely",
+      irrelevant: "that the stream had grown colder along its whole length",
+      extreme: "that the stream had dried up completely along its whole length",
     },
     {
       scene: "ii-road-salt-cold",
@@ -217,8 +217,8 @@
       change: "an overnight forecast of −18°C",
       key: "cannot count on ordinary road salt alone to keep the roads clear",
       opposite: "can expect ordinary road salt to keep every road free of ice",
-      irrelevant: "should expect the salt to make water freeze at a higher temperature",
-      extreme: "will be unable to keep traffic moving on any road in the city",
+      irrelevant: "should expect the salt to warm the air above the roads overnight",
+      extreme: "should expect every road in the city to be closed overnight",
     },
     {
       scene: "ii-caffeine-adenosine",
@@ -226,10 +226,10 @@
         "Adenosine is a chemical that builds up in the brain during waking hours and produces the feeling of sleepiness by binding to certain receptors. Caffeine molecules have a similar shape and can occupy those same receptors without activating them, which keeps adenosine from binding. A person who drinks strong coffee late in the evening would therefore most likely ______.",
       mechanism: "which keeps adenosine from binding",
       change: "drinks strong coffee late in the evening",
-      key: "feel less sleepy than usual at bedtime",
+      key: "have more trouble than usual feeling sleepy at bedtime",
       opposite: "feel sleepier than usual at bedtime",
-      irrelevant: "produce less adenosine the following day",
-      extreme: "never again feel the effects of adenosine",
+      irrelevant: "produce less adenosine in the brain the following day",
+      extreme: "never again produce adenosine in the brain",
     },
     {
       scene: "ii-legume-rotation",
@@ -237,10 +237,10 @@
         "Bacteria living in small nodules on the roots of beans, peas, and other legumes capture nitrogen from the air and convert it into a form that plants can use. When the legumes die and decompose, much of that nitrogen remains in the soil. A farmer who grows peas in a field one year and corn in the same field the next year can therefore expect the corn to ______.",
       mechanism: "much of that nitrogen remains in the soil",
       change: "grows peas in a field one year and corn in the same field the next year",
-      key: "find more usable nitrogen in the soil than it would after a crop that is not a legume",
+      key: "find more usable nitrogen in the soil than after a crop that is not a legume",
       opposite: "find less usable nitrogen in the soil, since the peas will have used it all up",
-      irrelevant: "develop nodules on its own roots that capture nitrogen directly from the air",
-      extreme: "need no water, sunlight, or other nutrients at all during the growing season",
+      irrelevant: "capture nitrogen directly from the air through nodules on its own roots",
+      extreme: "need no nitrogen at all from the soil or from the air",
     },
     {
       scene: "ii-tree-ring-drought",
@@ -249,9 +249,9 @@
       mechanism: "dry years produce narrow ones",
       change: "a band of five very narrow rings",
       key: "had a series of unusually dry years during the 1570s",
-      opposite: "had a series of unusually wet years during the 1570s",
-      irrelevant: "had more oak trees in the 1570s than it has today",
-      extreme: "received no rain at all during those five years",
+      opposite: "received more rain than usual in each of those five years",
+      irrelevant: "had more oak trees during the 1570s than it has today",
+      extreme: "received no rain at all in any of those five years",
     },
     {
       scene: "ii-coffee-frost-prices",
@@ -262,7 +262,7 @@
       key: "paid higher prices for coffee than they had paid before the frost",
       opposite: "paid lower prices for coffee, because Brazil had less of it to sell",
       irrelevant: "bought more of their coffee from Brazil than in earlier years",
-      extreme: "could not find any coffee to buy anywhere in the world",
+      extreme: "could not buy any coffee from Brazil or anywhere else in the world",
     },
     {
       scene: "ii-lake-ice-fish",
@@ -272,8 +272,8 @@
       change: "a lake that freezes over each winter",
       key: "survive the winter in the liquid water beneath the ice",
       opposite: "survive the winter only by moving to lakes that do not freeze",
-      irrelevant: "make the ice above them less dense by swimming beneath it",
-      extreme: "stay equally active at every depth all year without any change",
+      irrelevant: "make the ice on the lake thicker by staying active all winter",
+      extreme: "stay perfectly safe from the cold all winter, however cold the air becomes",
     },
     {
       scene: "ii-dilating-eye-drops",
@@ -284,7 +284,7 @@
       key: "find the light uncomfortably bright, because the pupils stay wide",
       opposite: "see more dimly than usual, because the pupils have narrowed",
       irrelevant: "need the drops again before the next eye examination",
-      extreme: "lose the ability to see clearly in dim light permanently",
+      extreme: "never again be able to narrow the pupils in bright light",
     },
     {
       scene: "ii-lichen-sulfur-recovery",
@@ -294,8 +294,8 @@
       change: "closed in 1990",
       key: "gained lichen species over the following decades as the air improved",
       opposite: "lost lichen species over the following decades as sulfur dioxide declined",
-      irrelevant: "absorbed less water directly from the air than they had before",
-      extreme: "became completely free of every kind of air pollution within a year",
+      irrelevant: "absorbed less water directly from the air after the plant closed",
+      extreme: "became completely free of air pollution within a year after the plant closed",
     },
     {
       scene: "ii-closed-car-heat",
@@ -304,9 +304,9 @@
       mechanism: "infrared radiation that the glass keeps inside",
       change: "parked with its windows closed",
       key: "become warmer inside than the air around it",
-      opposite: "stay cooler inside than the air around it",
-      irrelevant: "let less visible light reach its seats",
-      extreme: "keep heating up without any limit at all",
+      opposite: "stay cooler inside than the air around it does",
+      irrelevant: "let less visible sunlight reach its seats and dashboard",
+      extreme: "keep heating its seats and dashboard without any limit",
     },
   ];
 
@@ -770,10 +770,10 @@
       second: "the particular strength and angle of Earth's magnetic field",
       finding: "shifted along the coast in step with the drifting field",
       key: "turtles probably rely more on magnetic cues than on smell to find their nests",
-      reversed: "turtles keep returning to nesting sites whose distinctive smell has stayed the same",
+      reversed: "turtles keep returning to the same nesting sites, whose distinctive smell has stayed the same",
       reversedReason: "The nesting sites moved along the coast with the drifting field, so the turtles did not keep to the same spots.",
-      extreme: "turtles rely on magnetic cues alone and cannot detect smells of any kind",
-      both: "turtles no longer return to nest near the stretch of coast where they hatched",
+      extreme: "magnetism alone guides the turtles, which cannot detect smells of any kind",
+      both: "turtles no longer return to the nesting sites near the stretch of coast where they hatched",
       bothReason: "The sites shifted only in step with the field; the text still describes turtles returning to the stretch where they hatched.",
       trap: "Moving from “the nests follow the magnetic field” to “smell plays no part at all.”",
     },
@@ -785,8 +785,8 @@
       second: "credits a new causeway",
       finding: "kept the old vowels for decades longer",
       key: "daily contact with mainland speakers did more to change the island's vowels than broadcasts did",
-      reversed: "radio and television were probably the main cause of the change in the island's vowels",
-      reversedReason: "Islanders who heard just as much radio and television but stayed home kept the old vowels, which counts against this.",
+      reversed: "the islanders who stayed home changed their vowels first, under the influence of radio and television",
+      reversedReason: "The islanders who stayed home kept the old vowels, though they heard just as much radio and television as the commuters.",
       extreme: "broadcast media never have any influence on the way that anyone speaks",
       both: "the islanders who commuted kept the old vowels longer than those who stayed home",
       bothReason: "This reverses the recordings: the commuters changed first, and those who stayed home kept the old vowels.",
@@ -847,7 +847,7 @@
       key: "escaping predators may not be the main reason young skinks have blue tails",
       reversed: "blue tails exist mainly to draw predators' attacks away from young skinks' heads",
       reversedReason: "Juveniles on an island without predators for centuries still have equally bright tails, which counts against this.",
-      extreme: "blue tails have been shown to stop adult males from ever attacking juveniles",
+      extreme: "blue tails have been shown to exist only to keep adult males from attacking young skinks",
       both: "juveniles on the island without predators have lost their bright blue tails",
       bothReason: "The text says those juveniles still have equally bright blue tails.",
       trap: "Taking evidence against the predator explanation as proof that the signal to adult males is the reason.",
@@ -1076,9 +1076,14 @@
   /* ------------------------------------------------------------------ */
 
   // `premise` is stated early and `evidence` at the end, with at least a
-  // sentence between them. The key needs both; `partial` uses only one of
-  // them (often leaning on the intervening sentence), `reversed` runs the
-  // reasoning the wrong way, and `unsupported` has no basis in the text.
+  // sentence between them. The key needs both. Each scene carries its own
+  // three near misses with reasons (the 2026-09-26 cold review found the
+  // old distractors plainly contradicted or unsupported): a conclusion from
+  // one fact alone (often leaning on the intervening sentence), the two
+  // facts combined the wrong way (the records swapped, a later layer read as
+  // an ending), and the key's own conclusion stated a step too strongly or
+  // too precisely (certain death, every tree, the exact years), so the
+  // student must weigh how much the two facts together support.
   const SEPARATED_PREMISE_TOPICS = [
     {
       scene: "ii-jack-pine-fire-stand",
@@ -1088,10 +1093,14 @@
       premise: "release most of their seeds only after a fire",
       evidence: "had begun growing within two or three years of one another",
       key: "A fire probably swept through the area shortly before nearly all of the trees began to grow.",
-      partial: "Logging probably cleared the area around 1911, letting sunlight reach young trees.",
-      partialReason: "The sunlight detail fits, but without a fire the sealed cones would not have released the seeds.",
-      reversed: "The trees probably began growing in the shade of older jack pines in the stand.",
-      unsupported: "The trees probably grew from seeds that people planted in the area around 1911.",
+      wrong: [
+        ["Logging probably cleared the area around 1911, letting sunlight reach young jack pines.",
+         "The sunlight detail fits, but without a fire the sealed cones would not have released the seeds that grew into the stand."],
+        ["Young jack pines will probably replace the stand around 2060, once the present trees die of old age.",
+         "Old age does not melt the resin that seals the cones; a new generation would need another fire, whenever the present trees die."],
+        ["A fire probably struck the stand around 1911 and killed every tree of every other species there.",
+         "The text supports a fire shortly before the trees began to grow, but it says nothing about other species, let alone that every one of their trees died."],
+      ],
     },
     {
       scene: "ii-norway-enamel-england-bone",
@@ -1101,11 +1110,14 @@
       premise: "fixed in childhood",
       evidence: "her tooth enamel matches water from a region of Norway",
       key: "She probably spent her childhood in Norway and her last years in southern England.",
-      partial: "She probably lived in Norway all her life and was brought to England only for burial.",
-      partialReason: "This uses the enamel but ignores her bones, which show that she lived near the cemetery late in life.",
-      reversed: "She probably grew up in southern England and moved to Norway later in her life.",
-      unsupported: "She probably lived near the cemetery for her whole life, like most people buried there.",
-      unsupportedReason: "Her enamel shows that she drank Norwegian water as a child, so she did not spend her whole life near the cemetery.",
+      wrong: [
+        ["She probably lived in Norway all her life and was brought to England only for burial.",
+         "This uses the enamel but ignores her bones, which match the local water and so show that she lived near the cemetery late in life."],
+        ["She probably grew up in southern England and moved to Norway later in her life.",
+         "This swaps the two records: enamel, fixed in childhood, points to Norway, and bone, which reflects the last decade of life, points to southern England."],
+        ["She probably spent her childhood in Norway and died while visiting southern England.",
+         "Bone reflects roughly the last decade of life, and hers matches the local water, so she had been living near the cemetery for years, not visiting."],
+      ],
     },
     {
       scene: "ii-sparrow-late-tutor",
@@ -1115,11 +1127,14 @@
       premise: "a sensitive period that ends when the birds are about fifty days old",
       evidence: "only between the ages of sixty and ninety days",
       key: "They most likely did not learn the dialect that was played to them in the recordings.",
-      partial: "They most likely learned to sing the dialect that was played to them in the recordings.",
-      partialReason: "This ignores the timing: the recordings began after the period in which the birds could learn a song.",
-      reversed: "They most likely sang the dialect of the population from which they themselves came.",
-      reversedReason: "The birds never heard adults of their own population, so nothing suggests they learned that dialect.",
-      unsupported: "They most likely learned the recorded dialect more quickly than wild sparrows would.",
+      wrong: [
+        ["They most likely learned to sing the dialect that was played to them in the recordings.",
+         "This ignores the timing: the recordings began at sixty days, after the period in which the birds could learn a song had ended."],
+        ["They most likely sang the dialect of the population from which they themselves came.",
+         "Young birds pick up the dialect from the adults around them, and these birds never heard adults of their own population."],
+        ["They most likely sang no song at all as adults, having heard no adult sparrows while young.",
+         "The text says only that the birds could not learn a new song after about fifty days; it says nothing about whether birds that learn no song sing at all."],
+      ],
     },
     {
       scene: "ii-fabriano-watermark-letter",
@@ -1129,10 +1144,14 @@
       premise: "can usually be dated to a short span of years",
       evidence: "used only between 1452 and 1458",
       key: "It was probably written during the 1450s or not long afterward.",
-      partial: "It could just as easily have been written a century after its paper was made.",
-      partialReason: "This ignores the text's point that paper was rarely stored for long before being used.",
-      reversed: "It was probably written before 1452, when the mill began using the watermark.",
-      unsupported: "It was probably written by a papermaker who worked at the mill in Fabriano.",
+      wrong: [
+        ["It could just as easily have been written a century after its paper was made.",
+         "This ignores the text’s point that paper was expensive and rarely stored for long before being used."],
+        ["It was probably written in Fabriano, where paper with that watermark was made.",
+         "The watermark shows where the paper was made, not where the letter was written; nothing in the text places the writer in Fabriano."],
+        ["It was written between 1452 and 1458, the only years the mill used that watermark.",
+         "The watermark dates the paper, not the writing; paper was rarely, not never, stored, so the letter could be somewhat later than 1458."],
+      ],
     },
     {
       scene: "ii-lake-serin-barley-pollen",
@@ -1142,10 +1161,14 @@
       premise: "older material lying beneath younger material",
       evidence: "appears in the sediment above that ash but nowhere below it",
       key: "It probably began near the lake no earlier than about 3,400 years ago.",
-      partial: "It probably began at about the same time that the lake itself first formed.",
-      partialReason: "The ash lies 30 centimeters above the lake's oldest sediment, so the lake is older than the ash and the barley.",
-      reversed: "It probably began near the lake long before Kora's eruption 3,400 years ago.",
-      unsupported: "It was probably ended for good by the ash from Kora's eruption.",
+      wrong: [
+        ["It probably began at about the same time that the lake itself first formed.",
+         "The ash lies 30 centimeters above the lake’s oldest sediment, so the lake is older than the ash, and the barley pollen appears only above the ash."],
+        ["It probably began near the lake within a few years of Kora's eruption, 3,400 years ago.",
+         "Pollen above the ash shows only that barley farming came after the eruption; nothing in the text shows how soon after."],
+        ["It probably ended near the lake 3,400 years ago, when ash from Kora's eruption buried the fields.",
+         "Older material lies beneath younger, so pollen found only above the ash means barley farming began after the eruption, not that it ended then."],
+      ],
     },
     {
       scene: "ii-talomi-food-loanwords",
@@ -1155,10 +1178,14 @@
       premise: "take their words for new foods from the people who introduce those foods",
       evidence: "Spanish missionaries first arrived in the 1600s",
       key: "They were probably introduced to the valley later than rice and bananas were.",
-      partial: "They were probably grown in the valley before any outsiders arrived.",
-      partialReason: "A borrowed word for a food points to outsiders introducing it, which this ignores.",
-      reversed: "They were probably introduced by the Portuguese traders of the 1500s.",
-      unsupported: "They were probably the first food that Spanish speakers brought to the valley.",
+      wrong: [
+        ["They were probably grown in the valley before any outsiders arrived.",
+         "Words borrowed from Spanish point to Spanish speakers introducing these foods, which this ignores."],
+        ["They were probably introduced by the Portuguese traders of the 1500s.",
+         "Their names resemble Spanish words, not Portuguese ones, so the Spanish missionaries, who came later, are the likelier source."],
+        ["They were probably introduced to the valley as soon as the Spanish missionaries arrived in the 1600s.",
+         "The missionaries stayed for two centuries, so the foods could have come at any time in those years; the text supports only that they came after the Portuguese traders’ foods."],
+      ],
     },
     {
       scene: "ii-tessa-cluster-lifetimes",
@@ -1168,10 +1195,14 @@
       premise: "the hottest stars glow blue-white",
       evidence: "found both blue-white and yellow stars there",
       key: "Its blue-white stars will probably run out of fuel before its yellow stars do.",
-      partial: "Its blue-white stars have probably existed for longer than its yellow stars have.",
-      partialReason: "This confuses how long a star will last with how long it has already existed.",
-      reversed: "Its yellow stars are probably more massive than its blue-white stars are.",
-      unsupported: "All of its stars will probably stop fusing hydrogen at about the same time.",
+      wrong: [
+        ["Its blue-white stars have probably existed for longer than its yellow stars have.",
+         "This confuses how long a star will last with how long it has already existed; the text concerns how fast stars use their fuel."],
+        ["Its blue-white stars will probably turn yellow as they use up their fuel.",
+         "The text says nothing about stars changing color; it links a star’s color to its temperature and mass, and its mass to how quickly its fuel runs out."],
+        ["Its blue-white and yellow stars have probably existed for about the same time and will stop fusing hydrogen together.",
+         "Whatever their ages, the blue-white stars are hotter and so more massive, and more massive stars burn through their fuel far faster, so they will not stop together."],
+      ],
     },
     {
       scene: "ii-wood-frog-glycogen",
@@ -1181,10 +1212,14 @@
       premise: "their livers flood their blood with glucose",
       evidence: "entered winter with unusually small glycogen stores",
       key: "They faced a greater risk than usual of dying if they froze during that winter.",
-      partial: "They were protected from freezing because glucose keeps their cells from freezing.",
-      partialReason: "This ignores that glucose comes from glycogen, which these frogs lacked.",
-      reversed: "They probably produced more glucose than usual to make up for the drought.",
-      unsupported: "They probably spent the winter in deep water, where they would not freeze.",
+      wrong: [
+        ["They were protected from freezing because glucose keeps their cells from freezing.",
+         "This ignores that the glucose comes from glycogen, which these frogs had unusually little of."],
+        ["They probably produced more glucose than usual to make up for the drought.",
+         "The liver can make glucose only from glycogen, and these frogs had small stores, so they could not produce more than usual."],
+        ["They were certain to die if they froze, since they could make no glucose at all.",
+         "Small glycogen stores mean less glucose, not none; the text supports a greater risk of death, not certain death."],
+      ],
     },
     {
       scene: "ii-velmar-silver-cup",
@@ -1194,11 +1229,14 @@
       premise: "required every silver piece sold in the city to bear two stamps",
       evidence: "but no city mark",
       key: "It was probably made on commission for a patron outside Velmar, not for sale in the city.",
-      partial: "It probably failed the guild's test of purity, so it never received the city mark.",
-      partialReason: "Pieces that failed the test were melted down, so a surviving cup is unlikely to have failed it.",
-      reversed: "It was probably tested by the guild's inspectors and found to be pure.",
-      reversedReason: "Inspectors added the city mark once a piece passed the test, so a cup found pure would carry the city mark that this cup lacks.",
-      unsupported: "It was probably made by some other smith who copied Verhaegen's mark.",
+      wrong: [
+        ["It probably failed the guild's test of purity, so it never received the city mark.",
+         "Pieces that failed the test were melted down, so a surviving cup is unlikely to have failed it."],
+        ["It was probably tested by the guild's inspectors and found to be pure.",
+         "Inspectors added the city mark once a piece passed the test, so a cup found pure would carry the city mark that this cup lacks."],
+        ["It was probably made for a patron in Velmar who asked that it bear no city mark.",
+         "The guild required the city mark on every piece sold in Velmar, so a patron in the city could not simply have had it left off."],
+      ],
       // The key rests on the sale rule and the commissions sentence; the
       // melting-down sentence only rules out the partial choice.
       explanation:
@@ -1212,10 +1250,14 @@
       premise: "Honeybees cannot see the color red",
       evidence: "have no ultraviolet patterns and are rarely visited by bees",
       key: "It is probably pollinated mainly by hummingbirds instead of bees.",
-      partial: "Its scarlet color probably helps bees find their way to its nectar.",
-      partialReason: "The text says honeybees cannot see red, so the flower's color would not guide them.",
-      reversed: "It probably attracts bees with ultraviolet patterns that people cannot see.",
-      unsupported: "Its nectar is probably harmful to the bees that try to feed on it.",
+      wrong: [
+        ["Its scarlet color probably helps bees find their way to its nectar.",
+         "The text says honeybees cannot see red, so the flower’s color would not guide them."],
+        ["It probably guides bees to its nectar with ultraviolet patterns that people cannot see.",
+         "The botanist found that its flowers have no ultraviolet patterns."],
+        ["It is pollinated by hummingbirds alone, since bees never visit its flowers.",
+         "The text says bees rarely visit the flowers, not never; it supports pollination mainly by hummingbirds, not by them alone."],
+      ],
     },
   ];
 
@@ -1228,15 +1270,11 @@
     title: "Inference that joins a fact stated early with a case stated late",
     recognize:
       "Neither the opening fact nor the closing case answers the question alone; combining them points back to something the text never names outright.",
-    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
-    tricks: ["too-narrow", "opposite-stance"],
+    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["too-narrow", "opposite-stance", "extreme-language"],
     build(t) {
       const topic = t.pick(SEPARATED_PREMISE_TOPICS);
-      const wrong = [
-        [topic.partial, topic.partialReason],
-        [topic.reversed, topic.reversedReason || "This runs against what the text states; combining its facts leads the other way."],
-        [topic.unsupported, topic.unsupportedReason || "Nothing in the text supports this; it adds a possibility the text gives no reason to believe."],
-      ];
+      const wrong = topic.wrong;
       return mc("Hard", topic, {
         stimulus: passage(topic.text),
         stem: `Based on the text, what can most reasonably be inferred about ${topic.about}?`,
@@ -1247,13 +1285,13 @@
         steps: [
           "Identify the general fact the text states before it reaches the case.",
           "Identify what the text reports about the case itself.",
-          "Combine the two, and reject choices that use only one of them or that the text contradicts.",
+          "Combine the two, and reject choices that use only one of them, combine them the wrong way, or claim more than the two together support.",
         ],
         principles: [
           "A reasonable inference must fit every relevant statement in the text, not just the nearest one.",
           "When a detail fits an alternative explanation, check it against the rest of the text before accepting it.",
         ],
-        trap: "Seizing on the last sentence, or on a detail that fits an alternative, without checking it against the fact stated earlier in the text.",
+        trap: "Seizing on the last sentence, or on a detail that fits an alternative, without checking it against the fact stated earlier in the text, or accepting the right conclusion stated more strongly than the two facts support.",
         hint: "Which general fact stated earlier in the text applies to the case described at the end?",
         verify: () => {
           const start = topic.text.indexOf(topic.premise);
@@ -1261,6 +1299,7 @@
           return (
             inOrder(topic.text, [topic.premise, topic.evidence]) &&
             end - (start + topic.premise.length) > 60 &&
+            wrong.length === 3 &&
             allDistinct(topic.key, wrong)
           );
         },
@@ -1312,9 +1351,12 @@
       anchors: ["was persuaded that her new lodger was a gentleman of fortune", "could not afford the theater"],
       key: "It rests on details that more plausibly suggest a hard-working man of modest means.",
       wrong: [
-        ["It is well founded, since a man of fortune would naturally conceal his wealth.", "This adopts Mrs. Dunstable’s reasoning; the cheap attic, the long working days, and his remark about the theater point instead to limited means."],
-        ["It is shared by her sister, who keeps a boarding house and knows lodgers well.", "Her sister says nothing, and her experience with lodgers makes that silence read as doubt, not agreement."],
-        ["It arose because the lodger told her that he was traveling under an assumed name.", "Nothing shows that the lodger claimed anything; the belief is Mrs. Dunstable’s own conclusion from his habits."],
+        ["It is well founded, since a man of fortune would naturally conceal his wealth.",
+         "This adopts Mrs. Dunstable’s reasoning; the cheap attic, the long working days, and his remark about the theater point instead to limited means."],
+        ["It is shared by her sister, who keeps a boarding house and knows lodgers well.",
+         "Her sister says nothing, and her experience with lodgers makes that silence read as doubt, not agreement."],
+        ["It is shaken by her sister’s silence, which she takes as a sign that her sister doubts it.",
+         "The sister’s silence does hint at doubt, but the passage never shows Mrs. Dunstable noticing it; her belief is reported without any sign of wavering."],
       ],
       explanation:
         "Mrs. Dunstable reads the attic at half the rent, the long days that end with ink on his cuffs, and his remark that he cannot afford the theater as the modesty of a disguised gentleman. Taken plainly, the same details describe a working man with little money, and her experienced sister’s silence hints at the same doubt.",
@@ -1329,9 +1371,12 @@
       anchors: ["whether he meant to stay the winter", "he had already ordered his coal"],
       key: "She becomes readier to welcome the schoolmaster once she believes he will stay.",
       wrong: [
-        ["She suspects that the schoolmaster, like the two men before him, will leave before winter.", "That suspicion explains her question, but her promise of a second cake comes only after he says he has ordered his coal, which suggests the suspicion has eased."],
-        ["She hopes to learn from the schoolmaster whether the roads will be mended by November.", "The hope about the roads belonged to an earlier schoolmaster; Mrs. Pell never asks about them."],
-        ["She regrets having waited a fortnight before calling upon the new schoolmaster.", "Nothing in the passage indicates regret; the delay fits her caution about newcomers who do not stay."],
+        ["She suspects that the schoolmaster, like the two men before him, will leave before winter.",
+         "That suspicion explains her question, but her promise of a second cake comes only after he says he has ordered his coal, which suggests the suspicion has eased."],
+        ["She welcomes the schoolmaster because he has promised her that he will stay through the winter.",
+         "He makes no promise; he says only that he has already ordered his coal, which she takes, after a silence, as a sign that he means to stay."],
+        ["She regrets having waited a fortnight before calling upon the new schoolmaster.",
+         "Nothing in the passage indicates regret; the delay fits her caution about newcomers who do not stay."],
       ],
       explanation:
         "Mrs. Pell’s chief question is whether the schoolmaster will stay the winter, and she notes that the last two did not. Only after he says he has already ordered his coal, a sign that he means to stay, does she promise a second cake. Her welcome depends on his staying.",
@@ -1346,9 +1391,12 @@
       anchors: ["the very week the doctor was first sent for", "the nephew discovered that pressing business"],
       key: "He appears to have been attentive chiefly because he expected his uncle to die soon.",
       wrong: [
-        ["He had grown fond of his uncle but could no longer bear the dull routine at Fellbridge.", "He bore the sermons, the dogs, and the mutton all winter; what changes in March is his uncle’s recovery, which is exactly when he leaves."],
-        ["He was called back to London by business he had set aside during his uncle’s illness.", "This takes the nephew’s excuse at face value, though the narrator has the business become pressing the moment the uncle recovers."],
-        ["He left because the housekeeper had begun to suspect the true reason for his visit.", "The housekeeper only praises his attentiveness; nothing shows that she suspects him."],
+        ["He had grown fond of his uncle but could no longer bear the dull routine at Fellbridge.",
+         "He bore the sermons, the dogs, and the mutton all winter; what changes in March is his uncle’s recovery, which is exactly when he leaves."],
+        ["He was called back to London by business he had set aside during his uncle’s illness.",
+         "This takes the nephew’s excuse at face value, though the narrator has the business become pressing the moment the uncle recovers."],
+        ["He had hoped to be named his uncle’s heir and left once the will had been settled in his favor.",
+         "The timing does suggest that he hoped to inherit, but nothing says any will was settled; he leaves when his uncle recovers, which points the other way."],
       ],
       explanation:
         "The nephew arrives the week the doctor is first sent for, puts up with sermons, bites, and boiled mutton, and discovers urgent business in London the moment his uncle recovers and plans to live to ninety. The timing at both ends suggests that his attentiveness depended on his expecting his uncle to die.",
@@ -1363,9 +1411,12 @@
       anchors: ["which the younger maids took for approval", "and not on Thursdays, as Mrs. Lyle had ordered"],
       key: "It is unfavorable, though Martha shows it through her conduct rather than her words.",
       wrong: [
-        ["It is favorable, as her unusual silence on the subject of her new mistress indicates.", "This is the younger maids’ reading; the cook, who knows Martha best, points to a quiet disobedience that suggests the opposite."],
-        ["It is not yet settled, since Mrs. Lyle has only recently come to the Grange.", "Nothing says that Mrs. Lyle has only just arrived, and Martha’s deliberate return to the old routine suggests her mind is made up."],
-        ["It has led her to resolve to leave the Grange rather than obey Mrs. Lyle.", "Martha quietly keeps the old routine; nothing indicates that she means to leave her place."],
+        ["It is favorable, as her unusual silence on the subject of her new mistress indicates.",
+         "This is the younger maids’ reading; the cook, who knows Martha best, points to a quiet disobedience that suggests the opposite."],
+        ["It is not yet settled, since Mrs. Lyle has only recently come to the Grange.",
+         "Nothing says that Mrs. Lyle has only just arrived, and Martha’s deliberate return to the old routine suggests her mind is made up."],
+        ["It is shared by the cook, whose remark shows that she too resents Mrs. Lyle’s orders.",
+         "The cook only notices what Martha does; nothing shows the cook’s own opinion of Mrs. Lyle."],
       ],
       explanation:
         "The younger maids take Martha’s silence for approval, but the cook notices that Martha keeps the late mistress’s day for the silver and ignores Mrs. Lyle’s order. From a woman known to speak her mind, silence joined to quiet disobedience signals disapproval.",
@@ -1380,9 +1431,12 @@
       anchors: ["steering by it as much as by the lighthouse itself", "to keep a lamp burning in that upper window"],
       key: "It had become a guide for the fishermen, though no one had meant it to serve as one.",
       wrong: [
-        ["It had been lit each night by the keeper’s daughter as a signal to one of the fishermen.", "The text says that she sat up reading; nothing suggests the lamp was a signal to anyone."],
-        ["It had given the fishermen a surer guide home than the lighthouse’s own great light.", "The fishermen steered by it as much as by the lighthouse, not more; this overstates what the text says."],
-        ["It was blamed by the village for the wrecks, since the keeper had failed to tend it.", "The text says that no one blamed the keeper, and the lamp was his daughter’s reading light, not one of his duties."],
+        ["It had been lit each night by the keeper’s daughter so that the fishermen would have a second light to steer by.",
+         "The text says that she sat up reading; the fishermen came to steer by her lamp, but nothing suggests she lit it for them."],
+        ["It had given the fishermen a surer guide home than the lighthouse’s own great light.",
+         "The fishermen steered by it as much as by the lighthouse, not more; this overstates what the text says."],
+        ["It had guided the fishermen so well that the village thought the lighthouse itself no longer necessary.",
+         "The great light burned faithfully and no one blamed the keeper; the village added a lamp to the lighthouse rather than replacing it."],
       ],
       explanation:
         "The fishermen steered by the lamp as well as by the lighthouse; when it went dark, two boats that had always come home safely were wrecked; and the village then quietly paid to keep a lamp in that window. A lamp lit only for reading had become part of how the boats found their way.",
@@ -1397,9 +1451,12 @@
       anchors: ["secured his memory for ever", "remembered as a statue"],
       key: "They become familiar landmarks while doing little to preserve the memory of those they honor.",
       wrong: [
-        ["They secure the memory of the great men they honor for as long as the bronze endures.", "This is what the town supposes when it raises the statue; the author says the event seldom bears it out."],
-        ["They are noticed only by strangers, who alone trouble to read the names cut into their bases.", "Only strangers read the name, but the author says the statue itself is remembered by everyone."],
-        ["They should give way to public editions of the great man’s books, by which he is remembered.", "The author observes that the man is remembered through his books but proposes nothing about replacing statues."],
+        ["They secure the memory of the great men they honor for as long as the bronze endures.",
+         "This is what the town supposes when it raises the statue; the author says the event seldom bears it out."],
+        ["They are noticed only by strangers, who alone trouble to read the names cut into their bases.",
+         "Only strangers read the name, but the author says the statue itself is remembered by everyone."],
+        ["They preserve the great man’s memory better than his books do, since everyone remembers the statue.",
+         "Everyone remembers the statue “as a statue”; the man himself is remembered, if at all, by those who have read his books."],
       ],
       explanation:
         "The town expects the statue to secure the great man’s memory, but within a generation it serves as a meeting place and a landmark whose inscription only strangers read. The author concludes that the statue is remembered as a statue, while the man is remembered, if at all, through his books.",
@@ -1414,9 +1471,12 @@
       anchors: ["by long and patient watching", "cannot tell us why the thrush sings"],
       key: "His patient watching yielded knowledge of creatures’ habits that a laboratory cannot supply.",
       wrong: [
-        ["His knowledge was of greater value than the laboratory worker’s, being drawn from living creatures.", "The author says neither kind of knowledge is to be despised; he ranks neither above the other."],
-        ["He understood better than the laboratory worker how the wing of a bird is made.", "The author assigns knowledge of how a wing is made to the laboratory, not to the hedgerow."],
-        ["His methods could answer questions about birdsong that no one has since thought worth asking.", "The author says the laboratory cannot answer such questions, not that no one asks them any longer."],
+        ["His knowledge was of greater value than the laboratory worker’s, being drawn from living creatures.",
+         "The author says neither kind of knowledge is to be despised; he ranks neither above the other."],
+        ["His knowledge, being gained only by watching, was less exact than that of the laboratory worker.",
+         "The author ranks neither kind of knowledge above the other, and exactness is never discussed; the laboratory simply answers different questions."],
+        ["His methods could answer questions about birdsong that no one has since thought worth asking.",
+         "The author says the laboratory cannot answer such questions, not that no one asks them any longer."],
       ],
       explanation:
         "The author credits the old naturalist with knowledge gained by “long and patient watching” and later notes that the laboratory cannot explain why the thrush sings from one bough at dusk, a question of habit. Joined, the two show that the old method supplies knowledge of habits that the laboratory cannot.",
@@ -1431,9 +1491,12 @@
       anchors: ["means to return it to what it was", "existed at no single moment"],
       key: "They can erase the record of a house’s past and yield a building no earlier age knew.",
       wrong: [
-        ["They succeed in returning an old house to the state in which its first builders left it.", "This is the owner’s aim; the author argues that the result is a house that existed at no single moment."],
-        ["They are justified when the additions removed are recent, like a Victorian tenant’s porch.", "The author makes no exception for recent additions; the Victorian porch is one of the intrusions he calls the history of the house."],
-        ["They fail chiefly because modern workmen cannot match the skill of the original builders.", "The author objects to what restorers remove, not to the quality of their work; workmanship is never mentioned."],
+        ["They succeed in returning an old house to the state in which its first builders left it.",
+         "This is the owner’s aim; the author argues that the result is a house that existed at no single moment."],
+        ["They are justified when the additions removed are recent, like a Victorian tenant’s porch.",
+         "The author makes no exception for recent additions; the Victorian porch is one of the intrusions he calls the history of the house."],
+        ["They keep a house’s history intact so long as its oldest parts are left untouched.",
+         "The author calls the later additions themselves the history of the house; keeping the oldest parts while stripping the rest still erases that history."],
       ],
       explanation:
         "The owner means to return the house to what it was, but the author calls the removed additions the house’s own history and says the result existed at no single moment. The restoration therefore erases the record of the house’s changes and creates a building that no period actually saw.",
@@ -1482,9 +1545,12 @@
       anchors: ["because it is wanting from his series", "he might well not stop for"],
       key: "He values a teapot chiefly for the gap it fills in his series, not its beauty.",
       wrong: [
-        ["He has come to prefer ugly teapots to beautiful ones as his taste has changed.", "He pays for the ugly teapot because it is missing from his series, not because it is ugly; nothing shows that his taste now favors ugliness."],
-        ["He loves his teapots more deeply now than he did when he first began collecting.", "The author suggests the reverse: the collector might not even stop for the kind of teapot that first charmed him."],
-        ["He buys teapots chiefly as investments that he expects to rise in value.", "The text mentions the high price he pays, not any hope of profit; it explains his purchases by the gaps in his series."],
+        ["He has come to prefer ugly teapots to beautiful ones as his taste has changed.",
+         "He pays for the ugly teapot because it is missing from his series, not because it is ugly; nothing shows that his taste now favors ugliness."],
+        ["He values each teapot for the memory of how he acquired it more than for its beauty.",
+         "He does value something other than beauty, but the text names it: the gap a teapot fills in his series, not any memory of buying it."],
+        ["He buys teapots chiefly as investments that he expects to rise in value.",
+         "The text mentions the high price he pays, not any hope of profit; it explains his purchases by the gaps in his series."],
       ],
       explanation:
         "After twenty years the collector passes up a beautiful teapot whose pattern he already owns and pays heavily for an ugly one that is missing (“wanting”) from his series; he might not even stop for the kind of teapot that first charmed him. What he now values is completing the series, not the beauty of any one piece.",
