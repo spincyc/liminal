@@ -449,3 +449,15 @@ test("skills in sections with unverified difficulty labels show accuracy only", 
   assert.equal(Analytics.nextFocus(rows).row.skill, "Punctuation");
   assert.deepEqual([Analytics.skillMap(answers.slice(0, 3), act, { tiered: () => false })[0].state], ["not-enough-data"]);
 });
+
+test("first-sight accuracy takes each design's first answer only", () => {
+  const hard = (templateId, correct) => attempt({ templateId, questionId: `sat-math:${templateId}:${counter}`, difficulty: "Hard", correct });
+  const attempts = [
+    hard("a", false), hard("a", true), hard("a", true), // met, missed, then learned
+    hard("b", true),
+    attempt({ templateId: "c", questionId: "sat-math:c:1", difficulty: "Medium", correct: false }),
+    attempt({ templateId: "d", questionId: "act-english-0001", source: "bank", difficulty: "Hard" }),
+  ];
+  assert.deepEqual(Analytics.firstSight(attempts, "Hard"), { attempted: 2, correct: 1, accuracy: 0.5 });
+  assert.deepEqual(Analytics.firstSight(attempts), { attempted: 3, correct: 1, accuracy: 1 / 3 });
+});

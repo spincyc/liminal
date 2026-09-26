@@ -304,6 +304,29 @@
     return counts;
   }
 
+  /* ------------------------------------------------------- first sight */
+
+  // Accuracy on the first answer to each question design (template): the
+  // first time the student met it, before any practice on it could turn
+  // recognition into recall. A heavy user meets every Hard design several
+  // times, so Hard accuracy can rise with familiarity whatever the skill;
+  // this one cannot. `tier` narrows to one difficulty. Returns { attempted,
+  // correct, accuracy }.
+  function firstSight(attempts, tier) {
+    const seen = new Set();
+    const firsts = [];
+    (attempts || []).filter((attempt) => attempt && attempt.source === "template" && counted(attempt))
+      .slice()
+      .sort(byTime)
+      .forEach((attempt) => {
+        const design = `${sectionOf(attempt)}|${designOf(attempt)}`;
+        if (seen.has(design)) return;
+        seen.add(design);
+        if (!tier || attempt.difficulty === tier) firsts.push(attempt);
+      });
+    return tally(Progress.stats(firsts));
+  }
+
   /* ----------------------------------------------------------- diagnostic */
 
   // The templates of the "Start here" diagnostic. Seats go to domains in
@@ -765,6 +788,7 @@
     sortSkills,
     nextFocus,
     stateCounts,
+    firstSight,
     // diagnostic
     chooseDiagnostic,
     orderByTier,

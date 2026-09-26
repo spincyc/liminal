@@ -432,6 +432,17 @@
       return node;
     }
 
+    // Beside Hard accuracy, the same on each Hard design's first appearance,
+    // which familiarity with a design cannot raise.
+    function hardNote(hard) {
+      if (!hard.attempted) return "No Hard questions yet";
+      const first = Analytics.firstSight(model.attempts, "Hard");
+      const counted = `${count(hard.attempted, "Hard question")} counted`;
+      return first.attempted
+        ? `${counted}; ${percent(first.accuracy)} on the ${count(first.attempted, "design")} seen for the first time`
+        : counted;
+    }
+
     function renderStats() {
       const { summary, rows, progress, test, tiered } = model;
       const hard = summary.byDifficulty.Hard;
@@ -446,8 +457,7 @@
         // Hard accuracy stands alone: overall accuracy on a mostly Easy and
         // Medium mix is what makes practice look better than the real test.
         tiered
-          ? card("Hard accuracy", percent(hard.accuracy),
-            hard.attempted ? `${count(hard.attempted, "Hard question")} counted` : "No Hard questions yet")
+          ? card("Hard accuracy", percent(hard.accuracy), hardNote(hard))
           : card("Hard accuracy", "—", untiered),
         tiered
           ? card("Skills at the gate", `${states["at-gate"] + states.mastered} / ${rows.length}`,

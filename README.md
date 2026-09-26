@@ -39,7 +39,9 @@ never recorded. Liminal is now built to keep practice honest:
 - **Every answer counts, once.** A blank counts as wrong, a correct answer
   after a hint is shown apart, a second answer to a question you have seen
   (as when Review brings a miss back) is left out of accuracy, and Hard
-  accuracy is reported on its own.
+  accuracy is reported on its own, beside Hard accuracy on each question
+  design the first time you meet it, which practice on that design cannot
+  raise.
 - **No score estimates.** Accuracy here is not a scaled score. Official
   practice tests in [Bluebook](https://bluebook.collegeboard.org/) are the
   score gauge.
