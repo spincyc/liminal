@@ -70,6 +70,50 @@ A second pattern: the tested idea usually comes after the turn word.
 > critics object that the method is slow. Yet its accuracy..."), or the text
 > has no turn at all. Find the author's own position, wherever it sits.
 
+Literary texts (a story, a poem, or prose written in an older style) state
+their point less directly. The main idea is usually what a character comes
+to feel or understand, shown by what the character does, and it often
+differs from what the character says at the start. Long sentences and older
+words (lest means "for fear that") slow you down, but the method is the
+same: find the turn and choose the statement that covers the whole text.
+
+> **Example.** Read the text and answer the question.
+>
+> The following text is from an original story written in a
+> nineteenth-century style.
+>
+> When her brother died, Mrs. Ashby resolved to sell his clocks, of which
+> there were eleven, and declared to every caller that she had never cared
+> for any of them. Yet she wound them each evening, lest a buyer should find
+> them in poor order, and she learned which of them ran fast and which ran
+> slow, and set them right. In March a dealer came from the county town and
+> named a fair price for the lot. Mrs. Ashby heard him out, thanked him, and
+> said that the house would be very quiet at night without them, and that
+> she would think on it until the spring was over.
+>
+> Which choice best states the main idea of the text?
+>
+> A) Mrs. Ashby never cared for the clocks and is glad when a dealer finally
+> offers to buy them.
+>
+> B) Mrs. Ashby winds the clocks every evening so that a buyer will find
+> them in good order.
+>
+> C) Although Mrs. Ashby says she never cared for her brother's clocks, she
+> has grown attached to them.
+>
+> D) Mrs. Ashby turns the dealer down because she thinks his price for the
+> clocks is too low.
+>
+> The first sentence gives what Mrs. Ashby says; "Yet" turns to what she
+> does. She tends the clocks every night, learns their habits, and when a
+> fair offer comes she puts it off because the house "would be very quiet
+> at night without them". A takes her first words at face value, and the
+> ending contradicts it. B is the reason she gives for winding the clocks,
+> a detail rather than the point, and her care goes further than a sale
+> needs. D invents a complaint about the price, which the text calls fair.
+> C is correct.
+
 ## Supporting detail {#supporting-detail}
 
 Typical stems: "According to the text, what is true about ...?" and "Based on

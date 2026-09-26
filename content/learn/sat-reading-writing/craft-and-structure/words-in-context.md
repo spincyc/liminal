@@ -65,6 +65,44 @@ common word is tested, the familiar meaning is often the trap.
 > in a sentence about police, it means arrest. Always decide from the clue,
 > then check the choice in the sentence.
 
+Texts written in an older style use some common words in senses that have
+since faded: sensible (aware), want (lack), presently (soon), nice
+(precise), indifferent (mediocre). There the modern meaning is usually the
+trap, and the clue in the text still decides.
+
+> **Example.** Read the text and answer the question.
+>
+> The following text is from an original letter written in a
+> nineteenth-century style.
+>
+> I was not sensible, until your letter came, how long I had neglected our
+> correspondence. I had supposed it a matter of some weeks, and I find, on
+> looking at the date of your last, that it has been nearly a year. You
+> will forgive me, I hope, when I tell you that the winter has been a hard
+> one, and that I have thought of you far more often than I have written.
+>
+> As used in the text, what does the word "sensible" most nearly mean?
+>
+> A) reasonable
+>
+> B) ashamed
+>
+> C) hopeful
+>
+> D) aware
+>
+> The clue is the next sentence: the writer had supposed the silence lasted
+> weeks and finds that it has been nearly a year. Until the letter came,
+> the writer didn't know how long it had been. Prediction: "conscious".
+> A is the word's usual meaning today, which says nothing about knowing how
+> long. B names a feeling the writer might have, but the sentence is about
+> not knowing the length of the silence. C borrows "I hope" from a later
+> sentence. D is correct.
+
+> **Fails when.** The older text uses the word in its modern sense, as it
+> does most words. An older style tells you to check for a faded meaning,
+> not to assume one; the clue decides.
+
 ## Precision {#precision}
 
 Stem: "Which choice completes the text with the most logical and precise

@@ -74,6 +74,55 @@ support the researcher's hypothesis?"
 > **Trap.** Relevance is not support. Every choice here mentions the story's
 > situation; only one demonstrates the specific claim.
 
+With a poem, the same test applies line by line. Find each quotation in the
+poem and read what comes before it: the lines that set up the situation are
+often offered as choices, and the claim is usually about what comes after
+the turn.
+
+> **Example.** Read the text and answer the question.
+>
+> The following text is from an original poem.
+>
+> ```
+> At two a.m. the avenue lies still,
+> its windows dark, its signals blinking red;
+> a stranger walking through would think the town
+> had locked its doors and gone at once to bed.
+>
+> But in the bakery on Fuller Street
+> the ovens have been roaring since eleven,
+> and in the hospital beside the bridge
+> a nurse goes bed to bed from one till seven.
+>
+> At dawn the town comes down and buys its bread
+> still warm, and never asks whose hands were floured;
+> it thanks the quiet night for its good sleep
+> and does not count the other people's hours.
+> ```
+>
+> In the poem, the speaker suggests that the town enjoys the results of
+> work done overnight without noticing the people who did it. Which
+> quotation from the poem most effectively illustrates the claim?
+>
+> A) "a stranger walking through would think the town / had locked its
+> doors and gone at once to bed"
+>
+> B) "But in the bakery on Fuller Street / the ovens have been roaring since
+> eleven"
+>
+> C) "At dawn the town comes down and buys its bread / still warm, and never
+> asks whose hands were floured"
+>
+> D) "At two a.m. the avenue lies still, / its windows dark, its signals
+> blinking red"
+>
+> The claim has two parts: the town enjoys what the night's work produced,
+> and it doesn't notice who did the work. A and D describe how the town
+> looks at night, the setup before "But". B shows the work going on, but
+> not the town enjoying it or overlooking the workers. C shows both: the
+> town buys the warm bread and never asks whose hands made it. C is
+> correct.
+
 ## Quantitative evidence {#quantitative-evidence}
 
 Stem: "Which choice most effectively uses data from the table to support
