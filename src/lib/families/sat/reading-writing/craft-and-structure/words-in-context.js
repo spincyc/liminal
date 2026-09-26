@@ -1556,11 +1556,14 @@
     domain: "Craft and Structure",
     skill: "Words in Context",
     subskill: "meaning in context",
-    difficulty: "Hard",
+    // Medium (relabelled from Hard, 2026-09-26): a cold review found that the
+    // settling detail states the needed sense plainly, so a careful reading
+    // decides it; the trap is real, but no structure has to be worked out.
+    difficulty: "Medium",
     title: "Word with two opposite senses",
     recognize:
       "The word has two opposite senses; the opening makes the wrong one attractive, and a later detail settles which is meant.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 2 },
     tricks: ["opposite-stance", "common-meaning", "word-association"],
     build(t) {
       const topic = t.pick(WIC_CONTRONYM_TOPICS);
@@ -1834,11 +1837,15 @@
   // piece of writing; the details show one quality, and each distractor names
   // a neighboring quality (cautious vs. reserved, thorough vs. narrow, biased
   // vs. combative) that the details do not show, or a quality the text
-  // assigns to something else. Every key recurs as a distractor elsewhere.
+  // assigns to something else. Every key recurs as a distractor elsewhere,
+  // and the pool of thirty words is wide enough that a student cannot learn
+  // it from a few drills.
   const WIC_STANCE_WORDS = new Set([
     "circumspect", "tendentious", "cursory", "exhaustive", "idiosyncratic", "derivative",
     "sanguine", "ambivalent", "polemical", "reticent", "meticulous", "dispassionate",
     "circumscribed", "archaic", "rudimentary", "diffident", "equivocal", "perfunctory", "candid", "pedantic",
+    "laconic", "effusive", "hagiographic", "parochial", "eclectic", "credulous", "sardonic", "deferential",
+    "desultory", "scrupulous",
   ]);
 
   const WIC_STANCE_TOPICS = [
@@ -2009,6 +2016,146 @@
       why: "Despite her personal loss, Vells judges the engineers fairly, credits officials, and avoids unsupported conclusions, so the account is dispassionate: free of personal feeling or bias.",
       trap: "Choosing “polemical,” what her personal loss might lead a reader to expect, rather than what the account actually does.",
       hint: "What might her loss have led her to write, and what did she write instead?",
+    },
+    {
+      scene: "cs-dahl-ice-journal",
+      text: "The explorer Ivar Dahl wrote long, confiding letters to his family, but the journal he kept while crossing the Varn ice cap is famously ______. Where his companions filled page after page describing the storm that pinned them in their tents for eleven days, Dahl’s entry for the whole period reads, in full, “Wind. Waited.”",
+      clues: ["filled page after page", "in full, “Wind. Waited.”"],
+      key: "laconic",
+      wrong: [
+        ["effusive", "An effusive journal would pour out description and feeling; Dahl covers eleven days in two words."],
+        ["meticulous", "“Meticulous” fits the companions, who filled page after page; Dahl’s two-word entry records almost nothing."],
+        ["idiosyncratic", "Nothing suggests the journal follows odd habits of Dahl’s own; the details stress how few words it uses."],
+      ],
+      why: "Dahl’s companions wrote pages about the storm, while his entry for eleven days is two words, so the journal is laconic: using very few words.",
+      trap: "Choosing “meticulous,” the quality of the companions’ pages, rather than of Dahl’s own entry.",
+      hint: "How many words does Dahl use for eleven days, compared with his companions?",
+    },
+    {
+      scene: "cs-berg-letters-pear-tree",
+      text: "Critics who knew only Anna Berg’s spare, restrained novels were startled by her letters, which the Kell Library published last year. The letters are ______: a single one to her sister runs to thirty pages, praises a pear tree in the garden as “the most generous creature alive,” and signs off with six exclamation marks.",
+      clues: ["runs to thirty pages", "six exclamation marks"],
+      key: "effusive",
+      wrong: [
+        ["laconic", "“Laconic” would suit the spare novels, which the letters are contrasted with; a thirty-page letter is the reverse."],
+        ["reticent", "A reticent writer holds back feelings, but these letters pour out praise and excitement."],
+        ["tendentious", "The letters argue no cause; the details show unrestrained feeling, not a slant."],
+      ],
+      why: "Thirty pages to a sister, lavish praise for a pear tree, and six exclamation marks show letters that are effusive: overflowing with feeling.",
+      trap: "Choosing “laconic,” the quality of the spare novels that the letters are set against.",
+      hint: "What do the length, the praise, and the exclamation marks show about the letters?",
+    },
+    {
+      scene: "cs-ruiz-first-biography",
+      text: "The first biography of the physician Clara Ruiz, written by one of her former students a year after her death, is frankly ______. It credits Ruiz with every advance made in the city’s hospitals during her lifetime, omits the lawsuit that nearly ended her career, and describes her temper, which her own letters show was fearsome, as “a holy impatience with suffering.”",
+      clues: ["credits Ruiz with every advance", "omits the lawsuit"],
+      key: "hagiographic",
+      wrong: [
+        ["dispassionate", "A dispassionate biography would weigh her faults fairly; this one omits them or recasts them as virtues."],
+        ["exhaustive", "A biography that leaves out a lawsuit that nearly ended her career is not complete."],
+        ["sardonic", "Nothing in it mocks Ruiz; its praise is sincere, even reverent."],
+      ],
+      why: "Crediting Ruiz with every advance, omitting the lawsuit, and turning her temper into saintliness make the biography hagiographic: reverently idealizing its subject.",
+      trap: "Choosing “exhaustive” because the biography makes sweeping claims, although it leaves out what does not flatter Ruiz.",
+      hint: "What does the biography do with Ruiz’s faults?",
+    },
+    {
+      scene: "cs-harlow-strike-history",
+      text: "The Harlow Historical Society’s new history of the 1911 textile strike is admirably detailed about the mills of Harlow itself, but it is also ______. It never mentions that workers in six neighboring towns walked out the same week, or that the strike’s leaders had come from the port of Kell, and it treats the strike throughout as a purely local quarrel.",
+      clues: ["never mentions that workers in six neighboring towns", "a purely local quarrel"],
+      key: "parochial",
+      wrong: [
+        ["exhaustive", "The history is detailed about Harlow, but it leaves out the neighboring towns and the leaders from Kell, so it is not complete."],
+        ["eclectic", "Nothing suggests the history draws on unusually varied sources; its problem is how narrowly it looks."],
+        ["hagiographic", "The history praises no one person; its fault is ignoring everything beyond Harlow."],
+      ],
+      why: "The history ignores the walkouts in six neighboring towns and the leaders from Kell and treats the strike as purely local, so it is parochial: limited to a narrow, local outlook.",
+      trap: "Choosing “exhaustive” because the history is detailed about Harlow, although it ignores everything outside the town.",
+      hint: "What does the history leave out, and where are those events?",
+    },
+    {
+      scene: "cs-veen-ostby-library",
+      text: "The architect Rosa Veen’s library for the town of Ostby draws on sources that rarely meet: its reading room copies the vaulted ceiling of a medieval monastery, its stairwell borrows the curves of a 1920s ocean liner, and its garden is laid out like a Japanese moss court. Critics disagree about whether the result is coherent, but none dispute that Veen’s taste is ______.",
+      clues: ["sources that rarely meet", "a Japanese moss court"],
+      key: "eclectic",
+      wrong: [
+        ["parochial", "A parochial taste would stay close to home; Veen draws on a monastery, an ocean liner, and a Japanese garden."],
+        ["archaic", "The monastery ceiling is old, but the 1920s liner is not; the details stress range, not age."],
+        ["rudimentary", "Nothing suggests the design is crude or undeveloped; the text describes its many sources."],
+      ],
+      why: "A monastery ceiling, an ocean liner’s curves, and a Japanese moss court are sources that rarely meet, so Veen’s taste is eclectic: drawn from a wide range of sources.",
+      trap: "Choosing “archaic” from the medieval monastery, although the other sources are modern.",
+      hint: "What do the three sources have in common, and how do they differ?",
+    },
+    {
+      scene: "cs-marsh-keswa-travels",
+      text: "Early reviewers praised the travel writer Hugo Marsh’s accounts of the Keswa River, but a later editor found them ______. Marsh recorded as fact a fisherman’s claim that the river’s eels live for three hundred years, repeated without comment a guide’s story that a village had been built by giants, and paid without question every price he was quoted.",
+      clues: ["recorded as fact", "repeated without comment"],
+      key: "credulous",
+      wrong: [
+        ["circumspect", "A circumspect writer would weigh such claims with care; Marsh accepted them without question."],
+        ["sanguine", "The early reviewers were admiring, but nothing shows Marsh himself was especially hopeful; the details show belief without doubt."],
+        ["desultory", "Nothing suggests the accounts wander without plan; the problem is how readily Marsh believed what he was told."],
+      ],
+      why: "Marsh accepted three-hundred-year-old eels, a village built by giants, and every quoted price without question, so the editor found his accounts credulous: too ready to believe.",
+      trap: "Choosing “circumspect,” a word for careful judgment, which describes the opposite of what Marsh did.",
+      hint: "How did Marsh treat the claims people made to him?",
+    },
+    {
+      scene: "cs-moreau-bridge-paint",
+      text: "Asked by a reporter what she thought of the city’s plan to fix the rusting Varne Bridge by repainting it, the engineer Ilse Moreau was ______. “An excellent idea,” she said. “Rust is well known to be afraid of the color blue.”",
+      clues: ["An excellent idea", "afraid of the color blue"],
+      key: "sardonic",
+      wrong: [
+        ["effusive", "Her praise, “An excellent idea,” is not meant; the joke about rust shows she mocks the plan."],
+        ["sanguine", "A sanguine engineer would expect the plan to work; her remark about rust fearing blue shows she thinks it cannot."],
+        ["credulous", "A credulous engineer would believe the plan would work; Moreau plainly does not."],
+      ],
+      why: "Moreau praises the plan and then jokes that rust fears blue paint, mocking the idea that paint will fix rust, so she was sardonic: grimly mocking.",
+      trap: "Choosing “effusive” from the words “An excellent idea,” which the joke that follows shows are not sincere.",
+      hint: "Does Moreau mean what she says in her first sentence?",
+    },
+    {
+      scene: "cs-serra-brenn-rehearsal",
+      text: "In his memoir, the young conductor Paolo Serra describes his first rehearsal with the aging composer Lotte Brenn as a lesson in ______ behavior. He addressed her only as “Maestra,” asked her permission before changing so much as a single tempo marking, and accepted without argument her decision to cut a passage he loved.",
+      clues: ["asked her permission", "accepted without argument"],
+      key: "deferential",
+      wrong: [
+        ["sardonic", "Nothing in Serra’s conduct mocks Brenn; he treats her with great respect."],
+        ["polemical", "He accepted her decisions without argument, the reverse of combative."],
+        ["candid", "A candid conductor would speak his mind, but Serra kept his objection to the cut to himself."],
+      ],
+      why: "Addressing Brenn as “Maestra,” asking permission for any change, and accepting her cut without argument are deferential: yielding respectfully to another’s authority.",
+      trap: "Choosing “candid,” although Serra accepted the cut of a passage he loved without saying so.",
+      hint: "How did Serra treat Brenn’s authority over the music?",
+    },
+    {
+      scene: "cs-flood-committee-inquiry",
+      text: "The committee’s investigation into the spring floods was ______ at best. Its members met four times in two years, often without enough members present to vote; they interviewed engineers in one district but not in the other two; and they began, then abandoned, a survey of the city’s drains, leaving its forms half completed in a filing cabinet.",
+      clues: ["met four times in two years", "began, then abandoned"],
+      key: "desultory",
+      wrong: [
+        ["exhaustive", "An investigation that skipped two districts and abandoned its survey was not complete."],
+        ["scrupulous", "A scrupulous inquiry would take care over every step; this one left its work half done."],
+        ["deferential", "Nothing suggests the committee yielded to anyone; its failing is a lack of steady effort."],
+      ],
+      why: "Four meetings in two years, one district of three, and an abandoned survey show an investigation that was desultory: lacking plan, purpose, or steady effort.",
+      trap: "Choosing “scrupulous” or “exhaustive,” the qualities the investigation lacked.",
+      hint: "How steadily and completely did the committee pursue its work?",
+    },
+    {
+      scene: "cs-aberg-letter-correction",
+      text: "Scholars who rely on the archivist Nils Aberg’s editions of the Vasko family papers are grateful that he was so ______. When he learned that a letter he had published in 1990 was misdated by a single year, he printed a correction in the next volume, reprinted the letter in full, and wrote to every library that owned the first volume asking that a note be added to its copy.",
+      clues: ["Scholars who rely", "misdated by a single year"],
+      key: "scrupulous",
+      wrong: [
+        ["pedantic", "“Pedantic” would criticize fuss over trivia, but the scholars who rely on his editions are grateful for his care."],
+        ["cursory", "Correcting a one-year error in print and writing to every library is the reverse of hasty work."],
+        ["idiosyncratic", "Nothing suggests his methods were peculiar to him; the details show thoroughness and honesty."],
+      ],
+      why: "Aberg corrected even a one-year error publicly and thoroughly, and scholars are grateful, so he was scrupulous: careful and honest about getting every detail right.",
+      trap: "Choosing “pedantic,” which shares the attention to detail but carries a criticism that the scholars’ gratitude rules out.",
+      hint: "Do the scholars value Aberg’s attention to detail or complain about it?",
     },
   ];
 

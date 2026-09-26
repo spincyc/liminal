@@ -206,8 +206,11 @@
   /* ------------------------------------------- 2. function: specific example */
 
   // A general claim, then the quoted sentence: one concrete case of it. The
-  // key's verb rotates (offers, gives, illustrates, describes, provides,
-  // presents) and the distractors use the same verbs, so no phrase marks it.
+  // key's verb rotates (offers, gives, describes, provides, presents) and the
+  // distractors use the same verbs. In some scenes the counter-case shares
+  // the key's frame and in others the counter-case and the cause share one,
+  // so neither the most alike pair nor the choice most like the others marks
+  // the key.
   const TSP_EXAMPLE_TOPICS = [
     {
       scene: "cs-octopus-texture",
@@ -215,29 +218,29 @@
       example: "One common octopus filmed off a rocky shore raised dozens of small bumps along its back until it resembled the barnacle-crusted stone beside it.",
       after: "Such shifts in texture help an octopus disappear against surfaces that color alone could not match.",
       key: "It offers a specific case of an octopus changing the texture of its skin to hide.",
-      contra: "It describes an octopus whose behavior runs counter to the claim about texture.",
+      contra: "It describes the behavior of an octopus that runs counter to the claim about skin texture.",
       main: "It states the general claim about octopus skin that the text then supports.",
-      cause: "It gives the reason octopuses are able to change the color of their skin.",
+      cause: "It describes the reason that an octopus is able to change the color of its skin.",
     },
     {
       scene: "cs-shade-coffee-birds",
       claim: "Coffee farms that keep native trees standing over their crops can shelter a surprising variety of birds.",
       example: "On one shade-grown farm in the hills above Sollano, surveyors counted more than 150 bird species among the coffee bushes, nearly as many as in the neighboring forest.",
       after: "Farms that clear the canopy to grow coffee in full sun typically support only a fraction of that number.",
-      key: "It gives one example of a coffee farm that shelters many kinds of birds.",
-      contra: "It offers a case in which shade trees drove most bird species away from a farm.",
-      main: "It introduces the main claim about coffee farms that the text then supports.",
-      cause: "It explains why some farmers grow their coffee in full sun instead.",
+      key: "It gives one example of a coffee farm that shelters a great many kinds of birds.",
+      contra: "It gives one example of a coffee farm whose shade trees drove most birds away.",
+      main: "It introduces the main claim about shade-grown coffee that the text then supports.",
+      cause: "It introduces the reason some farmers grow coffee in full sun, which the text then explains.",
     },
     {
       scene: "cs-silent-film-pianist",
       claim: "Silent films were rarely watched in silence; most theaters hired musicians to accompany every screening.",
       example: "At the Orpheum in Castleton, the pianist Ida Marsh played beneath each film, shifting from gentle waltzes during courtship scenes to pounding chords during chases.",
       after: "For many viewers, such music shaped the mood of a film as much as the images did.",
-      key: "It illustrates the claim with one pianist who played for silent films.",
-      contra: "It describes a theater that showed its silent films without any music.",
-      main: "It presents the text’s main claim about how silent films were shown.",
-      cause: "It offers a reason theaters eventually stopped hiring musicians for films.",
+      key: "It presents one case of a pianist who accompanied silent films at a theater.",
+      contra: "It presents one case of a theater that showed silent films without music.",
+      main: "It states the text’s main claim about how silent films were shown.",
+      cause: "It states why theaters eventually stopped hiring musicians for films.",
     },
     {
       scene: "cs-marsh-road-timber",
@@ -245,29 +248,29 @@
       example: "Where one Roman road in northern Gaul passed through marshland, its builders laid rafts of timber beneath the gravel so that the road would not sink.",
       after: "On firm, rocky ground, the same builders often set their paving stones almost directly on the bedrock.",
       key: "It describes one instance of builders adapting a road to the ground it crossed.",
-      contra: "It gives an example of a road whose builders ignored the ground beneath it.",
+      contra: "It explains how Roman builders came to ignore the ground beneath their roads.",
       main: "It states the general claim about ancient roads that the text supports.",
-      cause: "It explains why Roman roads were built with layers of gravel.",
+      cause: "It explains why Roman roads came to be built with layers of gravel.",
     },
     {
       scene: "cs-bloodroot-ants",
       claim: "Some plants rely on animals to carry their seeds away from the parent plant.",
       example: "Each seed of the bloodroot, a woodland wildflower, bears a small fatty attachment that ants drag back to their nests, where they eat the attachment and discard the seed.",
       after: "The seed is left in rich, protected soil, well placed to sprout the following spring.",
-      key: "It provides one case of a plant whose seeds animals carry off.",
-      contra: "It describes a plant that scatters its seeds with no help from animals.",
+      key: "It provides one case of a plant whose seeds are carried away by animals.",
+      contra: "It explains how a plant can scatter its seeds with no help from animals at all.",
       main: "It introduces the main claim about seed dispersal that the text then supports.",
-      cause: "It explains why ants prefer woodland seeds to other kinds of food.",
+      cause: "It explains why ants prefer woodland seeds to the other food they can find.",
     },
     {
       scene: "cs-ballad-variants",
       claim: "Folk songs often change as they pass from one community to another.",
       example: "The ballad ‘Crossing at Marrow Ford’ is sung in one valley as a tale of lost love and in the next valley as a story about a flooded mill.",
       after: "Singers in each place kept the melody but reshaped the words to suit their own concerns.",
-      key: "It presents one example of a folk song that changed as it traveled.",
-      contra: "It offers a case of a folk song that stays the same wherever it is sung.",
+      key: "It presents one example of a folk song that changed as it traveled from valley to valley.",
+      contra: "It shows that a folk song can stay the same wherever in the valleys it is sung.",
       main: "It states the main claim about folk songs that the text goes on to support.",
-      cause: "It explains why mills often flooded in the valleys where the song is sung.",
+      cause: "It shows why mills often flooded in the valleys where the song is sung.",
     },
     {
       scene: "cs-auto-enrollment",
@@ -275,29 +278,29 @@
       example: "When the Harlow Company began enrolling new employees in its retirement plan automatically, participation rose from about half of new workers to nearly nine in ten.",
       after: "Employees could still leave the plan by filling out a single form, yet few chose to do so.",
       key: "It offers a specific case of a default option shaping people’s choices.",
-      contra: "It describes a case in which a default option had little effect on choices.",
+      contra: "It explains that the default option at the Harlow Company had little effect on choices.",
       main: "It presents the general claim about defaults that the text then supports.",
-      cause: "It provides the reason the Harlow Company offered its workers a retirement plan.",
+      cause: "It explains why the Harlow Company offered its workers a retirement plan at all.",
     },
     {
       scene: "cs-venetian-glass-secrets",
       claim: "Some European cities went to great lengths to protect the secrets of their most valuable crafts.",
       example: "Glassmakers in Venice were forbidden to leave the republic without permission, and those who left to work abroad could be declared traitors.",
       after: "Such rules kept techniques for making clear glass and colored beads within a small circle of workshops for generations.",
-      key: "It gives an example of a city that guarded the secrets of one of its prized crafts.",
-      contra: "It describes a city that freely shared its craft techniques with others.",
+      key: "It gives an example of a city that guarded the secrets of a prized craft.",
+      contra: "It gives an example of a city that freely shared the secrets of a prized craft.",
       main: "It introduces the main claim about craft secrets that the text then supports.",
-      cause: "It explains why Venetian glass was valued above other glass.",
+      cause: "It introduces the reason Venetian glass was valued above other glass.",
     },
     {
       scene: "cs-hummingbird-torpor",
       claim: "Some small birds survive cold nights by letting their bodies cool far below their usual daytime temperature.",
       example: "On freezing nights high in the Andes, certain hummingbirds allow their body temperature to fall below 10°C, then warm themselves again shortly before dawn.",
       after: "By cooling down, a hummingbird can greatly reduce the energy it burns overnight.",
-      key: "It illustrates the claim with birds that cool their bodies on cold nights.",
-      contra: "It gives an example of birds that keep a steady temperature through cold nights.",
+      key: "It describes one case of birds that let their bodies cool on cold nights.",
+      contra: "It describes one case of birds that keep a steady temperature through cold nights.",
       main: "It states the general claim about small birds that the text then supports.",
-      cause: "It explains why hummingbirds need so much energy during the day.",
+      cause: "It states why hummingbirds need so much energy during the day.",
     },
     {
       scene: "cs-courtyard-house",
@@ -305,9 +308,9 @@
       example: "In the town of Ardana, the Merin family’s house is built around a shaded courtyard with a shallow pool, and cool air that collects there at night flows through the rooms well into the afternoon.",
       after: "Thick earthen walls also slow the midday heat from reaching the interior.",
       key: "It describes one instance of a house designed to stay cool without machines.",
-      contra: "It presents a house whose design makes it hotter than the air outside.",
-      main: "It introduces the main claim about traditional houses that the text supports.",
-      cause: "It provides the reason the Merin family chose to build their house in Ardana.",
+      contra: "It explains how the Merin family’s house came to be hotter than the air outside.",
+      main: "It provides the main claim about traditional houses that the text supports.",
+      cause: "It explains why the Merin family chose to build their house in the town of Ardana.",
     },
     {
       scene: "cs-poet-revisions",
@@ -315,9 +318,9 @@
       example: "Her short poem ‘Winter Orchard’ survives in eleven handwritten drafts, and in each one she rewrote the final line.",
       after: "Even after the poem was published, she kept marking changes in the margins of her own copy.",
       key: "It provides a particular case of Brandt revising one poem again and again.",
-      contra: "It describes a poem that Brandt wrote quickly and never changed.",
+      contra: "It provides a particular case of Brandt writing a poem quickly and never changing it.",
       main: "It states the main claim about Brandt that the rest of the text supports.",
-      cause: "It explains why Brandt so often chose orchards as the subject of her poems.",
+      cause: "It states why Brandt so often chose orchards as the subject of her poems.",
     },
   ];
 
@@ -1245,7 +1248,7 @@
     {
       scene: "cs-merrow-bay-founding",
       sentences: [
-        "The harbor town of Merrow Bay takes pride in its well-documented beginning.",
+        "Historians and archaeologists have both studied how the harbor town of Merrow Bay began.",
         "According to the town’s own histories, fishing families who sailed south from the Tarn coast in 1682 were the first people ever to settle there, a date carved above the door of its oldest church.",
         "Excavations beneath the town’s market square last spring, however, uncovered the remains of hearths, grain pits, and iron plow blades.",
         "Radiocarbon dates from the hearths cluster around 1610, which means that a farming community was living on the site some seventy years before the fishermen arrived.",
@@ -1783,6 +1786,84 @@
       ],
       why: "The first sentence gives the Norby example and the second names the pattern. The quoted sentence explains the mechanism (lower time costs draw new trips until congestion returns), which the last two sentences then apply.",
     },
+    {
+      scene: "cs-tidal-mill-date-stone",
+      passage:
+        "For decades, the stone tidal mill at Orrin Creek was dated to the 1600s on the strength of a carved date stone set above its door. Archaeologist Sofia Brandvold noticed that the mortar around the stone differs from the mortar in the rest of the wall. Date stones were often moved from demolished buildings and reused, she points out, so a stone can record the age of an earlier structure rather than the one it now adorns. Timbers from the mill’s wheel pit, dated by their growth rings, were cut around 1760. The mill as it stands, Brandvold concludes, is a century younger than its door suggests.",
+      quoted: "Date stones were often moved from demolished buildings and reused, she points out, so a stone can record the age of an earlier structure rather than the one it now adorns.",
+      key: "It explains why the evidence for the traditional date may mislead.",
+      wrong: [
+        ["It presents the tree-ring evidence that places the mill’s construction around 1760.", "The tree-ring dates come in the next sentence; the quoted sentence explains how a date stone could mislead."],
+        ["It argues that the mill’s later owners forged the carved date stone.", "The sentence says stones were reused from other buildings, not faked; nothing in the text suggests forgery."],
+        ["It describes the difference in mortar that drew Brandvold’s attention to the stone.", "The mortar is described in the sentence before; the quoted sentence gives the general practice that explains it."],
+      ],
+      why: "The mill was dated by its date stone. The quoted sentence explains why such a stone can mislead (stones were reused from older buildings), which prepares for the tree-ring date and the conclusion that the mill is younger.",
+    },
+    {
+      scene: "cs-bilingual-naming-delay",
+      passage:
+        "Children raised with two languages are often slower than children raised with one to name pictures of everyday objects, a finding once taken as evidence that learning two languages confuses the young mind. Psychologist Kaveh Amiri proposed a simpler explanation: a bilingual child divides his or her experience of words between two languages, so each individual word is heard less often. If that is right, the delay should shrink when bilingual children are tested on words they use daily in both languages. Amiri found exactly that: on such words, the bilingual children named pictures as quickly as their peers.",
+      quoted: "If that is right, the delay should shrink when bilingual children are tested on words they use daily in both languages.",
+      key: "It derives a prediction that separates Amiri’s explanation from the earlier one.",
+      wrong: [
+        ["It reports the result that led Amiri to reject the earlier view of bilingual children.", "The result comes in the final sentence; the quoted sentence says what should happen if Amiri is right."],
+        ["It concedes that bilingual children name some kinds of words more slowly than others.", "The sentence is a conditional prediction, not an admission; it concerns words used daily in both languages."],
+        ["It restates the earlier claim that learning two languages confuses young children.", "That claim appears in the first sentence as the view Amiri’s explanation replaces."],
+      ],
+      why: "Amiri explains the delay by how often each word is heard. The quoted sentence turns that explanation into a test (the delay should vanish for words heard often in both languages), and the final sentence reports that it did. A confusion account would not predict that.",
+    },
+    {
+      scene: "cs-varne-heron-trail",
+      passage:
+        "Counts of nesting herons along the Varne estuary fell by nearly half between 2010 and 2020, and local groups blamed disturbance from a new walking trail. Ornithologist Petra Lund compared the Varne with two estuaries nearby that had no new trails. Heron numbers fell by almost the same share at both. Whatever drove the decline, Lund concludes, it was probably not the trail, and she points instead to a regional drop in the eels on which the herons feed. The trail may still disturb nesting birds, but it cannot explain a pattern that appears where there is no trail at all.",
+      quoted: "Heron numbers fell by almost the same share at both.",
+      key: "It reports a comparison that undercuts the explanation the local groups offered.",
+      wrong: [
+        ["It proposes that a regional drop in eels caused the herons’ decline.", "The eel explanation comes in the next sentence; the quoted sentence reports only what the comparison showed."],
+        ["It shows that the new walking trail has no effect on the estuary’s nesting herons.", "The last sentence grants that the trail may still disturb birds; the comparison shows only that it cannot explain the decline."],
+        ["It describes how Lund chose the two estuaries she used for the comparison.", "Her choice of estuaries is described in the sentence before; the quoted sentence gives the result."],
+      ],
+      why: "The local groups blamed the trail. The quoted sentence reports that herons declined just as much where there was no trail, which undercuts that explanation; the rest of the text draws the conclusion and proposes another cause.",
+    },
+    {
+      scene: "cs-harlow-signature-literacy",
+      passage:
+        "Historians estimating literacy in eighteenth-century Harlow have long counted the share of brides and grooms who signed the marriage register with their names rather than with a mark. The method has an obvious flaw: people could be taught to write their names without learning to read, and many who read well never learned to write. Historian Aline Morel therefore turned to a second source, the town’s lending library, whose ledgers record the occupations of its borrowers. Where the two measures overlap, they broadly agree, which suggests that the signature counts, crude as they are, were not badly misleading.",
+      quoted: "The method has an obvious flaw: people could be taught to write their names without learning to read, and many who read well never learned to write.",
+      key: "It names a weakness of the standard measure that prompts the search for another.",
+      wrong: [
+        ["It shows that the signature counts greatly overstated how many people in Harlow could read.", "The flaw could push the counts either way, and the last sentence says they were not badly misleading."],
+        ["It explains why the library ledgers record the occupations of borrowers.", "The ledgers are introduced in the next sentence, and the text never explains what they record."],
+        ["It describes the marriage registers that historians used to estimate literacy.", "The registers are described in the first sentence; the quoted sentence criticizes the method built on them."],
+      ],
+      why: "The first sentence describes the signature method; the quoted sentence names its flaw (signing and reading are different skills), which is why Morel turns to the library ledgers as a second measure.",
+    },
+    {
+      scene: "cs-hive-temperature-thresholds",
+      passage:
+        "Honeybee colonies keep the brood at the center of the hive within a degree of 35°C, even when the air outside swings from near freezing to over 40°C. How individual bees, none of which can sense the state of the whole hive, achieve this has long puzzled researchers. Studying hives on the island of Tamsin, biologist Mei Arden found that bees differ in the temperature at which they begin to fan their wings or to cluster for warmth: some respond to small changes, others only to large ones. Because the colony’s response grows gradually as more bees join in, the hive’s temperature is corrected smoothly rather than in lurches.",
+      quoted: "Studying hives on the island of Tamsin, biologist Mei Arden found that bees differ in the temperature at which they begin to fan their wings or to cluster for warmth: some respond to small changes, others only to large ones.",
+      key: "It reports a finding that begins to answer the puzzle raised just before it.",
+      wrong: [
+        ["It states the puzzle about how honeybee colonies control the temperature of the hive.", "The puzzle is stated in the sentence before; the quoted sentence begins to answer it."],
+        ["It explains why the brood must be kept within a degree of 35°C to survive.", "The text never explains why that temperature matters; it asks how the bees maintain it."],
+        ["It draws the conclusion that the hive’s temperature is corrected smoothly rather than in lurches.", "That conclusion comes in the final sentence, which builds on the finding the quoted sentence reports."],
+      ],
+      why: "The second sentence asks how bees without an overview keep the hive steady; the quoted sentence reports that bees respond at different thresholds, and the last sentence explains how that produces smooth control.",
+    },
+    {
+      scene: "cs-serra-wreck-jars",
+      passage:
+        "The ship that sank off Cape Serra in the 1300s carried hundreds of sealed jars, and early excavators assumed they held wine, the region’s chief export. Residue analysis tells a different story: most jars held olive oil, and a few held fish sauce. Yet the jars themselves are the tall, narrow kind that workshops on the coast made specifically for wine. The likeliest explanation, archaeologist Tomas Varga suggests, is that jars were reused for whatever cargo was at hand, so the shape of a container shows where it was made but not necessarily what it later carried.",
+      quoted: "Yet the jars themselves are the tall, narrow kind that workshops on the coast made specifically for wine.",
+      key: "It presents a detail at odds with the residue findings, a tension the final sentence resolves.",
+      wrong: [
+        ["It confirms the early excavators’ belief that the jars were used to carry wine.", "The residue shows oil and fish sauce; the text treats the wine-jar shape as a puzzle to explain, not as proof of wine."],
+        ["It reports the residue analysis showing that most of the jars held olive oil.", "The residue analysis is reported in the sentence before; the quoted sentence turns to the jars’ shape."],
+        ["It explains why coastal workshops made their wine jars tall and narrow.", "The text never explains the shape; it uses the shape only to raise a puzzle."],
+      ],
+      why: "The residue says oil; the jars’ shape says wine. The quoted sentence introduces that conflict (“Yet”), and the final sentence resolves it: the jars were reused.",
+    },
   ];
 
   const tspAcademicFunction = {
@@ -1969,6 +2050,78 @@
       ],
       why: "The text recounts the 1858 cable’s achievement, attributes its failure within weeks to Whitehouse’s high voltages, and ends with the 1866 cable, which succeeded by following Thomson’s low-voltage method.",
     },
+    {
+      scene: "cs-saint-aldo-tower",
+      passage:
+        "The bell tower of Saint Aldo’s has leaned visibly since at least 1700, and engineers have long blamed the soft clay beneath it. A new survey of the foundations supports that view: the clay under the south side is thicker and wetter than under the north. The survey also found, however, that the tilt has barely changed since 1900, when the town diverted a stream that had run beside the tower. The clay, it seems, explains why the tower leaned; the stream, by keeping that clay soaked, may explain why it kept leaning for so long.",
+      key: "It reports an accepted explanation, confirms it with new evidence, and then adds a factor the explanation missed.",
+      wrong: [
+        ["It reports a long-held explanation, presents new evidence against it, and then replaces that explanation with a better one.", "The survey supports the clay explanation; the stream is added to it, not substituted for it."],
+        ["It describes a tower’s lean, rules out the soft ground beneath it as a cause, and then credits the diverted stream alone.", "The text keeps the clay as the reason the tower leaned; the stream explains only why the leaning continued."],
+        ["It compares two towers that lean for different reasons and then explains which of the two leans is more dangerous.", "The text concerns one tower and never discusses danger."],
+      ],
+      why: "The text states the old explanation (soft clay), confirms it with the survey, and then uses the tilt’s halt after 1900 to add a second factor, the stream that kept the clay wet.",
+    },
+    {
+      scene: "cs-tarn-dialect-towns",
+      passage:
+        "Surveys of regional speech usually record older speakers in small villages, on the theory that they preserve a dialect in its purest form. Linguist Hana Oyelaran argues that this practice has distorted the picture of the Tarn dialect. Recording speakers of all ages in towns as well as villages, she found that younger town speakers use several of its features, such as a distinctive past tense, that older villagers have abandoned. The dialect, on her evidence, is not simply fading from the countryside; parts of it are thriving in places the older surveys never visited.",
+      key: "It describes a common survey practice, challenges it, and uses a broader survey to revise a view that the practice produced.",
+      wrong: [
+        ["It describes a common survey practice, defends it against a critic, and confirms that the dialect is fading from the countryside.", "Oyelaran criticizes the practice, and her evidence shows parts of the dialect thriving."],
+        ["It reports that a dialect is disappearing and then explains why younger speakers in towns have abandoned it.", "Younger town speakers keep features of the dialect that older villagers have dropped."],
+        ["It compares the surveys of two linguists and concludes that neither can be trusted to describe the dialect.", "The text sets one linguist’s broader survey against a common practice and trusts her results."],
+      ],
+      why: "The text describes the usual practice (recording older villagers), reports Oyelaran’s objection, and uses her wider survey to revise the view that the dialect is simply fading.",
+    },
+    {
+      scene: "cs-varek-blue-pigment",
+      passage:
+        "A blue pigment found in wall paintings at the hilltop site of Varek was long thought to have been traded from the east, since the mineral it comes from occurs nowhere nearby. Chemical analysis now shows that the pigment matches a deposit three hundred kilometers to the west. That finding would reverse the direction of the route, but the analysis also detected traces of a binder used only in eastern workshops. The pigment, researchers now suspect, was mined in the west, carried east to be prepared, and brought back to Varek as finished paint.",
+      key: "It gives an accepted account of a material’s origin, reports two findings that conflict, and proposes a route that fits both.",
+      wrong: [
+        ["It gives an accepted account of a material’s origin, reports a finding that overturns it, and concludes that the origin cannot be known.", "The researchers do propose an origin, a route that fits both findings."],
+        ["It presents two rival accounts of a material’s origin and then uses a single finding to confirm the older of them.", "The text starts from one accepted account, and neither finding simply confirms it."],
+        ["It describes how a pigment was prepared in eastern workshops and then explains why it was prized at a hilltop site.", "The text never explains why the pigment was valued; it traces where it came from."],
+      ],
+      why: "The text states the accepted eastern origin, reports a western source and an eastern binder that pull in opposite directions, and proposes a route (west, then east, then back) that fits both.",
+    },
+    {
+      scene: "cs-ostby-school-start",
+      passage:
+        "Students who sleep more tend to earn higher grades, a pattern that has led some schools to push back their starting times. The pattern alone, however, cannot show that sleep improves grades: students with fewer worries and steadier homes may both sleep better and study better. When the Ostby district moved its first bell from 7:30 to 8:30, researchers could compare the same students before and after. Their average sleep rose by forty minutes and their grades rose modestly, a result that points to sleep as a cause more convincingly than the original pattern did.",
+      key: "It presents a correlation, explains why it cannot prove a cause, and describes stronger evidence of one.",
+      wrong: [
+        ["It presents a correlation, argues that it proves a cause, and recommends that every school adopt a later start.", "The text says the correlation alone cannot show a cause, and it makes no recommendation."],
+        ["It presents a correlation, explains why it may mislead, and reports a study that found no effect of sleep on grades.", "The Ostby study found that grades rose along with sleep."],
+        ["It describes one district’s schedule change and then explains why students with steadier homes earn higher grades.", "The steadier-homes point is a possible confounder, raised before the Ostby study, not the text’s conclusion."],
+      ],
+      why: "The text states the sleep–grades pattern, explains why it cannot show causation (other factors could drive both), and describes the Ostby change, which compared the same students and so gives stronger evidence.",
+    },
+    {
+      scene: "cs-kell-market-hall",
+      passage:
+        "The cast-iron market hall in Kell was nearly demolished in 1975, when its stalls stood empty and its roof leaked. Preservationists argued that it was an early example of prefabricated construction, its iron parts cast in one city and bolted together in another. The city council was not persuaded by history alone; what saved the hall was a proposal to turn it into a covered sports ground, which promised to pay for the repairs. Today it hosts basketball games beneath the same iron arches, and its survival is cited in arguments for reuse as often as in arguments for history.",
+      key: "It describes a threat to a building, sets out the historical case for saving it, and credits its survival to a practical plan instead.",
+      wrong: [
+        ["It describes a threat to a building, sets out the historical case for saving it, and credits the building’s survival to that historical case.", "The council was “not persuaded by history alone”; the sports-ground proposal saved the hall."],
+        ["It describes how a building was prefabricated and then explains why prefabricated construction fell out of use.", "The text never discusses the decline of prefabrication."],
+        ["It compares two proposals for a building and argues that the historical one should have been chosen instead.", "The text reports which proposal succeeded and does not argue that the council chose wrongly."],
+      ],
+      why: "The text describes the threat of demolition, the preservationists’ historical argument, and then credits the hall’s survival to a practical reuse plan, noting that its example now serves both arguments.",
+    },
+    {
+      scene: "cs-reef-spawning-cues",
+      passage:
+        "Many corals on a reef release their eggs and sperm on the same few nights each year, and moonlight has long been thought to set the timing. Laboratory work supports a role for the moon: corals kept under artificial moonlight spawn on schedule, while those kept in darkness drift out of step. Yet corals kept under moonlight but at a constant temperature also drift. Researchers now think that the moon sets the night but the season’s warming water sets the month, so that both cues are needed for a reef to spawn together.",
+      key: "It states a long-held view, supports it, reports a result it cannot explain, and proposes that two cues work together.",
+      wrong: [
+        ["It states a long-held view, supports it with experiments, and concludes that moonlight alone sets the timing of spawning.", "The corals at constant temperature drifted even under moonlight, so the text concludes that temperature matters too."],
+        ["It states a long-held view, reports experiments that refute it, and concludes that water temperature alone sets the timing.", "The experiments support a role for the moon, and the conclusion keeps it: the moon sets the night."],
+        ["It describes how corals spawn and then explains why corals in laboratories spawn more often than wild ones.", "The text never compares how often laboratory and wild corals spawn."],
+      ],
+      why: "The text states the moonlight view, supports it with experiments, reports the constant-temperature result that the view cannot explain, and concludes that moonlight and warming water work together.",
+    },
   ];
 
   const tspAcademicStructure = {
@@ -2013,6 +2166,275 @@
     },
   };
 
+  /* ----------------- 11. function of a line or sentence in poems and stories */
+
+  // Hard. Original poems and short-story passages, never excerpts of real
+  // works, each headed honestly. The quoted line or sentence does a literary
+  // job that only the rest of the text reveals: it states a belief the
+  // ending overturns, a reading another character corrects, a detail that
+  // prepares a later moment, or a repetition that stresses a long wait.
+  // Distractors read the line at face value (the turn ignored), describe a
+  // neighboring line's job, or supply a motive or event the text lacks.
+  const TSP_POEM_HEADER = "The following text is from an original poem.";
+  const TSP_STORY_HEADER = "The following text is from an original short story.";
+  const TSP_LITERARY_FUNCTION_TOPICS = [
+    {
+      scene: "cs-litfn-mended-nets",
+      header: TSP_POEM_HEADER,
+      kind: "line",
+      passage:
+        "My father mended nets on winter nights,\nhis fingers finding every broken knot\nthe way a reader finds a missing word.\nI sat and watched and never learned the trick.\nNow, when the lamp is low and the house is still,\nI catch myself with nothing in my hands\nstill tying knots, still pulling each one tight,\nas if the net had waited all these years\nfor me to notice I had learned it after all.",
+      quoted: "I sat and watched and never learned the trick.",
+      key: "It records a belief that the poem’s closing lines reverse.",
+      wrong: [
+        ["It confirms that the speaker never acquired any of the father’s skill with nets.", "This takes the line at face value; the closing lines show that the speaker did learn, “after all.”"],
+        ["It explains how the father was able to find every broken knot in the dark.", "The father’s skill is described in the lines before; the quoted line turns to the speaker."],
+        ["It marks the night on which the speaker first began to mend the nets alone.", "The speaker only watches in the quoted line; the knot-tying comes years later and without any net."],
+      ],
+      why: "The speaker says in the quoted line that the trick was never learned, but the last lines show the speaker’s hands tying knots unprompted, the learning noticed only now. The line sets up a belief that the ending reverses.",
+    },
+    {
+      scene: "cs-litfn-ferry-bridge",
+      header: TSP_POEM_HEADER,
+      kind: "line",
+      passage:
+        "The bridge they said would take ten years to build\nrose slowly past my window on the ferry.\nTwo towers first. Then cables. Then a gap\nthe fog closed every morning as we docked.\nI stopped expecting it to meet itself.\nThis spring the gap was gone. I watched a gull\nwalk the whole span from one shore to the other,\nas if it had been told that what is half-made\ncan still, some ordinary morning, arrive.",
+      quoted: "I stopped expecting it to meet itself.",
+      key: "It marks a lost hope that the next lines show was premature.",
+      wrong: [
+        ["It reveals the speaker’s relief that the bridge would never be completed.", "Nothing suggests the speaker wanted the bridge left unfinished, and the next lines show it completed."],
+        ["It describes the fog that hid the gap between the bridge’s two halves.", "The fog is described in the line before; the quoted line gives the speaker’s response to the long delay."],
+        ["It explains why the builders needed ten years to finish the bridge.", "The poem never explains the delay; the quoted line records what the speaker came to expect."],
+      ],
+      why: "After years of watching an unfinished bridge, the speaker gives up expecting it to close; the next lines (“This spring the gap was gone”) show the bridge finished. The line records a lost hope that events overturn.",
+    },
+    {
+      scene: "cs-litfn-bread-by-feel",
+      header: TSP_POEM_HEADER,
+      kind: "line",
+      passage:
+        "She never wrote the bread down. “Flour,” she’d say,\n“until it feels right,” and I would ask how right,\nand she would laugh and press my palms in the dough.\nThe year she died, I made it from a book:\nfour cups, one packet, forty minutes, done.\nThe loaves came out exactly as described.\nI ate them standing up, and did not cry,\nand the next week I threw the book away\nand put my hands in flour until it felt right.",
+      quoted: "The loaves came out exactly as described.",
+      key: "It reports a flawless result that leaves the speaker unsatisfied.",
+      wrong: [
+        ["It shows that the printed recipe works better than the grandmother’s method.", "The loaves match the book, but the speaker then throws the book away; the poem does not rank the recipe higher."],
+        ["It records the grandmother’s instructions for making the bread.", "Her instructions (“until it feels right”) come in the opening lines, not in the quoted one."],
+        ["It explains why the speaker at last decides to write the recipe down.", "The speaker does the reverse: the book is thrown away and the bread made by feel."],
+      ],
+      why: "The book’s bread comes out exactly right, yet the speaker eats it without feeling and then abandons the book for the grandmother’s method. The flawless result is what the speaker turns away from.",
+    },
+    {
+      scene: "cs-litfn-carrow-light",
+      header: TSP_POEM_HEADER,
+      kind: "line",
+      passage:
+        "My mother kept the light at Carrow Point.\nShe climbed the stairs at dusk for thirty years,\nand every ship that passed went on its way\nnot knowing who had wound the lamp for it.\nI used to think that was the saddest part.\nNow I sit up with sick friends through the night,\nor leave a porch light burning for the late,\nand no one ever knows whose hand it was,\nand I have come to think that was the point.",
+      quoted: "I used to think that was the saddest part.",
+      key: "It states an earlier view of the mother’s work that the speaker’s later acts revise.",
+      wrong: [
+        ["It expresses the speaker’s lasting grief that the mother’s work went unthanked.", "“Used to” marks the view as past, and the last line says the speaker now sees the namelessness as “the point.”"],
+        ["It describes the ships that passed Carrow Point without knowing who kept the light.", "The ships are described in the lines before; the quoted line gives the speaker’s reaction to them."],
+        ["It explains why the speaker decided not to become a lighthouse keeper.", "The poem never says what work the speaker chose; it describes small, unseen kindnesses."],
+      ],
+      why: "The quoted line gives the speaker’s old view that going unknown was sad; the lines after it describe the speaker’s own unseen kindnesses and end “that was the point,” revising the view.",
+    },
+    {
+      scene: "cs-litfn-walked-path",
+      header: TSP_POEM_HEADER,
+      kind: "line",
+      passage:
+        "All morning the snow erased the path.\nMy brother shoveled it at six, and again at nine.\nBy noon he gave it up, and I was glad.\nI thought he’d come inside and warm his hands.\nHe took his boots instead and walked it slowly,\npressing each step down from door to gate,\nso that the mailman and the neighbor’s girl\nand anyone who came would find a trail\nalready made, and follow where he’d been.",
+      quoted: "By noon he gave it up, and I was glad.",
+      key: "It gives a misreading of the brother’s choice that the next lines correct.",
+      wrong: [
+        ["It shows that the brother had finally stopped trying to keep the path open.", "He stops shoveling, but the next lines show him walking the path so others can follow; he never stops keeping it open."],
+        ["It describes the snow that kept erasing the path through the morning.", "The snow is described in the opening line; the quoted line turns to what the brother did and how the speaker felt."],
+        ["It explains how the neighbor’s girl was able to find her way to the gate.", "That is the purpose of the brother’s walking, given in the last lines, not of the quoted one."],
+      ],
+      why: "The speaker thinks the brother has quit and is glad he will rest; instead he walks the path to press a trail for others. The quoted line records the speaker’s misreading that the poem then corrects.",
+    },
+    {
+      scene: "cs-litfn-attic-violin",
+      header: TSP_POEM_HEADER,
+      kind: "line",
+      passage:
+        "In the attic, in a case with broken clasps,\nmy great-aunt’s violin, its strings gone slack.\nNo one in the family plays. We almost sold it.\nBut when I lifted it, the hollow body hummed,\njust once, as if a floorboard’s creak had reached it,\nand in that hum was every room it filled.\nWe put it back. We fixed the clasps. We kept it.",
+      quoted: "No one in the family plays. We almost sold it.",
+      key: "It records a decision that the hum in the next lines reverses.",
+      wrong: [
+        ["It shows that the family valued the violin only for the price it would bring.", "They considered selling it because no one plays, and the ending shows them keeping it; the poem does not reduce their view to its price."],
+        ["It describes the moment when the violin’s hollow body began to hum.", "The hum comes in the next lines, after the speaker lifts the violin."],
+        ["It explains why the violin’s strings had been allowed to go slack.", "The slack strings are simply described; the quoted line concerns what the family meant to do with the violin."],
+      ],
+      why: "The family nearly sells an instrument no one plays; the hum that follows changes their minds, and the poem ends “We kept it.” The line sets up the decision that the hum reverses.",
+    },
+    {
+      scene: "cs-litfn-station-clock",
+      header: TSP_STORY_HEADER,
+      kind: "sentence",
+      passage:
+        "Every evening at six, Mr. Oduya wound the clock in the waiting room of Kessa station, though no train had stopped there in eleven years. Long ago the railway company had sent him a letter saying that his post was abolished. He had read it twice and put it in a drawer. The children who cut across the platform on their way home sometimes stopped to watch him climb the ladder, and one of them, a girl with a torn satchel, had begun to arrive at six exactly, as if the clock kept time for her.",
+      quoted: "He had read it twice and put it in a drawer.",
+      key: "It implies, without saying so, that Mr. Oduya chose to ignore the letter.",
+      wrong: [
+        ["It shows that Mr. Oduya did not understand what the railway company’s letter said.", "He read it twice; the text suggests he understood it and set it aside, since he goes on winding the clock."],
+        ["It explains why no train had stopped at Kessa station for eleven years.", "The text never explains why the trains stopped; the quoted sentence concerns Mr. Oduya’s response to the letter."],
+        ["It introduces the girl who begins arriving at the station at six o’clock.", "The girl appears in the final sentence; the quoted sentence is about the letter."],
+      ],
+      why: "The letter ended his post, yet he read it, put it away, and still winds the clock every evening. The quiet gesture of the drawer implies a decision to ignore the letter rather than stating it.",
+    },
+    {
+      scene: "cs-litfn-borrowed-coat",
+      header: TSP_STORY_HEADER,
+      kind: "sentence",
+      passage:
+        "The coat had been her brother’s, and it was too long in the sleeves, so Ines rolled the cuffs twice before she left for the interview. On the tram she kept her hands in the pockets. In the left one she found the stub of a concert ticket from the winter before he left for the coast, and she held it the whole way, turning its soft corners with her thumb. When the director asked why she wanted the post, she heard herself answer in her brother’s steady voice, the one he had used to calm their mother, and she was not afraid.",
+      quoted: "In the left one she found the stub of a concert ticket from the winter before he left for the coast, and she held it the whole way, turning its soft corners with her thumb.",
+      key: "It shows Ines taking comfort from her brother, preparing for her calm in the interview.",
+      wrong: [
+        ["It reveals that Ines resents having to wear her brother’s coat to the interview.", "Nothing shows resentment; she holds the stub all the way, and she later speaks in his voice without fear."],
+        ["It explains why the sleeves of the coat were too long for Ines.", "The sleeves are mentioned in the first sentence; the quoted sentence concerns what she finds in the pocket."],
+        ["It suggests that Ines regrets not going to the concert with her brother.", "The text gives no sign of regret; the stub steadies her rather than troubling her."],
+      ],
+      why: "Holding her brother’s ticket stub steadies Ines on the way to the interview, and in the interview she speaks in his steady voice without fear. The sentence prepares that moment.",
+    },
+    {
+      scene: "cs-litfn-asker-road",
+      header: TSP_STORY_HEADER,
+      kind: "sentence",
+      passage:
+        "When the new road opened, the village of Asker was for the first time two hours from the city instead of a day. The young people went first, then the schoolteacher, then the baker’s son, who had been expected to take over the ovens. Old Katrin, who had argued for the road at every council meeting for thirty years, watched the buses leave the square each morning from her window. She had wanted the road so that the village could reach the world. She had not thought to ask what the world would take from it in return.",
+      quoted: "She had wanted the road so that the village could reach the world.",
+      key: "It recalls Katrin’s hope for the road, which the last sentence answers.",
+      wrong: [
+        ["It shows that Katrin now regrets ever having argued for the road.", "The quoted sentence states her hope, and even the last sentence says only that she had not foreseen a cost; neither says she regrets it."],
+        ["It explains why the young people were the first to leave the village.", "The text never says why the young left first; the quoted sentence concerns Katrin’s reason for wanting the road."],
+        ["It describes the buses that leave the village square each morning.", "The buses are described in the sentence before; the quoted sentence turns to Katrin’s thoughts."],
+      ],
+      why: "The quoted sentence gives Katrin’s hope that the road would connect Asker to the world; the final sentence answers it with what she had not foreseen, the world taking the village’s people.",
+    },
+    {
+      scene: "cs-litfn-nocturne",
+      header: TSP_STORY_HEADER,
+      kind: "sentence",
+      passage:
+        "For two years Tomas practiced the nocturne every afternoon, and for two years Madame Lasky stopped him at the same bar and said, “Again, but listen this time.” He played it louder. He played it slower. He played it with his eyes shut, which only made him miss the notes. On the last day of term he was tired, and his mind was on the snow outside, and he let the bar go by without thinking about it at all. Madame Lasky said nothing, and when he looked up, she was smiling at the window.",
+      quoted: "He played it louder.",
+      key: "It begins a list of efforts that the ending shows were beside the point.",
+      wrong: [
+        ["It shows that Madame Lasky wanted the passage played more forcefully.", "She asks him to listen, not to play louder; louder is only his guess, and it does not satisfy her."],
+        ["It marks the moment when Tomas finally plays the bar as his teacher wished.", "That happens on the last day of term, when he stops trying; the quoted sentence is one of his failed attempts."],
+        ["It suggests that Tomas had misread the notes printed in the score.", "Nothing indicates a misreading of the score; the problem, the ending suggests, was trying too hard."],
+      ],
+      why: "“He played it louder” is the first of several deliberate attempts that fail; Tomas succeeds only when he stops trying, so the list shows effort that missed what his teacher meant.",
+    },
+    {
+      scene: "cs-litfn-strait-captain",
+      header: TSP_STORY_HEADER,
+      kind: "sentence",
+      passage:
+        "Captain Brandt had crossed the strait eleven thousand times, and he liked to say he could do it asleep. The passengers laughed when he said it. The deckhands did not, because they had seen him on foggy nights, standing at the wheelhouse window long after his shift, listening for the bell buoy off Kell Point as if it might tell him something new. Familiarity, they understood, had not made him careless. It had taught him exactly how the water could change.",
+      quoted: "The passengers laughed when he said it.",
+      key: "It gives a reaction that the deckhands’ view, described next, shows to be shallow.",
+      wrong: [
+        ["It suggests that the passengers doubted Brandt’s skill as a captain.", "They laugh at a joke; nothing suggests doubt, and the passage is about what the laughter misses, not about suspicion."],
+        ["It explains why the deckhands admired Brandt’s long experience.", "The deckhands’ view comes in the following sentences; the quoted sentence gives the passengers’ response."],
+        ["It shows that Brandt told the story mainly to calm nervous passengers.", "The text gives no reason for the boast; it contrasts two ways of hearing it."],
+      ],
+      why: "The passengers take the boast lightly; the deckhands, who have seen Brandt listening on foggy nights, know that his experience made him more careful. The sentence sets up that contrast.",
+    },
+    {
+      scene: "cs-litfn-aunt-letters",
+      header: TSP_STORY_HEADER,
+      kind: "sentence",
+      passage:
+        "Each spring Mira’s aunt wrote to her from the coast, and each letter was the same: the peas were in, the gulls were a nuisance, the neighbor’s dog had dug up the tulips again. Mira read them quickly, the way one reads a weather report. It was only after the letters stopped, when she went to the coast to clear the cottage, that she found the garden: forty years of peas and tulips, fenced against dogs, the gulls’ favorite post still standing, every one of those ordinary sentences made visible.",
+      quoted: "Mira read them quickly, the way one reads a weather report.",
+      key: "It shows a casual view of the letters that the final discovery transforms.",
+      wrong: [
+        ["It suggests that Mira found her aunt’s letters too long to read with care.", "The letters are short and repetitive; she reads them quickly because they seem routine, not because they are long."],
+        ["It describes the subjects that the aunt’s letters covered each spring.", "Those subjects are listed in the first sentence; the quoted sentence describes how Mira read them."],
+        ["It explains why Mira’s aunt eventually stopped writing to her.", "The text never gives a reason; the letters stop, and the garden reveals what they had meant."],
+      ],
+      why: "Mira skims the letters as routine news; in the garden she sees forty years of the life those plain sentences recorded. The sentence gives the view that the final discovery changes.",
+    },
+    {
+      scene: "cs-litfn-surveyor-margin",
+      header: TSP_STORY_HEADER,
+      kind: "sentence",
+      passage:
+        "The surveyor Anselm Roth spent nine summers mapping the Varn Hills, and his maps were admired for their accuracy: every stream was placed within a few meters of its true course. He was less proud of them than people supposed. In the margin of his own copy, beside a blank space he had labeled only “marsh,” he wrote the names of the families who had fed him there, the song their children had taught him, and the date a storm had kept him three nights in their barn.",
+      quoted: "He was less proud of them than people supposed.",
+      key: "It sets Roth’s own view of the maps against their public reputation.",
+      wrong: [
+        ["It suggests that Roth doubted the accuracy that others praised in his maps.", "Nothing suggests he doubted their accuracy; the margin notes show that what he valued lay elsewhere, in the people he met."],
+        ["It explains why Roth labeled one area of his map only as a marsh.", "The label is simply reported in the next sentence; the quoted sentence says nothing about it."],
+        ["It describes the admiration that other people felt for Roth’s maps.", "The admiration is described in the sentence before; the quoted sentence sets Roth’s own view against it."],
+      ],
+      why: "People admire the maps for accuracy, but Roth cares less for them than people think; the margin notes about the families who fed him show what he did value. The sentence introduces that contrast.",
+    },
+    {
+      scene: "cs-litfn-glassworks-broom",
+      header: TSP_STORY_HEADER,
+      kind: "sentence",
+      passage:
+        "On her first day at the glassworks, Lena was given a broom. On her second she was given the same broom. For a month she swept the shards from under the benches and watched the blowers turn molten glass on the ends of their pipes, and she began to know, from the sound a pipe made against the rack, whether a piece had come out whole. When at last the master handed her a pipe, her hands already knew where to stand, and the glass, for once, did not seem to be in a hurry.",
+      quoted: "On her second she was given the same broom.",
+      key: "It stresses, by repetition, a wait that proves to be Lena’s training.",
+      wrong: [
+        ["It shows that the master of the glassworks doubted Lena’s ability.", "The text gives no reason for the broom; the ending shows that the sweeping taught her, not that she was doubted."],
+        ["It explains how Lena learned to tell whether a piece had come out whole.", "That is explained in the following sentence, through the sound of the pipes against the rack."],
+        ["It suggests that Lena was about to leave her post at the glassworks.", "Nothing suggests she meant to leave; she keeps sweeping and watching for a month."],
+      ],
+      why: "The repeated broom stresses how long Lena waits to work the glass, and the ending shows that the month of sweeping and watching had trained her hands and ears.",
+    },
+  ];
+
+  const tspLiteraryFunction = {
+    id: "tsp-literary-function",
+    sectionKey: "sat-reading-writing",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    subskill: "function of a sentence",
+    difficulty: "Hard",
+    title: "Function of a line or sentence in a poem or story",
+    recognize:
+      "In a poem or story, a line’s job often shows only later: a belief the ending overturns, a reading someone else corrects, a detail that prepares a later moment. Read to the end, then ask what the quoted line sets up; reject readings that take it at face value or describe a neighboring line.",
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["opposite-stance", "true-but-irrelevant", "extreme-language"],
+    build(t) {
+      const topic = t.pick(TSP_LITERARY_FUNCTION_TOPICS);
+      const content = `${topic.header}\n\n${topic.passage}`;
+      return {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "passage", content },
+        stem: `Which choice best describes the function of the ${topic.kind} “${topic.quoted}” in the text as a whole?`,
+        correct: topic.key,
+        wrong: topic.wrong,
+        explanation: topic.why,
+        steps: [
+          "Read the whole text, noting where it turns: a change of view, a correction, a payoff.",
+          "Locate the quoted line and ask what the text does with it afterward.",
+          "Reject choices that take the line at face value, describe the line before or after it, or add a motive the text never gives.",
+        ],
+        principles: [
+          "In literary texts a line’s function often depends on what comes after it; read to the end before deciding.",
+          "A belief stated early in a poem or story may be there to be overturned.",
+        ],
+        trap: "Taking the quoted line at face value, as if the text endorsed it, when the ending overturns or reframes it.",
+        hint: "What happens later in the text to the view or detail in the quoted line?",
+        estimatedSeconds: 105,
+        verify: () =>
+          [TSP_POEM_HEADER, TSP_STORY_HEADER].includes(topic.header) &&
+          topic.passage.includes(topic.quoted) &&
+          (topic.kind === "line" ? topic.passage.split("\n").includes(topic.quoted) : !topic.passage.includes("\n")) &&
+          topic.wrong.length === 3 &&
+          new Set([topic.key, ...topic.wrong.map(([text]) => text)]).size === 4,
+      };
+    },
+  };
+
   return [
     tspMainPurposeExplain,
     tspFunctionExample,
@@ -2024,5 +2446,6 @@
     tspPurposeEvaluateSource,
     tspAcademicFunction,
     tspAcademicStructure,
+    tspLiteraryFunction,
   ];
 });

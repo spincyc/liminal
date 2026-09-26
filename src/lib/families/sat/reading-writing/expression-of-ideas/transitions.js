@@ -1139,158 +1139,419 @@
   // says exactly what a general statement referred to (every item a stated
   // number calls for, or the one thing named); `restatement` says the same
   // thing in plainer, less precise words; `addition` adds a separate point.
+  // Most passages open with a sentence of context before the claim.
   const ELABORATION_TOPICS = [
     {
       scene: "eoi-elb-rail-walkways",
       relation: "example",
-      text: "Several cities have turned abandoned railroad bridges into walkways for pedestrians and cyclists. ______, the city of Ostby converted a freight bridge over the Varne River into a park lined with benches and flower beds.",
+      text: "As freight has shifted from rail to road, many railroad bridges have been left standing unused. Several cities have turned abandoned railroad bridges into walkways for pedestrians and cyclists. ______, the city of Ostby converted a freight bridge over the Varne River into a park lined with benches and flower beds.",
       why: "Ostby is one of the several cities; the sentence gives one case of the general claim, not the whole of what it referred to, a rewording of it, or a separate point.",
     },
     {
       scene: "eoi-elb-seed-libraries",
       relation: "example",
-      text: "Some public libraries now lend seeds as well as books, asking borrowers to return seeds saved from their own harvests. ______, the library in the town of Kell keeps more than two hundred varieties of vegetable seeds in a converted card catalog.",
+      text: "Lending institutions have steadily broadened what they circulate, from musical instruments to garden tools. Some public libraries now lend seeds as well as books, asking borrowers to return seeds saved from their own harvests. ______, the library in the town of Kell keeps more than two hundred varieties of vegetable seeds in a converted card catalog.",
       why: "Kell's library is one of the libraries that lend seeds; the sentence gives one case of the general claim.",
     },
     {
       scene: "eoi-elb-night-flowers",
       relation: "example",
-      text: "Many flowers are pollinated at night by moths rather than by bees. ______, the evening primrose opens its pale yellow petals at dusk, when hawk moths begin to feed.",
+      text: "Pollination is usually pictured as a daytime exchange between flowers and insects, but a great deal of it happens after dark. Many flowers are pollinated at night by moths rather than by bees. ______, the evening primrose opens its pale yellow petals at dusk, when hawk moths begin to feed.",
       why: "The evening primrose is one of the many night-pollinated flowers; the sentence gives one case of the general claim.",
     },
     {
       scene: "eoi-elb-two-changes",
       relation: "specification",
-      text: "After a year of study, the transit committee recommended two changes to the Ostby bus system. ______, it proposed adding late-night service on weekends and running express buses between the train station and the hospital at rush hour.",
+      text: "Ridership on Ostby's buses fell for five straight years before the city asked a transit committee to recommend improvements. After a year of study, the transit committee recommended two changes to the bus system. ______, it proposed adding late-night service on weekends and running express buses between the train station and the hospital at rush hour.",
       why: "The sentence names both of the two changes, saying exactly what the committee recommended; it is not one case among others, a rewording, or a separate point.",
     },
     {
       scene: "eoi-elb-single-flaw",
       relation: "specification",
-      text: "When engineers inspected the Harlow Dam in 2018, they found only one flaw that needed immediate repair. ______, a gate valve near the base of the dam no longer closed completely, allowing a steady leak.",
+      text: "Dams built in the 1950s are now reaching an age at which their gates and valves, more often than their concrete walls, begin to fail. When engineers inspected the Harlow Dam in 2018, they found only one flaw that needed immediate repair. ______, a gate valve near the base of the dam no longer closed completely, allowing a steady leak.",
       why: "The sentence identifies the one flaw exactly, so it states precisely what the previous sentence referred to.",
     },
     {
       scene: "eoi-elb-three-rules",
       relation: "specification",
-      text: "The chef Mateus Lobo trains every new cook in his kitchen according to three rules. ______, cooks must taste every sauce before it leaves the kitchen, keep their knives sharp, and clean their stations before each service.",
+      text: "The chef Mateus Lobo has trained more than forty cooks who now run kitchens of their own. He trains every new cook in his kitchen according to three rules. ______, cooks must taste every sauce before it leaves the kitchen, keep their knives sharp, and clean their stations before each service.",
       why: "The sentence lists all three rules, saying exactly what the previous sentence referred to.",
     },
     {
       scene: "eoi-elb-eelgrass-density",
       relation: "restatement",
-      text: "A survey of the Holm Estuary found that the density of eelgrass declined from 812 shoots per square meter in 2005 to 398 shoots per square meter in 2020. ______, the estuary's eelgrass beds are now only about half as thick as they were fifteen years earlier.",
+      text: "Eelgrass meadows shelter young fish and anchor sediment, so ecologists track their density as a measure of an estuary's health. A survey of the Holm Estuary found that the density of eelgrass declined from 812 shoots per square meter in 2005 to 398 shoots per square meter in 2020. ______, the estuary's eelgrass beds are now only about half as thick as they were fifteen years earlier.",
       why: "“About half as thick” rounds off the survey's figures and adds nothing new, so the sentence restates the finding in plainer, less precise words.",
     },
     {
       scene: "eoi-elb-bus-survey",
       relation: "restatement",
-      text: "In a survey of 1,200 residents of Harlow, 71 percent said they would ride a bus to work if one stopped within a ten-minute walk of their homes. ______, most residents would use buses if a stop were close enough to reach on foot.",
+      text: "Harlow's transit authority is deciding whether to add neighborhood routes or to run more frequent buses on its existing lines. In a survey of 1,200 residents of Harlow, 71 percent said they would ride a bus to work if one stopped within a ten-minute walk of their homes. ______, most residents would use buses if a stop were close enough to reach on foot.",
       why: "The sentence says the same thing as the survey result in plainer, less precise words and adds nothing new.",
     },
     {
       scene: "eoi-elb-dry-nights",
       relation: "restatement",
-      text: "Measurements at the Varden Observatory show that, from October through March, the median relative humidity at the site after midnight is below 15 percent. ______, the air above the observatory is usually very dry on winter nights.",
+      text: "Water vapor absorbs infrared light, so astronomers who study infrared sources seek out sites where the air is exceptionally dry. Measurements at the Varden Observatory show that, from October through March, the median relative humidity at the site after midnight is below 15 percent. ______, the air above the observatory is usually very dry on winter nights.",
       why: "The sentence says the same thing as the measurements in plainer, less precise words and adds nothing new.",
     },
     {
       scene: "eoi-elb-orchard-flowers",
       relation: "addition",
-      text: "Planting rows of wildflowers between orchard trees gives pollinating insects food after the fruit trees have finished blooming. ______, the wildflowers' roots hold the soil in place during heavy spring rains.",
+      text: "Commercial orchards are often mown bare between the rows, an arrangement that simplifies harvesting but leaves little for insects once the blossoms have fallen. Planting rows of wildflowers between orchard trees gives pollinating insects food after the fruit trees have finished blooming. ______, the wildflowers' roots hold the soil in place during heavy spring rains.",
       why: "Holding the soil in place is a second, separate benefit of the wildflowers, not a case, a precise account, or a rewording of the first.",
     },
     {
       scene: "eoi-elb-wind-tram",
       relation: "addition",
-      text: "Ostby's new tram line has cut the trip from the harbor to the university from forty minutes to fifteen. ______, the trams run on electricity from the city's wind farm, so the line produces almost no local air pollution.",
+      text: "Ostby built its first tram line in more than seventy years to relieve the congested road along the harbor. The new line has cut the trip from the harbor to the university from forty minutes to fifteen. ______, the trams run on electricity from the city's wind farm, so the line produces almost no local air pollution.",
       why: "Running on wind power is a second, separate point in the line's favor, added to the shorter trip.",
     },
     {
       scene: "eoi-elb-digital-archive",
       relation: "addition",
-      text: "Digitizing the town's newspaper archive has let researchers anywhere search a century of local news in seconds. ______, it has protected the fragile original pages, which no longer need to be handled every time someone looks up an article.",
+      text: "For decades the town's newspaper survived only as brittle bound volumes in the library basement, consulted by appointment. Digitizing that archive has let researchers anywhere search a century of local news in seconds. ______, it has protected the fragile original pages, which no longer need to be handled every time someone looks up an article.",
       why: "Protecting the original pages is a second, separate benefit of digitizing, added to faster searching.",
+    },
+    {
+      scene: "eoi-elb-osprey-nest",
+      relation: "example",
+      text: "Some birds of prey return to the same nest year after year, adding new material each spring until the nest grows enormous. ______, a pair of ospreys on the Varne estuary has added sticks to one nest on a channel marker every spring since 1991, and the nest is now nearly two meters deep.",
+      why: "The Varne ospreys are one of the birds of prey the first sentence describes; the sentence gives one case of the general claim, not the whole of what it referred to, a rewording of it, or a separate point.",
+    },
+    {
+      scene: "eoi-elb-tide-piece",
+      relation: "example",
+      text: "Most concert music can be performed in any suitable hall, in any city. Several composers have written music meant to be performed in one particular outdoor place. ______, Clara Oduya's Tide Piece is played on a beach at low tide, and its final section begins when the returning water reaches the players' feet.",
+      why: "Oduya is one of the several composers the first sentence mentions; the sentence gives one case of the general claim.",
+    },
+    {
+      scene: "eoi-elb-one-objection",
+      relation: "specification",
+      text: "Harlow's new footbridge, which will carry cyclists and pedestrians from the rail station to the riverside park, went through two years of public review before construction began. The panel that reviewed its design raised just one objection. ______, it asked the engineers to widen the walkway on the bridge's south side so that two wheelchairs could pass each other.",
+      why: "The sentence states the panel's single objection exactly, so it says precisely what the previous sentence referred to; with only one objection, it cannot be one case among others.",
+    },
+    {
+      scene: "eoi-elb-two-goals",
+      relation: "specification",
+      text: "The Kell Observatory's new telescope, completed in 2023, was designed for wide surveys of faint and distant objects. Its astronomers set two goals for the telescope's first year of operation. ______, they aimed to map every galaxy in one small patch of the southern sky and to time the pulses of a dozen known pulsars.",
+      why: "The sentence names both goals, saying exactly what the previous sentence referred to; it is not one case among others, a rewording, or a separate point.",
+    },
+    {
+      scene: "eoi-elb-bicycle-households",
+      relation: "restatement",
+      text: "Before deciding whether to widen the city's network of protected cycle lanes, Ostby's planners commissioned a household survey to estimate how many residents already owned bicycles. Of the 1,500 households surveyed in 2022, 1,140 reported owning at least one bicycle. ______, roughly three in every four households in the city have a bicycle.",
+      why: "“Roughly three in every four” rounds off 1,140 of 1,500 and adds nothing new, so the sentence restates the survey result in plainer, less precise words.",
+    },
+    {
+      scene: "eoi-elb-library-laptops",
+      relation: "addition",
+      text: "Many residents of Varden lack a computer at home, a gap that became obvious when the town moved most of its services online. The town's new public library lends laptops to anyone with a library card, for up to two weeks at a time. ______, it offers free evening classes in computer skills, taught by volunteers from the town's technical college.",
+      why: "The evening classes are a second, separate service, added to the laptop lending; they are not a case of it, an exact account of it, or a rewording.",
     },
   ];
 
   // Hard: adversative passages whose choices include three words that each
-  // turn against what came before. `replacement` gives what was done in
-  // place of something the previous sentence rules out; `concession` states
-  // what holds despite an obstacle; `contrast` sets a second subject against
-  // the first.
+  // turn against what came before, plus a word for a parallel case.
+  // `replacement` gives what was done in place of something the previous
+  // sentence rules out; `concession` states what holds despite an obstacle;
+  // `contrast` sets a second subject against the first; `similarity` gives a
+  // second subject that behaves like the first. A negation in the sentence
+  // before the blank ("not", "no", "few") appears under every relation, so it
+  // never signals "Instead", and some replacements rule their first option
+  // out without one ("voted down", "dropped", "called off"). Most passages
+  // open with a sentence of context, so the relation must be found inside a
+  // short argument rather than between two bare sentences.
   const ADVERSATIVE_TOPICS = [
     {
       scene: "eoi-adv-unused-guides",
       relation: "replacement",
-      text: "The Tarn Museum expected its visitors to rely on the touch-screen guides it installed in 2022, but few visitors used them. ______, most people moved through the galleries reading the printed labels and talking with one another.",
+      text: "Many museums have added digital guides in the hope of holding visitors' attention for longer. The Tarn Museum expected its visitors to rely on the touch-screen guides it installed in 2022, but few visitors used them. ______, most people moved through the galleries reading the printed labels and talking with one another.",
       why: "Reading labels and talking is what visitors did in place of using the guides, which the previous sentence rules out; nothing holds despite an obstacle, and no second subject is compared.",
+    },
+    {
+      scene: "eoi-adv-library-garage",
+      relation: "replacement",
+      text: "Residents had asked the Harlow city council for a parking garage beside the new public library, and an architect drew up plans for one. In March the council voted the proposal down, citing its cost. ______, the council extended two bus routes so that both now stop at the library's front entrance.",
+      why: "Extending the bus routes is what the council did in place of the garage it voted down; nothing holds despite an obstacle, and no second subject is compared or likened to the first.",
+    },
+    {
+      scene: "eoi-adv-market-roof",
+      relation: "replacement",
+      text: "The architects of the Kell market hall first planned a roof of glass panels that would let daylight reach every stall. Engineers warned that the panels would crack under the region's heavy snow, and the design was dropped. ______, the hall was given a steep timber roof pierced by a row of narrow skylights.",
+      why: "The timber roof is what the hall received in place of the glass roof that was dropped; nothing holds in spite of the engineers' warning, and no second building is compared.",
+    },
+    {
+      scene: "eoi-adv-glacier-detour",
+      relation: "replacement",
+      text: "The survey team had planned to cross the Sorn Glacier on foot to reach the ridge beyond it, but a week of warm weather opened crevasses across the glacier's entire width. The crossing was called off. ______, the team hiked the long way around the glacier's snout, a detour that added three days to the expedition.",
+      why: "The detour is the route the team took in place of the crossing that was called off; calling off the crossing made a detour expected, not something that happened despite it, and no second team is compared.",
     },
     {
       scene: "eoi-adv-ground-pigments",
       relation: "replacement",
-      text: "The painter Odile Brask does not buy tubes of prepared paint. ______, she grinds her own pigments from minerals she collects on hikes near her studio.",
+      text: "Most painters today work with paints that manufacturers have already mixed, ground, and packed into tubes. The painter Odile Brask does not buy tubes of prepared paint. ______, she grinds her own pigments from minerals she collects on hikes near her studio.",
       why: "Grinding her own pigments is what Brask does in place of buying prepared paint, which the previous sentence rules out.",
     },
     {
       scene: "eoi-adv-walking-composer",
       relation: "replacement",
-      text: "The composer Lise Aro does not write her music at a piano. ______, she composes while walking, singing melodies into a small recorder and transcribing them each evening.",
+      text: "Most composers of orchestral music work out their scores at a keyboard, testing each chord as they write. The composer Lise Aro does not write her music at a piano. ______, she composes while walking, singing melodies into a small recorder and transcribing them each evening.",
       why: "Composing while walking is what Aro does in place of writing at a piano, which the previous sentence rules out.",
     },
     {
       scene: "eoi-adv-reinforced-bridge",
       relation: "replacement",
-      text: "After a long debate, the city's engineers decided not to replace the corroded Varne Footbridge. ______, they reinforced its original iron frame with steel cables, preserving the bridge's nineteenth-century design.",
+      text: "The Varne Footbridge, completed in 1889, is one of the last iron bridges of its kind in the region that are open to the public. After a long debate, the city's engineers decided not to replace the corroded bridge. ______, they reinforced its original iron frame with steel cables, preserving the bridge's nineteenth-century design.",
       why: "Reinforcing the old frame is what the engineers did in place of replacing the bridge, which the previous sentence rules out.",
     },
     {
       scene: "eoi-adv-foggy-regatta",
       relation: "concession",
-      text: "Thick fog covered the harbor on the morning of the Holm regatta, hiding the course markers from the sailors' view. ______, all twenty-two boats finished the race, and three crews set new course records.",
+      text: "The Holm regatta, held each June since 1904, sends boats around a course marked by buoys set nearly a kilometer apart. Thick fog covered the harbor on the morning of the 2019 race, hiding the course markers from the sailors' view. ______, all twenty-two boats finished the race, and three crews set new course records.",
       why: "The boats finished, and some set records, despite the fog described in the previous sentence; nothing was ruled out and replaced, and no second subject is compared.",
     },
     {
       scene: "eoi-adv-budget-season",
       relation: "concession",
-      text: "The Harlow Theater's budget was cut by a third in 2020, forcing the company to reduce its staff. ______, the theater staged six new plays that season, more than in any earlier year.",
+      text: "The Harlow Theater has staged new work by local playwrights since it opened in 1962. Its budget was cut by a third in 2020, forcing the company to reduce its staff. ______, the theater staged six new plays that season, more than in any earlier year.",
       why: "The theater staged a record number of plays despite the budget cut, so the sentence states what held in spite of an obstacle.",
     },
     {
       scene: "eoi-adv-ankle-final",
       relation: "concession",
-      text: "The sprinter Lena Ruud injured her ankle three weeks before the national championships and could barely train for ten days. ______, she won the 200-meter final in the fastest time of her career.",
+      text: "Lena Ruud had been favored to win the 200 meters since setting a national junior record two years earlier. Three weeks before the national championships, she injured her ankle and could barely train for ten days. ______, she won the 200-meter final in the fastest time of her career.",
       why: "Ruud won despite her injury, so the sentence states what held in spite of an obstacle.",
     },
     {
       scene: "eoi-adv-plateau-barley",
       relation: "concession",
-      text: "The soil on the Keld Plateau is thin, rocky, and low in nutrients. ______, farmers there have grown barley successfully for more than eight hundred years.",
+      text: "The Keld Plateau rises nearly a thousand meters above the surrounding lowlands. Its soil is thin, rocky, and low in nutrients. ______, farmers there have grown barley successfully for more than eight hundred years.",
       why: "Farmers have grown barley for centuries despite the poor soil, so the sentence states what holds in spite of an obstacle.",
+    },
+    {
+      scene: "eoi-adv-unheated-hall",
+      relation: "concession",
+      text: "The choir of Senna, founded in 1880, had never missed a spring concert. Varne Hall, the only building in Senna large enough for a choir, had no heating, and in January the air inside rarely rose above 5°C. ______, the village choir rehearsed there every Tuesday evening that winter and gave its spring concert on schedule.",
+      why: "The choir kept rehearsing despite the cold hall; the \"no heating\" before the blank rules nothing out that the rehearsals replace, and no second subject is compared.",
+    },
+    {
+      scene: "eoi-adv-unpaved-road",
+      relation: "concession",
+      text: "Asker's dairies depended on markets in the valley towns, a day's journey below the village. As late as 1925, the road to the mountain village of Asker was not paved, and the spring rains turned it to deep mud for weeks at a time. ______, cheese from Asker's dairies reached the markets in the valley every week of the year.",
+      why: "The cheese reached market despite the muddy road, so the sentence states what held in spite of an obstacle; the \"not\" names the obstacle, not something replaced.",
+    },
+    {
+      scene: "eoi-adv-new-symphony",
+      relation: "concession",
+      text: "The Ostby orchestra is known chiefly for its performances of eighteenth-century music. Few of its players had ever performed music written after 1950, and the parts for Ada Lenz's new symphony arrived only nine days before its premiere. ______, the orchestra's performance drew praise from critics and from Lenz herself.",
+      why: "The performance succeeded despite the players' inexperience and the short preparation, so the sentence states what held in spite of those obstacles.",
     },
     {
       scene: "eoi-adv-desert-rainfall",
       relation: "contrast",
-      text: "Parts of the Atacama Desert in Chile receive less than a millimeter of rain in a typical year. ______, the wettest parts of the Sonoran Desert in North America receive around 400 millimeters a year, enough to support forests of tall saguaro cacti.",
+      text: "Deserts are defined by how little rain they receive, but that amount varies enormously from one desert to another. Parts of the Atacama Desert in Chile receive less than a millimeter of rain in a typical year. ______, the wettest parts of the Sonoran Desert in North America receive around 400 millimeters a year, enough to support forests of tall saguaro cacti.",
       why: "The sentence sets a second desert against the first on the same measure, rainfall; it does not describe something done in place of something ruled out or something that holds despite an obstacle.",
     },
     {
       scene: "eoi-adv-bridge-spans",
       relation: "contrast",
-      text: "The main span of the Ostby Bridge stretches 900 meters between its two towers. ______, the older Varne Bridge upstream crosses the river on a series of short stone arches, none longer than 60 meters.",
+      text: "Two road bridges, built nearly eighty years apart, cross the Varne River less than a kilometer from each other. The main span of the Ostby Bridge stretches 900 meters between its two towers. ______, the older Varne Bridge upstream crosses the river on a series of short stone arches, none longer than 60 meters.",
       why: "The sentence sets a second bridge against the first on the same measure, the length of its spans.",
     },
     {
       scene: "eoi-adv-violin-strings",
       relation: "contrast",
-      text: "Most violin strings made today have a core of steel or of synthetic fibers such as nylon. ______, the strings used by eighteenth-century violinists were made of sheep gut, which gives a softer, warmer tone.",
+      text: "The material of a violin's strings shapes its tone as much as the wood of its body does. Most violin strings made today have a core of steel or of synthetic fibers such as nylon. ______, the strings used by eighteenth-century violinists were made of sheep gut, which gives a softer, warmer tone.",
       why: "The sentence sets the strings of a second period against today's on the same feature, what the strings are made of.",
     },
     {
       scene: "eoi-adv-cicada-cycles",
       relation: "contrast",
-      text: "Many species of cicada in North America produce a new generation of adults every summer. ______, periodical cicadas spend thirteen or seventeen years underground and then emerge together by the millions.",
+      text: "Cicadas spend most of their lives underground as nymphs, feeding on sap from tree roots before they emerge to breed. Many species of cicada in North America produce a new generation of adults every summer. ______, periodical cicadas spend thirteen or seventeen years underground and then emerge together by the millions.",
       why: "The sentence sets a second group of cicadas against the first on the same feature, how often adults appear.",
+    },
+    {
+      scene: "eoi-adv-two-archives",
+      relation: "contrast",
+      text: "The Harlow city archive has scanned nearly all of its nineteenth-century records, and researchers anywhere in the world can search them online at no charge. ______, the archive in neighboring Kell has scanned almost nothing, and anyone who wants to consult its records must travel there and read them in person.",
+      why: "The sentence sets a second archive against the first on the same feature, how its records can be consulted; the Kell archive does nothing in place of something ruled out.",
+    },
+    {
+      scene: "eoi-adv-hand-bound-books",
+      relation: "similarity",
+      text: "The bookbinder Ottilie Marsh does not use glue in her work; she sews the pages of every book by hand with waxed linen thread. ______, the binders at the monastery of Saint Kell, whose workshop dates to the 1400s, stitch each volume by hand and use no adhesive of any kind.",
+      why: "The monastery's binders work the same way Marsh does, so the sentence gives a parallel case; the \"not\" before the blank belongs to Marsh, and the monks do nothing in place of anything she avoids.",
+    },
+    {
+      scene: "eoi-adv-quiet-trains",
+      relation: "similarity",
+      text: "In Ostby, no train may sound its horn inside the city after ten at night, a rule adopted after years of complaints from people living near the tracks. ______, the neighboring city of Harlow bars trains from sounding their horns anywhere within its limits between ten at night and six in the morning.",
+      why: "Harlow has the same kind of rule as Ostby, so the sentence gives a parallel case rather than a contrast, a replacement, or something that holds despite an obstacle.",
+    },
+    {
+      scene: "eoi-adv-late-bees",
+      relation: "similarity",
+      text: "Orchard owners in the Tarn Valley depend on bees to pollinate their apple blossoms, which open in early April. Few bumblebees visit the valley's orchards before the middle of April, when nights there finally stay above freezing. ______, honeybees kept in the valley rarely leave their hives before mid-April, waiting for the same warmer nights.",
+      why: "The honeybees behave just as the bumblebees do, so the sentence gives a parallel case; \"few\" describes the bumblebees, not something the honeybees replace.",
+    },
+    {
+      scene: "eoi-adv-woodcut-seals",
+      relation: "similarity",
+      text: "The printmaker Jun Ito never writes his name on his woodcuts; he signs each one by pressing a small red seal into its lower corner. ______, members of the print studio he founded mark their work with seals of their own, each carved with the artist's initials.",
+      why: "The studio's members sign their prints the same way Ito does, so the sentence gives a parallel case; \"never\" belongs to Ito's own practice, and nothing the members do replaces it.",
+    },
+    {
+      scene: "eoi-adv-map-room",
+      relation: "similarity",
+      text: "The Varden Library's collections include some of the oldest surviving charts of the northern coast. Visitors to its main reading room may not speak above a whisper, and phones must be switched off at the door. ______, the library's map room requires silence and bans phones, so that researchers can study its fragile charts undisturbed.",
+      why: "The map room follows the same rules as the reading room, so the sentence gives a parallel case rather than a contrast or a replacement.",
+    },
+  ];
+
+  // Hard: passages of three or four sentences in which the blank's relation
+  // is to the argument so far, and the words are the less common ones
+  // (accordingly, in turn, conversely, that said, granted) beside familiar
+  // ones. `result` scenes are actions taken in light of a finding (key
+  // "Accordingly") or the next link in a chain of effects (key "In turn" or
+  // "Consequently"); `contrast` scenes are a reverse case
+  // (key "Conversely") or a second subject (key "By contrast"); `concession`
+  // scenes are a reservation after benefits or an outcome despite an
+  // obstacle; `admission` grants a point before the argument resumes;
+  // `addition` extends a run of benefits or uses. `keyPool` names the words
+  // that suit each passage.
+  const ARGUMENT_TOPICS = [
+    {
+      scene: "eoi-arg-orne-platforms",
+      relation: "result",
+      keyPool: ["Accordingly"],
+      text: "The stone houses of Orne, a village on the floodplain of the Lune River, stand on platforms raised after a flood in 1843. A survey completed in 2019 found that the next major flood would top those platforms by half a meter, and it warned that such floods are now expected about once a decade rather than once a century. ______, the village council has begun raising the platforms of its oldest houses by a full meter.",
+      why: "Raising the platforms is what the council is doing because of the survey's warning, an action taken in light of it; it does not hold despite the warning, set a second subject against the first, or add a separate point.",
+    },
+    {
+      scene: "eoi-arg-museum-hours",
+      relation: "result",
+      keyPool: ["Accordingly"],
+      text: "Ticket records at the Kell Science Museum showed that nearly half of its weekday visitors arrived after four o'clock, most of them parents with children just out of school. Yet the museum closed at five, leaving those families barely an hour to explore its four floors of exhibits. ______, the museum now stays open until eight on weekday evenings.",
+      why: "The later closing time is the museum's response to the problem the two sentences describe, an action taken because of it, not something that holds despite it.",
+    },
+    {
+      scene: "eoi-arg-wolves-willows",
+      relation: "result",
+      keyPool: ["In turn", "Consequently"],
+      text: "After wolves returned to the Harrow Valley in 1998, elk began to avoid the open riverbanks, where they were easy prey. With fewer elk browsing there, young willows along the river grew tall for the first time in decades. ______, beavers, which depend on willow for food and for building their dams, returned to streams they had abandoned.",
+      why: "The willows' recovery, itself an effect of the wolves' return, brought back the beavers that depend on willow, so the sentence gives the next link in a chain of effects; it is not a separate point added beside the willows.",
+    },
+    {
+      scene: "eoi-arg-glacier-lake",
+      relation: "result",
+      keyPool: ["In turn", "Consequently"],
+      text: "As the Sorn Glacier retreated during the twentieth century, meltwater filled the hollow it left behind, forming a lake that is now four kilometers long. Dark lake water absorbs far more sunlight than the white ice that once covered the same ground. ______, the warmed water melts the ice along the glacier's edge, speeding the very retreat that created the lake.",
+      why: "The lake's absorbed heat, itself a result of the retreat, melts more of the glacier, so the sentence gives the next link in a chain of effects.",
+    },
+    {
+      scene: "eoi-arg-shade-coffee",
+      relation: "contrast",
+      keyPool: ["Conversely"],
+      text: "Coffee growers have long disagreed about whether shade trees help their crops. In trials on the Sollano plateau, plants grown beneath a canopy of native trees ripened slowly, which gave their beans time to develop sugars and produced a sweeter cup. ______, plants grown in full sun ripened quickly, leaving their beans little time to develop sugars, and produced a thinner, more bitter cup.",
+      why: "The sentence gives the reverse case: the opposite condition (full sun) with the opposite outcome (fast ripening, a bitter cup). It adds no reservation about shade, which the reverse case supports, and it follows from nothing before it.",
+    },
+    {
+      scene: "eoi-arg-tern-nesting",
+      relation: "contrast",
+      keyPool: ["Conversely"],
+      text: "Ecologist Maren Holt recorded when pairs of Karro terns laid their eggs over six seasons. Pairs that nested early, before shoals of sand eels arrived near the colony, often raised no chicks at all, since the parents could not find enough food. ______, pairs that nested late, after the shoals had arrived, raised two or three chicks in most years.",
+      why: "The sentence gives the reverse case: late nesting, the opposite condition, with the opposite outcome; nothing in it holds despite an obstacle or follows from the early nesters' failure.",
+    },
+    {
+      scene: "eoi-arg-frozen-frogs",
+      relation: "contrast",
+      keyPool: ["By contrast", "In contrast"],
+      text: "In the wood frogs of the Tarn Valley, as much as two-thirds of the water in the body turns to ice each winter. Their hearts stop beating, and they remain frozen solid beneath fallen leaves until spring. ______, the valley's leopard frogs never freeze: they spend the winter at the bottom of ponds that stay liquid, drawing oxygen through their skin.",
+      why: "The sentence sets a second species against the first on the same feature, how it survives the winter; it adds nothing in the same direction and holds despite nothing.",
+    },
+    {
+      scene: "eoi-arg-glass-secrets",
+      relation: "contrast",
+      keyPool: ["By contrast", "In contrast"],
+      text: "The glassmakers of Vell guarded their methods closely: apprentices swore to keep each workshop's recipes secret, and a master who taught an outsider could lose his license. For two centuries, Vell's clear glass could be made nowhere else. ______, the potters of neighboring Asker printed their glaze recipes in an almanac each year and welcomed visitors to their kilns.",
+      why: "The sentence sets a second town's craftspeople against the first on the same feature, how openly they shared their methods; Vell's secrecy is no obstacle that the Asker potters overcame.",
+    },
+    {
+      scene: "eoi-arg-bay-bridge",
+      relation: "concession",
+      keyPool: ["That said", "Even so"],
+      text: "Since the Holm Bay bridge opened in 2016, the drive from the harbor towns to the city has fallen from ninety minutes to twenty-five. Shops in the harbor towns report that weekend visitors from the city have nearly doubled. ______, the bridge has proved far costlier to maintain than its engineers predicted: salt spray has corroded its cables so quickly that two have already been replaced.",
+      why: "After two benefits, the sentence introduces a reservation about the same bridge, a cost that stands against them; it does not follow from the benefits, set a second bridge against the first, or add another benefit.",
+    },
+    {
+      scene: "eoi-arg-coated-windows",
+      relation: "concession",
+      keyPool: ["That said", "Even so"],
+      text: "The coating developed by the chemist Ines Halloran breaks down grime whenever sunlight strikes it. In a year-long trial, windows treated with it stayed clean without a single washing, while untreated windows beside them needed washing every month. ______, the coating costs nearly four times as much as the glass it protects, which has so far kept it off all but the most expensive buildings.",
+      why: "After the coating's success, the sentence introduces a reservation about the same coating, its cost; it does not follow from the trial, compare a second product, or add another advantage.",
+    },
+    {
+      scene: "eoi-arg-dry-season-botanist",
+      relation: "concession",
+      keyPool: ["Nonetheless", "Even so", "That said"],
+      text: "The botanist Ruth Amsel reached the Kessel highlands in 1911 at the end of the dry season, when most plants had withered and dropped their flowers. Her notebooks describe days of searching that turned up little but dead stems and seed heads. ______, she returned from the expedition with 214 specimens, thirty of them species that no botanist had yet described.",
+      why: "The large collection came in spite of the withered plants and fruitless days, so the sentence states what held despite an obstacle; it does not follow from the obstacle or add a point in the same direction.",
+    },
+    {
+      scene: "eoi-arg-rejected-novel",
+      relation: "concession",
+      keyPool: ["Nonetheless", "Even so", "That said"],
+      text: "Eleven publishers rejected Tomas Vey's first novel, several of them remarking that no one would read a book narrated by a lighthouse. Vey, who could not afford to print it himself, left the manuscript in a drawer for six years. ______, when a small press finally published it in 1978, the book sold out its first printing within a month.",
+      why: "The book's quick success came in spite of the rejections and the years in a drawer, so the sentence states what held despite an obstacle.",
+    },
+    {
+      scene: "eoi-arg-sleeper-trains",
+      relation: "admission",
+      text: "The transport planner Ada Lune argues that overnight sleeper trains could replace many short flights between the cities of the Varn coast. ______, sleeper services are expensive to run, and several operators have abandoned routes in the past decade. But Lune notes that those routes used aging carriages with few beds, while the new trains she studied carry nearly twice as many passengers per car and so earn far more per journey.",
+      why: "The sentence grants a point against Lune's claim, the cost of sleeper services, before the final sentence answers it; it does not support her claim, follow from it, or describe a second subject.",
+    },
+    {
+      scene: "eoi-arg-strike-interviews",
+      relation: "admission",
+      text: "The historian Ines Lott contends that interviews with elderly residents are the best source for the history of the 1934 strike at the Varne mills. ______, memories formed ninety years ago are often wrong about dates, and some interviewees repeat stories they read later rather than events they saw. Still, Lott shows that on the questions that matter most, who organized the strike and why, the interviews agree closely with the few union records that survive.",
+      why: "The sentence concedes weaknesses of the interviews before the final sentence returns to Lott's claim; it is a point granted against her, not further support for it.",
+    },
+    {
+      scene: "eoi-arg-long-opera",
+      relation: "admission",
+      text: "The critic Hanna Brisk calls Mira Holm's four-hour opera Harbor Lights the finest new work of the decade. ______, its second act moves slowly, and some audience members at the premiere left before the final scene. But Brisk argues that the opera's last hour, in which an unaccompanied chorus sings the names of drowned sailors, repays every minute of patience it demands.",
+      why: "The sentence grants the opera's weaknesses before Brisk's defense of it in the final sentence, so it concedes a point against her judgment.",
+    },
+    {
+      scene: "eoi-arg-city-bees",
+      relation: "admission",
+      text: "The ecologist Tove Sand argues that cities can be good places for wild bees. ______, city bees face real hazards, from heat rising off pavement to pesticides sprayed on lawns and gardens. But Sand's surveys found more bee species in the parks and gardens of Ostby than in the surrounding farmland, where hedgerows have been cleared and single crops cover entire fields.",
+      why: "The sentence grants hazards that count against Sand's claim before the final sentence returns to her evidence, so it concedes a point against her.",
+    },
+    {
+      scene: "eoi-arg-planted-roofs",
+      relation: "addition",
+      text: "Planting grasses and sedums on flat roofs keeps buildings cooler in summer: on one hot afternoon in the Ostby trial, a planted roof stayed 20°C cooler than a bare roof beside it. The plants also slow rainwater, holding much of a storm's runoff and releasing it over hours rather than minutes. ______, planted roofs give food and shelter to insects in neighborhoods that have few parks.",
+      why: "Food and shelter for insects is a third, separate benefit of planted roofs, added to cooling and slowing runoff; it is not caused by the slowed rainwater before it.",
+    },
+    {
+      scene: "eoi-arg-read-aloud",
+      relation: "addition",
+      text: "Reading aloud to young children does more than entertain them. Children who are read to hear words that rarely come up in everyday conversation, and their vocabularies grow faster than those of children who are not. ______, being read to gives children practice in following a story across many pages, a skill they will need when they begin reading longer books on their own.",
+      why: "Practice in following a long story is a second, separate benefit, added to the larger vocabulary; it is not a consequence of the vocabulary growth described just before.",
+    },
+    {
+      scene: "eoi-arg-marsh-visitors",
+      relation: "addition",
+      text: "The restored Holm marsh on the Varne River stores floodwater: during the spring floods of 2021, it held back enough water to lower the river's peak downstream by half a meter. Its plants and soils also trap nitrogen from farm runoff, so less of it reaches the river. ______, the marsh draws thousands of birdwatchers each spring, bringing business to the cafés and guesthouses of the nearby village.",
+      why: "The birdwatchers are a further, separate benefit of the marsh, added to flood storage and cleaner water; they are not a consequence of the nitrogen trapping described just before.",
+    },
+    {
+      scene: "eoi-arg-ring-scars",
+      relation: "addition",
+      text: "Tree rings record more than a tree's age. The width of each ring reflects how wet its growing season was, so a long series of rings can reveal centuries of droughts and wet spells. ______, scars within the rings mark the years in which fires swept through a forest, allowing researchers to date fires that no one recorded.",
+      why: "Fire scars are a second, separate kind of record the rings hold, added to the record of wet and dry years; they do not follow from ring width.",
     },
   ];
 
@@ -1322,10 +1583,20 @@
     specification: ["Specifically"],
     replacement: ["Instead", "Rather"],
   };
+  // Less common words, offered only where a template names them in its
+  // pools, so templates that draw on LEXICON never meet them. "Accordingly"
+  // introduces an action taken in light of what came before, "In turn" the
+  // next link in a chain of effects, "Conversely" the reverse case, and
+  // "That said" a reservation about what was just said.
+  const WIDER = {
+    result: ["Accordingly", "In turn"],
+    contrast: ["Conversely"],
+    concession: ["That said"],
+  };
   const RELATION_OF = new Map();
-  Object.entries(LEXICON).forEach(([relation, phrases]) =>
+  [LEXICON, WIDER].forEach((lexicon) => Object.entries(lexicon).forEach(([relation, phrases]) =>
     phrases.forEach((phrase) => RELATION_OF.set(phrase, relation)),
-  );
+  ));
 
   // What the key signals (explanations).
   const SIGNALS = {
@@ -1417,9 +1688,12 @@
       build(t) {
         const topic = t.pick(spec.topics);
         const plan = spec.plans[topic.relation];
+        // A topic may narrow the key to the words that suit its passage
+        // ("In turn" only where the sentence before is itself an effect).
+        const keyPool = topic.keyPool || plan.keyPool;
         // A phrase already used in the passage ("still commissions") is not
         // offered as the key.
-        const keyPhrase = t.pick((plan.keyPool || LEXICON[topic.relation])
+        const keyPhrase = t.pick((keyPool || LEXICON[topic.relation])
           .filter((phrase) => !lc(topic.text).includes(` ${lc(phrase)} `)));
         const phrases = pickDistractors(t, plan, keyPhrase, spec.allowNear);
         const extra = (spec.reasons && spec.reasons[topic.relation]) || {};
@@ -1459,7 +1733,7 @@
             topic.text.includes(`${BLANK}, `) &&
             Boolean(plan) &&
             keyRelation === topic.relation &&
-            (!plan.keyPool || plan.keyPool.includes(instance.correct)) &&
+            (!keyPool || keyPool.includes(instance.correct)) &&
             wrongRelations.includes(plan.neighbour) &&
             wrongRelations.every((relation) =>
               relation && relation !== keyRelation && (relation === plan.neighbour || plan.others.includes(relation))) &&
@@ -1650,10 +1924,15 @@
     topics: ADMISSION_TOPICS.concat(EMPHASIS_TOPICS),
     // "In fact" can also correct a statement, which a conceded point could be
     // read as doing; "Indeed" only reinforces, so it alone stands for
-    // emphasis here, as key and as distractor.
+    // emphasis here, as key and as distractor. Beside the short key
+    // "Indeed", every emphasis set offers a word at least as short ("Thus"
+    // or "Still"), so the key is never picked out as the shortest choice.
     plans: {
       admission: { neighbour: "emphasis", others: ["result", "example", "similarity"], pools: { emphasis: ["Indeed"] } },
-      emphasis: { neighbour: "admission", others: ["result", "contrast", "similarity"], keyPool: ["Indeed"] },
+      emphasis: {
+        neighbour: "admission", others: ["result", "concession", "similarity"], keyPool: ["Indeed"],
+        pools: { result: ["Thus"], concession: ["Still"] },
+      },
     },
     principles: TRANSITION_PRINCIPLES.concat("Writers often grant a limitation before returning to a claim; words such as \"admittedly\" mark that move, and words such as \"indeed\" mark a confirmation."),
     traps: {
@@ -1721,15 +2000,16 @@
     id: "transition-instead-or-despite",
     subskill: "logical transition",
     difficulty: "Hard",
-    title: "Transition that turns: replacement, concession, or contrast",
-    recognize: "Three choices each turn against the previous sentence, so polarity decides nothing. Ask what kind of turn: something done in place of what was ruled out, something that holds despite an obstacle, or a second subject set against the first.",
+    title: "Transition after a turn or a negation: replacement, concession, contrast, or parallel",
+    recognize: "Every set offers a replacement word, a concession word, a contrast word, and a word for a parallel case, and a negation before the blank can belong to any of them. Ask what the sentence does: gives what was done in place of what was ruled out, states what holds despite an obstacle, sets a second subject against the first, or shows a second subject behaving like the first.",
     rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["grammatical-but-illogical", "neighbouring-rule"],
     seconds: 90,
     topics: ADVERSATIVE_TOPICS,
     allowNear: true,
     // "However" and "On the other hand" can mark more than one kind of turn,
-    // so they are left out; "Still" can be read as "even now".
+    // so they are left out; "Still" can be read as "even now". Every set
+    // holds one word from each of the four relations.
     plans: {
       replacement: {
         neighbour: "concession", others: ["contrast", "similarity"],
@@ -1743,16 +2023,67 @@
         neighbour: "replacement", others: ["concession", "similarity"],
         keyPool: ["By contrast", "In contrast"], pools: { concession: ["Nevertheless", "Even so", "Nonetheless"] },
       },
+      similarity: {
+        neighbour: "replacement", others: ["concession", "contrast"],
+        pools: { concession: ["Nevertheless", "Even so", "Nonetheless"], contrast: ["By contrast", "In contrast"] },
+      },
     },
     principles: TRANSITION_PRINCIPLES.concat(
-      "“Instead” and “rather” need something the previous sentence rules out; “nevertheless” needs an obstacle that the sentence overcomes; “by contrast” needs a second subject compared on the same feature.",
+      "“Instead” and “rather” need something the previous sentence rules out; “nevertheless” needs an obstacle that the sentence overcomes; “by contrast” needs a second subject compared on the same feature; “likewise” needs a second subject that behaves like the first.",
+      "A negation (“not,” “no,” “few”) before the blank does not by itself call for “instead”: ask whose negation it is and what the next sentence does with it.",
     ),
     traps: {
       replacement: "Choosing a concession or contrast word because the sentence turns away from the one before it, although it gives what was done in place of what was ruled out.",
-      concession: "Choosing “instead” because the sentence turns against the obstacle, although nothing was ruled out and replaced.",
+      concession: "Choosing “instead” because the sentence before the blank contains a negation or an obstacle, although nothing was ruled out and replaced.",
       contrast: "Choosing “instead” because the second subject behaves differently, although it does not act in place of anything the first sentence rules out.",
+      similarity: "Choosing “instead” because the first sentence says what one subject does not do, although the second subject avoids the same thing rather than replacing it.",
     },
-    hint: "Did the previous sentence rule something out, raise an obstacle, or describe a first subject?",
+    hint: "Did the previous sentence rule something out, raise an obstacle, or describe a first subject, and does the new sentence act in place of it, despite it, against it, or like it?",
+  });
+
+  // Every relation's distractors come from the same wider pools, so each of
+  // the less common words is sometimes the key and sometimes wrong.
+  const ARGUMENT_POOLS = {
+    result: ["Accordingly", "In turn", "Consequently"],
+    contrast: ["Conversely", "By contrast"],
+    concession: ["That said", "Nonetheless", "Even so"],
+    admission: ["Granted", "Admittedly"],
+    addition: ["Furthermore", "Moreover", "In addition"],
+  };
+
+  const argumentTransition = transitionFamily({
+    id: "transition-across-sentences",
+    subskill: "logical transition",
+    difficulty: "Hard",
+    title: "Transition that places a sentence in a multi-sentence argument",
+    recognize: "The blank's relation is to the argument built over two or three sentences, and the choices include less common words (accordingly, in turn, conversely, that said, granted). Decide what the sentence does in that argument, then find the word that says exactly that.",
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["grammatical-but-illogical", "neighbouring-rule"],
+    seconds: 95,
+    topics: ARGUMENT_TOPICS,
+    allowNear: true,
+    // A concession word and an admission word are never offered together,
+    // since "That said" could introduce a granted point; each set is fixed by
+    // the key's relation, and only the words within it vary.
+    plans: {
+      result: { neighbour: "concession", others: ["contrast", "addition"], pools: ARGUMENT_POOLS },
+      contrast: { neighbour: "concession", others: ["result", "addition"], pools: ARGUMENT_POOLS },
+      concession: { neighbour: "contrast", others: ["result", "addition"], pools: ARGUMENT_POOLS },
+      admission: { neighbour: "addition", others: ["result", "contrast"], keyPool: ARGUMENT_POOLS.admission, pools: ARGUMENT_POOLS },
+      addition: { neighbour: "result", others: ["contrast", "admission"], keyPool: ARGUMENT_POOLS.addition, pools: ARGUMENT_POOLS },
+    },
+    principles: TRANSITION_PRINCIPLES.concat(
+      "“Accordingly” introduces an action taken in light of what came before; “in turn,” the next link in a chain of effects; “conversely,” the reverse case; “that said,” a reservation about what was just said; “granted,” a point conceded before the argument resumes.",
+      "When a passage builds an argument over several sentences, relate the blank to that argument, not only to the words just before it.",
+    ),
+    traps: {
+      result: "Choosing a concession word because the sentence before the blank describes a problem, although the new sentence is a response to that problem, not something that holds despite it.",
+      contrast: "Choosing a concession word because the sentence turns to an opposite case, although nothing in it holds despite an obstacle.",
+      concession: "Choosing a contrast word because the sentence turns against what came before, although it qualifies the same subject rather than setting a second subject against it.",
+      admission: "Choosing an addition word, reading the granted weakness as more support for the claim, although the passage turns back to answer it.",
+      addition: "Choosing a cause-and-effect word because the new benefit sits next to the previous one, although it does not follow from it.",
+    },
+    hint: "Summarize the argument so far in a few words. Does the new sentence respond to it, reverse it, qualify it, grant something against it, or extend it?",
   });
 
   return [
@@ -1767,5 +2098,6 @@
     restatementTransition,
     elaborationTransition,
     adversativeTransition,
+    argumentTransition,
   ];
 });

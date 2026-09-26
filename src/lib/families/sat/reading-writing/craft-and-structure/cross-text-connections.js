@@ -461,8 +461,8 @@
       caseAnchor: "Tolmar",
       key: "By questioning whether island rodents always grow larger, since Tolmar's mice are lighter than mainland mice",
       support: "By citing Tolmar's mice as further evidence that island rodents grow larger than mainland ones",
-      extreme: "By arguing that island rodents are usually smaller than their mainland relatives",
-      method: "By noting that the surveys in Text 1 may have weighed too few island mice to be reliable",
+      extreme: "By arguing that Text 1 has the rule about island rodents exactly backward",
+      method: "By arguing that Text 1 bases the rule about island rodents on too few surveys",
       why: "Text 1 claims that island rodents grow larger than their mainland relatives, but Text 2 describes Tolmar's deer mice, which are lighter than mainland mice",
     },
     {
@@ -475,8 +475,8 @@
       caseAnchor: "Calder Court",
       key: "By noting that residents of Calder Court, a city complex, know more neighbors than rural residents do",
       support: "By noting that Calder Court's residents, like most city dwellers, can name only a few neighbors",
-      extreme: "By arguing that city residents generally know more of their neighbors than rural residents",
-      method: "By pointing out that the surveys in Text 1 included too few small-town residents",
+      extreme: "By claiming that the pattern Text 1 reports for city dwellers is in fact reversed",
+      method: "By claiming that the pattern Text 1 reports for city dwellers rests on weak surveys",
       why: "Text 1 claims that city dwellers know fewer neighbors than small-town residents, but Text 2 describes a city complex whose residents know more neighbors than rural residents do",
     },
     {
@@ -503,8 +503,8 @@
       caseAnchor: "Lessa",
       key: "By presenting Lessa's wall, built mainly to collect tolls, as an exception",
       support: "By presenting Lessa's wall as further evidence that Vellan walls were defensive",
-      extreme: "By arguing that no town in the Vellan region ever built its wall for defense",
-      method: "By noting that Text 1 relies on too few Vellan town records to support its claim",
+      extreme: "By claiming that the Vellan towns in general built their walls for tolls, not defense",
+      method: "By claiming that the Vellan towns in general left too few records to judge their walls",
       why: "Text 1 claims that Vellan town walls were built for defense, but Text 2 describes Lessa's wall, built long after the raids ended to collect tolls",
     },
     {
@@ -655,8 +655,8 @@
       principleAnchor: "middle-option effect",
       exampleAnchor: "wine",
       key: "As a case of shoppers treating the middle option as a safe compromise",
-      opposite: "As an example of shoppers avoiding the middle option they were offered",
-      narrow: "As a quirk of coffee buyers that would not appear in other kinds of stores",
+      opposite: "As a sign that the café's customers were avoiding the option in the middle",
+      narrow: "As a quirk of the café's customers that would not appear in other stores",
       misattributed: "As evidence that wine buyers favor bottles in the middle of a price range",
       why: "Text 2 describes shoppers choosing the middle of three options as a safe compromise, and the café's customers did exactly that once a large size was added",
     },
@@ -671,7 +671,7 @@
       principleAnchor: "pay animals to move their seeds",
       exampleAnchor: "acacias",
       key: "As an instance of a plant rewarding animals for moving its seeds",
-      opposite: "As a case of a plant spreading its seeds without help from animals",
+      opposite: "As a sign that the violet's seeds would spread just as well without the ants",
       narrow: "As evidence of a strategy peculiar to the woodland violet and its ants",
       misattributed: "As an example of acacias relying on birds to carry off their seeds",
       why: "Text 2 describes plants attaching a food reward so that animals carry their seeds away, which is what the violet's fatty tip does with ants",
@@ -703,7 +703,7 @@
       principleAnchor: "develop to suit the spaces",
       exampleAnchor: "chamber music",
       key: "As an example of music taking a form suited to where it was performed",
-      opposite: "As evidence that music develops without regard to where it is performed",
+      opposite: "As evidence that the abbey's chants would have sounded the same in any building",
       narrow: "As a feature peculiar to the chants of a single abbey in one century",
       misattributed: "As support for the claim that chamber music arose in small, carpeted rooms",
       why: "Text 2 argues that musical styles develop to suit their performance spaces, and the abbey's slow chants suit its long echo",
@@ -1155,9 +1155,9 @@
       claimAnchor: "traded directly",
       altAnchor: "chain of exchanges",
       key: "By agreeing that the pots came from the coast but doubting that they show direct trade",
-      agree: "By agreeing that the pots came from the coast, which confirms direct trade between the towns",
-      deny: "By arguing that the hilltop pots were most likely made from clay dug near the settlement",
-      critique: "By noting that the chemical tests cannot show when the hilltop pots were made",
+      agree: "By concluding that coastal clay in the hilltop pots proves the two towns traded directly",
+      deny: "By arguing that the chemical tests misidentified where the hilltop pots were made",
+      critique: "By arguing that the chemical tests cannot show when the hilltop pots were made",
       why: "Quint accepts that the pots came from the coast but argues that they could have passed through several markets, so they do not show direct contact between the two communities",
     },
     {
@@ -1221,7 +1221,7 @@
       key: "By questioning whether the savings come from the gardens rather than from other upgrades",
       agree: "By agreeing that the gardens’ insulation explains the lower cooling costs Haddad measured",
       deny: "By questioning whether buildings with rooftop gardens actually used less electricity",
-      critique: "By noting that three summers of utility records are too few to show a lasting trend",
+      critique: "By arguing that Haddad measured the lower cooling costs over too few summers to trust",
       why: "Ferrante accepts the figures but notes that owners who add gardens often upgrade windows and air conditioners at the same time, and those upgrades could account for the savings",
     },
     {
@@ -1643,6 +1643,10 @@
       thesis1: "Repairing the bridge is the more economical choice for the city.",
       thesis2: "The bridge's two lanes are too narrow for the buses the city plans to run.",
       broad: "Bridges built before 1920 should generally be replaced, not repaired.",
+      only: [
+        ["A new concrete deck for the bridge would cost the city about $4 million.", 1, "$4 million"],
+        ["The city plans to route buses across the Tane River on the bridge.", 2, "buses"],
+      ],
       why: "Text 1 says the crumbling deck cannot be left as it is much longer, and Text 2 says the crumbling deck forces the city's hand now; they disagree only about whether to repair or replace",
     },
     {
@@ -1659,6 +1663,9 @@
       thesis1: "A captive population is the best protection for the Veltan tree frog.",
       thesis2: "Protecting the frog's forest does more good than breeding it in zoos.",
       broad: "Every endangered frog species should be bred in zoos as a safeguard.",
+      only: [
+        ["Captive frogs will one day need forest into which they can be released.", 2, "release them"],
+      ],
       why: "Text 1 says the frog's forest is being cleared so quickly the species could vanish, and Text 2's argument assumes the danger that no forest will remain; they disagree only about the remedy",
     },
     {
@@ -1675,6 +1682,10 @@
       thesis1: "Printers were chiefly responsible for standardizing Alderan spelling.",
       thesis2: "Schoolmasters were chiefly responsible for standardizing Alderan spelling.",
       broad: "Spelling becomes standard in any language soon after printing arrives.",
+      only: [
+        ["Before printing arrived, each scribe chose his own spellings.", 1, "each scribe spelled"],
+        ["In the 1600s, schools drilled pupils from a common spelling book.", 2, "common spelling book"],
+      ],
       why: "Text 1 says scribes once spelled as they pleased and spelling was later fixed, and Text 2 says the variation eventually faded; they disagree only about who deserves the credit",
     },
     {
@@ -1691,6 +1702,10 @@
       thesis1: "The museum should stop charging visitors its $15 admission fee.",
       thesis2: "Fees fund the museum's school visits, its most valuable work.",
       broad: "All public museums should be free for every visitor to enter.",
+      only: [
+        ["Free admission at the Hartwell Museum drew more families from low-income neighborhoods.", 1, "Hartwell Museum"],
+        ["Admission fees supply about a third of the Corran City Museum's budget.", 2, "a third of its budget"],
+      ],
       why: "Text 1 objects to the fee because it keeps out low-income residents, and Text 2 defends the fee because it funds the museum's most valuable work, visits by low-income students",
     },
     {
@@ -1707,6 +1722,9 @@
       thesis1: "Editors should print the versions of Holt's poems from her first books.",
       thesis2: "An editor should present Holt's poems as she last wished them read.",
       broad: "Poets' late revisions usually weaken the poems they rework.",
+      only: [
+        ["Holt became famous for the reckless energy of her early poems.", 1, "made her famous"],
+      ],
       why: "Text 1 says Holt rewrote nearly every early poem, and Text 2 contrasts the wilder early versions with the revised ones; they disagree only about which versions an edition should print",
     },
     {
@@ -1723,6 +1741,10 @@
       thesis1: "Mount Kesh's height makes it the best site for the telescope.",
       thesis2: "The plateau's clear skies make it the best site for the telescope.",
       broad: "Every telescope should be built at the highest site available.",
+      only: [
+        ["The Veira telescope is designed to detect infrared light.", 1, "infrared"],
+        ["Mount Kesh is wrapped in cloud about one night in three.", 2, "one night in three"],
+      ],
       why: "Text 1 says water vapor absorbs the light Veira must detect, and Text 2 concedes the plateau is moister as a drawback it outweighs; they disagree only about which site is better",
     },
     {
@@ -1739,6 +1761,9 @@
       thesis1: "The chapel should be rebuilt to look as it did in the year 1400.",
       thesis2: "The ruined chapel should be left as it now stands, ivy and all.",
       broad: "Old buildings should never be altered from their present state.",
+      only: [
+        ["Ivy has grown over the walls of the ruined chapel.", 2, "ivy-covered"],
+      ],
       why: "Text 1 argues for rebuilding so visitors can understand the chapel's original form, and Text 2 argues against it so visitors can see its whole history; both judge the options by what visitors will learn of the past",
     },
     {
@@ -1755,6 +1780,10 @@
       thesis1: "Tolland should adopt a tax on sugary drinks to cut consumption.",
       thesis2: "A tax on sugary drinks would fall hardest on Tolland's poorest residents.",
       broad: "Taxes on food and drink always burden poorer residents the most.",
+      only: [
+        ["A similar tax in Lowmoor cut purchases of sugary drinks by a quarter.", 1, "Lowmoor"],
+        ["Tolland's poorest residents spend a larger share of their income on groceries.", 2, "larger share of their income"],
+      ],
       why: "Text 1 says residents' rising consumption is harming their health, and Text 2 proposes a better way to cut consumption, which assumes cutting it is worthwhile; they disagree only about the means",
     },
     {
@@ -1771,6 +1800,9 @@
       thesis1: "The founders' private letters reveal doubts their speeches concealed.",
       thesis2: "Tax records and court files are the best sources on the young Republic.",
       broad: "No written source from the Republic's founding can be trusted.",
+      only: [
+        ["Many of the founders' letters were meant to be copied and shown to others.", 2, "copied and shown around"],
+      ],
       why: "Text 1 says the speeches were crafted for effect, and Text 2 dismisses the letters as being as calculated as any speech, which takes for granted that the speeches were calculated",
     },
     {
@@ -1787,6 +1819,10 @@
       thesis1: "Feeders do Harlen finches more good than harm over the winter.",
       thesis2: "Crowding at feeders spreads deadly disease among Harlen finches.",
       broad: "People should stop putting out food for all wild birds in winter.",
+      only: [
+        ["Finches that use feeders lose less weight in January than other finches do.", 1, "lose less weight"],
+        ["An eye disease spread through feeder flocks in the winter of 2019.", 2, "eye disease"],
+      ],
       why: "Text 1 says feeders make finches more likely to survive the winter, and Text 2 says feeders led to thousands of deaths; they disagree about the direction of the effect, not about whether feeders affect survival",
     },
   ];
@@ -1798,40 +1834,56 @@
     difficulty: "Hard",
     title: "Opposed texts that share an underlying premise",
     recognize:
-      "The texts disagree about what should be done or what is true, but both argue from a shared premise that one states and the other takes for granted. The answer is that premise, not either thesis.",
+      "The texts disagree about what should be done or what is true, but both argue from a shared premise that one states and the other takes for granted. Neutral-sounding claims that only one text makes are not common ground; neither is either text's thesis or a sweeping version of the premise.",
     rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 2, trap: 1 },
     tricks: ["one-text-only", "extreme-language", "too-broad"],
     build(t) {
       const topic = t.pick(CTC_COMMON_TOPICS);
       const content = CTC_passage(topic.text1, topic.text2);
+      // Every set holds at least one neutral claim that only one text makes,
+      // since the shared premise is also neutral; the other two distractors
+      // come from the theses, the sweeping claim, and any other such claim,
+      // so no fixed set of roles marks the key.
+      const onlyChoices = topic.only.map(([text, from]) => [text,
+        `Only Text ${from} says this; Text ${3 - from} neither states it nor relies on it, so it is not common ground.`]);
+      const first = t.pick(onlyChoices);
+      const rest = t.sample([
+        [topic.thesis1, "This is part of Text 1's own case; the author of Text 2 argues against it."],
+        [topic.thesis2, "This is part of Text 2's own case; the author of Text 1 either argues against it or never grants it, so it is not common ground."],
+        [topic.broad, "Both texts argue about one particular case; neither makes this sweeping general claim."],
+        ...onlyChoices.filter((choice) => choice !== first),
+      ], 2);
+      const wrong = [first, ...rest];
       return {
         responseType: "multiple-choice",
         scene: topic.scene,
         stimulus: { type: "paired-passages", content },
         stem: "Based on the texts, both authors would most likely agree with which statement?",
         correct: topic.key,
-        wrong: [
-          [topic.thesis1, "This is part of Text 1's own case; the author of Text 2 argues against it."],
-          [topic.thesis2, "This is part of Text 2's own case; the author of Text 1 either argues against it or never grants it, so it is not common ground."],
-          [topic.broad, "Both texts argue about one particular case; neither makes this sweeping general claim."],
-        ],
+        wrong,
         explanation: `${topic.why}.`,
         steps: [
           "State each text's main position and notice that they conflict.",
           "Look beneath the disagreement for a point one text states and the other takes for granted.",
-          "Choose that shared premise and reject each text's own thesis.",
+          "Check every neutral-sounding choice against both texts; reject any that only one text supports, as well as each text's own thesis.",
         ],
         principles: [
           "Authors who disagree about a conclusion can still share assumptions about the facts or about what matters.",
+          "Common ground must be supported by both texts; a detail only one text mentions is not shared, however uncontroversial it sounds.",
         ],
-        trap: "Choosing one author's thesis, which the other author explicitly argues against.",
-        hint: "What must the author of Text 2 already believe in order to argue as they do?",
-        estimatedSeconds: 95,
+        trap: "Choosing a neutral-sounding detail that only one text mentions, or one author's thesis, which the other author argues against.",
+        hint: "What must the author of Text 2 already believe in order to argue as they do? Does the other text say or assume it too?",
+        estimatedSeconds: 100,
         verify: () => {
           const [one, two] = CTC_split(content);
+          const texts = { 1: one, 2: two };
           return one.includes(topic.premise1) && two.includes(topic.premise2) &&
             one.includes(topic.thesis1Anchor) && !two.includes(topic.thesis1Anchor) &&
-            two.includes(topic.thesis2Anchor) && !one.includes(topic.thesis2Anchor);
+            two.includes(topic.thesis2Anchor) && !one.includes(topic.thesis2Anchor) &&
+            topic.only.length >= 1 &&
+            topic.only.every(([text, from, anchor]) => texts[from].includes(anchor) && !texts[3 - from].includes(anchor) &&
+              text !== topic.key) &&
+            new Set([topic.key, ...wrong.map(([text]) => text)]).size === 4;
         },
       };
     },
@@ -1843,7 +1895,10 @@
 
   // Each scene is a pair of dense texts: Text 1 reports a finding and draws
   // a conclusion from it; Text 2 grants the finding (and sometimes part of
-  // the conclusion) but disputes the rest for a stated reason. Every
+  // the conclusion) but disputes the rest for a stated reason. In half the
+  // scenes Text 2 flags the concession ("is not in dispute", "no one
+  // doubts"); in the others it is left implicit, built into what Text 2
+  // describes or takes for granted, so the student has to infer it. Every
   // distractor is a way of misplacing that line:
   //   split    - accepts what Text 2 disputes and disputes what it accepts
   //   ground   - accepts the right part but disputes on a ground Text 2
@@ -1851,8 +1906,11 @@
   //   endorse  - full agreement, reading the concession as assent
   //   reject   - full rejection, including what Text 2 concedes
   // The split and ground choices share the key's compound "grant X while
-  // doubting Y" shape, so the key is never the only qualified choice. Keys
-  // and distractors share their opening verbs across scenes.
+  // doubting Y" shape, so the key is never the only qualified choice. In
+  // some scenes the ground choice shares the key's wording and in others the
+  // split's, and the split paraphrases rather than swapping the key's words,
+  // so the two most alike choices do not single out the key. Keys and
+  // distractors share their opening verbs across scenes.
   const CTC_PARTIAL_TOPICS = [
     {
       scene: "cs-tessar-immersion",
@@ -1862,14 +1920,14 @@
       text1:
         "On the island of Orlen, where the Tessar language had nearly fallen silent by 1980, immersion schools now teach every subject in Tessar from the first grade. Linguist Ana Ferreira-Holt reports that most pupils who complete the program pass the same oral fluency examination given to native speakers. The schools, she concludes, have done what decades of adult classes could not: they have brought Tessar back as a living language.",
       text2:
-        "No one who has heard Orlen’s schoolchildren doubts that they speak Tessar well, and the examination results confirm what visitors notice at once. Yet sociolinguist Tomas Rayne observes that the same children speak the island’s majority language at home, on the playground, and with one another after class. A language lives, Rayne contends, only when a community uses it unprompted, and by that measure Tessar remains a school subject.",
+        "Sociolinguist Tomas Rayne has sat in on lessons at Orlen’s immersion schools, where pupils recite poems, solve problems, and argue about football in fluent Tessar. At home, on the playground, and with one another after class, however, the same children speak the island’s majority language. A language lives, Rayne contends, only when a community uses it unprompted, and by that measure Tessar remains a school subject.",
       claimAnchor: "brought Tessar back as a living language",
-      grantAnchor: "speak Tessar well",
+      grantAnchor: "fluent Tessar",
       disputeAnchor: "remains a school subject",
       key: "By granting that the pupils speak Tessar fluently while doubting that school fluency makes it a living language",
-      split: ["By granting that the pupils use Tessar outside class while doubting that they speak it fluently",
+      split: ["By accepting that Orlen’s children use Tessar unprompted but questioning whether they are truly fluent in it",
         "This reverses Text 2: Rayne grants the pupils’ fluency and says they do not use Tessar outside class."],
-      ground: ["By accepting the examination results while arguing that too few pupils finish the program to matter",
+      ground: ["By accepting that Orlen’s children are fluent but questioning whether enough of them finish the program",
         "Rayne never questions how many pupils finish the program; his objection is that the children do not use Tessar outside school."],
       endorse: ["By agreeing that the immersion schools have succeeded where adult classes failed in reviving Tessar",
         "Rayne accepts the pupils’ fluency but not the conclusion that Tessar is again a living language."],
@@ -1890,9 +1948,9 @@
       grantAnchor: "fire plainly favors",
       disputeAnchor: "rotating fire",
       key: "By agreeing that fire aids the wildflowers but warning that yearly burning of every plot harms rare butterflies",
-      split: ["By agreeing that yearly burning of every plot protects the butterflies but doubting that fire helps the wildflowers",
+      split: ["By accepting that annual burns spare the butterflies while disputing any benefit of fire to the flowers",
         "This reverses Text 2: Ambler accepts that fire favors the wildflowers and warns that yearly burning destroys the butterflies."],
-      ground: ["By agreeing that fire helps the wildflowers but warning that burning every plot yearly would fill the air with smoke",
+      ground: ["By agreeing that fire aids the wildflowers but warning that yearly burning of every plot would fill the air with smoke",
         "Ambler never mentions smoke; her objection is that spring burns destroy butterflies overwintering in dead stems."],
       endorse: ["By agreeing that burning every plot every year is the surest way to restore the downs’ original diversity",
         "Ambler accepts that fire helps the wildflowers but rejects burning every plot every year."],
@@ -1931,14 +1989,14 @@
       text1:
         "Infrared scans of the Rennick Altarpiece, painted around 1480, reveal a detailed underdrawing beneath every figure, executed in a single confident hand. Art historian Maud Ellery argues that the underdrawing proves the altarpiece is entirely the work of the master Pieter Rennick, since no assistant in his workshop would have been trusted with the design.",
       text2:
-        "Art historian Joachim Serle does not doubt that Rennick drew the whole design; the underdrawing’s single hand is unmistakable. But workshop records from the period show that masters often drew a composition and left much of the painting to assistants, keeping the faces and hands for themselves. The underdrawing, Serle argues, tells us who designed the altarpiece, not who painted it.",
+        "Workshop records from the 1400s show that a master often drew a whole composition and then left much of the painting to assistants, keeping only the faces and hands for himself. Art historian Joachim Serle observes that the single, confident underdrawing in the Rennick Altarpiece fits that practice exactly. The underdrawing, Serle argues, tells us who designed the altarpiece, not who painted it.",
       claimAnchor: "entirely the work of the master",
-      grantAnchor: "does not doubt that Rennick drew the whole design",
+      grantAnchor: "tells us who designed the altarpiece",
       disputeAnchor: "not who painted it",
-      key: "By conceding that Rennick designed the altarpiece while doubting that he painted all of it",
-      split: ["By conceding that Rennick painted all of the altarpiece while doubting that he drew its design",
+      key: "By conceding that Rennick designed the altarpiece while doubting that he painted all of it alone",
+      split: ["By granting that every brushstroke is Rennick’s but questioning whether the composition was his",
         "This reverses Text 2: Serle accepts that Rennick drew the design and doubts that he did all the painting."],
-      ground: ["By conceding that Rennick designed the altarpiece while doubting that it was painted around 1480",
+      ground: ["By granting that the composition is Rennick’s but questioning whether it dates from around 1480",
         "Serle never questions the altarpiece’s date; his point is that masters often left the painting to assistants."],
       endorse: ["By agreeing that a single confident underdrawing shows that Rennick alone painted the altarpiece",
         "Serle accepts that Rennick drew the design but denies that the underdrawing shows who painted it."],
@@ -1954,19 +2012,19 @@
       text1:
         "At Sorrel Ford, a settlement abandoned around 900 CE, archaeologist Idris Kane found that the latest houses were framed with timber from much smaller trees than the earliest ones, while pollen from the surrounding hills shifts over the same centuries from oak to grasses. Kane concludes that the inhabitants stripped the hills of forest and left once they had exhausted their supply of building wood and fuel.",
       text2:
-        "Kane’s case for deforestation at Sorrel Ford is persuasive; the shrinking beams and the vanishing oak pollen tell the same story. Archaeobotanist Clara Voss questions only the last step of his argument. Grain stores at the site were full when it was abandoned, and the final houses had recently been repaired, hardly the picture of a community driven out by scarcity. Something else, she suspects, prompted the departure.",
+        "Archaeobotanist Clara Voss reads the shrinking beams and the vanishing oak pollen at Sorrel Ford as the record of a forest cut back over centuries. Yet the grain stores at the site were full when it was abandoned, and the final houses had recently been repaired, hardly the picture of a community driven out by scarcity. Something else, she suspects, prompted the departure.",
       claimAnchor: "exhausted their supply",
-      grantAnchor: "case for deforestation",
+      grantAnchor: "forest cut back over centuries",
       disputeAnchor: "driven out by scarcity",
-      key: "By accepting that the hills were deforested while doubting that a shortage of wood drove the inhabitants away",
-      split: ["By accepting that scarcity drove the inhabitants away while doubting that the hills were deforested",
+      key: "By accepting that the hills were deforested while doubting that a wood shortage drove the inhabitants away",
+      split: ["By conceding that a wood shortage forced the settlers out but not that the oak forests were ever cut",
         "This reverses Text 2: Voss accepts the evidence of deforestation and doubts that scarcity drove the inhabitants out."],
       ground: ["By accepting that the hills were deforested while arguing that Kane dated the abandonment too early",
         "Voss never questions when the site was abandoned; her objection rests on the full grain stores and repaired houses."],
       endorse: ["By agreeing that the smaller beams and changing pollen show that the settlement left once its wood ran out",
         "Voss accepts that the hills were deforested but doubts that running out of wood is why the inhabitants left."],
       reject: ["By arguing that the hills around Sorrel Ford kept their oak forests until after the settlement was abandoned",
-        "Voss calls Kane’s case for deforestation persuasive, so she would not claim that the oak forests survived."],
+        "Voss reads the evidence as the record of a forest cut back over centuries, so she would not claim that the oak forests survived."],
       why: "Voss accepts Kane’s evidence that the hills were deforested but doubts his final step, since full grain stores and recently repaired houses do not suggest a community driven out by scarcity",
     },
     {
@@ -1982,9 +2040,9 @@
       grantAnchor: "worth money to renters",
       disputeAnchor: "before a single train ran",
       key: "By endorsing a tax on the added land value but warning that one begun when a line opens misses most of it",
-      split: ["By endorsing Ibarra’s rent figures while doubting that access to transit is worth money to renters",
+      split: ["By accepting Ibarra’s rent figures but denying that renters will pay more to live near transit",
         "Castell explicitly accepts that transit access is worth money to renters; her disagreement concerns when the tax should begin."],
-      ground: ["By endorsing a tax on the value transit adds while warning that rents near stations rose too little to tax",
+      ground: ["By accepting a tax on transit’s added value but denying that the rent increase near stations is large enough to tax",
         "Castell accepts the size of the rent increase; her objection is that most of it came before the line opened."],
       endorse: ["By agreeing that a tax that begins as each new line opens would capture the value the line adds to land",
         "This is the timing Castell criticizes: a tax that starts when a line opens would miss the increase that came earlier."],
@@ -2000,12 +2058,12 @@
       text1:
         "The surviving parts for Clara Vennholt’s Suite for Strings (1771) call for only eight players. Musicologist Ilse Brandauer argues that modern orchestras, which often perform the suite with forty, distort it beyond recognition, and that a performance faithful to Vennholt must use the eight players her parts specify.",
       text2:
-        "Brandauer is right that the surviving parts are written for eight. But musicologist Daniel Achterberg has found the court’s payment records for the suite’s premiere, which list twenty-two string players. Parts were often shared by two players or copied again for a larger band, he notes; the eight that survive show what was kept, not how many played. A faithful performance, Achterberg concludes, would need something closer to twenty than to either eight or forty.",
+        "Musicologist Daniel Achterberg has found the court’s payment records for the premiere of Vennholt’s Suite for Strings, and they list twenty-two string players. Parts were often shared by two players or copied again for a larger band, he notes, so the eight parts that survive show what was kept, not how many played. A faithful performance, Achterberg concludes, would need something closer to twenty than to either eight or forty.",
       claimAnchor: "must use the eight players",
-      grantAnchor: "right that the surviving parts are written for eight",
+      grantAnchor: "the eight parts that survive",
       disputeAnchor: "twenty-two string players",
       key: "By granting that the surviving parts are for eight while denying that only eight played at the premiere",
-      split: ["By granting that only eight players took part in the premiere while denying that the surviving parts are for eight",
+      split: ["By accepting that the premiere had just eight players but disputing that the surviving parts call for eight",
         "This reverses Text 2: Achterberg accepts that the parts are for eight and uses the payment records to show that more played."],
       ground: ["By granting that the surviving parts are written for eight while arguing that the suite sounds best with forty players",
         "Achterberg’s argument concerns what is faithful to the premiere, not what sounds best, and he puts the right size closer to twenty than to forty."],
@@ -2027,7 +2085,7 @@
       claimAnchor: "brought on the centuries-long drought",
       grantAnchor: "not in dispute",
       disputeAnchor: "cannot by itself account",
-      key: "By allowing that the eruption may have helped start the drought while doubting that it alone could have sustained it",
+      key: "By accepting that the eruption may have started the drought but not that it could have sustained it for centuries",
       split: ["By allowing that the eruption sustained the drought while doubting that the ash was laid down before the dust",
         "This reverses Text 2: Oyelaran accepts the order of the layers and doubts that an eruption could sustain a drought for centuries."],
       ground: ["By allowing that the eruption played a part while doubting that the ash layer has been dated correctly",
@@ -2051,7 +2109,7 @@
       grantAnchor: "strange to deny that grief shaped",
       disputeAnchor: "sharp satire",
       key: "By acknowledging that grief shaped the novel while contending that it also satirizes shipping companies",
-      split: ["By acknowledging that the novel satirizes shipping companies while contending that grief left no mark on it",
+      split: ["By granting the book’s attack on shipping firms but denying that mourning influenced it at all",
         "This reverses Text 2: Lind says it would be strange to deny that grief shaped the novel."],
       ground: ["By acknowledging that grief shaped the novel while contending that Marrow’s letters misdate its composition",
         "Lind relies on Marrow’s letters to date the shipwreck chapters; she never questions them."],
@@ -2069,13 +2127,13 @@
       text1:
         "On Skerra Island, where rats were eradicated in 2015, ornithologist Tove Haldane counted more than twice as many nesting storm petrels in 2022 as before the eradication. Haldane attributes the entire increase to the removal of the rats, which had eaten petrel eggs and chicks, and argues that eradication is the most effective single step for restoring seabird colonies.",
       text2:
-        "Rat removal on islands has an excellent record, and no one doubts that Skerra’s rats ate petrel eggs. Seabird ecologist Arne Lindgren notes, however, that petrel numbers also rose by about half over the same years on nearby Holm, which never had rats, apparently because the small fish and crustaceans the birds feed on became more plentiful. Some of Skerra’s increase, he concludes, would have happened with or without the eradication.",
+        "Seabird ecologist Arne Lindgren, who has long urged the removal of rats from seabird islands, compared Skerra with nearby Holm, which never had rats. Over the same years, petrel numbers on Holm rose by about half, apparently because the small fish and crustaceans the birds feed on became more plentiful. Some of Skerra’s increase, Lindgren concludes, would have happened with or without the eradication.",
       claimAnchor: "entire increase",
-      grantAnchor: "no one doubts",
+      grantAnchor: "long urged the removal of rats",
       disputeAnchor: "with or without the eradication",
-      key: "By agreeing that removing the rats helped while arguing that more plentiful food explains part of the increase",
+      key: "By crediting both the removal of the rats and more plentiful food with the rise in Skerra’s nesting petrels",
       split: ["By agreeing that more plentiful food explains the whole increase while arguing that the rats never harmed the petrels",
-        "Lindgren says no one doubts that the rats ate petrel eggs, and he attributes only part of the increase to more food."],
+        "Lindgren has long urged removing rats from seabird islands, and he attributes only part of Skerra’s increase to more food."],
       ground: ["By agreeing that removing the rats helped while arguing that Haldane counted Skerra’s nesting petrels carelessly",
         "Lindgren never questions Haldane’s counts; his objection rests on the rise in petrels on rat-free Holm."],
       endorse: ["By agreeing that the eradication of the rats accounts for all of the growth in Skerra’s petrel colony",
@@ -2093,7 +2151,7 @@
     difficulty: "Hard",
     title: "Second text grants part of the first text's claim and disputes the rest",
     recognize:
-      "Text 2 concedes some of what Text 1 claims before objecting. Mark exactly what it grants and exactly what it disputes, and why; the answer keeps both, in the right places.",
+      "Text 2 concedes some of what Text 1 claims before objecting, sometimes saying so and sometimes only taking it for granted. Mark exactly what it grants and exactly what it disputes, and why; the answer keeps both, in the right places.",
     rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 2, trap: 1 },
     tricks: ["opposite-stance", "extreme-language", "true-but-irrelevant", "misattributed-view"],
     build(t) {

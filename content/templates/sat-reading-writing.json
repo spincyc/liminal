@@ -191,8 +191,8 @@
     {
       "id": "tsp-function-example",
       "bit": 31,
-      "version": 2,
-      "fingerprint": "7ab512dc937c7898"
+      "version": 3,
+      "fingerprint": "f1f33a19f60cc383"
     },
     {
       "id": "tsp-function-concession",
@@ -221,8 +221,8 @@
     {
       "id": "tsp-function-foil",
       "bit": 36,
-      "version": 2,
-      "fingerprint": "f37d8e7e014c051f"
+      "version": 3,
+      "fingerprint": "db2d7d57d70594a0"
     },
     {
       "id": "tsp-purpose-evaluate-source",
@@ -245,14 +245,14 @@
     {
       "id": "cross-text-counterexample",
       "bit": 40,
-      "version": 2,
-      "fingerprint": "b1b182e2db5655f5"
+      "version": 3,
+      "fingerprint": "cf3a44def2306a95"
     },
     {
       "id": "cross-text-extends",
       "bit": 41,
-      "version": 2,
-      "fingerprint": "b3460645eafe42ce"
+      "version": 3,
+      "fingerprint": "9536dffcf67cc2cc"
     },
     {
       "id": "cross-text-apply-explanation",
@@ -263,7 +263,7 @@
     {
       "id": "cross-text-method-challenge",
       "bit": 43,
-      "version": 2,
+      "version": 3,
       "fingerprint": "c70bc5510c100946"
     },
     {
@@ -275,8 +275,8 @@
     {
       "id": "cross-text-common-ground",
       "bit": 45,
-      "version": 2,
-      "fingerprint": "dc31b2b3deef83a5"
+      "version": 3,
+      "fingerprint": "b04cf0ab75d97b71"
     },
     {
       "id": "notes-shared-feature",
@@ -287,20 +287,20 @@
     {
       "id": "notes-contrast-two-subjects",
       "bit": 47,
-      "version": 2,
-      "fingerprint": "4c3d5abfb7b936b3"
+      "version": 3,
+      "fingerprint": "9127d345e3e700f9"
     },
     {
       "id": "notes-date-and-place",
       "bit": 48,
-      "version": 2,
-      "fingerprint": "e5691fe95ab00941"
+      "version": 3,
+      "fingerprint": "e38a2bdb3db44d20"
     },
     {
       "id": "notes-introduce-to-newcomers",
       "bit": 49,
-      "version": 2,
-      "fingerprint": "adfd3f1087ac5df4"
+      "version": 3,
+      "fingerprint": "93cacb253fa3698e"
     },
     {
       "id": "notes-explain-benefit",
@@ -323,14 +323,14 @@
     {
       "id": "notes-similarity-despite-difference",
       "bit": 53,
-      "version": 2,
-      "fingerprint": "ae610c1ba3bda7f7"
+      "version": 3,
+      "fingerprint": "4e4ac96a67b1e0fe"
     },
     {
       "id": "notes-result-versus-expectation",
       "bit": 54,
-      "version": 2,
-      "fingerprint": "c82d50d5b200c312"
+      "version": 3,
+      "fingerprint": "8c31862ef3eddd7d"
     },
     {
       "id": "transition-consequence",
@@ -377,8 +377,8 @@
     {
       "id": "transition-concede-then-return",
       "bit": 62,
-      "version": 2,
-      "fingerprint": "644d9c0dca5c3c94"
+      "version": 3,
+      "fingerprint": "1302c2f4f25d5799"
     },
     {
       "id": "transition-plain-restatement",
@@ -577,8 +577,8 @@
     {
       "id": "wic-academic-stance",
       "bit": 95,
-      "version": 1,
-      "fingerprint": "fedafa1133822dee"
+      "version": 2,
+      "fingerprint": "9f11eeef30a20bd0"
     },
     {
       "id": "wic-period-older-sense",
@@ -589,20 +589,20 @@
     {
       "id": "tsp-academic-function",
       "bit": 97,
-      "version": 1,
-      "fingerprint": "33e823e6f08c1503"
+      "version": 2,
+      "fingerprint": "bca2a432389dba8a"
     },
     {
       "id": "tsp-academic-structure",
       "bit": 98,
-      "version": 1,
-      "fingerprint": "f59ef784c15bf53c"
+      "version": 2,
+      "fingerprint": "8a6ab501ccfb5567"
     },
     {
       "id": "cross-text-partial-agreement",
       "bit": 99,
-      "version": 1,
-      "fingerprint": "c006da220cd2bde9"
+      "version": 2,
+      "fingerprint": "5dcfeb39405e8af1"
     },
     {
       "id": "cross-text-condition-applied",
@@ -613,26 +613,26 @@
     {
       "id": "notes-difference-on-named-feature",
       "bit": 101,
-      "version": 1,
-      "fingerprint": "0a4a7cf1b4f198ff"
+      "version": 2,
+      "fingerprint": "5e09326eadcaf746"
     },
     {
       "id": "notes-size-of-difference",
       "bit": 102,
-      "version": 1,
-      "fingerprint": "1a83de73dec1cb13"
+      "version": 2,
+      "fingerprint": "ab77c93844cbcc79"
     },
     {
       "id": "transition-elaboration-kind",
       "bit": 103,
-      "version": 1,
-      "fingerprint": "23fbd42d5b1b1f83"
+      "version": 2,
+      "fingerprint": "55fb8b260ec60e35"
     },
     {
       "id": "transition-instead-or-despite",
       "bit": 104,
-      "version": 1,
-      "fingerprint": "977f82b2845de8f3"
+      "version": 2,
+      "fingerprint": "32e67efb0d013431"
     },
     {
       "id": "sec-title-or-appositive",
@@ -717,6 +717,24 @@
       "bit": 118,
       "version": 1,
       "fingerprint": "dbcae54db6244c64"
+    },
+    {
+      "id": "tsp-literary-function",
+      "bit": 119,
+      "version": 1,
+      "fingerprint": "03b26366272ffbf9"
+    },
+    {
+      "id": "notes-stress-while-noting",
+      "bit": 120,
+      "version": 1,
+      "fingerprint": "ca5c8c823f9e98c8"
+    },
+    {
+      "id": "transition-across-sentences",
+      "bit": 121,
+      "version": 1,
+      "fingerprint": "da9a7edca7fb62a2"
     }
   ]
 }

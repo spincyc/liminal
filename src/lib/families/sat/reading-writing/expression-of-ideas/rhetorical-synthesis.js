@@ -231,7 +231,7 @@
       ],
       need: ["Ashby", "Corran", "migrates about 4,000 kilometers south", "does not migrate"],
       key: "The Ashby warbler migrates about 4,000 kilometers south each autumn, but the Corran warbler does not migrate.",
-      firstOnly: "Each autumn, the Ashby warbler migrates about 4,000 kilometers south from the Tellan Range.",
+      firstOnly: "The Ashby warbler, which breeds in the pine forests of the Tellan Range, has a bright yellow throat.",
       secondOnly: "Instead of migrating, the Corran warbler survives the winter in its forests by eating seeds stored in tree bark.",
       similarity: "Both the Ashby warbler and the Corran warbler breed in pine forests and feed mainly on caterpillars.",
     },
@@ -269,8 +269,8 @@
       ],
       need: ["Ferris", "Galloway", "separate bins", "a single bin"],
       key: "Ferris residents sort recyclables into separate bins, whereas Galloway residents use a single bin.",
-      firstOnly: "In Ferris, residents must sort paper, glass, and plastic into separate bins for collection.",
-      secondOnly: "Galloway's recycling program, which began in 2015, is run by a regional recycling cooperative.",
+      firstOnly: "Ferris, a town with a population of about 9,000, has collected recycling from homes every two weeks since 2015.",
+      secondOnly: "Galloway, whose program is run by a regional cooperative, has collected recycling from homes every two weeks since 2015.",
       similarity: "Since 2015, both Ferris and Galloway have collected recycling from homes every two weeks.",
     },
     {
@@ -324,8 +324,8 @@
       ],
       need: ["Carrow", "Hale", "dog sled", "small airplane"],
       key: "The Carrow expedition crossed the glacier by dog sled, whereas the Hale expedition used a small airplane.",
-      firstOnly: "The Carrow expedition, which set out from Vesk, traveled across the Ulma Glacier by dog sled.",
-      secondOnly: "The Hale expedition surveyed the Ulma Glacier from a small airplane, and its photographs are now archived.",
+      firstOnly: "The Carrow expedition, which set out from the port of Vesk, aimed to map the Ulma Glacier.",
+      secondOnly: "The Hale expedition, whose photographs are now held in a university archive, set out from the port of Vesk.",
       similarity: "Setting out from the port of Vesk, both the Carrow and Hale expeditions aimed to map the Ulma Glacier.",
     },
     {
@@ -386,8 +386,8 @@
       ],
       need: ["Quiet Mill", "Lantern Street", "a farming village", "a crowded port city"],
       key: "Delacourt set The Quiet Mill in a farming village but set Lantern Street in a crowded port city.",
-      firstOnly: "Iris Delacourt's novel The Quiet Mill, set in a farming village, follows one family for decades.",
-      secondOnly: "Set in a crowded port city, Delacourt's Lantern Street was later adapted into a stage play.",
+      firstOnly: "Delacourt spent six years writing The Quiet Mill, a novel that follows one family over several decades.",
+      secondOnly: "Lantern Street, a novel that follows one family over several decades, was later adapted into a stage play.",
       similarity: "Iris Delacourt's novels The Quiet Mill and Lantern Street both follow one family over several decades.",
     },
     {
@@ -443,7 +443,7 @@
       key: "In June 1998, Amara Diallo's team found “Old Tooth” while excavating a dry riverbed in the Kessel Basin.",
       dateOnly: "In June 1998, a team led by paleontologist Amara Diallo found the fossil jawbone nicknamed “Old Tooth.”",
       placeOnly: "The 45-million-year-old jawbone “Old Tooth” was found in a dry riverbed in the Kessel Basin.",
-      neither: "“Old Tooth,” a fossil jawbone about 45 million years old, belongs to an early relative of modern horses.",
+      neither: "The jawbone “Old Tooth,” which is about 45 million years old, was found by a team led by paleontologist Amara Diallo.",
     },
     {
       scene: "eoi-rdl-library-conference",
@@ -477,9 +477,9 @@
       ],
       need: ["May 9, 1995", "Brevard City Hall"],
       key: "On May 9, 1995, the first Youth Parliament session was held in the council chamber of Brevard City Hall.",
-      dateOnly: "On May 9, 1995, 120 students aged 14 to 18 debated and voted on proposals about school transportation.",
-      placeOnly: "Meeting in the council chamber of Brevard City Hall, the students debated school transportation proposals.",
-      neither: "Three proposals from the first Youth Parliament session were later adopted by the city council.",
+      dateOnly: "On May 9, 1995, the first Youth Parliament session gathered 120 students aged 14 to 18.",
+      placeOnly: "In the council chamber of Brevard City Hall, the students debated proposals about school transportation.",
+      neither: "At the first Youth Parliament session, 120 students aged 14 to 18 debated proposals about school transportation.",
     },
     {
       scene: "eoi-rdl-silver-arrow",
@@ -513,7 +513,7 @@
       key: "The Treaty of Seven Rivers was signed in April 1763 at a monastery in the town of Orvell.",
       dateOnly: "Signed in April 1763, the Treaty of Seven Rivers settled a dispute over fishing rights.",
       placeOnly: "Two representatives from each nation signed the Treaty of Seven Rivers at a monastery in Orvell.",
-      neither: "The Treaty of Seven Rivers, which remained in force for over a century, settled a fishing dispute.",
+      neither: "Each nation sent two representatives to sign the Treaty of Seven Rivers, which settled a dispute over fishing rights.",
     },
     {
       scene: "eoi-rdl-glass-orchard-premiere",
@@ -528,10 +528,10 @@
         "The set was built to look like an orchard in bloom.",
       ],
       need: ["November 3, 1937", "Carroway"],
-      key: "Ada Morrow's The Glass Orchard premiered on November 3, 1937, at the Palisade Theater in Carroway.",
+      key: "The Glass Orchard premiered on November 3, 1937, at the Palisade Theater in Carroway.",
       dateOnly: "Ada Morrow's The Glass Orchard, which premiered on November 3, 1937, ran for 212 performances.",
-      placeOnly: "The Glass Orchard was first performed at Carroway's Palisade Theater, with Morrow as the grandmother.",
-      neither: "In the first production of The Glass Orchard, Ada Morrow herself played the role of the grandmother.",
+      placeOnly: "The Glass Orchard, in which Ada Morrow herself played the grandmother, was first performed at the Palisade Theater in Carroway.",
+      neither: "The Glass Orchard, in which Ada Morrow herself played the grandmother, ran for 212 performances.",
     },
     {
       scene: "eoi-rdl-window-glass-exhibition",
@@ -550,7 +550,7 @@
       key: "Tomas Rook's first exhibition opened in September 2009 in a former bus depot in the town of Lindgate.",
       dateOnly: "Rook's first exhibition, which opened in September 2009, included 31 sculptures made from window glass.",
       placeOnly: "Held in a former bus depot in Lindgate, Rook's first exhibition drew more than 6,000 visitors.",
-      neither: "Tomas Rook's first exhibition included 31 sculptures, the largest of which weighed 400 kilograms.",
+      neither: "Rook's first exhibition, which included 31 sculptures made from window glass, drew more than 6,000 visitors.",
     },
     {
       scene: "eoi-rdl-tern-first-issue",
@@ -566,7 +566,7 @@
       key: "In January 1949, the first issue of Tern, printed in a bakery's back room in Fallow Creek, was published.",
       dateOnly: "Featuring poems by 14 writers, the first issue of the magazine Tern was published in January 1949.",
       placeOnly: "Otte and Imbe printed Tern on a secondhand press in the back room of a bakery in Fallow Creek.",
-      neither: "Founded by poets Wilhelmina Otte and Charles Imbe, the magazine Tern continued publishing for 23 years.",
+      neither: "The first issue of the magazine Tern, printed by Otte and Imbe on a secondhand press, included poems by 14 writers.",
     },
     {
       scene: "eoi-rdl-quiroga-reading",
@@ -606,7 +606,7 @@
       need: ["Lucero Array", "network of 48 radio antennas"],
       key: "The Lucero Array, a network of 48 radio antennas in northern Chile, detects faint signals from clouds of cold hydrogen gas.",
       assumes: "Irigoyen's Lucero Array, which began collecting data in 2019, detects faint signals from clouds of cold hydrogen gas.",
-      person: "Astronomer Tomás Irigoyen, who designed the array in northern Chile, has studied radio signals from distant galaxies for thirty years.",
+      person: "Tomás Irigoyen, an astronomer who has studied radio signals from distant galaxies for thirty years, designed the array in northern Chile.",
       detail: "Since the Lucero Array began collecting data in 2019, it has detected faint signals from clouds of cold hydrogen gas.",
     },
     {
@@ -624,7 +624,7 @@
       need: ["Tidewatch Project", "citizen-science program"],
       key: "The Tidewatch Project is a citizen-science program in which volunteers photograph high tides along the Maine coast.",
       assumes: "Abernathy's Tidewatch Project has gathered photos of high tides at 130 sites, helping towns plan where to raise roads.",
-      person: "Before founding a program in 2016, marine geologist Ruth Abernathy spent a decade mapping underwater landslides.",
+      person: "Ruth Abernathy, a marine geologist who spent a decade mapping underwater landslides, founded the program in 2016.",
       detail: "Photos taken for the Tidewatch Project since 2016 have helped towns on the Maine coast plan where to raise roads.",
     },
     {
@@ -643,9 +643,9 @@
         "Serrano has written two books about family life in the Southwest.",
       ],
       need: ["Hearth Study", "12-year study"],
-      key: "The Hearth Study, a 12-year study of 640 families, examines how live-in grandparents affect children's language learning.",
+      key: "The Hearth Study is a 12-year study of 640 families that examines how live-in grandparents affect children's language learning.",
       assumes: "Early results of Serrano's Hearth Study suggest that children in three-generation homes hear a wider range of vocabulary.",
-      person: "Sociologist Dalia Serrano, who leads a study of 640 families, grew up in a three-generation household in Tucson.",
+      person: "Dalia Serrano, a sociologist who grew up in a three-generation household in Tucson, leads a study of 640 families.",
       detail: "The Hearth Study, which Serrano leads, follows 640 families living in Arizona and New Mexico.",
     },
     {
@@ -664,7 +664,7 @@
       need: ["Open Streets Kalamar", "closes 12 miles of city streets"],
       key: "Open Streets Kalamar is a program that closes 12 miles of city streets to cars every Sunday morning.",
       assumes: "Since 2015, Febres's Open Streets Kalamar has drawn about 40,000 people who walk or bike the closed streets each week.",
-      person: "Urban planner Nadia Febres, who created a program for the city in 2015, had studied street design in Bogotá and Copenhagen.",
+      person: "Nadia Febres, an urban planner who had studied street design in Bogotá and Copenhagen, created the program in 2015.",
       detail: "Shops along the route of Open Streets Kalamar report higher Sunday sales, when about 40,000 people walk or bike there.",
     },
     {
@@ -684,7 +684,7 @@
       need: ["Emery Ledgers", "account books kept by a general store"],
       key: "The Emery Ledgers, account books kept by a general store in Vermont from 1841 to 1879, record more than 30,000 purchases.",
       assumes: "The Emery Ledgers that Tsai rediscovered show that many customers paid in eggs, wool, or labor rather than in cash.",
-      person: "Historian Owen Tsai, who specializes in the economic history of rural New England, rediscovered the ledgers in a barn in 2009.",
+      person: "Owen Tsai, a historian who specializes in the economic history of rural New England, rediscovered the ledgers in a barn in 2009.",
       detail: "Of the more than 30,000 purchases in the Emery Ledgers, many were paid for in eggs, wool, or labor instead of cash.",
     },
     {
@@ -702,7 +702,7 @@
       need: ["Serrat Aqueduct", "stone channel"],
       key: "The Serrat Aqueduct, a stone channel designed in the 1720s, carried spring water 9 miles to the town of Aldena.",
       assumes: "Pradell's Serrat Aqueduct, whose 36 arches cross a valley, remained in use until 1911.",
-      person: "Before designing a water system for the town of Aldena in the 1720s, engineer Lluís Pradell built grain mills in the region.",
+      person: "Lluís Pradell, an engineer who had earlier built grain mills in the region, designed a water system for the town of Aldena in the 1720s.",
       detail: "The Serrat Aqueduct, which Lluís Pradell designed in the 1720s, crosses a valley on 36 arches.",
     },
     {
@@ -722,7 +722,7 @@
       need: ["Field Guide", "series of 24 woodcut prints"],
       key: "Field Guide, a series of 24 woodcut prints of desert plants, shows each plant at its actual size.",
       assumes: "In Field Guide, which is now owned by a museum in Tucson, Ortega shows each plant at its actual size.",
-      person: "Before making prints of desert plants from 2011 to 2014, Nayeli Ortega trained as a botanical illustrator.",
+      person: "Nayeli Ortega, a printmaker who trained as a botanical illustrator, made prints of desert plants from 2011 to 2014.",
       detail: "Field Guide, which Ortega made between 2011 and 2014, is now owned by a museum in Tucson.",
     },
     {
@@ -740,9 +740,9 @@
         "The piece is divided into five movements.",
       ],
       need: ["Estuary", "composition for solo cello"],
-      key: "Estuary, a 40-minute composition for solo cello, imitates the sound of wind over a salt marsh.",
+      key: "Estuary is a 40-minute composition for solo cello that imitates the sound of wind over a salt marsh.",
       assumes: "Oyelaran's Estuary, which imitates the sound of wind over a salt marsh, has been performed more than 200 times.",
-      person: "Composer Amara Oyelaran, who wrote a piece for cellists in 2012, grew up in Lagos and studied composition in London.",
+      person: "Amara Oyelaran, a composer who grew up in Lagos and studied composition in London, wrote a piece for cellists in 2012.",
       detail: "Since it was written in 2012, Estuary has been performed by cellists more than 200 times.",
     },
     {
@@ -760,7 +760,7 @@
       need: ["The Weather Keepers", "novel about a family that runs a weather station"],
       key: "The Weather Keepers, a 2004 novel about a family that runs a weather station on a remote island, is narrated by a daughter.",
       assumes: "Grange's The Weather Keepers, which is narrated by the family's youngest daughter, has been translated into 14 languages.",
-      person: "Before publishing a novel in 2004, Delia Grange worked for twelve years as a meteorologist.",
+      person: "Delia Grange, a writer who worked for twelve years as a meteorologist, published a novel in 2004.",
       detail: "Translated into 14 languages since its publication in 2004, The Weather Keepers is narrated by the family's youngest daughter.",
     },
     {
@@ -779,7 +779,7 @@
       need: ["The Long Haul", "documentary film about truck drivers"],
       key: "The Long Haul, a documentary film about truck drivers who cross frozen lakes in northern Canada, was released in 2020.",
       assumes: "Doucet's The Long Haul, much of which was shot at night, won an award at a film festival in Toronto after its release.",
-      person: "Director Marguerite Doucet spent two winters riding along with truck drivers who cross frozen lakes in northern Canada.",
+      person: "Marguerite Doucet, a director, spent two winters riding along with truck drivers who cross frozen lakes in northern Canada.",
       detail: "Released in 2020, The Long Haul was shot largely at night and went on to win an award at a festival in Toronto.",
     },
   ];
@@ -1353,14 +1353,25 @@
     },
   ];
 
-  // Emphasize a similarity while acknowledging a difference. The key puts the
-  // difference in its subordinate clause and the similarity in its main
-  // clause; `rev` reverses that emphasis with the same facts.
+  // Stress one of a likeness and a difference and concede the other. Every
+  // topic holds two similarities (`sim`, `sim2`) and two differences
+  // (`diff`, `diff2`), each with the markers verify() looks for, and four
+  // sentences built from them, each a subordinate clause (introduced by
+  // `conj`) and a main clause (`parts.<name> = [subordinate, main]`):
+  //   a: concedes the first difference, stresses the first similarity
+  //   b: concedes the second similarity, stresses the second difference
+  //   c: concedes the second similarity, stresses the first similarity
+  //   e: concedes the first difference, stresses the second difference
+  // Each sentence shares one clause with two others (a with c and e, b with
+  // c and e), so no sentence is the one the others vary around. The goal
+  // decides the key: a when the similarity is to be stressed, b when the
+  // difference is. `mainFirst` puts the main clause first ("..., although").
   const CONCESSION_SIMILARITY_TOPICS = [
     {
       scene: "eoi-csim-icy-moons",
-      allow: ["orbits", "hidden", "only"],
+      allow: ["orbits", "only"],
       pair: "Europa and Enceladus",
+      conj: "Although",
       notes: [
         "Europa is a moon of Jupiter.",
         "Enceladus is a moon of Saturn.",
@@ -1371,20 +1382,21 @@
         "Plumes of water vapor have been observed rising from cracks near the south pole of Enceladus.",
       ],
       sim: "oceans of liquid water",
-      diff: ["Jupiter", "Saturn"],
-      keySub: "Although Europa orbits Jupiter and Enceladus orbits Saturn",
-      keyMain: "both moons are thought to have oceans of liquid water beneath their icy surfaces",
-      revSub: "Although both moons are thought to have oceans of liquid water beneath their icy surfaces",
-      revMain: "Europa orbits Jupiter and Enceladus orbits Saturn",
       sim2: "shell of ice",
+      diff: ["Jupiter", "Saturn"],
       diff2: ["3,100", "500"],
-      simSim: "Although Europa and Enceladus are both covered by a thick shell of ice, both moons are thought to have oceans of liquid water beneath it.",
-      diffDiff: "Although Europa orbits Jupiter and Enceladus orbits Saturn, Europa is about 3,100 kilometers across, while Enceladus is only about 500 kilometers across.",
+      clauses: {
+        diff: "Europa orbits Jupiter and Enceladus orbits Saturn",
+        sim: "Europa and Enceladus are both thought to have oceans of liquid water beneath their ice",
+        sim2: "each moon has a thick shell of ice",
+        diff2: "Europa is about 3,100 kilometers across, while Enceladus is only about 500 kilometers across",
+      },
     },
     {
       scene: "eoi-csim-willow-meadowsweet",
-      allow: ["substances", "riverbank", "meadow", "exceeds", "long"],
+      allow: ["riverbank", "meadow", "exceeds", "long"],
       pair: "willow and meadowsweet",
+      conj: "Although",
       notes: [
         "Willow is a tree that grows along riverbanks.",
         "Meadowsweet is a flowering herb found in damp meadows.",
@@ -1396,20 +1408,21 @@
         "Meadowsweet rarely grows taller than 2 meters.",
       ],
       sim: "salicylic compounds",
-      diff: ["tree", "herb"],
-      keySub: "Although willow is a riverbank tree and meadowsweet a meadow herb",
-      keyMain: "both plants contain salicylic compounds, which reduce pain and fever",
-      revSub: "Although willow and meadowsweet both contain salicylic compounds",
-      revMain: "willow is a riverbank tree and meadowsweet a flowering herb",
       sim2: "folk remedies",
+      diff: ["tree", "herb"],
       diff2: ["20 meters", "2 meters"],
-      simSim: "Although willow and meadowsweet have both long been used as folk remedies, both contain salicylic compounds, which reduce pain and fever.",
-      diffDiff: "Although willow is a riverbank tree and meadowsweet a meadow herb, willow can grow over 20 meters tall, while meadowsweet rarely exceeds 2 meters.",
+      clauses: {
+        diff: "willow is a riverbank tree and meadowsweet a meadow herb",
+        sim: "willow and meadowsweet both contain pain-reducing salicylic compounds",
+        sim2: "each has long been used in folk remedies",
+        diff2: "one can grow more than 20 meters tall, while the other rarely exceeds 2 meters",
+      },
     },
     {
       scene: "eoi-csim-traffic-deaths",
-      allow: ["changed", "changing", "residents", "only"],
+      allow: ["changing"],
       pair: "the two cities",
+      conj: "While",
       notes: [
         "In 2016, the city of Marlton lowered its speed limits on residential streets.",
         "In 2017, the city of Fenwick added protected bike lanes and wider sidewalks.",
@@ -1419,20 +1432,22 @@
         "Both cities held public meetings before making the changes.",
       ],
       sim: "fell by about a third",
-      diff: ["speed limits", "bike lanes"],
-      keySub: "Although Marlton lowered speed limits while Fenwick added bike lanes and wider sidewalks",
-      keyMain: "traffic deaths fell by about a third in both cities",
-      revSub: "Although traffic deaths fell by about a third in both cities",
-      revMain: "Marlton lowered speed limits, whereas Fenwick added bike lanes and wider sidewalks",
       sim2: "public meetings",
+      diff: ["speed limits", "bike lanes"],
       diff2: ["410,000", "280,000"],
-      simSim: "Although Marlton and Fenwick both held public meetings before changing their streets, traffic deaths fell by about a third in each city.",
-      diffDiff: "Although Marlton lowered speed limits while Fenwick added bike lanes and wider sidewalks, Marlton has 410,000 residents and Fenwick only 280,000.",
+      clauses: {
+        diff: "Marlton lowered its speed limits and Fenwick added protected bike lanes",
+        sim: "traffic deaths fell by about a third in each city over the next five years",
+        sim2: "Marlton and Fenwick both held public meetings before changing their streets",
+        diff2: "Marlton has a population of 410,000 and Fenwick a population of 280,000",
+      },
     },
     {
       scene: "eoi-csim-reading-schools",
-      allow: ["end", "relies", "see", "averages", "storybooks"],
+      allow: ["storybooks"],
       pair: "the two schools",
+      conj: "Though",
+      mainFirst: true,
       notes: [
         "Alder Primary School teaches reading mainly through phonics lessons.",
         "Crestview Primary School teaches reading mainly through shared storybook reading.",
@@ -1443,20 +1458,21 @@
         "Alder Primary opened in 1958.",
       ],
       sim: "85 percent",
-      diff: ["phonics", "storybook"],
-      keySub: "Although Alder teaches reading through phonics and Crestview through storybooks",
-      keyMain: "both see about 85 percent of students reading at grade level",
-      revSub: "Although both schools see about 85 percent of students reading at grade level",
-      revMain: "Alder teaches through phonics and Crestview through storybooks",
       sim2: "same school district",
+      diff: ["phonics", "storybook"],
       diff2: ["22 students", "26 students"],
-      simSim: "Although Alder and Crestview are in the same school district, both see about 85 percent of students reading at grade level by third grade.",
-      diffDiff: "Although Alder teaches reading through phonics and Crestview through storybooks, Alder averages 22 students per class and Crestview 26 students.",
+      clauses: {
+        diff: "Alder teaches reading through phonics and Crestview through storybooks",
+        sim: "about 85 percent of students at each school read at grade level by third grade",
+        sim2: "the two schools are in the same school district",
+        diff2: "Alder has 22 students per class on average and Crestview has 26 students",
+      },
     },
     {
       scene: "eoi-csim-worker-parks",
       allow: ["replaced", "only"],
       pair: "the two parks",
+      conj: "While",
       notes: [
         "Rowan Park opened in 1858 on the site of a former brickworks.",
         "Ashcombe Commons opened in 1873 on the site of a former rail yard.",
@@ -1466,20 +1482,22 @@
         "Both parks have a bandstand near the main gate.",
       ],
       sim: "factory workers",
-      diff: ["brickworks", "rail yard"],
-      keySub: "Although Rowan Park replaced a brickworks and Ashcombe Commons a rail yard",
-      keyMain: "both were designed to give factory workers a place to rest outdoors",
-      revSub: "Although both parks were designed to give factory workers a place to rest",
-      revMain: "Rowan Park replaced a brickworks and Ashcombe Commons a rail yard",
       sim2: "bandstand",
+      diff: ["brickworks", "rail yard"],
       diff2: ["30 hectares", "12 hectares"],
-      simSim: "Although Rowan Park and Ashcombe Commons both have a bandstand near the main gate, both were designed to give factory workers a place to rest.",
-      diffDiff: "Although Rowan Park replaced a brickworks and Ashcombe Commons a rail yard, Rowan Park covers 30 hectares and Ashcombe Commons only 12 hectares.",
+      clauses: {
+        diff: "Rowan Park replaced a brickworks and Ashcombe Commons a rail yard",
+        sim: "Rowan Park and Ashcombe Commons were both designed so that factory workers could rest",
+        sim2: "each has a bandstand near its main gate",
+        diff2: "one park covers 30 hectares and the other only 12 hectares",
+      },
     },
     {
       scene: "eoi-csim-scripts",
-      allow: ["arose", "alike", "scripts", "first", "second"],
+      allow: ["arose", "scripts", "first", "second"],
       pair: "Egyptian hieroglyphs and Maya script",
+      conj: "Although",
+      mainFirst: true,
       notes: [
         "Egyptian hieroglyphs were used in northeastern Africa from about 3200 BCE.",
         "Maya script was used in Mesoamerica from about 300 BCE.",
@@ -1489,20 +1507,21 @@
         "Both scripts were carved on stone monuments as well as written on other materials.",
       ],
       sim: "signs for whole words with signs for sounds",
-      diff: ["northeastern Africa", "Mesoamerica"],
-      keySub: "Although hieroglyphs arose in northeastern Africa and Maya script in Mesoamerica",
-      keyMain: "both scripts combine signs for whole words with signs for sounds",
-      revSub: "Although both scripts combine signs for whole words with signs for sounds",
-      revMain: "hieroglyphs arose in northeastern Africa and Maya script in Mesoamerica",
       sim2: "stone monuments",
-      diff2: ["1820s", "late 1900s"],
-      simSim: "Although Egyptian hieroglyphs and Maya script were both carved on stone monuments, both combine signs for whole words with signs for sounds.",
-      diffDiff: "Although hieroglyphs arose in northeastern Africa and Maya script in Mesoamerica, the first were deciphered in the 1820s and the second in the late 1900s.",
+      diff: ["northeastern Africa", "Mesoamerica"],
+      diff2: ["3200 BCE", "300 BCE"],
+      clauses: {
+        diff: "hieroglyphs arose in northeastern Africa and Maya script in Mesoamerica",
+        sim: "both scripts combine signs for whole words with signs for sounds",
+        sim2: "both scripts were carved on stone monuments",
+        diff2: "hieroglyphs were used from about 3200 BCE and Maya script from about 300 BCE",
+      },
     },
     {
       scene: "eoi-csim-river-painters",
-      allow: ["returned", "subject", "again", "course"],
+      allow: ["returned", "subject"],
       pair: "the two painters",
+      conj: "Though",
       notes: [
         "Painter Odile Marceau worked mainly in watercolor.",
         "Painter Hugo Brask worked mainly in oil.",
@@ -1513,20 +1532,21 @@
         "Marceau taught painting at a school in Varne for twenty years.",
       ],
       sim: "Varne River",
-      diff: ["watercolor", "in oil"],
-      keySub: "Although Marceau worked mainly in watercolor and Brask mainly in oil",
-      keyMain: "both artists painted the Varne River repeatedly over several decades",
-      revSub: "Although Marceau and Brask both painted the Varne River repeatedly over several decades",
-      revMain: "Marceau worked mainly in watercolor and Brask in oil",
       sim2: "exhibited",
+      diff: ["watercolor", "in oil"],
       diff2: ["30 centimeters", "4 meters"],
-      simSim: "Although Marceau and Brask both exhibited their work in Varne every summer, both painted the Varne River repeatedly over several decades.",
-      diffDiff: "Although Marceau worked mainly in watercolor and Brask mainly in oil, Marceau's river scenes are under 30 centimeters wide and Brask's largest is over 4 meters.",
+      clauses: {
+        diff: "Marceau worked mainly in watercolor and Brask mainly in oil",
+        sim: "Marceau and Brask both painted the Varne River repeatedly over several decades",
+        sim2: "the two painters exhibited in Varne every summer",
+        diff2: "one usually painted scenes under 30 centimeters wide, the other one over 4 meters",
+      },
     },
     {
       scene: "eoi-csim-acoustic-albums",
-      allow: ["french", "one", "other"],
+      allow: ["french"],
       pair: "the two albums",
+      conj: "Even though",
       notes: [
         "Folk duo Fenn & Dahl recorded their album Low Country in a professional studio in Nashville.",
         "Singer Mireille Tauber recorded her album Stillwater in a stone chapel in rural France.",
@@ -1536,19 +1556,22 @@
         "Both albums were produced by the recording engineer Ilse Moreau.",
       ],
       sim: "acoustic instruments",
-      diff: ["studio", "chapel"],
-      keySub: "Although Low Country was recorded in a Nashville studio and Stillwater in a French chapel",
-      keyMain: "both albums use only acoustic instruments",
-      revSub: "Although Low Country and Stillwater both use only acoustic instruments",
-      revMain: "one was recorded in a studio and the other in a chapel",
       sim2: "Ilse Moreau",
+      diff: ["studio", "chapel"],
       diff2: ["2019", "2021"],
-      simSim: "Although Low Country and Stillwater were both produced by the engineer Ilse Moreau, both albums use only acoustic instruments.",
-      diffDiff: "Although Low Country was recorded in a Nashville studio and Stillwater in a French chapel, Low Country was released in 2019 and Stillwater in 2021.",
+      clauses: {
+        diff: "Low Country was recorded in a Nashville studio and Stillwater in a French chapel",
+        sim: "both albums use only acoustic instruments",
+        sim2: "Low Country and Stillwater were both produced by the recording engineer Ilse Moreau",
+        diff2: "Low Country was released in 2019 and Stillwater in 2021",
+      },
     },
     {
       scene: "eoi-csim-mining-memoirs",
+      allow: ["hers"],
       pair: "the two memoirs",
+      conj: "Although",
+      mainFirst: true,
       notes: [
         "Writer Tomasz Wilk wrote his memoir Coal Dust in verse.",
         "Writer Grace Adeyemi wrote her memoir Pit Lane in prose.",
@@ -1559,38 +1582,38 @@
         "Adeyemi's memoir won a national prize for nonfiction.",
       ],
       sim: "coal-mining towns",
-      diff: ["verse", "prose"],
-      keySub: "Although Wilk wrote Coal Dust in verse and Adeyemi wrote Pit Lane in prose",
-      keyMain: "both memoirs describe growing up in coal-mining towns",
-      revSub: "Although Coal Dust and Pit Lane both describe growing up in coal-mining towns",
-      revMain: "Wilk wrote in verse and Adeyemi in prose",
       sim2: "small presses",
+      diff: ["verse", "prose"],
       diff2: ["1988", "2006"],
-      simSim: "Although Coal Dust and Pit Lane were both first published by small presses, both memoirs describe growing up in coal-mining towns.",
-      diffDiff: "Although Wilk wrote Coal Dust in verse and Adeyemi wrote Pit Lane in prose, Coal Dust was published in 1988 and Pit Lane in 2006.",
+      clauses: {
+        diff: "Wilk wrote his memoir in verse and Adeyemi wrote hers in prose",
+        sim: "Coal Dust and Pit Lane both describe growing up in coal-mining towns",
+        sim2: "both memoirs were first published by small presses",
+        diff2: "Coal Dust was published in 1988 and Pit Lane not until 2006",
+      },
     },
     {
       scene: "eoi-csim-mail-inventors",
-      allow: ["twentieth", "century"],
       pair: "the two inventors",
+      conj: "While",
       notes: [
         "Ada Lindgren trained as an engineer at a university in Stockholm.",
         "Pieter Van Aalst had no formal schooling and learned by repairing clocks.",
         "Both inventors designed early machines for sorting mail.",
+        "Van Aalst's machine was installed in a post office in 1928.",
         "Lindgren's machine was installed in a post office in 1931.",
-        "Van Aalst's machine was patented in 1928.",
         "Both inventors were born in 1889.",
       ],
       sim: "sorting mail",
-      diff: ["engineer", "repairing clocks"],
-      keySub: "Although Lindgren trained as an engineer and Van Aalst learned by repairing clocks",
-      keyMain: "both inventors designed early machines for sorting mail",
-      revSub: "Although Lindgren and Van Aalst both designed early machines for sorting mail",
-      revMain: "one trained as an engineer and the other learned by repairing clocks",
       sim2: "born in 1889",
-      diff2: ["1931", "1928"],
-      simSim: "Although Lindgren and Van Aalst were both born in 1889, both inventors designed early machines for sorting mail.",
-      diffDiff: "Although Lindgren trained as an engineer and Van Aalst learned by repairing clocks, Lindgren's machine was installed in 1931 and Van Aalst's patented in 1928.",
+      diff: ["engineer", "repairing clocks"],
+      diff2: ["1928", "1931"],
+      clauses: {
+        diff: "Lindgren trained as an engineer and Van Aalst learned by repairing clocks",
+        sim: "Lindgren and Van Aalst both designed early machines for sorting mail",
+        sim2: "the two inventors were both born in 1889",
+        diff2: "one machine was installed in a post office in 1928 and the other in 1931",
+      },
     },
   ];
 
@@ -1613,7 +1636,7 @@
       key: "Although the researchers expected the bees to favor flowers with the most nectar, the bees most often visited those closest to their nests.",
       resultMethod: "After tracking 150 marked bees over three summers, Ueda's team found that the bees most often visited the flowers that were closest to their nests.",
       expectationMethod: "Ueda's team, which tracked 150 marked bees over three summers, expected them to favor the flowers that produced the most nectar.",
-      resultOther: "That bees most often visit flowers closest to their nests may help explain why some high-nectar flowers go largely unvisited.",
+      resultOther: "Although bumblebees can fly more than a kilometer from their nests to feed, Ueda's bees most often visited the flowers closest to their nests.",
     },
     {
       scene: "eoi-exp-trout-frogs",
@@ -1623,12 +1646,13 @@
         "They predicted that frog populations would double within five years.",
         "They surveyed the lakes each summer for eight years, along with nearby lakes that still had trout.",
         "Frog populations grew only slightly, because a fungal disease was spreading among the frogs.",
+        "In the nearby lakes that still had trout, frog populations declined.",
       ],
       need: ["double", "grew only slightly"],
       key: "The researchers predicted that frog populations would double after the trout were removed, but the populations grew only slightly.",
       resultMethod: "Surveys of the 12 lakes over eight years showed that frog populations grew only slightly after the invasive trout had been removed.",
       expectationMethod: "After removing invasive trout from 12 lakes, the researchers predicted that frog populations would double within five years.",
-      resultOther: "Frog populations grew only slightly after the trout were removed because a fungal disease was spreading among the frogs.",
+      resultOther: "While frog populations declined in nearby lakes that still had trout, those in the 12 lakes where trout had been removed grew only slightly.",
     },
     {
       scene: "eoi-exp-bag-charge",
@@ -1647,7 +1671,7 @@
       key: "Economists expected Dunfield's 10-cent bag charge to reduce bag use by about 20 percent, but bag use fell by 74 percent.",
       resultMethod: "Counts at 15 grocery stores showed that bag use in Dunfield fell by 74 percent after the town's 10-cent charge began.",
       expectationMethod: "Economists who counted bags at 15 Dunfield grocery stores expected the 10-cent charge to cut bag use by about 20 percent.",
-      resultOther: "After Dunfield began its 10-cent charge in 2019, bag use fell by 74 percent, and many shoppers brought reusable bags.",
+      resultOther: "While the charge does not apply to paper bags, plastic bag use in Dunfield fell by 74 percent after it began.",
     },
     {
       scene: "eoi-exp-loneliness",
@@ -1682,7 +1706,7 @@
       key: "The archaeologists expected Cairn Ridge to have been a summer camp, but remains from every season show people lived there year-round.",
       resultMethod: "Seeds and animal bones from every season of the year showed the archaeologists that people had lived at the Cairn Ridge site year-round.",
       expectationMethod: "Because Cairn Ridge is exposed to harsh winters, the archaeologists who excavated it expected it to have been a summer camp.",
-      resultOther: "People lived year-round at Cairn Ridge, a 4,000-year-old settlement in Scotland that was excavated over four summers.",
+      resultOther: "Although the excavation at Cairn Ridge took place only over four summers, it found seeds and animal bones from every season of the year.",
     },
     {
       scene: "eoi-exp-tavern-books",
@@ -1695,10 +1719,10 @@
         "Many of the women bought food and drink to take home rather than to consume at the tavern.",
       ],
       need: ["almost entirely men", "30 percent"],
-      key: "Hollister expected the customers of four 1760s Philadelphia taverns to be almost entirely men, but about 30 percent were women.",
-      resultMethod: "Of the more than 2,000 customers named in the tavern account books that Hollister studied, about 30 percent were women.",
+      key: "Hollister expected the taverns' customers to be almost entirely men, but about 30 percent were women.",
+      resultMethod: "Of the more than 2,000 customers named in the account books of four 1760s Philadelphia taverns, about 30 percent were women.",
       expectationMethod: "Studying the account books of four 1760s Philadelphia taverns, Hollister expected the customers to be almost entirely men.",
-      resultOther: "About 30 percent of the tavern customers Hollister identified were women, many of whom bought food and drink to take home.",
+      resultOther: "While most of the named customers were men, about 30 percent were women, many of whom bought food and drink to take home.",
     },
     {
       scene: "eoi-exp-theater-acoustics",
@@ -1717,7 +1741,7 @@
       key: "The engineers expected the theater's bowl-like shape to explain its acoustics, but its ridged stone seats did most of the work.",
       resultMethod: "Computer models that tested the shape and the seats separately showed that Leondari's ridged stone seats muffle low-pitched noise.",
       expectationMethod: "The engineers, who tested the theater's shape and seats separately, expected its bowl-like shape to be the main reason speech carries.",
-      resultOther: "By muffling low-pitched background noise, the ridged stone seats of the 12,000-seat theater at Leondari help speech carry.",
+      resultOther: "Although the theater at Leondari could seat about 12,000 people, speech carries well there because its ridged stone seats muffle low-pitched noise.",
     },
     {
       scene: "eoi-exp-composer-quiz",
@@ -1734,7 +1758,7 @@
       key: "The researchers expected musicians to identify the composers far more accurately, but both groups did so with nearly the same accuracy.",
       resultMethod: "Among 200 listeners who heard short classical excerpts, musicians and nonmusicians named composers with nearly the same accuracy.",
       expectationMethod: "Playing classical excerpts to 200 listeners, half of them musicians, the researchers expected the musicians to identify composers far more accurately.",
-      resultOther: "Musicians and nonmusicians identified the composers with nearly the same accuracy, and both did best with Mozart.",
+      resultOther: "While half of the 200 listeners were trained musicians and half were not, the two groups did best with pieces by the same composer, Mozart.",
     },
     {
       scene: "eoi-exp-grunwald-letters",
@@ -1749,10 +1773,10 @@
         "Grunwald published eleven novels.",
       ],
       need: ["city readers", "two-thirds"],
-      key: "Petrov expected most of Grunwald's letters to come from city readers, but about two-thirds came from farms and small villages.",
+      key: "Petrov expected most of the letters to come from city readers, but about two-thirds came from farms and small villages.",
       resultMethod: "Of the 1,400 letters that readers sent to Grunwald in the 1880s, about two-thirds came from farms and small villages.",
       expectationMethod: "Because Grunwald's novels are set in cities, Petrov expected most of her 1,400 letters to have come from city readers.",
-      resultOther: "About two-thirds of Grunwald's letters came from farms and villages, and many of their writers said her novels showed them an unseen world.",
+      resultOther: "While about two-thirds of the 1,400 letters came from farms and small villages, Grunwald answered nearly every one herself.",
     },
     {
       scene: "eoi-exp-sand-notebooks",
@@ -1766,19 +1790,20 @@
       ],
       need: ["worked mostly alone", "23 assistants"],
       key: "Kimani expected Sand's notebooks to show that he worked mostly alone, yet they credit 23 assistants and students by name.",
-      resultMethod: "According to Kimani, the notebooks Sand kept from 1904 to 1920 credit 23 assistants and students by name.",
-      expectationMethod: "Studying the notebooks of prize-winning chemist Henrik Sand, Kimani expected them to show that he worked mostly alone.",
-      resultOther: "Sand's notebooks credit 23 assistants and students by name, and several entries are in handwriting other than his own.",
+      resultMethod: "According to Kimani, the notebooks that Sand kept from 1904 to 1920 credit 23 assistants and students by name.",
+      expectationMethod: "Studying the notebooks that Sand kept from 1904 to 1920, Kimani expected them to show that he worked mostly alone.",
+      resultOther: "Although the notebooks from 1904 to 1920 are Sand's own, several of their entries are in handwriting other than his.",
     },
   ];
 
 
-  // Hard: contrast two subjects on the feature the goal names. Every choice
+  // Contrast two subjects on the feature the goal names. Every choice
   // names both subjects; `key` contrasts them on the named feature (markers
   // `featureA` and `featureB`, one per subject), `otherFeature` contrasts
-  // them on a different feature, `mixed` gives the named feature for only one
-  // subject and something else for the other, and `shared` states what they
-  // have in common.
+  // them on a different feature (often in the goal's own words: where the
+  // finches feed, not what they eat), `mixed` gives the named feature for
+  // only one subject and something else for the other, and `shared` states
+  // what they have in common.
   const NAMED_FEATURE_TOPICS = [
     {
       scene: "eoi-rnf-bridge-funding",
@@ -1794,7 +1819,8 @@
       ],
       featureA: ["tolls"], featureB: ["grant"],
       key: "The Holm Bridge was paid for with tolls from drivers, whereas the Kessler Bridge was built with a national government grant.",
-      otherFeature: "The Holm Bridge spans 420 meters, whereas the Kessler Bridge, which opened in 1958, spans 610 meters.",
+      otherFeature: "Construction gave the Holm Bridge a span of 420 meters, whereas it gave the Kessler Bridge a span of 610 meters.",
+      allow: ["construction", "gave"],
       mixed: "The Holm Bridge was paid for with tolls collected from drivers, whereas the Kessler Bridge has a separate lane for bicycles.",
       shared: "Both the Holm Bridge, which opened in 1936, and the Kessler Bridge, which opened in 1958, cross the Varne River.",
     },
@@ -1812,7 +1838,7 @@
       ],
       featureA: ["pine seeds"], featureB: ["insects"],
       key: "The Arlen finch feeds almost entirely on pine seeds, while the Varne finch feeds mainly on insects that it catches in flight.",
-      otherFeature: "The Arlen finch of the pine forests weighs about 40 grams, while the Varne finch, which lives in coastal scrub, weighs about 15 grams.",
+      otherFeature: "The Arlen finch feeds in the pine forests of the Tarn Mountains, while the Varne finch feeds in the coastal scrub below them.",
       mixed: "The Arlen finch feeds almost entirely on pine seeds, while the Varne finch lives in the coastal scrub below the Tarn Mountains.",
       shared: "Both the Arlen finch of the pine forests and the Varne finch of the coastal scrub build cup-shaped nests of moss and grass.",
     },
@@ -1829,7 +1855,7 @@
       ],
       featureA: ["churches"], featureB: ["concert hall"],
       key: "The Ostby Chamber Orchestra performs mostly in small-town churches and gymnasiums, while the Varne Philharmonic plays in a concert hall.",
-      otherFeature: "The Ostby Chamber Orchestra, founded in 1987, has 24 musicians, while the Varne Philharmonic, founded in 1921, has 96 musicians.",
+      otherFeature: "The Ostby Chamber Orchestra performs with 24 musicians, while the Varne Philharmonic, founded in 1921, performs with 96.",
       mixed: "The Ostby Chamber Orchestra performs mostly in small-town churches and gymnasiums, while the Varne Philharmonic was founded in 1921.",
       shared: "Both the Ostby Chamber Orchestra, which tours for six weeks every spring, and the Varne Philharmonic commission at least one new piece each year.",
       allow: ["small-town", "plays"],
@@ -1944,7 +1970,8 @@
       ],
       featureA: ["tax records"], featureB: ["interviewed"],
       key: "Varga analyzed tax records from 4,000 shops in the city of Harlow, whereas Diallo interviewed the owners of 60 shops in the town of Kell.",
-      otherFeature: "Varga's study of rising rents was published in 2019, whereas Diallo's study of the same question was published in 2021.",
+      otherFeature: "Varga's evidence on rising rents was published in 2019, whereas Diallo's evidence on the same question was published in 2021.",
+      allow: ["evidence"],
       mixed: "Varga analyzed tax records from 4,000 shops in Harlow, whereas Diallo's study of rising rents was published in 2021.",
       shared: "Both Varga, who studied shops in Harlow, and Diallo, who studied shops in Kell, concluded that rising rents push out older family businesses first.",
     },
@@ -1980,7 +2007,8 @@
       ],
       featureA: ["180"], featureB: ["210"],
       key: "Birch Academy, whose school year runs from September to June, holds classes 180 days a year, whereas Linden School holds classes 210 days a year.",
-      otherFeature: "Birch Academy's school year runs from September to June, whereas Linden School's year is divided into four terms with three-week breaks.",
+      otherFeature: "Birch Academy holds classes in a school year that runs from September to June, whereas Linden School divides its year into four terms.",
+      allow: ["divides"],
       mixed: "Birch Academy holds classes 180 days a year, whereas Linden School, which enrolls about 400 students, was founded in 2005.",
       shared: "Both Birch Academy, founded in 1962, and Linden School, founded in 2005, enroll about 400 students.",
     },
@@ -1998,17 +2026,18 @@
       ],
       featureA: ["electricity"], featureB: ["floods"],
       key: "The Harlow Dam was built to generate electricity for factories, whereas the Kessel Dam was built to hold back spring floods.",
-      otherFeature: "The Harlow Dam, completed on the Varne River in 1952, is 85 meters tall, whereas the Kessel Dam, completed in 1967, is 40 meters tall.",
+      otherFeature: "The Harlow Dam was built 85 meters tall on the Varne River, whereas the Kessel Dam was built 40 meters tall on the Tarn River.",
       mixed: "The Harlow Dam was built to generate electricity for factories, whereas the Kessel Dam is 40 meters tall.",
       shared: "Both the Harlow Dam on the Varne River and the Kessel Dam on the Tarn River are made of concrete.",
     },
   ];
 
-  // Hard: show how large a difference is. Every choice names both subjects;
+  // Show how large a difference is. Every choice names both subjects;
   // `key` gives both values of the measure the goal names (`values`),
   // `direction` says which is greater without saying by how much, `otherSize`
   // gives both values of a different measure, and `oneValue` gives the named
-  // measure for only one subject.
+  // measure for only one subject. A ratio ("four times") appears in some keys
+  // and some other-measure choices, so it never marks the key.
   const DIFFERENCE_SIZE_TOPICS = [
     {
       scene: "eoi-rsz-rask-rainfall",
@@ -2023,11 +2052,11 @@
         "Ostby's average July temperature is 21°C.",
       ],
       values: ["2,400", "600"],
-      key: "Rask receives about 2,400 millimeters of rain a year, four times the 600 millimeters that fall on Ostby.",
+      key: "Rask receives about 2,400 millimeters of rain a year, while Ostby, 60 kilometers to the east, receives about 600.",
       direction: "Rask, where most of the rain falls between October and March, is a wetter town than Ostby, which lies in a rain shadow.",
-      otherSize: "Rask's average July temperature is 16°C, while that of Ostby, 60 kilometers to the east, is 21°C.",
+      otherSize: "Rask's average July temperature is 16°C, five degrees cooler than the 21°C average in Ostby.",
       oneValue: "Rask receives about 2,400 millimeters of rain a year, while Ostby lies in the rain shadow of the Tarn Mountains.",
-      allow: ["times", "wetter", "fall"],
+      allow: ["times", "wetter", "fall", "degrees", "cooler"],
     },
     {
       scene: "eoi-rsz-bridge-spans",
@@ -2043,9 +2072,9 @@
       values: ["900", "150"],
       key: "The Ostby Bridge's 900-meter main span is six times as long as the 150-meter main span of the Varne Bridge.",
       direction: "The main span of the Ostby Bridge, which opened in 1998, is longer than that of the Varne Bridge, which opened in 1921.",
-      otherSize: "The Ostby Bridge opened in 1998, whereas the older Varne Bridge, which was built mostly by hand, opened in 1921.",
+      otherSize: "The Ostby Bridge opened in 1998, nearly eighty years after the Varne Bridge, which was built mostly by hand, opened in 1921.",
       oneValue: "The Ostby Bridge has a main span 900 meters long, while the Varne Bridge was built mostly by hand.",
-      allow: ["times", "longer"],
+      allow: ["times", "longer", "nearly", "eighty"],
     },
     {
       scene: "eoi-rsz-museum-attendance",
@@ -2060,11 +2089,11 @@
         "The museum's collection includes 12,000 objects.",
       ],
       values: ["40,000", "160,000"],
-      key: "The Varden Museum drew about 40,000 visitors in the year before it closed and about 160,000 in its first year after reopening.",
+      key: "The Varden Museum drew about 160,000 visitors in its first year after reopening, four times the 40,000 it drew the year before it closed.",
       direction: "The Varden Museum drew more visitors in its first year after reopening than it had in the year before it closed for renovation.",
       otherSize: "Before its renovation, the Varden Museum was open 30 hours a week; since reopening, it has been open 56 hours a week.",
       oneValue: "The Varden Museum, which closed for two years for a renovation, drew about 160,000 visitors in its first year after reopening.",
-      allow: ["people"],
+      allow: ["people", "times"],
     },
     {
       scene: "eoi-rsz-marsh-species",
@@ -2097,9 +2126,9 @@
         "The Hawks won the league title in 2021.",
       ],
       values: ["$12", "$45"],
-      key: "A ticket to a Harlow Hawks home game cost $12 in 2010 but $45 in 2023, nearly four times as much.",
+      key: "A ticket to a Harlow Hawks home game cost $12 in 2010 but $45 in 2023.",
       direction: "A ticket to a Harlow Hawks home game cost more in 2023, after the team moved to a new arena, than it had in 2010.",
-      otherSize: "Harlow Hawks home games drew an average of 4,100 fans in 2010 and 11,800 fans in 2023.",
+      otherSize: "Harlow Hawks home games drew an average of 4,100 fans in 2010 and 11,800 in 2023, nearly three times as many.",
       oneValue: "A ticket to a Harlow Hawks home game cost $45 in 2023, five years after the team moved to its 15,000-seat arena.",
       allow: ["times", "nearly"],
     },
@@ -2137,9 +2166,9 @@
       values: ["31 percent", "4 percent"],
       key: "About 31 percent of Ostby's workers commute by bicycle, compared with only 4 percent of Harlow's workers.",
       direction: "A larger share of workers commute by bicycle in Ostby than in Harlow, even though Ostby's winters are colder.",
-      otherSize: "Ostby has 140 kilometers of protected bike lanes, compared with only 12 kilometers in Harlow.",
+      otherSize: "Ostby has 140 kilometers of protected bike lanes, more than ten times the 12 kilometers in Harlow.",
       oneValue: "About 31 percent of Ostby's workers commute by bicycle, while Harlow opened a bike-share program in 2021.",
-      allow: ["compared", "larger", "share"],
+      allow: ["compared", "larger", "share", "times"],
     },
     {
       scene: "eoi-rsz-lund-novels",
@@ -2153,11 +2182,11 @@
         "Both novels are set in the town where Lund grew up.",
       ],
       values: ["3,000", "90,000"],
-      key: "Pia Lund's second novel sold about 90,000 copies in its first year, thirty times the 3,000 copies her first novel sold.",
+      key: "Pia Lund's first novel sold about 3,000 copies in its first year, and her second sold about 90,000 in its first year.",
       direction: "Pia Lund's second novel, which was adapted into a film, sold more copies in its first year than her first novel did.",
-      otherSize: "Pia Lund's first novel took her seven years to write, while her second novel took her only two years.",
+      otherSize: "Pia Lund's first novel took her seven years to write, more than three times as long as the two years her second took.",
       oneValue: "Pia Lund's second novel sold about 90,000 copies in its first year and, like her first, is set in the town where she grew up.",
-      allow: ["times", "thirty", "only"],
+      allow: ["times", "thirty", "only", "long"],
     },
     {
       scene: "eoi-rsz-aurora-crossing",
@@ -2236,6 +2265,220 @@
     },
   ];
 
+  // Hard: stress one element of a study while noting another. Each topic's
+  // notes give an aim, a method (`markers.method`), a finding
+  // (`markers.finding`), and what the finding suggests (`markers.meaning`),
+  // plus details no choice needs. Its four sentences all contain the
+  // finding and differ in which element the main clause carries and which a
+  // subordinate clause or phrase carries:
+  //   fm: stresses the finding, notes the method
+  //   mf: stresses the method, notes the finding
+  //   fs: stresses the finding, notes what it suggests
+  //   sf: stresses what it suggests, notes the finding
+  // Every draw offers all four, and the goal names one pairing, so each
+  // sentence is the key in a quarter of the draws.
+  const STRESS_TOPICS = [
+    {
+      scene: "eoi-snw-whistled-speech",
+      allow: ["whistled", "lifelong"],
+      notes: [
+        "Linguist Noor Haddad studied the whistled form of Spanish used on the island of Tamarel.",
+        "She wanted to know how much of a whistled message listeners actually understand.",
+        "She played 200 recorded whistled sentences to 40 islanders who had whistled since childhood.",
+        "The listeners correctly repeated about 90 percent of the sentences.",
+        "The finding suggests that whistled speech carries nearly as much information as spoken words.",
+        "Whistled messages on Tamarel can be heard up to 3 kilometers away.",
+        "Fewer than 500 people on the island still whistle fluently.",
+      ],
+      markers: { method: "played 200 recorded", finding: "about 90 percent", meaning: "nearly as much information" },
+      sentences: {
+        fm: "After Haddad played 200 recorded whistled sentences to 40 islanders, she found that they correctly repeated about 90 percent of them.",
+        mf: "Haddad played 200 recorded whistled sentences to 40 islanders, who correctly repeated about 90 percent of them.",
+        fs: "Listeners repeated about 90 percent of Haddad's whistled sentences correctly, suggesting whistled speech carries nearly as much information as spoken words.",
+        sf: "Whistled speech may carry nearly as much information as spoken words, since listeners correctly repeated about 90 percent of Haddad's sentences.",
+      },
+    },
+    {
+      scene: "eoi-snw-owl-boxes",
+      allow: ["owl"],
+      notes: [
+        "Ecologist Tomas Arvid studied barn owls on farms in the Lenne Valley.",
+        "He wanted to know whether nest boxes for owls reduce the number of mice in farm fields.",
+        "He put up nest boxes on 20 farms and counted mice in their fields for three years, comparing them with 20 farms that had no boxes.",
+        "Fields on farms with nest boxes had about 40 percent fewer mice.",
+        "The finding suggests that farmers could protect their grain without using poison.",
+        "A pair of barn owls can eat more than 2,000 mice a year.",
+        "Owls began nesting in most of the boxes within one season.",
+      ],
+      markers: { method: "counted mice", finding: "about 40 percent fewer mice", meaning: "without using poison" },
+      sentences: {
+        fm: "Having counted mice for three years on 20 farms with owl nest boxes, Arvid found about 40 percent fewer mice there than on farms without boxes.",
+        mf: "Arvid put up owl nest boxes on 20 farms and counted mice there for three years, finding about 40 percent fewer mice than on farms without boxes.",
+        fs: "Farms with owl nest boxes had about 40 percent fewer mice in their fields, which suggests that farmers could protect their grain without using poison.",
+        sf: "Farmers could protect their grain without using poison, since farms with owl nest boxes had about 40 percent fewer mice in their fields.",
+      },
+    },
+    {
+      scene: "eoi-snw-kessa-anchors",
+      allow: ["work", "apparently"],
+      notes: [
+        "Archaeologist Ines Varro studied the ancient harbor at Kessa, on the coast of the Talan Sea.",
+        "She wanted to know how long the harbor had been in use.",
+        "She dated the pottery found beside 60 stone anchors on the harbor floor.",
+        "The oldest anchors were about 3,000 years old, a thousand years older than the town's earliest buildings.",
+        "The finding suggests that sailors used the harbor long before anyone settled beside it.",
+        "The anchors weigh between 20 and 150 kilograms.",
+        "Most of the anchors were found in water less than 5 meters deep.",
+      ],
+      markers: { method: "pottery found beside 60 stone anchors", finding: "about 3,000 years old", meaning: "long before anyone settled" },
+      sentences: {
+        fm: "By dating the pottery found beside 60 stone anchors on the harbor floor, Varro found that the oldest anchors were about 3,000 years old.",
+        mf: "Varro dated the pottery found beside 60 stone anchors on the harbor floor, work that showed the oldest anchors to be about 3,000 years old.",
+        fs: "The oldest of Kessa's anchors are about 3,000 years old, which suggests that sailors used the harbor long before anyone settled beside it.",
+        sf: "Sailors apparently used the harbor at Kessa long before anyone settled beside it, since its oldest anchors are about 3,000 years old.",
+      },
+    },
+    {
+      scene: "eoi-snw-handwritten-notes",
+      notes: [
+        "Psychologist Lena Marsh studied note-taking among students at Harwell College.",
+        "She wanted to know whether taking notes by hand helps students remember a lecture better than typing does.",
+        "She had 120 students watch the same lecture, half taking notes by hand and half on laptops, and tested them a week later.",
+        "Students who took notes by hand answered about 25 percent more questions correctly.",
+        "The finding suggests that schools should be cautious about replacing notebooks with laptops.",
+        "The laptop group took nearly twice as many words of notes.",
+        "The lecture lasted 40 minutes.",
+      ],
+      markers: { method: "tested", finding: "about 25 percent more questions", meaning: "cautious about replacing notebooks" },
+      sentences: {
+        fm: "Having tested 120 students a week after a lecture, Marsh found that those who took notes by hand answered about 25 percent more questions correctly.",
+        mf: "Marsh tested 120 students a week after a lecture, finding that those who had taken notes by hand answered about 25 percent more questions correctly.",
+        fs: "Students who took notes by hand answered about 25 percent more questions correctly, which suggests that schools should be cautious about replacing notebooks.",
+        sf: "Schools should be cautious about replacing notebooks with laptops, since students who took notes by hand answered about 25 percent more questions correctly.",
+      },
+    },
+    {
+      scene: "eoi-snw-bridge-sensors",
+      allow: ["trial"],
+      notes: [
+        "Engineer Paulo Sena studied the steel footbridge over the Arn River in the city of Vessel.",
+        "He wanted to know whether cheap vibration sensors could detect damage in bridges.",
+        "He attached 30 sensors, each costing about $20, to the bridge and recorded its vibrations for a year.",
+        "The sensors detected a cracked bolt months before inspectors found it.",
+        "The finding suggests that cities could monitor small bridges at a fraction of the usual cost.",
+        "The bridge carries about 8,000 pedestrians a day.",
+        "Standard monitoring systems can cost more than $100,000 per bridge.",
+      ],
+      markers: { method: "for a year", finding: "cracked bolt", meaning: "fraction of the usual cost" },
+      sentences: {
+        fm: "Recording the footbridge's vibrations for a year with 30 sensors, Sena found that they detected a cracked bolt months before inspectors found it.",
+        mf: "Sena recorded the footbridge's vibrations for a year with 30 sensors, a trial in which they detected a cracked bolt months before inspectors found it.",
+        fs: "Sena's $20 sensors detected a cracked bolt months before inspectors found it, suggesting that cities could monitor bridges at a fraction of the usual cost.",
+        sf: "Cities could monitor small bridges at a fraction of the usual cost, since Sena's $20 sensors detected a cracked bolt months before inspectors found it.",
+      },
+    },
+    {
+      scene: "eoi-snw-merrin-tea",
+      allow: ["method"],
+      notes: [
+        "Historian Clara Ondine studied trade at the port of Merrin in the 1700s.",
+        "She wanted to know where the tea that Merrin imported came from.",
+        "She compared 400 ship manifests with the records of tea merchants in three other ports.",
+        "Nearly half of Merrin's tea was shipped from Asker, a port farther up the coast.",
+        "The finding suggests that Asker's merchants controlled more of the region's tea trade than historians had thought.",
+        "Merrin imported about 90 tonnes of tea a year.",
+        "Most of the ships' crews were hired in Merrin.",
+      ],
+      markers: { method: "compared 400 ship manifests", finding: "shipped from Asker", meaning: "than historians had thought" },
+      sentences: {
+        fm: "Having compared 400 ship manifests with merchants' records, Ondine found that nearly half of Merrin's tea was shipped from Asker.",
+        mf: "Ondine compared 400 ship manifests with merchants' records, a method that showed nearly half of Merrin's tea was shipped from Asker.",
+        fs: "Nearly half of Merrin's tea was shipped from Asker, which suggests that Asker's merchants controlled more of the tea trade than historians had thought.",
+        sf: "Asker's merchants may have controlled more of the region's tea trade than historians had thought, since nearly half of Merrin's tea was shipped from Asker.",
+      },
+    },
+    {
+      scene: "eoi-snw-meteor-cameras",
+      allow: ["large"],
+      notes: [
+        "Astronomer Rafael Ito studied meteors over the Varn Highlands.",
+        "He wanted to know how often meteorites large enough to be found on the ground fall in the region.",
+        "He set up 12 cameras that filmed the night sky continuously for five years.",
+        "The cameras recorded 9 falls of meteorites large enough to be found on the ground.",
+        "The finding suggests that such falls are about three times as common as earlier estimates held.",
+        "Volunteers recovered meteorites from 4 of the falls.",
+        "Each camera covers about a sixth of the sky.",
+      ],
+      markers: { method: "12 cameras", finding: "9 falls", meaning: "three times as common" },
+      sentences: {
+        fm: "Filming the night sky with 12 cameras for five years, Ito recorded 9 falls of meteorites large enough to be found on the ground.",
+        mf: "Ito filmed the night sky with 12 cameras for five years, during which they recorded 9 falls of meteorites large enough to be found on the ground.",
+        fs: "Ito's cameras recorded 9 falls of meteorites large enough to be found on the ground, suggesting such falls are about three times as common as estimates held.",
+        sf: "Large meteorite falls may be about three times as common as earlier estimates held, since Ito's cameras recorded 9 falls in five years.",
+      },
+    },
+    {
+      scene: "eoi-snw-rice-ducks",
+      allow: ["sprayed", "letting"],
+      notes: [
+        "Agronomist Sora Imbe studied rice farming in the Hallan Delta.",
+        "She wanted to know whether ducks can take the place of herbicides in rice paddies.",
+        "She let ducks swim in 15 paddies for a growing season and compared them with 15 paddies treated with herbicide.",
+        "Paddies with ducks produced nearly the same amount of rice as those treated with herbicide.",
+        "The finding suggests that farmers could stop spraying herbicide without losing much of their harvest.",
+        "The ducks ate weeds and insects but not the rice plants.",
+        "Each paddy held about 20 ducks.",
+      ],
+      markers: { method: "15 paddies for a growing season", finding: "nearly the same amount of rice", meaning: "without losing much" },
+      sentences: {
+        fm: "Letting ducks swim in 15 paddies for a growing season, Imbe found that the paddies produced nearly the same amount of rice as sprayed ones.",
+        mf: "Imbe let ducks swim in 15 paddies for a growing season, paddies that produced nearly the same amount of rice as those treated with herbicide.",
+        fs: "Paddies with ducks produced nearly the same amount of rice as sprayed ones, suggesting that farmers could stop spraying without losing much of their harvest.",
+        sf: "Farmers could stop spraying herbicide without losing much of their harvest, since paddies with ducks produced nearly the same amount of rice as sprayed ones.",
+      },
+    },
+    {
+      scene: "eoi-snw-library-fines",
+      allow: ["returns"],
+      notes: [
+        "Economist Aisha Varga studied the public libraries of the city of Dorran.",
+        "She wanted to know whether ending overdue fines would change how many books were returned late.",
+        "She compared return records from the year before and the year after Dorran's libraries stopped charging fines in 2019.",
+        "The share of books returned late rose by only 2 percent.",
+        "The finding suggests that fines do little to make borrowers return books on time.",
+        "Borrowing by children rose by 18 percent after fines ended.",
+        "Dorran's libraries lend about 900,000 items a year.",
+      ],
+      markers: { method: "compared return records", finding: "only 2 percent", meaning: "do little to make borrowers" },
+      sentences: {
+        fm: "Having compared return records from before and after Dorran's libraries stopped charging fines, Varga found that late returns rose by only 2 percent.",
+        mf: "Varga compared return records from before and after Dorran's libraries stopped charging fines, records in which late returns rose by only 2 percent.",
+        fs: "Late returns rose by only 2 percent after Dorran's libraries ended fines, which suggests that fines do little to make borrowers return books on time.",
+        sf: "Fines may do little to make borrowers return books on time, since late returns rose by only 2 percent after Dorran's libraries stopped charging them.",
+      },
+    },
+    {
+      scene: "eoi-snw-glacier-moss",
+      allow: ["newly"],
+      notes: [
+        "Botanist Erik Solheim studied mosses on ground uncovered by the retreating Varn Glacier.",
+        "He wanted to know whether mosses buried under ice for centuries could still grow.",
+        "He placed 50 moss samples from ground the ice had uncovered within the past year in a warm growth chamber.",
+        "Eleven of the samples sprouted new shoots within a month.",
+        "The finding suggests that plants could recolonize ground left by glaciers faster than scientists had assumed.",
+        "Radiocarbon dating showed that the mosses had been covered by ice for about 400 years.",
+        "The growth chamber was kept at 17°C.",
+      ],
+      markers: { method: "growth chamber", finding: "sprouted new shoots", meaning: "faster than" },
+      sentences: {
+        fm: "Placing 50 moss samples from newly uncovered ground in a warm growth chamber, Solheim found that eleven sprouted new shoots within a month.",
+        mf: "Solheim placed 50 moss samples from newly uncovered ground in a warm growth chamber, where eleven of them sprouted new shoots within a month.",
+        fs: "Eleven of Solheim's moss samples sprouted new shoots within a month, suggesting that plants could recolonize ground left by glaciers faster than assumed.",
+        sf: "Plants could recolonize ground left by glaciers faster than scientists had assumed, since eleven of Solheim's moss samples sprouted new shoots within a month.",
+      },
+    },
+  ];
+
   /* =================================================================== */
   /* Rhetorical Synthesis machinery                                       */
   /* =================================================================== */
@@ -2261,9 +2504,13 @@
     return { type: "notes", content: `${NOTES_INTRO}\n\n${notes.map((note) => `• ${note}`).join("\n")}` };
   }
 
-  // One Rhetorical Synthesis template. `spec.choices(topic)` returns
-  // { key, wrong: [[text, reason], ...] }; `spec.check(topic, choices)`
-  // is the miswiring test verify() runs on top of the shared checks.
+  // One Rhetorical Synthesis template. `spec.choices(topic, variant)`
+  // returns { key, wrong: [[text, reason], ...] }; `spec.check(topic,
+  // choices, variant)` is the miswiring test verify() runs on top of the
+  // shared checks. A template whose goal varies over one fixed set of
+  // choices lists `spec.variants`; each draw picks one, and the goal, the
+  // choices and the check all read it, so the same four sentences can have
+  // different keys.
   function synthesisFamily(spec) {
     return {
       id: spec.id,
@@ -2280,15 +2527,16 @@
       topics: spec.topics,
       build(t) {
         const topic = t.pick(spec.topics);
-        const choices = spec.choices(topic);
+        const variant = spec.variants ? t.pick(spec.variants(topic)) : undefined;
+        const choices = spec.choices(topic, variant);
         const instance = {
           responseType: "multiple-choice",
           scene: topic.scene,
           stimulus: notesStimulus(topic.notes),
-          stem: `The student wants to ${spec.goal(topic)}. ${SYNTHESIS_QUESTION}`,
+          stem: `The student wants to ${spec.goal(topic, variant)}. ${SYNTHESIS_QUESTION}`,
           correct: choices.key,
           wrong: choices.wrong,
-          explanation: spec.explain(topic),
+          explanation: spec.explain(topic, variant),
           steps: spec.steps,
           principles: spec.principles,
           trap: spec.trap,
@@ -2306,7 +2554,7 @@
             offered.wrong.length === 3 &&
             new Set(all).size === 4 &&
             grounded(topic, all) &&
-            spec.check(topic, offered)
+            spec.check(topic, offered, variant)
           );
         };
         return instance;
@@ -2560,57 +2808,169 @@
     hint: "Does the choice say both what was found and why it matters?",
   });
 
+  // The four concession sentences of a topic, built from its clauses.
+  const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1);
+  function concessionSentence(topic, subordinate, main) {
+    return topic.mainFirst
+      ? `${capitalize(main)}, ${topic.conj.toLowerCase()} ${subordinate}.`
+      : `${topic.conj} ${subordinate}, ${main}.`;
+  }
+  function concessionSentences(topic) {
+    const { diff, sim, sim2, diff2 } = topic.clauses;
+    return {
+      a: concessionSentence(topic, diff, sim),
+      b: concessionSentence(topic, sim2, diff2),
+      c: concessionSentence(topic, sim2, sim),
+      e: concessionSentence(topic, diff, diff2),
+    };
+  }
+  const CONCESSION_GOALS = {
+    similarity: (topic) => `emphasize a similarity between ${topic.pair} while acknowledging a difference between them`,
+    difference: (topic) => `emphasize a difference between ${topic.pair} while acknowledging a similarity between them`,
+  };
+  const CONCESSION_REASONS = {
+    similarity: {
+      b: "It holds a similarity and a difference, but it concedes the similarity in its subordinate clause and stresses the difference in its main clause, the reverse of the goal.",
+      c: "Both of its clauses state similarities, so it never acknowledges how the two differ.",
+      e: "Both of its clauses state differences, so nothing in it stresses what the two share.",
+    },
+    difference: {
+      a: "It holds a similarity and a difference, but it stresses the similarity in its main clause and concedes the difference in its subordinate clause, the reverse of the goal.",
+      c: "Both of its clauses state similarities, so nothing in it stresses how the two differ.",
+      e: "Both of its clauses state differences, so it never acknowledges what the two share.",
+    },
+  };
+
   const concessionSimilarityNotes = synthesisFamily({
     id: "notes-similarity-despite-difference",
     subskill: "rhetorical goal",
     difficulty: "Hard",
-    title: "Notes goal: stress a likeness, concede a difference",
-    recognize: "Every choice concedes one point in an “although” clause and stresses another in the main clause. The goal is met only when the conceded point is a difference and the stressed point is a similarity.",
+    title: "Notes goal: stress a likeness or a difference, concede the other",
+    recognize: "Every choice names both subjects and pairs a conceded clause (\u201calthough,\u201d \u201cwhile,\u201d \u201cthough\u201d) with a main clause, and the goal asks for one kind of point in each. Label every clause as a similarity or a difference and find the choice whose main clause carries what the goal stresses and whose conceded clause carries what it acknowledges.",
     rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["off-goal", "opposite-stance"],
-    seconds: 100,
+    seconds: 105,
     topics: CONCESSION_SIMILARITY_TOPICS,
-    goal: (topic) => `emphasize a similarity between ${topic.pair} while acknowledging a difference between them`,
-    choices: (topic) => ({
-      key: `${topic.keySub}, ${topic.keyMain}.`,
-      wrong: [
-        [`${topic.revSub}, ${topic.revMain}.`,
-          "It includes the similarity and the difference, but it concedes the similarity in the “although” clause and stresses the difference in the main clause, the opposite emphasis."],
-        [topic.simSim, "Its “although” clause concedes a second similarity, not a difference, so it never acknowledges how the two differ."],
-        [topic.diffDiff, "Both of its clauses state differences, so nothing in it stresses what the two share."],
-      ],
-    }),
-    // The key concedes a difference and stresses the similarity; each
-    // distractor fails one half of that, checked by the markers each clause
-    // holds, not by the order the choices were written in.
-    check: (topic, choices) => {
+    variants: () => ["similarity", "difference"],
+    goal: (topic, variant) => CONCESSION_GOALS[variant](topic),
+    choices: (topic, variant) => {
+      const sentences = concessionSentences(topic);
+      const keyName = variant === "similarity" ? "a" : "b";
+      return {
+        key: sentences[keyName],
+        wrong: Object.keys(CONCESSION_REASONS[variant]).map((name) => [sentences[name], CONCESSION_REASONS[variant][name]]),
+      };
+    },
+    // Each clause holds the markers of its own point and none of the
+    // others', and the key is the sentence the goal calls for; checked on
+    // the clauses, not on the order the choices were written in.
+    check: (topic, choices, variant) => {
       const notes = topic.notes.join(" ");
-      const markers = [topic.sim, topic.sim2, ...topic.diff, ...topic.diff2];
-      const [reversed, simSim, diffDiff] = choices.wrong.map(([text]) => text);
-      const noDiff = (text) => !topic.diff.some((marker) => has(text, marker)) && !topic.diff2.some((marker) => has(text, marker));
+      const { diff, sim, sim2, diff2 } = topic.clauses;
+      const all = (text, markers) => markers.every((marker) => has(text, marker));
+      const none = (text, markers) => markers.every((marker) => !has(text, marker));
+      const others = { diff: [topic.sim, topic.sim2, ...topic.diff2], sim: [topic.sim2, ...topic.diff, ...topic.diff2],
+        sim2: [topic.sim, ...topic.diff, ...topic.diff2], diff2: [topic.sim, topic.sim2, ...topic.diff] };
+      const sentences = concessionSentences(topic);
+      const expected = variant === "similarity" ? sentences.a : sentences.b;
+      const wrongNames = variant === "similarity" ? ["b", "c", "e"] : ["a", "c", "e"];
       return (
-        markers.every((marker) => has(notes, marker)) &&
-        [choices.key, reversed, simSim, diffDiff].every((text) => /^Although\b/.test(text)) &&
-        choices.key === `${topic.keySub}, ${topic.keyMain}.` &&
-        has(topic.keyMain, topic.sim) && noDiff(topic.keyMain) &&
-        topic.diff.every((marker) => has(topic.keySub, marker)) && !has(topic.keySub, topic.sim) &&
-        has(topic.revSub, topic.sim) && topic.diff.every((marker) => has(topic.revMain, marker)) &&
-        !has(topic.revMain, topic.sim) && reversed.startsWith(topic.revSub) &&
-        has(simSim, topic.sim) && has(simSim, topic.sim2) && noDiff(simSim) &&
-        topic.diff.every((marker) => has(diffDiff, marker)) && topic.diff2.every((marker) => has(diffDiff, marker)) &&
-        !has(diffDiff, topic.sim) && !has(diffDiff, topic.sim2)
+        [topic.sim, topic.sim2, ...topic.diff, ...topic.diff2].every((marker) => has(notes, marker)) &&
+        topic.notes.length >= 6 &&
+        all(diff, topic.diff) && none(diff, others.diff) &&
+        all(sim, [topic.sim]) && none(sim, others.sim) &&
+        all(sim2, [topic.sim2]) && none(sim2, others.sim2) &&
+        all(diff2, topic.diff2) && none(diff2, others.diff2) &&
+        choices.key === expected &&
+        choices.wrong.map(([text]) => text).join("|") === wrongNames.map((name) => sentences[name]).join("|")
       );
     },
-    explain: () =>
-      "The difference must sit in the “although” clause, where it is acknowledged, and the similarity in the main clause, where it is stressed. One distractor reverses the two; one concedes a second similarity instead of a difference; one pairs two differences.",
+    explain: (topic, variant) => (variant === "similarity"
+      ? "The goal stresses a similarity and acknowledges a difference, so the difference belongs in the subordinate clause, where it is conceded, and the similarity in the main clause, where it is stressed. One distractor reverses the two; one concedes a second similarity instead of a difference; one pairs two differences."
+      : "The goal stresses a difference and acknowledges a similarity, so the similarity belongs in the subordinate clause, where it is conceded, and the difference in the main clause, where it is stressed. One distractor reverses the two; one pairs two similarities; one concedes a difference instead of a similarity."),
     steps: [
-      "Split the goal: stress a similarity, acknowledge a difference.",
-      "In each choice, label the “although” clause and the main clause as a similarity or a difference.",
-      "Keep only the choice whose “although” clause holds a difference and whose main clause holds a similarity.",
+      "Split the goal: which kind of point is stressed, and which is only acknowledged?",
+      "In each choice, find the subordinate clause (after \u201calthough,\u201d \u201cwhile,\u201d or \u201cthough\u201d) and the main clause, wherever each sits in the sentence.",
+      "Label each clause as a similarity or a difference.",
+      "Keep only the choice whose main clause holds what the goal stresses and whose subordinate clause holds what it acknowledges.",
     ],
-    principles: SYNTHESIS_PRINCIPLES.concat("A subordinate clause (\"Although ...\") concedes; the main clause carries the emphasis."),
-    trap: "Choosing a sentence that has the right shape (“Although ..., ...”) without checking that the conceded point is a difference and the stressed point a similarity.",
-    hint: "In each choice, is the “although” part a difference, and is the main part a similarity?",
+    principles: SYNTHESIS_PRINCIPLES.concat("A subordinate clause (\u201calthough ...\u201d) concedes; the main clause carries the emphasis, whether it comes first or last."),
+    trap: "Choosing a sentence with the right shape, or with the right kind of point in the main clause, without checking that the conceded clause holds the other kind of point.",
+    hint: "In each choice, which clause is conceded and which is stressed, and is each a similarity or a difference?",
+  });
+
+  const STRESS_ROLES = { fm: ["finding", "method"], mf: ["method", "finding"], fs: ["finding", "meaning"], sf: ["meaning", "finding"] };
+  const STRESS_NAMES = { finding: "the finding", method: "how the study was conducted", meaning: "what the finding suggests" };
+  const STRESS_GOALS = {
+    fm: "emphasize the study's finding while indicating how the study was conducted",
+    mf: "emphasize how the study was conducted while indicating the study's finding",
+    fs: "emphasize the study's finding while indicating what the finding suggests",
+    sf: "emphasize what the study's finding suggests while indicating the finding itself",
+  };
+  // Why sentence `wrong` misses the goal whose key is sentence `key`.
+  function stressReason(wrong, key) {
+    const [wrongStress, wrongNote] = STRESS_ROLES[wrong];
+    const [keyStress, keyNote] = STRESS_ROLES[key];
+    const name = (role) => STRESS_NAMES[role];
+    if (wrongStress === keyStress) {
+      return `Its main clause stresses ${name(wrongStress)}, as the goal asks, but what it adds is ${name(wrongNote)}, not ${name(keyNote)}.`;
+    }
+    if (wrongStress === keyNote && wrongNote === keyStress) {
+      return `It contains both ${name(keyStress)} and ${name(keyNote)}, but its main clause stresses ${name(wrongStress)} and only mentions ${name(wrongNote)}, the reverse of the goal.`;
+    }
+    if (wrongNote === keyNote) {
+      return `It mentions ${name(wrongNote)}, as the goal asks, but its main clause stresses ${name(wrongStress)} rather than ${name(keyStress)}.`;
+    }
+    return `Its main clause stresses ${name(wrongStress)} rather than ${name(keyStress)}, and what it adds is ${name(wrongNote)} rather than ${name(keyNote)}.`;
+  }
+  const STRESS_ORDER = ["fm", "mf", "fs", "sf"];
+
+  const stressNotes = synthesisFamily({
+    id: "notes-stress-while-noting",
+    subskill: "rhetorical goal",
+    difficulty: "Hard",
+    title: "Notes goal: stress one part of a study while noting another",
+    recognize: "All four choices report the same finding, and each pairs it with the method or with what it suggests; they differ in which part the main clause stresses and which a subordinate clause or phrase only mentions. The goal names both, so check the main clause and the added part of every choice.",
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["off-goal", "true-but-irrelevant"],
+    seconds: 105,
+    topics: STRESS_TOPICS,
+    variants: () => STRESS_ORDER,
+    goal: (topic, variant) => STRESS_GOALS[variant],
+    choices: (topic, variant) => ({
+      key: topic.sentences[variant],
+      wrong: STRESS_ORDER.filter((name) => name !== variant).map((name) => [topic.sentences[name], stressReason(name, variant)]),
+    }),
+    // Every sentence holds the finding; the two that pair it with the
+    // method hold the method and not the suggestion, and the reverse for the
+    // other two; the key is the sentence the goal names.
+    check: (topic, choices, variant) => {
+      const notes = topic.notes.join(" ");
+      const { method, finding, meaning } = topic.markers;
+      const s = topic.sentences;
+      const withMethod = (text) => has(text, finding) && has(text, method) && !has(text, meaning);
+      const withMeaning = (text) => has(text, finding) && has(text, meaning) && !has(text, method);
+      return (
+        [method, finding, meaning].every((marker) => has(notes, marker)) &&
+        topic.notes.length >= 6 &&
+        withMethod(s.fm) && withMethod(s.mf) && withMeaning(s.fs) && withMeaning(s.sf) &&
+        choices.key === s[variant] &&
+        choices.wrong.map(([text]) => text).join("|") === STRESS_ORDER.filter((name) => name !== variant).map((name) => s[name]).join("|")
+      );
+    },
+    explain: (topic, variant) => {
+      const [stress, note] = STRESS_ROLES[variant];
+      return `The goal stresses ${STRESS_NAMES[stress]} and only indicates ${STRESS_NAMES[note]}, so ${STRESS_NAMES[stress]} belongs in the main clause and ${STRESS_NAMES[note]} in a subordinate clause or phrase. Only this choice is built that way; each of the others stresses the wrong part, adds the wrong part, or does both.`;
+    },
+    steps: [
+      "Split the goal: what is to be emphasized, and what is only to be indicated?",
+      "In each choice, find the main clause and name the part of the study it states: the method, the finding, or what the finding suggests.",
+      "Name the part carried by the subordinate clause or phrase.",
+      "Keep the choice whose main clause carries what the goal emphasizes and whose subordinate part carries what it indicates.",
+    ],
+    principles: SYNTHESIS_PRINCIPLES.concat("A main clause carries a sentence's emphasis; an opening phrase (\u201cAfter ...,\u201d \u201cHaving ...\u201d) or a trailing clause (\u201c..., which suggests\u201d) only adds."),
+    trap: "Choosing the sentence that contains both parts the goal names without checking which one its main clause stresses.",
+    hint: "In each choice, which part of the study does the main clause state, and which part is tucked into a phrase?",
   });
 
   const expectationNotes = synthesisFamily({
@@ -2618,8 +2978,8 @@
     subskill: "rhetorical goal",
     difficulty: "Medium",
     title: "Notes goal: a result that overturned a prediction",
-    recognize: "To show how a result differed from an expectation, a choice must state both; a result alone, however detailed, does not show the contrast.",
-    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    recognize: "To show how a result differed from an expectation, a choice must state both and set them against each other. A choice can say \u201cexpected\u201d without the result, or set the result against some other detail with \u201calthough\u201d or \u201cwhile\u201d; neither shows the contrast the goal asks for.",
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["off-goal", "too-narrow"],
     seconds: 85,
     topics: EXPECTATION_TOPICS,
@@ -2629,32 +2989,35 @@
       wrong: [
         [topic.resultMethod, "Accurate, but it gives only the result; without the expectation, nothing shows that the result was a surprise."],
         [topic.expectationMethod, "Accurate, but it states the expectation without the result that contradicted it."],
-        [topic.resultOther, "Accurate, but it pairs the result with other details rather than with the expectation it contradicted."],
+        [topic.resultOther, "Accurate, but it pairs the result with another detail from the notes, not with the expectation the result contradicted, so it cannot show how the result differed from that expectation."],
       ],
     }),
     check: needCheck,
     explain: () =>
-      "Showing that a result differed from an expectation requires stating both and contrasting them. Only this choice does; the others give the result or the expectation, not both.",
+      "Showing that a result differed from an expectation requires stating both and contrasting them. Only this choice does; the others give the result or the expectation alone, or set the result against a different detail.",
     steps: [
       "Identify the two things the goal compares: the expectation and the result.",
       "Find the note that states the expectation and the note that states the result.",
-      "Eliminate choices that include only one of them.",
+      "Eliminate choices that include only one of them, even if they contain a contrast word.",
       "Choose the choice that sets the result against the expectation.",
     ],
-    principles: SYNTHESIS_PRINCIPLES.concat("A contrast needs both of its sides stated."),
-    trap: "Choosing the choice that reports the result with its method, which omits the expectation.",
-    hint: "Does the choice say both what was expected and what was found?",
+    principles: SYNTHESIS_PRINCIPLES.concat("A contrast needs both of its sides stated; a contrast word joined to the wrong pair of facts does not meet the goal."),
+    trap: "Choosing a choice that has the result and a contrast word (\u201calthough,\u201d \u201cwhile\u201d) but sets the result against a detail other than the expectation.",
+    hint: "Does the choice say both what was expected and what was found, and set one against the other?",
   });
 
   const namedFeatureNotes = synthesisFamily({
     id: "notes-difference-on-named-feature",
     subskill: "rhetorical goal",
-    difficulty: "Hard",
+    // Medium (relabelled from Hard, 2026-09-26): a cold review found that
+    // matching the goal's feature to both subjects finds the key; the work
+    // is one careful check, not deciding what kind of problem this is.
+    difficulty: "Medium",
     title: "Notes goal: a difference in the one feature the goal names",
     recognize: "Every choice names both subjects, and most set them against each other. Only one contrasts them on the feature the goal names, and only if it gives that feature for both subjects.",
-    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["off-goal", "true-but-irrelevant"],
-    seconds: 100,
+    seconds: 85,
     topics: NAMED_FEATURE_TOPICS,
     goal: (topic) => topic.goal,
     choices: (topic) => ({
@@ -2694,12 +3057,15 @@
   const differenceSizeNotes = synthesisFamily({
     id: "notes-size-of-difference",
     subskill: "rhetorical goal",
-    difficulty: "Hard",
+    // Medium (relabelled from Hard, 2026-09-26): a cold review found that
+    // "the choice with both figures and a ratio" found the key; ratios now
+    // appear in other-measure choices too and some keys give none.
+    difficulty: "Medium",
     title: "Notes goal: how large a difference is",
     recognize: "Every choice names both subjects. To show how large a difference is, a choice must give the named measure for both subjects; saying which is greater, or giving the size of a different difference, does not.",
-    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["off-goal", "true-but-irrelevant"],
-    seconds: 100,
+    seconds: 85,
     topics: DIFFERENCE_SIZE_TOPICS,
     goal: (topic) => topic.goal,
     choices: (topic) => ({
@@ -2746,6 +3112,7 @@
     generalizationNotes,
     significanceNotes,
     concessionSimilarityNotes,
+    stressNotes,
     expectationNotes,
     namedFeatureNotes,
     differenceSizeNotes,
