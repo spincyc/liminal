@@ -99,6 +99,36 @@ denominator, solve, then throw out any answer that makes a denominator zero.
 >
 > But x = 3 makes the denominators zero, so the equation has no solution.
 
+### A radical equation with a constant k {#radical-with-a-constant}
+
+A square root is never negative, so √(A) = B holds only where B ≥ 0. When
+the equation has a constant k and the question asks when there are exactly
+two solutions, both conditions must hold:
+
+- The squared equation, a quadratic, has two real roots: its discriminant is positive.
+- Both roots make B ≥ 0. Past some value of k, the smaller root makes B negative and turns extraneous.
+
+> **Example.** The equation √(2x + k) = x − 3, where k is a constant, has
+> exactly two real solutions. What is the greatest possible value of k?
+>
+> Square: 2x + k = x² − 6x + 9, so x² − 8x + 9 − k = 0.
+>
+> Complete the square: (x − 4)² = 7 + k. Two roots need 7 + k > 0, so
+> k > −7, and the roots are 4 ± √(7 + k).
+>
+> Each root must make x − 3 ≥ 0, so the smaller one needs
+> 4 − √(7 + k) ≥ 3. Then √(7 + k) ≤ 1, so k ≤ −6.
+>
+> Two solutions exactly when −7 < k ≤ −6. The greatest value is −6.
+>
+> Check k = −6: the roots are 3 and 5. At x = 3, √0 = 0 = 3 − 3; at x = 5,
+> √4 = 2 = 5 − 3. Both work.
+
+> **Trap.** Stopping at the discriminant, or answering −7. At k = −7 the two
+> roots merge into one solution, x = 4. And at k = −5 the roots are 4 ± √2;
+> the smaller, about 2.6, makes x − 3 negative, so only one solution is
+> left.
+
 ## Absolute value {#absolute-value}
 
 The absolute value |A| is the distance of A from 0, so it is never
@@ -169,6 +199,7 @@ Hard nonlinear equations reward seeing structure first:
 - The sum, product, or sum of squares of the solutions, after the equation is rearranged. Move every term to one side first, then use −b/a and c/a; r² + s² = (r + s)² − 2rs.
 - A rational equation whose count of solutions depends on what clearing the denominator leaves: two roots, one root that the original excludes, an identity, or a false statement.
 - An absolute value equal to an expression in x, where each case must pass the sign check (see [when the other side has x](#absolute-value-with-x)).
+- A radical equation with a constant k, or the sum of its solutions. Each root of the squared equation must make the side without the root nonnegative, so a k that gives the quadratic two roots can still leave one solution (see [a radical equation with a constant k](#radical-with-a-constant)).
 
 > **Example.** The solutions of (x + 2)(x − 5) = 3x − 4 are r and s. What is
 > r² + s²?

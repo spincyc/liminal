@@ -181,6 +181,36 @@ last.
 > Take the square root, keeping only the positive value because r is a
 > length: r = √(V/(πh)).
 
+### Fractions inside fractions {#complex-fractions}
+
+When the top or the bottom of a fraction holds fractions of its own,
+multiply the top and the bottom by a common denominator of all the small
+fractions. That clears them in one step; then factor and cancel as usual.
+
+> **Example.** Simplify (4/p + 4/q)/(1/p² − 1/q²), where p and q are
+> positive and p ≠ q.
+>
+> Multiply the top and the bottom by p²q²: (4pq² + 4p²q)/(q² − p²).
+>
+> Factor: 4pq(q + p) over (q − p)(q + p), a difference of squares.
+>
+> Cancel q + p: the expression is 4pq/(q − p).
+>
+> Check with p = 1 and q = 2: the original is (4 + 2)/(1 − 1/4) =
+> 6 ÷ (3/4) = 8, and 4(1)(2)/(2 − 1) = 8.
+
+When such a fraction is set equal to a number, clearing it leaves an
+equation in x and y that fixes only their ratio. Solve for x/y, then check
+whether the question asks for x/y or y/x.
+
+> **Trap.** Taking reciprocals one term at a time. 1/(1/A + 1/B) is not
+> A + B: with A = 3 and B = 6 it is 1/(1/3 + 1/6) = 1/(1/2) = 2, not 9.
+> Add the small fractions first; the result is AB/(A + B).
+
+> **Check.** Put numbers into the original and into your answer, as above;
+> equivalent expressions agree. Choose numbers that keep every denominator
+> nonzero, and try a second pair if two choices both match the first.
+
 ## What Hard looks like {#hard}
 
 Hard questions ask you to recognize structure before you do algebra:
@@ -188,6 +218,7 @@ Hard questions ask you to recognize structure before you do algebra:
 - A product with unknown coefficients that equals a given quadratic for all x. Expand, then match the x², x and constant terms. When the conditions don't say which unknown is which (a sum and a product), both assignments count, and there can be two answers.
 - A value through a combination: a power of a common base whose exponent is a multiple of what you are given, or a square that contains a given sum and product (see [a value through a known combination](#known-combination)).
 - Which equivalent form shows a feature as a constant: vertex form shows the minimum or maximum, factored form the x-intercepts, standard form the y-intercept. Then check that the form is really equivalent (see [nonlinear functions](learn:sat-math/advanced-math/nonlinear-functions#quadratic-functions)).
+- A fraction built from fractions, such as 1/(1/A + 1/B) or a difference of fractions over a difference of their squares, or one set equal to a number to fix a ratio x/y. Clear the small fractions with one common denominator, then factor (see [fractions inside fractions](#complex-fractions)).
 
 > **Example.** For all x, (ax − 4)(2x + b) = 6x² + x − 12, where a and b are
 > constants. What is a + b?

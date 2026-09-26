@@ -58,6 +58,43 @@ it is also halfway between the two zeros, because a parabola is symmetric.
 > **Trap.** Reading the vertex of f(x) = (x − 3)² + 2 as (−3, 2). The form is
 > x minus h, so h = 3 and the vertex is (3, 2).
 
+### Signs of the constants from a description {#signs-from-the-graph}
+
+Some questions describe a parabola in words and ask which statement about
+a, b, c, h or k must be true. Turn each part of the description into a sign:
+
+| Description | What it forces |
+| --- | --- |
+| opens up, or down | a > 0, or a < 0 |
+| vertex (h, k) in a quadrant | the signs of h and k |
+| y-intercept above, or below, the x-axis | c = f(0) > 0, or c < 0 |
+| two x-intercepts, one, or none | b² − 4ac > 0, = 0, or < 0; in vertex form, two exactly when a and k have opposite signs |
+| both zeros positive | their sum −b/a > 0 and their product c/a > 0 |
+| zeros on opposite sides of the y-axis | their product c/a < 0 |
+
+For b, use h = −b/(2a), which gives b = −2ah. Then decide each statement:
+"must" if the facts force it, "cannot" if the facts rule it out, and
+"could" if one parabola that fits makes it true and another makes it false.
+
+> **Example.** The graph of f(x) = ax² + bx + c, where a, b and c are
+> nonzero, opens downward and has its vertex in Quadrant II. Which must be
+> true: b > 0, c > 0, or b² − 4ac > 0?
+>
+> Facts: a < 0; the vertex has h < 0 and k > 0.
+>
+> b = −2ah is −2 times a negative times a negative, so b < 0: "b > 0"
+> cannot be true.
+>
+> The vertex is above the x-axis and the parabola opens downward, so it
+> crosses the x-axis twice: b² − 4ac > 0 must be true.
+>
+> c could go either way. f(x) = −(x + 1)² + 4 = −x² − 2x + 3 fits and has
+> c = 3; f(x) = −(x + 3)² + 1 = −x² − 6x − 8 fits and has c = −8.
+
+> **Trap.** Deciding from one sketch. "c > 0" holds for the first parabola
+> above but not the second, and both fit. Before calling a statement
+> "must", try to build a parabola that fits the description and breaks it.
+
 ## Exponential functions {#exponential-functions}
 
 An exponential function has the form f(x) = a · bˣ, where a is the starting
@@ -148,6 +185,7 @@ Transformations move a graph without changing its shape:
 ## What Hard looks like {#hard}
 
 - A quadratic pinned down by indirect conditions. A vertex points to a(x − h)² + k, zeros to a(x − r)(x − s), and two inputs with equal outputs to an axis of symmetry halfway between them. Choose the form first, then let one more point fix a.
+- A parabola described in words and statements about the signs of a, b, c, h and k: which must, could or cannot be true. Turn each fact into a sign, and test a "must" by trying to build a counterexample (see [signs of the constants](#signs-from-the-graph)).
 - An exponential rewritten for a different period. The base applies once per period, so a new period raises the base to a power; the percent never scales along with the period.
 - A function built from another one given as a table or a graph, such as g(x) = f(x − 2) + 3. Find the input f actually receives (inside changes go opposite to their sign), read f there, and apply the outside change last.
 - Factor and remainder conditions. x − a is a factor exactly when p(a) = 0, and the remainder on division by x − a is p(a). Only a stated zero forces a factor.
