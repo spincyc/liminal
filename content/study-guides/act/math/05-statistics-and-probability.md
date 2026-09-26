@@ -2,7 +2,7 @@
 
 **Catalog domain:** Statistics and Probability
 **Skills:** Data analysis · Probability
-**~15% of the section** — about 7 questions
+**12-15% of the scored questions** — 5-6 of the 41
 
 Mathematically the easiest domain. The errors come from misreading and from
 counting problems, not from difficult computation.

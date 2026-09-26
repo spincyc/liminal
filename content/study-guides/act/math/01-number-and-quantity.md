@@ -2,7 +2,7 @@
 
 **Catalog domain:** Number and Quantity
 **Skills:** Real and complex numbers · Quantities and units
-**~11% of the section** — about 5 questions
+**10-12% of the scored questions** — 4-5 of the 41
 
 The smallest domain, but it contains several topics the SAT never touches, so
 it's easy to be caught out.

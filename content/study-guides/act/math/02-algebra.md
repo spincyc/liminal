@@ -2,7 +2,7 @@
 
 **Catalog domain:** Algebra
 **Skills:** Expressions and equations · Polynomial and rational expressions
-**~18% of the section** — about 8 questions
+**17-20% of the scored questions** — 7-8 of the 41
 
 ---
 

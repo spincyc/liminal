@@ -2,7 +2,7 @@
 
 **Catalog domain:** Functions
 **Skills:** Function concepts · Function models
-**~18% of the section** — about 8 questions
+**17-20% of the scored questions** — 7-8 of the 41
 
 The ACT reaches further into function territory than the SAT does: logarithms,
 trigonometric graphs, and inverse functions all appear here.

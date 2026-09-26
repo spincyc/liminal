@@ -140,9 +140,15 @@ comma. *A bright red car* — you wouldn't say *bright and red car* → no comma
 | Between verb and object | *She found**,** the answer.* |
 | Between two verbs sharing a subject | *He read the study**,** and cited it.* |
 | Around essential clauses | *The car**,** that I bought**,** is red.* |
-| Before a closing dependent clause | *He left**,** because it rained.* |
+| Before a closing dependent clause of reason, time, or condition | *He left**,** because it rained.* |
 | After a coordinating conjunction | *but**,** the results differed* |
 | Between an adjective and its noun | *a difficult**,** problem* |
+
+*Fails when:* the closing clause states a contrast. A comma before *although*,
+*though*, *even though*, or *whereas* (or *while* meaning "whereas") is
+standard: *The first trial worked**,** although the second did not.* The
+"never" holds for most closing clauses of reason, time, and condition —
+*because*, *when*, *after*, *until*, *if*, *unless*.
 
 ### Essential vs. non-essential
 

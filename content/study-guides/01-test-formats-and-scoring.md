@@ -247,7 +247,7 @@ backward from an application deadline.
 | Total required time | 2 h 14 min | 2 h 5 min |
 | Score scale | 400-1600 | 1-36 composite |
 | Adaptive | Yes, between modules | No |
-| Calculator | Entire Math section, Desmos built in | Entire Math section, approved handheld |
+| Calculator | Entire Math section, Desmos built in | Entire Math section: approved handheld, and Desmos built in when testing online |
 | Science section | None | Optional, separate score |
 | Essay | None | Optional |
 | Time pressure | Moderate | High |

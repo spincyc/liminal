@@ -96,7 +96,7 @@ students who have never taken physics often do fine.
 | --- | --- | --- |
 | Share of total score | 50% | 33% (one of three) |
 | Formula sheet | Provided | **None** |
-| Calculator | Whole section, Desmos built in | Whole section |
+| Calculator | Whole section, Desmos built in | Whole section; Desmos built in when testing online |
 | Emphasis | Algebra and data analysis heavy | Broader, includes more geometry |
 | Trigonometry | Light — right-triangle trigonometry, plus radians and the unit circle | More, including identities and graphs |
 | Grid-ins | ~25% of questions | None; all multiple choice |

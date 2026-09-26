@@ -2,12 +2,15 @@
 
 **50 questions · 35 minutes · 42 seconds per question**
 
-One of the three sections in your Composite. Five passages, each with about ten
-questions, most tied to an underlined portion of the text.
+One of the three sections in your Composite. Five scored passages — three with
+10 questions each and two shorter ones with 5 each — plus one or two unscored
+field-test passages, for 50 questions of which 40 count. Most questions are tied
+to an underlined portion of the text.
 
 For most students this is the **easiest section to improve** on the entire ACT.
-The rule set is finite, the questions are fast, and pure grammar is roughly half
-the section.
+The rule set is finite, the questions are fast, and pure grammar (Conventions of
+Standard English) is about 15-17 of the 40 scored questions, roughly 40% of the
+section.
 
 ---
 
@@ -15,22 +18,29 @@ the section.
 
 | | |
 | --- | --- |
-| Passages | 5, each ~10 questions |
+| Passages | 5 scored (3 × 10 questions, 2 × 5) plus 1-2 unscored field-test passages |
 | Question style | Underlined portion + 4 choices, first usually "NO CHANGE" |
 | Also | Boxed questions about a paragraph or the whole passage |
-| Pacing | 7 minutes per passage |
+| Pacing | About 42 seconds a question: 7 minutes per 10 questions |
 
 ### Domain weighting
 
-| Domain | Share | Approx. questions |
+| Domain | Share of scored questions | Scored questions (of 40) |
 | --- | ---: | ---: |
-| [Production of Writing](01-production-of-writing.md) | ~41% | ~20 |
-| [Knowledge of Language](02-knowledge-of-language.md) | ~21% | ~11 |
-| [Conventions of Standard English](03-conventions-of-standard-english.md) | ~38% | ~19 |
+| [Production of Writing](01-production-of-writing.md) | 38-43% | 15-17 |
+| [Knowledge of Language](02-knowledge-of-language.md) | 18-23% | 7-9 |
+| [Conventions of Standard English](03-conventions-of-standard-english.md) | 38-43% | 15-17 |
 
-Roughly **half the section is mechanical**: punctuation, grammar, usage, and
-concision. Those questions take 15-25 seconds each once you know the rules,
-which buys the time you need for the rhetorical questions.
+> **Verify before you rely on this.** These counts are from ACT's
+> [sections and structure page](https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/act-exam-sections-and-structure.html)
+> and its [design framework for the enhanced ACT](https://www.act.org/content/dam/act/unsecured/documents/R2519-Design-Framework-for-the-ACT-Enhancements-2026-02.pdf)
+> (research report R2519, February 2026), checked 2026-09-26. ACT can change
+> the blueprint.
+
+About **two fifths of the scored questions are mechanical** (punctuation,
+grammar, usage), and the concision questions in Knowledge of Language are
+nearly as quick. Those questions take 15-25 seconds each once you know the
+rules, which buys the time you need for the rhetorical questions.
 
 ---
 
@@ -85,15 +95,16 @@ them.
 
 ## Pacing
 
-7 minutes per passage. Checkpoints:
+About 7 minutes per 10 questions. Passages run 10 or 5 questions, so check your
+place by question number, not by passage:
 
 | At | Finished |
 | --- | --- |
-| 7 min | Passage 1 (Q10) |
-| 14 min | Passage 2 (Q20) |
-| 21 min | Passage 3 (Q30) |
-| 28 min | Passage 4 (Q40) |
-| 35 min | Passage 5 (Q50) |
+| 7 min | Q10 |
+| 14 min | Q20 |
+| 21 min | Q30 |
+| 28 min | Q40 |
+| 35 min | Q50 |
 
 Target finishing with 2-3 minutes to spare. Achievable, and it's where
 struggling ACT students find their biggest gains.

@@ -3,7 +3,8 @@
 **Catalog domain:** Integrating Essential Skills
 **Skills:** Rates and proportional reasoning · Applied measurement ·
 Multi-step applications
-**~20% of the section** — about 9 questions, the largest domain
+**20% of the scored questions** — 8 of the 41, about the same as Algebra,
+Functions, or Geometry
 
 This domain is not about advanced content. It's about applying middle-school and
 early-high-school mathematics — rates, percents, proportions, areas — inside
@@ -308,10 +309,11 @@ match.
 | 5. Multi-step | Multi-step applications, Medium → Hard | 30. **Circle the target before computing.** |
 | 6. Mixed timed | Whole domain | 30 at 65 sec each |
 
-This is the largest ACT Math domain and the most improvable, because the losses
-are procedural rather than conceptual. If your error log shows careless and
-process errors clustered here, stages 1, 2, and 5 with their written-out habits
-are the highest-value work available to you on the whole section.
+This domain is no bigger than Algebra, Functions, or Geometry, but it is the
+most improvable, because the losses are procedural rather than conceptual. If
+your error log shows careless and process errors clustered here, stages 1, 2,
+and 5 with their written-out habits are the highest-value work available to you
+on the whole section.
 
 ---
 

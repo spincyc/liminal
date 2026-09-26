@@ -2,7 +2,7 @@
 
 **Catalog domain:** Knowledge of Language
 **Skill:** Effective Language Use
-**~21% of the section** — about 11 questions
+**18-23% of the scored questions** — 7-9 of the 40
 
 Precision, concision, style, and tone. These questions are grammatically
 neutral: every choice is usually correct English. You're choosing the *best*

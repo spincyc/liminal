@@ -12,9 +12,9 @@ to 25%.
 
 | | |
 | --- | --- |
-| Questions | 45, all multiple choice (4 choices) |
+| Questions | 45 (41 scored, 4 unscored field-test), all multiple choice (4 choices) |
 | Time | 50 minutes |
-| Calculator | Permitted throughout (approved models) |
+| Calculator | Permitted throughout (approved models); online testing has Desmos built in |
 | Formula sheet | **None provided** |
 | Ordering | Roughly easy → hard |
 | Content range | Pre-algebra through early precalculus and basic trigonometry |
@@ -28,14 +28,25 @@ difference from the SAT and it's why the
 
 ### Domain weighting
 
-| Domain | Approx. share |
-| --- | ---: |
-| [Integrating Essential Skills](06-integrating-essential-skills.md) | ~20% |
-| [Algebra](02-algebra.md) | ~18% |
-| [Functions](03-functions.md) | ~18% |
-| [Geometry](04-geometry.md) | ~18% |
-| [Statistics and Probability](05-statistics-and-probability.md) | ~15% |
-| [Number and Quantity](01-number-and-quantity.md) | ~11% |
+| Domain | Share of scored questions | Scored questions (of 41) |
+| --- | ---: | ---: |
+| [Integrating Essential Skills](06-integrating-essential-skills.md) | 20% | 8 |
+| [Algebra](02-algebra.md) | 17-20% | 7-8 |
+| [Functions](03-functions.md) | 17-20% | 7-8 |
+| [Geometry](04-geometry.md) | 17-20% | 7-8 |
+| [Statistics and Probability](05-statistics-and-probability.md) | 12-15% | 5-6 |
+| [Number and Quantity](01-number-and-quantity.md) | 10-12% | 4-5 |
+
+The five domains after Integrating Essential Skills make up Preparing for Higher
+Math, 80% of the scored questions. ACT also reports Modeling, at least 20%,
+drawn from questions across all of these domains.
+
+> **Verify before you rely on this.** These counts are from ACT's
+> [sections and structure page](https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/act-exam-sections-and-structure.html),
+> its [design framework for the enhanced ACT](https://www.act.org/content/dam/act/unsecured/documents/R2519-Design-Framework-for-the-ACT-Enhancements-2026-02.pdf)
+> (research report R2519, February 2026), and its
+> [calculator policy](https://www.act.org/content/act/en/products-and-services/the-act/test-day/calculator-policy.html),
+> checked 2026-09-26. ACT can change the blueprint.
 
 Compared to the SAT, the ACT spreads more evenly and reaches further into
 geometry and trigonometry.

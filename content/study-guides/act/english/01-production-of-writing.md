@@ -2,11 +2,12 @@
 
 **Catalog domain:** Production of Writing
 **Skills:** Topic Development · Organization, Unity, and Cohesion
-**~41% of the section** — about 20 questions
+**38-43% of the scored questions** — 15-17 of the 40
 
-The largest domain on ACT English. These are the rhetorical questions: what
-belongs, where it goes, and how the pieces connect. They take longer than
-grammar questions and they're where the section's difficulty lives.
+Tied with Conventions of Standard English as the largest domain on ACT
+English. These are the rhetorical questions: what belongs, where it goes, and
+how the pieces connect. They take longer than grammar questions and they're
+where the section's difficulty lives.
 
 ---
 

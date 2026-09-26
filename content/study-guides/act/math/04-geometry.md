@@ -2,7 +2,7 @@
 
 **Catalog domain:** Geometry
 **Skills:** Plane geometry · Measurement · Trigonometry
-**~18% of the section** — about 8 questions
+**17-20% of the scored questions** — 7-8 of the 41
 
 The ACT tests substantially more geometry than the SAT, and **provides no
 formula sheet**. Everything here must be memorized.

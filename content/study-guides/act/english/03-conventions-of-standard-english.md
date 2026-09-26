@@ -2,7 +2,7 @@
 
 **Catalog domain:** Conventions of Standard English
 **Skills:** Sentence Structure and Formation · Usage · Punctuation
-**~38% of the section** — about 19 questions
+**38-43% of the scored questions** — 15-17 of the 40
 
 Pure grammar. Finite rules, fast questions, and the fastest available
 improvement on ACT English.
@@ -70,11 +70,16 @@ The ACT tests comma *overuse* more than underuse. Never place a comma:
 | Between subject and verb | *The team of researchers**,** published the study.* |
 | Between verb and object | *She discovered**,** a new method.* |
 | Between two verbs sharing a subject | *He wrote the paper**,** and submitted it.* |
-| Before a closing dependent clause | *We left**,** because it was late.* |
+| Before a closing dependent clause of reason, time, or condition | *We left**,** because it was late.* |
 | Around essential information | *The book**,** that I ordered**,** arrived.* |
 | After a coordinating conjunction | *but**,** the results differed* |
 | Between adjective and noun | *a difficult**,** problem* |
 | Before a preposition beginning a needed phrase | *She walked**,** to the store.* |
+
+*Fails when:* a closing clause states a contrast. A comma before *although*,
+*though*, *even though*, or *whereas* is standard: *The first draft was long**,**
+although the second was not.* See the
+[grammar reference](04-grammar-reference.md#comma--forbidden-uses).
 
 ### Essential vs. non-essential
 
