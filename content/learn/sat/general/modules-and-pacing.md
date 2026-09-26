@@ -21,25 +21,35 @@ Every scored question in both modules counts toward your score, but only
 Module 1 affects the route. So:
 
 - Start sharp. Don't treat the first questions as a warm-up; if you want one, do two or three practice questions that morning at home.
-- Protect the easy and medium questions. A careless miss on question 4 costs as much as a miss on question 20, and it is much cheaper to prevent.
+- Protect the easy and medium questions. A careless miss on question 4 throws away a question you could have had for certain, it counts against you in the module that sets your route, and it is much cheaper to prevent than a hard question is to learn.
 - Check before you leave the module. Once Module 1 ends you can't return, so use spare minutes to recheck marked questions and any student-produced response.
 
-For a student around 500 in Math, the gain is in Module 1's Easy and Medium
-questions: getting nearly all of them right is what earns the harder Module
-2, and it comes from knowing the content, not from speed. See the
-[Math plan](learn:sat/general/math-plan).
+College Board doesn't publish how well you must do in Module 1 to get the
+harder Module 2, and it says a range of scores is possible after either one
+(see [how scores are calculated](https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated)).
+For a student around 500 in Math, the gain is in Module 1's Easy and
+Medium questions: getting nearly all of them right is your best chance at
+the harder Module 2, and it comes from knowing the content, not from speed.
+See the [Math plan](learn:sat/general/math-plan).
 
 ## Pacing {#pacing}
 
 Spend time unevenly. Easy questions should take less than the average so
 that hard ones can take more.
 
-| Math module | Target |
-| --- | --- |
-| first third of the module (mostly easier) | 45 to 70 seconds each |
-| middle third | 90 to 110 seconds each |
-| last third (mostly harder) | 2 to 2.5 minutes each |
-| checkpoints | about question 6 at 9 minutes, 12 at 18, 18 at 26, done by 33 |
+| Math module questions | Target each | Clock at the end of the block |
+| --- | --- | --- |
+| 1 to 6 (mostly easier) | about 1 minute | 6 minutes |
+| 7 to 12 | about 1.5 minutes | 15 minutes |
+| 13 to 18 | about 1 minute 40 seconds | 25 minutes |
+| 19 to 22 (mostly harder) | about 2 minutes | 33 minutes |
+
+The last column is your checkpoint list: question 6 at 6 minutes, 12 at 15,
+18 at 25, done by 33. That leaves 2 of the 35 minutes to recheck marked
+questions. A question that runs over its target borrows from the ones after
+it. If you reach a checkpoint late, don't rush the next block, which is
+easier than the last one; let the time come out of the final check and, if
+it must, the last few questions.
 
 | Reading and Writing module | Target |
 | --- | --- |

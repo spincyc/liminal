@@ -59,23 +59,34 @@ first ten seconds of the section.
 
 | At | You should be at |
 | --- | --- |
-| 9 min elapsed | Q6 |
-| 18 min elapsed | Q12 |
-| 26 min elapsed | Q18 |
+| 6 min elapsed | Q6 |
+| 15 min elapsed | Q12 |
+| 25 min elapsed | Q18 |
 | 33 min elapsed | Q22, review flagged |
 
-### ACT English (35 min, 50 questions, ~5 passages)
+These are not evenly spaced on purpose. Math questions run roughly easy to
+hard, so the budget is about 1 minute each for Q1-6, 1.5 minutes for Q7-12,
+1 minute 40 seconds for Q13-18, and 2 minutes for Q19-22, which adds to 33
+minutes and leaves 2 to review. The same targets are in
+[Modules and pacing](https://spincyc.github.io/liminal/learn.html#sat/general/modules-and-pacing/pacing).
+If you are late at a checkpoint, don't rush the easier questions that come
+next; the time comes out of the review and, if it must, the last few
+questions.
+
+### ACT English (35 min, 50 questions)
 
 | At | You should be at |
 | --- | --- |
-| 7 min | End of passage 1 (Q10) |
-| 14 min | End of passage 2 (Q20) |
-| 21 min | End of passage 3 (Q30) |
-| 28 min | End of passage 4 (Q40) |
+| 7 min | Q10 |
+| 14 min | Q20 |
+| 21 min | Q30 |
+| 28 min | Q40 |
 | 35 min | Done |
 
-Seven minutes per passage. This is the cleanest pacing structure on either test
-— use it.
+About seven minutes for every ten questions. Track question numbers, not
+passages: passages differ in length and in how many questions they carry,
+so "one passage every seven minutes" can leave you behind without your
+noticing.
 
 ### ACT Mathematics (50 min, 45 questions)
 
@@ -106,16 +117,18 @@ questions.
 Hard stop at 10 minutes per passage. Leaving three questions on passage 4 to
 perfect two on passage 2 is a losing trade — every question is worth the same.
 
-### ACT Science (40 min, 40 questions, ~6-7 passages)
+### ACT Science (40 min, 40 questions)
 
-**Roughly 5-6 minutes per passage.** Conflicting Viewpoints takes longer than
-the data passages; budget about 7 minutes for it and 5 for the others.
+**About a minute per question overall.** Conflicting Viewpoints takes longer
+than the data passages, so bank time on the data passages to spend it
+there. Passages differ in length and in how many questions they carry, so
+track question numbers, not passages.
 
 | At | You should be at |
 | --- | --- |
-| 10 min | 2 passages done |
-| 20 min | 3-4 passages done |
-| 30 min | 5 passages done |
+| 10 min | Q10 |
+| 20 min | Q20 |
+| 30 min | Q30 |
 | 40 min | Done |
 
 ---
@@ -302,9 +315,13 @@ minutes left and 6 misses means you should be going *slower*.
 
 Two rules that matter more than any of the above:
 
-**One question is worth one point.** The hardest question on the test is worth
-exactly what the easiest one is. Every minute spent on a question you probably
-won't get is stolen from questions you definitely would have.
+**Spend time where the points are likely.** On the ACT every question adds
+one raw point. On the SAT questions are not all worth the same: College Board
+says two students with the same number right can earn different scores,
+depending on which questions they answered correctly, including how hard
+those were (its score-calculation page, checked 2026-09-26). Either way, a
+question pays only if you get it right. Every minute spent on a question you
+probably won't get is taken from questions you would have.
 
 **Do not carry a bad section.** Sections are scored separately. A disastrous
 Math module has zero effect on your Reading score unless you let it wreck your
