@@ -187,6 +187,13 @@ readiness.
     attribute (the root's xmlns, role and aria-label excepted, since the
     renderer sets them).
 12. Template counts, as in "How many templates".
+13. Look-alike pairs: a blind strategy that guesses among the choices that
+    look like another choice (one change apart: a negation, a reciprocal, a
+    factor of 2, the complement to 90, 100, 180 or 360, a flipped sign, or
+    one word or symbol swapped, added or dropped) scores at most 50% on a
+    template and at most 32% over each tier's multiple choice, in every
+    section. When no choice or every choice has a look-alike, the strategy
+    guesses among all four.
 
 Also enforced:
 
@@ -234,6 +241,10 @@ The gate measures tells; these construction patterns avoid them.
 - **Rhetorical Synthesis.** Choices are grounded word by word against the
   notes (`ungroundedWords` in `expression-of-ideas/common.js`, with per-topic
   `allow` lists), so no distractor adds a fact the notes lack.
+- **Pair the distractors too.** A slip that is one change from the key
+  (the negation, the reciprocal, double) leaves the key in a look-alike
+  pair; give a distractor its own look-alike, or offer slips of the slip,
+  so pairs do not single out the key (check 13).
 - **Redraw, don't drop.** A modelled mistake that lands on the key, or two
   choices with the same value, redraws the instance.
 

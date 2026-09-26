@@ -80,8 +80,9 @@ on the real test. The SAT Math Hard tier explains most of the gap (measured
 3. **Grow thin cells.** Statistical inference had only two Hard templates
    (a third, combining samples from groups of different sizes, was added
    2026-09-26); several Reading and Writing Hard templates are banks of 10–12 items, so a
-   heavy user will meet repeats after many tests. Grow banks and add a
-   "look-alike pair" tell check.
+   heavy user will meet repeats after many tests. Grow banks. (The
+   "look-alike pair" tell check is check 13 of the families gate, since
+   2026-09-26; every tier scores 25–27%, chance being 25%.)
 4. **More of the real test's tools.** Highlights, notes and a line reader for
    Reading and Writing; an embedded graphing calculator (Desmos needs an API
    key, so the calculator opens desmos.com in a new window instead).

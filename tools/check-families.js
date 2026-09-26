@@ -98,6 +98,8 @@ const LIMITS = {
   varietyWindow: 200, // 9: Math's distinct share is over the first 200 draws (100 of each seed shape)
   hubTemplate: 0.5, // 8
   hubTier: 0.32, // 8
+  pairTemplate: 0.5, // 13
+  pairTier: 0.32, // 13
   transitionAppearances: 20, // 10
   transitionKeyShare: [0.1, 0.6], // 10
 };
@@ -115,6 +117,7 @@ const CHECK_NAMES = {
   10: "transition words",
   11: "figures",
   12: "template counts",
+  13: "blind look-alike pair strategy",
 };
 
 const RUBRIC_FACTORS = ["steps", "concept", "interpretation", "distractors", "abstraction", "synthesis", "trap"];
@@ -542,6 +545,15 @@ function report(sectionKey, config, results) {
       aggregate.push({ check: 8, message: `blind hub strategy scores ${Math.round(tier.share * 100)}% on ${difficulty} multiple choice (want at most ${LIMITS.hubTier * 100}%)`, value: tier.share, tier: difficulty });
     }
   });
+  // Check 13, per tier: the same for the look-alike pair strategy, in every section.
+  const pairTiers = complete
+    ? T.hubByTier(results.map((result) => ({ difficulty: result.family.difficulty || "Hard", measure: result.measure })), "pair")
+    : {};
+  Object.entries(pairTiers).forEach(([difficulty, tier]) => {
+    if (tier.share > LIMITS.pairTier) {
+      aggregate.push({ check: 13, message: `blind look-alike pair strategy scores ${Math.round(tier.share * 100)}% on ${difficulty} multiple choice (want at most ${LIMITS.pairTier * 100}%)`, value: tier.share, tier: difficulty });
+    }
+  });
   const transitions = config.transitionsSkill && !option("--family", null)
     ? transitionFailures(results.flatMap((result) => result.transitions))
     : [];
@@ -553,17 +565,18 @@ function report(sectionKey, config, results) {
   console.log(
     `${results.length - failed}/${results.length} families pass; numeric ${all ? ((totals.numeric / all) * 100).toFixed(1) : 0}%` +
       `; key positions ${totals.positions.join("/")}` +
-      (Object.keys(tiers).length ? `; hub by tier ${Object.entries(tiers).map(([tier, value]) => `${tier} ${Math.round(value.share * 100)}%`).join(", ")}` : ""),
+      (Object.keys(tiers).length ? `; hub by tier ${Object.entries(tiers).map(([tier, value]) => `${tier} ${Math.round(value.share * 100)}%`).join(", ")}` : "") +
+      (Object.keys(pairTiers).length ? `; pairs by tier ${Object.entries(pairTiers).map(([tier, value]) => `${tier} ${Math.round(value.share * 100)}%`).join(", ")}` : ""),
   );
   aggregate.forEach((failure) => console.log(`AGGREGATE FAIL: ${formatFailure(failure)}${failure.templates ? ` [${failure.templates.join(", ")}]` : ""}`));
-  return { ok: failed === 0 && aggregate.length === 0, aggregate, tiers };
+  return { ok: failed === 0 && aggregate.length === 0, aggregate, tiers, pairTiers };
 }
 
 // One row per template of every measurement, for --tells.
 function printTells(sectionKey, config, results) {
   console.log(`\n# ${sectionKey} measurements (% of multiple-choice reps unless noted)`);
   console.log(
-    `${"template".padEnd(40)} tier   mc/num    A   B   C   D  wrds long shrt  ext  hub item  opener(key%)            recurring(key%)          feature(alone%)`,
+    `${"template".padEnd(40)} tier   mc/num    A   B   C   D  wrds long shrt  ext  hub pair item  opener(key%)            recurring(key%)          feature(alone%)`,
   );
   results.forEach(({ family, measure }) => {
     const s = T.shares(measure);
@@ -576,7 +589,7 @@ function printTells(sectionKey, config, results) {
     console.log(
       `${family.id.padEnd(40)} ${(family.difficulty || "Hard").padEnd(6)} ${`${measure.mc}/${measure.numeric}`.padStart(7)}  ` +
         `${s.positions.map(pct).join(" ")}  ${s.averageChoiceWords === null ? "   -" : s.averageChoiceWords.toFixed(1).padStart(4)} ` +
-        `${pct(s.longestKey)}  ${pct(s.shortestKey)}  ${pct(s.extremeKey)}  ${pct(config.hub ? s.hub : null)} ${String(measure.distinct).padStart(4)}  ` +
+        `${pct(s.longestKey)}  ${pct(s.shortestKey)}  ${pct(s.extremeKey)}  ${pct(config.hub ? s.hub : null)}  ${pct(s.pair)} ${String(measure.distinct).padStart(4)}  ` +
         `${top(openers, (tally) => tally.key / tally.occurrences).padEnd(22)}  ${top(recurring, (tally) => tally.key / tally.reps).padEnd(22)}  ` +
         `${top(Object.entries(measure.features), (tally) => tally.keyAlone / tally.reps)}`,
     );
@@ -594,6 +607,7 @@ function jsonSection(sectionKey, results, outcome) {
   return {
     sectionKey,
     tiers: outcome.tiers,
+    pairTiers: outcome.pairTiers,
     aggregate: outcome.aggregate,
     templates: results.map(({ family, measure, failures, tally, forms, scenes }) => ({
       id: family.id,

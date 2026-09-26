@@ -6,7 +6,8 @@
 // (test/tells.test.js). A "tell" is anything that finds the key without
 // solving the problem: its position, its length, its opening words, a phrase
 // that is always the key, the one grammatical form the other choices do not
-// share, or, in Math, the value every distractor is built around.
+// share, a pair of look-alike choices the key belongs to, or, in Math, the
+// value every distractor is built around.
 //
 // measureTemplate(records) summarizes one template's repetitions;
 // templateFailures(measure, limits) applies the numbered checks of
@@ -83,6 +84,61 @@ function hubCredit(choices, key) {
   return kept.includes(key) ? 1 / kept.length : 0;
 }
 
+/* --------------------------------------------- blind look-alike pairs */
+
+const tokensOf = (text) => String(text).toLowerCase().replace(/−/g, "-")
+  .match(/[\p{L}\p{N}.]+|[^\s\p{L}\p{N}]/gu) || [];
+
+// Why two choices look alike, or null. A distractor built by one change to
+// the key (a sign, a reciprocal, a factor of 2, the complement to 90, 100,
+// 180 or 360, one word or symbol swapped, added or dropped) looks like it;
+// a student who guesses within such pairs gains when the key is in them
+// more often than chance. Relations between numbers: "negation",
+// "reciprocal", "double", "complement"; between texts or expressions:
+// "sign" (equal once + and − are ignored), "one-token" (same length, one
+// token differs), "insertion" (one token added, at least three kept).
+function lookAlike(left, right) {
+  const a = numericValue(left);
+  const b = numericValue(right);
+  if (a !== null && b !== null && Number.isFinite(a) && Number.isFinite(b)) {
+    if (a !== 0 && close(a, -b)) return "negation";
+    if (!close(a, b) && close(a * b, 1)) return "reciprocal";
+    if (a !== 0 && b !== 0 && (close(a, 2 * b) || close(b, 2 * a))) return "double";
+    if (a > 0 && b > 0 && [90, 100, 180, 360].some((whole) => close(a + b, whole))) return "complement";
+    return null;
+  }
+  const unsigned = (text) => String(text).replace(/[+−-]/g, "±");
+  if (String(left) !== String(right) && unsigned(left) === unsigned(right)) return "sign";
+  const p = tokensOf(left);
+  const q = tokensOf(right);
+  if (p.length && p.length === q.length && p.filter((token, index) => token !== q[index]).length === 1) return "one-token";
+  if (Math.abs(p.length - q.length) === 1 && Math.min(p.length, q.length) >= 3) {
+    const [shorter, longer] = p.length < q.length ? [p, q] : [q, p];
+    const target = shorter.join(" ");
+    if (longer.some((unused, index) => longer.filter((token, other) => other !== index).join(" ") === target)) return "insertion";
+  }
+  return null;
+}
+
+// The blind pair strategy: guess among the choices that look like another
+// choice. When none do, or all do, the pairs say nothing and the guess is
+// among all four. Returns the choices guessed among.
+function pairCandidates(choices) {
+  const paired = new Set();
+  choices.forEach((left, i) => choices.forEach((right, j) => {
+    if (j > i && lookAlike(left, right)) {
+      paired.add(i);
+      paired.add(j);
+    }
+  }));
+  return paired.size && paired.size < choices.length ? [...paired] : choices.map((unused, index) => index);
+}
+
+function pairCredit(choices, key) {
+  const kept = pairCandidates(choices);
+  return kept.includes(key) ? 1 / kept.length : 0;
+}
+
 /* ------------------------------------------------------------ measuring */
 
 const close = (left, right) => Math.abs(left - right) <= 1e-9 * Math.max(1, Math.abs(left), Math.abs(right));
@@ -141,6 +197,7 @@ function measureTemplate(entries, options) {
     numericChoiceReps: 0,
     extremeKey: 0,
     hub: 0,
+    pair: 0,
     openers: dictionary(),
     recurring: dictionary(),
     features: dictionary(),
@@ -190,6 +247,7 @@ function measureTemplate(entries, options) {
       if (keyIsExtreme(values, key)) m.extremeKey += 1;
     }
     m.hub += hubCredit(choices, key);
+    m.pair += pairCredit(choices, key);
     choices.forEach((choice, index) => {
       const start = opener(choice);
       if (!start) return;
@@ -239,6 +297,7 @@ function shares(m) {
     numericChoiceShare: of(m.numericChoiceReps, m.mc),
     extremeKey: of(m.extremeKey, m.numericChoiceReps),
     hub: of(m.hub, m.mc),
+    pair: of(m.pair, m.mc),
     distinctShare: of(m.windowDistinct, m.windowRecords),
   };
 }
@@ -329,6 +388,11 @@ function templateFailures(m, limits, context) {
     fail(8, `blind hub strategy scores ${percent(s.hub)} (want at most ${percent(limits.hubTemplate)})`, s.hub);
   }
 
+  // 13. Blind look-alike pair strategy (every section).
+  if (sampled && s.pair > limits.pairTemplate) {
+    fail(13, `blind look-alike pair strategy scores ${percent(s.pair)} (want at most ${percent(limits.pairTemplate)})`, s.pair);
+  }
+
   // 9. Variety: distinct items, not reorderings.
   if (settings.minDistinctShare && m.windowRecords && s.distinctShare < settings.minDistinctShare) {
     fail(9, `only ${m.windowDistinct} distinct items in ${m.windowRecords} draws (want ${percent(settings.minDistinctShare)})`, s.distinctShare);
@@ -341,16 +405,19 @@ function templateFailures(m, limits, context) {
 
 /* --------------------------------------------------------- section level */
 
-// Blind hub accuracy per difficulty tier: rows of { difficulty, measure }.
-function hubByTier(rows) {
+// A blind strategy's accuracy per difficulty tier: rows of { difficulty,
+// measure }; `field` is the measure's credit total ("hub" by default, or
+// "pair").
+function hubByTier(rows, field) {
+  const credit = field || "hub";
   const tiers = {};
   rows.forEach(({ difficulty, measure }) => {
-    const tier = (tiers[difficulty] = tiers[difficulty] || { mc: 0, hub: 0 });
+    const tier = (tiers[difficulty] = tiers[difficulty] || { mc: 0, credit: 0 });
     tier.mc += measure.mc;
-    tier.hub += measure.hub;
+    tier.credit += measure[credit];
   });
   return Object.fromEntries(Object.entries(tiers).map(([difficulty, tier]) =>
-    [difficulty, { mc: tier.mc, share: tier.mc ? Math.round((tier.hub / tier.mc) * 1000) / 1000 : null }]));
+    [difficulty, { mc: tier.mc, share: tier.mc ? Math.round((tier.credit / tier.mc) * 1000) / 1000 : null }]));
 }
 
 // Transition words and phrases across a skill's records: how often each is
@@ -426,9 +493,12 @@ module.exports = {
   hubCredit,
   itemIdentity,
   keyIsExtreme,
+  lookAlike,
   measureTemplate,
   normalizeChoice,
   opener,
+  pairCandidates,
+  pairCredit,
   shares,
   templateFailures,
 };

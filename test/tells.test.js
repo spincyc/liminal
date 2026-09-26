@@ -23,6 +23,8 @@ const LIMITS = {
   featureAlone: 0.4,
   hubTemplate: 0.5,
   hubTier: 0.32,
+  pairTemplate: 0.5,
+  pairTier: 0.32,
 };
 
 let counter = 0;
@@ -200,6 +202,42 @@ test("check 8 fails a Math template the blind hub strategy beats", () => {
   const tiers = T.hubByTier([{ difficulty: "Hard", measure }, { difficulty: "Hard", measure: T.measureTemplate(many(200, (index) => mc(["1", "2", "3", "4"], index % 4))) }]);
   assert.equal(tiers.Hard.mc, 400);
   assert.ok(tiers.Hard.share > 0.5);
+});
+
+test("look-alike choices are paired by one change", () => {
+  assert.equal(T.lookAlike("−12", "12"), "negation");
+  assert.equal(T.lookAlike("3/4", "4/3"), "reciprocal");
+  assert.equal(T.lookAlike("18", "9"), "double");
+  assert.equal(T.lookAlike("35%", "65%"), null, "percent choices read as fractions, not complements");
+  assert.equal(T.lookAlike("35", "145"), "complement");
+  assert.equal(T.lookAlike("x − 3", "x + 3"), "sign");
+  assert.equal(T.lookAlike("The data show a decline", "The data show a rise"), "one-token");
+  assert.equal(T.lookAlike("The data show a decline", "The data clearly show a decline"), "insertion");
+  assert.equal(T.lookAlike("12", "13"), null);
+  assert.equal(T.lookAlike("its", "it's"), null, "an apostrophe splits a token, so these differ in more than one");
+  assert.deepEqual(T.pairCandidates(["5", "−5", "7", "11"]).sort(), [0, 1]);
+  assert.deepEqual(T.pairCandidates(["5", "6", "7", "11"]), [0, 1, 2, 3], "no pairs: guess among all four");
+  assert.equal(T.pairCredit(["5", "−5", "7", "11"], 0), 0.5);
+  assert.equal(T.pairCredit(["5", "−5", "7", "11"], 2), 0);
+});
+
+test("check 13 fails a template whose key sits in its look-alike pair", () => {
+  const paired = many(200, (index) => {
+    const key = index % 4;
+    const value = 101 + (index % 40);
+    const choices = [String(value + 3), String(value + 7), String(value + 11)];
+    choices.splice(key, 0, String(value));
+    // The negated key sits next to it, so a student guessing within the pair wins half the time.
+    choices[(key + 1) % 4] = `−${value}`;
+    return mc(choices, key);
+  });
+  const measure = T.measureTemplate(paired);
+  assert.equal(T.shares(measure).pair, 0.5);
+  // (Check 4 fails too: the key is never the smallest or largest value.)
+  assert.ok(checks(T.templateFailures(measure, { ...LIMITS, pairTemplate: 0.45 }, {})).includes(13));
+  assert.ok(!checks(T.templateFailures(measure, LIMITS, {})).includes(13), "50% is the template limit");
+  const tiers = T.hubByTier([{ difficulty: "Medium", measure }], "pair");
+  assert.equal(tiers.Medium.share, 0.5);
 });
 
 test("check 9 counts items, not choice orders", () => {
