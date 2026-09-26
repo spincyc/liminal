@@ -59,10 +59,11 @@ choose "add slider" for k. Drag the slider and watch the graph change.
 >
 > Confirm with the discriminant: k² − 36 = 0, so k = ±6.
 
-> **Fails when.** The answer isn't a slider step. A slider moves in steps
-> (0.1 by default), so a value like k = 2√3 ≈ 3.464 can't be hit exactly.
-> Use the slider to find roughly where the answer is, then confirm with
-> algebra.
+> **Fails when.** The answer isn't a value the slider lands on. A slider
+> moves in steps, so a value like k = 2√3 ≈ 3.464 can't be hit exactly, and
+> near the answer the graph can look like it touches when it misses by a
+> hair. Use the slider to find roughly where the answer is, then confirm
+> with algebra.
 
 ## Equivalent expressions {#equivalence}
 
@@ -134,6 +135,12 @@ from the grid and check your completing-the-square work.
 
 Reach for Desmos when a question has an equation with numbers and asks for a
 specific value. Skip it when the question is about meaning or form.
+
+> **Fails when.** The value is exact and the graph gives a decimal you then
+> have to match (see [solving by graphing](#solve-by-graphing)), the
+> equation has a letter you can't give a number to, or the curves meet off
+> screen or so nearly touch that you can't tell one point from two. Then
+> finish by hand, and use the graph only to check.
 
 > **Trap.** Desmos starts in radians. For a trigonometry question in
 > degrees, switch the angle mode in the settings (the wrench icon), or
