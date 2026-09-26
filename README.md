@@ -64,7 +64,8 @@ never recorded. Liminal is now built to keep practice honest:
   practice rule, since the real one is not published.
 - **Digital test mode.** Every set runs in a full-screen test screen modeled
   on the real digital test: a timer you can hide with a five-minute alert, a
-  question navigator, Mark for Review, an answer eliminator, a review page,
+  question navigator, Mark for Review, an answer eliminator, highlights with
+  notes (Annotate) and a line reader on reading passages, a review page,
   typeset math, figures, a reference sheet, and a calculator link. Exit saves
   the set to finish later unless you discard it.
 - **Review that brings mistakes back.** A missed question returns the next

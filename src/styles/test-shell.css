@@ -20,6 +20,9 @@
   --lm-bad: var(--color-bad);
   --lm-bad-soft: var(--color-bad-soft);
   --lm-flag: var(--color-bad);
+  --lm-highlight: var(--color-highlight);
+  --lm-highlight-strong: var(--color-highlight-strong);
+  --lm-highlight-edge: var(--color-highlight-edge);
   --lm-radius: var(--radius);
   --lm-bar-h: var(--bar-h);
 
@@ -298,6 +301,11 @@
   color: var(--lm-accent);
 }
 
+.lm-shell .lm-tool[aria-pressed="true"] {
+  background: var(--lm-accent-soft);
+  color: var(--lm-accent);
+}
+
 /* ------------------------------------------------------- panels, alert */
 
 .lm-shell .lm-panel {
@@ -514,6 +522,7 @@
 }
 
 .lm-shell .lm-stimulus-pane {
+  position: relative;
   padding: 32px 36px 48px;
 }
 
@@ -851,6 +860,222 @@
   border-color: var(--lm-accent);
   background: var(--lm-accent);
   color: #fff;
+}
+
+/* ------------------------------------ passage tools: highlights, reader */
+
+.lm-shell mark.lm-hl {
+  padding: 0;
+  border-radius: 2px;
+  background: var(--lm-highlight);
+  color: inherit;
+  cursor: pointer;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* A highlight with a note carries a dashed underline. */
+.lm-shell mark.lm-hl.has-note {
+  text-decoration: underline dashed var(--lm-highlight-edge);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.lm-shell mark.lm-hl.is-current {
+  background: var(--lm-highlight-strong);
+  box-shadow: 0 0 0 1px var(--lm-highlight-edge);
+}
+
+/* The line reader: the band is clear and its shadow dims the rest of the
+   passage pane, which clips it. It lets clicks through, so text in the
+   band can still be selected; the handle moves it. */
+.lm-shell .lm-reader-band {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  left: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px var(--lm-accent), 0 0 0 200vmax rgba(20, 24, 31, 0.56);
+  pointer-events: none;
+}
+
+.lm-shell .lm-reader-controls {
+  position: absolute;
+  z-index: 3;
+  right: 8px;
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--lm-line-strong);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(20, 24, 31, 0.25);
+}
+
+.lm-shell .lm-reader-grip,
+.lm-shell .lm-reader-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--lm-ink);
+}
+
+.lm-shell .lm-reader-grip {
+  cursor: grab;
+  touch-action: none;
+}
+
+.lm-shell .lm-reader-grip:active {
+  cursor: grabbing;
+}
+
+.lm-shell .lm-reader-grip:hover,
+.lm-shell .lm-reader-btn:hover {
+  background: var(--lm-soft);
+}
+
+.lm-shell .lm-reader-btn[aria-disabled="true"] {
+  color: var(--lm-muted);
+  cursor: default;
+}
+
+.lm-shell .lm-reader-btn[aria-disabled="true"]:hover {
+  background: none;
+}
+
+@media (pointer: coarse) {
+  .lm-shell .lm-reader-grip,
+  .lm-shell .lm-reader-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Highlights and notes: a panel over the bottom of the passage, left open
+   while the student reads on. */
+.lm-shell .lm-notes {
+  bottom: calc(var(--lm-bar-h) + 12px);
+  left: 16px;
+  width: min(440px, calc(100% - 32px));
+  max-height: min(70%, calc(100% - 2 * var(--lm-bar-h) - 24px));
+  padding: 16px 20px 18px;
+}
+
+.lm-shell .lm-note-hint {
+  color: var(--lm-muted);
+  font-size: 0.95rem;
+}
+
+.lm-shell .lm-note-quote {
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border-left: 4px solid var(--lm-highlight-edge);
+  border-radius: 0 6px 6px 0;
+  background: var(--lm-highlight);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.lm-shell .lm-note-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.lm-shell .lm-note-input {
+  display: block;
+  width: 100%;
+  min-height: 4.8em;
+  margin: 0;
+  padding: 8px 10px;
+  border: 1.5px solid var(--lm-line-strong);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--lm-ink);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.45;
+  resize: vertical;
+}
+
+.lm-shell .lm-note-input:focus-visible {
+  border-color: var(--lm-accent);
+}
+
+.lm-shell .lm-note-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.lm-shell .lm-note-list-title {
+  margin: 16px 0 6px;
+  color: var(--lm-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.lm-shell .lm-note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.lm-shell .lm-note-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--lm-line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--lm-ink);
+  text-align: left;
+}
+
+.lm-shell .lm-note-item:hover {
+  border-color: var(--lm-line-strong);
+  background: var(--lm-softer);
+}
+
+.lm-shell .lm-note-item.is-current {
+  border-color: var(--lm-accent);
+  box-shadow: inset 0 0 0 1px var(--lm-accent);
+}
+
+.lm-shell .lm-note-item-quote,
+.lm-shell .lm-note-item-note {
+  display: -webkit-box;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.lm-shell .lm-note-item-quote {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.lm-shell .lm-note-item-note {
+  color: var(--lm-muted);
+  font-size: 0.86rem;
+  white-space: pre-line;
 }
 
 /* --------------------------------------------------------- answer rows */
@@ -2157,6 +2382,20 @@
     width: auto;
     max-height: calc(100% - 2 * var(--lm-bar-h) - 16px);
     padding: 16px;
+  }
+
+  /* The notes panel becomes a bottom sheet under the passage. */
+  .lm-shell .lm-notes {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    max-height: 52%;
+    padding: 14px 16px max(16px, env(safe-area-inset-bottom));
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 16px 16px 0 0;
   }
 
   .lm-shell .lm-ref-grid {

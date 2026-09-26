@@ -81,7 +81,7 @@ For a coherent ACT bank batch:
   - `index.html`: the generated catalog, answer signs and template registries,
     then `lib/core.js`, `lib/template-mask.js`, `lib/runs.js`,
     `lib/modules.js`, `lib/simulation.js`, `lib/test-engine.js`,
-    `lib/progress.js`, `lib/review-queue.js`,
+    `lib/annotations.js`, `lib/line-reader.js`, `lib/progress.js`, `lib/review-queue.js`,
     `lib/practice.js`, `lib/analytics.js`, `lib/progress-io.js`,
     `app/render.js`, `app/test-shell.js`, `app/site.js` (the shared header
     and SAT | ACT switch), the views in `app/views/`, then `app/app.js`.
@@ -116,7 +116,10 @@ For a coherent ACT bank batch:
   `styles/math.css` must load wherever it does), and sanitizes figure SVG
   through an allow-list. Never show domain, skill, difficulty, or IDs during
   a session. Exit is Save and exit (resumable, clock paused) or Discard set;
-  nothing is discarded silently.
+  nothing is discarded silently. Reading passages carry Annotate
+  (highlights with notes) and a line reader: `src/lib/annotations.js` keeps
+  highlights as text offsets per passage and `src/lib/line-reader.js` the
+  band's geometry.
 - Content strings render as text, never as trusted HTML. Figures are parsed
   as SVG data and rebuilt element by element. Learn pages arrive as block
   trees and render through DOM APIs only.
@@ -137,7 +140,9 @@ For a coherent ACT bank batch:
     left out, and template answers count at the template's current tier.
   - `liminal:session:v1` holds an unfinished set or test so it can resume
     after a reload (`config.simulation` is a test's state; `state` is the
-    module on screen, null during the break); `liminal:test:v1` holds the
+    module on screen, null during the break); its shell snapshot also
+    carries the set's highlights, notes and line-reader settings, which are
+    session scratch and never reach the progress record; `liminal:test:v1` holds the
     SAT | ACT choice.
   - `lib/progress-io.js` defines the downloadable progress file
     (`{ format: "liminal-progress", version: 3, exportedAt, progress }`);

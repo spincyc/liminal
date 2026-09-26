@@ -61,6 +61,8 @@ for (const asset of [
   "lib/simulation.js",
   "content/templates.js",
   "lib/test-engine.js",
+  "lib/annotations.js",
+  "lib/line-reader.js",
   "lib/progress.js",
   "lib/review-queue.js",
   "lib/practice.js",
@@ -200,13 +202,15 @@ if (html.includes('"lib/booklet.js"')) throw new Error("index.html loads lib/boo
 // them, and the shared header script before the page script that listens to
 // it. The practice page's logic loads before its views, and its views before
 // app.js, which builds them; the module blueprint loads before the test state
-// machine and the run builder that read it.
+// machine and the run builder that read it; the passage tools load before the
+// test screen that uses them.
 for (const [name, page, order] of [
   ["index.html", html, [
     "styles/tokens.css", "styles/app.css", "styles/test-shell.css", "styles/math.css",
     "lib/core.js", "lib/template-mask.js", "lib/runs.js", "lib/modules.js", "lib/simulation.js",
+    "lib/annotations.js", "lib/line-reader.js",
     "lib/progress.js", "lib/review-queue.js", "lib/practice.js", "lib/analytics.js", "lib/progress-io.js",
-    "app/site.js", ...VIEW_SCRIPTS, "app/app.js",
+    "app/test-shell.js", "app/site.js", ...VIEW_SCRIPTS, "app/app.js",
   ]],
   ["print.html", printHtml, [
     "styles/tokens.css", "styles/app.css",

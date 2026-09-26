@@ -69,6 +69,11 @@
   --color-bad-soft: #fbeceb;
   --color-disabled: #e3e6ec;
   --color-disabled-ink: #596069;
+  /* Highlighted passage text, the highlight being edited, and the edge
+     that marks a highlight with a note (3:1 on the highlight). */
+  --color-highlight: #ffe58f;
+  --color-highlight-strong: #ffd24a;
+  --color-highlight-edge: #7a5a00;
 
   --shadow-bar: 0 1px 3px rgba(20, 24, 31, 0.06);
   --shadow-card: 0 4px 18px rgba(20, 24, 31, 0.08);
@@ -101,6 +106,9 @@
     --color-bad-soft: #3a1c1a;
     --color-disabled: #2a2e35;
     --color-disabled-ink: #9aa1ab;
+    --color-highlight: #5c4a0a;
+    --color-highlight-strong: #7a6210;
+    --color-highlight-edge: #ffd24a;
 
     --shadow-bar: 0 1px 3px rgba(0, 0, 0, 0.5);
     --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.45);

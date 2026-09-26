@@ -23,6 +23,9 @@
   // written once the typing pauses, and at once when the page is hidden.
   const SAVE_DEBOUNCE_MS = 600;
   const DEFAULT_LETTERS = ["A", "B", "C", "D", "E"];
+  // The line reader's band reaches this far (px) past the letters of its
+  // first and last lines.
+  const READER_PAD = 6;
 
   const DIRECTIONS = {
     "sat-reading-writing": [
@@ -135,6 +138,18 @@
       ["path", { d: "M12 3.5l9.5 16.5h-19z" }],
       ["path", { d: "M12 10v4.5M12 17.2h.01" }],
     ],
+    annotate: [
+      ["path", { d: "M14.5 4l5 5-8.5 8.5H6v-5z" }],
+      ["path", { d: "M12.5 6l5 5" }],
+      ["path", { d: "M4 21h16" }],
+    ],
+    reader: [
+      ["path", { d: "M3.5 4.5h17M3.5 19.5h17" }],
+      ["rect", { x: 3.5, y: 8.5, width: 17, height: 7, rx: 1.5 }],
+    ],
+    grip: [["path", { d: "M8.5 7.5L12 4l3.5 3.5M8.5 16.5L12 20l3.5-3.5M7 12h10" }]],
+    minus: [["path", { d: "M6 12h12" }]],
+    plus: [["path", { d: "M12 6v12M6 12h12" }]],
   };
 
   function icon(name, className) {
@@ -602,6 +617,10 @@
     if (!Engine || !Render || !Core) {
       throw new Error("LiminalShell needs PracticeCore, LiminalTestEngine, and LiminalRender loaded first.");
     }
+    // The passage tools (Annotate and the line reader) come from their own
+    // modules; without them the screen works as before, minus those tools.
+    const Annotations = root.LiminalAnnotations || null;
+    const LineReader = root.LiminalLineReader || null;
     const now = typeof options.now === "function" ? options.now : () => Date.now();
     const call = (name, payload) => {
       const callback = options[name];
@@ -658,8 +677,10 @@
     const runCode = options.setCode || options.runCode ||
       (resumeShell && (resumeShell.setCode || resumeShell.runCode)) || null;
     const mathSection = isMathSection(sectionKey);
+    // Annotate and the line reader apply question by question: only where a
+    // Reading and Writing or ACT passage is on screen (toolAvailable).
     const tools = Object.assign(
-      { calculator: mathSection, reference: mathSection },
+      { calculator: mathSection, reference: mathSection, annotate: true, lineReader: true },
       (resumeShell && resumeShell.tools) || {},
       options.tools || {},
     );
@@ -683,6 +704,36 @@
     let closed = false;
     const refs = {};
 
+    // Passage tools. Highlights are kept per passage (questions that share
+    // a passage share its highlights) as offsets into its text, and with
+    // the line reader's settings ride in the snapshot as scratch: they
+    // never reach the result or the progress record.
+    const passageKeys = Annotations
+      ? Annotations.passageKeys(session.state.questions.map(passageTextOf))
+      : session.state.questions.map((question, index) => (passageTextOf(question) ? `p${index}` : null));
+    let annotations = Annotations
+      ? Annotations.prune(Annotations.restore(resumeShell && resumeShell.annotations), passageKeys)
+      : {};
+    let readerPrefs = LineReader
+      ? LineReader.restorePrefs(resumeShell && resumeShell.lineReader)
+      : { on: false, lines: 3 };
+    // The highlight open in the notes panel: { key, start }.
+    let noteTarget = null;
+    // The selection as the Annotate button was pressed, before a tap on it
+    // can clear the selection: { range, pointer, at }.
+    let armed = null;
+    let lastPointerType = "mouse";
+    // The line reader's measured lines, its first line per passage, and a
+    // drag in progress.
+    let readerLines = [];
+    let readerIndex = 0;
+    const readerAt = new Map();
+    let readerDrag = null;
+    let readerFrame = null;
+    const readerObserver = typeof root.ResizeObserver === "function"
+      ? new root.ResizeObserver(() => { if (readerShown()) layoutReader(); })
+      : null;
+
     // `paused`: the student chose Save and exit, so a timed set's clock
     // waits for them instead of running while the set is put away.
     function snapshot(settings) {
@@ -697,6 +748,8 @@
         module: moduleInfo,
         view,
         timerHidden,
+        annotations: Annotations ? Annotations.serialize(annotations) : undefined,
+        lineReader: { on: readerPrefs.on, lines: readerPrefs.lines },
         finished: session.state.finished,
         session: session.serialize({ paused: Boolean(settings && settings.paused) }),
       };
@@ -788,6 +841,21 @@
     refs.reportButton = toolButton("list", "Report", () => showView("report"));
     refs.exitButton = toolButton("close", "Exit", requestExit);
     refs.sectionLabel = h("p", { className: "lm-section-label", hidden: true });
+    refs.annotateButton = tools.annotate && Annotations
+      ? toolButton("annotate", "Annotate", onAnnotate, {
+        title: "Annotate: highlight the text you selected in the passage and add a note (Alt+Shift+H)",
+        "aria-keyshortcuts": "Alt+Shift+H",
+        "aria-expanded": "false",
+        "aria-controls": "lm-notes",
+        onPointerdown: armSelection,
+      })
+      : null;
+    refs.readerButton = tools.lineReader && LineReader
+      ? toolButton("reader", "Line reader", toggleReader, {
+        title: "Line reader: dim all but a few lines of the passage",
+        "aria-pressed": "false",
+      })
+      : null;
 
     refs.top = h("header", { className: "lm-top" }, [
       h("div", { className: "lm-top-left" }, [
@@ -797,6 +865,7 @@
       ]),
       h("div", { className: "lm-top-center" }, [refs.timer, refs.timerToggle, refs.centerLabel]),
       h("div", { className: "lm-top-right" }, [
+        refs.annotateButton, refs.readerButton,
         refs.calcButton, refs.refButton, refs.reportButton, refs.exitButton,
       ]),
     ]);
@@ -874,6 +943,50 @@
       ]),
       buildReferenceSheet(),
     ]);
+    // Highlights and notes: not modal, so the student can go on selecting
+    // and reading the passage while it is open.
+    refs.notes = h("div", {
+      id: "lm-notes",
+      className: "lm-panel lm-notes",
+      role: "dialog",
+      "aria-label": "Highlights and notes",
+      hidden: true,
+    });
+    // The line reader's band (the clear lines; its shadow dims the rest of
+    // the passage) and its handle, placed in the passage pane when on.
+    refs.readerBand = h("div", { className: "lm-reader-band", "aria-hidden": "true" });
+    refs.readerGrip = h("div", {
+      className: "lm-reader-grip",
+      role: "slider",
+      tabindex: "0",
+      "aria-label": "Line reader position",
+      "aria-orientation": "vertical",
+      title: "Drag, or use the arrow keys, to move the line reader",
+      onKeydown: onReaderKey,
+      onPointerdown: onReaderGripDown,
+      onPointermove: onReaderGripMove,
+      onPointerup: onReaderGripUp,
+      onPointercancel: onReaderGripUp,
+    }, [icon("grip")]);
+    refs.readerFewer = h("button", {
+      type: "button",
+      className: "lm-reader-btn",
+      "aria-label": "Show fewer lines",
+      title: "Show fewer lines",
+      onClick: () => resizeReader(-1),
+    }, [icon("minus")]);
+    refs.readerMore = h("button", {
+      type: "button",
+      className: "lm-reader-btn",
+      "aria-label": "Show more lines",
+      title: "Show more lines",
+      onClick: () => resizeReader(1),
+    }, [icon("plus")]);
+    refs.readerControls = h("div", {
+      className: "lm-reader-controls",
+      role: "group",
+      "aria-label": "Line reader",
+    }, [refs.readerGrip, refs.readerFewer, refs.readerMore]);
     refs.scrim = h("div", { className: "lm-scrim", hidden: true, onClick: () => closePanel(true) });
 
     refs.livePolite = h("div", { className: "lm-sr-only", "aria-live": "polite", role: "status" });
@@ -883,7 +996,7 @@
 
     append(shell, [
       refs.top, refs.directions, refs.alert, refs.main, refs.bottom, refs.scrim,
-      refs.navigator, refs.reference, refs.livePolite, refs.liveAssertive, refs.dialog,
+      refs.navigator, refs.reference, refs.notes, refs.livePolite, refs.liveAssertive, refs.dialog,
     ]);
 
     /* ---- helpers */
@@ -924,9 +1037,14 @@
     }
 
     // In a mixed set the calculator belongs to math sections and the
-    // reference sheet to SAT Math only.
+    // reference sheet to SAT Math only. Annotate and the line reader belong
+    // to a question on screen that shows a passage outside Math.
     function toolAvailable(name) {
       if (!tools[name]) return false;
+      if (name === "annotate" || name === "lineReader") {
+        if (!(name === "annotate" ? Annotations : LineReader) || view !== "question") return false;
+        return Boolean(passageKeys[session.state.index]);
+      }
       if (!mixed) return true;
       const key = currentSectionKey();
       return name === "calculator" ? isMathSection(key) : key === "sat-math";
@@ -998,6 +1116,9 @@
           .concat(session.state.feedback === "instant"
             ? [h("p", { text: "Instant feedback is on: use Check to see whether your answer is right, then read the explanation. A checked answer is locked." })]
             : [h("p", { text: "Nothing is scored until you finish. Use Mark for Review to flag questions, and the answer eliminator to cross out choices you have ruled out." })])
+          .concat(toolAvailable("annotate") || toolAvailable("lineReader")
+            ? [h("p", { text: "To highlight, select text in the passage, then choose Annotate (or press Alt+Shift+H); select a highlight to add or change its note. The line reader dims all but a few lines of the passage: drag its handle, tap a dimmed line, or use the arrow keys on the handle; its minus and plus buttons show fewer or more lines." })]
+            : [])
           .concat(hasNumeric() ? [sprRulesPanel(true)] : [])),
       );
     }
@@ -1030,6 +1151,10 @@
         if (refs.refButton) refs.refButton.setAttribute("aria-expanded", "true");
         const closeButton = refs.reference.querySelector(".lm-icon-btn");
         if (closeButton) closeButton.focus();
+      } else if (name === "notes") {
+        // openNotes renders the panel and places focus.
+        refs.notes.hidden = false;
+        if (refs.annotateButton) refs.annotateButton.setAttribute("aria-expanded", "true");
       }
       shell.dataset.panel = name;
     }
@@ -1041,14 +1166,22 @@
       refs.navigator.hidden = true;
       refs.directions.hidden = true;
       refs.reference.hidden = true;
+      refs.notes.hidden = true;
       refs.scrim.hidden = true;
       refs.navToggle.setAttribute("aria-expanded", "false");
       refs.directionsToggle.setAttribute("aria-expanded", "false");
       if (refs.refButton) refs.refButton.setAttribute("aria-expanded", "false");
+      if (refs.annotateButton) refs.annotateButton.setAttribute("aria-expanded", "false");
+      if (was === "notes") {
+        noteTarget = null;
+        refs.noteInput = null;
+        paintHighlights();
+      }
       if (restoreFocus && was) {
         const target = was === "nav" ? refs.navToggle
           : was === "directions" ? refs.directionsToggle
-            : refs.refButton;
+            : was === "notes" ? refs.annotateButton
+              : refs.refButton;
         if (target && target.isConnected && !target.hidden) target.focus();
       }
     }
@@ -1748,12 +1881,14 @@
       lastStimulusKey = stimulusKey;
 
       let layout;
+      let stimulusPane = null;
       if (split) {
-        const stimulusPane = h("div", {
+        stimulusPane = h("div", {
           className: "lm-stimulus-pane",
           role: "region",
           "aria-label": "Passage",
           tabindex: "0",
+          onScroll: onPaneScroll,
         }, [figureNode, stimulusNode]);
         layout = h("div", { className: "lm-split" }, [
           stimulusPane,
@@ -1768,6 +1903,11 @@
       }
       refs.main.scrollTop = 0;
       shell.dataset.layout = split ? "split" : "single";
+      // The passage the tools act on: the stimulus text of a question on
+      // screen, never the answer review.
+      const tooled = !reviewing && Boolean(stimulusNode) && Boolean(passageKeys[index]);
+      refs.passageText = tooled ? stimulusNode : null;
+      refs.readerPane = tooled ? stimulusPane : null;
 
       if (underlines) {
         const target = underlineTarget(question);
@@ -1783,6 +1923,9 @@
           }
         }
       }
+      paintHighlights();
+      layoutReader();
+      observeReader();
       syncQuestion();
     }
 
@@ -1873,6 +2016,544 @@
       session.select(choiceIndex);
       save();
       syncQuestion();
+    }
+
+    /* ---- passage tools: Annotate (highlights and notes), line reader */
+
+    // The passage text a question shows, or null (Math, or no passage).
+    function passageTextOf(question) {
+      if (isMathSection(question.sectionKey || sectionKey)) return null;
+      const stimulus = stimulusFor(question).stimulus;
+      return stimulus && stimulus.content ? String(stimulus.content) : null;
+    }
+
+    function currentPassageKey() {
+      return passageKeys[session.state.index] || null;
+    }
+
+    function passageRoot() {
+      return refs.passageText && refs.passageText.isConnected ? refs.passageText : null;
+    }
+
+    function markSelector(start) {
+      return `mark.lm-hl[data-start="${Number(start)}"]`;
+    }
+
+    // A boundary point as an offset into the passage's text.
+    function textOffset(rootNode, node, offset) {
+      const range = document.createRange();
+      range.setStart(rootNode, 0);
+      range.setEnd(node, offset);
+      return range.toString().length;
+    }
+
+    // The part of the selection inside the passage, as offsets trimmed of
+    // white space; null when no passage text is selected.
+    function selectionRange() {
+      const rootNode = passageRoot();
+      const selection = Annotations && document.getSelection ? document.getSelection() : null;
+      if (!rootNode || !selection || !selection.rangeCount || selection.isCollapsed) return null;
+      const range = selection.getRangeAt(0);
+      if (!range.intersectsNode(rootNode)) return null;
+      const all = document.createRange();
+      all.selectNodeContents(rootNode);
+      const text = rootNode.textContent;
+      const start = range.compareBoundaryPoints(root.Range.START_TO_START, all) <= 0
+        ? 0
+        : textOffset(rootNode, range.startContainer, range.startOffset);
+      const end = range.compareBoundaryPoints(root.Range.END_TO_END, all) >= 0
+        ? text.length
+        : textOffset(rootNode, range.endContainer, range.endOffset);
+      return Annotations.trimRange(text, start, end);
+    }
+
+    function clearSelection() {
+      const selection = document.getSelection ? document.getSelection() : null;
+      if (selection && selection.removeAllRanges) selection.removeAllRanges();
+    }
+
+    // A tap on the Annotate button can clear the selection before its
+    // click arrives, so the selection is taken as the press begins.
+    function armSelection(event) {
+      armed = { range: selectionRange(), pointer: (event && event.pointerType) || "mouse", at: Date.now() };
+    }
+
+    // Annotate highlights the selection and opens its note; with nothing
+    // selected it opens the list of highlights, or closes it when open.
+    function onAnnotate() {
+      const pressed = armed && Date.now() - armed.at < 5000 ? armed : null;
+      armed = null;
+      const range = (pressed && pressed.range) || selectionRange();
+      if (!range && openPanel === "notes") {
+        closePanel(true);
+        return;
+      }
+      annotate(range, !pressed || pressed.pointer !== "touch");
+    }
+
+    function annotate(range, focusNote) {
+      const key = currentPassageKey();
+      if (!Annotations || !key || !toolAvailable("annotate")) return;
+      if (!range) {
+        openNotes(noteTarget ? noteTarget.start : null, { focus: "panel" });
+        announce("Select text in the passage first, then choose Annotate.");
+        return;
+      }
+      const before = Annotations.list(annotations, key);
+      const result = Annotations.add(annotations, key, range);
+      if (!result.highlight) {
+        openNotes(null, { focus: "panel" });
+        announce("This passage has as many highlights as it can hold. Delete one to add another.");
+        return;
+      }
+      const existed = before.some((item) => item.start === result.highlight.start &&
+        item.end === result.highlight.end);
+      annotations = result.store;
+      clearSelection();
+      save();
+      openNotes(result.highlight.start, { focus: focusNote ? "note" : "panel" });
+      announce(existed ? "Highlight selected." : "Text highlighted. You can add a note.");
+    }
+
+    // Draws the passage's highlights as <mark> elements around its text,
+    // after removing the old ones; the text itself never changes.
+    function paintHighlights() {
+      const rootNode = passageRoot();
+      if (!rootNode || !Annotations) return;
+      const old = rootNode.querySelectorAll("mark.lm-hl");
+      if (old.length) {
+        old.forEach((mark) => mark.replaceWith(...mark.childNodes));
+        rootNode.normalize();
+      }
+      const text = rootNode.textContent;
+      const list = Annotations.clampToLength(Annotations.list(annotations, currentPassageKey()), text.length);
+      if (!list.length) return;
+      const walker = document.createTreeWalker(rootNode, root.NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) nodes.push(node);
+      let at = 0;
+      nodes.forEach((node) => {
+        const from = at;
+        at += node.data.length;
+        const parts = Annotations.pieces(from, at, list);
+        if (!parts.some((part) => part.highlight !== null)) return;
+        const fragment = document.createDocumentFragment();
+        parts.forEach((part) => {
+          const piece = document.createTextNode(node.data.slice(part.start - from, part.end - from));
+          if (part.highlight === null) {
+            fragment.appendChild(piece);
+            return;
+          }
+          const item = list[part.highlight];
+          const current = Boolean(noteTarget) && noteTarget.start === item.start;
+          const mark = h("mark", {
+            className: `lm-hl${Annotations.hasNote(item) ? " has-note" : ""}${current ? " is-current" : ""}`,
+            dataset: { start: String(item.start) },
+          });
+          mark.appendChild(piece);
+          fragment.appendChild(mark);
+        });
+        node.parentNode.replaceChild(fragment, node);
+      });
+    }
+
+    // The highlighted words, with a space where the highlight crosses from
+    // one paragraph or cell to the next, and without ACT question numbers.
+    function excerptOf(item) {
+      const rootNode = passageRoot();
+      if (!rootNode) return "";
+      let text = "";
+      let block = null;
+      rootNode.querySelectorAll(markSelector(item.start)).forEach((mark) => {
+        if (mark.closest(".lm-ul-n, .lm-ul-marker")) return;
+        const owner = mark.closest("p, li, td, th, h3");
+        if (text && owner !== block) text += " ";
+        block = owner;
+        text += mark.textContent;
+      });
+      if (!text) text = rootNode.textContent.slice(item.start, item.end);
+      text = text.replace(/\s+/g, " ").trim();
+      return text.length > 160 ? `${text.slice(0, 157).trimEnd()}…` : text;
+    }
+
+    // Opens the notes panel on one highlight (by its start), or on the list
+    // when start is null. settings.focus: "note" (the note field), "panel"
+    // (its heading), or "none".
+    function openNotes(start, settings) {
+      const key = currentPassageKey();
+      if (!Annotations || !key) return;
+      const focus = (settings && settings.focus) || "panel";
+      noteTarget = start === null || start === undefined ? null : { key, start: Number(start) };
+      if (openPanel !== "notes") openPanelNamed("notes");
+      paintHighlights();
+      renderNotes();
+      if (focus === "note" && refs.noteInput) {
+        refs.noteInput.focus({ preventScroll: true });
+      } else if (focus !== "none") {
+        const heading = refs.notes.querySelector(".lm-panel-title");
+        if (heading) heading.focus({ preventScroll: true });
+      }
+    }
+
+    function renderNotes() {
+      const key = currentPassageKey();
+      const list = Annotations.list(annotations, key);
+      const target = noteTarget ? Annotations.findHighlight(list, noteTarget.start) : null;
+      if (!target) noteTarget = null;
+      refs.noteInput = null;
+      const children = [
+        h("div", { className: "lm-panel-head" }, [
+          h("h2", { className: "lm-panel-title", tabindex: "-1", text: "Highlights and notes" }),
+          h("button", {
+            type: "button",
+            className: "lm-icon-btn",
+            "aria-label": "Close highlights and notes",
+            onClick: () => closePanel(true),
+          }, [icon("close")]),
+        ]),
+      ];
+      if (target) {
+        const start = target.start;
+        refs.noteInput = h("textarea", {
+          id: "lm-note-input",
+          className: "lm-note-input",
+          rows: "3",
+          maxlength: String(Annotations.MAX_NOTE_LENGTH),
+          "aria-describedby": "lm-note-quote",
+        });
+        refs.noteInput.value = target.note;
+        refs.noteInput.addEventListener("input", () => {
+          annotations = Annotations.note(annotations, key, start, refs.noteInput.value);
+          syncNote(start);
+          save();
+        });
+        children.push(h("div", { className: "lm-note-editor" }, [
+          h("p", { className: "lm-note-quote", id: "lm-note-quote" }, [
+            h("span", { className: "lm-sr-only", text: "Highlighted text: " }),
+            `“${excerptOf(target)}”`,
+          ]),
+          h("label", { className: "lm-note-label", for: "lm-note-input", text: "Note" }),
+          refs.noteInput,
+          h("div", { className: "lm-note-actions" }, [
+            h("button", {
+              type: "button",
+              className: "lm-btn lm-btn-secondary lm-btn-danger",
+              text: "Delete highlight",
+              onClick: () => deleteHighlight(start),
+            }),
+            h("button", {
+              type: "button",
+              className: "lm-btn lm-btn-primary",
+              text: "Done",
+              onClick: () => closePanel(true),
+            }),
+          ]),
+        ]));
+      } else {
+        children.push(h("p", {
+          className: "lm-note-hint",
+          text: "Select text in the passage, then choose Annotate to highlight it. Select a highlight to add or change its note.",
+        }));
+      }
+      if (list.length) {
+        children.push(h("h3", { className: "lm-note-list-title", text: `In this passage (${list.length})` }));
+        children.push(h("ul", { className: "lm-note-list" }, list.map((item) => {
+          const current = Boolean(target) && target.start === item.start;
+          return h("li", {}, [h("button", {
+            type: "button",
+            className: `lm-note-item${current ? " is-current" : ""}`,
+            "aria-current": current ? "true" : null,
+            dataset: { start: String(item.start) },
+            onClick: () => {
+              openNotes(item.start, { focus: "note" });
+              revealHighlight(item.start);
+            },
+          }, [
+            h("span", { className: "lm-note-item-quote", text: excerptOf(item) }),
+            h("span", { className: "lm-sr-only", text: ". " }),
+            h("span", {
+              className: "lm-note-item-note",
+              text: Annotations.hasNote(item) ? item.note : "No note",
+            }),
+          ])]);
+        })));
+      }
+      refs.notes.replaceChildren(...children);
+    }
+
+    // After typing: the note's dashed underline and its line in the list.
+    function syncNote(start) {
+      const item = Annotations.findHighlight(Annotations.list(annotations, currentPassageKey()), start);
+      const noted = Annotations.hasNote(item);
+      const rootNode = passageRoot();
+      if (rootNode) {
+        rootNode.querySelectorAll(markSelector(start)).forEach((mark) => mark.classList.toggle("has-note", noted));
+      }
+      const preview = refs.notes.querySelector(`.lm-note-item[data-start="${Number(start)}"] .lm-note-item-note`);
+      if (preview) preview.textContent = noted ? item.note : "No note";
+    }
+
+    function deleteHighlight(start) {
+      annotations = Annotations.remove(annotations, currentPassageKey(), start);
+      noteTarget = null;
+      save();
+      paintHighlights();
+      renderNotes();
+      const next = refs.notes.querySelector(".lm-note-item") || refs.notes.querySelector(".lm-panel-title");
+      if (next) next.focus({ preventScroll: true });
+      announce("Highlight deleted.");
+    }
+
+    // Brings a highlight into view, moving the line reader onto it when on.
+    function revealHighlight(start) {
+      const rootNode = passageRoot();
+      const mark = rootNode && rootNode.querySelector(markSelector(start));
+      if (!mark) return;
+      if (readerShown()) {
+        const offset = paneOffset();
+        placeReader(LineReader.lineAt(readerLines, mark.getBoundingClientRect().top - offset + 2), { reveal: true });
+      } else {
+        mark.scrollIntoView({ block: "nearest" });
+      }
+    }
+
+    function readerShown() {
+      return Boolean(LineReader) && readerPrefs.on && toolAvailable("lineReader") &&
+        Boolean(refs.readerPane) && refs.readerPane.isConnected;
+    }
+
+    // Subtracted from a viewport y to give a y in the passage pane's own
+    // (scrolling) coordinates, where the band is placed.
+    function paneOffset() {
+      const pane = refs.readerPane;
+      return pane.getBoundingClientRect().top + pane.clientTop - pane.scrollTop;
+    }
+
+    // The pane's line boxes: its text line by line, and each figure whole.
+    function measureReaderLines() {
+      const pane = refs.readerPane;
+      const offset = paneOffset();
+      const rects = [];
+      const range = document.createRange();
+      const walker = document.createTreeWalker(pane, root.NodeFilter.SHOW_TEXT);
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+        if (!node.data.trim() || node.parentNode.closest("svg, .lm-reader-controls")) continue;
+        range.selectNodeContents(node);
+        Array.from(range.getClientRects()).forEach((rect) => {
+          rects.push({ top: rect.top - offset, bottom: rect.bottom - offset });
+        });
+      }
+      pane.querySelectorAll(".lm-figure").forEach((figure) => {
+        const rect = figure.getBoundingClientRect();
+        rects.push({ top: rect.top - offset, bottom: rect.bottom - offset });
+      });
+      readerLines = LineReader.groupLines(rects);
+    }
+
+    // Shows or hides the line reader for the question on screen, measuring
+    // the passage again; the band returns to where it was on this passage.
+    function layoutReader() {
+      if (refs.readerButton) refs.readerButton.setAttribute("aria-pressed", readerPrefs.on ? "true" : "false");
+      if (!readerShown()) {
+        refs.readerBand.remove();
+        refs.readerControls.remove();
+        return;
+      }
+      const pane = refs.readerPane;
+      if (refs.readerBand.parentNode !== pane) pane.append(refs.readerBand, refs.readerControls);
+      measureReaderLines();
+      const key = currentPassageKey();
+      const start = readerAt.has(key) ? readerAt.get(key) : 0;
+      placeReader(LineReader.fitInView(readerLines, start, readerPrefs.lines,
+        pane.scrollTop, pane.scrollTop + pane.clientHeight));
+    }
+
+    function placeReader(index, settings) {
+      const box = LineReader.band(readerLines, index, readerPrefs.lines, READER_PAD);
+      refs.readerBand.hidden = !box;
+      refs.readerControls.hidden = !box;
+      if (!box) return;
+      readerIndex = box.index;
+      readerAt.set(currentPassageKey(), box.index);
+      refs.readerBand.style.top = `${box.top}px`;
+      refs.readerBand.style.height = `${Math.max(0, box.bottom - box.top)}px`;
+      const total = readerLines.length;
+      refs.readerGrip.setAttribute("aria-valuemin", "1");
+      refs.readerGrip.setAttribute("aria-valuemax", String(Math.max(1, total - Math.min(box.size, total) + 1)));
+      refs.readerGrip.setAttribute("aria-valuenow", String(box.first + 1));
+      refs.readerGrip.setAttribute("aria-valuetext", box.first === box.last
+        ? `Line ${box.first + 1} of ${total}`
+        : `Lines ${box.first + 1} to ${box.last + 1} of ${total}`);
+      refs.readerFewer.setAttribute("aria-disabled", readerPrefs.lines <= LineReader.MIN_LINES ? "true" : "false");
+      refs.readerMore.setAttribute("aria-disabled", readerPrefs.lines >= LineReader.MAX_LINES ? "true" : "false");
+      if (settings && settings.reveal) refs.readerBand.scrollIntoView({ block: "nearest" });
+      placeReaderControls(box);
+    }
+
+    // The handle sits just under the band, or over it when there is no room
+    // below, and inside it when there is room on neither side.
+    function placeReaderControls(box) {
+      const pane = refs.readerPane;
+      const height = refs.readerControls.offsetHeight || 44;
+      const viewTop = pane.scrollTop;
+      const viewBottom = viewTop + pane.clientHeight;
+      let top = box.bottom + 6;
+      if (top + height > viewBottom) {
+        if (box.top - 6 - height >= viewTop) top = box.top - 6 - height;
+        else top = Math.max(viewTop + 4, Math.min(box.top + 4, viewBottom - height - 4));
+      }
+      refs.readerControls.style.top = `${Math.max(0, top)}px`;
+    }
+
+    // Scrolling the passage keeps the band on screen.
+    function onPaneScroll() {
+      if (readerFrame !== null || readerDrag || !readerShown()) return;
+      readerFrame = root.requestAnimationFrame(() => {
+        readerFrame = null;
+        if (!readerShown()) return;
+        const pane = refs.readerPane;
+        const next = LineReader.fitInView(readerLines, readerIndex, readerPrefs.lines,
+          pane.scrollTop, pane.scrollTop + pane.clientHeight);
+        if (next !== readerIndex) placeReader(next);
+        else {
+          const box = LineReader.band(readerLines, readerIndex, readerPrefs.lines, READER_PAD);
+          if (box) placeReaderControls(box);
+        }
+      });
+    }
+
+    function observeReader() {
+      if (!readerObserver) return;
+      readerObserver.disconnect();
+      if (!refs.readerPane) return;
+      readerObserver.observe(refs.readerPane);
+      if (refs.passageText) readerObserver.observe(refs.passageText);
+    }
+
+    function toggleReader() {
+      if (!LineReader || !toolAvailable("lineReader")) return;
+      readerPrefs = { on: !readerPrefs.on, lines: readerPrefs.lines };
+      layoutReader();
+      save();
+      if (!readerPrefs.on) {
+        announce("Line reader off.");
+        return;
+      }
+      const count = readerPrefs.lines;
+      announce(`Line reader on, showing ${count} line${count === 1 ? "" : "s"}. ` +
+        "Use the arrow keys on its handle to move it, and minus or plus for fewer or more lines.");
+      if (readerShown()) refs.readerGrip.focus({ preventScroll: true });
+    }
+
+    function resizeReader(delta) {
+      if (!LineReader) return;
+      const count = LineReader.clampSize(readerPrefs.lines + delta);
+      if (count === readerPrefs.lines) {
+        announce(count === LineReader.MIN_LINES
+          ? "The line reader already shows the fewest lines."
+          : "The line reader already shows the most lines.");
+        return;
+      }
+      readerPrefs = { on: readerPrefs.on, lines: count };
+      if (readerShown()) placeReader(readerIndex, { reveal: true });
+      save();
+      announce(`Line reader shows ${count} line${count === 1 ? "" : "s"}.`);
+    }
+
+    // The handle is a vertical slider: arrows move a line, Page Up and Page
+    // Down a band, Home and End to the ends; minus and plus resize.
+    function onReaderKey(event) {
+      if (!readerShown() || event.ctrlKey || event.metaKey || event.altKey) return;
+      const size = readerPrefs.lines;
+      const count = readerLines.length;
+      let target;
+      switch (event.key) {
+        case "ArrowUp":
+        case "ArrowLeft":
+          target = readerIndex - 1;
+          break;
+        case "ArrowDown":
+        case "ArrowRight":
+          target = readerIndex + 1;
+          break;
+        case "PageUp":
+          target = readerIndex - size;
+          break;
+        case "PageDown":
+          target = readerIndex + size;
+          break;
+        case "Home":
+          target = 0;
+          break;
+        case "End":
+          target = count;
+          break;
+        case "+":
+        case "=":
+          event.preventDefault();
+          resizeReader(1);
+          return;
+        case "-":
+        case "_":
+          event.preventDefault();
+          resizeReader(-1);
+          return;
+        default:
+          return;
+      }
+      event.preventDefault();
+      placeReader(LineReader.clampIndex(target, count, size), { reveal: true });
+    }
+
+    function onReaderGripDown(event) {
+      if (!readerShown() || (typeof event.button === "number" && event.button !== 0)) return;
+      const box = LineReader.band(readerLines, readerIndex, readerPrefs.lines, READER_PAD);
+      if (!box) return;
+      event.preventDefault();
+      refs.readerGrip.focus({ preventScroll: true });
+      readerDrag = { id: event.pointerId, offset: event.clientY - paneOffset() - box.top };
+      try {
+        refs.readerGrip.setPointerCapture(event.pointerId);
+      } catch (error) {
+        // Capture is a nicety: the drag still follows moves over the handle.
+      }
+    }
+
+    function onReaderGripMove(event) {
+      if (!readerDrag || event.pointerId !== readerDrag.id || !readerShown()) return;
+      event.preventDefault();
+      const pane = refs.readerPane;
+      const frame = pane.getBoundingClientRect();
+      if (event.clientY > frame.bottom - 24) pane.scrollTop += 16;
+      else if (event.clientY < frame.top + 24) pane.scrollTop -= 16;
+      const top = event.clientY - paneOffset() - readerDrag.offset;
+      placeReader(LineReader.lineAt(readerLines, top + READER_PAD + 1));
+    }
+
+    function onReaderGripUp(event) {
+      if (!readerDrag || event.pointerId !== readerDrag.id) return;
+      readerDrag = null;
+    }
+
+    // In the passage: a tap on dimmed lines moves the line reader there; a
+    // tap on a highlight opens its note. Selecting text does neither.
+    function onMainClick(event) {
+      if (view !== "question" || !event.target || !event.target.closest) return;
+      const selection = document.getSelection ? document.getSelection() : null;
+      if (selection && !selection.isCollapsed) return;
+      if (readerShown() && refs.readerPane.contains(event.target) &&
+          !refs.readerControls.contains(event.target)) {
+        const y = event.clientY - paneOffset();
+        const box = LineReader.band(readerLines, readerIndex, readerPrefs.lines, READER_PAD);
+        if (box && (y < box.top || y > box.bottom)) {
+          placeReader(LineReader.lineAt(readerLines, y) - Math.floor((readerPrefs.lines - 1) / 2));
+          return;
+        }
+      }
+      const mark = event.target.closest("mark.lm-hl");
+      const rootNode = passageRoot();
+      if (!mark || !rootNode || !rootNode.contains(mark)) return;
+      openNotes(Number(mark.dataset.start), { focus: lastPointerType === "touch" ? "panel" : "note" });
     }
 
     /* ---- navigator and review page */
@@ -2235,6 +2916,9 @@
       if (refs.calcButton) refs.calcButton.hidden = view === "report" || !toolAvailable("calculator");
       if (refs.refButton) refs.refButton.hidden = view === "report" || !toolAvailable("reference");
       if (openPanel === "reference" && !toolAvailable("reference")) closePanel(false);
+      if (refs.annotateButton) refs.annotateButton.hidden = !toolAvailable("annotate");
+      if (refs.readerButton) refs.readerButton.hidden = !toolAvailable("lineReader");
+      if (openPanel === "notes" && !toolAvailable("annotate")) closePanel(false);
       const current = session.state.questions[session.state.index];
       refs.sectionLabel.hidden = !mixed || view === "report";
       refs.sectionLabel.textContent = mixed ? (current.section || currentSectionKey()) : "";
@@ -2267,11 +2951,23 @@
         }
         return;
       }
-      if (event.ctrlKey || event.metaKey || event.altKey) return;
-      if (view !== "question" || refs.dialog.open) return;
       const target = event.target;
       const tag = target && target.tagName;
-      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (target && target.isContentEditable)) return;
+      const typing = tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || Boolean(target && target.isContentEditable);
+      // Alt+Shift+H highlights the selected passage text, so a keyboard
+      // selection is not lost on the way to the Annotate button. In a text
+      // field it only acts on a passage selection, and otherwise types.
+      if (event.altKey && event.shiftKey && !event.ctrlKey && !event.metaKey && event.code === "KeyH") {
+        if (view !== "question" || refs.dialog.open || !toolAvailable("annotate")) return;
+        const range = selectionRange();
+        if (typing && !range) return;
+        event.preventDefault();
+        annotate(range, true);
+        return;
+      }
+      if (event.ctrlKey || event.metaKey || event.altKey) return;
+      if (view !== "question" || refs.dialog.open) return;
+      if (typing) return;
       const question = currentQuestion();
       if (question.responseType !== "multiple-choice" || !Array.isArray(question.choices)) return;
       const letters = lettersFor(question, session.state.index);
@@ -2285,7 +2981,7 @@
     }
 
     function onDocumentPointer(event) {
-      if (!openPanel || openPanel === "reference") return;
+      if (!openPanel || openPanel === "reference" || openPanel === "notes") return;
       const inside = [refs.navigator, refs.directions, refs.navToggle, refs.directionsToggle]
         .some((node) => node.contains(event.target));
       if (!inside) closePanel(false);
@@ -2309,6 +3005,8 @@
       if (saveTimer !== null) root.clearTimeout(saveTimer);
       document.removeEventListener("keydown", onKeyDown, true);
       document.removeEventListener("pointerdown", onDocumentPointer, true);
+      if (readerObserver) readerObserver.disconnect();
+      if (readerFrame !== null) root.cancelAnimationFrame(readerFrame);
       document.removeEventListener("visibilitychange", onVisibility);
       root.removeEventListener("pagehide", onPageHide);
       if (refs.dialog.open) {
@@ -2320,6 +3018,10 @@
     }
 
     unmount = mount(shell);
+    refs.main.addEventListener("click", onMainClick);
+    refs.main.addEventListener("pointerdown", (event) => {
+      lastPointerType = event.pointerType || "mouse";
+    });
     document.addEventListener("keydown", onKeyDown, true);
     document.addEventListener("pointerdown", onDocumentPointer, true);
     document.addEventListener("visibilitychange", onVisibility);
