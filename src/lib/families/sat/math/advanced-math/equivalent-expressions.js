@@ -714,7 +714,8 @@
     const a = t.int(1, 3 * n - 1);
     const b = t.int(1, 3 * n - 1);
     if (a === b || (a % n === 0 && b % n === 0) || S.gcd(S.gcd(a, b), n) !== 1) return null;
-    const part = (name, value) => (isWhole(value) ? pw(name, value) : `${name}^(${ratio(value)})`);
+    // A negative whole exponent is written x^(−3), never with a hyphen.
+    const part = (name, value) => (isWhole(value) && value > 0 ? pw(name, value) : `${name}^(${ratio(value)})`);
     const show = ([u, v]) => `${part("x", u)}${part("y", v)}`;
     const key = [a / n, b / n];
     const offers = [
@@ -1016,7 +1017,10 @@
 
   /* --------------------------------------------- expression substitution */
 
-  const power = (base, exponent) => (exponent < 0 ? `1/${base}${S.sup(-exponent)}` : `${base}${S.sup(exponent)}`);
+  const power = (base, exponent) => {
+    const shown = Math.abs(exponent) === 1 ? `${base}` : `${base}${S.sup(Math.abs(exponent))}`;
+    return exponent < 0 ? `1/${shown}` : shown;
+  };
 
   function substitutionPowers(t, numeric) {
     for (;;) {
@@ -1029,29 +1033,31 @@
       const m = a1 / lambda;
       const n = a2 / lambda;
       if (!Number.isInteger(m) || !Number.isInteger(n) || S.gcd(m, n) !== 1 && lambda !== 0.5) continue;
-      const c = t.int(2, 12) * (lambda === 0.5 ? 2 : 1);
+      // A negative combination about a third of the time: the value is then a
+      // reciprocal, which a student must write as a fraction.
+      const c = t.int(2, 12) * (lambda === 0.5 ? 2 : 1) * (t.chance(0.35) ? -1 : 1);
       const E = lambda * c;
-      if (E < 2 || q ** E > 99999) continue;
+      if (Math.abs(E) < 2 || q ** Math.abs(E) > (E < 0 ? 999 : 99999)) continue;
       const plus = t.chance(0.4);
       const rearranged = !plus && t.chance(0.4);
       const B1 = q ** a1;
       const B2 = q ** a2;
       const target = plus ? `${B1}^x · ${B2}^y` : `${B1}^x/${B2}^y`;
       const given = plus
-        ? `${lin(m, 0)} + ${n === 1 ? "" : n}y = ${c}`
+        ? `${lin(m, 0)} + ${n === 1 ? "" : n}y = ${num(c)}`
         : rearranged
-          ? `${lin(m, 0)} = ${n === 1 ? "" : n}y + ${c}`
-          : `${lin(m, 0)} ${MINUS} ${n === 1 ? "" : n}y = ${c}`;
+          ? `${lin(m, 0)} = ${n === 1 ? "" : n}y ${signed(c)}`
+          : `${lin(m, 0)} ${MINUS} ${n === 1 ? "" : n}y = ${num(c)}`;
       const expression = `${lin(m, 0)} ${plus ? "+" : MINUS} ${n === 1 ? "" : n}y`;
       const exponentText = `${lin(a1, 0)} ${plus ? "+" : MINUS} ${a2 === 1 ? "" : a2}y`;
       const wrongExps = [
-        [power(q, c), `Uses ${c} as the exponent directly; the exponent is ${exponentText}, which is ${lambda === 0.5 ? "half" : lambda === 2 ? "twice" : "three times"} ${expression}.`],
-        [power(B1, E), `Finds the exponent ${E} but keeps ${B1} as the base; the exponent ${E} belongs to base ${q}.`],
-        [power(B2, E), `Finds the exponent ${E} but uses ${B2} as the base; the exponent ${E} belongs to base ${q}.`],
+        [power(q, c), `Uses ${num(c)} as the exponent directly; the exponent is ${exponentText}, which is ${lambda === 0.5 ? "half" : lambda === 2 ? "twice" : "three times"} ${expression}.`],
+        [power(B1, E), `Finds the exponent ${num(E)} but keeps ${B1} as the base; the exponent ${num(E)} belongs to base ${q}.`],
+        [power(B2, E), `Finds the exponent ${num(E)} but uses ${B2} as the base; the exponent ${num(E)} belongs to base ${q}.`],
       ];
-      if (rearranged) wrongExps.splice(1, 0, [power(q, -E), `Rearranges the given equation with a sign slip, getting ${expression} = ${MINUS}${c}.`]);
+      if (rearranged) wrongExps.splice(1, 0, [power(q, -E), `Rearranges the given equation with a sign slip, getting ${expression} = ${num(-c)}.`]);
       if (Number.isInteger(c / lambda) && c / lambda !== E && c / lambda !== c) {
-        wrongExps.splice(1, 0, [power(q, c / lambda), `Scales ${c} the wrong way, ${lambda === 0.5 ? "doubling it instead of halving it" : "dividing instead of multiplying"}.`]);
+        wrongExps.splice(1, 0, [power(q, c / lambda), `Scales ${num(c)} the wrong way, ${lambda === 0.5 ? "doubling it instead of halving it" : "dividing instead of multiplying"}.`]);
       }
       return {
         responseType: numeric ? "numeric" : "multiple-choice",
@@ -1059,20 +1065,20 @@
         stem: numeric
           ? `If x and y satisfy the given equation, what is the value of ${target}?`
           : `If x and y satisfy the given equation, which of the following is equal to ${target}?`,
-        correct: numeric ? q ** E : power(q, E),
+        correct: numeric ? (E < 0 ? S.frac(1, q ** -E) : q ** E) : power(q, E),
         wrong: numeric ? undefined : wrongExps,
         explanation:
           `Write ${a2 === 1 ? `${B1} as a power of ${q}: ${B1} = ${q}${S.sup(a1)}` : `both bases as powers of ${q}: ${B1} = ${q}${S.sup(a1)} and ${B2} = ${q}${S.sup(a2)}`}, so ${target} = ${q}^(${exponentText}). ` +
-          `${exponentText} = ${lambda === 0.5 ? "(1/2)" : lambda}(${expression}) = ${lambda === 0.5 ? "(1/2)" : lambda}(${c}) = ${E}, so the value is ${power(q, E)}${numeric ? ` = ${q ** E}` : ""}.`,
+          `${exponentText} = ${lambda === 0.5 ? "(1/2)" : lambda}(${expression}) = ${lambda === 0.5 ? "(1/2)" : lambda}(${num(c)}) = ${num(E)}, so the value is ${q}^(${num(E)}) = ${power(q, E)}${numeric ? ` = ${E < 0 ? S.frac(1, q ** -E) : q ** E}` : ""}.`,
         steps: [
           `Rewrite ${a2 === 1 ? "the first base" : "each base"} as a power of ${q}: ${B1} = ${q}${S.sup(a1)}${a2 === 1 ? "" : `, ${B2} = ${q}${S.sup(a2)}`}.`,
           `${plus ? "Multiplying adds" : "Dividing subtracts"} exponents: ${target} = ${q}^(${exponentText}).`,
-          `Compare with the given equation: ${exponentText} = ${lambda === 0.5 ? "(1/2)" : lambda}(${expression}) = ${E}.`,
-          `So the value is ${power(q, E)}${numeric ? ` = ${q ** E}` : ""}.`,
+          `Compare with the given equation: ${exponentText} = ${lambda === 0.5 ? "(1/2)" : lambda}(${expression}) = ${num(E)}.`,
+          `So the value is ${q}^(${num(E)}) = ${power(q, E)}${numeric ? ` = ${E < 0 ? S.frac(1, q ** -E) : q ** E}` : ""}.`,
         ],
         principles: ["(b^m)^x = b^(mx), and b^u/b^v = b^(u − v).", "When x and y cannot be found separately, look for the given combination inside the target."],
         trap: numeric
-          ? `Using the given ${c} as the exponent gives ${q ** c}; the exponent is ${lambda === 0.5 ? "half" : lambda === 2 ? "twice" : "three times"} the given combination.`
+          ? `Using the given ${num(c)} as the exponent gives ${power(q, c)}; the exponent is ${lambda === 0.5 ? "half" : lambda === 2 ? "twice" : "three times"} the given combination.`
           : `The exponent is a multiple of the given combination, not the combination itself.`,
         hint: `Can ${B1} and ${B2} be written with the same base?`,
         verify: () => {
@@ -1087,99 +1093,91 @@
     }
   }
 
-  function substitutionSymmetric(t, numeric) {
-    for (;;) {
-      const kind = t.int(0, 2);
-      if (kind === 2) {
-        // x + 1/x = k (or x − 1/x = k): x² + 1/x² = k² ∓ 2.
-        const minus = t.chance(0.4);
-        const k = t.int(minus ? 2 : 3, 9);
-        const key = minus ? k * k + 2 : k * k - 2;
-        const given = `x ${minus ? MINUS : "+"} 1/x = ${k}`;
-        return {
-          responseType: numeric ? "numeric" : "multiple-choice",
-          stimulus: { type: "equations", content: given },
-          stem: "If x satisfies the given equation, what is the value of x² + 1/x²?",
-          correct: key,
-          wrong: [
-            [k * k, `Squares each term of x ${minus ? MINUS : "+"} 1/x separately and forgets the cross term 2 · x · (1/x) = 2.`],
-            [minus ? k * k - 2 : k * k + 2, `Expands (x ${minus ? MINUS : "+"} 1/x)² correctly but then ${minus ? "subtracts" : "adds"} the 2 instead of ${minus ? "adding" : "subtracting"} it when isolating x² + 1/x².`],
-            [minus ? k * k + 1 : k * k - 1, "Uses x · (1/x) = 1 as the cross term, forgetting the factor of 2 in 2ab."],
-          ],
-          explanation:
-            `Square the given equation: (x ${minus ? MINUS : "+"} 1/x)² = x² ${minus ? MINUS : "+"} 2 + 1/x² = ${k * k}. ` +
-            `So x² + 1/x² = ${k * k} ${minus ? "+" : MINUS} 2 = ${key}.`,
-          steps: [
-            "Recognize x² + 1/x² inside the square of the given expression.",
-            `Square both sides: x² ${minus ? MINUS : "+"} 2(x)(1/x) + 1/x² = ${k * k}.`,
-            `The cross term is ${minus ? MINUS : ""}2 because x · (1/x) = 1.`,
-            `x² + 1/x² = ${key}.`,
-          ],
-          principles: ["(a ± b)² = a² ± 2ab + b², and here ab = x · (1/x) = 1."],
-          trap: `Squaring term by term drops the cross term and gives ${k * k}.`,
-          hint: "What happens when both sides are squared?",
-          verify: () => {
-            // Solve for x numerically and evaluate the target.
-            const roots = minus ? quadraticRoots(-k, -1) : quadraticRoots(-k, 1);
-            return roots.length > 0 && roots.every((x) => approx(x * x + 1 / (x * x), key, 1e-9));
-          },
-        };
-      }
-      const sum = kind === 0;
-      const s = t.int(3, 12);
-      const p = t.nonzero(-12, 20);
-      const disc = sum ? s * s - 4 * p : s * s + 4 * p;
-      if (disc <= 0 || Number.isInteger(Math.sqrt(disc))) continue;
-      const askSquares = t.chance(0.55);
-      const given = sum ? `x + y = ${s}\nxy = ${num(p)}` : `x ${MINUS} y = ${s}\nxy = ${num(p)}`;
-      const other = sum ? "(x − y)²" : "(x + y)²";
-      const targetText = askSquares ? "x² + y²" : other.replace("−", MINUS);
-      const key = askSquares ? (sum ? s * s - 2 * p : s * s + 2 * p) : (sum ? s * s - 4 * p : s * s + 4 * p);
-      const wrong = askSquares
-        ? [
-          [s * s, `Treats (x ${sum ? "+" : MINUS} y)² as x² + y², dropping the ${sum ? "" : MINUS}2xy term.`],
-          [sum ? s * s + 2 * p : s * s - 2 * p, "Gets the sign of the 2xy term wrong when solving for x² + y²."],
-          [sum ? s * s - 4 * p : s * s + 4 * p, `Finds ${other.replace("−", MINUS)} instead of x² + y².`],
-          [sum ? s * s - p : s * s + p, "Uses xy instead of 2xy."],
-        ]
-        : [
-          [sum ? s * s - 2 * p : s * s + 2 * p, "Finds x² + y², a step on the way, and stops."],
-          [s * s, `Treats ${other.replace("−", MINUS)} as equal to (x ${sum ? "+" : MINUS} y)².`],
-          [sum ? s * s + 4 * p : s * s - 4 * p, "Gets the sign of the 4xy term wrong."],
-          [sum ? 4 * p - s * s : -s * s - 4 * p, "Subtracts in the wrong order, reversing the sign of the result."],
-        ];
+  // x ± 1/x = k: the target is a power sum that the square or the cube of the
+  // given expression contains. (Finding x² + y² or (x − y)² from a given sum
+  // and product was Medium work and was dropped.)
+  function substitutionReciprocal(t, numeric) {
+    const kind = t.pick(["square", "square", "cube"]);
+    // The given equation is x ± 1/x = k itself, or a quadratic that is that
+    // equation multiplied by x, which hides the structure one step deeper.
+    const shape = t.pick(["reciprocal", "product", "quadratic"]);
+    const givenFor = (minus, k) => ({
+      reciprocal: `x ${minus ? MINUS : "+"} 1/x = ${k}`,
+      product: `x² ${minus ? MINUS : "+"} 1 = ${lin(k, 0)}`,
+      quadratic: `x² ${MINUS} ${lin(k, 0)} ${minus ? MINUS : "+"} 1 = 0`,
+    }[shape]);
+    const unhide = (minus, k) => (shape === "reciprocal"
+      ? []
+      : [`x = 0 does not satisfy the equation, so divide ${shape === "product" ? "both sides" : "every term"} by x: x ${minus ? MINUS : "+"} 1/x = ${k}.`]);
+    if (kind === "square") {
+      // x + 1/x = k (or x − 1/x = k): x² + 1/x² = k² ∓ 2.
+      const minus = t.chance(0.4);
+      const k = t.int(minus ? 1 : 3, 12);
+      const key = minus ? k * k + 2 : k * k - 2;
+      const given = givenFor(minus, k);
       return {
         responseType: numeric ? "numeric" : "multiple-choice",
         stimulus: { type: "equations", content: given },
-        stem: `In the given system of equations, what is the value of ${targetText}?`,
+        stem: "If x satisfies the given equation, what is the value of x² + 1/x²?",
         correct: key,
-        wrong,
-        explanation: askSquares
-          ? `(x ${sum ? "+" : MINUS} y)² = x² + y² ${sum ? "+" : MINUS} 2xy, so x² + y² = ${s}² ${sum ? MINUS : "+"} 2(${num(p)}) = ${num(key)}.`
-          : `(x ${sum ? MINUS : "+"} y)² = x² + y² ${sum ? MINUS : "+"} 2xy = (x ${sum ? "+" : MINUS} y)² ${sum ? MINUS : "+"} 4xy = ${s}² ${sum ? MINUS : "+"} 4(${num(p)}) = ${num(key)}.`,
-        steps: [
-          `Expand the square you know: (x ${sum ? "+" : MINUS} y)² = x² + y² ${sum ? "+" : MINUS} 2xy = ${s * s}.`,
-          `Substitute xy = ${num(p)}: x² + y² = ${s * s} ${sum ? MINUS : "+"} ${paren(2 * p)} = ${num(sum ? s * s - 2 * p : s * s + 2 * p)}.`,
-          askSquares
-            ? `So x² + y² = ${num(key)}; x and y themselves are not needed.`
-            : `Then ${targetText} = x² + y² ${sum ? MINUS : "+"} 2xy = ${num(sum ? s * s - 2 * p : s * s + 2 * p)} ${sum ? MINUS : "+"} ${paren(2 * p)} = ${num(key)}.`,
+        wrong: [
+          [k * k, `Squares each term of x ${minus ? MINUS : "+"} 1/x separately and forgets the cross term 2 · x · (1/x) = 2.`],
+          [minus ? k * k - 2 : k * k + 2, `Expands (x ${minus ? MINUS : "+"} 1/x)² correctly but then ${minus ? "subtracts" : "adds"} the 2 instead of ${minus ? "adding" : "subtracting"} it when isolating x² + 1/x².`],
+          [minus ? k * k + 1 : k * k - 1, "Uses x · (1/x) = 1 as the cross term, forgetting the factor of 2 in 2ab."],
         ],
-        principles: ["(x + y)² = x² + 2xy + y² and (x − y)² = x² − 2xy + y².", "(x − y)² = (x + y)² − 4xy."],
-        trap: askSquares
-          ? `Squaring x ${sum ? "+" : MINUS} y term by term loses the 2xy term.`
-          : "x² + y² is only an intermediate value on the way to the square asked for.",
-        hint: "Which square contains the quantity you are asked for?",
+        explanation:
+          `${unhide(minus, k).join(" ")}${shape === "reciprocal" ? "" : " "}Square x ${minus ? MINUS : "+"} 1/x = ${k}: (x ${minus ? MINUS : "+"} 1/x)² = x² ${minus ? MINUS : "+"} 2 + 1/x² = ${k * k}. ` +
+          `So x² + 1/x² = ${k * k} ${minus ? "+" : MINUS} 2 = ${key}.`,
+        steps: [
+          ...unhide(minus, k),
+          `Recognize x² + 1/x² inside the square of x ${minus ? MINUS : "+"} 1/x.`,
+          `Square both sides: x² ${minus ? MINUS : "+"} 2(x)(1/x) + 1/x² = ${k * k}.`,
+          `The cross term is ${minus ? MINUS : ""}2 because x · (1/x) = 1.`,
+          `x² + 1/x² = ${key}.`,
+        ],
+        principles: ["(a ± b)² = a² ± 2ab + b², and here ab = x · (1/x) = 1."],
+        trap: `Squaring term by term drops the cross term and gives ${k * k}.`,
+        hint: "What happens when both sides are squared?",
         verify: () => {
-          // Solve the system for x and y, then evaluate the target directly.
-          const ys = sum ? quadraticRoots(-s, p) : quadraticRoots(s, -p); // y for x + y = s, or y(y + s) = p
-          return ys.length === 2 && ys.every((y) => {
-            const x = sum ? s - y : y + s;
-            const value = askSquares ? x * x + y * y : sum ? (x - y) ** 2 : (x + y) ** 2;
-            return approx(x * y, p, 1e-9) && approx(value, key, 1e-9);
-          });
+          // Solve for x numerically and evaluate the target.
+          const roots = minus ? quadraticRoots(-k, -1) : quadraticRoots(-k, 1);
+          return roots.length > 0 && roots.every((x) => approx(x * x + 1 / (x * x), key, 1e-9));
         },
       };
     }
+    // x + 1/x = k: (x + 1/x)³ = x³ + 1/x³ + 3(x + 1/x), so x³ + 1/x³ = k³ − 3k.
+    const k = t.int(3, 9);
+    const key = k ** 3 - 3 * k;
+    const given = givenFor(false, k);
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: { type: "equations", content: given },
+      stem: "If x satisfies the given equation, what is the value of x³ + 1/x³?",
+      correct: key,
+      wrong: t.shuffle([
+        [k ** 3, "Cubes each term of x + 1/x separately and drops the middle terms 3x + 3/x."],
+        [k ** 3 - 3, "Treats the middle terms of the cube, 3x + 3/x, as the number 3 instead of 3(x + 1/x)."],
+        [k ** 3 - 2 * k, `Multiplies x² + 1/x² = ${k * k - 2} by x + 1/x = ${k} but forgets that the product also contains x + 1/x.`],
+        [k ** 3 + 3 * k, "Adds 3(x + 1/x) instead of subtracting it when isolating x³ + 1/x³."],
+      ]),
+      explanation:
+        `${unhide(false, k).join(" ")}${shape === "reciprocal" ? "" : " "}Cube x + 1/x = ${k}: (x + 1/x)³ = x³ + 3x + 3/x + 1/x³ = x³ + 1/x³ + 3(x + 1/x). ` +
+        `So ${k ** 3} = x³ + 1/x³ + 3(${k}), and x³ + 1/x³ = ${k ** 3} ${MINUS} ${3 * k} = ${key}.`,
+      steps: [
+        ...unhide(false, k),
+        "Recognize x³ + 1/x³ inside the cube of x + 1/x.",
+        "Expand: (x + 1/x)³ = x³ + 3x²(1/x) + 3x(1/x²) + 1/x³ = x³ + 1/x³ + 3(x + 1/x).",
+        `Substitute x + 1/x = ${k}: ${k ** 3} = x³ + 1/x³ + ${3 * k}.`,
+        `x³ + 1/x³ = ${key}.`,
+      ],
+      principles: ["(a + b)³ = a³ + b³ + 3ab(a + b), and here ab = x · (1/x) = 1."],
+      trap: `Cubing term by term drops the middle terms and gives ${k ** 3}; those terms are 3 times the given sum.`,
+      hint: "What happens when both sides are cubed?",
+      verify: () => {
+        const roots = quadraticRoots(-k, 1);
+        return roots.length === 2 && roots.every((x) => approx(x ** 3 + 1 / x ** 3, key, 1e-9));
+      },
+    };
   }
 
   function substitutionLinear(t, numeric) {
@@ -1319,7 +1317,7 @@
     const wantType = ask === "zeros" ? "factored" : "vertex";
     const given = ask === "zeros" ? t.pick([F.standard, F.standard, F.vertex]) : t.pick([F.standard, F.standard, F.factored]);
     const key = ask === "zeros" ? F.factored : F.vertex;
-    const allEquivalent = t.chance(0.5);
+    const allEquivalent = t.chance(0.4);
     const shows = {
       standard: `shows the y-intercept, ${num(F.c)}, not ${feature}`,
       factored: `shows the zeros ${num(r)} and ${num(s)}, not the ${word} value`,
@@ -1332,36 +1330,53 @@
         .filter((form) => form !== key && form.text !== given.text)
         .map((form) => [form, `Is equivalent to f(x), but it ${shows[form.type]}.`]);
       offers = t.shuffle(offers).slice(0, 3);
-    } else if (ask === "zeros") {
-      const pool = [
-        [{ type: "factored", text: `${lead(a)}${rootFactor(-r)}${rootFactor(-s)}`, fn: (x) => a * (x + r) * (x + s) },
-          `Writes the factors with the signs of the zeros; ${lead(a)}${rootFactor(-r)}${rootFactor(-s)} is zero at x = ${num(-r)} and x = ${num(-s)}, so it is not equivalent to f(x).`],
-        [given === F.vertex ? F.standard : F.vertex, `Is equivalent to f(x), but it ${shows[given === F.vertex ? "standard" : "vertex"]}.`],
-      ];
-      if (a !== 1) {
-        pool.push([{ type: "factored", text: `${rootFactor(r)}${rootFactor(s)}`, fn: (x) => (x - r) * (x - s) },
-          `Has the right zeros but drops the leading coefficient ${num(a)}, so it is not equivalent to f(x).`]);
-      } else {
-        const q = t.pick([r - 1, r + 1].filter((v) => v !== 0 && v !== s && 2 * (r + s) - v !== 0));
-        pool.push([{ type: "factored", text: `${rootFactor(q)}${rootFactor(r + s - q)}`, fn: (x) => (x - q) * (x - (r + s - q)) },
-          `Uses two numbers that add to ${num(r + s)} but multiply to ${num(q * (r + s - q))}, not ${num(r * s)}; it is not equivalent to f(x).`]);
-      }
-      offers = pool;
     } else {
-      const pool = [
-        [{ type: "vertex", text: F.vertexText(-F.h, F.k), fn: (x) => a * (x + F.h) ** 2 + F.k },
-          `Shows ${num(F.k)} as the ${word} but puts the vertex at x = ${num(-F.h)}; it is not equivalent to f(x).`],
-        [given === F.factored ? F.standard : F.factored, `Is equivalent to f(x), but it ${shows[given === F.factored ? "standard" : "factored"]}.`],
-      ];
-      if (a !== 1) {
-        const slip = F.c - F.h * F.h;
-        pool.push([{ type: "vertex", text: F.vertexText(F.h, slip), fn: (x) => a * (x - F.h) ** 2 + slip },
-          `Completes the square without first factoring ${num(a)} out of the x-terms, so the constant is ${num(slip)}; it is not equivalent to f(x).`]);
+      // Every sign slip on the key is one change from it, so the key's
+      // look-alikes come with twins of their own: a draw shows the key's
+      // twins with a twin pair of distractors (all paired), the key's twin
+      // with two unpaired forms, or a distractor pair and no key twin.
+      const flipped = (form, why) => [{ type: form.type, text: form.flip, fn: (x) => form.fn(-x) }, why];
+      const other = [F.standard, F.factored, F.vertex].find((form) => form !== key && form.text !== given.text);
+      const flips = {
+        standard: poly([a, -F.B, F.c]),
+        factored: `${lead(a)}${rootFactor(-r)}${rootFactor(-s)}`,
+        vertex: F.vertexText(-F.h, F.k),
+      };
+      const equivalent = [other, `Is equivalent to f(x), but it ${shows[other.type]}.`];
+      const otherFlip = flipped({ ...other, flip: flips[other.type] },
+        `Reverses the sign of every x, so it describes f(${MINUS}x) and is not equivalent to f(x).`);
+      const partial = [F.partialX, `Is equivalent to f(x), but it ${shows.partial}.`];
+      let keyTwins;
+      let pairSlips;
+      if (ask === "zeros") {
+        keyTwins = [[{ type: "factored", text: flips.factored, fn: (x) => a * (x + r) * (x + s) },
+          `Writes the factors with the signs of the zeros; ${flips.factored} is zero at x = ${num(-r)} and x = ${num(-s)}, so it is not equivalent to f(x).`]];
+        // Two numbers with the right sum and the wrong product, and their sign slip.
+        const q = t.pick([r - 1, r + 1].filter((v) => v !== 0 && v !== s && r + s - v !== 0 && v !== r + s - v));
+        if (q === undefined) return null;
+        const q2 = r + s - q;
+        pairSlips = [
+          [{ type: "factored", text: `${lead(a)}${rootFactor(q)}${rootFactor(q2)}`, fn: (x) => a * (x - q) * (x - q2) },
+            `Uses two numbers that add to ${num(r + s)} but multiply to ${num(q * q2)}, not ${num(r * s)}; it is not equivalent to f(x).`],
+          [{ type: "factored", text: `${lead(a)}${rootFactor(-q)}${rootFactor(-q2)}`, fn: (x) => a * (x + q) * (x + q2) },
+            `Uses two numbers that multiply to ${num(q * q2)} instead of ${num(r * s)}, and writes the factors with their signs; it is not equivalent to f(x).`],
+        ];
       } else {
-        pool.push([{ type: "vertex", text: F.vertexText(F.h, -F.k), fn: (x) => a * (x - F.h) ** 2 - F.k },
-          `Adds ${num(F.h * F.h)} where completing the square subtracts it, so the constant has the wrong sign; it is not equivalent to f(x).`]);
+        keyTwins = [
+          [{ type: "vertex", text: flips.vertex, fn: (x) => a * (x + F.h) ** 2 + F.k },
+            `Shows ${num(F.k)} as the ${word} but puts the vertex at x = ${num(-F.h)}; it is not equivalent to f(x).`],
+          [{ type: "vertex", text: F.vertexText(F.h, -F.k), fn: (x) => a * (x - F.h) ** 2 - F.k },
+            `Adds ${num(Math.abs(a * F.h * F.h))} where completing the square subtracts it, so the constant has the wrong sign; it is not equivalent to f(x).`],
+        ];
+        pairSlips = [
+          [{ type: "vertex", text: F.vertexText(-F.h, -F.k), fn: (x) => a * (x + F.h) ** 2 - F.k },
+            "Makes two slips: it puts the vertex on the wrong side of the y-axis and gives the constant the wrong sign; it is not equivalent to f(x)."],
+        ];
       }
-      offers = pool;
+      const sets = ask === "zeros"
+        ? [[keyTwins[0], ...pairSlips], [equivalent, ...pairSlips], [keyTwins[0], equivalent, partial], [equivalent, otherFlip, partial]]
+        : [[...keyTwins, ...pairSlips], [keyTwins[0], equivalent, partial], [keyTwins[1], equivalent, partial], [equivalent, otherFlip, partial], [equivalent, otherFlip, partial]];
+      offers = t.shuffle(t.pick(sets));
     }
     const samples = [-3.7, -1.2, 0.6, 2.3, 5.9];
     const same = (f, g) => samples.every((x) => approx(f(x), g(x), 1e-9));
@@ -1857,6 +1872,7 @@
 
   const unknownCoefficientProduct = {
     id: "unknown-coefficient-product",
+    difficulty: "Hard",
     domain: "Advanced Math",
     skill: "Equivalent expressions",
     subskill: "factoring",
@@ -1891,24 +1907,25 @@
     },
   };
 
-  // Hard: the target is a power of a different base, or a square that hides
-  // the given sum and product; the structure has to be seen before anything
-  // can be computed.
+  // Hard: the target is a power of a different base, or a power sum hidden in
+  // the square or cube of x + 1/x; the structure has to be seen before
+  // anything can be computed.
   const expressionSubstitution = {
     id: "expression-substitution",
+    difficulty: "Hard",
     domain: "Advanced Math",
     skill: "Equivalent expressions",
     subskill: "exponent rules",
     title: "Evaluate an expression through a known combination",
     recognize:
       "The variables cannot be found one at a time; the target is a power of a common base whose exponent is a " +
-      "multiple of the given combination, or a square that contains the given sum and product.",
+      "multiple of the given combination, or a power sum inside the square or cube of the given expression.",
     rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
     tricks: ["wrong-quantity", "equivalent-form", "neighbouring-rule", "sign-error", "intermediate-value"],
     build(t) {
       const powers = t.chance(0.55);
       const numeric = t.chance(0.36);
-      const make = powers ? () => substitutionPowers(t, numeric) : () => substitutionSymmetric(t, numeric);
+      const make = powers ? () => substitutionPowers(t, numeric) : () => substitutionReciprocal(t, numeric);
       return { estimatedSeconds: 110, ...drawUntilDistinctHard(make) };
     },
   };
@@ -1974,6 +1991,7 @@
 
   const quadraticStructureForm = {
     id: "quadratic-structure-form",
+    difficulty: "Medium",
     domain: "Advanced Math",
     skill: "Equivalent expressions",
     subskill: "factoring",
@@ -1981,16 +1999,198 @@
     recognize:
       "Each form of a quadratic displays one feature: factored form the zeros, vertex form the vertex and extreme " +
       "value, standard form the y-intercept. Decide which form is wanted, then check the candidate is truly equivalent.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 1 },
+    // Medium: name the form, then check one candidate (the 2026-09-26 review).
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["equivalent-form", "sign-error", "wrong-quantity"],
     build(t) {
       return { estimatedSeconds: 110, ...drawUntilDistinctHard(() => quadraticStructure(t)) };
     },
   };
 
+  /* ============================================ complex-fraction-equivalence */
+
+  // A sum of two linear terms as the test prints it: sumText(2, 7) -> "2x + 7".
+  const sumText = (m, c, variable = "x") => lin(m, c, variable);
+
+  // 1/(1/(x + a) + 1/(x + b)) = (x + a)(x + b)/(2x + a + b).
+  function reciprocalSumItem(t) {
+    const [a, b] = t.sample([1, 2, 3, 4, 5, 6, 7, 8], 2).sort((m, n) => m - n);
+    const A = `(x + ${a})`;
+    const B = `(x + ${b})`;
+    const given = `1/(1/${A} + 1/${B})`;
+    const sum = sumText(2, a + b);
+    const product = `${A}${B}`;
+    const f = (x) => 1 / (1 / (x + a) + 1 / (x + b));
+    const key = [`(${product})/(${sum})`, (x) => ((x + a) * (x + b)) / (2 * x + a + b)];
+    const offers = [
+      [[sum, (x) => 2 * x + a + b], "Takes the reciprocal of each fraction separately, as if 1/(1/A + 1/B) were A + B."],
+      [[`(${sum})/(${product})`, (x) => (2 * x + a + b) / ((x + a) * (x + b))], "Adds the two fractions correctly but forgets the outer reciprocal."],
+      [[`(${sum})/2`, (x) => (2 * x + a + b) / 2], `Adds the fractions by adding numerators and denominators, 1/${A} + 1/${B} = 2/(${sum}), then inverts.`],
+      [[`(${product})/${a + b}`, (x) => ((x + a) * (x + b)) / (a + b)], `Adds the fractions over the common denominator ${product} but writes the numerator as ${a + b} instead of ${sum}.`],
+    ];
+    // The forgotten reciprocal holds every number the key does, so it is
+    // always offered: sharing numbers with the other choices does not single
+    // out the key.
+    const chosen = t.shuffle([offers[1], ...t.sample([offers[0], offers[2], offers[3]], 2)]);
+    const steps = [
+      `Add the inner fractions over the common denominator ${product}: 1/${A} + 1/${B} = (${sum})/(${product}).`,
+      `The given expression is 1 divided by that sum, so it is the reciprocal: (${product})/(${sum}).`,
+    ];
+    return {
+      responseType: "multiple-choice",
+      stimulus: { type: "equations", content: given },
+      stem: "Which of the following is equivalent to the given expression for x > 0?",
+      correct: key[0],
+      wrong: chosen.map(([[text], why]) => [text, why]),
+      explanation: steps.join(" "),
+      steps,
+      principles: [
+        "To add fractions, rewrite them over a common denominator; the reciprocal of a sum is not the sum of the reciprocals.",
+        "Dividing 1 by a fraction gives its reciprocal.",
+      ],
+      trap: "The reciprocal of a sum is not the sum of the reciprocals: 1/(1/A + 1/B) is not A + B.",
+      hint: "Combine the two fractions in the denominator into one fraction first.",
+      verify: () => SAMPLES.filter((x) => x > 0).every((x) => approx(key[1](x), f(x), 1e-9)) &&
+        chosen.every(([[, g]]) => SAMPLES.filter((x) => x > 0).some((x) => !approx(g(x), f(x), 1e-7))),
+    };
+  }
+
+  // (k/x − k/y)/(1/x² − 1/y²) = kxy/(x + y).
+  function differenceSquaresItem(t) {
+    const k = t.pick([1, 2, 3, 4, 5, 6]);
+    const kk = k === 1 ? "" : `${k}`;
+    const [x, y] = t.pick([["x", "y"], ["a", "b"], ["m", "n"], ["s", "t"]]);
+    const top = `${k}/${x} ${MINUS} ${k}/${y}`;
+    const given = `(${top})/(1/${x}² ${MINUS} 1/${y}²)`;
+    const f = (u, v) => (k / u - k / v) / (1 / (u * u) - 1 / (v * v));
+    const key = [`(${kk}${x}${y})/(${x} + ${y})`, (u, v) => (k * u * v) / (u + v)];
+    const offers = [
+      [[`(${k}(${x} + ${y}))/(${x}${y})`, (u, v) => (k * (u + v)) / (u * v)], "Inverts the result: divides the denominator by the numerator."],
+      [[`(${kk}${x}${y})/(${y} ${MINUS} ${x})`, (u, v) => (k * u * v) / (v - u)], `Factors ${y}² ${MINUS} ${x}² as (${y} ${MINUS} ${x})², so the wrong factor is left after canceling.`],
+      [[`${k}/(${x} + ${y})`, (u, v) => k / (u + v)], `Clears the fractions in the numerator and denominator with different multipliers, which loses the factor ${x}${y}.`],
+      [[`(${MINUS}${kk}${x}${y})/(${x} + ${y})`, (u, v) => (-k * u * v) / (u + v)], `Writes ${k}/${x} ${MINUS} ${k}/${y} as ${k}(${x} ${MINUS} ${y})/(${x}${y}), which reverses the sign.`],
+      [[`(${MINUS}${k}(${x} + ${y}))/(${x}${y})`, (u, v) => (-k * (u + v)) / (u * v)], "Makes two slips: it reverses the sign of the numerator and inverts the result."],
+    ];
+    // The sign slip (4) is one change from the key; the inverted result (0)
+    // and its sign slip (4) are a pair of their own.
+    const chosen = t.shuffle(t.pick([[3, 0, 4], [0, 4, 2], [3, 0, 2], [0, 1, 2], [1, 0, 4]]).map((index) => offers[index]));
+    const steps = [
+      `Multiply the numerator and the denominator by ${x}²${y}²: (${kk}${x}${y}² ${MINUS} ${kk}${x}²${y})/(${y}² ${MINUS} ${x}²).`,
+      `Factor: ${kk}${x}${y}(${y} ${MINUS} ${x}) over (${y} ${MINUS} ${x})(${y} + ${x}).`,
+      `Cancel ${y} ${MINUS} ${x} (${x} ≠ ${y}): the expression is (${kk}${x}${y})/(${x} + ${y}).`,
+    ];
+    const points = [[1.3, 2.9], [0.7, 4.1], [3.3, 1.6]];
+    return {
+      responseType: "multiple-choice",
+      stimulus: { type: "equations", content: given },
+      stem: `Which of the following is equivalent to the given expression for ${x} > 0 and ${y} > 0, where ${x} ≠ ${y}?`,
+      correct: key[0],
+      wrong: chosen.map(([[text], why]) => [text, why]),
+      explanation: steps.join(" "),
+      steps,
+      principles: [
+        "Multiplying the numerator and the denominator of a fraction by the same nonzero expression leaves its value unchanged.",
+        `${y}² ${MINUS} ${x}² = (${y} ${MINUS} ${x})(${y} + ${x}).`,
+      ],
+      trap: `The denominator hides a difference of squares; only after factoring does the common factor ${y} ${MINUS} ${x} cancel.`,
+      hint: "What single expression clears every small fraction at once?",
+      verify: () => points.every(([u, v]) => approx(key[1](u, v), f(u, v), 1e-9)) &&
+        chosen.every(([[, g]]) => points.some(([u, v]) => !approx(g(u, v), f(u, v), 1e-7))),
+    };
+  }
+
+  // (p/x + q/y)/(p/x − q/y) = K: clearing fractions gives (py + qx)/(py − qx) = K,
+  // so x/y = p(K − 1)/(q(K + 1)).
+  function fractionRatioItem(t, numeric) {
+    for (;;) {
+      const [p, q] = t.pick([[1, 1], [1, 1], [2, 1], [1, 2], [3, 1], [1, 3], [3, 2], [2, 3]]);
+      const K = t.pick([2, 3, 4, 5, 6, 7, -2, -3, -4]);
+      const askXY = t.chance(0.6);
+      // x/y as [numerator, denominator]; the ask may be its reciprocal.
+      const ratioXY = [p * (K - 1), q * (K + 1)];
+      const [n, d] = askXY ? ratioXY : [ratioXY[1], ratioXY[0]];
+      if (d === 0 || n === 0) continue;
+      const key = S.frac(n, d);
+      if (key.replace(MINUS, "").length > 5 || !key.includes("/")) continue;
+      const pText = (c, v) => `${c}/${v}`;
+      const given = `(${pText(p, "x")} + ${pText(q, "y")})/(${pText(p, "x")} ${MINUS} ${pText(q, "y")}) = ${num(K)}`;
+      const asked = askXY ? "x/y" : "y/x";
+      const flip = (text) => {
+        const [top, bottom] = text.replace(MINUS, "-").split("/").map(Number);
+        return S.frac(bottom || 1, top);
+      };
+      // Distributing K to only the first term of py − qx gives
+      // py + qx = Kpy − qx, so x/y = p(K − 1)/(2q).
+      const partial = askXY ? S.frac(p * (K - 1), 2 * q) : S.frac(2 * q, p * (K - 1));
+      const otherRatio = askXY ? "y/x" : "x/y";
+      const flipKey = [flip(key), `Finds ${otherRatio}, the reciprocal of the ratio asked for.`];
+      const slip = [partial, `Multiplies only the first term of the denominator by ${num(K)} when clearing the fraction.`];
+      const slipFlip = [flip(partial), `Multiplies only the first term of the denominator by ${num(K)}, and then finds ${otherRatio} instead of ${asked}.`];
+      const stop = [num(K), `Gives the value of the given expression, ${num(K)}, not the ratio.`];
+      // The reciprocal slip pairs with the key, so the partial slip comes with
+      // its own reciprocal: all paired, a distractor pair, or the key's pair.
+      const slips = t.pick([[flipKey, slip, slipFlip], [slip, slipFlip, stop], [slip, slipFlip, stop], [flipKey, slip, stop]]);
+      if (slips.some(([text]) => text === key) || new Set(slips.map(([text]) => text)).size < 3) continue;
+      const steps = [
+        `Multiply the numerator and the denominator by xy: (${p === 1 ? "" : p}y + ${q === 1 ? "" : q}x)/(${p === 1 ? "" : p}y ${MINUS} ${q === 1 ? "" : q}x) = ${num(K)}.`,
+        `Cross-multiply: ${p === 1 ? "" : p}y + ${q === 1 ? "" : q}x = ${num(K)}(${p === 1 ? "" : p}y ${MINUS} ${q === 1 ? "" : q}x), so ${lin(q * (K + 1), 0)} = ${lin(p * (K - 1), 0, "y")}.`,
+        `So x/y = ${S.frac(ratioXY[0], ratioXY[1])}${askXY ? "" : `, and y/x = ${key}`}.`,
+      ];
+      return {
+        responseType: numeric ? "numeric" : "multiple-choice",
+        stimulus: { type: "equations", content: given },
+        stem: `In the given equation, x and y are nonzero. What is the value of ${asked}?`,
+        correct: key,
+        wrong: numeric ? [] : t.shuffle(slips),
+        explanation: steps.join(" "),
+        steps,
+        principles: [
+          "Multiplying the numerator and the denominator of a complex fraction by the product of the small denominators clears it.",
+          "An equation in x and y with no constant term fixes only the ratio of x to y.",
+        ],
+        trap: `The equation cannot be solved for x or y alone; it fixes the ratio, and ${asked} and its reciprocal are easy to confuse.`,
+        hint: "Clear the small fractions, then gather the x-terms and the y-terms on opposite sides.",
+        verify: () => {
+          // Choose y, solve the displayed equation for x by bisection on the ratio, compare.
+          const y = 1.7;
+          const g = (x) => (p / x + q / y) / (p / x - q / y) - K;
+          const x = (ratioXY[0] / ratioXY[1]) * y;
+          const shown = (n / d);
+          const ratio = askXY ? x / y : y / x;
+          return approx(g(x), 0, 1e-9) && approx(ratio, shown, 1e-9) && !approx(g(x * 1.01), 0, 1e-9);
+        },
+      };
+    }
+  }
+
+  const complexFractionEquivalence = {
+    id: "complex-fraction-equivalence",
+    difficulty: "Hard",
+    domain: "Advanced Math",
+    skill: "Equivalent expressions",
+    subskill: "rational expressions",
+    title: "Complex fraction simplified or solved for a ratio",
+    recognize:
+      "A fraction whose numerator or denominator holds fractions is cleared by multiplying both by the product of the " +
+      "small denominators. The reciprocal of a sum is not the sum of the reciprocals, a difference of squares may be " +
+      "waiting to cancel, and an equation with no constant term fixes only a ratio.",
+    // Hard: the structure (a reciprocal of a sum, a hidden difference of
+    // squares, a homogeneous equation) must be seen before the algebra.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["equivalent-form", "neighbouring-rule", "wrong-quantity", "sign-error"],
+    build(t) {
+      const form = t.pick(["reciprocal", "squares", "ratio", "ratio"]);
+      const numeric = form === "ratio" && t.chance(0.55);
+      const make = form === "reciprocal"
+        ? () => reciprocalSumItem(t)
+        : form === "squares" ? () => differenceSquaresItem(t) : () => fractionRatioItem(t, numeric);
+      return { estimatedSeconds: 120, ...drawUntilDistinctHard(make) };
+    },
+  };
+
   return [
     monomialExponentRules, quadraticFactorMatch, rationalExpressionCombine, rationalExponentRewrite,
-    expressionFromCombination, nonlinearFormulaRearrange, commonBaseExponent, unknownCoefficientProduct,
-    expressionSubstitution, quadraticStructureForm,
+    expressionFromCombination, nonlinearFormulaRearrange, commonBaseExponent, quadraticStructureForm,
+    unknownCoefficientProduct, expressionSubstitution, complexFractionEquivalence,
   ];
 });

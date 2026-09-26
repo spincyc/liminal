@@ -13,7 +13,7 @@
   const { MINUS, num, paren, signed, lin, approx, poly } = S;
   const {
     drawUntilDistinct, rootFactor, lead, ratioHard, drawUntilDistinctHard, term, plus, terms,
-    sampleQuadratic, realRoots, ratio,
+    sampleQuadratic, realRoots, ratio, labelValue,
   } = C;
 
   /* =========================================== parabola-line-solution-check */
@@ -376,9 +376,12 @@
     let b;
     let d;
     let k;
+    // The point of contact is at a half-integer x some of the time, so the
+    // answer is a fraction that must be kept exact.
+    const half = t.chance(0.4);
     for (;;) {
       a = t.pick([1, 1, 2, 3, -1, -2]);
-      u = t.nonzero(-4, 4);
+      u = half ? t.pick([-7, -5, -3, -1, 1, 3, 5, 7]) / 2 : t.nonzero(-4, 4);
       p = t.nonzero(-6, 6);
       b = p + 2 * a * u;
       d = t.nonzero(-9, 9);
@@ -396,40 +399,41 @@
       ? `In the given system of equations, k is a constant. If the system has exactly one real solution (x, y), what is the value of ${askY ? "y" : "x"}?`
       : `In the given system of equations, k is a constant. The graphs of the equations in the xy-plane intersect at exactly one point. What is the ${askY ? "y" : "x"}-coordinate of that point?`;
 
-    const wrong = askY
+    const wrong = (askY
       ? [
         [x0, "Stops at the x-coordinate of the point and never finds y."],
         [k, "Reports k, the constant that makes the graphs touch, instead of a coordinate of the point."],
-        [p * u + d, `Drops the minus sign in x = −B/(2A), using x = ${num(u)}, then substitutes into the line.`],
-        [ratioHard(p * vertexX + d), `Uses the parabola's own vertex, x = ${ratioHard(vertexX)}, as the point of contact without first subtracting the line.`],
+        [p * u + d, `Drops the minus sign in x = −B/(2A), using x = ${ratioHard(u)}, then substitutes into the line.`],
+        [p * vertexX + d, `Uses the parabola's own vertex, x = ${ratioHard(vertexX)}, as the point of contact without first subtracting the line.`],
       ]
       : [
-        [ratioHard(vertexX), `Takes the x-coordinate of the parabola's own vertex, ${ratioHard(vertexX)}, without first subtracting the line.`],
+        [vertexX, `Takes the x-coordinate of the parabola's own vertex, ${ratioHard(vertexX)}, without first subtracting the line.`],
         [u, "Drops the minus sign in x = −B/(2A) for the combined quadratic."],
         [k, "Reports k, the constant that makes the graphs touch, instead of the x-coordinate."],
         [y0, "Gives the y-coordinate of the point instead of the x-coordinate."],
-      ];
+      ]).map(([value, why]) => [ratioHard(value), why]);
+    const answer = askY ? y0 : x0;
 
     return {
       responseType: numeric ? "numeric" : "multiple-choice",
       stimulus: { type: "equations", content: `y = ${terms([[a, "x²"], [b, "x"]])} + k\n${lineText(p, d, moved)}` },
       stem,
-      correct: askY ? y0 : x0,
+      correct: numeric && Number.isInteger(2 * answer) ? answer : ratioHard(answer),
       wrong,
       explanation:
         `Setting the expressions for y equal and collecting terms gives ${combined}. The graphs meet at exactly one ` +
         `point when this quadratic has a repeated root, and a repeated root of Ax² + Bx + C = 0 is x = −B/(2A) = ` +
-        `${MINUS}(${num(b - p)})/(2 · ${paren(a)}) = ${num(x0)}. ` +
+        `${MINUS}(${num(b - p)})/(2 · ${paren(a)}) = ${ratioHard(x0)}. ` +
         (askY
-          ? `Then y = ${num(p)}(${num(x0)}) ${signed(d)} = ${num(y0)}.`
-          : `(The value of k is ${num(k)}, but the question asks for x.)`),
+          ? `Then y = ${num(p)}(${ratioHard(x0)}) ${signed(d)} = ${ratioHard(y0)}.`
+          : `(The value of k is ${ratioHard(k)}, but the question asks for x.)`),
       steps: [
         `${moved ? `Rewrite the line as y = ${lin(p, d)}, then set` : "Set"} the expressions equal: ${combined}.`,
         "Exactly one intersection point means the combined quadratic has one repeated root.",
-        `That root is x = −B/(2A) = ${MINUS}(${num(b - p)})/(2 · ${paren(a)}) = ${num(x0)}.`,
+        `That root is x = −B/(2A) = ${MINUS}(${num(b - p)})/(2 · ${paren(a)}) = ${ratioHard(x0)}.`,
         askY
-          ? `Substitute into the line: y = ${num(p)}(${num(x0)}) ${signed(d)} = ${num(y0)}.`
-          : `Check: k = ${num(k)} makes the discriminant (${num(b - p)})² ${MINUS} 4(${num(a)})(${num(k - d)}) equal 0.`,
+          ? `Substitute into the line: y = ${num(p)}(${ratioHard(x0)}) ${signed(d)} = ${ratioHard(y0)}.`
+          : `Check: k = ${ratioHard(k)} makes the discriminant (${num(b - p)})² ${MINUS} 4(${num(a)})(${ratioHard(k - d)}) equal 0.`,
       ],
       principles: [
         "A line meets a parabola exactly once when the combined quadratic has a repeated root.",
@@ -437,7 +441,7 @@
       ],
       trap:
         `The parabola's own vertex (x = ${ratioHard(vertexX)}) is not where the line touches it; only the combined ` +
-        `quadratic locates the point. Reporting k = ${num(k)} answers a different question.`,
+        `quadratic locates the point. Reporting k = ${ratioHard(k)} answers a different question.`,
       hint: "Combine the equations into one quadratic. What must be true of its roots if the graphs meet only once?",
       verify: () => {
         const roots = realRoots(...sampleQuadratic((x) => a * x * x + b * x + k - (p * x + d)));
@@ -554,87 +558,164 @@
 
   /* =================================================== line-circle-tangent */
 
-  // Lines ax + by = c with a² + b² a perfect square, so the tangent values of
-  // c are integers.
-  const NORMALS = [[3, 4, 5], [4, 3, 5], [3, -4, 5], [4, -3, 5], [6, 8, 10], [8, 6, 10], [5, 12, 13], [12, 5, 13], [5, -12, 13]];
-
-  function circleText(h, v, r) {
-    const part = (name, center) => (center === 0 ? `${name}²` : `(${name} ${signed(-center)})²`);
-    return `${part("x", h)} + ${part("y", v)} = ${r * r}`;
+  // k√n in simplest form: rootText(18) -> "3√2", rootText(16) -> "4", rootText(18, 2) -> "6√2".
+  function rootText(n, k = 1) {
+    let outside = k;
+    let inside = n;
+    for (let f = 2; f * f <= inside; f += 1) {
+      while (inside % (f * f) === 0) {
+        inside /= f * f;
+        outside *= f;
+      }
+    }
+    return inside === 1 ? `${outside}` : `${outside === 1 ? "" : outside}√${inside}`;
   }
 
+  // "x² + y² − 6x + 4y = 12": a circle with center (h, v) and radius r, in the
+  // expanded form that needs completing the square.
+  function circleGeneral(h, v, r) {
+    const xTerm = h === 0 ? "" : ` ${-2 * h < 0 ? MINUS : "+"} ${Math.abs(2 * h)}x`;
+    const yTerm = v === 0 ? "" : ` ${-2 * v < 0 ? MINUS : "+"} ${Math.abs(2 * v)}y`;
+    return `x² + y²${xTerm}${yTerm} = ${num(r * r - h * h - v * v)}`;
+  }
+
+  // Slope m and x² + y² = R with (1 + m²)R a perfect square K², so the
+  // tangent values c = ±K are whole numbers: [m numerator, m denominator, R, K].
+  const SLANTED = [];
+  [[1, 1], [2, 1], [3, 1], [4, 1], [1, 2], [3, 2], [3, 4], [4, 3]].forEach(([mn, md]) => {
+    for (let K = 2; K <= 30; K += 1) {
+      const R = (K * K * md * md) / (md * md + mn * mn);
+      if (Number.isInteger(R) && R > 1 && R <= 150) SLANTED.push([mn, md, R, K]);
+    }
+  });
+  // Grouped by K, so a draw picks the tangent value first and no value of c
+  // dominates the keys.
+  const SLANTED_BY_K = Object.values(SLANTED.reduce((groups, entry) => {
+    (groups[entry[3]] = groups[entry[3]] || []).push(entry);
+    return groups;
+  }, {}));
+
+  // Line and circle: a horizontal or vertical line against a circle written
+  // in expanded form (center ± r once the square is completed), or a slanted
+  // line y = mx + c against x² + y² = R (substitute, then the discriminant is 0).
   function lineCircleItem(t, numeric) {
-    const [a, b, n] = t.pick(NORMALS);
-    const centered = t.chance(0.4);
-    const h = centered ? 0 : t.nonzero(-4, 4);
-    const v = centered ? 0 : t.nonzero(-4, 4);
-    const r = t.int(1, n === 13 ? 2 : 4);
-    const base = a * h + b * v;
-    const high = base + n * r;
-    const low = base - n * r;
-    const lineText = `${term(a, "x")} ${plus(b, "y")} = c`;
     const ask = numeric ? "greater" : t.pick(["greater", "possible"]);
-    const key = ask === "greater" || t.chance(0.5) ? high : low;
-    const other = key === high ? low : high;
-    const wrong = [
-      [base + (key === high ? r : -r), `Sets the distance from the center to the line equal to ${r} but leaves out the factor √(${a}² + ${Math.abs(b)}²) = ${n}.`],
-      [base + (key === high ? n * r * r : -n * r * r), `Uses the radius squared, ${r * r}, where the radius ${r} belongs.`],
-      [base, "Makes the line pass through the center of the circle, which gives two intersection points."],
-      [base + (key === high ? 2 * n * r : -2 * n * r), `Uses the diameter, ${2 * r}, as the distance from the center to the line.`],
-      [base + (key === high ? n * n * r : -n * n * r), `Divides by ${a}² + ${Math.abs(b)}² = ${n * n} instead of its square root, ${n}, in the distance formula.`],
-      [-a * h - b * v + (key === high ? n * r : -n * r), "Reverses the signs of the center's coordinates, reading (x − h) as a center at −h."],
-    ];
-    if (ask === "greater") wrong.push([low, "Gives the smaller of the two values of c that make the line tangent."]);
-    // Offer slips from one side of the key, the other, or both, so the key is
+    const slanted = t.chance(0.5);
+    let content;
+    let key;
+    let other;
+    let wrong;
+    let steps;
+    let roots; // number of intersections for a value of c, from the displayed equations
+    if (!slanted) {
+      const h = t.nonzero(-6, 6);
+      const v = t.nonzero(-6, 6);
+      const r = t.int(2, 7);
+      if (Math.abs(h) === r || Math.abs(v) === r) return null;
+      const horizontal = t.chance(0.5);
+      const [center, cross] = horizontal ? [v, h] : [h, v];
+      const letter = horizontal ? "y" : "x";
+      const high = center + r;
+      const low = center - r;
+      key = ask === "greater" || t.chance(0.5) ? high : low;
+      other = key === high ? low : high;
+      const side = key === high ? 1 : -1;
+      const F = r * r - h * h - v * v;
+      const circle = circleGeneral(h, v, r);
+      content = `${circle}\n${letter} = c`;
+      wrong = [
+        [center + side * r * r, `Completes the square correctly but uses r² = ${r * r} as the radius.`],
+        [-center + side * r, `Reads the center's ${letter}-coordinate with the wrong sign, as ${num(-center)}.`],
+        [cross + side * r, `Uses the center's ${horizontal ? "x" : "y"}-coordinate, ${num(cross)}, instead of its ${letter}-coordinate.`],
+        [center, `Puts the line through the center of the circle, which crosses the circle twice.`],
+        ...(F > 0 && Number.isInteger(Math.sqrt(F)) && Math.sqrt(F) !== r
+          ? [[center + side * Math.sqrt(F), `Reads the radius as √${F} = ${Math.sqrt(F)} from the constant on the right, without completing the square.`]]
+          : []),
+      ];
+      steps = [
+        `Complete the square: (x ${signed(-h)})² + (y ${signed(-v)})² = ${num(F)} + ${h * h} + ${v * v} = ${r * r}, a circle with center (${num(h)}, ${num(v)}) and radius ${r}.`,
+        `The line ${letter} = c is ${horizontal ? "horizontal" : "vertical"}; substituting it leaves (${horizontal ? "x" : "y"} ${signed(-cross)})² = ${r * r} ${MINUS} (c ${signed(-center)})², which has exactly one solution when the right side is 0.`,
+        `So c ${signed(-center)} = ±${r}: the line touches the ${horizontal ? "top or bottom" : "leftmost or rightmost point"} of the circle at c = ${num(high)} or c = ${num(low)}.`,
+      ];
+      roots = (c) => {
+        const rest = r * r - (c - center) ** 2;
+        return Math.abs(rest) < 1e-9 ? 1 : rest > 0 ? 2 : 0;
+      };
+    } else {
+      const [mn, md, R, K] = t.pick(t.pick(SLANTED_BY_K));
+      const sign = t.sign();
+      const m = (sign * mn) / md;
+      const slopeText = md === 1 ? (mn === 1 ? (sign < 0 ? MINUS : "") : `${sign < 0 ? MINUS : ""}${mn}`) : `${sign < 0 ? MINUS : ""}(${mn}/${md})`;
+      content = `x² + y² = ${R}\ny = ${slopeText}x + c`;
+      key = ask === "greater" || t.chance(0.5) ? K : -K;
+      other = -key;
+      const side = key > 0 ? 1 : -1;
+      const slip = rootText(R);
+      wrong = [
+        [side === 1 ? slip : `${MINUS}${slip}`, `Expands (${slopeText}x + c)² without the middle term 2(${slopeText}x)(c), which leaves c² = ${R}.`],
+        [side * K * K, `Stops at c² = ${K * K} and does not take the square root.`],
+        [0, "Puts the line through the center of the circle, which crosses the circle twice."],
+        [side * R, `Stops at c² = ${R}, after dropping the middle term of (${slopeText}x + c)² as well.`],
+        ...(md === 1 ? [[side === 1 ? rootText(R, 1 + mn * mn) : `${MINUS}${rootText(R, 1 + mn * mn)}`,
+          `Reaches c² = ${1 + mn * mn}(${R}) but takes the square root of ${R} only.`]] : []),
+      ];
+      // A coefficient in front of letters: "(25/9)", "2", "" for 1.
+      const coefficient = (value) => {
+        const text = ratio(Math.abs(value));
+        return text === "1" ? "" : text.includes("/") ? `(${text})` : text;
+      };
+      const A = coefficient(1 + m * m);
+      const B = 2 * m;
+      steps = [
+        `Substitute y = ${slopeText}x + c into x² + y² = ${R}: x² + (${slopeText}x + c)² = ${R}, so ` +
+          `${A}x² ${B < 0 ? MINUS : "+"} ${coefficient(B)}cx + c² ${MINUS} ${R} = 0.`,
+        "Exactly one solution means this quadratic in x has a discriminant of 0.",
+        `(${B < 0 ? MINUS : ""}${coefficient(B)}c)² ${MINUS} 4(${ratio(1 + m * m)})(c² ${MINUS} ${R}) = 0 simplifies to c² = (${ratio(1 + m * m)})(${R}) = ${K * K}.`,
+        `So c = ${K} or c = ${MINUS}${K}.`,
+      ];
+      roots = (c) => {
+        // (1 + m²)x² + 2mcx + c² − R = 0.
+        const disc = (2 * m * c) ** 2 - 4 * (1 + m * m) * (c * c - R);
+        return Math.abs(disc) < 1e-7 * Math.max(1, (2 * m * c) ** 2) ? 1 : disc > 0 ? 2 : 0;
+      };
+    }
+    if (ask === "greater") wrong.push([other, "Gives the smaller of the two values of c that make the line touch the circle once."]);
+    // The number a choice shows: 7, "−3/2", or a radical such as "−6√2".
+    const value = (entry) => {
+      if (typeof entry === "number") return entry;
+      const radical = /^(−?)(\d*)√(\d+)$/.exec(entry);
+      return radical ? (radical[1] ? -1 : 1) * Number(radical[2] || 1) * Math.sqrt(Number(radical[3])) : labelValue(entry);
+    };
+    const usable = wrong.filter(([entry], index) => value(entry) !== key && (ask === "greater" || value(entry) !== other) &&
+      wrong.findIndex(([e]) => value(e) === value(entry)) === index);
+    // Slips from one side of the key, the other, or both, so the key is
     // sometimes the extreme value and sometimes not.
-    const usable = wrong.filter(([value], index) => value !== key && (ask === "greater" || value !== other) &&
-      wrong.findIndex(([v]) => v === value) === index);
-    const above = usable.filter(([value]) => value > key);
-    const below = usable.filter(([value]) => value < key);
+    const above = usable.filter(([entry]) => value(entry) > key);
+    const below = usable.filter(([entry]) => value(entry) < key);
     const plan = t.pick(["below", "above", "mixed", "mixed"]);
     const offered = plan === "below" && below.length >= 3 ? t.sample(below, 3)
       : plan === "above" && above.length >= 3 ? t.sample(above, 3) : t.sample(usable, 3);
     const stemEnd = ask === "greater"
       ? "the system has exactly one solution for two values of c. What is the greater of these two values?"
       : "for which of the following values of c does the system have exactly one solution?";
-    const substituted = `x² + y² = ${r * r}`;
     return {
       responseType: numeric ? "numeric" : "multiple-choice",
-      stimulus: { type: "equations", content: `${circleText(h, v, r)}\n${lineText}` },
-      stem: `In the given system of equations, c is a constant. ${ask === "greater" ? `In the xy-plane, ${stemEnd}` : `In the xy-plane, ${stemEnd}`}`,
+      stimulus: { type: "equations", content },
+      stem: `In the given system of equations, c is a constant. In the xy-plane, ${stemEnd}`,
       correct: key,
       wrong: numeric ? undefined : offered,
-      explanation:
-        `The first equation is a circle with center (${num(h)}, ${num(v)}) and radius ${r}; the second is a line. One solution means ` +
-        `the line is tangent to the circle, so its distance from the center equals the radius: |${num(a)}(${num(h)}) ${signed(b)}(${num(v)}) ${MINUS} c|/√(${a}² + ${Math.abs(b)}²) = ${r}. ` +
-        `So |${num(base)} ${MINUS} c| = ${n * r}, which gives c = ${num(high)} or c = ${num(low)}.`,
-      steps: [
-        `Read the circle: center (${num(h)}, ${num(v)}), radius √${r * r} = ${r}.`,
-        "Exactly one solution means the line touches the circle at one point: the distance from the center to the line equals the radius.",
-        `Distance from (${num(h)}, ${num(v)}) to ${lineText}: |${num(base)} ${MINUS} c|/${n} = ${r}, so |${num(base)} ${MINUS} c| = ${n * r}.`,
-        `c = ${num(base)} ± ${n * r}: c = ${num(high)} or c = ${num(low)}.`,
-      ],
+      explanation: `${steps.join(" ")} ${ask === "greater" ? `The greater value is ${num(key)}.` : `Of the choices, only ${num(key)} is one of these values.`}`,
+      steps,
       principles: [
-        "A line and a circle meet in two, one, or no points; one point means the line is tangent, at a distance from the center equal to the radius.",
-        "Substituting the line into the circle gives a quadratic whose discriminant is 0 exactly when the line is tangent.",
+        "Substituting a line into a circle's equation gives a quadratic; the system has exactly one solution when its discriminant is 0.",
+        "Completing the square shows a circle's center and radius; a horizontal or vertical line touches the circle once where it is the radius away from the center.",
       ],
-      trap: `The distance from the center to ${lineText} is |ah + bv − c| divided by √(a² + b²) = ${n}; leaving out the ${n}, or using ${r * r} for the radius, gives a value of c whose line cuts the circle twice.`,
-      hint: "What does one solution say about how the line and the circle meet?",
-      verify: () => {
-        // Substitute the line into the circle and count real roots by the discriminant.
-        const roots = (c) => {
-          // y = (c − ax)/b; (x − h)² + ((c − ax)/b − v)² = r².
-          const A = 1 + (a * a) / (b * b);
-          const B = -2 * h - (2 * a * (c / b - v)) / b;
-          const C = h * h + (c / b - v) ** 2 - r * r;
-          const disc = B * B - 4 * A * C;
-          return Math.abs(disc) < 1e-7 * Math.max(1, B * B) ? 1 : disc > 0 ? 2 : 0;
-        };
-        // Every offered value either misses tangency or, when the greater value
-        // is asked for, is the smaller tangent value.
-        return roots(high) === 1 && roots(low) === 1 && high > low && roots((high + low) / 2) === 2 &&
-          (numeric || offered.every(([value]) => (ask === "greater" && value === low) || roots(value) !== 1));
-      },
+      trap: slanted
+        ? "Squaring the line's expression needs its middle term; dropping it, or stopping at c², gives a value of c whose line misses the circle or cuts it twice."
+        : "The circle's center and radius appear only after completing the square; the constant on the right is not the radius squared.",
+      hint: "What does exactly one solution say about the quadratic you get by substituting the line into the circle?",
+      verify: () => roots(key) === 1 && roots(other) === 1 &&
+        (numeric || offered.every(([entry]) => (ask === "greater" && value(entry) === other) || roots(value(entry)) !== 1)),
     };
   }
 
@@ -816,6 +897,7 @@
 
   const discriminantParameter = {
     id: "discriminant-parameter",
+    difficulty: "Hard",
     domain: "Advanced Math",
     skill: "Systems of equations",
     subskill: "linear-quadratic systems",
@@ -1040,13 +1122,15 @@
 
   const lineCircleTangent = {
     id: "line-circle-tangent",
+    difficulty: "Hard",
     domain: "Advanced Math",
     skill: "Systems of equations",
     subskill: "nonlinear systems",
     title: "Line and circle meeting at exactly one point",
     recognize:
-      "One solution of a line-and-circle system means the line is tangent: its distance from the center equals the " +
-      "radius (equivalently, the quadratic from substituting has discriminant 0), which gives two values of the constant.",
+      "One solution of a line-and-circle system means the line touches the circle once: substitute the line into the " +
+      "circle and set the discriminant of the quadratic to 0, or, for a horizontal or vertical line, complete the " +
+      "square and place the line one radius from the center.",
     rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 2, trap: 1 },
     tricks: ["neighbouring-rule", "sign-error", "reversed-condition"],
     build(t) {
@@ -1065,6 +1149,7 @@
 
   const polynomialLevelCount = {
     id: "polynomial-level-count",
+    difficulty: "Hard",
     domain: "Advanced Math",
     skill: "Systems of equations",
     subskill: "nonlinear systems",

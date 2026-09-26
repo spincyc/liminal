@@ -233,9 +233,80 @@
     return disc === 0 ? [-B / 2] : [(-B - root) / 2, (-B + root) / 2];
   }
 
+  // True when two choice texts are one change apart, as a student comparing
+  // them sees it: equal once + and − are ignored, one token different, or one
+  // token added (numbers: a negation, a reciprocal, a factor of 2). This is
+  // the look-alike test of docs/question-templates.md (check 13), used here to
+  // build distractor sets whose look-alike pairs do not single out the key.
+  function lookAlike(left, right) {
+    const a = labelValue(left);
+    const b = labelValue(right);
+    if (Number.isFinite(a) && Number.isFinite(b)) {
+      const near = (u, v) => Math.abs(u - v) <= 1e-9 * Math.max(1, Math.abs(u), Math.abs(v));
+      return (a !== 0 && near(a, -b)) || (!near(a, b) && near(a * b, 1)) ||
+        (a !== 0 && b !== 0 && (near(a, 2 * b) || near(b, 2 * a)));
+    }
+    const unsigned = (text) => String(text).replace(/[+−-]/g, "±");
+    if (String(left) !== String(right) && unsigned(left) === unsigned(right)) return true;
+    const tokens = (text) => String(text).toLowerCase().replace(/−/g, "-").match(/[\p{L}\p{N}.]+|[^\s\p{L}\p{N}]/gu) || [];
+    const p = tokens(left);
+    const q = tokens(right);
+    if (p.length && p.length === q.length && p.filter((token, index) => token !== q[index]).length === 1) return true;
+    if (Math.abs(p.length - q.length) === 1 && Math.min(p.length, q.length) >= 3) {
+      const [shorter, longer] = p.length < q.length ? [p, q] : [q, p];
+      const target = shorter.join(" ");
+      return longer.some((unused, index) => longer.filter((token, other) => other !== index).join(" ") === target);
+    }
+    return false;
+  }
+
+  // Three distractors from a pool of [text, reason] entries. A set is
+  // informative when some but not all four choices have a look-alike; the
+  // key is in an informative pair in about `share` of draws, the pairs point
+  // away from the key in about as many, and the rest are uninformative.
+  function pairBalanced(t, key, pool, share = 0.3) {
+    const entries = pool.filter(([text], index) => text !== key && pool.findIndex(([other]) => other === text) === index);
+    const triples = [];
+    for (let i = 0; i < entries.length; i += 1) {
+      for (let j = i + 1; j < entries.length; j += 1) {
+        for (let k = j + 1; k < entries.length; k += 1) triples.push([entries[i], entries[j], entries[k]]);
+      }
+    }
+    if (!triples.length) return entries.slice(0, 3);
+    const keyIn = [];
+    const keyOut = [];
+    const flat = [];
+    triples.forEach((triple) => {
+      const texts = [key, ...triple.map(([text]) => text)];
+      const paired = new Set();
+      texts.forEach((left, i) => texts.forEach((right, j) => {
+        if (j > i && lookAlike(left, right)) {
+          paired.add(i);
+          paired.add(j);
+        }
+      }));
+      const informative = paired.size > 0 && paired.size < 4;
+      (informative ? (paired.has(0) ? keyIn : keyOut) : flat).push(triple);
+    });
+    const roll = t.random();
+    const order = roll < share ? [keyIn, keyOut, flat] : roll < 2 * share ? [keyOut, flat, keyIn] : [flat, keyOut, keyIn];
+    const chosen = order.find((list) => list.length);
+    // Numeric choices: within the chosen kind of set, the key is the least or
+    // greatest value about half the time, so its rank gives nothing away.
+    const keyValue = labelValue(key);
+    const values = (triple) => triple.map(([text]) => labelValue(text));
+    if (Number.isFinite(keyValue) && chosen.every((triple) => values(triple).every(Number.isFinite))) {
+      const extreme = (triple) => values(triple).every((v) => v > keyValue) || values(triple).every((v) => v < keyValue);
+      const ends = chosen.filter(extreme);
+      const middles = chosen.filter((triple) => !extreme(triple));
+      if (ends.length && middles.length) return t.shuffle(t.pick(t.chance(0.5) ? ends : middles));
+    }
+    return t.shuffle(t.pick(chosen));
+  }
+
   return {
     tidy, denominator, ratio, gridable, labelValue, enoughChoices, drawUntilDistinct, bin, rootFactor, lead, denominatorHard,
     ratioHard, enoughChoicesHard, drawUntilDistinctHard, term, plus, terms, sampleQuadratic,
-    realRoots, decimalTextHard, ratioText, quadraticRoots,
+    realRoots, decimalTextHard, ratioText, quadraticRoots, lookAlike, pairBalanced,
   };
 });

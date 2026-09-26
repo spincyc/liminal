@@ -1197,13 +1197,15 @@
     domain: "Algebra",
     skill: "Linear functions",
     subskill: "function notation",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Unknown constant in a function built from a graphed line",
     recognize:
       "The graph gives f; the point on the graph of g is a statement about f at another input or another output. " +
       "Undo what g does to f's output, read the matching point of f off the graph, and only then solve for the constant, " +
       "remembering that a change inside f moves the graph the opposite way.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    // Medium: one translation of the point into a statement about f, one
+    // lookup on the graph, one linear step (the 2026-09-26 review).
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["sign-error", "reversed-condition", "wrong-quantity"],
     build(t) {
       const form = t.pick(["shift", "shift", "scale"]);
@@ -1219,6 +1221,7 @@
         let wrong;
         let steps;
         let check;
+        let trap;
         if (form === "shift") {
           // g(x) = f(x − k) + c through (p, q): f(p − k) = q − c.
           if (!Number.isInteger((2 * c) / m)) continue;
@@ -1250,6 +1253,9 @@
             for (let value = -40; value <= 40; value += 1) if (approx(fn(p - value) + c, q)) found.push(value);
             return found.length === 1 && found[0] === key;
           };
+          trap =
+            `Replacing x with x ${MINUS} k moves the graph right, so the input of f is ${num(p)} ${MINUS} k, not ` +
+            `${num(p)} + k; and the constant comes off first: f(${num(p)} ${MINUS} k) = ${num(q)} ${MINUS} ${paren(c)} = ${num(q - c)}.`;
         } else {
           // g(x) = a·f(x) + c through (p, q): a = (q − c)/f(p).
           const choices = line.lattice.filter(([x, y]) => y !== 0 && x !== 0 && Math.abs(y) <= 4);
@@ -1285,6 +1291,9 @@
             for (let value = -40; value <= 40; value += 0.5) if (approx(value * fn(p) + c, q)) found.push(value);
             return found.length === 1 && approx(found[0], an / ad);
           };
+          trap =
+            `The constant comes off before dividing, a · f(${num(p)}) = ${num(q)} ${MINUS} ${paren(c)} = ${num(q - c)}, ` +
+            `and a is that output over f(${num(p)}), not the other way round.`;
         }
         if (collides(key, wrong) || distinctWrong(key, wrong) < 3) continue;
         const shown = line.lattice.filter(([x]) => x !== 0);
@@ -1308,9 +1317,7 @@
             "If g(x) = f(x − k) + c, then g(p) = q says that f(p − k) = q − c.",
             "The graph of y = f(x − k) is the graph of y = f(x) moved k units to the right.",
           ],
-          trap: form === "shift"
-            ? "Replacing x with x − k moves the graph right, so the input of f is p − k, not p + k; and the constant outside f comes off q first."
-            : "The constant outside f comes off q before dividing, and a is g's output over f's output, not the other way round.",
+          trap,
           hint: "Write what it means for the point to be on the graph of g, in terms of f.",
           verify: () => {
             // Rebuild f from two grid crossings named in the alt text, then search for the constant.
@@ -1335,15 +1342,19 @@
       "A linear function changes by the same amount for each unit of x, so each change in f(x) is the slope times the " +
       "gap in x, even when the gaps are unequal and an entry is a letter. Write that for both pairs of rows, solve for " +
       "the letter, and then answer the question asked.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
     tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity"],
     build(t) {
-      const ask = t.pick(["a", "a", "intercept", "slope"]);
+      // Finding a alone was Medium work (two slopes set equal) and was
+      // dropped; every ask now goes on from a to the line itself.
+      const ask = t.pick(["slope", "intercept", "intercept", "value"]);
       const asTable = t.chance(0.6);
       const numericWanted = t.chance(0.4);
       for (;;) {
         const c = t.pick([2, 3, -1, -2]);
-        const d1 = t.int(1, 4);
+        // Gaps of 2 to 4 more often than 1, so the slope and the line's other
+        // values are often fractions.
+        const d1 = t.pick([1, 2, 2, 3, 3, 4]);
         const d2 = t.int(1, 6);
         if (d1 === d2) continue;
         const x1 = t.int(-4, 5);
@@ -1354,10 +1365,14 @@
         const y3 = c * a0 + ((c - 1) * a0 * d2) / d1;
         if (!Number.isInteger(y3) || y3 === 0 || Math.abs(y3) > 80) continue;
         const value = ([n, d]) => n / d;
-        const interceptOf = (a) => {
+        // f at x for the line through (x1, a) with the slope a gives.
+        const valueAt = (a, x) => {
           const [sn, sd] = slopeOf(a);
-          return [a[0] * sd - sn * x1 * a[1], a[1] * sd];
+          return [a[0] * sd + sn * (x - x1) * a[1], a[1] * sd];
         };
+        // A fourth input, outside the table and off the y-axis.
+        const x4 = t.chance(0.5) ? x3 + t.int(1, 3) : x1 - t.int(1, 3);
+        if (x4 === 0) continue;
         const models = [
           [[y3, 2 * c - 1], `Treats the rows as equally spaced, so the change from f(${num(x2)}) to f(${num(x3)}) is taken to equal the change from f(${num(x1)}) to f(${num(x2)}).`],
           [[y3, c + (c - 1) * d2], `Uses the change from f(${num(x1)}) to f(${num(x2)}) as the change for each unit of x, without dividing by the gap of ${d1}.`],
@@ -1371,27 +1386,33 @@
           return lin(k, 0, "a");
         }
         const keyA = [a0, 1];
-        const pick = (a) => (ask === "a" ? a : ask === "slope" ? slopeOf(a) : interceptOf(a));
+        const pick = (a) => (ask === "slope" ? slopeOf(a) : valueAt(a, ask === "intercept" ? 0 : x4));
         const key = pick(keyA);
         const modelled = models
           .filter(([a]) => a[1] !== 0 && !approx(value(a), a0))
-          .map(([a, reason]) => [text(pick(a)), ask === "a" ? reason : `${reason.replace(/\.$/, "")}; that gives a = ${text(a)}.`]);
-        if (ask !== "a") modelled.push([num(a0), `Gives the value of a, ${num(a0)}, found on the way, not ${ask === "slope" ? "the slope" : "the y-intercept"}.`]);
+          .map(([a, reason]) => [text(pick(a)), `${reason.replace(/\.$/, "")}; that gives a = ${text(a)}.`]);
+        const asked = { slope: "the slope", intercept: "the y-intercept", value: `f(${num(x4)})` }[ask];
+        modelled.push([num(a0), `Gives the value of a, ${num(a0)}, found on the way, not ${asked}.`]);
+        if (ask !== "slope") modelled.push([text(slopeOf(keyA)), `Gives the slope, found on the way, not ${asked}.`]);
         const keyText = text(key);
         if (collides(keyText, modelled) || distinctWrong(keyText, modelled) < 3) continue;
         // The key is not the only whole number (or the only fraction) among the choices.
         const whole = (entry) => !String(entry).includes("/");
-        const chosen = spreadAround(t, keyText, modelled);
+        // Choices a test would print: small numerators and denominators.
+        const tame = (entry) => /^−?\d{1,3}(\/\d{1,2})?$/.test(String(entry[0]));
+        const shown = distinctWrong(keyText, modelled.filter(tame)) >= 3 ? modelled.filter(tame) : modelled;
+        const chosen = spreadAround(t, keyText, shown);
         if (!chosen.some(([shown]) => whole(shown) === whole(keyText))) continue;
         const keyValue = value(key);
-        const numeric = numericWanted && Number.isInteger(keyValue) && Math.abs(keyValue) < 1000;
+        // A fraction key is typed as a fraction, as the answer grid allows.
+        const numeric = numericWanted && keyText.replace(MINUS, "").length <= 5;
         const cell = lin(c, 0, "a");
         const rows = [[x1, "a"], [x2, cell], [x3, y3]];
-        const askText = ask === "a"
-          ? "What is the value of a?"
-          : ask === "slope"
-            ? "What is the slope of the graph of y = f(x) in the xy-plane?"
-            : "What is the y-coordinate of the y-intercept of the graph of y = f(x) in the xy-plane?";
+        const askText = {
+          slope: "What is the slope of the graph of y = f(x) in the xy-plane?",
+          intercept: "What is the y-coordinate of the y-intercept of the graph of y = f(x) in the xy-plane?",
+          value: `What is the value of f(${num(x4)})?`,
+        }[ask];
         const [sn, sd] = slopeOf(keyA);
         const perUnit = slopeTerm(c - 1, d1, "a");
         const steps = [
@@ -1400,8 +1421,9 @@
           `So a = ${num(a0)}.`,
         ];
         if (ask === "slope") steps.push(`The slope is ${perUnit} with a = ${num(a0)}: ${text([sn, sd])}.`);
-        if (ask === "intercept") {
-          steps.push(`The slope is ${text([sn, sd])}, and f(${num(x1)}) = ${num(a0)}, so f(0) = ${num(a0)} ${MINUS} (${text([sn, sd])})(${num(x1)}) = ${keyText}.`);
+        if (ask !== "slope") {
+          const at = ask === "intercept" ? 0 : x4;
+          steps.push(`The slope is ${text([sn, sd])}, and f(${num(x1)}) = ${num(a0)}, so f(${num(at)}) = ${num(a0)} + (${text([sn, sd])})(${num(at)} ${MINUS} ${paren(x1)}) = ${keyText}.`);
         }
         return {
           responseType: numeric ? "numeric" : "multiple-choice",
@@ -1410,7 +1432,7 @@
           stem: asTable
             ? `The table shows three values of x and their corresponding values of f(x), where f is a linear function and a is a constant. ${askText}`
             : `For the linear function f, f(${num(x1)}) = a, f(${num(x2)}) = ${cell}, and f(${num(x3)}) = ${num(y3)}, where a is a constant. ${askText}`,
-          correct: numeric ? keyValue : keyText,
+          correct: keyText,
           wrong: numeric ? [] : chosen,
           explanation: steps.join(" "),
           steps,
@@ -1430,7 +1452,7 @@
             }
             if (found.length !== 1) return false;
             const line = lineFrom([[x1, found[0]], [x2, c * found[0]]]);
-            const answer = ask === "a" ? found[0] : ask === "slope" ? line.slope : line.f(0);
+            const answer = ask === "slope" ? line.slope : line.f(ask === "intercept" ? 0 : x4);
             return approx(answer, keyValue);
           },
         };
@@ -1440,6 +1462,6 @@
 
   return [
     functionValue, slopeTwoPoints, lineIntercepts, functionConstant, perpendicularLine, linearTransform,
-    functionIdentity, graphTransform, tableUnknown,
+    graphTransform, functionIdentity, tableUnknown,
   ];
 });

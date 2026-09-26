@@ -185,8 +185,8 @@
     {
       "id": "inequality-region-corner",
       "bit": 30,
-      "version": 2,
-      "fingerprint": "db049a0c1dfd3e04"
+      "version": 3,
+      "fingerprint": "4d4b46cd37bc7614"
     },
     {
       "id": "monomial-exponent-rules",
@@ -209,8 +209,8 @@
     {
       "id": "rational-exponent-rewrite",
       "bit": 34,
-      "version": 2,
-      "fingerprint": "431ef30502bb028f"
+      "version": 3,
+      "fingerprint": "4b4b83ee2a195e57"
     },
     {
       "id": "unknown-coefficient-product",
@@ -221,8 +221,8 @@
     {
       "id": "expression-substitution",
       "bit": 36,
-      "version": 2,
-      "fingerprint": "9f625e2b80874889"
+      "version": 3,
+      "fingerprint": "0612201d6fd8b5b4"
     },
     {
       "id": "quadratic-square-root-solve",
@@ -245,14 +245,14 @@
     {
       "id": "quadratic-irrational-solutions",
       "bit": 40,
-      "version": 2,
-      "fingerprint": "514554a475d65c08"
+      "version": 3,
+      "fingerprint": "2434d5b393c596b5"
     },
     {
       "id": "root-sum-product",
       "bit": 41,
-      "version": 2,
-      "fingerprint": "191abd7cf79f8087"
+      "version": 3,
+      "fingerprint": "2396155f95bffe33"
     },
     {
       "id": "extraneous-roots",
@@ -287,8 +287,8 @@
     {
       "id": "discriminant-parameter",
       "bit": 47,
-      "version": 1,
-      "fingerprint": "e025e9b689a94aaf"
+      "version": 2,
+      "fingerprint": "d362bdfdbe469327"
     },
     {
       "id": "system-square-identity",
@@ -329,8 +329,8 @@
     {
       "id": "vertex-from-conditions",
       "bit": 54,
-      "version": 2,
-      "fingerprint": "f0adec03229ccb80"
+      "version": 3,
+      "fingerprint": "e796870992b92b7c"
     },
     {
       "id": "exponential-rewrite",
@@ -341,14 +341,14 @@
     {
       "id": "function-transformation-table",
       "bit": 56,
-      "version": 2,
-      "fingerprint": "dc62fc8e564015d8"
+      "version": 3,
+      "fingerprint": "845c0c7ff8bd35c0"
     },
     {
       "id": "polynomial-factor-remainder",
       "bit": 57,
-      "version": 2,
-      "fingerprint": "0555ab428cbb747a"
+      "version": 3,
+      "fingerprint": "2c1f4a8b74d639ae"
     },
     {
       "id": "proportional-rate-scaling",
@@ -713,32 +713,32 @@
     {
       "id": "literal-equation-factor-target",
       "bit": 118,
-      "version": 1,
-      "fingerprint": "b1a70c1f8d151570"
+      "version": 2,
+      "fingerprint": "8b7aea7f29b05be2"
     },
     {
       "id": "linear-equation-unknown-constants",
       "bit": 119,
-      "version": 1,
-      "fingerprint": "ec4bdf871372c204"
+      "version": 2,
+      "fingerprint": "6171fe5c0a56e65b"
     },
     {
       "id": "linear-equation-two-quantities",
       "bit": 120,
-      "version": 1,
-      "fingerprint": "6cf584a8aae16193"
+      "version": 2,
+      "fingerprint": "f69a2b71ef26ae86"
     },
     {
       "id": "linear-graph-transform-parameter",
       "bit": 121,
-      "version": 1,
-      "fingerprint": "16e3d461ffc411b2"
+      "version": 2,
+      "fingerprint": "01133ed3f482f5ff"
     },
     {
       "id": "linear-table-unknown-entry",
       "bit": 122,
-      "version": 1,
-      "fingerprint": "b9b290986d59e1e8"
+      "version": 2,
+      "fingerprint": "e1f41208d7e33210"
     },
     {
       "id": "linear-intercept-meaning",
@@ -755,14 +755,14 @@
     {
       "id": "line-intercept-conditions",
       "bit": 125,
-      "version": 1,
-      "fingerprint": "d13d2a4d18da4576"
+      "version": 2,
+      "fingerprint": "2473b8b0187dc765"
     },
     {
       "id": "system-two-constants",
       "bit": 126,
-      "version": 1,
-      "fingerprint": "ec0987cfe05d9f06"
+      "version": 2,
+      "fingerprint": "cfaf27fb0713f5be"
     },
     {
       "id": "system-graph-two-lines",
@@ -773,14 +773,14 @@
     {
       "id": "system-mixture-blend",
       "bit": 128,
-      "version": 1,
-      "fingerprint": "c72143b8d1cc049d"
+      "version": 2,
+      "fingerprint": "091fee5c31522452"
     },
     {
       "id": "inequality-two-variable-context",
       "bit": 129,
-      "version": 1,
-      "fingerprint": "d721f66279d5a22b"
+      "version": 2,
+      "fingerprint": "a1ae022cf2004f72"
     },
     {
       "id": "inequality-graph-region",
@@ -791,8 +791,8 @@
     {
       "id": "inequality-parameter-range",
       "bit": 131,
-      "version": 1,
-      "fingerprint": "69f2bdc20555cbc9"
+      "version": 2,
+      "fingerprint": "fb831f0a365d1223"
     },
     {
       "id": "expression-from-combination",
@@ -815,26 +815,26 @@
     {
       "id": "quadratic-structure-form",
       "bit": 135,
-      "version": 1,
-      "fingerprint": "303ac5c520ae3322"
+      "version": 2,
+      "fingerprint": "d2b31da68459ba2e"
     },
     {
       "id": "rational-equation-structure",
       "bit": 136,
-      "version": 1,
-      "fingerprint": "53178336d2f9bbe6"
+      "version": 2,
+      "fingerprint": "71b986adac01fed4"
     },
     {
       "id": "absolute-value-cases",
       "bit": 137,
-      "version": 1,
-      "fingerprint": "6587869a64dd2d76"
+      "version": 2,
+      "fingerprint": "07ad5e345b427340"
     },
     {
       "id": "line-circle-tangent",
       "bit": 138,
-      "version": 1,
-      "fingerprint": "b597abcfff589df8"
+      "version": 2,
+      "fingerprint": "590fae39dc99d294"
     },
     {
       "id": "polynomial-level-count",
@@ -845,14 +845,14 @@
     {
       "id": "function-table-evaluate",
       "bit": 140,
-      "version": 1,
-      "fingerprint": "d74b6e04ae94debe"
+      "version": 2,
+      "fingerprint": "5f942e1a42a3076b"
     },
     {
       "id": "polynomial-constant-from-remainder",
       "bit": 141,
-      "version": 1,
-      "fingerprint": "4bbf20851437444d"
+      "version": 2,
+      "fingerprint": "5ea047458cb7e1c2"
     },
     {
       "id": "exponential-from-words",
@@ -863,8 +863,8 @@
     {
       "id": "graph-which-function",
       "bit": 143,
-      "version": 1,
-      "fingerprint": "b42739f2238c16a7"
+      "version": 2,
+      "fingerprint": "c3d67c2a218d7d09"
     },
     {
       "id": "graph-transformation",
@@ -1099,6 +1099,36 @@
       "bit": 182,
       "version": 1,
       "fingerprint": "aef2e9a46f46d052"
+    },
+    {
+      "id": "integer-combination-count",
+      "bit": 183,
+      "version": 1,
+      "fingerprint": "e136ca0df7bf0450"
+    },
+    {
+      "id": "system-intersection-region",
+      "bit": 184,
+      "version": 1,
+      "fingerprint": "b108399e61b53e2e"
+    },
+    {
+      "id": "complex-fraction-equivalence",
+      "bit": 185,
+      "version": 1,
+      "fingerprint": "334f217c4f10e244"
+    },
+    {
+      "id": "radical-parameter-extraneous",
+      "bit": 186,
+      "version": 1,
+      "fingerprint": "ff3950199ee4e813"
+    },
+    {
+      "id": "quadratic-must-be-true",
+      "bit": 187,
+      "version": 1,
+      "fingerprint": "187026a77f1b4009"
     }
   ]
 }

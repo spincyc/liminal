@@ -13,7 +13,7 @@
   const { MINUS, num, paren, signed, lin, approx, point, poly, sup } = S;
   const {
     tidy, denominator, ratio, gridable, drawUntilDistinct, bin, rootFactor, lead, denominatorHard,
-    ratioHard, drawUntilDistinctHard, term, decimalTextHard, ratioText, labelValue, sampleQuadratic, realRoots,
+    ratioHard, drawUntilDistinctHard, term, decimalTextHard, ratioText, labelValue, sampleQuadratic, realRoots, pairBalanced,
   } = C;
 
   // Exact decimal text for n / 10^k: decimalText(106, 2) -> "1.06", (120, 2) -> "1.2".
@@ -199,14 +199,19 @@
     return t.sample(usable, Math.min(3, usable.length));
   }
 
-  // Applies spreadAround to a multiple-choice record whose key and modelled
-  // mistakes are all numbers; other records pass through unchanged.
+  // Chooses three of a multiple-choice record's modelled mistakes, all
+  // numbers, so that neither the key's rank nor a look-alike pair (the key's
+  // negation or double among the slips) singles it out; other records pass
+  // through unchanged.
   function spreadChoices(t, record) {
     if (!record || record.responseType !== "multiple-choice") return record;
-    const keyValue = labelValue(S.label(record.correct));
-    const entries = (record.wrong || []).map(([value, why]) => [labelValue(S.label(value)), why, value]);
-    if (!Number.isFinite(keyValue) || entries.length < 3 || entries.some(([value]) => !Number.isFinite(value))) return record;
-    const picked = spreadAround(t, keyValue, entries);
+    const keyText = S.label(record.correct);
+    const keyValue = labelValue(keyText);
+    const entries = (record.wrong || []).map(([value, why]) => [S.label(value), why, value])
+      .filter(([text], index, list) => text !== keyText && list.findIndex(([other]) => other === text) === index);
+    if (!Number.isFinite(keyValue) || entries.length < 3 || entries.some(([text]) => !Number.isFinite(labelValue(text)))) return record;
+    const byText = new Map(entries.map((entry) => [entry[0], entry]));
+    const picked = pairBalanced(t, keyText, entries.map(([text, why]) => [text, why])).map(([text]) => byText.get(text));
     return picked.length === 3 ? { ...record, wrong: picked.map(([, why, value]) => [value, why]) } : record;
   }
 
@@ -904,6 +909,8 @@
         [-a * h, `Uses x = −b/a for the axis of symmetry instead of x = −b/(2a), giving b = ${num(-a * h)}.`],
         [-2 * h, `Multiplies only the x² term by ${num(a)} when expanding, so b = ${num(-2 * h)}.`],
         [a, "Stops after finding a."],
+        [2 * h, `Makes two slips: it multiplies only the x² term by ${num(a)} and flips the sign of the vertex's x-coordinate.`],
+        [h, "Gives the x-coordinate of the vertex instead of b."],
       ];
     const vf = vertexForm("a", h, v);
     return {
@@ -942,80 +949,6 @@
         const [A, B, C] = solve3([[h * h, h, 1], [x1 * x1, x1, 1], [2 * h, 1, 0]], [v, y1, 0]);
         const target = askSum ? A + B + C : B;
         return S.approx(target, askSum ? f1 : b) && S.approx(A, a);
-      },
-    };
-  }
-
-  // Two zeros and one more point; ask the extreme value.
-  function zerosAndPoint(t, numeric) {
-    let a;
-    let r1;
-    let r2;
-    let x0;
-    for (;;) {
-      a = t.pick([1, 2, 3, -1, -2, -3]);
-      r1 = t.int(-7, 5);
-      r2 = r1 + 2 * t.int(1, 5);
-      x0 = t.int(-6, 8);
-      const hh = (r1 + r2) / 2;
-      if (r1 === 0 || r2 === 0 || hh === 0 || hh === 1 || [r1, r2, hh].includes(x0)) continue;
-      break;
-    }
-    const h = (r1 + r2) / 2;
-    const half = (r2 - r1) / 2;
-    const extreme = -a * half * half;
-    const intercept = t.chance(0.5);
-    const px = intercept ? 0 : x0;
-    const py = a * (px - r1) * (px - r2);
-    const word = a > 0 ? "minimum" : "maximum";
-    const stem = intercept
-      ? `In the xy-plane, the graph of the quadratic function f has x-intercepts at ${point(r1, 0)} and ` +
-        `${point(r2, 0)} and a y-intercept at ${point(0, py)}. What is the ${word} value of f(x)?`
-      : `For the quadratic function f, f(${num(r1)}) = 0, f(${num(r2)}) = 0, and f(${num(px)}) = ${num(py)}. ` +
-        `What is the ${word} value of f(x)?`;
-    const flipped = intercept || (px + r1) * (px + r2) === 0 ? null : py / ((px + r1) * (px + r2));
-    const wrong = [
-      [h, `Gives the x-coordinate of the vertex, ${num(h)}, instead of the ${word} value.`],
-      [
-        intercept ? py : a * (r1 + r2 - r1) * (r1 + r2 - r2),
-        intercept
-          ? `Takes the y-intercept as the ${word} value.`
-          : `Evaluates f at ${num(r1 + r2)}, the sum of the zeros, instead of at their average.`,
-      ],
-    ];
-    if (flipped !== null && denominatorHard(flipped) <= 2 && flipped !== a) {
-      wrong.push([ratioHard(tidy(-flipped * half * half)), `Writes f(x) = a(x ${signed(r1)})(x ${signed(r2)}), flipping the signs of the zeros, and finds a from that.`]);
-    }
-    if (a !== 1) wrong.push([-half * half, "Assumes the leading coefficient is 1, so f(x) = (x − r)(x − s) with no factor a."]);
-    wrong.push([a, "Stops after finding the leading coefficient a."]);
-    const factored = `a(${lin(1, -r1)})(${lin(1, -r2)})`;
-    return {
-      responseType: numeric ? "numeric" : "multiple-choice",
-      stimulus: null,
-      stem,
-      correct: extreme,
-      wrong,
-      explanation:
-        `The zeros give f(x) = ${factored}. The point ${point(px, py)} gives ${num(py)} = ` +
-        `a(${num(px)} ${signed(-r1)})(${num(px)} ${signed(-r2)}) = ${term((px - r1) * (px - r2), "a")}, so a = ${num(a)}. ` +
-        `The vertex is halfway between the zeros, at x = ${num(h)}, so the ${word} value is ` +
-        `f(${num(h)}) = ${num(a)}(${num(h - r1)})(${num(h - r2)}) = ${num(extreme)}.`,
-      steps: [
-        `Write f from its zeros: f(x) = ${factored}.`,
-        `Use ${point(px, py)}: ${num(py)} = ${term((px - r1) * (px - r2), "a")}, so a = ${num(a)}.`,
-        `The axis of symmetry is halfway between the zeros: x = (${num(r1)} + ${paren(r2)})/2 = ${num(h)}.`,
-        `The ${word} value is f(${num(h)}) = ${num(a)}(${num(h - r1)})(${num(h - r2)}) = ${num(extreme)}.`,
-      ],
-      principles: [
-        "A quadratic with zeros r and s is f(x) = a(x − r)(x − s).",
-        "Its vertex lies on the vertical line halfway between the zeros, and the extreme value is f there.",
-      ],
-      trap: `The vertex's x-coordinate, ${num(h)}, is not the ${word} value; the question asks for the output f(${num(h)}).`,
-      hint: "Build f from its zeros and pin down the one unknown constant. Where does the extreme value occur?",
-      verify: () => {
-        const [A, B, C] = solve3([[r1 * r1, r1, 1], [r2 * r2, r2, 1], [px * px, px, 1]], [0, 0, py]);
-        const fn = (x) => A * x * x + B * x + C;
-        return S.approx(A, a) && S.approx(scanExtreme(fn, h, A > 0), extreme) && S.approx(C - (B * B) / (4 * A), extreme);
       },
     };
   }
@@ -1065,6 +998,8 @@
       [-a * h, `Uses x = −b/a for the axis of symmetry instead of x = −b/(2a).`],
       [-4 * a * h, `Takes the axis of symmetry as x = ${num(r1 + r2)}, the sum of the two inputs, instead of their average.`],
       [h, "Gives the x-coordinate of the axis of symmetry instead of b."],
+      [-2 * h, `Leaves out the leading coefficient: uses x = −b/2, so b = ${num(-2 * h)}.`],
+      [2 * h, `Leaves out the leading coefficient and flips the sign: b = ${num(2 * h)}.`],
     ];
     const wrongExtreme = style === "values"
       ? [
@@ -1557,54 +1492,6 @@
     }
   }
 
-  function transformReverse(t, numeric) {
-    for (;;) {
-      const x0 = t.int(-3, 1);
-      const xs = [0, 1, 2, 3, 4, 5].map((i) => x0 + i);
-      const gs = distinctValues(t, 6, -8, 15);
-      const g = (x) => gs[x - x0];
-      const h = t.pick([-2, -1, 1, 2]);
-      const k = t.nonzero(-7, 7);
-      // g(x) = f(x + h) + k, so f(n) = g(n − h) − k.
-      const n = t.pick(xs.filter((x) => xs.includes(x - h) && xs.includes(x + h)));
-      const key = g(n - h) - k;
-      const wrong = [
-        [g(n + h) - k, `Shifts the wrong way: f(${num(n)}) appears in g(x) when x ${signed(h)} = ${num(n)}, that is, x = ${num(n - h)}, not ${num(n + h)}.`],
-        [g(n - h) + k, `${k > 0 ? "Adds" : "Subtracts"} ${num(Math.abs(k))} again instead of undoing it.`],
-        [g(n) - k, `Ignores the shift inside f and reads g at ${num(n)}.`],
-        [g(n - h), `Finds the right row, g(${num(n - h)}), but stops before undoing the ${signed(k)}.`],
-      ];
-      if (new Set(wrong.map(([v]) => v).concat(key)).size < 4) continue;
-      const table = S.table(["x", "g(x)"], xs.map((x) => [x, g(x)]));
-      return {
-        responseType: numeric ? "numeric" : "multiple-choice",
-        stimulus: { type: "table", content: table },
-        stem: `The function g is defined by g(x) = ${shifted("f", h, k)}, where f is a function. The table gives selected values of g. What is the value of f(${num(n)})?`,
-        correct: key,
-        wrong: wrong,
-        explanation:
-          `f(${num(n)}) appears in g(x) when x ${signed(h)} = ${num(n)}, so x = ${num(n - h)}. ` +
-          `Then g(${num(n - h)}) = f(${num(n)}) ${signed(k)}, and f(${num(n)}) = ${num(g(n - h))} ${signed(-k)} = ${num(key)}.`,
-        steps: [
-          `Find the x for which the input of f is ${num(n)}: x ${signed(h)} = ${num(n)} gives x = ${num(n - h)}.`,
-          `Read g(${num(n - h)}) = ${num(g(n - h))} from the table.`,
-          `g(${num(n - h)}) = f(${num(n)}) ${signed(k)}, so f(${num(n)}) = ${num(g(n - h))} ${signed(-k)} = ${num(key)}.`,
-        ],
-        principles: ["Undo a transformation in reverse order: find the input that feeds f the value wanted, then undo the outside change."],
-        trap: numeric
-          ? `Reading g(${num(n + h)}) (shifting the wrong way) or g(${num(n)}) (ignoring the shift) gives ${num(g(n + h) - k)} or ${num(g(n) - k)}.`
-          : "The table lists g, not f, so every value must be translated back before it answers the question.",
-        hint: `For which x does f receive the input ${num(n)}?`,
-        verify: () => {
-          // Rebuild f from the table and substitute back into g(x) = f(x + h) + k for every row.
-          const rows = readTable(table);
-          const fOf = new Map(rows.map(([x, y]) => [x + h, y - k]));
-          return rows.every(([x, y]) => fOf.get(x + h) + k === y) && fOf.get(n) === key;
-        },
-      };
-    }
-  }
-
   function transformComposition(t, numeric) {
     for (;;) {
       const x0 = t.int(-2, 1);
@@ -1682,7 +1569,8 @@
       const p = t.int(-3, 4);
       const q = t.int(-9, 6);
       const f = (x) => a * (x - p) ** 2 + q;
-      const hidden = t.chance(0.5);
+      // Mostly with the vertex between the listed rows, which is the hard part.
+      const hidden = t.chance(0.8);
       const xs = hidden
         ? t.pick([[-3, -1, 1, 3, 5], [-5, -3, -1, 1, 3], [-3, -1, 1, 3]]).map((d) => p + d)
         : (() => { const start = p - t.int(1, 3); return [0, 1, 2, 3, 4].map((i) => start + i); })();
@@ -1881,69 +1769,6 @@
     }
   }
 
-  function polynomialTable(t) {
-    for (;;) {
-      // |r| ≥ 2: the sign-change midpoint m can never be ±1 (the table always
-      // lists x = 0), so a key "x ± 1" would be the only choice with its number.
-      const r = t.pick([-4, -3, -2, 2, 3, 4]);
-      const m = t.int(-4, 5);
-      const xs = [...new Set([r, m - 1, m + 1, 0, t.int(-5, 6)])].sort((x, y) => x - y);
-      if (xs.length !== 5 || xs.includes(m) || m === r || m === -r || m === 0) continue;
-      const values = new Map(xs.map((x) => [x, t.nonzero(-9, 9)]));
-      values.set(r, 0);
-      const left = values.get(m - 1);
-      if (m - 1 === r || m + 1 === r) continue;
-      values.set(m + 1, -Math.sign(left) * t.int(1, 9));
-      const v = values.get(0);
-      if ([r, -r, m, -m, 0].includes(v)) continue;
-      const correct = divisor(r);
-      // Sign slips on the key and on the sign-change midpoint, so no choice
-      // shares more with the others than the key does.
-      const pool = {
-        flip: [divisor(-r), `Uses x ${signed(r)}, whose zero is ${num(-r)}; the table shows p(${num(r)}) = 0, which gives the factor ${divisor(r)}.`],
-        mid: [divisor(m), `p changes sign between x = ${num(m - 1)} and x = ${num(m + 1)}, so it has a zero there, but not necessarily at ${num(m)}: this could be a factor, but need not be.`],
-        midFlip: [divisor(-m), `Takes the sign change between x = ${num(m - 1)} and x = ${num(m + 1)} as a zero at ${num(m)} and then writes the factor with the sign of the zero.`],
-        intercept: [divisor(v), `Reads p(0) = ${num(v)} backwards, as if ${num(v)} were a zero of p.`],
-      };
-      const wrong = t.chance(0.5) ? [pool.flip, pool.mid, pool.midFlip] : [pool.mid, pool.midFlip, pool.intercept];
-      const table = S.table(["x", "p(x)"], xs.map((x) => [x, values.get(x)]));
-      return {
-        responseType: "multiple-choice",
-        stimulus: { type: "table", content: table },
-        stem: "The table gives selected values of the polynomial function p. Which of the following must be a factor of p(x)?",
-        correct,
-        wrong,
-        explanation:
-          `The table shows p(${num(r)}) = 0, so by the factor theorem ${divisor(r)} must be a factor. ` +
-          `The sign change between x = ${num(m - 1)} and x = ${num(m + 1)} guarantees a zero somewhere between them, but not at any particular value, so ${divisor(m)} only could be a factor.`,
-        steps: [
-          "Look for a row where p(x) = 0.",
-          `p(${num(r)}) = 0, so ${num(r)} is a zero of p.`,
-          `A zero at x = ${num(r)} means ${divisor(r)} is a factor.`,
-          `Reject ${divisor(m)}: the table does not give p(${num(m)}), so nothing forces it to be 0.`,
-        ],
-        principles: [
-          "Factor theorem: p(a) = 0 exactly when x − a is a factor of p(x).",
-          "A sign change shows that a zero exists in an interval, not where it is.",
-        ],
-        trap: "A sign change in the table suggests a zero at the midpoint, but only a listed zero forces a factor.",
-        hint: "Which input does the table show p sends to 0?",
-        estimatedSeconds: 95,
-        verify: () => {
-          const rows = readTable(table);
-          const at = new Map(rows.map(([x, y]) => [x, y]));
-          // Interpolating polynomial through the table, plus multiples of the polynomial that vanishes on it:
-          // every one fits the table, so a "must" factor has to vanish for all of them.
-          const lagrange = (z) => rows.reduce((sum, [xi, yi], i) =>
-            sum + yi * rows.reduce((prod, [xj], j) => (j === i ? prod : (prod * (z - xj)) / (xi - xj)), 1), 0);
-          const vanish = (z) => rows.reduce((prod, [xj]) => prod * (z - xj), 1);
-          const mustVanish = (z) => (at.has(z) ? at.get(z) === 0 : [0, 1, -1].every((c) => approx(lagrange(z) + c * vanish(z), 0)));
-          return at.get(r) === 0 && [-r, m, -m, v].every((z) => !mustVanish(z)) && Math.sign(at.get(m - 1)) === -Math.sign(at.get(m + 1));
-        },
-      };
-    }
-  }
-
   function polynomialStatement(t) {
     for (;;) {
       const r = t.nonzero(-6, 6);
@@ -1961,10 +1786,12 @@
         both: [say("q", -r, R), `Attaches the remainder to q and takes the zero of ${divisor(r)} to be ${num(-r)}.`],
         factor: [say("p", r, 0), `Treats ${divisor(r)} as a factor; a nonzero remainder means it is not one.`],
         swap: [say("p", R, r), "Swaps the input and the output of p."],
+        factorMinus: [say("p", -r, 0), `Treats ${divisor(r)} as a factor and takes its zero to be ${num(-r)}.`],
+        quotientZero: [say("q", r, 0), `Treats ${divisor(r)} as a factor and attaches the statement to the quotient q.`],
       };
-      // Two sets of slips; in each, no choice shares more symbols with the
-      // others than the key does.
-      const wrong = t.chance(0.5) ? [pool.minus, pool.quotient, pool.both] : [pool.minus, pool.swap, pool.factor];
+      // Each one-change slip of the key comes with slips of its own, so the
+      // look-alike pairs point to the key no more often than chance.
+      const wrong = pairBalanced(t, correct, Object.values(pool), 0.25);
       return {
         responseType: "multiple-choice",
         stimulus: null,
@@ -1998,7 +1825,9 @@
             !holds((p, q) => horner(q, r) === R) &&
             !holds((p, q) => horner(q, -r) === R) &&
             !holds((p) => horner(p, r) === 0) &&
-            !holds((p) => horner(p, R) === r);
+            !holds((p) => horner(p, R) === r) &&
+            !holds((p) => horner(p, -r) === 0) &&
+            !holds((p, q) => horner(q, r) === 0);
         },
       };
     }
@@ -2044,6 +1873,10 @@
         [productCandidate(a, [[-r, 1], [-s, 1]]), `Opens the right way, but its zeros are ${num(-r)} and ${num(-s)}: the numbers in the factors have the signs of the zeros.`],
         [productCandidate(2 * a, [[r, 1], [s, 1]]), `Has the right x-intercepts and opens the right way, but its y-intercept is ${num(2 * yInt)}, not ${num(yInt)}.`],
         [productCandidate(a, [[r, 1], [other, 1]]), `Has an x-intercept at ${num(other)}, where the graph does not cross the x-axis.`],
+        // Two slips each, so the one-slip decoys have look-alikes of their own.
+        [productCandidate(-a, [[-r, 1], [-s, 1]]), `Makes two slips: its graph opens the other way, and its zeros are ${num(-r)} and ${num(-s)}.`],
+        [productCandidate(2 * a, [[-r, 1], [-s, 1]]), `Makes two slips: its zeros are ${num(-r)} and ${num(-s)}, and its y-intercept is doubled.`],
+        [productCandidate(-a, [[r, 1], [other, 1]]), `Makes two slips: it has an x-intercept at ${num(other)}, and its graph opens the other way.`],
       ];
       const vertex = (r + s) / 2;
       return {
@@ -2066,6 +1899,9 @@
         [productCandidate(-a, [[r, 2], [s, 1]]), "Has the right zeros and the repeated root, but the wrong sign, so its graph would rise and fall on the opposite sides."],
         // Skipped when s = −r: the reflected zeros would repeat another choice.
         ...(s !== -r ? [[productCandidate(a, [[-r, 2], [-s, 1]]), `Has zeros at ${num(-r)} and ${num(-s)}: the numbers in the factors have the signs of the zeros.`]] : []),
+        [productCandidate(-a, [[r, 1], [s, 2]]), `Makes two slips: the squared factor belongs to x = ${num(s)}, and the sign is reversed, so it rises and falls on the wrong sides.`],
+        [productCandidate(-a, [[r, 1], [s, 1]]), `Makes two slips: neither zero is repeated, and the sign is reversed.`],
+        ...(s !== -r ? [[productCandidate(-a, [[-r, 2], [-s, 1]]), `Makes two slips: its zeros are ${num(-r)} and ${num(-s)}, and the sign is reversed.`]] : []),
       ];
       const turn = (r + 2 * s) / 3;
       return {
@@ -2086,6 +1922,8 @@
       [exponentialCandidate(a + shiftUp, base, c - shiftUp), `Has the right y-intercept, but its graph levels off toward y = ${num(c - shiftUp)}, not y = ${num(c)}.`],
       [exponentialCandidate(2 * a, base, c), `Levels off toward the right line, but its y-intercept is ${num(2 * a + c)}, not ${num(a + c)}.`],
       [exponentialCandidate(-a, base, c), `Levels off toward the right line, but it is the reflection of the graph: its y-intercept is ${num(-a + c)}.`],
+      [exponentialCandidate(-a, inverse, c), `Makes two slips: its base is ${inverse[1] === 1 ? inverse[0] : `${inverse[0]}/${inverse[1]}`}, and it is reflected, so its y-intercept is ${num(-a + c)}.`],
+      [exponentialCandidate(2 * a, inverse, c), `Makes two slips: its base is ${inverse[1] === 1 ? inverse[0] : `${inverse[0]}/${inverse[1]}`}, and its y-intercept is ${num(2 * a + c)}.`],
     ].filter(([candidate], index) => candidate.text !== key.text && !(index === 1 && a + shiftUp === 0));
     // A window of at most 12 units, so the grid stays one unit per square,
     // reaching from below the curve's level in the direction it grows.
@@ -2122,7 +1960,10 @@
     const gridWords = tall ? "grid lines 1 unit apart horizontally and 2 units apart vertically" : "a grid of unit squares";
     const alt = `The graph of y = f(x) in ${P.describe()}, on ${gridWords}: ${shape.describe}.`;
     const figure = { svg: P.svg([...P.grid(), ...P.axes(), P.curve(shape.key.fn)], alt), alt, notToScale: false };
-    const decoys = t.sample(shape.decoys, 3);
+    // Decoys chosen so look-alike pairs point to the key no more often than chance.
+    const byText = new Map(shape.decoys.map((entry) => [entry[0].text, entry]));
+    const decoys = pairBalanced(t, shape.key.text, shape.decoys.map(([candidate, why]) => [candidate.text, why]))
+      .map(([text]) => byText.get(text));
     // Visible difference: a decoy must leave the drawn curve by at least half a
     // grid unit somewhere inside the window.
     const visibleGap = (fn) => sampleXs.some((x) => {
@@ -2534,27 +2375,32 @@
 
   const vertexFromConditions = {
     id: "vertex-from-conditions",
+    difficulty: "Hard",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "quadratic functions",
     title: "Quadratic pinned down by indirect conditions",
     recognize:
-      "Conditions on a quadratic's graph each translate into a form: a vertex into a(x − h)² + k, zeros into " +
-      "a(x − r)(x − s), equal outputs into an axis of symmetry halfway between the inputs; choose the form first.",
+      "Conditions on a quadratic's graph each translate into a form: a vertex into a(x − h)² + k, equal outputs into " +
+      "an axis of symmetry halfway between the inputs, which fixes b through x = −b/(2a); and a + b + c is f(1). " +
+      "Choose the form first.",
     rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["wrong-quantity", "sign-error", "neighbouring-rule"],
     build(t) {
-      const variant = t.int(0, 2);
+      // Zeros and one point (write a(x − r)(x − s), find a, evaluate at the
+      // midpoint) was Medium work and was dropped.
+      const variant = t.int(0, 1);
       const numeric = t.chance(0.35);
       // The presentation is fixed before any redraw, so figures keep their share.
       const style = t.pick(["values", "graph", "intercept"]);
-      const make = [vertexAndPoint, zerosAndPoint, symmetricInputs][variant];
+      const make = [vertexAndPoint, symmetricInputs][variant];
       return { estimatedSeconds: 120, ...spreadChoices(t, drawUntilDistinctHard(() => make(t, numeric, style))) };
     },
   };
 
   const exponentialRewrite = {
     id: "exponential-rewrite",
+    difficulty: "Hard",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "exponential functions",
@@ -2575,26 +2421,25 @@
     },
   };
 
-  // Hard: the table gives g, not f, and f must be recovered by undoing the
-  // transformation; or the table hides a quadratic's vertex that the
-  // transformation then moves.
+  // Hard: the table hides a quadratic's vertex, which the transformation then
+  // moves. (Reading f back from a table of g was one reverse lookup, Medium
+  // work, and was dropped.)
   const functionTransformationTable = {
     id: "function-transformation-table",
+    difficulty: "Hard",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "polynomial functions",
     title: "Transformed function recovered from a table",
     recognize:
-      "The table describes one function but the question is about another built from it: find which input the " +
-      "inner function actually receives (inside changes act on x, opposite to their sign), and undo or apply the " +
-      "outside change last; a quadratic's vertex may lie between the listed rows.",
+      "The table describes a quadratic whose vertex may lie between the listed rows: equal outputs fix the axis of " +
+      "symmetry, and the differences fix the leading coefficient. Then the transformation moves the vertex: inside " +
+      "changes act on x, opposite to their sign, and outside changes act last.",
     rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
     tricks: ["sign-error", "intermediate-value", "wrong-quantity", "neighbouring-rule"],
     build(t) {
-      const reverse = t.chance(0.45);
       const numeric = t.chance(0.35);
-      const make = reverse ? () => transformReverse(t, numeric) : () => transformQuadratic(t, numeric);
-      return { estimatedSeconds: 110, ...spreadChoices(t, drawUntilDistinctHard(make)) };
+      return { estimatedSeconds: 110, ...spreadChoices(t, drawUntilDistinctHard(() => transformQuadratic(t, numeric))) };
     },
   };
 
@@ -2620,18 +2465,20 @@
 
   const polynomialFactorRemainder = {
     id: "polynomial-factor-remainder",
+    difficulty: "Hard",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "polynomial functions",
     title: "Polynomial factor and remainder conditions",
     recognize:
-      "A factor or a remainder is a statement about one value of p: x − a is a factor exactly when p(a) = 0, and the " +
-      "remainder on division by x − a is p(a). Only a listed zero forces a factor.",
+      "A division statement is a statement about one value of p: writing p(x) = (x − a)q(x) + R and choosing x = a " +
+      "removes the unknown quotient, so p(a) = R; nothing fixes q(a) or p at the opposite number.",
     rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
     tricks: ["must-vs-could", "sign-error", "neighbouring-rule"],
     build(t) {
-      const make = t.chance(0.5) ? () => polynomialTable(t) : () => polynomialStatement(t);
-      return { estimatedSeconds: 100, ...drawUntilDistinctHard(make) };
+      // "Which must be a factor" from a table with a listed zero was one
+      // lookup (Medium work) and was dropped.
+      return { estimatedSeconds: 100, ...drawUntilDistinctHard(() => polynomialStatement(t)) };
     },
   };
 
@@ -2677,6 +2524,7 @@
 
   const graphWhichFunction = {
     id: "graph-which-function",
+    difficulty: "Hard",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "polynomial functions",
@@ -2693,6 +2541,7 @@
 
   const graphTransformation = {
     id: "graph-transformation",
+    difficulty: "Medium",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "polynomial functions",
@@ -2700,7 +2549,8 @@
     recognize:
       "g(x) = f(x − h) + k moves the graph of f right h and up k: find the input f receives, read f from the graph there, " +
       "and apply the outside change last.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    // Medium: one input found, one lookup, one outside change (the 2026-09-26 review).
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["sign-error", "intermediate-value", "wrong-quantity"],
     build(t) {
       const numeric = t.chance(0.25);
@@ -2711,10 +2561,266 @@
     },
   };
 
+  /* ================================================ quadratic-must-be-true */
+
+  // Descriptions of a parabola y = a(x − h)² + k, as a predicate on its
+  // constants and the reason each constant's sign follows (b = −2ah and
+  // c = ah² + k in standard form; disc = b² − 4ac). `given` lists the
+  // constants the description states directly.
+  const PARABOLA_FACTS = [
+    {
+      words: "opens downward and has two x-intercepts",
+      holds: (a, h, k) => a < 0 && k > 0,
+      given: ["a", "disc"],
+      why: {
+        a: "It opens downward, so a < 0.",
+        k: "A parabola that opens downward crosses the x-axis twice only when its highest point, the vertex, is above the x-axis, so k > 0.",
+        disc: "Two x-intercepts means two real zeros, so b² − 4ac > 0.",
+      },
+    },
+    {
+      words: "opens upward and has no x-intercepts",
+      holds: (a, h, k) => a > 0 && k > 0,
+      given: ["a", "disc"],
+      why: {
+        a: "It opens upward, so a > 0.",
+        k: "A parabola that opens upward and never reaches the x-axis has its lowest point, the vertex, above the x-axis, so k > 0.",
+        c: "Every value of f is at least k > 0, and c = f(0) is one of them, so c > 0.",
+        disc: "No x-intercepts means no real zeros, so b² − 4ac < 0.",
+      },
+    },
+    {
+      words: "opens downward and has no x-intercepts",
+      holds: (a, h, k) => a < 0 && k < 0,
+      given: ["a", "disc"],
+      why: {
+        a: "It opens downward, so a < 0.",
+        k: "A parabola that opens downward and never reaches the x-axis has its highest point, the vertex, below the x-axis, so k < 0.",
+        c: "Every value of f is at most k < 0, and c = f(0) is one of them, so c < 0.",
+        disc: "No x-intercepts means no real zeros, so b² − 4ac < 0.",
+      },
+    },
+    {
+      words: "opens upward and has its vertex in Quadrant IV",
+      holds: (a, h, k) => a > 0 && h > 0 && k < 0,
+      given: ["a", "h", "k"],
+      why: {
+        a: "It opens upward, so a > 0.",
+        h: "A vertex in Quadrant IV has h > 0.",
+        k: "A vertex in Quadrant IV has k < 0.",
+        b: "b = −2ah, and a > 0 and h > 0, so b < 0.",
+        disc: "The vertex is below the x-axis and the parabola opens upward, so it crosses the x-axis twice and b² − 4ac > 0.",
+      },
+    },
+    {
+      words: "opens downward and has its vertex in Quadrant II",
+      holds: (a, h, k) => a < 0 && h < 0 && k > 0,
+      given: ["a", "h", "k"],
+      why: {
+        a: "It opens downward, so a < 0.",
+        h: "A vertex in Quadrant II has h < 0.",
+        k: "A vertex in Quadrant II has k > 0.",
+        b: "b = −2ah, and a < 0 and h < 0 make ah > 0, so b < 0.",
+        disc: "The vertex is above the x-axis and the parabola opens downward, so it crosses the x-axis twice and b² − 4ac > 0.",
+      },
+    },
+    {
+      words: "opens upward and has two x-intercepts, both of which have positive x-coordinates",
+      holds: (a, h, k) => a > 0 && k < 0 && h > 0 && a * h * h + k > 0,
+      given: ["a", "disc"],
+      why: {
+        a: "It opens upward, so a > 0.",
+        h: "The vertex is halfway between the two positive x-intercepts, so h > 0.",
+        k: "A parabola that opens upward crosses the x-axis twice only when its vertex is below the x-axis, so k < 0.",
+        b: "b = −2ah, and a > 0 and h > 0, so b < 0.",
+        c: "The product of the zeros is c/a, and both zeros are positive, so c/a > 0 and c > 0.",
+        disc: "Two x-intercepts means b² − 4ac > 0.",
+      },
+    },
+    {
+      words: "opens downward and has one x-intercept on each side of the y-axis",
+      holds: (a, h, k) => a < 0 && a * h * h + k > 0,
+      given: ["a", "disc"],
+      why: {
+        a: "It opens downward, so a < 0.",
+        c: "The zeros have opposite signs, so their product c/a is negative; with a < 0, that makes c > 0.",
+        k: "The vertex is the highest point and f(0) = c > 0, so k ≥ c > 0.",
+        disc: "Two x-intercepts means b² − 4ac > 0.",
+      },
+    },
+    {
+      words: "opens upward, crosses the y-axis below the x-axis, and has its vertex to the right of the y-axis",
+      holds: (a, h, k) => a > 0 && h > 0 && a * h * h + k < 0,
+      given: ["a", "h", "c"],
+      why: {
+        a: "It opens upward, so a > 0.",
+        h: "The vertex is to the right of the y-axis, so h > 0.",
+        c: "It crosses the y-axis below the x-axis, so c = f(0) < 0.",
+        k: "The vertex is the lowest point, so k ≤ f(0) = c < 0.",
+        b: "b = −2ah, and a > 0 and h > 0, so b < 0.",
+        disc: "An upward parabola that takes a negative value crosses the x-axis twice, so b² − 4ac > 0.",
+      },
+    },
+  ];
+
+  // Statements about the constants: text, the constants they use, and their value.
+  const VERTEX_STATEMENTS = [
+    ["k > 0", ["k"], (v) => v.k > 0], ["k < 0", ["k"], (v) => v.k < 0],
+    ["h > 0", ["h"], (v) => v.h > 0], ["h < 0", ["h"], (v) => v.h < 0],
+    ["ak > 0", ["a", "k"], (v) => v.a * v.k > 0], ["ak < 0", ["a", "k"], (v) => v.a * v.k < 0],
+    ["ah > 0", ["a", "h"], (v) => v.a * v.h > 0], ["ah < 0", ["a", "h"], (v) => v.a * v.h < 0],
+    ["hk > 0", ["h", "k"], (v) => v.h * v.k > 0], ["hk < 0", ["h", "k"], (v) => v.h * v.k < 0],
+    [`a ${MINUS} k > 0`, ["a", "k"], (v) => v.a - v.k > 0], [`a ${MINUS} k < 0`, ["a", "k"], (v) => v.a - v.k < 0],
+  ];
+  const STANDARD_STATEMENTS = [
+    ["c > 0", ["c"], (v) => v.c > 0], ["c < 0", ["c"], (v) => v.c < 0],
+    ["b > 0", ["b"], (v) => v.b > 0], ["b < 0", ["b"], (v) => v.b < 0],
+    ["ac > 0", ["a", "c"], (v) => v.a * v.c > 0], ["ac < 0", ["a", "c"], (v) => v.a * v.c < 0],
+    ["ab > 0", ["a", "b"], (v) => v.a * v.b > 0], ["ab < 0", ["a", "b"], (v) => v.a * v.b < 0],
+    ["bc > 0", ["b", "c"], (v) => v.b * v.c > 0], ["bc < 0", ["b", "c"], (v) => v.b * v.c < 0],
+    ["b² − 4ac > 0", ["disc"], (v) => v.disc > 0], ["b² − 4ac < 0", ["disc"], (v) => v.disc < 0],
+    [`a ${MINUS} c > 0`, ["a", "c"], (v) => v.a - v.c > 0], [`a ${MINUS} c < 0`, ["a", "c"], (v) => v.a - v.c < 0],
+  ];
+
+  // Parabolas that fit a description, on a grid fine enough that small
+  // vertices and leading coefficients are included, for classifying each
+  // statement as must, cannot, or could, and for counterexamples.
+  const SAMPLE_A = [-4, -3, -2, -1, -0.5, -0.25, 0.25, 0.5, 1, 2, 3, 4];
+  const SAMPLE_H = [-6, -5, -4, -3, -2, -1, -0.5, -0.25, 0.25, 0.5, 1, 2, 3, 4, 5, 6];
+  const SAMPLE_K = [-9, -7, -5, -3, -2, -1, -0.5, -0.25, 0.25, 0.5, 1, 2, 3, 5, 7, 9];
+  function parabolaSamples(fact) {
+    const out = [];
+    for (const a of SAMPLE_A) {
+      for (const h of SAMPLE_H) {
+        for (const k of SAMPLE_K) {
+          const b = -2 * a * h;
+          const c = a * h * h + k;
+          // Every constant in either form is nonzero, as the stem says.
+          if (!fact.holds(a, h, k) || h === 0 || k === 0 || c === 0) continue;
+          out.push({ a, h, k, b, c, disc: b * b - 4 * a * c });
+        }
+      }
+    }
+    return out;
+  }
+
+  const vertexShown = (v) => `f(x) = ${lead(v.a)}(${lin(1, -v.h)})²${v.k === 0 ? "" : ` ${signed(v.k)}`}`;
+  const standardShown = (v) => `f(x) = ${poly([v.a, v.b, v.c])}`;
+
+  const quadraticMustBeTrue = {
+    id: "quadratic-must-be-true",
+    difficulty: "Hard",
+    domain: "Advanced Math",
+    skill: "Nonlinear functions",
+    subskill: "quadratic functions",
+    title: "Signs of a quadratic's constants that must follow from its graph",
+    recognize:
+      "Translate each fact about the graph into a sign: the opening gives a, the vertex's position gives h and k, the " +
+      "y-intercept gives c = f(0), the number of x-intercepts gives the discriminant, and b = −2ah. A statement must " +
+      "be true only if it follows for every parabola that fits; one that fits some of them only could be true.",
+    // Hard: constants as parameters, a must-versus-could judgment, and a
+    // chain of sign facts that must be combined.
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
+    tricks: ["must-vs-could", "reversed-condition", "sign-error"],
+    build(t) {
+      for (;;) {
+        const fact = t.pick(PARABOLA_FACTS);
+        const standard = t.chance(0.5);
+        const statements = standard ? STANDARD_STATEMENTS : VERTEX_STATEMENTS;
+        const samples = parabolaSamples(fact);
+        const status = (test) => {
+          const count = samples.filter(test).length;
+          return count === samples.length ? "must" : count === 0 ? "cannot" : "could";
+        };
+        const classified = statements.map(([text, uses, test]) => ({ text, uses, test, kind: status(test) }));
+        // A key the description does not state outright, whose reasons are known.
+        const keys = classified.filter((entry) => entry.kind === "must" &&
+          !(entry.uses.length === 1 && fact.given.includes(entry.uses[0])) &&
+          entry.uses.every((name) => fact.why[name]));
+        const could = classified.filter((entry) => entry.kind === "could");
+        const cannot = classified.filter((entry) => entry.kind === "cannot");
+        if (!keys.length || could.length < 1 || cannot.length < 1) continue;
+        // Statements that many descriptions force (k > 0, ak > 0) are the key
+        // less often, so no statement is usually the answer when it is offered.
+        const common = (entry) => entry.uses.length === 1 || entry.text.startsWith("ak ") || entry.text.startsWith("ac ");
+        const rarer = keys.filter((entry) => !common(entry));
+        const key = t.pick(rarer.length && t.chance(0.6) ? rarer : keys);
+        // At least one could-be statement (the must-versus-could trap), with
+        // look-alike pairs that point to the key no more often than chance.
+        const byText = new Map([...could, ...cannot].map((entry) => [entry.text, entry]));
+        let chosen = null;
+        for (let attempt = 0; attempt < 12 && !chosen; attempt += 1) {
+          const triple = pairBalanced(t, key.text, [...could, ...cannot].map((entry) => [entry.text, ""]))
+            .map(([text]) => byText.get(text));
+          // Statements that are often the key are offered as wrong answers
+          // whenever they can be, so offering one says nothing.
+          const offersCommon = triple.some((entry) => common(entry) && entry.text !== key.text);
+          if (triple.length === 3 && triple.some((entry) => entry.kind === "could") &&
+            (offersCommon || attempt >= 8)) chosen = triple;
+        }
+        if (!chosen) continue;
+        const show = standard ? standardShown : vertexShown;
+        const reasonFor = (entry) => {
+          if (entry.kind === "cannot") {
+            const because = entry.uses.map((name) => fact.why[name]).filter(Boolean).join(" ");
+            return `Is false for every parabola that fits the description.${because ? ` ${because}` : ""}`;
+          }
+          // Counterexamples with whole-number constants in the form shown, when there are any.
+          const whole = (v) => (standard ? [v.a, v.b, v.c] : [v.a, v.h, v.k]).every(Number.isInteger);
+          const find = (test) => samples.find((v) => test(v) && whole(v)) || samples.find(test);
+          const yes = find(entry.test);
+          const no = find((sample) => !entry.test(sample));
+          return `Could be true but need not be: ${show(yes)} fits the description and satisfies it, but ${show(no)} also fits and does not.`;
+        };
+        const keyWhy = key.uses.map((name) => fact.why[name]);
+        const form = standard ? "f(x) = ax² + bx + c" : "f(x) = a(x − h)² + k";
+        const steps = [
+          ...keyWhy,
+          ...(key.uses.length === 2 ? [`So ${key.text}${/ − /.test(key.text)
+            ? `: ${samples[0].a > 0 ? "a positive" : "a negative"} number minus ${samples[0].a > 0 ? "a negative" : "a positive"} number is ${samples[0].a > 0 ? "positive" : "negative"}`
+            : ""}.`] : []),
+          "The other statements are either false for every such parabola or true for only some of them.",
+        ];
+        return {
+          responseType: "multiple-choice",
+          estimatedSeconds: 120,
+          stimulus: null,
+          stem:
+            `The function f is defined by ${form}, where ${standard ? "a, b, and c" : "a, h, and k"} are nonzero constants. ` +
+            `In the xy-plane, the graph of y = f(x) ${fact.words}. Which of the following must be true?`,
+          correct: key.text,
+          wrong: chosen.map((entry) => [entry.text, reasonFor(entry)]),
+          explanation: steps.join(" "),
+          steps,
+          principles: [
+            "In f(x) = a(x − h)² + k, the sign of a gives the opening and (h, k) is the vertex; in standard form, c = f(0) and b = −2ah.",
+            "A statement must be true only if it holds for every function that fits the given facts.",
+          ],
+          trap: "A statement that fits one example could be true without having to be; test it against the facts, not against a single drawing.",
+          hint: "Turn each fact about the graph into a statement about the sign of a constant.",
+          verify: () => {
+            // Recheck on non-integer parabolas: the key holds for every one, and each distractor fails for at least one.
+            const pool = [];
+            for (let i = 0; i < 4000; i += 1) {
+              const a = ((i * 7919) % 97) / 16 - 3.03;
+              const h = ((i * 104729) % 131) / 11 - 5.95;
+              const k = ((i * 1299709) % 173) / 9 - 9.6;
+              const b = -2 * a * h;
+              const c = a * h * h + k;
+              if (a === 0 || h === 0 || k === 0 || c === 0 || !fact.holds(a, h, k)) continue;
+              pool.push({ a, h, k, b, c, disc: b * b - 4 * a * c });
+            }
+            return pool.length > 20 && pool.every(key.test) && chosen.every((entry) => pool.some((sample) => !entry.test(sample)));
+          },
+        };
+      }
+    },
+  };
+
   return [
     factoredPolynomialIntercepts, exponentialModelReading, quadraticVertexReading,
-    projectileHeightModel, exponentialTableModel, vertexFromConditions, exponentialRewrite,
-    functionTableEvaluate, polynomialConstantFromRemainder, exponentialFromWords, functionTransformationTable,
-    polynomialFactorRemainder, graphWhichFunction, graphTransformation,
+    projectileHeightModel, exponentialTableModel, functionTableEvaluate, polynomialConstantFromRemainder,
+    exponentialFromWords, graphTransformation, vertexFromConditions, exponentialRewrite, functionTransformationTable,
+    polynomialFactorRemainder, graphWhichFunction, quadraticMustBeTrue,
   ];
 });

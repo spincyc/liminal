@@ -589,12 +589,14 @@
     domain: "Algebra",
     skill: "Linear equations in two variables",
     subskill: "graph interpretation",
-    difficulty: "Medium",
+    difficulty: "Easy",
     title: "Reading a context line through two labeled points",
     recognize:
       "The point at x = 0 is the starting amount and the change between the two points, divided by the change in x, " +
       "is the rate; the question then needs one more step from the start, not from the second point.",
-    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    // Easy: the start and the rate are read off the labeled points and used
+    // once (the 2026-09-26 review found it plays at Easy level).
+    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 0 },
     tricks: ["intermediate-value", "wrong-quantity", "sign-error"],
     build(t) {
       const form = t.pick(["value", "time", "slope"]);
@@ -1445,13 +1447,14 @@
     domain: "Algebra",
     skill: "Linear equations in two variables",
     subskill: "graph interpretation",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Change in one coordinate forced by a change in the other along a line",
     recognize:
       "Two points on ax + by = c satisfy it with the same c, so subtracting the two statements leaves " +
       "a(change in x) + b(change in y) = 0: the unknown starting point and the constant drop out, and only the ratio " +
       "of the coefficients matters.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    // Medium: one rate (the slope) applied to one change.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["sign-error", "neighbouring-rule", "intermediate-value"],
     build(t) {
       const form = t.pick(["rise", "run", "choice"]);
@@ -1583,13 +1586,15 @@
     domain: "Algebra",
     skill: "Linear equations in two variables",
     subskill: "graph interpretation",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Intercept or equation of a translated line read from its graph",
     recognize:
       "A vertical shift changes the y-intercept by the shift but moves the x-intercept by the shift divided by the " +
       "slope; a horizontal shift does the reverse. Read the slope and intercept from the graph, move the line, and " +
       "only then set the other variable to 0.",
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    // Medium: read a slope and an intercept, move the line, set a variable
+    // to 0; the work is planned, not a structure to find.
+    rubric: { steps: 2, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 2 },
     tricks: ["wrong-quantity", "sign-error", "neighbouring-rule"],
     build(t) {
       const form = t.pick(["vertical", "horizontal", "equation"]);
@@ -1856,10 +1861,17 @@
             [askB ? bSlip : aSlip, "Takes the slope to be b/a, the rise over the run with the sign of the run lost."],
             [askB ? aSlip : bSlip, `Takes the slope to be b/a and then reports ${askB ? "a" : "b"}.`],
             [total / 2, "Assumes the two intercepts are equal."],
-            [-key, "Loses a sign in the last step."],
           ].filter(([value]) => Number.isFinite(value) && exact(value) && Math.abs(value) < 1000);
           const numeric = t.chance(0.4);
-          const wrong = numeric ? [] : spreadAround(t, key, pool);
+          // The sign slip is the key's negation, so it is offered only with
+          // the other intercept and that intercept's own sign slip.
+          const other = askB ? a : b;
+          const mirrored = [
+            [-key, "Loses a sign in the last step."],
+            [other, `Gives the value of ${askB ? "a" : "b"}, the other intercept.`],
+            [-other, `Gives the value of ${askB ? "a" : "b"}, the other intercept, and loses its sign.`],
+          ];
+          const wrong = numeric ? [] : t.chance(0.3) ? t.shuffle(mirrored) : spreadAround(t, key, pool);
           if (!numeric && (collides(key, wrong) || distinctWrongHard(key, wrong) < 3)) continue;
           const condition = useSum ? `a + b = ${num(total)}` : `b ${MINUS} a = ${num(total)}`;
           const bInA = slopeTerm(b, a, "a");
@@ -1900,7 +1912,8 @@
           };
         }
         // ratio-point: a = r·b, and the line passes through (x1, y1).
-        const r = t.pick([2, 3, 4, -2, -3, -4]);
+        // Not 2: a = 2b would make a the key's double, a look-alike of it.
+        const r = t.pick([3, 4, -2, -3, -4]);
         const b = t.nonzero(-9, 9);
         const x1 = r * t.nonzero(-3, 3);
         const y1 = b - x1 / r;
@@ -1952,5 +1965,199 @@
     },
   };
 
-  return [pointOnLine, standardFormSlope, equationModel, graphContext, linearModelUnits, interceptMeaning, pointShift, translatedLine, interceptConditions];
+  /* --------------------------------------------------- integer-combination-count */
+
+  // Two kinds of item whose sizes a and b share a common factor g half the
+  // time. x and y name the cheaper and the dearer kind. Every scene reads a
+  // count of one with the singular noun.
+  const comboScenes = [
+    {
+      kinds: ["bracelet", "bracelets", "necklace", "necklaces"], maxB: 30, verb: "sold",
+      text: (v, both) =>
+        `At a craft fair, a vendor sells bracelets for ${usd(v.a)} each and necklaces for ${usd(v.b)} each. On ` +
+        `Saturday, the vendor's sales of bracelets and necklaces totaled ${usd(v.C)}, and the vendor ${both
+          ? "sold at least one bracelet and at least one necklace"
+          : "may have sold no bracelets or no necklaces"}.`,
+      total: (v) => `${usd(v.C)} in sales`,
+    },
+    {
+      kinds: ["easy question", "easy questions", "hard question", "hard questions"], maxB: 18, verb: "answered correctly",
+      text: (v, both) =>
+        `In a trivia game, a team earns ${v.a} points for each easy question and ${v.b} points for each hard question ` +
+        `it answers correctly, and no points otherwise. A team finished the game with exactly ${v.C} points${both
+          ? " and answered at least one easy question and at least one hard question correctly"
+          : "; it may have answered no easy questions or no hard questions correctly"}.`,
+      total: (v) => `${v.C} points`,
+    },
+    {
+      kinds: ["small box", "small boxes", "large box", "large boxes"], maxB: 30, verb: "in the crate",
+      text: (v, both) =>
+        `A shipping crate is packed with small boxes that weigh ${v.a} pounds each and large boxes that weigh ${v.b} ` +
+        `pounds each. The boxes in the crate weigh exactly ${S.grouped(v.C)} pounds in all, and the crate ${both
+          ? "holds at least one box of each size"
+          : "may hold boxes of only one size"}.`,
+      total: (v) => `${S.grouped(v.C)} pounds`,
+    },
+    {
+      kinds: ["binder", "binders", "storage box", "storage boxes"], maxB: 15, verb: "on the shelf",
+      text: (v, both) =>
+        `A shelf is exactly ${v.C} inches long. It is filled end to end, with no gaps, by binders that are ${v.a} inches ` +
+        `wide and storage boxes that are ${v.b} inches wide${both
+          ? ", and at least one of each is on the shelf"
+          : "; the shelf may hold only binders or only storage boxes"}.`,
+      total: (v) => `${v.C} inches`,
+    },
+  ];
+
+  const comboCount = {
+    id: "integer-combination-count",
+    domain: "Algebra",
+    skill: "Linear equations in two variables",
+    subskill: "equation modeling",
+    difficulty: "Hard",
+    title: "Whole-number solutions of a two-variable linear equation in context",
+    recognize:
+      "The story is ax + by = c with x and y whole numbers. Find one solution, then trade one kind for the other " +
+      "without changing the total: after dividing out any common factor of a and b, x moves in steps of b and y in " +
+      "steps of a. Count or bound the solutions only after deciding whether 0 of a kind is allowed.",
+    // Hard: the structure of whole-number solutions must be seen before any
+    // counting, and both the step size and the zero case are traps.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["context-constraint", "neighbouring-rule", "wrong-quantity", "reversed-condition"],
+    build(t) {
+      const scene = t.pick(comboScenes);
+      const form = t.pick(["count", "count", "greatest", "least"]);
+      const both = t.chance(0.5);
+      // A combination with none of one kind is possible most of the time, so
+      // the "at least one of each" condition decides the answer.
+      const wantZero = t.chance(0.7);
+      const numeric = t.chance(0.45);
+      const [xOne, xMany, yOne, yMany] = scene.kinds;
+      for (;;) {
+        const g = t.pick([1, 1, 2, 3]);
+        const ap = t.int(2, 6);
+        const bp = t.int(ap + 1, 9);
+        if (S.gcd(ap, bp) !== 1) continue;
+        const a = g * ap;
+        const b = g * bp;
+        if (b > scene.maxB) continue;
+        const C = g * t.int(2 * ap * bp, 5 * ap * bp);
+        const v = { a, b, C };
+        // Every whole-number solution, x ascending.
+        const all = [];
+        for (let x = 0; a * x <= C; x += 1) if ((C - a * x) % b === 0) all.push([x, (C - a * x) / b]);
+        const hasZero = all.some(([x, y]) => x === 0 || y === 0);
+        if (hasZero !== wantZero) continue;
+        const solutions = both ? all.filter(([x, y]) => x > 0 && y > 0) : all;
+        if (solutions.length < 3 || solutions.length > 9) continue;
+        const askX = t.chance(0.5);
+        const [one, many] = askX ? [xOne, xMany] : [yOne, yMany];
+        const [otherMany] = askX ? [yMany] : [xMany];
+        const pick = ([x, y]) => (askX ? x : y);
+        const values = solutions.map(pick);
+        const lowest = Math.min(...values);
+        const highest = Math.max(...values);
+        const capital = (text) => `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
+        const zeroRule = both
+          ? `counts a combination with none of one kind, though at least one of each is required`
+          : `leaves out the combination with none of one kind, which is allowed`;
+        const first = solutions[0];
+        const reduced = g === 1 ? "" : ` Dividing by ${g} gives ${lin(ap, 0)} + ${lin(bp, 0, "y")} = ${num(C / g)}.`;
+        let key;
+        const wrong = [];
+        let stem;
+        let answerStep;
+        if (form === "count") {
+          key = solutions.length;
+          const positive = all.filter(([x, y]) => x > 0 && y > 0).length;
+          const edges = all.length - positive;
+          if (hasZero) {
+            wrong.push([both ? all.length : positive, both
+              ? `Counts ${edges === 1 ? "a combination" : "the combinations"} with none of one kind, though at least one of each is required.`
+              : `Leaves out ${edges === 1 ? "the combination" : "the combinations"} with none of one kind, which ${edges === 1 ? "is" : "are"} allowed.`]);
+          }
+          if (g > 1) {
+            const coarse = solutions.filter(([x]) => (x - first[0]) % b === 0).length;
+            wrong.push([coarse, `Steps the number of ${xMany} by ${b} instead of ${bp}; after dividing out the common factor ${g}, ${bp} more ${xMany} and ${ap} fewer ${yMany} keep the total the same.`]);
+          }
+          const span = solutions[solutions.length - 1][0] - first[0];
+          wrong.push([key - 1, `Divides the range of the number of ${xMany}, ${num(span)}, by the step ${bp} without counting both ends.`]);
+          wrong.push([key + 1, `Divides the range of the number of ${xMany}, ${num(span)}, by the step ${bp} and then adds 1 for each end, counting one combination twice.`]);
+          const start = both ? 1 : 0;
+          const yRange = Math.floor((C - (both ? a : 0)) / b) - start + 1;
+          wrong.push([yRange, `Counts every possible number of ${yMany} from ${start} up, without checking that the rest of the total is a whole number of ${xMany}.`]);
+          const xRange = Math.floor((C - (both ? b : 0)) / a) - start + 1;
+          wrong.push([xRange, `Counts every possible number of ${xMany} from ${start} up, without checking that the rest of the total is a whole number of ${yMany}.`]);
+          stem = `${scene.text(v, both)} How many different combinations of numbers of ${xMany} and ${yMany} are possible?`;
+          answerStep = `There are ${key} combinations.`;
+        } else {
+          const greatest = form === "greatest";
+          key = greatest ? highest : lowest;
+          const size = askX ? a : b;
+          const otherSize = askX ? b : a;
+          const naive = greatest
+            ? Math.floor((C - (both ? otherSize : 0)) / size)
+            : both ? 1 : 0;
+          wrong.push([naive, greatest
+            ? `Divides ${both ? `what is left after one of the other kind` : "the whole total"} by ${size} and rounds down, without checking that the rest is a whole number of ${otherMany}.`
+            : `Takes the smallest number the condition allows, without checking that the rest is a whole number of ${otherMany}.`]);
+          const at = solutions[values.indexOf(key)];
+          wrong.push([askX ? at[1] : at[0], `Gives the number of ${otherMany} in that combination, not the number of ${many}.`]);
+          wrong.push([greatest ? lowest : highest, `Gives the ${greatest ? "least" : "greatest"} possible number of ${many}, not the ${greatest ? "greatest" : "least"}.`]);
+          // The answer under the other reading of "none of one kind", when it differs.
+          const otherReading = (both ? all : all.filter(([x, y]) => x > 0 && y > 0)).map(pick);
+          const edge = otherReading.length ? (greatest ? Math.max(...otherReading) : Math.min(...otherReading)) : key;
+          if (edge !== key) wrong.push([edge, `${capital(zeroRule)}.`]);
+          // The quick answer must be wrong, or the item does not test the trap.
+          if (naive === key) continue;
+          stem = `${scene.text(v, both)} What is the ${greatest ? "greatest" : "least"} possible number of ${many} ${scene.verb}?`;
+          answerStep = `The ${greatest ? "greatest" : "least"} number of ${many} is ${key}.`;
+        }
+        if (key <= 0 && form === "count") continue;
+        if (collides(key, wrong) || distinctWrong(key, wrong.filter(([value]) => value >= 0)) < 3) continue;
+        const offered = spreadAround(t, key, wrong.filter(([value]) => value >= 0));
+        const list = solutions.map(([x, y]) => `(${x}, ${y})`).join(", ");
+        const steps = [
+          `Let x be the number of ${xMany} and y the number of ${yMany}: ${lin(a, 0)} + ${lin(b, 0, "y")} = ${num(C)}.${reduced}`,
+          `One solution is x = ${first[0]}, y = ${first[1]}. Adding ${bp} to x and taking ${ap} from y keeps the total the same, and no smaller trade does.`,
+          `${both ? "With at least one of each" : "Allowing none of one kind"}, the combinations (x, y) are ${list}.`,
+          answerStep,
+        ];
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 130,
+          stimulus: null,
+          stem,
+          correct: key,
+          wrong: numeric ? [] : offered,
+          explanation: steps.join(" "),
+          steps,
+          principles: [
+            "If (x, y) solves ax + by = c, so does (x + b/g, y − a/g), where g is the greatest common factor of a and b; these trades give every whole-number solution.",
+            "A count of items can be 0 only when the situation allows none of that kind.",
+          ],
+          trap: both
+            ? `A combination with none of one kind fits the total but not the condition "at least one of each".`
+            : `A combination with none of one kind fits the total and is allowed here; dividing a range by the step also drops one end.`,
+          hint: "Find one combination that works, then ask how to trade one kind for the other without changing the total.",
+          verify: () => {
+            // Recount from the stated numbers, looping over y this time.
+            const found = [];
+            for (let y = both ? 1 : 0; b * y <= C; y += 1) {
+              const rest = C - b * y;
+              if (rest % a === 0 && (!both || rest / a >= 1)) found.push([rest / a, y]);
+            }
+            const shown = found.map(pick);
+            const answer = form === "count" ? found.length : form === "greatest" ? Math.max(...shown) : Math.min(...shown);
+            return answer === key && found.every(([x, y]) => a * x + b * y === C);
+          },
+        };
+      }
+    },
+  };
+
+  return [
+    pointOnLine, standardFormSlope, equationModel, graphContext, linearModelUnits, interceptMeaning, pointShift,
+    translatedLine, interceptConditions, comboCount,
+  ];
 });

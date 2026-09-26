@@ -752,6 +752,9 @@
 
   /* ---------------------------------------------------------- system-from-context */
 
+  // A price times a count as the test prints it: 2.50x, but y for a $1 price.
+  const priced = (price, letter) => (price === 1 ? letter : `${money(price)}${letter}`);
+
   // Each scene knows the true counts (x, y), so verification can test every
   // offered system against them.
   const setupScenes = [
@@ -795,11 +798,11 @@
         `cookies, and ${v.d} more cookies than muffins were sold.`,
       table: (v) => S.table(["Item", "Price"], [["Muffin", usd(v.a)], ["Cookie", usd(v.b)]]),
       names: ["the number of muffins sold", "the number of cookies sold"],
-      key: (v) => [`${money(v.a)}x + ${money(v.b)}y = ${money(v.R)}`, `y = x + ${v.d}`],
+      key: (v) => [`${priced(v.a, "x")} + ${priced(v.b, "y")} = ${money(v.R)}`, `y = x + ${v.d}`],
       wrong: (v) => [
-        [[`${money(v.a)}x + ${money(v.b)}y = ${money(v.R)}`, `x = y + ${v.d}`], `Reverses the comparison: it says ${v.d} more muffins than cookies were sold.`],
-        [[`${money(v.a)}x + ${money(v.b)}y = ${money(v.R)}`, `y = ${v.d}x`], `Treats "${v.d} more cookies than muffins" as "${v.d} times as many cookies as muffins."`],
-        [[`${money(v.b)}x + ${money(v.a)}y = ${money(v.R)}`, `y = x + ${v.d}`], "Pairs each price with the other item."],
+        [[`${priced(v.a, "x")} + ${priced(v.b, "y")} = ${money(v.R)}`, `x = y + ${v.d}`], `Reverses the comparison: it says ${v.d} more muffins than cookies were sold.`],
+        [[`${priced(v.a, "x")} + ${priced(v.b, "y")} = ${money(v.R)}`, `y = ${v.d}x`], `Treats "${v.d} more cookies than muffins" as "${v.d} times as many cookies as muffins."`],
+        [[`${priced(v.b, "x")} + ${priced(v.a, "y")} = ${money(v.R)}`, `y = x + ${v.d}`], "Pairs each price with the other item."],
       ],
     },
     {
@@ -1039,7 +1042,7 @@
         [combine(p, q), "Matches the coefficients without scaling them, as if the two equations were identical."],
       ];
       if (distinctWrongHard(key, wrong) < 3 || hitsKey(key, wrong) || !fitsGridHard(key)) continue;
-      const first = `ax ${q < 0 ? MINUS : "+"} ${num(Math.abs(q))}y = ${num(r1)}`;
+      const first = `ax ${q < 0 ? MINUS : "+"} ${Math.abs(q) === 1 ? "" : num(Math.abs(q))}y = ${num(r1)}`;
       const second = `${lin(p, 0)} + by = ${num(r2)}`;
       const factor = frac(m, n);
       return {
@@ -1073,75 +1076,6 @@
             }
           }
           return found.length === 1 && combine(found[0][0], found[0][1]) === key;
-        },
-      };
-    }
-  }
-
-  // No solution: which pair of constants could work. The choices are a grid:
-  // right or wrong x-coefficient, crossed with a constant that does or does
-  // not keep the equations proportional.
-  function noneConstants(t) {
-    for (;;) {
-      const { p, q } = baseLine(t);
-      const s = t.pick([2, 3, 4, -2, -3]);
-      const r = t.nonzero(-9, 9);
-      const B = s * q;
-      const aKey = s * p;
-      const cSame = s * r;
-      const cKey = cSame + t.nonzero(-6, 6);
-      const rearranged = t.chance(0.5);
-      const second = rearranged
-        ? `${num(B)}y = c ${MINUS} ax`
-        : `ax ${B < 0 ? MINUS : "+"} ${num(Math.abs(B))}y = c`;
-      const [aWrong, slip] = rearranged
-        ? [-aKey, `moves ax to the left side without changing its sign, so a has the wrong sign`]
-        : t.pick([
-          [-aKey, `scales ${p}x by ${num(-s)} instead of ${num(s)}, so a has the wrong sign`],
-          [p, `copies the x-coefficient ${p} without scaling it by ${num(s)}`],
-        ]);
-      if (aWrong === aKey || p * B - q * aWrong === 0) continue;
-      const pair = (a, c) => `a = ${num(a)} and c = ${num(c)}`;
-      const key = pair(aKey, cKey);
-      const wrong = t.shuffle([
-        [pair(aKey, cSame), `Makes the second equation exactly ${num(s)} times the first, so the equations describe the same line and the system has infinitely many solutions.`],
-        [pair(aWrong, cKey), `Keeps a constant that breaks the proportion but ${slip}; the lines then have different slopes and intersect once.`],
-        [pair(aWrong, cSame), `Makes the constants proportional but ${slip}; the lines then have different slopes and intersect once.`],
-      ]);
-      if (hitsKey(key, wrong)) continue;
-      const first = standardFormHard(p, q, r);
-      const rewritten = `ax ${B < 0 ? MINUS : "+"} ${num(Math.abs(B))}y = c`;
-      return {
-        responseType: "multiple-choice",
-        estimatedSeconds: 115,
-        stimulus: { type: "equations", content: `${first}\n${second}` },
-        stem: "In the given system of equations, a and c are constants. If the system has no solution, which of the following could be the values of a and c?",
-        correct: key,
-        wrong,
-        explanation:
-          `${rearranged ? `Rewrite the second equation as ${rewritten}. ` : ""}Its y-coefficient is ${num(s)} times the first ` +
-          `equation's, so the lines are parallel exactly when a = ${num(s)} × ${p} = ${num(aKey)}. If c were ${num(s)} × ` +
-          `${paren(r)} = ${num(cSame)} too, the lines would be the same; any other c gives parallel, distinct lines and no ` +
-          `solution. Only ${key} does that.`,
-        steps: [
-          ...(rearranged ? [`Put the second equation in the form of the first: ${rewritten}.`] : []),
-          `Compare y-coefficients: ${num(B)} ÷ ${paren(q)} = ${num(s)}.`,
-          `No solution needs the same multiple for x: a = ${num(s)} × ${p} = ${num(aKey)}.`,
-          `It also needs c ≠ ${num(s)} × ${paren(r)} = ${num(cSame)}, or the lines coincide.`,
-        ],
-        principles: [
-          "ax + by = c and dx + ey = f have no solution when a/d = b/e ≠ c/f.",
-          "When the constants are in the same ratio as well, the equations describe one line and there are infinitely many solutions.",
-        ],
-        trap: `a = ${num(aKey)} makes the lines parallel, but with c = ${num(cSame)} they are the same line, which has infinitely many solutions, not none.`,
-        hint: "Decide what the two lines must look like for there to be no solution, then test each pair.",
-        verify: () => {
-          const counts = (text) => {
-            const [, a, c] = text.match(/^a = (\S+) and c = (\S+)$/);
-            const values = { a: Number(a.replace(MINUS, "-")), c: Number(c.replace(MINUS, "-")) };
-            return solutionCount(first, substitute(second, values));
-          };
-          return counts(key) === "none" && wrong.every(([text]) => counts(text) !== "none");
         },
       };
     }
@@ -1245,15 +1179,14 @@
     title: "Two unknown constants in a system of linear equations",
     recognize:
       "The constants, not x and y, are the unknowns: infinitely many solutions means one equation is a multiple of " +
-      "the other, with the multiple fixed by a pair of known matching numbers; no solution keeps the multiple on x " +
-      "and y but breaks it on the constant; a known solution turns the system into equations in the constants.",
+      "the other, with the multiple fixed by a pair of known matching numbers; a known solution turns the system " +
+      "into equations in the constants, which the system's symmetry lets you combine without solving for each.",
     rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
-    tricks: ["reversed-condition", "sign-error", "wrong-quantity", "intermediate-value"],
+    tricks: ["sign-error", "wrong-quantity", "intermediate-value"],
     build(t) {
-      const form = t.pick(["scale", "none", "given"]);
-      if (form === "scale") return scaleConstants(t);
-      if (form === "none") return noneConstants(t);
-      return givenConstants(t);
+      // "No solution, which values of a and c could work" was Medium work
+      // (match one ratio, break another) and was dropped.
+      return t.chance(0.5) ? scaleConstants(t) : givenConstants(t);
     },
   };
 
@@ -1300,12 +1233,14 @@
     domain: "Algebra",
     skill: "Systems of two linear equations",
     subskill: "interpret intersection",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Solution of a system read from graphed lines",
     recognize:
       "The lines cross between grid points, so the graph gives only an estimate; the exact solution needs each line's " +
       "equation, read from two lattice points it passes through, and then the system solved algebraically.",
-    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    // Medium: two equations read from lattice points and one system solved;
+    // planned work, not a structure to find (the 2026-09-26 review).
+    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["wrong-quantity", "sign-error", "rounding-direction"],
     build(t) {
       const form = t.pick(["both", "one"]);
@@ -1562,8 +1497,8 @@
       kind: "percent", substance: "acid", unit: "liter", units: "liters",
       make: (t) => ({ low: 5 * t.int(1, 6), high: 5 * t.int(8, 18) }),
       text: (v) =>
-        `A chemist combines a ${v.low}% acid solution with a ${v.high}% acid solution to make ${v.total} liters of a ` +
-        `${v.target}% acid solution.`,
+        `A chemist combines ${S.article(v.low)} ${v.low}% acid solution with ${S.article(v.high)} ${v.high}% acid ` +
+        `solution to make ${v.total} liters of ${S.article(v.target)} ${v.target}% acid solution.`,
       askLow: (v) => `How many liters of the ${v.low}% solution does the chemist use?`,
       askHigh: (v) => `How many liters of the ${v.high}% solution does the chemist use?`,
       lowName: (v) => `the ${v.low}% solution`, highName: (v) => `the ${v.high}% solution`,
@@ -1607,12 +1542,12 @@
   // Adding a pure ingredient (or water) until the mixture reaches a target.
   const adjustScenes = [
     {
-      substance: "acid", unit: "liters", solution: (p) => `a ${p}% acid solution`, pureName: "pure acid", liquid: "liters",
-      text: (v) => `A chemist has ${v.V} liters of a ${v.p0}% acid solution.`,
+      substance: "acid", unit: "liters", solution: (p) => `${S.article(p)} ${p}% acid solution`, pureName: "pure acid", liquid: "liters",
+      text: (v) => `A chemist has ${v.V} liters of ${S.article(v.p0)} ${v.p0}% acid solution.`,
     },
     {
-      substance: "salt", unit: "liters", solution: (p) => `a ${p}% salt solution`, pureName: "pure salt", liquid: "liters",
-      text: (v) => `A lab technician has ${v.V} liters of a ${v.p0}% salt solution, by volume.`,
+      substance: "salt", unit: "liters", solution: (p) => `${S.article(p)} ${p}% salt solution`, pureName: "pure salt", liquid: "liters",
+      text: (v) => `A lab technician has ${v.V} liters of ${S.article(v.p0)} ${v.p0}% salt solution, by volume.`,
       waterOnly: true,
     },
     {
@@ -1662,8 +1597,10 @@
         extra.push([tidy(scene.kind === "price" ? v.target * v.total : (v.target * v.total) / 100), `Gives the ${scene.pure}, a value found on the way.`]);
       }
       wrong.push(...t.shuffle(extra));
+      // Only values a test would print (positive, exact to the cent) are offered.
+      if (wrong.some(([w]) => w <= 0 || !hundredths(w))) continue;
       if (!numeric && (distinctWrongHard(key, wrong) < 3 || hitsKey(key, wrong))) continue;
-      if (wrong.slice(0, 3).some(([w]) => w <= 0 || !hundredths(w)) || !fitsGridHard(key)) continue;
+      if (!fitsGridHard(key)) continue;
       const lowRate = interest || scene.kind === "percent" ? `0.${String(v.low).padStart(2, "0")}`.replace(/0+$/, "") : num(v.low);
       const highRate = interest || scene.kind === "percent" ? `0.${String(v.high).padStart(2, "0")}`.replace(/0+$/, "") : num(v.high);
       const totalRight = interest ? commasHard(v.interest) : scene.kind === "price" ? commasHard(v.target * v.total) : num((v.target * v.total) / 100);
@@ -1734,8 +1671,9 @@
             : [tidy((V * (pt - p0)) / (100 - p0)), `Divides by 100 ${MINUS} ${p0} instead of 100 ${MINUS} ${pt}.`],
         ]),
       ];
+      if (wrong.some(([w]) => !hundredths(w))) continue;
       if (!numeric && (distinctWrongHard(key, wrong) < 3 || hitsKey(key, wrong))) continue;
-      if (wrong.slice(0, 3).some(([w]) => !hundredths(w)) || !fitsGridHard(key)) continue;
+      if (!fitsGridHard(key)) continue;
       const equation = addWater
         ? `${num(p0 / 100)}(${V}) = ${num(pt / 100)}(${V} + w)`
         : `${num(p0 / 100)}(${V}) + w = ${num(pt / 100)}(${V} + w)`;
@@ -1778,12 +1716,14 @@
     domain: "Algebra",
     skill: "Systems of two linear equations",
     subskill: "solve systems",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Mixtures and blends as a weighted system",
     recognize:
       "A mixture's rate is a weighted average, not a simple one: one equation counts the amounts and a second counts " +
       "what they contain (acid, copper, value, interest); when an ingredient is added, the total changes too.",
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    // Medium: one modelling translation into a standard two-equation system
+    // (the 2026-09-26 review).
+    rubric: { steps: 2, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["unweighted-average", "wrong-quantity", "intermediate-value", "percent-base"],
     build(t) {
       const numeric = t.chance(0.4);
@@ -1791,8 +1731,220 @@
     },
   };
 
+  /* ------------------------------------------------ system-intersection-region */
+
+  // Line ℓ crosses the axes at (r, 0) and (0, p); the line y = kx + q turns
+  // about (0, q) as k changes. Slopes are handled as J = 2k and M = 2m, so
+  // every coordinate is an exact fraction of integers.
+  const QUADRANT_WORDS = { "1,1": "a > 0 and b > 0", "-1,1": "a < 0 and b > 0", "-1,-1": "a < 0 and b < 0", "1,-1": "a > 0 and b < 0" };
+  const sgn = (value) => (value > 0 ? 1 : value < 0 ? -1 : 0);
+
+  const intersectionRegion = {
+    id: "system-intersection-region",
+    domain: "Algebra",
+    skill: "Systems of two linear equations",
+    subskill: "interpret intersection",
+    difficulty: "Hard",
+    title: "Constant that places the intersection of two lines in a region",
+    recognize:
+      "Every line y = kx + q passes through (0, q), so k only turns the line about that point. Find the part of the " +
+      "given line where the intersection is allowed, and the slopes from (0, q) to the ends of that part bound k; a " +
+      "slope equal to the given line's never meets it, and an end on an axis breaks a strict inequality.",
+    // Hard: a parameter, two sign conditions at once, and the structure (a
+    // pivot point) must be seen before any computing.
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["must-vs-could", "reversed-condition", "sign-error", "context-constraint"],
+    build(t) {
+      const could = t.chance(0.5);
+      const asStandard = t.chance(0.5);
+      for (;;) {
+        const M = t.pick([-6, -4, -3, -2, -1, 1, 2, 3, 4, 6]); // 2m
+        const md = M % 2 === 0 ? 1 : 2;
+        const r = md * t.nonzero(-6 / md, 6 / md);
+        const p = (-M * r) / 2;
+        const q = t.nonzero(-6, 6);
+        if (!Number.isInteger(p) || p === 0 || Math.abs(p) > 9 || q === p) continue;
+        // The three quadrants the line passes through: the segment between
+        // its intercepts, the ray past (r, 0), and the ray past (0, p).
+        const parts = {
+          segment: [sgn(r), sgn(p)],
+          xRay: [sgn(r), -sgn(p)],
+          yRay: [-sgn(r), sgn(p)],
+        };
+        // "Could be" items need a region bounded on both sides in k.
+        const part = could ? "xRay" : t.pick(["segment", "xRay", "yRay"]);
+        const [sx, sy] = parts[part];
+        // The intersection for J = 2k: a = 2(q − p)/(M − J), b = (Mq − Jp)/(M − J).
+        const meet = (J) => (J === M ? null : { a: [2 * (q - p), M - J], b: [M * q - J * p, M - J] });
+        const signOf = ([top, bottom]) => sgn(top) * sgn(bottom);
+        const inside = (J) => {
+          const at = meet(J);
+          return Boolean(at) && signOf(at.a) === sx && signOf(at.b) === sy;
+        };
+        const kText = (J) => frac(J, 2);
+        const at = (J) => {
+          const { a, b } = meet(J);
+          return `(${frac(...a)}, ${frac(...b)})`;
+        };
+        const valid = [];
+        for (let J = -24; J <= 24; J += 1) if (inside(J)) valid.push(J);
+        if (valid.length < 2) continue;
+        const lineText = asStandard
+          ? standardFormHard(...(() => {
+            // ℓ: y = (M/2)x + p, written as Ax + By = C with A > 0.
+            const [A, B, C0] = [M, -2, -2 * p];
+            const d = S.gcd(S.gcd(A, B), C0) * sgn(A);
+            return [A / d, B / d, C0 / d];
+          })())
+          : `y = ${M % 2 === 0 ? lin(M / 2, 0) : `${M < 0 ? MINUS : ""}(${Math.abs(M)}/2)x`} ${signed(p)}`;
+        const turning = `y = kx ${signed(q)}`;
+        const where = QUADRANT_WORDS[`${sx},${sy}`];
+        // Bounds of k: the slope from (0, q) to (r, 0) is −q/r; the line's own
+        // slope is m; a part that reaches the y-axis leaves k unbounded.
+        const axisJ = (-2 * q) / r;
+        const lowJ = Math.min(...valid);
+        const highJ = Math.max(...valid);
+        const boundedBelow = lowJ > -24;
+        const boundedAbove = highJ < 24;
+        const reason = (J) => {
+          if (J === M) return `With k = ${kText(J)}, the line ${turning} is parallel to the given line, so the lines never intersect.`;
+          const spot = meet(J);
+          const bad = [];
+          if (signOf(spot.a) !== sx) bad.push(signOf(spot.a) === 0 ? "a is 0" : `a is ${signOf(spot.a) > 0 ? "positive" : "negative"}`);
+          if (signOf(spot.b) !== sy) bad.push(signOf(spot.b) === 0 ? "b is 0" : `b is ${signOf(spot.b) > 0 ? "positive" : "negative"}`);
+          return `With k = ${kText(J)}, the lines intersect at ${at(J)}, where ${bad.join(" and ")}.`;
+        };
+        const partWords = {
+          segment: `the segment between (${num(r)}, 0) and (0, ${num(p)})`,
+          xRay: `the part of the line beyond (${num(r)}, 0), away from the y-axis`,
+          yRay: `the part of the line beyond (0, ${num(p)}), away from the x-axis`,
+        }[part];
+        // The open interval of k, from its finite ends, each [value, text].
+        const ends = [];
+        if (part !== "yRay") ends.push([-q / r, frac(-q, r)]);
+        if (part !== "segment") ends.push([M / 2, kText(M)]);
+        ends.sort((left, right) => left[0] - right[0]);
+        const [low, high] = ends.length === 2 ? ends : boundedBelow ? [ends[0], null] : [null, ends[0]];
+        const kLow = low ? low[0] : -Infinity;
+        const kHigh = high ? high[0] : Infinity;
+        // The analysis must match the scan of the sign conditions.
+        if (valid.some((J) => !(J / 2 > kLow && J / 2 < kHigh)) ||
+          [lowJ - 1, highJ + 1].some((J) => J > -24 && J < 24 && J / 2 > kLow && J / 2 < kHigh && J !== M)) continue;
+        const intervalText = low && high
+          ? `${low[1]} < k < ${high[1]}`
+          : low ? `k > ${low[1]}` : `k < ${high[1]}`;
+        const common = {
+          estimatedSeconds: 140,
+          stimulus: { type: "equations", content: `${lineText}\n${turning}` },
+          principles: [
+            "Every line y = kx + q passes through (0, q); changing k turns the line about that point.",
+            "Two lines with the same slope and different y-intercepts never intersect.",
+          ],
+          hint: "Which point does the second line pass through no matter what k is?",
+        };
+        const lead =
+          `In the xy-plane, the graphs of the given equations intersect at the point (a, b), where k is a constant. ` +
+          `If ${where}, `;
+        const pivotSteps = [
+          `The given line crosses the axes at (${num(r)}, 0) and (0, ${num(p)}), and ${turning} passes through (0, ${num(q)}) for every k.`,
+          `The points of the given line with ${where} form ${partWords}.`,
+          `Turning a line about (0, ${num(q)}) to meet that part gives ${intervalText}.`,
+          [
+            ...(part === "yRay" ? [] : [`At k = ${frac(-q, r)} the lines meet at (${num(r)}, 0), on the x-axis`]),
+            ...(part === "segment" ? [] : [`at k = ${kText(M)} the lines are parallel and never meet`]),
+          ].join("; ").replace(/^a/, "A") + ".",
+        ];
+        if (could) {
+          // Distractors: parallel, beyond each end, and on an axis.
+          const outside = [];
+          for (let J = lowJ - 6; J <= highJ + 6; J += 1) if (!inside(J)) outside.push(J);
+          // k = 0 is valid in many regions; it is the key only now and then, so
+          // "0" does not mark the answer.
+          const keyPool = valid.filter((J) => (J % 2 === 0 || t.chance(0.3)) && (J !== 0 || t.chance(0.2)));
+          if (!keyPool.length) continue;
+          const keyJ = t.pick(keyPool);
+          // Whole-number distractors, plus the parallel slope and the axis
+          // crossing when they are halves.
+          const special = (J) => J === M || J === axisJ;
+          const usable = outside.filter((J) => J % 2 === 0 || special(J));
+          // The parallel slope and the axis crossing come first most of the time.
+          const prefer = (list) => {
+            const shuffled = t.shuffle(list);
+            return t.chance(0.7) ? [...shuffled.filter(special), ...shuffled.filter((J) => !special(J))] : shuffled;
+          };
+          const under = prefer(usable.filter((J) => J < lowJ));
+          const over = prefer(usable.filter((J) => J > highJ));
+          const split = t.int(0, 3); // how many distractors lie below the key
+          if (under.length < split || over.length < 3 - split) continue;
+          const chosen = [...under.slice(0, split), ...over.slice(0, 3 - split)];
+          const wrong = chosen.map((J) => [kText(J), reason(J)]);
+          const key = kText(keyJ);
+          if (hitsKey(key, wrong)) continue;
+          const steps = [...pivotSteps, `Only k = ${key} lies in that range: the lines then intersect at ${at(keyJ)}.`];
+          return {
+            ...common,
+            responseType: "multiple-choice",
+            stem: `${lead}which of the following could be the value of k?`,
+            correct: key,
+            wrong,
+            explanation: steps.join(" "),
+            steps,
+            trap: `The line ${turning} meets the given line for every k except ${kText(M)}, but only some of those meetings have ${where}; an intersection on an axis fails a strict inequality.`,
+            verify: () => {
+              // Read both lines back from the displayed text and solve each system by Cramer's rule.
+              const fixed = lineCoefficients(lineText);
+              const holdsAt = (text) => {
+                const J = Math.round(2 * Number(text.replace(MINUS, "-").split("/")[0]) / Number(text.split("/")[1] || 1));
+                const solution = cramer(fixed, lineCoefficients(substitute(turning, { k: J / 2 })));
+                return Boolean(solution) && sgn(solution[0]) === sx && sgn(solution[1]) === sy;
+              };
+              return holdsAt(key) && wrong.every(([text]) => !holdsAt(text));
+            },
+          };
+        }
+        // The greatest or least integer k, on a bounded side of the range.
+        const sides = [...(boundedAbove ? ["greatest"] : []), ...(boundedBelow ? ["least"] : [])];
+        if (!sides.length) continue;
+        const ask = t.pick(sides);
+        const integers = valid.filter((J) => J % 2 === 0).map((J) => J / 2);
+        if (!integers.length) continue;
+        const key = ask === "greatest" ? Math.max(...integers) : Math.min(...integers);
+        const edge = ask === "greatest" ? kHigh : kLow;
+        // The trap: the bound itself when it is a whole number.
+        if (!Number.isInteger(edge) && t.chance(0.6)) continue;
+        const steps = [...pivotSteps, `The ${ask} integer in that range is ${num(key)}.`];
+        const edgeWhy = !Number.isInteger(edge)
+          ? ""
+          : edge === M / 2
+            ? ` k = ${num(edge)} is not allowed: that line is parallel to the given line.`
+            : ` k = ${num(edge)} is not allowed: the lines then meet on the x-axis, where b = 0.`;
+        return {
+          ...common,
+          responseType: "numeric",
+          stem: `${lead}what is the ${ask} possible integer value of k?`,
+          correct: key,
+          explanation: steps.join(" "),
+          steps,
+          trap: `The range of k is open.${edgeWhy}${low && high ? " The other end of the range answers the opposite question." : ""}`,
+          verify: () => {
+            // Scan integer k, reading both lines from the displayed text.
+            const fixed = lineCoefficients(lineText);
+            const found = [];
+            for (let k = -30; k <= 30; k += 1) {
+              const solution = cramer(fixed, lineCoefficients(substitute(turning, { k })));
+              if (solution && sgn(solution[0]) === sx && sgn(solution[1]) === sy) found.push(k);
+            }
+            const expected = ask === "greatest" ? Math.max(...found) : Math.min(...found);
+            return found.length > 0 && found.length < 61 && expected === key &&
+              (ask === "greatest" ? !found.includes(30) : !found.includes(-30));
+          },
+        };
+      }
+    },
+  };
+
   return [
     systemSetup, systemIntersection, systemCombination, systemTotals, systemParameter, twoPlanCrossover,
-    twoConstants, graphTwoLines, mixtureBlend,
+    graphTwoLines, mixtureBlend, twoConstants, intersectionRegion,
   ];
 });
