@@ -72,13 +72,20 @@ answer is a future miss.
 ## When to redo {#spacing}
 
 Redo each missed question later, not the same day, when you would remember
-the answer instead of the method.
+the answer instead of the method. Liminal's Review view keeps this schedule
+for you and lists what is due each day under Due:
 
-| Redo | When | What it tells you |
-| --- | --- | --- |
-| first | about 3 days later | whether the fix took |
-| second | about 10 days later | whether it lasts |
-| third | 3 to 4 weeks later | whether it is automatic |
+| Return | When | What comes back | What it tells you |
+| --- | --- | --- | --- |
+| first | 1 day after the miss | the same question | whether the fix took |
+| second | 3 days after you get it right | a fresh version, built the same way with new numbers or a new text | whether you learned the method, not the answer |
+| third | 7 days after that | a fresh version | whether it lasts |
+| fourth | 21 days after that | a fresh version | whether it is automatic |
+
+A right answer at the fourth return marks the question learned. A wrong
+answer, a blank or a right answer after a hint sends it back to the first
+return. Answering it again before it is due changes
+nothing, because inside the gap you would be remembering, not solving.
 
 Once a week, count your log by error type and by skill. Mostly content: study
 those skills. Mostly careless: fix habits before adding content. The two or
@@ -86,8 +93,8 @@ three skills that show up most are next week's targets.
 
 ## Using Liminal for this {#liminal}
 
-- Review lists the questions you missed and the ones you marked for review. Practice a whole list again in one set, and use it for your spaced redos.
+- Review has three lists: Due (the returns above, practiced in one set), Missed (every missed answer, which is your error log) and Marked.
 - Mark a question for review during a set whenever you guessed or weren't sure, not only when you know you're wrong.
 - Progress shows your accuracy by skill, with Hard accuracy on its own. Use it to choose which skills to study next. It is practice feedback on Liminal's questions, not an SAT score.
-- If the Review view lets you tag a miss with its type and a rule, do it there so the log lives next to the question. If not, keep the log in a notebook; the habit matters more than the tool.
+- In Review's Missed list, tag each miss with its reason (content, process, careless or time) and write the rule you will remember. The log then lives next to the question, and Review counts your misses by reason and filters by reason, section and skill, which is the weekly count above done for you.
 - Each skill's Learn page is the place to go for a content error: read the section for the subskill you missed, then practice that skill.

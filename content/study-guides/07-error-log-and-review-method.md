@@ -53,7 +53,7 @@ Process errors come from doing too much in your head.
 ### 3. Careless error — *"I'd get it right if I did it again"*
 
 Arithmetic slip, sign error, misread a word, answered the wrong question,
-bubbled wrong, transcribed wrong.
+clicked or filled in the wrong choice, transcribed wrong.
 
 **Signal:** you look at it and feel annoyed rather than confused.
 
@@ -90,8 +90,11 @@ gap. When in doubt, redo it untimed and see whether you actually get it.
 
 ## The log format
 
-Keep it simple enough that you actually maintain it. A spreadsheet, a notebook,
-or a plain text file all work.
+Keep it simple enough that you actually maintain it. For questions you practice
+in the app, the **Review** view keeps the log for you: in its Missed list, tag
+each miss with its reason (content, process, careless, time) and write your
+rule next to it. For anything else, a spreadsheet, a notebook, or a plain text
+file all work.
 
 | Field | Example |
 | --- | --- |
@@ -102,7 +105,7 @@ or a plain text file all work.
 | What I did | Solved for x, question asked for x + y |
 | Why | Didn't reread the stem before selecting |
 | **Rule for next time** | **Circle the requested quantity before solving** |
-| Redo date | 2026-08-17 |
+| Redo date | 2026-08-15 |
 
 The bolded row is the point of the entire exercise. Everything else is
 bookkeeping.
@@ -150,7 +153,8 @@ answers teach you the writer's toolkit — which is the subject of
 
 **5. Write the one-sentence rule.**
 
-**6. Schedule a redo** for 3 days out.
+**6. Schedule a redo** for the next day. For questions from the app, Review
+schedules it for you.
 
 Budget **2-4 minutes per missed item.** That means a 20-question drill with 6
 misses needs about 20 minutes of review. If that sounds like a lot relative to
@@ -174,23 +178,31 @@ exists for this; use it during the drill, not after.
 ## Spacing: when to redo
 
 Redo missed items on a spaced schedule. Do not redo them the same day — you'll
-remember the answer rather than the method.
+remember the answer rather than the method. The app's **Review** view runs this
+schedule for every question you miss there:
 
-| Redo | When | What it tests |
-| --- | --- | --- |
-| 1st | 3 days later | Did the fix take at all |
-| 2nd | 10 days later | Is it durable |
-| 3rd | 3-4 weeks later | Is it automatic |
+| Redo | When | What comes back | What it tests |
+| --- | --- | --- | --- |
+| 1st | 1 day after the miss | The same question | Did the fix take at all |
+| 2nd | 3 days after you get it right | For SAT, a fresh version built the same way | Did you learn the method, not the answer |
+| 3rd | 7 days after that | A fresh version (SAT) | Is it durable |
+| 4th | 21 days after that | A fresh version (SAT) | Is it automatic |
 
-The app's **Review** view lists your missed and marked questions, and the
-**Missed-question review** practice mode builds a set from them. Use it as the
-first 10 minutes of every study session — before new material, while you're
-fresh.
+ACT questions come from fixed banks, so they come back as they were. A right
+answer before the due day doesn't move the schedule, and a right answer at the
+21-day redo marks the question learned.
 
-If you miss an item on a redo, it goes back to the start of the schedule and
-you rewrite the rule. Repeated misses on the same skill mean your diagnosis was
-wrong: you called it careless and it's actually a process error, or you called it
-process and there's a content gap underneath.
+Review's **Due** list shows what comes back today and practices it in one set;
+its **Missed** list is your error log, and **Marked** holds what you marked.
+The **Missed-question review** practice mode also builds a set from your
+misses. Use Due as the first 10 minutes of every study session — before new
+material, while you're fresh.
+
+If you miss an item on a redo, or get it right only after a hint, it goes back
+to the start of the schedule and you rewrite the rule. Repeated misses on the
+same skill mean your diagnosis was wrong: you called it careless and it's
+actually a process error, or you called it process and there's a content gap
+underneath.
 
 ---
 
