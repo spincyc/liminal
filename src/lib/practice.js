@@ -454,13 +454,13 @@
     return {};
   }
 
-  // Template ids of the items a finished set got wrong or left blank, in set
-  // order, once each.
+  // Template ids of the items a finished set missed (wrong, blank, or right
+  // only after a hint), in set order, once each.
   function missedTemplateIds(items) {
     const ids = [];
     (items || []).forEach((item) => {
       const templateId = item.question && item.question.templateId;
-      if (!templateId || (item.answered && item.correct)) return;
+      if (!templateId || (item.answered && item.correct && !item.hinted)) return;
       if (!ids.includes(templateId)) ids.push(templateId);
     });
     return ids;

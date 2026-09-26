@@ -152,7 +152,8 @@ For a coherent ACT bank batch:
   `sat-math-hard:<family>:<seed>`), so it can be rebuilt exactly while its
   template's version is unchanged; never store generated questions in a bank.
 - Review's spaced schedule (`src/lib/review-queue.js`) is derived from
-  attempts and stores nothing: a miss returns after 1 day, then 3, 7 and 21
+  attempts and stores nothing: a miss (wrong, blank, or right only after a
+  hint: `LiminalProgress.isMiss`) returns after 1 day, then 3, 7 and 21
   days after each correct answer, with a fresh version of the same template
   from the second return; a wrong, blank or hinted answer restarts it; a
   correct answer before the due day changes nothing. Error-log tags live in

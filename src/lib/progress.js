@@ -704,14 +704,20 @@
       matchesFilter(filter, attemptTest(attempt), attemptSection(attempt)));
   }
 
-  // Questions whose most recent answer was wrong or left blank.
+  // A miss: a wrong answer, a blank, or a correct answer reached only after
+  // a hint, which shows the method was not yet the student's own. Review,
+  // Missed and the error log all use this one definition.
+  function isMiss(attempt) {
+    return Boolean(attempt) && (attempt.correct === false || (attempt.correct === true && attempt.hinted === true));
+  }
+
+  // Questions whose most recent answer was a miss.
   function missedIds(progress, filter) {
     const latest = new Map();
     attemptsFor(progress, filter).forEach((attempt) => {
       if (attempt.correct === true || attempt.correct === false) latest.set(attempt.questionId, attempt);
     });
-    return [...latest.values()].filter((attempt) => attempt.correct === false)
-      .map((attempt) => attempt.questionId);
+    return [...latest.values()].filter(isMiss).map((attempt) => attempt.questionId);
   }
 
   function markedIds(progress, filter) {
@@ -914,6 +920,7 @@
     buildAttempt,
     summarizeSession,
     // reads
+    isMiss,
     attemptTest,
     attemptsFor,
     missedIds,

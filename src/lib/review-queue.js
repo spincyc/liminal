@@ -5,8 +5,9 @@
 // The schedule is derived from attempts alone, so it stores nothing of its
 // own and follows the attempts through migration and multi-tab merges.
 //
-// - A miss (a wrong answer or a blank) enters the schedule at stage 1, due
-//   one local calendar day later.
+// - A miss (a wrong answer, a blank, or a correct answer reached after a
+//   hint: LiminalProgress.isMiss) enters the schedule at stage 1, due one
+//   local calendar day later.
 // - A correct answer on or after the due day steps it to the next stage:
 //   due 3, then 7, then 21 days after that answer. A correct answer at the
 //   21-day stage graduates it ("learned").
@@ -137,7 +138,7 @@
       let entry = entries.get(questionId);
       if (!entry || entry.learned) {
         // Only a miss starts (or restarts) a schedule.
-        if (attempt.correct !== false) return;
+        if (!Progress.isMiss(attempt)) return;
         entry = entry || newEntry(questionId, attempt);
         entries.set(questionId, entry);
         restart(entry, attempt, day);
@@ -221,9 +222,10 @@
 
   /* ----------------------------------------------------------- error log */
 
-  // Every missed answer (wrong or blank), newest first.
+  // Every missed answer (wrong, blank, or correct only after a hint),
+  // newest first.
   function missedAttempts(attempts) {
-    const list = (attempts || []).filter((attempt) => attempt && attempt.correct === false);
+    const list = (attempts || []).filter(Progress.isMiss);
     return byTime(list).reverse();
   }
 

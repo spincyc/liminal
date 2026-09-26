@@ -130,7 +130,7 @@ test("answers from any set count, and a learned question re-enters when missed a
   assert.equal(key(entry.dueDay), "2026-11-21");
 });
 
-test("only misses start a schedule; retired SAT banks and essays are left out", () => {
+test("only misses start a schedule, a correct answer after a hint among them; retired SAT banks and essays are left out", () => {
   const entries = Queue.build([
     answer("sat-math:other:1", "2026-09-01T10:00"),
     answer("sat-math:other:2", "2026-09-01T10:00", { hinted: true }),
@@ -140,7 +140,8 @@ test("only misses start a schedule; retired SAT banks and essays are left out", 
       templateId: undefined }),
     miss("sat-math:blank-t:1", "2026-09-01T10:00", { answered: false, response: null }),
   ]);
-  assert.deepEqual([...entries.keys()].sort(), ["act-english-0007", "sat-math:blank-t:1"]);
+  assert.deepEqual([...entries.keys()].sort(), ["act-english-0007", "sat-math:blank-t:1", "sat-math:other:2"]);
+  assert.equal(entries.get("sat-math:other:2").stage, 1, "the hint means the method is not yet the student's own");
   const bank = entries.get("act-english-0007");
   bank.stage = 3;
   assert.equal(Queue.modeOf(bank), "exact", "bank questions always come back as they were");

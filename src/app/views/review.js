@@ -807,7 +807,7 @@
       const ids = [];
       list.forEach((attempt) => {
         const latest = model.latest.get(attempt.questionId);
-        if (latest && latest.correct === false && !ids.includes(attempt.questionId)) ids.push(attempt.questionId);
+        if (Progress.isMiss(latest) && !ids.includes(attempt.questionId)) ids.push(attempt.questionId);
       });
       return ids;
     }

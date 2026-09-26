@@ -291,10 +291,12 @@ test("missed ids follow each question's latest answer; weakest skill needs evide
     attempt("5", { questionId: "sat-math:c:1", skill: "Circles", correct: false }),
     attempt("6", { questionId: "sat-math:d:1", skill: "Circles", correct: false }),
     attempt("7", { questionId: "sat-math:e:1", correct: true }),
+    attempt("8", { questionId: "sat-math:f:1", correct: true, hinted: true }),
   ]);
-  assert.deepEqual(progress.attempts.map((entry) => entry.repeat), [false, true, false, false, false, false, false],
+  assert.deepEqual(progress.attempts.map((entry) => entry.repeat), [false, true, false, false, false, false, false, false],
     "the second answer to a question is a repeat");
-  assert.deepEqual(Progress.missedIds(progress, { test: "SAT" }), ["sat-math:b:1", "sat-math:c:1", "sat-math:d:1"]);
+  assert.deepEqual(Progress.missedIds(progress, { test: "SAT" }), ["sat-math:b:1", "sat-math:c:1", "sat-math:d:1", "sat-math:f:1"],
+    "a correct answer after a hint is a miss");
   assert.deepEqual(Progress.missedIds(progress, { sectionKey: "act-english" }), ["act-english-0001"]);
   const weakest = Progress.weakestSkill(progress, { sectionKey: "sat-math" });
   assert.equal(weakest.skill, "Circles");

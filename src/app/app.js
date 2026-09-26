@@ -855,7 +855,7 @@
 
   function reportActions(meta, report) {
     const actions = [];
-    const missed = report.items.filter((item) => !(item.answered && item.correct));
+    const missed = report.items.filter((item) => !(item.answered && item.correct && !item.hinted));
     if (missed.length) {
       const fresh = missed.every((item) => item.question.templateId);
       actions.push({
