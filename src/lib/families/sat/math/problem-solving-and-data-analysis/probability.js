@@ -210,6 +210,7 @@
   // rebuilt from the totals first (Hard); otherwise show the whole table.
   function conditionalTable(t, numeric, hidden) {
     const ctx = t.pick(TWO_WAY);
+    const complementOnKey = t.chance(0.5);
     return retry(() => {
       const R = ctx.rows.length;
       const C = ctx.cols.length;
@@ -246,16 +247,29 @@
         const part = condIdx[0];
         candidates.push([at(part, ei), totalOf(part), `Uses only the ${condLabels[part]} ${onRow ? "row" : "column"} as the condition, leaving out ${condLabels[condIdx[1]]}.`]);
       }
+      // Two probabilities that add to 1 look alike: the key's complement is
+      // offered in half the items, and the reverse question's complement (a
+      // twin of the first distractor) in the rest.
+      const complement = complementOnKey
+        ? [condTotal - joint, condTotal, "Counts the members of the given group who do not have the stated outcome."]
+        : [eventTotal - joint, eventTotal, `Divides by the ${eventTotal} in the ${eventLabels[ei]} ${onRow ? "column" : "row"} and counts those outside the given group: the reverse question, turned around.`];
       candidates.push(
-        [condTotal - joint, condTotal, "Counts the members of the given group who do not have the stated outcome."],
         [eventTotal, N, "Ignores the condition and gives the share of everyone with the outcome."],
         [condTotal, N, "Gives the probability of the condition itself instead of the outcome within it."],
         [eventTotal - joint, N - condTotal, "Finds the probability for everyone outside the given group instead."],
       );
-      const wrong = probabilityWrong(t, joint, condTotal, [candidates[0], ...t.shuffle(candidates.slice(1))]);
+      // Off the key, the reverse question and its complement come first so
+      // they are offered together.
+      const wrong = probabilityWrong(t, joint, condTotal, complementOnKey
+        ? [candidates[0], ...t.shuffle(candidates.slice(1).concat([complement]))]
+        : [candidates[0], complement, ...t.shuffle(candidates.slice(1))]);
       if (!wrong) return null;
       const decimal = tidy(joint / condTotal);
-      const asNumber = numeric && fitsGrid(decimal) && isClean(decimal, 3);
+      // A student-produced answer is the decimal when it terminates, and
+      // otherwise the fraction itself when it fits the grid.
+      const decimalFits = fitsGrid(decimal) && isClean(decimal, 3);
+      const asNumber = numeric && (decimalFits || key.length <= 5);
+      const numericKey = decimalFits ? decimal : key;
       // Build the displayed table.
       const shownRows = range(0, R - 1).filter((r) => !(omit && omit.onRowDim && omit.index === r));
       const shownCols = range(0, C - 1).filter((c) => !(omit && !omit.onRowDim && omit.index === c));
@@ -270,14 +284,14 @@
       const cond = negate ? (onRow ? ctx.rowNot[ci] : ctx.colNot[ci]) : onRow ? ctx.rowCond[ci] : ctx.colCond[ci];
       const event = onRow ? ctx.colEvent[ei] : ctx.rowEvent[ei];
       const raw = `${joint}/${condTotal}`;
-      const shownAnswer = asNumber ? `${raw} = ${num(decimal)}` : raw === key ? raw : `${raw} = ${key}`;
+      const shownAnswer = asNumber && decimalFits ? `${raw} = ${num(decimal)}` : raw === key ? raw : `${raw} = ${key}`;
       const derived = omit
         ? `The ${(omit.onRowDim ? ctx.rows : ctx.cols)[omit.index]} ${omit.onRowDim ? "row" : "column"} is not shown, so find it from the totals. `
         : "";
       return finish(asNumber, {
         stimulus: { type: "table", content },
         stem: `${ctx.intro}${note} If ${cond} is selected at random, what is the probability that ${event}?`,
-        correct: asNumber ? decimal : key,
+        correct: asNumber ? numericKey : key,
         wrong,
         explanation:
           `${derived}The condition limits the choice to the ${condTotal} ${ctx.who} in the ${condIdx.map((c) => condLabels[c]).join(" or ")} ` +
@@ -412,20 +426,22 @@
       ]);
       if (!wrong) return null;
       const decimal = tidy(hit / condTotal);
-      const asNumber = numeric && fitsGrid(decimal) && isClean(decimal, 3);
+      const decimalFits = fitsGrid(decimal) && isClean(decimal, 3);
+      const asNumber = numeric && (decimalFits || key.length <= 5);
+      const shownKey = asNumber && decimalFits ? num(decimal) : key;
       return finish(asNumber, {
         stimulus: null,
         stem: `${ctx.intro(N, s1, r1, r2)} If ${ctx.cond[yes ? 0 : 1]} is selected at random, what is the probability that ${ctx.end[gi]}?`,
-        correct: asNumber ? decimal : key,
+        correct: asNumber && decimalFits ? decimal : key,
         wrong,
         explanation:
           `Turn the percents into counts: ${fmt(g1)} from ${ctx.groups[0]} and ${fmt(g2)} from ${ctx.groups[1]}; of these, ` +
-          `${fmt(inGroup[0])} and ${fmt(inGroup[1])} meet the condition. So the probability is ${fmt(hit)}/${fmt(condTotal)} = ${asNumber ? num(decimal) : key}.`,
+          `${fmt(inGroup[0])} and ${fmt(inGroup[1])} meet the condition. So the probability is ${fmt(hit)}/${fmt(condTotal)} = ${shownKey}.`,
         steps: [
           `Split the ${fmt(N)} ${ctx.things}: ${s1}% gives ${fmt(g1)} and ${fmt(g2)}.`,
           `Apply each group's own rate: ${fmt(inGroup[0])} and ${fmt(inGroup[1])} meet the condition.`,
           `The condition leaves ${fmt(condTotal)} ${ctx.things} to choose from.`,
-          `Of those, ${fmt(hit)} are from ${ctx.groups[gi]}: ${fmt(hit)}/${fmt(condTotal)} = ${asNumber ? num(decimal) : key}.`,
+          `Of those, ${fmt(hit)} are from ${ctx.groups[gi]}: ${fmt(hit)}/${fmt(condTotal)} = ${shownKey}.`,
         ],
         principles: CONDITIONAL_PRINCIPLES,
         trap: `The ${rate}% rate is a probability given the source; the question gives the outcome and asks for the source, the reverse.`,
@@ -690,10 +706,14 @@
     domain: DOMAIN,
     skill: "Probability",
     subskill: "conditional probability",
+    difficulty: "Hard",
     title: "Conditional probability from a two-way table",
     recognize:
       "The condition decides the denominator: count only the group named after \"given\" (or selected from), and read the " +
       "outcome inside that group; percents given for one direction must be turned into counts before the reverse question.",
+    // Hard (declared 2026-09-26; it had defaulted to Hard): the table hides
+    // a row or column, gives percents in the other direction, or hides a
+    // cell, so the condition's group must be rebuilt before dividing.
     rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
     tricks: ["percent-base", "reversed-condition", "wrong-quantity", "part-vs-whole"],
     build(t) {
@@ -935,11 +955,13 @@
     },
   ];
 
+  // `twin` differs only in whether k counts; `opposite` reverses the
+  // direction (and is the complement of the twin).
   const COMPARISONS = {
-    atLeast: { words: "at least", test: (v, k) => v >= k, twin: "moreThan" },
-    moreThan: { words: "more than", test: (v, k) => v > k, twin: "atLeast" },
-    fewerThan: { words: "fewer than", test: (v, k) => v < k, twin: "atMost" },
-    atMost: { words: "at most", test: (v, k) => v <= k, twin: "fewerThan" },
+    atLeast: { words: "at least", test: (v, k) => v >= k, twin: "moreThan", opposite: "atMost" },
+    moreThan: { words: "more than", test: (v, k) => v > k, twin: "atLeast", opposite: "fewerThan" },
+    fewerThan: { words: "fewer than", test: (v, k) => v < k, twin: "atMost", opposite: "moreThan" },
+    atMost: { words: "at most", test: (v, k) => v <= k, twin: "fewerThan", opposite: "atLeast" },
   };
 
   const BAR = { left: 60, right: 380, top: 16, bottom: 226 };
@@ -1001,9 +1023,19 @@
       const decimal = tidy(fav / N);
       const includesK = rule.test(k, k);
       const exactly = counts[scene.values.indexOf(k)];
+      // Two probabilities that add to 1 look alike. The key's complement is
+      // offered in half the items; in the rest the boundary slip and its own
+      // complement (the reversed direction) are offered together, so a pair
+      // that adds to 1 does not mark the key.
+      const opposite = COMPARISONS[rule.opposite];
+      const pairOnKey = t.chance(0.5);
+      const boundary = [favTwin, N, `${includesK ? "Leaves out" : "Includes"} the ${scene.things} with exactly ${k}; "${rule.words} ${k}" ${includesK ? "includes" : "does not include"} ${k}.`];
+      const complementPair = pairOnKey
+        ? [N - fav, N, `Gives the probability of the opposite event, the ${scene.things} not counted.`]
+        : [N - favTwin, N, `Reverses the direction, counting the ${scene.things} with ${opposite.words} ${k} instead of ${rule.words} ${k}.`];
       const wrong = probabilityWrong(t, fav, N, [
-        [favTwin, N, `${includesK ? "Leaves out" : "Includes"} the ${scene.things} with exactly ${k}; "${rule.words} ${k}" ${includesK ? "includes" : "does not include"} ${k}.`],
-        [N - fav, N, `Gives the probability of the opposite event, the ${scene.things} not counted.`],
+        boundary,
+        complementPair,
         [categories, scene.values.length, `Counts the ${categories} values that qualify out of ${scene.values.length}, instead of the ${scene.things} with those values.`],
         [fav, N - fav, `Divides by the ${N - fav} ${scene.things} that do not qualify instead of by all ${N}.`],
         [exactly, N, `Counts only the ${scene.things} with exactly ${k}.`],

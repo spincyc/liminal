@@ -242,6 +242,7 @@
       assigned: (x) => `The group that used the app slept an average of ${x} minutes more per night than the group that did not.`,
       observed: (x) => `Those who had used the app slept an average of ${x} minutes more per night than those who had not.`,
       x: [18, 22, 25, 30, 35],
+      effect: "using the app increased the participants' sleep", link: "using the app goes with more sleep",
       claims: {
         causeAll: "using the app increases sleep for the company's employees in general",
         causePart: "using the app increased sleep for the participants in the study",
@@ -259,6 +260,7 @@
       assigned: (x) => `On a vocabulary quiz, the group that played the game scored an average of ${x} points higher than the group that did not.`,
       observed: (x) => `On a vocabulary quiz, those who had played the game scored an average of ${x} points higher than those who had not.`,
       x: [6, 8, 9, 11, 12],
+      effect: "playing the game raised the participants' vocabulary scores", link: "playing the game goes with higher vocabulary scores",
       claims: {
         causeAll: "playing the game raises vocabulary scores for the school's students in general",
         causePart: "playing the game raised vocabulary scores for the participants in the study",
@@ -276,6 +278,7 @@
       assigned: (x) => `The walking group's average resting heart rate was ${x} beats per minute lower than that of the other group.`,
       observed: (x) => `The average resting heart rate of those who walk was ${x} beats per minute lower than that of those who do not.`,
       x: [4, 5, 6, 7, 8],
+      effect: "walking lowered the participants' resting heart rates", link: "walking goes with a lower resting heart rate",
       claims: {
         causeAll: "walking 30 minutes a day lowers resting heart rate for the town's adults in general",
         causePart: "walking 30 minutes a day lowered resting heart rate for the participants in the study",
@@ -1281,12 +1284,14 @@
     domain: DATA,
     skill: "Statistical inference",
     subskill: "margin of error",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Comparing two estimates that each have a margin of error",
     recognize:
       "Turn each estimate and margin into a range of plausible values. Overlapping ranges leave equal values plausible, however " +
       "far apart the estimates look; separate ranges make a difference likely, never certain.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    // Medium (relabelled from Hard, 2026-09-26 review): two ranges written
+    // and compared by one known rule; overstating the difference is the trap.
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["must-vs-could", "reversed-condition"],
     build(t) {
       return compareItem(t);
@@ -1416,6 +1421,52 @@
     };
   }
 
+  // Which range holds the plausible values for the population mean: the
+  // estimate ± the margin, not the sample's own range, not twice the
+  // margin, not half of it.
+  function meanScopeInterval(t, scene, n, N, m, E, lo, hi, show) {
+    const range = (a, b) => `From ${show(a)} to ${show(b)} ${scene.unit}`;
+    if (m - 2 * E <= lo || m + 2 * E >= hi) return null;
+    const key = range(m - E, m + E);
+    const wrong = [
+      [range(lo, hi), `Gives the range of the individual values in the sample; the margin of error describes the mean, which varies far less.`],
+      [range(m - 2 * E, m + 2 * E), `Uses twice the margin of error on each side of the estimate.`],
+      [Number.isInteger(E / 2) || scene.scale >= 10 ? range(m - E / 2, m + E / 2) : null, `Splits the margin of error between the two sides instead of using all of it on each side.`],
+      [range(m, m + 2 * E), "Starts the range at the estimate instead of centering it there."],
+    ].filter(([text]) => text);
+    const stem = `${scene.intro(n, N)} ${scene.sample(show(m), show(lo), show(hi))} ${scene.margin(show(E))} ` +
+      `Based on these results, which of the following gives the plausible values for ${scene.mean.pop.replace(/ is$/, "")}?`;
+    return {
+      responseType: "multiple-choice",
+      stimulus: null,
+      figure: null,
+      stem,
+      correct: key,
+      wrong,
+      explanation:
+        `The plausible values for the population mean are the estimate plus or minus the margin of error: ${show(m)} ± ${show(E)}, ` +
+        `from ${show(m - E)} to ${show(m + E)}. The sample's own values, ${show(lo)} to ${show(hi)}, describe individual ${scene.ones}.`,
+      steps: [
+        `Estimate: ${show(m)}; margin of error: ${show(E)}.`,
+        `Plausible mean: ${show(m)} ${MINUS} ${show(E)} = ${show(m - E)} to ${show(m)} + ${show(E)} = ${show(m + E)}.`,
+      ],
+      principles: [
+        "A margin of error for a sample mean gives plausible values for the population mean: the estimate plus or minus the margin.",
+        "Individual values vary much more than a sample mean does; the sample's range is not an interval for the mean.",
+      ],
+      trap: `The sample's values ran from ${show(lo)} to ${show(hi)}, but that range describes individual ${scene.ones}, not their mean.`,
+      hint: "What does the margin of error measure: how far individual values spread, or how far the mean could be from the estimate?",
+      estimatedSeconds: 90,
+      verify: () => {
+        const found = stem.replace(/,(\d{3})/g, "$1").match(/was ([\d.]+) \w+,.*? is ([\d.]+) \w+\. Based/);
+        if (!found) return false;
+        const [center, width] = [Number(found[1]), Number(found[2])];
+        const want = `From ${num(tidy(center - width))} to ${num(tidy(center + width))} ${scene.unit}`;
+        return want === key && wrong.every(([text]) => text !== want);
+      },
+    };
+  }
+
   function meanScopeTotal(t, scene, n, N, m, E, lo, hi, show, numeric) {
     const greatest = t.chance(0.5);
     const sign = greatest ? 1 : -1;
@@ -1472,15 +1523,21 @@
     domain: DATA,
     skill: "Statistical inference",
     subskill: "margin of error",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "What a margin of error for a mean describes",
     recognize:
       "The margin of error bounds the population mean, not individual values, which vary far more; it gives plausible values, " +
       "not certain ones, for the population sampled; a total is the size times the mean, so the whole interval scales.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    // Medium (relabelled from Hard, 2026-09-26 review): one interval, read
+    // for what it describes or scaled to a total. The conclusion form's key
+    // is always the plausible statement about the population's mean, so an
+    // interval form (which range is plausible for the mean) shares the text
+    // items with it.
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["must-vs-could", "wrong-quantity", "neighbouring-rule"],
     build(t) {
-      const withTotal = t.chance(0.45);
+      const withTotal = t.chance(0.4);
+      const asInterval = !withTotal && t.chance(0.5);
       const scene = t.pick(withTotal ? MEAN_SCENES.filter((entry) => entry.total) : MEAN_SCENES);
       const numeric = withTotal && t.chance(0.4);
       return retry(() => {
@@ -1494,7 +1551,9 @@
         const show = (value) => num(tidy(value / scene.scale));
         const item = withTotal
           ? meanScopeTotal(t, scene, n, N, m, E, lo, hi, show, numeric)
-          : meanScopeConclusion(t, scene, n, N, m, E, lo, hi, show);
+          : asInterval
+            ? meanScopeInterval(t, scene, n, N, m, E, lo, hi, show)
+            : meanScopeConclusion(t, scene, n, N, m, E, lo, hi, show);
         return item && (!numeric || fitsGrid(item.correct)) ? item : null;
       });
     },
@@ -1684,5 +1743,282 @@
     },
   };
 
-  return [methodChoice, marginSize, sampleEstimate, markRecapture, sampleInference, twoEstimates, intervalMeanScope, stratifiedTotal];
+  /* ================================== experiment-scope-grid (Hard) */
+
+  // The same study told four ways: participants chosen at random or
+  // volunteers, crossed with treatment assigned at random or chosen by the
+  // participants. The four conclusions cross the same two questions (cause
+  // or only an association; the population or only people like the
+  // participants), so each is the key for exactly one design and the
+  // student must judge both facts to find it.
+  const SCOPE_DESIGNS = ["sampleAssign", "volunteerAssign", "sampleSelf", "volunteerSelf"];
+
+  // More studies for this template only (the Medium sample-inference keeps
+  // its own list), in the same shape as STUDIES.
+  const SCOPE_STUDIES = STUDIES.concat([
+    {
+      pop: "the city's office workers", n: [80, 100, 120, 160],
+      designs: {
+        sampleAssign: (n) => `Researchers selected ${n} office workers at random from a city. Half of them, chosen at random, used a standing desk for 6 weeks, and the other half did not.`,
+        volunteerAssign: (n) => `Researchers asked for volunteers among a city's office workers, and ${n} volunteered. Half of the volunteers, chosen at random, used a standing desk for 6 weeks, and the other half did not.`,
+        sampleSelf: (n) => `Researchers selected ${n} office workers at random from a city and asked each one whether they use a standing desk.`,
+        volunteerSelf: (n) => `Researchers asked for volunteers among a city's office workers, and ${n} volunteered. Each volunteer reported whether they use a standing desk.`,
+      },
+      assigned: (x) => `On a back-pain scale, the standing-desk group averaged ${x} points lower than the other group.`,
+      observed: (x) => `On a back-pain scale, those who use a standing desk averaged ${x} points lower than those who do not.`,
+      x: [3, 4, 5, 6, 7],
+      effect: "using a standing desk lowered the participants' back pain", link: "using a standing desk goes with less back pain",
+    },
+    {
+      pop: "the university's students", n: [90, 120, 150, 180],
+      designs: {
+        sampleAssign: (n) => `A counselor selected ${n} students at random from a university. Half of them, chosen at random, did a 10-minute breathing exercise before each exam for a term, and the others did not.`,
+        volunteerAssign: (n) => `A counselor asked a university's students for volunteers, and ${n} volunteered. Half of the volunteers, chosen at random, did a 10-minute breathing exercise before each exam for a term, and the others did not.`,
+        sampleSelf: (n) => `A counselor selected ${n} students at random from a university and asked each one whether they do a breathing exercise before exams.`,
+        volunteerSelf: (n) => `A counselor asked a university's students for volunteers, and ${n} volunteered. Each volunteer reported whether they do a breathing exercise before exams.`,
+      },
+      assigned: (x) => `On a test-anxiety survey, the exercise group scored an average of ${x} points lower than the other group.`,
+      observed: (x) => `On a test-anxiety survey, those who do the exercise scored an average of ${x} points lower than those who do not.`,
+      x: [5, 6, 8, 9, 10],
+      effect: "the breathing exercise lowered the participants' test anxiety", link: "doing the breathing exercise goes with lower test anxiety",
+    },
+    {
+      pop: "the hospital's nurses", n: [60, 80, 100, 120],
+      designs: {
+        sampleAssign: (n) => `Researchers selected ${n} nurses at random from a large hospital. Half of them, chosen at random, took a 20-minute nap during each night shift for a month, and the other half did not.`,
+        volunteerAssign: (n) => `Researchers asked a large hospital's nurses for volunteers, and ${n} volunteered. Half of the volunteers, chosen at random, took a 20-minute nap during each night shift for a month, and the other half did not.`,
+        sampleSelf: (n) => `Researchers selected ${n} nurses at random from a large hospital and asked each one whether they nap during night shifts.`,
+        volunteerSelf: (n) => `Researchers asked a large hospital's nurses for volunteers, and ${n} volunteered. Each volunteer reported whether they nap during night shifts.`,
+      },
+      assigned: (x) => `On a reaction-time test at the end of a shift, the nap group was an average of ${x} milliseconds faster than the other group.`,
+      observed: (x) => `On a reaction-time test at the end of a shift, those who nap were an average of ${x} milliseconds faster than those who do not.`,
+      x: [30, 35, 40, 45, 50],
+      effect: "napping sped up the participants' reaction times", link: "napping goes with faster reaction times",
+    },
+  ]);
+
+  const experimentScope = {
+    id: "experiment-scope-grid",
+    domain: DATA,
+    skill: "Statistical inference",
+    subskill: "study design",
+    difficulty: "Hard",
+    title: "What a study's design lets it conclude, and about whom",
+    recognize:
+      "Two separate questions: random assignment to the treatment is what allows a cause-and-effect conclusion, and random " +
+      "selection from a population is what allows the result to describe that population. Answer each, then pick the one " +
+      "conclusion that gets both right.",
+    // Hard: every choice makes both a claim about cause and a claim about
+    // scope, so the design must be read on both counts; a single fact of
+    // the design (the one the student notices first) leads to an offered
+    // conclusion.
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["too-broad", "must-vs-could", "reversed-condition"],
+    build(t) {
+      const ctx = t.pick(SCOPE_STUDIES);
+      const design = t.pick(SCOPE_DESIGNS);
+      const n = t.pick(ctx.n);
+      const x = t.pick(ctx.x);
+      const assigned = design.endsWith("Assign");
+      const randomSample = design.startsWith("sample");
+      const whom = (all) => (all ? `the result applies to ${ctx.pop} in general` : "the result applies only to people like the participants");
+      const say = (cause, all) => cause
+        ? `The study shows that ${ctx.effect}, and ${whom(all)}.`
+        : `The study shows only that ${ctx.link}, and ${whom(all)}.`;
+      const reasonFor = (cause, all) => {
+        const parts = [];
+        if (cause && !assigned) parts.push("the participants chose whether to use the treatment, so the study cannot show cause");
+        if (!cause && assigned) parts.push("the treatment was assigned at random, so the study does show cause");
+        if (all && !randomSample) parts.push(`volunteers need not represent ${ctx.pop}`);
+        if (!all && randomSample) parts.push(`the participants were chosen at random, so the result extends to ${ctx.pop}`);
+        return `${parts.join("; and ")}.`.replace(/^./, (c) => c.toUpperCase());
+      };
+      const cells = [[true, true], [true, false], [false, true], [false, false]];
+      const key = cells.find(([cause, all]) => cause === assigned && all === randomSample);
+      const wrong = cells.filter((cell) => cell !== key).map(([cause, all]) => [say(cause, all), reasonFor(cause, all)]);
+      const stem =
+        `${ctx.designs[design](n)} ${assigned ? ctx.assigned(x) : ctx.observed(x)} Which of the following is the most ` +
+        "appropriate conclusion?";
+      return finish(false, {
+        stimulus: null,
+        stem,
+        correct: say(key[0], key[1]),
+        wrong,
+        explanation:
+          `The participants were ${randomSample ? "selected at random" : "volunteers"}, and the treatment was ${assigned ? "assigned at random" : "chosen by the participants"}. ` +
+          `${assigned ? "Random assignment supports a cause-and-effect conclusion" : "Without random assignment, only an association can be concluded"}, and ` +
+          `${randomSample ? `random selection lets the result describe ${ctx.pop}` : "without random selection the result applies only to people like the volunteers"}.`,
+        steps: [
+          `Assignment: ${assigned ? "random, so the study can show cause" : "chosen by the participants, so only an association"}.`,
+          `Selection: ${randomSample ? `random, so the result extends to ${ctx.pop}` : "volunteers, so only people like them"}.`,
+          `The conclusion that matches both: "${say(key[0], key[1])}"`,
+        ],
+        principles: [
+          "Random assignment to treatments is what allows a cause-and-effect conclusion.",
+          "Random selection from a population is what allows a conclusion to extend to that population.",
+        ],
+        trap: "Each fact about the design settles only one of the two questions: random assignment says nothing about whom the result describes, and random selection says nothing about cause.",
+        hint: "Answer two questions separately: can the study show cause, and whom does its result describe?",
+        estimatedSeconds: 100,
+        verify: () => {
+          // Read the design back from the stem's wording.
+          const chosenAtRandom = /Half of (?:them|the volunteers), chosen at random/.test(stem);
+          const sampled = /(?:selected|selected [\d,]+ .*?) at random/.test(stem.split(".")[0]) && !/volunteer/.test(stem.split(".")[0]);
+          const want = say(chosenAtRandom, sampled);
+          return want === say(key[0], key[1]) && wrong.every(([text]) => text !== want);
+        },
+      });
+    },
+  };
+
+  /* ============================== margin-sample-size-scaling (Hard) */
+
+  // The margin of error is taken as inversely proportional to the square
+  // root of the sample size, as the stem says. Ratios of sample sizes are
+  // perfect squares (or their reciprocals), so every margin is exact.
+  const SCALING_SCENES = [
+    {
+      first: (n, p, E) => `A random sample of ${fmt(n)} registered voters in a state found that ${p}% support a proposed law, with a margin of error of ${num(E)} percentage points.`,
+      second: (n) => `A second random sample of ${fmt(n)} registered voters in the state finds about the same percent.`,
+      askE: "What is the margin of error, in percentage points, of the second survey?",
+      askN: (E) => `How many registered voters must a second random sample include to have a margin of error of ${num(E)} percentage points?`,
+      unit: "percentage points", who: "registered voters", p: [38, 62], margins: [2, 3, 4, 5, 6], spread: 98,
+    },
+    {
+      first: (n, p, E) => `A random sample of ${fmt(n)} households in a city found that ${p}% have a pet, with a margin of error of ${num(E)} percentage points.`,
+      second: (n) => `A second random sample of ${fmt(n)} households in the city finds about the same percent.`,
+      askE: "What is the margin of error, in percentage points, of the second survey?",
+      askN: (E) => `How many households must a second random sample include to have a margin of error of ${num(E)} percentage points?`,
+      unit: "percentage points", who: "households", p: [30, 70], margins: [2, 3, 4, 5, 6], spread: 98,
+    },
+    {
+      first: (n, p, E) => `A random sample of ${fmt(n)} commuters in a city had a mean commute time of ${p} minutes, with a margin of error of ${S.plural(E, "minute")}.`,
+      second: (n) => `A second random sample of ${fmt(n)} commuters in the city has about the same mean and spread.`,
+      askE: "What is the margin of error, in minutes, of the second sample's mean?",
+      askN: (E) => `How many commuters must a second random sample include for its mean to have a margin of error of ${S.plural(E, "minute")}?`,
+      unit: "minutes", who: "commuters", p: [22, 41], margins: [0.5, 1, 1.5, 2, 2.5], spread: 29.4,
+    },
+  ];
+
+  // Sample-size ratios whose square roots are simple fractions: [top, bottom] of √(n2/n1).
+  const ROOT_RATIOS = [[2, 1], [3, 1], [4, 1], [3, 2], [5, 2], [1, 2], [1, 3], [2, 3], [5, 3], [4, 3]];
+
+  const marginScaling = {
+    id: "margin-sample-size-scaling",
+    domain: DATA,
+    skill: "Statistical inference",
+    subskill: "margin of error",
+    difficulty: "Hard",
+    title: "How the margin of error scales with the sample size",
+    recognize:
+      "With the margin of error inversely proportional to √n, E·√n stays the same: multiplying the sample size by k divides the " +
+      "margin by √k, so quadrupling the sample halves the margin, and halving the margin takes four times the sample.",
+    // Hard: the relationship is a square-root inverse variation, and the
+    // intuitive linear reading (4 times the people, a quarter of the
+    // margin; half the margin, twice the people) is offered every time.
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
+    tricks: ["neighbouring-rule", "reversed-condition", "wrong-quantity"],
+    build(t) {
+      const scene = t.pick(SCALING_SCENES);
+      const askSize = t.chance(0.5);
+      const numeric = t.chance(0.45);
+      const rule = "Assume that the margin of error is inversely proportional to the square root of the sample size.";
+      return retry(() => {
+        const [a, b] = t.pick(ROOT_RATIOS);
+        // n2/n1 = (a/b)^2, so n1 must be a multiple of b^2.
+        // A realistic first survey: its size is near what its margin needs
+        // (about (spread ÷ margin)²), rounded to a multiple of 25 b² so the
+        // second size is a whole number.
+        const E1 = t.pick(scene.margins);
+        const block = 25 * b * b;
+        const n1 = Math.max(block, Math.round((scene.spread / E1) ** 2 / block) * block);
+        const n2 = (n1 * a * a) / (b * b);
+        if (n2 < 50 || n2 > 20000 || n1 === n2) return null;
+        const E2 = tidy((E1 * b) / a);
+        const p = t.int(scene.p[0], scene.p[1]);
+        const intro = `${scene.first(n1, p, E1)} ${rule}`;
+        const common = {
+          stimulus: null,
+          figure: null,
+          principles: [
+            "If the margin of error is inversely proportional to √n, then E·√n is the same for every sample size.",
+            "Multiplying the sample size by k divides the margin of error by √k, not by k.",
+          ],
+          estimatedSeconds: 110,
+        };
+        const ratioText = `${fmt(n2)}/${fmt(n1)} = ${S.frac(a * a, b * b)}`;
+        if (!askSize) {
+          const keyText = S.frac(E1 * b * (scene.unit === "minutes" ? 2 : 1), a * (scene.unit === "minutes" ? 2 : 1));
+          if (numeric && !(fitsGrid(E2) && isClean(E2, 3)) && keyText.length > 5) return null;
+          const stem = `${intro} ${scene.second(n2)} ${scene.askE}`;
+          const fields = {
+            ...common,
+            stem,
+            explanation:
+              `The sample size is multiplied by ${ratioText}, so the margin of error is divided by √(${S.frac(a * a, b * b)}) = ${S.frac(a, b)}: ` +
+              `${num(E1)} × ${S.frac(b, a)} = ${isClean(E2, 3) ? num(E2) : keyText} ${scene.unit}.`,
+            steps: [
+              `Compare the sample sizes: ${ratioText}.`,
+              `The margin changes by the reciprocal of the square root: √(${S.frac(a * a, b * b)}) = ${S.frac(a, b)}, so multiply by ${S.frac(b, a)}.`,
+              `${num(E1)} × ${S.frac(b, a)} = ${isClean(E2, 3) ? num(E2) : keyText}.`,
+            ],
+            trap: `Dividing by ${S.frac(a * a, b * b)} treats the margin as inversely proportional to the sample size itself; it depends on the square root.`,
+            hint: "If the sample size is multiplied by some number, what happens to its square root?",
+            verify: () => {
+              const found = stem.replace(/,(\d{3})/g, "$1").match(/sample of (\d+) .*?margin of error of ([\d.]+) .*?sample of (\d+) /);
+              if (!found) return false;
+              const [m1, e1, m2] = found.slice(1).map(Number);
+              return close(e1 * Math.sqrt(m1 / m2), E2);
+            },
+          };
+          if (numeric) {
+            return finish(true, { ...fields, correct: fitsGrid(E2) && isClean(E2, 3) ? E2 : keyText });
+          }
+          if (!isClean(E2, 2)) return null;
+          return packRanked(t, false, E2, [
+            [(E1 * b * b) / (a * a), `Divides the margin by ${S.frac(a * a, b * b)}, as if it were inversely proportional to the sample size.`],
+            [(E1 * a) / b, "Multiplies by the square root of the change instead of dividing by it."],
+            [E1, "Keeps the same margin of error, as if it did not depend on the sample size."],
+            [(E1 * a * a) / (b * b), "Multiplies the margin by the change in sample size."],
+            [tidy(E1 * Math.sqrt(b / a)), "Takes the square root of the margin's change twice."],
+          ], fields, { show: num, places: 2 });
+        }
+        const stem = `${intro} ${scene.askN(E2)}`;
+        if (!isClean(E2, 2)) return null;
+        return packRanked(t, numeric, n2, [
+          [(n1 * a) / b, `Scales the sample size by ${S.frac(a, b)}, the change in the margin, instead of by its square.`],
+          [(n1 * b * b) / (a * a), "Scales the sample size the wrong way: a smaller margin needs a larger sample."],
+          [(n1 * b) / a, "Scales the sample size by the change in the margin, the wrong way."],
+          [n1 * 2 * (a > b ? 1 : 0) || NaN, "Doubles the sample size."],
+          [(n1 * a * a * a * a) / (b * b * b * b), "Squares the change in the margin twice."],
+        ], {
+          ...common,
+          stem,
+          explanation:
+            `E·√n stays the same, so √n must be multiplied by ${num(E1)} ÷ ${num(E2)} = ${S.frac(a, b)}, and n by (${S.frac(a, b)})² = ${S.frac(a * a, b * b)}: ` +
+            `${fmt(n1)} × ${S.frac(a * a, b * b)} = ${fmt(n2)}.`,
+          steps: [
+            `The margin goes from ${num(E1)} to ${num(E2)}: it is multiplied by ${S.frac(b, a)}.`,
+            `So √n is multiplied by ${S.frac(a, b)}, and n by ${S.frac(a * a, b * b)}.`,
+            `${fmt(n1)} × ${S.frac(a * a, b * b)} = ${fmt(n2)}.`,
+          ],
+          trap: `The margin changes by a factor of ${S.frac(b, a)}, but the sample size must change by the square of its reciprocal, ${S.frac(a * a, b * b)}.`,
+          hint: "Which quantity stays the same when the sample size changes?",
+          verify: () => {
+            const found = stem.replace(/,(\d{3})/g, "$1").match(/sample of (\d+) .*?margin of error of ([\d.]+) .*?margin of error of ([\d.]+) /);
+            if (!found) return false;
+            const [m1, e1, e2] = found.slice(1).map(Number);
+            return close(m1 * (e1 / e2) ** 2, n2);
+          },
+        }, { places: 0 });
+      });
+    },
+  };
+
+  // Existing templates keep their order (a run code rebuilds its questions
+  // in this order); new templates are appended.
+  return [
+    methodChoice, marginSize, sampleEstimate, markRecapture, sampleInference, twoEstimates, intervalMeanScope, stratifiedTotal,
+    experimentScope, marginScaling,
+  ];
 });

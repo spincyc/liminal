@@ -1861,13 +1861,15 @@
     domain: GEO,
     skill: "Lines, angles, and triangles",
     subskill: "similarity",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "The altitude to the hypotenuse",
     recognize:
       "The altitude to the hypotenuse splits a right triangle into two triangles similar to it and to each other. Match " +
       "angles to pair sides: the altitude is the geometric mean of the two parts of the hypotenuse, and each leg is the " +
       "geometric mean of the hypotenuse and the part next to it. The Pythagorean theorem alone leaves two unknowns.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    // Medium (relabelled from Hard, 2026-09-26 review): a known structure
+    // (the three similar right triangles) applied with one proportion.
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
     tricks: ["neighbouring-rule", "part-vs-whole", "wrong-quantity"],
     build(t) {
       const ask = t.pick(["altitude", "leg", "part", "hypotenuse"]);
@@ -2242,22 +2244,15 @@
     return { parts, ok: !labelsClash(parts, 400, 280) };
   }
 
-  const polygonAngles = {
-    id: "regular-polygon-angles",
-    domain: GEO,
-    skill: "Lines, angles, and triangles",
-    subskill: "angle relationships",
-    difficulty: "Hard",
-    title: "Angles of regular polygons",
-    recognize:
-      "Work with exterior angles: in any polygon they add to 360°, each interior angle and its exterior angle add to 180°, " +
-      "and a regular polygon with n sides has exterior angles of 360°/n. Turn every condition into a statement about the " +
-      "exterior angle, then n = 360 ÷ (exterior angle).",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
-    tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity"],
-    build(t) {
-      const form = t.pick(["ratio", "ratio", "difference", "double", "shared"]);
+  // One regular-polygon item: "ratio" (interior to exterior; Medium), or
+  // "difference", "double", "shared" (Hard).
+  function polygonItem(t, form) {
       const numeric = t.chance(0.35);
+      // An interior angle and its exterior angle add to 180°, a look-alike
+      // pair; so do a number of sides and its half. Each item offers one
+      // such pair on the key or one among the wrong answers, never a
+      // pattern that marks the key.
+      const pairOnKey = t.chance(0.5);
       const common = {
         principles: [
           "The exterior angles of any convex polygon add to 360°; a regular polygon with n sides has exterior angles of 360°/n.",
@@ -2277,25 +2272,65 @@
           if (!Number.isInteger(n) || !isClean(e, 2)) return null;
           const k = a / b;
           const asTimes = b === 1 && t.chance(0.6);
-          const wrong = wrongFor(t, numeric, n, [
-            [n / 2, "Divides 180° by the exterior angle instead of 360°; the exterior angles, one at each vertex, add to 360°."],
+          // Some items ask for the sum of the interior angles instead of n.
+          const askSum = t.chance(0.35);
+          const half = [n / 2, "Divides 180° by the exterior angle instead of 360°; the exterior angles, one at each vertex, add to 360°."];
+          const exterior = [round4(e), "Gives the measure of each exterior angle instead of the number of sides."];
+          const interior = [round4(180 - e), "Gives the measure of each interior angle instead of the number of sides."];
+          const rest = [
             [b === 1 ? 2 * a : Number.isInteger(360 / ((180 * b) / a)) ? 360 / ((180 * b) / a) : null, `Takes the exterior angle to be ${b === 1 ? `180°/${a}` : `${b}/${a} of 180°`}, leaving the exterior angle out of the 180°.`],
-            [round4(e), "Gives the measure of each exterior angle instead of the number of sides."],
-            [round4(180 - e), "Gives the measure of each interior angle instead of the number of sides."],
             [a + b, `Adds the parts of the ratio, ${a} + ${b}, and stops.`],
             [a + 2, `Adds 2 to ${a}, borrowing the n − 2 from the interior-angle sum.`],
-          ], { whole: true, positive: true });
-          if (!wrong) return null;
+          ];
+          const label = t.pick(["P", "Q", "R", "S", "T", "W"]);
           const relation = asTimes
             ? t.pick([
-              `Each interior angle of a regular polygon is ${a} times as large as each of its exterior angles.`,
-              `The measure of each interior angle of a regular polygon is ${a} times the measure of each exterior angle.`,
-              `In a regular polygon, each exterior angle measures 1/${a} of each interior angle.`,
+              `Each interior angle of regular polygon ${label} is ${a} times as large as each of its exterior angles.`,
+              `The measure of each interior angle of regular polygon ${label} is ${a} times the measure of each exterior angle.`,
+              `In regular polygon ${label}, each exterior angle measures 1/${a} of each interior angle.`,
             ])
             : t.pick([
-              `In a regular polygon, the ratio of the measure of each interior angle to the measure of each exterior angle is ${a} to ${b}.`,
-              `The measures of each interior angle and each exterior angle of a regular polygon are in the ratio ${a} : ${b}.`,
+              `In regular polygon ${label}, the ratio of the measure of each interior angle to the measure of each exterior angle is ${a} to ${b}.`,
+              `The measures of each interior angle and each exterior angle of regular polygon ${label} are in the ratio ${a} : ${b}.`,
             ]);
+          const sum = 180 * (n - 2);
+          if (askSum) {
+            const wrongSum = wrongFor(t, numeric, sum, [
+              [180 * n, `Multiplies 180° by the number of sides, ${n}, instead of by n − 2.`],
+              [n > 5 ? 180 * (n / 2 - 2) : null, "Finds the number of sides as 180 ÷ (exterior angle), half the true count, before using 180(n − 2)."],
+              [360, "Gives the sum of the exterior angles, which is 360° for every polygon."],
+              [180 * (n - 1), "Multiplies 180° by n − 1 instead of n − 2."],
+              [round4(180 - e), "Gives the measure of one interior angle instead of the sum."],
+            ], { whole: true, positive: true });
+            if (!wrongSum) return null;
+            const relationText = relation;
+            return {
+              ...common,
+              responseType: numeric ? "numeric" : "multiple-choice",
+              figure: null,
+              stem: `${relationText} What is the sum, in degrees, of the measures of the interior angles of the polygon?`,
+              correct: numeric ? sum : fmt(sum),
+              wrong: numeric ? wrongSum : wrongSum.map(([value, reason]) => [typeof value === "number" ? fmt(value) : value, reason]),
+              explanation:
+                `The exterior angle is ${b}/${a + b} of 180°, which is ${num(round4(e))}°, so the polygon has 360 ÷ ${num(round4(e))} = ${n} sides and its ` +
+                `interior angles add to 180(${n} − 2) = ${fmt(sum)}°.`,
+              steps: [
+                `Interior + exterior = 180°, so the exterior angle is ${num(round4(e))}°.`,
+                `n = 360 ÷ ${num(round4(e))} = ${n}.`,
+                `Sum of the interior angles: 180(${n} − 2) = ${fmt(sum)}°.`,
+              ],
+              trap: "The sum of the interior angles needs the number of sides first; 180n counts two triangles too many.",
+              verify: () => {
+                let sides = 3;
+                while (sides < 400 && !close(interiorAngle(sides), k * (360 / sides))) sides += 1;
+                return close(sides * interiorAngle(sides), sum);
+              },
+            };
+          }
+          const wrong = wrongFor(t, numeric, n, pairOnKey
+            ? [half, exterior, ...rest]
+            : [exterior, interior, ...rest], { whole: true, positive: true, keep: pairOnKey ? 1 : 2 });
+          if (!wrong) return null;
           return {
             ...common,
             responseType: numeric ? "numeric" : "multiple-choice",
@@ -2328,13 +2363,16 @@
           const askA = t.chance(0.5);
           const key = askA ? nA : nB;
           const [A1, B1] = t.pick([["A", "B"], ["P", "Q"], ["M", "N"], ["X", "Y"]]);
-          const wrong = wrongFor(t, numeric, key, [
-            [askA ? nB : nA, askA ? `Gives the number of sides of polygon ${B1} instead of polygon ${A1}.` : `Gives the number of sides of polygon ${A1} instead of polygon ${B1}.`],
+          const other = [askA ? nB : nA, askA ? `Gives the number of sides of polygon ${B1} instead of polygon ${A1}.` : `Gives the number of sides of polygon ${A1} instead of polygon ${B1}.`];
+          const interiorOf = [askA ? 180 - 360 / nA : 180 - 360 / nB, `Gives the interior angle of polygon ${askA ? A1 : B1} instead of its number of sides.`];
+          const exteriorOf = [askA ? 360 / nA : 360 / nB, `Gives the exterior angle of polygon ${askA ? A1 : B1} instead of its number of sides.`];
+          const rest = [
             [Number.isInteger(360 / d) ? (askA ? 2 * (360 / d) : 360 / d) : null, `Takes ${d}° to be an exterior angle of polygon ${B1} instead of half of it.`],
-            [askA ? 180 - 360 / nA : 180 - 360 / nB, `Gives the interior angle of polygon ${askA ? A1 : B1} instead of its number of sides.`],
-            [askA ? 360 / nA : 360 / nB, `Gives the exterior angle of polygon ${askA ? A1 : B1} instead of its number of sides.`],
             [Number.isInteger(90 / d) && 90 / d > 2 ? (askA ? 2 * (90 / d) : 90 / d) : null, `Sets the exterior angle of polygon ${B1} equal to ${d}°/2 instead of 2 × ${d}°.`],
-          ], { whole: true, positive: true });
+          ];
+          const wrong = wrongFor(t, numeric, key, pairOnKey
+            ? [other, ...rest, interiorOf]
+            : [interiorOf, exteriorOf, ...rest], { whole: true, positive: true, keep: pairOnKey ? 1 : 2 });
           if (!wrong) return null;
           return {
             ...common,
@@ -2369,7 +2407,9 @@
           const wrong = wrongFor(t, numeric, n, [
             [Number.isInteger(wrongExt) && wrongExt > 2 ? wrongExt : null, `Adds ${d}° to the exterior angle instead of subtracting it; a larger interior angle means a smaller exterior angle.`],
             [interiorAngle(n), "Gives the measure of each interior angle of the polygon instead of its number of sides."],
-            [360 / n === Math.round(360 / n) ? 360 / n : null, "Gives the exterior angle of the polygon instead of its number of sides."],
+            // With the interior angle, the exterior angle would make a pair
+            // that adds to 180° and leaves the key out; offered in half the items.
+            [pairOnKey && 360 / n === Math.round(360 / n) ? 360 / n : null, "Gives the exterior angle of the polygon instead of its number of sides."],
             [m + 1, `Assumes a polygon with one more side than the ${POLYGON_WORDS[m].replace("regular ", "")}.`],
             [Number.isInteger(360 / d) ? 360 / d : null, `Divides 360° by the difference, ${d}°, as if it were an exterior angle.`],
           ], { whole: true, positive: true });
@@ -2439,8 +2479,54 @@
           verify: () => close(360 - interiorAngle(known) - interiorAngle(n), x) && close(360 / (180 - intN), n),
         };
       });
+  }
+
+  const POLYGON_RECOGNIZE =
+    "Work with exterior angles: in any polygon they add to 360°, each interior angle and its exterior angle add to 180°, " +
+    "and a regular polygon with n sides has exterior angles of 360°/n. Turn every condition into a statement about the " +
+    "exterior angle, then n = 360 ÷ (exterior angle).";
+
+  const polygonAngles = {
+    id: "regular-polygon-angles",
+    domain: GEO,
+    skill: "Lines, angles, and triangles",
+    subskill: "angle relationships",
+    difficulty: "Hard",
+    title: "Angles of regular polygons",
+    recognize: POLYGON_RECOGNIZE,
+    // Hard: two polygons compared (a difference of interior angles, or twice
+    // the sides), or an angle left over where two polygons share a side;
+    // each must be recast as a statement about exterior angles. The single
+    // polygon described by its interior-to-exterior ratio is Medium and
+    // lives in regular-polygon-angle-ratio.
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity"],
+    build(t) {
+      return polygonItem(t, t.pick(["difference", "double", "shared"]));
     },
   };
 
-  return [anglePair, sideBounds, crossingSimilar, sharedHeight, similarTriangles, angleChase, altitudeHypotenuse, antiparallel, polygonAngles];
+  const polygonAngleRatio = {
+    id: "regular-polygon-angle-ratio",
+    domain: GEO,
+    skill: "Lines, angles, and triangles",
+    subskill: "angle relationships",
+    difficulty: "Medium",
+    title: "A regular polygon from the ratio of its angles",
+    recognize: POLYGON_RECOGNIZE,
+    // Medium: one polygon, one relationship (interior + exterior = 180°)
+    // and one division.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["intermediate-value", "wrong-quantity"],
+    build(t) {
+      return polygonItem(t, "ratio");
+    },
+  };
+
+  // Existing templates keep their order (a run code rebuilds its questions
+  // in this order); new templates are appended.
+  return [
+    anglePair, sideBounds, crossingSimilar, sharedHeight, similarTriangles, angleChase, altitudeHypotenuse, antiparallel, polygonAngles,
+    polygonAngleRatio,
+  ];
 });

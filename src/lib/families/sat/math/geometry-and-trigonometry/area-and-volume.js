@@ -202,9 +202,11 @@
 
   // Wrong percent answers for a change in direction `up`, as display
   // strings: only positive magnitudes, and never a decrease of 100% or more.
+  // A percent that does not stop within two decimals would print cut off
+  // ("158.3333%"), so it drops out too.
   function percentLures(up, list) {
     return list.map(([value, reason]) => {
-      if (value === null || !Number.isFinite(value) || value <= 0 || (!up && value >= 100)) return [null, reason];
+      if (value === null || !Number.isFinite(value) || value <= 0 || (!up && value >= 100) || !isClean(value, 2)) return [null, reason];
       return [pct(value), reason];
     });
   }
@@ -987,7 +989,7 @@
       [1, "Assumes the total surface area is conserved, like the volume."],
       [count, `Multiplies by the number of spheres, ${count}, without accounting for their smaller size.`],
       [root * root, `Uses the square of the radius ratio, ${root}², which compares one small sphere's area with the original's, upside down.`],
-      [round4(1 / root), "Divides by the radius ratio instead of multiplying."],
+      [isClean(1 / root, 2) ? 1 / root : null, "Divides by the radius ratio instead of multiplying."],
     ], {
       estimatedSeconds: 115,
       stimulus: null,
@@ -1022,7 +1024,7 @@
     rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["neighbouring-rule", "percent-base", "intermediate-value"],
     build(t) {
-      const form = t.pick(["change", "change", "box", "cube", "heights"]);
+      const form = t.pick(["change", "change", "box", "cube", "heights", "similar"]);
       const numeric = t.chance(0.36);
       return retry(() => scalingItem(t, form, numeric));
     },
@@ -1033,14 +1035,20 @@
     domain: DOMAIN,
     skill: "Area and volume",
     subskill: "volume",
+    difficulty: "Hard",
     title: "Surface area and volume under scaling",
     recognize:
       "Decide which quantity is conserved or given before computing: a volume or an area ratio fixes the length factor " +
       "(a cube or square root), and every other measure follows from that length factor, squared for areas and cubed for volumes.",
+    // Hard (declared 2026-09-26; it had defaulted to Hard): the volume held
+    // fixed while one dimension changes, a sphere's area from its volume
+    // change, or a sphere recast as smaller ones; each needs the length
+    // factor found by a root first. Similar solids compared by an area or
+    // volume ratio are Medium and live in scaling-dimension-change.
     rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
     tricks: ["neighbouring-rule", "percent-base", "intermediate-value"],
     build(t) {
-      const form = t.pick(["compensate", "compensate", "sphere", "sphere", "similar", "similar", "recast", "recast"]);
+      const form = t.pick(["compensate", "compensate", "sphere", "sphere", "recast", "recast"]);
       const numeric = t.chance(0.36);
       return retry(() => scalingItem(t, form, numeric));
     },
@@ -1770,13 +1778,16 @@
     domain: GEO,
     skill: "Area and volume",
     subskill: "area",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "A polygon and a circle, one inside the other",
     recognize:
       "Find the one length the two figures share before computing anything: a square inside a circle has the circle's " +
       "diameter as its diagonal, a circle inside a square has the square's side as its diameter, a regular hexagon's side " +
       "equals the radius of the circle around it, and an equilateral triangle's side is √3 times that radius.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
+    // Medium (relabelled from Hard, 2026-09-26 review): one shared length
+    // (a diagonal, a side, a radius) carries the answer across in two or
+    // three steps.
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
     tricks: ["neighbouring-rule", "wrong-quantity", "intermediate-value"],
     build(t) {
       const form = t.pick(["squareArea", "squareCircle", "squarePerimeter", "circleInSquare", "circlePerimeter", "hexPerimeter", "hexCircle", "triangleCircle"]);
@@ -1995,28 +2006,18 @@
       `M ${f(x - r)} ${f(y)} A ${f(r)} ${f(r)} 0 1 1 ${f(x + r)} ${f(y)} A ${f(r)} ${f(r)} 0 1 1 ${f(x - r)} ${f(y)} Z" fill="currentColor" fill-opacity="0.16" stroke="none"/>`;
   }
 
-  const shadedRegion = {
-    id: "shaded-region-area",
-    domain: GEO,
-    skill: "Area and volume",
-    subskill: "area",
-    difficulty: "Hard",
-    title: "Areas and lengths of regions bounded by circles",
-    recognize:
-      "Look for the relationship the figure forces rather than the individual measures: a chord tangent to the inner of two " +
-      "concentric circles makes a right triangle whose legs give R² − r² directly, and congruent circles packed in a square " +
-      "have radii set by the square's side and the number of circles in a row.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
-    tricks: ["neighbouring-rule", "intermediate-value", "part-vs-whole"],
-    build(t) {
-      const form = t.pick(["ring", "ring", "ringChord", "packArea", "packLength"]);
+  // One item of a region bounded by circles: the ring between concentric
+  // circles cut by a tangent chord ("ring", "ringChord"; Hard), or congruent
+  // circles packed in a square ("packArea", "packLength"; Medium).
+  function circleRegionItem(t, form) {
       const numeric = t.chance(0.3);
       const u = t.pick(INSCRIBED_UNITS);
       return retry(() => {
         if (form === "ring" || form === "ringChord") {
           // Inner radius r, half-chord h, outer radius R with r² + h² = R².
-          const [x, y, z] = t.pick([[3, 4, 5], [4, 3, 5], [5, 12, 13], [12, 5, 13], [8, 15, 17], [15, 8, 17], [7, 24, 25], [24, 7, 25], [20, 21, 29], [21, 20, 29], [9, 40, 41]]);
-          const k = z <= 5 ? t.int(1, 6) : z <= 17 ? t.int(1, 2) : 1;
+          const [x, y, z] = t.pick([[3, 4, 5], [4, 3, 5], [5, 12, 13], [12, 5, 13], [8, 15, 17], [15, 8, 17], [7, 24, 25], [24, 7, 25],
+            [20, 21, 29], [21, 20, 29], [9, 40, 41], [12, 35, 37], [35, 12, 37], [11, 60, 61], [28, 45, 53], [45, 28, 53]]);
+          const k = z <= 5 ? t.int(1, 6) : z <= 13 ? t.int(1, 3) : z <= 29 ? t.int(1, 2) : 1;
           const [r, h, R] = [x * k, y * k, z * k];
           const L = 2 * h;
           const chordOnly = form === "ringChord";
@@ -2192,8 +2193,317 @@
           },
         };
       });
+  }
+
+  const shadedRegion = {
+    id: "shaded-region-area",
+    domain: GEO,
+    skill: "Area and volume",
+    subskill: "area",
+    difficulty: "Hard",
+    title: "Areas and lengths of regions bounded by circles",
+    recognize:
+      "Look for the relationship the figure forces rather than the individual measures: a chord tangent to the inner of two " +
+      "concentric circles makes a right triangle whose legs give R² − r² directly, so the area between the circles needs " +
+      "neither radius on its own.",
+    // Hard: the tangent chord's right triangle gives R² − r² without either
+    // radius. Congruent circles packed in a square are Medium and live in
+    // circles-packed-in-square.
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["neighbouring-rule", "intermediate-value", "part-vs-whole"],
+    build(t) {
+      return circleRegionItem(t, t.pick(["ring", "ring", "ringChord", "ringChord"]));
     },
   };
 
-  return [altitudeArea, rectilinearPlan, volumeDimension, volumeUnits, scalingMedium, displacement, scalingSolids, inscribedPolygon, shadedRegion];
+  const circlesInSquare = {
+    id: "circles-packed-in-square",
+    domain: GEO,
+    skill: "Area and volume",
+    subskill: "area",
+    difficulty: "Medium",
+    title: "Congruent circles packed in a square",
+    recognize:
+      "The diameters of the circles in one row add up to the side of the square, so each radius is the side divided by twice " +
+      "the number of circles in a row; then total the areas or circumferences of all the circles.",
+    // Medium: one relationship (diameters span the side) and one formula,
+    // with one circle, one row, or the side as the radius offered.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["part-vs-whole", "neighbouring-rule"],
+    build(t) {
+      return circleRegionItem(t, t.pick(["packArea", "packLength"]));
+    },
+  };
+
+  /* ===================================== inscribed-composite-solids (Hard) */
+
+  // Boxes whose edges and space diagonal are all whole numbers:
+  // a² + b² + c² = d².
+  const DIAGONAL_BOXES = [
+    [1, 2, 2, 3], [2, 3, 6, 7], [1, 4, 8, 9], [4, 4, 7, 9], [2, 6, 9, 11], [6, 6, 7, 11], [3, 4, 12, 13],
+    [2, 5, 14, 15], [2, 10, 11, 15], [8, 9, 12, 17], [1, 12, 12, 17], [6, 10, 15, 19], [4, 8, 19, 21],
+  ];
+
+  // Exposed faces of a solid made of unit cubes, counted one face at a time:
+  // the verify route for joined and drilled solids made of whole cubes.
+  function exposedFaces(cells) {
+    const key = (x, y, z) => `${x},${y},${z}`;
+    const filled = new Set(cells.map(([x, y, z]) => key(x, y, z)));
+    let faces = 0;
+    cells.forEach(([x, y, z]) => {
+      [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]].forEach(([dx, dy, dz]) => {
+        if (!filled.has(key(x + dx, y + dy, z + dz))) faces += 1;
+      });
+    });
+    return faces;
+  }
+
+  const compositeSolids = {
+    id: "inscribed-composite-solids",
+    domain: GEO,
+    skill: "Area and volume",
+    subskill: "surface area",
+    difficulty: "Hard",
+    title: "Solids inside, joined to, or cut from other solids",
+    recognize:
+      "Find what the two solids share before computing: a box inside a sphere has the sphere's diameter as its space " +
+      "diagonal (√(a² + b² + c²)); joined solids hide the faces where they touch; a hole removes two circles of surface " +
+      "but adds the inside wall of the hole.",
+    // Hard: each form turns on a relationship the stem never states (the
+    // space diagonal, the hidden patch where solids touch, the new wall a
+    // hole creates), and the intuitive reading (a face diagonal or an edge
+    // as the diameter; adding whole surface areas; "drilling removes
+    // surface") is offered.
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
+    tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity"],
+    build(t) {
+      const form = t.pick(["boxInSphere", "boxInSphere", "drilled", "stacked"]);
+      const numeric = t.chance(0.35);
+      const u = t.pick(["centimeters", "inches"]);
+      const principles = [
+        "A box whose eight vertices lie on a sphere has a space diagonal, √(a² + b² + c²), equal to the sphere's diameter.",
+        "The surface area of a combined solid counts only the faces that are still exposed; a hole adds its inside wall.",
+      ];
+      return retry(() => {
+        if (form === "boxInSphere") {
+          const [a, b, c, d] = t.pick(DIAGONAL_BOXES);
+          const k = d <= 9 ? t.pick([1, 2]) : 1;
+          const [A, B, Cc, D] = [a * k, b * k, c * k, d * k];
+          const ask = t.pick(["area", "radius", "edge"]);
+          const lead = `All eight vertices of a rectangular box lie on a sphere.`;
+          const check = (radius) => {
+            // Circumradius of a box centered at the origin: its farthest vertex.
+            const corners = [-1, 1].flatMap((i) => [-1, 1].flatMap((j) => [-1, 1].map((l) => [(i * A) / 2, (j * B) / 2, (l * Cc) / 2])));
+            return corners.every((p) => close(Math.hypot(...p), radius));
+          };
+          if (ask === "area") {
+            const key = piMultiple(D * D);
+            const faceDiagonal = B * B + Cc * Cc;
+            const list = [
+              [piMultiple(faceDiagonal), `Uses the diagonal of the ${B}-by-${Cc} face as the diameter; the diameter runs through the inside of the box.`],
+              [piMultiple(Cc * Cc), `Uses the longest edge, ${Cc}, as the diameter.`],
+              [piMultiple(4 * D * D), `Uses the space diagonal, ${D}, as the radius instead of the diameter.`],
+              [piMultiple((A + B + Cc) ** 2), `Adds the three edges, ${A + B + Cc}, to get the diameter.`],
+              [piMultiple(A * A + B * B), `Uses the diagonal of the ${A}-by-${B} face as the diameter.`],
+            ];
+            const wrong = wrongFor(t, numeric, numeric ? D * D : key, numeric ? [] : list, { positive: true });
+            if (!wrong) return null;
+            return {
+              responseType: numeric ? "numeric" : "multiple-choice",
+              estimatedSeconds: 120,
+              stimulus: null,
+              figure: null,
+              stem: numeric
+                ? `${lead} The box is ${A} ${unitAfter(A, u)} by ${B} ${unitAfter(B, u)} by ${Cc} ${unitAfter(Cc, u)}. The surface area of the sphere is kπ square ${u}. What is the value of k?`
+                : `${lead} The box is ${A} ${unitAfter(A, u)} by ${B} ${unitAfter(B, u)} by ${Cc} ${unitAfter(Cc, u)}. What is the surface area, in square ${u}, of the sphere?`,
+              correct: numeric ? D * D : key,
+              wrong,
+              hint: "Which segment inside the box is a diameter of the sphere?",
+              explanation:
+                `The sphere's diameter is the box's space diagonal: √(${A}² + ${B}² + ${Cc}²) = √${D * D} = ${D}. So r = ${num(D / 2)} and the surface area is 4πr² = π(${D})² = ${key}.`,
+              steps: [
+                `Space diagonal: √(${A * A} + ${B * B} + ${Cc * Cc}) = ${D}, a diameter of the sphere.`,
+                `Radius: ${num(D / 2)}.`,
+                `Surface area: 4π(${num(D / 2)})² = ${key}.`,
+              ],
+              principles,
+              trap: "A face diagonal or the longest edge lies on the box's surface; the diameter must join opposite vertices through the inside.",
+              verify: () => check(D / 2) && close(C.choiceValue(key), 4 * Math.PI * (D / 2) ** 2),
+            };
+          }
+          if (ask === "radius") {
+            const radius = D / 2;
+            const bothPairs = t.chance(0.5);
+            // The diameter is twice the key; the longest edge and half of it
+            // are a second such pair, so a pair never marks the key.
+            const list = [
+              [D, "Gives the diameter of the sphere instead of its radius."],
+              [Cc / 2, `Uses the longest edge, ${Cc}, as the diameter.`],
+              [Cc, `Uses the longest edge, ${Cc}, as the radius.`],
+              [surd(Math.sqrt(B * B + Cc * Cc)) && Number.isInteger(Math.sqrt(B * B + Cc * Cc)) ? Math.sqrt(B * B + Cc * Cc) / 2 : null, `Uses the diagonal of the ${B}-by-${Cc} face as the diameter.`],
+              [(A + B + Cc) / 2, `Adds the three edges to get the diameter.`],
+              [(A + B + Cc) / 3, "Averages the three edges."],
+            ];
+            // Half the items offer both pairs; the rest choose freely.
+            const wrong = wrongFor(t, numeric, radius, list, { positive: true, keep: bothPairs ? 3 : 0 });
+            if (!wrong) return null;
+            return {
+              responseType: numeric ? "numeric" : "multiple-choice",
+              estimatedSeconds: 110,
+              stimulus: null,
+              figure: null,
+              stem: `${lead} The box is ${A} ${unitAfter(A, u)} by ${B} ${unitAfter(B, u)} by ${Cc} ${unitAfter(Cc, u)}. What is the radius, in ${u}, of the sphere?`,
+              correct: radius,
+              wrong,
+              hint: "Which segment inside the box is a diameter of the sphere?",
+              explanation: `The sphere's diameter is the box's space diagonal, √(${A}² + ${B}² + ${Cc}²) = √${D * D} = ${D}, so the radius is ${num(radius)}.`,
+              steps: [
+                `Space diagonal: √(${A * A} + ${B * B} + ${Cc * Cc}) = √${D * D} = ${D}.`,
+                `It is a diameter, so the radius is ${D} ÷ 2 = ${num(radius)}.`,
+              ],
+              principles,
+              trap: "The diameter joins opposite vertices of the box through its inside; an edge or a face diagonal is too short.",
+              verify: () => check(radius),
+            };
+          }
+          // The third edge from the sphere and two edges.
+          const radius = D / 2;
+          const list = [
+            [D - A - B, `Subtracts the edges from the diameter, ${D} − ${A} − ${B}, instead of subtracting their squares.`],
+            [Number.isInteger(Math.sqrt(D * D - A * A)) ? Math.sqrt(D * D - A * A) : null, `Leaves out the edge of length ${B}.`],
+            [radius * radius - A * A - B * B > 0 && Number.isInteger(Math.sqrt(radius * radius - A * A - B * B)) ? Math.sqrt(radius * radius - A * A - B * B) : null, "Uses the radius where the diameter belongs."],
+            [Number.isInteger(Math.sqrt(D * D + A * A + B * B)) ? Math.sqrt(D * D + A * A + B * B) : null, "Adds the squares of the edges to the square of the diameter instead of subtracting."],
+            [D * D - A * A - B * B, "Stops at the square of the edge."],
+          ];
+          const wrong = wrongFor(t, numeric, Cc, list, { positive: true });
+          if (!wrong) return null;
+          return {
+            responseType: numeric ? "numeric" : "multiple-choice",
+            estimatedSeconds: 125,
+            stimulus: null,
+            figure: null,
+            stem: `${lead} The sphere has a radius of ${num(radius)} ${unitAfter(radius, u)}, and two of the box's edges are ${A} ${unitAfter(A, u)} and ${B} ${unitAfter(B, u)} long. What is the length, in ${u}, of the box's third edge?`,
+            correct: Cc,
+            wrong,
+            hint: "Which segment inside the box is a diameter of the sphere, and how is its length related to the edges?",
+            explanation:
+              `The space diagonal is a diameter: ${D}. So ${A}² + ${B}² + c² = ${D}², c² = ${D * D} − ${A * A} − ${B * B} = ${Cc * Cc}, and c = ${Cc}.`,
+            steps: [
+              `Diameter: 2 × ${num(radius)} = ${D}; it is the box's space diagonal.`,
+              `${A}² + ${B}² + c² = ${D}², so c² = ${Cc * Cc}.`,
+              `c = ${Cc}.`,
+            ],
+            principles,
+            trap: "The edges and the diagonal are related through their squares, and the diagonal is the diameter, not the radius.",
+            verify: () => check(radius),
+          };
+        }
+        if (form === "drilled") {
+          const a = t.pick([6, 8, 10, 12, 14]);
+          const r = t.int(1, Math.floor((a - 2) / 2));
+          const faces = 6 * a * a;
+          const piPart = 2 * r * a - 2 * r * r;
+          if (piPart <= 0) return null;
+          const expr = (whole, coefficient) => (coefficient === 0 ? fmt(whole) : `${fmt(whole)} ${coefficient > 0 ? "+" : "−"} ${piMultiple(Math.abs(coefficient))}`);
+          const key = expr(faces, piPart);
+          const list = [
+            [expr(faces, -2 * r * r), "Removes the two circles cut from the faces but leaves out the inside wall of the hole."],
+            [expr(faces, 2 * r * a), "Adds the inside wall of the hole but does not remove the two circles cut from the faces."],
+            [fmt(faces), "Assumes drilling a hole does not change the surface area."],
+            [expr(faces, 2 * r * a + 2 * r * r), "Adds the two circles instead of removing them."],
+            [expr(faces, -r * r * a), "Subtracts the volume of the hole, πr²h, from the surface area."],
+          ];
+          if (numeric) {
+            // The grid-in asks only for the multiple of π.
+            if (!C.fitsGrid(piPart)) return null;
+          }
+          const wrong = numeric ? [] : spreadWrong(t, key, list);
+          if (!numeric && !wrong) return null;
+          const lead =
+            `A cube has edges ${a} ${unitAfter(a, u)} long. A hole with a circular cross section of radius ${r} ${unitAfter(r, u)} is drilled straight through the cube, ` +
+            "from the center of one face to the center of the opposite face.";
+          return {
+            responseType: numeric ? "numeric" : "multiple-choice",
+            estimatedSeconds: 120,
+            stimulus: null,
+            figure: null,
+            stem: numeric
+              ? `${lead} The total surface area of the solid that remains, including the inside of the hole, is (${fmt(faces)} + kπ) square ${u}. What is the value of k?`
+              : `${lead} What is the total surface area, in square ${u}, of the solid that remains, including the inside of the hole?`,
+            correct: numeric ? piPart : key,
+            wrong,
+            hint: "Which surfaces disappear when the hole is drilled, and which new surface appears?",
+            explanation:
+              `The six faces had ${fmt(faces)} square ${u}. The hole removes a circle of area π(${r})² = ${piMultiple(r * r)} from each of two faces and adds ` +
+              `its inside wall, a cylinder side of area 2π(${r})(${a}) = ${piMultiple(2 * r * a)}. Total: ${fmt(faces)} − ${piMultiple(2 * r * r)} + ${piMultiple(2 * r * a)} = ${key}.`,
+            steps: [
+              `Cube surface: 6 × ${a}² = ${fmt(faces)}.`,
+              `Remove two circles: 2π(${r})² = ${piMultiple(2 * r * r)}.`,
+              `Add the inside wall: 2π(${r})(${a}) = ${piMultiple(2 * r * a)}.`,
+              `Total: ${key}.`,
+            ],
+            principles,
+            trap: "Drilling removes material but adds surface: the inside wall of the hole is new surface, larger here than the two circles removed.",
+            verify: () => {
+              // Measure the surfaces separately: the faces, the two disks, and
+              // the wall as circumference times length.
+              const wall = 2 * Math.PI * r * a;
+              const disks = 2 * Math.PI * r * r;
+              return close(6 * a * a - disks + wall, C.choiceValue(key));
+            },
+          };
+        }
+        // Stacked cubes: a smaller cube glued on top of a larger one.
+        const b = t.int(4, 12);
+        const a = t.int(2, b - 1);
+        const key = 6 * b * b + 4 * a * a;
+        const list = [
+          [6 * a * a + 6 * b * b, "Adds the two cubes' surface areas, counting the faces where they touch."],
+          [6 * b * b + 5 * a * a, `Removes the small cube's bottom face but not the ${a}-by-${a} part of the large cube's top that it covers.`],
+          [5 * a * a + 5 * b * b, "Removes a whole face from each cube; only an a-by-a patch of the large cube's top is covered."],
+          [6 * b * b + 6 * a * a - 4 * a * a, "Removes four faces of the small cube instead of two squares in all."],
+          [5 * b * b + 4 * a * a, "Removes the large cube's whole top face instead of the patch the small cube covers."],
+        ];
+        // Printed with thousands separators, as the test does.
+        const wrong = wrongFor(t, numeric, fmt(key), list.map(([value, reason]) => [fmt(value), reason]), { positive: true, whole: true });
+        if (!wrong) return null;
+        const thing = t.pick([["cube-shaped wooden blocks", "block"], ["cube-shaped boxes", "box"], ["solid cubes", "cube"]]);
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 105,
+          stimulus: null,
+          figure: null,
+          stem:
+            `Two ${thing[0]} are glued together: a ${thing[1]} with edges ${a} ${unitAfter(a, u)} long is placed on top of a ${thing[1]} with edges ${b} ${unitAfter(b, u)} long, ` +
+            `with its whole bottom face touching the larger ${thing[1]}'s top face. What is the total surface area, in square ${u}, of the combined solid?`,
+          correct: numeric ? key : fmt(key),
+          wrong,
+          hint: "Which faces are hidden where the two blocks touch, and how large is each hidden patch?",
+          explanation:
+            `Separately the cubes have ${fmt(6 * b * b)} and ${fmt(6 * a * a)} square ${u} of surface. Gluing hides the small cube's bottom (${a * a}) and an equal ` +
+            `${a}-by-${a} patch of the large cube's top (${a * a}), so the total is ${fmt(6 * b * b)} + ${fmt(6 * a * a)} − 2(${a * a}) = ${fmt(key)}.`,
+          steps: [
+            `Separate surface areas: 6(${b})² = ${fmt(6 * b * b)} and 6(${a})² = ${fmt(6 * a * a)}.`,
+            `Hidden: the small cube's bottom and the patch under it, 2 × ${a * a} = ${2 * a * a}.`,
+            `Total: ${fmt(6 * b * b + 6 * a * a)} − ${2 * a * a} = ${fmt(key)}.`,
+          ],
+          principles,
+          trap: "Where two solids touch, two squares of surface disappear, one from each solid; the rest of the large cube's top stays exposed.",
+          verify: () => {
+            const cells = [];
+            for (let x = 0; x < b; x += 1) for (let y = 0; y < b; y += 1) for (let z = 0; z < b; z += 1) cells.push([x, y, z]);
+            for (let x = 0; x < a; x += 1) for (let y = 0; y < a; y += 1) for (let z = b; z < b + a; z += 1) cells.push([x, y, z]);
+            return exposedFaces(cells) === key && (numeric || fmt(key) === fmt(C.choiceValue(fmt(key))));
+          },
+        };
+      });
+    },
+  };
+
+  // Existing templates keep their order (a run code rebuilds its questions
+  // in this order); new templates are appended.
+  return [
+    altitudeArea, rectilinearPlan, volumeDimension, volumeUnits, scalingMedium, displacement, scalingSolids, inscribedPolygon, shadedRegion,
+    circlesInSquare, compositeSolids,
+  ];
 });

@@ -43,6 +43,11 @@
 
   const sum = (list) => list.reduce((total, value) => total + value, 0);
 
+  // A decimal that reads as a repeating decimal cut off on screen
+  // ("0.3333", "1.0888"): the gate's visible-text lint rejects it even when
+  // the value is exact, so items redraw rather than print one.
+  const looksCutOff = (text) => /\d\.\d*([1-9])\1{2,}\d?(?!\d)/.test(String(text));
+
   const range = (low, high) => Array.from({ length: high - low + 1 }, (_, index) => low + index);
 
   // Draws parameters until every constraint holds. Deterministic, because
@@ -449,7 +454,7 @@
   }
 
   return {
-    DATA, tidy, isClean, fitsGrid, fmt, shown, sum, range, retry, pack, parseTable, parseNumber,
+    DATA, tidy, isClean, fitsGrid, fmt, shown, sum, looksCutOff, range, retry, pack, parseTable, parseNumber,
     fractionValue, close, r1, seg, chartText, dataDot, DOMAIN, about, offerHard, finish, spreadRank,
     packRanked, statementGrid, DOT_RADIUS, dotPlot, readDotPlot, stackedDotPlots, readStackedDotPlots,
     BOX, boxPlot, readBoxPlot, stackedBoxPlots, readStackedBoxPlots, histogram, readHistogram,

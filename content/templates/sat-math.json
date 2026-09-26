@@ -389,8 +389,8 @@
     {
       "id": "percent-of-a-quantity",
       "bit": 64,
-      "version": 2,
-      "fingerprint": "da345fffe6dd41fd"
+      "version": 3,
+      "fingerprint": "06af28bc3e038c90"
     },
     {
       "id": "percent-change-between-values",
@@ -413,8 +413,8 @@
     {
       "id": "successive-percent",
       "bit": 68,
-      "version": 2,
-      "fingerprint": "9648a3ed22259814"
+      "version": 3,
+      "fingerprint": "5bc0834aced355f5"
     },
     {
       "id": "percent-mixture-fixed-part",
@@ -437,8 +437,8 @@
     {
       "id": "data-display-center",
       "bit": 72,
-      "version": 2,
-      "fingerprint": "530c8bda61ab6d9f"
+      "version": 3,
+      "fingerprint": "cb07e70f970bc959"
     },
     {
       "id": "mean-missing-value",
@@ -455,8 +455,8 @@
     {
       "id": "data-change-statistics",
       "bit": 75,
-      "version": 2,
-      "fingerprint": "81a56fceaf07cca8"
+      "version": 3,
+      "fingerprint": "b2eca2c9abc17c79"
     },
     {
       "id": "best-fit-line-equation",
@@ -491,8 +491,8 @@
     {
       "id": "fit-slope-rescaled-units",
       "bit": 81,
-      "version": 2,
-      "fingerprint": "8e24d44e617fff51"
+      "version": 3,
+      "fingerprint": "b3f63a8a7c6f79d6"
     },
     {
       "id": "two-way-table-chance",
@@ -509,8 +509,8 @@
     {
       "id": "frequency-distribution-probability",
       "bit": 84,
-      "version": 2,
-      "fingerprint": "63590bf55810f72c"
+      "version": 3,
+      "fingerprint": "77cfd8051d8045bc"
     },
     {
       "id": "two-way-or-neither",
@@ -521,8 +521,8 @@
     {
       "id": "conditional-two-way",
       "bit": 86,
-      "version": 2,
-      "fingerprint": "5e4a1afebdc0ec6a"
+      "version": 3,
+      "fingerprint": "f59fca2944613875"
     },
     {
       "id": "probability-after-change",
@@ -593,8 +593,8 @@
     {
       "id": "scaling-area-volume",
       "bit": 98,
-      "version": 2,
-      "fingerprint": "81d7d48f007fd982"
+      "version": 3,
+      "fingerprint": "39aa056dba48946d"
     },
     {
       "id": "displacement-and-transfer",
@@ -653,8 +653,8 @@
     {
       "id": "pythagorean-two-step",
       "bit": 108,
-      "version": 2,
-      "fingerprint": "a02b17c2ebf6f288"
+      "version": 3,
+      "fingerprint": "7d4626059a0d652d"
     },
     {
       "id": "trig-context-length",
@@ -689,8 +689,8 @@
     {
       "id": "circle-equation-features",
       "bit": 114,
-      "version": 2,
-      "fingerprint": "b13d05d1a3a0068e"
+      "version": 3,
+      "fingerprint": "7511b8f7cb6e6bc0"
     },
     {
       "id": "tangent-radius-right-angle",
@@ -701,14 +701,14 @@
     {
       "id": "arc-sector-inscribed",
       "bit": 116,
-      "version": 2,
-      "fingerprint": "e9746685a9d322b1"
+      "version": 3,
+      "fingerprint": "b97cbea2d4e6f4e2"
     },
     {
       "id": "circle-equation-complete-square",
       "bit": 117,
-      "version": 2,
-      "fingerprint": "b31f2b5bbd4ad786"
+      "version": 3,
+      "fingerprint": "7eb1a634c762fe05"
     },
     {
       "id": "literal-equation-factor-target",
@@ -875,20 +875,20 @@
     {
       "id": "average-rate-required-leg",
       "bit": 145,
-      "version": 1,
-      "fingerprint": "660af0563548b5b9"
+      "version": 2,
+      "fingerprint": "fdf4b90065c93dd1"
     },
     {
       "id": "density-cube-edge",
       "bit": 146,
-      "version": 1,
-      "fingerprint": "aace76fb293c13cf"
+      "version": 2,
+      "fingerprint": "6fff5f53395bb035"
     },
     {
       "id": "combined-work-rate",
       "bit": 147,
-      "version": 1,
-      "fingerprint": "6afcbd15cfbd67ba"
+      "version": 2,
+      "fingerprint": "6383e53694adaa95"
     },
     {
       "id": "successive-percent-undo",
@@ -905,14 +905,14 @@
     {
       "id": "percent-base-reversal",
       "bit": 150,
-      "version": 1,
-      "fingerprint": "1ff27f2cafbb5df5"
+      "version": 2,
+      "fingerprint": "5efe602a38788bec"
     },
     {
       "id": "data-change-median",
       "bit": 151,
-      "version": 1,
-      "fingerprint": "638f28a8346b8a16"
+      "version": 2,
+      "fingerprint": "df84ae9451938839"
     },
     {
       "id": "histogram-class-intervals",
@@ -929,8 +929,8 @@
     {
       "id": "could-be-median",
       "bit": 154,
-      "version": 1,
-      "fingerprint": "df1ac5af981d65a5"
+      "version": 2,
+      "fingerprint": "8c4d7c5c1d019885"
     },
     {
       "id": "fit-model-choice",
@@ -941,20 +941,20 @@
     {
       "id": "outlier-removal-fit",
       "bit": 156,
-      "version": 1,
-      "fingerprint": "2f852dfb0e060489"
+      "version": 2,
+      "fingerprint": "bb862c12ecf902d8"
     },
     {
       "id": "exponential-fit-interpretation",
       "bit": 157,
-      "version": 1,
-      "fingerprint": "40be819246352ec5"
+      "version": 2,
+      "fingerprint": "d7522f806140d273"
     },
     {
       "id": "conditional-table-probability",
       "bit": 158,
-      "version": 1,
-      "fingerprint": "8719b27fd13d5804"
+      "version": 2,
+      "fingerprint": "1fe26dd825b00ad6"
     },
     {
       "id": "two-way-unknown-cells",
@@ -965,14 +965,14 @@
     {
       "id": "interval-mean-scope",
       "bit": 160,
-      "version": 1,
-      "fingerprint": "ad3a596bfdbb0b94"
+      "version": 2,
+      "fingerprint": "5cea65b50f71c132"
     },
     {
       "id": "scaling-dimension-change",
       "bit": 161,
-      "version": 1,
-      "fingerprint": "cb07614b642f827b"
+      "version": 2,
+      "fingerprint": "f03fca241e8e6fd1"
     },
     {
       "id": "inscribed-polygon-circle",
@@ -983,8 +983,8 @@
     {
       "id": "shaded-region-area",
       "bit": 163,
-      "version": 1,
-      "fingerprint": "182d569f6c77cab5"
+      "version": 2,
+      "fingerprint": "a9f230d5b79d390d"
     },
     {
       "id": "altitude-hypotenuse-similarity",
@@ -1001,8 +1001,8 @@
     {
       "id": "regular-polygon-angles",
       "bit": 166,
-      "version": 1,
-      "fingerprint": "118925ab4b0b9539"
+      "version": 2,
+      "fingerprint": "50cca8d9f2858841"
     },
     {
       "id": "cofunction-complementary-angles",
@@ -1013,8 +1013,8 @@
     {
       "id": "two-observer-elevation",
       "bit": 168,
-      "version": 1,
-      "fingerprint": "4edd99c8fbb5a4db"
+      "version": 2,
+      "fingerprint": "5248b220bd5b22e1"
     },
     {
       "id": "chord-distance-center",
@@ -1025,14 +1025,80 @@
     {
       "id": "chord-arc-height",
       "bit": 170,
-      "version": 1,
-      "fingerprint": "d70368ae22c90a6e"
+      "version": 2,
+      "fingerprint": "a6f7691bbd06a442"
     },
     {
       "id": "stratified-sample-total",
       "bit": 171,
       "version": 1,
       "fingerprint": "741792e6ed7d7714"
+    },
+    {
+      "id": "percent-comparison-chain",
+      "bit": 172,
+      "version": 1,
+      "fingerprint": "7cd2aeadf060e1f9"
+    },
+    {
+      "id": "percent-share-and-total",
+      "bit": 173,
+      "version": 1,
+      "fingerprint": "afee00bc87216e81"
+    },
+    {
+      "id": "extreme-value-correction",
+      "bit": 174,
+      "version": 1,
+      "fingerprint": "70f2789658484573"
+    },
+    {
+      "id": "fit-slope-unit-rate",
+      "bit": 175,
+      "version": 1,
+      "fingerprint": "53c7c7ba66403d7c"
+    },
+    {
+      "id": "residual-actual-predicted",
+      "bit": 176,
+      "version": 1,
+      "fingerprint": "7b19dc8e3aa4adad"
+    },
+    {
+      "id": "experiment-scope-grid",
+      "bit": 177,
+      "version": 1,
+      "fingerprint": "b7901340cdac22cd"
+    },
+    {
+      "id": "margin-sample-size-scaling",
+      "bit": 178,
+      "version": 1,
+      "fingerprint": "dc211515d6c8e1d2"
+    },
+    {
+      "id": "circles-packed-in-square",
+      "bit": 179,
+      "version": 1,
+      "fingerprint": "810bc49eff28461c"
+    },
+    {
+      "id": "inscribed-composite-solids",
+      "bit": 180,
+      "version": 1,
+      "fingerprint": "c73fc6b130a8ead8"
+    },
+    {
+      "id": "regular-polygon-angle-ratio",
+      "bit": 181,
+      "version": 1,
+      "fingerprint": "8a4917478d2b4b43"
+    },
+    {
+      "id": "circle-tangent-line",
+      "bit": 182,
+      "version": 1,
+      "fingerprint": "aef2e9a46f46d052"
     }
   ]
 }

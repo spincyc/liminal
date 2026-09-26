@@ -672,9 +672,16 @@
     { header: "Wait (minutes)", names: ["Clinic P", "Clinic Q"], subject: "the wait times of the patients at two clinics one morning", start: [5, 10], step: [5] },
   ];
 
+  // Two frequency columns over one list of values. In the "center" variant
+  // both are symmetric about the middle value, so the means are equal and
+  // the standard deviations differ (and the counts' own spread points the
+  // wrong way). In the "mirror" variant one column is the other reversed,
+  // so the standard deviations are equal and the means differ. Either way
+  // the choices are the 2 x 2 grid {standard deviation, mean} x {A, B}.
   function statsCompareSpread(t) {
     const ctx = t.pick(SPREAD_PAIRS);
     const [A, B] = ctx.names;
+    const mirror = t.chance(0.5);
     return retry(() => {
       const shape = () => {
         const outer = t.int(1, 8);
@@ -682,69 +689,126 @@
         const center = t.int(1, 12);
         return [outer, inner, center, inner, outer];
       };
-      const first = shape();
-      const second = shape();
-      if (sum(first) !== sum(second) || first.join() === second.join()) return null;
+      let first;
+      let second;
+      if (mirror) {
+        first = [t.int(1, 8), t.int(1, 8), t.int(1, 9), t.int(1, 8), t.int(1, 8)];
+        second = first.slice().reverse();
+        if (first.join() === second.join()) return null;
+      } else {
+        first = shape();
+        second = shape();
+        if (sum(first) !== sum(second) || first.join() === second.join()) return null;
+      }
       const start = t.pick(ctx.start);
       const step = t.pick(ctx.step);
       const values = range(0, 4).map((index) => start + index * step);
-      const sdFirst = stdev(expand(values, first), false);
-      const sdSecond = stdev(expand(values, second), false);
-      if (Math.abs(sdFirst - sdSecond) < 0.15 * Math.max(sdFirst, sdSecond)) return null;
-      const freqFirst = stdev(first, false);
-      const freqSecond = stdev(second, false);
-      if ((sdFirst > sdSecond) === (freqFirst > freqSecond) || Math.abs(freqFirst - freqSecond) < 0.5) return null;
-      const bigger = sdFirst > sdSecond ? A : B;
-      const smaller = bigger === A ? B : A;
-      // A 2 x 2 grid of claims, {standard deviation, mean value} x {A, B},
-      // so the key is not the one choice the others vary around. The means
-      // are equal (both sets are symmetric about the same value).
-      const grid = statementGrid((i, j) => {
-        const stat = ["standard deviation", "mean value"][i];
-        const name = [A, B][j];
-        if (i === 0) {
-          return name === bigger
-            ? [`The data for ${name} have the greater ${stat}.`, "", true]
-            : [`The data for ${name} have the greater ${stat}.`, `Compares the frequency columns as if they were the data: the counts for ${smaller} vary more, but the counts are not the values.`, false];
-        }
-        return [`The data for ${name} have the greater ${stat}.`,
-          `Both data sets are symmetric about ${values[2]}, so their means are equal; the difference between them is in spread, not center.`, false];
-      });
-      const key = grid.correct;
-      const wrong = grid.wrong;
+      const dataFirst = expand(values, first);
+      const dataSecond = expand(values, second);
+      const sdFirst = stdev(dataFirst, false);
+      const sdSecond = stdev(dataSecond, false);
+      const meanFirst = mean(dataFirst);
+      const meanSecond = mean(dataSecond);
+      let key;
+      let wrong;
+      let explanation;
+      let steps;
+      if (mirror) {
+        if (Math.abs(meanFirst - meanSecond) < 0.4 * step) return null;
+        const higher = meanFirst > meanSecond ? A : B;
+        const lower = higher === A ? B : A;
+        const heavy = higher === A ? first : second;
+        const grid = statementGrid((i, j) => {
+          const stat = ["standard deviation", "mean value"][i];
+          const name = [A, B][j];
+          if (i === 1) {
+            return name === higher
+              ? [`The data for ${name} have the greater ${stat}.`, "", true]
+              : [`The data for ${name} have the greater ${stat}.`, `The data for ${name} are the other set's frequencies reversed, so they pile up at the low end: ${name}'s mean is the smaller one.`, false];
+          }
+          return [`The data for ${name} have the greater ${stat}.`,
+            `The two frequency columns are mirror images, so the values sit the same distances from their own means; the standard deviations are equal.`, false];
+        });
+        if (!grid) return null;
+        key = grid.correct;
+        wrong = grid.wrong;
+        explanation =
+          `The ${B} frequencies are the ${A} frequencies in reverse order, so each data set is the other reflected about ${values[2]}. ` +
+          `Reflection keeps every distance from the mean, so the standard deviations are equal, but ${higher} has ${heavy[3] + heavy[4]} values at ` +
+          `${values[3]} or ${values[4]} and so the greater mean.`;
+        steps = [
+          `Compare the columns: ${B}'s frequencies are ${A}'s read from the bottom up.`,
+          "A reflected data set has the same spread about its mean, so the standard deviations are equal.",
+          `${higher} puts more of its values at the high end, so its mean is greater than ${lower}'s.`,
+          `So "${key}" is the true statement.`,
+        ];
+      } else {
+        if (Math.abs(sdFirst - sdSecond) < 0.15 * Math.max(sdFirst, sdSecond)) return null;
+        const freqFirst = stdev(first, false);
+        const freqSecond = stdev(second, false);
+        if ((sdFirst > sdSecond) === (freqFirst > freqSecond) || Math.abs(freqFirst - freqSecond) < 0.5) return null;
+        const bigger = sdFirst > sdSecond ? A : B;
+        const smaller = bigger === A ? B : A;
+        const grid = statementGrid((i, j) => {
+          const stat = ["standard deviation", "mean value"][i];
+          const name = [A, B][j];
+          if (i === 0) {
+            return name === bigger
+              ? [`The data for ${name} have the greater ${stat}.`, "", true]
+              : [`The data for ${name} have the greater ${stat}.`, `Compares the frequency columns as if they were the data: the counts for ${smaller} vary more, but the counts are not the values.`, false];
+          }
+          return [`The data for ${name} have the greater ${stat}.`,
+            `Both data sets are symmetric about ${values[2]}, so their means are equal; the difference between them is in spread, not center.`, false];
+        });
+        if (!grid) return null;
+        key = grid.correct;
+        wrong = grid.wrong;
+        const edge = bigger === A ? first : second;
+        explanation =
+          `Both data sets have ${sum(first)} values, are symmetric about ${values[2]}, and so share the same mean and median. ` +
+          `${bigger} has ${edge[0] + edge[4]} values at the extremes (${values[0]} and ${values[4]}) and only ${edge[2]} at the ` +
+          `center, so its values sit farther from the mean on average: its standard deviation is greater.`;
+        steps = [
+          `Note that both distributions are symmetric about ${values[2]}, so both means are ${values[2]}.`,
+          "Compare how many values sit far from the center in each set.",
+          `${bigger} puts more of its values at the extremes and fewer at the center.`,
+          `So ${bigger} has the greater standard deviation.`,
+        ];
+      }
       const rows = values.map((value, index) => [value, first[index], second[index]]);
-      const edge = bigger === A ? first : second;
       return finish(false, {
         stimulus: { type: "table", content: table([ctx.header, `${A} frequency`, `${B} frequency`], rows) },
         stem: `The table summarizes ${ctx.subject}. Which of the following statements about the two data sets is true?`,
         correct: key,
         wrong,
-        explanation:
-          `Both data sets have ${sum(first)} values, are symmetric about ${values[2]}, and so share the same mean and median. ` +
-          `${bigger} has ${edge[0] + edge[4]} values at the extremes (${values[0]} and ${values[4]}) and only ${edge[2]} at the ` +
-          `center, so its values sit farther from the mean on average: its standard deviation is greater.`,
-        steps: [
-          `Note that both distributions are symmetric about ${values[2]}, so both means are ${values[2]}.`,
-          "Compare how many values sit far from the center in each set.",
-          `${bigger} puts more of its values at the extremes and fewer at the center.`,
-          `So ${bigger} has the greater standard deviation.`,
-        ],
+        explanation,
+        steps,
         principles: [
-          "The standard deviation measures how far the values typically are from the mean.",
+          "The standard deviation measures how far the values typically are from the mean; shifting or reflecting a data set does not change it.",
           "In a frequency table the frequencies count the values; their own spread says nothing about the spread of the data.",
         ],
-        trap: "Reading the frequency column as data reverses the comparison: a column with very uneven counts can describe data bunched tightly at the center.",
-        hint: "Where are most of each data set's values: near the center or near the ends?",
+        trap: mirror
+          ? "Frequency columns that look different can describe equally spread data: a mirror image moves the center, not the spread."
+          : "Reading the frequency column as data reverses the comparison: a column with very uneven counts can describe data bunched tightly at the center.",
+        hint: "Where are most of each data set's values: near the center or near the ends, near the top or near the bottom?",
         verify: () => {
           const cells = parseTable(table([ctx.header, "a", "b"], rows)).slice(1);
-          const dataFirst = [];
-          const dataSecond = [];
+          const one = [];
+          const two = [];
           cells.forEach(([value, countA, countB]) => {
-            for (let copy = 0; copy < parseNumber(countA); copy += 1) dataFirst.push(parseNumber(value));
-            for (let copy = 0; copy < parseNumber(countB); copy += 1) dataSecond.push(parseNumber(value));
+            for (let copy = 0; copy < parseNumber(countA); copy += 1) one.push(parseNumber(value));
+            for (let copy = 0; copy < parseNumber(countB); copy += 1) two.push(parseNumber(value));
           });
-          const firstBigger = stdev(dataFirst, true) > stdev(dataSecond, true);
-          return (firstBigger ? A : B) === bigger && S.approx(mean(dataFirst), mean(dataSecond));
+          const sdA = stdev(one, true);
+          const sdB = stdev(two, true);
+          const truths = [
+            [`The data for ${A} have the greater standard deviation.`, sdA > sdB + 1e-9],
+            [`The data for ${B} have the greater standard deviation.`, sdB > sdA + 1e-9],
+            [`The data for ${A} have the greater mean value.`, mean(one) > mean(two) + 1e-9],
+            [`The data for ${B} have the greater mean value.`, mean(two) > mean(one) + 1e-9],
+          ];
+          const holds = (text) => (truths.find(([statement]) => statement === text) || [null, false])[1];
+          return holds(key) && wrong.every(([text]) => !holds(text));
         },
       });
     });
@@ -767,7 +831,9 @@
 
   function statsMustBeTrue(t) {
     const n = t.int(5, 15);
-    const scenario = t.int(0, 2);
+    // Scenarios 3 and 4 name the same statistic as 0 and 2 but key a
+    // different one, so the key's statistic does not echo the stem's.
+    const scenario = t.int(0, 4);
     // Each scenario is a 2 x 2 grid {two statistics} x {two directions}:
     // one cell holds for every allowed data set, at least one other can hold
     // for some (the must-versus-could trap), and the rest never hold.
@@ -775,6 +841,7 @@
       mean: (b, a) => direction(mean(b), mean(a)),
       median: (b, a) => direction(median(b), median(a)),
       sd: (b, a) => direction(stdev(b, false), stdev(a, false)),
+      range: (b, a) => direction(spread(b), spread(a)),
     };
     let event;
     let apply;
@@ -799,7 +866,7 @@
         mean: "the removed value is below the mean (it is the least of different values), so the mean always increases",
         sd: "the spread usually shrinks, but if a far outlier remains at the top, removing the least value can widen it",
       };
-    } else {
+    } else if (scenario === 2) {
       event = "One more value, equal to the median of the original values, is added to the data set.";
       apply = (set) => set.concat([median(set)]);
       rows = ["median", "mean"];
@@ -808,9 +875,27 @@
         median: "a new value at the median keeps the middle of the data at that value, so the median never changes",
         mean: "the mean moves toward the median, up or down depending on which side of the median it starts",
       };
+    } else if (scenario === 3) {
+      event = "One more value, equal to the mean of the original values, is added to the data set.";
+      apply = (set) => set.concat([mean(set)]);
+      rows = ["sd", "median"];
+      cols = [-1, 0];
+      why = {
+        sd: "the new value has no deviation from the mean, so the same squared deviations are shared by one more value and the standard deviation always decreases",
+        median: "the median moves toward the mean unless the two are equal, so it can stay the same or move, depending on the data",
+      };
+    } else {
+      event = "One more value, equal to the median of the original values, is added to the data set.";
+      apply = (set) => set.concat([median(set)]);
+      rows = ["range", "mean"];
+      cols = [0, 1];
+      why = {
+        range: "the new value lies between the least and greatest values, so the range never changes",
+        mean: "the mean moves toward the median, up or down depending on which side of the median it starts, or stays put if the two are equal",
+      };
     }
     const mustRow = rows[0];
-    const mustDir = scenario === 1 ? 1 : 0;
+    const mustDir = { 0: 0, 1: 1, 2: 0, 3: -1, 4: 0 }[scenario];
     const sets = randomSets(`${scenario}|${n}`, n);
     const low = Math.floor(n / 2);
     sets.push(range(1, n));
@@ -823,7 +908,8 @@
       const hits = pairs.filter(([b, a]) => tests[stat](b, a) === dir).length;
       return hits === pairs.length ? "must" : hits ? "could" : "never";
     };
-    const statement = (stat, dir) => moved(stat, dir).replace("before", "in the original data set");
+    const statement = (stat, dir) =>
+      `The ${STAT_NAMES[stat]} is ${dir === 0 ? "the same as" : dir > 0 ? "greater than" : "less than"} in the original data set.`;
     const grid = statementGrid((i, j) => {
       const stat = rows[i];
       const dir = cols[j];
@@ -834,11 +920,13 @@
       return [statement(stat, dir), reason, kind === "must"];
     });
     const key = statement(mustRow, mustDir);
-    if (!grid || grid.correct !== key) throw new Error("must-be-true grid is not well formed");
+    if (!grid || grid.correct !== key || !grid.wrong.some(([, reason]) => reason.startsWith("This can happen"))) {
+      throw new Error("must-be-true grid is not well formed");
+    }
     const couldText = grid.wrong.find(([, reason]) => reason.startsWith("This can happen"));
     return finish(false, {
       stimulus: null,
-      stem: `A data set consists of ${n} different positive integers. ${event} Which of the following statements must be true about the new data set?`,
+      stem: `${t.pick(MUST_SETTINGS)(n)} ${event} Which of the following statements must be true about the new data set?`,
       correct: key,
       wrong: grid.wrong,
       explanation: `${cap1(why[mustRow])}. ${couldText ? `By contrast, "${couldText[0]}" holds only for some data sets.` : ""}`.trim(),
@@ -872,6 +960,15 @@
 
   const cap1 = (text) => text.charAt(0).toUpperCase() + text.slice(1);
 
+  // Ways to say "n different positive integers" for the must-be-true form.
+  const MUST_SETTINGS = [
+    (n) => `A data set consists of ${n} different positive integers.`,
+    (n) => `A teacher recorded the scores of ${n} students on a quiz; the scores are ${n} different positive integers.`,
+    (n) => `A data set gives the heights, in centimeters, of ${n} seedlings; the heights are ${n} different whole numbers.`,
+    (n) => `A data set gives the numbers of visitors to a museum on ${n} days; no two of the numbers are the same.`,
+    (n) => `A data set gives the prices, in whole dollars, of ${n} different used bicycles; no two prices are equal.`,
+  ];
+
   const displayCenter = {
     id: "data-display-center",
     domain: DATA,
@@ -889,6 +986,11 @@
       const asPlot = t.chance(0.55);
       const askMean = t.chance(0.5);
       const numeric = t.chance(0.3);
+      // A mean that is never one of the plotted values would let a student
+      // rule out the plotted values; about two thirds of the means are whole
+      // numbers, and so plotted values, which leaves neither "rule out the
+      // plotted values" nor "keep them" above 30%.
+      const wholeMean = t.chance(0.65);
       return retry(() => {
         const width = t.int(5, 7);
         const lo = t.int(scene.lo[0], scene.lo[1]);
@@ -917,7 +1019,7 @@
         const mode = freqs.filter((f) => f === top).length === 1 ? values[freqs.indexOf(top)] : null;
         const lowerMiddle = n % 2 ? null : valueAt(n / 2);
         const key = askMean ? mean : median;
-        if (askMean ? (!isClean(mean, 2) || close(mean, unweighted)) : close(median, listedMiddle)) return null;
+        if (askMean ? (!isClean(mean, 2) || close(mean, unweighted) || Number.isInteger(tidy(mean)) !== wholeMean) : close(median, listedMiddle)) return null;
         const stat = askMean ? "mean" : "median";
         const upperMiddle = n % 2 ? null : valueAt(n / 2 + 1);
         const candidates = askMean
@@ -997,11 +1099,15 @@
     domain: DOMAIN,
     skill: "One-variable data",
     subskill: "mean and median",
+    difficulty: "Medium",
     title: "Combined groups with different sizes and means",
     recognize:
       "Means of different-sized groups cannot be averaged; convert each mean to a total (mean × size), work with totals, " +
       "and convert back only at the end.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    // Medium (declared 2026-09-26; it had defaulted to Hard): one known
+    // model, totals from means, in two or three steps; averaging the means
+    // is the offered trap.
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["unweighted-average", "intermediate-value", "wrong-quantity", "reversed-condition"],
     build(t) {
       const form = t.int(0, 2);
@@ -1022,13 +1128,15 @@
       "Each statistic depends on something different: the mean and standard deviation on every value, the median on the " +
       "middle position, the range on the extremes, and a frequency table's data on its values repeated by their counts.",
     // Hard: the student must decide, for a change described in words, which
-    // statistic must move and which only could; no computation settles it.
+    // statistic must move and which only could, or see from two frequency
+    // columns (symmetric about one center, or mirror images) which statistic
+    // differs; no computation settles it. The list form, where each
+    // statistic can simply be recomputed, is Medium work and lives in
+    // data-change-median.
     rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["must-vs-could", "part-vs-whole", "neighbouring-rule", "wrong-quantity"],
     build(t) {
-      const form = t.int(0, 2);
-      if (form === 0) return { estimatedSeconds: 110, ...statsWhichTrue(t, ["raise-max", "add-mean", "drop-min"]) };
-      if (form === 1) return { estimatedSeconds: 95, ...statsCompareSpread(t) };
+      if (t.chance(0.45)) return { estimatedSeconds: 95, ...statsCompareSpread(t) };
       return { estimatedSeconds: 100, ...statsMustBeTrue(t) };
     },
   };
@@ -1048,8 +1156,8 @@
     rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["part-vs-whole", "neighbouring-rule"],
     build(t) {
-      if (t.chance(0.65)) return { estimatedSeconds: 100, ...statsNewMedian(t, t.chance(0.5)) };
-      return { estimatedSeconds: 90, ...statsWhichTrue(t, ["shift"]) };
+      if (t.chance(0.5)) return { estimatedSeconds: 100, ...statsNewMedian(t, t.chance(0.5)) };
+      return { estimatedSeconds: 100, ...statsWhichTrue(t, ["shift", "raise-max", "add-mean", "drop-min"]) };
     },
   };
 
@@ -1522,7 +1630,7 @@
           const key = t.pick(inside.length && t.chance(0.6) ? inside : [least, greatest]);
           return packRanked(t, false, key, outside, {
             stimulus,
-            stem: `${ctx.intro(total)} Which of the following could be the median of the ${total} values?`,
+            stem: `${ctx.intro(total)} All ${total} values are whole numbers. Which of the following could be the median of the ${total} values?`,
             explanation: `${bounds} So the median can be any of the values from ${num(least)} to ${num(greatest)} that x allows, and ${num(key)} is one of them.`,
             steps: [
               "Put the known values in order.",
@@ -1552,7 +1660,7 @@
             [tidy(mean(known)), "Gives the mean of the known values."],
           ], {
             stimulus,
-            stem: `${ctx.intro(total)} What is the ${askMost ? "greatest" : "least"} possible value of the median of the ${total} values?`,
+            stem: `${ctx.intro(total)} All ${total} values are whole numbers. What is the ${askMost ? "greatest" : "least"} possible value of the median of the ${total} values?`,
             explanation: `${bounds} The ${askMost ? "greatest" : "least"} possible median is ${num(key)}.`,
             steps: [
               "Put the known values in order.",
@@ -1570,20 +1678,25 @@
             },
           }, { show: num, places: 1 });
         }
-        // Which x gives a stated median.
-        const M = t.pick([least, greatest].concat(inside.filter((value) => Number.isInteger(value) || !odd)));
+        // Which x gives a stated median. With an odd count, a median strictly
+        // between the bounds is x itself, which asks nothing, so the stated
+        // median is a bound there (x is then any value past a neighbour);
+        // with an even count an inside median needs x = 2M − (middle value).
+        const M = t.pick([least, greatest].concat(odd ? [] : inside));
         const works = (x) => close(median(known.concat([x])), M);
         const options = range(Math.max(1, k(1) - 5), k(total - 1) + 5);
         const good = options.filter(works);
         const bad = options.filter((x) => !works(x));
-        if (!good.length || bad.length < 3) return null;
-        const key = t.pick(good);
+        // The key is never the stated median itself (x = M reads straight off the stem).
+        const keys = good.filter((x) => !close(x, M));
+        if (!keys.length || bad.length < 3) return null;
+        const key = t.pick(keys);
         const nearBad = bad.filter((x) => Math.abs(x - key) <= Math.max(6, k(m + 1) - k(m)));
         const pool = t.shuffle(nearBad.length >= 3 ? nearBad : bad).slice(0, 8);
         const why = (x) => `If x = ${x}, the median of the ${total} values is ${num(tidy(median(known.concat([x]))))}, not ${num(M)}.`;
         return packRanked(t, false, key, pool.map((x) => [x, why(x)]), {
           stimulus,
-          stem: `${ctx.intro(total)} The median of the ${total} values is ${num(M)}. Which of the following could be the value of x?`,
+          stem: `${ctx.intro(total)} All ${total} values are whole numbers, and their median is ${num(M)}. Which of the following could be the value of x?`,
           explanation: `${bounds} A median of ${num(M)} ${good.length > 1 ? `needs x to be ${key <= M ? "at most" : "at least"} ${num(key <= M ? Math.max(...good) : Math.min(...good))}` : `needs x = ${num(key)}`}; of the choices, only ${num(key)} does that.`,
           steps: [
             "Put the known values in order and find the middle position.",
@@ -2018,8 +2131,176 @@
     },
   };
 
+  /* ============================== extreme-value-correction (Hard) */
+
+  // The mean and median of a data set are given, and one extreme value (the
+  // greatest or the least) is corrected without crossing the median. The
+  // mean moves by the change divided by the count; the median does not move.
+  // `range` entries are [low, high, step]; money scenes print dollars.
+  const CORRECTION_SCENES = [
+    { data: (n) => `the prices of the ${n} homes sold in Lakeview last month`, money: true, n: [15, 20, 24, 25, 30, 40], mean: [300000, 650000, 1000], gap: [15000, 90000, 1000], extreme: [1200000, 3200000, 10000], unit: "dollars" },
+    { data: (n) => `the annual salaries of the ${n} employees of a design firm`, money: true, n: [12, 15, 16, 20, 24, 25], mean: [52000, 96000, 500], gap: [3000, 20000, 500], extreme: [180000, 600000, 1000], unit: "dollars" },
+    { data: (n) => `the numbers of points scored by the ${n} players on a basketball team this season`, money: false, n: [10, 12, 14, 15, 16], mean: [140, 320, 1], gap: [8, 60, 1], extreme: [600, 1500, 5], unit: "points" },
+    { data: (n) => `the monthly rainfall totals, in millimeters, recorded at a weather station over ${n} months`, money: false, n: [12, 16, 20, 24, 25], mean: [60, 140, 1], gap: [4, 30, 1], extreme: [300, 700, 2], unit: "millimeters" },
+    { data: (n) => `the numbers of pages in the ${n} books on a summer reading list`, money: false, n: [16, 20, 24, 25, 30], mean: [250, 420, 1], gap: [10, 60, 1], extreme: [900, 1600, 4], unit: "pages" },
+  ];
+
+  const drawStep = (t, [low, high, step]) => t.int(Math.ceil(low / step), Math.floor(high / step)) * step;
+
+  // A data set with n values, the given mean and median, and `extreme` as
+  // its greatest (top) or least (bottom) value: the other values sit in two
+  // blocks, one below the median and one above. Null when no such blocks fit.
+  function dataWith(n, meanValue, medianValue, extreme, top) {
+    const middle = n % 2 ? 1 : 2;
+    const lower = Math.floor((n - middle) / 2);
+    const upper = n - middle - lower;
+    const total = n * meanValue - middle * medianValue - extreme;
+    for (const share of [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3]) {
+      if (top) {
+        // lower values a, upper values b (one of the upper places is the extreme).
+        const a = medianValue * share;
+        const b = (total - lower * a) / (upper - 1);
+        if (b > medianValue && b < extreme) return [...Array(lower).fill(a), ...Array(middle).fill(medianValue), ...Array(upper - 1).fill(b), extreme];
+      } else {
+        const b = medianValue * (2 - share);
+        const a = (total - upper * b) / (lower - 1);
+        if (a < medianValue && a > extreme) return [extreme, ...Array(lower - 1).fill(a), ...Array(middle).fill(medianValue), ...Array(upper).fill(b)];
+      }
+    }
+    return null;
+  }
+
+  const extremeCorrection = {
+    id: "extreme-value-correction",
+    domain: DOMAIN,
+    skill: "One-variable data",
+    subskill: "mean and median",
+    difficulty: "Hard",
+    title: "Mean and median after an extreme value is corrected",
+    recognize:
+      "Correcting one value changes the sum by the size of the correction, so the mean moves by that amount divided by the " +
+      "count; the median depends only on the middle position, which does not move while the value stays on the same side.",
+    // Hard: only summary statistics are given, so the student must see that
+    // the median cannot move (the value stays on its side of the middle)
+    // while the mean moves by the correction over the count; moving both,
+    // moving the mean by the whole correction, or keeping the old gap are
+    // all offered.
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["neighbouring-rule", "wrong-quantity", "intermediate-value"],
+    build(t) {
+      const scene = t.pick(CORRECTION_SCENES);
+      const top = t.chance(0.7);
+      const askGap = t.chance(0.6);
+      const numeric = askGap && t.chance(0.45);
+      const show = (value) => (scene.money ? S.money(value) : num(value));
+      return retry(() => {
+        const n = t.pick(scene.n);
+        const M = drawStep(t, scene.mean) - (top ? drawStep(t, scene.gap) : -drawStep(t, scene.gap));
+        const mu = M + (top ? 1 : -1) * drawStep(t, scene.gap);
+        if (mu <= 0 || M <= 0) return null;
+        let before;
+        let after;
+        if (top) {
+          before = drawStep(t, scene.extreme);
+          // Lowered in most items (a typing slip); raised in some.
+          const [low, high, unit] = scene.extreme;
+          after = t.chance(0.75)
+            ? M + Math.round(((before - M) * t.int(15, 70)) / 100 / unit) * unit
+            : before + drawStep(t, [2 * unit, (high - low) / 2, unit]);
+          if (!(after > M) || after === before) return null;
+        } else {
+          const unit = scene.extreme[2];
+          before = Math.round((M * t.int(5, 40)) / 100 / unit) * unit;
+          after = Math.round((M * t.int(45, 90)) / 100 / unit) * unit;
+          if (!(after < M && after > before && before >= 0)) return null;
+        }
+        const change = after - before;
+        const delta = tidy(change / n);
+        const places = scene.money ? 0 : 2;
+        if (!isClean(delta, places) || delta === 0) return null;
+        const newMean = tidy(mu + delta);
+        const gap = tidy(Math.abs(newMean - M));
+        if (gap === 0 || !isClean(gap, places)) return null;
+        const data = dataWith(n, mu, M, before, top);
+        if (!data) return null;
+        const which = top ? "greatest" : "least";
+        const setup =
+          `The mean and the median of ${scene.data(n)} are ${show(mu)} and ${show(M)}, respectively. ` +
+          `The ${which} value in the data, ${show(before)}, was recorded incorrectly; the correct value is ${show(after)}.`;
+        const verb = delta > 0 ? "increases" : "decreases";
+        const moveText = `${verb} by ${show(Math.abs(delta))}`;
+        const principles = [
+          "The mean is the sum divided by the count: changing one value by d changes the mean by d ÷ n.",
+          "The median is the middle value of the ordered data; it does not change when a value changes without crossing the middle.",
+        ];
+        const hint = "Which statistic depends on every value, and which depends only on the middle of the ordered data?";
+        const check = () => {
+          const fixed = data.slice();
+          fixed[top ? fixed.length - 1 : 0] = after;
+          return close(mean(data), mu) && close(median(data), M) && close(median(fixed), M) &&
+            close(mean(fixed) - mean(data), delta);
+        };
+        const steps = [
+          `The correction changes the sum by ${show(after)} ${MINUS} ${show(before)}, so the mean ${verb} by ${show(Math.abs(change))} ÷ ${n} = ${show(Math.abs(delta))}.`,
+          `The corrected value is still ${top ? "above" : "below"} the median, ${show(M)}, so the middle of the ordered data does not move: the median stays ${show(M)}.`,
+        ];
+        if (askGap) {
+          const candidates = [
+            [Math.abs(mu - M), `Uses the mean and median before the correction; the mean changes by ${show(Math.abs(delta))}.`],
+            [Math.abs(mu + change - M), `Changes the mean by the whole correction, ${show(Math.abs(change))}, instead of by the correction divided by ${n}.`],
+            [Math.abs(mu + change / (n - 1) - M), `Divides the correction by ${n - 1} instead of by the ${n} values.`],
+            [Math.abs(delta), `Gives the change in the mean, ${show(Math.abs(delta))}, not the difference between the mean and the median.`],
+            [Math.abs(mu - (M + delta)), `Moves the median by ${show(Math.abs(delta))} instead of the mean.`],
+          ];
+          return packRanked(t, numeric, gap, candidates, {
+            stimulus: null,
+            stem: `${setup} What is the positive difference between the mean and the median of the corrected data${scene.money ? ", in dollars" : ""}?`,
+            explanation:
+              `${steps[0]} The new mean is ${show(newMean)}. ${steps[1]} The positive difference is ${show(Math.max(newMean, M))} ${MINUS} ${show(Math.min(newMean, M))} = ${show(gap)}.`,
+            steps: steps.concat([`Difference: |${show(newMean)} ${MINUS} ${show(M)}| = ${show(gap)}.`]),
+            principles,
+            trap: `The median does not move with the corrected value, and the mean moves by only ${show(Math.abs(delta))}; keeping the old gap or moving the mean by ${show(Math.abs(change))} gives an offered answer.`,
+            hint,
+            estimatedSeconds: 120,
+            verify: check,
+          }, { show: numeric ? fmt : show, places, positive: true });
+        }
+        const amounts = [Math.abs(delta), Math.abs(change)];
+        if (amounts[0] === amounts[1]) return null;
+        const byAmount = (value) => `${verb} by ${show(value)}`;
+        // The wrong median move is by the mean's change in some items and by
+        // the whole correction in others, so no choice shares more with the
+        // rest than the key does (the hub strategy stays near chance).
+        const medianMove = t.pick(amounts);
+        const grid = statementGrid((i, j) => {
+          const meanText = byAmount(amounts[i]);
+          const medianText = j === 0 ? "the median is unchanged" : `the median ${byAmount(medianMove)}`;
+          const truth = i === 0 && j === 0;
+          const reason = i === 1
+            ? `Moves the mean by the whole correction, ${show(amounts[1])}; spread over ${n} values it moves the mean by ${show(amounts[0])}.`
+            : `Moves the median ${medianMove === amounts[0] ? "with the mean" : "by the whole correction"}, but the corrected value stays ${top ? "above" : "below"} the middle, so the median does not change.`;
+          return [`The mean ${meanText}, and ${medianText}.`, reason, truth];
+        });
+        if (!grid) return null;
+        return finish(false, {
+          stimulus: null,
+          stem: `${setup} Which of the following statements about the corrected data is true?`,
+          correct: grid.correct,
+          wrong: grid.wrong,
+          explanation: `${steps[0]} ${steps[1]} So the mean ${moveText}, and the median is unchanged.`,
+          steps: steps.concat([`So "${grid.correct}" is the true statement.`]),
+          principles,
+          trap: "An extreme value pulls the mean, not the median; and one value's change is shared by all the values when the mean is computed.",
+          hint,
+          estimatedSeconds: 110,
+          verify: check,
+        });
+      });
+    },
+  };
+
   return [
     listCenter, boxPlotSummary, meanMissing, displayCenter, dataChangeMedian, histogramIntervals,
-    compareSpreadPlots, weightedMeanGroups, dataChangeStatistics, couldBeMedian,
+    compareSpreadPlots, weightedMeanGroups, dataChangeStatistics, couldBeMedian, extremeCorrection,
   ];
 });

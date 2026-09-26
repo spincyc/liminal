@@ -105,6 +105,8 @@
       final: (v) => `The museum had ${fmt(v)} visitors in 2023.`,
       ask: "How many visitors did the museum have in 2021?",
       restore: (verb) => `From 2023 to 2024, the number of visitors ${verb} by p%, which made it equal to the number in 2021. What is the value of p?`,
+      unknown: (c1, verb) => `The number of visitors to a science museum ${changed(c1)} from 2021 to 2022 and then ${verb} by p% from 2022 to 2023.`,
+      net: (text) => `The number of visitors in 2023 was ${text} than the number in 2021.`,
       start: "2021 number", mid: "2022 number", end: "2023 number",
     },
     {
@@ -113,6 +115,8 @@
       final: (v) => `In 2020, the population of Millbrook was ${fmt(v)}.`,
       ask: "What was the population of Millbrook in 2010?",
       restore: (verb) => `From 2020 to 2025, the population ${verb} by p%, which returned it to its 2010 value. What is the value of p?`,
+      unknown: (c1, verb) => `The population of Millbrook ${changed(c1)} from 2010 to 2015 and then ${verb} by p% from 2015 to 2020.`,
+      net: (text) => `The population in 2020 was ${text} than the population in 2010.`,
       start: "2010 population", mid: "2015 population", end: "2020 population",
     },
     {
@@ -121,6 +125,8 @@
       final: (v) => `After both changes, the price of the coat was ${money(v)}.`,
       ask: "What was the price of the coat, in dollars, before either change?",
       restore: (verb) => `The store then ${verb} the price by p%, which returned it to the price before either change. What is the value of p?`,
+      unknown: (c1, verb) => `A store ${verbOf(c1)} the price of a coat by ${Math.abs(c1)}%. A month later, the store ${verb} the new price by p%.`,
+      net: (text) => `After both changes, the price of the coat was ${text} than the price before either change.`,
       start: "original price", mid: "price after the first change", end: "final price",
     },
     {
@@ -129,6 +135,8 @@
       final: (v) => `After the 2024 renewal, the monthly rent was ${money(v)}.`,
       ask: "What was the monthly rent, in dollars, before the 2023 renewal?",
       restore: (verb) => `At the 2025 renewal, the monthly rent ${verb} by p%, which returned it to its amount before the 2023 renewal. What is the value of p?`,
+      unknown: (c1, verb) => `When a lease was renewed in 2023, the monthly rent ${changed(c1)}. When the lease was renewed in 2024, the monthly rent ${verb} by p%.`,
+      net: (text) => `After the 2024 renewal, the monthly rent was ${text} than it was before the 2023 renewal.`,
       start: "rent before 2023", mid: "rent after the 2023 renewal", end: "rent after the 2024 renewal",
     },
     {
@@ -137,6 +145,8 @@
       final: (v) => `The podcast had ${fmt(v)} subscribers in May.`,
       ask: "How many subscribers did the podcast have in March?",
       restore: (verb) => `From May to June, the number of subscribers ${verb} by p%, which made it equal to the number in March. What is the value of p?`,
+      unknown: (c1, verb) => `The number of subscribers to a podcast ${changed(c1)} from March to April and then ${verb} by p% from April to May.`,
+      net: (text) => `The podcast had ${text.replace(/less$/, "fewer").replace(/greater$/, "more")} subscribers in May than in March.`,
       start: "March number", mid: "April number", end: "May number",
     },
     {
@@ -145,6 +155,8 @@
       final: (v) => `In fall 2022, the college enrolled ${fmt(v)} students.`,
       ask: "How many students did the college enroll in fall 2020?",
       restore: (verb) => `From fall 2022 to fall 2023, enrollment ${verb} by p%, which returned it to its fall 2020 level. What is the value of p?`,
+      unknown: (c1, verb) => `Enrollment at a community college ${changed(c1)} from fall 2020 to fall 2021 and then ${verb} by p% from fall 2021 to fall 2022.`,
+      net: (text) => `Enrollment in fall 2022 was ${text} than enrollment in fall 2020.`,
       start: "fall 2020 enrollment", mid: "fall 2021 enrollment", end: "fall 2022 enrollment",
     },
   ];
@@ -260,6 +272,7 @@
       const ratio = tidy(((100 + a) * (100 + b)) / 100);
       if (ratio === 100) return null;
       const askOf = t.chance(0.5);
+      const complement = t.chance(0.35);
       const gap = tidy(Math.abs(ratio - 100));
       const key = askOf ? ratio : gap;
       if (!fitsGrid(key) || !isClean(key, 2)) return null;
@@ -271,7 +284,9 @@
       const candidates = [];
       if (askOf) {
         candidates.push([summed, `Adds the percents, 100 + (${num(a)}) + (${num(b)}), though they are percents of different amounts.`]);
-        candidates.push([gap, `Gives the percent by which ${ctx.of(X)} differs from ${ctx.of(Z)}, not ${ctx.of(X)} as a percent of ${ctx.of(Z)}.`]);
+        // The difference and the ratio add to 100, a look-alike pair; offered
+        // in about a third of the items so the pair does not mark the key.
+        if (complement) candidates.push([gap, `Gives the percent by which ${ctx.of(X)} differs from ${ctx.of(Z)}, not ${ctx.of(X)} as a percent of ${ctx.of(Z)}.`]);
         candidates.push([baseFirst, `Takes the ${Math.abs(a)}% of ${ctx.of(X)} instead of ${ctx.of(Y)}, the amount it is compared with.`]);
         candidates.push([baseSecond, `Takes the ${Math.abs(b)}% of ${ctx.of(Y)} instead of ${ctx.of(Z)}, the amount it is compared with.`]);
         candidates.push([reverse, `Finds ${ctx.of(Z)} as a percent of ${ctx.of(X)}, the reverse comparison.`]);
@@ -282,7 +297,7 @@
         if (summedGap > 0 && Math.sign(a + b) === Math.sign(ratio - 100)) {
           candidates.push([summedGap, `Combines the two percents, ${num(a)} and ${num(b)}, as if both were percents of the same amount.`]);
         }
-        candidates.push([ratio, `Gives ${ctx.of(X)} as a percent of ${ctx.of(Z)} instead of the percent by which they differ.`]);
+        if (complement) candidates.push([ratio, `Gives ${ctx.of(X)} as a percent of ${ctx.of(Z)} instead of the percent by which they differ.`]);
         candidates.push([tidy(Math.abs(baseFirst - 100)), `Takes the ${Math.abs(a)}% of ${ctx.of(X)} instead of ${ctx.of(Y)}, the amount it is compared with.`]);
         candidates.push([tidy(Math.abs(baseSecond - 100)), `Takes the ${Math.abs(b)}% of ${ctx.of(Y)} instead of ${ctx.of(Z)}, the amount it is compared with.`]);
         candidates.push([tidy(Math.abs(reverse - 100)), `Measures the difference as a percent of ${ctx.of(X)} instead of ${ctx.of(Z)}.`]);
@@ -322,7 +337,60 @@
     });
   }
 
+  // The key of a percent asked for exactly or as "closest to". `top/bottom`
+  // is the exact percent. A student-produced answer is the exact value: a
+  // terminating decimal, or a lowest-terms fraction that fits the grid
+  // ("100/3"). Multiple choice is exact when the percent terminates, and
+  // otherwise asks "closest to" with every choice a whole percent; a wrong
+  // choice that sits nearer than twice the key's rounding gap is dropped,
+  // so the key is always clearly the nearest choice. Returns null (redraw)
+  // when the numeric key cannot be entered.
+  function percentKey(top, bottom, numeric, allowFraction = true) {
+    const value = top / bottom;
+    const terminating = isClean(value, 2) && fitsGrid(tidy(value));
+    const fraction = S.frac(top, bottom);
+    if (numeric) {
+      if (terminating) return { value, exact: true, text: fmt(tidy(value)), numericKey: tidy(value) };
+      return allowFraction && fraction.length <= 5 ? { value, exact: true, text: fraction, numericKey: fraction } : null;
+    }
+    if (terminating) return { value, exact: true, text: num(tidy(value)), shown: tidy(value) };
+    const shown = Math.round(value);
+    return { value, exact: false, text: num(shown), shown, gap: Math.abs(shown - value) };
+  }
+
+  // Wrong values for a percent key: rounded like the key, and, for a
+  // "closest to" item, kept only when at least twice as far from the exact
+  // value as the key.
+  function percentWrong(key, candidates) {
+    return candidates
+      .map(([value, reason]) => [Number.isFinite(value) ? (key.exact ? tidy(value) : Math.round(value)) : NaN, reason])
+      .filter(([value]) => !Number.isFinite(value) || key.exact || Math.abs(value - key.value) >= 2 * key.gap + 1e-9);
+  }
+
+  // Finishes a percent item from percentKey: numeric keys go in as given
+  // (a fraction string stays exact), multiple choice spreads the key's rank.
+  // With `sign`, choices print as percents ("37.5%"), which read as
+  // hundredths, so `approximates` is given in the same units.
+  function finishPercent(t, numeric, key, candidates, fields, sign = false) {
+    if (numeric) return finish(true, { correct: key.numericKey, wrong: [], ...fields });
+    const approximate = key.exact ? {} : { approximates: sign ? key.value / 100 : key.value };
+    const show = sign ? (value) => `${num(value)}%` : num;
+    return packRanked(t, false, key.shown, percentWrong(key, candidates), { ...fields, ...approximate }, { show });
+  }
+
+  const aboutText = (key) => (key.exact ? key.text : `about ${key.text}`);
+
+  // The key as a percent in prose: "12.5%", "about 39%", or, for a
+  // fraction key, "25/6 percent (about 4.17%)".
+  const percentPhrase = (key) => (String(key.text).includes("/")
+    ? `${key.text} percent (about ${num(Math.round(key.value * 100) / 100)}%)`
+    : `${aboutText(key)}%`);
+
   function percentRestore(t, numeric) {
+    // Most restoring changes do not terminate; a student-produced answer is
+    // then an exact fraction in some items and redrawn to a terminating
+    // percent in the rest, so fraction keys stay a minority.
+    const fractionOK = t.chance(0.3);
     return retry(() => {
       const ctx = t.pick(TIMELINES);
       const c1 = drawChange(t, ctx.sizes, ctx.upOnly);
@@ -330,20 +398,14 @@
       const product = (100 + c1) * (100 + c2);
       if (product === 10000) return null;
       const need = (1000000 - 100 * product) / product;
-      const exactKey = tidy(Math.abs(need));
-      // Most pairs of changes restore by a percent that does not terminate;
-      // those are asked as "closest to", with every choice to the nearest
-      // whole percent. A student-produced answer must be exact.
-      const exact = isClean(exactKey, 2) && fitsGrid(exactKey);
-      if (numeric && !exact) return null;
-      const round = (value) => (exact ? tidy(value) : Math.round(value));
-      const key = round(exactKey);
-      if (key === 0) return null;
-      const about = exact ? "" : "about ";
+      // The restoring change is 100 × |10,000 − product| / product percent.
+      const key = percentKey(100 * Math.abs(10000 - product), product, numeric, fractionOK);
+      // Below 4% a "closest to" choice among whole percents is a coin toss.
+      if (!key || key.value < 4) return null;
       const verb = need > 0 ? "increased" : "decreased";
       const net = tidy(Math.abs(product - 10000) / 100);
-      const lastOnly = round(Math.abs((100 * c2) / (100 + c2)));
-      const firstOnly = round(Math.abs((100 * c1) / (100 + c1)));
+      const lastOnly = Math.abs((100 * c2) / (100 + c2));
+      const firstOnly = Math.abs((100 * c1) / (100 + c1));
       const candidates = [
         [net, `Reuses the net change, ${num(net)}%, which is a percent of the ${ctx.start}, as a percent of the ${ctx.end}.`],
         [c1 + c2 !== 0 && Math.sign(-(c1 + c2)) === Math.sign(need) ? Math.abs(c1 + c2) : NaN,
@@ -353,21 +415,23 @@
       ];
       const combined = tidy(product / 10000);
       const inverse = 10000 / product;
+      const invText = isClean(inverse, 4) ? num(tidy(inverse)) : `about ${num(Math.round(inverse * 10000) / 10000)}`;
+      const direction = need > 0 ? "an increase" : "a decrease";
       const stem = `${ctx.story(c1, c2)} ${ctx.restore(verb)}`;
-      return packRanked(t, numeric, key, candidates, {
+      return finishPercent(t, numeric, key, candidates, {
         stimulus: null,
-        stem: exact ? stem : stem.replace("What is the value of p?", "Which of the following is closest to the value of p?"),
+        stem: key.exact ? stem : stem.replace("What is the value of p?", "Which of the following is closest to the value of p?"),
         explanation:
           `The two changes multiply the ${ctx.start} by ${multiplier(c1)} × ${multiplier(c2)} = ${num(combined)}. To return to it, the ` +
-          `${ctx.end} must be multiplied by 1 ÷ ${num(combined)} = ${about}${num(inverse)}, which is ${about}${aPercent(key)} ${need > 0 ? "increase" : "decrease"}.`,
+          `${ctx.end} must be multiplied by 1 ÷ ${num(combined)}, ${invText}, which is ${direction} of ${percentPhrase(key)}.`,
         steps: [
           `Write the changes as multipliers: ${multiplier(c1)} and ${multiplier(c2)}.`,
           `Combine them: the ${ctx.end} is ${num(combined)} times the ${ctx.start}.`,
-          `The multiplier that undoes this is 1 ÷ ${num(combined)} = ${about}${num(inverse)}.`,
-          `A multiplier of ${about}${num(inverse)} is a change of ${need > 0 ? "+" : MINUS}${about}${num(key)}%, so p is ${about}${num(key)}.`,
+          `The multiplier that undoes this is 1 ÷ ${num(combined)}, ${invText}.`,
+          `That multiplier is ${direction} of ${percentPhrase(key)}, so p is ${aboutText(key)}.`,
         ],
         principles: PERCENT_PRINCIPLES,
-        trap: `The net change is ${num(net)}% of the ${ctx.start}, but the change back is a percent of the ${ctx.end}, a different base, so it is ${about}${num(key)}%, not ${num(net)}%.`,
+        trap: `The net change is ${num(net)}% of the ${ctx.start}, but the change back is a percent of the ${ctx.end}, a different base, so it is ${percentPhrase(key)}, not ${num(net)}%.`,
         hint: "The change back is a percent of the latest amount. How does the latest amount compare with the original?",
         verify: () => {
           // Follow an amount through both changes, then measure the gap back
@@ -376,9 +440,73 @@
           amount += (amount * c1) / 100;
           amount += (amount * c2) / 100;
           const back = (100 * Math.abs(1000 - amount)) / amount;
-          return (amount < 1000) === (need > 0) && (exact ? close(back, key) : Math.abs(back - key) <= 0.5);
+          const keyValue = numeric ? C.fractionValue(String(key.numericKey).replace(/,/g, "")) : key.shown;
+          return (amount < 1000) === (need > 0) && (key.exact ? close(back, keyValue) : Math.abs(back - keyValue) <= 0.5);
         },
-      }, { show: num });
+      });
+    });
+  }
+
+  // Two changes, the second unknown, and the net change over both: the
+  // second change is a percent of the amount after the first, so it is
+  // found by dividing multipliers, never by subtracting percents.
+  function percentNet(t, numeric) {
+    const fractionOK = t.chance(0.3);
+    const offerLater = t.chance(0.4);
+    return retry(() => {
+      const ctx = t.pick(TIMELINES);
+      const c1 = drawChange(t, ctx.sizes, ctx.upOnly);
+      const net = drawChange(t, [5, 10, 12, 15, 20, 25, 30, 40, 50], ctx.upOnly);
+      if (net === c1 || net === 0) return null;
+      // (100 + c1)(100 + c2) = 100(100 + net), so c2 = 100(net − c1)/(100 + c1).
+      const up = net > c1;
+      if (ctx.upOnly && !up) return null;
+      const key = percentKey(100 * Math.abs(net - c1), 100 + c1, numeric, fractionOK);
+      if (!key || key.value < 4) return null;
+      const verb = up ? "increased" : "decreased";
+      const c2 = up ? key.value : -key.value;
+      const later = tidy((100 * (100 + net)) / (100 + c1));
+      const candidates = [
+        [Math.abs(net - c1), `Subtracts the percents, ${num(net)} ${MINUS} (${num(c1)}), as if both changes were percents of the ${ctx.start}.`],
+        [(100 * Math.abs(net - c1)) / (100 + net), `Measures the second change against the ${ctx.end} instead of the ${ctx.mid}, the amount it changed.`],
+        [Math.abs(net), `Gives the net change, ${num(Math.abs(net))}%, which compares the ${ctx.end} with the ${ctx.start}, not with the ${ctx.mid}.`],
+        // The later amount as a percent of the middle one complements a
+        // decrease to 100 (a look-alike pair with the key), so it is offered
+        // in fewer than half the items.
+        [offerLater ? later : NaN, `Gives the ${ctx.end} as a percent of the ${ctx.mid}, not the percent by which it changed.`],
+        [Math.abs(c1), `Reuses the first change, ${num(Math.abs(c1))}%.`],
+      ];
+      const netText = `${Math.abs(net)}% ${net > 0 ? "greater" : "less"}`;
+      const stem = `${ctx.unknown(c1, verb)} ${ctx.net(netText)} ${key.exact ? "What is the value of p?" : "Which of the following is closest to the value of p?"}`;
+      const m2 = tidy((100 + net) / (100 + c1));
+      const m2Text = isClean(m2, 4) ? num(m2) : `about ${num(Math.round(m2 * 10000) / 10000)}`;
+      return finishPercent(t, numeric, key, candidates, {
+        stimulus: null,
+        stem,
+        explanation:
+          `The first change multiplies the ${ctx.start} by ${multiplier(c1)}, and both changes together multiply it by ${multiplier(net)}. ` +
+          `So the second change multiplies the ${ctx.mid} by ${multiplier(net)} ÷ ${multiplier(c1)}, ${m2Text}, which is ${up ? "an increase" : "a decrease"} of ${percentPhrase(key)}.`,
+        steps: [
+          `Write the known changes as multipliers: ${multiplier(c1)} for the first change and ${multiplier(net)} for both together.`,
+          `The second multiplier is ${multiplier(net)} ÷ ${multiplier(c1)}, ${m2Text}.`,
+          `That multiplier is ${up ? "an increase" : "a decrease"} of ${percentPhrase(key)}, so p is ${aboutText(key)}.`,
+          `Check: ${multiplier(c1)} × ${m2Text.replace("about ", "")} ≈ ${multiplier(net)}.`,
+        ],
+        principles: PERCENT_PRINCIPLES,
+        trap: `Subtracting the percents gives ${num(Math.abs(net - c1))}, but the second change is a percent of the ${ctx.mid}, not of the ${ctx.start}.`,
+        hint: "Write each change, and the change over both, as what it multiplies an amount by.",
+        verify: () => {
+          // Run an amount through the first change and the stated net
+          // change, and measure the second change against the middle amount.
+          const start = 1000;
+          const mid = start + (start * c1) / 100;
+          const target = start + (start * net) / 100;
+          const second = (100 * (target - mid)) / mid;
+          const keyValue = numeric ? C.fractionValue(String(key.numericKey).replace(/,/g, "")) : key.shown;
+          return (second > 0) === up && close(second, c2) &&
+            (key.exact ? close(Math.abs(second), keyValue) : Math.abs(Math.abs(second) - keyValue) <= 0.5);
+        },
+      });
     });
   }
 
@@ -472,7 +600,7 @@
             hint: `Which number is the whole that the ${p}% is taken of?`,
             estimatedSeconds: 55,
             verify: () => k * 100 === N * p,
-          }, { places: 1 });
+          }, { places: 0 });
         }
         if (form === "percent") {
           const reversed = (100 * N) / k;
@@ -522,7 +650,7 @@
           hint: `${fmt(k)} is ${p}% of what number?`,
           estimatedSeconds: 60,
           verify: () => N * p === 100 * k,
-        });
+        }, { places: 0 });
       });
     },
   };
@@ -533,19 +661,41 @@
     skill: "Percentages",
     subskill: "percent change",
     difficulty: "Hard",
-    title: "Chained comparisons and the change that restores an amount",
+    title: "The change that restores an amount or completes a net change",
     recognize:
-      "Every percent is a percent of the amount just before it, so changes and comparisons combine by multiplying their " +
-      "multipliers; the change that restores an amount is a percent of the latest amount, so it is found by dividing.",
-    // Hard: the chain has no amounts at all, and the restoring change is a
-    // percent of a base the stem never names; adding or reversing the
-    // given percents produces offered answers.
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+      "Every percent is a percent of the amount just before it, so changes combine by multiplying their multipliers; a " +
+      "missing change (the one that restores the start, or the second of two with a known net change) is a percent of " +
+      "an amount the stem never names, so it is found by dividing multipliers, never by adding or subtracting percents.",
+    // Hard: no amount is given, the unknown change is a percent of a base
+    // the stem never names, and subtracting or reversing the given percents
+    // produces offered answers. The chained comparison (A is p% more than B,
+    // which is q% less than C) is one multiplication and lives in the Medium
+    // percent-comparison-chain.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["percent-base", "neighbouring-rule", "intermediate-value", "wrong-quantity"],
     build(t) {
       const numeric = t.chance(0.45);
-      const instance = t.chance(0.5) ? percentChain(t, numeric) : percentRestore(t, numeric);
-      return { estimatedSeconds: 100, ...instance };
+      const instance = t.chance(0.5) ? percentNet(t, numeric) : percentRestore(t, numeric);
+      return { estimatedSeconds: 110, ...instance };
+    },
+  };
+
+  const percentComparisonChain = {
+    id: "percent-comparison-chain",
+    domain: DOMAIN,
+    skill: "Percentages",
+    subskill: "percent change",
+    difficulty: "Medium",
+    title: "Chained percent comparisons",
+    recognize:
+      '"A is p% more than B" multiplies B by (1 + p/100). Two comparisons in a chain multiply: give the last amount a ' +
+      "convenient value such as 100 and work back through each comparison.",
+    // Medium: one idea (comparisons multiply) applied twice, with the
+    // add-the-percents reflex offered.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["percent-base", "neighbouring-rule", "wrong-quantity"],
+    build(t) {
+      return { estimatedSeconds: 90, ...percentChain(t, t.chance(0.4)) };
     },
   };
 
@@ -1266,6 +1416,7 @@
             (numeric || candidates.every(([text]) => !close(evalExpression(text, v, start), afterSecond)));
         };
         if (!check()) return null;
+        if ([keyText, ...candidates.map(([text]) => text)].some(C.looksCutOff)) return null;
         return packStrict(numeric, k, keyText, candidates, {
           stimulus: null,
           figure: null,
@@ -1463,7 +1614,7 @@
       yName: "y", xName: "x",
     },
     {
-      x: "juniors", y: "seniors",
+      x: "juniors", y: "seniors", counts: true,
       open: (p, q) => `At a high school, ${p}% of the juniors and ${q}% of the seniors are in the school choir, and the choir has the same number of juniors as seniors.`,
       askShare: "What percent of all the juniors and seniors at the school are juniors?",
       askTotal: (T) => `The school has ${fmt(T)} juniors and seniors in all. How many seniors does the school have?`,
@@ -1479,7 +1630,7 @@
       yName: "the park budget", xName: "the road budget",
     },
     {
-      x: "morning riders", y: "evening riders",
+      x: "morning riders", y: "evening riders", counts: true,
       open: (p, q) => `On a bus route, ${p}% of the morning riders and ${q}% of the evening riders paid with a transit card, and the same number of riders paid with a transit card in the morning as in the evening.`,
       askShare: "The morning riders were what percent of all the morning and evening riders?",
       askTotal: (T) => `There were ${fmt(T)} morning and evening riders in all. How many evening riders were there?`,
@@ -1495,15 +1646,15 @@
     domain: DOMAIN,
     skill: "Percentages",
     subskill: "percent applications",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "One percent of an amount equal to another percent of another",
     recognize:
       "p% of x = q% of y means px = qy, so x : y = q : p: the amount taken at the smaller percent is the larger amount. " +
       "Turn the equation into that ratio before asking what fraction or percent of the total each amount is.",
-    // Hard: no amount is given, the relationship runs inversely (the larger
-    // percent goes with the smaller amount), and the question asks about a
-    // total or a percent difference the equation never mentions.
-    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    // Medium (relabelled from Hard, 2026-09-26 review): one equation turned
+    // into a ratio, then one share or difference of it. The inverse pairing
+    // (the larger percent goes with the smaller amount) is the trap.
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["reversed-condition", "percent-base", "part-vs-whole"],
     build(t) {
       const ctx = t.pick(EQUAL_SHARES);
@@ -1584,7 +1735,7 @@
               const x = T - key;
               return close((p / 100) * x, (q / 100) * key) && x > 0;
             },
-          }, { show, places: 2 });
+          }, { show, places: ctx.counts ? 0 : 2 });
         }
         // y compared with x as a percent of x.
         if (rx === ry) return null;
@@ -1641,14 +1792,15 @@
     domain: DOMAIN,
     skill: "Percentages",
     subskill: "percent change",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "A percent comparison read in the other direction",
     recognize:
       '"A is p% more than B" takes the percent of B. Read the other way, the same difference is a percent of A, so it is a ' +
       "different percent: give B a convenient value and compare directly.",
-    // Hard: the intuitive answer (the same percent) is wrong, and no amount
-    // is given, so the student must choose a base before any arithmetic.
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    // Medium (relabelled from Hard, 2026-09-26 review): one comparison read
+    // back with a convenient base; the intuitive answer (the same percent)
+    // is offered and wrong.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["percent-base", "reversed-condition"],
     build(t) {
       const pick = t.pick(REVERSALS);
@@ -1663,15 +1815,14 @@
         const value = up ? 100 + p : 100 - p;
         const reverse = tidy((100 * p) / value);
         const ratioBA = tidy((100 * 100) / value);
-        const key = ask === "reverse" ? reverse : ratioBA;
-        // Multiple choice rounds to the nearest whole percent when the exact
-        // percent does not terminate; a student-produced answer must be exact.
-        const exact = isClean(key, 2);
-        if (numeric && !exact) return null;
-        const round = (x) => (exact ? tidy(x) : Math.round(x));
-        const shownKey = round(key);
+        // The exact percent is (100p)/value or 10,000/value. A "closest to"
+        // item offers whole percents and keeps only wrong choices at least
+        // twice as far from the exact value as the key (percentKey).
+        const key = percentKey(ask === "reverse" ? 100 * p : 10000, value, numeric);
+        if (!key) return null;
+        const exact = key.exact;
+        const shownKey = key.text;
         const about = exact ? "" : "about ";
-        const pct = (x) => (numeric ? fmt(x) : `${num(x)}%`);
         const compare = `${cap(ctx.first)} is ${p}% ${up ? "greater" : "less"} than ${ctx.firstB}.`;
         const stem = ask === "reverse"
           ? `${compare} ${exact ? "By what percent" : "By approximately what percent"} is ${ctx.b} ${up ? "less" : "greater"} than ${ctx.a}?`
@@ -1680,31 +1831,31 @@
         const candidates = ask === "reverse"
           ? [
             [p, `Uses the same ${p}%, but read the other way the difference is measured against ${ctx.a}, not ${ctx.b}.`],
-            [round(ratioBA), `Gives ${ctx.b} as a percent of ${ctx.a} instead of the percent by which they differ.`],
+            [ratioBA, `Gives ${ctx.b} as a percent of ${ctx.a} instead of the percent by which they differ.`],
             [value, `Gives ${ctx.a} as a percent of ${ctx.b}.`],
-            [mirror > 0 ? round((100 * p) / mirror) : NaN, `Divides the difference, ${p}, by ${mirror}, the rule for the comparison in the other direction.`],
+            [mirror > 0 ? (100 * p) / mirror : NaN, `Divides the difference, ${p}, by ${mirror}, the rule for the comparison in the other direction.`],
           ]
           : [
             [mirror, `Reverses the comparison by ${up ? "subtracting" : "adding"} the same ${p}%, but that ${p}% would be a percent of ${ctx.a}, not ${ctx.b}.`],
             [value, `Gives ${ctx.a} as a percent of ${ctx.b}, the comparison as stated.`],
-            [round(reverse), `Gives the percent by which the two differ instead of ${ctx.b} as a percent of ${ctx.a}.`],
+            [reverse, `Gives the percent by which the two differ instead of ${ctx.b} as a percent of ${ctx.a}.`],
             [p, `Gives the percent in the comparison, ${p}%, instead of the ratio of the amounts.`],
           ];
-        return packRanked(t, numeric, shownKey, candidates, {
+        return finishPercent(t, numeric, key, candidates, {
           stimulus: null,
           stem,
           explanation:
             `Let ${ctx.b} be 100. Then ${ctx.a} is 100 ${up ? "+" : MINUS} ${p} = ${value}. ` +
             (ask === "reverse"
-              ? `The difference, ${p}, as a fraction of ${ctx.a} is ${p}/${value}, which is ${about}${num(shownKey)}%.`
-              : `${cap(ctx.b)} is 100/${value} of ${ctx.a}, which is ${about}${num(shownKey)}%.`),
+              ? `The difference, ${p}, as a fraction of ${ctx.a} is ${p}/${value}, which is ${percentPhrase(key)}.`
+              : `${cap(ctx.b)} is 100/${value} of ${ctx.a}, which is ${percentPhrase(key)}.`),
           steps: [
             `Give ${ctx.b} a convenient value: 100.`,
             `Then ${ctx.a} is ${value}.`,
             ask === "reverse"
               ? `Compare the difference with ${ctx.a}, the amount after "than": ${p} ÷ ${value}.`
               : `Compare with ${ctx.a}: 100 ÷ ${value}.`,
-            `As a percent: ${about}${num(shownKey)}%.`,
+            `As a percent: ${percentPhrase(key)}.`,
           ],
           principles: [
             '"A is p% more than B" means A = B(1 + p/100); the percent is taken of B, the amount after "than".',
@@ -1717,15 +1868,151 @@
             const B = 2000;
             const A = B + (B * (up ? p : -p)) / 100;
             const actual = ask === "reverse" ? (100 * Math.abs(A - B)) / A : (100 * B) / A;
-            return Math.abs(actual - shownKey) < (exact ? 1e-6 : 0.5);
+            const keyValue = numeric ? C.fractionValue(String(key.numericKey)) : key.shown;
+            return exact ? close(actual, keyValue) : Math.abs(actual - keyValue) <= 0.5;
           },
-        }, { show: pct, places: 2 });
+        }, true);
       });
     },
   };
 
+  /* ================================= percent-share-and-total (Hard) */
+
+  // A part that is a share of a whole, where the whole and the share (or the
+  // whole and the part) both change: part = share × whole, so the changes
+  // multiply. `pctOf` names the share; `have` finishes "…% of the <short>".
+  const SHARE_SCENES = [
+    { whole: "households in Fairview", short: "households", part: "households with solar panels", pctOf: "the percent of households that had solar panels", have: "had solar panels", from: "2018", to: "2024" },
+    { whole: "students at Ridge High School", short: "students", part: "students who bike to school", pctOf: "the percent of students who biked to school", have: "biked to school", from: "2021", to: "2025" },
+    { whole: "employees of a software company", short: "employees", part: "employees who work remotely", pctOf: "the percent of employees who worked remotely", have: "worked remotely", from: "2022", to: "2025" },
+    { whole: "items checked out from a city library", short: "items checked out", part: "checked-out items that were e-books", pctOf: "the percent of checked-out items that were e-books", have: "were e-books", from: "2019", to: "2024" },
+    { whole: "registered voters in a county", short: "registered voters", part: "registered voters who voted in the county election", pctOf: "the percent of registered voters who voted in the county election", have: "voted in the county election", from: "2020", to: "2024" },
+    { whole: "visitors to a state park", short: "visitors", part: "visitors who camped overnight", pctOf: "the percent of visitors who camped overnight", have: "camped overnight", from: "2021", to: "2024" },
+  ];
+
+  const SHARE_STARTS = [10, 12, 15, 16, 20, 24, 25, 30, 32, 35, 40, 45, 48, 50, 60];
+  const WHOLE_CHANGES = [5, 10, 15, 20, 25, 40, 50];
+
+  const percentShareAndTotal = {
+    id: "percent-share-and-total",
+    domain: DOMAIN,
+    skill: "Percentages",
+    subskill: "percent applications",
+    difficulty: "Hard",
+    title: "A share and its whole changing together",
+    recognize:
+      "The part is the share times the whole, so when both change, the part's multiplier is the product of theirs (or the " +
+      "share's is the quotient). A change in a percent is not a percent change: 20% to 25% is 5 percentage points, a 25% rise.",
+    // Hard: the structure (part = share × whole) must be seen before any
+    // arithmetic; percentage points, the share's own change, and added
+    // changes are all offered, and no count is ever given.
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["percent-base", "neighbouring-rule", "wrong-quantity"],
+    build(t) {
+      const scene = t.pick(SHARE_SCENES);
+      const askPart = t.chance(0.5);
+      const numeric = t.chance(0.45);
+      const principles = [
+        "part = share × whole, so if the whole is multiplied by a and the share by b, the part is multiplied by ab.",
+        "A change from s₁% to s₂% is s₂ − s₁ percentage points; as a percent change it is (s₂ − s₁)/s₁ × 100%.",
+      ];
+      return retry(() => {
+        const s1 = t.pick(SHARE_STARTS);
+        const w = t.pick(WHOLE_CHANGES) * t.sign();
+        const wholeLine = `From ${scene.from} to ${scene.to}, the number of ${scene.whole} ${changed(w)}`;
+        const check = (share2, partChange) => {
+          // A concrete whole, run forward: 10,000 at the start.
+          const whole1 = 10000;
+          const part1 = (whole1 * s1) / 100;
+          const whole2 = whole1 + (whole1 * w) / 100;
+          const part2 = share2 === null ? part1 + (part1 * partChange) / 100 : (whole2 * share2) / 100;
+          return { partPercent: (100 * (part2 - part1)) / part1, sharePercent: (100 * part2) / whole2 };
+        };
+        if (askPart) {
+          const s2 = t.pick(SHARE_STARTS.concat([18, 22, 28, 36, 42, 55]));
+          if (s2 === s1 || Math.abs(s2 - s1) < 3) return null;
+          // part multiplier = (s2/s1)(1 + w/100); percent change = |s2(100 + w) − 100 s1| / s1.
+          const signed = s2 * (100 + w) - 100 * s1;
+          if (signed === 0) return null;
+          const up = signed > 0;
+          const key = numeric ? percentKey(Math.abs(signed), s1, true) : percentKey(Math.abs(signed), s1, false);
+          if (!key || !key.exact || key.value < 4 || key.value > 150) return null;
+          const shareRel = (100 * (s2 - s1)) / s1;
+          const word = up ? "increase" : "decrease";
+          const candidates = [
+            [Math.abs(s2 - s1), `Gives the change in the percent, ${s2} ${MINUS} ${s1} = ${Math.abs(s2 - s1)} percentage points, not the percent change in the number of ${scene.part}.`],
+            [Math.abs(shareRel), `Finds the percent change in the share, ${num(tidy(Math.abs(shareRel)))}%, but the number of ${scene.short} changed too.`],
+            [Math.abs(shareRel + w), `Adds the ${num(tidy(Math.abs(shareRel)))}% change in the share and the ${Math.abs(w)}% change in the number of ${scene.short}; changes of a product multiply.`],
+            [Math.abs(w), `Gives the change in the number of ${scene.short} only.`],
+            [Math.abs(s2 - s1 + w), `Adds the ${Math.abs(s2 - s1)}-point change in the percent to the ${Math.abs(w)}% change in the number of ${scene.short}.`],
+          ];
+          const partMult = tidy(((100 + w) * s2) / (100 * s1));
+          const multText = isClean(partMult, 4) ? num(partMult) : `about ${num(Math.round(partMult * 10000) / 10000)}`;
+          return finishPercent(t, numeric, key, candidates, {
+            stimulus: null,
+            stem: `${wholeLine}, and ${scene.pctOf} ${s2 > s1 ? "rose" : "fell"} from ${s1}% to ${s2}%. By what percent did the number of ${scene.part} ${word} from ${scene.from} to ${scene.to}?`,
+            explanation:
+              `The number of ${scene.part} is the percent times the number of ${scene.short}. The percent was multiplied by ${s2}/${s1} and the number of ` +
+              `${scene.short} by ${multiplier(w)}, so the part was multiplied by (${s2}/${s1}) × ${multiplier(w)} = ${multText}: ${up ? "an increase" : "a decrease"} of ${percentPhrase(key)}.`,
+            steps: [
+              `Write the part as share × whole: ${num(s1 / 100)} × W in ${scene.from} and ${num(s2 / 100)} × ${multiplier(w)}W in ${scene.to}.`,
+              `Divide: (${num(s2 / 100)} × ${multiplier(w)}) ÷ ${num(s1 / 100)} = ${multText}.`,
+              `A multiplier of ${multText} is ${up ? "an increase" : "a decrease"} of ${percentPhrase(key)}.`,
+            ],
+            principles,
+            trap: `The percent moved ${Math.abs(s2 - s1)} points, which is neither the percent change in the share nor in the number of ${scene.part}; the number of ${scene.short} changed as well.`,
+            hint: `What is the number of ${scene.part}, written using the number of ${scene.short}?`,
+            estimatedSeconds: 120,
+            verify: () => {
+              const { partPercent } = check(s2, 0);
+              const keyValue = numeric ? C.fractionValue(String(key.numericKey)) : key.shown;
+              return (partPercent > 0) === up && close(Math.abs(partPercent), keyValue);
+            },
+          }, true);
+        }
+        const r = t.pick([10, 20, 25, 30, 40, 50, 60, 75]) * t.sign();
+        if (r === w) return null;
+        // new share = s1 (100 + r)/(100 + w).
+        const key = percentKey(s1 * (100 + r), 100 + w, numeric);
+        if (!key || !key.exact || key.value >= 100 || close(key.value, s1)) return null;
+        const candidates = [
+          [(s1 * (100 + r)) / 100, `Applies the ${Math.abs(r)}% change to the percent itself, as if the number of ${scene.short} had not changed.`],
+          [s1 + r - w, `Treats the two percent changes as percentage points: ${s1} ${r > 0 ? "+" : MINUS} ${Math.abs(r)} ${w > 0 ? MINUS : "+"} ${Math.abs(w)}.`],
+          [(s1 * (100 + r) * (100 + w)) / 10000, `Multiplies by ${multiplier(w)}, the change in the number of ${scene.short}, instead of dividing by it.`],
+          [(s1 * (100 + r - w)) / 100, `Combines the changes into one change of ${r - w > 0 ? "" : MINUS}${Math.abs(r - w)}% by subtracting them; they divide.`],
+          [s1 + r, `Adds ${Math.abs(r)} percentage points for the ${Math.abs(r)}% change in the number of ${scene.part}.`],
+        ].filter(([value]) => value > 0 && value < 100);
+        const pctText = () => percentPhrase(key);
+        return finishPercent(t, numeric, key, candidates.map(([value, reason]) => [value, reason]), {
+          stimulus: null,
+          stem: `${wholeLine}, and the number of ${scene.part} ${changed(r)}. In ${scene.from}, ${s1}% of the ${scene.short} ${scene.have}. ` +
+            (numeric ? `In ${scene.to}, p% of the ${scene.short} ${scene.have}. What is the value of p?` : `What percent of the ${scene.short} ${scene.have} in ${scene.to}?`),
+          explanation:
+            `The share is the part divided by the whole. The part was multiplied by ${multiplier(r)} and the whole by ${multiplier(w)}, so the share was ` +
+            `multiplied by ${multiplier(r)} ÷ ${multiplier(w)}: ${s1}% × ${multiplier(r)} ÷ ${multiplier(w)} = ${pctText(key.text)}.`,
+          steps: [
+            `Write the share as part ÷ whole: ${s1}% in ${scene.from}.`,
+            `The part is multiplied by ${multiplier(r)} and the whole by ${multiplier(w)}.`,
+            `New share: ${s1} × ${multiplier(r)} ÷ ${multiplier(w)} = ${key.text}, so ${pctText(key.text)}.`,
+          ],
+          principles,
+          trap: `A ${Math.abs(r)}% change in the number of ${scene.part} is not ${Math.abs(r)} percentage points, and the whole changed too, so the share changes by the ratio of the two multipliers.`,
+          hint: `The percent is one number divided by another. What happened to each of them?`,
+          estimatedSeconds: 120,
+          verify: () => {
+            const { sharePercent } = check(null, r);
+            const keyValue = numeric ? C.fractionValue(String(key.numericKey)) : key.shown;
+            return close(sharePercent, keyValue);
+          },
+        }, true);
+      });
+    },
+  };
+
+  // Existing templates keep their order (a run code rebuilds its questions
+  // in this order); new templates are appended.
   return [
     percentQuantity, percentChangeValues, percentSubgroup, percentExpression, successivePercentUndo, percentMixture,
-    successivePercent, percentEqualsPercent, percentBaseReversal,
+    successivePercent, percentEqualsPercent, percentBaseReversal, percentComparisonChain, percentShareAndTotal,
   ];
 });

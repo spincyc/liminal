@@ -638,12 +638,15 @@
     domain: DATA,
     skill: "Ratios, rates, and units",
     subskill: "unit conversion",
-    difficulty: "Medium",
+    difficulty: "Easy",
     title: "Rates across units of time or measure",
     recognize:
       "The rate and the question use different units. Convert once, in the right direction (a bigger unit holds more of the " +
       "smaller one), and carry the result to the unit the question asks for.",
-    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    // Easy (relabelled from Medium, 2026-09-26 review): one rate and one
+    // or two stated conversion factors, applied directly; the answer is what
+    // the question asks for once the units cancel.
+    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 0 },
     tricks: ["unit-mismatch", "intermediate-value", "neighbouring-rule"],
     build(t) {
       const kind = t.pick(["time", "amount", "amount", "cost"]);
@@ -651,6 +654,8 @@
       return retry(() => {
         const scene = t.pick(CONVERSIONS[kind])(t);
         const key = scene.key;
+        // A key that does not terminate would print cut off ("5,333.3333").
+        if (!isClean(key, 2)) return null;
         const show = numeric ? fmt : scene.show || fmt;
         return packRanked(t, numeric, key, scene.candidates, {
           stimulus: null,
@@ -1341,6 +1346,7 @@
   // average fixes the total time, and the unknown leg gets what is left.
   function requiredReturn(t, numeric) {
     const ctx = t.pick(TRIPS);
+    const offerDouble = t.chance(0.5);
     return retry(() => {
       const v1 = t.int(ctx.v[0], ctx.v[1]);
       const v2 = t.int(ctx.v[0], ctx.v[1]);
@@ -1354,12 +1360,18 @@
       const key = v2;
       const reflex = tidy(2 * avg - v1);
       const totalTime = tidy(t1 + t2);
+      // Twice the key is a look-alike of it; in the other half of the items
+      // a look-alike pair (the average and half of it) sits among the wrong
+      // answers instead, so a pair never marks the key.
+      const doubled = [tidy(2 * v2), `Divides the round-trip distance, ${2 * D} ${ctx.unit}, by the time for ${ctx.legBack} alone.`];
+      const halfAverage = [tidy(D / (t1 + t2)), `Divides one leg's distance, ${D} ${ctx.unit}, by the total time for both legs.`];
+      const atAverage = [avg, `Assumes ${ctx.legBack} was made at the round-trip average, ${num(avg)} ${ctx.rate}.`];
       return packRanked(t, numeric, key, [
+        ...(offerDouble ? [doubled] : [atAverage, halfAverage]),
         [reflex, `Treats ${num(avg)} as the mean of the two speeds, so the return speed would be 2(${num(avg)}) ${MINUS} ${v1}; the two legs take different times.`],
         [tidy(t2), `Stops at the time for ${ctx.legBack}, ${plural(tidy(t2), "hour")}.`],
-        [tidy(2 * v2), `Divides the round-trip distance, ${2 * D} ${ctx.unit}, by the time for ${ctx.legBack} alone.`],
         [totalTime, `Gives the total time for the round trip, ${plural(totalTime, "hour")}.`],
-        [avg, `Assumes ${ctx.legBack} was made at the round-trip average, ${num(avg)} ${ctx.rate}.`],
+        ...(offerDouble ? [atAverage] : []),
         [tidy((2 * D) / t1), `Divides the round-trip distance by the time for the first leg instead of the second.`],
       ], {
         stimulus: null,
@@ -1530,7 +1542,7 @@
             ? "Converts the edge from meters to centimeters by multiplying by 10 instead of 100."
             : "Converts the mass from kilograms to grams twice."],
         ];
-      const mass = ctx.system === "si" ? `${num(M)} kilograms` : `${num(M)} kilograms`;
+      const mass = plural(M, "kilogram");
       return packRanked(t, numeric, key, candidates, {
         stimulus: null,
         stem:
@@ -1595,6 +1607,7 @@
 
   function workRate(t, numeric) {
     const ctx = t.pick(CREWS);
+    const pairKey = t.chance(0.5);
     const form = t.pick(["together", "together", "alone", "staged"]);
     const scale = ctx.unit === "minutes" ? 5 : 1;
     return retry(() => {
@@ -1607,11 +1620,19 @@
       const both = `${ctx.a} and ${ctx.b}`;
       const rates = `${ctx.a} works at a rate of 1/${a} of the job per ${ctx.one} and ${ctx.b} at 1/${b}`;
       if (form === "together") {
+        // A look-alike pair (a value and its double) sits on the key in half
+        // the items and among the wrong answers in the rest, so neither the
+        // pair nor its absence marks the key.
+        const twin = pairKey
+          ? [[tidy(2 * c), `Averages the two rates and gives the time for one worker at that average rate, twice the time together.`]]
+          : [];
+        const halfFaster = pairKey ? [] : [[tidy(Math.min(a, b) / 2), `Halves the faster time, as if both worked at the faster rate.`]];
         return packRanked(t, numeric, c, [
+          ...twin,
           [tidy((a + b) / 2), `Averages the two times, ${a} and ${b}; working together is faster than either alone.`],
+          ...halfFaster,
           [a + b, `Adds the two times, as if one worked after the other.`],
           [Math.min(a, b), `Gives the faster time alone, ${Math.min(a, b)} ${u}; the second helper shortens it.`],
-          [tidy(Math.min(a, b) / 2), `Halves the faster time, as if both worked at the faster rate.`],
           [Math.abs(a - b), `Subtracts the two times.`],
         ], {
           stimulus: null,
@@ -1663,10 +1684,11 @@
       const rest = tidy((1 - h / a) * c);
       if (!isClean(rest, 2) || rest <= 0) return null;
       return packRanked(t, numeric, rest, [
+        ...(pairKey ? [[tidy(2 * rest), `Averages the two rates instead of adding them, as if one worker at that average rate finished the part left.`]] : []),
         [c, `Gives the time for the pair to do the whole job, ignoring the part ${ctx.a} did alone.`],
         [tidy(c - h), `Subtracts the ${plural(h, ctx.one)} from the time the pair would need for the whole job; time alone is slower than time together.`],
         [tidy(h + rest), `Gives the total time since ${ctx.a} started, not the time the two worked together.`],
-        [tidy((a - h) / 2), `Halves ${ctx.a}'s remaining time, as if ${ctx.b} worked at the same rate.`],
+        ...(pairKey ? [] : [[tidy((a - h) / 2), `Halves ${ctx.a}'s remaining time, as if ${ctx.b} worked at the same rate.`]]),
         [tidy(a - h), `Gives the time ${ctx.a} alone would need to finish.`],
       ], {
         stimulus: null,
@@ -1699,15 +1721,15 @@
     domain: DOMAIN,
     skill: "Ratios, rates, and units",
     subskill: "unit rates",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Two workers or machines sharing one job",
     recognize:
       "Turn each time into a rate (the fraction of the job done per unit of time); rates of workers together add, and the " +
       "time is the work left divided by the combined rate.",
-    // Hard: the given quantities are times, but only rates combine, so the
-    // problem must be recast before any arithmetic; averaging or adding the
+    // Medium (relabelled from Hard, 2026-09-26 review): one known model
+    // (rates add) applied in two or three steps; averaging or adding the
     // times gives offered answers.
-    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 2 },
     tricks: ["neighbouring-rule", "unweighted-average", "intermediate-value"],
     build(t) {
       return { estimatedSeconds: 115, ...workRate(t, t.chance(0.35)) };

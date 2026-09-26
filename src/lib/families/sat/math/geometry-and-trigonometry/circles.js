@@ -15,7 +15,7 @@
     P, GEO, fmt, shown, range, retry, pack, radical, surd, surdValue, piFraction, add, sub, mul, unit, mid,
     dist, dot, toRad, toDeg, fitPoints, close, angleAt, shoelace, r1, seg, measure, name, anchorFor, normalAway,
     sideLabel, angleArc, angleLabel, DOMAIN, heading, round4, segHard, fitsGridHard, packSpread, wrongFor,
-    labelsClash, isClean,
+    labelsClash, isClean, balanceTwins,
   } = C;
 
   // Multiple of π: piText(12) -> "12π", piText(1) -> "π".
@@ -455,49 +455,44 @@
             },
           });
         }
-        // A point on the circle from the equation: substitute and solve.
-        // (Reading the diameter straight off the right side is an Easy step,
-        // so it is not asked here.)
-        const r = t.int(2, 12);
-        const askPoint = true;
+        // A point on the circle from the equation, off to the side of the
+        // center: substituting its x-coordinate leaves a right triangle with
+        // the radius as hypotenuse (reading a point straight above the
+        // center would be an Easy step, so it is not asked).
+        const [ta, tb, tr] = t.pick([[3, 4, 5], [4, 3, 5], [6, 8, 10], [8, 6, 10], [5, 12, 13], [12, 5, 13], [9, 12, 15], [12, 9, 15]]);
+        const side = t.sign();
+        const r = tr;
         const numeric = t.chance(0.45);
         const equation = circleEq(h, k, r * r);
-        const key = k + r;
+        const px = h + side * ta;
+        const key = k + tb;
         const candidates = [
-          [k - r, `Gives the other point on the circle with x = ${num(h)}, below the center.`],
-          [-k + r, "Flips the sign of the center's y-coordinate."],
-          [k + r * r, `Adds r² = ${r * r} instead of r = ${r}.`],
-          [r, "Gives the radius, not the y-coordinate."],
-          [-k - r, "Uses the center's y-coordinate with the sign shown in the equation and goes below it."],
-          [k + 2 * r, `Adds the diameter, ${2 * r}, instead of the radius.`],
+          [k + r, `Adds the radius, ${r}, to the center's y-coordinate, as if the point were directly above the center.`],
+          [k - tb, `Gives the point on the circle with x = ${num(px)} below the center.`],
+          [-k + tb, "Flips the sign of the center's y-coordinate."],
+          [k + (r * r - ta * ta), `Stops at (t ${k > 0 ? MINUS : "+"} ${Math.abs(k)})² = ${r * r - ta * ta} without taking the square root.`],
+          [k + r - ta, `Subtracts the horizontal distance, ${ta}, from the radius instead of using the squares.`],
+          [tb, "Gives the vertical distance from the center, not the y-coordinate."],
         ];
         return packSpread(t, numeric, key, fmt(key), candidates.map(([value, reason]) => [fmt(value), reason]), {
           stimulus: { type: "equations", content: equation },
           figure: null,
-          stem: askPoint
-            ? `In the xy-plane, the graph of the given equation is a circle. The point (${num(h)}, t) lies on the circle, and t > ${num(k)}. What is the value of t?`
-            : "In the xy-plane, the graph of the given equation is a circle. What is the length of a diameter of the circle?",
-          explanation: askPoint
-            ? `The center is ${S.point(h, k)} and r² = ${r * r}, so r = ${r}. The points on the circle with x = ${num(h)} are directly above and below the center, at y = ${num(k)} ± ${r}; the one with t > ${num(k)} is t = ${num(key)}.`
-            : `The right side is r² = ${r * r}, so the radius is ${r} and a diameter is 2 × ${r} = ${key}.`,
-          steps: askPoint
-            ? [
-              `Center ${S.point(h, k)}; r² = ${r * r}, so r = ${r}.`,
-              `Substitute x = ${num(h)}: (t ${k > 0 ? MINUS : "+"} ${Math.abs(k)})² = ${r * r}, so t ${k > 0 ? MINUS : "+"} ${Math.abs(k)} = ±${r}.`,
-              `t > ${num(k)}, so t = ${num(k)} + ${r} = ${num(key)}.`,
-            ]
-            : [
-              `The right side of the equation is r² = ${r * r}.`,
-              `r = √${r * r} = ${r}.`,
-              `Diameter = 2r = ${key}.`,
-            ],
+          stem: `In the xy-plane, the graph of the given equation is a circle. The point (${num(px)}, t) lies on the circle, and t > ${num(k)}. What is the value of t?`,
+          explanation:
+            `The center is ${S.point(h, k)} and r² = ${r * r}. Substituting x = ${num(px)} gives (${num(side * ta)})² + (t ${k > 0 ? MINUS : "+"} ${Math.abs(k)})² = ${r * r}, so ` +
+            `(t ${k > 0 ? MINUS : "+"} ${Math.abs(k)})² = ${r * r - ta * ta} and t ${k > 0 ? MINUS : "+"} ${Math.abs(k)} = ±${tb}; with t > ${num(k)}, t = ${num(key)}.`,
+          steps: [
+            `Substitute x = ${num(px)}: ${num(px)} ${h < 0 ? "+" : MINUS} ${Math.abs(h)} = ${num(side * ta)}, and (${num(side * ta)})² = ${ta * ta}.`,
+            `(t ${k > 0 ? MINUS : "+"} ${Math.abs(k)})² = ${r * r} ${MINUS} ${ta * ta} = ${tb * tb}, so t ${k > 0 ? MINUS : "+"} ${Math.abs(k)} = ±${tb}.`,
+            `t > ${num(k)}, so t = ${num(k)} + ${tb} = ${num(key)}.`,
+          ],
           principles,
-          trap: askPoint ? `The right side is r², so the point is ${r} (not ${r * r}) above the center.` : `${r * r} is r²; the radius is ${r}, and a diameter is twice that.`,
-          hint: "What does the number on the right side of the equation tell you?",
-          estimatedSeconds: 85,
+          trap: `The point is not directly above the center, so it is not r = ${r} above it; the horizontal offset ${ta} and the vertical offset make a right triangle with hypotenuse ${r}.`,
+          hint: "Substitute the known coordinate. What is left to solve?",
+          estimatedSeconds: 95,
           verify: () => {
             const eq = readCircleEq(equation);
-            return askPoint ? onCircle(eq, h, key) && key > k : close(2 * Math.sqrt(eq.rhs), key);
+            return onCircle(eq, px, key) && key > k;
           },
         });
       });
@@ -509,11 +504,15 @@
     domain: DOMAIN,
     skill: "Circles",
     subskill: "circle measures",
+    difficulty: "Medium",
     title: "Arcs, sectors, and inscribed angles in mixed units",
     recognize:
       "Name the angle first: central or inscribed, degrees or radians. An inscribed angle is half the central angle " +
       "on the same arc; arc length and sector area are the same fraction of different wholes; s = rθ and A = r²θ/2 need radians.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
+    // Medium (declared 2026-09-26; it had defaulted to Hard): one known
+    // relationship (inscribed = half the central angle, or the fraction of
+    // the circle) applied in two or three steps, with a not-to-scale lure.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
     tricks: ["not-to-scale-figure", "neighbouring-rule", "unit-mismatch", "wrong-quantity"],
     build(t) {
       const [nA, nB, nC] = t.pick(ARC_NAMES);
@@ -559,13 +558,13 @@
             (accurate
               ? "The figure is drawn to scale."
               : `${nA} and ${nB} are drawn almost directly opposite each other, so angle ${nA}${nC}${nB} looks like a right angle and arc ${nA}${nB} looks like a semicircle.`);
-          const wrong = wrongFor(t, false, arc, [
+          const wrong = wrongFor(t, false, arc, balanceTwins(t, arc, [
             [accurate ? null : piFraction(r), `Takes ${nA}${nB} as a diameter because it looks like one in the figure, making arc ${nA}${nB} a semicircle; the figure is not drawn to scale.`],
             [piFraction(theta * r, 180), `Uses ${theta}° as the central angle; an inscribed angle is half the central angle, so the arc is twice as long.`],
             [piFraction(180 * r - theta * r, 90), `Finds the length of the arc that contains ${nC}.`],
             [piFraction(theta * r * r, 180), `Computes the area of sector ${nA}O${nB} instead of the length of arc ${nA}${nB}.`],
             [piFraction(theta * r, 360), `Halves the inscribed angle instead of doubling it to get the central angle.`],
-          ], { keep: accurate ? 0 : 1 });
+          ], accurate ? 0 : 1, 0.35), { keep: accurate ? 0 : 1 });
           if (!wrong) return this.build(t);
           return {
             responseType: "multiple-choice",
@@ -620,13 +619,13 @@
         const alt =
           `Circle with center O and radii O${nA} and O${nB}. Radius O${nA} is labeled ${r} and angle ${nA}O${nB} is labeled ${c}°. ` +
           (accurate ? "The figure is drawn to scale." : `Angle ${nA}O${nB} is drawn as a right angle, so arc ${nA}${nB} looks like a quarter of the circle.`);
-        const wrong = wrongFor(t, false, arc, [
+        const wrong = wrongFor(t, false, arc, balanceTwins(t, arc, [
           [accurate ? null : piFraction(r, 2), `Treats angle ${nA}O${nB} as a right angle, as it looks in the figure, making arc ${nA}${nB} a quarter circle; the figure is not drawn to scale.`],
           [piFraction(2 * c * r, 180), `Treats the ${c}° angle as inscribed and doubles it; angle ${nA}O${nB} is a central angle.`],
           [piFraction(c * r * r, 360), `Computes the area of sector ${nA}O${nB} instead of the length of arc ${nA}${nB}.`],
           [piFraction(360 * r - c * r, 180), "Finds the length of the major arc instead of the minor arc."],
           [piFraction(c * r, 360), "Treats the central angle as inscribed and halves it."],
-        ], { keep: accurate ? 0 : 1 });
+        ], accurate ? 0 : 1, 0.35), { keep: accurate ? 0 : 1 });
         if (!wrong) return this.build(t);
         return {
           responseType: "multiple-choice",
@@ -693,13 +692,13 @@
         const given = viaArc
           ? `The circle shown has center O and radius ${r}, and minor arc ${nA}${nB} has length ${piFraction(c * r, 180)}.`
           : `Points ${nA}, ${nB}, and ${nC} lie on the circle shown with center O, and angle ${nA}O${nB} measures ${piFraction(c, 180)} radians.`;
-        const wrong = wrongFor(t, numeric, answer, [
+        const wrong = wrongFor(t, numeric, answer, balanceTwins(t, answer, [
           [45, `Reads angle ${nA}O${nB} as a right angle, as it is drawn, so angle ${nA}${nC}${nB} looks like 45°; the figure is not drawn to scale.`],
           [c, "Gives the central angle in degrees; an inscribed angle is half the central angle on the same arc."],
           [180 - c / 2, `Gives the inscribed angle that intercepts the major arc instead of minor arc ${nA}${nB}.`],
           [2 * c <= 180 ? 2 * c : null, "Doubles the central angle instead of halving it."],
           [(180 - c) / 2, `Gives angle O${nA}${nB}, a base angle of isosceles triangle ${nA}O${nB}, instead of angle ${nA}${nC}${nB}.`],
-        ], { keep: 1 });
+        ], 1, 0.35), { keep: 1 });
         if (!wrong) return this.build(t);
         return {
           responseType: numeric ? "numeric" : "multiple-choice",
@@ -759,14 +758,14 @@
         const intro = `In the circle shown with center O, the shaded sector has area ${areaText}.`;
         if (askAngle) {
           const answer = piFraction(c, 180);
-          const wrong = wrongFor(t, false, answer, [
+          const wrong = wrongFor(t, false, answer, balanceTwins(t, answer, [
             ["π/2", `Reads angle ${nA}O${nB} as a right angle because the shaded sector looks like a quarter circle; the figure is not drawn to scale.`],
             [piFraction(c, 360), "Uses r²θ for the sector area, dropping the factor 1/2."],
             [c * r <= 720 ? piFraction(c * r, 360) : null, "Divides the area by r as if the area were an arc length (s = rθ)."],
             [piFraction(360 - c, 180), "Gives the angle of the unshaded part of the circle."],
             [S.frac(c, 360), "Gives the fraction of the circle that is shaded instead of the angle it spans."],
             [c, "Gives the angle in degrees; the question asks for radians."],
-          ], { keep: 1 });
+          ], 1, 0.35), { keep: 1 });
           if (!wrong) return this.build(t);
           return {
             responseType: "multiple-choice",
@@ -791,7 +790,7 @@
           };
         }
         const answer = piFraction(c * r, 180);
-        const wrong = wrongFor(t, false, answer, [
+        const wrong = wrongFor(t, false, answer, balanceTwins(t, answer, [
           [accurate ? null : piFraction(r, 2), "Treats the sector as a quarter circle, as it looks in the figure; the figure is not drawn to scale."],
           [piFraction(c * r, 360), "Divides the area by r without doubling; a sector's area is half of r times its arc length."],
           [piFraction(c, 180), "Stops at the central angle in radians instead of multiplying by the radius."],
@@ -799,7 +798,7 @@
           [piFraction(c * r * r, 180), "Gives the area of the sector instead of the arc length."],
           [piFraction(2 * c * r, 180), "Uses the diameter in place of the radius for the circumference."],
           [S.frac(c * r, 180), "Finds the right fraction of the circle but leaves out π."],
-        ], { keep: accurate ? 0 : 1 });
+        ], accurate ? 0 : 1, 0.35), { keep: accurate ? 0 : 1 });
         if (!wrong) return this.build(t);
         return {
           responseType: "multiple-choice",
@@ -858,18 +857,18 @@
       const wrong = wrongFor(t, numeric,
         answer,
         askArea
-          ? [
+          ? balanceTwins(t, answer, [
             [accurate ? null : piFraction(r * r, 4), "Treats the shaded sector as a quarter circle, as it looks in the figure; the figure is not drawn to scale."],
             [arcValue, "Computes the arc length rθ instead of the sector's area."],
             [round4(r * r * theta), "Uses r²θ, dropping the factor 1/2 in the sector-area formula."],
             [piFraction(tenths * r * r, 3600), `Treats ${num(theta)} as a degree measure and uses (θ/360)πr².`],
-          ]
-          : [
+          ], accurate ? 0 : 1, 0.35)
+          : balanceTwins(t, answer, [
             [accurate ? null : piFraction(r, 2), "Treats the arc as a quarter of the circle, as it looks in the figure; the figure is not drawn to scale."],
             [areaValue, "Computes the sector's area instead of the arc length."],
             [piFraction(tenths * 2 * r, 3600), `Treats ${num(theta)} as a degree measure and uses (θ/360)2πr.`],
             [round4(r * r * theta), "Multiplies by r² instead of r."],
-          ],
+          ], accurate ? 0 : 1, 0.35),
         { keep: accurate ? 0 : 1 },
       );
       if (!wrong) return this.build(t);
@@ -878,7 +877,7 @@
         estimatedSeconds: 95,
         stimulus: null,
         figure: { svg: S.svg(400, 300, parts, alt), alt, notToScale: !accurate },
-        stem: `In the circle shown with center O, angle ${nA}O${nB} measures ${num(theta)} radians. What is the ${askArea ? "area of the shaded sector" : `length of minor arc ${nA}${nB}`}?`,
+        stem: `In the circle shown with center O, angle ${nA}O${nB} measures ${num(theta)} ${theta === 1 ? "radian" : "radians"}. What is the ${askArea ? "area of the shaded sector" : `length of minor arc ${nA}${nB}`}?`,
         correct: answer,
         wrong,
         hint: "Is the given angle in degrees or radians, and which formula expects that unit?",
@@ -903,6 +902,7 @@
     domain: DOMAIN,
     skill: "Circles",
     subskill: "circle equations",
+    difficulty: "Hard",
     title: "Circle equation in general form",
     recognize:
       "The equation is a circle in disguise: divide out a common leading coefficient, complete the square in x and in y, " +
@@ -984,7 +984,7 @@
           const list = wrongRadiusSquares.map(([square, reason]) => [diameter ? radical(4 * square) : radical(square), reason]);
           list.push(diameter ? [r, "Gives the radius instead of the diameter."] : [radical(4 * r2), "Gives the diameter instead of the radius."]);
           list.push([diameter ? 2 * r2 : r2, "Stops at r², the number on the right after completing the squares, without taking the square root."]);
-          const wrong = wrongFor(t, numeric, correct, list, { whole: true });
+          const wrong = wrongFor(t, numeric, correct, balanceTwins(t, correct, list, 0, 0.35), { whole: true });
           if (!wrong) continue;
           return {
             ...common,
@@ -1038,7 +1038,7 @@
                   : `Uses the whole ${coefficient}-coefficient with its sign unchanged.`],
                 [other, `Gives the ${which === "h" ? "y" : "x"}-coordinate of the center.`],
               ];
-          const wrong = wrongFor(t, numeric, correct, list, { whole: true });
+          const wrong = wrongFor(t, numeric, correct, balanceTwins(t, correct, list, 0, 0.35), { whole: true });
           if (!wrong) continue;
           const question = which === "sum" ? "h + k" : which;
           return {
@@ -1278,12 +1278,15 @@
     domain: GEO,
     skill: "Circles",
     subskill: "circle measures",
-    difficulty: "Medium",
+    difficulty: "Easy",
     title: "Tangent line and radius",
     recognize:
       "A radius drawn to the point of tangency is perpendicular to the tangent line, so the center, the point of tangency, " +
       "and a point on the tangent line form a right triangle whose hypotenuse runs from the center to the outside point.",
-    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 1, trap: 1 },
+    // Easy (relabelled from Medium, 2026-09-26 review): one fact (the
+    // radius meets the tangent at a right angle) and one use of the
+    // Pythagorean theorem, stated or drawn.
+    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 0 },
     tricks: ["intermediate-value", "neighbouring-rule", "wrong-quantity"],
     build(t) {
       const form = t.pick(["hyp", "hyp", "leg", "leg", "radius", "outside", "outside"]);
@@ -1661,7 +1664,7 @@
           const names = t.pick([["A", "B", "M", "P"], ["J", "K", "M", "T"], ["C", "D", "E", "F"]]);
           const [An, Bn, Mn, Pn] = names;
           const keyText = r;
-          const wrong = wrongFor(t, numeric, r, [
+          const wrong = wrongFor(t, numeric, r, balanceTwins(t, r, [
             [a, "Takes half of the chord as the radius, as if the chord were a diameter."],
             [r - s, `Finds the distance from the center to the chord, r − ${s}, and stops.`],
             [2 * r, "Leaves out the division by 2 when solving for r: that is the diameter."],
@@ -1669,7 +1672,7 @@
             [a + s, "Adds half of the chord and the height."],
             [isClean((4 * a * a + s * s) / (2 * s), 2) ? round4((4 * a * a + s * s) / (2 * s)) : null, `Uses the whole chord, ${c}, instead of half of it as a leg of the right triangle.`],
             [s, "Gives the height of the arc instead of the radius."],
-          ], { whole: true, positive: true });
+          ], 0, 0.35), { whole: true, positive: true });
           if (!wrong) return null;
           // Figure: chord below the center when the arc is the smaller part.
           const drawn = chordsFigure(r, [{ y: -(r - s), half: a, names: [An, Bn, Mn] }], { oBelow: false });
@@ -1741,14 +1744,14 @@
           if (dd1 > 0) otherR = Math.sqrt(a1 * a1 + dd1 * dd1);
         }
         const printable = (value) => (value === null || !Number.isFinite(value) ? null : isClean(value, 2) ? round4(value) : surd(value));
-        const wrong = wrongFor(t, numeric, r, [
+        const wrong = wrongFor(t, numeric, r, balanceTwins(t, r, [
           [printable(midR(a1)), "Assumes the center is halfway between the chords."],
           [printable(otherR), opposite ? "Places both chords on the same side of the center." : "Places the chords on opposite sides of the center."],
           [printable(gap / 2), "Takes the distance between the chords as a diameter of the circle."],
           [Math.max(a1, a2), "Takes half of the longer chord as the radius."],
           [printable(midR(a2)), "Assumes the center is halfway between the chords and uses the shorter chord."],
           [printable(Math.hypot(Math.max(a1, a2), gap)), "Uses the whole distance between the chords as the distance from the center to one chord."],
-        ], { whole: true, positive: true });
+        ], 0, 0.35), { whole: true, positive: true });
         if (!wrong) return null;
         const drawn = chordsFigure(r, [
           { y: -d1, half: a1, names: [A1, B1, null] },
@@ -1793,5 +1796,195 @@
     },
   };
 
-  return [circleMeasure, measureConvert, circleEquation, tangentRadius, chordDistance, arcSector, circleCompleteSquare, chordArc];
+  /* ======================================== circle-tangent-line (Hard) */
+
+  // Offsets (a, b) from the center to the point of tangency, with a² + b²
+  // the radius squared (a perfect square or not).
+  const TANGENT_OFFSETS = [[3, 4], [4, 3], [5, 12], [12, 5], [6, 8], [8, 6], [1, 2], [2, 1], [1, 3], [3, 1], [2, 3], [3, 2], [2, 5], [5, 2]];
+
+  // "−3/4", "5", "7/2" for a/b in lowest terms.
+  const ratio = (top, bottom) => S.frac(top, bottom);
+
+  // "y = −(3/4)x + 25/4": a line with a fractional slope, as the test prints it.
+  function lineText(slopeTop, slopeBottom, interceptTop, interceptBottom) {
+    const slope = ratio(slopeTop, slopeBottom);
+    const negative = slope.startsWith(MINUS);
+    const magnitude = negative ? slope.slice(1) : slope;
+    const slopePart = magnitude === "1" ? "x" : magnitude.includes("/") ? `(${magnitude})x` : `${magnitude}x`;
+    const intercept = ratio(interceptTop, interceptBottom);
+    const interceptPart = intercept === "0" ? "" : intercept.startsWith(MINUS) ? ` ${MINUS} ${intercept.slice(1)}` : ` + ${intercept}`;
+    return `y = ${negative ? MINUS : ""}${slopePart}${interceptPart}`;
+  }
+
+  const tangentLine = {
+    id: "circle-tangent-line",
+    domain: GEO,
+    skill: "Circles",
+    subskill: "circle equations",
+    difficulty: "Hard",
+    title: "The line tangent to a circle at a point",
+    recognize:
+      "The tangent line at a point is perpendicular to the radius drawn to that point: find the center (completing the square " +
+      "if the equation is in general form), take the radius's slope, and use its negative reciprocal through the point.",
+    // Hard: nothing in the stem mentions a radius or a right angle; the
+    // student must bring in the perpendicular radius, find the center
+    // (sometimes by completing the square), and take a negative reciprocal.
+    // The radius's slope, a reciprocal without the sign change, and a line
+    // through the center are all offered.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["neighbouring-rule", "sign-error", "wrong-quantity"],
+    build(t) {
+      const ask = t.pick(["slope", "intercept", "equation"]);
+      const general = t.chance(0.4);
+      const numeric = ask !== "equation" && t.chance(0.45);
+      return retry(() => {
+        const h = t.nonzero(-6, 6);
+        const k = t.nonzero(-6, 6);
+        const [a0, b0] = t.pick(TANGENT_OFFSETS);
+        const a = a0 * t.sign();
+        const b = b0 * t.sign();
+        const r2 = a * a + b * b;
+        const px = h + a;
+        const py = k + b;
+        if (px === 0 || py === 0) return null;
+        // Tangent slope −a/b; y-intercept py + (a/b)px = (b·py + a·px)/b.
+        const equation = general
+          ? `${terms([[1, "x²"], [1, "y²"], [-2 * h, "x"], [-2 * k, "y"], [h * h + k * k - r2, ""]])} = 0`
+          : circleEq(h, k, r2);
+        const point = S.point(px, py);
+        const intro = `In the xy-plane, the graph of the given equation is a circle, and the point ${point} lies on the circle. Line ℓ is tangent to the circle at ${point}.`;
+        const common = {
+          stimulus: { type: "equations", content: equation },
+          figure: null,
+          principles: [
+            "A line tangent to a circle is perpendicular to the radius drawn to the point of tangency.",
+            "Perpendicular lines have slopes that are negative reciprocals of each other: m and −1/m.",
+          ],
+          hint: "Which segment is perpendicular to the tangent line at the point of tangency?",
+          estimatedSeconds: 125,
+        };
+        const centerStep = general
+          ? `Complete the squares: ${circleEq(h, k, r2)}, so the center is ${S.point(h, k)}.`
+          : `The center is ${S.point(h, k)}.`;
+        const radiusStep = `The radius to ${point} has slope (${num(py)} ${MINUS} ${S.paren(k)})/(${num(px)} ${MINUS} ${S.paren(h)}) = ${ratio(b, a)}.`;
+        const slopeStep = `The tangent is perpendicular to it, so its slope is the negative reciprocal: ${ratio(-a, b)}.`;
+        // Whether a line y = mx + c meets the circle exactly once (a zero
+        // discriminant), from the equation as printed: the verify route.
+        const residual = general
+          ? (x, y) => equationValue(equation, x, y)
+          : (() => {
+            const eq = readCircleEq(equation);
+            return (x, y) => (x - eq.h) ** 2 + (y - eq.k) ** 2 - eq.rhs;
+          })();
+        const touchesOnce = (mTop, mBottom, cTop, cBottom) => {
+          const m = mTop / mBottom;
+          const c = cTop / cBottom;
+          // Along the line the residual is a quadratic in x; read it from three samples.
+          const g = (x) => residual(x, m * x + c);
+          const [q0, q1, qm] = [g(0), g(1), g(-1)];
+          const A = (q1 + qm) / 2 - q0;
+          const B = (q1 - qm) / 2;
+          const scale = Math.max(1, B * B, Math.abs(4 * A * q0));
+          return Math.abs(B * B - 4 * A * q0) < 1e-9 * scale && close(m * px + c, py) && Math.abs(residual(px, py)) < 1e-9;
+        };
+        if (ask === "slope") {
+          const key = ratio(-a, b);
+          const list = [
+            [ratio(b, a), "Gives the slope of the radius to the point of tangency instead of the slope of the tangent line."],
+            [ratio(a, b), "Takes the reciprocal of the radius's slope but not its negative."],
+            [ratio(-b, a), "Takes the negative of the radius's slope but not its reciprocal."],
+            [ratio(-px, py), "Uses the line from the origin to the point as if it were the radius; the center is not the origin."],
+            [ratio(py, px), "Gives the slope of the line through the origin and the point."],
+          ];
+          if (numeric) {
+            if (key.replace(MINUS, "").length > 5) return null;
+            return {
+              ...common,
+              responseType: "numeric",
+              stem: `${intro} What is the slope of line ℓ?`,
+              correct: key,
+              wrong: [],
+              explanation: `${centerStep} ${radiusStep} ${slopeStep}`,
+              steps: [centerStep, radiusStep, slopeStep],
+              trap: `${ratio(b, a)} is the slope of the radius; the tangent line is perpendicular to it.`,
+              verify: () => {
+                const c = [b * py + a * px, b];
+                return touchesOnce(-a, b, c[0], c[1]);
+              },
+            };
+          }
+          // The radius's slope always stays. In half the items a slip that
+          // only negates the key (a look-alike of it) joins it; in the rest
+          // the two slopes through the origin (reciprocals, a look-alike pair
+          // of their own) do, so a pair does not mark the key.
+          const onKey = t.chance(0.5);
+          const wrong = wrongFor(t, false, key, onKey
+            ? [list[0], list[1], list[4]]
+            : [list[0], list[4], [ratio(px, py), "Divides the point's x-coordinate by its y-coordinate, run over rise, for the line through the origin."]]);
+          if (!wrong) return null;
+          return {
+            ...common,
+            responseType: "multiple-choice",
+            stem: `${intro} What is the slope of line ℓ?`,
+            correct: key,
+            wrong,
+            explanation: `${centerStep} ${radiusStep} ${slopeStep}`,
+            steps: [centerStep, radiusStep, slopeStep],
+            trap: `${ratio(b, a)} is the slope of the radius; the tangent line is perpendicular to it, and a perpendicular slope needs both the reciprocal and the sign change.`,
+            verify: () => touchesOnce(-a, b, b * py + a * px, b),
+          };
+        }
+        const cTop = b * py + a * px;
+        const interceptStep = `Through ${point}: y ${MINUS} ${S.paren(py)} = ${ratio(-a, b)}(x ${MINUS} ${S.paren(px)}), so the y-intercept is ${num(py)} + (${ratio(a, b)})(${num(px)}) = ${ratio(cTop, b)}.`;
+        if (ask === "intercept") {
+          const key = ratio(cTop, b);
+          if (numeric && key.replace(MINUS, "").length > 5) return null;
+          const list = [
+            [ratio(a * py - b * px, a), "Uses the slope of the radius through the point instead of the perpendicular slope."],
+            [ratio(b * py - a * px, b), "Uses the reciprocal of the radius's slope without the sign change."],
+            [ratio(b * k + a * h, b), "Draws the perpendicular line through the center instead of through the point of tangency."],
+            [ratio(a * py + b * px, a), "Uses the negative of the radius's slope without taking the reciprocal."],
+            [num(py), `Gives the y-coordinate of the point, ${num(py)}, as the y-intercept.`],
+          ];
+          const wrong = numeric ? [] : wrongFor(t, false, key, list);
+          if (!wrong) return null;
+          return {
+            ...common,
+            responseType: numeric ? "numeric" : "multiple-choice",
+            stem: `${intro} What is the y-intercept of line ℓ?`.replace("y-intercept of line ℓ?", numeric ? "y-coordinate of the y-intercept of line ℓ?" : "y-coordinate of the y-intercept of line ℓ?"),
+            correct: key,
+            wrong,
+            explanation: `${centerStep} ${radiusStep} ${slopeStep} ${interceptStep}`,
+            steps: [centerStep, radiusStep, slopeStep, interceptStep],
+            trap: "The tangent line passes through the point of tangency with the perpendicular slope; a line through the center, or with the radius's slope, is a different line.",
+            verify: () => touchesOnce(-a, b, cTop, b),
+          };
+        }
+        const key = lineText(-a, b, cTop, b);
+        const list = [
+          [lineText(b, a, a * py - b * px, a), "Uses the slope of the radius instead of the perpendicular slope."],
+          [lineText(a, b, b * py - a * px, b), "Uses the reciprocal of the radius's slope without the sign change."],
+          [lineText(-a, b, b * k + a * h, b), "Has the right slope but passes through the center instead of the point of tangency."],
+          [lineText(-b, a, a * py + b * px, a), "Uses the negative of the radius's slope without taking the reciprocal."],
+        ];
+        const wrong = wrongFor(t, false, key, t.shuffle(list));
+        if (!wrong) return null;
+        return {
+          ...common,
+          responseType: "multiple-choice",
+          stem: `${intro} Which of the following is an equation of line ℓ?`,
+          correct: key,
+          wrong,
+          explanation: `${centerStep} ${radiusStep} ${slopeStep} ${interceptStep} So line ℓ is ${key}.`,
+          steps: [centerStep, radiusStep, slopeStep, interceptStep],
+          trap: "The radius's slope, or a reciprocal without the sign change, gives a line that crosses the circle instead of touching it once.",
+          verify: () => touchesOnce(-a, b, cTop, b) && [lineText(b, a, a * py - b * px, a), lineText(a, b, b * py - a * px, b)].every((text) => text !== key),
+        };
+      });
+    },
+  };
+
+  // Existing templates keep their order (a run code rebuilds its questions
+  // in this order); new templates are appended.
+  return [circleMeasure, measureConvert, circleEquation, tangentRadius, chordDistance, arcSector, circleCompleteSquare, chordArc, tangentLine];
 });

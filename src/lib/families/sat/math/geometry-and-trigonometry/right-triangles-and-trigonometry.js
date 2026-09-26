@@ -227,6 +227,11 @@
         "In a right triangle with legs a and b and hypotenuse c, a² + b² = c².",
         "A diagonal of a rectangle is the hypotenuse of a right triangle whose legs are the length and the width.",
       ];
+      // Slips that halve or double the key look alike with it. Offering all
+      // of them made the key the one choice paired with others, so an item
+      // offers at most one (in 60% of items) or none.
+      const halving = t.chance(0.6) ? t.int(0, 1) : -1;
+      const twin = (index, entry) => (index === halving ? entry : [null, entry[1]]);
       return retry(() => {
         const names = t.pick([["A", "B", "C", "D"], ["P", "Q", "R", "S"], ["J", "K", "L", "M"], ["E", "F", "G", "H"]]);
         const [A, B, C, D] = names;
@@ -256,13 +261,13 @@
             ? [
               [shown(L * d, 0), `Uses the diagonal, ${d}, as the width.`],
               [shown(w, 0), `Stops at the width, ${w}.`],
-              [shown((L * w) / 2, 1), "Takes half of length × width, the area of one of the triangles."],
+              twin(0, [shown((L * w) / 2, 1), "Takes half of length × width, the area of one of the triangles."]),
               [shown(2 * (L + w), 0), "Gives the perimeter instead of the area."],
               [shown(d * w, 0), `Multiplies the diagonal by the width, using ${d} in place of the length ${L}.`],
             ]
             : [
               [shown(2 * (L + d), 0), `Uses the diagonal, ${d}, as the width.`],
-              [shown(L + w, 0), "Adds one length and one width, which is half the perimeter."],
+              twin(0, [shown(L + w, 0), "Adds one length and one width, which is half the perimeter."]),
               [shown(w, 0), `Stops at the width, ${w}.`],
               [shown(L * w, 0), "Gives the area instead of the perimeter."],
               [shown(L + w + d, 0), `Adds the sides of triangle ${A}${B}${C} instead of the four sides of the rectangle.`],
@@ -307,12 +312,12 @@
           const alt = `Triangle ${A}${B}${C} with base ${B}${C} labeled ${base}; sides ${A}${B} and ${A}${C} are each labeled ${s} and marked congruent. The figure is drawn to scale.`;
           const fullBase = s > base && Number.isInteger(Math.sqrt(s * s - base * base)) ? (base * Math.sqrt(s * s - base * base)) / 2 : null;
           return packSpread(t, numeric, key, fmt(key), [
-            [shown(base * h, 0), "Finds the height correctly but forgets the 1/2 in the area formula."],
+            twin(0, [shown(base * h, 0), "Finds the height correctly but forgets the 1/2 in the area formula."]),
             [shown(half * s, 0), `Uses the side length ${s} as the height.`],
             [shown(h, 0), `Stops at the height, ${h}.`],
             [fullBase === null ? null : shown(fullBase, 1), `Uses the whole base, ${base}, instead of half of it, as a leg of the right triangle.`],
             [shown(2 * s + base, 0), "Gives the perimeter instead of the area."],
-            [shown((half * h) / 2, 1), "Multiplies half the base by the height and then takes half again."],
+            twin(1, [shown((half * h) / 2, 1), "Multiplies half the base by the height and then takes half again."]),
           ], {
             stimulus: null,
             figure: { svg: S.svg(400, 250, parts, alt), alt, notToScale: false },
@@ -371,7 +376,7 @@
         if (variant === "perimeter") {
           const key = 4 * side;
           return packSpread(t, numeric, key, fmt(key), [
-            [shown(8 * side, 0), `Uses the whole diagonals, ${d1} and ${d2}, as the legs of the right triangle instead of half of each.`],
+            twin(0, [shown(8 * side, 0), `Uses the whole diagonals, ${d1} and ${d2}, as the legs of the right triangle instead of half of each.`]),
             [shown(side, 0), `Stops at the length of one side, ${side}.`],
             [shown(2 * (d1 + d2), 0), "Takes each side to be the average of the two diagonals."],
             [shown((d1 * d2) / 2, 0), "Gives the area of the rhombus instead of its perimeter."],
@@ -394,7 +399,7 @@
           const key = d2;
           const fullLeg = side * side - d1 * d1 > 0 ? Math.sqrt(side * side - d1 * d1) : null;
           return packSpread(t, numeric, key, fmt(key), [
-            [shown(hy, 0), `Finds half of ${B}${D}, ${hy}, and stops.`],
+            twin(0, [shown(hy, 0), `Finds half of ${B}${D}, ${hy}, and stops.`]),
             [fullLeg !== null ? shown(fullLeg, 0) : null, `Uses the whole diagonal ${A}${C} = ${d1}, not half of it, as a leg of the right triangle.`],
             [shown(2 * Math.sqrt(side * side + hx * hx), 0), "Adds the squares instead of subtracting them, as if the side were a leg."],
             [shown(d1, 0), "Assumes the two diagonals are equal, as they are in a square."],
@@ -415,7 +420,7 @@
         }
         const key = (d1 * d2) / 2;
         return packSpread(t, numeric, key, fmt(key), [
-          [shown(d1 * d2, 0), "Multiplies the diagonals without taking half."],
+          twin(0, [shown(d1 * d2, 0), "Multiplies the diagonals without taking half."]),
           [shown(side * side, 0), "Squares the side, as if the rhombus were a square."],
           [shown((hx * hy) / 2, 1), "Multiplies the half-diagonals and takes half again; that is the area of one of the four right triangles."],
           [shown(side * d1, 0), `Multiplies the side by diagonal ${A}${C}, treating the diagonal as a height.`],
@@ -589,6 +594,7 @@
 
   const trigCofunction = {
     id: "trig-similar-cofunction",
+    difficulty: "Hard",
     domain: DOMAIN,
     skill: "Right triangles and trigonometry",
     subskill: "trigonometric ratios",
@@ -1076,9 +1082,14 @@
               : `Uses ${fn === "sin" ? "cos" : "sin"} ${angle}° and also ${op === "×" ? "divides by it instead of multiplying" : "multiplies by it instead of dividing"}.`],
         );
         // Choices print to the tenth, as the question asks: 15.0, not 15.
+        // The question asks for the nearest tenth, so the key must be the
+        // nearest choice to the exact length by a clear margin: a wrong
+        // choice closer than twice the key's rounding gap is dropped.
+        const gap = Math.abs(key - exact);
         const printed = candidates.map(([value, reason]) => {
           const shownValue = tenth(value);
-          return [Number.isFinite(value) && shownValue > 0 && shownValue < 20 * length ? shownValue.toFixed(1) : null, reason];
+          const clear = Math.abs(shownValue - exact) >= 2 * gap + 1e-9;
+          return [Number.isFinite(value) && shownValue > 0 && shownValue < 20 * length && clear ? shownValue.toFixed(1) : null, reason];
         });
         const wrong = wrongFor(t, numeric, key.toFixed(1), printed);
         if (!wrong) return null;
@@ -1121,6 +1132,7 @@
           stem: `${scene.given[given](length, angle)} ${question}`,
           correct: numeric ? key : key.toFixed(1),
           wrong,
+          approximates: exact,
           explanation:
             `Relative to the ${angle}° angle, the known length is ${SIDE_WORDS[given]} and the wanted length is ${SIDE_WORDS[asked]}. ` +
             `Those two sides are linked by ${relation}, so ${equation} ≈ ${num(tidy(Math.round(exact * 1000) / 1000))}, which is ${num(key)} to the nearest tenth.`,
@@ -1204,6 +1216,7 @@
 
   const unitCircle = {
     id: "unit-circle-quadrant",
+    difficulty: "Hard",
     domain: DOMAIN,
     skill: "Right triangles and trigonometry",
     subskill: "trigonometric ratios",
@@ -1425,6 +1438,11 @@
 
   /* ====================================== two-observer-elevation (Hard) */
 
+  // The exact tangents of the two angles an item uses, in increasing order:
+  // "tan 30° = 1/√3 and tan 60° = √3". Only the angles in the item appear.
+  const TAN_TEXT = { 30: "tan 30° = 1/√3", 45: "tan 45° = 1", 60: "tan 60° = √3" };
+  const tanValues = (pair) => [pair.far, pair.near].sort((a, b) => a - b).map((angle) => TAN_TEXT[angle]).join(" and ");
+
   // Angle pairs (farther, nearer) with exact tangents: tan 30° = 1/√3,
   // tan 45° = 1, tan 60° = √3. For each, the height h and the nearer
   // distance x per unit of separation d, as "a + b√3" over a denominator.
@@ -1554,14 +1572,14 @@
           hint: "Call the nearer distance x. How can the height be written using each angle?",
           explanation:
             `Let x be the nearer person's distance from the base and h the height. From the nearer person, h = x tan ${pair.near}°; from the farther person, ` +
-            `h = (x + ${d}) tan ${pair.far}°. With tan 30° = 1/√3, tan 45° = 1, and tan 60° = √3, setting the two equal gives x = ${xText} and h = ${hText}.`,
+            `h = (x + ${d}) tan ${pair.far}°. With ${tanValues(pair)}, setting the two equal gives x = ${xText} and h = ${hText}.`,
           steps: [
             `Nearer triangle: h = x · tan ${pair.near}°.`,
             `Farther triangle: h = (x + ${d}) · tan ${pair.far}°.`,
             `Solve: x = ${xText}, h = ${hText}.`,
           ],
           principles: [
-            "tan θ = opposite/adjacent in a right triangle; tan 30° = 1/√3, tan 45° = 1, tan 60° = √3.",
+            `tan θ = opposite/adjacent in a right triangle; here ${tanValues(pair)}.`,
             "Two right triangles that share a side give two equations for the same unknown.",
           ],
           trap: `The ${d} ${scene.units} is the distance between the people, not either person's distance from the base, so neither triangle can be solved by itself.`,

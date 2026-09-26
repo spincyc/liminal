@@ -421,6 +421,55 @@
     return chosen ? chosen.map(([, entry]) => [entry.value, entry.reason]) : null;
   }
 
+  // The families gate's look-alike test for two numbers (check 13,
+  // tools/lib/tells.js): a negation, a reciprocal, a factor of 2, or two
+  // positives adding to 90, 100, 180 or 360.
+  function lookAlikeNumbers(a, b) {
+    if (!Number.isFinite(a) || !Number.isFinite(b)) return false;
+    const near = (x, y) => Math.abs(x - y) <= 1e-9 * Math.max(1, Math.abs(x), Math.abs(y));
+    if (a !== 0 && near(a, -b)) return true;
+    if (!near(a, b) && near(a * b, 1)) return true;
+    if (a !== 0 && b !== 0 && (near(a, 2 * b) || near(b, 2 * a))) return true;
+    return a > 0 && b > 0 && [90, 100, 180, 360].some((whole) => near(a + b, whole));
+  }
+
+  // Slips that halve, double, negate or complement the key look alike with
+  // it. Offering all of them makes the key the choice the look-alike pairs
+  // meet at, so a student who guesses within pairs gains; this keeps the
+  // first such slip in a `share` of the items and none in the rest. The first
+  // `keep` candidates (a not-to-scale lure) always stay. Candidates are
+  // [choice, reason], the choice a number or printed text (read with
+  // choiceValue); a dropped slip becomes null, which wrongFor skips.
+  // In the items without a slip on the key, a look-alike pair among the
+  // wrong answers (when the list has one) moves to the front, so pairs sit
+  // off the key about as often as on it.
+  function balanceTwins(t, key, candidates, keep = 0, share = 0.5) {
+    const keyValue = choiceValue(key);
+    const allowOne = t.chance(share);
+    let used = false;
+    const out = candidates.map(([choice, reason], index) => {
+      if (index < keep || choice === null || choice === undefined) return [choice, reason];
+      if (!lookAlikeNumbers(choiceValue(choice), keyValue)) return [choice, reason];
+      if (allowOne && !used) {
+        used = true;
+        return [choice, reason];
+      }
+      return [null, reason];
+    });
+    if (used) return out;
+    const value = (entry) => (entry[0] === null || entry[0] === undefined ? NaN : choiceValue(entry[0]));
+    for (let i = keep; i < out.length; i += 1) {
+      for (let j = i + 1; j < out.length; j += 1) {
+        if (lookAlikeNumbers(value(out[i]), value(out[j]))) {
+          const pair = [out[i], out[j]];
+          const rest = out.filter((entry, index) => index >= keep && index !== i && index !== j);
+          return out.slice(0, keep).concat(pair, rest);
+        }
+      }
+    }
+    return out;
+  }
+
   // True when a modelled mistake prints the same as the key: the draw must
   // be redone, since dropping it would silently lose a trap (or leave a
   // rationale calling the key wrong).
@@ -457,6 +506,6 @@
     sub, mul, unit, lerp, mid, dist, dot, toRad, toDeg, centroid, close, angleAt, shoelace,
     fitPoints, r1, seg, measure, unitText, name, nameAway, anchorFor, normalAway, sideLabel, angleArc,
     angleLabel, rightMark, DOMAIN, heading, round4, segHard, fitsGridHard, spreadRank,
-    choiceValue, spreadWrong, packSpread, collides, wrongFor, textBoxes, labelsClash,
+    choiceValue, spreadWrong, packSpread, collides, wrongFor, textBoxes, labelsClash, lookAlikeNumbers, balanceTwins,
   };
 });
