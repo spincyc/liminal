@@ -29,6 +29,7 @@ sentences back, or ask for a concession-then-return that easy readers miss.
 | similarity (a parallel case) | similarly, likewise |
 | contrast (the next point goes against it) | however, but, yet, by contrast, conversely |
 | concession then return | still, even so, nevertheless, nonetheless |
+| replacement (what happens in place of something ruled out) | instead, rather |
 | result (the next point follows from it) | therefore, thus, consequently, as a result |
 | example (an instance of it) | for example, for instance, specifically |
 | restatement or emphasis | in other words, that is, indeed, in fact |
@@ -166,6 +167,7 @@ method for both subskills.
 - A blank that connects to the paragraph's first claim, not the sentence just before it.
 - Two choices from the same family (therefore and in other words, however and even so) where only the exact relationship decides.
 - A concession followed by a return, which students often read as a plain contrast or a plain result.
+- "Instead" or "rather" against "in contrast". "Instead" needs something the text has ruled out, declined or failed to do, which the next sentence replaces; a second subject that simply differs from the first takes "in contrast".
 
 No transition word is a safe guess: each one is right only when its
 relationship is the one in the text. See [answer tells](learn:sat/general/answer-tells)
