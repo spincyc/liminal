@@ -526,12 +526,24 @@
       if (!bySession.has(attempt.sessionId)) bySession.set(attempt.sessionId, []);
       bySession.get(attempt.sessionId).push(attempt);
     });
+    // A finished section or full-length test is one point: its modules'
+    // own records (which name it as their testId) are folded into it, and
+    // it is scored from their answers, re-tiered like every other set. A
+    // module whose test was never finished keeps its own point.
+    const finishedTests = new Set((sessions || [])
+      .filter((session) => session && Array.isArray(session.modules) && session.modules.length)
+      .map((session) => session.id));
+    const answersOf = (session) => (Array.isArray(session.modules) && session.modules.length
+      ? session.modules.flatMap((entry) => bySession.get(entry && entry.sessionId) || [])
+        .concat(bySession.get(session.id) || [])
+      : bySession.get(session.id) || []);
     return (sessions || [])
       .filter((session) => session && (!filter || filter(session)))
+      .filter((session) => !(session.testId && finishedTests.has(session.testId)))
       .slice()
       .sort((left, right) => (Number(left.finishedAt) || 0) - (Number(right.finishedAt) || 0))
       .map((session) => {
-        const own = bySession.get(session.id) || [];
+        const own = answersOf(session);
         const summary = own.length ? Progress.stats(own) : null;
         const point = {
           id: session.id,

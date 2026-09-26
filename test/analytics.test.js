@@ -415,3 +415,26 @@ test("a gate window must span two days and two question designs", () => {
   row = rowFor(Analytics.skillMap(twoDays, SECTIONS), "Linear functions");
   assert.deepEqual([row.gate.days, row.gate.templates, row.gate.met], [2, 2, true]);
 });
+
+test("a finished test is one point, scored from its modules' answers at their current tier", () => {
+  const moduleAnswers = (sessionId, right, wrong, difficulty) => [
+    ...many(right, { sessionId, difficulty }), ...many(wrong, { sessionId, difficulty, correct: false }),
+  ];
+  const attempts = [
+    ...moduleAnswers("m1", 3, 1, "Medium"),
+    ...moduleAnswers("m2", 1, 3, "Hard"),
+    ...moduleAnswers("m9", 2, 0, "Medium"),
+  ];
+  const sessions = [
+    { id: "m1", kind: "module", testId: "t1", finishedAt: 1, total: 4, correct: 3 },
+    { id: "m2", kind: "module", testId: "t1", finishedAt: 2, total: 4, correct: 1 },
+    // The stored summary still has the tiers from when it was taken.
+    { id: "t1", kind: "section", finishedAt: 3, total: 8, correct: 4, hard: { total: 0, correct: 0 },
+      modules: [{ sessionId: "m1" }, { sessionId: "m2" }] },
+    // A module of a test never finished keeps its own point.
+    { id: "m9", kind: "module", testId: "t9", finishedAt: 4, total: 2, correct: 2 },
+  ];
+  const points = Analytics.sessionTrend(sessions, attempts);
+  assert.deepEqual(points.map((point) => point.id), ["t1", "m9"]);
+  assert.deepEqual([points[0].counted, points[0].accuracy, points[0].hard.attempted, points[0].source], [8, 0.5, 4, "attempts"]);
+});
