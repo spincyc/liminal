@@ -31,16 +31,18 @@
   // student who is right 70% of the time met the earlier 16-of-20 rule
   // within 60 Medium answers 82% of the time, and meets this one 50% of the
   // time; one right 80% of the time meets it 94% of the time.
-  const GATE = { tier: "Medium", window: 30, correct: 24 };
+  const GATE = { tier: "Medium", window: 30, correct: 24, days: 2, templates: 2 };
   // Mastered: the gate, plus at least 10 correct of the skill's last 15 Hard
   // answers. The earlier bar, 60% over 5 or more Hard answers, called a
   // student with a 30% Hard hit rate mastered within 20 Hard answers 70% of
   // the time; this one does so 1% of the time, and a 70% student 87%.
-  const HARD_BAR = { tier: "Hard", window: 15, correct: 10 };
+  const HARD_BAR = { tier: "Hard", window: 15, correct: 10, days: 2, templates: 2 };
   // Both windows hold each question's first answer only: answering a
   // question again (Review brings a missed one back as it was) tests
   // memory of it, not the skill. A fresh version of the same template is a
-  // new question and counts.
+  // new question and counts. Each window must also span at least `days`
+  // calendar days and `templates` question designs, so one sitting of
+  // massed drill on one design cannot fill it.
   // Practice states, in the order a skill moves through them.
   const STATES = ["not-started", "not-enough-data", "building", "at-gate", "mastered"];
   const STATE_LABELS = {
@@ -140,12 +142,24 @@
     return "at-gate";
   }
 
+  const dayOf = (timestamp) => {
+    const date = new Date(Number(timestamp) || 0);
+    return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+  };
+  const designOf = (attempt) => attempt.templateId ||
+    (Progress.parseQuestionId(attempt.questionId) || {}).templateId || attempt.questionId;
+
   // The last `bar.window` first answers at the bar's tier, counted by the
-  // accuracy model: { attempted, correct, accuracy, window, needed, met }.
+  // accuracy model: { attempted, correct, accuracy, window, needed, days,
+  // templates, met }, where days and templates count the local calendar
+  // days and question designs the window spans.
   function windowTally(answers, bar) {
     const windowed = answers.slice(-bar.window);
     const row = Object.assign(tally(Progress.stats(windowed)), { window: bar.window, needed: bar.correct });
-    row.met = row.attempted >= bar.window && row.correct >= bar.correct;
+    row.days = new Set(windowed.map((attempt) => dayOf(attempt.timestamp))).size;
+    row.templates = new Set(windowed.map(designOf)).size;
+    row.met = row.attempted >= bar.window && row.correct >= bar.correct &&
+      row.days >= bar.days && row.templates >= bar.templates;
     return row;
   }
 

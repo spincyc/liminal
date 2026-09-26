@@ -43,7 +43,8 @@ For each skill, the loop is:
 ## The mastery gate {#mastery-gate}
 
 > **Rule.** Move on from a skill when you get at least 24 of your last 30
-> Medium questions in that skill right, with no hints. Each question counts
+> Medium questions in that skill right, with no hints, and those 30 span at
+> least two days and two different question designs. Each question counts
 > once, at your first answer: a miss that Review brings back as it was does
 > not count again, but a fresh version of it does.
 
@@ -71,7 +72,7 @@ Progress shows each skill in one of these states:
 | Not enough data | Fewer than 5 answers: too few to say anything. |
 | Building | Below the gate. Keep practising Medium questions. |
 | At the gate | At least 24 of your last 30 Medium questions right. Start Hard questions. |
-| Mastered | The gate, plus at least 10 of your last 15 Hard questions right. |
+| Mastered | The gate, plus at least 10 of your last 15 Hard questions right, over two days and two designs. |
 
 Mastered is a strict bar on purpose. Hard is where practice most often
 overstates readiness, and five Hard questions can go well by luck: a student

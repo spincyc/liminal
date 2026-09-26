@@ -161,7 +161,8 @@ For a coherent ACT bank batch:
   through `LiminalProgress.stats`. Its states are practice guidance: the gate
   is at least 24 correct of a skill's last 30 Medium answers (and needs 30);
   mastered adds at least 10 correct of the last 15 Hard answers; both
-  windows hold each question's first answer only; under 5 answers is not
+  windows hold each question's first answer only and must span two days and
+  two templates; under 5 answers is not
   enough data. The windows are long because a student checks them after
   every set, and short windows are met by chance. `npm run check:learn`
   fails unless the SAT Math plan page in Learn states the same bars.

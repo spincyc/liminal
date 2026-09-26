@@ -39,7 +39,8 @@ function attempt(fields) {
     hinted: false,
     timeMs: 60000,
     sessionId: "s1",
-    timestamp: counter * 1000,
+    // An hour apart, so a gate window of 30 spans more than one day.
+    timestamp: counter * 3600 * 1000,
   }, fields);
 }
 
@@ -83,7 +84,9 @@ test("the skill map lists every catalog skill with its practice state", () => {
   assert.deepEqual(rows.map((row) => row.skill), ["Linear functions", "Linear inequalities", "Circles"]);
   const functions = rowFor(rows, "Linear functions");
   assert.equal(functions.state, "at-gate");
-  assert.deepEqual(functions.gate, { attempted: 30, correct: 24, accuracy: 0.8, window: 30, needed: 24, met: true });
+  const { days, ...gate } = functions.gate;
+  assert.deepEqual(gate, { attempted: 30, correct: 24, accuracy: 0.8, window: 30, needed: 24, templates: 30, met: true });
+  assert.ok(days >= 2);
   assert.deepEqual(functions.medium, { attempted: 30, correct: 24, accuracy: 0.8 });
   assert.deepEqual(functions.hard, { attempted: 0, correct: 0, accuracy: null });
   assert.equal(rowFor(rows, "Linear inequalities").state, "not-enough-data");
@@ -395,4 +398,20 @@ test("the trend leaves answers to questions seen before out of a set's accuracy"
   ], [first, again]);
   assert.deepEqual(points.map((point) => [point.id, point.counted, point.accuracy, point.repeats]),
     [["s1", 1, 0, 0], ["s2", 0, null, 1]]);
+});
+
+test("a gate window must span two days and two question designs", () => {
+  const day = 24 * 3600 * 1000;
+  const oneSitting = Array.from({ length: 30 }, (unused, index) =>
+    attempt({ questionId: `sat-math:t-drill:${index}`, templateId: "t-drill", timestamp: 100 * day + index * 60000 }));
+  let row = rowFor(Analytics.skillMap(oneSitting, SECTIONS), "Linear functions");
+  assert.deepEqual([row.gate.correct, row.gate.days, row.gate.templates, row.gate.met], [30, 1, 1, false]);
+  // Two designs, still one sitting.
+  const twoDesigns = oneSitting.map((entry, index) => Object.assign({}, entry, index % 2 ? { templateId: "t-other" } : {}));
+  row = rowFor(Analytics.skillMap(twoDesigns, SECTIONS), "Linear functions");
+  assert.deepEqual([row.gate.templates, row.gate.met], [2, false]);
+  // Two designs over two days.
+  const twoDays = twoDesigns.map((entry, index) => Object.assign({}, entry, index >= 15 ? { timestamp: entry.timestamp + day } : {}));
+  row = rowFor(Analytics.skillMap(twoDays, SECTIONS), "Linear functions");
+  assert.deepEqual([row.gate.days, row.gate.templates, row.gate.met], [2, 2, true]);
 });

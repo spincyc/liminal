@@ -839,9 +839,11 @@
       mark.style.left = `${Math.round((Analytics.GATE.correct / Analytics.GATE.window) * 100)}%`;
       bar.append(fill, mark);
       const text = el("span", "gate-text", gate.attempted ? `${gate.correct} of ${gate.attempted}` : "—");
-      const note = el("small", "cell-note", gate.attempted >= gate.window
-        ? `needs ${gate.needed}`
-        : `${gate.attempted} of ${gate.window} so far`);
+      let noteText = gate.attempted >= gate.window ? `needs ${gate.needed}` : `${gate.attempted} of ${gate.window} so far`;
+      if (gate.attempted >= gate.window && gate.correct >= gate.needed && !gate.met) {
+        noteText = gate.days < Analytics.GATE.days ? "needs a second day" : "needs a second question design";
+      }
+      const note = el("small", "cell-note", noteText);
       cell.append(bar, text, note);
       return cell;
     }
@@ -894,7 +896,8 @@
       elements.masteryNote.textContent =
         `States are practice guidance, not a score. The gate: at least ${GATE.correct} correct of your last ` +
         `${GATE.window} Medium questions in a skill. Mastered: the gate, plus at least ${HARD_BAR.correct} ` +
-        `correct of your last ${HARD_BAR.window} Hard questions. Each question counts once, at its first answer. ` +
+        `correct of your last ${HARD_BAR.window} Hard questions. Each window must span ${GATE.days} days and ${GATE.templates} ` +
+        "question designs, and each question counts once, at its first answer. " +
         `Under ${MIN_ATTEMPTS} answers is not enough data. ` +
         (sortKey === "need" ? "Sorted by need: weak skills with evidence first, then skills without enough answers." : "");
       if (!rows.length) {
