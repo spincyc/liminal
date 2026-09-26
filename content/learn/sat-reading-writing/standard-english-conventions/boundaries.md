@@ -31,8 +31,45 @@ independent. Then:
 | not independent (for example "Because ...") | independent | comma | semicolon; period |
 
 Words such as however, therefore, moreover, thus and consequently are not
-conjunctions. Between two independent clauses they need a semicolon or a
-period before them: "X; however, Y" or "X. However, Y", never "X, however, Y".
+conjunctions. Between two independent clauses the clause boundary needs a
+semicolon or a period, never a comma alone: "X; however, Y" or "X. However,
+Y", never "X, however, Y". A capital letter follows only a period.
+
+The adverb belongs to one of the two clauses, and the boundary mark goes on
+the other side of it. It usually begins the second clause ("X; however, Y"),
+but it can end the first ("X, however; Y") when the contrast is between the
+first clause and the sentence before it. Decide which clause the adverb
+belongs to by asking what it contrasts, then put the semicolon or period
+between the clauses and a comma between the adverb and its own clause.
+
+> **Example.** Read the text and answer the question.
+>
+> Most of the orchard's trees were planted in the 1950s. The pear trees by
+> the gate are older ______ they were already fruiting when the orchard was
+> founded.
+>
+> Which choice completes the text so that it conforms to the conventions of
+> Standard English?
+>
+> A) older; however, they
+>
+> B) older, however; they
+>
+> C) older, however, they
+>
+> D) older however; they
+>
+> "However" sets "the pear trees by the gate are older" against the sentence
+> before it (most trees date from the 1950s), so it ends the first clause:
+> a comma before it and a semicolon after it, where the two clauses meet. A
+> makes "however" begin the second clause, setting the fruiting against the
+> trees being older, which is not a contrast. C is a comma splice. D leaves
+> out the comma that sets "however" off from its clause. B is correct.
+
+> **Fails when.** The adverb could belong to either clause with no change in
+> meaning; then the test will have ruled one placement out another way (a
+> missing comma, a comma splice). Check the marks before arguing about
+> meaning.
 
 > **Example.** Read the text and answer the question.
 >
@@ -310,5 +347,8 @@ names and quotations.
 - A long subject with a relative clause and a prepositional phrase, where the mark before the verb is the test.
 - An interruption whose closing mark sits far from its opening mark.
 - Two clauses joined by a conjunctive adverb in the middle of the second clause ("the results, however, were ...") where only one side is a sentence boundary.
+- A conjunctive adverb that could open the second clause or close the first, decided by what it contrasts.
+- An interruption opened with a comma, where the tempting error is leaving out the closing comma.
+- "; many of them" (an independent clause, after a semicolon) against ", many of which" (a relative clause, after a comma).
 - Choices that differ in two marks at once, so you must check both positions.
 - A clause whose commas depend on the sentence before it: whether the thing it describes has already been identified.

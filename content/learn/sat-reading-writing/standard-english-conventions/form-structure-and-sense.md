@@ -283,3 +283,5 @@ them? "There" is a place, not a possessive.
 - An inverted sentence, where the subject comes after the verb.
 - A sentence whose only verb sits inside a relative clause, so the main clause lacks a finite verb.
 - A pronoun whose antecedent is in an earlier clause, with a singular and a plural noun both nearby.
+- A passage that names two times, where the tense nearest the blank belongs to the wrong one: decide which time governs the blank.
+- A modifier whose logical subject is a thing or a group rather than the person named, or whose tempting choice hides the person in a possessive ("the chemist's notes") or a "by" phrase.
