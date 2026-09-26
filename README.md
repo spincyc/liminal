@@ -72,8 +72,9 @@ never recorded. Liminal is now built to keep practice honest:
   with its passage or figure and both answers; tag why you missed it
   (content, process, careless, time) and write the rule you will remember.
 - **Progress that tells you what to do next.** A 20-question "Start here"
-  diagnostic per SAT section, a skill map with practice states (80% on a
-  skill's last 20 Medium questions, then Hard), pacing against real-test
+  diagnostic per SAT section, a skill map with practice states (24 of a
+  skill's last 30 Medium questions, then 10 of the last 15 Hard, each
+  question counted once), pacing against real-test
   pace, a history of sets with an accuracy trend, a plan with your test date
   and weekly goal, and the next skill to work on. Record your official
   Bluebook practice-test and SAT scores there too: each sits beside your

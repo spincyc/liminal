@@ -13,12 +13,15 @@
 //     holding at least one Example callout
 //   - every SAT template's (skill, subskill) resolves to such a section
 //   - every fact has a real YYYY-MM-DD "verified" date and an https source
+//   - the SAT Math plan page states the Progress page's gate and mastered
+//     bars as src/lib/analytics.js defines them
 //
 //   node tools/check-learn.js [--root <learn dir>]
 
 const path = require("node:path");
 
 const Learn = require("../src/lib/learn-markup");
+const Analytics = require("../src/lib/analytics");
 const { slug } = require("./lib/families");
 const {
   DEFAULT_ROOT,
@@ -31,6 +34,17 @@ const {
 } = require("./build-learn");
 
 const SKILL_KEYS = ["section", "domain", "skill"];
+const PLAN_FILE = "sat/general/math-plan.md";
+
+// The phrases the plan must contain, built from the live constants, so a
+// change to either the page or the code that leaves them apart fails here.
+function planPhrases() {
+  const { GATE, HARD_BAR } = Analytics;
+  return [
+    `${GATE.correct} of your last ${GATE.window} ${GATE.tier} questions`,
+    `${HARD_BAR.correct} of your last ${HARD_BAR.window} ${HARD_BAR.tier} questions`,
+  ];
+}
 
 function satTemplates() {
   return [
@@ -145,6 +159,15 @@ function checkLearn({ tree, catalog, templates, today }) {
     });
   });
 
+  // The plan states the bars the Progress page applies.
+  const planText = tree.files[PLAN_FILE];
+  if (planText !== undefined) {
+    const flat = planText.replace(/\s*\n\s*(?:>\s*)?/g, " ");
+    planPhrases().forEach((phrase) => {
+      if (!flat.includes(phrase)) add(PLAN_FILE, 0, `must say "${phrase}", as src/lib/analytics.js applies it`);
+    });
+  }
+
   // Page ids are paths, so they are unique; this guards the front matter too.
   const ids = new Map();
   Object.values(pages).forEach((page) => {
@@ -208,4 +231,4 @@ function main(argv) {
 
 if (require.main === module) main(process.argv.slice(2));
 
-module.exports = { checkLearn, expectedPages, satTemplates, isCalendarDate };
+module.exports = { checkLearn, expectedPages, satTemplates, isCalendarDate, planPhrases };

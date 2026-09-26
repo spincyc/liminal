@@ -42,21 +42,41 @@ For each skill, the loop is:
 
 ## The mastery gate {#mastery-gate}
 
-> **Rule.** Move on from a skill when you get at least 80% right on Medium
-> questions over your last 20 attempts in that skill, with no hints: 16 or
-> more of the 20.
+> **Rule.** Move on from a skill when you get at least 24 of your last 30
+> Medium questions in that skill right, with no hints. Each question counts
+> once, at your first answer: a miss that Review brings back as it was does
+> not count again, but a fresh version of it does.
 
-Twenty questions is enough that a pass isn't luck, and Medium is the level
-that decides Module 1. A Liminal set takes at most one question from each
-question template, and a skill has only a few Medium templates, so your 20
-attempts build up over several short targeted sets, ideally on different
-days. That spacing helps, too. Count them in Progress or keep a tally in your
-log. If you fall short, go back to the error log for that skill: the misses
+Thirty questions is enough that a pass is rarely luck, and Medium is the
+level that decides Module 1. You will look at the gate after every set, and
+a short window checked that often is passed by chance: a student who gets
+70% right would meet a 16-of-20 gate within 60 Medium questions four times
+in five, but meets this one about half the time, while a student who gets
+80% right meets it almost always. A Liminal set takes at most one question
+from each question template, and a skill has only a few Medium templates, so
+your 30 attempts build up over several short targeted sets and drills,
+ideally on different days. That spacing helps, too. Progress counts them for
+you. If you fall short, go back to the error log for that skill: the misses
 will usually share one missing idea.
 
 After a skill passes, keep it alive: include a few of its questions in a
 mixed set each week. Start Hard questions in a skill only after its Medium
 gate, beginning with the big Algebra and Advanced Math skills.
+
+Progress shows each skill in one of these states:
+
+| State | What it means |
+| --- | --- |
+| Not started | No answers in the skill yet. |
+| Not enough data | Fewer than 5 answers: too few to say anything. |
+| Building | Below the gate. Keep practising Medium questions. |
+| At the gate | At least 24 of your last 30 Medium questions right. Start Hard questions. |
+| Mastered | The gate, plus at least 10 of your last 15 Hard questions right. |
+
+Mastered is a strict bar on purpose. Hard is where practice most often
+overstates readiness, and five Hard questions can go well by luck: a student
+who gets only 30% of Hard questions right would reach three of five within
+20 tries most of the time.
 
 > **Note.** The gate is about Liminal's questions, whose difficulty labels
 > are Liminal's own. Passing it means you are ready to move on, not that

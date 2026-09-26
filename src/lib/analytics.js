@@ -24,13 +24,23 @@
   // Fewer counted answers than this and a skill's accuracy says little.
   const MIN_ATTEMPTS = 5;
   // The mastery gate of the SAT Math plan page in Learn
-  // (content/learn/sat/general/): at least 80% correct on the skill's last
-  // 20 Medium answers. Fewer than 20 cannot meet it: the
-  // gate is a run of evidence, not a lucky start.
-  const GATE = { tier: "Medium", window: 20, accuracy: 0.8 };
-  // Mastered: the gate, plus at least 60% correct over 5 or more Hard
-  // answers in the skill.
-  const HARD_BAR = { tier: "Hard", minAttempts: 5, accuracy: 0.6 };
+  // (content/learn/sat/general/): at least 24 correct of the skill's last 30
+  // Medium answers. Fewer than 30 cannot meet it: the gate is a run of
+  // evidence, not a lucky start. A student checks it after every answer, and
+  // a window re-checked that often is met by chance far more than once: a
+  // student who is right 70% of the time met the earlier 16-of-20 rule
+  // within 60 Medium answers 82% of the time, and meets this one 50% of the
+  // time; one right 80% of the time meets it 94% of the time.
+  const GATE = { tier: "Medium", window: 30, correct: 24 };
+  // Mastered: the gate, plus at least 10 correct of the skill's last 15 Hard
+  // answers. The earlier bar, 60% over 5 or more Hard answers, called a
+  // student with a 30% Hard hit rate mastered within 20 Hard answers 70% of
+  // the time; this one does so 1% of the time, and a 70% student 87%.
+  const HARD_BAR = { tier: "Hard", window: 15, correct: 10 };
+  // Both windows hold each question's first answer only: answering a
+  // question again (Review brings a missed one back as it was) tests
+  // memory of it, not the skill. A fresh version of the same template is a
+  // new question and counts.
   // Practice states, in the order a skill moves through them.
   const STATES = ["not-started", "not-enough-data", "building", "at-gate", "mastered"];
   const STATE_LABELS = {
@@ -126,33 +136,47 @@
     if (!row.attempted) return "not-started";
     if (row.attempted < MIN_ATTEMPTS) return "not-enough-data";
     if (!row.gate.met) return "building";
-    if (row.hard.attempted >= HARD_BAR.minAttempts && row.hard.accuracy >= HARD_BAR.accuracy) return "mastered";
+    if (row.hardBar.met) return "mastered";
     return "at-gate";
+  }
+
+  // The last `bar.window` first answers at the bar's tier, counted by the
+  // accuracy model: { attempted, correct, accuracy, window, needed, met }.
+  function windowTally(answers, bar) {
+    const windowed = answers.slice(-bar.window);
+    const row = Object.assign(tally(Progress.stats(windowed)), { window: bar.window, needed: bar.correct });
+    row.met = row.attempted >= bar.window && row.correct >= bar.correct;
+    return row;
   }
 
   // One row per skill of `sections` (catalog sections, in order), domain by
   // domain in catalog order, including skills not started. `attempts` should
   // already be re-tiered (LiminalProgress.withCurrentTemplates). A row:
   //   { sectionKey, domain, skill, order, attempted, correct, hintedCorrect,
-  //     unanswered, accuracy, medium, hard, gate, state }
+  //     unanswered, accuracy, medium, hard, gate, hardBar, state }
   // medium and hard: { attempted, correct, accuracy } over every answer at
-  // that tier; gate: the same over the last GATE.window Medium answers, plus
-  // `window` and `met`. Skills answered but no longer in the catalog follow
-  // their section's catalog skills.
+  // that tier; gate and hardBar: the same over the last GATE.window Medium
+  // and HARD_BAR.window Hard first answers, plus `window`, `needed` (correct
+  // answers the bar asks for) and `met`. Skills answered but no longer in
+  // the catalog follow their section's catalog skills.
   function skillMap(attempts, sections) {
     const list = (attempts || []).filter((attempt) => attempt && attempt.skill);
     const all = Progress.stats(list).bySkill;
     const atTier = (tier) => Progress.stats(list.filter((attempt) => attempt.difficulty === tier)).bySkill;
     const medium = atTier(GATE.tier);
     const hard = atTier(HARD_BAR.tier);
-    const recentMedium = new Map();
-    list.filter((attempt) => attempt.difficulty === GATE.tier && counted(attempt))
-      .sort(byTime)
-      .forEach((attempt) => {
-        const key = skillKey(sectionOf(attempt), attempt.skill);
-        if (!recentMedium.has(key)) recentMedium.set(key, []);
-        recentMedium.get(key).push(attempt);
-      });
+    // Each skill's first answers to each question, oldest first, by tier.
+    const firstAnswers = { [GATE.tier]: new Map(), [HARD_BAR.tier]: new Map() };
+    const seen = new Set();
+    list.filter(counted).sort(byTime).forEach((attempt) => {
+      if (seen.has(attempt.questionId)) return;
+      seen.add(attempt.questionId);
+      const byTier = firstAnswers[attempt.difficulty];
+      if (!byTier) return;
+      const key = skillKey(sectionOf(attempt), attempt.skill);
+      if (!byTier.has(key)) byTier.set(key, []);
+      byTier.get(key).push(attempt);
+    });
 
     const rows = [];
     const placed = new Set();
@@ -161,9 +185,8 @@
       if (placed.has(key)) return;
       placed.add(key);
       const overall = all[key];
-      const windowed = (recentMedium.get(key) || []).slice(-GATE.window);
-      const gate = Object.assign(tally(Progress.stats(windowed)), { window: GATE.window });
-      gate.met = gate.attempted >= GATE.window && gate.accuracy >= GATE.accuracy;
+      const gate = windowTally(firstAnswers[GATE.tier].get(key) || [], GATE);
+      const hardBar = windowTally(firstAnswers[HARD_BAR.tier].get(key) || [], HARD_BAR);
       const row = {
         sectionKey,
         domain,
@@ -177,6 +200,7 @@
         medium: tally(medium[key]),
         hard: tally(hard[key]),
         gate,
+        hardBar,
       };
       row.state = skillState(row);
       rows.push(row);
@@ -224,8 +248,8 @@
     } else if (NEED_GROUP[left.state] === 1) {
       difference = left.attempted - right.attempted;
     } else if (left.state === "at-gate") {
-      difference = (left.hard.accuracy === null ? -1 : left.hard.accuracy) -
-        (right.hard.accuracy === null ? -1 : right.hard.accuracy);
+      difference = (left.hardBar.accuracy === null ? -1 : left.hardBar.accuracy) -
+        (right.hardBar.accuracy === null ? -1 : right.hardBar.accuracy);
     }
     return difference || compareOrder(left, right);
   }

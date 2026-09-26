@@ -645,9 +645,9 @@
       if (focus.reason === "weakest") {
         reason = `Your weakest skill with enough answers: ${percent(row.accuracy)} correct over ${count(row.attempted, "answer")}` +
           (row.gate.attempted
-            ? `, ${percent(row.gate.accuracy)} on your last ${row.gate.attempted} Medium. `
+            ? `, ${row.gate.correct} of your last ${row.gate.attempted} Medium. `
             : ". ") +
-          `The gate is ${Math.round(Analytics.GATE.accuracy * 100)}% on your last ${Analytics.GATE.window} Medium questions.`;
+          `The gate is ${Analytics.GATE.correct} of your last ${Analytics.GATE.window} Medium questions.`;
       } else if (!row.attempted) {
         reason = "Your least practised skill: not started yet.";
       } else {
@@ -831,11 +831,11 @@
       fill.style.width = `${Math.round((gate.accuracy || 0) * 100)}%`;
       if (gate.met) fill.className = "is-met";
       const mark = el("b");
-      mark.style.left = `${Math.round(Analytics.GATE.accuracy * 100)}%`;
+      mark.style.left = `${Math.round((Analytics.GATE.correct / Analytics.GATE.window) * 100)}%`;
       bar.append(fill, mark);
-      const text = el("span", "gate-text", percent(gate.accuracy));
+      const text = el("span", "gate-text", gate.attempted ? `${gate.correct} of ${gate.attempted}` : "—");
       const note = el("small", "cell-note", gate.attempted >= gate.window
-        ? `last ${gate.window}`
+        ? `needs ${gate.needed}`
         : `${gate.attempted} of ${gate.window} so far`);
       cell.append(bar, text, note);
       return cell;
@@ -887,9 +887,9 @@
       );
       const { GATE, HARD_BAR, MIN_ATTEMPTS } = Analytics;
       elements.masteryNote.textContent =
-        `States are practice guidance, not a score. The gate: at least ${Math.round(GATE.accuracy * 100)}% ` +
-        `correct on your last ${GATE.window} Medium questions in a skill. Mastered: the gate, plus at least ` +
-        `${Math.round(HARD_BAR.accuracy * 100)}% on ${HARD_BAR.minAttempts} or more Hard questions. ` +
+        `States are practice guidance, not a score. The gate: at least ${GATE.correct} correct of your last ` +
+        `${GATE.window} Medium questions in a skill. Mastered: the gate, plus at least ${HARD_BAR.correct} ` +
+        `correct of your last ${HARD_BAR.window} Hard questions. Each question counts once, at its first answer. ` +
         `Under ${MIN_ATTEMPTS} answers is not enough data. ` +
         (sortKey === "need" ? "Sorted by need: weak skills with evidence first, then skills without enough answers." : "");
       if (!rows.length) {

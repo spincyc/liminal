@@ -73,9 +73,9 @@ test("registry entries re-tier answers without the template bundles", () => {
 
 test("the skill map lists every catalog skill with its practice state", () => {
   const attempts = [
-    // Linear functions: 20 Medium at 80% but no Hard yet -> at the gate.
-    ...many(16, { skill: "Linear functions" }),
-    ...many(4, { skill: "Linear functions", correct: false }),
+    // Linear functions: 24 of 30 Medium but no Hard yet -> at the gate.
+    ...many(24, { skill: "Linear functions" }),
+    ...many(6, { skill: "Linear functions", correct: false }),
     // Linear inequalities: 4 answers -> not enough data.
     ...many(4, { skill: "Linear inequalities" }),
   ];
@@ -83,8 +83,8 @@ test("the skill map lists every catalog skill with its practice state", () => {
   assert.deepEqual(rows.map((row) => row.skill), ["Linear functions", "Linear inequalities", "Circles"]);
   const functions = rowFor(rows, "Linear functions");
   assert.equal(functions.state, "at-gate");
-  assert.deepEqual(functions.gate, { attempted: 20, correct: 16, accuracy: 0.8, window: 20, met: true });
-  assert.deepEqual(functions.medium, { attempted: 20, correct: 16, accuracy: 0.8 });
+  assert.deepEqual(functions.gate, { attempted: 30, correct: 24, accuracy: 0.8, window: 30, needed: 24, met: true });
+  assert.deepEqual(functions.medium, { attempted: 30, correct: 24, accuracy: 0.8 });
   assert.deepEqual(functions.hard, { attempted: 0, correct: 0, accuracy: null });
   assert.equal(rowFor(rows, "Linear inequalities").state, "not-enough-data");
   const circles = rowFor(rows, "Circles");
@@ -93,25 +93,39 @@ test("the skill map lists every catalog skill with its practice state", () => {
   assert.equal(circles.accuracy, null);
 });
 
-test("the gate needs a full window of recent Medium answers at 80%", () => {
-  // Nineteen perfect Medium answers are not yet the gate.
-  let rows = Analytics.skillMap(many(19, {}), SECTIONS);
+test("the gate needs 24 of the last 30 Medium answers", () => {
+  // Twenty-nine perfect Medium answers are not yet the gate.
+  let rows = Analytics.skillMap(many(29, {}), SECTIONS);
   assert.equal(rowFor(rows, "Linear functions").state, "building");
   assert.equal(rowFor(rows, "Linear functions").gate.met, false);
 
-  // Old misses age out of the window: ten wrong, then twenty right.
-  rows = Analytics.skillMap([...many(10, { correct: false }), ...many(20, {})], SECTIONS);
+  // Old misses age out of the window: ten wrong, then thirty right.
+  rows = Analytics.skillMap([...many(10, { correct: false }), ...many(30, {})], SECTIONS);
   const row = rowFor(rows, "Linear functions");
-  assert.deepEqual([row.gate.attempted, row.gate.correct, row.gate.met], [20, 20, true]);
-  assert.equal(row.medium.attempted, 30);
+  assert.deepEqual([row.gate.attempted, row.gate.correct, row.gate.met], [30, 30, true]);
+  assert.equal(row.medium.attempted, 40);
 
-  // 15 of 20 is below the gate; Hard and Easy answers never fill the window.
+  // 23 of 30 is below the gate; Hard and Easy answers never fill the window.
   rows = Analytics.skillMap([
-    ...many(15, {}), ...many(5, { correct: false }),
+    ...many(23, {}), ...many(7, { correct: false }),
     ...many(10, { difficulty: "Hard" }), ...many(10, { difficulty: "Easy" }),
   ], SECTIONS);
-  assert.equal(rowFor(rows, "Linear functions").gate.accuracy, 0.75);
+  assert.deepEqual([rowFor(rows, "Linear functions").gate.correct, rowFor(rows, "Linear functions").gate.attempted], [23, 30]);
   assert.equal(rowFor(rows, "Linear functions").state, "building");
+});
+
+test("a question answered again counts once, at its first answer", () => {
+  const firsts = [...many(8, { correct: false }), ...many(22, {})];
+  // The eight misses come back as they were and are answered right: that
+  // is memory of the question, not the skill, so the gate is not met.
+  const again = firsts.slice(0, 8).map((miss) => attempt({ questionId: miss.questionId, reviewOf: miss.questionId }));
+  let row = rowFor(Analytics.skillMap([...firsts, ...again], SECTIONS), "Linear functions");
+  assert.deepEqual([row.gate.attempted, row.gate.correct, row.gate.met], [30, 22, false]);
+  assert.equal(row.medium.attempted, 38, "every answer still counts toward accuracy");
+  // Fresh versions of the same templates are new questions and count.
+  const fresh = many(8, { reviewOf: "sat-math:t1:s1" });
+  row = rowFor(Analytics.skillMap([...firsts, ...fresh], SECTIONS), "Linear functions");
+  assert.deepEqual([row.gate.attempted, row.gate.correct, row.gate.met], [30, 30, true]);
 });
 
 test("the accuracy model decides what fills the gate", () => {
@@ -131,14 +145,17 @@ test("the accuracy model decides what fills the gate", () => {
   assert.equal(row.state, "building");
 });
 
-test("mastered takes the gate and 60% on at least five Hard answers", () => {
-  const gate = [...many(18, {}), ...many(2, { correct: false })];
+test("mastered takes the gate and 10 of the last 15 Hard answers", () => {
+  const gate = [...many(26, {}), ...many(4, { correct: false })];
   const hard = (right, wrong) => [...many(right, { difficulty: "Hard" }), ...many(wrong, { difficulty: "Hard", correct: false })];
   const state = (list) => rowFor(Analytics.skillMap(list, SECTIONS), "Linear functions").state;
-  assert.equal(state([...gate, ...hard(3, 2)]), "mastered");
-  assert.equal(state([...gate, ...hard(4, 0)]), "at-gate");
-  assert.equal(state([...gate, ...hard(2, 3)]), "at-gate");
-  assert.equal(state([...many(10, {}), ...hard(10, 0)]), "building");
+  assert.equal(state([...gate, ...hard(10, 5)]), "mastered");
+  assert.equal(state([...gate, ...hard(3, 2)]), "at-gate", "three of five was the old bar");
+  assert.equal(state([...gate, ...hard(14, 0)]), "at-gate", "fewer than 15 Hard answers");
+  assert.equal(state([...gate, ...hard(9, 6)]), "at-gate");
+  assert.equal(state([...many(10, {}), ...hard(15, 0)]), "building");
+  const row = rowFor(Analytics.skillMap([...gate, ...hard(0, 5), ...hard(12, 3)], SECTIONS), "Linear functions");
+  assert.deepEqual([row.hardBar.correct, row.hardBar.attempted, row.hardBar.met], [12, 15, true], "old misses age out");
 });
 
 test("answers to skills no longer in the catalog still show", () => {

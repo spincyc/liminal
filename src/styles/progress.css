@@ -217,7 +217,7 @@
   margin-left: 4px;
 }
 
-/* The gate: accuracy on the last 20 Medium answers against the 80% mark. */
+/* The gate: the last 30 Medium first answers against the 24-correct mark. */
 .gate-cell {
   display: grid;
   grid-template-columns: minmax(64px, 1fr) auto;

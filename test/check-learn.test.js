@@ -167,3 +167,19 @@ test("the bundle lists sections in catalog order with facts filled in and no sou
   assert.equal(skill.skillSlug, "linear-inequalities");
   assert.equal(skill.file, undefined);
 });
+
+test("the Math plan must state the gate and mastered bars the Progress page applies", () => {
+  const plan = "sat/general/math-plan.md";
+  const tree = goodTree();
+  tree.files[plan] = [
+    "---", "id: sat/general/math-plan", "title: SAT Math plan", "---", "# SAT Math plan", "",
+    "## The gate {#gate}", "",
+    "> **Rule.** Move on after 16 of your last 20 Medium questions.", "",
+  ].join("\n");
+  const result = run(tree);
+  expectError(result, /math-plan\.md: must say "24 of your last 30 Medium questions"/);
+  expectError(result, /math-plan\.md: must say "10 of your last 15 Hard questions"/);
+  // Line breaks and callout markers inside a phrase do not matter.
+  edit(tree, plan, "16 of your last 20 Medium questions.", "24 of your last 30\n> Medium questions, then 10 of\n> your last 15 Hard questions.");
+  assert.deepEqual(lines(run(tree)).filter((line) => line.includes("math-plan")), []);
+});
