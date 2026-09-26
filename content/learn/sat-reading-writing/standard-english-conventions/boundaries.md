@@ -89,6 +89,37 @@ choices differ only in using one or the other, both must be wrong.
 > tested", "where the fossils were found" and "the samples collected in
 > June" can't stand alone. Test by reading each side as its own sentence.
 
+One small word decides a common version of this trap. After a count or
+quantity word, "of which" and "of whom" (some of which, most of whom,
+several of whom) start a relative clause: it has a verb but can't stand
+alone, so it joins the sentence with a comma, never a semicolon. The same
+words with "them" (several of them) start an independent clause, so joining
+it with a comma alone makes a comma splice; that version needs a semicolon
+or a period. Use "whom" for people and "which" for things.
+
+> **Example.** Read the text and answer the question.
+>
+> The aquarium hired forty summer guides ______ had never worked with sea
+> animals before.
+>
+> Which choice completes the text so that it conforms to the conventions of
+> Standard English?
+>
+> A) guides; most of whom
+>
+> B) guides, most of them
+>
+> C) guides, most of whom
+>
+> D) guides most of them
+>
+> "Most of whom had never worked with sea animals before" can't stand alone:
+> "of whom" makes it a relative clause describing the guides, so it attaches
+> with a comma. A puts a semicolon before it, leaving a fragment after the
+> semicolon. B and D use "them", which makes the second part an independent
+> clause: B joins two independent clauses with a comma alone (a comma
+> splice), and D joins them with nothing (a run-on). C is correct.
+
 ## Within-sentence punctuation {#within-sentence-punctuation}
 
 The rules that decide most of these questions:
@@ -100,9 +131,8 @@ The rules that decide most of these questions:
 
 > **Example.** Read the text and answer the question.
 >
-> The marine biologists who mapped the reef's coral colonies last summer
-> ______ that nearly a third of the colonies had lost their color during the
-> heat wave.
+> The marine biologists who mapped the reef's coral ______ that nearly a
+> third of the colonies had lost their color during the heat wave.
 >
 > Which choice completes the text so that it conforms to the conventions of
 > Standard English?
@@ -173,9 +203,112 @@ and never closes it is wrong.
 > pause when speaking. A long subject makes a natural pause before the verb,
 > and a comma there is still wrong.
 
+### Essential or extra: the context decides
+
+Whether a clause or phrase takes commas depends on whether the reader
+already knows which thing is meant. If the thing is already picked out, by
+a name or because there is only one of it, the clause only adds information:
+set it off with a pair of commas. If there are several and the clause says
+which one, the clause is essential: no commas. Read the sentence before the
+blank, because that is often where you learn how many there are. "Lake
+Orro, which freezes every winter, ..." takes commas, since there is only one
+Lake Orro; "the lakes that freeze every winter" takes none when the text is
+about many lakes.
+
+> **Example.** Read the text and answer the question.
+>
+> Researchers fitted satellite tags to twelve sea turtles nesting on one
+> beach. The ______ more than 2,000 kilometers north, while the others
+> stayed within 300 kilometers of the beach.
+>
+> Which choice completes the text so that it conforms to the conventions of
+> Standard English?
+>
+> A) turtles whose nests were closest to the river mouth traveled
+>
+> B) turtles, whose nests were closest to the river mouth, traveled
+>
+> C) turtles, whose nests were closest to the river mouth traveled
+>
+> D) turtles whose nests were closest to the river mouth, traveled
+>
+> There are twelve turtles, and "while the others" shows that only some of
+> them traveled north, so the clause is needed to say which ones: no commas.
+> B sets the clause off as extra information, which would make every tagged
+> turtle travel north and leave no "others". C opens with a comma and never
+> closes it. D puts a comma between the subject and "traveled". A is
+> correct.
+
+### Names, titles and quotations
+
+The same question, already identified or not, decides the commas around
+names and quotations.
+
+- A general description right before a name ("architect Dora Vance", "the painter Ivo Marek") takes no comma: many people fit the description, so the name is needed to say who, and the two work as one unit.
+- The same kind of description after a name adds information about someone already named, so it takes a pair of commas: "Dora Vance, a local architect, designed it."
+- A quotation worked into the sentence's grammar, such as one that completes "called it" or "described it as", takes no comma before it. After it, use only the punctuation the sentence needs anyway, such as the comma that ends an introductory clause or comes before "and" joining two independent clauses.
+- A quotation that renames something already identified takes a pair of commas. In *The town's motto, "Slow and steady," is carved above the door* there is only one motto, so the quotation is extra.
+
+> **Example.** Read the text and answer the question.
+>
+> The city's first public library opened in 1894 in a converted grain
+> warehouse. Local ______ its renovation in 1990, keeping the original
+> timber beams.
+>
+> Which choice completes the text so that it conforms to the conventions of
+> Standard English?
+>
+> A) architect, Dora Vance, designed
+>
+> B) architect Dora Vance, designed
+>
+> C) architect, Dora Vance designed
+>
+> D) architect Dora Vance designed
+>
+> "Local architect" has no article, so it can't be the subject by itself,
+> and it fits many people. It works as a title: "local architect Dora
+> Vance" is one unit, the subject of "designed". A and C put a comma between
+> the title and the name. A and B put a comma between the subject and its
+> verb. D is correct.
+
+> **Fails when.** The words before the name already identify one person.
+> In "The library's architect, Dora Vance, designed its renovation" there
+> is only one architect of the library, so the name is the extra
+> information and takes a pair of commas. Before ruling commas out, ask
+> whether the words in front of the name could fit only one person.
+
+> **Example.** Read the text and answer the question.
+>
+> In 1911, the botanist Ines Farrow described the island's cliff-top
+> meadow ______ she spent the next eleven summers cataloging its plants.
+>
+> Which choice completes the text so that it conforms to the conventions of
+> Standard English?
+>
+> A) as, "a garden no one planted" and
+>
+> B) as "a garden no one planted," and
+>
+> C) as "a garden no one planted" and
+>
+> D) as, "a garden no one planted," and
+>
+> The quotation completes "described the island's cliff-top meadow as",
+> so it is part of the sentence's grammar and takes no comma before it. It
+> also ends the first independent clause, and "and" begins a second one
+> ("she spent ..."), so a comma comes after it, inside the closing quotation
+> mark. A and D put a comma between "as" and the words it introduces. C
+> leaves out the comma before "and". B is correct.
+
+> **Note.** A full quoted sentence introduced by a verb of saying does take
+> a comma: She wrote, "The meadow has no gardener." The no-comma rule is
+> for a quoted word or phrase that works as part of your own sentence.
+
 ## What Hard looks like {#hard}
 
 - A long subject with a relative clause and a prepositional phrase, where the mark before the verb is the test.
 - An interruption whose closing mark sits far from its opening mark.
 - Two clauses joined by a conjunctive adverb in the middle of the second clause ("the results, however, were ...") where only one side is a sentence boundary.
 - Choices that differ in two marks at once, so you must check both positions.
+- A clause whose commas depend on the sentence before it: whether the thing it describes has already been identified.
