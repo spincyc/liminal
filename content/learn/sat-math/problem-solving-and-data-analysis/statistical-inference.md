@@ -91,6 +91,42 @@ values for the population value. Two facts are tested:
 When two groups' intervals overlap, the data don't establish that the two
 population values differ.
 
+### Margin of error and sample size {#margin-and-sample-size}
+
+A question may tell you to assume that the margin of error is inversely
+proportional to the square root of the sample size. Then margin × √n stays
+the same, so the margin changes by the square root of the change in n:
+
+| Sample size multiplied by | Margin of error multiplied by |
+| --- | --- |
+| 4 | 1/2 |
+| 9 | 1/3 |
+| 1/4 | 2 |
+
+Running it backward, a margin k times smaller needs a sample k² times as
+large.
+
+> **Example.** A random sample of 250 of a state's licensed anglers gives an
+> estimate with a margin of error of 5 percentage points. Assume the margin
+> of error is inversely proportional to the square root of the sample size.
+> What margin would a random sample of 1,000 anglers give, and how large a
+> sample would give a margin of 1 point?
+>
+> 1,000 is 4 times 250, and √4 = 2, so the margin is divided by 2: 2.5
+> points.
+>
+> A margin of 1 point is 5 times smaller, so the sample must be 5² = 25
+> times as large: 25 × 250 = 6,250 anglers.
+
+> **Trap.** Dividing the margin by 4 when the sample is 4 times as large.
+> The margin shrinks with the square root: four times the sample halves the
+> margin.
+
+> **Fails when.** The two samples come from populations with different
+> spreads. The margin also depends on how spread out the values are, so the
+> square-root rule compares samples only when the spread is about the same,
+> as the question will say.
+
 ## Study design {#study-design}
 
 Two separate questions decide what a study can conclude:
@@ -128,7 +164,39 @@ A study can have both, one or neither. Check each separately.
 > margin of error, but without random assignment it never licenses a causal
 > claim.
 
+### Four designs, four conclusions {#four-designs}
+
+Put the two questions together and every study lands in one cell:
+
+| Participants | Treatment randomly assigned | Treatment not randomly assigned |
+| --- | --- | --- |
+| randomly selected from a population | cause, for the whole population | association only, for the whole population |
+| not randomly selected (volunteers, one convenient group) | cause, for people like the participants | association only, for people like the participants |
+
+A choice has two halves, what the study shows and whom it describes. Keep
+the one whose halves both match the cell.
+
+> **Example.** A researcher chose 80 of a county's farms at random and asked
+> each farmer whether they rotate their crops. The farms that rotate crops
+> had higher average yields. Which conclusion is appropriate?
+>
+> Selection: random, from the county's farms, so the result describes the
+> county's farms.
+>
+> Assignment: none. The farmers chose whether to rotate, so the study shows
+> only an association.
+>
+> Conclusion: among the county's farms, rotating crops goes with higher
+> yields, but the study doesn't show that rotating causes them.
+
+> **Trap.** Letting one design fact answer both questions. Random selection
+> says nothing about cause, and random assignment says nothing about whom
+> the result describes.
+
 ## What Hard looks like {#hard}
+
+- A study to sort into one of the four designs, with choices that pair "shows cause" or "shows only an association" with "applies to the population" or "applies only to people like the participants". Settle each half separately (see [four designs](#four-designs)).
+- A second sample of a different size. The margin of error scales with 1/√n, so four times the sample halves the margin, and halving the margin takes four times the sample (see [margin of error and sample size](#margin-and-sample-size)).
 
 - Two estimates, each with a margin of error. Turn each into a range of plausible values. If the ranges overlap, equal population values are plausible, however far apart the estimates look; if they don't, a difference is likely but never certain.
 - What a margin of error for a mean describes: plausible values of the population mean, not of individual values, and only for the population that was sampled. A total is the population size times the mean, so the whole interval scales with it (see [margin of error](#margin-of-error)).

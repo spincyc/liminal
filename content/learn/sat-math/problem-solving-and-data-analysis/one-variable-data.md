@@ -60,6 +60,34 @@ median.
 >
 > Removing the outlier lowered the mean by 5 and left the median unchanged.
 
+### Correcting one extreme value {#correcting-an-extreme-value}
+
+When one value is corrected, the sum changes by new − old, so the mean
+changes by (new − old) ÷ n: the change is shared among all n values. The
+median depends only on the middle of the ordered list, so it stays put as
+long as the corrected value stays on the same side of the middle.
+
+> **Example.** The times of the 15 runners in a race have a mean of 44
+> minutes and a median of 40 minutes. The slowest time was recorded as 95
+> minutes but was really 65 minutes. What are the mean and the median after
+> the correction?
+>
+> The sum falls by 95 − 65 = 30 minutes, so the mean falls by 30 ÷ 15 = 2:
+> it becomes 42 minutes. (Check: 15 × 44 = 660, and 630 ÷ 15 = 42.)
+>
+> The median is the 8th time in order. The corrected time, 65, is still
+> above 40, so the 8th time is unchanged: the median stays 40 minutes.
+
+> **Trap.** Moving the mean by the whole correction, 30 minutes, or moving
+> the median with the mean. One value's change is spread over every value in
+> the mean, and the median depends only on the middle.
+
+> **Fails when.** The corrected value crosses the middle, as when a low
+> value is corrected to one above the median. Then the ordered list shifts
+> one place, and the median moves to the next value (or to the corrected
+> value, if it lands in between). With an even count, the value must stay
+> beyond both middle values for the median to hold.
+
 ### Combining groups {#combining-groups}
 
 The means of two groups of different sizes can't be averaged. Turn each mean
@@ -187,6 +215,7 @@ the total.
 - Groups of different sizes with different means: a combined mean, a missing group's mean, or a missing group's size. Work with totals (see [combining groups](#combining-groups)).
 - A change to the data, such as adding a value equal to the mean, and a question about which statement is true. Each measure depends on something different: the mean and standard deviation on every value, the median on the middle position, the range on the two extremes.
 - A list with one unknown value and a question about which medians are possible (see [which values could be the median](#possible-medians)).
+- One extreme value corrected, given only the mean, the median and the count. The mean moves by the correction divided by the count; the median holds unless the value crosses the middle (see [correcting one extreme value](#correcting-an-extreme-value)).
 
 > **Example.** The data are 2, 4, 6, 8 and 20. A sixth value, equal to the
 > mean, is added. What happens to the mean, the median, the range and the

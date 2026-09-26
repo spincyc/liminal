@@ -111,6 +111,42 @@ quick and usually close enough to pick among the choices.
 > the trend, or the choices are close together. Then use points on the drawn
 > line itself, or run a regression in Desmos.
 
+### Residuals {#residuals}
+
+A residual is actual − predicted: how far a data point sits above the line
+of best fit (positive) or below it (negative). Turned around, actual =
+predicted + residual.
+
+- "Farthest below the prediction" means the most negative residual.
+- "Farthest from the line" means the residual largest in size, ignoring its sign: −3 is farther than 2.5. A residual measures straight up or down to the line.
+- The largest residual is not always the largest actual value. A residual compares a point only with its own prediction.
+
+For some puppies, a line of best fit is y = 0.8x + 3, where y is the
+predicted weight in pounds and x is the age in weeks. The table gives three
+puppies' ages and residuals.
+
+| Puppy | Age (weeks) | Residual (pounds) |
+| --- | --- | --- |
+| Ace | 5 | 2.5 |
+| Bo | 10 | −1 |
+| Cy | 12 | −3 |
+
+> **Example.** Using the table above, which puppy weighs the most, and which
+> is farthest from the line?
+>
+> Predictions: Ace 0.8(5) + 3 = 7, Bo 0.8(10) + 3 = 11, Cy 0.8(12) + 3 =
+> 12.6.
+>
+> Actual weights, predicted + residual: Ace 7 + 2.5 = 9.5, Bo 11 − 1 = 10,
+> Cy 12.6 − 3 = 9.6. Bo weighs the most, though Ace has the largest
+> residual.
+>
+> Farthest from the line: Cy, 3 pounds below it, more than Ace's 2.5 above.
+
+> **Trap.** Subtracting a residual from the prediction. A positive residual
+> means the actual value is more than predicted, so add it: Ace is 9.5
+> pounds, not 4.5.
+
 ### Removing an outlier {#removing-an-outlier}
 
 A point far from the trend pulls the line of best fit toward it, most
@@ -154,6 +190,7 @@ not k times the one-unit percent.
 
 ## What Hard looks like {#hard}
 
+- A line of best fit and a table of residuals, and a question about which point has the greatest actual value or lies farthest below the line. Add each residual to its own prediction; the largest residual doesn't mark the largest value (see [residuals](#residuals)).
 - A predicted difference asked in units the model doesn't use: square feet when x counts hundreds of square feet, dollars a month when y is thousands of dollars a year (see [a slope in other units](#slope-in-other-units)).
 - One point removed from a scatterplot and a question about how the new line of best fit compares: its slope, and its value at an end or at x = 0 (see [removing an outlier](#removing-an-outlier)).
 - An exponential model and the percent change over several units of x, which compounds (see [exponential fits over several units](#exponential-over-several-units)).

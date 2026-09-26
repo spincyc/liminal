@@ -102,11 +102,40 @@ arithmetic is clean and the final number reads directly as a percent.
 > quantity doesn't scale with the percent, such as a fixed $5 fee added to a
 > percent-based price. Then use the actual numbers or a variable.
 
+### A share of a changing whole {#share-of-a-changing-whole}
+
+A part is its share times the whole: part = share × whole. When the share
+and the whole both change, multiply their multipliers to get the part's.
+Going the other way, share = part ÷ whole, so divide the part's multiplier
+by the whole's. Or start the whole at 100 and use actual numbers.
+
+> **Example.** A farm's planted land grew by 25% from one year to the next,
+> and the share of it planted with corn fell from 40% to 30%. By what
+> percent did the land planted with corn change?
+>
+> Start with 100 acres: 40% of 100 = 40 acres of corn.
+>
+> Next year: 125 acres, and 30% of 125 = 37.5 acres of corn.
+>
+> Change: (37.5 − 40)/40 = −0.0625, a 6.25% decrease.
+>
+> With multipliers: the share was multiplied by 30/40 = 0.75 and the whole
+> by 1.25, so the corn land was multiplied by 0.75 × 1.25 = 0.9375.
+
+The other direction: if the farm's land grew 50% while its corn land grew
+20%, a 40% share is multiplied by 1.2 ÷ 1.5 = 0.8 and becomes 32%. Check:
+40 acres of 100 become 48 of 150, and 48/150 = 32%.
+
+> **Trap.** Reading the share's fall from 40% to 30% as the answer. That is
+> 10 percentage points, or a 25% decrease in the share, and neither is the
+> change in the corn land, because the whole grew.
+
 ## What Hard looks like {#hard}
 
 - A chain of changes or comparisons ("A is 20% more than B, which is 25% less than C"), or the change that brings an amount back. Each percent is of the amount just before it, so the multipliers multiply, and the restoring change is found by dividing.
 - A comparison read the other way: "A is 25% more than B" takes the percent of B, so the same gap is a different percent of A. Give B a convenient value, such as 100, and compare directly.
 - One percent of one amount equal to another percent of another: p% of x = q% of y means px = qy, so x : y = q : p, and the amount taken at the smaller percent is the larger amount.
+- A share and a whole that both change. The part is share × whole, so its multiplier is the product of theirs; a new share is the part's multiplier divided by the whole's. A share that moves some percentage points is not a percent change in the part (see [a share of a changing whole](#share-of-a-changing-whole)).
 
 > **Example.** 30% of A is equal to 20% of B. What percent of A + B is A?
 >
