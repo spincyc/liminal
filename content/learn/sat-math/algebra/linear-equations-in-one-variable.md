@@ -10,9 +10,10 @@ skill: Linear equations in one variable
 A linear equation in one variable has one unknown, and that unknown is never
 squared, under a root or in a denominator: 3(x − 4) = 2x + 5 is one. This is
 the base skill for all of Algebra, which is {{fact:sat-math-algebra}} of the
-Math section. Easy questions ask you to solve. Hard ones hide the equation in
-a context, give you a constant to choose so the equation has no solution or
-infinitely many, or ask for an expression such as 2x + 1 instead of x.
+Math section. Easy questions ask you to solve. Hard ones give two unknown
+constants and a condition on the number of solutions, put the target letter
+in two terms of a formula, or make you build the equation for two quantities
+that change at once.
 
 ## Solve {#solve}
 
@@ -53,6 +54,13 @@ can reach the asked expression directly.
 > **Fails when.** The asked expression isn't a simple multiple of a piece
 > of the equation. If 3x + 4 = 19 and the question asks for 2x + 1, there is
 > no one-step route; solve for x (x = 5) and then compute 2(5) + 1 = 11.
+
+> **Example.** If x/3 + x/4 = 14, what is the value of x/12?
+>
+> Combine the fractions: x/3 + x/4 = 4x/12 + 3x/12 = 7x/12.
+>
+> So 7x/12 = 14, which means x/12 = 2. (Solving first also works: x = 24,
+> and 24/12 = 2. The trap choice is 24.)
 
 With numeric choices, you can backsolve: substitute each choice into the
 equation and keep the one that works.
@@ -147,14 +155,33 @@ Simplify both sides to the form ax + b = cx + d. Then:
 Hard questions in this skill don't use harder arithmetic. They make you
 decide what the question is first:
 
-- A constant to choose so that the equation has no solution or infinitely many solutions.
-- An expression to find (x/12, 2x − 1) where a smart first step beats solving for x.
-- A context where you must build the equation from a paragraph before solving it.
-- Fractions or decimals chosen so that a careless step lands on a listed choice.
+- Two unknown constants and a condition: no solution, or infinitely many. Multiply out every product, then match the x-coefficients, and match the constants (infinitely many) or make them differ (none). A solution that works for every value of a constant is the x that makes that constant's term vanish.
+- A formula whose target letter ends up in two terms, often after you clear a denominator, as in m = (s + 90x)/(10 + x). Gather the target's terms, factor it out, and divide by the whole factor (see [rearranging formulas](#rearranging-formulas)).
+- Two quantities that change at once, one of them starting late. Write each in the same time variable, count the late one's change from t minus the delay, and write the comparison the right way round.
 
-> **Example.** If x/3 + x/4 = 14, what is the value of x/12?
+> **Example.** In a(x + 2) − x = 5x + b, a and b are constants, and the
+> equation has infinitely many solutions. What is b?
 >
-> Combine the fractions: x/3 + x/4 = 4x/12 + 3x/12 = 7x/12.
+> Multiply out the left side: ax + 2a − x = (a − 1)x + 2a.
 >
-> So 7x/12 = 14, which means x/12 = 2. (Solving first also works: x = 24,
-> and 24/12 = 2. The trap choice is 24.)
+> Infinitely many means both sides are the same expression: a − 1 = 5 and
+> 2a = b. So a = 6 and b = 12.
+>
+> Check: 6(x + 2) − x = 5x + 12 for every x.
+
+> **Example.** At 8:00 a.m. a warehouse holds 900 boxes and ships 15 boxes a
+> minute. A second warehouse holds 100 boxes, and starting at 8:10 a.m. it
+> receives 20 boxes a minute. How many minutes after 8:00 does the first
+> warehouse hold twice as many boxes as the second?
+>
+> First warehouse after t minutes: 900 − 15t. Second, for t ≥ 10:
+> 100 + 20(t − 10).
+>
+> "The first is twice the second": 900 − 15t = 2(100 + 20(t − 10)) =
+> 40t − 200. So 1,100 = 55t and t = 20.
+>
+> Check: at t = 20 the first holds 600 and the second 100 + 20(10) = 300.
+
+> **Trap.** Writing 20t for the second warehouse, which starts its clock 10
+> minutes early, or doubling the wrong side. Each slip gives a different,
+> offered answer.

@@ -10,9 +10,9 @@ skill: Systems of two linear equations
 A system is two equations that must both be true. Its solution is the point
 where the two lines cross. This skill is part of Algebra,
 {{fact:sat-math-algebra}} of the Math section. Easy questions ask you to
-solve a system. Hard ones ask how many solutions a system has, make you pick
-a constant so that it has none, or hide the system inside a word problem
-with two conditions.
+solve a system. Hard ones make the constants the unknowns, give the lines
+only as a graph whose crossing is between grid points, or hide the system
+inside a mixture.
 
 ## Solve systems {#solve-systems}
 
@@ -52,11 +52,14 @@ y. Adding or subtracting the equations can give it directly.
 > Divide by 2: x + y = 4. (Solving fully gives x = 1 and y = 3, which
 > agrees.)
 
-> **Fails when.** Adding or subtracting doesn't give a multiple of the
+> **Fails when.** Plain adding or subtracting doesn't give a multiple of the
 > asked expression. For 3x + 2y = 14 and x + 4y = 18, neither the sum
 > (4x + 6y = 32) nor the difference (2x − 2y = −4) is a multiple of x + y.
-> Solve normally instead (x = 2, y = 4, so x + y = 6). Look for the shortcut
-> for five seconds, then move on.
+> Try a multiple of one equation: 3 times the first plus the second is
+> 10x + 10y = 60, so x + y = 6. To find the 3, ask what p makes the two
+> coefficients of p(3x + 2y) + (x + 4y) equal: 3p + 1 = 2p + 4, so p = 3.
+> If no small multiple shows up in a few seconds, solve for x and y instead
+> (x = 2, y = 4).
 
 ### How many solutions?
 
@@ -93,6 +96,38 @@ table, so compare coefficient ratios.
 > It also fails when the question asks for exactly one solution: then every
 > k works except the one that makes the slopes equal.
 
+### Two unknown constants {#two-unknown-constants}
+
+When a system has two letters besides x and y, those letters are the
+unknowns. Put both equations in the same form first (x-term, y-term,
+constant), then use what the question gives:
+
+- A known solution: substitute it. The system becomes two equations in the constants.
+- Infinitely many solutions: one equation is a multiple of the other, and a pair of matching numbers you already know fixes the multiple.
+- No solution: the x- and y-coefficients keep that multiple, and the constants break it.
+
+> **Example.** The system ax + by = 7 and bx − ay = 4 has the solution
+> (2, 1). What are a and b?
+>
+> Substitute x = 2 and y = 1: 2a + b = 7 and 2b − a = 4.
+>
+> From the first, b = 7 − 2a. Then 2(7 − 2a) − a = 4, so 14 − 5a = 4, a = 2
+> and b = 3.
+>
+> Check: 2(2) + 3(1) = 7 and 3(2) − 2(1) = 4.
+
+> **Example.** The system ax + 4y = 10 and 3x + by = 5 has infinitely many
+> solutions. What are a and b?
+>
+> The constants 10 and 5 are both known, so the multiple is 10 ÷ 5 = 2: the
+> first equation is 2 times the second.
+>
+> a = 2 · 3 = 6, and 4 = 2 · b, so b = 2.
+
+> **Trap.** Comparing coefficients before the equations are in the same
+> form. In 12y = c − ax, the x-term is really +ax on the left: rewrite it as
+> ax + 12y = c first.
+
 ## Interpret intersection {#interpret-intersection}
 
 In a context, the intersection is where the two quantities are equal: two
@@ -117,9 +152,9 @@ y-coordinate says what the shared value is.
 
 ## What Hard looks like {#hard}
 
-- A constant chosen so the system has no solution, infinitely many, or exactly one.
-- A word problem with two conditions (a total count and a total cost, or a mixture of two concentrations) that you must turn into two equations.
-- A graph of two lines with few labels, where you must write both equations before reading the intersection.
+- Two unknown constants: a known solution to substitute, or a condition (no solution, infinitely many) that fixes a multiple between the equations (see [two unknown constants](#two-unknown-constants)).
+- Two graphed lines that cross between grid points. The graph gives only an estimate: read each line's equation from two grid points it passes through, then solve the system exactly.
+- A mixture or blend: one equation counts the amounts and the other counts what they contain (salt, copper, value). When something is added, the total changes too.
 
 > **Example.** A lab mixes a 10% salt solution with a 40% salt solution to
 > make 30 liters of a 20% solution. How many liters of the 10% solution does

@@ -114,15 +114,96 @@ point (2, 11) on the graph. Two kinds of question:
 > **Trap.** Reading f(2) = 11 as the point (11, 2). The input always comes
 > first.
 
+### A rule that holds for every x {#identity}
+
+Some questions give a relation such as f(x + 3) = f(x) + 12 or
+f(2x) = 2f(x) + 5 and say it is true for all x. Write f(x) = mx + b, work
+out both sides, and match them term by term: the x-terms must agree and the
+constants must agree.
+
+- Shifting the input, f(x + h), adds mh to the output, so the relation fixes the slope: f(x + 3) = f(x) + 12 means 3m = 12.
+- Scaling the input, f(kx), leaves the constant b alone, so the relation fixes the intercept instead.
+
+> **Example.** For a linear function f, f(2x) = 2f(x) + 5 for all x, and
+> f(3) = 1. What is f(−1)?
+>
+> Left side: f(2x) = 2mx + b. Right side: 2(mx + b) + 5 = 2mx + 2b + 5.
+>
+> The x-terms already agree, so the constants must: b = 2b + 5, which gives
+> b = −5.
+>
+> From f(3) = 1: 3m − 5 = 1, so m = 2 and f(x) = 2x − 5.
+>
+> f(−1) = −2 − 5 = −7. Check the relation at x = 1: f(2) = −1, and
+> 2f(1) + 5 = 2(−3) + 5 = −1.
+
+> **Trap.** Reading the 5 in the relation as the y-intercept. The relation
+> says b = 2b + 5, so b is −5, and it says nothing about the slope, which
+> comes from the one given value.
+
+> **Fails when.** The relation holds for one value of x only, such as
+> "f(2) = 2f(1) + 5". That is a single equation, not an identity, and you
+> can't match terms; use it together with the other facts as one equation.
+
+### Functions built from another function {#built-from-f}
+
+When g is defined from f, as in g(x) = f(x − 4) + 1 or g(x) = a · f(x) − 3,
+a fact about g is a fact about f at some input. Work in this order:
+
+1. Get f's rule, or read the value you need from its table or graph.
+2. For a value of g, find the input f actually receives, then apply the outside change.
+3. For a constant in g, write the given point of g as an equation about f, undo the outside change first, then solve.
+
+| Change | What happens to the line |
+| --- | --- |
+| f(x) + c | moves up c; slope unchanged |
+| a · f(x) | every output times a, so the slope and the y-intercept are both times a |
+| f(x − h) | moves right h (inside changes go the opposite way from the sign) |
+| f(kx) | slope times k, sign included |
+
+> **Example.** The graph of the linear function f passes through (1, 5) and
+> (3, 1). The function g is defined by g(x) = f(x − k), where k is a
+> constant, and the graph of g passes through (6, 3). What is k?
+>
+> From the graph: f has slope (1 − 5)/(3 − 1) = −2, so f(x) = −2x + 7.
+>
+> g(6) = 3 means f(6 − k) = 3. Solve −2(6 − k) + 7 = 3: −12 + 2k + 7 = 3,
+> so 2k = 8 and k = 4.
+>
+> Check: f(2) = 3, and moving the graph 4 right carries (2, 3) to (6, 3).
+
+> **Example.** For the linear function f, f(1) = 2 and f(4) = 11. The
+> function g is defined by g(x) = f(−2x) + 1. What is the slope of g?
+>
+> f has slope (11 − 2)/(4 − 1) = 3, so f(x) = 3x − 1.
+>
+> g(x) = 3(−2x) − 1 + 1 = −6x, so the slope is −6. The slope of f times the
+> factor −2.
+
+> **Trap.** Using f's own slope, or dropping the sign of the factor inside
+> f. A factor inside f multiplies the slope, sign and all.
+
 ## What Hard looks like {#hard}
 
-- The function is described in words or by one fact about how it changes, and you must write the rule before anything else.
-- Two representations must be reconciled: a table for one function and a graph or equation for another.
-- The question asks about a shifted input, such as f(x + 3) − f(x), which for a linear function is always 3m.
+Hard questions in this skill give you only part of the function and make you
+build the rule first:
 
-> **Example.** For a linear function f, f(x + 3) = f(x) + 12 for every x,
-> and f(0) = −5. What is f(7)?
+- A relation that is true for all x, such as f(4x) = 4f(x) + 6 or f(x + 2) = f(x) − 10, plus one value. Match terms to get one coefficient, and let the value give the other (see [a rule that holds for every x](#identity)).
+- A function g built from a graphed f, as in g(x) = a · f(x) + 2 or g(x) = f(x + k) − 3, with a point on g. Undo the outside change, read f off the graph, then solve for the constant (see [functions built from another function](#built-from-f)).
+- A table whose inputs are unevenly spaced and whose outputs include a letter, such as f(2) = a, f(4) = 2a, f(9) = 18. Each change in f(x) is the slope times its own gap in x, so write that for both pairs of rows and solve for the letter.
+
+> **Example.** For the linear function f, f(−2) = a, f(1) = 3a and
+> f(3) = 26, where a is a constant. What is f(0)?
 >
-> Raising the input by 3 raises the output by 12, so the slope is 12/3 = 4.
+> From x = −2 to x = 1 the gap in x is 3 and the change is 3a − a = 2a, so
+> the slope is 2a/3.
 >
-> f(0) = −5 gives b = −5, so f(x) = 4x − 5 and f(7) = 28 − 5 = 23.
+> From x = 1 to x = 3 the gap is 2, so the change 26 − 3a is 2 times the
+> slope: 26 − 3a = 4a/3. Multiply by 3: 78 − 9a = 4a, so a = 6.
+>
+> The slope is 2(6)/3 = 4 and f(1) = 18, so f(0) = 18 − 4 = 14. Check:
+> f(x) = 4x + 14 gives f(−2) = 6 and f(3) = 26.
+
+> **Trap.** Treating the rows as equally spaced, or assuming f(x) = kx
+> because the outputs are a and 3a. Neither is given; only the slope is
+> the same everywhere.

@@ -10,9 +10,10 @@ skill: Linear equations in two variables
 An equation such as 3x + 5y = 60 has two unknowns, so it has many solutions:
 every point on its line. Questions in this skill ask you to build such an
 equation from a situation, or to read meaning from its graph. It sits in
-Algebra, {{fact:sat-math-algebra}} of the Math section. Hard questions give
-the relationship in words or as a graph with few labels and make you decide
-what each variable, coefficient and intercept means.
+Algebra, {{fact:sat-math-algebra}} of the Math section. Hard questions are
+about the line itself: how far y moves when x moves along it, where an
+intercept goes when the line is shifted, or which line has intercepts that
+meet a condition.
 
 ## Graph interpretation {#graph-interpretation}
 
@@ -45,6 +46,65 @@ up again and again:
 When the graph has no equation, pick two points the grid makes easy to read,
 find the slope, and use an intercept. Then answer the question from the
 equation, not from eyeballing the picture.
+
+### Slope from standard form {#standard-form-slope}
+
+Solving Ax + By = C for y gives y = (−A/B)x + C/B. So the slope is −A/B:
+the x-coefficient over the y-coefficient, with the sign changed.
+
+> **Example.** What is the slope of the graph of 4x − 10y = 30?
+>
+> Shortcut: −A/B = −4/(−10) = 2/5.
+>
+> By solving: −10y = −4x + 30, so y = (2/5)x − 3. The slope is 2/5.
+
+> **Fails when.** The x-term and the y-term are not on the same side. In
+> 2x = 3y + 6, A is 2 but B is not 3: rewrite it as 2x − 3y = 6 first, and
+> the slope is −2/(−3) = 2/3, not −2/3.
+
+### Moving along a line {#moving-along-a-line}
+
+Along a line, y changes by the slope times the change in x:
+Δy = m · Δx. That holds from any point, so when a question starts from an
+unknown point (s, t) on the line, you never need s, t, or the constant.
+
+> **Example.** The points (p, q) and (p − 4, q + k) both lie on the graph of
+> 5x + 2y = 17. What is k?
+>
+> The slope is −5/2. Moving 4 left means Δx = −4, so
+> Δy = (−5/2)(−4) = 10 and k = 10.
+>
+> Check by subtracting: 5(p − 4) + 2(q + k) = 17 and 5p + 2q = 17 leave
+> −20 + 2k = 0, so k = 10 again.
+
+> **Trap.** Using the coefficients themselves as the step. In 5x + 2y = 17
+> a step of 5 in x and 2 in y does not stay on the line; a step of 2 in x
+> and −5 in y does.
+
+### Translating a line {#translating-a-line}
+
+Moving a line up or down by d changes its y-intercept by d, but its
+x-intercept moves by d divided by the slope, and in the direction the
+slope decides. Don't guess that direction: write the new equation, then set
+y = 0.
+
+- In y = mx + b form, moving up d gives y = mx + b + d.
+- In Ax + By = C form, moving up d replaces y with y − d, so C changes by B · d.
+
+> **Example.** A line passes through (0, 3) and (4, 0). It is translated 6
+> units down. What is the x-intercept of the new line?
+>
+> The line is y = −(3/4)x + 3. Moving it 6 down gives y = −(3/4)x − 3.
+>
+> Set y = 0: (3/4)x = −3, so x = −4. The x-intercept moved from 4 to −4,
+> which is 8 units, not 6.
+>
+> In standard form: 3x + 4y = 12 becomes 3x + 4(y + 6) = 12, or
+> 3x + 4y = −12, and y = 0 gives x = −4 again.
+
+> **Trap.** Moving the x-intercept by the size of the vertical shift, or
+> replacing y with y + d to move a line up. Up d means y − d inside the
+> equation.
 
 ## Equation modeling {#equation-modeling}
 
@@ -86,18 +146,41 @@ total.
 > about without algebra. If 0 guests should cost $150, the equation must
 > give C = 150 at g = 0.
 
+### A line from its intercepts {#line-from-intercepts}
+
+Call the intercepts (a, 0) and (0, b). Two facts turn a condition on them
+into an equation in one letter:
+
+- The slope between them is (b − 0)/(0 − a) = −b/a.
+- The line is x/a + y/b = 1, for nonzero a and b. Clearing the fractions puts b with x and a with y: bx + ay = ab.
+
+> **Example.** A line has slope 3, x-intercept (a, 0) and y-intercept
+> (0, b), and a − b = 8. What is b?
+>
+> The slope is −b/a = 3, so b = −3a.
+>
+> Substitute: a − (−3a) = 8, so 4a = 8, a = 2 and b = −6.
+>
+> Check: from (2, 0) to (0, −6) the slope is (−6 − 0)/(0 − 2) = 3.
+
+> **Example.** Which equation has x-intercept (6, 0) and y-intercept
+> (0, −4)?
+>
+> x/6 + y/(−4) = 1. Multiply by 12: 2x − 3y = 12.
+>
+> Check: x = 6, y = 0 gives 12; x = 0, y = −4 gives 12.
+
+> **Trap.** Taking the slope as b/a. The run from (a, 0) to (0, b) is −a,
+> so the slope is −b/a: same steepness, opposite tilt.
+
+> **Fails when.** The line passes through the origin (both intercepts are 0)
+> or is horizontal or vertical (one intercept is missing). Then there is no
+> x/a + y/b form; use slope and a point instead.
+
 ## What Hard looks like {#hard}
 
-- A paragraph with extra numbers you don't need, where the work is choosing which quantities are the variables.
-- A model in standard form, Ax + By = C, where you must explain what A, B or C means (A is the cost or amount per unit of x, C is the total).
-- A question about a change: "if the price of a pen rises by $1, which part of the graph changes?" (the y-intercept and the slope both change, the x-intercept does not).
+Hard questions in this skill test the line itself rather than a story:
 
-> **Example.** In 3x + 5y = 60 above, the pen price rises to $6. What happens
-> to each intercept?
->
-> The new equation is 3x + 6y = 60.
->
-> x-intercept: 3x = 60, still 20. With no pens, the pen price doesn't
-> matter.
->
-> y-intercept: 6y = 60, so 10 instead of 12. She can afford fewer pens.
+- A point (s, t) on a line such as 2x + 7y = 11 and a question about another point on it. Use Δy = m · Δx; the start and the constant drop out (see [moving along a line](#moving-along-a-line)).
+- A graphed line moved up, down, left or right, and a question about its new intercept or equation. Write the moved equation before setting a variable to 0 (see [translating a line](#translating-a-line)).
+- A line known only through its intercepts: a slope and a sum of intercepts, a ratio of intercepts and a point, or intercepts written with a constant k (see [a line from its intercepts](#line-from-intercepts)).

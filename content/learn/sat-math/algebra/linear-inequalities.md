@@ -10,9 +10,10 @@ skill: Linear inequalities
 An inequality says one quantity is bigger or smaller than another, so its
 answer is a range of values, not a single number. Linear inequalities belong
 to Algebra, which is {{fact:sat-math-algebra}} of the Math section. Easy
-questions ask you to solve one inequality. Hard ones make you turn a situation
-into a system of inequalities, match a shaded graph to its system, or find the
-greatest or least whole number that still works.
+questions ask you to solve one inequality. Hard ones ask for the greatest or
+least coordinate over a region, work from a shaded graph to points off its
+grid, or turn an inequality into a condition on a constant or on another
+expression.
 
 ## Solve inequalities {#solve-inequalities}
 
@@ -71,6 +72,28 @@ so is 31.
 > is .9. Rounding to the nearest whole number gives 16 here, which is over
 > budget. For "least number" with ≥, round up.
 
+### Carrying a range to another expression {#carrying-a-range}
+
+Sometimes the question is not "solve for x" but "what values can 5 − 3x
+take?" Solve for x, then build the new expression one operation at a time,
+doing each operation to every part. Multiplying by a negative number
+reverses the order.
+
+> **Example.** If −1 ≤ x < 3, which values can 5 − 3x take?
+>
+> Multiply every part by −3 and reverse both signs: 3 ≥ −3x > −9.
+>
+> Add 5 to every part: 8 ≥ 5 − 3x > −4, which reads −4 < 5 − 3x ≤ 8.
+>
+> Check the ends: x = −1 gives 8, which is allowed; x = 3 gives −4, which is
+> not, because x < 3 is strict.
+
+When the x-terms cancel, there is nothing to solve. What is left is a
+statement about the constants, and the question is whether it is true (then
+every x works) or false (then no x does). For 4(2x + c) ≤ 8x + 6 the
+x-terms cancel and leave 4c ≤ 6. The inequality has no solution exactly
+when that is false: c > 3/2.
+
 ## Systems of inequalities {#systems-of-inequalities}
 
 A system of inequalities is a set of conditions that must all be true at
@@ -103,6 +126,37 @@ y > mx + b shade above the line, for y < mx + b shade below it."
 > Type a point such as `(2,1)` to see where it lands. More in
 > [Desmos for inequalities](learn:sat/general/desmos#inequalities).
 
+### The greatest or least value over a region {#region-corner}
+
+When a question asks for the greatest or least possible x (or y) of a point
+in the solution region and gives no other value, neither boundary alone
+answers it. The extreme is at the corner where the two boundary lines
+cross: past that corner, the line the point must stay above is above the
+line it must stay below, so no point fits.
+
+> **Example.** The point (a, b) lies in the solution region of y ≥ 2x − 4
+> and y ≤ −x + 11. What is the greatest possible value of a?
+>
+> The boundaries cross where 2x − 4 = −x + 11: 3x = 15, so x = 5 and
+> y = 6.
+>
+> For x > 5 the floor 2x − 4 is above the ceiling −x + 11 (at x = 6 they
+> are 8 and 5), so nothing fits. The greatest a is 5, at the corner (5, 6).
+
+> **Trap.** Using one boundary's intercept, such as x = 2 where y = 2x − 4
+> meets the x-axis, or giving the corner's y-coordinate when x was asked.
+
+> **Fails when.** The region is open in the direction asked. Here y has no
+> greatest value: far to the left, −x + 11 is as large as you like. It also
+> fails when both inequalities are strict (the corner itself is excluded,
+> so there is no greatest value) or the boundaries are parallel (there is no
+> corner).
+
+When the region comes as a shaded graph, read each boundary's equation from
+two grid points, note whether it is solid (≤ or ≥) or dashed (< or >) and
+which side is shaded, and then test points algebraically. Points asked about
+often lie off the drawn grid, where the picture can't settle it.
+
 Word problems with two unknowns and two limits produce a system. A school
 sells adult tickets for $8 and student tickets for $5, needs at least $600,
 and has at most 100 seats. With a adult and s student tickets:
@@ -125,13 +179,14 @@ unstated, but they are real.
 
 ## What Hard looks like {#hard}
 
-Hard linear-inequality questions rarely need harder algebra. They hide the
-setup, so you must decide what the question is before you calculate.
+Hard linear-inequality questions rarely need harder algebra. They hide what
+is being asked, so you must decide what the question is before you
+calculate.
 
-- A situation with two limits (money and time, weight and count) that you must write as a system before anything else.
-- A shaded graph and four systems to match it. Check one feature at a time: boundary slopes, intercepts, solid or dashed, which side is shaded.
-- A constant to choose. For the system y ≤ 2x + b and y ≥ 2x + 5, the boundaries are parallel, so there is a solution only when the upper line is at or above the lower one: b ≥ 5. Any b < 5 gives no solution.
-- A whole-number answer. Solve, round in the direction the inequality allows, and check the neighbor on the other side.
+- The greatest or least x or y over the region of two inequalities, with no value given. It is at the corner where the boundaries cross (see [the greatest or least value over a region](#region-corner)).
+- A shaded graph and a point off the grid, such as (−18, k): write each boundary's inequality from the graph, then work with it, minding solid against dashed.
+- A condition on a constant: the x-terms cancel and what is left must be true for every x or false for all. For the system y ≤ 2x + b and y ≥ 2x + 5, the boundaries are parallel, so there is a solution only when b ≥ 5.
+- A range carried to another expression, such as the values of 7 − 2x when 0 < x < 5, where a negative multiplier reverses the order (see [carrying a range](#carrying-a-range)).
 
 A student-produced response here might ask for "one possible value"; any value
 in the range earns credit, so pick a simple one and check it. Entry rules are
