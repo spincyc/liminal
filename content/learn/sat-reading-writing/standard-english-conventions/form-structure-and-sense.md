@@ -91,8 +91,8 @@ back, find it before choosing.
 
 > **Example.** Read the text and answer the question.
 >
-> Several of the museum's oldest maps were drawn on thin parchment, and
-> because of ______ age, conservators handle them only with gloves.
+> Several maps drawn in the 1600s still survive, and because of ______
+> age, conservators handle them only with gloves.
 >
 > Which choice completes the text so that it conforms to the conventions of
 > Standard English?
@@ -106,8 +106,8 @@ back, find it before choosing.
 > D) they're
 >
 > The age belongs to the maps, which are plural, so the possessive pronoun
-> is "their". A is singular. C means a place, and D means "they are". B is
-> correct.
+> is "their". A is singular, and no singular noun in the sentence could own
+> the age. C means a place, and D means "they are". B is correct.
 
 > **Example.** Read the text and answer the question.
 >
