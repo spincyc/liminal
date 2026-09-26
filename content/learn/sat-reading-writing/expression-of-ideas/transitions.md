@@ -28,9 +28,11 @@ sentences back, or ask for a concession-then-return that easy readers miss.
 | addition (the next point goes the same way) | also, moreover, furthermore, in addition |
 | similarity (a parallel case) | similarly, likewise |
 | contrast (the next point goes against it) | however, but, yet, by contrast, conversely |
-| concession then return | still, even so, nevertheless, nonetheless |
+| a point granted before the return | granted, admittedly, to be sure |
+| concession then return | still, even so, nevertheless, nonetheless, that said |
 | replacement (what happens in place of something ruled out) | instead, rather |
-| result (the next point follows from it) | therefore, thus, consequently, as a result |
+| result (the next point follows from it) | therefore, thus, consequently, as a result, accordingly |
+| the next link in a chain of effects | in turn |
 | example (an instance of it) | for example, for instance, specifically |
 | restatement or emphasis | in other words, that is, indeed, in fact |
 | sequence (a later step or time) | then, next, later, subsequently, finally |
@@ -92,6 +94,94 @@ transition is likely.
 > population upstream fell by half" needs "As a result", even though the
 > second sentence reports a decline. Name the relationship; don't react to
 > the mood of the words.
+
+### Four exact transitions {#exact-transitions}
+
+Hard questions offer transitions whose relationships sit close together.
+Each needs something specific in the text:
+
+| Transition | Relationship | The text must show |
+| --- | --- | --- |
+| accordingly | result | an action or conclusion taken because of what came before |
+| in turn | the next link in a chain | A led to B, and now B leads to C |
+| conversely | the reverse case | the opposite condition with the opposite outcome |
+| that said | a point that holds despite what came before | the same subject, seen from the other side |
+
+The sentence before the blank isn't always the one the new sentence
+connects to. In a list of benefits, a third benefit follows the second on
+the page, not from it.
+
+> **Example.** Read the text and answer the question.
+>
+> In 2017, a hospital began sending nurses to visit heart patients at home
+> during their first week after leaving the hospital. Patients who were
+> visited took their medicines more regularly than patients who were not.
+> ______ with fewer missed doses, fewer of the visited patients had to
+> return to the hospital within a month.
+>
+> Which choice completes the text with the most logical transition?
+>
+> A) Conversely,
+>
+> B) In turn,
+>
+> C) That said,
+>
+> D) In addition,
+>
+> The visits led to regular medicines, and the regular medicines led to
+> fewer returns: the next link in a chain. A would need a reverse case. C
+> would introduce a limit on the visits' success, but the sentence extends
+> it. D would add a separate benefit, but fewer returns follow from the
+> fewer missed doses. B is correct.
+>
+> Now replace the last sentence with "______ the nurses found hazards in many
+> homes, such as loose rugs, and helped remove them." That benefit comes
+> from the visits in the first sentence, not from the medicines in the
+> second, so "In addition" is right and "In turn" is wrong.
+
+> **Trap.** Picking a result word because the new sentence sits next to
+> something it could plausibly follow from. Ask what it actually follows
+> from; a separate point in a list takes an addition word.
+
+### A negation alone doesn't call for "instead" {#instead-or-nonetheless}
+
+"Instead" and "rather" need something ruled out, dropped or declined, and a
+next sentence that says what happened in its place. A "not" or an obstacle
+before the blank doesn't settle it. Ask what the next sentence is:
+
+- what happened in place of the thing ruled out: instead, rather
+- what happened in spite of the obstacle: nonetheless, even so
+- a second subject that differs from the first: in contrast
+
+> **Example.** Read the text and answer the question.
+>
+> The museum hoped to borrow a famous painting for its spring exhibition,
+> but the painting's owner declined to lend it. ______ the exhibition
+> opened on schedule and drew record crowds.
+>
+> Which choice completes the text with the most logical transition?
+>
+> A) Instead,
+>
+> B) Nonetheless,
+>
+> C) In contrast,
+>
+> D) Similarly,
+>
+> Before: the loan was refused, an obstacle. After: the exhibition
+> succeeded anyway. A would make the opening and the crowds a replacement
+> for the loan, which they aren't. C needs a second subject, such as another
+> museum. D needs a parallel case. B is correct.
+>
+> Change the last sentence to "______ the museum hung a full-size photograph
+> of the painting where it would have gone." Now the sentence says what the
+> museum did in place of the loan, and "Instead" is right.
+
+> **Trap.** Choosing "instead" because the sentence before the blank says
+> "not" or "declined". The negation says only that something didn't happen;
+> "instead" also needs the next sentence to take its place.
 
 ## Sentence connection {#sentence-connection}
 
@@ -168,6 +258,8 @@ method for both subskills.
 - Two choices from the same family (therefore and in other words, however and even so) where only the exact relationship decides.
 - A concession followed by a return, which students often read as a plain contrast or a plain result.
 - "Instead" or "rather" against "in contrast". "Instead" needs something the text has ruled out, declined or failed to do, which the next sentence replaces; a second subject that simply differs from the first takes "in contrast".
+- A "not" or an obstacle before the blank and a sentence that holds in spite of it, which takes "nonetheless", not "instead" (see [a negation alone](#instead-or-nonetheless)).
+- "Accordingly", "in turn", "conversely" and "that said" as choices, each right only for its exact relationship; a new item in a list takes an addition word even when a result word sounds plausible (see [four exact transitions](#exact-transitions)).
 
 No transition word is a safe guess: each one is right only when its
 relationship is the one in the text. See [answer tells](learn:sat/general/answer-tells)

@@ -67,6 +67,53 @@ meaning, or accepts the conclusion and narrows it.
 > states the disagreement plainly, and a softened "partly agrees" choice is
 > wrong. Decide the relationship from the texts, not from the pattern.
 
+### Common ground needs both texts {#common-ground}
+
+For a "both authors would agree" question, test each choice against each
+text separately: find the words in Text 1 that support it, then the words in
+Text 2. A choice passes only if both exist. Three kinds of choice fail:
+
+- one author's thesis, which the other argues against;
+- a neutral-sounding detail that only one text states, even one the other author wouldn't dispute;
+- a general claim about all cases, when both texts discuss one.
+
+Look first at the background both arguments stand on: what happened,
+before they disagree about why it happened or what to do. Shared support is
+most often there, but test that choice against both texts like any other.
+
+> **Example.** Read the texts and answer the question.
+>
+> Text 1: The clock tower in the town of Ardle should be returned to its
+> original red brick. The white plaster that covers it was added in 1952
+> and hides the careful work of the masons who built the tower in 1880, and
+> photographs from the 1890s show exactly how the brick looked.
+>
+> Text 2: Stripping the plaster from Ardle's clock tower would erase part
+> of its history. The plaster was applied after a storm cracked the brick
+> in 1952, and for three generations of residents the white tower has been
+> the town's landmark.
+>
+> Based on the texts, both authors would most likely agree with which
+> statement?
+>
+> A) The tower's surface today looks different from when it was built.
+>
+> B) Photographs from the 1890s show how the tower's brick looked.
+>
+> C) A storm cracked the tower's brick in 1952.
+>
+> D) The plaster should be removed from the tower.
+>
+> Text 1: brick, covered with plaster in 1952. Text 2: brick, plastered in
+> 1952, white ever since. Both support A.
+>
+> B is only in Text 1 and C only in Text 2; the other author might not
+> object, but neither text gives both authors a reason to agree. D is Text
+> 1's thesis, which Text 2 argues against. A is correct.
+
+> **Trap.** Treating "wouldn't deny" as "would agree". Text 1 never
+> mentions a storm, so C has no support there, however harmless it sounds.
+
 ## Response between texts {#response-between-texts}
 
 Stem: "Based on the texts, how would the author of Text 2 most likely
@@ -115,5 +162,6 @@ Text 1. The correct choice is a direct application, not a new argument.
 ## What Hard looks like {#hard}
 
 - Texts that agree on what happened and disagree on why, so both "agree" and "disagree" choices look half right.
+- An "agree" question whose wrong choices are each author's thesis and neutral-sounding details that only one text states (see [common ground needs both texts](#common-ground)).
 - A Text 2 that limits Text 1 (true only in some conditions), with one choice overstating that as a rejection.
 - Formal, academic language, and a question about a specific finding in Text 1 rather than its general claim.

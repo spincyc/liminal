@@ -117,8 +117,60 @@ and interesting and still be wrong because it does a different job.
 > favored or disfavored; many correct choices are long because the goal has
 > two parts.
 
+### Emphasize one part, indicate another {#emphasize-while-indicating}
+
+Some goals name two parts and rank them: "emphasize the study's finding
+while indicating how the study was conducted". Then:
+
+1. Cross out choices that miss either part, or that swap one for a third thing, such as what the finding suggests.
+2. In each remaining choice, find the main clause: the subject and verb that could stand alone as a sentence. The part to emphasize belongs there.
+3. The part to indicate belongs in a phrase or a subordinate clause: "By comparing ...", "Having tested ...", ", finding that ...", ", which suggests ...", "since ...".
+
+> **Example.** While researching a topic, a student has taken the following
+> notes:
+>
+> - Engineer Owen Sayre studied traffic noise at homes beside a highway.
+> - He wanted to know whether a row of pine trees blocks noise as well as a concrete wall.
+> - For six months, he measured noise at 40 homes behind a row of pines and 40 homes behind a concrete wall.
+> - Homes behind the pines were nearly as quiet as homes behind the wall.
+> - The finding suggests that towns could plant trees instead of building walls in some places.
+>
+> The student wants to emphasize the study's finding while indicating how
+> the study was conducted. Which choice most effectively uses relevant
+> information from the notes to accomplish this goal?
+>
+> A) Sayre measured noise for six months at 80 homes behind pines or a
+> concrete wall, finding that the pines worked nearly as well as the wall.
+>
+> B) By measuring noise for six months at 80 homes behind pines or a
+> concrete wall, Sayre found that the pines worked nearly as well as the
+> wall.
+>
+> C) Homes behind a row of pines were nearly as quiet as homes behind a
+> concrete wall, which suggests that towns could sometimes plant trees
+> instead of building walls.
+>
+> D) Towns could sometimes plant trees instead of building walls, since
+> homes behind pines were nearly as quiet as homes behind a concrete wall.
+>
+> C and D swap the method for what the finding suggests; D also puts the
+> suggestion in its main clause. A and B hold the same facts. A's main
+> clause is the method ("Sayre measured noise"), with the finding in a
+> phrase. B's main clause is the finding ("Sayre found that the pines
+> worked"), with the method in the "By measuring" phrase. B is correct.
+
+> **Trap.** The sentence with both parts in the wrong order of importance.
+> Two choices often hold the same facts; check which one the main clause
+> carries before choosing.
+
+> **Fails when.** A choice joins two full clauses with "and" or a
+> semicolon. Both parts are then stressed equally, so neither is
+> emphasized; prefer a choice that tucks the lesser part into a phrase, if
+> one does.
+
 ## What Hard looks like {#hard}
 
 - Two-part goals ("present the finding and explain its significance"), where each wrong choice does one part.
+- Goals that rank two parts ("emphasize the finding while indicating the method"), where two choices hold the same facts and only the main clause decides (see [emphasize one part, indicate another](#emphasize-while-indicating)).
 - Goals about audience ("an audience familiar with the research"), where defining a term is unnecessary and the key uses the technical name.
 - Choices that each accomplish a real goal, just not this one: describing the method when the goal is the result, or giving a date when the goal is a place.

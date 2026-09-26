@@ -118,8 +118,58 @@ restate content.
 > use a relational verb with the wrong target ("supports the first sentence"
 > for a sentence that contradicts it). Check what the sentence relates to.
 
+### A line in a poem or story {#literary-function}
+
+In a poem or story, a line often states a view or a feeling that the rest
+of the text changes: "I used to think", "At first", "She had always
+believed". Its function is to set up that change, so the correct choice
+names both the view and what happens to it ("states an early impression
+that the ending revises"). Read to the end before choosing, and ask whether
+the text keeps the line's view or turns away from it.
+
+> **Example.** Read the text and answer the question.
+>
+> The following text is from an original poem.
+>
+> ```
+> My father's garden was nothing but straight rows:
+> beans on strings, the onions spaced by hand,
+> the squash kept to its corner like a dog.
+> I thought it was the dullest place on earth.
+> The year he moved away, I took it over,
+> and by July it ran in all directions.
+> This spring I came out early with a string
+> and stakes, and kneeling in the cold dirt, saw
+> how much of him had gone into those lines.
+> ```
+>
+> Which choice best describes the function of the line "I thought it was
+> the dullest place on earth." in the text as a whole?
+>
+> A) It describes how the speaker's father arranged the garden.
+>
+> B) It explains why the garden grew wild after the father moved away.
+>
+> C) It states an early judgment of the garden that the speaker's own
+> gardening later changes.
+>
+> D) It expresses the speaker's lasting dislike of the father's strict
+> habits.
+>
+> "I thought" puts the view in the past. The last lines show the speaker
+> laying out rows with string and stakes and seeing "how much of him" they
+> held, so the view has changed. A is the content of the three lines before.
+> B is not in the text: the line gives an opinion, not a reason the garden
+> ran wild. D treats the old view as the speaker's last word, which the
+> ending overturns. C is correct.
+
+> **Fails when.** The text never turns. Some poems hold one feeling from
+> start to finish, and a story that opens "At first" can deepen the first
+> view instead of reversing it. Decide from the ending, not from the words
+> "used to".
+
 ## What Hard looks like {#hard}
 
 - Texts that turn twice (a view, an objection, a reply), so the underlined sentence's job depends on which turn it belongs to.
-- Literary texts where a sentence's function is to show a character's attitude or to shift the mood.
+- Literary texts where a sentence's function is to show a character's attitude or to shift the mood, or to state a view that the ending revises; a choice that takes that view at face value is the trap (see [a line in a poem or story](#literary-function)).
 - Four choices built from the same verbs, where only the object distinguishes them.
