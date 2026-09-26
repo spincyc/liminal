@@ -2214,6 +2214,11 @@
           after = Math.round((M * t.int(45, 90)) / 100 / unit) * unit;
           if (!(after < M && after > before && before >= 0)) return null;
         }
+        // With an even count the median is the mean of two middle values
+        // the stem does not give, so a corrected value that moves toward the
+        // middle might pass the nearer one and move the median. Only a
+        // greatest value raised further away is safe then.
+        if (n % 2 === 0 && !(top && after > before)) return null;
         const change = after - before;
         const delta = tidy(change / n);
         const places = scene.money ? 0 : 2;
@@ -2242,7 +2247,9 @@
         };
         const steps = [
           `The correction changes the sum by ${show(after)} ${MINUS} ${show(before)}, so the mean ${verb} by ${show(Math.abs(change))} ÷ ${n} = ${show(Math.abs(delta))}.`,
-          `The corrected value is still ${top ? "above" : "below"} the median, ${show(M)}, so the middle of the ordered data does not move: the median stays ${show(M)}.`,
+          n % 2
+            ? `The corrected value is still ${top ? "above" : "below"} the median, ${show(M)}, the middle value, so the middle of the ordered data does not move: the median stays ${show(M)}.`
+            : `The ${which} value only moves further from the middle, so the two middle values, and the median ${show(M)}, do not change.`,
         ];
         if (askGap) {
           const candidates = [

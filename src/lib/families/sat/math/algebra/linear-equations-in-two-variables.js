@@ -2138,7 +2138,9 @@
           ],
           trap: both
             ? `A combination with none of one kind fits the total but not the condition "at least one of each".`
-            : `A combination with none of one kind fits the total and is allowed here; dividing a range by the step also drops one end.`,
+            : form === "count"
+              ? `A combination with none of one kind fits the total and is allowed here; dividing a range by the step also drops one end.`
+              : `A combination with none of one kind fits the total and is allowed here, so it can be the ${form === "greatest" ? "greatest" : "least"} value.`,
           hint: "Find one combination that works, then ask how to trade one kind for the other without changing the total.",
           verify: () => {
             // Recount from the stated numbers, looping over y this time.

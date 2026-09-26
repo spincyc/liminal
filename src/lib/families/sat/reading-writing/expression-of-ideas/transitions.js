@@ -2077,7 +2077,7 @@
       "When a passage builds an argument over several sentences, relate the blank to that argument, not only to the words just before it.",
     ),
     traps: {
-      result: "Choosing a concession word because the sentence before the blank describes a problem, although the new sentence is a response to that problem, not something that holds despite it.",
+      result: "Choosing a word for a turn, a concession or a contrast, although the new sentence follows from what came before: it is a consequence or a response, not something that holds despite it.",
       contrast: "Choosing a concession word because the sentence turns to an opposite case, although nothing in it holds despite an obstacle.",
       concession: "Choosing a contrast word because the sentence turns against what came before, although it qualifies the same subject rather than setting a second subject against it.",
       admission: "Choosing an addition word, reading the granted weakness as more support for the claim, although the passage turns back to answer it.",

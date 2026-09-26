@@ -2463,9 +2463,8 @@
         const list = [
           [6 * a * a + 6 * b * b, "Adds the two cubes' surface areas, counting the faces where they touch."],
           [6 * b * b + 5 * a * a, `Removes the small cube's bottom face but not the ${a}-by-${a} part of the large cube's top that it covers.`],
-          [5 * a * a + 5 * b * b, "Removes a whole face from each cube; only an a-by-a patch of the large cube's top is covered."],
+          [5 * a * a + 5 * b * b, `Removes a whole face from each cube; only a ${a}-by-${a} patch of the large cube's top is covered.`],
           [6 * b * b + 6 * a * a - 4 * a * a, "Removes four faces of the small cube instead of two squares in all."],
-          [5 * b * b + 4 * a * a, "Removes the large cube's whole top face instead of the patch the small cube covers."],
         ];
         // Printed with thousands separators, as the test does.
         const wrong = wrongFor(t, numeric, fmt(key), list.map(([value, reason]) => [fmt(value), reason]), { positive: true, whole: true });

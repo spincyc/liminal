@@ -38,7 +38,8 @@ teaches it.
 | distance and midpoint | √((x₂ − x₁)² + (y₂ − y₁)²); ((x₁ + x₂)/2, (y₁ + y₂)/2) | [right triangles](learn:sat-math/geometry-and-trigonometry/right-triangles-and-trigonometry#pythagorean-theorem) |
 | parallelogram, trapezoid | bh; ½(b₁ + b₂)h | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#area) |
 | equilateral triangle | area (s²√3)/4 | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#area) |
-| surface area | box 2(lw + lh + wh); cylinder 2πr² + 2πrh | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#surface-area) |
+| surface area | box 2(lw + lh + wh); cylinder 2πr² + 2πrh; sphere 4πr² | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#surface-area) |
+| box inside a sphere | the space diagonal √(l² + w² + h²) is the sphere's diameter | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#box-in-a-sphere) |
 | scale factor k | lengths × k, areas × k², volumes × k³ | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#volume) |
 | density | mass = density × volume | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#density) |
 | parallel lines and a transversal | corresponding and alternate interior angles equal | [lines, angles, and triangles](learn:sat-math/geometry-and-trigonometry/lines-angles-and-triangles#angle-relationships) |
@@ -51,6 +52,7 @@ teaches it.
 | arcs and sectors | (θ/360) · 2πr and (θ/360) · πr²; in radians s = rθ | [circles](learn:sat-math/geometry-and-trigonometry/circles#circle-measures) |
 | circle angles | inscribed angle = half its arc; tangent ⊥ radius | [circles](learn:sat-math/geometry-and-trigonometry/circles#circle-measures) |
 | chords | the perpendicular from the center bisects a chord: r² = d² + (half the chord)² | [circles](learn:sat-math/geometry-and-trigonometry/circles#chords) |
+| tangent line at a point | its slope is the negative reciprocal of the radius's slope to that point | [circles](learn:sat-math/geometry-and-trigonometry/circles#tangent-line) |
 | radians and the unit circle | π radians = 180°; the point at angle θ is (cos θ, sin θ) | [circles](learn:sat-math/geometry-and-trigonometry/circles#radians-and-the-unit-circle) |
 | rates | distance = rate × time; average speed = total distance/total time | [ratios, rates, and units](learn:sat-math/problem-solving-and-data-analysis/ratios-rates-and-units#unit-rates) |
 

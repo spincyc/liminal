@@ -1987,7 +1987,9 @@
         if (!isClean(E2, 2)) return null;
         return packRanked(t, numeric, n2, [
           [(n1 * a) / b, `Scales the sample size by ${S.frac(a, b)}, the change in the margin, instead of by its square.`],
-          [(n1 * b * b) / (a * a), "Scales the sample size the wrong way: a smaller margin needs a larger sample."],
+          [(n1 * b * b) / (a * a), E2 < E1
+            ? "Scales the sample size the wrong way: a smaller margin needs a larger sample."
+            : "Scales the sample size the wrong way: a larger margin allows a smaller sample."],
           [(n1 * b) / a, "Scales the sample size by the change in the margin, the wrong way."],
           [n1 * 2 * (a > b ? 1 : 0) || NaN, "Doubles the sample size."],
           [(n1 * a * a * a * a) / (b * b * b * b), "Squares the change in the margin twice."],
