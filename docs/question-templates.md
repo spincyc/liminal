@@ -267,7 +267,14 @@ The gate measures tells; these construction patterns avoid them.
 - **Pair the distractors too.** A slip that is one change from the key
   (the negation, the reciprocal, double) leaves the key in a look-alike
   pair; give a distractor its own look-alike, or offer slips of the slip,
-  so pairs do not single out the key (check 13).
+  so pairs do not single out the key (check 13). Helpers: `balanceTwins`
+  (Geometry `common.js`) keeps a slip that halves, doubles, negates or
+  complements the key in only a share of draws; `pairBalanced` (Advanced
+  Math `common.js`) picks choice sets whose informative pairs sit on the key
+  about as often as off it.
+- **No cut-off decimals.** `looksCutOff` (Problem-Solving `common.js`)
+  rejects a value whose printed form would look like a repeating decimal
+  cut off on screen (check 15); redraw instead.
 - **Redraw, don't drop.** A modelled mistake that lands on the key, or two
   choices with the same value, redraws the instance.
 
