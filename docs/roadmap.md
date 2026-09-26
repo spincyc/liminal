@@ -100,6 +100,9 @@ on the real test. The SAT Math Hard tier explains most of the gap (measured
 
 ## Next
 
+In-flight branches, the order to integrate them, and smaller open items
+are in [`handoff.md`](handoff.md).
+
 1. **Retire the fixed SAT banks** (in progress, 2026-09-26). Practice, tests
    and booklets no longer use them; they remain for old attempt ids,
    `core.js`'s `sat-full` blueprint and the smoke test. Move those off and
