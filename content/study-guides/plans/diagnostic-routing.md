@@ -110,7 +110,7 @@ students routinely miss.
 
 | Check | If yes |
 | --- | --- |
-| Is SAT/ACT grammar accuracy below 85%? | Fix it first. Finite rules, 2-3 weeks, large gain. |
+| Do you miss more than 1 in 5 grammar questions (below the 24-of-30 bar of the [mastery gate](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate))? | Fix it first. Finite rules, 2-3 weeks, large gain. |
 | Do you know the ACT formulas cold? | If not, handwrite [the reference](../act/math/07-formula-reference.md). No sheet is provided. |
 | Are you fluent with Desmos? | If not, one week of [practice](https://spincyc.github.io/liminal/learn.html#sat/general/desmos/practice-protocol) is worth real points on SAT Math. |
 | Do you orient before reading ACT Science figures? | If not, adopt the 10-second habit. Halves the error rate for most students. |

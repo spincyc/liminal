@@ -110,20 +110,35 @@ diagnosis was wrong.
 
 ## Choosing difficulty
 
-**Practice where you get 60-75% correct.**
+Move up by the same bars the app's Progress view uses, so this page and the
+skill map never disagree. Both are set out, with the reasons behind them, in
+the [mastery gate](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate).
 
-| Accuracy | Meaning | Action |
+| Where the skill is | Practise | Move up when |
 | --- | --- | --- |
-| Below 50% | Guessing, learning nothing | Drop a difficulty level |
-| 60-75% | The productive zone | Stay here |
-| Above 85% | Rehearsing what you know | Move up a level |
+| New, or Easy still needs the Learn page | Easy, untimed | the method is routine and your misses are slips, not gaps |
+| Easy is routine | Medium | Progress shows "At the gate": at least 24 of your last 30 Medium questions right, no hints |
+| At the gate | Hard, plus a few Medium to keep it | Progress shows "Mastered": also at least 10 of your last 15 Hard questions right |
+
+Each window must span at least two days and two different question designs,
+and each question counts once, at your first answer, so redoing a miss you
+have seen does not raise the count. The windows are long on purpose: you
+check them after every set, and a short window checked that often is passed
+by luck.
+
+If you get fewer than half right at a level, you are guessing and learning
+little: drop a level and reread the skill's Learn page.
+
+> **Fails when.** You judge from a handful of answers. Under 5 answers is not
+> enough data, and a bad first set in a new skill is normal. Finish the Learn
+> page's examples and a second set before you drop a level.
 
 **Progression for a new skill:**
 
 1. Easy, untimed — build the procedure (10-15 items)
 2. Medium, untimed — apply it to harder cases (15 items)
 3. Medium, timed — build speed (20 items)
-4. Hard, untimed — stretch (10-15 items)
+4. Hard, untimed, once the skill is at the gate — stretch (10-15 items)
 5. Mixed difficulty, timed — consolidate (20 items)
 
 Don't skip step 1 because it feels beneath you. The point isn't the difficulty,
@@ -145,7 +160,8 @@ The most important 20 minutes of any session.
    writer's toolkit.
 4. **Classify** the error: content, process, careless, or time.
 5. **Write one sentence** describing what you'll do differently.
-6. **Schedule a redo** for three days out.
+6. **Let Review bring it back.** You don't schedule the redo yourself; see
+   the spacing schedule below.
 
 **Also review items you got right** if you guessed, were down to two, took too
 long, or used a method you couldn't repeat. Flag these during the drill, not
@@ -166,13 +182,20 @@ miss. It works.
 
 ## Spacing schedule
 
-| Redo | When | Tests |
-| --- | --- | --- |
-| 1st | 3 days later | Did the fix take |
-| 2nd | 10 days later | Is it durable |
-| 3rd | 3-4 weeks later | Is it automatic |
+The app's Review follows this schedule for every miss (a wrong answer, a
+blank, or a right answer after a hint):
 
-Never redo the same day — you'll remember the answer rather than the method.
+| Return | When | What comes back | Tests |
+| --- | --- | --- | --- |
+| 1st | the next day | the same question | Did the fix take |
+| 2nd | 3 days after you get it right | a fresh version, built the same way | Can you do the method, not the answer |
+| 3rd | 7 days after that | a fresh version | Is it durable |
+| 4th | 21 days after that | a fresh version | Is it automatic |
+
+SAT questions come back as fresh versions from the second return; ACT
+questions come from fixed banks, so they come back as they were. A wrong,
+blank or hinted answer at any return starts the schedule over. Never redo
+the same day — you'll remember the answer rather than the method.
 
 ---
 
@@ -208,6 +231,9 @@ process problem underneath.
   Bluebook app for the SAT, ACT's official practice tests for the ACT. Their
   scores are the only honest estimate you have; Liminal's accuracy is practice
   feedback, not a score
+- For the SAT, Bluebook has 8 full-length practice tests (Practice Tests 4 to
+  11, checked 2026-09-26; verify the count before you plan around it), so six
+  leaves a couple for a retake
 
 Score inflation from taking a test on your couch in three sittings is real, and
 it will hurt on test day.
@@ -223,6 +249,19 @@ real one, never the day before.
 - **Then extract exactly three things:** two or three skills to drill, one
   pacing adjustment, one mechanical habit. Not fifteen. Fifteen improvements
   produce zero improvements.
+- **Record the score** (SAT) in the app under Progress, in the Official scores
+  card. It sits beside your Liminal accuracy in the 28 days before the test,
+  which shows whether practice here tracks the real thing. Liminal never turns
+  accuracy into a score.
+
+**Check the app's difficulty labels against official ones.** Liminal's Easy,
+Medium and Hard are its own. For the SAT, College Board's
+[Student Question Bank](https://satsuite.collegeboard.org/practice/student-question-bank),
+opened from My Practice, filters official questions by skill and
+difficulty. After a skill reaches the gate here, try ten or so of its official
+Medium questions; if you miss far more of them than you do in Liminal, trust
+the official questions and keep working the skill. Judge by a clear gap, not
+by one or two misses.
 
 ---
 
