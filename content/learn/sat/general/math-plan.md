@@ -15,8 +15,8 @@ practice tests.
 ## Where the points are {#where-the-points-are}
 
 - Algebra is {{fact:sat-math-algebra}} and Advanced Math is {{fact:sat-math-advanced}} of Math. Together that is about 70% of the section.
-- Your Module 1 result decides whether you get the harder or the easier Module 2 (see [Module 1 decides the route](learn:sat/general/modules-and-pacing#module-1)). Getting Module 1's Easy and Medium questions right is what moves you up.
-- Every question is worth the same, so a Medium question you can learn to get right every time is worth more to you now than a Hard one you'd get right occasionally.
+- Your Module 1 performance decides whether you get the harder or the easier Module 2 (see [Module 1 decides the route](learn:sat/general/modules-and-pacing#module-1)). College Board doesn't publish the rule. Module 1 mixes easy, medium and hard questions, and from around 500 the Easy and Medium ones are the points within reach, so getting them right is your best way up.
+- Questions are not all worth the same. College Board says two students with the same number right can earn different scores, depending on which questions they got right, including how hard those were (see [how scores are calculated](https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated)). But a question pays only when you get it right. A Medium question you can learn to get right every time pays on every test, and in Module 1 it also counts toward your route; a Hard one you'd get right occasionally pays only occasionally. So Medium comes first.
 
 ## The sequence {#sequence}
 
@@ -88,11 +88,31 @@ who gets only 30% of Hard questions right would reach three of five within
 The only honest gauge of your score is a full-length official practice test
 in Bluebook, scored by College Board (see
 [SAT practice tests](https://satsuite.collegeboard.org/practice/practice-tests)).
+There are {{fact:sat-practice-tests}} of them, SAT Practice Tests
+{{fact:sat-practice-test-numbers}}, and a test you have taken can't measure
+you a second time, so spend them on purpose.
 
 - Take one before you start, as a baseline.
-- Then take one every 2 to 3 weeks, under real conditions: timed, in one sitting, with the break, on the device you will use.
-- Review every miss into your error log, and use the results to choose your next skills.
-- Don't take them more often. The learning happens between tests, and the supply of official tests is limited.
+- Then take one every 2 to 3 weeks, under real conditions: timed, in one sitting, with the break, on the device you will use. A 12-week plan uses about five, which leaves some in reserve.
+- Take the last one 7 to 10 days before the real SAT, never the day before.
+- Record each score in Liminal under Progress, in the Official scores card. It shows each score beside your Liminal accuracy in the 28 days before the test, so you can see whether practice here tracks the real thing. It never turns accuracy into a score.
+- Review every miss in My Practice, where College Board shows the questions and your answers, and copy each into your error log. Use the results to choose your next skills.
+- Don't take them more often. The learning happens between tests.
+
+## Check Liminal against official questions {#official-questions}
+
+Liminal's Easy, Medium and Hard are its own labels. College Board's
+[Student Question Bank](https://satsuite.collegeboard.org/practice/student-question-bank),
+opened from My Practice, has official questions you can filter by skill and
+by difficulty. Use it as a check: after a skill passes the gate here, do ten
+or so of its official Medium questions, and once it is Mastered, some of its
+Hard ones. If you miss far more of them than you miss here, trust the
+official questions, and keep working the skill before you move on.
+
+> **Fails when.** You judge from two or three questions. A few misses in a
+> handful prove little either way; look for a clear gap, such as missing half
+> of the official Medium questions in a skill where you miss one in five
+> here.
 
 ## What Liminal accuracy means {#liminal-accuracy}
 
@@ -111,7 +131,7 @@ yet.
 - Spend 25 to 35 minutes on the current skill: Learn page, then Easy or Medium practice.
 - End with 5 to 10 minutes on your error log.
 - Once a week, one timed mixed set of 22 questions in 35 minutes from skills you have passed.
-- Every 2 to 3 weeks, an official practice test in place of the mixed set.
+- Every 2 to 3 weeks, an official practice test in place of the mixed set, with its score recorded under Official scores.
 
 How long each stage takes depends on your gate results, not on the calendar.
 Stages 1 and 3 usually take the longest, and they are worth it: they cover

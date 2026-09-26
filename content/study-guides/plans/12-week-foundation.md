@@ -22,12 +22,18 @@ read [Drill protocols](drill-protocols.md).
 | **IV — Speed** | 10-11 | Mixed practice, real and compressed timing |
 | **V — Taper** | 12 | Consolidate, rest |
 
-Five full practice tests: weeks 1, 4, 7, 10, and 11.
+Five full practice tests: weeks 1, 4, 7, 9, and 11. That is one every 2 to 3
+weeks, with the last 7 to 10 days before the real test.
 
 **Full practice tests are official tests.** For the SAT, use the full-length
 practice tests in College Board's Bluebook app; for the ACT, ACT's official
 practice tests. Their scores are the only honest estimate you have. Liminal's
-accuracy is practice feedback on its own questions, not a score.
+accuracy is practice feedback on its own questions, not a score. For the SAT,
+Bluebook has 8 full-length practice tests (Practice Tests 4 to 11, checked
+2026-09-26; verify before you plan around the count), so five leaves some in
+reserve. Record each SAT score in the app under Progress, in the Official
+scores card, which shows it beside your Liminal accuracy in the 28 days
+before the test and never converts one into the other.
 For SAT Math from around 500, the
 [Learn plan](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan) gives the skill order and a mastery
 gate for Phase II.
@@ -88,9 +94,13 @@ level below what's tested. Common examples:
 | Any word problem | Translating English to algebra |
 
 **Spend the first week of Phase II on prerequisites** if your diagnostic
-warrants it. Drill Easy items until you're at 90%+ before moving up. Building
-Advanced Math on shaky algebra doesn't work, and twelve weeks is enough time to
-do it properly.
+warrants it. Drill Easy items until the method is routine and your misses are
+slips, not gaps, then move to Medium. A skill is done when it passes the
+[mastery gate](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate):
+at least 24 of your last 30 Medium questions right, no hints, over at least
+two days and two question designs, each question counted once. Progress
+shows it as "At the gate". Building Advanced Math on
+shaky algebra doesn't work, and twelve weeks is enough time to do it properly.
 
 ### The per-domain cycle
 
@@ -101,7 +111,7 @@ Each domain gets roughly four sessions in this plan:
 | 1 | Read the guide. 15 items **Easy, untimed**. |
 | 2 | 20 items **Medium, untimed**. Full review. |
 | 3 | 20 items **Medium, timed**. Full review. |
-| 4 | 15 items **Hard, untimed**. Full review. |
+| 4 | 15 items **Hard, untimed** in skills already at the gate; more Medium in the rest. Full review. |
 
 ### Weeks 3-7 rhythm
 
@@ -155,7 +165,8 @@ Content is functional. Now push into the hard third.
 
 ### Week 9
 
-Same shape, different domains. Also:
+Same shape, different domains, with a **full practice test on day 6** in
+place of the missed-items day (review it on day 1 of week 10). Also:
 
 - **Reread [How questions are built](../04-how-questions-are-built.md).** It
   reads differently once you've done 500 items, and hard questions are where
@@ -174,21 +185,21 @@ ceiling, not speed. Speed comes in Phase IV.
 
 | Day | Work | Time |
 | --- | --- | --- |
-| 1 | Pacing drills: 2 sections at real timing with [checkpoints](../06-timing-and-pacing.md) | 1.5 h |
-| 2 | **Mixed-mode**, 40 items, real timing | 1.5 h |
-| 3 | Compressed: one section at **90% of real time** | 1 h |
-| 4 | Mixed-mode, 40 items | 1.5 h |
-| 5 | Missed-items + marked-for-review items | 1 h |
-| 6 | **Full practice test** | 3 h |
-| 7 | Same-day impressions. Rest. | 0.5 h |
+| 1 | Review of the week 9 test. Extract three changes. | 2.5 h |
+| 2 | Pacing drills: 2 sections at real timing with [checkpoints](../06-timing-and-pacing.md) | 1.5 h |
+| 3 | **Mixed-mode**, 40 items, real timing | 1.5 h |
+| 4 | Targeted work on what the test exposed | 1.5 h |
+| 5 | Compressed: one section at **90% of real time** | 1 h |
+| 6 | Mixed-mode, 40 items, then missed-items + marked-for-review items | 2 h |
+| 7 | Rest | — |
 
 ### Week 11
 
 | Day | Work | Time |
 | --- | --- | --- |
-| 1 | Test review. Extract three changes. | 2.5 h |
-| 2 | Targeted work on what the test exposed | 1.5 h |
-| 3 | Mixed-mode, 40 items, real timing | 1.5 h |
+| 1 | Pacing drills with checkpoints | 1.5 h |
+| 2 | Mixed-mode, 40 items, real timing | 1.5 h |
+| 3 | Targeted work on your weakest remaining skill | 1.5 h |
 | 4 | Compressed, one section at 90% | 1 h |
 | 5 | Missed-items + reread your rules list | 1 h |
 | 6 | **Final full practice test** (7-10 days before the real one) | 3 h |

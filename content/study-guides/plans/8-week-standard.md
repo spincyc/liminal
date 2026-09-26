@@ -17,12 +17,18 @@ read [Drill protocols](drill-protocols.md).
 | **III — Speed** | 6-7 | Real timing, mixed practice, pacing |
 | **IV — Taper** | 8 | Consolidate, rest, arrive fluent |
 
-Four full practice tests: weeks 1, 3, 6, and 7.
+Four full practice tests: weeks 1, 3, 5, and 7. That is one every 2 weeks,
+with the last 7 to 10 days before the real test.
 
 **Full practice tests are official tests.** For the SAT, use the full-length
 practice tests in College Board's Bluebook app; for the ACT, ACT's official
 practice tests. Their scores are the only honest estimate you have. Liminal's
-accuracy is practice feedback on its own questions, not a score.
+accuracy is practice feedback on its own questions, not a score. For the SAT,
+Bluebook has 8 full-length practice tests (Practice Tests 4 to 11, checked
+2026-09-26; verify before you plan around the count). Record each SAT score
+in the app under Progress, in the Official scores card, which shows it beside
+your Liminal accuracy in the 28 days before the test and never converts one
+into the other.
 
 ---
 
@@ -110,13 +116,17 @@ Then move on, and let the Missed mode bring it back on the spacing schedule.
 | 2 | Domain D, session 1 | 1.5 h |
 | 3 | Domain D, session 2 | 1.5 h |
 | 4 | Domain D, session 3 | 1.5 h |
-| 5 | **Hard-difficulty drill** across domains A-D, 25 items untimed | 1.5 h |
-| 6 | Missed-items + weekly audit | 1 h |
-| 7 | Rest | — |
+| 5 | **Hard-difficulty drill** across domains A-D, 25 items untimed, in skills already at the gate | 1.5 h |
+| 6 | **Full practice test** | 3 h |
+| 7 | Same-day impressions. Rest. | 0.5 h |
 
 **Note the difficulty progression.** By week 5 you should be working Medium and
-Hard, not Easy. If you're still at 60% on Easy in a domain, that domain needs
-another cycle before moving on.
+Hard, not Easy. A skill moves on to Hard when Progress shows it "At the gate":
+at least 24 of your last 30 Medium questions right, no hints, over at least
+two days and two question designs, each counted once (see the
+[mastery gate](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate)).
+If you are still missing Easy questions in a domain for lack of the method,
+that domain needs another cycle before moving on.
 
 ---
 
@@ -128,21 +138,21 @@ Content is in place. Now make it work at real pace.
 
 | Day | Work | Time |
 | --- | --- | --- |
-| 1 | Pacing drills: 2 sections at real timing with [checkpoints](../06-timing-and-pacing.md) | 1.5 h |
-| 2 | **Mixed-mode** drill, 40 items, real timing | 1.5 h |
-| 3 | Weakest remaining domain: 25 items timed | 1.5 h |
-| 4 | Compressed: one section at **90% of real time** | 1 h |
-| 5 | Missed-items + marked-for-review items | 1 h |
-| 6 | **Full practice test** | 3 h |
-| 7 | Same-day impressions. Rest. | 0.5 h |
+| 1 | Review of the week 5 test, item by item. Extract three changes. Re-route. | 2.5 h |
+| 2 | Pacing drills: 2 sections at real timing with [checkpoints](../06-timing-and-pacing.md) | 1.5 h |
+| 3 | **Mixed-mode** drill, 40 items, real timing | 1.5 h |
+| 4 | Targeted work on whatever the test exposed | 1.5 h |
+| 5 | Compressed: one section at **90% of real time** | 1 h |
+| 6 | Missed-items + marked-for-review items | 1 h |
+| 7 | Rest | — |
 
 ### Week 7
 
 | Day | Work | Time |
 | --- | --- | --- |
-| 1 | Test review. Extract three changes. | 2.5 h |
+| 1 | Weakest remaining domain: 25 items timed | 1.5 h |
 | 2 | Mixed-mode, 40 items, real timing | 1.5 h |
-| 3 | Targeted work on whatever the test exposed | 1.5 h |
+| 3 | Pacing drills with checkpoints | 1.5 h |
 | 4 | Compressed practice, one section at 90% | 1 h |
 | 5 | Missed-items + reread your rules list | 1 h |
 | 6 | **Final full practice test** (7-10 days before the real one) | 3 h |
