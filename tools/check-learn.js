@@ -13,8 +13,9 @@
 //     holding at least one Example callout
 //   - every SAT template's (skill, subskill) resolves to such a section
 //   - every fact has a real YYYY-MM-DD "verified" date and an https source
-//   - the SAT Math plan page states the Progress page's gate and mastered
-//     bars as src/lib/analytics.js defines them
+//   - the SAT Math plan page states the next step's routine bar and the
+//     Progress page's gate and mastered bars as src/lib/analytics.js
+//     defines them
 //
 //   node tools/check-learn.js [--root <learn dir>]
 
@@ -39,8 +40,9 @@ const PLAN_FILE = "sat/general/math-plan.md";
 // The phrases the plan must contain, built from the live constants, so a
 // change to either the page or the code that leaves them apart fails here.
 function planPhrases() {
-  const { GATE, HARD_BAR } = Analytics;
+  const { GATE, HARD_BAR, ROUTINE } = Analytics;
   return [
+    `${ROUTINE.correct} of your last ${ROUTINE.window} ${ROUTINE.tiers[0]} questions`,
     `${GATE.correct} of your last ${GATE.window} ${GATE.tier} questions`,
     `${HARD_BAR.correct} of your last ${HARD_BAR.window} ${HARD_BAR.tier} questions`,
   ];

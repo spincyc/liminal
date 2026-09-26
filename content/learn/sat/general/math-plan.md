@@ -35,10 +35,19 @@ stage 1, then graph to solve or check in every later stage.
 For each skill, the loop is:
 
 1. Read the Learn page and work its examples by hand, covering the solution first.
-2. Practice the skill at Easy until the method feels routine.
+2. Practice the skill at Easy until the method is routine: at least 8 of your last 10 Easy questions in the skill right, each counted once, with no hints.
 3. Practice it at Medium, with feedback after each question at first.
 4. Log every miss in your [error log](learn:sat/general/error-log) with its type and a rule.
 5. Pass the mastery gate below, then move on.
+
+Liminal's next step follows this sequence: Review first when a missed
+question is due, then the first skill in this order that is not yet at the
+gate, at Easy, Medium or Hard as the loop says. The diagnostic can start you
+later in the sequence: a stage is skipped while each of its domains went
+well on the diagnostic (at least 80% of at least 3 questions) and you have
+not practised its skills yet. Practising a skipped skill brings it back into
+its place, and every skipped skill returns once the later stages are at the
+gate.
 
 ## The mastery gate {#mastery-gate}
 

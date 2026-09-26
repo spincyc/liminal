@@ -178,6 +178,18 @@ For a coherent ACT bank batch:
   windows are long because a student checks them after
   every set, and short windows are met by chance. `npm run check:learn`
   fails unless the SAT Math plan page in Learn states the same bars.
+- One next step for every page (`Analytics.nextStep`): Review when anything
+  is due; for SAT Math the first skill of the plan's stages
+  (`Analytics.PLANS`, held to the catalog and the Learn page by a test) not
+  at the gate, at Easy until routine (`ROUTINE`: 8 of the last 10 Easy or
+  Medium first answers), then Medium, then Hard (`skillLevel`); for Reading
+  and Writing the weakest skill with evidence; for ACT the lowest accuracy,
+  with no level. The diagnostic reports by domain and places the student in
+  the plan (`PLACEMENT`). `app.js` holds `ctx.guide`, `stepWords`,
+  `startStep` and `startDiagnostic`. Practice opens with a dismissible
+  "Start here" (`liminal:start-hidden:v1`, per viewer). Template bundles
+  load only when a set needs its questions; counts and labels come from
+  the built registries (`practice.registryTemplates`).
 - `src/lib/modules.js` is a practice approximation of the digital test's
   modules (sizes, difficulty mixes, domain counts, order); it builds the
   booklets and the on-screen tests, and every screen that uses it says the

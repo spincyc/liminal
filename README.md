@@ -85,7 +85,11 @@ never recorded. Liminal is now built to keep practice honest:
   skill's last 30 Medium questions, then 10 of the last 15 Hard, each
   question counted once), pacing against real-test
   pace, a history of sets with an accuracy trend, a plan with your test date
-  and weekly goal, and the next skill to work on. Record your official
+  and weekly goal, and one next step that every page agrees on: Review when
+  something is due, then the SAT Math plan's next skill at its next level
+  (Easy until routine, then Medium, then Hard). The diagnostic reports by
+  domain and places you in the plan. Practice opens with "Start here": a
+  Bluebook baseline, the diagnostic, then the next step. Record your official
   Bluebook practice-test and SAT scores there too: each sits beside your
   Liminal accuracy in the four weeks before it, and is never converted.
 - **Printable booklets.** SAT booklets are built from templates to the

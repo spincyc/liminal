@@ -180,6 +180,7 @@ test("the Math plan must state the gate and mastered bars the Progress page appl
   expectError(result, /math-plan\.md: must say "24 of your last 30 Medium questions"/);
   expectError(result, /math-plan\.md: must say "10 of your last 15 Hard questions"/);
   // Line breaks and callout markers inside a phrase do not matter.
-  edit(tree, plan, "16 of your last 20 Medium questions.", "24 of your last 30\n> Medium questions, then 10 of\n> your last 15 Hard questions.");
+  expectError(result, /math-plan\.md: must say "8 of your last 10 Easy questions"/);
+  edit(tree, plan, "16 of your last 20 Medium questions.", "8 of your last 10 Easy questions, then 24 of your last 30\n> Medium questions, then 10 of\n> your last 15 Hard questions.");
   assert.deepEqual(lines(run(tree)).filter((line) => line.includes("math-plan")), []);
 });
