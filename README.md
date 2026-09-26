@@ -62,14 +62,18 @@ never recorded. Liminal is now built to keep practice honest:
   minutes, or 22 Math in 35), one section (Module 1, then a harder or easier
   Module 2 by how Module 1 went), or the full-length SAT with a 10-minute
   break. Timed per module, checked at the end, resumable after a reload, and
-  reported by module, domain and difficulty. Module 2 routing is a fixed
+  reported by section (each with its Hard count), module, domain and
+  difficulty. Module 2 routing is a fixed
   practice rule, since the real one is not published.
 - **Digital test mode.** Every set runs in a full-screen test screen modeled
   on the real digital test: a timer you can hide with a five-minute alert, a
   question navigator, Mark for Review, an answer eliminator, highlights with
   notes (Annotate) and a line reader on reading passages, a review page,
   typeset math, figures, a reference sheet, and a calculator link. Exit saves
-  the set to finish later unless you discard it.
+  the set to finish later (a test module's clock keeps running, as on test
+  day) unless you discard it, which records what you saw. Starting a new set
+  or test asks before replacing a saved one, and a practice set never
+  replaces a saved test.
 - **Review that brings mistakes back.** A missed question returns the next
   day, then after 3, 7 and 21 days each time you get it right; from the
   second return you get a fresh version built the same way, so you practise

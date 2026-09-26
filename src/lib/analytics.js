@@ -582,7 +582,12 @@
           id: session.id,
           sectionKey: session.sectionKey || null,
           sections: session.sections || null,
-          kind: session.kind || "practice",
+          // A whole-section mix was stored as "full" before it had a kind of
+          // its own; a real full-length test lists its modules.
+          kind: session.kind === "full" && !(Array.isArray(session.modules) && session.modules.length)
+            ? "mix"
+            : session.kind || "practice",
+          discardedKind: session.discardedKind || null,
           title: session.title || "",
           finishedAt: Number(session.finishedAt) || null,
           timeMs: Number.isFinite(Number(session.timeMs)) && session.timeMs !== null ? Number(session.timeMs) : null,

@@ -315,6 +315,8 @@
     // Runs `build` (which returns the set's title, questions, and feedback)
     // with the button disabled and failures reported in `status`.
     async function startSet(button, status, build) {
+      // Ask before anything is recorded as served.
+      if (ctx.confirmReplace && !(await ctx.confirmReplace("set"))) return;
       button.disabled = true;
       ctx.setStatus(status, "Building the set…");
       try {

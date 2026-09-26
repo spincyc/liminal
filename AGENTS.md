@@ -81,7 +81,8 @@ For a coherent ACT bank batch:
   - `index.html`: the generated catalog, answer signs and template registries,
     then `lib/core.js`, `lib/template-mask.js`, `lib/runs.js`,
     `lib/modules.js`, `lib/simulation.js`, `lib/test-engine.js`,
-    `lib/annotations.js`, `lib/line-reader.js`, `lib/progress.js`, `lib/review-queue.js`,
+    `lib/session-store.js`, `lib/annotations.js`, `lib/line-reader.js`,
+    `lib/progress.js`, `lib/review-queue.js`,
     `lib/practice.js`, `lib/analytics.js`, `lib/progress-io.js`,
     `app/render.js`, `app/test-shell.js`, `app/site.js` (the shared header
     and SAT | ACT switch), the views in `app/views/`, then `app/app.js`.
@@ -115,8 +116,11 @@ For a coherent ACT bank batch:
   stimuli, typesets Math text when called with `{ math: true }` (so
   `styles/math.css` must load wherever it does), and sanitizes figure SVG
   through an allow-list. Never show domain, skill, difficulty, or IDs during
-  a session. Exit is Save and exit (resumable, clock paused) or Discard set;
-  nothing is discarded silently. Reading passages carry Annotate
+  a session. Exit is Save and exit (resumable; a practice set's clock
+  pauses, a test module's keeps running on the wall clock) or Discard, which
+  records every question the set showed, answered or blank, tagged
+  `discarded`, and nothing unseen; every start asks before replacing a
+  saved set or test (`ctx.confirmReplace`). Reading passages carry Annotate
   (highlights with notes) and a line reader: `src/lib/annotations.js` keeps
   highlights as text offsets per passage and `src/lib/line-reader.js` the
   band's geometry.
@@ -139,9 +143,13 @@ For a coherent ACT bank batch:
     left out, a hinted correct answer is not counted as correct, an answer
     to a question answered before (`repeat: true`, set when recorded) is
     left out, and template answers count at the template's current tier.
-  - `liminal:session:v1` holds an unfinished set or test so it can resume
-    after a reload (`config.simulation` is a test's state; `state` is the
-    module on screen, null during the break); its shell snapshot also
+  - `liminal:session:v1` holds an unfinished set and
+    `liminal:session:test:v1` an unfinished on-screen test
+    (`src/lib/session-store.js`), so a set never overwrites a test; each
+    value names its owner so another tab cannot write over its successor,
+    and a test found in the old slot moves to the new one
+    (`config.simulation` is a test's state; `state` is the module on
+    screen, null during the break); its shell snapshot also
     carries the set's highlights, notes and line-reader settings, which are
     session scratch and never reach the progress record; `liminal:test:v1` holds the
     SAT | ACT choice.

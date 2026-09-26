@@ -44,6 +44,8 @@
     "skill-drill": "Skill drill",
     "missed-drill": "Missed drill",
     review: "Review",
+    mix: "Whole-section mix",
+    discarded: "Discarded",
   };
 
   function el(tag, className, text) {
@@ -536,6 +538,8 @@
     }
 
     async function startDiagnostic(section, button) {
+      // Ask before anything is recorded as served.
+      if (ctx.confirmReplace && !(await ctx.confirmReplace("set"))) return;
       const name = `${section.test} ${section.shortLabel}`;
       button.disabled = true;
       ctx.setStatus(start.status, `Preparing the ${name} diagnostic…`, "loading");
@@ -1171,7 +1175,9 @@
         title.scope = "row";
         title.dataset.label = "Set";
         title.appendChild(el("span", null, point.title || sectionName(point.sectionKey)));
-        const kind = KIND_LABELS[point.kind] || point.kind;
+        const kind = point.kind === "discarded" && point.discardedKind
+          ? `Discarded ${(KIND_LABELS[point.discardedKind] || point.discardedKind).toLowerCase()}`
+          : KIND_LABELS[point.kind] || point.kind;
         if (kind) title.appendChild(el("small", `kind-tag${point.kind === "diagnostic" ? " is-diagnostic" : ""}`, kind));
         const cell = (label, text, className) => {
           const td = el("td", className || "num", text);
