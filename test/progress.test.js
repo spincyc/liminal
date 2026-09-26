@@ -452,3 +452,12 @@ test("repeat answers are flagged once and left out of accuracy", () => {
   }));
   assert.deepEqual(kept.attempts.map((entry) => entry.repeat), [false, false]);
 });
+
+test("each test keeps its own plan; an older shared plan becomes both", () => {
+  const legacy = Progress.normalize(Object.assign(Progress.empty({ epoch: "e1" }), { plan: { testDate: "2026-11-07", weeklyQuestions: 150 } }));
+  assert.deepEqual(legacy.plan, { SAT: { testDate: "2026-11-07", weeklyQuestions: 150 }, ACT: { testDate: "2026-11-07", weeklyQuestions: 150 } });
+  const act = Progress.setPlan(legacy, { weeklyQuestions: 60, testDate: undefined }, "ACT");
+  assert.deepEqual(Progress.planFor(act, "SAT"), { testDate: "2026-11-07", weeklyQuestions: 150 });
+  assert.deepEqual(JSON.parse(JSON.stringify(Progress.planFor(act, "ACT"))), { weeklyQuestions: 60 });
+  assert.deepEqual(Progress.planFor(Progress.empty(), "SAT"), {});
+});

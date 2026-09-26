@@ -19,7 +19,9 @@
 //             (or bank question) was last served at, the scenes each
 //             template has shown, and the union mask of served templates.
 //   sessions  one summary per finished set.
-//   plan      { testDate?, weeklyQuestions? }.
+//   plan      per test: { SAT?: { testDate?, weeklyQuestions? }, ACT?: … }.
+//             A plan kept before plans were per test ({ testDate?,
+//             weeklyQuestions? }) applied to both tests, so it becomes both.
 //   officialScores  scores the student reported from official tests (a
 //             Bluebook practice test or a real SAT), oldest first:
 //             { id, date, kind, label?, readingWriting?, math?, at }. They
@@ -173,7 +175,7 @@
     progress.history = normalizeHistory(raw.history);
     progress.sessions = (Array.isArray(raw.sessions) ? raw.sessions : [])
       .filter((session) => isObject(session) && typeof session.id === "string");
-    progress.plan = isObject(raw.plan) ? Object.assign({}, raw.plan) : {};
+    progress.plan = planShape(raw.plan);
     progress.officialScores = (Array.isArray(raw.officialScores) ? raw.officialScores : [])
       .filter((score) => isObject(score) && typeof score.id === "string");
     return progress;
@@ -195,6 +197,26 @@
     return attempts.map((attempt, index) => (typeof attempt.repeat === "boolean"
       ? attempt
       : Object.assign({}, attempt, { repeat: firstAt.get(attempt.questionId).index !== index })));
+  }
+
+  const PLAN_TESTS = ["SAT", "ACT"];
+  const PLAN_FIELDS = ["testDate", "weeklyQuestions"];
+
+  // A plan as { SAT?, ACT? }, each holding only plan fields; the older
+  // shared plan becomes the plan of both tests.
+  function planShape(raw) {
+    if (!isObject(raw)) return {};
+    const pick = (value) => (isObject(value)
+      ? Object.fromEntries(PLAN_FIELDS.filter((field) => value[field] !== undefined).map((field) => [field, value[field]]))
+      : null);
+    const shared = pick(raw);
+    const plan = {};
+    PLAN_TESTS.forEach((test) => {
+      const own = pick(raw[test]);
+      const chosen = own || (shared && Object.keys(shared).length ? shared : null);
+      if (chosen) plan[test] = Object.assign({}, chosen);
+    });
+    return plan;
   }
 
   /* ----------------------------------------------------------- migration */
@@ -466,8 +488,14 @@
     return Object.assign({}, progress, { sessions: progress.sessions.concat(session) });
   }
 
-  function setPlan(progress, plan) {
-    return Object.assign({}, progress, { plan: Object.assign({}, progress.plan, plan) });
+  // `test` is "SAT" or "ACT"; each test keeps its own date and goal.
+  function setPlan(progress, plan, test) {
+    const own = Object.assign({}, (progress.plan || {})[test], plan);
+    return Object.assign({}, progress, { plan: Object.assign({}, progress.plan, { [test]: own }) });
+  }
+
+  function planFor(progress, test) {
+    return Object.assign({}, ((progress && progress.plan) || {})[test]);
   }
 
   function byScoreDate(left, right) {
@@ -910,6 +938,8 @@
     tagError,
     recordSession,
     setPlan,
+    planFor,
+    planShape,
     addOfficialScore,
     removeOfficialScore,
     serveTemplates,

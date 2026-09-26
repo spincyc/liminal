@@ -159,8 +159,16 @@
       if (validErrorTag(candidate.errorLog[id])) errorLog[id] = candidate.errorLog[id];
       else droppedTags += 1;
     });
-    // Only a real date and a sensible weekly count survive (Analytics.cleanPlan).
-    const plan = Analytics.cleanPlan(isObject(candidate.plan) ? candidate.plan : {});
+    // Only a real date and a sensible weekly count survive (Analytics.cleanPlan),
+    // test by test.
+    const plan = { plan: {}, errors: [] };
+    Object.entries(Progress.planShape(candidate.plan)).forEach(([test, own]) => {
+      const cleaned = Analytics.cleanPlan(own);
+      if (Object.keys(cleaned.plan).length) plan.plan[test] = cleaned.plan;
+      cleaned.errors.forEach((error) => {
+        if (!plan.errors.includes(error)) plan.errors.push(error);
+      });
+    });
     // Official scores keep only what Analytics.cleanOfficialScore accepts,
     // with an id to merge by.
     const rawScores = Array.isArray(candidate.officialScores) ? candidate.officialScores : [];
@@ -261,7 +269,9 @@
     ).officialScores;
     const progress = Object.assign({}, merged, {
       marked,
-      plan: Object.assign({}, imported.plan, current.plan),
+      plan: Object.fromEntries(["SAT", "ACT"]
+        .map((test) => [test, Object.assign({}, (imported.plan || {})[test], (current.plan || {})[test])])
+        .filter(([, own]) => Object.keys(own).length)),
       officialScores,
     });
     return {

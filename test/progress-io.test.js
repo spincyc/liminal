@@ -139,7 +139,8 @@ test("entries that do not match the v3 shape are dropped and counted", () => {
   assert.deepEqual(result.progress.attempts.map((entry) => entry.id), ["good"]);
   assert.deepEqual(result.progress.sessions.map((entry) => entry.id), ["ok"]);
   assert.deepEqual(Object.keys(result.progress.errorLog), ["good"]);
-  assert.deepEqual(result.progress.plan, { weeklyQuestions: 100 });
+  // An older shared plan becomes both tests' plan.
+  assert.deepEqual(result.progress.plan, { SAT: { weeklyQuestions: 100 }, ACT: { weeklyQuestions: 100 } });
   assert.deepEqual(result.progress.officialScores.map((entry) => entry.id), ["good"]);
   assert.deepEqual(result.info.dropped, { attempts: 6, sessions: 2, errorLog: 1, plan: 1, officialScores: 3 });
   // Fields added later pass through untouched.
@@ -162,7 +163,7 @@ test("merging a file unions answers and sets, and merging it again changes nothi
     attempts: [attempt("a1"), attempt("h1", { timestamp: 1500 })],
     marked: ["sat-math:linear-equation-solve:h1"],
     errorLog: { a2: { reason: "content", at: 9 } },
-    plan: { weeklyQuestions: 200 },
+    plan: { SAT: { weeklyQuestions: 200 } },
     officialScores: [{ id: "here", date: "2026-09-19", kind: "practice", math: 540 }],
   });
   const imported = IO.parseImport(JSON.stringify(record())).progress;
@@ -174,7 +175,10 @@ test("merging a file unions answers and sets, and merging it again changes nothi
   assert.deepEqual(merged.marked.sort(), ["sat-math:linear-equation-solve:a2", "sat-math:linear-equation-solve:h1"]);
   // This browser's tag and plan values win; the file fills the gaps.
   assert.equal(merged.errorLog.a2.reason, "content");
-  assert.deepEqual(merged.plan, { testDate: "2026-11-07", weeklyQuestions: 200 });
+  assert.deepEqual(merged.plan, {
+    SAT: { testDate: "2026-11-07", weeklyQuestions: 200 },
+    ACT: { testDate: "2026-11-07", weeklyQuestions: 120 },
+  });
   assert.equal(merged.history["sat-math"].serve, 3);
   // Official scores join by id, in date order.
   assert.deepEqual(merged.officialScores.map((entry) => entry.id), ["o1", "here"]);

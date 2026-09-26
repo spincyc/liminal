@@ -128,7 +128,8 @@ For a coherent ACT bank batch:
     shows (a blank is recorded as wrong), each with its source, hint use,
     time, feedback mode, template id, version and seed, and `reviewOf` when
     it re-practises a miss; marks; per-section serve history and scenes;
-    session summaries; the error log; the plan; and official scores the
+    session summaries; the error log; the plan (per test: SAT and ACT each
+    keep a test date and weekly goal); and official scores the
     student reports (Bluebook practice tests and real SATs, shown beside
     Liminal accuracy over the 28 days before each, never predicted). It
     migrates

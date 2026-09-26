@@ -589,7 +589,7 @@
     }
 
     function renderPlan() {
-      const saved = model.progress.plan || {};
+      const saved = Progress.planFor(model.progress, model.test);
       // Leave the fields alone while the student is typing in them.
       if (!plan.form.contains(document.activeElement)) {
         plan.dateInput.value = saved.testDate || "";
@@ -613,8 +613,8 @@
         plan.countdown.textContent = `Your test date (${dayLabel(Analytics.parseDate(saved.testDate).getTime())}) has passed. Set the next one.`;
       }
 
-      // The goal is about practice, so every test's answers count toward it.
-      const done = Analytics.weekCount(model.progress.attempts);
+      // Each test has its own goal, counted from that test's answers.
+      const done = Analytics.weekCount(model.attempts);
       plan.week.replaceChildren(el("h3", null, "This week"));
       if (goal) {
         plan.week.appendChild(meter(done / goal, `${ctx.formatNumber(done)} of ${ctx.formatNumber(goal)}`));
@@ -647,7 +647,17 @@
         link.href = BLUEBOOK;
         link.target = "_blank";
         link.rel = "noopener";
-        plan.score.append("For a score, take an ", link, " and add it under Official scores. Liminal reports " +
+        // The Math plan in Learn calls for an official test every two to
+        // three weeks; say when the last recorded one was.
+        const scores = model.progress.officialScores || [];
+        const last = scores.length ? Analytics.parseDate(scores[scores.length - 1].date) : null;
+        const since = last ? Analytics.daysUntil(Analytics.formatDate(new Date()), last.getTime()) : null;
+        const lead = since === null
+          ? "No official practice test recorded yet. Take an "
+          : since >= 21
+            ? `Your last official practice test was ${count(since, "day")} ago; the plan suggests one every two to three weeks. Take an `
+            : "For a score, take an ";
+        plan.score.append(lead, link, " and add it under Official scores. Liminal reports " +
           "accuracy only and never estimates a score: its questions are not calibrated against real test results.");
       }
     }
@@ -700,7 +710,7 @@
       const result = ctx.update((progress) => Progress.setPlan(progress, {
         testDate: cleaned.plan.testDate,
         weeklyQuestions: cleaned.plan.weeklyQuestions,
-      }));
+      }, model.test));
       ctx.setStatus(plan.status, result.ok ? "Plan saved." : "The plan could not be saved in this browser.",
         result.ok ? "success" : "error");
     }
