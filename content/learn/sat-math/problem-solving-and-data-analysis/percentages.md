@@ -11,8 +11,8 @@ Percent means "per hundred": 35% is 35/100 = 0.35. Percent questions are
 part of Problem-Solving and Data Analysis, {{fact:sat-math-psda}} of the
 Math section, but percent thinking also shows up in exponential models and
 data questions. The arithmetic is easy; the language is slippery. Hard
-questions chain two changes, run a change backward, or mix up percent and
-percentage points.
+questions chain changes and comparisons, read a comparison from the other
+side, or set a percent of one amount equal to a percent of another.
 
 ## Percent change {#percent-change}
 
@@ -104,9 +104,17 @@ arithmetic is clean and the final number reads directly as a percent.
 
 ## What Hard looks like {#hard}
 
-- Two changes in a row, or a change undone by a second change.
-- A backward question: find the original from the result.
-- A percent of a percent, or percent mixed with percentage points in the same stem.
+- A chain of changes or comparisons ("A is 20% more than B, which is 25% less than C"), or the change that brings an amount back. Each percent is of the amount just before it, so the multipliers multiply, and the restoring change is found by dividing.
+- A comparison read the other way: "A is 25% more than B" takes the percent of B, so the same gap is a different percent of A. Give B a convenient value, such as 100, and compare directly.
+- One percent of one amount equal to another percent of another: p% of x = q% of y means px = qy, so x : y = q : p, and the amount taken at the smaller percent is the larger amount.
+
+> **Example.** 30% of A is equal to 20% of B. What percent of A + B is A?
+>
+> 0.30A = 0.20B, so 3A = 2B and A : B = 2 : 3.
+>
+> A is 2 of every 5 parts of the total: 2/5 = 40%.
+>
+> Check with A = 40 and B = 60: 30% of 40 = 12 and 20% of 60 = 12.
 
 > **Example.** A store raises a price by 25%. What percent discount on the
 > new price brings it back to the original?

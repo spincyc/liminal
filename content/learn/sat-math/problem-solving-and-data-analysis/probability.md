@@ -98,9 +98,21 @@ the" is the denominator.
 
 ## What Hard looks like {#hard}
 
-- A table with some cells missing, which you fill from the totals before answering.
-- A conditional question worded without "given".
-- A probability given and a count asked for, as in the marble example.
+- A conditional question whose data run the other way: percents of one group are given, and the question picks from another. Turn every percent into a count first, then use the new group's total as the denominator.
+- A two-way table with unknown cells and a stated probability. Write that probability as (cell) ÷ (the group it is chosen from) with the unknown, solve, then answer the question actually asked, which usually needs a different cell and a different group.
+- Items added or removed, as in the marble example: the whole changes too, so write the new probability with the new total.
+
+> **Example.** Of 400 students, 150 play an instrument. Of those, 60% sing in
+> the choir; of the other 250, 20% do. If a choir member is chosen at
+> random, what is the probability that the student plays an instrument?
+>
+> Counts first: 0.60 × 150 = 90 choir members play, and 0.20 × 250 = 50
+> don't. The choir has 140 members.
+>
+> The choice is from the choir, so P = 90/140 = 9/14, about 0.64.
+>
+> The trap is 0.60, the percent of players who sing, which answers the
+> question the other way round.
 
 > **Example.** In a group of 200 adults, 120 own a bicycle. Of the bicycle
 > owners, 45 also own a car, and 110 adults own a car in all. If an adult who

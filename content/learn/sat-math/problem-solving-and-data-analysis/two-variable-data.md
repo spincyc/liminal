@@ -12,9 +12,9 @@ studied and quiz score for each student, and plots them as a scatterplot.
 Questions ask you to describe the trend, read a line or curve of best fit,
 make predictions and judge how far to trust them. This skill is part of
 Problem-Solving and Data Analysis, {{fact:sat-math-psda}} of the Math
-section. Hard questions mix up predicted and actual values, ask for the
-meaning of a slope in context, or ask which kind of model (linear or
-exponential) fits.
+section. Hard questions ask for a predicted change in units the model
+doesn't use, how removing one point moves the line of best fit, or what an
+exponential model predicts over several units at once.
 
 ## Linear models {#linear-models}
 
@@ -55,6 +55,30 @@ a linear one does (see [exponential functions](learn:sat-math/advanced-math/nonl
 > Ratios: 5,500/5,000 = 1.1, 6,050/5,500 = 1.1, 6,655/6,050 = 1.1. Constant,
 > so the population grows 10% a year: P = `5000·1.1^t`.
 
+### A slope in other units {#slope-in-other-units}
+
+A model's slope is in the model's own units: thousands of dollars per
+hundred square feet, say. When a question asks about a difference in other
+units, convert the change in x into the model's units, multiply by the
+slope, and convert the change in y into the units asked for.
+
+> **Example.** A line of best fit for some homes is y = 2.5x + 40, where y is
+> the predicted monthly heating cost in dollars and x is the floor area in
+> hundreds of square feet. Two homes differ in floor area by 600 square
+> feet. By how much do their predicted heating costs differ over a year?
+>
+> 600 square feet is 6 hundred square feet. The predicted monthly
+> difference is 2.5 × 6 = 15 dollars.
+>
+> Over 12 months: 15 × 12 = 180 dollars.
+
+For a difference between two predictions, the intercept cancels, so you
+never need it.
+
+> **Fails when.** The question asks for one prediction, not a difference.
+> Then the intercept counts: a 1,200-square-foot home is predicted to cost
+> 2.5 × 12 + 40 = 70 dollars a month.
+
 ## Scatterplots {#scatterplots}
 
 Describe a scatterplot by its direction (positive: y tends to rise as x
@@ -87,20 +111,60 @@ quick and usually close enough to pick among the choices.
 > the trend, or the choices are close together. Then use points on the drawn
 > line itself, or run a regression in Desmos.
 
+### Removing an outlier {#removing-an-outlier}
+
+A point far from the trend pulls the line of best fit toward it, most
+strongly when it sits near one end of the data. Remove it and that end of
+the line swings back, which turns the whole line: the slope changes, and the
+other end moves the opposite way.
+
+> **Example.** In a scatterplot with x from 0 to 10, the points rise
+> steadily, except one point at x = 9 that lies far below the trend. It is
+> removed and a new line of best fit is found. How do the slope and the
+> y-intercept change?
+>
+> The low point near the right end was pulling the right end of the line
+> down. Without it, the right end rises, so the slope increases.
+>
+> The line turns, so its left end, including the value at x = 0, moves
+> down: the y-intercept decreases.
+
+> **Fails when.** The outlier sits near the middle of the x-values. Then it
+> mostly lifts or lowers the whole line, and removing it barely changes the
+> slope; the intercept moves the opposite way to the point.
+
+### Exponential fits over several units {#exponential-over-several-units}
+
+In y = a · bˣ, each increase of 1 in x multiplies the prediction by b. Over k
+units it is multiplied by bᵏ, so the percent change over k units is bᵏ − 1,
+not k times the one-unit percent.
+
+> **Example.** A model for a count of bacteria is y = 200(1.2)ˣ, with x in
+> hours. By what percent does the predicted count grow every 3 hours?
+>
+> 1.2³ = 1.728, so every 3 hours the prediction is multiplied by 1.728: an
+> increase of 72.8%.
+>
+> The trap is 60%, three times 20%, which ignores that each hour's growth
+> builds on the last.
+
 > **Desmos.** Put the data in a table (columns x₁ and y₁), then type
 > `y_1~mx_1+b`. Desmos reports m, b and r. For an exponential fit, type
 > `y_1~ab^{x_1}`. See [Desmos regressions](learn:sat/general/desmos#regressions).
 
 ## What Hard looks like {#hard}
 
-- Predicted against actual in the same question, often phrased as "by how much did the model overestimate".
-- Interpreting the slope or intercept of a fitted model in context, including recognizing when the intercept means nothing.
-- Choosing between a linear and an exponential model from a table or a description.
+- A predicted difference asked in units the model doesn't use: square feet when x counts hundreds of square feet, dollars a month when y is thousands of dollars a year (see [a slope in other units](#slope-in-other-units)).
+- One point removed from a scatterplot and a question about how the new line of best fit compares: its slope, and its value at an end or at x = 0 (see [removing an outlier](#removing-an-outlier)).
+- An exponential model and the percent change over several units of x, which compounds (see [exponential fits over several units](#exponential-over-several-units)).
 
-> **Example.** A model predicts y = 2.1x + 14. For one data point,
-> x = 10 and the actual y is 31. By how much does the model overestimate or
-> underestimate this point?
+> **Example.** For a set of stores, a line of best fit is y = 1.5x + 30,
+> where y is the predicted electricity use in a year, in thousands of
+> kilowatt-hours, and x is the floor area in thousands of square feet. Two
+> stores differ in floor area by 2,000 square feet. How much more
+> electricity is the larger one predicted to use per month?
 >
-> Predicted: 2.1(10) + 14 = 35. Actual minus predicted: 31 − 35 = −4.
+> 2,000 square feet is 2 thousand square feet, so the yearly prediction
+> differs by 1.5 × 2 = 3 thousand kilowatt-hours, or 3,000.
 >
-> The model overestimates this point by 4.
+> Per month: 3,000 ÷ 12 = 250 kilowatt-hours.

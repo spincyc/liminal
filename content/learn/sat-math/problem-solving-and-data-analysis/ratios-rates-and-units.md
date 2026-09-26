@@ -13,8 +13,9 @@ quantity in different units. This skill is part of Problem-Solving and Data
 Analysis, {{fact:sat-math-psda}} of the Math section. The math is
 arithmetic. The points are lost to setup: a rate turned upside down, a
 part-to-part ratio read as part-to-whole, or an area converted with a length
-factor. Hard questions chain two or three conversions or hide a derived unit
-such as people per square kilometer.
+factor. Hard questions ask for the speed one part of a trip needs to reach
+an overall average, combine two workers' rates, or go from a mass and a
+density to a length.
 
 ## Unit rates {#unit-rates}
 
@@ -115,13 +116,26 @@ foot = 12³ = 1,728 cubic inches.
 Derived units combine two units: kilowatt-hours are power times time,
 people per square kilometer are a count divided by an area. A town of 12,000
 people on 15 square kilometers has a density of 12,000 ÷ 15 = 800 people per
-square kilometer.
+square kilometer. The density of a material works the same way: mass per
+unit of volume, so mass = density × volume (see
+[density in area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#density)).
 
 ## What Hard looks like {#hard}
 
-- Two or three conversions in a row, with a rate in the middle.
-- A derived unit where you must decide what is divided by what.
-- A proportion hidden in a context with extra numbers.
+- The speed one part of a trip must have for a given overall average. The average fixes the total time (total distance ÷ average speed); subtract the known part's time, then divide the remaining distance by the time left.
+- Two workers or machines sharing a job. Turn each time into a rate (the fraction of the job per hour), add the rates, and divide the work left by the combined rate.
+- A solid's size from its mass and density: volume = mass ÷ density in matching units, then a cube's edge is the cube root of its volume. A cubic meter is 100³ cubic centimeters, not 100.
+
+> **Example.** A cyclist rides 30 miles at 15 miles per hour. How fast must
+> she ride the next 30 miles to average 20 miles per hour over all 60?
+>
+> An average of 20 over 60 miles means 60 ÷ 20 = 3 hours in all.
+>
+> The first 30 miles took 30 ÷ 15 = 2 hours, so 1 hour is left for 30
+> miles: 30 miles per hour.
+>
+> The trap is 25, the speed that averages with 15 to make 20. It ignores
+> that she spends more time at the slower speed.
 
 > **Example.** Fabric costs $14 per square yard. What does a rectangular
 > piece 6 feet by 9 feet cost?

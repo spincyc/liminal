@@ -12,8 +12,9 @@ heights, daily rainfall. Questions ask for the center (mean, median), the
 spread (range, interquartile range, standard deviation) and the shape, read
 from lists, frequency tables, dot plots, histograms and box plots. The skill
 is part of Problem-Solving and Data Analysis, {{fact:sat-math-psda}} of the
-Math section. Hard questions ask how a change to the data moves each
-measure, or give a display from which one measure can't be found at all.
+Math section. Hard questions combine groups of different sizes, ask how a
+change to the data moves each measure, or ask which medians an unknown value
+allows.
 
 ## Mean and median {#mean-and-median}
 
@@ -58,6 +59,56 @@ median.
 > New data 4, 5, 5, 6: mean 20/4 = 5, median (5 + 5)/2 = 5.
 >
 > Removing the outlier lowered the mean by 5 and left the median unchanged.
+
+### Combining groups {#combining-groups}
+
+The means of two groups of different sizes can't be averaged. Turn each mean
+into a total (mean × size), add the totals, and divide by the combined size.
+
+> **Example.** In one class, 10 students have a mean score of 72. In another,
+> 15 students have a mean of 82. What is the mean of all 25?
+>
+> Totals: 10 × 72 = 720 and 15 × 82 = 1,230. Combined: 1,950.
+>
+> Mean: 1,950 ÷ 25 = 78, not 77, the average of the two means.
+
+The combined mean always lies between the group means, closer to the larger
+group. The distances are in the inverse ratio of the sizes: here 78 is 6
+from 72 and 4 from 82, and 6 : 4 is 15 : 10. That shortcut finds a missing
+group size quickly.
+
+> **Fails when.** Some people are in both groups, so a total would count them
+> twice, or you are given medians. Medians of groups can't be combined this
+> way at all.
+
+The same idea runs backward. If 10 values have a mean of 50 and adding 5
+more makes the mean of all 15 equal 46, the 5 added values total
+15 × 46 − 10 × 50 = 690 − 500 = 190, a mean of 38.
+
+### Which values could be the median {#possible-medians}
+
+When one value, x, is unknown, list the known values in order and see where
+the middle position falls. However large or small x is, it can push the
+middle only one place.
+
+> **Example.** The data are 12, 5, 9, 20, x, 15 and 7. Which values could the
+> median be?
+>
+> In order, the known values are 5, 7, 9, 12, 15, 20. With x there are 7
+> values, so the median is the 4th.
+>
+> If x ≤ 9, the 4th value is 9. If x ≥ 12, it is 12. If x is between 9 and
+> 12, the median is x itself.
+>
+> So the median can be anything from 9 to 12, and nothing else: not 8, and
+> not 15, whatever x is.
+
+With an even count, the median is the mean of two middle values, so it can
+range between two half-way points instead.
+
+> **Fails when.** More than one value is unknown, or x stands for several
+> equal values (a count in a frequency table). Then x can push the middle
+> more than one place; count positions again.
 
 ## Spread {#spread}
 
@@ -133,13 +184,18 @@ the total.
 
 ## What Hard looks like {#hard}
 
-- A change to the data (add a value, remove an outlier, shift every value), and you must say which measures change and which stay the same.
-- A display from which a measure can't be found, with a choice that pretends it can.
-- A mean worked backward: the missing value that makes a mean come out to a target.
+- Groups of different sizes with different means: a combined mean, a missing group's mean, or a missing group's size. Work with totals (see [combining groups](#combining-groups)).
+- A change to the data, such as adding a value equal to the mean, and a question about which statement is true. Each measure depends on something different: the mean and standard deviation on every value, the median on the middle position, the range on the two extremes.
+- A list with one unknown value and a question about which medians are possible (see [which values could be the median](#possible-medians)).
 
-> **Example.** A student's first four test scores are 82, 90, 75 and 88. What
-> score on the fifth test makes the mean of all five exactly 85?
+> **Example.** The data are 2, 4, 6, 8 and 20. A sixth value, equal to the
+> mean, is added. What happens to the mean, the median, the range and the
+> standard deviation?
 >
-> Needed sum: 5 × 85 = 425. Current sum: 82 + 90 + 75 + 88 = 335.
+> The mean is 40 ÷ 5 = 8, so 8 is added: 2, 4, 6, 8, 8, 20.
 >
-> The fifth score must be 425 − 335 = 90.
+> Mean: 48 ÷ 6 = 8, unchanged. Median: from 6 to (6 + 8)/2 = 7. Range: still
+> 20 − 2 = 18.
+>
+> Standard deviation: it decreases. The new value is 0 from the mean, so it
+> adds nothing to the spread while making the list longer.

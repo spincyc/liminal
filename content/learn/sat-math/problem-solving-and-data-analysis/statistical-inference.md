@@ -12,8 +12,9 @@ which group, with how much uncertainty, and whether one thing causes
 another. There is little calculation. The work is reading the study's
 design carefully and refusing any conclusion it doesn't support. The skill
 belongs to Problem-Solving and Data Analysis, {{fact:sat-math-psda}} of the
-Math section. Hard questions offer four reasonable-sounding conclusions of
-which only one respects both the sampling and the assignment.
+Math section. Hard questions compare two estimates that each carry a margin of
+error, ask what an interval for a mean does and doesn't describe, or combine
+samples drawn from groups of different sizes.
 
 ## Samples and populations {#samples-and-populations}
 
@@ -129,6 +130,27 @@ A study can have both, one or neither. Check each separately.
 
 ## What Hard looks like {#hard}
 
-- Four conclusions that differ only in scope ("these students", "this school", "all students") or strength ("caused", "is associated with").
-- A study with random assignment but no random selection, or the reverse, where you must apply exactly the right half of the table.
-- A margin-of-error question asking what would shrink the margin (a larger random sample) or what the interval means.
+- Two estimates, each with a margin of error. Turn each into a range of plausible values. If the ranges overlap, equal population values are plausible, however far apart the estimates look; if they don't, a difference is likely but never certain.
+- What a margin of error for a mean describes: plausible values of the population mean, not of individual values, and only for the population that was sampled. A total is the population size times the mean, so the whole interval scales with it (see [margin of error](#margin-of-error)).
+- Samples taken separately from groups of different sizes. Estimate each group from its own sample and add; pooling the samples weights the groups wrongly (see [samples and populations](#samples-and-populations)).
+
+> **Example.** In town A, a random sample estimates that 46% of adults
+> support a new park, with a margin of error of 4 percentage points. In
+> town B, a random sample gives 53%, also with a margin of 4. Do the data
+> show that support is higher in town B?
+>
+> Town A's plausible values run from 42% to 50%; town B's run from 49% to
+> 57%.
+>
+> The ranges overlap (49% to 50%), so equal support in the two towns is
+> still plausible. The data don't establish a difference, even though 53 is
+> 7 points above 46.
+
+> **Example.** A random sample of a city's 1,000 bus drivers gives a mean
+> commute of 24 minutes, with a margin of error of 3 minutes. What is a
+> plausible range for the total commuting time of all 1,000 drivers?
+>
+> The population mean is plausibly between 21 and 27 minutes.
+>
+> The total is 1,000 times the mean: plausibly between 21,000 and 27,000
+> minutes.
