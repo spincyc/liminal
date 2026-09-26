@@ -146,6 +146,37 @@ total.
 > about without algebra. If 0 guests should cost $150, the equation must
 > give C = 150 at g = 0.
 
+### Whole-number solutions {#whole-number-solutions}
+
+When x and y count things, only whole-number points on the line count. To
+list them all for ax + by = c:
+
+1. Divide the equation by any factor that a, b and c share.
+2. Find one solution: try x = 0, 1, 2, ... (or y) until the other variable comes out whole.
+3. Step from it: add the new y-coefficient to x and take the new x-coefficient from y, or the reverse. No smaller step stays on whole numbers.
+4. Keep stepping both ways until a count would drop below what is allowed: 0 if "none" is allowed, 1 if the question says "at least one of each".
+
+> **Example.** A bakery packs an order of exactly 96 muffins into boxes of 6
+> and boxes of 8, filling every box. How many combinations of box counts
+> are possible if at least one box of each size is used? What if one size
+> may be left out?
+>
+> Let x be the boxes of 6 and y the boxes of 8: 6x + 8y = 96. Divide by 2:
+> 3x + 4y = 48.
+>
+> One solution: x = 0 gives y = 12. The step is 4 in x and 3 in y: (0, 12),
+> (4, 9), (8, 6), (12, 3), (16, 0).
+>
+> With at least one of each, (0, 12) and (16, 0) are out: 3 combinations.
+> With one size allowed to be missing: 5.
+>
+> Check (8, 6): 6(8) + 8(6) = 48 + 48 = 96.
+
+> **Trap.** Stepping by the original coefficients. From 6x + 8y, a step of
+> 8 in x and 6 in y skips every other solution, (4, 9) and (12, 3) here.
+> Divide out the common factor first. And count both ends: from x = 4 to
+> x = 12 in steps of 4 is 3 values, not 8 ÷ 4 = 2.
+
 ### A line from its intercepts {#line-from-intercepts}
 
 Call the intercepts (a, 0) and (0, b). Two facts turn a condition on them
@@ -184,3 +215,4 @@ Hard questions in this skill test the line itself rather than a story:
 - A point (s, t) on a line such as 2x + 7y = 11 and a question about another point on it. Use Δy = m · Δx; the start and the constant drop out (see [moving along a line](#moving-along-a-line)).
 - A graphed line moved up, down, left or right, and a question about its new intercept or equation. Write the moved equation before setting a variable to 0 (see [translating a line](#translating-a-line)).
 - A line known only through its intercepts: a slope and a sum of intercepts, a ratio of intercepts and a point, or intercepts written with a constant k (see [a line from its intercepts](#line-from-intercepts)).
+- A story whose two counts must be whole numbers: how many combinations reach an exact total, or the greatest or least possible count. Step from one solution, and read whether "none" of one kind is allowed (see [whole-number solutions](#whole-number-solutions)).

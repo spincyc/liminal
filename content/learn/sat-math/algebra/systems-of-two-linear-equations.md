@@ -150,11 +150,47 @@ y-coordinate says what the shared value is.
 > much does each plan cost when they are equal", the answer is 45, not 300.
 > Circle what is asked before you solve.
 
+### Where the crossing lands {#crossing-region}
+
+A line y = kx + q passes through (0, q) whatever k is, so changing k turns
+it about that point. When a question asks which k puts the crossing with a
+fixed line in a given quadrant:
+
+1. Find the part of the fixed line inside that quadrant, using its intercepts.
+2. Turn the line about (0, q) from one end of that part to the other. The slopes at the two ends bound k.
+3. Leave out an end on an axis, since a strict inequality such as b < 0 excludes it, and a slope equal to the fixed line's, since parallel lines never meet. An end on the y-axis makes the turning line vertical, so k has no limit on that side.
+
+> **Example.** In the xy-plane, the lines y = 2x + 4 and y = kx − 2, where
+> k is a constant, intersect at (a, b), where a < 0 and b < 0. What are the
+> possible values of k?
+>
+> The fixed line crosses the axes at (−2, 0) and (0, 4). Its part with
+> a < 0 and b < 0 is everything beyond (−2, 0), heading down and left.
+>
+> From (0, −2), the line to (−2, 0) has slope (0 − (−2))/(−2 − 0) = −1.
+> Farther out along the fixed line, the slope approaches the fixed line's
+> own slope, 2, which it never reaches.
+>
+> So −1 < k < 2. Check k = 1: 2x + 4 = x − 2 gives x = −6 and y = −8, both
+> negative.
+>
+> By algebra: 2x + 4 = kx − 2 gives x = 6/(k − 2). Then a < 0 needs k < 2,
+> and b = 2x + 4 < 0 needs x < −2, which gives k > −1.
+
+> **Trap.** Including an end. At k = −1 the lines meet at (−2, 0), where
+> b = 0, not less than 0; at k = 2 they are parallel. The greatest integer k
+> here is 1, not 2.
+
+> **Fails when.** k isn't simply the slope. In kx + y = 3 the slope is −k:
+> rewrite it as y = −kx + 3 first. And y = kx − k = k(x − 1) turns about
+> (1, 0), not about a point on the y-axis.
+
 ## What Hard looks like {#hard}
 
 - Two unknown constants: a known solution to substitute, or a condition (no solution, infinitely many) that fixes a multiple between the equations (see [two unknown constants](#two-unknown-constants)).
 - Two graphed lines that cross between grid points. The graph gives only an estimate: read each line's equation from two grid points it passes through, then solve the system exactly.
 - A mixture or blend: one equation counts the amounts and the other counts what they contain (salt, copper, value). When something is added, the total changes too.
+- A line y = kx + q and a fixed line whose crossing must land in a given quadrant: which k could work, or the greatest or least integer k. The line turns about (0, q), and the ends of the range are left out (see [where the crossing lands](#crossing-region)).
 
 > **Example.** A lab mixes a 10% salt solution with a 40% salt solution to
 > make 30 liters of a 20% solution. How many liters of the 10% solution does
