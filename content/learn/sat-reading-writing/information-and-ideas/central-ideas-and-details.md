@@ -114,6 +114,61 @@ same: find the turn and choose the statement that covers the whole text.
 > needs. D invents a complaint about the price, which the text calls fair.
 > C is correct.
 
+### Main idea in a dense argument {#dense-argument}
+
+Academic texts pack a whole argument into three or four long sentences.
+Before the choices, label each sentence with its move. Each move also makes
+a typical wrong choice:
+
+| Move | Signals | As a wrong choice |
+| --- | --- | --- |
+| a view the author reports | "is often described", "many assume", "is commonly said" | the view the author argues against |
+| a concession | "the concern is not baseless", "the objection has force" | a point granted on the way |
+| evidence or a case | a study, a survey, one named example | the support, offered as the point |
+| the author's conclusion | "suggests", "therefore", "must", "only" | the conclusion pushed further than the text goes |
+
+The main idea is the author's conclusion at its own strength: it keeps the
+author's limits ("in general", "not by itself") and adds none of its own.
+
+> **Example.** Read the text and answer the question.
+>
+> Museums that return artifacts to the communities they were taken from are
+> often described as surrendering objects to places that cannot preserve
+> them. The concern is not baseless: some returned textiles have faded in
+> unheated storerooms. Yet a survey of forty returned collections by the
+> conservator Aiko Tanemura found that most were kept at least as well as
+> they had been in the museums, often by keepers trained in methods older
+> than the museums themselves. The risk of damage, the survey suggests,
+> depends on particular conditions and is not a reason to refuse returns in
+> general.
+>
+> Which choice best states the main idea of the text?
+>
+> A) Returned artifacts are likely to be damaged, since the communities that
+> receive them cannot preserve them.
+>
+> B) A survey of forty returned collections found that most were kept at
+> least as well as they had been in museums.
+>
+> C) Museums should return all of their artifacts, since communities
+> preserve them better than museums do.
+>
+> D) The risk that returned artifacts will be damaged depends on particular
+> conditions and does not justify refusing returns in general.
+>
+> Moves: reported view / concession / evidence (the survey) / conclusion
+> ("the survey suggests").
+>
+> A is the reported view the author argues against. B is the evidence, the
+> support for the point rather than the point. C pushes the conclusion too
+> far: the text says the risk is no reason to refuse returns in general, not
+> that every artifact should go back or that communities do better. D
+> states the conclusion at the text's strength. D is correct.
+
+> **Trap.** The concession. "Some returned textiles have faded" is true in
+> the text, but the author grants it only to answer it; a choice built on it
+> gets the author's position backward.
+
 ## Supporting detail {#supporting-detail}
 
 Typical stems: "According to the text, what is true about ...?" and "Based on
@@ -153,11 +208,51 @@ the text, why did the researchers ...?"
 > what it describes. Check that the words mean the same thing in the choice as
 > they do in the text.
 
+### What a researcher found, and what she concluded {#finding-or-conclusion}
+
+An academic text often holds three things side by side: a common view, what
+a researcher's evidence showed, and the conclusion she draws from it, with
+its limits. Match the question's verb:
+
+- "What did the analysis show?" or "What did she find in the records?" asks for the evidence itself, as specific as the text.
+- "What does she claim?" or "What does she argue?" asks for her conclusion, with every hedge kept ("much of", "cannot establish", "only").
+- Neither question is answered by the common view the text reports, or by a choice that drops a limit the researcher states.
+
+> **Example.** Read the text and answer the question.
+>
+> Many gardeners believe that used coffee grounds make soil more acidic.
+> The soil scientist Lerato Mbatha tested the belief in forty garden beds,
+> adding grounds to half of them for two years. The treated beds became no
+> more acidic than the others, but they held noticeably more water after
+> rain. Mbatha notes that all forty beds were on clay soil, and she says the
+> effect on sandy soil remains untested.
+>
+> According to the text, what did Mbatha's test show?
+>
+> A) Coffee grounds make garden soil more acidic.
+>
+> B) Beds with coffee grounds held more water after rain and became no more
+> acidic than the other beds.
+>
+> C) Coffee grounds help every kind of garden soil hold water.
+>
+> D) Coffee grounds make sandy soil hold more water after rain.
+>
+> A is the gardeners' belief, which the test contradicts. C drops her limit:
+> she tested clay soil only. D is exactly what she says is untested. B
+> restates the result for the beds she tested. B is correct.
+
+> **Trap.** A reasonable extension. "Grounds help soil hold water" sounds
+> like a fair summary, but the text keeps it to clay soil. A choice broader
+> than the researcher's own words goes past what she found.
+
 ## What Hard looks like {#hard}
 
 - The text's main point arrives late, after a concession, and three choices describe the concession accurately.
 - The claim is hedged ("may", "in some populations"), and the wrong choices drop the hedge or widen the scope.
 - A literary text where the central idea is a character's changing attitude, and choices overstate the emotion.
+- A dense academic argument whose wrong choices are the view the author reports, a step or the evidence, and the conclusion pushed a step too far (see [main idea in a dense argument](#dense-argument)).
+- A question about what a researcher found, with choices that give the view she tests, her conclusion instead of her evidence, or her finding without its limit (see [what a researcher found](#finding-or-conclusion)).
 
 Most wrong answers in this skill are one of: a detail offered as the main
 idea, the setup offered as the conclusion, a claim stated more strongly than

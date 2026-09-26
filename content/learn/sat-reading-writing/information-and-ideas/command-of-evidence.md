@@ -123,6 +123,59 @@ the turn.
 > town buys the warm bread and never asks whose hands made it. C is
 > correct.
 
+### A two-part claim in a novel or play {#two-part-claim-excerpt}
+
+When the claim has two parts and every quotation comes from the excerpt,
+check each quotation against each part separately and mark it: part 1, part
+2, both or neither. Only "both" is correct. The one-part choices are often
+the most vivid lines in the text; vividness doesn't count.
+
+In a play, one line can do both jobs: the words keep up a front while a
+stage direction, or the next sentence, gives the speaker away.
+
+> **Example.** Read the text and answer the question.
+>
+> The following text is from an original play.
+>
+> HECTOR: Sell the boat? Fine. I haven't taken her out in years.
+>
+> LUZ: The buyer is coming on Saturday.
+>
+> HECTOR: The sooner the better. (He rests a hand on the boat's rail and
+> leaves it there.)
+>
+> LUZ: He wants to know if she's seaworthy. You rebuilt the engine last
+> spring.
+>
+> HECTOR: Tell him the engine's no good. Tell him she leaks.
+>
+> In the play, Hector claims to be glad to sell the boat while showing that
+> he doesn't want to let it go. Which quotation from the play most
+> effectively illustrates the claim?
+>
+> A) "Sell the boat? Fine. I haven't taken her out in years."
+>
+> B) "He wants to know if she's seaworthy. You rebuilt the engine last
+> spring."
+>
+> C) "The sooner the better. (He rests a hand on the boat's rail and leaves
+> it there.)"
+>
+> D) "Tell him the engine's no good. Tell him she leaks."
+>
+> Part 1: he claims to be glad. Part 2: he shows he doesn't want to let it
+> go.
+>
+> A shows only part 1. D is the most striking sign of part 2, running the
+> boat down to put the buyer off, but nothing in it claims he is glad. B is
+> Luz's line and shows neither. In C, "The sooner the better" claims
+> eagerness while the hand he leaves on the rail shows attachment. C is
+> correct.
+
+> **Trap.** The most dramatic line, or the one whose words echo the claim
+> ("Fine", "glad"). Either one usually shows a single part. Ask what each
+> line shows, part by part, and keep the one that shows both.
+
 ## Quantitative evidence {#quantitative-evidence}
 
 Stem: "Which choice most effectively uses data from the table to support
@@ -181,9 +234,57 @@ Comparison words are precise, and choices exploit the differences:
 > vertical axis on the right of a graph, or missing a units label such as "in
 > thousands". Each produces a choice that looks accurate and isn't.
 
+### A rate against a count {#rate-versus-count}
+
+Some claims set a relative number against an absolute one: "a larger share
+... even though ... more", or "grew by a larger percentage ... even though
+... grew by more". The supporting choice gives both numbers for both groups
+the claim names:
+
+- A rate needs the part and the whole: 36 late departures out of 400 trips, not just 36.
+- A percent change needs the start and the end, over exactly the years the claim names.
+
+The table shows trips and late departures on four ferry routes last year.
+
+| Route | Trips | Late departures |
+| --- | --- | --- |
+| Harbor | 1,200 | 48 |
+| Island | 400 | 36 |
+| Bay | 900 | 45 |
+| Point | 600 | 42 |
+
+> **Example.** Use the table above. An analyst claims that late departures
+> made up a larger share of trips on the Island route than on the Harbor
+> route, even though the Harbor route had more late departures. Which
+> choice most effectively uses data from the table to support the claim?
+>
+> A) The Harbor route made 1,200 trips, three times as many as the Island
+> route.
+>
+> B) The Harbor route had 48 late departures, more than any other route.
+>
+> C) The Island route had 36 late departures in 400 trips, while the Harbor
+> route had 48 in 1,200.
+>
+> D) The Point route had 42 late departures in 600 trips, while the Harbor
+> route had 48 in 1,200.
+>
+> Island: 36/400 = 9 per 100 trips. Harbor: 48/1,200 = 4 per 100 trips.
+>
+> A gives sizes without counts, so no rate. B gives only the count, the
+> "even though" half. D compares the wrong pair. C gives both numbers for
+> both named routes: fewer late departures but a larger share. C is
+> correct.
+
+> **Trap.** The right pair in the wrong years. For a claim about 2010 to
+> 2020, a choice covering 2010 to 2015 is accurate and still doesn't
+> support it: over part of the period, the other group may have grown
+> faster.
+
 ## What Hard looks like {#hard}
 
-- A two-part claim where each wrong choice supports one part.
+- A two-part claim where each wrong choice supports one part, often about a character in a novel or play, where the most vivid line shows only one part (see [a two-part claim in a novel or play](#two-part-claim-excerpt)).
 - A display with several series, where the correct choice compares the right two.
 - A claim about a trend or a percentage, with a choice that describes a single value correctly.
+- A claim that sets a rate or a percent change against a count or an amount ("even though"). Wrong choices give sizes without counts, the wrong pair, or the right pair over the wrong years (see [a rate against a count](#rate-versus-count)).
 - A "which finding would weaken" stem, where you must reverse your usual question.
