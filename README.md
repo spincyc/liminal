@@ -8,8 +8,8 @@ Liminal is a study tool as well as a question bank: it teaches each SAT skill,
 drills it, tests it the way the digital SAT does, and brings back what you
 missed until you can do it.
 
-SAT questions are generated fresh from question templates: 172 for SAT Math and
-110 for SAT Reading and Writing, each a distinct question design with the real
+SAT questions are generated fresh from question templates: 188 for SAT Math and
+120 for SAT Reading and Writing, each a distinct question design with the real
 test's traps built in. ACT sections draw from 575 original items each. Every
 question carries a hint, an explanation, a step-by-step solution, the reliable
 approach, the common trap, and, for multiple choice, why each wrong option is
@@ -17,8 +17,8 @@ wrong.
 
 | Section | Source | Easy / Medium / Hard |
 | --- | --- | --- |
-| SAT Reading and Writing | 110 templates | 34 / 45 / 31 |
-| SAT Math | 172 templates | 44 / 68 / 60 |
+| SAT Reading and Writing | 120 templates | 36 / 51 / 33 |
+| SAT Math | 188 templates | 47 / 86 / 55 |
 | ACT English, Mathematics, Reading, Science, Writing | 575 items each | |
 
 ## Honest practice
