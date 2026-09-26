@@ -14,12 +14,12 @@
 
   window.PRACTICE_ANSWER_SIGNS = {
     version: "2026.1",
-    updated: "2026-09-25",
+    updated: "2026-09-26",
     disclaimer:
       "These are heuristics, not rules. A well-written question can and will " +
       "punish a student who only pattern-matches. Solve first; use a tell to " +
       "break a tie, check your work, or make an educated guess when you are out " +
-      "of time. Never leave a bubble blank — neither the SAT nor the ACT " +
+      "of time. Never leave a question blank — neither the SAT nor the ACT " +
       "penalizes wrong answers.",
 
     // High-level principles that apply to every section of both tests.
@@ -302,7 +302,7 @@
               "Solve for x = 4, but the question asks for x^2. '4' will be sitting " +
               "right there as a wrong choice; the answer is 16.",
             caution:
-              "Re-read the last line of the problem before bubbling. Underline " +
+              "Re-read the last line of the problem before choosing. Underline " +
               "'least,' 'greatest,' 'not,' 'except,' and the exact unknown.",
           },
           {
@@ -762,7 +762,7 @@
               "warning.",
             why:
               "ACT seeds the classic slip results so a careless solver lands on a " +
-              "wrong bubble that feels right.",
+              "wrong choice that feels right.",
             example:
               "Forget to halve the diameter and you'll find that exact wrong area " +
               "sitting among the choices.",

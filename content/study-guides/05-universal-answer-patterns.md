@@ -62,7 +62,7 @@ Neither test penalizes wrong answers. A blank is a guaranteed zero; a guess is
 
 Have a **default letter** picked in advance for pure-panic guessing at the end
 of a section. Which letter doesn't matter — having one saves the two seconds of
-deliberation you don't have. Bubble it and move.
+deliberation you don't have. Pick it and move.
 
 ---
 
