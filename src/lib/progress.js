@@ -16,6 +16,10 @@
 //             template has shown, and the union mask of served templates.
 //   sessions  one summary per finished set.
 //   plan      { testDate?, weeklyQuestions? }.
+//   officialScores  scores the student reported from official tests (a
+//             Bluebook practice test or a real SAT), oldest first:
+//             { id, date, kind, label?, readingWriting?, math?, at }. They
+//             are only ever shown beside practice accuracy, never predicted.
 // v2 (liminal:progress:v2) is migrated on first load and left untouched as a
 // backup.
 (function (root, factory) {
@@ -37,6 +41,7 @@
     sessions: 500,
     scenesPerTemplate: 30,
     servedPerSection: 400,
+    officialScores: 200,
     // What a save falls back to when the quota is hit.
     attemptsWhenFull: 2000,
   };
@@ -108,6 +113,7 @@
       history: {},
       sessions: [],
       plan: {},
+      officialScores: [],
     };
   }
 
@@ -164,6 +170,8 @@
     progress.sessions = (Array.isArray(raw.sessions) ? raw.sessions : [])
       .filter((session) => isObject(session) && typeof session.id === "string");
     progress.plan = isObject(raw.plan) ? Object.assign({}, raw.plan) : {};
+    progress.officialScores = (Array.isArray(raw.officialScores) ? raw.officialScores : [])
+      .filter((score) => isObject(score) && typeof score.id === "string");
     return progress;
   }
 
@@ -317,8 +325,9 @@
   // What another tab stored (`stored`) plus what this tab holds (`local`).
   // Attempts and sessions are append-only, so they are unioned by id; history
   // only grows, so it takes the larger of each value. Marks, the error log's
-  // existing entries, and the plan come from storage: every change to them
-  // is applied to a fresh read, so storage already has this tab's changes.
+  // existing entries, the plan, and official scores come from storage: every
+  // change to them is applied to a fresh read, so storage already has this
+  // tab's changes.
   // A different epoch means the record was cleared since this tab read it,
   // and the clear wins.
   function merge(stored, local) {
@@ -431,6 +440,28 @@
 
   function setPlan(progress, plan) {
     return Object.assign({}, progress, { plan: Object.assign({}, progress.plan, plan) });
+  }
+
+  function byScoreDate(left, right) {
+    return String(left.date).localeCompare(String(right.date)) || (Number(left.at) || 0) - (Number(right.at) || 0);
+  }
+
+  // Adds an official score (LiminalAnalytics.cleanOfficialScore checks it),
+  // replacing one with the same id; the list stays in date order and keeps
+  // the newest LIMITS.officialScores.
+  function addOfficialScore(progress, score) {
+    if (!isObject(score) || typeof score.id !== "string" || !score.id) return progress;
+    const list = (progress.officialScores || []).filter((entry) => entry.id !== score.id)
+      .concat(Object.assign({}, score))
+      .sort(byScoreDate)
+      .slice(-LIMITS.officialScores);
+    return Object.assign({}, progress, { officialScores: list });
+  }
+
+  function removeOfficialScore(progress, id) {
+    const list = progress.officialScores || [];
+    if (!list.some((entry) => entry.id === id)) return progress;
+    return Object.assign({}, progress, { officialScores: list.filter((entry) => entry.id !== id) });
   }
 
   function sectionHistory(history, sectionKey) {
@@ -839,6 +870,8 @@
     tagError,
     recordSession,
     setPlan,
+    addOfficialScore,
+    removeOfficialScore,
     serveTemplates,
     noteScenes,
     serveQuestions,

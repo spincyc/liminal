@@ -594,6 +594,89 @@
     return { plan, errors };
   }
 
+  /* ------------------------------------------------------ official scores */
+
+  // What a student can report from an official test: a Bluebook practice
+  // test or a real SAT, with each section's score on the SAT's scale.
+  const OFFICIAL_KINDS = ["practice", "sat"];
+  const SECTION_SCORE = { min: 200, max: 800, step: 10 };
+  const SCORE_LABEL_MAX = 60;
+  // Each official score sits beside Liminal accuracy over the 28 days that
+  // end on the test day: recent enough to describe the student who sat it.
+  const COMPARISON_DAYS = 28;
+  const OFFICIAL_SECTIONS = { readingWriting: "sat-reading-writing", math: "sat-math" };
+
+  function sectionScore(value) {
+    if (value === undefined || value === null || value === "") return { value: null, ok: true };
+    const number = Number(value);
+    const ok = Number.isInteger(number) && number >= SECTION_SCORE.min && number <= SECTION_SCORE.max &&
+      number % SECTION_SCORE.step === 0;
+    return { value: ok ? number : null, ok };
+  }
+
+  // A score the student typed or a file carried, with only valid values
+  // kept: { score, errors }. `score` is null when anything required is
+  // wrong. Required: a real date (not after `options.now` when given), a
+  // kind, and at least one section score, each 200-800 in steps of 10.
+  // `id` and `at` pass through when they are sound.
+  function cleanOfficialScore(input, options) {
+    const raw = input || {};
+    const settings = options || {};
+    const errors = [];
+    const date = parseDate(raw.date);
+    if (!date) errors.push("date");
+    else if (settings.now !== undefined && date.getTime() > startOfDay(settings.now).getTime()) errors.push("date");
+    if (!OFFICIAL_KINDS.includes(raw.kind)) errors.push("kind");
+    const readingWriting = sectionScore(raw.readingWriting);
+    const math = sectionScore(raw.math);
+    if (!readingWriting.ok) errors.push("readingWriting");
+    if (!math.ok) errors.push("math");
+    if (readingWriting.ok && math.ok && readingWriting.value === null && math.value === null) errors.push("scores");
+    if (errors.length) return { score: null, errors };
+    const score = { date: String(raw.date), kind: raw.kind };
+    const label = typeof raw.label === "string" ? raw.label.trim().replace(/\s+/g, " ").slice(0, SCORE_LABEL_MAX) : "";
+    if (label) score.label = label;
+    if (readingWriting.value !== null) score.readingWriting = readingWriting.value;
+    if (math.value !== null) score.math = math.value;
+    if (typeof raw.id === "string" && raw.id) score.id = raw.id;
+    if (Number.isFinite(Number(raw.at)) && Number(raw.at) > 0) score.at = Number(raw.at);
+    return { score, errors };
+  }
+
+  // Each official score beside the student's Liminal accuracy in each SAT
+  // section over the COMPARISON_DAYS ending on the test day, oldest first:
+  // [{ score, from, to, sections: { readingWriting, math } }], where each
+  // section is { attempted, accuracy, hard: { attempted, accuracy } } from
+  // LiminalProgress.stats. `attempts` should already carry current tiers
+  // (LiminalProgress.withCurrentTemplates). Nothing is predicted: the rows
+  // exist so the student, and later a calibration study, can see whether
+  // practice accuracy tracks official results.
+  function officialComparison(attempts, scores) {
+    return (scores || []).filter((score) => score && parseDate(score.date))
+      .slice()
+      .sort((left, right) => String(left.date).localeCompare(String(right.date)))
+      .map((score) => {
+        const day = parseDate(score.date);
+        const to = new Date(day.getFullYear(), day.getMonth(), day.getDate() + 1).getTime();
+        const from = new Date(day.getFullYear(), day.getMonth(), day.getDate() + 1 - COMPARISON_DAYS).getTime();
+        const inWindow = (attempts || []).filter((attempt) => {
+          const at = Number(attempt && attempt.timestamp) || 0;
+          return at >= from && at < to;
+        });
+        const sections = {};
+        Object.keys(OFFICIAL_SECTIONS).forEach((field) => {
+          const summary = Progress.stats(inWindow.filter((attempt) => sectionOf(attempt) === OFFICIAL_SECTIONS[field]));
+          const hard = summary.byDifficulty.Hard;
+          sections[field] = {
+            attempted: summary.attempted,
+            accuracy: summary.accuracy,
+            hard: { attempted: hard.attempted, accuracy: hard.accuracy },
+          };
+        });
+        return { score, from, to, sections };
+      });
+  }
+
   return {
     TIERS,
     MIN_ATTEMPTS,
@@ -628,5 +711,13 @@
     weekStart,
     weekCount,
     cleanPlan,
+    // official scores
+    OFFICIAL_KINDS,
+    SECTION_SCORE,
+    SCORE_LABEL_MAX,
+    COMPARISON_DAYS,
+    OFFICIAL_SECTIONS,
+    cleanOfficialScore,
+    officialComparison,
   };
 });

@@ -75,7 +75,9 @@ never recorded. Liminal is now built to keep practice honest:
   diagnostic per SAT section, a skill map with practice states (80% on a
   skill's last 20 Medium questions, then Hard), pacing against real-test
   pace, a history of sets with an accuracy trend, a plan with your test date
-  and weekly goal, and the next skill to work on.
+  and weekly goal, and the next skill to work on. Record your official
+  Bluebook practice-test and SAT scores there too: each sits beside your
+  Liminal accuracy in the four weeks before it, and is never converted.
 - **Printable booklets.** SAT booklets are built from templates to the
   digital test's module structure: a full-length test, one section, or one
   module, with an answer sheet, the key and explanations, and a form code

@@ -71,10 +71,12 @@ on the real test. The SAT Math Hard tier explains most of the gap (measured
 1. **Retire the fixed SAT banks.** Practice, tests and booklets no longer use
    them; they remain for old attempt ids, `core.js`'s `sat-full` blueprint and
    the smoke test. Move those off and delete the banks and their generators.
-2. **Calibrate against real results.** Tiers are judged, not measured. Collect
-   (with consent, locally) Liminal accuracy alongside official Bluebook
-   practice-test scores, and check that Hard accuracy predicts the real
-   test's harder module.
+2. **Calibrate against real results.** Tiers are judged, not measured.
+   Progress now records official Bluebook practice-test and SAT scores beside
+   Liminal accuracy over the 28 days before each (2026-09-26), and the
+   progress file carries them. Next: with several students' files, shared
+   with consent, check whether Hard accuracy tracks the official section
+   scores, and re-tier templates where it does not.
 3. **Grow thin cells.** Statistical inference has only two Hard templates;
    several Reading and Writing Hard templates are banks of 10–12 items, so a
    heavy user will meet repeats after many tests. Grow banks and add a

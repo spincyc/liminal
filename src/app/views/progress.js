@@ -3,7 +3,7 @@
 
   // The Progress view: what to study next, told honestly. From the top: the
   // "Start here" diagnostic, the plan (test date, weekly goal, next focus),
-  // the stat cards, the skill map with its practice states, pacing, the
+  // official scores beside recent accuracy (SAT), the stat cards, the skill map with its practice states, pacing, the
   // history of finished sets with a trend chart, and saving, restoring, or
   // clearing the record. Every number comes from LiminalProgress.stats, the
   // one accuracy model (through LiminalAnalytics): the retired fixed SAT
@@ -208,6 +208,59 @@
       return { card, form, dateInput, weekInput, status, countdown, week, focus, review, score };
     })();
 
+    // Scores from official tests, each beside the student's Liminal
+    // accuracy in the weeks before it. Only shown, never predicted.
+    const official = (() => {
+      const { card } = cardWith("official-card", "Official scores");
+      const lede = el("p", "muted",
+        "Record each official practice test you take in Bluebook, and real SAT scores. Each one sits beside your " +
+        `Liminal accuracy in the ${Analytics.COMPARISON_DAYS} days up to the test, so you can see whether practice here ` +
+        "tracks the real test. Liminal never turns accuracy into a score.");
+      const form = el("form", "plan-form official-form");
+      form.noValidate = true;
+      const field = (labelText, input) => {
+        const label = el("label", "field");
+        label.append(el("span", "field-label", labelText), input);
+        return label;
+      };
+      const dateInput = el("input");
+      dateInput.type = "date";
+      dateInput.name = "date";
+      const kindSelect = el("select");
+      kindSelect.name = "kind";
+      [["practice", "Bluebook practice test"], ["sat", "Real SAT"]].forEach(([value, text]) => {
+        const option = el("option", null, text);
+        option.value = value;
+        kindSelect.appendChild(option);
+      });
+      const labelInput = el("input");
+      labelInput.type = "text";
+      labelInput.name = "label";
+      labelInput.maxLength = Analytics.SCORE_LABEL_MAX;
+      labelInput.placeholder = "e.g. Practice Test 4";
+      const scoreInput = (name) => {
+        const input = el("input");
+        input.type = "number";
+        input.name = name;
+        input.min = String(Analytics.SECTION_SCORE.min);
+        input.max = String(Analytics.SECTION_SCORE.max);
+        input.step = String(Analytics.SECTION_SCORE.step);
+        input.inputMode = "numeric";
+        return input;
+      };
+      const rwInput = scoreInput("readingWriting");
+      const mathInput = scoreInput("math");
+      const save = el("button", "button secondary", "Add score");
+      save.type = "submit";
+      form.append(field("Test date", dateInput), field("Test", kindSelect), field("Name (optional)", labelInput),
+        field("Reading and Writing", rwInput), field("Math", mathInput), save);
+      const status = statusLine();
+      const tableWrap = el("div", "table-wrap");
+      const note = el("p", "field-note");
+      card.append(lede, form, status, tableWrap, note);
+      return { card, form, dateInput, kindSelect, labelInput, rwInput, mathInput, status, tableWrap, note };
+    })();
+
     const pacing = (() => {
       const { card } = cardWith("pacing-card", "Pacing");
       const intro = el("p", "muted");
@@ -257,7 +310,7 @@
       return { note, actions, download, restore, input, panel, status };
     })();
 
-    elements.view.querySelector(".page-head").after(loadStatus, start.card, plan.card);
+    elements.view.querySelector(".page-head").after(loadStatus, start.card, plan.card, official.card);
     masteryCard.after(pacing.card, history.card);
     elements.clearNote.after(data.note);
     dangerZone.classList.add("data-zone");
@@ -353,6 +406,7 @@
       renderNotes();
       renderStart();
       renderPlan();
+      renderOfficial();
       populateMapSections();
       renderMap();
       renderPacing();
@@ -570,8 +624,8 @@
         link.href = BLUEBOOK;
         link.target = "_blank";
         link.rel = "noopener";
-        plan.score.append("For a score, take an ", link, ". Liminal reports accuracy only and never estimates " +
-          "a score: its questions are not calibrated against real test results.");
+        plan.score.append("For a score, take an ", link, " and add it under Official scores. Liminal reports " +
+          "accuracy only and never estimates a score: its questions are not calibrated against real test results.");
       }
     }
 
@@ -626,6 +680,126 @@
       }));
       ctx.setStatus(plan.status, result.ok ? "Plan saved." : "The plan could not be saved in this browser.",
         result.ok ? "success" : "error");
+    }
+
+    /* ---------------------------------------------------- official scores */
+
+    const OFFICIAL_KIND_LABELS = { practice: "Bluebook practice test", sat: "Real SAT" };
+    let removeArmed = null;
+    let removeTimer = null;
+
+    function comparisonCell(label, scoreValue, section) {
+      const td = el("td", "num");
+      td.dataset.label = label;
+      td.appendChild(el("strong", null, scoreValue === undefined ? "—" : String(scoreValue)));
+      const practiceText = section.attempted
+        ? `Liminal ${percent(section.accuracy)} of ${ctx.formatNumber(section.attempted)}` +
+          (section.hard.attempted ? `; Hard ${percent(section.hard.accuracy)} of ${ctx.formatNumber(section.hard.attempted)}` : "")
+        : "No Liminal answers";
+      td.appendChild(el("span", "cell-note", practiceText));
+      return td;
+    }
+
+    function renderOfficial() {
+      official.card.classList.toggle("hidden", model.test !== "SAT");
+      if (model.test !== "SAT") return;
+      official.dateInput.max = Analytics.formatDate(new Date());
+      const rows = Analytics.officialComparison(model.attempts, model.progress.officialScores).reverse();
+      if (!rows.length) {
+        official.tableWrap.replaceChildren();
+        official.note.textContent = "No official scores yet.";
+        return;
+      }
+      const table = el("table", "pg-table official-table");
+      table.appendChild(el("caption", "sr-only", "Official scores, newest first, with Liminal accuracy before each"));
+      const head = el("thead");
+      const headRow = el("tr");
+      ["Test date", "Test", "Reading and Writing", "Math", ""].forEach((text) => {
+        const th = el("th", null, text);
+        th.scope = "col";
+        headRow.appendChild(th);
+      });
+      head.appendChild(headRow);
+      const body = el("tbody");
+      rows.forEach((row) => {
+        const { score } = row;
+        const tr = el("tr");
+        const date = el("td", "date", dayLabel(Analytics.parseDate(score.date).getTime()));
+        date.dataset.label = "Test date";
+        const name = el("th");
+        name.scope = "row";
+        name.dataset.label = "Test";
+        name.appendChild(el("span", null, score.label || OFFICIAL_KIND_LABELS[score.kind] || "Official test"));
+        if (score.label) name.appendChild(el("small", "kind-tag", OFFICIAL_KIND_LABELS[score.kind] || ""));
+        const actions = el("td");
+        const remove = el("button", "button secondary", removeArmed === score.id ? "Click again to remove" : "Remove");
+        remove.type = "button";
+        remove.setAttribute("aria-label", removeArmed === score.id
+          ? `Click again to remove the score from ${date.textContent}`
+          : `Remove the score from ${date.textContent}`);
+        remove.addEventListener("click", () => removeOfficial(score.id));
+        actions.appendChild(remove);
+        tr.append(date, name,
+          comparisonCell("Reading and Writing", score.readingWriting, row.sections.readingWriting),
+          comparisonCell("Math", score.math, row.sections.math),
+          actions);
+        body.appendChild(tr);
+      });
+      table.append(head, body);
+      official.tableWrap.replaceChildren(table);
+      official.note.textContent = `Liminal accuracy covers the ${Analytics.COMPARISON_DAYS} days up to each test day, ` +
+        "counts a blank as wrong and a hinted answer as not correct, and is not a score.";
+    }
+
+    function addOfficial(event) {
+      event.preventDefault();
+      const bad = [official.dateInput, official.rwInput, official.mathInput].some((input) => input.validity.badInput);
+      const cleaned = Analytics.cleanOfficialScore({
+        date: official.dateInput.value,
+        kind: official.kindSelect.value,
+        label: official.labelInput.value,
+        readingWriting: official.rwInput.value.trim(),
+        math: official.mathInput.value.trim(),
+      }, { now: Date.now() });
+      if (bad || !cleaned.score) {
+        const errors = cleaned.errors;
+        const { min, max, step } = Analytics.SECTION_SCORE;
+        ctx.setStatus(official.status, errors.includes("date") || official.dateInput.validity.badInput
+          ? "Enter the day you took the test; it cannot be after today."
+          : errors.includes("scores")
+            ? "Enter at least one section score."
+            : `Enter each section score as a number from ${min} to ${max} in steps of ${step}.`, "error");
+        return;
+      }
+      const score = Object.assign(cleaned.score, { id: Progress.newId("o"), at: Date.now() });
+      const result = ctx.update((progress) => Progress.addOfficialScore(progress, score));
+      if (result.ok) {
+        official.form.reset();
+        official.dateInput.focus();
+      }
+      ctx.setStatus(official.status, result.ok ? "Score added." : "The score could not be saved in this browser.",
+        result.ok ? "success" : "error");
+    }
+
+    // A first click arms the button for five seconds; a second removes.
+    function removeOfficial(id) {
+      window.clearTimeout(removeTimer);
+      if (removeArmed !== id) {
+        removeArmed = id;
+        removeTimer = window.setTimeout(() => {
+          removeArmed = null;
+          if (model) renderOfficial();
+        }, 5000);
+        renderOfficial();
+        const again = [...official.tableWrap.querySelectorAll("button")].find((button) => button.textContent.startsWith("Click again"));
+        if (again) again.focus();
+        return;
+      }
+      removeArmed = null;
+      const result = ctx.update((progress) => Progress.removeOfficialScore(progress, id));
+      ctx.setStatus(official.status, result.ok ? "Score removed." : "The change could not be saved in this browser.",
+        result.ok ? "success" : "error");
+      official.dateInput.focus();
     }
 
     /* ---------------------------------------------------------- skill map */
@@ -1259,6 +1433,7 @@
       renderHistoryTable(historyPoints());
     });
     plan.form.addEventListener("submit", savePlan);
+    official.form.addEventListener("submit", addOfficial);
     pacing.expectedButton.addEventListener("click", loadExpected);
     data.download.addEventListener("click", download);
     data.restore.addEventListener("click", () => data.input.click());

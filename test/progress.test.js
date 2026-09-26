@@ -408,3 +408,21 @@ test("scenes seen outside a recorded run are noted without serving anything", ()
   assert.equal(Progress.noteScenes(progress, "sat-math", {}), progress);
   assert.deepEqual(Progress.historyFor(progress, "sat-reading-writing").scenes, { t1: ["harbor"] }, "the input is untouched");
 });
+
+test("official scores stay in date order, replace by id, and follow storage across tabs", () => {
+  const storage = memoryStorage();
+  const first = Progress.createStore(storage);
+  const second = Progress.createStore(storage);
+  first.update((progress) => Progress.addOfficialScore(progress, { id: "b", date: "2026-10-03", kind: "practice", math: 540 }));
+  second.update((progress) => Progress.addOfficialScore(progress, { id: "a", date: "2026-09-12", kind: "sat", math: 500 }));
+  assert.deepEqual(first.refresh().officialScores.map((score) => score.id), ["a", "b"]);
+  first.update((progress) => Progress.addOfficialScore(progress, { id: "b", date: "2026-10-03", kind: "practice", math: 560 }));
+  assert.deepEqual(second.refresh().officialScores.map((score) => [score.id, score.math]), [["a", 500], ["b", 560]]);
+  // A removal in one tab is not brought back by the other's older copy.
+  second.update((progress) => Progress.removeOfficialScore(progress, "a"));
+  first.update((progress) => progress);
+  assert.deepEqual(first.get().officialScores.map((score) => score.id), ["b"]);
+  assert.equal(Progress.addOfficialScore(first.get(), { date: "2026-10-04" }), first.get(), "a score needs an id");
+  assert.deepEqual(Progress.normalize({ version: 3, officialScores: [{ id: "x" }, "junk", { date: "2026-01-01" }] })
+    .officialScores, [{ id: "x" }]);
+});

@@ -48,6 +48,8 @@ function record(fields) {
     sessions: [{ id: "s1", sectionKey: "sat-math", kind: "practice", title: "SAT Math", startedAt: 500,
       finishedAt: 2600, total: 2, correct: 1, hard: { total: 0, correct: 0 }, timeMs: 120000, byDomain: {} }],
     plan: { testDate: "2026-11-07", weeklyQuestions: 120 },
+    officialScores: [{ id: "o1", date: "2026-09-12", kind: "practice", label: "Practice Test 4",
+      readingWriting: 560, math: 510, at: 3000 }],
   }, fields);
 }
 
@@ -61,7 +63,8 @@ test("an export round-trips through the file", () => {
   const parsed = IO.parseImport(file.text);
   assert.equal(parsed.ok, true);
   assert.deepEqual(parsed.progress, Progress.normalize(original));
-  assert.deepEqual(parsed.info.dropped, { attempts: 0, sessions: 0, errorLog: 0, plan: 0 });
+  assert.deepEqual(parsed.info.dropped, { attempts: 0, sessions: 0, errorLog: 0, plan: 0, officialScores: 0 });
+  assert.equal(parsed.info.officialScores, 1);
   assert.equal(parsed.info.source, "export");
   assert.equal(parsed.info.attempts, 2);
   assert.deepEqual(parsed.info.tests, { SAT: 2, ACT: 0 });
@@ -124,6 +127,12 @@ test("entries that do not match the v3 shape are dropped and counted", () => {
     sessions: [{ id: "ok", total: 1, correct: 1 }, { total: 2, correct: 1 }, { id: "bad", total: "2", correct: 1 }],
     errorLog: { good: { reason: "time", at: 1 }, other: { reason: "bored", at: 1 } },
     plan: { testDate: "2026-02-30", weeklyQuestions: 100 },
+    officialScores: [
+      { id: "good", date: "2026-09-01", kind: "sat", math: 500 },
+      { id: "no-date", date: "2026-02-30", kind: "practice", math: 500 },
+      { date: "2026-09-01", kind: "sat", math: 500 },
+      { id: "off-scale", date: "2026-09-01", kind: "sat", math: 505 },
+    ],
   }));
   const result = IO.parseImport(text);
   assert.equal(result.ok, true);
@@ -131,7 +140,8 @@ test("entries that do not match the v3 shape are dropped and counted", () => {
   assert.deepEqual(result.progress.sessions.map((entry) => entry.id), ["ok"]);
   assert.deepEqual(Object.keys(result.progress.errorLog), ["good"]);
   assert.deepEqual(result.progress.plan, { weeklyQuestions: 100 });
-  assert.deepEqual(result.info.dropped, { attempts: 6, sessions: 2, errorLog: 1, plan: 1 });
+  assert.deepEqual(result.progress.officialScores.map((entry) => entry.id), ["good"]);
+  assert.deepEqual(result.info.dropped, { attempts: 6, sessions: 2, errorLog: 1, plan: 1, officialScores: 3 });
   // Fields added later pass through untouched.
   const extra = IO.parseImport(JSON.stringify(record({ attempts: [attempt("r", { reviewOf: "sat-math:x:1" })] })));
   assert.equal(extra.progress.attempts[0].reviewOf, "sat-math:x:1");
@@ -153,6 +163,7 @@ test("merging a file unions answers and sets, and merging it again changes nothi
     marked: ["sat-math:linear-equation-solve:h1"],
     errorLog: { a2: { reason: "content", at: 9 } },
     plan: { weeklyQuestions: 200 },
+    officialScores: [{ id: "here", date: "2026-09-19", kind: "practice", math: 540 }],
   });
   const imported = IO.parseImport(JSON.stringify(record())).progress;
   const first = IO.mergeImport(current, imported);
@@ -165,11 +176,13 @@ test("merging a file unions answers and sets, and merging it again changes nothi
   assert.equal(merged.errorLog.a2.reason, "content");
   assert.deepEqual(merged.plan, { testDate: "2026-11-07", weeklyQuestions: 200 });
   assert.equal(merged.history["sat-math"].serve, 3);
-  assert.deepEqual(first.added, { attempts: 1, sessions: 1, marked: 1 });
+  // Official scores join by id, in date order.
+  assert.deepEqual(merged.officialScores.map((entry) => entry.id), ["o1", "here"]);
+  assert.deepEqual(first.added, { attempts: 1, sessions: 1, marked: 1, officialScores: 1 });
   assert.equal(first.over, 0);
 
   const again = IO.mergeImport(merged, imported);
-  assert.deepEqual(again.added, { attempts: 0, sessions: 0, marked: 0 });
+  assert.deepEqual(again.added, { attempts: 0, sessions: 0, marked: 0, officialScores: 0 });
   assert.deepEqual(again.progress.attempts, merged.attempts);
 });
 
@@ -184,7 +197,7 @@ test("two browsers' migrated ids that name different answers are both kept", () 
   const merged = IO.mergeImport(current, imported).progress;
   assert.deepEqual(merged.attempts.map((entry) => entry.id), ["v2:0", "v2:0~e-there"]);
   assert.deepEqual(Object.keys(merged.errorLog), ["v2:0~e-there"]);
-  assert.deepEqual(IO.mergeImport(merged, imported).added, { attempts: 0, sessions: 0, marked: 0 });
+  assert.deepEqual(IO.mergeImport(merged, imported).added, { attempts: 0, sessions: 0, marked: 0, officialScores: 0 });
 });
 
 test("a merge beyond what the browser keeps reports how many answers are over", () => {

@@ -320,3 +320,51 @@ test("plan dates are local calendar days and weeks start on Monday", () => {
     { plan: {}, errors: ["testDate", "weeklyQuestions"] });
   assert.deepEqual(Analytics.cleanPlan({ testDate: "", weeklyQuestions: "" }), { plan: {}, errors: [] });
 });
+
+test("an official score keeps only valid values, on the SAT's section scale", () => {
+  const now = new Date(2026, 8, 26, 9).getTime();
+  const clean = Analytics.cleanOfficialScore({
+    date: "2026-09-20", kind: "practice", label: "  Practice   Test 4 ", readingWriting: "", math: "520", id: "x", at: 5,
+  }, { now });
+  assert.deepEqual(clean, {
+    score: { date: "2026-09-20", kind: "practice", label: "Practice Test 4", math: 520, id: "x", at: 5 },
+    errors: [],
+  });
+  assert.deepEqual(Analytics.cleanOfficialScore({ date: "2026-09-27", kind: "sat", math: 500 }, { now }).errors, ["date"],
+    "a test day after today");
+  assert.deepEqual(Analytics.cleanOfficialScore({ date: "2026-09-27", kind: "sat", math: 500 }).errors, [],
+    "without now, any real date");
+  assert.deepEqual(Analytics.cleanOfficialScore({ date: "2026-09-20", kind: "psat", math: 505, readingWriting: 900 }).errors,
+    ["kind", "readingWriting", "math"]);
+  assert.deepEqual(Analytics.cleanOfficialScore({ date: "2026-09-20", kind: "sat" }).errors, ["scores"]);
+  assert.equal(Analytics.cleanOfficialScore({ date: "2026-09-20", kind: "sat", math: 200, label: "x".repeat(99) })
+    .score.label.length, Analytics.SCORE_LABEL_MAX);
+});
+
+test("each official score sits beside accuracy over the 28 days ending on its test day", () => {
+  const day = (month, date, hour) => new Date(2026, month - 1, date, hour).getTime();
+  const math = (fields) => attempt(Object.assign({ sectionKey: "sat-math" }, fields));
+  const rw = (fields) => attempt(Object.assign({ sectionKey: "sat-reading-writing", questionId: "sat-reading-writing:x:1",
+    domain: "Craft and Structure", skill: "Words in Context" }, fields));
+  const attempts = [
+    math({ timestamp: day(8, 23, 20), correct: false }), // 29 days before: outside
+    math({ timestamp: day(8, 24, 8), difficulty: "Hard" }), // first day of the window
+    math({ timestamp: day(9, 20, 23), difficulty: "Hard", correct: false, answered: false }),
+    math({ timestamp: day(9, 20, 10), hinted: true }), // a hinted correct answer is not counted as correct
+    math({ timestamp: day(9, 21, 0), correct: false }), // the day after: outside
+    rw({ timestamp: day(9, 1, 12) }),
+    math({ timestamp: day(9, 2, 12), source: "legacy-bank" }), // the retired banks are left out
+  ];
+  const rows = Analytics.officialComparison(attempts, [
+    { id: "late", date: "2026-10-01", kind: "sat", math: 510 },
+    { id: "early", date: "2026-09-20", kind: "practice", math: 480, readingWriting: 530 },
+    { id: "bad", date: "not a date", kind: "sat", math: 500 },
+  ]);
+  assert.deepEqual(rows.map((row) => row.score.id), ["early", "late"]);
+  const early = rows[0];
+  assert.equal(early.from, day(8, 24, 0));
+  assert.equal(early.to, day(9, 21, 0));
+  assert.deepEqual(early.sections.math, { attempted: 3, accuracy: 1 / 3, hard: { attempted: 2, accuracy: 0.5 } });
+  assert.deepEqual(early.sections.readingWriting, { attempted: 1, accuracy: 1, hard: { attempted: 0, accuracy: null } });
+  assert.equal(rows[1].sections.math.attempted, 3, "the later window starts Sep 4 and reaches Oct 1");
+});

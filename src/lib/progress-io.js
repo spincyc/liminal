@@ -105,7 +105,8 @@
   // safe to merge or store, or { ok: false, error } with a sentence for the
   // student. info: { source: "export" | "record", version, migrated,
   // exportedAt, attempts, sessions, marked, tests: { SAT, ACT }, firstAt,
-  // lastAt, dropped: { attempts, sessions, errorLog, plan } }.
+  // lastAt, officialScores, dropped: { attempts, sessions, errorLog, plan,
+  // officialScores } }.
   function parseImport(text, options) {
     const settings = options || {};
     if (typeof text !== "string" || !text.trim()) return refuse("The file is empty.");
@@ -160,12 +161,18 @@
     });
     // Only a real date and a sensible weekly count survive (Analytics.cleanPlan).
     const plan = Analytics.cleanPlan(isObject(candidate.plan) ? candidate.plan : {});
+    // Official scores keep only what Analytics.cleanOfficialScore accepts,
+    // with an id to merge by.
+    const rawScores = Array.isArray(candidate.officialScores) ? candidate.officialScores : [];
+    const officialScores = rawScores.map((score) => Analytics.cleanOfficialScore(score).score)
+      .filter((score) => score && score.id);
     const progress = Progress.normalize(Object.assign({}, candidate, {
       version: VERSION,
       attempts,
       sessions,
       errorLog,
       plan: plan.plan,
+      officialScores,
     }));
     if (!progress) return refuse(FOREIGN);
     if (candidate.attempts.length && !progress.attempts.length) {
@@ -195,6 +202,7 @@
         attempts: progress.attempts.length,
         sessions: progress.sessions.length,
         marked: progress.marked.length,
+        officialScores: progress.officialScores.length,
         tests,
         firstAt,
         lastAt,
@@ -203,6 +211,7 @@
           sessions: candidate.sessions.length - progress.sessions.length,
           errorLog: droppedTags,
           plan: plan.errors.length,
+          officialScores: rawScores.length - officialScores.length,
         },
       },
     };
@@ -221,11 +230,12 @@
   // value, and where both hold an error tag this browser's wins. Merge
   // treats a different epoch as a clear, so the file takes this browser's
   // epoch first. Beyond merge: marks are unioned (a file's marks are the
-  // student's too), and the plan keeps this browser's values, filling gaps
-  // from the file. An imported attempt whose id this browser already uses
+  // student's too), the plan keeps this browser's values, filling gaps
+  // from the file, and official scores are unioned by id (this browser's
+  // copy wins). An imported attempt whose id this browser already uses
   // for a different answer is kept under "<id>~<file epoch>", so merging
   // the same file twice changes nothing. Returns { progress, added:
-  // { attempts, sessions, marked }, over: attempts beyond what the browser
+  // { attempts, sessions, marked, officialScores }, over: attempts beyond what the browser
   // keeps (LIMITS.attempts; the oldest go first) }.
   function mergeImport(current, imported) {
     const known = new Map(current.attempts.map((attempt) => [attempt.id, attempt]));
@@ -243,9 +253,16 @@
     });
     const merged = Progress.merge(current, Object.assign({}, imported, { attempts, errorLog, epoch: current.epoch }));
     const marked = [...new Set(current.marked.concat(imported.marked || []))];
+    const officialScores = (imported.officialScores || []).reduce(
+      (record, score) => (record.officialScores.some((entry) => entry.id === score.id)
+        ? record
+        : Progress.addOfficialScore(record, score)),
+      { officialScores: current.officialScores || [] },
+    ).officialScores;
     const progress = Object.assign({}, merged, {
       marked,
       plan: Object.assign({}, imported.plan, current.plan),
+      officialScores,
     });
     return {
       progress,
@@ -253,6 +270,7 @@
         attempts: progress.attempts.length - current.attempts.length,
         sessions: progress.sessions.length - current.sessions.length,
         marked: marked.length - current.marked.length,
+        officialScores: officialScores.length - (current.officialScores || []).length,
       },
       over: Math.max(0, progress.attempts.length - Progress.LIMITS.attempts),
     };
