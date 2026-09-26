@@ -360,10 +360,13 @@
 
     function buildModel(test, progress, attempts) {
       const sections = mapSections(test);
-      const rows = Analytics.skillMap(attempts, sections);
+      // Only sections built from templates carry difficulty labels worth
+      // trusting; the fixed ACT banks' Hard differs from Easy by label only.
+      const rows = Analytics.skillMap(attempts, sections, { tiered: practice.usesTemplates });
       const trend = Analytics.sessionTrend(progress.sessions, attempts, (session) => sessionTest(session) === test);
       return {
         test,
+        tiered: sections.some((section) => practice.usesTemplates(section.key)),
         progress,
         attempts,
         sections,
@@ -430,8 +433,9 @@
     }
 
     function renderStats() {
-      const { summary, rows, progress, test } = model;
+      const { summary, rows, progress, test, tiered } = model;
       const hard = summary.byDifficulty.Hard;
+      const untiered = "Difficulty labels here are not verified";
       const missed = Progress.missedIds(progress, { test }).length;
       const marked = Progress.markedIds(progress, { test }).length;
       const states = Analytics.stateCounts(rows);
@@ -441,10 +445,14 @@
         card("Overall accuracy", percent(summary.accuracy), ""),
         // Hard accuracy stands alone: overall accuracy on a mostly Easy and
         // Medium mix is what makes practice look better than the real test.
-        card("Hard accuracy", percent(hard.accuracy),
-          hard.attempted ? `${count(hard.attempted, "Hard question")} counted` : "No Hard questions yet"),
-        card("Skills at the gate", `${states["at-gate"] + states.mastered} / ${rows.length}`,
-          `${states.mastered} mastered`),
+        tiered
+          ? card("Hard accuracy", percent(hard.accuracy),
+            hard.attempted ? `${count(hard.attempted, "Hard question")} counted` : "No Hard questions yet")
+          : card("Hard accuracy", "—", untiered),
+        tiered
+          ? card("Skills at the gate", `${states["at-gate"] + states.mastered} / ${rows.length}`,
+            `${states.mastered} mastered`)
+          : card("Skills practised", `${rows.length - states["not-started"]} / ${rows.length}`, "Accuracy only, no gate"),
         card("Missed / marked", `${ctx.formatNumber(missed)} / ${ctx.formatNumber(marked)}`, "",
           missed || marked ? { href: "#review", text: "Review them" } : null),
       );
@@ -869,9 +877,9 @@
       const cells = [
         skill,
         answered,
-        ["Medium", tierCell(row.medium)],
-        ["Hard", tierCell(row.hard)],
-        [`Gate: last ${Analytics.GATE.window} Medium`, gateCell(row), "gate-cell-wrap"],
+        ["Medium", row.tiered ? tierCell(row.medium) : el("span", "tier-cell", "—")],
+        ["Hard", row.tiered ? tierCell(row.hard) : el("span", "tier-cell", "—")],
+        [`Gate: last ${Analytics.GATE.window} Medium`, row.tiered ? gateCell(row) : el("span", "gate-cell", "No gate"), "gate-cell-wrap"],
         [null, stateBadge(row.state), "state-cell"],
         [null, studyLinks(row), "study-cell"],
       ].map((entry) => {
@@ -893,7 +901,9 @@
         sortKey,
       );
       const { GATE, HARD_BAR, MIN_ATTEMPTS } = Analytics;
-      elements.masteryNote.textContent =
+      const untiered = model.tiered ? "" : "These questions come from fixed banks whose difficulty labels are not " +
+        "verified: Hard differs from Easy by label only. Skills here show accuracy only, with no gate and no Mastered. ";
+      elements.masteryNote.textContent = untiered ||
         `States are practice guidance, not a score. The gate: at least ${GATE.correct} correct of your last ` +
         `${GATE.window} Medium questions in a skill. Mastered: the gate, plus at least ${HARD_BAR.correct} ` +
         `correct of your last ${HARD_BAR.window} Hard questions. Each window must span ${GATE.days} days and ${GATE.templates} ` +
@@ -1155,7 +1165,7 @@
           title,
           cell("Questions", ctx.formatNumber(point.total)),
           accuracyCell(point),
-          cell("Hard", point.hard.attempted ? `${percent(point.hard.accuracy)} of ${point.hard.attempted}` : "—"),
+          cell("Hard", model.tiered && point.hard.attempted ? `${percent(point.hard.accuracy)} of ${point.hard.attempted}` : "—"),
           cell("Time", point.timeMs ? ctx.formatDuration(point.timeMs) : "—"),
         );
         body.appendChild(tr);
@@ -1179,7 +1189,8 @@
         history.chart.appendChild(el("p", "muted", "The trend chart appears after your second finished set."));
         return;
       }
-      [["hard", "Hard accuracy"], ["all", "Accuracy, all questions"]].forEach(([key, text]) => {
+      // Hard is plotted only where difficulty labels can be trusted.
+      [["hard", "Hard accuracy"], ["all", "Accuracy, all questions"]].filter(([key]) => model.tiered || key !== "hard").forEach(([key, text]) => {
         const item = el("li", `legend-${key}`);
         const swatch = el("span", "legend-key");
         swatch.setAttribute("aria-hidden", "true");
@@ -1224,7 +1235,7 @@
 
       const series = [
         { key: "all", list: points.map((point, index) => ({ point, index, value: point.accuracy })).filter((entry) => entry.value !== null) },
-        { key: "hard", list: points.map((point, index) => ({ point, index, value: point.hard.attempted ? point.hard.accuracy : null }))
+        { key: "hard", list: points.map((point, index) => ({ point, index, value: model.tiered && point.hard.attempted ? point.hard.accuracy : null }))
           .filter((entry) => entry.value !== null) },
       ];
       series.forEach(({ key, list }) => {

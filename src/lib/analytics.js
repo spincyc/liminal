@@ -44,13 +44,17 @@
   // calendar days and `templates` question designs, so one sitting of
   // massed drill on one design cannot fill it.
   // Practice states, in the order a skill moves through them.
-  const STATES = ["not-started", "not-enough-data", "building", "at-gate", "mastered"];
+  // "accuracy-only" is the state of every skill with enough answers in a
+  // section whose difficulty labels are not verified (the fixed ACT banks,
+  // where Hard differs from Easy by label only): no gate, no Mastered.
+  const STATES = ["not-started", "not-enough-data", "building", "at-gate", "mastered", "accuracy-only"];
   const STATE_LABELS = {
     "not-started": "Not started",
     "not-enough-data": "Not enough data",
     building: "Building",
     "at-gate": "At the gate",
     mastered: "Mastered",
+    "accuracy-only": "Accuracy only",
   };
   // The "Start here" diagnostic: this many questions at these tiers.
   const DIAGNOSTIC = { count: 20, tiers: ["Medium", "Hard"] };
@@ -137,6 +141,7 @@
   function skillState(row) {
     if (!row.attempted) return "not-started";
     if (row.attempted < MIN_ATTEMPTS) return "not-enough-data";
+    if (row.tiered === false) return "accuracy-only";
     if (!row.gate.met) return "building";
     if (row.hardBar.met) return "mastered";
     return "at-gate";
@@ -173,7 +178,11 @@
   // and HARD_BAR.window Hard first answers, plus `window`, `needed` (correct
   // answers the bar asks for) and `met`. Skills answered but no longer in
   // the catalog follow their section's catalog skills.
-  function skillMap(attempts, sections) {
+  // `options.tiered(sectionKey)` says whether a section's difficulty
+  // labels can be trusted (default: all can); rows of other sections carry
+  // tiered: false and never reach the gate.
+  function skillMap(attempts, sections, options) {
+    const tiered = (options && options.tiered) || (() => true);
     const list = (attempts || []).filter((attempt) => attempt && attempt.skill);
     const all = Progress.stats(list).bySkill;
     const atTier = (tier) => Progress.stats(list.filter((attempt) => attempt.difficulty === tier)).bySkill;
@@ -216,6 +225,7 @@
         gate,
         hardBar,
       };
+      row.tiered = Boolean(tiered(sectionKey));
       row.state = skillState(row);
       rows.push(row);
     }
@@ -251,13 +261,13 @@
   // still short of evidence, least practised first; then skills at the gate,
   // weakest Hard accuracy first; mastered skills last. Catalog order breaks
   // any remaining tie.
-  const NEED_GROUP = { building: 0, "not-started": 1, "not-enough-data": 1, "at-gate": 2, mastered: 3 };
+  const NEED_GROUP = { building: 0, "accuracy-only": 0, "not-started": 1, "not-enough-data": 1, "at-gate": 2, mastered: 3 };
 
   function byNeed(left, right) {
     const group = NEED_GROUP[left.state] - NEED_GROUP[right.state];
     if (group) return group;
     let difference = 0;
-    if (left.state === "building") {
+    if (NEED_GROUP[left.state] === 0) {
       difference = left.accuracy - right.accuracy || right.attempted - left.attempted;
     } else if (NEED_GROUP[left.state] === 1) {
       difference = left.attempted - right.attempted;
@@ -279,7 +289,7 @@
   function nextFocus(rows, options) {
     const keys = options && options.sectionKeys;
     const pool = (rows || []).filter((row) => !keys || keys.includes(row.sectionKey));
-    const weak = pool.filter((row) => row.state === "building").sort(byNeed)[0];
+    const weak = pool.filter((row) => NEED_GROUP[row.state] === 0).sort(byNeed)[0];
     if (weak) return { row: weak, reason: "weakest" };
     const least = pool.slice().sort((left, right) => left.attempted - right.attempted || compareOrder(left, right))[0];
     return least ? { row: least, reason: "least-practised" } : null;

@@ -192,7 +192,7 @@ test("sorting by need puts weak skills with evidence first; the next focus follo
   assert.equal(least.row.skill, "Linear inequalities");
   assert.equal(Analytics.nextFocus(fresh, { sectionKeys: ["sat-reading-writing"] }), null);
   assert.deepEqual(Analytics.stateCounts(rows),
-    { "not-started": 0, "not-enough-data": 1, building: 2, "at-gate": 0, mastered: 0 });
+    { "not-started": 0, "not-enough-data": 1, building: 2, "at-gate": 0, mastered: 0, "accuracy-only": 0 });
 });
 
 test("the diagnostic takes twenty Medium and Hard templates in the real test's domain mix", () => {
@@ -437,4 +437,15 @@ test("a finished test is one point, scored from its modules' answers at their cu
   const points = Analytics.sessionTrend(sessions, attempts);
   assert.deepEqual(points.map((point) => point.id), ["t1", "m9"]);
   assert.deepEqual([points[0].counted, points[0].accuracy, points[0].hard.attempted, points[0].source], [8, 0.5, 4, "attempts"]);
+});
+
+test("skills in sections with unverified difficulty labels show accuracy only", () => {
+  const act = [{ key: "act-english", domains: [{ name: "Conventions", target: 50, skills: { Punctuation: ["commas"] } }] }];
+  const answers = many(40, { sectionKey: "act-english", questionId: "act-english-0001", domain: "Conventions", skill: "Punctuation", source: "bank" })
+    .map((entry, index) => Object.assign(entry, { questionId: `act-english-${String(index).padStart(4, "0")}` }));
+  const rows = Analytics.skillMap(answers, act, { tiered: (key) => key.startsWith("sat-") });
+  assert.deepEqual([rows[0].tiered, rows[0].state], [false, "accuracy-only"]);
+  assert.equal(Analytics.STATE_LABELS["accuracy-only"], "Accuracy only");
+  assert.equal(Analytics.nextFocus(rows).row.skill, "Punctuation");
+  assert.deepEqual([Analytics.skillMap(answers.slice(0, 3), act, { tiered: () => false })[0].state], ["not-enough-data"]);
 });

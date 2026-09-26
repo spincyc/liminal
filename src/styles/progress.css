@@ -276,7 +276,8 @@
   white-space: nowrap;
 }
 
-.state-building {
+.state-building,
+.state-accuracy-only {
   border-color: var(--color-line-strong);
   background: var(--color-soft);
   color: var(--color-ink);

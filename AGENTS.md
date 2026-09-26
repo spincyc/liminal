@@ -164,7 +164,9 @@ For a coherent ACT bank batch:
   mastered adds at least 10 correct of the last 15 Hard answers; both
   windows hold each question's first answer only and must span two days and
   two templates; under 5 answers is not
-  enough data. The windows are long because a student checks them after
+  enough data. Skills in sections whose tiers are not verified (the fixed
+  ACT banks) show accuracy only: no Hard figures, no gate, no Mastered. The
+  windows are long because a student checks them after
   every set, and short windows are met by chance. `npm run check:learn`
   fails unless the SAT Math plan page in Learn states the same bars.
 - `src/lib/modules.js` is a practice approximation of the digital test's
