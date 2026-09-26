@@ -77,9 +77,12 @@ points, and no amount of reading about quadratics will find it.
 
 ### 5. Re-drill spaced
 
-Come back to the same skill 3 and 10 days later. The app's Review view (and
-the **Missed-question review** practice mode) exists for this. Spacing is not optional — it is the difference between
-recognizing a concept and being able to produce it under pressure.
+Bring each missed question back 1, 3, 7 and 21 days apart. The app's Review
+view runs that schedule for you (see
+[Error log and review method](07-error-log-and-review-method.md#spacing-when-to-redo)),
+and the **Missed-question review** practice mode builds a set from your misses.
+Spacing is not optional — it is the difference between recognizing a concept
+and being able to produce it under pressure.
 
 ---
 
@@ -97,11 +100,18 @@ difficulty, so after a few sets you will meet familiar question types in new
 numbers or passages. Do not do easy items to feel good; do them only to build a
 procedure, then move up.
 
-**Difficulty selection rule:** practice at the level where you get roughly
-60-75% correct. Below 50% you are guessing and learning nothing. Above 85% you
-are rehearsing what you already know. This rule fails when a skill is new to
-you: then start at Easy even if you score below 50%, and learn the method from
-its page before judging your accuracy.
+**When to move up:** use the bars the app's Progress view uses. A skill passes
+the gate when you get at least 24 of your last 30 Medium questions in it right
+with no hints; start its Hard questions then. It is mastered when you also get
+at least 10 of your last 15 Hard questions right. Each question counts once, at
+your first answer. The windows are long because a short run is often passed by
+luck; see the
+[mastery gate](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate).
+Until a skill passes, practice it at Easy and Medium, and if you miss most of
+the questions at a level, you are guessing rather than practicing: go back a
+level and relearn the method from the skill's page. This fails when a skill is
+new to you: then start at Easy even if you miss most of them at first, and
+learn the method from its page before judging your accuracy.
 
 ---
 
