@@ -361,9 +361,21 @@
     }
 
     const article = el("article", "learn-article card");
+    // Reading and Writing pages quote poems and period prose in ``` blocks;
+    // those read as text and wrap rather than scroll (learn.css).
+    if (page.kind === "skill" && page.section === "sat-reading-writing") article.classList.add("is-reading");
     article.setAttribute("aria-labelledby", "learnTitle");
     title.id = "learnTitle";
     renderBlocks(article, titleBlock ? blocks.slice(1) : blocks, learn.typesetsMath(page));
+    // Each line of a quoted poem or passage becomes its own line, so a line
+    // that wraps on a narrow screen hangs under itself instead of looking
+    // like the poem's next line.
+    if (article.classList.contains("is-reading")) {
+      article.querySelectorAll(".learn-pre").forEach((pre) => {
+        const lines = pre.textContent.split("\n");
+        pre.replaceChildren(...lines.map((line) => el("span", "learn-pre-line", line || "\u00a0")));
+      });
+    }
     const facts = factsNote(page);
     if (facts) article.append(facts);
     const endPractice = practiceLink(page);

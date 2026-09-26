@@ -232,6 +232,22 @@
   white-space: pre;
 }
 
+/* A poem or period passage on a Reading and Writing page keeps its line
+   breaks but reads as text and wraps, so a phone never scrolls it. */
+.learn-article.is-reading .learn-pre {
+  overflow-x: visible;
+  font-family: inherit;
+  font-size: var(--text-base);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.learn-pre-line {
+  display: block;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+
 /* ---------------------------------------------------------------- callouts */
 
 .callout {
