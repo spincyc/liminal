@@ -133,6 +133,34 @@ complete the squares: x² + y² − 6x + 2y = 6 becomes
 > radius from the grid to check your algebra. See
 > [Desmos for circles](learn:sat/general/desmos#circles).
 
+### The tangent line at a point {#tangent-line}
+
+A tangent line is perpendicular to the radius at the point where it
+touches. In the xy-plane that fixes its slope: find the center, find the
+slope of the radius to the point, and take the negative reciprocal. The line
+then passes through the point of tangency, not the center.
+
+> **Example.** The circle (x + 1)² + (y − 2)² = 25 passes through (3, 5).
+> Find an equation of the line tangent to the circle at (3, 5).
+>
+> Center: (−1, 2). Slope of the radius: (5 − 2)/(3 − (−1)) = 3/4.
+>
+> Tangent slope: the negative reciprocal, −4/3.
+>
+> Through (3, 5): y − 5 = −(4/3)(x − 3), so y = −(4/3)x + 4 + 5 =
+> −(4/3)x + 9.
+>
+> Check: at x = 3, y = −4 + 9 = 5.
+
+> **Trap.** Using the radius's slope, 3/4, or flipping it without changing
+> the sign, 4/3. Either line cuts through the circle. And a line with the
+> right slope through the center is parallel to the tangent, not the
+> tangent.
+
+> **Fails when.** The radius is horizontal or vertical, so it has no
+> negative reciprocal to take. Picture it instead: at (4, 2) on this circle
+> the radius is horizontal, so the tangent is the vertical line x = 4.
+
 ## Radians and the unit circle {#radians-and-the-unit-circle}
 
 A radian measures an angle by arc length: an angle of 1 radian cuts off an
@@ -173,4 +201,5 @@ quadrant: x (cosine) is negative on the left, y (sine) is negative below.
 
 - A radius found from a chord and a height, or from two parallel chords, with the center not given. Use the right triangle from the center to the middle of each chord (see [chords and the center](#chords)).
 - A circle equation in general form, possibly with a common factor to divide out, and a question about a point inside or outside. Complete the squares, then compare squared distances with r².
+- The line tangent to a circle at a given point: its slope, its equation or its y-intercept. The slope is the negative reciprocal of the radius's slope, and the line passes through the point of tangency (see [the tangent line at a point](#tangent-line)).
 - Arcs, sectors and inscribed angles in mixed units. Name the angle first: central or inscribed, degrees or radians. An inscribed angle is half the central angle on the same arc, and s = rθ needs radians.

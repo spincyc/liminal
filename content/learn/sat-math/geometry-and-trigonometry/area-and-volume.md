@@ -89,6 +89,7 @@ not on the reference sheet:
 | Rectangular prism, l × w × h | 2(lw + lh + wh) |
 | Cube with edge s | 6s² |
 | Cylinder, radius r, height h | 2πr² + 2πrh (two circles plus the curved side) |
+| Sphere, radius r | 4πr², which is also πd² |
 
 > **Example.** Find the surface area of a closed box 4 by 3 by 2 inches, and
 > of a closed cylinder with radius 3 and height 5.
@@ -100,6 +101,49 @@ not on the reference sheet:
 
 > **Trap.** An open-top box or a can without a lid is missing one face. Read
 > whether every face is included before adding.
+
+### A box inside a sphere {#box-in-a-sphere}
+
+A box's space diagonal runs through its inside from one corner to the
+opposite corner: d = √(l² + w² + h²). When all eight corners of a box lie
+on a sphere, that diagonal is a diameter of the sphere.
+
+> **Example.** All eight corners of a box 3 by 6 by 6 inches lie on a
+> sphere. What is the surface area of the sphere?
+>
+> Space diagonal: √(3² + 6² + 6²) = √(9 + 36 + 36) = √81 = 9 inches. That is
+> the diameter, so r = 4.5.
+>
+> Surface area: 4π(4.5)² = 4π(20.25) = 81π square inches. (Or πd² = 81π.)
+
+> **Trap.** Taking a face diagonal (√(6² + 6²) ≈ 8.5) or the longest edge as
+> the diameter, or the space diagonal as the radius. The diameter crosses the
+> inside of the box, corner to opposite corner.
+
+### Drilled and glued solids {#drilled-and-glued}
+
+Start from each solid's own surface area, then fix what the change hid or
+exposed:
+
+- Gluing two solids face to face hides two equal patches, one on each solid, each the size of the contact area.
+- Drilling a round hole of radius r straight through a thickness h removes two circles, 2πr², and adds the hole's inside wall, 2πrh.
+
+> **Example.** A block 8 cm by 8 cm by 5 cm has a hole of radius 2 cm
+> drilled straight down through its 5 cm height. What is the surface area of
+> the solid that remains, including the inside of the hole?
+>
+> Block: 2(8 · 8 + 8 · 5 + 8 · 5) = 2(64 + 40 + 40) = 288.
+>
+> The hole removes two circles, 2 · π · 2² = 8π, and adds a wall of
+> 2π · 2 · 5 = 20π.
+>
+> Total: 288 − 8π + 20π = 288 + 12π square centimeters. Drilling removed
+> material but added surface.
+
+> **Trap.** Subtracting one patch when two solids are glued, or a whole face
+> of the larger solid. A cylinder of radius 1 and height 3 glued upright on
+> a 4-by-4-by-4 cube hides its own bottom circle and an equal circle of the
+> cube's top: 96 + 8π − 2π = 96 + 6π.
 
 ## Volume {#volume}
 
@@ -160,6 +204,8 @@ first.
 - A polygon and a circle, one inside the other: a square, a hexagon or an equilateral triangle in a circle, or a circle in a square. Find the shared length first (see [a polygon and a circle](#inscribed-figures)).
 - A region bounded by circles: two circles with one center and a chord of the larger touching the smaller, or equal circles packed in a square. Look for the relationship the figure forces, such as R² − r² from a right triangle, rather than each measure.
 - Similar solids with a given area or volume ratio. Go back to the length ratio first (a square root or a cube root), then forward to the measure asked: lengths scale by k, areas by k², volumes by k³.
+- A box whose corners lie on a sphere: the box's space diagonal is the sphere's diameter (see [a box inside a sphere](#box-in-a-sphere)).
+- The surface area of a drilled or glued solid. A hole removes two openings and adds its inside wall; gluing hides one patch on each solid (see [drilled and glued solids](#drilled-and-glued)).
 
 > **Example.** A cone and a cylinder have the same radius, and the cone's
 > volume equals the cylinder's. The cylinder is 5 inches tall. How tall is
