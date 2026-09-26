@@ -479,3 +479,35 @@
     white-space: normal;
   }
 }
+
+/* The student's own rules: under a returning question, and listed together
+   in the error log. */
+.review-due-rule {
+  grid-column: 1 / -1;
+  color: var(--color-ink);
+  font-size: var(--text-sm);
+  font-style: italic;
+}
+
+.review-rules {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-line);
+}
+
+.review-rules summary {
+  cursor: pointer;
+  font-weight: var(--weight-semibold);
+}
+
+.review-rules-list {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.review-rules-list li {
+  display: grid;
+  gap: 2px;
+}

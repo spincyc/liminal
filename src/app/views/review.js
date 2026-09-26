@@ -637,6 +637,18 @@
       return card;
     }
 
+    // The rules the student wrote for misses of this question (or of fresh
+    // versions of it), newest first, once each.
+    function rulesFor(questionId) {
+      const rules = [];
+      model.missed.forEach((attempt) => {
+        if (Queue.rootOf(attempt) !== questionId) return;
+        const rule = ((model.errorLog[attempt.id] || {}).rule || "").trim();
+        if (rule && !rules.includes(rule)) rules.push(rule);
+      });
+      return rules;
+    }
+
     function dueRow(entry) {
       const mode = Queue.modeOf(entry) === "fresh" ? "a fresh version" : "the same question";
       const overdue = model.schedule.today - entry.dueDay;
@@ -648,11 +660,13 @@
         entry.difficulty,
       ].filter(Boolean);
       const learn = learnLink(entry, true);
+      const rules = rulesFor(entry.questionId);
       return h("li", { className: "review-due-row" }, [
         h("span", { className: "review-due-title", tabindex: "-1", "data-card-heading": true, text: titleText(entry) }),
         h("span", { className: "review-due-facts", text: facts.join(" · ") }),
+        rules.length ? h("span", { className: "review-due-rule", text: `Your rule: ${rules[0]}` }) : null,
         learn,
-      ]);
+      ].filter(Boolean));
     }
 
     function upcomingList() {
@@ -793,7 +807,30 @@
         }));
       nodes.push(h("div", { className: "review-filters" }, selects));
       nodes.push(...contentGapNotes(scoped));
+      const rules = rulesList(scoped);
+      if (rules) nodes.push(rules);
       return nodes;
+    }
+
+    // Every rule the student has written for these misses, newest first,
+    // with its skill: the lessons of the error log in one place.
+    function rulesList(scoped) {
+      const seen = new Set();
+      const items = [];
+      scoped.forEach((attempt) => {
+        const rule = ((model.errorLog[attempt.id] || {}).rule || "").trim();
+        if (!rule || seen.has(rule.toLowerCase())) return;
+        seen.add(rule.toLowerCase());
+        items.push(h("li", {}, [
+          h("span", { className: "review-rule-text", text: rule }),
+          attempt.skill ? h("small", { className: "cell-note", text: attempt.skill }) : null,
+        ].filter(Boolean)));
+      });
+      if (!items.length) return null;
+      return h("details", { className: "review-rules" }, [
+        h("summary", { text: `Your rules (${items.length})` }),
+        h("ul", { className: "review-rules-list" }, items),
+      ]);
     }
 
     function refreshMissedSummary() {
@@ -825,7 +862,8 @@
       });
       start.addEventListener("click", () => startSet(start, status, async () => {
         const wanted = ids.slice(0, MISSED_SET_LIMIT);
-        const questions = await ctx.questionsForIds(wanted);
+        // One question per template, as in every set; the rest come next time.
+        const questions = practice.onePerTemplate(await ctx.questionsForIds(wanted));
         return {
           title: `${model.test} review: missed questions`,
           questions: questions.map((question) => ({ ...question, reviewOf: roots.get(question.id) || question.id })),
@@ -833,7 +871,7 @@
       }));
       const note = ids.length > MISSED_SET_LIMIT
         ? `The ${MISSED_SET_LIMIT} newest questions in this list you have not since answered correctly. `
-        : "The questions in this list you have not since answered correctly. ";
+        : "The questions in this list you have not since answered correctly, one per question design. ";
       return h("div", { className: "review-toolbar" }, [
         start,
         h("p", { className: "muted", text: `${note}Feedback after each question, no timer.` }),
@@ -1073,7 +1111,7 @@
         return {
           title: `${model.test} review: marked questions`,
           questions: matches.length
-            ? core.buildSession(matches, "all", `${Date.now()}-review`, { spreadFamilies: false })
+            ? core.buildSession(practice.onePerTemplate(matches), "all", `${Date.now()}-review`, { spreadFamilies: false })
             : [],
         };
       }));
