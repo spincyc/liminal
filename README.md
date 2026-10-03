@@ -8,7 +8,7 @@ Liminal is a study tool as well as a question bank: it teaches each SAT skill,
 drills it, tests it the way the digital SAT does, and brings back what you
 missed until you can do it.
 
-SAT questions are generated from question templates: 189 for SAT Math and
+SAT questions are generated from question templates: 197 for SAT Math and
 128 for SAT Reading and Writing, covering the catalog's tested skills.
 ACT English, Mathematics, Reading, and Writing draw from 575 original exercise
 variants each. ACT Science has 80 questions in 14 original passage sets. Every
@@ -19,7 +19,7 @@ wrong.
 | Section | Source | Easy / Medium / Hard |
 | --- | --- | --- |
 | SAT Reading and Writing | 128 templates | 35 / 66 / 27 |
-| SAT Math | 189 templates | 47 / 95 / 47 |
+| SAT Math | 197 templates | 48 / 99 / 50 |
 | ACT English, Mathematics, Reading, Writing | 575 exercise variants each | Tiers unverified |
 | ACT Science | 80 questions in 14 passage sets | Tiers unverified |
 
@@ -43,8 +43,8 @@ never recorded. Liminal is now built to keep practice honest:
   after a hint is shown apart, a second answer to a question you have seen
   (including the same content under a new seed or reordered choices) is left out of accuracy, and Hard
   accuracy is reported on its own, beside Hard accuracy on each question
-  design the first time you meet it, which practice on that design cannot
-  raise.
+  design on its first recorded answer, which later practice on that design cannot
+  raise. Earlier offline exposure cannot be inferred from an answer record.
 - **No score estimates.** Accuracy here is not a scaled score. Official
   practice tests in [Bluebook](https://bluebook.collegeboard.org/) are the
   score gauge.

@@ -2265,18 +2265,16 @@
     domain: GEO,
     skill: "Area and volume",
     subskill: "surface area",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Solids inside, joined to, or cut from other solids",
     recognize:
       "Find what the two solids share before computing: a box inside a sphere has the sphere's diameter as its space " +
       "diagonal (√(a² + b² + c²)); joined solids hide the faces where they touch; a hole removes two circles of surface " +
       "but adds the inside wall of the hole.",
-    // Hard: each form turns on a relationship the stem never states (the
-    // space diagonal, the hidden patch where solids touch, the new wall a
-    // hole creates), and the intuitive reading (a face diagonal or an edge
-    // as the diameter; adding whole surface areas; "drilling removes
-    // surface") is offered.
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
+    // Each branch models one geometric relationship, then applies known
+    // formulas. Hidden faces and the space diagonal merit Medium, not a
+    // Hard label for routine numerical surface-area calculations.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
     tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity"],
     build(t) {
       const form = t.pick(["boxInSphere", "boxInSphere", "drilled", "stacked"]);
@@ -2569,10 +2567,131 @@
     },
   };
 
+  // Different corner cuts leave different square bases. Equal box volumes
+  // yield two algebraic sheet sizes, only one of which leaves both bases
+  // positive; the rejected root is offered in both forms.
+  const equalVolumeFoldedBoxes = {
+    id: "equal-volume-folded-boxes",
+    domain: GEO,
+    skill: "Area and volume",
+    subskill: "volume",
+    difficulty: "Hard",
+    title: "Recovering a sheet size from equal box volumes",
+    recognize: "Express each box's base side as the sheet side minus two corner widths. Equal volumes constrain the sheet size, and both bases must have positive side lengths.",
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 2, trap: 1 },
+    tricks: ["context-constraint", "neighbouring-rule", "wrong-quantity"],
+    build(t) {
+      const numeric = t.chance(0.3);
+      const askVolume = t.chance(0.5);
+      const units = t.pick(["centimeters", "inches", "millimeters"]);
+      return retry(() => {
+        // Square-ratio heights keep both algebraic roots exact while the
+        // student still has to infer the bases and select the feasible root.
+        const u = t.int(1, 3);
+        const v = t.int(u + 1, 6);
+        const scale = t.pick([0.5, 1, 1.5, 2]);
+        const a = scale * u * u;
+        const b = scale * v * v;
+        const side = 2 * scale * (u * u + u * v + v * v);
+        const rejectedSide = 2 * scale * (u * u - u * v + v * v);
+        const baseA = side - 2 * a;
+        const baseB = side - 2 * b;
+        const volume = a * baseA * baseA;
+        if (askVolume && volume > 50000) return null;
+        const rejectedVolume = a * (rejectedSide - 2 * a) ** 2;
+        const answer = askVolume ? volume : side;
+        if (numeric && !C.fitsGrid(answer)) return null;
+        const candidates = askVolume ? [
+          [rejectedVolume, `Uses the algebraic sheet side ${num(rejectedSide)}, which is too short for the ${num(b)}-by-${num(b)} corner cuts to leave a positive base.`],
+          [baseA * baseA, "Gives the first box's base area without multiplying by its height."],
+          [baseB * baseB, "Gives the second box's base area without multiplying by its height."],
+          [a * side * side, "Multiplies the first box's height by the original sheet's area instead of the base area left after folding."],
+          [b * side * side, "Multiplies the second box's height by the original sheet's area instead of its smaller base area."],
+          [2 * volume, "Adds the volumes of both boxes instead of finding the volume of one box."],
+          [a * (side - a) ** 2, "Subtracts only one corner width from each base dimension of the first box."],
+          [side * side, "Gives the area of an original sheet rather than the volume of a box."],
+        ] : [
+          [rejectedSide, `Keeps the other algebraic root, even though a sheet side must exceed ${num(2 * b)} for the larger cuts to leave a positive base.`],
+          [baseA, "Gives the first box's base side instead of the original sheet's side."],
+          [baseB, "Gives the second box's base side instead of the original sheet's side."],
+          [2 * (a + b), "Uses each base side only once in the volume equation, as though the bases were not squares."],
+          [side / 2, "Subtracts one corner width from each sheet dimension instead of two when setting up the volume equation."],
+          [2 * side, "Gives the sum of two adjacent sides of a sheet instead of one side."],
+          [4 * side, "Gives the perimeter of a sheet instead of its side length."],
+          [side + 2 * a, "Treats the sheet side already found as the first box's base side and adds two corner widths again."],
+        ];
+        if (collides(answer, candidates)) return null;
+        const balanced = balanceTwins(t, answer,
+          candidates.map(([value, reason]) => [fmt(value), reason]), 1, 0.35);
+        // The infeasible-root lure is always below the key. Occasionally
+        // offer three lower mistakes, so this constraint does not make a
+        // blind guess between the middle two values unusually successful.
+        const lower = balanced.filter(([value]) => value !== null && C.choiceValue(value) < answer);
+        const choices = t.chance(0.2) && lower.length >= 3 ? lower : balanced;
+        const wrong = wrongFor(t, numeric, fmt(answer), choices, { positive: true, keep: 1 });
+        if (!wrong) return null;
+        const sum = 4 * (a + b);
+        const product = 4 * (a * a + a * b + b * b);
+        const volumeEquation = `${a === 1 ? "" : num(a)}(x − ${num(2 * a)})² = ${num(b)}(x − ${num(2 * b)})²`;
+        const lead =
+          `Two identical square sheets are used to make open boxes. A square with side length ${num(a)} ${unitAfter(a, units)} is cut from each corner of the first sheet. ` +
+          `A square with side length ${num(b)} ${unitAfter(b, units)} is cut from each corner of the second sheet. ` +
+          "The remaining sides of each sheet are folded up to form a box with a square base. The two boxes have the same positive volume. The thickness of the sheets is negligible.";
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          stimulus: null,
+          figure: null,
+          stem: `${lead} ${askVolume
+            ? `What is the volume, in cubic ${units}, of either box?`
+            : `What is the side length, in ${units}, of each original sheet?`}`,
+          correct: numeric ? answer : fmt(answer),
+          wrong,
+          estimatedSeconds: askVolume ? 155 : 140,
+          hint: "How do the corner cuts determine a box's height and both dimensions of its base? Which sheet sizes would actually allow both boxes?",
+          explanation:
+            `Let x be the sheet side. The first box has height ${num(a)} and base side x − ${num(2 * a)}; the second has height ${num(b)} and base side x − ${num(2 * b)}. ` +
+            `Equal volumes give ${volumeEquation}. ` +
+            `This simplifies to x² − ${num(sum)}x + ${fmt(product)} = 0, with roots ${num(rejectedSide)} and ${num(side)}. ` +
+            `Since x must exceed ${num(2 * b)}, x = ${num(side)}.` +
+            (askVolume ? ` Either box therefore has volume ${num(a)}(${num(baseA)})² = ${fmt(volume)} cubic ${units}.` : ""),
+          steps: [
+            `Subtract the cut width at both ends: the base sides are x − ${num(2 * a)} and x − ${num(2 * b)}. The box heights are ${num(a)} and ${num(b)}.`,
+            `Set the volumes equal: ${volumeEquation}.`,
+            `Rearrange and factor: x² − ${num(sum)}x + ${fmt(product)} = (x − ${num(rejectedSide)})(x − ${num(side)}) = 0.`,
+            `The larger cuts require x > ${num(2 * b)}. Reject ${num(rejectedSide)} and use x = ${num(side)}.`,
+            ...(askVolume ? [`Volume = height × base area = ${num(a)} × ${num(baseA)}² = ${fmt(volume)} cubic ${units}.`] : []),
+          ],
+          principles: [
+            "Cutting squares of side c from a square sheet of side x and folding up the sides gives height c and base side x − 2c.",
+            "A square-based box has volume equal to its height times the square of its base side.",
+            "An algebraic root is usable only if every geometric length it represents is positive.",
+          ],
+          trap: `Both algebraic sheet sizes are positive, but ${num(rejectedSide)} makes the second box's base side negative. Positive sheet size alone is not enough.`,
+          verify: () => {
+            // Solve from the original heights, independently of the
+            // square-ratio parameterization, and check both actual volumes.
+            const A = a - b;
+            const B = 4 * (b * b - a * a);
+            const D = 4 * (a * a * a - b * b * b);
+            const discriminant = B * B - 4 * A * D;
+            if (discriminant <= 0) return false;
+            const roots = [(-B + Math.sqrt(discriminant)) / (2 * A), (-B - Math.sqrt(discriminant)) / (2 * A)];
+            const feasible = roots.filter((x) => x > 2 * a && x > 2 * b);
+            if (feasible.length !== 1) return false;
+            const x = feasible[0];
+            const first = a * (x - 2 * a) * (x - 2 * a);
+            const second = b * (x - 2 * b) * (x - 2 * b);
+            return close(first, second) && close(askVolume ? first : x, answer);
+          },
+        };
+      });
+    },
+  };
+
   // Existing templates keep their order (a run code rebuilds its questions
   // in this order); new templates are appended.
   return [
     altitudeArea, rectilinearPlan, volumeDimension, volumeUnits, scalingMedium, displacement, scalingSolids, inscribedPolygon, shadedRegion,
-    circlesInSquare, compositeSolids, basicVolume,
+    circlesInSquare, compositeSolids, basicVolume, equalVolumeFoldedBoxes,
   ];
 });

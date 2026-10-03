@@ -1253,7 +1253,7 @@
     },
   };
 
-  /* ================================== probability-after-change (Hard) */
+  /* ================================== probability-after-change (Medium) */
 
   const CHANGE_SCENES = [
     {
@@ -1451,12 +1451,12 @@
     domain: DATA,
     skill: "Probability",
     subskill: "basic probability",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Probability after items are added or removed",
     recognize:
       "A probability is part over whole, and adding or removing items changes the whole too: write both probabilities in one " +
       "unknown, with the new total in the second, and solve.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 2, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["part-vs-whole", "intermediate-value", "wrong-quantity"],
     build(t) {
       const numeric = t.chance(0.4);
@@ -1670,5 +1670,205 @@
     },
   };
 
-  return [tableChance, expectedCount, frequencyProbability, unionTwoWay, conditionalTableRead, conditionalTwoWay, unknownCells, afterChange];
+  /* =========================================== probability-mixture-bound */
+
+  const MIXTURE_BOUND_SCENES = [
+    {
+      intro: "A germination test included seeds of varieties A and B, with at least one seed of each variety.",
+      noun: "seed", groupHead: "Variety", groups: ["A", "B"],
+      rateHead: "Fraction that sprouted", all: "all the seeds in the test",
+      yes: "the seeds that sprouted", no: "the seeds that did not sprout",
+      event: "sprouted", notEvent: "did not sprout", groupEvent: ["is of variety A", "is of variety B"],
+    },
+    {
+      intro: "A collection of parcels came from warehouses A and B, with at least one parcel from each warehouse.",
+      noun: "parcel", groupHead: "Warehouse", groups: ["A", "B"],
+      rateHead: "Fraction delivered on time", all: "all the parcels in the collection",
+      yes: "the parcels delivered on time", no: "the parcels not delivered on time",
+      event: "was delivered on time", notEvent: "was not delivered on time", groupEvent: ["came from warehouse A", "came from warehouse B"],
+    },
+    {
+      intro: "An inventory contains tablets made by factories A and B, with at least one tablet from each factory.",
+      noun: "tablet", groupHead: "Factory", groups: ["A", "B"],
+      rateHead: "Fraction that passed inspection", all: "all the tablets in the inventory",
+      yes: "the tablets that passed inspection", no: "the tablets that did not pass inspection",
+      event: "passed inspection", notEvent: "did not pass inspection", groupEvent: ["was made by factory A", "was made by factory B"],
+    },
+    {
+      intro: "A program assigned the same project to students in classes A and B, with at least one student in each class.",
+      noun: "student", groupHead: "Class", groups: ["A", "B"],
+      rateHead: "Fraction that completed the project", all: "all the students in the program",
+      yes: "the students who completed the project", no: "the students who did not complete the project",
+      event: "completed the project", notEvent: "did not complete the project", groupEvent: ["is in class A", "is in class B"],
+    },
+  ];
+
+  // Reduce an integer ratio but retain its two parts for exact comparisons.
+  function mixtureBoundPair(a, b) {
+    const divisor = S.gcd(a, b);
+    return [a / divisor, b / divisor];
+  }
+
+  const mixtureBounds = {
+    id: "probability-mixture-bound",
+    domain: DATA,
+    skill: "Probability",
+    subskill: "conditional probability",
+    difficulty: "Hard",
+    title: "Probability bound from an unknown mixture of two groups",
+    recognize:
+      "The two groups' sizes are unknown. Translate the stated probability bound into a bound on their size ratio, " +
+      "then use that ratio in the different group named by the question. Check which direction makes the requested probability larger.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 2, trap: 1 },
+    tricks: ["must-vs-could", "reversed-condition", "unweighted-average", "part-vs-whole"],
+    build(t) {
+      const scene = t.pick(MIXTURE_BOUND_SCENES);
+      const pooledGiven = t.chance(0.5);
+      const atLeast = t.chance(0.5);
+      const targetFirst = t.chance(0.5);
+      const wantNumeric = t.chance(0.28);
+      return retry(() => {
+        const d = t.pick([5, 8, 10, 12]);
+        const high = t.int(Math.ceil(d * 0.55), d - 1);
+        const low = t.int(1, Math.floor(d * 0.45));
+        const u = t.int(2, 11);
+        const v = t.int(2, 11);
+        if (u === v) return null;
+        const total = d * (u + v);
+        const yesA = high * u;
+        const yesB = low * v;
+        const noA = (d - high) * u;
+        const noB = (d - low) * v;
+        const yes = yesA + yesB;
+        const no = noA + noB;
+        const givenPair = pooledGiven ? [yes, total] : [yesA, yes];
+        const keyPair = pooledGiven ? [targetFirst ? noA : noB, no] : [targetFirst ? yes : no, total];
+        const [keyTop, keyBottom] = mixtureBoundPair(...keyPair);
+        const keyText = frac(keyTop, keyBottom);
+        if (wantNumeric && keyText.length > 5) return null;
+        const numeric = wantNumeric;
+        const boundText = frac(...givenPair);
+        // Both given probabilities increase as A's share of the collection
+        // increases. Each requested probability increases iff targetFirst.
+        const minimum = atLeast === targetFirst;
+        const boundWord = atLeast ? "at least" : "at most";
+        const extremeWord = minimum ? "least" : "greatest";
+        const comparison = atLeast ? "≥" : "≤";
+        const ratioText = frac(u, v);
+        const targetGroup = targetFirst ? 0 : 1;
+        const content = table([scene.groupHead, scene.rateHead], [[scene.groups[0], frac(high, d)], [scene.groups[1], frac(low, d)]]);
+        const givenGroup = pooledGiven ? scene.all : scene.yes;
+        const givenEvent = pooledGiven ? scene.event : scene.groupEvent[0];
+        const askedGroup = pooledGiven ? scene.no : scene.all;
+        const askedEvent = pooledGiven ? scene.groupEvent[targetGroup] : targetFirst ? scene.event : scene.notEvent;
+        const stem = `${scene.intro} The table gives the fraction within each group that ${scene.event}. ` +
+          `For a ${scene.noun} selected at random from ${givenGroup}, the probability that the ${scene.noun} ${givenEvent} is ${boundWord} ${boundText}. ` +
+          `What is the ${extremeWord} possible probability that a ${scene.noun} selected at random from ${askedGroup} ${askedEvent}?`;
+
+        const candidates = pooledGiven ? [
+          [targetFirst ? u : v, u + v, "Uses the group's share of the whole collection instead of its share of the group named in the question."],
+          [...givenPair, "Repeats the bound on the probability in the statement, although the question selects from a different group."],
+          [targetFirst ? yesA : yesB, yes, "Uses the conditional probability among those with the outcome in the table, instead of among those without it."],
+          [targetFirst ? noA : noB, total, "Counts the appropriate part but divides by the whole collection instead of the group named in the question."],
+          [d - (targetFirst ? high : low), d, "Reverses the condition: finds the chance of the other outcome within one source group."],
+          [d - (targetFirst ? high : low), 2 * d - high - low, "Treats the two source groups as equally large when combining their other-outcome rates."],
+          [targetFirst ? noB : noA, no, "Finds the probability for the other source group within the correct sampling group."],
+        ] : [
+          [...givenPair, "Repeats the bound for group A among those with the outcome instead of finding the probability for the whole collection."],
+          [targetFirst ? high : d - high, d, "Uses the rate within group A as if it were the rate for the whole collection."],
+          [targetFirst ? low : d - low, d, "Uses the rate within group B as if it were the rate for the whole collection."],
+          [u, u + v, "Stops at group A's share of the whole collection, which is not the probability asked for."],
+          [targetFirst ? high + low : 2 * d - high - low, 2 * d, "Averages the two group rates without accounting for their different sizes."],
+          [targetFirst ? yesA : noA, total, "Counts the requested outcome only in group A, omitting group B's contribution."],
+          [targetFirst ? no : yes, total, "Finds the probability of the opposite outcome in the whole collection."],
+        ];
+        const insideA = atLeast ? 2 * u : u;
+        const insideB = atLeast ? v : 2 * v;
+        const insideYes = high * insideA + low * insideB;
+        const insideNo = (d - high) * insideA + (d - low) * insideB;
+        candidates.push(pooledGiven
+          ? [targetFirst ? (d - high) * insideA : (d - low) * insideB, insideNo,
+            `Gives a probability that is possible when the stated inequality is strict, but is not the ${extremeWord} possible value.`]
+          : [targetFirst ? insideYes : insideNo, d * (insideA + insideB),
+            `Gives a probability that is possible when the stated inequality is strict, but is not the ${extremeWord} possible value.`]);
+        const keyValue = keyTop / keyBottom;
+        if (candidates.some(([a, b]) => close(a / b, keyValue, 1e-9))) return null;
+        const shown = new Map(candidates.map(([a, b]) => [a / b, frac(a, b)]));
+        const wrong = spreadRank(t, keyValue, candidates.map(([a, b, reason]) => [a / b, reason]), {
+          show: (value) => value === keyValue ? keyText : shown.get(value), balance: true,
+        });
+        if (!wrong) return null;
+
+        const ratioSetup = pooledGiven
+          ? `((${frac(high, d)})r + ${frac(low, d)})/(r + 1) ${comparison} ${boundText}`
+          : `((${frac(high, d)})r)/((${frac(high, d)})r + ${frac(low, d)}) ${comparison} ${boundText}`;
+        const ratioStep = `Let r be the number in group A divided by the number in group B. The stated bound gives ${ratioSetup}, so r ${comparison} ${ratioText}.`;
+        const directionStep = pooledGiven
+          ? `As r increases, group A's share among those without the table's outcome increases, while group B's share decreases. Thus the ${extremeWord} requested probability occurs at r = ${ratioText}.`
+          : `Group A has the higher rate for the table's outcome. As r increases, the overall rate for that outcome increases and the rate for its opposite decreases. Thus the ${extremeWord} requested probability occurs at r = ${ratioText}.`;
+        const countsStep = `The boundary is attainable: take ${d * u} in group A and ${d * v} in group B. Of these, ${yesA} and ${yesB}, respectively, have the table's outcome; ${noA} and ${noB} do not.`;
+        const resultStep = `For the requested sampling group, the probability at this boundary is ${keyPair[0]}/${keyPair[1]} = ${keyText}.`;
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          correct: keyText,
+          wrong: numeric ? [] : wrong,
+          scene: `data-mixture-bound-${scene.noun}`,
+          stimulus: { type: "table", content },
+          figure: null,
+          stem,
+          explanation: `${ratioStep} ${directionStep} ${countsStep} ${resultStep}`,
+          steps: [ratioStep, directionStep, countsStep, resultStep],
+          principles: [
+            "Probabilities from groups of different sizes must be combined using their group sizes, not by taking an unweighted average.",
+            "A conditional probability uses only the group named in the condition as its denominator.",
+            "To establish a least or greatest possible value, show that the bound holds and that equality can occur.",
+          ],
+          trap: `The bound ${boundText} applies to ${givenGroup}; the question selects from ${askedGroup}. Group sizes are not given as equal.`,
+          hint: "How does changing the ratio of the two group sizes affect each of the two probabilities?",
+          estimatedSeconds: 165,
+          verify: () => {
+            // Read the displayed rates and bound, then independently recover
+            // whole-number counts at equality. This does not reuse u or v.
+            const rows = parseTable(content);
+            const [a, b] = rows.slice(1).map((row) => row[1].split("/").map(Number));
+            const match = stem.match(/is (at least|at most) (\d+\/\d+)\./);
+            if (!match || a.length !== 2 || b.length !== 2) return false;
+            const [p, q] = match[2].split("/").map(Number);
+            const [an, ad] = a;
+            const [bn, bd] = b;
+            if (!(0 < an && an < ad && 0 < bn && bn < bd && an * bd > bn * ad)) return false;
+            const countA = pooledGiven ? ad * (p * bd - bn * q) : p * bn * ad;
+            const countB = pooledGiven ? bd * (an * q - p * ad) : (q - p) * an * bd;
+            if (!(countA > 0 && countB > 0)) return false;
+            const passA = countA * an / ad;
+            const passB = countB * bn / bd;
+            if (![passA, passB].every(Number.isInteger)) return false;
+            const pass = passA + passB;
+            const whole = countA + countB;
+            const observedGiven = pooledGiven ? [pass, whole] : [passA, pass];
+            if (observedGiven[0] * q !== observedGiven[1] * p) return false;
+            const recovered = pooledGiven
+              ? [targetFirst ? countA - passA : countB - passB, whole - pass]
+              : [targetFirst ? pass : whole - pass, whole];
+            if (recovered[0] * keyBottom !== recovered[1] * keyTop) return false;
+            // For f(r)=(ar+b)/(cr+d), the sign of ad-bc fixes the
+            // direction everywhere r>0. Both given functions increase;
+            // the requested function increases exactly for targetFirst.
+            const rateA = an / ad;
+            const rateB = bn / bd;
+            const givenDeterminant = pooledGiven ? rateA - rateB : rateA * rateB;
+            const requestedDeterminant = pooledGiven
+              ? (targetFirst ? 1 : -1) * (1 - rateA) * (1 - rateB)
+              : (targetFirst ? 1 : -1) * (rateA - rateB);
+            const parsedAtLeast = match[1] === "at least";
+            const provedMinimum = parsedAtLeast === (requestedDeterminant > 0);
+            return givenDeterminant > 0 && requestedDeterminant !== 0 && provedMinimum === minimum &&
+              (!numeric || keyText.length <= 5);
+          },
+        };
+      });
+    },
+  };
+
+  return [tableChance, expectedCount, frequencyProbability, unionTwoWay, conditionalTableRead, conditionalTwoWay, unknownCells, afterChange, mixtureBounds];
 });

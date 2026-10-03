@@ -191,9 +191,11 @@ They prepare you to combine conditions in Hard questions.
 - A quadratic pinned down by indirect conditions. A vertex points to a(x − h)² + k, zeros to a(x − r)(x − s), and two inputs with equal outputs to an axis of symmetry halfway between them. Choose the form first, then let one more point fix a.
 - An exponential rewritten for a different period. The base applies once per period, so a new period raises the base to a power; the percent never scales along with the period.
 - Factor and remainder conditions. x − a is a factor exactly when p(a) = 0, and the remainder on division by x − a is p(a). Only a stated zero forces a factor.
-- For Hard sign questions, distinguish statements that must, could or cannot follow from a graph description. Turn each fact into a sign, and test a "must" by trying to build a counterexample (see [signs of the constants](#signs-from-the-graph)).
+- Distinguish statements that must, could or cannot follow from a graph description. Turn each fact into a sign, and test a "must" by trying to build a counterexample (see [signs of the constants](#signs-from-the-graph)). Direct sign deductions are Medium, even when the stem uses symbolic constants.
 - For a Hard transformation question, recover a quadratic's missing vertex from a table before applying the transformation. Equal outputs locate the axis, but the minimum may be between the listed rows. A direct lookup in a table or a graph is a Medium application.
-- Match a graph to its definition using all its features: zeros and whether it crosses or touches there, the y-intercept, end behavior, and any level it approaches. Hard questions require reconciling several features; recognizing one familiar curve alone is routine.
+- Matching a graph to its definition through familiar zeros, signs, intercepts and end behavior is Medium preparation.
+- For a Hard exponential question with an unknown vertical shift, ratios of the displayed outputs do not directly give the base. Differences between equally spaced outputs can remove the shift before the remaining parameters are recovered.
+- For a Hard quadratic question requiring two distinct zeros inside an open interval, combine the real-root condition with where the vertex and both zeros can lie. Real roots alone do not establish the interval restriction, and roots at the endpoints are excluded.
 
 > **Example.** A quadratic f has f(1) = f(7), a minimum value of −9, and
 > f(0) = 7. What is f(x)?

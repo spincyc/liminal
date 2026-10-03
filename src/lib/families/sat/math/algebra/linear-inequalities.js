@@ -351,6 +351,8 @@
           estimatedSeconds: 65,
           stem: `What is the ${greatest ? "greatest" : "least"} integer value of x that satisfies the given inequality?`,
           correct: key,
+          explanation: `${common.explanation} The ${greatest ? "greatest" : "least"} integer satisfying that bound is ${num(key)}.`,
+          steps: [...steps, `The ${greatest ? "greatest" : "least"} allowed integer is ${num(key)}${STRICT[solRel] ? `, since the boundary ${num(k)} is excluded` : `, since the boundary ${num(k)} is included`}.`],
           trap: `${common.trap} ${STRICT[solRel] ? `And x ${solRel} ${num(k)} excludes ${num(k)} itself.` : `And x ${solRel} ${num(k)} includes ${num(k)}.`}`,
           verify: () => {
             let found = null;
@@ -699,7 +701,7 @@
           const key = Math.min(budgetMax, N - L);
           const budgetOnly = countBinds
             ? [budgetMax, `Uses only the budget and never checks the ${N}-${item} limit, which the ${L} required ${scene.ys} share.`]
-            : [key + 1, `Rounds ${num(round2(quotient))} up; ${key + 1} ${scene.xs} plus ${L} ${scene.ys} cost more than ${usdHard(C)}.`];
+            : [key + 1, `Rounds ${frac(C - b * L, a)} up; ${key + 1} ${scene.xs} plus ${L} ${scene.ys} cost more than ${usdHard(C)}.`];
           const countOnly = countBinds
             ? [N, `Gives all ${N} ${scene.items} to ${scene.xs}, leaving no room for the ${L} required ${scene.ys}.`]
             : [N - L, `Uses only the ${N}-${item} limit and never checks the budget.`];
@@ -715,10 +717,10 @@
           if (distinctWrongHard(key, wrong) < 3 || hitsKey(key, wrong)) continue;
           const explanation = countBinds
             ? `To leave the most room for ${scene.xs}, use only the required ${L} ${scene.ys}. The budget would then allow ` +
-              `${a}x ≤ ${commasHard(C - b * L)}, or x ≤ ${num(round2(quotient))}, so up to ${budgetMax} ${scene.xs}. But the ` +
+              `${a}x ≤ ${commasHard(C - b * L)}, or x ≤ ${frac(C - b * L, a)}, so up to ${budgetMax} ${scene.xs}. But the ` +
               `${scene.items} are limited to ${N} in total, so x + ${L} ≤ ${N} and x ≤ ${key}. The count limit binds first.`
             : `To leave the most money for ${scene.xs}, buy only the required ${L} ${scene.ys}, which cost ${usdHard(b * L)}. ` +
-              `That leaves ${usdHard(C - b * L)}, so ${a}x ≤ ${commasHard(C - b * L)} and x ≤ ${num(round2(quotient))}. ` +
+              `That leaves ${usdHard(C - b * L)}, so ${a}x ≤ ${commasHard(C - b * L)} and x ≤ ${frac(C - b * L, a)}. ` +
               `A whole number of ${scene.xs} cannot exceed that, so x ≤ ${key}. Then ${key} + ${L} = ${key + L} ≤ ${N}, ` +
               `so the ${N}-${item} limit is also met.`;
           return commaChoicesHard({
@@ -729,7 +731,7 @@
             explanation,
             steps: [
               `Write the limits: ${a}x + ${b}y ≤ ${commasHard(C)}, y ≥ ${L}, and x + y ≤ ${N}.`,
-              `Use the smallest allowed y, ${L}: the budget gives ${a}x ≤ ${commasHard(C - b * L)}, so x ≤ ${num(round2(quotient))}, or ${budgetMax} as a whole number.`,
+              `Use the smallest allowed y, ${L}: the budget gives ${a}x ≤ ${commasHard(C - b * L)}, so x ≤ ${frac(C - b * L, a)}, or ${budgetMax} as a whole number.`,
               `The count limit gives x ≤ ${N} ${MINUS} ${L} = ${N - L}.`,
               `Both must hold, so the maximum is the smaller bound: ${key}, set by the ${countBinds ? "count limit" : "budget"}.`,
             ],
@@ -739,7 +741,7 @@
             ],
             trap: countBinds
               ? `The budget alone would allow ${budgetMax} ${scene.xs}, but the ${L} required ${scene.ys} use part of the ${N}-${item} limit.`
-              : `Rounding ${num(round2(quotient))} to the nearest whole number breaks the budget, and the count limit looks binding but is not.`,
+              : `The greatest feasible count is the floor of ${frac(C - b * L, a)}; rounding up breaks the budget. The count limit must still be checked.`,
             hint: "Check every stated limit, and ask which way a count may be rounded without breaking one.",
             verify: () => {
               let best = -1;
@@ -772,7 +774,7 @@
           const quotient = need / b;
           const key = Math.ceil(quotient);
           const wrong = [
-            [key - 1, `Rounds ${num(round2(quotient))} down; ${key - 1} ${scene.ys} leave the total short of ${usdHard(R)}.`],
+            [key - 1, `Rounds ${frac(need, b)} down; ${key - 1} ${scene.ys} leave the total short of ${usdHard(R)}.`],
             [Math.ceil(R / b), `Ignores the money from the ${scene.xs}.`],
             [P + key, `Gives the total number of ${scene.xs} and ${scene.ys}, not the number of ${scene.ys}.`],
             [need, `Stops at the amount, in dollars, still needed after the ${scene.xs}.`],
@@ -785,18 +787,18 @@
             wrong,
             explanation:
               `The fewest ${scene.ys} are needed when all ${P} ${scene.xs} are sold, bringing in ${usdHard(a * P)}. The rest, ` +
-              `${usdHard(need)}, must come from ${scene.ys}: ${b}y ≥ ${commasHard(need)}, so y ≥ ${num(round2(quotient))}. ` +
+              `${usdHard(need)}, must come from ${scene.ys}: ${b}y ≥ ${commasHard(need)}, so y ≥ ${frac(need, b)}. ` +
               `The smallest whole number that reaches the goal is ${key}, rounding up.`,
             steps: [
               `Write the conditions: ${a}x + ${b}y ≥ ${commasHard(R)} with x ≤ ${P}.`,
               `y is smallest when x is as large as possible, x = ${P}: ${b}y ≥ ${commasHard(need)}.`,
-              `y ≥ ${num(round2(quotient))}, so the least whole number is ${key}, rounding up.`,
+              `y ≥ ${frac(need, b)}, so the least whole number is ${key}, rounding up.`,
             ],
             principles: [
               "To minimize one quantity, push the other as far as its own limit allows.",
               "A whole-number count that must reach a goal is rounded up, whatever the decimal.",
             ],
-            trap: `Rounding ${num(round2(quotient))} down, or to the nearest whole number, leaves the goal unmet.`,
+            trap: `Rounding ${frac(need, b)} down leaves the goal unmet; the minimum whole-number count must be rounded up.`,
             hint: "Ask how many of the other item can help, and which way a count must be rounded to reach the goal.",
             verify: () => {
               for (let y = 0; y <= 5000; y += 1) {
@@ -823,7 +825,7 @@
           const key = Math.floor(quotient);
           const reversed = Math.floor((C * k) / (a * k + b));
           const wrong = [
-            [key + 1, `Rounds ${num(round2(quotient))} up; ${key + 1} ${scene.xs} with the ${scene.ys} they require cost more than ${usdHard(C)}.`],
+            [key + 1, `Rounds ${frac(C, unit)} up; ${key + 1} ${scene.xs} with the ${scene.ys} they require cost more than ${usdHard(C)}.`],
             [reversed, `Reverses the ratio, requiring ${k} times as many ${scene.xs} as ${scene.ys}.`],
             [k * key, `Gives the number of ${scene.ys}, not ${scene.xs}.`],
             [Math.floor(C / a), `Leaves the ${scene.ys} out of the budget.`],
@@ -837,11 +839,11 @@
             explanation:
               `With x ${scene.xs} and y ${scene.ys}, the conditions are y ≥ ${k}x and ${a}x + ${b}y ≤ ${commasHard(C)}. The budget ` +
               `goes furthest with the fewest ${scene.ys}, y = ${k}x, so ${a}x + ${b}(${k}x) = ${unit}x ≤ ${commasHard(C)} and ` +
-              `x ≤ ${num(round2(quotient))}. The greatest whole number is ${key}.`,
+              `x ≤ ${frac(C, unit)}. The greatest whole number is ${key}.`,
             steps: [
               `Translate the ratio: y ≥ ${k}x (not x ≥ ${k}y).`,
               `Use the fewest ${scene.ys} allowed, y = ${k}x: ${a}x + ${b * k}x = ${unit}x ≤ ${commasHard(C)}.`,
-              `x ≤ ${num(round2(quotient))}, so the greatest whole number is ${key}, rounding down.`,
+              `x ≤ ${frac(C, unit)}, so the greatest whole number is ${key}, rounding down.`,
             ],
             principles: [
               `"At least k times as many B as A" means B ≥ kA.`,
@@ -886,7 +888,7 @@
         const wrong = [
           [Math.floor(bounds[other]), `Checks only the ${names[other]} limit.`],
           ...t.shuffle([
-            [key + 1, `Rounds the ${names[bind]} limit, ${num(round2(bounds[bind]))}, up.`],
+            [key + 1, `Rounds the ${names[bind]} limit, ${frac(avail[bind] - use2[bind] * T, use1[bind])}, up.`],
             [key + T, `Gives the total number of ${scene.xs} and ${scene.ys}.`],
             [Math.min(Math.floor(avail[0] / use1[0]), Math.floor(avail[1] / use1[1])), `Leaves the ${T} ${scene.ys} out of the ${names[0]} and ${names[1]} totals.`],
             [rowSwap, `Swaps the table's rows for ${names[bind]}, charging each ${scene.xOne} what a ${scene.yOne} needs and each ${scene.yOne} what a ${scene.xOne} needs.`],
@@ -899,7 +901,7 @@
           ["Available", avail[0], avail[1]],
         ];
         const limitLine = (index) =>
-          `${names[index]}: ${use1[index]}x + ${use2[index]}(${T}) ≤ ${avail[index]}, so x ≤ ${num(round2(bounds[index]))}`;
+          `${names[index]}: ${use1[index]}x + ${use2[index]}(${T}) ≤ ${avail[index]}, so x ≤ ${frac(avail[index] - use2[index] * T, use1[index])}`;
         return commaChoicesHard({
           ...common,
           stimulus: { type: "table", content: S.table(["Item", scene.r1, scene.r2], rows) },
@@ -911,7 +913,7 @@
           wrong,
           explanation:
             `With x ${scene.xs} and ${T} ${scene.ys}: ${limitLine(0)}; ${limitLine(1)}. Both must hold, so x can be no ` +
-            `more than ${num(round2(bounds[bind]))}, and the greatest whole number is ${key}.`,
+            `more than ${frac(avail[bind] - use2[bind] * T, use1[bind])}, and the greatest whole number is ${key}.`,
           steps: [
             `Subtract what the ${T} ${scene.ys} use from each available amount.`,
             `${limitLine(0)}.`,
@@ -1995,8 +1997,140 @@
     },
   };
 
+  /* ----------------------------------------- inequality-solution-containment */
+
+  const solutionContainment = {
+    id: "inequality-solution-containment",
+    domain: "Algebra",
+    skill: "Linear inequalities",
+    subskill: "solve inequalities",
+    difficulty: "Hard",
+    title: "Parameter restrictions from containment of an inequality's solutions",
+    recognize:
+      "First determine which sign of the variable's coefficient makes every solution lie above a lower bound. " +
+      "Then compare the solution boundary with the required bound, check whether equality is allowed, and exclude " +
+      "a parameter that leaves no solutions before counting the integers or combining their extremes.",
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["context-constraint", "sign-error"],
+    build(t) {
+      for (;;) {
+        const a = t.nonzero(-12, 12);
+        const q = t.nonzero(-7, 7);
+        const gap = t.int(2, 7);
+        const span = t.int(3, 12);
+        const c = gap * span;
+        const d = q * a - c;
+        const bound = q + gap;
+        const strictSource = t.chance(0.5);
+        const strictTarget = t.chance(0.5);
+        const countForm = t.chance(0.35);
+        const sourceRel = strictSource ? "<" : "≤";
+        const targetRel = strictTarget ? ">" : "≥";
+        // For k > a the original solution ray begins at q + c/(k − a).
+        // Its boundary may equal the target unless only the target is strict.
+        const upperIncluded = strictSource || !strictTarget;
+        const upperRel = upperIncluded ? "≤" : "<";
+        const first = a + 1;
+        const last = a + span - (upperIncluded ? 0 : 1);
+        const total = first + last;
+        const count = last - first + 1;
+        // A sign error and admitting k = a make a four-option error grid.
+        // Reject collisions rather than silently dropping a modelled error.
+        const wrongTotal = total - 1;
+        if (new Set([total, -total, wrongTotal, -wrongTotal]).size !== 4) continue;
+        const inequality = `(${num(a)} ${MINUS} k)x ${sourceRel} ${lin(-q, d, "k")}`;
+        const denominator = lin(1, -a, "k");
+        const boundary = `${num(q)} + ${c}/(${denominator})`;
+        const originalRay = `x ${strictSource ? ">" : "≥"} ${boundary}`;
+        const upper = a + span;
+        const key = countForm ? count : total;
+        const signSlip =
+          "Finds the bounds for −k but treats them as bounds for k, reversing the signs of both extreme values.";
+        const emptySlip =
+          `Includes k = ${num(a)} as the least value. At that value the inequality becomes 0 ${sourceRel} ${num(-c)}, ` +
+          "so it has no solution and fails the stated condition.";
+        const endpointReason = upperIncluded
+          ? `When k = ${num(upper)}, the original solutions satisfy x ${strictSource ? ">" : "≥"} ${num(bound)}, ` +
+            `which meets x ${targetRel} ${num(bound)}; this endpoint is included.`
+          : `When k = ${num(upper)}, x = ${num(bound)} is an original solution but fails x > ${num(bound)}; ` +
+            "this endpoint is excluded.";
+        const steps = [
+          `If k < ${num(a)}, the coefficient ${num(a)} ${MINUS} k is positive, so the solution set contains arbitrarily small x. ` +
+            `If k = ${num(a)}, the inequality has no solution. Therefore k > ${num(a)}.`,
+          `For k > ${num(a)}, dividing by the negative coefficient reverses the inequality: ${originalRay}.`,
+          `Every original solution satisfies x ${targetRel} ${num(bound)} exactly when the boundary ${boundary} ` +
+            `${upperIncluded ? "≥" : ">"} ${num(bound)}. Since ${denominator} > 0, this gives k ${upperRel} ${num(upper)}.`,
+          endpointReason,
+          `The possible integer values run from ${num(first)} through ${num(last)}. ` +
+            (countForm
+              ? `There are ${num(last)} ${MINUS} ${paren(first)} + 1 = ${count} values.`
+              : `The sum of the least and greatest is ${num(first)} + ${paren(last)} = ${num(total)}.`),
+        ];
+        return {
+          responseType: countForm ? "numeric" : "multiple-choice",
+          estimatedSeconds: 145,
+          stimulus: { type: "equations", content: inequality },
+          stem:
+            `In the given inequality, k is an integer constant. The inequality has at least one real solution, ` +
+            `and every real solution x satisfies x ${targetRel} ${num(bound)}. ` +
+            (countForm
+              ? "How many values of k are possible?"
+              : "What is the sum of the least and greatest possible values of k?"),
+          correct: key,
+          wrong: countForm ? [] : [
+            [-total, signSlip],
+            [wrongTotal, emptySlip],
+            [-wrongTotal, `${emptySlip} It also treats the resulting bounds for −k as bounds for k.`],
+          ],
+          explanation:
+            `The coefficient must be negative: k > ${num(a)}. The solutions are then ${originalRay}. ` +
+            `For all of them to satisfy the required bound, k ${upperRel} ${num(upper)}. ${endpointReason} ` +
+            `Thus the integer values are ${num(first)} through ${num(last)}, ` +
+            (countForm ? `a total of ${count} values.` : `and their least and greatest sum to ${num(total)}.`),
+          steps,
+          principles: [
+            "The sign of a linear inequality's variable coefficient determines which direction its solution ray extends.",
+            "Every solution meeting a bound is stronger than one solution meeting it; compare the full solution sets.",
+            "An explicitly nonempty solution set rules out a parameter that makes the original inequality false for every x.",
+          ],
+          trap:
+            "Substituting only the required boundary into the original inequality tests one possible solution, not every solution. " +
+            `Also, k = ${num(a)} cannot be included simply because there are then no solutions that violate the bound.`,
+          hint: "Consider which direction the original solution set extends, and what happens if the coefficient of x is zero.",
+          verify: () => {
+            // Read the displayed expressions back, then classify each integer
+            // parameter by its actual solution ray. This route does not use
+            // the construction's span, first, last, or boundary formula.
+            const [leftText, rightText] = inequality.split(` ${sourceRel} `);
+            const left = compile(leftText);
+            const right = compile(rightText);
+            const residual = (x, k) => left({ x, k }) - right({ x, k });
+            const slope = (k) => residual(1, k) - residual(0, k);
+            const atBound = (k) => residual(bound, k);
+            const permitted = (k) => {
+              if (slope(k) >= 0) return false;
+              const value = atBound(k);
+              return value > 0 || (value === 0 && (strictSource || !strictTarget));
+            };
+            // Both tests are affine in k. Their decreasing slopes and failed
+            // outer bounds certify that no allowed integers lie off this scan.
+            if (!(slope(1) < slope(0) && atBound(1) < atBound(0) &&
+              slope(-64) >= 0 && atBound(64) < 0)) return false;
+            const allowed = [];
+            for (let k = -64; k <= 64; k += 1) if (permitted(k)) allowed.push(k);
+            if (!allowed.length) return false;
+            const answer = countForm ? allowed.length : allowed[0] + allowed[allowed.length - 1];
+            return answer === key && (countForm || [total, -total, wrongTotal, -wrongTotal]
+              .filter((candidate) => candidate === answer).length === 1);
+          },
+        };
+      }
+    },
+  };
+
   return [
     inequalityRange, inequalitySolve, inequalityWord, inequalitySystem, inequalityOptimization, twoVariableContext,
     regionCorner, graphRegion, parameterRange,
+    solutionContainment,
   ];
 });

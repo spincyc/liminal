@@ -206,8 +206,13 @@ first.
 ## What Hard looks like {#hard}
 
 - A region between concentric circles when a chord of the larger touches the smaller. Look for R² − r² from a right triangle, rather than trying to find each radius.
-- A box whose corners lie on a sphere: the box's space diagonal is the sphere's diameter (see [a box inside a sphere](#box-in-a-sphere)).
-- The surface area of a drilled or glued solid. A hole removes two openings and adds its inside wall; gluing hides one patch on each solid (see [drilled and glued solids](#drilled-and-glued)).
+- Two open boxes made by cutting different corner squares from equal sheets, with equal volumes. The equality can yield more than one positive algebraic answer; check which leaves positive dimensions for both boxes.
+
+Recognizing a box's space diagonal as a surrounding sphere's diameter, or
+counting the exposed surfaces of drilled and glued solids, is useful Medium
+preparation (see [a box inside a sphere](#box-in-a-sphere) and
+[drilled and glued solids](#drilled-and-glued)). Familiar formulas and extra
+surface bookkeeping alone do not establish Hard difficulty.
 
 The direct area, volume, and scaling applications above are Easy or Medium;
 a shared geometric constraint can make a problem Hard. For example, in a

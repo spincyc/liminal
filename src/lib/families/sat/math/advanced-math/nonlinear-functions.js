@@ -1571,11 +1571,8 @@
       const p = t.int(-3, 4);
       const q = t.int(-9, 6);
       const f = (x) => a * (x - p) ** 2 + q;
-      // Mostly with the vertex between the listed rows, which is the hard part.
-      const hidden = t.chance(0.8);
-      const xs = hidden
-        ? t.pick([[-3, -1, 1, 3, 5], [-5, -3, -1, 1, 3], [-3, -1, 1, 3]]).map((d) => p + d)
-        : (() => { const start = p - t.int(1, 3); return [0, 1, 2, 3, 4].map((i) => start + i); })();
+      // Every draw requires recovering an extremum that is absent from the table.
+      const xs = t.pick([[-3, -1, 1, 3, 5], [-5, -3, -1, 1, 3], [-3, -1, 1, 3]]).map((d) => p + d);
       const h = t.nonzero(-4, 4);
       const k = t.nonzero(-8, 8);
       const scale = t.chance(0.25) ? 2 : 1;
@@ -1585,52 +1582,51 @@
       const minAt = p + h;
       const least = Math.min(...xs.map(f));
       const askValue = t.chance(0.55);
-      const key = askValue ? minValue : minAt;
+      const key = askValue ? minValue : minAt + minValue;
       const wrong = askValue
         ? [
           [q, `Gives the minimum of f, not of g: ${scale === 2 ? `the doubling and the ${signed(k)} still apply` : `the ${signed(k)} outside f still applies`}.`],
           [scale * q - k, `Reverses the sign of the vertical shift ${signed(k)}.`],
-          ...(hidden ? [[scale * least + k, `Uses the least value in the table, f(${num(p - 1)}) = ${num(least)}, as the minimum of f; the vertex lies between two listed values.`]] : []),
+          [scale * least + k, `Uses the least value in the table, f(${num(p - 1)}) = ${num(least)}, as the minimum of f; the vertex lies between two listed values.`],
           ...(scale === 2 ? [[2 * (q + k), `Doubles the ${signed(k)} as well, as if g(x) were 2(f(x ${signed(-h)}) ${signed(k)}).`]] : []),
           [minAt, "Gives the x-coordinate where the minimum occurs, not the minimum value."],
         ]
         : [
-          [p, `Gives where f reaches its minimum; the graph of g is shifted ${h > 0 ? "right" : "left"} by ${Math.abs(h)}.`],
-          [p - h, `Shifts the vertex the wrong way: in f(x ${signed(-h)}), the graph moves ${h > 0 ? "right" : "left"}.`],
-          [minValue, "Gives the minimum value of g, not the x-value where it occurs."],
-          [q, "Gives the minimum value of f, not the x-value where g reaches its minimum."],
+          [minAt, "Gives only the x-coordinate of g's vertex instead of adding both coordinates."],
+          [minValue, "Gives only the y-coordinate of g's vertex instead of adding both coordinates."],
+          [p + q, "Adds the coordinates of f's vertex without applying either transformation."],
+          [p - h + minValue, "Shifts the vertex horizontally in the wrong direction before adding its coordinates."],
+          [minAt + scale * q - k, "Reverses the vertical shift before adding the vertex coordinates."],
+          [minAt + scale * least + k, "Uses the least listed output as f's minimum even though its vertex is between rows."],
         ];
+      if (wrong.some(([value]) => approx(value, key))) continue;
       if (!numeric && new Set(wrong.map(([v]) => v).concat(key)).size < 4) continue;
       const table = S.table(["x", "f(x)"], xs.map((x) => [x, f(x)]));
-      const findVertex = hidden
-        ? `f(${num(p - 1)}) = f(${num(p + 1)}) = ${num(f(p + 1))}, so by symmetry the vertex is at x = ${num(p)}. From f(${num(p + 1)}) = ${num(f(p + 1))} and f(${num(p + 3)}) = ${num(f(p + 3))}: the rise from 1 to 3 units away is 8 times the leading coefficient, so it is ${a}, and f(${num(p)}) = ${num(f(p + 1))} ${MINUS} ${a} = ${num(q)}.`
-        : `Equal values at x = ${num(p - 1)} and x = ${num(p + 1)} place the vertex midway, at (${num(p)}, ${num(q)}).`;
+      const findVertex = `f(${num(p - 1)}) = f(${num(p + 1)}) = ${num(f(p + 1))}, so by symmetry the vertex is at x = ${num(p)}. From f(${num(p + 1)}) = ${num(f(p + 1))} and f(${num(p + 3)}) = ${num(f(p + 3))}: the rise from 1 to 3 units away is 8 times the leading coefficient, so it is ${a}, and f(${num(p)}) = ${num(f(p + 1))} ${MINUS} ${a} = ${num(q)}.`;
       return {
         responseType: numeric ? "numeric" : "multiple-choice",
         stimulus: { type: "table", content: table },
         stem:
           `The table gives selected values of the quadratic function f. The function g is defined by g(x) = ${shifted("f", -h, k, scale)}. ` +
-          (askValue ? "What is the minimum value of g(x)?" : "For what value of x does g(x) reach its minimum value?"),
+          (askValue ? "What is the minimum value of g(x)?" : "The vertex of the graph of y = g(x) is (r, s). What is the value of r + s?"),
         correct: key,
         wrong: wrong,
         explanation:
           `${findVertex} So f has minimum ${num(q)} at x = ${num(p)}. The graph of g is the graph of f shifted ${h > 0 ? "right" : "left"} ${Math.abs(h)}` +
-          `${scale === 2 ? ", stretched vertically by 2," : ""} and moved ${k > 0 ? "up" : "down"} ${Math.abs(k)}, so g has minimum ${num(minValue)} at x = ${num(minAt)}.`,
+          `${scale === 2 ? ", stretched vertically by 2," : ""} and moved ${k > 0 ? "up" : "down"} ${Math.abs(k)}, so g has minimum ${num(minValue)} at x = ${num(minAt)}.${askValue ? "" : ` The sum of these vertex coordinates is ${num(key)}.`}`,
         steps: [
-          `Use symmetry in the table to locate the vertex of f: x = ${num(p)}.`,
-          `Find the minimum of f: f(${num(p)}) = ${num(q)}.`,
+          findVertex,
           `g(x) = ${shifted("f", -h, k, scale)} reaches its minimum when x ${signed(-h)} = ${num(p)}, so at x = ${num(minAt)}.`,
           `The minimum value is ${scale === 2 ? `2(${num(q)})` : num(q)} ${signed(k)} = ${num(minValue)}.`,
+          ...(askValue ? [] : [`The vertex is ${point(minAt, minValue)}, so r + s = ${num(key)}.`]),
         ],
         principles: [
           "A quadratic's values are symmetric about its vertex, so equal outputs locate the axis of symmetry.",
           "f(x − h) + k moves the graph right h and up k.",
         ],
-        trap: hidden && askValue
+        trap: askValue
           ? "The least value in the table is not the minimum of f: the vertex falls between listed x-values."
-          : askValue
-            ? "The minimum of f is only an intermediate value; the vertical change outside f still applies."
-            : "The sign inside f(x − h) is opposite to the direction of the shift.",
+          : "Recover the unlisted vertex before shifting it, and add both coordinates of the transformed vertex.",
         hint: "Where is the axis of symmetry of f, and what does each part of g do to the graph?",
         verify: () => {
           // Fit a parabola through three table points, then minimize g on a fine grid.
@@ -1642,7 +1638,8 @@
             const y = scale * fit(x - h) + k;
             if (y < best.y) best = { x, y };
           }
-          return approx(best.y, minValue, 1e-6) && approx(best.x, minAt, 1e-6) && approx(g(minAt), minValue);
+          return approx(best.y, minValue, 1e-6) && approx(best.x, minAt, 1e-6) && approx(g(minAt), minValue) &&
+            approx(askValue ? best.y : best.x + best.y, key, 1e-6);
         },
       };
     }
@@ -2175,7 +2172,7 @@
       explanation:
         `Every ${n} ${units} the amount is multiplied by ${B}. After t ${units} there have been t/${n} such periods, so f(t) = ${commas(A)}(${B})^(t/${n}).`,
       steps: [
-        `A ${rate}% ${scene.up ? "increase" : "decrease"} multiplies the amount by ${B}.`,
+        `${cap(S.article(rate))} ${rate}% ${scene.up ? "increase" : "decrease"} multiplies the amount by ${B}.`,
         `The change happens once every ${n} ${units}, so after t ${units} it has happened t/${n} times.`,
         `f(t) = ${commas(A)}(${B})^(t/${n}).`,
       ],
@@ -2427,9 +2424,8 @@
     },
   };
 
-  // Hard: the table hides a quadratic's vertex, which the transformation then
-  // moves. (Reading f back from a table of g was one reverse lookup, Medium
-  // work, and was dropped.)
+  // Every table omits the vertex. Both tasks need its hidden value: either
+  // transform that minimum or add the transformed vertex's coordinates.
   const functionTransformationTable = {
     id: "function-transformation-table",
     difficulty: "Hard",
@@ -2438,7 +2434,7 @@
     subskill: "polynomial functions",
     title: "Transformed function recovered from a table",
     recognize:
-      "The table describes a quadratic whose vertex may lie between the listed rows: equal outputs fix the axis of " +
+      "The table describes a quadratic whose vertex lies between the listed rows: equal outputs fix the axis of " +
       "symmetry, and the differences fix the leading coefficient. Then the transformation moves the vertex: inside " +
       "changes act on x, opposite to their sign, and outside changes act last.",
     rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
@@ -2532,7 +2528,7 @@
 
   const graphWhichFunction = {
     id: "graph-which-function",
-    difficulty: "Hard",
+    difficulty: "Medium",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "polynomial functions",
@@ -2540,7 +2536,7 @@
     recognize:
       "Read every feature the graph shows (zeros and whether the graph crosses or touches there, the y-intercept, " +
       "end behavior, a level it approaches) and test each candidate against all of them.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["sign-error", "equivalent-form", "wrong-quantity"],
     build(t) {
       return drawUntilDistinctHard(() => whichFunctionItem(t));
@@ -2593,7 +2589,7 @@
       why: {
         a: "It opens upward, so a > 0.",
         k: "A parabola that opens upward and never reaches the x-axis has its lowest point, the vertex, above the x-axis, so k > 0.",
-        c: "Every value of f is at least k > 0, and c = f(0) is one of them, so c > 0.",
+        c: "An upward-opening parabola with no x-intercepts lies entirely above the x-axis. Its y-intercept is c = f(0), so c > 0.",
         disc: "No x-intercepts means no real zeros, so b² − 4ac < 0.",
       },
     },
@@ -2604,7 +2600,7 @@
       why: {
         a: "It opens downward, so a < 0.",
         k: "A parabola that opens downward and never reaches the x-axis has its highest point, the vertex, below the x-axis, so k < 0.",
-        c: "Every value of f is at most k < 0, and c = f(0) is one of them, so c < 0.",
+        c: "A downward-opening parabola with no x-intercepts lies entirely below the x-axis. Its y-intercept is c = f(0), so c < 0.",
         disc: "No x-intercepts means no real zeros, so b² − 4ac < 0.",
       },
     },
@@ -2616,7 +2612,7 @@
         a: "It opens upward, so a > 0.",
         h: "A vertex in Quadrant IV has h > 0.",
         k: "A vertex in Quadrant IV has k < 0.",
-        b: "b = −2ah, and a > 0 and h > 0, so b < 0.",
+        b: "Let h denote the vertex's x-coordinate, which is positive here. The parabola opens upward, so a > 0; therefore b = −2ah < 0.",
         disc: "The vertex is below the x-axis and the parabola opens upward, so it crosses the x-axis twice and b² − 4ac > 0.",
       },
     },
@@ -2628,7 +2624,7 @@
         a: "It opens downward, so a < 0.",
         h: "A vertex in Quadrant II has h < 0.",
         k: "A vertex in Quadrant II has k > 0.",
-        b: "b = −2ah, and a < 0 and h < 0 make ah > 0, so b < 0.",
+        b: "Let h denote the vertex's x-coordinate, which is negative here. The parabola opens downward, so a < 0; therefore ah > 0 and b = −2ah < 0.",
         disc: "The vertex is above the x-axis and the parabola opens downward, so it crosses the x-axis twice and b² − 4ac > 0.",
       },
     },
@@ -2640,7 +2636,7 @@
         a: "It opens upward, so a > 0.",
         h: "The vertex is halfway between the two positive x-intercepts, so h > 0.",
         k: "A parabola that opens upward crosses the x-axis twice only when its vertex is below the x-axis, so k < 0.",
-        b: "b = −2ah, and a > 0 and h > 0, so b < 0.",
+        b: "Let h denote the vertex's x-coordinate, which is positive here. The parabola opens upward, so a > 0; therefore b = −2ah < 0.",
         c: "The product of the zeros is c/a, and both zeros are positive, so c/a > 0 and c > 0.",
         disc: "Two x-intercepts means b² − 4ac > 0.",
       },
@@ -2652,7 +2648,7 @@
       why: {
         a: "It opens downward, so a < 0.",
         c: "The zeros have opposite signs, so their product c/a is negative; with a < 0, that makes c > 0.",
-        k: "The vertex is the highest point and f(0) = c > 0, so k ≥ c > 0.",
+        k: "A downward-opening parabola with two x-intercepts reaches its maximum above the x-axis. Its vertex's y-coordinate is k, so k > 0.",
         disc: "Two x-intercepts means b² − 4ac > 0.",
       },
     },
@@ -2664,8 +2660,8 @@
         a: "It opens upward, so a > 0.",
         h: "The vertex is to the right of the y-axis, so h > 0.",
         c: "It crosses the y-axis below the x-axis, so c = f(0) < 0.",
-        k: "The vertex is the lowest point, so k ≤ f(0) = c < 0.",
-        b: "b = −2ah, and a > 0 and h > 0, so b < 0.",
+        k: "The y-intercept is below the x-axis, so f(0) < 0. The vertex is the lowest point, giving k ≤ f(0) < 0.",
+        b: "Let h denote the vertex's x-coordinate, which is positive here. The parabola opens upward, so a > 0; therefore b = −2ah < 0.",
         disc: "An upward parabola that takes a negative value crosses the x-axis twice, so b² − 4ac > 0.",
       },
     },
@@ -2717,7 +2713,7 @@
 
   const quadraticMustBeTrue = {
     id: "quadratic-must-be-true",
-    difficulty: "Hard",
+    difficulty: "Medium",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "quadratic functions",
@@ -2726,9 +2722,9 @@
       "Translate each fact about the graph into a sign: the opening gives a, the vertex's position gives h and k, the " +
       "y-intercept gives c = f(0), the number of x-intercepts gives the discriminant, and b = −2ah. A statement must " +
       "be true only if it follows for every parabola that fits; one that fits some of them only could be true.",
-    // Hard: constants as parameters, a must-versus-could judgment, and a
-    // chain of sign facts that must be combined.
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
+    // Universal sign statements require care, but familiar graph facts can
+    // settle some branches directly; retain the parameter reasoning at Medium.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
     tricks: ["must-vs-could", "reversed-condition", "sign-error"],
     build(t) {
       for (;;) {
@@ -2825,10 +2821,235 @@
     },
   };
 
+  /* ======================================== shifted-exponential-recovery */
+
+  function shiftedExponentialRecoveryItem(t, coefficient, numeric) {
+    const b = t.pick([2, 3]);
+    const a = b * t.nonzero(-12, 12);
+    const c = t.nonzero(-40, 40);
+    const x0 = t.pick([-1, 1]);
+    const xs = [x0, x0 + 2, x0 + 4];
+    const values = xs.map((x) => a * b ** x + c);
+    const [y0, y1, y2] = values;
+    const first = y1 - y0;
+    const second = y2 - y1;
+    const key = coefficient ? a : a + c;
+
+    // Each mistaken base is used to fit the first two displayed points;
+    // neither fit also matches the third point. This models a complete
+    // incorrect reconstruction, rather than changing an arbitrary answer.
+    const wrongFit = (base) => {
+      const A = first / (base ** x0 * (base ** 2 - 1));
+      const C0 = y0 - A * base ** x0;
+      return coefficient ? A : A + C0;
+    };
+    const pool = coefficient ? [
+      [a + c, "Finds f(0) = a + c, but the question asks for the coefficient a alone."],
+      [y0, `Uses the first table value, f(${S.num(x0)}), as a; that value includes both the exponential term and c.`],
+      [a * b ** x0, `Stops at a(${b})^(${S.num(x0)}) after removing c from the first table value, without accounting for its input.`],
+      [c, "Gives the vertical shift c instead of the coefficient a."],
+      [wrongFit(b * b), `Uses ${b * b}, the ratio of successive differences, as b even though the inputs are 2 units apart.`],
+      [wrongFit(1 / b), "Reverses the ratio of successive differences and reconstructs the function using the reciprocal base."],
+      [y0 - x0 * first / 2, "Treats the change between the first two rows as a constant linear rate, then extrapolates to x = 0."],
+    ] : [
+      [a, "Recovers a but omits the vertical shift c when evaluating f(0)."],
+      [c, "Gives only the vertical shift c, omitting a(b)^0 = a."],
+      [y0, `Uses f(${S.num(x0)}), the first table value, instead of f(0).`],
+      [a - c, "Recovers a and c but subtracts c instead of adding it when evaluating f(0)."],
+      [wrongFit(b * b), `Uses ${b * b}, the ratio of successive differences, as b even though the inputs are 2 units apart.`],
+      [wrongFit(1 / b), "Reverses the ratio of successive differences and reconstructs the function using the reciprocal base."],
+      [y0 - x0 * first / 2, "Treats the change between the first two rows as a constant linear rate, then extrapolates to x = 0."],
+    ];
+    // Redraw collisions before choosing which modelled mistakes to show.
+    const all = [key, ...pool.map(([value]) => value)];
+    if (all.some((value, i) => all.some((other, j) => j < i && S.approx(value, other)))) return null;
+    const wrong = C.pairBalanced(t, S.num(key), pool.map(([value, why]) => [C.ratio(value), why]));
+    const content = S.table(["x", "f(x)"], xs.map((x, i) => [x, values[i]]));
+    const expAtFirst = a * b ** x0;
+    const steps = [
+      `Subtract successive outputs to remove c: ${S.num(y1)} − (${S.num(y0)}) = ${S.num(first)}, and ${S.num(y2)} − (${S.num(y1)}) = ${S.num(second)}.`,
+      `The inputs increase by 2 each time, so the second of these differences is b² times the first: b² = ${S.paren(second)}/${S.paren(first)} = ${b * b}. Since b > 1, b = ${b}.`,
+      `The first difference equals a(b)^(${S.num(x0)})(b² − 1). Thus a(${b})^(${S.num(x0)}) = ${S.paren(first)}/${b * b - 1} = ${S.num(expAtFirst)}, giving a = ${S.num(a)}.`,
+      coefficient
+        ? `Therefore, the requested coefficient is ${S.num(a)}. The remaining constant is c = ${S.num(y0)} − (${S.num(expAtFirst)}) = ${S.num(c)}.`
+        : `Use the first row to find c = ${S.num(y0)} − (${S.num(expAtFirst)}) = ${S.num(c)}. Then f(0) = a + c = ${S.num(a)} ${S.signed(c)} = ${S.num(key)}.`,
+    ];
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: { type: "table", content },
+      stem: "The table shows three values of the function f, which is defined by f(x) = a(b)^x + c, where a, b, and c are constants and b > 1. " +
+        (coefficient ? "What is the value of a?" : "What is the value of f(0)?"),
+      correct: key,
+      wrong,
+      explanation: steps.join(" "),
+      steps,
+      principles: [
+        "For f(x) = a(b)^x + c, subtracting outputs removes the additive constant c.",
+        "At inputs spaced d units apart, successive output differences have ratio b^d, even when the outputs themselves do not have a constant ratio.",
+      ],
+      trap: coefficient
+        ? "The ratio of the output differences is b², not b; and f(0) = a + c is not the coefficient a."
+        : "The additive constant prevents the outputs from having a constant ratio. After recovering a, include c to find f(0).",
+      hint: "How could you combine two table values so that the unknown constant c disappears?",
+      estimatedSeconds: 135,
+      verify: () => {
+        // Independently recover c first from the displayed values:
+        // (f(x+2) − c)² = (f(x) − c)(f(x+4) − c).
+        // This route does not use the build's difference ratio or planted a,b,c.
+        const rows = content.split("\n").slice(1).map((line) => line.split(" | ")
+          .map((cell) => Number(cell.replace(/−/g, "-"))));
+        const [[u, p], [v, q], [w, r]] = rows;
+        const divisor = p + r - 2 * q;
+        if (divisor === 0 || v - u !== 2 || w - v !== 2) return false;
+        const C0 = (p * r - q * q) / divisor;
+        const B = Math.sqrt((q - C0) / (p - C0));
+        const A = (p - C0) / B ** u;
+        const recovered = coefficient ? A : A + C0;
+        return B > 1 && Number.isFinite(A) && rows.every(([x, y]) => S.approx(A * B ** x + C0, y)) &&
+          S.approx(recovered, key) && wrong.every(([value]) => !S.approx(C.labelValue(value), recovered));
+      },
+    };
+  }
+
+  const shiftedExponentialRecovery = {
+    id: "shifted-exponential-recovery",
+    difficulty: "Hard",
+    domain: "Advanced Math",
+    skill: "Nonlinear functions",
+    subskill: "exponential functions",
+    title: "Exponential parameters hidden by a vertical shift",
+    recognize: "An unknown additive constant prevents ordinary output ratios from revealing the base. Cancel it with differences, account for the spacing between inputs, and then recover the requested coefficient or initial value.",
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    tricks: ["intermediate-value", "wrong-quantity", "neighbouring-rule"],
+    build(t) {
+      const coefficient = t.chance(0.5);
+      const numeric = t.chance(0.3);
+      return C.drawUntilDistinctHard(() => shiftedExponentialRecoveryItem(t, coefficient, numeric));
+    },
+  };
+
+  /* ============================================ quadratic-zeros-in-interval */
+
+  function quadraticZerosInIntervalItem(t, sum, numeric) {
+    const h = t.int(-16, 16);
+    const d = t.int(8, 16);
+    const e = t.int(3, Math.floor(0.7 * d));
+    const v = t.int(-Math.floor(d / 3), Math.floor(d / 3));
+    if (d - e + v <= 0) return null;
+    const L = h - d;
+    const U = h + d;
+    const q = L - e;
+    const r = h + v;
+    const B = q + r;
+    const P = q * r;
+    if (B === 0 || P === 0) return null;
+    const lower = (L * L - P) / (2 * L - B);
+    const upper = (U * U - P) / (2 * U - B);
+    const integersBetween = (a, b) => {
+      const out = [];
+      for (let k = Math.floor(a) + 1; k < b - 1e-10; k += 1) out.push(k);
+      return out;
+    };
+    // These strict inequalities are structural, not numerical conveniences.
+    // They make every omitted condition admit an invalid integer parameter.
+    const valid = integersBetween(r, upper);
+    const outside = integersBetween(lower, q);
+    const withoutReality = integersBetween(L, upper);
+    const withoutEndpoints = integersBetween(r, U);
+    if (valid.length < 2 || outside.length === 0 || withoutReality.length === valid.length ||
+      withoutEndpoints.length === valid.length) return null;
+    const total = (values) => values.reduce((acc, value) => acc + value, 0);
+    const asked = (values) => sum ? total(values) : values.length;
+    const key = asked(valid);
+    const first = valid[0];
+    const last = valid[valid.length - 1];
+    const verb = sum ? "Adds" : "Counts";
+    const pool = [
+      [asked(withoutReality), `${verb} the integer parameters that put the vertex inside the interval and make both endpoint values positive, without requiring two distinct real zeros.`],
+      [asked(withoutEndpoints), `${verb} the integer parameters with two real zeros and a vertex inside the interval, without ensuring that both zeros stay inside the endpoints.`],
+      [asked([...outside, ...valid]), `${verb} an extra range of parameters for which the endpoint values are positive and the zeros are real, but both zeros lie to the left of ${S.num(L)}.`],
+      [asked(valid.slice(1)), `Omits k = ${S.num(first)}, the smallest permissible integer; both zeros are strictly inside the interval for this value as well.`],
+    ];
+    if (pool.some(([value]) => value === key)) return null;
+    const labels = pool.map(([value, reason]) => [S.num(value), reason]);
+    const wrong = C.pairBalanced(t, S.num(key), labels);
+    if (wrong.length !== 3) return null;
+    const polynomial = `x^2 ${S.MINUS} 2kx ${C.plus(B, "k")} ${S.signed(-P)}`;
+    const lowerText = S.frac(L * L - P, 2 * L - B);
+    const upperText = S.frac(U * U - P, 2 * U - B);
+    const list = valid.map(S.num).join(", ");
+    const condition = `the graph of y = f(x) ${sum ? "has" : "have"} two distinct x-intercepts whose x-coordinates are both greater than ${S.num(L)} and less than ${S.num(U)}`;
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: { type: "equations", content: `f(x) = ${polynomial}` },
+      stem: sum
+        ? `The function f is defined by the given equation, where k is an integer. What is the sum of all values of k for which ${condition}?`
+        : `The function f is defined by the given equation, where k is an integer. For how many values of k does ${condition}?`,
+      correct: key,
+      wrong,
+      explanation:
+        `The upward-opening parabola must have its vertex inside the interval, two distinct real zeros, and positive values at both endpoints. ` +
+        `These conditions are ${S.num(L)} < k < ${S.num(U)}, (k ${S.signed(-q)})(k ${S.signed(-r)}) > 0, and ${lowerText} < k < ${upperText}. ` +
+        `Together they give ${S.num(r)} < k < ${upperText}, so k can be ${list}. ` +
+        (sum ? `Their sum is ${S.num(key)}.` : `There are ${key} such values.`),
+      steps: [
+        `The vertex has x-coordinate k. If both zeros are strictly between ${S.num(L)} and ${S.num(U)}, their midpoint k is also in that interval.`,
+        `The discriminant is 4[k^2 ${C.plus(-B, "k")} ${S.signed(P)}] = 4(k ${S.signed(-q)})(k ${S.signed(-r)}). It is positive when k < ${S.num(q)} or k > ${S.num(r)}. Since ${S.num(q)} < ${S.num(L)}, only k > ${S.num(r)} remains.`,
+        `Both endpoint values must be positive: f(${S.num(L)}) = ${C.terms([[B - 2 * L, "k"], [L * L - P, ""]])} > 0 and f(${S.num(U)}) = ${C.terms([[B - 2 * U, "k"], [U * U - P, ""]])} > 0. Thus ${lowerText} < k < ${upperText}.`,
+        `Intersect all three conditions: ${S.num(r)} < k < ${upperText}. The integer values are ${list}.`,
+        sum
+          ? `Add these ${valid.length} integers: (${S.num(first)} ${S.signed(last)}) × ${valid.length}/2 = ${S.num(key)}.`
+          : `Count from ${S.num(first)} through ${S.num(last)}, inclusive: ${S.num(last)} ${S.MINUS} (${S.num(first)}) + 1 = ${key}.`,
+      ],
+      principles: [
+        "For an upward-opening quadratic, two distinct zeros lie strictly inside an interval exactly when its vertex is inside, its discriminant is positive, and its values at both endpoints are positive.",
+        "The x-coordinate of a quadratic's vertex is the average of its two real zeros.",
+      ],
+      trap: `Positive endpoint values do not ensure real zeros, and real zeros with positive endpoint values may both lie outside the interval. Here k < ${S.num(q)} is ruled out by the vertex location.`,
+      hint: "A parabola can have positive values at both endpoints while having no x-intercepts, or while having both x-intercepts outside the interval. What else must hold?",
+      estimatedSeconds: 150,
+      verify: () => {
+        // Independent route: use the quadratic formula on every possible
+        // integer midpoint, rather than reusing the parameter inequalities.
+        // Integers outside (L,U) cannot be the average of two zeros inside it.
+        const recovered = [];
+        for (let k = L + 1; k < U; k += 1) {
+          const constant = B * k - P;
+          const discriminant = 4 * k * k - 4 * constant;
+          if (discriminant <= 0) continue;
+          const root = Math.sqrt(discriminant);
+          const left = (2 * k - root) / 2;
+          const right = (2 * k + root) / 2;
+          if (left > L + 1e-9 && right < U - 1e-9) recovered.push(k);
+        }
+        return recovered.join(",") === valid.join(",") && asked(recovered) === key &&
+          wrong.every(([value]) => C.labelValue(value) !== key) &&
+          lower < q && q < L && L < r && r < upper && upper < U;
+      },
+    };
+  }
+
+  const quadraticZerosInInterval = {
+    id: "quadratic-zeros-in-interval",
+    difficulty: "Hard",
+    domain: "Advanced Math",
+    skill: "Nonlinear functions",
+    subskill: "quadratic functions",
+    title: "Two zeros confined to an interval",
+    recognize: "Two real zeros must be located, not merely shown to exist. Combine the vertex location, the discriminant, and both endpoint signs before restricting the parameter to integers.",
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 1 },
+    tricks: ["context-constraint", "neighbouring-rule"],
+    build(t) {
+      const sum = t.chance(0.5);
+      const numeric = t.chance(0.3);
+      return C.drawUntilDistinctHard(() => quadraticZerosInIntervalItem(t, sum, numeric));
+    },
+  };
+
   return [
     factoredPolynomialIntercepts, exponentialModelReading, quadraticVertexReading,
     projectileHeightModel, exponentialTableModel, functionTableEvaluate, polynomialConstantFromRemainder,
     exponentialFromWords, graphTransformation, vertexFromConditions, exponentialRewrite, functionTransformationTable,
-    polynomialFactorRemainder, graphWhichFunction, quadraticMustBeTrue,
+    polynomialFactorRemainder, graphWhichFunction, quadraticMustBeTrue, shiftedExponentialRecovery, quadraticZerosInInterval,
   ];
 });

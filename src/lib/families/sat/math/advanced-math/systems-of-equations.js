@@ -1165,8 +1165,117 @@
     },
   };
 
+  /* =========================================== system-branch-overlap-parameter */
+
+  const branchOverlapParameter = {
+    id: "system-branch-overlap-parameter",
+    difficulty: "Hard",
+    domain: "Advanced Math",
+    skill: "Systems of equations",
+    subskill: "nonlinear systems",
+    title: "Parameter values from distinct solutions on two branches",
+    recognize:
+      "A nonlinear equation can factor into two line branches. Count intersections with each branch, then count " +
+      "a point on both branches only once; a repeated root and a shared intersection give different parameter values.",
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
+    tricks: ["intermediate-value", "wrong-quantity", "sign-error"],
+    build(t) {
+      const numeric = t.chance(0.35);
+      const product = t.chance(0.5);
+      const swapped = t.chance(0.5);
+      return C.drawUntilDistinctHard(() => {
+        const a = t.pick([-2, -1, 1, 2]);
+        const h = t.nonzero(-4, 4);
+        const p = h + t.pick([-4, -3, -2, 2, 3, 4]);
+        const q = t.nonzero(-20, 20);
+        if (p === 0) return null;
+        const b = -2 * a * h;
+        const tangent = q + a * h * h;
+        const shared = tangent - a * (p - h) ** 2;
+        const key = product ? tangent * shared : tangent + shared;
+        if ([tangent, shared, key].includes(0)) return null;
+        const [u, v] = swapped ? ["y", "x"] : ["x", "y"];
+        const f = (value, k) => a * value * value + b * value + k;
+        const factor = (variable, root) => `(${S.lin(1, -root, variable)})`;
+        const polynomial = C.terms([[a, `${u}²`], [b, u]]);
+        const branchEquation = `xy = ${C.terms([[p, v], [q, u], [-p * q, ""]])}`;
+        const combination = product ? "product" : "sum";
+        const wrong = [
+          [tangent, `Finds only k = ${S.num(tangent)}, where the ${v} = ${S.num(q)} branch touches the parabola, and misses the shared-intersection case.`],
+          [shared, `Finds only k = ${S.num(shared)}, where the branches share an intersection, and misses the touching case.`],
+          [product ? tangent + shared : tangent * shared, `Finds both parameter values but reports their ${product ? "sum" : "product"} instead of their ${combination}.`],
+          [product ? -key : tangent - shared, product
+            ? "Reverses the sign of one parameter value before multiplying."
+            : "Subtracts when combining the two parameter values instead of adding."],
+          [product ? tangent * tangent : 2 * tangent, `Counts the touching value of k twice, confusing a repeated coordinate root with two distinct parameter values.`],
+          [product ? shared * shared : 2 * shared, `Counts the shared-intersection value of k twice because that point lies on both branches.`],
+          [product ? 2 * key : -key, product
+            ? "Doubles the product because the system has two solutions for each admissible value of k."
+            : "Reverses the sign of k when isolating it in both cases, then adds the two incorrect values."],
+        ];
+        // A modelled mistake that lands on the key invalidates the draw;
+        // the choice selector never silently labels the correct value wrong.
+        if (wrong.some(([value]) => value === key)) return null;
+        const offered = C.pairBalanced(t, key, wrong);
+        const steps = [
+          `Rearrange ${branchEquation}: ${factor(u, p)}${factor(v, q)} = 0. Thus ${u} = ${S.num(p)} or ${v} = ${S.num(q)}.`,
+          `The branch ${u} = ${S.num(p)} always gives one point on the parabola. The branch ${v} = ${S.num(q)} can give zero, one, or two points.`,
+          `If ${v} = ${S.num(q)} touches the parabola, its single point has ${u} = ${S.num(h)}. Substituting gives k = ${S.num(tangent)}. Since ${S.num(h)} ≠ ${S.num(p)}, this point differs from the first branch's point, giving two solutions.`,
+          `If ${v} = ${S.num(q)} crosses the parabola twice, the total is two only when one intersection also has ${u} = ${S.num(p)}. Substituting ${u} = ${S.num(p)} and ${v} = ${S.num(q)} gives k = ${S.num(shared)}. The other intersection has ${u} = ${S.num(2 * h - p)}, a different value.`,
+          `Therefore the two possible values of k are ${S.num(tangent)} and ${S.num(shared)}. Their ${combination} is ${S.num(key)}.`,
+        ];
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          stimulus: { type: "equations", content: `${v} = ${polynomial} + k\n${branchEquation}` },
+          stem:
+            `In the given system of equations, k is a real constant. There are exactly two values of k for which ` +
+            `the system has exactly two distinct real solutions (x, y). What is the ${combination} of these two values of k?`,
+          correct: key,
+          wrong: numeric ? undefined : offered,
+          explanation:
+            `The second equation is ${factor(u, p)}${factor(v, q)} = 0, so its graph has two line branches. ` +
+            `Exactly two distinct solutions occur either when ${v} = ${S.num(q)} touches the parabola ` +
+            `(k = ${S.num(tangent)}), or when it crosses twice and one intersection is also on ${u} = ${S.num(p)} ` +
+            `(k = ${S.num(shared)}). The ${combination} is ${S.num(key)}.`,
+          steps,
+          principles: [
+            "If a product is zero, at least one factor is zero; each resulting equation gives a branch to consider.",
+            "When combining the solutions from different branches, count any shared ordered pair only once.",
+            "A quadratic equation has exactly one distinct real solution when its discriminant is zero.",
+          ],
+          trap:
+            `Finding only the touching case, k = ${S.num(tangent)}, misses the second possibility: ` +
+            "two branches can share one of their intersections.",
+          hint: "Can the second equation describe more than one line? How would a point on both lines affect the count?",
+          estimatedSeconds: 150,
+          verify: () => {
+            // Rebuild the quadratic coefficients by evaluation, then enumerate
+            // and deduplicate coordinate roots instead of using the answer formula.
+            const [A, B, constant] = C.sampleQuadratic((value) => f(value, 0) - q);
+            const candidates = [B * B / (4 * A) - constant, -A * p * p - B * p - constant];
+            const count = (k) => {
+              const coordinates = [p, ...C.realRoots(A, B, constant + k)];
+              const distinct = coordinates.filter((value, index) =>
+                coordinates.findIndex((other) => S.approx(value, other)) === index);
+              if (!distinct.every((value) => {
+                const dependent = f(value, k);
+                return S.approx(value * dependent, p * dependent + q * value - p * q);
+              })) return -1;
+              return distinct.length;
+            };
+            if (S.approx(candidates[0], candidates[1]) || candidates.some((k) => count(k) !== 2)) return false;
+            const probes = candidates.flatMap((k) => [k - 0.25, k + 0.25]);
+            probes.push((candidates[0] + candidates[1]) / 2);
+            if (probes.some((k) => count(k) === 2)) return false;
+            return (product ? candidates[0] * candidates[1] : candidates[0] + candidates[1]) === key;
+          },
+        };
+      });
+    },
+  };
+
   return [
     constantFromSolution, parabolaLineSolutionCheck, lineParabolaSolve, nonlinearSystemSolve, squareIdentity,
-    discriminantParameter, lineCircleTangent, polynomialLevelCount,
+    discriminantParameter, lineCircleTangent, polynomialLevelCount, branchOverlapParameter,
   ];
 });

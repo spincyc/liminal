@@ -52,8 +52,9 @@ numbers are retained; completed item 1 is recorded below.
 
 ### 2. Obtain independent human editorial review
 
-All 317 active SAT templates have independent **agent** acceptance, with 1,228 recorded
-sample answers. That does not certify every draw or replace an educator's review. All
+All active SAT templates have independent **agent** acceptance, with sample answers
+recorded in the manifest. Current inventory is in the [coverage report](content-report.md).
+That does not certify every draw or replace an educator's review. All
 4,105 retained bank records still await human editorial approval; 2,380 belong to
 available ACT banks and the rest are archived. Guide review also has documented sampling
 limits.

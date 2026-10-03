@@ -2193,9 +2193,206 @@
     },
   };
 
+  const signedCubeRootValue = {
+    id: "signed-cube-root-value",
+    difficulty: "Easy",
+    domain: "Advanced Math",
+    skill: "Equivalent expressions",
+    subskill: "exponent rules",
+    title: "A signed cube root with an outside factor or divisor",
+    recognize: "A real cube root has the same sign as the number inside it. Evaluate that root, then apply the multiplication or division outside it.",
+    rubric: { steps: 1, concept: 0, interpretation: 0, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["sign-error", "neighbouring-rule", "intermediate-value"],
+    build(t) {
+      const divide = t.chance(0.5);
+      const numeric = t.chance(0.3);
+      // The two operations remain fixed while redrawing numerical collisions.
+      for (let attempt = 0; attempt < 500; attempt += 1) {
+        const root = t.sign() * t.int(2, 15);
+        const outside = t.sign() * t.int(2, 12);
+        const radicand = root ** 3;
+        const scale = (value) => divide ? value / outside : value * outside;
+        const key = scale(root);
+        const label = (value) => C.ratio(value);
+        const expression = divide
+          ? `(³√(${S.num(radicand)}))/(${S.num(outside)})`
+          : `${S.num(outside)} · ³√(${S.num(radicand)})`;
+        const operation = divide ? "divide" : "multiply";
+        const calculation = divide
+          ? `${S.num(root)} ÷ (${S.num(outside)})`
+          : `(${S.num(outside)})(${S.num(root)})`;
+        const candidates = [
+          [-key, "Reverses the sign of the final value; a real cube root keeps the sign of its radicand."],
+          [root, `Finds the cube root but does not ${operation} by ${S.num(outside)}.`],
+          [divide ? root * outside : root / outside, `Uses ${divide ? "multiplication" : "division"} instead of the operation outside the root.`],
+          [scale(radicand / 3), `Divides ${S.num(radicand)} by 3 instead of finding its cube root.`],
+          [scale(radicand), `Uses ${S.num(radicand)} itself instead of its cube root.`],
+          [-scale(radicand / 3), `Divides ${S.num(radicand)} by 3 instead of finding its cube root and reverses the final sign.`],
+          [-scale(radicand), `Uses ${S.num(radicand)} itself instead of its cube root and reverses the final sign.`],
+        ];
+        if (candidates.some(([value]) => S.approx(value, key))) continue;
+        const wrong = C.pairBalanced(t, label(key), candidates.map(([value, reason]) => [label(value), reason]));
+        if (wrong.length !== 3 || new Set([label(key), ...wrong.map(([text]) => text)]).size !== 4) continue;
+        const correct = numeric ? (divide ? S.frac(root, outside) : key) : label(key);
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 45,
+          stimulus: divide ? { type: "equations", content: expression } : null,
+          stem: divide ? "What is the value of the given expression?" : `What is the value of ${expression}?`,
+          correct,
+          wrong: numeric ? undefined : wrong,
+          explanation: `Since (${S.num(root)})³ = ${S.num(radicand)}, the real cube root of ${S.num(radicand)} is ${S.num(root)}. Then ${calculation} = ${label(key)}.`,
+          steps: [
+            `Evaluate the cube root: ³√(${S.num(radicand)}) = ${S.num(root)}, because (${S.num(root)})³ = ${S.num(radicand)}.`,
+            `${divide ? "Divide" : "Multiply"} by the number outside the root: ${calculation} = ${label(key)}.`,
+          ],
+          principles: ["For every real number a, the real cube root of a³ is a; a negative number has a negative real cube root."],
+          trap: "A cube root is not division by 3, and the number outside the root still needs to be applied.",
+          hint: "What real number multiplied by itself three times gives the number inside the root?",
+          verify: () => {
+            // Read the cube-root argument and outside number back from the
+            // displayed expression, then enumerate candidate integer roots.
+            const values = expression.replace(/−/g, "-").match(/-?\d+/g).map(Number);
+            const input = divide ? values[0] : values[1];
+            const external = divide ? values[1] : values[0];
+            const found = [];
+            for (let value = -20; value <= 20; value += 1) {
+              if (value * value * value === input) found.push(value);
+            }
+            if (found.length !== 1) return false;
+            const value = divide ? found[0] / external : external * found[0];
+            return S.approx(value, C.labelValue(correct)) &&
+              wrong.every(([text]) => !S.approx(C.labelValue(text), value));
+          },
+        };
+      }
+      throw new Error("signed cube root: no distinct choice set");
+    },
+  };
+
+  /* ========================================== quadratic-square-coefficient */
+
+  function quadraticSquareCoefficientItem(t) {
+    const a = t.int(2, 6);
+    const b = t.nonzero(-8, 8);
+    const magnitude = t.int(2, 9);
+    if (b * b >= 4 * a * magnitude) return null;
+    const noZeros = t.chance(0.5);
+    const c = noZeros ? magnitude : -magnitude;
+    const middle = t.chance(0.5);
+    const numeric = t.chance(0.35);
+    const leading = a * a;
+    const cubic = 2 * a * b;
+    const constant = c * c;
+    const k = b * b + 2 * a * c;
+    const m = 2 * b * c;
+    const key = middle ? k : m;
+    if (k === 0) return null;
+    const expression = terms([[leading, "x⁴"], [cubic, "x³"], [1, "kx²"], [1, "mx"], [constant, ""]]);
+    const candidates = middle
+      ? [
+        [b * b - 2 * a * c, "Uses the other sign of c. That square has the displayed leading, cubic, and constant coefficients, but it has the wrong number of real zeros."],
+        [b * b, "Uses only b² for the x²-coefficient and omits the two products of ax² and c."],
+        [2 * a * c, "Finds 2ac, the contribution from ax² and c, but omits the contribution from (bx)²."],
+        [b * b + a * c, "Counts only one product of ax² and c instead of both cross products."],
+        [b * b - a * c, "Uses the other sign of c and counts only one product of ax² and c."],
+        [m, "Reports m, the x-coefficient, instead of k, the x²-coefficient."],
+      ]
+      : [
+        [-2 * b * c, "Uses the other sign of c. That square has the displayed leading, cubic, and constant coefficients, but it has the wrong number of real zeros."],
+        [b * c, "Counts only one product of bx and c instead of both cross products."],
+        [-b * c, "Uses the other sign of c and counts only one product of bx and c."],
+        [4 * b * c, "Divides the cubic coefficient by a instead of 2a, then uses the resulting doubled b in 2bc."],
+        [c, "Stops at the constant c in the quadratic instead of finding the x-coefficient of its square."],
+        [k, "Reports k, the x²-coefficient, instead of m, the x-coefficient."],
+      ];
+    if (candidates.some(([value]) => value === key)) return null;
+    const wantExtreme = t.chance(0.65);
+    let wrong = C.pairBalanced(t, key, candidates);
+    // Use only modelled mistakes while keeping a middle-value guess unhelpful.
+    for (let attempt = 0; attempt < 24; attempt += 1) {
+      const extreme = wrong.every(([value]) => value < key) || wrong.every(([value]) => value > key);
+      if (extreme === wantExtreme) break;
+      wrong = C.pairBalanced(t, key, candidates);
+    }
+    if (wrong.length !== 3) return null;
+    const positiveDiscriminant = b * b - 4 * a * magnitude;
+    const negativeDiscriminant = b * b + 4 * a * magnitude;
+    const condition = noZeros ? "no real solutions" : "exactly two distinct real solutions";
+    const signStep =
+      `For c = ${magnitude}, b² ${MINUS} 4ac = ${num(positiveDiscriminant)} < 0, so the quadratic has no real zeros. ` +
+      `For c = ${num(-magnitude)}, b² ${MINUS} 4ac = ${negativeDiscriminant} > 0, so it has two distinct real zeros. ` +
+      `The given condition therefore requires c = ${num(c)}.`;
+    const targetStep = middle
+      ? `The x²-coefficient is k = b² + 2ac = ${b * b} ${signed(2 * a * c)} = ${num(key)}.`
+      : `The x-coefficient is m = 2bc = 2(${num(b)})(${num(c)}) = ${num(key)}.`;
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: { type: "equations", content: `p(x) = ${expression}` },
+      stem:
+        `The polynomial p(x), where k and m are constants, can be written as the square of a quadratic polynomial with real coefficients. ` +
+        `If p(x) = 0 has ${condition}, what is the value of ${middle ? "k" : "m"}?`,
+      correct: key,
+      wrong: numeric ? [] : wrong,
+      explanation:
+        `Write p(x) = (ax² + bx + c)² with a > 0. Matching the x⁴, x³, and constant terms gives a = ${a}, b = ${num(b)}, and c = ±${magnitude}. ` +
+        `Squaring does not change which real inputs make an expression zero. ${signStep} ${targetStep}`,
+      steps: [
+        "Write p(x) = (ax² + bx + c)². We may choose a > 0 because changing every sign inside the square leaves p(x) unchanged.",
+        `The x⁴-coefficient is a² = ${leading}, so a = ${a}. The x³-coefficient is 2ab = ${num(cubic)}, so b = ${num(b)}.`,
+        `The constant term is c² = ${constant}, so c can be ${magnitude} or ${num(-magnitude)}.`,
+        "p(x) = 0 and ax² + bx + c = 0 have the same distinct real solutions.",
+        signStep,
+        targetStep,
+      ],
+      principles: [
+        "A polynomial and its square have the same real zeros; squaring changes their multiplicities, not their locations.",
+        "A quadratic ax² + bx + c has two distinct real zeros when b² − 4ac > 0 and none when b² − 4ac < 0.",
+        "In (ax² + bx + c)², the x²-coefficient is b² + 2ac and the x-coefficient is 2bc.",
+      ],
+      trap: "The positive square root of the constant term need not be c. Both signs produce a quadratic square with the supplied coefficients, but only one sign gives the required number of real zeros.",
+      hint: "What must the real zeros of a polynomial and of its square have in common?",
+      estimatedSeconds: 150,
+      verify: () => {
+        // Recover both missing coefficients from evaluations at x = ±1 for
+        // each possible square, independently of the expansion used to build.
+        const aa = Math.sqrt(leading);
+        const bb = cubic / (2 * aa);
+        const found = [];
+        for (const cc of [Math.sqrt(constant), -Math.sqrt(constant)]) {
+          const square = (x) => (aa * x * x + bb * x + cc) ** 2;
+          const kk = (square(1) + square(-1)) / 2 - leading - constant;
+          const mm = (square(1) - square(-1)) / 2 - cubic;
+          const zeros = realRoots(aa, bb, cc).length;
+          const holds = [-2, -1, 0, 1, 2].every((x) =>
+            square(x) === leading * x ** 4 + cubic * x ** 3 + kk * x * x + mm * x + constant);
+          if (holds && zeros === (noZeros ? 0 : 2)) found.push(middle ? kk : mm);
+        }
+        return found.length === 1 && found[0] === key && wrong.every(([value]) => value !== found[0]);
+      },
+    };
+  }
+
+  const quadraticSquareCoefficient = {
+    id: "quadratic-square-coefficient",
+    difficulty: "Hard",
+    domain: "Advanced Math",
+    skill: "Equivalent expressions",
+    subskill: "factoring",
+    title: "Infer a squared polynomial's coefficient from its real zeros",
+    recognize: "Construct the quadratic whose square matches the fixed coefficients. Its constant has two possible signs; the required number of real zeros selects one sign before either missing coefficient can be determined.",
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    tricks: ["context-constraint", "sign-error", "intermediate-value", "wrong-quantity", "neighbouring-rule"],
+    build(t) {
+      return drawUntilDistinctHard(() => quadraticSquareCoefficientItem(t));
+    },
+  };
+
+
   return [
     monomialExponentRules, quadraticFactorMatch, rationalExpressionCombine, rationalExponentRewrite,
     expressionFromCombination, nonlinearFormulaRearrange, commonBaseExponent, quadraticStructureForm,
     unknownCoefficientProduct, expressionSubstitution, complexFractionEquivalence,
+    signedCubeRootValue, quadraticSquareCoefficient,
   ];
 });

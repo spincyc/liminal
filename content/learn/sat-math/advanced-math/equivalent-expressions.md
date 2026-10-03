@@ -216,6 +216,7 @@ whether the question asks for x/y or y/x.
 Hard questions ask you to recognize structure before you do algebra:
 
 - A product with unknown coefficients that equals a given quadratic for all x. Expand, then match the x², x and constant terms. When the conditions don't say which unknown is which (a sum and a product), both assignments count, and there can be two answers.
+- A polynomial identity in which coefficient matching leaves a sign undetermined, and a separate condition on the number of real zeros selects that sign. Use both conditions before solving for the requested coefficient.
 - A value through a combination: a power of a common base whose exponent is a multiple of what you are given, or a square that contains a given sum and product (see [a value through a known combination](#known-combination)).
 A useful Medium preparation is choosing the equivalent form that displays
 a feature: vertex form shows the minimum or maximum, factored form the
