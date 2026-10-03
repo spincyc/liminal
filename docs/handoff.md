@@ -1,127 +1,234 @@
-# Handoff — 2026-10-02
+# Outstanding-issues handoff — 2026-10-03
 
-The current review record is
-[`reviews/2026-10-02-cold-review.md`](reviews/2026-10-02-cold-review.md).
-It supersedes the older operational assumptions below. Source fingerprints
-now cover entire defining files and local dependencies; the review manifest
-binds independent sampled answers to each current version and difficulty.
-Content changes require both a registry update and renewed review evidence.
-Do not regenerate an acceptance manifest by copying the generator's answers.
+Baseline:
+[ac74259](https://github.com/spincyc/liminal/commit/ac74259be5da248d8496b783956f603acbf9a3a8),
+published to `main` and `feature/prep`. [CI and Pages deployment
+passed](https://github.com/spincyc/liminal/actions/runs/37089005718); published catalog
+and template bundles matched the build. The release passed the complete gate, 317
+source-bound independent template reviews and 1,902,000 generated SAT checks. See the
+[cold-review record](reviews/2026-10-02-cold-review.md) for coverage and limits.
 
-Science practice is unavailable pending a reviewed passage-set replacement.
-Other ACT sections remain fixed exercise banks with unverified difficulty.
-Existing IDs, saved outcomes and unfinished drafts are preserved. Archived SAT
-banks remain for old history. The platform and ACT Math WIP branches listed
-below were deliberately left untouched; their old tests and assumptions are
-not evidence that they integrate with this release.
+This list supersedes the earlier handoff's active queue. The [old handoff remains in Git
+history](https://github.com/spincyc/liminal/blob/ac74259/docs/handoff.md). No
+uncontained critical defect or unresolved incorrect active answer was identified by the
+completed review. That describes its findings, not a guarantee about every possible
+generated question.
 
-Run the complete gate and deep template checks after source changes. Use UTC
-for the complete test run to match CI. Source-bound acceptance, finite seeded
-checks and browser evidence do not establish empirical SAT calibration.
+## Ranked outstanding work
 
-## Preserved handoff — 2026-09-26
+P1 denotes a substantial missing capability or missing evidence of instructional
+quality. P2 denotes a bounded product limitation, verification gap or operational risk.
+P3 denotes maintenance or an optional enhancement. Rank gives the suggested order within
+those levels; evidence gaps are not asserted software failures.
 
-State of the work at the end of the 2026-09-26 session, and what to do
-next. The product-level plan is `roadmap.md` (Next); the review that
-drove the day is `reviews/2026-09-26-cold-review.md`. This file adds the
-operational detail a new session needs.
+| Rank | Severity | Outstanding issue | Current status |
+| ---: | --- | --- | --- |
+| 1 | P1 | ACT Science has no usable passage-set bank | Contained: practice, minis and booklets disabled |
+| 2 | P1 | Independent human editorial review remains outstanding | Agent review completed; human approval not claimed |
+| 3 | P1 | Difficulty and practice targets lack empirical calibration | Editorial tiers only; no scaled-score/readiness prediction |
+| 4 | P2 | ACT inventory repeats designs and has unverified tiers | Exercise variants; tiers unused in practice/progress |
+| 5 | P2 | Progress export excludes unfinished sessions and essay drafts | Local resume and separate essay download work |
+| 6 | P2 | Some historical question details cannot be reconstructed | Outcomes preserved; unverifiable details withheld |
+| 7 | P2 | Browser, accessibility, concurrency and print coverage is incomplete | Verification gap; no corresponding open failure established |
+| 8 | P2 | Two unreviewed WIP branches exist only in this workspace | Preserved, unmerged and absent from fetched remote refs |
+| 9 | P3 | Difficulty diagnostic collapses different mathematical structures | Reproduced shape collision; not a release gate |
+| 10 | P3 | Archived SAT banks and large modules remain | Maintenance backlog; compatibility paths still use banks |
+| 11 | P3 | Calculator opens externally instead of being embedded | Optional enhancement; integration requirements need verification |
 
-## Where things stand
+## P1 — instructional capability and evidence
 
-- `main` and `feature/prep` are at the commit that adds this file; the
-  site is deployed from `main` by GitHub Actions and the deploy passed.
-- The gate (`node tools/check-all.js`) is green, and every SAT template
-  passes `node tools/check-families.js --reps 3000`.
-- The tests are time-zone sensitive in one place (gate windows must span
-  two calendar days). Run `TZ=UTC node --test "test/**/*.test.js"` before
-  pushing: CI runs in UTC.
+### 1. Rebuild ACT Science before enabling it
 
-## Work in flight (local branches, not pushed)
+The retained 575-item bank has no shared passages and systematic answer tells: all 32
+diagram items chose Sample D, and all 28 model-evaluation items chose Model A. These are
+known defects in archived material, not content approved for new practice. [The
+catalog](../content/catalog.json) sets `practiceAvailable` to false; history remains
+available.
 
-Two lanes were stopped before they finished. Their work is saved as one WIP
-commit each on a local branch of the `spincyc/liminal` clone in the
-`sat/prep` workspace. **The branches exist only in that clone**: removing
-the workspace (`wt rm`, `wt sweep`) deletes them. Push them first if the
-clone may go.
+Next: author original coherent passage/data/figure sets, including experimental design
+and competing viewpoints, and independently solve their questions. Keep Science
+unavailable until the replacement passes content review, bank admission, passage/figure
+checks and browser/booklet verification. Preserve historical IDs or provide explicit
+compatibility mappings. Re-enabling the flag alone does not close this issue.
 
-| Branch | WIP commit | Base | What it holds | State |
-| --- | --- | --- | --- | --- |
-| `lane/platform` | `ba6c6ba` | `cbb7e6f` | Roadmap items 1 and 6: SAT banks retired (legacy ids read-only, banks, SAT generators and `content/sources/sat-reading-writing` deleted, tools restricted to ACT), `core.js` split, smoke test on the template paths, a `report-content --check`, and a start on `lib/recording.js` | Full gate green at its base; stopped while writing `test/recording.test.js`; not reviewed; no browser check |
-| `lane/act-math` | `0e4ad3a` | `b68714f` | ACT Math phase 1: template plumbing (`act-mathematics` in check-families, update-templates, families, instantiate) and 63 ACT Math templates in `src/lib/families/act/` with their registry | All 63 pass `--section act-mathematics`; stopped while writing independent solvers; not reviewed; the site does not serve them |
+Entry points: [Science generator](../tools/generators/generate-act-science.js), [review
+findings](reviews/2026-10-02-cold-review.md).
 
-To resume either: create a worktree on the branch, `git rebase feature/prep`
-(expect conflicts in `tools/check-families.js`, `tools/update-templates.js`
-and `src/lib/families/shared/instantiate.js` for act-math; platform touches
-`app.js`, the views, `core.js` and many tools, all changed since its base),
-finish the lane's brief, review the diff as a proposal, run the gate and a
-browser pass, then commit coherently on `feature/prep`.
+### 2. Obtain independent human editorial review
 
-Platform first: it deletes about 80,000 lines of bank data, and ACT Math's
-plumbing should land on top of the retired-bank tools. Then, to serve ACT
-Math from templates: add `act-mathematics` to the template sections
-(`src/lib/progress.js` `TEMPLATE_SECTIONS`, `src/lib/practice.js` set-code
-prefixes and Learn sections), make the practice view and Progress handle
-an ACT template section (tiers become trusted, so the accuracy-only state
-no longer applies to it), check a full 45-question ACT Math set in the
-browser, and update the catalog notes, README and AGENTS.md.
+All 317 active SAT templates have independent **agent** acceptance, with 1,228 recorded
+sample answers. That does not certify every draw or replace an educator's review. All
+4,025 retained bank records still await human editorial approval; 2,300 belong to
+available ACT banks and the rest are archived. Guide review also has documented sampling
+limits.
 
-## Next, in order
+Next: prioritize active Hard SAT designs, repaired ACT questions and teaching advice. A
+qualified independent reader should check unique answer support, distractors, factual
+claims, teaching and difficulty, recording exact IDs/seeds and dispositions. Close
+reviewed batches through documented coverage and repaired findings; do not bulk-promote
+statuses or treat unseen draws as human-approved.
 
-1. **Integrate `lane/platform`** (above). README and `roadmap.md` item 1
-   and 6 text change when it lands.
-2. **Widen the template fingerprint** (`tools/lib/fingerprint.js`: 8 seeds
-   miss rare-draw edits; two versions were bumped by hand today). Add a
-   `--rehash` mode to `tools/update-templates.js` that rewrites
-   fingerprints under the new definition without bumping versions, run it
-   in a commit with no template changes, then fix
-   `docs/question-templates.md` ("rebuilt exactly while the version is
-   unchanged").
-3. **Integrate `lane/act-math`** and switch ACT Math to templates.
-4. **ACT honesty in the meantime:** hide or label ACT Science (near-
-   duplicate items, no passages); replace "Build a set from 2,300 original
-   ACT questions" in the practice view with honest counts and a "checked
-   automatically only, not reviewed by a person" note.
-5. **A cold read of the new Hard templates.** Every template added or
-   re-tiered on 2026-09-26 was answered blind only by its author. A
-   read-only review (as in the review record) should classify each Hard
-   template as hard-module level or not.
-6. **ACT phases 2–4:** passage-set templates and Science, then English
-   (slot templates over the authored passages; NO CHANGE at 20–30%), then
-   Reading kept as authored sets. Scope in the review record.
-7. **Leftover tells under the gate limits:** some Easy and Medium Math
-   templates keep the key in a look-alike pair 90–100% of the time
-   (`linear-expression-from-equation`, `system-parameter-solution-count`,
-   `quadratic-vertex-reading`, `circles-packed-in-square`); several Reading
-   and Writing templates have hub scores near 45%. Consider lowering check
-   13's template limit once they are fixed.
-8. **Split the largest views** (`review.js`, `practice.js`, the test
-   screen) once platform lands.
-9. **Small items:** the saved test is not in "Download my progress"
-   (deferred: restoring would overwrite slots); `inscribed-composite-solids`
-   asks for a sphere's surface area without giving 4πr², which is not on
-   the SAT reference sheet — decide whether the stem should give it; a few
-   invented events still sit in real places in Reading and Writing scenes;
-   a cross-tab merge can restore an error-log tag another tab deleted (no
-   UI deletes tags today).
+Evidence: [review manifest](../content/template-reviews.json), [audit
+log](content-audit.md), [authoring/status rules](content-authoring.md).
 
-## Needs the owner
+### 3. Calibrate difficulty against student results
 
-- **An embedded graphing calculator** needs a Desmos API key.
-- **Calibration** (roadmap item 2) needs official scores from real
-  students, recorded under Progress → Official scores and shared with
-  consent.
-- **Two unexplained pushes** of `feature/prep` (09:08 and 09:19 on
-  2026-09-26, to `e6e4b7a` and `508d83b`) came from this clone while lanes
-  were told not to push. They published only commits already on
-  `feature/prep`. Neither stopped lane reported running them.
+SAT tiers are editorial judgments. Passing rolling practice targets does not establish
+exam readiness; the fixed 60% Module 2 routing rule is a practice approximation. The
+original concern about easier questions inflating perceived readiness cannot be settled
+by additional generator repetitions.
 
-## How the day's lanes were run
+Next: define a pilot using consented student results and official practice/test scores,
+separating first exposure, repeats, hints and question design. Assess whether tiers and
+recommendations track those results; justify changes with the evidence. Keep
+score-prediction/readiness claims disabled unless separately validated. Official-score
+recording already exists; obtaining participants and consent requires owner involvement.
 
-Read-only reviews ran on a detached worktree pinned to the reviewed
-commit; implementation lanes each had their own worktree and branch,
-exclusive file ownership, and left their work uncommitted with a proposed
-commit plan; gate changes that newly failed templates were committed on a
-side branch the template lanes started from, and landed after the fixes.
-About eight lanes ran at once without hitting the usage limit. Registries
-(`content/templates/*.json`) were regenerated only by the coordinator,
-after merging.
+Evidence: [calibration policy](difficulty-calibration.md),
+[analytics](../src/lib/analytics.js), [roadmap](roadmap.md).
+
+## P2 — bounded limitations and verification
+
+### 4. Expand distinct ACT designs and assess their tiers
+
+Each available ACT bank has 575 records, not 575 independent designs. Math has 232
+generator shapes; Writing reuses 53 issues; English uses 40 authored passages and
+Reading 55. All available catalog subskills are represented, but presence does not
+establish depth or calibration. Strict shape-repetition diagnostics are not represented
+as passing.
+
+Next: inventory actual design/scene coverage, expand thin areas and independently review
+new material. Evaluate the old ACT Math proposal below before reusing it. Conversion to
+templates alone does not make tiers trustworthy. Retain accuracy-only ACT treatment
+until justified.
+
+Evidence: [coverage report](content-report.md), [bank
+limitations](content-authoring.md), [bank audit](../tools/audit-questions.js).
+
+### 5. Decide whether unfinished work needs portable backup
+
+`Download my progress` exports the progress record, not either unfinished-session slot.
+Those slots contain question snapshots and unfinished essay drafts. A completed essay
+remains downloadable in its active report, but progress stores completion only; closing
+the report does not create a permanent essay archive. Clearing browser storage can
+therefore lose work absent a separate download.
+
+This is a known backup/privacy boundary, not a newly reproduced save/resume bug. If
+portable sessions are wanted, specify opt-in draft inclusion and import preview/conflict
+handling. Verify that restore cannot silently overwrite a different saved set or test,
+and preserve versions, deadlines and ownership checks. Do not silently add essay text to
+progress exports.
+
+Entry points: [progress I/O](../src/lib/progress-io.js), [session
+store](../src/lib/session-store.js), [draft behavior](../README.md).
+
+### 6. Preserve the limit on historical reconstruction
+
+Old attempts without matching content identity, and old completed modules without
+recoverable question snapshots, may lack reliable original details. The repair preserves
+outcomes and refuses to attach old response indices to revised choices; it does not
+recover missing data.
+
+This is an accepted residual limitation. Recovery requires a verified original snapshot
+or archived implementation plus sufficient version/seed information; some records lack
+that information. Consider executable version archives only as a separate scoped
+feature. Do not rebuild old questions from current sources or rewrite historical
+correctness to make details appear available.
+
+Entry points: [identity checks](../src/lib/progress.js), [simulation
+snapshots](../src/lib/simulation.js), [Review](../src/app/views/review.js).
+
+### 7. Extend verification where evidence is absent
+
+The release exercised Chromium, a full SAT flow, all response types, save/resume,
+imports, Learn and booklets, including mobile width and 200% root text. It did not
+establish cross-engine behavior, screen-reader usability, native zoom equivalence,
+offline/network-failure handling or OS-level printing. Browser flows used local files;
+deployed bundles were subsequently checked for equality. PDF examples do not prove every
+generated form paginates correctly.
+
+Next: test the deployed HTTP site in Firefox/WebKit and representative assistive
+technology; verify native zoom/printing and storage/network failures. Exercise genuinely
+concurrent tabs: localStorage provides no atomic multi-tab transactions, while existing
+tests cover particular stale-write and ownership paths. Record reproducible failures
+before proposing a storage redesign.
+
+Evidence: [review coverage](reviews/2026-10-02-cold-review.md), [browser
+regressions](../test/browser-review.test.js), [session-store
+tests](../test/session-store.test.js).
+
+### 8. Preserve and reassess the old WIP proposals
+
+These branches/worktrees were deliberately left untouched. As inspected on 2026-10-03,
+fetched remote refs contain neither branch. Before deleting the workspace, decide
+whether to retain/publish/archive or explicitly discard them. Their old passing checks
+are not current acceptance.
+
+| Branch | WIP commit / base | Proposal and unfinished work |
+| --- | --- | --- |
+| `lane/platform` | `ba6c6ba` / `cbb7e6f` | Retire SAT banks, split core, add recording helper and report drift check; recording tests unfinished, no independent/browser acceptance |
+| `lane/act-math` | `0e4ad3a` / `b68714f` | 63 ACT Math templates and plumbing; independent solvers unfinished, not reviewed or served |
+
+Use `git worktree list` and `git show <commit>` to inspect them. Compare each proposal
+with the repaired release and selectively reconcile useful work on the workspace branch.
+Expect overlaps in generation, versioning, progress, app and tooling code. The old
+advice to merge platform wholesale first is superseded. Neither proposal may undo
+current identity safeguards, reviews or validation; require relevant full/deep checks
+and browser verification before integration. An old detached review worktree also exists
+and is not new work created by this handoff.
+
+## P3 — maintenance and enhancements
+
+### 9. Preserve mathematical structure in shape diagnostics
+
+Reproduced on 2026-10-03 with `node tools/check-difficulty.js`: 3/4 available sections
+pass. Math reports one shape under two labels: `act-mathematics-0076` (compound
+inequality, Medium) and `act-mathematics-0136` (absolute-value inequality, Hard). The
+normalizer removes the operators distinguishing their structures. This collision does
+not prove duplicate questions or incorrect keys; fixing it would not calibrate the
+tiers.
+
+Next: preserve relevant operators/absolute-value structure, with tests for same-design
+numeric variants and distinct structures. Use `--strict` when a failing exit status is
+needed; the default command reports failures without failing the process. This
+diagnostic is separate from the passing release admission checks. See
+[implementation](../tools/check-difficulty.js).
+
+### 10. Retire compatibility banks and split modules when useful
+
+Fixed SAT banks and their generators remain; historical IDs/marks still use
+compatibility paths. Some app/logic files remain large. These are maintenance items, not
+evidence that fresh SAT practice uses retired banks.
+
+Next: define and test historical-ID behavior before deleting data/loaders; reconcile the
+platform proposal selectively. Split views/helpers around concrete responsibilities
+without changing grading, storage or review semantics. Preserve the full gate and
+browser/Node parity checks.
+
+### 11. Evaluate an embedded calculator
+
+The calculator currently opens an external Desmos page. Embedding remains optional.
+Before implementation, verify current provider licensing, integration and credential
+requirements; obtain owner input where needed. Preserve the working external link until
+keyboard, mobile and accessibility behavior is verified. See [calculator
+guidance](../content/learn/sat/general/desmos.md).
+
+## Completed work and continuation rules
+
+Do not reopen these baseline findings without new evidence: Nora/Beth's explicit trait
+matching; identified key/domain/teaching errors; eight-seed-only fingerprints; missing
+independent SAT acceptance; changed-choice historical grading; late-response acceptance;
+essay entry/scoring; missing print answer sheets; deleted-tag resurrection; missing
+sphere-area formula; and the named mathematical answer tells. Their repairs are recorded
+in the cold review.
+
+Follow [AGENTS.md](../AGENTS.md) and [template review/version
+rules](question-templates.md) for implementation. Renew independent reviews after
+relevant source changes; never copy generator keys into acceptance records or weaken
+gates to reach counts. Run the complete gate in UTC and deep checks after template
+changes. Source hashing intentionally includes comments, metadata and sibling templates;
+conservative version/review churn is an accepted tradeoff, not an outstanding corruption
+defect.
+
+This handoff update changes documentation only. It does not implement the open items or
+confer human approval/calibration on the reviewed release.
