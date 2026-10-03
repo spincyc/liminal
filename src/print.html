@@ -88,11 +88,13 @@
               <div class="input-row">
                 <input id="seedInput" type="text" autocomplete="off" spellcheck="false"
                   aria-describedby="seedNote" />
-                <button id="rerollBtn" class="button secondary" type="button">New seed</button>
+                <button id="rerollBtn" class="button secondary" type="button">New booklet</button>
               </div>
               <p id="seedNote" class="field-note">
-                The seed decides which questions are drawn. Keep it to rebuild the
-                identical test; change it for a fresh one.
+                <span data-test-only="SAT">New booklets avoid recent questions and topics saved in this browser.
+                Keep the completed form code to rebuild the identical test.</span>
+                <span data-test-only="ACT" hidden>Keep the seed to rebuild the identical test;
+                change it for a new one.</span>
               </p>
             </div>
 
@@ -126,7 +128,7 @@
             <h2 id="shareHeading">Share or rebuild</h2>
             <p data-test-only="SAT">
               Every SAT booklet prints its form code on the cover and in the
-              answer key. The code names the exact templates of every module, so
+              answer key. The code names the templates and draws of every module, so
               it rebuilds the same booklet even after new templates are added.
             </p>
             <p data-test-only="ACT" hidden>
@@ -202,9 +204,11 @@
     <script src="content/templates.js"></script>
     <script src="lib/core.js"></script>
     <script src="lib/template-mask.js"></script>
+    <script src="lib/question-identity.js"></script>
     <script src="lib/runs.js"></script>
     <script src="lib/modules.js"></script>
     <script src="lib/booklet.js"></script>
+    <script src="lib/progress.js"></script>
     <script src="app/render.js"></script>
     <script src="app/site.js"></script>
     <script src="app/print.js"></script>

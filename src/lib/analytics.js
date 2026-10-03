@@ -237,7 +237,7 @@
   // tiered: false and never reach the gate.
   function skillMap(attempts, sections, options) {
     const tiered = (options && options.tiered) || (() => true);
-    const list = (attempts || []).filter((attempt) => attempt && attempt.skill);
+    const list = Progress.markRepeats((attempts || []).filter(Boolean)).filter((attempt) => attempt.skill);
     const all = Progress.stats(list).bySkill;
     const atTier = (tier) => Progress.stats(list.filter((attempt) => attempt.difficulty === tier)).bySkill;
     const easy = atTier("Easy");
@@ -406,7 +406,8 @@
       .sort((left, right) => (Number(left.finishedAt) || 0) - (Number(right.finishedAt) || 0))
       .pop();
     if (!diagnostic) return null;
-    const summary = Progress.stats((attempts || []).filter((attempt) => attempt && attempt.sessionId === diagnostic.id));
+    const summary = Progress.stats(Progress.markRepeats((attempts || []).filter(Boolean))
+      .filter((attempt) => attempt.sessionId === diagnostic.id));
     const domains = (section.domains || []).map((domain) => {
       const row = tally(summary.byDomain[skillKey(section.key, domain.name)]);
       row.shown = row.attempted >= PLACEMENT.minQuestions && row.correct >= PLACEMENT.accuracy * row.attempted;
@@ -591,7 +592,8 @@
   function firstSight(attempts, tier) {
     const seen = new Set();
     const firsts = [];
-    (attempts || []).filter((attempt) => attempt && attempt.source === "template" && counted(attempt))
+    Progress.markRepeats((attempts || []).filter(Boolean))
+      .filter((attempt) => attempt.source === "template" && counted(attempt))
       .slice()
       .sort(byTime)
       .forEach((attempt) => {
@@ -757,7 +759,7 @@
     const skills = new Map();
     let timed = 0;
     let untimed = 0;
-    (attempts || []).forEach((attempt) => {
+    Progress.markRepeats((attempts || []).filter(Boolean)).forEach((attempt) => {
       if (!attempt || !counted(attempt)) return;
       const ms = attempt.timeMs;
       if (ms === null || ms === undefined || !Number.isFinite(Number(ms)) || Number(ms) <= 0) {
@@ -830,7 +832,7 @@
   // narrows the sets.
   function sessionTrend(sessions, attempts, filter) {
     const bySession = new Map();
-    (attempts || []).forEach((attempt) => {
+    Progress.markRepeats((attempts || []).filter(Boolean)).forEach((attempt) => {
       if (!attempt || !attempt.sessionId) return;
       if (!bySession.has(attempt.sessionId)) bySession.set(attempt.sessionId, []);
       bySession.get(attempt.sessionId).push(attempt);
@@ -1029,6 +1031,7 @@
   // exist so the student, and later a calibration study, can see whether
   // practice accuracy tracks official results.
   function officialComparison(attempts, scores) {
+    const reconciled = Progress.markRepeats((attempts || []).filter(Boolean));
     return (scores || []).filter((score) => score && parseDate(score.date))
       .slice()
       .sort((left, right) => String(left.date).localeCompare(String(right.date)))
@@ -1036,7 +1039,7 @@
         const day = parseDate(score.date);
         const to = new Date(day.getFullYear(), day.getMonth(), day.getDate() + 1).getTime();
         const from = new Date(day.getFullYear(), day.getMonth(), day.getDate() + 1 - COMPARISON_DAYS).getTime();
-        const inWindow = (attempts || []).filter((attempt) => {
+        const inWindow = reconciled.filter((attempt) => {
           const at = Number(attempt && attempt.timestamp) || 0;
           return at >= from && at < to;
         });

@@ -435,7 +435,7 @@ test("the real templates fill a full-length form with verified questions that ne
     const title = titles.get(question.templateId);
     if (title) assert.ok(!question.stem.toLowerCase().includes(title.toLowerCase()), `${question.id} names its template`);
   });
-  const rebuilt = Modules.drawForm(Modules.rebuildForm(sections, form.code), S.instantiate);
+  const rebuilt = Modules.drawForm(Modules.rebuildForm(sections, drawn.code), S.instantiate);
   assert.deepEqual(
     rebuilt.modules.flatMap((entry) => entry.questions.map((question) => question.id)),
     questions.map((question) => question.id),

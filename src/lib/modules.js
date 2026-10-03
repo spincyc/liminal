@@ -300,7 +300,7 @@
   // With `recency` ({ [templateId]: last serve number }, as runs.js takes
   // it), a cell first prefers templates never served, then those served
   // longest ago, so a student's on-screen tests rotate through the pool;
-  // printed forms pass none and choose by skill and seed alone.
+  // printed forms use the same browser history when supplied.
   // Returns the ordered templates, their mask, and one shortfall per cell
   // that its own tier could not fill:
   //   { domain, tier, wanted, filled, borrowed: [{ tier, count }], missing }
@@ -428,23 +428,26 @@
   // versions. A rebuild recomputes it: a mismatch means a template was
   // relabeled, revised, or retired since the code was made (or the code was
   // mistyped), so the booklet may differ from the printed one.
-  function checkDigits(tag, seed, modules) {
+  function checkDigits(tag, seed, modules, attempts) {
     const body = modules
       .map((entry) => entry.templates.map((template) => `${template.id}@${template.version || 1}`).join(","))
       .join("/");
-    return (hash(`${tag}|${seed}|${body}`) % 36 ** 4).toString(36).padStart(4, "0");
+    const draws = attempts ? `|${attempts.map((digits) => digits.join("")).join(".")}` : "";
+    return (hash(`${tag}|${seed}|${body}${draws}`) % 36 ** 4).toString(36).padStart(4, "0");
   }
 
   // A form's code: its module slots, its seed, one template mask per module,
   // and check digits, e.g. "r1rhm1mh-k3x9q2-<mask>.<mask>.<mask>.<mask>-7qx4".
   // Masks use the permanent registry bits (template-mask.js), so a code names
   // the same templates however many are added later; the seed fixes each
-  // question's draw and the order within each tier.
+  // question's draw and the order within each tier. New completed forms add
+  // one attempt digit per mask bit in each module, separated by dots.
   function formCode(form) {
-    return `${form.tag}-${form.seed}-${form.modules.map((entry) => Mask.toCode(entry.mask)).join(".")}-${form.check}`;
+    const base = `${form.tag}-${form.seed}-${form.modules.map((entry) => Mask.toCode(entry.mask)).join(".")}-${form.check}`;
+    return form.attempts ? `${base}-${form.attempts.map((digits) => digits.join("")).join(".")}` : base;
   }
 
-  const CODE = /^((?:[rm][1he])+)-([0-9a-z]+)-([0-9a-z]+(?:\.[0-9a-z]+)*)-([0-9a-z]{4})$/;
+  const CODE = /^((?:[rm][1he])+)-([0-9a-z]+)-([0-9a-z]+(?:\.[0-9a-z]+)*)-([0-9a-z]{4})(?:-([0-9a-z]*(?:\.[0-9a-z]*)*))?$/;
   const LETTERS = { r: "sat-reading-writing", m: "sat-math" };
 
   function parseFormCode(code) {
@@ -456,10 +459,18 @@
     if (masks.length !== slots.length) {
       throw new SyntaxError(`Form code has ${masks.length} masks for ${slots.length} modules.`);
     }
-    return { code: text, tag: match[1], slots, seed: match[2], masks, check: match[4] };
+    const result = { code: text, tag: match[1], slots, seed: match[2], masks, check: match[4] };
+    if (match[5] !== undefined) {
+      const attempts = match[5].split(".").map((digits) => [...digits]);
+      if (attempts.length !== masks.length || attempts.some((digits, index) => digits.length !== Mask.size(masks[index]))) {
+        throw new SyntaxError("Form code attempts do not match its module masks.");
+      }
+      result.attempts = attempts;
+    }
+    return result;
   }
 
-  function finishForm(slots, seed, modules) {
+  function finishForm(slots, seed, modules, attempts) {
     const tag = slotTag(slots);
     const form = {
       seed,
@@ -469,8 +480,9 @@
       minutes: modules.reduce((sum, entry) => sum + entry.minutes, 0),
       modules,
       shortfalls: modules.flatMap((entry) => entry.shortfalls || []),
-      check: checkDigits(tag, seed, modules),
+      check: checkDigits(tag, seed, modules, attempts),
     };
+    if (attempts) form.attempts = attempts;
     form.code = formCode(form);
     return form;
   }
@@ -505,11 +517,24 @@
       const spec = moduleSpec(entry.sectionKey, entry.module);
       const exclude = used.get(entry.sectionKey) || new Set();
       used.set(entry.sectionKey, exclude);
-      const chosen = chooseModule((sectionTemplates || {})[entry.sectionKey] || [], spec, { seed, exclude });
+      const pool = (sectionTemplates || {})[entry.sectionKey] || [];
+      const history = (settings.history || {})[entry.sectionKey];
+      let recency;
+      if (history) {
+        recency = { ...(history.lastServed || {}) };
+        let seen = Mask.EMPTY;
+        try { seen = Mask.fromCode(history.mask || "0"); } catch (error) { /* ignore invalid old history */ }
+        pool.forEach((template) => {
+          if (Mask.has(seen, template.bit) && recency[template.id] === undefined) recency[template.id] = 0;
+        });
+      }
+      const chosen = chooseModule(pool, spec, { seed, exclude, recency });
       chosen.templates.forEach((template) => exclude.add(template.id));
       return moduleEntry(spec, chosen.templates, chosen.mask, chosen.shortfalls);
     });
-    return finishForm(slots, seed, modules);
+    const form = finishForm(slots, seed, modules);
+    form.history = settings.history || {};
+    return form;
   }
 
   // Rebuilds the form a code names: exactly its templates, in the official
@@ -529,7 +554,8 @@
       });
       return moduleEntry(spec, templates, mask, []);
     });
-    const form = finishForm(parsed.slots, parsed.seed, modules);
+    const form = finishForm(parsed.slots, parsed.seed, modules, parsed.attempts);
+    form.legacy = !parsed.attempts;
     form.drift = form.check !== parsed.check;
     form.check = parsed.check;
     form.code = parsed.code;
@@ -545,18 +571,33 @@
   // fails its own check and leaves out a template with no good draw; those
   // are listed in `skipped` ({ sectionKey, module, templateId, reason }).
   //
-  // A form code records no attempts: no seen scenes are passed, so every
-  // attempt follows from the section's templates, their versions, and the
-  // seed, which the code's masks and check digits pin.
-  function drawForm(form, instantiate) {
+  // New codes pin every attempted draw, including zeros. Old codes retain
+  // the original scene-only draw algorithm; rebuilding never uses history.
+  // Return the finalized `code`/`form`: the initial template-only code from
+  // buildForm cannot describe steering around the student's history.
+  function drawForm(form, instantiate, options) {
+    const settings = options || {};
+    const history = settings.history || form.history || {};
     const bySection = new Map();
     form.modules.forEach((entry) => {
       bySection.set(entry.sectionKey, (bySection.get(entry.sectionKey) || []).concat(entry.templates));
     });
     const drawn = new Map();
     const reasons = new Map();
+    const repeats = [];
+    const attemptsBySection = new Map();
     bySection.forEach((templates, sectionKey) => {
-      const questions = Runs.drawQuestions(templates, form.seed, instantiate, `${sectionKey}:`);
+      const pinned = {};
+      if (form.attempts) form.modules.forEach((entry, index) => {
+        if (entry.sectionKey !== sectionKey) return;
+        const byBit = new Map(Mask.bits(entry.mask).map((bit, place) => [bit, parseInt(form.attempts[index][place], 36)]));
+        entry.templates.forEach((template) => { pinned[template.id] = byBit.get(template.bit); });
+      });
+      const drawOptions = form.legacy ? { legacy: true } : form.attempts ? { attempts: pinned } :
+        Runs.exposureOptions(history[sectionKey]);
+      const questions = Runs.drawQuestions(templates, form.seed, instantiate, `${sectionKey}:`, drawOptions);
+      attemptsBySection.set(sectionKey, questions.attempts);
+      (questions.repeats || []).forEach((entry) => repeats.push({ sectionKey, ...entry }));
       (questions.skipped || []).forEach((entry) => reasons.set(`${sectionKey}:${entry.templateId}`, entry.reason));
       questions.forEach((question) => {
         if (question && question.verified !== false) drawn.set(`${sectionKey}:${question.templateId}`, question);
@@ -581,7 +622,30 @@
         })
         .filter(Boolean),
     }));
-    return { modules, skipped };
+    modules.forEach((entry) => {
+      const ids = new Set(entry.questions.map((question) => question.id));
+      entry.templateIds = entry.questions.map((question) => question.templateId);
+      entry.itemIdentities = entry.questions.map(Runs.visibleIdentity).filter(Boolean);
+      entry.scenes = Object.fromEntries(entry.questions.filter((question) => question.scene)
+        .map((question) => [question.templateId, question.scene]));
+      entry.servedMaskCode = Mask.toCode(Mask.fromBits(entry.templates
+        .filter((template) => entry.templateIds.includes(template.id)).map((template) => template.bit)));
+      entry.repeats = repeats.filter((report) => ids.has(report.questionId));
+      entry.shortfall = Math.max(0, entry.size - entry.questions.length);
+    });
+    let finalized = form;
+    if (!form.legacy && !form.attempts) {
+      const attempts = modules.map((entry) => {
+        const byBit = new Map(entry.templates.map((template) => [template.bit, template.id]));
+        const sectionAttempts = attemptsBySection.get(entry.sectionKey) || {};
+        return Mask.bits(entry.mask).map((bit) => (sectionAttempts[byBit.get(bit)] || 0).toString(36));
+      });
+      finalized = { ...form, attempts, check: checkDigits(form.tag, form.seed, form.modules, attempts) };
+      finalized.code = formCode(finalized);
+    }
+    return { modules, skipped, repeats, form: finalized, code: finalized.code,
+      itemIdentities: modules.flatMap((entry) => entry.itemIdentities),
+      shortfall: modules.reduce((sum, entry) => sum + entry.shortfall, 0) };
   }
 
   return {

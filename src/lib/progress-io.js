@@ -14,10 +14,11 @@
   const api = factory(
     node ? require("./progress") : root.LiminalProgress,
     node ? require("./analytics") : root.LiminalAnalytics,
+    node ? require("./question-identity") : root.LiminalQuestionIdentity,
   );
   if (node) module.exports = api;
   else root.LiminalProgressIO = api;
-})(typeof globalThis !== "undefined" ? globalThis : this, function (Progress, Analytics) {
+})(typeof globalThis !== "undefined" ? globalThis : this, function (Progress, Analytics, Identity) {
   "use strict";
 
   const FORMAT = "liminal-progress";
@@ -70,6 +71,7 @@
     if (attempt.templateVersion !== undefined && (!Number.isSafeInteger(attempt.templateVersion) || attempt.templateVersion < 1)) return false;
     if (attempt.contentIdentity !== undefined && (typeof attempt.contentIdentity !== "string" ||
         !/^q1-[0-9a-f]{16}$/.test(attempt.contentIdentity))) return false;
+    if (attempt.visibleIdentity !== undefined && !Identity.isVisibleIdentity(attempt.visibleIdentity)) return false;
     if (attempt.response !== undefined && attempt.response !== null && typeof attempt.response !== "string" &&
         !(typeof attempt.response === "number" && Number.isFinite(attempt.response))) return false;
     return ["sectionKey", "domain", "skill", "subskill", "templateId", "seed", "sessionId", "runCode", "feedback", "reviewOf"]
@@ -252,6 +254,7 @@
     return left.questionId === right.questionId && Number(left.timestamp) === Number(right.timestamp) &&
       (left.response ?? null) === (right.response ?? null) && left.correct === right.correct &&
       Boolean(left.hinted) === Boolean(right.hinted) && left.contentIdentity === right.contentIdentity &&
+      left.visibleIdentity === right.visibleIdentity &&
       left.templateVersion === right.templateVersion;
   }
 

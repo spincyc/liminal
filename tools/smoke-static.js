@@ -57,6 +57,7 @@ for (const asset of [
   "styles/math.css",
   "lib/core.js",
   "lib/template-mask.js",
+  "lib/question-identity.js",
   "lib/runs.js",
   "lib/modules.js",
   "lib/simulation.js",
@@ -204,9 +205,11 @@ for (const asset of [
   "content/templates.js",
   "lib/core.js",
   "lib/template-mask.js",
+  "lib/question-identity.js",
   "lib/runs.js",
   "lib/modules.js",
   "lib/booklet.js",
+  "lib/progress.js",
   "app/render.js",
   "app/site.js",
   "app/print.js",
@@ -236,7 +239,7 @@ if (html.includes('"lib/booklet.js"')) throw new Error("index.html loads lib/boo
 for (const [name, page, order] of [
   ["index.html", html, [
     "styles/tokens.css", "styles/app.css", "styles/test-shell.css", "styles/math.css",
-    "lib/core.js", "lib/template-mask.js", "lib/runs.js", "lib/modules.js", "lib/simulation.js",
+    "lib/core.js", "lib/template-mask.js", "lib/question-identity.js", "lib/runs.js", "lib/modules.js", "lib/simulation.js",
     "lib/test-engine.js", "lib/session-store.js",
     "lib/annotations.js", "lib/line-reader.js",
     "lib/progress.js", "lib/review-queue.js", "lib/practice.js", "lib/analytics.js", "lib/progress-io.js",
@@ -244,7 +247,7 @@ for (const [name, page, order] of [
   ]],
   ["print.html", printHtml, [
     "styles/tokens.css", "styles/app.css",
-    "lib/template-mask.js", "lib/runs.js", "lib/modules.js", "app/site.js", "app/print.js",
+    "lib/template-mask.js", "lib/question-identity.js", "lib/runs.js", "lib/modules.js", "lib/progress.js", "app/site.js", "app/print.js",
   ]],
 ]) {
   const positions = order.map((asset) => page.indexOf(`"${asset}"`));

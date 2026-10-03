@@ -249,6 +249,9 @@
       setCode: formatSetCode(sectionKey, code),
       questions,
       templateIds: questions.map((question) => question.templateId),
+      itemIdentities: questions.map(Runs.visibleIdentity).filter(Boolean),
+      repeats: drawn && drawn.repeats ? drawn.repeats.slice() : [],
+      shortfall: drawn && drawn.shortfall || skipped.length,
       scenes,
       servedMaskCode: Mask.toCode(Mask.fromBits(servedBits)),
       // Templates lib/runs.js could not draw a good question from:
@@ -275,8 +278,12 @@
     if (settings.domainWeights) choice.domainWeights = settings.domainWeights;
     const run = Runs.chooseTemplates(settings.templates || [], choice);
     const drawn = Runs.drawQuestions(run.templates, seed, settings.instantiate,
-      `${settings.sectionKey}:`, { seenScenes: history.scenes || {} });
-    return describeRun(settings.sectionKey, run.mask, seed, drawn, settings.templates);
+      `${settings.sectionKey}:`, Runs.exposureOptions(history, {
+        avoidScenes: settings.avoidScenes || [], avoidItems: settings.avoidItems || [],
+      }));
+    const result = describeRun(settings.sectionKey, run.mask, seed, drawn, settings.templates);
+    result.shortfall = Math.max(0, (Number(settings.count) || 0) - result.questions.length);
+    return result;
   }
 
   // A run code's attempts keyed by template id. Normally lib/runs.js maps
@@ -308,7 +315,7 @@
     const templates = Runs.templatesForMask(live, parsed.mask);
     const attempts = codeAttempts(parsed.code, live, settings.registry);
     const drawn = Runs.drawQuestions(templates, parsed.seed, settings.instantiate, `${parsed.sectionKey}:`,
-      attempts ? { attempts } : undefined);
+      attempts ? { attempts } : { legacy: true });
     const run = describeRun(parsed.sectionKey, parsed.mask, parsed.seed, drawn, live);
     run.code = parsed.code;
     run.setCode = formatSetCode(parsed.sectionKey, parsed.code);
@@ -330,6 +337,8 @@
       const info = settings.sections[entry.sectionKey] || {};
       const counts = Core.allocateByWeight(entry.count, Core.MINI_TEST_DIFFICULTY_MIX.map((tier) => tier.weight));
       const sectionQuestions = [];
+      const avoidScenes = [];
+      const avoidItems = [];
       Core.MINI_TEST_DIFFICULTY_MIX.forEach((tier, tierIndex) => {
         if (!counts[tierIndex]) return;
         const run = buildTemplateRun({
@@ -339,10 +348,14 @@
           filters: { difficulties: [tier.difficulty] },
           seed: `${seed}${sectionIndex}${tierIndex}`,
           history: info.history,
+          avoidScenes,
+          avoidItems,
           domainWeights: info.domainWeights,
           instantiate: settings.instantiate,
         });
         sectionQuestions.push(...run.questions);
+        avoidScenes.push(...run.questions.map((question) => question.scene).filter(Boolean));
+        avoidItems.push(...run.itemIdentities);
         runs.push(run);
       });
       questions.push(...Core.deterministicShuffle(sectionQuestions, `${seed}-${entry.sectionKey}`));
@@ -370,36 +383,25 @@
       exclude: settings.exclude || [],
       recency: recencyFor(history, templates),
     });
-    // runs.drawQuestions ranks a template's seen scenes oldest first, so the
-    // other modules' scenes go last: avoided before anything else it has seen.
-    const avoid = (settings.avoidScenes || []).filter(Boolean).map(String);
-    const seenScenes = {};
-    chosen.templates.forEach((template) => {
-      const past = ((history.scenes || {})[template.id] || []).filter((scene) => !avoid.includes(scene));
-      seenScenes[template.id] = past.concat(avoid);
-    });
     const drawn = Runs.drawQuestions(chosen.templates, seed, settings.instantiate,
-      `${settings.sectionKey}:`, { seenScenes });
+      `${settings.sectionKey}:`, Runs.exposureOptions(history, {
+        avoidScenes: settings.avoidScenes || [], avoidItems: settings.avoidItems || [],
+      }));
     const run = describeRun(settings.sectionKey, chosen.mask, seed, drawn, templates);
     const byTemplate = new Map(run.questions.map((question) => [question.templateId, question]));
     run.questions = chosen.templates.map((template) => byTemplate.get(template.id)).filter(Boolean);
     run.templateIds = run.questions.map((question) => question.templateId);
+    run.itemIdentities = run.questions.map(Runs.visibleIdentity).filter(Boolean);
+    run.shortfall = Math.max(0, spec.size - run.questions.length);
     run.spec = spec;
     run.chosenIds = chosen.templates.map((template) => template.id);
     run.shortfalls = chosen.shortfalls;
     return run;
   }
 
-  // What makes two drawn questions the same item for a student: stimulus,
-  // stem, and the set of choices, whatever their order.
-  function itemKey(question) {
-    const stimulus = question && question.stimulus ? question.stimulus.content : null;
-    const choices = Array.isArray(question && question.choices) ? question.choices.map(String).sort() : [];
-    return JSON.stringify([stimulus || null, (question && question.stem) || "", choices]);
-  }
+  // One canonical student-visible identity for selection and analytics.
+  const itemKey = Runs.visibleIdentity;
 
-  // Rounds a drill may run past its count before it stops, when later
-  // rounds only repeat items it already holds.
   const DRILL_SPARE_ROUNDS = 3;
 
   // A drill: `count` questions on one skill, at one tier or every tier
@@ -407,8 +409,9 @@
   // tier, so a drill takes rounds: each round draws one question from every
   // template with a fresh seed ("<seed>" plus the round in base 36), scenes
   // the student or this drill has shown going last, and keeps the questions
-  // that are not an item already in the drill. Templates served least
-  // recently lead each round. `options`: { sectionKey, templates, skill,
+  // that avoid earlier items in the drill. Exhausted candidate pools reuse
+  // an item with explicit metadata so the requested length stays intact.
+  // Templates served least recently lead each round. `options`: { sectionKey, templates, skill,
   // difficulty?, count, seed?, history, instantiate }. Returns { questions,
   // templates (how many templates match), served: one { templateIds, scenes,
   // mask } per round for Progress.serveTemplates }.
@@ -419,52 +422,64 @@
       template.skill === settings.skill &&
       (!settings.difficulty || template.difficulty === settings.difficulty));
     const count = Math.max(0, Math.trunc(Number(settings.count) || 0));
-    const result = { questions: [], templates: pool.length, served: [] };
+    const result = { questions: [], templates: pool.length, served: [], itemIdentities: [],
+      repeats: [], skipped: [], shortfall: count };
     if (!pool.length || !count) return result;
     const seed = settings.seed || newRunSeed();
     const recency = recencyFor(history, pool);
     const freshness = (templateId) => (Object.prototype.hasOwnProperty.call(recency, templateId)
-      ? recency[templateId]
-      : -1);
-    const seenScenes = {};
-    Object.keys(history.scenes || {}).forEach((id) => {
-      seenScenes[id] = history.scenes[id].slice();
-    });
+      ? recency[templateId] : -1);
     const byId = new Map(pool.map((template) => [template.id, template]));
-    const keys = new Set();
+    const avoidScenes = [];
+    const avoidItems = [];
     let idle = 0;
     for (let round = 0; result.questions.length < count && idle < DRILL_SPARE_ROUNDS; round += 1) {
       const drawn = Runs.drawQuestions(pool, `${seed}${round.toString(36)}`, settings.instantiate,
-        `${settings.sectionKey}:`, { seenScenes });
+        `${settings.sectionKey}:`, Runs.exposureOptions(history, { avoidScenes, avoidItems }));
       const ordered = Array.from(drawn)
         .map((question, place) => ({ question, place }))
         .sort((left, right) => freshness(left.question.templateId) - freshness(right.question.templateId) ||
           left.place - right.place)
         .map((entry) => entry.question);
-      const served = { templateIds: [], scenes: {} };
+      const served = { templateIds: [], scenes: {}, itemIdentities: [] };
       ordered.forEach((question) => {
         if (result.questions.length >= count) return;
-        const key = itemKey(question);
-        if (keys.has(key)) return;
-        keys.add(key);
+        const identity = itemKey(question);
         result.questions.push(question);
         served.templateIds.push(question.templateId);
+        if (identity) {
+          result.itemIdentities.push(identity);
+          served.itemIdentities.push(identity);
+          avoidItems.push(identity);
+        }
         if (question.scene) {
           served.scenes[question.templateId] = question.scene;
-          seenScenes[question.templateId] = (seenScenes[question.templateId] || [])
-            .filter((scene) => scene !== question.scene)
-            .concat(question.scene);
+          avoidScenes.push(question.scene);
         }
+        result.repeats.push(...drawn.repeats.filter((entry) => entry.questionId === question.id));
       });
+      result.skipped.push(...drawn.skipped);
       if (served.templateIds.length) {
         served.mask = Mask.toCode(Mask.fromBits(served.templateIds.map((id) => byId.get(id).bit)));
         result.served.push(served);
         idle = 0;
-      } else {
-        idle += 1;
-      }
+      } else idle += 1;
     }
+    result.shortfall = Math.max(0, count - result.questions.length);
     return result;
+  }
+
+  // Pure counts for setup/report warnings; selection metadata stays out of
+  // individual question screens. A question can repeat both its item and topic.
+  function runWarnings(run) {
+    const repeats = (run && run.repeats) || [];
+    return {
+      repeatedItems: repeats.filter((entry) => entry.withinRunItem || entry.recentItem).length,
+      repeatedScenes: repeats.filter((entry) => entry.withinRunScene || entry.recentScene).length,
+      missingQuestions: Number(run && run.shortfall) || 0,
+      borrowedQuestions: ((run && run.shortfalls) || [])
+        .reduce((sum, entry) => sum + (entry.borrowed || []).reduce((total, part) => total + part.count, 0), 0),
+    };
   }
 
   // Keeps the first question of each template, so a review set too takes at
@@ -522,6 +537,7 @@
     buildModuleRun,
     buildDrill,
     itemKey,
+    runWarnings,
     onePerTemplate,
     runFilters,
     missedTemplateIds,

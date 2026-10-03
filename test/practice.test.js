@@ -33,7 +33,8 @@ test("a template run records what it served and describes itself", () => {
   assert.ok(run.questions.every((question) => question.difficulty === "Hard"));
   assert.ok(run.questions.every((question) => question.id.startsWith("sat-math:")));
   assert.deepEqual(run.templateIds, run.questions.map((question) => question.templateId));
-  assert.equal(run.code, Runs.runCode(run.mask, "k3f9"));
+  assert.ok(run.code.startsWith(`${Runs.runCode(run.mask, "k3f9")}-`));
+  assert.equal(Object.keys(Runs.parseRunCode(run.code, mathTemplates).attempts).length, 8);
   assert.equal(run.setCode, `math-${run.code}`);
   assert.equal(Mask.size(run.mask), 8);
   assert.deepEqual(run.skipped, []);
@@ -306,7 +307,8 @@ test("a drill covers every tier when none is chosen, and is empty when nothing m
   const none = Practice.buildDrill({
     sectionKey: "sat-math", templates: mathTemplates, skill: "Not a skill", count: 5, instantiate: S.instantiate,
   });
-  assert.deepEqual(none, { questions: [], templates: 0, served: [] });
+  assert.deepEqual(none, { questions: [], templates: 0, served: [], itemIdentities: [],
+    repeats: [], skipped: [], shortfall: 5 });
 });
 
 test("a module run keeps the module's order and names every template it chose", () => {

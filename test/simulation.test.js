@@ -245,6 +245,8 @@ test("a test saved mid-module resumes at that module with its questions and excl
   const step = Simulation.currentStep(state);
   state = Simulation.beginModule(state, {
     sessionId: "live", templateIds: ["rw-a", "rw-b"], questionIds: ["q1", "q2"], scenes: ["harbor"], now: 50,
+    itemIdentities: ["vi1-0123456789abcdef"],
+    practiceWarnings: { repeatedItems: 1, repeatedScenes: 1, missingQuestions: 0, borrowedQuestions: 0 },
   });
   const saved = JSON.parse(JSON.stringify(state));
   const restored = Simulation.restore(saved);
@@ -257,6 +259,8 @@ test("a test saved mid-module resumes at that module with its questions and excl
   assert.ok(Simulation.usedTemplateIds(restored, RW).includes("rw-a"));
   assert.ok(Simulation.usedTemplateIds(restored, RW).includes(`${RW}-0`), "Module 1's templates stay excluded");
   assert.deepEqual(Simulation.usedScenes(restored, RW), ["harbor"]);
+  assert.deepEqual(Simulation.usedItems(restored, RW), ["vi1-0123456789abcdef"]);
+  assert.equal(restored.current.practiceWarnings.repeatedItems, 1);
   assert.deepEqual(Simulation.usedTemplateIds(restored, MATH), []);
   assert.match(Simulation.describe(restored), /^Full-length SAT, module 2 of 4: Section 1, Module 2/);
   const single = Simulation.create({ kind: "module", sectionKey: MATH, module: "h", seed: "d", now: 1 });
@@ -270,6 +274,9 @@ test("a test saved mid-module resumes at that module with its questions and excl
     sessionId: "live", items: Simulation.compactItems(fakeItems(RW, 27, 10)), elapsedMs: 5, now: 60,
   });
   assert.equal(Simulation.currentStep(done).type, "break");
+  assert.deepEqual(Simulation.usedItems(done, RW), ["vi1-0123456789abcdef"]);
+  assert.equal(done.modules.at(-1).practiceWarnings.repeatedItems, 1,
+    "the combined report retains exhaustion warnings after a resumed module finishes");
   assert.equal(Simulation.finishModule(done, { sessionId: "live", items: [] }), done, "delivered twice counts once");
 
   // The module's clock resumes from the engine snapshot the shell saved.

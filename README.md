@@ -41,7 +41,7 @@ never recorded. Liminal is now built to keep practice honest:
   to the current template source; source changes require renewed review.
 - **Every answer counts, once.** A blank counts as wrong, a correct answer
   after a hint is shown apart, a second answer to a question you have seen
-  (as when Review brings a miss back) is left out of accuracy, and Hard
+  (including the same content under a new seed or reordered choices) is left out of accuracy, and Hard
   accuracy is reported on its own, beside Hard accuracy on each question
   design the first time you meet it, which practice on that design cannot
   raise.
@@ -61,6 +61,8 @@ never recorded. Liminal is now built to keep practice honest:
   A set takes at most one question per template and per topic, prefers what
   you have seen least recently, follows the real test's domain weights, and
   has a code that retakes it exactly.
+  Fresh sets and booklets share recent content and topic history. A notice
+  explains when a limited pool requires recent material to appear again.
 - **Take a test.** One SAT module (27 Reading and Writing questions in 32
   minutes, or 22 Math in 35), one section (Module 1, then a harder or easier
   Module 2 by how Module 1 went), or the full-length SAT with a 10-minute

@@ -202,6 +202,10 @@
     return [...new Set(sectionModules(state, sectionKey).flatMap((entry) => entry.scenes || []))];
   }
 
+  function usedItems(state, sectionKey) {
+    return [...new Set(sectionModules(state, sectionKey).flatMap((entry) => entry.itemIdentities || []))];
+  }
+
   // Each module's own seed, so its draw is independent of the others'.
   function moduleSeed(state, index) {
     return `${state.seed}${Number(index === undefined ? state.index : index).toString(36)}`;
@@ -232,6 +236,8 @@
       templateIds: (settings.templateIds || []).map(String),
       questionIds: (settings.questionIds || []).map(String),
       scenes: (settings.scenes || []).filter(Boolean).map(String),
+      itemIdentities: (settings.itemIdentities || []).filter(Boolean).map(String),
+      practiceWarnings: settings.practiceWarnings ? copy(settings.practiceWarnings) : null,
       runCode: settings.runCode || null,
       timeLimitSeconds: Number(settings.timeLimitSeconds) || step.minutes * 60,
       startedAt: Number(settings.now) || 0,
@@ -577,6 +583,7 @@
     runTitle,
     usedTemplateIds,
     usedScenes,
+    usedItems,
     moduleSeed,
     beginModule,
     compactItems,

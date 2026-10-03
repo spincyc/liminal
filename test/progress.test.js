@@ -3,6 +3,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const Progress = require("../src/lib/progress");
+const Identity = require("../src/lib/question-identity");
 
 // localStorage as a Map; `full` makes every write throw like a full quota.
 function memoryStorage(initial) {
@@ -104,6 +105,121 @@ test("recordAttempts appends new ids only", () => {
   progress = Progress.recordAttempts(progress, [attempt("a2", { correct: false }), attempt("a3")]);
   assert.deepEqual(progress.attempts.map((item) => item.id), ["a1", "a2", "a3"]);
   assert.equal(progress.attempts[1].correct, true, "the first record of an id wins");
+});
+
+test("different generated seeds with the same displayed item count once and keep both outcomes", () => {
+  const { instantiate } = require("../src/lib/families/shared/instantiate");
+  const template = require("../src/lib/families/sat/reading-writing")
+    .find((entry) => entry.id === "central-idea-academic-argument");
+  const answers = ["2", "17"].map((seed, index) => {
+    const question = instantiate(template, seed);
+    question.id = `${question.sectionKey}:${question.templateId}:${seed}`;
+    return Progress.buildAttempt(question, { response: index, correct: index === 1 },
+      { id: `duplicate-${index}`, now: index + 1, templateVersion: 7 });
+  });
+  assert.notEqual(answers[0].questionId, answers[1].questionId);
+  assert.equal(answers[0].visibleIdentity, answers[1].visibleIdentity);
+  assert.equal(answers[0].contentIdentity, undefined);
+  const progress = Progress.recordAttempts(Progress.empty(), answers.map((entry) => ({ ...entry, repeat: false })));
+  assert.deepEqual(progress.attempts.map((entry) => entry.repeat), [false, true]);
+  assert.deepEqual(progress.attempts.map((entry) => [entry.correct, entry.response, entry.templateVersion]),
+    [[false, 0, 7], [true, 1, 7]]);
+  assert.deepEqual([Progress.stats(answers).attempted, Progress.stats(answers).accuracy], [1, 0],
+    "the accuracy API reconciles raw answers as well as saved records");
+  assert.equal(Progress.stats(progress.attempts, { includeRepeats: true }).attempted, 2,
+    "the completed set's own report may still show both answers");
+});
+
+test("content-repeat reconciliation survives merges, ties, and pruned predecessors without guessing old content", () => {
+  const visibleIdentity = Identity.visibleIdentity({ stem: "What is 2 + 3?", responseType: "numeric" });
+  const first = attempt("a", { timestamp: 10, visibleIdentity, correct: false });
+  const later = attempt("z", { timestamp: 20, visibleIdentity });
+  const record = (answers) => Progress.recordAttempts(Progress.empty({ epoch: "same" }), answers);
+  const merged = Progress.merge(record([later]), record([first]));
+  assert.deepEqual(merged.attempts.map((entry) => [entry.id, entry.repeat]), [["a", false], ["z", true]]);
+  const pruned = Progress.normalize({ ...merged, attempts: merged.attempts.slice(1) });
+  assert.equal(pruned.attempts[0].repeat, true);
+  assert.equal(Progress.stats(pruned.attempts).attempted, 0);
+  const tied = [first, { ...later, timestamp: 10 }];
+  assert.deepEqual(Progress.markRepeats(tied).map((entry) => [entry.id, entry.repeat]),
+    Progress.markRepeats(tied.slice().reverse()).reverse().map((entry) => [entry.id, entry.repeat]));
+  const old = Progress.normalize({ ...merged, attempts: [
+    attempt("old-a", { templateId: "same-template", seed: "2", templateVersion: 1, correct: false }),
+    attempt("old-b", { templateId: "same-template", seed: "17", templateVersion: 1 }),
+    { ...later, templateId: "same-template", templateVersion: 2 },
+  ] });
+  assert.deepEqual(old.attempts.map((entry) => entry.repeat), [false, false, false]);
+  assert.equal(old.attempts[0].visibleIdentity, undefined, "no present-day rebuilding guesses an old item's content");
+  assert.deepEqual(old.attempts.map((entry) => entry.correct), [false, true, true]);
+});
+
+test("equal-time reconciliation retains an already counted answer ahead of a known repeat", () => {
+  const visibleIdentity = Identity.visibleIdentity({ stem: "What is 2 + 3?", responseType: "numeric" });
+  for (const sameQuestionId of [true, false]) {
+    const first = attempt("z", { timestamp: 10, repeat: false, correct: false, visibleIdentity });
+    const repeated = attempt("a", {
+      questionId: sameQuestionId ? first.questionId : "sat-math:another:seed",
+      timestamp: 10, repeat: true, correct: true, visibleIdentity,
+    });
+    for (const answers of [[first, repeated], [repeated, first]]) {
+      const normalized = Progress.normalize({ ...Progress.empty(), attempts: answers });
+      assert.equal(normalized.attempts.find((entry) => entry.id === "z").repeat, false);
+      assert.equal(normalized.attempts.find((entry) => entry.id === "a").repeat, true);
+      const summary = Progress.stats(normalized.attempts);
+      assert.deepEqual([summary.attempted, summary.correct, summary.repeats], [1, 0, 1]);
+    }
+    const earlierRepeat = Progress.markRepeats([{ ...repeated, timestamp: 9 }, first]);
+    assert.ok(earlierRepeat.every((entry) => entry.repeat),
+      "an earlier known repeat still proves that a predecessor was trimmed");
+  }
+});
+
+test("section-wide served items and scenes retain recency across stale merges and stay bounded", () => {
+  const identity = (value) => Identity.visibleIdentity({ stem: `What is ${value} + 1?`, responseType: "numeric" });
+  const served = (progress, id, scene, value) => Progress.serveTemplates(progress, "sat-math", {
+    templateIds: [id], scenes: { [id]: scene }, itemIdentities: [identity(value)], mask: "1",
+  });
+  const old = served(Progress.empty({ epoch: "same" }), "first", "orchard", 1);
+  let current = served(old, "second", "harbor", 2);
+  current = served(current, "third", "orchard", 3);
+  const history = Progress.historyFor(Progress.merge(current, old), "sat-math");
+  assert.deepEqual(history.recentScenes, ["harbor", "orchard"]);
+  assert.deepEqual(history.recentItems, [1, 2, 3].map(identity));
+  assert.deepEqual(history.scenes, { first: ["orchard"], second: ["harbor"], third: ["orchard"] });
+  assert.deepEqual(Progress.historyFor(Progress.merge(old, current), "sat-math"), history,
+    "the newer ordering wins regardless of which side held it");
+  const branch = served(old, "fourth", "library", 4);
+  const combined = Progress.merge(current, branch);
+  assert.ok(Progress.historyFor(combined, "sat-math").recentItems.includes(identity(4)));
+  assert.deepEqual(Progress.historyFor(Progress.merge(combined, branch), "sat-math"),
+    Progress.historyFor(combined, "sat-math"), "merging an old branch again is idempotent");
+  const size = Math.max(Progress.LIMITS.recentItems, Progress.LIMITS.recentScenes) + 4;
+  let full = Progress.empty();
+  for (let index = 0; index < size; index += 1) full = served(full, "one-template", `scene-${index}`, index);
+  const bounded = Progress.historyFor(full, "sat-math");
+  assert.equal(bounded.recentItems.length, Progress.LIMITS.recentItems);
+  assert.equal(bounded.recentScenes.length, Progress.LIMITS.recentScenes);
+  assert.equal(bounded.scenes["one-template"].length, Progress.LIMITS.scenesPerTemplate);
+  assert.equal(bounded.recentItems.at(-1), identity(size - 1));
+  assert.equal(bounded.recentScenes.at(-1), `scene-${size - 1}`);
+  const saved = Progress.normalize(JSON.parse(JSON.stringify(full)));
+  assert.deepEqual(Progress.historyFor(saved, "sat-math"), bounded);
+});
+
+test("old per-template scene history becomes section-wide without inventing visible-item identities", () => {
+  const old = { ...Progress.empty(), history: { "sat-reading-writing": {
+    serve: 8, lastServed: { late: 8, early: 2 }, scenes: { late: ["shared", "latest"], early: ["earliest", "shared"] }, mask: "5",
+  } } };
+  const history = Progress.historyFor(old, "sat-reading-writing");
+  assert.deepEqual(history.recentScenes, ["earliest", "shared", "latest"]);
+  assert.deepEqual(history.recentItems, []);
+  assert.equal(history.serve, 8);
+  assert.equal(history.mask, "5");
+  assert.deepEqual(history.scenes, old.history["sat-reading-writing"].scenes);
+  const noted = Progress.noteScenes(Progress.normalize(old), "sat-reading-writing", { another: ["forgotten"] });
+  assert.deepEqual(Progress.historyFor(noted, "sat-reading-writing").recentScenes,
+    ["forgotten", "earliest", "shared", "latest"]);
+  assert.equal(old.history["sat-reading-writing"].recentScenes, undefined, "reads do not mutate old records");
 });
 
 test("two tabs writing in turn keep each other's attempts", () => {
@@ -392,7 +508,7 @@ test("serving a run updates recency, scenes, and the lifetime mask", () => {
   assert.equal(history.mask, "f");
   assert.equal(Progress.serveTemplates(progress, "sat-math", { templateIds: [] }), progress);
   const empty = Progress.historyFor(progress, "sat-reading-writing");
-  assert.deepEqual(empty, { serve: 0, lastServed: {}, scenes: {}, mask: "0" });
+  assert.deepEqual(empty, { serve: 0, lastServed: {}, scenes: {}, mask: "0", recentItems: [], recentScenes: [] });
 });
 
 test("bank serving remembers only the most recent questions", () => {
@@ -553,7 +669,9 @@ test("normalize drops what it cannot read", () => {
   });
   assert.deepEqual(progress.attempts.map((item) => item.id), ["a1"]);
   assert.deepEqual(progress.marked, ["q1"]);
-  assert.deepEqual(progress.history["sat-math"], { serve: 3, lastServed: { t1: 3 }, scenes: { t1: ["s"] }, mask: "0" });
+  assert.deepEqual(progress.history["sat-math"], {
+    serve: 3, lastServed: { t1: 3 }, scenes: { t1: ["s"] }, mask: "0", recentItems: [], recentScenes: ["s"],
+  });
   assert.equal(progress.sessions.length, 1);
 });
 

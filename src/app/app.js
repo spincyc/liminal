@@ -533,6 +533,7 @@
       sectionKey,
       kind: "diagnostic",
       questions: Analytics.orderByTier(run.questions),
+      practiceWarnings: practice.runWarnings(run),
       runCode: run.code,
       setCode: run.setCode,
       feedback: "end",
@@ -591,6 +592,7 @@
     store.update((progress) => Progress.serveTemplates(progress, run.sectionKey, {
       templateIds: run.templateIds,
       scenes: run.scenes,
+      itemIdentities: run.itemIdentities,
       mask: run.servedMaskCode,
     }));
   }
@@ -627,7 +629,10 @@
       instantiate: window.LiminalFamilyShared.instantiate,
     });
     built.runs.forEach(recordServed);
-    return stampVersions(built.questions);
+    return {
+      questions: stampVersions(built.questions),
+      practiceWarnings: built.runs.map(practice.runWarnings),
+    };
   }
 
   /* ------------------------------------------------ unfinished sets and tests */
@@ -802,6 +807,23 @@
       : "This question belongs to an archived bank and is unavailable for new practice. Previous results remain available.";
   }
 
+  // Summaries describe the set as a whole, never label an individual question.
+  function practiceWarningNotes(warnings) {
+    if (Array.isArray(warnings)) return warnings.flatMap(practiceWarningNotes);
+    if (!warnings) return [];
+    const notes = [];
+    if (warnings.repeatedItems) notes.push(
+      `This set includes ${plural(warnings.repeatedItems, "question")} seen recently. ` +
+      "Progress counts only the first recorded answer to identical content, even when its choices are reordered.");
+    if (warnings.repeatedScenes) notes.push(
+      `Recently seen topics appear in ${plural(warnings.repeatedScenes, "question")}. Try a different skill or a broader mix for more variety.`);
+    if (warnings.missingQuestions) notes.push(
+      `This set has ${plural(warnings.missingQuestions, "question")} fewer than requested because the available material ran short.`);
+    if (warnings.borrowedQuestions) notes.push(
+      `${plural(warnings.borrowedQuestions, "question")} came from another practice level because the requested mix was unavailable.`);
+    return notes;
+  }
+
   // Every set, practice or timed, runs in the full-screen test mode.
   // `config`: { title, sectionKey, kind, questions, feedback,
   // timeLimitSeconds, runCode?, setCode?, tools?, simulation? }; a config
@@ -851,6 +873,8 @@
     let replacedWarned = false;
     const options = {
       ...meta,
+      notice: [notice, ...practiceWarningNotes(meta.practiceWarnings)].filter(Boolean).join(" "),
+      reportNotes: [...(meta.reportNotes || []), ...practiceWarningNotes(meta.practiceWarnings)],
       questions,
       tools: meta.tools || toolsFor(questions || [], meta.sectionKey),
       marked: resume ? undefined : questions.map((question) => Progress.isMarked(progress, question.id)),
@@ -884,8 +908,8 @@
         closeScreen();
       },
     };
-    if (meta.kind === "diagnostic") Object.assign(options, { reportNotes: [], caveat: DIAGNOSTIC_CAVEAT });
-    if (meta.simulation) Object.assign(options, moduleOptions(meta), { notice, openDirections });
+    if (meta.kind === "diagnostic") options.caveat = DIAGNOSTIC_CAVEAT;
+    if (meta.simulation) Object.assign(options, moduleOptions(meta), { openDirections });
     const wasShellOpen = shellOpen;
     shellOpen = true;
     try {
@@ -1199,6 +1223,7 @@
       history: Progress.historyFor(store.get(), step.sectionKey),
       exclude: Simulation.usedTemplateIds(state, step.sectionKey),
       avoidScenes: Simulation.usedScenes(state, step.sectionKey),
+      avoidItems: Simulation.usedItems(state, step.sectionKey),
       instantiate: window.LiminalFamilyShared.instantiate,
     });
     if (!run.questions.length) throw new Error("No questions could be built for this module.");
@@ -1211,6 +1236,8 @@
       templateIds: run.chosenIds,
       questionIds: questions.map((question) => question.id),
       scenes: Object.values(run.scenes),
+      itemIdentities: run.itemIdentities,
+      practiceWarnings: practice.runWarnings(run),
       runCode: run.code,
       timeLimitSeconds,
       now: Date.now(),
@@ -1220,6 +1247,7 @@
       sectionKey: step.sectionKey,
       kind: "module",
       questions,
+      practiceWarnings: practice.runWarnings(run),
       feedback: "end",
       timeLimitSeconds,
       runCode: run.code,
@@ -1390,7 +1418,9 @@
       tools: { calculator: sections.some(isMath), reference: sections.includes("sat-math") },
       resume: window.LiminalTestEngine.serialize(combined, now),
       learnHref: practice.learnHref,
-      reportNotes: [reviewNote, ...summary.routes.map((route) => route.text)].filter(Boolean),
+      reportNotes: [reviewNote, ...summary.routes.map((route) => route.text),
+        ...state.modules.flatMap((module) => practiceWarningNotes(module.practiceWarnings)
+          .map((note) => `${module.title}: ${note}`))].filter(Boolean),
       reportSummary: {
         total: summary.total, scored: summary.total, unscored: 0,
         correct: summary.correct, accuracy: summary.accuracy, hintedCorrect: summary.hintedCorrect,
@@ -1414,13 +1444,14 @@
 
   /* ------------------------------------------------- after-report actions */
 
-  function instantSet(title, questions, kind) {
+  function instantSet(title, questions, kind, practiceWarnings) {
     const sectionKey = questions[0].sectionKey;
     return launch({
       title,
       sectionKey,
       kind,
       questions,
+      practiceWarnings,
       feedback: "instant",
       timeLimitSeconds: null,
     });
@@ -1431,6 +1462,7 @@
   async function practiceMissed(meta, items) {
     if (!(await confirmReplace("set"))) return false;
     const questions = [];
+    const practiceWarnings = [];
     const bySection = new Map();
     items.forEach((item) => {
       const key = item.question.sectionKey;
@@ -1441,13 +1473,15 @@
       const ids = practice.missedTemplateIds(list);
       if (practice.usesTemplates(sectionKey) && ids.length) {
         const templates = (await sectionTemplates(sectionKey)).filter((template) => ids.includes(template.id));
-        questions.push(...buildRun({ sectionKey, count: templates.length, templates }).questions);
+        const run = buildRun({ sectionKey, count: templates.length, templates });
+        questions.push(...run.questions);
+        practiceWarnings.push(practice.runWarnings(run));
       }
       list.filter((item) => !item.question.templateId && core.questionAvailable(item.question))
         .forEach((item) => questions.push(item.question));
     }
     if (!questions.length) throw new Error("No questions are available for this practice.");
-    return instantSet(`${meta.title}: what you missed`, questions, "missed-drill");
+    return instantSet(`${meta.title}: what you missed`, questions, "missed-drill", practiceWarnings);
   }
 
   const DRILL_COUNT = 10;
@@ -1474,7 +1508,7 @@
         update((progress) => drill.served.reduce((current, round) =>
           Progress.serveTemplates(current, request.sectionKey, round), progress));
       }
-      return stampVersions(drill.questions);
+      return { questions: stampVersions(drill.questions), practiceWarnings: practice.runWarnings(drill) };
     }
     const bank = await loadBank(request.sectionKey);
     const filters = { skills: [request.skill], difficulties: request.difficulty ? [request.difficulty] : [] };
@@ -1482,7 +1516,7 @@
       { avoidIds: Progress.recentlyServedIds(store.get(), request.sectionKey) });
     update((progress) => Progress.serveQuestions(progress, request.sectionKey,
       questions.map((question) => question.id)));
-    return questions;
+    return { questions };
   }
 
   // A drill on one skill, feedback after each question unless the request
@@ -1491,7 +1525,7 @@
   // matched), or null when the student kept the saved set.
   async function startDrill(request) {
     if (!(await confirmReplace("set"))) return null;
-    const questions = await drillQuestions(request);
+    const { questions, practiceWarnings } = await drillQuestions(request);
     if (!questions.length) return 0;
     const section = sectionByKey(request.sectionKey);
     const opened = await launch({
@@ -1499,6 +1533,7 @@
       sectionKey: request.sectionKey,
       kind: "drill",
       questions,
+      practiceWarnings,
       feedback: request.feedback === "end" ? "end" : "instant",
       timeLimitSeconds: null,
     });

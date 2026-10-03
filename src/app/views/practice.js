@@ -600,6 +600,7 @@
           kind: mode,
           questions: run.questions,
           runCode: run.code,
+          practiceWarnings: practice.runWarnings(run),
           setCode: run.setCode,
           feedback: elements.feedbackMode.value,
           timeLimitSeconds: timeLimit(section.key, run.questions.length),
@@ -662,6 +663,7 @@
         kind: "hard-reps",
         questions: run.questions,
         runCode: run.code,
+        practiceWarnings: practice.runWarnings(run),
         setCode: run.setCode,
         feedback: "end",
         timeLimitSeconds: null,
@@ -721,9 +723,10 @@
       button.disabled = true;
       ctx.setStatus(elements.miniTestStatus, `Preparing the ${blueprint.label}…`, "loading");
       let questions;
+      let practiceWarnings;
       try {
         if (blueprint.sections.every((entry) => practice.usesTemplates(entry.sectionKey))) {
-          questions = await ctx.buildMiniTest(blueprint);
+          ({ questions, practiceWarnings } = await ctx.buildMiniTest(blueprint));
         } else {
           const banks = await Promise.all(blueprint.sections.map((entry) => ctx.loadBank(entry.sectionKey)));
           const bankBySection = Object.fromEntries(
@@ -749,6 +752,7 @@
         sectionKey: blueprint.sections[0].sectionKey,
         kind: "mini",
         questions,
+        practiceWarnings,
         feedback: "end",
         timeLimitSeconds: blueprint.minutes * 60,
         tools: {
@@ -830,6 +834,7 @@
         kind: "retake",
         questions: run.questions,
         runCode: run.code,
+        practiceWarnings: practice.runWarnings(run),
         setCode: run.setCode,
         feedback: elements.feedbackMode.value,
         timeLimitSeconds: null,

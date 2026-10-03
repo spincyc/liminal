@@ -4,6 +4,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const Progress = require("../src/lib/progress");
 const IO = require("../src/lib/progress-io");
+const Identity = require("../src/lib/question-identity");
 
 function memoryStorage() {
   const map = new Map();
@@ -74,6 +75,52 @@ test("an export round-trips through the file", () => {
   assert.deepEqual(parsed.info.tests, { SAT: 2, ACT: 0 });
   assert.deepEqual([parsed.info.firstAt, parsed.info.lastAt], [1000, 2000]);
   assert.equal(parsed.info.exportedAt, payload.exportedAt);
+});
+
+test("visible identities and section-wide serve history survive exports, merges, and repeated imports", () => {
+  const visibleIdentity = Identity.visibleIdentity({ stem: "What is 2 + 3?", responseType: "numeric" });
+  const otherIdentity = Identity.visibleIdentity({ stem: "What is 3 + 4?", responseType: "numeric" });
+  const first = attempt("first", { timestamp: 1, correct: false, response: "4", visibleIdentity, templateVersion: 3 });
+  const later = attempt("later", { timestamp: 2, visibleIdentity, templateVersion: 8 });
+  let local = Progress.recordAttempts(Progress.empty({ epoch: "local" }), [first]);
+  local = Progress.serveTemplates(local, "sat-math", {
+    templateIds: ["one"], scenes: { one: "orchard" }, itemIdentities: [visibleIdentity], mask: "1",
+  });
+  let file = Progress.recordAttempts(Progress.empty({ epoch: "file" }), [later]);
+  file = Progress.serveTemplates(file, "sat-math", {
+    templateIds: ["two"], scenes: { two: "harbor" }, itemIdentities: [otherIdentity, visibleIdentity], mask: "2",
+  });
+  const exported = IO.exportFile(file, 100);
+  const parsed = IO.parseImport(exported.text);
+  assert.equal(parsed.ok, true);
+  assert.equal(parsed.info.version, 3, "the additive schema still restores older v3 exports");
+  assert.equal(parsed.progress.attempts[0].visibleIdentity, visibleIdentity);
+  const result = IO.mergeImport(local, parsed.progress);
+  assert.deepEqual(result.progress.attempts.map((entry) => [entry.repeat, entry.correct, entry.templateVersion]),
+    [[false, false, 3], [true, true, 8]]);
+  assert.equal(Progress.stats(result.progress.attempts).accuracy, 0);
+  const history = Progress.historyFor(result.progress, "sat-math");
+  assert.deepEqual(history.recentItems, [otherIdentity, visibleIdentity]);
+  assert.deepEqual(history.recentScenes, ["harbor", "orchard"]);
+  assert.equal(history.mask, "3");
+  assert.deepEqual(history.scenes, { one: ["orchard"], two: ["harbor"] });
+  assert.deepEqual(IO.mergeImport(result.progress, parsed.progress).progress, result.progress);
+  const restored = IO.parseImport(IO.exportFile(result.progress, 200).text);
+  assert.deepEqual(restored.progress, result.progress);
+});
+
+test("import keeps older outcomes without claiming their unknown displayed content was deduplicated", () => {
+  const original = record({ attempts: [attempt("seed-2", { templateVersion: 1, correct: false }),
+    attempt("seed-17", { templateVersion: 1 })] });
+  const parsed = IO.parseImport(IO.exportFile(original, 1).text);
+  assert.equal(parsed.ok, true);
+  assert.deepEqual(parsed.progress.attempts.map((entry) => entry.repeat), [false, false]);
+  assert.ok(parsed.progress.attempts.every((entry) => entry.visibleIdentity === undefined));
+  assert.deepEqual(parsed.progress.attempts.map((entry) => entry.correct), [false, true]);
+  const malformed = IO.parseImport(JSON.stringify(record({ attempts: [attempt("good"),
+    attempt("bad-proof", { visibleIdentity: "vi1-not-an-identity" })] })));
+  assert.equal(malformed.ok, true);
+  assert.equal(malformed.info.dropped.attempts, 1, "malformed new evidence cannot create false repeats");
 });
 
 test("downloading after failed saves exports the latest additions and removals", () => {

@@ -13,6 +13,13 @@
   const runs = window.LiminalRuns;
   const modules = window.LiminalModules;
   const render = window.LiminalRender;
+  const Progress = window.LiminalProgress;
+  let storage = null;
+  try { storage = window.localStorage; } catch (error) { /* progress store keeps in-memory state */ }
+  const store = Progress.createStore(storage);
+  const recordedCodes = new Set();
+  let cachedBuild = null;
+  let pendingBuild = null;
 
   const elements = {
     formGrid: document.getElementById("formGrid"),
@@ -181,6 +188,7 @@
   }
 
   function unpin() {
+    cachedBuild = null;
     pinnedCode = null;
   }
 
@@ -447,7 +455,7 @@
     const single = form.modules.length === 1;
     const routes = [...new Set(form.modules.map((entry) => entry.route).filter(Boolean))];
     const notes = [
-      "Built from fresh questions to the digital SAT's module structure: " +
+      "Built from original questions to the digital SAT's module structure: " +
         "official module lengths and times, with a practice allocation of section-wide domain shares and a practice " +
         "approximation of each module's difficulty mix.",
     ];
@@ -496,6 +504,12 @@
           "printed booklet.",
       );
     }
+    const repeatedItems = (drawn.repeats || []).filter((entry) => entry.withinRunItem || entry.recentItem).length;
+    const repeatedScenes = (drawn.repeats || []).filter((entry) => entry.withinRunScene || entry.recentScene).length;
+    if (repeatedItems || repeatedScenes) {
+      lines.push(`The available draws could not avoid ${repeatedItems} repeated question${repeatedItems === 1 ? "" : "s"}` +
+        ` and ${repeatedScenes} familiar topic${repeatedScenes === 1 ? "" : "s"}. Reuse did not change the selected module lengths or difficulty mix.`);
+    }
     if (drawn.skipped.length) {
       lines.push(
         `${drawn.skipped.length} question${drawn.skipped.length === 1 ? "" : "s"} could not be ` +
@@ -507,6 +521,8 @@
   }
 
   async function buildSatBuild(form) {
+    if (cachedBuild && cachedBuild.code === pinnedCode) return cachedBuild;
+    const rebuildCode = pinnedCode;
     let slots;
     let seed;
     if (pinnedCode) {
@@ -521,9 +537,11 @@
     const keys = [...new Set(slots.map((entry) => entry.sectionKey))];
     const loaded = await Promise.all(keys.map((key) => loadFamilies(key)));
     const sectionTemplates = Object.fromEntries(keys.map((key, index) => [key, loaded[index]]));
-    const built = pinnedCode
-      ? modules.rebuildForm(sectionTemplates, pinnedCode)
-      : modules.buildForm(sectionTemplates, { seed, slots });
+    const progress = store.refresh();
+    const history = Object.fromEntries(keys.map((key) => [key, Progress.historyFor(progress, key)]));
+    const built = rebuildCode
+      ? modules.rebuildForm(sectionTemplates, rebuildCode)
+      : modules.buildForm(sectionTemplates, { seed, slots, history });
     const drawn = modules.drawForm(built, window.LiminalFamilyShared.instantiate);
     const groups = drawn.modules.map((entry) => ({
       label: moduleLabel(entry),
@@ -534,10 +552,15 @@
     if (!groups.some((group) => group.questions.length)) {
       throw new Error("No questions could be drawn for this form.");
     }
-    const model = booklet.buildModel(groups, satBlueprint(built), built.seed, { code: built.code });
-    pinnedCode = built.code;
-    elements.codeInput.value = built.code;
-    return { model, options: { render: RENDER }, warnings: reportLines(built, drawn) };
+    const warnings = reportLines(built, drawn);
+    const blueprint = satBlueprint(built);
+    blueprint.notes.push(...warnings);
+    const model = booklet.buildModel(groups, blueprint, built.seed, { code: drawn.code });
+    pinnedCode = drawn.code;
+    elements.codeInput.value = drawn.code;
+    cachedBuild = { model, code: drawn.code, served: drawn.modules,
+      options: { render: RENDER }, warnings };
+    return cachedBuild;
   }
 
   /* ---------------------------------------------------------------- building */
@@ -545,7 +568,24 @@
   function buildBooklet() {
     const form = selectedForm();
     if (!form) return Promise.reject(new Error("Choose a form first."));
-    return form.test === "SAT" ? buildSatBuild(form) : buildActBuild(form);
+    if (pendingBuild) return pendingBuild;
+    pendingBuild = (form.test === "SAT" ? buildSatBuild(form) : buildActBuild(form))
+      .finally(() => { pendingBuild = null; });
+    return pendingBuild;
+  }
+
+  // Only an explicit open/download records exposure. Opening the answer key
+  // or re-rendering the same pinned form does not serve every template again.
+  function recordBuild(build) {
+    const exposureKey = `${store.refresh().epoch}:${build.code}`;
+    if (!build.served || recordedCodes.has(exposureKey)) return;
+    const result = store.update((progress) => build.served.reduce((current, entry) =>
+      Progress.serveTemplates(current, entry.sectionKey, {
+        templateIds: entry.templateIds, scenes: entry.scenes,
+        itemIdentities: entry.itemIdentities, mask: entry.servedMaskCode,
+      }), progress));
+    recordedCodes.add(exposureKey);
+    if (!result.ok) build.warnings.push("Booklet history could not be saved in this browser; it is remembered only while this page stays open.");
   }
 
   // SAT booklets end with their answer key; ACT keeps the key separate.
@@ -588,6 +628,7 @@
       target.document.write(documentFor(build, kind));
       target.document.close();
       target.document.title = fileNameFor(build.model, kind).replace(/\.html$/, "");
+      recordBuild(build);
       updateShareLink();
       reportBuilt(
         build,
@@ -615,6 +656,7 @@
       document.body.appendChild(anchor);
       anchor.click();
       anchor.remove();
+      recordBuild(build);
       window.setTimeout(() => URL.revokeObjectURL(url), 30000);
       updateShareLink();
       reportBuilt(build, `Downloaded ${fileNameFor(build.model, kind)}.`);
@@ -627,7 +669,8 @@
     updateShareLink();
     try {
       await navigator.clipboard.writeText(elements.shareLink.value);
-      setStatus("Link copied. Anyone who opens it gets this exact form.");
+      setStatus(pinnedCode || !isSat() ? "Link copied. Anyone who opens it gets this exact form." :
+        "Link copied. Build the booklet first to share its exact questions by form code.");
     } catch (error) {
       elements.shareLink.select();
       setStatus("Press ⌘C or Ctrl+C to copy the selected link.");
@@ -657,7 +700,7 @@
     unpin();
     updateShareLink();
     setWarnings([]);
-    setStatus("New seed ready. Build the booklet to draw a fresh form.");
+    setStatus("New booklet ready. Build it to avoid recently shown questions when possible.");
   });
   elements.seedInput.addEventListener("change", () => {
     unpin();

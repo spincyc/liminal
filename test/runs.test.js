@@ -191,8 +191,8 @@ test("a run code carries the attempts a scene-steered draw used, and rebuilds it
     attempts: parsed.attempts,
   });
   assert.deepEqual(rebuilt.map((question) => question.id), steered.map((question) => question.id));
-  // Plain draws keep the two-part code, and old codes still parse.
-  assert.equal(Runs.runCode(mask, "z", plain.attempts, templates), Runs.runCode(mask, "z"));
+  // New draws pin zero attempts too; old two-part codes still parse.
+  assert.equal(Runs.runCode(mask, "z", plain.attempts, templates), "7-z-000");
   assert.deepEqual(Runs.parseRunCode("7-z"), { mask, seed: "z" });
   assert.deepEqual(Runs.parseRunCode("7-z-012").attempts, [0, 1, 2]);
   assert.throws(() => Runs.parseRunCode("7-z-01", templates), SyntaxError);

@@ -88,7 +88,7 @@ For a coherent ACT bank batch:
 - The browser app has no module loader; each page loads plain scripts in
   order, and `tools/smoke-static.js` pins that order.
   - `index.html`: the generated catalog, answer signs and template registries,
-    then `lib/core.js`, `lib/template-mask.js`, `lib/runs.js`,
+    then `lib/core.js`, `lib/template-mask.js`, `lib/question-identity.js`, `lib/runs.js`,
     `lib/modules.js`, `lib/simulation.js`, `lib/test-engine.js`,
     `lib/session-store.js`, `lib/annotations.js`, `lib/line-reader.js`,
     `lib/progress.js`, `lib/review-queue.js`,
@@ -101,8 +101,8 @@ For a coherent ACT bank batch:
     `lib/learn-markup.js`, `app/site.js`, `app/render.js`, `app/learn.js`;
     it routes `#<pageId>` and `#<pageId>/<anchor>`.
   - `print.html`: the catalog and registries, `lib/core.js`,
-    `lib/template-mask.js`, `lib/runs.js`, `lib/modules.js`,
-    `lib/booklet.js`, `app/render.js`, `app/site.js`, `app/print.js`.
+    `lib/template-mask.js`, `lib/question-identity.js`, `lib/runs.js`, `lib/modules.js`,
+    `lib/booklet.js`, `lib/progress.js`, `app/render.js`, `app/site.js`, `app/print.js`.
   ACT section banks load on demand from `content/<section>.js`; a SAT
   section's templates load from `lib/families/<section>.js` when needed.
   The built registries (`content/templates.js`) carry every template's tier,
@@ -152,6 +152,12 @@ For a coherent ACT bank batch:
     a current-version retry is explicitly labeled. Preserve identities through
     progress export/import and do not let a revised item mature an old item's
     review schedule.
+  - Generated attempts also store `visibleIdentity`, a hash of displayed
+    content independent of seed, template, answer key and choice order.
+    Repeated visible items count only once in accuracy and mastery. Preserve
+    this identity through import and merge; do not infer it for old attempts
+    whose displayed content is unavailable. Section history keeps bounded
+    recent item identities and scenes, shared by practice and booklets.
   - `liminal:progress:v3` (`src/lib/progress.js`) holds every attempt a set
     shows (a blank is recorded as wrong), each with its source, hint use,
     time, feedback mode, template id, version and seed, and `reviewOf` when

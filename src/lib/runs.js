@@ -11,10 +11,12 @@
   const Mask = typeof module === "object" && module.exports
     ? require("./template-mask")
     : root.LiminalTemplateMask;
-  const api = factory(Mask);
+  const Identity = typeof module === "object" && module.exports
+    ? require("./question-identity") : root.LiminalQuestionIdentity;
+  const api = factory(Mask, Identity);
   if (typeof module === "object" && module.exports) module.exports = api;
   else root.LiminalRuns = api;
-})(typeof self !== "undefined" ? self : this, function (Mask) {
+})(typeof self !== "undefined" ? self : this, function (Mask, Identity) {
   "use strict";
 
   function hash(text) {
@@ -194,6 +196,7 @@
   // each template's attempt as one base-36 digit.
   const MAX_ATTEMPTS = 36;
 
+  // Legacy replay for codes created before section-wide item exposure.
   // Draws one question from each template with `instantiate(family, seed)`
   // and returns them in the run's order. The seed of a template's question is
   // "<run seed>.<template id>.<attempt>", tried from attempt 0 up:
@@ -213,7 +216,7 @@
   // non-enumerable properties: `skipped`, a list of { templateId, reason }
   // for templates left out ("throws" or "unverified"), and `attempts`,
   // { [templateId]: attempt } for the questions drawn, which runCode takes.
-  function drawQuestions(templates, seed, instantiate, idPrefix, options) {
+  function legacyDrawQuestions(templates, seed, instantiate, idPrefix, options) {
     const settings = options || {};
     const seenScenes = settings.seenScenes || {};
     const pinned = settings.attempts || {};
@@ -279,12 +282,95 @@
     return questions;
   }
 
+  // History is section-wide: the same scene or item can belong to several
+  // templates. The old per-template lists remain a migration fallback.
+  function exposureOptions(history, extra) {
+    const past = history || {};
+    const recentScenes = Array.isArray(past.recentScenes) ? past.recentScenes :
+      [...new Set(Object.values(past.scenes || {}).flat().filter(Boolean))];
+    return { recentScenes, recentItems: past.recentItems || [], ...extra };
+  }
+
+  function visibleIdentity(question) {
+    return Identity.visibleIdentity(question);
+  }
+
+  // Reuse is explicit when the 36 reproducible candidates cannot avoid it.
+  // This is bounded search exhaustion, not a claim that a generator has no
+  // other unseen output. Keep the chosen template/tier and the requested size.
+  function drawQuestions(templates, seed, instantiate, idPrefix, options) {
+    const settings = options || {};
+    if (settings.legacy) return legacyDrawQuestions(templates, seed, instantiate, idPrefix, settings);
+    const recentScenes = settings.recentScenes || [...new Set(Object.values(settings.seenScenes || {}).flat())];
+    const recentItems = settings.recentItems || [];
+    const sceneRecency = new Map(recentScenes.map((scene, index) => [scene, index + 1]));
+    const itemRecency = new Map(recentItems.map((item, index) => [item, index + 1]));
+    const scenes = new Set(settings.avoidScenes || []);
+    const items = new Set(settings.avoidItems || []);
+    const attempts = {};
+    const skipped = [];
+    const repeats = [];
+    const byId = new Map();
+    const pinned = settings.attempts || {};
+    templates.slice().sort((left, right) => left.bit - right.bit).forEach((template) => {
+      let best = null;
+      let problem = null;
+      const hasPin = Object.prototype.hasOwnProperty.call(pinned, template.id);
+      const pin = Number(pinned[template.id]);
+      const candidates = hasPin ? [pin] : Array.from({ length: MAX_ATTEMPTS }, (_, index) => index);
+      for (const attempt of candidates) {
+        if (!Number.isInteger(attempt) || attempt < 0 || attempt >= MAX_ATTEMPTS) {
+          problem = "invalid-pinned-attempt";
+          continue;
+        }
+        const itemSeed = `${seed}.${template.id}.${attempt}`;
+        let record;
+        try { record = instantiate(template.family, itemSeed); }
+        catch (error) { problem = problem || "throws"; continue; }
+        if (!record || record.verified === false) { problem = problem || "unverified"; continue; }
+        const question = { ...record, id: `${idPrefix || ""}${template.id}:${itemSeed}` };
+        const identity = visibleIdentity(question);
+        const flags = {
+          withinRunItem: Boolean(identity && items.has(identity)),
+          withinRunScene: Boolean(question.scene && scenes.has(question.scene)),
+          recentItem: Boolean(identity && itemRecency.has(identity)),
+          recentScene: Boolean(question.scene && sceneRecency.has(question.scene)),
+        };
+        const score = [Number(flags.withinRunItem), Number(flags.withinRunScene),
+          Number(flags.recentItem), Number(flags.recentScene),
+          itemRecency.get(identity) || 0, sceneRecency.get(question.scene) || 0];
+        if (!best || before(score, best.score)) best = { question, identity, attempt, score, flags };
+        if (score.every((value) => value === 0)) break;
+      }
+      if (!best) {
+        skipped.push({ templateId: template.id, reason: hasPin ? `pinned-${problem || "unverified"}` : problem || "unverified" });
+        return;
+      }
+      attempts[template.id] = best.attempt;
+      byId.set(template.id, best.question);
+      if (Object.values(best.flags).some(Boolean)) {
+        repeats.push({ templateId: template.id, questionId: best.question.id, itemIdentity: best.identity,
+          scene: best.question.scene || null, ...best.flags,
+          reason: hasPin ? "pinned-replay" : "candidate-pool-exhausted" });
+      }
+      if (best.identity) items.add(best.identity);
+      if (best.question.scene) scenes.add(best.question.scene);
+    });
+    const questions = templates.slice()
+      .sort((left, right) => hash(`${seed}|order|${left.id}`) - hash(`${seed}|order|${right.id}`))
+      .filter((template) => byId.has(template.id)).map((template) => byId.get(template.id));
+    Object.entries({ skipped, attempts, repeats,
+      itemIdentities: questions.map(visibleIdentity).filter(Boolean), shortfall: templates.length - questions.length,
+    }).forEach(([name, value]) => Object.defineProperty(questions, name, { value, enumerable: false }));
+    return questions;
+  }
+
   // A run's code: its template mask and its seed, both in base 36, and, when
   // `attempts` ({ [templateId]: attempt }, from drawQuestions) is given with
-  // `templates` and any attempt is not 0, one base-36 digit per template in
+  // `templates`, one base-36 digit per template in
   // bit order ("mask-seed-attempts"). Passing parseRunCode's attempts back to
   // drawQuestions rebuilds a run exactly even when it steered around seen
-  // scenes; a two-part code rebuilds exactly any run drawn without them.
+  // scenes. Pin zeros too: legacy two-part codes use the older draw rules.
   function runCode(mask, seed, attempts, templates) {
     const base = `${Mask.toCode(mask)}-${String(seed)}`;
     if (!attempts || !templates) return base;
@@ -295,7 +381,7 @@
         return attempt >= 0 && attempt < MAX_ATTEMPTS ? attempt.toString(36) : "0";
       })
       .join("");
-    return /[^0]/.test(digits) ? `${base}-${digits}` : base;
+    return digits ? `${base}-${digits}` : base;
   }
 
   // { mask, seed } from a run code, plus `attempts` when the code has them;
@@ -328,6 +414,8 @@
     catalogTemplates,
     chooseTemplates,
     drawQuestions,
+    exposureOptions,
+    visibleIdentity,
     parseRunCode,
     runCode,
     templatesForMask,

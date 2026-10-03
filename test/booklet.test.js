@@ -540,7 +540,7 @@ test("a real template form fills a 98-question booklet", () => {
   const groups = drawn.modules.map((entry) => ({
     label: entry.label, minutes: entry.minutes, directions: entry.directions, questions: entry.questions,
   }));
-  const model = booklet.buildModel(groups, { ...satBlueprint, breakAfter: form.breakAfter }, form.seed, { code: form.code });
+  const model = booklet.buildModel(groups, { ...satBlueprint, breakAfter: form.breakAfter }, form.seed, { code: drawn.code });
   assert.equal(model.total, 98);
   assert.equal(model.minutes, 134);
   const html = booklet.renderBookletHtml(model, { key: true });

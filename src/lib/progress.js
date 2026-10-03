@@ -2,14 +2,16 @@
 // sets, and plan, stored in one localStorage key. Pure logic with no DOM
 // access: storage is injected (anything with getItem, setItem), so the same
 // code runs in Node tests and in the browser (window.LiminalProgress, after
-// window.LiminalTemplateMask).
+// window.LiminalTemplateMask and window.LiminalQuestionIdentity).
 //
 // Schema v3 (key liminal:progress:v3):
 //   attempts  every answer a set showed, including unanswered ones
 //             (answered: false, correct: false); append-only, unique by id.
 //             A re-practice of an earlier miss carries reviewOf (the missed
 //             question's id); the review schedule is derived from these.
-//             An answer to a question answered before carries repeat: true
+//             Generated answers carry visibleIdentity of the displayed item,
+//             independent of seed and choice order. An answer to an item
+//             answered before carries repeat: true
 //             (set when it is recorded, and once for older records), and
 //             the accuracy model leaves it out: it tests memory of the
 //             question, not the skill.
@@ -17,7 +19,8 @@
 //   errorLog  { [attemptId]: { reason, rule?, at } }.
 //   history   per section: a serve counter, the counter value each template
 //             (or bank question) was last served at, the scenes each
-//             template has shown, and the union mask of served templates.
+//             template has shown, bounded section-wide recentItems and
+//             recentScenes (oldest first), and the union mask of templates.
 //   sessions  one summary per finished set.
 //   plan      per test: { SAT?: { testDate?, weeklyQuestions? }, ACT?: … }.
 //             A plan kept before plans were per test ({ testDate?,
@@ -31,10 +34,11 @@
 (function (root, factory) {
   const node = typeof module === "object" && module.exports;
   const Mask = node ? require("./template-mask") : root.LiminalTemplateMask;
-  const api = factory(Mask);
+  const Identity = node ? require("./question-identity") : root.LiminalQuestionIdentity;
+  const api = factory(Mask, Identity);
   if (node) module.exports = api;
   else root.LiminalProgress = api;
-})(typeof globalThis !== "undefined" ? globalThis : this, function (Mask) {
+})(typeof globalThis !== "undefined" ? globalThis : this, function (Mask, Identity) {
   "use strict";
 
   const STORAGE_KEY = "liminal:progress:v3";
@@ -46,6 +50,8 @@
     attempts: 5000,
     sessions: 500,
     scenesPerTemplate: 30,
+    recentScenes: 120,
+    recentItems: 400,
     servedPerSection: 400,
     officialScores: 200,
     // What a save falls back to when the quota is hit.
@@ -157,6 +163,21 @@
   const isObject = (value) => Boolean(value) && typeof value === "object" && !Array.isArray(value);
   const strings = (list) => (Array.isArray(list) ? list.filter((item) => typeof item === "string") : []);
   const unique = (list) => [...new Set(list)];
+  // The last occurrence wins, so an item served again becomes most recent.
+  const recent = (list, limit) => unique(strings(list).filter(Boolean).reverse()).reverse().slice(-limit);
+
+  function historyRecents(entry) {
+    // Older records have only per-template scene lists. Their exact section
+    // chronology is unknown; last-served template order is the best retained
+    // evidence, and these inferred scenes precede explicitly recorded ones.
+    const legacyScenes = Object.keys(entry.scenes || {})
+      .sort((left, right) => ((entry.lastServed || {})[left] || 0) - ((entry.lastServed || {})[right] || 0))
+      .flatMap((id) => strings(entry.scenes[id]));
+    return {
+      recentItems: recent(strings(entry.recentItems).filter(Identity.isVisibleIdentity), LIMITS.recentItems),
+      recentScenes: recent(legacyScenes.concat(strings(entry.recentScenes)), LIMITS.recentScenes),
+    };
+  }
 
   function normalizeHistory(raw) {
     const history = {};
@@ -175,17 +196,17 @@
       const scenes = {};
       if (isObject(entry.scenes)) {
         Object.keys(entry.scenes).forEach((id) => {
-          const list = strings(entry.scenes[id]);
+          const list = recent(entry.scenes[id], LIMITS.scenesPerTemplate);
           if (list.length) scenes[id] = list;
         });
       }
-      history[sectionKey] = {
+      history[sectionKey] = Object.assign({
         serve: Object.values(lastServed).reduce((highest, value) => Math.max(highest, value),
           Number.isFinite(Number(entry.serve)) ? Math.max(0, Number(entry.serve)) : 0),
         lastServed,
         scenes,
         mask: typeof entry.mask === "string" && entry.mask ? entry.mask : "0",
-      };
+      }, historyRecents(Object.assign({}, entry, { scenes, lastServed })));
     });
     return history;
   }
@@ -214,22 +235,41 @@
     return progress;
   }
 
-  // Only the earliest retained answer to a question can be a first answer.
+  // Only the earliest retained answer to an identifiable item can be first.
   // Merging devices can bring two `repeat: false` answers together, so
   // reconcile those too. A true flag survives even without its predecessor
   // (older attempts may have been trimmed).
+  // Historical attempts without visibleIdentity still support same-ID repeat
+  // checks; do not infer their displayed content from today's template.
+  function repeatKeys(attempt) {
+    const keys = [`id:${attempt.questionId}`];
+    if (attempt.source === "template" && Identity.isVisibleIdentity(attempt.visibleIdentity)) {
+      keys.push(`visible:${attempt.visibleIdentity}`);
+    }
+    return keys;
+  }
+
   function markRepeats(attempts) {
     const firstAt = new Map();
     attempts.forEach((attempt, index) => {
       const at = Number(attempt.timestamp) || 0;
-      const earliest = firstAt.get(attempt.questionId);
-      if (!earliest || at < earliest.at || (at === earliest.at && index < earliest.index)) {
-        firstAt.set(attempt.questionId, { at, index });
-      }
+      repeatKeys(attempt).forEach((key) => {
+        const earliest = firstAt.get(key);
+        // Keep an already counted first answer ahead of an already marked
+        // repeat at the same instant. Otherwise a lexical tie-break could
+        // mark both repeated, since true flags must survive trimmed history.
+        // IDs settle ties among equally eligible imported answers.
+        const wasRepeat = attempt.repeat === true;
+        if (!earliest || at < earliest.at || (at === earliest.at &&
+            (Number(wasRepeat) < Number(earliest.wasRepeat) ||
+              (wasRepeat === earliest.wasRepeat && String(attempt.id) < earliest.id)))) {
+          firstAt.set(key, { at, index, id: String(attempt.id), wasRepeat });
+        }
+      });
     });
     let changed = false;
     const marked = attempts.map((attempt, index) => {
-      const repeat = attempt.repeat === true || firstAt.get(attempt.questionId).index !== index;
+      const repeat = attempt.repeat === true || repeatKeys(attempt).some((key) => firstAt.get(key).index !== index);
       if (attempt.repeat === repeat) return attempt;
       changed = true;
       return Object.assign({}, attempt, { repeat });
@@ -401,10 +441,17 @@
   }
 
   function mergeHistory(left, right) {
-    const history = JSON.parse(JSON.stringify(left || {}));
-    Object.keys(right || {}).forEach((sectionKey) => {
-      const incoming = right[sectionKey];
+    const history = normalizeHistory(left);
+    const normalizedRight = normalizeHistory(right);
+    Object.keys(normalizedRight).forEach((sectionKey) => {
+      const incoming = normalizedRight[sectionKey];
       const entry = sectionHistory(history, sectionKey);
+      // A stale tab must not move old values to the recent end. The higher
+      // serve counter supplies the newest ordering; storage wins a tie.
+      const newer = incoming.serve > entry.serve ? incoming : entry;
+      const older = newer === incoming ? entry : incoming;
+      const recents = Object.fromEntries(["recentItems", "recentScenes"].map((field) => [field,
+        recent(strings(older[field]).concat(strings(newer[field])), LIMITS[field])]));
       entry.serve = Math.max(entry.serve, incoming.serve || 0);
       Object.keys(incoming.lastServed || {}).forEach((id) => {
         const known = Object.prototype.hasOwnProperty.call(entry.lastServed, id) ? entry.lastServed[id] : 0;
@@ -416,6 +463,7 @@
           .slice(-LIMITS.scenesPerTemplate);
       });
       entry.mask = unionMaskCodes(entry.mask, incoming.mask);
+      Object.assign(entry, recents);
     });
     return history;
   }
@@ -590,18 +638,13 @@
   // to a question already answered is marked repeat.
   function recordAttempts(progress, attempts) {
     const ids = new Set(progress.attempts.map((attempt) => attempt.id));
-    const answered = new Set(progress.attempts.map((attempt) => attempt.questionId));
     const added = (attempts || []).filter((attempt) => {
       if (!attempt || typeof attempt.id !== "string" || ids.has(attempt.id)) return false;
       ids.add(attempt.id);
       return true;
-    }).map((attempt) => {
-      const repeat = answered.has(attempt.questionId);
-      answered.add(attempt.questionId);
-      return typeof attempt.repeat === "boolean" ? attempt : Object.assign({}, attempt, { repeat });
     });
     if (!added.length) return progress;
-    return Object.assign({}, progress, { attempts: progress.attempts.concat(added) });
+    return Object.assign({}, progress, { attempts: markRepeats(progress.attempts.concat(added)) });
   }
 
   // `marks` maps question ids to true (marked) or false (unmarked).
@@ -674,7 +717,7 @@
   function sectionHistory(history, sectionKey) {
     if (!Object.prototype.hasOwnProperty.call(history, sectionKey)) {
       Object.defineProperty(history, sectionKey, {
-        value: { serve: 0, lastServed: {}, scenes: {}, mask: "0" },
+        value: { serve: 0, lastServed: {}, scenes: {}, mask: "0", recentItems: [], recentScenes: [] },
         enumerable: true, configurable: true, writable: true,
       });
     }
@@ -701,12 +744,13 @@
   }
 
   function cloneHistory(progress) {
-    return JSON.parse(JSON.stringify(progress.history || {}));
+    return normalizeHistory(progress.history);
   }
 
   // One run served these templates: they share the next serve number, each
   // template's scene joins its list, and the run's mask joins the section's.
-  // `served` = { templateIds, scenes: { [templateId]: scene }, mask: code }.
+  // `served` = { templateIds, scenes: { [templateId]: scene }, mask: code,
+  //              itemIdentities: [QuestionIdentity.visibleIdentity(question)] }.
   function serveTemplates(progress, sectionKey, served) {
     const history = cloneHistory(progress);
     const entry = sectionHistory(history, sectionKey);
@@ -722,6 +766,9 @@
       entry.scenes[id] = unique((entry.scenes[id] || []).filter((scene) => scene !== scenes[id])
         .concat(String(scenes[id]))).slice(-LIMITS.scenesPerTemplate);
     });
+    entry.recentScenes = recent(entry.recentScenes.concat(Object.values(scenes)), LIMITS.recentScenes);
+    entry.recentItems = recent(entry.recentItems.concat(strings(served && served.itemIdentities)
+      .filter(Identity.isVisibleIdentity)), LIMITS.recentItems);
     if (served && served.mask) entry.mask = unionMaskCodes(entry.mask, served.mask);
     return Object.assign({}, progress, { history });
   }
@@ -735,13 +782,16 @@
     const history = cloneHistory(progress);
     const entry = sectionHistory(history, sectionKey);
     let changed = false;
+    const addedScenes = [];
     Object.keys(scenes || {}).forEach((id) => {
       const known = entry.scenes[id] || [];
       const added = unique(strings(scenes[id]).filter((scene) => scene && !known.includes(scene)));
       if (!added.length) return;
       entry.scenes[id] = added.concat(known).slice(-LIMITS.scenesPerTemplate);
+      addedScenes.push(...added);
       changed = true;
     });
+    entry.recentScenes = recent(addedScenes.concat(entry.recentScenes), LIMITS.recentScenes);
     return changed ? Object.assign({}, progress, { history }) : progress;
   }
 
@@ -806,6 +856,8 @@
       record.templateId = question.templateId || parsed.templateId;
       record.templateVersion = Number(settings.templateVersion) || 1;
       record.seed = question.seed !== undefined ? String(question.seed) : parsed.seed;
+      const identity = Identity.visibleIdentity(question);
+      if (identity) record.visibleIdentity = identity;
     } else {
       record.contentIdentity = contentIdentity(question);
     }
@@ -980,10 +1032,9 @@
   }
 
   function historyFor(progress, sectionKey) {
-    const entry = (progress.history || {})[sectionKey];
+    const entry = normalizeHistory(progress.history)[sectionKey];
     return entry
-      ? JSON.parse(JSON.stringify(entry))
-      : { serve: 0, lastServed: {}, scenes: {}, mask: "0" };
+      || { serve: 0, lastServed: {}, scenes: {}, mask: "0", recentItems: [], recentScenes: [] };
   }
 
   // Bank question ids served in this section, most recent first.
@@ -1018,7 +1069,7 @@
       summary.byDifficulty[tier] = statRow({ difficulty: tier });
     });
     const questions = new Set();
-    (attempts || []).forEach((attempt) => {
+    markRepeats(attempts || []).forEach((attempt) => {
       if (attempt.correct !== true && attempt.correct !== false) return;
       if (attempt.source === "legacy-bank" && !settings.includeLegacy) {
         summary.legacy += 1;

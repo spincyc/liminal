@@ -7,6 +7,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const Analytics = require("../src/lib/analytics");
 const Progress = require("../src/lib/progress");
+const Identity = require("../src/lib/question-identity");
 const Runs = require("../src/lib/runs");
 const Practice = require("../src/lib/practice");
 const catalog = require("../content/catalog.json");
@@ -69,6 +70,43 @@ function many(count, fields) {
 function rowFor(rows, skill) {
   return rows.find((row) => row.skill === skill);
 }
+
+test("same-content seeds cannot fill mastery windows and first sight stays grouped by template", () => {
+  const visibleIdentity = Identity.visibleIdentity({ stem: "If 2x = 8, what is x?", responseType: "numeric" });
+  const duplicateMedium = Array.from({ length: 30 }, (_, index) => attempt({
+    templateId: index % 2 ? "design-a" : "design-b", visibleIdentity, repeat: false,
+  }));
+  const duplicateHard = Array.from({ length: 15 }, (_, index) => attempt({
+    templateId: index % 2 ? "design-c" : "design-d", visibleIdentity, difficulty: "Hard", repeat: false,
+  }));
+  const row = rowFor(Analytics.skillMap(duplicateMedium.concat(duplicateHard), SECTIONS), "Linear functions");
+  assert.equal(row.attempted, 1);
+  assert.equal(row.gate.attempted, 1);
+  assert.equal(row.hardBar.attempted, 0, "a duplicate at a different tier is still recalled content");
+  assert.equal(row.gate.met, false);
+  assert.equal(row.hardBar.met, false);
+  const fresh = Array.from({ length: 30 }, (_, index) => attempt({ templateId: index % 2 ? "a" : "b",
+    visibleIdentity: Identity.visibleIdentity({ stem: `If 2x = ${index + 1}, what is x?`, responseType: "numeric" }) }));
+  assert.equal(rowFor(Analytics.skillMap(fresh, SECTIONS), "Linear functions").gate.met, true);
+  assert.equal(Analytics.firstSight(fresh).attempted, 2, "fresh visible items do not replace design-level first sight");
+});
+
+test("recalled content stays excluded when analytics narrows to a session or time window", () => {
+  const visibleIdentity = Identity.visibleIdentity({ stem: "If 2x = 8, what is x?", responseType: "numeric" });
+  const answers = [
+    attempt({ timestamp: new Date(2026, 0, 1).getTime(), sessionId: "first", visibleIdentity, correct: false }),
+    attempt({ timestamp: new Date(2026, 8, 1).getTime(), sessionId: "later", visibleIdentity, repeat: false }),
+  ];
+  const sessions = [{ id: "first", total: 1, correct: 0 }, { id: "later", total: 1, correct: 1,
+    kind: "diagnostic", sectionKey: "sat-math", finishedAt: new Date(2026, 8, 1).getTime() }];
+  const points = Analytics.sessionTrend(sessions, answers);
+  assert.deepEqual(points.map((point) => point.counted), [1, 0]);
+  assert.equal(points[1].accuracy, null);
+  assert.equal(Analytics.diagnosticPlacement(answers, sessions, SECTIONS[0]).attempted, 0);
+  const compared = Analytics.officialComparison(answers, [{ date: "2026-09-02", kind: "practice", math: 600 }]);
+  assert.equal(compared[0].sections.math.attempted, 0, "the earlier first answer is outside the comparison window");
+  assert.equal(Analytics.pacing(answers).timed, 1);
+});
 
 test("trimmed session history excludes hinted Hard answers and unscored essays", () => {
   const hinted = Progress.summarizeSession({ id: "hinted" }, [{
@@ -177,7 +215,7 @@ test("a question answered again counts once, at its first answer", () => {
   const again = firsts.slice(0, 8).map((miss) => attempt({ questionId: miss.questionId, reviewOf: miss.questionId }));
   let row = rowFor(Analytics.skillMap([...firsts, ...again], SECTIONS), "Linear functions");
   assert.deepEqual([row.gate.attempted, row.gate.correct, row.gate.met], [30, 22, false]);
-  assert.equal(row.medium.attempted, 38, "every answer still counts toward accuracy");
+  assert.equal(row.medium.attempted, 30, "repeat answers are excluded from ordinary accuracy too");
   // Fresh versions of the same templates are new questions and count.
   const fresh = many(8, { reviewOf: "sat-math:t1:s1" });
   row = rowFor(Analytics.skillMap([...firsts, ...fresh], SECTIONS), "Linear functions");
