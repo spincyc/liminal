@@ -20,8 +20,7 @@ screws onto a hydrant, and in 1904 there was no agreement about {6 how that
 coupling should be cut and shaped in terms of its threading}. Cities bought from
 local foundries, and the foundries used the pattern they had always used.
 {7 Cut by a local foundry to a local pattern, a visiting company found that its
-couplings fit nothing.} Crews tried packing the joints with canvas and leather
-{8 ; the pressure blew them apart.}
+couplings fit nothing.} Crews tried packing the joints with canvas and leather{8 ; the pressure blew them apart.}
 
 [4] {9 Likewise,} the argument moved from the streets to the committee rooms.
 Within a year the National Fire Protection Association had adopted a national
@@ -217,19 +216,26 @@ instead}.`,
       difficulty: "Medium",
       keep: true,
       wrong: [
-        [", the pressure blew them apart.", "A comma alone between two independent clauses is a splice."],
-        [": the pressure blew them apart.", "A colon introduces an explanation, and this clause reports a result."],
-        [" and the pressure blew them apart.", "Joining with 'and' but no comma leaves the clauses unpunctuated."],
+        [
+          ", the pressure blew them apart.",
+          "A comma alone between two independent clauses is a splice."
+        ],
+        [
+          "; although the pressure blew them apart.",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
+        ],
+        [
+          " and the pressure blew them apart.",
+          "Joining with 'and' but no comma leaves the clauses unpunctuated."
+        ]
       ],
-      why:
-        "Both halves are complete sentences of equal weight — the crews tried something, and it " +
-        "failed. A semicolon is the mark for two balanced independent clauses.",
+      why: "Both halves are complete sentences of equal weight — the crews tried something, and it failed. A semicolon is the mark for two balanced independent clauses.",
       steps: [
         "Check both sides of the mark. Each stands alone as a sentence.",
-        "Keep the semicolon, which joins equals without subordinating either.",
+        "Keep the semicolon, which joins equals without subordinating either."
       ],
       hint: "Two full sentences of equal weight are what a semicolon is for.",
-      trap: "The colon is tempting because the second clause feels like it explains the first.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 9,
@@ -302,33 +308,29 @@ instead}.`,
       subskill: "support",
       family: "supporting-detail",
       difficulty: "Hard",
-      stem:
-        "Given that all the choices are true, which one, if added here, best explains why adoption " +
-        "was slow even after the standard existed?",
-      key: "The change was all or nothing: a half-converted city could not couple its own hoses to its own hydrants.",
+      stem: "Given that all the choices are true, which one, if added here, best explains why adoption was slow even after the standard existed?",
+      key: "Partial conversion could leave a city's hoses unable to fit its hydrants.",
       wrong: [
         [
           "The National Fire Protection Association had no power to compel any city to comply.",
-          "A lack of authority explains why cities could refuse, not why refusing was rational.",
+          "A lack of authority explains why cities could refuse, not why refusing was rational."
         ],
         [
           "Baltimore rebuilt its burned district in under two years, faster than anyone expected.",
-          "The speed of the rebuilding says nothing about the pace of the thread conversion.",
+          "The speed of the rebuilding says nothing about the pace of the thread conversion."
         ],
         [
           "Several foundries continued to advertise their own patterns well into the 1910s.",
-          "Foundry advertising is a symptom of slow adoption rather than a reason for it.",
-        ],
+          "Foundry advertising is a symptom of slow adoption rather than a reason for it."
+        ]
       ],
-      why:
-        "The next sentence lists everything a city had to replace. The detail that prepares it is the " +
-        "one showing why a city could not convert a piece at a time.",
+      why: "The next sentence lists everything a city had to replace. The detail that prepares it is the one showing why a city could not convert a piece at a time.",
       steps: [
         "Read the sentence after the blank: a city had to replace every hydrant, hose, and engine.",
-        "Keep the choice that explains why the replacement could not be partial.",
+        "Keep the choice that explains why the replacement could not be partial."
       ],
       hint: "The question is why cities waited, not why they were allowed to wait.",
-      trap: "The authority choice is the most familiar explanation and answers a different question.",
+      trap: "The authority choice is the most familiar explanation and answers a different question."
     },
     {
       number: 13,
@@ -427,33 +429,29 @@ instead}.`,
       subskill: "purpose",
       family: "goal-assessment",
       difficulty: "Hard",
-      stem:
-        "Suppose the writer's goal had been to write an essay explaining how a disaster exposed a " +
-        "problem that no single city could have solved alone. Would this essay accomplish that goal?",
-      key: "Yes, because the mismatch only became visible when twenty cities' equipment met in one place.",
+      stem: "Suppose the writer's goal had been to write an essay explaining how a disaster exposed a problem that no single city could have solved alone. Would this essay accomplish that goal?",
+      key: "Yes, because the incompatibility emerged when visiting crews arrived.",
       wrong: [
         [
           "Yes, because it describes the specific brass fittings that Baltimore's foundries produced.",
-          "The essay never identifies any particular foundry or fitting, so that cannot be the reason.",
+          "The essay never identifies any particular foundry or fitting, so that cannot be the reason."
         ],
         [
           "No, because Baltimore eventually rebuilt its downtown without any outside assistance.",
-          "The essay makes no claim about the rebuilding, so the reason rests on nothing in the text.",
+          "The essay makes no claim about the rebuilding, so the reason rests on nothing in the text."
         ],
         [
           "No, because the essay concerns a technical standard rather than the fire that preceded it.",
-          "The essay treats the two as one story, and the standard is the fire's direct consequence.",
-        ],
+          "The essay treats the two as one story, and the standard is the fire's direct consequence."
+        ]
       ],
-      why:
-        "Each city's threads worked fine at home. The defect existed only across cities, and it took " +
-        "a fire large enough to summon twenty of them to reveal it — which is the goal exactly.",
+      why: "Each city's threads worked fine at home. The defect existed only across cities, and it took a fire large enough to summon twenty of them to reveal it — which is the goal exactly.",
       steps: [
         "Decide yes or no from what the essay actually argues, before reading the reasons.",
-        "Keep only the reason that describes something the essay really says.",
+        "Keep only the reason that describes something the essay really says."
       ],
       hint: "Ask whether any one city could have discovered this problem by itself.",
-      trap: "Both 'No' reasons sound informed, and one of them even praises the essay's focus.",
+      trap: "Both 'No' reasons sound informed, and one of them even praises the essay's focus."
     },
   ],
 };

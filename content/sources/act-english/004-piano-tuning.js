@@ -20,7 +20,7 @@ deliberately {5 make small compromises and slight adjustments to the intervals}.
 They narrow the fifths a little and widen the thirds more than a little. The
 result is equal temperament: every key slightly wrong, and all of them wrong in
 the same way, so that music can move freely among {6 them}. A tuner {7 only can
-hear} this work when two strings are close enough to beat against each other,
+hear this work} when two strings are close enough to beat against each other,
 and the speed of that beating is the measurement.
 
 [4] With the temperament octave set, the tuner moves outward, {8 doing the rest
@@ -112,23 +112,21 @@ though the arithmetic says it is not.`,
       noChange: "A comma alone cannot join two complete clauses, which is what sits on either side.",
       wrong: [
         [
-          "the rest of the piano is then built outward from that one string.",
-          "Removing the comma fuses the two clauses instead of separating them.",
+          "with the rest of the piano are then built outward from that one string.",
+          "After 'with,' a noun phrase is needed; the finite verb 'are' leaves this construction malformed."
         ],
         [
-          "so the rest of the piano is then built outward from that one string.",
-          "'So' claims the reference note causes the outward tuning rather than preceding it.",
-        ],
+          "and then building the rest of the piano outward from that one string.",
+          "The participle 'building' is not parallel to the earlier finite verb 'sets.'"
+        ]
       ],
-      why:
-        "Both halves are independent clauses. A comma plus a coordinating conjunction joins them, " +
-        "and 'and' is the conjunction that simply adds the second step to the first.",
+      why: "Both halves are independent clauses. A comma plus a coordinating conjunction joins them, and 'and' is the conjunction that simply adds the second step to the first.",
       steps: [
         "Test each side of the comma as its own sentence. Both stand.",
-        "Add the conjunction that states the relationship without inventing one.",
+        "Add the conjunction that states the relationship without inventing one."
       ],
       hint: "Once you know it is a splice, the remaining question is which conjunction is honest.",
-      trap: "'So' fixes the punctuation perfectly and still asserts a cause the sentence does not have.",
+      trap: "A replacement must work with the comma already printed before the underlined portion."
     },
     {
       number: 5,
@@ -159,19 +157,26 @@ though the arithmetic says it is not.`,
       difficulty: "Easy",
       keep: true,
       wrong: [
-        ["it", "The singular pronoun cannot refer to the plural noun 'keys.'"],
-        ["those", "The demonstrative points outward to something the sentence has not named."],
-        ["which", "A relative pronoun cannot serve as the object of the preposition here."],
+        [
+          "it",
+          "The singular pronoun cannot refer to the plural noun 'keys.'"
+        ],
+        [
+          "theirs",
+          "The possessive form names something belonging to the keys rather than the keys themselves."
+        ],
+        [
+          "which",
+          "A relative pronoun cannot serve as the object of the preposition here."
+        ]
       ],
-      why:
-        "The pronoun refers to 'every key,' understood across the sentence as the full set of keys, " +
-        "so the plural object pronoun is what 'among' requires.",
+      why: "The pronoun refers to 'every key,' understood across the sentence as the full set of keys, so the plural object pronoun is what 'among' requires.",
       steps: [
         "Find what music is moving among: the keys.",
-        "Keep the plural object pronoun that matches them.",
+        "Keep the plural object pronoun that matches them."
       ],
       hint: "'Among' needs more than one thing, which already tells you the number.",
-      trap: "'Every key' is grammatically singular a few words earlier, which invites 'it.'",
+      trap: "'Every key' is grammatically singular a few words earlier, which invites 'it.'"
     },
     {
       number: 7,
@@ -287,66 +292,58 @@ though the arithmetic says it is not.`,
       subskill: "organization",
       family: "paragraph-move",
       difficulty: "Hard",
-      stem:
-        "The writer is considering moving Paragraph 5 so that it appears immediately after " +
-        "Paragraph 2. Should the writer make this change?",
-      key: "No, because stretching the octaves is the final step and depends on the outward tuning described in Paragraph 4.",
+      stem: "The writer is considering moving Paragraph 5 so that it appears immediately after Paragraph 2. Should the writer make this change?",
+      key: "No, because the final adjustments depend on the tuning in Paragraph 4.",
       wrong: [
         [
           "No, because Paragraph 5 is the only paragraph that mentions the treble and the bass.",
-          "Being the only mention of something is not a reason a paragraph belongs where it is.",
+          "Being the only mention of something is not a reason a paragraph belongs where it is."
         ],
         [
           "Yes, because both Paragraph 2 and Paragraph 5 describe adjustments made to single strings.",
-          "Paragraph 5 adjusts whole registers, and the similarity claimed here does not exist.",
+          "Paragraph 5 adjusts whole registers, and the similarity claimed here does not exist."
         ],
         [
           "Yes, because it would place the essay's most surprising claim nearer the beginning.",
-          "Reordering for surprise would break the sequence a process narrative depends on.",
-        ],
+          "Reordering for surprise would break the sequence a process narrative depends on."
+        ]
       ],
-      why:
-        "The essay counts through a process in order: reference note, temperament, outward octaves, " +
-        "stretching. Stretching adjusts octaves that do not exist yet after Paragraph 2.",
+      why: "The essay counts through a process in order: reference note, temperament, outward octaves, stretching. Stretching adjusts octaves that do not exist yet after Paragraph 2.",
       steps: [
         "List what each paragraph does, in order, and note that the order is the process itself.",
-        "Ask whether Paragraph 5 depends on anything after Paragraph 2. It depends on Paragraph 4.",
+        "Ask whether Paragraph 5 depends on anything after Paragraph 2. It depends on Paragraph 4."
       ],
       hint: "In a process narrative, a paragraph can only move to a place where its inputs already exist.",
-      trap: "The surprising-claim argument is a real editing principle applied to the wrong kind of essay.",
+      trap: "The surprising-claim argument is a real editing principle applied to the wrong kind of essay."
     },
     {
       number: 13,
       subskill: "purpose",
       family: "goal-assessment",
       difficulty: "Hard",
-      stem:
-        "Suppose the writer's goal had been to explain why a correctly tuned piano is never exactly " +
-        "in tune. Would this essay accomplish that goal?",
-      key: "Yes, because it gives two reasons — the deliberate compromise of equal temperament and the stretching that real strings require.",
+      stem: "Suppose the writer's goal had been to explain why a correctly tuned piano is never exactly in tune. Would this essay accomplish that goal?",
+      key: "Yes, because temperament and stretching both depart from pure intervals.",
       wrong: [
         [
           "Yes, because it establishes that a piano has far more strings than it has keys.",
-          "The string count opens the essay but explains nothing about pitch being off.",
+          "The string count opens the essay but explains nothing about pitch being off."
         ],
         [
           "No, because the essay describes the tuner's procedure rather than the instrument's design.",
-          "The procedure is where both reasons appear, so describing it is how the goal is met.",
+          "The procedure is where both reasons appear, so describing it is how the goal is met."
         ],
         [
           "No, because the essay states that a piano can be tuned so every interval is pure.",
-          "It states that such a tuning is possible and unusable, which supports the goal instead.",
-        ],
+          "It states that such a tuning is possible and unusable, which supports the goal instead."
+        ]
       ],
-      why:
-        "Paragraph 3 explains the compromise tuners choose, and Paragraph 5 explains the physical " +
-        "fact that forces a second departure. Together they answer the question the goal asks.",
+      why: "Paragraph 3 explains the compromise tuners choose, and Paragraph 5 explains the physical fact that forces a second departure. Together they answer the question the goal asks.",
       steps: [
         "Answer yes or no from the essay's actual content before reading any reason.",
-        "Keep the reason that points at both explanations rather than one detail.",
+        "Keep the reason that points at both explanations rather than one detail."
       ],
       hint: "The goal asks 'why,' so count how many reasons the essay supplies.",
-      trap: "One wrong choice describes the essay accurately and then draws the opposite conclusion.",
+      trap: "One wrong choice describes the essay accurately and then draws the opposite conclusion."
     },
   ],
 };

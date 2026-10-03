@@ -15,11 +15,11 @@ teaches it.
 | Topic | Formula or fact | Taught in |
 | --- | --- | --- |
 | slope | m = (y₂ − y₁)/(x₂ − x₁) | [linear functions](learn:sat-math/algebra/linear-functions#slope) |
-| parallel and perpendicular lines | equal slopes; slopes multiply to −1 | [linear functions](learn:sat-math/algebra/linear-functions#slope) |
+| parallel and perpendicular lines | distinct nonvertical parallel lines have equal slopes; perpendicular nonvertical slopes multiply to −1; vertical and horizontal lines are perpendicular | [linear functions](learn:sat-math/algebra/linear-functions#slope) |
 | line forms | y = mx + b; y − y₁ = m(x − x₁); Ax + By = C | [linear functions](learn:sat-math/algebra/linear-functions#intercepts) |
-| slope of Ax + By = C | −A/B | [linear equations in two variables](learn:sat-math/algebra/linear-equations-in-two-variables#standard-form-slope) |
+| slope of Ax + By = C | −A/B when B ≠ 0; B = 0 gives a vertical line if A ≠ 0 | [linear equations in two variables](learn:sat-math/algebra/linear-equations-in-two-variables#standard-form-slope) |
 | moving along a line | change in y = slope × change in x | [linear equations in two variables](learn:sat-math/algebra/linear-equations-in-two-variables#moving-along-a-line) |
-| line with intercepts (a, 0) and (0, b) | x/a + y/b = 1; slope −b/a | [linear equations in two variables](learn:sat-math/algebra/linear-equations-in-two-variables#line-from-intercepts) |
+| line with intercepts (a, 0) and (0, b) | x/a + y/b = 1 and slope −b/a, with a and b nonzero | [linear equations in two variables](learn:sat-math/algebra/linear-equations-in-two-variables#line-from-intercepts) |
 | number of solutions of a linear system | compare coefficient ratios | [systems of two linear equations](learn:sat-math/algebra/systems-of-two-linear-equations#solve-systems) |
 | quadratic formula | x = (−b ± √(b² − 4ac))/(2a) | [nonlinear equations](learn:sat-math/advanced-math/nonlinear-equations#quadratic-equations) |
 | discriminant | b² − 4ac: positive two, zero one, negative no real solutions | [nonlinear equations](learn:sat-math/advanced-math/nonlinear-equations#quadratic-equations) |
@@ -39,7 +39,7 @@ teaches it.
 | parallelogram, trapezoid | bh; ½(b₁ + b₂)h | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#area) |
 | equilateral triangle | area (s²√3)/4 | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#area) |
 | surface area | box 2(lw + lh + wh); cylinder 2πr² + 2πrh; sphere 4πr² | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#surface-area) |
-| box inside a sphere | the space diagonal √(l² + w² + h²) is the sphere's diameter | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#box-in-a-sphere) |
+| rectangular box inscribed in a sphere | when all eight vertices lie on the sphere, its diameter is the space diagonal √(l² + w² + h²) | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#box-in-a-sphere) |
 | scale factor k | lengths × k, areas × k², volumes × k³ | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#volume) |
 | density | mass = density × volume | [area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#density) |
 | parallel lines and a transversal | corresponding and alternate interior angles equal | [lines, angles, and triangles](learn:sat-math/geometry-and-trigonometry/lines-angles-and-triangles#angle-relationships) |
@@ -52,9 +52,17 @@ teaches it.
 | arcs and sectors | (θ/360) · 2πr and (θ/360) · πr²; in radians s = rθ | [circles](learn:sat-math/geometry-and-trigonometry/circles#circle-measures) |
 | circle angles | inscribed angle = half its arc; tangent ⊥ radius | [circles](learn:sat-math/geometry-and-trigonometry/circles#circle-measures) |
 | chords | the perpendicular from the center bisects a chord: r² = d² + (half the chord)² | [circles](learn:sat-math/geometry-and-trigonometry/circles#chords) |
-| tangent line at a point | its slope is the negative reciprocal of the radius's slope to that point | [circles](learn:sat-math/geometry-and-trigonometry/circles#tangent-line) |
+| tangent line at a point | perpendicular to the radius: negative reciprocal slopes when both exist and are nonzero; a horizontal radius has a vertical tangent, and vice versa | [circles](learn:sat-math/geometry-and-trigonometry/circles#tangent-line) |
 | radians and the unit circle | π radians = 180°; the point at angle θ is (cos θ, sin θ) | [circles](learn:sat-math/geometry-and-trigonometry/circles#radians-and-the-unit-circle) |
 | rates | distance = rate × time; average speed = total distance/total time | [ratios, rates, and units](learn:sat-math/problem-solving-and-data-analysis/ratios-rates-and-units#unit-rates) |
+
+Use each formula on its stated domain. Slope needs distinct x-coordinates;
+quadratic formulas require a ≠ 0; the vertex is halfway between real zeros
+only when those zeros exist. The exponent rules as written are safe for
+positive bases; zero and negative bases require checking exponents and
+denominators. Percent change requires a nonzero original value. The counting
+form of conditional probability assumes equally likely outcomes and a
+nonempty conditioning group.
 
 ## How to learn them {#how-to-learn}
 

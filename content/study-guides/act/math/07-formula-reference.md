@@ -1,6 +1,8 @@
 # ACT Mathematics — Formula Reference
 
-**The ACT provides no formula sheet.** Everything below must be in your head.
+**The ACT provides no general formula sheet.** Learn the formulas relevant to
+your practice, including their conditions. Some questions supply a relationship
+or allow a formula to be derived; this is a reference, not a required checklist.
 
 This is the most important memorization document for the ACT. Handwrite it once,
 then run weekly blank-page recall tests.
@@ -21,6 +23,9 @@ Perpendicular:        m₁ · m₂ = −1
 Distance:             d = √[(x₂−x₁)² + (y₂−y₁)²]
 Midpoint:             ((x₁+x₂)/2, (y₁+y₂)/2)
 ```
+
+Slope rules require nonvertical lines. A vertical and a horizontal line are
+perpendicular; the negative-reciprocal slope rule cannot be used for that pair.
 
 ### Conic recognition
 
@@ -57,6 +62,8 @@ Sum of roots:         −b/a
 Product of roots:      c/a
 ```
 
+For the quadratic formulas, a ≠ 0.
+
 ### Factoring
 
 ```
@@ -78,6 +85,10 @@ x^(1/n) = ⁿ√x          x^(m/n) = ⁿ√(xᵐ)
 √(ab) = √a·√b          √(a/b) = √a/√b
 ```
 
+These power rules are safe for positive bases. For zero or negative bases,
+check the exponent and the real-number domain first; denominators cannot be
+zero. The square-root product rule here needs a,b ≥ 0; the quotient needs b > 0.
+
 ### Logarithms
 
 ```
@@ -92,6 +103,9 @@ log_b(1) = 0
 Change of base: log_b(x) = log(x)/log(b)
 ```
 
+Real logarithms require a positive argument and a positive base other than 1;
+log product/quotient rules require positive m and n.
+
 ### Absolute value
 
 ```
@@ -99,6 +113,9 @@ Change of base: log_b(x) = log(x)/log(b)
 |x| < k   →   −k < x < k
 |x| > k   →   x < −k  or  x > k
 ```
+
+The absolute-value forms above assume k ≥ 0. If k < 0, |x| = k and |x| < k
+have no real solutions, while |x| > k holds for every real x.
 
 ### Complex numbers
 
@@ -285,8 +302,8 @@ Weighted average = Σ(value × weight) / Σ(weights)
 range = max − min
 IQR = Q3 − Q1
 
-Right-skewed:  mean > median
-Left-skewed:   mean < median
+Right-skewed:  mean often > median (a tendency, not a theorem)
+Left-skewed:   mean often < median (a tendency, not a theorem)
 
 More spread → larger SD
 Add a constant to all values → SD unchanged
@@ -294,11 +311,11 @@ Multiply all values by k → SD × |k|
 ```
 
 ```
-P(A) = favorable/total
+P(A) = favorable/total             [equally likely outcomes]
 P(not A) = 1 − P(A)
 P(A and B) = P(A)·P(B)              [independent]
 P(A or B)  = P(A) + P(B) − P(A and B)
-P(A | B)   = P(A and B)/P(B)
+P(A | B)   = P(A and B)/P(B)        [P(B) > 0]
 
 Expected value = Σ(value × probability)
 ```
@@ -380,8 +397,8 @@ Reading it repeatedly produces recognition, not recall. Instead:
 4. **Drill formulas in context.** Knowing `D = b² − 4ac` is useless if you don't
    recognize a "how many solutions" question as a discriminant question.
 
-Because the ACT provides nothing, a formula you half-remember is a question you
-lose. Recall must be automatic, not reconstructible.
+Practice recalling or deriving the relationship quickly enough to use it.
+Knowing when it applies matters as much as remembering its symbols.
 
 ---
 

@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p020",
   type: "social-science",
   title: "Who Gets the Fish",
-  intro: "This passage is adapted from an article on the management of shared resources.",
+  intro: "This original passage discusses the management of shared resources.",
   content: `In 1968 the biologist Garrett Hardin published a short essay that became one of the
 most cited papers of the century. He asked his readers to picture a pasture open to all.
 Each herdsman gains the full benefit of adding one more animal, while the cost of the
@@ -21,7 +21,7 @@ less like an argument than like a proof.
 
 Elinor Ostrom's objection was empirical, and it began with a question nobody had bothered
 to ask. Hardin's pasture is open to all — anybody may graze, nobody may exclude anyone,
-and no herdsman can communicate with any other. How many real commons look like that?
+and no enforceable shared rules constrain their choices. How many real commons look like that?
 Ostrom and her students spent thirty years assembling cases: Swiss alpine meadows managed
 under written rules since the thirteenth century, Japanese village forests, Spanish
 irrigation courts, Turkish and Sri Lankan inshore fisheries. Many had been worked for
@@ -37,8 +37,8 @@ local machinery existed for resolving disputes. Outside authorities recognised t
 right to organise. And where the resource was large, the arrangement was nested — small
 units inside larger ones.
 
-None of that is compatible with Hardin's pasture, and that is the point. His herdsmen
-cannot exclude anybody, cannot see what anybody else is doing, and cannot talk. Ostrom's
+None of that is compatible with Hardin's pasture, and that is the point. His imagined pasture
+has no effective system for excluding outsiders or enforcing agreed limits. Ostrom's
 argument was not that his logic fails; given his assumptions it holds. It was that his
 assumptions describe an unmanaged resource, and unmanaged is not the same as shared. A
 fishery with no rules is not a commons. It is an open-access resource, and the two had been
@@ -120,18 +120,18 @@ thousand valleys.`,
       family: "contrast-of-conditions",
       difficulty: "Medium",
       stem: "The passage indicates that Hardin's pasture differs from the systems Ostrom studied chiefly in that his herdsmen:",
-      key: "cannot exclude others, observe them, or speak to them.",
+      key: "lack an effective system for exclusion and agreed limits.",
       wrong: [
         ["own their animals privately rather than in common.", "Private ownership of animals is a feature of both accounts of grazing."],
         ["are subject to a government that enforces the rules.", "Hardin's pasture is defined by the absence of any such authority."],
         ["face a resource that renews itself more slowly.", "No difference in the resource's biology is drawn in the passage."],
       ],
-      why: "The fifth paragraph says his herdsmen \"cannot exclude anybody, cannot see what anybody else is doing, and cannot talk,\" while Ostrom's cases feature defined membership, monitoring, and dispute resolution.",
+      why: "The passage contrasts the unmanaged pasture with communities that define membership, monitor use, and enforce rules. Its claim concerns effective collective management, not a literal inability to see or speak to other herders.",
       steps: [
-        "List the three capacities the passage says Hardin's herdsmen lack.",
-        "Match each to a feature on Ostrom's list.",
+        "Identify the exclusion and enforcement missing from the imagined unmanaged pasture.",
+        "Compare those absences with the community structures on Ostrom's list.",
       ],
-      hint: "One sentence names all three limitations together.",
+      hint: "Compare the mechanisms for managing use, not the biology of the resource.",
     },
     {
       subskill: "meaning in context",

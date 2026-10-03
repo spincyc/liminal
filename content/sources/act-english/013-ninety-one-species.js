@@ -22,7 +22,7 @@ both, and until you have looked at both they are the same brown bird.
 [4] {9 Nevertheless,} what the list did was make the window worth sitting at.
 There is a difference between looking and looking for something, and the list
 {10 supplied the second one of those two things}. I started noticing the
-{11 juncos in the yard that arrive in late October and leave in the first week
+{11 juncos in the yard that arrives in late October and leaves in the first week
 of April}.
 
 [5] I am back at school now. I still keep {12 it}. {13} Ninety-one species from
@@ -42,18 +42,22 @@ only because I was too sick to look at anything else.`,
       key: "year and missed",
       noChange: "A comma before 'and' needs a second subject after it, and none appears.",
       wrong: [
-        ["year; and missed", "A semicolon must join independent clauses, and 'missed nine weeks' is not one."],
-        ["year, and I missed,", "The added comma after the verb separates it from its own object."],
+        [
+          "year; although missed",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "year, and I missed,",
+          "The added comma after the verb separates it from its own object."
+        ]
       ],
-      why:
-        "'Had' and 'missed' share the subject 'I,' so they form a compound predicate, which takes no " +
-        "comma before its conjunction.",
+      why: "'Had' and 'missed' share the subject 'I,' so they form a compound predicate, which takes no comma before its conjunction.",
       steps: [
         "Look for a subject after 'and.' There is none.",
-        "Remove the comma.",
+        "Remove the comma."
       ],
       hint: "Ask whether the words after 'and' could stand alone as a sentence.",
-      trap: "The sentence is long and pauses naturally there in speech.",
+      trap: "The sentence is long and pauses naturally there in speech."
     },
     {
       number: 2,
@@ -118,22 +122,20 @@ only because I was too sick to look at anything else.`,
       wrong: [
         [
           "library, I think, she wanted to stop me",
-          "The added commas turn 'I think' into an aside and leave the splice in place.",
+          "The added commas turn 'I think' into an aside and leave the splice in place."
         ],
         [
-          "library; and I think she wanted to stop me",
-          "A semicolon and a coordinating conjunction do the same job, so both together is redundant.",
-        ],
+          "library; although I think she wanted to stop me",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ]
       ],
-      why:
-        "'My mother brought home a field guide' and 'I think she wanted to stop me' are both complete " +
-        "sentences, so joining them takes a comma plus a conjunction.",
+      why: "'My mother brought home a field guide' and 'I think she wanted to stop me' are both complete sentences, so joining them takes a comma plus a conjunction.",
       steps: [
         "Test each side of the comma as a sentence. Both stand.",
-        "Add a coordinating conjunction after the comma.",
+        "Add a coordinating conjunction after the comma."
       ],
       hint: "Cover the comma and read each half aloud on its own.",
-      trap: "'I think' sounds like an interrupter, which makes the second clause feel subordinate.",
+      trap: "'I think' sounds like an interrupter, which makes the second clause feel subordinate."
     },
     {
       number: 5,
@@ -167,23 +169,21 @@ only because I was too sick to look at anything else.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "eleven: by March I had thirty.",
-          "A colon introduces an explanation, but the second clause is the matching half of a pair.",
+          "eleven; although by March I had thirty.",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "eleven and by March I had thirty.",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The two clauses are short, complete, and deliberately parallel — one count, then a larger " +
-        "one. A semicolon joins equals and keeps the progression audible.",
+      why: "The two clauses are short, complete, and deliberately parallel — one count, then a larger one. A semicolon joins equals and keeps the progression audible.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or matches it. It matches.",
+        "Ask whether the second explains the first or matches it. It matches."
       ],
       hint: "Two short, balanced sentences are what a semicolon is best at.",
-      trap: "The clauses are brief enough to read as one thought, which makes a comma feel sufficient.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 7,
@@ -278,26 +278,24 @@ only because I was too sick to look at anything else.`,
       difficulty: "Hard",
       keep: false,
       key: "juncos that arrive in the yard in late October and leave in the first week of April",
-      noChange: "The relative clause sits next to 'the yard,' so it describes the yard rather than the juncos.",
+      noChange: "The singular 'arrives' and 'leaves' make the clause describe the yard, which does not migrate.",
       wrong: [
         [
-          "juncos that arrive in late October in the yard and leave in the first week of April",
-          "The clause now modifies the juncos but strands the location inside the first verb phrase.",
+          "juncos that arrives in the yard in late October and leaves in the first week of April",
+          "The clause is now next to 'juncos,' but its singular verbs do not agree with that plural noun."
         ],
         [
-          "juncos in the yard, which arrive in late October and leave in the first week of April",
-          "The comma makes the clause nonrestrictive, implying all juncos everywhere do this.",
-        ],
+          "juncos that the yard arrives in late October and leaves in the first week of April",
+          "This wording makes the yard the subject of the arriving and leaving."
+        ]
       ],
-      why:
-        "A relative clause modifies the noun immediately before it. Moving 'in the yard' inside the " +
-        "clause puts 'juncos' next to 'that' and keeps the clause restrictive.",
+      why: "The migrating birds are the juncos. Placing the relative clause next to that noun and using plural verbs makes both its attachment and agreement clear.",
       steps: [
-        "Ask what arrives in October. The juncos do, not the yard.",
-        "Rearrange so the clause follows 'juncos' directly.",
+        "Identify what arrives and leaves: the juncos.",
+        "Choose the clause whose subject and plural verbs describe those birds."
       ],
-      hint: "Find the noun the clause is supposed to describe and put it next to 'that.'",
-      trap: "The meaning is obvious from context, and obviousness hides the misplacement.",
+      hint: "Check both the noun described by the relative clause and the number of its verbs.",
+      trap: "The nearby singular 'yard' can attract verbs that should describe the plural birds."
     },
     {
       number: 12,

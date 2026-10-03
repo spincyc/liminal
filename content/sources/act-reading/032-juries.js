@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p032",
   type: "social-science",
   title: "What Twelve People Do",
-  intro: "This passage is adapted from an article on research into jury deliberation.",
+  intro: "This original passage discusses research into jury deliberation.",
   content: `Almost everything known about how juries decide has been learned indirectly, because
 in most jurisdictions it is unlawful to record a real deliberation and improper to ask a
 juror afterwards what was said. Researchers therefore work with three imperfect sources:

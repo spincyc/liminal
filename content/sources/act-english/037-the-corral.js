@@ -42,18 +42,22 @@ decided not to spend anything to prevent it.
       key: "Wauwatosa, and the",
       noChange: "Two independent clauses joined by 'and' need a comma before the conjunction.",
       wrong: [
-        ["Wauwatosa; and the", "A semicolon and a coordinating conjunction do the same job, so both is redundant."],
-        ["Wauwatosa, and, the", "The second comma separates the conjunction from the subject that follows."],
+        [
+          "Wauwatosa; although the",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "Wauwatosa, and, the",
+          "The second comma separates the conjunction from the subject that follows."
+        ]
       ],
-      why:
-        "'For two summers I collected shopping carts in a grocery lot in Wauwatosa' and 'the job " +
-        "taught me more about people than any class' are both complete clauses.",
+      why: "'For two summers I collected shopping carts in a grocery lot in Wauwatosa' and 'the job taught me more about people than any class' are both complete clauses.",
       steps: [
         "Check whether the words on each side of 'and' could stand alone. They could.",
-        "Place a comma immediately before the conjunction.",
+        "Place a comma immediately before the conjunction."
       ],
       hint: "A comma goes before 'and' when a full sentence follows it.",
-      trap: "The opening phrase already sets a rhythm that makes another pause feel excessive.",
+      trap: "The opening phrase already sets a rhythm that makes another pause feel excessive."
     },
     {
       number: 2,
@@ -127,23 +131,21 @@ decided not to spend anything to prevent it.
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "corral, and carts were abandoned almost nowhere within thirty feet of one",
-          "'And' repairs the splice but makes the first measurement read as an afterthought.",
+          "corral, however, carts were abandoned almost nowhere within thirty feet of one",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "corral, carts being abandoned almost nowhere within thirty feet of one",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "corral; carts being abandoned almost nowhere within thirty feet of one",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "The sentence introduces a pattern and then begins reporting it. Splitting them lets the " +
-        "first distance start a series the next two sentences continue.",
+      why: "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Separate them so the measurements read as a sequence.",
+        "Find the subjects and finite verbs on both sides of the boundary.",
+        "Keep a complete statement on each side of the sentence boundary."
       ],
       hint: "The two sentences after this one are built the same way; match them.",
-      trap: "'And' fixes the grammar and buries the first band of the pattern.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -302,23 +304,21 @@ decided not to spend anything to prevent it.
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "choice: it is simply where the walk is shortest",
-          "A colon introduces an explanation, but the second clause denies the first rather than expanding it.",
+          "choice; although it is simply where the walk is shortest",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "choice and it is simply where the walk is shortest",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The sentence sets a moral reading against a practical one. Both clauses are complete, and a " +
-        "semicolon holds them against each other without subordinating either.",
+      why: "The sentence sets a moral reading against a practical one. Both clauses are complete, and a semicolon holds them against each other without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or refuses it. It refuses.",
+        "Ask whether the second explains the first or refuses it. It refuses."
       ],
       hint: "The essay's last clause is a correction, not an elaboration.",
-      trap: "The second clause reads as a reason, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 13,

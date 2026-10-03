@@ -14,8 +14,8 @@ could cross that hall} at eleven years old without a sound. My brother could
 not, and never learned, and I have thought since that this was {6 less a matter
 of skill and more about skill not being the issue}.
 
-[3] The rule was not enforced. {7 Woken by any noise at all, my mother never
-once came out of that room to tell us to be quiet.} She did not have to, because
+[3] The rule was not enforced. {7 Woken by any noise at all, the rule never brought my mother
+out of that room to tell us to be quiet.} She did not have to, because
 the alternative was {8 worse, she would come down at three} with a face that had
 not slept, and make dinner anyway, and we would understand exactly what it had
 {9 run her}.
@@ -63,18 +63,22 @@ hall.`,
       key: "rule: between",
       noChange: "A comma is too weak to introduce the rule the clause has just promised.",
       wrong: [
-        ["rule, that between", "'That' turns the rule into a clause but leaves the comma doing a colon's work."],
-        ["rule; between", "A semicolon joins two independent clauses, and 'between eight … night' explains instead."],
+        [
+          "rule, that between",
+          "'That' turns the rule into a clause but leaves the comma doing a colon's work."
+        ],
+        [
+          "rule; although between",
+          "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
+        ]
       ],
-      why:
-        "'Our house ran on a rule' is complete and promises to say what the rule was. A colon is the " +
-        "mark that delivers on that promise.",
+      why: "'Our house ran on a rule' is complete and promises to say what the rule was. A colon is the mark that delivers on that promise.",
       steps: [
         "Check that the words before the mark form a complete sentence. They do.",
-        "Ask whether what follows explains it. It does, so use a colon.",
+        "Ask whether what follows explains it. It does, so use a colon."
       ],
       hint: "A sentence that announces something and then supplies it wants a colon.",
-      trap: "The sentence is already long, so one more heavy mark feels like too many.",
+      trap: "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon."
     },
     {
       number: 3,
@@ -140,22 +144,20 @@ hall.`,
       wrong: [
         [
           "edge, I could cross that hall,",
-          "Moving the comma leaves the splice and cuts the phrase that follows.",
+          "Moving the comma leaves the splice and cuts the phrase that follows."
         ],
         [
-          "edge; and I could cross that hall",
-          "A semicolon and a coordinating conjunction do the same job, so both together is redundant.",
-        ],
+          "edge; although I could cross that hall",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ]
       ],
-      why:
-        "'There is a board … that says nothing at the edge' and 'I could cross that hall … without a " +
-        "sound' are both complete, so joining them takes a comma plus a conjunction.",
+      why: "'There is a board … that says nothing at the edge' and 'I could cross that hall … without a sound' are both complete, so joining them takes a comma plus a conjunction.",
       steps: [
         "Test each side of the comma as its own sentence. Both stand.",
-        "Add a coordinating conjunction after the comma.",
+        "Add a coordinating conjunction after the comma."
       ],
       hint: "Cover the comma and read each half aloud on its own.",
-      trap: "The first clause is long and technical, which makes the second feel like its continuation.",
+      trap: "The first clause is long and technical, which makes the second feel like its continuation."
     },
     {
       number: 6,
@@ -186,26 +188,24 @@ hall.`,
       difficulty: "Hard",
       keep: false,
       key: "My mother, who woke at any noise at all, never once came out of that room to tell us to be quiet.",
-      noChange: "The opening phrase describes the mother, but it reads as her never coming out because she was woken.",
+      noChange: "The participial phrase describes the mother, but the subject immediately after it is 'the rule.'",
       wrong: [
         [
-          "Waking at any noise at all, my mother never once came out of that room to tell us to be quiet.",
-          "The participle now says her waking is what kept her in the room, reversing the point.",
+          "Waking at any noise at all, that room was never once left by my mother to tell us to be quiet.",
+          "The opening phrase makes the room, rather than the mother, do the waking."
         ],
         [
           "Woken by any noise at all, that room was never once left by my mother to tell us to be quiet.",
-          "The phrase now describes the room, which is not what any noise woke.",
-        ],
+          "The passive opening phrase still describes the room as something that can be woken."
+        ]
       ],
-      why:
-        "Her light sleeping is a standing fact about her, not the cause of her silence. A relative " +
-        "clause attaches it to her without claiming it explains what follows.",
+      why: "The mother is the one who wakes. The relative clause in the key directly describes her; the other versions attach the waking to a rule or a room.",
       steps: [
-        "Ask what relationship the opening phrase asserts. It asserts a cause.",
-        "Rewrite it as a clause that describes her instead.",
+        "Identify who wakes when there is noise.",
+        "Keep the description attached to that person throughout the sentence."
       ],
-      hint: "An opening participle claims to explain the main clause; check whether it should.",
-      trap: "The sentence is grammatical enough to pass, and only its logic is wrong.",
+      hint: "Read the subject after each opening description and ask whether it can wake.",
+      trap: "The intended person appears later in a sentence whose opening actually describes a different subject."
     },
     {
       number: 8,
@@ -217,23 +217,21 @@ hall.`,
       noChange: "A comma is too weak to introduce the explanation of what the alternative was.",
       wrong: [
         [
-          "worse; she would come down at three",
-          "A semicolon balances two equal clauses, but the second half here spells out the first.",
+          "worse; although she would come down at three",
+          "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
         ],
         [
           "worse, and she would come down at three",
-          "'And' adds the clause instead of presenting it as the content of 'worse.'",
-        ],
+          "'And' adds the clause instead of presenting it as the content of 'worse.'"
+        ]
       ],
-      why:
-        "'The alternative was worse' is complete and promises to say how. A colon introduces what a " +
-        "complete clause has set up.",
+      why: "'The alternative was worse' is complete and promises to say how. A colon introduces what a complete clause has set up.",
       steps: [
         "Confirm the words before the mark form a complete sentence. They do.",
-        "Ask whether the second half explains the first or balances it. It explains.",
+        "Ask whether the second half explains the first or balances it. It explains."
       ],
       hint: "The word 'worse' is the promise; the rest of the sentence is the payment.",
-      trap: "Both halves are full clauses, which makes the semicolon look like the technical answer.",
+      trap: "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon."
     },
     {
       number: 9,

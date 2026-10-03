@@ -66,16 +66,18 @@ Inferring beyond the data, within limits.
 Same as everywhere on these tests: the conclusion must be **supported by what's
 shown**, not merely plausible.
 
-**Test:** could the data be exactly as shown and this conclusion still be false?
-If yes, eliminate.
+**Test:** does the evidence support this conclusion at the strength claimed?
+Distinguish a plausible prediction from a result directly demonstrated by the
+experiment; the question may ask for the most likely outcome rather than certainty.
 
 ### Patterns
 
-**Conservative conclusions win.** Hedged, limited claims survive; sweeping ones
-don't.
+**Match the conclusion's strength to the evidence.** A cautious statement can
+still be unsupported or irrelevant; a definite claim can be justified.
 
-**Conclusions can't exceed the tested range.** Data from 10-50 °C support
-nothing about 100 °C.
+**Separate observation from extrapolation.** Data from 10-50 °C do not
+demonstrate what happens at 100 °C. A stated model may support a prediction
+outside that range when the question asks for one.
 
 **Correlation is not causation** — the ACT tests this. Two variables changing
 together doesn't establish that one causes the other, unless the design isolated
@@ -200,11 +202,11 @@ questions.
 
 | Stage | Filter | Volume and method |
 | --- | --- | --- |
-| 1. Hypothesis evaluation | Evaluate explanations, Medium | 25. State the claim in your own words first. |
-| 2. Two-part answers | Evaluate explanations, Medium → Hard | 20. Verify the reason separately from the verdict. |
-| 3. Conclusions | Draw conclusions, Medium | 25. Apply the could-it-be-false test. |
-| 4. Conflicting Viewpoints | Compare viewpoints, Medium → Hard | 5 full passages. **Write one sentence per viewpoint** every time. |
-| 5. Support/weaken | Compare viewpoints, Hard | 20. Name the mechanism before evaluating. |
+| 1. Hypothesis evaluation | Evaluate explanations | 25. State the claim in your own words first. |
+| 2. Two-part answers | Evaluate explanations | 20. Verify the reason separately from the verdict. |
+| 3. Conclusions | Draw conclusions | 25. Apply the could-it-be-false test. |
+| 4. Conflicting Viewpoints | Compare viewpoints | 5 full passages. **Write one sentence per viewpoint** every time. |
+| 5. Support/weaken | Compare viewpoints | 20. Name the mechanism before evaluating. |
 | 6. Timed | Whole domain | 3 Conflicting Viewpoints passages at 7 min each |
 
 Stage 4 is the priority. Conflicting Viewpoints is 6-7 questions — roughly 17%

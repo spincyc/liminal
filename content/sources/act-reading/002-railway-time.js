@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p002",
   type: "social-science",
   title: "The Invention of Being On Time",
-  intro: "This passage is adapted from a history of timekeeping and transport.",
+  intro: "This original passage discusses the history of timekeeping and transport.",
   content: `Before the railways, every town kept its own time, and no one thought this
 strange. Noon was when the sun stood highest over that particular place, which meant
 that a clock in a town forty miles east of another ran some three minutes ahead of it.
@@ -21,8 +21,9 @@ people at once, most of whom have no way of verifying the claim until they are s
 on the platform. For this promise to mean anything, the moment named has to be the same
 moment for the company, the stationmaster, the signalman, and the passenger. Local time
 made that impossible. A train leaving one city at ten and arriving at another at
-eleven-fifty had, by the clocks at each end, taken an hour and forty-seven minutes, or
-an hour and fifty-three, depending on which direction it was travelling.
+eleven-fifty appeared to have taken an hour and fifty minutes. If the local clocks
+differed by three minutes, its actual journey lasted an hour and forty-seven minutes,
+or an hour and fifty-three, depending on which direction it was travelling.
 
 The railway companies solved this before any government did, and they solved it in the
 way companies usually solve things, which is by declaring the problem solved and
@@ -212,19 +213,20 @@ arguments of this kind conclude.`,
       subskill: "claims and evidence",
       family: "claim-and-support",
       difficulty: "Hard",
-      stem: "Which piece of evidence best supports the claim that the change was not driven by law?",
-      key: "No statute required railway time for several decades.",
+      stem: "Which pair of details best supports the author’s view that standardisation succeeded through the value of coordination rather than an improvement in measuring time?",
+      key: "Clocks were already accurate before railways; the network later proved more useful than local independence.",
       wrong: [
-        ["Some towns kept two minute hands on their public clocks.", "This shows resistance existed, not that law was absent."],
-        ["The railways printed Greenwich time in their timetables.", "This shows what the companies did, not whether law compelled it."],
-        ["The second minute hands were removed by the century's end.", "This describes the outcome and is silent on the mechanism."],
+        ["Local clocks used pendulums; railway companies printed the observatory’s time in their timetables.", "These details identify mechanisms and company practice, but do not establish why coordination outweighed an accuracy improvement."],
+        ["Some towns resisted the railway standard; their clock faces displayed two different minute hands.", "These details establish local resistance and coexistence, not why the network ultimately prevailed."],
+        ["The observatory occupied a particular place; local noon described a town’s relation to the sun.", "These details explain the competing frames of reference, but do not establish the reason for standardisation’s success."],
       ],
-      why: "The passage states plainly that adopting Greenwich time \"was not a legal act\" and that \"for decades there was no statute requiring anyone to use railway time.\" That sentence is the evidence; the others are compatible with either explanation.",
+      why: "The passage says clocks had been accurate enough long before rapid travel made coordination necessary. Near the end, it explains the victory of the shared standard through the network’s compounding usefulness. The two separated details jointly distinguish coordination from greater precision.",
       steps: [
-        "Identify the claim: the change was not legally driven.",
-        "Look for a detail that would be false if the claim were false.",
+        "Find what the passage says did not improve when railways appeared.",
+        "Connect the need for a shared moment with the later explanation of why the network prevailed.",
+        "Select evidence for both halves of the proposed distinction.",
       ],
-      hint: "Only one option mentions law at all.",
+      hint: "Combine the early comparison about clocks with the later account of the network’s usefulness.",
     },
     {
       subskill: "synthesize information",

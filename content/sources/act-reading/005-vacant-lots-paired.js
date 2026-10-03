@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p005",
   type: "social-science",
   title: "Vacant Ground",
-  intro: "Passage A is adapted from an article by an urban ecologist. Passage B is adapted from a piece by a housing researcher. Both concern vacant lots in older industrial cities.",
+  intro: "Passage A is an original article by an urban ecologist. Passage B is an original piece by a housing researcher. Both concern vacant lots in older industrial cities.",
   content: `PASSAGE A
 
 Drive through the east side of almost any older industrial city and you will pass

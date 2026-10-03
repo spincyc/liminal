@@ -4,7 +4,7 @@ module.exports = {
   id: "act-english-p011",
   type: "historical-account",
   title: "Fourteen Years of a Good Law",
-  content: `[1] In the {1 1860s a British sailor} who refused to board a ship he
+  content: `[1] While weak safety laws remained in force in the {1 1860s a British sailor} who refused to board a ship he
 believed unseaworthy could be jailed for it. The ship sailed anyway, loaded past
 any sensible limit, and if it went down the owner collected on the policy.
 
@@ -39,20 +39,24 @@ fourteen years do not.`,
       difficulty: "Easy",
       keep: false,
       key: "1860s, a British sailor",
-      noChange: "The introductory phrase runs straight into the subject with no comma between them.",
+      noChange: "The introductory clause beginning with 'While' needs a comma before the main clause.",
       wrong: [
-        ["1860s, a British sailor,", "The second comma cuts the subject off from its own verb."],
-        ["1860s; a British sailor", "A semicolon must join independent clauses, and 'In the 1860s' is not one."],
+        [
+          "1860s, a British sailor,",
+          "The second comma cuts the subject off from its own verb."
+        ],
+        [
+          "1860s; a British sailor",
+          "The opening 'While' clause is dependent, so a semicolon cannot join it to the main clause."
+        ]
       ],
-      why:
-        "'In the 1860s' opens the sentence and is not its subject. One comma marks where the " +
-        "introductory phrase ends and the main clause begins.",
+      why: "The sentence opens with a dependent clause ending at '1860s.' A comma separates that clause from the main clause about the sailor.",
       steps: [
-        "Find where the opening phrase stops: after '1860s.'",
-        "Place a single comma there.",
+        "Find the end of the opening dependent clause.",
+        "Put a comma there without separating the main subject from its defining clause."
       ],
-      hint: "A date phrase at the head of a sentence takes one comma, not two.",
-      trap: "A second comma looks balanced and quietly severs the subject from the sentence.",
+      hint: "An opening dependent clause needs a boundary before the main clause.",
+      trap: "A second comma looks balanced and quietly severs the subject from the sentence."
     },
     {
       number: 2,
@@ -280,23 +284,21 @@ fourteen years do not.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "rule: only then did the line mean what the public had believed all along it meant.",
-          "A colon introduces an explanation, but the second clause marks a turning point instead.",
+          "rule; although only then did the line mean what the public had believed all along it meant.",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "rule and only then did the line mean what the public had believed all along it meant.",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "Both clauses are complete and carry equal weight — the Board acted, and only then did the " +
-        "mark mean anything. A semicolon joins equals without subordinating either.",
+      why: "Both clauses are complete and carry equal weight — the Board acted, and only then did the mark mean anything. A semicolon joins equals without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or balances it. It balances.",
+        "Ask whether the second explains the first or balances it. It balances."
       ],
       hint: "Both clauses here open with inverted word order, which is a sign they are matched.",
-      trap: "The second clause feels like it is spelling out the first, which points toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 12,

@@ -1126,7 +1126,7 @@
               `${A}${C} corresponds to ${E}${C}, so the scale factor is ${num(labels.CE)} ÷ ${num(labels.AC)} = ${factor}.`,
               `${D}${E} corresponds to ${A}${B}: ${D}${E} = ${factor} × ${num(labels.AB)} = ${num(key)}.`,
             ];
-            trap = `The factor is ${C}${E}/${A}${C}, bottom over top; inverting it gives ${num(round((AB * AC) / CE))}.`;
+            trap = `The factor is ${C}${E}/${A}${C}, bottom over top; inverting it gives ${S.frac(Math.round(AB) * p, q)}.`;
             check = () => close(DE, key);
           } else {
             labels.CD = round(CD); labels.BC = round(BC); labels.DE = round(DE);
@@ -1146,7 +1146,7 @@
               `${B}${C} corresponds to ${D}${C}, so the scale factor is ${num(labels.BC)} ÷ ${num(labels.CD)} = ${S.frac(p, q)}.`,
               `${A}${B} corresponds to ${D}${E}: ${A}${B} = ${S.frac(p, q)} × ${num(labels.DE)} = ${num(key)}.`,
             ];
-            trap = `The factor is ${B}${C}/${C}${D}, top over bottom; inverting it gives ${num(round((DE * CD) / BC))}.`;
+            trap = `The factor is ${B}${C}/${C}${D}, top over bottom; inverting it gives ${S.frac(Math.round(DE) * q, p)}.`;
             check = () => close(AB, key);
           }
         } else if (form === "part") {
@@ -2200,52 +2200,9 @@
 
   /* ====================================== regular-polygon-angles (Hard) */
 
-  const POLYGON_WORDS = {
-    3: "equilateral triangle", 4: "square", 5: "regular pentagon", 6: "regular hexagon", 8: "regular octagon",
-    9: "regular nonagon", 10: "regular decagon", 12: "regular 12-sided polygon", 15: "regular 15-sided polygon",
-    18: "regular 18-sided polygon", 20: "regular 20-sided polygon", 24: "regular 24-sided polygon",
-  };
-
   const interiorAngle = (n) => 180 - 360 / n;
 
-  // Draws two regular polygons that share side PQ, on opposite sides of it,
-  // and marks the angle at P between their other sides at P.
-  function sharedSideFigure(n1, n2, label, names) {
-    const [Pn, Qn] = names;
-    const polygonFrom = (n, sign) => {
-      const pts = [[0, 0], [1, 0]];
-      let heading = 0;
-      for (let index = 2; index < n; index += 1) {
-        heading += sign * (360 / n);
-        const last = pts[pts.length - 1];
-        pts.push([last[0] + Math.cos(toRad(heading)), last[1] + Math.sin(toRad(heading))]);
-      }
-      return pts;
-    };
-    const upper = polygonFrom(n1, 1);
-    const lower = polygonFrom(n2, -1);
-    const all = upper.concat(lower);
-    const map = fitPoints(all, 400, 280, 40);
-    const U = upper.map(map);
-    const L = lower.map(map);
-    // At P = (0, 0): the other side of the upper polygon runs to its last vertex, of the lower to its last vertex.
-    const Ps = U[0];
-    const Qs = U[1];
-    const up = U[U.length - 1];
-    const down = L[L.length - 1];
-    const parts = [
-      P.polygon(U),
-      P.polygon(L),
-      angleArc(Ps, up, down, 18),
-      angleLabel(Ps, up, down, label, 34),
-      name(add(Ps, [8, 14]), Pn),
-      name(add(Qs, [8, 14]), Qn),
-    ];
-    return { parts, ok: !labelsClash(parts, 400, 280) };
-  }
-
-  // One regular-polygon item: "ratio" (interior to exterior; Medium), or
-  // "difference", "double", "shared" (Hard).
+  // A regular polygon from its interior-to-exterior angle ratio (Medium).
   function polygonItem(t, form) {
       const numeric = t.chance(0.35);
       // An interior angle and its exterior angle add to 180°, a look-alike
@@ -2354,130 +2311,6 @@
             },
           };
         }
-        if (form === "double") {
-          // Polygon A has twice as many sides as polygon B, and each interior
-          // angle of A is d° larger: B's exterior angle is 2d.
-          const d = t.pick([10, 12, 15, 18, 20, 30, 36, 45, 60]);
-          const nB = 180 / d;
-          const nA = 2 * nB;
-          const askA = t.chance(0.5);
-          const key = askA ? nA : nB;
-          const [A1, B1] = t.pick([["A", "B"], ["P", "Q"], ["M", "N"], ["X", "Y"]]);
-          const other = [askA ? nB : nA, askA ? `Gives the number of sides of polygon ${B1} instead of polygon ${A1}.` : `Gives the number of sides of polygon ${A1} instead of polygon ${B1}.`];
-          const interiorOf = [askA ? 180 - 360 / nA : 180 - 360 / nB, `Gives the interior angle of polygon ${askA ? A1 : B1} instead of its number of sides.`];
-          const exteriorOf = [askA ? 360 / nA : 360 / nB, `Gives the exterior angle of polygon ${askA ? A1 : B1} instead of its number of sides.`];
-          const rest = [
-            [Number.isInteger(360 / d) ? (askA ? 2 * (360 / d) : 360 / d) : null, `Takes ${d}° to be an exterior angle of polygon ${B1} instead of half of it.`],
-            [Number.isInteger(90 / d) && 90 / d > 2 ? (askA ? 2 * (90 / d) : 90 / d) : null, `Sets the exterior angle of polygon ${B1} equal to ${d}°/2 instead of 2 × ${d}°.`],
-          ];
-          const wrong = wrongFor(t, numeric, key, pairOnKey
-            ? [other, ...rest, interiorOf]
-            : [interiorOf, exteriorOf, ...rest], { whole: true, positive: true, keep: pairOnKey ? 1 : 2 });
-          if (!wrong) return null;
-          return {
-            ...common,
-            responseType: numeric ? "numeric" : "multiple-choice",
-            figure: null,
-            stem: t.pick([
-              `Regular polygon ${A1} has twice as many sides as regular polygon ${B1}. Each interior angle of polygon ${A1} is ${d}° greater than each interior angle of polygon ${B1}. `,
-              `The number of sides of regular polygon ${A1} is 2 times the number of sides of regular polygon ${B1}, and each interior angle of ${A1} measures ${d}° more than each interior angle of ${B1}. `,
-            ]) + `How many sides does polygon ${askA ? A1 : B1} have?`,
-            correct: key,
-            wrong,
-            explanation:
-              `Doubling the number of sides halves the exterior angle. If ${B1}'s exterior angle is e, ${A1}'s is e/2, and ${A1}'s interior angle is larger by e − e/2 = e/2. ` +
-              `So e/2 = ${d}, e = ${2 * d}°, and ${B1} has 360 ÷ ${2 * d} = ${nB} sides; ${A1} has ${nA}.`,
-            steps: [
-              `Exterior angles: ${B1} has e, ${A1} has e/2 (twice the sides, same 360° total).`,
-              `A larger interior angle by ${d}° means a smaller exterior angle by ${d}°: e − e/2 = ${d}, so e = ${2 * d}°.`,
-              `${B1}: 360 ÷ ${2 * d} = ${nB} sides; ${A1}: ${nA} sides.`,
-            ],
-            trap: `${d}° is the difference of the exterior angles, which is half of ${B1}'s exterior angle, not ${B1}'s exterior angle itself.`,
-            verify: () => nA === 2 * nB && close(interiorAngle(nA) - interiorAngle(nB), d),
-          };
-        }
-        if (form === "difference") {
-          const m = t.pick([3, 4, 5, 6, 8, 9, 10, 12]);
-          const n = t.pick([4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24].filter((value) => value > m));
-          if (!n) return null;
-          const d = interiorAngle(n) - interiorAngle(m);
-          if (!Number.isInteger(d) || d <= 0) return null;
-          const label = t.pick(["Q", "P", "R", "T", "X"]);
-          const wrongExt = 360 / (360 / m + d);
-          const wrong = wrongFor(t, numeric, n, [
-            [Number.isInteger(wrongExt) && wrongExt > 2 ? wrongExt : null, `Adds ${d}° to the exterior angle instead of subtracting it; a larger interior angle means a smaller exterior angle.`],
-            [interiorAngle(n), "Gives the measure of each interior angle of the polygon instead of its number of sides."],
-            // With the interior angle, the exterior angle would make a pair
-            // that adds to 180° and leaves the key out; offered in half the items.
-            [pairOnKey && 360 / n === Math.round(360 / n) ? 360 / n : null, "Gives the exterior angle of the polygon instead of its number of sides."],
-            [m + 1, `Assumes a polygon with one more side than the ${POLYGON_WORDS[m].replace("regular ", "")}.`],
-            [Number.isInteger(360 / d) ? 360 / d : null, `Divides 360° by the difference, ${d}°, as if it were an exterior angle.`],
-          ], { whole: true, positive: true });
-          if (!wrong) return null;
-          return {
-            ...common,
-            responseType: numeric ? "numeric" : "multiple-choice",
-            figure: null,
-            stem: t.pick([
-              `Each interior angle of regular polygon ${label} is ${d}° greater than each interior angle of ${S.article(POLYGON_WORDS[m])} ${POLYGON_WORDS[m]}. How many sides does polygon ${label} have?`,
-              `The measure of each interior angle of regular polygon ${label} is ${d}° more than the measure of each interior angle of ${S.article(POLYGON_WORDS[m])} ${POLYGON_WORDS[m]}. How many sides does polygon ${label} have?`,
-              `${S.article(POLYGON_WORDS[m]) === "an" ? "An" : "A"} ${POLYGON_WORDS[m]} and regular polygon ${label} are drawn. Each interior angle of polygon ${label} is ${d}° larger than each interior angle of the ${POLYGON_WORDS[m].replace("regular ", "")}. How many sides does polygon ${label} have?`,
-            ]),
-            correct: n,
-            wrong,
-            explanation:
-              `Each exterior angle of the ${POLYGON_WORDS[m]} is 360° ÷ ${m} = ${num(360 / m)}°. Interior angles that are ${d}° greater have exterior angles ` +
-              `that are ${d}° smaller: ${num(360 / m)} − ${d} = ${num(360 / n)}°. So Q has 360 ÷ ${num(360 / n)} = ${n} sides.`,
-            steps: [
-              `Exterior angle of the ${POLYGON_WORDS[m]}: 360 ÷ ${m} = ${num(360 / m)}°.`,
-              `Q's exterior angle is ${d}° smaller: ${num(360 / m)} − ${d} = ${num(360 / n)}°.`,
-              `Sides of Q: 360 ÷ ${num(360 / n)} = ${n}.`,
-            ],
-            trap: "A larger interior angle goes with a smaller exterior angle; adding the difference to the exterior angle moves the wrong way.",
-            verify: () => close(interiorAngle(n) - interiorAngle(m), d) && Number.isInteger(n),
-          };
-        }
-        // shared: a square (or other known polygon) and an unknown regular
-        // polygon share a side; the angle between their other sides is given.
-        const known = t.pick([3, 4, 5, 6, 8]);
-        const n = t.pick([3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20].filter((value) => value !== known));
-        const x = 360 - interiorAngle(known) - interiorAngle(n);
-        if (!Number.isInteger(x) || x <= 0 || x >= 180) return null;
-        const names = t.pick([["P", "Q"], ["A", "B"], ["M", "N"], ["J", "K"], ["R", "S"], ["E", "F"]]);
-        const drawn = sharedSideFigure(known, n, `${x}°`, names);
-        if (!drawn.ok) return null;
-        const intN = interiorAngle(n);
-        const alt =
-          `${S.article(POLYGON_WORDS[known]) === "an" ? "An" : "A"} ${POLYGON_WORDS[known]} above segment ${names[0]}${names[1]} and a regular polygon below it share side ${names[0]}${names[1]}. ` +
-          `At ${names[0]}, the angle between the other side of the ${POLYGON_WORDS[known].replace("regular ", "")} and the other side of the lower polygon, outside both polygons, is labeled ${x}°. ` +
-          "The figure is drawn to scale.";
-        const wrong = wrongFor(t, numeric, n, [
-          [Number.isInteger(360 / (180 - x)) && 360 / (180 - x) > 2 ? 360 / (180 - x) : null, `Treats ${x}° as the interior angle of the lower polygon; it is the angle left over after both interior angles at ${names[0]}.`],
-          [intN, "Gives the interior angle of the lower polygon instead of its number of sides."],
-          [360 / n, "Gives the exterior angle of the lower polygon instead of its number of sides."],
-          [Number.isInteger(360 / x) && 360 / x > 2 ? 360 / x : null, `Treats ${x}° as an exterior angle of the lower polygon.`],
-        ], { whole: true, positive: true });
-        if (!wrong) return null;
-        return {
-          ...common,
-          responseType: numeric ? "numeric" : "multiple-choice",
-          figure: { svg: S.svg(400, 280, drawn.parts, alt), alt, notToScale: false },
-          stem:
-            `In the figure shown, ${S.article(POLYGON_WORDS[known])} ${POLYGON_WORDS[known]} and a regular polygon share side ${names[0]}${names[1]}. The angle marked at ${names[0]} measures ${x}°. ` +
-            "How many sides does the regular polygon below the shared side have?",
-          correct: n,
-          wrong,
-          explanation:
-            `The angles around ${names[0]} add to 360°: ${num(interiorAngle(known))}° from the ${POLYGON_WORDS[known].replace("regular ", "")}, ${x}° marked, and the lower polygon's interior angle. ` +
-            `So that interior angle is 360 − ${num(interiorAngle(known))} − ${x} = ${num(intN)}°, its exterior angle is 180 − ${num(intN)} = ${num(360 / n)}°, and the polygon has 360 ÷ ${num(360 / n)} = ${n} sides.`,
-          steps: [
-            `Around ${names[0]}: ${num(interiorAngle(known))} + ${x} + (interior angle) = 360, so the interior angle is ${num(intN)}°.`,
-            `Exterior angle: 180 − ${num(intN)} = ${num(360 / n)}°.`,
-            `n = 360 ÷ ${num(360 / n)} = ${n}.`,
-          ],
-          trap: `${x}° is not an angle of either polygon; it is what remains of the full turn at ${names[0]}.`,
-          verify: () => close(360 - interiorAngle(known) - interiorAngle(n), x) && close(360 / (180 - intN), n),
-        };
       });
   }
 
@@ -2492,17 +2325,75 @@
     skill: "Lines, angles, and triangles",
     subskill: "angle relationships",
     difficulty: "Hard",
-    title: "Angles of regular polygons",
-    recognize: POLYGON_RECOGNIZE,
-    // Hard: two polygons compared (a difference of interior angles, or twice
-    // the sides), or an angle left over where two polygons share a side;
-    // each must be recast as a statement about exterior angles. The single
-    // polygon described by its interior-to-exterior ratio is Medium and
-    // lives in regular-polygon-angle-ratio.
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
-    tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity"],
+    title: "Two unknown regular polygons",
+    recognize:
+      "A regular polygon's exterior angle is inversely proportional to its number of sides. Express both unknown side " +
+      "counts using one variable, convert the interior-angle difference into an exterior-angle difference, then solve the resulting equation.",
+    // Both side counts are unknown. The additive count relation and the
+    // inverse angle relation produce a quadratic, whose negative root is
+    // inadmissible. No branch reduces to converting a known polygon's angle.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 2, trap: 1 },
+    tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity", "context-constraint"],
     build(t) {
-      return polygonItem(t, t.pick(["difference", "double", "shared"]));
+      const numeric = t.chance(0.35);
+      const askLarger = t.chance(0.5);
+      return retry(() => {
+        const n = t.int(5, 30);
+        const k = t.int(1, 15);
+        const m = n + k;
+        const difference = 360 * k / (n * m);
+        if (!isClean(difference, 2)) return null;
+        const [larger, smaller] = t.pick([["P", "Q"], ["R", "S"], ["X", "Y"], ["J", "K"], ["M", "N"]]);
+        const asked = askLarger ? larger : smaller;
+        const key = askLarger ? m : n;
+        const product = n * m;
+        const candidates = [
+          [askLarger ? n : m, `Gives the number of sides of polygon ${askLarger ? smaller : larger}, rather than polygon ${asked}.`],
+          [k, "Gives the difference in the side counts, not either polygon's count."],
+          [product, "Stops at the product of the two side counts instead of finding the requested count."],
+          [Number.isInteger(product / k) ? product / k : null, "Treats the angle difference as one polygon's exterior angle and divides 360 by it."],
+          [Number.isInteger(product / (2 * k)) ? product / (2 * k) : null, "Treats the angle difference as one exterior angle and divides 180 by it."],
+          [askLarger ? n - k >= 3 ? n - k : null : m + k, "Applies the stated side-count difference in the wrong direction after finding the other polygon's count."],
+          [askLarger ? m + k : n - k >= 3 ? n - k : null, "Applies the difference a second time after already finding the requested side count."],
+        ];
+        const linearTerm = k === 1 ? "n" : `${k}n`;
+        return packSpread(t, numeric, key, fmt(key), C.balanceTwins(t, key, candidates), {
+          stimulus: null,
+          figure: null,
+          estimatedSeconds: 140,
+          stem: t.pick([
+            `Regular polygon ${larger} has ${S.plural(k, "more side", "more sides")} than regular polygon ${smaller}. Each interior angle of ${larger} is ${num(difference)}° greater than each interior angle of ${smaller}. How many sides does polygon ${asked} have?`,
+            `The number of sides of regular polygon ${larger} is ${k} greater than the number of sides of regular polygon ${smaller}. The measure of each interior angle of ${larger} exceeds that of each interior angle of ${smaller} by ${num(difference)}°. What is the number of sides of polygon ${asked}?`,
+          ]),
+          explanation:
+            `Let n be the number of sides of ${smaller}; ${larger} then has n + ${k} sides. A larger interior angle means a smaller exterior angle, so ` +
+            `360/n − 360/(n + ${k}) = ${num(difference)}. Combining the fractions gives n(n + ${k}) = ${product}, or ` +
+            `n² + ${linearTerm} − ${product} = 0. Factoring gives (n − ${n})(n + ${m}) = 0. The negative root cannot count sides, ` +
+            `so ${smaller} has ${n} sides and ${larger} has ${m}; polygon ${asked} has ${key}.`,
+          steps: [
+            `Let ${smaller} have n sides and ${larger} have n + ${k}. Their exterior angles are 360/n and 360/(n + ${k}).`,
+            `Interior and exterior angles add to 180°, so the interior-angle difference equals the exterior-angle difference in reverse order: 360/n − 360/(n + ${k}) = ${num(difference)}.`,
+            `The left side is ${360 * k}/(n(n + ${k})). Multiply through to obtain n(n + ${k}) = ${product}.`,
+            `n² + ${linearTerm} − ${product} = (n − ${n})(n + ${m}) = 0. Reject n = −${m}; n = ${n}.`,
+            `${smaller} has ${n} sides, so ${larger} has ${n} + ${k} = ${m}. The requested count is ${key}.`,
+          ],
+          principles: [
+            "Each exterior angle of a regular n-sided polygon is 360°/n; its interior angle is 180° − 360°/n.",
+            "A side count must be an integer of at least 3, so a negative algebraic root is not admissible.",
+          ],
+          hint: "Write both side counts using one variable. How does each exterior angle depend on its side count?",
+          trap: "The given angle difference is neither polygon's exterior angle. Side counts and exterior angles are related by reciprocals, not by equal differences.",
+          verify: () => {
+            // Independently search the possible positive integer side counts.
+            // Any solution satisfies s(s+k)=product, so s cannot exceed product.
+            const matches = [];
+            for (let s = 3; s <= product; s += 1) {
+              if (close(interiorAngle(s + k) - interiorAngle(s), difference, 1e-10)) matches.push(s);
+            }
+            return matches.length === 1 && (askLarger ? matches[0] + k : matches[0]) === key;
+          },
+        }, { positive: true, whole: true });
+      });
     },
   };
 

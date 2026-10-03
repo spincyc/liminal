@@ -3,7 +3,7 @@
 **45 questions · 50 minutes · 67 seconds per question**
 
 One of the three Composite sections. Four answer choices per question in the
-enhanced format — up from the old five, which improves blind-guess odds from 20%
+enhanced format — down from the old five, which improves blind-guess odds from 20%
 to 25%.
 
 ---
@@ -21,9 +21,8 @@ to 25%.
 
 ### The formula sheet difference
 
-**The ACT gives you nothing.** Every area formula, volume formula, and
-trigonometric relationship must be memorized. This is the biggest practical
-difference from the SAT and it's why the
+**The ACT has no general formula sheet.** Learn common relationships and how
+to apply or derive them. Individual questions may supply formulas. The
 [formula reference](07-formula-reference.md) matters more here.
 
 ### Domain weighting
@@ -76,9 +75,9 @@ in the last 12.
 | 16-30 | 60-75 sec |
 | 31-45 | 90-110 sec |
 
-**If you're at Q15 at 18 minutes, you are in trouble.** Speed up immediately
-rather than gradually — the back half needs the time more than the front half
-does.
+If you reach Q15 later than planned, move past questions where you are stuck
+and look for work you can finish reliably. Adjust these suggested checkpoints
+to your practice data and approved timing; rushing every answer can compound errors.
 
 ### The 30-second rule
 
@@ -115,10 +114,12 @@ know a definition or a formula.
 The choices are numbers. Plug them into the problem.
 
 **Start with the second-smallest or second-largest.** If choices are ordered and
-yours is too big, you know the direction — you rarely test more than two.
+the result moves monotonically with the candidate, you can infer a direction.
+Otherwise, test each remaining candidate separately.
 
-Because **every ACT Math question is multiple choice**, backsolving is available
-on all 45 questions. On the SAT, grid-ins remove this option for a quarter of
+Because **every ACT Math question is multiple choice**, the choices can help on many questions. Backsolving works when a
+choice can be substituted into the stated conditions; it is not a method for
+every conceptual or graph question. On the SAT, grid-ins remove this option for a quarter of
 the section. Use it more aggressively here.
 
 ### 2. Plugging in numbers

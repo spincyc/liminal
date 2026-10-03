@@ -45,18 +45,22 @@ the four hundred blanks she left me alone with.`,
       key: "sixteen and put me",
       noChange: "A comma before 'and' would need a second subject after it, and there is none.",
       wrong: [
-        ["sixteen; and put me", "A semicolon has to join two independent clauses, and 'and put me' is not one."],
-        ["sixteen, and putting me", "The -ing form breaks the pairing with the past-tense verb 'hired'."],
+        [
+          "sixteen; although put me",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "sixteen, and putting me",
+          "The -ing form breaks the pairing with the past-tense verb 'hired'."
+        ]
       ],
-      why:
-        "'Hired me' and 'put me' share the subject 'The hardware store,' so they form a compound " +
-        "predicate rather than two sentences. A compound predicate takes no comma before 'and.'",
+      why: "'Hired me' and 'put me' share the subject 'The hardware store,' so they form a compound predicate rather than two sentences. A compound predicate takes no comma before 'and.'",
       steps: [
         "Look for a subject after 'and.' There is none — the next word is the verb 'put.'",
-        "With one subject running two verbs, drop the comma.",
+        "With one subject running two verbs, drop the comma."
       ],
       hint: "Ask whether the words after 'and' could stand alone as a sentence.",
-      trap: "The sentence is long, and length tempts students to punctuate it like two clauses.",
+      trap: "The sentence is long, and length tempts students to punctuate it like two clauses."
     },
     {
       number: 2,
@@ -188,33 +192,29 @@ the four hundred blanks she left me alone with.`,
       subskill: "support",
       family: "supporting-detail",
       difficulty: "Hard",
-      stem:
-        "Given that all the choices are true, which one, if added here, most effectively supports " +
-        "the paragraph's point that customers arrive at the counter with more than a lock problem?",
-      key: "One man set a key on the counter and told me, before I could ask, that it had been his mother's.",
+      stem: "Given that all the choices are true, which one, if added here, most effectively supports the paragraph's point that customers arrive at the counter with more than a lock problem?",
+      key: "One man handed me a key, saying it had belonged to his late mother.",
       wrong: [
         [
           "Most of the blanks on the wall fit one of six common residential locks.",
-          "A fact about inventory says nothing about what customers bring with them.",
+          "A fact about inventory says nothing about what customers bring with them."
         ],
         [
           "The store charged a dollar sixty for a copy, less than half the locksmith's rate.",
-          "Price supports the earlier clause about the quote rather than the paragraph's point.",
+          "Price supports the earlier clause about the quote rather than the paragraph's point."
         ],
         [
           "Ruth could identify a blank from across the room by the shape of its bow.",
-          "Ruth's expertise is a different subject from what customers say at the counter.",
-        ],
+          "Ruth's expertise is a different subject from what customers say at the counter."
+        ]
       ],
-      why:
-        "The paragraph claims people come to the counter carrying something besides a lock. Only " +
-        "the man who volunteers whose key it was shows a customer offering more than the job requires.",
+      why: "The paragraph claims people come to the counter carrying something besides a lock. Only the man who volunteers whose key it was shows a customer offering more than the job requires.",
       steps: [
         "Name the claim the added sentence has to serve: customers bring more than a key.",
-        "Discard every choice that is about the store, the price, or Ruth rather than a customer.",
+        "Discard every choice that is about the store, the price, or Ruth rather than a customer."
       ],
       hint: "Three choices are about the business; one is about a person.",
-      trap: "Each wrong choice echoes a real phrase from the paragraph, so it feels connected.",
+      trap: "Each wrong choice echoes a real phrase from the paragraph, so it feels connected."
     },
     {
       number: 8,
@@ -269,23 +269,21 @@ the four hundred blanks she left me alone with.`,
       noChange: "A comma is too weak to introduce the phrase that explains what the rule was.",
       wrong: [
         [
-          "simple; cut it twice.",
-          "A semicolon balances two equal clauses, but the second half here explains the first.",
+          "simple; although cut it twice.",
+          "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
         ],
         [
           "simple, which was cut it twice.",
-          "The relative clause collides grammatically with the imperative that follows it.",
-        ],
+          "The relative clause collides grammatically with the imperative that follows it."
+        ]
       ],
-      why:
-        "The first half is a complete clause that promises an explanation, and the second half " +
-        "delivers it. A colon is the mark that introduces what a complete clause has set up.",
+      why: "The first half is a complete clause that promises an explanation, and the second half delivers it. A colon is the mark that introduces what a complete clause has set up.",
       steps: [
         "Check that the words before the mark form a complete sentence. They do.",
-        "Ask whether the second half explains the first or balances it. It explains, so use a colon.",
+        "Ask whether the second half explains the first or balances it. It explains, so use a colon."
       ],
       hint: "Decide whether the second half answers the first half or merely sits beside it.",
-      trap: "Two complete clauses make the semicolon look right, and the explaining relationship is easy to miss.",
+      trap: "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon."
     },
     {
       number: 11,

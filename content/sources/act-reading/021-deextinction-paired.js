@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p021",
   type: "natural-science",
   title: "Bringing Back the Pigeon",
-  intro: "Passage A is adapted from an argument for de-extinction by a molecular biologist. Passage B is adapted from a reply by a conservation ecologist.",
+  intro: "Passage A is an original argument for de-extinction by a molecular biologist. Passage B is an original reply by a conservation ecologist.",
   content: `PASSAGE A
 
 The passenger pigeon was the most abundant bird in North America and possibly on Earth.
@@ -24,7 +24,7 @@ tail shape, breeding density — and the honest name for it is a functional anal
 
 The objection that this is not really the extinct species is correct and beside the point.
 Conservation has never restored species to a prior state; it restores populations that do
-a job. The American chestnut being planted now carries a wheat gene. The peregrine falcons
+a job. Researchers have developed blight-resistant American chestnuts carrying a wheat gene. The peregrine falcons
 over New York descend from a mixture of seven subspecies assembled by breeders in the
 1970s, and nobody proposes removing them on grounds of authenticity. What matters is
 whether an ecological function returns, and in the passenger pigeon's case the function
@@ -44,11 +44,11 @@ the millions is a programme measured in decades and hundreds of millions of doll
 it releases those birds into an eastern forest that is now fragmented, differently composed,
 and surrounded by agriculture that a billion-bird flock would flatten.
 
-Then the accounting. Every conservation dollar is drawn from the same pool. The species now
-declining have known causes and known remedies: habitat loss, invasive predators, and
-disease. We do not lack methods for them; we lack funding and attention. A predator fence around a
-New Zealand island is unglamorous, costs a fraction of a laboratory year, and has never
-once failed to work where it has been properly maintained. A programme that
+Then the accounting. Conservation projects compete for limited funding and attention. Many species now
+declining face causes for which conservation already has remedies: habitat loss, invasive predators, and
+disease. We do not lack methods for them; we lack funding and attention. Predator exclusion in a
+New Zealand reserve is unglamorous but can protect threatened wildlife when the barrier
+and monitoring are maintained. Such a project has measurable costs and outcomes. A programme that
 consumes both, over decades, to restore one function to one biome, has to be compared with
 what the same money does elsewhere, and the comparison is not close.
 
@@ -179,7 +179,7 @@ long before the birds do.`,
         ["argues that editing the traits cannot in fact be done.", "Passage B calls the editing the fast part of the programme."],
         ["holds that altered populations are not real restorations.", "Passage B says it wants to answer the ecological case, not the authenticity one."],
       ],
-      why: "Passage B accepts the ecological framing and then introduces \"the accounting\": every dollar \"is drawn from the same pool,\" and the programme \"has to be compared with what the same money does elsewhere.\"",
+      why: "Passage B compares a long, expensive de-extinction programme with other uses of limited conservation funds and attention. Passage A instead argues for the value of restoring ecological function.",
       steps: [
         "Note which of Passage A's claims Passage B concedes.",
         "Identify the consideration Passage B adds that Passage A never raises.",

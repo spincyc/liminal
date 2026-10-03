@@ -4,13 +4,13 @@ module.exports = {
   id: "act-english-p019",
   type: "historical-account",
   title: "Told to Stop Using It",
-  content: `[1] Charles {1 Barbier, an artillery officer} wanted his men to read
-orders in the dark without striking a light. The system he {2 devised} in the
-1810s used twelve raised dots and stood for sounds rather than letters. His
-soldiers found it too slow to be useful. He took it to a school for blind
-children in Paris instead.
+  content: `[1] Charles {1 Barbier, a former artillery officer} wanted to make
+reading and writing accessible by touch. The system he {2 devised} in the
+1810s used twelve raised dots and stood for sounds rather than letters. He
+described its use for blind readers in a book published in 1815 and offered
+it to a school for blind children in Paris.
 
-[2] {3} Louis Braille was eleven when he first handled {4 it, he had been blind}
+[2] {3} Louis Braille was a young pupil when he first handled {4 it, he had been blind}
 since a childhood accident in his {5 father's} workshop. He understood at once
 what was wrong with it: twelve dots were too many for a fingertip to take in
 without travelling, and a phonetic system could not spell a name.
@@ -38,21 +38,25 @@ code}. It is now the standard in nearly every written language on earth.`,
       family: "appositive-comma-pair",
       difficulty: "Easy",
       keep: false,
-      key: "Barbier, an artillery officer,",
+      key: "Barbier, a former artillery officer,",
       noChange: "The appositive is opened with a comma and never closed with one.",
       wrong: [
-        ["Barbier an artillery officer", "With no commas at all the phrase reads as part of the name itself."],
-        ["Barbier; an artillery officer,", "A semicolon cannot open a phrase that a comma then closes."],
+        [
+          "Barbier a former artillery officer",
+          "With no commas at all the phrase reads as part of the name itself."
+        ],
+        [
+          "Barbier; a former artillery officer,",
+          "A semicolon cannot open a phrase that a comma then closes."
+        ]
       ],
-      why:
-        "'An artillery officer' renames Charles Barbier and can be lifted out of the sentence, so it " +
-        "takes a comma on each side.",
+      why: "'An artillery officer' renames Charles Barbier and can be lifted out of the sentence, so it takes a comma on each side.",
       steps: [
         "Remove the phrase and check the sentence still works. It does.",
-        "Enclose it in a matched pair of commas.",
+        "Enclose it in a matched pair of commas."
       ],
       hint: "A phrase that renames the subject needs a comma before and after it.",
-      trap: "The opening comma is already there, which makes the punctuation look handled.",
+      trap: "The opening comma is already there, which makes the punctuation look handled."
     },
     {
       number: 2,
@@ -81,30 +85,28 @@ code}. It is now the standard in nearly every written language on earth.`,
       family: "paragraph-opening",
       difficulty: "Medium",
       stem: "Which choice, if added here, provides the most effective opening for this paragraph?",
-      key: "At the school it found the reader Barbier had not been looking for.",
+      key: "One pupil would make the bulky system fit a fingertip.",
       wrong: [
         [
           "The Royal Institute for Blind Youth had been founded in Paris some decades earlier.",
-          "The school's founding date is never taken up again anywhere in the essay.",
+          "The school's founding date is never taken up again anywhere in the essay."
         ],
         [
           "Blindness in nineteenth-century France was frequently the result of untreated infection.",
-          "The general medical context does not connect Barbier's code to the boy who fixed it.",
+          "The general medical context does not connect Barbier's code to the boy who fixed it."
         ],
         [
           "There were several attempts at tactile writing systems during this period.",
-          "The vague plural promises a survey the paragraph does not deliver.",
-        ],
+          "The vague plural promises a survey the paragraph does not deliver."
+        ]
       ],
-      why:
-        "Paragraph 1 ends with a rejected military code arriving at a school. This paragraph is about " +
-        "who picked it up there, so the opening should make that handoff.",
+      why: "Paragraph 1 introduces Barbier's tactile code. Paragraph 2 introduces the pupil who recognized its limitations, so the opening should connect that reader to the system.",
       steps: [
-        "Note where the previous paragraph leaves the code: at a school, unwanted by soldiers.",
-        "Choose the opening that turns that arrival into this paragraph's subject.",
+        "Identify the previous paragraph's subject: Barbier's raised-dot system.",
+        "Choose the opening that connects the system to the pupil who will revise it."
       ],
       hint: "The best opening turns the previous paragraph's last move into this one's premise.",
-      trap: "The founding date is the most factual choice and connects to nothing that follows.",
+      trap: "The founding date is the most factual choice and connects to nothing that follows."
     },
     {
       number: 4,
@@ -116,23 +118,21 @@ code}. It is now the standard in nearly every written language on earth.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "it, and he had been blind",
-          "The conjunction repairs the splice but ties his age to his blindness as one thought.",
+          "it, however, he had been blind",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "it, having been blind",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "it; having been blind",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "The two facts are separate — how old he was, and how long he had been blind. Making them two " +
-        "sentences keeps each one its own statement.",
+      why: "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Choose the punctuation that lets each fact land on its own.",
+        "Find the subjects and finite verbs on both sides of the boundary.",
+        "Keep a complete statement on each side of the sentence boundary."
       ],
       hint: "Once you see the splice, ask whether the halves belong in one sentence at all.",
-      trap: "'And' fixes the grammar and quietly merges two unrelated facts.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 5,
@@ -207,23 +207,20 @@ code}. It is now the standard in nearly every written language on earth.`,
       wrong: [
         [
           "Finishing at fifteen and publishing at twenty, the essential work was his.",
-          "The phrase now describes the work as doing the finishing and publishing.",
+          "The phrase now describes the work as doing the finishing and publishing."
         ],
         [
-          "Finished at fifteen and published at twenty, the essential work had been done by him.",
-          "The modifier attaches correctly but the passive buries who did it.",
-        ],
+          "Finishing the code at fifteen and publishing it at twenty, Braille's work was complete.",
+          "The subject after the opening phrase is 'work,' which cannot finish or publish a code."
+        ]
       ],
-      why:
-        "A participial phrase at the head of a sentence attaches to the first noun after the comma. " +
-        "The work was finished and published; Braille was not. Recasting it as a plain clause names " +
-        "him as the actor.",
+      why: "A participial phrase at the head of a sentence attaches to the first noun after the comma. The work was finished and published; Braille was not. Recasting it as a plain clause names him as the actor.",
       steps: [
         "Ask what was finished and published. The work was.",
-        "Rewrite so the sentence says who did it, without the stranded phrase.",
+        "Rewrite so the sentence says who did it, without the stranded phrase."
       ],
       hint: "When no rearrangement puts the right noun after the comma, drop the phrase entirely.",
-      trap: "The sentence states his ages accurately, so nothing sounds factually wrong.",
+      trap: "The sentence states his ages accurately, so nothing sounds factually wrong."
     },
     {
       number: 9,
@@ -279,23 +276,21 @@ code}. It is now the standard in nearly every written language on earth.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "it: students kept using it anyway",
-          "A colon introduces an explanation, but the second clause opposes the first.",
+          "it; although students kept using it anyway",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "it and students kept using it anyway",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The sentence sets an official ban against what students did in spite of it. Both clauses are " +
-        "complete, and a semicolon holds them against each other as equals.",
+      why: "The sentence sets an official ban against what students did in spite of it. Both clauses are complete, and a semicolon holds them against each other as equals.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or defies it. It defies it.",
+        "Ask whether the second explains the first or defies it. It defies it."
       ],
       hint: "The word 'anyway' tells you the two clauses are opposed.",
-      trap: "The clause is long enough that the splice sits far from where the eye stops.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 12,

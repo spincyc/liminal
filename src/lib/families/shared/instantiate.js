@@ -60,6 +60,9 @@
     const random = rng(`${family.id}|${seed}`);
     const t = tools(random);
     const raw = family.build(t);
+    if (!raw || typeof raw.verify !== "function") {
+      throw new Error(`${family.id} seed ${seed}: missing verify function`);
+    }
     const sectionKey = family.sectionKey || "sat-math";
     const section = SECTIONS[sectionKey];
     const record = {
@@ -92,7 +95,7 @@
       tags: ["generated", `template:${family.id}`]
         .concat(raw.scene ? [`scene:${raw.scene}`] : [])
         .concat(raw.tags || []),
-      verified: Boolean(raw.verify()),
+      verified: raw.verify() === true,
     };
     if (Number.isFinite(raw.approximates)) record.approximates = raw.approximates;
     if (raw.responseType === "numeric") {

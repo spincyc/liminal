@@ -11,8 +11,8 @@ A linear function changes by the same amount every time its input goes up
 by one. Written f(x) = mx + b, the slope m is that constant change and b is
 the output when x = 0. Linear functions are part of Algebra, which is
 {{fact:sat-math-algebra}} of the Math section. Easy questions ask you to read
-a slope or evaluate f(3). Hard ones give the function as a table, a graph or
-a sentence and make you build the rule yourself before answering.
+a slope or evaluate f(3). Hard ones give an identity that holds for every
+input or a table with unknown entries, then ask about the resulting function.
 
 ## Slope {#slope}
 
@@ -49,7 +49,7 @@ second.
 
 > **Trap.** 3/4 is the slope you get if you change the sign but forget to
 > flip the fraction; −4/3 is what you get if you flip but forget to change
-> the sign. Both are always among the choices.
+> the sign. Both are common distractors.
 
 From a table, use any two rows, then confirm with a third. If x = 1, 3, 7
 gives f(x) = 5, 11, 23, the slope is (11 − 5)/(3 − 1) = 3, and
@@ -59,7 +59,7 @@ gives f(x) = 5, 11, 23, the slope is (11 − 5)/(3 − 1) = 3, and
 
 - The y-intercept is f(0): set x = 0. In f(x) = mx + b it is b.
 - The x-intercept is where f(x) = 0: set the output to 0 and solve.
-- In standard form Ax + By = C, the x-intercept is C/A and the y-intercept is C/B.
+- In standard form Ax + By = C, the x-intercept is C/A when A ≠ 0, and the y-intercept is C/B when B ≠ 0.
 
 > **Example.** A phone's battery is at 85% and drops 5 percentage points per
 > hour of video. Its charge is f(t) = 85 − 5t after t hours. What do the two
@@ -189,8 +189,11 @@ Hard questions in this skill give you only part of the function and make you
 build the rule first:
 
 - A relation that is true for all x, such as f(4x) = 4f(x) + 6 or f(x + 2) = f(x) − 10, plus one value. Match terms to get one coefficient, and let the value give the other (see [a rule that holds for every x](#identity)).
-- A function g built from a graphed f, as in g(x) = a · f(x) + 2 or g(x) = f(x + k) − 3, with a point on g. Undo the outside change, read f off the graph, then solve for the constant (see [functions built from another function](#built-from-f)).
 - A table whose inputs are unevenly spaced and whose outputs include a letter, such as f(2) = a, f(4) = 2a, f(9) = 18. Each change in f(x) is the slope times its own gap in x, so write that for both pairs of rows and solve for the letter.
+
+At Medium, a graph of f and a point on g can determine a constant in
+g(x) = a · f(x) + 2 or g(x) = f(x + k) − 3. See
+[functions built from another function](#built-from-f).
 
 > **Example.** For the linear function f, f(−2) = a, f(1) = 3a and
 > f(3) = 26, where a is a constant. What is f(0)?

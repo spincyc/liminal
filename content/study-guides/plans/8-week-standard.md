@@ -1,10 +1,16 @@
 # 8-Week Standard Plan
 
-**The default.** Enough time for genuine skill change without burning out.
+**A default schedule.** Balance content practice, review and timed work.
 Roughly **6-9 hours per week**.
 
 **Prerequisites:** run [Diagnostic routing](diagnostic-routing.md) first, and
 read [Drill protocols](drill-protocols.md).
+
+> **Practice targets are SAT-only planning rules.** Liminal's ACT difficulty
+> labels are not verified, and ACT Progress reports accuracy without these
+> targets. For ACT, choose the skill and inspect the reasoning each item
+> requires; use fresh official practice to judge progress. Adjust all
+> schedules and timed drills to your approved accommodations.
 
 ---
 
@@ -22,10 +28,10 @@ with the last 7 to 10 days before the real test.
 
 **Full practice tests are official tests.** For the SAT, use the full-length
 practice tests in College Board's Bluebook app; for the ACT, ACT's official
-practice tests. Their scores are the only honest estimate you have. Liminal's
+practice tests. Fresh official tests give a useful score estimate. Liminal's
 accuracy is practice feedback on its own questions, not a score. For the SAT,
-Bluebook has 8 full-length practice tests (Practice Tests 4 to 11, checked
-2026-09-26; verify before you plan around the count). Record each SAT score
+Check Bluebook for the current practice-test inventory and reserve unfamiliar
+forms for later checks. Record each SAT score
 in the app under Progress, in the Official scores card, which shows it beside
 your Liminal accuracy in the 28 days before the test and never converts one
 into the other.
@@ -116,15 +122,15 @@ Then move on, and let the Missed mode bring it back on the spacing schedule.
 | 2 | Domain D, session 1 | 1.5 h |
 | 3 | Domain D, session 2 | 1.5 h |
 | 4 | Domain D, session 3 | 1.5 h |
-| 5 | **Hard-difficulty drill** across domains A-D, 25 items untimed, in skills already at the gate | 1.5 h |
+| 5 | **Hard-difficulty drill** across domains A-D, 25 items untimed, in skills that meet the practice target | 1.5 h |
 | 6 | **Full practice test** | 3 h |
 | 7 | Same-day impressions. Rest. | 0.5 h |
 
-**Note the difficulty progression.** By week 5 you should be working Medium and
-Hard, not Easy. A skill moves on to Hard when Progress shows it "At the gate":
+**Adjust the difficulty progression to your results.** For SAT, consider Hard
+practice when Progress shows "Practice target met":
 at least 24 of your last 30 Medium questions right, no hints, over at least
 two days and two question designs, each counted once (see the
-[mastery gate](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate)).
+[practice target](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate)).
 If you are still missing Easy questions in a domain for lack of the method,
 that domain needs another cycle before moving on.
 
@@ -132,7 +138,7 @@ that domain needs another cycle before moving on.
 
 ## Phase III — Speed (weeks 6-7)
 
-Content is in place. Now make it work at real pace.
+Practice at real pace while continuing to repair any content gaps.
 
 ### Week 6
 

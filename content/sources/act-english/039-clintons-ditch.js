@@ -28,8 +28,8 @@ largely where the locks were.
 
 [5] {12} The canal was called Clinton's Ditch while it was being dug, after the
 governor who staked his career on it. The name was meant to {13 mock him,
-diminish the project, and warn other politicians away}. It is now the name of a
-state historic corridor.
+diminish the project, and warn other politicians away}. Today the canal is celebrated within the
+Erie Canalway National Heritage Corridor.
 
 [6] Nothing about the engineering was clever by later standards. What was
 unusual was that a government spent seven million dollars on an argument it
@@ -141,23 +141,21 @@ could not win in advance.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "amount, and the whole system was designed and supervised by men who had never built a canal",
-          "'And' repairs the splice but buries the paragraph's most surprising fact inside a long sentence.",
+          "amount, however, the whole system was designed and supervised by men who had never built a canal",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "amount, the whole system being designed and supervised by men who had never built a canal",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "amount; the whole system being designed and supervised by men who had never built a canal",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "The sentence has already described the locks in detail. The fact about the engineers is the " +
-        "paragraph's point and deserves a sentence of its own.",
+      why: "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Ask which half carries the paragraph's weight, and give it room.",
+        "Find the subjects and finite verbs on both sides of the boundary.",
+        "Keep a complete statement on each side of the sentence boundary."
       ],
       hint: "The second clause is the one a reader will remember.",
-      trap: "'And' fixes the grammar and flattens a revelation into a detail.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -215,21 +213,25 @@ could not win in advance.`,
       family: "comparison-versus-escalation-transition",
       difficulty: "Medium",
       keep: false,
-      key: "The effects went further than that:",
+      key: "More broadly,",
       noChange: "'Similarly' claims a likeness, but this paragraph widens the argument beyond freight.",
       wrong: [
-        ["Consequently,", "The wider consequences did not follow from freight rates alone."],
-        ["Nevertheless,", "Nothing in the previous paragraph is being conceded or contradicted."],
+        [
+          "On the contrary,",
+          "The paragraph adds wider effects rather than contradicting the reported reduction in freight costs."
+        ],
+        [
+          "Nevertheless,",
+          "Nothing in the previous paragraph is being conceded or contradicted."
+        ]
       ],
-      why:
-        "Paragraph 3 settles the argument on cost. This paragraph shows the canal reshaping farmland, " +
-        "ports and cities, so the transition should mark the widening.",
+      why: "Paragraph 3 settles the argument on cost. This paragraph shows the canal reshaping farmland, ports and cities, so the transition should mark the widening.",
       steps: [
         "Ask whether this paragraph repeats the last one or extends it.",
-        "Choose the option that marks the extension.",
+        "Choose the option that marks the extension."
       ],
       hint: "The paragraph's first sentence says the consequences ran further.",
-      trap: "'Similarly' fits the essay's list of effects while asserting nothing.",
+      trap: "'Similarly' fits the essay's list of effects while asserting nothing."
     },
     {
       number: 9,
@@ -241,23 +243,21 @@ could not win in advance.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "clearing: New York overtook Philadelphia and Boston",
-          "A colon introduces an explanation, but the second clause reports a separate consequence.",
+          "clearing; although New York overtook Philadelphia and Boston",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "clearing and New York overtook Philadelphia and Boston",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The paragraph lists consequences of equal weight — farmland becoming worth clearing, and a " +
-        "port overtaking its rivals. A semicolon joins equals without subordinating either.",
+      why: "The paragraph lists consequences of equal weight — farmland becoming worth clearing, and a port overtaking its rivals. A semicolon joins equals without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or stands beside it. It stands beside it.",
+        "Ask whether the second explains the first or stands beside it. It stands beside it."
       ],
       hint: "The paragraph is a list of effects, not a chain of causes.",
-      trap: "The consequences really are connected, which makes a colon feel earned.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 10,

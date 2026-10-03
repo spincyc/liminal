@@ -1260,16 +1260,28 @@
       why: "Each pause is placed with care and matters to the whole, which Adair admires, so the silence is deliberate: intentional and purposeful.",
     },
     {
-      scene: "cs-waning-vaccine-antibodies",
-      text: "Trials suggest that the new vaccine's protection is ______. Antibody levels in volunteers peaked about a month after the shot and then declined steadily, so that by the end of the first year most volunteers had lost their immunity.",
-      clues: ["declined steadily", "lost their immunity"],
-      key: "temporary",
-      wrong: [
-        ["weak", "The text describes how long protection lasts, not how strong it is at its peak."],
-        ["partial", "“Partial” would mean it protects only some people or against only some strains, which the text never discusses."],
-        ["inconsistent", "Inconsistency would mean results varied among volunteers, but the text describes the same decline for most of them."],
+      "scene": "cs-waning-vaccine-antibodies",
+      "text": "In a trial in the invented region of Selwin, the new vaccine's protection was ______. It greatly reduced infections during the first months after vaccination, but that advantage declined steadily; by the end of the first year, infection rates in vaccinated and unvaccinated groups were nearly identical.",
+      "clues": [
+        "greatly reduced infections",
+        "nearly identical"
       ],
-      why: "Protection peaked and then faded until most volunteers lost it within a year, so it is temporary.",
+      "key": "temporary",
+      "wrong": [
+        [
+          "weak",
+          "The vaccine greatly reduced early infections; the problem is how long that benefit lasted."
+        ],
+        [
+          "inconsistent",
+          "Protection declined steadily, not unpredictably from one measurement to the next."
+        ],
+        [
+          "partial",
+          "Partial describes incomplete protection at a given time; the decisive contrast here is early protection followed by its disappearance."
+        ]
+      ],
+      "why": "Strong early protection that fades over the year is temporary. It is not merely weak or partial throughout, and its steady loss does not show erratic performance."
     },
     {
       scene: "cs-dented-bumper-father",
@@ -1617,172 +1629,316 @@
 
   const WIC_EVALUATION_TOPICS = [
     {
-      scene: "cs-corran-tutoring-evaluation",
-      text: "Advocates of expanding the Corran tutoring program cite its 2019 evaluation as proof that the program raises test scores, but the evaluation's own findings are ______. Scores rose at four of the eight participating schools and fell at the other four, and the evaluators conclude that their data are consistent both with a modest benefit and with no benefit at all.",
-      clues: ["consistent both with a modest benefit and with no benefit at all"],
-      key: "equivocal",
-      wrong: [
-        ["untenable", "“Untenable” would mean the findings cannot be defended, but nothing calls the data themselves into question; the problem is that they point two ways."],
-        ["anomalous", "“Anomalous” would mean the findings depart from an expected pattern, but the text names no expected pattern; it says the results support two readings."],
-        ["incontrovertible", "“Incontrovertible” is the advocates' view of the evaluation as proof, but results split four and four that fit both a benefit and none are far from beyond dispute."],
+      "scene": "cs-corran-tutoring-evaluation",
+      "text": "Advocates and critics of the Corran tutoring program cite the same evaluation. Four schools improved and four declined; importantly, the evaluators' calculations allowed for differences in enrollment and measurement error. After those adjustments, the range of effects compatible with the results still included both a modest benefit and none. The advocates call the program effective, while the critics call it ineffective. The evaluation itself is more ______ than either group's summary, even though neither side questions the accuracy of the recorded scores.",
+      "clues": [
+        "range of effects compatible with the results",
+        "included both a modest benefit and none"
       ],
-      why: "Scores rose at half the schools and fell at the other half, and the evaluators say their data fit both a modest benefit and none, so the findings are equivocal: open to more than one interpretation.",
-      trap: "Choosing “incontrovertible,” the advocates' view of the evaluation, instead of a word for what the evaluators themselves report.",
-      hint: "What do the evaluators say their data are consistent with?",
+      "key": "equivocal",
+      "wrong": [
+        [
+          "anomalous",
+          "The dispute concerns which effects fit the data, not whether the pattern departs from an established expectation."
+        ],
+        [
+          "untenable",
+          "Both sides accept the recorded scores; uncertainty about their implication does not make the findings indefensible."
+        ],
+        [
+          "incontrovertible",
+          "The compatible effects include a benefit and none, so the evaluation cannot decisively settle effectiveness."
+        ]
+      ],
+      "why": "The measurements can be accurate while their implication remains ambiguous. Equivocal captures the evaluation's failure to distinguish a benefit from none; the results are neither indefensible nor decisive.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-vessaro-ledger-uprising",
-      text: "The historian Rosa Menezes's claim that Vessaro's merchants financed the uprising of 1791 rests on a single ledger entry recording a payment “for the cause” to an unnamed recipient. Menezes herself concedes that the phrase could refer to a parish fund or a relief society, so the documentary link between the merchants and the uprising remains ______ at best.",
-      clues: ["rests on a single ledger entry", "could refer to a parish fund"],
-      key: "tenuous",
-      wrong: [
-        ["untenable", "“Untenable” would mean the link has been shown to be indefensible, but nothing disproves it; and “at best” introduces the most that can be said for the link, not a word for its collapse."],
-        ["corroborated", "A single entry that may refer to something else confirms nothing; a corroborated link would need independent supporting evidence, which the text says is lacking."],
-        ["circumscribed", "“Circumscribed” describes a claim limited in scope, but the problem here is how thin the evidence is, not how far the claim extends."],
+      "scene": "cs-vessaro-ledger-uprising",
+      "text": "A Vessaro merchant's ledger lists a payment 'for the cause' to a recipient identified only by initials. Historian Rosa Menezes found those initials on an uprising committee's membership list; a parish treasurer active in the same year used them too. Other accounts establish that the merchant paid for charitable work, but none records a political donation. Menezes has therefore not abandoned her proposed link between the merchant and the uprising, although she acknowledges that, compared with his documented charitable ties, it is ______.",
+      "clues": [
+        "a parish treasurer active in the same year used them too",
+        "none records a political donation"
       ],
-      why: "The link rests on one ambiguous entry that Menezes admits could mean something else, so it is tenuous: very weak, though not disproved.",
-      trap: "Choosing “untenable,” which goes further than the text: a thinly supported claim is weak, not refuted.",
-      hint: "How much evidence supports the link, and does anything contradict it?",
+      "key": "tenuous",
+      "wrong": [
+        [
+          "circumscribed",
+          "The issue is the strength of the documentary connection, not the range of a supported claim."
+        ],
+        [
+          "corroborated",
+          "The matching initials also identify a parish treasurer, so they do not independently confirm political support."
+        ],
+        [
+          "untenable",
+          "The political identification remains possible; competing evidence weakens it without disproving it."
+        ]
+      ],
+      "why": "The initials supply some support, but the competing parish identification prevents confirmation. Tenuous describes the weak documentary link without declaring it untenable or merely narrow in scope.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-velt-basin-salt-beds",
-      text: "For much of the twentieth century, textbooks described the salt flats of the Velt Basin as the floor of a single ancient lake that had filled once and then slowly evaporated. That account became ______ when drilling revealed two separate salt beds divided by a thick layer of river gravel, showing that the basin had dried out, flooded again, and dried out a second time.",
-      clues: ["filled once", "two separate salt beds"],
-      key: "untenable",
-      wrong: [
-        ["tenuous", "“Tenuous” would mean the account had become thinly supported, but two salt beds separated by gravel directly contradict a lake that filled only once."],
-        ["provisional", "“Provisional” describes a view accepted for now while more evidence is awaited, but the drilling did not leave the account awaiting review; it contradicted it."],
-        ["corroborated", "Evidence that the basin flooded at least twice contradicts, rather than confirms, a lake that filled once."],
+      "scene": "cs-velt-basin-salt-beds",
+      "text": "The prevailing account of the Velt Basin allowed several fluctuations in an ancient lake's depth but held that the basin remained submerged until its final drying. A newly drilled core contains two salt beds separated by gravel. Gravel alone would not settle the matter, since rivers can deposit it underwater. The layer also contains rooted tree stumps whose growth rings span decades, preserved upright where the trees grew. In light of that combination, the claim of uninterrupted submergence has become ______, even if other parts of the lake's history remain disputed.",
+      "clues": [
+        "rooted tree stumps whose growth rings span decades",
+        "claim of uninterrupted submergence"
       ],
-      why: "An account of a lake that filled only once cannot survive evidence that the basin dried out and flooded again, so it became untenable: impossible to defend.",
-      trap: "Choosing “tenuous,” which understates the problem: the drilling does not merely weaken the single-lake account, it contradicts it.",
-      hint: "Compare what the textbook account says about the lake with what the drilling showed.",
+      "key": "untenable",
+      "wrong": [
+        [
+          "corroborated",
+          "Trees growing in place require exposed land and contradict uninterrupted submergence."
+        ],
+        [
+          "tenuous",
+          "The key evidence directly conflicts with uninterrupted submergence instead of merely leaving it weakly supported."
+        ],
+        [
+          "provisional",
+          "The passage does not retain uninterrupted submergence pending confirmation; the rooted trees contradict it."
+        ]
+      ],
+      "why": "Gravel alone is inconclusive, but trees growing in place require an interval of exposed land. Together the details make uninterrupted submergence untenable, rather than merely provisionally accepted or weakly supported.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-tamsin-bay-marsh-nitrogen",
-      text: "The authors of the Tamsin Bay wetlands study are careful to keep their conclusion ______. They report that restored marshes removed more nitrogen from farm runoff than unrestored ones did, but only in the three coastal counties they sampled and only during the growing season, and they explicitly decline to extend the finding to inland wetlands or to the winter months.",
-      clues: ["only in the three coastal counties", "decline to extend the finding"],
-      key: "circumscribed",
-      wrong: [
-        ["equivocal", "“Equivocal” would mean the conclusion points two ways, but the authors report a clear result; what they limit is where and when it applies."],
-        ["conjectural", "“Conjectural” describes a conclusion resting on guesswork, but this one rests on measurements taken in three counties."],
-        ["expansive", "“Expansive” is the reverse of what the authors do: they refuse to extend the finding beyond the places and season they studied."],
+      "scene": "cs-tamsin-bay-marsh-nitrogen",
+      "text": "The Tamsin Bay team repeated its nitrogen measurements over six growing seasons and obtained nearly identical results: restored marshes removed more nitrogen than unrestored ones. Reviewers consequently treated the measured contrast as secure. The authors nevertheless kept their conclusion ______. Their proposed follow-up did not repeat those measurements; it tested winter runoff and inland wetlands, neither represented in the three coastal counties studied. The team's confidence in the contrast was therefore greater than its willingness to apply that contrast elsewhere.",
+      "clues": [
+        "neither represented in the three coastal counties studied",
+        "willingness to apply that contrast elsewhere"
       ],
-      why: "The authors confine the finding to three counties and one season and refuse to extend it further, so they keep the conclusion circumscribed: restricted in scope.",
-      trap: "Choosing “equivocal” because the authors sound cautious, although their caution concerns the reach of a clear result, not its meaning.",
-      hint: "What do the words “only” and “decline to extend” do to the authors' conclusion?",
+      "key": "circumscribed",
+      "wrong": [
+        [
+          "conjectural",
+          "Six seasons of measurements support the result; the authors restrict its reach rather than offer a guess."
+        ],
+        [
+          "equivocal",
+          "The repeated local contrast is secure; what remains untested is its application to other places and seasons."
+        ],
+        [
+          "expansive",
+          "The authors leave inland wetlands and winter to a follow-up instead of extending their present conclusion."
+        ]
+      ],
+      "why": "Repeated results make the local finding secure, but untested seasons and habitats limit its scope. Circumscribed describes the conclusion's reach, rather than making it conjectural or equivocal.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-orvel-manuscripts-dating",
-      text: "The cataloging committee regards the new dating of the Orvel manuscripts as ______. The dates will guide every entry in the catalog for now, but the committee has scheduled a review for 2027, when results from a second laboratory's radiocarbon tests are expected, and it has told catalogers to keep the older dates in a note beside each entry.",
-      clues: ["for now", "scheduled a review"],
-      key: "provisional",
-      wrong: [
-        ["incontrovertible", "A committee that schedules a review and keeps the older dates on file does not treat the new ones as beyond dispute."],
-        ["circumscribed", "“Circumscribed” would mean the dating applies only within narrow limits, but it guides every entry in the catalog; what is limited is how long it will stand unreviewed."],
-        ["spurious", "“Spurious” would mean the committee thinks the dates are false, but it has adopted them to guide the catalog."],
+      "scene": "cs-orvel-manuscripts-dating",
+      "text": "Two laboratories disagree about the Orvel manuscripts' dates. The cataloging committee has adopted the first laboratory's dates for every manuscript rather than splitting the collection between incompatible chronologies. Yet each entry retains the older date in a note, and the committee has reserved funds to revise the whole catalog after new tests. Its treatment of the adopted chronology is therefore ______: applying it consistently does not mean the committee has settled the dispute that prompted the further tests.",
+      "clues": [
+        "reserved funds to revise the whole catalog",
+        "applying it consistently does not mean"
       ],
-      why: "The committee uses the new dates for now while planning a review and keeping the old dates at hand, so it regards them as provisional: accepted until they can be confirmed.",
-      trap: "Choosing “circumscribed,” which mistakes a limit on how long the dating is trusted for a limit on how widely it applies.",
-      hint: "What has the committee arranged for 2027, and why keep the older dates?",
+      "key": "provisional",
+      "wrong": [
+        [
+          "spurious",
+          "The committee uses the dates as its working chronology, rather than treating them as false."
+        ],
+        [
+          "incontrovertible",
+          "Planned tests and revision show that the dispute remains open."
+        ],
+        [
+          "circumscribed",
+          "The dates apply to every manuscript; the qualification concerns their temporary status, not restricted scope."
+        ]
+      ],
+      "why": "The chronology currently governs all entries, but the planned revision keeps its status temporary. Provisional concerns that status; circumscribed would confuse temporal caution with a restriction to part of the collection.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-danza-portrait",
-      text: "No portrait of the composer Aurelio Danza survives from his lifetime, and none of his contemporaries left a description of his appearance. The familiar image of him, stooped and bearded with a quill in hand, derives from a painting made seventy years after his death, and the painter's depiction, however affecting, is entirely ______.",
-      clues: ["No portrait", "none of his contemporaries left a description"],
-      key: "conjectural",
-      wrong: [
-        ["anachronistic", "“Anachronistic” would mean the image contains details out of their proper period, but the text faults the painting for resting on no evidence; being painted later does not make an image anachronistic."],
-        ["corroborated", "No contemporary described Danza's appearance, so nothing could confirm the painter's depiction."],
-        ["equivocal", "“Equivocal” means open to two readings, but the image itself is perfectly clear; the problem is that nothing supports it."],
+      "scene": "cs-danza-portrait",
+      "text": "The familiar portrait of Aurelio Danza was painted seventy years after the composer's death. Its quill, clothing, and furniture agree with securely dated objects from his lifetime, and conservators found no alterations. None of those correspondences, however, supplies evidence about the face: no lifetime portrait or description of Danza's appearance survives, and the painter left no record of another source. The painting can thus be historically careful in its setting while remaining ______ in its portrayal of Danza himself.",
+      "clues": [
+        "no lifetime portrait or description",
+        "historically careful in its setting"
       ],
-      why: "With no portrait and no description to work from, the painter could only imagine Danza's appearance, so the depiction is conjectural: based on guesswork.",
-      trap: "Choosing “anachronistic” because the painting came seventy years later, although the text's point is that it rests on no evidence at all.",
-      hint: "What evidence of Danza's appearance could the painter have drawn on?",
+      "key": "conjectural",
+      "wrong": [
+        [
+          "equivocal",
+          "The problem is lack of evidence for the likeness, not evidence supporting competing interpretations."
+        ],
+        [
+          "corroborated",
+          "Matching period objects verifies the setting but supplies no independent support for the face."
+        ],
+        [
+          "anachronistic",
+          "The setting matches objects from Danza's lifetime; a later painting need not contain out-of-period details."
+        ]
+      ],
+      "why": "Accurate period objects establish the setting, not Danza's appearance. Conjectural identifies the unsupported likeness; anachronistic would incorrectly fault the period details.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-tarn-highway-growth",
-      text: "At first glance, the argument that a new highway caused the Tarn Valley's population boom seems persuasive, since towns along the route grew by a third in the decade after it opened. The argument is ______, however: towns in the neighboring valley, which the highway never reached, grew just as quickly over the same decade, and residents of both valleys cite the same reason for moving there, an expanding mining industry.",
-      clues: ["seems persuasive", "grew just as quickly"],
-      key: "specious",
-      wrong: [
-        ["incontrovertible", "The argument seems beyond dispute only “at first glance”; “however” introduces evidence that undercuts it."],
-        ["equivocal", "“Equivocal” would mean the argument is ambiguous, but it is clear enough; the neighboring valley's equal growth shows that it is wrong."],
-        ["circumscribed", "“Circumscribed” would mean the argument is limited in scope, but the problem is that its explanation fails, not that it covers too little."],
+      "scene": "cs-tarn-highway-growth",
+      "text": "A report credits the Tarn Valley's new highway with its entire population increase, citing rapid growth after the road opened. Towns in an adjacent valley beyond the route grew equally fast, and households in both valleys named the same expanding mine as their reason for moving. The highway may still have affected where individual families settled. Nevertheless, treating the timing of Tarn's growth as sufficient evidence for the report's exclusive causal claim is ______: the neighboring valley supplies a competing explanation that the report never addresses.",
+      "clues": [
+        "entire population increase",
+        "competing explanation that the report never addresses"
       ],
-      why: "The argument looks persuasive but fails once the neighboring valley's equal growth and the shared mining cause are considered, so it is specious: plausible on the surface but wrong.",
-      trap: "Choosing “incontrovertible,” the impression the argument makes at first glance, rather than what the evidence after “however” shows.",
-      hint: "How does the argument seem at first, and what does the evidence after “however” show?",
+      "key": "specious",
+      "wrong": [
+        [
+          "equivocal",
+          "The report's exclusive claim is clear, not ambiguous; its apparent proof overlooks a competing explanation."
+        ],
+        [
+          "incontrovertible",
+          "The neighboring valley's growth directly challenges the report's claim to have isolated the cause."
+        ],
+        [
+          "circumscribed",
+          "The report claims the entire increase, whereas the narrower claim about settlement locations is explicitly distinguished from it."
+        ]
+      ],
+      "why": "The tempting timing argument omits an evident competing cause. Specious describes that misleading argument, not proof that the highway had no effect; the text explicitly preserves a possible narrower role.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-skerra-head-whirlpool",
-      text: "Sailors' accounts from the 1850s describe a whirlpool that formed off Skerra Head only during the strongest spring tides, but historians long dismissed the reports as folklore. The accounts have since been ______ by computer models of the local tides, which show that currents at the headland reach whirlpool-forming speeds only under exactly the conditions the sailors described.",
-      clues: ["only during the strongest spring tides", "exactly the conditions the sailors described"],
-      key: "corroborated",
-      wrong: [
-        ["superseded", "“Superseded” would mean the models replaced the accounts with something better, but the models agree with the sailors; they confirm the accounts rather than displace them."],
-        ["circumscribed", "The models do not narrow the accounts: the sailors already said the whirlpool formed only on the strongest spring tides, and the models match that condition exactly."],
-        ["impugned", "“Impugned” would mean the models called the accounts into question, the reverse of what they did."],
+      "scene": "cs-skerra-head-whirlpool",
+      "text": "Sailors described a whirlpool off Skerra Head during the strongest spring tides, but their explanation invoked a submerged sea creature. Historians dismissed both the explanation and the reported event. A recent tidal model, developed without using those accounts as inputs, produces rotating currents at the headland only under the tidal conditions the sailors recorded. The sailors' account of when the whirlpool occurred has therefore been ______, although the creature has found no place in the model and the historical explanation remains rejected.",
+      "clues": [
+        "developed without using those accounts as inputs",
+        "only under the tidal conditions the sailors recorded"
       ],
-      why: "Tidal models independently match the conditions the sailors reported, so the accounts have been corroborated: confirmed by separate evidence.",
-      trap: "Choosing “circumscribed” because the models apply “only under exactly the conditions,” although those were the sailors' own conditions.",
-      hint: "Compare what the models show with what the sailors reported.",
+      "key": "corroborated",
+      "wrong": [
+        [
+          "superseded",
+          "A replacement explanation does not replace the timing account, which the model supports."
+        ],
+        [
+          "circumscribed",
+          "The model reproduces the sailors' timing condition instead of restricting it to a smaller set of tides."
+        ],
+        [
+          "impugned",
+          "The sea-creature explanation is rejected, but the blank specifically asks about the observed timing, which is supported."
+        ]
+      ],
+      "why": "The independent model supports the timing of the event, not the sailors' explanation for it. Corroborated identifies that support; the accurate observation has not been superseded merely because its explanation was rejected.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-treaty-drafts-river-clause",
-      text: "The two surviving drafts of the treaty differ in dozens of small ways, including spelling, punctuation, and the order in which the witnesses' names appear. For historians trying to explain why the negotiations collapsed, however, only one difference is ______: the later draft omits the clause guaranteeing each side access to the river, the very issue over which the talks broke down.",
-      clues: ["dozens of small ways", "the very issue over which the talks broke down"],
-      key: "salient",
-      wrong: [
-        ["peripheral", "“Peripheral” describes the dozens of small differences; the omitted river clause is the one that bears directly on why the talks failed."],
-        ["spurious", "“Spurious” would mean the difference is not genuine, but the later draft really does omit the clause."],
-        ["tacit", "“Tacit” means understood without being stated, but the missing clause is a documented difference between the drafts, not an unspoken understanding."],
+      "scene": "cs-treaty-drafts-river-clause",
+      "text": "Two drafts of the Asvel treaty differ in spelling, punctuation, and the order of witnesses. A clause granting access to the river appears in one draft but not the other. Earlier scholars cataloged all these differences without ranking them. Newly opened negotiating minutes show that both delegations had accepted the wording of every provision except river access before talks failed. For explaining that failure, the omitted clause is therefore especially ______, even though it occupies less space than several differences the catalog records first.",
+      "clues": [
+        "every provision except river access",
+        "For explaining that failure"
       ],
-      why: "Among many trivial differences, only the missing river clause bears on why the talks collapsed, so it is the salient one: the difference that stands out as relevant.",
-      trap: "Choosing “tacit” because the clause is missing, which confuses an omission from a document with something understood without being said.",
-      hint: "Which difference matters for explaining the collapse, and how does it compare with the others?",
+      "key": "salient",
+      "wrong": [
+        [
+          "peripheral",
+          "The minutes identify river access as the sole unresolved issue, so the small omission is central to explaining failure."
+        ],
+        [
+          "spurious",
+          "The omission appears in the surviving drafts; the new minutes establish its significance rather than its falsity."
+        ],
+        [
+          "tacit",
+          "The blank describes a documented difference in written clauses, not an understanding left unspoken."
+        ]
+      ],
+      "why": "The negotiating minutes connect the small omission to the unresolved issue. Salient identifies explanatory relevance, which neither the size nor the catalog order of a difference determines.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-pellan-wreck-jars",
-      text: "Scholars had long debated whether the ceramic workshop at Pellan sold its wares overseas. The question was settled in 2021, when divers recovered more than four hundred jars bearing the workshop's stamp from a wreck off a distant island, still sealed in the ship's hold beneath cargo labels naming Pellan as their port of origin. The evidence that Pellan's jars traveled overseas is now ______.",
-      clues: ["The question was settled", "bearing the workshop's stamp"],
-      key: "incontrovertible",
-      wrong: [
-        ["tenuous", "Four hundred stamped jars under labels naming Pellan are the reverse of thin evidence."],
-        ["equivocal", "The stamps and labels leave no room for two readings; the text says the question was settled."],
-        ["specious", "“Specious” would mean the evidence only seems convincing, but nothing in the text undercuts it; the question was settled."],
+      "scene": "cs-pellan-wreck-jars",
+      "text": "Excavators at Pellan found little local clay in jars bearing the town's workshop stamp, prompting doubts that those workshops had manufactured the vessels. A wreck far offshore later yielded four hundred jars with the same stamp; their sealed cargo labels identify both the Pellan workshop that dispatched them and the island buyer. Whether the workshops imported unfinished jars is unresolved. The narrower claim that jars were shipped overseas from Pellan, however, now rests on ______ evidence, even if the route by which they first reached Pellan remains uncertain.",
+      "clues": [
+        "identify both the Pellan workshop that dispatched them and the island buyer",
+        "route by which they first reached Pellan"
       ],
-      why: "Stamped jars and labels naming Pellan, found in a distant wreck, settled a long debate, so the evidence is incontrovertible: impossible to dispute.",
-      trap: "Choosing “specious,” which sounds like a verdict on evidence but means convincing only on the surface.",
-      hint: "What happened to the scholars' long debate in 2021?",
+      "key": "incontrovertible",
+      "wrong": [
+        [
+          "specious",
+          "The manufacturing uncertainty does not undercut the labels and offshore location establishing shipment."
+        ],
+        [
+          "equivocal",
+          "The cargo labels identify dispatch and destination directly; the ambiguity concerns where the jars were made."
+        ],
+        [
+          "tenuous",
+          "The claim about shipment has both documentary and physical support, unlike the unresolved manufacturing question."
+        ]
+      ],
+      "why": "The local-clay puzzle leaves manufacturing unresolved, but dispatch labels and an offshore cargo directly establish overseas shipment. The evidence for that narrower claim is incontrovertible; uncertainty about manufacturing does not weaken it.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-brenholt-weekend-admissions",
-      text: "Early analyses of records from Brenholt's hospitals found that patients admitted on weekends died at higher rates than patients admitted on weekdays, and some administrators blamed thinner weekend staffing. A later study showed the association to be ______: weekend patients were, on average, far sicker when they arrived, and once the severity of their illness was taken into account, the difference in death rates disappeared entirely.",
-      clues: ["far sicker when they arrived", "disappeared entirely"],
-      key: "spurious",
-      wrong: [
-        ["tenuous", "“Tenuous” would leave a weak but real link between weekend admission and death, but the difference disappeared entirely once severity was considered."],
-        ["salient", "“Salient” would mean the association stood out as important, but the later study showed it was not a real effect of weekend admission at all."],
-        ["circumscribed", "“Circumscribed” would mean the association held only in a limited set of cases, but it vanished altogether."],
+      "scene": "cs-brenholt-weekend-admissions",
+      "text": "Brenholt's hospital records accurately showed higher mortality among weekend admissions, although physicians disagreed about what the figures meant. Administrators attributed the excess to weekend staffing. Patients arriving on weekends were also substantially sicker. When researchers compared equally ill patients receiving the same treatments, mortality was indistinguishable across admission days. Thus the report treated the apparent independent association between admission day and mortality as ______, without disputing either the original counts or the possibility that staffing mattered in other ways.",
+      "clues": [
+        "compared equally ill patients",
+        "mortality was indistinguishable"
       ],
-      why: "The apparent weekend effect vanished once the patients' condition on arrival was considered, so the association was spurious: apparent but not genuine.",
-      trap: "Choosing “tenuous,” which implies a real but weak link, when the text says the difference disappeared entirely.",
-      hint: "What happened to the difference once the patients' severity was taken into account?",
+      "key": "spurious",
+      "wrong": [
+        [
+          "circumscribed",
+          "The adjusted association is not confined to a stated subgroup; it disappears in the comparisons described."
+        ],
+        [
+          "tenuous",
+          "This would describe a weakly supported link, whereas the adjusted comparisons show no link at all; the raw difference is a different claim."
+        ],
+        [
+          "salient",
+          "The original counts attracted attention, but the blank evaluates the independent association after illness severity is accounted for."
+        ]
+      ],
+      "why": "The raw counts remain accurate, but adjustment removes the apparent independent link between admission day and death. That independent association is spurious, rather than a genuine association merely weakened or limited to some patients.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-kettle-hills-tree-rings",
-      text: "Tree-ring records from the Kettle Hills show a narrow ring, the mark of a dry year, in roughly one year of every eight across four centuries. The rings for 1740 through 1747, however, are ______: eight narrow rings in a row, a run that appears nowhere else in the record and that the researchers attribute to a prolonged drought.",
-      clues: ["one year of every eight", "appears nowhere else in the record"],
-      key: "anomalous",
-      wrong: [
-        ["spurious", "“Spurious” would mean the narrow rings are not genuine evidence, but the researchers read them as the record of a real drought."],
-        ["equivocal", "Eight narrow rings in a row point clearly to dry years; the text reports no competing reading of them."],
-        ["emblematic", "“Emblematic” would make the run typical of the record, but it appears nowhere else."],
+      "scene": "cs-kettle-hills-tree-rings",
+      "text": "In the moisture-sensitive pines of the Kettle Hills, narrow rings generally occur about once every eight years. Every ring from 1740 through 1747 is narrow, and the same sequence appears in wood from three separate valleys. Replication has persuaded researchers that the sequence records a regional drought rather than damaged samples. Relative to the four-century record surrounding it, however, this well-attested sequence remains ______: no other interval contains more than three successive narrow rings.",
+      "clues": [
+        "same sequence appears in wood from three separate valleys",
+        "no other interval contains more than three"
       ],
-      why: "Narrow rings normally appear about once in eight years, but here eight appear in a row, a run found nowhere else, so these rings are anomalous: departing from the usual pattern.",
-      trap: "Choosing “emblematic,” which would make the unusual run typical of the whole record.",
-      hint: "How does this run compare with the pattern across the rest of the four centuries?",
+      "key": "anomalous",
+      "wrong": [
+        [
+          "spurious",
+          "Independent samples establish that the sequence is genuine; it is its rarity within the record that needs describing."
+        ],
+        [
+          "equivocal",
+          "The replicated sequence is interpreted as drought, and the contrast with other intervals establishes an unusual pattern, not ambiguous evidence."
+        ],
+        [
+          "emblematic",
+          "No other interval contains more than three narrow rings, so this eight-ring sequence does not typify the record."
+        ]
+      ],
+      "why": "Independent samples establish that the sequence is real, while the longer record establishes that it is exceptional. Anomalous describes its departure from the background pattern without calling the evidence spurious.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
   ];
 
@@ -1812,7 +1968,7 @@
     title: "Advanced word for how well a claim or body of evidence stands",
     recognize:
       "The blank names the standing of a claim or body of evidence; the advanced choices differ in dimension (strength, certainty, scope, genuineness, relevance) and in degree, and the details settle exactly one.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["extreme-language", "opposite-stance", "word-association"],
     build(t) {
       const topic = t.pick(WIC_EVALUATION_TOPICS);
@@ -1850,312 +2006,576 @@
 
   const WIC_STANCE_TOPICS = [
     {
-      scene: "cs-irrin-ridge-furnace",
-      text: "Although her excavation at Irrin Ridge uncovered what may be the oldest glass furnace yet found, the archaeologist Hana Ruiz was notably ______ in announcing it. Her report dates the furnace only to “no later than” the ninth century BCE, describes two ways in which the soil layers above it might have been disturbed, and declines to call the furnace the oldest until a second site has been analyzed.",
-      clues: ["describes two ways", "declines to call the furnace the oldest"],
-      key: "circumspect",
-      wrong: [
-        ["sanguine", "A sanguine archaeologist would confidently expect her find to prove the oldest, but Ruiz declines to make that claim."],
-        ["cursory", "“Cursory” means hasty and superficial, but a report that details possible disturbances to the soil is careful, not hurried."],
-        ["tendentious", "A tendentious report would slant the evidence toward a favored conclusion, but Ruiz's report sets out the ways her own find might mislead."],
+      "scene": "cs-irrin-ridge-furnace",
+      "text": "The Irrin Ridge furnace would become the oldest known glass furnace if Hana Ruiz's preferred dating is confirmed. Her public announcement itemizes the evidence for that date as confidently as it lists two disturbances that might have mixed the soil layers. The press office called the discovery decisive; Ruiz withheld that description pending analysis of a second site, while insisting that her own measurements were accurate. Her stance toward the priority claim, rather than toward the quality of those measurements, is best described as ______.",
+      "clues": [
+        "withheld that description pending analysis",
+        "rather than toward the quality"
       ],
-      why: "Ruiz dates the furnace cautiously, sets out how the evidence might mislead, and withholds the claim that it is the oldest, so she was circumspect: careful not to claim more than the evidence allows.",
-      trap: "Choosing “sanguine” because the find may be the oldest yet found, although Ruiz refuses to claim that it is.",
-      hint: "What does Ruiz's report do with the claim that her furnace is the oldest?",
+      "key": "circumspect",
+      "wrong": [
+        [
+          "diffident",
+          "Ruiz defends her measurements confidently; her restraint concerns the conclusion they warrant, not her competence."
+        ],
+        [
+          "reticent",
+          "She publicly itemizes both supporting and adverse evidence; she is not reluctant to discuss the claim."
+        ],
+        [
+          "tendentious",
+          "She includes disturbances that could undermine her preferred date instead of suppressing them."
+        ]
+      ],
+      "why": "Ruiz distinguishes sound measurements from a still-vulnerable priority claim and openly weighs objections. Circumspect names this deliberate caution, rather than self-doubt, silence, or partisan slant.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-callowmere-railway-report",
-      text: "Commissioned by the railway company whose safety record it was meant to assess, the 1887 Callowmere report is plainly ______. It attributes every accident to the carelessness of passengers, omits the inspectors' warnings about worn rails that appear in the company's own files, and closes by recommending that the company's charter be renewed.",
-      clues: ["Commissioned by the railway company", "recommending that the company's charter be renewed"],
-      key: "tendentious",
-      wrong: [
-        ["cursory", "A hasty report might miss evidence, but this one leaves out warnings from the company's own files and always blames passengers, a consistent slant rather than mere haste."],
-        ["dispassionate", "A report that blames only passengers and recommends renewing its sponsor's charter takes a side; it is not impartial."],
-        ["exhaustive", "A report that omits the inspectors' warnings is not complete."],
+      "scene": "cs-callowmere-railway-report",
+      "text": "The Callowmere railway report prints inspectors' warnings, accident totals, and testimony from injured passengers. Its sponsor advertises that completeness as proof of neutrality. In the analysis, however, every warning is discounted on a different convenient ground, every collision is attributed to passengers, and no adverse evidence is permitted to affect the recommendation to renew the company's charter. The report's reasoning is ______ even if its appendices are comprehensive: the selection operates among interpretations rather than among documents.",
+      "clues": [
+        "no adverse evidence is permitted to affect",
+        "selection operates among interpretations"
       ],
-      why: "Paid for by the company it judged, the report blames passengers, leaves out unfavorable warnings, and recommends renewal, so it is tendentious: written to promote one side.",
-      trap: "Choosing “cursory,” which explains the missing warnings as haste and ignores that every omission favors the company.",
-      hint: "Whose interests do all of the report's choices serve?",
+      "key": "tendentious",
+      "wrong": [
+        [
+          "exhaustive",
+          "Comprehensive appendices concern documentary coverage; the blank targets reasoning that discounts adverse evidence."
+        ],
+        [
+          "dispassionate",
+          "Adverse evidence is systematically denied any influence over the recommendation, which defeats neutrality."
+        ],
+        [
+          "cursory",
+          "The report considers documents at length but always dismisses adverse implications; consistent slant, not superficiality, is the problem."
+        ]
+      ],
+      "why": "Tendentious names reasoning systematically slanted toward the sponsor. Complete appendices do not make its interpretation dispassionate; the repeated pattern also goes beyond merely cursory work.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-ostrander-banners-catalog",
-      text: "The museum's exhibition catalog devotes forty pages to the Ostrander tapestries but only a single paragraph to the twelve embroidered banners displayed beside them, and that paragraph lists the banners' dimensions without discussing their makers, their imagery, or how the museum acquired them. Reviewers have rightly called the catalog's treatment of the banners ______.",
-      clues: ["only a single paragraph", "lists the banners' dimensions"],
-      key: "cursory",
-      wrong: [
-        ["tendentious", "“Tendentious” would mean the catalog argues a slanted case about the banners, but it says almost nothing about them at all."],
-        ["meticulous", "Forty careful pages go to the tapestries; the banners get one paragraph of measurements, the reverse of meticulous treatment."],
-        ["derivative", "“Derivative” would mean the paragraph was copied from someone else's work, which the text never suggests."],
+      "scene": "cs-ostrander-banners-catalog",
+      "text": "The exhibition catalog devotes forty pages to the Ostrander tapestries and one paragraph to the twelve banners beside them. Reviewers did not object merely to unequal space: the short paragraph gives accurate dimensions but omits the banners' makers, imagery, and acquisition history, although all three are documented in the museum's files. The treatment of the banners is consequently ______. Its economy would have been defensible had it distilled that information instead of passing over it.",
+      "clues": [
+        "although all three are documented",
+        "distilled that information instead of passing over it"
       ],
-      why: "Twelve banners receive one paragraph of dimensions and nothing about their makers, imagery, or history, so the treatment is cursory: hasty and superficial.",
-      trap: "Choosing “meticulous,” which describes the catalog's treatment of the tapestries, not of the banners.",
-      hint: "How much attention does the catalog give the banners compared with the tapestries?",
+      "key": "cursory",
+      "wrong": [
+        [
+          "laconic",
+          "Brief expression could convey the essential information; the objection here is that essential available information is omitted."
+        ],
+        [
+          "tendentious",
+          "The omissions make the treatment superficial, but the passage identifies no favored cause or interpretation toward which it is slanted."
+        ],
+        [
+          "meticulous",
+          "Accurate dimensions do not compensate for overlooking all three central documented subjects."
+        ]
+      ],
+      "why": "Cursory describes superficial treatment, not brevity alone. The final distinction between distilling and omitting information rules out the merely stylistic laconic.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-baltic-rye-prices",
-      text: "Petra Holmqvist's history of Baltic grain prices is nothing if not ______. Drawing on the account books of more than three hundred merchant houses, it records the price of rye at every major port in the region for each month from 1650 to 1800, and it devotes a full appendix to reconciling the eleven different units in which merchants measured grain.",
-      clues: ["more than three hundred merchant houses", "every major port"],
-      key: "exhaustive",
-      wrong: [
-        ["cursory", "Monthly prices at every port over 150 years, drawn from three hundred merchant houses, are the reverse of a hasty survey."],
-        ["idiosyncratic", "“Idiosyncratic” would mean the study follows peculiar methods of the author's own, but the text stresses its completeness, not its oddity."],
-        ["circumscribed", "The study's subject is specific, but every detail stresses how completely it covers that subject; “circumscribed” would stress its limits."],
+      "scene": "cs-baltic-rye-prices",
+      "text": "Petra Holmqvist's study excludes wheat, barley, and ports outside the Baltic, restrictions its introduction defends at length. Within the announced subject of Baltic rye prices, however, its coverage is ______: no major port or month between 1650 and 1800 is omitted, and an appendix reconciles all eleven measures found in the records. One reviewer objects to the choice of subject while conceding that the book leaves no gap inside it. The two judgments concern different aspects of the same book.",
+      "clues": [
+        "no major port or month",
+        "Within the announced subject"
       ],
-      why: "Every port, every month, three hundred sources, and an appendix on units: the study is exhaustive, covering its subject completely.",
-      trap: "Choosing “circumscribed” because the study concerns one region's grain, although every detail in the text stresses completeness, not limits.",
-      hint: "What do the details after “nothing if not” emphasize about the study?",
+      "key": "exhaustive",
+      "wrong": [
+        [
+          "circumscribed",
+          "The topic is restricted, but the blank describes the completeness of coverage within it."
+        ],
+        [
+          "cursory",
+          "Every major port and month is represented, with measures reconciled, rather than treated superficially."
+        ],
+        [
+          "idiosyncratic",
+          "The text establishes systematic completeness, not peculiar personal rules."
+        ]
+      ],
+      "why": "Exhaustive concerns completeness within a defined subject. Circumscribed fits the boundaries of that subject, but the blank explicitly targets how fully its contents are covered.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-heyer-diary-spelling",
-      text: "The eighteenth-century diarist Tomas Heyer spelled by rules that no one else followed: he wrote “night” as “nite” but “light” as “lyght,” and he marked the days of the week with symbols of his own devising. Scholars transcribing the diary must therefore master Heyer's ______ system of notation before they can reliably date its entries.",
-      clues: ["rules that no one else followed", "symbols of his own devising"],
-      key: "idiosyncratic",
-      wrong: [
-        ["archaic", "Spellings such as “lyght” look old-fashioned, but the text's point is that the rules were Heyer's alone, not that they belonged to an earlier age."],
-        ["derivative", "A system that no one else followed was not copied from others."],
-        ["rudimentary", "Nothing suggests the system is crude or undeveloped; the difficulty is that it is peculiar to Heyer."],
+      "scene": "cs-heyer-diary-spelling",
+      "text": "Transcribers first assumed that Tomas Heyer's unfamiliar spellings belonged to his century. Contemporary dictionaries and neighbors' letters, however, use none of his combinations: 'nite' sits beside 'lyght,' and weekday symbols recur nowhere outside his notebooks. Those symbols form a consistent, elaborate system that specialists can learn. The difficulty is thus not simply that Heyer's notation is old or undeveloped, but that it is ______; familiarity with ordinary period usage does not supply its rules.",
+      "clues": [
+        "recur nowhere outside his notebooks",
+        "consistent, elaborate system"
       ],
-      why: "Heyer followed rules no one else used and invented his own symbols, so his system is idiosyncratic: peculiar to one person.",
-      trap: "Choosing “archaic” because of spellings like “lyght,” which look old but are singled out as Heyer's own.",
-      hint: "Whose rules did Heyer's spelling follow?",
+      "key": "idiosyncratic",
+      "wrong": [
+        [
+          "rudimentary",
+          "The symbols form an elaborate system, not a basic undeveloped one."
+        ],
+        [
+          "derivative",
+          "No corresponding rules were found in contemporary sources from which he might have borrowed."
+        ],
+        [
+          "archaic",
+          "Ordinary writing from the same century does not share his system, so age does not account for its peculiarities."
+        ]
+      ],
+      "why": "The system is elaborate, so not rudimentary, and differs from contemporary usage, so age alone does not explain it. Idiosyncratic identifies rules peculiar to Heyer rather than a standard inherited convention.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-tirel-letters-novel",
-      text: "Critics have long praised Anselm Tirel's 1932 novel for its inventive structure: the story is told entirely in letters that are never answered. A recently rediscovered novel by Tirel's teacher, published eleven years earlier, uses the same device, follows a closely similar plot, and even shares the names of two characters, leading some scholars to conclude that Tirel's celebrated book is more ______ than it first appeared.",
-      clues: ["published eleven years earlier", "uses the same device"],
-      key: "derivative",
-      wrong: [
-        ["idiosyncratic", "“Idiosyncratic” would make the novel more individual, more peculiar to Tirel, the reverse of what the teacher's earlier book reveals."],
-        ["tendentious", "“Tendentious” describes writing slanted toward a cause, but nothing suggests the novel argues for anything; the discovery concerns where its device came from."],
-        ["polemical", "“Polemical” describes an aggressive attack on opponents, which has no bearing on a borrowed structure and plot."],
+      "scene": "cs-tirel-letters-novel",
+      "text": "Anselm Tirel's novel is often praised for never answering any of the letters through which its story unfolds. His teacher's earlier novel uses that device, follows the same sequence of misunderstandings, and names two characters identically. Tirel's defenders note that his ending is different and that his prose is recognizably his own. The discovery nevertheless makes the book's celebrated narrative design appear more ______; originality at the level of sentences does not explain the correspondences at the level in question.",
+      "clues": [
+        "same sequence of misunderstandings",
+        "celebrated narrative design"
       ],
-      why: "The teacher's earlier novel has the same device, a similar plot, and shared names, so Tirel's book is more derivative, drawn from another's work, than it seemed.",
-      trap: "Choosing “idiosyncratic,” which fits the novel's reputation for inventiveness but not the evidence that its structure was borrowed.",
-      hint: "What does the teacher's earlier novel reveal about where Tirel's device came from?",
+      "key": "derivative",
+      "wrong": [
+        [
+          "polemical",
+          "The discovery concerns dependence on a predecessor, not combative argument."
+        ],
+        [
+          "idiosyncratic",
+          "His prose may be distinctive, but the targeted design closely matches the teacher's work."
+        ],
+        [
+          "tendentious",
+          "The similarities concern narrative design, not an argument slanted to promote a cause."
+        ]
+      ],
+      "why": "Derivative describes the design's dependence on an earlier model. Distinctive prose and a new ending do not eliminate that dependence; the passage distinguishes design from sentence-level individuality.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-carvenne-currency-reform",
-      text: "Most economists who studied Carvenne's 1993 currency reform expected it to collapse within a year. The reform's chief architect, Ilse Maren, was far more ______: in a memorandum to the cabinet she predicted that inflation would fall below 5 percent within eighteen months, and she offered to resign if it did not.",
-      clues: ["expected it to collapse", "offered to resign if it did not"],
-      key: "sanguine",
-      wrong: [
-        ["circumspect", "A circumspect official would hedge her forecast, but Maren staked her post on a precise prediction."],
-        ["ambivalent", "“Ambivalent” means torn between opposing views, but Maren's memorandum shows no doubt about the reform."],
-        ["diffident", "“Diffident” means lacking self-confidence, the reverse of an official who offers to resign if her forecast fails."],
+      "scene": "cs-carvenne-currency-reform",
+      "text": "Ilse Maren's memorandum on Carvenne's currency reform lists the same possible failures as the economists who predict its collapse. She also proposes a reserve fund in case several occur together. Asked why she still backed the reform, she pointed to earlier recoveries and forecast falling inflation even under the less favorable projections. The reserve reflects caution about consequences; her judgment of the reform's prospects nevertheless remains ______, in contrast with the pessimism of colleagues who accept the same risk estimates.",
+      "clues": [
+        "forecast falling inflation even under the less favorable projections",
+        "judgment of the reform's prospects"
       ],
-      why: "Unlike the pessimistic economists, Maren confidently predicted success and bet her post on it, so she was sanguine: optimistic.",
-      trap: "Choosing “circumspect,” a word for careful judgment, although Maren's bold, precise forecast is anything but hedged.",
-      hint: "How does Maren's forecast compare with the economists' expectations?",
+      "key": "sanguine",
+      "wrong": [
+        [
+          "diffident",
+          "Maren backs the reform and offers a positive forecast, rather than doubting her own judgment."
+        ],
+        [
+          "ambivalent",
+          "Recognizing risks is compatible with her clear expectation of success; she is not torn between opposing judgments."
+        ],
+        [
+          "circumspect",
+          "The reserve fund is cautious, but the blank concerns her favorable forecast even under adverse projections."
+        ]
+      ],
+      "why": "The contingency fund is cautious, but the blank targets her expectation of success even under adverse conditions. Sanguine captures that optimism without denying her preparation for risk.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-poet-city-letters",
-      text: "The poet's letters reveal a deeply ______ attitude toward the city where she spent her last thirty years. She praised its libraries and concert halls as the finest she had ever known, yet in the same letters she described its streets as “a noise I cannot think through” and repeatedly made, and then canceled, plans to leave.",
-      clues: ["praised its libraries", "then canceled, plans to leave"],
-      key: "ambivalent",
-      wrong: [
-        ["sanguine", "Her praise of the libraries is warm, but the complaints about the noise and her plans to leave show she was not simply hopeful about the city."],
-        ["polemical", "“Polemical” describes an aggressive argument against opponents, but these are private letters expressing mixed feelings, not an attack."],
-        ["reticent", "Letters full of praise, complaint, and plans to leave are the reverse of reluctant to reveal feelings."],
+      "scene": "cs-poet-city-letters",
+      "text": "In the same letters, a poet celebrates her city's libraries and describes its noise as intolerable. These are not successive stages from disillusionment to enthusiasm: praise and complaint persist across thirty years. Nor do her canceled departures simply reflect financial constraints; she could afford to move and repeatedly chose to remain, only to plan another departure. Her attachment to the city is ______, even in the letters in which her plans for the following year are most definite.",
+      "clues": [
+        "praise and complaint persist",
+        "canceled departures"
       ],
-      why: "She praised the city and complained about it in the same letters, and she kept planning and canceling her departure, so her attitude was ambivalent: torn between opposing feelings.",
-      trap: "Choosing “sanguine” from her praise of the libraries while ignoring the complaints in the same letters.",
-      hint: "What did she keep doing with her plans to leave?",
+      "key": "ambivalent",
+      "wrong": [
+        [
+          "reticent",
+          "Her letters repeatedly express both praise and complaint in detail rather than keeping feelings private."
+        ],
+        [
+          "sanguine",
+          "Praise for the libraries does not erase persistent aversion to the noise or repeated plans to leave."
+        ],
+        [
+          "polemical",
+          "The private letters express opposing feelings, rather than mounting an aggressive argument against opponents."
+        ]
+      ],
+      "why": "Ambivalent describes simultaneous attraction and aversion. Her detailed expression of both feelings rules out reticence, while selecting only the praise or complaint would miss the sustained conflict.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-obiora-repatriation-essay",
-      text: "Unlike her earlier, measured surveys of the field, Dana Obiora's 2018 essay on returning museum objects to their countries of origin is frankly ______. It names the museum directors she holds responsible for delays, dismisses their public statements as “evasions,” and urges donors to withhold funds until the disputed objects are returned.",
-      clues: ["Unlike her earlier, measured surveys", "urges donors to withhold funds"],
-      key: "polemical",
-      wrong: [
-        ["dispassionate", "“Dispassionate” describes her earlier, measured surveys, which “Unlike” sets against this essay."],
-        ["equivocal", "An essay that names those responsible and urges donors to act takes a clear position; it is not ambiguous."],
-        ["perfunctory", "“Perfunctory” means done with minimal effort or interest, but the essay is forceful and specific."],
+      "scene": "cs-obiora-repatriation-essay",
+      "text": "Dana Obiora's essay carefully distinguishes uncertain provenance from documented theft and reproduces evidence favorable to museums as fully as evidence against them. Its argumentative manner, however, is unmistakably ______. Obiora addresses named directors as opponents, quotes their statements in order to attack their reasoning, and asks donors to put pressure on them. A reviewer who praised the essay's evidentiary fairness nevertheless warned readers not to mistake that fairness for neutrality in the dispute.",
+      "clues": [
+        "addresses named directors as opponents",
+        "evidentiary fairness"
       ],
-      why: "The essay attacks named directors, dismisses their statements, and calls for pressure on them, so it is polemical: a forceful argument against opponents.",
-      trap: "Choosing “dispassionate,” the quality of her earlier work that “Unlike” sets this essay against.",
-      hint: "What does “Unlike” tell you about how this essay differs from her earlier work?",
+      "key": "polemical",
+      "wrong": [
+        [
+          "reticent",
+          "Obiora names her opponents, quotes their arguments, and calls for pressure openly; she does not keep her position to herself."
+        ],
+        [
+          "dispassionate",
+          "Careful evidence is compatible with a combative manner; the attacks and call for pressure determine the blank."
+        ],
+        [
+          "equivocal",
+          "The treatment of disputed provenance is nuanced, but the essay's position toward the directors is unambiguous."
+        ]
+      ],
+      "why": "Polemical describes the essay's combative public argument. Its fair evidence does not make its argumentative manner neutral, and its attacks and call for pressure are both explicit.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-brekke-memoir",
-      text: "Although the engineer Johan Brekke kept detailed notebooks on every bridge he designed, he was famously ______ about his private life. His four-hundred-page memoir never once mentions his family, and after he retired he declined every request for an interview, answering letters from admirers with a printed card that thanked them for their interest.",
-      clues: ["never once mentions his family", "declined every request for an interview"],
-      key: "reticent",
-      wrong: [
-        ["meticulous", "Brekke was meticulous about his bridges, as his notebooks show, but the blank concerns his private life, which he kept to himself."],
-        ["candid", "A memoir that never mentions his family and a refusal of every interview are the reverse of frank disclosure."],
-        ["sanguine", "“Sanguine” means optimistic, a quality the text never addresses."],
+      "scene": "cs-brekke-memoir",
+      "text": "Johan Brekke's memoir recounts his engineering mistakes without excuses and describes future bridge projects with unreserved confidence. Reviewers consequently called its author both candid and sanguine. An editor preparing a family biography found a different pattern: Brekke's children appear only in a dedication, correspondence requests received printed acknowledgments, and passages about his marriage were removed before publication. Despite the memoir's openness elsewhere, Brekke's treatment of his private life remained ______.",
+      "clues": [
+        "passages about his marriage were removed",
+        "openness elsewhere"
       ],
-      why: "Brekke left his family out of his memoir and refused every interview, so he was reticent: unwilling to reveal personal matters.",
-      trap: "Choosing “meticulous,” which describes his engineering notebooks, not his reluctance to discuss his private life.",
-      hint: "What did Brekke leave out of his memoir, and how did he answer requests to talk?",
+      "key": "reticent",
+      "wrong": [
+        [
+          "candid",
+          "His frankness about engineering mistakes does not extend to the family passages he removed."
+        ],
+        [
+          "sanguine",
+          "Optimism describes his professional forecasts, not the suppression of private material."
+        ],
+        [
+          "meticulous",
+          "Careful engineering records are a different feature from his unwillingness to discuss his family."
+        ]
+      ],
+      "why": "Brekke's candor concerns professional mistakes, and his optimism concerns future projects. Omission and removal of family material show reticence specifically about private life, the blank's target.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-brunn-altarpiece-restoration",
-      text: "Reviewers praised the restorers' ______ work on the Brunn altarpiece. Before removing any varnish, the team photographed each panel under ultraviolet light, logged the position of every earlier repair, and tested each solvent for six months on a hidden strip of the frame, a level of care that, one reviewer wrote, left nothing to chance.",
-      clues: ["Reviewers praised", "logged the position of every earlier repair"],
-      key: "meticulous",
-      wrong: [
-        ["pedantic", "“Pedantic” also involves attention to detail, but it is a criticism, fussiness over trivial points, and the reviewers praised the work."],
-        ["cursory", "Six months of solvent tests and a log of every repair are the reverse of hasty work."],
-        ["idiosyncratic", "“Idiosyncratic” would mean the restorers followed peculiar methods of their own, but the text praises their care, not their originality."],
+      "scene": "cs-brunn-altarpiece-restoration",
+      "text": "The Brunn restorers spent six months testing solvents and logged every previous repair before removing varnish. Their final treatment altered far fewer areas than another team's faster proposal would have altered, yet reviewers praised the extensive preliminary work. Hidden repairs changed which solvents could safely touch each panel, so details that initially seemed peripheral determined the treatment. The reviewers' description of the work as ______ recognizes that relation between attention and consequence, rather than praising detail irrespective of its use.",
+      "clues": [
+        "details that initially seemed peripheral determined the treatment",
+        "relation between attention and consequence"
       ],
-      why: "Every step the text lists shows careful attention to detail, which the reviewers praised, so the work was meticulous.",
-      trap: "Choosing “pedantic,” which shares the attention to detail but carries a criticism that the reviewers' praise rules out.",
-      hint: "Do the reviewers admire or fault the restorers' attention to detail?",
+      "key": "meticulous",
+      "wrong": [
+        [
+          "pedantic",
+          "The details determine which solvents can safely be used, so the care is consequential rather than trivial."
+        ],
+        [
+          "idiosyncratic",
+          "The reviewers praise attention to evidence, not an unusual personal system."
+        ],
+        [
+          "cursory",
+          "Six months of tests and records of every repair are the opposite of superficial examination."
+        ]
+      ],
+      "why": "Meticulous identifies useful, careful attention. Pedantic would fault attention to inconsequential detail, but the passage shows why these details controlled safe treatment.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-vells-flood-history",
-      text: "Writing only a year after the flood that destroyed her family's farm, the historian Mara Vells produced an account of the disaster that is remarkably ______. It weighs each of the engineers' decisions against the information they had at the time, credits several officials whom she might easily have blamed, and draws no conclusion where the records are incomplete.",
-      clues: ["destroyed her family's farm", "credits several officials"],
-      key: "dispassionate",
-      wrong: [
-        ["polemical", "Her loss might lead a reader to expect an attack, but the account credits officials she could have blamed."],
-        ["equivocal", "Declining to judge where records are missing is not ambiguity; the account weighs each decision and credits officials, reaching clear judgments wherever the evidence allows."],
-        ["perfunctory", "Weighing every decision against the information available at the time is thorough work, not the minimal effort “perfunctory” implies."],
+      "scene": "cs-vells-flood-history",
+      "text": "Mara Vells condemns several engineering decisions in her history of the flood that destroyed her family's farm. Yet her account also exonerates an official she had publicly blamed, reproduces records favorable to him, and declines to assign responsibility where documents are missing. A reviewer calls the method ______, despite the severe judgments it sometimes produces. Vells retained the corrections even after her family urged her to soften the passages favorable to the officials.",
+      "clues": [
+        "exonerates an official she had publicly blamed",
+        "records favorable to him"
       ],
-      why: "Despite her personal loss, Vells judges the engineers fairly, credits officials, and avoids unsupported conclusions, so the account is dispassionate: free of personal feeling or bias.",
-      trap: "Choosing “polemical,” what her personal loss might lead a reader to expect, rather than what the account actually does.",
-      hint: "What might her loss have led her to write, and what did she write instead?",
+      "key": "dispassionate",
+      "wrong": [
+        [
+          "perfunctory",
+          "Vells tests decisions against records and makes corrections despite family objections, rather than going through the motions."
+        ],
+        [
+          "polemical",
+          "Some conclusions condemn, but the evidence-led method also exonerates an earlier target rather than sustaining an attack."
+        ],
+        [
+          "equivocal",
+          "Vells gives definite judgments where evidence permits them; withholding unsupported judgments does not make the method ambiguous."
+        ]
+      ],
+      "why": "Dispassionate describes evidence-led assessment despite personal loss. Condemnation does not make the method polemical, and withholding conclusions only where documents fail does not make all its judgments equivocal.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-dahl-ice-journal",
-      text: "The explorer Ivar Dahl wrote long, confiding letters to his family, but the journal he kept while crossing the Varn ice cap is famously ______. Where his companions filled page after page describing the storm that pinned them in their tents for eleven days, Dahl’s entry for the whole period reads, in full, “Wind. Waited.”",
-      clues: ["filled page after page", "in full, “Wind. Waited.”"],
-      key: "laconic",
-      wrong: [
-        ["effusive", "An effusive journal would pour out description and feeling; Dahl covers eleven days in two words."],
-        ["meticulous", "“Meticulous” fits the companions, who filled page after page; Dahl’s two-word entry records almost nothing."],
-        ["idiosyncratic", "Nothing suggests the journal follows odd habits of Dahl’s own; the details stress how few words it uses."],
+      "scene": "cs-dahl-ice-journal",
+      "text": "Ivar Dahl supplied relatives with long, intimate accounts of his crossing of the Varn ice cap. His expedition journal recorded every day's coordinates and supplies just as reliably, but its narrative entries were ______. Eleven days of storms received only 'Wind. Waited.' A later editor found no missing pages or reluctance to disclose the episode: Dahl described it at length elsewhere. Readers hoping for that longer account must therefore turn from the complete journal to the family correspondence.",
+      "clues": [
+        "no missing pages or reluctance to disclose",
+        "narrative entries"
       ],
-      why: "Dahl’s companions wrote pages about the storm, while his entry for eleven days is two words, so the journal is laconic: using very few words.",
-      trap: "Choosing “meticulous,” the quality of the companions’ pages, rather than of Dahl’s own entry.",
-      hint: "How many words does Dahl use for eleven days, compared with his companions?",
+      "key": "laconic",
+      "wrong": [
+        [
+          "reticent",
+          "The long personal account shows willingness to disclose; the journal is brief rather than guarded."
+        ],
+        [
+          "cursory",
+          "Daily coordinates and supplies were reliably recorded, so brevity does not establish superficial coverage."
+        ],
+        [
+          "effusive",
+          "The journal's two-word entry contrasts with, rather than shares, the letters' abundance."
+        ]
+      ],
+      "why": "Laconic names the journal's compressed expression. The separate evidence of full disclosure and reliable record keeping rules out reserve and superficiality.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-berg-letters-pear-tree",
-      text: "Critics who knew only Anna Berg’s spare, restrained novels were startled by her letters, which the Kell Library published last year. The letters are ______: a single one to her sister runs to thirty pages, praises a pear tree in the garden as “the most generous creature alive,” and signs off with six exclamation marks.",
-      clues: ["runs to thirty pages", "six exclamation marks"],
-      key: "effusive",
-      wrong: [
-        ["laconic", "“Laconic” would suit the spare novels, which the letters are contrasted with; a thirty-page letter is the reverse."],
-        ["reticent", "A reticent writer holds back feelings, but these letters pour out praise and excitement."],
-        ["tendentious", "The letters argue no cause; the details show unrestrained feeling, not a slant."],
+      "scene": "cs-berg-letters-pear-tree",
+      "text": "Anna Berg's letters use the same plain vocabulary as her famously spare novels, yet their manner surprised critics when the Kell Library published them. Even a short note lavishes praise on a pear tree as 'the most generous creature alive' and sends repeated declarations of affection to its recipient. Some letters are thirty pages, others half a page; both groups are ______. Editors who printed only the shortest notes found that their readers were just as surprised by Berg's voice.",
+      "clues": [
+        "both groups",
+        "repeated declarations of affection"
       ],
-      why: "Thirty pages to a sister, lavish praise for a pear tree, and six exclamation marks show letters that are effusive: overflowing with feeling.",
-      trap: "Choosing “laconic,” the quality of the spare novels that the letters are set against.",
-      hint: "What do the length, the praise, and the exclamation marks show about the letters?",
+      "key": "effusive",
+      "wrong": [
+        [
+          "candid",
+          "The text establishes abundant emotion, not frank disclosure of potentially uncomfortable truths."
+        ],
+        [
+          "laconic",
+          "Some letters are short, but even those overflow with affection rather than using restrained expression."
+        ],
+        [
+          "reticent",
+          "The novels' restraint does not characterize letters that repeatedly declare affection."
+        ]
+      ],
+      "why": "Effusive describes overflowing expression of feeling shared by both short and long letters. Neither plain diction nor occasional brevity makes the letters reserved.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-ruiz-first-biography",
-      text: "The first biography of the physician Clara Ruiz, written by one of her former students a year after her death, is frankly ______. It credits Ruiz with every advance made in the city’s hospitals during her lifetime, omits the lawsuit that nearly ended her career, and describes her temper, which her own letters show was fearsome, as “a holy impatience with suffering.”",
-      clues: ["credits Ruiz with every advance", "omits the lawsuit"],
-      key: "hagiographic",
-      wrong: [
-        ["dispassionate", "A dispassionate biography would weigh her faults fairly; this one omits them or recasts them as virtues."],
-        ["exhaustive", "A biography that leaves out a lawsuit that nearly ended her career is not complete."],
-        ["sardonic", "Nothing in it mocks Ruiz; its praise is sincere, even reverent."],
+      "scene": "cs-ruiz-first-biography",
+      "text": "Clara Ruiz's first biographer includes her temper, professional quarrels, and the lawsuit that nearly ended her career. Inclusion alone, however, has not persuaded later scholars that the portrait is balanced. Every angry outburst becomes righteous impatience; each quarrel demonstrates courage; the lawsuit proves that lesser colleagues envied her. The resulting account is ______ even where its reported events are accurate. Its idealization operates through interpretation, not simply through leaving inconvenient events out.",
+      "clues": [
+        "Every angry outburst becomes righteous impatience",
+        "idealization operates through interpretation"
       ],
-      why: "Crediting Ruiz with every advance, omitting the lawsuit, and turning her temper into saintliness make the biography hagiographic: reverently idealizing its subject.",
-      trap: "Choosing “exhaustive” because the biography makes sweeping claims, although it leaves out what does not flatter Ruiz.",
-      hint: "What does the biography do with Ruiz’s faults?",
+      "key": "hagiographic",
+      "wrong": [
+        [
+          "exhaustive",
+          "Including unfavorable events does not establish comprehensive coverage, and the blank concerns the consistently idealizing account."
+        ],
+        [
+          "sardonic",
+          "The interpretations turn faults into virtues sincerely, rather than mocking Ruiz."
+        ],
+        [
+          "dispassionate",
+          "Recasting every difficulty as virtue shows admiration determining interpretation rather than detached assessment."
+        ]
+      ],
+      "why": "Hagiographic describes turning every difficulty into proof of virtue. Listing unfavorable events does not make their consistently reverent interpretation dispassionate or mocking.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-harlow-strike-history",
-      text: "The Harlow Historical Society’s new history of the 1911 textile strike is admirably detailed about the mills of Harlow itself, but it is also ______. It never mentions that workers in six neighboring towns walked out the same week, or that the strike’s leaders had come from the port of Kell, and it treats the strike throughout as a purely local quarrel.",
-      clues: ["never mentions that workers in six neighboring towns", "a purely local quarrel"],
-      key: "parochial",
-      wrong: [
-        ["exhaustive", "The history is detailed about Harlow, but it leaves out the neighboring towns and the leaders from Kell, so it is not complete."],
-        ["eclectic", "Nothing suggests the history draws on unusually varied sources; its problem is how narrowly it looks."],
-        ["hagiographic", "The history praises no one person; its fault is ignoring everything beyond Harlow."],
+      "scene": "cs-harlow-strike-history",
+      "text": "The Harlow Historical Society's strike history accurately reproduces every surviving local factory ledger. Its authors claim that no external context is needed: walkouts in six neighboring towns and the arrival of organizers from Kell are mentioned only in a footnote dismissing their relevance. A reviewer accepts the book's local accuracy but calls its explanatory outlook ______. The criticism concerns which connections the authors consider worth understanding, not the care with which they transcribe the evidence they selected.",
+      "clues": [
+        "claim that no external context is needed",
+        "explanatory outlook"
       ],
-      why: "The history ignores the walkouts in six neighboring towns and the leaders from Kell and treats the strike as purely local, so it is parochial: limited to a narrow, local outlook.",
-      trap: "Choosing “exhaustive” because the history is detailed about Harlow, although it ignores everything outside the town.",
-      hint: "What does the history leave out, and where are those events?",
+      "key": "parochial",
+      "wrong": [
+        [
+          "hagiographic",
+          "The criticism concerns the authors' narrow local outlook, not reverential idealization of a person."
+        ],
+        [
+          "eclectic",
+          "The authors reject outside context rather than draw on a broad variety of sources or traditions."
+        ],
+        [
+          "exhaustive",
+          "The transcription of local ledgers may be complete, but the blank asks about an outlook that dismisses neighboring events."
+        ]
+      ],
+      "why": "Parochial identifies the narrow local outlook despite accurate detailed transcription. Exhaustive could describe the local ledgers, but not the explanatory scope the blank asks about.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-veen-ostby-library",
-      text: "The architect Rosa Veen’s library for the town of Ostby draws on sources that rarely meet: its reading room copies the vaulted ceiling of a medieval monastery, its stairwell borrows the curves of a 1920s ocean liner, and its garden is laid out like a Japanese moss court. Critics disagree about whether the result is coherent, but none dispute that Veen’s taste is ______.",
-      clues: ["sources that rarely meet", "a Japanese moss court"],
-      key: "eclectic",
-      wrong: [
-        ["parochial", "A parochial taste would stay close to home; Veen draws on a monastery, an ocean liner, and a Japanese garden."],
-        ["archaic", "The monastery ceiling is old, but the 1920s liner is not; the details stress range, not age."],
-        ["rudimentary", "Nothing suggests the design is crude or undeveloped; the text describes its many sources."],
+      "scene": "cs-veen-ostby-library",
+      "text": "Rosa Veen's Ostby library has a reading room modeled on a medieval vault, stairs adapted from an ocean liner, and a garden patterned after a Japanese moss court. A critic faults the building for borrowing, while another praises its unity. Both nevertheless call Veen's selection of sources ______. That agreement concerns the range from which she chose, not whether she copied carelessly or transformed each model into an original part of the finished design.",
+      "clues": [
+        "range from which she chose",
+        "not whether she copied carelessly"
       ],
-      why: "A monastery ceiling, an ocean liner’s curves, and a Japanese moss court are sources that rarely meet, so Veen’s taste is eclectic: drawn from a wide range of sources.",
-      trap: "Choosing “archaic” from the medieval monastery, although the other sources are modern.",
-      hint: "What do the three sources have in common, and how do they differ?",
+      "key": "eclectic",
+      "wrong": [
+        [
+          "derivative",
+          "One critic faults borrowing, but the blank isolates the breadth of the sources, on which both critics agree."
+        ],
+        [
+          "archaic",
+          "The medieval vault is only one source; the ocean liner and Japanese garden defeat a description restricted to an old period style."
+        ],
+        [
+          "parochial",
+          "Sources from different places and periods show breadth, the opposite of a narrow local horizon."
+        ]
+      ],
+      "why": "Eclectic describes choosing from varied traditions. The text separates that shared judgment about range from the disputed judgment that the result is derivative.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-marsh-keswa-travels",
-      text: "Early reviewers praised the travel writer Hugo Marsh’s accounts of the Keswa River, but a later editor found them ______. Marsh recorded as fact a fisherman’s claim that the river’s eels live for three hundred years, repeated without comment a guide’s story that a village had been built by giants, and paid without question every price he was quoted.",
-      clues: ["recorded as fact", "repeated without comment"],
-      key: "credulous",
-      wrong: [
-        ["circumspect", "A circumspect writer would weigh such claims with care; Marsh accepted them without question."],
-        ["sanguine", "The early reviewers were admiring, but nothing shows Marsh himself was especially hopeful; the details show belief without doubt."],
-        ["desultory", "Nothing suggests the accounts wander without plan; the problem is how readily Marsh believed what he was told."],
+      "scene": "cs-marsh-keswa-travels",
+      "text": "Hugo Marsh checked river depths repeatedly and corrected several errors in earlier maps of the Keswa. His treatment of testimony followed a different standard. A guide's claim that giants built a village entered the book without qualification, as did a fisherman's report of three-hundred-year-old eels. Marsh's later editor verified the depth measurements but described the traveler's response to informants as ______. Precision about things he could measure had not led him to test the things he was told.",
+      "clues": [
+        "entered the book without qualification",
+        "response to informants"
       ],
-      why: "Marsh accepted three-hundred-year-old eels, a village built by giants, and every quoted price without question, so the editor found his accounts credulous: too ready to believe.",
-      trap: "Choosing “circumspect,” a word for careful judgment, which describes the opposite of what Marsh did.",
-      hint: "How did Marsh treat the claims people made to him?",
+      "key": "credulous",
+      "wrong": [
+        [
+          "circumspect",
+          "Repeated measurements are careful, but he does not critically evaluate the informants targeted by the blank."
+        ],
+        [
+          "sanguine",
+          "Acceptance of unsupported stories is not the same as expecting favorable outcomes."
+        ],
+        [
+          "desultory",
+          "The passage contrasts standards of evidence, not disconnected or irregular effort."
+        ]
+      ],
+      "why": "The blank concerns Marsh's acceptance of unsupported testimony, not his careful measurements. Credulous captures that readiness to believe; neither optimism nor irregular effort explains it.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-moreau-bridge-paint",
-      text: "Asked by a reporter what she thought of the city’s plan to fix the rusting Varne Bridge by repainting it, the engineer Ilse Moreau was ______. “An excellent idea,” she said. “Rust is well known to be afraid of the color blue.”",
-      clues: ["An excellent idea", "afraid of the color blue"],
-      key: "sardonic",
-      wrong: [
-        ["effusive", "Her praise, “An excellent idea,” is not meant; the joke about rust shows she mocks the plan."],
-        ["sanguine", "A sanguine engineer would expect the plan to work; her remark about rust fearing blue shows she thinks it cannot."],
-        ["credulous", "A credulous engineer would believe the plan would work; Moreau plainly does not."],
+      "scene": "cs-moreau-bridge-paint",
+      "text": "At a hearing about the Varne Bridge, engineer Ilse Moreau agreed that protective coatings were useful after damaged steel was repaired. The council instead proposed concealing the damage with decorative blue paint. Moreau's response was ______: 'An excellent idea. Rust is well known to be afraid of blue.' The secretary entered the first sentence as an endorsement; Moreau later insisted that the second sentence, not her views about properly prepared coatings, supplied the meaning of the remark.",
+      "clues": [
+        "concealing the damage with decorative blue paint",
+        "secretary entered the first sentence as an endorsement"
       ],
-      why: "Moreau praises the plan and then jokes that rust fears blue paint, mocking the idea that paint will fix rust, so she was sardonic: grimly mocking.",
-      trap: "Choosing “effusive” from the words “An excellent idea,” which the joke that follows shows are not sincere.",
-      hint: "Does Moreau mean what she says in her first sentence?",
+      "key": "sardonic",
+      "wrong": [
+        [
+          "sanguine",
+          "Her apparent praise is undone by the absurd claim that rust fears a color."
+        ],
+        [
+          "effusive",
+          "The first sentence alone sounds approving, but the second turns it into mockery."
+        ],
+        [
+          "credulous",
+          "She distinguishes protective treatment from concealing damage; her ironic remark does not accept the cosmetic plan."
+        ]
+      ],
+      "why": "The absurd second sentence turns apparent praise into mockery of this cosmetic proposal. Sardonic describes her tone; her support for real protective treatment does not make the remark sincere approval.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-serra-brenn-rehearsal",
-      text: "In his memoir, the young conductor Paolo Serra describes his first rehearsal with the aging composer Lotte Brenn as a lesson in ______ behavior. He addressed her only as “Maestra,” asked her permission before changing so much as a single tempo marking, and accepted without argument her decision to cut a passage he loved.",
-      clues: ["asked her permission", "accepted without argument"],
-      key: "deferential",
-      wrong: [
-        ["sardonic", "Nothing in Serra’s conduct mocks Brenn; he treats her with great respect."],
-        ["polemical", "He accepted her decisions without argument, the reverse of combative."],
-        ["candid", "A candid conductor would speak his mind, but Serra kept his objection to the cut to himself."],
+      "scene": "cs-serra-brenn-rehearsal",
+      "text": "Paolo Serra disagreed openly with Lotte Brenn about the tempo of her suite and demonstrated his alternative at rehearsal. When she rejected it, he used her marking without resentment, explaining that the composer should decide the final version. His memoir describes the exchange in detail, including his continued preference for his own tempo. Serra's behavior was therefore ______ without being silent agreement: he distinguished having a judgment from claiming the authority to impose it.",
+      "clues": [
+        "composer should decide the final version",
+        "without being silent agreement"
       ],
-      why: "Addressing Brenn as “Maestra,” asking permission for any change, and accepting her cut without argument are deferential: yielding respectfully to another’s authority.",
-      trap: "Choosing “candid,” although Serra accepted the cut of a passage he loved without saying so.",
-      hint: "How did Serra treat Brenn’s authority over the music?",
+      "key": "deferential",
+      "wrong": [
+        [
+          "diffident",
+          "Serra states and demonstrates his judgment confidently; yielding final authority does not establish insecurity."
+        ],
+        [
+          "candid",
+          "The memoir is frank, but the blank targets his conduct in accepting Brenn's authority, not his disclosure of the disagreement."
+        ],
+        [
+          "polemical",
+          "He explains a disagreement but accepts the composer's final decision without turning it into a combative dispute."
+        ]
+      ],
+      "why": "Deferential describes respect for Brenn's final authority despite a firmly expressed disagreement. The text distinguishes deference from self-doubt or unspoken assent.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-flood-committee-inquiry",
-      text: "The committee’s investigation into the spring floods was ______ at best. Its members met four times in two years, often without enough members present to vote; they interviewed engineers in one district but not in the other two; and they began, then abandoned, a survey of the city’s drains, leaving its forms half completed in a filing cabinet.",
-      clues: ["met four times in two years", "began, then abandoned"],
-      key: "desultory",
-      wrong: [
-        ["exhaustive", "An investigation that skipped two districts and abandoned its survey was not complete."],
-        ["scrupulous", "A scrupulous inquiry would take care over every step; this one left its work half done."],
-        ["deferential", "Nothing suggests the committee yielded to anyone; its failing is a lack of steady effort."],
+      "scene": "cs-flood-committee-inquiry",
+      "text": "The flood committee produced careful maps of one district and a detailed account of a single drainage tunnel. Neither project belonged to an agreed plan. Meetings repeatedly shifted from drains to river walls and back; a citywide survey was begun, abandoned, then restarted with incompatible forms. Calling the inquiry ______ does not deny the quality of its isolated results. The chair could present those results but could not say which remaining districts would be investigated next.",
+      "clues": [
+        "Neither project belonged to an agreed plan",
+        "which remaining districts"
       ],
-      why: "Four meetings in two years, one district of three, and an abandoned survey show an investigation that was desultory: lacking plan, purpose, or steady effort.",
-      trap: "Choosing “scrupulous” or “exhaustive,” the qualities the investigation lacked.",
-      hint: "How steadily and completely did the committee pursue its work?",
+      "key": "desultory",
+      "wrong": [
+        [
+          "deferential",
+          "Nothing identifies an authority whose judgment the committee follows."
+        ],
+        [
+          "scrupulous",
+          "Some isolated results are careful, but the inquiry as a whole lacks a consistent plan and abandons incompatible work."
+        ],
+        [
+          "exhaustive",
+          "Several disconnected projects and no plan for remaining districts do not make complete coverage."
+        ]
+      ],
+      "why": "Desultory describes disconnected, inconsistent effort. Individual careful results do not establish a scrupulous or exhaustive inquiry as a whole, and nothing indicates deference to authority.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
     {
-      scene: "cs-aberg-letter-correction",
-      text: "Scholars who rely on the archivist Nils Aberg’s editions of the Vasko family papers are grateful that he was so ______. When he learned that a letter he had published in 1990 was misdated by a single year, he printed a correction in the next volume, reprinted the letter in full, and wrote to every library that owned the first volume asking that a note be added to its copy.",
-      clues: ["Scholars who rely", "misdated by a single year"],
-      key: "scrupulous",
-      wrong: [
-        ["pedantic", "“Pedantic” would criticize fuss over trivia, but the scholars who rely on his editions are grateful for his care."],
-        ["cursory", "Correcting a one-year error in print and writing to every library is the reverse of hasty work."],
-        ["idiosyncratic", "Nothing suggests his methods were peculiar to him; the details show thoroughness and honesty."],
+      "scene": "cs-aberg-letter-correction",
+      "text": "Nils Aberg discovered that he had dated a Vasko letter one year too early. The error looked small, but it placed the letter before the inheritance dispute it actually answered and reversed a later biographer's account of Vasko's motives. Aberg reprinted it, notified every library holding the edition, and explained his own mistake. Scholars called him ______ rather than pedantic: his insistence on an exact date repaired an interpretation instead of protecting a trivial point for its own sake.",
+      "clues": [
+        "reversed a later biographer's account",
+        "repaired an interpretation"
       ],
-      why: "Aberg corrected even a one-year error publicly and thoroughly, and scholars are grateful, so he was scrupulous: careful and honest about getting every detail right.",
-      trap: "Choosing “pedantic,” which shares the attention to detail but carries a criticism that the scholars’ gratitude rules out.",
-      hint: "Do the scholars value Aberg’s attention to detail or complain about it?",
+      "key": "scrupulous",
+      "wrong": [
+        [
+          "pedantic",
+          "The date materially changes interpretation of motives; correcting it is not fussiness over an inconsequential detail."
+        ],
+        [
+          "idiosyncratic",
+          "The passage justifies his thorough correction by its scholarly consequences, not by unusual personal conventions."
+        ],
+        [
+          "cursory",
+          "Reprinting, notifying libraries, and acknowledging the mistake show more than superficial treatment."
+        ]
+      ],
+      "why": "Scrupulous names conscientious attention to an error with material consequences. The explanation of those consequences rules out pedantic, even though both can involve insistence on detail.",
+      "trap": "Transferring a description of one claim, feature, or speaker to the different one the blank asks about.",
+      "hint": "Which particular claim or quality is being evaluated, and which details bear directly on it?"
     },
   ];
 
@@ -2169,7 +2589,7 @@
     title: "Advanced word for the manner of a scholar, critic, or text",
     recognize:
       "The blank names a manner, scope, or attitude; the details show one quality, and each advanced distractor names a neighboring quality the details do not show or a quality the text assigns to something else.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["opposite-stance", "true-but-irrelevant", "word-association"],
     build(t) {
       const topic = t.pick(WIC_STANCE_TOPICS);
@@ -2375,11 +2795,11 @@
     domain: "Craft and Structure",
     skill: "Words in Context",
     subskill: "meaning in context",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Word used in an older sense in period prose",
     recognize:
       "In prose written in an older style, a familiar word carries a sense now old-fashioned; its modern meaning is offered and does not fit, and the surrounding detail settles the older sense.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["common-meaning", "word-association"],
     build(t) {
       const topic = t.pick(WIC_PERIOD_TOPICS);

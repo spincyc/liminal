@@ -491,7 +491,12 @@
     const bound = isFactor(before) || (before && before.kind === "node") ||
       (after && (after.kind === "sups" || isNode(after, "sup")));
     if (lone && !bound) return inner;
-    if (inner.some(isStackedFraction)) {
+    // Prose may also contain a fraction inside parentheses. A scalable fence
+    // is an unbreakable inline box, so keep prose parentheses as ordinary text
+    // that can wrap at large text sizes or in a narrow reading column.
+    const prose = group.items.some((item) => item.kind === "word" &&
+      latinLetters(item.text) > 1 && !FUNCTION_WORDS.has(item.text));
+    if (!prose && inner.some(isStackedFraction)) {
       return [{ type: "fence", open: group.open, close: group.close, children: inner }];
     }
     return [{ type: "text", text: group.open }, ...inner, { type: "text", text: group.close }];

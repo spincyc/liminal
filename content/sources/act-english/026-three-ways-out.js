@@ -41,18 +41,22 @@ that by closing every route out except the one it cannot close.`,
       key: "ways, and a",
       noChange: "Two independent clauses joined by 'and' need a comma before the conjunction.",
       wrong: [
-        ["ways; and a", "A semicolon and a coordinating conjunction do the same job, so both is redundant."],
-        ["ways, and, a", "The second comma separates the conjunction from the subject that follows."],
+        [
+          "ways; although a",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "ways, and, a",
+          "The second comma separates the conjunction from the subject that follows."
+        ]
       ],
-      why:
-        "'Heat moves in three ways' and 'a vacuum flask is built to block all three' are both " +
-        "complete clauses, so the 'and' between them takes a comma.",
+      why: "'Heat moves in three ways' and 'a vacuum flask is built to block all three' are both complete clauses, so the 'and' between them takes a comma.",
       steps: [
         "Check whether the words on each side of 'and' could stand alone. They could.",
-        "Place a comma immediately before the conjunction.",
+        "Place a comma immediately before the conjunction."
       ],
       hint: "A comma goes before 'and' when a full sentence follows it.",
-      trap: "The first clause is short, which makes the sentence feel like one thought.",
+      trap: "The first clause is short, which makes the sentence feel like one thought."
     },
     {
       number: 2,
@@ -138,23 +142,21 @@ that by closing every route out except the one it cannot close.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "removed, and a flask is two vessels",
-          "The conjunction repairs the splice but ties the principle to the construction as one thought.",
+          "removed, however, a flask is two vessels",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "removed, a flask being two vessels",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "removed; a flask being two vessels",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "The first clause states a principle and the second describes how a flask applies it. " +
-        "Separating them lets the description carry its own long series of details.",
+      why: "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Choose the punctuation that gives the second one room for the list that follows.",
+        "Find the subjects and finite verbs on both sides of the boundary.",
+        "Keep a complete statement on each side of the sentence boundary."
       ],
       hint: "The second clause runs to three more phrases; ask whether it should share a sentence.",
-      trap: "'And' fixes the grammar and produces a sentence with five clauses in it.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -238,23 +240,21 @@ that by closing every route out except the one it cannot close.`,
       noChange: "A comma is too weak to introduce the explanation the clause has promised.",
       wrong: [
         [
-          "silvered; a mirrored surface emits very little",
-          "A semicolon balances two equal clauses, but the second half here explains the first.",
+          "silvered; although a mirrored surface emits very little",
+          "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
         ],
         [
           "silvered, and a mirrored surface emits very little",
-          "'And' adds the clause instead of presenting it as the reason for silvering.",
-        ],
+          "'And' adds the clause instead of presenting it as the reason for silvering."
+        ]
       ],
-      why:
-        "'This is why the facing surfaces are silvered' is complete and promises a reason. A colon is " +
-        "the mark that delivers what a complete clause has set up.",
+      why: "'This is why the facing surfaces are silvered' is complete and promises a reason. A colon is the mark that delivers what a complete clause has set up.",
       steps: [
         "Confirm the words before the mark form a complete sentence. They do.",
-        "Ask whether what follows explains it or balances it. It explains.",
+        "Ask whether what follows explains it or balances it. It explains."
       ],
       hint: "The clause opens with 'This is why,' which is a promise to explain.",
-      trap: "Both halves are full clauses, which makes the semicolon look like the technical answer.",
+      trap: "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon."
     },
     {
       number: 10,

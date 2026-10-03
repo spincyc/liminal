@@ -1,20 +1,23 @@
 "use strict";
 
+// Fact-check: Employment, unemployment, and U-6 definitions: https://www.bls.gov/cps/definitions.htm
+
 module.exports = {
   id: "act-reading-p013",
   type: "social-science",
   title: "Counting the Out of Work",
-  intro: "This passage is adapted from an article on how governments measure unemployment.",
+  intro: "This original passage discusses how governments measure unemployment.",
   content: `The unemployment rate is quoted as though it were a fact about the world, like
 rainfall. It is not a measurement in that sense. It is the output of a definition, and the
 definition was chosen, by identifiable people, for reasons that can be argued with.
 
 The standard now used in most countries dates from a 1982 conference of labour
-statisticians. To be counted as unemployed, a person must satisfy three conditions at once:
+statisticians. The usual definition of unemployment combines three conditions:
 be without work, be available to start work, and have actively looked for work in a recent
-window, usually the past four weeks. All three are required. Fail any one and the person is
-not unemployed; they are outside the labour force, which is a different category and does
-not appear in the headline rate at all.
+window, usually the past four weeks. A person who is working is employed. Someone without work who is not
+available or not searching is generally outside the labour force instead. There are
+specified exceptions: for example, the United States counts people awaiting recall
+from a temporary layoff without requiring an active search.
 
 The three conditions were not arbitrary. A count of everyone without a job would include
 students, retirees, and people caring for children full time, and would tell you nothing
@@ -32,14 +35,14 @@ principally thinking about.
 
 Statistical agencies are perfectly aware of this and publish more than one measure. The
 headline figure in the United States is called U-3. A broader measure, U-6, adds two
-groups: people who want work and have looked in the past year but not the past four weeks,
+groups: people who want work, are available, and have looked in the past year but not the past four weeks,
 and people working part time who would take full-time hours if they could get them. In
 ordinary conditions U-6 runs a few points above U-3 and the two move together. In a
 downturn the gap widens, and the widening is itself a piece of information — it says that
 what is happening to the labour market is not being captured by the headline.
 
 The awkward question is which number a government should announce. The case for U-3 is
-consistency: it is defined the same way across countries and across decades, so a change in
+consistency: its core definition is kept stable enough to support comparisons over time, so a change in
 it means something. The case for U-6 is that in the months when the public most needs an
 accurate picture, U-3 is at its least informative. Neither case is silly, and no country
 has found a way to have both, because a headline figure is a single number by definition
@@ -75,7 +78,7 @@ obviously belong on.`,
       subskill: "locate detail",
       family: "stated-detail",
       difficulty: "Easy",
-      stem: "According to the passage, a person counted as unemployed must be without work, be available to start, and have:",
+      stem: "According to the passage, under the usual definition a person counted as unemployed is without work, is available to start, and has:",
       key: "looked for work within a recent window.",
       wrong: [
         ["held a job at some point that year.", "Prior employment is not among the three conditions the passage lists."],
@@ -115,10 +118,10 @@ obviously belong on.`,
       key: "want more work than they have been able to find.",
       wrong: [
         ["have been without any job for more than one year.", "Duration alone does not determine either measure as the passage describes them."],
-        ["are studying or caring for children at home full time.", "Those groups are named as people any sensible count leaves out."],
+        ["are studying or caring for children at home full time.", "Student or caregiver status alone does not define the additional groups included in U-6."],
         ["work full time in jobs below their qualifications.", "Skill mismatch is never among the categories the passage lists."],
       ],
-      why: "The fifth paragraph says U-6 adds people who \"want work and have looked in the past year but not the past four weeks\" and people \"working part time who would take full-time hours if they could get them.\"",
+      why: "The passage describes U-6 as adding available people marginally attached to work and people working part time who want full-time hours but cannot obtain them. It is a broader measure of labor underutilisation, not simply a count of prolonged unemployment.",
       steps: [
         "Find the two groups the passage says U-6 adds.",
         "Identify what those two groups have in common.",
@@ -230,7 +233,7 @@ obviously belong on.`,
         ["the searching condition was abandoned when U-6 was introduced.", "U-6 keeps a search requirement and adds part-time workers alongside it."],
         ["both measures were designed with recessions principally in mind.", "The passage says the designers were not principally thinking about that case."],
       ],
-      why: "The searching condition \"is what makes the number mean something\" yet drops people in a downturn; U-6 catches more of them but sacrifices the consistency that makes a change in U-3 meaningful.",
+      why: "The passage explains why an active-search definition identifies a useful group while leaving other underutilised labour outside the headline. It then presents U-6 as a broader measure. Together they show that a definition determines which situations a figure brings into focus; a broader measure is not automatically the one true rate.",
       steps: [
         "Name the advantage and the cost of the searching condition.",
         "Name the advantage and the cost of the broader measure.",

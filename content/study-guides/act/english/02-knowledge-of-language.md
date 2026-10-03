@@ -77,7 +77,8 @@ sentence — or in the previous sentence — DELETE is likely correct.
 ### The DELETE / OMIT option
 
 When *"DELETE the underlined portion"* or *"OMIT the underlined portion"*
-appears, it is credited more often than 25% of the time.
+appears, read the sentence and paragraph without the material. Its presence
+does not make it more likely to be correct.
 
 **Take it when:**
 - The material repeats information already present
@@ -233,10 +234,10 @@ or precision. Reread the sentence for attitude and intensity.
 
 | Stage | Filter | Volume and method |
 | --- | --- | --- |
-| 1. Redundancy | Effective Language Use, Easy | 25. For each, name what's repeated. |
-| 2. Concision | Effective Language Use, Easy → Medium | 25. **Always check the shortest choice first.** |
-| 3. DELETE questions | Effective Language Use, Medium | 15. Track how often DELETE was right. |
-| 4. Word choice | Effective Language Use, Medium → Hard | 25. Note connotation for each choice. |
+| 1. Redundancy | Effective Language Use | 25. For each, name what's repeated. |
+| 2. Concision | Effective Language Use | 25. **Always check the shortest choice first.** |
+| 3. DELETE questions | Effective Language Use | 15. Track how often DELETE was right. |
+| 4. Word choice | Effective Language Use | 25. Note connotation for each choice. |
 | 5. Idioms | Effective Language Use, all | 20. Build a list of every preposition you miss. |
 | 6. Mixed timed | Whole domain | 30 at 30 sec each |
 

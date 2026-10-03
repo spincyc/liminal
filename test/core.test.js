@@ -165,7 +165,7 @@ test("allocateByWeight distributes remainders without losing items", () => {
 });
 
 test("buildMiniTest honors each blueprint's per-section counts and order", () => {
-  for (const blueprint of core.MINI_TEST_BLUEPRINTS) {
+  for (const blueprint of core.MINI_TEST_BLUEPRINTS.filter(core.blueprintAvailable)) {
     const built = core.buildMiniTest(banksFor(blueprint), blueprint, "seed-1");
     assert.equal(built.length, core.blueprintTotal(blueprint));
 
@@ -187,6 +187,24 @@ test("buildMiniTest honors each blueprint's per-section counts and order", () =>
     const ids = new Set(built.map((question) => question.id));
     assert.equal(ids.size, built.length, "mini test repeated a question");
   }
+});
+
+test("withdrawn Science cannot launch through question or blueprint builders, while archived scoring stays readable", () => {
+  const science = catalog.sections.find((section) => section.key === "act-science");
+  assert.equal(core.sectionAvailable(science), false);
+  assert.equal(core.sectionAvailable(science.key), false);
+  assert.equal(core.sectionAvailable("act-reading"), true);
+  const bank = syntheticBank(science.key, "Science", 4);
+  for (const build of [
+    () => core.buildSession(bank, 2, "withdrawn"),
+    () => core.drawSectionItems(bank, 2, "withdrawn"),
+    () => core.drawPassageSets(bank, 2, "withdrawn"),
+    () => core.buildMiniTest({}, core.blueprintById("act-science"), "withdrawn"),
+    () => core.buildTestForm({}, core.blueprintById("act-full-science"), "withdrawn"),
+  ]) assert.throws(build, /Science practice is unavailable/);
+  assert.equal(core.blueprintAvailable(core.blueprintById("act-full-science")), false);
+  assert.equal(core.blueprintAvailable(core.blueprintById("act-full")), true);
+  assert.equal(core.scoreResponse(bank[0], bank[0].correctAnswer), true);
 });
 
 test("buildMiniTest is deterministic for a given seed", () => {

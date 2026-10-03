@@ -12,9 +12,8 @@ heights, daily rainfall. Questions ask for the center (mean, median), the
 spread (range, interquartile range, standard deviation) and the shape, read
 from lists, frequency tables, dot plots, histograms and box plots. The skill
 is part of Problem-Solving and Data Analysis, {{fact:sat-math-psda}} of the
-Math section. Hard questions combine groups of different sizes, ask how a
-change to the data moves each measure, or ask which medians an unknown value
-allows.
+Math section. Hard questions ask which changes to summary statistics must
+hold without knowing the full data, or which medians an unknown value allows.
 
 ## Mean and median {#mean-and-median}
 
@@ -203,19 +202,34 @@ The five-number summaries of two box plots of delivery times, in minutes:
 > needed to add up, so any choice claiming one mean is larger is unsupported.
 
 In a histogram, each bar is a count of values in an interval. To find which
-interval holds the median, add bar heights from the left until you pass half
-the total.
+interval contains a middle observation, count positions using cumulative
+bar heights. For an even total, locate both middle observations: if they
+lie in different intervals, the interval containing their average may not
+be determined from the histogram alone.
 
 > **Desmos.** For a list, type `L=[4,5,5,6,30]`, then `mean(L)`,
 > `median(L)`, `stdev(L)` or `quartile(L,1)`. See
 > [Desmos statistics](learn:sat/general/desmos#statistics).
 
+### Recover a count before correcting the data {#missing-count-correction}
+
+A table lists appointment durations of 32, 36, 40, 44, and 48 minutes, with
+frequencies 2, 3, x, 2, and 1. The original mean is 39 minutes. The appointment
+recorded as 48 minutes should be 32 minutes. What is the corrected median?
+
+The original total is 308 + 40x and the count is 8 + x, so
+39(8 + x) = 308 + 40x. Solving gives x = 4 and a count of 12.
+
+After the correction, 32 occurs three times and 36 occurs three times.
+The 6th observation is 36 and the 7th is 40, so the corrected median is
+(36 + 40)/2 = **38 minutes**. Finding the missing count is only the first
+step: the corrected observation must then be put in its new position.
+
 ## What Hard looks like {#hard}
 
-- Groups of different sizes with different means: a combined mean, a missing group's mean, or a missing group's size. Work with totals (see [combining groups](#combining-groups)).
 - A change to the data, such as adding a value equal to the mean, and a question about which statement is true. Each measure depends on something different: the mean and standard deviation on every value, the median on the middle position, the range on the two extremes.
 - A list with one unknown value and a question about which medians are possible (see [which values could be the median](#possible-medians)).
-- One extreme value corrected, given only the mean, the median and the count. The mean moves by the correction divided by the count; the median holds unless the value crosses the middle (see [correcting one extreme value](#correcting-an-extreme-value)).
+- A frequency table has an unknown count, and its original mean is given. Use a weighted-sum equation to find the missing count, then correct an extreme observation and locate the new middle position or positions. A correction across the middle can change the median.
 
 > **Example.** The data are 2, 4, 6, 8 and 20. A sixth value, equal to the
 > mean, is added. What happens to the mean, the median, the range and the

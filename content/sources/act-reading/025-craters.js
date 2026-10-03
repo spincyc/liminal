@@ -4,13 +4,16 @@ module.exports = {
   id: "act-reading-p025",
   type: "natural-science",
   title: "Counting Craters",
-  intro: "This passage is adapted from an article on how the ages of planetary surfaces are determined.",
-  content: `There is no way to put a date on a piece of the Moon without bringing a piece of it
-home. Radiometric dating requires a laboratory, a sample, and several weeks. Six Apollo
+  intro: "This original passage discusses how the ages of planetary surfaces are determined.",
+  content: `A precise laboratory date for a lunar rock requires a sample. Returned samples let
+researchers measure radioactive isotopes directly, rather than infer an age from
+the appearance of a landscape. Six Apollo
 landings and three Soviet robotic missions brought back material from nine places, all of
 them on the near side, most of them on flat ground chosen because a spacecraft could land
-there. Everything else known about the ages of surfaces in the solar system rests on a
-method that requires no samples at all, and that was calibrated against those nine sites.
+there. Those missions supplied the foundation for calibrating a method used to estimate
+ages across the solar system without sampling every surface. Later sample-return
+missions have extended the evidence, but the original calibration illustrates the
+chain of inference on which remote estimates depend.
 
 The method is counting craters. Impacts arrive at random over a surface, so an old surface
 accumulates more of them than a young one. Count the craters above some diameter in a
@@ -49,7 +52,8 @@ had drawn the line between the two populations.
 None of this is a reason to distrust the method, and planetary scientists who use it daily
 are its most careful critics. It is a reason to read a crater age as what it is: a relative
 ordering that is very reliable, converted into absolute years by a chain that runs back to
-nine boxes of rock collected in the 1970s. Almost every date in a textbook diagram of solar
+samples collected by Apollo and Luna between 1969 and 1976, with newer samples
+adding further calibration points. Almost every date in a textbook diagram of solar
 system history hangs on that chain. Extending it is the strongest scientific argument for
 returning samples from a surface nobody has sampled yet, and the surfaces most worth
 sampling are the ones the current calibration fits worst.`,
@@ -76,7 +80,7 @@ sampling are the ones the current calibration fits worst.`,
       subskill: "locate detail",
       family: "stated-detail",
       difficulty: "Easy",
-      stem: "According to the passage, samples used to calibrate crater counting were collected from:",
+      stem: "According to the passage, samples foundational to the original crater-count calibration were collected from:",
       key: "nine sites, all on the Moon's near side.",
       wrong: [
         ["six sites visited by the Apollo landings.", "Three Soviet robotic missions contributed as well, making nine in total."],
@@ -212,7 +216,7 @@ sampling are the ones the current calibration fits worst.`,
         ["produces relative orderings that cannot be trusted.", "The passage calls the relative ordering very reliable."],
         ["would be unnecessary if cameras had better resolution.", "Resolution is treated as adequate; the difficulty is the conversion to years."],
       ],
-      why: "The last paragraph says crater ages are converted to absolute years \"by a chain that runs back to nine boxes of rock,\" and that \"the surfaces most worth sampling are the ones the current calibration fits worst.\"",
+      why: "The passage explains how the original calibration relied on nine near-side lunar landing sites, then argues for extending evidence to less securely calibrated surfaces. Newer samples add to that chain rather than making the original nine the only samples ever returned.",
       steps: [
         "Note where the existing samples came from and how well the method works there.",
         "Read the final clause about which surfaces most need sampling.",

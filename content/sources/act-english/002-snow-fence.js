@@ -233,18 +233,22 @@ small fraction of what plowing the same stretch costs across one winter, and
       key: "farther back than most drivers would guess",
       noChange: "The essay never addresses a reader as 'you' anywhere else in its five paragraphs.",
       wrong: [
-        ["farther back than one would guess", "The formal 'one' is still a shift away from the essay's third person."],
-        ["farther back than we would guess", "The first-person plural pulls in a narrator the essay does not have."],
+        [
+          "farther back than I would guess",
+          "The first-person singular introduces a narrator into the impersonal explanation."
+        ],
+        [
+          "farther back than we would guess",
+          "The first-person plural pulls in a narrator the essay does not have."
+        ]
       ],
-      why:
-        "The passage is written about fences, wind, and highway departments in the third person. " +
-        "Naming the drivers keeps that stance instead of turning to address the reader.",
+      why: "The passage is written about fences, wind, and highway departments in the third person. Naming the drivers keeps that stance instead of turning to address the reader.",
       steps: [
         "Scan the paragraph for any other person: 'departments,' 'a fence,' 'the road.' All third.",
-        "Choose the option that stays in the third person.",
+        "Choose the option that stays in the third person."
       ],
       hint: "Check what person the surrounding sentences use before you pick a pronoun.",
-      trap: "'You' feels friendly and direct, which makes it read as good informative writing.",
+      trap: "'You' feels friendly and direct, which makes it read as good informative writing."
     },
     {
       number: 10,
@@ -348,33 +352,29 @@ small fraction of what plowing the same stretch costs across one winter, and
       subskill: "conclusions",
       family: "closing-sentence",
       difficulty: "Hard",
-      stem:
-        "The writer is considering deleting the final clause of the essay, “and it works while " +
-        "nobody is watching.” Should the clause be kept or deleted?",
-      key: "Kept, because it names the quality that has made the fence worth its cost for a century.",
+      stem: "The writer is considering deleting the final clause of the essay, “and it works while nobody is watching.” Should the clause be kept or deleted?",
+      key: "Kept, because it highlights the fence's ability to work unattended.",
       wrong: [
         [
           "Kept, because it introduces the idea that snow fences require no maintenance at all.",
-          "The essay never claims a fence is maintenance-free, so the clause cannot introduce it.",
+          "The essay never claims a fence is maintenance-free, so the clause cannot introduce it."
         ],
         [
           "Deleted, because the essay has already explained how a snow fence slows the wind.",
-          "Restating the mechanism is not what the clause does, so that is no reason to cut it.",
+          "Restating the mechanism is not what the clause does, so that is no reason to cut it."
         ],
         [
           "Deleted, because it shifts the essay from information to the writer's own opinion.",
-          "That a fence works unattended is a fact the essay has built toward, not a judgment.",
-        ],
+          "That a fence works unattended is a fact the essay has built toward, not a judgment."
+        ]
       ],
-      why:
-        "The essay's last paragraph is about cost, and the clause completes it: the fence is cheap " +
-        "because it needs no operator. Cutting it ends the essay on the price alone.",
+      why: "The essay's last paragraph is about cost, and the clause completes it: the fence is cheap because it needs no operator. Cutting it ends the essay on the price alone.",
       steps: [
         "Decide what the final paragraph is about. Cost, not mechanism.",
-        "Ask whether the clause adds to that idea or repeats an earlier one. It adds.",
+        "Ask whether the clause adds to that idea or repeats an earlier one. It adds."
       ],
       hint: "Judge the clause against the paragraph it closes, not against the whole essay.",
-      trap: "The clause sounds like a flourish, and flourishes are the usual answer to a delete question.",
+      trap: "The clause sounds like a flourish, and flourishes are the usual answer to a delete question."
     },
   ],
 };

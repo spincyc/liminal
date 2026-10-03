@@ -20,7 +20,7 @@ trigonometric graphs, and inverse functions all appear here.
 
 **Vocabulary equivalence** — all the same thing:
 
-> zero = root = solution = x-intercept = where the graph crosses the x-axis =
+> zero = root = solution = x-intercept = where the graph meets the x-axis (crosses or touches) =
 > where `f(x) = 0`
 
 ### Domain and range
@@ -126,11 +126,11 @@ y = a · bˣ
 | −8% per period | 0.92 |
 | Doubles | 2 |
 | Halves | 0.5 |
-| Triples every 5 years | `3^(t/5)` |
+| Triples every 5 years | `3^(1/5)` per year; model `a·3^(t/5)` |
 
 **Compound interest:** `A = P(1 + r/n)^(nt)`
 
-**Linear vs. exponential:**
+**Linear vs. exponential:** for equally spaced inputs in a table:
 
 | | Linear | Exponential |
 | --- | --- | --- |
@@ -178,7 +178,8 @@ bases on a calculator.
 
 > `log₃(x − 1) = 2` → `3² = x − 1` → `x = 10`
 
-**Domain restriction:** the argument of a log must be **positive**. Solutions
+**Domain restriction:** a real log needs a positive base other than 1 and a
+**positive** argument. Solutions
 that make it non-positive are extraneous.
 
 ---
@@ -289,13 +290,13 @@ outer. Don't do it in one step.
 
 | Stage | Filter | Volume |
 | --- | --- | --- |
-| 1. Notation and composition | Function concepts, Easy → Medium | 25. Write the inner value separately. |
-| 2. Domain and range | Function concepts, Medium | 15 |
-| 3. Transformations | Function concepts, Medium | 20. Say the direction aloud. |
-| 4. Quadratic functions | Function models, Medium | 25 |
-| 5. Exponentials | Function models, Medium | 20. Write `a` and `b` explicitly. |
-| 6. Logarithms | Function concepts, Medium → Hard | 20 |
-| 7. Trig graphs | Function models, Medium → Hard | 15. Amplitude and period drills. |
+| 1. Notation and composition | Function concepts | 25. Write the inner value separately. |
+| 2. Domain and range | Function concepts | 15 |
+| 3. Transformations | Function concepts | 20. Say the direction aloud. |
+| 4. Quadratic functions | Function models | 25 |
+| 5. Exponentials | Function models | 20. Write `a` and `b` explicitly. |
+| 6. Logarithms | Function concepts | 20 |
+| 7. Trig graphs | Function models | 15. Amplitude and period drills. |
 | 8. Mixed timed | Whole domain | 30 at 65 sec each |
 
 Logs and trig graphs are worth specific attention — they're each one or two

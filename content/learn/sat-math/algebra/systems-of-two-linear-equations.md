@@ -10,9 +10,9 @@ skill: Systems of two linear equations
 A system is two equations that must both be true. Its solution is the point
 where the two lines cross. This skill is part of Algebra,
 {{fact:sat-math-algebra}} of the Math section. Easy questions ask you to
-solve a system. Hard ones make the constants the unknowns, give the lines
-only as a graph whose crossing is between grid points, or hide the system
-inside a mixture.
+solve a system. Medium questions can give the lines as a graph or hide the
+system inside a mixture. Hard questions couple unknown coefficients across
+both equations or constrain the region where two lines intersect.
 
 ## Solve systems {#solve-systems}
 
@@ -65,6 +65,12 @@ y. Adding or subtracting the equations can give it directly.
 
 For a₁x + b₁y = c₁ and a₂x + b₂y = c₂:
 
+The ratio table below assumes its denominators are nonzero. When one is
+zero, compare cross-products instead: a₁b₂ ≠ a₂b₁ gives one solution;
+matching that pair and both constant pairs gives the same line. Here each
+equation must actually define a line, with at least one nonzero variable
+coefficient.
+
 | Case | Condition | Graph |
 | --- | --- | --- |
 | One solution | a₁/a₂ ≠ b₁/b₂ (different slopes) | the lines cross once |
@@ -93,8 +99,9 @@ table, so compare coefficient ratios.
 > **Fails when.** One of the equations isn't linear (x², √x, xy). Then the
 > question is about where a line meets a curve, and the tool is usually the
 > discriminant; see [systems of equations](learn:sat-math/advanced-math/systems-of-equations#linear-quadratic-systems).
-> It also fails when the question asks for exactly one solution: then every
-> k works except the one that makes the slopes equal.
+> For exactly one solution, look for unequal slopes instead. In the
+> single-coefficient example above, every k except 5 works; more general
+> parameter formulas need their own coefficient comparison.
 
 ### Two unknown constants {#two-unknown-constants}
 
@@ -127,6 +134,23 @@ constant), then use what the question gives:
 > **Trap.** Comparing coefficients before the equations are in the same
 > form. In 12y = c − ax, the x-term is really +ax on the left: rewrite it as
 > ax + 12y = c first.
+
+When the same constant occurs in several coefficients, the scale factor may
+not be known at the start. Compare coefficient cross-products, solve for the
+constant, and only then find the factor and match the right sides.
+
+> **Example.** The system ax + (a − 4)y = 12 and
+> (a + 6)x + ay = b has infinitely many solutions. What is a + b?
+>
+> Proportional coefficients require a · a = (a − 4)(a + 6).
+> Expanding gives a² = a² + 2a − 24, so 2a = 24 and a = 12.
+>
+> The equations are now 12x + 8y = 12 and 18x + 12y = b. The second
+> left side is 3/2 times the first, so b = (3/2)(12) = 18.
+> Therefore a + b = 12 + 18 = 30.
+>
+> Check: dividing the equations by 4 and 6 gives the same line,
+> 3x + 2y = 3. If b were any other value, the lines would be distinct.
 
 ## Interpret intersection {#interpret-intersection}
 
@@ -187,10 +211,13 @@ fixed line in a given quadrant:
 
 ## What Hard looks like {#hard}
 
-- Two unknown constants: a known solution to substitute, or a condition (no solution, infinitely many) that fixes a multiple between the equations (see [two unknown constants](#two-unknown-constants)).
-- Two graphed lines that cross between grid points. The graph gives only an estimate: read each line's equation from two grid points it passes through, then solve the system exactly.
-- A mixture or blend: one equation counts the amounts and the other counts what they contain (salt, copper, value). When something is added, the total changes too.
+- Coupled coefficients: the same unknown appears in both coefficient ratios. Use cross-products to find it, then match the constants with the resulting scale factor (see [two unknown constants](#two-unknown-constants)).
 - A line y = kx + q and a fixed line whose crossing must land in a given quadrant: which k could work, or the greatest or least integer k. The line turns about (0, q), and the ends of the range are left out (see [where the crossing lands](#crossing-region)).
+
+At Medium, two graphed lines may cross between grid points, requiring their
+equations to get an exact solution. Mixture problems also require a model:
+one equation counts the amounts and another counts what they contain. The
+following is a Medium mixture example.
 
 > **Example.** A lab mixes a 10% salt solution with a 40% salt solution to
 > make 30 liters of a 20% solution. How many liters of the 10% solution does

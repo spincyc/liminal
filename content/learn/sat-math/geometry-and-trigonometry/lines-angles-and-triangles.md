@@ -12,9 +12,9 @@ a transversal, triangle angle sums, isosceles triangles, congruent and
 similar triangles. It belongs to Geometry and Trigonometry,
 {{fact:sat-math-geometry}} of the Math section. Most questions come with a
 figure. Label every angle and length you know on your scratch paper before
-you compute. Hard questions hide similar triangles that are not a parallel
-cut (the altitude to a hypotenuse, a segment matched by angles), or turn a
-regular polygon's angles into a count of its sides.
+you compute. Hard questions hide a reversed similarity correspondence or connect the
+angles of two regular polygons. A direct altitude-to-hypotenuse proportion
+or a single polygon’s angle ratio is Medium.
 
 ## Angle relationships {#angle-relationships}
 
@@ -72,6 +72,27 @@ the exterior angle first.
 
 > **Trap.** Stopping at 30°, which is the angle, not the count, or dividing
 > 180 by it, which counts only half the turn.
+
+When neither polygon’s side count is known, a difference between the counts
+and a difference between the angles can form a quadratic equation. The
+exterior angle depends on the reciprocal of the count, not on its difference.
+
+> **Example.** Regular polygon P has 4 more sides than regular polygon Q.
+> Each interior angle of P is 24° greater than each interior angle of Q.
+> How many sides does P have?
+>
+> If Q has n sides, P has n + 4. Their exterior angles are 360/n and
+> 360/(n + 4). The larger interior angle has the smaller exterior angle,
+> so 360/n − 360/(n + 4) = 24.
+>
+> Combine the fractions: 1,440/(n(n + 4)) = 24, so n(n + 4) = 60.
+> Then n² + 4n − 60 = (n − 6)(n + 10) = 0.
+>
+> Reject n = −10 because a polygon cannot have a negative number of sides.
+> Q has 6 sides, so P has 6 + 4 = 10.
+
+> **Trap.** Dividing 360 by 24 treats the difference as an exterior angle.
+> Giving 6 stops at Q’s side count instead of answering about P.
 
 ## Similarity {#similarity}
 
@@ -184,6 +205,5 @@ can use one to check a result: an angle that looks acute can't be 120°.
 
 ## What Hard looks like {#hard}
 
-- The altitude to the hypotenuse of a right triangle, with two lengths given and a third asked. The three triangles are similar; match angles to pair the sides (see [similar triangles that aren't a parallel cut](#matching-by-angles)).
 - A segment across a triangle that makes a marked angle equal to one of the triangle's angles, but is not parallel to the third side. Pair the vertices by the equal angles, not by position.
-- A regular polygon described by a condition on its angles, such as "each interior angle is 4 times each exterior angle". Turn it into the exterior angle, then n = 360 ÷ that angle (see [exterior angles and regular polygons](#exterior-angles)).
+- Two regular polygons have unknown side counts linked by an additive difference, and their interior angles differ by a given amount. Combine the reciprocal exterior-angle formulas to obtain a quadratic, then reject any impossible side count (see [exterior angles and regular polygons](#exterior-angles)).

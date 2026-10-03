@@ -1,7 +1,24 @@
 # Content Audit Log
 
-Commit hashes in this log refer to the project's earlier history, which this
-repository does not include.
+Older commit hashes in this log refer to the project's earlier history, which
+this repository does not include.
+
+## Whole-product cold review — 2026-10-02
+
+Reviewed baseline: `25e176df1a812eba36083f9e45603d2907540f11`.
+The [review record](reviews/2026-10-02-cold-review.md) supersedes older claims
+about current quality. It records the screenshot's root cause, content and
+application repairs, independent agent acceptance, validation and limitations.
+
+Every active SAT template now requires source-bound sampled independent
+review in `content/template-reviews.json`. Fixed ACT bank IDs and historical
+outcomes are preserved. Science practice is disabled until its unsupported
+standalone bank is replaced with reviewed passage sets. Other ACT banks were
+repaired and remain exercise variants with unverified difficulty labels.
+
+No bank review status was bulk-promoted. All 4,025 retained records still
+await independent human editorial review; automated checks and independent
+agent solving are reported separately from that requirement.
 
 ## Legacy bank audit — 2026-07-29
 

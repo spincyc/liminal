@@ -6,8 +6,9 @@ module.exports = {
   title: "One Thin Layer",
   content: `[1] {1 Planted in a garden a Honeycrisp seed} will grow into an apple
 tree. It will not grow into a Honeycrisp. Apples do not come true from seed, and
-every named apple in every orchard {2 are} a cutting from one original tree,
-kept alive by being joined to other roots for two hundred years or more.
+each tree of a named variety in an orchard {2 are} a clone of an original
+tree. Grafting can preserve a variety through generations of trees; some old
+varieties have been propagated this way for more than two hundred years.
 
 [2] {3} The joining is called grafting, and the whole operation depends on a
 single layer. Between the bark and the wood of a young shoot lies a band of
@@ -59,20 +60,24 @@ fails.`,
       difficulty: "Medium",
       keep: false,
       key: "is",
-      noChange: "The plural verb has been matched to 'orchard' rather than to 'every named apple.'",
+      noChange: "The subject is singular 'each tree,' despite the intervening phrases describing its variety and location.",
       wrong: [
-        ["were", "The verb is still plural and the past tense breaks the present-tense claim."],
-        ["have been", "The plural present perfect misses both the number and the standing fact."],
+        [
+          "were",
+          "The verb is still plural and the past tense breaks the present-tense claim."
+        ],
+        [
+          "have been",
+          "The plural present perfect misses both the number and the standing fact."
+        ]
       ],
-      why:
-        "The subject is 'every named apple,' and 'every' makes it singular however many orchards " +
-        "follow it in a prepositional phrase.",
+      why: "The subject is 'each tree.' Neither 'of a named variety' nor 'in an orchard' changes its singular number, so the present-tense verb is 'is.'",
       steps: [
-        "Cross out 'in every orchard.'",
-        "Read 'every named apple … is' and match the verb.",
+        "Remove the phrases 'of a named variety' and 'in an orchard.'",
+        "Read 'each tree is a clone' and match the singular subject."
       ],
-      hint: "'Every' always takes a singular verb.",
-      trap: "The sentence describes thousands of trees, which colours the ear toward a plural.",
+      hint: "Find the head noun before the intervening descriptive phrases.",
+      trap: "The sentence describes thousands of trees, which colours the ear toward a plural."
     },
     {
       number: 3,
@@ -84,26 +89,24 @@ fails.`,
       wrong: [
         [
           "Apple trees belong to the rose family and are grown on every continent but Antarctica.",
-          "The tree's botanical family is never taken up again anywhere in the essay.",
+          "The tree's botanical family is never taken up again anywhere in the essay."
         ],
         [
           "Commercial orchards usually replace their trees every twenty to thirty years.",
-          "Orchard economics are not what this paragraph goes on to explain.",
+          "Orchard economics are not what this paragraph goes on to explain."
         ],
         [
           "There are a number of methods a grafter can choose between.",
-          "The vague plural promises a survey where the paragraph describes one requirement.",
-        ],
+          "The vague plural promises a survey where the paragraph describes one requirement."
+        ]
       ],
-      why:
-        "Paragraph 1 establishes that varieties survive only as cuttings. This paragraph explains what " +
-        "makes joining a cutting to a root work, so the opening should connect the two.",
+      why: "Paragraph 1 establishes that varieties survive only as cuttings. This paragraph explains what makes joining a cutting to a root work, so the opening should connect the two.",
       steps: [
-        "Note what paragraph 1 establishes: every named apple is a cutting.",
-        "Choose the opening that turns that fact into this paragraph's problem.",
+        "Note that grafting preserves a named variety through successive trees.",
+        "Choose the opening that turns that fact into this paragraph's problem."
       ],
       hint: "The paragraph is about one layer; the opening should point at it.",
-      trap: "Every choice is true about apples, so accuracy alone cannot decide it.",
+      trap: "Every choice is true about apples, so accuracy alone cannot decide it."
     },
     {
       number: 4,
@@ -158,23 +161,21 @@ fails.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "knit, and if it does not, nothing happens",
-          "The conjunction repairs the splice but merges two opposed conditions into one sentence.",
+          "knit, however, if it does not, nothing happens",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
           "knit, if it does not nothing happens",
-          "Removing the second comma leaves the splice and strands the conditional clause.",
-        ],
+          "Removing the second comma leaves the splice and strands the conditional clause."
+        ]
       ],
-      why:
-        "The paragraph sets two outcomes against each other, and each conditional deserves its own " +
-        "sentence so the second lands as flatly as it reads.",
+      why: "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Separate them so the contrast between the two conditions is audible.",
+        "Find the subjects and finite verbs on both sides of the boundary.",
+        "Keep a complete statement on each side of the sentence boundary."
       ],
       hint: "The two halves are opposite outcomes, not a continuation.",
-      trap: "'And' fixes the grammar and flattens an either-or into a list.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 7,
@@ -186,23 +187,21 @@ fails.`,
       noChange: "The opening phrase describes the rootstock, but the noun after the comma is 'the grafter.'",
       wrong: [
         [
-          "Cutting to match the scion, the grafter then splits each face partway.",
-          "The active form is grammatical but says the grafter is what matches the scion.",
+          "Cutting to match the scion, the rootstock is then split partway across its face.",
+          "The active participle makes the rootstock perform the cutting instead of receive it."
         ],
         [
-          "Cut to match the scion, each face is then split partway by the grafter.",
-          "The phrase now describes 'each face,' which is a part of the thing that was cut.",
-        ],
+          "Cut to match the scion, the grafter's next task is to split each face partway.",
+          "The opening description now attaches to the task, not to the piece of wood that was cut."
+        ]
       ],
-      why:
-        "A participial phrase at the head of a sentence attaches to the first noun after the comma. " +
-        "The rootstock is cut to match; the grafter is not.",
+      why: "A participial phrase at the head of a sentence attaches to the first noun after the comma. The rootstock is cut to match; the grafter is not.",
       steps: [
         "Ask what is cut to match the scion. The rootstock is.",
-        "Rewrite so 'the rootstock' follows the comma.",
+        "Rewrite so 'the rootstock' follows the comma."
       ],
       hint: "Read the opening phrase, then the first noun after the comma, and see if they match.",
-      trap: "The grafter really does the cutting, which makes the original read as accurate.",
+      trap: "The grafter really does the cutting, which makes the original read as accurate."
     },
     {
       number: 8,
@@ -236,23 +235,21 @@ fails.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "aligned: alignment is the entire operation",
-          "A colon introduces an explanation, but the second clause states a verdict rather than a definition.",
+          "aligned; although alignment is the entire operation",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "aligned and alignment is the entire operation",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "Both clauses are complete — what is done, and how much it matters. A semicolon joins equals " +
-        "and lets the second clause land as its own claim.",
+      why: "Both clauses are complete — what is done, and how much it matters. A semicolon joins equals and lets the second clause land as its own claim.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or judges it. It judges.",
+        "Ask whether the second explains the first or judges it. It judges."
       ],
       hint: "The second clause is the paragraph's thesis; it should not be subordinated.",
-      trap: "The repetition of 'aligned' and 'alignment' makes the second clause feel like a gloss.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 10,

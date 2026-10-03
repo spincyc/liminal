@@ -61,18 +61,22 @@ stones is not.
       key: "boots, and I",
       noChange: "Two independent clauses joined by 'and' need a comma before the conjunction.",
       wrong: [
-        ["boots; and I", "A semicolon and a coordinating conjunction do the same job, so both is redundant."],
-        ["boots, and, I", "The extra comma separates the conjunction from the subject that follows it."],
+        [
+          "boots; although I",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "boots, and, I",
+          "The extra comma separates the conjunction from the subject that follows it."
+        ]
       ],
-      why:
-        "'Ray asked whether I had boots' and 'I said yes' are both complete clauses, so the 'and' " +
-        "joining them takes a comma before it — as the next clause in the sentence already shows.",
+      why: "'Ray asked whether I had boots' and 'I said yes' are both complete clauses, so the 'and' joining them takes a comma before it — as the next clause in the sentence already shows.",
       steps: [
         "Check whether the words on each side of 'and' could stand alone. They could.",
-        "Place a comma immediately before the conjunction.",
+        "Place a comma immediately before the conjunction."
       ],
       hint: "The same sentence punctuates its next 'and' correctly; match it.",
-      trap: "'I said yes' is short enough to read as part of the first clause.",
+      trap: "'I said yes' is short enough to read as part of the first clause."
     },
     {
       number: 3,
@@ -133,26 +137,24 @@ stones is not.
       difficulty: "Hard",
       keep: false,
       key: "a string trimmer for the base of every stone",
-      noChange: "The fourth item becomes a gerund phrase where the first three are noun phrases.",
+      noChange: "The final entry names the activity of using a tool rather than naming the third tool in the equipment list.",
       wrong: [
         [
-          "a string trimmer used at the base of every stone",
-          "The added participle breaks the pattern the first three items set with 'for.'",
+          "to use a string trimmer at the base of every stone",
+          "The infinitive describes an action rather than naming a tool as the preceding noun phrases do."
         ],
         [
           "using a string trimmer for the base of every stone",
-          "The gerund remains, so the item still does not match the three before it.",
-        ],
+          "This wording still names an activity, whereas the preceding two equipment entries name tools and their jobs."
+        ]
       ],
-      why:
-        "The sentence is a list of equipment: acreage, then three tools, each named as a noun phrase " +
-        "followed by what it is for. The fourth item has to take the same shape.",
+      why: "After giving the acreage, the sentence lists three tools and their jobs: a zero-turn mower, a push mower, and a string trimmer. The last equipment entry should name the tool, matching the two mower entries, rather than describe the activity of using it.",
       steps: [
-        "Read the four items in isolation and compare how each begins.",
-        "Rewrite the last one to open with an article and a noun, like the others.",
+        "Set aside the acreage and compare the three equipment entries.",
+        "Keep the final entry focused on a tool and its job, like the two mower entries."
       ],
-      hint: "Compare the first word of each item before anything else.",
-      trap: "The gerund reads fluently because it is the only item describing an action.",
+      hint: "Ask what the equipment entries name: tools or activities.",
+      trap: "A gerund phrase can function as a noun, but here it names an activity where the equipment list calls for a tool."
     },
     {
       number: 6,
@@ -165,22 +167,20 @@ stones is not.
       wrong: [
         [
           "stones, I learned to hate that trimmer,",
-          "Adding a comma later leaves the splice at the start untouched.",
+          "Adding a comma later leaves the splice at the start untouched."
         ],
         [
-          "stones; and I learned to hate that trimmer",
-          "A semicolon and a coordinating conjunction do the same job, so both together is redundant.",
-        ],
+          "stones; although I learned to hate that trimmer",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ]
       ],
-      why:
-        "'There are eleven thousand stones' and 'I learned to hate that trimmer' both stand alone, " +
-        "so joining them takes a comma plus a conjunction.",
+      why: "'There are eleven thousand stones' and 'I learned to hate that trimmer' both stand alone, so joining them takes a comma plus a conjunction.",
       steps: [
         "Test each side of the comma as its own sentence. Both stand.",
-        "Add a coordinating conjunction after the comma.",
+        "Add a coordinating conjunction after the comma."
       ],
       hint: "Cover the comma and read each half aloud on its own.",
-      trap: "The number in the first clause makes it read like a setup rather than a sentence.",
+      trap: "The number in the first clause makes it read like a setup rather than a sentence."
     },
     {
       number: 7,
@@ -299,22 +299,20 @@ stones is not.
       wrong: [
         [
           "Trimming every ten days all summer, Ray never assigned that row to anyone else.",
-          "The active form makes Ray do the trimming, which the essay says he did not.",
+          "The active form makes Ray do the trimming, which the essay says he did not."
         ],
         [
-          "Trimmed every ten days all summer, that row was never assigned to anyone else by Ray.",
-          "The modifier now attaches correctly but the passive buries who did the assigning.",
-        ],
+          "Trimmed every ten days all summer, Ray kept that row on my assignment list.",
+          "The opening phrase again describes Ray as being trimmed rather than describing the row."
+        ]
       ],
-      why:
-        "A participial phrase at the head of a sentence attaches to the first noun after the comma. " +
-        "Turning it into a clause names the narrator as the one trimming and keeps Ray as the subject.",
+      why: "A participial phrase at the head of a sentence attaches to the first noun after the comma. Turning it into a clause names the narrator as the one trimming and keeps Ray as the subject.",
       steps: [
         "Ask who trimmed the row. The narrator did.",
-        "Rewrite the phrase as a clause that says so.",
+        "Rewrite the phrase as a clause that says so."
       ],
       hint: "When no rearrangement puts the right noun after the comma, make the phrase a clause.",
-      trap: "The sentence states a true fact about Ray, so nothing reads as an error.",
+      trap: "The sentence states a true fact about Ray, so nothing reads as an error."
     },
     {
       number: 13,
@@ -326,23 +324,21 @@ stones is not.
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "why: I have thought since that he may have been waiting",
-          "A colon introduces an explanation, but the second clause is a later reflection.",
+          "why; although I have thought since that he may have been waiting",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "why and I have thought since that he may have been waiting",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "Both clauses are complete and equally weighted — what the narrator did not do then, and what " +
-        "they have concluded since. A semicolon joins equals and holds the gap between the two times.",
+      why: "Both clauses are complete and equally weighted — what the narrator did not do then, and what they have concluded since. A semicolon joins equals and holds the gap between the two times.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or sits beside it. It sits beside it.",
+        "Ask whether the second explains the first or sits beside it. It sits beside it."
       ],
       hint: "The two clauses happen years apart; the mark should let both stand.",
-      trap: "The second clause reads like an explanation, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 14,

@@ -3,8 +3,9 @@
 What each test actually is, as of the 2026-27 testing year. Both tests changed
 substantially in recent years, and a lot of advice floating around online
 describes formats that no longer exist. If a resource mentions a 5-choice ACT
-Math section, a required ACT Science section, or a paper SAT with a no-calculator
-module, it is out of date.
+Math section, a universally required ACT Science section, or the old SAT
+no-calculator section, it describes an older format. School-day ACT contracts
+can still include Science for all participating students.
 
 > **Verify before you rely on this.** Formats, scoring rules, and score-release
 > timing below were checked against College Board and ACT pages on
@@ -46,11 +47,10 @@ question.
 
 Consequences that actually matter for strategy:
 
-- **Module 1 decides your route.** College Board has not published the routing
-  rule or the score range each Module 2 allows. It is widely believed that the
-  easier Module 2 caps how high the section score can go; treat that as an
-  estimate, not a published fact. Either way, do not "warm up" through
-  Module 1.
+- **Module 1 decides your route.** College Board does not publish a simple
+  routing cutoff. Its [scoring page](https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated)
+  illustrates overlapping score ranges for the two routes without exact
+  lower-route maxima. Give both modules your best work.
 - **Within a module, you can move freely.** Skip, flag, come back, change
   answers. Adaptivity happens *between* modules, never inside one.
 - **A hard-feeling Module 2 is usually good news.** Students routinely panic
@@ -78,10 +78,11 @@ Consequences that actually matter for strategy:
 
 - Every question has its **own short passage** — typically 25-150 words. There
   are no long shared passages.
-- Questions are **ordered by domain, then roughly by difficulty within domain**:
+- Questions are **ordered by domain, then skill and difficulty**:
   Craft and Structure first, then Information and Ideas, then Standard English
   Conventions, then Expression of Ideas. Knowing this order lets you predict
-  what is coming and manage energy.
+  what is coming and manage energy. Standard English Conventions is the
+  exception: it runs by difficulty across the domain, regardless of skill.
 - Some questions involve a **pair of short texts** (Cross-Text Connections),
   and some involve **tables or graphs** (quantitative Command of Evidence).
   Exact counts per module are not published.
@@ -163,12 +164,12 @@ If you took the ACT before the redesign, four things are different:
 
 ### Should you take Science and Writing?
 
-**Science: yes, in almost all cases.** It costs a few dollars extra. Some
-colleges and many scholarship and honors programs still want a Science score,
-some state systems and NCAA processes reference it, and a good Science score is
-a free credential. The only reason to skip it is if Science is a genuine
-liability *and* you have confirmed no school on your list wants it — a check
-worth doing rather than assuming.
+**Science: check your requirements and goals.** Confirm each college, program
+and scholarship policy before paying for an optional section. For school-day
+ACT testing, the state or district contract can determine whether you take it;
+see [ACT district testing](https://www.act.org/content/act/en/products-and-services/the-act-educator/states-and-districts.html).
+A Science score may be useful for a STEM-related application, but it does not
+raise the three-section Composite.
 
 **Writing: check your specific list.** Most colleges no longer require it, but a
 handful still do, and requirements change. It costs meaningfully more and adds
@@ -187,8 +188,9 @@ This is where the ACT punishes people. Time per question:
 | Reading | 67 seconds |
 | Science | 60 seconds |
 
-The ACT is a speed test in a way the SAT is not. Content difficulty is generally
-lower; the pressure comes from the clock. See
+These averages do not fully describe time pressure: passage lengths and tasks
+differ, and both tests require content knowledge and pacing. Compare fresh
+official practice tests to find which format suits you. See
 [Timing and pacing](06-timing-and-pacing.md).
 
 ---
@@ -213,8 +215,8 @@ test dates and combine them.
   best English, Math, and Reading across dates.
 
 This is the single strongest argument for taking a test twice. If a school
-superscores, a second sitting can only help you — a section that goes badly
-simply doesn't count.
+superscores, a lower section score will not lower that school's superscore. Retaking still
+costs time and may cost money; check score-reporting and application policies.
 
 **But:** superscore policies vary and not every school does it. Check each
 school before assuming.
@@ -250,13 +252,13 @@ backward from an application deadline.
 | Calculator | Entire Math section, Desmos built in | Entire Math section: approved handheld, and Desmos built in when testing online |
 | Science section | None | Optional, separate score |
 | Essay | None | Optional |
-| Time pressure | Moderate | High |
+| Pacing | Short texts; longer average per question | Shared passages; shorter average per question |
 | Reading load | Short discrete passages | Longer passages |
 | Math answer choices | 4 (plus grid-ins) | 4 |
 | Formula sheet | Provided | **Not provided** |
 
-That last row surprises people. The ACT gives you nothing — every area, volume,
-and trigonometry formula must be in your head. See
+The ACT has no general formula sheet, though individual questions may supply
+relationships. Learn commonly used formulas and when to apply them. See
 [ACT formula reference](act/math/07-formula-reference.md).
 
 ---

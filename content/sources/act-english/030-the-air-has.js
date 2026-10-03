@@ -39,18 +39,22 @@ air over the field has turned into a lens.`,
       key: "off is audible, and",
       noChange: "Two independent clauses joined by 'and' need a comma before the conjunction.",
       wrong: [
-        ["off is audible; and", "A semicolon and a coordinating conjunction do the same job, so both is redundant."],
-        ["off, is audible and", "The comma now separates the subject from its own verb."],
+        [
+          "off is audible; although",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "off, is audible and",
+          "The comma now separates the subject from its own verb."
+        ]
       ],
-      why:
-        "'A train two miles off is audible' and 'at noon the same train is not' are both complete " +
-        "clauses, so the 'and' between them takes a comma.",
+      why: "'A train two miles off is audible' and 'at noon the same train is not' are both complete clauses, so the 'and' between them takes a comma.",
       steps: [
         "Check whether the words on each side of 'and' could stand alone. They could.",
-        "Place a comma immediately before the conjunction.",
+        "Place a comma immediately before the conjunction."
       ],
       hint: "The second clause has its own subject and verb, however short it looks.",
-      trap: "The opening phrase already sets a rhythm that makes another pause feel excessive.",
+      trap: "The opening phrase already sets a rhythm that makes another pause feel excessive."
     },
     {
       number: 2,
@@ -126,23 +130,21 @@ air over the field has turned into a lens.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "air, the whole front tilting",
-          "The participle leaves the second half without a main verb of its own.",
+          "air; the whole front tilting",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
         ],
         [
-          "air; and the whole front tilts",
-          "A semicolon and a coordinating conjunction do the same job, so both together is redundant.",
-        ],
+          "air; although the whole front tilts",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ]
       ],
-      why:
-        "Both halves are complete clauses. The tilt is the consequence of the outrunning, and a comma " +
-        "with 'and' joins them without breaking the sentence that has already run through a colon.",
+      why: "Both halves are complete clauses. The tilt is the consequence of the outrunning, and a comma with 'and' joins them without breaking the sentence that has already run through a colon.",
       steps: [
         "Test each side of the comma as a sentence. Both stand.",
-        "Add a coordinating conjunction after the comma.",
+        "Add a coordinating conjunction after the comma."
       ],
       hint: "The sentence has already used its colon; the second join has to be lighter.",
-      trap: "The colon earlier makes the sentence feel fully punctuated already.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -269,23 +271,21 @@ air over the field has turned into a lens.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "steadier: both of those help",
-          "A colon introduces an explanation, but the second clause simply adds a verdict.",
+          "steadier; although both of those help",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "steadier and both of those help",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "Both clauses are complete — what else is true of night, and the verdict on it. A semicolon " +
-        "joins equals and keeps the concession compact before the sentence that overturns it.",
+      why: "Both clauses are complete — what else is true of night, and the verdict on it. A semicolon joins equals and keeps the concession compact before the sentence that overturns it.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or judges it. It judges.",
+        "Ask whether the second explains the first or judges it. It judges."
       ],
       hint: "The clause is a concession the next sentence takes back; it should stay tight.",
-      trap: "The clauses are short, which makes a comma feel sufficient.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 12,

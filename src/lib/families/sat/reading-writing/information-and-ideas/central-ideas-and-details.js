@@ -565,13 +565,13 @@
     {
       scene: "ii-bat-vision",
       text:
-        "The phrase \"blind as a bat\" suggests that bats cannot see, perhaps because many species find their way in the dark by echolocation, listening for the echoes of their own calls. In fact, no bat species is blind. Large fruit bats, which do not echolocate at all, depend heavily on keen night vision to locate ripe fruit, and even species that echolocate use their eyes to navigate over long distances, such as when they return to a roost at dawn.",
+        "The phrase \"blind as a bat\" suggests that bats cannot see, perhaps because many species find their way in the dark by echolocation, listening for the echoes of their own calls. In fact, no bat species is blind. Many fruit bats that do not echolocate depend heavily on keen night vision to locate ripe fruit, and even species that echolocate use their eyes to navigate over long distances, such as when they return to a roost at dawn.",
       belief: "bats cannot see",
       turn: "In fact, no bat species is blind",
       correction: "use their eyes to navigate",
       key: "Despite a common saying, no bat species is blind, and many bats depend on their eyesight.",
       misconception: "Bats cannot see, which is why so many species find their way in the dark by echolocation.",
-      narrow: "Large fruit bats do not use echolocation when they search for ripe fruit at night.",
+      narrow: "Many fruit bats rely on vision when they search for ripe fruit at night.",
       overreach: "Bats that echolocate see better at night than large fruit bats, which rely on their eyes instead.",
       overReason: "The text never compares the eyesight of the two kinds of bats; it says fruit bats depend heavily on keen night vision.",
     },
@@ -630,14 +630,14 @@
     {
       scene: "ii-viking-helmets",
       text:
-        "Popular images show Viking warriors in horned helmets. The image dates largely from the nineteenth century, when costume designers for operas based on Norse legends gave singers horned headgear. Archaeologists, however, have found no horned helmets from the Viking Age. The one reasonably complete Viking helmet ever discovered, unearthed in Norway in 1943, is a rounded iron cap with a guard to protect the eyes and nose.",
+        "Popular images show Viking warriors in horned helmets. The image dates largely from the nineteenth century, when costume designers for operas based on Norse legends gave singers horned headgear. Archaeologists, however, have found no horned helmets from the Viking Age. A remarkably complete Viking helmet, unearthed in Norway in 1943, is a rounded iron cap with a guard to protect the eyes and nose.",
       belief: "Viking warriors in horned helmets",
       turn: "Archaeologists, however, have found no horned helmets",
       correction: "a rounded iron cap",
       key: "The familiar image of horned Viking helmets comes from nineteenth-century operas, not from archaeological evidence.",
       misconception: "Although few survive, the helmets Viking warriors wore in battle were usually decorated with horns.",
       narrow: "A rounded iron Viking helmet with a guard for the eyes and nose was found in Norway in 1943.",
-      overreach: "Viking warriors probably fought without helmets, since only one fairly complete helmet has been found.",
+      overreach: "Viking warriors probably fought without helmets, since so few fairly complete helmets have been found.",
       overReason: "The text says one reasonably complete helmet survives; it never suggests that Vikings fought without helmets.",
     },
     {
@@ -760,14 +760,14 @@
     {
       scene: "ii-lit-bakery-last-day",
       text:
-        "On the bakery's last day, Mrs. Okonkwo baked the same six loaves she had baked every morning for thirty-one years. Customers she had not seen in months appeared at the counter, some carrying children who had grown too tall to lift. Each of them wanted to say something, and most said it badly: that the bread had been good, that the town would miss it. She wrapped each loaf in paper and thanked them. Only after the last customer had gone did she sit down on the flour sacks and let herself look at the empty shelves.",
+        "On the bakery's last day, Mrs. Okonkwo baked the same six loaves she had baked every morning for thirty-one years. Customers she had not seen in months appeared at the counter, some accompanied by children who had grown too tall to lift. Each of them wanted to say something, and most said it badly: that the bread had been good, that the town would miss it. She wrapped each loaf in paper and thanked them. Only after the last customer had gone did she sit down on the flour sacks and let herself look at the empty shelves.",
       turn: "Only after the last customer had gone",
       detail: "children who had grown too tall to lift",
       key: "On her bakery's final day, Mrs. Okonkwo keeps her routine for her customers before privately facing the loss.",
-      narrow: "Some of the bakery's customers arrive carrying children who have grown too tall to lift.",
+      narrow: "Some of the bakery's customers arrive with children who have grown too tall to lift.",
       opposite: "Mrs. Okonkwo is relieved that she will no longer have to bake bread early every morning.",
       beyond: "Some of the bakery's customers arrive carrying cakes and flowers that were bought to celebrate the last day.",
-      beyondReason: "Customers do arrive, some carrying children, but the passage mentions no cakes, flowers, or celebration.",
+      beyondReason: "Customers do arrive with their children, but the passage mentions no cakes, flowers, or celebration.",
     },
     {
       scene: "ii-lit-new-glasses",
@@ -1012,9 +1012,9 @@
     {
       scene: "ii-four-day-workweek",
       text:
-        "Management researcher Oskar Lind argues that a four-day workweek raises employee productivity. At the software company he studied, output per hour rose by 12 percent in the year after the company moved to four ten-hour days. The increase is real, and it shows at least that the new schedule did not hurt the company's work. During that same year, however, the company also replaced its project-tracking software, a change that its managers say eliminated many hours of paperwork. Because the schedule and the software arrived together, Lind's study cannot say which one deserves the credit.",
+        "Management researcher Oskar Lind argues that a four-day workweek raises employee productivity. At the software company he studied, output per hour rose by 12 percent in the year after the company moved to four ten-hour days. The increase is real, but identifying its cause requires separating the changes that occurred together. During that same year, however, the company also replaced its project-tracking software, a change that its managers say eliminated many hours of paperwork. Because the schedule and the software arrived together, Lind's study cannot say which one deserves the credit.",
       claim: "raises employee productivity",
-      concession: "it shows at least that the new schedule did not hurt the company's work",
+      concession: "The increase is real",
       limit: "cannot say which one deserves the credit",
       key: "Productivity rose after the schedule changed, but the study cannot tell whether the schedule was the cause.",
       source: "Moving to a four-day workweek raises the productivity of a company's employees.",
@@ -1585,17 +1585,17 @@
     id: "central-idea-period-prose",
     skill: "Central Ideas and Details",
     subskill: "main idea",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Main idea of an original passage in older literary prose",
     recognize:
       "Older syntax and irony delay the point: the main idea emerges only when the opening view or reputation is weighed against what the closing sentences show.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["too-narrow", "too-broad", "misattributed-view", "opposite-stance"],
     build(t) {
       const topic = t.pick(PERIOD_PROSE_TOPICS);
       const guide = PERIOD_GUIDE[topic.kind];
       const content = `${PERIOD_HEADERS[topic.kind]}\n\n${topic.text}`;
-      return mc("Hard", topic, {
+      return mc("Medium", topic, {
         stimulus: passage(content),
         stem: "Which choice best states the main idea of the text?",
         correct: topic.key,
@@ -1851,243 +1851,261 @@
   /* Central Ideas: main idea of a dense academic argument               */
   /* ------------------------------------------------------------------ */
 
-  // Dense expository passages (Flesch-Kincaid grade 13 and above) in the
-  // register of academic prose: history, economics, biology, linguistics,
-  // art history, and the methods of the sciences. Each reports a view, then
-  // limits, reframes, or reconciles it, and the main idea is the author's
-  // position at its exact strength. Invented scholars appear only with
-  // invented places and studies (the Carrand guild, the Lwen villages,
-  // Merrow, the Saanvik islands); general claims about real fields are
-  // accurate. Each item carries its own three distractors and reasons: the
-  // view the author reports, the author's point pushed a step too far (or
-  // one side of a debate the author reconciles), and a true supporting
-  // detail. Two choices usually share a frame, and neither the longest
-  // choice nor a qualifier marks the key. `anchors` must occur in order.
+  // Original self-contained studies and archival cases. The main idea joins
+  // multiple findings while preserving what their methods can establish.
+  // Each scene carries an evidence-based explanation and three specific
+  // near misses. Ordered anchors verify structure, not semantic correctness.
   const ACADEMIC_MAIN_TOPICS = [
     {
-      scene: "ii-cid-acad-archive-silence",
-      text:
-        "Historians who find no mention of a practice in a community’s surviving records are often tempted to conclude that the practice was absent. Such an inference from silence is defensible, however, only when the records were produced by people who would have had reason to note the practice had it existed. The ledgers of the Carrand weavers’ guild, for instance, meticulously itemize members’ wages, dues, and fines but never mention how apprentices were instructed; to infer from this omission that instruction was haphazard or neglected would be to mistake the ledgers’ purpose, which was fiscal rather than pedagogical. Absence from a record constitutes evidence of absence only to the degree that presence would have been recorded.",
-      anchors: ["are often tempted to conclude that the practice was absent", "defensible, however, only when the records were produced", "evidence of absence only to the degree"],
-      key: "A record's silence about a practice shows its absence only if the record's keepers would have had reason to note it.",
-      wrong: [
-        ["A record's silence about a practice shows that the practice was absent, as historians have generally been right to assume.",
-         "This is the inference the author says historians are “tempted” to draw; the text allows it only when the record keepers would have noted the practice."],
-        ["Records kept for fiscal purposes, however detailed, can tell historians nothing about how a community trained its members.",
-         "The author says only that the ledgers’ silence cannot show that instruction was neglected; the text never claims such records reveal nothing at all about training."],
-        ["The Carrand guild's ledgers itemize wages and fines in detail but never mention how the guild's apprentices were instructed.",
-         "This is the author’s example, not the point it illustrates about what silence in a record can show."],
+      "scene": "ii-cid-acad-recording-thresholds",
+      "text": "The surviving books of the fictional Orven workshop contain no payments to apprentices before 1840. A historian takes this silence as evidence that apprentices then worked without pay. The earlier books, however, list only expenses requiring the owner's approval; foremen could authorize small payments themselves. After 1840, the books record every payment, although the workshop's rules about who could authorize them remained unchanged. A separate packet of receipts includes payments to two apprentices in 1838. These receipts do not reveal whether the recipients were exceptional, and no comparable packet survives from an earlier decade. The historian's proposed turning point coincides exactly with a change in what entered the books.",
+      "anchors": [
+        "only expenses requiring the owner's approval",
+        "record every payment",
+        "do not reveal whether the recipients were exceptional"
       ],
-      why: "The author grants that historians are tempted to read silence as absence but limits the inference to records whose keepers would have noted the practice; the guild’s fiscal ledgers illustrate a silence that shows nothing about instruction.",
+      "key": "Changed bookkeeping weakens the proposed date for the start of apprentice pay, while the earlier extent of such pay remains uncertain.",
+      "wrong": [
+        [
+          "Changed bookkeeping explains the apparent start of apprentice pay, while the receipts establish that earlier payments were already routine.",
+          "Two receipts establish that some earlier payments occurred, not that paying apprentices was routine."
+        ],
+        [
+          "The receipts move the start of apprentice pay to 1838, while the later books reveal how quickly the practice became common.",
+          "The earliest surviving receipt need not date the start of a practice; fuller records also need not show a real expansion."
+        ],
+        [
+          "The later books establish an expansion of apprentice pay, while the receipts leave the exact date of its introduction uncertain.",
+          "The changed recording threshold prevents treating more entries as proof that the practice expanded."
+        ]
+      ],
+      "why": "The early books excluded some small payments, the later books did not, and receipts independently show payments before the proposed turning point. Together these facts undermine the date inferred from silence without establishing how common earlier payments were."
     },
     {
-      scene: "ii-cid-acad-model-organisms",
-      text:
-        "Because a handful of species, among them the fruit fly and the house mouse, have been studied with unmatched intensity, biologists are tempted to treat what is true of these model organisms as true of animals generally. Defenders of the practice note that many fundamental cellular processes are conserved across enormous evolutionary distances, so that discoveries about a fly’s cells frequently illuminate human ones. That defense is sound as far as it goes, but it licenses generalization only about processes independently known to be conserved. Traits shaped by a model organism’s peculiar way of life, including the rapid development that made it convenient to study in the first place, may be precisely the features that make it unrepresentative.",
-      anchors: ["tempted to treat what is true of these model organisms", "That defense is sound as far as it goes", "precisely the features that make it unrepresentative"],
-      key: "Model organisms reveal much about widely shared processes but may mislead about traits that suit their own ways of life.",
-      wrong: [
-        ["Model organisms reveal what is true of animals in general, since fundamental cellular processes are shared across species.",
-         "The author accepts this defense only for processes known to be conserved; traits tied to a model organism’s way of life may make it unrepresentative."],
-        ["Model organisms are so unrepresentative of animals in general that discoveries about them rarely illuminate other species.",
-         "The author grants that discoveries about a fly’s cells “frequently illuminate human ones”; the doubt is limited to certain traits."],
-        ["Many fundamental cellular processes are shared by species that are separated by enormous evolutionary distances.",
-         "This is the defenders’ supporting fact, which the author accepts, not the author’s point about its limits."],
+      "scene": "ii-cid-acad-organism-selection",
+      "text": "A laboratory chooses a short-lived fictional beetle for studies of tissue repair because several generations can be observed within a year. Blocking a particular protein delays repair in the beetle. In two longer-lived species, blocking the corresponding protein has the same effect. The beetle normally repairs tissue much faster than either species, prompting the laboratory to propose that increasing the protein would accelerate their repair. Yet all three species produce similar amounts of it after injury. The beetle was selected from a larger group specifically for its unusually rapid development, a trait that also changes several processes the laboratory has not measured. Trials that increase the protein have so far been conducted only in the beetle.",
+      "anchors": [
+        "has the same effect",
+        "similar amounts of it after injury",
+        "specifically for its unusually rapid development"
       ],
-      why: "The author grants the defenders’ point that shared cellular processes make model organisms informative but limits it to processes known to be conserved; traits tied to an organism’s way of life, including its rapid development, may make it unrepresentative.",
+      "key": "The comparisons support a shared role for the protein in repair without establishing that it explains the beetle's unusual repair speed.",
+      "wrong": [
+        [
+          "The comparisons support using the beetle's repair speed to predict other species' responses without establishing a shared protein function.",
+          "Blocking the protein supports a shared function; the selected beetle's unusual speed is the feature that cannot yet be generalized."
+        ],
+        [
+          "The shared protein response identifies the source of the beetle's faster repair, although the best dose for other species remains uncertain.",
+          "All three produce similar amounts, and no increase trial in the other species establishes that this protein explains the speed difference."
+        ],
+        [
+          "The beetle's unusual development weakens the evidence for a shared protein function, although its repair speed remains a useful benchmark.",
+          "The independent blocking experiments support a shared function despite the beetle's selection; that selection instead limits the speed comparison."
+        ]
+      ],
+      "why": "The blocking experiments establish a common contribution to repair. Equal production, selection for unusual development, and unmeasured processes leave the between-species speed difference unexplained; shared necessity does not identify that difference's cause."
     },
     {
-      scene: "ii-cid-acad-price-index",
-      text:
-        "A price index intended to track the cost of living must specify which goods it follows, and the conventional solution, a fixed basket weighted by what households spent on each item in some base year, possesses an attractive simplicity. Its deficiency becomes apparent when relative prices diverge. Households confronted with a sharply more expensive item characteristically substitute a cheaper alternative, so that the base-year basket increasingly overrepresents precisely those goods whose prices have risen most. An index constructed on such a basket consequently tends to exaggerate increases in the cost of living, not because any individual price has been mismeasured but because the basket has ceased to describe what households actually purchase.",
-      anchors: ["possesses an attractive simplicity", "Its deficiency becomes apparent when relative prices diverge", "not because any individual price has been mismeasured"],
-      key: "A fixed-basket price index tends to exaggerate rises in the cost of living, since households buy less of what grows costly.",
-      wrong: [
-        ["A fixed basket of goods gives the most reliable measure of the cost of living, since it tracks the same purchases every year.",
-         "The author grants the fixed basket its simplicity but argues that tracking the same purchases is exactly its weakness once households change what they buy."],
-        ["A fixed basket gives misleading results mainly because the prices of the goods in it are recorded inaccurately.",
-         "The author says the index exaggerates “not because any individual price has been mismeasured” but because the basket no longer matches what households buy."],
-        ["Households faced with a costly item often substitute a cheaper one, which changes the mix of goods that they buy.",
-         "This is the behavior the argument rests on, not the author’s conclusion about what it does to a fixed-basket index."],
+      "scene": "ii-cid-acad-household-basket",
+      "text": "In fictional Pelmar, the official food index follows a fixed basket of goods. When the price of grain A rose, many households bought grain B instead. An economist argues that the index consequently exaggerates the burden of higher prices. A later survey separates households by cooking equipment: those with appliances capable of preparing either grain switched readily, while those with older stoves continued buying A. The stoves were concentrated among lower-income households. A proposed replacement index follows the purchases of the average household, giving B greater weight after the price increase. Equipment purchases do not enter either index, and the survey reports no improvement in access to the newer appliances.",
+      "anchors": [
+        "those with older stoves continued buying A",
+        "follows the purchases of the average household",
+        "Equipment purchases do not enter either index"
       ],
-      why: "The author grants the fixed basket its simplicity but argues that, as households substitute away from goods that grow costly, the basket overweights those goods, so the index overstates rises in the cost of living even when every price is measured correctly.",
+      "key": "An index that follows average substitutions may improve one price measure while understating the burden on households unable to substitute.",
+      "wrong": [
+        [
+          "Following average substitutions would resolve the fixed index's bias, because the two household groups face the same grain prices.",
+          "Identical prices do not imply identical substitution opportunities; equipment restricts one group's ability to switch."
+        ],
+        [
+          "The fixed basket better represents the average household, because equipment costs prevent the observed substitutions from lowering food costs.",
+          "The text reports actual switching among equipped households and does not report that those households had to purchase equipment."
+        ],
+        [
+          "The price increase burdens households mainly through appliance purchases, so adding equipment to either index would resolve the disagreement.",
+          "No new equipment purchases are reported, and existing equipment differences affect which food purchases households can make."
+        ]
+      ],
+      "why": "Observed substitution challenges the old basket for equipped households. The separate finding that low-income households cannot make that substitution, coupled with unchanged equipment access, limits what an average-purchase index would say about their burden."
     },
     {
-      scene: "ii-cid-acad-oral-chronology",
-      text:
-        "Historians long dismissed oral traditions as unreliable because the chronologies they preserve frequently compress or rearrange events, situating a migration and a famine that were centuries apart within a single generation. The ethnographer Ruth Anyango’s study of genealogical recitations in the Lwen fishing villages suggests, however, that such compression is systematic rather than careless: reciters reproduce the succession of rulers faithfully while collapsing the uneventful intervals between them. The traditions are thus poor evidence for when events occurred but comparatively good evidence for the order in which they occurred, a distinction that earlier critics, attending exclusively to dates, neglected to draw.",
-      anchors: ["long dismissed oral traditions as unreliable", "systematic rather than careless", "poor evidence for when events occurred"],
-      key: "Oral traditions that garble dates may still record the order of events faithfully, which critics intent on dates overlooked.",
-      wrong: [
-        ["Oral traditions are unreliable sources, since they often place events that were centuries apart within a single generation.",
-         "This is the older dismissal that the author reports; Anyango’s study shows that the traditions remain good evidence for the order of events."],
-        ["Oral traditions are more reliable than written records for establishing both the order in which events occurred and their dates.",
-         "The author calls the traditions “poor evidence for when events occurred” and never compares them with written records."],
-        ["Reciters in the Lwen fishing villages keep their rulers in order but collapse the uneventful intervals between reigns.",
-         "This is the finding the author uses as evidence, not the general point it supports about what oral traditions can show."],
+      "scene": "ii-cid-acad-shared-recitation",
+      "text": "Four villages in the fictional Nerin valley recite the same sequence of past leaders. Their agreement has been treated as four independent confirmations of the sequence. A researcher finds that the reciters met annually until a century ago and corrected one another's versions. The recitations also assign the same number of years to several reigns whose unequal lengths are documented on surviving boundary stones. Those stones nevertheless place the named leaders in the recited order. One early leader appears in every recitation but on none of the stones; the part of the valley associated with that leader has yielded no inscriptions. The researcher publishes the meeting records beside a map of where the stones were found.",
+      "anchors": [
+        "corrected one another's versions",
+        "place the named leaders in the recited order",
+        "has yielded no inscriptions"
       ],
-      why: "The author reports the old dismissal of oral traditions, then uses Anyango’s study to show that their distortions are systematic: they compress intervals but keep the order of events, a distinction the critics missed by attending only to dates.",
+      "key": "The villages' agreement provides less independent support than assumed, although separate evidence supports part of the shared account.",
+      "wrong": [
+        [
+          "The boundary stones restore the villages' value as independent witnesses, although their accounts remain uncertain about reign lengths.",
+          "External corroboration does not undo the reciters' exchange of versions, so the villages are still not independent witnesses."
+        ],
+        [
+          "The shared mistakes about reign lengths weaken the recited order, although agreement among villages supports the undocumented leader.",
+          "The stones corroborate the order despite the duration errors, while agreement about the leader may come from shared recitation."
+        ],
+        [
+          "The villages preserve a reliable sequence but added the undocumented leader, whose absence from the stones exposes a shared invention.",
+          "The relevant area has yielded no inscriptions, so silence in this incomplete sample cannot establish that the leader was invented."
+        ]
+      ],
+      "why": "Annual corrections explain agreement without independence. The stones separately support ordering but contradict durations, while their uneven geographic coverage prevents treating the missing leader as disproved."
     },
     {
-      scene: "ii-cid-acad-introduced-species",
-      text:
-        "Ecologists have increasingly questioned whether a species’ status as native or introduced should determine how it is managed. Critics of the distinction observe that many introduced species inflict no measurable damage and that some furnish habitat for native animals deprived of their original food sources. Defenders reply, reasonably, that introduced species are disproportionately represented among those that do inflict severe damage. The controversy is less fundamental than its rhetoric suggests. Both parties implicitly concede that harm, not provenance, is what justifies intervention; they disagree chiefly about whether provenance is a sufficiently reliable early indicator of harm to warrant acting before any damage has been observed.",
-      anchors: ["whether a species’ status as native or introduced", "Defenders reply, reasonably", "harm, not provenance, is what justifies intervention"],
-      key: "Both sides of the dispute judge introduced species by their harm; they differ mainly on whether origin predicts that harm.",
-      wrong: [
-        ["Introduced species warrant more aggressive management than native ones, since origin reliably predicts ecological harm.",
-         "This takes the defenders’ side and states it more strongly than they do; the author says only that the two sides disagree about how reliable an indicator origin is."],
-        ["Whether a species is native or introduced reveals nothing about how much ecological harm that species is likely to cause.",
-         "The author calls the defenders’ reply reasonable: introduced species are overrepresented among the most harmful, so origin reveals something."],
-        ["Some introduced species cause no measurable ecological harm, and some even provide habitat for native animals.",
-         "This is one side’s evidence, not the author’s point that the two sides share a premise."],
+      "scene": "ii-cid-acad-restoration-proposal",
+      "text": "Two plans for a fictional theater would remove different alterations. One would restore the architect's original stage, demolishing a later balcony. The other would retain that balcony, which documents the theater's years as a public meeting hall, but replace its modern supports with replicas of older ones. The first plan is defended as a return to the building's original function; the second, as preservation of its accumulated history. An engineer finds both plans equally safe. Neither would retain the partitioned rooms that housed a school between the theater and meeting-hall periods. The committee's archive contains detailed records of all three uses, but its visitor survey asked only about performances and political meetings.",
+      "anchors": [
+        "both plans equally safe",
+        "Neither would retain the partitioned rooms",
+        "asked only about performances and political meetings"
       ],
-      why: "The author presents both sides and then argues that they share a premise, that harm justifies intervention, so their real disagreement is chiefly whether origin is a reliable early sign of harm.",
+      "key": "The plans both select which parts of the building's history to preserve, and the committee's evidence of public interest omits a relevant use.",
+      "wrong": [
+        [
+          "The plans differ chiefly over safety, and a broader visitor survey could identify which historical use warrants the more secure structure.",
+          "The engineer finds them equally safe; the unasked questions concern which history is represented."
+        ],
+        [
+          "The meeting-hall plan preserves the building's accumulated history, while the theater plan relies on a survey that neglects later uses.",
+          "Both plans remove the school rooms, and the survey includes the later meeting-hall use but omits schooling."
+        ],
+        [
+          "The omitted school rooms make the earlier theater plan more historically consistent, although visitors may prefer the meeting-hall period.",
+          "Omitting one historical period does not make restoration to another uniquely justified, and no visitor preference result is reported."
+        ]
+      ],
+      "why": "Equal safety removes the technical distinction. Both proposals exclude a documented school period, and the survey's categories repeat that exclusion, so the choice concerns selective historical representation with incomplete evidence of public interests."
     },
     {
-      scene: "ii-cid-acad-translation-fidelity",
-      text:
-        "It is commonly assumed that a translation should be judged by its fidelity to the original and that the most faithful translation reproduces its source word for word. Yet fidelity at the level of the word can engender infidelity at every other level. A pun rendered literally ceases to be a pun; a proverb translated exactly may sound, in the new language, stilted or simply bewildering; a line whose rhythm once enacted its meaning may forfeit both. The translator who departs from the original’s vocabulary in order to reproduce its effects upon a reader is arguably the more faithful, provided one grants that what a text accomplishes with its readers belongs to the text as much as what it says.",
-      anchors: ["judged by its fidelity to the original", "fidelity at the level of the word can engender infidelity", "belongs to the text as much as what it says"],
-      key: "A translator may be most faithful to a text by departing from its exact words in order to reproduce its effects on readers.",
-      wrong: [
-        ["The most faithful translation reproduces the words of its source text as exactly as the new language permits.",
-         "This is the common assumption the author questions; word-for-word fidelity can be unfaithful at every other level."],
-        ["Since reproducing the words of a source text exactly is impossible, a translator may freely change its meaning.",
-         "The author never calls exact reproduction impossible and defends departures only to reproduce a text’s effects, not to change its meaning at will."],
-        ["Translated word for word, a pun usually ceases to be a pun, and a proverb may sound stilted in the new language.",
-         "These are the author’s examples of word-for-word infidelity, not the point they support."],
+      "scene": "ii-cid-acad-translation-double-effect",
+      "text": "A fictional play opens with a clerk whose ceremonial greeting repeats a phrase later used to dismiss him. In the source language, the greeting sounds pompous but respectful; its later reuse exposes the officials' cruelty. Translation A preserves the repeated phrase, though audiences initially hear it as openly insulting. Translation B replaces the greeting with a polite local formula and translates the dismissal literally, losing the verbal echo. In trial performances, A's audiences recognize the echo but judge the clerk foolish for accepting the first insult. B's audiences see his initial trust as reasonable but often miss the dismissal's connection to it. Neither translator has tested a version that adapts both occurrences together.",
+      "anchors": [
+        "losing the verbal echo",
+        "judge the clerk foolish",
+        "adapts both occurrences together"
       ],
-      why: "The author questions the assumption that the most faithful translation is word for word: literal renderings can lose a text’s effects, so the translator who departs from the words to keep those effects may be the more faithful.",
+      "key": "The translations preserve different features of the scene, and their audience responses reveal why those features need to work together.",
+      "wrong": [
+        [
+          "The audiences favor different translations because one preserves the play's language while the other preserves its sequence of events.",
+          "No audience preference is reported, both retain the events, and preserving words does not preserve the first phrase's respectful effect."
+        ],
+        [
+          "Preserving the repeated phrase conveys the officials' cruelty more fully, even though it changes the reason for the clerk's initial trust.",
+          "The altered first impression makes that trust look foolish and changes the dramatic relationship; the text does not rank A as fuller."
+        ],
+        [
+          "Preserving the clerk's reasonable trust makes the verbal echo unnecessary, because audiences can infer its later dramatic purpose.",
+          "The reported B audiences often miss the connection; the passage provides evidence against treating the echo as unnecessary."
+        ]
+      ],
+      "why": "The first response tests the clerk's reasonable trust and the later echo exposes its betrayal. Each translation retains one effect while disturbing the other; the untested paired adaptation leaves open a way to preserve their interaction."
     },
     {
-      scene: "ii-cid-acad-survey-intentions",
-      text:
-        "Surveys asking people how often they exercise, vote, or recycle consistently yield higher figures than direct observation does, a discrepancy customarily attributed to respondents’ desire to present themselves favorably. The sociologist Idris Kaleb’s follow-up interviews with survey respondents in the town of Merrow complicate this explanation. Many respondents, he found, answered not with a tally of past behavior but with a description of their customary intentions, reporting what they ordinarily meant to do in a typical week. The resulting inflation reflects a misconstrual of the question at least as much as a wish to impress, and it may therefore persist even under conditions of complete anonymity.",
-      anchors: ["customarily attributed to respondents’ desire to present themselves favorably", "complicate this explanation", "persist even under conditions of complete anonymity"],
-      key: "Self-reports may exaggerate behavior partly because respondents describe what they usually intend rather than what they did.",
-      wrong: [
-        ["Surveys overstate how often people exercise, vote, or recycle because respondents wish to present themselves favorably.",
-         "This is the customary explanation that Kaleb’s interviews complicate; the author adds a second cause that the explanation leaves out."],
-        ["Anonymous surveys would remove the inflation in self-reported behavior, since respondents would then have no one to impress.",
-         "The author says the inflation “may therefore persist even under conditions of complete anonymity.”"],
-        ["Many respondents in Merrow reported what they ordinarily meant to do in a typical week rather than what they had done.",
-         "This is Kaleb’s finding, the evidence for the author’s point rather than the point itself."],
+      "scene": "ii-cid-acad-survey-followthrough",
+      "text": "A fictional town asks residents whether they would use a proposed evening bus. Positive responses are concentrated among current bus riders, and planners call the survey encouraging. A researcher then compares who answered with the town's work schedules. Workers finishing after the last existing bus rarely answered; most completed surveys came from passengers waiting at daytime stops. When the route opens, ridership is modest, but many users belong to the previously underrepresented group. Several enthusiastic respondents continue driving home because the new timetable misses their shifts. The planners compare the total number of positive responses with total boardings, counting a regular passenger each time that person travels.",
+      "anchors": [
+        "rarely answered",
+        "belong to the previously underrepresented group",
+        "counting a regular passenger each time"
       ],
-      why: "The author reports the customary explanation, a wish to look good, and then uses Kaleb’s interviews to add a second cause: respondents describe their usual intentions, which is why the inflation may survive even anonymity.",
+      "key": "The survey's sampling and its link between stated interest and usable service limit what the later boarding total can validate.",
+      "wrong": [
+        [
+          "The modest ridership shows that residents exaggerated their interest, while the underrepresented workers account for most unused capacity.",
+          "Underrepresented workers became users; shift mismatches and sampling prevent attributing low use simply to exaggeration."
+        ],
+        [
+          "The new riders offset the survey's sampling bias, allowing boardings to validate positive responses despite the timetable mismatch.",
+          "Totals can resemble one another while referring to different people, and boardings count repeated trips rather than individual respondents."
+        ],
+        [
+          "The survey identifies the likely users accurately, but comparing respondents with repeated boardings understates the service's popularity.",
+          "Actual users include many underrepresented workers, and repeated boardings cannot establish how many distinct people use the service."
+        ]
+      ],
+      "why": "Sampling overlooked a group that later used the route; expressed interest did not ensure a timetable fit for other respondents. Counting repeat boardings introduces a further mismatch, so agreement or disagreement between totals cannot validate the survey's prediction."
     },
     {
-      scene: "ii-cid-acad-attribution",
-      text:
-        "Attributions of paintings to celebrated masters were once treated as matters of connoisseurship alone, settled by experts who professed to recognize a master’s hand. Technical analysis of pigments and canvases has since overturned a number of such attributions, and it is tempting to conclude that scientific methods have simply supplanted the connoisseur. The conclusion does not follow. Pigment analysis can establish that a painting could not have been produced in a given period, but it cannot, by itself, distinguish a master’s work from that of a skilled contemporary employing identical materials. For that narrower question, stylistic judgment remains indispensable, however fallible it may be.",
-      anchors: ["settled by experts who professed to recognize a master’s hand", "The conclusion does not follow", "stylistic judgment remains indispensable"],
-      key: "Technical tests can rule some attributions out, yet telling a master from a skilled contemporary still requires stylistic judgment.",
-      wrong: [
-        ["Scientific analysis of pigments and canvas has now replaced the connoisseur's trained eye as the means of attributing paintings.",
-         "This is the conclusion the author calls tempting and then rejects: “The conclusion does not follow.”"],
-        ["Stylistic judgment, however fallible, is more reliable than technical analysis for deciding when and by whom a painting was made.",
-         "The author gives technical analysis the question of when a painting could have been made and keeps stylistic judgment for the narrower question of which hand made it."],
-        ["Pigment analysis can establish that a painting could not have been produced during some particular period of time.",
-         "This is one step in the argument, what technical analysis can do, not the author’s conclusion about the two methods."],
+      "scene": "ii-cid-acad-citation-pathways",
+      "text": "In a fictional research field, article L is cited twice as often as article M. An evaluator interprets this as evidence that L contributed more to subsequent discoveries. A study classifies the citations: most references to L identify a standard instrument described there, whereas most references to M use its explanation of an unexpected result. Several papers draw on M's explanation without citing it, instead citing a review that summarizes it. Other papers challenge that explanation and cite M directly. The evaluator proposes excluding critical citations, while retaining citations to instruments. The study reports that most instrument citations contain no discussion of the instrument's performance.",
+      "anchors": [
+        "identify a standard instrument",
+        "instead citing a review",
+        "excluding critical citations"
       ],
-      why: "The author rejects the tempting conclusion that science has replaced the connoisseur: technical analysis can rule out a period, but only stylistic judgment, fallible as it is, can separate a master from a skilled contemporary using the same materials.",
+      "key": "Different citation practices complicate the comparison of contributions, and removing critical citations would leave other mismatches unresolved.",
+      "wrong": [
+        [
+          "Removing critical citations would reveal which article contributed more, because the remaining references would record successful applications.",
+          "Remaining references include routine instrument citations, and some intellectual influence is recorded only through a review."
+        ],
+        [
+          "The evidence favors M as the larger contribution, because explanatory citations provide a better measure than references to instruments.",
+          "The passage identifies different kinds of use but supplies no justified common scale that ranks explanatory and instrumental contributions."
+        ],
+        [
+          "The comparison mainly understates L's contribution, because papers rarely evaluate instruments when citing their original descriptions.",
+          "L's routine citations do not measure performance, while M also has uncounted indirect influence; the net ranking is not established."
+        ]
+      ],
+      "why": "L and M attract different kinds of citations, and some of M's influence bypasses direct citation. Removing criticism addresses only one kind of reference and still provides no shared measure of contribution."
     },
     {
-      scene: "ii-cid-acad-language-shift",
-      text:
-        "Accounts of language loss often emphasize coercion: schools that punished children for speaking their parents’ language, officials who would conduct business only in the dominant one. Such pressures were real and frequently brutal. Yet the linguist Oona Tervik’s study of the Saanvik islands, where no such policies were ever enforced, documents an equally rapid shift, propelled by parents who concluded on their own that their children’s prospects lay in the mainland language. The case suggests that coercion, though sufficient to precipitate language shift, is not necessary for it; perceived economic advantage can produce the same result, which may explain why abolishing coercive policies has not, by itself, reversed the decline of many languages.",
-      anchors: ["often emphasize coercion", "where no such policies were ever enforced", "though sufficient to precipitate language shift, is not necessary"],
-      key: "Language shift can be driven by parents' view of economic advantage as well as by coercion, so ending coercion may not halt it.",
-      wrong: [
-        ["Language shift is driven chiefly by coercion, as when schools and officials force speakers to abandon their language.",
-         "This is the emphasis the author reports; the Saanvik case shows a shift just as rapid with no coercion at all."],
-        ["Although coercive policies were often brutal, they have had little real effect on the decline of minority languages.",
-         "The author calls coercion “sufficient to precipitate language shift”; the point is that it is not the only cause."],
-        ["On the Saanvik islands, where no coercive policies were enforced, parents chose the mainland language for their children.",
-         "This is Tervik’s case, the evidence for the author’s point rather than the point itself."],
+      "scene": "ii-cid-acad-museum-labels",
+      "text": "A fictional museum replaces labels naming the collectors of ceremonial objects with labels naming their makers' communities. Curators describe the change as restoring the objects' original context. Community advisers welcome the new names but disagree about two objects: one was made for exchange with neighbors, and the other was later adapted by its recipients. The collection register had assigned each object to a single community using the place where it was purchased. The revised labels retain those assignments. A planned display groups objects by the same labels, while letters documenting their movement between communities remain in an online archive that the display does not mention.",
+      "anchors": [
+        "later adapted by its recipients",
+        "using the place where it was purchased",
+        "retain those assignments"
       ],
-      why: "The author grants that coercion was real and can cause language shift, then uses the Saanvik case to show that parents’ sense of economic advantage can cause it too, which is why ending coercion has not by itself reversed many languages’ decline.",
+      "key": "The new labels correct one emphasis of the old display while retaining categories that obscure the objects' histories across communities.",
+      "wrong": [
+        [
+          "The community advisers' disagreement makes the collectors' names a more reliable basis for presenting the two objects' original contexts.",
+          "Disagreement about complex histories does not make collectors' names evidence of original contexts."
+        ],
+        [
+          "The revised labels restore the objects' original contexts, although additional material would help explain their later movement.",
+          "The single-community assignments came from purchase locations and already obscure making, exchange, and adaptation."
+        ],
+        [
+          "The online letters resolve the problems with the labels, although grouping objects by their makers would make the display easier to follow.",
+          "The display does not direct visitors to the letters, and the retained labels do not reliably identify makers."
+        ]
+      ],
+      "why": "Replacing collectors' names changes whose role is foregrounded. But purchase-based single-community labels persist despite evidence of exchange and adaptation, and the display conceals rather than supplies that evidence."
     },
     {
-      scene: "ii-cid-acad-quake-forecast",
-      text:
-        "When a region that forecasters had assigned a low probability of a damaging earthquake experiences one, the forecast is commonly said to have failed. The judgment misconstrues what such forecasts assert. A statement that a region faces a ten percent chance of a damaging earthquake within fifty years predicts that, among many regions assigned that probability, roughly one in ten will experience such an event within the period. A single earthquake in a low-probability region is therefore entirely consistent with an accurate forecast; only the cumulative record of many regions over many decades can reveal whether the probabilities themselves were well calibrated.",
-      anchors: ["the forecast is commonly said to have failed", "misconstrues what such forecasts assert", "only the cumulative record of many regions"],
-      key: "A single quake where one was thought unlikely does not refute a forecast, since such forecasts are tested only in aggregate.",
-      wrong: [
-        ["A damaging earthquake in a region that was assigned a low probability of one shows that the region's forecast was inaccurate.",
-         "This is the common judgment that the author says “misconstrues what such forecasts assert.”"],
-        ["Earthquake forecasts cannot be evaluated at all, since any single earthquake is consistent with whatever they predict.",
-         "The author says forecasts can be evaluated, though only through the record of many regions over many decades."],
-        ["Among many regions assigned a ten percent chance of a damaging earthquake, roughly one in ten will have such an earthquake.",
-         "This explains what one forecast means; it is a step in the argument, not the author’s conclusion about judging forecasts."],
+      "scene": "ii-cid-acad-training-transfer",
+      "text": "In a fictional navigation study, trainees practicing with a map reach the destination faster than trainees following spoken directions. The map group practices the same route repeatedly; the spoken-direction group receives a different route each day. On an unfamiliar route, the first group loses its advantage. A second trial gives both groups varied routes, and map users again arrive sooner during practice. Two weeks later, when no aids are provided, the groups perform alike. The researchers retain both trials in their report. A reviewer recommends presenting only the first unfamiliar-route test as evidence that maps prevent users from learning how to navigate.",
+      "anchors": [
+        "receives a different route each day",
+        "map users again arrive sooner",
+        "when no aids are provided"
       ],
-      why: "The author rejects the common judgment that an earthquake in a low-probability region shows a failed forecast: such a forecast describes many regions, so it can be checked only against the record of many regions over time.",
-    },
-    {
-      scene: "ii-cid-acad-citation-counts",
-      text:
-        "Citation counts are widely employed as a proxy for the quality of scientific papers, on the plausible assumption that consequential work is cited frequently. The assumption holds only imperfectly. Papers describing widely used methods accumulate citations from every study that employs those methods, whatever their theoretical significance, while papers that decisively settle a question may be cited less as the question ceases to be debated. Review articles, which synthesize others’ findings, are cited more often than most original research. Citation counts thus measure how frequently a paper proves useful to other authors, a property that overlaps with, but is not identical to, its contribution to knowledge.",
-      anchors: ["widely employed as a proxy for the quality", "The assumption holds only imperfectly", "overlaps with, but is not identical to"],
-      key: "Citation counts track a paper's usefulness to other authors, which overlaps with but is not the same as its scientific value.",
-      wrong: [
-        ["Because important work tends to be cited often, the number of times a paper is cited reliably measures its scientific quality.",
-         "This is the assumption the author says “holds only imperfectly”; methods papers and reviews are cited for reasons other than their significance."],
-        ["Citation counts bear no relation to the quality of a scientific paper, although they are widely used to judge it.",
-         "The author says usefulness to other authors “overlaps with” a paper’s contribution to knowledge, so the counts are related to quality, if imperfectly."],
-        ["Review articles, which summarize the findings of other researchers, are cited more often than most original research.",
-         "This is one of the author’s examples, not the conclusion about what citation counts measure."],
+      "key": "The trials distinguish faster performance with an aid from lasting unaided learning, while the first trial also confounds aid with practice variety.",
+      "wrong": [
+        [
+          "The repeated loss of the map group's advantage supports the reviewer's claim, although varied routes reduce the size of the learning deficit.",
+          "The later groups perform alike rather than showing a map deficit; the first trial also differs in practice variety."
+        ],
+        [
+          "Varied practice explains the map group's initial advantage, while the second trial shows that maps improve lasting navigation skills.",
+          "Variety was missing from the initially faster map group's training, and later unaided performance is equal."
+        ],
+        [
+          "The second trial removes the first trial's design problem and establishes that the two aids are equally effective during practice and afterward.",
+          "The second trial controls route variety, but map users still arrive faster during aided practice."
+        ]
       ],
-      why: "The author accepts that important work tends to be cited but shows that methods papers, settled questions, and reviews distort the counts, so citations measure usefulness to other authors, which overlaps with but differs from a paper’s contribution to knowledge.",
-    },
-    {
-      scene: "ii-cid-acad-ruin-conservation",
-      text:
-        "Conservators of ancient ruins confront a choice that their predecessors seldom acknowledged: whether to stabilize a structure as it now stands or to reconstruct portions that have fallen. Reconstruction appeals to visitors, who can then imagine the building in use, but it inevitably substitutes the conservator’s hypothesis for evidence that no longer exists. Stabilization preserves only what survives, yet the surviving state is itself the product of centuries of decay and plunder, no more authentic a moment in the building’s history than any other. Neither approach recovers the original; each privileges a different stage of the building’s life, and the choice between them is consequently interpretive rather than technical.",
-      anchors: ["whether to stabilize a structure as it now stands", "substitutes the conservator’s hypothesis", "interpretive rather than technical"],
-      key: "Each way of conserving a ruin presents one stage of the building's life, so choosing between them is an interpretive decision.",
-      wrong: [
-        ["Stabilizing a ruin as it stands is more faithful to history than reconstructing it, since reconstruction replaces evidence with hypothesis.",
-         "The author says the surviving state is “no more authentic a moment” than any other, so stabilization is not the more faithful choice."],
-        ["Reconstructing a ruin's fallen portions is preferable to stabilizing it, since visitors can then imagine the building in use.",
-         "The author grants reconstruction its appeal to visitors but faults it for replacing evidence with hypothesis and favors neither approach."],
-        ["The present state of an ancient ruin is the product of centuries of decay and plunder rather than of its builders' design.",
-         "This is the author’s reason for doubting stabilization, one step in the argument rather than its conclusion."],
-      ],
-      why: "The author weighs both approaches, finds that neither recovers the original, and concludes that each presents a different stage of the building’s life, so the choice between them is interpretive rather than technical.",
-    },
-    {
-      scene: "ii-cid-acad-sham-surgery",
-      text:
-        "Surgical procedures have historically been adopted on the strength of patients’ reported improvement, without the placebo-controlled trials long required of new drugs. Surgeons have objected that operating on patients merely to create a comparison group is unethical, since a sham operation imposes risks without any prospect of benefit. The objection has genuine force, but it cuts in both directions: a procedure adopted without such trials may likewise expose many patients to risk without benefit, if the improvement they report owes more to expectation than to the operation itself. The ethical cost of a sham-controlled trial must therefore be weighed against the cost of continuing to perform an operation whose value remains unknown.",
-      anchors: ["without the placebo-controlled trials long required of new drugs", "cuts in both directions", "must therefore be weighed"],
-      key: "The ethical risks of sham surgery must be weighed against those of performing operations that have never been properly tested.",
-      wrong: [
-        ["Sham-controlled surgical trials are unethical because they expose patients to the risks of surgery without any chance of benefit.",
-         "This is the surgeons’ objection; the author grants it force but argues that untested operations carry the same kind of risk."],
-        ["Surgical procedures should be tested exactly as new drugs are, whatever the ethical costs of such testing may be.",
-         "The author says the ethical cost of a trial must be weighed, not disregarded."],
-        ["Many surgical procedures were adopted without the testing required of new drugs, on the strength of patients' reports.",
-         "This is the background the author starts from, not the conclusion the passage reaches."],
-      ],
-      why: "The author grants the surgeons’ objection that sham operations impose risk without benefit but argues that untested operations may do the same, so the cost of a trial must be weighed against the cost of continuing an operation of unknown value.",
-    },
-    {
-      scene: "ii-cid-acad-dialect-prestige",
-      text:
-        "Judgments that one dialect is more correct than another are frequently presented as linguistic judgments, as though the favored dialect were more logical or more expressive than its rivals. Linguists have found little support for such claims; the grammatical patterns of stigmatized dialects prove as regular and as capable of nuance as those of standard ones. What distinguishes a prestige dialect is the social standing of its speakers rather than any property of its grammar. This conclusion does not imply that acquiring the prestige dialect is pointless, since its social advantages are real; it implies only that those advantages should be recognized as social rather than attributed to linguistic superiority.",
-      anchors: ["frequently presented as linguistic judgments", "Linguists have found little support", "should be recognized as social"],
-      key: "A dialect's prestige reflects its speakers' social standing, not its grammar, though the advantages it confers are real.",
-      wrong: [
-        ["A dialect's prestige reflects the logic and expressiveness of its grammar, which is why standard dialects carry it.",
-         "This is the view the author reports and rejects; linguists find stigmatized dialects just as regular and nuanced."],
-        ["Because no dialect is grammatically superior to another, there is little point in anyone's learning the prestige dialect.",
-         "The author says explicitly that this does not follow, since the prestige dialect’s social advantages are real."],
-        ["The grammatical patterns of stigmatized dialects are as regular and as capable of nuance as those of standard dialects.",
-         "This is the linguists’ finding on which the argument rests, not the author’s conclusion about what prestige reflects."],
-      ],
-      why: "The author rejects the idea that prestige dialects are linguistically superior, attributes their prestige to their speakers’ social standing, and adds that their social advantages are nonetheless real.",
-    },
+      "why": "Equal-variety training retains an aided speed advantage, yet delayed unaided performance does not. In the first trial, aid and route variety differ together, so its transfer result alone cannot show maps obstruct learning."
+    }
   ];
 
   const academicMainIdea = {
@@ -2096,10 +2114,10 @@
     skill: "Central Ideas and Details",
     subskill: "main idea",
     difficulty: "Hard",
-    title: "Main idea of a dense academic argument that qualifies a view",
+    title: "Main idea that reconciles findings and the limits of their evidence",
     recognize:
-      "Dense academic prose reports a view and then limits, reframes, or reconciles it; the main idea is the author's position at its exact strength, not the view reported, not a stronger claim, and not one of the supporting examples.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 1, trap: 1 },
+      "Several findings bear on a proposed interpretation. Reconcile what they establish with what their methods leave uncertain; a partial truth about one finding may misstate the whole argument.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["misattributed-view", "too-broad", "too-narrow"],
     build(t) {
       const topic = t.pick(ACADEMIC_MAIN_TOPICS);
@@ -2110,8 +2128,8 @@
         wrong: topic.wrong,
         explanation: `${topic.why} The main idea is therefore: ${topic.key}`,
         steps: [
-          "Paraphrase each long sentence, marking which views the author reports and which the author holds.",
-          "Find where the author limits, reframes, or reconciles the reported view (\"however,\" \"does not follow,\" \"holds only imperfectly\").",
+          "Identify the proposed interpretation and list the findings relevant to it.",
+          "Combine the findings: which part of the interpretation survives, and which comparison or assumption fails?",
           "Choose the statement of the author's position at its exact strength, rejecting the reported view, an overstated version, and a supporting example.",
         ],
         principles: [
@@ -2131,238 +2149,271 @@
   /* told apart from the view it answers and from misscoped versions     */
   /* ------------------------------------------------------------------ */
 
-  // Dense expository passages (Flesch-Kincaid grade 13 and above), each
-  // with a received view, a scholar's finding that complicates it, and the
-  // scholar's own hedged conclusion. The question asks what the finding
-  // (or the scholar's claim) was. Invented scholars appear only with
-  // invented places and studies; the one real event (the 1815 Tambora
-  // eruption and the cold year that followed) is stated accurately. Each
-  // item carries its own three distractors and reasons: the received view
-  // attributed to the finding, the finding with a detail reversed or
-  // misplaced, and the scholar's hedged conclusion stated as certain or
-  // universal. `anchors` must occur in order.
+  // Original studies whose requested finding combines multiple groups,
+  // measurements, or records. The answer must preserve those relationships
+  // and their scope. Ordered anchors are a structural check; editorial review
+  // establishes the unique supported answer and plausible distractors.
   const ACADEMIC_DETAIL_TOPICS = [
     {
-      scene: "ii-cid-acad-d-tarnvik-lakes",
-      stem: "According to the text, what did Mørk’s analysis of the sediment cores show?",
-      text:
-        "Proponents of the view that the region’s twentieth-century warming began earlier in the mountains than in the lowlands have relied largely on photographs of glaciers, which show conspicuous retreat by the 1920s. The geochemist Lena Mørk’s analysis of sediment cores from eleven lakes in the Tarnvik range offers more direct evidence but complicates the picture: algal remains indicating longer ice-free seasons appear by the 1920s only in lakes above 1,800 meters, whereas lakes at lower elevations register no change until the 1950s. Mørk cautions, moreover, that her cores cannot establish when warming began in the lowlands themselves, which contain no comparable lakes.",
-      anchors: ["have relied largely on photographs of glaciers", "only in lakes above 1,800 meters", "cannot establish when warming began in the lowlands"],
-      key: "Signs of longer ice-free seasons appeared decades earlier in the highest lakes than in the lower ones.",
-      wrong: [
-        ["Glaciers in the Tarnvik range were retreating by the 1920s, decades before warming began in the lowlands.",
-         "The glacier photographs are the earlier evidence that others relied on, not Mørk’s finding, and Mørk says her cores cannot date warming in the lowlands."],
-        ["Lakes throughout the Tarnvik range recorded longer ice-free seasons beginning in the 1920s.",
-         "Only lakes above 1,800 meters show the change by the 1920s; lower lakes show none until the 1950s."],
-        ["Warming began in the Tarnvik range decades before it began in the region's lowlands.",
-         "Mørk cautions that her cores cannot establish when warming began in the lowlands, which have no comparable lakes."],
+      "scene": "ii-cid-acad-d-lake-thresholds",
+      "stem": "Which choice best describes the combined result of the two teams' measurements?",
+      "text": "At fictional Lake Rellin, Team A samples water from a fixed height above the lake bed each spring; Team B samples from a fixed distance below the surface. Both report increasing mineral concentrations during a five-year drought. A's increase disappears when its stored samples are compared only with earlier samples collected at the same distance below the surface. B's increase remains in that comparison. The lake level fell throughout the drought, and measurements show higher concentrations in shallower water in every year. Team A sampled only the southern basin; Team B worked only in the north. The southern basin has no record collected at a constant depth below the surface.",
+      "anchors": [
+        "A's increase disappears",
+        "B's increase remains",
+        "only the southern basin"
       ],
-      why: "Mørk found algal signs of longer ice-free seasons by the 1920s only in lakes above 1,800 meters, with lower lakes changing only in the 1950s; she draws no conclusion about the lowlands.",
+      "key": "The northern basin shows an increase beyond the sampling-depth effect; the available southern record does not establish a comparable increase.",
+      "wrong": [
+        [
+          "Both basins show increases beyond the sampling-depth effect, since the matched comparisons preserve the trends originally reported by both teams.",
+          "The matched comparison preserves B's northern trend but removes A's southern trend; it does not preserve both."
+        ],
+        [
+          "The southern basin shows an increase beyond the sampling-depth effect, whereas the northern increase disappears at comparable depths.",
+          "This transfers the depth-controlled northern finding to the south and reverses B's result."
+        ],
+        [
+          "Neither basin shows an increase beyond the sampling-depth effect, since concentrations rose as the lake surface approached the sampling sites.",
+          "The depth explanation fits A's apparent increase but not B's increase, which remains at comparable depths."
+        ]
+      ],
+      "why": "A's signal vanishes under matched depth, whereas B's does not. B covers only the north, and the south lacks an equivalent record, so the supported residual change is northern with southern uncertainty."
     },
     {
-      scene: "ii-cid-acad-d-ostvald-bonds",
-      stem: "According to the text, what did Horák find in the trading records?",
-      text:
-        "During the currency crisis of 1987 in the Republic of Ostvald, yields on government bonds rose sharply, and many commentators inferred that investors had come to doubt the government’s capacity to repay. The economist Pavel Horák’s examination of trading records offers a different account. The bonds most heavily sold were those held by foreign pension funds, which were obliged by their own regulations to divest any holding whose credit rating fell below a fixed threshold; bonds held chiefly by domestic banks, which faced no comparable rule, suffered far smaller price declines. Horák concludes that mandatory selling, rather than any widespread reassessment of the government’s creditworthiness, drove much of the rise in yields.",
-      anchors: ["many commentators inferred that investors had come to doubt", "The bonds most heavily sold were those held by foreign pension funds", "drove much of the rise in yields"],
-      key: "Bonds held mainly by foreign pension funds were the most heavily sold, while those held by domestic banks lost far less value.",
-      wrong: [
-        ["Investors came to doubt the government's ability to repay, and their doubts drove most of the rise in yields.",
-         "This is the commentators’ inference, which Horák’s records challenge; he attributes much of the rise to mandatory selling."],
-        ["Domestic banks, facing stricter rules, dumped the government's bonds faster than foreign pension funds did.",
-         "This reverses the finding: the foreign pension funds faced the selling rule, and bonds held by domestic banks fell far less."],
-        ["Investors never doubted the government's ability to repay, since all of the selling was required by rules.",
-         "Horák says mandatory selling drove “much of” the rise, not all of it; he does not claim that no investor had doubts."],
+      "scene": "ii-cid-acad-d-credit-sales",
+      "stem": "According to the text, what pattern emerges when fund type and bond status are considered together?",
+      "text": "A fictional exchange requires regulated funds to sell bonds whose rating drops below grade C. Unregulated funds have no such requirement. During a market decline, grade C bonds retained their grade, while grade D bonds had just fallen from C. Regulated funds sharply reduced their D holdings but left their C holdings nearly unchanged. Unregulated funds reduced their holdings of both groups by similar, modest amounts. Prices of D bonds fell more than those of C bonds. The records identify sales by fund type but do not record buyers' reasons, and the two groups of bonds were issued by different companies. An analyst claims the price difference measures only investors' changing assessments of the issuers.",
+      "anchors": [
+        "left their C holdings nearly unchanged",
+        "both groups by similar, modest amounts",
+        "issued by different companies"
       ],
-      why: "Horák’s records show that the bonds sold most heavily were those held by foreign pension funds, which had to sell when ratings fell, while bonds held by domestic banks, under no such rule, declined far less.",
+      "key": "Only regulated funds heavily favored selling downgraded bonds; unregulated funds made similar modest reductions across both grades.",
+      "wrong": [
+        [
+          "Funds of both types sold downgraded bonds more heavily, while regulated funds also sharply reduced bonds that retained their grade.",
+          "Only regulated funds show the sharp D-versus-C contrast; their C holdings remain nearly unchanged."
+        ],
+        [
+          "Regulated funds concentrated their sales in bonds retaining grade C, while other funds favored selling recently downgraded bonds.",
+          "This reverses the regulated-fund contrast and invents a grade preference for unregulated funds."
+        ],
+        [
+          "Downgraded bonds attracted heavier sales regardless of fund type, although regulations increased the scale of both groups' reductions.",
+          "Unregulated funds made similar modest reductions in both grades; regulations do not apply to them."
+        ]
+      ],
+      "why": "The three relevant observations are the regulated funds' sharp D reduction, their stable C holdings, and unregulated funds' similar small reductions in each grade. Price changes alone do not supply this contrast."
     },
     {
-      scene: "ii-cid-acad-d-linholm-reading",
-      stem: "According to the text, what did Dietz find?",
-      text:
-        "It is often supposed that skilled readers move their eyes smoothly along each line of print. Eye-tracking studies have shown instead that the eyes advance in rapid jumps, pausing on most words for a fraction of a second, and that readers skip many short, predictable words entirely. In an experiment at the Linholm Institute, the psychologist Mara Dietz found that readers skipped predictable words far more often than unpredictable words of the same length, but that the difference disappeared when the words were printed in an unfamiliar typeface. Dietz argues that skipping depends on a word’s being identified before the eyes arrive at it, which an unfamiliar typeface prevents.",
-      anchors: ["Eye-tracking studies have shown instead", "the difference disappeared when the words were printed in an unfamiliar typeface", "Dietz argues that skipping depends"],
-      key: "Readers skipped predictable words more often than unpredictable ones of equal length, except in an unfamiliar font.",
-      wrong: [
-        ["Readers' eyes advance in rapid jumps and pause on most words for only a fraction of a second.",
-         "This is what earlier eye-tracking studies showed, the background to Dietz’s experiment rather than her finding."],
-        ["Readers skipped predictable words more often than unpredictable ones of equal length, especially in an unfamiliar font.",
-         "The difference disappeared in the unfamiliar typeface; it did not grow."],
-        ["Readers can identify a word before their eyes reach it only when the word is printed in a familiar font.",
-         "This is closer to Dietz’s explanation of her finding than to the finding itself, and it states the explanation more absolutely than she does."],
+      "scene": "ii-cid-acad-d-typeface-preview",
+      "stem": "Which choice best summarizes what the experiments establish about preview and word processing?",
+      "text": "In a fictional reading experiment, each target word was predictable or unpredictable from its preceding sentence. With familiar type, readers skipped more predictable words; with unfamiliar type, the two kinds were skipped equally often. A second experiment briefly displayed each target in familiar type before the reader reached it, then showed the sentence in unfamiliar type. The predictability difference returned. A third used an equally long preview of a blank rectangle, and the difference did not return. All target words had the same length. Recognition accuracy after readers looked directly at a target was similar across the experiments; the measurements did not track how readers processed the earlier sentence.",
+      "anchors": [
+        "the two kinds were skipped equally often",
+        "The predictability difference returned",
+        "the difference did not return"
       ],
-      why: "Dietz found that readers skipped predictable words more often than unpredictable words of the same length, and that the difference disappeared in an unfamiliar typeface; her claim about identifying words in advance is her explanation of that result.",
+      "key": "Word previews restored selective skipping without improving direct recognition; the study did not measure earlier-sentence processing.",
+      "wrong": [
+        [
+          "Word previews restored selective skipping by improving earlier-sentence processing, although direct recognition remained unchanged.",
+          "Earlier-sentence processing was not measured. The selective-skipping effect does not identify that unmeasured mechanism."
+        ],
+        [
+          "Unfamiliar type impaired direct word recognition, but either kind of preview restored selective skipping by supplying more processing time.",
+          "Direct recognition remained similar, and a duration-matched blank preview failed to restore the predictability difference."
+        ],
+        [
+          "Direct recognition stayed similar across conditions, so predictability affected skipping through sentence processing rather than the word preview.",
+          "Equal direct recognition does not establish an unmeasured sentence-processing cause; actual word previews, unlike blank previews, changed selective skipping."
+        ]
+      ],
+      "why": "The word preview restores the predictable-versus-unpredictable skipping difference, while an equally long blank does not. Direct recognition remains similar, and earlier-sentence processing is unmeasured. These findings locate an observed preview effect on selective skipping without proving a mechanism involving comprehension of the earlier sentence."
     },
     {
-      scene: "ii-cid-acad-d-varuna-spawning",
-      stem: "According to the text, why does Ellery doubt that predator satiation explains the synchrony on the Varuna Shelf?",
-      text:
-        "Mass spawning, in which many coral species release eggs and sperm on the same few nights each year, has often been explained as a strategy for overwhelming predators: so much spawn appears at once that fish and invertebrates can consume only a fraction of it. The marine biologist Tomasz Ellery questions whether predator satiation can account for the precise synchrony observed on the reefs of the Varuna Shelf. There, he notes, colonies of the same species spawn within minutes of one another, a precision far exceeding what satiating predators would require, whereas different species spawn hours apart. Such timing, Ellery argues, is better explained by the necessity that eggs and sperm of one species meet before they disperse.",
-      anchors: ["often been explained as a strategy for overwhelming predators", "colonies of the same species spawn within minutes of one another", "better explained by the necessity"],
-      key: "Colonies of one species spawn within minutes of one another, far more precisely than overwhelming predators would require.",
-      wrong: [
-        ["Predators on the shelf can consume only a small fraction of the spawn that is released on a single night.",
-         "This is the premise of the predator-satiation explanation that Ellery questions, not his reason for doubting it."],
-        ["Different species on the shelf all release their spawn within the same few minutes of one another.",
-         "Different species spawn hours apart; it is colonies of the same species that spawn within minutes."],
-        ["Predators on the shelf are overwhelmed by the spawn of all species together, so timing within a species hardly matters.",
-         "Ellery never argues this; his doubt rests on how much more precise the timing within a species is than satiation would require."],
+      "scene": "ii-cid-acad-d-nesting-windows",
+      "stem": "Which choice best describes the relationship between the nest counts and the marked birds' behavior?",
+      "text": "A study on the fictional Vela islands counts active nests weekly. On East Island, the highest count occurs earlier in warm years; on West Island, its date remains stable. Individually marked East Island birds begin nesting at nearly the same time each year, but late nests fail more often in warm years. West Island's marked birds begin earlier in warm years, while more pairs also begin second nests late in the season. Nest failures remove nests from the weekly active count; new attempts add nests. The researchers report the dates of the highest counts separately from the marked birds' first nesting dates.",
+      "anchors": [
+        "late nests fail more often",
+        "more pairs also begin second nests",
+        "remove nests from the weekly active count"
       ],
-      why: "Ellery doubts predator satiation because colonies of one species spawn within minutes of one another, far more precisely than overwhelming predators would require, while different species spawn hours apart.",
+      "key": "East's peak moved earlier despite stable starts; West's peak stayed stable despite earlier starts and more late nesting attempts.",
+      "wrong": [
+        [
+          "East's earlier peak reflects earlier individual starts, whereas West's stable peak reflects unchanged starts and fewer late attempts.",
+          "Marked East birds start at similar dates; West birds start earlier and make more, not fewer, late attempts."
+        ],
+        [
+          "Both populations begin earlier in warm years, but failures hide the shift on West while repeat nesting makes it visible on East.",
+          "Only West's marked birds start earlier, and the failure/repeat-nesting patterns are assigned to the wrong islands."
+        ],
+        [
+          "Neither population changes its first nesting dates, but East loses more late nests while West adds more late nesting attempts.",
+          "The latter two observations are correct, but West's individually marked birds do begin earlier."
+        ]
+      ],
+      "why": "An active-count peak is a balance of starts and losses. East's start dates are stable despite an earlier peak; West's starts move earlier despite a stable peak, with late repeat attempts also increasing."
     },
     {
-      scene: "ii-cid-acad-d-brassel-wages",
-      stem: "According to the text, what does Ferrand claim about the union’s wage rolls?",
-      text:
-        "Historians have long cited the wage rolls of the Brassel dockworkers’ union as evidence that real wages in the port rose steadily between 1880 and 1910. The historian Adaeze Ferrand accepts the rolls’ accuracy but observes that they record only the wages of union members, whose share of the port’s workforce fell from roughly two-thirds to under one-third over the period as casual laborers, who were paid considerably less, came to predominate on the docks. The rising wages in the rolls, she argues, describe a shrinking and increasingly privileged minority; the typical dockworker of 1910 may well have earned less, in real terms, than the typical dockworker of 1880.",
-      anchors: ["as evidence that real wages in the port rose steadily", "accepts the rolls’ accuracy but observes", "may well have earned less"],
-      key: "They record wages accurately, but only for a group that shrank to a minority of the port's dockworkers.",
-      wrong: [
-        ["They show that real wages for dockworkers in the port rose steadily between 1880 and 1910.",
-         "This is what earlier historians took the rolls to show; Ferrand argues they describe only a shrinking minority of dockworkers."],
-        ["They overstate the wages that union members were actually paid between 1880 and 1910.",
-         "Ferrand accepts the rolls’ accuracy; her objection concerns whose wages they record, not the figures themselves."],
-        ["They prove that the typical dockworker of 1910 earned less, in real terms, than the typical dockworker of 1880.",
-         "Ferrand says only that the typical dockworker “may well have” earned less; she does not claim the rolls prove it."],
+      "scene": "ii-cid-acad-d-wage-composition",
+      "stem": "According to the text, which comparison is supported by the linked records?",
+      "text": "The fictional Daren port's payroll shows higher average daily pay in 1900 than in 1880. The later payroll lists only licensed workers, while the earlier one lists licensed and casual workers. A researcher links names across payrolls and household accounts. Workers licensed in both years received higher daily rates in 1900 but worked fewer paid days, leaving their annual earnings nearly unchanged. Casual workers appear in the household accounts in both years, and their annual earnings declined. The share of workers who were casual increased. The records give no prices for household goods, so the researcher reports money earnings rather than purchasing power.",
+      "anchors": [
+        "leaving their annual earnings nearly unchanged",
+        "their annual earnings declined",
+        "give no prices for household goods"
       ],
-      why: "Ferrand accepts the rolls’ figures but points out that they cover only union members, whose share of the workforce fell from about two-thirds to under one-third, so the rising wages describe a shrinking minority.",
+      "key": "Licensed workers' annual money earnings stayed similar and casual workers' fell, although payroll daily pay rose.",
+      "wrong": [
+        [
+          "Annual purchasing power stayed similar for licensed workers and fell for casual workers, despite the increase in average daily pay.",
+          "Prices are unavailable, so the records cannot establish either group's change in purchasing power."
+        ],
+        [
+          "Higher daily pay raised licensed workers' annual money earnings, while declining casual earnings pulled down the later payroll average.",
+          "Licensed workers' fewer paid days offset the daily increase, and casual workers are absent from the later payroll."
+        ],
+        [
+          "Annual money earnings declined for both worker groups, although the changing payroll coverage made licensed workers appear better paid.",
+          "The linked licensed workers' annual earnings were nearly unchanged, and their daily-rate increase was recorded for the same individuals."
+        ]
+      ],
+      "why": "The linked names show a genuine daily-rate increase offset by fewer paid days. Separate accounts establish falling casual annual earnings; missing prices forbid a purchasing-power conclusion, and changed payroll coverage limits the overall average."
     },
     {
-      scene: "ii-cid-acad-d-averne-precedent",
-      stem: "According to the text, what did Ruud find in the court’s unpublished deliberations?",
-      text:
-        "Legal historians have often described the judges of the Averne high court as strict adherents of precedent, citing the frequent references to earlier rulings in their published opinions. The legal historian Selma Ruud’s reading of the court’s unpublished deliberations suggests that those references served a different function. In deliberation, the judges debated cases chiefly in terms of fairness and practical consequence, turning to precedent only when drafting the published opinion, and they occasionally cited earlier rulings whose reasoning they had privately rejected. Ruud concludes that precedent in Averne legitimated decisions reached on other grounds rather than determining them, though she concedes that the deliberations of several years have not survived.",
-      anchors: ["citing the frequent references to earlier rulings", "debated cases chiefly in terms of fairness and practical consequence", "the deliberations of several years have not survived"],
-      key: "Judges argued over fairness and consequences in deliberation and turned to precedent only when writing their opinions.",
-      wrong: [
-        ["Judges referred frequently to earlier rulings, as strict followers of precedent would be expected to do.",
-         "The frequent references appear in the published opinions and are the other historians’ evidence; the deliberations show precedent entering only at the drafting stage."],
-        ["Judges argued over earlier rulings in deliberation and turned to fairness only when writing their opinions.",
-         "This reverses the finding: fairness and consequence dominated deliberation, and precedent appeared when opinions were drafted."],
-        ["Judges never let precedent affect a decision in any year of the court's history.",
-         "Ruud concedes that the deliberations of several years are lost, so her finding cannot cover every year, and she says precedent chiefly legitimated decisions."],
+      "scene": "ii-cid-acad-d-deliberation-sources",
+      "stem": "Which choice accurately distinguishes what the two sets of records show?",
+      "text": "Published decisions of the fictional Meren council frequently cite an old charter. Minutes from private meetings survive for two periods. In the earlier period, members often changed a proposed decision after discussing the charter. In the later period, they usually settled the outcome before asking a clerk to locate a supporting clause. Published citations increased between the periods. Drafts show that the later clerk sometimes abandoned one clause for another without changing the announced outcome. Most missing meeting minutes come from the intervening years. A historian therefore separates the documented endpoints from the date at which the council's procedure changed.",
+      "anchors": [
+        "changed a proposed decision",
+        "settled the outcome before",
+        "without changing the announced outcome"
       ],
-      why: "Ruud found that in deliberation the judges argued chiefly about fairness and consequences and turned to precedent only when drafting their published opinions, sometimes citing rulings whose reasoning they had privately rejected.",
+      "key": "Charter citations became more frequent in public decisions while surviving private records show a shift toward finding support after choosing outcomes.",
+      "wrong": [
+        [
+          "More frequent public citations accompanied increased private reliance on the charter, though missing minutes obscure when that reliance began.",
+          "Later private records show outcomes chosen before supporting clauses, not increased substantive reliance."
+        ],
+        [
+          "Private records show consistent use of the charter to choose outcomes, while drafts reveal changes only in how those outcomes were announced.",
+          "The earlier and later periods differ in when the charter enters the decision process; clause changes leave later outcomes unchanged."
+        ],
+        [
+          "Private reliance on the charter weakened during the missing years, producing a documented decline in citations across published decisions.",
+          "The exact transition is undocumented, and public citations increased rather than declined."
+        ]
+      ],
+      "why": "Public citations rise, yet earlier private discussions alter proposals while later discussions seek a clause after settling them. Draft substitutions reinforce the later pattern; missing intervening minutes limit its dating."
     },
     {
-      scene: "ii-cid-acad-d-ember-maize",
-      stem: "According to the text, what did Nwachukwu’s farm-level data show?",
-      text:
-        "When the government of the Ember Valley region began subsidizing fertilizer in 2004, average maize yields rose by nearly half within five years, and the program was widely credited with the increase. The agricultural economist Chidi Nwachukwu’s farm-level data suggest a more qualified verdict. Yields rose most on farms that had also adopted drought-tolerant seed varieties released during the same period; farms that applied subsidized fertilizer to traditional seed registered modest gains, while farms that adopted the new seed without fertilizer gained nearly as much as those that used both. Nwachukwu concludes that the seed, rather than the subsidy, accounts for most of the region’s improvement.",
-      anchors: ["the program was widely credited with the increase", "farms that applied subsidized fertilizer to traditional seed registered modest gains", "rather than the subsidy, accounts for most"],
-      key: "Farms that planted the new seed without fertilizer gained nearly as much as farms that used both.",
-      wrong: [
-        ["The fertilizer subsidy raised average maize yields across the region by nearly half within five years.",
-         "Yields did rise by nearly half, but crediting the subsidy is the widely held view that Nwachukwu’s data qualify."],
-        ["Farms that used fertilizer with traditional seed gained nearly as much as farms that used both.",
-         "Farms using fertilizer with traditional seed saw only modest gains; it was farms using the new seed without fertilizer that gained nearly as much."],
-        ["The fertilizer subsidy did nothing to raise maize yields on any of the region's farms.",
-         "Farms that applied subsidized fertilizer to traditional seed did register modest gains."],
+      "scene": "ii-cid-acad-d-seed-water",
+      "stem": "Which finding remains supported after the analyst accounts for access to irrigation?",
+      "text": "In a fictional valley, farms adopting seed N have larger harvest gains than farms retaining seed O. Most adopters also gain access to irrigation. An analyst first compares farms without irrigation: gains are small and similar for N and O. Among irrigated farms, those growing N show larger gains than those growing O. A separate comparison tracks farms that already had irrigation before either seed was offered; the same N advantage appears there. All farms in that comparison grow the same crop and use the same fertilizer allowance. Soil quality was not randomly assigned, and farmers selected their seed. The analyst distinguishes this remaining association from proof that seed alone caused it.",
+      "anchors": [
+        "small and similar for N and O",
+        "the same N advantage appears there",
+        "farmers selected their seed"
       ],
-      why: "Nwachukwu’s data show that farms using the new drought-tolerant seed without fertilizer gained nearly as much as farms using both, while fertilizer with traditional seed brought only modest gains.",
+      "key": "Seed N's advantage appears within irrigated groups, including farms irrigated before adoption, but not among farms lacking irrigation.",
+      "wrong": [
+        [
+          "Seed N's advantage disappears within each irrigation group, showing that new access to water accounts for the original harvest difference.",
+          "The N advantage persists among irrigated farms, including those with long-established irrigation."
+        ],
+        [
+          "Seed N's advantage appears mainly among newly irrigated farms and is absent among farms that had irrigation before adoption.",
+          "The separate established-irrigation comparison also shows the advantage."
+        ],
+        [
+          "Seed N's advantage persists in both irrigation groups, although farmers' seed choices prevent assigning the entire difference to seed.",
+          "The causal caution is appropriate, but the nonirrigated group shows small, similar gains for both seeds."
+        ]
+      ],
+      "why": "The first split removes the advantage without irrigation but retains it with irrigation; the established-irrigation comparison rules out newly gaining irrigation as the sole description of that remaining pattern. Self-selection still limits causal attribution."
     },
     {
-      scene: "ii-cid-acad-d-kelani-loans",
-      stem: "According to the text, why does Osei infer that the two communities’ relationship was unusually close?",
-      text:
-        "Borrowed words are often treated as evidence of cultural contact, the vocabulary a language takes from another being read as an index of what the borrowers learned from the lenders. The linguist Farida Osei’s survey of the Kelani language complicates this assumption. Kelani borrowed its words for numerous trade goods from its coastal neighbors, as one would expect, but it also borrowed common verbs and even pronouns, categories that languages rarely take from one another except under prolonged and intimate contact, such as widespread bilingualism or intermarriage. Osei infers that the relationship between the two communities was far closer than the vocabulary of trade alone would suggest.",
-      anchors: ["Borrowed words are often treated as evidence of cultural contact", "it also borrowed common verbs and even pronouns", "far closer than the vocabulary of trade alone"],
-      key: "Kelani borrowed verbs and pronouns, which languages seldom borrow without prolonged and intimate contact.",
-      wrong: [
-        ["Kelani borrowed its words for many trade goods from the neighboring coastal language.",
-         "Osei says these borrowings were expected; by themselves they would suggest a less close relationship than she infers."],
-        ["Kelani lent verbs and pronouns to the coastal language, which languages seldom do without intimate contact.",
-         "The borrowing ran the other way: Kelani took the verbs and pronouns from its neighbors."],
-        ["Records of marriages show that the two communities intermarried widely over several generations.",
-         "Intermarriage is named only as one kind of intimate contact; the text mentions no marriage records."],
+      "scene": "ii-cid-acad-d-copying-margins",
+      "stem": "Which choice correctly states how the handwritten notes relate to the two editions?",
+      "text": "A scholar compares two editions of a fictional travel diary. Edition A appeared first and omits a disputed journey; edition B includes it. Notes in three surviving copies of A describe the journey, initially suggesting that readers supplied the material used in B. Two sets of notes repeat a printing error unique to B. The third is dated before B, but describes a different route and names no companions. B names two companions whose identities are also found in an independently dated letter. The scholar has no manuscript of either edition and cannot identify who wrote the notes. The notes' presence and their relation to B are therefore recorded separately.",
+      "anchors": [
+        "a printing error unique to B",
+        "describes a different route",
+        "an independently dated letter"
       ],
-      why: "Osei infers a close relationship because Kelani borrowed not only trade words but also common verbs and pronouns, which languages rarely borrow except under prolonged, intimate contact.",
+      "key": "Two sets of notes depend on B's wording, while the earlier set mentions a journey without supplying B's route or companion details.",
+      "wrong": [
+        [
+          "All three sets of notes supplied B's account, although the independently dated letter adds support only for the companions' identities.",
+          "Two sets reproduce an error unique to B, indicating dependence on B rather than a source for it; the third differs in route."
+        ],
+        [
+          "The earlier set supplies B's route but omits its companions, while the two later sets independently confirm both parts of the account.",
+          "The earlier route differs, and copying B's unique error undermines the later notes' independence."
+        ],
+        [
+          "B draws its companion details from the earlier notes and its route from the letter, leaving the two matching note sets unexplained.",
+          "The early notes name no companions, the letter supports their identities rather than a route, and the matching error explains dependence."
+        ]
+      ],
+      "why": "The repeated unique error makes two note sets derivative. The only dated earlier note supplies neither B's route nor its named companions; independent support for the companions comes instead from the letter."
     },
     {
-      scene: "ii-cid-acad-d-druvna-songbirds",
-      stem: "According to the text, what did Oyelaran’s recordings show?",
-      text:
-        "Songbirds in cities frequently sing at higher pitches than members of the same species in forests, and the difference is usually attributed to adaptation: low-frequency traffic noise masks low notes, so birds that sing higher are more readily heard. The biologist Hannah Oyelaran’s recordings in the city of Druvna suggest that at least part of the shift is not inherited. Individual birds, she found, raised their pitch within minutes when recorded traffic noise was played nearby and lowered it again once the noise ceased. Oyelaran does not deny that urban populations may also be evolving; she argues only that pitch differences between city and forest birds cannot by themselves be taken as evidence of evolution.",
-      anchors: ["usually attributed to adaptation", "raised their pitch within minutes", "Oyelaran does not deny"],
-      key: "Individual birds raised the pitch of their songs within minutes of hearing traffic noise and lowered it afterward.",
-      wrong: [
-        ["City songbirds sing at higher pitches than forest birds of the same species because traffic masks low notes.",
-         "This is the usual explanation the text reports; Oyelaran’s recordings concern how individual birds respond to noise."],
-        ["Individual birds lowered the pitch of their songs within minutes of hearing traffic noise and raised it afterward.",
-         "This reverses the finding: the birds raised their pitch when the noise played and lowered it when the noise stopped."],
-        ["Urban songbird populations are not evolving higher songs, since the change in pitch is not inherited.",
-         "Oyelaran explicitly does not deny that urban populations may be evolving; she says only that pitch differences alone do not show it."],
+      "scene": "ii-cid-acad-d-material-migration",
+      "stem": "Which choice accurately combines the evidence about the pigment and the cloth?",
+      "text": "Blue cloth fragments at a fictional hill settlement contain a pigment whose trace-metal pattern matches material from a coastal workshop. Some researchers take this as evidence that coastal weavers migrated uphill. A later study finds the same pigment in local hill pottery made before the cloth appeared. Thread-twist patterns in the cloth match older hill textiles rather than coastal ones. A shipment list from the coastal workshop records packets of powdered pigment but no finished cloth; the list covers only one season. None of the evidence identifies individual artisans. The study presents the pigment match and the weaving evidence as separate findings.",
+      "anchors": [
+        "before the cloth appeared",
+        "match older hill textiles",
+        "covers only one season"
       ],
-      why: "Oyelaran’s recordings showed individual birds raising their pitch within minutes of hearing traffic noise and lowering it when the noise stopped, a change within one bird’s lifetime rather than an inherited one.",
+      "key": "The pigment was already used uphill, and the cloth follows hill weaving patterns; the coastal match does not itself locate the cloth's makers.",
+      "wrong": [
+        [
+          "The pigment and weaving patterns both trace the cloth to the coast, while earlier hill pottery indicates when coastal weavers arrived.",
+          "The weaving patterns are hill patterns, and earlier pigment use does not identify migrating weavers."
+        ],
+        [
+          "Hill weaving patterns identify the cloth's individual makers, while the shipment list shows that the workshop exported only powdered pigment.",
+          "Patterns do not identify individuals, and a one-season list cannot establish that finished cloth was never exported."
+        ],
+        [
+          "The cloth introduced coastal pigment to the hills, although its weaving patterns suggest that local artisans adopted the imported material.",
+          "The pigment occurs in older hill pottery, so the cloth did not introduce it."
+        ]
+      ],
+      "why": "Pigment predates the cloth uphill, and thread patterns connect the cloth to a local technique. Powder shipments offer a transfer route consistent with those findings, but neither materials nor patterns identify the makers or prove migration."
     },
     {
-      scene: "ii-cid-acad-d-hesk-dye",
-      stem: "According to the text, what did Paskett’s chemical analysis show?",
-      text:
-        "Textiles recovered from the burial mounds at Hesk are colored with a red dye derived from madder, a plant that grows wild only far to the south, and the find has been read as evidence that Hesk’s inhabitants traded directly over long distances. The archaeologist Juno Paskett’s chemical analysis supports a more cautious reading. The dye, she found, contains traces of a mordant, the mineral salt used to fix the color to the fibers, that matches a clay deposit near Hesk itself. The textiles were therefore dyed locally, although the madder, or at least its roots, must still have come from elsewhere, perhaps through a chain of intermediaries rather than by direct trade.",
-      anchors: ["read as evidence that Hesk’s inhabitants traded directly", "matches a clay deposit near Hesk itself", "perhaps through a chain of intermediaries"],
-      key: "The dye contains a mordant matching a clay found near Hesk, so the textiles were dyed locally.",
-      wrong: [
-        ["Hesk's inhabitants traded directly with the southern peoples in whose lands madder grows wild.",
-         "This is the earlier reading of the find; Paskett’s analysis supports a more cautious one and suggests the madder may have passed through intermediaries."],
-        ["The madder in the textiles was grown in fields near Hesk that were rich in a local clay.",
-         "The local clay matches the mordant used in dyeing; the madder itself grows only far to the south and must have come from elsewhere."],
-        ["Hesk's inhabitants obtained madder from the south only through intermediaries, never by direct trade.",
-         "Paskett suggests intermediaries only as a possibility (“perhaps”); her analysis shows where the textiles were dyed, not how the madder arrived."],
+      "scene": "ii-cid-acad-d-forecast-aggregation",
+      "stem": "Which choice best describes what the department-level records reveal about the forecast's accuracy?",
+      "text": "A fictional college predicts that total enrollment will remain stable after it waives evening-course fees. Total enrollment does remain stable, and administrators call the forecast accurate. Department records show that evening enrollment increased in departments offering required courses but fell in departments offering only electives. The forecast had predicted a small increase in each group. Daytime enrollment, which the forecast had expected to decline, remained unchanged. Some students took more than one course, and the records count course registrations rather than individual students. The analyst can compare predictions with registrations but cannot determine how many new people the waiver attracted.",
+      "anchors": [
+        "fell in departments offering only electives",
+        "predicted a small increase in each group",
+        "remained unchanged"
       ],
-      why: "Paskett found that the dye contains a mordant matching a clay deposit near Hesk, so the textiles were dyed locally, though the madder itself must have come from the south, perhaps through intermediaries.",
-    },
-    {
-      scene: "ii-cid-acad-d-task-forecasts",
-      stem: "According to the text, what does Brandvold claim about forecasts based on counting tasks?",
-      text:
-        "Forecasts that a new technology will eliminate a given number of jobs typically enumerate the tasks the technology can perform and the workers who currently perform them. The economist Ilse Brandvold contends that such forecasts err in two opposite directions. They overlook the new tasks that the technology itself creates, such as its maintenance and supervision, and so overstate the net loss of employment; but they also disregard the pressure that lower costs exert on competing firms that have not adopted the technology, and so understate the losses at those firms. Brandvold does not claim that the two errors cancel; she claims only that neither the direction nor the magnitude of the net effect can be inferred from a count of tasks.",
-      anchors: ["err in two opposite directions", "and so understate the losses at those firms", "Brandvold does not claim that the two errors cancel"],
-      key: "They cannot reveal either the direction or the size of a technology's net effect on employment.",
-      wrong: [
-        ["Their two errors cancel each other, so their estimates of the net loss of jobs are roughly accurate.",
-         "Brandvold says explicitly that she does not claim the two errors cancel."],
-        ["They overstate job losses, since they ignore the new tasks, such as maintenance, that a technology creates.",
-         "This is only one of the two errors; she says the forecasts also understate losses at competing firms, so their overall direction is unknown."],
-        ["They overstate losses at firms that have not adopted the technology, since those firms keep their workers.",
-         "Brandvold says the forecasts understate losses at those firms, which face pressure from their rivals’ lower costs."],
+      "key": "The matching total conceals errors in the predicted subgroup changes, and registrations alone do not show how many new students enrolled.",
+      "wrong": [
+        [
+          "The matching total confirms the predicted evening increases, although unchanged daytime enrollment leaves the number of new students uncertain.",
+          "Elective-only evening registrations fell, contrary to the predicted increase; required-course gains do not validate both subgroup forecasts."
+        ],
+        [
+          "Opposite evening changes offset the predicted daytime decline, showing that the forecast was wrong only about where new students enrolled.",
+          "Daytime registrations did not decline, and registrations do not identify new students."
+        ],
+        [
+          "The total remained stable because evening and daytime changes canceled, while department records establish that the waiver attracted no new students.",
+          "Daytime enrollment stayed unchanged; repeat registrations mean the records cannot establish the number of newly attracted people."
+        ]
       ],
-      why: "Brandvold identifies errors in both directions, overlooked new tasks and overlooked pressure on competing firms, and concludes only that a count of tasks cannot reveal the direction or size of the net effect.",
-    },
-    {
-      scene: "ii-cid-acad-d-vesterlund-famine",
-      stem: "According to the text, what did Kolstad find in the Vesterlund parish records?",
-      text:
-        "The eruption of Mount Tambora in Indonesia in 1815 cooled much of the Northern Hemisphere the following year, and the crop failures of 1816 are commonly blamed for the famine and emigration that followed in parts of Europe. The historian Maren Kolstad’s study of parish records from the district of Vesterlund qualifies this account for one region. There, she finds, the harvest of 1816 was poor but not disastrous; deaths and departures rose sharply only in 1817, after grain merchants, anticipating shortages elsewhere, shipped much of the district’s remaining grain to distant markets where prices were higher. The famine in Vesterlund, Kolstad argues, owed as much to trade as to weather.",
-      anchors: ["the crop failures of 1816 are commonly blamed", "the harvest of 1816 was poor but not disastrous", "owed as much to trade as to weather"],
-      key: "Deaths and departures rose sharply only in 1817, a year after the district's poor but not disastrous harvest.",
-      wrong: [
-        ["The crop failures of 1816 caused the famine and emigration that struck Vesterlund, as they did elsewhere.",
-         "This is the common account that Kolstad’s records qualify; in Vesterlund the famine followed the shipment of grain away in 1817."],
-        ["Mortality peaked in 1816, before any merchant had shipped grain out of the district.",
-         "Deaths and departures rose sharply only in 1817, after merchants had shipped the grain away."],
-        ["The weather of 1816 played no part in the famine and emigration that struck Vesterlund.",
-         "Kolstad says the famine owed as much to trade as to weather, so weather still played a part; the 1816 harvest was poor."],
-      ],
-      why: "Kolstad found that in Vesterlund the 1816 harvest was poor but not disastrous and that deaths and departures rose sharply only in 1817, after merchants shipped the district’s remaining grain away.",
-    },
-    {
-      scene: "ii-cid-acad-d-sarn-delta",
-      stem: "According to the text, what did Rautio’s survey find?",
-      text:
-        "The delta of the Sarn River has shrunk by roughly a tenth since the completion of the upstream Kellin Dam in 1962, and the dam is generally blamed, since reservoirs trap much of the sediment that rivers would otherwise carry to the sea. The geomorphologist Ade Rautio’s survey confirms that the reservoir has trapped large quantities of sediment but finds that the delta’s retreat began roughly fifteen years before the dam was completed, when sand mining, now prohibited along the lower river, first expanded. Rautio does not exonerate the dam; she argues that it accelerated a retreat already under way rather than initiating one.",
-      anchors: ["the dam is generally blamed", "began roughly fifteen years before the dam was completed", "Rautio does not exonerate the dam"],
-      key: "The delta had begun to shrink about fifteen years before the dam was completed, when sand mining expanded.",
-      wrong: [
-        ["The dam alone caused the delta's retreat, since its reservoir traps the sediment that the river once carried.",
-         "This is the general view; Rautio found that the retreat began before the dam existed, so the dam cannot be its sole cause."],
-        ["The delta's retreat began only after the dam was finished, when mining along the lower river expanded.",
-         "The retreat began about fifteen years before the dam was completed, when sand mining first expanded."],
-        ["The dam had no part in the delta's retreat, which sand mining alone caused.",
-         "Rautio does not exonerate the dam; she says it accelerated a retreat already under way."],
-      ],
-      why: "Rautio’s survey confirms that the reservoir traps sediment but finds that the delta began to retreat about fifteen years before the dam was completed, when sand mining expanded; she argues that the dam accelerated the retreat.",
-    },
+      "why": "The overall forecast matches, but it predicted increases in both evening groups and a daytime decline that did not occur. Registrations measure course places rather than unique students, leaving the number of new people undetermined."
+    }
   ];
 
   const academicDetail = {
@@ -2371,10 +2422,10 @@
     skill: "Central Ideas and Details",
     subskill: "supporting detail",
     difficulty: "Hard",
-    title: "Finding reported in dense academic prose, told apart from the view it answers",
+    title: "Combined finding across groups, measures, or records",
     recognize:
-      "In dense prose that reports a common view, a scholar's finding, and the scholar's hedged conclusion, the answer restates the finding itself with its exact scope; the common view, a reversed detail, and the conclusion stated as certain are all nearby.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+      "The requested finding spans several observations. Track which group, time, and measurement each result concerns, then combine them without reversing a comparison or extending the evidence beyond its coverage.",
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["misattributed-view", "extreme-language", "opposite-stance"],
     build(t) {
       const topic = t.pick(ACADEMIC_DETAIL_TOPICS);
@@ -2385,21 +2436,187 @@
         wrong: topic.wrong,
         explanation: `${topic.why} The answer is therefore: ${topic.key}`,
         steps: [
-          "Sort the passage into the view others hold, what the scholar found, and what the scholar concludes or concedes.",
-          "Find the sentence that answers the question and restate it with every qualifier (\"only,\" \"much of,\" \"may well\").",
-          "Choose the option that matches that sentence, rejecting the view the scholar answers, a detail reversed, and a conclusion stated more strongly than the scholar states it.",
+          "Identify the groups, measurements, and periods named in the question.",
+          "Gather every relevant observation, keeping each result attached to its group and measurement.",
+          "Check both halves of each choice against the combined findings, including any limit on what the records cover.",
         ],
         principles: [
           "A detail question asks what this text says, so the answer must match the passage's attribution: who found, claimed, or conceded it.",
           "Qualifiers belong to the detail; dropping \"only\" or turning \"may\" into \"proves\" changes what the text says.",
         ],
-        trap: "Choosing the common view the passage reports, or the scholar's hedged conclusion stated as a certainty.",
-        hint: "Who says what in this passage, and how strongly?",
+        trap: "Combining an accurate observation with the wrong group, measurement, chronology, or unsupported extension.",
+        hint: "Which observations must be combined, and does each half of the answer keep the right group and measure?",
         verify: () =>
           topic.wrong.length === 3 && inOrder(topic.text, topic.anchors) && allDistinct(topic.key, topic.wrong),
       });
     },
   };
+
+  // Original fiction, not adaptations. Competing interpretations must be
+  // tested against the actions described, including the observer’s response.
+  const NARRATIVE_HEADER = "The following text is from an original short story.";
+  const NARRATIVE_REASSESSMENT_TOPICS = [
+    {
+      scene: "ii-cid-narrative-rehearsal-score",
+      text: "Mira took my score from the piano and moved the singer's entrance four bars forward. I had spent a week making that entrance inevitable; she spent a minute making it optional. At rehearsal the singer, no longer reaching for a note after her longest phrase, sang it without the little catch we had pretended not to hear. Mira let her choose the tempo. On the concert program, though, my piece had become 'an arrangement by Mira and Daniel.' The singer thanked us both. I began explaining which passages were mine, then heard myself describing the entrance as I had first written it. Mira laid the penciled score beside me, open at the alteration. I folded the program over our names.",
+      anchors: ["making it optional", "sang it without the little catch", "describing the entrance as I had first written it"],
+      key: "A useful revision complicates Daniel's claim to sole credit, although the revised attribution also gives him reason to feel displaced.",
+      wrong: [
+        ["The revision reveals Daniel's wish for recognition, while the singer's thanks establish that Mira has credited their work fairly.", "The improvement complicates sole authorship, but thanks do not establish that the new arrangement credit fairly represents their contributions."],
+        ["Mira's change takes control from Daniel without altering his achievement, and his account of the original entrance restores the proper credit.", "The singer's improved performance shows a substantive contribution; describing the old version does not explain the successful version being praised."],
+        ["Daniel's discomfort arises from the singer's preference for Mira, although returning to the original score would settle their artistic disagreement.", "The singer thanks both rather than choosing Mira, and the old entrance caused the catch that the revision removed."],
+      ],
+      why: "Daniel first reads the quick alteration as disregard for his work. The singer's improved entrance establishes its artistic value, while the new program credit gives his concern a concrete basis. His attempt to claim the successful piece by describing the discarded entrance cannot accommodate both facts.",
+    },
+    {
+      scene: "ii-cid-narrative-return-ticket",
+      text: "My aunt returned the art-school forms with every expense circled. I put them under the flour tin, where objections in our house usually went to rest. A week later she asked which train reached the city before dark. Inside the forms I found a bank draft and a return timetable marked for the week our mill reopened after winter. She had also put my name on the spring work roster. I could picture her telling the neighbors that I had gone away for a course, not gone away. That evening she brought down her own traveling trunk and worked oil into its stubborn hinges. I copied the outward train onto my calendar. Beneath it, in smaller figures, I copied the mill's reopening date.",
+      anchors: ["every expense circled", "my name on the spring work roster", "I copied the mill's reopening date"],
+      key: "The aunt helps make the departure possible while planning its limits, and the narrator's response shows those limits retain some force.",
+      wrong: [
+        ["The aunt's preparations replace her financial objections with confidence, allowing the narrator to leave without accommodating the mill's needs.", "Her spring roster and return timetable still assume a return, and the narrator copies the reopening date rather than disregarding it."],
+        ["The narrator mistakes practical planning for opposition, since the aunt's spring roster simply records the return the narrator has requested.", "No requested return is given; the aunt supplies it, and the narrator's imagined account to neighbors registers its restrictive implication."],
+        ["The aunt pays for a brief absence to secure the narrator's return, while the outward train marks the narrator's rejection of that arrangement.", "The return is planned but payment's sole purpose is not established; copying the mill date complicates the claimed outright rejection."],
+      ],
+      why: "The draft and repaired trunk overturn a reading of simple discouragement, but the unsolicited return arrangements prevent treating the aid as unrestricted. Copying both dates leaves the narrator's departure entangled with the aunt's expectation, without proving eventual obedience or rebellion.",
+    },
+    {
+      scene: "ii-cid-narrative-sluice-key",
+      text: "When Levin locked the footbridge gate, we said he had finally found a use for the boundary his grandfather had disputed. The river was rising, but our street still lay dry. From my upstairs window I watched him open the sluice beyond the bridge; water entered his orchard, reaching the white bands he had painted on the trees. Our cellars stayed empty. Next morning he gave the carpenter a key so repairs could begin. For everyone else he set visiting hours on a board. I had written a complaint demanding that he stop treating the crossing as his own. The paper lay beside my cellar steps. Before posting it, I crossed out the sentence claiming he had done nothing for the street.",
+      anchors: ["a use for the boundary", "water entered his orchard", "crossed out the sentence"],
+      key: "Levin's costly protection of the street changes the narrator's case against him without resolving the dispute over his control of access.",
+      wrong: [
+        ["Levin's costly protection of the street establishes his right to limit access, which the narrator acknowledges by withdrawing the complaint.", "The narrator removes one inaccurate accusation, not the complaint itself; protective conduct does not settle the crossing's ownership."],
+        ["Levin uses the flood to advance his boundary claim, while the narrator's revised complaint shows that the orchard damage was unintentional.", "Levin deliberately opens the sluice and watches the levels; neither the narrator's revision nor the passage identifies the damage as accidental."],
+        ["The narrator mistakes flood precautions for a boundary claim, then accepts Levin's purpose when the carpenter receives a bridge key.", "The grant is to one repairer, while everyone else receives visiting hours; the complaint about control persists beyond the emergency."],
+      ],
+      why: "Deliberately flooding his own orchard supplies real evidence against the initial picture of pure appropriation. Selective key distribution and posted hours preserve the access issue. Editing one sentence rather than withdrawing the complaint shows a qualified revision, not an acquittal.",
+    },
+    {
+      scene: "ii-cid-narrative-unwritten-line",
+      text: "At the premiere, Ezra replaced my closing line with something about a door that would not open. The audience laughed where I had wanted silence. From the wings I could see the painted door stuck against its frame and our stagehand pulling uselessly at the cord. Ezra took the bow with a hand still on its knob. Afterward a reviewer asked me how I had found that perfect final image. I explained the door's place in the play and let her write. Ezra passed behind us carrying the bent hinge. When he asked whether the line would stay, I said I would consider it. He left the hinge on my script; I moved it aside to give the reviewer a clean photograph of the pages.",
+      anchors: ["where I had wanted silence", "let her write", "a clean photograph of the pages"],
+      key: "The improvised ending challenges the author's control of the play, even as the author lets its unexpected success be credited to the written script.",
+      wrong: [
+        ["The author's account of the door reconciles Ezra's practical improvisation with the intended ending and gives the reviewer an accurate explanation.", "The reviewer credits a planned final image to the author, whose explanation leaves out the accident and Ezra's new line."],
+        ["Ezra's successful revision wins the author's approval, although the reviewer's interest postpones their decision about repairing the scenery.", "The author withholds approval of keeping the line; repairing the scenery is not the decision being postponed."],
+        ["The author's reluctance to retain the line reflects concern for Ezra's credit, which the photograph will separate from the original written ending.", "The author allows the reviewer to attribute the successful image to them and removes the tangible sign of improvisation from the photograph."],
+      ],
+      why: "The stuck door shows that Ezra's departure served an immediate need, not simply disrespect for the script. The narrator still resists surrendering authorial control but lets praise for the improvised effect attach to the written play, making the narrator's own response part of the conflict.",
+    },
+    {
+      scene: "ii-cid-narrative-notebook-pages",
+      text: "Uncle Soren would lend the village archive his bird lists but not the notebook he had kept during the factory strike. I called it hoarding history. Then Mrs. Vale arrived to ask him to remove her sister's address from any copy; the family still owned the house, and visitors already came looking for souvenirs. Soren promised. He let me photograph several pages, covering the address with a card. On the facing page, an entry described his decision not to pass a warning to the workers. His thumb covered the first line. I shifted the lamp, thinking it had made a shadow, and he turned the page. The archive eventually received the bird lists and twelve photographs, each labeled with its original page number.",
+      anchors: ["hoarding history", "His thumb covered the first line", "each labeled with its original page number"],
+      key: "A real obligation to protect others complicates the narrator's criticism, but Soren's selective disclosure also shields his own past conduct.",
+      wrong: [
+        ["Soren's selective disclosure respects the family's request while preserving the strike's full history through the numbered photographs.", "Page numbers identify the selected pages; they do not make the photographs a full record or recover the covered and turned entry."],
+        ["The narrator's criticism is vindicated by the hidden entry, revealing that the privacy request merely disguises Soren's wish to protect himself.", "Mrs. Vale supplies a concrete, independent privacy concern; Soren's self-protection does not make that concern a disguise."],
+        ["The narrator misreads an effort to prevent unwanted visitors, although Soren's refusal to lend the notebook delays the archive's account of the strike.", "The thumb and deliberate page turn conceal Soren's own conduct, which preventing visits to Mrs. Vale's house does not explain."],
+      ],
+      why: "The visitor problem establishes that privacy is a genuine concern rather than an invented excuse. Concealment shifts to a separate entry about Soren himself, so that concern cannot explain every omission. The numbered selections preserve identifiable pieces, not the complete history.",
+    },
+    {
+      scene: "ii-cid-narrative-new-timetable",
+      text: "My father returned the proposed railway timetable without signing it. He had kept the old station open for thirty years; I thought he could not bear a plan that made it unnecessary. His margins listed connections that passengers carrying market baskets could not possibly make. I checked them and found he was right. By Thursday he had redrawn the bus route, bringing it directly to the new station, and worked out a longer interval between trains. With those changes, I no longer needed the old platform. He signed the revised sheet without asking about it. After I left, I remembered my ruler and went back. He was measuring the waiting room, where the committee proposed to store the market stalls in winter.",
+      anchors: ["could not bear a plan", "I no longer needed the old platform", "measuring the waiting room"],
+      key: "The father's objections improve a plan that displaces his familiar role, while his attention to the waiting room suggests attachment taking a new form.",
+      wrong: [
+        ["The father's objections secure the old station's continued railway role, allowing him to support the revised plan without surrendering his position.", "His revised route makes the old platform unnecessary; measuring a proposed store room does not restore railway service or his former role."],
+        ["The narrator's initial suspicion proves mistaken because the father embraces the new station and leaves the old building to the committee.", "He makes a workable replacement possible, but returning to measure the old waiting room complicates the claim that he simply leaves it behind."],
+        ["The father's practical objections conceal a plan to remain in charge of the old building, which the narrator unknowingly advances through the changes.", "The final measurement suggests continued involvement, but no scheme or claim to control is established, and the objections are independently valid."],
+      ],
+      why: "Checked connection problems give the refusal a basis beyond self-interest. The father's own solution removes the old platform's function, yet he quietly attends to a new use of the room. Together these actions resist both simple obstruction and effortless detachment.",
+    },
+    {
+      scene: "ii-cid-narrative-portrait-loan",
+      text: "The museum asked for my grandmother's portrait, and my sister refused before I finished reading the letter. She had always disliked sharing things. Later I found Grandmother's note asking that the portrait stay where children could touch its carved frame. I showed my sister; she said she remembered. The museum offered a low railing and a bench for school groups. My sister began measuring the canvas, then asked whether the label would name our family as lenders. She rejected the first wording and copied out another. I had prepared a speech about how art belonged to everyone. When the packing men arrived, I asked them to leave the empty frame; my sister had already wrapped it around the canvas.",
+      anchors: ["where children could touch", "name our family as lenders", "I asked them to leave the empty frame"],
+      key: "The dispute joins concern for the portrait's familiar place with claims of possession and recognition involving both siblings.",
+      wrong: [
+        ["The sister's refusal protects the grandmother's wishes until the museum meets them, while the narrator consistently favors public access over possession.", "A railing and bench do not provide touchable access to the frame, and the narrator's final request reveals a wish to retain part of the object."],
+        ["The sister abandons concern for the grandmother's wishes in exchange for recognition, leaving the narrator to preserve those wishes through the frame.", "Her initial refusal has a genuine basis, but the passage does not establish complete abandonment or show that the narrator's request preserves a touchable portrait."],
+        ["The narrator corrects a selfish refusal by finding the grandmother's note, which provides the terms ultimately accepted by the museum.", "The note supports the refusal rather than correcting it, and the museum's proposed arrangements do not satisfy its exact request."],
+      ],
+      why: "The note complicates the narrator's diagnosis of the sister as merely possessive. Her attention to the lender label nevertheless shows another interest, while the narrator's request for the frame unsettles the claim to be motivated solely by universal access. No character's stated position covers the whole exchange.",
+    },
+    {
+      scene: "ii-cid-narrative-translated-letter",
+      text: "Rafi had translated Mother's letter to the landlord into brisk, immaculate sentences. I missed the long detour through the weather and accused him of making her sound like someone else. Mother took his page and asked him to remove a sentence about the leaking roof. She wanted the downstairs room for her sewing business; she feared a complaint would make the landlord repair the roof instead of considering the room. Rafi pointed to the buckets by the stairs. She nodded, then dictated a firmer offer for the rent. While they worked, I copied her opening about the rain onto a fresh sheet. She used the back of it to calculate how many coats the larger room would let her finish.",
+      anchors: ["making her sound like someone else", "dictated a firmer offer", "used the back of it to calculate"],
+      key: "The narrator's wish to preserve Mother's voice overlooks her active choice of a different presentation, which also carries a practical cost.",
+      wrong: [
+        ["Rafi's polished translation hides the household's needs, while the narrator restores Mother's intentions by preserving her remarks about the rain.", "Mother herself removes the roof complaint to pursue the sewing room; the narrator's preferred wording does not capture that present choice."],
+        ["Mother accepts Rafi's wording to obtain the room, showing that the narrator's concern about losing her voice has no basis in the letter.", "The translation really changes her manner, but she participates in it; the concern is incomplete, not imaginary, and roof repairs are sacrificed."],
+        ["Mother's calculations resolve the disagreement by showing that the larger room will provide enough income to repair the neglected roof.", "The calculation concerns coat production; neither the cost of repairs nor sufficient income to fund them is established."],
+      ],
+      why: "The narrator notices a real stylistic loss but treats familiar phrasing as Mother's only authentic voice. Her deletions, firm offer, and use of the preserved opening as calculation paper show deliberate agency. The buckets establish what this choice leaves unaddressed, preventing a cost-free account of the new presentation.",
+    },
+    {
+      scene: "ii-cid-narrative-auction-bid",
+      text: "Mr. Bell donated his father's telescope to our observatory auction and then bid for it from the back row. I thought he had found a way to be thanked twice without parting with anything. When the bidding passed his offer, he sat down; the young woman beside the door bought it for the school. Bell carried the case to her car and showed her the stiff catch. In the accounts, his donation appeared beside a cheque covering the gap between her bid and his private valuation. He asked that the catalogue describe his father as an astronomer, although its draft had said 'watchmaker and amateur observer.' I made the change. Under the photograph, there was room for only one line.",
+      anchors: ["without parting with anything", "a cheque covering the gap", "I made the change"],
+      key: "Bell's contribution exceeds the narrator's cynical account, even as his concern for family prestige shapes the record the narrator helps create.",
+      wrong: [
+        ["Bell's later payment proves that his auction bid was intended only to benefit the school, and the catalogue properly acknowledges that generosity.", "The additional payment establishes real support, not the bid's sole motive; changing the father's description concerns prestige, not that payment."],
+        ["The narrator's suspicion is confirmed when Bell uses his payment to recover the telescope and substitute a grander account of his father's work.", "The school buyer keeps the telescope; the payment does not reverse the transfer, even though Bell requests a grander description."],
+        ["The narrator corrects an unfair judgment by removing an inaccurate description, keeping Bell's family concerns separate from the public donation.", "Nothing establishes that the original description was inaccurate; the narrator's edit brings Bell's family preference into the public record."],
+      ],
+      why: "Bell relinquishes the object, helps its recipient, and supplements the proceeds, refuting the claim that he parts with nothing. His requested description still pursues family prestige, and the narrator implements it. Genuine generosity therefore does not make self-presentation irrelevant or leave the narrator outside it.",
+    },
+    {
+      scene: "ii-cid-narrative-garden-path",
+      text: "My sister Ada had cut a straight path through Mother's roses while I was away. I stood over the severed roots and said she had always wanted the garden easier to manage. She brought out Mother's chair and rolled it from the kitchen to the pear tree, a journey we had stopped attempting the previous summer. Along the new paving, cuttings stood in labeled pots. Mother asked for the red climber beside her bedroom window. Ada began explaining why it would not flower against that wall. I interrupted: we could put it where it had always been. Mother looked from us to the pots and chose a yellow cutting neither of us remembered planting. Ada fetched a trowel. I stayed beside the red one.",
+      anchors: ["easier to manage", "a journey we had stopped attempting", "chose a yellow cutting"],
+      key: "Ada's alteration gives Mother useful access, but the sisters' competing ideas about caring for her risk displacing the preferences she expresses.",
+      wrong: [
+        ["Ada's practical changes restore Mother's independence, while the narrator's resistance preserves the garden Mother still prefers to remember.", "The path provides real access, but the mother's unexpected choice is not the preserved red rose the narrator favors; neither sister simply embodies her wishes."],
+        ["Mother chooses the yellow rose to settle the sisters' dispute, endorsing Ada's plan while allowing the narrator to preserve the red climber.", "Her reason for choosing yellow is not given; the choice need not be mediation, and she does not authorize the narrator's preferred arrangement."],
+        ["The narrator's objection prompts Ada to preserve the roses, enabling Mother to choose between restoration and the practical changes to the path.", "The labeled cuttings already exist before the objection, and selecting a rose is not choosing whether to restore the old path."],
+      ],
+      why: "Ada's path enables a previously abandoned journey and her cuttings contradict careless destruction. Yet she begins answering Mother's request with horticultural objections, while the narrator substitutes the old location. Mother's unforeseen choice separates her wishes from both sisters' accounts of what caring requires.",
+    },
+  ];
+
+  function createTemplate(C) {
+    const { RW, passage, inOrder, allDistinct, mc } = C;
+    return {
+      ...RW,
+      id: "central-idea-narrative-reassessment",
+      skill: "Central Ideas and Details",
+      subskill: "main idea",
+      difficulty: "Hard",
+      title: "Main idea from competing interpretations of a narrative action",
+      recognize: "Separate the observer's first explanation from the actions the story supplies, then test both that explanation and its simple opposite against the later evidence and the observer's own response.",
+      rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+      tricks: ["misattributed-view", "too-narrow", "too-broad"],
+      build(t) {
+        const topic = t.pick(NARRATIVE_REASSESSMENT_TOPICS);
+        const content = `${NARRATIVE_HEADER}\n\n${topic.text}`;
+        return mc("Hard", topic, {
+          stimulus: passage(content),
+          stem: "Which choice best states the main idea of the text?",
+          correct: topic.key,
+          wrong: topic.wrong,
+          explanation: `${topic.why} The main idea is therefore: ${topic.key}`,
+          steps: [
+            "Identify the observer's first interpretation and distinguish it from the actions actually described.",
+            "Combine the later details: note which support that interpretation, which limit it, and whether the observer's response reveals another stake.",
+            "Choose the account that fits those details without turning a partial correction into complete vindication or inventing a motive.",
+          ],
+          principles: [
+            "A character's explanation is evidence about that character's perspective, not automatically the story's main idea.",
+            "Evidence against an initial judgment need not establish its simple opposite; an action can have a real benefit and a remaining cost.",
+          ],
+          trap: "Replacing the observer's first judgment with an equally simple opposite, or treating the observer's preferred explanation as the narrator's settled truth.",
+          hint: "Which details does each character's explanation leave out? Include the observer's final response in your account.",
+          verify: () => topic.wrong.length === 3 && inOrder(content, topic.anchors) && allDistinct(topic.key, topic.wrong),
+        });
+      },
+    };
+  }
+
+  const narrativeReassessment = createTemplate(C);
 
   return [
     statedClaim,
@@ -2413,5 +2630,6 @@
     poemMainIdea,
     academicMainIdea,
     academicDetail,
+    narrativeReassessment,
   ];
 });

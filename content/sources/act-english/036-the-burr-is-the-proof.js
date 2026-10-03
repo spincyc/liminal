@@ -143,23 +143,21 @@ whose two sides actually {13 meet}.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "edge, and the steel comes off the wrong places",
-          "'And' repairs the splice but hides that the second clause is the reason for the first.",
+          "edge, however, the steel comes off the wrong places",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
           "edge; the steel coming off the wrong places",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "The participle leaves the second half without a main verb of its own."
+        ]
       ],
-      why:
-        "The second clause explains why rocking the blade produces a shoulder. 'Because' repairs the " +
-        "splice and states the relationship the sentence actually has.",
+      why: "The second clause explains why rocking the blade produces a shoulder. 'Because' repairs the splice and states the relationship the sentence actually has.",
       steps: [
         "Test each side of the comma as a sentence. Both stand.",
-        "Choose the conjunction that names the relationship rather than merely adding.",
+        "Choose the conjunction that names the relationship rather than merely adding."
       ],
       hint: "Ask what the second half is doing to the first.",
-      trap: "'And' is the reflex fix and flattens a reason into a list.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -193,23 +191,21 @@ whose two sides actually {13 meet}.`,
       noChange: "The opening phrase describes the edge, but the noun after the comma is 'the sharpener.'",
       wrong: [
         [
-          "Grinding away on one side until a wire of metal folds over the other, the sharpener can feel progress with a thumbnail.",
-          "The active form is grammatical but says the sharpener is the thing being ground away.",
+          "Grinding away on one side until a wire of metal folds over the other, the edge announces its own progress to a thumbnail.",
+          "The active participle makes the edge do the grinding rather than undergo it."
         ],
         [
           "Ground away on one side until a wire of metal folds over the other, progress can be felt with a thumbnail.",
-          "The phrase now describes 'progress,' which is not what gets ground.",
-        ],
+          "The phrase now describes 'progress,' which is not what gets ground."
+        ]
       ],
-      why:
-        "A participial phrase at the head of a sentence attaches to the first noun after the comma. " +
-        "The edge is ground away; the sharpener does the grinding.",
+      why: "A participial phrase at the head of a sentence attaches to the first noun after the comma. The edge is ground away; the sharpener does the grinding.",
       steps: [
         "Ask what is ground away on one side. The edge is.",
-        "Rewrite so the edge follows the comma.",
+        "Rewrite so the edge follows the comma."
       ],
       hint: "Read the opening phrase, then the first noun after the comma, and see if they match.",
-      trap: "The sentence states something true about the sharpener, so nothing sounds wrong.",
+      trap: "The sentence states something true about the sharpener, so nothing sounds wrong."
     },
     {
       number: 8,

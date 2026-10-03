@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p047",
   type: "social-science",
   title: "Every Two Hundred Metres",
-  intro: "This passage is adapted from an article on the planning of public transport.",
+  intro: "This original passage discusses the planning of public transport.",
   content: `The most consequential decision in the design of a bus route is one that almost nobody
 outside the industry knows is a decision: how far apart the stops are. In much of North
 America the spacing on an ordinary urban route is about two hundred metres, which works out
@@ -19,14 +19,15 @@ difference between using a bus and not using one. Removing stops is the single m
 unpopular thing a transit agency can propose, and the people who object at the meeting are
 typically the people with the strongest claim.
 
-The argument against is arithmetic and it is difficult to make in a room. Each stop costs
-the vehicle roughly twenty seconds — decelerating, opening, boarding, closing, pulling back
-into traffic — and it costs that whether or not anybody is waiting, because the driver must
-approach as though somebody is. Over a twelve-kilometre route, going from five stops per
+The argument against is arithmetic and it is difficult to make in a room. For a simplified planning example, assume that each removed stop saves
+an average of twenty seconds across trips, including avoided deceleration, boarding,
+and acceleration delays. Actual savings vary with passenger demand, signals, and
+whether the bus would have needed to stop at all. Over a twelve-kilometre route, going from five stops per
 kilometre to three saves about eight minutes each way. Eight minutes is not a convenience.
-On a route where buses run every twelve minutes, eight minutes of round-trip saving on each
-of several vehicles is often enough to add a bus to the rotation without buying one, which
-takes the headway from twelve minutes to nine.
+Suppose five buses each take sixty minutes to complete the round trip, giving
+a twelve-minute headway. Saving eight minutes each way cuts the round trip to
+forty-four minutes. The same five buses can then provide an 8.8-minute headway,
+approximately nine minutes, before allowing for any changes in recovery time.
 
 That is the trade the argument is actually about, and it is systematically misdescribed at
 public meetings, where it appears as a choice between a nearer stop and a more distant one.
@@ -52,8 +53,9 @@ argument winnable next time.
 
 None of this makes two hundred metres wrong everywhere. It makes it a number that was
 inherited rather than chosen, in a great many cities, from streetcar systems that stopped at
-every corner because a streetcar could not pull out of traffic and therefore lost nothing by
-stopping. The vehicles changed. The spacing did not.`,
+every corner as part of a network built around closely spaced street corners. Streetcars also
+lose time stopping; inheriting their stop pattern does not settle the trade-off
+for a later bus service. The vehicles changed. The spacing did not.`,
   questions: [
     {
       subskill: "main idea",
@@ -77,14 +79,14 @@ stopping. The vehicles changed. The spacing did not.`,
       subskill: "locate detail",
       family: "stated-detail",
       difficulty: "Easy",
-      stem: "According to the passage, each stop costs a bus roughly:",
+      stem: "In the passage's simplified planning example, each removed stop is assumed to save an average of:",
       key: "twenty seconds of travel time.",
       wrong: [
         ["eight minutes of travel time.", "Eight minutes is the saving across a whole twelve-kilometre route."],
         ["three minutes of travel time.", "This figure does not appear anywhere in the passage."],
         ["twelve seconds of travel time.", "Twelve is the headway in minutes, not a per-stop cost."],
       ],
-      why: "The passage says \"each stop costs the vehicle roughly twenty seconds — decelerating, opening, boarding, closing, pulling back into traffic.\"",
+      why: "The example explicitly assumes an average saving of twenty seconds per removed stop. The passage cautions that real savings vary with demand and operating conditions.",
       steps: [
         "Find the sentence giving the per-stop cost.",
         "Distinguish it from the route-level saving given next.",
@@ -95,19 +97,19 @@ stopping. The vehicles changed. The spacing did not.`,
       subskill: "cause and effect",
       family: "cause-of-a-cost",
       difficulty: "Easy",
-      stem: "The passage says a stop costs the vehicle time even when nobody is waiting because the driver must:",
-      key: "approach as though someone were there.",
+      stem: "In the passage's simplified calculation, removing stops saves time because it:",
+      key: "removes assumed delays from the route's overall running time.",
       wrong: [
-        ["open the doors at every scheduled stop.", "The cost is attributed to the approach, not to a rule about doors."],
-        ["wait a fixed interval to stay on schedule.", "Schedule holding is not mentioned in the passage."],
-        ["report each stop to a central controller.", "No reporting requirement is described."],
+        ["requires drivers to open the doors at every remaining stop.", "That would not explain the saved running time, and the model does not impose it."],
+        ["adds a fixed waiting interval at each end of the route.", "An added wait would consume time rather than produce the stated saving."],
+        ["eliminates the need to report arrivals to a central controller.", "No reporting requirement enters the calculation."],
       ],
-      why: "The passage says the cost is incurred \"whether or not anybody is waiting, because the driver must approach as though somebody is.\"",
+      why: "The passage supports this conclusion: The example assumes an average saving of twenty seconds for each stop removed. It is a planning model, not a claim that every bus always waits twenty seconds at an unused stop.",
       steps: [
-        "Locate the clause beginning with *because*.",
-        "Note that it describes how the driver must drive.",
+        "Identify the time assumption used in the example.",
+        "Connect fewer assumed delays with a shorter trip.",
       ],
-      hint: "The reason concerns the approach, not the stop itself.",
+      hint: "Use the example's stated assumption, not a rule about every real bus stop.",
     },
     {
       subskill: "meaning in context",
@@ -120,12 +122,12 @@ stopping. The vehicles changed. The spacing did not.`,
         ["comes at the expense of passenger comfort.", "Comfort is not raised in the paragraph."],
         ["applies only to the longest routes.", "The example is a route of twelve kilometres, not an unusual one."],
       ],
-      why: "The next sentence says the saving is \"often enough to add a bus to the rotation without buying one,\" taking the headway from twelve minutes to nine.",
+      why: "The passage uses five buses and a sixty-minute circuit, then a forty-four-minute circuit. Dividing by five changes the headway from twelve to 8.8 minutes, about nine, so the saving can alter service frequency.",
       steps: [
         "Read the sentence that follows the remark.",
         "Note what the saving is said to make possible.",
       ],
-      hint: "The next sentence converts minutes into a bus.",
+      hint: "Notice how a shorter round trip lets the same five buses provide more frequent departures.",
     },
     {
       subskill: "comparison",

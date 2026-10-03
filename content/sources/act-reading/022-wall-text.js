@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p022",
   type: "humanities",
   title: "The Label on the Wall",
-  intro: "This passage is adapted from an essay on museum interpretation.",
+  intro: "This original passage discusses museum interpretation.",
   content: `A museum label is about sixty words long, hangs at a height chosen for a person of
 average build, and is read for roughly eleven seconds by a visitor who is already tired.
 Everything a museum wants to say about an object has to survive those constraints. Curators

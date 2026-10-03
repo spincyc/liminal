@@ -1074,7 +1074,7 @@
               `Counting up from ${values[0]}, ${middleText}.`,
             ],
           principles: [
-            `In a ${title}, each value appears as many times as its ${asPlot ? "dots" : "frequency"} show; those repeated values are the data.`,
+            `In a ${title}, each value appears as many times as its ${asPlot ? "dots show" : "frequency shows"}; those repeated values are the data.`,
             "The median is the middle of the ordered data; the mean is the total of the data divided by how many values there are.",
           ],
           trap: askMean
@@ -2017,7 +2017,7 @@
         }
         const differ = statKeys.filter((_, i) => stats[i][0] !== stats[i][1]);
         const at = (stat) => stats[statKeys.indexOf(stat)];
-        const describe = (stat) => `${names[0]} ${num(at(stat)[0])}, ${names[1]} ${num(at(stat)[1])}`;
+        const describe = (stat) => `${names[0]} ${about(at(stat)[0])}, ${names[1]} ${about(at(stat)[1])}`;
         const unit = ctx.title.includes("(") ? ctx.title.replace(/^.*\((.*)\)$/, "$1") : "";
         if (howMuch) {
           if (!differ.length) return null;
@@ -2133,175 +2133,80 @@
 
   /* ============================== extreme-value-correction (Hard) */
 
-  // The mean and median of a data set are given, and one extreme value (the
-  // greatest or the least) is corrected without crossing the median. The
-  // mean moves by the change divided by the count; the median does not move.
-  // `range` entries are [low, high, step]; money scenes print dollars.
-  const CORRECTION_SCENES = [
-    { data: (n) => `the prices of the ${n} homes sold in Lakeview last month`, money: true, n: [15, 20, 24, 25, 30, 40], mean: [300000, 650000, 1000], gap: [15000, 90000, 1000], extreme: [1200000, 3200000, 10000], unit: "dollars" },
-    { data: (n) => `the annual salaries of the ${n} employees of a design firm`, money: true, n: [12, 15, 16, 20, 24, 25], mean: [52000, 96000, 500], gap: [3000, 20000, 500], extreme: [180000, 600000, 1000], unit: "dollars" },
-    { data: (n) => `the numbers of points scored by the ${n} players on a basketball team this season`, money: false, n: [10, 12, 14, 15, 16], mean: [140, 320, 1], gap: [8, 60, 1], extreme: [600, 1500, 5], unit: "points" },
-    { data: (n) => `the monthly rainfall totals, in millimeters, recorded at a weather station over ${n} months`, money: false, n: [12, 16, 20, 24, 25], mean: [60, 140, 1], gap: [4, 30, 1], extreme: [300, 700, 2], unit: "millimeters" },
-    { data: (n) => `the numbers of pages in the ${n} books on a summer reading list`, money: false, n: [16, 20, 24, 25, 30], mean: [250, 420, 1], gap: [10, 60, 1], extreme: [900, 1600, 4], unit: "pages" },
-  ];
-
-  const drawStep = (t, [low, high, step]) => t.int(Math.ceil(low / step), Math.floor(high / step)) * step;
-
-  // A data set with n values, the given mean and median, and `extreme` as
-  // its greatest (top) or least (bottom) value: the other values sit in two
-  // blocks, one below the median and one above. Null when no such blocks fit.
-  function dataWith(n, meanValue, medianValue, extreme, top) {
-    const middle = n % 2 ? 1 : 2;
-    const lower = Math.floor((n - middle) / 2);
-    const upper = n - middle - lower;
-    const total = n * meanValue - middle * medianValue - extreme;
-    for (const share of [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3]) {
-      if (top) {
-        // lower values a, upper values b (one of the upper places is the extreme).
-        const a = medianValue * share;
-        const b = (total - lower * a) / (upper - 1);
-        if (b > medianValue && b < extreme) return [...Array(lower).fill(a), ...Array(middle).fill(medianValue), ...Array(upper - 1).fill(b), extreme];
-      } else {
-        const b = medianValue * (2 - share);
-        const a = (total - upper * b) / (lower - 1);
-        if (a < medianValue && a > extreme) return [extreme, ...Array(lower - 1).fill(a), ...Array(middle).fill(medianValue), ...Array(upper).fill(b)];
-      }
-    }
-    return null;
-  }
-
   const extremeCorrection = {
     id: "extreme-value-correction",
     domain: DOMAIN,
     skill: "One-variable data",
     subskill: "mean and median",
     difficulty: "Hard",
-    title: "Mean and median after an extreme value is corrected",
+    title: "Recovering a frequency before correcting an extreme value",
     recognize:
-      "Correcting one value changes the sum by the size of the correction, so the mean moves by that amount divided by the " +
-      "count; the median depends only on the middle position, which does not move while the value stays on the same side.",
-    // Hard: only summary statistics are given, so the student must see that
-    // the median cannot move (the value stays on its side of the middle)
-    // while the mean moves by the correction over the count; moving both,
-    // moving the mean by the whole correction, or keeping the old gap are
-    // all offered.
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
-    tricks: ["neighbouring-rule", "wrong-quantity", "intermediate-value"],
+      "Use the original mean to recover the missing frequency: both the total and the count contain that frequency. " +
+      "Then replace the incorrect value, reorder the observations, and locate the middle position or positions.",
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 2, trap: 1 },
+    tricks: ["unweighted-average", "neighbouring-rule", "intermediate-value"],
     build(t) {
-      const scene = t.pick(CORRECTION_SCENES);
-      const top = t.chance(0.7);
-      const askGap = t.chance(0.6);
-      const numeric = askGap && t.chance(0.45);
-      const show = (value) => (scene.money ? S.money(value) : num(value));
+      const scene = t.pick([
+        { subject: "the numbers of pages in a set of reports", header: "Pages", first: [12, 60], steps: [2, 4, 6] },
+        { subject: "the numbers of points scored by players in a tournament", header: "Points", first: [4, 20], steps: [2, 4] },
+        { subject: "the lengths, in centimeters, of a set of rods", header: "Length (centimeters)", first: [10, 50], steps: [2, 4, 6] },
+        { subject: "the durations, in minutes, of a set of appointments", header: "Duration (minutes)", first: [10, 40], steps: [2, 4, 6] },
+      ]);
+      const numeric = t.chance(0.4);
       return retry(() => {
-        const n = t.pick(scene.n);
-        const M = drawStep(t, scene.mean) - (top ? drawStep(t, scene.gap) : -drawStep(t, scene.gap));
-        const mu = M + (top ? 1 : -1) * drawStep(t, scene.gap);
-        if (mu <= 0 || M <= 0) return null;
-        let before;
-        let after;
-        if (top) {
-          before = drawStep(t, scene.extreme);
-          // Lowered in most items (a typing slip); raised in some.
-          const [low, high, unit] = scene.extreme;
-          after = t.chance(0.75)
-            ? M + Math.round(((before - M) * t.int(15, 70)) / 100 / unit) * unit
-            : before + drawStep(t, [2 * unit, (high - low) / 2, unit]);
-          if (!(after > M) || after === before) return null;
-        } else {
-          const unit = scene.extreme[2];
-          before = Math.round((M * t.int(5, 40)) / 100 / unit) * unit;
-          after = Math.round((M * t.int(45, 90)) / 100 / unit) * unit;
-          if (!(after < M && after > before && before >= 0)) return null;
-        }
-        // With an even count the median is the mean of two middle values
-        // the stem does not give, so a corrected value that moves toward the
-        // middle might pass the nearer one and move the median. Only a
-        // greatest value raised further away is safe then.
-        if (n % 2 === 0 && !(top && after > before)) return null;
-        const change = after - before;
-        const delta = tidy(change / n);
-        const places = scene.money ? 0 : 2;
-        if (!isClean(delta, places) || delta === 0) return null;
-        const newMean = tidy(mu + delta);
-        const gap = tidy(Math.abs(newMean - M));
-        if (gap === 0 || !isClean(gap, places)) return null;
-        const data = dataWith(n, mu, M, before, top);
-        if (!data) return null;
-        const which = top ? "greatest" : "least";
-        const setup =
-          `The mean and the median of ${scene.data(n)} are ${show(mu)} and ${show(M)}, respectively. ` +
-          `The ${which} value in the data, ${show(before)}, was recorded incorrectly; the correct value is ${show(after)}.`;
-        const verb = delta > 0 ? "increases" : "decreases";
-        const moveText = `${verb} by ${show(Math.abs(delta))}`;
-        const principles = [
-          "The mean is the sum divided by the count: changing one value by d changes the mean by d ÷ n.",
-          "The median is the middle value of the ordered data; it does not change when a value changes without crossing the middle.",
-        ];
-        const hint = "Which statistic depends on every value, and which depends only on the middle of the ordered data?";
-        const check = () => {
-          const fixed = data.slice();
-          fixed[top ? fixed.length - 1 : 0] = after;
-          return close(mean(data), mu) && close(median(data), M) && close(median(fixed), M) &&
-            close(mean(fixed) - mean(data), delta);
-        };
-        const steps = [
-          `The correction changes the sum by ${show(after)} ${MINUS} ${show(before)}, so the mean ${verb} by ${show(Math.abs(change))} ÷ ${n} = ${show(Math.abs(delta))}.`,
-          n % 2
-            ? `The corrected value is still ${top ? "above" : "below"} the median, ${show(M)}, the middle value, so the middle of the ordered data does not move: the median stays ${show(M)}.`
-            : `The ${which} value only moves further from the middle, so the two middle values, and the median ${show(M)}, do not change.`,
-        ];
-        if (askGap) {
-          const candidates = [
-            [Math.abs(mu - M), `Uses the mean and median before the correction; the mean changes by ${show(Math.abs(delta))}.`],
-            [Math.abs(mu + change - M), `Changes the mean by the whole correction, ${show(Math.abs(change))}, instead of by the correction divided by ${n}.`],
-            [Math.abs(mu + change / (n - 1) - M), `Divides the correction by ${n - 1} instead of by the ${n} values.`],
-            [Math.abs(delta), `Gives the change in the mean, ${show(Math.abs(delta))}, not the difference between the mean and the median.`],
-            [Math.abs(mu - (M + delta)), `Moves the median by ${show(Math.abs(delta))} instead of the mean.`],
-          ];
-          return packRanked(t, numeric, gap, candidates, {
-            stimulus: null,
-            stem: `${setup} What is the positive difference between the mean and the median of the corrected data${scene.money ? ", in dollars" : ""}?`,
-            explanation:
-              `${steps[0]} The new mean is ${show(newMean)}. ${steps[1]} The positive difference is ${show(Math.max(newMean, M))} ${MINUS} ${show(Math.min(newMean, M))} = ${show(gap)}.`,
-            steps: steps.concat([`Difference: |${show(newMean)} ${MINUS} ${show(M)}| = ${show(gap)}.`]),
-            principles,
-            trap: `The median does not move with the corrected value, and the mean moves by only ${show(Math.abs(delta))}; keeping the old gap or moving the mean by ${show(Math.abs(change))} gives an offered answer.`,
-            hint,
-            estimatedSeconds: 120,
-            verify: check,
-          }, { show: numeric ? fmt : show, places, positive: true });
-        }
-        const amounts = [Math.abs(delta), Math.abs(change)];
-        if (amounts[0] === amounts[1]) return null;
-        const byAmount = (value) => `${verb} by ${show(value)}`;
-        // The wrong median move is by the mean's change in some items and by
-        // the whole correction in others, so no choice shares more with the
-        // rest than the key does (the hub strategy stays near chance).
-        const medianMove = t.pick(amounts);
-        const grid = statementGrid((i, j) => {
-          const meanText = byAmount(amounts[i]);
-          const medianText = j === 0 ? "the median is unchanged" : `the median ${byAmount(medianMove)}`;
-          const truth = i === 0 && j === 0;
-          const reason = i === 1
-            ? `Moves the mean by the whole correction, ${show(amounts[1])}; spread over ${n} values it moves the mean by ${show(amounts[0])}.`
-            : `Moves the median ${medianMove === amounts[0] ? "with the mean" : "by the whole correction"}, but the corrected value stays ${top ? "above" : "below"} the middle, so the median does not change.`;
-          return [`The mean ${meanText}, and ${medianText}.`, reason, truth];
-        });
-        if (!grid) return null;
-        return finish(false, {
-          stimulus: null,
-          stem: `${setup} Which of the following statements about the corrected data is true?`,
-          correct: grid.correct,
-          wrong: grid.wrong,
-          explanation: `${steps[0]} ${steps[1]} So the mean ${moveText}, and the median is unchanged.`,
-          steps: steps.concat([`So "${grid.correct}" is the true statement.`]),
-          principles,
-          trap: "An extreme value pulls the mean, not the median; and one value's change is shared by all the values when the mean is computed.",
-          hint,
-          estimatedSeconds: 110,
-          verify: check,
-        });
+        const first = t.int(...scene.first);
+        const step = t.pick(scene.steps);
+        const values = range(0, 4).map(i => first + i * step);
+        const x = t.int(2, 10);
+        const freqs = [t.int(1, 6), t.int(1, 6), x, t.int(1, 6), 1];
+        const original = expand(values, freqs);
+        const n = original.length;
+        const mu = mean(original);
+        if (!isClean(mu, 2) || close(mu, values[2])) return null;
+        const replacement = first + t.pick([0, 0.5, 1]) * step;
+        const corrected = original.slice(0, -1).concat([replacement]).sort((a, b) => a - b);
+        const key = median(corrected);
+        const oldMedian = median(original);
+        if (key === oldMedian) return null;
+        const knownCount = n - x;
+        const knownTotal = sum(original) - x * values[2];
+        const midpoint = n % 2 ? `${(n + 1) / 2}th value` : `${n / 2}th and ${n / 2 + 1}th values`;
+        const middle = n % 2 ? `${num(corrected[(n - 1) / 2])}` : `${num(corrected[n / 2 - 1])} and ${num(corrected[n / 2])}`;
+        const discarded = original.slice(0, -1);
+        return packRanked(t, numeric, key, [
+          [oldMedian, "Keeps the original median even though the corrected extreme crosses the middle of the ordered data."],
+          [tidy(mu), "Gives the original mean rather than the median of the corrected observations."],
+          [tidy(mean(corrected)), "Computes the corrected mean rather than the corrected median."],
+          [median(values), "Takes the median of the five listed values, ignoring their frequencies."],
+          [median(discarded), "Removes the incorrect observation without replacing it, changing the number of observations."],
+          [x, "Finds the missing frequency but stops before determining the corrected median."],
+          [first, "Gives the least listed value rather than the middle of the corrected data."],
+          [values[3], "Counts listed rows rather than repeated observations when locating the median."],
+        ], {
+          stimulus: { type: "table", content: table([scene.header, "Frequency"], values.map((value, i) => [value, i === 2 ? "x" : freqs[i]])) },
+          figure: null,
+          stem: `The table summarizes ${scene.subject}, where x is a positive integer. The mean of the original data is ${num(tidy(mu))}. ` +
+            `The single observation recorded as ${values[4]} was incorrect and is replaced by ${num(replacement)}. What is the median of the corrected data?`,
+          explanation:
+            `The original total is ${knownTotal} + ${values[2]}x and the count is ${knownCount} + x. Thus ${num(tidy(mu))}(${knownCount} + x) = ${knownTotal} + ${values[2]}x, giving x = ${x}. ` +
+            `There are ${n} observations. Replacing ${values[4]} by ${num(replacement)} moves one observation below the original middle. ` +
+            `The corrected median uses the ${midpoint}, ${middle}, so it is ${num(key)}.`,
+          steps: [
+            `Use mean × count = total: ${num(tidy(mu))}(${knownCount} + x) = ${knownTotal} + ${values[2]}x.`,
+            `Solve for x = ${x}; the count is ${knownCount} + ${x} = ${n}.`,
+            `Replace the one value ${values[4]} by ${num(replacement)} and reorder the observations.`,
+            `Locate the ${midpoint}: ${middle}. The median is ${num(key)}.`,
+          ],
+          principles: [
+            "A frequency counts repeated observations; it contributes both to the total number of observations and to their weighted sum.",
+            "Replacing an observation keeps the count fixed but can change the median if the replacement crosses the middle of the ordered data.",
+            "For an even count, the median is the mean of the two middle observations.",
+          ],
+          trap: "The unknown frequency changes both the numerator and denominator of the mean. After it is found, the original median may change when the corrected observation moves across the middle.",
+          hint: "How can the given mean determine x, and where does the corrected observation fall in the ordered data?",
+          estimatedSeconds: 150,
+          verify: () => close(sum(original) / original.length, mu) && close(median(corrected), key) && corrected.length === n && key !== oldMedian,
+        }, { show: num, places: 2, positive: true });
       });
     },
   };

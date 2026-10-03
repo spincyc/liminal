@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p028",
   type: "social-science",
   title: "The Nearest Shop",
-  intro: "Passage A is adapted from a report on food access in low-income neighbourhoods. Passage B is adapted from an economist's assessment of that literature.",
+  intro: "Passage A is an original report on food access in low-income neighbourhoods. Passage B is an original economist's assessment of that literature.",
   content: `PASSAGE A
 
 There are neighbourhoods in this country where the nearest full grocery is four kilometres
@@ -216,18 +216,18 @@ prices and incomes, go unaddressed because they are expensive and unglamorous.`,
       subskill: "strengthen or weaken",
       family: "weakening-a-position",
       difficulty: "Medium",
-      stem: "Which finding, if true, would most weaken Passage B's conclusion?",
-      key: "Diets improved sharply where new shops also cut produce prices.",
+      stem: "Which finding, if true for otherwise comparable households whose incomes did not change, would most weaken Passage B's conclusion?",
+      key: "Diets improved sharply after new shops opened without cutting prices.",
       wrong: [
         ["Households in food deserts report wanting more fresh produce.", "Stated preferences do not address what purchases actually do."],
         ["Supermarkets opened in such areas often close within a decade.", "Closures would suggest shops follow demand, which supports Passage B."],
         ["Corner shops with refrigeration sell more chilled drinks.", "Sales of drinks say nothing about the nutritional content of baskets."],
       ],
-      why: "Passage B concedes that prices and incomes \"would actually move the number.\" A case where proximity plus lower prices changed diets would show access working when the price barrier is removed, narrowing its claim.",
+      why: "Passage B argues that proximity alone changes diets little and identifies prices and incomes as more influential. Improved diets after access increased while prices and incomes stayed comparable would challenge that argument. Combining new shops with lower prices would leave its price explanation intact.",
       steps: [
-        "State Passage B's conclusion about what access alone accomplishes.",
-        "Look for evidence that access produces the effect it denies.",
-        "Reject findings that Passage B would welcome.",
+        "State Passage B's claim about access alone.",
+        "Hold the alternative explanations, especially prices, comparable.",
+        "Choose evidence that dietary purchases changed after access improved.",
       ],
       hint: "The weakening finding must show a dietary change, not an attitude.",
     },

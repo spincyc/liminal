@@ -16,7 +16,7 @@ module.exports = {
   id: "act-reading-p001",
   type: "literary-narrative",   // or social-science, humanities, natural-science
   title: "…",
-  intro: "This passage is adapted from …",   // printed in italics, as the ACT does
+  intro: "This is an original passage about …",   // honest original-content framing
   content: `…600–950 words…`,
   questions: [
     {
@@ -34,6 +34,10 @@ module.exports = {
   ],
 };
 ```
+
+Do not describe an original practice passage as an adaptation of an unidentified
+work. Identify invented tables as illustrative data, and preserve source references
+in authoring comments when correcting real historical or scientific claims.
 
 ## Rules the generator enforces
 

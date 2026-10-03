@@ -125,23 +125,21 @@ camera and step in. He finds {11 this} irritating. I find it necessary.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "again, and nobody asked me to stop",
-          "The conjunction repairs the splice but attaches the observation to the end of a long list.",
+          "again, however, nobody asked me to stop",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "again, nobody asking me to stop",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "again; nobody asking me to stop",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "The sentence has already run a four-item list. Giving the second clause its own sentence " +
-        "lets it land as the observation it is rather than as a fifth item.",
+      why: "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Separate them so the second is not swallowed by the list.",
+        "Find the subjects and finite verbs on both sides of the boundary.",
+        "Keep a complete statement on each side of the sentence boundary."
       ],
       hint: "Count how many items the first half already contains.",
-      trap: "'And' is the reflex repair and buries the sentence's point.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -247,23 +245,21 @@ camera and step in. He finds {11 this} irritating. I find it necessary.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "hiding: I had found a job",
-          "A colon introduces an explanation, but the second clause corrects the first rather than expanding it.",
+          "hiding; although I had found a job",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "hiding and I had found a job",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The sentence denies one account and offers another. Both halves are complete, and a " +
-        "semicolon holds the correction against the denial without subordinating either.",
+      why: "The sentence denies one account and offers another. Both halves are complete, and a semicolon holds the correction against the denial without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or replaces it. It replaces it.",
+        "Ask whether the second explains the first or replaces it. It replaces it."
       ],
       hint: "The two clauses are rival explanations, not a statement and its reason.",
-      trap: "The second clause does feel explanatory, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 11,

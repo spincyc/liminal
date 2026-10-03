@@ -244,7 +244,8 @@ them, whom*).
 
 - **Compound test:** remove the other person. *Between you and **me**.*
 - **Who/whom:** substitute *he/him*. *He* → *who*; *him* → *whom*.
-- **Never** use a reflexive (*myself*) as a subject or plain object.
+- A reflexive object refers back to its subject (*I reminded myself*). Do not
+  substitute *myself* for an ordinary subject or object (*Please contact me*).
 
 **Ambiguity:** if a pronoun could refer to two nouns, it's an error.
 
@@ -332,12 +333,12 @@ Volume works here. The rules are few and they repeat constantly.
 
 | Stage | Filter | Volume and method |
 | --- | --- | --- |
-| 1. Boundaries | Punctuation, Easy | 30 untimed. Write "IND" or "DEP" on each side. |
-| 2. Commas | Punctuation, Easy → Medium | 30. Check against the forbidden list. |
-| 3. Apostrophes | Punctuation + Usage, Easy | 20. Ask "how many" and "possesses what." |
-| 4. Fragments and run-ons | Sentence Structure and Formation, Medium | 25 |
-| 5. Agreement | Usage, Easy → Medium | 25. Cross out the middle every time. |
-| 6. Modifiers and parallelism | Sentence Structure and Formation, Medium → Hard | 25 |
+| 1. Boundaries | Punctuation | 30 untimed. Write "IND" or "DEP" on each side. |
+| 2. Commas | Punctuation | 30. Check against the forbidden list. |
+| 3. Apostrophes | Punctuation + Usage | 20. Ask "how many" and "possesses what." |
+| 4. Fragments and run-ons | Sentence Structure and Formation | 25 |
+| 5. Agreement | Usage | 25. Cross out the middle every time. |
+| 6. Modifiers and parallelism | Sentence Structure and Formation | 25 |
 | 7. Mixed timed | Whole domain | 60 at **22 seconds each** |
 
 Stage 7's target is the point of the whole plan. At 22 seconds per convention

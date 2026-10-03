@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p027",
   type: "literary-narrative",
   title: "Plot Nineteen",
-  intro: "This passage is adapted from a novel set in an English town. Dorothy Aylward, seventy-four, has held an allotment plot since 1981.",
+  intro: "This is an original fictional passage set in an English town. Dorothy Aylward, seventy-four, has held an allotment plot since 1979.",
   content: `The letter came on a Thursday and Dorothy read it standing up, in the hall, with her
 coat still on, which was how she read anything she expected to be annoyed by.
 

@@ -1230,13 +1230,13 @@
     domain: "Algebra",
     skill: "Linear equations in two variables",
     subskill: "equation modeling",
-    difficulty: "Medium",
+    difficulty: "Easy",
     title: "Meaning of an intercept or a point of a linear model",
     recognize:
       "An intercept is a point where one variable is 0: on the vertical axis the input is 0 (the starting amount), on " +
       "the horizontal axis the output is 0 (the amount has run out, or nothing of the other item is bought). A point " +
       "(a, b) says the output is b when the input is a.",
-    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    rubric: { steps: 0, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["wrong-quantity", "neighbouring-rule"],
     build(t) {
       const budget = t.chance(0.3);
@@ -1761,85 +1761,8 @@
     rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
     tricks: ["sign-error", "wrong-quantity", "neighbouring-rule"],
     build(t) {
-      const form = t.pick(["slope-sum", "slope-sum", "ratio-point", "ratio-point", "letters"]);
+      const form = t.pick(["slope-sum", "ratio-point"]);
       for (;;) {
-        if (form === "letters") {
-          // Intercepts (c1·k, 0) and (0, c2·k): the equation or the slope.
-          const c1 = t.nonzero(-6, 6);
-          const c2 = t.nonzero(-6, 6);
-          if (Math.abs(c1) === Math.abs(c2)) continue;
-          const askSlope = t.chance(0.4);
-          const g = S.gcd(c1, c2);
-          // x/(c1 k) + y/(c2 k) = 1  ->  (c2/g)x + (c1/g)y = (c1 c2 / g)k.
-          const rc = (c1 * c2) / g;
-          const eqText = (xc, yc) => {
-            const sign = xc < 0 ? -1 : 1;
-            const [X, Y, R] = [sign * xc, sign * yc, sign * rc];
-            const rhs = `${R === 1 ? "" : R === -1 ? MINUS : num(R)}k`;
-            return `${lin(X, 0)} ${Y < 0 ? MINUS : "+"} ${Math.abs(Y) === 1 ? "" : num(Math.abs(Y))}y = ${rhs}`;
-          };
-          const [u, v] = [c2 / g, c1 / g];
-          const kText = (c) => `${c === 1 ? "" : c === -1 ? MINUS : num(c)}k`;
-          const intercepts = `(${kText(c1)}, 0) and y-intercept (0, ${kText(c2)})`;
-          const stem =
-            `In the xy-plane, a line has x-intercept ${intercepts}, where k is a positive constant. ` +
-            (askSlope ? "What is the slope of the line?" : "Which equation represents the line?");
-          let key;
-          let wrong;
-          if (askSlope) {
-            key = frac(-c2, c1);
-            wrong = [
-              [frac(c2, c1), "Divides the y-intercept by the x-intercept without the minus sign: from (a, 0) to (0, b) the run is −a."],
-              [frac(-c1, c2), "Divides the x-intercept by the y-intercept, which inverts the slope."],
-              [frac(c1, c2), "Inverts the slope and loses its sign."],
-            ];
-          } else {
-            key = eqText(u, v);
-            wrong = [
-              [eqText(v, u), "Pairs each intercept's number with its own variable; x/a + y/b = 1 puts b with x after clearing fractions."],
-              [eqText(u, -v), "Loses the sign of one intercept, which changes the direction of the line."],
-              [eqText(v, -u), "Pairs each intercept's number with its own variable and loses a sign."],
-            ];
-          }
-          if (collides(key, wrong) || distinctWrongHard(key, wrong) < 3) continue;
-          const kValue = 1.7;
-          const [ax, by] = [c1 * kValue, c2 * kValue];
-          return {
-            responseType: "multiple-choice",
-            estimatedSeconds: 100,
-            stimulus: null,
-            stem,
-            correct: key,
-            wrong,
-            explanation: askSlope
-              ? `The line goes from (${kText(c1)}, 0) to (0, ${kText(c2)}): a rise of ${kText(c2)} over a run of ${kText(-c1)}, so the slope is ${key}; k cancels.`
-              : `A line with intercepts (a, 0) and (0, b) is x/a + y/b = 1. Here x/(${kText(c1)}) + y/(${kText(c2)}) = 1; clearing the fractions gives ${key}.`,
-            steps: askSlope
-              ? [
-                `Change in y from (${kText(c1)}, 0) to (0, ${kText(c2)}): ${kText(c2)}.`,
-                `Change in x: 0 ${MINUS} ${c1 < 0 ? `(${kText(c1)})` : kText(c1)} = ${kText(-c1)}.`,
-                `Slope: (${kText(c2)}) ÷ (${kText(-c1)}) = ${key}.`,
-              ]
-              : [
-                `Intercept form: x/(${kText(c1)}) + y/(${kText(c2)}) = 1.`,
-                `Multiply every term by ${kText(Math.abs(rc))} to clear the fractions${c1 < 0 ? ", then multiply by −1 so the x-term is positive" : ""}.`,
-                `So ${key}. Check: x = ${kText(c1)}, y = 0 and x = 0, y = ${kText(c2)} both satisfy it.`,
-              ],
-            principles: [
-              "The line through (a, 0) and (0, b) has slope −b/a and equation x/a + y/b = 1.",
-              "Checking a choice at both intercepts confirms it.",
-            ],
-            trap: askSlope
-              ? "The slope is rise over run, and the run from (a, 0) to (0, b) is −a, not a."
-              : "Clearing the fractions puts the y-intercept's number with x and the x-intercept's number with y.",
-            hint: "Where does each intercept put the line?",
-            verify: () => {
-              if (askSlope) return approx(valueOf(key), (by - 0) / (0 - ax)) && wrong.every(([text]) => !approx(valueOf(text), -by / ax));
-              const on = (text) => [[ax, 0], [0, by]].every(([x, y]) => holds(text, { x, y, k: kValue }));
-              return on(key) && wrong.every(([text]) => !on(text));
-            },
-          };
-        }
         if (form === "slope-sum") {
           // Slope and a sum (or difference) of the intercepts.
           const a = t.nonzero(-12, 12);
@@ -2018,7 +1941,7 @@
     title: "Whole-number solutions of a two-variable linear equation in context",
     recognize:
       "The story is ax + by = c with x and y whole numbers. Find one solution, then trade one kind for the other " +
-      "without changing the total: after dividing out any common factor of a and b, x moves in steps of b and y in " +
+      "without changing the total: after dividing out the greatest common factor of a and b, x moves in steps of b and y in " +
       "steps of a. Count or bound the solutions only after deciding whether 0 of a kind is allowed.",
     // Hard: the structure of whole-number solutions must be seen before any
     // counting, and both the step size and the zero case are traps.

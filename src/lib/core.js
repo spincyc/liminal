@@ -1,11 +1,31 @@
 (function (root, factory) {
-  const api = factory();
-  if (typeof module === "object" && module.exports) module.exports = api;
+  const node = typeof module === "object" && module.exports;
+  const api = factory(node ? require("../../content/catalog.json") : root.PRACTICE_CATALOG);
+  if (node) module.exports = api;
   else root.PracticeCore = api;
-})(typeof globalThis !== "undefined" ? globalThis : this, function () {
+})(typeof globalThis !== "undefined" ? globalThis : this, function (catalog) {
   "use strict";
 
   const DIFFICULTY_ORDER = ["Easy", "Medium", "Hard"];
+
+  // Availability controls new practice only. Archived answers, question ids,
+  // and blueprint metadata remain readable when a section is withdrawn.
+  function sectionAvailable(sectionOrKey) {
+    const section = sectionOrKey && typeof sectionOrKey === "object" ? sectionOrKey
+      : ((catalog && catalog.sections) || []).find((entry) => entry.key === sectionOrKey);
+    return !section || section.practiceAvailable !== false;
+  }
+
+  function blueprintAvailable(blueprint) {
+    return Boolean(blueprint) && blueprint.sections.every((entry) => sectionAvailable(entry.sectionKey));
+  }
+
+  function requireAvailable(keys) {
+    const key = keys.find((entry) => !sectionAvailable(entry));
+    if (!key) return;
+    const section = ((catalog && catalog.sections) || []).find((entry) => entry.key === key);
+    throw new RangeError(`${section.shortLabel || key} practice is unavailable. ${section.practiceNote || ""}`.trim());
+  }
 
   // Mini tests mirror each test's real section weighting inside 20 questions.
   // Minute budgets come from official per-question pacing, rounded up:
@@ -114,8 +134,8 @@
       label: "ACT mini test",
       minutes: 20,
       summary:
-        "Eight English, seven Mathematics, and five Reading items, weighted " +
-        "like the enhanced ACT's 50/45/36 Composite split.",
+        "Eight English, seven Mathematics, and five Reading items, allocated " +
+        "roughly in proportion to the enhanced ACT's section lengths.",
       sections: [
         section("act-english", 8, 6),
         section("act-mathematics", 7, 8),
@@ -228,6 +248,7 @@
   // Reading questions then reads four passages, as the real test does,
   // instead of thirty.
   function drawPassageSets(questions, count, seed) {
+    requireAvailable(questions.map((question) => question.sectionKey));
     const byPassage = new Map();
     questions.forEach((question) => {
       if (!byPassage.has(question.passageId)) byPassage.set(question.passageId, []);
@@ -251,6 +272,7 @@
   // difficulty labels are not verified and scattered questions from thirty
   // passages are nothing like the test.
   function drawSectionItems(bank, count, seed, excludeIds) {
+    requireAvailable(bank.map((question) => question.sectionKey));
     const blocked = excludeIds || new Set();
     const scoreable = bank.filter(
       (question) => question.responseType !== "essay" && !blocked.has(question.id),
@@ -288,6 +310,7 @@
   // real thing rather than jumping between sections.
   function buildMiniTest(bankBySection, blueprint, seed) {
     if (!blueprint) return [];
+    requireAvailable(blueprint.sections.map((entry) => entry.sectionKey));
     const questions = [];
     blueprint.sections.forEach((entry) => {
       const bank = bankBySection[entry.sectionKey] || [];
@@ -303,6 +326,7 @@
   // already drawn, so two modules that share a bank never repeat a question.
   function buildTestForm(bankBySection, blueprint, seed) {
     if (!blueprint) return [];
+    requireAvailable(blueprint.sections.map((entry) => entry.sectionKey));
     const used = new Set();
     return blueprint.sections.map((entry, index) => {
       const bank = bankBySection[entry.sectionKey] || [];
@@ -685,6 +709,7 @@
   // `options.passageSets`, a pool whose questions share passages is drawn as
   // whole passages instead (drawPassageSets), as a timed set should be.
   function buildSession(questions, count, seed, options) {
+    requireAvailable(questions.map((question) => question.sectionKey));
     const settings = options || {};
     const avoid = new Set(settings.avoidIds || []);
     const target = count === "all"
@@ -761,6 +786,8 @@
     SECONDS_PER_QUESTION,
     questionFamily,
     scoreResponse,
+    sectionAvailable,
+    blueprintAvailable,
     summarizeMiniTest,
     summarizeProgress,
   };

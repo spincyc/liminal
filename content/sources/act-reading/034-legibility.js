@@ -1,10 +1,12 @@
 "use strict";
 
+// Fact-check: Context-dependent line-length effects: https://journals.uc.edu/index.php/vl/article/view/5671
+
 module.exports = {
   id: "act-reading-p034",
   type: "humanities",
   title: "The Reading Machine",
-  intro: "This passage is adapted from an essay on typography and the research into legibility.",
+  intro: "This original passage discusses typography and the research into legibility.",
   content: `Anybody who has designed a page has been told that serif type is easier to read than
 sans serif, that the small strokes finishing each letter guide the eye along the line. It is
 the most durable claim in typography and the evidence for it is thin to the point of
@@ -26,19 +28,21 @@ does show a large and repeatable effect is familiarity. Readers are fastest with
 they read most, and what they read most changes by decade and by medium, which is enough on
 its own to explain the pattern of results across a century of studies.
 
-This is not an argument that typography does not matter. Several typographic variables have
-effects large enough to survive any control. Line length is one: a line much longer than
-about seventy characters costs the reader accuracy in finding the next line, and one much
-shorter costs them the rhythm of the sentence. Spacing between lines is another; too tight
-and the line below intrudes, too loose and the paragraph stops reading as a unit. Contrast
-between text and background matters, and matters much more for older readers, whose lenses
-scatter more light; a grey that a designer of thirty finds elegant is, to a reader of
-seventy, a page with the lights turned down. The size of these effects is not marginal.
-Moving a body text from a line of a hundred characters to a line of sixty-five produces a
-larger measured change in reading accuracy than any comparison between two typefaces ever
-recorded. These findings are boring, they concern arrangement rather than letter
-shape, and they are the ones that reliably change how fast and how accurately somebody
-reads.
+This is not an argument that typography does not matter. Arrangement can affect reading
+even when letter shape is held constant. Line length is one example: in some layouts,
+excessively long lines can reduce accuracy in finding the next line, while very short
+ones repeatedly interrupt a sentence. There is no universal character count that gives
+every reader the best result. Screen movement, text size, task, and reading conditions
+can change both performance and preference, and the layout people prefer is not always
+the one they read fastest. Spacing between lines is another variable: crowding can make
+tracking difficult, while excessive separation can weaken the visible grouping of a
+paragraph. Contrast between text and background also matters, particularly for readers
+whose vision makes low-contrast text hard to distinguish. These are reasons to test a
+layout in its intended setting, not a formula for ranking every possible page. The
+resulting findings are boring: they concern arrangement rather than the distinctive
+shapes of letters. Yet findings that hold up for the readers and conditions being
+studied provide dependable practical guidance. Their lack of glamour does not diminish
+the value of a repeatable improvement in how somebody reads.
 
 There is a further reason the serif claim survived, and it is worth naming because it
 applies well beyond type. The claim is useful. A designer arguing for a decision needs a
@@ -96,37 +100,38 @@ rather than argued.`,
       subskill: "cause and effect",
       family: "cause-of-a-result",
       difficulty: "Easy",
-      stem: "The passage says a line much longer than about seventy characters costs the reader:",
+      stem: "The passage identifies a possible cost of excessively long lines in some layouts as reduced:",
       key: "accuracy in finding the next line.",
       wrong: [
         ["speed in recognising individual letters.", "Letter recognition is not what long lines are said to affect."],
         ["the ability to judge a paragraph's length.", "No effect on judging paragraph size is described."],
         ["contrast between the text and the page.", "Contrast is a separate variable discussed elsewhere."],
       ],
-      why: "The passage says such a line \"costs the reader accuracy in finding the next line, and one much shorter costs them the rhythm of the sentence.\"",
+      why: "The passage says that excessively long lines can reduce accuracy in finding the next line in some layouts. It qualifies this as a context-dependent effect rather than a universal character-count rule.",
       steps: [
-        "Locate the sentence about line length.",
-        "Match the long case with its stated cost.",
+        "Locate the example concerning excessively long lines.",
+        "Identify the particular reading action that the passage says can become less accurate.",
       ],
-      hint: "The sentence gives a cost for lines that are too long and too short.",
+      hint: "Look for the difficulty of moving from one line to the next.",
     },
     {
-      subskill: "meaning in context",
-      family: "vocabulary-in-context",
+      subskill: "connotation",
+      family: "connotative-attitude",
       difficulty: "Easy",
-      stem: "As it is used in the fourth paragraph, the word *boring* characterises the findings as:",
-      key: "unexciting but dependable.",
+      stem: "In describing the findings about arrangement as “boring,” the author conveys an attitude of:",
+      key: "little excitement coupled with respect for their reliability.",
       wrong: [
-        ["too obvious to require any testing.", "The passage reports them as findings that survive controls, not truisms."],
-        ["applicable only to printed material.", "Screens and older readers are covered by the same variables."],
-        ["disputed by most working designers.", "No disagreement among designers about these effects is mentioned."],
+        ["irritation at claims that have never been tested properly.", "The author values findings that hold up for the readers and conditions studied; the word does not criticise a lack of testing."],
+        ["dismissal of results too obvious to deserve further attention.", "The surrounding sentence stresses the findings’ dependable practical effect rather than dismissing them."],
+        ["regret that the findings have attracted so much public interest.", "The passage does not describe public interest in these findings or regret about their reception."],
       ],
-      why: "The sentence says the findings \"are boring, they concern arrangement rather than letter shape, and they are the ones that reliably change how fast and how accurately somebody reads.\"",
+      why: "The passage calls the findings “boring” because they concern ordinary arrangement, then praises dependable practical guidance and repeatable improvements. The word conveys little glamour within an approving judgment of their value.",
       steps: [
-        "Read the whole sentence containing the word.",
-        "Note the property the clause after it credits them with.",
+        "Identify the negative association of the word boring.",
+        "Read the surrounding praise of reliable effects.",
+        "Combine the muted excitement with the author’s respect for the findings.",
       ],
-      hint: "The sentence pairs the word with a claim about reliability.",
+      hint: "The author’s lack of excitement does not amount to a lack of respect.",
     },
     {
       subskill: "logical inference",
@@ -155,9 +160,9 @@ rather than argued.`,
       wrong: [
         ["supply the evidence for the serif claim.", "The paragraph concerns arrangement rather than letter shape."],
         ["explain why early studies used short passages.", "The short passages are criticised in the second paragraph."],
-        ["show that older readers read more slowly.", "Contrast is said to matter more for them, not that they read slower."],
+        ["show that older readers read more slowly.", "The paragraph describes difficulty with low-contrast text without establishing that older readers generally read more slowly."],
       ],
-      why: "The paragraph opens \"this is not an argument that typography does not matter,\" and lists variables \"with effects large enough to survive any control.\"",
+      why: "The fourth paragraph opens by rejecting the conclusion that typography does not matter. It explains how arrangement can have useful effects in the intended reading setting, keeping the criticism of a simple serif rule from becoming a dismissal of all typography.",
       steps: [
         "Read the paragraph's opening sentence.",
         "Ask what conclusion it is written to block.",

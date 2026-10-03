@@ -67,7 +67,7 @@ const contexts = [
   ["a small-scale demonstration", "uncertain long-term maintenance", "before-and-after observations"],
   ["a partnership with local organizations", "different stakeholder priorities", "public meetings and written feedback"],
   ["a phased rollout", "technology-access differences", "service data and accessibility reviews"],
-  ["a school-year experiment", "conflicting schedule needs", "student, family, and staff feedback"],
+  ["a one-year experiment", "conflicting schedule needs", "participant, household, and staff feedback"],
   ["a seasonal trial", "weather and demand changes", "weekly counts and maintenance reports"],
   ["a grant-funded launch", "future funding uncertainty", "independent evaluation and budget data"],
   ["a two-site comparison", "differing community readiness", "cost, usage, and equity reviews"],
@@ -130,7 +130,10 @@ function generate(context) {
   const setting = contexts[sequence % contexts.length];
   const frames = perspectiveFrames[sequence % perspectiveFrames.length];
   const community = composePlace(sequence);
-  const perspectives = frames.map((frame) => frame(issue));
+  const originalPerspectives = frames.map((frame) => frame(issue));
+  const offset = sequence % originalPerspectives.length;
+  const perspectives = originalPerspectives.slice(offset).concat(originalPerspectives.slice(0, offset));
+  const cautionNumber = ((1 - offset + 3) % 3) + 1;
   const domainFocus = {
     "Ideas and Analysis": "analyzing the assumptions and implications of the three perspectives",
     "Development and Support": "developing claims with specific reasons and examples",
@@ -146,20 +149,45 @@ function generate(context) {
     `Perspective 2: ${perspectives[1]}`,
     `Perspective 3: ${perspectives[2]}`,
   ].join("\n");
-  const thesis = `The community should pursue ${setting[0]} because the opportunity to ${issue[2]} justifies careful experimentation, but continuation should depend on ${setting[2]} and direct input from ${issue[4]}.`;
+  // Guides model genuinely different positions. These are examples, never
+  // prescribed answers: any defensible position can meet the four criteria.
+  const models = [
+    {
+      thesis: `The community should adopt the proposal because its potential to ${issue[2]} addresses an important need; leaders should budget for the risk that it could ${issue[3]} and use ${setting[2]} to improve implementation.`,
+      opening: `Argue for adoption by identifying the need behind the proposal to ${issue[1]}.`,
+      claim: `Explain how the benefit could reach ${issue[4]}, using a specific example and tracing the steps from policy to outcome.`,
+      objection: `Engage Perspective ${cautionNumber}: explain why the risk that the proposal could ${issue[3]} matters, then defend a concrete safeguard and its limits.`,
+      closing: "Explain why the case for adoption remains stronger after the objection, and identify evidence that would change that judgment.",
+    },
+    {
+      thesis: `The community should decline the current proposal: although the chance to ${issue[2]} is attractive, the possibility that it could ${issue[3]} places too great a burden on ${issue[4]}. A narrower alternative should be considered before resources are committed.`,
+      opening: `Define a standard for acceptable costs and explain why the current proposal does not meet it.`,
+      claim: `Develop the risk that the proposal could ${issue[3]} through a specific example, showing who bears the cost and why it matters.`,
+      objection: `Acknowledge the strongest argument for the benefit, ${issue[2]}, and explain why it does not outweigh the stated risk under the current design.`,
+      closing: `Describe a narrower alternative or a specific change in evidence that could justify reconsideration; do not treat rejecting this proposal as rejecting the needs of ${issue[4]}.`,
+    },
+    {
+      thesis: `The community should first use ${setting[0]} to learn whether the proposal can ${issue[2]} without unacceptable costs. Before beginning, leaders and ${issue[4]} should agree on success and stopping criteria measured through ${setting[2]}.`,
+      opening: `Identify what remains uncertain about the benefit and the risk, then defend a conditional trial as a way to resolve that uncertainty.`,
+      claim: `Give a concrete example of how ${setting[2]} could reveal success or failure, explaining what the measure captures and what it might miss.`,
+      objection: `Engage Perspective ${cautionNumber} and the strongest case for immediate adoption; explain what a trial can settle and which costs it cannot postpone.`,
+      closing: "State a decision rule for continuing, revising, or ending the trial, and explain why that rule follows from the essay's values.",
+    },
+  ];
+  const model = models[Math.floor(sequence / issues.length) % models.length];
 
   return {
     responseType: "essay",
     stimulus: { type: "writing-prompt", content: prompt },
     stem: `Write a unified essay about ${issue[0]}. State your own perspective and analyze its relationship to at least one given perspective. Develop your ideas with reasoning and specific examples. For this practice item, place special emphasis on ${domainFocus}.`,
     correctAnswer: {
-      sampleThesis: thesis,
+      sampleThesis: model.thesis,
       outline: [
-        `Introduction: define the tension between the potential to ${issue[2]} and the risk that the proposal could ${issue[3]}; state the qualified thesis.`,
-        `Body 1: explain why the expected benefit matters to ${issue[4]}, using a specific invented or observed example.`,
-        `Body 2: engage the caution in Perspective 2, acknowledge the strongest risk, and explain how ${setting[0]} plus ${setting[2]} can address it.`,
-        "Body 3: analyze another perspective's assumption and show where it aligns with or differs from the writer's standard for success.",
-        "Conclusion: identify what evidence would justify continuing, revising, or ending the proposal.",
+        `Introduction: ${model.opening}`,
+        `Body 1: ${model.claim}`,
+        `Body 2: ${model.objection}`,
+        "Body 3, if useful: compare a second perspective's assumptions with the essay's own standard for a good decision. A three-body-paragraph structure is optional.",
+        `Conclusion: ${model.closing}`,
       ],
       reviewCriteria: [
         "Ideas and Analysis: establishes a clear position and critically engages at least one given perspective.",
@@ -191,6 +219,7 @@ function generate(context) {
   };
 }
 
+if (require.main === module) {
 const completed = generateSection("act-writing", generate, {
   generatorName: "act-writing-generator-v1",
   regenerateGenerated: process.argv.includes("--rebuild"),
@@ -199,3 +228,7 @@ const completed = generateSection("act-writing", generate, {
 console.log(
   `ACT Writing: kept ${completed.existing}, generated ${completed.generated}, total ${completed.total}.`,
 );
+
+}
+
+module.exports = { generate };

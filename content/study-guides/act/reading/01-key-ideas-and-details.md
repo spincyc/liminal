@@ -3,7 +3,8 @@
 **Catalog domain:** Key Ideas and Details
 **Skills:** Central Ideas, Themes, and Summaries · Relationships · Inferences and
 Conclusions · Supporting Details
-**~48% of the section** — 17-18 questions
+**44–52% of scored Reading questions** — 12–14 of 27; see the
+[overview](00-overview.md) for the official blueprint source.
 
 Nearly half of ACT Reading. If you improve one domain, make it this one.
 
@@ -199,14 +200,15 @@ doesn't make, it's wrong.
 1. Locate the relevant text.
 2. State what it explicitly says.
 3. Ask what follows **immediately** from that.
-4. For each choice, ask: could the passage be entirely true and this choice
-   still be false? If yes → eliminate.
+4. Check which conclusion the passage best supports. A logical inference
+   need not be certain in every imaginable scenario, but it must not rely
+   on an invented premise.
 5. Verify the survivor against specific words.
 
 ### Patterns
 
-**Hedged answers win.** *Some*, *may*, *tends to*, *at least in part*. An
-absolute inference over-reaches.
+**Match the strength of the evidence.** A hedge does not make an inference
+correct, and an absolute can be justified. Read the whole claim.
 
 **"The author would most likely agree" means using the author's stated
 positions**, not inventing a plausible opinion. Find where the author states a
@@ -217,18 +219,18 @@ Humanities passages, the author often describes a position they don't hold.
 Attributing it to them is a top error. Look for the author's own evaluative
 language: *however*, *but this overlooks*, *convincingly*, *unfortunately*.
 
-**Negative inferences are common** — "X is not sufficient to explain Y," "the
-relationship is more complex than assumed." They're safe, which is why they're
-credited.
+**Negative and positive inferences both need support.** A statement that an
+explanation is insufficient can be as unsupported as a claim that it is
+complete. Check the evidence, not whether the wording seems cautious.
 
 ### Traps
 
 | Trap | Description |
 | --- | --- |
 | **Plausible extension** | Sensible, unsupported |
-| **Too big a leap** | Requires two or three inferential steps |
+| **Too big a leap** | Requires an unsupported premise |
 | **Author/subject confusion** | Attributes a described view to the author |
-| **Extreme phrasing** | Right idea, absolute language |
+| **Overstatement** | Stronger claim than the evidence supports |
 | **Outside knowledge** | True in the world, not in the text |
 | **Reversal** | Correct relationship, wrong direction |
 
@@ -268,12 +270,12 @@ Notice the credited answer is the smallest possible step. That's the pattern.
 
 | Stage | Filter | Volume and method |
 | --- | --- | --- |
-| 1. Location speed | Supporting Details, Easy | 30. Time yourself finding the key term — target under 15 seconds. |
-| 2. Detail accuracy | Supporting Details, Medium | 25. Underline the supporting words for every answer. |
-| 3. EXCEPT questions | Supporting Details, Medium → Hard | 15. Verify all four every time. |
-| 4. Main idea | Central Ideas, Themes, and Summaries, Medium | 20. Write a 10-word summary before looking. |
-| 5. Relationships | Relationships, Medium | 20. State the direction explicitly. |
-| 6. Inference | Inferences and Conclusions, Medium → Hard | 30. **Write why each eliminated choice could be false.** |
+| 1. Location speed | Supporting Details | 30. Time yourself finding the key term — target under 15 seconds. |
+| 2. Detail accuracy | Supporting Details | 25. Underline the supporting words for every answer. |
+| 3. EXCEPT questions | Supporting Details | 15. Verify all four every time. |
+| 4. Main idea | Central Ideas, Themes, and Summaries | 20. Write a 10-word summary before looking. |
+| 5. Relationships | Relationships | 20. State the direction explicitly. |
+| 6. Inference | Inferences and Conclusions | 30. **Write why each eliminated choice could be false.** |
 | 7. Mixed timed | Whole domain | Two full passages at 10 min each |
 
 Stage 1 is the highest-yield and the most neglected. Detail-location speed is a

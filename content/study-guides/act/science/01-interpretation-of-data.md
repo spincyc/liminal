@@ -2,10 +2,11 @@
 
 **Catalog domain:** Interpretation of Data
 **Skills:** Read data displays · Analyze data · Translate data
-**~44% of the section** — 17-18 questions
+**38–50% of scored Science questions** — 13–17 of 34; see the
+[overview](00-overview.md) for the official blueprint source.
 
-The largest domain. Pure figure reading, and the most mechanical skill on either
-test. Also the fastest to improve.
+This domain includes reading, analyzing and translating data. Practice both
+accurate figure reading and the reasoning needed to interpret patterns.
 
 ---
 
@@ -43,8 +44,8 @@ Ten seconds, every figure:
 | **Does the axis start at zero?** | A truncated axis exaggerates differences |
 | **Unit prefix** | "thousands," "×10⁻³," "per 100,000" |
 
-**Half of all errors in this domain are orientation errors.** Not reasoning
-errors — reading errors. This checklist is the fix.
+Orientation errors can be prevented by this checklist. Check your error log
+to distinguish them from missing concepts, reasoning errors and time pressure.
 
 ### Reading between gridlines
 
@@ -219,12 +220,12 @@ question asks for milligrams, convert.
 
 | Stage | Filter | Volume and method |
 | --- | --- | --- |
-| 1. Orientation | Read data displays, Easy | 30. **Narrate title, axes, units, legend aloud** before every question. |
-| 2. Value reading | Read data displays, Easy → Medium | 30, untimed for accuracy |
-| 3. Trends | Analyze data, Medium | 30. State direction before looking at choices. |
-| 4. Comparisons | Analyze data, Medium → Hard | 25. Note exactly which comparison word is used. |
-| 5. Two-figure | Translate data, Medium → Hard | 25. **Write the intermediate value down** every time. |
-| 6. Graph matching | Translate data, Medium | 15. Direction, shape, one point. |
+| 1. Orientation | Read data displays | 30. **Narrate title, axes, units, legend aloud** before every question. |
+| 2. Value reading | Read data displays | 30, untimed for accuracy |
+| 3. Trends | Analyze data | 30. State direction before looking at choices. |
+| 4. Comparisons | Analyze data | 25. Note exactly which comparison word is used. |
+| 5. Two-figure | Translate data | 25. **Write the intermediate value down** every time. |
+| 6. Graph matching | Translate data | 15. Direction, shape, one point. |
 | 7. Timed | Whole domain | 3 full passages at 5 min each |
 
 Stage 1 is the highest-yield hour you will spend on ACT Science. The narration

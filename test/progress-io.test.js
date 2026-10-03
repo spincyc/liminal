@@ -228,3 +228,48 @@ test("replacing takes a new epoch, so another tab's older copy does not come bac
   assert.deepEqual(Progress.load(storage).progress.attempts.map((entry) => entry.id), ["a1", "a2"]);
   assert.notEqual(IO.replaceWith(imported).epoch, imported.epoch);
 });
+
+test("importing another device's answer to the same question does not count it twice", () => {
+  const current = Progress.recordAttempts(Progress.empty({ epoch: "here" }), [attempt("first", { timestamp: 1, correct: false })]);
+  const imported = Progress.recordAttempts(Progress.empty({ epoch: "there" }), [attempt("later", {
+    questionId: current.attempts[0].questionId, timestamp: 2,
+  })]);
+  const merged = IO.mergeImport(current, imported).progress;
+  assert.deepEqual(merged.attempts.map((entry) => entry.repeat), [false, true]);
+  assert.equal(Progress.stats(merged.attempts).accuracy, 0);
+  assert.deepEqual(IO.mergeImport(merged, imported).added, { attempts: 0, sessions: 0, marked: 0, officialScores: 0 });
+});
+
+test("invalid calendar timestamps and unreadable imported fields are rejected before restore", () => {
+  const result = IO.parseImport(JSON.stringify(record({
+    attempts: [attempt("ok"), attempt("bad-date", { timestamp: 1e30 }), attempt("bad-review", { reviewOf: {} }),
+      attempt("bad-repeat", { repeat: "false" }), attempt("bad-response", { response: [] })],
+    sessions: [{ id: "bad-date", total: 1, correct: 0, finishedAt: 1e30 },
+      { id: "bad-count", total: 1, correct: 2 }, { id: "bad-module", total: 1, correct: 0, modules: [null] }],
+    history: { constructor: { serve: 1, lastServed: { x: 1 }, scenes: {}, mask: "0" } },
+  })));
+  assert.equal(result.ok, true);
+  assert.deepEqual(result.progress.attempts.map((entry) => entry.id), ["ok"]);
+  assert.equal(result.info.dropped.attempts, 4);
+  assert.equal(result.info.dropped.sessions, 3);
+  assert.doesNotThrow(() => IO.mergeImport(Progress.empty(), result.progress));
+  assert.deepEqual(result.progress.history, {});
+  const inheritedNames = IO.parseImport(JSON.stringify(record({ history: { "sat-math": {
+    serve: 1, lastServed: { constructor: 1 }, scenes: { constructor: ["scene"] }, mask: "0",
+  } } })));
+  const merged = IO.mergeImport(Progress.empty(), inheritedNames.progress).progress;
+  assert.equal(merged.history["sat-math"].lastServed.constructor, 1);
+  assert.deepEqual(merged.history["sat-math"].scenes.constructor, ["scene"]);
+});
+
+test("bank content identity survives export/import and malformed identity is rejected", () => {
+  const question = { id: "act-mathematics-0007", sectionKey: "act-mathematics", responseType: "multiple-choice",
+    stem: "Choose two.", choices: ["2", "3"], correctAnswer: 0 };
+  const bank = Progress.buildAttempt(question, { response: 0, correct: true }, { id: "bank", now: 1 });
+  const parsed = IO.parseImport(JSON.stringify(record({ attempts: [bank, { ...bank, id: "bad", contentIdentity: {} }] })));
+  assert.equal(parsed.ok, true);
+  assert.equal(parsed.info.dropped.attempts, 1);
+  assert.equal(Progress.questionMatchesAttempt(question, parsed.progress.attempts[0]), true);
+  const merged = IO.mergeImport(Progress.empty(), parsed.progress).progress;
+  assert.equal(merged.attempts[0].contentIdentity, bank.contentIdentity);
+});

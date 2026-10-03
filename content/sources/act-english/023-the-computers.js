@@ -22,9 +22,9 @@ temperature.} She is said to have classified some three hundred thousand stars
 by hand.
 
 [4] {8 Nevertheless,} Henrietta Swan Leavitt was assigned the variable stars,
-the ones whose brightness rises and falls on a cycle. In the Small Magellanic
-Cloud she found more than a thousand of {9 them}, and she noticed something in
-the numbers: the brighter the star, the longer its cycle {10 took, the relation
+the ones whose brightness rises and falls on a cycle. In the two Magellanic
+Clouds she found more than a thousand of {9 them}. Studying one kind, now called
+Cepheids, in the Small Cloud, she noticed a pattern: the brighter the star, the longer its cycle {10 took, the relation
 was tight enough} to be a {11 thing you could count on}.
 
 [5] {12} A rule like that is a measuring stick. If the cycle tells you the true
@@ -132,23 +132,21 @@ of women who were paid by the hour to look at them.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "result, and the pay was twenty-five to fifty cents",
-          "'And' repairs the splice but attaches the wage to the list of duties as one thought.",
+          "result, however, the pay was twenty-five to fifty cents",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "result, the pay being twenty-five to fifty cents",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "result; the pay being twenty-five to fifty cents",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "The sentence has already run a three-item series describing the work. Starting a new " +
-        "sentence lets the wage land as its own statement instead of trailing the list.",
+      why: "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Choose the punctuation that gives the second one its own weight.",
+        "Find the subjects and finite verbs on both sides of the boundary.",
+        "Keep a complete statement on each side of the sentence boundary."
       ],
       hint: "The first half is already long; ask whether the second belongs inside it.",
-      trap: "'And' fixes the grammar and buries the sentence's most pointed fact.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -253,23 +251,21 @@ of women who were paid by the hour to look at them.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "took: the relation was tight enough",
-          "A colon introduces an explanation, but the second clause assesses the first rather than explaining it.",
+          "took; although the relation was tight enough",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "took and the relation was tight enough",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The first clause states the pattern and the second judges it. Both are complete, and a " +
-        "semicolon joins equals without subordinating either.",
+      why: "The first clause states the pattern and the second judges it. Both are complete, and a semicolon joins equals without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or evaluates it. It evaluates.",
+        "Ask whether the second explains the first or evaluates it. It evaluates."
       ],
       hint: "The observation and the verdict on it are two separate statements.",
-      trap: "The sentence already uses a colon earlier, which makes a second one look consistent.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 11,
@@ -298,33 +294,29 @@ of women who were paid by the hour to look at them.`,
       subskill: "support",
       family: "supporting-detail",
       difficulty: "Medium",
-      stem:
-        "Given that all the choices are true, which one, if added here, best prepares the reader " +
-        "for the explanation that follows?",
-      key: "Until then astronomers could say which of two stars was brighter, but not which was nearer.",
+      stem: "Given that all the choices are true, which one, if added here, best prepares the reader for the explanation that follows?",
+      key: "For very distant stars, apparent brightness alone could not reveal distance.",
       wrong: [
         [
           "Leavitt published her result in a short paper issued by the observatory in 1912.",
-          "The publication date does not establish what problem the relation solved.",
+          "The publication date does not establish what problem the relation solved."
         ],
         [
           "The Small Magellanic Cloud is visible only from the southern hemisphere.",
-          "Where the cloud can be seen has no bearing on the measuring stick that follows.",
+          "Where the cloud can be seen has no bearing on the measuring stick that follows."
         ],
         [
           "Variable stars of this kind are now called Cepheids after an earlier example.",
-          "The name of the star type is a label rather than the problem it answered.",
-        ],
+          "The name of the star type is a label rather than the problem it answered."
+        ]
       ],
-      why:
-        "The paragraph explains how the relation yields distance. It only lands if the reader knows " +
-        "distance was the thing astronomers could not measure.",
+      why: "The paragraph explains a new way to measure great distances. The setup identifies what apparent brightness alone could not establish, without claiming that all earlier stellar distance measurements were impossible.",
       steps: [
-        "Read the explanation that follows and name what it produces: distance.",
-        "Keep the choice establishing that distance was previously out of reach.",
+        "Identify the explanation's result: a distance inferred from intrinsic and apparent brightness.",
+        "Choose the limitation that this method addresses."
       ],
       hint: "A setup sentence should make the payoff feel like an answer.",
-      trap: "The publication detail is the most historical choice and sets up nothing.",
+      trap: "The publication detail is the most historical choice and sets up nothing."
     },
     {
       number: 13,

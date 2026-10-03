@@ -598,185 +598,83 @@
     domain: DOMAIN,
     skill: "Right triangles and trigonometry",
     subskill: "trigonometric ratios",
-    title: "Trig ratios through similar triangles",
+    title: "Trig shape and similarity from indirect measures",
     recognize:
-      "A trig ratio belongs to an angle, not a triangle: follow the stated correspondence to the matching angle, " +
-      "use the fact that similar triangles share ratios, and let one ratio fix the shape (all three sides up to scale).",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
-    tricks: ["neighbouring-rule", "wrong-quantity", "context-constraint", "part-vs-whole"],
+      "A trig ratio fixes a right triangle's shape. An area ratio fixes the square of the length factor; " +
+      "a perimeter difference then determines the actual scale. Match the named vertices before selecting a side.",
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 2, trap: 1 },
+    tricks: ["neighbouring-rule", "wrong-quantity", "part-vs-whole"],
     build(t) {
-      const form = t.pick(["ratio", "ratio", "ratio", "side", "side"]);
-      // Chosen once, outside the retry loop, so a multiple-choice attempt
-      // that lacks good distractors does not tilt the mix toward numeric.
-      const numeric = form === "side" ? t.chance(0.5) : false;
-
-      for (;;) {
-        const [p0, q0, h0] = t.pick(TRIPLES);
-        const swap = t.chance(0.5);
-        const side = { BC: swap ? q0 : p0, AC: swap ? p0 : q0, AB: h0 };
-        const ratios = {
-          A: { sin: [side.BC, side.AB], cos: [side.AC, side.AB], tan: [side.BC, side.AC] },
-          B: { sin: [side.AC, side.AB], cos: [side.BC, side.AB], tan: [side.AC, side.BC] },
-        };
-        const ratioText = (vertex, fn) => S.frac(...ratios[vertex][fn]);
+      const numeric = t.chance(0.35);
+      return retry(() => {
+        const [p, q, h] = t.pick(TRIPLES);
+        const sides = t.chance(0.5) ? { BC: p, AC: q, AB: h } : { BC: q, AC: p, AB: h };
+        const unitPerimeter = sides.BC + sides.AC + sides.AB;
+        const factor = t.int(2, 5);
+        const scale = t.int(2, 12);
         const letters = t.pick(SECOND_NAMES);
         const perm = t.pick(PERMUTATIONS);
         const image = { A: letters[perm[0]], B: letters[perm[1]], C: letters[perm[2]] };
-        const preimage = Object.fromEntries(Object.entries(image).map(([key, value]) => [value, key]));
         const second = letters.join("");
-        const correspondence =
-          `Triangle ABC is similar to triangle ${second}, where angle A corresponds to angle ${image.A} and angle B corresponds to angle ${image.B}.`;
-        const givenVertex = t.pick(["A", "B"]);
+        const pair = t.pick(["AC", "BC", "AB"]);
+        const other = pair === "AC" ? "BC" : "AC";
+        const asked = image[pair[0]] + image[pair[1]];
         const givenFn = t.pick(["sin", "cos", "tan"]);
-        const useFigure = form === "ratio" && t.chance(0.55);
-        const figureSides = useFigure ? t.pick([["AC", "BC"], ["AB", "AC"], ["AB", "BC"]]) : null;
-        const given = useFigure ? "" : ` ${givenFn} ${givenVertex} = ${ratioText(givenVertex, givenFn)}.`;
-        const figure = useFigure
-          ? rightTriangleFigure(t, side, Object.fromEntries(figureSides.map((key) => [key, side[key]])))
-          : form === "ratio" && t.chance(0.4)
-            ? rightTriangleFigure(t, side, {})
-            : null;
-        const intro = figure
-          ? `In the figure shown, triangle ABC has a right angle at C.${given}`
-          : `In right triangle ABC, angle C is a right angle.${given}`;
-        const hypotenuseStep = useFigure && figureSides.includes("AC") && figureSides.includes("BC")
-          ? `Find the hypotenuse: AB = √(${side.AC}² + ${side.BC}²) = ${side.AB}.`
-          : useFigure
-            ? `Find the missing leg: ${figureSides.includes("AC") ? "BC" : "AC"} = √(${side.AB}² − ${side[figureSides.find((key) => key !== "AB")]}²) = ${side[figureSides.includes("AC") ? "BC" : "AC"]}.`
-            : `From ${givenFn} ${givenVertex} = ${ratioText(givenVertex, givenFn)}, the sides are in the ratio BC : AC : AB = ${side.BC} : ${side.AC} : ${side.AB}.`;
-
-        if (form === "ratio") {
-          // Ask about an angle whose alphabetical partner is the other acute
-          // angle, so reading the correspondence alphabetically really misleads.
-          const naiveOf = (vertex) => ["A", "B", "C"][letters.indexOf(image[vertex])];
-          const targets = ["A", "B"].filter((vertex) => naiveOf(vertex) === (vertex === "A" ? "B" : "A"));
-          if (!targets.length) continue;
-          const target = t.pick(targets);
-          const other = target === "A" ? "B" : "A";
-          const fn = t.pick(["sin", "cos", "tan"]);
-          if (!useFigure && target === givenVertex && fn === givenFn) continue;
-          const asked = image[target];
-          const naive = ["A", "B", "C"][letters.indexOf(asked)];
-          const correct = ratioText(target, fn);
-          // The four ratios of the legs and hypotenuse seen from angle
-          // `target`: sin, cos, and tan of it, and tan of the other acute
-          // angle. The key is one; the other three are the wrong answers, so
-          // no choice shares more sides with the rest than the key does.
-          const seen = { sin: ratioText(target, "sin"), cos: ratioText(target, "cos"), tan: ratioText(target, "tan"), cot: ratioText(other, "tan") };
-          const reasonFor = (name) => {
-            const asOther = { sin: "cos", cos: "sin", cot: "tan" }[name];
-            if (asOther === fn) {
-              return `Matches angle ${asked} with angle ${other}, as alphabetical order suggests (that is ${fn} ${other}); the stated correspondence pairs ${asked} with ${target}.`;
-            }
-            if (name === "cot") return `Divides the leg next to angle ${target} by the leg across from it, which is tan ${other}, not ${fn} ${target}.`;
-            return `Gives ${name} ${target} instead of ${fn} ${target}: ${{ sin: "opposite over hypotenuse", cos: "adjacent over hypotenuse", tan: "opposite over adjacent" }[name]}.`;
-          };
-          const list = Object.entries(seen).filter(([name]) => name !== fn).map(([name, text]) => [text, reasonFor(name)]);
-          const wrong = wrongFor(t, false, correct, list);
-          if (!wrong) continue;
-          return {
-            responseType: "multiple-choice",
-            estimatedSeconds: 110,
-            stimulus: null,
-            figure,
-            stem: `${intro} ${correspondence} What is the value of ${fn} ${asked}?`,
-            correct,
-            wrong,
-            hint: `Which angle of triangle ABC has the same measure as angle ${asked}?`,
-            explanation:
-              `${hypotenuseStep} Angle ${asked} corresponds to angle ${target}, so the two angles are equal and share every trig ratio. ` +
-              `${fn} ${target} = ${ratioText(target, fn).replace("/", " / ")}, so ${fn} ${asked} = ${correct}.`,
-            steps: [
-              hypotenuseStep,
-              `By the stated correspondence, angle ${asked} matches angle ${target} (not angle ${naive}, as alphabetical order would suggest).`,
-              `Similar triangles have equal corresponding angles, so ${fn} ${asked} = ${fn} ${target}.`,
-              `${fn} ${target} = ${correct}.`,
-            ],
-            principles: [
-              "Corresponding angles of similar triangles are equal, so they have equal trigonometric ratios.",
-              "In a right triangle, the sine of one acute angle equals the cosine of the other.",
-            ],
-            trap: `The letters of triangle ${second} are not listed in corresponding order; pairing them alphabetically picks the wrong angle.`,
-            verify: () => {
-              // Build ABC, map it onto the second triangle by a rotation, reflection, and scaling, and measure the image angle.
-              const A = [side.AC, 0];
-              const B = [0, side.BC];
-              const C = [0, 0];
-              const map = ([x, y]) => [3 + 2.5 * (0.6 * x + 0.8 * y), -1 + 2.5 * (0.8 * x - 0.6 * y)];
-              const images = { [image.A]: map(A), [image.B]: map(B), [image.C]: map(C) };
-              const at = images[asked];
-              const others = letters.filter((letter) => letter !== asked).map((letter) => images[letter]);
-              const angle = toRad(angleAt(at, others[0], others[1]));
-              const value = { sin: Math.sin(angle), cos: Math.cos(angle), tan: Math.tan(angle) }[fn];
-              const [top, bottom] = ratios[target][fn];
-              return close(value, top / bottom, 1e-9) && close(angleAt(images[image.C], images[image.A], images[image.B]), 90);
-            },
-          };
-        }
-
-        // side: a length in the second triangle from a ratio in the first.
-        const sideOf = (pair) => {
-          const [first, secondLetter] = pair.split("").map((letter) => preimage[letter]).sort();
-          return first + secondLetter;
-        };
-        const pairs = [letters[0] + letters[1], letters[0] + letters[2], letters[1] + letters[2]];
-        const [givenPair, askedPair] = t.sample(pairs, 2);
-        const thirdPair = pairs.find((pair) => pair !== givenPair && pair !== askedPair);
-        const scale = t.pick([2, 3, 4, 5]);
-        const givenLength = scale * side[sideOf(givenPair)];
-        const correct = scale * side[sideOf(askedPair)];
-        const naiveSide = (pair) => pair.split("").map((letter) => ["A", "B", "C"][letters.indexOf(letter)]).sort().join("");
-        const naiveScale = givenLength / side[naiveSide(givenPair)];
-        const naive = naiveScale * side[naiveSide(askedPair)];
-        if (naive === correct) continue;
-        // Given side matched with the wrong side of ABC, asked side matched correctly.
-        const misScaled = (givenLength / side[sideOf(thirdPair)]) * side[sideOf(askedPair)];
-        const wrong = wrongFor(t, numeric, correct, [
-          [scale * side[sideOf(thirdPair)], `Matches ${askedPair} with side ${sideOf(thirdPair)} of triangle ABC; under the stated correspondence it matches ${sideOf(askedPair)}.`],
-          [Number.isInteger(naive) ? naive : null, `Pairs the vertices of the two triangles in alphabetical order instead of by the stated correspondence.`],
-          [side[sideOf(askedPair)], `Gives the length of the corresponding side of triangle ABC without scaling by ${scale}.`],
-          [Number.isInteger(misScaled) ? misScaled : null, `Matches ${givenPair} with side ${sideOf(thirdPair)} of triangle ABC, which gives the wrong scale factor.`],
-          [givenLength, `Gives the given length ${givenPair} instead of ${askedPair}.`],
-        ], { positive: true, whole: true });
-        if (!wrong) continue;
-        return {
-          responseType: numeric ? "numeric" : "multiple-choice",
-          estimatedSeconds: 120,
+        const ratio = { sin: [sides.BC, h], cos: [sides.AC, h], tan: [sides.BC, sides.AC] }[givenFn];
+        const ratioText = frac(...ratio);
+        const difference = (factor - 1) * scale * unitPerimeter;
+        const key = factor * scale * sides[pair];
+        const candidates = [
+          [scale * sides[pair], "Finds the matching side of the smaller triangle ABC rather than the requested side of the larger triangle."],
+          [(factor - 1) * scale * sides[pair], "Treats the difference of the perimeters as the larger triangle's entire perimeter."],
+          [factor * scale * sides[other], `Finds the larger triangle's side corresponding to ${other}, not ${pair}.`],
+          [factor * factor * scale * sides[pair], "After finding the smaller triangle, scales its side by the area factor rather than the length factor."],
+          [difference, "Gives the stated perimeter difference instead of a side length."],
+          [key * factor / (factor + 1), "Uses the area ratio as the perimeter ratio when recovering the larger triangle's perimeter."],
+          [factor * scale * unitPerimeter, "Finds the larger triangle's perimeter, not the requested side."],
+        ];
+        return packSpread(t, numeric, key, fmt(key), C.balanceTwins(t, key,
+          candidates.map(([value, reason]) => [isClean(value, 2) ? fmt(value) : null, reason]), 0, 0.4), {
           stimulus: null,
           figure: null,
-          stem: `${intro} ${correspondence} If ${givenPair} = ${givenLength}, what is the length of ${askedPair}?`,
-          correct,
-          wrong,
-          hint: `Which side of triangle ABC does ${givenPair} correspond to?`,
+          estimatedSeconds: 140,
+          stem:
+            `Triangles ABC and ${second} are similar right triangles, with angle C a right angle, angle A corresponding to angle ${image.A}, ` +
+            `and angle B corresponding to angle ${image.B}. In triangle ABC, ${givenFn} A = ${ratioText}. ` +
+            `The area of triangle ${second} is ${factor * factor} times the area of triangle ABC, and its perimeter is ${difference} units greater. ` +
+            `What is the length of ${asked}?`,
           explanation:
-            `${hypotenuseStep} Under the correspondence A → ${image.A}, B → ${image.B}, C → ${image.C}, side ${givenPair} matches ${sideOf(givenPair)} ` +
-            `and side ${askedPair} matches ${sideOf(askedPair)}. The scale factor is ${givenLength} ÷ ${side[sideOf(givenPair)]} = ${scale}, so ` +
-            `${askedPair} = ${scale} × ${side[sideOf(askedPair)]} = ${correct}.`,
+            `The trig ratio and the Pythagorean theorem give BC : AC : AB = ${sides.BC} : ${sides.AC} : ${h}. ` +
+            `The area factor ${factor * factor} makes the length and perimeter factor ${factor}. Thus the perimeter difference equals (${factor} − 1) ` +
+            `times ABC's perimeter, so ABC has perimeter ${difference} ÷ ${factor - 1} = ${scale * unitPerimeter}. ` +
+            `Its sides are ${scale} times the ratio values. Since ${asked} corresponds to ${pair}, its length is ${factor} × ${scale} × ${sides[pair]} = ${key}.`,
           steps: [
-            hypotenuseStep,
-            `Match sides through the correspondence: ${givenPair} ↔ ${sideOf(givenPair)}, ${askedPair} ↔ ${sideOf(askedPair)}.`,
-            `Scale factor: ${givenLength} ÷ ${side[sideOf(givenPair)]} = ${scale}.`,
-            `${askedPair} = ${scale} × ${side[sideOf(askedPair)]} = ${correct}.`,
+            `Use ${givenFn} A = ${ratioText} to get BC : AC : AB = ${sides.BC} : ${sides.AC} : ${h}; the missing ratio length follows from the Pythagorean theorem.`,
+            `The area ratio is ${factor * factor}, so the ratio of corresponding lengths and perimeters is √${factor * factor} = ${factor}.`,
+            `If ABC's perimeter is P, then ${factor}P − P = ${difference}; hence P = ${scale * unitPerimeter}.`,
+            `The ratio parts sum to ${unitPerimeter}, so the scale in ABC is ${scale * unitPerimeter} ÷ ${unitPerimeter} = ${scale}.`,
+            `${asked} corresponds to ${pair}: ${factor} × ${scale} × ${sides[pair]} = ${key}.`,
           ],
           principles: [
-            "A trigonometric ratio fixes the shape of a right triangle, so it gives the ratio of all three sides.",
-            "Corresponding sides of similar triangles are proportional; the correspondence decides which sides match.",
+            "A trigonometric ratio and the Pythagorean theorem determine the side ratios of a right triangle.",
+            "Areas of similar triangles scale by the square of the corresponding length factor; perimeters scale by the length factor.",
           ],
-          trap: `The second triangle's letters are not in corresponding order, so matching them alphabetically picks the wrong side.`,
+          hint: "How are the area ratio and the ratio of the perimeters related?",
+          trap: "The given difference is only the extra perimeter; it is not the perimeter of either triangle. The area ratio is not the side ratio.",
           verify: () => {
-            const A = [side.AC, 0];
-            const B = [0, side.BC];
-            const C = [0, 0];
-            const map = ([x, y]) => [7 + scale * (0.28 * x - 0.96 * y), 2 + scale * (0.96 * x + 0.28 * y)];
-            const images = { [image.A]: map(A), [image.B]: map(B), [image.C]: map(C) };
-            const length = (pair) => dist(images[pair[0]], images[pair[1]]);
-            const [top, bottom] = ratios[givenVertex][givenFn];
-            const angle = toRad(angleAt(givenVertex === "A" ? A : B, C, givenVertex === "A" ? B : A));
-            const fnValue = { sin: Math.sin(angle), cos: Math.cos(angle), tan: Math.tan(angle) }[givenFn];
-            return close(length(givenPair), givenLength, 1e-9) && close(length(askedPair), correct, 1e-9) && close(fnValue, top / bottom, 1e-9);
+            const small = [[scale * sides.AC, 0], [0, scale * sides.BC], [0, 0]];
+            const large = small.map(([x, y]) => [3 + factor * y, -7 - factor * x]);
+            const perimeter = (pts) => dist(pts[0], pts[1]) + dist(pts[1], pts[2]) + dist(pts[2], pts[0]);
+            const index = { A: 0, B: 1, C: 2 };
+            const angle = toRad(angleAt(small[0], small[1], small[2]));
+            const measuredRatio = { sin: Math.sin(angle), cos: Math.cos(angle), tan: Math.tan(angle) }[givenFn];
+            return close(measuredRatio, ratio[0] / ratio[1]) &&
+              close(shoelace(large) / shoelace(small), factor * factor) &&
+              close(perimeter(large) - perimeter(small), difference) &&
+              close(dist(large[index[pair[0]]], large[index[pair[1]]]), key);
           },
-        };
-      }
+        }, { positive: true, whole: true });
+      });
     },
   };
 
@@ -1216,7 +1114,7 @@
 
   const unitCircle = {
     id: "unit-circle-quadrant",
-    difficulty: "Hard",
+    difficulty: "Medium",
     domain: DOMAIN,
     skill: "Right triangles and trigonometry",
     subskill: "trigonometric ratios",
@@ -1224,7 +1122,7 @@
     recognize:
       "Reduce to the reference angle, the acute angle the ray makes with the x-axis, and read its right-triangle values; then " +
       "the quadrant decides every sign: x (cosine) is negative in Quadrants II and III, y (sine) is negative in III and IV, and tangent is y/x.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["sign-error", "wrong-quantity", "neighbouring-rule"],
     build(t) {
       const form = t.pick(["ratio", "ratio", "ratio", "coordinate", "coordinate", "coordinate", "angle", "angle"]);

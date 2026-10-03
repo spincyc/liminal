@@ -418,6 +418,23 @@
     return spreadAround(t, key, distinctWrong(key, rest) >= 3 ? rest : wrong);
   }
 
+  // Cross a modelled value error with a sign error. Both magnitudes have
+  // their own ± pair; choose an inner or outer magnitude equally often.
+  // Require integer partners so the key is not recognizable by its format.
+  function pairedSignChoices(t, key, wrong) {
+    const usable = wrong.filter(([value]) => Number.isInteger(value) && value !== 0 &&
+      Math.abs(value) !== Math.abs(key));
+    const inner = usable.filter(([value]) => Math.abs(value) < Math.abs(key));
+    const outer = usable.filter(([value]) => Math.abs(value) > Math.abs(key));
+    if (!inner.length || !outer.length) return null;
+    const [value, reason] = t.pick(t.pick([inner, outer]));
+    return [
+      [-key, "Reverses the sign of the requested value."],
+      [value, reason],
+      [-value, `${reason.replace(/\.$/, "")}; it also reverses the sign of the resulting value.`],
+    ];
+  }
+
   // The line through the first two shown points, checked against the rest.
   // Verification rebuilds f from what the student sees, not from m and b0.
   function lineFrom(points) {
@@ -432,5 +449,6 @@
     responseFor, xTerm, standardForm, moveText, compile, holds, sidesOf, readPoint, exact,
     fitsGridHard, round2, commasHard, usdHard, commaChoicesHard, distinctWrongHard, compileHard,
     lineFrom, lineCoefficients, cramer, slopeTerm, choiceValue, collides, spreadAround, negateChoice, spreadWithMirror,
+    pairedSignChoices,
   };
 });

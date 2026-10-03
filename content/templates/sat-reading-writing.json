@@ -1,474 +1,552 @@
 {
   "sectionKey": "sat-reading-writing",
-  "note": "Bit positions are permanent: append new templates, retire removed ones, never renumber. A version goes up when the template's fingerprint (what it builds for fixed seeds) changes.",
+  "note": "Bit positions are permanent: append new templates, retire removed ones, never renumber. A version goes up when its source fingerprint changes, including shared dependencies. Source hashing conservatively includes comments, metadata and sibling templates in the same file.",
   "templates": [
     {
       "id": "central-idea-stated-claim",
       "bit": 0,
-      "version": 2,
-      "fingerprint": "a47d2b7712d49ce7"
+      "version": 3,
+      "fingerprint": "b152f41af3639d15e74778e936269f8da74281e4fce661e1619ac57aa6b72067",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "detail-stated-reason-paraphrased",
       "bit": 1,
-      "version": 2,
-      "fingerprint": "92e58c390f5f0fee"
+      "version": 3,
+      "fingerprint": "d5180de22f4338b1ce5e47c06219935ab8b608b199ada4c7db044bc692829a9c",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "detail-literary-explicit-fact",
       "bit": 2,
-      "version": 2,
-      "fingerprint": "7e2dd5f0a5d1b480"
+      "version": 3,
+      "fingerprint": "8f3c103ebde7ec80912976e4b49d699ab69db57aa3f7a3b9df66c3becc8796a5",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "central-idea-corrected-belief",
       "bit": 3,
-      "version": 2,
-      "fingerprint": "08819dd54a6267ff"
+      "version": 3,
+      "fingerprint": "e1e59b4ad323df9398daab7f9df4cb7a680fe8588aa51b7e53896541b77bc3a2",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "central-idea-literary-passage",
       "bit": 4,
-      "version": 3,
-      "fingerprint": "f1ff52422d88c8d2"
+      "version": 4,
+      "fingerprint": "f2a8e41618c6859b9b6c0fc0058bf46adec8e72e24074926bba02b2960f33c5f",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "central-idea-author-qualifies-source",
       "bit": 5,
-      "version": 2,
-      "fingerprint": "86896eaec885dc0d"
+      "version": 3,
+      "fingerprint": "f7b56292584b85ebe6fdd6f10cc9c74ea8ed4acf5bdc14815d0117ec115cbf2c",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "detail-finding-versus-expectation",
       "bit": 6,
-      "version": 3,
-      "fingerprint": "ce2e4fcaa45caff0"
+      "version": 4,
+      "fingerprint": "82ded6a3f8d2b1c05f3f65ef981181ad1f4a1af6f0817ecbddd60710615e6ba4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inference-rule-applied-to-case",
       "bit": 7,
-      "version": 3,
-      "fingerprint": "a30a8d1e35741eca"
+      "version": 5,
+      "fingerprint": "815962b66dda94046932d547f72444280efb58772f5f6b4f452d9b5466af0f88",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inference-completion-cause-effect",
       "bit": 8,
-      "version": 2,
-      "fingerprint": "3fa931aed2a54f4e"
+      "version": 4,
+      "fingerprint": "8ec3d07c09ecd4703b3e25cf1b6f95829d6d26f71510d0b4b7898b28a36290d0",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inference-completion-controlled-comparison",
       "bit": 9,
-      "version": 2,
-      "fingerprint": "311329f67cdce0cd"
+      "version": 4,
+      "fingerprint": "ca82ecf885a182b138bcfa91b8ea414fe556fbb8abffbe19ccf65ef72fd732d8",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inference-character-shown-by-action",
       "bit": 10,
-      "version": 2,
-      "fingerprint": "15a1803848cc531e"
+      "version": 4,
+      "fingerprint": "001624fc8d845331a77d5774a4deafb607d02f3f5a9729514d687fa4d00af3b3",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inference-completion-competing-explanations",
       "bit": 11,
-      "version": 3,
-      "fingerprint": "f243a15cb04cd552"
+      "version": 5,
+      "fingerprint": "f9e75d8348b14179cecb308c26976db740b66b22cee4a593c352bef974f355e6",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inference-completion-limits-of-evidence",
       "bit": 12,
-      "version": 2,
-      "fingerprint": "bbf7c8eaac409ea4"
+      "version": 4,
+      "fingerprint": "cd50da08f39028c3d7fdccbff46de34287db379eceafd02e6284ea861b4f4b3d",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inference-combine-separated-premises",
       "bit": 13,
-      "version": 3,
-      "fingerprint": "0ed11fc4ae8d1286"
+      "version": 5,
+      "fingerprint": "cd21232c563ce6c573a524bd23c073a43663ef8a1ab6599be0fd5a142e52b51b",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "evidence-quotation-single-claim",
       "bit": 14,
-      "version": 2,
-      "fingerprint": "107bae18b47c949c"
+      "version": 4,
+      "fingerprint": "4de12e16a28d9b72cba3eef6e0ff5fd61b7a7a42045a6317d5d8970f976d7fb5",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quantitative-table-extreme-value",
       "bit": 15,
-      "version": 2,
-      "fingerprint": "aa246695ef536dd9"
+      "version": 4,
+      "fingerprint": "2fd28de5eeddd3c779a886188c7f7a9346c690557fb3a8d8a04f9a648073b5cb",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "evidence-finding-supports-mechanism",
       "bit": 16,
-      "version": 2,
-      "fingerprint": "54dd74df76744872"
+      "version": 4,
+      "fingerprint": "978bd5459550808d5e2f707f4fe845157a947e5fa4a79a21e47d55bb4c644ce7",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quantitative-table-change-for-one-group",
       "bit": 17,
-      "version": 3,
-      "fingerprint": "20e24b75d0f94205"
+      "version": 5,
+      "fingerprint": "52d16be6ef404364865b41031af983e70e9dcfc33cb270943f5788a08b2ea04a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quantitative-table-weakens-trend",
       "bit": 18,
-      "version": 2,
-      "fingerprint": "c064181f7bfe721d"
+      "version": 4,
+      "fingerprint": "d8d462fd96da3147b3dcff1389a000601ef8974ebf93ca13fd2d7f23901cf03a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "evidence-finding-weakens-causal-claim",
       "bit": 19,
-      "version": 2,
-      "fingerprint": "cb82e33e579697fe"
+      "version": 4,
+      "fingerprint": "79c4e21dc3ada27bd4056652835ddd0c999a91e36a9bd96157568f48d0274984",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "evidence-quotation-two-part-claim",
       "bit": 20,
-      "version": 2,
-      "fingerprint": "d17b18986d58ed30"
+      "version": 4,
+      "fingerprint": "d90ecbab4d84b6eef25afd1ffde818d81516faa516c7f7149103da0e8ff463f3",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quantitative-table-difference-in-benefit",
       "bit": 21,
-      "version": 3,
-      "fingerprint": "5433d7b4457c117d"
+      "version": 5,
+      "fingerprint": "90add9fcd0e7a0d00176ab94eb3be4d247a0c2ab82ec492443e8750a0e021f71",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "wic-restatement-blank",
       "bit": 22,
-      "version": 2,
-      "fingerprint": "f10917fd3a335d5e"
+      "version": 3,
+      "fingerprint": "a5b20621a9058a50615c542cb9fe02f56d499a051401cbd271fab42436f59321",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "wic-magnitude-blank",
       "bit": 23,
-      "version": 1,
-      "fingerprint": "5006a064c1217a33"
+      "version": 2,
+      "fingerprint": "a45c61a171f55b440f7bd31b2b7ba768dc511b45235e37697fc87bec0b44bc3f",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "wic-relation-direction-blank",
       "bit": 24,
-      "version": 2,
-      "fingerprint": "abc8568d03b4f26d"
+      "version": 3,
+      "fingerprint": "ccd87199e2fa2609a7abcb61ab68d0181f433455ca044eccd74f1599a19329a3",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "wic-uncommon-sense",
       "bit": 25,
-      "version": 1,
-      "fingerprint": "bf065fdb90d06b94"
+      "version": 2,
+      "fingerprint": "d61c8c72780ccaefa3e1cc794ea90f74f2dff9f4cd84522583323171a5b8c1c8",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "wic-contrast-blank",
       "bit": 26,
-      "version": 2,
-      "fingerprint": "1ef12dcc6509f256"
+      "version": 3,
+      "fingerprint": "74287914ce51625a8532602107467dfe1eb54f041f60b2ae9fb088ca3ea8d655",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "wic-figurative-meaning",
       "bit": 27,
-      "version": 2,
-      "fingerprint": "2f38ca4e7fe0a357"
+      "version": 3,
+      "fingerprint": "5a05e2f31f29de6a22a4795636e7e82518644a2cd6803eafa1c4369baf5c9d70",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "wic-connotation-blank",
       "bit": 28,
-      "version": 1,
-      "fingerprint": "609b2b89a3e3ae32"
+      "version": 2,
+      "fingerprint": "b9219f79b538ecc43392d6d2ac964a587cf023b45bc57380b10193cca1558ed0",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "wic-opposite-senses",
       "bit": 29,
-      "version": 2,
-      "fingerprint": "1c62e4452a15f012"
+      "version": 3,
+      "fingerprint": "87d00f24a498b173dda69836c37c39468957af388f9eb5524514fb331df8c001",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tsp-main-purpose-explain",
       "bit": 30,
-      "version": 2,
-      "fingerprint": "766d661ef0320b04"
+      "version": 3,
+      "fingerprint": "4f8f4a2720b688ced4ebe1d40a853a477982f739baf92d0e12dfc02c587602f4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tsp-function-example",
       "bit": 31,
-      "version": 3,
-      "fingerprint": "f1f33a19f60cc383"
+      "version": 4,
+      "fingerprint": "69743050c8a8dcc9faecb9e97c29454e354db9ea90d5a9fe99cf3e6394b23779",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tsp-function-concession",
       "bit": 32,
-      "version": 2,
-      "fingerprint": "bd59562f5268eacb"
+      "version": 3,
+      "fingerprint": "a4e9759eb53e4b83566d54ef778c1214d60969afcc39c408c90647dcb8f554de",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tsp-literary-purpose",
       "bit": 33,
-      "version": 2,
-      "fingerprint": "138391690312fbc1"
+      "version": 3,
+      "fingerprint": "622c4e59f3f6ad78513a138bc2ae2881a5418036c6c7274df5cb628919e90820",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tsp-literary-structure",
       "bit": 34,
-      "version": 2,
-      "fingerprint": "1602055276b5cfd7"
+      "version": 3,
+      "fingerprint": "394c591b226c74629ecda20f7225ab1973ccaf37788027f46d5e2b4e2d84688d",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tsp-structure-view-complication",
       "bit": 35,
-      "version": 2,
-      "fingerprint": "29d5449f9820115c"
+      "version": 3,
+      "fingerprint": "3959b502e994e1aaca3e6dacfd3628620b516ce1df2d19a22acaba3f4df89e6f",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tsp-function-foil",
       "bit": 36,
-      "version": 3,
-      "fingerprint": "db2d7d57d70594a0"
+      "version": 4,
+      "fingerprint": "ead97c442aa4bb63caf3350b3146a0cb39d67b3504ad20bfe6030fd63a4cbd1f",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tsp-purpose-evaluate-source",
       "bit": 37,
-      "version": 2,
-      "fingerprint": "bffa0a94f7b361f4"
+      "version": 3,
+      "fingerprint": "f6e25581858b487f9c6a4b317933a2b9fc3049b983e6ce88cf6d7ccb6076d4eb",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "cross-text-shared-claim",
       "bit": 38,
-      "version": 2,
-      "fingerprint": "85d45ae39c92881f"
+      "version": 3,
+      "fingerprint": "0b36f5684fc35c683912171fe61266abd926fa694d6ca3e26a2b242fa8da8577",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "cross-text-problem-solution",
       "bit": 39,
-      "version": 2,
-      "fingerprint": "f190864bdfd2274c"
+      "version": 3,
+      "fingerprint": "8cd9cf4004e85a9a1858960e20c428f05989b3b11f33be7d46d2efd97caf3ad0",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "cross-text-counterexample",
       "bit": 40,
-      "version": 3,
-      "fingerprint": "cf3a44def2306a95"
+      "version": 4,
+      "fingerprint": "1baf01995e9a1f564d4ef22bea4319bafe9f1c482424e1db0b9a1ae5002f35d4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "cross-text-extends",
       "bit": 41,
-      "version": 3,
-      "fingerprint": "9536dffcf67cc2cc"
+      "version": 4,
+      "fingerprint": "a57a960bab4c86bc31b3a7dc5c9ca08469235135e8324face1330d007521c8e7",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "cross-text-apply-explanation",
       "bit": 42,
-      "version": 2,
-      "fingerprint": "19f6e71e2c23b615"
+      "version": 3,
+      "fingerprint": "1fdb2cf96b921ffc62dfadece58929e22b202cf18a8d52552da235f92c6378b4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "cross-text-method-challenge",
       "bit": 43,
-      "version": 3,
-      "fingerprint": "c70bc5510c100946"
+      "version": 4,
+      "fingerprint": "054e833aa028079f238443c6e8f82af026cd54c449dfcedc51f466d49d16d65d",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "cross-text-difference-in-view",
       "bit": 44,
-      "version": 2,
-      "fingerprint": "eb5b8cb5652ffb4e"
+      "version": 3,
+      "fingerprint": "34c716bb52ec5581d2c9f666e2e91241695660a3a012b6da7fe622dfea9c9b01",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "cross-text-common-ground",
       "bit": 45,
-      "version": 3,
-      "fingerprint": "b04cf0ab75d97b71"
+      "version": 4,
+      "fingerprint": "dc078dfe333a1a6995b293c66262c05e1569c1ae9d7fd5cc3f36e87ea1b8bc26",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-shared-feature",
       "bit": 46,
-      "version": 2,
-      "fingerprint": "1e6aeae11dc06acd"
+      "version": 3,
+      "fingerprint": "e97d9802de594abd2003cf00bc72ff9326968b361cf8dc0ea114bd8e1aa97578",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-contrast-two-subjects",
       "bit": 47,
-      "version": 3,
-      "fingerprint": "9127d345e3e700f9"
+      "version": 4,
+      "fingerprint": "0d67af51d1da47cf1168ccca37ef18d47787943c3a6924ae86becd640c093fd6",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-date-and-place",
       "bit": 48,
-      "version": 3,
-      "fingerprint": "e38a2bdb3db44d20"
+      "version": 4,
+      "fingerprint": "450154fabf38c6072b1fea067fa8957a9f74c8a3a5df69edf946e4511f8c2157",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-introduce-to-newcomers",
       "bit": 49,
-      "version": 3,
-      "fingerprint": "93cacb253fa3698e"
+      "version": 4,
+      "fingerprint": "a91cdf995aa50a9b6b66d857da881685cde82eabe079b621ca3fb73d1ac70a22",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-explain-benefit",
       "bit": 50,
-      "version": 2,
-      "fingerprint": "68f65c1b24dfdb96"
+      "version": 3,
+      "fingerprint": "d162482471bc8625cddace869b94ab221698fc54e14bb116c4c5dfb38454819a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-generalize-category",
       "bit": 51,
-      "version": 2,
-      "fingerprint": "efaf093dd2c50d7f"
+      "version": 3,
+      "fingerprint": "8ac10df1a7c1c31a6020a601589a1d3fdd6188d082afd159c7800b3d25b8038a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-finding-and-significance",
       "bit": 52,
-      "version": 2,
-      "fingerprint": "4c2b4947b1cecc42"
+      "version": 3,
+      "fingerprint": "2ad4a6e2f41f4fd388a6bbba1c02e964bb6e591853d23af658ea51cfa6ce5b41",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-similarity-despite-difference",
       "bit": 53,
-      "version": 3,
-      "fingerprint": "4e4ac96a67b1e0fe"
+      "version": 4,
+      "fingerprint": "fa732a23f06ff4a2746ed68cf5e0662992f27ebf401b70259d56480580a1fe9b",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-result-versus-expectation",
       "bit": 54,
-      "version": 3,
-      "fingerprint": "8c31862ef3eddd7d"
+      "version": 4,
+      "fingerprint": "4448ccbe18f4ec5a120682fd1770fa39471c8b96489612fb58fa35bd833f63d7",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-consequence",
       "bit": 55,
-      "version": 2,
-      "fingerprint": "1fa81dfe8a184213"
+      "version": 3,
+      "fingerprint": "8f71b991a503970bf145a17ccbdcf4ac6319638b1c81b81222306b221b6ecff7",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-contrast-two-subjects",
       "bit": 56,
-      "version": 2,
-      "fingerprint": "747cf9f2fdf37472"
+      "version": 3,
+      "fingerprint": "de5918acb42de40613fa9f6338f14b069f7d629b3ee499235069e7955f74d2ba",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-instance-mid-passage",
       "bit": 57,
-      "version": 2,
-      "fingerprint": "73dfaa6ce8db1e7d"
+      "version": 3,
+      "fingerprint": "5d6bd51dd5942f904ec57250ec0cfcdc6167006a9180b544602739d067846939",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-further-point",
       "bit": 58,
-      "version": 2,
-      "fingerprint": "96883ac7750ed347"
+      "version": 3,
+      "fingerprint": "c23078bf71e59ecf18e255fce8244182aeaeca6c32a430ed5994cc83bac47ec8",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-parallel-case",
       "bit": 59,
-      "version": 2,
-      "fingerprint": "4e4f979020e167b7"
+      "version": 3,
+      "fingerprint": "8210977f7f220d4186511060654d7c2c5cc36d5b06818c5e90a0588a6e952ee4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-later-step",
       "bit": 60,
-      "version": 2,
-      "fingerprint": "2714ee805d38c25f"
+      "version": 3,
+      "fingerprint": "daf7f087f5b29c786fd9c4b678c0abfa7de2dd113b44ca2798f3f1270a3ec2f1",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-despite-drawback",
       "bit": 61,
-      "version": 2,
-      "fingerprint": "4a7d537af4add714"
+      "version": 3,
+      "fingerprint": "a2bfc5ecc6e0d6d412208196239becf220a08ec4fa6276b2fbd7cb450ff75875",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-concede-then-return",
       "bit": 62,
-      "version": 3,
-      "fingerprint": "1302c2f4f25d5799"
+      "version": 4,
+      "fingerprint": "0d154019452b73f8c22615e9934188163f9f425d71a7cf3820707b2f611b78b9",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-plain-restatement",
       "bit": 63,
-      "version": 2,
-      "fingerprint": "27925f56c8465754"
+      "version": 3,
+      "fingerprint": "3c7ac7beb855e31c508b3f01d442ee36694caab9b6bb28a4abb4b4f975862fd8",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-join-independent-clauses",
       "bit": 64,
-      "version": 3,
-      "fingerprint": "2f55b23f9fa204a8"
+      "version": 4,
+      "fingerprint": "a934e5b2dc7576bb1869d79935ed926c2a7199d2637ba5450ddb30b90cce355a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-colon-before-list",
       "bit": 65,
-      "version": 3,
-      "fingerprint": "62a29fa6287d547e"
+      "version": 4,
+      "fingerprint": "158e64de932a0fb52485c18119967404f2e123879b43ac41cee4a3944ddd4908",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-intro-clause-comma",
       "bit": 66,
-      "version": 3,
-      "fingerprint": "aa5099d22fdb0237"
+      "version": 4,
+      "fingerprint": "fb542152c260f9337f7dd3eb0b1651c04547d30981170d4f4485618b16b4d232",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-conjunctive-adverb-join",
       "bit": 67,
-      "version": 3,
-      "fingerprint": "a199d4a5ea4b6c63"
+      "version": 4,
+      "fingerprint": "89f2b4565c6675eb05759ad9c23e2f5e833d4ce67974b119070956c8562d6edd",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-no-colon-after-verb",
       "bit": 68,
-      "version": 3,
-      "fingerprint": "520b3965c55ed164"
+      "version": 4,
+      "fingerprint": "a0f136d6bee8135aad3355239e297560a821d2b6d4d761460871438df598a92e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-no-comma-subject-verb",
       "bit": 69,
-      "version": 3,
-      "fingerprint": "0cb2fb3fe86806a5"
+      "version": 4,
+      "fingerprint": "76aadd1d11a73e5cbc172c3038b544da4682afcfed154e0e64feea85a6b6a1ea",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-series-semicolons",
       "bit": 70,
-      "version": 3,
-      "fingerprint": "84bc5c0cc75a6a78"
+      "version": 4,
+      "fingerprint": "dae5f29172852b904f95c450bd066f92730a46e9976046f7fe4c12452836fb44",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-relative-vs-pronoun-clause",
       "bit": 71,
-      "version": 3,
-      "fingerprint": "301b8c354a800162"
+      "version": 4,
+      "fingerprint": "646e0391d6a64ee6e8bca6f54d1516534019c96ac3d9237ca0753c8766bc1bf0",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-closing-mark-match",
       "bit": 72,
-      "version": 3,
-      "fingerprint": "42f14246d427ad05"
+      "version": 4,
+      "fingerprint": "fa560c95368c201845938b1313836c9aba75d654997ef47e268cd5177e9d42b4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-essential-clause-context",
       "bit": 73,
-      "version": 3,
-      "fingerprint": "fabccc94625116f1"
+      "version": 4,
+      "fingerprint": "22102a27dea1bfcf639e670b701d106979bba50685e09046d8ef5832dd5c3e60",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-adverb-interrupts-clause",
       "bit": 74,
-      "version": 3,
-      "fingerprint": "47f4d09065666b41"
+      "version": 4,
+      "fingerprint": "74b4263b526a2be5eac50e471cc1054a84a519d45701b6b5865d0a3ea287d1bf",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-sva-compound-subject",
       "bit": 75,
-      "version": 2,
-      "fingerprint": "d1c67aa51c8b89cc"
+      "version": 3,
+      "fingerprint": "6c6be102bd5d6e46660b00b58c6fce5e5026389b71e93e9c345a55922c883f30",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-their-theyre-there",
       "bit": 76,
-      "version": 2,
-      "fingerprint": "343324f27b4f1f9d"
+      "version": 3,
+      "fingerprint": "7e23ea317413be3fa64ca75950954763b0ebfcf26f3eb5517d5089d614dfadc3",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-irregular-past-participle",
       "bit": 77,
-      "version": 2,
-      "fingerprint": "9ea750edc28bd23d"
+      "version": 3,
+      "fingerprint": "2e508a47782be7e49e2f94fa0975e1ff74c2ba2babf425a07773fdce99a7c6d9",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-parallel-series",
@@ -480,14 +558,16 @@
     {
       "id": "sec-sva-attractor",
       "bit": 79,
-      "version": 2,
-      "fingerprint": "cd851383e0da4a04"
+      "version": 3,
+      "fingerprint": "86618f174e577c3817cf0ed71b10239a20e7dbb7a2ce7c58d427c26b1758dd85",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-sva-inverted",
       "bit": 80,
-      "version": 2,
-      "fingerprint": "f36ac98acd0a093f"
+      "version": 3,
+      "fingerprint": "c22803147ec74c742378121a7d38fc8d469e1a8fb2f2eca56c0ae72af90a808e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-parallel-paired",
@@ -499,242 +579,338 @@
     {
       "id": "sec-pronoun-distant-antecedent",
       "bit": 82,
-      "version": 3,
-      "fingerprint": "a544ac80f15f70db"
+      "version": 4,
+      "fingerprint": "29ed633a1d8cab71597eb08fd4298a8e72a2f25c55660223b75a5ebf6922b27d",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-verb-tense-frame",
       "bit": 83,
-      "version": 3,
-      "fingerprint": "c8bad5ca77bbb8af"
+      "version": 4,
+      "fingerprint": "ed8bd299947bd339ea718288653a5217051217dd7c4f5e8d975230417cc1b1be",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-finite-or-nonfinite",
       "bit": 84,
-      "version": 3,
-      "fingerprint": "614add434acfb8fa"
+      "version": 4,
+      "fingerprint": "8e6b6f4dbaefcc24db89e133502b5bf271c20aeea3fcbe1f4f4d485f57b8acad",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-dangling-modifier",
       "bit": 85,
-      "version": 3,
-      "fingerprint": "a6128bd117cc1171"
+      "version": 4,
+      "fingerprint": "445e4e2cc424ab73b5931113b71e97a8f62ccb4e106a16759ac17cc979ee3c57",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "central-idea-period-prose",
       "bit": 86,
-      "version": 2,
-      "fingerprint": "9f7e7bb0a5c2fe4b"
+      "version": 3,
+      "fingerprint": "4fe57111a35c9c7d18be0242c23401d6f89eacac5563fd779a955a0c1fcbdb54",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "central-idea-poem",
       "bit": 87,
-      "version": 1,
-      "fingerprint": "6d89379b317a3c34"
+      "version": 2,
+      "fingerprint": "b1aaf440fe9bcf25f4c98ebcf665f46176d991c70563aaa4d788cde9217dfc4e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inference-period-prose",
       "bit": 88,
-      "version": 2,
-      "fingerprint": "5728230a5b1ee753"
+      "version": 4,
+      "fingerprint": "90acc4be78991540ae65a7fc2146ca3ee6bbf89a772fd4232b80f4230c8bbf94",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inference-completion-qualified-conclusion",
       "bit": 89,
-      "version": 1,
-      "fingerprint": "462d54e90864b024"
+      "version": 3,
+      "fingerprint": "02c4ebbe8f2591379ec83a4848ae156c8a0e0e0282a2481afab80c389b3dd93b",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quantitative-graph-complete",
       "bit": 90,
-      "version": 1,
-      "fingerprint": "0c577a5fe12db367"
+      "version": 3,
+      "fingerprint": "fdb6e49c2e07d2e38ed6cdcd6aec8172ec9492ff9d203f3376996ded820437f4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "evidence-discriminating-finding",
       "bit": 91,
-      "version": 2,
-      "fingerprint": "3cb91d9ab858b3f7"
+      "version": 4,
+      "fingerprint": "9b71289ae21fb9452572e2933fc6513cffff9a3b31bb298fae0ea47754c73e06",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "evidence-poem-quotation",
       "bit": 92,
-      "version": 2,
-      "fingerprint": "08a3b1fca4b9b126"
+      "version": 4,
+      "fingerprint": "311ff1e613a2a1c3acaac912d39d5d8a14711de02272e09a63bee3e3f6b7692f",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quantitative-graph-reconcile",
       "bit": 93,
-      "version": 2,
-      "fingerprint": "920ce40f816a76d8"
+      "version": 4,
+      "fingerprint": "0ac4d35869132fd6bc935149d02166b5548eea7297e22e3a8216be64a542992f",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "wic-academic-evaluation",
       "bit": 94,
-      "version": 1,
-      "fingerprint": "61b239f005b26abb"
+      "version": 2,
+      "fingerprint": "f1a895ce1e21d9d5f4a51e4728934f234a9119678ecffce4da7d22991ab87cb7",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "wic-academic-stance",
       "bit": 95,
-      "version": 2,
-      "fingerprint": "9f11eeef30a20bd0"
+      "version": 3,
+      "fingerprint": "5e5cf8a32a67fa9ad95c220d6c0373336558616fc33e4e2909787dd652530676",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "wic-period-older-sense",
       "bit": 96,
-      "version": 1,
-      "fingerprint": "d0e448e91cc9ba38"
+      "version": 2,
+      "fingerprint": "21ec31b2adeefcdfb029e79e2cfa5807c2d06ca89dcdd20ebb78de87b7ab524c",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tsp-academic-function",
       "bit": 97,
-      "version": 2,
-      "fingerprint": "bca2a432389dba8a"
+      "version": 3,
+      "fingerprint": "b66be643d6869d261ad54c35194c0dd2356e47706ccc9026ca6fa7e7ab6e6945",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tsp-academic-structure",
       "bit": 98,
-      "version": 2,
-      "fingerprint": "8a6ab501ccfb5567"
+      "version": 3,
+      "fingerprint": "e9e142e35b2788a91c305822af02a0239caee1c3c410dbc83e7e3667b6114101",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "cross-text-partial-agreement",
       "bit": 99,
-      "version": 2,
-      "fingerprint": "5dcfeb39405e8af1"
+      "version": 3,
+      "fingerprint": "b0fe4b4d92c3537061044c645ac9930d5a3d511e0efde7c1d2e132724ef0e554",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "cross-text-condition-applied",
       "bit": 100,
-      "version": 1,
-      "fingerprint": "1ee1991d370e4f09"
+      "version": 2,
+      "fingerprint": "3df0ac0233f74984d02f739c339fff46e66bdb99da52dfcf051cbd9cd235e046",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-difference-on-named-feature",
       "bit": 101,
-      "version": 2,
-      "fingerprint": "5e09326eadcaf746"
+      "version": 3,
+      "fingerprint": "6422914b2b2f1e6444020ddfc2c7937a310cb642b1872e5c5888d35934ac1648",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-size-of-difference",
       "bit": 102,
-      "version": 2,
-      "fingerprint": "ab77c93844cbcc79"
+      "version": 3,
+      "fingerprint": "7804e5c408a4ae824b4d9fb77ed3a238e2cfb16b2d8f1b49aee7851ddd42c83f",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-elaboration-kind",
       "bit": 103,
-      "version": 2,
-      "fingerprint": "55fb8b260ec60e35"
+      "version": 3,
+      "fingerprint": "cffad0cd462692fcf59aa8fc492c38ad4c354eeb613f7161c4eb7dad45fa89da",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-instead-or-despite",
       "bit": 104,
-      "version": 2,
-      "fingerprint": "32e67efb0d013431"
+      "version": 3,
+      "fingerprint": "8a3b5ffc4f3c9f1539341a75da46ba121259c6dc134e5f7b7231f605516aa124",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-title-or-appositive",
       "bit": 105,
-      "version": 2,
-      "fingerprint": "fafd8c7ab4473c8e"
+      "version": 3,
+      "fingerprint": "7b4c090b30a8077056a88a52af1dc66b39340242a83f2cd5e2ebe4bcc88eaf46",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-quotation-commas",
       "bit": 106,
-      "version": 1,
-      "fingerprint": "17e70fcae2c93c8e"
+      "version": 2,
+      "fingerprint": "c8917f3f850a9c3ec71c97011555de6cfe5090a247bf660791357e1941977a46",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-supplement-opening-mark",
       "bit": 107,
-      "version": 1,
-      "fingerprint": "4ffc0519e1f6834b"
+      "version": 2,
+      "fingerprint": "70f9090236e8e4546a50124fb7877ea49d60a96d768404f38d6e4686b22b6340",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-sva-long-subject",
       "bit": 108,
-      "version": 2,
-      "fingerprint": "609a31ee889d4d22"
+      "version": 3,
+      "fingerprint": "c25a737ef78c468fc8bae8f2cb08a08912f6c929747c6dff51eee563deeb651e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-possessive-or-plural",
       "bit": 109,
-      "version": 1,
-      "fingerprint": "af42374250d16a7c"
+      "version": 2,
+      "fingerprint": "4bb0c013d4b941938101f7a41b8461e7900a5023b45b74346302a6d10ba27fd0",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-conditional-verb-forms",
       "bit": 110,
-      "version": 2,
-      "fingerprint": "0389bd2e3f3a50d8"
+      "version": 3,
+      "fingerprint": "d6191736845c253742902a9abff283481a0da5ba6fc0b66bf1ec70665d7b01eb",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-supplement-or-main-verb",
       "bit": 111,
-      "version": 1,
-      "fingerprint": "d037ee22e3a72c9f"
+      "version": 2,
+      "fingerprint": "0b28794e499aa3321266cabc1e4ccaa4a906ec7a01533225a7f04dfa79fd521f",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-however-attachment",
       "bit": 112,
-      "version": 1,
-      "fingerprint": "a9932c87b5763f24"
+      "version": 2,
+      "fingerprint": "1a13a0651b01146fc25f6ec7c59d53bc217f56ef9ee9decd61ae167ab8606df7",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-colon-explanation",
       "bit": 113,
-      "version": 1,
-      "fingerprint": "2d5055b9ae3eb96c"
+      "version": 2,
+      "fingerprint": "eeb69b2404473a80b5dd2636355faae0212bc1506a7c473a9e026d4fb0e4205b",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sec-sentence-boundary-capitals",
       "bit": 114,
-      "version": 1,
-      "fingerprint": "d403bca1bce2177a"
+      "version": 2,
+      "fingerprint": "ff2d15cd019678e73d06139dcb2a7c0c755a4a8c30695f9dd0438a7f0e3630b9",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "central-idea-academic-argument",
       "bit": 115,
-      "version": 1,
-      "fingerprint": "142b18e6bb9a1885"
+      "version": 2,
+      "fingerprint": "1f41df581ef79802920e1773919d8e2ea4d69e736456ac06d720b1cf32ece044",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "detail-academic-finding",
       "bit": 116,
-      "version": 1,
-      "fingerprint": "e25a84943af70d14"
+      "version": 2,
+      "fingerprint": "97472c5e16b6916f0da7329b7ac01dc1fa1731ef359c0f1e2bc3ea7f5ccad138",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quantitative-rate-versus-count",
       "bit": 117,
-      "version": 1,
-      "fingerprint": "be110f22a3521ddf"
+      "version": 3,
+      "fingerprint": "7efc87958997a812dae75b2d082f231214fa756960a5df5bf8c301c1a816d6c6",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "evidence-excerpt-quotation",
       "bit": 118,
-      "version": 1,
-      "fingerprint": "dbcae54db6244c64"
+      "version": 3,
+      "fingerprint": "a2c3b67d3f942258423ab07092f819de231acf8e90ce0fb92a1f32dd9ee66d5a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tsp-literary-function",
       "bit": 119,
-      "version": 1,
-      "fingerprint": "03b26366272ffbf9"
+      "version": 2,
+      "fingerprint": "5138063043fa04bf60d2f2b4b11f02b291250c141c868a73b9579b237ad58285",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "notes-stress-while-noting",
       "bit": 120,
-      "version": 1,
-      "fingerprint": "ca5c8c823f9e98c8"
+      "version": 2,
+      "fingerprint": "41c4c07ce9490be23cbf77b065ebb2d7f6bb474e6cede905998bff441f496748",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "transition-across-sentences",
       "bit": 121,
+      "version": 3,
+      "fingerprint": "6c38ea69b5d8fa239ba67e64402deebab21668282bd475babe058a582166e16b",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "central-idea-narrative-reassessment",
+      "bit": 122,
+      "version": 1,
+      "fingerprint": "758f8969ca9fd5bd3f728efca7307f2a74b9506c4199d24908cdd57601ccef49",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "inference-counterfactual-interaction",
+      "bit": 123,
       "version": 2,
-      "fingerprint": "3e46cadcd21f7db6"
+      "fingerprint": "7fa9473b8bf62d38e25ea3676e11de87f81d56c5c1eb26011afffb5ff914a16e",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "inference-overlapping-classifications",
+      "bit": 124,
+      "version": 2,
+      "fingerprint": "c2832448e7ef06e037b706f232356f5be73f32c96bc3cb1d8784489592a8a2e2",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "evidence-mechanism-conditional-intervention",
+      "bit": 125,
+      "version": 2,
+      "fingerprint": "a9a5556622a8efb07b2c28c720ece555e42be7229785a81bc9af1fcb166b50b7",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "cross-text-author-versus-cited-view",
+      "bit": 126,
+      "version": 1,
+      "fingerprint": "9c78c071e20278f6d35d86356baba8c126fe813896f5d0f4987ab536ae478ad9",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "notes-reconcile-findings",
+      "bit": 127,
+      "version": 1,
+      "fingerprint": "32eb98dc63f0e5424db4e358c57381733a99df749701cca4e0b3f3d94528bb1c",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "sec-nested-genitive-ownership",
+      "bit": 128,
+      "version": 1,
+      "fingerprint": "41ef74b1f348a1f0a763d710c19216761c201ff53bc03d1ee1086bb98ca1f8b2",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "sec-absolute-or-finite-clause",
+      "bit": 129,
+      "version": 1,
+      "fingerprint": "e29a927549721aaf4c6aec8c6b04151652408ce1c3daa04f92bd14cce0998d37",
+      "fingerprintAlgorithm": "source-v1"
     }
   ]
 }

@@ -17,8 +17,8 @@
 
   /* ---------------------------------------------- grounding in the notes */
 
-  // A notes question promises that every choice is drawn from the notes, so
-  // a distractor may be off-goal but never invent a fact. ungroundedWords()
+  // These templates use factually grounded, off-goal distractors. That is an
+  // authoring constraint, not a promise about all SAT questions. ungroundedWords()
   // lists the content words of a choice that the notes do not contain: each
   // word is reduced to a crude stem, irregular forms are mapped to a base
   // form, and function words, connectives, and reporting verbs (the words

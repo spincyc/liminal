@@ -44,18 +44,22 @@ that gravity holds it up.`,
       key: "next, and walls",
       noChange: "Two independent clauses joined by 'and' need a comma before the conjunction.",
       wrong: [
-        ["next; and walls", "A semicolon and a coordinating conjunction do the same job, so both is redundant."],
-        ["next, and, walls", "The second comma separates the conjunction from the subject that follows."],
+        [
+          "next; although walls",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "next, and, walls",
+          "The second comma separates the conjunction from the subject that follows."
+        ]
       ],
-      why:
-        "'Nothing holds it together but its own weight and the friction' and 'walls built this way … " +
-        "have stood for three hundred years' are both complete clauses.",
+      why: "'Nothing holds it together but its own weight and the friction' and 'walls built this way … have stood for three hundred years' are both complete clauses.",
       steps: [
         "Check whether the words on each side of 'and' could stand alone. They could.",
-        "Place a comma immediately before the conjunction.",
+        "Place a comma immediately before the conjunction."
       ],
       hint: "This sentence already contains one 'and' joining nouns; the second joins clauses.",
-      trap: "The earlier 'and' in the same sentence correctly takes no comma, which sets an expectation.",
+      trap: "The earlier 'and' in the same sentence correctly takes no comma, which sets an expectation."
     },
     {
       number: 2,
@@ -140,23 +144,21 @@ that gravity holds it up.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "side, and a wall that settles unevenly is a wall",
-          "'And' repairs the splice but hides that the second clause is the reason for the first.",
+          "side, however, a wall that settles unevenly is a wall",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
           "side; because a wall that settles unevenly is a wall",
-          "A semicolon cannot precede a subordinating conjunction joining the clauses.",
-        ],
+          "A semicolon cannot precede a subordinating conjunction joining the clauses."
+        ]
       ],
-      why:
-        "The second clause explains why the trench must be that wide. 'Because' both repairs the " +
-        "splice and states the relationship the sentence actually has.",
+      why: "The second clause explains why the trench must be that wide. 'Because' both repairs the splice and states the relationship the sentence actually has.",
       steps: [
         "Test each side of the comma as a sentence. Both stand.",
-        "Choose the conjunction that names the relationship rather than merely adding.",
+        "Choose the conjunction that names the relationship rather than merely adding."
       ],
       hint: "Once you see the splice, ask what the second half is doing to the first.",
-      trap: "'And' is the reflex fix and flattens a reason into a list.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -283,23 +285,21 @@ that gravity holds it up.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "itself: a row of copestones on edge finishes",
-          "A colon introduces an explanation, but the second clause describes a separate step.",
+          "itself; although a row of copestones on edge finishes",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "itself and a row of copestones on edge finishes",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "Both clauses are complete and equally weighted — what the through-stones do, and what the " +
-        "copestones do. A semicolon joins equals without subordinating either.",
+      why: "Both clauses are complete and equally weighted — what the through-stones do, and what the copestones do. A semicolon joins equals without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or sits beside it. It sits beside it.",
+        "Ask whether the second explains the first or sits beside it. It sits beside it."
       ],
       hint: "Two finishing steps of equal importance want a mark that treats them equally.",
-      trap: "The sentence is long, so the splice sits far from where the eye stops.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 12,
@@ -339,34 +339,29 @@ that gravity holds it up.`,
       subskill: "purpose",
       family: "goal-assessment",
       difficulty: "Hard",
-      stem:
-        "Suppose the writer's goal had been to describe a craft in which the most important work " +
-        "is the part that cannot be seen in the finished object. Would this essay accomplish that " +
-        "goal?",
-      key: "Yes, because the foundation, the hearting, and the through-stones are all buried inside the finished wall.",
+      stem: "Suppose the writer's goal had been to describe a craft in which the most important work is the part that cannot be seen in the finished object. Would this essay accomplish that goal?",
+      key: "Yes, because the foundation and hearting do essential work beneath the finished surfaces.",
       wrong: [
         [
           "Yes, because the essay explains that a waller never forces a stone into place.",
-          "That rule concerns technique rather than anything hidden inside the wall.",
+          "That rule concerns technique rather than anything hidden inside the wall."
         ],
         [
           "No, because the copestones and the two faces are the parts the essay describes at greatest length.",
-          "The hidden components take three paragraphs and the visible ones take a few sentences.",
+          "The hidden components take three paragraphs and the visible ones take a few sentences."
         ],
         [
           "No, because the essay states that the wall's strength comes from weight and friction.",
-          "Weight and friction are exactly what the hidden components are arranged to produce.",
-        ],
+          "Weight and friction are exactly what the hidden components are arranged to produce."
+        ]
       ],
-      why:
-        "The largest stones go where nobody will see them, the hearting sits between the faces, and " +
-        "the through-stones are inside the wall. Everything holding it up is out of sight.",
+      why: "The large foundation stones lie below ground, and the hearting supports the wall between its faces. Those concealed components establish the essay's emphasis on important work that a viewer cannot see.",
       steps: [
         "List the components the essay describes and mark which are visible in a finished wall.",
-        "Keep the reason that names more than one hidden component.",
+        "Keep the reason that names more than one hidden component."
       ],
       hint: "Count how many of the described parts a passer-by could actually see.",
-      trap: "One wrong choice cites a real rule from the essay that has nothing to do with visibility.",
+      trap: "One wrong choice cites a real rule from the essay that has nothing to do with visibility."
     },
   ],
 };

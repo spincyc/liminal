@@ -123,6 +123,8 @@
       const constants = factors.map(([, k]) => k);
       return {
         ...common,
+        hint: "What is the x-coordinate of every point on the y-axis? Substitute that value into p.",
+        principles: ["The graph crosses the y-axis where x = 0, so its y-intercept is (0, p(0))."],
         responseType: "numeric",
         stem: "The function p is defined by the given equation. In the xy-plane, the graph of y = p(x) intersects the y-axis at the point (0, b). What is the value of b?",
         correct: p0,
@@ -383,13 +385,13 @@
       stimulus: { type: "equations", content: vertexFormText(a, h, k) },
       stem: `The function f is defined by the given equation. What is the ${word} value of f(x)?`,
       correct: k,
-      wrong: spreadAround(t, k, [
+      wrong: pairBalanced(t, num(k), [
         [h, `Gives the x-coordinate of the vertex, where the ${word} occurs, not the ${word} value.`],
         [-h, "Gives the x-coordinate of the vertex, with its sign reversed as well."],
         [f0, "Gives f(0), the y-intercept, instead of the value at the vertex."],
         [a * 4 * h * h + k, `Reads the vertex at x = ${num(-h)} from the sign in the parentheses and evaluates f there.`],
         [-k, "Reverses the sign of the constant term."],
-      ]),
+      ].map(([value, why]) => [num(value), why])),
       explanation:
         `(${lin(1, -h)})² is never negative and is 0 at x = ${num(h)}. ${a > 0 ? "Since the leading coefficient is positive, f(x) is least" : "Since the leading coefficient is negative, f(x) is greatest"} ` +
         `when that square is 0, so the ${word} value is f(${num(h)}) = ${num(k)}.`,
@@ -419,16 +421,16 @@
     const h = t.nonzero(-8, 8);
     const k = t.nonzero(-12, 12);
     if (Math.abs(h) === Math.abs(k)) return null;
-    const f0 = a * h * h + k;
     return {
       responseType: "multiple-choice",
       stimulus: { type: "equations", content: vertexFormText(a, h, k, "y") },
       stem: "The graph of the given equation in the xy-plane is a parabola. What are the coordinates of the vertex of the parabola?",
       correct: S.point(h, k),
+      // Two independent sign errors make a square of four choices: no
+      // privileged look-alike pair contains the answer.
       wrong: [
         [S.point(-h, k), `Takes the x-coordinate with the sign printed inside the parentheses; (${lin(1, -h)})² is 0 at x = ${num(h)}.`],
-        [S.point(k, h), "Swaps the x- and y-coordinates of the vertex."],
-        [S.point(0, f0), "Gives the y-intercept of the parabola, where x = 0."],
+        [S.point(h, -k), "Reverses the sign of the vertical shift, the vertex's y-coordinate."],
         [S.point(-h, -k), "Reverses the signs of both coordinates."],
       ],
       explanation: `In y = a(x − h)² + k the vertex is (h, k). Here (${lin(1, -h)})² is 0 at x = ${num(h)}, where y = ${num(k)}, so the vertex is ${S.point(h, k)}.`,
@@ -459,13 +461,13 @@
       stimulus: { type: "equations", content: text },
       stem: "The function f is defined by the given equation. What is the x-coordinate of the vertex of the graph of y = f(x) in the xy-plane?",
       correct: numeric ? mid : ratio(mid),
-      wrong: spreadAround(t, mid, [
+      wrong: pairBalanced(t, ratio(mid), [
         [-mid, "Reads the zeros from the factors with the wrong signs, then takes their midpoint."],
         [r + s, "Adds the zeros but does not divide by 2."],
         [Math.abs(r - s) / 2, "Takes half the distance between the zeros instead of the point halfway between them."],
         [a * (mid - r) * (mid - s), "Gives the y-coordinate of the vertex instead of the x-coordinate."],
         [-(r + s), "Reads the zeros with the wrong signs and adds them without dividing by 2."],
-      ]).map(([value, why]) => [ratio(value), why]),
+      ].map(([value, why]) => [ratio(value), why])),
       explanation: `The zeros of f are ${num(r)} and ${num(s)}. A parabola is symmetric about its vertex, so the vertex lies halfway between them: x = (${num(r)} + ${paren(s)})/2 = ${num(mid)}.`,
       steps: [
         `f(x) = 0 at x = ${num(r)} and x = ${num(s)}.`,
@@ -576,7 +578,7 @@
       stem = `${intro} What is the maximum height, in ${ctx.unit}, that the ${ctx.noun} reaches?`;
       key = peak;
       wrong = [
-        [peakT, `Gives the time, ${num(peakT)} seconds, at which the maximum occurs, not the height.`],
+        [peakT, `Gives the time, ${S.plural(peakT, "second")}, at which the maximum occurs, not the height.`],
         [h0, `Gives the starting height h(0) = ${h0}.`],
         [g * peakT * peakT + v * peakT + h0, `Evaluates h(${num(peakT)}) with +${g}t² instead of ${MINUS}${g}t².`],
         [h(t2 / 2), `Takes the maximum at t = ${num(t2 / 2)}, halfway to the landing time, instead of at the vertex.`],
@@ -2375,7 +2377,7 @@
 
   const vertexFromConditions = {
     id: "vertex-from-conditions",
-    difficulty: "Hard",
+    difficulty: "Medium",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "quadratic functions",
@@ -2384,7 +2386,9 @@
       "Conditions on a quadratic's graph each translate into a form: a vertex into a(x − h)² + k, equal outputs into " +
       "an axis of symmetry halfway between the inputs, which fixes b through x = −b/(2a); and a + b + c is f(1). " +
       "Choose the form first.",
-    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    // Medium: a supplied vertex or equal outputs select a familiar form;
+    // substitution then finds the requested coefficient or value.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["wrong-quantity", "sign-error", "neighbouring-rule"],
     build(t) {
       // Zeros and one point (write a(x − r)(x − s), find a, evaluate at the
@@ -2400,7 +2404,7 @@
 
   const exponentialRewrite = {
     id: "exponential-rewrite",
-    difficulty: "Hard",
+    difficulty: "Medium",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "exponential functions",
@@ -2408,7 +2412,9 @@
     recognize:
       "A base applies once per period of the exponent; changing the period means raising the base to a power " +
       "(compounding), never scaling the percent, and a negative or shifted exponent changes what the base and coefficient mean.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    // Medium: the specified change of period or exponent calls for a direct
+    // exponent rewrite followed by interpretation.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["percent-base", "unit-mismatch", "equivalent-form", "neighbouring-rule", "sign-error"],
     build(t) {
       const roll = t.random();
@@ -2465,7 +2471,7 @@
 
   const polynomialFactorRemainder = {
     id: "polynomial-factor-remainder",
-    difficulty: "Hard",
+    difficulty: "Medium",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "polynomial functions",
@@ -2473,7 +2479,9 @@
     recognize:
       "A division statement is a statement about one value of p: writing p(x) = (x − a)q(x) + R and choosing x = a " +
       "removes the unknown quotient, so p(a) = R; nothing fixes q(a) or p at the opposite number.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
+    // Medium: applying the remainder theorem to a displayed linear divisor
+    // is routine symbolic work.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 2, synthesis: 0, trap: 1 },
     tricks: ["must-vs-could", "sign-error", "neighbouring-rule"],
     build(t) {
       // "Which must be a factor" from a table with a listed zero was one

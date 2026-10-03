@@ -393,6 +393,7 @@
         // Equal fixed and per-item amounts would make the swapped model identical.
         if (room <= v.r * 3 || v.F === v.r) continue;
         const q = room / v.r;
+        const boundaryText = frac(Math.round(room * 100), Math.round(v.r * 100));
         const exactBoundary = whole(q);
         if (exactBoundary && !t.chance(0.2)) continue;
         const key = max ? Math.floor(q + 1e-9) : Math.ceil(q - 1e-9);
@@ -474,13 +475,13 @@
           wrong,
           explanation:
             `The condition is ${F} + ${r}n ${rel} ${B}, so ${r}n ${rel} ${show(room)} and n ${rel} ` +
-            `${exactBoundary ? num(q) : `${num(Math.round(q * 100) / 100)}…`}. ` +
+            `${boundaryText}. ` +
             (exactBoundary
               ? `n = ${key} meets the ${max ? "limit" : "goal"} exactly, which is allowed.`
               : `The ${max ? "greatest" : "least"} whole number that satisfies this is ${key}.`),
           steps: [
             `Write the inequality: ${F} + ${r}n ${rel} ${B}.`,
-            `${moveText(v.F)}: ${r}n ${rel} ${show(room)}; divide: n ${rel} ${exactBoundary ? num(q) : `about ${num(Math.round(q * 100) / 100)}`}.`,
+            `${moveText(v.F)}: ${r}n ${rel} ${show(room)}; divide: n ${rel} ${boundaryText}.`,
             `Round ${max ? "down" : "up"} to a whole number: ${key}.`,
           ],
           principles: ["A count limited by \"at most\" rounds down; one required by \"at least\" rounds up."],
@@ -1559,6 +1560,7 @@
           const stemAsk = scene.xs === "minutes of jogging" ? ask
             : max ? `If ${y0} ${scene.ys} are included, what is the greatest number of ${scene.xs} possible?`
               : `If the club sells ${y0} ${scene.ys}, what is the least number of ${scene.xs} it must sell?`;
+          const boundaryText = frac(room, a);
           return commaChoices({
             ...common,
             responseType: numeric ? "numeric" : "multiple-choice",
@@ -1567,10 +1569,12 @@
             stem: `${scene.text(v)} ${stemAsk}`,
             correct: key,
             wrong: numeric ? [] : wrong,
+            explanation: `${keyModel}. Substitute y = ${y0} and subtract the known amounts: ${a}x ${scene.rel} ${commas(room)}, ` +
+              `so x ${scene.rel} ${boundaryText}. The ${max ? "greatest" : "least"} whole number that meets the condition is ${key}.`,
             steps: [
               `Write the inequality: ${keyModel}.`,
               `Substitute y = ${y0}: ${a}x ${scene.rel} ${commas(L)} ${MINUS} ${commas(F)} ${MINUS} ${commas(b * y0)} = ${commas(room)}.`,
-              `x ${scene.rel} ${num(round2(q))}…, so the ${max ? "greatest" : "least"} whole number is ${key}.`,
+              `x ${scene.rel} ${boundaryText}, so the ${max ? "greatest" : "least"} whole number is ${key}.`,
             ],
             trap: max
               ? `${num(round2(q))} rounds to the nearest whole number the wrong way here: only rounding down keeps the total within ${commas(L)}.`
@@ -1976,13 +1980,13 @@
     domain: "Algebra",
     skill: "Linear inequalities",
     subskill: "solve inequalities",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Inequalities as conditions on a constant or on another expression",
     recognize:
       "The question is not \"solve for x\": the x-terms cancel, leaving a statement about the constant that must be " +
       "true (for all x) or false (for no x); solve that statement for the constant, reversing the inequality when " +
       "dividing by a negative, and respect whether its end is included.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 2, synthesis: 0, trap: 1 },
     tricks: ["reversed-condition", "sign-error", "wrong-quantity", "rounding-direction"],
     build(t) {
       // "Which could be the value of 2x + 4" (carry a range through a second

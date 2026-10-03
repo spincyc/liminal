@@ -1,13 +1,16 @@
 "use strict";
 
+// Fact-check: Sleep and mixed outcome evidence: https://pmc.ncbi.nlm.nih.gov/articles/PMC9665092/
+
 module.exports = {
   id: "act-reading-p054",
   type: "social-science",
   title: "First Bell",
-  intro: "This passage is adapted from an article on the debate over school start times.",
-  content: `The biological finding is not in dispute and has not been for twenty years. At puberty
-the timing of the circadian system shifts later by about two hours, in every population that
-has been measured, and it shifts back in the early twenties. A sixteen-year-old told to be
+  intro: "This original passage discusses the debate over school start times.",
+  content: `The biological finding is not in dispute and has not been for twenty years. Around puberty
+the circadian system tends to shift later, often by roughly two hours, though
+individuals differ. The tendency commonly shifts back towards earlier timing in
+early adulthood. A sixteen-year-old told to be
 asleep at ten is being asked to sleep at what their body treats as eight in the evening.
 Most cannot. The shift is not a preference, it is not caused by screens, and it appears in
 adolescents with no access to electric light at all.
@@ -18,16 +21,17 @@ school week, partly repaid at weekends by a sleep pattern that then makes Monday
 
 The intervention follows obviously: start later. Districts that have done so have been
 studied more carefully than most education reforms, because the change is sharp, dated, and
-applies to everybody at once. The results are consistent. Students sleep between twenty and
-forty-five minutes longer on school nights — less than the delay, because bedtimes drift
-later too, but a real gain. Attendance improves. Reported daytime sleepiness falls. In
-districts with the necessary records, crash rates among teenaged drivers fall in the morning
-hours, which is the single most robust finding in the literature and the one least often
-quoted.
+applies to everybody at once. Longer school-night sleep is a recurring finding, though its size varies.
+Some studies report gains of twenty to forty-five minutes. In some settings the
+gain is smaller than the start-time delay because bedtimes also drift later.
+Several studies report better attendance and less daytime sleepiness. Some also
+report lower teenage crash rates, but crash estimates come from fewer studies
+and can be affected by other differences between places or periods.
 
 Academic effects are smaller and less consistent than advocates usually suggest. Some studies
-find modest improvements in grades; others find none; the honest summary is that the health
-and safety case is strong and the attainment case is weak. That distinction matters, because
+find modest improvements in grades; others find none; the honest summary is that the sleep
+case is more consistent than the attainment case, while safety findings warrant
+attention without being treated as equally certain. That distinction matters, because
 the reform is usually sold on attainment and then evaluated on it.
 
 The reason the change is difficult has almost nothing to do with any of this. A school
@@ -44,10 +48,10 @@ thirty years, and a change of an hour is not an inconvenience to them but a cris
 a new arrangement they may not be able to make.
 
 None of these is an argument that the start time is correct. They are the reasons a correct
-change is expensive, and they explain a pattern that recurs: districts adopt the reform, meet
-the transport cost in the second year, and quietly reverse it, and the reversal is not
-reported by anybody. Where the change has held, it has usually been because a state
-legislature imposed it on every district at once, which removes the competitive problem in
+change is expensive, and they explain a pattern that recurs: a district may adopt the reform, encounter
+transport costs it cannot sustain, and reverse it. An adoption announcement
+alone therefore cannot establish that the change will last. One way to support a lasting change is a state-level requirement
+that applies to districts together, which removes the competitive problem in
 athletics and forces the transport question to be solved rather than avoided.
 
 The literature's own conclusion is unglamorous. This is not a case where evidence is
@@ -79,14 +83,14 @@ difficulty as ignorance is the mistake advocates most often make.`,
       subskill: "locate detail",
       family: "stated-detail",
       difficulty: "Easy",
-      stem: "According to the passage, the circadian shift at puberty is about:",
+      stem: "According to the passage, the typical circadian shift discussed at puberty is roughly:",
       key: "two hours in the later direction.",
       wrong: [
         ["two hours in the earlier direction.", "The shift described runs later, not earlier."],
         ["forty-five minutes in either direction.", "That figure is the gain in sleep after a start-time change."],
         ["one hour in the later direction.", "One to two hours is the resulting nightly deficit, not the shift."],
       ],
-      why: "The passage says \"the timing of the circadian system shifts later by about two hours, in every population that has been measured.\"",
+      why: "The opening paragraph describes a tendency towards later timing, often by roughly two hours, while acknowledging individual differences.",
       steps: [
         "Find the sentence describing the shift.",
         "Distinguish its size from the other figures given later.",
@@ -133,14 +137,14 @@ difficulty as ignorance is the mistake advocates most often make.`,
       subskill: "logical inference",
       family: "supported-inference",
       difficulty: "Medium",
-      stem: "The passage implies that students gain less extra sleep than the delay in start time because they:",
+      stem: "In the settings where students gain less extra sleep than the start-time delay, the passage attributes the difference to their tendency to:",
       key: "go to bed later once the change is made.",
       wrong: [
         ["are woken by younger siblings leaving earlier.", "Sibling schedules are not offered as a cause of lost sleep."],
         ["take on additional shifts at outside jobs.", "Student employment is listed among constraints, not as an effect."],
         ["sleep less at weekends than they used to.", "The weekend pattern is described before the reform, not after."],
       ],
-      why: "The passage says students sleep twenty to forty-five minutes longer, \"less than the delay, because bedtimes drift later too.\"",
+      why: "The passage says that in some settings bedtimes also drift later. That can offset part of the later waking time, without implying that every study or every student shows the same pattern.",
       steps: [
         "Find the sentence quantifying the sleep gain.",
         "Read the clause explaining why it is smaller than the delay.",
@@ -151,14 +155,14 @@ difficulty as ignorance is the mistake advocates most often make.`,
       subskill: "function",
       family: "function-of-a-qualification",
       difficulty: "Medium",
-      stem: "The author's remark that the attainment case is weak serves mainly to:",
+      stem: "The author's remark that the attainment evidence is less consistent serves mainly to:",
       key: "separate the strong evidence from the weak.",
       wrong: [
         ["argue that the reform should not be adopted.", "The passage treats the change as correct and expensive."],
         ["show that the studies were poorly designed.", "The studies are described as unusually careful."],
         ["explain why districts reverse the change later.", "Reversals are attributed to transport costs, not to grades."],
       ],
-      why: "The passage says \"the honest summary is that the health and safety case is strong and the attainment case is weak,\" and notes the reform is sold on attainment and then evaluated on it.",
+      why: "The passage separates a recurring sleep gain from smaller and inconsistent academic effects. The distinction prevents one outcome from being used as evidence of another.",
       steps: [
         "Note the two cases the sentence distinguishes.",
         "Read the sentence that follows about how the reform is sold.",
@@ -169,34 +173,34 @@ difficulty as ignorance is the mistake advocates most often make.`,
       subskill: "claims and evidence",
       family: "claim-and-support",
       difficulty: "Hard",
-      stem: "Which finding does the passage identify as the most robust in the literature?",
-      key: "Morning crash rates among teenaged drivers fall.",
+      stem: "Which pair of findings best supports the passage's distinction between the sleep case and the academic case for later starts?",
+      key: "Sleep usually increases, while reported grade gains vary across studies.",
       wrong: [
-        ["Students sleep up to forty-five minutes longer.", "The sleep gain is reported without being ranked."],
-        ["Attendance improves after start times move.", "Attendance is listed among the consistent results, not singled out."],
-        ["Grades improve modestly in some districts.", "Grade effects are described as small and inconsistent."],
+        ["Sleep usually increases, while grades improve in every studied district.", "The passage expressly reports mixed academic results."],
+        ["Sleep stays unchanged, while grades improve in every studied district.", "Both halves contradict the reported pattern."],
+        ["Sleep stays unchanged, while reported grade gains vary across studies.", "The academic half fits, but the sleep half contradicts the passage."],
       ],
-      why: "The passage says crash rates in the morning hours fall, \"which is the single most robust finding in the literature and the one least often quoted.\"",
+      why: "The passage identifies longer sleep as a recurring finding and describes academic effects as smaller and inconsistent. Combining those results supports treating the two cases separately without ranking crash studies above the sleep evidence.",
       steps: [
-        "Look for the finding the passage explicitly ranks.",
-        "Note the second clause about how often it is cited.",
-        "Reject results the passage reports without ranking.",
+        "Find the passage's account of sleep duration.",
+        "Compare it with the separate paragraph on academic results.",
+        "Choose the option that preserves both findings.",
       ],
-      hint: "One result is described in superlative terms.",
+      hint: "Keep the pattern in each outcome separate before combining them.",
       trap: "Choosing the most-quoted outcome rather than the most robust one.",
     },
     {
       subskill: "reasoning",
       family: "evaluating-a-position",
       difficulty: "Hard",
-      stem: "The passage says state-level mandates have succeeded where district decisions failed chiefly because a mandate:",
+      stem: "The passage presents a state-level requirement as one way to support lasting change chiefly because it:",
       key: "applies to every district at the same time.",
       wrong: [
         ["provides the funding for additional buses.", "No funding is attributed to the legislature in the passage."],
         ["is harder for parents to object to publicly.", "Parental objection is not said to be reduced by a mandate."],
         ["comes with evidence districts had not seen.", "The passage denies that the difficulty is one of ignorance."],
       ],
-      why: "The passage says imposing the change on every district at once \"removes the competitive problem in athletics and forces the transport question to be solved rather than avoided.\"",
+      why: "The passage says a common requirement can address scheduling conflicts between districts and require a coordinated transport response. It offers that as a possible institutional remedy, not a proven explanation of every successful reform.",
       steps: [
         "Find the sentence describing what a mandate accomplishes.",
         "Note both effects it names.",
@@ -209,14 +213,14 @@ difficulty as ignorance is the mistake advocates most often make.`,
       subskill: "synthesize information",
       family: "combining-sections",
       difficulty: "Hard",
-      stem: "The account of quiet reversals and the closing paragraph together suggest that adoption fails mainly at the point where:",
+      stem: "The account of possible reversals and the closing paragraph together suggest that adoption can fail where:",
       key: "concentrated costs meet diffuse benefits.",
       wrong: [
         ["the biological evidence is challenged by critics.", "The passage says the evidence is not contested."],
         ["parents learn that grades have not improved.", "Reversals are dated to the transport cost in the second year."],
         ["students themselves campaign against the change.", "No student opposition is described anywhere."],
       ],
-      why: "Districts reverse the change once they \"meet the transport cost in the second year,\" and the closing paragraph says the costs are \"concentrated, immediate, and land on a budget line somebody has to defend\" while the benefits are diffuse and later.",
+      why: "The passage describes concentrated transport and scheduling costs alongside benefits spread among students. Together those details explain how an initially adopted policy could prove difficult to sustain.",
       steps: [
         "Note when in the sequence districts reverse the change.",
         "Match that to the description of costs in the final paragraph.",
@@ -250,13 +254,13 @@ difficulty as ignorance is the mistake advocates most often make.`,
       family: "detail-interpretation",
       difficulty: "Easy",
       stem: "The observation that the shift appears in adolescents with no electric light indicates that it is:",
-      key: "not produced by any modern habit.",
+      key: "not solely a result of screens or electric lighting.",
       wrong: [
         ["stronger where there is no electricity.", "No difference in magnitude between populations is reported."],
         ["hard to measure outside rich countries.", "The passage says it has been measured in every population."],
         ["dependent on the season of the year.", "Seasonal variation is not discussed in the passage."],
       ],
-      why: "The passage says the shift \"is not a preference, it is not caused by screens, and it appears in adolescents with no access to electric light at all.\"",
+      why: "The passage points to later adolescent timing without electric lighting. That rules out a solely lighting-based explanation; it does not rule out every possible influence of modern habits.",
       steps: [
         "Find the sentence listing what the shift is not.",
         "Note what the final clause is offered to rule out.",

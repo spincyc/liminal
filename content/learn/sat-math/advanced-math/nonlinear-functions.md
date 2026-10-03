@@ -12,9 +12,10 @@ and falls around a vertex, an exponential grows by a constant factor, a
 polynomial can turn several times. This skill asks you to read these
 functions from equations, tables and graphs, and to interpret them in
 context. It is part of Advanced Math, {{fact:sat-math-advanced}} of the Math
-section. Hard questions pin a quadratic down from indirect conditions,
-rewrite an exponential for a new period, or build one function from another
-function's table or graph.
+section. Medium questions use graph features to determine a quadratic,
+rewrite an exponential for a new period, or apply a factor or remainder
+condition. Hard questions combine information across representations or
+distinguish what must be true from what merely could be true.
 
 ## Quadratic functions {#quadratic-functions}
 
@@ -182,14 +183,17 @@ Transformations move a graph without changing its shape:
 > **Trap.** Shifting right for f(x + 3). Inside the parentheses the shift
 > goes the opposite way from the sign: f(x + 3) moves left.
 
-## What Hard looks like {#hard}
+## Building toward Hard {#hard}
+
+The first three tasks below are Medium applications of familiar rules.
+They prepare you to combine conditions in Hard questions.
 
 - A quadratic pinned down by indirect conditions. A vertex points to a(x − h)² + k, zeros to a(x − r)(x − s), and two inputs with equal outputs to an axis of symmetry halfway between them. Choose the form first, then let one more point fix a.
-- A parabola described in words and statements about the signs of a, b, c, h and k: which must, could or cannot be true. Turn each fact into a sign, and test a "must" by trying to build a counterexample (see [signs of the constants](#signs-from-the-graph)).
 - An exponential rewritten for a different period. The base applies once per period, so a new period raises the base to a power; the percent never scales along with the period.
-- A function built from another one given as a table or a graph, such as g(x) = f(x − 2) + 3. Find the input f actually receives (inside changes go opposite to their sign), read f there, and apply the outside change last.
 - Factor and remainder conditions. x − a is a factor exactly when p(a) = 0, and the remainder on division by x − a is p(a). Only a stated zero forces a factor.
-- A graph matched to its definition. Test each candidate against every feature: its zeros and whether the graph crosses or touches there, the y-intercept, the end behavior, and any level it approaches.
+- For Hard sign questions, distinguish statements that must, could or cannot follow from a graph description. Turn each fact into a sign, and test a "must" by trying to build a counterexample (see [signs of the constants](#signs-from-the-graph)).
+- For a Hard transformation question, recover a quadratic's missing vertex from a table before applying the transformation. Equal outputs locate the axis, but the minimum may be between the listed rows. A direct lookup in a table or a graph is a Medium application.
+- Match a graph to its definition using all its features: zeros and whether it crosses or touches there, the y-intercept, end behavior, and any level it approaches. Hard questions require reconciling several features; recognizing one familiar curve alone is routine.
 
 > **Example.** A quadratic f has f(1) = f(7), a minimum value of −9, and
 > f(0) = 7. What is f(x)?

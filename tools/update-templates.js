@@ -1,67 +1,82 @@
 #!/usr/bin/env node
 "use strict";
 
-// Keeps each section's template registry (content/templates/<section>.json)
-// in step with its families. Every template owns a permanent bit: new
-// templates are appended with the next bit, a template that disappears is
-// marked retired and keeps its bit, and nothing is ever renumbered, so a
-// stored run or history mask always means the same templates.
-//
-// Each entry also carries the template's `version` and `fingerprint` (a hash
-// of what it builds for fixed seeds; tools/lib/fingerprint.js). When a live
-// template's fingerprint changes, its version goes up by one: an old question
-// id or run code then rebuilds a different question, and the version tells
-// which one a stored attempt saw. A missing version means 1. The rules live
-// in tools/lib/registry.js.
-//
+// Permanent bits and conservative source versions. Legacy sampled hashes need
+// an explicit migration against the unchanged source tree that produced them:
+//   node tools/update-templates.js --rehash --baseline <old-source-root>
+// The baseline's eight-seed hashes must match the registry. A source difference
+// from that baseline bumps the version even if all eight samples still match.
+// `--rehash` never suppresses a change to an already migrated source hash.
 //   node tools/update-templates.js           # append, retire, re-version
-//   node tools/update-templates.js --check   # fail if a registry is stale
+//   node tools/update-templates.js --check   # fail if any registry is stale
 
 const fs = require("node:fs");
 const path = require("node:path");
-const { instantiate } = require("../src/lib/families/shared");
-const { templateFingerprint } = require("./lib/fingerprint");
+const { SOURCE_ALGORITHM, templateFingerprint, sectionFingerprints, canonicalJson } = require("./lib/fingerprint");
 const { registryProblems, updateRegistry } = require("./lib/registry");
+const { TEMPLATE_SECTIONS } = require("./lib/families");
 
 const ROOT = path.resolve(__dirname, "..");
-const CHECK = process.argv.includes("--check");
-const SECTIONS = {
-  "sat-math": "src/lib/families/sat/math/index.js",
-  "sat-reading-writing": "src/lib/families/sat/reading-writing/index.js",
-};
 
-function registryPath(sectionKey) {
-  return path.join(ROOT, "content", "templates", `${sectionKey}.json`);
-}
+function main(args = process.argv.slice(2)) {
+  let check = false;
+  let rehash = false;
+  let baselineRoot = null;
+  for (let index = 0; index < args.length; index += 1) {
+    const arg = args[index];
+    if (arg === "--check") check = true;
+    else if (arg === "--rehash") rehash = true;
+    else if (arg === "--baseline" && args[index + 1] && !args[index + 1].startsWith("--")) baselineRoot = path.resolve(args[++index]);
+    else throw new Error(`Unknown or incomplete option: ${arg}`);
+  }
+  if (rehash !== Boolean(baselineRoot)) throw new Error("Migration needs both --rehash and --baseline <old-source-root>");
+  if (baselineRoot && fs.realpathSync(baselineRoot) === fs.realpathSync(ROOT)) {
+    throw new Error("The migration baseline must be a separate unchanged source tree");
+  }
 
-function loadRegistry(sectionKey) {
-  const file = registryPath(sectionKey);
-  if (!fs.existsSync(file)) return { sectionKey, templates: [] };
-  return JSON.parse(fs.readFileSync(file, "utf8"));
-}
+  // Prepare every section first. A malformed registry or failed migration must
+  // not leave the preceding section half-updated on disk.
+  const updates = TEMPLATE_SECTIONS.map((sectionKey) => {
+    const file = path.join(ROOT, "content/templates", `${sectionKey}.json`);
+    const previous = fs.existsSync(file)
+      ? JSON.parse(fs.readFileSync(file, "utf8")) : { sectionKey, templates: [] };
+    if (previous.sectionKey !== sectionKey) throw new Error(`${file}: wrong sectionKey`);
+    const errors = registryProblems(previous);
+    if (errors.length) throw new Error(`${sectionKey}: ${errors.join("; ")}`);
+    const current = sectionFingerprints(ROOT, sectionKey);
+    const baseline = baselineRoot ? sectionFingerprints(baselineRoot, sectionKey) : null;
+    const baselineFamilies = new Map((baseline ? baseline.families : []).map((family) => [family.id, family]));
+    const result = updateRegistry(previous, current.families,
+      (family) => current.fingerprints.get(family.id), {
+        algorithm: SOURCE_ALGORITHM,
+        rehash,
+        baselineOf: (id) => baselineFamilies.has(id) ? {
+          source: baseline.fingerprints.get(id),
+          legacy: templateFingerprint(baselineFamilies.get(id), baseline.instantiate),
+        } : null,
+      });
+    return { sectionKey, file, ...result, stale: canonicalJson(previous) !== canonicalJson(result.registry) };
+  });
 
-let failed = false;
-for (const [sectionKey, indexFile] of Object.entries(SECTIONS)) {
-  const families = require(path.join(ROOT, indexFile));
-  const { registry, changes } = updateRegistry(
-    { sectionKey, ...loadRegistry(sectionKey) },
-    families,
-    (family) => templateFingerprint(family, instantiate),
-  );
-  const errors = registryProblems(registry);
-  errors.forEach((error) => console.error(`${sectionKey}: ${error}`));
-  if (errors.length) failed = true;
-  const active = registry.templates.filter((entry) => !entry.retired).length;
-  if (CHECK) {
-    if (changes.length) {
-      console.error(`${sectionKey}: registry is stale (${changes.length} changes); run node tools/update-templates.js`);
+  let failed = false;
+  for (const { sectionKey, file, registry, changes, stale } of updates) {
+    const active = registry.templates.filter((entry) => !entry.retired).length;
+    if (check && stale) {
+      console.error(`${sectionKey}: registry is stale (${changes.length} template changes); run node tools/update-templates.js`);
       changes.slice(0, 5).forEach((change) => console.error(`  ${change}`));
       failed = true;
-    } else console.log(`${sectionKey}: ${active} templates registered.`);
-    continue;
+    } else if (check) console.log(`${sectionKey}: ${active} templates registered.`);
+    else {
+      fs.writeFileSync(file, `${JSON.stringify(registry, null, 2)}\n`);
+      console.log(`${sectionKey}: ${active} templates; ${changes.length} changes.`);
+      changes.slice(0, 5).forEach((change) => console.log(`  ${change}`));
+    }
   }
-  fs.writeFileSync(registryPath(sectionKey), `${JSON.stringify(registry, null, 2)}\n`);
-  console.log(`${sectionKey}: ${active} templates${changes.length ? `; ${changes.length} changes` : ""}.`);
-  changes.slice(0, 5).forEach((change) => console.log(`  ${change}`));
+  return failed ? 1 : 0;
 }
-process.exit(failed ? 1 : 0);
+
+if (require.main === module) {
+  try { process.exitCode = main(); }
+  catch (error) { console.error(error.message); process.exitCode = 1; }
+}
+module.exports = { main };

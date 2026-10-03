@@ -12,8 +12,9 @@ ask how they relate: where the authors agree, where they differ, or how one
 author would respond to the other. The skill is part of Craft and Structure,
 {{fact:sat-rw-craft}} of the Reading and Writing section. The pair together
 stays within {{fact:sat-rw-passage-words}} words, but you must hold two
-positions at once, so budget a little more time here. Hard versions pair
-texts that agree on the facts and disagree about what they mean.
+positions at once, so budget a little more time here. In Hard versions,
+tracking who holds a claim and exactly what its evidence establishes can
+matter as much as recognizing agreement or disagreement.
 
 ## Agreement {#agreement}
 
@@ -159,9 +160,52 @@ Text 1. The correct choice is a direct application, not a new argument.
 > choice that describes Text 1's view as Text 2's. After choosing, spend five
 > seconds checking that each view is attached to the right text.
 
+### Separate the writer from a cited view {#writer-and-source}
+
+A passage can report a critic’s position and then partly accept or reject it.
+Before relating two texts, assign each claim to a speaker. Words such as
+“however” may mark the writer’s reply to a source rather than a disagreement
+with the other passage.
+
+> **Example.** Read the texts and answer the question.
+>
+> Text 1: A biographer treats Sen’s diary as the truth behind her public
+> speeches. Sen expected the diary to be preserved, however, so I would not
+> assume it exposes her private motives. It can still reveal the image she
+> wished later readers to accept.
+>
+> Text 2: Some historians reject any account written with an audience in
+> mind. That discards useful evidence. A planned account may be unreliable
+> about secret motives yet revealing about its author’s intended reputation.
+>
+> How would the writer of Text 2 most likely respond to the first writer’s
+> proposed use of Sen’s diary?
+>
+> A) Accept it as evidence of an intended image without assuming it reveals private motives.
+>
+> B) Reject it because a document prepared for readers cannot supply historical evidence.
+>
+> C) Accept it because an intended image is necessarily an accurate account of private motives.
+>
+> D) Reject it because the diary contradicts Sen’s public speeches.
+>
+> Text 1 reports the biographer’s claim but proposes a narrower use. Text 2
+> reports a skeptical claim but rejects its blanket dismissal. The writers
+> agree that intended image and private motives are different questions, so
+> A is correct. B assigns the cited historians’ view to the second writer.
+> C erases the distinction both writers make. D invents a reason the second
+> writer never gives.
+
+> **Fails when.** A writer endorses the cited view. Attribution alone does
+> not make a statement a distractor; check whether the surrounding sentences
+> adopt, qualify, or reject it.
+
 ## What Hard looks like {#hard}
 
-- Texts that agree on what happened and disagree on why, so both "agree" and "disagree" choices look half right.
-- An "agree" question whose wrong choices are each author's thesis and neutral-sounding details that only one text states (see [common ground needs both texts](#common-ground)).
-- A Text 2 that limits Text 1 (true only in some conditions), with one choice overstating that as a rejection.
-- Formal, academic language, and a question about a specific finding in Text 1 rather than its general claim.
+Recognizing a shared fact or applying one explicitly stated condition can be
+Medium. Hard versions require finer distinctions:
+
+- A shared premise is embedded in different arguments, and close choices confuse agreement on that premise with agreement on its implications.
+- A writer accepts evidence but questions a particular inference; the choices preserve different parts of that distinction.
+- A condition has to be applied to a new case while keeping necessary evidence separate from sufficient evidence.
+- Each writer quotes or qualifies another view, so the response depends on identifying both the speaker and the exact scope of the claim.

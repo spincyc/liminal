@@ -11,7 +11,7 @@ a spiral reel, and anyone who can see well enough to watch the winding
 
 [2] {3} The loaded reel {4 goes} into a light-tight tank. Once the lid is on,
 the rest of the work can be carried out in a lit {5 room, that is why the tank
-exists:} it is the only step that has to be done {6 blind and without any light
+exists:} loading the reel is the only step that has to be done {6 blind and without any light
 at all}.
 
 [3] Then comes the developer, which converts the exposed silver halide crystals
@@ -43,18 +43,22 @@ strip of grey plastic.`,
       key: "darkness and has",
       noChange: "A comma before 'and' needs a second subject after it, and none appears.",
       wrong: [
-        ["darkness; and has", "A semicolon must join independent clauses, and 'has to be done' is not one."],
-        ["darkness, and it has", "Adding a subject fixes the comma but repeats a subject the sentence already has."],
+        [
+          "darkness; although has",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "darkness, and having",
+          "The participle 'having' is not parallel to the finite verb 'happens' in this compound predicate."
+        ]
       ],
-      why:
-        "'Happens' and 'has' share the subject 'The first part,' so they form a compound predicate, " +
-        "which takes no comma before its conjunction.",
+      why: "'Happens' and 'has' share the subject 'The first part,' so they form a compound predicate, which takes no comma before its conjunction.",
       steps: [
         "Look for a subject after 'and.' There is none.",
-        "Remove the comma.",
+        "Remove the comma."
       ],
       hint: "Ask whether the words after 'and' could stand alone as a sentence.",
-      trap: "The subject is long, so the sentence pauses naturally right where the comma sits.",
+      trap: "The subject is long, so the sentence pauses naturally right where the comma sits."
     },
     {
       number: 2,
@@ -283,26 +287,24 @@ strip of grey plastic.`,
       wrong: [
         [
           "combined, fixer left in the emulsion will stain the negatives brown over the following decades.",
-          "A comma alone between two independent clauses is a splice.",
+          "A comma alone between two independent clauses is a splice."
         ],
         [
-          "combined: fixer left in the emulsion will stain the negatives brown over the following decades.",
-          "A colon introduces an explanation, but the second clause states the consequence of skimping.",
+          "combined; although fixer left in the emulsion will stain the negatives brown over the following decades.",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "combined and fixer left in the emulsion will stain the negatives brown over the following decades.",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "Both clauses are complete and equally weighted — how long the wash takes, and what happens " +
-        "when it is cut short. A semicolon joins equals without subordinating either.",
+      why: "Both clauses are complete and equally weighted — how long the wash takes, and what happens when it is cut short. A semicolon joins equals without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or balances it. It balances.",
+        "Ask whether the second explains the first or balances it. It balances."
       ],
       hint: "Two full sentences of similar weight are what a semicolon is for.",
-      trap: "The second clause supplies a reason, which points the eye toward a colon.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 12,

@@ -171,5 +171,10 @@ the text keeps the line's view or turns away from it.
 ## What Hard looks like {#hard}
 
 - Texts that turn twice (a view, an objection, a reply), so the underlined sentence's job depends on which turn it belongs to.
-- Literary texts where a sentence's function is to show a character's attitude or to shift the mood, or to state a view that the ending revises; a choice that takes that view at face value is the trap (see [a line in a poem or story](#literary-function)).
-- Four choices built from the same verbs, where only the object distinguishes them.
+- Several voices or competing explanations, with a sentence that limits one claim while preserving another. A quoted critic’s objection may be considered without becoming the writer’s own conclusion.
+- A method that answers one problem but leaves another unresolved: for example, converting old wages into silver does not by itself show what those wages could buy.
+- Plausible choices that differ in what the evidence establishes, whose claim it addresses, or how much of a conclusion it supports.
+
+A clear earlier-view/later-reversal pattern in a poem can be Medium. Follow
+the actual relationship between the parts; literary language alone does not
+make the reasoning Hard.

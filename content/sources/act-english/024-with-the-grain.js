@@ -11,7 +11,7 @@ grain and badly across it. Everything else in bookbinding follows from that.
 [2] {3} The sheets {4 are folded} into signatures, usually four nested together
 to make sixteen pages. The grain has to run head to tail, parallel to the spine.
 A book gathered against the grain will not lie {5 open, the pages cockle} in
-damp weather, and no amount of care later in the process will correct it.
+damp weather despite careful sewing and fitting later in the process.
 
 [3] The signatures are sewn onto tapes. A needle goes in at one station and out
 at the next, catching the tape as it passes, so that every signature is tied to
@@ -137,23 +137,21 @@ open at all.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "open, the pages cockling",
-          "The participle leaves the second clause without a main verb of its own.",
+          "open; the pages cockling",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
         ],
         [
-          "open; and the pages cockle",
-          "A semicolon and a coordinating conjunction do the same job, so both together is redundant.",
-        ],
+          "open; although the pages cockle",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ]
       ],
-      why:
-        "The sentence lists three consequences joined by 'and' at the end, so the first two have to " +
-        "be joined the same way for the series to hold.",
+      why: "The book failing to lie open and its pages cockling are two independent clauses. A comma plus the coordinating conjunction joins them; commas alone cannot do that.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Match the joining used later in the same sentence.",
+        "Identify the subject and finite verb of each clause.",
+        "Keep the comma and coordinating conjunction together at their boundary."
       ],
       hint: "Look at how the third item in this sentence is attached, then match it.",
-      trap: "The sentence is long enough that the splice sits far from the 'and' that fixes it.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -237,23 +235,21 @@ open at all.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "curve: backing splays the outermost signatures",
-          "A colon introduces an explanation, but the second clause describes a separate operation.",
+          "curve; although backing splays the outermost signatures",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "curve and backing splays the outermost signatures",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The sentence defines two operations in parallel — what rounding does and what backing does. " +
-        "A semicolon joins equals and keeps the pairing visible.",
+      why: "The sentence defines two operations in parallel — what rounding does and what backing does. A semicolon joins equals and keeps the pairing visible.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or matches it. It matches.",
+        "Ask whether the second explains the first or matches it. It matches."
       ],
       hint: "The sentence names two operations that were introduced together.",
-      trap: "The clauses are short, which makes a comma feel sufficient.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 10,

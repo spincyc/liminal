@@ -1,19 +1,21 @@
 "use strict";
 
+// Fact-check: Rugg (1941), Experiments in Wording Questions: II: https://doi.org/10.1086/265467
+// Fact-check: No numerical results are reproduced; the passage describes the direction of the wording effect.
+
 module.exports = {
   id: "act-reading-p017",
   type: "social-science",
   title: "The Question Behind the Answer",
-  intro: "This passage is adapted from an article on the design of opinion surveys.",
-  content: `In 1940 the American researcher Hadley Cantril ran a demonstration that has been
-repeated in some form ever since. He put two versions of the same question to two matched
+  intro: "This original passage discusses the design of opinion surveys.",
+  content: `A survey experiment reported by Donald Rugg in 1941 used a design that has been
+repeated in some form ever since. Researchers put two versions of the same question to two matched
 samples. One asked whether the United States should *forbid* public speeches against
 democracy. The other asked whether the United States should *allow* such speeches. If the
 two words are opposites, the answers should mirror each other: whatever share says forbid
-should match the share that says do not allow. They did not. About fifty-four per cent
-refused to forbid, but only twenty-five per cent were willing to allow. Roughly a fifth of
-the sample took what looks like both positions at once, depending on which verb they were
-handed.
+should match the share that says do not allow. They did not. More respondents opposed allowing the speeches than favoured forbidding them.
+The comparison was between two groups answering logically equivalent versions. Each respondent saw one version,
+so the result does not show anyone personally answering both ways.
 
 Nothing was wrong with the sample. The gap is a property of the words. *Forbid* carries a
 weight that *allow* does not; a respondent who is uneasy about the speeches may still balk
@@ -23,12 +25,12 @@ subjects from firearms to advertising, and it is one of the most reliable findin
 field.
 
 It is also only one of several such effects, and the others are less dramatic and harder to
-avoid. Respondents asked to agree or disagree with a statement agree more often than they
-disagree, whatever the statement says; put the same proposition negatively and a portion of
+avoid. Respondents asked to agree or disagree can show a tendency towards agreement
+beyond their underlying view of the statement; put the same proposition negatively and a portion of
 the same people will agree with that too. Questions asked earlier in an interview change the
 answers to questions asked later, because the first question tells the respondent what the
 survey is about and what sort of person is being described. Offering an explicit "no
-opinion" option can move the reported split by twenty points, since a respondent with a weak
+opinion" option can change the reported split substantially, since a respondent with a weak
 view will take the exit if one is provided and will otherwise pick a side.
 
 The natural response is to conclude that surveys measure nothing, and that response is
@@ -51,9 +53,9 @@ population that has not made up its mind rather than at an instrument that has f
 The habit that survives all this is the practice of reporting a single percentage to one
 decimal place, with a margin of error attached that describes only sampling. That margin is
 honest as far as it goes. It quantifies the risk that this sample differs from the
-population. It says nothing whatever about the risk that a different verb would have moved
-the figure twenty times as far, and on most contested topics that is the larger of the two
-risks by a wide margin.`,
+population. It says nothing whatever about the risk that a different verb might have moved
+the figure substantially. That additional source of uncertainty cannot be read from
+the sampling margin alone.`,
   questions: [
     {
       subskill: "main idea",
@@ -71,25 +73,25 @@ risks by a wide margin.`,
         "Note what the opening experiment is used to establish.",
         "Check that the option covers the model offered in the fourth paragraph.",
       ],
-      hint: "The examples all vary one thing and hold the sample constant.",
+      hint: "Compare which part of the wording changes between matched samples.",
     },
     {
       subskill: "locate detail",
       family: "stated-detail",
       difficulty: "Easy",
-      stem: "According to the passage, in Cantril's demonstration the share of respondents willing to allow the speeches was about:",
-      key: "twenty-five per cent.",
+      stem: "According to the passage, Rugg's two versions of the question differed in whether respondents were asked about:",
+      key: "forbidding speeches or allowing them.",
       wrong: [
-        ["fifty-four per cent.", "That is the share who refused to forbid the speeches, which is the other version."],
-        ["twenty per cent.", "A fifth is the size of the gap between the two versions, not a reported share."],
-        ["forty-six per cent.", "This figure appears nowhere; it would be the complement of the refusing share."],
+        ["supporting democracy or opposing it.", "Both versions concerned speeches against democracy; the changed element was the action proposed toward those speeches."],
+        ["public speeches or private conversations.", "Both versions asked about public speeches."],
+        ["a national policy or a local policy.", "Both versions concerned the United States."],
       ],
-      why: "The first paragraph says \"about fifty-four per cent refused to forbid, but only twenty-five per cent were willing to allow.\"",
+      why: "The opening paragraph contrasts a version asking about forbidding public speeches against democracy with one asking about allowing such speeches.",
       steps: [
-        "Find the sentence giving both percentages.",
-        "Match each number to the verb it belongs with.",
+        "Locate the two versions of the question in the opening paragraph.",
+        "Identify which action word changes between them.",
       ],
-      hint: "Two numbers appear in one sentence; take the one after *allow*.",
+      hint: "The two verbs are italicised.",
     },
     {
       subskill: "cause and effect",
@@ -102,7 +104,7 @@ risks by a wide margin.`,
         ["have strong views will restate them more forcefully.", "The effect is attributed to weak views, not to strengthening firm ones."],
         ["misunderstand the question will ask for a repetition.", "Comprehension problems are never raised as a source of the shift."],
       ],
-      why: "The third paragraph says the option \"can move the reported split by twenty points, since a respondent with a weak view will take the exit if one is provided and will otherwise pick a side.\"",
+      why: "The passage explains that an explicit no-opinion option changes the split because someone with a weak view may use that option instead of choosing a side.",
       steps: [
         "Locate the sentence about the no-opinion option.",
         "Read the clause introduced by *since*.",
@@ -113,17 +115,17 @@ risks by a wide margin.`,
       subskill: "interpret detail",
       family: "detail-interpretation",
       difficulty: "Easy",
-      stem: "The observation that a fifth of the sample \"took what looks like both positions at once\" indicates that those respondents:",
-      key: "answered differently depending on the verb used.",
+      stem: "The difference between the two matched samples indicates that:",
+      key: "equivalent logical formulations produced different group response rates.",
       wrong: [
-        ["gave contradictory answers within a single interview.", "Each respondent saw only one version; the two versions went to matched samples."],
-        ["refused to answer either version of the question.", "The share described gave answers; refusal is not what the passage reports."],
-        ["changed their minds over the course of the study.", "No respondent is described as being asked twice or as revising a view."],
+        ["individual respondents contradicted themselves within the same interview.", "Each respondent received one version; the comparison is between groups."],
+        ["both groups refused to answer the question they received.", "The passage reports substantive answers, not a refusal to participate."],
+        ["respondents changed their minds after hearing the second version.", "The design does not ask the same respondents both versions."],
       ],
-      why: "The paragraph says the two versions went to \"two matched samples,\" and that the share of the sample in question shifted \"depending on which verb they were handed.\"",
+      why: "The opening paragraph says each group received one wording. Different group response rates under equivalent formulations do not show that any individual answered both versions inconsistently.",
       steps: [
-        "Check how many versions of the question each respondent received.",
-        "Interpret the phrase in light of that design.",
+        "Identify the unit being compared: one sample with another.",
+        "Distinguish a group response rate from an individual change of mind.",
       ],
       hint: "The design compares two groups, not two answers from one person.",
     },
@@ -171,8 +173,8 @@ risks by a wide margin.`,
       key: "limit a criticism to what the figure leaves out.",
       wrong: [
         ["defend the practice of reporting a decimal place.", "The decimal place is named as part of the habit the paragraph is criticising."],
-        ["concede that wording effects are usually very small.", "The paragraph says wording could move a figure twenty times as far."],
-        ["show that sampling risk is the larger of two risks.", "The passage says the opposite on most contested topics."],
+        ["concede that wording effects are usually very small.", "The paragraph says a different verb might move the figure substantially."],
+        ["show that sampling risk is the larger of two risks.", "The passage distinguishes two sources of uncertainty without ranking their size."],
       ],
       why: "The paragraph says the margin \"quantifies the risk that this sample differs from the population\" and then that it \"says nothing whatever\" about wording. The concession fixes what the complaint is about.",
       steps: [
@@ -188,7 +190,7 @@ risks by a wide margin.`,
       stem: "The passage is organised by moving from:",
       key: "a striking effect, to more of them, to an explanation and its use.",
       wrong: [
-        ["a historical experiment, to its critics, to its eventual retraction.", "The Cantril finding is described as reproduced for decades, not retracted."],
+        ["a historical experiment, to its critics, to its eventual retraction.", "The Rugg finding is described as reproduced for decades, not retracted."],
         ["a practical problem, to two rival theories, to a judgement between them.", "Only one model of answering is offered, and no rival theory is stated."],
         ["a general principle, to its exceptions, to a revised version of it.", "The passage begins with a case, not a principle, and states no exceptions."],
       ],
@@ -206,7 +208,7 @@ risks by a wide margin.`,
       stem: "The passage rejects the conclusion that surveys measure nothing on the ground that:",
       key: "a constructed answer is still a real one.",
       wrong: [
-        ["the wording effects are too small to matter in practice.", "The passage calls one of them capable of moving a split by twenty points."],
+        ["the wording effects are too small to matter in practice.", "The passage describes wording as capable of substantially changing the reported split."],
         ["only inexperienced organisations word their questions badly.", "The passage attributes the effects to how answering works, not to incompetence."],
         ["respondents can be trained to answer more consistently.", "No proposal to train or instruct respondents appears in the passage."],
       ],
@@ -225,7 +227,7 @@ risks by a wide margin.`,
       stem: "The recommendation to ask several differently framed questions is supported in the passage by the claim that:",
       key: "an answer depends on what a question makes available.",
       wrong: [
-        ["large samples reduce the risk of a misleading result.", "Sample size addresses sampling error, which the passage says is the smaller risk."],
+        ["large samples reduce the risk of a misleading result.", "Sample size addresses sampling error, not the effects of wording that motivate this recommendation."],
         ["respondents agree with statements more often than they disagree.", "This is one effect to be guarded against, not the reason many questions help."],
         ["the effects have been reproduced across languages and decades.", "Reproducibility establishes that the effects are real, not what to do about them."],
       ],

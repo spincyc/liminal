@@ -14,6 +14,7 @@
   const {
     clean, fitsGrid, usd, distinctWrong, commaChoices, standardForm, sidesOf, round2, commasHard,
     usdHard, commaChoicesHard, distinctWrongHard, lineFrom, commas, money, holds, lineCoefficients, cramer, fitsGridHard,
+    pairedSignChoices,
   } = C;
 
   /* ------------------------------------------------------------- system-word-totals */
@@ -429,11 +430,11 @@
           stimulus: { type: "equations", content: `${standardFormHard(p, q, r)}\n${num(B)}y = ${num(d)} ${MINUS} kx` },
           stem: "In the given system of equations, k is a constant. If the system has no solution, what is the value of k?",
           correct: k,
-          wrong: [
-            [-k, "Keeps kx on the right side, so the coefficient being matched has the wrong sign."],
+          wrong: pairedSignChoices(t, k, [
             [p, "Copies the first equation's x-coefficient without scaling it by the factor that relates the y-coefficients."],
             [B, "Uses the second equation's y-coefficient in place of its x-coefficient."],
-          ],
+            [s * k, "Applies the coefficient scale factor twice instead of once."],
+          ]),
           explanation:
             `Rewrite the second equation as kx ${B < 0 ? MINUS : "+"} ${num(Math.abs(B))}y = ${num(d)}. Its y-coefficient is ${num(s)} times the first ` +
             `equation's, so the lines are parallel exactly when k = ${paren(s)}(${p}) = ${num(k)}. The constant ${num(d)} is not ` +
@@ -468,11 +469,11 @@
           },
           stem: "In the given system of equations, k is a constant. If the system has no solution, what is the value of k?",
           correct: k,
-          wrong: [
-            [-k, "Treats the slope of kx + By = D as k/B instead of −k/B."],
+          wrong: pairedSignChoices(t, k, [
             [p, "Matches the numerator of the slope without scaling to the second equation's y-coefficient."],
             [B, "Uses the y-coefficient of the second equation as if it were k."],
-          ],
+            [s * k, "Applies the coefficient scale factor twice instead of once."],
+          ]),
           explanation:
             `The first line has slope ${S.frac(-p, q)}. The line kx ${B < 0 ? MINUS : "+"} ${num(Math.abs(B))}y = ${num(D)} has slope ${MINUS}k/${paren(B)}. ` +
             `Parallel lines need ${MINUS}k/${paren(B)} = ${S.frac(-p, q)}, so k = ${num(k)}. Their y-intercepts ` +
@@ -502,12 +503,12 @@
         stimulus: { type: "equations", content: `${standardFormHard(p, q, r)}\nax + by = ${num(D)}` },
         stem: "In the given system of equations, a and b are constants. If the system has infinitely many solutions, what is the value of a + b?",
         correct: a + b,
-        wrong: [
+        wrong: pairedSignChoices(t, a + b, [
           [p + q, "Adds the first equation's coefficients without scaling them to match the constant."],
           [s * (p - q), "Loses the sign of the y-coefficient while scaling."],
           [a, "Finds a but stops before adding b."],
-          [-(a + b), "Scales by the opposite factor."],
-        ],
+          [s * (a + b), "Applies the constant scale factor twice instead of once."],
+        ]),
         explanation:
           `Infinitely many solutions means the second equation is a multiple of the first. The constants give the ` +
           `factor: ${num(D)} ÷ ${paren(r)} = ${num(s)}. So a = ${num(a)}, b = ${num(b)}, and a + b = ${num(a + b)}.`,
@@ -1008,185 +1009,99 @@
     return approx(A1 * C2 - A2 * C1, 0) && approx(B1 * C2 - B2 * C1, 0) ? "infinite" : "none";
   }
 
-  // Infinitely many solutions with one unknown coefficient in each equation:
-  // the known constants fix the scale factor, which multiplies one unknown
-  // and divides the other.
-  function scaleConstants(t) {
-    const numeric = t.chance(0.4);
-    const ask = t.pick(["a + b", "a − b"]);
-    for (;;) {
-      const [m, n] = t.pick([[2, 3], [3, 2], [1, 2], [2, 1], [1, 3], [3, 1], [3, 4], [4, 3], [2, 5], [5, 2]]);
-      const P = t.nonzero(-3, 3);
-      const Q = t.nonzero(-3, 3);
-      const R = t.nonzero(-4, 4);
-      // First equation = (m/n) × second equation.
-      const p = n * P;
-      const a = m * P;
-      const q = m * Q;
-      const b = n * Q;
-      const r1 = m * R;
-      const r2 = n * R;
-      if (Math.abs(p) > 12 || Math.abs(q) > 12 || Math.abs(p) === Math.abs(q)) continue;
-      const combine = (x, y) => (ask === "a + b" ? x + y : x - y);
-      // Rational values as [numerator, denominator] over m·n.
-      const over = (x, y) => frac(combine(x, y), m * n);
-      const key = combine(a, b);
-      const aBack = (p * n * n) / 1; // p ÷ (m/n) = pn/m, written over mn: pn·n
-      const bBack = q * m * m; // q × (m/n) = qm/n, written over mn: qm·m
-      const wrong = [
-        [over(aBack, bBack), `Uses ${frac(n, m)}, the second constant over the first, as the multiple, which gives a = ${frac(p * n, m)} and b = ${frac(q * m, n)}.`],
-        ...t.shuffle([
-          [over(aBack, b * m * n), `Finds b, but divides ${num(p)} by the factor ${frac(m, n)} instead of multiplying to get a.`],
-          [over(a * m * n, bBack), `Finds a, but multiplies ${num(q)} by the factor ${frac(m, n)} instead of dividing to get b.`],
-        ]),
-        [combine(p, q), "Matches the coefficients without scaling them, as if the two equations were identical."],
-      ];
-      if (distinctWrongHard(key, wrong) < 3 || hitsKey(key, wrong) || !fitsGridHard(key)) continue;
-      const first = `ax ${q < 0 ? MINUS : "+"} ${Math.abs(q) === 1 ? "" : num(Math.abs(q))}y = ${num(r1)}`;
-      const second = `${lin(p, 0)} + by = ${num(r2)}`;
-      const factor = frac(m, n);
-      return {
-        responseType: numeric ? "numeric" : "multiple-choice",
-        estimatedSeconds: 120,
-        stimulus: { type: "equations", content: `${first}\n${second}` },
-        stem: `In the given system of equations, a and b are constants. If the system has infinitely many solutions, what is the value of ${ask}?`,
-        correct: key,
-        wrong: numeric ? [] : wrong,
-        explanation:
-          `Infinitely many solutions means the first equation is a constant multiple of the second. The constants fix ` +
-          `that multiple: ${num(r1)} ÷ ${paren(r2)} = ${factor}. So a = ${factor} × ${paren(p)} = ${num(a)}, and ` +
-          `${num(q)} = ${factor} × b gives b = ${num(b)}. Then ${ask} = ${num(key)}.`,
-        steps: [
-          "The two equations must describe the same line, so each term of the first is the same multiple of the matching term of the second.",
-          `The constants give the multiple: ${num(r1)} ÷ ${paren(r2)} = ${factor}.`,
-          `x-terms: a = ${factor} × ${paren(p)} = ${num(a)}. y-terms: ${num(q)} = ${/\//.test(factor) ? `(${factor})` : factor}b, so b = ${num(b)}.`,
-          `${ask} = ${num(key)}.`,
-        ],
-        principles: [
-          "Two linear equations have infinitely many common solutions exactly when one is a constant multiple of the other.",
-        ],
-        trap: `The multiple ${factor} goes from the second equation to the first: it multiplies ${num(p)} to give a, but b must be multiplied by it to give ${num(q)}.`,
-        hint: "Compare the two equations term by term, starting where both numbers are known.",
-        verify: () => {
-          // Scan whole-number pairs for the one that makes the displayed system dependent.
-          const found = [];
-          for (let A = -40; A <= 40; A += 1) {
-            for (let B = -40; B <= 40; B += 1) {
-              if (solutionCount(substitute(first, { a: A }), substitute(second, { b: B })) === "infinite") found.push([A, B]);
-            }
-          }
-          return found.length === 1 && combine(found[0][0], found[0][1]) === key;
-        },
-      };
-    }
-  }
-
-  // A given solution turns the system into two equations in the constants.
-  function givenConstants(t) {
-    const ask = t.pick(["a + b", "a − b", "a", "b"]);
-    const numeric = t.chance(0.4);
-    for (;;) {
-      const a = t.nonzero(-9, 9);
-      const b = t.nonzero(-9, 9);
-      const x0 = t.nonzero(-6, 6);
-      const y0 = t.nonzero(-6, 6);
-      if (Math.abs(a) === Math.abs(b) || Math.abs(x0) === Math.abs(y0)) continue;
-      // Constants that equal a coordinate of the solution would reward mixing them up.
-      if ([a, b].some((constant) => constant === x0 || constant === y0)) continue;
-      const P = a * x0 + b * y0;
-      const Q = b * x0 + a * y0;
-      const value = { "a + b": a + b, "a − b": a - b, a, b }[ask];
-      const wrong = {
-        "a + b": [
-          [x0 + y0, `Adds the coordinates of the solution instead of the constants.`],
-          [P + Q, `Adds the two equations, (a + b)(${num(x0 + y0)}) = ${num(P + Q)}, and stops before dividing by ${num(x0 + y0)}.`],
-          [a, "Finds a and stops before adding b."],
-          [b, "Finds b and stops before adding a."],
-        ],
-        "a − b": [
-          [b - a, "Swaps a and b, which reverses the sign of the difference."],
-          [P - Q, `Subtracts the equations, (a ${MINUS} b)(${num(x0 - y0)}) = ${num(P - Q)}, and stops before dividing by ${num(x0 - y0)}.`],
-          [x0 - y0, "Subtracts the coordinates of the solution instead of the constants."],
-          [a, "Finds a and stops before subtracting b."],
-        ],
-        a: [
-          [b, "Swaps the roles of a and b."],
-          [x0, "Gives the x-coordinate of the solution, not the constant a."],
-          [a + b, "Finds a + b and stops."],
-          [-a, "Loses a sign while eliminating b."],
-        ],
-        b: [
-          [a, "Swaps the roles of a and b."],
-          [y0, "Gives the y-coordinate of the solution, not the constant b."],
-          [a + b, "Finds a + b and stops."],
-          [-b, "Loses a sign while eliminating a."],
-        ],
-      }[ask];
-      const offered = [wrong[0], ...t.shuffle(wrong.slice(1))];
-      if (!numeric && (distinctWrongHard(value, offered) < 3 || hitsKey(value, offered))) continue;
-      const first = `ax + by = ${num(P)}`;
-      const second = `bx + ay = ${num(Q)}`;
-      const twoTerms = (c1, v1, c2, v2) => `${lin(c1, 0, v1)} ${c2 < 0 ? MINUS : "+"} ${lin(Math.abs(c2), 0, v2)}`;
-      const plugged = [`${twoTerms(x0, "a", y0, "b")} = ${num(P)}`, `${twoTerms(y0, "a", x0, "b")} = ${num(Q)}`];
-      const shortcut = ask === "a + b"
-        ? `Adding them gives (a + b)(${num(x0 + y0)}) = ${num(P + Q)}, so a + b = ${num(a + b)}.`
-        : ask === "a − b"
-          ? `Subtracting the second from the first gives (a ${MINUS} b)(${num(x0 - y0)}) = ${num(P - Q)}, so a ${MINUS} b = ${num(a - b)}.`
-          : `Solving these two equations gives a = ${num(a)} and b = ${num(b)}.`;
-      return {
-        responseType: numeric ? "numeric" : "multiple-choice",
-        estimatedSeconds: 110,
-        stimulus: { type: "equations", content: `${first}\n${second}` },
-        stem: `In the given system of equations, a and b are constants. If the solution to the system is ${point(x0, y0)}, what is the value of ${ask}?`,
-        correct: value,
-        wrong: numeric ? [] : offered,
-        explanation:
-          `Substituting x = ${num(x0)} and y = ${num(y0)} turns the system into two equations in a and b: ` +
-          `${plugged[0]} and ${plugged[1]}. ${shortcut}`,
-        steps: [
-          `Substitute the solution into each equation: ${plugged[0]}; ${plugged[1]}.`,
-          "Now a and b are the unknowns and the numbers come from the solution.",
-          shortcut,
-        ],
-        principles: [
-          "A solution of a system makes every equation in it true, which gives equations in any unknown constants.",
-        ],
-        trap: "Once the solution is substituted, a and b are the unknowns; the coordinates of the solution are only coefficients.",
-        hint: "Use the given solution to write equations whose unknowns are the constants.",
-        verify: () => {
-          // Search whole-number constants that make the displayed system true at the solution.
-          const found = [];
-          for (let A = -20; A <= 20; A += 1) {
-            for (let B = -20; B <= 20; B += 1) {
-              if (holds(substitute(first, { a: A, b: B }), { x: x0, y: y0 }) &&
-                holds(substitute(second, { a: A, b: B }), { x: x0, y: y0 })) found.push([A, B]);
-            }
-          }
-          if (found.length !== 1) return false;
-          const [A, B] = found[0];
-          return { "a + b": A + B, "a − b": A - B, a: A, b: B }[ask] === value;
-        },
-      };
-    }
-  }
-
+  // Both coefficient ratios depend on a; matching either ratio to a known
+  // number is no longer enough. Cross-products cancel the squared terms,
+  // then the now-known line multiple determines b.
   const twoConstants = {
     id: "system-two-constants",
     domain: "Algebra",
     skill: "Systems of two linear equations",
     subskill: "solve systems",
     difficulty: "Hard",
-    title: "Two unknown constants in a system of linear equations",
+    title: "Coupled coefficient parameters in a dependent linear system",
     recognize:
-      "The constants, not x and y, are the unknowns: infinitely many solutions means one equation is a multiple of " +
-      "the other, with the multiple fixed by a pair of known matching numbers; a known solution turns the system " +
-      "into equations in the constants, which the system's symmetry lets you combine without solving for each.",
-    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+      "An infinite solution set makes the two equations proportional. The same unknown appears in both coefficient " +
+      "ratios, so compare cross-products first, solve their reduced equation, and only then match the constants.",
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 1, abstraction: 2, synthesis: 0, trap: 1 },
     tricks: ["sign-error", "wrong-quantity", "intermediate-value"],
     build(t) {
-      // "No solution, which values of a and c could work" was Medium work
-      // (match one ratio, break another) and was dropped.
-      return t.chance(0.5) ? scaleConstants(t) : givenConstants(t);
+      const askSum = t.chance(0.5);
+      const rearranged = t.chance(0.5);
+      const numeric = t.chance(0.4);
+      for (;;) {
+        const r = t.int(2, 12);
+        const s = t.int(2, 12);
+        if (r === s || (r * s) % (s - r) !== 0) continue;
+        const a = r * s / (s - r);
+        if (Math.abs(a) > 70) continue;
+        const u = t.nonzero(-12, 12);
+        const P = r * u;
+        const b = s * u;
+        const combine = (A, B) => askSum ? A + B : A - B;
+        const key = combine(a, b);
+        if (key === 0) continue;
+        const wrongB = P * r / s;
+        const pool = [
+          [a, "Finds a but stops before combining the two constants."],
+          [b, "Finds b but reports that constant alone."],
+          [combine(-a, b), "Reverses the sign when solving the coefficient condition for a, then uses the constant scale factor."],
+          [combine(a, wrongB), "Uses the reciprocal of the line's scale factor when finding b."],
+          [combine(-a, wrongB), "Reverses the sign of a and uses the reciprocal scale factor for b."],
+          [combine(a, P), "Copies the first equation's constant as b without scaling it."],
+          [combine(a, s * b / r), "Applies the constant scale factor a second time when finding b."],
+        ];
+        // Complete both sign pairs, with the key equally often the inner or
+        // outer magnitude; all four printed answers remain integers.
+        const wrong = pairedSignChoices(t, key, pool);
+        if (!numeric && !wrong) continue;
+        const first = `ax + (a ${MINUS} ${r})y = ${num(P)}`;
+        const second = rearranged
+          ? `ay = b ${MINUS} (a + ${s})x`
+          : `(a + ${s})x + ay = b`;
+        const factor = frac(s, r);
+        const asked = askSum ? "a + b" : `a ${MINUS} b`;
+        const steps = [
+          ...(rearranged ? [`Rewrite the second equation as (a + ${s})x + ay = b.`] : []),
+          `Infinitely many solutions require proportional coefficients: a · a = (a ${MINUS} ${r})(a + ${s}).`,
+          `Expand: a² = a² ${s > r ? "+" : MINUS} ${lin(Math.abs(s - r), 0, "a")} ${MINUS} ${r * s}. Cancel a² to get ${lin(s - r, 0, "a")} = ${r * s}, so a = ${num(a)}.`,
+          `The second equation is (a + ${s})/a = ${num(a + s)}/${paren(a)} = ${factor} times the first. Therefore b = (${factor})(${num(P)}) = ${num(b)}.`,
+          `Then ${asked} = ${num(a)} ${askSum ? "+" : MINUS} ${paren(b)} = ${num(key)}.`,
+        ];
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 135,
+          stimulus: { type: "equations", content: `${first}\n${second}` },
+          stem: `In the given system of equations, a and b are constants. If the system has infinitely many solutions, what is the value of ${asked}?`,
+          correct: key,
+          wrong: numeric ? [] : wrong,
+          explanation: steps.join(" "),
+          steps,
+          principles: [
+            "Infinitely many common solutions require proportional variable coefficients and constants.",
+            "Comparing coefficient cross-products avoids dividing by an unknown that might be zero.",
+          ],
+          trap: "No known coefficient pair gives the scale factor at the start; a must be found before the constants can be matched.",
+          hint: "What must be true of both coefficient ratios when the equations describe the same line?",
+          verify: () => {
+            // Read the displayed coefficients back and reconstruct their
+            // determinant as a function of a, independently of r*s/(s-r).
+            const rows = (A, B) => [first, second].map((line) => lineCoefficients(substitute(line, { a: A, b: B })));
+            const det = (A) => {
+              const [[x1, y1], [x2, y2]] = rows(A, 0);
+              return x1 * y2 - x2 * y1;
+            };
+            const slope = det(1) - det(0);
+            if (slope === 0 || !approx(det(2), det(0) + 2 * slope)) return false;
+            const solvedA = -det(0) / slope;
+            const [[x1, , c1], [x2]] = rows(solvedA, 0);
+            if (x1 === 0) return false;
+            const solvedB = c1 * x2 / x1;
+            return approx(combine(solvedA, solvedB), key) &&
+              solutionCount(substitute(first, { a: solvedA }), substitute(second, { a: solvedA, b: solvedB })) === "infinite" &&
+              solutionCount(substitute(first, { a: solvedA }), substitute(second, { a: solvedA, b: solvedB + 1 })) === "none";
+          },
+        };
+      }
     },
   };
 

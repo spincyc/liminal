@@ -85,3 +85,16 @@ test("an exact fraction key passes through as the numeric answer", () => {
   assert.equal(record.keyEqualDistractors, 0);
   assert.equal(S.instantiate(family({ numeric: true, correct: "7/3" }), 0).correctAnswer, "7/3");
 });
+
+test("verification accepts only an explicit synchronous true", () => {
+  const demo = family({ numeric: true, correct: 3 });
+  const build = demo.build;
+  for (const verdict of [false, "false", 1, {}, Promise.resolve(false), undefined]) {
+    demo.build = () => ({ ...build(), verify: () => verdict });
+    assert.equal(S.instantiate(demo, 0).verified, false);
+  }
+  demo.build = () => ({ ...build(), verify: () => true });
+  assert.equal(S.instantiate(demo, 0).verified, true);
+  demo.build = () => ({ ...build(), verify: undefined });
+  assert.throws(() => S.instantiate(demo, 0), /verif/i);
+});

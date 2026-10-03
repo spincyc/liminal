@@ -11,17 +11,17 @@ These questions ask what a short text mainly says, or what it says about one
 specific point. They belong to Information and Ideas, which is
 {{fact:sat-rw-information}} of the Reading and Writing section. Each text is
 {{fact:sat-rw-passage-words}} words, so you can afford to read every word,
-and you need to: the answer often turns on a single qualifier. Hard versions
-use dense, formal prose, put the main point after a turn in the argument, and
-offer choices that are accurate about part of the text but wrong about the
-whole.
+and you need to: the answer often turns on a single qualifier. Hard versions require combining several findings or parts of an argument;
+choices can be accurate about one part but wrong about the whole. Formal
+wording or a late main point alone does not make a question Hard. The
+examples below are constructed practice passages.
 
 ## Main idea {#main-idea}
 
 Typical stems: "Which choice best states the main idea of the text?" and
 "Which choice best describes the text's central claim?"
 
-1. Read the whole text and find the sentence that makes the claim. In a short text it is often the first or last sentence, or the one right after a turn word such as however, yet or but.
+1. Read the whole text and identify its claim. It may be stated in one sentence, often near a turn such as however or yet, or emerge from several findings taken together.
 2. Say the main idea to yourself in under ten words before looking at the choices.
 3. Cross out choices about one detail rather than the whole.
 4. Cross out choices broader than the text: a whole field when the text describes one study.
@@ -114,6 +114,12 @@ same: find the turn and choose the statement that covers the whole text.
 > needs. D invents a complaint about the price, which the text calls fair.
 > C is correct.
 
+A narrator can also misread another character. Keep the initial judgment
+separate from the actions described later, and check the narrator’s own
+response. Evidence of real generosity need not rule out pride; a useful
+intervention can still impose a cost. The main idea may preserve that
+tension rather than simply reverse the narrator’s first judgment.
+
 ### Main idea in a dense argument {#dense-argument}
 
 Academic texts pack a whole argument into three or four long sentences.
@@ -175,9 +181,9 @@ Typical stems: "According to the text, what is true about ...?" and "Based on
 the text, why did the researchers ...?"
 
 1. Note exactly what the question asks about.
-2. Find the sentence in the text that addresses it.
-3. Read that sentence and the one after it, since qualifications often come next.
-4. Choose the answer the text actually states. On a detail question a close paraphrase of the text is a good sign; a reasonable-sounding extension is not.
+2. Find every observation needed to answer it. Some questions ask for a pattern across several groups or measurements.
+3. Keep each result attached to the right group, period, and measure, including any qualifications.
+4. Choose the answer that accurately combines those observations. A reasonable-sounding extension beyond them is not a reported finding.
 
 > **Example.** Read the text and answer the question.
 >
@@ -248,11 +254,13 @@ its limits. Match the question's verb:
 
 ## What Hard looks like {#hard}
 
-- The text's main point arrives late, after a concession, and three choices describe the concession accurately.
-- The claim is hedged ("may", "in some populations"), and the wrong choices drop the hedge or widen the scope.
-- A literary text where the central idea is a character's changing attitude, and choices overstate the emotion.
-- A dense academic argument whose wrong choices are the view the author reports, a step or the evidence, and the conclusion pushed a step too far (see [main idea in a dense argument](#dense-argument)).
-- A question about what a researcher found, with choices that give the view she tests, her conclusion instead of her evidence, or her finding without its limit (see [what a researcher found](#finding-or-conclusion)).
+- Several findings support different parts of an interpretation. The answer must explain their relationship and retain the limits of each.
+- A measurement changes meaning across records or groups, so similar-looking results cannot be combined without checking what was counted.
+- A detail question asks for a pattern across multiple conditions; each wrong choice preserves some observations while swapping a group, reversing a relationship, or extending the result.
+- A literary interpretation depends on several actions whose meaning changes when read together, with plausible alternatives that also fit part of the passage.
+
+A qualifier, a long sentence, or an unfamiliar topic can appear at any level.
+Difficulty comes from the reasoning needed to distinguish the choices.
 
 Most wrong answers in this skill are one of: a detail offered as the main
 idea, the setup offered as the conclusion, a claim stated more strongly than

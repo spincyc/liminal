@@ -42,7 +42,7 @@ const PLAN_FILE = "sat/general/math-plan.md";
 function planPhrases() {
   const { GATE, HARD_BAR, ROUTINE } = Analytics;
   return [
-    `${ROUTINE.correct} of your last ${ROUTINE.window} ${ROUTINE.tiers[0]} questions`,
+    `${ROUTINE.correct} of your last ${ROUTINE.window} ${ROUTINE.tiers.join(" or ")} questions`,
     `${GATE.correct} of your last ${GATE.window} ${GATE.tier} questions`,
     `${HARD_BAR.correct} of your last ${HARD_BAR.window} ${HARD_BAR.tier} questions`,
   ];

@@ -4,9 +4,9 @@ Every US college that considers test scores accepts both, and none prefers one.
 There is no strategic advantage to either in admissions. The only question is
 which one *you* score better on relative to other students.
 
-For most students the difference is small. For a meaningful minority it is
-large — 3-4 ACT points or 100+ SAT points — and those students are leaving real
-score on the table if they pick wrong.
+The tests can suit students differently. Use your performance on fresh
+official practice, the available dates and your comfort with each format
+to make the choice.
 
 > **Verify before you rely on this.** Section timings, the concordance table,
 > and college testing policies change. The facts here were rechecked on
@@ -18,7 +18,8 @@ score on the table if they pick wrong.
 
 ## The short version
 
-Take a timed practice section of each. Compare using the concordance table
+Take a fresh full-length official practice test of each under your expected
+testing conditions. Compare the resulting total/Composite scores using the concordance table
 below. If they're close, take whichever you preferred; if one is clearly better,
 commit to it and stop splitting your prep.
 
@@ -53,9 +54,9 @@ Table A2, checked 2026-09-25).
 **Treat this as approximate, and verify before relying on it.** The
 published concordance predates both the digital SAT redesign and the
 enhanced ACT, and either organization may publish a new one. It remains the standard reference and
-is close enough for choosing a test, but do not treat a one-point or 20-point
-gap as meaningful. A difference worth acting on is roughly **2+ ACT points** or
-**60+ SAT points**.
+can help compare results, but concordance does not predict your individual
+score on the other test. Small differences can reflect ordinary variation;
+if the result is close, consider format preference and another fresh check.
 
 ---
 
@@ -71,9 +72,9 @@ This is the biggest single differentiator.
 | Math | ~95 sec per question | 67 sec per question |
 | Reading | (combined with writing) | 67 sec per question |
 
-**The ACT is a speed test.** Its content is generally more approachable, but you
-have far less time to think. The SAT gives you room to work through harder
-material.
+The ACT gives less time per question, but the tasks and passage structures
+also differ. Compare how accurately you finish each official practice test
+rather than assuming one test's content is easier.
 
 - If you are a **fast, decisive worker** who gets bored and loses focus with
   time to spare → ACT.
@@ -86,9 +87,9 @@ This one factor explains most large gaps between a student's two scores.
 
 The ACT has an optional Science section; the SAT has none. Because it's optional
 and outside the Composite, it no longer forces the choice the way it used to.
-But note that ACT Science is not really a science-knowledge test — it is a
-speed-reading-charts test. Students who love biology sometimes hate it, and
-students who have never taken physics often do fine.
+ACT Science combines data interpretation, experimental reasoning and
+introductory science knowledge. Try official Science practice if that optional
+section matters for your plans; chart-reading speed alone is not enough.
 
 ### Math content and weighting
 
@@ -117,7 +118,7 @@ to like ACT Math. Students who reason well but forget formulas prefer the SAT.
 | Total reading volume | Lower | Higher |
 | Question style | Discrete, analytical, evidence-focused | Detail-location heavy, faster |
 | Vocabulary | Words in context, moderately hard | Lighter |
-| Poetry / literary | Some literary prose | Prose fiction/literary narrative passage |
+| Poetry / literary | Literary prose and poetry can appear | Literary narrative passage |
 
 The SAT's short-passage format suits students who lose the thread in long texts
 or who read slowly but analyze well. The ACT's long-passage format suits fluent,
@@ -180,7 +181,8 @@ different and simpler:
    time to prepare for both formats without diluting either. Sequence them at
    least two weeks apart and prep for them in blocks, not simultaneously.
 4. Either way, check superscoring first. If your schools superscore, a retake
-   can only help, which makes the decision low-risk.
+   cannot lower that school's superscore. Still consider fees, time and
+   the school's reporting requirements.
 
 ---
 

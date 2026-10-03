@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p042",
   type: "humanities",
   title: "What the Camera Was Thought to Do",
-  intro: "This passage is adapted from an essay on photography and evidence.",
+  intro: "This original passage discusses photography and evidence.",
   content: `The idea that a photograph is evidence in a way a drawing is not rests on a single
 feature: the light that left the object entered the camera. Whatever else is true of the
 image, something was there, and it reflected light, and the light did this. An artist's
@@ -131,19 +131,19 @@ questions worked on Fenton's road, and they are the only ones that have ever wor
       subskill: "logical inference",
       family: "supported-inference",
       difficulty: "Medium",
-      stem: "The passage implies that if only one Fenton exposure had survived, historians would:",
-      key: "have had no way to raise the question at all.",
+      stem: "If only one Fenton exposure had survived, which evidence used in the 2007 analysis would have been unavailable?",
+      key: "The changes in small stones between the two exposures.",
       wrong: [
-        ["have accepted the arranged version as authentic.", "Which version would have survived is not specified."],
-        ["have used the stones to date it in any case.", "The stone evidence works only by comparing two exposures."],
-        ["have relied on Fenton's own written account.", "No written account by Fenton is mentioned in the passage."],
+        ["The light reflected from objects in front of the camera.", "The surviving image would still be a physical trace."],
+        ["The position of cannonballs visible within the surviving road scene.", "One image can still show the cannonballs within its own frame."],
+        ["The appearance of the hillside within the surviving photograph's frame.", "The hillside would remain visible; the missing evidence is its change between exposures."],
       ],
-      why: "The dispute arises only because two images of one place differ, and it was resolved by comparing stones \"between the two exposures.\"",
+      why: "The passage supports this conclusion: The stone comparison requires two exposures to establish movement between them. A single photograph could still prompt questions or be compared with other records, but it could not supply this paired comparison.",
       steps: [
-        "Note what makes the arrangement question visible at all.",
-        "Ask what the 2007 method required in order to work.",
+        "Identify what the 2007 method compares.",
+        "Distinguish the missing comparison from evidence still present in one image.",
       ],
-      hint: "Both the question and its answer depend on there being a pair.",
+      hint: "Focus on the evidence this particular method needs.",
     },
     {
       subskill: "function",
@@ -206,7 +206,7 @@ questions worked on Fenton's road, and they are the only ones that have ever wor
       family: "evaluating-a-position",
       difficulty: "Hard",
       stem: "The passage's account of the 2007 finding is used to make the point that the answer:",
-      key: "came from reasoning applied to the images, not from them.",
+      key: "required physical reasoning as well as the two images.",
       wrong: [
         ["proved that Fenton had arranged the scene deliberately.", "The passage reports the order settled without stating which came first."],
         ["showed that photographs are less reliable than testimony.", "The passage recommends testimony among several ordinary means."],

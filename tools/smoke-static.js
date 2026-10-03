@@ -4,6 +4,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
+const { templateParityProblems } = require("./lib/template-parity");
 
 // Smoke-tests the built site in dist/, exactly what GitHub Pages serves.
 // Run `npm run build` first.
@@ -113,10 +114,13 @@ for (const section of catalog.sections) {
 const corePath = path.join(root, "lib", "core.js");
 const coreModule = { exports: {} };
 vm.runInContext(
-  `(function (module, exports) {\n${fs.readFileSync(corePath, "utf8")}\n})`,
+  `(function (module, exports, require) {\n${fs.readFileSync(corePath, "utf8")}\n})`,
   context,
   { filename: corePath },
-)(coreModule, coreModule.exports);
+)(coreModule, coreModule.exports, (name) => {
+  if (name !== "../../content/catalog.json") throw new Error(`Unexpected core dependency ${name}`);
+  return catalog;
+});
 const practiceCore = coreModule.exports;
 
 if (!Array.isArray(practiceCore.MINI_TEST_BLUEPRINTS) ||
@@ -124,6 +128,7 @@ if (!Array.isArray(practiceCore.MINI_TEST_BLUEPRINTS) ||
   throw new Error("core.js did not export any mini test blueprints.");
 }
 for (const blueprint of practiceCore.MINI_TEST_BLUEPRINTS) {
+  if (!practiceCore.blueprintAvailable(blueprint)) continue;
   const bankBySection = {};
   for (const entry of blueprint.sections) {
     const bank = context.window.PRACTICE_BANKS[entry.sectionKey];
@@ -297,6 +302,7 @@ vm.runInContext(
 const practiceBooklet = bookletModule.exports;
 
 for (const blueprint of practiceCore.FULL_TEST_BLUEPRINTS) {
+  if (!practiceCore.blueprintAvailable(blueprint)) continue;
   const bankBySection = {};
   for (const entry of blueprint.sections) {
     bankBySection[entry.sectionKey] = context.window.PRACTICE_BANKS[entry.sectionKey];
@@ -372,14 +378,13 @@ for (const sectionKey of ["sat-math", "sat-reading-writing"]) {
   vm.runInContext(fs.readFileSync(bundlePath, "utf8"), context, { filename: bundlePath });
   const families = (context.LiminalFamilies || {})[sectionKey] || [];
   if (families.length === 0) throw new Error(`No ${sectionKey} templates registered.`);
-  const registered = new Set(((registries[sectionKey] || {}).templates || [])
-    .filter((entry) => !entry.retired)
-    .map((entry) => entry.id));
-  for (const family of families) {
-    if (!registered.has(family.id)) throw new Error(`${sectionKey} template ${family.id} is not in the registry.`);
-    const record = context.LiminalFamilyShared.instantiate(family, "smoke");
-    if (!record.verified) throw new Error(`${sectionKey} template ${family.id} produced an unverified question.`);
-  }
+  const [test, ...section] = sectionKey.split("-");
+  const problems = templateParityProblems({ sectionKey, families, registry: registries[sectionKey] || {},
+    nodeFamilies: require(path.join(__dirname, "../src/lib/families", test, section.join("-"))),
+    instantiate: context.LiminalFamilyShared.instantiate,
+    nodeInstantiate: require("../src/lib/families/shared").instantiate,
+  });
+  if (problems.length) throw new Error(problems.slice(0, 10).join("\n"));
   familyCounts.push(`${families.length} ${sectionKey}`);
 }
 console.log(`Static smoke: template bundles load as browser scripts (${familyCounts.join(", ")}).`);

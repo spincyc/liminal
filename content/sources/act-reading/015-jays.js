@@ -4,14 +4,13 @@ module.exports = {
   id: "act-reading-p015",
   type: "natural-science",
   title: "What the Jay Remembers",
-  intro: "This passage is adapted from an article on animal memory.",
-  content: `A western scrub jay in autumn will hide as many as thirty thousand items of food in
-a season, one at a time, in separate places, and will recover most of them over the following
-months. That much has been known to anyone who has watched a jay for an afternoon. The
+  intro: "This original passage discusses animal memory.",
+  content: `A western scrub jay can hide many separate items of food, one at a time, in different
+places, and recover caches later. Watching a bird cache food reveals the act of hiding;
+following its recoveries requires much longer observation. The
 interesting question is what the bird has to know in order to do it.
 
-The obvious answer is location, and jays are extraordinary at location. Nicola Clayton's
-group at Cambridge established something less obvious in a series of experiments beginning in
+The obvious answer is location, and jays are extraordinary at location. Nicola Clayton and colleagues established something less obvious in a series of experiments beginning in
 the late 1990s. Jays were given two kinds of food to cache: peanuts, which keep, and wax moth
 larvae, which the birds prefer strongly but which decay within about four days. The birds
 cached both, in trays they could later be returned to. When they were let back after four
@@ -62,7 +61,7 @@ is not doing it the way we do.`,
       stem: "The passage is chiefly concerned with:",
       key: "what jay caching experiments do and do not establish about memory.",
       wrong: [
-        ["how scrub jays manage to recover thirty thousand hidden items.", "Recovery ability is the starting point, not the question the passage pursues."],
+        ["how scrub jays manage to retrieve many separate hidden food caches.", "Recovery ability is the starting point, not the question the passage pursues."],
         ["why wax moth larvae decay faster than peanuts do in storage.", "The two foods are experimental materials; their chemistry is never discussed."],
         ["how corvid brains evolved separately from those of mammals.", "Brain organisation appears once, in the final paragraph, as a closing point."],
       ],
@@ -224,7 +223,7 @@ is not doing it the way we do.`,
       family: "evaluating-an-objection",
       difficulty: "Hard",
       stem: "The passage treats the critics' objection to the original finding as:",
-      key: "well founded and answered by a later experimental design.",
+      key: "well founded and tested more closely by later experiments.",
       wrong: [
         ["mistaken, since the birds did not sample the cached food.", "Not sampling rules out on-the-spot inspection but not a learned rule."],
         ["unanswerable, since no experiment can separate the two accounts.", "The passage reports a design intended to do exactly that, and describes its result."],
@@ -234,9 +233,9 @@ is not doing it the way we do.`,
       steps: [
         "Find the author's explicit verdict on the objection.",
         "Identify the experiment introduced in response to it.",
-        "Check whether the passage says that experiment succeeded.",
+        "Distinguish evidence against a fixed rule from proof of subjective recollection.",
       ],
-      hint: "One sentence rates the objection; the next paragraph answers it.",
+      hint: "Compare the initial concession with what the later designs investigate.",
       trap: "Mistaking the change in terminology for the whole of the response.",
     },
   ],

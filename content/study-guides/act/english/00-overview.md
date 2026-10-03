@@ -125,8 +125,8 @@ When two choices are grammatically correct and mean the same thing, **the
 shorter one is credited.** Wordiness is treated as an error, not a style
 preference.
 
-Corollary: **"DELETE the underlined portion" / "OMIT"** is correct noticeably
-more often than 25% of the time. Consider it seriously every time it appears.
+Evaluate **DELETE / OMIT** by reading the sentence without the material.
+Its presence gives no reliable probability that it is correct.
 
 *Fails when:* the shorter version loses needed information, breaks grammar, or
 creates ambiguity.
@@ -139,8 +139,8 @@ even when technically grammatical.
 ### 3. Relevance rules
 
 Material that doesn't serve the paragraph's point should go, however
-interesting. On "should the writer add this sentence" questions, the answer is
-frequently **no**, because the addition is off-topic.
+interesting. On addition questions, test whether the material serves the
+stated purpose; neither yes nor no is the default.
 
 ---
 

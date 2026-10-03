@@ -3,6 +3,12 @@
 Turning a practice-test result into a specific plan. Do this before choosing a
 study plan — it determines what you actually work on.
 
+> **Practice targets are SAT-only planning rules.** Liminal's ACT difficulty
+> labels are not verified, and ACT Progress reports accuracy without these
+> targets. For ACT, choose the skill and inspect the reasoning each item
+> requires; use fresh official practice to judge progress. Adjust all
+> schedules and timed drills to your approved accommodations.
+
 ---
 
 ## Step 1: Take a real diagnostic
@@ -110,7 +116,7 @@ students routinely miss.
 
 | Check | If yes |
 | --- | --- |
-| Do you miss more than 1 in 5 grammar questions (below the 24-of-30 bar of the [mastery gate](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate))? | Fix it first. Finite rules, 2-3 weeks, large gain. |
+| Do you miss more than 1 in 5 grammar questions (below the 24-of-30 bar of the [practice target](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate))? | Prioritize recurring rule errors, then check on unfamiliar questions. |
 | Do you know the ACT formulas cold? | If not, handwrite [the reference](../act/math/07-formula-reference.md). No sheet is provided. |
 | Are you fluent with Desmos? | If not, one week of [practice](https://spincyc.github.io/liminal/learn.html#sat/general/desmos/practice-protocol) is worth real points on SAT Math. |
 | Do you orient before reading ACT Science figures? | If not, adopt the 10-second habit. Halves the error rate for most students. |

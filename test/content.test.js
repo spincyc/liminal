@@ -97,14 +97,15 @@ test("normalization handles punctuation, case, and spacing", () => {
   assert.equal(normalizeText("  Solve: X + 2! "), "solve x 2");
 });
 
-test("duplicate detector finds exact and structural variants", () => {
+test("duplicate detector distinguishes numerical instances and rejects repeated ones", () => {
   const first = validQuestion();
   const second = validQuestion({
     id: "sat-math-0002",
     stem: "If 2x + 3 = 19, what is x?",
   });
-  const errors = duplicateErrors([first, second]).join("\n");
-  assert.match(errors, /Structural duplicate|Near duplicate/);
+  assert.deepEqual(duplicateErrors([first, second]), [], "different numerical conditions are distinct instances, not distinct designs");
+  const repeated = { ...first, id: "sat-math-0003" };
+  assert.match(duplicateErrors([first, repeated]).join("\n"), /Exact duplicate|Structural duplicate|Near duplicate/);
 });
 
 test("passage-set structural signatures include passage and choices", () => {

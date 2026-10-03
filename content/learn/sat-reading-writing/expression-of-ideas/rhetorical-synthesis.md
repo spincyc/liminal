@@ -10,9 +10,9 @@ skill: Rhetorical Synthesis
 Rhetorical Synthesis questions give you a bulleted list of a student's
 research notes and a goal, and ask which sentence uses the notes to meet
 that goal. They are part of Expression of Ideas, {{fact:sat-rw-expression}}
-of the Reading and Writing section, which comes last in each module. Every
-choice is usually accurate to the notes, so accuracy never decides the
-question: the goal does. Hard versions use two-part goals and choices that
+of the Reading and Writing section, which comes last in each module. Several
+choices may be accurate to the notes, so check both accuracy and the
+stated goal. Hard versions use two-part goals and choices that
 do a different, equally reasonable job.
 
 ## Student notes {#student-notes}
@@ -57,10 +57,9 @@ accomplish this goal?"
 > gives a similarity. D covers materials for only one library. C meets all
 > three requirements. C is correct.
 
-> **Trap.** The right facts with the wrong framing. A choice that lists both
-> materials in two separate sentences, with no word marking a contrast
-> ("while", "whereas", "but"), may not "emphasize a difference". Look for the
-> relationship the goal names.
+> **Trap.** The right facts with the wrong framing. A choice can name both
+> subjects yet compare the wrong feature. Contrast words can help, but a
+> clear comparison does not always need "while", "whereas", or "but".
 
 ## Rhetorical goal {#rhetorical-goal}
 
@@ -163,14 +162,53 @@ while indicating how the study was conducted". Then:
 > Two choices often hold the same facts; check which one the main clause
 > carries before choosing.
 
-> **Fails when.** A choice joins two full clauses with "and" or a
-> semicolon. Both parts are then stressed equally, so neither is
-> emphasized; prefer a choice that tucks the lesser part into a phrase, if
-> one does.
+> **Fails when.** Clause placement alone does not distinguish the choices.
+> Explicit emphasis words and the sentence's full meaning also matter.
+> Joining clauses with "and" does not automatically make them equally
+> important. Use the main clause as a clue, then check the whole goal.
+
+### Reconcile apparently conflicting findings {#reconcile-findings}
+
+Two reports can point in different directions because they measure different
+quantities, groups, periods, or conditions. To explain the difference, connect
+those distinctions to the actual findings. A count and a percentage can move
+in opposite directions, and gains in one part can coexist with a loss overall.
+
+> **Example.** A student has these notes:
+>
+> - The Brisk Museum reported higher total attendance in its second year.
+> - An auditor found 8,000 fewer admissions during the original opening hours.
+> - The museum added evening hours in the second year.
+> - Those evenings attracted 34,000 admissions.
+> - The annual report included all hours; the auditor compared only the original hours.
+>
+> The student wants to explain why the two attendance findings are compatible.
+>
+> A) Total attendance increased in the second year, while attendance during
+> the original opening hours decreased by 8,000 admissions.
+>
+> B) Comparing only the original hours allowed the auditor to exclude
+> admissions during the added evenings from the comparison.
+>
+> C) The 34,000 evening admissions more than offset the 8,000 fewer admissions
+> during the original hours, allowing total attendance to rise.
+>
+> D) Adding evening hours gave the museum another period for admitting
+> visitors besides its original opening hours.
+>
+> C connects the separate counts: the added attendance is larger than the
+> loss. A repeats the apparent conflict. B explains the auditor's method.
+> D describes the schedule. None of those three explains the net increase.
+
+> **Fails when.** The notes do not supply the needed condition. Do not invent
+> different samples, a seasonal effect, or a cause merely because it would
+> explain the difference. A clear comparison can supply an explanation
+> without a word such as "because"; judge its meaning, not its sentence frame.
 
 ## What Hard looks like {#hard}
 
 - Two-part goals ("present the finding and explain its significance"), where each wrong choice does one part.
+- Reconciling apparently conflicting findings by combining separate facts about their measures, populations, or conditions (see [reconcile findings](#reconcile-findings)).
 - Goals that rank two parts ("emphasize the finding while indicating the method"), where two choices hold the same facts and only the main clause decides (see [emphasize one part, indicate another](#emphasize-while-indicating)).
 - Goals about audience ("an audience familiar with the research"), where defining a term is unnecessary and the key uses the technical name.
 - Choices that each accomplish a real goal, just not this one: describing the method when the goal is the result, or giving a date when the goal is a place.

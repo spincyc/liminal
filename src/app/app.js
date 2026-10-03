@@ -38,12 +38,14 @@
 
   // localStorage can throw on access when a browser blocks site data; the
   // app then keeps progress in memory for this visit.
+  let memoryOnly = false;
   function browserStorage() {
     try {
       const storage = window.localStorage;
       storage.getItem(Progress.STORAGE_KEY);
       return storage;
     } catch (error) {
+      memoryOnly = true;
       const memory = new Map();
       return {
         getItem: (key) => (memory.has(key) ? memory.get(key) : null),
@@ -69,7 +71,10 @@
   };
 
   function warnStorage(what) {
-    storageWarning.text.textContent = what === "progress"
+    storageWarning.text.textContent = memoryOnly
+      ? "This browser has blocked site storage. Your progress and unfinished sets are kept only until this page " +
+        "closes. Download your progress before leaving to keep what you have recorded."
+      : what === "progress"
       ? "This browser could not save your progress, probably because its storage is full. Practice can go on, " +
         "but what you do from now on is kept only until this page closes. Download your progress to keep it."
       : `This browser could not save your unfinished ${what}, so it may not be there to resume after this page ` +
@@ -80,6 +85,7 @@
 
   // `what` ("progress", "set", "test") saved again.
   function storageRecovered(what) {
+    if (memoryOnly) return;
     if (storageTrouble !== what) return;
     storageTrouble = null;
     storageWarning.box.classList.add("hidden");
@@ -99,6 +105,7 @@
   }
 
   storageWarning.download.addEventListener("click", downloadProgress);
+  if (memoryOnly) warnStorage("progress");
 
   // The unfinished set and the unfinished test (lib/session-store.js), in
   // two slots so neither can replace the other.
@@ -339,7 +346,8 @@
     if (!ReviewQueue) return 0;
     const info = Progress.registryTemplateInfo(window.PRACTICE_TEMPLATES || {});
     const attempts = Progress.withCurrentTemplates(Progress.attemptsFor(progress, { test }), info);
-    const live = (entry) => entry.source !== "template" || Boolean((info[entry.sectionKey] || {})[entry.templateId]);
+    const live = (entry) => entry.source === "template"
+      ? Boolean((info[entry.sectionKey] || {})[entry.templateId]) : Boolean(entry.contentIdentity);
     return ReviewQueue.summarize(ReviewQueue.build(attempts), Date.now(), { skip: (entry) => !live(entry) }).due.length;
   }
 
@@ -388,25 +396,25 @@
       case "plan": {
         const stage = step.stage;
         if (step.returned) {
-          return `Every skill from stage ${step.startStage} of the ${plan.name} on is at the gate, so the plan comes ` +
+          return `Every skill from stage ${step.startStage} of the ${plan.name} on has met the practice target, so the plan comes ` +
             `back to stage ${stage.stage} (${stageTitle(stage)}), which your diagnostic let you pass over.`;
         }
         if (stage.stage < step.startStage) {
           return `Stage ${stage.stage} of the ${plan.name} (${stageTitle(stage)}). Your diagnostic started you at ` +
-            `stage ${step.startStage}, but you have practised this skill and it is not yet at the gate.`;
+            `stage ${step.startStage}, but you have practised this skill and it has not yet met the practice target.`;
         }
-        return `Stage ${stage.stage} of the ${plan.name} (${stageTitle(stage)}): the first skill in it not yet at the gate.` +
+        return `Stage ${stage.stage} of the ${plan.name} (${stageTitle(stage)}): the first skill in it still below the practice target.` +
           (step.startStage > 1 ? ` Your diagnostic started you at stage ${step.startStage}.` : "");
       }
       case "plan-hard":
-        return `Every skill in the ${plan.name} is at the gate, so Hard questions come next, in plan order.`;
+        return `Every skill in the ${plan.name} has met the practice target, so Hard questions come next, in plan order.`;
       case "weakest":
         return `Your weakest skill with enough answers to judge: ${row.correct} of ${row.attempted} right.`;
       case "lowest-accuracy":
         return `Your lowest accuracy among skills with ${Analytics.MIN_ATTEMPTS} or more answers: ` +
           `${row.correct} of ${row.attempted} right.`;
       case "hard":
-        return "Every skill here is at the gate or Mastered; this one has the weakest Hard answers.";
+        return "Every skill here has met the practice target; this one has the weakest Hard answers.";
       default:
         return row.attempted
           ? `The skill you have practised least: ${plural(row.attempted, "answer")} so far.`
@@ -425,13 +433,13 @@
           `(${tallyText(row.routine.easy)}).`;
       }
       case "routine":
-        return `Medium toward the gate: ${Analytics.GATE.correct} of your last ${Analytics.GATE.window} Medium ` +
+        return `Medium toward the practice target: ${Analytics.GATE.correct} of your last ${Analytics.GATE.window} Medium ` +
           `answers right, over two days and two question designs (${tallyText(row.gate)}).`;
       case "at-gate":
-        return `At the gate, so Hard next, toward Mastered: ${Analytics.HARD_BAR.correct} of your last ` +
+        return `Practice target met; Hard next, toward the advanced practice target: ${Analytics.HARD_BAR.correct} of your last ` +
           `${Analytics.HARD_BAR.window} Hard answers right (${tallyText(row.hardBar)}).`;
       case "mastered":
-        return "Mastered: keep it alive with a few questions a week.";
+        return "Advanced practice target met: keep practising with a few questions a week.";
       default:
         return "Difficulty labels in this section are not verified, so the step has no level.";
     }
@@ -460,7 +468,7 @@
       return {
         title: "Keep every skill alive",
         section: sectionName(step.sectionKey),
-        reason: "Every skill here is Mastered. Mix them in a timed set each week, and measure with an official practice test.",
+        reason: "Every skill here has met the advanced practice target. Mix them in a timed set each week, and measure with an official practice test.",
         level: "",
         then: "",
       };
@@ -557,8 +565,8 @@
       } else {
         notes.push(`Stage${placement.skipped.length > 1 ? "s" : ""} ${placement.skipped.join(" and ")} cover only ` +
           `domains you showed, so the plan starts at stage ${start.stage} (${stageTitle(start)}). A skill from an ` +
-          "earlier stage comes back once you practise it and it is short of the gate, and all of them once the " +
-          "later stages are at the gate.");
+          "earlier stage comes back once you practise it and it is below the practice target, and all of them once the " +
+          "later stages have met the practice target.");
       }
     } else {
       notes.push(`Until a skill has ${Analytics.MIN_ATTEMPTS} answers, your next step here is the skill you have ` +
@@ -787,6 +795,13 @@
   // build the set, so this is the fallback.
   function launch(config, resume) {
     if (!window.LiminalShell) throw new Error("The test screen did not load. Refresh the page and try again.");
+    const state = resume && (resume.session || resume);
+    const questions = state ? state.questions : config.questions;
+    const unavailable = (questions || []).find((question) => !core.sectionAvailable(question.sectionKey));
+    if (unavailable && !(state && state.finished)) {
+      const section = sectionByKey(unavailable.sectionKey);
+      throw new Error(section && section.practiceNote || "This section is temporarily unavailable.");
+    }
     if (!resume && !config.simulation) {
       const saved = activeSession.load("set");
       if (saved && SessionStore.ownerOf(saved) !== (config.sessionId || null)) {
@@ -875,6 +890,13 @@
       return `The unfinished ${what} could not be restored, so it was removed.`;
     }
     if (what === "test") return resumeTest(saved);
+    const state = saved.state && (saved.state.session || saved.state);
+    const unavailable = state && !state.finished && (state.questions || [])
+      .find((question) => !core.sectionAvailable(question.sectionKey));
+    if (unavailable) {
+      const section = sectionByKey(unavailable.sectionKey);
+      return `${section && section.practiceNote || "This section is temporarily unavailable."} Your saved set is still kept here.`;
+    }
     try {
       launch({ ...saved.config, questions: [] }, saved.state);
       return null;
@@ -1294,15 +1316,30 @@
       }, items, summary.elapsedMs), Simulation.sessionFields(state))));
     }
     sessions.clear("test", state.id);
-    const questions = await questionsForIds(Simulation.questionIds(state));
+    const reviewParts = Simulation.reviewParts(state);
+    const legacyIds = reviewParts.flatMap((part) => part.questionIds.filter((_, index) => !part.questions[index]));
+    // New saved modules carry the exact question the student saw. Only
+    // older saves need a rebuild, which is safe only at the same version.
+    let questions = [];
+    try { questions = await questionsForIds(legacyIds); } catch (error) { console.warn("Some old answers could not be rebuilt.", error); }
     const byId = new Map(questions.map((question) => [question.id, question]));
-    // A question whose template was retired since cannot be rebuilt; the
-    // review leaves it out rather than fail.
-    const parts = Simulation.reviewParts(state).map((part) => {
-      const keep = part.questionIds.map((id) => byId.has(id));
+    const attempts = store.get().attempts;
+    let unavailable = 0;
+    const parts = reviewParts.map((part, moduleIndex) => {
+      const resolved = part.questionIds.map((id, index) => {
+        if (part.questions[index]) return part.questions[index];
+        const rebuilt = byId.get(id);
+        const attempt = attempts.find((entry) => entry.sessionId === state.modules[moduleIndex].sessionId && entry.questionId === id);
+        const version = part.templateVersions[index] || (attempt && attempt.templateVersion);
+        const parsed = Progress.parseQuestionId(id);
+        if (!rebuilt || !parsed || !version || currentVersion(parsed.sectionKey, parsed.templateId) !== version) return null;
+        return stampVersion(rebuilt);
+      });
+      const keep = resolved.map(Boolean);
+      unavailable += keep.filter((value) => !value).length;
       const pick = (list) => list.filter((_, index) => keep[index]);
       return {
-        questions: part.questionIds.filter((id) => byId.has(id)).map((id) => byId.get(id)),
+        questions: resolved.filter(Boolean),
         responses: pick(part.responses),
         marked: pick(part.marked),
         hinted: pick(part.hinted),
@@ -1311,6 +1348,21 @@
         timeLimitSeconds: part.timeLimitSeconds,
       };
     });
+    const reviewNote = unavailable
+      ? `${unavailable} older question${unavailable === 1 ? " cannot" : "s cannot"} be reviewed because the original ` +
+        "version is no longer available. The result and module totals below still show the complete test; the answer review includes only the unchanged questions."
+      : null;
+    if (!parts.some((part) => part.questions.length)) {
+      closeScreen();
+      const choice = await askOnPage({
+        title: `${summary.title}: results`,
+        text: [`${summary.correct} of ${summary.total} correct (${Math.round(summary.accuracy * 100)}%).`,
+          reviewNote, ...moduleTable(summary).rows.map((row) => `${row[0]}: ${row[2]}, ${row[3]}.`)],
+        cancel: "Close report", confirm: "Open Progress",
+      });
+      if (choice === "confirm") openView("dashboard");
+      return;
+    }
     const now = Date.now();
     const combined = window.LiminalTestEngine.combineFinished(parts, now);
     const sections = sectionsIn(state);
@@ -1322,7 +1374,17 @@
       tools: { calculator: sections.some(isMath), reference: sections.includes("sat-math") },
       resume: window.LiminalTestEngine.serialize(combined, now),
       learnHref: practice.learnHref,
-      reportNotes: summary.routes.map((route) => route.text),
+      reportNotes: [reviewNote, ...summary.routes.map((route) => route.text)].filter(Boolean),
+      reportSummary: {
+        total: summary.total, scored: summary.total, unscored: 0,
+        correct: summary.correct, accuracy: summary.accuracy, hintedCorrect: summary.hintedCorrect,
+        answered: summary.answered, unanswered: summary.total - summary.answered,
+        marked: state.modules.reduce((count, module) => count + module.items.filter((item) => item.marked).length, 0),
+        elapsedMs: summary.elapsedMs, timeLimitSeconds: summary.timeLimitSeconds,
+        bySection: summary.sections.map((row) => ({ ...row, section: row.label, scored: row.total, unscored: 0 })),
+        byDomain: summary.byDomain.map((row) => ({ ...row, scored: row.total, unscored: 0 })),
+        byDifficulty: summary.byTier.map((row) => ({ ...row, difficulty: row.tier, scored: row.total, unscored: 0 })),
+      },
       reportSections: [moduleTable(summary)],
       caveat: testCaveat(state),
       reportActions: (report) => reportActions(meta, report),
@@ -1441,7 +1503,8 @@
   // report's sections, which after a diagnostic comes first.
   function reportActions(meta, report) {
     let missedAction = null;
-    const missed = report.items.filter((item) => !(item.answered && item.correct && !item.hinted));
+    const missed = report.items.filter((item) => item.question.responseType !== "essay" &&
+      !(item.answered && item.correct && !item.hinted));
     if (missed.length) {
       const fresh = missed.every((item) => item.question.templateId);
       missedAction = {
@@ -1565,6 +1628,7 @@
   }
 
   function onNavClick(event) {
+    if (event.button > 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     const link = event.currentTarget;
     const view = views[link.dataset.view];
     if (!view) return; // Learn and Booklets are other pages.

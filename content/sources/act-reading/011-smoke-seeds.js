@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p011",
   type: "natural-science",
   title: "What the Smoke Says",
-  intro: "This passage is adapted from an article on fire-cued germination in Australian shrublands. The table accompanied the article.",
+  intro: "This original passage discusses fire-cued germination in Australian shrublands. The table contains invented data for this practice passage.",
   content: `A seed lying in the soil of a fire-prone shrubland has one decision to make and no
 way to take it back. Germinate in the wrong year and the seedling meets a closed canopy,
 a dry summer, and nothing it can do about either. Germinate in the year after a fire and
@@ -15,7 +15,7 @@ get it wrong are represented, five years later, by whatever is left in the seed 
 So the seed has to know that a fire has happened, from underground, without having been
 burnt. For most of the twentieth century the assumption was that heat did the telling.
 Many shrubland seeds have hard, water-resistant coats, and brief exposure to temperatures
-around eighty degrees cracks them, which lets water in. This is a real mechanism and it is
+around eighty degrees Celsius cracks them, which lets water in. This is a real mechanism and it is
 easy to demonstrate in an oven. It also failed to explain a large number of species whose
 seed coats are already permeable and which nonetheless sat unmoved through every heat
 treatment anyone applied.
@@ -29,7 +29,7 @@ karrikinolide. Concentrations of a few parts per billion are sufficient. It is s
 soil for years, which means it is not only a signal that a fire has occurred but one that
 persists into the seasons when the ash bed is still fertile.
 
-The table below is from a germination trial in which 200 seeds of each of four species were
+The invented table below illustrates a germination trial in which 200 seeds of each of four species were
 sown under each of four conditions.
 
 Table 1. Seeds germinating within 21 days, as a percentage of 200 sown
@@ -41,18 +41,18 @@ Eucalyptus       |    54     |    57     |     55      |       58
 Conospermum      |     1     |     2     |      3      |       44
 
 The four rows are four strategies. Grevillea answers to heat, as the older account
-predicted. Actinotus ignores heat entirely and answers to the chemical signal. Eucalyptus
+predicted. Actinotus responds little to heat alone and much more to the chemical signal. Eucalyptus
 germinates readily whatever is done to it, which is what a species does when its seed is
 released from a woody fruit that the fire itself opens — the timing is handled above ground
 and the seed needs no cue of its own. Conospermum is the interesting one. Neither treatment
-alone lifts it above the untreated rate, and the two together lift it to nearly half.
+alone raises germination above three per cent, while the two together lift it to nearly half.
 
 That last pattern is what a demanding species looks like. Heat alone can be produced by a
 hot day on bare sand; smoke alone drifts from a fire two valleys away and settles into soil
 that has not itself burnt. A seed that requires both is insisting on evidence that the fire
 passed over the ground it is lying in. The cost of that insistence is that Conospermum will
 sit through events which its neighbours treat as sufficient, and the benefit is that it
-almost never germinates into conditions that will kill it.
+can avoid some germination events that would expose seedlings to poor conditions.
 
 The finding has been put to work faster than most. Karrikinolide is now used to raise
 species that nurseries could not previously propagate, and restoration projects on mine
@@ -142,7 +142,7 @@ signal is supposed to announce.`,
       key: "Grevillea",
       wrong: [
         ["Actinotus", "Actinotus rises from 2 to 4 under heat, a change of two percentage points."],
-        ["Conospermum", "Conospermum rises from 1 to 2 under heat, which the passage calls no lift at all."],
+        ["Conospermum", "Conospermum rises from 1 to 2 per cent, only one percentage point."],
         ["Eucalyptus", "Eucalyptus moves from 54 to 57, and it starts high under every condition."],
       ],
       why: "Table 1 states that Grevillea goes from 11 per cent untreated to 48 per cent under heat only, a rise of 37 points; no other row in the table changes by more than 3 points under that treatment.",
@@ -201,7 +201,7 @@ signal is supposed to announce.`,
         ["makes a species unusually vulnerable to a changed fire regime.", "The passage never discusses altered fire frequency or the risks it would pose."],
         ["shows that heat and smoke act on the same part of the seed.", "The two cues are described as working by different means throughout."],
       ],
-      why: "The passage says the cost of insisting on both cues is that Conospermum \"will sit through events which its neighbours treat as sufficient,\" and the benefit is that \"it almost never germinates into conditions that will kill it.\"",
+      why: "The passage describes a cost—waiting through events that other species accept—and a possible benefit—avoiding some germination in poor conditions. Together these support a trade-off between opportunity and error, not a guarantee of survival.",
       steps: [
         "Read the sentence that names the cost and the benefit together.",
         "Check the table to confirm that its best figure is not the highest in the trial.",

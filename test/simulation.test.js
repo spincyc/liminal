@@ -187,10 +187,17 @@ test("a full-length test never repeats a template or a question, and each module
   built.forEach(({ step, run }) => {
     const spec = Modules.moduleSpec(step.sectionKey, step.module);
     assert.equal(run.questions.length, spec.size, `${step.title} is full length`);
-    assert.deepEqual(run.shortfalls, [], `${step.title} filled every cell from its own tier`);
+    assert.ok(run.shortfalls.every((cell) => cell.missing === 0), `${step.title} borrows enough to fill short cells`);
+    const expectedMix = { ...spec.mix };
+    run.shortfalls.forEach((cell) => {
+      const borrowed = cell.borrowed.reduce((sum, entry) => sum + entry.count, 0);
+      assert.equal(cell.filled + borrowed, cell.wanted, `${step.title} reports every borrowed question`);
+      expectedMix[cell.tier] -= borrowed;
+      cell.borrowed.forEach((entry) => { expectedMix[entry.tier] += entry.count; });
+    });
     const tiers = { Easy: 0, Medium: 0, Hard: 0 };
     run.questions.forEach((question) => { tiers[question.difficulty] += 1; });
-    assert.deepEqual(tiers, spec.mix, `${step.title} tier mix`);
+    assert.deepEqual(tiers, expectedMix, `${step.title} tier mix matches disclosed borrowing`);
     spec.domains.forEach((domain) => {
       assert.equal(run.questions.filter((question) => question.domain === domain.name).length, domain.count,
         `${step.title} ${domain.name}`);
@@ -386,6 +393,8 @@ test("compact items keep what routing and review need, and never trust a stray c
   }]);
   assert.deepEqual(item, {
     questionId: "sat-math:x:1", sectionKey: MATH, domain: "Algebra", skill: "s", difficulty: "Hard",
+    question: { id: "sat-math:x:1", sectionKey: MATH, domain: "Algebra", skill: "s", difficulty: "Hard", stem: "long" },
+    templateVersion: null,
     response: null, answered: false, correct: false, marked: true, hinted: false, timeMs: 13,
   });
 });
@@ -442,4 +451,28 @@ test("restore refuses a saved test whose finished modules the report could not r
     assert.equal(Simulation.restore(saved), null, `case ${index}`);
     assert.equal(Simulation.canResume(saved), false, `case ${index}`);
   });
+});
+
+test("finished module review preserves the original question across a template revision", () => {
+  const Engine = require("../src/lib/test-engine");
+  const original = {
+    id: "sat-math:t:seed", sectionKey: MATH, templateId: "t", templateVersion: 1,
+    responseType: "multiple-choice", choices: ["old answer", "wrong", "wrong", "wrong"], correctAnswer: 0,
+  };
+  let state = Simulation.create({ kind: "section", sectionKey: MATH, seed: "version", now: 1 });
+  state = Simulation.beginModule(state, { sessionId: "first", now: 2 });
+  const items = Simulation.compactItems([{ question: original, response: 0, answered: true, correct: true, timeMs: 100 }]);
+  state = Simulation.finishModule(state, { sessionId: "first", items, elapsedMs: 100, now: 3 });
+  const restored = Simulation.restore(JSON.parse(JSON.stringify(state)));
+  const [part] = Simulation.reviewParts(restored);
+  assert.deepEqual(part.questions, [original]);
+  assert.deepEqual(part.templateVersions, [1]);
+  original.correctAnswer = 1;
+  original.choices[0] = "revised wrong answer";
+  assert.equal(part.questions[0].choices[0], "old answer");
+  assert.equal(Engine.summary(Engine.combineFinished([part], 4), 4).correct, 1);
+  const legacy = JSON.parse(JSON.stringify(state));
+  delete legacy.modules[0].items[0].question;
+  delete legacy.modules[0].items[0].templateVersion;
+  assert.deepEqual(Simulation.reviewParts(Simulation.restore(legacy))[0].questions, [null]);
 });

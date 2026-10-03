@@ -1,10 +1,12 @@
 "use strict";
 
+// Fact-check: Lichen yeast abundance and symbiosis: https://pubmed.ncbi.nlm.nih.gov/27445309/
+
 module.exports = {
   id: "act-reading-p003",
   type: "natural-science",
   title: "Two Organisms, One Name",
-  intro: "This passage is adapted from an article on symbiosis.",
+  intro: "This original passage discusses symbiosis.",
   content: `A lichen looks like a single thing. It grows on a rock as one crust, spreads
 at one rate, dies at one time, and has been given one Latin name. For most of the
 history of biology this was taken to be a description rather than an assumption.
@@ -19,13 +21,14 @@ had been misfiled as an individual. One prominent critic called the theory a rom
 Schwendener was right, and the evidence that settled it was not subtle. A lichen can be
 pulled apart. Grown separately in the laboratory, the fungal partner produces a
 shapeless mass with none of the structure the lichen shows on the rock, and the algal
-partner grows as ordinary green cells. Put back together under the right conditions of
-moisture and light, they reassemble into the familiar form. The lichen is the
+partner grows as ordinary green cells. In some laboratory experiments, bringing the partners together under suitable
+conditions produces a recognisable lichen structure, though recreating a complete
+natural lichen is not always straightforward. The lichen is the
 relationship, not either party to it.
 
 What took much longer to establish was how unequal the relationship is, and whether
 "partnership" is the right word for it at all. The fungus is not merely housing the
-alga. It penetrates the algal cells with specialised structures and draws off sugar,
+alga. In some lichens it forms specialised contacts with or penetrates algal cells to obtain sugar,
 and in some species the rate of extraction is high enough that the algal population
 cannot grow. Left alone, the alga would divide freely; inside the lichen it divides
 just fast enough to replace what the fungus consumes. Some biologists have described
@@ -41,13 +44,13 @@ Counted as territory, it wins ground it could not otherwise hold. The two accoun
 do not reduce to each other, and the argument over which to prefer has continued for a
 century without resolution, which is a sign that it is not really an empirical argument.
 
-The picture became more complicated in 2016, when a survey of lichen genomes found a
-second fungus present in a wide range of species — a yeast, embedded in the outer
-layer, previously overlooked because it is not visible in the sections lichenologists
-had been cutting for a hundred and fifty years. Its presence correlated with the
-production of certain compounds and with differences in appearance that had been used
-to separate species. Two lichens classified as distinct on the basis of colour and
-chemistry turned out to have identical primary partners and different yeasts.
+The picture became more complicated in 2016, when researchers examining expressed genes detected an additional
+fungal partner in many lichens — a yeast embedded in the outer layer. Molecular probes
+and microscopy helped distinguish these cells within tissue previously attributed
+to the main fungus. In two forms classified separately by colour and chemistry,
+the primary fungal and algal partners were genetically indistinguishable by the
+analyses used, while the abundance of the yeast differed. The correlation raised
+new questions about which partners contribute to a lichen's visible form.
 
 The finding did not overturn Schwendener. It extended his point in a direction he did
 not anticipate: that the boundary drawn around a lichen and called a species is a
@@ -194,13 +197,13 @@ normally drawn, which is mostly by looking.`,
       family: "evidence-evaluation",
       difficulty: "Hard",
       stem: "Which finding, if true, would most weaken the description of the fungus as a controlled parasite?",
-      key: "Algal cells inside lichens divide faster than free ones.",
+      key: "Algal populations grow faster inside lichens than outside.",
       wrong: [
         ["A third fungal partner is found in most lichen species.", "Additional partners complicate species boundaries without addressing the transfer balance."],
         ["Some lichens survive on rock surfaces for many centuries.", "Longevity of the lichen says nothing about the algal partner's cost."],
         ["The fungus can be cultured without any algal partner present.", "The passage already reports this and treats it as consistent with the parasitism reading."],
       ],
-      why: "The parasitism description rests on the claim that extraction holds the algal population flat — \"inside the lichen it divides just fast enough to replace what the fungus consumes.\" A higher division rate inside than outside would contradict that premise directly.",
+      why: "The passage supports the parasitism description partly by saying that the algal population inside the lichen cannot grow. Greater population growth inside would directly challenge that stated cost. A faster rate of cell division alone would not establish net population growth.",
       steps: [
         "State the premise the parasitism description depends on.",
         "Look for the option that contradicts that premise rather than the conclusion.",
@@ -215,14 +218,15 @@ normally drawn, which is mostly by looking.`,
       stem: "Taken together, the 2016 yeast finding and the passage's closing argument suggest that lichen species were separated largely by:",
       key: "traits an observer could see with existing methods.",
       wrong: [
-        ["the identity of the algal partner in each specimen.", "The finding was that two species had identical primary partners and differed only in yeast."],
+        ["the identity of the algal partner in each specimen.", "The study found the primary partners genetically indistinguishable by the analyses used; yeast abundance differed."],
         ["the environments in which each specimen was collected.", "Habitat is discussed for the alga's benefit, never as a basis for classification."],
         ["the rate at which each specimen grew on bare rock.", "Growth rate appears in the opening description, not as a taxonomic criterion."],
       ],
-      why: "The yeast had been \"previously overlooked because it is not visible in the sections lichenologists had been cutting,\" and the closing paragraph says observers drew the boundary \"around whatever they could see... which is mostly by looking.\"",
+      why: "The passage links distinctions based on colour and chemistry to differences in yeast abundance, then reflects on boundaries drawn around what observers could see. The new methods reveal participants that older classifications had not separated.",
       steps: [
-        "Take the reason the yeast was missed.",
-        "Join it to the closing claim about how boundaries get drawn.",
+        "Identify the visible traits used to distinguish the two forms.",
+        "Connect those traits with the closing account of observational boundaries.",
+        "Avoid treating different yeast abundance as proof of different yeast species.",
       ],
       hint: "Both passages of text mention what could and could not be seen.",
     },

@@ -419,7 +419,7 @@
       const wrong = probabilityWrong(t, hit, condTotal, [
         [yes ? rate : 100 - rate, 100, `Gives the probability that one of the ${ctx.things} ${ctx.from[gi]} ${ctx.has[yes ? 0 : 1]}: the reverse condition.`],
         [hit, N, `Divides by all ${fmt(N)} ${ctx.things} instead of only the ${fmt(condTotal)} that meet the condition.`],
-        [share, 100, `Gives the share of all ${ctx.things} that were ${ctx.from[gi]}, ignoring the condition.`],
+        [share, 100, `Gives the share of all ${ctx.things} associated with ${ctx.groups[gi]}, ignoring the condition.`],
         [inGroup[1 - gi], condTotal, `Finds the probability for the ${ctx.things} ${ctx.from[1 - gi]} instead.`],
         [condTotal, N, `Gives the share of all ${fmt(N)} ${ctx.things} that meet the condition, ignoring the source.`],
         [yes ? rate : 100 - rate, yes ? r1 + r2 : 200 - r1 - r2, "Compares the two percents as if the two groups were the same size."],
@@ -711,16 +711,14 @@
     recognize:
       "The condition decides the denominator: count only the group named after \"given\" (or selected from), and read the " +
       "outcome inside that group; percents given for one direction must be turned into counts before the reverse question.",
-    // Hard (declared 2026-09-26; it had defaulted to Hard): the table hides
-    // a row or column, gives percents in the other direction, or hides a
-    // cell, so the condition's group must be rebuilt before dividing.
+    // Hard: unequal source groups have different outcome rates, but the
+    // question selects by outcome and asks for the source (or its complement).
     rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
     tricks: ["percent-base", "reversed-condition", "wrong-quantity", "part-vs-whole"],
     build(t) {
-      const form = t.int(0, 2);
-      if (form === 0) return { estimatedSeconds: 110, ...conditionalTable(t, t.chance(0.4), true) };
-      if (form === 1) return { estimatedSeconds: 115, ...conditionalWords(t, t.chance(0.4)) };
-      return { estimatedSeconds: 110, ...conditionalMissingCell(t, t.chance(0.55)) };
+      // Reversing the percent-based condition requires reconstructing both
+      // source groups. A single hidden cell or missing total is only Medium.
+      return { estimatedSeconds: 115, ...conditionalWords(t, t.chance(0.4)) };
     },
   };
 
@@ -1507,7 +1505,7 @@
   function unknownQuestion(scene, kind, r, c) {
     if (kind === "row") return { cond: scene.pickRow[r], event: scene.colIs[c] };
     if (kind === "col") return { cond: scene.pickCol[c], event: scene.rowIs[r] };
-    return { cond: scene.pickAll, event: `${scene.rowIs[r]} and ${scene.colIs[c].replace(/^is /, "")}` };
+    return { cond: scene.pickAll, event: `${scene.rowIs[r]} and ${scene.colIs[c]}` };
   }
 
   // [numerator, denominator] of that probability for a grid of counts, or for
@@ -1540,8 +1538,7 @@
     tricks: ["reversed-condition", "part-vs-whole", "intermediate-value"],
     build(t) {
       const scene = t.pick(UNKNOWN_SCENES);
-      const askX = t.chance(0.35);
-      const numeric = t.chance(askX ? 0.5 : 0.3);
+      const numeric = t.chance(0.3);
       return retry(() => {
         const x = t.int(3, 18);
         // Two cells in x: in one row, in one column, or on a diagonal.
@@ -1619,55 +1616,6 @@
           estimatedSeconds: 150,
         };
         const solveStep = `Write the stated probability with x: ${setup}. Solving gives x = ${x}.`;
-        if (askX) {
-          // The count in a cell written in x, which a student may report
-          // instead of x itself.
-          const [cr, cc] = cellsInX.find(([r, c]) => forms[r][c].a && (forms[r][c].a !== 1 || forms[r][c].b !== 0)) || [];
-          const mistakes = [
-            [wrongX.swap, reasons.swap],
-            [wrongX.grand, reasons.grand],
-            [wrongX.odds, reasons.odds],
-            [cr === undefined ? null : grid[cr][cc], cr === undefined ? "" : `Gives the number in the ${scene.rows[cr]} and ${scene.cols[cc]} cell, ${label(forms[cr][cc])}, instead of x.`],
-            [x + 1, "Makes an arithmetic slip solving the equation."],
-            [x - 1, "Makes an arithmetic slip solving the equation."],
-          ].filter(([value]) => value !== null && value > 0);
-          // At least one wrong x must come from a misread probability, not a slip.
-          if ([wrongX.swap, wrongX.grand, wrongX.odds].every((value) => value === null)) return null;
-          if (mistakes.some(([value]) => value === x)) return null;
-          const wrong = numeric ? [] : countWrong(t, x, mistakes);
-          if (!wrong) return null;
-          return {
-            ...common,
-            responseType: numeric ? "numeric" : "multiple-choice",
-            stem: `${scene.intro} ${statement} What is the value of x?`,
-            correct: numeric ? x : fmt(x),
-            wrong,
-            explanation: `${solveStep} Check: the cells are ${grid.flat().join(", ")}, and the stated probability is ${gTop}/${gBottom}${gTop / g === gTop ? "" : ` = ${givenText}`}.`,
-            steps: [
-              `The condition names the group: ${denominatorWords[given.kind]} for ${q.cond}.`,
-              solveStep,
-              `Check: with x = ${x}, the probability is ${gTop}/${gBottom}${gTop / g === gTop ? "" : ` = ${givenText}`}.`,
-            ],
-            trap: "Dividing by the wrong group, or reading the probability as a part-to-part ratio, gives a different equation and a different x.",
-            hint: "Which cells can be selected once the condition is applied?",
-            verify: () => {
-              const cells = parseTable(content).slice(1).map((row) => row.slice(1));
-              const value = (text, v) => {
-                const clean = text.replace(MINUS, "-").replace(/\s/g, "");
-                const m = /^(\d*)x([+-]\d+)?$/.exec(clean);
-                return m ? (m[1] === "" ? 1 : Number(m[1])) * v + (m[2] ? Number(m[2]) : 0) : Number(clean);
-              };
-              const fits = [];
-              for (let v = 1; v <= 300; v += 1) {
-                const trial = cells.map((row) => row.map((text) => value(text, v)));
-                if (trial.flat().some((count) => count <= 0)) continue;
-                const [a, b] = unknownProbability(trial, given.kind, given.r, given.c);
-                if (close(a / b, gTop / gBottom)) fits.push(v);
-              }
-              return fits.length === 1 && fits[0] === x;
-            },
-          };
-        }
         // Ask a different probability, which needs x first.
         const asked = { kind: t.pick(kinds), r: t.int(0, 1), c: t.int(0, 1) };
         if (asked.kind === given.kind && asked.r === given.r && asked.c === given.c) return null;

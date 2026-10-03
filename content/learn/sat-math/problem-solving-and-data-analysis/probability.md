@@ -11,9 +11,9 @@ The probability of an event is the fraction of equally likely outcomes in
 which it happens. SAT probability questions are mostly about counts in a
 table or a description, and the whole skill is choosing the right
 denominator. It is part of Problem-Solving and Data Analysis,
-{{fact:sat-math-psda}} of the Math section. Hard questions use conditional
-wording ("given that", "of those who") or give a probability and ask for a
-missing count.
+{{fact:sat-math-psda}} of the Math section. Hard questions reconstruct a conditioning group from
+percentages, or use a stated probability to solve missing counts before
+answering a question about a different group.
 
 ## Basic probability {#basic-probability}
 

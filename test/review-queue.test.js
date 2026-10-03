@@ -38,6 +38,33 @@ const Q = "sat-math:slope-t:s1.slope-t.0";
 const FRESH_1 = "sat-math:slope-t:f1.slope-t.0";
 const FRESH_2 = "sat-math:slope-t:f2.slope-t.2";
 
+test("withdrawn Science misses stay in the record but leave the due practice queue", () => {
+  const attempt = miss("act-science-0001", "2026-09-01T10:00", { sectionKey: "act-science", source: "bank", test: "ACT", templateId: null });
+  const entries = Queue.build([attempt]);
+  assert.equal(entries.size, 1);
+  const summary = Queue.summarize(entries, at("2026-10-01T10:00"));
+  assert.equal(summary.due.length, 0);
+  assert.equal(summary.unavailable.length, 1);
+  assert.equal(Queue.pickSet([...entries.values()]).picked.length, 0);
+  assert.equal(Queue.missedAttempts([attempt]).length, 1);
+});
+
+test("fixed-bank review schedules do not credit a revised question for an earlier miss", () => {
+  const id = "act-mathematics-0007";
+  const bank = { sectionKey: "act-mathematics", source: "bank", test: "ACT", templateId: null };
+  const first = miss(id, "2026-09-01T10:00", { ...bank, contentIdentity: "q1-0000000000000001" });
+  const revised = answer(id, "2026-09-02T10:00", { ...bank, contentIdentity: "q1-0000000000000002" });
+  const original = Queue.build([first, revised]).get(id);
+  assert.equal(original.stage, 1);
+  assert.equal(original.contentIdentity, first.contentIdentity);
+  assert.equal(Queue.build([{ ...first, contentIdentity: undefined }, revised]).get(id).stage, 1);
+  const currentMiss = { ...revised, correct: false };
+  const sameRevisionAnswer = answer(id, "2026-09-03T10:00", { ...bank, contentIdentity: revised.contentIdentity });
+  const current = Queue.build([first, currentMiss, sameRevisionAnswer]).get(id);
+  assert.equal(current.contentIdentity, revised.contentIdentity);
+  assert.equal(current.stage, 2);
+});
+
 test("a miss is due the next local day and comes back as the same question", () => {
   const entry = Queue.build([miss(Q, "2026-09-20T21:00")]).get(Q);
   assert.equal(entry.stage, 1);

@@ -15,10 +15,11 @@
   const api = factory(
     node ? require("./progress") : root.LiminalProgress,
     node ? require("./runs") : root.LiminalRuns,
+    node ? require("./core") : root.PracticeCore,
   );
   if (node) module.exports = api;
   else root.LiminalAnalytics = api;
-})(typeof globalThis !== "undefined" ? globalThis : this, function (Progress, Runs) {
+})(typeof globalThis !== "undefined" ? globalThis : this, function (Progress, Runs, Core) {
   "use strict";
 
   const TIERS = ["Easy", "Medium", "Hard"];
@@ -53,8 +54,8 @@
     "not-started": "Not started",
     "not-enough-data": "Not enough data",
     building: "Building",
-    "at-gate": "At the gate",
-    mastered: "Mastered",
+    "at-gate": "Practice target met",
+    mastered: "Advanced practice target met",
     "accuracy-only": "Accuracy only",
   };
   // "Routine", the step before the gate in the SAT Math plan's per-skill
@@ -563,7 +564,8 @@
   function nextStep(rows, options) {
     const settings = options || {};
     const keys = settings.sectionKeys;
-    const pool = (rows || []).filter((row) => row.inCatalog !== false && (!keys || keys.includes(row.sectionKey)));
+    const pool = (rows || []).filter((row) => row.inCatalog !== false && Core.sectionAvailable(row.sectionKey) &&
+      (!keys || keys.includes(row.sectionKey)));
     if (!pool.length) return null;
     const inView = [...new Set(pool.map((row) => row.sectionKey))];
     const answered = (key) => pool.some((row) => row.sectionKey === key && row.attempted);
@@ -885,15 +887,19 @@
             source: "attempts",
           });
         }
-        const total = Number(session.total) || 0;
+        const total = session.scored === undefined ? Number(session.total) || 0 : Number(session.scored) || 0;
         const hard = session.hard || {};
         const right = Math.max(0, (Number(session.correct) || 0) - (Number(session.hintedCorrect) || 0));
+        // Older summaries kept only the overall hint count. Once their
+        // attempts are trimmed, the Hard share cannot be recovered safely.
+        const hardKnown = !session.hintedCorrect || Number.isFinite(hard.hintedCorrect);
+        const hardRight = Math.max(0, (Number(hard.correct) || 0) - (Number(hard.hintedCorrect) || 0));
         return Object.assign(point, {
           counted: total,
           accuracy: total ? right / total : null,
           hard: {
-            attempted: Number(hard.total) || 0,
-            accuracy: Number(hard.total) ? (Number(hard.correct) || 0) / Number(hard.total) : null,
+            attempted: hardKnown ? Number(hard.total) || 0 : 0,
+            accuracy: hardKnown && Number(hard.total) ? hardRight / Number(hard.total) : null,
           },
           source: "summary",
         });

@@ -381,6 +381,61 @@ test("restore rejects foreign or empty snapshots", () => {
   assert.deepEqual(partial.state.responses, [null, null, null]);
 });
 
+test("delayed expiry caps question time and rejects an answer before the next interval tick", () => {
+  const now = clock(0);
+  const session = engine.create({ questions: QUESTIONS, timeLimitSeconds: 10, now });
+  now.advance(8000);
+  session.next();
+  now.advance(52000);
+  session.select(".75");
+  assert.equal(session.state.finished, true);
+  assert.equal(session.state.finishReason, "time");
+  assert.equal(session.state.responses[1], null);
+  assert.deepEqual(session.questionTimes(), [8000, 2000, 0]);
+  assert.equal(session.summary().elapsedMs, 10000);
+
+  const checked = engine.create({ questions: QUESTIONS, feedback: "instant", timeLimitSeconds: 10, now });
+  checked.select(2);
+  now.advance(20000);
+  checked.check();
+  assert.equal(checked.state.checked[0], false);
+  assert.equal(checked.state.finished, true);
+  assert.equal(checked.state.finishReason, "time");
+});
+
+test("answer actions do not consume the timer warning before the shell can show it", () => {
+  const now = clock(0);
+  const session = engine.create({ questions: QUESTIONS, timeLimitSeconds: 600, now });
+  now.advance(301000);
+  session.select(2);
+  assert.equal(session.state.alertShown, false);
+  assert.equal(session.tick().alertDue, true);
+  assert.equal(session.tick().alertDue, false);
+});
+
+test("essay drafts survive resume and stay unscored in mixed and essay-only reports", () => {
+  const essay = question("essay", { sectionKey: "act-writing", responseType: "essay", choices: null, correctAnswer: null });
+  const now = clock();
+  const session = engine.create({ questions: [QUESTIONS[0], essay], now });
+  session.select(2);
+  session.next();
+  const draft = "A position, a counterargument, and evidence.\nA second paragraph.";
+  session.select(draft);
+  const restored = engine.restore(session.serialize(), { now });
+  assert.equal(restored.state.responses[1], draft);
+  restored.finish();
+  const result = restored.summary();
+  assert.deepEqual([result.total, result.scored, result.unscored, result.correct, result.accuracy], [2, 1, 1, 1, 1]);
+  assert.equal(result.items[1].correct, null);
+  assert.equal(result.bySection[1].accuracy, null);
+  assert.equal(result.bySection[1].unscored, 1);
+  assert.equal(result.bySection[1].hard.total, 0);
+  const only = engine.create({ questions: [essay], now });
+  only.finish();
+  assert.equal(only.summary().accuracy, null, "even a blank essay has no automatic score");
+  assert.equal(only.result().items[0].correct, null);
+});
+
 test("a finished snapshot restores finished with its frozen time", () => {
   const now = clock();
   const session = engine.create({ questions: QUESTIONS, timeLimitSeconds: 600, now });

@@ -4,11 +4,11 @@ module.exports = {
   id: "act-reading-p007",
   type: "natural-science",
   title: "Energy From the Rock",
-  intro: "This passage is adapted from an essay on the discovery of chemosynthetic communities on the deep seafloor.",
-  content: `Until 1977, every account of life on Earth rested on a single sentence: energy
-enters the living world when a plant, an alga, or a cyanobacterium captures sunlight.
+  intro: "This original passage discusses the discovery of chemosynthetic communities on the deep seafloor.",
+  content: `Before 1977, the familiar account of an ocean food web began with a single sentence:
+energy enters when a plant, an alga, or a cyanobacterium captures sunlight.
 Everything else eats, or eats something that ate. The deep sea fitted the sentence
-without difficulty. Below about two hundred metres there is no light to capture, so the
+without difficulty. Below about two hundred metres there is generally too little sunlight for substantial photosynthesis, so the
 abyss was understood as a place of scarcity, sustained by whatever drifted down from the
 lit water above — a slow rain of dead plankton and the occasional whale. Deep-sea animals
 were accordingly expected to be small, slow, sparse, and patient. Most of them are.
@@ -46,8 +46,7 @@ possibility was a discovery in 1984 on the continental slope of the Gulf of Mexi
 the seafloor is cold and there is no volcanic activity whatever. Methane and sulfide seep
 out of the sediment there under nothing more dramatic than pressure, and around the seeps
 stood tube worms again, and mussels, and clams. The chemistry, not the heat, was doing the
-work. Cold seeps have since been mapped on every continental margin that anyone has looked
-at carefully.
+work. Cold seeps have since been mapped along many continental margins around the world.
 
 One phrase from those years has proved harder to defend than the science it described.
 Vent communities were widely announced as the first life found to be independent of the
@@ -111,7 +110,7 @@ and answered from the water.`,
         ["the pressure at that depth prevents most tissues from forming.", "Pressure appears once, as what drives fluid out of seep sediment, not as a limit on life."],
         ["hydrogen sulfide from the seafloor poisons most organisms there.", "Sulfide is toxic, but the passage introduces it as the vents' energy source, not as the cause of scarcity."],
       ],
-      why: "The first paragraph says that below two hundred metres \"there is no light to capture, so the abyss was understood as a place of scarcity, sustained by whatever drifted down from the lit water above.\"",
+      why: "The passage says that below about two hundred metres there is generally too little sunlight for substantial photosynthesis. The old account therefore relied on food sinking from the surface.",
       steps: [
         "Locate the sentence in the first paragraph that gives the reason directly.",
         "Note that the reason is about the supply of food, not about physical conditions.",

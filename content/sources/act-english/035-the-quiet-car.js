@@ -2,10 +2,11 @@
 
 module.exports = {
   id: "act-english-p035",
-  type: "historical-account",
+  type: "informative-essay",
   title: "A Rule Nobody Wrote",
-  content: `[1] The quiet car began as a complaint. In 1999 a group of commuters
-on a Philadelphia line asked whether one car might be set aside for people who
+  content: `[1] Consider an imaginary commuter railroad. On this line, a quiet car
+began as a complaint: a group of commuters asked whether one car might be set
+aside for people who
 did not want to hear anyone's telephone. They were regular riders who had shared
 the same carriage every weekday morning for years, and what they wanted was
 modest and specific. The railroad agreed to try {1 it on one
@@ -22,14 +23,14 @@ consistent} from car to car. Within a few years riders who had never met were
 policing {6 a standard that was unwritten and not written down}.
 
 [4] {7 Consequently,} the railroad expanded the programme and other systems
-copied it. {8 Some of them writing rules.} The written versions worked less
+copied it. {8 Some of them writing rules.} In this imagined case, the written versions worked less
 well, because a passenger enforcing a norm acts on behalf of everyone in the
 car, while a passenger citing a regulation is {9 doing something else entirely}.
 
-[5] {10} The quiet car is now standard on several American railroads and on
-services in Europe and Japan. It spread by imitation rather than by policy, one
+[5] {10} The practice eventually reached several neighboring railroads in
+this fictional region, even lines with different schedules and passenger groups. It spread by imitation rather than by policy, one
 operator watching another and copying what appeared to work. {11 Copied from line to line without central
-direction, the same three gestures turn up wherever the car exists.} Nobody
+direction, passengers use the same three gestures wherever the car exists.} Nobody
 {12 designed} them.`,
   questions: [
     {
@@ -127,23 +128,21 @@ direction, the same three gestures turn up wherever the car exists.} Nobody
       noChange: "A comma alone cannot join two independent clauses, and this one follows a list of commas.",
       wrong: [
         [
-          "lips: the gestures were remarkably consistent",
-          "A colon introduces an explanation, but the second clause reports a separate observation.",
+          "lips; although the gestures were remarkably consistent",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
-          "lips, and the gestures were remarkably consistent",
-          "The conjunction repairs the splice but buries the clause among the list's own commas.",
-        ],
+          "lips, however, the gestures were remarkably consistent",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
+        ]
       ],
-      why:
-        "The sentence has already run a three-item list separated by commas. A semicolon raises the " +
-        "separation a level so the new clause is not read as a fourth gesture.",
+      why: "The sentence has already run a three-item list separated by commas. A semicolon raises the separation a level so the new clause is not read as a fourth gesture.",
       steps: [
         "Count the commas already in the sentence.",
-        "Separate the independent clause with the next mark up.",
+        "Separate the independent clause with the next mark up."
       ],
       hint: "When a sentence is already full of commas, a clause boundary needs something stronger.",
-      trap: "Adding 'and' is grammatical and makes the clause read as one more item in the list.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 6,
@@ -151,21 +150,25 @@ direction, the same three gestures turn up wherever the car exists.} Nobody
       family: "redundant-modifier",
       difficulty: "Easy",
       keep: false,
-      key: "a standard none of them could have quoted",
+      key: "an unwritten standard",
       noChange: "'Unwritten' and 'not written down' say the same thing, and the paragraph has said it already.",
       wrong: [
-        ["a standard that was unwritten", "The adjective restates what the whole paragraph has established."],
-        ["a standard not written down anywhere at all", "The phrase is longer and adds only emphasis."],
+        [
+          "an unwritten standard that had not been written down",
+          "The relative clause repeats the meaning of 'unwritten.'"
+        ],
+        [
+          "a standard not written down in any written form",
+          "The final phrase repeats the idea of not being written down."
+        ]
       ],
-      why:
-        "The paragraph has already established that nothing was written. The clause earns its place " +
-        "by saying something new — that the riders could not have stated the rule themselves.",
+      why: "'An unwritten standard' preserves the meaning in one adjective. Each longer option repeats that adjective's meaning.",
       steps: [
-        "Ask what the reader already knows by this point in the paragraph.",
-        "Keep the version that adds a fact rather than repeating one.",
+        "Identify the necessary meaning: the shared standard was unwritten.",
+        "Remove words that restate the same fact without adding information."
       ],
-      hint: "The strongest version of this clause is about the riders, not the rule.",
-      trap: "Repeating 'unwritten' feels like reinforcing the essay's theme.",
+      hint: "State the fact once, retaining both the shared standard and its unwritten nature.",
+      trap: "Repeated wording can sound emphatic even when it adds no meaning."
     },
     {
       number: 7,
@@ -238,61 +241,55 @@ direction, the same three gestures turn up wherever the car exists.} Nobody
       subskill: "support",
       family: "supporting-detail",
       difficulty: "Medium",
-      stem:
-        "Given that all the choices are true, which one, if added here, best supports the essay's " +
-        "point about how the practice spread?",
+      stem: "Assuming that all the choices are true within this imagined case, which one, if added here, best supports the essay's point about how the practice spread?",
       key: "No railroad ever published the gestures, and no passenger was ever taught them.",
       wrong: [
         [
-          "Several European operators use a symbol rather than a written sign on the door.",
-          "How the car is labelled is a design choice, not evidence about how enforcement spread.",
+          "Several neighboring operators use a symbol rather than a written sign on the door.",
+          "How the car is labelled is a design choice, not evidence about how enforcement spread."
         ],
         [
           "Quiet cars are usually placed at one end of a train rather than in the middle.",
-          "Where the car sits in the train has no bearing on the behaviour inside it.",
+          "Where the car sits in the train has no bearing on the behaviour inside it."
         ],
         [
-          "Ridership on the Philadelphia line grew steadily through the following decade.",
-          "Passenger numbers say nothing about whether the norm travelled with them.",
-        ],
+          "Ridership on the original line grew steadily through the following decade.",
+          "Passenger numbers say nothing about whether the norm travelled with them."
+        ]
       ],
-      why:
-        "The essay's claim is that a standard spread without being written down or taught. The " +
-        "support has to state that absence directly.",
+      why: "The essay's claim is that a standard spread without being written down or taught. The support has to state that absence directly.",
       steps: [
         "Name the claim: the practice travelled with no central direction.",
-        "Keep the choice that says nobody published or taught it.",
+        "Keep the choice that says nobody published or taught it."
       ],
       hint: "The support should describe what did not happen.",
-      trap: "Every choice is a plausible fact about quiet cars on real railways.",
+      trap: "Each choice could be true within the imagined case without supporting the particular claim."
     },
     {
       number: 11,
       subskill: "modifiers",
-      family: "participle-tense-mismatch",
+      family: "misattached-opening-phrase",
       difficulty: "Hard",
       keep: false,
-      key: "Copied from line to line without central direction, the same three gestures have turned up wherever the car exists.",
-      noChange: "The opening phrase covers a continuing process, but the main clause reports a single present fact.",
+      key: "Copied from line to line without central direction, the same three gestures turn up wherever the car exists.",
+      noChange: "The opening phrase is meant to describe the gestures, but it attaches to 'passengers' instead.",
       wrong: [
         [
           "Copying from line to line without central direction, the same three gestures turn up wherever the car exists.",
-          "The active form makes the gestures do the copying themselves.",
+          "The active participle makes the gestures themselves perform the copying."
         ],
         [
-          "Copied from line to line without central direction, wherever the car exists the same three gestures turn up.",
-          "The phrase now sits next to a subordinate clause rather than the noun it describes.",
-        ],
+          "Copied from line to line without central direction, passengers everywhere use the same three gestures.",
+          "The modifier again describes passengers as being copied instead of the gestures."
+        ]
       ],
-      why:
-        "The participle describes something that has gone on happening, so the main clause needs the " +
-        "present perfect for the two halves to cover the same stretch of time.",
+      why: "The gestures are copied. Making 'the same three gestures' the subject after the opening phrase attaches that description to the right noun.",
       steps: [
-        "Ask what was copied from line to line. The gestures were.",
-        "Match the main verb's tense to the span the participle covers.",
+        "Identify what gets copied in the example: the gestures.",
+        "Place that noun after the introductory participial phrase."
       ],
-      hint: "The opening phrase and the main clause have to be talking about the same period.",
-      trap: "The modifier is attached correctly, so the mismatch reads as merely stylistic.",
+      hint: "Read the introductory phrase together with the subject that follows it.",
+      trap: "A modifier can refer to the intended noun later in the sentence while grammatically attaching to a different subject."
     },
     {
       number: 12,
@@ -320,33 +317,29 @@ direction, the same three gestures turn up wherever the car exists.} Nobody
       subskill: "purpose",
       family: "goal-assessment",
       difficulty: "Hard",
-      stem:
-        "Suppose the writer's goal had been to write an essay about a rule that worked better for " +
-        "never having been written. Would this essay accomplish that goal?",
+      stem: "Suppose the writer's goal had been to write an essay about a rule that worked better for never having been written. Would this essay accomplish that goal?",
       key: "Yes, because it reports that the written versions worked less well and explains what writing them changed.",
       wrong: [
         [
-          "Yes, because the quiet car is now standard on railroads in three parts of the world.",
-          "Its spread shows the idea travelled, not that being unwritten is what made it work.",
+          "Yes, because the quiet car spread to several railroads with different passenger groups.",
+          "Its spread shows the idea travelled, not that being unwritten is what made it work."
         ],
         [
           "No, because the railroad did eventually expand the programme across its network.",
-          "Expansion is not the same as codification, and the essay distinguishes the two.",
+          "Expansion is not the same as codification, and the essay distinguishes the two."
         ],
         [
           "No, because a sign was posted in the car from the very first experiment.",
-          "A sign naming the car is not a rule with enforcement behind it.",
-        ],
+          "A sign naming the car is not a rule with enforcement behind it."
+        ]
       ],
-      why:
-        "The essay states that systems which wrote rules did worse, and explains why: enforcing a " +
-        "norm is acting for everyone in the car, while citing a regulation is informing on a neighbour.",
+      why: "The essay states that systems which wrote rules did worse, and explains why: enforcing a norm is acting for everyone in the car, while citing a regulation is informing on a neighbour.",
       steps: [
         "Find the sentence comparing written and unwritten versions.",
-        "Keep the reason that names both the outcome and the cause.",
+        "Keep the reason that names both the outcome and the cause."
       ],
       hint: "The fourth paragraph makes the comparison explicitly.",
-      trap: "One wrong choice cites the essay's most impressive fact, which is about reach rather than mechanism.",
+      trap: "One wrong choice cites the essay's most impressive fact, which is about reach rather than mechanism."
     },
   ],
 };

@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p038",
   type: "humanities",
   title: "Testimony",
-  intro: "This passage is adapted from an essay on the practice of oral history.",
+  intro: "This original passage discusses the practice of oral history.",
   content: `The standard objection to oral history is that memory is unreliable, and the standard
 objection is correct. People misdate events by years. They import details from photographs
 they saw afterwards and from accounts they have heard since. They compress a sequence of

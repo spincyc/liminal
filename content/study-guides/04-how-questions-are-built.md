@@ -1,16 +1,9 @@
 # How Questions Are Built
 
-This is the most useful file in this library. Read it twice.
-
-Standardized test questions are not written casually. They are manufactured to a
-specification by trained item writers, reviewed by committees, statistically
-pretested on real students, and discarded if they don't behave correctly. That
-manufacturing process leaves fingerprints. Once you can see them, wrong answers
-start identifying themselves.
-
-None of this is a trick or a loophole. It is the same knowledge the people who
-write the test have. Learning it is legitimate, and it is a large part of what
-separates a student who has "prepped" from one who hasn't.
+Official tests use specifications, review and pretesting to develop questions.
+Understanding what a question asks and why its distractors fail can improve
+your review. It does not provide a reliable way to guess from the appearance
+of an answer choice.
 
 ---
 
@@ -18,34 +11,29 @@ separates a student who has "prepped" from one who hasn't.
 
 Put yourself in the writer's chair. You must produce a question where:
 
-1. **Exactly one answer is defensible.** Not "best" in a fuzzy sense —
-   defensible against a challenge from a smart, angry student. Anything
-   arguable gets cut in review.
+1. **One answer best satisfies the task.** Depending on the question, this
+   might be an exact mathematical result or the interpretation best supported
+   by a text.
 2. **The wrong answers are attractive.** A distractor nobody picks is useless;
    it wastes space and doesn't discriminate between strong and weak students.
 3. **The question discriminates.** Students who know the material should get it
    right at a much higher rate than students who don't. An item where strong and
    weak students perform identically is thrown out after pretesting.
-4. **It's defensible on fairness grounds.** No outside knowledge, no cultural
-   assumptions, no ambiguity.
+4. **It assesses the intended knowledge fairly.** Required background depends
+   on the section: math uses learned mathematics, and ACT Science can require
+   introductory science knowledge. Reading answers must be supported by the
+   supplied text.
 
-Every pattern below falls out of those four constraints. They aren't arbitrary
-quirks — they're the logical consequences of the job.
+The examples below are useful error categories, not measured frequencies of
+answer-choice patterns.
 
-### Consequence 1: The right answer must be bulletproof
+### Consequence 1: The answer must fit the evidence and the task
 
-Because the credited answer has to survive challenge, it is written **cautiously
-and narrowly**. It tends to be:
+Check the entire claim against the question. An absolute claim can be correct
+when the evidence supports it; a cautious claim can still misrepresent the
+text. Likewise, a clean number can be wrong and an awkward fraction right.
 
-- Hedged (`suggests`, `tends to`, `may`, `in part`, `some`)
-- Closely tied to what the text or math literally supports
-- Unexciting
-
-Meanwhile, distractors don't need to survive anything, so writers are free to
-make them **bold, specific, and interesting**. This is the origin of the single
-most reliable heuristic in test prep:
-
-> **Right answers are boring. Wrong answers are interesting.**
+> **Choose by evidence, not by how cautious, interesting or tidy a choice looks.**
 
 ### Consequence 2: Distractors are built from predictable mistakes
 
@@ -53,9 +41,8 @@ Writers don't invent random wrong answers. They construct them from **the errors
 real students actually make.** In math this is nearly mechanical: solve the
 problem wrong in each of the standard ways and use those results as the choices.
 
-This is why "my answer was one of the choices" gives you almost no reassurance.
-Your wrong answer being listed is the *expected* outcome — the writer put it
-there for you.
+A common mistake can produce a listed choice. Check your method and the
+quantity requested rather than treating a match as proof.
 
 ### Consequence 3: Difficulty is engineered, not accidental
 
@@ -73,21 +60,20 @@ because the writer added specific obstacles:
 
 Notice that many levers are about **the trap, not the topic**. So when you miss
 a hard question, first ask whether you knew the content. If you did, the fix is
-usually "read the question again and answer what it asked." If you didn't —
-and for a student scoring around 500 in SAT Math, that is the usual case — the
-fix is to learn the content, starting with the Easy and Medium skills (see the
+a process change or more practice applying the idea in unfamiliar contexts.
+If you did not know the content, learn it before adding time pressure (see the
 [SAT Math plan](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan)).
 
 ---
 
 ## The five distractor families
 
-Nearly every wrong answer on either test belongs to one of these. Learn to name
-them; naming is what makes them visible under pressure.
+These categories help describe many wrong answers. Name the error that actually
+explains your choice; some distractors can fit more than one category.
 
 ### 1. The Right Answer to the Wrong Question
 
-The most common trap on both tests, and the most frustrating.
+A useful error to check on both tests.
 
 - **Math:** you correctly find `x = 3`, but the question asked for `x²`, or for
   `y`, or for the *number of* solutions rather than the solutions.
@@ -96,10 +82,10 @@ The most common trap on both tests, and the most frustrating.
   items down.
 
 **Defense:** before selecting, re-read the last line of the stem and say out
-loud what quantity or relationship is being requested. Underline it. On math,
+to yourself what quantity or relationship is being requested. Underline it. On math,
 circle the units and the exact variable.
 
-This single habit is worth more points than any content review.
+Use this habit alongside content review.
 
 ### 2. The Predictable Miscalculation
 
@@ -130,9 +116,8 @@ sideways.
 | **Too weak** | Right direction, hedged into meaninglessness |
 | **Off-topic** | Discusses something adjacent that the passage mentions but doesn't claim |
 
-Scope errors are the dominant distractor type on reading sections. Most students
-who "narrow it down to two and pick wrong" are choosing between a correct answer
-and a scope error.
+When two choices seem plausible, compare their scope with the question and
+the evidence.
 
 **Defense:** for every choice, ask "does the passage support *this much*?" Not
 "is this related" — "is this the right *size*."
@@ -149,21 +134,20 @@ The first half may be exactly right. If the passage never criticizes later
 studies, the whole choice is wrong.
 
 **Defense:** read every choice to the end, and treat each choice as a *chain* —
-one broken link kills it. This is where the phrase "one false word kills the
-whole choice" comes from.
+one unsupported part can invalidate the whole claim. Read NOT, EXCEPT and
+questions about a speaker's beliefs carefully: they change what counts as
+a correct answer.
 
 ### 5. The Plausible Outside Fact
 
 A statement that is true in the real world but not supported by the passage or
 derivable from the given math.
 
-This one specifically punishes knowledgeable students, which is why strong
-readers sometimes underperform on reading sections. Your background knowledge is
-a liability here.
+On reading questions, a true outside fact is not enough to support a choice.
 
-**Defense:** the standard is always *"can I point to the line?"* If you cannot
-put your finger on the text that supports it, it is wrong — no matter how true
-it is.
+**Defense:** identify the relevant evidence in the passage. An inference can
+combine several details and need not restate a single line. For Math and ACT
+Science, also apply the subject knowledge the task requires.
 
 ---
 
@@ -179,7 +163,7 @@ instantly is a large speed gain.
 | "The main purpose of the text is to..." | Global function | Whole passage, not one part |
 | "Which choice best states the main idea?" | Global content | Whole passage |
 | "According to the text..." | Stated fact | Literal, explicit |
-| "Based on the text, it can be reasonably inferred..." | One small step beyond stated | Must be *forced* by the text |
+| "Based on the text, it can be reasonably inferred..." | Supported inference | Best supported by the text, without an unsupported leap |
 | "Which choice most logically completes the text?" | Logical continuation | Direction and structure of the argument |
 | "As used in line X, the word Y most nearly means..." | Contextual meaning | Local sentence, not dictionary |
 | "Which quotation most effectively illustrates the claim?" | Evidence match | The choice must show *the specific claim* |
@@ -187,22 +171,19 @@ instantly is a large speed gain.
 | "The author would most likely agree that..." | Attributed view | Author's stated position, not yours |
 | "The function of the underlined sentence is to..." | Local structure | Its relationship to surrounding sentences |
 
-**The critical distinction is "stated" versus "inferred."** An "according to the
-text" question with an inference-shaped answer is wrong, and an inference
-question with a purely literal answer is often wrong too — it's usually the
-"too weak" scope error.
-
-**On inference questions specifically:** the correct answer is the one that
-*must* be true given the text, not the one that *could* be true. Test each
-choice by asking "could the passage be entirely true and this choice still be
-false?" If yes, eliminate.
+**The distinction is the evidence requested.** Direct-detail questions ask
+what the passage states; inference questions ask what its evidence most
+strongly supports. A reasonable reading inference need not follow with
+mathematical certainty. Compare the evidence for each choice and reject
+unsupported leaps, rather than rejecting a well-supported conclusion merely
+because another outcome is conceivable.
 
 ### Math stems
 
 | Stem pattern | Watch for |
 | --- | --- |
 | "What is the value of..." | Answer what's asked, not the intermediate variable |
-| "Which expression is equivalent to..." | Substitute a number rather than manipulating |
+| "Which expression is equivalent to..." | Simplify algebraically; allowed sample values can disprove a choice, but matching values do not prove identity |
 | "Which of the following must be true?" | *Must*, not *could* — one counterexample kills a choice |
 | "Which could be the value of..." | *Could* — one working case is enough |
 | "How many solutions..." | The count, not the solutions |
@@ -218,7 +199,7 @@ counterexamples; *could be true* is attacked by finding one example that works.
 
 | Stem pattern | What it is |
 | --- | --- |
-| "Which choice completes the text so it conforms to Standard English conventions?" | A pure grammar question — meaning is irrelevant |
+| "Which choice completes the text so it conforms to Standard English conventions?" | Apply grammar, punctuation and usage in context; meaning can determine tense or word choice |
 | "Which transition best connects..." | Logic question — determine the relationship first |
 | "Which choice most effectively [goal stated in the question]?" | Rhetorical purpose — the stated goal is the entire rubric |
 | "The writer wants to [goal]. Which choice best accomplishes this?" | Same — reread the goal, it's the answer key |
@@ -252,8 +233,11 @@ test is worth more than re-reading any guide, including this one.
 
 ## Difficulty calibration — what "Hard" really means
 
-In this bank and on the real tests, difficulty is empirical: hard items are ones
-that fewer students get right, not ones a writer labeled hard.
+Official test development uses student response data to evaluate difficulty.
+Liminal's SAT tiers are authored judgments about the work an item requires,
+not psychometric calibration; ACT difficulty labels are unverified. Treat
+them as practice organization, and use fresh official questions to check
+transfer.
 
 What tends to make an item statistically hard:
 
@@ -286,18 +270,15 @@ content you don't have yet.
 
 Read this part.
 
-- **You cannot pattern-match your way through a section.** Every heuristic here
-  fails on some meaningful fraction of items, and hard items are specifically
-  engineered so that surface strategies pick the trap.
+- **You cannot pattern-match your way through a section.** Surface
+  patterns do not replace the required reading, mathematics or science.
 - **Answer-position patterns are worthless.** Correct answers are distributed
   approximately evenly across positions, and any local streak is noise. Never
   choose based on "I haven't picked C in a while."
-- **Length heuristics are weak.** "The longest reading answer is right" is true
-  slightly more often than chance and false constantly. Use it only as a
-  last-second guess.
-- **A well-written question punishes pure pattern-matchers by design.** Item
-  reviewers actively look for questions that can be solved without the intended
-  skill, and cut them.
+- **Length is not evidence.** A long or short answer can be correct. Do not
+  assume a useful guessing advantage from its appearance.
+- **Check the method, not the appearance.** A useful shortcut still needs
+  mathematical or textual justification.
 
 Use these patterns to:
 

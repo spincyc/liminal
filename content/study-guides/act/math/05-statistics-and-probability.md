@@ -63,10 +63,11 @@ When groups have different sizes, weight by size — don't average the averages.
 | Shape | Relationship |
 | --- | --- |
 | Symmetric | mean ≈ median |
-| Right-skewed (tail right) | **mean > median** |
-| Left-skewed (tail left) | **mean < median** |
+| Right-skewed (tail right) | mean often > median |
+| Left-skewed (tail left) | mean often < median |
 
-The mean chases the tail.
+These are tendencies, not guarantees for every distribution; use the actual
+data when an exact comparison is required.
 
 ### Effects of changing a data set
 
@@ -107,7 +108,7 @@ legend.** Ten seconds. It prevents most errors here.
 ## Probability
 
 ```
-P(event) = favorable outcomes / total outcomes
+P(event) = favorable outcomes / total outcomes  [equally likely outcomes]
 ```
 
 - `0 ≤ P ≤ 1`
@@ -129,14 +130,15 @@ This distinction matters and the ACT tests it.
 > **With replacement:** `(5/8)(5/8) = 25/64`
 > **Without replacement:** `(5/8)(4/7) = 20/56 = 5/14`
 
-Without replacement, both the numerator and the denominator shrink.
+Without replacement, the total shrinks; the favorable count changes only if
+the removed object belongs to the next event being counted.
 
 ### Geometric probability
 
-Probability as a ratio of areas or lengths.
+For a uniform random location, probability is a ratio of areas or lengths.
 
-> *A dart hits a 10×10 square at random. A circle of radius 3 is inscribed
-> within it. Probability of hitting the circle?*
+> *A dart lands uniformly at random in a 10×10 square. A circle of radius 3
+> lies entirely inside it. What is the probability of hitting the circle?*
 >
 > `π(3²)/100 = 9π/100 ≈ 0.283`
 
@@ -235,12 +237,12 @@ eliminates choices.
 
 | Stage | Filter | Volume |
 | --- | --- | --- |
-| 1. Center and spread | Data analysis, Easy → Medium | 25. Convert every mean question to sums. |
-| 2. Weighted averages | Data analysis, Medium | 15 |
-| 3. Data displays | Data analysis, Easy → Medium | 25. Narrate title/axes/units aloud first. |
-| 4. Basic probability | Probability, Easy → Medium | 25. Check replacement every time. |
-| 5. Counting | Probability, Medium → Hard | 25. State "order matters / doesn't" before solving. |
-| 6. Overlapping sets | Probability, Medium | 15. Draw the Venn diagram. |
+| 1. Center and spread | Data analysis | 25. Convert every mean question to sums. |
+| 2. Weighted averages | Data analysis | 15 |
+| 3. Data displays | Data analysis | 25. Narrate title/axes/units aloud first. |
+| 4. Basic probability | Probability | 25. Check replacement every time. |
+| 5. Counting | Probability | 25. State "order matters / doesn't" before solving. |
+| 6. Overlapping sets | Probability | 15. Draw the Venn diagram. |
 | 7. Mixed timed | Whole domain | 25 at 60 sec each |
 
 Counting (stage 5) is where most points hide in this domain. The math is

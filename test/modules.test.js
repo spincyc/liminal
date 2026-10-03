@@ -227,12 +227,22 @@ test("choosing is deterministic for a seed and varies across seeds", () => {
 
 /* -------------------------------------------------------------- ordering */
 
-test("Reading and Writing runs by domain in official order, Easy to Hard within each", () => {
+test("Reading and Writing groups skills within domains, except Conventions", () => {
   const chosen = Modules.chooseModule(fakeSection(RW, 6), Modules.moduleSpec(RW, "1"), { seed: "o" });
   const domains = Modules.SECTIONS[RW].domains.map((domain) => domain.name);
-  const keys = chosen.templates.map((template) =>
-    domains.indexOf(template.domain) * 10 + Modules.TIERS.indexOf(template.difficulty));
-  assert.deepEqual(keys, keys.slice().sort((a, b) => a - b));
+  const domainKeys = chosen.templates.map((template) => domains.indexOf(template.domain));
+  assert.deepEqual(domainKeys, domainKeys.slice().sort((a, b) => a - b));
+  domains.forEach((domain) => {
+    const own = chosen.templates.filter((template) => template.domain === domain);
+    const groups = domain === "Standard English Conventions" ? [own]
+      : [...new Set(own.map((template) => template.skill))].map((skill) => own.filter((template) => template.skill === skill));
+    groups.forEach((group) => {
+      const positions = group.map((template) => chosen.templates.indexOf(template));
+      assert.equal(positions.at(-1) - positions[0] + 1, group.length, "a skill stays together");
+      const tiers = group.map((template) => Modules.TIERS.indexOf(template.difficulty));
+      assert.deepEqual(tiers, tiers.slice().sort((a, b) => a - b));
+    });
+  });
   assert.equal(chosen.templates[0].domain, "Craft and Structure");
   assert.equal(chosen.templates[26].domain, "Expression of Ideas");
 });

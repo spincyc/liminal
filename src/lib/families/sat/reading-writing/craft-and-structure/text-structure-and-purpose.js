@@ -110,15 +110,14 @@
       other: "To compare paper molds from several countries",
     },
     {
-      scene: "cs-tree-ring-dating",
-      passage:
-        "Each year, a tree in a temperate climate adds a ring of new wood, and the ring is wide in a wet year and narrow in a dry one. Because weather varies from year to year, trees across a region share the same sequence of wide and narrow rings. Researchers have linked such sequences from living trees, old buildings, and buried logs into a record stretching back centuries. By matching the rings of an old beam to that record, they can identify the year in which its tree was cut.",
-      cue: "By matching the rings",
-      detail: "dry",
-      key: "To describe how tree rings can reveal when a beam was cut",
-      argue: "To argue that many old buildings are older than was thought",
-      narrow: "To point out that rings are wide in wet years and narrow in dry ones",
-      other: "To show how temperate and tropical trees differ",
+      "scene": "cs-tree-ring-dating",
+      "passage": "Many temperate trees add an annual ring of wood. In a region where water limits growth, those rings tend to be wider in wet years and narrower in dry ones, creating a pattern shared by many trees. Researchers have linked such sequences from living trees, old buildings, and buried logs into a record stretching back centuries. If a beam retains the tree’s outermost ring beneath the bark, matching that ring to the record can identify the year the tree was cut.",
+      "cue": "matching that ring",
+      "detail": "dry",
+      "key": "To describe how tree rings can reveal when a beam was cut",
+      "argue": "To argue that many old buildings are older than was thought",
+      "narrow": "To point out that rings are wide in wet years and narrow in dry ones",
+      "other": "To show how temperate and tropical trees differ"
     },
     {
       scene: "cs-pitcher-plant-trap",
@@ -1457,16 +1456,15 @@
       explainGap: "To explain why the bats remain under the bridge during the hottest months",
     },
     {
-      scene: "cs-aldren-cold-summer",
-      researcher: "Faro",
-      passage:
-        "Climate historian Ines Faro attributes the unusually cold summer of 1641 in the Aldren highlands to a distant volcanic eruption. Ice cores drilled from a nearby glacier contain a layer of volcanic ash dated to that year, and sulfur from such eruptions is known to dim sunlight for months. The ash layer makes a strong case that an eruption occurred in 1641. Parish records, though, note snow on the high pastures as early as March of that year, and the ice cores place the ash in late spring, after the cold had already begun.",
-      grant: "The ash layer makes a strong case",
-      gap: "though",
-      key: "To evaluate Faro’s explanation of the cold summer of 1641 and raise a problem of timing",
-      present: "To outline Faro’s explanation of the cold summer and the ice-core evidence for it",
-      argue: "To question whether any volcanic eruption at all occurred in 1641",
-      explainGap: "To explain why snow fell on the high Aldren pastures in March of 1641",
+      "scene": "cs-aldren-cold-summer",
+      "researcher": "Faro",
+      "passage": "Climate historian Ines Faro attributes the unusually cold summer of 1641 in the Aldren highlands to a distant volcanic eruption. Ice cores drilled from a nearby glacier contain a layer of volcanic ash dated to that year, and sulfur from such eruptions is known to dim sunlight for months. The ash layer makes a strong case that an eruption occurred in 1641. Parish records, though, record persistently unusual cold from March onward, with snow lasting far below its normal altitude, and the ice cores place the ash in late spring, after the cold had already begun.",
+      "grant": "The ash layer makes a strong case",
+      "gap": "though",
+      "key": "To evaluate Faro’s explanation of the cold summer of 1641 and raise a problem of timing",
+      "present": "To outline Faro’s explanation of the cold summer and the ice-core evidence for it",
+      "argue": "To question whether any volcanic eruption at all occurred in 1641",
+      "explainGap": "To explain why snow fell on the high Aldren pastures in March of 1641"
     },
     {
       scene: "cs-lantern-portrait-fading",
@@ -1631,238 +1629,382 @@
   // is written whole, so key wording, verb, and length vary from item to item.
   const TSP_ACADEMIC_FUNCTION_TOPICS = [
     {
-      scene: "cs-going-to-future",
-      passage:
-        "Historical linguists use the term grammaticalization for the process by which an ordinary word or phrase takes on a grammatical function. The English construction be going to is a standard illustration. When a speaker says that a friend is going to the market, the construction describes movement toward a place; when the speaker says that it is going to rain, it marks only future time, since nothing is traveling anywhere. The second use appears to have grown out of the first, because a person who sets off in order to do something will, as a rule, do it later. What began as a description of travel thus became, over several centuries, a way of talking about time.",
-      quoted: "When a speaker says that a friend is going to the market, the construction describes movement toward a place; when the speaker says that it is going to rain, it marks only future time, since nothing is traveling anywhere.",
-      key: "It sets out a contrast between two uses of the construction whose connection the text then traces.",
-      wrong: [
-        ["It supplies the definition of grammaticalization on which the rest of the text depends.", "The definition comes in the first sentence; the quoted sentence contrasts two uses of one construction."],
-        ["It explains how the future use of the construction developed out of the motion use.", "That link is drawn in the following sentence; the quoted sentence only sets the two uses side by side."],
-        ["It shows that the two uses of the construction are unrelated despite sharing a form.", "The text says the future use grew out of the motion use, so it treats the two as related, not unrelated."],
+      "scene": "cs-going-to-future",
+      "passage": "An account of grammatical change treats English be going to as a travel phrase replaced by a marker of future time. A critic objects that people still say they are going to the market. When the same speaker says a storm is going to arrive, however, the expression need not describe anyone's movement. This contrast undermines neither the survival of the travel use nor the emergence of the grammatical one. What needs revision is the account's suggestion of replacement: a new function can develop while its source remains available. The critic has identified an overstatement of the process, not evidence that no process occurred.",
+      "quoted": "When the same speaker says a storm is going to arrive, however, the expression need not describe anyone's movement.",
+      "key": "It adds a use that supports grammatical change while helping to correct the claim of replacement.",
+      "wrong": [
+        [
+          "It refutes the critic's claim that the expression retains a meaning connected with travel.",
+          "The travel meaning is retained; the quotation establishes an additional use."
+        ],
+        [
+          "It demonstrates that the earlier phrase has disappeared, preserving the original account's description of replacement.",
+          "The critic's valid example shows the earlier use persists."
+        ],
+        [
+          "It explains the historical mechanism that first caused a travel expression to acquire its new function.",
+          "The quotation illustrates a current contrast, not the historical causal mechanism."
+        ]
       ],
-      why: "The quoted sentence places two uses of be going to side by side (movement toward a place, and future time), and the next sentence explains how the second grew out of the first. The sentence sets up the contrast that the rest of the text accounts for.",
+      "why": "The quotation supplies the nontravel use. Together with the critic's travel example, it establishes coexistence, supporting grammatical change while correcting the claim that the new use replaced the old."
     },
     {
-      scene: "cs-castleby-wages",
-      passage:
-        "Wage records from the port of Castleby, which run from 1540 to 1640, seem to show laborers growing steadily richer: the daily wage of a dockhand rose more than fourfold over the century. Economic historian Ilse Marr cautions against reading the figures at face value. During the same period, the crown repeatedly reduced the amount of silver in its coins, so a shilling in 1640 bought far less than a shilling in 1540. Marr therefore converts every wage into the weight of silver it represented before comparing one decade with another. Measured this way, a dockhand’s pay rose only modestly and barely kept pace with the price of bread.",
-      quoted: "Marr therefore converts every wage into the weight of silver it represented before comparing one decade with another.",
-      key: "It describes a step Marr takes so that wages from different decades can be fairly compared.",
-      wrong: [
-        ["It reports the finding that leads Marr to doubt that dockhands grew richer.", "Marr’s finding comes in the last sentence; the quoted sentence describes how she prepares the figures, not what they showed."],
-        ["It explains why the crown reduced the amount of silver in its coins during the century.", "The text never gives the crown’s reasons; the debasement is mentioned only as the problem Marr’s method is designed to handle."],
-        ["It concedes that the wage records overstate how many shillings the dockhands were paid.", "Marr does not dispute the recorded wages; she changes the unit in which they are compared, because a shilling’s value changed."],
+      "scene": "cs-castleby-wages",
+      "passage": "Castleby's dock wages rose from two shillings a day in 1540 to nine in 1640. A local historian reads this as a more than fourfold increase in prosperity. Ilse Marr accepts the wage entries but notes that successive rulers reduced the silver in a shilling. Marr therefore converts every wage into the weight of silver it represented before comparing one decade with another. A critic objects that silver itself can change in purchasing power. Marr accordingly prices bread in the same silver units and compares the two series: wages rose little relative to bread. Her procedure thus has two stages, neither of which requires discarding the original wage entries.",
+      "quoted": "Marr therefore converts every wage into the weight of silver it represented before comparing one decade with another.",
+      "key": "It corrects one obstacle to comparison, before a separate comparison addresses whether the adjusted wages bought more.",
+      "wrong": [
+        [
+          "It establishes the workers’ purchasing power directly, leaving the later bread-price comparison to illustrate the result.",
+          "Silver wages alone do not establish purchasing power; the critic's objection requires the separate comparison with bread."
+        ],
+        [
+          "It replaces unreliable wage entries with a new estimate inferred from the crown’s surviving silver coins.",
+          "Marr accepts and converts the original wage figures; she does not replace them with coin-based wage estimates."
+        ],
+        [
+          "It answers the critic’s objection by showing that silver retained a constant purchasing power over the century.",
+          "The conversion precedes the objection and does not establish constant purchasing power of silver."
+        ]
       ],
-      why: "The sentence before it states the problem (a shilling in 1640 held less silver than one in 1540), and the quoted sentence gives Marr’s remedy: she expresses every wage in silver before comparing decades. It is a methodological step; the result it produces comes only in the final sentence.",
+      "why": "Conversion addresses the changing silver content of the unit in which wages were recorded. Comparing those converted wages with bread priced in silver then addresses purchasing power; neither operation alone does both jobs."
     },
     {
-      scene: "cs-arvo-lizard-seeds",
-      passage:
-        "On the Arvo Islands, a small lizard feeds heavily on the fruit of a native shrub, and ecologist Rafael Duarte argues that the lizard does the shrub a double service: it carries seeds away from the parent plant and improves their chances of sprouting. Seeds recovered from lizard droppings, often found tens of meters from the nearest shrub, sprouted at nearly twice the rate of seeds taken straight from the fruit. It could be, of course, that the lizards simply pick the ripest fruit, whose seeds would sprout well however they were scattered. Duarte tested this possibility directly: seeds from equally ripe fruit, cleaned by hand, sprouted no better than seeds from ordinary fruit. Passage through the lizard itself, it appears, is what makes the difference.",
-      quoted: "It could be, of course, that the lizards simply pick the ripest fruit, whose seeds would sprout well however they were scattered.",
-      key: "It raises a rival explanation for a finding, one that the next sentence tests and rules out.",
-      wrong: [
-        ["It acknowledges a weakness in Duarte’s evidence that the text leaves unresolved at the end.", "The weakness is not left standing: the next sentence reports a test that rules it out."],
-        ["It offers further evidence that seeds eaten by the lizards sprout more readily than other seeds.", "The sentence proposes another reason for that evidence; the evidence itself comes in the sentence before."],
-        ["It restates Duarte’s claim that the lizard helps the shrub in two separate ways.", "Duarte’s two-part claim is stated in the first sentence; the quoted sentence challenges part of the support for it."],
+      "scene": "cs-arvo-lizard-seeds",
+      "passage": "Lizards on Arvo carry shrub seeds away and leave seeds that sprout readily. Rafael Duarte attributes both outcomes to gut passage. A critic observes that lizards select ripe fruit, whose seeds might already sprout well. That possibility would explain the germination difference without explaining where the seeds were deposited. Duarte then compared seeds from equally ripe fruit, some passed through lizards and some cleaned by hand; the former still sprouted more often. The result answers the critic on germination, while the original location records remain the evidence for dispersal. A single objection had threatened only one part of the proposed double benefit.",
+      "quoted": "That possibility would explain the germination difference without explaining where the seeds were deposited.",
+      "key": "It limits the critic's alternative to the claim that the subsequent experiment tests.",
+      "wrong": [
+        [
+          "It accepts the alternative explanation and therefore withdraws the claim that lizards benefit the shrub.",
+          "The possibility is considered, then tested; it does not negate dispersal or establish the alternative."
+        ],
+        [
+          "It identifies a flaw in the location records that the subsequent germination experiment is designed to repair.",
+          "The location records are not challenged, and the experiment addresses sprouting rather than location."
+        ],
+        [
+          "It combines the critic's account with Duarte's to explain both benefits without requiring a new comparison.",
+          "The critic's account leaves dispersal unaddressed, and the germination comparison is still needed."
+        ]
       ],
-      why: "The sentence before reports that seeds from droppings sprouted better. The quoted sentence suggests a different reason they might have (the lizards choose ripe fruit), and the next sentence reports Duarte’s test ruling that out. The sentence raises a rival explanation so that the text can dispose of it.",
+      "why": "The sentence distinguishes germination from dispersal. It marks exactly which causal claim fruit selection could undermine, so the later experiment's result is not mistaken for evidence about both benefits."
     },
     {
-      scene: "cs-san-lorenz-altarpiece",
-      passage:
-        "Infrared images of the altarpiece in the church of San Lorenz reveal an underdrawing beneath the paint: loose, rapid strokes that sketch each figure before any color was laid down. Art historian Paola Venn observes that the underdrawings of the painter Jacopo Ferri, known from two signed panels, show exactly this hurried, looping line, and she attributes the altarpiece to him. The resemblance is striking, but it cannot settle the question by itself, since workshops taught their drawing methods to apprentices, and an assistant trained by Ferri could well have drawn the same way. Venn’s attribution is best treated as probable rather than certain, at least until the wooden panel on which the altarpiece is painted can be dated.",
-      quoted: "The resemblance is striking, but it cannot settle the question by itself, since workshops taught their drawing methods to apprentices, and an assistant trained by Ferri could well have drawn the same way.",
-      key: "It identifies a limit on what the evidence of drawing style can establish.",
-      wrong: [
-        ["It answers an objection to Venn’s attribution by pointing to how Ferri trained his assistants.", "The sentence raises the possibility of an assistant as a problem for the attribution; nothing in the text answers it."],
-        ["It argues that one of Ferri’s assistants most likely painted the altarpiece instead of Ferri.", "The sentence says only that an assistant could have drawn the same way; the text still calls Ferri’s authorship probable."],
-        ["It describes the method that revealed the underdrawing beneath the altarpiece’s paint.", "The infrared method is described in the first sentence; the quoted sentence weighs what the resulting evidence shows."],
+      "scene": "cs-san-lorenz-altarpiece",
+      "passage": "Paola Venn attributes the San Lorenz altarpiece to Ferri because its underdrawing resembles his signed panels. Her colleague agrees that the resemblance locates the work within Ferri's workshop but calls individual attribution premature. A workshop could teach the same rapid line to an assistant without making the resulting drawing distinguishable by that feature alone. Venn responds that the panel's wood predates the known assistants' employment. That reply narrows the colleague's alternative only if the drawing followed soon after the panel was made; stored wood leaves a gap. Neither the shared technique nor the early wood date independently settles whose hand drew the figures.",
+      "quoted": "A workshop could teach the same rapid line to an assistant without making the resulting drawing distinguishable by that feature alone.",
+      "key": "It distinguishes evidence of workshop membership from evidence identifying an individual hand.",
+      "wrong": [
+        [
+          "It identifies an assistant's distinctive technique that the later wood date rules out as an alternative.",
+          "The technique is shared, and the wood date does not conclusively rule out assistants."
+        ],
+        [
+          "It challenges the observed resemblance so that Venn must support her attribution using chronology alone.",
+          "The resemblance is accepted; its ability to identify one hand is limited."
+        ],
+        [
+          "It establishes that the altarpiece was collaborative, allowing both competing attributions to be correct.",
+          "Possible shared training does not establish collaboration or two hands."
+        ]
       ],
-      why: "Venn’s attribution rests on a resemblance of drawing style. The quoted sentence grants the resemblance but explains why it is not conclusive (an apprentice could have learned the same style), which is why the final sentence calls the attribution probable rather than certain.",
+      "why": "The sentence explains the colleague's distinction between workshop and individual evidence. The later wood date is a separate, qualified response, not a reason to erase that distinction."
     },
     {
-      scene: "cs-chess-master-recall",
-      passage:
-        "In a classic line of experiments, chess players looked at a board for a few seconds and then tried to reconstruct it from memory. Masters placed nearly every piece correctly when the position came from a real game, while novices managed only a handful. When the pieces had been scattered at random, however, the masters’ advantage largely disappeared. The masters, then, do not simply have better memories; what they possess is a vast store of familiar patterns into which a real position can be broken. Expertise in such a domain may depend less on raw mental capacity than on knowledge built up through years of practice.",
-      quoted: "The masters, then, do not simply have better memories; what they possess is a vast store of familiar patterns into which a real position can be broken.",
-      key: "It infers what explains the masters’ advantage from the contrast between the boards.",
-      wrong: [
-        ["It reports the result showing that the masters’ advantage disappeared on randomly arranged boards.", "That result is reported in the previous sentence; the quoted sentence interprets it."],
-        ["It extends the lesson of the experiments from chess to expertise in other fields.", "The broader lesson comes in the final sentence; the quoted sentence is still about the chess masters."],
-        ["It questions whether the experiments measured the players’ memory in the first place.", "The sentence accepts the experiments and explains what they reveal about memory; it raises no doubt about them."],
+      "scene": "cs-chess-master-recall",
+      "passage": "Chess masters reconstruct real board positions better than novices, yet their advantage shrinks when pieces are arranged randomly. A commentator calls this proof that masters have no memory advantage at all. The comparison instead limits the kind of advantage demonstrated. Familiar configurations allow several pieces to be encoded as a meaningful unit, whereas a random arrangement supplies fewer such units. This explanation locates the observed benefit in acquired knowledge without denying that the benefit is expressed in remembering. It also leaves open whether masters differ on other memory tasks, which the board experiment did not test.",
+      "quoted": "Familiar configurations allow several pieces to be encoded as a meaningful unit, whereas a random arrangement supplies fewer such units.",
+      "key": "It explains the conditional advantage while limiting the commentator's inference from it.",
+      "wrong": [
+        [
+          "It supplies evidence that masters perform no better than novices on memory tasks outside chess.",
+          "The experiment did not test other tasks, and the text explicitly leaves them open."
+        ],
+        [
+          "It attributes the masters' advantage to a general capacity that should work equally well with random positions.",
+          "The mechanism depends on familiar meaningful patterns, which random positions lack."
+        ],
+        [
+          "It explains why the experiment's random condition cannot bear on an account of the masters' memory.",
+          "The random condition helps identify the role of familiar configurations; it is not dismissed."
+        ]
       ],
-      why: "The first sentences set up a contrast: masters recalled real positions far better than novices, but not random ones. The quoted sentence infers what explains that contrast (a store of familiar patterns, not a better memory), and the last sentence generalizes it.",
+      "why": "Chunking familiar patterns explains why the advantage depends on the position. It preserves an actual memory benefit while limiting claims about its source and about other tasks."
     },
     {
-      scene: "cs-two-senses-gene",
-      passage:
-        "Much confusion in popular writing about heredity comes from treating the word gene as though it had a single meaning. For early geneticists, a gene was whatever factor accounted for a pattern of inheritance, such as a trait that skipped a generation; they could study such factors for decades without knowing what they were made of. For molecular biologists, a gene is a particular stretch of DNA whose sequence can be read. The two senses often pick out the same thing, but not always: a single inherited trait may trace to many stretches of DNA, and one stretch may influence many traits. A report that the gene for some trait has been found is therefore ambiguous until one knows which sense is meant.",
-      quoted: "The two senses often pick out the same thing, but not always: a single inherited trait may trace to many stretches of DNA, and one stretch may influence many traits.",
-      key: "It shows where the two senses diverge, which grounds the text’s closing warning.",
-      wrong: [
-        ["It distinguishes the two senses of the term by explaining how each one arose.", "The two senses are introduced in the two preceding sentences; the quoted sentence compares them rather than introducing them."],
-        ["It argues that the molecular sense of the term should replace the older sense entirely.", "The text never recommends dropping either sense; it asks only that readers know which one is meant."],
-        ["It concedes that the two senses of the term rarely refer to the same thing at all.", "The sentence says the senses often pick out the same thing; it identifies only the cases where they diverge."],
+      "scene": "cs-two-senses-gene",
+      "passage": "An early geneticist could use gene for an inherited factor without knowing its material basis; a molecular biologist may use the term for a DNA sequence. A historian calls the second usage simply a more precise name for the first. Yet one inherited trait can involve several sequences, and one sequence can affect several traits. The historian replies that both usages have helped explain inheritance. That shared purpose does not establish a one-to-one match between their objects. The newer account may deepen understanding without merely supplying a physical label for each unit in the older account.",
+      "quoted": "Yet one inherited trait can involve several sequences, and one sequence can affect several traits.",
+      "key": "It challenges a correspondence that shared explanatory usefulness does not establish.",
+      "wrong": [
+        [
+          "It shows that the older concept explained no inheritance patterns and therefore must be discarded.",
+          "The older concept's usefulness is not denied; a simple correspondence is challenged."
+        ],
+        [
+          "It establishes a shared explanatory purpose that the historian later disputes.",
+          "The historian invokes the shared purpose; the quotation concerns correspondence between objects."
+        ],
+        [
+          "It resolves the ambiguity by assigning each inherited trait a unique sequence that can now be identified.",
+          "The quotation describes many-to-many relationships, the opposite of a unique assignment."
+        ]
       ],
-      why: "After the two senses are defined, the quoted sentence notes that they usually coincide but sometimes do not, with examples. That divergence is exactly why, as the last sentence says, a report of the gene for some trait is ambiguous.",
+      "why": "The many-to-many relation defeats simple relabeling. It leaves room for both concepts to have explanatory value, so the historian's reply does not answer the particular objection."
     },
     {
-      scene: "cs-varrow-towers",
-      passage:
-        "Archaeologist Imre Halász has argued that the stone towers scattered across the Varrow uplands formed a signaling network, passing fire beacons from the coast to the inland capital within a single night. Each tower stands on a summit, and from the top of any one of them at least two others are visible. Plotted on Halász’s maps, the towers look like links in a deliberate chain. Charcoal from the towers’ hearths, however, yields dates spread across nearly four centuries, and several towers that the chain requires were built long after their neighbors had fallen into ruin. Whatever purpose the towers served, they cannot all have been operating at the same time.",
-      quoted: "Charcoal from the towers’ hearths, however, yields dates spread across nearly four centuries, and several towers that the chain requires were built long after their neighbors had fallen into ruin.",
-      key: "It introduces dating evidence at odds with the idea of a single working chain.",
-      wrong: [
-        ["It adds evidence that each tower was placed so that at least two others could be seen from it.", "Visibility between towers is described earlier, in support of Halász; the quoted sentence turns to dating evidence that cuts against him."],
-        ["It explains why the towers were built on summits rather than in the valleys below.", "The text never explains the choice of summits; the quoted sentence concerns when the towers were built."],
-        ["It establishes that the towers were never used to send signals of any kind.", "The text concludes only that the towers were not all in use at once; it leaves open what purpose they served."],
+      "scene": "cs-varrow-towers",
+      "passage": "Imre Halász's map links mutually visible Varrow towers into a coastal signaling chain. A critic accepts the sight lines but doubts that a message could have crossed the entire route in one night. Several towers essential to the mapped chain were built only after neighboring towers had fallen into ruin. Halász replies that some adjacent pairs certainly overlapped in use. That reply preserves the possibility of local signaling, but a route assembled from pairs that functioned in different centuries is not a route that functioned at one time. The map's spatial continuity cannot supply the missing temporal continuity.",
+      "quoted": "Several towers essential to the mapped chain were built only after neighboring towers had fallen into ruin.",
+      "key": "It challenges the full route's timing while allowing the local links mentioned in the reply.",
+      "wrong": [
+        [
+          "It disputes the mapped visibility links and leads Halász to replace them with links between different towers.",
+          "The sight lines are accepted; timing, not visibility, is challenged."
+        ],
+        [
+          "It excludes all signaling among the towers, making the later evidence of overlapping pairs contradictory.",
+          "Local pairs can have operated even though the complete chain never did."
+        ],
+        [
+          "It establishes a chronology for the whole chain that Halász's reply confirms with dates for individual pairs.",
+          "The chronology undermines a simultaneous whole; dates for some pairs do not restore it."
+        ]
       ],
-      why: "Halász’s network requires the towers to work together, and the maps make them look like a chain. The quoted sentence reports hearth dates spread over four centuries, with some towers built after others were ruined, which undercuts simultaneous use; the final sentence draws that conclusion.",
+      "why": "The sentence targets the coexistence required by the full single-night route. Halász's overlapping pairs answer a weaker question and therefore do not remove the challenge."
     },
     {
-      scene: "cs-lisle-narrators",
-      passage:
-        "Critics have long praised the novelist Wenna Lisle for narrators who seem to vanish into the minds of her characters, so that a reader can seldom tell where a character’s thoughts end and the narrator’s description begins. That description fits her first four novels, whose narrators almost never offer a judgment of their own, but it does not fit her last two. In ‘The Harrow Road’ and ‘Late Light,’ a narrator repeatedly steps forward to comment on the characters’ folly and even addresses the reader directly. Any account of Lisle’s style must therefore allow for a writer who changed her method late in her career.",
-      quoted: "That description fits her first four novels, whose narrators almost never offer a judgment of their own, but it does not fit her last two.",
-      key: "It limits the critics’ claim to part of Lisle’s career.",
-      wrong: [
-        ["It rejects the critics’ praise of Lisle’s narrators as unfounded.", "The sentence says the praise fits her first four novels; it restricts the claim rather than rejecting it."],
-        ["It offers examples of narrators who comment openly on the characters’ folly.", "Those examples come in the following sentence, which supports the limit that the quoted sentence sets."],
-        ["It explains why Lisle changed her narrative method late in her career.", "The text never gives a reason for the change; it only establishes that the change occurred."],
+      "scene": "cs-lisle-narrators",
+      "passage": "Critics describe Wenna Lisle's narrators as disappearing into her characters' minds. Scholar Anne Voss treats this restraint as proof that Lisle rejected narratorial judgment throughout her career. That description fits her first four novels, whose narrators almost never offer a judgment of their own, but it does not fit her last two. In those later books, judgments once embedded in a character's speech reappear as the narrator's own comments, sometimes addressed directly to the reader. This change does not make the early narrators less reticent; it makes their reticence an unsafe basis for Voss's account of Lisle's whole career.",
+      "quoted": "That description fits her first four novels, whose narrators almost never offer a judgment of their own, but it does not fit her last two.",
+      "key": "It preserves the critics’ observation within a limited period while preparing a challenge to Voss’s broader inference.",
+      "wrong": [
+        [
+          "It rejects the critics’ description of the early novels because the later narrators comment directly on their characters.",
+          "Later differences limit generalization; they do not invalidate the description of the early novels."
+        ],
+        [
+          "It accepts Voss’s claim about Lisle’s intentions while explaining why her later narrators failed to carry it out.",
+          "The passage challenges Voss's career-wide inference and does not establish an intention that later work failed to fulfill."
+        ],
+        [
+          "It attributes the later narrators’ judgments to characters, thereby extending the account given of the early books.",
+          "The passage distinguishes narrator-owned later comments from character speech instead of extending the early pattern."
+        ]
       ],
-      why: "The critics’ praise is stated first. The quoted sentence grants that it fits the first four novels but not the last two, and the next sentence gives evidence from those two. The sentence narrows the scope of the critics’ claim.",
+      "why": "The sentence grants the initial description for the first four novels, then points toward later counterevidence. Its role is to limit a true observation before rejecting Voss's generalization from it."
     },
     {
-      scene: "cs-dialect-definition",
-      passage:
-        "A tidy definition holds that two ways of speaking are dialects of one language if their speakers can understand each other and separate languages if they cannot. The definition fits many ordinary cases, but it sorts some well-known ones badly. Speakers of Norwegian and Swedish can usually follow each other’s speech with modest effort, yet the two are counted as separate languages, while several varieties of Chinese whose speakers cannot readily understand one another are routinely called dialects. Such labels, it appears, follow political and cultural boundaries at least as closely as they follow mutual understanding. Linguists seeking a purely linguistic criterion have learned to treat them with caution.",
-      quoted: "Speakers of Norwegian and Swedish can usually follow each other’s speech with modest effort, yet the two are counted as separate languages, while several varieties of Chinese whose speakers cannot readily understand one another are routinely called dialects.",
-      key: "It gives cases in which the definition stated earlier conflicts with the actual labels.",
-      wrong: [
-        ["It gives examples that confirm the usefulness of the definition stated at the start of the text.", "These are the cases the definition sorts badly: the labels in them contradict the definition."],
-        ["It explains why political boundaries influence which varieties are called languages.", "The political point is made in the next sentence, and even there it is an observation, not an explanation."],
-        ["It argues that Norwegian and Swedish should be reclassified as dialects of one language.", "The text proposes no reclassification; it uses the labels to show the definition’s limits."],
+      "scene": "cs-dialect-definition",
+      "passage": "A proposed definition makes mutual understanding the test for whether two forms of speech are dialects of one language or separate languages. A critic objects that it would require relabeling familiar cases. Speakers of Norwegian and Swedish can usually follow each other’s speech with modest effort, yet the two are counted as separate languages, while several varieties of Chinese whose speakers cannot readily understand one another are routinely called dialects. A defender replies that inherited labels need not constrain a technical definition. The author grants that reply but notes a different difficulty: understanding varies among speakers and depends on exposure. The counterexamples therefore defeat simple reliance on current names; they do not, by themselves, settle whether a revised linguistic criterion is possible.",
+      "quoted": "Speakers of Norwegian and Swedish can usually follow each other’s speech with modest effort, yet the two are counted as separate languages, while several varieties of Chinese whose speakers cannot readily understand one another are routinely called dialects.",
+      "key": "It illustrates the critic’s objection, whose force the subsequent reply limits before the author raises a different difficulty.",
+      "wrong": [
+        [
+          "It presents the author’s final objection that levels of understanding vary with speakers’ previous exposure.",
+          "That is the author's later difficulty; the quotation concerns conflicts between understanding and conventional names."
+        ],
+        [
+          "It confirms the defender’s claim that inherited names must govern any technical definition of a language.",
+          "The defender says the opposite: a technical definition need not preserve inherited labels."
+        ],
+        [
+          "It establishes that no linguistic definition can succeed, a conclusion the author endorses without qualification.",
+          "The final sentence explicitly leaves a revised linguistic criterion open."
+        ]
       ],
-      why: "The text states a definition based on mutual understanding and says it handles some cases badly. The quoted sentence supplies those cases (mutually intelligible varieties called separate languages, and unintelligible ones called dialects), so it serves as counterexamples to the definition.",
+      "why": "The named cases illustrate a critic's complaint about labels. The defender limits what that complaint proves, after which the author introduces variability of understanding as a distinct issue."
     },
     {
-      scene: "cs-ambry-baptisms",
-      passage:
-        "Parish registers from the village of Ambry record a puzzling pattern: in the 1720s, baptisms nearly doubled, yet marriages and burials held steady, and no new houses appear on estate maps of the period. Historian Tobias Rehn resolves the puzzle by looking beyond the village. A chapel built in Ambry in 1719 was the only one within a day’s walk of several upland hamlets, and families from those hamlets began bringing their infants there to be baptized. The registers, in short, measured the reach of a chapel rather than the growth of a village. Rehn’s reading suggests that historians who count baptisms to estimate population should first ask who used the church.",
-      quoted: "Parish registers from the village of Ambry record a puzzling pattern: in the 1720s, baptisms nearly doubled, yet marriages and burials held steady, and no new houses appear on estate maps of the period.",
-      key: "It presents an anomaly in the records that the text then accounts for.",
-      wrong: [
-        ["It presents evidence that Ambry’s population grew rapidly during the 1720s.", "The text concludes that the village did not grow; the rise in baptisms reflected families from other hamlets."],
-        ["It states the caution about baptism records with which the text concludes.", "That caution comes in the final sentence; the quoted sentence describes the records that prompt it."],
-        ["It describes the method Rehn used to explain the rise in baptisms at Ambry.", "Rehn’s explanation begins in the next sentence; the quoted sentence sets out what needed explaining."],
+      "scene": "cs-ambry-baptisms",
+      "passage": "Baptisms in Ambry doubled after its new chapel opened, and a local history treats the increase as rapid population growth. Tobias Rehn notes that nearby hamlets had no chapel and that their families began using Ambry's. Marriages and burials recorded there remained steady, as did the number of houses on estate maps. These records do not count residents directly, but they make the baptism-based estimate harder to sustain. Rehn need not show that Ambry gained no residents; his account requires only that a larger chapel catchment can increase recorded baptisms without a proportional increase in village population.",
+      "quoted": "Marriages and burials recorded there remained steady, as did the number of houses on estate maps.",
+      "key": "It independently weakens the original estimate without proving that no population growth occurred.",
+      "wrong": [
+        [
+          "It directly counts the village's residents, allowing Rehn to prove that none arrived after the chapel opened.",
+          "These are indirect indicators and cannot establish that no residents arrived."
+        ],
+        [
+          "It identifies changes in recordkeeping that explain why the baptism total itself is unreliable.",
+          "The baptism count may be accurate; its relation to local population is the issue."
+        ],
+        [
+          "It confirms that the neighboring hamlets experienced the population increase first attributed to Ambry.",
+          "The records do not establish a population increase in the hamlets."
+        ]
       ],
-      why: "The quoted sentence lays out a pattern that does not add up: baptisms doubled while marriages, burials, and houses stayed the same. The following sentences explain it (families from upland hamlets used Ambry’s new chapel). The sentence poses the puzzle that the text resolves.",
+      "why": "Stable independent indicators weaken the inferred doubling of population. They support questioning proportional growth without proving zero growth or falsifying the baptism count."
     },
     {
-      scene: "cs-caching-hippocampus",
-      passage:
-        "Birds that store food for the winter must later find hundreds or even thousands of hidden caches, and researchers have long suspected that this demand shapes the brain. If it does, species that cache heavily should have a larger hippocampus, a brain region central to spatial memory, than related species that cache little or not at all. Comparisons across several bird families have borne out this expectation: within a family, the caching species generally have a larger hippocampus relative to body size. Because the pattern turns up independently in families that are only distantly related, it is unlikely to be a leftover of a single shared ancestor.",
-      quoted: "If it does, species that cache heavily should have a larger hippocampus, a brain region central to spatial memory, than related species that cache little or not at all.",
-      key: "It derives a testable prediction from the suspicion described in the sentence before it.",
-      wrong: [
-        ["It reports the comparative finding that supports the researchers’ suspicion.", "The finding is reported in the next sentence; the quoted sentence says what should be found if the suspicion is right."],
-        ["It explains how the hippocampus enables birds to remember where they hid food.", "The sentence names the hippocampus’s general role but offers no account of how it works; its job is to state a prediction."],
-        ["It rules out an alternative explanation for the link between caching and brain size.", "The alternative, shared ancestry, is addressed in the final sentence, not in the quoted one."],
+      "scene": "cs-caching-hippocampus",
+      "passage": "Researchers suspect that storing food favors spatial-memory capacities in birds. One proposes comparing heavy and light caching species within several families. If caching demands matter, heavy cachers should tend to have a larger hippocampus relative to body size than their close relatives. A colleague objects that any single family might inherit both traits from one ancestor. Repeating the comparison across distant families reduces that concern; it does not turn the proposal into a claim that hiding food enlarges an individual bird's brain. The proposed comparison concerns recurring differences among species, not a change within one bird's lifetime.",
+      "quoted": "If caching demands matter, heavy cachers should tend to have a larger hippocampus relative to body size than their close relatives.",
+      "key": "It states a species-level prediction whose test and scope the later discussion qualifies.",
+      "wrong": [
+        [
+          "It reports the result of the cross-family comparisons and establishes that shared ancestry has been eliminated as a possibility.",
+          "It states a prediction, not results; the later design reduces rather than eliminates a concern."
+        ],
+        [
+          "It proposes an individual training effect that the later comparisons test by following birds over their lifetimes.",
+          "The prediction compares species, and no lifetime experiment is described."
+        ],
+        [
+          "It supplies the colleague's alternative explanation that larger brains arose before caching behavior.",
+          "The prediction follows the researchers' caching hypothesis; the colleague's ancestry concern follows later."
+        ]
       ],
-      why: "The first sentence states a suspicion (caching shapes the brain). The quoted sentence turns it into a prediction (caching species should have a larger hippocampus); the next sentence reports that the prediction holds, and the last rules out shared ancestry.",
+      "why": "The conditional statement connects a hypothesis to a measurable species comparison. The subsequent qualifications clarify how that prediction should be tested and what it would not establish."
     },
     {
-      scene: "cs-norby-induced-demand",
-      passage:
-        "When the city of Norby added a lane to its busiest highway, rush-hour delays fell for about a year and then returned to their old level. Transportation economists call this pattern induced demand. A faster road lowers the time cost of each trip, so drivers who once traveled at other hours, took other routes, or stayed home begin to use it, until congestion rises enough to discourage further trips. Widening a road, on this view, changes how many people drive more readily than it changes how long they wait. Planners who expect a new lane to end congestion may be counting on a gain that new drivers will soon absorb.",
-      quoted: "A faster road lowers the time cost of each trip, so drivers who once traveled at other hours, took other routes, or stayed home begin to use it, until congestion rises enough to discourage further trips.",
-      key: "It explains the process that produces the pattern named in the previous sentence.",
-      wrong: [
-        ["It presents evidence from Norby that confirms the economists’ account of the pattern.", "The sentence reports nothing observed in Norby; it is a general account of why the pattern occurs."],
-        ["It qualifies the idea of induced demand by noting when new trips stop.", "The point at which new trips stop is part of the mechanism the sentence explains, not a restriction on the idea."],
-        ["It states the conclusion about road widening that the text draws from the pattern.", "That conclusion comes in the next sentence; the quoted sentence supplies the reasoning behind it."],
+      "scene": "cs-norby-induced-demand",
+      "passage": "When Norby's highway gained a lane, delays fell for a year and then returned. One planner calls the initial relief proof that widening works; another calls the later congestion proof that the added lane never helped. Transportation economist Lina Venn accepts both measurements but questions both interpretations. A faster road lowers the time cost of each trip, so drivers who once traveled at other hours, took other routes, or stayed home begin to use it, until congestion rises enough to discourage further trips. On Venn's account, the original users did benefit while traffic was lower; their experience, however, gave no assurance that those conditions would persist. The city's final traffic count includes journeys absent from the initial count.",
+      "quoted": "A faster road lowers the time cost of each trip, so drivers who once traveled at other hours, took other routes, or stayed home begin to use it, until congestion rises enough to discourage further trips.",
+      "key": "It supplies a mechanism that reconciles the two measurements while undermining the planners’ opposing interpretations.",
+      "wrong": [
+        [
+          "It endorses the first planner’s explanation of the initial relief while treating the later congestion as unrelated.",
+          "The mechanism connects initial relief to later congestion rather than separating them."
+        ],
+        [
+          "It disputes the second planner’s traffic measurement by distinguishing original drivers from newly attracted drivers.",
+          "Venn accepts the measurements; she disputes what the planner infers from them."
+        ],
+        [
+          "It sets a condition under which the two planners’ predictions about the lane can both remain correct.",
+          "The passage gives competing interpretations of outcomes, and Venn questions both rather than reconciling their correctness."
+        ]
       ],
-      why: "The first sentence gives the Norby example and the second names the pattern. The quoted sentence explains the mechanism (lower time costs draw new trips until congestion returns), which the last two sentences then apply.",
+      "why": "The extra trips make initial relief and later congestion compatible. That mechanism defeats both the inference of permanent relief and the inference that no one initially benefited. The measurements are accepted; the planners' interpretations are revised."
     },
     {
-      scene: "cs-tidal-mill-date-stone",
-      passage:
-        "For decades, the stone tidal mill at Orrin Creek was dated to the 1600s on the strength of a carved date stone set above its door. Archaeologist Sofia Brandvold noticed that the mortar around the stone differs from the mortar in the rest of the wall. Date stones were often moved from demolished buildings and reused, she points out, so a stone can record the age of an earlier structure rather than the one it now adorns. Timbers from the mill’s wheel pit, dated by their growth rings, were cut around 1760. The mill as it stands, Brandvold concludes, is a century younger than its door suggests.",
-      quoted: "Date stones were often moved from demolished buildings and reused, she points out, so a stone can record the age of an earlier structure rather than the one it now adorns.",
-      key: "It explains why the evidence for the traditional date may mislead.",
-      wrong: [
-        ["It presents the tree-ring evidence that places the mill’s construction around 1760.", "The tree-ring dates come in the next sentence; the quoted sentence explains how a date stone could mislead."],
-        ["It argues that the mill’s later owners forged the carved date stone.", "The sentence says stones were reused from other buildings, not faked; nothing in the text suggests forgery."],
-        ["It describes the difference in mortar that drew Brandvold’s attention to the stone.", "The mortar is described in the sentence before; the quoted sentence gives the general practice that explains it."],
+      "scene": "cs-tidal-mill-date-stone",
+      "passage": "A date stone above Orrin Creek's tidal mill led guides to assign the building to the 1600s. Sofia Brandvold found different mortar around that stone and proposed that the mill itself was younger. Date stones were often moved from demolished buildings and reused, she points out, so a stone can record the age of an earlier structure rather than the one it now adorns. A colleague replies that an old building can also receive a replacement doorway. Brandvold agrees, but points to wheel-pit timbers cut around 1760 and original walls bonded directly into the pit. Her dating therefore rests on the structural evidence as well as the possibility raised by the stone's setting.",
+      "quoted": "Date stones were often moved from demolished buildings and reused, she points out, so a stone can record the age of an earlier structure rather than the one it now adorns.",
+      "key": "It offers a reason to question the traditional dating without by itself establishing the alternative date defended later.",
+      "wrong": [
+        [
+          "It supplies the decisive construction date that the wheel-pit evidence subsequently confirms by another method.",
+          "The reuse principle supplies no construction date; the later timbers and wall relationship support 1760."
+        ],
+        [
+          "It concedes the colleague’s explanation of the doorway while disputing the reliability of the dated timbers.",
+          "The principle introduces Brandvold's concern; the colleague's objection comes later, and the timbers are not disputed."
+        ],
+        [
+          "It shows that the guides misread the carved numerals, so no additional evidence is needed to date the mill.",
+          "The date can be read correctly yet belong to another structure; additional evidence is explicitly required."
+        ]
       ],
-      why: "The mill was dated by its date stone. The quoted sentence explains why such a stone can mislead (stones were reused from older buildings), which prepares for the tree-ring date and the conclusion that the mill is younger.",
+      "why": "A reused stone can mislead, but the colleague's reply shows that different doorway mortar alone cannot date the whole building. The quoted principle opens the challenge; the timbers and bonded walls provide the later positive evidence."
     },
     {
-      scene: "cs-bilingual-naming-delay",
-      passage:
-        "Children raised with two languages are often slower than children raised with one to name pictures of everyday objects, a finding once taken as evidence that learning two languages confuses the young mind. Psychologist Kaveh Amiri proposed a simpler explanation: a bilingual child divides his or her experience of words between two languages, so each individual word is heard less often. If that is right, the delay should shrink when bilingual children are tested on words they use daily in both languages. Amiri found exactly that: on such words, the bilingual children named pictures as quickly as their peers.",
-      quoted: "If that is right, the delay should shrink when bilingual children are tested on words they use daily in both languages.",
-      key: "It derives a prediction that separates Amiri’s explanation from the earlier one.",
-      wrong: [
-        ["It reports the result that led Amiri to reject the earlier view of bilingual children.", "The result comes in the final sentence; the quoted sentence says what should happen if Amiri is right."],
-        ["It concedes that bilingual children name some kinds of words more slowly than others.", "The sentence is a conditional prediction, not an admission; it concerns words used daily in both languages."],
-        ["It restates the earlier claim that learning two languages confuses young children.", "That claim appears in the first sentence as the view Amiri’s explanation replaces."],
+      "scene": "cs-bilingual-naming-delay",
+      "passage": "Bilingual children sometimes name pictured objects more slowly than monolingual peers. Kaveh Amiri attributes the delay to encountering each individual word less often, while a critic favors a general difficulty in selecting between languages. Words that bilingual children use daily in both languages should therefore show a smaller delay, Amiri argues. Both accounts can explain the original average; only Amiri's account specifically motivates this exposure-based contrast. Finding that contrast would strengthen his explanation without proving that selection never contributes. The proposed test separates predictions more narrowly than the rival slogans about bilingualism suggest.",
+      "quoted": "Words that bilingual children use daily in both languages should therefore show a smaller delay, Amiri argues.",
+      "key": "It turns one account into a discriminating prediction while leaving open the possibility that the competing process also contributes.",
+      "wrong": [
+        [
+          "It reports evidence that the critic's proposed selection difficulty occurs on every word, including highly familiar ones.",
+          "The sentence gives Amiri's prediction, not evidence for the critic."
+        ],
+        [
+          "It restates an observation equally predicted by both accounts and therefore explains why the dispute cannot be tested.",
+          "The exposure-based contrast is specifically motivated by Amiri's account and supports a test."
+        ],
+        [
+          "It defines a result that would prove selection has no role in bilingual naming under any circumstances.",
+          "The passage expressly limits that inference; support for one process does not exclude every role for the other."
+        ]
       ],
-      why: "Amiri explains the delay by how often each word is heard. The quoted sentence turns that explanation into a test (the delay should vanish for words heard often in both languages), and the final sentence reports that it did. A confusion account would not predict that.",
+      "why": "The prediction targets how exposure should modify the delay. It can favor Amiri's explanation of a particular contrast without making the stronger claim that no selection process ever matters."
     },
     {
-      scene: "cs-varne-heron-trail",
-      passage:
-        "Counts of nesting herons along the Varne estuary fell by nearly half between 2010 and 2020, and local groups blamed disturbance from a new walking trail. Ornithologist Petra Lund compared the Varne with two estuaries nearby that had no new trails. Heron numbers fell by almost the same share at both. Whatever drove the decline, Lund concludes, it was probably not the trail, and she points instead to a regional drop in the eels on which the herons feed. The trail may still disturb nesting birds, but it cannot explain a pattern that appears where there is no trail at all.",
-      quoted: "Heron numbers fell by almost the same share at both.",
-      key: "It reports a comparison that undercuts the explanation the local groups offered.",
-      wrong: [
-        ["It proposes that a regional drop in eels caused the herons’ decline.", "The eel explanation comes in the next sentence; the quoted sentence reports only what the comparison showed."],
-        ["It shows that the new walking trail has no effect on the estuary’s nesting herons.", "The last sentence grants that the trail may still disturb birds; the comparison shows only that it cannot explain the decline."],
-        ["It describes how Lund chose the two estuaries she used for the comparison.", "Her choice of estuaries is described in the sentence before; the quoted sentence gives the result."],
+      "scene": "cs-varne-heron-trail",
+      "passage": "Herons declined along the Varne after a walking trail opened. Local campaigners assign the whole decline to disturbance, while Petra Lund examines two nearby estuaries without new trails. Heron numbers fell by almost the same proportion at both. Lund proposes a regional food shortage; the trail's defenders call the comparison proof that walkers cause no harm. A regional cause could explain the shared trend while a local disturbance still affects particular nests. The comparison challenges the campaigners' exclusive account, but its scale gives no direct test of every smaller effect the defenders deny.",
+      "quoted": "Heron numbers fell by almost the same proportion at both.",
+      "key": "It challenges an exclusive local cause without establishing the absence of all local harm.",
+      "wrong": [
+        [
+          "It establishes the complete absence of trail disturbance by showing that the estuaries had identical conditions.",
+          "Similar trends do not establish identical conditions or absence of every local effect."
+        ],
+        [
+          "It confirms the campaigners' causal claim by reproducing the same disturbance at two other sites.",
+          "The comparison sites have no new trails, so the trend challenges that claim."
+        ],
+        [
+          "It directly measures the regional food shortage and determines how much of the Varne decline it caused.",
+          "The sentence reports bird counts, not food measurements or an exact causal allocation."
+        ]
       ],
-      why: "The local groups blamed the trail. The quoted sentence reports that herons declined just as much where there was no trail, which undercuts that explanation; the rest of the text draws the conclusion and proposes another cause.",
+      "why": "Declines without trails weaken the claim that a trail explains the whole pattern. The evidence operates at the aggregate level and does not prove that no individual nests are disturbed."
     },
     {
-      scene: "cs-harlow-signature-literacy",
-      passage:
-        "Historians estimating literacy in eighteenth-century Harlow have long counted the share of brides and grooms who signed the marriage register with their names rather than with a mark. The method has an obvious flaw: people could be taught to write their names without learning to read, and many who read well never learned to write. Historian Aline Morel therefore turned to a second source, the town’s lending library, whose ledgers record the occupations of its borrowers. Where the two measures overlap, they broadly agree, which suggests that the signature counts, crude as they are, were not badly misleading.",
-      quoted: "The method has an obvious flaw: people could be taught to write their names without learning to read, and many who read well never learned to write.",
-      key: "It names a weakness of the standard measure that prompts the search for another.",
-      wrong: [
-        ["It shows that the signature counts greatly overstated how many people in Harlow could read.", "The flaw could push the counts either way, and the last sentence says they were not badly misleading."],
-        ["It explains why the library ledgers record the occupations of borrowers.", "The ledgers are introduced in the next sentence, and the text never explains what they record."],
-        ["It describes the marriage registers that historians used to estimate literacy.", "The registers are described in the first sentence; the quoted sentence criticizes the method built on them."],
+      "scene": "cs-harlow-signature-literacy",
+      "passage": "Harlow historians estimate reading ability from marriage signatures. Aline Morel objects to treating that indicator as a direct count. People could learn a signature without reading, while capable readers might be unable to write. A critic takes her objection to mean signature rates must exaggerate literacy. Morel instead compares occupational patterns in the registers with lending-library records, finding broad agreement. This check does not remove the indicator's individual errors, but it suggests that their aggregate effect may be limited. The objection justifies checking the estimate; it does not determine in advance which way the estimate is wrong.",
+      "quoted": "People could learn a signature without reading, while capable readers might be unable to write.",
+      "key": "It identifies opposing possible errors, motivating a check without supporting the critic's prediction of a particular bias.",
+      "wrong": [
+        [
+          "It establishes that signatures systematically overcount readers, a bias the library comparison later measures.",
+          "Errors can go both directions, and broad agreement does not measure a systematic overcount."
+        ],
+        [
+          "It rejects any use of the registers, so the later comparison must derive a new estimate without them.",
+          "The registers remain in use and are checked against a second source."
+        ],
+        [
+          "It describes weaknesses in the library records that prevent those records from checking the marriage registers.",
+          "The quoted weaknesses concern signatures; library records are introduced later as a check."
+        ]
       ],
-      why: "The first sentence describes the signature method; the quoted sentence names its flaw (signing and reading are different skills), which is why Morel turns to the library ledgers as a second measure.",
+      "why": "The two mismatches run in opposite directions. They motivate external checking while withholding the directional claim that the critic makes; agreement can reduce aggregate concern without eliminating individual errors."
     },
     {
-      scene: "cs-hive-temperature-thresholds",
-      passage:
-        "Honeybee colonies keep the brood at the center of the hive within a degree of 35°C, even when the air outside swings from near freezing to over 40°C. How individual bees, none of which can sense the state of the whole hive, achieve this has long puzzled researchers. Studying hives on the island of Tamsin, biologist Mei Arden found that bees differ in the temperature at which they begin to fan their wings or to cluster for warmth: some respond to small changes, others only to large ones. Because the colony’s response grows gradually as more bees join in, the hive’s temperature is corrected smoothly rather than in lurches.",
-      quoted: "Studying hives on the island of Tamsin, biologist Mei Arden found that bees differ in the temperature at which they begin to fan their wings or to cluster for warmth: some respond to small changes, others only to large ones.",
-      key: "It reports a finding that begins to answer the puzzle raised just before it.",
-      wrong: [
-        ["It states the puzzle about how honeybee colonies control the temperature of the hive.", "The puzzle is stated in the sentence before; the quoted sentence begins to answer it."],
-        ["It explains why the brood must be kept within a degree of 35°C to survive.", "The text never explains why that temperature matters; it asks how the bees maintain it."],
-        ["It draws the conclusion that the hive’s temperature is corrected smoothly rather than in lurches.", "That conclusion comes in the final sentence, which builds on the finding the quoted sentence reports."],
+      "scene": "cs-hive-temperature-thresholds",
+      "passage": "Observers of honeybee colonies sometimes take stable brood temperatures as evidence that every bee responds to the same thermal signal. A colleague of biologist Mei Arden instead proposed that one group issues instructions to the rest. Studying hives on the island of Tamsin, biologist Mei Arden found that bees differ in the temperature at which they begin to fan their wings or to cluster for warmth: some respond to small changes, others only to large ones. No distinct directing group appeared in her observations. Because more workers join as the temperature moves farther from its usual level, individual variation can produce a smoothly increasing collective response. The hive's apparent coordination need not imply either identical individual thresholds or centralized instruction.",
+      "quoted": "Studying hives on the island of Tamsin, biologist Mei Arden found that bees differ in the temperature at which they begin to fan their wings or to cluster for warmth: some respond to small changes, others only to large ones.",
+      "key": "It identifies variation among workers that supports an account of coordination without uniform responses or centralized control.",
+      "wrong": [
+        [
+          "It establishes that workers share a response threshold, supporting the observers’ account of the stable brood temperature.",
+          "Arden finds different thresholds, the reverse of the uniform response assumed by the observers."
+        ],
+        [
+          "It describes evidence of a directing group that explains why workers begin responding at different temperatures.",
+          "The passage reports no such group; individual thresholds supply the alternative mechanism."
+        ],
+        [
+          "It treats differences among individual workers as evidence against the observed stability of the colony’s temperature.",
+          "Variation is used to explain stability at colony level, not to dispute that stability."
+        ]
       ],
-      why: "The second sentence asks how bees without an overview keep the hive steady; the quoted sentence reports that bees respond at different thresholds, and the last sentence explains how that produces smooth control.",
+      "why": "Different individual thresholds let the colony's response increase gradually without identical reactions or a directing group. The sentence provides evidence for that alternative account, not a denial of collective stability."
     },
     {
-      scene: "cs-serra-wreck-jars",
-      passage:
-        "The ship that sank off Cape Serra in the 1300s carried hundreds of sealed jars, and early excavators assumed they held wine, the region’s chief export. Residue analysis tells a different story: most jars held olive oil, and a few held fish sauce. Yet the jars themselves are the tall, narrow kind that workshops on the coast made specifically for wine. The likeliest explanation, archaeologist Tomas Varga suggests, is that jars were reused for whatever cargo was at hand, so the shape of a container shows where it was made but not necessarily what it later carried.",
-      quoted: "Yet the jars themselves are the tall, narrow kind that workshops on the coast made specifically for wine.",
-      key: "It presents a detail at odds with the residue findings, a tension the final sentence resolves.",
-      wrong: [
-        ["It confirms the early excavators’ belief that the jars were used to carry wine.", "The residue shows oil and fish sauce; the text treats the wine-jar shape as a puzzle to explain, not as proof of wine."],
-        ["It reports the residue analysis showing that most of the jars held olive oil.", "The residue analysis is reported in the sentence before; the quoted sentence turns to the jars’ shape."],
-        ["It explains why coastal workshops made their wine jars tall and narrow.", "The text never explains the shape; it uses the shape only to raise a puzzle."],
+      "scene": "cs-serra-wreck-jars",
+      "passage": "Serra excavators inferred a wine cargo from the shape of sealed jars. Residues instead indicated mostly olive oil. The jars are the tall type that coastal workshops designed for wine. A critic treats that design history as evidence against the residue results; archaeologist Tomas Varga treats it as the fact a reuse account must explain. Containers made for one commodity can later carry another. This possibility reconciles design with residues without identifying the jars' workshop or proving how often reuse occurred. The design evidence survives, but the claim it supports concerns intended use rather than the wreck's actual cargo.",
+      "quoted": "The jars are the tall type that coastal workshops designed for wine.",
+      "key": "It supplies a design fact that the rival accounts relate differently to the actual contents.",
+      "wrong": [
+        [
+          "It establishes the jars' precise manufacturing site, allowing Varga to explain how they reached the wreck.",
+          "A regional design does not identify a particular workshop or the jars' route."
+        ],
+        [
+          "It refutes the first cargo identification independently of the chemical evidence that follows.",
+          "The design motivated the first identification; it does not refute it."
+        ],
+        [
+          "It supplies proof that the jars were repeatedly reused, resolving uncertainty about the frequency of that practice.",
+          "Design and residues make reuse possible; they do not measure its frequency."
+        ]
       ],
-      why: "The residue says oil; the jars’ shape says wine. The quoted sentence introduces that conflict (“Yet”), and the final sentence resolves it: the jars were reused.",
+      "why": "The quotation is accepted under both interpretations. The critic treats intended use as fixing contents; Varga's reuse possibility preserves the design fact while rejecting that inference."
     },
   ];
 
@@ -1876,7 +2018,7 @@
     title: "Function of a sentence in dense academic prose",
     recognize:
       "In scholarly prose each sentence answers the one before and sets up the one after; the quoted sentence’s job is defined by that position, and the wrong choices describe its neighbors or a stronger or reversed version of its job.",
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["true-but-irrelevant", "extreme-language", "opposite-stance"],
     build(t) {
       const topic = t.pick(TSP_ACADEMIC_FUNCTION_TOPICS);
@@ -1919,208 +2061,344 @@
   // so the key is never one half of a look-alike pair.
   const TSP_ACADEMIC_STRUCTURE_TOPICS = [
     {
-      scene: "cs-orlen-wool-guild",
-      passage:
-        "The account books of the Orlen wool guild, kept without a break from 1410 to 1530, offer an unusually direct view of how the medieval wool trade responded to war. Whenever fighting closed the northern sea routes, the books show, the guild’s purchases of raw wool fell within a season, and its members turned instead to buying finished cloth from inland weavers, which could travel overland. The books thus record a trade that adapted quickly rather than one that simply collapsed. They are, however, the records of a single guild in a single port, and the guild’s wealth may have given it a flexibility that smaller merchants lacked.",
-      key: "It makes a claim about what a source reveals, supports it with a pattern in the source, and then notes a limit on how widely the pattern applies.",
-      wrong: [
-        ["It argues that a set of records shows how a trade responded to war, illustrates this with a pattern in them, and then doubts that their figures are accurate.", "The final sentence doubts how far the pattern generalizes (one wealthy guild), not whether the books’ figures are accurate."],
-        ["It describes a pattern in a guild’s records, notes that the guild was unusually wealthy, and then argues that all merchants adapted in the same way.", "The text raises the guild’s wealth as a reason the pattern may not hold for smaller merchants; it never claims that all merchants adapted alike."],
-        ["It reports how other historians have read a set of records and then uses a pattern in the records to show that their reading is mistaken.", "The claim about what the books reveal is the author’s own; the text does not report or dispute anyone else’s reading."],
+      "scene": "cs-orlen-wool-guild",
+      "passage": "The Orlen guild's accounts record a switch from imported wool to inland cloth whenever war closed sea routes. A historian cites this flexibility against the view that war simply destroyed commerce. Her critic notes that poorer traders could not finance the switch. That objection limits the guild's representativeness, but the critic also calls its records worthless for assessing wartime adaptation. Even an exceptional survivor can establish that adaptation occurred; what its books cannot establish is how typical that response was. Neither the historian's broad optimism nor the critic's dismissal follows from the guild's exceptional wealth.",
+      "key": "It concedes a historical source's limited reach while defending its narrower value against a critic's wholesale dismissal.",
+      "wrong": [
+        [
+          "It introduces an inference from a source, undermines the source's accuracy, and preserves the inference through independent evidence.",
+          "Wealth limits representativeness, not accuracy; no independent evidence restores the inference."
+        ],
+        [
+          "It contrasts two accounts of wartime trade and reconciles them by assigning each to a different period.",
+          "The distinction concerns typicality versus existence within the same period, not successive periods."
+        ],
+        [
+          "It accepts an objection to a source and extends that objection to reject any conclusion about adaptation.",
+          "The author preserves the narrower conclusion that adaptation occurred."
+        ]
       ],
-      why: "The text claims that the guild’s books show how the wool trade responded to war, supports the claim with the pattern of purchases, concludes that the trade adapted, and ends by noting that one wealthy guild may not represent smaller merchants.",
+      "why": "The guild supports an existence claim, while its unusual resources limit a claim about typical trade. The author grants that limit but rejects the critic's stronger dismissal of the source."
     },
     {
-      scene: "cs-iversby-letters",
-      passage:
-        "Scholars who want to date the undated letters of the poet Maren Iversby face an obvious difficulty. Iversby almost never mentioned public events, so the usual method of matching a letter’s contents to the news of the day yields little, and her handwriting barely changed across forty years. The paper she wrote on may succeed where these approaches fail. Iversby bought her writing paper from a single stationer whose watermarks changed every few years, and the stationer’s surviving order books record when each watermark was introduced. Matching a letter’s watermark to those records could place it within a span of three or four years.",
-      key: "It identifies a difficulty in dating a writer’s letters, explains why two methods fall short, and proposes a third.",
-      wrong: [
-        ["It sets out a problem in dating a poet’s correspondence, proposes a method based on her paper, and then explains why that method also fails.", "The paper-based method is offered as the one that may succeed; the methods that fall short are described before it."],
-        ["It compares three ways of dating the letters and concludes that none of them can place a letter within a few years.", "The text says the watermark method could place a letter within three or four years; it does not reject all three methods."],
-        ["It argues that handwriting is the best guide to dating the letters and then defends that view against a method based on paper.", "The text sets handwriting aside because it barely changed; it favors the watermark method instead."],
+      "scene": "cs-iversby-letters",
+      "passage": "Neither public events nor changing handwriting help date Maren Iversby's letters. A cataloger instead matches their watermarks to a stationer's dated paper orders. Her reviewer objects that old paper can remain unused, an objection often taken to discredit the proposed chronology. Iversby's household accounts, however, record exhausting each purchase before ordering the next. Those accounts do not date individual letters directly; they connect the watermarks to bounded periods of use. The cataloger's three-year ranges may therefore be defensible, although replacing them with exact years would claim more than this reply to the reviewer establishes.",
+      "key": "It presents a dating proposal, answers an objection by connecting two sources, and distinguishes the proposal's warranted precision from a stronger claim.",
+      "wrong": [
+        [
+          "It abandons unsuccessful dating methods, accepts a criticism of their replacement, and introduces a source that dates the letters independently.",
+          "The household accounts support the watermark method; they neither replace it nor date letters independently."
+        ],
+        [
+          "It presents an uncertain chronology, verifies its exact dates against another source, and attributes earlier errors to unused paper.",
+          "Only bounded ranges are defended, and unused paper is a proposed concern, not an established source of error."
+        ],
+        [
+          "It compares two rival chronologies, identifies an assumption they share, and leaves unresolved which one is more precise.",
+          "There is one proposed chronology and a reply to an objection, not two rival chronologies."
+        ]
       ],
-      why: "The text states a problem (the letters are undated), explains why dating by contents and by handwriting fails, and proposes a method based on watermarks and the stationer’s order books.",
+      "why": "The household records answer the storage objection by bounding when each paper supply was used. They defend approximate watermark dates without establishing exact dates."
     },
     {
-      scene: "cs-tarric-word-order",
-      passage:
-        "Linguists have long disagreed about why the language Tarric shifted, over two centuries, from placing the verb first in a sentence to placing the subject first. One camp credits contact with neighboring Ossic, whose speakers put the subject first and traded heavily with Tarric communities; the other points to a change within Tarric itself, which had begun to lose the verb endings that once marked who did what to whom. Recent work suggests that the two accounts need not compete. The loss of endings made verb-first sentences increasingly ambiguous, and where Tarric speakers traded with Ossic speakers, the subject-first pattern offered a ready remedy; where contact was absent, the shift came decades later and less completely.",
-      key: "It presents two competing explanations of a change in a language and argues that they work together.",
-      wrong: [
-        ["It sets out two rival accounts of a shift in word order and then rejects the one that depends on contact with a neighboring language.", "The text keeps the contact account: trade with Ossic speakers supplied the new pattern where endings had been lost."],
-        ["It describes a change in a language, attributes it entirely to the loss of verb endings, and treats contact as a later side effect.", "The text gives contact a real role: the shift came earlier and more completely where Tarric speakers traded with Ossic speakers."],
-        ["It explains how one language’s word order spread to another and then argues that the two languages eventually merged.", "The text never says the languages merged; it explains why Tarric changed its word order."],
+      "scene": "cs-tarric-word-order",
+      "passage": "Tarric began losing verb endings before its speakers traded widely with Ossic speakers, whose sentences normally placed subjects first. A linguist takes that chronology to exclude Ossic influence on Tarric's later shift to subject-first order. Yet communities with equal losses of endings adopted that order decades earlier where trade was frequent. The chronology tells against borrowing as the cause of the lost endings, a claim the contact account need not make. Endings could disappear for internal reasons while contact supplied a response to the resulting ambiguity. The regional comparison bears on that response, not on the initial loss.",
+      "key": "It narrows a chronological objection, then uses a comparison to preserve a role for the disputed factor.",
+      "wrong": [
+        [
+          "It challenges an earlier chronology, replaces it with a regional comparison, and attributes both linguistic changes to contact.",
+          "The chronology is accepted; contact is preserved for the word-order response, not both changes."
+        ],
+        [
+          "It contrasts two explanations of the same change and treats their independent support as evidence that either is sufficient.",
+          "Internal loss and contact explain different linked parts of the process, not independently sufficient alternatives."
+        ],
+        [
+          "It accepts evidence against borrowing and uses regional differences to explain why that evidence applies only to isolated communities.",
+          "The chronology is not restricted to isolated communities; its relevance is restricted to the loss of endings."
+        ]
       ],
-      why: "The text opens with two rival explanations (contact with Ossic, loss of verb endings) and then argues that they combine: the lost endings created the need, and contact supplied the remedy where it existed.",
+      "why": "The author separates what caused endings to disappear from what supplied a new word order. The chronology challenges only the former contact claim, while regional timing supports the latter."
     },
     {
-      scene: "cs-kelder-nest-edges",
-      passage:
-        "Surveys in the Kelder Hills found that songbird nests in small patches of forest failed far more often than nests deep within large forests, and ecologists at first took this as evidence that small patches are poor habitat in themselves. Cameras later placed at the nests told a different story: most failures were caused by raccoons and jays, which thrive along the boundary between forest and farmland but venture only a short way into the trees. The patches were dangerous, in other words, not because they were small but because nearly every nest in them lay close to an edge. Conservation plans that merely add small patches of woodland may therefore do less for these birds than plans that join existing forest into larger, more compact tracts.",
-      key: "It reports a finding and its first interpretation, revises that interpretation in light of later evidence, and draws a practical implication.",
-      wrong: [
-        ["It presents a finding, confirms the original interpretation with evidence from cameras, and recommends adding small patches of woodland.", "The cameras overturned the original interpretation, and the text advises against relying on small patches."],
-        ["It presents a finding about songbird nests, reinterprets it in light of new evidence, and concludes that forest size is irrelevant to conservation.", "The text still favors larger, compact tracts; it says size matters because of edges, not that size is irrelevant."],
-        ["It compares two conservation plans, reports camera evidence favoring one, and then explains why the other was first proposed.", "The plans come only at the end, as an implication; the text is organized around the nest finding and its reinterpretation."],
+      "scene": "cs-kelder-nest-edges",
+      "passage": "Nest surveys in Kelder found more failures in small woods than in large ones. Camera records linked most failures to predators that stayed near forest edges, prompting one ecologist to call patch size irrelevant. Her colleague notes that nearly all of a small patch lies near an edge. The cameras thus challenge an intrinsic disadvantage of small woods, without removing the observed size relationship. A proposed corridor could connect two patches yet add mostly exposed edges; judging it by connected area alone would repeat, in a favorable direction, the simplification that the camera evidence first unsettled.",
+      "key": "It reinterprets an association, limits an inference from that revision, and applies the distinction to a plan.",
+      "wrong": [
+        [
+          "It replaces an unreliable survey with direct observations and uses them to recommend increasing connected forest area.",
+          "The surveys remain reliable, and connected area alone is explicitly an inadequate basis for recommendation."
+        ],
+        [
+          "It confirms an intrinsic size effect, introduces an additional cause of failure, and compares remedies for the two causes.",
+          "Edges reinterpret the size effect rather than add an independent intrinsic-size cause."
+        ],
+        [
+          "It accepts that size has no relation to failure and explains why a proposed intervention could nevertheless preserve that relation.",
+          "The author rejects the claim that size is irrelevant; the intervention illustrates why edge geometry matters."
+        ]
       ],
-      why: "The text reports that nests in small patches failed more often and the first reading of that finding, then uses camera evidence to reinterpret it (edges, not size), and ends with an implication for conservation plans.",
+      "why": "Predation explains, rather than erases, the size association. The corridor example applies that causal distinction: connectivity without reduced edge exposure need not improve nesting conditions."
     },
     {
-      scene: "cs-gettier-knowledge",
-      passage:
-        "Many philosophers once accepted a simple analysis of knowledge: to know something, a person must believe it, the belief must be true, and the person must be justified in holding it. In 1963 the philosopher Edmund Gettier described cases that meet all three conditions yet do not seem to count as knowledge. An older example makes the problem vivid: a person glances at a clock that has stopped but happens to show the correct time, so her belief about the hour is true and reasonably formed, yet she has been lucky rather than informed. Many philosophers responded by adding a fourth condition meant to exclude such luck, though they have disagreed ever since about how to state it.",
-      key: "It sets out a definition, presents cases that the definition misclassifies, and then describes an unsettled effort to repair it.",
-      wrong: [
-        ["It lays out an analysis of knowledge, gives cases it handles badly, and then reports that philosophers abandoned any attempt to define knowledge.", "Philosophers responded by adding a fourth condition; the text describes a repair, not an abandonment."],
-        ["It presents a puzzling case of lucky belief, proposes a definition of knowledge to explain it, and then lists objections to that definition.", "The definition comes first, and the lucky case is a counterexample to it, not something the definition was proposed to explain."],
-        ["It contrasts two rival definitions of knowledge and then uses a single example to show that the older one is correct.", "The text discusses one definition and a proposed revision, and its example counts against the definition rather than for it."],
+      "scene": "cs-gettier-knowledge",
+      "passage": "A stopped clock can accidentally show the correct time when consulted, yielding a justified true belief that many philosophers would hesitate to call knowledge. A critic invokes such cases to say that justification has no place in an account of knowledge. That conclusion exceeds what the cases establish. They show that truth, belief, and justification together are insufficient, not that justification is unnecessary. A proposed condition excluding luck might repair the analysis while retaining its original requirements. Whether such a condition can be stated satisfactorily remains disputed; that dispute does not rescue the critic's inference.",
+      "key": "It uses a lucky belief to expose an incomplete analysis, rejects an excessive objection, and considers a possible amendment.",
+      "wrong": [
+        [
+          "It presents a counterexample to a requirement, replaces that requirement with another, and defends the replacement against a critic.",
+          "The original requirement is retained as potentially necessary; the new condition would supplement it."
+        ],
+        [
+          "It introduces a disputed definition, gives a case supporting it, and treats disagreement about a revision as evidence for the original.",
+          "The case challenges sufficiency, and disagreement does not restore the original definition."
+        ],
+        [
+          "It concedes a critic's objection to justification but rejects the critic's proposed solution because it permits luck.",
+          "The author rejects the critic's inference, and the critic offers no repair in the passage."
+        ]
       ],
-      why: "The text states the three-part analysis, presents cases (Gettier’s and the stopped clock) that satisfy it without being knowledge, and ends with the response of adding a fourth condition, whose wording is still disputed.",
+      "why": "The stopped clock challenges the sufficiency of three conditions, not the necessity of each. The possible anti-luck addition respects that distinction, even though its formulation is unresolved."
     },
     {
-      scene: "cs-faint-young-sun",
-      passage:
-        "Models of how stars age indicate that the young Sun shone about 30 percent less brightly than it does today, too faintly, by simple calculation, to keep Earth’s oceans from freezing. Yet rocks more than three billion years old record flowing water. Most researchers resolve this puzzle by giving the early atmosphere a stronger greenhouse effect than today’s. Carbon dioxide alone seems not to have been enough, however: ancient soils lack minerals that would have formed under the very high levels the calculations require. Many researchers therefore suspect that methane, produced by early microbes, supplied much of the missing warmth.",
-      key: "It poses a puzzle, names the kind of solution most researchers accept, and then uses evidence to narrow which version of it is plausible.",
-      wrong: [
-        ["It raises a puzzle about the early Earth, notes a widely accepted solution, and then cites evidence that rules out any greenhouse explanation.", "The evidence rules out only a version that relies on carbon dioxide alone; the text still favors a greenhouse explanation involving methane."],
-        ["It describes evidence of water on the early Earth and then explains why the young Sun was dimmer than it is today.", "The Sun’s dimness is the starting premise, not something the text explains, and the text goes on to weigh solutions to the puzzle."],
-        ["It presents two rival solutions to a puzzle, carbon dioxide and methane, and then concludes that the evidence supports neither.", "The text presents methane as the likelier source of the missing warmth; it does not reject both."],
+      "scene": "cs-faint-young-sun",
+      "passage": "A dimmer young Sun and geological evidence of ancient liquid water create a puzzle for climate models. One proposed answer invokes high atmospheric carbon dioxide. Soil evidence has been used to limit how much carbon dioxide was present; a commentator treats that limit as a reason to discard a stronger greenhouse effect altogether. Researchers exploring methane accept the soil constraint but do not accept the commentator's conclusion. Their proposal need not dispute the evidence that weakens the carbon-dioxide-only account, since the constraint concerns one warming agent. Whether methane supplied enough warmth remains a separate quantitative question.",
+      "key": "It distinguishes a limit on one solution from rejection of its broader approach, preserving an untested alternative.",
+      "wrong": [
+        [
+          "It presents a climatic puzzle, disputes evidence against a proposed solution, and replaces that evidence with an untested calculation.",
+          "The soil evidence is accepted; no new calculation replaces it."
+        ],
+        [
+          "It contrasts two solutions, rejects their shared premise, and identifies a question that must be answered before either can be considered.",
+          "The shared greenhouse premise is retained, while the methane version needs quantitative evaluation."
+        ],
+        [
+          "It explains why one solution fails and treats the failure as sufficient evidence that its alternative is correct.",
+          "Methane remains to be evaluated; the passage expressly denies automatic confirmation."
+        ]
       ],
-      why: "The text sets up a puzzle (a dim young Sun but liquid water), names the accepted kind of solution (a stronger greenhouse effect), and then uses soil evidence to rule out a carbon-dioxide-only version in favor of methane.",
+      "why": "The author separates a constraint on carbon dioxide from rejection of all greenhouse warming. Methane preserves the broader approach without being established merely by the first version's weakness."
     },
     {
-      scene: "cs-vane-weir-poem",
-      passage:
-        "Readers of Tobias Vane’s poem ‘The Weir’ have generally taken its closing image, a river held motionless behind a dam, as a figure for grief that cannot move forward. The reading is natural, but it passes over the poem’s middle stanzas, in which the speaker watches the weir’s builders at work and admires the patience that lets a valley store water against a dry summer. Read with those stanzas in mind, the still water looks less like paralysis than like provision: something held back on purpose, to be drawn on later. The poem, on this account, is less an elegy than a meditation on how people store up feeling, as they store water, for harder times.",
-      key: "It describes a common reading of a poem, points to passages the reading overlooks, and offers an alternative that accounts for them.",
-      wrong: [
-        ["It summarizes a familiar interpretation of a poem, notes passages the interpretation neglects, and concludes that the poem resists any confident reading.", "The text does reach a confident alternative: the poem is a meditation on storing up feeling."],
-        ["It proposes a new reading of a poem, reports that other readers have rejected it, and then defends it by appealing to the poem’s final image.", "The reading attributed to other readers is the older one about grief; the text’s new reading rests on the middle stanzas."],
-        ["It traces how the poet revised a poem over time and then argues that its final image is weaker than those in earlier versions.", "The text says nothing about drafts or revisions; it compares two readings of the finished poem."],
+      "scene": "cs-vane-weir-poem",
+      "passage": "Tobias Vane's poem closes with water motionless behind a weir. Readers who find only paralysis in that image seldom discuss the speaker's earlier admiration for builders storing water against drought. A new reading calls the stillness a reserve of feeling for future hardship. One reviewer embraces that reading as proof that grief is absent from the poem. Yet stored feeling can be grief; the earlier stanzas challenge its supposed incapacity to serve the future, not its presence. The revised reading therefore changes what the closing stillness does without necessarily changing what emotion it contains.",
+      "key": "It uses overlooked stanzas to reinterpret stillness, then separates that revision from a reviewer's exclusion of grief.",
+      "wrong": [
+        [
+          "It replaces an established interpretation with a rival and then rejects the rival because the poem still concerns grief.",
+          "Grief remains compatible with the revised function of stillness, so the rival reading is retained."
+        ],
+        [
+          "It compares readings based on different images and reconciles them by assigning each emotion to a separate stanza.",
+          "The reinterpretation concerns the same closing image; emotions are not allocated to different stanzas."
+        ],
+        [
+          "It accepts a reviewer's account of the poem's emotion while disputing the earlier passage offered in its support.",
+          "The author accepts the relevance of the earlier passage but rejects the reviewer's exclusion of grief."
+        ]
       ],
-      why: "The text reports the usual reading of the poem’s final image (grief), points to the middle stanzas that reading ignores, and offers a new reading built on them (provision, stored feeling).",
+      "why": "The stored-water context changes the meaning of immobility from useless paralysis to provision. That functional change does not imply that the stored emotion cannot be grief."
     },
     {
-      scene: "cs-price-exceptions",
-      passage:
-        "Economists generally expect that when the price of a good rises, people will buy less of it. Two kinds of exception have long intrigued them. For some very poor households, a rise in the price of a cheap staple such as rice can increase purchases of it: the higher price leaves too little money for costlier foods, so the family fills the gap with still more rice. For certain luxury goods, by contrast, a higher price can make the good more desirable, because part of what buyers want is to be seen paying a great deal. Neither case overturns the general expectation; each depends on circumstances, extreme poverty or the pursuit of status, that ordinary purchases rarely involve.",
-      key: "It states a general expectation, describes two exceptions, and explains why they leave it standing.",
-      wrong: [
-        ["It sets out a general expectation about prices, describes two cases that violate it, and then concludes that the expectation should be abandoned.", "The final sentence says neither case overturns the expectation, since both depend on rare circumstances."],
-        ["It describes two unusual kinds of purchases, explains the cause they share, and then derives a general rule about prices from them.", "The general rule comes first, and the two exceptions have different causes (poverty and status), not a shared one."],
-        ["It contrasts how poor and wealthy households respond to prices and then argues that the poor are more sensitive to changes in price.", "The text never compares how sensitive the two groups are; it treats each case as an exception to a general expectation."],
+      "scene": "cs-price-exceptions",
+      "passage": "A price increase may lead a very poor household to buy more of a cheap staple: less money remains for costlier food. A status-conscious buyer may also buy more of a luxury item after its price rises. A commentator treats these patterns as one exception with one explanation, since both reverse the usual price–quantity relationship. But the first involves a tighter budget, whereas the second involves what the price communicates. Grouping them by their visible outcome is useful for describing departures from the usual pattern; using that grouping to predict their response to a change in income would require a further argument.",
+      "key": "It identifies a shared departure from a pattern, distinguishes the mechanisms producing it, and limits an inference based on grouping the cases together.",
+      "wrong": [
+        [
+          "It presents two apparent exceptions, supplies a common underlying cause, and questions whether either truly departs from the pattern.",
+          "The mechanisms differ, and the observed departures are accepted."
+        ],
+        [
+          "It contrasts two explanations of one buying pattern and uses a predicted income effect to decide between them.",
+          "There are two cases with distinct mechanisms; no income-effect test is reported."
+        ],
+        [
+          "It rejects a classification because its members have different causes and proposes regrouping them by income alone.",
+          "The classification remains useful descriptively, and no new grouping is proposed."
+        ]
       ],
-      why: "The text states the general expectation (higher price, less bought), describes two exceptions (a staple for very poor households, luxury goods), and concludes that both depend on unusual circumstances, so the expectation stands.",
+      "why": "A common outcome permits a descriptive category without establishing a common mechanism. The author limits predictions from that category rather than denying its descriptive usefulness."
     },
     {
-      scene: "cs-semmelweis-clinics",
-      passage:
-        "In the 1840s, the Vienna General Hospital ran two maternity clinics, and mothers in the clinic staffed by physicians and medical students died of fever far more often than mothers in the clinic staffed by midwives. The physician Ignaz Semmelweis noticed that the students often came to deliveries directly from dissecting corpses, and he suspected that they carried some contaminating matter on their hands. After he required them to wash in a chlorinated lime solution, deaths in their clinic fell sharply. Yet many of his colleagues rejected his conclusion, in part because he could offer no account of what the contaminating matter was or how it caused disease. A correct practice, the episode suggests, may win acceptance only when a theory arrives to explain it.",
-      key: "It recounts a puzzling difference, a hypothesis, and a successful test, then draws a lesson from the cool reception the hypothesis met.",
-      wrong: [
-        ["It narrates a puzzling difference and a hypothesis about its cause, then reports that a test failed to support the hypothesis.", "The handwashing test succeeded (deaths fell sharply); the hypothesis was resisted despite that result."],
-        ["It presents a theory of how disease spreads and then describes how the physician’s colleagues designed an experiment to refute it.", "Semmelweis’s difficulty was precisely that he lacked a theory, and the text describes no experiment by his colleagues."],
-        ["It describes a successful change in hospital practice, explains the theory behind it, and shows how quickly it spread through Europe.", "The text stresses that the practice was resisted and that no explanatory theory was available at the time."],
+      "scene": "cs-semmelweis-clinics",
+      "passage": "Semmelweis's handwashing intervention reduced deaths in a Vienna maternity clinic, yet his account of contaminating matter met resistance. A history of medicine uses the episode to distinguish an effective procedure from an accepted explanation. Its reviewer calls this distinction an admission that the procedure supplied no evidence for the explanation. But reducing deaths after removing a suspected source can support a causal account without identifying every step of the mechanism. The history's point concerns what persuaded contemporaries, not what the intervention could establish. Calling an explanation unaccepted is not itself an assessment of its evidentiary support.",
+      "key": "It introduces a historical distinction, rebuts a reviewer's interpretation, and separates an explanation's reception from its evidentiary support.",
+      "wrong": [
+        [
+          "It introduces a historical success, denies that the intervention tested an explanation, and locates its value solely in improved practice.",
+          "The author says the intervention could support a causal account despite incomplete mechanism."
+        ],
+        [
+          "It contrasts two accounts of an intervention and favors the one whose explanation contemporaries eventually accepted.",
+          "Later acceptance is not reported or used as a criterion."
+        ],
+        [
+          "It accepts a reviewer's assessment of weak evidence and explains why contemporaries nevertheless endorsed the procedure.",
+          "The reviewer is challenged, and resistance rather than endorsement is reported."
+        ]
       ],
-      why: "The text describes the difference between the two clinics, Semmelweis’s hypothesis, and the handwashing test that cut deaths, then explains why colleagues rejected his conclusion and draws a general lesson from that rejection.",
+      "why": "The reviewer converts a claim about historical reception into a denial of evidentiary value. The author rejects that conversion while preserving the history's distinction between efficacy and acceptance."
     },
     {
-      scene: "cs-vell-glassworks",
-      passage:
-        "In her study of the glassworks of Vell, economic historian Rosa Adler argues that the industry gathered there because of nearby deposits of unusually pure sand. The deposits were real and prized. But they were exhausted by 1820, and the town’s glassworks went on multiplying for another century, bringing in sand by rail. Adler’s account explains why glassmakers first came to Vell; it cannot explain why they stayed. A likelier answer lies in what the first workshops left behind: a pool of skilled glassblowers, suppliers of molds and furnaces, and buyers who knew where to find them, advantages that no new site could offer.",
-      key: "It presents a scholar’s explanation, shows that it accounts for only part of what needs explaining, and proposes an explanation for the rest.",
-      wrong: [
-        ["It sets out a historian’s account of an industry, shows its limits, and then declares that the industry’s persistence cannot be explained.", "The text does explain the persistence: the skilled workers, suppliers, and buyers that the first workshops left behind."],
-        ["It lays out a historian’s explanation, confirms it with evidence about rail shipments, and then applies it to other industries.", "The rail shipments count against Adler’s account (sand was brought in after the local deposits ran out), and no other industries are discussed."],
-        ["It proposes that skilled workers drew glassmaking to Vell and then reports a historian’s objection based on the local sand.", "The sand explanation is Adler’s and comes first; the skilled-workforce explanation is the author’s response to it."],
+      "scene": "cs-vell-glassworks",
+      "passage": "Rosa Adler traces Vell's glass industry to unusually pure local sand. A critic cites workshops multiplying after the deposits were exhausted as a refutation. Adler replies that the initial workshops trained workers and attracted suppliers, advantages that persisted while sand arrived by rail. The reply preserves a role for the deposits without claiming that imported sand was inferior. It also changes the explanatory task: later growth depends on consequences of the original location, not on the continued availability of the resource that first favored it. The critic's observation rules out persistence of that resource, not persistence of its effects.",
+      "key": "It presents a causal account and an objection, then shows how an indirect effect preserves a narrower version of the account.",
+      "wrong": [
+        [
+          "It presents a location theory, accepts evidence refuting it, and replaces natural resources with skilled labor as the cause of the industry's arrival.",
+          "Skilled labor follows the initial workshops; it does not replace sand as the cause of arrival."
+        ],
+        [
+          "It presents an objection to a causal account and dismisses it by showing that the original resource remained available locally.",
+          "The local deposits were exhausted; their downstream effects remained."
+        ],
+        [
+          "It reconciles rival accounts by arguing that the same immediate cause explains both an industry's arrival and its later growth.",
+          "The immediate cause changes from sand availability to accumulated labor and suppliers."
+        ]
       ],
-      why: "The text reports Adler’s explanation (pure sand), shows that it explains the industry’s arrival but not its persistence after the sand ran out, and offers the author’s own explanation for why the glassmakers stayed.",
+      "why": "The response preserves sand's initiating role while shifting the explanation of persistence to its lasting consequences. It neither denies exhaustion nor treats sand as the continuing immediate cause."
     },
     {
-      scene: "cs-atlantic-cable-1858",
-      passage:
-        "In August 1858, the first telegraph cable across the Atlantic carried a message of greeting from Queen Victoria to President James Buchanan, though sending its ninety-eight words took many hours. Within weeks the cable fell silent. Its chief electrician, Wildman Whitehouse, had tried to force signals through faster by applying very high voltages, a practice generally thought to have ruined the cable’s already imperfect insulation. When a new cable was laid in 1866, its engineers instead followed the physicist William Thomson in using low voltages and an extremely sensitive receiver. That cable worked, and it carried messages for years.",
-      key: "It recounts an early achievement, attributes its quick failure to a method used on it, and then describes a later success that relied on a different method.",
-      wrong: [
-        ["It traces an early achievement and its quick failure, then shows that the same method, applied more carefully, succeeded in 1866.", "The 1866 cable succeeded with a different method: low voltages and a sensitive receiver, the opposite of Whitehouse’s approach."],
-        ["It describes a dispute between two engineers and then shows that the 1858 cable’s brief success proved Whitehouse right.", "The text blames Whitehouse’s high voltages for the failure; nothing in it vindicates his approach."],
-        ["It describes the 1866 cable’s success and then looks back to explain why earlier attempts had failed.", "The text proceeds in chronological order, from 1858 to 1866; it does not begin with the later success."],
+      "scene": "cs-atlantic-cable-1858",
+      "passage": "The 1858 Atlantic telegraph cable transmitted messages before failing; high voltages probably aggravated flaws in its insulation. The successful 1866 cable used lower voltages and a more sensitive receiver. A commentator describes this as proof that distance had never posed a genuine engineering problem. That reading mistakes the solution's success for the problem's absence. The later system addressed faint signals by improving detection rather than intensifying transmission. Its contrast with the earlier method explains how the difficulty was managed, without showing that the failed engineers had invented the difficulty they faced.",
+      "key": "It contrasts two methods and corrects an inference from success by explaining how a persistent difficulty was managed.",
+      "wrong": [
+        [
+          "It contrasts two outcomes, attributes them to the disappearance of an earlier physical obstacle, and corrects an account of who removed it.",
+          "The obstacle did not disappear; the receiver and signaling approach managed it differently."
+        ],
+        [
+          "It explains an early failure, presents a later success as evidence that the first diagnosis was wrong, and proposes a new diagnosis.",
+          "The high-voltage diagnosis is retained rather than replaced."
+        ],
+        [
+          "It presents a disagreement about a technical obstacle and resolves it by showing that the two systems faced different transmission distances.",
+          "The passage describes different methods for the same long-distance problem, not different distances."
+        ]
       ],
-      why: "The text recounts the 1858 cable’s achievement, attributes its failure within weeks to Whitehouse’s high voltages, and ends with the 1866 cable, which succeeded by following Thomson’s low-voltage method.",
+      "why": "The successful method makes the difficulty manageable; it does not retrospectively erase it. The author uses the method contrast to reject the commentator's inference from success to absence of a problem."
     },
     {
-      scene: "cs-saint-aldo-tower",
-      passage:
-        "The bell tower of Saint Aldo’s has leaned visibly since at least 1700, and engineers have long blamed the soft clay beneath it. A new survey of the foundations supports that view: the clay under the south side is thicker and wetter than under the north. The survey also found, however, that the tilt has barely changed since 1900, when the town diverted a stream that had run beside the tower. The clay, it seems, explains why the tower leaned; the stream, by keeping that clay soaked, may explain why it kept leaning for so long.",
-      key: "It reports an accepted explanation, confirms it with new evidence, and then adds a factor the explanation missed.",
-      wrong: [
-        ["It reports a long-held explanation, presents new evidence against it, and then replaces that explanation with a better one.", "The survey supports the clay explanation; the stream is added to it, not substituted for it."],
-        ["It describes a tower’s lean, rules out the soft ground beneath it as a cause, and then credits the diverted stream alone.", "The text keeps the clay as the reason the tower leaned; the stream explains only why the leaning continued."],
-        ["It compares two towers that lean for different reasons and then explains which of the two leans is more dangerous.", "The text concerns one tower and never discusses danger."],
+      "scene": "cs-saint-aldo-tower",
+      "passage": "Engineers blamed Saint Aldo's lean on uneven clay beneath its foundations. A survey confirmed the unevenness but found that further tilting stopped after a neighboring stream was diverted. One engineer treats that timing as grounds to replace the clay explanation with a water explanation. Yet the stream had kept the clay wet, and its diversion did not remove the uneven layer. The added evidence bears on why movement continued and then slowed; it need not overturn the account of why the tower initially leaned. What looks like a rival cause may instead specify when the original vulnerability produces further movement.",
+      "key": "It supports an account, considers an apparent challenge, and recasts that challenge as a condition on the original cause.",
+      "wrong": [
+        [
+          "It confirms an old explanation and uses a later intervention to show that the original cause has been eliminated.",
+          "The uneven clay remains after diversion; only its exposure to water changes."
+        ],
+        [
+          "It contrasts explanations of the initial lean and resolves their conflict by concluding that neither addresses later motion.",
+          "Clay explains the initial vulnerability; water helps explain later motion."
+        ],
+        [
+          "It rejects the inference drawn from an intervention and therefore dismisses the intervention's timing as irrelevant.",
+          "The timing remains relevant to continued movement, though it does not displace the clay account."
+        ]
       ],
-      why: "The text states the old explanation (soft clay), confirms it with the survey, and then uses the tilt’s halt after 1900 to add a second factor, the stream that kept the clay wet.",
+      "why": "Stream diversion can explain a change in movement by changing the clay's condition. The passage preserves clay as an underlying vulnerability while rejecting the assumption that water must be its rival."
     },
     {
-      scene: "cs-tarn-dialect-towns",
-      passage:
-        "Surveys of regional speech usually record older speakers in small villages, on the theory that they preserve a dialect in its purest form. Linguist Hana Oyelaran argues that this practice has distorted the picture of the Tarn dialect. Recording speakers of all ages in towns as well as villages, she found that younger town speakers use several of its features, such as a distinctive past tense, that older villagers have abandoned. The dialect, on her evidence, is not simply fading from the countryside; parts of it are thriving in places the older surveys never visited.",
-      key: "It describes a common survey practice, challenges it, and uses a broader survey to revise a view that the practice produced.",
-      wrong: [
-        ["It describes a common survey practice, defends it against a critic, and confirms that the dialect is fading from the countryside.", "Oyelaran criticizes the practice, and her evidence shows parts of the dialect thriving."],
-        ["It reports that a dialect is disappearing and then explains why younger speakers in towns have abandoned it.", "Younger town speakers keep features of the dialect that older villagers have dropped."],
-        ["It compares the surveys of two linguists and concludes that neither can be trusted to describe the dialect.", "The text sets one linguist’s broader survey against a common practice and trusts her results."],
+      "scene": "cs-tarn-dialect-towns",
+      "passage": "Older villagers have abandoned several features of Tarn speech, a finding often cited as evidence that the dialect is vanishing. Hana Oyelaran recorded those features among younger town speakers. A reviewer calls her evidence proof that traditional village surveys are inaccurate. Oyelaran accepts their transcriptions: her objection concerns what their sampling permits scholars to conclude. Her town recordings do not show that the features have stopped declining in villages, and they do not establish that every feature survives. They make the village pattern an insufficient account of the dialect's distribution, without making that pattern unreal.",
+      "key": "It introduces a finding that challenges a generalization, rejects a misdescription of the challenge, and distinguishes the original evidence from its reach.",
+      "wrong": [
+        [
+          "It reports conflicting survey results, resolves the conflict by favoring more accurate recordings, and extends the favored result to the whole dialect.",
+          "Both sets can be accurate, and the author explicitly limits broader conclusions."
+        ],
+        [
+          "It introduces a challenge to a decline narrative, grants that the challenge disproves rural decline, and limits it to selected features.",
+          "The challenge does not disprove rural decline; it limits generalization from rural samples."
+        ],
+        [
+          "It accepts a criticism of earlier recordings and uses those flawed records to show that newer speech is unrelated to the dialect.",
+          "The recordings are accepted, and the town features are part of Tarn speech."
+        ]
       ],
-      why: "The text describes the usual practice (recording older villagers), reports Oyelaran’s objection, and uses her wider survey to revise the view that the dialect is simply fading.",
+      "why": "Urban survival challenges a broad inference from rural decline without falsifying rural observations. The reviewer confuses restricted sampling with inaccurate transcription."
     },
     {
-      scene: "cs-varek-blue-pigment",
-      passage:
-        "A blue pigment found in wall paintings at the hilltop site of Varek was long thought to have been traded from the east, since the mineral it comes from occurs nowhere nearby. Chemical analysis now shows that the pigment matches a deposit three hundred kilometers to the west. That finding would reverse the direction of the route, but the analysis also detected traces of a binder used only in eastern workshops. The pigment, researchers now suspect, was mined in the west, carried east to be prepared, and brought back to Varek as finished paint.",
-      key: "It gives an accepted account of a material’s origin, reports two findings that conflict, and proposes a route that fits both.",
-      wrong: [
-        ["It gives an accepted account of a material’s origin, reports a finding that overturns it, and concludes that the origin cannot be known.", "The researchers do propose an origin, a route that fits both findings."],
-        ["It presents two rival accounts of a material’s origin and then uses a single finding to confirm the older of them.", "The text starts from one accepted account, and neither finding simply confirms it."],
-        ["It describes how a pigment was prepared in eastern workshops and then explains why it was prized at a hilltop site.", "The text never explains why the pigment was valued; it traces where it came from."],
+      "scene": "cs-varek-blue-pigment",
+      "passage": "Paint at Varek contains mineral grains matching a western deposit and a binder characteristic of eastern workshops. An excavator calls the findings contradictory: the paint cannot have come from both directions. A conservator distinguishes sourcing the mineral from preparing the paint and proposes west-to-east transport before shipment to Varek. This itinerary is not proved merely because it accommodates both results; another workshop could have acquired the eastern binder. But the findings cease to be mutually exclusive once origin is divided into stages. The distinction removes an objection to the itinerary without establishing it as the only one.",
+      "key": "It presents an apparent conflict, resolves it by distinguishing stages, and limits what that resolution establishes about a proposed account.",
+      "wrong": [
+        [
+          "It presents two incompatible findings, questions the reliability of one, and therefore keeps the older account provisionally.",
+          "Both findings are accepted and made compatible; neither is rejected as unreliable."
+        ],
+        [
+          "It replaces a single-origin account with a multistage route and uses agreement with the evidence to establish that route uniquely.",
+          "The passage explicitly preserves an alternative involving acquired binder."
+        ],
+        [
+          "It proposes a route, introduces a rival, and concludes that the evidence again contradicts itself because both remain possible.",
+          "Multiple compatible routes do not restore the supposed contradiction between findings."
+        ]
       ],
-      why: "The text states the accepted eastern origin, reports a western source and an eastern binder that pull in opposite directions, and proposes a route (west, then east, then back) that fits both.",
+      "why": "Separating mineral source from paint preparation dissolves the excavator's contradiction. That establishes compatibility of the itinerary, not its unique truth."
     },
     {
-      scene: "cs-ostby-school-start",
-      passage:
-        "Students who sleep more tend to earn higher grades, a pattern that has led some schools to push back their starting times. The pattern alone, however, cannot show that sleep improves grades: students with fewer worries and steadier homes may both sleep better and study better. When the Ostby district moved its first bell from 7:30 to 8:30, researchers could compare the same students before and after. Their average sleep rose by forty minutes and their grades rose modestly, a result that points to sleep as a cause more convincingly than the original pattern did.",
-      key: "It presents a correlation, explains why it cannot prove a cause, and describes stronger evidence of one.",
-      wrong: [
-        ["It presents a correlation, argues that it proves a cause, and recommends that every school adopt a later start.", "The text says the correlation alone cannot show a cause, and it makes no recommendation."],
-        ["It presents a correlation, explains why it may mislead, and reports a study that found no effect of sleep on grades.", "The Ostby study found that grades rose along with sleep."],
-        ["It describes one district’s schedule change and then explains why students with steadier homes earn higher grades.", "The steadier-homes point is a possible confounder, raised before the Ostby study, not the text’s conclusion."],
+      "scene": "cs-ostby-school-start",
+      "passage": "An association between longer sleep and higher grades may reflect family circumstances affecting both. After Ostby delayed its school day, the same students slept longer and earned somewhat higher grades. An advocate calls the change definitive proof that sleep improves achievement. A critic notes that other school practices changed that year and treats the new evidence as no better than the original association. Following the same students removes some differences between families without removing every competing explanation. The intervention can therefore strengthen the causal case without meeting the advocate's standard of proof or warranting the critic's dismissal.",
+      "key": "It weighs opposing assessments of new evidence, separating stronger causal support from conclusive proof.",
+      "wrong": [
+        [
+          "It presents an association, confirms its causal interpretation through an intervention, and dismisses an objection as already controlled for.",
+          "Other changes are not controlled for; the author retains uncertainty."
+        ],
+        [
+          "It presents two studies, accepts a confounding factor in both, and concludes that their evidentiary value is equivalent.",
+          "The within-student comparison controls some family differences, so the evidence is not equivalent."
+        ],
+        [
+          "It contrasts two causal explanations and favors the one that accounts for differences among families before the intervention.",
+          "The author assesses strength of evidence, not which competing cause explains the initial family differences."
+        ]
       ],
-      why: "The text states the sleep–grades pattern, explains why it cannot show causation (other factors could drive both), and describes the Ostby change, which compared the same students and so gives stronger evidence.",
+      "why": "The repeated-student comparison reduces one source of uncertainty but leaves other changes possible. The passage rejects both certainty and the claim that no evidentiary improvement occurred."
     },
     {
-      scene: "cs-kell-market-hall",
-      passage:
-        "The cast-iron market hall in Kell was nearly demolished in 1975, when its stalls stood empty and its roof leaked. Preservationists argued that it was an early example of prefabricated construction, its iron parts cast in one city and bolted together in another. The city council was not persuaded by history alone; what saved the hall was a proposal to turn it into a covered sports ground, which promised to pay for the repairs. Today it hosts basketball games beneath the same iron arches, and its survival is cited in arguments for reuse as often as in arguments for history.",
-      key: "It describes a threat to a building, sets out the historical case for saving it, and credits its survival to a practical plan instead.",
-      wrong: [
-        ["It describes a threat to a building, sets out the historical case for saving it, and credits the building’s survival to that historical case.", "The council was “not persuaded by history alone”; the sports-ground proposal saved the hall."],
-        ["It describes how a building was prefabricated and then explains why prefabricated construction fell out of use.", "The text never discusses the decline of prefabrication."],
-        ["It compares two proposals for a building and argues that the historical one should have been chosen instead.", "The text reports which proposal succeeded and does not argue that the council chose wrongly."],
+      "scene": "cs-kell-market-hall",
+      "passage": "Kell's cast-iron market hall survived after a sports-ground proposal promised income for repairs that preservationists had sought for historical reasons. A council member now credits survival wholly to commercial usefulness and calls the earlier preservation campaign irrelevant. Yet that campaign had secured a delay in demolition, during which the reuse plan was developed. Historical importance did not persuade the council to fund repairs; this does not mean arguments about that importance contributed nothing to the outcome. The practical plan explains the final authorization, while the campaign helps explain why an intact building remained available when the council made that decision.",
+      "key": "It questions an exclusive account of an outcome by distinguishing the reason for a final decision from an earlier enabling contribution.",
+      "wrong": [
+        [
+          "It contrasts historical and practical arguments and concludes that the historical argument ultimately supplied the funds the practical one could not.",
+          "Reuse promised repair income; the campaign supplied time, not funding."
+        ],
+        [
+          "It accepts an exclusive practical explanation but redescribes preservationists as the original authors of the successful reuse plan.",
+          "The exclusive explanation is rejected, and the campaign is not credited with authorship of the plan."
+        ],
+        [
+          "It challenges the council's account by showing that historical importance was its stated reason for authorizing repairs.",
+          "Historical arguments did not secure repair authorization; they helped delay demolition."
+        ]
       ],
-      why: "The text describes the threat of demolition, the preservationists’ historical argument, and then credits the hall’s survival to a practical reuse plan, noting that its example now serves both arguments.",
+      "why": "A reason insufficient for the final funding decision can still causally enable that decision. The campaign's delay and the plan's income make different contributions to survival."
     },
     {
-      scene: "cs-reef-spawning-cues",
-      passage:
-        "Many corals on a reef release their eggs and sperm on the same few nights each year, and moonlight has long been thought to set the timing. Laboratory work supports a role for the moon: corals kept under artificial moonlight spawn on schedule, while those kept in darkness drift out of step. Yet corals kept under moonlight but at a constant temperature also drift. Researchers now think that the moon sets the night but the season’s warming water sets the month, so that both cues are needed for a reef to spawn together.",
-      key: "It states a long-held view, supports it, reports a result it cannot explain, and proposes that two cues work together.",
-      wrong: [
-        ["It states a long-held view, supports it with experiments, and concludes that moonlight alone sets the timing of spawning.", "The corals at constant temperature drifted even under moonlight, so the text concludes that temperature matters too."],
-        ["It states a long-held view, reports experiments that refute it, and concludes that water temperature alone sets the timing.", "The experiments support a role for the moon, and the conclusion keeps it: the moon sets the night."],
-        ["It describes how corals spawn and then explains why corals in laboratories spawn more often than wild ones.", "The text never compares how often laboratory and wild corals spawn."],
+      "scene": "cs-reef-spawning-cues",
+      "passage": "Corals exposed to artificial moonlight kept a common spawning schedule; those kept in darkness did not. A researcher infers that moonlight alone coordinates spawning. A second experiment held water temperature constant, and even moonlit colonies lost synchrony. A critic takes that result to erase the first experiment's evidence for a lunar role. Yet the first comparison isolated moonlight against a background of seasonal temperatures; the second changed that background. One cue can matter without being sufficient by itself. The new result limits the researcher's claim while leaving the first experiment's narrower contribution intact.",
+      "key": "It uses two comparisons to establish a limited role, rejecting both a stronger inference and a sweeping dismissal.",
+      "wrong": [
+        [
+          "It reports an experiment, replaces its unreliable result with a better controlled one, and favors temperature over moonlight as the sole cue.",
+          "The first result remains reliable, and neither cue is endorsed as sufficient alone."
+        ],
+        [
+          "It compares two experiments, attributes their disagreement to measurement error, and calls for a repetition before drawing conclusions.",
+          "Different background conditions, not measurement error, account for the results; a limited conclusion is drawn."
+        ],
+        [
+          "It supports a lunar explanation, adds temperature as independent confirmation, and rejects a criticism of the original sufficiency claim.",
+          "The temperature result limits, rather than confirms, the claim that moonlight alone is sufficient."
+        ]
       ],
-      why: "The text states the moonlight view, supports it with experiments, reports the constant-temperature result that the view cannot explain, and concludes that moonlight and warming water work together.",
+      "why": "The comparisons address contribution under seasonal conditions and sufficiency without seasonal change. The author preserves the first result's narrower implication while rejecting both the overclaim and its wholesale dismissal."
     },
   ];
 
@@ -2134,7 +2412,7 @@
     title: "Overall structure of dense academic prose",
     recognize:
       "Name each move of the text in order and whose view it expresses; the right description matches every move, and each wrong one misstates exactly one move, its order, or its strength.",
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["opposite-stance", "extreme-language", "misattributed-view"],
     build(t) {
       const topic = t.pick(TSP_ACADEMIC_STRUCTURE_TOPICS);
@@ -2168,7 +2446,7 @@
 
   /* ----------------- 11. function of a line or sentence in poems and stories */
 
-  // Hard. Original poems and short-story passages, never excerpts of real
+  // Medium. Original poems and short-story passages, never excerpts of real
   // works, each headed honestly. The quoted line or sentence does a literary
   // job that only the rest of the text reveals: it states a belief the
   // ending overturns, a reading another character corrects, a detail that
@@ -2209,19 +2487,27 @@
       why: "After years of watching an unfinished bridge, the speaker gives up expecting it to close; the next lines (“This spring the gap was gone”) show the bridge finished. The line records a lost hope that events overturn.",
     },
     {
-      scene: "cs-litfn-bread-by-feel",
-      header: TSP_POEM_HEADER,
-      kind: "line",
-      passage:
-        "She never wrote the bread down. “Flour,” she’d say,\n“until it feels right,” and I would ask how right,\nand she would laugh and press my palms in the dough.\nThe year she died, I made it from a book:\nfour cups, one packet, forty minutes, done.\nThe loaves came out exactly as described.\nI ate them standing up, and did not cry,\nand the next week I threw the book away\nand put my hands in flour until it felt right.",
-      quoted: "The loaves came out exactly as described.",
-      key: "It reports a flawless result that leaves the speaker unsatisfied.",
-      wrong: [
-        ["It shows that the printed recipe works better than the grandmother’s method.", "The loaves match the book, but the speaker then throws the book away; the poem does not rank the recipe higher."],
-        ["It records the grandmother’s instructions for making the bread.", "Her instructions (“until it feels right”) come in the opening lines, not in the quoted one."],
-        ["It explains why the speaker at last decides to write the recipe down.", "The speaker does the reverse: the book is thrown away and the bread made by feel."],
+      "scene": "cs-litfn-bread-by-feel",
+      "header": "The following text is from an original poem.",
+      "kind": "line",
+      "passage": "Gran never wrote the bread down. “Flour,” she’d say,\n“until it feels right,” and I would ask how right,\nand she would laugh and press my palms in the dough.\nThe year she died, I made it from a book:\nfour cups, one packet, forty minutes, done.\nThe loaves came out exactly as described.\nI ate them standing up, and did not cry,\nand the next week I threw the book away\nand put my hands in flour until it felt right.",
+      "quoted": "The loaves came out exactly as described.",
+      "key": "It reports a flawless result that leaves the speaker unsatisfied.",
+      "wrong": [
+        [
+          "It shows that the printed recipe works better than the grandmother’s method.",
+          "The loaves match the book, but the speaker then throws the book away; the poem does not rank the recipe higher."
+        ],
+        [
+          "It records the grandmother’s instructions for making the bread.",
+          "Her instructions (“until it feels right”) come in the opening lines, not in the quoted one."
+        ],
+        [
+          "It explains why the speaker at last decides to write the recipe down.",
+          "The speaker does the reverse: the book is thrown away and the bread made by feel."
+        ]
       ],
-      why: "The book’s bread comes out exactly right, yet the speaker eats it without feeling and then abandons the book for the grandmother’s method. The flawless result is what the speaker turns away from.",
+      "why": "The book’s bread comes out exactly right, yet the speaker eats it without feeling and then abandons the book for the grandmother’s method. The flawless result is what the speaker turns away from."
     },
     {
       scene: "cs-litfn-carrow-light",
@@ -2254,19 +2540,27 @@
       why: "The speaker thinks the brother has quit and is glad he will rest; instead he walks the path to press a trail for others. The quoted line records the speaker’s misreading that the poem then corrects.",
     },
     {
-      scene: "cs-litfn-attic-violin",
-      header: TSP_POEM_HEADER,
-      kind: "line",
-      passage:
-        "In the attic, in a case with broken clasps,\nmy great-aunt’s violin, its strings gone slack.\nNo one in the family plays. We almost sold it.\nBut when I lifted it, the hollow body hummed,\njust once, as if a floorboard’s creak had reached it,\nand in that hum was every room it filled.\nWe put it back. We fixed the clasps. We kept it.",
-      quoted: "No one in the family plays. We almost sold it.",
-      key: "It records a decision that the hum in the next lines reverses.",
-      wrong: [
-        ["It shows that the family valued the violin only for the price it would bring.", "They considered selling it because no one plays, and the ending shows them keeping it; the poem does not reduce their view to its price."],
-        ["It describes the moment when the violin’s hollow body began to hum.", "The hum comes in the next lines, after the speaker lifts the violin."],
-        ["It explains why the violin’s strings had been allowed to go slack.", "The slack strings are simply described; the quoted line concerns what the family meant to do with the violin."],
+      "scene": "cs-litfn-attic-violin",
+      "header": "The following text is from an original poem.",
+      "kind": "line",
+      "passage": "In the attic, in a case with broken clasps,\nmy great-aunt’s violin, its strings gone slack.\nNo one in the family plays. We almost sold it.\nBut when I lifted it, the hollow body hummed,\njust once, as if a floorboard’s creak had reached it,\nand in that hum was every room it filled.\nWe put it back. We fixed the clasps. We kept it.",
+      "quoted": "No one in the family plays. We almost sold it.",
+      "key": "It presents a contemplated sale that the hum in the next lines leads the family to abandon.",
+      "wrong": [
+        [
+          "It shows that the family valued the violin only for the price it would bring.",
+          "They considered selling it because no one plays, and the ending shows them keeping it; the poem does not reduce their view to its price."
+        ],
+        [
+          "It describes the moment when the violin’s hollow body began to hum.",
+          "The hum comes in the next lines, after the speaker lifts the violin."
+        ],
+        [
+          "It explains why the violin’s strings had been allowed to go slack.",
+          "The slack strings are simply described; the quoted line concerns what the family meant to do with the violin."
+        ]
       ],
-      why: "The family nearly sells an instrument no one plays; the hum that follows changes their minds, and the poem ends “We kept it.” The line sets up the decision that the hum reverses.",
+      "why": "The family considers selling the unused violin; its hum evokes the rooms it once filled, and the family repairs and keeps it. The quoted line establishes the possibility that this experience changes."
     },
     {
       scene: "cs-litfn-station-clock",
@@ -2396,11 +2690,11 @@
     domain: "Craft and Structure",
     skill: "Text Structure and Purpose",
     subskill: "function of a sentence",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Function of a line or sentence in a poem or story",
     recognize:
       "In a poem or story, a line’s job often shows only later: a belief the ending overturns, a reading someone else corrects, a detail that prepares a later moment. Read to the end, then ask what the quoted line sets up; reject readings that take it at face value or describe a neighboring line.",
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["opposite-stance", "true-but-irrelevant", "extreme-language"],
     build(t) {
       const topic = t.pick(TSP_LITERARY_FUNCTION_TOPICS);

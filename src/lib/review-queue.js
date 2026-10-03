@@ -31,10 +31,10 @@
 (function (root, factory) {
   const node = typeof module === "object" && module.exports;
   const Progress = node ? require("./progress") : root.LiminalProgress;
-  const api = factory(Progress);
+  const api = factory(Progress, node ? require("./core") : root.PracticeCore);
   if (node) module.exports = api;
   else root.LiminalReviewQueue = api;
-})(typeof globalThis !== "undefined" ? globalThis : this, function (Progress) {
+})(typeof globalThis !== "undefined" ? globalThis : this, function (Progress, Core) {
   "use strict";
 
   // Days until the next re-practice at each stage (stage n uses INTERVALS[n - 1]).
@@ -91,6 +91,7 @@
     entry.learned = false;
     entry.learnedAt = null;
     entry.exactId = attempt.questionId;
+    entry.contentIdentity = attempt.contentIdentity || null;
     entry.lastMissId = attempt.id;
     entry.lastMissAt = Number(attempt.timestamp) || 0;
     entry.misses += 1;
@@ -114,6 +115,7 @@
       learned: false,
       learnedAt: null,
       exactId: questionId,
+      contentIdentity: attempt.contentIdentity || null,
       lastMissId: null,
       lastMissAt: 0,
       lastAnswerAt: 0,
@@ -146,6 +148,11 @@
         return;
       }
       entry.lastAnswerAt = Number(attempt.timestamp) || 0;
+      // A correct answer to revised fixed-bank content cannot demonstrate
+      // recall of the earlier question. A new miss below starts the current
+      // revision's schedule while retaining all original attempt history.
+      if (success && entry.source !== "template" &&
+          (attempt.contentIdentity || null) !== entry.contentIdentity) return;
       if (!success) {
         restart(entry, attempt, day);
       } else if (day >= entry.dueDay) {
@@ -187,7 +194,7 @@
     const list = entries instanceof Map ? [...entries.values()] : (entries || []);
     list.forEach((entry) => {
       if (entry.learned) summary.learned.push(entry);
-      else if (settings.skip && settings.skip(entry)) summary.unavailable.push(entry);
+      else if (!Core.sectionAvailable(entry.sectionKey) || (settings.skip && settings.skip(entry))) summary.unavailable.push(entry);
       else if (isDue(entry, today)) summary.due.push(entry);
       else summary.upcoming.push(entry);
     });
@@ -210,7 +217,7 @@
     const left = [];
     (due || []).forEach((entry) => {
       const key = entry.templateId ? `${entry.sectionKey}:${entry.templateId}` : entry.questionId;
-      if (picked.length >= limit || used.has(key)) {
+      if (!Core.sectionAvailable(entry.sectionKey) || picked.length >= limit || used.has(key)) {
         left.push(entry);
         return;
       }

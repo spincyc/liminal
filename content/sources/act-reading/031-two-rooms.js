@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p031",
   type: "literary-narrative",
   title: "Two Rooms",
-  intro: "This passage is adapted from a novel. Ilyas, fifteen, has come with his mother to an appointment at a housing office.",
+  intro: "This is an original fictional passage. Ilyas, fifteen, has come with his mother to an appointment at a housing office.",
   content: `The chairs in the waiting area were bolted to a rail, so that when the woman two seats
 along shifted her weight Ilyas felt it in his own spine. His mother sat with the folder on
 her knees, squared, both hands on top of it, the way she sat for anything official.

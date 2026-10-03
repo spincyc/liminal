@@ -167,7 +167,12 @@
     const next = copyState(state);
     const counting = !state.finished &&
       !(state.feedback === "instant" && state.checked[state.index]);
-    if (counting) next.timeMs[state.index] += Math.max(0, nowMs - state.questionSince);
+    // A suspended tab may deliver its first tick long after the deadline.
+    // Only the part of that span before the section ended was solving time.
+    const deadline = state.timeLimitSeconds && state.segmentStart !== null && state.segmentStart !== undefined
+      ? state.segmentStart + Math.max(0, state.timeLimitSeconds * 1000 - state.elapsedMs)
+      : nowMs;
+    if (counting) next.timeMs[state.index] += Math.max(0, Math.min(nowMs, deadline) - state.questionSince);
     next.questionSince = nowMs;
     return next;
   }
@@ -329,6 +334,7 @@
   function isCorrect(state, index) {
     const question = state.questions[index];
     const response = state.responses[index];
+    if (question.responseType === "essay") return null;
     if (!hasResponse(response)) return false;
     return core().scoreResponse(question, response) === true;
   }
@@ -372,14 +378,16 @@
     const groups = new Map();
     items.forEach((item) => {
       const key = keyOf(item.question);
-      if (!groups.has(key)) groups.set(key, { key, total: 0, correct: 0, hintedCorrect: 0, accuracy: 0 });
+      if (!groups.has(key)) groups.set(key, { key, total: 0, scored: 0, unscored: 0, correct: 0, hintedCorrect: 0, accuracy: null });
       const row = groups.get(key);
       row.total += 1;
+      if (item.correct === null) row.unscored += 1;
+      else row.scored += 1;
       if (item.countedCorrect) row.correct += 1;
       if (item.hintedCorrect) row.hintedCorrect += 1;
     });
     const rows = [...groups.values()].map((row) =>
-      Object.assign(row, { accuracy: row.total ? row.correct / row.total : 0 })
+      Object.assign(row, { accuracy: row.scored ? row.correct / row.scored : null })
     );
     if (order) rows.sort((a, b) => order.indexOf(a.key) - order.indexOf(b.key));
     return rows;
@@ -407,8 +415,8 @@
         answered,
         correct,
         // Right without a hint: what every count in the report uses.
-        countedCorrect: answered && correct && !hinted,
-        hintedCorrect: answered && correct && hinted,
+        countedCorrect: answered && correct === true && !hinted,
+        hintedCorrect: answered && correct === true && hinted,
         marked: state.marked[index],
         checked: state.checked[index],
         hinted,
@@ -425,11 +433,13 @@
     const elapsed = elapsedMs(state, nowMs === undefined ? 0 : nowMs);
     const bySection = groupAccuracy(items, (question) => question.sectionKey || "").map((row) => {
       const own = items.filter((item) => (item.question.sectionKey || "") === row.key);
-      const hard = own.filter((item) => item.question.difficulty === "Hard");
+      const hard = own.filter((item) => item.correct !== null && item.question.difficulty === "Hard");
       return {
         sectionKey: row.key || null,
         section: (own[0].question.section) || row.key || "",
         total: row.total,
+        scored: row.scored,
+        unscored: row.unscored,
         correct: row.correct,
         hintedCorrect: row.hintedCorrect,
         accuracy: row.accuracy,
@@ -444,21 +454,26 @@
           section: first.question.section,
           sectionKey: first.question.sectionKey,
           total: row.total,
+          scored: row.scored,
+          unscored: row.unscored,
           correct: row.correct,
           accuracy: row.accuracy,
         };
       })
       .sort((left, right) => left.accuracy - right.accuracy);
+    const scored = items.filter((item) => item.correct !== null).length;
     return {
       feedback: state.feedback,
       finishReason: state.finishReason,
       total: items.length,
+      scored,
+      unscored: items.length - scored,
       correct,
       hintedCorrect: items.filter((item) => item.hintedCorrect).length,
       answered: items.filter((item) => item.answered).length,
       unanswered: items.filter((item) => !item.answered).length,
       marked: items.filter((item) => item.marked).length,
-      accuracy: items.length ? correct / items.length : null,
+      accuracy: scored ? correct / scored : null,
       elapsedMs: elapsed,
       timeLimitSeconds: state.timeLimitSeconds,
       paceBudgetSeconds: budget,
@@ -468,6 +483,8 @@
         api.DIFFICULTY_ORDER || ["Easy", "Medium", "Hard"]).map((row) => ({
         difficulty: row.key,
         total: row.total,
+        scored: row.scored,
+        unscored: row.unscored,
         correct: row.correct,
         accuracy: row.accuracy,
       })),
@@ -486,6 +503,8 @@
       correct: report.correct,
       hintedCorrect: report.hintedCorrect,
       total: report.total,
+      scored: report.scored,
+      unscored: report.unscored,
       items: report.items.map((item) => ({
         index: item.index,
         question: item.question,
@@ -715,9 +734,15 @@
       state,
       now: clock,
     };
+    // Actions enforce the deadline without consuming the timer's visible
+    // five-minute warning; only tick() delivers that warning to the shell.
+    function atDeadline(at) {
+      return timerStatus(session.state, at).expired ? finish(session.state, at, "time") : session.state;
+    }
     function apply(action) {
       return function () {
         const args = Array.prototype.slice.call(arguments);
+        session.state = atDeadline(clock());
         session.state = action.apply(null, [session.state].concat(args));
         return session.state;
       };
@@ -741,7 +766,8 @@
         return session.state;
       },
       check(index) {
-        session.state = check(session.state, index, clock());
+        const at = clock();
+        session.state = check(atDeadline(at), index, at);
         return session.state;
       },
       leaveQuestion() {
@@ -755,7 +781,8 @@
       useHint: apply(useHint),
       markReported: apply(markReported),
       finish(reason) {
-        session.state = finish(session.state, clock(), reason);
+        const at = clock();
+        session.state = finish(atDeadline(at), at, reason);
         return session.state;
       },
       tick() {

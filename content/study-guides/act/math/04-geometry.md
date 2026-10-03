@@ -5,7 +5,8 @@
 **17-20% of the scored questions** — 7-8 of the 41
 
 The ACT tests substantially more geometry than the SAT, and **provides no
-formula sheet**. Everything here must be memorized.
+formula sheet**. Learn the core relationships and how to apply or derive them;
+use your missed questions to prioritize recall practice.
 
 ---
 
@@ -26,7 +27,7 @@ formula sheet**. Everything here must be memorized.
 - Alternate exterior: equal
 - Same-side interior: supplementary
 
-**Shortcut:** with parallel lines and a transversal, only **two** angle measures
+**Shortcut:** with parallel lines and a transversal, at most **two** angle measures
 exist and they're supplementary. Find one; every other angle is that value or
 `180 − that`.
 
@@ -101,7 +102,7 @@ this.
 ```
 Sum of interior angles       = (n − 2) · 180°
 Each interior angle (regular) = (n − 2) · 180° / n
-Sum of exterior angles        = 360°  (any polygon)
+Sum of exterior angles        = 360°  (one exterior turn at each vertex of a convex polygon)
 Each exterior angle (regular)  = 360° / n
 Number of diagonals            = n(n − 3)/2
 ```
@@ -164,7 +165,8 @@ one-third of that.
 
 **3D diagonal of a rectangular prism:** `√(l² + w² + h²)`.
 
-**Cone slant height:** `l = √(r² + h²)` — a Pythagorean relationship.
+**Right circular cone slant height:** `l = √(r² + h²)` — a Pythagorean relationship.
+The listed cone and cylinder surface areas assume right circular solids.
 
 ---
 
@@ -178,11 +180,14 @@ Slope:     m = (y₂−y₁)/(x₂−x₁)
 
 **Circle:** `(x − h)² + (y − k)² = r²`
 
-**Parabola:** `y = a(x − h)² + k`, vertex `(h, k)`
+**Parabola:** `y = a(x − h)² + k`, `a ≠ 0`, vertex `(h, k)`
 
 **Ellipse:** `(x−h)²/a² + (y−k)²/b² = 1`
 
 **Hyperbola:** `(x−h)²/a² − (y−k)²/b² = 1`
+
+For the ellipse and hyperbola forms, `a` and `b` are positive. The slope
+formula requires different x-coordinates; a vertical line has undefined slope.
 
 The ACT tests conic **recognition** — identifying which equation is which shape
 — more than conic manipulation.
@@ -226,7 +231,8 @@ a/sin A = b/sin B = c/sin C
 ```
 
 Use when you have: two angles and any side (AAS/ASA), or two sides and a
-non-included angle (SSA).
+non-included angle (SSA). In an SSA case, check whether zero, one or two
+triangles satisfy the data; an inverse-sine result alone can miss a second one.
 
 ### Law of Cosines
 
@@ -261,9 +267,11 @@ SOH-CAH-TOA.
 **Draw it.** No diagram? Sketch one. Diagram provided? Label everything you know
 directly on it.
 
-**ACT figures are drawn to scale unless labeled otherwise.** When to scale, you
-can **estimate** — compare against a known length and eliminate choices of the
-wrong magnitude. When it says "not drawn to scale," ignore appearance entirely.
+**ACT figures are not guaranteed to be drawn to scale.** Use the given
+measurements, markings and geometric relationships; do not infer a length
+or angle from appearance. This is the default in ACT's
+[official Mathematics directions](https://www.act.org/content/dam/act/unsecured/documents/Preparing-for-the-ACT-e.pdf)
+(page 26, checked 2026-10-02).
 
 **Look for the hidden right triangle.** A large fraction of ACT geometry is a
 right triangle inside something else: a rectangle's diagonal, a radius to a
@@ -298,13 +306,13 @@ are usually "big shape minus small shape."
 
 | Stage | Filter | Volume |
 | --- | --- | --- |
-| 1. Angles | Plane geometry, Easy | 20. Label diagrams fully. |
-| 2. Triangles | Plane geometry, Medium | 30. Identify the triple or special triangle first. |
-| 3. Polygons and quadrilaterals | Plane geometry, Medium | 20 |
-| 4. Circles | Plane geometry, Medium | 25 |
-| 5. Solids and measurement | Measurement, Medium | 20 |
-| 6. Coordinate geometry | Measurement, Medium | 20 |
-| 7. Trigonometry | Trigonometry, Medium → Hard | 25, including Law of Sines and Cosines |
+| 1. Angles | Plane geometry | 20. Label diagrams fully. |
+| 2. Triangles | Plane geometry | 30. Identify the triple or special triangle first. |
+| 3. Polygons and quadrilaterals | Plane geometry | 20 |
+| 4. Circles | Plane geometry | 25 |
+| 5. Solids and measurement | Measurement | 20 |
+| 6. Coordinate geometry | Measurement | 20 |
+| 7. Trigonometry | Trigonometry | 25, including Law of Sines and Cosines |
 | 8. Mixed timed | Whole domain | 30 at 70 sec each |
 
 Because there's no formula sheet, **the memorization is the study plan** for a

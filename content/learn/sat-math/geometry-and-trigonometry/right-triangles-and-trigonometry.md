@@ -13,9 +13,9 @@ triangles and the trigonometric ratios sine, cosine and tangent. It belongs
 to Geometry and Trigonometry, {{fact:sat-math-geometry}} of the Math
 section. SAT trigonometry also reaches radians and the unit circle, which are
 on the [Circles page](learn:sat-math/geometry-and-trigonometry/circles).
-Hard questions give two angles of elevation to one height, carry a trig
-ratio through a pair of similar triangles, or ask for a ratio of an angle
-past 90°.
+Hard questions give two angles of elevation to one height or combine a trig
+ratio with indirect size information about similar triangles. Routine
+reference-angle and quadrant calculations are Medium.
 
 ## Pythagorean theorem {#pythagorean-theorem}
 
@@ -139,10 +139,28 @@ pair.
 
 ### Ratios through similar triangles {#ratios-through-similarity}
 
-A trig ratio belongs to an angle, not to a triangle. If triangle ABC is
-similar to triangle PQR, with angle A matching angle Q, then tan Q = tan A,
+A trig ratio belongs to an angle, not to a triangle. If triangles ABC and
+PQR are similar, with angle A matching angle Q, then tan Q = tan A,
 whatever the triangles' sizes. Follow the stated matching, which may not be
 alphabetical, then compute the ratio in whichever triangle you know.
+
+Indirect size information adds another step: an area ratio is the square
+of the corresponding length ratio, while a perimeter ratio equals that
+length ratio. A difference between perimeters is neither whole perimeter.
+
+> **Example.** Right triangle ABC has its right angle at C and tan A = 3/4.
+> A similar larger triangle has 9 times its area and a perimeter 48 units
+> greater. How long is the larger triangle’s hypotenuse?
+>
+> The sides of ABC have ratio 3 : 4 : 5. The area ratio gives a length
+> factor of √9 = 3. If ABC’s perimeter is P, the larger perimeter is 3P,
+> so 3P − P = 48 and P = 24.
+>
+> The ratio parts sum to 12, so ABC’s sides are 6, 8, and 10. The larger
+> hypotenuse is 3 × 10 = 30.
+
+> **Trap.** Taking 48 as the larger perimeter, or using the area factor 9
+> as the length factor.
 
 ### Angles past 90° {#angles-past-90}
 
@@ -164,8 +182,7 @@ unit circle and radians are on the
 ## What Hard looks like {#hard}
 
 - Two angles of elevation to one height, with only the distance between the observers known. Write the height from each triangle and solve the pair (see [one height seen from two places](#two-observers)).
-- A trig ratio of an angle in one triangle found from a similar triangle, with the vertices matched in a stated, non-alphabetical order (see [ratios through similar triangles](#ratios-through-similarity)).
-- A ratio of an angle past 90°, or the angle of a point such as (−√3, 1): the reference triangle gives the size and the quadrant gives the sign (see [angles past 90°](#angles-past-90)).
+- A trig ratio fixes a triangle’s shape, an area ratio fixes the length factor, and a perimeter difference fixes its size. Connect all three before finding the requested side (see [ratios through similar triangles](#ratios-through-similarity)).
 
 The complementary-angle link is Medium, but it hides in Hard questions too.
 

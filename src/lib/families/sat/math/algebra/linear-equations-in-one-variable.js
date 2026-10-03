@@ -14,7 +14,7 @@
   const {
     clean, terminates, commas, usd, money, distinctWrong, commaChoices, responseFor, xTerm,
     moveText, compile, holds, sidesOf, fitsGridHard, usdHard, distinctWrongHard, compileHard,
-    collides, spreadAround, spreadWithMirror,
+    collides, spreadAround, spreadWithMirror, pairedSignChoices,
   } = C;
 
   /* ------------------------------------------------------ linear-equation-solve */
@@ -143,8 +143,8 @@
       make: (t) => ({ rate: 5 * t.int(5, 30), start: 50 * t.int(16, 60), n: t.int(3, 12), up: false }),
       equation: (v) => `${commas(v.start)} ${MINUS} ${v.rate}w = ${commas(v.total)}`,
       lead: (eq, v) =>
-        `Nadia withdrew the same amount from her savings account each week and made no deposits. The equation ${eq} ` +
-        `represents the week when her balance reached ${usd(v.total)}, where w is the number of weeks since her first withdrawal.`,
+        `Nadia withdrew the same amount from her savings account at the end of each week and made no deposits. The equation ${eq} ` +
+        `represents the week when her balance reached ${usd(v.total)}, where w is the number of weekly withdrawals she had made.`,
       roles: {
         start: "The balance, in dollars, before any withdrawals",
         rate: "The amount, in dollars, withdrawn each week",
@@ -923,7 +923,7 @@
           responseType: "multiple-choice",
           estimatedSeconds: 95,
           stimulus: { type: "equations", content: formula },
-          stem: `${scene.text} Which of the following correctly expresses ${letter} in terms of ${listLetters(others)}?`,
+          stem: `${scene.text}${target === "C" ? ` If ${y} ≠ 0, which` : " Which"} of the following correctly expresses ${letter} in terms of ${listLetters(others)}?`,
           correct: key,
           wrong,
           explanation: `${work.join(" ")} Each other choice fails when numbers are substituted back into the formula.`,
@@ -1015,7 +1015,7 @@
             responseType: "multiple-choice",
             estimatedSeconds: 115,
             stimulus: { type: "equations", content: formula },
-            stem: `${scene.text(k, V)} Which of the following correctly expresses x in terms of ${a} and ${o}?`,
+            stem: `${scene.text(k, V)} If ${o} ≠ ${K}, which of the following correctly expresses x in terms of ${a} and ${o}?`,
             correct: key,
             wrong,
             explanation: work.join(" "),
@@ -1061,7 +1061,7 @@
         responseType: "multiple-choice",
         estimatedSeconds: 110,
         stimulus: { type: "equations", content: formula },
-        stem: `${scene.text} Which of the following correctly expresses ${target} in terms of ${listLetters([o, other].sort())}?`,
+        stem: `${scene.text} All quantities in the formula are positive. Which of the following correctly expresses ${target} in terms of ${listLetters([o, other].sort())}?`,
         correct: key,
         wrong,
         explanation: work.join(" "),
@@ -1119,6 +1119,7 @@
         const wrong = [
           [u, `Gives the value of ${chunk}, not the value of ${asked}.`],
           [xText, `Stops at x = ${xText}, a value on the way, instead of finding ${asked}.`],
+          [m * (u - q) + q, `Multiplies the variable term of ${chunk} by ${num(m)} but leaves its constant term unchanged.`],
         ];
         if (m < 0) wrong.push([-key, `Treats ${asked} as ${multipleText(p, q, -m)}, losing the negative sign.`]);
         else if (form !== "fractions") {
@@ -1168,7 +1169,8 @@
             ];
           }
         }
-        if (collides(key, wrong) || (!numeric && distinctWrongHard(key, wrong) < 3)) continue;
+        const offered = numeric ? [] : pairedSignChoices(t, key, wrong);
+        if (!numeric && !offered) continue;
         return {
           responseType: numeric ? "numeric" : "multiple-choice",
           estimatedSeconds: 100,
@@ -1177,7 +1179,7 @@
             ? `If ${equation}, what is the value of ${asked}?`
             : `Based on the given equation, what is the value of ${asked}?`,
           correct: key,
-          wrong: numeric ? [] : [...wrong.slice(0, 2), ...t.shuffle(wrong.slice(2))],
+          wrong: offered,
           explanation: `${steps.join(" ")} The value of x is never needed.`,
           steps,
           principles: [
@@ -1249,15 +1251,15 @@
           const lead = `${n === 1 ? "" : n}k²`;
           const wrong = [
             [otherText, askNone
-              ? `Gives the value of k at which the constants match too (${num(a)}k = ${num(c)}), so the two sides are identical and every x is a solution.`
+              ? `Gives the value of k at which the constants match too (${lin(a, 0, "k")} = ${num(c)}), so the two sides are identical and every x is a solution.`
               : `Gives the value of k at which the constants differ, so the two sides are parallel and no x is a solution.`],
             [square, `Stops at ${lead} = ${num(u * u)}: ${square} is the value of k², not of k.`],
             [frac(-u * u, v * v), `Stops at k² = ${square} without taking the square root, then gives it the negative sign of one of the two values of k.`],
           ];
           const keyValue = (keySign * u) / v;
-          const expanded = `${lead}x ${signed(a)}k = ${right}`;
+          const expanded = `${lead}x ${xTerm(a, "k")} = ${right}`;
           const steps = [
-            `Multiply out the left side: ${expanded}.`,
+            `Expand the product and place it on the left: ${expanded}.`,
             `The x-coefficients must match: ${lead} = ${num(u * u)}, so k = ${frac(u, v)} or k = ${frac(-u, v)}.`,
             `At k = ${root}, the constant term on the left is ${num(a)}(${root}) = ${num(c)}, the same as on the right, so the two sides are the same expression and every x is a solution.`,
             `At k = ${frac(-sigma * u, v)}, the constant term on the left is ${num(-c)}, not ${num(c)}, so no value of x makes the two sides equal.`,

@@ -3,9 +3,10 @@
 module.exports = {
   id: "act-english-p018",
   type: "informative-essay",
-  title: "Salt Does Not Melt Ice",
-  content: `[1] Road salt does not melt ice. The correction is short enough to
-sound like a {1 quibble and the} difference between the two descriptions
+  title: "What Road Salt Changes",
+  content: `[1] Ordinary road salt helps ice melt by lowering water's freezing point,
+not by supplying the heat for melting. The distinction can sound like a
+{1 quibble and the} difference between the two explanations
 {2 are} what decides whether a road is safe at ten degrees.
 
 [2] {3} Salt {4 lowers} the temperature at which water freezes. A film of pure
@@ -30,8 +31,8 @@ is slower than the next hour of snow falling on top of it.
 {13 gives off heat as it dissolves and stays useful far colder}. Sand melts
 nothing whatever and is spread for traction alone. {14}
 
-[6] The distinction is not pedantic. A driver who believes salt melts ice
-expects a bare road at any temperature. A driver who knows salt lowers a
+[6] The distinction is not pedantic. A driver who thinks ordinary salt supplies heat may
+expect a bare road at any temperature. A driver who knows salt lowers a
 freezing point expects sand.`,
   questions: [
     {
@@ -43,18 +44,22 @@ freezing point expects sand.`,
       key: "quibble, and the",
       noChange: "Two independent clauses joined by 'and' need a comma before the conjunction.",
       wrong: [
-        ["quibble; and the", "A semicolon and a coordinating conjunction do the same job, so both is redundant."],
-        ["quibble, and, the", "The second comma separates the conjunction from the subject that follows."],
+        [
+          "quibble; although the",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "quibble, and, the",
+          "The second comma separates the conjunction from the subject that follows."
+        ]
       ],
-      why:
-        "'The correction is short enough to sound like a quibble' and 'the difference … is what " +
-        "decides' are both complete clauses, so the 'and' between them takes a comma.",
+      why: "'The correction is short enough to sound like a quibble' and 'the difference … is what decides' are both complete clauses, so the 'and' between them takes a comma.",
       steps: [
         "Check whether the words on each side of 'and' could stand alone. They could.",
-        "Place a comma immediately before the conjunction.",
+        "Place a comma immediately before the conjunction."
       ],
       hint: "A comma goes before 'and' when a full sentence follows it.",
-      trap: "The second clause is long, so by the time it arrives the missing comma is behind you.",
+      trap: "The second clause is long, so by the time it arrives the missing comma is behind you."
     },
     {
       number: 2,
@@ -88,26 +93,24 @@ freezing point expects sand.`,
       wrong: [
         [
           "Sodium chloride is mined in several states and shipped to municipalities by rail.",
-          "Where road salt comes from is never taken up again anywhere in the essay.",
+          "Where road salt comes from is never taken up again anywhere in the essay."
         ],
         [
           "Winter road maintenance is one of the largest line items in a northern city's budget.",
-          "The cost of maintenance is not what this paragraph goes on to explain.",
+          "The cost of maintenance is not what this paragraph goes on to explain."
         ],
         [
           "There are several chemical properties of salt that are relevant to winter driving.",
-          "The vague plural promises a survey where the paragraph delivers a single mechanism.",
-        ],
+          "The vague plural promises a survey where the paragraph delivers a single mechanism."
+        ]
       ],
-      why:
-        "Paragraph 1 says the common description is wrong. This paragraph supplies the right one, so " +
-        "its opening should announce what salt really does.",
+      why: "Paragraph 1 says the common description is wrong. This paragraph supplies the right one, so its opening should announce what salt really does.",
       steps: [
         "Note what the previous paragraph establishes: the usual explanation is wrong.",
-        "Choose the opening that begins replacing it.",
+        "Choose the opening that begins replacing it."
       ],
       hint: "The paragraph is a correction, so its first sentence should say what is being corrected to.",
-      trap: "Every choice is true about road salt, so accuracy alone cannot decide it.",
+      trap: "Every choice is true about road salt, so accuracy alone cannot decide it."
     },
     {
       number: 4,
@@ -283,23 +286,21 @@ freezing point expects sand.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "zero: in practice most agencies stop expecting much",
-          "A colon introduces an explanation, but the second clause opposes the first rather than explaining it.",
+          "zero; although in practice most agencies stop expecting much",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "zero and in practice most agencies stop expecting much",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The sentence sets theory against practice. Both halves are complete, and a semicolon holds " +
-        "the two against each other without making either subordinate.",
+      why: "The sentence sets theory against practice. Both halves are complete, and a semicolon holds the two against each other without making either subordinate.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or is set against it. It is set against it.",
+        "Ask whether the second explains the first or is set against it. It is set against it."
       ],
       hint: "'In theory' and 'in practice' signal a matched pair.",
-      trap: "The second clause qualifies the first, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 12,

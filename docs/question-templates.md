@@ -1,8 +1,8 @@
 # Question templates
 
 SAT practice is built from **templates** (called families in the code): a
-template is one question design, a parameterized generator that draws a fresh,
-independently verified question each time. A practice run takes **at most one
+template is one question design, a parameterized generator that draws a fresh
+question and checks its declared structural or numerical invariants. A practice run takes **at most one
 question per template**, and at most one per scene (topic), so no set shows
 the same question twice with new names or numbers.
 
@@ -45,7 +45,7 @@ src/lib/families/
 | `tools/lib/tells.js` | The gate's answer-tell and variety measurements (pure; `test/tells.test.js`) |
 | `tools/lib/expr.js` | Reads a choice such as "−3/4", "2√3" or "$1,200" as a number |
 | `tools/lib/svg-tree.js` | Parses figure SVG as the browser's DOMParser does, so the gate can run `render.js`'s sanitizer |
-| `tools/lib/fingerprint.js` | A template's fingerprint: a hash of what the student sees for seeds `fp-0`…`fp-7` |
+| `tools/lib/fingerprint.js` | Complete source/dependency SHA256 fingerprints and the legacy eight-seed migration reader |
 | `tools/lib/registry.js` | Registry rules: permanent bits, retirement, versions |
 | `tools/update-templates.js` | Keeps the registries in step with the templates |
 
@@ -97,16 +97,45 @@ rebuilds the same questions in the same order. A question's id is
 `<section>:<template>:<seed>`, so a past question can be rebuilt exactly while
 its template's version is unchanged.
 
-Registry entries are `{ id, bit, version, fingerprint, retired? }`. Bits are
+Registry entries are `{ id, bit, version, fingerprint, fingerprintAlgorithm, retired? }`. Bits are
 permanent: `node tools/update-templates.js` appends new templates at version 1,
 marks removed ones retired (their bits stay reserved), and never renumbers, so
-a stored mask always means the same templates. The fingerprint hashes what
-the student sees (stimulus, figure, stem, choices, key, and the teaching text)
-for the seeds `fp-0`…`fp-7`; when it changes, the version goes up by one, so a
-stored attempt knows whether it was answered on the question the template
-builds today. Tier, skill and other metadata are left out: a relabel is not a
-new question. After editing a template, rerun `update-templates` and commit
-the registry; the gate runs it with `--check` and fails on a stale entry.
+a stored mask always means the same templates. The `source-v1` SHA-256
+fingerprint covers the template's defining source file and its transitive local
+dependencies, including shared instantiation code. An edit to an unsampled
+branch can no longer silently preserve the version. This deliberately makes
+conservative version bumps: comments, metadata and sibling templates in the
+same file also affect the fingerprint. Versions identify the current source;
+the repository does not retain an executable archive of every old version.
+
+The earlier eight-seed visible-output hashes could miss changed scenes. Migrate
+them with `node tools/update-templates.js --rehash --baseline <old-source-root>`
+against a separate unchanged checkout. The baseline must match the stored
+legacy hashes. Migration preserves a version only when its old and current
+source fingerprints match; it does not hide concurrent content edits. After
+migration, `--rehash` cannot suppress a source change. After editing a template,
+rerun `update-templates` and commit the registry; `--check` rejects stale entries.
+
+## Independent review admission
+
+`content/template-reviews.json` records independent agent review of the current
+source, with the template version, tier, reviewer, author, review report and at
+least three independently solved seeds. Generate the displayed question without
+its key or explanation, record the reviewer's answer, and only then compare it
+with the key. Inspect distinct scenes and changed branches, explanations and
+plausible alternative answers; repeating one scene with shuffled choices is not
+adequate editorial coverage.
+
+`tools/check-template-reviews.js` refuses missing or stale reviews and recorded
+answers that disagree with the rebuilt question. There is no automatic review
+approval command. After substantive changes, a reviewer other than the author
+must reassess the final questions before updating the record. A source-only
+change still needs a reviewer to establish and document its impact.
+
+This is a sampled editorial process. It is neither human editorial approval nor
+empirical SAT calibration, and the machine cannot establish that the recorded
+judgments are true. Record uncertainties and the actual coverage in `docs/reviews/`;
+do not describe a successful automated gate as semantic verification.
 
 ## How many templates
 
@@ -225,8 +254,10 @@ Also enforced:
   real 5-character answer grid (a leading minus is free).
 - Math: every family has at least two surface forms (a different quantity
   asked for, or a different presentation).
-- Reading and Writing: multiple choice only; every passage (each text of a
-  pair) is 25–150 words, the real test's range; every item names a scene and
+- Reading and Writing: multiple choice only; a passage or the entire passage
+  pair is 25–150 standardized six-character words (150–900 characters),
+  excluding display labels. College Board defines this measure in the
+  Assessment Framework, sections 2.3.10 and 3.1.8. Every item names a scene and
   a template has at least 8 scenes.
 - A `notToScale` figure must be drawn to *suggest a wrong answer*, and that
   answer must be offered, with a reason that says the drawing misled
@@ -385,6 +416,7 @@ node tools/check-families.js --json <file>    # the same, machine-readable
 node tools/check-families.js --matrix         # skill x difficulty coverage
 node tools/check-families.js --sample <id> --seed 3 --svg-dir <dir>
 node tools/update-templates.js                # register new templates, re-version changed ones
+node tools/check-template-reviews.js          # current source must have independent review evidence
 ```
 
 The reference templates are `linear-function-identity`

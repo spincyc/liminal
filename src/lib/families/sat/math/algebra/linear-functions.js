@@ -1181,13 +1181,16 @@
     // The label sits in the open side of the line (below it when it rises,
     // above it when it falls), at a point away from the axes and the edges.
     const fits = (x) => Math.abs(line.f(x)) >= 2 && Math.abs(line.f(x)) <= 5;
-    const right = [4, 3.5, 3, 2.5, 2].find(fits);
-    const left = [-3, -3.5, -2.5, -4].find(fits);
+    const candidates = [4, 3.5, 3, 2.5, 2, -3, -3.5, -2.5, -4, 1.5, -2, -1.5, 1, -1, 0.5, -0.5];
+    // Steep lines may enter the safe area only near the y-axis. A shallow
+    // line through the origin may never reach |y| = 2 in that area.
+    const x = candidates.find(fits) ?? candidates.find((value) => Math.abs(line.f(value)) <= 5);
+    const right = x > 0;
     const rises = line.m > 0;
-    const label = right !== undefined
-      ? P.label(right, line.f(right), "y = f(x)", { italic: true, anchor: "start", dx: 12, dy: rises ? 14 : -14 })
-      : P.label(left === undefined ? -4 : left, line.f(left === undefined ? -4 : left), "y = f(x)",
-        { italic: true, anchor: "end", dx: -12, dy: rises ? -14 : 14 });
+    const label = P.label(x, line.f(x), "y = f(x)", {
+      italic: true, anchor: right ? "start" : "end", dx: right ? 12 : -12,
+      dy: right === rises ? 14 : -14,
+    });
     const parts = [...P.grid(), ...P.axes(), P.line(-line.rise, line.run, line.b0 * line.run), label];
     return { svg: P.svg(parts, alt), alt, notToScale: false };
   }

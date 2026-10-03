@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p026",
   type: "humanities",
   title: "What a Recipe Leaves Out",
-  intro: "This passage is adapted from an essay on the history of the cookbook.",
+  intro: "This original passage discusses the history of the cookbook.",
   content: `A recipe from 1740 begins: take a good piece of beef. It does not say how much. It
 does not say what makes a piece good, or what to do if the piece available is not. The oven
 instruction, when there is one, is that the oven should be quick, or slow, or of a moderate
@@ -169,16 +169,16 @@ badly written new one gets almost everything about it wrong.`,
       stem: "Which detail best supports the claim that an old recipe assumed a reader with experience?",
       key: "Oven heat is given as quick, slow, or moderate.",
       wrong: [
-        ["A recipe begins by asking for a good piece of beef.", "This shows imprecision about the ingredient, not about a shared skill."],
-        ["Old cookbooks were written for a privileged group.", "Who owned the books is a separate point made near the end."],
-        ["Paper would have been used up by fuller writing.", "Economy of paper explains brevity without implying a skilled reader."],
+        ["Farmer's cooking-school book was published in the year 1896.", "The date of a later book does not show what knowledge older instructions assumed."],
+        ["Old cookbooks were written for a privileged group.", "Social privilege by itself does not establish the reader's practical cooking experience."],
+        ["Paper would have been used up by fuller writing.", "Paper economy explains brevity but does not identify the cooking skill the instructions require."],
       ],
       why: "The opening paragraph says the oven instruction carried \"no number anywhere, because there was no thermometer in the kitchen,\" so only a reader who had \"stood beside somebody doing this\" could act on it.",
       steps: [
         "Look for the instruction that could not be followed without prior experience.",
         "Check that the detail concerns a skill rather than a shortage.",
       ],
-      hint: "Ask which detail a novice could not act on at all.",
+      hint: "Choose a cooking instruction that depends on knowledge the recipe does not supply.",
     },
     {
       subskill: "reasoning",

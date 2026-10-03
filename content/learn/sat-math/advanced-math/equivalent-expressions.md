@@ -13,8 +13,8 @@ expand, factor, combine exponents and simplify fractions without changing
 the value. It belongs to Advanced Math, {{fact:sat-math-advanced}} of the
 Math section. Hard questions ask you to find constants that make two
 expressions match for all x, to reach a value through a combination you are
-given instead of through x and y, or to pick the equivalent form that shows
-a feature.
+given instead of through x and y, or to simplify a nested fraction. Picking
+a familiar quadratic form that displays a feature is Medium work.
 
 ## Factoring {#factoring}
 
@@ -217,7 +217,11 @@ Hard questions ask you to recognize structure before you do algebra:
 
 - A product with unknown coefficients that equals a given quadratic for all x. Expand, then match the x², x and constant terms. When the conditions don't say which unknown is which (a sum and a product), both assignments count, and there can be two answers.
 - A value through a combination: a power of a common base whose exponent is a multiple of what you are given, or a square that contains a given sum and product (see [a value through a known combination](#known-combination)).
-- Which equivalent form shows a feature as a constant: vertex form shows the minimum or maximum, factored form the x-intercepts, standard form the y-intercept. Then check that the form is really equivalent (see [nonlinear functions](learn:sat-math/advanced-math/nonlinear-functions#quadratic-functions)).
+A useful Medium preparation is choosing the equivalent form that displays
+a feature: vertex form shows the minimum or maximum, factored form the
+x-intercepts, and standard form the y-intercept. Check that the chosen
+form is really equivalent (see
+[nonlinear functions](learn:sat-math/advanced-math/nonlinear-functions#quadratic-functions)).
 - A fraction built from fractions, such as 1/(1/A + 1/B) or a difference of fractions over a difference of their squares, or one set equal to a number to fix a ratio x/y. Clear the small fractions with one common denominator, then factor (see [fractions inside fractions](#complex-fractions)).
 
 > **Example.** For all x, (ax − 4)(2x + b) = 6x² + x − 12, where a and b are

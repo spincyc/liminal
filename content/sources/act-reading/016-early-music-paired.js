@@ -4,12 +4,11 @@ module.exports = {
   id: "act-reading-p016",
   type: "humanities",
   title: "Playing It As It Was",
-  intro: "Passage A is adapted from a book on historically informed performance. Passage B is adapted from a critic's response.",
+  intro: "Passage A is an original book on historically informed performance. Passage B is an original critic's response.",
   content: `PASSAGE A
 
 For most of the nineteenth and twentieth centuries, music written in 1720 was played on
-instruments built in 1890, by orchestras of a size Bach never assembled, at a pitch a
-semitone above the one he tuned to, with a continuous vibrato that no treatise of his
+instruments built in 1890, by orchestras of a size Bach never assembled, often at a pitch different from those used in his own settings, with a continuous vibrato that no treatise of his
 century describes. Nobody decided this. It accumulated, the way a house accumulates
 furniture, and by 1950 it was simply what the music sounded like.
 
@@ -24,8 +23,8 @@ undoing those decisions was a matter of evidence, not of taste.
 
 What the evidence produced was frequently a surprise, which is the best argument for the
 method. Baroque orchestras turned out to be small, often one player to a part. Gut strings
-under lower tension turned out to speak faster and to decay sooner, which makes rapid
-passagework audible in a way modern strings cannot manage. Bach's own choirs, on the
+under lower tension turned out to speak faster and to decay sooner, which changes the articulation of rapid
+passagework compared with a sustained modern-string sound. Bach's own choirs, on the
 payment evidence, may have numbered as few as eight singers. Nobody wanted these results in
 advance. They came out of the documents, and several of them overturned assumptions the
 movement's own founders had held. The early recordings of the 1960s used forces far larger
@@ -107,7 +106,7 @@ that the achievement does not need.`,
         ["are played by a single performer per part.", "One player to a part concerns ensemble size, not how a string behaves."],
         ["require a continuous vibrato to sustain them.", "Continuous vibrato is named as a modern habit the movement removed."],
       ],
-      why: "Passage A says gut strings \"turned out to speak faster and to decay sooner, which makes rapid passagework audible in a way modern strings cannot manage.\"",
+      why: "The passage describes the quicker onset and shorter decay of the gut-string sound, connecting those properties to the articulation of rapid notes. It does not claim that modern strings are incapable of clear passagework.",
       steps: [
         "Locate the sentence about gut strings.",
         "Take the two properties given before the word *which*.",
@@ -190,20 +189,20 @@ that the achievement does not need.`,
       subskill: "compare perspectives",
       family: "comparing-two-texts",
       difficulty: "Hard",
-      stem: "Passage B's central objection to Passage A is that Passage A:",
-      key: "treats a reconstructed sound as a recovered experience.",
+      stem: "The concern that Passage B adds to Passage A's account is that:",
+      key: "reconstructing historical conditions cannot recover an earlier audience's experience.",
       wrong: [
-        ["relies on documents that scholars now consider unreliable.", "Passage B accepts the documentary work and calls the scholarship a gift."],
-        ["overstates how far modern orchestras departed from the originals.", "Passage B does not dispute the account of nineteenth-century practice."],
-        ["assumes that older audiences listened more attentively than ours.", "Neither passage makes any claim about the attentiveness of listeners."],
+        ["the surviving documents have now been shown to be unreliable.", "Passage B accepts the historical scholarship; its concern is what that scholarship cannot recover."],
+        ["modern orchestras departed less from earlier practice than scholars claim.", "Passage B does not dispute the account of nineteenth-century instruments and ensembles."],
+        ["earlier audiences listened more attentively than modern audiences ever do.", "Neither passage compares the attentiveness of earlier and modern audiences."],
       ],
-      why: "Passage A treats the removal of accumulated decisions as recovering the composer's conditions. Passage B answers that \"the performance can be historical. The hearing cannot,\" because the listener cannot be reconstructed.",
+      why: "Passage A describes reconstructing the composer's working conditions. Passage B accepts that work but adds a limitation: a modern listener brings experiences that an eighteenth-century listener did not have. Passage A never claims that it can recreate a listener's experience.",
       steps: [
-        "State what Passage A claims the method achieves.",
-        "Find the sentence in Passage B that concedes half of that and denies the other half.",
-        "Reject options attacking evidence that Passage B accepts.",
+        "Identify what Passage A says the documentary method reconstructs.",
+        "Separate Passage B's acceptance of that work from its additional concern about hearing.",
+        "Choose the limitation about the audience, rather than inventing a factual dispute.",
       ],
-      hint: "Passage B grants everything about the players and objects about the listeners.",
+      hint: "Compare what can be reconstructed with what the listener brings.",
       trap: "Assuming the responding passage must reject the first passage's evidence.",
     },
     {

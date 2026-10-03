@@ -8,10 +8,11 @@ skill: Nonlinear equations
 # Nonlinear equations
 
 A nonlinear equation has its variable squared, under a root, inside an
-absolute value or in a denominator, so it can have two solutions, one, or
-none. This skill is part of Advanced Math, {{fact:sat-math-advanced}} of the
+absolute value or in a denominator. Depending on its form, it may have no
+solutions, one or more solutions, or infinitely many. This skill is part of Advanced Math, {{fact:sat-math-advanced}} of the
 Math section. Easy questions ask you to solve a factorable quadratic. Hard
-ones ask for the sum or product of the solutions without the solutions, ask
+ones combine the sum and product to find another quantity without finding
+the individual solutions, ask
 how many solutions an equation has once denominators or absolute values are
 dealt with, or make you check which cases survive.
 
@@ -196,10 +197,10 @@ Two special shapes:
 
 Hard nonlinear equations reward seeing structure first:
 
-- The sum, product, or sum of squares of the solutions, after the equation is rearranged. Move every term to one side first, then use −b/a and c/a; r² + s² = (r + s)² − 2rs.
+- A derived quantity such as the sum of squares of the solutions, after the equation is rearranged. Move every term to one side first, then use −b/a and c/a; r² + s² = (r + s)² − 2rs.
 - A rational equation whose count of solutions depends on what clearing the denominator leaves: two roots, one root that the original excludes, an identity, or a false statement.
 - An absolute value equal to an expression in x, where each case must pass the sign check (see [when the other side has x](#absolute-value-with-x)).
-- A radical equation with a constant k, or the sum of its solutions. Each root of the squared equation must make the side without the root nonnegative, so a k that gives the quadratic two roots can still leave one solution (see [a radical equation with a constant k](#radical-with-a-constant)).
+- A radical equation with a constant k whose allowed values must be found. Each root of the squared equation must make the side without the root nonnegative, so a k that gives the quadratic two roots can still leave one solution (see [a radical equation with a constant k](#radical-with-a-constant)).
 
 > **Example.** The solutions of (x + 2)(x − 5) = 3x − 4 are r and s. What is
 > r² + s²?

@@ -2,7 +2,7 @@
 
 A mini test is 20 questions under a real clock, answered with no feedback, then
 reviewed in full. It sits between drilling (one skill, immediate explanations)
-and a full practice test (three hours, once every two to three weeks).
+and a full practice test (typically every two to three weeks).
 
 Use it when you want a diagnostic signal without losing a Saturday.
 
@@ -14,13 +14,17 @@ Use it when you want a diagnostic signal without losing a Saturday.
 | --- | ---: | ---: | --- |
 | **SAT** | 20 | 28 min | 11 Reading and Writing, 9 Math |
 | **ACT** | 20 | 20 min | 8 English, 7 Mathematics, 5 Reading |
-| **ACT with Science** | 20 | 20 min | 6 English, 5 Math, 4 Reading, 5 Science |
+| **ACT with Science** | — | — | Currently unavailable while the Science bank is under review |
 
-The section splits mirror each real test's weighting — the SAT's 54/44 and the
-ACT's 50/45/36 Composite — so the mix of what you face is representative even
-though the length is not.
+These section splits roughly follow the official question counts: SAT
+54 Reading and Writing / 44 Math, and ACT 50 English / 45 Math / 36 Reading.
+They do not reproduce score weighting: the ACT Composite averages its three
+section scores, and the SAT adds its two section scores. A small sample also
+cannot reproduce every domain and task in a full test.
 
-Difficulty is drawn roughly 30% Easy, 45% Medium, 25% Hard.
+SAT mini tests use Liminal's authored difficulty mix of roughly 30% Easy,
+45% Medium, 25% Hard. ACT passage groups are kept together; their tiers are
+unverified. Neither format is an official calibrated miniature test.
 
 Time budgets come from official per-question pacing:
 
@@ -50,16 +54,18 @@ question navigator and a mark-for-review button. What differs is the setup:
 | Navigation | Jump to any question, forward and back | Same |
 | Review | As you go, or on the report | Full pass over all 20 afterwards |
 
-Withholding feedback is the point. Immediate explanations are excellent for
-learning a skill and useless for measuring one — knowing you got the last three
-right changes how you approach the fourth.
+Withholding feedback lets you inspect unaided performance. Immediate
+explanations help you learn, but can teach a method that affects later answers
+in the same set.
 
 ---
 
 ## How to take one
 
-**Set it up like a real section.** Phone away, one sitting, no notes. The
-result is only worth something if the conditions are.
+**Set it up like a real section.** Phone away, one sitting, no notes. Use your
+approved accommodations. The default mini-test clock follows standard timing;
+if it does not fit your approved timing, use a suitably timed practice set
+or a printed booklet with your own timer.
 
 **Use the two-pass method.** The numbered strip above the question is a
 navigator: answer what you know on the first pass, mark anything that stalls
@@ -97,8 +103,8 @@ pointer to what to drill, nothing more.
 2. **Check your pace.** If time ran out with questions unanswered, pacing is
    part of the problem; redo the unanswered ones untimed to see whether
    content is too.
-3. **Review all 20** — including the ones you got right. A right answer you
-   guessed at is a future wrong answer.
+3. **Review all 20** — including the ones you got right. A correct guess
+   does not show that you know the method.
 4. **Classify each miss** into the four error types from
    [Error log and review method](07-error-log-and-review-method.md). This is
    the step that turns a score into a plan.
@@ -133,9 +139,9 @@ Twenty questions is a small sample. Expect noise: two mini tests taken an hour
 apart can differ by a wide margin purely by chance, especially at the domain
 level where a "domain" may be three or four items.
 
-Read it as a **direction**, not a measurement. If Advanced Math comes up weak
-twice in a row, believe it. If it comes up weak once and strong the next time,
-you've learned nothing except that four questions is four questions.
+Treat a weak result as a reason to inspect the missed skills, not a verdict
+from a handful of questions. Look for repeated errors on unfamiliar questions
+and check them with official practice before changing the whole study plan.
 
 ---
 

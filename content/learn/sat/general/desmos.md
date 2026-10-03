@@ -6,7 +6,7 @@ title: Desmos
 
 Bluebook has the Desmos graphing calculator built in, and you may use it on
 every Math question. Used well, it turns many algebra problems into
-graph-reading problems and removes most sign errors. Used for the first time
+graph-reading problems and can help check sign errors. Used for the first time
 on test day, it wastes minutes. Practice with the free version at
 [desmos.com/calculator](https://www.desmos.com/calculator), then try the one
 inside Bluebook's practice tools so nothing surprises you.
@@ -19,8 +19,9 @@ and intersections with coordinates.
 
 ## Solve an equation by graphing {#solve-by-graphing}
 
-Any equation "left side = right side" can be solved by graphing each side
-and reading where they cross.
+For many equations in one real variable, graph each side of
+"left side = right side" and inspect where they cross. The graph suggests
+solutions; check them in the original equation.
 
 > **Example.** Solve 2x² − 5x − 1 = 3x − 4.
 >
@@ -42,8 +43,9 @@ exponentials, fractions.
 ## Systems {#systems}
 
 Type both equations exactly as given, for example `3x+2y=16` and `5x-2y=8`.
-You don't need to solve for y first. Click the intersection. Parallel lines
-mean no solution; one line drawn on top of the other means infinitely many.
+You don't need to solve for y first. Click the intersection. Distinct parallel
+lines mean no solution. Apparently overlapping lines need an algebraic check:
+only equations describing the same line have infinitely many solutions.
 
 ## Sliders for "what value of k" {#sliders}
 
@@ -73,14 +75,18 @@ it. A table (next section) gives the same check with numbers.
 
 > **Fails when.** Two expressions differ only at a single point, such as a
 > value excluded from a rational expression's domain. The graphs look
-> identical, so check the excluded values separately.
+> identical, so check the excluded values separately. Similar curves can also
+> overlap at the current zoom; a few matching points or a visible window do
+> not prove an identity. Use algebra to confirm equivalence.
 
 ## Tables {#tables}
 
 Choose "table" from the + menu, type x-values, and add a column for any
 function you have defined, such as `f(x)`. Tables are good for checking a
 model at several inputs, comparing two expressions, and deciding whether
-data are linear (constant differences) or exponential (constant ratios).
+data are linear (constant differences) or exponential (constant ratios),
+when the x-values are equally spaced. Matching at sampled inputs alone does
+not prove that two expressions are equivalent.
 
 ## Statistics {#statistics}
 
@@ -91,7 +97,9 @@ L=[3,7,7,9,14]
 mean(L)      median(L)      stdev(L)      quartile(L,1)
 ```
 
-That handles most one-variable data questions mechanically. See
+Use `stdev` for sample standard deviation and `stdevp` for population standard
+deviation; choose the definition the question needs. These tools calculate
+summaries but do not replace interpreting the data. See
 [one-variable data](learn:sat-math/problem-solving-and-data-analysis/one-variable-data).
 
 ## Regressions {#regressions}

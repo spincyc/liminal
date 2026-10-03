@@ -1114,6 +1114,9 @@
             };
           }
         }
+        if (flipInside && ["short", "reach", "half"].includes(shape)) {
+          steps.unshift(`Since |−u| = |u|, first rewrite |${inside}| as |${lin(p, -q)}|. The inside in the steps below refers to this equivalent form.`);
+        }
       }
       // Scan for zeros of the difference: many on a grid means an interval.
       let zeros = 0;
@@ -1133,7 +1136,7 @@
           "|u| = u for every u ≥ 0 and |ku| = |k||u| for every u, so an equation of that form can hold on a whole interval, or everywhere.",
         ],
         trap: nKey === 3
-          ? "Neither case gives one number, because the equation holds for a whole interval of x."
+          ? "One case can hold on a whole interval or for every x; counting cases is not the same as counting solutions."
           : "Two cases give two candidates, but a candidate that makes a side negative is not a solution, and a case can reduce to a false statement.",
         hint: "Before splitting into cases, compare the two sides: is one of them a multiple of the expression inside the bars?",
         verify: () => {
@@ -1295,9 +1298,9 @@
     tricks: ["neighbouring-rule", "sign-error", "intermediate-value"],
     build(t) {
       const numeric = t.chance(0.45);
-      const ask = t.pick(["sum", "sum", "sum", "sum", "sum", "product", "product", "product",
-        "squares", "squares", "squares", "squares", "squares", "gap", "gap", "gap",
-        "reciprocal", "reciprocal", "reciprocal", "reciprocal"]);
+      // Hard work combines root relations; reading −B/A or C/A alone is
+      // the routine prerequisite, not the final task.
+      const ask = t.pick(["squares", "gap", "reciprocal"]);
       for (let attempt = 0; ; attempt += 1) {
         const eq = straddledEquation(t);
         if (!eq) continue;
@@ -1310,30 +1313,6 @@
         const Pn = eq.naiveProduct;
         const naive = `Takes r + s = ${ratioHard(Sn)} and rs = ${ratioHard(Pn)} by ${eq.naiveWhy}.`;
         const table = {
-          sum: {
-            stem: "What is the sum of the solutions to the given equation?",
-            value: sum,
-            fromRoots: (r, s) => r + s,
-            finish: `Sum of the solutions: −B/A = ${MINUS}(${num(B)})/${paren(A)} = ${ratioHard(sum)}.`,
-            wrong: [
-              [-sum, "Uses b/a for the sum, losing the negative sign in −b/a."],
-              [Sn, `Gets the sum by ${eq.naiveWhy}.`],
-              [product, "Gives the product of the solutions, c/a, instead of the sum."],
-              ...(eq.extraSum ? [eq.extraSum] : []),
-            ],
-          },
-          product: {
-            stem: "What is the product of the solutions to the given equation?",
-            value: product,
-            fromRoots: (r, s) => r * s,
-            finish: `Product of the solutions: C/A = ${num(C)}/${paren(A)}${`${num(C)}/${paren(A)}` === ratioHard(product) ? "" : ` = ${ratioHard(product)}`}.`,
-            wrong: [
-              [Pn, `Gets the product by ${eq.naiveWhy}.`],
-              [eq.productSign, eq.productSignWhy],
-              [sum, "Gives the sum of the solutions, −b/a, instead of the product."],
-              [-product, "Writes the product as −c/a, carrying the sign from the sum rule into the product."],
-            ],
-          },
           squares: {
             stem: "The solutions to the given equation are r and s. What is the value of r² + s²?",
             value: sum * sum - 2 * product,
@@ -1377,14 +1356,6 @@
         // change from the key, so a draw pairs the other distractors too: all
         // paired, a distractor pair without the key's twin, or the key's twin.
         const twins = {
-          sum: [[-sum, "Uses b/a for the sum, losing the negative sign in −b/a."],
-            [product, "Gives the product of the solutions, c/a, instead of the sum."],
-            [-product, "Gives the product of the solutions with the sign of the sum rule, −c/a, instead of the sum."],
-            [Sn, `Gets the sum by ${eq.naiveWhy}.`]],
-          product: [[-product, "Writes the product as −c/a, carrying the sign from the sum rule into the product."],
-            [sum, "Gives the sum of the solutions, −b/a, instead of the product."],
-            [-sum, "Gives b/a, the sum of the solutions with its sign lost, instead of the product."],
-            [Pn, `Gets the product by ${eq.naiveWhy}.`]],
           reciprocal: [[product / sum, "Inverts the combined fraction, computing rs/(r + s)."],
             [1 / sum, "Adds the reciprocals as 1/(r + s), adding denominators instead of using a common one."],
             [sum, "Gives r + s, the numerator of the combined fraction, and stops."],
@@ -1396,8 +1367,7 @@
         }
         // Hand-friendly numbers: small keys with small denominators, and no
         // distractor so large or ragged that it rules itself out.
-        const derived = ask !== "sum" && ask !== "product";
-        if (Math.abs(value) > (derived ? 60 : 30) || denominatorHard(value) > (derived ? 4 : 6)) continue;
+        if (Math.abs(value) > 60 || denominatorHard(value) > 4) continue;
         if (chosen.wrong.some(([wrongValue]) =>
           !Number.isFinite(wrongValue) || Math.abs(wrongValue) > 120 || denominatorHard(wrongValue) > 16)) continue;
         // A fraction that fits the answer grid is typed as a fraction.
@@ -1695,7 +1665,9 @@
     rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
     tricks: ["extraneous-solution", "reversed-condition", "must-vs-could", "intermediate-value"],
     build(t) {
-      const form = t.pick(["greatest", "could", "sum", "sum"]);
+      // Fixed-radical solving belongs to the Medium extraneous-roots
+      // template; every draw here must reason about a parameter range.
+      const form = t.pick(["greatest", "could"]);
       const numeric = t.chance(0.5);
       for (;;) {
         const p = t.pick([1, 1, 2, 3]);
@@ -1721,7 +1693,7 @@
           const repeated = [kFrac(bottom), "Gives the value of k where the squared equation has a repeated root; there the equation has one solution, and below it none."];
           const flipped = [kFrac(-bottom), "Solves the discriminant condition with the sign of k reversed."];
           const beyond = [kFrac(top + 1 / p), `Takes a value of k at which the squared equation has two roots, but the smaller one makes ${right} negative, so it is extraneous.`];
-          const boundary = [kFrac(-top), `Gives the value of x, ${kFrac(-top)}, at which ${right} is 0, instead of a value of k.`];
+          const boundary = [kFrac(-top), `Reverses the sign when solving ${a}(${kFrac(m / p)}) + k = 0 at the boundary x = ${kFrac(m / p)}.`];
           // The repeated-root threshold comes with its sign slip, so the
           // look-alike pairs do not single out the key.
           const wrong = t.shuffle(t.chance(0.5) ? [repeated, flipped, beyond] : [repeated, flipped, boundary]);
@@ -1789,46 +1761,7 @@
               choices.every(([text]) => count(labelValue(text)).count !== 2),
           };
         }
-        // A given k > −m/p with a rational root: the smaller root is extraneous,
-        // so the "sum of all solutions" is the larger root alone.
-        const j = t.int(a + 1, a + 12);
-        const kk = (j * j - a * a - 4 * p * m * a) / (4 * p * p);
-        if (!Number.isInteger(kk) || kk <= top || kk === 0 || Math.abs(kk) > 40) continue;
-        const big = (2 * p * m + a + j) / (2 * p * p);
-        const small = (2 * p * m + a - j) / (2 * p * p);
-        if (small === 0 || small === 1 || approx(small, big) || approx(big + small, big)) continue;
-        const key = ratio(big);
-        if (key.replace(MINUS, "").length > 5) continue;
-        const content = onLeft ? `√(${lin(a, kk)}) + ${m} = ${lin(p, 0)}` : `√(${lin(a, kk)}) = ${right}`;
-        const wrong = [
-          [ratio(big + small), "Adds both roots of the squared equation; the smaller one makes the right side negative, so it is not a solution."],
-          [ratio(small), `Keeps the smaller root and rejects the larger; it is the smaller root, ${ratio(small)}, that makes ${right} negative.`],
-          [ratio(big * small), "Gives the product of the roots of the squared equation instead of the solution."],
-          [ratio(-big), "Solves the squared equation with the sign of the x-term reversed."],
-        ];
-        const steps = [
-          `${onLeft ? `Isolate the root, √(${lin(a, kk)}) = ${right}, and square` : "Square"} both sides: ${lin(a, kk)} = (${right})², so ${poly([p * p, -(2 * p * m + a), m * m - kk])} = 0.`,
-          `The roots are x = ${ratio(big)} and x = ${ratio(small)}.`,
-          `At x = ${ratio(small)}, the right side is ${ratio(p * small - m)}, which is negative, so that root is extraneous. At x = ${ratio(big)}, both sides equal ${ratio(p * big - m)}.`,
-          `The only solution is ${ratio(big)}, so the sum of all solutions is ${ratio(big)}.`,
-        ];
-        return {
-          responseType: numeric ? "numeric" : "multiple-choice",
-          estimatedSeconds: 130,
-          stimulus: { type: "equations", content },
-          stem: "What is the sum of all solutions to the given equation?",
-          correct: key,
-          wrong: numeric ? [] : wrong,
-          explanation: steps.join(" "),
-          steps,
-          principles,
-          trap: `The squared equation's roots add to ${ratio(big + small)}, but one of them is extraneous; the sum of the solutions counts only roots that satisfy the original equation.`,
-          hint: "Square both sides, solve, and check each root in the original equation.",
-          verify: () => {
-            const found = count(kk);
-            return found.count === 1 && approx(found.roots[0], big) && found.all.length === 2;
-          },
-        };
+
       }
     },
   };

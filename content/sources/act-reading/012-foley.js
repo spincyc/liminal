@@ -4,13 +4,13 @@ module.exports = {
   id: "act-reading-p012",
   type: "humanities",
   title: "The Sound That Isn't There",
-  intro: "This passage is adapted from an essay on sound in narrative film.",
-  content: `Almost nothing you hear in a film was recorded while the film was being shot. The
-microphone on set is there for one thing, the dialogue, and it is often wrong even about
-that; a line spoken outdoors near a road will be replaced later in a booth, by the same
-actor, watching their own mouth on a screen. Everything else — footsteps, cloth, a door,
-rain on a car roof, the small collision of a cup meeting a saucer — is built afterwards by
-people the credits call the Foley team, working in a room full of gravel pits and hinges
+  intro: "This original passage discusses sound in narrative film.",
+  content: `Much of what you hear in a film is added after the film is shot. The
+main recording priority on set is usually the dialogue, and even that may need replacing; a line spoken outdoors near a road will be replaced later in a booth, by the same
+actor, watching their own mouth on a screen. Many small sounds — footsteps, cloth, a door,
+the small collision of a cup meeting a saucer — are performed afterwards by
+people the credits call the Foley team. Other effects and ambience use separate
+recording and editing techniques. Foley artists rehearse movements against the picture, working in a room full of gravel pits and hinges
 and shoes.
 
 The name comes from Jack Foley, who worked at Universal in the era when sound arrived and
@@ -81,7 +81,7 @@ asked about it.`,
         ["the footsteps and movement of actors.", "Footsteps are named among the sounds built afterwards by the Foley team."],
         ["the noise of traffic passing nearby.", "Road noise is given as a reason a line will have to be replaced later."],
       ],
-      why: "The first paragraph says \"the microphone on set is there for one thing, the dialogue, and it is often wrong even about that.\"",
+      why: "The opening paragraph identifies dialogue as the main recording priority on set. It separately explains that Foley recreates many smaller physical sounds afterwards.",
       steps: [
         "Read the second sentence of the passage.",
         "Take the single purpose it names before the qualification.",

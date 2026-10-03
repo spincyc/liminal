@@ -129,23 +129,21 @@ in the belief that a shoe can correct a foot it was not cut to match.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "sit, and this is the decision the rest of the job depends on",
-          "'And' repairs the splice but attaches the essay's central claim to the end of a procedure.",
+          "sit, however, this is the decision the rest of the job depends on",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "sit, this being the decision the rest of the job depends on",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "sit; this being the decision the rest of the job depends on",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "The second clause is the paragraph's point rather than another step. A full stop gives it " +
-        "the weight the rest of the essay leans on.",
+      why: "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Ask which half the essay depends on, and give it room.",
+        "Find the subjects and finite verbs on both sides of the boundary.",
+        "Keep a complete statement on each side of the sentence boundary."
       ],
       hint: "The whole essay is about which step governs the others.",
-      trap: "'And' fixes the grammar and demotes the claim to a fourth item in a sequence.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -203,21 +201,25 @@ in the belief that a shoe can correct a foot it was not cut to match.`,
       family: "consequence-versus-escalation-transition",
       difficulty: "Medium",
       keep: false,
-      key: "Then comes",
+      key: "Next,",
       noChange: "'Consequently' says the nailing follows logically, when it simply follows in sequence.",
       wrong: [
-        ["Similarly,", "Nailing is not like the fitting described before it; it is the next stage."],
-        ["Even so,", "Nothing in the previous paragraph is being conceded or contradicted."],
+        [
+          "Similarly,",
+          "Nailing is not like the fitting described before it; it is the next stage."
+        ],
+        [
+          "Even so,",
+          "Nothing in the previous paragraph is being conceded or contradicted."
+        ]
       ],
-      why:
-        "The essay is a sequence of steps, and this is the one after fitting. The transition should " +
-        "mark the step rather than assert a logical consequence.",
+      why: "The essay is a sequence of steps, and this is the one after fitting. The transition should mark the step rather than assert a logical consequence.",
       steps: [
         "Ask where this paragraph falls in the process.",
-        "Choose the transition that marks the next stage.",
+        "Choose the transition that marks the next stage."
       ],
       hint: "The essay is organised by order of operations.",
-      trap: "'Consequently' sounds analytical in a paragraph that is simply counting.",
+      trap: "'Consequently' sounds analytical in a paragraph that is simply counting."
     },
     {
       number: 9,

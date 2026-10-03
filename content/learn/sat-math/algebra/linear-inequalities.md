@@ -10,10 +10,10 @@ skill: Linear inequalities
 An inequality says one quantity is bigger or smaller than another, so its
 answer is a range of values, not a single number. Linear inequalities belong
 to Algebra, which is {{fact:sat-math-algebra}} of the Math section. Easy
-questions ask you to solve one inequality. Hard ones ask for the greatest or
-least coordinate over a region, work from a shaded graph to points off its
-grid, or turn an inequality into a condition on a constant or on another
-expression.
+questions ask you to solve one inequality. Medium questions can turn an
+inequality into a condition on a constant or on another expression. Hard
+ones ask for the greatest or least coordinate over a region or work from a
+shaded graph to points off its grid.
 
 ## Solve inequalities {#solve-inequalities}
 
@@ -148,7 +148,7 @@ line it must stay below, so no point fits.
 
 > **Fails when.** The region is open in the direction asked. Here y has no
 > greatest value: far to the left, −x + 11 is as large as you like. It also
-> fails when both inequalities are strict (the corner itself is excluded,
+> fails when either inequality is strict (the corner itself is excluded,
 > so there is no greatest value) or the boundaries are parallel (there is no
 > corner).
 
@@ -185,8 +185,12 @@ calculate.
 
 - The greatest or least x or y over the region of two inequalities, with no value given. It is at the corner where the boundaries cross (see [the greatest or least value over a region](#region-corner)).
 - A shaded graph and a point off the grid, such as (−18, k): write each boundary's inequality from the graph, then work with it, minding solid against dashed.
-- A condition on a constant: the x-terms cancel and what is left must be true for every x or false for all. For the system y ≤ 2x + b and y ≥ 2x + 5, the boundaries are parallel, so there is a solution only when b ≥ 5.
-- A range carried to another expression, such as the values of 7 − 2x when 0 < x < 5, where a negative multiplier reverses the order (see [carrying a range](#carrying-a-range)).
+
+At Medium, the x-terms may cancel and leave a condition on a constant, or a
+range may need to be carried to another expression. For example, the system
+y ≤ 2x + b and y ≥ 2x + 5 has a solution only when b ≥ 5. For expressions
+such as 7 − 2x, a negative multiplier reverses the order (see
+[carrying a range](#carrying-a-range)).
 
 A student-produced response here might ask for "one possible value"; any value
 in the range earns credit, so pick a simple one and check it. Entry rules are

@@ -16,13 +16,13 @@ chlorophyll is {6 louder and drowns them out entirely}.
 
 [3] {7 Broken down faster than it is replaced as the nights lengthen, a tree
 stops rebuilding chlorophyll and the green retreats.} The carotenoids are simply
-uncovered, which is why a stand of birches goes yellow so {8 fast}: nothing has
+uncovered, which is why a stand of birches goes yellow so {8 repeatedly}: nothing has
 to be manufactured. The colour was finished and waiting.
 
 [4] {9 Similarly,} the reds are a different story. Anthocyanins are not sitting
 under the chlorophyll waiting to be {10 revealed, a tree makes them in autumn},
 in the same weeks it is shutting the leaf down, at real metabolic cost. Why a
-tree {11 will} spend energy on {12 them} in a leaf it is about to drop is still
+tree {11 had} spend energy on {12 them} in a leaf it is about to drop is still
 argued over.
 
 [5] {13} The practical upshot is that yellow and red answer to different
@@ -139,23 +139,21 @@ curtain going up. The other is a performance nobody has fully explained.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "June, and nobody can see them",
-          "'And' repairs the splice but loses the contrast between being present and being invisible.",
+          "June, however, nobody can see them",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "June, nobody seeing them",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "June; nobody seeing them",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "The sentence turns on an opposition: the pigments are present and cannot be seen. 'But' " +
-        "repairs the splice and keeps that opposition.",
+      why: "The sentence turns on an opposition: the pigments are present and cannot be seen. 'But' repairs the splice and keeps that opposition.",
       steps: [
         "Test each side of the comma as a sentence. Both stand.",
-        "Choose the conjunction that names the relationship, which here is contrast.",
+        "Choose the conjunction that names the relationship, which here is contrast."
       ],
       hint: "The whole essay rests on things being present and hidden.",
-      trap: "'And' is the reflex repair and flattens the contrast into a list.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -214,20 +212,24 @@ curtain going up. The other is a performance nobody has fully explained.`,
       difficulty: "Easy",
       keep: false,
       key: "abruptly",
-      noChange: "'Fast' describes speed, but the point is that the change needs no preparation.",
+      noChange: "The paragraph explains the onset of autumn yellow, not repeated changes back and forth.",
       wrong: [
-        ["quickly", "The adverb is a synonym for the original and misses the same distinction."],
-        ["at a good rate", "The phrase is vaguer than the single word it replaces."],
+        [
+          "belatedly",
+          "Nothing in the passage says the yellow appears later than expected."
+        ],
+        [
+          "continually",
+          "The passage describes an autumn change, not uninterrupted yellowing throughout the year."
+        ]
       ],
-      why:
-        "The colon that follows explains why: nothing has to be manufactured. The adverb should name " +
-        "suddenness rather than mere speed, because suddenness is what an uncovering produces.",
+      why: "The pigment is already present, so the change can appear abrupt when the green covering fades. The other choices assert repetition, lateness, or continuity that the paragraph does not describe.",
       steps: [
-        "Read the clause after the colon and note what it explains.",
-        "Choose the adverb that the explanation actually accounts for.",
+        "Identify the change being explained: the appearance of pigment already present.",
+        "Choose the adverb supported by that explanation without adding a different timing claim."
       ],
-      hint: "An uncovering has no build-up; a manufacture does.",
-      trap: "'Fast' is perfectly idiomatic and almost right.",
+      hint: "Consider whether the paragraph explains onset, repeated cycles, or an unexpected delay.",
+      trap: "An adverb can fit the sentence grammatically while adding an unsupported claim."
     },
     {
       number: 9,
@@ -261,23 +263,21 @@ curtain going up. The other is a performance nobody has fully explained.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "revealed: a tree makes them in autumn",
-          "A colon introduces an explanation, but the second clause states the opposing fact.",
+          "revealed; although a tree makes them in autumn",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "revealed and a tree makes them in autumn",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The sentence denies one account and states another. Both halves are complete, and a " +
-        "semicolon holds the correction against the denial without subordinating either.",
+      why: "The sentence denies one account and states another. Both halves are complete, and a semicolon holds the correction against the denial without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or replaces it. It replaces it.",
+        "Ask whether the second explains the first or replaces it. It replaces it."
       ],
       hint: "The two clauses are rival accounts, not a statement and its reason.",
-      trap: "The second clause does feel explanatory, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 11,
@@ -286,20 +286,24 @@ curtain going up. The other is a performance nobody has fully explained.`,
       difficulty: "Medium",
       keep: false,
       key: "would",
-      noChange: "The simple future asserts a certainty the sentence is explicitly leaving open.",
+      noChange: "The auxiliary 'had' requires a past participle, and it would not fit this general present-tense inquiry.",
       wrong: [
-        ["did", "The past tense reports a settled event rather than a general question."],
-        ["should", "The modal introduces obligation, which the sentence is not discussing."],
+        [
+          "did",
+          "The past-tense auxiliary shifts the general present-tense question to a completed event."
+        ],
+        [
+          "has",
+          "The auxiliary 'has' requires the past participle 'spent,' not 'spend.'"
+        ]
       ],
-      why:
-        "The clause poses a question that is still argued over, and 'would' is the modal that frames " +
-        "a general case without asserting it.",
+      why: "The passage says trees make red pigment; what remains debated is the reason. 'Would spend' frames that general inquiry consistently with the present-tense account.",
       steps: [
-        "Note the sentence ends by saying the matter is unresolved.",
-        "Keep the modal that leaves it unresolved.",
+        "Distinguish the established action from the unresolved reason for it.",
+        "Choose the verb form that keeps the question general and grammatical."
       ],
-      hint: "The verb has to match the sentence's own admission of uncertainty.",
-      trap: "The surrounding paragraph is confident, which makes a flatter verb feel consistent.",
+      hint: "The uncertainty concerns why trees make the pigment, not whether they make it.",
+      trap: "The surrounding paragraph is confident, which makes a flatter verb feel consistent."
     },
     {
       number: 12,

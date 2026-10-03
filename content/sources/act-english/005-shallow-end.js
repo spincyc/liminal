@@ -43,21 +43,25 @@ know another way I could have learned it.`,
       family: "nonrestrictive-clause",
       difficulty: "Easy",
       keep: false,
-      key: ", who had signed me up in March,",
+      key: "mother, who had signed me up in March,",
       noChange: "A nonrestrictive clause needs a comma closing it as well as one opening it.",
       wrong: [
-        [" who had signed me up in March,", "Dropping the opening comma leaves the pair unbalanced at the other end."],
-        [" who had signed me up in March", "With no commas at all the clause reads as identifying which mother."],
+        [
+          "mother who had signed me up in March,",
+          "Dropping the opening comma leaves the pair unbalanced at the other end."
+        ],
+        [
+          "mother who had signed me up in March",
+          "With no commas at all the clause reads as identifying which mother."
+        ]
       ],
-      why:
-        "The clause adds information about a mother the reader can already identify, so it is " +
-        "nonrestrictive and takes a comma on each side.",
+      why: "The clause adds information about a mother the reader can already identify, so it is nonrestrictive and takes a comma on each side.",
       steps: [
         "Remove the clause and check the sentence still works: 'My mother did not ask me first.'",
-        "Since it can be removed, enclose it in a matched pair of commas.",
+        "Since it can be removed, enclose it in a matched pair of commas."
       ],
       hint: "If the clause could be lifted out without changing who is meant, it needs two commas.",
-      trap: "The opening comma is already there, which makes the punctuation look half handled.",
+      trap: "The opening comma is already there, which makes the punctuation look half handled."
     },
     {
       number: 2,
@@ -108,21 +112,25 @@ know another way I could have learned it.`,
       family: "expletive-there-agreement",
       difficulty: "Easy",
       keep: false,
-      key: "are",
-      noChange: "With 'there' as the placeholder, the verb agrees with the plural noun that follows.",
+      key: "were",
+      noChange: "The plural subject 'six of us' needs a plural verb, and the remembered scene needs past tense.",
       wrong: [
-        ["was", "The verb is still singular and the tense now conflicts with the present narration."],
-        ["has been", "The singular present perfect misses the plural subject and the ongoing scene."],
+        [
+          "was",
+          "The past tense fits the memory, but the singular verb does not agree with 'six of us.'"
+        ],
+        [
+          "are",
+          "The plural verb agrees in number but shifts the remembered scene into present tense."
+        ]
       ],
-      why:
-        "In a sentence beginning 'There,' the real subject comes after the verb. Here it is 'six of " +
-        "us,' which is plural.",
+      why: "After introductory 'There,' the verb agrees with 'six of us.' The plural past-tense 'were' matches both that subject and the surrounding memory.",
       steps: [
-        "Find the noun after the verb: 'six of us.'",
-        "Match the verb to that noun, not to 'there.'",
+        "Find the real subject after the verb: 'six of us.'",
+        "Match its plural number and the paragraph's past-tense setting."
       ],
       hint: "'There' is never the subject; look past the verb to find the real one.",
-      trap: "'There is' is so common in speech that it sounds correct before any subject at all.",
+      trap: "'There is' is so common in speech that it sounds correct before any subject at all."
     },
     {
       number: 5,
@@ -237,23 +245,21 @@ know another way I could have learned it.`,
       noChange: "A comma is too weak to introduce the explanation of what the job was.",
       wrong: [
         [
-          "job; while",
-          "A semicolon joins two independent clauses, and the second half here explains the first.",
+          "job; although while",
+          "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
         ],
         [
           "job, and while",
-          "The conjunction turns an explanation into a second, unrelated event.",
-        ],
+          "The conjunction turns an explanation into a second, unrelated event."
+        ]
       ],
-      why:
-        "'What she did instead was give me a job' is complete and promises to say what the job was. " +
-        "A colon is the mark that delivers on that promise.",
+      why: "'What she did instead was give me a job' is complete and promises to say what the job was. A colon is the mark that delivers on that promise.",
       steps: [
         "Confirm the words before the mark form a complete sentence. They do.",
-        "Ask whether what follows explains it or merely stands beside it. It explains.",
+        "Ask whether what follows explains it or merely stands beside it. It explains."
       ],
       hint: "A colon answers the sentence before it; a semicolon only balances one.",
-      trap: "Both halves are full clauses, which makes the semicolon look like the technical answer.",
+      trap: "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon."
     },
     {
       number: 10,
@@ -333,33 +339,29 @@ know another way I could have learned it.`,
       subskill: "support",
       family: "supporting-detail",
       difficulty: "Hard",
-      stem:
-        "Given that all the choices are true, which one, if added here, most effectively supports " +
-        "the idea that Denise's assignment worked because it was not presented as help?",
-      key: "She never told me what it was for, and I did not work it out until years afterward.",
+      stem: "Given that all the choices are true, which one, if added here, most effectively supports the idea that Denise's assignment worked because it was not presented as help?",
+      key: "Only years later did I understand why she had assigned me that job.",
       wrong: [
         [
           "She had been teaching beginners' classes at that pool for three summers already.",
-          "Her experience explains how she knew to do it, not why the method worked on me.",
+          "Her experience explains how she knew to do it, not why the method worked on me."
         ],
         [
           "The six-year-olds were entirely willing to take instruction from a stranger.",
-          "The children's willingness concerns them rather than the narrator's own resistance.",
+          "The children's willingness concerns them rather than the narrator's own resistance."
         ],
         [
           "By August I could cross the shallow end without putting a foot on the bottom.",
-          "The result belongs to the next paragraph and does not explain the method.",
-        ],
+          "The result belongs to the next paragraph and does not explain the method."
+        ]
       ],
-      why:
-        "The paragraph's claim is that the job looked like helping and was actually exposure therapy. " +
-        "Only the detail about Denise never explaining it shows why the disguise was the point.",
+      why: "The paragraph's claim is that the job looked like helping and was actually exposure therapy. Only the detail about Denise never explaining it shows why the disguise was the point.",
       steps: [
         "Name the claim precisely: it worked because the narrator did not know it was treatment.",
-        "Keep the choice that speaks to the narrator's not knowing.",
+        "Keep the choice that speaks to the narrator's not knowing."
       ],
       hint: "The claim is about concealment, so the support has to be about what was concealed.",
-      trap: "Every choice is a plausible true sentence about the same swimming class.",
+      trap: "Every choice is a plausible true sentence about the same swimming class."
     },
     {
       number: 14,

@@ -822,7 +822,7 @@
         "The solutions of f(x) = k are the x-coordinates where the line y = k meets the graph of f.",
         "A horizontal line through a turning point touches the graph there instead of crossing it.",
       ],
-      trap: "A horizontal line through a turning value touches the graph, so it gives one fewer intersection than lines just past it.",
+      trap: "Count each distinct touching point once. If several turning points share a height, the count can change at several points together.",
       hint: "Picture the horizontal line y = k moving up and down the graph.",
       estimatedSeconds: 110,
       verify: () => {
@@ -1149,7 +1149,7 @@
 
   const polynomialLevelCount = {
     id: "polynomial-level-count",
-    difficulty: "Hard",
+    difficulty: "Medium",
     domain: "Advanced Math",
     skill: "Systems of equations",
     subskill: "nonlinear systems",
@@ -1157,7 +1157,8 @@
     recognize:
       "The solutions are the intersections of the graph with a horizontal line; the count changes only at the turning " +
       "values, where the line touches the graph instead of crossing it.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    // Medium: compare candidate horizontal levels with the displayed turning points.
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["reversed-condition", "wrong-quantity"],
     build(t) {
       return drawUntilDistinctHard(() => levelCountItem(t));

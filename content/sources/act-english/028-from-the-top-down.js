@@ -4,9 +4,8 @@ module.exports = {
   id: "act-english-p028",
   type: "process-narrative",
   title: "From the Top Down",
-  content: `[1] A jacket is fitted from the top down. The shoulders come
-{1 first and not} because they are the hardest part to alter but because they
-are the only part that cannot {2 be altered} at all without rebuilding the
+  content: `[1] A jacket is fitted from the top down. Although other seams can be
+{1 adjusted the shoulders} come first: they are the one part that cannot {2 be altered} at all without rebuilding the
 garment.
 
 [2] {3} The shoulder seam should end where the arm begins. If it hangs past that
@@ -37,24 +36,28 @@ the opposite: it is the last point at which a mistake is still free. {15}
     {
       number: 1,
       subskill: "commas",
-      family: "comma-before-a-correlative",
+      family: "introductory-clause-comma",
       difficulty: "Easy",
       keep: false,
-      key: "first, and not",
-      noChange: "The 'not … but' contrast that follows needs a comma to separate it from the main clause.",
+      key: "adjusted, the shoulders",
+      noChange: "The dependent clause beginning 'Although' needs a comma before the main clause.",
       wrong: [
-        ["first; and not", "A semicolon must join independent clauses, and 'not because …' is not one."],
-        ["first and, not", "The comma now separates the conjunction from the phrase it introduces."],
+        [
+          "adjusted; the shoulders",
+          "A semicolon cannot join an introductory dependent clause to the main clause."
+        ],
+        [
+          "adjusted, the shoulders,",
+          "The extra comma separates the main subject 'the shoulders' from its verb 'come.'"
+        ]
       ],
-      why:
-        "'The shoulders come first' is complete, and what follows is a two-part explanation set " +
-        "against itself. A comma marks where the statement ends and the explanation begins.",
+      why: "The introductory 'Although' clause ends after 'adjusted.' A comma marks that boundary, and no comma should divide 'the shoulders come first.'",
       steps: [
-        "Find where the main clause finishes: after 'first.'",
-        "Place a single comma there.",
+        "Locate the end of the introductory dependent clause.",
+        "Separate it from the main clause while keeping the main subject and verb together."
       ],
-      hint: "A 'not … but' construction trailing a complete clause is set off from it.",
-      trap: "The sentence runs long enough that by the time 'but' arrives the opening is forgotten.",
+      hint: "First find the main subject and verb, then look back for the introductory clause.",
+      trap: "The sentence needs a comma at one boundary, not a pair around its main subject."
     },
     {
       number: 2,
@@ -138,23 +141,21 @@ the opposite: it is the last point at which a mistake is still free. {15}
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "still, and the tailor pins",
-          "'And' repairs the splice but makes two simultaneous actions read as a sequence.",
+          "still, while the tailor pin",
+          "The singular subject 'the tailor' requires 'pins,' not the base form 'pin.'"
         ],
         [
-          "still, the tailor pinning",
-          "The participle leaves the second clause without a main verb of its own.",
-        ],
+          "still; the tailor pinning",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "The two actions happen at the same time and the sentence is about that stillness. " +
-        "Subordinating the second with 'while' says so; joining them with 'and' does not.",
+      why: "'While' makes the tailor's action a dependent clause describing what happens as the customer stands still. It also preserves the singular subject-verb agreement in 'the tailor pins.'",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Choose the conjunction that states the relationship, which here is simultaneity.",
+        "Identify the two actions and the subjects performing them.",
+        "Connect their timing with a dependent clause whose verb agrees with its subject."
       ],
       hint: "Ask whether the two halves happen one after the other or at once.",
-      trap: "'And' fixes the punctuation and loses the only thing the sentence is saying.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -188,23 +189,21 @@ the opposite: it is the last point at which a mistake is still free. {15}
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "matter: it depends on how much fabric the maker left",
-          "A colon introduces an explanation, but the sentence runs on to a third clause a colon cannot govern.",
+          "matter; although it depends on how much fabric the maker left",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "matter and it depends on how much fabric the maker left",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "Both clauses are complete, and the sentence continues into a third clause after them. A " +
-        "semicolon separates the first two cleanly and leaves the sentence able to go on.",
+      why: "Both clauses are complete, and the sentence continues into a third clause after them. A semicolon separates the first two cleanly and leaves the sentence able to go on.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Note that the sentence continues past them, and choose the mark that allows it.",
+        "Note that the sentence continues past them, and choose the mark that allows it."
       ],
       hint: "Look at what comes after the second clause before choosing the mark.",
-      trap: "The second clause explains the first, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 8,

@@ -316,7 +316,7 @@ test("errors can be tagged and sessions recorded once", () => {
     ],
     61_000,
   );
-  assert.deepEqual(session.hard, { total: 1, correct: 1 });
+  assert.deepEqual(session.hard, { total: 1, correct: 1, hintedCorrect: 1 });
   assert.equal(session.hintedCorrect, 1);
   assert.deepEqual(session.byDomain, { Algebra: { total: 2, correct: 1 } });
   progress = Progress.recordSession(progress, session);
@@ -444,11 +444,111 @@ test("repeat answers are flagged once and left out of accuracy", () => {
   const summary = Progress.stats(normalized.attempts);
   assert.deepEqual([summary.attempted, summary.correct, summary.repeats], [2, 1, 1]);
   assert.equal(Progress.stats(normalized.attempts, { includeRepeats: true }).attempted, 3);
-  // A stored flag is kept as it is.
+  // A merge can bring together two first-answer claims; only one survives.
   const kept = Progress.normalize(Object.assign(Progress.empty({ epoch: "e1" }), {
     attempts: [attempt("x", { questionId: "sat-math:a:1", repeat: false }), attempt("y", { questionId: "sat-math:a:1", repeat: false })],
   }));
-  assert.deepEqual(kept.attempts.map((entry) => entry.repeat), [false, false]);
+  assert.deepEqual(kept.attempts.map((entry) => entry.repeat), [false, true]);
+});
+
+test("deleting an error tag survives a stale tab's refresh and next save", () => {
+  const storage = memoryStorage();
+  const first = Progress.createStore(storage);
+  first.update((progress) => Progress.tagError(progress, "a1", { reason: "time" }, 1));
+  const stale = Progress.createStore(storage);
+  first.update((progress) => Progress.tagError(progress, "a1", null));
+  assert.deepEqual(stale.refresh().errorLog, {});
+  stale.update((progress) => Progress.setMarked(progress, "q1", true));
+  assert.deepEqual(Progress.load(storage).progress.errorLog, {});
+});
+
+test("failed tag additions and removals are retried without losing the local edit", () => {
+  const storage = memoryStorage();
+  const store = Progress.createStore(storage);
+  store.update((progress) => Progress.recordAttempts(progress, [attempt("a1")]));
+  storage.full = true;
+  store.update((progress) => Progress.tagError(progress, "a1", { reason: "time" }, 1));
+  assert.equal(store.refresh().errorLog.a1.reason, "time");
+  storage.full = false;
+  store.update((progress) => progress);
+  assert.equal(Progress.load(storage).progress.errorLog.a1.reason, "time");
+  storage.full = true;
+  store.update((progress) => Progress.tagError(progress, "a1", null));
+  assert.deepEqual(store.refresh().errorLog, {});
+  storage.full = false;
+  store.update((progress) => progress);
+  assert.deepEqual(Progress.load(storage).progress.errorLog, {});
+});
+
+test("migration and merging keep one first answer, including after older attempts were trimmed", () => {
+  const migrated = Progress.migrate({ version: 2, attempts: [
+    { questionId: "act-reading-0001", timestamp: 1, correct: false },
+    { questionId: "act-reading-0001", timestamp: 2, correct: true },
+  ] });
+  assert.deepEqual(migrated.attempts.map((entry) => entry.repeat), [false, true]);
+  assert.equal(Progress.stats(migrated.attempts).accuracy, 0);
+  const record = (entry) => Progress.recordAttempts(Progress.empty({ epoch: "same" }), [entry]);
+  const first = record(attempt("first", { questionId: "q", timestamp: 1, correct: false }));
+  const late = record(attempt("late", { questionId: "q", timestamp: 2, correct: true }));
+  const merged = Progress.merge(late, first);
+  assert.deepEqual(merged.attempts.map((entry) => [entry.id, entry.repeat]), [["first", false], ["late", true]]);
+  assert.equal(Progress.stats(merged.attempts).accuracy, 0);
+  const retained = [attempt("repeat", { repeat: true })];
+  assert.equal(Progress.markRepeats(retained), retained, "a pruned predecessor does not turn a repeat into a first answer");
+});
+
+test("essay summaries keep question counts without adding a scored answer", () => {
+  const session = Progress.summarizeSession({ id: "essay" }, [{
+    question: { id: "act-writing-0001", sectionKey: "act-writing", responseType: "essay", difficulty: "Hard" },
+    correct: null, answered: true,
+  }], 2000);
+  assert.deepEqual([session.total, session.scored, session.unscored, session.correct], [1, 0, 1, 0]);
+  assert.equal(session.hard.total, 0);
+});
+
+test("fixed-bank answers keep the content identity of the question actually shown", () => {
+  const question = { id: "act-mathematics-0007", sectionKey: "act-mathematics", responseType: "multiple-choice",
+    stem: "Choose two.", choices: ["2", "3", "4", "5"], correctAnswer: 0,
+    stimulus: { type: "passage", content: "Original passage." }, difficulty: "Hard" };
+  const record = Progress.buildAttempt(question, { response: 0, correct: true }, { id: "old", now: 1 });
+  assert.match(record.contentIdentity, /^q1-[0-9a-f]{16}$/);
+  assert.equal(Progress.questionMatchesAttempt(JSON.parse(JSON.stringify(question)), record), true);
+  assert.equal(Progress.questionMatchesAttempt({ ...question, difficulty: "Medium", contentVersion: "next" }, record), true);
+  assert.equal(Progress.questionMatchesAttempt({ ...question, choices: ["4", "3", "2", "5"], correctAnswer: 2 }, record), false);
+  assert.equal(Progress.questionMatchesAttempt({ ...question, stimulus: { content: "Revised passage.", type: "passage" } }, record), false);
+  assert.equal(Progress.questionMatchesAttempt(question, { ...record, contentIdentity: undefined }), false);
+  assert.equal(Progress.questionMatchesAttempt({ ...question, id: "another" }, record), false);
+  assert.equal(Progress.stats([record]).accuracy, 1, "content updates never regrade the recorded outcome");
+});
+
+test("resumed bank snapshots retain the original key and essay draft across content changes", () => {
+  const Engine = require("../src/lib/test-engine");
+  const old = { id: "act-mathematics-0007", sectionKey: "act-mathematics", responseType: "multiple-choice",
+    stem: "Old question", choices: ["right", "wrong"], correctAnswer: 0 };
+  const essay = { id: "act-writing-0001", sectionKey: "act-writing", responseType: "essay", stem: "Old prompt" };
+  let state = Engine.createState({ questions: [old, essay] }, 0);
+  state = Engine.select(state, 0, 0);
+  state = Engine.select(state, "My saved draft", 1);
+  const saved = JSON.parse(JSON.stringify(Engine.serialize(state, 5)));
+  old.correctAnswer = 1;
+  old.choices.reverse();
+  essay.stem = "Revised prompt";
+  const restored = Engine.restoreState(saved, 10);
+  const result = Engine.result(Engine.finish(restored, 20), 20);
+  const records = result.items.map((item, index) => Progress.buildAttempt(item.question, item, { id: String(index), now: 20 }));
+  assert.equal(result.items[0].correct, true);
+  assert.equal(Progress.questionMatchesAttempt(old, records[0]), false);
+  assert.equal(restored.responses[1], "My saved draft");
+  assert.equal(restored.questions[1].stem, "Old prompt");
+  assert.equal(records[1].response, "[local essay draft]", "durable progress still redacts draft text");
+});
+
+test("historical template choices require the matching stored version", () => {
+  const question = { id: "sat-math:linear:seed", templateId: "linear", templateVersion: 2 };
+  const attempt = { questionId: question.id, templateVersion: 2 };
+  assert.equal(Progress.questionMatchesAttempt(question, attempt), true);
+  assert.equal(Progress.questionMatchesAttempt(question, { ...attempt, templateVersion: 1 }), false);
+  assert.equal(Progress.questionMatchesAttempt(question, { ...attempt, templateVersion: undefined }), false);
 });
 
 test("each test keeps its own plan; an older shared plan becomes both", () => {

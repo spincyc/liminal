@@ -69,9 +69,9 @@ hard, so the budget is about 1 minute each for Q1-6, 1.5 minutes for Q7-12,
 1 minute 40 seconds for Q13-18, and 2 minutes for Q19-22, which adds to 33
 minutes and leaves 2 to review. The same targets are in
 [Modules and pacing](https://spincyc.github.io/liminal/learn.html#sat/general/modules-and-pacing/pacing).
-If you are late at a checkpoint, don't rush the easier questions that come
-next; the time comes out of the review and, if it must, the last few
-questions.
+If you are late, move past questions where you are stuck and find work you can
+finish reliably. Preserve time to reach the remaining questions; later Math
+questions are generally harder, but individual strengths differ.
 
 ### ACT English (35 min, 50 questions)
 
@@ -99,8 +99,9 @@ noticing.
 
 Note the deliberate front-loading: 15 questions in the first 12 minutes, but
 only 7 in the last 12. ACT Math is ordered roughly easy to hard, so bank time
-early. If you're at Q15 at 18 minutes, you are in trouble and should speed up
-immediately, not gradually.
+early. If you are behind, use triage rather than rushing every calculation.
+These are suggested checkpoints; adjust them using your practice results and
+approved timing or accommodations.
 
 ### ACT Reading (40 min, 36 questions, 4 passages)
 

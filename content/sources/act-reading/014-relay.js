@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p014",
   type: "literary-narrative",
   title: "Relay",
-  intro: "This passage is adapted from a short story. The narrator, Bea, is fourteen; her sister Mo is seventeen.",
+  intro: "This is an original short story. The narrator, Bea, is fourteen; her sister Mo is seventeen.",
   content: `My sister quit swimming on a Tuesday in October, between the four hundred and the
 warm-down, and she did it so quietly that the coach thought she had gone to be sick.
 

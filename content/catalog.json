@@ -248,6 +248,8 @@
       "section": "Science",
       "shortLabel": "Science (optional)",
       "optional": true,
+      "practiceAvailable": false,
+      "practiceNote": "Science practice is unavailable while its question bank is rebuilt around reviewed passage sets. Previous results remain available.",
       "responseTypes": ["multiple-choice"],
       "calculatorPolicy": "not-permitted",
       "domains": [

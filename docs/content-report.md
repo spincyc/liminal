@@ -2,39 +2,44 @@
 
 Content version: 2026.1
 
-| Section | Accepted | Target | Easy | Medium | Hard | Awaiting human review |
+SAT practice uses parameterized templates. ACT uses the available fixed banks below.
+Counts describe practice inventory, not independent question designs or empirical difficulty calibration.
+
+## Active SAT templates
+
+| Section | Templates | Easy | Medium | Hard |
+| --- | ---: | ---: | ---: | ---: |
+| sat-math | 189 | 47 | 95 | 47 |
+| sat-reading-writing | 128 | 35 | 66 | 27 |
+
+Source-version and review evidence are checked separately from schema and answer-tell measurements.
+
+## Available ACT fixed banks
+
+| Section | Records | Target | Easy label | Medium label | Hard label | Awaiting human review |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| SAT Reading & Writing | 575 | 575 | 175 | 250 | 150 | 575 |
-| SAT Math | 575 | 575 | 175 | 250 | 150 | 575 |
 | ACT English | 575 | 575 | 175 | 250 | 150 | 575 |
 | ACT Math | 575 | 575 | 175 | 250 | 150 | 575 |
 | ACT Reading | 575 | 575 | 175 | 250 | 150 | 575 |
-| ACT Science (optional) | 575 | 575 | 175 | 250 | 150 | 575 |
 | ACT Writing (optional) | 575 | 575 | 175 | 250 | 150 | 575 |
 
-## Domain coverage
+Fixed-bank difficulty labels remain uncalibrated; repeated numerical variants are not new question designs.
 
-### SAT Reading & Writing
+## Retained banks
 
-| Domain | Accepted | Target |
-| --- | ---: | ---: |
-| Information and Ideas | 150 | 150 |
-| Craft and Structure | 160 | 160 |
-| Expression of Ideas | 115 | 115 |
-| Standard English Conventions | 150 | 150 |
+These records remain for compatibility, outside new practice inventory. Historical outcomes are preserved; original question details require a matching identity or saved snapshot.
 
-### SAT Math
+| Section | Retained records | Status |
+| --- | ---: | --- |
+| SAT Reading & Writing | 575 | Retired; replaced by templates |
+| SAT Math | 575 | Retired; replaced by templates |
+| ACT Science (optional) | 575 | Unavailable for new practice |
 
-| Domain | Accepted | Target |
-| --- | ---: | ---: |
-| Algebra | 195 | 195 |
-| Advanced Math | 195 | 195 |
-| Problem-Solving and Data Analysis | 93 | 93 |
-| Geometry and Trigonometry | 92 | 92 |
+## Available fixed-bank domain coverage
 
 ### ACT English
 
-| Domain | Accepted | Target |
+| Domain | Records | Target |
 | --- | ---: | ---: |
 | Production of Writing | 175 | 175 |
 | Knowledge of Language | 92 | 92 |
@@ -42,7 +47,7 @@ Content version: 2026.1
 
 ### ACT Math
 
-| Domain | Accepted | Target |
+| Domain | Records | Target |
 | --- | ---: | ---: |
 | Number and Quantity | 65 | 65 |
 | Algebra | 103 | 103 |
@@ -53,45 +58,34 @@ Content version: 2026.1
 
 ### ACT Reading
 
-| Domain | Accepted | Target |
+| Domain | Records | Target |
 | --- | ---: | ---: |
 | Key Ideas and Details | 275 | 275 |
 | Craft and Structure | 160 | 160 |
 | Integration of Knowledge and Ideas | 140 | 140 |
 
-### ACT Science (optional)
-
-| Domain | Accepted | Target |
-| --- | ---: | ---: |
-| Interpretation of Data | 253 | 253 |
-| Scientific Investigation | 150 | 150 |
-| Evaluation of Models, Inferences, and Experimental Results | 172 | 172 |
-
 ### ACT Writing (optional)
 
-| Domain | Accepted | Target |
+| Domain | Records | Target |
 | --- | ---: | ---: |
 | Ideas and Analysis | 144 | 144 |
 | Development and Support | 144 | 144 |
 | Organization | 143 | 143 |
 | Language Use and Conventions | 144 | 144 |
 
-## Response and answer distribution
+## Available fixed-bank response and answer distribution
 
 | Section | Multiple choice | Numeric | Essay | A | B | C | D |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| SAT Reading & Writing | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
-| SAT Math | 473 | 102 | 0 | 118 | 118 | 119 | 118 |
 | ACT English | 575 | 0 | 0 | 151 | 154 | 129 | 141 |
-| ACT Math | 575 | 0 | 0 | 144 | 144 | 143 | 144 |
+| ACT Math | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
 | ACT Reading | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
-| ACT Science (optional) | 575 | 0 | 0 | 144 | 143 | 144 | 144 |
 | ACT Writing (optional) | 0 | 0 | 575 | 0 | 0 | 0 | 0 |
 
 ## Validation status
 
-The current records pass schema, taxonomy, duplicate, answer-key, instructional-metadata, and coverage validation.
+Available and retained bank records pass schema, taxonomy, duplicate, key-format, instructional-metadata, and coverage checks.
 
-Automated verification does not equal human editorial approval. Every current
-record remains awaiting independent editorial review.
+Verification blocks recompute their declared inputs and expected value; they do not prove that the prose, displayed key, or distractors are correct.
+Automated checks and agent editorial reviews do not establish independent human approval or empirical exam calibration.
 

@@ -130,6 +130,7 @@
     const progress = () => ctx.store.get();
     const sectionKey = () => elements.section.value;
     const usesTemplates = () => practice.usesTemplates(sectionKey());
+    const availableSections = (test) => ctx.testSections(test).filter(core.sectionAvailable);
 
     function mathSection(key) {
       return key === "sat-math" || key === "act-mathematics";
@@ -153,7 +154,7 @@
     /* ------------------------------------------------------------- copy */
 
     function populateSections() {
-      const sections = ctx.testSections();
+      const sections = availableSections();
       elements.section.innerHTML = "";
       sections.forEach((section) => {
         const option = document.createElement("option");
@@ -171,7 +172,7 @@
     // how many kinds of question there are; ACT sections are fixed banks.
     function renderSetupCopy() {
       const test = ctx.currentTest();
-      const sections = ctx.testSections(test);
+      const sections = availableSections(test);
       // SAT drills are generated; ACT drills draw from fixed banks.
       elements.drillLede.textContent = test === "SAT"
         ? "A short set on a single skill at one level, with new numbers or a new context each time."
@@ -190,7 +191,9 @@
       elements.setupLede.textContent =
         `Build a set from ${ctx.formatNumber(questions)} original ${test} questions` +
         (prompts ? ` and ${ctx.formatNumber(prompts)} writing prompts` : "") +
-        ". Every set opens in the digital test screen.";
+        ". Every set opens in the digital test screen. " +
+        ctx.testSections(test).filter((section) => !core.sectionAvailable(section))
+          .map((section) => section.practiceNote || `${section.shortLabel} practice is temporarily unavailable.`).join(" ");
     }
 
     /* ---------------------------------------------------------- loading */
@@ -679,7 +682,8 @@
     /* --------------------------------------------------------- mini test */
 
     function renderMiniTests() {
-      const blueprints = core.MINI_TEST_BLUEPRINTS.filter((blueprint) => blueprint.test === ctx.currentTest());
+      const blueprints = core.MINI_TEST_BLUEPRINTS.filter((blueprint) =>
+        blueprint.test === ctx.currentTest() && core.blueprintAvailable(blueprint));
       elements.miniTestOptions.innerHTML = "";
       ctx.setStatus(elements.miniTestStatus, "");
       blueprints.forEach((blueprint, index) => {
@@ -887,7 +891,7 @@
     // The drill's sections follow the SAT | ACT switch, starting at the
     // section last answered in; its skills are grouped by domain.
     function populateDrillSections() {
-      const sections = ctx.testSections();
+      const sections = availableSections();
       const current = elements.drillSection.value;
       replaceOptions(elements.drillSection, sections.map((section) => ({ value: section.key, label: section.shortLabel })));
       const recent = guide().recentSection;
@@ -1165,9 +1169,9 @@
         steps.push(startItem(false, "Get a baseline score", [
           "Take a full-length official ACT practice test from ACT, timed. Liminal does not estimate ACT scores.",
         ]));
-        const blueprint = core.MINI_TEST_BLUEPRINTS.find((entry) => entry.test === "ACT");
+        const blueprint = core.MINI_TEST_BLUEPRINTS.find((entry) => entry.test === "ACT" && core.blueprintAvailable(entry));
         steps.push(startItem(answered, "Get a first read here", [
-          "A timed mini test samples every section and reports accuracy by section and domain.",
+          "A timed mini test samples the core sections and reports accuracy by section and domain.",
         ], blueprint ? runButton(`Start the ${blueprint.label}`, !answered, (button) => startMiniTest(blueprint, button)) : null));
       }
       const step = answered || current.dueCount ? current.step() : null;
@@ -1196,6 +1200,11 @@
       const section = ctx.sectionByKey(key);
       if (!section || section.test === undefined) return;
       if (ctx.currentTest() !== section.test) ctx.site.setTest(section.test);
+      if (!core.sectionAvailable(section)) {
+        ctx.setStatus(elements.drillStatus, section.practiceNote || "This section is temporarily unavailable.", "error");
+        scrollToCard(elements.drillForm);
+        return;
+      }
       const found = practice.findSkill(section, skillSlug);
       if (!found) {
         ctx.setStatus(elements.drillStatus, "That skill link did not match a skill in this section.", "error");

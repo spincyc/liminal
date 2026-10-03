@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p030",
   type: "humanities",
   title: "The Floor Tiles",
-  intro: "This passage is adapted from an essay on the invention of linear perspective.",
+  intro: "This original passage discusses the invention of linear perspective.",
   content: `Sometime around 1413, Filippo Brunelleschi stood in the doorway of the cathedral in
 Florence and performed a demonstration that has no surviving object and a very good written
 record. He had painted the Baptistery opposite on a small panel, using a construction he had
@@ -44,9 +44,10 @@ stayed within tolerance.
 
 There were also things the system could not represent, and their absence shaped what got
 painted. Wide fields of view distort violently at the edges under a strict construction, so
-the wide view was avoided. Curved space is not available: a straight line in the world is a
-straight line in the picture, which is why a colonnade seen along its length is easy and a
-dome seen from beneath is a permanent difficulty. And because the method fixes relative
+the wide view was avoided. Curved surfaces need further construction: a straight line in the world projects
+as a straight line, but that rule alone does not map a dome. A colonnade's receding
+straight edges fit the elementary grid readily; a dome seen from beneath is a more
+demanding case, not a shape that perspective makes impossible. And because the method fixes relative
 size, it fixes relative importance to whatever geometry dictates. A patron who expected to
 be painted larger than a peasant because he mattered more had to be moved forward instead.
 Scale ceased to be available as a language for saying who was significant, which is a
@@ -154,16 +155,16 @@ forgotten by the third.`,
       family: "function-of-a-detail",
       difficulty: "Medium",
       stem: "The remark that a dome seen from beneath is \"a permanent difficulty\" serves mainly to:",
-      key: "illustrate a shape the construction cannot handle.",
+      key: "illustrate a shape needing more than the basic floor grid.",
       wrong: [
         ["show that domes were rarely painted in the period.", "Frequency of subjects is not claimed anywhere in the passage."],
         ["explain why Brunelleschi turned to architecture instead.", "His later career is not mentioned in the passage at all."],
         ["prove that curved lines cannot be drawn accurately.", "The point concerns how the system maps space, not draughtsmanship."],
       ],
-      why: "The paragraph says \"curved space is not available: a straight line in the world is a straight line in the picture,\" and offers the colonnade and the dome as the easy and hard cases of that rule.",
+      why: "The passage contrasts the straight receding lines of a colonnade with the more demanding projection of curved surfaces. A dome can be represented in perspective, but the simple floor grid does not supply its shape by itself.",
       steps: [
-        "Read the rule stated immediately before the examples.",
-        "Ask which example the rule makes easy and which hard.",
+        "Identify what the elementary construction makes easy.",
+        "Distinguish a harder construction from a shape that cannot be represented.",
       ],
       hint: "The two examples come in a matched pair.",
     },

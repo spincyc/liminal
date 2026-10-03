@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p053",
   type: "humanities",
   title: "The Attempt",
-  intro: "This passage is adapted from an essay on the essay as a literary form.",
+  intro: "This original passage discusses the essay as a literary form.",
   content: `Montaigne called the pieces he began writing in 1572 *essais*, from a verb meaning to
 try or to test, and he meant the word literally. He was not publishing conclusions. He was
 publishing the record of an attempt to think about something, including the parts where the

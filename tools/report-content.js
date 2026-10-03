@@ -3,78 +3,61 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
-const { validateAll } = require("./lib/content");
+const { validateAll, bankSections } = require("./lib/content");
+const { TEMPLATE_SECTIONS } = require("./lib/families");
 
 const result = validateAll();
+const active = bankSections(result.catalog);
+const activeKeys = new Set(active.map((section) => section.key));
+const archived = result.catalog.sections.filter((section) => !activeKeys.has(section.key));
 const lines = [
-  "# Content Coverage Report",
-  "",
-  `Content version: ${result.catalog.contentVersion}`,
-  "",
-  "| Section | Accepted | Target | Easy | Medium | Hard | Awaiting human review |",
-  "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
+  "# Content Coverage Report", "", `Content version: ${result.catalog.contentVersion}`, "",
+  "SAT practice uses parameterized templates. ACT uses the available fixed banks below.",
+  "Counts describe practice inventory, not independent question designs or empirical difficulty calibration.", "",
+  "## Active SAT templates", "",
+  "| Section | Templates | Easy | Medium | Hard |", "| --- | ---: | ---: | ---: | ---: |",
 ];
-
-result.catalog.sections.forEach((section) => {
+for (const key of TEMPLATE_SECTIONS) {
+  const [test, ...section] = key.split("-");
+  const families = require(path.join(__dirname, "../src/lib/families", test, section.join("-")));
+  const tiers = ["Easy", "Medium", "Hard"].map((tier) => families.filter((family) => family.difficulty === tier).length);
+  lines.push(`| ${key} | ${families.length} | ${tiers.join(" | ")} |`);
+}
+lines.push("", "Source-version and review evidence are checked separately from schema and answer-tell measurements.", "",
+  "## Available ACT fixed banks", "",
+  "| Section | Records | Target | Easy label | Medium label | Hard label | Awaiting human review |",
+  "| --- | ---: | ---: | ---: | ---: | ---: | ---: |");
+active.forEach((section) => {
   const report = result.report[section.key];
-  const awaitingReview =
-    report.total - (report.reviewStatuses["editorial-reviewed"] || 0);
-  lines.push(
-    `| ${section.test} ${section.shortLabel} | ${report.total} | ${report.target} | ` +
-    `${report.difficulties.Easy || 0} | ${report.difficulties.Medium || 0} | ` +
-    `${report.difficulties.Hard || 0} | ${awaitingReview} |`,
-  );
+  const awaiting = report.total - (report.reviewStatuses["editorial-reviewed"] || 0);
+  lines.push(`| ${section.test} ${section.shortLabel} | ${report.total} | ${report.target} | ${report.difficulties.Easy || 0} | ${report.difficulties.Medium || 0} | ${report.difficulties.Hard || 0} | ${awaiting} |`);
 });
-
-lines.push("", "## Domain coverage", "");
-result.catalog.sections.forEach((section) => {
-  lines.push(`### ${section.test} ${section.shortLabel}`, "");
-  lines.push("| Domain | Accepted | Target |", "| --- | ---: | ---: |");
-  section.domains.forEach((domain) => {
-    lines.push(
-      `| ${domain.name} | ${result.report[section.key].domains[domain.name] || 0} | ` +
-      `${domain.target} |`,
-    );
-  });
+lines.push("", "Fixed-bank difficulty labels remain uncalibrated; repeated numerical variants are not new question designs.", "",
+  "## Retained banks", "", "These records remain for compatibility, outside new practice inventory. Historical outcomes are preserved; original question details require a matching identity or saved snapshot.", "",
+  "| Section | Retained records | Status |", "| --- | ---: | --- |");
+archived.forEach((section) => lines.push(`| ${section.test} ${section.shortLabel} | ${result.report[section.key].total} | ${TEMPLATE_SECTIONS.includes(section.key) ? "Retired; replaced by templates" : "Unavailable for new practice"} |`));
+lines.push("", "## Available fixed-bank domain coverage", "");
+active.forEach((section) => {
+  lines.push(`### ${section.test} ${section.shortLabel}`, "", "| Domain | Records | Target |", "| --- | ---: | ---: |");
+  section.domains.forEach((domain) => lines.push(`| ${domain.name} | ${result.report[section.key].domains[domain.name] || 0} | ${domain.target} |`));
   lines.push("");
 });
-
-lines.push(
-  "## Response and answer distribution",
-  "",
-  "| Section | Multiple choice | Numeric | Essay | A | B | C | D |",
-  "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
-);
-result.catalog.sections.forEach((section) => {
+lines.push("## Available fixed-bank response and answer distribution", "",
+  "| Section | Multiple choice | Numeric | Essay | A | B | C | D |", "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |");
+active.forEach((section) => {
   const report = result.report[section.key];
-  lines.push(
-    `| ${section.test} ${section.shortLabel} | ` +
-    `${report.responseTypes["multiple-choice"] || 0} | ` +
-    `${report.responseTypes.numeric || 0} | ${report.responseTypes.essay || 0} | ` +
-    `${report.answerPositions["0"] || 0} | ${report.answerPositions["1"] || 0} | ` +
-    `${report.answerPositions["2"] || 0} | ${report.answerPositions["3"] || 0} |`,
-  );
+  lines.push(`| ${section.test} ${section.shortLabel} | ${report.responseTypes["multiple-choice"] || 0} | ${report.responseTypes.numeric || 0} | ${report.responseTypes.essay || 0} | ${[0, 1, 2, 3].map((position) => report.answerPositions[position] || 0).join(" | ")} |`);
 });
-
-lines.push(
-  "",
-  "## Validation status",
-  "",
+lines.push("", "## Validation status", "",
   result.errors.length === 0
-    ? "The current records pass schema, taxonomy, duplicate, answer-key, " +
-      "instructional-metadata, and coverage validation."
-    : `Validation currently reports ${result.errors.length} error(s).`,
-  "",
-  "Automated verification does not equal human editorial approval. Every current",
-  "record remains awaiting independent editorial review.",
-  "",
-);
-
+    ? "Available and retained bank records pass schema, taxonomy, duplicate, key-format, instructional-metadata, and coverage checks."
+    : `Bank validation reports ${result.errors.length} error(s).`, "",
+  "Verification blocks recompute their declared inputs and expected value; they do not prove that the prose, displayed key, or distractors are correct.",
+  "Automated checks and agent editorial reviews do not establish independent human approval or empirical exam calibration.", "");
 const output = `${lines.join("\n")}\n`;
 if (process.argv.includes("--write")) {
-  const target = path.join(__dirname, "..", "docs", "content-report.md");
+  const target = path.join(__dirname, "..", "docs/content-report.md");
   fs.writeFileSync(target, output);
   console.log(`Wrote ${path.relative(process.cwd(), target)}.`);
-} else {
-  process.stdout.write(output);
-}
+} else process.stdout.write(output);
+if (result.errors.length) process.exitCode = 1;

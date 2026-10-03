@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p035",
   type: "literary-narrative",
   title: "The 4:10",
-  intro: "This passage is adapted from a novel. Cal, fourteen, is travelling alone by coach for the first time.",
+  intro: "This is an original fictional passage. Cal, fourteen, is travelling alone by coach for the first time.",
   content: `His mother had written the coach number on the back of his hand in biro, which he
 had objected to at the time and was now, at the station, quietly glad about, because there
 were four coaches in the bay and two of them said Northbound.

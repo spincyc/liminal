@@ -465,7 +465,7 @@
               `(1/3)π(${r * r})h = ${fmt(V)}π, so ${r * r}h = ${fmt(3 * V)}.`,
               `h = ${fmt(3 * V)} ÷ ${r * r} = ${h}.`,
             ],
-            trap: `Dropping the 1/3 treats the cone as a cylinder and gives ${num(tidy(V / (r * r)))}${useDiameter ? `; using the diameter ${given} as the radius is the other common slip` : ""}.`,
+            trap: `Dropping the 1/3 treats the cone as a cylinder and gives ${S.frac(V, r * r)}${useDiameter ? `; using the diameter ${given} as the radius is the other common slip` : ""}.`,
             hint: "Which volume formula belongs to a cone, and what is the radius?",
             verify: () => close((Math.PI * r * r * h) / 3, V * Math.PI) && close(given / (useDiameter ? 2 : 1), r),
           });
@@ -597,7 +597,7 @@
 
   // One scaling item. Medium forms: "change" (two dimensions change by
   // percents), "box" (three), "cube" (an edge changes), "heights" (similar
-  // solids compared by height). Hard forms: "compensate" (the volume must not
+  // solids compared by height). Further Medium forms: "compensate" (volume must not
   // change), "sphere" (surface area and volume through the radius), "similar"
   // (an area ratio gives a volume, or the reverse), "recast" (a sphere melted
   // into smaller ones). Returns null to draw again.
@@ -974,7 +974,7 @@
         stimulus: null,
         figure: null,
         stem: `${lead} What is the radius, in ${u}, of each of the smaller ${stuff.small.replace("solid ", "")}?`,
-        hint: "What stays the same when the metal is recast?",
+        hint: "What total quantity stays the same when one ball is divided into smaller balls?",
         explanation:
           `The total volume is unchanged: (4/3)π(${R})³ = ${count} × (4/3)πr³. So r³ = ${R}³ ÷ ${count} = ${fmt(R ** 3)} ÷ ${count} = ${r ** 3}, and r = ${r}.`,
         steps: [
@@ -1038,17 +1038,15 @@
     domain: DOMAIN,
     skill: "Area and volume",
     subskill: "volume",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Surface area and volume under scaling",
     recognize:
       "Decide which quantity is conserved or given before computing: a volume or an area ratio fixes the length factor " +
       "(a cube or square root), and every other measure follows from that length factor, squared for areas and cubed for volumes.",
-    // Hard (declared 2026-09-26; it had defaulted to Hard): the volume held
-    // fixed while one dimension changes, a sphere's area from its volume
-    // change, or a sphere recast as smaller ones; each needs the length
-    // factor found by a root first. Similar solids compared by an area or
-    // volume ratio are Medium and live in scaling-dimension-change.
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
+    // Medium: recover a length factor, then apply the requested power or
+    // conservation equation. Recasting a radius is a direct cube-root scale,
+    // so these variants do not consistently demand Hard-level reasoning.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["neighbouring-rule", "percent-base", "intermediate-value"],
     build(t) {
       const form = t.pick(["compensate", "compensate", "sphere", "sphere", "recast", "recast"]);
@@ -1057,7 +1055,7 @@
     },
   };
 
-  /* ========================================= rectilinear-floor-plan (Easy) */
+  /* ======================================= rectilinear-floor-plan (Medium) */
 
   const PLAN_CONTEXTS = [
     { lead: "The figure shows the floor plan of a room.", thing: "room", units: "feet" },
@@ -1119,12 +1117,12 @@
     domain: GEO,
     skill: "Area and volume",
     subskill: "area",
-    difficulty: "Easy",
+    difficulty: "Medium",
     title: "Area of a region made of rectangles",
     recognize:
-      "A region with only right angles is a rectangle with a piece missing, or two rectangles side by side: find any side " +
+      "A region whose adjacent sides are perpendicular can be split into rectangles: find any side " +
       "that is not labeled from the ones that are, then subtract the missing piece or add the pieces, without counting any part twice.",
-    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 0 },
+    rubric: { steps: 2, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["intermediate-value", "neighbouring-rule", "part-vs-whole"],
     build(t) {
       const form = t.pick(["plan", "plan", "plan", "covering"]);
@@ -1204,12 +1202,12 @@
         layout.forEach((edge) => parts.push(outsideLabel(screen, screen[edge], screen[(edge + 1) % 6], num(lengths[edge]))));
         const described = layout.map((edge) => `the ${planEdgeWords(model[edge], model[(edge + 1) % 6], W, H)} is labeled ${lengths[edge]}`);
         const alt =
-          `A six-sided figure with all right angles, shaped like a rectangle with one corner cut away. ` +
+          `A six-sided figure with adjacent sides perpendicular, shaped like a rectangle with one corner cut away. ` +
           `${described.slice(0, -1).join(", ").replace(/^t/, "T")}, and ${described[described.length - 1]}. The figure is drawn to scale.`;
         const ctx = t.chance(0.5) ? t.pick(PLAN_CONTEXTS) : null;
         const stem = ctx
-          ? `${ctx.lead} All angles are right angles, and the lengths shown are in ${ctx.units}. What is the area, in square ${ctx.units}, of the ${ctx.thing}?`
-          : "In the figure shown, all angles are right angles. What is the area of the figure?";
+          ? `${ctx.lead} Adjacent sides are perpendicular, and the lengths shown are in ${ctx.units}. What is the area, in square ${ctx.units}, of the ${ctx.thing}?`
+          : "In the figure shown, adjacent sides are perpendicular. What is the area of the figure?";
         const key = W * H - a * b;
         const lower = W * (H - b);
         const upper = (W - a) * b;
@@ -2135,9 +2133,10 @@
             [piMultiple(s / n), "Gives the circumference of only one circle."],
             [piMultiple(n * n * s), `Uses the side of the square, ${s}, as the diameter of every circle.`],
             [piMultiple((n * s) / 2), "Uses the radius of each circle in place of its diameter in πd."],
-            [piMultiple(2 * n * s), "Uses the diameter of each circle in place of its radius in 2πr."],
+            [piMultiple((n - 1) * s), `Counts ${n - 1} complete rows rather than all ${n} rows.`],
+            [piMultiple((2 * n - 1) * s), "Counts only the circles in one row and one column, counting their intersection once."],
           ];
-        const wrong = wrongFor(t, numeric, numeric ? keyCoefficient : key, numeric ? [] : list);
+        const wrong = wrongFor(t, numeric, numeric ? keyCoefficient : key, numeric ? [] : balanceTwins(t, key, list, 0, 0.25));
         if (!wrong) return null;
         const side = 220;
         const x0 = 90;
@@ -2314,7 +2313,7 @@
             return {
               responseType: numeric ? "numeric" : "multiple-choice",
               estimatedSeconds: 120,
-              stimulus: null,
+              stimulus: { type: "text", content: "The surface area A of a sphere with radius r is A = 4πr²." },
               figure: null,
               stem: numeric
                 ? `${lead} The box is ${A} ${unitAfter(A, u)} by ${B} ${unitAfter(B, u)} by ${Cc} ${unitAfter(Cc, u)}. The surface area of the sphere is kπ square ${u}. What is the value of k?`
@@ -2502,10 +2501,78 @@
     },
   };
 
+  // A direct formula application supplies the Easy volume entry point;
+  // finding missing dimensions or combining regions belongs to Medium.
+  const basicVolume = {
+    id: "prism-volume-basic",
+    domain: GEO,
+    skill: "Area and volume",
+    subskill: "volume",
+    difficulty: "Easy",
+    title: "Volume from a prism's dimensions",
+    recognize: "A right rectangular prism has volume length × width × height, or base area × height.",
+    rubric: { steps: 0, concept: 0, interpretation: 0, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["neighbouring-rule", "wrong-quantity"],
+    build(t) {
+      const numeric = t.chance(0.35);
+      const baseGiven = t.chance(0.4);
+      return retry(() => {
+        const l = t.int(3, 28);
+        const w = t.int(3, 28);
+        const h = t.int(3, 28);
+        if (new Set([l, w, h]).size < 3) return null;
+        const area = l * w;
+        const volume = area * h;
+        const u = t.pick(["centimeters", "inches", "meters"]);
+        const candidates = baseGiven ? [
+          [area, "Gives the base area without multiplying by the height."],
+          [area + h, "Adds the base area and height instead of multiplying them."],
+          [area * h * h, "Squares the height even though prism volume is base area times height."],
+          [area * area * h, "Squares the already-given base area."],
+          [2 * area * h, "Doubles the base-area times height product."],
+          [area / h, "Divides the base area by the height instead of multiplying."],
+        ] : [
+          [l * w, "Gives the area of the base rather than the volume."],
+          [2 * (l * w + l * h + w * h), "Finds the surface area instead of the volume."],
+          [l * l * h, "Uses the length twice and omits the width."],
+          [w * w * h, "Uses the width twice and omits the length."],
+          [l + w + h, "Adds the dimensions instead of multiplying them."],
+          [l ** 3, "Treats the rectangular prism as a cube with the stated length as every edge."],
+          [w ** 3, "Treats the rectangular prism as a cube with the stated width as every edge."],
+        ];
+        return packSpread(t, numeric, volume, fmt(volume), balanceTwins(t, volume,
+          candidates.map(([value, reason]) => [isClean(value, 2) ? fmt(value) : null, reason])), {
+          stimulus: null,
+          figure: null,
+          stem: baseGiven
+            ? `A right rectangular prism has a base area of ${area} square ${u} and a height of ${h} ${u}. What is its volume, in cubic ${u}?`
+            : `A rectangular box is ${l} ${u} long, ${w} ${u} wide, and ${h} ${u} high. What is its volume, in cubic ${u}?`,
+          explanation: baseGiven
+            ? `Volume is base area times height: ${area} × ${h} = ${fmt(volume)} cubic ${u}.`
+            : `Volume is length times width times height: ${l} × ${w} × ${h} = ${fmt(volume)} cubic ${u}.`,
+          steps: [
+            baseGiven ? `The base area is ${area}.` : `The base area is ${l} × ${w} = ${area}.`,
+            `Volume = ${area} × ${h} = ${fmt(volume)} cubic ${u}.`,
+          ],
+          principles: ["A right prism's volume is base area × height."],
+          hint: "How does the base area combine with the height?",
+          trap: "Base area uses square units; volume includes the height and uses cubic units.",
+          estimatedSeconds: 45,
+          verify: () => {
+            // Count the unit-square columns, each h unit cubes tall.
+            let count = 0;
+            for (let x = 0; x < l; x += 1) for (let y = 0; y < w; y += 1) count += h;
+            return count === volume;
+          },
+        }, { positive: true, whole: true });
+      });
+    },
+  };
+
   // Existing templates keep their order (a run code rebuilds its questions
   // in this order); new templates are appended.
   return [
     altitudeArea, rectilinearPlan, volumeDimension, volumeUnits, scalingMedium, displacement, scalingSolids, inscribedPolygon, shadedRegion,
-    circlesInSquare, compositeSolids,
+    circlesInSquare, compositeSolids, basicVolume,
   ];
 });

@@ -12,11 +12,11 @@ schedule.
 [2] {3} When dough bakes, its starch granules swell and burst. {4 The long
 molecules inside them spreading into a loose, disordered tangle that holds water
 and feels soft.} Cooling begins to {5 undo this}. The molecules — amylopectin
-especially — creep back toward the ordered, crystalline arrangement they held
-before baking, and they squeeze out the water they had been holding. {6 A dense,
-water-repelling crystal, the tongue cannot reach that moisture once amylopectin
-has reorganized.} The bread is not {7 losing} water to the air. It is locking it
-away.
+especially — form more ordered, crystalline regions as the loaf ages, changing the
+distribution and mobility of water through the crumb. {6 A firmer crystalline
+structure, the tongue detects the change once amylopectin has reorganized.}
+The bread need not be {7 losing} water to the air. It can grow firm without
+drying out.
 
 [3] {8 As a result,} the process has a temperature. Retrogradation runs fastest a
 little above freezing, which is very nearly the temperature inside a
@@ -28,12 +28,11 @@ way whatsoever}.
 [4] The same chemistry explains why a stale loaf can be partly rescued. Heat
 above about 140 degrees Fahrenheit melts the crystals apart again, and a stale
 loaf warmed in an oven comes out noticeably softer — for a few hours. Once the
-loaf cools, retrogradation resumes, and {11 it} runs faster the second time than
-it did the first.
+loaf cools, retrogradation resumes, and {11 it} gradually firms the crumb again
+as the reorganizing molecules change its texture.
 
 [5] {12} None of this makes a three-day-old loaf new. But it explains why a
-bread box on the counter beats a refrigerator, {13 why bakeries sell out by
-evening, and why the oldest advice about bread — buy less, buy more often — is
+bread box on the counter beats a refrigerator, {13 why a warmed loaf soon firms again, and why the oldest advice about bread — buy less, buy more often — is
 also the best}.`,
   questions: [
     {
@@ -45,18 +44,22 @@ also the best}.`,
       key: "hard, crumbly, and dull",
       noChange: "Three items in a series need commas separating them, and none are present.",
       wrong: [
-        ["hard, crumbly and dull", "The comma before 'and' is missing, so only two of the three are separated."],
-        ["hard crumbly, and dull", "The first comma is missing, which leaves the opening two items run together."],
+        [
+          "hard, crumbly and, dull",
+          "The comma after 'and' separates the conjunction from the final adjective."
+        ],
+        [
+          "hard crumbly, and dull",
+          "The first comma is missing, which leaves the opening two items run together."
+        ]
       ],
-      why:
-        "'Hard,' 'crumbly,' and 'dull' are three adjectives in a list, and a list of three takes a " +
-        "comma after each item except the last.",
+      why: "The three adjectives form a series. The key separates them clearly; the other choices omit the separator between the first two or insert a comma after the conjunction. A serial comma before 'and' is optional here, so its omission alone would not make an option wrong.",
       steps: [
-        "Count the items in the series. There are three.",
-        "Place a comma after the first and after the second.",
+        "Identify the three adjectives: hard, crumbly, and dull.",
+        "Choose the punctuation that separates the items without cutting 'and' off from 'dull.'"
       ],
       hint: "Count the items before you place any punctuation.",
-      trap: "The phrase is short enough to read as a single unit rather than as a list.",
+      trap: "The phrase is short enough to read as a single unit rather than as a list."
     },
     {
       number: 2,
@@ -86,30 +89,28 @@ also the best}.`,
       family: "paragraph-opening",
       difficulty: "Medium",
       stem: "Which choice, if added here, provides the most effective opening for this paragraph?",
-      key: "What changes in a staling loaf is not its water but its starch.",
+      key: "Staling involves more than water loss: starch itself reorganizes.",
       wrong: [
         [
           "Starch is a carbohydrate made of long chains of glucose molecules.",
-          "A definition of starch does not announce what this paragraph is about to correct.",
+          "A definition of starch does not announce what this paragraph is about to correct."
         ],
         [
           "Bakers have understood the behavior of dough for a very long time.",
-          "The history of baking knowledge is a subject the paragraph never takes up.",
+          "The history of baking knowledge is a subject the paragraph never takes up."
         ],
         [
           "There are several factors that influence the quality of a finished loaf.",
-          "The vague plural promises a list, but the paragraph explains a single mechanism.",
-        ],
+          "The vague plural promises a list, but the paragraph explains a single mechanism."
+        ]
       ],
-      why:
-        "Paragraph 1 says the common explanation is wrong. This paragraph supplies the right one, so " +
-        "its opening has to name what actually changes.",
+      why: "Paragraph 1 says the common explanation is wrong. This paragraph supplies the right one, so its opening has to name what actually changes.",
       steps: [
         "Read the end of the previous paragraph: most people are wrong about drying out.",
-        "Choose the opening that answers what is really happening instead.",
+        "Choose the opening that answers what is really happening instead."
       ],
       hint: "The paragraph is a correction, so its first sentence should say what is being corrected to.",
-      trap: "Every choice is true and about bread, so subject matter alone cannot decide it.",
+      trap: "Every choice is true and about bread, so subject matter alone cannot decide it."
     },
     {
       number: 4,
@@ -167,27 +168,25 @@ also the best}.`,
       family: "misplaced-appositive",
       difficulty: "Hard",
       keep: false,
-      key: "Once amylopectin has reorganized into a dense, water-repelling crystal, the tongue cannot reach that moisture.",
-      noChange: "The opening appositive describes a crystal, but the noun it lands on is 'the tongue.'",
+      key: "Once amylopectin has reorganized into a firmer crystalline structure, the tongue detects the change.",
+      noChange: "The appositive describes reorganized amylopectin, but the noun it attaches to is 'the tongue.'",
       wrong: [
         [
-          "A dense, water-repelling crystal, that moisture cannot be reached once amylopectin has reorganized.",
-          "The appositive now describes the moisture, which is not a crystal either.",
+          "A firmer crystalline structure, the tongue detects amylopectin once it has reorganized.",
+          "The introductory appositive still describes the tongue as a crystalline structure."
         ],
         [
-          "Being a dense, water-repelling crystal, the tongue cannot reach that moisture once amylopectin has reorganized.",
-          "Changing the form leaves the phrase attached to the same wrong noun.",
-        ],
+          "Being a firmer crystalline structure, the tongue detects the change once amylopectin has reorganized.",
+          "Changing the opener to a participial phrase still wrongly attaches it to the tongue."
+        ]
       ],
-      why:
-        "An appositive at the head of a sentence renames the noun that follows it. Only amylopectin " +
-        "is the crystal, so either amylopectin follows the phrase or the phrase is rebuilt as a clause.",
+      why: "Amylopectin forms the crystalline structure; the tongue detects its effect on texture. The key names amylopectin inside the introductory clause instead of making the tongue the structure.",
       steps: [
-        "Ask what the opening phrase renames. It renames amylopectin.",
-        "Rewrite so the sentence names amylopectin instead of leaving the phrase stranded.",
+        "Identify what becomes more crystalline: amylopectin.",
+        "Make the opener name that substance while leaving the tongue as the detector."
       ],
-      hint: "An opening appositive renames whatever comes right after the comma — check what that is.",
-      trap: "The sentence states a true fact about the tongue, so nothing sounds factually wrong.",
+      hint: "Ask what the opening description refers to, then check what noun it actually describes.",
+      trap: "The sentence states a true fact about the tongue, so nothing sounds factually wrong."
     },
     {
       number: 7,
@@ -196,19 +195,26 @@ also the best}.`,
       difficulty: "Easy",
       keep: true,
       wrong: [
-        ["lose", "The simple present states a rule where the sentence describes a process underway."],
-        ["lost", "The past tense breaks from the present-tense explanation around it."],
-        ["has lost", "The present perfect reports a completed loss rather than a continuing one."],
+        [
+          "lose",
+          "The simple present states a rule where the sentence describes a process underway."
+        ],
+        [
+          "lost",
+          "The past tense breaks from the present-tense explanation around it."
+        ],
+        [
+          "has lost",
+          "The present perfect reports a completed loss rather than a continuing one."
+        ]
       ],
-      why:
-        "The paragraph describes what a loaf is doing as it stales, and the next sentence matches: " +
-        "'It is locking it away.' The progressive keeps the two halves parallel.",
+      why: "'Be losing' is the progressive form needed after 'need not.' It describes a process that need not occur for the crumb to grow firm.",
       steps: [
-        "Read the following sentence and note its verb form.",
-        "Keep the underlined verb in the same form so the contrast lands.",
+        "Read the complete verb phrase, including 'need not be' before the underline.",
+        "Use the present participle 'losing' after 'be.'"
       ],
       hint: "The sentence right after this one tells you which form belongs here.",
-      trap: "The simple present sounds more like a scientific statement, which reads as more correct.",
+      trap: "The simple present sounds more like a scientific statement, which reads as more correct."
     },
     {
       number: 8,
@@ -289,19 +295,26 @@ also the best}.`,
       difficulty: "Medium",
       keep: true,
       wrong: [
-        ["they", "The plural pronoun does not agree with the singular noun 'retrogradation.'"],
-        ["the loaf", "Naming the loaf reverses the meaning, since it is the process that speeds up."],
-        ["this", "The bare demonstrative is vaguer than the pronoun and points at the whole clause."],
+        [
+          "they",
+          "The plural pronoun does not agree with the singular noun 'retrogradation.'"
+        ],
+        [
+          "the loaf",
+          "The loaf does not carry out retrogradation; the process firms the crumb."
+        ],
+        [
+          "them",
+          "An object pronoun cannot serve as the subject of 'firms,' and its number does not match 'retrogradation.'"
+        ]
       ],
-      why:
-        "'It' refers to 'retrogradation,' the singular subject of the clause immediately before. " +
-        "Nothing else in the sentence is a process that could run faster.",
+      why: "'It' refers to retrogradation, the singular process named immediately before it. That process firms the crumb as the loaf cools.",
       steps: [
         "Name the noun the pronoun stands for: retrogradation.",
-        "Confirm it is singular and that no other noun competes.",
+        "Confirm it is singular and that no other noun competes."
       ],
-      hint: "Ask what is running faster, then check that the pronoun matches it in number.",
-      trap: "The loaf is the more vivid noun nearby, which invites replacing a correct pronoun.",
+      hint: "Identify the process doing the firming and match the pronoun to it.",
+      trap: "The loaf is the more vivid noun nearby, which invites replacing a correct pronoun."
     },
     {
       number: 12,
@@ -344,27 +357,25 @@ also the best}.`,
       keep: true,
       wrong: [
         [
-          "why bakeries sell out by evening, and the oldest advice about bread — buy less, buy more often — is also the best",
-          "The third item drops the 'why' that the first two share.",
+          "why a warmed loaf soon firms again, and the oldest advice about bread — buy less, buy more often — is also the best",
+          "The third item drops the 'why' that the first two share."
         ],
         [
           "bakeries selling out by evening, and why the oldest advice about bread — buy less, buy more often — is also the best",
-          "The second item becomes a phrase while the others remain clauses.",
+          "The second item becomes a phrase while the others remain clauses."
         ],
         [
-          "why bakeries sell out by evening, and that the oldest advice about bread — buy less, buy more often — is also the best",
-          "The third item switches to 'that,' which does not match the explanatory 'why.'",
-        ],
+          "why a warmed loaf soon firms again, and that the oldest advice about bread — buy less, buy more often — is also the best",
+          "The third item switches to 'that,' which does not match the explanatory 'why.'"
+        ]
       ],
-      why:
-        "The sentence explains three things, and each item begins with 'why.' Repeating it is what " +
-        "holds a long closing sentence together.",
+      why: "The sentence explains three things, and each item begins with 'why.' Repeating it is what holds a long closing sentence together.",
       steps: [
         "Read the three items in the series and compare their first words.",
-        "Keep the version in which all three open the same way.",
+        "Keep the version in which all three open the same way."
       ],
       hint: "The word the series repeats is the one doing the structural work; do not let it drop.",
-      trap: "The interrupting dashes in the last item make it hard to hear against the first two.",
+      trap: "The interrupting dashes in the last item make it hard to hear against the first two."
     },
     {
       number: 14,

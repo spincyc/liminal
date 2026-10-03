@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p006",
   type: "literary-narrative",
   title: "Stock",
-  intro: "This passage is adapted from a short story. Devi is seventeen and has taken a summer job at a roadside plant nursery.",
+  intro: "This is an original short story. Devi is seventeen and has taken a summer job at a roadside plant nursery.",
   content: `Mrs Oyelaran did not show me how to water. She handed me a hose on the first
 morning and said the beds along the west fence, and went back inside, and I stood there
 holding it and worked out that the trigger was stiff and that the pressure was higher
@@ -62,7 +62,7 @@ different voice: "It goes on the tuition line."`,
       family: "narrative-central-insight",
       difficulty: "Medium",
       stem: "The passage is best described as an account of how the narrator learned:",
-      key: "that easy advice can cost a customer more than bad advice.",
+      key: "that casual advice can harm a customer's confidence in themselves.",
       wrong: [
         ["that experienced employers rarely explain their reasoning.", "Mrs Oyelaran explains her reasoning at length, both about drainage and about the word easy."],
         ["that plants require more attention than most buyers expect.", "The passage's concern is the effect of what the narrator said, not the demands of plants."],

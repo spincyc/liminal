@@ -1075,190 +1075,241 @@
   /* at the end, reasoning back to something the text never mentions     */
   /* ------------------------------------------------------------------ */
 
-  // `premise` is stated early and `evidence` at the end, with at least a
-  // sentence between them. The key needs both. Each scene carries its own
-  // three near misses with reasons (the 2026-09-26 cold review found the
-  // old distractors plainly contradicted or unsupported): a conclusion from
-  // one fact alone (often leaning on the intervening sentence), the two
-  // facts combined the wrong way (the records swapped, a later layer read as
-  // an ending), and the key's own conclusion stated a step too strongly or
-  // too precisely (certain death, every tree, the exact years), so the
-  // student must weigh how much the two facts together support.
+  // Original self-contained cases require combining records, chronology,
+  // conditional effects, or measurement rules. Named anchors are separated
+  // in the passage; that structural property alone does not verify the
+  // inference. Each scene supplies its reasoning and specific error rationales.
   const SEPARATED_PREMISE_TOPICS = [
     {
-      scene: "ii-jack-pine-fire-stand",
-      about: "the stand of jack pines in northern Ontario",
-      text:
-        "The cones of the jack pine are sealed shut with a resin that melts only at the high temperatures reached during a forest fire, so the trees release most of their seeds only after a fire has passed through. Jack pine seedlings grow quickly in full sun but poorly in shade, and the trees rarely live more than 150 years. Researchers who counted the growth rings of the trees in one stand in northern Ontario found that nearly all of them had begun growing within two or three years of one another, around 1911.",
-      premise: "release most of their seeds only after a fire",
-      evidence: "had begun growing within two or three years of one another",
-      key: "A fire probably swept through the area shortly before nearly all of the trees began to grow.",
-      wrong: [
-        ["Logging probably cleared the area around 1911, letting sunlight reach young jack pines.",
-         "The sunlight detail fits, but without a fire the sealed cones would not have released the seeds that grew into the stand."],
-        ["Young jack pines will probably replace the stand around 2060, once the present trees die of old age.",
-         "Old age does not melt the resin that seals the cones; a new generation would need another fire, whenever the present trees die."],
-        ["A fire probably struck the stand around 1911 and killed every tree of every other species there.",
-         "The text supports a fire shortly before the trees began to grow, but it says nothing about other species, let alone that every one of their trees died."],
+      "scene": "ii-inf-separated-selven-ledger",
+      "about": "the apparent rise in Selven's timber imports after 1840",
+      "text": "Before 1840, Selven's customs ledger recorded a timber shipment when its owner paid the import duty, regardless of when the timber arrived. Unpaid shipments remained in a separate register. A reform required the main ledger to record arrivals immediately, with payment entered later. Historian Leda Orin found that the main ledger's timber entries doubled in 1840, although harbor pilots reported roughly unchanged numbers and sizes of incoming timber vessels. Most of the additional entries correspond to shipments whose owners paid no duty that year.",
+      "premise": "recorded a timber shipment when its owner paid the import duty",
+      "evidence": "Most of the additional entries correspond to shipments whose owners paid no duty that year",
+      "key": "It may chiefly reflect entry into the main ledger of unpaid shipments that the earlier system would have recorded separately.",
+      "wrong": [
+        [
+          "It may reflect merchants dividing similar quantities into smaller shipments to postpone duty payment rather than arrivals.",
+          "Vessel numbers and sizes were stable, and the passage connects the additional entries to recording unpaid arrivals, not to merchants splitting shipments."
+        ],
+        [
+          "It suggests that the reform increased duty receipts while leaving the physical volume of timber imports approximately unchanged.",
+          "The additional recorded shipments were unpaid that year; entries after the reform no longer establish that duty was received."
+        ],
+        [
+          "It suggests that the harbor pilots omitted vessels carrying timber whose owners had not yet paid the import duty.",
+          "Nothing links the pilots' counts to payment; it is the customs ledger, rather than the pilots' reporting, whose inclusion rule changed."
+        ]
       ],
+      "explanation": "The old main ledger counted payments and left unpaid arrivals elsewhere. The reform moved those arrivals into the main ledger, and most added entries are precisely unpaid shipments. Together with stable vessel traffic, this supports a recording change rather than a comparable increase in physical imports."
     },
     {
-      scene: "ii-norway-enamel-england-bone",
-      about: "the woman whose tooth enamel matches water from Norway",
-      text:
-        "The chemical makeup of tooth enamel is fixed in childhood and reflects the water a person drank while the teeth were forming. Bone, by contrast, is continually rebuilt and reflects where a person lived during roughly the last decade of life. At a medieval cemetery in southern England, most of the people buried there show the local chemical signature in both teeth and bone. One woman's bones also match the local water, but her tooth enamel matches water from a region of Norway.",
-      premise: "fixed in childhood",
-      evidence: "her tooth enamel matches water from a region of Norway",
-      key: "She probably spent her childhood in Norway and her last years in southern England.",
-      wrong: [
-        ["She probably lived in Norway all her life and was brought to England only for burial.",
-         "This uses the enamel but ignores her bones, which match the local water and so show that she lived near the cemetery late in life."],
-        ["She probably grew up in southern England and moved to Norway later in her life.",
-         "This swaps the two records: enamel, fixed in childhood, points to Norway, and bone, which reflects the last decade of life, points to southern England."],
-        ["She probably spent her childhood in Norway and died while visiting southern England.",
-         "Bone reflects roughly the last decade of life, and hers matches the local water, so she had been living near the cemetery for years, not visiting."],
+      "scene": "ii-inf-separated-meret-glaze",
+      "about": "the evidence provided by the surviving Meret bowls",
+      "text": "At Meret, potters stamped bowls before firing them; merchants sometimes applied a decorative coating years later. A mineral in that coating broke down when exposed to the temperatures used for firing, so it could survive only if applied afterward. Museum catalogues date a group of bowls to a late workshop because their intact coatings contain this mineral and resemble that workshop's designs. However, their stamps match dies discarded by an earlier workshop, and microscopic examination shows that the stamps were impressed in soft clay rather than copied onto hardened bowls.",
+      "premise": "potters stamped bowls before firing them",
+      "evidence": "the stamps were impressed in soft clay rather than copied onto hardened bowls",
+      "key": "Their manufacture can predate their surviving decoration, so the coating is insufficient to assign them to the later workshop.",
+      "wrong": [
+        [
+          "Their manufacture probably belongs to the later workshop, whose potters copied earlier stamps before applying a traditional decorative coating.",
+          "Copying an older stamp design is possible but not established. The coating was applied after firing, so its style cannot by itself identify the bowl’s maker."
+        ],
+        [
+          "Their decoration can predate their manufacture, since the older stamps were added after the mineral coating had already been applied.",
+          "Stamps were impressed in soft clay before firing, while the surviving mineral coating had to be applied after firing."
+        ],
+        [
+          "Their manufacture and decoration belong to the early workshop, despite the coating's resemblance to later designs.",
+          "The stamp belongs to manufacture, but merchants could add the surviving decoration years later. Neither feature establishes that both stages belonged to the early workshop."
+        ]
       ],
+      "explanation": "The soft-clay stamp belongs to manufacture before firing; the intact heat-sensitive coating belongs after firing and could have been added years later. The coating’s style therefore cannot by itself date the underlying bowl or identify its maker; a later decoration need not imply a later manufacture."
     },
     {
-      scene: "ii-sparrow-late-tutor",
-      about: "the laboratory-raised sparrows",
-      text:
-        "Young white-crowned sparrows learn their songs by listening to adult males during a sensitive period that ends when the birds are about fifty days old; after that, they cannot learn a new song. Each population of the species sings its own dialect, which young birds normally pick up from the adults around them. In one study, researchers raised sparrows from a single population in a laboratory, where they heard no adult sparrows except in recordings of a different population's dialect, played to them only between the ages of sixty and ninety days.",
-      premise: "a sensitive period that ends when the birds are about fifty days old",
-      evidence: "only between the ages of sixty and ninety days",
-      key: "They most likely did not learn the dialect that was played to them in the recordings.",
-      wrong: [
-        ["They most likely learned to sing the dialect that was played to them in the recordings.",
-         "This ignores the timing: the recordings began at sixty days, after the period in which the birds could learn a song had ended."],
-        ["They most likely sang the dialect of the population from which they themselves came.",
-         "Young birds pick up the dialect from the adults around them, and these birds never heard adults of their own population."],
-        ["They most likely sang no song at all as adults, having heard no adult sparrows while young.",
-         "The text says only that the birds could not learn a new song after about fifty days; it says nothing about whether birds that learn no song sing at all."],
+      "scene": "ii-inf-separated-velin-grass",
+      "about": "the result of the Velin grass experiment",
+      "text": "In experiments on Velin grass, a root fungus increased growth only when plants received a chemical signal produced by neighboring grass. Researchers could remove that signal from water without removing nutrients or harming the fungus. A new study supplied every pot with identical soil, fungus, and water collected around established grass. Half the pots received untreated water; the others received water from which the signal had been removed. Growth was higher in the first group. A colleague concluded that established grass must therefore have enriched its neighbors' water with additional nutrients.",
+      "premise": "a root fungus increased growth only when plants received a chemical signal",
+      "evidence": "water from which the signal had been removed",
+      "key": "The comparison separates the signal's contribution from nutrient supply, so it does not support the colleague's explanation of the difference.",
+      "wrong": [
+        [
+          "It shows the signal directly promotes growth, with the fungus present but unnecessary to the response.",
+          "Every pot contained fungus, so the experiment cannot show that the signal works without it; the earlier result instead describes an interaction."
+        ],
+        [
+          "The comparison suggests the fungus needs nutrients from established grass, regardless of whether the chemical signal remains.",
+          "Nutrients were preserved in both groups, while the signal differed; the result does not make the signal dispensable."
+        ],
+        [
+          "The comparison establishes that grass without the fungus would grow equally under both water treatments, since the nutrients were unchanged.",
+          "No group lacked fungus. Equal nutrients do not rule out other signal effects in such an untested group."
+        ]
       ],
+      "explanation": "The early result makes the fungus's growth effect conditional on a signal. The later treatment selectively removes that signal while preserving nutrient supply and the fungus. The resulting difference therefore cannot be attributed to different amounts of added nutrients, nor does it separate the signal from its interaction with the fungus."
     },
     {
-      scene: "ii-fabriano-watermark-letter",
-      about: "the letter signed \"your brother\"",
-      text:
-        "Paper made in European mills from the 1300s onward often carries a watermark, a faint design pressed into each sheet as it is made. Because a mill replaced its molds every few years, a particular watermark can usually be dated to a short span of years. Paper was expensive, and studies of dated documents suggest that it was rarely stored for long before being used. A letter in a Florentine archive, signed only \"your brother,\" is written on paper bearing a watermark that a mill in Fabriano used only between 1452 and 1458.",
-      premise: "can usually be dated to a short span of years",
-      evidence: "used only between 1452 and 1458",
-      key: "It was probably written during the 1450s or not long afterward.",
-      wrong: [
-        ["It could just as easily have been written a century after its paper was made.",
-         "This ignores the text’s point that paper was expensive and rarely stored for long before being used."],
-        ["It was probably written in Fabriano, where paper with that watermark was made.",
-         "The watermark shows where the paper was made, not where the letter was written; nothing in the text places the writer in Fabriano."],
-        ["It was written between 1452 and 1458, the only years the mill used that watermark.",
-         "The watermark dates the paper, not the writing; paper was rarely, not never, stored, so the letter could be somewhat later than 1458."],
+      "scene": "ii-inf-separated-arden-petitions",
+      "about": "the repeated names in Arden's drainage petitions",
+      "text": "Arden's council filed a new drainage petition under the year it first arrived, but attached later endorsements to the original file. A petition that was formally rejected could be submitted again only as a new file. One surviving bundle contains three files dated five years apart, each requesting the same drainage channel and bearing many of the same signatures. A historian treats the files as successive waves of newly recruited supporters. Council minutes, however, record rejection of the proposed channel shortly before each of the last two files was opened.",
+      "premise": "attached later endorsements to the original file",
+      "evidence": "record rejection of the proposed channel shortly before each of the last two files was opened",
+      "key": "They more likely document renewed applications by existing supporters than three distinct expansions of the campaign's following.",
+      "wrong": [
+        [
+          "They more likely record endorsements accumulated on one application than requests renewed after separate council decisions.",
+          "Later endorsements stayed in the original file, whereas formal rejection required a new application; the separate files and rejections fit resubmissions."
+        ],
+        [
+          "They indicate that supporters returned after approvals failed to produce construction, rather than after the council rejected their proposals.",
+          "The minutes record rejection, not approval followed by nonimplementation; this preserves the idea of persistence but substitutes a different cause."
+        ],
+        [
+          "They indicate that the campaign recruited additional supporters at intervals determined by the council's rules for reopening rejected proposals.",
+          "The files' creation can be explained by resubmission, and repeated signatures identify existing supporters; no recruitment increase is established."
+        ]
       ],
+      "explanation": "Separate files need not mean newly recruited supporters: Arden required a new file after rejection but not for additional endorsements. The recorded rejections just before the new files, together with recurring signatures, support persistence by the same campaigners."
     },
     {
-      scene: "ii-lake-serin-barley-pollen",
-      about: "barley farming near Lake Serin",
-      text:
-        "Each major eruption of the volcano Mount Kora spread a layer of ash with a distinctive chemical makeup across the surrounding region, and geologists have dated each layer precisely. Sediment on the bottom of a lake builds up in order, with older material lying beneath younger material. In a core drilled from nearby Lake Serin, a layer of ash from Kora's eruption of 3,400 years ago lies about 30 centimeters above the lake's oldest sediment. Pollen from domesticated barley appears in the sediment above that ash but nowhere below it.",
-      premise: "older material lying beneath younger material",
-      evidence: "appears in the sediment above that ash but nowhere below it",
-      key: "It probably began near the lake no earlier than about 3,400 years ago.",
-      wrong: [
-        ["It probably began at about the same time that the lake itself first formed.",
-         "The ash lies 30 centimeters above the lake’s oldest sediment, so the lake is older than the ash, and the barley pollen appears only above the ash."],
-        ["It probably began near the lake within a few years of Kora's eruption, 3,400 years ago.",
-         "Pollen above the ash shows only that barley farming came after the eruption; nothing in the text shows how soon after."],
-        ["It probably ended near the lake 3,400 years ago, when ash from Kora's eruption buried the fields.",
-         "Older material lies beneath younger, so pollen found only above the ash means barley farming began after the eruption, not that it ended then."],
+      "scene": "ii-inf-separated-osk-molt",
+      "about": "the tagged Osk birds examined in September",
+      "text": "In a study of Osk birds, researchers found that the chemical signature of a feather records diet during that feather's growth and remains unchanged afterward. Adults replace their wing feathers in spring and their breast feathers in late summer. River insects and plateau insects leave distinct signatures; birds feeding exclusively in either habitat acquire the corresponding signature. The tagged adults had river signatures in their wing feathers and plateau signatures in their breast feathers. All were captured beside the river in September, after both replacements were complete.",
+      "premise": "records diet during that feather's growth and remains unchanged afterward",
+      "evidence": "river signatures in their wing feathers and plateau signatures in their breast feathers",
+      "key": "Their September location does not identify the habitat in which they obtained the food recorded by their more recently grown feathers.",
+      "wrong": [
+        [
+          "The breast feathers preserve older dietary evidence than the wing feathers, despite their later replacement.",
+          "Breast feathers grew later, and signatures are fixed during growth; the contrast cannot reverse the chronology of the dietary records."
+        ],
+        [
+          "Their river capture suggests that the plateau signature reflects a recent change in river insects rather than an earlier difference in the birds' diets.",
+          "The passage assigns distinct signatures to the two insect sources and says old feathers retain theirs; capture location does not establish a changed river signature."
+        ],
+        [
+          "Their feather signatures identify a spring plateau diet followed by a late-summer river diet, with their capture confirming the more recent dietary record.",
+          "Wing feathers record spring and bear the river signature; breast feathers record late summer and bear the plateau signature. This swaps the two records."
+        ]
       ],
+      "explanation": "The feathers preserve diets at different growth times, not at capture. The later-grown breast feathers record plateau food even though the birds were beside the river in September. Thus present location cannot substitute for the dietary history encoded in those feathers."
     },
     {
-      scene: "ii-talomi-food-loanwords",
-      about: "potatoes in the Talomi-speaking valley",
-      text:
-        "Languages often take their words for new foods from the people who introduce those foods. In the Talomi language, spoken in a remote river valley, the words for potato, maize, and tomato closely resemble the Spanish words, while the words for rice and banana resemble Portuguese words. Historical records show that Portuguese traders visited the valley in the 1500s, and that Spanish missionaries first arrived in the 1600s and remained for two centuries.",
-      premise: "take their words for new foods from the people who introduce those foods",
-      evidence: "Spanish missionaries first arrived in the 1600s",
-      key: "They were probably introduced to the valley later than rice and bananas were.",
-      wrong: [
-        ["They were probably grown in the valley before any outsiders arrived.",
-         "Words borrowed from Spanish point to Spanish speakers introducing these foods, which this ignores."],
-        ["They were probably introduced by the Portuguese traders of the 1500s.",
-         "Their names resemble Spanish words, not Portuguese ones, so the Spanish missionaries, who came later, are the likelier source."],
-        ["They were probably introduced to the valley as soon as the Spanish missionaries arrived in the 1600s.",
-         "The missionaries stayed for two centuries, so the foods could have come at any time in those years; the text supports only that they came after the Portuguese traders’ foods."],
+      "scene": "ii-inf-separated-davor-play",
+      "about": "the conclusion that Davor's revised ending was performed at the premiere",
+      "text": "A theater's rehearsal copies included every change proposed by a playwright, whereas the prompt copy included only changes actually used onstage. The theater sometimes continued rehearsing revisions after a production opened. A surviving rehearsal copy of Davor's play has an ending in which the accused clerk confesses. This ending is absent from the premiere's prompt copy. In a letter written two days after opening, Davor says that the actors have finally agreed to try the confession at their next rehearsal. A critic nevertheless cites the rehearsal copy as evidence of what the first audience saw.",
+      "premise": "the prompt copy included only changes actually used onstage",
+      "evidence": "the actors have finally agreed to try the confession at their next rehearsal",
+      "key": "It confuses a proposed revision with a performed one, despite records that place the revision's trial after opening.",
+      "wrong": [
+        [
+          "It is supported by the rehearsal copy, although the letter indicates that subsequent performances omitted the confession.",
+          "The letter schedules the first trial after opening and says nothing about later omission; a rehearsal proposal is not evidence of premiere use."
+        ],
+        [
+          "It identifies an ending used at the premiere but omitted from the prompt copy because that copy recorded only later changes.",
+          "The passage gives the prompt copy as the record of changes actually used, not as a record restricted to changes after opening."
+        ],
+        [
+          "It dates the revision too early, but the letter establishes that the confession was performed later in the run.",
+          "Agreement to try a revision in rehearsal does not prove any public performance; this substitutes a later unsupported performance claim for the earlier one."
+        ]
       ],
+      "explanation": "Rehearsal copies record proposals, while prompt copies track onstage use. The premiere's prompt copy lacks the confession, and the post-opening letter places its trial in a future rehearsal. The critic is assigning the proposal the evidentiary status of a performed revision."
     },
     {
-      scene: "ii-tessa-cluster-lifetimes",
-      about: "the stars of the cluster Tessa-7",
-      text:
-        "A star's color depends on the temperature of its surface: the hottest stars glow blue-white, stars like the Sun look yellow, and the coolest stars look red. Among stars that are still fusing hydrogen in their cores, hotter stars are also more massive, and more massive stars burn through their fuel far faster, so they have much shorter lives. Astronomers studying the young cluster Tessa-7 found both blue-white and yellow stars there, all still fusing hydrogen in their cores.",
-      premise: "the hottest stars glow blue-white",
-      evidence: "found both blue-white and yellow stars there",
-      key: "Its blue-white stars will probably run out of fuel before its yellow stars do.",
-      wrong: [
-        ["Its blue-white stars have probably existed for longer than its yellow stars have.",
-         "This confuses how long a star will last with how long it has already existed; the text concerns how fast stars use their fuel."],
-        ["Its blue-white stars will probably turn yellow as they use up their fuel.",
-         "The text says nothing about stars changing color; it links a star’s color to its temperature and mass, and its mass to how quickly its fuel runs out."],
-        ["Its blue-white and yellow stars have probably existed for about the same time and will stop fusing hydrogen together.",
-         "Whatever their ages, the blue-white stars are hotter and so more massive, and more massive stars burn through their fuel far faster, so they will not stop together."],
+      "scene": "ii-inf-separated-naren-bells",
+      "about": "the proposed explanation of the Naren survey results",
+      "text": "Naren's surveyors compared two bell designs by counting how many listeners reported hearing each bell. A preliminary trial showed that the designs sounded equally loud nearby, but one retained more of its volume at a distance. The later survey used the same number of listeners for each design, and the more distant listeners were assigned disproportionately to the design that carried better. Reports of hearing the bells were equally common in the two groups. The surveyors concluded that their preliminary finding about distance must have been mistaken.",
+      "premise": "one retained more of its volume at a distance",
+      "evidence": "the more distant listeners were assigned disproportionately to the design that carried better",
+      "key": "Equal reporting rates could reflect the better-carrying bell facing greater distances, rather than contradicting its advantage at comparable distances.",
+      "wrong": [
+        [
+          "Equal reporting rates confirm that the better-carrying design loses volume faster at a distance, since it was heard by the more distant listeners.",
+          "The first result says the opposite about volume loss; the later comparison mixes design with listener distance and cannot reverse that result."
+        ],
+        [
+          "Equal group sizes remove the effect of listener distance, allowing the surveyors to compare the designs without adjusting for where listeners stood.",
+          "Balancing numbers does not balance distances; the design expected to carry better was disproportionately tested farther away."
+        ],
+        [
+          "Equal reporting rates show that nearby listeners preferred the weaker design, offsetting distant listeners' preference for the design that carried better.",
+          "The outcome was whether listeners heard a bell, not which design they preferred; assigning preferences cannot explain the recorded comparison."
+        ]
       ],
+      "explanation": "The preliminary result concerns sound transmission at comparable distances. The later survey systematically assigns a harder listening condition to the better-carrying design. Equal observed hearing rates can reflect opposing effects, rather than refuting the design's advantage at equal distances."
     },
     {
-      scene: "ii-wood-frog-glycogen",
-      about: "the wood frogs that entered winter after the drought",
-      text:
-        "Wood frogs survive winter frozen solid: as ice forms in their bodies, their livers flood their blood with glucose, which keeps the cells themselves from freezing. Frogs that cannot raise their glucose levels enough die when frozen. The liver can make this glucose only from glycogen, an energy store the frog builds up by feeding in late summer and autumn. After a summer drought in which insects were scarce, biologists found that many wood frogs entered winter with unusually small glycogen stores.",
-      premise: "their livers flood their blood with glucose",
-      evidence: "entered winter with unusually small glycogen stores",
-      key: "They faced a greater risk than usual of dying if they froze during that winter.",
-      wrong: [
-        ["They were protected from freezing because glucose keeps their cells from freezing.",
-         "This ignores that the glucose comes from glycogen, which these frogs had unusually little of."],
-        ["They probably produced more glucose than usual to make up for the drought.",
-         "The liver can make glucose only from glycogen, and these frogs had small stores, so they could not produce more than usual."],
-        ["They were certain to die if they froze, since they could make no glucose at all.",
-         "Small glycogen stores mean less glucose, not none; the text supports a greater risk of death, not certain death."],
+      "scene": "ii-inf-separated-enrel-dormancy",
+      "about": "the seedlings in the Enrel seed experiment",
+      "text": "In experiments on Enrel seeds, exposure to cold made germination possible but did not itself trigger it; afterward, moisture triggered germination unless the seeds remained in darkness. Researchers buried seeds in cold, damp soil in sealed opaque containers. Several weeks later they opened half the containers in a warm, illuminated room, keeping the soil equally damp in all containers. Seedlings appeared only in the opened containers. An observer attributed the difference to warmth, noting that both groups had experienced the cold treatment.",
+      "premise": "moisture triggered germination unless the seeds remained in darkness",
+      "evidence": "opened half the containers in a warm, illuminated room",
+      "key": "Their emergence is consistent with removal of a light restriction, so the comparison cannot isolate warmth as the cause of the difference.",
+      "wrong": [
+        [
+          "Their emergence shows that warmth replaced the cold requirement, because germination occurred only after the seeds were brought into the illuminated room.",
+          "All seeds had already undergone cold exposure; a later warm location does not show that this earlier requirement was dispensable."
+        ],
+        [
+          "Their emergence indicates that opening supplied the first germination requirement, while the earlier cold treatment supplied the necessary moisture.",
+          "Moisture was present in every container, and cold enabled later germination; opening changed illumination as well as warmth, not initial moisture availability."
+        ],
+        [
+          "Their emergence establishes that cold and moisture were sufficient together, since those two conditions had been maintained before the containers were opened.",
+          "The unopened cold, damp seeds did not germinate; the stated darkness restriction means cold and moisture alone were not sufficient in those containers."
+        ]
       ],
+      "explanation": "Cold first permits germination, but darkness still blocks moisture's triggering effect. Opening containers changes illumination and warmth together. Because the opening also removes the specified light restriction, the contrast cannot establish that warmth produced the difference."
     },
     {
-      scene: "ii-velmar-silver-cup",
-      about: "the silver cup",
-      text:
-        "In the city of Velmar during the 1400s, the silversmiths' guild required every silver piece sold in the city to bear two stamps: the maker's personal mark and the city's mark, which guild inspectors added only after testing the metal's purity. Pieces that failed the test were melted down. Records show that some Velmar smiths also made pieces on commission for patrons in other cities. A silver cup now in a private collection bears the personal mark of the Velmar silversmith Joos Verhaegen but no city mark.",
-      premise: "required every silver piece sold in the city to bear two stamps",
-      evidence: "but no city mark",
-      key: "It was probably made on commission for a patron outside Velmar, not for sale in the city.",
-      wrong: [
-        ["It probably failed the guild's test of purity, so it never received the city mark.",
-         "Pieces that failed the test were melted down, so a surviving cup is unlikely to have failed it."],
-        ["It was probably tested by the guild's inspectors and found to be pure.",
-         "Inspectors added the city mark once a piece passed the test, so a cup found pure would carry the city mark that this cup lacks."],
-        ["It was probably made for a patron in Velmar who asked that it bear no city mark.",
-         "The guild required the city mark on every piece sold in Velmar, so a patron in the city could not simply have had it left off."],
+      "scene": "ii-inf-separated-laren-editions",
+      "about": "the edition of the Laren atlas containing both map features",
+      "text": "The first edition of the Laren atlas mistakenly placed a village west of a river. For the second edition, the printer corrected that map and replaced a damaged title plate with one bearing an ornamental border. During the third edition's printing, the corrected map plate cracked and was replaced with the first edition's map plate; the bordered title plate remained in use. A collector owns a copy with the western village position and the bordered title. She dates it to the first edition on the basis of the village alone.",
+      "premise": "For the second edition, the printer corrected that map",
+      "evidence": "the corrected map plate cracked and was replaced with the first edition's map plate",
+      "key": "Its older map feature can occur in a later printing, and the title feature identifies the third edition among those described.",
+      "wrong": [
+        [
+          "Its older map feature identifies the first edition, while the ornamental title suggests that the collector has mistaken a map error for a correction.",
+          "The title border did not appear until the second edition, and the third reused the first map; the two features jointly fit the third."
+        ],
+        [
+          "Its ornamental title identifies the second edition, while the older village position shows that correcting the map was postponed until a subsequent printing.",
+          "The passage explicitly places the correction in the second edition; the error returned when an older plate was reused during the third."
+        ],
+        [
+          "Its mixture of features indicates a copy assembled from separate editions, because the printer used the bordered title only with the corrected map.",
+          "The bordered title stayed in use during the third edition, including when the first map plate replaced the cracked corrected plate."
+        ]
       ],
-      // The key rests on the sale rule and the commissions sentence; the
-      // melting-down sentence only rules out the partial choice.
-      explanation:
-        "The guild required the city mark only on pieces sold in Velmar, and records show that Velmar smiths also made pieces on commission for patrons in other cities. A cup with Verhaegen's own mark but no city mark fits a piece made for such a patron. It cannot be a piece that failed the purity test, because failed pieces were melted down.",
+      "explanation": "The map error is not confined to the first edition: reuse brought it back during the third. The title border excludes the first, and the uncorrected map excludes the second. Jointly the two features identify the described third-edition printing."
     },
     {
-      scene: "ii-scarlet-mountain-sage",
-      about: "the mountain sage",
-      text:
-        "Honeybees cannot see the color red, though they are highly sensitive to ultraviolet light, which is invisible to people. Many flowers that look plain to us have ultraviolet patterns that guide bees to their nectar. Hummingbirds, by contrast, see red well, and many flowers pollinated mainly by hummingbirds are bright red. A botanist studying a mountain sage with scarlet flowers found that the flowers have no ultraviolet patterns and are rarely visited by bees.",
-      premise: "Honeybees cannot see the color red",
-      evidence: "have no ultraviolet patterns and are rarely visited by bees",
-      key: "It is probably pollinated mainly by hummingbirds instead of bees.",
-      wrong: [
-        ["Its scarlet color probably helps bees find their way to its nectar.",
-         "The text says honeybees cannot see red, so the flower’s color would not guide them."],
-        ["It probably guides bees to its nectar with ultraviolet patterns that people cannot see.",
-         "The botanist found that its flowers have no ultraviolet patterns."],
-        ["It is pollinated by hummingbirds alone, since bees never visit its flowers.",
-         "The text says bees rarely visit the flowers, not never; it supports pollination mainly by hummingbirds, not by them alone."],
+      "scene": "ii-inf-separated-talven-reservoir",
+      "about": "the interpretation of the Talven reservoir measurements",
+      "text": "In Talven's reservoir, a dye marks water entering through the northern channel and disappears only after prolonged exposure to sunlight. A second marker, introduced through the southern channel, remains detectable in sunlight but disappears after prolonged contact with the reservoir's sediment. Researchers found neither marker in a sheltered bottom sample. They concluded that the water could not have come from either channel. Earlier samples, however, had established that water moves from the sunlit surface to the sheltered bottom, where it remains in contact with sediment.",
+      "premise": "disappears only after prolonged exposure to sunlight",
+      "evidence": "water moves from the sunlit surface to the sheltered bottom",
+      "key": "A water sample can lose either marker along the described route, so their joint absence does not exclude either channel as its source.",
+      "wrong": [
+        [
+          "A sheltered bottom sample should retain the northern marker but lose the southern one, so the results exclude only the northern channel as its source.",
+          "The northern marker may have been lost during the earlier sunlit surface stage; shelter at sampling does not restore it."
+        ],
+        [
+          "A sheltered bottom sample should retain the southern marker but lose the northern one, so the results exclude only the southern channel as its source.",
+          "The southern marker survives sunlight but disappears during the later sediment contact; the route contains both relevant environments."
+        ],
+        [
+          "A sample lacking both markers shows that the two channel waters mixed, since each marker disappears only after encountering the other channel's water.",
+          "Marker loss is caused by sunlight or sediment exposure, not by mixing; either source could lose its marker independently along the route."
+        ]
       ],
-    },
+      "explanation": "The route exposes water successively to sunlight and sediment. Those stages remove different markers, so a source-specific marker can vanish before the sheltered bottom sample is collected. The present absence of both markers is therefore compatible with either source and does not demonstrate mixing."
+    }
   ];
 
   const separatedPremises = {
@@ -1270,7 +1321,7 @@
     title: "Inference that joins a fact stated early with a case stated late",
     recognize:
       "Neither the opening fact nor the closing case answers the question alone; combining them points back to something the text never names outright.",
-    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["too-narrow", "opposite-stance", "extreme-language"],
     build(t) {
       const topic = t.pick(SEPARATED_PREMISE_TOPICS);
@@ -1563,17 +1614,17 @@
     id: "inference-period-prose",
     skill: "Inferences",
     subskill: "logical inference",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Inference from older prose whose point is carried by irony or structure",
     recognize:
       "Read past the surface statement: a later detail qualifies or undercuts an earlier one, and the inference is what the two together imply, no more.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["misattributed-view", "too-broad", "opposite-stance"],
     build(t) {
       const topic = t.pick(PERIOD_PROSE_TOPICS);
       const content = `${PERIOD_HEADERS[topic.kind]}\n\n${topic.text}`;
       const wrong = topic.wrong;
-      return mc("Hard", topic, {
+      return mc("Medium", topic, {
         stimulus: passage(content),
         stem: `Based on the text, what can most reasonably be inferred about ${topic.about}?`,
         correct: topic.key,
@@ -1612,170 +1663,282 @@
   // statement alone.
   const QUALIFIED_CONCLUSION_TOPICS = [
     {
-      scene: "ii-inf-qual-morlaix-hearth-rolls",
-      text:
-        "Historians of the duchy of Morlaix have long relied on its hearth-tax rolls, which list every household required to pay the tax. Because the tax fell only on households that owned their dwellings, tenants and servants appear in the rolls only if they later acquired property. Examining the rolls, historian Elise Varnier found that the number of households listed rose by about a third between 1620 and 1660. Taken together, these points indicate that the rise Varnier documented reflects ______.",
-      anchors: ["fell only on households that owned their dwellings", "rose by about a third"],
-      key: "an increase in property-owning households, which need not mean the population grew",
-      wrong: [
-        ["growth of about a third in the duchy’s total population over those four decades", "The rolls count only households that owned their dwellings, so a rise in listed households need not mean the whole population grew, let alone by a third."],
-        ["a decline in the number of tenants and servants living in the duchy after 1620", "Some tenants may have become owners, but the rolls never list tenants who remained tenants, so no decline among them can be read from the rolls."],
-        ["an increase in the number of households that the tax collectors failed to record", "Households the collectors failed to record could not raise the number listed; nothing suggests the rolls grew less complete."],
+      "scene": "ii-inf-qualified-veyra-training",
+      "text": "A workshop in Veyra reported that its trainees' average score on a practical assessment rose between September and December. All trainees took both assessments, but the published December average included only those who completed the course. Researchers found that the completers had already scored higher than the other trainees in September, and that their own average score was unchanged in December. The workshop's director attributes the published rise to effective instruction. Taken together, the researchers' findings suggest that the published rise ______.",
+      "anchors": [
+        "included only those who completed the course",
+        "their own average score was unchanged"
       ],
-      explanation:
-        "The rolls list only households that owned their dwellings (second sentence), so the one-third rise Varnier found (third sentence) is a rise in owner households. Whether the duchy’s total population changed is a separate question the rolls cannot answer.",
-      trap: "Treating a count of property-owning households as a count of everyone in the duchy.",
+      "key": "can be explained by the change in which trainees were counted, without requiring an improvement in the completers' performance",
+      "wrong": [
+        [
+          "demonstrates improvement among the trainees who left, since the performance of those who completed the course was unchanged",
+          "The published December average excludes those who left; no improvement in their scores is needed to explain the change in that average."
+        ],
+        [
+          "measures the instruction's benefit for completers accurately, although it cannot establish whether trainees who left received the same benefit",
+          "The completers' own average did not rise, so the published change cannot be their measured gain from instruction."
+        ],
+        [
+          "probably understates the instruction's benefit, because the trainees with the lowest initial scores were excluded from the December calculation",
+          "Excluding the initially lower-scoring group raises the reported average without showing learning; their later performance is unspecified, so an understated benefit is unsupported."
+        ]
+      ],
+      "explanation": "September's published average includes a lower-scoring group omitted from December. The included group's own average stayed the same. A shift in composition therefore explains the higher published average without demonstrating improvement caused by instruction.",
+      "trap": "Treating a difference between differently selected groups as a gain achieved by the same trainees."
     },
     {
-      scene: "ii-inf-qual-lenby-flood",
-      text:
-        "Studying a century of records for the Ossery River, hydrologist Tomas Adeyemi found that the river overtops its banks at the town of Lenby only when two conditions coincide: more than 60 millimeters of rain falling upstream in a single day, and a high tide at the river’s mouth strong enough to slow the river’s outflow. Tides of that strength, his records show, occur on about four days in a typical month. If forecasters in Lenby learn that 75 millimeters of rain fell upstream today, they can conclude that ______.",
-      anchors: ["only when two conditions coincide", "75 millimeters of rain fell upstream"],
-      key: "Lenby could flood, but only if a strong high tide coincides with the rain",
-      wrong: [
-        ["Lenby will flood, since more than 60 millimeters of rain has fallen upstream", "Heavy upstream rain is necessary for a flood but not enough by itself; Adeyemi found that a strong high tide must coincide with it."],
-        ["Lenby cannot flood today, since tides strong enough to slow the river are rare", "Such tides come about four days a month: uncommon, not impossible, so a flood remains possible."],
-        ["Lenby is about four times as likely to flood as on a day with less rain", "The figure of four days a month describes how often strong tides occur; the text supports no comparison of this kind."],
+      "scene": "ii-inf-qualified-deln-pathogen",
+      "text": "Deln's laboratories formerly tested water only when residents reported an unusual taste. They later began testing randomly selected taps, including taps with no reported problem, and the number of detected contamination incidents rose. An audit found that detections at taps with reported taste problems remained stable, while all the additional detections came from the newly tested group. Officials argue that contamination itself must therefore have increased among taps without taste problems. The audit supports the narrower conclusion that ______.",
+      "anchors": [
+        "including taps with no reported problem",
+        "all the additional detections came from the newly tested group"
       ],
-      explanation:
-        "Adeyemi’s finding makes heavy upstream rain necessary but not sufficient: a strong high tide must coincide with it. Today’s 75 millimeters meets the first condition, so a flood is possible, but whether it happens depends on the tide.",
-      trap: "Treating heavy rain, which a flood requires, as if it were enough to cause one by itself.",
+      "key": "expanded testing accounts for where the added detections occurred, but the earlier contamination rate in that newly tested group remains unknown",
+      "wrong": [
+        [
+          "expanded testing reveals an increase confined to taps without taste problems, because detections at taps with reported problems did not increase",
+          "The earlier program did not measure the newly tested group, so its current detections cannot establish a change from its earlier contamination rate."
+        ],
+        [
+          "stable detections at taps with reported problems establish stable contamination throughout Deln, making the new detections solely an effect of expanded testing",
+          "Stability in one monitored group does not establish stability in the previously unmonitored group or throughout Deln."
+        ],
+        [
+          "the new detections indicate that taste problems have become a less reliable warning, because contamination is now being found in additional taps",
+          "The new program can discover a preexisting limitation of taste complaints; the audit does not establish that the relationship between taste and contamination changed."
+        ]
+      ],
+      "explanation": "The added detections were possible because a previously untested group entered surveillance. That establishes a change in what the program observed, not whether the group's underlying contamination increased, decreased, or stayed constant.",
+      "trap": "Turning a newly observed group into evidence of a historical change that was never measured."
     },
     {
-      scene: "ii-inf-qual-carrow-beetles",
-      text:
-        "On the island of Carrow, a ground beetle forages only at night during summer, when daytime surface temperatures exceed what it can tolerate; in the cooler months of spring and autumn, the same beetles forage by day. The owls that live on the island hunt only after dark. Ecologist Ines Galvão found that ground beetles made up nearly half of the owls’ prey in summer but almost none of it in spring and autumn. Galvão’s observations suggest that the owls’ seasonal change in diet reflects ______.",
-      anchors: ["the same beetles forage by day", "hunt only after dark"],
-      key: "the beetles’ shift to foraging by day, when the owls do not hunt, in the cooler months",
-      wrong: [
-        ["a steep decline in the number of beetles living on the island during spring and autumn", "The text explains the change through when the beetles are active and gives no evidence that their numbers fall."],
-        ["the owls’ habit of hunting beetles by day during the island’s cooler months", "The owls hunt only after dark, so they cannot be taking beetles by day in any season."],
-        ["the beetles’ inability to tolerate the island’s night temperatures in summer", "It is daytime heat that the beetles cannot tolerate in summer, which is why they forage at night then."],
+      "scene": "ii-inf-qualified-calven-tools",
+      "text": "Calven's surviving estate inventories suggest that iron tools were more common than wooden tools in prosperous households. Excavators found the same predominance of iron among objects recovered from a settlement, and a historian takes the agreement as evidence that prosperous and poorer households owned similar tool collections. Yet the inventories omit poorer households, while experimental burial at the site shows that wooden tools decay much faster than iron ones. Thus, agreement between the two records ______.",
+      "anchors": [
+        "in prosperous households",
+        "wooden tools decay much faster than iron ones"
       ],
-      explanation:
-        "The beetles forage at night only in summer and by day in spring and autumn (first sentence), and the owls hunt only after dark (second). The owls therefore meet foraging beetles mainly in summer, which accounts for the change in diet without any change in beetle numbers.",
-      trap: "Reaching for a change in how many beetles there are, when the text explains a change in when they are active.",
+      "key": "does not establish similar ownership across wealth levels, since the records omit households and objects in different ways",
+      "wrong": [
+        [
+          "indicates that poorer households preferred iron, although their purchases appear only indirectly in estate inventories",
+          "The inventories omit poorer households rather than indirectly documenting their purchases, and selective decay can make excavation finds unrepresentative."
+        ],
+        [
+          "supports equal ownership across wealth levels, because decay affects excavated objects whereas wealth affects only inclusion in the estate inventories",
+          "Different sources of selectivity do not cancel each other; neither record supplies an unbiased comparison of ownership by wealth."
+        ],
+        [
+          "shows that inventories exaggerate iron ownership among prosperous households, because excavated wooden tools survive less often than excavated iron tools",
+          "Decay affects excavated objects, not the inventories' description of prosperous households; this transfers one record's limitation to the other."
+        ]
+      ],
+      "explanation": "The inventories describe only prosperous households, and excavation overrepresents durable materials. A shared predominance of iron can therefore arise in records with different omissions; it does not supply the missing comparison between richer and poorer households.",
+      "trap": "Assuming agreement between two selective records removes each record's distinct limitation."
     },
     {
-      scene: "ii-inf-qual-harl-marsh-frog",
-      text:
-        "Surveyors checking whether a rare frog still lives in Harl Marsh use automated recorders that detect the male’s distinctive mating call. Only males call, and they do so only on nights when the air temperature stays above 12°C. Last year the recorders ran on thirty nights, all in early spring, when night temperatures in the marsh never rose above 9°C, and they detected no calls. The survey’s result therefore ______.",
-      anchors: ["only on nights when the air temperature stays above 12°C", "never rose above 9°C"],
-      key: "is no evidence that the frog is absent, since the nights were too cold for males to call",
-      wrong: [
-        ["shows that no males of the species were present in the marsh during the survey", "Males call only above 12°C, and every survey night was colder, so the recorders would have heard nothing even if males were present."],
-        ["shows that the marsh still supports females of the species but no longer supports males", "The recorders cannot detect females at all, and the males’ silence is explained by the cold, so the survey shows nothing about either sex."],
-        ["indicates that the frog is absent from the marsh in early spring but not in summer", "The survey gives no evidence of absence in any season, and it says nothing about summer."],
+      "scene": "ii-inf-qualified-orven-release",
+      "text": "An experimental capsule opens when its outer film dissolves and its internal latch releases. Either part can keep a capsule closed. In separate tests, a liquid dissolved the film but left the latch engaged, while mild heating released the latch but left the film intact. When both treatments were applied, capsules opened. An engineer concludes that adding more of either treatment alone would produce the same result. The reported tests instead establish that ______.",
+      "anchors": [
+        "Either part can keep a capsule closed",
+        "When both treatments were applied, capsules opened"
       ],
-      explanation:
-        "Only males call, and only above 12°C (second sentence); every survey night stayed at or below 9°C (third). The recorders would have heard nothing whether or not frogs were present, so the silence is no evidence either way.",
-      trap: "Reading silence on nights too cold for calling as proof that no frogs were there.",
+      "key": "the tested treatments removed different barriers to opening, without showing that intensifying either one could remove the other barrier",
+      "wrong": [
+        [
+          "the liquid alone opened the capsules, with heating needed only to demonstrate release of the internal latch",
+          "Liquid alone left the latch engaged, and either part can keep a capsule closed; heating was part of successful opening, not merely a measurement."
+        ],
+        [
+          "heating made the liquid dissolve the film, since film dissolution and latch release occurred together only when both treatments were applied",
+          "The liquid dissolved the film even in its separate test. The combined outcome does not establish that heating enabled this effect."
+        ],
+        [
+          "neither treatment had an effect on its own, but their interaction created a new process that opened the capsules under combined treatment",
+          "Each treatment had its own observed effect, removing a different barrier. Opening together does not erase those separate effects or establish a new process."
+        ]
+      ],
+      "explanation": "Opening requires removal of two barriers. The liquid and heat each removed one under the tested conditions, and the combination removed both. No test shows that a larger amount of one treatment can substitute for the other's effect.",
+      "trap": "Treating two complementary effects as evidence that a stronger dose of one can replace the other."
     },
     {
-      scene: "ii-inf-qual-ormsby-coin",
-      text:
-        "Beneath the stone floor of a medieval farmhouse at Ormsby, archaeologists found a coin from a mint that began operating in 1340. Because the stones lay undisturbed on top of the coin, the coin must have been dropped before the floor was laid. Historian Wen Liao notes that coins of this kind stayed in circulation for up to a century after they were struck, and that the mint went on striking them for several decades. Taken together, these points indicate that the floor was laid ______.",
-      anchors: ["began operating in 1340", "stayed in circulation for up to a century"],
-      key: "no earlier than 1340, though possibly many decades after that year",
-      wrong: [
-        ["in or shortly after 1340, the year the mint began striking its coins", "The coin gives only the earliest possible date; such coins circulated for up to a century, so it could have been dropped long after 1340."],
-        ["before 1340, since the coin was found lying beneath the floor’s stones", "The coin lies beneath the floor, so it was dropped first, and a coin struck in 1340 or later cannot have been dropped before 1340."],
-        ["no later than about 1440, when coins struck in 1340 left circulation", "The mint struck these coins for decades after 1340, and each could circulate for a century, so the text sets no such upper limit."],
+      "scene": "ii-inf-qualified-rendel-dates",
+      "text": "A Rendel warehouse stamped each crate with the harvest year of its contents, not the year of shipment. Grain from several harvests was often stored together, and shipping books listed crates under the year they left the warehouse. A sealed shipment recorded in the book for 1718 contains crates stamped 1715 and 1717. A historian dates every journey described in a letter found inside the shipment to 1717, reasoning that the latest stamp dates the letter. The evidence establishes only that the letter ______.",
+      "anchors": [
+        "the harvest year of its contents, not the year of shipment",
+        "recorded in the book for 1718"
       ],
-      explanation:
-        "The coin was dropped before the floor was laid (second sentence) and cannot have been struck before 1340 (first), so the floor is no earlier than 1340. Because such coins were struck for decades and circulated for up to a century (third), the floor could be much later.",
-      trap: "Treating the coin’s earliest possible date as the date the floor was laid.",
+      "key": "was enclosed by the shipment's departure in 1718, while the crates' harvest dates do not date the journeys it describes",
+      "wrong": [
+        [
+          "was written during the 1717 harvest, while the older crates show that its author described journeys undertaken at least two years earlier",
+          "Harvest stamps date grain, not letter composition or travel. The older crate supplies no date for the author's journeys."
+        ],
+        [
+          "describes journeys undertaken between 1715 and 1717, while the shipping record shows that the author sent the letter the following year",
+          "The crate dates give no travel interval, and enclosure does not establish that the author personally sent the shipment."
+        ],
+        [
+          "was written no earlier than 1717, since the latest harvest stamp supplies the earliest possible date for every object enclosed in the shipment",
+          "The harvest stamp dates grain rather than every object shipped beside it. An older letter could have been enclosed with the more recent harvest."
+        ]
+      ],
+      "explanation": "The stamped years identify harvests, whereas the shipping book dates departure. A letter inside the sealed shipment was enclosed by that departure, but neither harvest year dates the letter's described journeys. Dating a container's contents is not necessarily dating every event mentioned by another object inside it.",
+      "trap": "Transferring a date from an object's contents to the events described in a different object found beside it."
     },
     {
-      scene: "ii-inf-qual-brennau-fires",
-      text:
-        "In the city of Brennau, about 80 percent of homes are heated with gas and 20 percent with oil. Fire inspector Sara Lind reviewed the 500 home fires in Brennau over the past decade that were traced to heating equipment and found that 250 began in gas-heated homes and 250 in oil-heated homes. Lind’s figures indicate that, over the decade, any single oil-heated home in Brennau was ______.",
-      anchors: ["80 percent of homes are heated with gas", "250 began in gas-heated homes"],
-      key: "about four times as likely to have a heating fire as a gas-heated home was",
-      wrong: [
-        ["just as likely to have a heating fire as a gas-heated home, at 250 fires each", "The fires were split evenly, but gas-heated homes outnumber oil-heated ones four to one, so the chance for a single home is not equal."],
-        ["less likely to have a heating fire, since gas heats most of the city’s homes", "Gas’s 250 fires are spread over four times as many homes, which makes a single gas-heated home less likely, not more likely, to have one."],
-        ["about twice as likely to have a heating fire, since oil heats a fifth of homes", "Oil’s 250 fires fall on a fifth of the homes and gas’s 250 on four-fifths, a ratio of four to one, not two to one."],
+      "scene": "ii-inf-qualified-sarn-translation",
+      "text": "A scholar argues that poet Edrin first encountered the Sarn epic through a translation published in 1880. Edrin's early notebooks paraphrase an episode that translation omits, while his 1886 poem reproduces an unusual mistranslation found only in that edition. A newly discovered library list shows that Edrin could read a different translation containing the omitted episode before 1880. These findings suggest that ______.",
+      "anchors": [
+        "an episode that translation omits",
+        "an unusual mistranslation found only in that edition"
       ],
-      explanation:
-        "Equal numbers of fires, 250 each, came from very unequal numbers of homes, 20 percent versus 80 percent. Oil-heated homes had as many fires among a quarter as many homes, so their rate per home was about four times that of gas-heated homes.",
-      trap: "Comparing the raw counts of fires without accounting for how many homes use each fuel.",
+      "key": "the 1880 edition could explain the later poem's distinctive wording without having been Edrin's first route to the epic",
+      "wrong": [
+        [
+          "the early translation explains the notebook episode and the poem's mistranslation, making the 1880 edition unnecessary",
+          "The mistranslation occurs only in the 1880 edition; access to an earlier translation does not explain that distinctive later feature."
+        ],
+        [
+          "the notebooks establish Edrin's knowledge of the epic's original language, although the 1880 translation also influenced his later poem",
+          "A different translation containing the episode was available; knowledge of an omitted episode does not require reading the original language."
+        ],
+        [
+          "the later poem establishes that the 1880 edition introduced Edrin to the epic, while the notebooks reflect discoveries made afterward",
+          "Evidence of influence on a later poem does not establish first exposure, especially when early notebooks contain material available through another translation."
+        ]
+      ],
+      "explanation": "The distinctive mistranslation supports influence from the 1880 edition on the 1886 poem. But the notebook episode, omitted from that edition and available in an earlier translation, supports an independent route of access. A source used later need not be the source used first.",
+      "trap": "Treating a distinctive sign of later influence as proof of first exposure."
     },
     {
-      scene: "ii-inf-qual-tallis-irrigation",
-      text:
-        "A survey of farms in the Tallis Valley found that farms using a new drip irrigation system produced higher yields than farms without it. Agricultural economist Petra Holm points out, however, that almost every farm that adopted the system lies on the valley’s river terraces, whose soils are deeper and richer than those of the hillside farms. Comparing terrace farms with one another, Holm found no difference in yield between those that used the system and those that did not. Holm’s findings suggest that the valley-wide difference in yields ______.",
-      anchors: ["lies on the valley’s river terraces", "found no difference in yield"],
-      key: "reflects where the adopting farms are located more than any effect of the system",
-      wrong: [
-        ["shows that the system raises yields on hillside farms though not on terrace farms", "Almost no hillside farms used the system, so the survey offers no evidence about its effect there."],
-        ["would disappear if every hillside farm in the valley adopted the system", "The evidence suggests the system itself adds little, so hillside farms adopting it would not close a gap that comes from their poorer soil."],
-        ["shows that the system lowers yields on the valley’s deeper, richer soils", "Holm found no difference among terrace farms, which is not the same as finding lower yields with the system."],
+      "scene": "ii-inf-qualified-haven-responses",
+      "text": "Haven's transit office surveyed passengers who rode buses after a fare reduction. Most respondents said they would have made the same trip by bus at the old fare. The office concludes that the reduction attracted few new riders. A researcher notes that the survey counted trips rather than individual passengers: a commuter could respond on many days, whereas an occasional passenger could respond only on a day they traveled. Consequently, the reported majority ______.",
+      "anchors": [
+        "made the same trip by bus at the old fare",
+        "a commuter could respond on many days"
       ],
-      explanation:
-        "The farms using the system are almost all terrace farms with better soil (second sentence), and among terrace farms the system made no difference (third). The valley-wide gap is therefore better explained by location and soil than by the irrigation system.",
-      trap: "Crediting the irrigation system with a difference that the farms’ locations explain.",
+      "key": "describes the sampled trips more directly than the mix of individual riders, leaving the share of newly attracted people unresolved",
+      "wrong": [
+        [
+          "describes individual riders accurately because every respondent was a passenger, although it leaves the number of trips made by new riders unresolved",
+          "The unit can be a passenger's repeated trip; treating each response as a distinct person reverses which quantity the survey most directly represents."
+        ],
+        [
+          "shows that occasional passengers were unaffected by the fare reduction, since the majority would have used buses even at the old fare",
+          "The aggregate majority may disproportionately reflect frequent riders; it does not isolate the counterfactual choices of occasional passengers."
+        ],
+        [
+          "shows that the reduction attracted few additional bus trips, and therefore that it attracted few additional individual passengers to the service",
+          "Even if relatively few trips were newly induced, those trips could belong to many occasional new passengers; trip share does not determine person share."
+        ]
+      ],
+      "explanation": "Frequent riders have more opportunities to contribute a response. A majority of trip-level responses therefore need not correspond to a majority of distinct passengers. The survey does not resolve how many people, rather than trips, the lower fare attracted.",
+      "trap": "Changing the unit from repeated trips to distinct people while retaining the same proportion."
     },
     {
-      scene: "ii-inf-qual-arlen-testing",
-      text:
-        "Health officials in the province of Arlen report that recorded cases of a lung infection doubled between 2010 and 2020. In 2014, Arlen’s hospitals began testing every patient with breathing difficulties for the infection; before then, only patients with severe symptoms had been tested. Epidemiologist Omar Reyes found that the number of severe cases recorded each year, which were tested throughout the decade, stayed roughly constant. Reyes’s findings suggest that the doubling in recorded cases ______.",
-      anchors: ["began testing every patient with breathing difficulties", "stayed roughly constant"],
-      key: "largely reflects the counting of milder cases that the earlier testing missed",
-      wrong: [
-        ["shows that the infection became about twice as common in Arlen over the decade", "Recorded cases doubled partly because far more patients were tested after 2014; with severe cases steady, the records do not show that infections doubled."],
-        ["shows that the infection itself became milder after hospitals changed their testing", "Milder cases make up more of the record because they began to be counted, not because the infection changed."],
-        ["was caused by a rise in severe cases that followed the change in testing", "Reyes found that severe cases stayed roughly constant, so they cannot account for the doubling."],
+      "scene": "ii-inf-qualified-veren-streams",
+      "text": "In tests on Veren stream water, a filter removed sediment and bacteria without changing dissolved nutrients. A supplement added nitrogen and phosphorus without changing sediment or bacteria. Either treatment alone left algae growth unchanged; together they increased it. Researchers attributed the increase to removal of bacteria that competed for phosphorus. Follow-up tanks kept the bacteria but allowed sediment to settle. Adding nitrogen alone then increased growth; adding phosphorus alone did not. Other conditions were held constant, and some phosphorus remained in every tank. Taken together, the results indicate that ______.",
+      "anchors": [
+        "a filter removed sediment and bacteria",
+        "Follow-up tanks kept the bacteria",
+        "some phosphorus remained in every tank"
       ],
-      explanation:
-        "Testing widened in 2014 from severe cases only to every patient with breathing difficulties (second sentence), while severe cases, tested all along, held steady (third). The added cases are therefore mostly milder ones that the old testing never counted.",
-      trap: "Reading a rise in recorded cases as a rise in actual cases, despite the change in who was tested.",
+      "key": "growth can increase without removing bacteria or adding phosphorus, but these tests do not establish that phosphorus is unnecessary for growth",
+      "wrong": [
+        [
+          "removing bacteria permits algae to use phosphorus, since the original combined treatment increased growth while adding phosphorus by itself did not",
+          "The follow-up increase occurs with bacteria still present and no added phosphorus. The original combined treatment alone cannot isolate bacterial removal from sediment removal."
+        ],
+        [
+          "nitrogen explains every growth difference, since it increased growth in the follow-up and was also present in the original combined treatment",
+          "The original supplement included nitrogen but did not increase growth alone. The follow-up also changed sediment conditions, so nitrogen by itself is not shown to explain every difference."
+        ],
+        [
+          "phosphorus is unnecessary for growth, since adding nitrogen alone increased growth after sediment settled and adding phosphorus alone did not",
+          "All tanks retained some phosphorus. No added phosphorus being needed in this comparison does not establish that algae need none at all."
+        ]
+      ],
+      "explanation": "The follow-up produces increased growth with bacteria present and no added phosphorus, so neither bacterial removal nor phosphorus addition is necessary for that increase. However, every tank contains some phosphorus; the experiment cannot establish that the nutrient itself is dispensable. The nitrogen supplement also failed in the original sediment-filled water, so its effect must be interpreted within the tested conditions.",
+      "trap": "Conflating the absence of an added nutrient with the absence of that nutrient, or assigning a bundled treatment result to one unisolated change."
     },
     {
-      scene: "ii-inf-qual-dorran-factory",
-      text:
-        "Between 1900 and 1950, the share of Dorran’s workers who were employed in factories fell from 40 percent to 25 percent. Over the same period, historian Ana Kellett notes, the city’s total workforce tripled, largely because Dorran absorbed several neighboring towns. Kellett’s figures indicate that between 1900 and 1950, the number of factory workers in Dorran ______.",
-      anchors: ["fell from 40 percent to 25 percent", "total workforce tripled"],
-      key: "increased, even though factory work made up a smaller share of all jobs",
-      wrong: [
-        ["fell by more than a third, since their share dropped from 40 to 25 percent", "Those figures are shares of a workforce that tripled; 25 percent of the larger workforce is more workers than 40 percent of the original one."],
-        ["tripled, keeping pace with the growth of the city’s workforce as a whole", "Factory workers fell as a share of the workforce, so their number grew more slowly than the workforce did."],
-        ["stayed about the same while other kinds of employment grew rapidly", "A quarter of three times the workforce is nearly double 40 percent of the original workforce, so the number did not stay the same."],
+      "scene": "ii-inf-qualified-delmar-repairs",
+      "text": "Delmar's railway tried a new inspection on its oldest locomotives and the old inspection on newer ones. The new procedure reported more total faults, mostly cracks. Earlier repair records show that older engines had more cracks but similar numbers of leaks. Engineers then used both procedures on the same age-balanced sample, checking each finding by dismantling the engines. The new procedure detected more of the verified cracks; the old one detected more of the verified leaks. No totals comparing all verified faults were reported. The manager nevertheless cites the original total as evidence that the new procedure should replace the old one entirely. Together, the comparisons ______.",
+      "anchors": [
+        "older engines had more cracks",
+        "the old one detected more of the verified leaks",
+        "No totals comparing all verified faults were reported"
       ],
-      explanation:
-        "In 1900 factory workers were 40 percent of the workforce; in 1950 they were 25 percent of a workforce three times as large, or 75 percent of the 1900 total. Their number nearly doubled even as their share fell.",
-      trap: "Treating a falling share as a falling number when the whole it is a share of has grown.",
+      "key": "support different strengths by fault type, while neither the original survey nor the reported matched results establish overall superiority",
+      "wrong": [
+        [
+          "support replacing the old procedure, since the new one found more cracks in both comparisons and also found more total faults in the original survey",
+          "The original total is confounded with engine condition. The matched comparison favors different methods for different faults and supplies no all-fault total."
+        ],
+        [
+          "show that engine age caused the entire original difference, since the methods' opposing advantages in the matched test cancel each other",
+          "Advantages for different fault types do not necessarily cancel: their sizes and the proportions of fault types are unreported. Age is not established as the sole cause."
+        ],
+        [
+          "show that the new procedure is more accurate for cracks and less accurate for leaks, so the total number of faults it detects must equal the old one's",
+          "Different relative strengths do not establish equal totals. That would require the numbers of each fault type detected by each method, not just their rankings."
+        ]
+      ],
+      "explanation": "The original total mixes inspection method with a preexisting difference in engine condition. The matched, independently verified comparison removes that imbalance and shows an advantage for cracks under the new method but an advantage for leaks under the old one. Those opposing strengths do not identify the larger overall total or prove that the original difference was entirely due to engine age.",
+      "trap": "Using an uncontrolled overall total to override a controlled comparison's mixed results, or assuming opposing advantages cancel numerically."
     },
     {
-      scene: "ii-inf-qual-westmere-furniture",
-      text:
-        "The furniture that survives from eighteenth-century homes in the county of Westmere is made overwhelmingly of oak and walnut. Probate inventories from the period, which list the contents of each household at its owner’s death, record far more pine furniture than oak or walnut. Historian Clara Ives explains that pine, being cheap and soft, was seldom repaired when it broke and was often burned as firewood. Ives’s explanation implies that the surviving furniture ______.",
-      anchors: ["record far more pine furniture", "often burned as firewood"],
-      key: "overrepresents the costlier woods relative to what households owned",
-      wrong: [
-        ["shows that Westmere households generally preferred oak and walnut to pine", "The inventories show that households owned more pine; the surviving pieces reflect what lasted, not what people preferred."],
-        ["proves that the probate inventories misrecorded what the furniture was made of", "Ives’s explanation reconciles the inventories with the surviving pieces; it gives no reason to doubt the inventories."],
-        ["was mostly made of pine that was later covered with oak or walnut veneers", "Nothing in the text mentions veneers; this invents a way to reconcile the evidence."],
+      "scene": "ii-inf-qualified-eskar-seals",
+      "text": "Eskar's archive used red seals for documents requiring repayment and blue seals for gifts. A later curator replaced damaged red seals with plain wax but did not replace damaged blue seals. Among documents whose wording is now illegible, intact colored seals are mostly blue; many other documents have plain wax. A cataloguer infers that gifts predominated among the original documents. The curator's practice means that ______.",
+      "anchors": [
+        "replaced damaged red seals with plain wax",
+        "intact colored seals are mostly blue"
       ],
-      explanation:
-        "The inventories show that pine furniture was the most common (second sentence), but pine was seldom repaired and often burned (third), so little of it survived. The surviving pieces therefore overstate how much oak and walnut households owned.",
-      trap: "Treating the pieces that happened to survive as a fair sample of what households owned.",
+      "key": "the balance among surviving colored seals need not match the original balance of document types, even if every visible color is identified correctly",
+      "wrong": [
+        [
+          "the balance among surviving colored seals understates the original prevalence of gifts, because damaged blue seals were not replaced with another colored seal",
+          "Both damaged blue seals and replaced red seals leave the colored-seal count; without their original numbers and damage rates, the direction and size of bias are not established."
+        ],
+        [
+          "plain wax identifies former repayment documents and therefore suffices to reconstruct the original gift-to-repayment ratio",
+          "Even if plain replacements restore the count of repayment documents, damaged blue seals were not replaced. Their missing count prevents reconstructing the original ratio."
+        ],
+        [
+          "the visible blue majority establishes that gifts originally predominated, although plain wax obscures which remaining documents required repayment",
+          "A visible-color majority excludes red documents moved into the plain-wax category and blue documents whose seals were lost; it does not establish the original proportion."
+        ]
+      ],
+      "explanation": "Document type affected how damaged seals were treated, and the colored-seal count excludes documents no longer carrying color. Correctly identifying remaining colors therefore does not reconstruct the original mix. The record does not provide enough information to calculate the direction or amount of the resulting imbalance.",
+      "trap": "Confusing accurate classification of surviving evidence with representative survival of the original evidence."
     },
     {
-      scene: "ii-inf-qual-varnia-citizenship",
-      text:
-        "Under the Republic of Varnia’s citizenship law of 1921, a child born abroad became a Varnian citizen at birth if either parent was a Varnian citizen, unless that parent had lived outside Varnia for more than ten continuous years before the birth. Legal historian Petr Halas notes that the poet Liesl Orvanek was born abroad in 1930 to a Varnian father and a mother who was not Varnian, and that her father had left Varnia in 1918 and did not return until 1946. Under the 1921 law, then, Orvanek ______.",
-      anchors: ["unless that parent had lived outside Varnia for more than ten continuous years", "had left Varnia in 1918"],
-      key: "did not become a Varnian citizen at birth, as her father had been abroad too long",
-      wrong: [
-        ["became a Varnian citizen at birth, since her father was a Varnian citizen", "The law’s exception applies: her father had lived abroad for twelve years before her birth, more than the ten allowed."],
-        ["became a Varnian citizen at birth through her mother rather than through her father", "Her mother was not a Varnian citizen, so she could pass on no Varnian citizenship."],
-        ["lost her Varnian citizenship when her father returned to Varnia in 1946", "She never held Varnian citizenship under the 1921 law, and the law says nothing about losing it when a parent returns."],
+      "scene": "ii-inf-qualified-norven-ferry",
+      "text": "Norven's ferry grants priority boarding to residents holding annual passes; visitors may buy single-trip tickets, but residents may buy them too. An observer counted many single-trip tickets on a morning when few annual-pass holders boarded and concluded that visitors made up most passengers. Ticket records show, however, that annual passes cover only the western dock, which was closed that morning; departures used the eastern dock, where everyone needed a single-trip ticket. Thus the morning's ticket pattern ______.",
+      "anchors": [
+        "residents may buy them too",
+        "where everyone needed a single-trip ticket"
       ],
-      explanation:
-        "Orvanek’s father was Varnian, which would ordinarily make her a citizen at birth, but he had lived abroad from 1918 until after her birth in 1930, twelve years, which triggers the law’s exception. Her mother was not Varnian, so no parent could pass on citizenship.",
-      trap: "Applying the law’s main rule and overlooking its exception for parents long abroad.",
-    },
+      "key": "cannot establish the passenger mix, because residents and visitors were required to use the same ticket type at the operating dock",
+      "wrong": [
+        [
+          "establishes that visitors predominated, since annual-pass holders retained priority despite using a dock outside their passes’ coverage",
+          "Passes did not cover the operating dock and everyone needed a single-trip ticket; the passage gives no usable type-based distinction between resident and visitor."
+        ],
+        [
+          "establishes that residents predominated, because the dock closure required annual-pass holders to purchase the single-trip tickets counted by the observer",
+          "Residents' possible presence explains why single-trip tickets need not mean visitors, but it does not establish how many residents actually traveled."
+        ],
+        [
+          "identifies passengers without annual passes but cannot distinguish resident ticket buyers from visitors, because both groups could buy single-trip tickets",
+          "At the eastern dock even annual-pass holders needed single-trip tickets, so that ticket type does not identify passengers lacking passes either."
+        ]
+      ],
+      "explanation": "Even normally, a single-trip ticket is not exclusive to visitors. The closure removes the remaining pass-based distinction because everyone at the eastern dock needs that ticket type. The observed pattern therefore identifies neither residence nor pass ownership and cannot establish a passenger majority.",
+      "trap": "Using a normally imperfect category marker after the context has removed its distinguishing power altogether."
+    }
   ];
 
   const qualifiedConclusion = {
@@ -1787,7 +1950,7 @@
     title: "Completion whose conclusion holds only within a condition stated earlier",
     recognize:
       "Before choosing, find the earlier statement that limits the conclusion: what the measure counts, what is necessary but not sufficient, what a date or a silence can and cannot show.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["too-broad", "reversed-condition", "must-vs-could"],
     build(t) {
       const topic = t.pick(QUALIFIED_CONCLUSION_TOPICS);
@@ -1815,6 +1978,600 @@
     },
   };
 
+  // Original experiments require tracing an altered sequence through interacting conditions.
+  const COUNTERFACTUAL_TOPICS = [
+    {
+      "scene": "ii-inf-counterfactual-valen-membrane",
+      "text": "Researchers testing a Valen membrane found that it admitted a colorless dye while warm but trapped dye already inside when cooled. Rinsing a cooled membrane removed dye from its surface without removing the trapped dye. A separate experiment showed that illumination turned the dye blue at either temperature; darkness left it colorless. In the usual procedure, researchers warmed a membrane in dye under illumination and then cooled and rinsed it, leaving a blue interior. They now propose keeping the membrane dark during warming, cooling, and rinsing, and illuminating it only afterward. The amount of dye and the duration of each stage would remain unchanged.",
+      "anchors": [
+        "trapped dye already inside when cooled",
+        "illuminating it only afterward"
+      ],
+      "stem": "Which result would the findings most strongly lead the researchers to predict for the revised procedure?",
+      "key": "The interior would turn blue under later illumination, despite dye having been rinsed from the cool membrane's surrounding surface.",
+      "wrong": [
+        [
+          "The interior would remain colorless, because cooling before illumination would prevent the trapped dye from reacting.",
+          "Cooling blocks movement across the membrane, not the dye's light response, which occurs at either temperature."
+        ],
+        [
+          "The interior would remain colorless, because the rinse would remove dye that had entered without first turning blue.",
+          "The rinse removes surface dye but not trapped interior dye; the passage does not make retention depend on color."
+        ],
+        [
+          "The surface would turn blue after the rinse, because the membrane would expel its dye when illuminated while cool.",
+          "Illumination changes color, not permeability. Cooling traps interior dye, and the rinse has removed surface dye."
+        ]
+      ],
+      "explanation": "Dye can enter during the warm stage without illumination. Cooling then retains it through the rinse. Because the chemical color change responds to light at either temperature, the later illumination still turns the interior blue.",
+      "trap": "Applying the temperature condition for entering the membrane to the separate reaction of dye already inside it."
+    },
+    {
+      "scene": "ii-inf-counterfactual-leska-learning",
+      "text": "In experiments with Leska larvae, scientists paired a particular scent with food. Larvae trained while warm later approached that scent without food. Cool conditions prevented larvae from forming this association, but did not erase an association acquired earlier. Another test showed that larvae could detect the scent while cool, although their movement toward any detected scent was temporarily suppressed. Researchers will compare larvae trained while warm and then cooled with larvae given the same training only while cool. Both groups will subsequently be returned to warmth and tested with the scent but no food, before either receives further training. Their exposure to the scent and food will otherwise be identical.",
+      "anchors": [
+        "did not erase an association acquired earlier",
+        "before either receives further training"
+      ],
+      "stem": "Which difference between the groups would the findings most strongly predict during the final test?",
+      "key": "The first group would approach the scent more readily, since warming restores movement but does not supply the second group's missing association.",
+      "wrong": [
+        [
+          "Both groups would approach the scent similarly, since returning to warmth would restore both movement and learning from the earlier training.",
+          "Warmth restores the ability to express an existing association; it cannot retroactively form the association that cool training did not establish."
+        ],
+        [
+          "The second group would approach more readily, since detecting the scent while movement was suppressed would strengthen the food association.",
+          "Detection during cool training does not establish the association; the passage explicitly separates sensing from learning and movement."
+        ],
+        [
+          "Neither group would approach the scent, since cooling after food exposure would remove the association even once ordinary movement returned.",
+          "Cooling did not erase prior learning in the warm-trained group; its movement can resume without new training."
+        ]
+      ],
+      "explanation": "The first group acquires an association before cooling and retains it while movement is suppressed. The second can sense the training cue but does not learn its relation to food. Rewarming removes the movement restriction in both groups while preserving this difference in acquired learning.",
+      "trap": "Treating recovery of the ability to respond as recovery of learning that never occurred."
+    },
+    {
+      "scene": "ii-inf-counterfactual-marel-leaves",
+      "text": "In a study of Marel shrubs, drying roots released a signal that caused leaf pores to narrow. Watering stopped further release of the signal, but pores that had already narrowed remained narrow until the leaves cooled at night. The roots' signal required several hours to reach the leaves, allowing researchers to intercept it with a removable filter. In a planned trial, the filter will be installed only after the pores have narrowed. Researchers will then water the roots while keeping the leaves at their daytime temperature overnight. A comparison group will receive the same treatment but experience the usual nighttime cooling. Both groups will begin the trial with equally narrow pores.",
+      "anchors": [
+        "remained narrow until the leaves cooled at night",
+        "keeping the leaves at their daytime temperature overnight"
+      ],
+      "stem": "Which result would best match the findings during the following morning?",
+      "key": "Pores would remain narrower in the warmed group, despite both groups receiving water and having further signals blocked.",
+      "wrong": [
+        [
+          "Both groups' pores would reopen, because watering would remove the original cause before nighttime conditions mattered.",
+          "Watering stops new signals but does not reverse narrowing that has already occurred; nighttime cooling still differs between the groups."
+        ],
+        [
+          "Pores would remain narrow in both groups, because filtering the signal would also prevent cooled leaves from reversing the earlier response.",
+          "The signal induces narrowing; cooling reverses it without requiring that signal. Blocking new signal delivery does not block cooling's effect."
+        ],
+        [
+          "Pores would reopen earlier in the warmed group, because keeping the leaves warm would compensate for the interrupted signal from the roots.",
+          "Warmth does not replace the reversal supplied by cooling. The groups' pores have already narrowed before the filter is installed."
+        ]
+      ],
+      "explanation": "The root signal initiates narrowing, while cooling reverses established narrowing. Interception and watering occur after initiation and are shared by both groups. Only the comparison group receives the reversing condition, so the warmed group retains narrower pores.",
+      "trap": "Assuming removal of an initiating cause immediately reverses a response that requires a separate resetting condition."
+    },
+    {
+      "scene": "ii-inf-counterfactual-teren-filter",
+      "text": "A Teren recorder learns separate sound components that recur steadily during calibration and suppresses them afterward. Irregular sounds are not learned, and recording does not update the filter. A fresh calibration replaces the stored list, even if conducted in silence. Researchers initially calibrate two devices beside a fan while playing bird calls consisting of regularly repeated whistles and irregular clicks. Before the final recording, they recalibrate only the first device in silence. The fan is then switched off, and both devices record the same whistle-and-click calls without further calibration. The researchers have verified that removing a learned component does not remove other components occurring alongside it.",
+      "anchors": [
+        "Irregular sounds are not learned",
+        "recalibrate only the first device in silence",
+        "removing a learned component does not remove other components"
+      ],
+      "stem": "Which difference between the final recordings would follow most reasonably from these findings?",
+      "key": "The first would preserve both whistles and clicks; the second would suppress whistles while preserving the irregular clicks.",
+      "wrong": [
+        [
+          "The first would suppress whistles while preserving clicks; the second would preserve both components because the fan had stopped.",
+          "Quiet recalibration clears the first filter; stopping the fan does not clear the second. This reverses which recorder retains the learned whistle filter."
+        ],
+        [
+          "Both would suppress whistles but preserve clicks, since calibration in silence would leave the first filter intact.",
+          "Recalibration replaces the stored list even in silence; it does not retain old sounds just because no new sound is learned."
+        ],
+        [
+          "The first would preserve both components; the second would suppress both because the whistles and clicks had occurred together during calibration.",
+          "The recorder learns only regularly recurring components and does not remove accompanying components automatically. Irregular clicks are not learned with the whistles."
+        ]
+      ],
+      "explanation": "Initial calibration teaches both recorders the fan and regular whistle, but not the irregular clicks. Quiet recalibration clears only the first recorder’s learned list. Switching off the fan clears neither stored rule, and suppressing whistles does not suppress clicks, so the final recordings differ only in their retention of the whistles.",
+      "trap": "Treating a recording as an indivisible sound, or confusing silence during recalibration with silence after calibration."
+    },
+    {
+      "scene": "ii-inf-counterfactual-elsin-enzyme",
+      "text": "In an Elsin fermentation study, microorganisms produced an enzyme only while oxygen was available. Once released into the liquid, the enzyme remained active without either oxygen or living microorganisms. Acid temporarily prevented this enzyme from breaking down a starch, but neutralizing the liquid restored that activity. Researchers first allowed microorganisms to grow with oxygen, then acidified the liquid and filtered out all microorganisms; the dissolved enzyme passed through the filter. They plan to add starch after filtration, seal the container against oxygen, and then neutralize the liquid. A colleague predicts that starch breakdown cannot begin unless the researchers add living microorganisms again or reopen the container to air.",
+      "anchors": [
+        "remained active without either oxygen or living microorganisms",
+        "then neutralize the liquid"
+      ],
+      "stem": "Which prediction is best supported by the study's findings?",
+      "key": "Starch breakdown would begin after neutralization, because enzyme made during the oxygenated stage remains in the filtered liquid.",
+      "wrong": [
+        [
+          "Starch breakdown would await new microorganisms, because filtering out the original cells would also remove their earlier contribution.",
+          "The enzyme has already been released, passes through the filter, and remains active without living microorganisms."
+        ],
+        [
+          "Starch breakdown would await oxygen, because the enzyme's earlier production in air shows that its later action also requires air.",
+          "Oxygen is needed for enzyme production, not for the activity of enzyme already present in the liquid."
+        ],
+        [
+          "Starch breakdown would begin before neutralization, because removing living microorganisms would remove the source of the acid's inhibition.",
+          "Acid directly suppresses the enzyme's activity; filtering out microorganisms does not neutralize that acid."
+        ]
+      ],
+      "explanation": "The enzyme was produced before oxygen and microorganisms were removed, and it survives filtration in the liquid. Acid is the remaining reversible restriction on its action. Neutralizing the liquid therefore permits starch breakdown without restarting enzyme production.",
+      "trap": "Carrying a requirement for producing an agent forward as though it were also required for that agent's later action."
+    },
+    {
+      "scene": "ii-inf-counterfactual-nelra-route",
+      "text": "A laboratory's model delivery vehicle stores a route after completing a trip at a station that transmits a confirmation signal. Temporary roadside arrows can redirect it during a trip, but without confirmation it retains its previously stored route for the next departure. Researchers established that confirmation at the destination records the route actually traveled, including any detours, rather than the route originally planned. Two vehicles that store the same original route will follow identical temporary arrows onto a detour. Both will reach the destination, but its confirmation transmitter will operate for only the second vehicle. The arrows will then be removed before the vehicles make another departure from the same starting point.",
+      "anchors": [
+        "without confirmation it retains its previously stored route",
+        "transmitter will operate for only the second vehicle"
+      ],
+      "stem": "Which prediction about the vehicles' next trips follows most reasonably from these findings?",
+      "key": "On departure, only the second vehicle would follow the detour; the first would use the route stored before either saw the arrows.",
+      "wrong": [
+        [
+          "Both would use the detour, because following the temporary arrows would replace their stored routes before confirmation at the destination.",
+          "Following a route and storing it are separate: confirmation is required for the redirected trip to replace the first vehicle's old route."
+        ],
+        [
+          "Both would use the original route, because removal of the arrows would erase the detour even from a confirmed trip's stored record.",
+          "Removing arrows removes live directions, not a stored route. The second vehicle receives confirmation for the detour actually traveled."
+        ],
+        [
+          "The first would use the detour and the second the original route, since confirmation would restore the route planned before departure.",
+          "Confirmation stores the route actually traveled, including detours, rather than restoring the original plan; this also reverses the first vehicle's unchanged memory."
+        ]
+      ],
+      "explanation": "Both vehicles travel the detour, but only the second receives the signal that stores that experience. The first retains its original route. Removing the arrows leaves each to follow its own stored route, so their next trips diverge despite identical previous travel.",
+      "trap": "Treating experience as automatically stored, or treating confirmation as a return to an original plan rather than a record of what occurred."
+    },
+    {
+      "scene": "ii-inf-counterfactual-soven-coating",
+      "text": "A liquid coating absorbs colored particles. Ultraviolet exposure hardens exposed coating, fixing its particles. A cleaning solution removes particles only where the coating is still liquid, and does not prevent later hardening. Researchers coat two tiles and add particles uniformly. They cover half the first tile with a sheet that blocks ultraviolet light but lets cleaning solution pass. Both tiles receive enough ultraviolet exposure to harden any unshielded coating, then are cleaned. The sheet is removed, and both tiles receive a second exposure sufficient to harden all remaining liquid. No new particles are added, and each cleaning reaches every part of both tiles.",
+      "anchors": [
+        "lets cleaning solution pass",
+        "then are cleaned",
+        "a second exposure sufficient to harden all remaining liquid"
+      ],
+      "stem": "Which difference between the finished tiles would be most consistent with the findings?",
+      "key": "Both would harden throughout; only the initially unshielded half of the first tile would retain color, while the second tile would remain uniformly colored.",
+      "wrong": [
+        [
+          "Both would harden and remain uniformly colored, because the second exposure would fix the same particles in every part of both tiles.",
+          "The cleaning removed particles from the first tile’s still-liquid shielded half. Later exposure cannot fix particles that are no longer there."
+        ],
+        [
+          "The first would remain liquid and colorless under its former shield, while its other half and all of the second tile would harden with color retained.",
+          "The shielded half loses its particles during cleaning, but the second exposure hardens that half after the shield is removed."
+        ],
+        [
+          "Both would harden throughout; only the initially shielded half of the first tile would retain color, because its sheet protected particles during cleaning.",
+          "The sheet blocks light but admits cleaning solution. It leaves its half unfixed during cleaning rather than protecting that half’s particles from removal."
+        ]
+      ],
+      "explanation": "At cleaning, the first tile’s unshielded half and the entire second tile are already hard, so their particles are fixed. The shielded half remains liquid and loses its particles because the sheet admits cleaner. Removing the sheet and exposing again hardens that now-colorless half without restoring particles. Both tiles finish hard, but only the first has an uncolored half.",
+      "trap": "Transferring a shield’s protection against one treatment to a different treatment it admits, or treating final hardening as restoration of removed particles."
+    },
+    {
+      "scene": "ii-inf-counterfactual-alden-judgment",
+      "text": "An Alden model distinguishes learning, which revises private judgment when evidence changes, from approval-seeking, which alters only public reports. Two groups initially rank proposal C first. The first reads an argument favoring A; the second hears an admired adviser favor A without reasons. Both publicly select A. The model attributes the first group's change to learning and the second's to approval-seeking. Later, only the first group receives evidence overturning the argument for A and establishing B as better than either alternative. The adviser then announces support for B, and both groups publicly select B. Researchers now plan a private ballot inaccessible to the adviser, with no further information or discussion.",
+      "anchors": [
+        "Two groups initially rank proposal C first",
+        "only the first group receives evidence",
+        "both groups publicly select B"
+      ],
+      "stem": "Under the model, which pattern should the researchers predict in the final private ballot?",
+      "key": "The first group would favor B and the second would return toward C, despite their latest public agreement on B.",
+      "wrong": [
+        [
+          "Both would favor B, since their public agreement shows that both groups revised their private judgments.",
+          "The first group has new evidence favoring B. The second has no reason to revise its initial private preference for C; its public B report still seeks approval."
+        ],
+        [
+          "The first group would favor A and the second C, since removing the adviser leaves the first group's learned judgment and the second's original judgment intact.",
+          "This correctly tracks the second group's unchanged private preference but ignores the later evidence that revised the first group's learned judgment from A to B."
+        ],
+        [
+          "The first group would favor B and the second A, since new evidence changes the first group's preference while privacy restores the second's earlier preference.",
+          "The second group's earlier public A report was also attributed to approval-seeking. Its original private preference was C, not A."
+        ]
+      ],
+      "explanation": "The first group's private preference moves from C to A through learning, then from A to B when new evidence overturns its earlier reason. The second group's public reports move from A to B with the adviser's preference, while its private C judgment remains unchanged. Removing the audience therefore reveals different private rankings despite two rounds of public agreement.",
+      "trap": "Treating either an earlier or the latest public report as a private preference, or forgetting that later evidence can revise a genuinely learned judgment."
+    },
+    {
+      "scene": "ii-inf-counterfactual-varel-transfer",
+      "text": "In experiments with Varel plants, a chemical applied to a leaf induced production of a defensive protein there. The chemical itself could not cross a graft joining two plants, but a signal produced in response to it could cross and induce the same protein in an untreated leaf. Once induced, protein production continued for a day without further signal. Researchers plan to treat a leaf below a graft, wait until an untreated leaf above it begins producing the protein, and then remove the grafted connection. They will measure the upper leaf several hours later. A comparison group will have its connection removed just before the lower leaf is treated, with all other conditions unchanged.",
+      "anchors": [
+        "protein production continued for a day without further signal",
+        "removed just before the lower leaf is treated"
+      ],
+      "stem": "Which result would the findings most strongly lead the researchers to predict?",
+      "key": "The upper leaf in the first group would keep producing protein, whereas the comparison group's upper leaf would not be induced by the treatment.",
+      "wrong": [
+        [
+          "Both upper leaves would produce protein, because the applied chemical would remain capable of crossing the gap after the graft was removed.",
+          "The chemical cannot cross even an intact graft; the comparison group's severed connection prevents the inducing signal from reaching its upper leaf."
+        ],
+        [
+          "Neither upper leaf would produce protein, because removal of the graft would stop an induced response as well as any new signal arriving.",
+          "An induced response continues for a day without more signal; removing the connection does not immediately stop the first group's protein production."
+        ],
+        [
+          "Only the comparison group's upper leaf would produce protein, because cutting before treatment would retain more of the inducing chemical above the graft.",
+          "The chemical is applied below the graft after the comparison group's connection is severed; cutting does not place it or its signal in the upper leaf."
+        ]
+      ],
+      "explanation": "The first upper leaf receives the mobile signal and begins a response that persists beyond removal of the connection. The comparison leaf loses the connection before any inducing signal is generated below it. Severing the same path therefore prevents initiation in one group without immediately stopping maintenance in the other.",
+      "trap": "Applying a condition required for initiating a response to maintenance of a response that has already begun."
+    },
+    {
+      "scene": "ii-inf-counterfactual-oren-larvae",
+      "text": "In Oren's laboratory ponds, small larvae consumed algae in both light and darkness. Larger larvae ate the small larvae only in light and did not eat algae. Over short trials, algae consumption by each small larva was unchanged by the presence of larger larvae, except when a small larva was eaten. Researchers compared tanks beginning with equal numbers of small larvae and equal algae amounts; some tanks also contained larger larvae. With lights on, adding the larger larvae reduced total algae consumption. They now plan to repeat the short comparison in darkness, keeping temperature and initial populations unchanged and measuring algae consumed rather than new algae growth. The larger larvae will remain in the tanks throughout.",
+      "anchors": [
+        "ate the small larvae only in light",
+        "repeat the short comparison in darkness"
+      ],
+      "stem": "Which outcome would the findings most strongly predict for the comparison in darkness?",
+      "key": "Adding larger larvae would no longer reduce algae consumption, since small larvae would keep feeding without being eaten by them.",
+      "wrong": [
+        [
+          "Adding larger larvae would reduce algae consumption further, since darkness would make the small larvae harder to distinguish from algae.",
+          "The larger larvae do not eat algae and cease eating small larvae in darkness; the passage supplies no mistaken-prey mechanism."
+        ],
+        [
+          "Adding larger larvae would still reduce algae consumption, since their continued presence would suppress the small larvae's feeding rate.",
+          "The trials found no effect of mere presence on each small larva's feeding. The earlier reduction resulted from small larvae being eaten."
+        ],
+        [
+          "Adding larger larvae would increase algae consumption, since larvae unable to catch their usual prey would switch to eating algae.",
+          "The larger larvae do not eat algae; darkness removes their predation on small larvae without introducing this alternative food source."
+        ]
+      ],
+      "explanation": "The larger larvae reduced consumption in light by removing algae-eating small larvae, not by changing each survivor's feeding rate. Darkness disables that predation but leaves the small larvae's feeding active. With the same initial small-larva counts, the addition of larger larvae therefore loses its reducing effect during the short trial.",
+      "trap": "Carrying an indirect effect into a setting that disables its intermediate cause, or inventing a new direct effect to replace it."
+    }
+  ];
+
+  const counterfactualInteraction = {
+    ...RW,
+    id: "inference-counterfactual-interaction",
+    skill: "Inferences",
+    subskill: "logical inference",
+    difficulty: "Hard",
+    title: "Prediction after changing one stage of an interacting process",
+    recognize: "Identify what a condition establishes and what continues after it changes; carry the altered sequence forward without changing the stated model.",
+    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    tricks: ["reversed-condition", "wrong-quantity", "context-constraint"],
+    build(t) {
+      const topic = t.pick(COUNTERFACTUAL_TOPICS);
+      return mc("Hard", topic, {
+        stimulus: passage(topic.text),
+        stem: topic.stem,
+        correct: topic.key,
+        wrong: topic.wrong,
+        explanation: topic.explanation,
+        steps: [
+          "Distinguish what each condition changes, including whether its effect persists after the condition ends.",
+          "Follow the proposed sequence in order, changing only what the new procedure changes.",
+          "Predict the resulting state, rejecting choices that stop at an intermediate stage or transfer a requirement to a different process.",
+        ],
+        principles: [
+          "A condition needed to establish a state is not necessarily needed to maintain or express that state.",
+          "Trace an indirect effect through each link: changing a condition can interrupt one link while leaving another active.",
+        ],
+        trap: topic.trap,
+        hint: "What has already happened before the altered condition takes effect, and what still depends on that condition?",
+        verify: () => inOrder(topic.text, topic.anchors) && topic.wrong.length === 3 && allDistinct(topic.key, topic.wrong),
+      });
+    },
+  };
+
+  // Original self-contained cases; editorially reviewed before integration.
+  const OVERLAPPING_CLASSIFICATION_TOPICS = [
+    {
+      "scene": "ii-inf-overlap-derven-requests",
+      "text": "Derven's archive accepts an unsponsored request only if an individual guarantor signs it, except when the request is a renewal. A renewal may repeat earlier material but may not add items. Expedited requests are handled off site unless they require conservation supervision, which is required only when original objects are consulted. An audit found several accepted, unsponsored, expedited requests that added newly catalogued items to research projects already under way. Each requested consultation was restricted to digital copies, with no access to originals. The register entries omit the guarantors and processing locations, leading a reader to wonder whether the requests qualified for either exception.",
+      "anchors": [
+        "A renewal may repeat earlier material but may not add items",
+        "Each requested consultation was restricted to digital copies"
+      ],
+      "stem": "Which conclusion about the archive's requests follows logically from the information in the text?",
+      "key": "The audited requests needed individual guarantees and off-site handling, despite extending research projects already under way.",
+      "wrong": [
+        [
+          "The audited requests could bypass guarantees as renewals, but their digital-only consultations required off-site handling.",
+          "Adding items disqualifies a request from renewal status, even when the larger research project is already under way. The digital-only consultation does support off-site handling."
+        ],
+        [
+          "The audited requests needed guarantees but required on-site conservation supervision because their newly catalogued source items were originals.",
+          "The rule concerns consulting originals, not whether digital copies depict originals. These consultations allowed no access to original objects, so the supervision exception is unavailable."
+        ],
+        [
+          "The audited requests could bypass both requirements, because earlier research projects and newly catalogued items supplied separate exemptions.",
+          "Neither exception applies: additional items prevent renewal, and digital-only consultation prevents original-object supervision from being required."
+        ]
+      ],
+      "explanation": "An existing project is not enough for renewal: the requests add items, so their absent sponsorship must be replaced by guarantees. Newly catalogued source objects also do not imply consultation of originals, because these requests allow digital copies only. Conservation supervision is therefore not required, leaving expedited off-site handling in force."
+    },
+    {
+      "scene": "ii-inf-overlap-selmar-poets",
+      "text": "Selmar's literary festival invites only writers who are local residents or registered visiting delegates, though some residents also register as delegates. Every visiting delegate who is not bilingual must be assigned an interpreter; bilingual delegates may request one but need not do so. Poets and prose writers follow the same registration rules. The program coordinator found several invited poets who were neither local residents nor assigned interpreters. A colleague suggested that the interpreter policy must have been waived for these poets, but the coordinator said their registrations were fully consistent with all the stated rules.",
+      "anchors": [
+        "local residents or registered visiting delegates",
+        "neither local residents nor assigned interpreters"
+      ],
+      "stem": "Which conclusion is required if the coordinator's statement is accurate?",
+      "key": "Some visiting delegates who were poets were bilingual and participated without being assigned interpreters.",
+      "wrong": [
+        [
+          "Some locally resident poets were bilingual and participated without registering as visiting delegates.",
+          "The identified poets were not local residents. Rules about the possible overlap of residents and delegates do not establish the existence of this different group."
+        ],
+        [
+          "Some visiting poets were not bilingual but participated without interpreters because they were also local residents.",
+          "The interpreter requirement applies to every nonbilingual visiting delegate, including any who also live locally; residence is not an exception."
+        ],
+        [
+          "Some bilingual visiting poets were assigned interpreters even though their registrations did not require them.",
+          "Bilingual delegates may request interpreters, but permission to do so does not show that any bilingual poet actually received one."
+        ]
+      ],
+      "explanation": "The identified poets are invited but not residents, so they must be visiting delegates. A nonbilingual delegate must have an interpreter. Since these delegates lack interpreters and no rule was waived, they must be bilingual."
+    },
+    {
+      "scene": "ii-inf-overlap-bren-library",
+      "text": "Bren Library divides donated volumes into repaired originals and newly made facsimiles. These categories exhaust the donations, and facsimiles never receive the library's fragile-material designation. A repaired original is certified complete only after rebinding, although rebinding alone does not guarantee certification. Only volumes certified complete may return to the open shelves. A volunteer preparing a display has selected several donated volumes that are designated fragile and have already returned to those shelves. The volunteer has not checked their repair records and wants to infer only what the library's classification and shelving rules make necessary.",
+      "anchors": [
+        "facsimiles never receive the library's fragile-material designation",
+        "designated fragile and have already returned to those shelves"
+      ],
+      "stem": "Which statement must be true of each volume selected by the volunteer?",
+      "key": "It is a repaired original that has been rebound and certified complete, rather than a newly made facsimile.",
+      "wrong": [
+        [
+          "It is a repaired original whose rebinding alone allowed open shelving without completeness certification.",
+          "Rebinding is necessary but explicitly not sufficient for certification; open shelving additionally requires that certification."
+        ],
+        [
+          "It is a fragile facsimile whose completeness certification allowed it to bypass the requirement for rebinding.",
+          "Facsimiles never receive the fragile-material designation, so the selected fragile donations must be repaired originals."
+        ],
+        [
+          "It is a rebound volume that received its fragile designation because every rebound donation is placed in that category.",
+          "The rules connect fragility with exclusion from facsimiles, not rebinding with mandatory fragile designation. The proposed cause reverses the classification relationship."
+        ]
+      ],
+      "explanation": "A fragile donation cannot be a facsimile, so it is a repaired original. Its return to open shelves requires completeness certification, which for repaired originals requires rebinding. The three rules jointly establish its category, repair step, and certification."
+    },
+    {
+      "scene": "ii-inf-overlap-ellin-loans",
+      "text": "Ellin's museum prohibits light-sensitive objects in outdoor displays, apart from brief supervised tests. A borrowed object containing paper is classified as light-sensitive unless that component has an approved light-blocking housing. Approval of such a housing requires the object to have undergone restoration, although restoration does not necessarily include a housing or remove light sensitivity. This year's exhibition lists several borrowed objects containing paper that will remain outdoors for the entire season, rather than appear only in supervised tests. Their catalogue entries do not mention restoration or protective housings. A curator wants to determine what the display plan and classification rules together imply about these loans.",
+      "anchors": [
+        "Approval of such a housing requires the object to have undergone restoration",
+        "remain outdoors for the entire season"
+      ],
+      "stem": "Which conclusion about the exhibition follows from the information in the text?",
+      "key": "Some borrowed objects containing paper have undergone restoration and have approved housings around their paper components.",
+      "wrong": [
+        [
+          "Some paper-containing loans remain light-sensitive throughout the season but qualify for outdoor display as supervised tests.",
+          "The listed loans remain outdoors for the entire season rather than appearing only in brief tests; the testing exception cannot justify their display."
+        ],
+        [
+          "Some restored paper-containing loans require no protective housings, because restoration by itself removes their light sensitivity.",
+          "Restoration alone need not remove sensitivity, and the rule for paper-containing loans requires an approved housing to avoid the light-sensitive classification."
+        ],
+        [
+          "Some paper-containing loans have approved housings without restoration, because seasonal outdoor display supplies a separate approval route.",
+          "Display location creates no alternative approval route. Approved housings require restoration, even when a loan is intended for outdoor display."
+        ]
+      ],
+      "explanation": "Season-long display cannot use the brief-test exception, so the listed loans must avoid light-sensitive classification. Because they contain paper, that requires approved housings. Approval in turn requires prior restoration. The same loans establish the overlap of paper components, approved housing, and restoration, none of which can be dropped from that chain."
+    },
+    {
+      "scene": "ii-inf-overlap-varen-entries",
+      "text": "Varen's literary prize accepts an entry as eligible only if it is an original composition or an authorized translation. Entries submitted through its translation committee are translations rather than original compositions, but committee submission does not by itself establish authorization. Every authorized translation from an extinct language must have a consultant's signed language report; translations from living languages may qualify without one. The eligibility list includes several committee-submitted entries from extinct languages. Their public catalogue descriptions omit consultant names, and a reader interprets that omission as evidence that these entries received an exception to the report requirement.",
+      "anchors": [
+        "an original composition or an authorized translation",
+        "several committee-submitted entries from extinct languages"
+      ],
+      "stem": "Assuming the stated requirements were followed, which conclusion is supported?",
+      "key": "Some committee-submitted entries have signed language reports despite the public catalogue's omission of consultant names.",
+      "wrong": [
+        [
+          "Some eligible committee submissions lack authorization because their consultants' reports substitute for translation rights.",
+          "The rules require an eligible nonoriginal entry to be an authorized translation; a language report is an additional requirement, not a substitute for authorization."
+        ],
+        [
+          "Some eligible translations from living languages have signed reports, since those reports are optional rather than forbidden.",
+          "An optional report is possible for those translations, but the text establishes no actual living-language entry with a report."
+        ],
+        [
+          "Some committee submissions qualify as original compositions because their extinct source languages require specialist interpretation.",
+          "Committee submissions are explicitly translations rather than original compositions. The need for specialist reports does not reclassify them."
+        ]
+      ],
+      "explanation": "The listed entries are eligible and not original compositions, so they must be authorized translations. Their extinct source languages then require signed consultant reports. The catalogue's missing names cannot negate the reports whose existence follows from the classification and eligibility requirements."
+    },
+    {
+      "scene": "ii-inf-overlap-narel-stalls",
+      "text": "At Narel's temporary market, every stall selling prepared food must undergo inspection. An inspected stall without a fixed water connection must use disposable serving equipment, even if it sells something other than food. The heritage courtyard, one of several market locations, permits only stalls that use no disposable serving equipment. Stalls elsewhere may use either kind, and craft stalls are not required to undergo inspection unless they also sell prepared food. Organizers are checking four proposed stall descriptions before assigning locations. They want to reject a description only if the stated combination is incompatible with the market's rules.",
+      "anchors": [
+        "every stall selling prepared food must undergo inspection",
+        "permits only stalls that use no disposable serving equipment"
+      ],
+      "stem": "Which proposed stall description is incompatible with the rules?",
+      "key": "A prepared-food stall in the heritage courtyard that has no fixed water connection.",
+      "wrong": [
+        [
+          "An uninspected craft stall in the courtyard with no fixed water connection.",
+          "A craft-only stall need not be inspected. The disposable-equipment requirement applies to inspected stalls without water, so this stall can use reusable equipment."
+        ],
+        [
+          "A prepared-food stall outside the heritage courtyard, inspected and lacking a fixed water connection.",
+          "Such a stall must use disposable equipment, which is allowed outside the heritage courtyard."
+        ],
+        [
+          "An inspected craft stall in the heritage courtyard that has a fixed water connection.",
+          "With a fixed water connection, inspection does not trigger the disposable-equipment requirement; the stall can comply with the courtyard's restriction."
+        ]
+      ],
+      "explanation": "Prepared-food sales require inspection. Inspection without a water connection requires disposable equipment. The courtyard prohibits that equipment, so the three features in the keyed description cannot coexist even though each appears in a permissible stall elsewhere."
+    },
+    {
+      "scene": "ii-inf-overlap-delor-lectures",
+      "text": "Delor's institute archives a lecture only if it has permission to retain a recording or has an approved transcript. For a visiting speaker, recording permission requires a signed release filed with that lecture; a host's invitation does not replace the filed release. Any approved transcript of a lecture delivered in a foreign language must include a translation into the institute's working language. The archive lists foreign-language lectures by visiting speakers whose files contain no signed releases. Staff confirm that these lectures satisfy the usual archiving policy. Nothing in the policy requires every archived lecture to have both a recording and a transcript.",
+      "anchors": [
+        "permission to retain a recording or has an approved transcript",
+        "visiting speakers whose files contain no signed releases"
+      ],
+      "stem": "Which statement must apply to every lecture in the listed group?",
+      "key": "It has an approved transcript with a translation, because the absent release rules out the recording-permission route.",
+      "wrong": [
+        [
+          "It has an approved recording with a translation, because a transcript can substitute for a visiting speaker's signed release.",
+          "A transcript is an alternative basis for archiving, not an alternative way to authorize a recording; the release remains necessary for that permission."
+        ],
+        [
+          "It has both a recording and a translated transcript, because foreign-language delivery makes both formats compulsory.",
+          "Foreign-language delivery determines what an approved transcript contains; it does not require both formats or override the recording-release rule."
+        ],
+        [
+          "It has a transcript without an approved translation, because the absence of a release exempts visiting speakers from that requirement.",
+          "The translation requirement applies to every approved foreign-language transcript. Missing a recording release creates no exception to that separate requirement."
+        ]
+      ],
+      "explanation": "The missing release prevents these visiting speakers' lectures from using recording permission as their basis for archiving. They must instead have approved transcripts. Because the lectures are in foreign languages, those approved transcripts must include translations."
+    },
+    {
+      "scene": "ii-inf-overlap-merin-textiles",
+      "text": "Merin's archive keeps every uncatalogued textile in its own storeroom, laid flat; uncatalogued textiles are never lent out. Restored textiles stored flat receive a green restoration tag unless they are on loan to another institution. A tag on a lent textile is temporarily removed to avoid interfering with the borrower's system. During an inventory, staff identify several uncatalogued textiles with no green tags and confirm that the tagging policy has been followed correctly. Their inventory report records catalogue status and tags but does not describe restoration work. A reader wants to infer restoration status from the combination of these records and policies.",
+      "anchors": [
+        "uncatalogued textiles are never lent out",
+        "several uncatalogued textiles with no green tags"
+      ],
+      "stem": "Which conclusion about the textiles follows from the text?",
+      "key": "Some uncatalogued textiles have not been restored, since their storage and loan status leave no exception to tagging restored items.",
+      "wrong": [
+        [
+          "Some uncatalogued textiles have been restored but lack tags because their flat storage makes the loan exception applicable.",
+          "The exception concerns being on loan, not lying flat. Uncatalogued textiles are never lent and therefore cannot use that exception."
+        ],
+        [
+          "Some restored textiles in the archive's storeroom lack tags because uncatalogued items are excluded from the restoration policy.",
+          "The policy does not exclude uncatalogued items. Those items are stored flat and not lent, so any restored one would require a tag."
+        ],
+        [
+          "Some restored textiles on loan remain tagged because being catalogued rather than uncatalogued cancels the temporary-removal rule.",
+          "Tags on lent textiles are removed, and no catalogue-based exception is stated. The inventory provides no example of a tagged loan."
+        ]
+      ],
+      "explanation": "Uncatalogued textiles are flat and never on loan. A restored flat textile would therefore require a green tag, with no loan exception available. The correctly untagged uncatalogued examples establish that some uncatalogued textiles have not been restored."
+    },
+    {
+      "scene": "ii-inf-overlap-varda-seeds",
+      "text": "Varda's seed bank admits a collection only if its seeds were gathered from wild plants or the collection holds a valid quarantine certificate. Quarantine certificates in this program are issued only for introduced species. The bank classifies native and introduced species as mutually exclusive categories. Collecting seeds within Varda does not itself establish either wild origin or native status: collectors also work in cultivated gardens containing both categories. Several admitted collections are classified as native, but the public database gives neither their gathering locations nor their quarantine histories. A botanist wants to identify what their admission and native classification together establish without substituting geographic location for collection method.",
+      "anchors": [
+        "gathered from wild plants or the collection holds a valid quarantine certificate",
+        "Several admitted collections are classified as native"
+      ],
+      "stem": "Which statement must be true of every admitted collection classified as native?",
+      "key": "Its seeds were gathered from wild plants, since native status excludes the quarantine route available to introduced species.",
+      "wrong": [
+        [
+          "Its seeds were gathered within Varda, since collection inside the country is what distinguishes native species from introduced ones.",
+          "The text explicitly separates gathering location from species classification; a native species could be collected elsewhere."
+        ],
+        [
+          "It passed quarantine before admission, since native classification exempts a collection from the requirement of wild origin.",
+          "The alternative admission route requires a valid certificate, which native collections cannot receive. Undergoing quarantine without that certificate supplies no exemption from wild origin."
+        ],
+        [
+          "Its seeds came from a cultivated garden, since native collections would otherwise have been admitted under the introduced-species category.",
+          "Wild origin is an admission route, not a species category. It does not convert a native species into an introduced one."
+        ]
+      ],
+      "explanation": "Admission requires wild origin or a valid quarantine certificate. Native status excludes introduced status, while quarantine certificates require introduced status. A native admitted collection therefore cannot have used the certificate route to qualify and must have wild origin; its geographic gathering location remains unspecified."
+    },
+    {
+      "scene": "ii-inf-overlap-lorin-prints",
+      "text": "Every print in Lorin's limited-edition series was made either by lithography or from a woodblock. Every woodblock print in the series was individually numbered; lithographs could be numbered or unnumbered. Lithographs made before the workshop installed its own press were produced abroad, although later lithographs were not necessarily domestic. The workshop's dated ledger records physical receipt of several unnumbered prints from the series before the press installation. Their artist signatures are visible, but their printing methods are not recorded. A cataloguer wants a conclusion supported by the production and numbering rules rather than by the fact that the artists signed their work.",
+      "anchors": [
+        "Every woodblock print in the series was individually numbered",
+        "physical receipt of several unnumbered prints"
+      ],
+      "stem": "Which conclusion does the information in the text support?",
+      "key": "Some signed prints in the series are lithographs produced abroad before the workshop installed its own press.",
+      "wrong": [
+        [
+          "Some signed woodblock prints in the series were produced abroad without numbers before the workshop installed its press.",
+          "Every woodblock print in this series was numbered, so the unnumbered acquisitions cannot establish an unnumbered woodblock category."
+        ],
+        [
+          "Some numbered lithographs in the series were produced domestically after the workshop installed its own press.",
+          "Numbered lithographs and domestic later production are both permitted, but the passage establishes neither their existence nor their overlap."
+        ],
+        [
+          "Some signed prints received before the installation were made afterward, since receipt dates do not determine printing methods.",
+          "A print must exist before physical receipt. The missing method field does not allow production after the recorded delivery."
+        ]
+      ],
+      "explanation": "The unnumbered prints cannot be woodblock prints, so the series' exhaustive categories make them lithographs. Physical receipt before the press installation places their production before it as well. Such lithographs were produced abroad, and the passage identifies their visible signatures."
+    }
+  ];
+
+  function createOverlapClassificationTemplate(C) {
+    const { RW, passage, mc, inOrder, allDistinct } = C;
+    return {
+      ...RW,
+      id: "inference-overlapping-classifications",
+      skill: "Inferences",
+      subskill: "logical inference",
+      difficulty: "Hard",
+      title: "Hidden overlap or exclusion across differently scoped classifications",
+      recognize: "Keep each rule attached to the group it governs, then follow the same objects through the applicable rules to infer an unreported overlap or exclusion.",
+      rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+      tricks: ["reversed-condition", "too-broad", "context-constraint"],
+      build(t) {
+        const topic = t.pick(OVERLAPPING_CLASSIFICATION_TOPICS);
+        return mc("Hard", topic, {
+          stimulus: passage(topic.text),
+          stem: topic.stem,
+          correct: topic.key,
+          wrong: topic.wrong,
+          explanation: topic.explanation,
+          steps: [
+            "Identify the particular objects or group the question concerns, and keep their stated properties together.",
+            "Apply each relevant rule only to its stated group, checking alternatives and exceptions before drawing a conclusion.",
+            "Choose what must follow for those same objects; do not reverse a one-way rule or treat a permitted combination as an observed one.",
+          ],
+          principles: [
+            "A rule about one category does not automatically apply to every object that shares one of that category's properties.",
+            "Separate facts establish an overlap only when they apply to the same objects, not merely to different possible members of a group.",
+          ],
+          trap: "Reversing a membership rule, moving an exception to another group, or treating a possible combination as one the evidence establishes.",
+          hint: "Follow the same examples through all the rules that apply to them. Which alternative or exception is actually available?",
+          verify: () => inOrder(topic.text, topic.anchors) && topic.wrong.length === 3 && allDistinct(topic.key, topic.wrong),
+        });
+      },
+    };
+  }
+
+  const overlappingClassifications = createOverlapClassificationTemplate(C);
+
   return [
     ruleToCase,
     causeEffect,
@@ -1825,5 +2582,7 @@
     separatedPremises,
     periodProse,
     qualifiedConclusion,
+    counterfactualInteraction,
+    overlappingClassifications,
   ];
 });

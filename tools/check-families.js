@@ -2,7 +2,7 @@
 "use strict";
 
 // Gate for question families (templates). Generates many repetitions of every
-// family and fails on anything a student would notice: a wrong key, a broken
+// family and checks structural defects and measurable answer tells: a broken
 // choice, a method named in the stem, an answer tell, too few distinct items,
 // a "not drawn to scale" figure with no answer the drawing lures toward, a
 // figure the renderer would damage, a passage outside the real test's length,
@@ -12,7 +12,8 @@
 //
 // Every family is instantiated on integer seeds 0..reps-1 and on as many
 // runtime-shaped seeds "<run>.<template>.<attempt>" (the shape runs.js uses),
-// so a defect that only runtime seeds reach is caught before students see it.
+// to cover both seed shapes. Finite sampling cannot prove all draws or meaning;
+// a self-reported verify result is not an independent editorial review.
 //
 //   node tools/check-families.js                          # every section
 //   node tools/check-families.js --section sat-reading-writing
@@ -30,6 +31,7 @@ const S = require("../src/lib/families/shared");
 const T = require("./lib/tells");
 const { numericValue } = require("./lib/expr");
 const { sanitizeSvgTree } = require("../src/app/render");
+const { numericalChoiceDuplicates } = require("./lib/content");
 const FAMILIES_ROOT = path.join(__dirname, "..", "src", "lib", "families");
 
 const args = process.argv.slice(2);
@@ -66,8 +68,10 @@ const SECTIONS = {
   },
   "sat-reading-writing": {
     responseTypes: ["multiple-choice"],
-    passageWords: [25, 150],
-    pairedWords: [25, 150],
+    // College Board's framework §§2.3.10/3.1.8 defines a technical word as
+    // six characters, and applies 25–150 words to the whole passage pair.
+    // https://satsuite.collegeboard.org/media/pdf/assessment-framework-for-digital-sat-suite.pdf
+    passageCharacters: [150, 900],
     minScenes: 8,
     // Check 9: a template must hold at least this many distinct items.
     minDistinct: 10,
@@ -255,16 +259,17 @@ function metaErrors(family, ids) {
 }
 
 function strings(record) {
+  const array = (value) => Array.isArray(value) ? value : [];
   return [
     record.stem,
     record.hint,
     record.explanation,
     record.trap,
     record.strategy,
-    ...(record.solutionSteps || []),
-    ...(record.principles || []),
-    ...(record.choices || []),
-    ...((record.distractorRationales || []).map((entry) => entry.reason)),
+    ...array(record.solutionSteps),
+    ...array(record.principles),
+    ...array(record.choices),
+    ...array(record.distractorRationales).map((entry) => entry && entry.reason),
     record.stimulus && record.stimulus.content,
     record.figure && record.figure.alt,
   ].filter((value) => value !== undefined && value !== null);
@@ -290,12 +295,17 @@ function svgErrors(svgText) {
   return errors;
 }
 
-const wordCount = (text) => (String(text).match(/[A-Za-z0-9][A-Za-z0-9'’.-]*/g) || []).length;
-
 // "Text 1\n...\n\nText 2\n..." splits into its texts; anything else is one text.
 function passageTexts(content) {
   const parts = String(content).split(/^Text \d+\s*$/m).map((part) => part.trim()).filter(Boolean);
   return /^Text 1\s*$/m.test(content) ? parts : [String(content)];
+}
+
+function passageCharacterCount(content) {
+  // Count passage text, excluding pair labels and formatting line breaks.
+  // Unicode code points count once; curly quotes and mathematical symbols are
+  // characters too. Whitespace displayed as a gap contributes one character.
+  return passageTexts(content).reduce((sum, text) => sum + [...text.trim().replace(/\s+/g, " ")].length, 0);
 }
 
 // A numeric key is what a student could enter in the answer grid: a plain
@@ -317,6 +327,10 @@ function numericKeyError(key) {
 
 function recordErrors(family, record, config) {
   const errors = [];
+  const hasText = (value) => typeof value === "string" && Boolean(value.trim());
+  ["stem", "hint", "explanation", "trap", "strategy"].forEach((field) => {
+    if (!hasText(record[field])) errors.push(`${field} is required`);
+  });
   if (!config.responseTypes.includes(record.responseType)) errors.push(`responseType ${record.responseType} not allowed`);
   const text = strings(record);
   if (text.some((value) => typeof value !== "string" || !value.trim())) errors.push("empty text field");
@@ -325,21 +339,29 @@ function recordErrors(family, record, config) {
   GIVEAWAYS.forEach((pattern) => {
     if (pattern.test(record.stem)) errors.push(`stem names the method (${pattern})`);
   });
-  if (record.stem.toLowerCase().includes(family.title.toLowerCase())) errors.push("stem contains the family title");
+  if (hasText(record.stem) && hasText(family.title) && record.stem.toLowerCase().includes(family.title.toLowerCase())) errors.push("stem contains the family title");
   if (!Array.isArray(record.solutionSteps) || record.solutionSteps.length < 2) errors.push("fewer than 2 solution steps");
   if (!Array.isArray(record.principles) || !record.principles.length) errors.push("no principles");
   if (record.responseType === "multiple-choice") {
     if (!Array.isArray(record.choices) || record.choices.length !== 4) errors.push("needs 4 choices");
     else if (new Set(record.choices).size !== 4) errors.push("duplicate choices");
-    if ((record.choices || []).some((choice) => choice.length > 160)) errors.push("choice over 160 chars");
+    const choices = Array.isArray(record.choices) ? record.choices : [];
+    if (numericalChoiceDuplicates(choices)) errors.push("numerically equivalent choices");
+    if (choices.some((choice) => typeof choice === "string" && choice.length > 160)) errors.push("choice over 160 chars");
+    if (!Number.isInteger(record.correctAnswer) || record.correctAnswer < 0 || record.correctAnswer >= choices.length) errors.push("invalid correct choice index");
+    const rationales = Array.isArray(record.distractorRationales) ? record.distractorRationales : [];
+    const expected = [0, 1, 2, 3].filter((index) => index !== record.correctAnswer);
+    if (rationales.length !== 3 || rationales.map((entry) => entry && entry.index).sort().join(",") !== expected.join(",") ||
+        rationales.some((entry) => !entry || !hasText(entry.reason))) errors.push("distractor rationales must explain each incorrect choice once");
     // The key must not be the odd one out in form: if the other three choices
     // share an opening word, the key shares it too.
-    const openings = (record.choices || []).map((choice) => (choice.match(/^\S+/) || [""])[0].toLowerCase());
+    const openings = choices.map((choice) => (String(choice).match(/^\S+/) || [""])[0].toLowerCase());
     const others = openings.filter((unused, index) => index !== record.correctAnswer);
     if (others.length === 3 && new Set(others).size === 1 && openings[record.correctAnswer] !== others[0]) {
       errors.push("the key is the only choice that does not share the others' opening word");
     }
   } else {
+    if (record.choices !== null || record.distractorRationales !== null) errors.push("numeric questions must not have choices or distractors");
     const problem = numericKeyError(record.correctAnswer);
     if (problem) errors.push(problem);
   }
@@ -348,15 +370,14 @@ function recordErrors(family, record, config) {
   }
   const approximation = approximationError(record);
   if (approximation) errors.push(approximation);
-  if (config.passageWords) {
+  if (config.passageCharacters) {
     if (!record.stimulus) errors.push("Reading and Writing items need a stimulus");
     else {
       const texts = passageTexts(record.stimulus.content);
-      const [low, high] = texts.length > 1 ? config.pairedWords : config.passageWords;
-      texts.forEach((passage, index) => {
-        const words = wordCount(passage);
-        if (words < low || words > high) errors.push(`text ${index + 1} has ${words} words (want ${low}-${high})`);
-      });
+      if (record.stimulus.type === "paired-passages" && texts.length !== 2) errors.push("paired passage needs exactly two texts");
+      const characters = passageCharacterCount(record.stimulus.content);
+      const [low, high] = config.passageCharacters;
+      if (characters < low || characters > high) errors.push(`passage${texts.length > 1 ? " pair" : ""} has ${characters} characters (${(characters / 6).toFixed(1)} technical words; want ${low}-${high} characters total)`);
     }
   }
   if (config.minScenes && !record.scene) errors.push("no scene named");
@@ -766,14 +787,27 @@ function printMatrix(sectionKey, families) {
   }));
 }
 
+function main() {
+const valueFlags = new Set(["--section", "--family", "--file", "--seed", "--svg-dir", "--reps", "--json"]);
+const flags = new Set(["--sample", "--matrix", "--tells"]);
+for (let index = 0; index < args.length; index += 1) {
+  if (valueFlags.has(args[index])) {
+    if (!args[index + 1] || args[index + 1].startsWith("--")) throw new Error(`${args[index]} needs a value`);
+    index += 1;
+  } else if (args[index] === "--sample" && args[index + 1] && !args[index + 1].startsWith("--")) index += 1;
+  else if (!flags.has(args[index])) throw new Error(`unknown argument ${args[index]}`);
+}
 const onlySection = option("--section", null);
 const onlyFamily = option("--family", null);
 const jsonFile = option("--json", null);
 const sections = Object.entries(SECTIONS).filter(([key]) => !onlySection || key === onlySection);
+if (!sections.length) throw new Error(`unknown template section "${onlySection}"`);
 const checked = [];
 let ok = true;
+let selected = 0;
 for (const [sectionKey, config] of sections) {
   const families = loadFamilies(sectionKey).filter((family) => !onlyFamily || family.id === onlyFamily);
+  selected += families.filter((family) => !flag("--sample") || !option("--sample", null) || family.id === option("--sample", null)).length;
   if (flag("--matrix")) {
     printMatrix(sectionKey, families);
     continue;
@@ -791,6 +825,7 @@ for (const [sectionKey, config] of sections) {
   if (!outcome.ok) ok = false;
   checked.push({ sectionKey, results, outcome });
 }
+if (!selected) throw new Error("No templates matched the requested section, file or family");
 if (!flag("--sample") && !flag("--matrix")) {
   if (onlyFamily && !checked.some((section) => section.results.length)) {
     console.error(`no family "${onlyFamily}"`);
@@ -811,3 +846,10 @@ if (!flag("--sample") && !flag("--matrix")) {
   console.log(`\nreps per template: ${REPS} integer + ${REPS} runtime-shaped seeds`);
   process.exit(ok ? 0 : 1);
 }
+}
+
+if (require.main === module) {
+  try { main(); }
+  catch (error) { console.error(error.message); process.exitCode = 1; }
+}
+module.exports = { metaErrors, recordErrors, numericKeyError, approximationError, passageCharacterCount, SECTIONS, LIMITS };

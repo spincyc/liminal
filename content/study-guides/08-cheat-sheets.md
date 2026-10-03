@@ -23,33 +23,28 @@ explanation.
 1. **Understand** what's asked. Circle it.
 2. **Solve or locate** from the math or the text.
 3. **Check** using patterns.
-4. **Guess** using patterns only when 1 and 2 failed and time is gone.
+4. **Guess** among choices you have not ruled out when time is gone.
 
 ### Elimination cascade
 
-1. Any **clear factual falsehood** → dead
-2. **Extreme language** on verbal (`always`, `never`, `proves`, `all`) → suspect
-3. Two choices that **mean the same thing** → both dead
-4. Wrong **magnitude or sign** on math → dead
-5. Among survivors on verbal: lean to the **more hedged, plainer** one — but
-   this fails whenever the text is itself definite, and on hard questions the
-   plain choice is often the near miss
-6. Among survivors on math: lean to the **cleaner number** — but this fails on
-   hard questions, where messy values are common; substitute back instead
-7. Nothing left? **Default letter**, immediately, move on
+1. Check the actual task, including **NOT** or **EXCEPT**.
+2. Eliminate choices that contradict the text, data or stated conditions.
+3. Check the required scope, units and quantity.
+4. If choices still tie and time is gone, guess among the survivors.
 
-Steps 5 and 6 are tie-breakers, not methods. On Liminal's own questions such
-tells picked the key only a little more often than chance.
+Word length, hedging, opposite pairs and clean numbers do not establish the
+answer. Elimination helps only when the removed choice is actually wrong.
 
 ### Five rules that are close to absolute
 
-- **One false word kills the whole choice.** Read every choice to the end.
+- **Check the whole choice against the task.** A false-claim or EXCEPT question
+  reverses what you are looking for.
 - **Answer the question that was asked.** Not the intermediate value.
 - **Never leave anything blank.** No wrong-answer penalty on either test.
 - **Your answer being listed confirms nothing.** Distractors are built from
   standard errors.
-- **If you can't point to the line, it's wrong.** Every reading answer is
-  provable from the text.
+- **Identify supporting evidence.** A reading inference may combine several
+  details rather than match one line.
 
 ### The 30-second rule
 
@@ -65,7 +60,7 @@ move. Two minutes on one hard question costs three easy ones.
 | Module | Q | Time | Checkpoints |
 | --- | --- | --- | --- |
 | RW (×2) | 27 | 32 min | Q7@8, Q14@16, Q21@24, done@30 |
-| Math (×2) | 22 | 35 min | Q6@9, Q12@18, Q18@26, done@33 |
+| Math (×2) | 22 | 35 min | Q6@6, Q12@15, Q18@25, done@33 |
 
 Module 1 determines your Module 2 routing. **Don't warm up through it.** A
 hard-feeling Module 2 is usually good news.
@@ -75,9 +70,9 @@ hard-feeling Module 2 is usually good news.
 Craft and Structure → Information and Ideas → Standard English Conventions →
 Expression of Ideas
 
-Grammar is the back half and it's your fastest points. Each domain runs easy to
-hard, so the last questions (Expression of Ideas) start easy again. You may
-navigate freely within a module.
+Within each domain, questions group by skill, then difficulty; Conventions
+runs by difficulty across the domain. Later groups can contain easier
+questions. You may navigate freely within a module.
 
 ### Grid-in rules
 
@@ -190,12 +185,12 @@ Per passage: ~3 min reading, ~7 min questions.
   One sentence per author before comparing.
 - **Author ≠ the view being described.** Look for `however`, `unfortunately`,
   `convincingly`.
-- Attitude: judge **valence** then **intensity**. Extreme attitudes are usually
-  wrong; so is `indifferent`.
+- Attitude: identify its direction and strength from the text. Strong wording
+  and `indifferent` can be correct when supported.
 
 ### Science
 
-**It is a chart-reading test, not a science test.**
+**It combines data reading, scientific reasoning and introductory science knowledge.**
 
 **Ten-second orientation, every figure:** title · x-axis · y-axis · units ·
 **second y-axis?** · legend · linear or log · does the axis start at zero.
@@ -208,10 +203,11 @@ Per passage: ~3 min reading, ~7 min questions.
 - **Trends beat single points**
 - Independent = x-axis / what changed. Dependent = y-axis / what was measured.
 - "Held constant in order to..." → **to isolate the variable being tested**
-- A good additional trial **changes exactly one variable**
+- Match a follow-up trial to its purpose: isolate a factor, test a new
+  condition, or repeat a condition to check reliability
 - Conclusions can't exceed the range tested
 
-### Math must-memorize (nothing is provided)
+### Math formulas (no general reference sheet)
 
 ```
 Slope, distance, midpoint (as on the SAT sheet above)
@@ -274,7 +270,9 @@ conjunction · avoided NO CHANGE · didn't flip the inequality
 
 - Write your **checkpoints** on scratch paper in the first ten seconds
 - Check the clock **at checkpoints only**
-- **One question = one point.** The hardest is worth what the easiest is.
+- Prioritize questions you can answer reliably. **SAT scaled scoring is not
+  a fixed point value per question.** On ACT, scored multiple-choice items
+  contribute equally to the raw correct count before score conversion.
 - **Don't carry a bad section.** Sections score separately.
 - Break: eat, drink, walk. Don't discuss the test.
 - Five-minute warning: stop starting new hard questions. Sweep for blanks.

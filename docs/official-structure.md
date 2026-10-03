@@ -2,7 +2,9 @@
 
 Verified against primary official sources on 2026-07-29; the SAT section
 structure, module counts, and domain counts were rechecked on 2026-09-25
-against the Assessment Framework and the SAT structure page. This document
+against the Assessment Framework and the SAT structure page. The 2026-10-02
+cold review rechecked question ordering, passage length and enhanced ACT
+specifications. This document
 records the public test blueprints used to organize independent original
 practice content; it does not reproduce test questions. The Learn pages keep
 the student-facing numbers, each with its source and date, in
@@ -18,6 +20,10 @@ The digital SAT has two sections:
   and about 25% are student-produced responses. Calculator use is permitted
   throughout the digital Math section using an approved calculator or the
   embedded Desmos calculator.
+
+The framework defines these passage lengths using standardized six-character
+words, including spaces and punctuation. A paired passage's combined length
+must fit the same range; it is not a separate 150-word allowance for each text.
 
 | Section | Modules | Questions per module | Time per module | Section total |
 | --- | ---: | --- | ---: | --- |
@@ -80,6 +86,13 @@ sections:
 | Science | 40 questions, 40 minutes | Optional |
 | Writing | 1 essay, 40 minutes | Optional |
 
+The enhanced design includes embedded field-test questions in those totals.
+Reading has 27 scored questions and 9 field-test questions; Science has 34
+scored questions and 6 field-test questions. Reading's three scored passage
+sets may include zero or one paired-text set. Science includes 5–8 scored
+questions requiring background knowledge together with passage reasoning.
+Liminal's current Science bank is unavailable pending a passage-set rebuild.
+
 The current Composite score is based on English, Mathematics, and Reading.
 Science receives a separate section score and contributes to a STEM score when
 taken. Writing receives a separate score and contributes to an ELA score when
@@ -92,7 +105,7 @@ taken.
 | English | Production of Writing; Knowledge of Language; Conventions of Standard English |
 | Mathematics | Preparing for Higher Math (Number and Quantity, Algebra, Functions, Geometry, Statistics and Probability); Integrating Essential Skills; Modeling |
 | Reading | Key Ideas and Details; Craft and Structure; Integration of Knowledge and Ideas |
-| Science | Interpretation of Data; Scientific Investigation; Evaluation of Models, Inferences, and Experimental Results |
+| Science | Interpretation of Data; Scientific Investigation; Evaluating Scientific Arguments and Models with Evidence (the archived bank retains the older Evaluation of Models, Inferences, and Experimental Results label) |
 | Writing | Ideas and Analysis; Development and Support; Organization; Language Use and Conventions |
 
 ACT publicly describes Modeling as integrated across Mathematics rather than a
@@ -121,6 +134,8 @@ all four rubric domains.
   https://www.act.org/content/act/en/products-and-services/the-act-postsecondary-professionals/resources/enhancements-higher-ed.html
 - ACT, “College and Career Readiness Standards”:
   https://www.act.org/content/act/en/college-and-career-readiness/standards.html
+- ACT, “Design Framework for the ACT Enhancements” (February 2026):
+  https://www.act.org/content/dam/act/unsecured/documents/R2519-Design-Framework-for-the-ACT-Enhancements-2026-02.pdf
 
 SAT® is a registered trademark of College Board. ACT® is a registered trademark
 of ACT, Inc. This independent project is not affiliated with, endorsed by, or

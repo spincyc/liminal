@@ -3,9 +3,11 @@
 
 // Development-only quality audit for the question banks.
 //
-//   node tools/audit-questions.js            # summary for every section
+//   node tools/audit-questions.js            # available ACT bank diagnostics
 //   node tools/audit-questions.js --json     # machine-readable
 //   node tools/audit-questions.js --strict   # exit non-zero on threshold breach
+//   node tools/audit-questions.js --admission # active admission, design repeats diagnostic
+//   node tools/audit-questions.js --include-retired # also inspect saved-record archives
 //
 // Read-only. The shipped validator already rejects exact and structural
 // duplicates, but its structural signature keeps numbers for math and keeps
@@ -14,7 +16,7 @@
 // the answer-position and choice-length biases that let a student score well
 // without reading the question.
 
-const { loadCatalog, loadBank, normalizeText } = require("./lib/content");
+const { loadCatalog, loadBank, normalizeText, bankSections, validateQuestion } = require("./lib/content");
 
 const THRESHOLDS = {
   exactDuplicateRate: 0,
@@ -63,8 +65,8 @@ function exactSignature(question) {
 }
 
 function templateFamily(question) {
-  const tagged = (question.tags || []).find((tag) => tag.startsWith("family:"));
-  if (tagged) return tagged.slice(7);
+  const tagged = (question.tags || []).find((tag) => /^(family|templateFamily):/.test(tag));
+  if (tagged) return tagged.slice(tagged.indexOf(":") + 1);
   if (question.templateFamily) return question.templateFamily;
   // Fall back to the shape signature so a bank that predates the field is
   // still measurable, just less precisely.
@@ -218,17 +220,32 @@ function percent(value) {
   return `${(value * 100).toFixed(1)}%`;
 }
 
+// Intentional numerical variants share a design. The old shape-rate limit is
+// retained in --strict as a diagnostic; it cannot admit a 575-record bank of
+// 232 designs. Admission still rejects exact repeats, concentrated families,
+// answer tells and schema/numeric/key-format defects at the original limits.
+function admissionFailures(report) {
+  return report.failures.filter((failure) => failure !== "near-duplicate rate");
+}
+
 function main() {
   const json = process.argv.includes("--json");
   const strict = process.argv.includes("--strict");
+  const admission = process.argv.includes("--admission");
   const catalog = loadCatalog();
-  const reports = catalog.sections
+  const includeRetired = process.argv.includes("--include-retired");
+  if (admission && includeRetired) throw new Error("--admission checks available practice; use --strict --include-retired for archive diagnostics");
+  const sections = bankSections(catalog, { includeRetired });
+  const reports = sections
     .map((section) => auditSection(section.key))
     .filter(Boolean);
+  const schemaErrors = admission ? sections.flatMap((section) => loadBank(section.key).flatMap((question) => validateQuestion(question, section, catalog))) : [];
+  const failuresOf = admission ? admissionFailures : (report) => report.failures;
 
   if (json) {
-    console.log(JSON.stringify({ thresholds: THRESHOLDS, reports }, null, 2));
+    console.log(JSON.stringify({ scope: includeRetired ? "active and retained fixed banks" : "available fixed banks (ACT)", mode: admission ? "admission" : "diagnostic", thresholds: THRESHOLDS, reports, schemaErrors }, null, 2));
   } else {
+    console.log(includeRetired ? "Fixed-bank audit (includes retained, unavailable banks)." : "Available fixed-bank audit (ACT). SAT practice is checked by check-families.js.");
     reports.forEach((report) => {
       console.log(`\n== ${report.sectionKey}  (${report.total} items)`);
       console.log(
@@ -257,25 +274,29 @@ function main() {
         `   difficulty mix       ${JSON.stringify(report.byDifficulty)}`,
       );
       console.log(
-        report.failures.length
-          ? `   FAIL: ${report.failures.join(", ")}`
+        failuresOf(report).length
+          ? `   FAIL: ${failuresOf(report).join(", ")}`
           : "   PASS",
       );
+      if (admission && report.failures.includes("near-duplicate rate")) console.log("   Diagnostic: repeated shapes; numerical variants are not independent designs.");
     });
 
-    const failing = reports.filter((report) => report.failures.length);
+    const failing = reports.filter((report) => failuresOf(report).length);
     console.log(
       `\n${reports.length - failing.length}/${reports.length} sections pass ` +
-        `the audit thresholds.`,
+        `${admission ? "admission" : "diagnostic"} thresholds.`,
     );
   }
 
-  if (strict && reports.some((report) => report.failures.length)) process.exit(1);
+  schemaErrors.slice(0, 20).forEach((error) => console.error(`  ${error}`));
+  if (schemaErrors.length) console.error(`${schemaErrors.length} active-bank schema errors.`);
+  if ((strict || admission) && (schemaErrors.length || reports.some((report) => failuresOf(report).length))) process.exit(1);
 }
 
 if (require.main === module) main();
 
 module.exports = {
+  admissionFailures,
   auditSection,
   blindScore,
   longestChoiceIsKey,

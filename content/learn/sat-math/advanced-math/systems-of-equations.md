@@ -9,11 +9,13 @@ skill: Systems of equations
 
 This skill covers systems where at least one equation is not a line: a line
 and a parabola, a line and a circle, or two curves. The solutions are the
-points where the graphs meet, and there can be two, one or none. It belongs
+points where the graphs meet. A line and a nondegenerate circle or parabola
+have at most two intersections; other curves can have more. It belongs
 to Advanced Math, {{fact:sat-math-advanced}} of the Math section. For two
 lines, see [systems of two linear equations](learn:sat-math/algebra/systems-of-two-linear-equations).
 Hard questions ask for a constant that makes a line just touch a parabola
-or a circle, or ask how many times a horizontal line meets a graph.
+or a circle. Counting horizontal-line intersections on a supplied graph is
+a Medium application of the meaning of a system's solutions.
 
 ## Linear-quadratic systems {#linear-quadratic-systems}
 
@@ -156,7 +158,9 @@ A horizontal or vertical tangent needs no algebra. The circle
 The solutions of the system y = f(x) and y = k are the points where the
 horizontal line y = k meets the graph. Slide that line up and down: the
 count can change only at a turning value, where the line touches the graph
-at a peak or a valley instead of crossing it.
+at a peak or a valley instead of crossing it. Several turning points can
+share one height, so count each distinct point of contact once rather than
+assuming the total changes by one.
 
 > **Example.** The graph of a polynomial f rises from the lower left to a
 > peak at (−2, 5), falls to a valley at (1, −3), and then rises to the upper
@@ -180,7 +184,9 @@ at a peak or a valley instead of crossing it.
 
 - A line and a parabola with a constant in either one, and a condition: exactly one solution, two, or none. Combine them into one quadratic with every term on one side, then set its discriminant to 0, above 0, or below 0.
 - A line and a circle with a constant, and exactly one solution: the line is tangent, which usually gives two values of the constant (see [a line tangent to a circle](#line-circle-tangent)).
-- A graphed polynomial and y = k: count where the horizontal line meets the graph, and remember the count changes at the turning values (see [counting solutions from a graph](#counting-from-a-graph)).
+Counting solutions from a supplied graph is useful preparation for these
+Hard parameter questions; the direct graph-counting task is Medium (see
+[counting solutions from a graph](#counting-from-a-graph)).
 
 > **Example.** The system y = x² − 4x + k and y = 2x − 1 has exactly two
 > real solutions. Which values of k are possible?

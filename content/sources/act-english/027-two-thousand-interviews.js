@@ -4,7 +4,7 @@ module.exports = {
   id: "act-english-p027",
   type: "historical-account",
   title: "The Only Large Body of Testimony",
-  content: `[1] Between 1936 and {1 1938 the} Federal Writers' Project sent
+  content: `[1] While the Depression persisted between 1936 and {1 1938 the} Federal Writers' Project sent
 interviewers into seventeen states to record the testimony of people who had
 been enslaved. More than two thousand three hundred interviews {2 were}
 collected. They remain the largest first-person record of American slavery that
@@ -40,20 +40,24 @@ testimony from the people it happened to.`,
       difficulty: "Easy",
       keep: false,
       key: "1938, the",
-      noChange: "The introductory phrase runs into the subject with no comma between them.",
+      noChange: "The introductory clause beginning 'While' requires a comma before the main clause.",
       wrong: [
-        ["1938, the,", "The second comma separates the article from the noun it belongs to."],
-        ["1938; the", "A semicolon must join independent clauses, and the opening phrase is not one."],
+        [
+          "1938, the,",
+          "The second comma separates the article from the noun it belongs to."
+        ],
+        [
+          "1938; the",
+          "A semicolon cannot join the opening dependent clause to the main clause."
+        ]
       ],
-      why:
-        "'Between 1936 and 1938' opens the sentence and is not its subject. A comma marks where the " +
-        "introductory phrase ends and the main clause begins.",
+      why: "The dependent clause ends after '1938.' A comma separates it from the main clause about the Federal Writers' Project.",
       steps: [
-        "Find where the opening phrase stops: after '1938.'",
-        "Place a single comma there.",
+        "Find the end of the opening dependent clause.",
+        "Place its comma before the main subject begins."
       ],
-      hint: "A date range at the head of a sentence takes one comma after it.",
-      trap: "The phrase is short, which makes punctuating it feel unnecessary.",
+      hint: "Find the main clause and determine where the introductory dependent clause ends.",
+      trap: "The phrase is short, which makes punctuating it feel unnecessary."
     },
     {
       number: 2,
@@ -108,23 +112,21 @@ testimony from the people it happened to.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "work, and it was a relief programme",
-          "'And' repairs the splice but ties the definition to the sentence that precedes it.",
+          "work, however, it was a relief programme",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "work, being a relief programme",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "work; being a relief programme",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "'It was designed as work' answers the previous sentence and is complete in itself. The " +
-        "explanation of what that meant needs its own sentence, because it runs on for two more clauses.",
+      why: "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Choose the punctuation that lets the second one carry the clauses that follow.",
+        "Find the subjects and finite verbs on both sides of the boundary.",
+        "Keep a complete statement on each side of the sentence boundary."
       ],
       hint: "Look at how long the second half runs before deciding whether it belongs in one sentence.",
-      trap: "The two clauses are closely related, which makes joining them feel natural.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 5,
@@ -271,23 +273,21 @@ testimony from the people it happened to.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "nothing: almost every other account of American slavery was written",
-          "A colon introduces an explanation, but the second clause states the parallel fact.",
+          "nothing; although almost every other account of American slavery was written",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "nothing and almost every other account of American slavery was written",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The two clauses are complete and set against each other — what the alternative was, and why " +
-        "it was that. A semicolon joins equals without subordinating either.",
+      why: "The two clauses are complete and set against each other — what the alternative was, and why it was that. A semicolon joins equals without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or balances it. It balances.",
+        "Ask whether the second explains the first or balances it. It balances."
       ],
       hint: "The first clause is three words; the second gives it its weight.",
-      trap: "The short first clause reads like a setup, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 12,

@@ -21,7 +21,7 @@
 //   4. Hard must not be more guessable than Easy. A student who ignores the
 //      question and picks the longest choice should not score better on Hard.
 
-const { loadCatalog, loadBank, normalizeText } = require("./lib/content");
+const { loadCatalog, loadBank, normalizeText, bankSections } = require("./lib/content");
 
 const TIERS = ["Easy", "Medium", "Hard"];
 
@@ -150,7 +150,8 @@ function main() {
   const asJson = process.argv.includes("--json");
   const requested = process.argv.slice(2).filter((argument) => !argument.startsWith("--"));
   const catalog = loadCatalog();
-  const keys = requested.length ? requested : catalog.sections.map((section) => section.key);
+  const keys = requested.length ? requested : bankSections(catalog, { includeRetired: process.argv.includes("--include-retired") }).map((section) => section.key);
+  keys.forEach((key) => { if (!catalog.sections.some((section) => section.key === key)) throw new Error(`Unknown section ${key}`); });
 
   const results = {};
   let failed = 0;
@@ -176,7 +177,7 @@ function main() {
       if (problems.length) problems.forEach((problem) => console.log(`   FAIL: ${problem}`));
       else console.log("   PASS");
     });
-    console.log(`\n${keys.length - failed}/${keys.length} sections have meaningful difficulty labels.`);
+    console.log(`\n${keys.length - failed}/${keys.length} fixed-bank sections pass the mechanical difficulty proxies; this does not establish calibration.`);
   }
 
   if (failed && process.argv.includes("--strict")) process.exit(1);

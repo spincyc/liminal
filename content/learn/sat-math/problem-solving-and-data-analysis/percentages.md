@@ -11,8 +11,8 @@ Percent means "per hundred": 35% is 35/100 = 0.35. Percent questions are
 part of Problem-Solving and Data Analysis, {{fact:sat-math-psda}} of the
 Math section, but percent thinking also shows up in exponential models and
 data questions. The arithmetic is easy; the language is slippery. Hard
-questions chain changes and comparisons, read a comparison from the other
-side, or set a percent of one amount equal to a percent of another.
+questions recover an unknown change in a chain or distinguish changes in
+a share, a part, and its whole.
 
 ## Percent change {#percent-change}
 
@@ -133,8 +133,6 @@ The other direction: if the farm's land grew 50% while its corn land grew
 ## What Hard looks like {#hard}
 
 - A chain of changes or comparisons ("A is 20% more than B, which is 25% less than C"), or the change that brings an amount back. Each percent is of the amount just before it, so the multipliers multiply, and the restoring change is found by dividing.
-- A comparison read the other way: "A is 25% more than B" takes the percent of B, so the same gap is a different percent of A. Give B a convenient value, such as 100, and compare directly.
-- One percent of one amount equal to another percent of another: p% of x = q% of y means px = qy, so x : y = q : p, and the amount taken at the smaller percent is the larger amount.
 - A share and a whole that both change. The part is share × whole, so its multiplier is the product of theirs; a new share is the part's multiplier divided by the whole's. A share that moves some percentage points is not a percent change in the part (see [a share of a changing whole](#share-of-a-changing-whole)).
 
 > **Example.** 30% of A is equal to 20% of B. What percent of A + B is A?

@@ -3,7 +3,7 @@
 
 // Exercises every math shape without writing a bank.
 //
-//   node tools/check-shapes.js                 # both math sections
+//   node tools/check-shapes.js                 # active ACT Math generator
 //   node tools/check-shapes.js act-mathematics
 //
 // A shape is a closure that builds one question from a sequence number, so the
@@ -347,7 +347,8 @@ function checkCrossShapeCollisions(sectionKey, problems) {
 
 function main() {
   const requested = process.argv.slice(2).filter((argument) => !argument.startsWith("--"));
-  const sections = requested.length ? requested : Object.keys(SECTIONS);
+  const sections = requested.length ? requested : Object.keys(SECTIONS).filter((key) =>
+    process.argv.includes("--include-retired") || key !== "sat-math");
   const problems = [];
   let shapes = 0;
   sections.forEach((sectionKey) => {

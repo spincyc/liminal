@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p023",
   type: "literary-narrative",
   title: "The Blue Door",
-  intro: "This passage is adapted from a novel. Nell has returned to the town where she grew up for her uncle Pav's funeral.",
+  intro: "This is an original fictional passage. Nell has returned to the town where she grew up for her uncle Pav's funeral.",
   content: `The story went like this, and I had been telling it for thirty-one years.
 
 I was seven. The river behind the allotments was in flood, brown and moving fast, and I had
@@ -213,19 +213,19 @@ he refilled my cup, which was the only sensible thing available.`,
       family: "claim-and-support",
       difficulty: "Hard",
       stem: "Which detail best supports the narrator's claim that the memory itself is not fabricated?",
-      key: "The cold and the hand in her collar remain unchanged.",
+      key: "Ivo describes his mother entering the river in her good coat.",
       wrong: [
         ["The blue door of the shed appears with great clarity.", "That is the detail she identifies as the source of the error."],
         ["Ivo delivered his correction without any weight at all.", "His manner concerns how the news was given, not what she retains."],
         ["She had told the story for thirty-one years running.", "Long repetition is what she blames for the distortion."],
       ],
-      why: "Checking the memory, she reports \"the cold is still there. The hand in the collar is still there,\" and separately says \"I was not inventing a rescue. Somebody did pull me out.\"",
+      why: "The passage supports this conclusion: Ivo independently supplies a rescuer and the family story about her wet coat. His account supports that a rescue occurred while correcting who performed it; the vividness of Nell's recollection alone would not establish its accuracy.",
       steps: [
-        "Distinguish the parts of the memory she keeps from the part she rejects.",
-        "Match the claim to the parts she says survive scrutiny.",
-        "Reject the detail she names as the point of failure.",
+        "Separate the occurrence of the rescue from the identity of the rescuer.",
+        "Find corroboration outside the narrator's own repeated memory.",
+        "Choose the detail in Ivo's account that confirms a rescue.",
       ],
-      hint: "She lists what is still there before naming what gave it away.",
+      hint: "Look for corroboration from somebody other than the narrator.",
       trap: "Choosing the vivid detail, which is precisely the corrupted one.",
     },
     {

@@ -39,7 +39,7 @@ Standard:        Ax + By = C
 | | |
 | --- | --- |
 | Parallel | `m₁ = m₂` |
-| Perpendicular | `m₁ · m₂ = −1` |
+| Perpendicular | `m₁ · m₂ = −1` when both slopes are defined; horizontal and vertical lines are also perpendicular |
 | Horizontal | `m = 0`, `y = c` |
 | Vertical | undefined, `x = c` |
 
@@ -56,7 +56,7 @@ midpoint, find the other endpoint" is common — solve `(x₁+x₂)/2 = mₓ` fo
 **Substitution** when a variable is isolated. **Elimination** when coefficients
 align.
 
-**Three cases:**
+**Three cases for two nonvertical lines:**
 
 | Case | Condition |
 | --- | --- |
@@ -102,6 +102,8 @@ statement → infinitely many.
 
 ### Quadratics
 
+These formulas apply to `ax² + bx + c = 0` with `a ≠ 0`.
+
 ```
 Quadratic formula:  x = [−b ± √(b² − 4ac)]/(2a)
 Discriminant:       D = b² − 4ac
@@ -127,7 +129,7 @@ Vertex x         = −b/(2a)
 | Situation | Method |
 | --- | --- |
 | Factors cleanly | Factor, set each to zero |
-| `x² = k` | Square root, **remember ±** |
+| `x² = k` | For `k > 0`, `x = ±√k`; for `k = 0`, just zero; for `k < 0`, no real solutions |
 | Doesn't factor | Quadratic formula |
 | Only need the count | Discriminant |
 | Answer choices given | **Backsolve** |
@@ -216,21 +218,24 @@ distances are equal, or distances sum to a total.
 
 ## Patterns and tells
 
-**Backsolve whenever the choices are numbers** and the setup looks tedious. Every
-ACT Math question is multiple choice, so this is always available.
+**Consider backsolving** when choices give candidate values you can test in
+the original conditions. A choice giving a count or a combined quantity may
+not be directly substitutable.
 
-**Plug in numbers whenever the choices contain variables.**
+**Use allowed sample values to eliminate variable expressions.** A mismatch
+disproves equivalence; agreement at sampled values does not prove identity.
 
 **"Which of the following must be true?"** — hunt counterexamples. Test
-fractions between 0 and 1, negatives, and zero.
+fractions between 0 and 1, negatives, and zero when the conditions allow them.
 
 **"Which could be true?"** — one working example is enough.
 
 **Excluded-value questions** are free if you remember to include cancelled
 factors.
 
-**"For what value of k"** questions are usually the discriminant or the
-three-cases table.
+**Parameter questions** require identifying what the parameter controls.
+For a quadratic root-count condition, the discriminant may help; for a linear
+system, compare whether the lines intersect, coincide or are parallel.
 
 ---
 
@@ -253,12 +258,12 @@ three-cases table.
 
 | Stage | Filter | Volume |
 | --- | --- | --- |
-| 1. Linear mechanics | Expressions and equations, Easy | 25, writing every step |
-| 2. Inequalities | Expressions and equations, Medium | 15, circling negative divisors |
-| 3. Lines and systems | Expressions and equations, Medium | 25 |
-| 4. Factoring | Polynomial and rational expressions, Easy → Medium | 30. Recognize patterns on sight. |
-| 5. Quadratics | Polynomial and rational expressions, Medium | 25. Track missing `±`. |
-| 6. Rational and radical | Polynomial and rational expressions, Medium → Hard | 20. Check extraneous every time. |
+| 1. Linear mechanics | Expressions and equations | 25, writing every step |
+| 2. Inequalities | Expressions and equations | 15, circling negative divisors |
+| 3. Lines and systems | Expressions and equations | 25 |
+| 4. Factoring | Polynomial and rational expressions | 30. Recognize patterns on sight. |
+| 5. Quadratics | Polynomial and rational expressions | 25. Track missing `±`. |
+| 6. Rational and radical | Polynomial and rational expressions | 20. Check extraneous every time. |
 | 7. Mixed timed | Whole domain | 30 at 60 sec each |
 
 Stage 4 has the best return. Factoring fluency speeds everything downstream and

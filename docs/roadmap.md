@@ -1,5 +1,35 @@
 # Roadmap
 
+## Current status — 2026-10-02
+
+The [whole-product cold review](reviews/2026-10-02-cold-review.md) supersedes
+the 2026-09-26 quality claims and completed parts of the older Next list below.
+All active SAT templates now receive independent sampled agent review tied to
+their complete source fingerprints. Inflated tiers, weak branches, ambiguous
+choices, teaching errors and measured answer tells were repaired. This is
+editorial review, not empirical calibration or a human educator's approval.
+
+Source fingerprinting, ACT bank repairs, Science availability guards, saved
+question snapshots, answer-history identity, essay drafting, deadline handling,
+print answer sheets and additional mobile/zoom fixes are implemented. The
+archived SAT banks and local WIP branches have not been deleted or integrated.
+
+Remaining product work:
+
+1. Calibrate difficulty using consented student results and independent human
+   editorial review. Practice targets remain practice targets, not readiness.
+2. Rebuild Science as coherent original passage sets and review them before
+   enabling practice. Current Science records remain archived.
+3. Reconcile the preserved platform and ACT Math WIP branches against the
+   current implementation; neither is ready for automatic integration.
+4. Expand genuinely distinct ACT designs, then review and calibrate them.
+   Current banks contain exercise variants; ACT tiers remain unused.
+5. Consider an embedded calculator when an appropriate API key is available,
+   and split large modules when a concrete change benefits from doing so.
+
+The dated history below records earlier decisions; the 2026-10-02 source-based
+version policy replaces the older eight-seed, visible-fields-only policy.
+
 ## Why SAT Math practice overstated readiness
 
 A student whose practice here pointed to about 700 in SAT Math scored about 500

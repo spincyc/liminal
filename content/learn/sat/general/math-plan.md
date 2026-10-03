@@ -5,18 +5,17 @@ title: SAT Math plan from around 500
 # SAT Math plan from around 500
 
 This plan is for a student whose real SAT Math score, or official practice
-test score, is around 500 and who wants a large gain. At that level the
-points are in content: questions you can't yet do, not tricks you haven't
-learned. Most of them are Easy and Medium questions in Algebra and Advanced
-Math, and they are learnable in order. The plan below builds the content
-first, checks it with a clear gate, and measures progress only with official
-practice tests.
+test score, is around 500 and who wants to improve. Use your official practice
+results to identify content gaps, process errors and pacing problems; a score
+alone cannot tell you which is responsible. This plan starts with Algebra and
+Advanced Math because they make up most of the section, uses practice targets
+to organize work, and checks transfer with official practice tests.
 
 ## Where the points are {#where-the-points-are}
 
 - Algebra is {{fact:sat-math-algebra}} and Advanced Math is {{fact:sat-math-advanced}} of Math. Together that is about 70% of the section.
-- Your Module 1 performance decides whether you get the harder or the easier Module 2 (see [Module 1 decides the route](learn:sat/general/modules-and-pacing#module-1)). College Board doesn't publish the rule. Module 1 mixes easy, medium and hard questions, and from around 500 the Easy and Medium ones are the points within reach, so getting them right is your best way up.
-- Questions are not all worth the same. College Board says two students with the same number right can earn different scores, depending on which questions they got right, including how hard those were (see [how scores are calculated](https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated)). But a question pays only when you get it right. A Medium question you can learn to get right every time pays on every test, and in Module 1 it also counts toward your route; a Hard one you'd get right occasionally pays only occasionally. So Medium comes first.
+- Your Module 1 performance decides whether you get the harder or the easier Module 2 (see [Module 1 decides the route](learn:sat/general/modules-and-pacing#module-1)). College Board doesn't publish the rule. Module 1 mixes easy, medium and hard questions. Use your own misses to choose accessible skills to improve; a score around 500 does not identify the difficulty of every question you can solve.
+- Questions are not all worth the same. College Board says two students with the same number right can earn different scores, depending on which questions they got right, including how hard those were (see [how scores are calculated](https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated)). Build reliable methods on accessible questions before spending most of your time on the hardest work. That is the reason this plan introduces Medium practice before Hard; Liminal's labels do not establish official item weights or routing effects.
 
 ## The sequence {#sequence}
 
@@ -35,10 +34,10 @@ stage 1, then graph to solve or check in every later stage.
 For each skill, the loop is:
 
 1. Read the Learn page and work its examples by hand, covering the solution first.
-2. Practice the skill at Easy until the method is routine: at least 8 of your last 10 Easy questions in the skill right, each counted once, with no hints.
+2. Practice the skill at Easy until the method is routine: at least 8 of your last 10 Easy or Medium questions in the skill right, each counted once, with no hints.
 3. Practice it at Medium, with feedback after each question at first.
 4. Log every miss in your [error log](learn:sat/general/error-log) with its type and a rule.
-5. Pass the mastery gate below, then move on.
+5. Use the practice target below to decide when to add harder and mixed practice.
 
 Liminal's next step follows this sequence: Review first when a missed
 question is due, then the first skill in this order that is not yet at the
@@ -49,25 +48,22 @@ not practised its skills yet. Practising a skipped skill brings it back into
 its place, and every skipped skill returns once the later stages are at the
 gate.
 
-## The mastery gate {#mastery-gate}
+## The practice target {#mastery-gate}
 
-> **Rule.** Move on from a skill when you get at least 24 of your last 30
+> **Rule.** Liminal's Medium practice target is at least 24 of your last 30
 > Medium questions in that skill right, with no hints, and those 30 span at
 > least two days and two different question designs. Each question counts
 > once, at your first answer: a miss that Review brings back as it was does
 > not count again, but a fresh version of it does.
 
-Thirty questions is enough that a pass is rarely luck, and Medium is the
-level that decides Module 1. You will look at the gate after every set, and
-a short window checked that often is passed by chance: a student who gets
-70% right would meet a 16-of-20 gate within 60 Medium questions four times
-in five, but meets this one about half the time, while a student who gets
-80% right meets it almost always. A Liminal set takes at most one question
-from each question template, and a skill has only a few Medium templates, so
-your 30 attempts build up over several short targeted sets and drills,
-ideally on different days. That spacing helps, too. Progress counts them for
-you. If you fall short, go back to the error log for that skill: the misses
-will usually share one missing idea.
+This is a planning rule, not a statistical demonstration of mastery. Checking
+a rolling window repeatedly can produce a passing result by chance, and
+familiar question designs can raise accuracy without improving transfer.
+Use several question designs across days and check unfamiliar official
+questions before treating the skill as secure. All scored Module 1 questions,
+not just Medium ones, contribute to the real test's routing and score.
+Progress counts practice attempts for you. If you fall short, inspect the
+error log for the ideas or steps that need more work.
 
 After a skill passes, keep it alive: include a few of its questions in a
 mixed set each week. Start Hard questions in a skill only after its Medium
@@ -79,30 +75,28 @@ Progress shows each skill in one of these states:
 | --- | --- |
 | Not started | No answers in the skill yet. |
 | Not enough data | Fewer than 5 answers: too few to say anything. |
-| Building | Below the gate. Keep practising Medium questions. |
-| At the gate | At least 24 of your last 30 Medium questions right. Start Hard questions. |
-| Mastered | The gate, plus at least 10 of your last 15 Hard questions right, over two days and two designs. |
+| Building | Below the target. Follow the next step at Easy or Medium and review misses. |
+| Practice target met | At least 24 of your last 30 Medium questions right, over two days and two designs. Add Hard questions. |
+| Advanced practice target met | The Medium target, plus at least 10 of your last 15 Hard questions right, over two days and two designs. |
 
-Mastered is a strict bar on purpose. Hard is where practice most often
-overstates readiness, and five Hard questions can go well by luck: a student
-who gets only 30% of Hard questions right would reach three of five within
-20 tries most of the time.
+The Hard target calls for more evidence than a few successful answers, but it
+still describes practice here. Continue mixed practice and official checks
+after meeting it.
 
 > **Note.** The gate is about Liminal's questions, whose difficulty labels
-> are Liminal's own. Passing it means you are ready to move on, not that
-> you will score a given number on the SAT.
+> are Liminal's own. Meeting it suggests a next practice step; it does not
+> establish mastery, exam readiness or a future SAT score.
 
 ## Official practice tests {#official-practice-tests}
 
-The only honest gauge of your score is a full-length official practice test
+A useful gauge of your score is a fresh full-length official practice test
 in Bluebook, scored by College Board (see
 [SAT practice tests](https://satsuite.collegeboard.org/practice/practice-tests)).
-There are {{fact:sat-practice-tests}} of them, SAT Practice Tests
-{{fact:sat-practice-test-numbers}}, and a test you have taken can't measure
-you a second time, so spend them on purpose.
+Check Bluebook for the current inventory. Repeating a test can be useful
+review, but remembered questions make its score a weaker estimate.
 
 - Take one before you start, as a baseline.
-- Then take one every 2 to 3 weeks, under real conditions: timed, in one sitting, with the break, on the device you will use. A 12-week plan uses about five, which leaves some in reserve.
+- Then take one every 2 to 3 weeks, under real conditions: using your approved timing and accommodations, in one sitting, with the break, on the device you will use. A 12-week plan calls for about five; adjust to the unfamiliar forms available.
 - Take the last one 7 to 10 days before the real SAT, never the day before.
 - Record each score in Liminal under Progress, in the Official scores card. It shows each score beside your Liminal accuracy in the 28 days before the test, so you can see whether practice here tracks the real thing. It never turns accuracy into a score.
 - Review every miss in My Practice, where College Board shows the questions and your answers, and copy each into your error log. Use the results to choose your next skills.
@@ -114,7 +108,7 @@ Liminal's Easy, Medium and Hard are its own labels. College Board's
 [Student Question Bank](https://satsuite.collegeboard.org/practice/student-question-bank),
 opened from My Practice, has official questions you can filter by skill and
 by difficulty. Use it as a check: after a skill passes the gate here, do ten
-or so of its official Medium questions, and once it is Mastered, some of its
+or so of its official Medium questions, and after the advanced target, some of its
 Hard ones. If you miss far more of them than you miss here, trust the
 official questions, and keep working the skill before you move on.
 

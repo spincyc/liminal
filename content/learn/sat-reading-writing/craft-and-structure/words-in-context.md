@@ -171,7 +171,13 @@ question quickly.
 
 - Four choices that are all real, formal words, with only one matching the exact strength of the claim (suggests, demonstrates, proves).
 - A clue two sentences from the blank, or a clue that is a contrast inside a contrast.
-- A tested word used in a technical or older sense in a literary or historical text.
+- A word whose precise meaning depends on separating the writer’s judgment from a quoted judgment, or one claim from another.
+
+An older or technical sense is not automatically Hard. When a nearby detail
+directly explains the word, ordinary context matching is enough. Hard items
+require you to combine the clues and distinguish plausible readings: evidence
+may be strong but narrow in scope, and a candid account of professional work
+may still be reticent about private life.
 
 Learning more words helps, but practicing the method helps more: cover the
 choices, find the clue, predict, then match. A useful set of academic words

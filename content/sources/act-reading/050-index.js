@@ -4,13 +4,13 @@ module.exports = {
   id: "act-reading-p050",
   type: "humanities",
   title: "The Back of the Book",
-  intro: "This passage is adapted from an essay on the history of the book index.",
-  content: `An index is a machine for not reading a book, and that is not a criticism. It was
-invented, twice, in the thirteenth century, by people who had a specific problem: preachers
+  intro: "This original passage discusses the history of the book index.",
+  content: `An index is a machine for not reading a book, and that is not a criticism. Important medieval forms of indexing developed in the thirteenth century among
+people who had a specific problem: preachers
 and scholars needed to find every passage in an enormous body of text that bore on a
 particular word, and reading the whole of it every time was not available to them.
 
-The two inventions were the alphabetical subject index, produced by Dominicans at Saint
+Two related tools were the alphabetical subject index, produced by Dominicans at Saint
 Jacques in Paris, and the concordance, which lists every occurrence of every word in a text.
 Both required something that seems trivial and was not: a stable way of pointing at a place.
 A manuscript copied by hand has no fixed pagination; the same work in two copies has the
@@ -34,9 +34,9 @@ complaints about people who know only the search results, and they are complaini
 same thing, which is that a tool for finding has become a substitute for having read.
 
 The interesting question is whether the complaint is correct, and the honest answer is that it
-depends on what the reader is doing. If the object is to find every mention of a term, an
-index is not a shortcut; it is the correct instrument, and doing it by reading would be worse
-as well as slower. If the object is to understand an argument, the index is actively
+depends on what the reader is doing. If the object is to locate discussions of a subject, a subject index is
+the appropriate instrument. A reader seeking every occurrence of a particular
+word needs a concordance instead; the two tools answer different questions. If the object is to understand an argument, the index is actively
 misleading, because an argument is not distributed evenly across the pages that mention its
 key term. The best pages on a subject often do not contain the word.
 
@@ -48,7 +48,7 @@ topic, and that the author's term for something is not the term a reader will lo
 Building it requires the judgement the index then allows the reader to skip, which is the
 central oddity of the form.
 
-That is why an index cannot be generated and why the good ones are increasingly rare. They
+That is why a good subject index cannot be produced merely by listing matching words and why the good ones are increasingly rare. They
 take a skilled reader several days per book, they are invisible when done well, and the first
 economy available to a publisher under pressure is the one nobody notices until they need it.`,
   questions: [
@@ -129,16 +129,16 @@ economy available to a publisher under pressure is the one nobody notices until 
       family: "contrast-of-uses",
       difficulty: "Medium",
       stem: "The passage says an index is the correct instrument when a reader wants to:",
-      key: "find every mention of a particular term.",
+      key: "locate discussions of a particular subject.",
       wrong: [
         ["follow the development of an argument.", "The passage calls the index actively misleading for that purpose."],
         ["decide whether a book is worth buying.", "Purchasing decisions are not discussed in the passage."],
         ["compare two books on the same subject.", "No comparison across books is described."],
       ],
-      why: "The passage says if the object is to find every mention of a term, \"an index is not a shortcut; it is the correct instrument,\" while for understanding an argument it misleads.",
+      why: "The passage separates a concordance, which locates occurrences of words, from a subject index, which locates discussions. Neither substitutes for following the progression of an argument.",
       steps: [
-        "Find the two purposes the paragraph distinguishes.",
-        "Match each with the verdict the passage gives.",
+        "Distinguish locating word occurrences from locating a subject.",
+        "Match the task to the tool the passage describes.",
       ],
       hint: "The paragraph gives one purpose the index suits and one it does not.",
     },
@@ -165,7 +165,7 @@ economy available to a publisher under pressure is the one nobody notices until 
       family: "claim-and-support",
       difficulty: "Medium",
       stem: "Which detail best supports the claim that an index is not a list of where words appear?",
-      key: "An indexer files a discussion under a word the book never uses.",
+      key: "An indexer groups scattered discussions under a reader's likely term.",
       wrong: [
         ["Software has produced such lists since the 1960s.", "This says what software does, not what an index adds."],
         ["A good index takes a skilled reader several days.", "Effort shows the cost of the work, not its nature."],
@@ -177,7 +177,7 @@ economy available to a publisher under pressure is the one nobody notices until 
         "Find the example of a judgement the indexer makes.",
         "Reject details about effort or about citation.",
       ],
-      hint: "The decisive evidence is a heading the text does not contain.",
+      hint: "Look for an act of interpretation beyond listing word occurrences.",
     },
     {
       subskill: "reasoning",
@@ -203,20 +203,20 @@ economy available to a publisher under pressure is the one nobody notices until 
       subskill: "strengthen or weaken",
       family: "weakening-a-position",
       difficulty: "Hard",
-      stem: "Which finding, if true, would most weaken the passage's claim that an index cannot be generated?",
-      key: "Automated indexes match human ones on scattered topics.",
+      stem: "Which finding, if true, would most weaken the passage's claim that producing a good subject index requires more than listing matching words?",
+      key: "Word matching alone reliably locates topics named by different terms.",
       wrong: [
         ["Software can list every word in a text instantly.", "The passage grants this and says such a list is not an index."],
         ["Readers rarely notice which index a book contains.", "Invisibility is exactly what the passage says a good index has."],
         ["Publishers have reduced their spending on indexing.", "Reduced spending confirms the passage's closing point."],
       ],
-      why: "The passage grounds the claim in judgement: gathering \"these four scattered pages\" into one topic and choosing headings the author never used. A system matching human indexers on precisely that would undercut it.",
+      why: "The passage locates the added work in recognising discussions beyond matching vocabulary. Reliable subject indexing by word matching alone would challenge that distinction; speed at listing repeated words would not.",
       steps: [
         "Identify which judgements the passage says a machine cannot make.",
         "Look for evidence that a machine makes them anyway.",
         "Reject findings the passage already concedes.",
       ],
-      hint: "The claim rests on grouping and naming, not on listing.",
+      hint: "The result must address the semantic work, not just the speed of a word search.",
       trap: "Choosing the capability the passage explicitly grants to software.",
     },
     {

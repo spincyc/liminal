@@ -75,11 +75,11 @@ What College Board has published:
 Reading and Writing and Math route separately. A rough Reading and Writing
 Module 1 doesn't change your Math routing.
 
-> **Note.** College Board has not published the routing rule or exactly how
-> the two Module 2 versions affect the score range. It is widely believed
-> that the easier Module 2 limits how high a section score can go. Treat
-> that as a likely estimate, not a published fact. Either way, Module 1 is
-> where your routing is decided, so don't treat it as a warm-up. More in
+> **Note.** College Board has not published a simple routing cutoff. Its
+> [scoring explanation](https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated)
+> shows different, overlapping score ranges for the two routes, without
+> giving an exact maximum for the lower-difficulty route. Work carefully in
+> both modules rather than trying to infer a score while testing. More in
 > [Modules and pacing](learn:sat/general/modules-and-pacing#module-1).
 
 If Module 2 feels much harder than Module 1, that is consistent with the
@@ -95,7 +95,7 @@ change what to do: keep working question by question.
 
 > **Note.** Liminal never estimates an SAT score. Its accuracy numbers are
 > practice feedback on its own questions, which are original and not
-> calibrated against real test takers. The only honest score check is a
+> calibrated against real test takers. A useful score check is a fresh
 > full-length official practice test in Bluebook, scored by College Board
 > (see [SAT practice tests](https://satsuite.collegeboard.org/practice/practice-tests)).
 > Even those scores are estimates.

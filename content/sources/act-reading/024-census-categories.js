@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p024",
   type: "social-science",
   title: "The Boxes on the Form",
-  intro: "This passage is adapted from an article on the design of national censuses.",
+  intro: "This original passage discusses the design of national censuses.",
   content: `A census category is a strange object. It is a description of the population and an
 instrument that acts on it, and the two roles are not separable. Once a box exists on a
 form, money is allocated by it, districts are drawn with it, discrimination is measured
@@ -43,8 +43,10 @@ shift in what they are willing to tell an enumerator on a doorstep.
 
 The awkwardness runs deeper for the multiple-response change. Before 2000, a person of
 mixed ancestry had to select one category, and which one they selected was influenced by
-how they expected to be treated. After 2000 they could select several. The count in every
-single-race category consequently fell, in a year when no one had changed ancestry. Any
+how they expected to be treated. After 2000 they could select several. A single-race
+count can therefore be lower than it would be under a one-choice scheme, even when
+no one's ancestry changes. This is a comparison between definitions, not a claim
+that every single-race population actually declined between censuses. Any
 comparison across that boundary has to choose between two definitions — counting people who
 selected a category alone, or counting all who selected it at all — and the two produce
 different answers to questions like whether a group grew.
@@ -73,8 +75,8 @@ per cent. The footnote is that the question changed.`,
       ],
       why: "The passage says each change \"was defensible on its own terms and each one broke the series,\" and that comparing counts across a change means \"comparing the output of two different questions.\"",
       steps: [
-        "Find the sentence that gives a verdict on the changes.",
-        "Check that the option matches the sixth paragraph, which refuses to argue for fixed categories.",
+        "Identify the problem shared by the historical examples.",
+        "Check that the option matches the seventh paragraph, which refuses to argue for fixed categories.",
       ],
       hint: "The passage grants that the changes were justified.",
     },
@@ -100,19 +102,19 @@ per cent. The footnote is that the question changed.`,
       subskill: "cause and effect",
       family: "cause-of-an-outcome",
       difficulty: "Easy",
-      stem: "The passage says counts in single-race categories fell in 2000 because respondents:",
-      key: "could now select more than one box.",
+      stem: "Why can allowing multiple race selections reduce a single-race count relative to a one-choice scheme? Respondents:",
+      key: "could select several categories rather than only one.",
       wrong: [
-        ["were undercounted by a shortage of enumerators.", "Enumeration effort is not offered as a cause of the change."],
-        ["had begun describing their ancestry differently.", "The passage says no one had changed ancestry that year."],
-        ["were assigned to categories by the Census Bureau.", "Reassignment by the Bureau is described for 1930, not for 2000."],
+        ["were undercounted by a shortage of enumerators.", "The passage is explaining a classification change, not missed interviews."],
+        ["had acquired different ancestry between the two censuses.", "The example holds ancestry fixed while changing the response options."],
+        ["were assigned to categories by the Census Bureau.", "The multiple-response example concerns selections made by respondents."],
       ],
-      why: "The fifth paragraph says that after 2000 a person \"could select several,\" and \"the count in every single-race category consequently fell, in a year when no one had changed ancestry.\"",
+      why: "A respondent who previously had to choose one category can now choose several. That changes which tally contains the response even when the person's ancestry has not changed; it does not mean every actual population count declined.",
       steps: [
-        "Locate the paragraph about the multiple-response change.",
-        "Read the sentence beginning with the consequence.",
+        "Compare the choices permitted by the two forms.",
+        "Distinguish a change in classification from a change in ancestry.",
       ],
-      hint: "The sentence itself uses the word *consequently*.",
+      hint: "Compare how the same person could answer the two forms.",
     },
     {
       subskill: "meaning in context",
@@ -190,7 +192,7 @@ per cent. The footnote is that the question changed.`,
       subskill: "reasoning",
       family: "evaluating-a-position",
       difficulty: "Hard",
-      stem: "The passage's argument in the sixth paragraph depends on treating comparability as:",
+      stem: "The passage's argument in the seventh paragraph depends on treating comparability as:",
       key: "worth less than describing the present accurately.",
       wrong: [
         ["the only standard by which a census should be judged.", "The paragraph explicitly refuses to make comparability decisive."],

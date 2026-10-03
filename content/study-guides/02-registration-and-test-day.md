@@ -1,10 +1,11 @@
 # Registration and Test Day
 
-Logistics lose more points than people admit. A missed deadline costs you an
-entire testing cycle; a forgotten calculator costs you a section.
+Logistics lose more points than people admit. A missed deadline can cost a testing cycle. Prepare the required device and
+permitted tools in advance; online tests also provide an embedded calculator.
 
 > **Verify before you rely on this.** Dates, fees, and policies change. This
-> file reflects the published 2026-27 schedule, rechecked on 2026-09-25. Always confirm
+> file reflects the published 2026-27 schedule; remaining dates and the
+> policy corrections below were rechecked on 2026-10-02. Always confirm
 > against [satsuite.collegeboard.org](https://satsuite.collegeboard.org/sat/registration/dates-deadlines)
 > and [act.org](https://www.act.org/content/act/en/products-and-services/the-act/registration/test-dates.html).
 
@@ -39,7 +40,7 @@ All deadlines expire 11:59 p.m. Eastern. Late registration adds a fee.
 | June 12, 2027 | May 7, 2027 | May 25, 2027 | June 23, 2027 |
 | July 10, 2027 | June 4, 2027 | June 22, 2027 | July 20, 2027 |
 
-ACT's score column is its published first release date for each test; ACT
+ACT's score column is its published initial **paper-test** release date; ACT
 says most scores post within a few weeks and some take longer, especially
 with Writing. All deadlines expire 11:59 p.m. Central. July testing becomes
 available in New York in 2027, with test centers still being added; check
@@ -60,8 +61,8 @@ Application deadline
 
 **Worked example, Nov 1 deadline:**
 
-- Latest usable SAT: **Oct 3 is safe, Nov 7 is not.**
-- Latest usable ACT: **Sept 19 is safe. Oct 17 (scores posted Oct 27) is
+- An Oct 3 SAT leaves a reasonable reporting buffer; Nov 7 is after Nov 1.
+- A Sept 19 ACT leaves more buffer. **Oct 17 (initial paper scores Oct 27) is
   tight**: a delayed score, a Writing score, or a slow official report to the
   college can push it past the deadline.
 
@@ -132,8 +133,11 @@ Do not pay before checking. Students who qualify frequently don't ask.
 If you need extended time, extra breaks, a separate room, a reader, assistive
 technology, or any other accommodation:
 
-- **Start immediately.** Approval commonly takes around **seven weeks**, and
-  requests can be sent back for more documentation, which restarts the clock.
+- **Start early and use the organization's deadline.** College Board recommends
+  requesting accommodations at least seven weeks before testing. ACT uses its
+  posted accommodations deadline, currently the regular registration deadline,
+  and advises contacting your school if a decision has not arrived after ten
+  business days. Additional documentation or appeals can take more time.
 - Requests go through your school's accommodations coordinator (SSD coordinator
   for College Board, similar role for ACT).
 - Approval is **per testing organization**. An SAT approval does not carry over
@@ -142,8 +146,10 @@ technology, or any other accommodation:
   apply their own standards.
 - English learner supports are a separate category with their own process.
 
-If you are within seven weeks of your target date and don't yet have approval,
-plan for the following test date instead.
+If your date is approaching, contact your coordinator before deciding whether
+to change dates. Check [College Board accommodations](https://accommodations.collegeboard.org/)
+and [ACT accommodations and deadlines](https://www.act.org/content/act/en/products-and-services/the-act/registration/accommodations.html);
+approval and available testing arrangements determine your options.
 
 ---
 
@@ -194,7 +200,11 @@ warning to score cancellation. Turn it fully off, not to vibrate.
 
 ## Calculator rules
 
-Both tests permit most graphing and scientific calculators. Both prohibit:
+Check the exact model and its programs against the current
+[SAT calculator policy](https://satsuite.collegeboard.org/sat/what-to-bring-do/calculator-policy)
+and [ACT calculator policy](https://www.act.org/content/act/en/products-and-services/the-act/test-day/calculator-policy.html).
+Both restrict computer algebra system (CAS) functionality; a calculator
+allowed in class or on an AP exam may be prohibited. Both also prohibit:
 
 - Calculators with QWERTY keyboards
 - Phones, tablets, laptops, and smartwatches used as calculators
@@ -259,7 +269,7 @@ Print this or copy it into your notes.
 - [ ] Checked whether my schools superscore
 - [ ] Checked whether my schools accept self-reported scores
 - [ ] Asked my counselor about a fee waiver
-- [ ] Started any accommodations request (7+ weeks lead time)
+- [ ] Started accommodations requests by each organization's deadline
 - [ ] Created or recovered my College Board account
 - [ ] Created or recovered my MyACT account
 - [ ] Uploaded an acceptable photo to both

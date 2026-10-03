@@ -657,7 +657,7 @@
       intro: "The table shows average weekday ridership on three bus routes in the city of Easton.",
       claimant: "Transit planner Rosa Delgado",
       surname: "Delgado",
-      claim: "claims that ridership on Route 9 rose substantially after the city began running Route 9 buses every ten minutes in 2021",
+      claim: "claims that ridership on Route 9 rose substantially between 2019 and 2023",
       headerFor: "Route",
       measureHeader: "Average weekday riders",
       groups: ["Route 4", "Route 9", "Route 12"],
@@ -675,7 +675,7 @@
       intro: "The table shows the percentage of each school's waste that was recycled at three middle schools in one district.",
       claimant: "Environmental educator Tom Reyes",
       surname: "Reyes",
-      claim: "argues that Lakeside Middle School's recycling rate increased sharply after its students started a sorting program in 2019",
+      claim: "argues that Lakeside Middle School's recycling rate increased sharply between 2018 and 2022",
       headerFor: "School",
       measureHeader: "Waste recycled (%)",
       groups: ["Hawthorne Middle", "Lakeside Middle", "Pinecrest Middle"],
@@ -693,7 +693,7 @@
       intro: "The table shows the number of great blue herons counted during an annual survey of three wetlands.",
       claimant: "Biologist Anika Rao",
       surname: "Rao",
-      claim: "claims that the number of herons at Otter Slough grew substantially after the wetland was restored in 2015",
+      claim: "claims that the number of herons at Otter Slough grew substantially between 2012 and 2022",
       headerFor: "Wetland",
       measureHeader: "Herons counted",
       groups: ["Cold Spring Marsh", "Otter Slough", "Reed Hollow"],
@@ -711,7 +711,7 @@
       intro: "The table shows the percentage of trees showing signs of fire blight in three orchards owned by one farm.",
       claimant: "Plant pathologist Luis Ortega",
       surname: "Ortega",
-      claim: "claims that blight declined substantially in River Orchard after workers began pruning infected branches there in 2019",
+      claim: "claims that blight declined substantially in River Orchard between 2018 and 2022",
       headerFor: "Orchard",
       measureHeader: "Trees showing blight (%)",
       groups: ["North Orchard", "River Orchard", "West Orchard"],
@@ -729,7 +729,7 @@
       intro: "The table shows the number of library cardholders per 1,000 residents in three neighborhoods of a city.",
       claimant: "City librarian Grace Kim",
       surname: "Kim",
-      claim: "claims that library use in Northgate increased substantially after a branch library opened there in 2017",
+      claim: "claims that the number of library cardholders per 1,000 residents in Northgate increased substantially between 2015 and 2020",
       headerFor: "Neighborhood",
       measureHeader: "Cardholders per 1,000 residents",
       groups: ["Eastside", "Northgate", "Riverside"],
@@ -747,7 +747,7 @@
       intro: "The table shows the average level of fine particles in the air, in micrograms per cubic meter, at three monitoring stations in one city.",
       claimant: "Air quality analyst Jonas Weber",
       surname: "Weber",
-      claim: "argues that fine-particle pollution downtown dropped substantially after the city switched its downtown buses to electric power in 2017",
+      claim: "argues that fine-particle pollution downtown dropped substantially between 2016 and 2021",
       headerFor: "Station",
       measureHeader: "Fine particles (µg/m³)",
       groups: ["Airport", "Central", "Harbor"],
@@ -766,7 +766,7 @@
       intro: "The table shows enrollment in three language programs at Halvorsen College.",
       claimant: "Program director Mei Lin",
       surname: "Lin",
-      claim: "claims that enrollment in Korean at the college increased substantially after the college hired two new Korean instructors in 2015",
+      claim: "claims that enrollment in Korean at the college increased substantially between 2012 and 2022",
       headerFor: "Language",
       measureHeader: "Students enrolled",
       groups: ["German", "Italian", "Korean"],
@@ -784,7 +784,7 @@
       intro: "The table shows the percentage of the seafloor covered by living coral in three zones of one reef.",
       claimant: "Marine ecologist Talia Moana",
       surname: "Moana",
-      claim: "argues that coral cover in the reef's shallow zone declined substantially after a marine heat wave in 2016",
+      claim: "argues that coral cover in the reef's shallow zone declined substantially between 2014 and 2019",
       headerFor: "Zone",
       measureHeader: "Coral cover (%)",
       groups: ["Deep zone", "Middle zone", "Shallow zone"],
@@ -803,7 +803,7 @@
       intro: "The table shows the percentage of commuters who biked to work in three cities in the same region.",
       claimant: "Urban planner Ines Duarte",
       surname: "Duarte",
-      claim: "claims that bicycle commuting in Brenton grew substantially after the city built a network of protected bike lanes in 2011",
+      claim: "claims that bicycle commuting in Brenton grew substantially between 2008 and 2018",
       headerFor: "City",
       measureHeader: "Commuters biking to work (%)",
       groups: ["Aldport", "Brenton", "Calloway"],
@@ -821,7 +821,7 @@
       intro: "The table shows the average time, in minutes, that patients waited to be seen at three clinics in one health network.",
       claimant: "Health administrator Omar Siddiqui",
       surname: "Siddiqui",
-      claim: "claims that waiting times at Clinic B fell substantially after the clinic introduced online check-in in 2020",
+      claim: "claims that waiting times at Clinic B fell substantially between 2019 and 2022",
       headerFor: "Clinic",
       measureHeader: "Average wait (minutes)",
       groups: ["Clinic A", "Clinic B", "Clinic C"],
@@ -1236,7 +1236,7 @@
         "Algae blooms in Lake Maren have grown larger and more frequent since 2005. Hydrologist Samuel Idowu attributes the change to fertilizer washing into the lake from nearby farms, which expanded their planted area during the same period. Fertilizer supplies phosphorus, a nutrient that algae need in order to grow, and Idowu argues that the added phosphorus has fueled the blooms.",
       pattern: "have grown larger and more frequent since 2005",
       claim: "attributes the change to fertilizer washing into the lake",
-      key: "Phosphorus levels in Lake Maren have not risen since 2005, even as the blooms grew.",
+      key: "Annual phosphorus input to Lake Maren has not increased since 2005, even as blooms grew.",
       supports: "Streams flowing into the lake from farm fields have carried more phosphorus since 2005 than before.",
       neutral: "Some of the species of algae that grow in Lake Maren need less phosphorus than other species do.",
       neutralReason: "Differences among algae species do not bear on whether added phosphorus has fueled the blooms.",
@@ -1275,7 +1275,7 @@
         "Some historians have argued that lead poisoning contributed to the decline of the Roman elite. Wealthy Romans, they note, drank water carried through lead pipes and sweetened their wine with a syrup boiled down in lead pots, and ancient writers described ailments among the elite, such as gout, that can result from lead poisoning.",
       pattern: "drank water carried through lead pipes",
       claim: "lead poisoning contributed to the decline of the Roman elite",
-      key: "Skeletons of wealthy Romans hold no more lead than those of poor Romans of the same period.",
+      key: "Remains show that wealthy Romans' lead exposure was too low to produce the cited ailments.",
       supports: "Lead levels in the bones of wealthy Romans rose over the same centuries in which the elite declined.",
       neutral: "Roman writers also recommended the lead-sweetened syrup as a remedy for several minor illnesses.",
       neutralReason: "If anything, this points to even more lead exposure, so it does not weaken the argument.",
@@ -1327,7 +1327,7 @@
         "At Linden Middle School, students who took music lessons scored higher on math tests than students who did not. Education writer Paula Grant argues that learning music strengthens the mental skills used in mathematics, so the lessons themselves raised the students' math scores.",
       pattern: "scored higher on math tests than students who did not",
       claim: "the lessons themselves raised the students' math scores",
-      key: "The students who took lessons already had higher math scores than their classmates before the lessons began.",
+      key: "Students taking music had higher math scores than their classmates before lessons began.",
       supports: "Students' math scores rose steadily the longer they continued taking their music lessons.",
       neutral: "Students who took piano lessons and students who took violin lessons had similar math scores.",
       neutralReason: "Similar results across instruments are consistent with Grant's argument and do not weaken it.",
@@ -1397,7 +1397,8 @@
       key: "“The green light dancing on the swell / has closed above better sailors' heads.”",
       aOnly: "“At dawn the water blushes rose and gold, / and gulls ride shining on its gentle, rolling back.”",
       bOnly: "“Three boats went out in March and two came home; / the village keeps the third one in its prayers.”",
-      neither: "“My mother mended nets beside the open door / and hummed the tunes her mother used to hum.”",
+      neither: "“The harbor lamps lead every sailor home; / their steady rows lie gold upon the foam.”",
+      neitherReason: "The gold lights offer beauty and guidance, but the lines supply no danger.",
     },
     {
       scene: "ii-q2-city-overwhelmed-fascinated",
@@ -1406,11 +1407,12 @@
         "In a short story, a teenager named Dario moves from a small town to a large city. The story portrays Dario as both overwhelmed by the city's noise and fascinated by its variety.",
       partA: "overwhelmed by the city's noise",
       partB: "fascinated by its variety",
-      cues: ["The horns and sirens made Dario's head ache", "could not stop turning to look"],
-      key: "“The horns and sirens made Dario's head ache, yet he could not stop turning to look at every storefront he passed.”",
+      cues: ["palms over his ears","stopping nonetheless at each unfamiliar doorway"],
+      key: "“Dario walked with his palms over his ears, stopping nonetheless at each unfamiliar doorway until his mother had to call him back.”",
       aOnly: "“Dario tried to read on the fire escape, but the drilling and the horns below drove him back inside within minutes.”",
       bOnly: "“Dario spent his first Saturday riding the subway to the end of every line, just to see what was there.”",
-      neither: "“His mother had found an apartment near her new job, three floors above a laundromat on Pike Street.”",
+      neither: "“Dario followed his mother past the unfamiliar doorways, keeping his eyes on her coat and counting the blocks until they reached home.”",
+      neitherReason: "Following his mother and counting blocks do not show either sensitivity to noise or curiosity about the city’s variety.",
     },
     {
       scene: "ii-q2-house-affection-relief",
@@ -1419,11 +1421,12 @@
         "In a poem, the speaker describes an old family house that has recently been sold. The speaker expresses both affection for the house and relief at no longer having to care for it.",
       partA: "affection for the house",
       partB: "relief at no longer having to care for it",
-      cues: ["I loved each crooked stair", "will not / miss climbing them with buckets"],
-      key: "“I loved each crooked stair and will not / miss climbing them with buckets when it rained.”",
+      cues: ["took the worn brass knocker for my shelf","slept through rain without a bucket"],
+      key: "“I took the worn brass knocker for my shelf / and slept through rain without a bucket by the bed.”",
       aOnly: "“The kitchen held the warmth of forty winters; / I knew its every creak the way I knew my name.”",
       bOnly: "“No more the gutters choked with autumn leaves, / no more the furnace groaning through the night.”",
-      neither: "“The buyers are a couple from the city / who plan to paint the shutters blue by May.”",
+      neither: "“I left the brass knocker shining on the door / and checked the roof again before the buyers came.”",
+      neitherReason: "Preparing the house for its buyers need not show affection or relief from its demands.",
     },
     {
       scene: "ii-q2-demanding-loyal-mentor",
@@ -1436,7 +1439,8 @@
       key: "“Dr. Haas returned Leila's draft covered in red ink three times, then argued for an hour with the editor who rejected it.”",
       aOnly: "“Dr. Haas expected every experiment to be repeated five times; anything less, he told Leila, was a rumor, not a result.”",
       bOnly: "“When a student's funding ran out, Dr. Haas quietly paid her rent out of his own pocket for the rest of the term.”",
-      neither: "“The laboratory was on the top floor, and its tall windows looked out over the river, the rail yards, and the old mills.”",
+      neither: "“Dr. Haas defended the laboratory’s reputation at the meeting, then told Leila that her failed experiment was her own affair.”",
+      neitherReason: "Defending the laboratory’s reputation is not loyalty to Leila; dismissing her problem does not establish demanding instruction.",
     },
     {
       scene: "ii-q2-snow-peaceful-isolating",
@@ -1445,11 +1449,12 @@
         "In a poem, the speaker describes the first heavy snowfall of the winter in a small town. The speaker presents the snow as both peaceful and isolating.",
       partA: "peaceful",
       partB: "isolating",
-      cues: ["The whole town hushes under white", "no voice but mine for miles around"],
-      key: "“The whole town hushes under white, and I / can hear no voice but mine for miles around.”",
+      cues: ["No engines trouble the white afternoon","path to your door has vanished"],
+      key: "“No engines trouble the white afternoon; / the path to your door has vanished with the road.”",
       aOnly: "“The snow comes down as softly as a sigh, / and every branch lies still beneath its weight.”",
       bOnly: "“The roads are closed; the telephone is dead; / the nearest neighbor's house has disappeared.”",
-      neither: "“The children build their forts along the ditch / and pelt each other till their mittens freeze.”",
+      neither: "“Our neighbors gather by the stranded bus, / their voices carrying across the crusted snow.”",
+      neitherReason: "The stranded bus suggests disruption, while gathered neighbors suggest contact rather than peaceful isolation.",
     },
     {
       scene: "ii-q2-inventor-aware-persistent",
@@ -1462,20 +1467,22 @@
       key: "“Hollis entered the date of the ninth crash in his notebook, beneath the other eight, and began sketching a new wing.”",
       aOnly: "“Hollis knew that the townspeople laughed at him behind his back, and he knew perfectly well that they had every reason to.”",
       bOnly: "“The lamps in the other houses went out one by one, yet Hollis worked on in his barn every night that winter.”",
-      neither: "“The machine's frame was made of ash wood and wire, covered with canvas that his sister had sewn.”",
+      neither: "“Hollis displayed the bent wing above his bench and told each visitor the machine would have flown if the wind had held.”",
+      neitherReason: "Excusing the failure is not acknowledging it, and displaying the wing does not show renewed work.",
     },
     {
       scene: "ii-q2-market-chaotic-welcoming",
       work: "poem",
       text:
-        "In a poem, the speaker describes a crowded outdoor market in the city where she lives. The speaker portrays the market as both chaotic and welcoming.",
+        "In a poem, the speaker describes a crowded outdoor market in the city where she lives. The speaker portrays the busy market as both chaotic and welcoming.",
       partA: "chaotic",
       partB: "welcoming",
       cues: ["Through shouting, shoving, spilled and rolling fruit", "a dozen hands reach out to offer tastes"],
       key: "“Through shouting, shoving, spilled and rolling fruit, / a dozen hands reach out to offer tastes.”",
       aOnly: "“The carts collide, the vendors bellow out their prices, / and no one walks in anything resembling a line.”",
       bOnly: "“The baker knows my name and saves a loaf; / the flower seller always stops to ask for news.”",
-      neither: "“By nine the stalls are empty, and the square / is swept by two old men with brooms of bundled straw.”",
+      neither: "“At dawn the vendors call across the square; / I pass their lowered shutters on my way.”",
+      neitherReason: "Calling across a square with lowered shutters does not establish disorder or an invitation to the speaker.",
     },
     {
       scene: "ii-q2-sister-competitive-protective",
@@ -1484,11 +1491,12 @@
         "In a short story, two sisters, Nora and Beth, compete against each other in a county spelling bee. The story portrays Nora as both competitive with her sister and protective of her.",
       partA: "competitive with her sister",
       partB: "protective of her",
-      cues: ["Nora wanted badly to beat Beth", "glared at him until he looked away"],
-      key: "“Nora wanted badly to beat Beth, but when a boy laughed at Beth's mistake, Nora glared at him until he looked away.”",
-      aOnly: "“Nora studied the word list every night, determined that this year her own name, not Beth's, would be the last one called.”",
-      bOnly: "“Beth's hands began to shake before her turn, but Nora squeezed them and whispered that she would be fine.”",
-      neither: "“The gymnasium smelled of floor polish, and the judges sat at a folding table beneath the old scoreboard.”",
+      cues: ["covered her practice cards","took the chair between Beth and the boys"],
+      key: "“Nora covered her practice cards when Beth leaned over, then took the chair between Beth and the boys mimicking her stammer.”",
+      aOnly: "“Each time Beth spelled another word, Nora pressed her pencil harder against her own tally, until its point snapped in two.”",
+      bOnly: "“At Beth’s first hesitation Nora began applauding, loudly enough to drown out the chuckles from the row behind her sister.”",
+      neither: "“Beth kept her practice cards hidden from Nora, who watched the boys copying Beth’s stammer and said nothing to stop them.”",
+      neitherReason: "Beth, rather than Nora, withholds her preparation; Nora’s silence also supplies no protection against the mockery.",
     },
     {
       scene: "ii-q2-river-fondness-sadness",
@@ -1497,11 +1505,12 @@
         "In a poem, the speaker returns to a river where he swam as a child. The speaker expresses both fondness for his memories of the river and sadness at how it has changed.",
       partA: "fondness for his memories of the river",
       partB: "sadness at how it has changed",
-      cues: ["Here I once dove for stones in water clear as glass", "now weeds choke the shallows"],
-      key: "“Here I once dove for stones in water clear as glass; / now weeds choke the shallows where the stones once lay.”",
+      cues: ["still can name the stones we made our islands","above the water’s oily skin"],
+      key: "“I still can name the stones we made our islands; / I mouth their names above the water’s oily skin.”",
       aOnly: "“I remember summers when we raced from bank to bank / and our laughter carried all the way to the mill.”",
       bOnly: "“A factory drains its gray water into the bend now, / and no one I know will swim there anymore.”",
-      neither: "“The bridge was built in nineteen twelve / of stone cut from the quarry on the hill.”",
+      neither: "“The children name the stones beyond the bridge; / I hurry past before their game is done.”",
+      neitherReason: "The children’s game does not establish the speaker’s own cherished memories or sadness at a change.",
     },
     {
       scene: "ii-q2-teacher-strict-playful",
@@ -1514,7 +1523,8 @@
       key: "“Mr. Lindqvist would not light a burner until every goggle was on, but then he'd turn the flame green and ask us to guess the secret.”",
       aOnly: "“Mr. Lindqvist let us choose our own lab partners, but he sent a student out for removing his goggles even for a moment.”",
       bOnly: "“Mr. Lindqvist began each class with a riddle about the elements and gave extra credit to whoever solved it first.”",
-      neither: "“The chemistry lab was in the basement, and its shelves held jars of powders whose names I never learned.”",
+      neither: "“Mr. Lindqvist made a joke of my cracked goggles, then waved me toward a burner while he finished setting out the jars.”",
+      neitherReason: "The joke may be playful, but allowing cracked goggles near a burner contradicts strict safety.",
     },
   ];
 
@@ -1527,14 +1537,14 @@
     title: "Quotation that illustrates both halves of a two-part claim",
     recognize:
       "The claim joins two qualities with \"both ... and\"; two choices each show one half vividly, and only the answer shows both at once.",
-    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 1 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 1, trap: 1 },
     tricks: ["too-narrow", "true-but-irrelevant"],
     build(t) {
       const topic = t.pick(TWO_PART_QUOTATION_TOPICS);
       const wrong = [
         [topic.aOnly, `This shows only the first part of the claim ("${topic.partA}") and nothing of the second.`],
         [topic.bOnly, `This shows only the second part of the claim ("${topic.partB}") and nothing of the first.`],
-        [topic.neither, "This concerns the same subject but shows neither quality the claim names."],
+        [topic.neither, topic.neitherReason || "This concerns the same subject but does not establish both qualities the claim names."],
       ];
       return mc("Medium", topic, {
         stimulus: passage(topic.text),
@@ -2090,11 +2100,11 @@
     id: "quantitative-rate-versus-count",
     skill: "Command of Evidence",
     subskill: "quantitative evidence",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Table data that support a claim about a rate or a percent change",
     recognize:
       "The claim is about a percent change or a rate, not a count or a level: find the two values (start and end, or count and base) for each group the claim names, and check the ratio; larger counts, larger gains, and the wrong years can all look like support.",
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["percent-base", "true-but-irrelevant", "wrong-quantity"],
     build(t) {
       const frame = t.pick(RATE_PERCENT_FRAMES);
@@ -2117,28 +2127,20 @@
         // Two groups over a span, in one of two wordings; the unit is given
         // once per group, with its later value, and the verb is neutral,
         // since the other groups may fall.
-        const two = (p, q, i, j, listed) => (listed
-          ? `From ${frame.years[i]} to ${frame.years[j]}, ${frame.of(name[p])} went from ${g(rows[p][i])} to ${u(rows[p][j])}; ${frame.of(name[q])}, from ${g(rows[q][i])} to ${u(rows[q][j])}.`
-          : `${cap1(frame.of(name[p]))} went from ${g(rows[p][i])} in ${frame.years[i]} to ${u(rows[p][j])} in ${frame.years[j]}; ${frame.of(name[q])}, from ${g(rows[q][i])} to ${u(rows[q][j])}.`);
-        // The key and the same two groups over each decade share values
-        // pairwise alike (a triangle); the fourth choice, two other groups
-        // over one decade, shares a year with one decade choice more than
-        // with the key. The decade choices share a wording; the key takes
-        // the other wording in about a third of draws.
-        const unlike = t.chance(0.35);
-        const late = t.chance(0.5);
-        const [p, q] = t.shuffle(["C", "D"]);
+        const two = (p, q, i, j, listed, labelP = name[p], labelQ = name[q]) => (listed
+          ? `From ${frame.years[i]} to ${frame.years[j]}, ${frame.of(labelP)} went from ${g(rows[p][i])} to ${u(rows[p][j])}; ${frame.of(labelQ)}, from ${g(rows[q][i])} to ${u(rows[q][j])}.`
+          : `${cap1(frame.of(labelP))} went from ${g(rows[p][i])} in ${frame.years[i]} to ${u(rows[p][j])} in ${frame.years[j]}; ${frame.of(labelQ)}, from ${g(rows[q][i])} to ${u(rows[q][j])}.`);
+        // Cross two independent row-reading mistakes. Every option names the
+        // right groups and period, so the values themselves must be checked.
         draw = () => {
           const listed = t.chance(0.5);
+          const make = (p, q) => two(p, q, 0, 2, listed, A, B);
           return {
-            correct: two("A", "B", 0, 2, unlike ? !listed : listed),
+            correct: make("A", "B"),
             wrong: [
-              [two("A", "B", 1, 2, listed),
-                `True, but this covers only ${y1} to ${y2}, when ${frame.of(B)} grew by the larger percentage; the claim concerns ${y0} to ${y2}.`],
-              [two("A", "B", 0, 1, listed),
-                `True, but this covers only ${y0} to ${y1}; the claim concerns the whole period from ${y0} to ${y2}.`],
-              [two(p, q, late ? 1 : 0, late ? 2 : 1, t.chance(0.5)),
-                `True, but it concerns ${C} and ${D}, not the two groups the claim names.`],
+              [make("A", "D"), `This assigns ${D}’s values to ${B}; check the row for ${B}.`],
+              [make("C", "B"), `This assigns ${C}’s values to ${A}; check the row for ${A}.`],
+              [make("C", "D"), `This uses ${C} and ${D}’s values under the names ${A} and ${B}.`],
             ],
           };
         };
@@ -2158,29 +2160,20 @@
         const order = t.shuffle(["A", "B", "C", "D"]);
         const name = { A, B, C, D };
         content = `${S.table(frame.headers, order.map((k) => [name[k], g(rows[k][0]), g(rows[k][1])]))}\n\n${frame.intro} ${frame.person} claims that ${frame.claim(A, B)}.`;
-        // The key and two wrong pairs (A with C, C with B) share values
-        // pairwise alike, and the fourth choice lists three groups' counts
-        // or sizes, so it shares values with each pair alike too. The wrong
-        // pairs share a wording; the key takes the other in about a third
-        // of draws.
-        const pairIn = (p, q, listed) => (listed
-          ? `${cap1(frame.pair(name[p], g(rows[p][1]), g(rows[p][0])))}, while ${frame.pair(name[q], g(rows[q][1]), g(rows[q][0]))}.`
-          : `${cap1(frame.pair(name[p], g(rows[p][1]), g(rows[p][0])))}; ${frame.pairTail(name[q], g(rows[q][1]), g(rows[q][0]))}.`);
-        const unlike = t.chance(0.35);
-        const fourth = t.chance(0.5)
-          ? [`${cap1(frame.counts(name.B, g(rows.B[1])))}, more than ${name.A} (${g(rows.A[1])}) or ${name.C} (${g(rows.C[1])}).`,
-            `True, but a larger count is not a larger rate; the claim concedes that ${B} had the larger count.`]
-          : [`${cap1(frame.bases(name.B, g(rows.B[0])))}, far more than ${name.A} (${g(rows.A[0])}) or ${name.C} (${g(rows.C[0])}).`,
-            "True, but sizes alone do not give a rate; the counts are needed too."];
+        // Each choice uses the same group labels and supplies a complete
+        // pair of rates. Crossed row substitutions require checking the data.
+        const pairIn = (p, q, listed, labelP = name[p], labelQ = name[q]) => (listed
+          ? `${cap1(frame.pair(labelP, g(rows[p][1]), g(rows[p][0])))}, while ${frame.pair(labelQ, g(rows[q][1]), g(rows[q][0]))}.`
+          : `${cap1(frame.pair(labelP, g(rows[p][1]), g(rows[p][0])))}; ${frame.pairTail(labelQ, g(rows[q][1]), g(rows[q][0]))}.`);
         draw = () => {
           const listed = t.chance(0.5);
-          const [k1, k2] = t.chance(0.5) ? ["A", "B"] : ["B", "A"];
+          const make = (p, q) => pairIn(p, q, listed, A, B);
           return {
-            correct: pairIn(k1, k2, unlike ? !listed : listed),
+            correct: make("A", "B"),
             wrong: [
-              [pairIn(...t.shuffle(["A", "C"]), listed), `True, but it compares ${A} with ${C}; the claim compares ${A} with ${B}.`],
-              [pairIn(...t.shuffle(["C", "B"]), listed), `True, but it compares ${C} with ${B}; the claim compares ${A} with ${B}.`],
-              fourth,
+              [make("A", "D"), `This assigns ${D}’s count and base to ${B}; check the actual row.`],
+              [make("C", "B"), `This assigns ${C}’s count and base to ${A}; check the actual row.`],
+              [make("C", "D"), `This substitutes ${C} and ${D}’s data for both groups the claim names.`],
             ],
           };
         };
@@ -2196,7 +2189,7 @@
         };
       }
       const { correct, wrong } = balancedDraw(t, draw);
-      return mc("Hard", frame, {
+      return mc("Medium", frame, {
         stimulus: { type: "table", content },
         stem: `Which choice most effectively uses data from the table to support ${frame.surname}'s claim?`,
         correct,
@@ -2204,14 +2197,14 @@
         explanation: `${why} The choice that shows this is: ${correct}`,
         steps: [
           "Decide what the claim compares: a percent change (the gain relative to the start) or a rate (a count relative to its base), and for which two groups over which years.",
-          "For each choice, check whether it gives both numbers needed for each of those two groups.",
+          "For each choice, check all four values against the table: a choice can name the right groups while borrowing another row’s values.",
           "Compute the two percent changes or rates and confirm that they come out as the claim says; larger counts, larger gains, and other years do not decide it.",
         ],
         principles: [
           "A percent change divides the gain by the starting value, so a small group can grow by a larger percentage while gaining less.",
           "A rate divides a count by its base; the group with more events can have the lower rate.",
         ],
-        trap: "Choosing a true statement about larger counts, larger gains, or the right groups in the wrong years.",
+        trap: "Accepting the correct group labels without checking that the values come from those groups, or comparing counts instead of rates.",
         hint: "What must be divided by what to test the claim, and does the choice give you both numbers for each group?",
         verify: () => check(correct) && allDistinct(correct, wrong),
       });
@@ -2226,11 +2219,9 @@
   // The text reports an observation, a researcher's hypothesis, and a rival
   // account that explains the same observation. Support (or weakening) has
   // to discriminate between the two: the key is a finding the two accounts
-  // predict differently. `both` is a finding both accounts predict (it
-  // sounds like support but cannot favor either), `opposite` favors the
-  // other side, and `aside` is true background or a finding about a
-  // neighbouring case that bears on neither. Every researcher, place, and
-  // study here is invented.
+  // predict differently. Other choices retain a confounded comparison,
+  // favor the rival, or use a tempting but nondiscriminating proxy. Every
+  // researcher, place, and study here is invented; reasons are scene-specific.
   const DISCRIMINATING_TOPICS = [
     {
       scene: "ii-df-orvanne-silt",
@@ -2239,30 +2230,24 @@
       text:
         "Sediment cores from Lake Orvanne, a small lake high in a mountain valley, show that the layers of silt settling on its floor each year grew several times thicker over the twentieth century. Geologist Ilse Varga attributes the change to the retreat of the glacier that feeds the lake: as the ice withdrew, she argues, it exposed rock it had ground into fine powder, which meltwater then carried into the lake. A competing account holds that logging on the forested slopes above the lake, which expanded during the same decades, loosened soil that rainstorms washed downhill.",
       anchors: ["attributes the change to the retreat of the glacier", "logging on the forested slopes"],
-      key: "Most of the silt in the thicker layers is finely ground rock, with little of the organic matter found in forest soils.",
-      keyWhy: "Rock ground by the glacier and soil from logged slopes would leave different material behind; silt that is mostly ground rock with little forest organic matter is what Varga's account predicts and the logging account does not.",
-      both: ["The layers began to thicken during the same decades in which the glacier retreated and logging expanded.",
-        "Both accounts predict thickening in those decades, since both events happened then, so the timing cannot favor Varga's."],
-      opposite: ["The thicker layers contain abundant fragments of bark, needles, and charcoal mixed in with the silt.",
-        "Bark, needles, and charcoal point to material washed off the forested slopes, which favors the logging account."],
-      aside: ["Several other glaciers in the range retreated during the same decades in which this glacier retreated.",
-        "This concerns other glaciers; it says nothing about where the silt in Lake Orvanne came from."],
+      key: "Sediment rose in unlogged streams after upstream ice retreated, but stayed steady in logged streams whose upstream ice remained unchanged.",
+      keyWhy: "The comparison separates logging from retreat: the increase follows retreat without logging, whereas logging without retreat produces little increase.",
+      both: ["Streams below both retreating ice and logged slopes gained more sediment than streams whose upstream ice and forest both remained unchanged.","Both proposed causes differ between these groups, so the comparison cannot isolate retreat from logging."],
+      opposite: ["Sediment rose in logged streams with unchanged upstream ice, but stayed steady in unlogged streams after upstream ice retreated.","This matched contrast associates added sediment with logging, the rival explanation."],
+      aside: ["Streams draining the most newly exposed rock supplied the most sediment, but also drained the largest areas of newly logged forest.","The two exposures still coincide, so their association with sediment cannot select one explanation."],
     },
     {
       scene: "ii-df-tessel-song",
       name: "Stell",
       mode: "support",
       text:
-        "On the Tessel Islands, males of a small songbird sing a song with fewer notes than the song of the same species on the nearby mainland. Ornithologist Anouk Stell proposes that the difference arose through learning: because the islands were settled by only a few birds, young males there copied a small number of tutors, and details lost in copying were never restored. Other researchers suggest instead that the islands' dense forests, which muffle long and complex songs, favored birds whose shorter songs carry well through foliage.",
+        "On the Tessel Islands, males of a small songbird sing a song with fewer notes than the song of the same species on the nearby mainland. Ornithologist Anouk Stell proposes that the difference arose through learning: because the islands were settled by only a few birds, young males there copied a small number of tutors, and details lost in copying were never restored. Other researchers suggest instead that the islands' dense forests, which muffle long and complex songs, favored an inherited tendency toward shorter songs, which carry well through foliage.",
       anchors: ["the difference arose through learning", "dense forests"],
-      key: "Island males living in open grassland sing the same short song as island males living in dense forest.",
-      keyWhy: "If dense forest were what shortened the song, island birds in open grassland would have no reason to sing it; the same short song in open country points to a song inherited from a few tutors, as Stell proposes.",
-      both: ["Young males on the islands learn songs with fewer notes than young males on the mainland learn.",
-        "This is the difference both accounts set out to explain, so it cannot favor one of them."],
-      opposite: ["On the mainland, males living in dense forest also sing noticeably shorter songs than males in open country.",
-        "Shorter songs in mainland forests, where there was no small founding group, favor the idea that dense vegetation shortens songs."],
-      aside: ["Young males on the islands, like young males on the mainland, learn their songs from adult males.",
-        "Birds could learn whichever song the forest favors, so the fact that songs are learned fits both accounts and favors neither."],
+      key: "In identical open aviaries, island and mainland nestlings copied whichever population’s song they heard, regardless of their own origin.",
+      keyWhy: "Holding habitat constant while crossing the birds’ origin with the tutoring song isolates transmission through learning from an inherited island preference.",
+      both: ["In identical open aviaries, island and mainland nestlings raised by adults from their own populations reproduced those adults’ songs.","Origin and tutoring remain paired; either inherited differences or copying could produce this result."],
+      opposite: ["In identical open aviaries, island nestlings sang short songs and mainland nestlings sang long ones, regardless of their tutors’ origin.","Persistence by origin despite identical tutoring favors an inherited difference rather than lost details in copying."],
+      aside: ["Island males in dense forest sang fewer notes than mainland males in grassland, even when recorded at the same time of day.","Time of day is controlled, but habitat and population history still differ together."],
     },
     {
       scene: "ii-df-vell-hoards",
@@ -2271,14 +2256,11 @@
       text:
         "Archaeologists have recovered an unusual number of coin hoards in the Vell valley that were buried during the 1140s and never retrieved by their owners. Historian Marek Halloran argues that the hoards reflect a decade of war: owners hid their savings as armies approached and then died or fled before they could return. A rival interpretation holds that the 1140s were simply prosperous, so that more coins were in circulation, more were buried for safekeeping, and more were eventually forgotten.",
       anchors: ["reflect a decade of war", "simply prosperous"],
-      key: "The 1140s hoards cluster along the roads that chronicles say armies used, unlike hoards from other decades.",
-      keyWhy: "War would leave unretrieved hoards where armies passed, while prosperity would spread them wherever people lived; hoards concentrated along army routes fit Halloran's account and not the rival one.",
-      both: ["More coins minted in the 1140s have been found in the valley than coins minted in any other decade.",
-        "Both a war and a boom in circulating coins would leave many 1140s coins in the ground, so this favors neither account."],
-      opposite: ["Tax records show that the valley's markets handled far more trade in the 1140s than in the decades around it.",
-        "Busier markets are what the prosperity account predicts, so this favors the rival interpretation."],
-      aside: ["Chronicles describe fighting between rival lords in a neighboring valley during the 1140s.",
-        "Fighting in another valley does not show that owners in the Vell valley fled or died before recovering their coins."],
+      key: "For equally wealthy districts, 1140s hoards per inhabited site rose along army routes but stayed stable away from those routes.",
+      keyWhy: "Equal prosperity indicators and adjustment for inhabited sites leave the wartime route as the important difference; the within-decade contrast supports war-related abandonment.",
+      both: ["Districts along army routes held more 1140s hoards but also had more inhabited sites and higher tax receipts than other districts.","Army routes, population, and prosperity vary together, so the raw hoard count does not discriminate."],
+      opposite: ["For equally wealthy districts, 1140s hoards per inhabited site rose equally along army routes and in areas armies never entered.","A rise unrelated to armies’ routes weakens the proposed war-specific explanation and is compatible with broader prosperity."],
+      aside: ["Districts along army routes held more coins per hoard, but those coins’ mint dates ranged across several earlier decades.","Hoard size and mint dates do not establish why 1140s owners failed to retrieve their savings."],
     },
     {
       scene: "ii-df-halden-fireflies",
@@ -2287,14 +2269,11 @@
       text:
         "In the suburbs of Halden, fireflies have become scarce within about fifty meters of streetlights. Ecologist Tamsin Okafor attributes the decline to the lights themselves, arguing that artificial light drowns out the flashes fireflies use to find mates, so that fewer pairs form and fewer eggs are laid. Some residents point instead to the closely mown lawns that surround most of Halden's streetlights, which offer none of the damp leaf litter where firefly larvae live and feed.",
       anchors: ["attributes the decline to the lights themselves", "closely mown lawns"],
-      key: "Fireflies returned where streetlights were shielded from the ground but lawns were still mown.",
-      keyWhy: "Shielding removes the light while leaving the lawns unchanged, so a recovery under those conditions implicates the light, as Okafor argues, rather than the lawns.",
-      both: ["Fireflies are several times more numerous a hundred meters from a streetlight than right beside one.",
-        "Near a streetlight there is both more light and more mown lawn, so this pattern fits both explanations."],
-      opposite: ["Fireflies are just as scarce in closely mown parks that have no lights as they are beside streetlights.",
-        "Scarcity on mown ground with no lights favors the lawn explanation over Okafor's."],
-      aside: ["Females of many firefly species answer a male's flash with a flash of their own after a set delay.",
-        "This describes how fireflies signal in general; it does not show whether light or lawns caused the decline in Halden."],
+      key: "With mowing unchanged, shielding restored mating and later larval counts; leaf litter under exposed lamps aided larval survival but not mating.",
+      keyWhy: "The key separates the proposed mechanisms: restoring signaling changes reproduction even with lawns fixed; improved larval habitat alone does not restore mating.",
+      both: ["Shielding lamps and adding leaf litter together improved mating and later larval counts compared with plots that received neither change.","Both potential causes changed together, so the improvement does not isolate light from habitat."],
+      opposite: ["With lighting unchanged, leaf litter restored mating and later larval counts; shielding lamps over bare lawns changed neither measure.","The recovery follows habitat restoration without light removal, while shielding alone fails, favoring the rival."],
+      aside: ["Exposed lamps over short lawns had fewer mating pairs nearby than dimmer lamps over tall grass, even at equal temperatures.","This repeats the original confounding of light and lawn conditions."],
     },
     {
       scene: "ii-df-carrowby-vowel",
@@ -2303,14 +2282,11 @@
       text:
         "In the coastal town of Carrowby, younger residents pronounce the vowel in words such as boat and road farther forward in the mouth than older residents do. Linguist Petra Nwosu argues that the new pronunciation was introduced by families who moved to Carrowby from a northern city in the 1980s, where the forward vowel is common, and that it then spread to their neighbors' children. Other linguists contend that the change began within Carrowby itself, as many sound changes do, and spread among teenagers regardless of family background.",
       anchors: ["introduced by families who moved to Carrowby", "began within Carrowby itself"],
-      key: "Recordings from the 1970s show some local teenagers already using the forward vowel before those families arrived.",
-      keyWhy: "If local teenagers used the forward vowel before the northern families arrived, the families cannot have introduced it; this fits the view that the change began in Carrowby itself.",
-      both: ["Residents under thirty use the forward vowel far more often than residents over sixty do.",
-        "Both accounts explain why younger residents use the new vowel, so this does not weaken Nwosu's argument."],
-      opposite: ["The forward vowel is most common in the neighborhoods where the northern families settled.",
-        "A concentration where the families settled is what Nwosu's argument predicts, so this supports rather than weakens it."],
-      aside: ["Residents of the northern city also differ from Carrowby residents in how they pronounce several consonants.",
-        "Differences in consonants say nothing about where Carrowby's new vowel came from."],
+      key: "Locally born teenagers used the vowel before the newcomers arrived; its later spread tracked school friendships more than neighboring homes.",
+      keyWhy: "Use before the proposed introduction undermines the claimed origin, while spread through school networks fits a local peer-driven change.",
+      both: ["Older residents retained the earlier vowel after the arrivals, while younger residents increasingly used the new vowel in formal and casual speech.","Both proposed pathways can produce a generational difference and wider use of the new vowel."],
+      opposite: ["Recordings first show the vowel among newcomers’ children; local classmates adopted it later, fastest among those with more newcomer friends.","The sequence and network match introduction by the newcomers, supporting the argument that must be weakened."],
+      aside: ["The vowel later spread fastest on streets where northern families settled, but those streets also contained the town’s largest school.","This association remains compatible with the newcomers’ influence; the school confound prevents it from establishing the rival origin."],
     },
     {
       scene: "ii-df-maresh-glaze",
@@ -2319,14 +2295,11 @@
       text:
         "Excavations at Tel Maresh, an inland settlement, have uncovered fragments of pottery coated in a bright blue glaze, a finish otherwise known mainly from workshops on the coast two hundred kilometers away. Archaeologist Yusuf Adeyemi argues that potters at Tel Maresh made the vessels themselves after learning the coastal technique. Others maintain that the vessels were made on the coast and reached the settlement through trade, as many luxury goods of the period did.",
       anchors: ["made the vessels themselves", "reached the settlement through trade"],
-      key: "The clay of the blue-glazed fragments matches clay beds beside Tel Maresh, not those near the coast.",
-      keyWhy: "Vessels made at Tel Maresh would be built from local clay, while traded vessels would carry coastal clay; a match to the local clay beds favors Adeyemi's account.",
-      both: ["The blue-glazed fragments were found scattered among ordinary pottery in the settlement's household refuse.",
-        "Vessels made locally and vessels bought from the coast would both end up broken in household refuse, so this favors neither."],
-      opposite: ["Several fragments bear a maker's stamp identical to stamps found at one of the coastal workshops.",
-        "A coastal workshop's stamp suggests the vessels were made there and traded inland, which favors the rival account."],
-      aside: ["The blue-glazed fragments were fired in kilns that reached unusually high temperatures.",
-        "Such kilns could have stood on the coast or at Tel Maresh; without knowing where the vessels were fired, this favors neither account."],
+      key: "Blue-glazed kiln waste at Tel Maresh matches local household fragments; coastal kiln waste differs, although vessels were traded.",
+      keyWhy: "Kiln waste provides evidence of manufacture rather than merely clay provenance or use. Its match to household vessels supports local production despite evidence of trade.",
+      both: ["Inland blue-glazed vessels match coastal ones in shape and chemistry; inland unglazed pottery differs in both despite using similar clay.","Copied technique and imported finished vessels can both produce this resemblance; the local unglazed comparison does not locate manufacture."],
+      opposite: ["Blue-glazed pieces fused to coastal kiln supports match inland household fragments chemically; inland kiln waste differs, despite similar tools.","Production waste matching the household vessels occurs on the coast, favoring imported finished vessels."],
+      aside: ["Blue-glazed vessels use inland clay and coastal pigments, but records show that both raw clay and finished vessels traveled between the regions.","Because raw clay was traded, clay origin alone cannot locate manufacture; coastal workshops could have used inland clay."],
     },
     {
       scene: "ii-df-brannock-tea",
@@ -2335,14 +2308,11 @@
       text:
         "During the 1850s, the price of imported tea in the port of Brannock fell by about half. Economic historian Lena Marsh argues that the decline resulted from faster sailing ships, which shortened voyages and so reduced the wages, provisions, and insurance that each cargo required. Another explanation points instead to the government's decision in 1853 to abolish the tariff it had long charged on imported tea.",
       anchors: ["resulted from faster sailing ships", "abolish the tariff"],
-      key: "Brannock's tea price fell sharply in the month the tariff ended and barely moved in the other years.",
-      keyWhy: "Faster ships entered service gradually and would have lowered prices over many years; a drop concentrated in the month the tariff ended points to the tariff instead, which weakens Marsh's argument.",
-      both: ["Tea sold in Brannock at the end of the decade cost roughly half of what it had cost in 1850.",
-        "This restates the decline that both explanations account for, so it does not weaken Marsh's argument."],
-      opposite: ["Untaxed goods carried on the same routes, such as spices, also fell by about half in price during the 1850s.",
-        "Goods with no tariff to remove fell just as much, which points to cheaper shipping and so supports Marsh's argument."],
-      aside: ["Tea became the most popular drink among Brannock's dockworkers over the course of the 1850s.",
-        "How popular tea became says nothing about whether shipping costs or the tariff drove its price down."],
+      key: "Warehoused tea prices fell when the tariff ended; fresh tea shipped on faster vessels showed no further reduction relative to that landed stock.",
+      keyWhy: "Already landed stock could not benefit from shorter voyages; its price shift at tariff removal, with no added advantage for new shipments, favors the tariff account.",
+      both: ["Fresh tea prices fell while voyages shortened and the tariff ended; average prices of all imported drinks also declined over the same period.","Both candidate causes coincide for the new shipments; the broader decline still fails to separate their contributions."],
+      opposite: ["Tea shipped on faster vessels became cheaper before the tariff ended; older ships’ tea stayed costly until those ships were replaced.","The difference follows shipping technology before tariff removal, supporting the argument that must be weakened."],
+      aside: ["Tea became cheaper relative to untaxed spices on the same ships, but the spices’ warehouse insurance costs increased substantially that year.","The uncontrolled storage cost can explain the difference, so this is less direct than isolating already landed tea."],
     },
     {
       scene: "ii-df-sorrel-coral",
@@ -2351,14 +2321,11 @@
       text:
         "During a marine heat wave, corals growing near the mouth of the Sorrel River bleached far less than corals elsewhere in the same lagoon. Marine biologist Adaeze Ferris proposes that the river's cloudy, sediment-laden water shaded the nearby corals, reducing the intense sunlight that, together with heat, triggers bleaching. An alternative hypothesis holds that the corals near the river mouth belong to a heat-tolerant strain that would resist bleaching wherever it grew.",
       anchors: ["shaded the nearby corals", "heat-tolerant strain"],
-      key: "Corals moved from the river mouth to clear parts of the lagoon bleached as often as the local corals.",
-      keyWhy: "A truly heat-tolerant strain should resist bleaching even in clear water; corals that lost their advantage once moved away from the river's cloudy water point to shading, as Ferris proposes.",
-      both: ["Corals near the river mouth had also bleached less than other corals during an earlier heat wave.",
-        "Both the river's shade and a heat-tolerant strain would have protected those corals in earlier heat waves too, so this favors neither."],
-      opposite: ["Corals from the river mouth that were raised in tanks of clear water still resisted bleaching when heated.",
-        "Resisting bleaching without the river's shade favors the heat-tolerant strain over Ferris's explanation."],
-      aside: ["Many reef-building corals get much of their food from algae that live inside their tissues.",
-        "This is true of corals in general and does not distinguish shading from inherited heat tolerance."],
+      key: "With temperature and chemistry held equal, both coral populations bleached alike in clear tanks and benefited equally from filtered sunlight.",
+      keyWhy: "Crossing origin with shade while controlling temperature and chemistry isolates protection from reduced light rather than an inherited advantage of river-mouth corals.",
+      both: ["With temperature and chemistry held equal, river-mouth corals in shaded tanks bleached less than lagoon corals in clear tanks.","Origin and shade still change together, so either explanation predicts the difference."],
+      opposite: ["With temperature and chemistry held equal, river-mouth corals resisted bleaching in clear and shaded tanks; neither population benefited from shade.","Protection follows origin rather than shade, favoring inherited tolerance."],
+      aside: ["Both coral populations bleached less in river-water tanks, but those tanks were also cooler and shadier than the comparison tanks.","River water, temperature, and shade vary together, so the result does not isolate the proposed light mechanism."],
     },
     {
       scene: "ii-df-ashwick-otters",
@@ -2367,14 +2334,11 @@
       text:
         "After decades of scarcity, river otters became common again along the Ashwick River between 2000 and 2015. Ecologist Rhys Calloway attributes the recovery to cleaner water: as factories upstream reduced their discharges, he argues, fish populations grew and could support more otters. Others credit a ban on trapping otters that the regional government imposed in 1999, just before the recovery began.",
       anchors: ["attributes the recovery to cleaner water", "a ban on trapping otters"],
-      key: "Otter numbers began rising in the first two years of the ban, before water quality measurably improved.",
-      keyWhy: "If otters increased before the water or the fish recovered, cleaner water cannot explain the start of the recovery, while the trapping ban can; this weakens Calloway's argument.",
-      both: ["More otters were counted along the Ashwick in 2015 than in any survey the region had made since the 1950s.",
-        "This restates the recovery that both explanations account for, so it does not weaken Calloway's argument."],
-      opposite: ["Fish counts in the Ashwick doubled in the years just before otter numbers along the river began to rise.",
-        "More fish arriving just before more otters is what Calloway's argument predicts, so this supports it."],
-      aside: ["River otters also eat crayfish and frogs, especially in winter, when fish are harder to catch.",
-        "Otters still depend largely on fish, so a varied winter diet does not show that cleaner water played no part."],
+      key: "After the ban, otters recovered without more fish; cleaned reaches gained fish but no greater otter recovery than uncleaned reaches.",
+      keyWhy: "Recovery without improved food supply, and no extra response where fish increased, undermine the proposed cleaner-water-to-fish-to-otter mechanism.",
+      both: ["After the ban, otters recovered fastest where factory discharge fell most and fish counts exceeded those in reaches that stayed polluted.","Trapping and pollution changes overlap; this can fit the cleaner-water mechanism and therefore does not directly weaken it."],
+      opposite: ["After the ban, otters remained scarce in polluted reaches; in cleaned reaches, fish recovered first and otters increased afterward.","The sequence and location support the proposed food-supply pathway, which the stem asks to weaken."],
+      aside: ["After the ban, otters ate more frogs where fish stayed scarce, but bred less successfully there than where fish populations recovered.","Diet flexibility alone does not refute food limitation; lower breeding success where fish are scarce is compatible with it."],
     },
     {
       scene: "ii-df-pellham-cycling",
@@ -2383,14 +2347,11 @@
       text:
         "The share of Pellham residents who commute by bicycle doubled between 2016 and 2022. Transportation researcher Hana Ivers credits the network of protected bike lanes that the city built during those years. Others note that fuel prices climbed steeply over the same period and argue that rising costs, not the new lanes, pushed commuters out of their cars and onto bicycles.",
       anchors: ["credits the network of protected bike lanes", "fuel prices climbed steeply"],
-      key: "Cycling rose mainly on the routes that gained protected lanes and barely changed elsewhere.",
-      keyWhy: "Rising fuel prices would push commuters onto bicycles on every route, while new lanes would draw riders mainly where they were built; growth concentrated on those routes favors Ivers's account.",
-      both: ["Twice as many Pellham residents cycled to work in 2022 as in 2016, according to a city survey.",
-        "This restates the increase that both explanations account for, so it favors neither."],
-      opposite: ["Bus ridership in Pellham rose over the same years by about the same percentage as cycling did.",
-        "Commuters leaving their cars for buses as well as bicycles points to fuel costs rather than bike lanes."],
-      aside: ["Twice as many Pellham residents owned bicycles in 2022 as in 2016, according to a city survey.",
-        "Commuters pushed by fuel costs and commuters drawn by new lanes would both buy bicycles, so more bicycles favors neither account."],
+      key: "With fuel costs and workplaces unchanged, cycling rose on protected routes but stayed steady on comparable routes without new lanes.",
+      keyWhy: "Holding fuel costs and commuting circumstances constant leaves new protection as the distinguishing change, directly separating the lane explanation from the fuel-cost explanation.",
+      both: ["Cycling rose among commuters facing higher fuel costs on protected routes; those with unchanged costs on unprotected routes kept driving.","Both fuel costs and lane availability differ between the groups, so this supports either account."],
+      opposite: ["On newly protected routes, cycling rose only among commuters facing higher fuel costs; those with unchanged costs continued driving.","The change tracks fuel costs even where lane access is shared, favoring the rival explanation."],
+      aside: ["Most new bicycle commuters used protected routes, but those routes had also served most of the city’s workplaces before the change.","Routes serving most workplaces would attract riders under either explanation; the distribution lacks a matched comparison."],
     },
   ];
 
@@ -2402,8 +2363,8 @@
     difficulty: "Hard",
     title: "Finding that favors one of two rival explanations",
     recognize:
-      "Two accounts explain the same observation, so evidence bears on one only if the two predict it differently; a finding both accounts expect, however agreeable it sounds, supports neither.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+      "Two accounts explain the same observation, so evidence bears on one only if the two predict it differently; a finding predicted equally well by both does not distinguish them. Check what each comparison holds constant.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["true-but-irrelevant", "opposite-stance"],
     build(t) {
       const topic = t.pick(DISCRIMINATING_TOPICS);
@@ -2418,11 +2379,11 @@
         steps: [
           `State ${topic.name}'s explanation and the rival explanation of the same observation.`,
           "For each finding, ask which explanation would predict it; a finding both would predict cannot decide between them.",
-          `Choose the finding that ${support ? `only ${topic.name}'s explanation predicts` : `the rival explanation predicts and ${topic.name}'s does not`}.`,
+          `Choose the finding that ${support ? `is more expected under ${topic.name}'s explanation with the rival factor controlled` : `fits the rival explanation better than ${topic.name}'s`}.`,
         ],
         principles: [
-          "Evidence favors one explanation over another only when the two predict different results.",
-          "A restatement of the observation both explanations were built to explain is not evidence for either.",
+          "Evidence favors one explanation over another when it is more expected under that explanation; comparisons must separate the proposed causes.",
+          "Restating the shared observation does not distinguish the rival explanations.",
         ],
         trap: support
           ? `Choosing a finding that agrees with ${topic.name}'s explanation but that the rival explanation predicts just as well.`
@@ -3046,11 +3007,11 @@
     id: "evidence-excerpt-quotation",
     skill: "Command of Evidence",
     subskill: "textual evidence",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Quotation from a novel or play excerpt that illustrates a two-part claim",
     recognize:
       "Split the claim into its two parts and test each quotation in context: the answer shows both at once, often without the claim's words, while the others show one part, belong to another speaker, or only echo the claim.",
-    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["too-narrow", "misattributed-view", "word-association"],
     build(t) {
       const topic = t.pick(EXCERPT_TOPICS);
@@ -3058,7 +3019,7 @@
       const content = `${EXCERPT_HEADERS[topic.kind]}\n\n${excerpt}\n\n${topic.claim}`;
       const correct = quoteExcerpt(topic.key);
       const wrong = topic.near.map(([text, reason]) => [quoteExcerpt(text), reason]);
-      return mc("Hard", topic, {
+      return mc("Medium", topic, {
         stimulus: passage(content),
         stem: `Which quotation from the ${topic.kind === "play" ? "play" : "novel"} most effectively illustrates the claim?`,
         correct,
@@ -3511,279 +3472,574 @@
     },
   };
 
-  /* ------------------------------------------------------------------ */
-  /* Command of Evidence (quantitative, Hard): reconcile a graph with a  */
-  /* claim about timing, every group, or growth against level            */
-  /* ------------------------------------------------------------------ */
+  /* Integrate chart comparisons with conditions in the text. */
 
-  // Each frame is an invented data set and a claim that the graph only
-  // partly fits. Every offered choice is a true reading of the graph, so
-  // accuracy never decides; what decides is whether the reading bears on
-  // the claim as stated. Kinds:
-  //   timing (line): the claim says an event made a measure move one way in
-  //     both series. Series A does; series B keeps moving the other way
-  //     after the event. The key reports B after the event. Offered
-  //     instead: B moving the "wrong" way before the event (the same look,
-  //     the wrong period), A after the event (supports), A before it, or
-  //     the two series' levels.
-  //   every (bar, before/after): the claim says a program helped every
-  //     group. The key is the group that got worse. Offered instead: the
-  //     group with the worst level after the program (which still
-  //     improved), a comparison of one group's after value with another's
-  //     before value, and the largest improvement.
-  //   growth (line): the claim concedes that A is still below B but says A
-  //     grew more over the whole period. The key gives both series' start
-  //     and end values. Offered instead: the same four-value comparison
-  //     over the first half only (when A was flat) and over the second half
-  //     only (when A did grow more, but not over the claim's period), and
-  //     one of: the levels in the last or middle year, A's growth against
-  //     B's growth over a shorter span, or A's growth alone.
   const GRAPH_RECONCILE_FRAMES = [
     {
-      scene: "ii-g2-kell-dam",
-      kind: "timing",
-      dir: -1,
-      title: "Salmon returning to spawn in two rivers",
-      xLabel: "Year",
-      yLabel: "Salmon counted (thousands)",
-      yMin: 0, yMax: 24, yStep: 2,
-      categories: ["2006", "2009", "2012", "2015", "2018", "2021"],
-      event: 2,
-      series: ["Ash River", "Birch River"],
-      target: "Pell’s claim",
-      text: "The Kell Dam, completed in 2012, blocks part of the watershed that feeds two rivers where salmon spawn. Fisheries biologist Nora Pell claims that the dam caused the number of salmon returning to spawn to decline in both the Ash River and the Birch River.",
-      measure: "the salmon count",
-      be: "was",
-      in: ["in the Ash River", "in the Birch River"],
-      unit: " thousand",
+      "scene": "ii-g2-dam-comparison-trend",
+      "kind": "dam",
+      "title": "Salmon returning to two rivers",
+      "xLabel": "Year",
+      "yLabel": "Salmon counted (thousands)",
+      "yMin": 0,
+      "yMax": 40,
+      "yStep": 5,
+      "categories": [
+        "2006",
+        "2009",
+        "2012",
+        "2015",
+        "2018"
+      ],
+      "series": [
+        "Ash River",
+        "Birch River"
+      ],
+      "values": [
+        [
+          10,
+          15,
+          20,
+          20,
+          20
+        ],
+        [
+          20,
+          25,
+          30,
+          35,
+          40
+        ]
+      ],
+      "text": "The Kell Dam began operating on the Ash River just after the 2012 salmon count. The nearby Birch River remained undammed. Fisheries biologist Nora Pell treats Birch as a comparison for regional conditions affecting both rivers. A colleague argues that the dam could not have reduced salmon returns because Ash's count never fell. Pell responds that a harmful effect could instead appear as growth that would otherwise have occurred. The graph shows counts collected by the same method in both rivers.",
+      "stem": "Which choice best uses the graph to support Pell's response?",
+      "correct": "Both rivers gained 10 thousand fish before 2012; afterward, Ash stopped growing while Birch gained another 10 thousand.",
+      "wrong": [
+        [
+          "Ash had fewer fish than Birch in every year, so its lower final count reflects the same difference present before construction.",
+          "Ash was already lower, but the gap widened from 10 to 20 thousand after the dam. Treating that changing gap as unchanged misses the evidence."
+        ],
+        [
+          "Ash's count doubled before 2012 and then held steady, so its earlier growth offsets any effect the dam had after construction.",
+          "Growth before construction cannot offset a later loss relative to the undammed comparison river."
+        ],
+        [
+          "Birch gained 20 thousand fish over the full period, so the dam's effect on Ash must equal Birch's entire increase over that period.",
+          "Half of Birch's increase occurred before construction. The relevant divergence is the additional 10 thousand after 2012."
+        ]
+      ],
+      "explanation": "Before 2012, both rivers gained 10 thousand fish. After 2012, Birch gained another 10 thousand while Ash stayed at 20 thousand. Thus a stable observed count is compatible with a loss of expected growth. This supports Pell's response without proving that the dam was the only cause.",
+      "hint": "What happened to the difference between the rivers before and after the dam began operating?"
     },
     {
-      scene: "ii-g2-marlow-drink-tax",
-      kind: "timing",
-      dir: -1,
-      title: "Sugary drinks sold in Marlow, by type of store",
-      xLabel: "Year",
-      yLabel: "Drinks sold (thousands of liters)",
-      yMin: 0, yMax: 60, yStep: 5,
-      categories: ["2014", "2016", "2018", "2020", "2022", "2024"],
-      event: 2,
-      series: ["Supermarkets", "Corner shops"],
-      target: "Haddad’s claim",
-      text: "In 2018, the city of Marlow began taxing sugary drinks. Economist Farid Haddad claims that the tax caused sales of sugary drinks to fall at both of the city’s main kinds of retailers, supermarkets and corner shops.",
-      measure: "sugary drink sales",
-      be: "were",
-      in: ["at supermarkets", "at corner shops"],
-      unit: " thousand liters",
+      "scene": "ii-g2-retail-composition",
+      "kind": "retail",
+      "chart": "bar",
+      "title": "Customers buying a sugary drink",
+      "xLabel": "Survey year",
+      "yLabel": "Customers buying a drink (%)",
+      "yMin": 0,
+      "yMax": 80,
+      "yStep": 10,
+      "categories": [
+        "2018",
+        "2022"
+      ],
+      "series": [
+        "Supermarkets",
+        "Corner shops"
+      ],
+      "values": [
+        [
+          60,
+          50
+        ],
+        [
+          20,
+          10
+        ]
+      ],
+      "text": "Marlow introduced a sugary-drink tax after a 2018 customer survey. The graph shows the share of surveyed customers buying a sugary drink at each store type. Supermarket customers made up one-fourth of the 2018 sample but three-fourths of the equally large 2022 sample; everyone else used corner shops. Analyst Farid Haddad notes that the overall purchasing share rose from 30% to 40%. He takes this as evidence that purchasing became more common within the store types after the tax.",
+      "stem": "Which choice best uses the graph and sampling information to evaluate Haddad's inference?",
+      "correct": "Purchasing fell in each store type; the overall rise reflects greater representation of the type with the higher purchasing share.",
+      "wrong": [
+        [
+          "Purchasing rose within supermarkets; their greater representation therefore explains why the overall share increased after the tax.",
+          "Supermarket purchasing fell from 60% to 50%; the shift toward supermarkets, rather than a within-type increase, raises the pooled share."
+        ],
+        [
+          "Purchasing fell within both store types; equal total sample sizes therefore require the overall purchasing share to have fallen too.",
+          "Equal sample sizes do not imply equal composition. Weighting the two types gives 30% in 2018 and 40% in 2022."
+        ],
+        [
+          "Purchasing rose within corner shops; their smaller representation therefore conceals part of the increase in the overall share.",
+          "The corner-shop share fell from 20% to 10%, and that lower-purchasing group became less represented."
+        ]
+      ],
+      "explanation": "Both store types show a decline of 10 percentage points. However, the sample shifts toward supermarkets, where the purchasing share is higher in both years. The weighted overall shares are 30% and 40%, so the pooled increase cannot support Haddad's claim about increases within store types.",
+      "hint": "Does the overall share describe the same mixture of store types in both surveys?"
     },
     {
-      scene: "ii-g2-highway-cameras",
-      kind: "timing",
-      dir: -1,
-      title: "Crashes per year on two highways",
-      xLabel: "Year",
-      yLabel: "Crashes per year",
-      yMin: 0, yMax: 60, yStep: 5,
-      categories: ["2009", "2012", "2015", "2018", "2021", "2024"],
-      event: 2,
-      series: ["Route 3", "Route 17"],
-      target: "the report’s claim",
-      text: "In 2015, the state installed speed cameras along two rural highways, Route 3 and Route 17. A report from the state’s transportation office claims that the cameras caused the number of crashes to drop on both highways.",
-      measure: "the number of crashes",
-      be: "was",
-      in: ["on Route 3", "on Route 17"],
-      unit: "",
+      "scene": "ii-g2-highway-traffic-exposure",
+      "kind": "traffic",
+      "title": "Annual crashes on two highways",
+      "xLabel": "Year",
+      "yLabel": "Crashes",
+      "yMin": 0,
+      "yMax": 60,
+      "yStep": 5,
+      "categories": [
+        "2016",
+        "2020",
+        "2024"
+      ],
+      "series": [
+        "Route 3",
+        "Route 17"
+      ],
+      "values": [
+        [
+          30,
+          20,
+          15
+        ],
+        [
+          45,
+          35,
+          25
+        ]
+      ],
+      "text": "A transportation report compares crashes on two highways before and after speed cameras were installed in 2017. Between 2016 and 2024, annual vehicle travel on Route 3 fell by half because a bypass opened, while annual vehicle travel on Route 17 was unchanged. The report claims that Route 3 had the greater improvement in safety, defined as a reduction in crashes per mile traveled, because its crash count fell by a larger percentage. The graph gives the crash counts.",
+      "stem": "Which choice most directly challenges the report's use of the crash counts?",
+      "correct": "Route 3's crashes and travel both halved, leaving its rate unchanged; Route 17's falling count with unchanged travel lowered its rate.",
+      "wrong": [
+        [
+          "Route 3 ended with fewer crashes, so its crash rate was lower than Route 17's even though the highways' travel totals are unspecified.",
+          "Counts cannot establish the relative crash rates when the two highways' travel totals are not given."
+        ],
+        [
+          "Route 17 lost 20 crashes while Route 3 lost 15, so Route 17's final crash rate must be lower regardless of the miles traveled.",
+          "The larger decrease in raw crashes does not establish a lower final rate. The two highways' absolute travel totals are unspecified."
+        ],
+        [
+          "Route 3's count fell by half while Route 17's fell by less, so adjusting for the bypass strengthens the reported safety advantage.",
+          "The bypass reduces the denominator by the same fraction as Route 3's crash count, eliminating the claimed rate decrease."
+        ]
+      ],
+      "explanation": "A crash rate divides crashes by miles traveled. On Route 3, halving both quantities leaves the rate unchanged. Route 17's count falls while its travel is unchanged, so its rate falls. The larger percentage decrease in Route 3's raw count therefore does not show the greater safety improvement.",
+      "hint": "Which quantity must remain comparable for a change in crashes to measure a change in safety?"
     },
     {
-      scene: "ii-g2-wexley-butterflies",
-      kind: "timing",
-      dir: 1,
-      title: "Butterflies counted per survey in Wexley",
-      xLabel: "Year",
-      yLabel: "Butterflies per survey",
-      yMin: 0, yMax: 40, yStep: 4,
-      categories: ["2010", "2013", "2016", "2019", "2022", "2025"],
-      event: 2,
-      series: ["Meadows", "Roadsides"],
-      target: "Ruiz’s claim",
-      text: "In 2016, the town of Wexley stopped spraying pesticides on public land. Ecologist Marisol Ruiz claims that the change caused the number of butterflies to increase both in the town’s meadows and along its roadsides.",
-      measure: "the butterfly count",
-      be: "was",
-      in: ["in the meadows", "along the roadsides"],
-      unit: "",
+      "scene": "ii-g2-butterfly-mowing-interaction",
+      "kind": "mowing",
+      "chart": "bar",
+      "title": "Butterflies in plots with two mowing schedules",
+      "xLabel": "Habitat and mowing schedule",
+      "yLabel": "Butterflies per survey",
+      "yMin": 0,
+      "yMax": 60,
+      "yStep": 10,
+      "categories": [
+        "Meadow cut",
+        "Meadow uncut",
+        "Verge cut",
+        "Verge uncut"
+      ],
+      "series": [
+        "Sprayed",
+        "Unsprayed"
+      ],
+      "values": [
+        [
+          10,
+          20,
+          20,
+          30
+        ],
+        [
+          20,
+          40,
+          30,
+          50
+        ]
+      ],
+      "text": "Ecologist Marisol Ruiz randomly assigned otherwise similar plots within each of four habitat-and-mowing groups to receive pesticide or remain unsprayed. Equal areas were surveyed with equal effort. Ruiz proposes that leaving vegetation uncut increases the benefit of withholding pesticide, measured as the additional butterflies in unsprayed plots, and that this pattern occurs in both meadows and roadside verges. She distinguishes that benefit from the number of butterflies a habitat supports regardless of pesticide use.",
+      "stem": "Which choice most effectively uses the graph to support Ruiz's proposal?",
+      "correct": "The unsprayed advantage is 10 in cut plots and 20 in uncut plots in both habitats, despite differences in their sprayed counts.",
+      "wrong": [
+        [
+          "The unsprayed advantage is greatest on uncut verges because their count of 50 exceeds the count of 40 in uncut meadows.",
+          "This compares unsprayed levels, not the unsprayed-minus-sprayed advantage. That advantage is 20 in both uncut habitats."
+        ],
+        [
+          "The unsprayed advantage is greater on verges because their sprayed counts exceed meadow counts under both mowing schedules.",
+          "Higher sprayed counts describe the habitat baseline. The pesticide contrast is equal across habitats at each mowing schedule."
+        ],
+        [
+          "The unsprayed advantage is independent of mowing because unsprayed counts exceed sprayed counts in all four groups.",
+          "A positive advantage everywhere does not make its magnitude equal: it doubles from 10 in cut plots to 20 in uncut plots."
+        ]
+      ],
+      "explanation": "Compare sprayed and unsprayed plots within each habitat-and-mowing group. The differences are 10, 20, 10, and 20 butterflies. Thus uncut vegetation doubles the advantage associated with withholding pesticide in each habitat, although the habitats' baseline counts differ.",
+      "hint": "Does the proposal concern the tallest bars, or the distance between each pair of bars?"
     },
     {
-      scene: "ii-g2-school-gardens",
-      kind: "every",
-      chart: "bar",
-      dir: 1,
-      title: "Students eating vegetables daily, before and after a garden program",
-      xLabel: "School",
-      yLabel: "Students eating vegetables daily (%)",
-      yMin: 0, yMax: 60, yStep: 5,
-      categories: ["Ardmore", "Bexley", "Corrin", "Delway"],
-      series: ["Before program", "After program"],
-      target: "Obuya’s claim",
-      text: "A nonprofit started gardens at four middle schools and surveyed students about their eating habits before and after the program. The nonprofit’s director, Grace Obuya, claims that the program increased the share of students who eat vegetables daily at every one of the four schools.",
-      measure: "the share of students eating vegetables daily",
-      at: (g) => `at ${g}`,
-      unit: "%",
-      plural: "schools",
-      when: ["before the program", "after the program"],
+      "scene": "ii-g2-gardens-bundled-lessons",
+      "kind": "gardens",
+      "chart": "bar",
+      "title": "Students eating vegetables daily",
+      "xLabel": "School",
+      "yLabel": "Students (%)",
+      "yMin": 0,
+      "yMax": 80,
+      "yStep": 10,
+      "categories": [
+        "Alder",
+        "Birch",
+        "Cedar",
+        "Dale"
+      ],
+      "series": [
+        "Before",
+        "After"
+      ],
+      "values": [
+        [
+          20,
+          40,
+          20,
+          40
+        ],
+        [
+          40,
+          60,
+          30,
+          50
+        ]
+      ],
+      "text": "Four schools introduced gardens. Alder and Birch also introduced nutrition lessons; Cedar and Dale did not. The graph shows daily vegetable consumption in the same student cohorts before and after the changes. Schools chose their own programs. Director Grace Obuya argues that, because Alder and Birch had higher final consumption than the schools with matching initial consumption, their gardens must have been more effective. A reviewer objects that the comparison does not isolate differences in the gardens' effects.",
+      "stem": "Which choice best uses the graph and program information to support the reviewer's objection?",
+      "correct": "At each initial level, the school with lessons gained 20 points while its counterpart gained 10, leaving lessons as a competing explanation.",
+      "wrong": [
+        [
+          "At each initial level, the school with lessons ended 10 points higher, establishing that lessons alone caused the extra improvement.",
+          "The pattern is compatible with a lesson effect but does not establish one: schools chose their own bundled programs."
+        ],
+        [
+          "The schools that began at 40% ended above those that began at 20%, establishing that initial consumption explains all differences in gains.",
+          "Both starting levels contain a 20-point gain and a 10-point gain. Initial consumption therefore does not explain the gain differences."
+        ],
+        [
+          "Every school improved after introducing a garden, ruling out the extra lessons as an explanation for differences between the schools.",
+          "Improvement everywhere does not rule out lessons contributing to the larger gains at Alder and Birch."
+        ]
+      ],
+      "explanation": "Alder and Cedar both began at 20%, but gained 20 and 10 points, respectively; Birch and Dale both began at 40% and show the same gain contrast. The larger gains coincide with the additional lessons. Because the programs were bundled and self-selected, the chart cannot attribute the extra gains specifically to superior gardens or specifically to lessons.",
+      "hint": "Which other feature changes along with the gains in the matched school comparisons?"
     },
     {
-      scene: "ii-g2-doverton-signals",
-      kind: "every",
-      chart: "bar",
-      dir: -1,
-      title: "Average wait at four intersections, before and after new signals",
-      xLabel: "Intersection (cross street)",
-      yLabel: "Average wait (seconds)",
-      yMin: 0, yMax: 60, yStep: 5,
-      categories: ["Oak", "Pine", "Elm", "Cedar"],
-      series: ["Before new signals", "After new signals"],
-      target: "Carrow’s claim",
-      text: "The city of Doverton replaced the traffic signals at four intersections along Main Street with signals that adjust their timing to traffic. City engineer Luis Carrow claims that the new signals shortened the average wait for drivers at every one of the four intersections.",
-      measure: "the average wait",
-      at: (g) => `at ${g} Street`,
-      unit: " seconds",
-      plural: "intersections",
-      when: ["before the new signals", "after the new signals"],
+      "scene": "ii-g2-signals-observation-mix",
+      "kind": "signals",
+      "chart": "bar",
+      "title": "Average waiting time at Doverton signals",
+      "xLabel": "Signal system",
+      "yLabel": "Average wait (seconds)",
+      "yMin": 0,
+      "yMax": 60,
+      "yStep": 5,
+      "categories": [
+        "Old",
+        "New"
+      ],
+      "series": [
+        "Off-peak",
+        "Peak"
+      ],
+      "values": [
+        [
+          10,
+          15
+        ],
+        [
+          50,
+          55
+        ]
+      ],
+      "text": "Doverton engineers measured driver waiting times before and after replacing traffic signals. Peak-hour observations formed three-fourths of the old-system sample but only one-fourth of the equally large new-system sample. All other observations were off-peak. The pooled average wait fell from 40 to 25 seconds. An engineer cites that decline as evidence that the new signals shortened waits under comparable traffic conditions. The graph separates the observations by traffic period.",
+      "stem": "Which choice most effectively uses the graph to assess the engineer's evidence?",
+      "correct": "Each traffic period shows a 5-second increase; the lower pooled wait comes from observing more drivers during the less congested period.",
+      "wrong": [
+        [
+          "Each traffic period shows a 5-second increase; the pooled decline therefore implies that the two samples contained different total numbers of drivers.",
+          "The total sample sizes are equal. Different proportions of peak and off-peak observations are sufficient to reverse the pooled result."
+        ],
+        [
+          "The peak wait rose to 55 seconds while the off-peak wait was only 15, so the new signals shortened waits mainly for off-peak drivers.",
+          "The off-peak wait rose from 10 to 15 seconds. Being lower than the peak wait is not an improvement from its own previous level."
+        ],
+        [
+          "The off-peak wait rose by a larger percentage than the peak wait, so the pooled decline establishes an improvement for peak-hour drivers.",
+          "Both waits rose. Comparing their percentage increases cannot turn the peak-hour increase into an improvement."
+        ]
+      ],
+      "explanation": "Within both traffic periods, the new-system wait is 5 seconds longer. The samples' changing composition produces the pooled decline: 10/4 + 3(50)/4 = 40, while 3(15)/4 + 55/4 = 25. That decline does not show shorter waits under comparable traffic conditions.",
+      "hint": "Which comparison holds the traffic period constant?"
     },
     {
-      scene: "ii-g2-nurse-mentoring",
-      kind: "every",
-      chart: "bar",
-      dir: 1,
-      title: "New nurses staying at least two years, before and after mentoring",
-      xLabel: "Hospital",
-      yLabel: "New nurses staying two years (%)",
-      yMin: 0, yMax: 100, yStep: 10,
-      categories: ["Kingsley", "Larkin", "Mercy", "Norwood"],
-      series: ["Before mentoring", "After mentoring"],
-      target: "Reyes’s claim",
-      text: "Four hospitals in one regional network began pairing each newly hired nurse with an experienced mentor. Nursing director Alma Reyes claims that the mentoring program raised the share of new nurses who stayed at least two years at every hospital in the network.",
-      measure: "the share of new nurses staying two years",
-      at: (g) => `at ${g}`,
-      unit: "%",
-      plural: "hospitals",
-      when: ["before mentoring", "after mentoring"],
+      "scene": "ii-g2-nurse-survivor-denominator",
+      "kind": "nurses",
+      "chart": "bar",
+      "title": "Nurses remaining from two original hiring cohorts",
+      "xLabel": "Months after hiring",
+      "yLabel": "Original cohort remaining (%)",
+      "yMin": 0,
+      "yMax": 100,
+      "yStep": 10,
+      "categories": [
+        "0",
+        "6",
+        "12",
+        "24"
+      ],
+      "series": [
+        "Mentored",
+        "Unmentored"
+      ],
+      "values": [
+        [
+          100,
+          80,
+          60,
+          40
+        ],
+        [
+          100,
+          60,
+          40,
+          20
+        ]
+      ],
+      "text": "A hospital followed two equally large cohorts of newly hired nurses, one mentored and one unmentored. No nurses joined either cohort after hiring. The graph expresses the number remaining as a percentage of each original cohort. A reviewer claims that, among nurses still employed at 12 months, the fraction leaving during the second year was the same in both cohorts: each plotted share declined by 20 percentage points between months 12 and 24. The study was observational, so comparisons alone cannot establish a mentoring effect.",
+      "stem": "Which choice best uses the graph to evaluate the reviewer's claim about second-year departures?",
+      "correct": "The same number left each cohort, but that number was one-third of the mentored nurses remaining and one-half of the unmentored nurses remaining.",
+      "wrong": [
+        [
+          "The same number left each cohort, and equal original cohort sizes make that number the same fraction of the nurses present at month 12.",
+          "Equal original sizes do not mean equal sizes at month 12: 60% and 40% of the original cohorts remain."
+        ],
+        [
+          "Twice as many mentored nurses remained at month 24, so their second-year departure fraction was half the unmentored fraction.",
+          "The final two-to-one ratio does not determine departure fractions, which use the different month-12 populations as denominators."
+        ],
+        [
+          "Mentored nurses had the lower second-year departure fraction, so the graph establishes that mentoring caused the difference between cohorts.",
+          "The lower fraction is supported, but causal attribution is not established by this observational comparison."
+        ]
+      ],
+      "explanation": "Both cohorts lose 20% of their equally large original memberships during the second year. However, 60% of the mentored cohort and 40% of the unmentored cohort remained at month 12. Thus the departure fractions among those still present are 20/60, or one-third, and 20/40, or one-half. This refutes equality without establishing causation.",
+      "hint": "Which nurses are included in the population named in the reviewer's claim?"
     },
     {
-      scene: "ii-g2-rooftop-solar",
-      kind: "growth",
-      title: "Homes with rooftop solar in two towns",
-      xLabel: "Year",
-      yLabel: "Homes with rooftop solar (hundreds)",
-      yMin: 0, yMax: 24, yStep: 2,
-      categories: ["2016", "2018", "2020", "2022", "2024"],
-      series: ["Rennick", "Aldport"],
-      target: "Nair’s claim",
-      text: "Energy analyst Priya Nair compared rooftop solar adoption in two neighboring towns. She claims that although Rennick still had fewer homes with rooftop solar than Aldport did in 2024, the number in Rennick grew by more than the number in Aldport between 2016 and 2024.",
-      names: ["Rennick’s total", "Aldport’s total"],
-      unit: " hundred homes",
+      "scene": "ii-g2-solar-growing-housing-stock",
+      "kind": "solar",
+      "title": "Homes with rooftop solar in two towns",
+      "xLabel": "Year",
+      "yLabel": "Homes with solar (hundreds)",
+      "yMin": 0,
+      "yMax": 8,
+      "yStep": 1,
+      "categories": [
+        "2016",
+        "2020",
+        "2024"
+      ],
+      "series": [
+        "Rennick",
+        "Aldport"
+      ],
+      "values": [
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          4,
+          5,
+          6
+        ]
+      ],
+      "text": "In 2016, Rennick and Aldport each had 1,000 homes. By 2024, Rennick had 2,000 homes and Aldport still had 1,000. The graph shows how many homes had rooftop solar. Analyst Priya Nair claims that Rennick was catching up in the share of homes with solar: its solar-home count doubled, whereas Aldport's increased by only half. Nair defines catching up as narrowing the difference between the towns' solar-adoption percentages, rather than between their counts.",
+      "stem": "Which choice best uses the graph and housing totals to assess Nair's claim?",
+      "correct": "Rennick's share stayed at 20% while Aldport's rose from 40% to 60%, widening the gap despite Rennick's faster count growth.",
+      "wrong": [
+        [
+          "Each town added 200 solar homes, leaving the difference in their counts unchanged and therefore leaving their adoption-percentage gap unchanged.",
+          "Equal additions preserve the count gap, but Rennick's doubling housing stock changes the denominator of its adoption percentage."
+        ],
+        [
+          "Rennick's count doubled while Aldport's grew by half, narrowing the adoption-percentage gap even after accounting for the towns' housing totals.",
+          "Rennick's total housing also doubled, keeping its adoption percentage fixed rather than raising it faster than Aldport's."
+        ],
+        [
+          "Rennick reached two-thirds of Aldport's solar-home count, so its adoption percentage also reached two-thirds of Aldport's by 2024.",
+          "Rennick has twice as many homes overall in 2024; its 20% adoption rate is one-third, not two-thirds, of Aldport's 60% rate."
+        ]
+      ],
+      "explanation": "The graph's hundreds correspond to 200 and 400 solar homes in Rennick and 400 and 600 in Aldport. Divide by total housing in each town and year: Rennick stays at 20%, whereas Aldport rises from 40% to 60%. The adoption-percentage gap grows from 20 to 40 points even though Rennick's solar count grows faster proportionally.",
+      "hint": "Does the total number of homes stay fixed as the solar-home counts change?"
     },
     {
-      scene: "ii-g2-calder-evening-programs",
-      kind: "growth",
-      title: "Students enrolled in two evening programs at Calder Community College",
-      xLabel: "Year",
-      yLabel: "Students enrolled",
-      yMin: 0, yMax: 120, yStep: 10,
-      categories: ["2015", "2017", "2019", "2021", "2023"],
-      series: ["Welding", "Nursing"],
-      target: "Beck’s claim",
-      text: "At Calder Community College, the evening welding program has long enrolled fewer students than the evening nursing program. Program coordinator Tomas Beck claims that although welding still enrolled fewer students than nursing did in 2023, welding enrollment grew by more than nursing enrollment between 2015 and 2023.",
-      names: ["welding enrollment", "nursing enrollment"],
-      unit: " students",
+      "scene": "ii-g2-teaching-retention-transfer",
+      "kind": "teaching",
+      "chart": "bar",
+      "title": "Correct answers after two teaching approaches",
+      "xLabel": "Test timing and problem type",
+      "yLabel": "Correct answers (%)",
+      "yMin": 0,
+      "yMax": 100,
+      "yStep": 10,
+      "categories": [
+        "Familiar now",
+        "Familiar later",
+        "New now",
+        "New later"
+      ],
+      "series": [
+        "Lecture",
+        "Workshop"
+      ],
+      "values": [
+        [
+          80,
+          60,
+          70,
+          40
+        ],
+        [
+          80,
+          80,
+          70,
+          60
+        ]
+      ],
+      "text": "Students were randomly assigned to a lecture or workshop covering the same material. Separate matched groups took tests immediately or one month later. Familiar problems used practiced formats; new problems required applying the material in unpracticed formats. The four tests were designed to be comparable within each problem type. Researcher Tomas Beck proposes that the workshop improved retention rather than initial learning and that its benefit extended beyond practiced formats. The graph reports the average percentages correct.",
+      "stem": "Which choice best uses the graph to support both parts of Beck's proposal?",
+      "correct": "The approaches tied immediately for each problem type, but the workshop's delayed advantage was 20 points for both familiar and new problems.",
+      "wrong": [
+        [
+          "The workshop scored 80% on both familiar tests and 60% on the delayed new test, showing equal retention across the two problem types.",
+          "The workshop loses 10 points on new problems but none on familiar problems; equal retention across types is not the proposed or observed pattern."
+        ],
+        [
+          "The workshop's advantage on delayed familiar problems was 20 points, indicating that its initial-learning advantage survived for a month.",
+          "The immediate familiar scores are equal. The later advantage therefore cannot be described as an observed initial advantage that persisted."
+        ],
+        [
+          "The workshop scored higher on delayed familiar than delayed new problems, indicating that its retention advantage was limited to practiced formats.",
+          "Compare workshop with lecture within each type: it has a 20-point delayed advantage on new problems as well as familiar ones."
+        ]
+      ],
+      "explanation": "Immediate scores are equal between approaches for both familiar and new problems. A month later, workshop scores exceed lecture scores by 20 points within each problem type. This supports a benefit in retention rather than measured initial learning, and the advantage on new problems shows that the benefit extends beyond practiced formats.",
+      "hint": "Which comparisons separate initial performance from later performance, and practiced formats from new ones?"
     },
     {
-      scene: "ii-g2-rural-chargers",
-      kind: "growth",
-      title: "Public chargers for electric vehicles per 100,000 residents",
-      xLabel: "Year",
-      yLabel: "Chargers per 100,000 residents",
-      yMin: 0, yMax: 60, yStep: 5,
-      categories: ["2016", "2018", "2020", "2022", "2024"],
-      series: ["Rural counties", "Urban counties"],
-      target: "Whitlock’s claim",
-      text: "Transportation researcher Dana Whitlock tracked public charging stations for electric vehicles in one state. She claims that although rural counties still had fewer chargers per 100,000 residents than urban counties did in 2024, the rural rate grew by more than the urban rate from 2016 to 2024.",
-      names: ["the rural rate", "the urban rate"],
-      unit: "",
-    },
+      "scene": "ii-g2-fungi-nutrient-limitation",
+      "kind": "fungi",
+      "chart": "bar",
+      "title": "Seedling growth with and without a root fungus",
+      "xLabel": "Nitrogen supply and root access",
+      "yLabel": "Mean growth (centimeters)",
+      "yMin": 0,
+      "yMax": 50,
+      "yStep": 10,
+      "categories": [
+        "Low, open",
+        "Low, mesh",
+        "High, open",
+        "High, mesh"
+      ],
+      "series": [
+        "No fungus",
+        "Fungus"
+      ],
+      "values": [
+        [
+          10,
+          10,
+          40,
+          40
+        ],
+        [
+          30,
+          10,
+          40,
+          40
+        ]
+      ],
+      "text": "Researchers randomly assigned seedlings to low or high nitrogen supplies, with or without a root fungus. Half of each group grew across mesh that blocked root-fungus contact but allowed dissolved chemicals to pass; the rest had open access. Other conditions were held constant. Researchers interpret the fungus's benefit as requiring both scarce nitrogen and direct contact, rather than a growth signal carried by dissolved chemicals. They also argue that the mesh did not simply suppress growth on its own. The graph shows mean growth after eight weeks.",
+      "stem": "Which choice best uses the graph and mesh design to support the researchers' interpretation?",
+      "correct": "Without fungus, mesh leaves growth unchanged; the fungal advantage requires low nitrogen and open contact despite chemical passage through mesh.",
+      "wrong": [
+        [
+          "Without fungus, mesh leaves growth unchanged; the high-nitrogen groups' greater growth therefore shows a fungal benefit with either form of access.",
+          "At high nitrogen the groups with and without fungus both grow 40 centimeters, so their high growth cannot be attributed to a fungal advantage."
+        ],
+        [
+          "With fungus, mesh lowers low-nitrogen growth from 30 to 10 centimeters; the lost benefit therefore supports a chemical signal blocked by the mesh.",
+          "The mesh blocks contact but explicitly permits dissolved chemicals to pass. A signal prevented from passing is not a supported explanation."
+        ],
+        [
+          "With fungus, mesh lowers low-nitrogen growth but leaves high-nitrogen growth unchanged; the mesh therefore suppresses growth independently of fungus.",
+          "Without fungus, open and mesh groups have equal growth at each nitrogen supply. The data do not show the mesh independently suppressing growth."
+        ]
+      ],
+      "explanation": "Without fungus, growth is 10 centimeters at low nitrogen and 40 at high nitrogen regardless of mesh, so the mesh alone does not explain the pattern. Fungus adds 20 centimeters only with low nitrogen and open access; its advantage disappears either behind mesh or at high nitrogen. Since dissolved chemicals pass through mesh, this favors an advantage requiring both scarce nitrogen and direct contact over the proposed dissolved-signal account.",
+      "hint": "Which comparisons distinguish a contact requirement from an effect of the mesh itself?"
+    }
   ];
 
-  function reconcileData(t, frame) {
-    const { yMin, yMax, yStep: st } = frame;
-    const n = frame.categories.length;
-    const r6 = (v) => Math.round(v * 1e6) / 1e6;
-    const inRange = (line) => line.every((v) => v > yMin && v <= yMax);
-    // A walk of n values starting at `start`, moving `sign` by 1-`most` steps
-    // at each index in `moving` and staying put otherwise.
-    for (let attempt = 0; attempt < 300; attempt += 1) {
-      if (frame.kind === "timing") {
-        const e = frame.event;
-        const d = frame.dir;
-        // A moves against the claim before the event and with it after;
-        // B moves against the claim throughout.
-        const a = [gridPick(t, yMin + st, yMax - st, st)];
-        const b = [gridPick(t, yMin + st, yMax - st, st)];
-        for (let index = 1; index < n; index += 1) {
-          a.push(r6(a[index - 1] + (index <= e ? -d : d) * t.int(1, 2) * st));
-          b.push(r6(b[index - 1] - d * t.int(1, 2) * st));
-        }
-        const ok = inRange(a) && inRange(b) && a.every((v, i) => v !== b[i]) && a[n - 1] !== b[n - 1];
-        if (ok) return { values: [a, b], roles: { e } };
-      } else if (frame.kind === "every") {
-        // Built as if higher were better, then flipped about the middle of
-        // the axis when the claim is that the program lowered the measure.
-        const d = frame.dir;
-        const [key, worst, best, cross] = t.shuffle([...Array(n).keys()]);
-        const up = (v, k) => r6(v + k * st);
-        const before = Array(n);
-        const after = Array(n);
-        before[key] = gridPick(t, yMin + 5 * st, yMax - 2 * st, st);
-        after[key] = up(before[key], -t.int(1, 2));
-        after[cross] = up(before[key], -t.int(1, 2));
-        before[cross] = up(after[cross], -t.int(1, 2));
-        after[worst] = up(Math.min(after[key], after[cross]), -t.int(1, 2));
-        before[worst] = up(after[worst], -t.int(1, 2));
-        before[best] = gridPick(t, yMin + st, yMax - 4 * st, st);
-        after[best] = up(before[best], t.int(3, 4));
-        const flip = (v) => (d > 0 ? v : r6(yMin + yMax - v));
-        const b = before.map(flip);
-        const a = after.map(flip);
-        const change = (index) => d * (a[index] - b[index]);
-        const others = [worst, best, cross];
-        const ok = inRange(b) && inRange(a) &&
-          change(key) < 0 && others.every((index) => change(index) > 0) &&
-          others.every((index) => index === best || change(index) < change(best)) &&
-          d * (a[worst] - a[key]) < 0 &&
-          others.every((index) => index === worst || d * (a[index] - a[worst]) > 0) &&
-          d * (a[cross] - b[key]) < 0 && new Set(a).size === n;
-        if (ok) return { values: [b, a], roles: { key, worst, best, cross } };
-      } else {
-        // growth: A flat for the first half, then climbing past B's gain
-        // while staying below B.
-        const mid = 2;
-        const b = [gridPick(t, yMin + 3 * st, yMax - 8 * st, st)];
-        for (let index = 1; index < n; index += 1) b.push(r6(b[index - 1] + t.int(1, 2) * st));
-        const gainB = b[n - 1] - b[0];
-        const gainA = r6(gainB + t.int(1, 3) * st);
-        const start = r6(b[0] - gainA + gainB - t.int(1, 3) * st);
-        const late = n - 1 - mid;
-        const a = [start, start, start];
-        let left = gainA;
-        for (let index = mid + 1; index < n; index += 1) {
-          const stepUp = index === n - 1 ? left : r6(Math.max(st, Math.round(left / (n - index) / st) * st));
-          a.push(r6(a[index - 1] + stepUp));
-          left = r6(left - stepUp);
-        }
-        const ok = late > 0 && inRange(a) && inRange(b) && a[n - 1] < b[n - 1] && a[0] < b[0] &&
-          a[n - 1] - a[0] > gainB && a[mid] === a[0] && b[mid] > b[0] && a.every((v, i) => v !== b[i]);
-        if (ok) return { values: [a, b], roles: { mid } };
-      }
+  // Original quantitative scenes pair a chart with information needed to
+  // interpret it: exposure, sample composition, comparison trends, assignment,
+  // or the scope of an experimental prediction. Arithmetic alone is not the
+  // task; each key states what the combined evidence supports.
+  function reconcileSupports(frame, A, B) {
+    const close = (x, y) => Math.abs(x - y) < 1e-9;
+    switch (frame.kind) {
+      case "dam":
+        return A[2] - A[0] === B[2] - B[0] && A[4] === A[2] && B[4] > B[2] &&
+          B[4] - A[4] > B[2] - A[2];
+      case "retail":
+        return A[1] < A[0] && B[1] < B[0] && A.every((x, i) => x > B[i]) &&
+          close((A[0] + 3 * B[0]) / 4, 30) && close((3 * A[1] + B[1]) / 4, 40);
+      case "traffic":
+        return close(A[2] / A[0], 1 / 2) && B[2] < B[0] &&
+          close((A[2] / (1 / 2)) / A[0], 1) && B[2] / B[0] < 1;
+      case "mowing":
+        return B[0] - A[0] === 10 && B[1] - A[1] === 20 &&
+          B[2] - A[2] === 10 && B[3] - A[3] === 20 && A[0] !== A[2];
+      case "gardens":
+        return A[0] === A[2] && A[1] === A[3] &&
+          B[0] - A[0] === 20 && B[1] - A[1] === 20 &&
+          B[2] - A[2] === 10 && B[3] - A[3] === 10;
+      case "signals":
+        return A[1] - A[0] === 5 && B[1] - B[0] === 5 &&
+          close((A[0] + 3 * B[0]) / 4, 40) && close((3 * A[1] + B[1]) / 4, 25);
+      case "nurses":
+        return A[0] === 100 && B[0] === 100 && A[2] - A[3] === B[2] - B[3] &&
+          close((A[2] - A[3]) / A[2], 1 / 3) && close((B[2] - B[3]) / B[2], 1 / 2);
+      case "solar":
+        return A[0] / 10 === A[2] / 20 && B[2] / 10 > B[0] / 10 &&
+          (B[2] / 10 - A[2] / 20) > (B[0] / 10 - A[0] / 10);
+      case "teaching":
+        return A[0] === B[0] && A[2] === B[2] &&
+          B[1] - A[1] === 20 && B[3] - A[3] === 20 && A[1] < A[0] && A[3] < A[2];
+      case "fungi":
+        return A[0] === A[1] && A[2] === A[3] && B[0] - A[0] === 20 &&
+          B[1] === A[1] && B[2] === A[2] && B[3] === A[3];
+      default:
+        return false;
     }
-    throw new Error(`${frame.scene}: could not draw graph values`);
   }
 
   const graphReconcile = {
@@ -3792,180 +4048,341 @@
     skill: "Command of Evidence",
     subskill: "quantitative evidence",
     difficulty: "Hard",
-    title: "Graph data that bear on a claim's exact terms",
-    recognize:
-      "Every choice reads the graph correctly, so pin down the claim's exact terms first (which period, which groups, a change or a level) and keep only the reading that meets or breaks those terms.",
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
-    tricks: ["true-but-irrelevant", "too-narrow", "wrong-quantity"],
+    title: "Integrate graph comparisons with a claim's conditions",
+    recognize: "Use the passage to identify the relevant comparison, denominator, or study restriction before judging what the graph supports.",
+    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    tricks: ["wrong-quantity", "context-constraint", "percent-base", "too-broad"],
     build(t) {
       const frame = t.pick(GRAPH_RECONCILE_FRAMES);
-      const { values, roles } = reconcileData(t, frame);
-      const [A, B] = values;
-      const cats = frame.categories;
-      const figure = frameChart(frame, values);
-      const u = (v) => `${v}${frame.unit}`;
-      const n = cats.length;
-      let draw;
-      let why;
-      let stem;
-      if (frame.kind === "timing") {
-        const e = roles.e;
-        const last = n - 1;
-        const series = [A, B];
-        // One series between two years, worded either as a comparison or as
-        // a change, whichever is drawn.
-        const move = (s, i, j) => {
-          const line = series[s];
-          const place = frame.in[s];
-          if (t.chance(0.5)) {
-            const verb = line[j] > line[i] ? "rose" : "fell";
-            return `${cap1(frame.measure)} ${place} ${verb} from ${u(line[i])} in ${cats[i]} to ${u(line[j])} in ${cats[j]}.`;
-          }
-          const word = line[j] > line[i] ? "higher" : "lower";
-          return `${cap1(place)}, ${frame.measure} ${frame.be} ${word} in ${cats[j]} (${u(line[j])}) than in ${cats[i]} (${u(line[i])}).`;
-        };
-        const want = frame.dir < 0 ? "fell" : "rose";
-        draw = () => ({
-          correct: move(1, e, last),
-          wrong: [
-            [move(1, 0, e), `True, and it looks like the key, but it describes ${frame.series[1]} before ${cats[e]}; the claim concerns what happened after the event.`],
-            ...t.shuffle([
-              [move(0, e, last), `True, but ${frame.series[0]} ${want} after ${cats[e]}, as the claim says, so this supports rather than weakens it.`],
-              [move(0, 0, e), `True, but this describes ${frame.series[0]} before ${cats[e]}, which the claim does not address.`],
-              [`In ${cats[last]}, ${frame.measure} ${frame.in[1]} (${u(B[last])}) ${frame.be} ${B[last] > A[last] ? "higher" : "lower"} than ${frame.in[0]} (${u(A[last])}).`,
-                "True, but comparing the two series’ levels in one year says nothing about whether either moved as the claim says after the event."],
-            ]).slice(0, 2),
-          ],
-        });
-        why = `The claim says the event made ${frame.measure} ${want === "fell" ? "fall" : "rise"} in both series after ${cats[e]}. ${frame.series[1]} did the opposite after ${cats[e]}, going from ${u(B[e])} to ${u(B[last])}, which contradicts the claim for that series.`;
-        stem = `Which choice best describes data from the graph that weaken ${frame.target}?`;
-      } else if (frame.kind === "every") {
-        const { key, worst, best, cross } = roles;
-        const better = frame.dir > 0 ? "higher" : "lower";
-        const worse = frame.dir > 0 ? "lower" : "higher";
-        const [pre, post] = frame.when;
-        draw = () => ({
-          correct: t.chance(0.5)
-            ? `${cap1(frame.at(cats[key]))}, ${frame.measure} was ${B[key] > A[key] ? "higher" : "lower"} ${post} (${u(B[key])}) than ${pre} (${u(A[key])}).`
-            : `${cap1(frame.measure)} ${frame.at(cats[key])} went from ${u(A[key])} ${pre} to ${u(B[key])} ${post}.`,
-          wrong: [
-            [`${cap1(post)}, ${frame.measure} was ${worse} ${frame.at(cats[worst])} (${u(B[worst])}) than at any of the other ${frame.plural}.`,
-              `True, but ${cats[worst]} still improved, from ${u(A[worst])} to ${u(B[worst])}; a poor level after the program is not a failure to improve.`],
-            [frame.measure.length < 24 && t.chance(0.5)
-              ? `${cap1(frame.measure)} ${frame.at(cats[cross])} ${post} (${u(B[cross])}) was ${worse} than ${frame.measure} ${frame.at(cats[key])} ${pre} (${u(A[key])}).`
-              : `${cap1(post)}, ${frame.measure} ${frame.at(cats[cross])} (${u(B[cross])}) was ${worse} than it had been ${frame.at(cats[key])} ${pre} (${u(A[key])}).`,
-              `True, but this sets one group’s value after the program against a different group’s value before it; ${cats[cross]} itself improved.`],
-            [`${cap1(frame.measure)} ${frame.at(cats[best])} went from ${u(A[best])} ${pre} to ${u(B[best])} ${post}.`,
-              `True, but ${cats[best]} improved, as the claim says, so this supports rather than weakens it.`],
-          ],
-        });
-        why = `The claim is that every one of the ${frame.plural} improved. ${cap1(frame.at(cats[key]))}, ${frame.measure} got ${worse} instead, going from ${u(A[key])} to ${u(B[key])}, so the claim fails for that group.`;
-        stem = `Which choice best describes data from the graph that weaken ${frame.target}?`;
-      } else {
-        const { mid } = roles;
-        const last = n - 1;
-        const [nA, nB] = frame.names;
-        // "from 4 to 18 hundred homes" or "from 4 hundred homes to 18 hundred
-        // homes": both wordings occur in every role, so length says nothing.
-        const span = (x, y, compact = t.chance(0.5)) => (compact ? `from ${x} to ${u(y)}` : `from ${u(x)} to ${u(y)}`);
-        // A from i to j and B from iB to j (iB differs only in the
-        // mismatched-span near miss, always worded compactly to stay
-        // within the choice length limit).
-        const pair = (i, j, iB = i, listed = t.chance(0.5)) => {
-          const compact = iB === i ? undefined : true;
-          const flat = A[j] === A[i];
-          const later = iB === i ? "" : `from ${cats[iB]} to ${cats[j]} `;
-          return listed
-            ? `From ${cats[i]} to ${cats[j]}, ${nA} ${flat ? `stayed at ${u(A[i])}` : `rose ${span(A[i], A[j], compact)}`}, while ${later}${nB} rose ${span(B[iB], B[j], compact)}.`
-            : `${cap1(nA)} ${flat ? `stayed at ${u(A[i])}` : `went ${span(A[i], A[j], compact)}`} between ${cats[i]} and ${cats[j]}, while ${nB} went ${span(B[iB], B[j], compact)}${iB === i ? "" : ` between ${cats[iB]} and ${cats[j]}`}.`;
-        };
-        // The third near miss lacks one piece of the comparison: B over the
-        // same span (A's whole-period growth set against B's growth from
-        // `mid` only), B's starting value (A's growth with B's final level),
-        // or B altogether.
-        const third = () => {
-          if (t.chance(0.5)) {
-            return [pair(0, last, mid),
-              `True, but it sets ${frame.series[0]}’s growth over the whole period against ${frame.series[1]}’s growth from ${cats[mid]} only, so it cannot show which grew more from ${cats[0]} to ${cats[last]}.`];
-          }
-          return t.chance(0.5)
-            ? [`${cap1(nA)} rose ${span(A[0], A[last])} between ${cats[0]} and ${cats[last]}, when it was still below ${nB} of ${u(B[last])}.`,
-              `True, but without ${frame.series[1]}’s ${cats[0]} value this cannot show that ${frame.series[0]} grew by more; it supports only the concession about levels.`]
-            : [`${cap1(nA)} rose ${span(A[0], A[last])} between ${cats[0]} and ${cats[last]}.`,
-              `True, but without ${frame.series[1]}’s values this does not show that ${frame.series[0]} grew by more.`];
-        };
-        // The key and the same comparison over each half of the period share
-        // values pairwise alike (a triangle), so the key is not the choice
-        // the others are built around; the fourth choice is a level in the
-        // last year, a level in the middle year, or the mismatched spans.
-        const levelAt = (i) => [t.chance(0.5)
-          ? `In ${cats[i]}, ${nA} (${u(A[i])}) was still lower than ${nB} (${u(B[i])}).`
-          : `${cap1(nA)} was still lower than ${nB} in ${cats[i]}: ${u(A[i])} compared with ${u(B[i])}.`,
-          "True, but this supports only the claim’s concession about levels, not its main point about growth."];
-        // The half-period choices share a wording; the key takes the other
-        // wording in about half of draws.
-        const fourth = t.pick([() => levelAt(last), () => levelAt(mid), third]);
-        const unlike = t.chance(0.5);
-        draw = () => {
-          const listed = t.chance(0.5);
-          return {
-            correct: pair(0, last, 0, unlike ? !listed : listed),
-            wrong: [
-              [pair(0, mid, 0, listed), `True, but this covers only ${cats[0]} to ${cats[mid]}, when ${frame.series[0]} did not grow at all; the claim concerns the whole period.`],
-              [pair(mid, last, mid, listed), `True, but this covers only ${cats[mid]} to ${cats[last]}; the claim concerns growth over the whole period from ${cats[0]}.`],
-              fourth(),
-            ],
-          };
-        };
-        why = `The claim’s main point is that ${frame.series[0]} grew by more than ${frame.series[1]} over the whole period. ${frame.series[0]} gained ${Math.round((A[last] - A[0]) * 1e6) / 1e6} (from ${u(A[0])} to ${u(A[last])}) while ${frame.series[1]} gained ${Math.round((B[last] - B[0]) * 1e6) / 1e6} (from ${u(B[0])} to ${u(B[last])}), and ${frame.series[0]} still ended lower, exactly as the claim says.`;
-        stem = `Which choice most effectively uses data from the graph to support ${frame.target}?`;
-      }
-      const { correct, wrong } = balancedDraw(t, draw);
+      const figure = frameChart(frame, frame.values);
       return mc("Hard", frame, {
         stimulus: passage(frame.text),
         figure,
-        stem,
-        correct,
-        wrong,
-        explanation: `${why} The choice that shows this is: ${correct}`,
+        stem: frame.stem,
+        correct: frame.correct,
+        wrong: frame.wrong,
+        explanation: frame.explanation,
         steps: [
-          "Break the claim into its exact terms: which series or groups, which period, and whether it concerns a change or a level.",
-          "Note that every choice is a correct reading of the graph, so accuracy cannot decide.",
-          "Keep the one reading that meets (or breaks) the claim on those terms; reject readings of the wrong period, the wrong group, or a level instead of a change.",
+          "Identify exactly which comparison the claim makes and what the passage says about the groups, measurement, or study design.",
+          "Compare the relevant chart values while holding the appropriate conditions or denominators constant.",
+          "Select the conclusion supported by both sources; reject a true count or endpoint used to justify a different claim.",
         ],
         principles: [
-          "Data bear on a claim only on the claim’s own terms: its period, its groups, and whether it is about change or level.",
-          "A comparison across groups or years that the claim does not make can look relevant without bearing on it.",
+          "A count, a percentage, and a change relative to a comparison group answer different questions.",
+          "A chart's pattern supports a claim only within the passage's measurement and study-design limits.",
         ],
-        trap: "Choosing an accurate reading that looks like the key but covers the wrong period, sets one group against another, or reports a level instead of a change.",
-        hint: "Which exact period, groups, and kind of comparison does the claim commit to?",
+        trap: "Substituting the largest bar or raw change for the passage's actual comparison, or treating a compatible pattern as proof of a unique cause.",
+        hint: frame.hint,
         verify: () => {
           const read = C.readChartAlt(figure.alt);
-          const lineA = cats.map((c) => read[frame.series[0]][c]);
-          const lineB = cats.map((c) => read[frame.series[1]][c]);
-          if (lineA.concat(lineB).some((v) => !Number.isFinite(v))) return false;
-          const nums = (text) => (text.match(/\d+(\.\d+)?/g) || []).map(Number);
-          const has = (text, list) => list.every((v) => nums(text).includes(v));
-          const last = n - 1;
-          if (frame.kind === "timing") {
-            const e = roles.e;
-            const d = frame.dir;
-            return d * (lineA[last] - lineA[e]) > 0 && d * (lineB[last] - lineB[e]) < 0 &&
-              d * (lineB[e] - lineB[0]) < 0 && has(correct, [lineB[e], lineB[last]]) && allDistinct(correct, wrong);
-          }
-          if (frame.kind === "every") {
-            const d = frame.dir;
-            const helped = cats.map((c, i) => d * (lineB[i] - lineA[i]) > 0);
-            return helped.filter((h) => !h).length === 1 && !helped[roles.key] && helped[roles.worst] &&
-              has(correct, [lineA[roles.key], lineB[roles.key]]) && allDistinct(correct, wrong);
-          }
-          return lineA[last] < lineB[last] && lineA[last] - lineA[0] > lineB[last] - lineB[0] &&
-            lineA[roles.mid] - lineA[0] <= lineB[roles.mid] - lineB[0] &&
-            has(correct, [lineA[0], lineA[last], lineB[0], lineB[last]]) && allDistinct(correct, wrong);
+          const values = frame.series.map((name) => frame.categories.map((category) => (read[name] || {})[category]));
+          return values.flat().every(Number.isFinite) &&
+            values.every((line, s) => line.every((value, i) => value === frame.values[s][i])) &&
+            reconcileSupports(frame, values[0], values[1]) && allDistinct(frame.correct, frame.wrong);
         },
       });
     },
   };
+
+  // Original self-contained cases; editorially reviewed before integration.
+  const MECHANISM_PATHWAY_TOPICS = [
+    {
+      "scene": "ii-pathway-seed-product",
+      "text": "In a hypothetical seed study, growers who use treatment T report faster germination, but they also select seeds carefully. Researchers randomly divide one seed batch between T and an untreated control; T still accelerates germination. T increases enzyme E, which releases compound C from stored material. One account says C triggers germination; another says T acts directly and the enzyme change is incidental. A follow-up uses an inhibitor that prevents E from releasing C without changing seed viability or the action of supplied C. All groups receive the same handling. Researchers can also supply C directly after adding the inhibitor.",
+      "anchors": [
+        "randomly divide one seed batch",
+        "the enzyme change is incidental",
+        "supply C directly"
+      ],
+      "stem": "Which follow-up result would most strongly support the account that T works through the release of C?",
+      "key": "Blocking E removes T's advantage; supplying C then speeds germination equally in treated and untreated seeds despite the block.",
+      "wrong": [
+        [
+          "Blocking E slows both seed groups equally; T retains its advantage, and supplying C leaves the gap between the groups unchanged.",
+          "Equal slowing leaves the treatment advantage intact when the proposed intermediate is blocked, which does not support its necessity."
+        ],
+        [
+          "Supplying C speeds both seed groups equally; T retains its advantage even when E is blocked and no C has been supplied.",
+          "The treatment still works without released or supplied C; the added compound's separate effect does not establish that it mediates T."
+        ],
+        [
+          "T produces more E in faster-germinating seeds; blocking E slows germination, but supplying C fails to restore it in either group.",
+          "The association is compatible with both accounts, and failure of downstream rescue does not identify C as the missing cause of germination."
+        ]
+      ],
+      "explanation": "Random assignment has already separated T from growers' seed selection. Losing its advantage when C cannot be released, then restoring germination by supplying C despite that block, places C between T and the response. The direct-effect account does not predict the loss and rescue together."
+    },
+    {
+      "scene": "ii-pathway-bud-signal",
+      "text": "In an invented plant experiment, a warm sleeve around a stem is followed by earlier opening of its upper buds. A randomized trial on matched branches reproduces the effect, so gardeners' choice of branches cannot by itself explain it. Warming also produces signal S below the buds. The proposed explanation is that S travels upward and triggers opening; a rival says warmth reaches the buds directly and S is incidental. A selective trap removes S below the buds without changing their temperature. Applied above the trap, synthetic S remains active. The follow-up measures opening with and without the sleeve, trap, and synthetic signal.",
+      "anchors": [
+        "randomized trial on matched branches",
+        "without changing their temperature",
+        "Applied above the trap"
+      ],
+      "stem": "Which finding would most directly weaken the proposed explanation that the sleeve's effect depends on S reaching the buds?",
+      "key": "Bud opening is accelerated by the sleeve even after S is fully trapped, and by synthetic S supplied separately to unsleeved branches.",
+      "wrong": [
+        [
+          "Trapping S removes the sleeve's advantage; synthetic S above the trap restores earlier opening on both sleeved and unsleeved branches.",
+          "Loss of the treatment effect and rescue beyond the trap support the proposed intermediate pathway."
+        ],
+        [
+          "With the trap in place, sleeved buds open later than usual; synthetic S applied above the trap restores their earlier opening time.",
+          "Blocking the signal removes the acceleration and restoring it beyond the block rescues the response, consistent with the pathway."
+        ],
+        [
+          "With the trap in place, sleeved and unsleeved buds open together; synthetic S above the trap advances both to the usual sleeved timing.",
+          "An intermediate can trigger a response without the upstream treatment. This pattern supports rather than weakens dependence on S."
+        ]
+      ],
+      "explanation": "A supplied signal can affect buds without being necessary for the sleeve's effect. Continued acceleration after S has been selectively removed directly contradicts that necessity; the separate response to synthetic S does not repair the proposed causal link."
+    },
+    {
+      "scene": "ii-pathway-clay-ventilation",
+      "text": "A hypothetical workshop study finds that ventilated drying cabinets produce stronger clay tiles. Because skilled workers favor those cabinets, researchers randomly assign tiles from one mixture to ventilated and still cabinets. The strength difference remains. Ventilation lowers water vapor around the tiles. One explanation is that lower vapor allows a strengthening bond to form; another is that moving air changes the tile surface directly. Follow-up equipment holds vapor at the still cabinet's level without altering airflow or temperature. A separate device removes vapor without moving air. Neither device contacts the clay, and tile moisture loss is measured independently of final strength.",
+      "anchors": [
+        "randomly assign tiles from one mixture",
+        "without altering airflow or temperature",
+        "removes vapor without moving air"
+      ],
+      "stem": "Which result would most strongly support lower vapor, rather than airflow itself, as the link to greater strength?",
+      "key": "Holding vapor high removes ventilation's strength advantage; removing vapor from still cabinets produces the same strength as dry ventilated ones.",
+      "wrong": [
+        [
+          "Holding vapor high leaves ventilation's strength advantage intact; removing vapor from still cabinets also increases their tiles' strength.",
+          "Lower vapor may help, but ventilation retaining its effect when vapor stays high leaves an independent airflow effect."
+        ],
+        [
+          "Removing vapor strengthens tiles in both cabinet types; ventilated tiles remain stronger when the two types reach the same low vapor level.",
+          "A difference that remains at the same low vapor level points to something ventilation supplies beyond vapor removal."
+        ],
+        [
+          "Removing vapor strengthens tiles only in ventilated cabinets; ventilated tiles remain stronger when the two types reach the same low vapor level.",
+          "The proposed intermediate alone fails to reproduce the effect without airflow; ventilation retains a benefit at matched vapor levels."
+        ]
+      ],
+      "explanation": "Random assignment removes worker selection as the explanation for the initial effect. Preventing the vapor change removes the strength gain, while reproducing that change without airflow recreates it. Both comparisons are needed to distinguish the proposed intermediate from a direct airflow effect."
+    },
+    {
+      "scene": "ii-pathway-filter-pores",
+      "text": "In a fictional materials study, filters treated with charge Q remove more dye from water. Factories using Q buy higher-grade filters, but a trial assigning Q randomly within one grade still finds an advantage. Q opens microscopic pores; it may instead remove dye by attracting it directly. A reversible brace keeps pores shut without changing charge or exposed surface chemistry. A second procedure opens the pores without Q. Both procedures leave the water's flow rate unchanged. Investigators test untreated and charged filters under each procedure and measure dye removed, not merely the number of visible pores.",
+      "anchors": [
+        "assigning Q randomly within one grade",
+        "without changing charge",
+        "opens the pores without Q"
+      ],
+      "stem": "Which pattern would provide the strongest evidence that opened pores mediate Q's effect on dye removal?",
+      "key": "The brace eliminates Q's benefit, and opening pores without Q brings uncharged filters up to the performance of unbraced charged filters.",
+      "wrong": [
+        [
+          "The brace leaves Q's benefit unchanged, although opening pores without Q improves uncharged filters relative to their untreated state.",
+          "Opening pores can have an effect of its own while the charge benefit survives pore closure; this does not make pores its mediator."
+        ],
+        [
+          "Bracing lowers removal for both charged and uncharged filters but preserves their difference; opening uncharged pores does little.",
+          "The charge benefit persists with pores shut, and opening pores without charge does not reproduce it."
+        ],
+        [
+          "Bracing lowers removal for both charged and uncharged filters but preserves their difference; opening uncharged pores improves removal.",
+          "Pores can improve removal independently, but the charge advantage remains when its proposed pore-opening route is blocked."
+        ]
+      ],
+      "explanation": "The brace isolates pore opening from charge; loss of the charge benefit makes the opening relevant. Recreating performance by opening uncharged pores supplies the complementary bypass evidence. Correlated pores alone cannot distinguish the two accounts."
+    },
+    {
+      "scene": "ii-pathway-fermentation-acid",
+      "text": "In an invented fermentation process, adding nutrient N causes a dissolved pigment to settle. Producers who use N also incubate mixtures longer. Randomized batches incubated for equal periods confirm an N effect. N increases acid A, leading to a proposal that A precipitates the pigment; an alternative says N changes the pigment directly. A selective scavenger removes A without binding N or pigment. It is active before N is added and throughout the settling observation, removing A as it forms. In separate rescue batches, investigators remove the scavenger before supplying A. Controls receive matching handling. The follow-up compares settled pigment after N alone, N with continuous A removal, and supplied A without N.",
+      "anchors": [
+        "incubated for equal periods",
+        "throughout the settling observation",
+        "supplied A without N"
+      ],
+      "stem": "Which result would most directly challenge the claim that N precipitates pigment by producing A?",
+      "key": "Removing A leaves N-induced settling unchanged, while supplying A to batches without N causes additional settling of its own.",
+      "wrong": [
+        [
+          "Removing A prevents settling after N, while adding A afterward restores settling to the level reached by N without scavenging.",
+          "Preventing the proposed intermediate and rescuing with it supports the claimed pathway."
+        ],
+        [
+          "Supplying A without N reproduces N's settling effect, while removing A from N-treated batches sharply reduces the amount settled.",
+          "The intermediate working independently, together with blocking its production pathway's effect, supports mediation."
+        ],
+        [
+          "N raises A before pigment settles, and the selective removal of A delays settling until investigators supply replacement acid.",
+          "Temporal ordering plus selective prevention and rescue is consistent with the proposed acid-mediated explanation."
+        ]
+      ],
+      "explanation": "Acid having its own effect does not show that it carries N's effect. If N still works after that acid is removed without changing N or pigment, the proposed required link is missing while the effect remains."
+    },
+    {
+      "scene": "ii-pathway-nest-vibration",
+      "text": "A hypothetical insect study links playback of a low tone to faster egg development. Nest owners choosing noisy sites may differ, so researchers randomly assign playback to nests of the same species. Eggs still develop faster with the tone. Adult insects respond by vibrating the nest, which raises egg temperature. The researchers propose that this warming, not the sound reaching the eggs, explains the result. A support prevents nest vibration while leaving sound transmission unchanged. A small heater can reproduce the earlier egg temperature without playback; it does not move the nest. Food supply and adult contact remain equal across groups.",
+      "anchors": [
+        "randomly assign playback",
+        "leaving sound transmission unchanged",
+        "without playback"
+      ],
+      "stem": "Which outcome would best support the proposed warming pathway?",
+      "key": "Sound loses its benefit when the nest is held still; warming silent nests to the earlier egg temperature reproduces the faster development.",
+      "wrong": [
+        [
+          "With vibration prevented, playback still speeds development; adding heat without playback produces a similar increase in the rate.",
+          "Heat can accelerate development independently, but continued playback benefit without vibration contradicts the proposed route."
+        ],
+        [
+          "With vibration prevented, playback still speeds development; adding heat without playback produces no comparable increase in the rate.",
+          "The response survives removal of the proposed warming change, and heat alone fails to reproduce it, favoring a role for playback beyond warming."
+        ],
+        [
+          "Matching the earlier temperature helps only nests receiving playback; heated nests without playback remain slower despite equal adult contact.",
+          "Equal temperatures failing to reproduce the effect without sound points to a role for playback beyond the proposed warming."
+        ]
+      ],
+      "explanation": "The vibration support separates sound from its proposed thermal consequence. Losing the playback effect there, then recreating it through heat alone, links the response to warming rather than merely showing that sound and warm eggs occur together."
+    },
+    {
+      "scene": "ii-pathway-ink-crosslinks",
+      "text": "In a hypothetical printing study, a light pulse improves an ink's resistance to abrasion. Printers selecting that light also use thicker ink. Random assignment of equally thick layers confirms the light effect. The pulse joins molecules into links L, which might cause the resistance; light might also harden a separate ingredient directly. A compound prevents L from forming without absorbing the light or changing the separate ingredient. Another procedure produces L without illumination. Both procedures preserve layer thickness, and the abrasion test can detect further improvement throughout the observed range.",
+      "anchors": [
+        "equally thick layers",
+        "without absorbing the light",
+        "produces L without illumination"
+      ],
+      "stem": "Which result would most strongly weaken the account that the light pulse improves resistance through L?",
+      "key": "Illuminated layers gain the same resistance even without L, and separately manufactured links can increase resistance in layers kept dark.",
+      "wrong": [
+        [
+          "Preventing L removes the light's improvement, and producing L without illumination gives the resistance found after an ordinary pulse.",
+          "The prevention and bypass results jointly support the proposed role of L."
+        ],
+        [
+          "Producing L separately restores resistance after the blocker removes the pulse's effect; dark layers also gain resistance from those links.",
+          "Independent links rescue the blocked treatment and can work without the upstream light, which is consistent with mediation."
+        ],
+        [
+          "Producing L separately restores resistance after the blocker removes the pulse's effect; untreated dark layers keep their original resistance.",
+          "The blocked effect and downstream rescue fit the proposed pathway; dark layers receiving neither intervention provide a stable baseline."
+        ]
+      ],
+      "explanation": "The key keeps the light effect intact while preventing its claimed intermediate, with measurement range and other ingredients controlled. L being independently useful cannot establish that the pulse works through L."
+    },
+    {
+      "scene": "ii-pathway-fabric-weave",
+      "text": "A fictional textile study finds that steam-treated fabric leaks less water. Mills using steam also weave tightly, but randomly steaming pieces cut from one roll still reduces leakage. Steam shortens the threads and narrows the gaps. Researchers propose that gap size explains the effect; a rival says steam changes the fibers' water-repelling surface. A frame prevents thread shortening while leaving steam exposure unchanged. Mechanical adjustment can narrow an unsteamed piece's gaps to the usual steamed size without altering its fibers. Follow-up pieces have the same thickness and are tested at the same water pressure.",
+      "anchors": [
+        "pieces cut from one roll",
+        "leaving steam exposure unchanged",
+        "without altering its fibers"
+      ],
+      "stem": "Which finding would most strongly favor the gap-size explanation over the surface explanation?",
+      "key": "Framed steaming no longer reduces leakage, whereas narrowing unsteamed gaps reduces it to the level found in freely steamed pieces.",
+      "wrong": [
+        [
+          "Framed steaming still reduces leakage, and narrowing unsteamed gaps also reduces leakage without bringing it as low as in steamed pieces.",
+          "The steam effect survives prevention of shrinking, leaving a contribution beyond the proposed gap change."
+        ],
+        [
+          "Freely steamed pieces have narrower gaps and leak less, while framed steaming reduces leakage despite leaving the original gaps intact.",
+          "The original correlation does not outweigh the effect remaining when the proposed intermediate change is prevented."
+        ],
+        [
+          "Narrowing gaps reduces leakage only after steam exposure, while framed steaming performs as well as steaming pieces that can shrink freely.",
+          "This associates protection with steam independently of narrowing and does not favor gap size as the intervening cause."
+        ]
+      ],
+      "explanation": "The frame lets steam act without narrowing, testing whether narrowing is needed. Mechanical adjustment supplies narrowing without steam, testing whether it can reproduce the protection. The paired results discriminate between the two linked changes."
+    },
+    {
+      "scene": "ii-pathway-memory-links",
+      "text": "In an invented memory experiment, learners using a diagram recall more paired names. Those choosing diagrams may be more attentive, but random assignment with equal study time still yields an advantage. Investigators propose that the diagram creates links between neighboring pairs rather than merely drawing attention to each name. A masking procedure prevents learners from seeing neighboring pairs together while preserving each name's visibility and total viewing time. Separate tests confirm that the proposed neighbor links do not form under the mask, while recognition of individual names stays unchanged. A separate exercise teaches the neighbor links without displaying a diagram. Follow-up recall tests rearrange all names, so the original screen positions cannot serve as cues.",
+      "anchors": [
+        "random assignment with equal study time",
+        "preserving each name's visibility",
+        "original screen positions cannot serve as cues"
+      ],
+      "stem": "Which follow-up finding would most directly weaken the proposed explanation involving neighbor links?",
+      "key": "The full diagram advantage survives masking, while the separate link exercise improves recall equally for diagram and plain-list learners.",
+      "wrong": [
+        [
+          "Masking eliminates the diagram advantage, while the link exercise raises plain-list recall to the level of unmasked diagram recall.",
+          "The mask removes the proposed opportunity and teaching the links bypasses it, supporting the explanation."
+        ],
+        [
+          "Diagram learners recall more neighbor links; their recall advantage disappears with masking and returns after the separate link exercise.",
+          "These findings combine the predicted association, loss, and restoration of the proposed intermediate."
+        ],
+        [
+          "The link exercise improves plain-list recall, while diagram learners lose their advantage when masking prevents the neighbor links from forming.",
+          "Independent benefit from the links together with loss of diagram benefit when they cannot form supports the pathway."
+        ]
+      ],
+      "explanation": "Equal random assignment has already addressed the learners' initial attention differences. If the diagram retains its advantage when the proposed links cannot form, those links do not explain that advantage merely because teaching them can separately improve recall."
+    },
+    {
+      "scene": "ii-pathway-panel-cavity",
+      "text": "A hypothetical acoustic panel absorbs more sound after its outer sheet is softened. Installers choosing softened panels also leave wider wall gaps, but randomized panels with equal gaps retain the difference. Softening lets the sheet vibrate and compress air in a sealed inner cavity. One account attributes absorption to that compression; another to energy lost in the softened sheet itself. A vent prevents cavity compression without changing the sheet's measured vibration or softness. A small internal driver can reproduce the compression pattern behind a rigid sheet. All tests use the same sound frequencies and compare absorbed energy.",
+      "anchors": [
+        "randomized panels with equal gaps",
+        "without changing the sheet's measured vibration",
+        "behind a rigid sheet"
+      ],
+      "stem": "Which result would best support cavity compression as the intermediate responsible for the softer panel's advantage?",
+      "key": "Venting removes the softer panel's advantage, while reproducing compression behind a rigid sheet yields the original higher absorption.",
+      "wrong": [
+        [
+          "Venting leaves the softer panel's advantage intact, although the internal driver also improves absorption behind a rigid sheet.",
+          "Compression can contribute independently without mediating the softness advantage, which survives its prevention."
+        ],
+        [
+          "Soft panels vibrate more and absorb more energy; venting reduces compression without reducing their advantage over rigid panels.",
+          "The observed softness effect remains when the proposed intermediate is removed; the original association is not decisive."
+        ],
+        [
+          "The internal driver improves absorption only with a softened sheet, and vented soft panels retain their original absorption level.",
+          "The effect remains linked to the softened sheet even without compression and cannot be recreated through compression behind a rigid sheet."
+        ]
+      ],
+      "explanation": "The vent breaks the proposed path from vibration to compression while preserving the potential direct sheet effect. Losing the advantage there and reproducing it with compression behind a rigid sheet favor the intermediate explanation together."
+    }
+  ];
+
+  function createMechanismPathwayTemplate(C) {
+    const { RW, passage, inOrder, allDistinct, mc } = C;
+    return {
+      ...RW,
+      id: "evidence-mechanism-conditional-intervention",
+      skill: "Command of Evidence",
+      subskill: "textual evidence",
+      difficulty: "Hard",
+      title: "Evidence distinguishing an intermediate pathway from a direct effect",
+      recognize: "A controlled trial can establish an effect without identifying its route. Evaluate both selective prevention of a proposed intermediate and reproduction of the response by supplying that intermediate independently.",
+      rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+      tricks: ["too-broad", "reversed-condition", "true-but-irrelevant"],
+      build(t) {
+        const topic = t.pick(MECHANISM_PATHWAY_TOPICS);
+        return mc("Hard", topic, {
+          stimulus: passage(topic.text), stem: topic.stem, correct: topic.key, wrong: topic.wrong,
+          explanation: topic.explanation,
+          steps: [
+            "Separate the evidence that the treatment has an effect from the claim about the intermediate carrying it.",
+            "Track what remains possible when the intermediate is selectively prevented, and what supplying it independently can show.",
+            "Evaluate the complete pattern against the requested support or challenge; an intermediate's separate benefit does not show it is necessary for the treatment.",
+          ],
+          principles: [
+            "Controlling selection into a treatment does not by itself identify the mechanism of a resulting effect.",
+            "An intermediate may reproduce an effect without carrying the original treatment's effect; selective blocking and bypass evidence answer different questions.",
+          ],
+          trap: "Treating a downstream intervention's separate benefit as proof of mediation, or overlooking that the treatment still works when the claimed pathway is blocked.",
+          hint: "Which route is still available in each follow-up condition, and does the treatment's advantage disappear or persist?",
+          verify: () => inOrder(topic.text, topic.anchors) && topic.wrong.length === 3 && allDistinct(topic.key, topic.wrong),
+        });
+      },
+    };
+  }
+
+  const mechanismConditionalIntervention = createMechanismPathwayTemplate(C);
 
   return [
     quotationTrait,
@@ -3982,5 +4399,6 @@
     poemQuotation,
     excerptQuotation,
     graphReconcile,
+    mechanismConditionalIntervention,
   ];
 });

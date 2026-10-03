@@ -3,12 +3,18 @@
 For a large target jump, or shaky underlying content. Roughly **5-8 hours per
 week** — lower weekly intensity than the sprint, sustained over three months.
 
-Twelve weeks is enough to genuinely rebuild content knowledge, which the shorter
-plans are not. The tradeoff is that it requires consistency over a long stretch,
-and consistency is where most long plans fail.
+This schedule leaves more room for prerequisite work than the shorter plans.
+The time needed depends on your starting knowledge and available study time;
+adjust the phases using what your practice reveals.
 
 **Prerequisites:** run [Diagnostic routing](diagnostic-routing.md) first, and
 read [Drill protocols](drill-protocols.md).
+
+> **Practice targets are SAT-only planning rules.** Liminal's ACT difficulty
+> labels are not verified, and ACT Progress reports accuracy without these
+> targets. For ACT, choose the skill and inspect the reasoning each item
+> requires; use fresh official practice to judge progress. Adjust all
+> schedules and timed drills to your approved accommodations.
 
 ---
 
@@ -27,16 +33,15 @@ weeks, with the last 7 to 10 days before the real test.
 
 **Full practice tests are official tests.** For the SAT, use the full-length
 practice tests in College Board's Bluebook app; for the ACT, ACT's official
-practice tests. Their scores are the only honest estimate you have. Liminal's
+practice tests. Fresh official tests give a useful score estimate. Liminal's
 accuracy is practice feedback on its own questions, not a score. For the SAT,
-Bluebook has 8 full-length practice tests (Practice Tests 4 to 11, checked
-2026-09-26; verify before you plan around the count), so five leaves some in
-reserve. Record each SAT score in the app under Progress, in the Official
+Check Bluebook for the current practice-test inventory and reserve unfamiliar
+forms for later checks. Record each SAT score in the app under Progress, in the Official
 scores card, which shows it beside your Liminal accuracy in the 28 days
 before the test and never converts one into the other.
 For SAT Math from around 500, the
-[Learn plan](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan) gives the skill order and a mastery
-gate for Phase II.
+[Learn plan](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan) gives the skill order and a practice
+target for Phase II.
 
 ---
 
@@ -74,8 +79,7 @@ The five careless-error habits, at 80% speed all week.
 
 ## Phase II — Rebuild (weeks 3-7)
 
-The distinguishing phase of this plan: enough time to fix **prerequisites**, not
-just tested skills.
+This phase includes time for **prerequisites** as well as tested skills.
 
 ### Prerequisite repair
 
@@ -95,12 +99,12 @@ level below what's tested. Common examples:
 
 **Spend the first week of Phase II on prerequisites** if your diagnostic
 warrants it. Drill Easy items until the method is routine and your misses are
-slips, not gaps, then move to Medium. A skill is done when it passes the
-[mastery gate](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate):
+slips, not gaps, then move to Medium. For SAT, consider adding harder work when a skill meets the
+[practice target](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate):
 at least 24 of your last 30 Medium questions right, no hints, over at least
 two days and two question designs, each question counted once. Progress
-shows it as "At the gate". Building Advanced Math on
-shaky algebra doesn't work, and twelve weeks is enough time to do it properly.
+shows it as "Practice target met". Keep repairing algebra gaps as you add
+Advanced Math; the calendar alone does not establish that a skill is secure.
 
 ### The per-domain cycle
 
@@ -111,7 +115,7 @@ Each domain gets roughly four sessions in this plan:
 | 1 | Read the guide. 15 items **Easy, untimed**. |
 | 2 | 20 items **Medium, untimed**. Full review. |
 | 3 | 20 items **Medium, timed**. Full review. |
-| 4 | 15 items **Hard, untimed** in skills already at the gate; more Medium in the rest. Full review. |
+| 4 | 15 items **Hard, untimed** in skills that meet the practice target; more Medium in the rest. Full review. |
 
 ### Weeks 3-7 rhythm
 

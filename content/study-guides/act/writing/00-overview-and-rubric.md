@@ -29,20 +29,16 @@ Every ACT Writing prompt has the same shape:
    required.
 2. **Three perspectives**, each two or three sentences, presenting different
    positions on the issue.
-3. **The task**, which is always essentially the same:
+3. **The task:** develop your own perspective and analyze its relationship to
+   one or more of the supplied perspectives. You may agree, partly agree,
+   disagree or propose a different position.
 
-> *Write a unified, coherent essay in which you evaluate multiple perspectives
-> on [the issue]. In your essay, be sure to:*
-> - *analyze and evaluate the perspectives given*
-> - *state and develop your own perspective on the issue*
-> - *explain the relationship between your perspective and those given*
->
-> *Your perspective may be in full agreement with any of those given, in partial
-> agreement, or completely different.*
+Read all three perspectives before choosing how to develop your argument.
+You do not need to discuss all three; develop the comparison or comparisons
+you choose with reasons and examples.
 
-**Those three bullets are the assignment.** All three must be done. An essay
-that argues a position beautifully but never engages the given perspectives
-cannot score well.
+> **Verify before you rely on this.** Task and scoring checked 2026-10-02
+> against ACT's [Writing description](https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/description-of-writing-test.html).
 
 ---
 
@@ -131,8 +127,8 @@ error-free essay with thin analysis scores in the middle.
 
 ## Practical realities
 
-**Graders spend two to three minutes per essay.** Write so that your thesis and
-structure are visible at a glance. Clear topic sentences and obvious paragraph
+Write so that your thesis and
+structure are easy to follow. Clear topic sentences and obvious paragraph
 breaks matter.
 
 **Handwriting must be legible.** An unreadable essay cannot be scored well. If

@@ -2,12 +2,18 @@
 
 For a retake with a fixed near-term test date. Roughly **6-8 hours per week**.
 
-Four weeks is enough to fix mechanics, pacing, and a finite rule set. It is
-**not** enough to rebuild content knowledge from the ground up. Plan
-accordingly: this schedule prioritizes the fastest-moving gains.
+With limited time, use the diagnostic to select a manageable set of content,
+process and pacing problems. This schedule emphasizes focused changes; the
+amount of improvement depends on your starting point and practice.
 
 **Prerequisites:** run [Diagnostic routing](diagnostic-routing.md) first, and
 read [Drill protocols](drill-protocols.md). The schedule below assumes both.
+
+> **Practice targets are SAT-only planning rules.** Liminal's ACT difficulty
+> labels are not verified, and ACT Progress reports accuracy without these
+> targets. For ACT, choose the skill and inspect the reasoning each item
+> requires; use fresh official practice to judge progress. Adjust all
+> schedules and timed drills to your approved accommodations.
 
 ---
 
@@ -30,7 +36,7 @@ move, a longer plan that builds content usually gains more.
 
 **Full practice tests are official tests.** For the SAT, use the full-length
 practice tests in College Board's Bluebook app; for the ACT, ACT's official
-practice tests. Their scores are the only honest estimate you have. Liminal's
+practice tests. Fresh official tests give a useful score estimate. Liminal's
 accuracy is practice feedback on its own questions, not a score.
 
 ---
@@ -118,12 +124,12 @@ how to start, mark, guess, move. It feels terrible and it's correct.
 
 ### The last three days
 
-- **No new material.** You can't learn a skill in three days and trying makes
-  you anxious.
+- **Keep new material limited.** Focus on review and rest; a small, clearly
+  diagnosed gap can still be worth addressing.
 - **Light drilling only** — 20-30 items a day, mostly in skills you're good at.
   You want to walk in feeling fluent.
 - **Reread your error-log rules list.** This is its entire payoff.
-- **Sleep.** Two nights before matters more than the night before.
+- **Sleep.** Keep a consistent sleep routine through test week.
 - **Do not take a full test the day before.**
 
 ---
@@ -145,17 +151,11 @@ Priority order when time is this short:
 
 ## Expectations
 
-Four weeks of serious work moves mechanics, pacing, and rule-based sections.
-It does not rebuild mathematical foundations or make you a faster reader.
-
-**Where the gain actually comes from, in a sprint:**
-
-- Careless errors eliminated — often the largest single bucket
-- Grammar accuracy raised from ~70% to ~90%
-- Not running out of time
-- Formula recall becoming automatic
-
-Those are real points, and they are available to almost everyone in four weeks.
+Track the changes your practice supports: fewer repeated process errors,
+better use of grammar rules, improved pacing and more reliable formula
+application. Some content gaps need longer than this schedule allows.
+Check progress on unfamiliar official questions; this plan does not promise
+a particular accuracy increase or score gain.
 
 ---
 

@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p004",
   type: "humanities",
   title: "What the Translator Owes",
-  intro: "This passage is adapted from an essay by a translator of poetry.",
+  intro: "This original essay is written in the voice of a fictional translator of poetry.",
   content: `People ask me whether a translation can be faithful, and I have stopped
 answering, because the question contains a picture I do not accept. The picture is of a
 poem as a container with contents. The contents are the meaning; the container is the

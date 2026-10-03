@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p048",
   type: "literary-narrative",
   title: "The Forms",
-  intro: "This passage is adapted from a novel. Priya, twenty-three, works in the records office of a county hospital.",
+  intro: "This is an original fictional passage. Priya, twenty-three, works in the records office of a county hospital.",
   content: `The records office was in the basement and had two windows, both of which looked at a
 retaining wall, and Priya had been told at her interview that people did not usually stay.
 The woman who told her this was called Bernadette, had been there nineteen years, and did

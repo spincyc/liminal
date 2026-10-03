@@ -98,6 +98,11 @@ factor it out before dividing.
 >
 > Divide: x = (m − 5)/(k − 2), which needs k ≠ 2.
 
+> **Fails when.** The factor you would divide by is zero. If k = 2, the
+> original equation becomes 5 = m: every x works when m = 5, and no x
+> works otherwise. A rearrangement that divides by a variable expression
+> must state that it is nonzero.
+
 > **Check.** Pick easy values for the other letters, compute the target from
 > the original formula, and see whether your rearranged version gives the
 > same value. A wrong rearrangement almost never passes this test.
@@ -155,19 +160,21 @@ Simplify both sides to the form ax + b = cx + d. Then:
 Hard questions in this skill don't use harder arithmetic. They make you
 decide what the question is first:
 
-- Two unknown constants and a condition: no solution, or infinitely many. Multiply out every product, then match the x-coefficients, and match the constants (infinitely many) or make them differ (none). A solution that works for every value of a constant is the x that makes that constant's term vanish.
+- An unknown constant appears in several places: matching the x-coefficients may give more than one candidate, and the constant terms decide which one produces no solution or infinitely many. A solution that works for every value of a constant is the x that makes that constant's term vanish.
 - A formula whose target letter ends up in two terms, often after you clear a denominator, as in m = (s + 90x)/(10 + x). Gather the target's terms, factor it out, and divide by the whole factor (see [rearranging formulas](#rearranging-formulas)).
 - Two quantities that change at once, one of them starting late. Write each in the same time variable, count the late one's change from t minus the delay, and write the comparison the right way round.
 
-> **Example.** In a(x + 2) − x = 5x + b, a and b are constants, and the
-> equation has infinitely many solutions. What is b?
+> **Example.** In x − 2 = k(9kx + 6), k is a constant. The equation has no
+> solution. What is k?
 >
-> Multiply out the left side: ax + 2a − x = (a − 1)x + 2a.
+> Multiply out: x − 2 = 9k²x + 6k. For no solution, the x-coefficients
+> must match, so 9k² = 1 and k = 1/3 or k = −1/3.
 >
-> Infinitely many means both sides are the same expression: a − 1 = 5 and
-> 2a = b. So a = 6 and b = 12.
+> If k = −1/3, the constant 6k equals −2, so the equation is an identity
+> and has infinitely many solutions. Reject that candidate.
 >
-> Check: 6(x + 2) − x = 5x + 12 for every x.
+> If k = 1/3, the equation is x − 2 = x + 2, which has no solution.
+> Therefore k = 1/3.
 
 > **Example.** At 8:00 a.m. a warehouse holds 900 boxes and ships 15 boxes a
 > minute. A second warehouse holds 100 boxes, and starting at 8:10 a.m. it

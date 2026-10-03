@@ -252,10 +252,45 @@ method for both subskills.
 > choice (a semicolon in one, a comma in another), the question is testing
 > sentence boundaries; see [Boundaries](learn:sat-reading-writing/standard-english-conventions/boundaries).
 
+### Preserve the claim's scope {#claim-scope}
+
+A final sentence can concern an earlier claim rather than just the nearest
+sentence. Keep track of whose claim it is, the group it covers, and whether
+it states evidence, an objection, or a conclusion.
+
+> **Example.** A theater survey found that ticket buyers who used a new
+> booking service praised its convenience. The report described the service
+> as popular with the city's residents. However, people who bought no
+> tickets were never surveyed. ______ the favorable responses establish
+> satisfaction among surveyed buyers without establishing city-wide
+> popularity.
+>
+> A) For example,
+>
+> B) Therefore,
+>
+> C) In other words,
+>
+> D) Similarly,
+>
+> B is correct. The final sentence combines the favorable responses with
+> the sampling limitation to draw a new, narrower conclusion. It is not an
+> example, a paraphrase of the omitted nonbuyers, or a second parallel case.
+
+> **Fails when.** The final sentence only rephrases the same claim, with the
+> same population and conditions. Then a restatement word can fit. Do not
+> turn respondents into all residents, intentions into actions, or a change
+> in a share into a change in a count.
+
+"Specifically" can introduce a particular example as well as a precise
+account. It does not require an exhaustive list. If two transitions seem
+to fit, check the whole passage and each word's actual meaning rather than
+assuming every word belongs to one exclusive category.
+
 ## What Hard looks like {#hard}
 
 - A blank that connects to the paragraph's first claim, not the sentence just before it.
-- Two choices from the same family (therefore and in other words, however and even so) where only the exact relationship decides.
+- Closely related rhetorical roles, such as restating a claim and drawing a new conclusion from it, where the exact relationship decides.
 - A concession followed by a return, which students often read as a plain contrast or a plain result.
 - "Instead" or "rather" against "in contrast". "Instead" needs something the text has ruled out, declined or failed to do, which the next sentence replaces; a second subject that simply differs from the first takes "in contrast".
 - A "not" or an obstacle before the blank and a sentence that holds in spite of it, which takes "nonetheless", not "instead" (see [a negation alone](#instead-or-nonetheless)).

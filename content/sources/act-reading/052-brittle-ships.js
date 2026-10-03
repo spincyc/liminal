@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p052",
   type: "natural-science",
   title: "The Ships That Broke in Half",
-  intro: "This passage is adapted from an article on a failure in wartime shipbuilding.",
+  intro: "This original passage discusses a failure in wartime shipbuilding.",
   content: `On a January morning in 1943 the tanker Schenectady, tied up at her fitting-out dock
 in Portland with a calm sea and no cargo working, broke in two. The fracture ran from the
 deck down through the hull on both sides in a fraction of a second, and the two halves
@@ -152,18 +152,18 @@ better on every dimension anybody measured, and the dimensions nobody measured g
       family: "function-of-a-detail",
       difficulty: "Medium",
       stem: "The detail that Schenectady was at rest when she broke serves mainly to:",
-      key: "rule out overload as the explanation.",
+      key: "show that rough seas were not needed for failure.",
       wrong: [
         ["show that the crew had been badly trained.", "No crew action is described or blamed in the passage."],
         ["establish how quickly the fracture travelled.", "Speed is given later, in the account of brittle fracture."],
         ["explain why the two halves settled upright.", "How she settled is described but not accounted for."],
       ],
-      why: "Tipper's insight was that \"the failures were not overload failures at all. The ships were not being asked to carry more than they could,\" and a ship at a dock with no cargo working is the clearest case of that.",
+      why: "The passage supports this conclusion: The opening places the ship at a calm dock. That excludes storm loading as a necessary trigger, but a stationary hull still carries stresses; being at rest does not mean being unloaded.",
       steps: [
-        "Ask what a failure under no load rules out.",
-        "Find the claim later in the passage that this supports.",
+        "Identify the conditions at the dock.",
+        "Choose the limited conclusion those conditions support.",
       ],
-      hint: "The first paragraph insists that nothing was being done to her.",
+      hint: "Separate the absence of a storm from the absence of all stress.",
     },
     {
       subskill: "organization",

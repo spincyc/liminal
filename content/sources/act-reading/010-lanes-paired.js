@@ -1,10 +1,12 @@
 "use strict";
 
+// Fact-check: Katy Freeway completion in 2008: https://www.fhwa.dot.gov/ipd/project_profiles/tx_katy_freeway.aspx
+
 module.exports = {
   id: "act-reading-p010",
   type: "social-science",
   title: "Room to Move",
-  intro: "Passage A is adapted from an article on urban highway expansion. Passage B is adapted from a transport economist's response to that article.",
+  intro: "Passage A is an original article on urban highway expansion. Passage B is an original transport economist's response to that article.",
   content: `PASSAGE A
 
 The intuition is almost impossible to argue with. A road is congested because too
@@ -19,8 +21,8 @@ the growth in vehicle-kilometres travelled. The two rose together, very nearly
 one for one. Add ten per cent to a city's highway capacity and, within about a
 decade, that city's residents drive about ten per cent further. Congestion returns
 to roughly where it began. The authors called the relationship the fundamental law
-of road congestion, and the name has stuck because nobody has yet found a large
-city that escapes it.
+of road congestion, and the result has become an influential description of long-run traffic growth
+across the metropolitan areas studied.
 
 The mechanism is not mysterious, and it is not that new roads make people restless.
 It is that a congested road suppresses trips which people would otherwise take. Some
@@ -31,9 +33,10 @@ through it, and some is a household that would move further out if the commute w
 bearable. Widening the road releases all four at once. Within a few years the new
 lanes carry traffic that did not exist, and the old lanes carry what they always did.
 
-Houston's Katy Freeway is the case everyone cites. It was rebuilt between 2008 and
-2011 into a corridor twenty-six lanes wide at its broadest. By 2014 the morning
-commute along it took longer than it had before construction began. The pavement
+Houston's Katy Freeway is the case everyone cites. Its major reconstruction opened in 2008, with a greatly widened corridor that
+included main lanes, managed lanes, and frontage roads. Over the years that
+followed, congestion returned on the general-purpose lanes; widening had not
+guaranteed lasting relief. The pavement
 had grown; the queue had grown to fit.
 
 PASSAGE B
@@ -215,14 +218,14 @@ is sufficient — which is a case against free roads, not against pavement.`,
       subskill: "synthesize information",
       family: "combining-two-texts",
       difficulty: "Hard",
-      stem: "Both passages would accept which statement about a widened urban motorway?",
-      key: "Its new capacity is likely to fill within several years.",
+      stem: "Both passages would accept which claim about highway capacity across a metropolitan area?",
+      key: "New capacity at that scale is eventually absorbed by traffic.",
       wrong: [
         ["Its construction leaves surrounding neighbourhoods better off.", "Passage A raises no neighbourhood effects, and Passage B mentions them only for lorries."],
         ["Its benefits are best measured by the time drivers save.", "Passage B argues directly that congestion and travel time are poor measures."],
         ["Its cost is rarely justified by the traffic it will carry.", "Passage B holds that the traffic may itself be the benefit, so it rejects this."],
       ],
-      why: "Passage A reports capacity absorbed \"within about a decade\"; Passage B accepts that \"capacity added at that scale is eventually absorbed\" and argues only about what absorption signifies.",
+      why: "The passage distinguishes metropolitan findings from predictions about one road over a few years. Both writers accept eventual absorption at the metropolitan scale; Passage B explicitly warns against applying that result to a particular corridor and short period.",
       steps: [
         "List the claims Passage B explicitly grants.",
         "Match those against what Passage A asserts.",
@@ -236,13 +239,13 @@ is sufficient — which is a case against free roads, not against pavement.`,
       family: "claim-and-support",
       difficulty: "Hard",
       stem: "Which evidence in Passage A most directly supports its claim that congestion returns to where it began?",
-      key: "The Katy Freeway commute grew longer after rebuilding.",
+      key: "Congestion returned to general-purpose lanes after the major expansion.",
       wrong: [
         ["Highway expansion has been sold the same way for decades.", "This describes how projects are argued for, not what happened after one was built."],
         ["A delivery firm may route around a city rather than through it.", "This illustrates suppressed travel; it does not show that congestion came back."],
         ["Economists took some thirty years to state the point precisely.", "The history of the idea says nothing about whether the idea is correct."],
       ],
-      why: "Passage A reports that after the corridor was rebuilt to twenty-six lanes, \"by 2014 the morning commute along it took longer than it had before construction began.\" That is an observed return of congestion rather than a mechanism for it.",
+      why: "The passage offers returning congestion on the widened Katy corridor as concrete evidence that more pavement did not guarantee lasting relief.",
       steps: [
         "Distinguish the claim about outcomes from the account of causes.",
         "Look for a measured result rather than an explanation.",

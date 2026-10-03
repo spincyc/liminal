@@ -522,18 +522,16 @@
       why: "Text 1 claims that Arvelan court composers wrote for aristocrats, but Text 2 describes Renn, a court composer who wrote chiefly for townspeople",
     },
     {
-      scene: "cs-durrow-cinema",
-      text1:
-        "When household incomes fall, families cut spending on entertainment first. Economists have found this pattern in downturn after downturn: meals out, concert tickets, and trips to the movies are the first expenses to go, long before spending on food or rent declines.",
-      text2:
-        "In 2009 the mine in the town of Durrow cut its workers' hours by a third. That year, attendance at the Durrow Picture House rose by 30 percent, and its owner reported record sales of cheap afternoon tickets. For many families, a matinee became the one outing they could still afford.",
-      ruleAnchor: "cut spending on entertainment first",
-      caseAnchor: "Durrow",
-      key: "By citing Durrow, where cinema attendance rose after families' incomes fell",
-      support: "By noting that Durrow's families, like most, cut spending on entertainment first",
-      extreme: "By arguing that families generally spend more on entertainment when incomes fall",
-      method: "By pointing out that the economists in Text 1 studied only a few downturns",
-      why: "Text 1 claims that families cut entertainment first when incomes fall, but Text 2 describes Durrow, where cinema attendance rose after incomes fell",
+      "scene": "cs-durrow-cinema",
+      "text1": "When household incomes fall, families cut spending on entertainment first. Economists have found this pattern in downturn after downturn: meals out, concert tickets, and trips to the movies are the first expenses to go, long before spending on food or rent declines.",
+      "text2": "In 2009 the mine in the town of Durrow cut its workers' hours by a third. A household survey found that the affected families reduced spending on clothing but increased their total spending on entertainment. Cinema visits replaced costlier outings, yet families went so much more often that even their overall entertainment budgets grew.",
+      "ruleAnchor": "cut spending on entertainment first",
+      "caseAnchor": "Durrow",
+      "key": "By citing Durrow, where entertainment spending rose after families' incomes fell",
+      "support": "By noting that Durrow's families, like most, cut spending on entertainment first",
+      "extreme": "By arguing that families generally spend more on entertainment when incomes fall",
+      "method": "By pointing out that the economists in Text 1 studied only a few downturns",
+      "why": "Text 1 claims that families cut entertainment first when incomes fall, but Text 2 reports that affected Durrow families increased total entertainment spending while cutting another expense"
     },
     {
       scene: "cs-reed-frog",
@@ -906,20 +904,18 @@
       why: "Text 1 says shoppers judge a price against the first price they saw, and Tallis customers had first seen the novel advertised at $14",
     },
     {
-      scene: "cs-vessa-doves",
-      text1:
-        "Animals that evolve where there are no predators often lose their fear of large creatures. Wariness has costs: an animal that flees at every movement spends less time feeding. Where nothing hunts them, less fearful individuals eat more and leave more offspring, so over generations the whole population grows tame. The tameness reflects this history, not any failure of the animals' senses.",
-      text2:
-        "Hikers on remote Vessa Island are often startled that its ground doves let people approach within arm's length. The island has never had native mammals or snakes, and the doves nest in low shrubs beside the trails. A local naturalist suggests that the doves have simply grown used to the tourists who feed them.",
-      puzzle: "why Vessa Island's ground doves let people come so close",
-      principleAnchor: "evolve where there are no predators",
-      guessAnchor: "grown used to the tourists",
-      detailAnchor: "low shrubs",
-      key: "The doves evolved without predators, so fearless birds prospered.",
-      guess: "The doves have grown used to tourists who regularly feed them.",
-      ruledOut: "The doves cannot see well enough to recognize people as a threat.",
-      detail: "Nesting beside the trails leaves the doves little room to flee from people.",
-      why: "Text 1 says animals that evolve without predators grow tame over generations, and Vessa Island has never had native mammals or snakes",
+      "scene": "cs-vessa-doves",
+      "text1": "Animals that evolve where there are no predators often lose their fear of large creatures. Wariness has costs: an animal that flees at every movement spends less time feeding. Where nothing hunts them, less fearful individuals eat more and leave more offspring, so over generations the whole population grows tame. The tameness reflects this history, not any failure of the animals' senses.",
+      "text2": "Hikers on remote Vessa Island are often startled that its ground doves let people approach within arm's length. The island's ecological record indicates that the doves evolved without predators, and they nest in low shrubs beside the trails. A local naturalist suggests that they have simply grown used to the tourists who feed them.",
+      "puzzle": "why Vessa Island's ground doves let people come so close",
+      "principleAnchor": "evolve where there are no predators",
+      "guessAnchor": "grown used to the tourists",
+      "detailAnchor": "low shrubs",
+      "key": "The doves evolved without predators, so fearless birds prospered.",
+      "guess": "The doves have grown used to tourists who regularly feed them.",
+      "ruledOut": "The doves cannot see well enough to recognize people as a threat.",
+      "detail": "Nesting beside the trails leaves the doves little room to flee from people.",
+      "why": "Text 1 explains tameness as an evolved response to an absence of predators, and Text 2 says Vessa’s ecological record indicates that its doves evolved without predators"
     },
     {
       scene: "cs-fennet-canal",
@@ -1484,7 +1480,7 @@
       scene: "cs-sessel-comet",
       subject: "the water vapor detected at the comet Sessel",
       text1:
-        "In 2031 the Ardent probe detected water vapor streaming from the comet Sessel. The finding shows that Sessel holds a large reservoir of ice deep inside, which the Sun's heat is only now beginning to release. Future missions to Sessel should be designed to drill beneath its surface.",
+        "In 2021 the Ardent probe detected water vapor streaming from the comet Sessel. The finding shows that Sessel holds a large reservoir of ice deep inside, which the Sun's heat is only now beginning to release. Future missions to Sessel should be designed to drill beneath its surface.",
       text2:
         "Ardent's detection of water vapor at Sessel is not in doubt. However, the vapor came only from the comet's sunlit side and faded within weeks, a pattern that fits a thin layer of frost on the surface far better than a deep reservoir. Sessel's interior may well be as dry as rock.",
       anchor1: "large reservoir of ice deep inside",
@@ -1624,831 +1620,914 @@
     },
   };
 
-  /* ------------------------------------------------------------------ *
-   * 7. Opposed texts that share a premise one states and the other     *
-   *    takes for granted.                                              *
-   * ------------------------------------------------------------------ */
+  // Opposing recommendations rest on a shared premise inferred from how
+  // each author uses evidence; no repeated assertion supplies the answer.
   const CTC_COMMON_TOPICS = [
-    {
-      scene: "cs-aldon-bridge",
-      text1:
-        "The Aldon Street Bridge should be repaired, not replaced. Inspectors found its steel frame sound; only the concrete deck is crumbling, though it cannot be left as it is much longer. A new deck would cost $4 million, a third of the price of a new bridge, and would preserve a landmark that has carried traffic over the Tane River since 1911.",
-      text2:
-        "Repairing the Aldon Street Bridge would be a false economy. Its two narrow lanes cannot carry the buses the city plans to route across the river, so a repaired bridge would have to be replaced within a decade anyway. The crumbling deck forces the city's hand now; better to spend the money once, on a bridge built for the city's future.",
-      premise1: "cannot be left as it is",
-      premise2: "forces the city's hand now",
-      thesis1Anchor: "a third of the price",
-      thesis2Anchor: "buses",
-      key: "The bridge's current condition calls for prompt action by the city.",
-      thesis1: "Repairing the bridge is the more economical choice for the city.",
-      thesis2: "The bridge's two lanes are too narrow for the buses the city plans to run.",
-      broad: "Bridges built before 1920 should generally be replaced, not repaired.",
-      only: [
-        ["A new concrete deck for the bridge would cost the city about $4 million.", 1, "$4 million"],
-        ["The city plans to route buses across the Tane River on the bridge.", 2, "buses"],
+  {
+    "scene": "cs-common-map-route-status",
+    "text1": "A new walking map of Leth Valley should omit the abandoned ridge paths. Their bridges have collapsed, and a continuous line invites walkers to plan journeys the paths can no longer support. An appendix could record where those routes once ran without giving them the same visual standing as maintained trails.",
+    "text2": "Removing the ridge paths from Leth Valley's map would make the old villages appear isolated. Keep those paths, but draw them differently from usable trails. Their importance is precisely that they explain connections among settlements which the present network no longer reveals.",
+    "key": "A route's placement and appearance on a map can imply a relationship to the landscape that its location alone does not establish.",
+    "wrong": [
+      [
+        "A map should retain former routes in its main display even when those routes are irrelevant to journeys readers can make today.",
+        "Text 2 favors keeping former routes on the main map. Text 1 instead separates them into an appendix to avoid misleading present-day walkers."
       ],
-      why: "Text 1 says the crumbling deck cannot be left as it is much longer, and Text 2 says the crumbling deck forces the city's hand now; they disagree only about whether to repair or replace",
-    },
-    {
-      scene: "cs-veltan-frog",
-      text1:
-        "Zoos should expand their breeding programs for the Veltan tree frog. The frog's cloud forest is being cleared so quickly that the species could vanish from the wild within twenty years, and a healthy captive population is the only insurance against losing it entirely.",
-      text2:
-        "Money spent breeding Veltan tree frogs in zoos would do far more good protecting the cloud forest they come from. Captive frogs are of little use if, when the time comes to release them, no forest remains to receive them. Only protecting that habitat can keep the species alive in the wild.",
-      premise1: "being cleared so quickly",
-      premise2: "no forest remains to receive them",
-      thesis1Anchor: "only insurance",
-      thesis2Anchor: "far more good",
-      key: "The Veltan tree frog's forest home is at serious risk of disappearing.",
-      thesis1: "A captive population is the best protection for the Veltan tree frog.",
-      thesis2: "Protecting the frog's forest does more good than breeding it in zoos.",
-      broad: "Every endangered frog species should be bred in zoos as a safeguard.",
-      only: [
-        ["Captive frogs will one day need forest into which they can be released.", 2, "release them"],
+      [
+        "A route should be excluded from the main map whenever its physical condition prevents readers from following its original course.",
+        "This is Text 1's proposal; Text 2 explicitly favors retaining the routes with a different visual treatment."
       ],
-      why: "Text 1 says the frog's forest is being cleared so quickly the species could vanish, and Text 2's argument assumes the danger that no forest will remain; they disagree only about the remedy",
-    },
-    {
-      scene: "cs-alderan-spelling",
-      text1:
-        "The printers of sixteenth-century Aldera did more than anyone to fix the spelling of the Alderan language. Before printing, each scribe spelled as he pleased. Printers, needing consistent type and wanting their books to sell across regions, settled on single spellings, and readers soon came to expect them.",
-      text2:
-        "Credit for standardizing Alderan spelling belongs to the schoolmasters of the 1600s, not to printers. Printed books from the 1500s still spell the same word three or four ways, sometimes on a single page. Only when schools began drilling pupils from a common spelling book did the variation fade.",
-      premise1: "each scribe spelled as he pleased",
-      premise2: "did the variation fade",
-      thesis1Anchor: "Printers, needing consistent type",
-      thesis2Anchor: "schoolmasters",
-      key: "Alderan spelling varied widely before it eventually became standardized.",
-      thesis1: "Printers were chiefly responsible for standardizing Alderan spelling.",
-      thesis2: "Schoolmasters were chiefly responsible for standardizing Alderan spelling.",
-      broad: "Spelling becomes standard in any language soon after printing arrives.",
-      only: [
-        ["Before printing arrived, each scribe chose his own spellings.", 1, "each scribe spelled"],
-        ["In the 1600s, schools drilled pupils from a common spelling book.", 2, "common spelling book"],
+      [
+        "A map's historical value depends chiefly on recording routes that once linked villages rather than those that connect them today.",
+        "Text 2 identifies a historical use but does not rank historical value this way; Text 1's concern is safe, usable route information."
+      ]
+    ],
+    "anchors": [
+      "same visual standing",
+      "draw them differently"
+    ],
+    "why": "Text 1 worries that an undifferentiated line suggests present usability; Text 2 worries that omission suggests historical isolation. Both arguments depend on maps communicating relationships beyond the physical positions of paths, although the authors favor different placements for the old routes."
+  },
+  {
+    "scene": "cs-common-translation-form",
+    "text1": "In translating Mara Venn's poem, I retained its broken line lengths but abandoned the end rhymes. Matching both forced the speaker's uncertain admissions into polished declarations. The uneven lines interrupt an otherwise fluent voice; reproducing the rhyme at the cost of that interruption would misrepresent the speaker.",
+    "text2": "My translation of Venn uses regular lines. In the new language, her abrupt breaks sound emphatic rather than hesitant, so I place the hesitation in unfinished clauses instead. Readers should encounter a speaker struggling to proceed, not a diagram of where the original printing presses stopped each line.",
+    "key": "The effect of a formal feature depends on its relation to the surrounding language, so matching the feature can alter the speaker's character.",
+    "wrong": [
+      [
+        "The poem's irregular line lengths are its most reliable means of conveying uncertainty and should determine the form of a translation.",
+        "Text 1 retains uneven lines, but Text 2 finds them emphatic in the new language and relocates hesitation to syntax."
       ],
-      why: "Text 1 says scribes once spelled as they pleased and spelling was later fixed, and Text 2 says the variation eventually faded; they disagree only about who deserves the credit",
-    },
-    {
-      scene: "cs-corran-museum",
-      text1:
-        "The Corran City Museum should drop its $15 admission fee. When the nearby Hartwell Museum went free, its visitors quickly grew more varied, with far more families from the city's low-income neighborhoods. A public museum exists to serve the whole public, and a fee keeps out exactly the residents who most need it.",
-      text2:
-        "Making the Corran City Museum free would backfire. Admission fees supply a third of its budget, and without them the museum would have to cut the school programs that bring thousands of students from low-income neighborhoods through its doors each year. Those visits are the museum's most valuable work.",
-      premise1: "keeps out exactly the residents who most need it",
-      premise2: "Those visits are the museum's most valuable work",
-      thesis1Anchor: "Hartwell Museum",
-      thesis2Anchor: "a third of its budget",
-      key: "Serving low-income residents is central to the museum's purpose.",
-      thesis1: "The museum should stop charging visitors its $15 admission fee.",
-      thesis2: "Fees fund the museum's school visits, its most valuable work.",
-      broad: "All public museums should be free for every visitor to enter.",
-      only: [
-        ["Free admission at the Hartwell Museum drew more families from low-income neighborhoods.", 1, "Hartwell Museum"],
-        ["Admission fees supply about a third of the Corran City Museum's budget.", 2, "a third of its budget"],
+      [
+        "The target language's conventions should determine line lengths, while the original poem should determine the speaker's syntax.",
+        "Text 2 alters syntax and Text 1 preserves line lengths; neither adopts this division between target-language form and original syntax."
       ],
-      why: "Text 1 objects to the fee because it keeps out low-income residents, and Text 2 defends the fee because it funds the museum's most valuable work, visits by low-income students",
-    },
-    {
-      scene: "cs-holt-poems",
-      text1:
-        "Editors of Edda Holt's poems should print the versions that appeared in her first books. Holt revised obsessively in old age, rewriting nearly every early poem, and the later versions, flattened by caution, lose the reckless energy that made her famous.",
-      text2:
-        "Any edition of Edda Holt must follow her final revisions. Readers may prefer the wilder early versions, but the revised poems are the ones Holt chose, and an editor's duty is to present a poet's work as the poet last wished it to be read.",
-      premise1: "rewriting nearly every early poem",
-      premise2: "Readers may prefer the wilder early versions",
-      thesis1Anchor: "flattened by caution",
-      thesis2Anchor: "an editor's duty",
-      key: "Holt's revisions changed her early poems in noticeable ways.",
-      thesis1: "Editors should print the versions of Holt's poems from her first books.",
-      thesis2: "An editor should present Holt's poems as she last wished them read.",
-      broad: "Poets' late revisions usually weaken the poems they rework.",
-      only: [
-        ["Holt became famous for the reckless energy of her early poems.", 1, "made her famous"],
+      [
+        "The speaker's hesitation can be preserved most faithfully by removing formal constraints that make the translated voice sound polished.",
+        "Text 1 sacrifices rhyme, but Text 2 retains regular lines. Both adapt particular features; neither treats removal of formal constraints as the general remedy."
+      ]
+    ],
+    "anchors": [
+      "polished declarations",
+      "emphatic rather than hesitant"
+    ],
+    "why": "The first translator finds that matching rhyme and line length together changes the voice; the second finds that copying line breaks changes hesitation into emphasis. Their different solutions therefore share an assumption that a feature's function arises from its linguistic context, rather than from its shape alone."
+  },
+  {
+    "scene": "cs-common-potter-stamp-network",
+    "text1": "Storage jars from five Tarel villages bear nearly identical stamps, including an off-center notch with no practical use. Such an arbitrary detail is unlikely to recur independently. The jars probably came from one workshop that distributed its products across the valley; their different clays reflect that workshop's varied supplies.",
+    "text2": "The Tarel jars' clay recipes match household pottery in their respective villages, favoring local manufacture. Traveling apprentices could have copied a master's stamp, notch included, while learning to make jars from local materials. A repeated mark need not locate all production under one roof.",
+    "key": "The stamps' similarity reflects a connection among their makers, even if it does not establish that the jars shared a production site.",
+    "wrong": [
+      [
+        "The jars' different clay recipes provide better evidence of separate workshops than their similar stamps provide of a shared workshop.",
+        "That evidential ranking belongs to Text 2; Text 1 explains the clays through varied supplies at a single workshop."
       ],
-      why: "Text 1 says Holt rewrote nearly every early poem, and Text 2 contrasts the wilder early versions with the revised ones; they disagree only about which versions an edition should print",
-    },
-    {
-      scene: "cs-veira-telescope",
-      text1:
-        "The Veira telescope should be built on Mount Kesh. At 4,200 meters, Kesh rises above most of the water vapor in the atmosphere, and water vapor absorbs much of the infrared light that Veira is designed to detect. No other candidate site is as high.",
-      text2:
-        "Mount Kesh's altitude is tempting, but the Veira telescope belongs on the Hollen Plateau. Kesh is wrapped in cloud one night in three, while the plateau, though lower and somewhat moister, has clear skies on nine nights of ten. A telescope that cannot see the sky collects nothing at all.",
-      premise1: "water vapor absorbs much of the infrared light",
-      premise2: "though lower and somewhat moister",
-      thesis1Anchor: "No other candidate site is as high",
-      thesis2Anchor: "Hollen Plateau",
-      key: "Humid air is a disadvantage for the telescope's observations.",
-      thesis1: "Mount Kesh's height makes it the best site for the telescope.",
-      thesis2: "The plateau's clear skies make it the best site for the telescope.",
-      broad: "Every telescope should be built at the highest site available.",
-      only: [
-        ["The Veira telescope is designed to detect infrared light.", 1, "infrared"],
-        ["Mount Kesh is wrapped in cloud about one night in three.", 2, "one night in three"],
+      [
+        "The stamps were copied by apprentices who carried a common design between villages while adapting production to locally available clay.",
+        "This is Text 2's proposed mechanism, not one that Text 1 grants; Text 1 instead proposes distribution from one workshop."
       ],
-      why: "Text 1 says water vapor absorbs the light Veira must detect, and Text 2 concedes the plateau is moister as a drawback it outweighs; they disagree only about which site is better",
-    },
-    {
-      scene: "cs-saint-orla-chapel",
-      text1:
-        "The ruined chapel at Saint Orla should be rebuilt as it stood in 1400. Surviving drawings record its every arch and window, so a faithful reconstruction is possible, and visitors would at last understand the building its makers intended rather than guessing at it from broken walls.",
-      text2:
-        "Rebuilding Saint Orla's chapel would erase six centuries of its history. The roofless nave and ivy-covered walls record the chapel's long decline as surely as the old plans record its founding, and visitors deserve to see that whole history, not a replica of a single moment.",
-      premise1: "visitors would at last understand",
-      premise2: "visitors deserve to see that whole history",
-      thesis1Anchor: "rebuilt as it stood in 1400",
-      thesis2Anchor: "erase six centuries",
-      key: "The chapel's treatment should help visitors grasp its history.",
-      thesis1: "The chapel should be rebuilt to look as it did in the year 1400.",
-      thesis2: "The ruined chapel should be left as it now stands, ivy and all.",
-      broad: "Old buildings should never be altered from their present state.",
-      only: [
-        ["Ivy has grown over the walls of the ruined chapel.", 2, "ivy-covered"],
+      [
+        "The notch identifies a single workshop because details without a practical use are more stable than the materials available to potters.",
+        "Text 1 favors one workshop, but Text 2 offers a route for transmitting the arbitrary notch across multiple workshops."
+      ]
+    ],
+    "anchors": [
+      "unlikely to recur independently",
+      "copied a master's stamp"
+    ],
+    "why": "Text 1 treats the arbitrary notch as evidence against independent invention. Text 2 explains its recurrence through apprentices carrying a design. Both therefore depend on some connection transmitting the mark, while disagreeing about whether that connection requires a single production site."
+  },
+  {
+    "scene": "cs-common-dune-plant-viability",
+    "text1": "The dune lilies moved inland look healthy, but their stored reserves could sustain leaves for several seasons. I would postpone calling the relocation a success until seedlings appear beyond the planted rows. Moving more adults now would enlarge a display whose continued existence might still depend on gardeners.",
+    "text2": "Funds should repair the lilies' coastal site instead. Its pollinating moths remain, and young plants emerge there whenever loose sand is stabilized. The inland planting may be useful as insurance, but conserving this lily should not become a permanent schedule of replacing aging specimens.",
+    "key": "Conservation success involves a population's capacity to renew itself, not simply the continued presence of the individuals initially protected.",
+    "wrong": [
+      [
+        "Relocated lilies should serve only as insurance because a population outside its original habitat cannot become independent of gardeners.",
+        "Text 2 calls the inland population useful insurance, but neither text says it cannot become independent; Text 1 proposes evidence that would show it has."
       ],
-      why: "Text 1 argues for rebuilding so visitors can understand the chapel's original form, and Text 2 argues against it so visitors can see its whole history; both judge the options by what visitors will learn of the past",
-    },
-    {
-      scene: "cs-tolland-soda",
-      text1:
-        "Tolland should tax sugary drinks. Residents' consumption of such drinks has doubled in a decade, with predictable harm to their teeth and health, and when the nearby city of Lowmoor adopted a similar tax, purchases fell by a quarter within a year.",
-      text2:
-        "A tax on sugary drinks would fall hardest on Tolland's poorest residents, who spend a larger share of their income on groceries. The better way to cut how much sugary soda residents drink is to install free water fountains in the town's schools, parks, and playing fields.",
-      premise1: "with predictable harm to their teeth and health",
-      premise2: "The better way to cut how much sugary soda residents drink",
-      thesis1Anchor: "Lowmoor",
-      thesis2Anchor: "water fountains",
-      key: "Tolland residents would benefit from drinking less sugary soda.",
-      thesis1: "Tolland should adopt a tax on sugary drinks to cut consumption.",
-      thesis2: "A tax on sugary drinks would fall hardest on Tolland's poorest residents.",
-      broad: "Taxes on food and drink always burden poorer residents the most.",
-      only: [
-        ["A similar tax in Lowmoor cut purchases of sugary drinks by a quarter.", 1, "Lowmoor"],
-        ["Tolland's poorest residents spend a larger share of their income on groceries.", 2, "larger share of their income"],
+      [
+        "The lilies' existing reserves are a stronger predictor of their survival than either pollinator access or the appearance of new seedlings.",
+        "Text 1 treats reserves as a reason adult appearance can mislead, while Text 2 emphasizes conditions supporting renewal."
       ],
-      why: "Text 1 says residents' rising consumption is harming their health, and Text 2 proposes a better way to cut consumption, which assumes cutting it is worthwhile; they disagree only about the means",
-    },
-    {
-      scene: "cs-tarsan-founders",
-      text1:
-        "Historians of the Tarsan Republic's founding should rely on its leaders' private letters. The public speeches of 1791 were crafted for effect, hiding every doubt and rivalry; in letters to friends, the founders admitted the fears and quarrels their speeches concealed.",
-      text2:
-        "The founders' letters are a trap for historians. Written to allies and patrons, they were often meant to be copied and shown around, and so they are as calculated as any speech. The Republic's tax records and court files, never meant for display, reveal far more about how it actually worked.",
-      premise1: "speeches of 1791 were crafted for effect",
-      premise2: "as calculated as any speech",
-      thesis1Anchor: "rely on its leaders' private letters",
-      thesis2Anchor: "tax records",
-      key: "The founders' public speeches were not a candid record of what they thought.",
-      thesis1: "The founders' private letters reveal doubts their speeches concealed.",
-      thesis2: "Tax records and court files are the best sources on the young Republic.",
-      broad: "No written source from the Republic's founding can be trusted.",
-      only: [
-        ["Many of the founders' letters were meant to be copied and shown to others.", 2, "copied and shown around"],
+      [
+        "Restoring the coastal site should take priority because established moth populations ensure that its adult lilies will survive relocation.",
+        "Text 2 favors coastal restoration, but the moths support reproduction there rather than adult survival after relocation; Text 1 does not rank the two sites."
+      ]
+    ],
+    "anchors": [
+      "seedlings appear beyond the planted rows",
+      "replacing aging specimens"
+    ],
+    "why": "Text 1 withholds a success judgment despite healthy adults and asks for new seedlings; Text 2 rejects an approach requiring perpetual replacement. The common standard is the population's ability to renew itself, not agreement about which site deserves priority."
+  },
+  {
+    "scene": "cs-common-archive-record-links",
+    "text1": "The Velden factory archive should replace workers' names with stable codes before publication. Researchers could then follow a worker between jobs without exposing the illnesses or debts recorded beside each name. Deleting entire entries would protect privacy only by destroying the sequences that make the collection informative.",
+    "text2": "Public codes would be useful, but some research needs names: a worker may appear under another employer in a separate archive. Permit approved researchers to consult the originals in a secure room. Posting identities online is unnecessary for linking those records, and would surrender protections the research itself does not require.",
+    "key": "Useful connections among records can be preserved without giving the public unrestricted access to the identities behind those records.",
+    "wrong": [
+      [
+        "Stable codes can support the same historical investigations as workers' names, provided the codes remain consistent throughout an archive.",
+        "Text 2 identifies cross-archive linkage as a use for which public codes do not replace names."
       ],
-      why: "Text 1 says the speeches were crafted for effect, and Text 2 dismisses the letters as being as calculated as any speech, which takes for granted that the speeches were calculated",
-    },
-    {
-      scene: "cs-harlen-finch",
-      text1:
-        "Backyard feeders help the Harlen finch survive the winter. Banding studies show that finches with access to feeders lose less weight in January and are far more likely to be alive in spring than finches that must forage on their own.",
-      text2:
-        "Backyard feeders do the Harlen finch more harm than good. Finches crowding at a feeder pass infections to one another, and in the winter of 2019 an eye disease spread through feeder flocks and killed thousands of the birds across the region.",
-      premise1: "far more likely to be alive in spring",
-      premise2: "killed thousands of the birds",
-      thesis1Anchor: "lose less weight",
-      thesis2Anchor: "infections",
-      key: "Feeders influence how many Harlen finches survive winter.",
-      thesis1: "Feeders do Harlen finches more good than harm over the winter.",
-      thesis2: "Crowding at feeders spreads deadly disease among Harlen finches.",
-      broad: "People should stop putting out food for all wild birds in winter.",
-      only: [
-        ["Finches that use feeders lose less weight in January than other finches do.", 1, "lose less weight"],
-        ["An eye disease spread through feeder flocks in the winter of 2019.", 2, "eye disease"],
+      [
+        "Research requiring workers' identities should be confined to the factory archive because links to outside records add little historical value.",
+        "Text 2's case for secure access depends on the value of external links, while Text 1 does not dismiss that research."
       ],
-      why: "Text 1 says feeders make finches more likely to survive the winter, and Text 2 says feeders led to thousands of deaths; they disagree about the direction of the effect, not about whether feeders affect survival",
-    },
-  ];
+      [
+        "Keeping original records in a secure room offers greater protection for historical sequences than publishing entries with names replaced by codes.",
+        "Text 2 proposes secure access as a complement to codes. Neither text establishes this ranking between two ways of preserving sequences."
+      ]
+    ],
+    "anchors": [
+      "follow a worker between jobs",
+      "unnecessary for linking those records"
+    ],
+    "why": "Text 1 preserves sequences with public codes while withholding identities. Text 2 retains names for a more demanding linkage task but confines access to approved researchers. Their different access proposals both separate the research value of connections from unrestricted public identification."
+  },
+  {
+    "scene": "cs-common-museum-making-inferences",
+    "text1": "Visitors should handle replicas of the Orra clay vessels. Pressing a thumb into a replica's grip reveals why its wall bends inward, a feature photographs flatten into decoration. A durable copy could make that shaping decision intelligible in a way the original, sealed behind glass, rarely does.",
+    "text2": "Replicas should accompany, rather than displace, the Orra vessels. On the originals, scraped ridges cross earlier finger marks, revealing the order in which surfaces were finished. A smoothed replica can reproduce the final shape while concealing the sequence of decisions that produced it.",
+    "key": "The value of an object's display depends partly on what it allows visitors to infer about the decisions involved in making that object.",
+    "wrong": [
+      [
+        "Handling a replica gives visitors stronger evidence of a vessel's production history than viewing the original behind protective glass.",
+        "Text 1 values handling for understanding one shaping decision; Text 2 identifies production evidence that a replica may conceal."
+      ],
+      [
+        "An accurate copy must reproduce each visible surface mark before it can communicate anything useful about a vessel's original design.",
+        "Text 1 finds a replica informative through its shape; Text 2 shows that missing marks limit particular inferences, not every useful inference."
+      ],
+      [
+        "The chronological order of finishing techniques is more important to understanding the vessels than the functions of their final shapes.",
+        "Text 2 emphasizes sequence and Text 1 emphasizes a shape's function, but neither grants the other's concern lower priority."
+      ]
+    ],
+    "anchors": [
+      "that shaping decision intelligible",
+      "sequence of decisions"
+    ],
+    "why": "Text 1 justifies replicas through an inference about why a wall was shaped; Text 2 justifies keeping originals through an inference about the sequence of finishing. Both evaluate displays through access to makers' decisions, though they need different kinds of material evidence."
+  },
+  {
+    "scene": "cs-common-reservoir-useful-supply",
+    "text1": "Harrow's annual river inflow looks ample, but most arrives during six stormy weeks. A reservoir would carry that water into the growing season, when present diversions nearly empty the channel. Budget forecasts based on annual inflow conceal the very shortage the reservoir is meant to address.",
+    "text2": "Harrow should invest in water reuse before building a reservoir. The largest storms carry sediment that would progressively consume its storage, and wide summer shallows would lose water to evaporation. The river's impressive annual total gives the proposed structure more dependable capacity on paper than these losses permit.",
+    "key": "A river's annual inflow cannot by itself establish how much water a proposed system would make reliably available when people need it.",
+    "wrong": [
+      [
+        "A reservoir's benefit should be estimated mainly from the difference between storm-season inflow and growing-season demand for irrigation.",
+        "Text 1 emphasizes timing; Text 2 argues that sediment and evaporation would materially limit what that estimate delivers."
+      ],
+      [
+        "Water reuse offers the more reliable supply because it avoids the seasonal mismatch that makes river storage ineffective in this region.",
+        "Text 2 favors reuse, but Text 1 argues that river storage would address the mismatch rather than being ineffective because of it."
+      ],
+      [
+        "The region's growing-season shortages show that its annual river inflow is too small to support existing irrigation without new water sources.",
+        "Both texts accept substantial annual inflow. Timing and losses, rather than a demonstrated insufficient annual total, drive their arguments."
+      ]
+    ],
+    "anchors": [
+      "carry that water into the growing season",
+      "these losses permit"
+    ],
+    "why": "Text 1 translates annual inflow into usefulness through storage across seasons. Text 2 further conditions usefulness on the proposed storage's losses. Neither can judge dependable supply from the annual total alone, although they disagree about whether a reservoir is the right investment."
+  },
+  {
+    "scene": "cs-common-instrument-audible-evidence",
+    "text1": "The museum's fragile Neral harp should remain unplayed. Build a working copy from its measurements instead. The tuning chart alone does not explain why its maker paired strings of different thicknesses; hearing the replica's interacting overtones could distinguish explanations that the chart leaves equally plausible.",
+    "text2": "A replica is worthwhile, but one carefully monitored session on the Neral harp is also needed. Small differences in aged wood may change which overtones reinforce one another. If a copy sounds unlike the original, an interpretation supported by the copy could explain the reconstruction rather than the maker's instrument.",
+    "key": "Audible behavior can help discriminate between interpretations that the instrument's written and physical descriptions leave unresolved.",
+    "wrong": [
+      [
+        "A reconstruction is adequate for testing historical interpretations when its dimensions and tuning match those recorded for the original.",
+        "Text 1 relies on a copy, but Text 2 identifies aged material as a possible source of acoustically significant differences."
+      ],
+      [
+        "The original must be played before a replica can reveal anything about why the maker combined strings of different thicknesses.",
+        "Text 2 asks for a comparison, but Text 1 explicitly favors learning through a replica without playing the original."
+      ],
+      [
+        "Aged wood is the main determinant of the instrument's overtones, making the surviving tuning chart less useful than measurements of its frame.",
+        "Text 2 identifies a possible material effect; neither text establishes its primacy or ranks the chart below frame measurements."
+      ]
+    ],
+    "anchors": [
+      "distinguish explanations",
+      "explain the reconstruction"
+    ],
+    "why": "The first author seeks sound that can separate otherwise plausible interpretations. The second worries about whether that sound is evidence about the right object. Both treat audible behavior as constraining interpretation beyond what descriptions alone settle."
+  },
+  {
+    "scene": "cs-common-newspaper-silence",
+    "text1": "The Bracken Gazette's failure to mention the mill strike should not outweigh the workers' letters. During the same week, its reports of other disputes also disappear while official notices expand. The editor may have traded coverage for continued access to the authorities who supplied those notices.",
+    "text2": "The Gazette's blank advertising columns offer a different explanation. Merchants threatened to withdraw advertisements from papers sympathetic to the strikers, and several did withdraw them. The missing coverage may record commercial pressure rather than an arrangement with officials; counting unreported strikes would miss that distinction.",
+    "key": "What the newspaper omits may reveal pressures on its production rather than provide a direct record of which events occurred.",
+    "wrong": [
+      [
+        "The Gazette's dependence on official notices is a stronger explanation for missing strike reports than merchants' advertising decisions.",
+        "This favors Text 1's explanation, while Text 2 uses advertising evidence to propose a different source of pressure."
+      ],
+      [
+        "Workers' letters provide a sufficiently complete account of the strike to make the Gazette's reporting choices historically uninformative.",
+        "Text 1 defends the letters against an argument from silence, but both texts find the newspaper's omissions informative about institutional pressures."
+      ],
+      [
+        "The absence of strike coverage shows that merchants and government officials coordinated their efforts to influence the Gazette's editor.",
+        "The texts propose distinct possible pressures; neither establishes that the two groups coordinated their actions."
+      ]
+    ],
+    "anchors": [
+      "traded coverage",
+      "commercial pressure"
+    ],
+    "why": "One author reads silence through possible dependence on official access; the other reads it through advertising pressure. Their rival explanations both treat omission as a product of the newspaper's circumstances, rather than a transparent measure of whether the strike occurred."
+  },
+  {
+    "scene": "cs-common-plankton-sampling-order",
+    "text1": "To map plankton around Arven Bay, alternate which station is visited first each day. A ship that always works west to east reaches eastern stations after the afternoon current arrives. Reversing the order on alternate days would keep the map from assigning that current's contribution only to the eastern water.",
+    "text2": "Repeatedly visit fewer Arven stations at the same hour instead. The afternoon current varies among days, so simply alternating the route may distribute its effects unevenly. Matching observation times would sacrifice some coverage but make persistent differences among stations easier to identify.",
+    "key": "A difference between samples taken at separate stations can reflect when the ship arrived as well as a persistent difference between places.",
+    "wrong": [
+      [
+        "Alternating a ship's route removes the influence of daily currents without reducing how much of the bay a survey can cover.",
+        "Text 1 proposes alternation, but Text 2 specifically doubts that it adequately distributes variable current effects."
+      ],
+      [
+        "Reducing the number of stations produces a more representative map because nearby stations respond identically to afternoon currents.",
+        "Text 2 accepts less coverage to control timing, not because nearby stations are identical or fewer stations are inherently more representative."
+      ],
+      [
+        "The afternoon current chiefly affects the eastern stations, so those stations should be compared only with one another across days.",
+        "Text 1 warns that route timing could falsely assign the current's contribution to the east; neither text establishes that location restriction."
+      ]
+    ],
+    "anchors": [
+      "after the afternoon current arrives",
+      "persistent differences"
+    ],
+    "why": "The authors propose different ways of preventing visit time from masquerading as a stable spatial difference. Alternation distributes timing across places, while matched hours hold it more constant. Their disagreement about design presupposes that a station comparison can mix temporal and spatial effects."
+  }
+];
 
   const ctcCommonGround = {
     ...CTC_BASE,
     id: "cross-text-common-ground",
     subskill: "agreement",
     difficulty: "Hard",
-    title: "Opposed texts that share an underlying premise",
-    recognize:
-      "The texts disagree about what should be done or what is true, but both argue from a shared premise that one states and the other takes for granted. Neutral-sounding claims that only one text makes are not common ground; neither is either text's thesis or a sweeping version of the premise.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 2, trap: 1 },
-    tricks: ["one-text-only", "extreme-language", "too-broad"],
+    title: "Infer a shared premise beneath contrasting arguments",
+    recognize: "Compare the role of the evidence in each argument. Infer the premise both arguments require, keeping it narrower than either author's preferred conclusion.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["one-text-only", "too-broad", "misattributed-view"],
     build(t) {
       const topic = t.pick(CTC_COMMON_TOPICS);
       const content = CTC_passage(topic.text1, topic.text2);
-      // Every set holds at least one neutral claim that only one text makes,
-      // since the shared premise is also neutral; the other two distractors
-      // come from the theses, the sweeping claim, and any other such claim,
-      // so no fixed set of roles marks the key.
-      const onlyChoices = topic.only.map(([text, from]) => [text,
-        `Only Text ${from} says this; Text ${3 - from} neither states it nor relies on it, so it is not common ground.`]);
-      const first = t.pick(onlyChoices);
-      const rest = t.sample([
-        [topic.thesis1, "This is part of Text 1's own case; the author of Text 2 argues against it."],
-        [topic.thesis2, "This is part of Text 2's own case; the author of Text 1 either argues against it or never grants it, so it is not common ground."],
-        [topic.broad, "Both texts argue about one particular case; neither makes this sweeping general claim."],
-        ...onlyChoices.filter((choice) => choice !== first),
-      ], 2);
-      const wrong = [first, ...rest];
       return {
         responseType: "multiple-choice",
         scene: topic.scene,
         stimulus: { type: "paired-passages", content },
         stem: "Based on the texts, both authors would most likely agree with which statement?",
         correct: topic.key,
-        wrong,
-        explanation: `${topic.why}.`,
-        steps: [
-          "State each text's main position and notice that they conflict.",
-          "Look beneath the disagreement for a point one text states and the other takes for granted.",
-          "Check every neutral-sounding choice against both texts; reject any that only one text supports, as well as each text's own thesis.",
-        ],
-        principles: [
-          "Authors who disagree about a conclusion can still share assumptions about the facts or about what matters.",
-          "Common ground must be supported by both texts; a detail only one text mentions is not shared, however uncontroversial it sounds.",
-        ],
-        trap: "Choosing a neutral-sounding detail that only one text mentions, or one author's thesis, which the other author argues against.",
-        hint: "What must the author of Text 2 already believe in order to argue as they do? Does the other text say or assume it too?",
-        estimatedSeconds: 100,
+        wrong: topic.wrong,
+        explanation: topic.why,
+        steps: ["Identify the conclusion and the reason offered by each author.","Ask what must be true for both sets of reasons to matter, even though the conclusions differ.","Check the proposed shared premise against both arguments without importing one author's preferred explanation or remedy."],
+        principles: ["Two arguments can share a standard or assumption while applying it through different evidence and recommendations.","Common ground is a supported intersection, not a compromise between the conclusions or a detail merely absent from one text."],
+        trap: "Promoting one author's explanation into common ground, or choosing a plausible generalization that neither argument requires.",
+        hint: "What makes each author's evidence relevant, despite their disagreement?",
+        estimatedSeconds: 105,
         verify: () => {
           const [one, two] = CTC_split(content);
-          const texts = { 1: one, 2: two };
-          return one.includes(topic.premise1) && two.includes(topic.premise2) &&
-            one.includes(topic.thesis1Anchor) && !two.includes(topic.thesis1Anchor) &&
-            two.includes(topic.thesis2Anchor) && !one.includes(topic.thesis2Anchor) &&
-            topic.only.length >= 1 &&
-            topic.only.every(([text, from, anchor]) => texts[from].includes(anchor) && !texts[3 - from].includes(anchor) &&
-              text !== topic.key) &&
-            new Set([topic.key, ...wrong.map(([text]) => text)]).size === 4;
+          const choices = [topic.key, ...topic.wrong.map(([text]) => text)];
+          return one.includes(topic.anchors[0]) && two.includes(topic.anchors[1]) &&
+            one.length + two.length <= 900 && choices.every((choice) => choice.length <= 160) &&
+            topic.wrong.length === 3 && new Set(choices).size === 4;
         },
       };
     },
   };
 
-  /* ------------------------------------------------------------------ *
-   * 8. Text 2 accepts part of Text 1's claim and disputes another part. *
-   * ------------------------------------------------------------------ */
-
-  // Each scene is a pair of dense texts: Text 1 reports a finding and draws
-  // a conclusion from it; Text 2 grants the finding (and sometimes part of
-  // the conclusion) but disputes the rest for a stated reason. In half the
-  // scenes Text 2 flags the concession ("is not in dispute", "no one
-  // doubts"); in the others it is left implicit, built into what Text 2
-  // describes or takes for granted, so the student has to infer it. Every
-  // distractor is a way of misplacing that line:
-  //   split    - accepts what Text 2 disputes and disputes what it accepts
-  //   ground   - accepts the right part but disputes on a ground Text 2
-  //              never raises (and usually rules out)
-  //   endorse  - full agreement, reading the concession as assent
-  //   reject   - full rejection, including what Text 2 concedes
-  // The split and ground choices share the key's compound "grant X while
-  // doubting Y" shape, so the key is never the only qualified choice. In
-  // some scenes the ground choice shares the key's wording and in others the
-  // split's, and the split paraphrases rather than swapping the key's words,
-  // so the two most alike choices do not single out the key. Keys and
-  // distractors share their opening verbs across scenes.
+  // Each response preserves one evidential step but limits a further
+  // inference. Rival responses misplace the preserved step or the limit.
   const CTC_PARTIAL_TOPICS = [
-    {
-      scene: "cs-tessar-immersion",
-      critic: "Tomas Rayne",
-      claimant: "Ferreira-Holt",
-      claim: "conclusion that the schools have brought Tessar back as a living language",
-      text1:
-        "On the island of Orlen, where the Tessar language had nearly fallen silent by 1980, immersion schools now teach every subject in Tessar from the first grade. Linguist Ana Ferreira-Holt reports that most pupils who complete the program pass the same oral fluency examination given to native speakers. The schools, she concludes, have done what decades of adult classes could not: they have brought Tessar back as a living language.",
-      text2:
-        "Sociolinguist Tomas Rayne has sat in on lessons at Orlen’s immersion schools, where pupils recite poems, solve problems, and argue about football in fluent Tessar. At home, on the playground, and with one another after class, however, the same children speak the island’s majority language. A language lives, Rayne contends, only when a community uses it unprompted, and by that measure Tessar remains a school subject.",
-      claimAnchor: "brought Tessar back as a living language",
-      grantAnchor: "fluent Tessar",
-      disputeAnchor: "remains a school subject",
-      key: "By granting that the pupils speak Tessar fluently while doubting that school fluency makes it a living language",
-      split: ["By accepting that Orlen’s children use Tessar unprompted but questioning whether they are truly fluent in it",
-        "This reverses Text 2: Rayne grants the pupils’ fluency and says they do not use Tessar outside class."],
-      ground: ["By accepting that Orlen’s children are fluent but questioning whether enough of them finish the program",
-        "Rayne never questions how many pupils finish the program; his objection is that the children do not use Tessar outside school."],
-      endorse: ["By agreeing that the immersion schools have succeeded where adult classes failed in reviving Tessar",
-        "Rayne accepts the pupils’ fluency but not the conclusion that Tessar is again a living language."],
-      reject: ["By arguing that the immersion schools have given their pupils no real command of Tessar at all",
-        "Rayne grants that the children speak Tessar well, so he would not deny that they command it."],
-      why: "Rayne grants that the pupils speak Tessar well, but he argues that a language lives only when a community uses it unprompted, and the children speak another language outside school",
-    },
-    {
-      scene: "cs-harl-downs-fire",
-      critic: "Ruth Ambler",
-      claimant: "Okafor",
-      claim: "recommendation that managers burn every plot every year",
-      text1:
-        "On the Harl Downs, a chalk grassland, ecologist Jun Okafor compared plots burned every spring with plots left unburned for a decade. The burned plots held nearly twice as many species of native wildflower. Frequent fire, Okafor argues, is the key to restoring the downs’ original diversity, and he recommends that managers burn every plot every year.",
-      text2:
-        "Okafor’s census is careful, and fire plainly favors many of the downs’ wildflowers. But entomologist Ruth Ambler points out that several butterflies found only on the downs spend the winter as eggs or caterpillars in dead stems near the ground, where a spring burn destroys them. Burning every plot every year, she warns, would trade the downs’ insects for their flowers; rotating fire so that some plots escape it each year would serve both.",
-      claimAnchor: "burn every plot every year",
-      grantAnchor: "fire plainly favors",
-      disputeAnchor: "rotating fire",
-      key: "By agreeing that fire aids the wildflowers but warning that yearly burning of every plot harms rare butterflies",
-      split: ["By accepting that annual burns spare the butterflies while disputing any benefit of fire to the flowers",
-        "This reverses Text 2: Ambler accepts that fire favors the wildflowers and warns that yearly burning destroys the butterflies."],
-      ground: ["By agreeing that fire aids the wildflowers but warning that yearly burning of every plot would fill the air with smoke",
-        "Ambler never mentions smoke; her objection is that spring burns destroy butterflies overwintering in dead stems."],
-      endorse: ["By agreeing that burning every plot every year is the surest way to restore the downs’ original diversity",
-        "Ambler accepts that fire helps the wildflowers but rejects burning every plot every year."],
-      reject: ["By arguing that fire does the downs more harm than good and should be kept off every plot entirely",
-        "Ambler recommends rotating fire so that some plots burn each year, so she would not keep fire off every plot."],
-      why: "Ambler accepts that fire favors the wildflowers but warns that burning every plot yearly would destroy butterflies that overwinter in dead stems, and she proposes rotating the burns instead",
-    },
-    {
-      scene: "cs-calvera-bread",
-      critic: "Owen Tallis",
-      claimant: "Marchetti",
-      claim: "claim that the tariff’s repeal caused the fall in the laborers’ death rate",
-      text1:
-        "When the port of Calvera abolished its grain tariff in 1846, wheat imports tripled within five years and the price of bread in the city fell by a third. Economic historian Lise Marchetti credits the repeal with the fall in the death rate among Calvera’s dock laborers over the following decade. Cheaper bread, she argues, meant better-fed workers, able to resist the fevers that had long plagued the docks.",
-      text2:
-        "That bread grew cheaper after the repeal is well documented. Historian Owen Tallis notes, however, that the same decade saw Calvera complete its first covered sewers and pipe clean water into the dock districts, the very districts where fevers had been worst. Cheaper bread may have helped, Tallis allows, but the new sewers offer at least as plausible an account of why fewer laborers died.",
-      claimAnchor: "credits the repeal",
-      grantAnchor: "well documented",
-      disputeAnchor: "covered sewers",
-      key: "By arguing that new sewers may explain the falling death rate as well as cheaper bread does",
-      split: ["By accepting that the sewers cut the death rate while doubting that bread grew cheaper after the repeal",
-        "Tallis calls the cheaper bread well documented, and he offers the sewers only as a plausible rival explanation, not as an established cause."],
-      ground: ["By accepting that bread grew cheaper while arguing that Marchetti has misdated the tariff’s repeal",
-        "Tallis never questions when the tariff was repealed; his objection is that sewers built in the same decade could explain the fall in deaths."],
-      endorse: ["By agreeing that cheaper bread, by strengthening workers against fever, explains the falling death rate",
-        "Tallis allows that cheaper bread may have helped but denies that it alone explains the fall in deaths."],
-      reject: ["By arguing that the price of bread had no bearing at all on the health of Calvera’s dock laborers",
-        "Tallis allows that cheaper bread may have helped, so he would not say it had no bearing on the laborers’ health."],
-      why: "Tallis accepts that bread grew cheaper and allows that it may have helped, but he argues that the new sewers and clean water in the dock districts are at least as plausible an explanation",
-    },
-    {
-      scene: "cs-rennick-altarpiece",
-      critic: "Joachim Serle",
-      claimant: "Ellery",
-      claim: "claim that the altarpiece is entirely Rennick’s own work",
-      text1:
-        "Infrared scans of the Rennick Altarpiece, painted around 1480, reveal a detailed underdrawing beneath every figure, executed in a single confident hand. Art historian Maud Ellery argues that the underdrawing proves the altarpiece is entirely the work of the master Pieter Rennick, since no assistant in his workshop would have been trusted with the design.",
-      text2:
-        "Workshop records from the 1400s show that a master often drew a whole composition and then left much of the painting to assistants, keeping only the faces and hands for himself. Art historian Joachim Serle observes that the single, confident underdrawing in the Rennick Altarpiece fits that practice exactly. The underdrawing, Serle argues, tells us who designed the altarpiece, not who painted it.",
-      claimAnchor: "entirely the work of the master",
-      grantAnchor: "tells us who designed the altarpiece",
-      disputeAnchor: "not who painted it",
-      key: "By conceding that Rennick designed the altarpiece while doubting that he painted all of it alone",
-      split: ["By granting that every brushstroke is Rennick’s but questioning whether the composition was his",
-        "This reverses Text 2: Serle accepts that Rennick drew the design and doubts that he did all the painting."],
-      ground: ["By granting that the composition is Rennick’s but questioning whether it dates from around 1480",
-        "Serle never questions the altarpiece’s date; his point is that masters often left the painting to assistants."],
-      endorse: ["By agreeing that a single confident underdrawing shows that Rennick alone painted the altarpiece",
-        "Serle accepts that Rennick drew the design but denies that the underdrawing shows who painted it."],
-      reject: ["By arguing that Rennick’s assistants, rather than Rennick, drew the design as well as painting it",
-        "Serle calls the single hand of the underdrawing unmistakable and accepts that Rennick drew the whole design."],
-      why: "Serle accepts that Rennick drew the whole design, but he notes that masters often left much of the painting to assistants, so the underdrawing shows who designed the altarpiece, not who painted it",
-    },
-    {
-      scene: "cs-sorrel-ford-timber",
-      critic: "Clara Voss",
-      claimant: "Kane",
-      claim: "conclusion that the inhabitants left Sorrel Ford because they had exhausted its wood",
-      text1:
-        "At Sorrel Ford, a settlement abandoned around 900 CE, archaeologist Idris Kane found that the latest houses were framed with timber from much smaller trees than the earliest ones, while pollen from the surrounding hills shifts over the same centuries from oak to grasses. Kane concludes that the inhabitants stripped the hills of forest and left once they had exhausted their supply of building wood and fuel.",
-      text2:
-        "Archaeobotanist Clara Voss reads the shrinking beams and the vanishing oak pollen at Sorrel Ford as the record of a forest cut back over centuries. Yet the grain stores at the site were full when it was abandoned, and the final houses had recently been repaired, hardly the picture of a community driven out by scarcity. Something else, she suspects, prompted the departure.",
-      claimAnchor: "exhausted their supply",
-      grantAnchor: "forest cut back over centuries",
-      disputeAnchor: "driven out by scarcity",
-      key: "By accepting that the hills were deforested while doubting that a wood shortage drove the inhabitants away",
-      split: ["By conceding that a wood shortage forced the settlers out but not that the oak forests were ever cut",
-        "This reverses Text 2: Voss accepts the evidence of deforestation and doubts that scarcity drove the inhabitants out."],
-      ground: ["By accepting that the hills were deforested while arguing that Kane dated the abandonment too early",
-        "Voss never questions when the site was abandoned; her objection rests on the full grain stores and repaired houses."],
-      endorse: ["By agreeing that the smaller beams and changing pollen show that the settlement left once its wood ran out",
-        "Voss accepts that the hills were deforested but doubts that running out of wood is why the inhabitants left."],
-      reject: ["By arguing that the hills around Sorrel Ford kept their oak forests until after the settlement was abandoned",
-        "Voss reads the evidence as the record of a forest cut back over centuries, so she would not claim that the oak forests survived."],
-      why: "Voss accepts Kane’s evidence that the hills were deforested but doubts his final step, since full grain stores and recently repaired houses do not suggest a community driven out by scarcity",
-    },
-    {
-      scene: "cs-ashvale-light-rail",
-      critic: "Mei Castell",
-      claimant: "Ibarra",
-      claim: "proposal to tax the added land value once each new line opens",
-      text1:
-        "After the city of Ashvale opened a light-rail line in 2012, economist Rafael Ibarra found that rents within a ten-minute walk of its stations rose 18 percent faster than rents elsewhere in the city. Because renters value quick access to jobs, Ibarra argues, transit raises the value of the land around it, and cities should pay for new lines by taxing that added value once each line opens.",
-      text2:
-        "Few economists would dispute Ibarra’s figures or his premise that access to transit is worth money to renters. Urban economist Mei Castell points out, though, that most of Ashvale’s rent increase near stations appeared before a single train ran, in the years between the line’s announcement and its opening. Taxing the value transit adds is sensible, she argues, but a tax that begins only when a line opens will miss most of that value.",
-      claimAnchor: "once each line opens",
-      grantAnchor: "worth money to renters",
-      disputeAnchor: "before a single train ran",
-      key: "By endorsing a tax on the added land value but warning that one begun when a line opens misses most of it",
-      split: ["By accepting Ibarra’s rent figures but denying that renters will pay more to live near transit",
-        "Castell explicitly accepts that transit access is worth money to renters; her disagreement concerns when the tax should begin."],
-      ground: ["By accepting a tax on transit’s added value but denying that the rent increase near stations is large enough to tax",
-        "Castell accepts the size of the rent increase; her objection is that most of it came before the line opened."],
-      endorse: ["By agreeing that a tax that begins as each new line opens would capture the value the line adds to land",
-        "This is the timing Castell criticizes: a tax that starts when a line opens would miss the increase that came earlier."],
-      reject: ["By arguing that cities should not try to recover the value that new transit lines add to nearby land",
-        "Castell calls taxing the value transit adds sensible, so she would not oppose recovering it."],
-      why: "Castell accepts Ibarra’s figures and premise and supports taxing the value transit adds, but most of the rent increase came before the line opened, so a tax starting at the opening would miss most of it",
-    },
-    {
-      scene: "cs-vennholt-suite",
-      critic: "Daniel Achterberg",
-      claimant: "Brandauer",
-      claim: "claim that a faithful performance of the suite must use eight players",
-      text1:
-        "The surviving parts for Clara Vennholt’s Suite for Strings (1771) call for only eight players. Musicologist Ilse Brandauer argues that modern orchestras, which often perform the suite with forty, distort it beyond recognition, and that a performance faithful to Vennholt must use the eight players her parts specify.",
-      text2:
-        "Musicologist Daniel Achterberg has found the court’s payment records for the premiere of Vennholt’s Suite for Strings, and they list twenty-two string players. Parts were often shared by two players or copied again for a larger band, he notes, so the eight parts that survive show what was kept, not how many played. A faithful performance, Achterberg concludes, would need something closer to twenty than to either eight or forty.",
-      claimAnchor: "must use the eight players",
-      grantAnchor: "the eight parts that survive",
-      disputeAnchor: "twenty-two string players",
-      key: "By granting that the surviving parts are for eight while denying that only eight played at the premiere",
-      split: ["By accepting that the premiere had just eight players but disputing that the surviving parts call for eight",
-        "This reverses Text 2: Achterberg accepts that the parts are for eight and uses the payment records to show that more played."],
-      ground: ["By granting that the surviving parts are written for eight while arguing that the suite sounds best with forty players",
-        "Achterberg’s argument concerns what is faithful to the premiere, not what sounds best, and he puts the right size closer to twenty than to forty."],
-      endorse: ["By agreeing that forty players distort the suite and that its eight surviving parts show how it should sound",
-        "Achterberg agrees that the parts are for eight but denies that they show how many players Vennholt had."],
-      reject: ["By arguing that modern orchestras of forty come closer to Vennholt’s intentions than an ensemble of eight does",
-        "Achterberg says a faithful performance is closer to twenty than to either eight or forty, so he would not favor forty."],
-      why: "Achterberg accepts that the surviving parts are written for eight but cites payment records listing twenty-two string players at the premiere, so he rejects the conclusion that faithfulness requires eight",
-    },
-    {
-      scene: "cs-lake-imber-ash",
-      critic: "Stefan Oyelaran",
-      claimant: "Varma",
-      claim: "claim that the eruption brought on the region’s centuries-long drought",
-      text1:
-        "Sediment cores from Lake Imber, high in the Carro range, contain a layer of volcanic ash dated to about 2,600 years ago, lying directly beneath a thick band of dust blown in from dry lowlands. Geologist Neha Varma argues that the eruption that produced the ash cooled the region’s climate and brought on the centuries-long drought that the dust records.",
-      text2:
-        "The dating of the ash and the dust in the Lake Imber cores is not in dispute, nor is their order. Paleoclimatologist Stefan Oyelaran notes, however, that the eruptions whose cooling has been measured directly lowered temperatures for only a few years, while the dust band at Imber spans nearly three centuries. An eruption might have tipped an already drying climate into drought, he allows, but it cannot by itself account for a drought that outlasted its effects by so long.",
-      claimAnchor: "brought on the centuries-long drought",
-      grantAnchor: "not in dispute",
-      disputeAnchor: "cannot by itself account",
-      key: "By accepting that the eruption may have started the drought but not that it could have sustained it for centuries",
-      split: ["By allowing that the eruption sustained the drought while doubting that the ash was laid down before the dust",
-        "This reverses Text 2: Oyelaran accepts the order of the layers and doubts that an eruption could sustain a drought for centuries."],
-      ground: ["By allowing that the eruption played a part while doubting that the ash layer has been dated correctly",
-        "Oyelaran says the dating is not in dispute; his objection is that eruptions cool the climate for only a few years."],
-      endorse: ["By agreeing that the eruption’s cooling by itself caused a drought lasting nearly three centuries",
-        "Oyelaran allows that the eruption may have helped start the drought but denies that it alone could account for it."],
-      reject: ["By arguing that the eruption had no effect of any kind on the climate of the Carro range",
-        "Oyelaran allows that the eruption might have tipped the climate into drought, so he would not deny it any effect."],
-      why: "Oyelaran accepts the dating and order of the layers and allows that the eruption might have tipped a drying climate into drought, but its cooling would have lasted only a few years, so it cannot alone explain a drought of nearly three centuries",
-    },
-    {
-      scene: "cs-salt-year-novel",
-      critic: "Sofia Lind",
-      claimant: "Anand",
-      claim: "claim that The Salt Year can be fully understood only as a record of Marrow’s grief",
-      text1:
-        "The letters of the novelist Edith Marrow show that she drafted her last novel, The Salt Year (1897), in the months after her brother drowned. Critic Paul Anand reads the book’s central shipwreck as Marrow’s grief given fictional form, and he argues that the novel can be fully understood only as a record of that loss.",
-      text2:
-        "It would be strange to deny that grief shaped The Salt Year; the shipwreck chapters were written within weeks of the drowning, as Marrow’s letters show. Critic Sofia Lind argues, however, that reading the novel only as private mourning ignores its long middle section, a sharp satire of the shipping companies that sent crews out in unsafe vessels, a subject Marrow had attacked in newspaper columns for a decade.",
-      claimAnchor: "fully understood only as a record",
-      grantAnchor: "strange to deny that grief shaped",
-      disputeAnchor: "sharp satire",
-      key: "By acknowledging that grief shaped the novel while contending that it also satirizes shipping companies",
-      split: ["By granting the book’s attack on shipping firms but denying that mourning influenced it at all",
-        "This reverses Text 2: Lind says it would be strange to deny that grief shaped the novel."],
-      ground: ["By acknowledging that grief shaped the novel while contending that Marrow’s letters misdate its composition",
-        "Lind relies on Marrow’s letters to date the shipwreck chapters; she never questions them."],
-      endorse: ["By agreeing that the shipwreck chapters, as an expression of grief, explain the novel as a whole",
-        "Lind accepts that grief shaped the shipwreck chapters but denies that grief alone explains the novel."],
-      reject: ["By arguing that The Salt Year is purely a social satire in which Marrow’s grief plays no real part",
-        "Lind grants that grief shaped the novel; she objects only to reading it as nothing but mourning."],
-      why: "Lind grants that grief shaped The Salt Year but argues that reading it only as mourning ignores its long satire of the shipping companies",
-    },
-    {
-      scene: "cs-skerra-petrels",
-      critic: "Arne Lindgren",
-      claimant: "Haldane",
-      claim: "claim that removing the rats accounts for the entire increase in nesting petrels",
-      text1:
-        "On Skerra Island, where rats were eradicated in 2015, ornithologist Tove Haldane counted more than twice as many nesting storm petrels in 2022 as before the eradication. Haldane attributes the entire increase to the removal of the rats, which had eaten petrel eggs and chicks, and argues that eradication is the most effective single step for restoring seabird colonies.",
-      text2:
-        "Seabird ecologist Arne Lindgren, who has long urged the removal of rats from seabird islands, compared Skerra with nearby Holm, which never had rats. Over the same years, petrel numbers on Holm rose by about half, apparently because the small fish and crustaceans the birds feed on became more plentiful. Some of Skerra’s increase, Lindgren concludes, would have happened with or without the eradication.",
-      claimAnchor: "entire increase",
-      grantAnchor: "long urged the removal of rats",
-      disputeAnchor: "with or without the eradication",
-      key: "By crediting both the removal of the rats and more plentiful food with the rise in Skerra’s nesting petrels",
-      split: ["By agreeing that more plentiful food explains the whole increase while arguing that the rats never harmed the petrels",
-        "Lindgren has long urged removing rats from seabird islands, and he attributes only part of Skerra’s increase to more food."],
-      ground: ["By agreeing that removing the rats helped while arguing that Haldane counted Skerra’s nesting petrels carelessly",
-        "Lindgren never questions Haldane’s counts; his objection rests on the rise in petrels on rat-free Holm."],
-      endorse: ["By agreeing that the eradication of the rats accounts for all of the growth in Skerra’s petrel colony",
-        "Lindgren concludes that some of the increase would have happened anyway, so the rats’ removal does not account for all of it."],
-      reject: ["By arguing that removing the rats did nothing for Skerra’s petrels, whose increase came only from more food",
-        "Lindgren praises rat removal and says only some of the increase would have happened anyway, so he would not say it did nothing."],
-      why: "Lindgren accepts that the rats ate petrel eggs and that removal helps, but because petrels also increased on rat-free Holm, he concludes that part of Skerra’s increase would have happened anyway",
-    },
-  ];
+  {
+    "scene": "cs-partial-manuscript-material-date",
+    "critic": "Lea Moss",
+    "claimant": "Rao",
+    "claim": "conclusion about when the translation was made",
+    "text1": "The paper and ink of the oldest surviving Varen translation both match supplies used before 1430. Historian Dev Rao therefore dates the translation itself to that period. Its unusually modern vocabulary, Rao argues, shows that expressions thought to be later inventions were already circulating before 1430.",
+    "text2": "Book historian Lea Moss found unmarked sheets and sealed ink jars from the same early supplies in the translator's workshop, which operated into the 1460s. Several accounts written there after 1450 use those materials. The vocabulary dating comes from independently dated letters, rather than from an assumption about this manuscript.",
+    "key": "She would distinguish the age of the writing materials from the act of writing, leaving the vocabulary's later chronology unchallenged.",
+    "wrong": [
+      [
+        "She would accept the early date of the writing but question whether the vocabulary appears often enough to establish widespread circulation.",
+        "Moss's evidence bears on whether old supplies date the writing at all, not on how frequently the vocabulary appears."
+      ],
+      [
+        "She would use the manuscript's vocabulary to redate its paper and ink, preserving the usual chronology by revising the material analysis.",
+        "Her dated accounts demonstrate later use of old materials; she does not dispute the material analysis or claim the materials themselves are later."
+      ],
+      [
+        "She would separate the translation's date from its vocabulary, accepting that early expressions survived in the workshop's later accounts.",
+        "The accounts show reuse of old supplies, not early existence of these expressions. This grants Rao's disputed linguistic chronology without evidence."
+      ]
+    ],
+    "anchors": [
+      "dates the translation itself",
+      "use those materials"
+    ],
+    "why": "Rao moves from the materials' age to the writing's date and then revises linguistic history. Moss's later accounts on old supplies interrupt the first step. Her independent dating evidence for the vocabulary therefore need not be revised, even if the paper and ink are genuinely early."
+  },
+  {
+    "scene": "cs-partial-tree-cooling-mechanism",
+    "critic": "Ana Voss",
+    "claimant": "Sen",
+    "claim": "explanation for the cooling measured beneath trees",
+    "text1": "Sensors under street trees in Belwick recorded cooler afternoon air than sensors over bare pavement. Researcher Imani Sen credits the trees' interception of sunlight. Since cooling increased with canopy cover, Sen proposes choosing dense crowns rather than enlarging the soil beds around trees already planted.",
+    "text2": "Ana Voss installed artificial screens matching the trees' shade, yet air beneath them remained warmer. Trees rooted in recently watered beds produced the largest difference; with dry soil, their advantage over the screens nearly vanished. The original sensors were accurate, and the screens blocked the same fraction of incoming sunlight as the crowns.",
+    "key": "She would retain the measured cooling while questioning whether shade alone explains it well enough to justify favoring crowns over soil beds.",
+    "wrong": [
+      [
+        "She would accept shade as the source of the trees' extra cooling but question whether the original sensors measured its magnitude accurately.",
+        "Voss affirms sensor accuracy and matches shade in her controls; the tree-screen difference varies with soil moisture rather than measurement error."
+      ],
+      [
+        "She would treat the watered trees' extra cooling as support for denser crowns while limiting Sen's explanation to trees growing in moist soil.",
+        "Watered trees outperform equally shaded screens. That result raises a mechanism beyond shade; it does not specifically favor denser crowns."
+      ],
+      [
+        "She would prefer screens to tree planting because equal shade isolates the cooling mechanism, while accepting Sen's measurements beneath trees.",
+        "Matching shade isolates a difference to investigate, but screens are warmer. Voss does not support preferring them to the cooler trees."
+      ]
+    ],
+    "anchors": [
+      "rather than enlarging the soil beds",
+      "with dry soil"
+    ],
+    "why": "Voss retains Sen's observed temperature difference and controls the amount of shade. The remaining advantage depends on soil moisture, so interception of sunlight alone is insufficient to justify prioritizing canopy density over soil conditions."
+  },
+  {
+    "scene": "cs-partial-stage-invention-diffusion",
+    "critic": "Clara Vale",
+    "claimant": "Orin",
+    "claim": "account of the manual's historical importance",
+    "text1": "Director Elian Orin calls the 1752 Lantern Manual the invention of coordinated scene changes: its diagrams show scenery moving while actors continue speaking. Theater accounts begin using the manual's term, 'running change,' soon afterward. Orin sees both the technique and its spread as achievements of the manual's author.",
+    "text2": "Historian Clara Vale found a 1738 stagehand's diary describing scenery shifted while actors continued speaking. Its sketches resemble the manual's diagrams, although it uses no shared term. After 1752, companies in several cities ordered the manual together with equipment suited to that procedure.",
+    "key": "She would associate the manual with organizing and spreading an existing practice, while separating that contribution from inventing the technique.",
+    "wrong": [
+      [
+        "She would attribute the technique's invention to the manual but its later spread to equipment already ordered before the manual appeared.",
+        "The diary places the procedure before the manual, whereas the cited equipment orders follow its publication."
+      ],
+      [
+        "She would accept that the technique predates the manual while treating the later shared term as evidence that companies changed only their vocabulary.",
+        "The post-publication orders include equipment suited to the procedure, not just adoption of a name."
+      ],
+      [
+        "She would credit the manual with standardizing equipment while treating the diary's different terminology as evidence of a different stage procedure.",
+        "The diary describes the procedure and contains similar sketches; absence of the later term does not establish a different technique."
+      ]
+    ],
+    "anchors": [
+      "both the technique and its spread",
+      "1738 stagehand's diary"
+    ],
+    "why": "The earlier diary separates the procedure's existence from the manual's publication. The later cross-city orders still support a role for the manual in organizing and spreading that procedure. Vale's evidence preserves a historical contribution while narrowing what kind of contribution it was."
+  },
+  {
+    "scene": "cs-partial-bird-social-learning",
+    "critic": "Nora Dell",
+    "claimant": "Kess",
+    "claim": "interpretation of the juveniles' learning",
+    "text1": "Young crescent jays open seed boxes sooner after watching adults do so. Biologist Arun Kess observes that adults often pause beside the catch and interprets those pauses as lessons showing juveniles the required motion. The faster learning, Kess argues, documents deliberate instruction rather than merely learning near other birds.",
+    "text2": "Nora Dell gave juveniles boxes adults had handled out of sight. These juveniles learned just as quickly as watchers, whereas untouched boxes took longer. Adult contact left a visible mark on the catch, but juveniles used several different opening motions. Dell also recorded the pauses when no juvenile was nearby.",
+    "key": "She would allow adults to facilitate learning while finding that the evidence need not involve either a demonstrated motion or an intended lesson.",
+    "wrong": [
+      [
+        "She would accept that adults demonstrate the required motion while treating their pauses as accidental rather than intentionally instructive.",
+        "Juveniles benefit without seeing an adult, and they use different motions. Dell's evidence does not preserve the claim that a required motion was demonstrated."
+      ],
+      [
+        "She would accept deliberate instruction through the marks while questioning whether juveniles can transfer the lesson to untouched boxes.",
+        "Marks can draw attention without being deliberately produced as instruction. Transfer to untouched boxes was not the comparison reported."
+      ],
+      [
+        "She would separate the adult pauses from instruction while attributing faster learning to watching successful openings rather than inspecting marked catches.",
+        "Juveniles given boxes handled out of sight learn equally quickly, so observation of successful opening is unnecessary in Dell's comparison."
+      ]
+    ],
+    "anchors": [
+      "deliberate instruction",
+      "handled out of sight"
+    ],
+    "why": "The adults still influence learning by leaving marked catches. Yet the juveniles need not watch a motion, they do not all copy one, and the pauses also occur without pupils. Combining those findings challenges both components of Kess's teaching interpretation without denying adult-facilitated learning."
+  },
+  {
+    "scene": "cs-partial-charter-capacity-practice",
+    "critic": "Mina Holt",
+    "claimant": "Daro",
+    "claim": "inference from the guild rolls",
+    "text1": "After the 1684 Neris charter allowed women to sign workshop contracts, women's names became common in the guild's master rolls. Historian Pavel Daro reads this rise as evidence that large numbers of women immediately began managing independent businesses. The legal reform, he concludes, rapidly transformed daily commercial authority.",
+    "text2": "Mina Holt found some women signing contracts without male guarantors under the new charter. Most female names in the master rolls, however, carry an estate symbol: guild clerks retained a dead master's widow as the account holder while an appointed steward ran the shop. Earlier rolls listed those accounts under the deceased husband's name.",
+    "key": "She would recognize a new capacity exercised by some women while questioning whether the changed rolls measure a comparable rise in independent management.",
+    "wrong": [
+      [
+        "She would accept the rolls as evidence of expanding female management while attributing that expansion to inheritance rather than the new charter.",
+        "Holt's estate entries name account holders whose shops were run by stewards, so they do not establish expanding female management by inheritance."
+      ],
+      [
+        "She would accept that the charter expanded women's legal capacity while treating contracts without guarantors as evidence of earlier independent management.",
+        "The contracts are explicitly under the new charter; Holt does not use them to date the practice before the reform."
+      ],
+      [
+        "She would distinguish the rolls from management while interpreting the estate symbol as a restriction that prevented women from signing contracts.",
+        "The symbol marks a type of account, not a prohibition. The independently signed contracts show that some women exercised the new capacity."
+      ]
+    ],
+    "anchors": [
+      "rapidly transformed daily commercial authority",
+      "Earlier rolls listed"
+    ],
+    "why": "The contracts support both a new legal capacity and its exercise by some women. The master-roll increase also contains an administrative relabeling of estates, however, so it cannot straightforwardly measure the claimed broad transformation in who managed businesses."
+  },
+  {
+    "scene": "cs-partial-borrowed-verbs-grammar",
+    "critic": "Sera Lin",
+    "claimant": "Marek",
+    "claim": "claim of grammatical convergence",
+    "text1": "Speakers of coastal Oren increasingly use verbs borrowed from neighboring Talic. Linguist Leon Marek notes that these words describe ordinary actions, not just imported objects. Because such basic verbs belong to the core of a language, he interprets their spread as evidence that Oren grammar is converging with Talic grammar.",
+    "text2": "Sera Lin tracked the borrowed verbs in conversations between Oren speakers. Each receives Oren's usual endings for past and future events. Talic instead marks time with separate words placed before verbs; those words do not accompany the loans in Lin's recordings. The imported verbs are frequent even among speakers who cannot converse in Talic.",
+    "key": "She would accept extensive vocabulary borrowing while reading the treatment of those words as evidence that Oren retains its own grammatical pattern.",
+    "wrong": [
+      [
+        "She would accept grammatical convergence while limiting it to the borrowed verbs, since speakers attach the endings used by their own language.",
+        "Attaching Oren's endings exemplifies continuity with Oren, not adoption of Talic's separate time words."
+      ],
+      [
+        "She would accept borrowing among bilingual speakers while treating the other speakers' use of the verbs as evidence that the words originated in Oren.",
+        "Use by people who cannot converse in Talic shows diffusion of the loans; it does not change the stated origin of the words."
+      ],
+      [
+        "She would accept that Oren's old verb endings remain while treating the borrowed action meanings as the grammatical feature supplied by Talic.",
+        "The action meanings are lexical content. The contrast Lin supplies concerns how time is grammatically marked, and that remains Oren's pattern."
+      ]
+    ],
+    "anchors": [
+      "Oren grammar is converging",
+      "separate words placed before verbs"
+    ],
+    "why": "Marek infers grammatical change from borrowing in basic vocabulary. Lin confirms broad use of those loans but shows that Oren speakers place them in an unchanged Oren time-marking pattern, rather than importing Talic's grammatical device."
+  },
+  {
+    "scene": "cs-partial-transit-chain-access",
+    "critic": "Rhea Noor",
+    "claimant": "Benn",
+    "claim": "assessment of the transit upgrade",
+    "text1": "New platform ramps cut wheelchair boarding time on Leston's central line to the average for other passengers. Planner Tomas Benn calls this equalization proof that the upgrade has removed the wheelchair users' access disadvantage across the network. Boarding trials covered every central-line station during daytime service.",
+    "text2": "Rhea Noor accompanied wheelchair users making complete journeys. They boarded central-line trains within the reported times, but several destination branches still required steps. An accessible detour was available only before six; riders leaving work later could make the outward journey but not the return. None of these trips required faster boarding.",
+    "key": "She would preserve the boarding result but assess network access through complete feasible journeys, including transfers and the timing of return travel.",
+    "wrong": [
+      [
+        "She would preserve the boarding result but treat the remaining disadvantage as evidence that ramps must reduce wheelchair boarding below the average.",
+        "Noor states that faster boarding would not solve the observed barriers, which concern branch access and the availability of return routes."
+      ],
+      [
+        "She would accept network-wide access during daytime while limiting Benn's result to commuters whose trips begin after the accessible detour closes.",
+        "Some destination branches require steps even in daytime; late return travel can affect a trip that began earlier."
+      ],
+      [
+        "She would accept the central-line result while inferring that the evening detour causes slow transfers because its ramps were omitted from the trials.",
+        "The reported problem is the detour's unavailability after six, not slow transfers or an unmeasured ramp's boarding time."
+      ]
+    ],
+    "anchors": [
+      "across the network",
+      "not the return"
+    ],
+    "why": "Noor's trips reproduce the boarding improvement, but whole journeys involve other stations and times. The scope of Benn's measurement is therefore narrower than the access conclusion: equal boarding speed cannot establish that complete outward and return routes are feasible."
+  },
+  {
+    "scene": "cs-partial-ash-source-volume",
+    "critic": "Evan Kori",
+    "claimant": "Rell",
+    "claim": "estimate of the eruption's scale",
+    "text1": "A thick ash bed in the Dalen basin contains glass chemically matched to Mount Sere's eruption of 820. Geologist Mara Rell takes the bed's unusual thickness as evidence that this eruption expelled far more ash than neighboring volcanoes did. Its single chemical signature, she argues, rules out several small eruptions accumulating there.",
+    "text2": "Evan Kori recovered the same glass from thin patches on the basin's slopes. Grain layers in the thick valley bed run sideways into channels cut in older soil, while the slope patches retain the even surface expected when ash falls from above. No later eruption is needed to explain the valley layers' chemical uniformity.",
+    "key": "He would retain the common eruption source while questioning whether ash concentrated within the basin measures the amount expelled by that eruption.",
+    "wrong": [
+      [
+        "He would retain the large-volume estimate while interpreting the valley channels as evidence that several eruptions shared the same glass chemistry.",
+        "Kori explicitly says no later eruption is needed; the channels suggest redistribution of the same ash, which challenges the thickness-to-volume inference."
+      ],
+      [
+        "He would accept the common source while using thin slope patches to conclude that Mount Sere necessarily expelled less ash than neighboring volcanoes.",
+        "Redistribution weakens the estimate from local thickness but does not establish a reversed ranking of total eruption volumes."
+      ],
+      [
+        "He would accept ash redistribution while treating the valley bed's uniform chemistry as stronger evidence of eruption scale than its thickness.",
+        "Uniform chemistry identifies a source, not the amount expelled. Replacing thickness with chemistry does not support a volume estimate."
+      ]
+    ],
+    "anchors": [
+      "expelled far more ash",
+      "run sideways into channels"
+    ],
+    "why": "Chemical matches and the absence of a required later eruption preserve a common source. Sideways layers in channels, contrasted with intact slope deposits, suggest that the basin concentrated ash after it fell. Source identification can thus remain sound while local thickness fails to establish comparative eruption volume."
+  },
+  {
+    "scene": "cs-partial-narrator-author-stance",
+    "critic": "Ada Finch",
+    "claimant": "Miro",
+    "claim": "reading of the novel's attitude toward rank",
+    "text1": "In Livia Rusk's novel The Upper Table, a servant repeatedly calls his master's privileges 'the natural order.' Critic Jon Miro finds no sarcasm in the servant's voice and reads those sincere declarations as the novel's defense of inherited rank. The servant's admiration, Miro argues, supplies its moral center.",
+    "text2": "Ada Finch notes that the servant carefully excuses his master's wasted meals, then applies the same reasoning to a hungry child dismissed from the kitchen. The child cannot hear his explanation. The scene ends with the servant praising the household's generosity beside an untouched pile of food the reader has just watched being discarded.",
+    "key": "She would allow the servant's praise to be sincere while locating criticism of rank in the contrast between his explanations and the narrated events.",
+    "wrong": [
+      [
+        "She would treat the servant's sincere praise as the novel's position while reading the discarded food as criticism confined to one master's habits.",
+        "The repeated reasoning about the hungry child and inherited privilege exposes a larger contradiction than the master's individual wastefulness."
+      ],
+      [
+        "She would locate criticism of rank in the servant's deliberate sarcasm while accepting Miro's view that the servant supplies the novel's moral judgment.",
+        "Finch's evidence need not make the servant sarcastic or morally authoritative; the reader can perceive the contradiction that his sincere account misses."
+      ],
+      [
+        "She would separate the servant's view from the novel's while treating the child's inability to hear him as evidence that the servant rejects his own excuse.",
+        "The child's inability to hear does not show self-rejection by the servant. He ends by praising generosity, while the events undermine that description."
+      ]
+    ],
+    "anchors": [
+      "those sincere declarations",
+      "the reader has just watched"
+    ],
+    "why": "Miro moves from sincerity of a character's speech to endorsement by the novel. Finch places that speech against actions visible to the reader, making critical irony possible without sarcastic intention in the servant. The view attributed to the character need not be the work's moral judgment."
+  },
+  {
+    "scene": "cs-partial-varnish-pigment-history",
+    "critic": "Ivo Chen",
+    "claimant": "Lera",
+    "claim": "claim to have recovered the painting's original colors",
+    "text1": "Cleaning yellow varnish from Nella Tor's Harbor Morning revealed blue water where viewers had long seen green. Conservator Eva Lera identifies the removed coating as the source of the color distortion and describes the cleaned painting as a recovery of Tor's original palette, requiring no speculative repainting.",
+    "text2": "Ivo Chen analyzed matched blue passages, one long exposed and one formerly under the frame. Both carried equally yellow varnish, but after cleaning the covered passage remained more intense. Pigment particles in the exposed passage had lost a component still present beneath the frame. Chen found no later paint in either sample.",
+    "key": "He would credit cleaning with removing one alteration while distinguishing that correction from recovering color also changed within the original pigment.",
+    "wrong": [
+      [
+        "He would credit cleaning with recovering the original palette while explaining the remaining intensity difference through unequal varnish discoloration.",
+        "The varnish was equally yellow, and the chemical difference remains after cleaning. Unequal varnish does not explain it."
+      ],
+      [
+        "He would accept the varnish's yellowing while treating the protected passage's stronger blue as evidence that an earlier restorer repainted it.",
+        "Chen finds no later paint in either passage, so the protected sample cannot be treated as a known repainting."
+      ],
+      [
+        "He would distinguish the two pigment histories while concluding that the exposed passage, rather than the protected one, preserves the less altered blue.",
+        "The exposed pigment has lost a component retained beneath the frame, which points toward greater alteration in the exposed passage."
+      ]
+    ],
+    "anchors": [
+      "a recovery of Tor's original palette",
+      "lost a component"
+    ],
+    "why": "The blue emerging after varnish removal supports one correction to the painting's appearance. Equal coatings and a remaining chemical difference isolate another alteration in the original exposed pigment. The cleaning can therefore remove yellowing without restoring every original color, and the absence of later paint rules out the offered repainting account."
+  }
+];
 
   const ctcPartialAgreement = {
     ...CTC_BASE,
     id: "cross-text-partial-agreement",
     subskill: "response between texts",
     difficulty: "Hard",
-    title: "Second text grants part of the first text's claim and disputes the rest",
-    recognize:
-      "Text 2 concedes some of what Text 1 claims before objecting, sometimes saying so and sometimes only taking it for granted. Mark exactly what it grants and exactly what it disputes, and why; the answer keeps both, in the right places.",
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 2, trap: 1 },
-    tricks: ["opposite-stance", "extreme-language", "true-but-irrelevant", "misattributed-view"],
+    title: "Map a qualified response onto another argument's inferential steps",
+    recognize: "Separate Text 1's observations from the further claims built on them, then determine which link Text 2's evidence changes and which it preserves.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["one-text-only", "too-broad", "misattributed-view"],
     build(t) {
       const topic = t.pick(CTC_PARTIAL_TOPICS);
       const content = CTC_passage(topic.text1, topic.text2);
-      // The two near-miss distractors always appear; the blunt one is
-      // either full agreement or full rejection.
-      const wrong = [topic.split, topic.ground, t.pick([topic.endorse, topic.reject])];
       return {
         responseType: "multiple-choice",
         scene: topic.scene,
         stimulus: { type: "paired-passages", content },
-        stem: `Based on the texts, how would ${topic.critic} (Text 2) most likely respond to ${topic.claimant}’s ${topic.claim} in Text 1?`,
+        stem: `Based on the texts, how would ${topic.critic} (Text 2) most likely respond to ${topic.claimant}'s ${topic.claim} in Text 1?`,
         correct: topic.key,
-        wrong,
-        explanation: `${topic.why}.`,
-        steps: [
-          "State Text 1's finding and the conclusion it draws from it.",
-          "In Text 2, mark what the author grants, then what the author disputes and the reason given.",
-          "Choose the response that grants and disputes exactly those points; reject choices that swap them or object on a ground Text 2 never raises.",
-        ],
-        principles: [
-          "An author who concedes part of a claim still disagrees with the rest; a qualified response is neither agreement nor rejection.",
-          "The reason an author gives for objecting identifies which part of the other claim is being disputed.",
-        ],
-        trap: "Choosing a qualified response that swaps what Text 2 grants and what it disputes, or one that objects on a plausible ground Text 2 never raises.",
-        hint: "Underline what Text 2 concedes. What exactly is left for it to dispute?",
-        estimatedSeconds: 100,
+        wrong: topic.wrong,
+        explanation: topic.why,
+        steps: ["Separate Text 1's observed finding from its claim about origin, mechanism, scope, or significance.","Determine what Text 2's evidence supports without assuming it rejects the whole argument.","Map that evidence back onto the exact inferential step it limits, preserving the steps that remain supported."],
+        principles: ["A finding may remain sound while the explanation, measurement scope, or attribution drawn from it changes.","A response must assign the concession and objection to the correct claims; a reasonable qualification on the wrong claim is still incorrect."],
+        trap: "Accepting a qualified-sounding response that shifts the objection to a different inference or attributes a view to the wrong speaker.",
+        hint: "Which step connects Text 1's evidence to its conclusion, and what does Text 2 change about that step?",
+        estimatedSeconds: 105,
         verify: () => {
           const [one, two] = CTC_split(content);
-          const choices = [topic.key, topic.split[0], topic.ground[0], topic.endorse[0], topic.reject[0]];
-          return one.includes(topic.claimAnchor) && two.includes(topic.grantAnchor) &&
-            two.includes(topic.disputeAnchor) && !one.includes(topic.disputeAnchor) &&
-            two.includes(topic.critic) && new Set(choices).size === 5;
+          const choices = [topic.key, ...topic.wrong.map(([text]) => text)];
+          return one.includes(topic.anchors[0]) && two.includes(topic.anchors[1]) &&
+            one.length + two.length <= 900 && choices.every((choice) => choice.length <= 160) &&
+            topic.wrong.length === 3 && new Set(choices).size === 4;
         },
       };
     },
   };
 
-  /* ------------------------------------------------------------------ *
-   * 9. Text 1's claim has a condition; Text 2's case, offered as a     *
-   *    test of it, does not meet (or does meet) that condition.        *
-   * ------------------------------------------------------------------ */
-
-  // Text 1 states a claim that holds only under a stated condition. Text 2
-  // presents a case its author takes to refute (or to generalize past) that
-  // kind of claim, and mentions in passing the detail that decides whether
-  // the case meets Text 1's condition. The author of Text 1 would answer
-  // with that detail. Distractors:
-  //   capitulate - takes Text 2's case at face value, as its author does
-  //   overreach  - asserts more than either text establishes
-  //   ground     - an objection Text 1 gives no reason to make
-  //   misapply   - uses Text 1's language but gets Text 2's detail wrong
-  // The capitulation always appears; two of the other three are drawn.
+  // Apply qualified criteria to evidence that supports only part of a
+  // second writer's inference. Each scene distinguishes the roles of
+  // multiple observations; the alternatives misassign or overextend them.
   const CTC_CONDITION_TOPICS = [
-    {
-      scene: "cs-varda-lynx",
-      author: "Dragan",
-      target: "Novak’s conclusion about the Varda Forest",
-      text1:
-        "Ecologist Mirela Dragan argues that deer thin a forest’s understory only where predators are scarce. Where wolves or lynx hunt, she contends, deer keep moving and seldom linger long enough in one stand to strip it, so the saplings of trees that deer favor, such as maple and ash, survive to join the canopy.",
-      text2:
-        "In the Varda Forest, where lynx were reintroduced in 2005, maple saplings remain rare nearly twenty years later, and forester Karel Novak presents the forest as a refutation of the idea that predators protect young trees from deer. The lynx, which hunt mainly in the rugged northern third of the forest, have become a draw for visitors, while the sapling surveys Novak cites were all made in the southern stands near the villages.",
-      conditionAnchor: "only where predators are scarce",
-      detailAnchor: "northern third",
-      key: "By arguing that Novak’s surveys, made where lynx seldom hunt, cannot test her claim",
-      capitulate: ["By conceding that the Varda Forest shows that predators do little to protect saplings from deer",
-        "Dragan’s claim concerns stands where predators hunt; Novak’s surveys come only from the south, where the lynx seldom hunt, so the forest does not refute her."],
-      overreach: ["By claiming that the lynx have in fact multiplied the maple saplings in the forest’s southern stands",
-        "Nothing in either text says saplings have multiplied in the south; the surveys found them rare."],
-      ground: ["By arguing that twenty years is too short a time for maple saplings to reach the forest canopy",
-        "Text 1 says nothing about how long saplings take to grow, and the surveys concern whether saplings exist at all, not whether they have reached the canopy."],
-      misapply: ["By noting that the northern stands, where the lynx hunt, are the ones where deer strip the saplings",
-        "This contradicts Text 1, which holds that deer strip stands only where predators are scarce, not where lynx hunt."],
-      why: "Dragan claims that predators protect saplings where they actually hunt; the Varda’s lynx hunt mainly in the north, but every sapling survey came from the southern stands, so the rare saplings there do not test her claim",
-    },
-    {
-      scene: "cs-corbeck-ferry",
-      author: "Esmond",
-      target: "Lannon’s conclusion about Corbeck",
-      text1:
-        "Linguist Ruth Esmond argues that an isolated community preserves old pronunciations only as long as its children have little contact with outsiders. Adults who move away or trade widely, she notes, usually keep their native accents for life; it is the daily mixing of children, in classrooms and at play, that wears old sounds away.",
-      text2:
-        "The island village of Corbeck, which had no bridge or causeway until 1990, would seem an ideal place to find old pronunciations preserved. Yet dialect researcher Hugh Lannon found that Corbeck speakers under seventy pronounce words much as mainlanders do. Since the 1960s, Corbeck’s children have crossed by ferry each weekday to a secondary school on the mainland. Lannon concludes that geographic isolation does little to preserve a dialect.",
-      conditionAnchor: "children have little contact with outsiders",
-      detailAnchor: "crossed by ferry each weekday",
-      key: "By pointing out that Corbeck’s children, schooled daily on the mainland, were never isolated in the sense she means",
-      capitulate: ["By conceding that Corbeck shows that isolation does little to keep a community’s old pronunciations alive",
-        "Esmond’s claim concerns children’s contact with outsiders, and Corbeck’s children have mixed with mainlanders daily at school, so Corbeck is not the isolated case Lannon takes it to be."],
-      overreach: ["By claiming that Corbeck speakers under seventy still keep the island’s old pronunciations after all",
-        "Text 2 reports that speakers under seventy pronounce words much as mainlanders do; Esmond would have no basis to deny it."],
-      ground: ["By arguing that Lannon’s recordings of Corbeck speakers were made too recently to be reliable",
-        "Nothing in Text 1 concerns when recordings were made; Esmond’s claim turns on children’s contact, which the ferry detail addresses."],
-      misapply: ["By noting that Corbeck’s adults traded with the mainland and therefore lost their native accents",
-        "Text 1 says adults who trade widely usually keep their accents, so Esmond would not blame adult trade."],
-      why: "Esmond ties the loss of old pronunciations to children’s contact with outsiders, and since the 1960s Corbeck’s children have attended school on the mainland, so the village’s younger speakers fit her view rather than refuting it",
-    },
-    {
-      scene: "cs-kessel-charters",
-      author: "Albrecht",
-      target: "Duvall’s view of Arden and Pell",
-      text1:
-        "Historian Ines Albrecht holds that a medieval market charter enriched a village only when the village already lay on a route that merchants traveled. A charter, she argues, could license a market but could not create traffic; where no road brought buyers and sellers past the gates, a chartered market withered within a generation.",
-      text2:
-        "Five villages in the Kessel valley received market charters in the 1200s, and two of them, Arden and Pell, grew into prosperous towns. Historian Mark Duvall credits the charters with that growth and treats Arden and Pell as proof that a charter could make a village’s fortune. His own maps show that Arden and Pell were the only two of the five on the salt road from the coast; the other three, in side valleys, stayed small.",
-      conditionAnchor: "already lay on a route",
-      detailAnchor: "salt road",
-      key: "By noting that only the chartered villages on the salt road prospered, just as her view would predict",
-      capitulate: ["By conceding that Arden and Pell show that a market charter could by itself create a village’s trade",
-        "Three chartered villages off the salt road stayed small, as Albrecht’s view predicts, so the valley does not show that a charter alone created trade."],
-      overreach: ["By claiming that the three villages in the side valleys prospered as soon as they received their charters",
-        "Text 2 says the three side-valley villages stayed small."],
-      ground: ["By arguing that Duvall has dated the Kessel valley’s market charters a full century too early",
-        "Nothing in Text 1 concerns dates; Albrecht’s view turns on routes, which Duvall’s own maps address."],
-      misapply: ["By pointing out that Arden and Pell prospered without charters because the salt road already ran through them",
-        "Text 2 says Arden and Pell did receive charters; Albrecht’s point is that the road, not the charter alone, made them prosper."],
-      why: "Albrecht holds that charters helped only villages already on a trade route, and of the five chartered Kessel villages only the two on the salt road prospered, which supports her view rather than Duvall’s",
-    },
-    {
-      scene: "cs-ebner-winter-orchard",
-      author: "Kestner",
-      target: "Mendel’s reading of the revision to “Winter Orchard”",
-      text1:
-        "Scholar Ada Kestner contends that a poet’s revisions reveal a change in taste only when they form a pattern across many poems. A single revised poem, she argues, may reflect nothing more than a printer’s demand for a shorter text or a friend’s objection to one line; only revisions repeated across a collection show a poet’s aims changing.",
-      text2:
-        "The manuscript of Jonas Ebner’s “Winter Orchard,” first printed in 1831, shows its ornate final stanza struck out and replaced with four plain lines. Critic Nora Mendel reads the change as the moment Ebner abandoned the ornate style of his youth for the plainness of his later work. The printer’s letter that accompanied the proofs, which Mendel reproduces, asked Ebner to shorten the poem so that it would fit on a single page.",
-      conditionAnchor: "only when they form a pattern",
-      detailAnchor: "asked Ebner to shorten the poem",
-      key: "By arguing that a single poem revised at a printer’s request cannot show a change in taste",
-      capitulate: ["By agreeing that the plain lines replacing the final stanza mark a lasting change in Ebner’s style",
-        "Kestner holds that a single revision cannot show a change in taste, and this one came with a printer’s request to shorten the poem."],
-      overreach: ["By claiming that the printer’s letter proves that Ebner revised the poem against his own wishes",
-        "Text 1 says a printer’s demand may explain a revision, not that it proves the poet objected; the letter shows only what the printer asked."],
-      ground: ["By pointing out that someone other than Ebner may have struck out the final stanza of the manuscript",
-        "Nothing in either text questions who made the revision; Kestner’s objection concerns what a single revision can show."],
-      misapply: ["By noting that the revision fits a pattern of plain rewriting repeated across Ebner’s collection",
-        "The texts describe only one revised poem, so there is no evidence of a pattern across Ebner’s collection."],
-      why: "Kestner holds that only a pattern of revisions across many poems reveals a change in taste, and Mendel rests her reading on one poem whose revision came with a printer’s request to shorten it",
-    },
-    {
-      scene: "cs-tarn-pike",
-      author: "Siddiq",
-      target: "Holm’s use of Lake Tarn as evidence",
-      text1:
-        "Freshwater ecologist Omar Siddiq argues that an introduced predatory fish drives native minnows from a lake only where the lake offers the minnows no dense weed beds. In lakes with extensive shallow vegetation, he contends, minnows can hide among the stems, and native and introduced species often persist side by side for decades.",
-      text2:
-        "Pike introduced to Lake Tarn in 1990 have been blamed for the collapse of its minnow population, which fell by nine-tenths within fifteen years. Biologist Greta Holm cites Tarn as evidence that introduced predators devastate native fish wherever they are released. According to the lake’s shoreline surveys, the reed beds that once fringed most of Tarn had been cleared for a marina and swimming beaches during the 1980s.",
-      conditionAnchor: "no dense weed beds",
-      detailAnchor: "had been cleared",
-      key: "By noting that Tarn’s reed beds were cleared before the pike arrived, so its collapse fits his view",
-      capitulate: ["By conceding that Tarn shows that introduced predators devastate native fish wherever they are released",
-        "Siddiq claims predators drive out minnows only where there are no weed beds, and Tarn’s reed beds had been cleared before the pike arrived, so Tarn does not test him."],
-      overreach: ["By claiming that Tarn’s minnows would have recovered by now if the lake’s marina had been removed",
-        "Neither text says anything about how the minnows would respond to removing the marina."],
-      ground: ["By arguing that fifteen years is too short a period over which to judge a population’s collapse",
-        "Text 1 says nothing about how long a collapse must be observed; Siddiq’s claim turns on weed beds."],
-      misapply: ["By arguing that Tarn’s extensive reed beds should have let its minnows survive alongside the pike",
-        "Text 2 says Tarn’s reed beds had been cleared in the 1980s, before the pike were introduced."],
-      why: "Siddiq argues that predators drive out minnows only where the lake lacks dense vegetation, and Tarn’s reed beds had been cleared before the pike arrived, so its collapse fits his view instead of showing that predators devastate native fish everywhere",
-    },
-    {
-      scene: "cs-brannock-slate",
-      author: "Weiss",
-      target: "Ferris’s claim about Brannock",
-      text1:
-        "Economic historian Clara Weiss argues that a railway enriched the towns along its line only when those towns already had goods to send to market. A station, she maintains, could carry away a town’s produce but could not create it; towns with nothing to sell simply watched the trains pass.",
-      text2:
-        "Historian Paul Ferris calls Brannock the clearest proof that railways made towns rich. When the line arrived in 1868, Brannock was a hamlet of quarrymen whose slate went down the valley by packhorse, a few loads a week; by 1880 it was the busiest station on the line, shipping slate to builders across the country.",
-      conditionAnchor: "already had goods to send to market",
-      detailAnchor: "by packhorse",
-      key: "By conceding that the railway enriched Brannock while noting that it already had slate to sell",
-      capitulate: ["By agreeing that Brannock shows that a railway could make any town along its line rich",
-        "Weiss holds that railways enriched only towns that already had goods to ship, and Brannock already produced slate, so it does not show that any town could be enriched."],
-      overreach: ["By arguing that the railway did little for Brannock, whose slate trade was already thriving by 1868",
-        "Text 2 says Brannock sent only a few loads a week by packhorse before the railway, so its trade was not thriving."],
-      ground: ["By pointing out that Ferris overstates how busy Brannock’s station had become by the year 1880",
-        "Nothing in Text 1 bears on the station’s traffic; Weiss’s view turns on whether a town had goods to ship."],
-      misapply: ["By noting that Brannock had nothing to sell until the railway itself created a market for slate",
-        "Text 2 says Brannock’s quarrymen were already sending slate to market by packhorse before the line arrived."],
-      why: "Weiss holds that railways enriched only towns that already had goods to ship, and Brannock’s quarrymen were already sending slate by packhorse, so she would accept that the line helped Brannock while denying that it shows railways could enrich any town",
-    },
-    {
-      scene: "cs-tel-aram-azurite",
-      author: "Okoye",
-      target: "Reyes’s conclusion about the shrine’s builders",
-      text1:
-        "Archaeologist Nadia Okoye argues that a rare pigment found at a site shows long-distance trade only if the pigment’s mineral source lies far from that site. Many so-called exotic pigments, she notes, also occur in small local deposits, which often went unrecorded until modern geological surveys.",
-      text2:
-        "Blue paint made from the mineral azurite colors the plaster of a shrine at Tel Aram, and archaeologist Simon Reyes takes it as proof that the shrine’s builders traded with distant mountain peoples, since the nearest large azurite mines lie some 300 kilometers away. A geological survey from 2019, cited in Reyes’s own report, recorded a thin vein of azurite in the hills a day’s walk from the shrine.",
-      conditionAnchor: "source lies far from that site",
-      detailAnchor: "a day’s walk",
-      key: "By pointing out that the vein near Tel Aram means the blue paint need not show any distant trade",
-      capitulate: ["By agreeing that the blue plaster shows that Tel Aram’s builders traded with distant mountain peoples",
-        "Okoye holds that a pigment shows distant trade only if its source is far away, and Reyes’s own report cites an azurite vein a day’s walk from the shrine."],
-      overreach: ["By claiming that the shrine’s azurite has been shown to come from the vein near Tel Aram",
-        "The survey shows only that a local source existed, not that the shrine’s azurite came from it; Okoye’s point is that distant trade is not shown."],
-      ground: ["By arguing that the blue paint on the shrine’s plaster may not have been made from azurite at all",
-        "Neither text questions that the paint is azurite; Okoye’s objection concerns where the mineral came from."],
-      misapply: ["By noting that a distance of 300 kilometers is too short to count as long-distance trade",
-        "Text 1 treats a distant source as the sign of trade; nothing in it suggests that 300 kilometers is too short a distance."],
-      why: "Okoye holds that a pigment shows long-distance trade only when its source is far away, and Reyes’s own report cites an azurite vein a day’s walk from the shrine, so the blue paint does not establish distant trade",
-    },
-    {
-      scene: "cs-pellham-books",
-      author: "Liu",
-      target: "Morrow’s explanation of Pellham’s rising scores",
-      text1:
-        "Education researcher Hannah Liu argues that giving young children free books raises their reading only when the books arrive with an adult who reads them aloud with the child. Books alone, she maintains, tend to sit unopened on a shelf; it is shared reading that turns a book into a habit.",
-      text2:
-        "Since 2015, every kindergartner in the Pellham school district has received a free picture book each month, and district official Dana Morrow credits the books themselves with the steady rise in the district’s early reading scores. Under the program’s rules, each month’s book is handed out at a family evening at which a librarian reads it aloud with parents and their children.",
-      conditionAnchor: "with an adult who reads them aloud",
-      detailAnchor: "family evening",
-      key: "By noting that Pellham’s books are handed out at shared readings, so the gains fit her view",
-      capitulate: ["By conceding that Pellham shows that free books alone can raise young children’s reading",
-        "Liu holds that books help only when an adult reads them with the child, and Pellham’s books come with a family reading evening, so the program is not a test of books alone."],
-      overreach: ["By claiming that Pellham’s scores would have risen just as much without any free books",
-        "Text 1 credits books together with shared reading; nothing suggests the books contributed nothing."],
-      ground: ["By arguing that Pellham’s rising scores may reflect a reading test that has grown easier",
-        "Nothing in either text concerns the reading test; Liu’s view turns on whether an adult reads the books with the child."],
-      misapply: ["By pointing out that Pellham’s books sit unopened, so the rising scores must have some other cause",
-        "Neither text says Pellham’s books go unopened; the program pairs each book with a shared reading."],
-      why: "Liu holds that free books raise reading only when an adult reads them with the child, and each Pellham book is handed out at a family evening where a librarian reads it aloud, so the program’s success fits her view rather than showing that books alone work",
-    },
-    {
-      scene: "cs-orla-hedgerows",
-      author: "Salgado",
-      target: "Pardo’s conclusion about hedgerows",
-      text1:
-        "Agronomist Pedro Salgado argues that hedgerows planted between fields raise crop yields only where strong winds regularly damage the crops. In sheltered valleys, he contends, hedgerows mostly shade the edges of fields and compete with the crop for water, and yields near them fall.",
-      text2:
-        "Farmers in the Orla basin planted hedgerows along thousands of fields during the 1990s, and agricultural economist Marta Pardo reports that the basin’s grain yields have since risen by a tenth. Pardo concludes that hedgerows raise yields in any farming region. The Orla basin, as her report describes it, is a broad, open plain whose young crops were long flattened by spring gales.",
-      conditionAnchor: "only where strong winds",
-      detailAnchor: "spring gales",
-      key: "By agreeing that hedgerows helped in the windswept Orla basin while doubting that they help in every region",
-      capitulate: ["By agreeing that the Orla basin’s rising yields show that hedgerows raise yields in any farming region",
-        "Salgado holds that hedgerows help only where wind damages crops; Orla is a windswept plain, so its result says nothing about sheltered regions."],
-      overreach: ["By arguing that the Orla basin’s hedgerows must have lowered its yields by shading the fields’ edges",
-        "Salgado expects hedgerows to help where gales damage crops, as in Orla, and Text 2 reports that yields rose."],
-      ground: ["By arguing that Pardo’s yield figures fail to separate the effect of the hedgerows from better seed",
-        "Salgado’s view predicts that hedgerows would raise yields on a windswept plain like Orla, so he has no reason to doubt that they did; his quarrel is with Pardo’s generalization."],
-      misapply: ["By noting that the Orla basin is a sheltered valley, where hedgerows compete with crops for water",
-        "Text 2 describes Orla as a broad, open plain battered by gales, not a sheltered valley."],
-      why: "Salgado holds that hedgerows raise yields only where strong winds damage crops, and the Orla basin is an open plain long battered by spring gales, so he would accept the result there while rejecting the claim that hedgerows help in any region",
-    },
-    {
-      scene: "cs-vell-law-code",
-      author: "Nwosu",
-      target: "Adler’s conclusion about the Duchy of Vell",
-      text1:
-        "Legal historian Amara Nwosu argues that a written law code changed how disputes were settled only where the courts had officials able to read it. Where judges were unlettered, she contends, a code might be proclaimed and even copied, but verdicts went on following local custom.",
-      text2:
-        "When the Duchy of Vell issued its written code in 1413, verdicts in its capital shifted within a decade to follow the code’s rules on inheritance. Historian Fritz Adler concludes that the code transformed justice throughout the duchy. The court records he examined all come from the capital, where clerks trained at the cathedral school presided over most cases.",
-      conditionAnchor: "officials able to read it",
-      detailAnchor: "cathedral school",
-      key: "By claiming that the capital’s records, kept by literate clerks, say little about the rest of the duchy",
-      capitulate: ["By conceding that Vell shows that a written code transformed justice wherever it was issued",
-        "Nwosu holds that a code changed verdicts only where officials could read it, and Adler’s records come only from the capital, where trained clerks presided."],
-      overreach: ["By claiming that verdicts in Vell’s countryside kept following local custom long after 1413",
-        "No records from the countryside are described, so Nwosu could not claim to know its verdicts; she could say only that the capital’s records do not settle the question."],
-      ground: ["By arguing that the code’s rules on inheritance were probably copied from an older code",
-        "Where the code’s rules came from has no bearing on Nwosu’s claim, which concerns who could read the code."],
-      misapply: ["By pointing out that the capital’s judges could not read, so the shift in its verdicts must have another cause",
-        "Text 2 says the capital’s cases were heard by clerks trained at the cathedral school, who could read."],
-      why: "Nwosu holds that written codes changed verdicts only where officials could read them, and all of Adler’s records come from the capital, where trained clerks presided, so they cannot show that the code transformed justice throughout the duchy",
-    },
-    {
-      scene: "cs-mell-star-lily",
-      author: "Karim",
-      target: "Brennan’s prediction about the star lily",
-      text1:
-        "Botanist Yusuf Karim argues that losing its specialist pollinator dooms a plant only if the plant cannot fertilize its own flowers. Many flowers that seem built for a single visitor, he points out, can fall back on self-pollination, producing fewer but still viable seeds when their pollinator disappears.",
-      text2:
-        "On the island of Mell, the long-tongued moth that pollinated the white star lily vanished in the 1970s, and ecologist Laura Brennan predicts that the lily will soon follow its moth into extinction. In a greenhouse trial described in her own study, star lilies screened from all insects set about a third as many seeds as lilies pollinated by hand, and those seeds sprouted normally.",
-      conditionAnchor: "cannot fertilize its own flowers",
-      detailAnchor: "screened from all insects",
-      key: "By pointing out that screened lilies still set viable seed, so the lily need not be doomed",
-      capitulate: ["By agreeing that the white star lily will soon follow its vanished moth into extinction on Mell",
-        "Karim holds that losing a pollinator dooms a plant only if it cannot self-pollinate, and Brennan’s own trial shows the lily setting viable seed with no insects."],
-      overreach: ["By claiming that the star lily will set as many seeds without the moth as it once did with it",
-        "The trial found screened lilies setting only about a third as many seeds, so Karim could not claim there is no loss."],
-      ground: ["By arguing that the long-tongued moth may not have vanished from the island of Mell after all",
-        "Nothing in Text 1 bears on whether the moth survives; Karim’s point concerns what happens once a pollinator is gone."],
-      misapply: ["By noting that the star lily cannot fertilize its own flowers and so depends entirely on insects",
-        "Text 2’s greenhouse trial shows the lily setting viable seed with all insects screened out, so it can fertilize itself."],
-      why: "Karim holds that losing a pollinator dooms a plant only if it cannot fertilize itself, and in Brennan’s own trial lilies screened from all insects still set viable seed, so the lily need not be doomed",
-    },
-  ];
+  {
+    "scene": "cs-condition-drainage-petitions",
+    "author": "Sato",
+    "target": "Vale's assessment of the drainage petitions",
+    "text1": "Historian Emi Sato cautions that similar petitions need not express independently reached demands. Shared wording can come from a conventional form; a distinctive practical proposal is stronger evidence of coordination. Yet even that proposal establishes dependence only among petitions written after a possible source became available. The first petition may still document a demand reached locally.",
+    "text2": "Twelve villages petitioned for a movable gate at the same bend in the river. Martin Vale regards their different wording as evidence of independent agreement. The earliest petition predates a district circular describing that gate; the other eleven followed the circular. All twelve also use the customary opening for petitions, though no standard form mentions movable gates.",
+    "conditionAnchor": "after a possible source became available",
+    "detailAnchor": "predates a district circular",
+    "key": "By treating the first request as possibly local but questioning the independence of the eleven later requests",
+    "capitulate": [
+      "By treating the varied wording as evidence that each village devised the gate proposal without a common source",
+      "Different wording does not eliminate dependence on the circular's distinctive practical proposal."
+    ],
+    "overreach": [
+      "By treating the shared gate proposal as evidence that the circular supplied the demand in every village's petition",
+      "The earliest petition predates the circular, so that circular could not have supplied its demand."
+    ],
+    "ground": [
+      "By treating the customary opening as stronger evidence of coordinated demands than the proposed location of the gate",
+      "Sato distinguishes conventional wording from a distinctive practical proposal; the opening is the weaker evidence."
+    ],
+    "misapply": [
+      "By treating the early petition's date as evidence that the later villages agreed before the circular reached them",
+      "The early date applies to one petition, not to the eleven petitions that followed the circular."
+    ],
+    "why": "Sato's distinction requires combining the unusual shared proposal with the dates of its possible sources. The earliest petition may be independent of the circular, but eleven later petitions cannot count as eleven independent confirmations merely because their wording differs",
+    "rationale": "Separates wording from substantive dependence, then applies a temporal exclusion to only one subset of the evidence. The tempting inference wrongly extends the earliest case's independence to the whole set."
+  },
+  {
+    "scene": "cs-condition-memory-cues",
+    "author": "Morgan",
+    "target": "Desai's interpretation of the memory experiment",
+    "text1": "Psychologist Leah Morgan distinguishes strengthening a memory from improving access to it. Practice can link a fact more closely to the prompt used during study, producing an advantage even weeks later. To argue that the fact itself has become more available, she looks for an advantage with a new prompt as well. Changing the delay while retaining the prompt does not distinguish the two explanations.",
+    "text2": "Arun Desai's students practiced historical facts beside portraits. A month later, they recalled more facts than unpracticed students when shown those portraits. Desai calls the delay evidence of stronger memories rather than better prompting. In a second test, unfamiliar descriptions identified the same historical figures, but practiced and unpracticed students recalled equal amounts.",
+    "conditionAnchor": "an advantage with a new prompt as well",
+    "detailAnchor": "unfamiliar descriptions",
+    "key": "By attributing the delayed advantage to better access through the portraits rather than to an advantage across prompts",
+    "capitulate": [
+      "By accepting the month-long delay as evidence that practice strengthened the facts independently of their study prompts",
+      "Morgan explicitly says an advantage with the old prompt can persist; delay alone does not separate the explanations."
+    ],
+    "overreach": [
+      "By concluding that the second test cancels the first result and shows that practicing the facts produced no lasting benefit",
+      "The portrait advantage lasted a month. The second test limits its interpretation rather than erasing it."
+    ],
+    "ground": [
+      "By regarding equal recall with new descriptions as evidence that those descriptions preserved the portrait advantage",
+      "Equal recall is the absence of the practiced group's advantage, not evidence that it transferred to a new prompt."
+    ],
+    "misapply": [
+      "By proposing a longer delay with the portraits to determine whether the benefit extends beyond the original study prompts",
+      "Keeping the original prompts does not test whether the benefit extends to new ones, regardless of the delay."
+    ],
+    "why": "The advantage survives a delay but disappears when the prompt changes. Morgan allows a lasting improvement in access through a practiced cue, so these findings distinguish a cue-specific benefit from the broader memory improvement Desai claims",
+    "rationale": "Combines a delayed result with a cross-prompt comparison, recognizing that persistence and generality are different dimensions of the proposed explanation."
+  },
+  {
+    "scene": "cs-condition-news-provenance",
+    "author": "Adeyemi",
+    "target": "Cole's conclusion about the expanded news service",
+    "text1": "Media scholar Tola Adeyemi distinguishes a variety of opinions from independent evidence. Publishers may disagree while relying on one reporting chain. A shared unusual error can expose that dependence, whereas agreement on a verified fact cannot. Dependence limits how many confirmations the reports supply; it does not by itself show that the publishers' judgments are alike.",
+    "text2": "A news service added eight separately owned outlets. Miriam Cole says their conflicting editorials give readers eight independent confirmations of a disputed speech. Each outlet's report contains the same mistranslation of an obscure phrase, traceable to one wire report. Their editorials nevertheless disagree about whether the speaker's policy would work.",
+    "conditionAnchor": "A shared unusual error",
+    "detailAnchor": "the same mistranslation",
+    "key": "By separating the outlets' differing policy judgments from the shared reporting chain behind their accounts of the speech",
+    "capitulate": [
+      "By accepting the conflicting editorials as evidence that the outlets obtained independent accounts of the disputed speech",
+      "Disagreement about policy does not establish independent evidence for what the speaker said."
+    ],
+    "overreach": [
+      "By treating the shared mistranslation as evidence that the outlets' conflicting policy judgments are merely apparent",
+      "A shared reporting error establishes dependence in the evidence, not agreement in editorial judgment."
+    ],
+    "ground": [
+      "By treating separate ownership as stronger evidence of independent reporting than a shared error is of dependence",
+      "Adeyemi evaluates the reporting chain; different owners can still rely on a common source."
+    ],
+    "misapply": [
+      "By discounting the shared mistranslation because reports must agree on a speech before they can independently confirm it",
+      "Agreement on a verified fact may be innocent, but the shared feature here is an unusual error."
+    ],
+    "why": "The uncommon shared error links the factual reports to one source, so their number overstates independent confirmation. Their policy disagreements concern a different kind of diversity and need not be dismissed",
+    "rationale": "Applies a diagnostic exception for shared errors while maintaining the theory's boundary between evidential independence and diversity of judgment."
+  },
+  {
+    "scene": "cs-condition-estate-narration",
+    "author": "Bell",
+    "target": "Mira's reading of the estate episode",
+    "text1": "Critic Owen Bell argues that a narrator's later confirmation of an event does not necessarily endorse a character's explanation of it. A narrative may let a suspicious character describe an act in the language of selfishness, then establish that the act had useful consequences. To infer agreement about motives, readers need more than agreement that the act occurred or helped someone.",
+    "text2": "In The East Orchard, Len calls his aunt's gift of land 'a purchase of our gratitude.' The narrator later explains that the land saved the family from eviction but reveals that the aunt gave it anonymously, expecting Len never to discover its source. Critic Ana Mira treats the narrator's account of the rescue as confirmation of Len's assessment of the gift.",
+    "conditionAnchor": "agreement about motives",
+    "detailAnchor": "expecting Len never to discover its source",
+    "key": "By accepting the gift's helpful effect while finding the aunt's expectation at odds with the motive Len assigns her",
+    "capitulate": [
+      "By reading the family's rescue as confirmation that the aunt successfully purchased the gratitude Len says she wanted",
+      "The beneficial effect does not confirm the motive, and the aunt expected her identity to remain unknown."
+    ],
+    "overreach": [
+      "By reading the aunt's anonymity as evidence that Len was mistaken about the land's role in saving the family from eviction",
+      "The narrator explicitly confirms the land's helpful effect; anonymity bears on the proposed motive."
+    ],
+    "ground": [
+      "By withholding judgment on the gift's effect because the narrator's account of it differs from Len's account of the aunt",
+      "The two accounts concern different aspects of the gift; the effect is confirmed even though the motive is challenged."
+    ],
+    "misapply": [
+      "By accepting Len's explanation of the aunt's motive while treating the narrator's account as a correction of the gift's consequences",
+      "The narrator confirms the consequences and supplies evidence against Len's explanation of the motive, not the reverse."
+    ],
+    "why": "Bell separates a confirmed outcome from a character's explanation of it. The rescue establishes the gift's effect, while the aunt's expectation of remaining unknown undermines the idea that she intended to secure the family's gratitude",
+    "rationale": "Separates narration from a character's attributed interpretation and integrates two later details that bear on different parts of the interpretation."
+  },
+  {
+    "scene": "cs-condition-flood-layers",
+    "author": "Iqbal",
+    "target": "Reed's inference about storm frequency",
+    "text1": "Geologist Farah Iqbal notes that a single storm can leave several sediment layers when tributaries deliver material at different times. Distinct mineral mixtures identify different sources, not necessarily different storms. Layer counts become evidence of storm frequency only when another marker separates the episodes; a continuous deposit can instead preserve the sequence of arrivals within one event.",
+    "text2": "A lake core contains more mineral bands after a river was connected to two additional tributaries. Geologist Evan Reed infers that storms became more frequent. Each new band matches one of the tributaries' rocks. Pollen tracing a brief seasonal bloom runs continuously across several bands; in older deposits, pauses between flood episodes interrupt that pollen sequence.",
+    "conditionAnchor": "another marker separates the episodes",
+    "detailAnchor": "runs continuously across several bands",
+    "key": "By treating several of the new bands as possible arrivals within one episode rather than as separate additions to the storm count",
+    "capitulate": [
+      "By taking the bands' distinct mineral mixtures as independent confirmation that the number of storm episodes increased",
+      "Distinct mixtures identify sources, and Iqbal explicitly distinguishes sources from separate storms."
+    ],
+    "overreach": [
+      "By concluding that the uninterrupted pollen establishes that storms became less frequent after the tributaries were connected",
+      "The pollen challenges counting every band as a storm; it does not establish a decline in overall storm frequency."
+    ],
+    "ground": [
+      "By rejecting the tributary matches because a continuous pollen sequence rules out sediment arriving from different sources",
+      "Continuous pollen can accompany successive arrivals from different tributaries within one event."
+    ],
+    "misapply": [
+      "By counting only the bands with new mineral mixtures as separate storms and treating the pollen continuity as irrelevant",
+      "A new source mixture does not supply the independent separation of episodes that Iqbal requires."
+    ],
+    "why": "The added tributaries supply a reason for more mineral bands without more storms. The uninterrupted seasonal pollen supplies evidence against treating several bands as separate episodes, so the apparent increase in storm count is not established",
+    "rationale": "Reconciles two proxies with different evidential roles and compares the new deposits with an older interruption pattern, rather than treating each observed band as an event."
+  },
+  {
+    "scene": "cs-condition-market-entry",
+    "author": "Tran",
+    "target": "Price's assessment of the market reform",
+    "text1": "Economist Mai Tran treats new seller registrations as weak evidence of greater competition if existing firms control the entrants. Falling prices can help resolve the question, but only in relation to costs: when costs fall faster than prices, the gap between the two widens. Registration totals and lower prices can therefore both accompany sellers retaining more, rather than less, pricing power.",
+    "text2": "After a licensing reform, more food sellers registered and retail prices fell. Julian Price calls the two changes mutually reinforcing evidence of stronger competition. Ownership records link most new sellers to established chains. Wholesale costs fell by more than retail prices, leaving a larger amount per item between what those chains paid and what they charged.",
+    "conditionAnchor": "only in relation to costs",
+    "detailAnchor": "link most new sellers to established chains",
+    "key": "By questioning both measures: the registrations need not add independent rivals, and the price decline masks a wider cost-price gap",
+    "capitulate": [
+      "By accepting the price decline as confirmation that the new registrations represent independent competitive pressure",
+      "The registrations need not represent independent firms, and the wider cost-price gap does not resolve that concern in Price's favor."
+    ],
+    "overreach": [
+      "By concluding that the reform raised consumers' prices because established chains retained more money on each item",
+      "Retail prices fell. An increase in the amount retained per item does not reverse that reported decline."
+    ],
+    "ground": [
+      "By taking the wider gap between costs and prices as evidence that the ownership links no longer limit the registration measure",
+      "Neither observation cancels the other: both weaken the proposed evidence for stronger competition."
+    ],
+    "misapply": [
+      "By questioning the registration count but treating lower retail prices as evidence that established chains faced tighter margins",
+      "Wholesale costs fell by more than retail prices, so margins widened rather than tightened."
+    ],
+    "why": "The ownership links limit what registrations reveal about independent entry. The cost comparison also reverses the implication Price draws from lower prices: the chains retain more per item, so the two indicators do not reinforce his conclusion",
+    "rationale": "Evaluates two apparently convergent indicators under separate qualifications; the apparent corroboration fails for two interdependent reasons without requiring arithmetic."
+  },
+  {
+    "scene": "cs-condition-transit-baseline",
+    "author": "Ortega",
+    "target": "Dean's assessment of the express bus",
+    "text1": "Transport researcher Lucia Ortega distinguishes an observed change from a program's effect. A bus service can prevent car trips that would otherwise have been added as a town grows. Stable traffic is not by itself evidence of either success or failure. The comparison must also address changes shared with places without the service, rather than crediting the bus for a regional shift.",
+    "text2": "Riverton added an express bus while new housing brought more commuters. Car journeys remained level, leading planner Simon Dean to call the service ineffective. Similar nearby towns added comparable housing but no buses; their car journeys rose. Fuel prices and remote-working rates changed similarly across the towns, and many new Riverton residents reported commuting by bus.",
+    "conditionAnchor": "changes shared with places without the service",
+    "detailAnchor": "their car journeys rose",
+    "key": "By treating the comparison towns as evidence that level traffic may conceal car journeys prevented by the bus service",
+    "capitulate": [
+      "By accepting level car traffic as evidence that the bus attracted only people who would otherwise have avoided driving",
+      "Level traffic does not identify what the bus passengers would otherwise have done, especially in a growing town."
+    ],
+    "overreach": [
+      "By concluding that the bus caused car journeys to fall in Riverton because they increased in the comparison towns",
+      "The comparison supports a reduction relative to an alternative outcome, not an observed fall in Riverton's journeys."
+    ],
+    "ground": [
+      "By attributing Riverton's level traffic to remote working because that change also occurred in the towns without new buses",
+      "Remote working changed similarly across towns, yet their traffic trends differed; that shared change does not explain the contrast."
+    ],
+    "misapply": [
+      "By dismissing the comparison towns because a service can count as effective only when traffic falls below its earlier level",
+      "Ortega explicitly allows a service to prevent added traffic without producing an observed decline."
+    ],
+    "why": "Ortega's standard compares the observed result with what could have happened without the service while considering shared changes. Growth and the comparison towns make added traffic a plausible alternative, so stable traffic can be consistent with a beneficial bus effect",
+    "rationale": "Requires a counterfactual baseline, distinguishes relative prevention from an observed decline, and uses shared regional changes to evaluate the comparison."
+  },
+  {
+    "scene": "cs-condition-instrument-agreement",
+    "author": "Nasser",
+    "target": "Wu's claim about the instruments' agreement",
+    "text1": "Physicist Amal Nasser argues that agreement between different instruments tests only errors the instruments do not share. Different measuring mechanisms can still inherit an error from a common reference used to set their scales. Agreement after independent calibration is therefore stronger evidence than agreement after merely replacing one kind of detector with another.",
+    "text2": "Two laboratories used optical and electrical instruments to estimate a material's expansion. Their results matched, which researcher David Wu says rules out an error in the measurements. Both laboratories had set their scales with rods from the same reference batch. Rechecking that batch against a separately maintained standard revealed a discrepancy in the rods' stated lengths.",
+    "conditionAnchor": "errors the instruments do not share",
+    "detailAnchor": "rods from the same reference batch",
+    "key": "By finding that the different detectors could agree inaccurately through their dependence on a shared calibration reference",
+    "capitulate": [
+      "By accepting the different detecting mechanisms as evidence that the matched measurements cannot share a systematic error",
+      "Different mechanisms do not eliminate an error inherited from a common calibration reference."
+    ],
+    "overreach": [
+      "By concluding that the discrepancy proves both laboratories' estimates err by exactly the same amount and in the same direction",
+      "The texts identify a shared source of possible error but do not describe how each instrument translates it into its estimate."
+    ],
+    "ground": [
+      "By treating the separately maintained standard as a reason to prefer the optical estimate over the electrical estimate",
+      "The reference check does not distinguish between the laboratories' estimates; both used the questioned batch."
+    ],
+    "misapply": [
+      "By recommending another detector while retaining the reference rods to isolate whether calibration caused the agreement",
+      "Retaining the suspect shared reference would preserve the possible common error instead of isolating it."
+    ],
+    "why": "The instruments differ in detection but share a calibration source, and the independent check questions that source. Their agreement therefore does not rule out a common measurement error, although the texts do not establish its exact effect on each estimate",
+    "rationale": "Distinguishes two levels of methodological independence and limits the inference from a newly identified shared error without overclaiming its magnitude or direction."
+  },
+  {
+    "scene": "cs-condition-court-compliance",
+    "author": "Mensah",
+    "target": "Hart's interpretation of the court records",
+    "text1": "Legal historian Kojo Mensah separates a rule's appearance in verdicts from its power to change outcomes. If the new rule and local custom favor the same party, a verdict cannot distinguish obedience to one from obedience to the other. Cases in which they conflict are more revealing, provided later editors have not replaced the judges' original reasons with the new code's language.",
+    "text2": "Elena Hart says a new inheritance code quickly displaced local custom because court summaries cite it repeatedly. Most listed cases would give the estate to the same person under either system. One conflicting case favors the heir selected by custom. A later clerk added the code references throughout the summaries; the original judgment in that case gives only a family precedent.",
+    "conditionAnchor": "Cases in which they conflict",
+    "detailAnchor": "A later clerk added the code references",
+    "key": "By favoring the conflicting case's original reasoning over the later code citations as evidence of the court's guiding rule",
+    "capitulate": [
+      "By treating repeated code references as evidence that judges followed the new rule even when it conflicted with local custom",
+      "The references were added later, and the conflicting case actually favors the heir selected by custom."
+    ],
+    "overreach": [
+      "By inferring from the conflicting verdict that judges ignored the code in every case in which it agreed with local custom",
+      "A case where the rules agree cannot reveal which rule guided the outcome; the conflicting verdict does not settle all other cases."
+    ],
+    "ground": [
+      "By treating the many matching outcomes as stronger evidence for the code than the single conflicting outcome is for custom",
+      "The matching outcomes do not discriminate between the rules, so their number does not make them stronger evidence."
+    ],
+    "misapply": [
+      "By discounting the family precedent because the later code citations explain the original judge's reasons more explicitly",
+      "The later citations cannot establish the original judge's reasons; the original judgment expressly invokes a family precedent."
+    ],
+    "why": "Mensah's test first excludes outcomes compatible with both rules, then asks whether the reasons are original. The conflicting case both follows custom and gives an original family precedent, whereas the repeated code references were supplied later",
+    "rationale": "Combines discriminating-case logic with source chronology; a large amount of apparently convergent evidence loses force under both qualifications."
+  },
+  {
+    "scene": "cs-condition-song-variation",
+    "author": "Khan",
+    "target": "Serrano's explanation of the singer's variations",
+    "text1": "Music scholar Leila Khan distinguishes a singer's control of a tradition from the reason a particular performance varies. Returning to an earlier version on request suggests that departures are choices rather than failures of memory. But audience adaptation is a further claim: a singer may choose among stable versions for reasons unrelated to who is listening.",
+    "text2": "Mateo Serrano heard a singer lengthen a ballad's farewell at a village gathering and shorten it at a market, attributing the difference to audience taste. In an earlier private rehearsal, she had alternated between those same endings. Asked after the market performance, she reproduced the longer ending without hearing a recording and described both versions as ones she regularly practiced.",
+    "conditionAnchor": "audience adaptation is a further claim",
+    "detailAnchor": "an earlier private rehearsal",
+    "key": "By accepting the singer's control of both endings while finding that the comparisons do not establish why she chose between them",
+    "capitulate": [
+      "By accepting the singer's ability to reproduce both endings as evidence that she selected each to suit the audience present",
+      "Reproduction shows control over the versions, not why one was selected for a particular audience."
+    ],
+    "overreach": [
+      "By concluding that the earlier rehearsal rules out any influence of audience taste on the singer's later choice of ending",
+      "The rehearsal provides another context for the versions but does not prove that audiences can never influence their selection."
+    ],
+    "ground": [
+      "By treating the private rehearsal as evidence of faulty memory because the singer used two endings when no audience was present",
+      "Alternation alone does not show faulty memory, and her unaided reproduction supports control of both versions."
+    ],
+    "misapply": [
+      "By withholding judgment about the singer's control until a recording shows that the market and village performances were identical",
+      "Control does not require identical performances; deliberate variation is precisely what the ability to return to a version can reveal."
+    ],
+    "why": "Unaided reproduction supports the singer's command of both versions, while their use in an earlier private rehearsal prevents the two public settings from establishing why she chose between them. That leaves audience influence possible without making it demonstrated",
+    "rationale": "Separates evidence of intentional variation from evidence of its cause, preserving a possible audience effect while rejecting the stronger explanation."
+  }
+];
+
 
   const ctcConditionApplied = {
     ...CTC_BASE,
     id: "cross-text-condition-applied",
     subskill: "response between texts",
     difficulty: "Hard",
-    title: "First text's conditional claim applied to the second text's case",
+    title: "Qualified criteria applied to a second text's case",
     recognize:
-      "Text 1's claim holds only under a condition. Text 2 offers a case as a test of such claims and mentions, in passing, the detail that decides whether the case meets that condition; Text 1's author would answer with that detail.",
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 2, trap: 1 },
+      "Text 1 distinguishes what evidence can establish under particular conditions. Text 2 offers a case whose details support a narrower judgment than its commentator makes. Apply the criteria without transferring support between claims.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["misattributed-view", "extreme-language", "true-but-irrelevant", "opposite-stance"],
     build(t) {
       const topic = t.pick(CTC_CONDITION_TOPICS);
@@ -2463,16 +2542,16 @@
         wrong,
         explanation: `${topic.why}.`,
         steps: [
-          "State Text 1's claim, including the condition under which it is said to hold.",
-          "In Text 2, find the detail that shows whether the case meets that condition, even if Text 2's author passes over it.",
-          "Choose the response Text 1's author would make with that detail; reject responses that accept Text 2's reading, misstate the detail, or claim more than the texts show.",
+          "Separate Text 1's criteria: what does each observation support, and under what conditions?",
+          "Match those criteria to the case's timing, comparisons, or sources, keeping the commentator's inference separate from the observations.",
+          "Choose the judgment licensed by that mapping; reject responses that transfer support to a different claim or overstate what the evidence excludes.",
         ],
         principles: [
-          "A claim limited by a condition is not refuted by a case that fails the condition.",
+          "Evidence can support one part of a claim while leaving another part unresolved.",
           "An author's likely response must follow from that author's own stated reasoning.",
         ],
         trap: "Accepting Text 2's own reading of its case, which is what its author says but not what Text 1's author would conclude.",
-        hint: "Under what condition does Text 1's claim hold? Does the case in Text 2 meet it?",
+        hint: "Which claim does each observation support, and which additional conclusion needs evidence the case does not supply?",
         estimatedSeconds: 105,
         verify: () => {
           const [one, two] = CTC_split(content);
@@ -2484,7 +2563,179 @@
     },
   };
 
+  // The target is a writer's position, not an attributed claim the writer
+  // quotes. Both texts distinguish those voices before the positions can be
+  // related. Distractors preserve a real claim but assign it to the wrong voice,
+  // or carry an agreement beyond the particular grounds the writers share.
+  const CTC_VOICE_TOPICS = [
+    {
+      scene: "cs-voice-volunteer-index",
+      one: "The Vell archive's director calls its volunteer index unreliable because uncertain readings appear beside confident ones. That criticism overlooks the index's purpose. Each entry links to a scan and labels doubtful letters; a researcher can therefore check a suggested name without accepting it. The index is useful precisely because its guesses remain distinguishable from the records themselves.",
+      two: "Some historians would exclude every transcription not signed by a professional. I would instead ask whether a transcription exposes the evidence behind its decisions. Credentials cannot make an inaccessible reading verifiable, while a tentative reading tied to its source can guide further inquiry. Treating either kind of transcription as a substitute for the source would be a mistake.",
+      question: "the first writer's defense of the volunteer index",
+      key: "The defense identifies a feature that makes uncertain readings useful without making them authoritative.",
+      wrong: [
+        ["The defense fails because uncertainty makes volunteer readings unsuitable even as guides to original records.", "That adopts the director's objection and the historians' credential rule, which the writers challenge."],
+        ["The defense succeeds because linked scans make a volunteer index an adequate replacement for original records.", "Both writers distinguish a guide from an authoritative substitute; source links do not erase that distinction."],
+        ["The defense overlooks a requirement that uncertain readings receive professional approval before researchers can inspect them.", "The second writer replaces a credentials requirement with verifiability, rather than adding professional approval."],
+      ],
+      why: "Both writers value exposing the source and the uncertainty. The director and some historians favor excluding doubtful volunteer work, but neither writer endorses that position.",
+    },
+    {
+      scene: "cs-voice-restored-fresco",
+      one: "A critic of the Merrow fresco restoration says replacing missing faces falsifies the painting. I agree that replacement should never masquerade as surviving paint. But the restorers marked every addition in a diagram and used a visibly different texture. Their work restores the scene's legibility while allowing attentive viewers to distinguish new material from old.",
+      two: "Restorers often defend additions by saying viewers need a complete scene. Yet a diagram is rarely present when an image circulates in books, and texture differences vanish in small reproductions. I accept additions that remain unmistakable in those ordinary forms of viewing; a distinction visible only beside the wall cannot reliably preserve the boundary between evidence and reconstruction.",
+      question: "the first writer's claim that the restoration preserves a useful distinction between old and new",
+      key: "The distinction may work at the wall while failing in reproductions where the additions look original.",
+      wrong: [
+        ["The distinction cannot matter because replacing a missing face necessarily falsifies every surviving part of a painting.", "That intensifies the critic's view; the second writer permits distinguishable additions."],
+        ["The distinction should be abandoned because a complete scene matters more than identifying the surviving paint.", "The second writer explicitly rejects treating completeness as sufficient justification."],
+        ["The distinction is secure because any technique that works on the wall also survives ordinary reproduction.", "The second text specifically says diagrams and textures can disappear in reproductions."],
+      ],
+      why: "The first writer answers the critic by emphasizing distinguishability, not completeness alone. The second writer shares that aim but applies it to reproductions, where the stated safeguards may fail.",
+    },
+    {
+      scene: "cs-voice-poetry-rhythm",
+      one: "Lena Voss's translations replace several images in Arlen's poems to preserve their beat. A reviewer calls this betrayal of the words. But the poems' repeated rhythms make their speakers sound trapped in habits, an effect the literal versions lose. Voss's departures can therefore preserve something central to the poems rather than merely make them easier to read.",
+      two: "Translators sometimes invoke 'the spirit' of a poem to excuse whatever sounds attractive in the new language. I distrust that defense unless a departure can be tied to a particular effect of the original. Fidelity need not preserve every image, but it must offer more than a claim that the translation is enjoyable on its own.",
+      question: "the first writer's justification of Voss's departures from the original images",
+      key: "It identifies an effect of the original that can justify a departure from its individual images.",
+      wrong: [
+        ["It substitutes the translation's independent attractiveness for evidence of what the original poems actually accomplish.", "The first writer links the rhythm to the original speakers' habits, supplying the evidence the second writer requests."],
+        ["It establishes that preserving each original image is the only way to maintain the poems' characteristic effect.", "That resembles the reviewer's objection; both writers allow justified departures from images."],
+        ["It excuses departures by denying that a translator needs to preserve any identifiable feature of the original.", "The first writer identifies the original rhythmic effect, and the second requires such a connection."],
+      ],
+      why: "The reviewer equates fidelity with words, while the first writer identifies a specific rhythmic effect. That specific connection meets the second writer's condition for a defensible departure.",
+    },
+    {
+      scene: "cs-voice-trade-pottery",
+      one: "A historian treats Istra pottery found inland as proof that coastal potters met inland buyers. Critics object that objects can pass through intermediaries. That objection defeats the claim of direct contact, but not the more modest conclusion that goods moved between the regions. The pottery's secure coastal manufacture still bears on the inland settlement's connections.",
+      two: "A museum label describes an imported pot as evidence of a journey by its maker. I would omit that claim: a vessel can travel without its maker. Still, some scholars go too far when they say that such objects tell us nothing about exchange. Establishing that an object crossed regions is already useful, even when its successive owners remain unknown.",
+      question: "the first writer's more modest conclusion about the inland pottery",
+      key: "It retains a conclusion about the movement of goods while withholding an unsupported claim about particular people.",
+      wrong: [
+        ["It endorses the direct encounter that the critics reject by treating regional exchange as the same thing as personal contact.", "The first writer explicitly separates the two conclusions, as the second writer does."],
+        ["It rejects every conclusion about trade because the vessel's successive owners cannot be identified with certainty.", "That is the excessive skeptical position rejected by the second writer, not the first writer's conclusion."],
+        ["It confirms the label's account of a maker's journey while conceding that the buyer's identity remains unknown.", "Neither writer infers that the maker traveled with the object."],
+      ],
+      why: "Both writers distinguish movement of goods from direct contact between particular people. The stronger historical and museum claims are reported for criticism, not adopted.",
+    },
+    {
+      scene: "cs-voice-school-language",
+      one: "A school inspector takes fluent performances in Tessar as proof that the language has recovered. Some critics dismiss those performances as rote learning. That goes too far: pupils answer unfamiliar questions and invent jokes in Tessar. The performances establish flexible command of the language, although they do not reveal which language pupils choose outside school.",
+      two: "A language campaign calls high examination scores evidence of a living speech community. I would require evidence of voluntary use between neighbors and across generations. Schools can give pupils a real skill without making it the language of their daily relationships. Nor should the absence of such daily use be confused with an inability to speak it.",
+      question: "the first writer's assessment of the pupils' performances",
+      key: "It establishes an ability while leaving open the separate question of whether that ability sustains community use.",
+      wrong: [
+        ["It mistakes examination success for evidence that the language already serves the pupils' daily relationships.", "That is the inspector's overreach, which the first writer avoids by withholding conclusions about outside use."],
+        ["It should dismiss the performances as rote because pupils have not been shown to use Tessar outside school.", "The second writer distinguishes lack of daily use from lack of ability, agreeing with the first writer's distinction."],
+        ["It understates recovery because flexible command makes evidence of voluntary community use unnecessary.", "The second writer requires voluntary community use to establish recovery, even when skill is real."],
+      ],
+      why: "The inspector claims recovery and the critics deny ability. The first writer accepts neither inference wholesale. The second writer makes the same distinction between genuine skill and a living community practice.",
+    },
+    {
+      scene: "cs-voice-library-fee",
+      one: "The Corran museum's director says admission fees exclude poor families. I accept that concern, but fees currently pay for free school visits, and no replacement funding has been promised. Abolishing the fee immediately could therefore reduce the museum's service to those families. My objection concerns the proposed timing, not the aim of widening access.",
+      two: "Campaigners sometimes treat any objection to free admission as indifference to access. That is unfair when an objection identifies a service that would disappear. But a temporary funding problem should prompt a search for replacement income, not become a permanent argument for charging. A plan deserves scrutiny both for whom it includes and for what it displaces.",
+      question: "the first writer's objection to immediate abolition of the admission fee",
+      key: "It raises a legitimate concern about displaced services, without establishing a permanent case for retaining the fee.",
+      wrong: [
+        ["It reveals indifference to access because objections to free admission necessarily favor the families already able to pay.", "That repeats the campaigners' position, which the second writer explicitly calls unfair."],
+        ["It justifies keeping admission fees permanently because existing services could never be funded in another way.", "Neither writer establishes that replacement income is impossible; the first objection is explicitly about timing."],
+        ["It should be withdrawn because benefits to new visitors make the loss of school visits irrelevant to access.", "The second writer requires considering displaced services, including those serving the intended beneficiaries."],
+      ],
+      why: "Both writers take displaced services seriously. The second adds that this is a reason to address funding, not a permanent defense of fees; the first writer's timing qualification is compatible with that view.",
+    },
+    {
+      scene: "cs-voice-forest-map",
+      one: "The Lorn survey omitted privately owned woods. Its critics say that no conclusion drawn from it can be trusted. I would retain its finding that nesting success fell in the public woods actually surveyed, where the same plots were monitored each year. What must be withheld is a claim about every wood in the district.",
+      two: "A council report dismisses Lorn's findings as unrepresentative. Yet representativeness concerns where a finding applies, not automatically whether it occurred. Here another difficulty matters: half the monitored public plots changed observers, and the new observers missed many nests in a calibration exercise. Even a conclusion restricted to surveyed woods must confront that measurement problem.",
+      question: "the first writer's defense of a conclusion limited to the surveyed woods",
+      key: "Restricting the conclusion's scope addresses one objection but leaves a separate problem with the reported trend.",
+      wrong: [
+        ["Restricting the conclusion's scope resolves every concern because repeated monitoring guarantees accurate nest counts.", "The new observers' missed nests provide a measurement concern despite repeated monitoring."],
+        ["The conclusion must be rejected solely because omitted private woods make any local finding impossible to establish.", "The second writer distinguishes representativeness from whether a local result is accurate."],
+        ["The conclusion should instead be extended to the private woods because the public plots were monitored annually.", "Annual monitoring neither removes measurement error nor establishes findings for unsurveyed woods."],
+      ],
+      why: "The first writer rebuts a scope objection by limiting the claim. The second accepts the scope distinction but offers new evidence of measurement error, which the restriction cannot repair.",
+    },
+    {
+      scene: "cs-voice-composer-parts",
+      one: "Eight surviving string parts led a conductor to insist that Vennholt's suite requires eight players. An archivist notes that court ensembles often doubled parts. I accept the warning but would not replace eight with any definite larger number: these parts alone tell us neither how often doubling occurred nor whether it occurred at this performance.",
+      two: "Reviewers praise a recent performance for using the supposed original group of eight. That certainty is misplaced. Payment records for the premiere list twenty-two string players assigned specifically to this suite, rather than merely employed at court. General knowledge about doubling would not settle the number; these records support a much more specific reconstruction.",
+      question: "the first writer's refusal to infer a definite ensemble size from the surviving parts alone",
+      key: "The refusal is justified for those parts alone, although a different source permits a more specific conclusion.",
+      wrong: [
+        ["The refusal conflicts with the payment records because it denies that any source could establish the number of players.", "The first writer limits the refusal to what the parts alone show, not what every possible source could show."],
+        ["The refusal should yield to the reviewers because preserving eight parts establishes that eight players performed the suite.", "The second writer rejects the reviewers' inference and supplies payment records for a larger group."],
+        ["The refusal proves that a general practice of doubling is sufficient to reconstruct an ensemble of exactly sixteen.", "Both texts distinguish general doubling practice from evidence about this particular performance."],
+      ],
+      why: "The first writer limits an inference from one source; the second agrees about that source's limits but supplies a different, more decisive source. New evidence need not refute the original caution.",
+    },
+    {
+      scene: "cs-voice-river-dam",
+      one: "Otters returned after the Harlan dam was removed. A campaigner calls the timing proof that removal caused the return. A critic instead cites otter gains on the neighboring Tamsin. That comparison weakens the campaigner's certainty, but it cannot establish that removal had no effect; regional improvement and a local benefit could operate together.",
+      two: "The Tamsin comparison is sometimes used to dismiss the Harlan restoration as useless. That conclusion outruns the evidence. Yet defenders also note that both rivers might have improved for different reasons and treat this possibility as proof of a Harlan benefit. Identifying a cause compatible with the counts is not the same as demonstrating that it contributed.",
+      question: "the first writer's claim that a local benefit remains possible",
+      key: "The possibility is consistent with the counts, provided it is not mistaken for evidence that a benefit actually occurred.",
+      wrong: [
+        ["The claim establishes a local benefit because a cause that remains possible must have contributed to the observed increase.", "That is the defenders' inference criticized by the second writer, not a conclusion warranted by compatibility."],
+        ["The claim is ruled out because similar gains on the Tamsin prove that dam removal was useless on the Harlan.", "The second writer explicitly rejects that overconfident dismissal."],
+        ["The claim vindicates the campaigner's certainty by showing that the comparison between the rivers contains no useful evidence.", "The first writer accepts that the comparison weakens certainty; neither treats it as useless."],
+      ],
+      why: "The first writer preserves a possible contribution without claiming proof. The second rejects both confident dismissal and a leap from possibility to actuality, so that qualified position fits.",
+    },
+    {
+      scene: "cs-voice-historical-diary",
+      one: "Because Mira Sen's diary contradicts her public speeches, a biographer calls it the unguarded truth. Skeptics reply that Sen knew her papers would be preserved. I accept their caution but not their conclusion that the diary is worthless. Even a calculated private account can reveal which image Sen hoped a later audience would accept.",
+      two: "Some editors privilege private writing simply because it was unpublished. Others reject any document shaped for readers. Both approaches confuse purpose with evidentiary value. A diary may be poor evidence for its writer's secret motives yet excellent evidence of an intended self-portrait. Its audience matters most when we decide which question the document can answer.",
+      question: "the first writer's proposed use of Sen's diary",
+      key: "It assigns the diary an evidentiary role that remains useful even if its account was deliberately shaped for readers.",
+      wrong: [
+        ["It restores the biographer's claim by treating a planned self-portrait as direct access to the writer's unguarded motives.", "The first writer shifts the question to intended image instead of restoring privileged access to motives."],
+        ["It accepts the skeptics' conclusion by denying that writing intended for preservation can answer any historical question.", "Both writers reject blanket dismissal of documents shaped for an audience."],
+        ["It establishes that identifying a document's audience makes its contradictions with public speeches disappear.", "Audience informs what the evidence can show; neither writer claims that it removes the contradictions."],
+      ],
+      why: "Both writers distinguish the document's purpose from its usefulness for a particular question. The first writer neither adopts the biographer's unguarded-truth claim nor the skeptics' blanket dismissal.",
+    },
+  ];
+
+  const ctcAuthorVersusCitedView = {
+    ...CTC_BASE,
+    id: "cross-text-author-versus-cited-view",
+    subskill: "response between texts",
+    difficulty: "Hard",
+    title: "Relate the writers’ positions after separating the views they cite",
+    recognize: "Identify each writer’s own qualified position separately from quoted or reported claims, then apply the second writer’s reasoning to the first writer’s actual position.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["misattributed-view", "too-broad", "one-text-only"],
+    build(t) {
+      const topic = t.pick(CTC_VOICE_TOPICS);
+      return {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "paired-passages", content: CTC_passage(topic.one, topic.two) },
+        stem: `Based on the texts, how would the writer of Text 2 most likely respond to ${topic.question}?`,
+        correct: topic.key,
+        wrong: topic.wrong,
+        explanation: topic.why,
+        steps: [
+          "Separate each writer’s position from the claims attributed to a critic, reviewer, or other source.",
+          "Identify exactly what the first writer accepts, rejects, or leaves open.",
+          "Apply the second writer’s reasoning to that qualified position, keeping the same scope and degree of certainty.",
+        ],
+        principles: ["A reported claim belongs to its named source unless the writer endorses it.", "Agreement about an observation need not be agreement about what it proves."],
+        trap: "Answering for an emphatic view the writer quotes and then limits, instead of for the writer’s own position.",
+        hint: "Which claims does each writer report, and which claims does that writer actually accept?",
+        estimatedSeconds: 105,
+        verify: () => topic.one.length >= 150 && topic.two.length >= 150 && topic.one.length + topic.two.length <= 900 &&
+          new Set([topic.key, ...topic.wrong.map(([choice]) => choice)]).size === 4,
+      };
+    },
+  };
+
   return [
+    ctcAuthorVersusCitedView,
     ctcSharedClaim,
     ctcProblemSolution,
     ctcCounterexample,

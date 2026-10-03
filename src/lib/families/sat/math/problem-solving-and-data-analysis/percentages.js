@@ -1453,22 +1453,22 @@
   const MIXTURES = [
     {
       kind: "dilute", unit: "liters", V: [6, 40, 1], p: [40, 70], q: [20, 60],
-      text: (V, p, q, total) => `A mechanic has ${fmt(V)} liters of coolant that is ${p}% antifreeze and the rest water. ` +
-        (total ? `Water is added until the coolant is ${q}% antifreeze. How many liters of coolant are there then?`
-          : `How many liters of water must be added to make coolant that is ${q}% antifreeze?`),
+      text: (V, p, q, total) => `A mechanic has ${fmt(V)} liters of coolant that is ${p}% antifreeze by volume and the rest water. Assume the component volumes add. ` +
+        (total ? `Water is added until the coolant is ${q}% antifreeze by volume. How many liters of coolant are there then?`
+          : `How many liters of water must be added to make coolant that is ${q}% antifreeze by volume?`),
       fixed: "antifreeze", changed: "water", mix: "coolant",
     },
     {
-      kind: "dilute", unit: "milliliters", V: [100, 1000, 20], p: [8, 30], q: [4, 25],
-      text: (V, p, q, total) => `A lab technician has ${fmt(V)} milliliters of a salt solution that is ${p}% salt. ` +
-        (total ? `Distilled water is added until the solution is ${q}% salt. How many milliliters of solution are there then?`
-          : `How many milliliters of distilled water must be added to make a solution that is ${q}% salt?`),
+      kind: "dilute", unit: "grams", V: [100, 1000, 20], p: [8, 30], q: [4, 25],
+      text: (V, p, q, total) => `A lab technician has ${fmt(V)} grams of a salt solution that is ${p}% salt by mass. ` +
+        (total ? `Distilled water is added until the solution is ${q}% salt by mass. How many grams of solution are there then?`
+          : `How many grams of distilled water must be added to make a solution that is ${q}% salt by mass?`),
       fixed: "salt", changed: "water", mix: "solution",
     },
     {
-      kind: "boil", unit: "liters", V: [4, 60, 1], p: [10, 40], q: [20, 80],
-      text: (V, p, q, total) => `A candy maker heats ${fmt(V)} liters of a sugar syrup that is ${p}% sugar until enough water has evaporated that the syrup is ${q}% sugar. ` +
-        (total ? "How many liters of syrup remain?" : "How many liters of water evaporated?"),
+      kind: "boil", unit: "kilograms", V: [4, 60, 1], p: [10, 40], q: [20, 80],
+      text: (V, p, q, total) => `A candy maker heats ${fmt(V)} kilograms of a sugar syrup that is ${p}% sugar by mass until enough water has evaporated that the syrup is ${q}% sugar by mass. ` +
+        (total ? "How many kilograms of syrup remain?" : "How many kilograms of water evaporated?"),
       fixed: "sugar", changed: "water", mix: "syrup",
     },
     {

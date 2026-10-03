@@ -75,3 +75,66 @@ test("the registry appends, fingerprints, re-versions, retires and restores", ()
   assert.deepEqual(registryProblems({ templates: [{ id: "a", bit: 0 }, { id: "b", bit: 0, version: 0 }] }),
     ["bit 0 is used twice", "b has an invalid version"]);
 });
+
+test("source fingerprints catch rare branches and transitive, dormant dependencies", (t) => {
+  const fs = require("node:fs");
+  const path = require("node:path");
+  const { sourceFingerprint, sourceFiles } = require("../tools/lib/fingerprint");
+  const scratch = path.join(__dirname, "..", ".scratch");
+  fs.mkdirSync(scratch, { recursive: true });
+  const root = fs.mkdtempSync(path.join(scratch, "fingerprint-test-"));
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const entry = path.join(root, "family.js");
+  const helper = path.join(root, "helper.js");
+  const data = path.join(root, "data.json");
+  fs.writeFileSync(entry, 'if (false) require("./helper"); module.exports = { rare: "old" };\n');
+  fs.writeFileSync(helper, 'module.exports = require("./data.json");\n');
+  fs.writeFileSync(data, '{"offset":1}\n');
+  const old = sourceFingerprint(root, [entry], "demo");
+  assert.deepEqual(sourceFiles(root, [entry]).map(([file]) => file), ["data.json", "family.js", "helper.js"]);
+  const instantiate = (f, seed) => ({ stem: seed === "rare" ? f.rare : "same" });
+  assert.equal(templateFingerprint({ rare: "old" }, instantiate), templateFingerprint({ rare: "new" }, instantiate), "eight observations miss this edit");
+  fs.writeFileSync(entry, 'if (false) require("./helper"); module.exports = { rare: "new" };\n');
+  assert.notEqual(sourceFingerprint(root, [entry], "demo"), old);
+  const second = sourceFingerprint(root, [entry], "demo");
+  fs.writeFileSync(data, '{"offset":2}\n');
+  assert.notEqual(sourceFingerprint(root, [entry], "demo"), second, "even an unexecuted transitive data dependency matters");
+  assert.equal(sourceFingerprint(root, [entry], "demo"), sourceFingerprint(root, [entry], "demo"));
+  fs.writeFileSync(entry, 'module.exports = require(variable);\n');
+  assert.throws(() => sourceFingerprint(root, [entry], "demo"), /static local/);
+  for (const source of [
+    'module.exports = require.call(null, "./helper");',
+    'const load = require; module.exports = load("./helper");',
+    'module.exports = module["require"]("./helper");',
+    'module.exports = `text ${require.call(null, "./helper")}`;',
+  ]) {
+    fs.writeFileSync(entry, source);
+    assert.throws(() => sourceFingerprint(root, [entry], "demo"), /static local/);
+  }
+  fs.writeFileSync(entry, '// Stories require reading.\nmodule.exports = `The passages require evidence. ${require("./helper").offset}`;\n');
+  assert.deepEqual(sourceFiles(root, [entry]).map(([file]) => file), ["data.json", "family.js", "helper.js"]);
+});
+
+test("migration uses baseline source evidence and cannot hide subsequent changes", () => {
+  const { SOURCE_ALGORITHM } = require("../tools/lib/fingerprint");
+  const oldSource = "a".repeat(64);
+  const newSource = "b".repeat(64);
+  const start = { sectionKey: "s", templates: [{ id: "a", bit: 7, version: 4, fingerprint: "legacy" }] };
+  const options = { algorithm: SOURCE_ALGORITHM, rehash: true, baselineOf: () => ({ legacy: "legacy", source: oldSource }) };
+  assert.throws(() => updateRegistry(start, [{ id: "a" }], () => oldSource, { algorithm: SOURCE_ALGORITHM }), /--rehash/);
+  assert.throws(() => updateRegistry(start, [{ id: "a" }], () => oldSource, { ...options, baselineOf: () => ({ legacy: "wrong" }) }), /baseline does not match/);
+  const migrated = updateRegistry(start, [{ id: "a" }], () => oldSource, options).registry;
+  assert.equal(migrated.templates[0].version, 4, "changing hash algorithms alone does not bump");
+  assert.equal(migrated.templates[0].bit, 7);
+  assert.equal(migrated.templates[0].fingerprintAlgorithm, SOURCE_ALGORITHM);
+  assert.deepEqual(updateRegistry(migrated, [{ id: "a" }], () => oldSource, options).changes, []);
+  assert.equal(updateRegistry(start, [{ id: "a" }], () => newSource, options).registry.templates[0].version, 5, "an unsampled edit since baseline still bumps");
+  assert.equal(updateRegistry(migrated, [{ id: "a" }], () => newSource, options).registry.templates[0].version, 5, "rehash cannot hide source-v1 changes");
+});
+
+test("registry rejects corrupt inputs before repairing or writing them", () => {
+  assert.throws(() => updateRegistry({ templates: [{ id: "a", bit: 0, version: 0 }] }, [{ id: "a" }], () => "x"), /invalid version/);
+  assert.throws(() => updateRegistry({ templates: [] }, [{ id: "a" }, { id: "a" }], () => "x"), /duplicate live/);
+  assert.deepEqual(registryProblems({}), ["registry needs a templates array"]);
+  assert.match(registryProblems({ templates: [{ id: "a", bit: 0, fingerprintAlgorithm: "source-v1", fingerprint: "short" }] }).join("\n"), /invalid source fingerprint/);
+});

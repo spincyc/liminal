@@ -10,8 +10,8 @@ This domain is not about advanced content. It's about applying middle-school and
 early-high-school mathematics — rates, percents, proportions, areas — inside
 multi-step word problems.
 
-**These are the most commonly missed "easy" questions on the ACT.** The math is
-simple; the setup and the number of steps are what get people.
+Even when the individual operations are familiar, choosing and combining
+them can be difficult. Inspect the setup as well as the arithmetic.
 
 ---
 
@@ -53,7 +53,8 @@ Rates add.
 > *A fills a tank in 6 hours, B in 3 hours. Together?*
 > `1/6 + 1/3 = 1/2` of the tank per hour → **2 hours**.
 
-**The general form:** if it takes `a` and `b` alone, together it takes
+**The general form:** if the workers or pumps maintain independent, constant
+rates and take positive times `a` and `b` alone, together they take
 `ab/(a + b)`.
 
 ### Direct and inverse variation
@@ -100,8 +101,8 @@ The highest-error topic in the domain.
 percent change = (new − old)/old × 100
 ```
 
-**The denominator is always the ORIGINAL.** This is the single most common
-percent error on the test.
+**The denominator is the nonzero original value.** Percent change from zero
+is undefined by this formula.
 
 ### Multipliers
 
@@ -124,7 +125,7 @@ error-prone. Chain them for successive changes.
 | Phrase | Meaning |
 | --- | --- |
 | increased **by** 30% | `× 1.30` |
-| increased **to** 30% of | `× 0.30` — a decrease |
+| is **30% of** a reference value | `× 0.30` of that reference value |
 | 30% **more than** x | `1.30x` |
 | 30% **less than** x | `0.70x` |
 | **percent** increase | relative to original |
@@ -182,17 +183,19 @@ shape."
 | Flooring / painting | Area; watch for windows and doors to subtract |
 | Filling a container | Volume, then divide by a rate |
 | Cost per unit area | Area × price per unit |
-| Number of tiles needed | Total area ÷ tile area, then **round up** |
+| Number of tiles needed | Area ratio is a lower bound; check layout, cutting and waste conditions before rounding to whole tiles |
 
-**"How many are needed" always rounds up.** You can't buy 12.3 boxes of tile.
-Conversely, "how many can you make" rounds **down**.
+**Round according to the constraint.** A minimum number of indivisible
+containers to meet a requirement rounds up; a maximum number of complete
+items from limited material rounds down. Check that the arithmetic model
+accounts for any fitting, cutting or waste conditions.
 
 ---
 
 ## Multi-step applications
 
-The defining feature of this domain: questions requiring three or more
-operations.
+These questions combine several operations or familiar skills. The number
+of steps depends on the problem and the method you choose.
 
 ### Method
 
@@ -215,9 +218,8 @@ operations.
 | Answered a different question | Reread the last line before selecting |
 | Rounded too early | Keep precision until the final step |
 
-**The intermediate-value trap is the most common.** A three-step problem gives
-item writers three natural wrong answers — the results after step one and step
-two. Both will be in the choices.
+**Watch for intermediate values.** A choice may give a result from an earlier
+step instead of the quantity requested; such values need not all be listed.
 
 ---
 
@@ -235,8 +237,8 @@ errors than any other habit.
 **Check plausibility.** If a question asks for the number of people and you get
 14.7, you made an error or need to round — decide which deliberately.
 
-**Watch the rounding direction.** "At least," "needed," "to ensure" → round up.
-"At most," "can be made," "fit" → round down.
+**Watch the rounding direction.** Translate the constraint into an inequality
+and check the adjacent integers. Keywords alone do not settle the direction.
 
 ---
 
@@ -302,18 +304,16 @@ match.
 
 | Stage | Filter | Volume |
 | --- | --- | --- |
-| 1. Percents | Rates and proportional reasoning, Easy → Medium | 30. **Use multipliers only.** |
-| 2. Rates | Rates and proportional reasoning, Medium | 25. Write units at every step. |
-| 3. Variation | Rates and proportional reasoning, Medium | 15. Find `k` first, every time. |
-| 4. Measurement | Applied measurement, Easy → Medium | 25, including area/volume conversions |
-| 5. Multi-step | Multi-step applications, Medium → Hard | 30. **Circle the target before computing.** |
+| 1. Percents | Rates and proportional reasoning | 30. **Use multipliers only.** |
+| 2. Rates | Rates and proportional reasoning | 25. Write units at every step. |
+| 3. Variation | Rates and proportional reasoning | 15. Find `k` first, every time. |
+| 4. Measurement | Applied measurement | 25, including area/volume conversions |
+| 5. Multi-step | Multi-step applications | 30. **Circle the target before computing.** |
 | 6. Mixed timed | Whole domain | 30 at 65 sec each |
 
-This domain is no bigger than Algebra, Functions, or Geometry, but it is the
-most improvable, because the losses are procedural rather than conceptual. If
-your error log shows careless and process errors clustered here, stages 1, 2,
-and 5 with their written-out habits are the highest-value work available to you
-on the whole section.
+Use your error log to decide whether the difficulty comes from a concept,
+the setup or execution. If process errors cluster here, stages 1, 2 and 5
+provide focused practice; repair missing concepts before adding speed.
 
 ---
 

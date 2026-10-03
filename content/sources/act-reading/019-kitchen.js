@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p019",
   type: "literary-narrative",
   title: "Kitchen Spanish",
-  intro: "This passage is adapted from a novel. The narrator, seventeen, has taken a summer job washing dishes at a restaurant in Baltimore.",
+  intro: "This is an original fictional passage. The narrator, seventeen, has taken a summer job washing dishes at a restaurant in Baltimore.",
   content: `The first word I learned was *marcha*, which the tickets rail shouted about eleven
 times a minute and which I understood, for most of June, to mean hurry. It does not mean
 hurry. It means the order is going now, fire it, and the difference between those two

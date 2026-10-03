@@ -5,7 +5,7 @@ module.exports = {
   type: "informative-essay",
   title: "Twice a Year the Lake Turns Over",
   content: `[1] Almost everything contracts as it cools, and water does too —
-down to a point. At about thirty-nine degrees {1 Fahrenheit four degrees} above
+down to a point. At about thirty-nine degrees {1 Fahrenheit seven degrees} above
 freezing, water reaches its greatest density. Cool it any further and it expands
 again. That is why ice floats, and it is also why a deep lake spends a year
 doing something strange.
@@ -20,7 +20,7 @@ a barrier:} the layers do not mix.
 and as organic material sinks into it and decays, the layer's oxygen is
 {6 gotten rid of} and never replaced. By late summer the bottom of a productive
 lake can be nearly lifeless, and the wind that stirs the surface all afternoon
-{7 cannot reach in any useful way the water forty feet down}.
+{7 can stir only the surface water, reaching the lake bed forty feet down}.
 
 [4] {8 Similarly,} autumn arrives. The surface cools, and as {9 it} approaches
 thirty-nine degrees it becomes the densest water in the lake and sinks. Water
@@ -42,21 +42,25 @@ turns again in spring} is called dimictic. Most of Wisconsin's lakes are.`,
       family: "appositive-comma",
       difficulty: "Easy",
       keep: false,
-      key: "Fahrenheit, four degrees",
+      key: "Fahrenheit, seven degrees",
       noChange: "The appositive renaming the temperature needs a comma to set it off.",
       wrong: [
-        ["Fahrenheit; four degrees", "A semicolon must join independent clauses, and this phrase is not one."],
-        ["Fahrenheit four degrees,", "The comma now falls after the appositive begins rather than before it."],
+        [
+          "Fahrenheit; seven degrees",
+          "A semicolon must join independent clauses, and this phrase is not one."
+        ],
+        [
+          "Fahrenheit seven degrees,",
+          "The comma now falls after the appositive begins rather than before it."
+        ]
       ],
-      why:
-        "'Four degrees above freezing' renames the temperature just given. An appositive is set off " +
-        "from the noun it renames by a comma.",
+      why: "'Seven degrees above freezing' renames the temperature just given. An appositive is set off from the noun it renames by a comma.",
       steps: [
         "Notice that the phrase restates the same temperature in different terms.",
-        "Put a comma between the noun and the phrase that renames it.",
+        "Put a comma between the noun and the phrase that renames it."
       ],
       hint: "When a phrase says the same thing twice in different units, it is an appositive.",
-      trap: "Both numbers read as part of one measurement, which hides the boundary between them.",
+      trap: "Both numbers read as part of one measurement, which hides the boundary between them."
     },
     {
       number: 2,
@@ -142,23 +146,21 @@ turns again in spring} is called dimictic. Most of Wisconsin's lakes are.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "sharply, that band being a barrier:",
-          "The participle leaves the second clause without a main verb of its own.",
+          "sharply; although that band being a barrier:",
+          "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
         ],
         [
-          "sharply; and that band is a barrier:",
-          "A semicolon and a coordinating conjunction do the same work, so using both is redundant.",
-        ],
+          "sharply; although and that band is a barrier:",
+          "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
+        ]
       ],
-      why:
-        "'The temperature drops sharply' and 'that band is a barrier' are both complete sentences, so " +
-        "joining them takes a comma plus a conjunction.",
+      why: "'The temperature drops sharply' and 'that band is a barrier' are both complete sentences, so joining them takes a comma plus a conjunction.",
       steps: [
         "Test each side of the comma as its own sentence. Both stand.",
-        "Add a coordinating conjunction after the comma.",
+        "Add a coordinating conjunction after the comma."
       ],
       hint: "The colon later in the sentence is correct; the problem is earlier.",
-      trap: "The colon draws the eye, so the splice ahead of it goes unexamined.",
+      trap: "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon."
     },
     {
       number: 6,
@@ -185,30 +187,28 @@ turns again in spring} is called dimictic. Most of Wisconsin's lakes are.`,
     {
       number: 7,
       subskill: "modifiers",
-      family: "misplaced-prepositional-phrase",
+      family: "modifier-scope-in-context",
       difficulty: "Hard",
       keep: false,
-      key: "cannot reach the water forty feet down in any useful way",
-      noChange: "The phrase 'in any useful way' is stranded between the verb and its own object.",
+      key: "can stir only the surface water, not the water forty feet down",
+      noChange: "The added phrase contradicts 'only the surface water' by claiming that the wind also reaches the lake bed.",
       wrong: [
         [
-          "cannot in any useful way reach the water forty feet down",
-          "The phrase now splits the auxiliary from the verb it belongs to.",
+          "can stir the water forty feet down, not the surface water",
+          "This reverses the passage's account: the wind reaches the surface while the lower layer remains isolated."
         ],
         [
-          "cannot reach in any useful way water forty feet down",
-          "The object loses its article and the phrase still interrupts the verb.",
-        ],
+          "can stir both the surface water and the water forty feet down",
+          "This removes the restriction even though the passage says the deeper layer is sealed off."
+        ]
       ],
-      why:
-        "A verb and its direct object belong together. The modifying phrase goes after the object, " +
-        "where it describes the reaching without separating it from what is reached.",
+      why: "The layers do not mix in summer. 'Only' must restrict the wind's reach to surface water, and the rest of the sentence must preserve that restriction.",
       steps: [
-        "Identify the verb and its object: 'reach' and 'the water forty feet down.'",
-        "Move the modifying phrase so it no longer stands between them.",
+        "Use the earlier description to identify the layer the wind can reach.",
+        "Keep the modifier and the following phrase consistent with that limited reach."
       ],
-      hint: "Find the verb, find its object, and make sure nothing sits between them.",
-      trap: "The original is grammatical and merely awkward, so nothing reads as an error.",
+      hint: "Compare what each complete replacement says about surface water and deeper water.",
+      trap: "A sentence can contain 'only' and then undo its restriction with a later phrase."
     },
     {
       number: 8,
@@ -263,23 +263,21 @@ turns again in spring} is called dimictic. Most of Wisconsin's lakes are.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "down: nutrients come up.",
-          "A colon introduces an explanation, but the second clause is the matching half of a pair.",
+          "down; although nutrients come up.",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "down and nutrients come up.",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The two clauses are short, complete, and deliberately parallel — one movement down, one up. " +
-        "A semicolon joins equals and keeps the symmetry audible.",
+      why: "The two clauses are short, complete, and deliberately parallel — one movement down, one up. A semicolon joins equals and keeps the symmetry audible.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or mirrors it. It mirrors.",
+        "Ask whether the second explains the first or mirrors it. It mirrors."
       ],
       hint: "Two short, balanced sentences are what a semicolon is best at.",
-      trap: "The clauses are so short they read as one thought, which makes a comma feel sufficient.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 11,

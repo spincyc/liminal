@@ -3,8 +3,8 @@
 module.exports = {
   id: "act-english-p012",
   type: "process-narrative",
-  title: "You Can Only Go Down",
-  content: `[1] A bell is not one note. Struck {1 once it sounds} five distinct
+  title: "What Cannot Be Put Back",
+  content: `[1] A bell is not one note. Struck {1 once it sounds} five principal
 tones at the same time, and whether the bell is any good depends entirely on how
 those five stand in relation to one another.
 
@@ -20,17 +20,17 @@ stays buried in its mould for {6 a period of time lasting most of a week}.
 out is a bell that rings, and a bell that rings is not yet a bell that is in
 tune.
 
-[4] {8 Meanwhile,} the bell is laid on its side on a vertical boring machine. A
+[4] {8 Meanwhile,} the bell is mounted on a vertical tuning lathe. A
 cutting tool takes metal off the inside, and where the tool cuts determines
 which of the five tones {9 changes}. Metal off the waist lowers one
-{10 partial, metal near the lip lowers another,} and the tuner works around the
+{10 partial, metal near the lip lowers another} while the tuner works around the
 inside a fraction of an inch at a time, striking the bell and listening to
 {11 it} between passes.
 
-[5] The constraint is absolute. Taking metal away can only lower a tone and
-never raise one, so a bell is cast {12 thick, heavy, and deliberately sharp},
+[5] The constraint is the lost metal. Routine cuts inside the bell generally
+lower the targeted tones, so a bell is cast {12 thick, heavy, and deliberately sharp},
 and every pass of the tool spends something that cannot be put back. A bell
-tuned past its note is scrap. {13}
+cut beyond correction must be recast. {13}
 
 [6] The tuning takes longer than the casting. It is also the only part of the
 work a listener ever hears.`,
@@ -141,23 +141,21 @@ work a listener ever hears.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "minute, and the cooling takes days:",
-          "The conjunction repairs the splice but flattens a contrast the sentence is drawing.",
+          "minute, however, the cooling takes days:",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "minute, the cooling taking days:",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "minute; although the cooling taking days:",
+          "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
+        ]
       ],
-      why:
-        "The two clauses set a minute against a week, and the contrast lands hardest when they are " +
-        "separate sentences. A period gives the second one its own weight.",
+      why: "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Choose the punctuation that keeps the contrast between them audible.",
+        "Find the subjects and finite verbs on both sides of the boundary.",
+        "Keep a complete statement on each side of the sentence boundary."
       ],
       hint: "The sentence is built on an opposition; ask which mark preserves it.",
-      trap: "'And' fixes the grammar and quietly turns a contrast into a list.",
+      trap: "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon."
     },
     {
       number: 6,
@@ -238,48 +236,50 @@ work a listener ever hears.`,
       difficulty: "Medium",
       keep: false,
       key: "drops",
-      noChange: "'Changes' allows a tone to rise, which the next paragraph says is impossible.",
+      noChange: "'Changes' leaves the direction unspecified, though the surrounding sentences describe tones being lowered.",
       wrong: [
-        ["is affected", "The passive phrasing is vaguer than the original it was meant to fix."],
-        ["moves in pitch", "The phrase still leaves the direction of the movement unstated."],
+        [
+          "is affected",
+          "The passive phrasing is vaguer than the original it was meant to fix."
+        ],
+        [
+          "moves in pitch",
+          "The phrase still leaves the direction of the movement unstated."
+        ]
       ],
-      why:
-        "Cutting metal can only lower a partial. The verb should say which way the tone goes, since " +
-        "that one-way constraint is the essay's subject.",
+      why: "The routine interior cuts described here lower the targeted tones. 'Drops' states that direction more precisely than the alternatives; it does not claim every possible removal of bell metal lowers every tone.",
       steps: [
-        "Recall what removing metal can and cannot do to a tone.",
-        "Choose the verb that names the direction.",
+        "Read the surrounding description of the cuts being made.",
+        "Choose the verb that specifies their stated effect on the targeted tone."
       ],
       hint: "The paragraph after this one tells you which verb is accurate.",
-      trap: "'Changes' is true as far as it goes, and half-true verbs read as safely neutral.",
+      trap: "'Changes' is true as far as it goes, and half-true verbs read as safely neutral."
     },
     {
       number: 10,
       subskill: "semicolons and colons",
-      family: "semicolons-in-a-series-with-commas",
+      family: "semicolon-before-dependent-ending",
       difficulty: "Hard",
       keep: false,
-      key: "partial; metal near the lip lowers another;",
-      noChange: "Two independent clauses are joined by commas inside a sentence already full of them.",
+      key: "partial; metal near the lip lowers another",
+      noChange: "The comma joins two independent clauses without a coordinating conjunction.",
       wrong: [
         [
-          "partial: metal near the lip lowers another,",
-          "A colon introduces an explanation, but the second clause is a parallel example.",
+          "partial metal near the lip lowers another",
+          "With no punctuation, the two independent clauses run together."
         ],
         [
-          "partial, and metal near the lip lowers another,",
-          "The conjunction fixes the splice but buries the pairing among the sentence's other commas.",
-        ],
+          "partial; with metal near the lip lowering another",
+          "The phrase beginning 'with' is not an independent clause and cannot follow the semicolon here."
+        ]
       ],
-      why:
-        "The sentence carries three clauses and several internal commas. Semicolons separate the " +
-        "paired clauses clearly, which commas at that level cannot do.",
+      why: "The two complete clauses describe different cuts. A semicolon joins them, and the 'while' clause attaches to the second without changing that boundary.",
       steps: [
-        "Notice how many commas the sentence already contains.",
-        "Raise the separation between the paired clauses to semicolons.",
+        "Separate the main clauses from the final dependent 'while' clause.",
+        "Join the two main clauses with a semicolon."
       ],
-      hint: "When a sentence is already crowded with commas, the next level of separation is a semicolon.",
-      trap: "The comma version is grammatical once 'and' is added, and merely unreadable.",
+      hint: "Look for the subjects and finite verbs on each side of the proposed boundary.",
+      trap: "The dependent clause at the end can distract from the earlier comma splice."
     },
     {
       number: 11,

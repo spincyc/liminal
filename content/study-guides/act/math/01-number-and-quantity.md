@@ -68,13 +68,13 @@ coincide?" → LCM).
 | Fraction | Decimal | Percent |
 | --- | --- | --- |
 | 1/2 | 0.5 | 50% |
-| 1/3 | 0.333... | 33.3% |
+| 1/3 | 0.333... | ≈33.3% |
 | 1/4 | 0.25 | 25% |
 | 1/5 | 0.2 | 20% |
-| 1/6 | 0.1666... | 16.7% |
+| 1/6 | 0.1666... | ≈16.7% |
 | 1/8 | 0.125 | 12.5% |
 | 3/8 | 0.375 | 37.5% |
-| 2/3 | 0.666... | 66.7% |
+| 2/3 | 0.666... | ≈66.7% |
 | 3/4 | 0.75 | 75% |
 
 **Operations:**
@@ -101,7 +101,12 @@ x^(1/n) = ⁿ√x            x^(m/n) = ⁿ√(xᵐ)
 **Rationalizing:** multiply by the conjugate.
 `3/(2 − √5) × (2 + √5)/(2 + √5) = 3(2 + √5)/(4 − 5) = −3(2 + √5)`
 
-**Common error:** `√(a + b) ≠ √a + √b`. This is never valid.
+**Common error:** splitting `√(a + b)` into `√a + √b` is not an identity.
+For example, a=b=1 gives √2, not 2. Equality in a special case such as b=0
+does not make the rule valid generally.
+
+The exponent rules above are safe for positive bases. Check the domain with
+zero or negative bases; division by zero and 0⁰ are undefined here.
 
 ---
 
@@ -262,7 +267,7 @@ This is a favorite ACT trap.
 | --- | --- |
 | **Absolute value, one case** | Solved only the positive branch |
 | **`i` cycle** | Computed `i²⁷` wrong |
-| **`√(a+b) = √a + √b`** | Never valid |
+| **`√(a+b) = √a + √b`** | Not an identity; a special-case match does not justify it |
 | **Area/volume unit conversion** | Didn't square or cube the factor |
 | **Matrix order** | Assumed `AB = BA` |
 | **GCF vs. LCM** | Used the wrong one |
@@ -275,11 +280,11 @@ This is a favorite ACT trap.
 
 | Stage | Filter | Volume |
 | --- | --- | --- |
-| 1. Exponents and radicals | Real and complex numbers, Easy → Medium | 25 |
-| 2. Absolute value | Real and complex numbers, Medium | 15. Write both cases every time. |
-| 3. Complex numbers | Real and complex numbers, Medium | 15 |
-| 4. Matrices and sequences | Real and complex numbers, Medium | 15 |
-| 5. Units | Quantities and units, Easy → Medium | 20. **Write the units** in every conversion. |
+| 1. Exponents and radicals | Real and complex numbers | 25 |
+| 2. Absolute value | Real and complex numbers | 15. Write both cases every time. |
+| 3. Complex numbers | Real and complex numbers | 15 |
+| 4. Matrices and sequences | Real and complex numbers | 15 |
+| 5. Units | Quantities and units | 20. **Write the units** in every conversion. |
 | 6. Mixed timed | Whole domain | 20 at 60 sec each |
 
 This domain is only about five questions. Don't over-invest — but do learn

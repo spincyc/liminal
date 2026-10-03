@@ -2,7 +2,8 @@
 
 **Catalog domain:** Integration of Knowledge and Ideas
 **Skills:** Arguments · Multiple Texts · Visual and Quantitative Information
-**~24% of the section** — 8-9 questions
+**19–26% of scored Reading questions** — 5–7 of 27; see the
+[overview](00-overview.md) for the official blueprint source.
 
 Analysis and synthesis: evaluating claims, comparing texts, and reading data
 alongside prose.
@@ -83,12 +84,14 @@ whether it's plausible; evaluate whether it damages the argument.
 
 ## Multiple Texts (paired passages)
 
-One of the four passage sets is paired: two shorter passages by different
-authors on a related subject.
+A passage set may contain two shorter texts on a related subject. The
+current blueprint allows zero or one paired scored set, so do not assume
+every test has one.
 
 ### Question distribution
 
-Roughly: three questions on Passage A, three on Passage B, three comparing.
+A paired set includes questions about individual texts and their relationship.
+Do not rely on a fixed three/three/three split.
 
 ### Method — the order matters
 
@@ -96,8 +99,8 @@ Roughly: three questions on Passage A, three on Passage B, three comparing.
 2. **Read Passage B.** Answer the B-only questions.
 3. **Then** answer the comparison questions.
 
-**Do not read both passages before answering anything.** They blur together, and
-confusing which author said what is the dominant error on paired sets.
+Try this sequence in practice. Reading both texts first can also work; choose
+a method that preserves your understanding of each author under your timing.
 
 Before the comparison questions, write or say **one sentence per author** stating
 their position.
@@ -109,8 +112,8 @@ Before reading comparison choices, name the relationship yourself:
 | Relationship | Description |
 | --- | --- |
 | **Agreement with elaboration** | B extends or details A |
-| **Agreement on facts, disagreement on interpretation** | Most common |
-| **Direct disagreement** | Less common than students expect |
+| **Agreement on facts, disagreement on interpretation** | Shared observations, different conclusions |
+| **Direct disagreement** | Incompatible claims about the same issue |
 | **B qualifies A** | Accepts with limits |
 | **B offers an alternative explanation** | Same observation, different cause |
 | **Different focus** | Related topic, different aspect |
@@ -118,9 +121,9 @@ Before reading comparison choices, name the relationship yourself:
 ### Question forms and how to attack them
 
 **"Both authors would agree that..."**
-Find something **explicitly supported in both**. The credited answer is usually
-modest — a shared premise rather than a shared conclusion. Distractors are
-supported by one passage only.
+Find a claim **supported by both** texts. It may be stated or inferred;
+check its full meaning against each author rather than preferring modest
+wording.
 
 **"The author of Passage B would most likely respond to [A's claim] by..."**
 Find B's stated principle and apply it directly to A's claim. Don't invent a
@@ -133,8 +136,8 @@ conclusion, scope instead of method).
 
 **"Compared to Passage A, Passage B is more..."**
 Comparative claims about tone, specificity, or scope. Check both passages
-against the dimension — a choice can be true of B and also true of A, which
-makes it wrong.
+against the dimension. That both passages have a quality does not rule out
+a difference in degree; inspect the specific comparison.
 
 ### Traps
 
@@ -156,7 +159,7 @@ graph, table, or diagram.
 ### Method
 
 1. **Read the title, axis labels, units, and legend before the question.** Ten
-   seconds. This prevents most errors here.
+   seconds can be enough to orient yourself.
 2. Note the **units and any scale prefix** (thousands, millions, percent).
 3. Check whether there's a **second y-axis** on the right.
 4. Then read the question and locate the specific data.
@@ -171,7 +174,7 @@ graph, table, or diagram.
 ### Patterns
 
 **Match direction first.** As X increases, does Y increase or decrease?
-Establishing direction alone usually eliminates half the choices.
+Then check the particular values and conditions the question needs.
 
 **Trends beat point values.** When asked what happens generally, the answer
 describes the overall pattern. A choice built from one data point — especially
@@ -215,18 +218,16 @@ passage is wrong, and vice versa.
 
 | Stage | Filter | Volume and method |
 | --- | --- | --- |
-| 1. Argument anatomy | Arguments, Medium | 20. Write claim / evidence / assumption for each. |
-| 2. Strengthen and weaken | Arguments, Medium → Hard | 20. Name the assumption before reading choices. |
-| 3. Evidence type | Arguments, Easy → Medium | 15. Name the support type in one word. |
-| 4. Paired passages | Multiple Texts, Medium → Hard | 20. **Write one sentence per author** every time. |
-| 5. Figures | Visual and Quantitative Information, Medium | 25. Narrate title, axes, units, legend aloud before answering. |
+| 1. Argument anatomy | Arguments | 20. Write claim / evidence / assumption for each. |
+| 2. Strengthen and weaken | Arguments | 20. Name the assumption before reading choices. |
+| 3. Evidence type | Arguments | 15. Name the support type in one word. |
+| 4. Paired passages | Multiple Texts | 20. **Write one sentence per author** every time. |
+| 5. Figures | Visual and Quantitative Information | 25. Narrate title, axes, units, legend aloud before answering. |
 | 6. Mixed timed | Whole domain | Two passage sets at 10 min each |
 
-Stage 4's one-sentence-per-author habit is the single fix for paired passages.
-Almost every miss on these traces back to losing track of who said what.
-
-Stage 5's ten-second orientation habit is worth more than any interpretive
-skill. Most figure errors are reading errors, not reasoning errors.
+Use the author summaries to catch attribution errors, and use figure
+orientation to catch axis and unit errors. If your misses instead involve
+inference or comparison, practice that reasoning explicitly.
 
 ---
 

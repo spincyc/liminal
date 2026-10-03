@@ -6,75 +6,53 @@ title: Answer tells
 
 An answer tell is a pattern in how the choices are written that seems to
 point at the correct one: the middle number, the most careful wording, the
-longest choice. Tells are real in a weak sense and useless in a strong one.
-They are probabilistic, they are small, and the people who write good test
-questions work to remove them. Solving the question beats reading the
-choices every time you can solve it.
+longest choice. The appearance of a choice is not evidence that it is right. Some locally
+written question sets can develop patterns, but a pattern in Liminal's items
+does not establish a useful rule for official SAT questions.
 
 ## How weak they are {#how-weak}
 
 College Board's [scoring page](https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated)
-says: "For most students who are trying their best on every question, it's
-better to guess than leave a question blank, especially if a student can
-eliminate one or two answer options before guessing." That advice is to
-eliminate what you can and then guess; it offers no pattern to look for in
-the choices.
+recommends trying every question and guessing rather than leaving a blank,
+especially after eliminating choices. It does not recommend choosing by word
+length, hedging or numerical rank.
 
-When Liminal measured its own questions in September 2026, the tells beat
-chance, but not by enough to replace solving:
-
-| Tell | How often it picked the key | By chance |
-| --- | --- | --- |
-| Math: the key is one of the two middle numbers | 67% | 50% |
-| Reading and Writing: the key is the most hedged choice | 34% | 25% |
-
-The middle-number tell had a real edge of 17 percentage points over chance,
-and it was still wrong one time in three. The hedged-choice tell beat chance
-by 9 points and was wrong about two times in three. Liminal's content checks
-are built to push numbers like these toward chance, so they may be lower by
-the time you read this. And tells don't explain a big gap between practice
-and the real test; missing content and skipped review do.
+A local audit can help an author find repeated answer patterns. It cannot
+show that those patterns generalize to another question bank or to the SAT.
+Even a pattern that sometimes beats chance can teach the wrong habit if it
+replaces checking the passage or solving the mathematics.
 
 ## Tells and when they fail {#tells}
 
-Use a tell only after you have reasoned the question out as far as you can,
-to break a real tie or to guess when time is gone.
+The key is a middle value. This can seem plausible when distractors reflect
+errors above and below the answer.
 
-The key is a middle value. With four numeric choices in order, the key is
-often not the smallest or the largest, because wrong answers come from
-mistakes in both directions.
+> **Fails when.** Errors fall on the same side, or the question asks for an
+> extreme. More generally, numerical rank alone provides no justification
+> for choosing a value. Use a bound or an estimate from the problem.
 
-> **Fails when.** The question asks for a greatest, least, maximum or
-> minimum, or the natural mistakes all push the same way (forgetting to
-> square makes every wrong answer too small). Then the key is often an
-> extreme value.
+The most hedged choice is right. Words such as may and some make a claim
+weaker, but a weaker claim can still be false or irrelevant.
 
-The most hedged choice is right. Careful words (may, some, suggests) are
-easier for a short text to support than strong ones.
+> **Fails when.** The choice does not answer the question or misstates the
+> text. Match the claim's strength to the evidence, not to a preferred style.
 
-> **Fails when.** The text itself is definite. If a study found an effect in
-> every trial, "the treatment had an effect in every trial" is correct and
-> "may have had some effect" understates it. On Hard questions, the hedged
-> choice is often the near miss.
+Extreme words are wrong. Always, never and only require strong support.
 
-Extreme words are wrong. Always, never, proves and only are easy to
-disprove.
-
-> **Fails when.** The text uses them. Definitions, rules and results stated
-> without exception make an extreme choice correct.
+> **Fails when.** The text or mathematical conditions supply that support.
+> Check the full claim rather than eliminating a word automatically.
 
 The longest (or shortest) choice is right.
 
-> **Fails when.** Almost always. Liminal's checks limit how often the key is
-> the unique longest or shortest choice, and length is not a testing point
-> on the SAT. In Standard English Conventions in particular, the SAT does not
-> test concision, so never pick a choice for being shorter.
+> **Fails when.** Length does not tell you whether the choice is correct.
+> SAT Standard English Conventions tests grammar and usage, not a shortest-
+> answer rule. Read each choice in the complete sentence.
 
 Two choices that mean the same thing are both wrong, because a question has
-one answer.
+one best answer.
 
-> **Fails when.** They only look alike. Check that they really say the same
-> thing, including every qualifier, before crossing out both.
+> **Fails when.** They only look alike. Check all qualifiers, conditions and
+> the completed sentence before concluding that two options are equivalent.
 
 ## What works instead {#what-works}
 

@@ -5,6 +5,12 @@ How to run a practice session so it produces learning rather than activity.
 Every study plan in this directory assumes you're using these protocols. They
 matter more than the schedule.
 
+> **Practice targets are SAT-only planning rules.** Liminal's ACT difficulty
+> labels are not verified, and ACT Progress reports accuracy without these
+> targets. For ACT, choose the skill and inspect the reasoning each item
+> requires; use fresh official practice to judge progress. Adjust all
+> schedules and timed drills to your approved accommodations.
+
 ---
 
 ## The session template
@@ -32,7 +38,7 @@ Reviewing 8 items properly beats attempting 30 carelessly.
 
 ---
 
-## The four drill modes
+## The five drill modes
 
 ### 1. Untimed accuracy drill
 
@@ -90,9 +96,9 @@ identification.
 **How:** 20 questions, real clock, no feedback until the end, then review all
 20. See [Mini tests](../09-mini-tests.md).
 
-**Why it is its own mode:** every other drill gives you feedback as you go,
-which is right for learning and wrong for measuring. A mini test is the only
-short format that tells you what you can do unaided.
+**Why use it:** withholding feedback lets you inspect unaided performance
+across sections. Other practice sets can also use feedback at the end;
+choose that setting when checking what you can do independently.
 
 ### 5. Missed-items drill
 
@@ -110,24 +116,25 @@ diagnosis was wrong.
 
 ## Choosing difficulty
 
-Move up by the same bars the app's Progress view uses, so this page and the
+For SAT practice, move up by the same bars the app's Progress view uses, so this page and the
 skill map never disagree. Both are set out, with the reasons behind them, in
-the [mastery gate](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate).
+the [practice target](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate).
 
 | Where the skill is | Practise | Move up when |
 | --- | --- | --- |
 | New, or Easy still needs the Learn page | Easy, untimed | the method is routine and your misses are slips, not gaps |
-| Easy is routine | Medium | Progress shows "At the gate": at least 24 of your last 30 Medium questions right, no hints |
-| At the gate | Hard, plus a few Medium to keep it | Progress shows "Mastered": also at least 10 of your last 15 Hard questions right |
+| Easy is routine | Medium | Progress shows "Practice target met": at least 24 of your last 30 Medium questions right, no hints |
+| Practice target met | Hard, plus a few Medium to keep it | Progress shows "Advanced practice target met": also at least 10 of your last 15 Hard questions right |
 
 Each window must span at least two days and two different question designs,
 and each question counts once, at your first answer, so redoing a miss you
-have seen does not raise the count. The windows are long on purpose: you
-check them after every set, and a short window checked that often is passed
-by luck.
+have seen does not raise the count. These are planning thresholds, not statistical proof of mastery. Repeatedly
+checking a rolling window and seeing familiar designs can produce a passing
+result without demonstrating transfer.
 
-If you get fewer than half right at a level, you are guessing and learning
-little: drop a level and reread the skill's Learn page.
+If you repeatedly get fewer than half right at a level, inspect why. Return
+to the Learn examples or an easier set when the underlying method is missing;
+low accuracy alone does not show that you were guessing.
 
 > **Fails when.** You judge from a handful of answers. Under 5 answers is not
 > enough data, and a bad first set in a new skill is normal. Finish the Learn
@@ -138,7 +145,7 @@ little: drop a level and reread the skill's Learn page.
 1. Easy, untimed — build the procedure (10-15 items)
 2. Medium, untimed — apply it to harder cases (15 items)
 3. Medium, timed — build speed (20 items)
-4. Hard, untimed, once the skill is at the gate — stretch (10-15 items)
+4. Hard, untimed, once the skill meets the practice target — stretch (10-15 items)
 5. Mixed difficulty, timed — consolidate (20 items)
 
 Don't skip step 1 because it feels beneath you. The point isn't the difficulty,
@@ -194,8 +201,9 @@ blank, or a right answer after a hint):
 
 SAT questions come back as fresh versions from the second return; ACT
 questions come from fixed banks, so they come back as they were. A wrong,
-blank or hinted answer at any return starts the schedule over. Never redo
-the same day — you'll remember the answer rather than the method.
+blank or hinted answer at any return starts the schedule over. A same-day
+redo can help with learning, but remembered answers make it weak evidence
+of retention. Keep the later spaced checks.
 
 ---
 
@@ -213,8 +221,8 @@ targets. Ignore skills that appear once.
 weeks ago? Promote those to a "top five" list you read before every session.
 
 **4. Adjust the plan.** If a targeted skill improved, drop it and pick up the
-next one. If it didn't, re-diagnose — a persistent "content" gap is usually a
-process problem underneath.
+next one. If it did not, re-diagnose. Recheck both prerequisite knowledge and the
+steps you used.
 
 ---
 
@@ -229,11 +237,10 @@ process problem underneath.
 - Phone off and in another room
 - Official tests only: the full-length practice tests in College Board's
   Bluebook app for the SAT, ACT's official practice tests for the ACT. Their
-  scores are the only honest estimate you have; Liminal's accuracy is practice
+  scores from fresh tests give a useful estimate; Liminal's accuracy is practice
   feedback, not a score
-- For the SAT, Bluebook has 8 full-length practice tests (Practice Tests 4 to
-  11, checked 2026-09-26; verify the count before you plan around it), so six
-  leaves a couple for a retake
+- Check Bluebook for the current inventory. Reserve unfamiliar tests for
+  later checks; a repeated test is useful review but a weaker score estimate
 
 Score inflation from taking a test on your couch in three sittings is real, and
 it will hurt on test day.
@@ -290,7 +297,7 @@ future wrong answer, and marking it is the only way you'll find it later.
 | --- | --- |
 | **Skipping review** | You rehearse errors instead of fixing them |
 | **Reading explanations and nodding** | Recognition, not recall. Reproduce it later. |
-| **Only reviewing hard questions** | Missed easy questions are guaranteed leaked points |
+| **Only reviewing hard questions** | Review misses on accessible questions as well as harder ones |
 | **Batch-reviewing at week's end** | You've forgotten your reasoning — the most diagnostic data |
 | **Writing nothing down** | "I'll remember" is false |
 | **Only timed practice** | Locks in bad habits at higher speed |

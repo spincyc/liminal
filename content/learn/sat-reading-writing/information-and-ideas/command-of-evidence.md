@@ -12,8 +12,10 @@ evidence supports it best: a quotation, a hypothetical finding, or data from
 a table or graph. The skill is part of Information and Ideas,
 {{fact:sat-rw-information}} of the Reading and Writing section. The wrong
 choices are usually relevant, on-topic and true, which is exactly why they
-tempt. Hard versions use claims with two parts, or data displays where a
-choice reads the numbers correctly but doesn't support the claim.
+tempt. Hard versions require weighing competing explanations or combining
+a display with conditions in the text. A two-part claim or a graph alone
+does not make a question Hard. The examples below are constructed practice
+passages.
 
 ## Textual evidence {#textual-evidence}
 
@@ -24,6 +26,13 @@ support the researcher's hypothesis?"
 1. Restate the claim exactly, including every qualifier. Many claims have two parts; underline both.
 2. For each choice, ask: does this show exactly this claim, both parts of it?
 3. Cross out choices that are about the topic but show something next to the claim.
+
+A proposed mechanism may involve an intermediate step: a treatment changes
+a signal, which changes an outcome. Evidence that the treatment works does
+not by itself identify that path. Check what happens when the intermediate
+step is blocked, and whether a separate way of restoring it also restores
+the outcome. Controls matter: a blocker that also disables the outcome through another
+pathway may leave the proposed mechanism unresolved.
 
 > **Example.** Read the text and answer the question.
 >
@@ -283,8 +292,11 @@ The table shows trips and late departures on four ferry routes last year.
 
 ## What Hard looks like {#hard}
 
-- A two-part claim where each wrong choice supports one part, often about a character in a novel or play, where the most vivid line shows only one part (see [a two-part claim in a novel or play](#two-part-claim-excerpt)).
-- A display with several series, where the correct choice compares the right two.
-- A claim about a trend or a percentage, with a choice that describes a single value correctly.
-- A claim that sets a rate or a percent change against a count or an amount ("even though"). Wrong choices give sizes without counts, the wrong pair, or the right pair over the wrong years (see [a rate against a count](#rate-versus-count)).
-- A "which finding would weaken" stem, where you must reverse your usual question.
+- A finding must separate two explanations that predict the original observation equally well. A tempting alternative changes both proposed causes together.
+- A graph and its accompanying text use different units or populations. The answer must reconcile them before deciding what the trend supports.
+- Group-level and combined trends point in different directions because the groups' sizes changed. Accurate numbers alone do not justify the proposed conclusion.
+- Evidence supports one part of a causal account but leaves another untested; the choices differ in exactly which conclusion follows.
+
+Matching two traits in a quotation, calculating one rate, or noticing a
+"weaken" stem may be Easy or Medium. Check the actual evidence and the work
+needed to distinguish the choices, rather than relying on the format.

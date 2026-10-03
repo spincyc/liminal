@@ -2,9 +2,8 @@
 
 **Catalog domains:** Organization · Language Use and Conventions
 
-Two of the four scoring domains. Less differentiating than
-[Ideas and Analysis](01-essay-method.md), but they're half your score and
-they're the easiest half to secure.
+Two of the four equally weighted scoring domains. Practice them alongside
+[Ideas and Analysis](01-essay-method.md) and Development and Support.
 
 ---
 
@@ -183,7 +182,7 @@ Watch specifically for:
 | Pronoun reference | Vague *this* and *it* at paragraph starts |
 | Comma splices | Two independent clauses joined by a comma |
 | Sentence fragments | Especially participial phrases standing alone |
-| Verb tense shifts | Pick one and stay in it |
+| Verb tense shifts | Match each event's time; shift tense when the meaning requires it |
 | Apostrophes | *its/it's*, plurals vs. possessives |
 | Parallelism | In lists and comparisons |
 
@@ -206,9 +205,10 @@ Cross out neatly with a single line. Graders expect a draft.
 
 ---
 
-## Handwriting
+## Practise the response format
 
-Underrated. An essay that can't be read can't be scored well.
+Use the writing format and accommodations approved for your administration.
+If handwriting, make the essay legible:
 
 - Practice **handwriting at speed** if you normally type. This is a real skill
   and it degrades fast under pressure.
@@ -221,8 +221,8 @@ Underrated. An essay that can't be read can't be scored well.
 
 ## Length
 
-There's no requirement. In practice, strong essays tend to run roughly three to
-five handwritten pages, because developed reasoning takes words.
+There is no required word or page count. Develop the argument with relevant
+reasoning and examples rather than aiming at an unsupported page target.
 
 **Don't pad.** A repetitive long essay scores worse than a tight shorter one.
 But don't aim short either — thin development costs you directly in the
@@ -238,7 +238,7 @@ Development and Support domain.
 | --- | --- |
 | 1 | Untimed essays. Analysis only. Ignore the clock and the length. |
 | 2 | Planning drills — five plans at 4 minutes each. |
-| 3 | Timed essays at 40 minutes, handwritten. |
+| 3 | Timed essays in your test's response format, using your approved timing (40 minutes standard). |
 | 4 | Timed essays, then self-score against all four domains 24 hours later. |
 
 **Self-scoring is the feedback loop.** For each essay, ask:

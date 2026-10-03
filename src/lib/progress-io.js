@@ -29,6 +29,8 @@
 
   const isObject = (value) => Boolean(value) && typeof value === "object" && !Array.isArray(value);
   const isCount = (value) => Number.isFinite(value) && value >= 0;
+  const isWholeCount = (value) => isCount(value) && Number.isSafeInteger(value);
+  const isTimestamp = (value) => isCount(value) && Number.isFinite(new Date(value).getTime());
   const optionalString = (value) => value === undefined || value === null || typeof value === "string";
   const optionalBoolean = (value) => value === undefined || typeof value === "boolean";
 
@@ -59,29 +61,45 @@
     if (typeof attempt.questionId !== "string" || !attempt.questionId) return false;
     if (!Progress.SOURCES.includes(attempt.source)) return false;
     if (attempt.correct !== true && attempt.correct !== false && attempt.correct !== null) return false;
-    if (!isCount(attempt.timestamp)) return false;
+    if (!isTimestamp(attempt.timestamp)) return false;
     if (attempt.difficulty !== undefined && attempt.difficulty !== null && !TIERS.includes(attempt.difficulty)) return false;
     if (attempt.test !== undefined && attempt.test !== null && !TESTS.includes(attempt.test)) return false;
     if (attempt.timeMs !== undefined && attempt.timeMs !== null && !isCount(attempt.timeMs)) return false;
-    if (!optionalBoolean(attempt.hinted) || !optionalBoolean(attempt.answered)) return false;
-    return ["sectionKey", "domain", "skill", "subskill", "templateId", "seed", "sessionId", "runCode", "feedback"]
+    if (!optionalBoolean(attempt.hinted) || !optionalBoolean(attempt.answered) || !optionalBoolean(attempt.repeat)) return false;
+    if (attempt.templateVersion !== undefined && (!Number.isSafeInteger(attempt.templateVersion) || attempt.templateVersion < 1)) return false;
+    if (attempt.contentIdentity !== undefined && (typeof attempt.contentIdentity !== "string" ||
+        !/^q1-[0-9a-f]{16}$/.test(attempt.contentIdentity))) return false;
+    if (attempt.response !== undefined && attempt.response !== null && typeof attempt.response !== "string" &&
+        !(typeof attempt.response === "number" && Number.isFinite(attempt.response))) return false;
+    return ["sectionKey", "domain", "skill", "subskill", "templateId", "seed", "sessionId", "runCode", "feedback", "reviewOf"]
       .every((field) => optionalString(attempt[field]));
   }
 
   function validTally(value) {
-    return value === undefined || (isObject(value) && isCount(value.total) && isCount(value.correct));
+    return value === undefined || (isObject(value) && isWholeCount(value.total) && isWholeCount(value.correct) &&
+      value.correct <= value.total && (value.hintedCorrect === undefined ||
+        (isWholeCount(value.hintedCorrect) && value.hintedCorrect <= value.correct)));
   }
 
   function validSession(session) {
     return isObject(session) && typeof session.id === "string" && Boolean(session.id) &&
-      isCount(session.total) && isCount(session.correct) &&
-      (session.finishedAt === undefined || session.finishedAt === null || isCount(session.finishedAt)) &&
+      validTally(session) &&
+      (session.finishedAt === undefined || session.finishedAt === null || isTimestamp(session.finishedAt)) &&
+      (session.startedAt === undefined || session.startedAt === null || isTimestamp(session.startedAt)) &&
+      (session.timeMs === undefined || session.timeMs === null || isCount(session.timeMs)) &&
       optionalString(session.sectionKey) && optionalString(session.kind) && optionalString(session.title) &&
-      validTally(session.hard) && (session.byDomain === undefined || isObject(session.byDomain));
+      optionalString(session.testId) && optionalString(session.discardedKind) &&
+      (session.scored === undefined || (isWholeCount(session.scored) && session.correct <= session.scored && session.scored <= session.total)) &&
+      (session.sections === undefined || (Array.isArray(session.sections) && session.sections.every((key) => typeof key === "string"))) &&
+      (session.modules === undefined || (Array.isArray(session.modules) && session.modules.every((entry) =>
+        isObject(entry) && typeof entry.sessionId === "string"))) &&
+      validTally(session.hard) && (session.byDomain === undefined ||
+        (isObject(session.byDomain) && Object.values(session.byDomain).every((value) => isObject(value) && validTally(value))));
   }
 
   function validErrorTag(tag) {
-    return isObject(tag) && Progress.ERROR_REASONS.includes(tag.reason) && optionalString(tag.rule);
+    return isObject(tag) && Progress.ERROR_REASONS.includes(tag.reason) && optionalString(tag.rule) &&
+      (tag.at === undefined || isTimestamp(tag.at));
   }
 
   // The fields every stored v3 record has, so a stray JSON file with a
@@ -259,7 +277,7 @@
     Object.keys(imported.errorLog || {}).forEach((id) => {
       errorLog[renamed.get(id) || id] = imported.errorLog[id];
     });
-    const merged = Progress.merge(current, Object.assign({}, imported, { attempts, errorLog, epoch: current.epoch }));
+    const merged = Progress.merge(current, Object.assign({}, imported, { attempts, epoch: current.epoch }));
     const marked = [...new Set(current.marked.concat(imported.marked || []))];
     const officialScores = (imported.officialScores || []).reduce(
       (record, score) => (record.officialScores.some((entry) => entry.id === score.id)
@@ -269,6 +287,7 @@
     ).officialScores;
     const progress = Object.assign({}, merged, {
       marked,
+      errorLog: Object.assign({}, errorLog, current.errorLog),
       plan: Object.fromEntries(["SAT", "ACT"]
         .map((test) => [test, Object.assign({}, (imported.plan || {})[test], (current.plan || {})[test])])
         .filter(([, own]) => Object.keys(own).length)),

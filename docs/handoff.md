@@ -1,4 +1,25 @@
-# Handoff — 2026-09-26
+# Handoff — 2026-10-02
+
+The current review record is
+[`reviews/2026-10-02-cold-review.md`](reviews/2026-10-02-cold-review.md).
+It supersedes the older operational assumptions below. Source fingerprints
+now cover entire defining files and local dependencies; the review manifest
+binds independent sampled answers to each current version and difficulty.
+Content changes require both a registry update and renewed review evidence.
+Do not regenerate an acceptance manifest by copying the generator's answers.
+
+Science practice is unavailable pending a reviewed passage-set replacement.
+Other ACT sections remain fixed exercise banks with unverified difficulty.
+Existing IDs, saved outcomes and unfinished drafts are preserved. Archived SAT
+banks remain for old history. The platform and ACT Math WIP branches listed
+below were deliberately left untouched; their old tests and assumptions are
+not evidence that they integrate with this release.
+
+Run the complete gate and deep template checks after source changes. Use UTC
+for the complete test run to match CI. Source-bound acceptance, finite seeded
+checks and browser evidence do not establish empirical SAT calibration.
+
+## Preserved handoff — 2026-09-26
 
 State of the work at the end of the 2026-09-26 session, and what to do
 next. The product-level plan is `roadmap.md` (Next); the review that

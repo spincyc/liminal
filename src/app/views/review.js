@@ -148,8 +148,8 @@
       const progress = ctx.store.get();
       const info = currentInfo();
       const attempts = Progress.withCurrentTemplates(Progress.attemptsFor(progress, { test }), info);
-      const live = (entry) => entry.source !== "template" ||
-        Boolean((info[entry.sectionKey] || {})[entry.templateId]);
+      const live = (entry) => entry.source === "template"
+        ? Boolean((info[entry.sectionKey] || {})[entry.templateId]) : Boolean(entry.contentIdentity);
       const entries = Queue.build(attempts);
       const latest = new Map();
       attempts.forEach((attempt) => {
@@ -377,6 +377,8 @@
       const byId = new Map(exactQuestions.map((question) => [question.id, question]));
       exact.forEach((entry) => {
         const question = byId.get(entry.exactId);
+        if (question && !question.templateId && !Progress.questionMatchesAttempt(question,
+          { ...entry, questionId: entry.exactId })) return;
         if (question) built.set(entry.questionId, { ...question, reviewOf: entry.questionId });
       });
       const freshBySection = new Map();
@@ -486,20 +488,21 @@
       return blocks;
     }
 
-    // The question as the student saw it (rebuilt from its template or
-    // bank): figure, passage, stem, the choices with their answer and the
-    // correct one, and the explanation.
+    // Only attach a recorded answer to the exact content the student saw.
+    // Stable ids alone do not identify a question after its bank is revised.
     function questionDetail(question, attempt) {
-      const math = mathOptions(question.sectionKey);
-      const parts = stimulusFor(question);
       const wrap = h("div", { className: "review-question" });
-      if (attempt && attempt.updated) {
+      if (attempt && !Progress.questionMatchesAttempt(question, attempt)) {
         wrap.appendChild(h("p", {
           className: "review-note",
-          text: "This template was revised after you answered, so this is the question as it is built now; " +
-            "your recorded answer may not match these choices.",
+          text: "The original version of this question is unavailable or could not be verified. " +
+            "Your recorded answer and result are kept, but its choices and explanation are hidden. " +
+            "Practice uses the current version as a new attempt.",
         }));
+        return wrap;
       }
+      const math = mathOptions(question.sectionKey);
+      const parts = stimulusFor(question);
       const figure = question.figure ? Render.renderFigure(question.figure) : null;
       if (figure) wrap.appendChild(figure);
       const stimulus = parts.stimulus
@@ -538,7 +541,7 @@
           loaded = true;
           container.replaceChildren(question
             ? questionDetail(question, attempt)
-            : h("p", { className: "muted", text: "This question can no longer be built: its template was retired." }));
+            : h("p", { className: "muted", text: "The original question is no longer available. Your recorded answer and result are kept." }));
         } catch (error) {
           container.replaceChildren(h("p", {
             className: "status-line error",
@@ -568,7 +571,8 @@
           text: "A question you miss comes back the next day as the same question. Each time you answer it " +
             "correctly on or after its day, it waits longer: 3 days, then 7, then 21. " +
             (act
-              ? "ACT questions come from fixed banks, so they come back as they were. "
+              ? "ACT questions return only when their original version can be verified. If the bank changes, " +
+                "your results stay in history and you can practise the current version as a new attempt. "
               : "From the second return on you get a fresh version built the same way, with new numbers or a " +
                 "new passage, so you practise the method rather than remember an answer. ") +
             "A correct answer at the 21-day return marks it learned.",
@@ -599,8 +603,9 @@
       if (schedule.unavailable.length) {
         card.appendChild(h("p", {
           className: "field-note",
-          text: `${plural(schedule.unavailable.length, "scheduled question")} can no longer be built because ` +
-            "their templates were retired, so they are left out.",
+          text: `${plural(schedule.unavailable.length, "scheduled question")} cannot currently be practised because ` +
+            "the section is paused or the original question version cannot be verified. Their records stay in " +
+            "your history. In Missed, choose Try current version for a new attempt when the section is available.",
         }));
       }
       if (dueCount) {
@@ -615,7 +620,8 @@
           title: `${model.test} review: due today`,
           questions: await dueQuestions(picked),
           feedback: feedbackAtEnd ? "end" : "instant",
-          empty: "None of the due questions could be built. Refresh the page and try again.",
+          empty: "The original versions of these due questions are no longer available or could not be verified. " +
+            "Your results are kept. Use Missed or Marked to practise current versions as new attempts.",
         })));
         const check = h("input", { type: "checkbox" });
         check.checked = feedbackAtEnd;
@@ -652,7 +658,7 @@
     }
 
     function dueRow(entry) {
-      const mode = Queue.modeOf(entry) === "fresh" ? "a fresh version" : "the same question";
+      const mode = Queue.modeOf(entry) === "fresh" ? "a fresh version" : "the original question, if still available";
       const overdue = model.schedule.today - entry.dueDay;
       const when = overdue <= 0 ? "Due today" : `Due since ${formatDay(entry.dueDay)}`;
       const facts = [
@@ -876,7 +882,7 @@
         : "The questions in this list you have not since answered correctly, one per question design. ";
       return h("div", { className: "review-toolbar" }, [
         start,
-        h("p", { className: "muted", text: `${note}Feedback after each question, no timer.` }),
+        h("p", { className: "muted", text: `${note}Uses current question versions as new attempts. Feedback after each question, no timer.` }),
         status,
       ]);
     }
@@ -1003,14 +1009,14 @@
       ]);
       const toggle = questionToggle(`missed:${attempt.id}`, attempt.questionId, attempt);
       const actionStatus = statusLine();
-      const retry = h("button", { type: "button", className: "text-link", text: "Retry this" });
+      const retry = h("button", { type: "button", className: "text-link", text: "Try current version" });
       retry.dataset.focusKey = `${attempt.id}:retry`;
       retry.addEventListener("click", () => startSet(retry, actionStatus, async () => {
         const question = await loadQuestion(attempt.questionId);
         return {
-          title: `Retry: ${attempt.skill || "missed question"}`,
+          title: `Current version: ${attempt.skill || "missed question"}`,
           questions: question ? [{ ...question, reviewOf: Queue.rootOf(attempt) }] : [],
-          empty: "This question can no longer be built: its template was retired.",
+          empty: "This question is no longer available for practice. Your recorded answer and result are kept.",
         };
       }));
       let fresh = null;
@@ -1121,7 +1127,8 @@
         start,
         h("p", {
           className: "muted",
-          text: "Feedback after each question, no timer. Questions you leave unmarked in the set leave this list.",
+          text: "Uses current question versions as new attempts. Feedback after each question, no timer. " +
+            "Questions you leave unmarked in the set leave this list.",
         }),
         status,
       ]);

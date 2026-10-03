@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p040",
   type: "literary-narrative",
   title: "Clutch",
-  intro: "This passage is adapted from a novel. Rana, seventeen, is being taught to drive by her father in the car park of a closed garden centre.",
+  intro: "This is an original fictional passage. Rana, seventeen, is being taught to drive by her father in the car park of a closed garden centre.",
   content: `Her father taught her the way he had learned, which was from a man at a depot in 1994
 who had thirty minutes and no particular obligation. This meant a number of things that
 Rana did not discover in order.
@@ -42,7 +42,7 @@ the two systems began to interleave at the level where you do not choose. On the
 Wednesday she went to check a mirror the book wanted and found she had already checked it,
 which was not the book's doing.
 
-She told him on the sixth Sunday, in the car park, with the engine off. She said she had
+She told him on the seventh Sunday, in the car park, with the engine off. She said she had
 been driving with Sami. She said the reason. She got most of the way through it before she
 noticed that he had gone completely still in the way that in her family means somebody is
 being careful.
@@ -89,22 +89,22 @@ to under any other circumstances.`,
       hint: "The resolution is a sentence he says in the car park.",
     },
     {
-      subskill: "locate detail",
-      family: "stated-detail",
+      subskill: "sequence",
+      family: "narrative-event-sequence",
       difficulty: "Easy",
-      stem: "According to the passage, Rana's father learned to drive from:",
-      key: "a man at a depot with half an hour to spare.",
+      stem: "Which sequence accurately traces what happens after Rana tells her father about driving with Sami?",
+      key: "She demonstrates the mirror routine; he briefly leaves the car; he tells her to follow the book.",
       wrong: [
-        ["an instructor at a driving school in 1994.", "The passage names a depot and a man with no particular obligation."],
-        ["a relative who took him out at weekends.", "No family member is described as having taught him."],
-        ["the same book Rana carries on her knees.", "The book is hers, bought with her own money."],
+        ["He briefly leaves the car; she demonstrates the mirror routine; he tells her to follow the book.", "The passage places the demonstration before he gets out and walks around the car."],
+        ["She demonstrates the mirror routine; he tells her to follow the book; he briefly leaves the car.", "He gets back into the car before telling her to follow the book."],
+        ["He tells her to follow the book; he briefly leaves the car; she demonstrates the mirror routine.", "He first asks to see the routine; the instruction to follow the book comes after the demonstration and his brief walk."],
       ],
-      why: "The first sentence says he was taught \"from a man at a depot in 1994 who had thirty minutes and no particular obligation.\"",
+      why: "The passage first has Rana show the routine, then describes her father getting out and walking around the car, and finally gives his instruction to do all the routines like the book.",
       steps: [
-        "Read the opening sentence.",
-        "Take the description it gives of his teacher.",
+        "Locate the scene immediately after Rana’s admission about Sami.",
+        "Follow the demonstration, the father’s movement, and his instruction in order.",
       ],
-      hint: "The detail includes a duration.",
+      hint: "Track what she shows, what he does, and what he then says.",
     },
     {
       subskill: "cause and effect",
@@ -114,7 +114,7 @@ to under any other circumstances.`,
       key: "began to mix below the level of choice.",
       wrong: [
         ["took more time than she could spare each week.", "Time pressure concerns the eleven weeks, not the plan's failure."],
-        ["were discovered by her father before she confessed.", "She tells him herself on the sixth Sunday."],
+        ["were discovered by her father before she confessed.", "She tells him herself on the seventh Sunday."],
         ["produced identical results in every situation.", "The passage stresses that the two systems differ."],
       ],
       why: "The passage says the plan lasted nine days \"because the two systems began to interleave at the level where you do not choose,\" and she found she had checked a mirror without deciding to.",
@@ -125,8 +125,8 @@ to under any other circumstances.`,
       hint: "The failure is about habit rather than about time.",
     },
     {
-      subskill: "meaning in context",
-      family: "vocabulary-in-context",
+      subskill: "figurative language",
+      family: "figurative-comparison",
       difficulty: "Easy",
       stem: "The passage says the book sat on her knees \"like an opinion\" chiefly to convey that it:",
       key: "silently contradicted her father's teaching.",

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-const { loadBank, loadCatalog } = require("./lib/content");
+const { loadBank, loadCatalog, bankSections } = require("./lib/content");
 
 const MAX_POSITION_SHARE = 0.30;
 const POSITION_COUNT = 4;
@@ -68,7 +68,8 @@ function formatProfiles(sectionKey, questions) {
 function main() {
   const catalog = loadCatalog();
   const requested = process.argv.slice(2);
-  const sectionKeys = requested.length ? requested : catalog.sections.map((section) => section.key);
+  const sectionKeys = requested.length ? requested : bankSections(catalog).map((section) => section.key);
+  sectionKeys.forEach((key) => { if (!catalog.sections.some((section) => section.key === key)) throw new Error(`Unknown section ${key}`); });
   const problems = [];
   sectionKeys.forEach((sectionKey) => {
     const bank = loadBank(sectionKey);

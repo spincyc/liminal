@@ -5,7 +5,8 @@
 // College Board does not publish its routing rules or the exact difficulty
 // mix of each module, so the blueprint below is a practice approximation and
 // every page that uses it must say so. What is official is kept exactly:
-// module lengths, times, and domain counts per module.
+// module lengths and times. Domain counts below approximate the published
+// section-wide shares; they are not an official per-module blueprint.
 //
 // A module is chosen template by template, never more than one question per
 // template, and a form never repeats a template across its modules. A form is
@@ -109,6 +110,14 @@
 
   const BREAK_MINUTES = 10;
   const SECTION_ORDER = ["sat-reading-writing", "sat-math"];
+  // The framework groups these domains by skill before increasing difficulty
+  // within each skill. It does not prescribe the skill order: use the catalog's
+  // order. Standard English Conventions increases by difficulty across skills.
+  const RW_SKILLS = {
+    "Craft and Structure": ["Words in Context", "Text Structure and Purpose", "Cross-Text Connections"],
+    "Information and Ideas": ["Central Ideas and Details", "Inferences", "Command of Evidence"],
+    "Expression of Ideas": ["Rhetorical Synthesis", "Transitions"],
+  };
 
   // On-screen tests route Module 2 by Module 1: the harder module at or
   // above this share of Module 1 correct, the easier one below it. A
@@ -246,8 +255,9 @@
 
   /* ------------------------------------------------------------ choosing */
 
-  // Official order within a module: Reading and Writing by domain, Easy to
-  // Hard within each domain; Math Easy to Hard. Ties fall to a seeded
+  // Reading and Writing: fixed domain order, then skill and Easy to Hard,
+  // except Standard English Conventions, which is Easy to Hard across skills.
+  // Math is Easy to Hard across the module. Ties fall to a seeded
   // shuffle, so the order depends only on the templates, their labels, and
   // the seed.
   function orderModule(templates, sectionKey, seed) {
@@ -260,8 +270,15 @@
       const index = TIERS.indexOf(template.difficulty);
       return index < 0 ? TIERS.length : index;
     };
+    const skillRank = (template) => {
+      const skills = section.order === "domain" && RW_SKILLS[template.domain];
+      if (!skills) return [0, ""];
+      const index = skills.indexOf(template.skill);
+      return [index < 0 ? skills.length : index, String(template.skill || "")];
+    };
     const rank = (template) => [
       section.order === "domain" ? domainRank(template) : 0,
+      ...skillRank(template),
       tierRank(template),
       hash(`${seed}|order|${template.id}`),
       template.id,
@@ -288,7 +305,7 @@
   // that its own tier could not fill:
   //   { domain, tier, wanted, filled, borrowed: [{ tier, count }], missing }
   // A cell still `missing` questions leaves the module short: templates are
-  // never borrowed across domains, because domain counts are official.
+  // never borrowed across domains, preserving the chosen domain allocation.
   function chooseModule(templates, spec, options) {
     const settings = options || {};
     const seed = String(settings.seed === undefined ? "" : settings.seed);

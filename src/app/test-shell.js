@@ -50,6 +50,10 @@
     "act-science": [
       "Each passage is followed by several questions. Refer to the passage as often as you need. A calculator is not allowed.",
     ],
+    "act-writing": [
+      "Read the issue and perspectives, then develop your own position and analyze its relationship to at least one given perspective. Support your ideas with reasoning and specific examples.",
+      "Essays are self-reviewed, not automatically scored. Save and exit keeps an unfinished draft; download your essay to keep its text after you close the finished report.",
+    ],
   };
 
   const SPR_RULES = [
@@ -73,8 +77,9 @@
     hinted: "Right after a hint, not counted",
     incorrect: "Incorrect",
     omitted: "Not answered",
+    unscored: "Self-review",
   };
-  const VERDICT_ICONS = { correct: "check", hinted: "bulb", incorrect: "cross", omitted: "warning" };
+  const VERDICT_ICONS = { correct: "check", hinted: "bulb", incorrect: "cross", omitted: "warning", unscored: "list" };
 
   let active = null;
 
@@ -214,7 +219,7 @@
     if (!info || !info.seen) return "";
     const parts = [];
     if (info.answered) parts.push(`${info.answered} answered`);
-    if (info.blank) parts.push(`${info.blank} left blank, which count${info.blank === 1 ? "s" : ""} as wrong`);
+    if (info.blank) parts.push(`${info.blank} left blank`);
     const verb = info.seen === 1 ? "is" : "are";
     return `The ${plural(info.seen, "question")} you saw ${verb} recorded in your progress (${parts.join(" and ")})` +
       (info.unseen ? `; the ${info.unseen} you never opened ${info.unseen === 1 ? "is" : "are"} not.` : ".");
@@ -724,6 +729,7 @@
     // A set that spans sections (a mini test) switches directions and tools
     // at each section boundary, as the real test does.
     const mixed = new Set(session.state.questions.map((question) => question.sectionKey).filter(Boolean)).size > 1;
+    const testingTitle = mixed ? "Practice test" : [first.test, first.section].filter(Boolean).join(" ") || "Practice set";
     const learnHref = typeof options.learnHref === "function" ? options.learnHref : null;
 
     let timeUpNotice = false;
@@ -819,7 +825,7 @@
       className: "lm-shell",
       role: "dialog",
       "aria-modal": "true",
-      "aria-label": `Digital test mode: ${title}`,
+      "aria-label": `Digital test mode: ${testingTitle}`,
       dataset: { view },
     });
     refs.root = shell;
@@ -889,9 +895,10 @@
       })
       : null;
 
+    refs.title = h("h1", { className: "lm-title", text: testingTitle });
     refs.top = h("header", { className: "lm-top" }, [
       h("div", { className: "lm-top-left" }, [
-        h("h1", { className: "lm-title", text: title }),
+        refs.title,
         refs.sectionLabel,
         refs.directionsToggle,
       ]),
@@ -1030,6 +1037,14 @@
       refs.top, refs.directions, refs.alert, refs.main, refs.bottom, refs.scrim,
       refs.navigator, refs.reference, refs.notes, refs.livePolite, refs.liveAssertive, refs.dialog,
     ]);
+    // Text enlargement can wrap either toolbar. Panels must clear their
+    // actual heights, not assume the default one-row bars.
+    const frameObserver = typeof root.ResizeObserver === "function"
+      ? new root.ResizeObserver(() => {
+        shell.style.setProperty("--lm-top-h", `${refs.top.getBoundingClientRect().height}px`);
+        shell.style.setProperty("--lm-bottom-h", `${refs.bottom.getBoundingClientRect().height}px`);
+      })
+      : null;
 
     /* ---- helpers */
     function announce(text, assertive) {
@@ -1051,11 +1066,13 @@
 
     function responseLabel(question, index, response) {
       if (!hasResponse(response)) return "—";
+      if (question.responseType === "essay") return "Essay drafted";
       if (question.responseType === "multiple-choice") return letterOf(question, index, Number(response));
       return String(response);
     }
 
     function correctLabel(question, index) {
+      if (question.responseType === "essay") return "Self-review guide";
       if (question.responseType === "multiple-choice") {
         return letterOf(question, index, Number(question.correctAnswer));
       }
@@ -1145,7 +1162,8 @@
         ]),
         h("div", { className: "lm-directions-body" }, directionsFor()
           .map((text) => h("p", { text }))
-          .concat(session.state.feedback === "instant"
+          .concat(currentQuestion().responseType === "essay"
+            ? [] : session.state.feedback === "instant"
             ? [h("p", { text: "Instant feedback is on: use Check to see whether your answer is right, then read the explanation. A checked answer is locked." })]
             : [h("p", { text: "Nothing is scored until you finish. Use Mark for Review to flag questions, and the answer eliminator to cross out choices you have ruled out." })])
           .concat(toolAvailable("annotate") || toolAvailable("lineReader")
@@ -1354,7 +1372,7 @@
       if (counts.unanswered > 0) {
         confirmDialog({
           title: `Finish with ${counts.unanswered} unanswered question${counts.unanswered === 1 ? "" : "s"}?`,
-          text: "Unanswered questions count as incorrect. You can go back and answer them, or finish now.",
+          text: "Unanswered scored questions count as incorrect; essays are self-reviewed. You can go back and answer them, or finish now.",
           cancel: "Go back",
           confirm: "Finish",
           onConfirm: () => finishSession("user"),
@@ -1468,7 +1486,7 @@
         announce("5 minutes remaining.", true);
         save();
       }
-      if (!wasFinished && session.state.finished) {
+      if (session.state.finished && (!wasFinished || !session.state.reported)) {
         timeUp();
         return;
       }
@@ -1514,7 +1532,8 @@
       refs.markButton = null;
       refs.elimToggle = null;
       if (reviewing) {
-        const verdict = verdictOf(session.itemStatus(index));
+        const status = session.itemStatus(index);
+        const verdict = verdictOf(status);
         bar.appendChild(h("span", { className: `lm-verdict-tag is-${verdict}` }, [
           icon(VERDICT_ICONS[verdict]),
           VERDICT_LABELS[verdict],
@@ -1694,6 +1713,66 @@
       );
     }
 
+    function buildEssay(question, index, reviewing) {
+      const response = session.state.responses[index];
+      const wrap = h("div", { className: "lm-essay" });
+      const note = h("p", { id: "lm-essay-note", className: "lm-essay-note", text:
+        "Your essay is self-reviewed, not scored. Save and exit keeps an unfinished draft. " +
+        "Download it to keep the text after closing the finished report; Progress keeps only your completion record." });
+      if (reviewing) {
+        wrap.append(h("h3", { text: "Your essay" }), h("div", {
+          className: "lm-essay-response", text: hasResponse(response) ? String(response) : "No essay drafted.",
+        }));
+      } else {
+        refs.essayInput = h("textarea", {
+          id: "lm-essay-input", className: "lm-essay-input", rows: "14", "aria-describedby": "lm-essay-note",
+          spellcheck: "false",
+          onInput: () => {
+            const text = refs.essayInput.value;
+            session.select(text.trim() ? text : null);
+            save();
+            syncQuestion();
+          },
+        });
+        refs.essayInput.value = hasResponse(response) ? String(response) : "";
+        wrap.append(h("label", { className: "lm-spr-label", for: "lm-essay-input", text: "Your essay" }), refs.essayInput);
+      }
+      const download = h("button", {
+        type: "button", className: "lm-btn lm-btn-secondary", text: "Download essay",
+        onClick: () => {
+          const text = String(session.state.responses[index] || "");
+          const url = URL.createObjectURL(new Blob([text], { type: "text/plain;charset=utf-8" }));
+          const link = h("a", { href: url, download: `liminal-essay-${index + 1}.txt`, hidden: true });
+          shell.append(link);
+          link.click();
+          link.remove();
+          root.setTimeout(() => URL.revokeObjectURL(url), 10000);
+        },
+      });
+      wrap.append(note, download);
+      if (reviewing) {
+        const guide = question.correctAnswer || {};
+        const list = (label, entries) => {
+          if (!Array.isArray(entries) || !entries.length) return;
+          wrap.append(h("section", { className: "lm-exp-section" }, [
+            h("h3", { text: label }), h("ul", { className: "lm-steps" }, entries.map((text) => h("li", { text }))),
+          ]));
+        };
+        list("Self-review criteria", guide.reviewCriteria);
+        if (typeof guide.sampleThesis === "string") {
+          wrap.append(h("section", { className: "lm-exp-section" }, [
+            h("h3", { text: "One possible thesis" }), h("p", { text: guide.sampleThesis }),
+          ]));
+        }
+        list("One possible outline", guide.outline);
+      } else if (question.hint) {
+        wrap.append(h("details", { className: "lm-spr-rules" }, [
+          h("summary", { text: "Planning hint" }), h("p", { text: question.hint }),
+        ]));
+      }
+      return wrap;
+    }
+
     function explanationBlock(question, index, full) {
       const parts = [];
       const response = session.state.responses[index];
@@ -1770,6 +1849,8 @@
     // called plainly correct: it is not counted as correct here or in
     // Progress.
     function verdictOf(status) {
+      const question = status.question || session.state.questions[status.index];
+      if (question && question.responseType === "essay") return "unscored";
       if (!status.answered) return "omitted";
       if (!status.correct) return "incorrect";
       return status.hinted ? "hinted" : "correct";
@@ -1778,7 +1859,9 @@
     function verdictBanner(question, index) {
       const kind = verdictOf(session.itemStatus(index));
       const answer = correctLabel(question, index);
-      const text = kind === "correct"
+      const text = kind === "unscored"
+        ? "Self-review: compare your essay with the criteria and guide. There is no single correct position."
+        : kind === "correct"
         ? "Correct."
         : kind === "hinted"
           ? "Correct, with a hint — not counted as correct."
@@ -1806,6 +1889,7 @@
         "aria-expanded": "false",
         onClick: () => {
           session.useHint();
+          if (session.state.finished) { timeUp(); return; }
           save();
           syncQuestion();
           if (refs.hintBox && !refs.hintBox.hidden) announce(question.hint || "No hint for this question.");
@@ -1824,6 +1908,7 @@
         onClick: () => {
           if (!hasResponse(session.state.responses[session.state.index])) return;
           session.check();
+          if (session.state.finished) { timeUp(); return; }
           const item = session.state.index;
           const verdict = verdictBanner(question, item);
           save();
@@ -1888,11 +1973,13 @@
       const figureNode = question.figure ? Render.renderFigure(question.figure) : null;
       const header = buildQuestionHeader(question, index, reviewing);
       const stem = h("div", { className: "lm-stem", id: "lm-stem" }, [Render.renderText(parts.stem, mathOptions(question))]);
+      refs.essayInput = null;
       const answer = question.responseType === "multiple-choice" && Array.isArray(question.choices)
         ? buildChoices(question, index, reviewing)
-        : buildNumeric(question, index, reviewing);
+        : question.responseType === "essay" ? buildEssay(question, index, reviewing)
+          : buildNumeric(question, index, reviewing);
       if (question.responseType !== "multiple-choice") refs.choiceRows = [];
-      if (question.responseType === "multiple-choice" || reviewing) {
+      if (question.responseType !== "numeric" || reviewing) {
         refs.sprInput = null;
         refs.sprPreview = null;
       }
@@ -1914,7 +2001,7 @@
       if (reviewing) {
         questionPane.appendChild(verdictBanner(question, index).node);
         questionPane.appendChild(explanationBlock(question, index, true));
-      } else if (session.state.feedback === "instant") {
+      } else if (session.state.feedback === "instant" && question.responseType !== "essay") {
         questionPane.appendChild(buildInstantArea(question, index));
       }
 
@@ -1977,6 +2064,7 @@
     // Updates the mutable parts of the current question in place, so
     // selecting, striking, or typing never rebuilds the screen.
     function syncQuestion() {
+      if (session.state.finished && !session.state.reported) { timeUp(); return; }
       if (view !== "question") {
         updateBottom();
         return;
@@ -2032,6 +2120,7 @@
         refs.sprInput.classList.toggle("is-wrong", checked && !session.isCorrect(index));
         renderPreview(refs.sprInput.value);
       }
+      if (refs.essayInput) refs.essayInput.disabled = lockedNow;
       if (refs.checkButton) {
         const info = question.responseType === "multiple-choice"
           ? null
@@ -2670,7 +2759,7 @@
         cellFor(status, (index) => navigate(index))));
       const children = [
         h("div", { className: "lm-panel-head" }, [
-          h("h2", { className: "lm-panel-title", text: `${title}: Questions` }),
+          h("h2", { className: "lm-panel-title", text: `${session.state.finished ? title : testingTitle}: Questions` }),
           h("button", {
             type: "button",
             className: "lm-icon-btn",
@@ -2718,7 +2807,7 @@
       ].filter(Boolean).join(" · ");
       const card = h("section", { className: "lm-review-card", "aria-labelledby": "lm-review-card-title" }, [
         h("div", { className: "lm-review-card-head" }, [
-          h("h3", { id: "lm-review-card-title", text: title }),
+          h("h3", { id: "lm-review-card-title", text: testingTitle }),
           legend(),
         ]),
         h("div", { className: "lm-grid lm-grid-big" }, statuses.map((status) =>
@@ -2730,7 +2819,7 @@
           className: "lm-lede",
           text: moduleInfo
             ? `Select a question number to go back to it. When you select Next, this module is submitted and you move on to ${moduleInfo.next || "the next part"}; you can't come back to it.`
-            : "Select a question number to go back to it. Nothing is scored until you select Finish.",
+            : "Select a question number to go back to it. Select Finish for your report and self-review guides.",
         }),
         h("p", { className: "lm-review-counts", text: summaryText }),
         card,
@@ -2753,7 +2842,9 @@
     }
 
     function renderReportView() {
-      const report = session.summary();
+      // A complete test can retain its original totals even when an old
+      // question version is unavailable for the detailed answer review.
+      const report = Object.assign({}, session.summary(), options.reportSummary || {});
       const heading = h("h2", { className: "lm-page-title", tabindex: "-1", id: "lm-qnum", text: "Your results" });
       const children = [
         h("p", {
@@ -2766,7 +2857,7 @@
       if (timeUpNotice || report.finishReason === "time") {
         children.push(h("div", { className: "lm-notice", role: "note" }, [
           icon("clock"),
-          h("p", { text: "Time ran out, so the set ended automatically. Unanswered questions count as incorrect." }),
+          h("p", { text: "Time ran out, so the set ended automatically. Unanswered scored questions count as incorrect; essays are self-reviewed." }),
         ]));
       }
       const used = formatClock(report.elapsedMs, false);
@@ -2786,9 +2877,10 @@
       // A set that spans sections (the full-length test, a mini test)
       // reports each section on its own, as the real test scores them, with
       // its Hard questions; the combined count is secondary.
-      const sections = report.bySection.length > 1 ? report.bySection : null;
+      const scoredSections = report.bySection.filter((row) => row.scored > 0);
+      const sections = scoredSections.length > 1 ? scoredSections : null;
       const scoreLine = (row) => [
-        h("strong", { text: `${row.correct} of ${row.total}` }),
+        h("strong", { text: `${row.correct} of ${row.scored}` }),
         ` correct (${percent(row.accuracy)})`,
       ];
       const headline = sections
@@ -2804,13 +2896,16 @@
           h("p", {
             className: "lm-score-combined",
             text: `${sections.length === 2 ? "Both sections" : `All ${sections.length} sections`} together: ` +
-              `${report.correct} of ${report.total} (${percent(report.accuracy)}). ` +
+              `${report.correct} of ${report.scored} (${percent(report.accuracy)}). ` +
               "Only a count: the real test scores each section on its own.",
           }),
         ])
-        : h("div", { className: "lm-score" }, [
+        : report.scored === 0 ? h("div", { className: "lm-score" }, [
+          h("p", { className: "lm-score-main", text: "Ready for self-review" }),
+          h("p", { text: "Essays are not automatically scored." }),
+        ]) : h("div", { className: "lm-score" }, [
           h("p", { className: "lm-score-main" }, [
-            h("strong", { text: `${report.correct} of ${report.total}` }),
+            h("strong", { text: `${report.correct} of ${report.scored}` }),
             " correct",
           ]),
           h("p", { className: "lm-score-pct", text: percent(report.accuracy) }),
@@ -2826,6 +2921,12 @@
           statBlock("Time used", timeValue, timeNote),
         ]),
       ]));
+      if (report.unscored) {
+        children.push(h("p", { className: "lm-report-note", text:
+          `${report.unscored} essay${report.unscored === 1 ? " is" : "s are"} kept out of accuracy. ` +
+          "Use Review answers to read the self-review criteria and download your drafts before closing this report. " +
+          "Progress does not keep the essay text." }));
+      }
       if (report.hintedCorrect) {
         children.push(h("p", { className: "lm-report-note", text:
           `${report.hintedCorrect} of your answers ${report.hintedCorrect === 1 ? "was" : "were"} right only after a hint, so ` +
@@ -2836,7 +2937,7 @@
       (Array.isArray(options.reportNotes) ? options.reportNotes : []).forEach((text) => {
         children.push(h("p", { className: "lm-report-note", text: String(text) }));
       });
-      children.push(h("p", { className: "lm-caveat", text: options.caveat ||
+      if (report.scored) children.push(h("p", { className: "lm-caveat", text: options.caveat ||
         "This is accuracy on one practice set, not a scaled score. The real test adapts its second module to your first, weights questions differently, and draws on a wider range of difficulty, so a percent correct here does not convert to an SAT or ACT score." }));
 
       const actions = typeof options.reportActions === "function"
@@ -2877,19 +2978,20 @@
         ]));
       });
 
-      if (report.byDifficulty.length) {
+      const difficulties = report.byDifficulty.filter((row) => row.scored > 0);
+      if (difficulties.length) {
         children.push(h("section", { className: "lm-report-section" }, [
           h("h3", { text: "By difficulty" }),
-          h("div", { className: "lm-difficulty" }, report.byDifficulty.map((row) =>
+          h("div", { className: "lm-difficulty" }, difficulties.map((row) =>
             h("div", { className: "lm-diff-card" }, [
               h("p", { className: "lm-diff-name", text: row.difficulty }),
-              h("p", { className: "lm-diff-value", text: `${row.correct} of ${row.total}` }),
+              h("p", { className: "lm-diff-value", text: `${row.correct} of ${row.scored}` }),
               h("p", { className: "lm-diff-pct", text: percent(row.accuracy) }),
             ]))),
         ]));
       }
 
-      children.push(h("section", { className: "lm-report-section" }, [
+      if (report.scored) children.push(h("section", { className: "lm-report-section" }, [
         h("h3", { text: "By domain, weakest first" }),
         h("div", { className: "lm-table-wrap" }, [
           h("table", { className: "lm-table lm-domain-table" }, [
@@ -2898,9 +3000,9 @@
               h("th", { scope: "col", text: "Correct" }),
               h("th", { scope: "col", text: "Accuracy" }),
             ])]),
-            h("tbody", {}, report.byDomain.map((row) => h("tr", {}, [
+            h("tbody", {}, report.byDomain.filter((row) => row.scored > 0).map((row) => h("tr", {}, [
               h("th", { scope: "row", text: row.domain }),
-              h("td", { text: `${row.correct} of ${row.total}` }),
+              h("td", { text: `${row.correct} of ${row.scored}` }),
               h("td", { className: "lm-acc-cell" }, [accuracyBar(row), h("span", { text: percent(row.accuracy) })]),
             ]))),
           ]),
@@ -2988,6 +3090,7 @@
     function updateChrome() {
       shell.dataset.view = view;
       const finished = session.state.finished;
+      refs.title.textContent = finished ? title : testingTitle;
       refs.directionsToggle.hidden = finished;
       if (refs.reportButton) refs.reportButton.hidden = view !== "answers";
       if (refs.exitButton) {
@@ -3089,6 +3192,7 @@
       document.removeEventListener("keydown", onKeyDown, true);
       document.removeEventListener("pointerdown", onDocumentPointer, true);
       if (readerObserver) readerObserver.disconnect();
+      if (frameObserver) frameObserver.disconnect();
       if (readerFrame !== null) root.cancelAnimationFrame(readerFrame);
       document.removeEventListener("visibilitychange", onVisibility);
       root.removeEventListener("pagehide", onPageHide);
@@ -3101,6 +3205,7 @@
     }
 
     unmount = mount(shell);
+    if (frameObserver) { frameObserver.observe(refs.top); frameObserver.observe(refs.bottom); }
     refs.main.addEventListener("click", onMainClick);
     refs.main.addEventListener("pointerdown", (event) => {
       lastPointerType = event.pointerType || "mouse";

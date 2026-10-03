@@ -44,18 +44,22 @@ is not enough time. The Sun will interrupt first.`,
       key: "rotate, and the",
       noChange: "Two independent clauses joined by 'and' need a comma before the conjunction.",
       wrong: [
-        ["rotate; and the", "A semicolon and a coordinating conjunction do the same job, so both is redundant."],
-        ["rotate and, the", "The comma now separates the conjunction from the subject that follows it."],
+        [
+          "rotate; although the",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "rotate and, the",
+          "The comma now separates the conjunction from the subject that follows it."
+        ]
       ],
-      why:
-        "'It is often said that this means the Moon does not rotate' and 'the opposite is true' are " +
-        "both complete clauses, so the 'and' between them takes a comma.",
+      why: "'It is often said that this means the Moon does not rotate' and 'the opposite is true' are both complete clauses, so the 'and' between them takes a comma.",
       steps: [
         "Check whether the words on each side of 'and' could stand alone. They could.",
-        "Place a comma immediately before the conjunction.",
+        "Place a comma immediately before the conjunction."
       ],
       hint: "A comma goes before 'and' when a full sentence follows it.",
-      trap: "The first clause is long, so by the time 'and' arrives the sentence feels mid-thought.",
+      trap: "The first clause is long, so by the time 'and' arrives the sentence feels mid-thought."
     },
     {
       number: 2,
@@ -163,23 +167,21 @@ is not enough time. The Sun will interrupt first.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "rigid, and the bulge takes time",
-          "'And' repairs the splice but hides that the second clause follows from the first.",
+          "rigid, however, the bulge takes time",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "rigid; so the bulge takes time",
-          "A semicolon and a coordinating conjunction do the same job, so both together is redundant.",
-        ],
+          "rigid; although the bulge takes time",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ]
       ],
-      why:
-        "The second clause is the consequence of the first: because rock flexes slowly, the bulge " +
-        "lags. 'So' repairs the splice and states that relationship.",
+      why: "The second clause is the consequence of the first: because rock flexes slowly, the bulge lags. 'So' repairs the splice and states that relationship.",
       steps: [
         "Test each side of the comma as a sentence. Both stand.",
-        "Choose the conjunction that names the relationship rather than merely adding.",
+        "Choose the conjunction that names the relationship rather than merely adding."
       ],
       hint: "The lag is the whole point of the sentence; the conjunction should say so.",
-      trap: "'And' is the reflex fix and flattens a cause into a list.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 7,
@@ -238,19 +240,26 @@ is not enough time. The Sun will interrupt first.`,
       difficulty: "Easy",
       keep: true,
       wrong: [
-        ["their", "The plural possessive does not agree with the singular noun 'the Moon.'"],
-        ["it's", "'It's' means 'it is,' which cannot precede the noun 'axis.'"],
-        ["the", "The article drops the possession the sentence needs to attribute the axis."],
+        [
+          "their",
+          "The plural possessive does not agree with the singular noun 'the Moon.'"
+        ],
+        [
+          "it's",
+          "'It's' means 'it is,' which cannot precede the noun 'axis.'"
+        ],
+        [
+          "its'",
+          "The possessive pronoun 'its' takes no apostrophe; 'its'' is not a standard form."
+        ]
       ],
-      why:
-        "The axis belongs to the Moon, a singular noun, so the singular possessive pronoun is " +
-        "correct — and it takes no apostrophe.",
+      why: "The axis belongs to the Moon, a singular noun, so the singular possessive pronoun is correct — and it takes no apostrophe.",
       steps: [
         "Ask whose axis is tilted: the Moon's.",
-        "Use the singular possessive pronoun, with no apostrophe.",
+        "Use the singular possessive pronoun, with no apostrophe."
       ],
       hint: "Try reading it as 'it is' — if that fails, the possessive is right.",
-      trap: "The parallel 'Its orbit' earlier in the sentence makes the second instance easy to skim.",
+      trap: "The parallel 'Its orbit' earlier in the sentence makes the second instance easy to skim."
     },
     {
       number: 10,
@@ -284,23 +293,21 @@ is not enough time. The Sun will interrupt first.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "time: the rest of it went unseen",
-          "A colon introduces an explanation, but the second clause states the complementary fact.",
+          "time; although the rest of it went unseen",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "time and the rest of it went unseen",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The two clauses are complete and paired — what libration reveals, and what stayed hidden. A " +
-        "semicolon joins equals and keeps the pairing audible.",
+      why: "The two clauses are complete and paired — what libration reveals, and what stayed hidden. A semicolon joins equals and keeps the pairing audible.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or completes it. It completes it.",
+        "Ask whether the second explains the first or completes it. It completes it."
       ],
       hint: "Fifty-nine percent and the rest are two halves of one fact.",
-      trap: "The second clause supplies the remainder, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 12,

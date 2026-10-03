@@ -239,13 +239,17 @@
     return next;
   }
 
-  // One finished question as the test keeps it: enough to route, report,
-  // and rebuild the question from its id (the question itself is not kept).
+  // Keep the question the student actually saw in this unfinished test's
+  // scratch snapshot. Rebuilding its id after a template revision could
+  // change its text, choices, or answer and silently regrade the old response.
+  // These snapshots never enter the progress record.
   function compactItems(items) {
     return (items || []).map((item) => {
       const question = item.question || {};
       return {
         questionId: String(question.id || ""),
+        question: copy(question),
+        templateVersion: Number(question.templateVersion) || null,
         sectionKey: question.sectionKey || null,
         domain: question.domain || null,
         skill: question.skill || null,
@@ -348,7 +352,8 @@
     if (entry.timeLimitSeconds !== undefined && entry.timeLimitSeconds !== null && !isCount(entry.timeLimitSeconds)) return false;
     return Array.isArray(entry.items) && entry.items.every((item) => isObject(item) &&
       typeof item.questionId === "string" && typeof item.answered === "boolean" &&
-      typeof item.correct === "boolean" && isCount(item.timeMs));
+      typeof item.correct === "boolean" && isCount(item.timeMs) &&
+      (item.question === undefined || (isObject(item.question) && item.question.id === item.questionId)));
   }
 
   function validRoute(route) {
@@ -503,11 +508,15 @@
   }
 
   // Each finished module as the test engine combines it for one report and
-  // one answer review (test-engine.js combineFinished), with question ids
-  // in place of questions.
+  // one answer review (test-engine.js combineFinished). Legacy saves carry
+  // null questions/versions: the caller checks a rebuilt item's version
+  // against the progress attempt before using it for answer review.
   function reviewParts(state) {
     return state.modules.map((entry) => ({
+      sessionId: entry.sessionId,
       questionIds: entry.items.map((item) => item.questionId),
+      questions: entry.items.map((item) => item.question ? copy(item.question) : null),
+      templateVersions: entry.items.map((item) => Number(item.templateVersion) || null),
       responses: entry.items.map((item) => item.response),
       marked: entry.items.map((item) => item.marked),
       hinted: entry.items.map((item) => item.hinted),

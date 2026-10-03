@@ -12,9 +12,9 @@ which group, with how much uncertainty, and whether one thing causes
 another. There is little calculation. The work is reading the study's
 design carefully and refusing any conclusion it doesn't support. The skill
 belongs to Problem-Solving and Data Analysis, {{fact:sat-math-psda}} of the
-Math section. Hard questions compare two estimates that each carry a margin of
-error, ask what an interval for a mean does and doesn't describe, or combine
-samples drawn from groups of different sizes.
+Math section. Hard questions combine separately drawn samples, distinguish
+selection from assignment, or plan a survey to meet an interval-width target
+while accounting for nonresponses.
 
 ## Samples and populations {#samples-and-populations}
 
@@ -88,8 +88,10 @@ values for the population value. Two facts are tested:
 > ignores the uncertainty. D ignores that different samples give different
 > results.
 
-When two groups' intervals overlap, the data don't establish that the two
-population values differ.
+Separate intervals support a difference between population values. When
+intervals overlap, comparing that overlap alone is not a significance test:
+a statistically significant difference can still exist. Substantial overlap
+can leave equal values plausible; slight overlap needs further analysis.
 
 ### Margin of error and sample size {#margin-and-sample-size}
 
@@ -125,7 +127,7 @@ large.
 > **Fails when.** The two samples come from populations with different
 > spreads. The margin also depends on how spread out the values are, so the
 > square-root rule compares samples only when the spread is about the same,
-> as the question will say.
+> as the question will say. Keep the confidence level the same as well.
 
 ## Study design {#study-design}
 
@@ -134,13 +136,16 @@ Two separate questions decide what a study can conclude:
 | Design feature | What it allows |
 | --- | --- |
 | Random selection from a population | generalizing the result to that population |
-| Random assignment to treatment groups | concluding that the treatment caused the difference |
+| Random assignment to treatment groups | supporting a causal conclusion when the difference exceeds what chance plausibly explains |
 
-A study can have both, one or neither. Check each separately.
+A study can have both, one or neither. Check each separately. Random
+assignment alone does not establish an effect: even a randomized study can
+show a difference caused by chance.
 
 > **Example.** A researcher recruited 200 volunteers at a gym and randomly
 > assigned half to a new stretching routine and half to their usual workout.
-> After 8 weeks, the stretching group had greater flexibility on average.
+> After 8 weeks, the stretching group had greater flexibility on average,
+> and analysis found the difference unlikely to be due to chance alone.
 > What can be concluded?
 >
 > Random assignment: yes, so the routine likely caused the greater
@@ -149,8 +154,8 @@ A study can have both, one or neither. Check each separately.
 > Random selection: no, they were gym volunteers, so the result shouldn't be
 > generalized to all adults, or even to all gym members.
 >
-> Supported conclusion: for people similar to these volunteers, the routine
-> likely improves flexibility.
+> Supported conclusion: the study supports a causal effect among its
+> participants. Generalizing beyond them needs additional evidence.
 
 > **Example.** A survey of randomly selected students at one school finds that
 > students who eat breakfast have higher average grades. Can you conclude that
@@ -166,12 +171,13 @@ A study can have both, one or neither. Check each separately.
 
 ### Four designs, four conclusions {#four-designs}
 
-Put the two questions together and every study lands in one cell:
+For a study with convincing evidence of a difference, put the design
+questions together:
 
 | Participants | Treatment randomly assigned | Treatment not randomly assigned |
 | --- | --- | --- |
 | randomly selected from a population | cause, for the whole population | association only, for the whole population |
-| not randomly selected (volunteers, one convenient group) | cause, for people like the participants | association only, for people like the participants |
+| not randomly selected (volunteers, one convenient group) | causal inference within the study; no population generalization | association within the study; no population generalization |
 
 A choice has two halves, what the study shows and whom it describes. Keep
 the one whose halves both match the cell.
@@ -195,24 +201,22 @@ the one whose halves both match the cell.
 
 ## What Hard looks like {#hard}
 
-- A study to sort into one of the four designs, with choices that pair "shows cause" or "shows only an association" with "applies to the population" or "applies only to people like the participants". Settle each half separately (see [four designs](#four-designs)).
-- A second sample of a different size. The margin of error scales with 1/√n, so four times the sample halves the margin, and halving the margin takes four times the sample (see [margin of error and sample size](#margin-and-sample-size)).
+- A study to sort into one of the four designs, with choices that pair "shows cause" or "shows only an association" with "applies to the population" or "cannot be generalized to the whole population". Settle each half separately (see [four designs](#four-designs)).
+- Planning a survey with a target total interval width and a response rate. Halve the width to get the margin, use inverse-square-root scaling for completed responses, then divide by the response rate and round invitations up.
 
-- Two estimates, each with a margin of error. Turn each into a range of plausible values. If the ranges overlap, equal population values are plausible, however far apart the estimates look; if they don't, a difference is likely but never certain.
-- What a margin of error for a mean describes: plausible values of the population mean, not of individual values, and only for the population that was sampled. A total is the population size times the mean, so the whole interval scales with it (see [margin of error](#margin-of-error)).
 - Samples taken separately from groups of different sizes. Estimate each group from its own sample and add; pooling the samples weights the groups wrongly (see [samples and populations](#samples-and-populations)).
 
-> **Example.** In town A, a random sample estimates that 46% of adults
-> support a new park, with a margin of error of 4 percentage points. In
-> town B, a random sample gives 53%, also with a margin of 4. Do the data
-> show that support is higher in town B?
+> **Example.** A pilot survey has 400 completed responses and a margin
+> of error of 4 percentage points. Under the inverse-square-root model,
+> how many invitations should a new survey send for an interval of total
+> width at most 4 points, if the planning model predicts a 60% response rate?
 >
-> Town A's plausible values run from 42% to 50%; town B's run from 49% to
-> 57%.
+> Target margin: 4 ÷ 2 = 2 points, half the pilot margin.
 >
-> The ranges overlap (49% to 50%), so equal support in the two towns is
-> still plausible. The data don't establish a difference, even though 53 is
-> 7 points above 46.
+> Completed responses needed: 400 × (4/2)² = 1,600.
+>
+> Invitations: at least 1,600 ÷ 0.60 = 2,666.666…, so round up to 2,667.
+> Sending 1,600 invitations would confuse responses with invitations.
 
 > **Example.** A random sample of a city's 1,000 bus drivers gives a mean
 > commute of 24 minutes, with a margin of error of 3 minutes. What is a

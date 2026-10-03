@@ -4,8 +4,8 @@ module.exports = {
   id: "act-english-p031",
   type: "historical-account",
   title: "The Word Was His",
-  content: `[1] In October {1 1859 a} steam clipper called the Royal Charter was
-driven onto the Anglesey coast in a storm and broke apart within sight of land.
+  content: `[1] When a severe storm struck in October {1 1859 a} steam clipper called the Royal Charter was
+driven onto the Anglesey coast and broke apart within sight of land.
 More than four hundred people died. The wreck {2 had been} one of about two hundred
 that week.
 
@@ -40,20 +40,24 @@ Royal Society. {15}`,
       difficulty: "Easy",
       keep: false,
       key: "1859, a",
-      noChange: "The introductory phrase runs into the subject with no comma between them.",
+      noChange: "The introductory 'When' clause must be separated from the main clause by a comma.",
       wrong: [
-        ["1859, a,", "The second comma separates the article from the noun it belongs to."],
-        ["1859; a", "A semicolon must join independent clauses, and the opening phrase is not one."],
+        [
+          "1859, a,",
+          "The second comma separates the article from the noun it belongs to."
+        ],
+        [
+          "1859; a",
+          "The opening clause is dependent, so a semicolon cannot join it to the main clause."
+        ]
       ],
-      why:
-        "'In October 1859' opens the sentence and is not its subject. A comma marks where the " +
-        "introductory phrase ends and the main clause begins.",
+      why: "The introductory dependent clause ends at '1859.' Its comma comes before the main subject, 'a steam clipper.'",
       steps: [
-        "Find where the opening phrase stops: after '1859.'",
-        "Place a single comma there.",
+        "Locate the end of the introductory dependent clause.",
+        "Separate it from the main clause with a comma."
       ],
-      hint: "A date at the head of a sentence takes one comma after it.",
-      trap: "The sentence is long, so the missing pause is behind you by the time it matters.",
+      hint: "Determine which words belong to the opening dependent clause before placing its comma.",
+      trap: "The sentence is long, so the missing pause is behind you by the time it matters."
     },
     {
       number: 2,
@@ -118,23 +122,21 @@ Royal Society. {15}`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "Beagle, by 1859 running",
-          "The participle leaves the second half without a main verb of its own.",
+          "Beagle; by 1859 running",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
         ],
         [
-          "Beagle; and by 1859 he ran",
-          "A semicolon and a coordinating conjunction do the same job, so both together is redundant.",
-        ],
+          "Beagle; although by 1859 he ran",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ]
       ],
-      why:
-        "'Robert FitzRoy had commanded the Beagle' and 'by 1859 he ran the small meteorological " +
-        "office' are both complete, so joining them takes a comma plus a conjunction.",
+      why: "'Robert FitzRoy had commanded the Beagle' and 'by 1859 he ran the small meteorological office' are both complete, so joining them takes a comma plus a conjunction.",
       steps: [
         "Test each side of the comma as its own sentence. Both stand.",
-        "Add a coordinating conjunction after the comma.",
+        "Add a coordinating conjunction after the comma."
       ],
       hint: "Cover the comma and read each half aloud on its own.",
-      trap: "The two halves are both about FitzRoy, which makes them feel like one thought.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 5,
@@ -218,23 +220,21 @@ Royal Society. {15}`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "warnings: later that year the Times began printing",
-          "A colon introduces an explanation, but the second clause reports a separate development.",
+          "warnings; although later that year the Times began printing",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "warnings and later that year the Times began printing",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "Both clauses are complete and equally weighted — what the office did, and what the newspaper " +
-        "then did. A semicolon joins equals without subordinating either.",
+      why: "Both clauses are complete and equally weighted — what the office did, and what the newspaper then did. A semicolon joins equals without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or follows it. It follows.",
+        "Ask whether the second explains the first or follows it. It follows."
       ],
       hint: "Two dated developments of similar importance want a mark that treats them equally.",
-      trap: "The second clause reads as a consequence, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 9,

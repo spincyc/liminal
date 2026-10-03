@@ -10,32 +10,22 @@ comprehension — it's about speed and about resisting attractive wrong answers.
 
 ## Structure
 
-Four passage sets, nine questions each, always in this order:
-
-| # | Type | Content |
-| --- | --- | --- |
-| 1 | **Literary Narrative / Prose Fiction** | An excerpt from a novel or short story |
-| 2 | **Social Science** | Economics, psychology, history, anthropology, sociology |
-| 3 | **Humanities** | Art, music, literature, philosophy, memoir |
-| 4 | **Natural Science** | Biology, chemistry, physics, earth science |
-
-**One of the four is a paired set** — two shorter passages by different authors
-on a related subject, with questions about each and about the relationship.
-
-The enhanced format uses somewhat shorter passages with fewer questions each
-than the older ACT, but the reading load remains the highest of any section on
-either test.
+Four passage sets have nine questions each: three scored sets and one unscored
+field-test set. You cannot identify the field-test set, so work on every set.
+Literary and informational texts appear; do not assume a fixed genre order.
+Paired texts and visual information can appear, but a paired set is not guaranteed.
 
 ### Domain weighting
 
-| Domain | Share | Approx. |
+| Domain | Share of scored questions | Scored questions (of 27) |
 | --- | ---: | ---: |
-| [Key Ideas and Details](01-key-ideas-and-details.md) | ~48% | 17-18 |
-| [Craft and Structure](02-craft-and-structure.md) | ~28% | 10 |
-| [Integration of Knowledge and Ideas](03-integration-of-knowledge-and-ideas.md) | ~24% | 8-9 |
+| [Key Ideas and Details](01-key-ideas-and-details.md) | 44–52% | 12–14 |
+| [Craft and Structure](02-craft-and-structure.md) | 26–33% | 7–9 |
+| [Integration of Knowledge and Ideas](03-integration-of-knowledge-and-ideas.md) | 19–26% | 5–7 |
 
-**Nearly half the section is detail-location and inference.** Speed at finding
-things in text is the core skill.
+> **Verify before you rely on this.** Checked 2026-10-02 against ACT's
+> [enhanced design framework](https://www.act.org/content/dam/act/unsecured/documents/R2519-Design-Framework-for-the-ACT-Enhancements-2026-02.pdf), Table 2.3.
+> Confirm current format details before test day.
 
 ---
 
@@ -62,8 +52,8 @@ You do not have to work in order. If one passage type is reliably your worst, do
 it **last**, so if anything gets shortchanged it's the one you'd score lowest on
 anyway.
 
-Common choice: students who struggle with Prose Fiction do passages 2-4 first,
-then return. Students who struggle with Natural Science do the opposite.
+Identify passage types from their headings, not their positions. If a type
+regularly takes you longer in practice, try saving that set for later.
 
 Decide this in practice, not on test day, and then always do it the same way.
 
@@ -124,15 +114,11 @@ match your *memory* of the passage. Going back to the text defeats them.
 
 ## The evidence standard
 
-> Every correct answer is provable from the text.
+> Every correct answer needs support from the text.
 
-Not "reasonable." Not "probably true." **Provable.** If you cannot put your
-finger on the words that support a choice, it's wrong.
-
-This is the standard that makes ACT Reading tractable. It also means your own
-knowledge is a liability: a choice that's true in the real world but unstated in
-the passage is a distractor, and it's specifically there to catch students who
-know the subject.
+A detail answer may restate one line; an inference may combine several details
+to reach a conclusion the author never says explicitly. Identify the evidence
+and explain why it supports the choice. Outside knowledge alone is not enough.
 
 ---
 
@@ -160,8 +146,8 @@ of that.
 
 ### Prose Fiction / Literary Narrative
 
-Questions are about **character, relationship, motivation, and tone**, not plot
-facts.
+Questions can concern **character, relationship, motivation, tone**, and
+important details or events.
 
 - Track **who feels what about whom**, and how that changes.
 - Attitude words matter more than events.
@@ -205,14 +191,14 @@ are findable, which builds momentum.
 
 ## Paired passages
 
-One set has two passages. Strategy:
+When a set has two passages, try this strategy:
 
 1. Read **Passage A**, answer the questions about A only.
 2. Read **Passage B**, answer the questions about B only.
 3. Answer the **comparison** questions last.
 
-Do not read both before answering anything — you'll blur them together, and
-mixing up which author said what is the dominant error on these.
+Alternatively, read both first if that works better in timed practice. In
+either approach, keep track of which author supports each claim.
 
 Before the comparison questions, state each author's position in one sentence.
 

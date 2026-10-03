@@ -10,58 +10,42 @@ score**.
 
 ## Should you take it?
 
-**Usually yes.** It costs a small additional fee. Many colleges, scholarship
-programs, and honors colleges still want a Science score, and some state and
-NCAA processes reference it. A good Science score is a free credential.
-
-Skip it only if Science is a genuine liability *and* you have confirmed no
-school on your list wants it — a check worth actually doing rather than
-assuming.
+Check the colleges, programs and scholarships you are considering, and weigh
+the fee and preparation time against the usefulness of a Science score. For
+school-day testing, the state or district contract may include Science for
+everyone. It does not contribute to the three-section Composite.
 
 ---
 
 ## The most important thing to know
 
-**ACT Science is not a science test. It is a chart-reading test under extreme
-time pressure.**
+ACT Science combines **data interpretation, experimental reasoning and
+introductory science knowledge**. Read the figures and text carefully, then
+apply background concepts where the question requires them. Do not assume
+that a fact missing from the passage is irrelevant.
 
-You are not asked to recall biology, chemistry, or physics. You are asked to
-read graphs and tables quickly and accurately, follow experimental logic, and
-compare viewpoints. Almost everything you need is printed in front of you.
-
-Consequences:
-
-- **Students who have never taken physics do fine.**
-- **Students who love science sometimes do badly**, because they slow down to
-  understand the underlying science instead of just reading the figure.
-- **Reading speed and data-location speed are the real skills**, not scientific
-  knowledge.
-
-A small minority of questions do require basic outside knowledge — density,
-states of matter, photosynthesis basics, pH, simple physical relationships. Call
-it two or three questions. Don't over-prepare for them.
-
----
+The enhanced blueprint includes 5–8 scored questions requiring background
+knowledge. Review the concepts behind your misses rather than memorizing an
+unrelated science encyclopedia.
 
 ## Structure
 
-Six to seven passages, 40 questions total, in three formats:
-
-| Format | Typical count | Questions each | Description |
-| --- | --- | --- | --- |
-| **Data Representation** | 2-3 passages | 5-6 | Graphs and tables, minimal text |
-| **Research Summaries** | 2-3 passages | 6-7 | Descriptions of experiments plus results |
-| **Conflicting Viewpoints** | 1 passage | 6-7 | Two or more scientists or hypotheses in text |
+Seven passage sets contain 40 questions: 34 scored and six field-test items.
+The scored sets include data displays, research summaries and conflicting
+viewpoints. Treat every set as scored.
 
 ### Domain weighting
 
-| Domain | Share | Approx. |
-| --- | ---: | ---: |
-| [Interpretation of Data](01-interpretation-of-data.md) | ~44% | 17-18 |
-| [Evaluation of Models, Inferences, and Experimental Results](03-evaluation-of-models.md) | ~30% | 12 |
-| [Scientific Investigation](02-scientific-investigation.md) | ~26% | 10 |
+| Domain | Scored questions (of 34) |
+| --- | ---: |
+| [Interpretation of Data](01-interpretation-of-data.md) | 13–17 |
+| [Scientific Investigation](02-scientific-investigation.md) | 6–11 |
+| [Evaluation of Models, Inferences, and Experimental Results](03-evaluation-of-models.md) | 8–13 |
 
-Nearly half the section is pure data reading. That's the skill to train.
+> **Verify before you rely on this.** Checked 2026-10-02 against ACT's
+> [enhanced design framework](https://www.act.org/content/dam/act/unsecured/documents/R2519-Design-Framework-for-the-ACT-Enhancements-2026-02.pdf), Table 2.4,
+> and [Science description](https://www.act.org/content/act/en/products-and-services/the-act/test-preparation/description-of-science-test.html).
+> Confirm current requirements before test day.
 
 ---
 
@@ -81,7 +65,7 @@ for the others. Many students save it for last for exactly this reason.
 
 ---
 
-## The core strategy: skip the text
+## The core strategy: locate what the question needs
 
 For **Data Representation** and **Research Summaries**, go **straight to the
 questions**. Most send you to a specific figure.
@@ -97,9 +81,9 @@ questions**. Most send you to a specific figure.
 — typically for experimental-design questions and for anything asking *why* a
 step was taken.
 
-**Exception: Conflicting Viewpoints must actually be read.** There are no
-figures to shortcut through. Read each viewpoint carefully and summarize each in
-one sentence before answering.
+**Conflicting Viewpoints requires careful reading.** Summarize each position
+and use any accompanying figures. For other formats too, read the setup when it
+defines variables, conditions or procedures the question needs.
 
 ---
 
@@ -114,8 +98,8 @@ Before answering anything about a figure, spend ten seconds on:
 - **Legend** — which line or bar is which?
 - **Second axis** — is there one on the right?
 
-**Half of all ACT Science errors are orientation errors**, not reasoning errors.
-Ten seconds here saves more than it costs, every time.
+This check can prevent avoidable reading errors. Your error log will show
+whether orientation, science concepts, reasoning or pacing needs more work.
 
 ---
 
@@ -132,7 +116,7 @@ Ten seconds here saves more than it costs, every time.
 | **Predict** | Extend a trend to a new condition |
 | **Evaluate a hypothesis** | Do the data support this claim? |
 | **Compare viewpoints** | What would Scientist 1 say about X? |
-| **Outside knowledge** | Rare; basic science facts |
+| **Background knowledge** | Combine introductory science concepts with supplied evidence |
 
 ---
 
@@ -146,8 +130,8 @@ reading.
 describes the overall pattern. A choice built from one data point — especially an
 outlier — is usually a distractor.
 
-**Answers are in the figures.** If a question seems to require knowledge you
-don't have, reread the stimulus. The information is almost always there.
+**Start with the figures and text.** If the question also needs a background
+concept, apply it; do not assume every needed fact must be printed.
 
 **Two-figure questions require both.** When a question mentions two figures or a
 table and a figure, you must use both. Find the linking variable.
@@ -186,8 +170,8 @@ table and a figure, you must use both. Find the linking variable.
 
 ## Building the skill
 
-ACT Science improves faster than almost anything else on either test, because
-the skill is narrow and mechanical.
+Practice both evidence reading and scientific reasoning. Adjust the schedule
+to your error log and use official questions to check transfer.
 
 **Week 1:** untimed practice. Focus on accurate figure reading. Narrate the
 title, axes, units, and legend out loud before every question.
@@ -198,7 +182,7 @@ title, axes, units, and legend out loud before every question.
 timing feels comfortable.
 
 **Throughout:** log every miss as orientation error, reasoning error, or time
-error. Most will be orientation, and orientation is fixable with a habit.
+error. Add a content tag when missing science knowledge caused the error.
 
 ---
 

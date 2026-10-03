@@ -14,8 +14,9 @@ describes, and how nouns form plurals and possessives. The stem is always
 "Which choice completes the text so that it conforms to the conventions of
 Standard English?" The skill is part of Standard English Conventions,
 {{fact:sat-rw-conventions}} of the Reading and Writing section. Hard versions
-separate a subject from its verb with a long phrase or put the subject after
-the verb.
+can require tracing ownership through several roles or using the preceding
+account to identify what a modifier describes. A long
+phrase alone does not make a question Hard.
 
 Start every question by looking down the four choices and noting what
 changes: is/are means agreement, its/their means pronouns, -ing or "to"
@@ -81,6 +82,27 @@ phrases like "along with" or "as well as".
 >
 > The sentence is inverted: the subject is "a brass compass and two sealed
 > glass bottles", which is plural. A, B and D are singular. C is correct.
+
+An agreement question can hide the missing verb inside a clause
+whose object appears before its subject. Map each existing verb to its
+subject before deciding which noun controls the blank.
+
+> **Example.** The diary that the editor, despite requests from the writers,
+> ______ unwilling to publish during the dispute in 1910 finally appeared
+> in print the following year.
+>
+> A) were
+>
+> B) is
+>
+> C) was
+>
+> D) are
+>
+> "Appeared" is the diary's main verb. Inside the relative clause, the
+> editor was unwilling to publish the diary: "diary" is the object of
+> "publish", not the subject of the missing verb. The subject is singular
+> "editor", and the dispute in 1910 sets the past time. C is correct.
 
 ## Pronoun agreement {#pronoun-agreement}
 
@@ -160,10 +182,45 @@ makes this easy to miss.
 > verb, so the main clause still needs one. A, B and C are not finite, which
 > would leave the sentence without a main verb. D is correct.
 
+A phrase can also name its own subject without becoming a complete
+clause: "the doors locked" or "the musicians waiting." Find the actual
+main clause before adding a finite verb.
+
+> **Example.** Read the text and answer the question.
+>
+> The trucks were ready to depart. The crates ______ inside them, the
+> couriers checked the route one last time.
+>
+> A) were loaded
+>
+> B) loading
+>
+> C) loaded
+>
+> D) were loading
+>
+> "The couriers checked" is the main clause. "The crates loaded inside
+> them" gives background circumstances and has its own subject, "crates."
+> The crates receive the loading, so C supplies a passive participle. A
+> would create two independent clauses joined by only a comma. B and D
+> wrongly make the crates perform the loading; D also creates a comma
+> splice. No technical name for the background phrase is needed to solve
+> the question.
+
+A dependent clause introduced by "while," "because," or "although" still
+needs a finite verb: "While the crates were loaded, the couriers checked
+the route." Inspect the entire construction; seeing a noun is not enough
+to decide whether its verb must be finite.
+
 Tense and aspect. Match the time frame the text sets. The past perfect (had
-plus a past participle) marks an action completed before another past
+plus a past participle) can mark an action completed before another past
 action; the present perfect (has or have plus a participle) connects the
-past to now.
+past to now. A prior event does not automatically require the past perfect:
+when words such as "before" already make the order clear, the simple past
+can also be grammatical. The simple present also describes future events
+in a timetable: "Next Monday, the first train departs at six." A quoted
+advance schedule establishes that the event has not happened at the time
+of the announcement. Read the actual choices and the full time frame.
 
 > **Example.** Read the text and answer the question.
 >
@@ -187,9 +244,11 @@ past to now.
 
 ## Modifier placement {#modifier-placement}
 
-A descriptive phrase at the start of a sentence describes the noun that
-comes right after the comma. Read the phrase, then ask whether the next
-noun is the thing it describes.
+An opening descriptive phrase that has no subject of its own normally
+describes the subject of the main clause. Read the phrase, then ask whether
+the noun after the comma is what it describes. A background phrase that
+names its own subject works differently, as the verb-form example above
+explains.
 
 > **Example.** Read the text and answer the question.
 >
@@ -279,9 +338,31 @@ them? "There" is a place, not a possessive.
 
 ## What Hard looks like {#hard}
 
-- A subject and verb separated by a long clause with its own plural noun.
-- An inverted sentence, where the subject comes after the verb.
-- A sentence whose only verb sits inside a relative clause, so the main clause lacks a finite verb.
-- A pronoun whose antecedent is in an earlier clause, with a singular and a plural noun both nearby.
-- A passage that names two times, where the tense nearest the blank belongs to the wrong one: decide which time governs the blank.
-- A modifier whose logical subject is a thing or a group rather than the person named, or whose tempting choice hides the person in a possessive ("the chemist's notes") or a "by" phrase.
+An ownership chain can contain two independent number decisions. Read
+whether several people share one assistant or each employ a different
+assistant; the first noun's number does not determine the second's.
+
+> **Example.** Two curators jointly hired one conservator to examine their
+> collections. The museum filed the ______ assessment with both catalogs.
+>
+> A) curator's conservator's
+>
+> B) curators' conservators'
+>
+> C) curators' conservator's
+>
+> D) curator's conservators'
+>
+> There are two curators, so the first possessive is plural: "curators'."
+> They share one conservator, so the second is singular: "conservator's."
+> C is correct. Every option could describe an ownership chain, but only
+> C describes the one the passage establishes.
+
+A modifier can also fit either of two people grammatically. In that case,
+trace their roles in the preceding account. If one person requested help
+and the other supplied it, "Having received the requested help" must
+modify the recipient. The sentence must still contain a finite main verb.
+
+> **Fails when.** The context leaves both readings possible. Grammar alone
+> cannot tell you which person performed an unstated action; a sound
+> question must supply enough information to resolve the reference.

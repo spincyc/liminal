@@ -72,7 +72,8 @@
 }
 
 .lm-shell button,
-.lm-shell input {
+.lm-shell input,
+.lm-shell textarea {
   margin: 0;
   color: inherit;
   font: inherit;
@@ -353,10 +354,10 @@
 }
 
 .lm-shell .lm-directions {
-  top: calc(var(--lm-bar-h) + 4px);
+  top: calc(var(--lm-top-h, var(--lm-bar-h)) + 4px);
   left: 16px;
   width: min(640px, calc(100% - 32px));
-  max-height: calc(100% - 2 * var(--lm-bar-h) - 24px);
+  max-height: calc(100% - var(--lm-top-h, var(--lm-bar-h)) - var(--lm-bottom-h, var(--lm-bar-h)) - 24px);
   padding: 18px 22px 22px;
 }
 
@@ -365,10 +366,10 @@
 }
 
 .lm-shell .lm-reference {
-  top: calc(var(--lm-bar-h) + 8px);
+  top: calc(var(--lm-top-h, var(--lm-bar-h)) + 8px);
   right: 16px;
   width: min(460px, calc(100% - 32px));
-  max-height: calc(100% - 2 * var(--lm-bar-h) - 24px);
+  max-height: calc(100% - var(--lm-top-h, var(--lm-bar-h)) - var(--lm-bottom-h, var(--lm-bar-h)) - 24px);
   padding: 16px 20px 20px;
 }
 
@@ -447,7 +448,7 @@
 .lm-shell .lm-alert {
   position: absolute;
   z-index: 15;
-  top: calc(var(--lm-bar-h) + 10px);
+  top: calc(var(--lm-top-h, var(--lm-bar-h)) + 10px);
   left: 50%;
   display: flex;
   align-items: center;
@@ -965,10 +966,10 @@
 /* Highlights and notes: a panel over the bottom of the passage, left open
    while the student reads on. */
 .lm-shell .lm-notes {
-  bottom: calc(var(--lm-bar-h) + 12px);
+  bottom: calc(var(--lm-bottom-h, var(--lm-bar-h)) + 12px);
   left: 16px;
   width: min(440px, calc(100% - 32px));
-  max-height: min(70%, calc(100% - 2 * var(--lm-bar-h) - 24px));
+  max-height: min(70%, calc(100% - var(--lm-top-h, var(--lm-bar-h)) - var(--lm-bottom-h, var(--lm-bar-h)) - 24px));
   padding: 16px 20px 18px;
 }
 
@@ -1288,6 +1289,34 @@
   gap: 8px;
 }
 
+.lm-shell .lm-essay {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.lm-shell .lm-essay-input {
+  width: 100%;
+  min-height: 18em;
+  padding: 12px;
+  border: 1px solid var(--lm-line-strong);
+  border-radius: 6px;
+  background: #fff;
+  resize: vertical;
+}
+
+.lm-shell .lm-essay-response {
+  padding: 12px;
+  border: 1px solid var(--lm-line);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.lm-shell .lm-essay-note {
+  color: var(--lm-muted);
+  font-size: var(--text-sm);
+}
+
 .lm-shell .lm-spr-label {
   margin-top: 4px;
   font-weight: 650;
@@ -1484,7 +1513,8 @@
   color: var(--lm-bad);
 }
 
-.lm-shell .lm-verdict.is-omitted {
+.lm-shell .lm-verdict.is-omitted,
+.lm-shell .lm-verdict.is-unscored {
   background: var(--lm-soft);
   color: var(--lm-ink);
 }
@@ -1648,10 +1678,10 @@
 /* ------------------------------------------------ navigator, review grid */
 
 .lm-shell .lm-navigator {
-  bottom: calc(var(--lm-bar-h) + 10px);
+  bottom: calc(var(--lm-bottom-h, var(--lm-bar-h)) + 10px);
   left: 50%;
   width: min(560px, calc(100% - 32px));
-  max-height: calc(100% - 2 * var(--lm-bar-h) - 32px);
+  max-height: calc(100% - var(--lm-top-h, var(--lm-bar-h)) - var(--lm-bottom-h, var(--lm-bar-h)) - 32px);
   padding: 18px 22px 20px;
   transform: translateX(-50%);
 }
@@ -2342,8 +2372,19 @@
   }
 
   .lm-shell .lm-top {
+    display: flex;
+    flex-wrap: wrap;
     gap: 6px;
     padding: 4px 8px 4px 12px;
+  }
+
+  .lm-shell .lm-top-left {
+    flex: 1 1 5rem;
+    min-width: 6rem;
+  }
+
+  .lm-shell .lm-top-right {
+    margin-left: auto;
   }
 
   .lm-shell .lm-title {
@@ -2351,12 +2392,16 @@
   }
 
   .lm-shell .lm-directions-toggle {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    text-align: left;
     min-height: 28px;
     font-size: 0.85rem;
   }
 
   .lm-shell .lm-top-center {
     min-width: 0;
+    flex-shrink: 0;
   }
 
   .lm-shell .lm-center-label {
@@ -2426,6 +2471,7 @@
 
   .lm-shell .lm-bottom {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 8px;
     padding: 8px 12px;
@@ -2438,15 +2484,21 @@
 
   .lm-shell .lm-bottom-center {
     min-width: 0;
+    max-width: 100%;
+    flex-shrink: 0;
   }
 
   .lm-shell .lm-nav-toggle {
+    max-width: 100%;
+    white-space: normal;
     padding: 0 10px 0 12px;
     font-size: 0.9rem;
   }
 
   .lm-shell .lm-bottom-right {
     gap: 8px;
+    margin-left: auto;
+    flex-wrap: wrap;
   }
 
   .lm-shell .lm-btn {
@@ -2461,11 +2513,11 @@
 
   .lm-shell .lm-directions,
   .lm-shell .lm-reference {
-    top: calc(var(--lm-bar-h) + 4px);
+    top: calc(var(--lm-top-h, var(--lm-bar-h)) + 4px);
     right: 8px;
     left: 8px;
     width: auto;
-    max-height: calc(100% - 2 * var(--lm-bar-h) - 16px);
+    max-height: calc(100% - var(--lm-top-h, var(--lm-bar-h)) - var(--lm-bottom-h, var(--lm-bar-h)) - 16px);
     padding: 16px;
   }
 

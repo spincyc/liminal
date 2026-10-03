@@ -5,6 +5,7 @@ const path = require("node:path");
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const Analytics = require("../src/lib/analytics");
+const Progress = require("../src/lib/progress");
 const Runs = require("../src/lib/runs");
 const Practice = require("../src/lib/practice");
 const catalog = require("../content/catalog.json");
@@ -54,6 +55,35 @@ function many(count, fields) {
 function rowFor(rows, skill) {
   return rows.find((row) => row.skill === skill);
 }
+
+test("trimmed session history excludes hinted Hard answers and unscored essays", () => {
+  const hinted = Progress.summarizeSession({ id: "hinted" }, [{
+    question: { sectionKey: "sat-math", difficulty: "Hard" }, answered: true, correct: true, hinted: true,
+  }], 1000);
+  const [point] = Analytics.sessionTrend([hinted], []);
+  assert.equal(point.accuracy, 0);
+  assert.equal(point.hard.accuracy, 0);
+  const older = { ...hinted, hard: { total: 1, correct: 1 } };
+  assert.deepEqual(Analytics.sessionTrend([older], [])[0].hard, { attempted: 0, accuracy: null },
+    "an older summary cannot identify which Hard answers used hints");
+  const essay = Progress.summarizeSession({ id: "essay" }, [{
+    question: { sectionKey: "act-writing", responseType: "essay" }, answered: true, correct: null,
+  }], 1000);
+  const [writing] = Analytics.sessionTrend([essay], []);
+  assert.equal(writing.total, 1);
+  assert.equal(writing.counted, 0);
+  assert.equal(writing.accuracy, null);
+});
+
+test("withdrawn sections keep their accuracy but cannot be the next practice recommendation", () => {
+  const science = section("act-science");
+  const domain = science.domains[0];
+  const skill = Object.keys(domain.skills)[0];
+  const rows = Analytics.skillMap(many(5, { sectionKey: science.key, domain: domain.name, skill, source: "bank", test: "ACT" }),
+    [science], { tiered: () => false });
+  assert.equal(rows.find((row) => row.skill === skill).accuracy, 1);
+  assert.equal(Analytics.nextStep(rows), null);
+});
 
 test("registry entries re-tier answers without the template bundles", () => {
   const info = Analytics.registryTemplateInfo({
@@ -289,7 +319,7 @@ test("the trend reads each set's own answers, falling back to its summary", () =
     { id: "s2", finishedAt: 2000, sectionKey: "sat-math", kind: "diagnostic", title: "B", total: 3, correct: 3,
       hard: { total: 1, correct: 1 } },
     { id: "s1", finishedAt: 1000, sectionKey: "sat-math", kind: "practice", title: "A", total: 4, correct: 3,
-      hintedCorrect: 1, hard: { total: 2, correct: 1 }, timeMs: 5000 },
+      hintedCorrect: 1, hard: { total: 2, correct: 1, hintedCorrect: 0 }, timeMs: 5000 },
   ];
   const attempts = [
     attempt({ sessionId: "s2", difficulty: "Hard" }),

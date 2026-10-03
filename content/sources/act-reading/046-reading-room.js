@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p046",
   type: "humanities",
   title: "The Reading Room",
-  intro: "This passage is adapted from an essay on the architecture of public libraries.",
+  intro: "This original passage discusses the architecture of public libraries.",
   content: `A building makes an argument whether or not anybody intended it to, and the argument
 of a nineteenth-century public library is unusually easy to read, because it was put there
 deliberately and its authors wrote about it. The typical form is a raised entrance reached
@@ -224,17 +224,17 @@ was built first.`,
       family: "combining-sections",
       difficulty: "Hard",
       stem: "The description of recent buildings and the closing lesson together suggest that architects:",
-      key: "can add a form but cannot retract an old one.",
+      key: "must consider what each visible form communicates to users.",
       wrong: [
         ["have abandoned the attempt to design libraries at all.", "The passage describes a recognisable recent type being built."],
         ["now agree with librarians about what a library needs.", "The passage says the two groups disagree along predictable lines."],
         ["have proved that the two arguments can be reconciled.", "Whether the tension is resolved is called genuinely arguable."],
       ],
-      why: "Recent buildings \"stack the two arguments on top of each other,\" and the final paragraph says the encoded argument cannot be revised by a notice on the door.",
+      why: "Recent designs combine an accessible entrance with a large shared room, while the conclusion says built forms keep communicating beyond their creators' intentions. Together they call for attention to both messages; they do not establish that buildings can never be altered.",
       steps: [
-        "Note what the recent type does with the two arguments.",
-        "Connect it to the closing claim about revision.",
-        "Reject options that settle a question the passage leaves open.",
+        "Identify the different purposes of the two features in recent libraries.",
+        "Connect those purposes with the final claim that buildings communicate to users.",
+        "Avoid turning a notice's limits into a claim that architecture cannot change.",
       ],
       hint: "The recent buildings contain both features rather than replacing one.",
       trap: "Reading a compromise as a solution.",

@@ -1,10 +1,12 @@
 "use strict";
 
+// Fact-check: CMB spectrum and temperature: https://lambda.gsfc.nasa.gov/product/cobe/firas_overview.html
+
 module.exports = {
   id: "act-reading-p049",
   type: "natural-science",
   title: "Why the Night Is Dark",
-  intro: "This passage is adapted from an article on a problem in the history of astronomy.",
+  intro: "This original passage discusses a problem in the history of astronomy.",
   content: `The question sounds like a child's and it defeated the best minds in Europe for two
 centuries. Why is the sky dark at night?
 
@@ -46,10 +48,11 @@ are standing in it too soon.
 Expansion contributes as well, by shifting the light of very distant sources towards longer
 wavelengths and reducing the energy that arrives, but the finite age is the dominant term.
 Both effects are consequences of the same cosmology, and the confirming observation is
-striking: the sky in fact is uniformly bright in every direction, at the surface brightness
-of a hot glowing surface, once you look at microwave rather than visible wavelengths. Olbers
-was right about what the sky should look like. He was looking at the wrong wavelengths, by
-about a factor of a thousand, and about fourteen billion years too late.
+striking: the sky contains a nearly uniform microwave glow with the spectrum of a body
+at about 2.7 kelvin. This radiation comes from an early, hot phase of the universe
+and has cooled as space expanded. It is evidence for cosmic evolution, not the
+accumulated starlight that the eternal-universe argument predicted. The sky can
+therefore carry a widespread background while remaining dark to our eyes.
 
 The episode is often used to argue that simple questions are worth asking, which is true and
 which understates it. The question could be asked in 1610 and could not be answered until
@@ -187,20 +190,19 @@ telling them what.`,
       subskill: "claims and evidence",
       family: "claim-and-support",
       difficulty: "Medium",
-      stem: "Which observation does the passage present as confirming that Olbers's expectation was essentially correct?",
+      stem: "Which observation does the passage present as evidence of an earlier hot universe?",
       key: "The sky is uniformly bright at microwave wavelengths.",
       wrong: [
         ["Distant galaxies are shifted towards longer wavelengths.", "Redshift is described as a contributing effect, not the confirmation."],
         ["Surveys show the clumping of stars stops at large scales.", "That result rules out one proposal rather than confirming Olbers."],
         ["Dust between the stars radiates the energy it absorbs.", "This refutes the dust proposal and says nothing about brightness overall."],
       ],
-      why: "The passage says \"the sky in fact is uniformly bright in every direction, at the surface brightness of a hot glowing surface, once you look at microwave rather than visible wavelengths.\"",
+      why: "The passage supports this conclusion: The nearly uniform microwave glow is described as cooled radiation from the early universe. It supports an evolving hot-universe account; it is not the accumulated starlight of an eternal universe predicted by the original paradox.",
       steps: [
-        "State what Olbers predicted the sky should look like.",
-        "Find the observation the passage says fulfils that prediction.",
-        "Reject results that address the failed proposals.",
+        "Identify the origin the passage gives for the microwave glow.",
+        "Distinguish that origin from the starlight in the original argument.",
       ],
-      hint: "The confirming evidence is about what the sky actually looks like.",
+      hint: "The relevant observation is a sky-wide remnant, not a property of individual galaxies.",
     },
     {
       subskill: "reasoning",
@@ -226,18 +228,18 @@ telling them what.`,
       subskill: "strengthen or weaken",
       family: "weakening-a-position",
       difficulty: "Hard",
-      stem: "Which finding, if true, would most weaken the resolution the passage endorses?",
-      key: "Stars have been shining for far longer than light's reach.",
+      stem: "Which hypothetical finding would most weaken the passage's finite-age explanation of the dark night sky?",
+      key: "Starlight had unlimited time to arrive from every distance.",
       wrong: [
         ["Interstellar dust is more abundant than has been assumed.", "The passage shows dust cannot dispose of light at any abundance."],
         ["Galaxies are clumped more strongly at small scales.", "Small-scale clumping is granted; what matters is that it stops."],
         ["Expansion shifts distant light further than estimated.", "A larger shift would support rather than undercut the resolution."],
       ],
-      why: "The resolution holds that a line of sight is filled only by stars \"within the distance light has covered since stars existed.\" If stars had existed much longer than that, the horizon would not save the argument.",
+      why: "The passage supports this conclusion: The finite-age explanation relies on starlight having only a limited time to reach us. An unlimited history would remove that particular limit. The other choices concern rejected explanations or strengthen the effect of expansion.",
       steps: [
-        "State the resolution's key premise about time.",
-        "Look for the finding that would contradict that premise.",
-        "Reject findings bearing on the proposals already dismissed.",
+        "State the finite-age explanation's premise.",
+        "Choose the hypothetical result that removes its time limit.",
+        "Do not compare an age with a distance.",
       ],
       hint: "The answer turns on how long there has been anything to see.",
       trap: "Choosing a fact about dust or clumping, which belong to the rejected proposals.",

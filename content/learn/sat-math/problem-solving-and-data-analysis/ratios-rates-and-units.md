@@ -14,8 +14,8 @@ Analysis, {{fact:sat-math-psda}} of the Math section. The math is
 arithmetic. The points are lost to setup: a rate turned upside down, a
 part-to-part ratio read as part-to-whole, or an area converted with a length
 factor. Hard questions ask for the speed one part of a trip needs to reach
-an overall average, combine two workers' rates, or go from a mass and a
-density to a length.
+an overall average, or recover a hollow object's outer size from its
+material density, mass, and cavity dimensions.
 
 ## Unit rates {#unit-rates}
 
@@ -123,8 +123,7 @@ unit of volume, so mass = density × volume (see
 ## What Hard looks like {#hard}
 
 - The speed one part of a trip must have for a given overall average. The average fixes the total time (total distance ÷ average speed); subtract the known part's time, then divide the remaining distance by the time left.
-- Two workers or machines sharing a job. Turn each time into a rate (the fraction of the job per hour), add the rates, and divide the work left by the combined rate.
-- A solid's size from its mass and density: volume = mass ÷ density in matching units, then a cube's edge is the cube root of its volume. A cubic meter is 100³ cubic centimeters, not 100.
+- A hollow cube's outer size from its mass and material density. Mass divided by density gives only the material volume. If the cavity's edge is half the outer edge, its volume is 1/8 of the outer volume, so the material occupies 7/8. Recover the outer volume before taking a cube root.
 
 > **Example.** A cyclist rides 30 miles at 15 miles per hour. How fast must
 > she ride the next 30 miles to average 20 miles per hour over all 60?
@@ -145,3 +144,14 @@ unit of volume, so mass = density × volume (see
 >
 > Cost: 6 × 14 = 84 dollars. Using 3 instead of 9 gives 18 square yards and
 > the trap answer $252.
+
+> **Example.** A hollow cube has mass 14 kilograms and material density
+> 2 grams per cubic centimeter. Its sealed cubical cavity has half the
+> outer edge length. Find the outer edge length.
+>
+> Material volume: 14,000 ÷ 2 = 7,000 cubic centimeters.
+>
+> If the outer edge is s, the material occupies s³ − (s/2)³ = (7/8)s³.
+> Therefore (7/8)s³ = 7,000, so s³ = 8,000 and s = 20 centimeters.
+>
+> The cavity occupies 1/8 of the outer volume, not 1/2; cube the length ratio.

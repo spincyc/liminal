@@ -4,11 +4,12 @@ module.exports = {
   id: "act-reading-p037",
   type: "natural-science",
   title: "The Quiet Slip",
-  intro: "This passage is adapted from an article on a form of earthquake discovered in the late 1990s.",
+  intro: "This original passage discusses a form of earthquake discovered in the late 1990s.",
   content: `A seismometer measures ground motion, and for a century that is how earthquakes were
 found: something shakes, an instrument records it, and the record is read backwards to a
 place and a depth. The method has an obvious blind spot, which nobody had much reason to
-worry about. It cannot detect a fault that moves without shaking.
+worry about. It is poorly suited to detecting a fault that slips so gradually that it produces no
+ordinary earthquake shaking.
 
 In 1999 Herb Dragert and colleagues at the Geological Survey of Canada were examining
 continuous GPS records from stations on Vancouver Island. The stations sit on the North
@@ -16,14 +17,16 @@ American plate above the Cascadia subduction zone, where the Juan de Fuca plate 
 pushed underneath. Between earthquakes the two plates are locked together, and the upper
 plate is dragged slowly landward, which the GPS records as a steady eastward creep of a few
 millimetres a year. In the middle of that record the stations reversed. For about two weeks
-they moved west, a few millimetres, and then resumed their normal drift. No seismometer had
-recorded anything at all.
+they moved west, a few millimetres, and then resumed their normal drift. The seismic records had not
+shown an ordinary earthquake corresponding to that movement.
 
 The reversal was not an instrument error, because it appeared at many stations at once and
 propagated along the margin at about ten kilometres a day. It was a fault slipping. The slip
-released as much energy as a magnitude 6.7 earthquake and released it over fourteen days
-instead of fourteen seconds, which is slow enough that nothing radiates as a seismic wave.
-Nobody on the surface felt anything, and nothing on any seismogram marked the event.
+had a seismic moment comparable to a magnitude 6.7 earthquake, a measure of fault
+area and displacement rather than of radiated energy. It unfolded over fourteen days
+instead of seconds, producing no ordinary earthquake shaking.
+Nobody on the surface felt it, and the records contained no recognised ordinary
+earthquake signal marking the event.
 
 Once the phenomenon had a name, the seismic record turned out not to be entirely empty
 after all. Kazushige Obara, working in Japan, had been examining a persistent low-frequency
@@ -63,10 +66,10 @@ observation.`,
       key: "a fault behaviour that instruments had been unable to see.",
       wrong: [
         ["a method for predicting great subduction earthquakes.", "The passage says explicitly that no prediction follows from the finding."],
-        ["the discovery that seismometers are poorly calibrated.", "The instruments work correctly; the motion simply produces no waves."],
+        ["the discovery that seismometers are poorly calibrated.", "The issue is how gradual displacement and associated tremor are detected and interpreted, not faulty calibration."],
         ["a comparison of subduction zones in Japan and Canada.", "Both regions appear, but as sites of one phenomenon rather than as a contrast."],
       ],
-      why: "The passage opens by naming the blind spot — a method that \"cannot detect a fault that moves without shaking\" — and then describes what filling it revealed.",
+      why: "The passage opens with the difficulty of detecting gradual displacement through ordinary earthquake shaking, then describes how GPS and a new interpretation of tremor revealed the behaviour.",
       steps: [
         "Read the first paragraph, which states the limitation.",
         "Check that the option covers both the GPS discovery and the tremor.",
@@ -95,19 +98,19 @@ observation.`,
       subskill: "cause and effect",
       family: "cause-of-an-absence",
       difficulty: "Easy",
-      stem: "The passage explains that the 1999 slip produced no seismic record because it:",
-      key: "released its energy far too slowly to radiate waves.",
+      stem: "The passage explains that the 1999 slow slip produced no ordinary earthquake shaking because it:",
+      key: "spread its fault displacement over days rather than seconds.",
       wrong: [
-        ["occurred deeper than seismometers can detect.", "Depth is discussed for hazard, not as the reason nothing was recorded."],
-        ["released far less energy than an ordinary earthquake.", "It released as much energy as a magnitude 6.7 event."],
-        ["happened offshore, beyond the network of stations.", "The GPS stations that recorded it sit directly above the zone."],
+        ["occurred deeper than any seismometer can detect.", "The passage explains the rate of slip, not a depth beyond instrumental detection."],
+        ["involved almost no movement of the underlying fault.", "The GPS reversals and substantial seismic moment show meaningful displacement."],
+        ["happened offshore beyond every station in the network.", "Multiple Vancouver Island stations recorded the displacement."],
       ],
-      why: "The passage says the slip \"released as much energy as a magnitude 6.7 earthquake and released it over fourteen days instead of fourteen seconds, which is slow enough that nothing radiates as a seismic wave.\"",
+      why: "The passage distinguishes the large seismic moment from radiated energy. Slow displacement can involve a substantial fault area without producing the shaking of a rapid earthquake.",
       steps: [
-        "Locate the sentence comparing fourteen days with fourteen seconds.",
-        "Read the clause that follows it.",
+        "Locate the comparison of fault movement over days with a rapid earthquake.",
+        "Distinguish seismic moment from energy radiated as shaking.",
       ],
-      hint: "The same energy over a different duration.",
+      hint: "Compare the speed of displacement, rather than equating moment with radiated energy.",
     },
     {
       subskill: "meaning in context",
@@ -132,13 +135,13 @@ observation.`,
       family: "supported-inference",
       difficulty: "Medium",
       stem: "The passage implies that slow slip had probably been occurring long before 1999 but went unnoticed because:",
-      key: "no instrument in use could record silent motion.",
+      key: "the usual seismic records did not track silent displacement.",
       wrong: [
-        ["the subduction zones concerned had not been studied.", "Both zones were under study; the phenomenon simply left no trace."],
+        ["the subduction zones concerned had not been studied.", "Both zones were under study; the usual records had not revealed the gradual displacement, and tremor was mistaken for noise."],
         ["it occurs only every fourteen months at Cascadia.", "A recurrence of that length would still fall within the record."],
         ["the tremor signal is too weak to be measured.", "The tremor was in the records and had been mistaken for noise."],
       ],
-      why: "The first paragraph says the seismometer method \"cannot detect a fault that moves without shaking,\" and the discovery came only once continuous GPS records were examined.",
+      why: "The passage opens with the blind spot of instruments designed to detect shaking. Continuous GPS exposed displacement that ordinary earthquake records did not show; this does not mean no earlier instrument could ever measure ground position.",
       steps: [
         "Note what instrument was needed to see the motion.",
         "Ask what would have happened before that instrument was in continuous use.",

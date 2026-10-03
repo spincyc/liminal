@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p008",
   type: "humanities",
   title: "The Argument Over Dirt",
-  intro: "This passage is adapted from an essay on the conservation of paintings.",
+  intro: "This original passage discusses the conservation of paintings.",
   content: `A picture that has hung in a public gallery for two hundred years is not the
 object the painter left behind. It has been varnished, and revarnished when the first
 varnish yellowed. It has been retouched where the paint flaked, sometimes by a hand with

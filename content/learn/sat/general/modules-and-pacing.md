@@ -37,7 +37,7 @@ See the [Math plan](learn:sat/general/math-plan).
 Spend time unevenly. Easy questions should take less than the average so
 that hard ones can take more.
 
-| Math module questions | Target each | Clock at the end of the block |
+| Math module questions | Target each | Elapsed time at the end of the block |
 | --- | --- | --- |
 | 1 to 6 (mostly easier) | about 1 minute | 6 minutes |
 | 7 to 12 | about 1.5 minutes | 15 minutes |
@@ -47,9 +47,9 @@ that hard ones can take more.
 The last column is your checkpoint list: question 6 at 6 minutes, 12 at 15,
 18 at 25, done by 33. That leaves 2 of the 35 minutes to recheck marked
 questions. A question that runs over its target borrows from the ones after
-it. If you reach a checkpoint late, don't rush the next block, which is
-easier than the last one; let the time come out of the final check and, if
-it must, the last few questions.
+it. If you reach a checkpoint late, look for questions you can finish
+reliably and move past ones where you are stuck. Keep time to reach and
+answer the rest of the module rather than rushing every remaining question.
 
 | Reading and Writing module | Target |
 | --- | --- |
@@ -74,8 +74,9 @@ In Math, questions run roughly from easiest to hardest, so when time is short
 the last questions are the ones to give up, not the middle ones.
 
 > **Fails when.** You apply it to Reading and Writing. There, questions are
-> grouped by domain and each group runs easy to hard, so the last questions
-> of a module (Expression of Ideas) start easy again. If you are behind in
+> grouped by domain, then by skill and difficulty; Conventions alone runs
+> easy to hard across the domain. A later group can contain easier questions.
+> If you are behind in
 > Reading and Writing, skip within a hard group and still reach the end.
 
 > **Fails when.** A later Math question happens to be one you know cold,

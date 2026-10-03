@@ -152,22 +152,21 @@ puppies' ages and residuals.
 A point far from the trend pulls the line of best fit toward it, most
 strongly when it sits near one end of the data. Remove it and that end of
 the line swings back, which turns the whole line: the slope changes, and the
-other end moves the opposite way.
+other end may move the opposite way. Check the positions of the remaining
+points: this is not a universal rule for every outlier.
 
-> **Example.** In a scatterplot with x from 0 to 10, the points rise
-> steadily, except one point at x = 9 that lies far below the trend. It is
-> removed and a new line of best fit is found. How do the slope and the
-> y-intercept change?
+> **Example.** Five points, (1, 3), (3, 5), (5, 7), (7, 9), and (9, 11),
+> lie on y = x + 2. A sixth point, (9, 3), lies well below that trend.
+> With all six points, the least-squares line is y = 0.5x + 3.5.
 >
-> The low point near the right end was pulling the right end of the line
-> down. Without it, the right end rises, so the slope increases.
->
-> The line turns, so its left end, including the value at x = 0, moves
-> down: the y-intercept decreases.
+> Removing (9, 3) restores y = x + 2: the slope increases from 0.5 to 1,
+> and the y-intercept decreases from 3.5 to 2.
 
-> **Fails when.** The outlier sits near the middle of the x-values. Then it
-> mostly lifts or lowers the whole line, and removing it barely changes the
-> slope; the intercept moves the opposite way to the point.
+> **Fails when.** An outlier near the mean x-value mainly shifts the fitted
+> line vertically. More generally, removing a point changes both means as
+> well as the slope; the intercept and opposite endpoint need not move in
+> the directions suggested by a simple pivot picture. Inspect the actual
+> data or refit the line when the geometry is unclear.
 
 ### Exponential fits over several units {#exponential-over-several-units}
 
@@ -191,17 +190,17 @@ not k times the one-unit percent.
 ## What Hard looks like {#hard}
 
 - A line of best fit and a table of residuals, and a question about which point has the greatest actual value or lies farthest below the line. Add each residual to its own prediction; the largest residual doesn't mark the largest value (see [residuals](#residuals)).
-- A predicted difference asked in units the model doesn't use: square feet when x counts hundreds of square feet, dollars a month when y is thousands of dollars a year (see [a slope in other units](#slope-in-other-units)).
+- Different percent changes in a model's input and prediction, with the input unknown. The intercept matters: set up both predictions, apply the output percent to the whole prediction, and convert the answer from model units.
 - One point removed from a scatterplot and a question about how the new line of best fit compares: its slope, and its value at an end or at x = 0 (see [removing an outlier](#removing-an-outlier)).
-- An exponential model and the percent change over several units of x, which compounds (see [exponential fits over several units](#exponential-over-several-units)).
 
-> **Example.** For a set of stores, a line of best fit is y = 1.5x + 30,
-> where y is the predicted electricity use in a year, in thousands of
-> kilowatt-hours, and x is the floor area in thousands of square feet. Two
-> stores differ in floor area by 2,000 square feet. How much more
-> electricity is the larger one predicted to use per month?
+> **Example.** A model for apartment rents is y = 2x + 12, with x in
+> hundreds of square feet and y in hundreds of dollars. Apartment B has 50%
+> more floor area than A and a predicted rent 25% higher. Find A's area.
 >
-> 2,000 square feet is 2 thousand square feet, so the yearly prediction
-> differs by 1.5 × 2 = 3 thousand kilowatt-hours, or 3,000.
+> Let A's area be x model units. Then B's is 1.5x, so
+> 2(1.5x) + 12 = 1.25(2x + 12).
 >
-> Per month: 3,000 ÷ 12 = 250 kilowatt-hours.
+> Thus 3x + 12 = 2.5x + 15, giving x = 6. A has 600 square feet.
+>
+> Check: the predicted rents are 24 and 30 model units; 30 is 25% above 24.
+> Applying the rent percent only to 2x would ignore the intercept.

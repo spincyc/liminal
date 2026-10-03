@@ -142,23 +142,21 @@ evidence anyone could point to was a dead wire and a great many parades.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "water, the engineering having to be invented",
-          "The participle leaves the second half without a main verb of its own.",
+          "water; the engineering having to be invented",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
         ],
         [
-          "water; and the engineering had to be invented",
-          "A semicolon and a coordinating conjunction do the same job, so both together is redundant.",
-        ],
+          "water; although the engineering had to be invented",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ]
       ],
-      why:
-        "Both halves stand alone as sentences. A comma plus 'and' joins them and adds the second " +
-        "difficulty to the first without inventing a relationship between them.",
+      why: "Both halves stand alone as sentences. A comma plus 'and' joins them and adds the second difficulty to the first without inventing a relationship between them.",
       steps: [
         "Test each side of the comma as a sentence. Both stand.",
-        "Add a coordinating conjunction after the comma.",
+        "Add a coordinating conjunction after the comma."
       ],
       hint: "Cover the comma and read each half aloud on its own.",
-      trap: "The sentence is already long, which makes one more conjunction feel like too many.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -285,23 +283,21 @@ evidence anyone could point to was a dead wire and a great many parades.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "month: several London papers said openly",
-          "A colon introduces an explanation, but the second clause reports a separate reaction.",
+          "month; although several London papers said openly",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "month and several London papers said openly",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "Both clauses are complete and equally weighted — what investors saw, and what the papers " +
-        "then said. A semicolon joins equals without subordinating either.",
+      why: "Both clauses are complete and equally weighted — what investors saw, and what the papers then said. A semicolon joins equals without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or stands beside it. It stands beside it.",
+        "Ask whether the second explains the first or stands beside it. It stands beside it."
       ],
       hint: "Two full sentences of similar weight are what a semicolon is for.",
-      trap: "The second clause reads like a consequence, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 12,

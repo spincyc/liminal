@@ -4,9 +4,9 @@ module.exports = {
   id: "act-english-p007",
   type: "historical-account",
   title: "The Rule That Built the Roads",
-  content: `[1] Before 1896{1 a farmer} who wanted mail rode to town for it. The
+  content: `[1] Before rural delivery began in {1 1896 a farmer} who wanted mail rode to town for it. The
 post office sat in a corner of a general store, it opened when the storekeeper
-felt like opening it, and a letter {2 might have sat} in a pigeonhole for a
+felt like opening it, and a letter {2 may sit} in a pigeonhole for a
 month.
 
 [2] {3} The Post Office Department began experimenting with free delivery to
@@ -41,21 +41,25 @@ revolution. It is remembered, {14 when it is remembered at all,} as mail.`,
       family: "introductory-element-comma",
       difficulty: "Easy",
       keep: false,
-      key: ", a farmer",
-      noChange: "An introductory element needs a comma before the main clause begins.",
+      key: "1896, a farmer",
+      noChange: "The opening dependent clause must be separated from the main clause by a comma.",
       wrong: [
-        [", a farmer,", "The second comma cuts the subject off from the clause describing it."],
-        ["; a farmer", "A semicolon must join two independent clauses, and 'Before 1896' is not one."],
+        [
+          "1896, a farmer,",
+          "The second comma cuts the subject off from the clause describing it."
+        ],
+        [
+          "1896; a farmer",
+          "The words beginning with 'Before' are a dependent clause, so a semicolon cannot join them to the main clause."
+        ]
       ],
-      why:
-        "'Before 1896' opens the sentence and is not the subject. A comma marks where the " +
-        "introductory phrase ends and the main clause starts.",
+      why: "'Before rural delivery began in 1896' is an introductory dependent clause. A comma separates it from the main clause beginning 'a farmer.'",
       steps: [
-        "Find where the opening phrase stops: after '1896.'",
-        "Place a single comma there.",
+        "Locate the end of the dependent clause after '1896.'",
+        "Use a comma there without separating 'farmer' from its defining relative clause."
       ],
-      hint: "A date or phrase at the head of a sentence is almost always followed by one comma.",
-      trap: "Adding a second comma looks symmetrical and quietly severs the subject from its clause.",
+      hint: "Determine whether the opening words form a dependent clause before choosing the punctuation.",
+      trap: "Adding a second comma looks symmetrical and quietly severs the subject from its clause."
     },
     {
       number: 2,
@@ -64,20 +68,24 @@ revolution. It is remembered, {14 when it is remembered at all,} as mail.`,
       difficulty: "Medium",
       keep: false,
       key: "might sit",
-      noChange: "'Might have sat' names one completed possibility, not a recurring condition.",
+      noChange: "The present-tense 'may' does not match the sentence's explicit pre-1896 setting.",
       wrong: [
-        ["might be sitting", "The progressive describes one letter at one moment instead of a practice."],
-        ["may sit", "The present-tense modal contradicts the sentence's pre-1896 setting."],
+        [
+          "might sits",
+          "A modal auxiliary takes the base verb, not the third-person singular 'sits.'"
+        ],
+        [
+          "might sat",
+          "A modal auxiliary takes the base verb, not the past-tense 'sat.'"
+        ]
       ],
-      why:
-        "The sentence describes what regularly happened before 1896. 'Might sit' expresses that " +
-        "habitual possibility and matches the past-tense verbs beside it.",
+      why: "The sentence describes what regularly happened before 1896. 'Might sit' expresses that habitual possibility and matches the past-tense verbs beside it.",
       steps: [
         "Ask whether the sentence describes one event or a recurring one. Recurring.",
-        "Use the modal form that expresses habitual possibility in the past.",
+        "Use the modal form that expresses habitual possibility in the past."
       ],
       hint: "The whole sentence is about what used to happen, not what happened once.",
-      trap: "'Might have' looks more grammatically elaborate, and elaboration reads as correctness.",
+      trap: "The other verbs are past tense, but the verb immediately after a modal remains in its base form."
     },
     {
       number: 3,
@@ -141,22 +149,20 @@ revolution. It is remembered, {14 when it is remembered at all,} as mail.`,
       wrong: [
         [
           "block the first estimates alarmed nearly everyone who saw them.",
-          "Removing the comma fuses the clauses instead of separating them.",
+          "Removing the comma fuses the clauses instead of separating them."
         ],
         [
-          "block, the first estimates alarming nearly everyone who saw them.",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "block; the first estimates alarming nearly everyone who saw them.",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "Both halves stand alone as sentences. Joining them takes a comma plus a conjunction, and " +
-        "'and' adds the second fact to the first without inventing a relationship.",
+      why: "Both halves stand alone as sentences. Joining them takes a comma plus a conjunction, and 'and' adds the second fact to the first without inventing a relationship.",
       steps: [
         "Test each side of the comma as a sentence. Both work.",
-        "Add a coordinating conjunction after the comma.",
+        "Add a coordinating conjunction after the comma."
       ],
       hint: "Cover the comma and read the halves separately.",
-      trap: "The second clause is long, which makes it feel subordinate to the first.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -375,67 +381,58 @@ revolution. It is remembered, {14 when it is remembered at all,} as mail.`,
       subskill: "organization",
       family: "paragraph-move",
       difficulty: "Hard",
-      stem:
-        "The writer is considering moving Paragraph 4 so that it appears immediately after " +
-        "Paragraph 5. Should the writer make this change?",
-      key: "No, because the roads had to be built before the routes existed that made catalogs possible.",
+      stem: "The writer is considering moving Paragraph 4 so that it appears immediately after Paragraph 5. Should the writer make this change?",
+      key: "No, because the roads enabled the routes that brought the catalogs.",
       wrong: [
         [
           "No, because Paragraph 4 is the only paragraph in the essay that mentions specific years.",
-          "Paragraph 2 also gives a year, so the stated reason is not accurate.",
+          "Paragraph 2 also gives a year, so the stated reason is not accurate."
         ],
         [
           "Yes, because both paragraphs describe consequences and belong together at the essay's end.",
-          "Grouping the consequences would break the causal order the essay is built on.",
+          "Grouping the consequences would break the causal order the essay is built on."
         ],
         [
           "Yes, because the commercial effect was larger and should therefore be presented first.",
-          "The essay never ranks the effects, and size is not what orders this account.",
-        ],
+          "The essay never ranks the effects, and size is not what orders this account."
+        ]
       ],
-      why:
-        "The essay runs on cause: the rule forced road work, road work created routes, routes made " +
-        "mail-order retail possible. Paragraph 5 depends on Paragraph 4, so it cannot precede it.",
+      why: "The essay runs on cause: the rule forced road work, road work created routes, routes made mail-order retail possible. Paragraph 5 depends on Paragraph 4, so it cannot precede it.",
       steps: [
         "Trace the chain of cause through the essay's paragraphs in order.",
-        "Ask whether Paragraph 5 could be true before Paragraph 4 had happened. It could not.",
+        "Ask whether Paragraph 5 could be true before Paragraph 4 had happened. It could not."
       ],
       hint: "When paragraphs form a causal chain, their order is the argument.",
-      trap: "Both effects really are effects, which makes grouping them sound like better organization.",
+      trap: "Both effects really are effects, which makes grouping them sound like better organization."
     },
     {
       number: 16,
       subskill: "purpose",
       family: "goal-assessment",
       difficulty: "Hard",
-      stem:
-        "Suppose the writer's goal had been to write an essay about a government program whose " +
-        "largest consequences were ones it did not set out to produce. Would this essay accomplish " +
-        "that goal?",
-      key: "Yes, because a program meant to deliver mail ended up rebuilding roads and reshaping how farms bought goods.",
+      stem: "Suppose the writer's goal had been to write an essay about a government program whose largest consequences were ones it did not set out to produce. Would this essay accomplish that goal?",
+      key: "Yes, because mail delivery also changed roads and rural shopping.",
       wrong: [
         [
           "Yes, because the department's early cost estimates turned out to be far too high.",
-          "The essay never says the estimates were wrong, only that the roads mattered more.",
+          "The essay never says the estimates were wrong, only that the roads mattered more."
         ],
         [
           "No, because the department deliberately used its rule to force counties to improve roads.",
-          "The essay presents the rule as an operating requirement, not as a road policy in disguise.",
+          "The essay presents the rule as an operating requirement, not as a road policy in disguise."
         ],
         [
           "No, because the essay concerns the growth of mail-order retail rather than the postal service.",
-          "Retail is one of two consequences the essay traces, not the subject that displaces the rest.",
-        ],
+          "Retail is one of two consequences the essay traces, not the subject that displaces the rest."
+        ]
       ],
-      why:
-        "The department wanted to deliver mail. What it produced was graded roads, standing bridges, " +
-        "and a national mail-order market — none of which were the point when it began.",
+      why: "The department wanted to deliver mail. What it produced was graded roads, standing bridges, and a national mail-order market — none of which were the point when it began.",
       steps: [
         "Name what the program set out to do, then list what the essay says it did.",
-        "Keep the reason that names the gap between the two.",
+        "Keep the reason that names the gap between the two."
       ],
       hint: "The last paragraph states the mismatch outright.",
-      trap: "One wrong choice is a defensible reading of the rule and still answers the wrong question.",
+      trap: "One wrong choice is a defensible reading of the rule and still answers the wrong question."
     },
   ],
 };

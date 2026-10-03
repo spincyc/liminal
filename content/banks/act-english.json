@@ -14,7 +14,7 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "sixteen; and put me",
+      "sixteen; although put me",
       "sixteen, and putting me",
       "sixteen and put me"
     ],
@@ -26,7 +26,7 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon has to join two independent clauses, and 'and put me' is not one."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 2,
@@ -400,7 +400,7 @@
       "Most of the blanks on the wall fit one of six common residential locks.",
       "The store charged a dollar sixty for a copy, less than half the locksmith's rate.",
       "Ruth could identify a blank from across the room by the shape of its bow.",
-      "One man set a key on the counter and told me, before I could ask, that it had been his mother's."
+      "One man handed me a key, saying it had belonged to his late mother."
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -590,7 +590,7 @@
     "stem": "Which choice is best for underlined portion 10?",
     "choices": [
       "NO CHANGE",
-      "simple; cut it twice.",
+      "simple; although cut it twice.",
       "simple, which was cut it twice.",
       "simple: cut it twice."
     ],
@@ -602,7 +602,7 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon balances two equal clauses, but the second half here explains the first."
+        "reason": "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
       },
       {
         "index": 2,
@@ -616,7 +616,7 @@
       "Ask whether the second half explains the first or balances it. It explains, so use a colon."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "Two complete clauses make the semicolon look right, and the explaining relationship is easy to miss.",
+    "trap": "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -1550,7 +1550,7 @@
     "stem": "Which choice is best for underlined portion 9?",
     "choices": [
       "NO CHANGE",
-      "farther back than one would guess",
+      "farther back than I would guess",
       "farther back than most drivers would guess",
       "farther back than we would guess"
     ],
@@ -1562,7 +1562,7 @@
       },
       {
         "index": 1,
-        "reason": "The formal 'one' is still a shift away from the essay's third person."
+        "reason": "The first-person singular introduces a narrator into the impersonal explanation."
       },
       {
         "index": 3,
@@ -1869,7 +1869,7 @@
     "passageId": "act-english-p002",
     "stem": "The writer is considering deleting the final clause of the essay, “and it works while nobody is watching.” Should the clause be kept or deleted?",
     "choices": [
-      "Kept, because it names the quality that has made the fence worth its cost for a century.",
+      "Kept, because it highlights the fence's ability to work unattended.",
       "Kept, because it introduces the idea that snow fences require no maintenance at all.",
       "Deleted, because the essay has already explained how a snow fence slows the wind.",
       "Deleted, because it shifts the essay from information to the writer's own opinion."
@@ -2383,7 +2383,7 @@
     "choices": [
       "NO CHANGE",
       ", the pressure blew them apart.",
-      ": the pressure blew them apart.",
+      "; although the pressure blew them apart.",
       " and the pressure blew them apart."
     ],
     "correctAnswer": 0,
@@ -2394,7 +2394,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, and this clause reports a result."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -2408,7 +2408,7 @@
       "Keep the semicolon, which joins equals without subordinating either."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The colon is tempting because the second clause feels like it explains the first.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -2640,7 +2640,7 @@
       "The National Fire Protection Association had no power to compel any city to comply.",
       "Baltimore rebuilt its burned district in under two years, faster than anyone expected.",
       "Several foundries continued to advertise their own patterns well into the 1910s.",
-      "The change was all or nothing: a half-converted city could not couple its own hoses to its own hydrants."
+      "Partial conversion could leave a city's hoses unable to fit its hydrants."
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -2894,7 +2894,7 @@
     "stem": "Suppose the writer's goal had been to write an essay explaining how a disaster exposed a problem that no single city could have solved alone. Would this essay accomplish that goal?",
     "choices": [
       "Yes, because it describes the specific brass fittings that Baltimore's foundries produced.",
-      "Yes, because the mismatch only became visible when twenty cities' equipment met in one place.",
+      "Yes, because the incompatibility emerged when visiting crews arrived.",
       "No, because Baltimore eventually rebuilt its downtown without any outside assistance.",
       "No, because the essay concerns a technical standard rather than the fire that preceded it."
     ],
@@ -3151,8 +3151,8 @@
     "choices": [
       "NO CHANGE",
       "and the rest of the piano is then built outward from that one string.",
-      "the rest of the piano is then built outward from that one string.",
-      "so the rest of the piano is then built outward from that one string."
+      "with the rest of the piano are then built outward from that one string.",
+      "and then building the rest of the piano outward from that one string."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -3162,11 +3162,11 @@
       },
       {
         "index": 2,
-        "reason": "Removing the comma fuses the two clauses instead of separating them."
+        "reason": "After 'with,' a noun phrase is needed; the finite verb 'are' leaves this construction malformed."
       },
       {
         "index": 3,
-        "reason": "'So' claims the reference note causes the outward tuning rather than preceding it."
+        "reason": "The participle 'building' is not parallel to the earlier finite verb 'sets.'"
       }
     ],
     "hint": "Once you know it is a splice, the remaining question is which conjunction is honest.",
@@ -3176,7 +3176,7 @@
       "Add the conjunction that states the relationship without inventing one."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'So' fixes the punctuation perfectly and still asserts a cause the sentence does not have.",
+    "trap": "A replacement must work with the comma already printed before the underlined portion.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -3279,7 +3279,7 @@
     "choices": [
       "NO CHANGE",
       "it",
-      "those",
+      "theirs",
       "which"
     ],
     "correctAnswer": 0,
@@ -3290,7 +3290,7 @@
       },
       {
         "index": 2,
-        "reason": "The demonstrative points outward to something the sentence has not named."
+        "reason": "The possessive form names something belonging to the keys rather than the keys themselves."
       },
       {
         "index": 3,
@@ -3661,7 +3661,7 @@
     "passageId": "act-english-p004",
     "stem": "The writer is considering moving Paragraph 5 so that it appears immediately after Paragraph 2. Should the writer make this change?",
     "choices": [
-      "No, because stretching the octaves is the final step and depends on the outward tuning described in Paragraph 4.",
+      "No, because the final adjustments depend on the tuning in Paragraph 4.",
       "No, because Paragraph 5 is the only paragraph that mentions the treble and the bass.",
       "Yes, because both Paragraph 2 and Paragraph 5 describe adjustments made to single strings.",
       "Yes, because it would place the essay's most surprising claim nearer the beginning."
@@ -3727,7 +3727,7 @@
     "choices": [
       "Yes, because it establishes that a piano has far more strings than it has keys.",
       "No, because the essay describes the tuner's procedure rather than the instrument's design.",
-      "Yes, because it gives two reasons — the deliberate compromise of equal temperament and the stretching that real strings require.",
+      "Yes, because temperament and stretching both depart from pure intervals.",
       "No, because the essay states that a piano can be tuned so every interval is pure."
     ],
     "correctAnswer": 2,
@@ -3790,9 +3790,9 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      ", who had signed me up in March,",
-      " who had signed me up in March,",
-      " who had signed me up in March"
+      "mother, who had signed me up in March,",
+      "mother who had signed me up in March,",
+      "mother who had signed me up in March"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -3983,29 +3983,29 @@
     "choices": [
       "NO CHANGE",
       "was",
-      "has been",
-      "are"
+      "are",
+      "were"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "With 'there' as the placeholder, the verb agrees with the plural noun that follows."
+        "reason": "The plural subject 'six of us' needs a plural verb, and the remembered scene needs past tense."
       },
       {
         "index": 1,
-        "reason": "The verb is still singular and the tense now conflicts with the present narration."
+        "reason": "The past tense fits the memory, but the singular verb does not agree with 'six of us.'"
       },
       {
         "index": 2,
-        "reason": "The singular present perfect misses the plural subject and the ongoing scene."
+        "reason": "The plural verb agrees in number but shifts the remembered scene into present tense."
       }
     ],
     "hint": "'There' is never the subject; look past the verb to find the real one.",
-    "explanation": "In a sentence beginning 'There,' the real subject comes after the verb. Here it is 'six of us,' which is plural.",
+    "explanation": "After introductory 'There,' the verb agrees with 'six of us.' The plural past-tense 'were' matches both that subject and the surrounding memory.",
     "solutionSteps": [
-      "Find the noun after the verb: 'six of us.'",
-      "Match the verb to that noun, not to 'there.'"
+      "Find the real subject after the verb: 'six of us.'",
+      "Match its plural number and the paragraph's past-tense setting."
     ],
     "strategy": "Find the head noun of the subject, ignore nouns inside interrupting phrases, and match the verb to that head noun in number.",
     "trap": "'There is' is so common in speech that it sounds correct before any subject at all.",
@@ -4302,7 +4302,7 @@
     "stem": "Which choice is best for underlined portion 9?",
     "choices": [
       "NO CHANGE",
-      "job; while",
+      "job; although while",
       "job, and while",
       "job: while"
     ],
@@ -4314,7 +4314,7 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon joins two independent clauses, and the second half here explains the first."
+        "reason": "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
       },
       {
         "index": 2,
@@ -4328,7 +4328,7 @@
       "Ask whether what follows explains it or merely stands beside it. It explains."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "Both halves are full clauses, which makes the semicolon look like the technical answer.",
+    "trap": "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -4557,7 +4557,7 @@
     "passageId": "act-english-p005",
     "stem": "Given that all the choices are true, which one, if added here, most effectively supports the idea that Denise's assignment worked because it was not presented as help?",
     "choices": [
-      "She never told me what it was for, and I did not work it out until years afterward.",
+      "Only years later did I understand why she had assigned me that job.",
       "She had been teaching beginners' classes at that pool for three summers already.",
       "The six-year-olds were entirely willing to take instruction from a stranger.",
       "By August I could cross the shallow end without putting a foot on the bottom."
@@ -4750,7 +4750,7 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "hard, crumbly and dull",
+      "hard, crumbly and, dull",
       "hard, crumbly, and dull",
       "hard crumbly, and dull"
     ],
@@ -4762,7 +4762,7 @@
       },
       {
         "index": 1,
-        "reason": "The comma before 'and' is missing, so only two of the three are separated."
+        "reason": "The comma after 'and' separates the conjunction from the final adjective."
       },
       {
         "index": 3,
@@ -4770,10 +4770,10 @@
       }
     ],
     "hint": "Count the items before you place any punctuation.",
-    "explanation": "'Hard,' 'crumbly,' and 'dull' are three adjectives in a list, and a list of three takes a comma after each item except the last.",
+    "explanation": "The three adjectives form a series. The key separates them clearly; the other choices omit the separator between the first two or insert a comma after the conjunction. A serial comma before 'and' is optional here, so its omission alone would not make an option wrong.",
     "solutionSteps": [
-      "Count the items in the series. There are three.",
-      "Place a comma after the first and after the second."
+      "Identify the three adjectives: hard, crumbly, and dull.",
+      "Choose the punctuation that separates the items without cutting 'and' off from 'dull.'"
     ],
     "strategy": "Identify the sentence structure before listening for a pause; use commas only where the clause, phrase, or series requires them.",
     "trap": "The phrase is short enough to read as a single unit rather than as a list.",
@@ -4878,7 +4878,7 @@
     "stem": "Which choice, if added here, provides the most effective opening for this paragraph?",
     "choices": [
       "Starch is a carbohydrate made of long chains of glucose molecules.",
-      "What changes in a staling loaf is not its water but its starch.",
+      "Staling involves more than water loss: starch itself reorganizes.",
       "Bakers have understood the behavior of dough for a very long time.",
       "There are several factors that influence the quality of a finished loaf."
     ],
@@ -5070,30 +5070,30 @@
     "stem": "Which choice is best for underlined portion 6?",
     "choices": [
       "NO CHANGE",
-      "A dense, water-repelling crystal, that moisture cannot be reached once amylopectin has reorganized.",
-      "Being a dense, water-repelling crystal, the tongue cannot reach that moisture once amylopectin has reorganized.",
-      "Once amylopectin has reorganized into a dense, water-repelling crystal, the tongue cannot reach that moisture."
+      "A firmer crystalline structure, the tongue detects amylopectin once it has reorganized.",
+      "Being a firmer crystalline structure, the tongue detects the change once amylopectin has reorganized.",
+      "Once amylopectin has reorganized into a firmer crystalline structure, the tongue detects the change."
     ],
     "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The opening appositive describes a crystal, but the noun it lands on is 'the tongue.'"
+        "reason": "The appositive describes reorganized amylopectin, but the noun it attaches to is 'the tongue.'"
       },
       {
         "index": 1,
-        "reason": "The appositive now describes the moisture, which is not a crystal either."
+        "reason": "The introductory appositive still describes the tongue as a crystalline structure."
       },
       {
         "index": 2,
-        "reason": "Changing the form leaves the phrase attached to the same wrong noun."
+        "reason": "Changing the opener to a participial phrase still wrongly attaches it to the tongue."
       }
     ],
-    "hint": "An opening appositive renames whatever comes right after the comma — check what that is.",
-    "explanation": "An appositive at the head of a sentence renames the noun that follows it. Only amylopectin is the crystal, so either amylopectin follows the phrase or the phrase is rebuilt as a clause.",
+    "hint": "Ask what the opening description refers to, then check what noun it actually describes.",
+    "explanation": "Amylopectin forms the crystalline structure; the tongue detects its effect on texture. The key names amylopectin inside the introductory clause instead of making the tongue the structure.",
     "solutionSteps": [
-      "Ask what the opening phrase renames. It renames amylopectin.",
-      "Rewrite so the sentence names amylopectin instead of leaving the phrase stranded."
+      "Identify what becomes more crystalline: amylopectin.",
+      "Make the opener name that substance while leaving the tongue as the detector."
     ],
     "strategy": "Locate the word a descriptive phrase is meant to modify and place that word next to the phrase so the sentence cannot attach it elsewhere.",
     "trap": "The sentence states a true fact about the tongue, so nothing sounds factually wrong.",
@@ -5154,10 +5154,10 @@
       }
     ],
     "hint": "The sentence right after this one tells you which form belongs here.",
-    "explanation": "The paragraph describes what a loaf is doing as it stales, and the next sentence matches: 'It is locking it away.' The progressive keeps the two halves parallel.",
+    "explanation": "'Be losing' is the progressive form needed after 'need not.' It describes a process that need not occur for the crumb to grow firm.",
     "solutionSteps": [
-      "Read the following sentence and note its verb form.",
-      "Keep the underlined verb in the same form so the contrast lands."
+      "Read the complete verb phrase, including 'need not be' before the underline.",
+      "Use the present participle 'losing' after 'be.'"
     ],
     "strategy": "Map the sequence of events and use the tense or verb form that expresses that timing consistently with the surrounding sentence.",
     "trap": "The simple present sounds more like a scientific statement, which reads as more correct.",
@@ -5392,7 +5392,7 @@
       "NO CHANGE",
       "they",
       "the loaf",
-      "this"
+      "them"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -5402,15 +5402,15 @@
       },
       {
         "index": 2,
-        "reason": "Naming the loaf reverses the meaning, since it is the process that speeds up."
+        "reason": "The loaf does not carry out retrogradation; the process firms the crumb."
       },
       {
         "index": 3,
-        "reason": "The bare demonstrative is vaguer than the pronoun and points at the whole clause."
+        "reason": "An object pronoun cannot serve as the subject of 'firms,' and its number does not match 'retrogradation.'"
       }
     ],
-    "hint": "Ask what is running faster, then check that the pronoun matches it in number.",
-    "explanation": "'It' refers to 'retrogradation,' the singular subject of the clause immediately before. Nothing else in the sentence is a process that could run faster.",
+    "hint": "Identify the process doing the firming and match the pronoun to it.",
+    "explanation": "'It' refers to retrogradation, the singular process named immediately before it. That process firms the crumb as the loaf cools.",
     "solutionSteps": [
       "Name the noun the pronoun stands for: retrogradation.",
       "Confirm it is singular and that no other noun competes."
@@ -5518,9 +5518,9 @@
     "stem": "Which choice is best for underlined portion 13?",
     "choices": [
       "NO CHANGE",
-      "why bakeries sell out by evening, and the oldest advice about bread — buy less, buy more often — is also the best",
+      "why a warmed loaf soon firms again, and the oldest advice about bread — buy less, buy more often — is also the best",
       "bakeries selling out by evening, and why the oldest advice about bread — buy less, buy more often — is also the best",
-      "why bakeries sell out by evening, and that the oldest advice about bread — buy less, buy more often — is also the best"
+      "why a warmed loaf soon firms again, and that the oldest advice about bread — buy less, buy more often — is also the best"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -5646,15 +5646,15 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      ", a farmer,",
-      ", a farmer",
-      "; a farmer"
+      "1896, a farmer,",
+      "1896, a farmer",
+      "1896; a farmer"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "An introductory element needs a comma before the main clause begins."
+        "reason": "The opening dependent clause must be separated from the main clause by a comma."
       },
       {
         "index": 1,
@@ -5662,14 +5662,14 @@
       },
       {
         "index": 3,
-        "reason": "A semicolon must join two independent clauses, and 'Before 1896' is not one."
+        "reason": "The words beginning with 'Before' are a dependent clause, so a semicolon cannot join them to the main clause."
       }
     ],
-    "hint": "A date or phrase at the head of a sentence is almost always followed by one comma.",
-    "explanation": "'Before 1896' opens the sentence and is not the subject. A comma marks where the introductory phrase ends and the main clause starts.",
+    "hint": "Determine whether the opening words form a dependent clause before choosing the punctuation.",
+    "explanation": "'Before rural delivery began in 1896' is an introductory dependent clause. A comma separates it from the main clause beginning 'a farmer.'",
     "solutionSteps": [
-      "Find where the opening phrase stops: after '1896.'",
-      "Place a single comma there."
+      "Locate the end of the dependent clause after '1896.'",
+      "Use a comma there without separating 'farmer' from its defining relative clause."
     ],
     "strategy": "Identify the sentence structure before listening for a pause; use commas only where the clause, phrase, or series requires them.",
     "trap": "Adding a second comma looks symmetrical and quietly severs the subject from its clause.",
@@ -5711,22 +5711,22 @@
     "choices": [
       "NO CHANGE",
       "might sit",
-      "might be sitting",
-      "may sit"
+      "might sits",
+      "might sat"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "'Might have sat' names one completed possibility, not a recurring condition."
+        "reason": "The present-tense 'may' does not match the sentence's explicit pre-1896 setting."
       },
       {
         "index": 2,
-        "reason": "The progressive describes one letter at one moment instead of a practice."
+        "reason": "A modal auxiliary takes the base verb, not the third-person singular 'sits.'"
       },
       {
         "index": 3,
-        "reason": "The present-tense modal contradicts the sentence's pre-1896 setting."
+        "reason": "A modal auxiliary takes the base verb, not the past-tense 'sat.'"
       }
     ],
     "hint": "The whole sentence is about what used to happen, not what happened once.",
@@ -5736,7 +5736,7 @@
       "Use the modal form that expresses habitual possibility in the past."
     ],
     "strategy": "Map the sequence of events and use the tense or verb form that expresses that timing consistently with the surrounding sentence.",
-    "trap": "'Might have' looks more grammatically elaborate, and elaboration reads as correctness.",
+    "trap": "The other verbs are past tense, but the verb immediately after a modal remains in its base form.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -5904,7 +5904,7 @@
       "NO CHANGE",
       "block, and the first estimates alarmed nearly everyone who saw them.",
       "block the first estimates alarmed nearly everyone who saw them.",
-      "block, the first estimates alarming nearly everyone who saw them."
+      "block; the first estimates alarming nearly everyone who saw them."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -5918,7 +5918,7 @@
       },
       {
         "index": 3,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "Cover the comma and read the halves separately.",
@@ -5928,7 +5928,7 @@
       "Add a coordinating conjunction after the comma."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "The second clause is long, which makes it feel subordinate to the first.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -6543,7 +6543,7 @@
     "choices": [
       "No, because Paragraph 4 is the only paragraph in the essay that mentions specific years.",
       "Yes, because both paragraphs describe consequences and belong together at the essay's end.",
-      "No, because the roads had to be built before the routes existed that made catalogs possible.",
+      "No, because the roads enabled the routes that brought the catalogs.",
       "Yes, because the commercial effect was larger and should therefore be presented first."
     ],
     "correctAnswer": 2,
@@ -6605,7 +6605,7 @@
     "passageId": "act-english-p007",
     "stem": "Suppose the writer's goal had been to write an essay about a government program whose largest consequences were ones it did not set out to produce. Would this essay accomplish that goal?",
     "choices": [
-      "Yes, because a program meant to deliver mail ended up rebuilding roads and reshaping how farms bought goods.",
+      "Yes, because mail delivery also changed roads and rural shopping.",
       "Yes, because the department's early cost estimates turned out to be far too high.",
       "No, because the department deliberately used its rule to force counties to improve roads.",
       "No, because the essay concerns the growth of mail-order retail rather than the postal service."
@@ -6671,7 +6671,7 @@
     "choices": [
       "NO CHANGE",
       "warm days build pressure in the wood, and a hole",
-      "warm days build pressure in the wood; and a hole",
+      "warm days build pressure in the wood; although a hole",
       "warm days, build pressure in the wood and a hole"
     ],
     "correctAnswer": 1,
@@ -6682,7 +6682,7 @@
       },
       {
         "index": 2,
-        "reason": "A semicolon and a conjunction do the same job, so using both is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 3,
@@ -7184,7 +7184,7 @@
       "NO CHANGE",
       "day, which changes with the weather.",
       "day, changing with the weather.",
-      "day; and that temperature changes with the weather."
+      "day; although that temperature changes with the weather."
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -7198,7 +7198,7 @@
       },
       {
         "index": 3,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both together is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       }
     ],
     "hint": "When several nouns compete, a full clause beats a relative pronoun.",
@@ -7374,7 +7374,7 @@
     "stem": "The writer is considering moving Paragraph 3 so that it appears immediately after Paragraph 4. Should the writer make this change?",
     "choices": [
       "No, because Paragraph 3 is the only paragraph that gives numerical measurements.",
-      "No, because the forty-to-one ratio is what explains why so much boiling is necessary.",
+      "No, because the sap's low sugar content explains the need for boiling.",
       "Yes, because the boiling is the most demanding step and should be described first.",
       "Yes, because both paragraphs concern the removal of water and belong side by side."
     ],
@@ -7502,7 +7502,7 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "work; and then stopped",
+      "work; although then stopped",
       "work and then stopped",
       "work and, then stopped"
     ],
@@ -7514,7 +7514,7 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon must join independent clauses, and 'then stopped' is not one."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 3,
@@ -8270,9 +8270,9 @@
     "stem": "Which choice is best for underlined portion 13?",
     "choices": [
       "NO CHANGE",
-      "symptoms: everything that made her herself stayed on the other side.",
+      "symptoms; with everything that made her herself stayed on the other side.",
       "symptoms; everything that made her herself stayed on the other side.",
-      "symptoms, and everything that made her herself stayed on the other side."
+      "symptoms, however everything that made her herself stayed on the other side."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -8282,21 +8282,21 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause states a separate loss."
+        "reason": "After 'with,' this wording cannot form the independent clause required after the semicolon."
       },
       {
         "index": 3,
-        "reason": "The conjunction repairs the splice but flattens two balanced statements into a list."
+        "reason": "The conjunctive adverb 'however' cannot join two independent clauses with only a comma."
       }
     ],
-    "hint": "A semicolon is for two sentences of equal weight; a colon is for one that answers the other.",
-    "explanation": "Both clauses are complete and carry equal weight — what she became, and what was left behind. A semicolon holds two such clauses together without subordinating either.",
+    "hint": "A semicolon needs a complete clause on each side; an adverb such as 'however' does not repair a comma splice.",
+    "explanation": "Both sides are independent clauses. A semicolon joins them; the alternatives either leave a comma splice or insert 'with' where a complete second clause is needed.",
     "solutionSteps": [
-      "Confirm both sides stand alone as sentences. They do.",
-      "Ask whether the second explains the first or balances it. It balances."
+      "Check that both original clauses can stand as sentences.",
+      "Choose the boundary that joins them without making either clause incomplete."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The colon is tempting because the second clause feels like it is spelling out the first.",
+    "trap": "A connecting word may sound like a conjunction without functioning as one.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -8336,7 +8336,7 @@
       "By then I had been translating for her at appointments for thirteen years.",
       "I had started college two years earlier and was home only on weekends.",
       "She had lived in the same apartment on Lincoln Avenue for more than forty years.",
-      "At the funeral an aunt told a story about her that I had never heard, because it had never needed me."
+      "At her funeral I heard a family story that had never needed my translation."
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -8463,7 +8463,7 @@
     "choices": [
       "Yes, because the narrator became fluent enough to explain insurance terms without hunting for words.",
       "No, because the narrator states plainly that the work was done well and done early.",
-      "Yes, because the translating that made appointments work is also what kept her out of her own conversations.",
+      "Yes, because useful translation also sidelined her in her own conversations.",
       "No, because the essay is about the narrator's grandmother rather than about the narrator."
     ],
     "correctAnswer": 2,
@@ -8526,9 +8526,9 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "Fahrenheit; four degrees",
-      "Fahrenheit four degrees,",
-      "Fahrenheit, four degrees"
+      "Fahrenheit; seven degrees",
+      "Fahrenheit seven degrees,",
+      "Fahrenheit, seven degrees"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -8546,7 +8546,7 @@
       }
     ],
     "hint": "When a phrase says the same thing twice in different units, it is an appositive.",
-    "explanation": "'Four degrees above freezing' renames the temperature just given. An appositive is set off from the noun it renames by a comma.",
+    "explanation": "'Seven degrees above freezing' renames the temperature just given. An appositive is set off from the noun it renames by a comma.",
     "solutionSteps": [
       "Notice that the phrase restates the same temperature in different terms.",
       "Put a comma between the noun and the phrase that renames it."
@@ -8782,9 +8782,9 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "sharply, that band being a barrier:",
+      "sharply; although that band being a barrier:",
       "sharply, and that band is a barrier:",
-      "sharply; and that band is a barrier:"
+      "sharply; although and that band is a barrier:"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -8794,11 +8794,11 @@
       },
       {
         "index": 1,
-        "reason": "The participle leaves the second clause without a main verb of its own."
+        "reason": "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
       },
       {
         "index": 3,
-        "reason": "A semicolon and a coordinating conjunction do the same work, so using both is redundant."
+        "reason": "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
       }
     ],
     "hint": "The colon later in the sentence is correct; the problem is earlier.",
@@ -8808,7 +8808,7 @@
       "Add a coordinating conjunction after the comma."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "The colon draws the eye, so the splice ahead of it goes unexamined.",
+    "trap": "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -8910,33 +8910,33 @@
     "stem": "Which choice is best for underlined portion 7?",
     "choices": [
       "NO CHANGE",
-      "cannot in any useful way reach the water forty feet down",
-      "cannot reach in any useful way water forty feet down",
-      "cannot reach the water forty feet down in any useful way"
+      "can stir the water forty feet down, not the surface water",
+      "can stir both the surface water and the water forty feet down",
+      "can stir only the surface water, not the water forty feet down"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The phrase 'in any useful way' is stranded between the verb and its own object."
+        "reason": "The added phrase contradicts 'only the surface water' by claiming that the wind also reaches the lake bed."
       },
       {
         "index": 1,
-        "reason": "The phrase now splits the auxiliary from the verb it belongs to."
+        "reason": "This reverses the passage's account: the wind reaches the surface while the lower layer remains isolated."
       },
       {
         "index": 2,
-        "reason": "The object loses its article and the phrase still interrupts the verb."
+        "reason": "This removes the restriction even though the passage says the deeper layer is sealed off."
       }
     ],
-    "hint": "Find the verb, find its object, and make sure nothing sits between them.",
-    "explanation": "A verb and its direct object belong together. The modifying phrase goes after the object, where it describes the reaching without separating it from what is reached.",
+    "hint": "Compare what each complete replacement says about surface water and deeper water.",
+    "explanation": "The layers do not mix in summer. 'Only' must restrict the wind's reach to surface water, and the rest of the sentence must preserve that restriction.",
     "solutionSteps": [
-      "Identify the verb and its object: 'reach' and 'the water forty feet down.'",
-      "Move the modifying phrase so it no longer stands between them."
+      "Use the earlier description to identify the layer the wind can reach.",
+      "Keep the modifier and the following phrase consistent with that limited reach."
     ],
     "strategy": "Locate the word a descriptive phrase is meant to modify and place that word next to the phrase so the sentence cannot attach it elsewhere.",
-    "trap": "The original is grammatical and merely awkward, so nothing reads as an error.",
+    "trap": "A sentence can contain 'only' and then undo its restriction with a later phrase.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -8947,7 +8947,7 @@
       "passage-set",
       "informative-essay",
       "underlined-edit",
-      "family:misplaced-prepositional-phrase"
+      "family:modifier-scope-in-context"
     ],
     "provenance": {
       "type": "original",
@@ -9103,7 +9103,7 @@
     "choices": [
       "NO CHANGE",
       "down; nutrients come up.",
-      "down: nutrients come up.",
+      "down; although nutrients come up.",
       "down and nutrients come up."
     ],
     "correctAnswer": 1,
@@ -9114,7 +9114,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause is the matching half of a pair."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -9128,7 +9128,7 @@
       "Ask whether the second explains the first or mirrors it. It mirrors."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The clauses are so short they read as one thought, which makes a comma feel sufficient.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -9430,7 +9430,7 @@
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The introductory phrase runs straight into the subject with no comma between them."
+        "reason": "The introductory clause beginning with 'While' needs a comma before the main clause."
       },
       {
         "index": 1,
@@ -9438,14 +9438,14 @@
       },
       {
         "index": 2,
-        "reason": "A semicolon must join independent clauses, and 'In the 1860s' is not one."
+        "reason": "The opening 'While' clause is dependent, so a semicolon cannot join it to the main clause."
       }
     ],
-    "hint": "A date phrase at the head of a sentence takes one comma, not two.",
-    "explanation": "'In the 1860s' opens the sentence and is not its subject. One comma marks where the introductory phrase ends and the main clause begins.",
+    "hint": "An opening dependent clause needs a boundary before the main clause.",
+    "explanation": "The sentence opens with a dependent clause ending at '1860s.' A comma separates that clause from the main clause about the sailor.",
     "solutionSteps": [
-      "Find where the opening phrase stops: after '1860s.'",
-      "Place a single comma there."
+      "Find the end of the opening dependent clause.",
+      "Put a comma there without separating the main subject from its defining clause."
     ],
     "strategy": "Identify the sentence structure before listening for a pause; use commas only where the clause, phrase, or series requires them.",
     "trap": "A second comma looks balanced and quietly severs the subject from the sentence.",
@@ -10062,7 +10062,7 @@
     "stem": "Which choice is best for underlined portion 11?",
     "choices": [
       "NO CHANGE",
-      "rule: only then did the line mean what the public had believed all along it meant.",
+      "rule; although only then did the line mean what the public had believed all along it meant.",
       "rule; only then did the line mean what the public had believed all along it meant.",
       "rule and only then did the line mean what the public had believed all along it meant."
     ],
@@ -10074,7 +10074,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause marks a turning point instead."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -10088,7 +10088,7 @@
       "Ask whether the second explains the first or balances it. It balances."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause feels like it is spelling out the first, which points toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -10510,9 +10510,9 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "minute, and the cooling takes days:",
+      "minute, however, the cooling takes days:",
       "minute. The cooling takes days:",
-      "minute, the cooling taking days:"
+      "minute; although the cooling taking days:"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -10522,21 +10522,21 @@
       },
       {
         "index": 1,
-        "reason": "The conjunction repairs the splice but flattens a contrast the sentence is drawing."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 3,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
       }
     ],
     "hint": "The sentence is built on an opposition; ask which mark preserves it.",
-    "explanation": "The two clauses set a minute against a week, and the contrast lands hardest when they are separate sentences. A period gives the second one its own weight.",
+    "explanation": "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Choose the punctuation that keeps the contrast between them audible."
+      "Find the subjects and finite verbs on both sides of the boundary.",
+      "Keep a complete statement on each side of the sentence boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' fixes the grammar and quietly turns a contrast into a list.",
+    "trap": "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -10774,7 +10774,7 @@
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "'Changes' allows a tone to rise, which the next paragraph says is impossible."
+        "reason": "'Changes' leaves the direction unspecified, though the surrounding sentences describe tones being lowered."
       },
       {
         "index": 1,
@@ -10786,10 +10786,10 @@
       }
     ],
     "hint": "The paragraph after this one tells you which verb is accurate.",
-    "explanation": "Cutting metal can only lower a partial. The verb should say which way the tone goes, since that one-way constraint is the essay's subject.",
+    "explanation": "The routine interior cuts described here lower the targeted tones. 'Drops' states that direction more precisely than the alternatives; it does not claim every possible removal of bell metal lowers every tone.",
     "solutionSteps": [
-      "Recall what removing metal can and cannot do to a tone.",
-      "Choose the verb that names the direction."
+      "Read the surrounding description of the cuts being made.",
+      "Choose the verb that specifies their stated effect on the targeted tone."
     ],
     "strategy": "Use the surrounding sentence to identify the exact meaning, degree, and tone required before comparing the wording of the choices.",
     "trap": "'Changes' is true as far as it goes, and half-true verbs read as safely neutral.",
@@ -10830,33 +10830,33 @@
     "stem": "Which choice is best for underlined portion 10?",
     "choices": [
       "NO CHANGE",
-      "partial; metal near the lip lowers another;",
-      "partial: metal near the lip lowers another,",
-      "partial, and metal near the lip lowers another,"
+      "partial; metal near the lip lowers another",
+      "partial metal near the lip lowers another",
+      "partial; with metal near the lip lowering another"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "Two independent clauses are joined by commas inside a sentence already full of them."
+        "reason": "The comma joins two independent clauses without a coordinating conjunction."
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause is a parallel example."
+        "reason": "With no punctuation, the two independent clauses run together."
       },
       {
         "index": 3,
-        "reason": "The conjunction fixes the splice but buries the pairing among the sentence's other commas."
+        "reason": "The phrase beginning 'with' is not an independent clause and cannot follow the semicolon here."
       }
     ],
-    "hint": "When a sentence is already crowded with commas, the next level of separation is a semicolon.",
-    "explanation": "The sentence carries three clauses and several internal commas. Semicolons separate the paired clauses clearly, which commas at that level cannot do.",
+    "hint": "Look for the subjects and finite verbs on each side of the proposed boundary.",
+    "explanation": "The two complete clauses describe different cuts. A semicolon joins them, and the 'while' clause attaches to the second without changing that boundary.",
     "solutionSteps": [
-      "Notice how many commas the sentence already contains.",
-      "Raise the separation between the paired clauses to semicolons."
+      "Separate the main clauses from the final dependent 'while' clause.",
+      "Join the two main clauses with a semicolon."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The comma version is grammatical once 'and' is added, and merely unreadable.",
+    "trap": "The dependent clause at the end can distract from the earlier comma splice.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -10867,7 +10867,7 @@
       "passage-set",
       "process-narrative",
       "underlined-edit",
-      "family:semicolons-in-a-series-with-commas"
+      "family:semicolon-before-dependent-ending"
     ],
     "provenance": {
       "type": "original",
@@ -11150,7 +11150,7 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "year; and missed",
+      "year; although missed",
       "year, and I missed,",
       "year and missed"
     ],
@@ -11162,7 +11162,7 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon must join independent clauses, and 'missed nine weeks' is not one."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 2,
@@ -11343,7 +11343,7 @@
     "choices": [
       "NO CHANGE",
       "library, I think, she wanted to stop me",
-      "library; and I think she wanted to stop me",
+      "library; although I think she wanted to stop me",
       "library, and I think she wanted to stop me"
     ],
     "correctAnswer": 3,
@@ -11358,7 +11358,7 @@
       },
       {
         "index": 2,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both together is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       }
     ],
     "hint": "Cover the comma and read each half aloud on its own.",
@@ -11470,7 +11470,7 @@
     "stem": "Which choice is best for underlined portion 6?",
     "choices": [
       "NO CHANGE",
-      "eleven: by March I had thirty.",
+      "eleven; although by March I had thirty.",
       "eleven; by March I had thirty.",
       "eleven and by March I had thirty."
     ],
@@ -11482,7 +11482,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause is the matching half of a pair."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -11496,7 +11496,7 @@
       "Ask whether the second explains the first or matches it. It matches."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The clauses are brief enough to read as one thought, which makes a comma feel sufficient.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -11790,33 +11790,33 @@
     "stem": "Which choice is best for underlined portion 11?",
     "choices": [
       "NO CHANGE",
-      "juncos that arrive in late October in the yard and leave in the first week of April",
+      "juncos that arrives in the yard in late October and leaves in the first week of April",
       "juncos that arrive in the yard in late October and leave in the first week of April",
-      "juncos in the yard, which arrive in late October and leave in the first week of April"
+      "juncos that the yard arrives in late October and leaves in the first week of April"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The relative clause sits next to 'the yard,' so it describes the yard rather than the juncos."
+        "reason": "The singular 'arrives' and 'leaves' make the clause describe the yard, which does not migrate."
       },
       {
         "index": 1,
-        "reason": "The clause now modifies the juncos but strands the location inside the first verb phrase."
+        "reason": "The clause is now next to 'juncos,' but its singular verbs do not agree with that plural noun."
       },
       {
         "index": 3,
-        "reason": "The comma makes the clause nonrestrictive, implying all juncos everywhere do this."
+        "reason": "This wording makes the yard the subject of the arriving and leaving."
       }
     ],
-    "hint": "Find the noun the clause is supposed to describe and put it next to 'that.'",
-    "explanation": "A relative clause modifies the noun immediately before it. Moving 'in the yard' inside the clause puts 'juncos' next to 'that' and keeps the clause restrictive.",
+    "hint": "Check both the noun described by the relative clause and the number of its verbs.",
+    "explanation": "The migrating birds are the juncos. Placing the relative clause next to that noun and using plural verbs makes both its attachment and agreement clear.",
     "solutionSteps": [
-      "Ask what arrives in October. The juncos do, not the yard.",
-      "Rearrange so the clause follows 'juncos' directly."
+      "Identify what arrives and leaves: the juncos.",
+      "Choose the clause whose subject and plural verbs describe those birds."
     ],
     "strategy": "Locate the word a descriptive phrase is meant to modify and place that word next to the phrase so the sentence cannot attach it elsewhere.",
-    "trap": "The meaning is obvious from context, and obviousness hides the misplacement.",
+    "trap": "The nearby singular 'yard' can attract verbs that should describe the plural birds.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -12175,7 +12175,7 @@
     "choices": [
       "NO CHANGE",
       "it, and so do",
-      "it; and so do",
+      "it; although so do",
       "it and so do,"
     ],
     "correctAnswer": 1,
@@ -12186,7 +12186,7 @@
       },
       {
         "index": 2,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 3,
@@ -12814,7 +12814,7 @@
     "stem": "Which choice is best for underlined portion 11?",
     "choices": [
       "NO CHANGE",
-      "down: it is steadier in the frame and easier to seal.",
+      "down; although it is steadier in the frame and easier to seal.",
       "down; it is steadier in the frame and easier to seal.",
       "down, and it is steadier in the frame, and easier to seal."
     ],
@@ -12826,7 +12826,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the clause states a parallel practical fact."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -12840,7 +12840,7 @@
       "Join them with the mark that keeps them equal."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause gives a reason, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -13391,8 +13391,8 @@
     "choices": [
       "NO CHANGE",
       "water, and the engineering had to be invented",
-      "water, the engineering having to be invented",
-      "water; and the engineering had to be invented"
+      "water; the engineering having to be invented",
+      "water; although the engineering had to be invented"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -13402,11 +13402,11 @@
       },
       {
         "index": 2,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       },
       {
         "index": 3,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both together is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       }
     ],
     "hint": "Cover the comma and read each half aloud on its own.",
@@ -13416,7 +13416,7 @@
       "Add a coordinating conjunction after the comma."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "The sentence is already long, which makes one more conjunction feel like too many.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -13774,7 +13774,7 @@
     "stem": "Which choice is best for underlined portion 11?",
     "choices": [
       "NO CHANGE",
-      "month: several London papers said openly",
+      "month; although several London papers said openly",
       "month; several London papers said openly",
       "month and several London papers said openly"
     ],
@@ -13786,7 +13786,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause reports a separate reaction."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -13800,7 +13800,7 @@
       "Ask whether the second explains the first or stands beside it. It stands beside it."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause reads like a consequence, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -14030,9 +14030,9 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "darkness; and has",
+      "darkness; although has",
       "darkness and has",
-      "darkness, and it has"
+      "darkness, and having"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -14042,11 +14042,11 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon must join independent clauses, and 'has to be done' is not one."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 3,
-        "reason": "Adding a subject fixes the comma but repeats a subject the sentence already has."
+        "reason": "The participle 'having' is not parallel to the finite verb 'happens' in this compound predicate."
       }
     ],
     "hint": "Ask whether the words after 'and' could stand alone as a sentence.",
@@ -14671,7 +14671,7 @@
     "choices": [
       "NO CHANGE",
       "combined, fixer left in the emulsion will stain the negatives brown over the following decades.",
-      "combined: fixer left in the emulsion will stain the negatives brown over the following decades.",
+      "combined; although fixer left in the emulsion will stain the negatives brown over the following decades.",
       "combined and fixer left in the emulsion will stain the negatives brown over the following decades."
     ],
     "correctAnswer": 0,
@@ -14682,7 +14682,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause states the consequence of skimping."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -14696,7 +14696,7 @@
       "Ask whether the second explains the first or balances it. It balances."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause supplies a reason, which points the eye toward a colon.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -14927,7 +14927,7 @@
     "choices": [
       "NO CHANGE",
       "boots, and I",
-      "boots; and I",
+      "boots; although I",
       "boots, and, I"
     ],
     "correctAnswer": 1,
@@ -14938,7 +14938,7 @@
       },
       {
         "index": 2,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 3,
@@ -15119,32 +15119,32 @@
     "choices": [
       "NO CHANGE",
       "a string trimmer for the base of every stone",
-      "a string trimmer used at the base of every stone",
+      "to use a string trimmer at the base of every stone",
       "using a string trimmer for the base of every stone"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The fourth item becomes a gerund phrase where the first three are noun phrases."
+        "reason": "The final entry names the activity of using a tool rather than naming the third tool in the equipment list."
       },
       {
         "index": 2,
-        "reason": "The added participle breaks the pattern the first three items set with 'for.'"
+        "reason": "The infinitive describes an action rather than naming a tool as the preceding noun phrases do."
       },
       {
         "index": 3,
-        "reason": "The gerund remains, so the item still does not match the three before it."
+        "reason": "This wording still names an activity, whereas the preceding two equipment entries name tools and their jobs."
       }
     ],
-    "hint": "Compare the first word of each item before anything else.",
-    "explanation": "The sentence is a list of equipment: acreage, then three tools, each named as a noun phrase followed by what it is for. The fourth item has to take the same shape.",
+    "hint": "Ask what the equipment entries name: tools or activities.",
+    "explanation": "After giving the acreage, the sentence lists three tools and their jobs: a zero-turn mower, a push mower, and a string trimmer. The last equipment entry should name the tool, matching the two mower entries, rather than describe the activity of using it.",
     "solutionSteps": [
-      "Read the four items in isolation and compare how each begins.",
-      "Rewrite the last one to open with an article and a noun, like the others."
+      "Set aside the acreage and compare the three equipment entries.",
+      "Keep the final entry focused on a tool and its job, like the two mower entries."
     ],
     "strategy": "Identify the grammatical pattern established by the coordinated items, then make every item follow that same pattern.",
-    "trap": "The gerund reads fluently because it is the only item describing an action.",
+    "trap": "A gerund phrase can function as a noun, but here it names an activity where the equipment list calls for a tool.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -15184,7 +15184,7 @@
       "NO CHANGE",
       "stones, and I learned to hate that trimmer",
       "stones, I learned to hate that trimmer,",
-      "stones; and I learned to hate that trimmer"
+      "stones; although I learned to hate that trimmer"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -15198,7 +15198,7 @@
       },
       {
         "index": 3,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both together is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       }
     ],
     "hint": "Cover the comma and read each half aloud on its own.",
@@ -15567,7 +15567,7 @@
     "choices": [
       "NO CHANGE",
       "Trimming every ten days all summer, Ray never assigned that row to anyone else.",
-      "Trimmed every ten days all summer, that row was never assigned to anyone else by Ray.",
+      "Trimmed every ten days all summer, Ray kept that row on my assignment list.",
       "Though I trimmed that row every ten days all summer, Ray never assigned it to anyone else."
     ],
     "correctAnswer": 3,
@@ -15582,7 +15582,7 @@
       },
       {
         "index": 2,
-        "reason": "The modifier now attaches correctly but the passive buries who did the assigning."
+        "reason": "The opening phrase again describes Ray as being trimmed rather than describing the row."
       }
     ],
     "hint": "When no rearrangement puts the right noun after the comma, make the phrase a clause.",
@@ -15631,7 +15631,7 @@
     "choices": [
       "NO CHANGE",
       "why; I have thought since that he may have been waiting",
-      "why: I have thought since that he may have been waiting",
+      "why; although I have thought since that he may have been waiting",
       "why and I have thought since that he may have been waiting"
     ],
     "correctAnswer": 1,
@@ -15642,7 +15642,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause is a later reflection."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -15656,7 +15656,7 @@
       "Ask whether the second explains the first or sits beside it. It sits beside it."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause reads like an explanation, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -15886,7 +15886,7 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "quibble; and the",
+      "quibble; although the",
       "quibble, and, the",
       "quibble, and the"
     ],
@@ -15898,7 +15898,7 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 2,
@@ -16527,7 +16527,7 @@
     "choices": [
       "NO CHANGE",
       "zero; in practice most agencies stop expecting much",
-      "zero: in practice most agencies stop expecting much",
+      "zero; although in practice most agencies stop expecting much",
       "zero and in practice most agencies stop expecting much"
     ],
     "correctAnswer": 1,
@@ -16538,7 +16538,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause opposes the first rather than explaining it."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -16552,7 +16552,7 @@
       "Ask whether the second explains the first or is set against it. It is set against it."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause qualifies the first, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -16846,9 +16846,9 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "Barbier an artillery officer",
-      "Barbier; an artillery officer,",
-      "Barbier, an artillery officer,"
+      "Barbier a former artillery officer",
+      "Barbier; a former artillery officer,",
+      "Barbier, a former artillery officer,"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -16975,7 +16975,7 @@
     "choices": [
       "The Royal Institute for Blind Youth had been founded in Paris some decades earlier.",
       "Blindness in nineteenth-century France was frequently the result of untreated infection.",
-      "At the school it found the reader Barbier had not been looking for.",
+      "One pupil would make the bulky system fit a fingertip.",
       "There were several attempts at tactile writing systems during this period."
     ],
     "correctAnswer": 2,
@@ -16994,10 +16994,10 @@
       }
     ],
     "hint": "The best opening turns the previous paragraph's last move into this one's premise.",
-    "explanation": "Paragraph 1 ends with a rejected military code arriving at a school. This paragraph is about who picked it up there, so the opening should make that handoff.",
+    "explanation": "Paragraph 1 introduces Barbier's tactile code. Paragraph 2 introduces the pupil who recognized its limitations, so the opening should connect that reader to the system.",
     "solutionSteps": [
-      "Note where the previous paragraph leaves the code: at a school, unwanted by soldiers.",
-      "Choose the opening that turns that arrival into this paragraph's subject."
+      "Identify the previous paragraph's subject: Barbier's raised-dot system.",
+      "Choose the opening that connects the system to the pupil who will revise it."
     ],
     "strategy": "Choose an opening that establishes the passage's specific subject and direction without becoming broader or narrower than what follows.",
     "trap": "The founding date is the most factual choice and connects to nothing that follows.",
@@ -17038,8 +17038,8 @@
     "stem": "Which choice is best for underlined portion 4?",
     "choices": [
       "NO CHANGE",
-      "it, and he had been blind",
-      "it, having been blind",
+      "it, however, he had been blind",
+      "it; having been blind",
       "it. He had been blind"
     ],
     "correctAnswer": 3,
@@ -17050,21 +17050,21 @@
       },
       {
         "index": 1,
-        "reason": "The conjunction repairs the splice but ties his age to his blindness as one thought."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 2,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "Once you see the splice, ask whether the halves belong in one sentence at all.",
-    "explanation": "The two facts are separate — how old he was, and how long he had been blind. Making them two sentences keeps each one its own statement.",
+    "explanation": "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Choose the punctuation that lets each fact land on its own."
+      "Find the subjects and finite verbs on both sides of the boundary.",
+      "Keep a complete statement on each side of the sentence boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' fixes the grammar and quietly merges two unrelated facts.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -17296,7 +17296,7 @@
       "NO CHANGE",
       "He finished the essential work at fifteen and published it at twenty.",
       "Finishing at fifteen and publishing at twenty, the essential work was his.",
-      "Finished at fifteen and published at twenty, the essential work had been done by him."
+      "Finishing the code at fifteen and publishing it at twenty, Braille's work was complete."
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -17310,7 +17310,7 @@
       },
       {
         "index": 3,
-        "reason": "The modifier attaches correctly but the passive buries who did it."
+        "reason": "The subject after the opening phrase is 'work,' which cannot finish or publish a code."
       }
     ],
     "hint": "When no rearrangement puts the right noun after the comma, drop the phrase entirely.",
@@ -17487,7 +17487,7 @@
     "choices": [
       "NO CHANGE",
       "it; students kept using it anyway",
-      "it: students kept using it anyway",
+      "it; although students kept using it anyway",
       "it and students kept using it anyway"
     ],
     "correctAnswer": 1,
@@ -17498,7 +17498,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause opposes the first."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -17512,7 +17512,7 @@
       "Ask whether the second explains the first or defies it. It defies it."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The clause is long enough that the splice sits far from where the eye stops.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -17743,7 +17743,7 @@
     "choices": [
       "NO CHANGE",
       "next, and walls",
-      "next; and walls",
+      "next; although walls",
       "next, and, walls"
     ],
     "correctAnswer": 1,
@@ -17754,7 +17754,7 @@
       },
       {
         "index": 2,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 3,
@@ -17998,7 +17998,7 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "side, and a wall that settles unevenly is a wall",
+      "side, however, a wall that settles unevenly is a wall",
       "side; because a wall that settles unevenly is a wall",
       "side, because a wall that settles unevenly is a wall"
     ],
@@ -18010,7 +18010,7 @@
       },
       {
         "index": 1,
-        "reason": "'And' repairs the splice but hides that the second clause is the reason for the first."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 2,
@@ -18024,7 +18024,7 @@
       "Choose the conjunction that names the relationship rather than merely adding."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' is the reflex fix and flattens a reason into a list.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -18382,7 +18382,7 @@
     "stem": "Which choice is best for underlined portion 11?",
     "choices": [
       "NO CHANGE",
-      "itself: a row of copestones on edge finishes",
+      "itself; although a row of copestones on edge finishes",
       "itself and a row of copestones on edge finishes",
       "itself; a row of copestones on edge finishes"
     ],
@@ -18394,7 +18394,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause describes a separate step."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 2,
@@ -18408,7 +18408,7 @@
       "Ask whether the second explains the first or sits beside it. It sits beside it."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The sentence is long, so the splice sits far from where the eye stops.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -18512,7 +18512,7 @@
       "Yes, because the essay explains that a waller never forces a stone into place.",
       "No, because the copestones and the two faces are the parts the essay describes at greatest length.",
       "No, because the essay states that the wall's strength comes from weight and friction.",
-      "Yes, because the foundation, the hearting, and the through-stones are all buried inside the finished wall."
+      "Yes, because the foundation and hearting do essential work beneath the finished surfaces."
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -18530,7 +18530,7 @@
       }
     ],
     "hint": "Count how many of the described parts a passer-by could actually see.",
-    "explanation": "The largest stones go where nobody will see them, the hearting sits between the faces, and the through-stones are inside the wall. Everything holding it up is out of sight.",
+    "explanation": "The large foundation stones lie below ground, and the hearting supports the wall between its faces. Those concealed components establish the essay's emphasis on important work that a viewer cannot see.",
     "solutionSteps": [
       "List the components the essay describes and mark which are visible in a finished wall.",
       "Keep the reason that names more than one hidden component."
@@ -18959,7 +18959,7 @@
     "choices": [
       "NO CHANGE",
       "shut, and I used the eleven I already knew,",
-      "shut; I used the eleven I already knew",
+      "shut; using the eleven I already knew",
       "shut and used the eleven I already knew"
     ],
     "correctAnswer": 3,
@@ -18974,7 +18974,7 @@
       },
       {
         "index": 2,
-        "reason": "A semicolon repairs the splice but severs the two halves of one continuous action."
+        "reason": "The phrase after the semicolon has no finite verb and cannot stand as an independent clause."
       }
     ],
     "hint": "The sentence has a third part after this; the fix has to leave room for it.",
@@ -19215,7 +19215,7 @@
     "choices": [
       "NO CHANGE",
       "piece; the cord was replaced",
-      "piece: the cord was replaced",
+      "piece; although the cord was replaced",
       "piece and the cord was replaced"
     ],
     "correctAnswer": 1,
@@ -19226,7 +19226,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause reports the next step."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -19240,7 +19240,7 @@
       "Ask whether the second explains the first or follows it. It follows."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause reads like a consequence, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -19598,7 +19598,7 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "rotate; and the",
+      "rotate; although the",
       "rotate and, the",
       "rotate, and the"
     ],
@@ -19610,7 +19610,7 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 2,
@@ -19918,8 +19918,8 @@
     "stem": "Which choice is best for underlined portion 6?",
     "choices": [
       "NO CHANGE",
-      "rigid, and the bulge takes time",
-      "rigid; so the bulge takes time",
+      "rigid, however, the bulge takes time",
+      "rigid; although the bulge takes time",
       "rigid, so the bulge takes time"
     ],
     "correctAnswer": 3,
@@ -19930,11 +19930,11 @@
       },
       {
         "index": 1,
-        "reason": "'And' repairs the splice but hides that the second clause follows from the first."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 2,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both together is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       }
     ],
     "hint": "The lag is the whole point of the sentence; the conjunction should say so.",
@@ -19944,7 +19944,7 @@
       "Choose the conjunction that names the relationship rather than merely adding."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' is the reflex fix and flattens a cause into a list.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -20112,7 +20112,7 @@
       "NO CHANGE",
       "their",
       "it's",
-      "the"
+      "its'"
     ],
     "correctAnswer": 0,
     "distractorRationales": [
@@ -20126,7 +20126,7 @@
       },
       {
         "index": 3,
-        "reason": "The article drops the possession the sentence needs to attribute the axis."
+        "reason": "The possessive pronoun 'its' takes no apostrophe; 'its'' is not a standard form."
       }
     ],
     "hint": "Try reading it as 'it is' — if that fails, the possessive is right.",
@@ -20238,7 +20238,7 @@
     "stem": "Which choice is best for underlined portion 11?",
     "choices": [
       "NO CHANGE",
-      "time: the rest of it went unseen",
+      "time; although the rest of it went unseen",
       "time; the rest of it went unseen",
       "time and the rest of it went unseen"
     ],
@@ -20250,7 +20250,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause states the complementary fact."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -20264,7 +20264,7 @@
       "Ask whether the second explains the first or completes it. It completes it."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause supplies the remainder, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -20751,8 +20751,8 @@
     "choices": [
       "NO CHANGE",
       "result. The pay was twenty-five to fifty cents",
-      "result, and the pay was twenty-five to fifty cents",
-      "result, the pay being twenty-five to fifty cents"
+      "result, however, the pay was twenty-five to fifty cents",
+      "result; the pay being twenty-five to fifty cents"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -20762,21 +20762,21 @@
       },
       {
         "index": 2,
-        "reason": "'And' repairs the splice but attaches the wage to the list of duties as one thought."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 3,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "The first half is already long; ask whether the second belongs inside it.",
-    "explanation": "The sentence has already run a three-item series describing the work. Starting a new sentence lets the wage land as its own statement instead of trailing the list.",
+    "explanation": "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Choose the punctuation that gives the second one its own weight."
+      "Find the subjects and finite verbs on both sides of the boundary.",
+      "Keep a complete statement on each side of the sentence boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' fixes the grammar and buries the sentence's most pointed fact.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -21070,7 +21070,7 @@
     "stem": "Which choice is best for underlined portion 10?",
     "choices": [
       "NO CHANGE",
-      "took: the relation was tight enough",
+      "took; although the relation was tight enough",
       "took; the relation was tight enough",
       "took and the relation was tight enough"
     ],
@@ -21082,7 +21082,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause assesses the first rather than explaining it."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -21096,7 +21096,7 @@
       "Ask whether the second explains the first or evaluates it. It evaluates."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The sentence already uses a colon earlier, which makes a second one look consistent.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -21199,7 +21199,7 @@
     "choices": [
       "Leavitt published her result in a short paper issued by the observatory in 1912.",
       "The Small Magellanic Cloud is visible only from the southern hemisphere.",
-      "Until then astronomers could say which of two stars was brighter, but not which was nearer.",
+      "For very distant stars, apparent brightness alone could not reveal distance.",
       "Variable stars of this kind are now called Cepheids after an earlier example."
     ],
     "correctAnswer": 2,
@@ -21218,10 +21218,10 @@
       }
     ],
     "hint": "A setup sentence should make the payoff feel like an answer.",
-    "explanation": "The paragraph explains how the relation yields distance. It only lands if the reader knows distance was the thing astronomers could not measure.",
+    "explanation": "The paragraph explains a new way to measure great distances. The setup identifies what apparent brightness alone could not establish, without claiming that all earlier stellar distance measurements were impossible.",
     "solutionSteps": [
-      "Read the explanation that follows and name what it produces: distance.",
-      "Keep the choice establishing that distance was previously out of reach."
+      "Identify the explanation's result: a distance inferred from intrinsic and apparent brightness.",
+      "Choose the limitation that this method addresses."
     ],
     "strategy": "Identify the claim that needs support, then choose the concrete detail that most directly proves it rather than merely sharing its topic.",
     "trap": "The publication detail is the most historical choice and sets up nothing.",
@@ -21583,8 +21583,8 @@
     "choices": [
       "NO CHANGE",
       "open, and the pages cockle",
-      "open, the pages cockling",
-      "open; and the pages cockle"
+      "open; the pages cockling",
+      "open; although the pages cockle"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -21594,21 +21594,21 @@
       },
       {
         "index": 2,
-        "reason": "The participle leaves the second clause without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       },
       {
         "index": 3,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both together is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       }
     ],
     "hint": "Look at how the third item in this sentence is attached, then match it.",
-    "explanation": "The sentence lists three consequences joined by 'and' at the end, so the first two have to be joined the same way for the series to hold.",
+    "explanation": "The book failing to lie open and its pages cockling are two independent clauses. A comma plus the coordinating conjunction joins them; commas alone cannot do that.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Match the joining used later in the same sentence."
+      "Identify the subject and finite verb of each clause.",
+      "Keep the comma and coordinating conjunction together at their boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "The sentence is long enough that the splice sits far from the 'and' that fixes it.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -21839,7 +21839,7 @@
     "choices": [
       "NO CHANGE",
       "curve; backing splays the outermost signatures",
-      "curve: backing splays the outermost signatures",
+      "curve; although backing splays the outermost signatures",
       "curve and backing splays the outermost signatures"
     ],
     "correctAnswer": 1,
@@ -21850,7 +21850,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause describes a separate operation."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -21864,7 +21864,7 @@
       "Ask whether the second explains the first or matches it. It matches."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The clauses are short, which makes a comma feel sufficient.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -22288,7 +22288,7 @@
       "NO CHANGE",
       "rule: between",
       "rule, that between",
-      "rule; between"
+      "rule; although between"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -22302,7 +22302,7 @@
       },
       {
         "index": 3,
-        "reason": "A semicolon joins two independent clauses, and 'between eight … night' explains instead."
+        "reason": "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
       }
     ],
     "hint": "A sentence that announces something and then supplies it wants a colon.",
@@ -22312,7 +22312,7 @@
       "Ask whether what follows explains it. It does, so use a colon."
     ],
     "strategy": "Identify the sentence structure before listening for a pause; use commas only where the clause, phrase, or series requires them.",
-    "trap": "The sentence is already long, so one more heavy mark feels like too many.",
+    "trap": "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon.",
     "estimatedSeconds": 35,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -22480,7 +22480,7 @@
       "NO CHANGE",
       "edge, I could cross that hall,",
       "edge, and I could cross that hall",
-      "edge; and I could cross that hall"
+      "edge; although I could cross that hall"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -22494,7 +22494,7 @@
       },
       {
         "index": 3,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both together is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       }
     ],
     "hint": "Cover the comma and read each half aloud on its own.",
@@ -22606,7 +22606,7 @@
     "stem": "Which choice is best for underlined portion 7?",
     "choices": [
       "NO CHANGE",
-      "Waking at any noise at all, my mother never once came out of that room to tell us to be quiet.",
+      "Waking at any noise at all, that room was never once left by my mother to tell us to be quiet.",
       "My mother, who woke at any noise at all, never once came out of that room to tell us to be quiet.",
       "Woken by any noise at all, that room was never once left by my mother to tell us to be quiet."
     ],
@@ -22614,25 +22614,25 @@
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The opening phrase describes the mother, but it reads as her never coming out because she was woken."
+        "reason": "The participial phrase describes the mother, but the subject immediately after it is 'the rule.'"
       },
       {
         "index": 1,
-        "reason": "The participle now says her waking is what kept her in the room, reversing the point."
+        "reason": "The opening phrase makes the room, rather than the mother, do the waking."
       },
       {
         "index": 3,
-        "reason": "The phrase now describes the room, which is not what any noise woke."
+        "reason": "The passive opening phrase still describes the room as something that can be woken."
       }
     ],
-    "hint": "An opening participle claims to explain the main clause; check whether it should.",
-    "explanation": "Her light sleeping is a standing fact about her, not the cause of her silence. A relative clause attaches it to her without claiming it explains what follows.",
+    "hint": "Read the subject after each opening description and ask whether it can wake.",
+    "explanation": "The mother is the one who wakes. The relative clause in the key directly describes her; the other versions attach the waking to a rule or a room.",
     "solutionSteps": [
-      "Ask what relationship the opening phrase asserts. It asserts a cause.",
-      "Rewrite it as a clause that describes her instead."
+      "Identify who wakes when there is noise.",
+      "Keep the description attached to that person throughout the sentence."
     ],
     "strategy": "Locate the word a descriptive phrase is meant to modify and place that word next to the phrase so the sentence cannot attach it elsewhere.",
-    "trap": "The sentence is grammatical enough to pass, and only its logic is wrong.",
+    "trap": "The intended person appears later in a sentence whose opening actually describes a different subject.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -22670,7 +22670,7 @@
     "stem": "Which choice is best for underlined portion 8?",
     "choices": [
       "NO CHANGE",
-      "worse; she would come down at three",
+      "worse; although she would come down at three",
       "worse, and she would come down at three",
       "worse: she would come down at three"
     ],
@@ -22682,7 +22682,7 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon balances two equal clauses, but the second half here spells out the first."
+        "reason": "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
       },
       {
         "index": 2,
@@ -22696,7 +22696,7 @@
       "Ask whether the second half explains the first or balances it. It explains."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "Both halves are full clauses, which makes the semicolon look like the technical answer.",
+    "trap": "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -23246,7 +23246,7 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "ways; and a",
+      "ways; although a",
       "ways, and, a",
       "ways, and a"
     ],
@@ -23258,7 +23258,7 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 2,
@@ -23503,8 +23503,8 @@
     "choices": [
       "NO CHANGE",
       "removed. A flask is two vessels",
-      "removed, and a flask is two vessels",
-      "removed, a flask being two vessels"
+      "removed, however, a flask is two vessels",
+      "removed; a flask being two vessels"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -23514,21 +23514,21 @@
       },
       {
         "index": 2,
-        "reason": "The conjunction repairs the splice but ties the principle to the construction as one thought."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 3,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "The second clause runs to three more phrases; ask whether it should share a sentence.",
-    "explanation": "The first clause states a principle and the second describes how a flask applies it. Separating them lets the description carry its own long series of details.",
+    "explanation": "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Choose the punctuation that gives the second one room for the list that follows."
+      "Find the subjects and finite verbs on both sides of the boundary.",
+      "Keep a complete statement on each side of the sentence boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' fixes the grammar and produces a sentence with five clauses in it.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -23759,7 +23759,7 @@
     "choices": [
       "NO CHANGE",
       "silvered: a mirrored surface emits very little",
-      "silvered; a mirrored surface emits very little",
+      "silvered; although a mirrored surface emits very little",
       "silvered, and a mirrored surface emits very little"
     ],
     "correctAnswer": 1,
@@ -23770,7 +23770,7 @@
       },
       {
         "index": 2,
-        "reason": "A semicolon balances two equal clauses, but the second half here explains the first."
+        "reason": "The words after the semicolon become a dependent 'although' clause, so the boundary is incorrect."
       },
       {
         "index": 3,
@@ -23784,7 +23784,7 @@
       "Ask whether what follows explains it or balances it. It explains."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "Both halves are full clauses, which makes the semicolon look like the technical answer.",
+    "trap": "Related ideas still need a grammatical boundary; a dependent clause cannot stand alone after a semicolon.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -24150,7 +24150,7 @@
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The introductory phrase runs into the subject with no comma between them."
+        "reason": "The introductory clause beginning 'While' requires a comma before the main clause."
       },
       {
         "index": 2,
@@ -24158,14 +24158,14 @@
       },
       {
         "index": 3,
-        "reason": "A semicolon must join independent clauses, and the opening phrase is not one."
+        "reason": "A semicolon cannot join the opening dependent clause to the main clause."
       }
     ],
-    "hint": "A date range at the head of a sentence takes one comma after it.",
-    "explanation": "'Between 1936 and 1938' opens the sentence and is not its subject. A comma marks where the introductory phrase ends and the main clause begins.",
+    "hint": "Find the main clause and determine where the introductory dependent clause ends.",
+    "explanation": "The dependent clause ends after '1938.' A comma separates it from the main clause about the Federal Writers' Project.",
     "solutionSteps": [
-      "Find where the opening phrase stops: after '1938.'",
-      "Place a single comma there."
+      "Find the end of the opening dependent clause.",
+      "Place its comma before the main subject begins."
     ],
     "strategy": "Identify the sentence structure before listening for a pause; use commas only where the clause, phrase, or series requires them.",
     "trap": "The phrase is short, which makes punctuating it feel unnecessary.",
@@ -24335,8 +24335,8 @@
     "choices": [
       "NO CHANGE",
       "work. It was a relief programme",
-      "work, and it was a relief programme",
-      "work, being a relief programme"
+      "work, however, it was a relief programme",
+      "work; being a relief programme"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -24346,21 +24346,21 @@
       },
       {
         "index": 2,
-        "reason": "'And' repairs the splice but ties the definition to the sentence that precedes it."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 3,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "Look at how long the second half runs before deciding whether it belongs in one sentence.",
-    "explanation": "'It was designed as work' answers the previous sentence and is complete in itself. The explanation of what that meant needs its own sentence, because it runs on for two more clauses.",
+    "explanation": "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Choose the punctuation that lets the second one carry the clauses that follow."
+      "Find the subjects and finite verbs on both sides of the boundary.",
+      "Keep a complete statement on each side of the sentence boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "The two clauses are closely related, which makes joining them feel natural.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -24783,7 +24783,7 @@
     "choices": [
       "NO CHANGE",
       "nothing; almost every other account of American slavery was written",
-      "nothing: almost every other account of American slavery was written",
+      "nothing; although almost every other account of American slavery was written",
       "nothing and almost every other account of American slavery was written"
     ],
     "correctAnswer": 1,
@@ -24794,7 +24794,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause states the parallel fact."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -24808,7 +24808,7 @@
       "Ask whether the second explains the first or balances it. It balances."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The short first clause reads like a setup, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -24974,33 +24974,33 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "first; and not",
-      "first, and not",
-      "first and, not"
+      "adjusted; the shoulders",
+      "adjusted, the shoulders",
+      "adjusted, the shoulders,"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The 'not … but' contrast that follows needs a comma to separate it from the main clause."
+        "reason": "The dependent clause beginning 'Although' needs a comma before the main clause."
       },
       {
         "index": 1,
-        "reason": "A semicolon must join independent clauses, and 'not because …' is not one."
+        "reason": "A semicolon cannot join an introductory dependent clause to the main clause."
       },
       {
         "index": 3,
-        "reason": "The comma now separates the conjunction from the phrase it introduces."
+        "reason": "The extra comma separates the main subject 'the shoulders' from its verb 'come.'"
       }
     ],
-    "hint": "A 'not … but' construction trailing a complete clause is set off from it.",
-    "explanation": "'The shoulders come first' is complete, and what follows is a two-part explanation set against itself. A comma marks where the statement ends and the explanation begins.",
+    "hint": "First find the main subject and verb, then look back for the introductory clause.",
+    "explanation": "The introductory 'Although' clause ends after 'adjusted.' A comma marks that boundary, and no comma should divide 'the shoulders come first.'",
     "solutionSteps": [
-      "Find where the main clause finishes: after 'first.'",
-      "Place a single comma there."
+      "Locate the end of the introductory dependent clause.",
+      "Separate it from the main clause while keeping the main subject and verb together."
     ],
     "strategy": "Identify the sentence structure before listening for a pause; use commas only where the clause, phrase, or series requires them.",
-    "trap": "The sentence runs long enough that by the time 'but' arrives the opening is forgotten.",
+    "trap": "The sentence needs a comma at one boundary, not a pair around its main subject.",
     "estimatedSeconds": 35,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -25011,7 +25011,7 @@
       "passage-set",
       "process-narrative",
       "underlined-edit",
-      "family:comma-before-a-correlative"
+      "family:introductory-clause-comma"
     ],
     "provenance": {
       "type": "original",
@@ -25230,8 +25230,8 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "still, and the tailor pins",
-      "still, the tailor pinning",
+      "still, while the tailor pin",
+      "still; the tailor pinning",
       "still while the tailor pins"
     ],
     "correctAnswer": 3,
@@ -25242,21 +25242,21 @@
       },
       {
         "index": 1,
-        "reason": "'And' repairs the splice but makes two simultaneous actions read as a sequence."
+        "reason": "The singular subject 'the tailor' requires 'pins,' not the base form 'pin.'"
       },
       {
         "index": 2,
-        "reason": "The participle leaves the second clause without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "Ask whether the two halves happen one after the other or at once.",
-    "explanation": "The two actions happen at the same time and the sentence is about that stillness. Subordinating the second with 'while' says so; joining them with 'and' does not.",
+    "explanation": "'While' makes the tailor's action a dependent clause describing what happens as the customer stands still. It also preserves the singular subject-verb agreement in 'the tailor pins.'",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Choose the conjunction that states the relationship, which here is simultaneity."
+      "Identify the two actions and the subjects performing them.",
+      "Connect their timing with a dependent clause whose verb agrees with its subject."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' fixes the punctuation and loses the only thing the sentence is saying.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -25358,7 +25358,7 @@
     "stem": "Which choice is best for underlined portion 7?",
     "choices": [
       "NO CHANGE",
-      "matter: it depends on how much fabric the maker left",
+      "matter; although it depends on how much fabric the maker left",
       "matter; it depends on how much fabric the maker left",
       "matter and it depends on how much fabric the maker left"
     ],
@@ -25370,7 +25370,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the sentence runs on to a third clause a colon cannot govern."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -25384,7 +25384,7 @@
       "Note that the sentence continues past them, and choose the mark that allows it."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause explains the first, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -25998,7 +25998,7 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "activities; and it",
+      "activities; although it",
       "activities, and, it",
       "activities, and it"
     ],
@@ -26010,7 +26010,7 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 2,
@@ -26254,9 +26254,9 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "o'clock, sitting",
-      "o'clock, and I sat",
-      "o'clock; I sat"
+      "o'clock as I sat",
+      "o'clock; while I sat",
+      "o'clock, and sitting"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -26266,21 +26266,21 @@
       },
       {
         "index": 2,
-        "reason": "The conjunction repairs the splice but makes the sitting a second, separate event."
+        "reason": "A semicolon cannot be followed by the dependent clause introduced by 'while.'"
       },
       {
         "index": 3,
-        "reason": "A semicolon repairs the splice and still separates the feeling from where it happened."
+        "reason": "The participle cannot complete a coordinated independent clause or supply a clear subject for the sitting."
       }
     ],
-    "hint": "The practice room is where the feeling happened, not something that happened next.",
-    "explanation": "The sitting is not a second action but the circumstance of the first. A participial phrase attaches it to the clause it describes.",
+    "hint": "The room provides a setting for the feeling; look for a complete dependent clause that expresses that connection.",
+    "explanation": "The clause 'as I sat in a practice room' supplies the setting for what the narrator felt. It connects the timing without a comma splice and explicitly makes the narrator the one sitting.",
     "solutionSteps": [
-      "Ask whether the second half is a new event or the setting of the first.",
-      "Subordinate it rather than giving it equal weight."
+      "Identify the main statement about the feeling and the clause giving its setting.",
+      "Subordinate the setting with 'as' and retain its subject and finite verb."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "Both alternatives are grammatical, and only one keeps the sentence's meaning.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -26766,7 +26766,7 @@
     "stem": "Which choice is best for underlined portion 13?",
     "choices": [
       "NO CHANGE",
-      "that: she had been waiting a while",
+      "that; although she had been waiting a while",
       "that and she had been waiting a while",
       "that; she had been waiting a while"
     ],
@@ -26778,7 +26778,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause is a separate admission."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 2,
@@ -26792,7 +26792,7 @@
       "Ask whether the second explains the first or stands beside it. It stands beside it."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The sentence is long, so the splice sits far from where the eye stops.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -26894,7 +26894,7 @@
     "stem": "Which choice is best for underlined portion 1?",
     "choices": [
       "NO CHANGE",
-      "off is audible; and",
+      "off is audible; although",
       "off, is audible and",
       "off is audible, and"
     ],
@@ -26906,7 +26906,7 @@
       },
       {
         "index": 1,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 2,
@@ -27150,9 +27150,9 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "air, the whole front tilting",
+      "air; the whole front tilting",
       "air, and the whole front tilts",
-      "air; and the whole front tilts"
+      "air; although the whole front tilts"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -27162,11 +27162,11 @@
       },
       {
         "index": 1,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       },
       {
         "index": 3,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both together is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       }
     ],
     "hint": "The sentence has already used its colon; the second join has to be lighter.",
@@ -27176,7 +27176,7 @@
       "Add a coordinating conjunction after the comma."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "The colon earlier makes the sentence feel fully punctuated already.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -27534,7 +27534,7 @@
     "stem": "Which choice is best for underlined portion 11?",
     "choices": [
       "NO CHANGE",
-      "steadier: both of those help",
+      "steadier; although both of those help",
       "steadier and both of those help",
       "steadier; both of those help"
     ],
@@ -27546,7 +27546,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause simply adds a verdict."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 2,
@@ -27560,7 +27560,7 @@
       "Ask whether the second explains the first or judges it. It judges."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The clauses are short, which makes a comma feel sufficient.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -27734,7 +27734,7 @@
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The introductory phrase runs into the subject with no comma between them."
+        "reason": "The introductory 'When' clause must be separated from the main clause by a comma."
       },
       {
         "index": 1,
@@ -27742,14 +27742,14 @@
       },
       {
         "index": 3,
-        "reason": "A semicolon must join independent clauses, and the opening phrase is not one."
+        "reason": "The opening clause is dependent, so a semicolon cannot join it to the main clause."
       }
     ],
-    "hint": "A date at the head of a sentence takes one comma after it.",
-    "explanation": "'In October 1859' opens the sentence and is not its subject. A comma marks where the introductory phrase ends and the main clause begins.",
+    "hint": "Determine which words belong to the opening dependent clause before placing its comma.",
+    "explanation": "The introductory dependent clause ends at '1859.' Its comma comes before the main subject, 'a steam clipper.'",
     "solutionSteps": [
-      "Find where the opening phrase stops: after '1859.'",
-      "Place a single comma there."
+      "Locate the end of the introductory dependent clause.",
+      "Separate it from the main clause with a comma."
     ],
     "strategy": "Identify the sentence structure before listening for a pause; use commas only where the clause, phrase, or series requires them.",
     "trap": "The sentence is long, so the missing pause is behind you by the time it matters.",
@@ -27918,8 +27918,8 @@
     "stem": "Which choice is best for underlined portion 4?",
     "choices": [
       "NO CHANGE",
-      "Beagle, by 1859 running",
-      "Beagle; and by 1859 he ran",
+      "Beagle; by 1859 running",
+      "Beagle; although by 1859 he ran",
       "Beagle, and by 1859 he ran"
     ],
     "correctAnswer": 3,
@@ -27930,11 +27930,11 @@
       },
       {
         "index": 1,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       },
       {
         "index": 2,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both together is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       }
     ],
     "hint": "Cover the comma and read each half aloud on its own.",
@@ -27944,7 +27944,7 @@
       "Add a coordinating conjunction after the comma."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "The two halves are both about FitzRoy, which makes them feel like one thought.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -28175,7 +28175,7 @@
     "choices": [
       "NO CHANGE",
       "warnings; later that year the Times began printing",
-      "warnings: later that year the Times began printing",
+      "warnings; although later that year the Times began printing",
       "warnings and later that year the Times began printing"
     ],
     "correctAnswer": 1,
@@ -28186,7 +28186,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause reports a separate development."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -28200,7 +28200,7 @@
       "Ask whether the second explains the first or follows it. It follows."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause reads as a consequence, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -28822,7 +28822,7 @@
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The plural verb has been matched to 'orchard' rather than to 'every named apple.'"
+        "reason": "The subject is singular 'each tree,' despite the intervening phrases describing its variety and location."
       },
       {
         "index": 1,
@@ -28833,11 +28833,11 @@
         "reason": "The plural present perfect misses both the number and the standing fact."
       }
     ],
-    "hint": "'Every' always takes a singular verb.",
-    "explanation": "The subject is 'every named apple,' and 'every' makes it singular however many orchards follow it in a prepositional phrase.",
+    "hint": "Find the head noun before the intervening descriptive phrases.",
+    "explanation": "The subject is 'each tree.' Neither 'of a named variety' nor 'in an orchard' changes its singular number, so the present-tense verb is 'is.'",
     "solutionSteps": [
-      "Cross out 'in every orchard.'",
-      "Read 'every named apple … is' and match the verb."
+      "Remove the phrases 'of a named variety' and 'in an orchard.'",
+      "Read 'each tree is a clone' and match the singular subject."
     ],
     "strategy": "Find the head noun of the subject, ignore nouns inside interrupting phrases, and match the verb to that head noun in number.",
     "trap": "The sentence describes thousands of trees, which colours the ear toward a plural.",
@@ -28900,7 +28900,7 @@
     "hint": "The paragraph is about one layer; the opening should point at it.",
     "explanation": "Paragraph 1 establishes that varieties survive only as cuttings. This paragraph explains what makes joining a cutting to a root work, so the opening should connect the two.",
     "solutionSteps": [
-      "Note what paragraph 1 establishes: every named apple is a cutting.",
+      "Note that grafting preserves a named variety through successive trees.",
       "Choose the opening that turns that fact into this paragraph's problem."
     ],
     "strategy": "Choose an opening that establishes the passage's specific subject and direction without becoming broader or narrower than what follows.",
@@ -29071,7 +29071,7 @@
     "choices": [
       "NO CHANGE",
       "knit. If it does not, nothing happens",
-      "knit, and if it does not, nothing happens",
+      "knit, however, if it does not, nothing happens",
       "knit, if it does not nothing happens"
     ],
     "correctAnswer": 1,
@@ -29082,7 +29082,7 @@
       },
       {
         "index": 2,
-        "reason": "The conjunction repairs the splice but merges two opposed conditions into one sentence."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 3,
@@ -29090,13 +29090,13 @@
       }
     ],
     "hint": "The two halves are opposite outcomes, not a continuation.",
-    "explanation": "The paragraph sets two outcomes against each other, and each conditional deserves its own sentence so the second lands as flatly as it reads.",
+    "explanation": "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Separate them so the contrast between the two conditions is audible."
+      "Find the subjects and finite verbs on both sides of the boundary.",
+      "Keep a complete statement on each side of the sentence boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' fixes the grammar and flattens an either-or into a list.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -29134,8 +29134,8 @@
     "stem": "Which choice is best for underlined portion 7?",
     "choices": [
       "NO CHANGE",
-      "Cutting to match the scion, the grafter then splits each face partway.",
-      "Cut to match the scion, each face is then split partway by the grafter.",
+      "Cutting to match the scion, the rootstock is then split partway across its face.",
+      "Cut to match the scion, the grafter's next task is to split each face partway.",
       "Cut to match the scion, the rootstock is then split partway across its face."
     ],
     "correctAnswer": 3,
@@ -29146,11 +29146,11 @@
       },
       {
         "index": 1,
-        "reason": "The active form is grammatical but says the grafter is what matches the scion."
+        "reason": "The active participle makes the rootstock perform the cutting instead of receive it."
       },
       {
         "index": 2,
-        "reason": "The phrase now describes 'each face,' which is a part of the thing that was cut."
+        "reason": "The opening description now attaches to the task, not to the piece of wood that was cut."
       }
     ],
     "hint": "Read the opening phrase, then the first noun after the comma, and see if they match.",
@@ -29262,7 +29262,7 @@
     "stem": "Which choice is best for underlined portion 9?",
     "choices": [
       "NO CHANGE",
-      "aligned: alignment is the entire operation",
+      "aligned; although alignment is the entire operation",
       "aligned; alignment is the entire operation",
       "aligned and alignment is the entire operation"
     ],
@@ -29274,7 +29274,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause states a verdict rather than a definition."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -29288,7 +29288,7 @@
       "Ask whether the second explains the first or judges it. It judges."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The repetition of 'aligned' and 'alignment' makes the second clause feel like a gloss.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -29902,8 +29902,8 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "again, and nobody asked me to stop",
-      "again, nobody asking me to stop",
+      "again, however, nobody asked me to stop",
+      "again; nobody asking me to stop",
       "again. Nobody asked me to stop"
     ],
     "correctAnswer": 3,
@@ -29914,21 +29914,21 @@
       },
       {
         "index": 1,
-        "reason": "The conjunction repairs the splice but attaches the observation to the end of a long list."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 2,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "Count how many items the first half already contains.",
-    "explanation": "The sentence has already run a four-item list. Giving the second clause its own sentence lets it land as the observation it is rather than as a fifth item.",
+    "explanation": "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Separate them so the second is not swallowed by the list."
+      "Find the subjects and finite verbs on both sides of the boundary.",
+      "Keep a complete statement on each side of the sentence boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' is the reflex repair and buries the sentence's point.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -30222,7 +30222,7 @@
     "stem": "Which choice is best for underlined portion 10?",
     "choices": [
       "NO CHANGE",
-      "hiding: I had found a job",
+      "hiding; although I had found a job",
       "hiding and I had found a job",
       "hiding; I had found a job"
     ],
@@ -30234,7 +30234,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause corrects the first rather than expanding it."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 2,
@@ -30248,7 +30248,7 @@
       "Ask whether the second explains the first or replaces it. It replaces it."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause does feel explanatory, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -30735,8 +30735,8 @@
     "choices": [
       "NO CHANGE",
       "pan. This process is called polymerisation",
-      "pan, and this process is called polymerisation",
-      "pan, the process being called polymerisation"
+      "pan, however, this process is called polymerisation",
+      "pan; the process being called polymerisation"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -30746,21 +30746,21 @@
       },
       {
         "index": 2,
-        "reason": "The conjunction repairs the splice but hangs the definition off an already long sentence."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 3,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "The sentence is long before the comma arrives.",
-    "explanation": "The first clause has already run through three stages of a process. Naming that process deserves its own sentence rather than a fourth clause.",
+    "explanation": "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Count the clauses already in the first half before deciding where the name belongs."
+      "Find the subjects and finite verbs on both sides of the boundary.",
+      "Keep a complete statement on each side of the sentence boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' fixes the grammar and produces a sentence with five clauses.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -30862,9 +30862,9 @@
     "stem": "Which choice is best for underlined portion 7?",
     "choices": [
       "NO CHANGE",
-      "Wiping on until the pan looks almost dry, the film builds in layers a molecule or two deep.",
-      "Wiped on until the pan looks almost dry, layers a molecule or two deep are the result.",
-      "Wiped on until the pan looks almost dry, the oil builds a film in layers a molecule or two deep."
+      "Wiping on until the pan looks almost dry, the film builds in thin, overlapping coats.",
+      "Wiped on until the pan looks almost dry, thin, overlapping coats are the result.",
+      "Wiped on until the pan looks almost dry, the oil builds a film in thin, overlapping coats."
     ],
     "correctAnswer": 3,
     "distractorRationales": [
@@ -31183,7 +31183,7 @@
     "choices": [
       "NO CHANGE",
       "fine; a pan left wet in the sink overnight is a repair job",
-      "fine: a pan left wet in the sink overnight is a repair job",
+      "fine; although a pan left wet in the sink overnight is a repair job",
       "fine and a pan left wet in the sink overnight is a repair job"
     ],
     "correctAnswer": 1,
@@ -31194,7 +31194,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause is the matching half of a pair."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -31208,7 +31208,7 @@
       "Ask whether the second explains the first or mirrors it. It mirrors."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The clauses are short, which makes a comma feel sufficient.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -31537,7 +31537,7 @@
     "format": "passage-editing",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "underlined-edit",
       "family:run-on-sentence"
     ],
@@ -31601,7 +31601,7 @@
     "format": "passage-editing",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "underlined-edit",
       "family:comparison-versus-emphasis-transition"
     ],
@@ -31665,7 +31665,7 @@
     "format": "passage-editing",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "underlined-edit",
       "family:expletive-there-agreement"
     ],
@@ -31729,7 +31729,7 @@
     "format": "passage-editing",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "underlined-edit",
       "family:singular-possessive"
     ],
@@ -31758,8 +31758,8 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "lips: the gestures were remarkably consistent",
-      "lips, and the gestures were remarkably consistent",
+      "lips; although the gestures were remarkably consistent",
+      "lips, however, the gestures were remarkably consistent",
       "lips; the gestures were remarkably consistent"
     ],
     "correctAnswer": 3,
@@ -31770,11 +31770,11 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause reports a separate observation."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 2,
-        "reason": "The conjunction repairs the splice but buries the clause among the list's own commas."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       }
     ],
     "hint": "When a sentence is already full of commas, a clause boundary needs something stronger.",
@@ -31784,7 +31784,7 @@
       "Separate the independent clause with the next mark up."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "Adding 'and' is grammatical and makes the clause read as one more item in the list.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -31793,7 +31793,7 @@
     "format": "passage-editing",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "underlined-edit",
       "family:semicolon-between-balanced-clauses"
     ],
@@ -31822,9 +31822,9 @@
     "stem": "Which choice is best for underlined portion 6?",
     "choices": [
       "NO CHANGE",
-      "a standard that was unwritten",
-      "a standard none of them could have quoted",
-      "a standard not written down anywhere at all"
+      "an unwritten standard that had not been written down",
+      "an unwritten standard",
+      "a standard not written down in any written form"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -31834,21 +31834,21 @@
       },
       {
         "index": 1,
-        "reason": "The adjective restates what the whole paragraph has established."
+        "reason": "The relative clause repeats the meaning of 'unwritten.'"
       },
       {
         "index": 3,
-        "reason": "The phrase is longer and adds only emphasis."
+        "reason": "The final phrase repeats the idea of not being written down."
       }
     ],
-    "hint": "The strongest version of this clause is about the riders, not the rule.",
-    "explanation": "The paragraph has already established that nothing was written. The clause earns its place by saying something new — that the riders could not have stated the rule themselves.",
+    "hint": "State the fact once, retaining both the shared standard and its unwritten nature.",
+    "explanation": "'An unwritten standard' preserves the meaning in one adjective. Each longer option repeats that adjective's meaning.",
     "solutionSteps": [
-      "Ask what the reader already knows by this point in the paragraph.",
-      "Keep the version that adds a fact rather than repeating one."
+      "Identify the necessary meaning: the shared standard was unwritten.",
+      "Remove words that restate the same fact without adding information."
     ],
     "strategy": "Remove words that repeat an idea already expressed, then confirm that the shortest remaining choice preserves every necessary meaning.",
-    "trap": "Repeating 'unwritten' feels like reinforcing the essay's theme.",
+    "trap": "Repeated wording can sound emphatic even when it adds no meaning.",
     "estimatedSeconds": 35,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -31857,7 +31857,7 @@
     "format": "passage-editing",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "underlined-edit",
       "family:redundant-modifier"
     ],
@@ -31921,7 +31921,7 @@
     "format": "passage-editing",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "underlined-edit",
       "family:consequence-versus-sequence-transition"
     ],
@@ -31985,7 +31985,7 @@
     "format": "passage-editing",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "underlined-edit",
       "family:sentence-fragment"
     ],
@@ -32049,7 +32049,7 @@
     "format": "passage-editing",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "underlined-edit",
       "family:vague-phrase"
     ],
@@ -32075,11 +32075,11 @@
     "responseType": "multiple-choice",
     "stimulus": null,
     "passageId": "act-english-p035",
-    "stem": "Given that all the choices are true, which one, if added here, best supports the essay's point about how the practice spread?",
+    "stem": "Assuming that all the choices are true within this imagined case, which one, if added here, best supports the essay's point about how the practice spread?",
     "choices": [
-      "Several European operators use a symbol rather than a written sign on the door.",
+      "Several neighboring operators use a symbol rather than a written sign on the door.",
       "Quiet cars are usually placed at one end of a train rather than in the middle.",
-      "Ridership on the Philadelphia line grew steadily through the following decade.",
+      "Ridership on the original line grew steadily through the following decade.",
       "No railroad ever published the gestures, and no passenger was ever taught them."
     ],
     "correctAnswer": 3,
@@ -32104,7 +32104,7 @@
       "Keep the choice that says nobody published or taught it."
     ],
     "strategy": "Identify the claim that needs support, then choose the concrete detail that most directly proves it rather than merely sharing its topic.",
-    "trap": "Every choice is a plausible fact about quiet cars on real railways.",
+    "trap": "Each choice could be true within the imagined case without supporting the particular claim.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -32113,7 +32113,7 @@
     "format": "passage-rhetoric",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "rhetorical-question",
       "family:supporting-detail"
     ],
@@ -32143,32 +32143,32 @@
     "choices": [
       "NO CHANGE",
       "Copying from line to line without central direction, the same three gestures turn up wherever the car exists.",
-      "Copied from line to line without central direction, the same three gestures have turned up wherever the car exists.",
-      "Copied from line to line without central direction, wherever the car exists the same three gestures turn up."
+      "Copied from line to line without central direction, the same three gestures turn up wherever the car exists.",
+      "Copied from line to line without central direction, passengers everywhere use the same three gestures."
     ],
     "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The opening phrase covers a continuing process, but the main clause reports a single present fact."
+        "reason": "The opening phrase is meant to describe the gestures, but it attaches to 'passengers' instead."
       },
       {
         "index": 1,
-        "reason": "The active form makes the gestures do the copying themselves."
+        "reason": "The active participle makes the gestures themselves perform the copying."
       },
       {
         "index": 3,
-        "reason": "The phrase now sits next to a subordinate clause rather than the noun it describes."
+        "reason": "The modifier again describes passengers as being copied instead of the gestures."
       }
     ],
-    "hint": "The opening phrase and the main clause have to be talking about the same period.",
-    "explanation": "The participle describes something that has gone on happening, so the main clause needs the present perfect for the two halves to cover the same stretch of time.",
+    "hint": "Read the introductory phrase together with the subject that follows it.",
+    "explanation": "The gestures are copied. Making 'the same three gestures' the subject after the opening phrase attaches that description to the right noun.",
     "solutionSteps": [
-      "Ask what was copied from line to line. The gestures were.",
-      "Match the main verb's tense to the span the participle covers."
+      "Identify what gets copied in the example: the gestures.",
+      "Place that noun after the introductory participial phrase."
     ],
     "strategy": "Locate the word a descriptive phrase is meant to modify and place that word next to the phrase so the sentence cannot attach it elsewhere.",
-    "trap": "The modifier is attached correctly, so the mismatch reads as merely stylistic.",
+    "trap": "A modifier can refer to the intended noun later in the sentence while grammatically attaching to a different subject.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -32177,9 +32177,9 @@
     "format": "passage-editing",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "underlined-edit",
-      "family:participle-tense-mismatch"
+      "family:misattached-opening-phrase"
     ],
     "provenance": {
       "type": "original",
@@ -32241,7 +32241,7 @@
     "format": "passage-editing",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "underlined-edit",
       "family:simple-past-in-a-historical-account"
     ],
@@ -32269,7 +32269,7 @@
     "passageId": "act-english-p035",
     "stem": "Suppose the writer's goal had been to write an essay about a rule that worked better for never having been written. Would this essay accomplish that goal?",
     "choices": [
-      "Yes, because the quiet car is now standard on railroads in three parts of the world.",
+      "Yes, because the quiet car spread to several railroads with different passenger groups.",
       "No, because the railroad did eventually expand the programme across its network.",
       "Yes, because it reports that the written versions worked less well and explains what writing them changed.",
       "No, because a sign was posted in the car from the very first experiment."
@@ -32305,7 +32305,7 @@
     "format": "passage-rhetoric",
     "tags": [
       "passage-set",
-      "historical-account",
+      "informative-essay",
       "rhetorical-question",
       "family:goal-assessment"
     ],
@@ -32590,7 +32590,7 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "edge, and the steel comes off the wrong places",
+      "edge, however, the steel comes off the wrong places",
       "edge; the steel coming off the wrong places",
       "edge, because the steel comes off the wrong places"
     ],
@@ -32602,7 +32602,7 @@
       },
       {
         "index": 1,
-        "reason": "'And' repairs the splice but hides that the second clause is the reason for the first."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 2,
@@ -32616,7 +32616,7 @@
       "Choose the conjunction that names the relationship rather than merely adding."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' is the reflex fix and flattens a reason into a list.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -32719,7 +32719,7 @@
     "choices": [
       "NO CHANGE",
       "Ground away on one side until a wire of metal folds over the other, the edge announces its own progress to a thumbnail.",
-      "Grinding away on one side until a wire of metal folds over the other, the sharpener can feel progress with a thumbnail.",
+      "Grinding away on one side until a wire of metal folds over the other, the edge announces its own progress to a thumbnail.",
       "Ground away on one side until a wire of metal folds over the other, progress can be felt with a thumbnail."
     ],
     "correctAnswer": 1,
@@ -32730,7 +32730,7 @@
       },
       {
         "index": 2,
-        "reason": "The active form is grammatical but says the sharpener is the thing being ground away."
+        "reason": "The active participle makes the edge do the grinding rather than undergo it."
       },
       {
         "index": 3,
@@ -33231,7 +33231,7 @@
     "choices": [
       "NO CHANGE",
       "Wauwatosa, and the",
-      "Wauwatosa; and the",
+      "Wauwatosa; although the",
       "Wauwatosa, and, the"
     ],
     "correctAnswer": 1,
@@ -33242,7 +33242,7 @@
       },
       {
         "index": 2,
-        "reason": "A semicolon and a coordinating conjunction do the same job, so both is redundant."
+        "reason": "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
       },
       {
         "index": 3,
@@ -33486,9 +33486,9 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "corral, and carts were abandoned almost nowhere within thirty feet of one",
+      "corral, however, carts were abandoned almost nowhere within thirty feet of one",
       "corral. Carts were abandoned almost nowhere within thirty feet of one",
-      "corral, carts being abandoned almost nowhere within thirty feet of one"
+      "corral; carts being abandoned almost nowhere within thirty feet of one"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
@@ -33498,21 +33498,21 @@
       },
       {
         "index": 1,
-        "reason": "'And' repairs the splice but makes the first measurement read as an afterthought."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 3,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "The two sentences after this one are built the same way; match them.",
-    "explanation": "The sentence introduces a pattern and then begins reporting it. Splitting them lets the first distance start a series the next two sentences continue.",
+    "explanation": "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Separate them so the measurements read as a sequence."
+      "Find the subjects and finite verbs on both sides of the boundary.",
+      "Keep a complete statement on each side of the sentence boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' fixes the grammar and buries the first band of the pattern.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -33935,7 +33935,7 @@
     "choices": [
       "NO CHANGE",
       "choice; it is simply where the walk is shortest",
-      "choice: it is simply where the walk is shortest",
+      "choice; although it is simply where the walk is shortest",
       "choice and it is simply where the walk is shortest"
     ],
     "correctAnswer": 1,
@@ -33946,7 +33946,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause denies the first rather than expanding it."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -33960,7 +33960,7 @@
       "Ask whether the second explains the first or refuses it. It refuses."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause reads as a reason, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -34319,8 +34319,8 @@
     "choices": [
       "NO CHANGE",
       "June, but nobody can see them",
-      "June, and nobody can see them",
-      "June, nobody seeing them"
+      "June, however, nobody can see them",
+      "June; nobody seeing them"
     ],
     "correctAnswer": 1,
     "distractorRationales": [
@@ -34330,11 +34330,11 @@
       },
       {
         "index": 2,
-        "reason": "'And' repairs the splice but loses the contrast between being present and being invisible."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 3,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "The whole essay rests on things being present and hidden.",
@@ -34344,7 +34344,7 @@
       "Choose the conjunction that names the relationship, which here is contrast."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' is the reflex repair and flattens the contrast into a list.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -34510,33 +34510,33 @@
     "stem": "Which choice is best for underlined portion 8?",
     "choices": [
       "NO CHANGE",
-      "quickly",
+      "belatedly",
       "abruptly",
-      "at a good rate"
+      "continually"
     ],
     "correctAnswer": 2,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "'Fast' describes speed, but the point is that the change needs no preparation."
+        "reason": "The paragraph explains the onset of autumn yellow, not repeated changes back and forth."
       },
       {
         "index": 1,
-        "reason": "The adverb is a synonym for the original and misses the same distinction."
+        "reason": "Nothing in the passage says the yellow appears later than expected."
       },
       {
         "index": 3,
-        "reason": "The phrase is vaguer than the single word it replaces."
+        "reason": "The passage describes an autumn change, not uninterrupted yellowing throughout the year."
       }
     ],
-    "hint": "An uncovering has no build-up; a manufacture does.",
-    "explanation": "The colon that follows explains why: nothing has to be manufactured. The adverb should name suddenness rather than mere speed, because suddenness is what an uncovering produces.",
+    "hint": "Consider whether the paragraph explains onset, repeated cycles, or an unexpected delay.",
+    "explanation": "The pigment is already present, so the change can appear abrupt when the green covering fades. The other choices assert repetition, lateness, or continuity that the paragraph does not describe.",
     "solutionSteps": [
-      "Read the clause after the colon and note what it explains.",
-      "Choose the adverb that the explanation actually accounts for."
+      "Identify the change being explained: the appearance of pigment already present.",
+      "Choose the adverb supported by that explanation without adding a different timing claim."
     ],
     "strategy": "Use the surrounding sentence to identify the exact meaning, degree, and tone required before comparing the wording of the choices.",
-    "trap": "'Fast' is perfectly idiomatic and almost right.",
+    "trap": "An adverb can fit the sentence grammatically while adding an unsupported claim.",
     "estimatedSeconds": 35,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -34639,7 +34639,7 @@
     "choices": [
       "NO CHANGE",
       "revealed; a tree makes them in autumn",
-      "revealed: a tree makes them in autumn",
+      "revealed; although a tree makes them in autumn",
       "revealed and a tree makes them in autumn"
     ],
     "correctAnswer": 1,
@@ -34650,7 +34650,7 @@
       },
       {
         "index": 2,
-        "reason": "A colon introduces an explanation, but the second clause states the opposing fact."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -34664,7 +34664,7 @@
       "Ask whether the second explains the first or replaces it. It replaces it."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The second clause does feel explanatory, which points the eye toward a colon.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -34703,29 +34703,29 @@
     "choices": [
       "NO CHANGE",
       "did",
-      "should",
+      "has",
       "would"
     ],
     "correctAnswer": 3,
     "distractorRationales": [
       {
         "index": 0,
-        "reason": "The simple future asserts a certainty the sentence is explicitly leaving open."
+        "reason": "The auxiliary 'had' requires a past participle, and it would not fit this general present-tense inquiry."
       },
       {
         "index": 1,
-        "reason": "The past tense reports a settled event rather than a general question."
+        "reason": "The past-tense auxiliary shifts the general present-tense question to a completed event."
       },
       {
         "index": 2,
-        "reason": "The modal introduces obligation, which the sentence is not discussing."
+        "reason": "The auxiliary 'has' requires the past participle 'spent,' not 'spend.'"
       }
     ],
-    "hint": "The verb has to match the sentence's own admission of uncertainty.",
-    "explanation": "The clause poses a question that is still argued over, and 'would' is the modal that frames a general case without asserting it.",
+    "hint": "The uncertainty concerns why trees make the pigment, not whether they make it.",
+    "explanation": "The passage says trees make red pigment; what remains debated is the reason. 'Would spend' frames that general inquiry consistently with the present-tense account.",
     "solutionSteps": [
-      "Note the sentence ends by saying the matter is unresolved.",
-      "Keep the modal that leaves it unresolved."
+      "Distinguish the established action from the unresolved reason for it.",
+      "Choose the verb form that keeps the question general and grammatical."
     ],
     "strategy": "Find the passage's controlling tense, point of view, terminology, or tone and choose the option that maintains it without an unexplained shift.",
     "trap": "The surrounding paragraph is confident, which makes a flatter verb feel consistent.",
@@ -35342,8 +35342,8 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "amount, and the whole system was designed and supervised by men who had never built a canal",
-      "amount, the whole system being designed and supervised by men who had never built a canal",
+      "amount, however, the whole system was designed and supervised by men who had never built a canal",
+      "amount; the whole system being designed and supervised by men who had never built a canal",
       "amount. The whole system was designed and supervised by men who had never built a canal"
     ],
     "correctAnswer": 3,
@@ -35354,21 +35354,21 @@
       },
       {
         "index": 1,
-        "reason": "'And' repairs the splice but buries the paragraph's most surprising fact inside a long sentence."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 2,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "The second clause is the one a reader will remember.",
-    "explanation": "The sentence has already described the locks in detail. The fact about the engineers is the paragraph's point and deserves a sentence of its own.",
+    "explanation": "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Ask which half carries the paragraph's weight, and give it room."
+      "Find the subjects and finite verbs on both sides of the boundary.",
+      "Keep a complete statement on each side of the sentence boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' fixes the grammar and flattens a revelation into a detail.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -35534,8 +35534,8 @@
     "stem": "Which choice is best for underlined portion 8?",
     "choices": [
       "NO CHANGE",
-      "The effects went further than that:",
-      "Consequently,",
+      "More broadly,",
+      "On the contrary,",
       "Nevertheless,"
     ],
     "correctAnswer": 1,
@@ -35546,7 +35546,7 @@
       },
       {
         "index": 2,
-        "reason": "The wider consequences did not follow from freight rates alone."
+        "reason": "The paragraph adds wider effects rather than contradicting the reported reduction in freight costs."
       },
       {
         "index": 3,
@@ -35598,7 +35598,7 @@
     "stem": "Which choice is best for underlined portion 9?",
     "choices": [
       "NO CHANGE",
-      "clearing: New York overtook Philadelphia and Boston",
+      "clearing; although New York overtook Philadelphia and Boston",
       "clearing; New York overtook Philadelphia and Boston",
       "clearing and New York overtook Philadelphia and Boston"
     ],
@@ -35610,7 +35610,7 @@
       },
       {
         "index": 1,
-        "reason": "A colon introduces an explanation, but the second clause reports a separate consequence."
+        "reason": "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
       },
       {
         "index": 3,
@@ -35624,7 +35624,7 @@
       "Ask whether the second explains the first or stands beside it. It stands beside it."
     ],
     "strategy": "Check whether the words before the mark form a complete clause, then use a semicolon to join clauses or a colon to introduce what follows.",
-    "trap": "The consequences really are connected, which makes a colon feel earned.",
+    "trap": "A semicolon may look acceptable even when the words after it form only a dependent clause.",
     "estimatedSeconds": 65,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -36238,8 +36238,8 @@
     "stem": "Which choice is best for underlined portion 5?",
     "choices": [
       "NO CHANGE",
-      "sit, and this is the decision the rest of the job depends on",
-      "sit, this being the decision the rest of the job depends on",
+      "sit, however, this is the decision the rest of the job depends on",
+      "sit; this being the decision the rest of the job depends on",
       "sit. This is the decision the rest of the job depends on"
     ],
     "correctAnswer": 3,
@@ -36250,21 +36250,21 @@
       },
       {
         "index": 1,
-        "reason": "'And' repairs the splice but attaches the essay's central claim to the end of a procedure."
+        "reason": "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
       },
       {
         "index": 2,
-        "reason": "The participle leaves the second half without a main verb of its own."
+        "reason": "A semicolon requires an independent clause after it; this participial construction has no main verb."
       }
     ],
     "hint": "The whole essay is about which step governs the others.",
-    "explanation": "The second clause is the paragraph's point rather than another step. A full stop gives it the weight the rest of the essay leans on.",
+    "explanation": "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
     "solutionSteps": [
-      "Test each side of the comma as a sentence. Both stand.",
-      "Ask which half the essay depends on, and give it room."
+      "Find the subjects and finite verbs on both sides of the boundary.",
+      "Keep a complete statement on each side of the sentence boundary."
     ],
     "strategy": "Classify each clause as independent or dependent before choosing punctuation or a connector; the clause structure determines which joins are grammatical.",
-    "trap": "'And' fixes the grammar and demotes the claim to a fourth item in a sequence.",
+    "trap": "A linking word can make a sentence sound connected without repairing its clause structure.",
     "estimatedSeconds": 50,
     "principles": [
       "Read the full sentence and its surrounding context before choosing an edit."
@@ -36432,7 +36432,7 @@
       "NO CHANGE",
       "Similarly,",
       "Even so,",
-      "Then comes"
+      "Next,"
     ],
     "correctAnswer": 3,
     "distractorRationales": [

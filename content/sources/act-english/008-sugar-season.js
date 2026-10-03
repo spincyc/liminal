@@ -6,7 +6,7 @@ module.exports = {
   title: "Six Weeks of Cold Nights",
   content: `[1] A sugar maple does not give up sap because it is spring. It gives
 up sap because the temperature crosses freezing twice a day. Cold nights draw
-water up into the trunk, {1 warm days build pressure in the wood and a hole}
+water up into the trunk; {1 warm days build pressure in the wood and a hole}
 drilled through the bark lets it out.
 
 [2] {2 In contrast,} tapping begins when that pattern settles in, usually in late
@@ -41,18 +41,22 @@ cold, which in most years is about six weeks.`,
       key: "warm days build pressure in the wood, and a hole",
       noChange: "Two independent clauses joined by 'and' need a comma before the conjunction.",
       wrong: [
-        ["warm days build pressure in the wood; and a hole", "A semicolon and a conjunction do the same job, so using both is redundant."],
-        ["warm days, build pressure in the wood and a hole", "The comma now separates the subject from its own verb."],
+        [
+          "warm days build pressure in the wood; although a hole",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "warm days, build pressure in the wood and a hole",
+          "The comma now separates the subject from its own verb."
+        ]
       ],
-      why:
-        "'Warm days build pressure in the wood' and 'a hole drilled through the bark lets it out' are " +
-        "both complete sentences, so the 'and' joining them takes a comma before it.",
+      why: "'Warm days build pressure in the wood' and 'a hole drilled through the bark lets it out' are both complete sentences, so the 'and' joining them takes a comma before it.",
       steps: [
         "Check whether the words on each side of 'and' could stand alone. They could.",
-        "Place a comma immediately before the conjunction.",
+        "Place a comma immediately before the conjunction."
       ],
       hint: "A comma goes before 'and' only when a full sentence follows it.",
-      trap: "The sentence already contains one comma, which makes a second look excessive.",
+      trap: "The sentence already contains one comma, which makes a second look excessive."
     },
     {
       number: 2,
@@ -222,26 +226,24 @@ cold, which in most years is about six weeks.`,
       wrong: [
         [
           "day, which changes with the weather.",
-          "'Which' would attach to 'day' rather than to the boiling temperature that is meant.",
+          "'Which' would attach to 'day' rather than to the boiling temperature that is meant."
         ],
         [
           "day, changing with the weather.",
-          "The participle leaves the reader to guess what it modifies among three nearby nouns.",
+          "The participle leaves the reader to guess what it modifies among three nearby nouns."
         ],
         [
-          "day; and that temperature changes with the weather.",
-          "A semicolon and a coordinating conjunction do the same job, so both together is redundant.",
-        ],
+          "day; although that temperature changes with the weather.",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ]
       ],
-      why:
-        "The second clause needs its own stated subject, because the sentence has just named a day, " +
-        "a temperature, and water. Repeating 'that temperature' removes the ambiguity.",
+      why: "The second clause needs its own stated subject, because the sentence has just named a day, a temperature, and water. Repeating 'that temperature' removes the ambiguity.",
       steps: [
         "List the nouns a pronoun or relative could attach to. There are three.",
-        "Keep the version that names the intended subject outright.",
+        "Keep the version that names the intended subject outright."
       ],
       hint: "When several nouns compete, a full clause beats a relative pronoun.",
-      trap: "'Which' is more economical, and economy usually is the better answer — but not here.",
+      trap: "'Which' is more economical, and economy usually is the better answer — but not here."
     },
     {
       number: 10,
@@ -300,33 +302,29 @@ cold, which in most years is about six weeks.`,
       subskill: "organization",
       family: "paragraph-move",
       difficulty: "Hard",
-      stem:
-        "The writer is considering moving Paragraph 3 so that it appears immediately after " +
-        "Paragraph 4. Should the writer make this change?",
-      key: "No, because the forty-to-one ratio is what explains why so much boiling is necessary.",
+      stem: "The writer is considering moving Paragraph 3 so that it appears immediately after Paragraph 4. Should the writer make this change?",
+      key: "No, because the sap's low sugar content explains the need for boiling.",
       wrong: [
         [
           "No, because Paragraph 3 is the only paragraph that gives numerical measurements.",
-          "Paragraph 2 gives a depth and Paragraph 4 gives a temperature, so the claim is false.",
+          "Paragraph 2 gives a depth and Paragraph 4 gives a temperature, so the claim is false."
         ],
         [
           "Yes, because the boiling is the most demanding step and should be described first.",
-          "Difficulty is not what orders a process narrative; sequence and cause are.",
+          "Difficulty is not what orders a process narrative; sequence and cause are."
         ],
         [
           "Yes, because both paragraphs concern the removal of water and belong side by side.",
-          "They already sit side by side, and reversing them would put the result before its reason.",
-        ],
+          "They already sit side by side, and reversing them would put the result before its reason."
+        ]
       ],
-      why:
-        "Paragraph 3 establishes how little sugar sap carries. Paragraph 4 describes the boiling that " +
-        "answers that fact. Reversing them states the remedy before the problem.",
+      why: "Paragraph 3 establishes how little sugar sap carries. Paragraph 4 describes the boiling that answers that fact. Reversing them states the remedy before the problem.",
       steps: [
         "Say what each paragraph contributes: one gives the ratio, the next gives the response.",
-        "Ask whether the response makes sense before the ratio is known. It does not.",
+        "Ask whether the response makes sense before the ratio is known. It does not."
       ],
       hint: "In a process narrative, a step's reason has to come before the step.",
-      trap: "Both paragraphs really are about water, which makes grouping them sound tidier.",
+      trap: "Both paragraphs really are about water, which makes grouping them sound tidier."
     },
     {
       number: 13,

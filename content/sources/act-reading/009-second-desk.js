@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p009",
   type: "literary-narrative",
   title: "The Second Desk",
-  intro: "This passage is adapted from a novel about a school orchestra. Nadia plays in the second violins; Mr Ferreira conducts.",
+  intro: "This is an original fictional passage about a school orchestra. Nadia plays in the second violins; Mr Ferreira conducts.",
   content: `The second desk of the second violins is, Nadia had decided in September, the
 safest address in the building. The first desk sits under the conductor's eye and has to
 turn the pages. The back desks can be seen not playing. The second desk is close enough to

@@ -87,6 +87,33 @@ test("booklet numbering runs continuously and keys the right letter", () => {
   assert.equal(model.minutes, 134);
 });
 
+test("the TeX booklet includes the answer sheet its directions reference", () => {
+  const questions = makeBank("sat-math", 2, 1);
+  questions[1] = { ...questions[1], responseType: "numeric", choices: null, correctAnswer: "3/2" };
+  const model = booklet.buildModel([{ label: "Math & reasoning", minutes: 3, directions: "Answer both.", questions }],
+    core.blueprintById("sat"), "tex-sheet");
+  const output = booklet.renderTex(model);
+  const sheet = output.slice(output.indexOf("\\section*{Answer sheet"));
+  assert.match(sheet, /Math \\& reasoning/);
+  assert.match(sheet, /\\makebox\[2em\]\[r\]\{1\.\}/);
+  assert.match(sheet, /\\makebox\[2em\]\[r\]\{2\.\}/);
+  assert.equal((sheet.match(/bigcirc/g) || []).length, 4);
+  assert.match(sheet, /\\framebox\[5\.4em\]/);
+  assert.ok(output.indexOf("\\section*{Answer sheet") > output.lastIndexOf("\\question{2}"));
+});
+
+test("long answer sheets keep each labelled column within a page", () => {
+  const questions = makeBank("act-english", 50, 1);
+  const model = booklet.buildModel([{ label: "English", minutes: 35, directions: "Answer all.", questions }],
+    core.blueprintById("act-full"), "long-sheet");
+  const output = booklet.renderTex(model);
+  const sheet = output.slice(output.indexOf("\\section*{Answer sheet"));
+  const columns = sheet.split("\\begin{minipage}").slice(1);
+  assert.equal(columns.length, 2);
+  columns.forEach((column) => assert.equal((column.match(/makebox/g) || []).length, 25));
+  assert.match(sheet, /English \(continued\)/);
+});
+
 test("form codes are stable per seed", () => {
   assert.equal(booklet.formCode("seed-c"), booklet.formCode("seed-c"));
   assert.notEqual(booklet.formCode("seed-c"), booklet.formCode("seed-d"));
@@ -353,11 +380,10 @@ test("a real template form fills a 98-question booklet", () => {
 });
 
 test("the booklet CLI builds ACT only and points SAT to the Booklets page", () => {
-  const { spawnSync } = require("node:child_process");
-  const path = require("node:path");
-  const result = spawnSync(process.execPath, [path.join(__dirname, "..", "tools", "build-booklet.js"), "--form", "sat-full"], { encoding: "utf8" });
-  assert.equal(result.status, 2);
-  assert.match(result.stderr, /print\.html/);
+  const { requireActBlueprint, parseArgs } = require("../tools/build-booklet");
+  assert.throws(() => requireActBlueprint(parseArgs(["--form", "sat-full"]).form), /print\.html/);
+  assert.throws(() => requireActBlueprint("missing"), /Unknown form/);
+  assert.equal(requireActBlueprint(parseArgs([]).form).test, "ACT");
 });
 
 /* ------------------------------------------------- repetition prevention */

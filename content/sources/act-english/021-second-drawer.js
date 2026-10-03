@@ -191,22 +191,20 @@ waiting.`,
       wrong: [
         [
           "shut, and I used the eleven I already knew,",
-          "The added subject is correct but the trailing comma cuts the series that follows.",
+          "The added subject is correct but the trailing comma cuts the series that follows."
         ],
         [
-          "shut; I used the eleven I already knew",
-          "A semicolon repairs the splice but severs the two halves of one continuous action.",
-        ],
+          "shut; using the eleven I already knew",
+          "The phrase after the semicolon has no finite verb and cannot stand as an independent clause."
+        ]
       ],
-      why:
-        "'Left' and 'used' share the subject 'I,' so the sentence can drop the second subject " +
-        "entirely and run them as a compound predicate, which is what the rest of the sentence needs.",
+      why: "'Left' and 'used' share the subject 'I,' so the sentence can drop the second subject entirely and run them as a compound predicate, which is what the rest of the sentence needs.",
       steps: [
         "Notice that both verbs belong to the same subject.",
-        "Join them without a comma so the sentence can continue into its third clause.",
+        "Join them without a comma so the sentence can continue into its third clause."
       ],
       hint: "The sentence has a third part after this; the fix has to leave room for it.",
-      trap: "The semicolon is the reflex repair and stops the sentence dead in the middle.",
+      trap: "The semicolon is the reflex repair and stops the sentence dead in the middle."
     },
     {
       number: 8,
@@ -290,23 +288,21 @@ waiting.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "piece: the cord was replaced",
-          "A colon introduces an explanation, but the second clause reports the next step.",
+          "piece; although the cord was replaced",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "piece and the cord was replaced",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "Both clauses are complete and equally weighted — what the tool did, and what became possible " +
-        "because of it. A semicolon joins equals without subordinating either.",
+      why: "Both clauses are complete and equally weighted — what the tool did, and what became possible because of it. A semicolon joins equals without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or follows it. It follows.",
+        "Ask whether the second explains the first or follows it. It follows."
       ],
       hint: "Two short result clauses of similar weight want a semicolon.",
-      trap: "The second clause reads like a consequence, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 12,

@@ -13,6 +13,11 @@ const DIST = path.join(ROOT, "dist");
 
 const { TEMPLATE_SECTIONS, familyFiles } = require("./lib/families");
 
+// Direct builds must not publish new source under old saved-question versions.
+if (require("./update-templates").main(["--check"]) !== 0) {
+  throw new Error("Build stopped because template registries are stale");
+}
+
 fs.rmSync(DIST, { recursive: true, force: true });
 // Template sources are organized for people (one file per skill); the
 // browser gets one bundle per section instead, written below.

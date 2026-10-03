@@ -10,20 +10,34 @@ skill: Inferences
 An inference question asks what the text supports without saying it
 outright. Most appear as a text with a blank at the end: "Which choice most
 logically completes the text?" This skill belongs to Information and Ideas,
-{{fact:sat-rw-information}} of the Reading and Writing section, and it is
-where many students lose the most points. Hard versions spread the needed
-facts across several sentences and offer choices that sound sensible but go
-one step further than the text allows.
+{{fact:sat-rw-information}} of the Reading and Writing section. Hard versions
+require combining relationships across several sentences and distinguishing
+plausible conclusions that fit only part of the evidence. The examples below
+are constructed practice passages.
 
 ## Logical inference {#logical-inference}
 
-The standard is "must be true", not "could be true" or "probably true". The
-correct choice follows from the text with no added information. SAT
-inferences are small: one careful step.
+Choose the conclusion best supported by the text, keeping its level of
+certainty. A stated rule can force a conclusion; a character’s actions or a
+scientific observation may instead support a likely interpretation. “Most
+reasonably inferred” does not require certainty.
 
-The test for each choice: could every sentence in the text be true while
-this choice is false? If yes, cross it out. Use this test explicitly on
-Hard questions; it is slow at first and then becomes automatic.
+For each choice, identify the evidence and ask what extra assumptions it
+needs. Reject a choice that contradicts the text or needs an unsupported
+leap. For a question that specifically asks what must follow, use the
+stricter test: could the premises be true while the choice is false?
+
+When a question changes a procedure, track what has happened at each stage.
+Distinguish conditions that start a response from those that maintain or
+reverse it. Stopping a signal may prevent a new response without undoing an
+existing one; a later reset may erase something that was previously learned.
+Apply each condition only to the process the passage says it affects.
+
+When categories overlap, follow the same item through every relevant rule.
+If every archived letter was dated, and some archived letters were unsigned,
+then some dated letters were unsigned. That does not mean every dated letter
+was archived, or that every unsigned letter was dated. Keep the direction
+and scope of each statement as you combine them.
 
 > **Example.** Read the text and answer the question.
 >
@@ -115,6 +129,10 @@ topic does, so reading it closely settles many of these questions.
 
 ## What Hard looks like {#hard}
 
-- The facts you need sit in separated sentences, often the first and the last, and must be combined.
-- The text is written in formal, academic language about an unfamiliar field.
-- Every wrong choice is plausible in the real world; only one is forced by the text. The common near misses are a causal leap, a generalization from one case to all cases, and the right idea stated too strongly.
+- Records from different times follow different inclusion rules. Their apparent trend must be reconciled with what each record measures.
+- Two conditions or stages affect the same outcome in different ways; the conclusion must preserve both relationships and avoid claiming an untested cause.
+- Several observations support a conclusion at a limited strength, while plausible alternatives fit only some of them or extend them too far.
+
+Separated sentences, formal language, or an unfamiliar field do not by
+themselves make a question Hard. Combine the evidence, then choose the
+conclusion it supports at the strength the question requests.

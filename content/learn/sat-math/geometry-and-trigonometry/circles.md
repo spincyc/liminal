@@ -11,9 +11,9 @@ Circle questions cover arcs, sectors and angles in a circle, the equation of
 a circle in the xy-plane, and radian measure with the unit circle. They
 belong to Geometry and Trigonometry, {{fact:sat-math-geometry}} of the Math
 section. The radius is the key length in almost every circle problem: find
-it first. Hard questions find a radius from a chord and a height, put a
-circle equation in expanded form with a common factor, or mix arcs, sectors
-and inscribed angles in degrees and radians.
+it first. Hard questions find a radius from indirect chord information or combine a
+circle equation with the geometry of a tangent line. Routine conversions,
+completing the square, and arc calculations are usually Easy or Medium.
 
 ## Circle measures {#circle-measures}
 
@@ -200,6 +200,4 @@ quadrant: x (cosine) is negative on the left, y (sine) is negative below.
 ## What Hard looks like {#hard}
 
 - A radius found from a chord and a height, or from two parallel chords, with the center not given. Use the right triangle from the center to the middle of each chord (see [chords and the center](#chords)).
-- A circle equation in general form, possibly with a common factor to divide out, and a question about a point inside or outside. Complete the squares, then compare squared distances with r².
 - The line tangent to a circle at a given point: its slope, its equation or its y-intercept. The slope is the negative reciprocal of the radius's slope, and the line passes through the point of tangency (see [the tangent line at a point](#tangent-line)).
-- Arcs, sectors and inscribed angles in mixed units. Name the angle first: central or inscribed, degrees or radians. An inscribed angle is half the central angle on the same arc, and s = rθ needs radians.

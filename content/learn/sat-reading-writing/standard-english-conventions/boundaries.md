@@ -10,13 +10,15 @@ skill: Boundaries
 Boundaries questions test punctuation: where one sentence ends and the next
 begins, and how clauses, lists and extra information are joined inside a
 sentence. The stem is always "Which choice completes the text so that it
-conforms to the conventions of Standard English?" and the meaning is the
-same in every choice. The skill is part of Standard English Conventions,
+conforms to the conventions of Standard English?" The completed text must
+preserve the intended meaning. The skill is part of Standard English
+Conventions,
 {{fact:sat-rw-conventions}} of the Reading and Writing section. These
 questions follow Information and Ideas in each module and run from easiest
-to hardest regardless of skill. Hard versions use long subjects, clauses
-that look independent but aren't, and interruptions punctuated on only one
-side.
+to hardest regardless of skill. Some versions use long subjects and
+interruptions. The hardest versions
+require context to decide whether a clause identifies a subgroup or
+adds information about an already identified person or thing.
 
 ## Sentence boundaries {#sentence-boundaries}
 
@@ -33,48 +35,42 @@ independent. Then:
 Words such as however, therefore, moreover, thus and consequently are not
 conjunctions. Between two independent clauses the clause boundary needs a
 semicolon or a period, never a comma alone: "X; however, Y" or "X. However,
-Y", never "X, however, Y". A capital letter follows only a period.
+Y", never "X, however, Y". A period starts a new sentence with a capital
+letter; a semicolon normally
+continues with lower case unless the next word is a proper name or "I".
 
-The adverb belongs to one of the two clauses, and the boundary mark goes on
-the other side of it. It usually begins the second clause ("X; however, Y"),
-but it can end the first ("X, however; Y") when the contrast is between the
-first clause and the sentence before it. Decide which clause the adverb
-belongs to by asking what it contrasts, then put the semicolon or period
-between the clauses and a comma between the adverb and its own clause.
+A transition can begin the second clause ("X; however, Y") or end the
+first ("X, however; Y"). Moving it can change the emphasis without making
+the sentence ungrammatical. Do not reject a choice just because you prefer
+another emphasis; check the clause boundary and the capitalization.
 
 > **Example.** Read the text and answer the question.
 >
 > Most of the orchard's trees were planted in the 1950s. The pear trees by
-> the gate are older ______ they were already fruiting when the orchard was
+> the gate are ______ were already fruiting when the orchard was
 > founded.
 >
 > Which choice completes the text so that it conforms to the conventions of
 > Standard English?
 >
-> A) older; however, they
+> A) older, however; They
 >
 > B) older, however; they
 >
 > C) older, however, they
 >
-> D) older however; they
+> D) older, however, They
 >
-> "However" sets "the pear trees by the gate are older" against the sentence
-> before it (most trees date from the 1950s), so it ends the first clause:
-> a comma before it and a semicolon after it, where the two clauses meet. A
-> makes "however" begin the second clause, setting the fruiting against the
-> trees being older, which is not a contrast. C is a comma splice. D leaves
-> out the comma that sets "however" off from its clause. B is correct.
-
-> **Fails when.** The adverb could belong to either clause with no change in
-> meaning; then the test will have ruled one placement out another way (a
-> missing comma, a comma splice). Check the marks before arguing about
-> meaning.
+> Both "the pear trees by the gate are older" and "they were already
+> fruiting ..." are independent clauses. The semicolon in B separates
+> them. A wrongly capitalizes the ordinary pronoun after the semicolon.
+> C creates a comma splice, and D combines that error with an unnecessary
+> capital letter. B is correct.
 
 > **Example.** Read the text and answer the question.
 >
 > Glaciologist Rhea Tamm spent three winters measuring the ice on Lake
-> Suvi ______ records show that the lake now freezes about two weeks later
+> ______ records show that the lake now freezes about two weeks later
 > than it did fifty years ago.
 >
 > Which choice completes the text so that it conforms to the conventions of
@@ -90,14 +86,15 @@ between the clauses and a comma between the adverb and its own clause.
 >
 > Both sides are independent: "Rhea Tamm spent three winters ..." and "her
 > records show ...". A joins them with a comma alone, a comma splice. C
-> joins them with nothing, a run-on. D puts "and" after a colon, which is
-> never needed. B uses a semicolon, which can join two independent clauses.
+> joins them with nothing, a run-on. D adds "and" after the colon instead of
+> directly introducing the explanatory clause. B uses a semicolon, which
+> can join two independent clauses.
 > B is correct.
 
 > **Example.** Read the text and answer the question.
 >
 > The first version of the drug caused dizziness in a third of the
-> volunteers ______ the team lowered the dose and began a second trial.
+> ______ team lowered the dose and began a second trial.
 >
 > Which choice completes the text so that it conforms to the conventions of
 > Standard English?
@@ -136,7 +133,7 @@ or a period. Use "whom" for people and "which" for things.
 
 > **Example.** Read the text and answer the question.
 >
-> The aquarium hired forty summer guides ______ had never worked with sea
+> The aquarium hired forty summer ______ had never worked with sea
 > animals before.
 >
 > Which choice completes the text so that it conforms to the conventions of
@@ -161,7 +158,7 @@ or a period. Use "whom" for people and "which" for things.
 
 The rules that decide most of these questions:
 
-- No punctuation between a subject and its verb, however long the subject is, or between a verb and its object.
+- Do not add a single comma directly between a subject and its predicate, however long the subject is, or between a verb and its required complement. Paired punctuation may still set off an intervening supplement.
 - Extra (nonessential) information takes matching punctuation on both sides: two commas, two dashes, or two parentheses. Information that identifies which thing you mean takes none.
 - A colon follows a complete sentence and introduces a list, an explanation or an example. No colon right after "include", "such as" or a verb like "are".
 - Items in a list are separated by commas; if the items already contain commas, separate them with semicolons.
@@ -210,7 +207,7 @@ The rules that decide most of these questions:
 > **Example.** Read the text and answer the question.
 >
 > Before leaving base camp, the expedition checked its three most important
-> tools ______ a satellite phone, a water filter, and a solar charger.
+> ______ a satellite phone, a water filter, and a solar charger.
 >
 > Which choice completes the text so that it conforms to the conventions of
 > Standard English?
@@ -221,7 +218,7 @@ The rules that decide most of these questions:
 >
 > C) tools;
 >
-> D) tools. A
+> D) tools.
 >
 > The words before the blank form a complete sentence, and what follows is a
 > list that explains "three most important tools". A colon does exactly
@@ -344,11 +341,14 @@ names and quotations.
 
 ## What Hard looks like {#hard}
 
-- A long subject with a relative clause and a prepositional phrase, where the mark before the verb is the test.
-- An interruption whose closing mark sits far from its opening mark.
-- Two clauses joined by a conjunctive adverb in the middle of the second clause ("the results, however, were ...") where only one side is a sentence boundary.
-- A conjunctive adverb that could open the second clause or close the first, decided by what it contrasts.
-- An interruption opened with a comma, where the tempting error is leaving out the closing comma.
-- "; many of them" (an independent clause, after a semicolon) against ", many of which" (a relative clause, after a comma).
-- Choices that differ in two marks at once, so you must check both positions.
-- A clause whose commas depend on the sentence before it: whether the thing it describes has already been identified.
+Hard punctuation questions can offer two grammatically complete readings.
+The passage decides which one preserves its meaning: a relative clause may
+identify some members of a group rather than describe the whole group.
+A name may identify one person among several, or merely add information
+about the only person already identified. Read those relationships before
+choosing the marks.
+
+Long subjects, matched interruptions, and two punctuation positions can
+make a question demanding, but length alone does not make it Hard. First
+map the clauses and then ask whether the remaining choice depends on the
+passage's meaning.

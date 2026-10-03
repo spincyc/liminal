@@ -8,18 +8,20 @@ Liminal is a study tool as well as a question bank: it teaches each SAT skill,
 drills it, tests it the way the digital SAT does, and brings back what you
 missed until you can do it.
 
-SAT questions are generated fresh from question templates: 188 for SAT Math and
-120 for SAT Reading and Writing, each a distinct question design with the real
-test's traps built in. ACT sections draw from 575 original items each. Every
+SAT questions are generated from question templates: 189 for SAT Math and
+128 for SAT Reading and Writing, covering the catalog's tested skills.
+Available ACT sections draw from 575 original exercise
+variants each. Every
 question carries a hint, an explanation, a step-by-step solution, the reliable
 approach, the common trap, and, for multiple choice, why each wrong option is
 wrong.
 
 | Section | Source | Easy / Medium / Hard |
 | --- | --- | --- |
-| SAT Reading and Writing | 120 templates | 36 / 51 / 33 |
-| SAT Math | 188 templates | 47 / 86 / 55 |
-| ACT English, Mathematics, Reading, Science, Writing | 575 items each | |
+| SAT Reading and Writing | 128 templates | 35 / 66 / 27 |
+| SAT Math | 189 templates | 47 / 95 / 47 |
+| ACT English, Mathematics, Reading, Writing | 575 exercise variants each | Tiers unverified |
+| ACT Science | Practice unavailable pending passage-set rebuild | |
 
 ## Honest practice
 
@@ -28,14 +30,15 @@ pointed to about 700 in SAT Math scored about 500 on the real test. Its "Hard"
 questions were easy and named their own method, and skipped questions were
 never recorded. Liminal is now built to keep practice honest:
 
-- **Hard means hard-module difficulty**, judged question design by question
-  design against [`docs/difficulty-calibration.md`](docs/difficulty-calibration.md),
-  not bigger numbers.
-- **No answer tells.** The gate fails any template whose key can be picked
-  without solving: the longest or shortest choice, an extreme or middle
-  value, a fixed opening phrase, a word that is always or never right, the
-  odd one out, or a choice every distractor varies. A student who never reads
-  the question scores near chance.
+- **Difficulty is an editorial judgment.** Templates are reviewed against
+  [`docs/difficulty-calibration.md`](docs/difficulty-calibration.md), including
+  the reasoning and plausible mistakes each question requires. These tiers
+  have not been calibrated against student performance on the SAT.
+- **Measured answer tells are checked.** Automated gates test specified
+  shortcuts involving length, position, values, wording and similar choices.
+  Passing those checks does not establish that a question is unambiguous,
+  difficult, or free of every shortcut. Independent sampled reviews are tied
+  to the current template source; source changes require renewed review.
 - **Every answer counts, once.** A blank counts as wrong, a correct answer
   after a hint is shown apart, a second answer to a question you have seen
   (as when Review brings a miss back) is left out of accuracy, and Hard
@@ -54,7 +57,7 @@ never recorded. Liminal is now built to keep practice honest:
   the error log, Desmos, and a SAT Math plan for a student around 500.
 - **Practice.** A set of any size, by domain, skill and difficulty, with
   feedback after each question or at the end and an optional real-pace timer.
-  **Drill one skill** gives new numbers or a new context on every repeat.
+  **Drill one skill** varies numbers or context; finite scene pools can repeat.
   A set takes at most one question per template and per topic, prefers what
   you have seen least recently, follows the real test's domain weights, and
   has a code that retakes it exactly.
@@ -97,6 +100,10 @@ never recorded. Liminal is now built to keep practice honest:
   module, with an answer sheet, the key and explanations, and a form code
   that rebuilds the booklet. ACT booklets draw from the ACT banks.
 - **One test at a time.** An SAT | ACT switch in the header scopes every page.
+- **Writing drafts.** ACT Writing offers a multiline draft, save and resume,
+  text download, and rubric-guided self-review. Essays are unscored. Download
+  a draft before closing its completed report; progress stores completion,
+  while unfinished-session storage holds the draft.
 
 See [`docs/roadmap.md`](docs/roadmap.md) for what is next.
 

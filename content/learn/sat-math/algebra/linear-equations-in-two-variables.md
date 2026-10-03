@@ -10,10 +10,10 @@ skill: Linear equations in two variables
 An equation such as 3x + 5y = 60 has two unknowns, so it has many solutions:
 every point on its line. Questions in this skill ask you to build such an
 equation from a situation, or to read meaning from its graph. It sits in
-Algebra, {{fact:sat-math-algebra}} of the Math section. Hard questions are
-about the line itself: how far y moves when x moves along it, where an
-intercept goes when the line is shifted, or which line has intercepts that
-meet a condition.
+Algebra, {{fact:sat-math-algebra}} of the Math section. Medium questions can
+ask how a point or intercept changes when a line is shifted. Hard questions
+give a condition on unknown intercepts or require counting whole-number
+solutions to an exact total.
 
 ## Graph interpretation {#graph-interpretation}
 
@@ -49,7 +49,7 @@ equation, not from eyeballing the picture.
 
 ### Slope from standard form {#standard-form-slope}
 
-Solving Ax + By = C for y gives y = (−A/B)x + C/B. So the slope is −A/B:
+For B ≠ 0, solving Ax + By = C for y gives y = (−A/B)x + C/B. So the slope is −A/B:
 the x-coefficient over the y-coefficient, with the sign changed.
 
 > **Example.** What is the slope of the graph of 4x − 10y = 30?
@@ -61,6 +61,7 @@ the x-coefficient over the y-coefficient, with the sign changed.
 > **Fails when.** The x-term and the y-term are not on the same side. In
 > 2x = 3y + 6, A is 2 but B is not 3: rewrite it as 2x − 3y = 6 first, and
 > the slope is −2/(−3) = 2/3, not −2/3.
+> If B = 0 and A ≠ 0, the line is vertical and its slope is undefined.
 
 ### Moving along a line {#moving-along-a-line}
 
@@ -151,7 +152,7 @@ total.
 When x and y count things, only whole-number points on the line count. To
 list them all for ax + by = c:
 
-1. Divide the equation by any factor that a, b and c share.
+1. Find the greatest common divisor of a and b. If it does not divide c, there are no whole-number solutions. Otherwise divide all three coefficients by it.
 2. Find one solution: try x = 0, 1, 2, ... (or y) until the other variable comes out whole.
 3. Step from it: add the new y-coefficient to x and take the new x-coefficient from y, or the reverse. No smaller step stays on whole numbers.
 4. Keep stepping both ways until a count would drop below what is allowed: 0 if "none" is allowed, 1 if the question says "at least one of each".
@@ -212,7 +213,10 @@ into an equation in one letter:
 
 Hard questions in this skill test the line itself rather than a story:
 
-- A point (s, t) on a line such as 2x + 7y = 11 and a question about another point on it. Use Δy = m · Δx; the start and the constant drop out (see [moving along a line](#moving-along-a-line)).
-- A graphed line moved up, down, left or right, and a question about its new intercept or equation. Write the moved equation before setting a variable to 0 (see [translating a line](#translating-a-line)).
-- A line known only through its intercepts: a slope and a sum of intercepts, a ratio of intercepts and a point, or intercepts written with a constant k (see [a line from its intercepts](#line-from-intercepts)).
+- A line known only through its intercepts: a slope and a sum of intercepts, or a ratio of intercepts and a point (see [a line from its intercepts](#line-from-intercepts)).
 - A story whose two counts must be whole numbers: how many combinations reach an exact total, or the greatest or least possible count. Step from one solution, and read whether "none" of one kind is allowed (see [whole-number solutions](#whole-number-solutions)).
+
+At Medium, questions about another point on a line use Δy = m · Δx, and
+questions about a translated graph require its new equation before finding
+an intercept. See [moving along a line](#moving-along-a-line) and
+[translating a line](#translating-a-line).

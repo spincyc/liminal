@@ -98,6 +98,39 @@
     return testOf(question.sectionKey || question.id) === "SAT" ? "legacy-bank" : "bank";
   }
 
+  // Fixed bank IDs survive editorial changes. Record the actual question
+  // shown, including its resolved passage and answer key, independently of
+  // taxonomy and release labels. This compact checksum is an identity aid,
+  // not a security signature. Sorted object keys survive JSON round trips.
+  function contentIdentity(question) {
+    const fields = ["responseType", "stem", "choices", "correctAnswer", "stimulus", "figure",
+      "hint", "explanation", "solutionSteps", "distractorRationales", "strategy", "trap", "calculatorPolicy"];
+    const canonical = (value) => {
+      if (Array.isArray(value)) return value.map(canonical);
+      if (value && typeof value === "object") return Object.fromEntries(Object.keys(value).sort()
+        .filter((key) => value[key] !== undefined).map((key) => [key, canonical(value[key])]));
+      return value === undefined ? null : value;
+    };
+    const text = JSON.stringify(fields.map((key) => canonical(question && question[key])));
+    let hash = 0xcbf29ce484222325n;
+    for (let index = 0; index < text.length; index += 1) {
+      hash = BigInt.asUintN(64, (hash ^ BigInt(text.charCodeAt(index))) * 0x100000001b3n);
+    }
+    return `q1-${hash.toString(16).padStart(16, "0")}`;
+  }
+
+  // Historical responses must never be attached to changed choices. Old
+  // bank records without a checksum remain readable as outcome history,
+  // but cannot establish which current question their response answered.
+  function questionMatchesAttempt(question, attempt) {
+    if (!question || !attempt || question.id !== attempt.questionId) return false;
+    if (sourceOf(question) === "template") {
+      return !attempt.updated && Number(attempt.templateVersion) > 0 &&
+        Number(question.templateVersion) === Number(attempt.templateVersion);
+    }
+    return typeof attempt.contentIdentity === "string" && attempt.contentIdentity === contentIdentity(question);
+  }
+
   let idCounter = 0;
   function newId(prefix) {
     idCounter = (idCounter + 1) % 1296;
@@ -129,6 +162,7 @@
     const history = {};
     if (!isObject(raw)) return history;
     Object.keys(raw).forEach((sectionKey) => {
+      if (!testOf(sectionKey)) return;
       const entry = raw[sectionKey];
       if (!isObject(entry)) return;
       const lastServed = {};
@@ -146,7 +180,8 @@
         });
       }
       history[sectionKey] = {
-        serve: Math.max(0, Number(entry.serve) || 0, ...Object.values(lastServed)),
+        serve: Object.values(lastServed).reduce((highest, value) => Math.max(highest, value),
+          Number.isFinite(Number(entry.serve)) ? Math.max(0, Number(entry.serve)) : 0),
         lastServed,
         scenes,
         mask: typeof entry.mask === "string" && entry.mask ? entry.mask : "0",
@@ -179,11 +214,11 @@
     return progress;
   }
 
-  // Sets `repeat` on attempts that lack it: true for every answer to a
-  // question after its earliest one. Attempts that carry the field keep it.
-  // Returns the same array when nothing needed a flag.
+  // Only the earliest retained answer to a question can be a first answer.
+  // Merging devices can bring two `repeat: false` answers together, so
+  // reconcile those too. A true flag survives even without its predecessor
+  // (older attempts may have been trimmed).
   function markRepeats(attempts) {
-    if (attempts.every((attempt) => typeof attempt.repeat === "boolean")) return attempts;
     const firstAt = new Map();
     attempts.forEach((attempt, index) => {
       const at = Number(attempt.timestamp) || 0;
@@ -192,9 +227,14 @@
         firstAt.set(attempt.questionId, { at, index });
       }
     });
-    return attempts.map((attempt, index) => (typeof attempt.repeat === "boolean"
-      ? attempt
-      : Object.assign({}, attempt, { repeat: firstAt.get(attempt.questionId).index !== index })));
+    let changed = false;
+    const marked = attempts.map((attempt, index) => {
+      const repeat = attempt.repeat === true || firstAt.get(attempt.questionId).index !== index;
+      if (attempt.repeat === repeat) return attempt;
+      changed = true;
+      return Object.assign({}, attempt, { repeat });
+    });
+    return changed ? marked : attempts;
   }
 
   const PLAN_TESTS = ["SAT", "ACT"];
@@ -262,11 +302,11 @@
   function migrate(v2, options) {
     const progress = empty(options);
     if (!isObject(v2)) return progress;
-    progress.attempts = (Array.isArray(v2.attempts) ? v2.attempts : [])
+    progress.attempts = markRepeats((Array.isArray(v2.attempts) ? v2.attempts : [])
       .map((attempt, index) => (isObject(attempt) && typeof attempt.questionId === "string"
         ? migrateAttempt(attempt, index)
         : null))
-      .filter(Boolean);
+      .filter(Boolean));
     progress.marked = unique(strings(v2.flagged));
     if (isObject(v2.templatesSeen)) {
       Object.keys(v2.templatesSeen).forEach((sectionKey) => {
@@ -291,7 +331,8 @@
 
   function readKey(storage, key) {
     const text = storage.getItem(key);
-    return text === null || text === undefined ? null : JSON.parse(text);
+    return text === null || text === undefined ? null
+      : JSON.parse(text, (key, value) => key === "__proto__" ? undefined : value);
   }
 
   // { progress, migrated, readable, absent }. `readable` is false when
@@ -353,10 +394,12 @@
       const entry = sectionHistory(history, sectionKey);
       entry.serve = Math.max(entry.serve, incoming.serve || 0);
       Object.keys(incoming.lastServed || {}).forEach((id) => {
-        entry.lastServed[id] = Math.max(entry.lastServed[id] || 0, incoming.lastServed[id]);
+        const known = Object.prototype.hasOwnProperty.call(entry.lastServed, id) ? entry.lastServed[id] : 0;
+        entry.lastServed[id] = Math.max(known, incoming.lastServed[id]);
       });
       Object.keys(incoming.scenes || {}).forEach((id) => {
-        entry.scenes[id] = unique((entry.scenes[id] || []).concat(incoming.scenes[id]))
+        const known = Object.prototype.hasOwnProperty.call(entry.scenes, id) ? entry.scenes[id] : [];
+        entry.scenes[id] = unique(known.concat(incoming.scenes[id]))
           .slice(-LIMITS.scenesPerTemplate);
       });
       entry.mask = unionMaskCodes(entry.mask, incoming.mask);
@@ -374,13 +417,11 @@
   // and the clear wins.
   function merge(stored, local) {
     if (!local || stored.epoch !== local.epoch) return stored;
-    const errorLog = Object.assign({}, local.errorLog, stored.errorLog);
     return Object.assign({}, stored, {
-      attempts: unionById(stored.attempts, local.attempts, byTimestamp),
+      attempts: markRepeats(unionById(stored.attempts, local.attempts, byTimestamp)),
       sessions: unionById(stored.sessions, local.sessions,
         (left, right) => (left.finishedAt || 0) - (right.finishedAt || 0)),
       history: mergeHistory(stored.history, local.history),
-      errorLog,
     });
   }
 
@@ -392,13 +433,37 @@
     const first = load(storage, settings);
     let current = first.progress;
     let lastSaveOk = true;
+    const pendingTags = new Map();
     if (first.migrated) lastSaveOk = save(storage, current).ok;
 
-    function update(change) {
+    function refreshed() {
       const fresh = load(storage, settings);
-      const base = fresh.readable && !fresh.absent ? merge(fresh.progress, current) : current;
+      const readable = fresh.readable && !fresh.absent;
+      if (readable && fresh.progress.epoch !== current.epoch) pendingTags.clear();
+      const base = readable ? merge(fresh.progress, current) : current;
+      if (!pendingTags.size) return base;
+      const errorLog = Object.assign({}, base.errorLog);
+      pendingTags.forEach((tag, id) => {
+        if (tag === undefined) delete errorLog[id];
+        else errorLog[id] = tag;
+      });
+      return Object.assign({}, base, { errorLog });
+    }
+
+    function update(change) {
+      const base = refreshed();
       const changed = typeof change === "function" ? change(base) || base : base;
       const result = save(storage, changed);
+      if (result.ok) pendingTags.clear();
+      else {
+        // Retry this tab's unsaved tag edits, without bringing back tags
+        // another tab deleted from a successfully saved record.
+        new Set(Object.keys(base.errorLog).concat(Object.keys(changed.errorLog))).forEach((id) => {
+          if (JSON.stringify(base.errorLog[id]) !== JSON.stringify(changed.errorLog[id])) {
+            pendingTags.set(id, changed.errorLog[id]);
+          }
+        });
+      }
       current = result.progress;
       lastSaveOk = result.ok;
       return result;
@@ -410,12 +475,12 @@
       update,
       // Re-reads storage, as when another tab changed it.
       refresh() {
-        const fresh = load(storage, settings);
-        if (fresh.readable && !fresh.absent) current = merge(fresh.progress, current);
+        current = refreshed();
         return current;
       },
       // The student asked for everything to go, so the v2 backup goes too.
       clear() {
+        pendingTags.clear();
         const result = save(storage, empty());
         try {
           storage.removeItem(LEGACY_KEY);
@@ -519,8 +584,11 @@
   }
 
   function sectionHistory(history, sectionKey) {
-    if (!history[sectionKey]) {
-      history[sectionKey] = { serve: 0, lastServed: {}, scenes: {}, mask: "0" };
+    if (!Object.prototype.hasOwnProperty.call(history, sectionKey)) {
+      Object.defineProperty(history, sectionKey, {
+        value: { serve: 0, lastServed: {}, scenes: {}, mask: "0" },
+        enumerable: true, configurable: true, writable: true,
+      });
     }
     return history[sectionKey];
   }
@@ -650,6 +718,8 @@
       record.templateId = question.templateId || parsed.templateId;
       record.templateVersion = Number(settings.templateVersion) || 1;
       record.seed = question.seed !== undefined ? String(question.seed) : parsed.seed;
+    } else {
+      record.contentIdentity = contentIdentity(question);
     }
     if (settings.runCode) record.runCode = settings.runCode;
     // A question built to re-practise an earlier miss names it, so the
@@ -668,11 +738,14 @@
   function summarizeSession(meta, items, elapsedMs) {
     const list = items || [];
     const byDomain = {};
-    const hard = tally();
+    const hard = Object.assign(tally(), { hintedCorrect: 0 });
     let correct = 0;
+    let scored = 0;
     let hintedCorrect = 0;
     list.forEach((item) => {
       const question = item.question || {};
+      const scoreable = question.responseType !== "essay" && item.correct !== null;
+      if (scoreable) scored += 1;
       const right = item.answered && item.correct === true;
       if (right) correct += 1;
       if (right && item.hinted) hintedCorrect += 1;
@@ -680,9 +753,10 @@
       byDomain[domain] = byDomain[domain] || tally();
       byDomain[domain].total += 1;
       if (right) byDomain[domain].correct += 1;
-      if (question.difficulty === "Hard") {
+      if (scoreable && question.difficulty === "Hard") {
         hard.total += 1;
         if (right) hard.correct += 1;
+        if (right && item.hinted) hard.hintedCorrect += 1;
       }
     });
     const sections = unique(list.map((item) => item.question && item.question.sectionKey).filter(Boolean));
@@ -694,6 +768,8 @@
       startedAt: meta.startedAt || null,
       finishedAt: meta.finishedAt || Date.now(),
       total: list.length,
+      scored,
+      unscored: list.length - scored,
       correct,
       hintedCorrect,
       hard,
@@ -907,6 +983,8 @@
     parseQuestionId,
     sectionOfId,
     sourceOf,
+    contentIdentity,
+    questionMatchesAttempt,
     newId,
     // shape and storage
     empty,

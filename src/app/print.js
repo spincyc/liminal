@@ -121,7 +121,7 @@
   function testForms() {
     return isSat()
       ? SAT_FORMS
-      : core.ALL_BLUEPRINTS.filter((blueprint) => blueprint.test === site.getTest());
+      : core.ALL_BLUEPRINTS.filter((blueprint) => blueprint.test === site.getTest() && core.blueprintAvailable(blueprint));
   }
 
   function selectedForm() {
@@ -319,7 +319,10 @@
     const parts = form.sections.map(
       (entry) => `${entry.label}, ${entry.count} questions in ${entry.minutes} min`,
     );
-    elements.formSummary.textContent = `${form.label}: ${parts.join("; ")}.`;
+    const unavailable = (window.PRACTICE_CATALOG.sections || []).filter((section) =>
+      section.test === form.test && !core.sectionAvailable(section));
+    elements.formSummary.textContent = `${form.label}: ${parts.join("; ")}. ` +
+      unavailable.map((section) => section.practiceNote || `${section.shortLabel} practice is temporarily unavailable.`).join(" ");
   }
 
   function setStatus(message, kind) {
@@ -441,7 +444,7 @@
     const routes = [...new Set(form.modules.map((entry) => entry.route).filter(Boolean))];
     const notes = [
       "Built from fresh questions to the digital SAT's module structure: " +
-        "official module lengths, times, and domain counts, with a practice " +
+        "official module lengths and times, with a practice allocation of section-wide domain shares and a practice " +
         "approximation of each module's difficulty mix.",
     ];
     if (routes.length) {

@@ -177,7 +177,7 @@
 
   const SCATTER_SCENES = [
     {
-      sign: 1, xSteps: [1, 2], ySteps: [2, 5, 10],
+      sign: 1, xSteps: [2], ySteps: [2, 5, 10],
       xTitle: "Number of employees", yTitle: "Sales (thousands of dollars)",
       about: "the numbers of employees and the monthly sales, in thousands of dollars, of 12 stores",
       residual: (x, more) => `For the store with ${x} employees, the actual monthly sales were how many thousands of dollars ${more ? "greater" : "less"} than the monthly sales predicted by the line of best fit?`,
@@ -257,7 +257,7 @@
         const noise = yMax * 0.07;
         const points = xs.map((x, index) => {
           const offset = (index % 2 ? 1 : -1) * (0.2 + t.random() * 0.8) * noise;
-          return [x, Math.max(yStep * 0.2, Math.min(yMax - yStep * 0.2, m * x + b + offset))];
+          return [x, Math.max(yStep * 0.2, Math.min(scene.yTitle === "Battery charge (percent)" ? 100 : yMax - yStep * 0.2, m * x + b + offset))];
         });
         const alt =
           `Scatterplot of ${scene.count} points with ${inSentence(scene.xTitle)} on the horizontal axis (0 to ${scene.xMax}) ` +
@@ -634,7 +634,7 @@
 
   const COUNT_SCENES = [
     {
-      sign: 1, xSteps: [1, 2], ySteps: [5, 10], xTitle: "Number of employees", yTitle: "Sales (thousands of dollars)",
+      sign: 1, xSteps: [2], ySteps: [5, 10], xTitle: "Number of employees", yTitle: "Sales (thousands of dollars)",
       about: (n) => `the numbers of employees and the monthly sales, in thousands of dollars, of ${n} stores`,
       ask: (more) => `For how many of the stores were the actual monthly sales ${more ? "greater" : "less"} than the sales predicted by the line of best fit?`,
       things: "stores",
@@ -806,7 +806,7 @@
           `${more ? "greater" : "less"} than predicted when its point lies ${side} the line; ${key} of the ${n} points do.`,
         steps: [
           `An actual value ${more ? "greater" : "less"} than predicted is a point ${side} the line of best fit.`,
-          `Count the points ${side} the line, including the one close to it at x = ${closeX}: ${key}.`,
+          `Count the points ${side} the line${closeOnAsked ? `, including the one close to it at x = ${closeX}` : `; the close point at x = ${closeX} is on the other side`}: ${key}.`,
         ],
         principles: [
           "A point on a scatterplot shows an actual value; the line of best fit shows the predicted value for each x.",
@@ -866,7 +866,7 @@
       cross: "Based on the lines of best fit, at what age, in years, would cars of the two models have the same predicted value?",
     },
     {
-      sign: 1, xSteps: [1, 2], ySteps: [10, 20], startCells: [1, 6], names: ["Store J", "Store K"], lower: ["store J", "store K"],
+      sign: 1, xSteps: [2], ySteps: [10, 20], startCells: [1, 6], names: ["Store J", "Store K"], lower: ["store J", "store K"],
       xTitle: "Weeks since opening", yTitle: "Weekly orders",
       about: "the numbers of online orders two new stores, J and K, received each week, by the number of weeks since each store opened",
       define: "where y is the predicted number of orders in the week that is x weeks after the store opened",
@@ -989,7 +989,7 @@
           const points = slots.map((x, index) => {
             const offset = (index % 2 ? 1 : -1) * (0.25 + t.random() * 0.9);
             const y = Math.max(0.3, Math.min(Y_CELLS - 0.3, starts[g] + slopesCells[g] * x + offset));
-            return [x * xStep, y * yStep];
+            return [x * xStep, scene.yTitle === "Weekly orders" ? Math.round(y * yStep) : y * yStep];
           });
           return { points, fit: fits[g], name: scene.names[g] };
         });
@@ -1523,14 +1523,14 @@
         if (!keyText) return null;
         const change = tidy(M * scene.perX);
         const steps = [
-          `The slope, ${num(M)}, is in ${scene.slopeUnits}.`,
+          `The magnitude of the slope, ${num(M)}, is in ${scene.slopeUnits}.`,
           scene.xConv
-            ? `${cap(scene.xConv(1))}, so the predicted change in y is ${num(M)} × ${num(scene.perX)} = ${num(change)}.`
-            : `One year of experience is one unit of x, so the predicted change in y is ${num(M)}.`,
+            ? `${cap(scene.xConv(1))}, so the magnitude of the predicted change in y is ${num(M)} × ${num(scene.perX)} = ${num(change)}.`
+            : `One year of experience is one unit of x, so the magnitude of the predicted change in y is ${num(M)}.`,
           `${cap(scene.yConv(change, true))}.`,
         ];
         return packRanked(t, numeric, key, [
-          [M, `Reads the slope, ${num(M)}, without converting either variable's units.`],
+          [M, `Reads the slope magnitude, ${num(M)}, without converting either variable's units.`],
           // Mistakes about x exist only where x needs converting.
           [scene.perX !== 1 ? M * scene.perY : NaN, "Converts the units of y but not the units of x."],
           [M * scene.perX, "Converts the units of x but not the units of y."],
@@ -1543,7 +1543,7 @@
           stem: `${intro} ${scene.perUnit}`,
           explanation: `${steps.join(" ")} The answer is ${keyText}.`,
           steps,
-          trap: `The slope, ${num(M)}, is in ${scene.slopeUnits}, not in ${scene.perWords}.`,
+          trap: `The slope magnitude, ${num(M)}, is in ${scene.slopeUnits}, not in ${scene.perWords}.`,
           hint: "What units are x and y measured in, and what units does the question use?",
           verify: () => {
             const line = lineOf();
@@ -1563,7 +1563,7 @@
         const inModelX = tidy(inModelY / M);
         const steps = [
           `${cap(scene.pairShow(P))} of predicted difference is ${num(inModelY)} in the model's units for y.`,
-          `Divide by the slope: ${num(inModelY)} ÷ ${num(M)} = ${num(inModelX)} in the model's units for x.`,
+          `Divide by the slope magnitude: ${num(inModelY)} ÷ ${num(M)} = ${num(inModelX)} in the model's units for x.`,
           scene.xConv
             ? `Convert back to ${scene.reverseUnits}: ${num(inModelX)} in the model's units is ${fmt(D)} ${scene.reverseUnits} (${scene.xConv(D)}).`
             : `x is already in years, so the difference is ${fmt(D)} years.`,
@@ -1581,7 +1581,7 @@
           stem: `${intro} ${scene.reverse(P)}`,
           explanation: `${steps.join(" ")} The intercept plays no part, because both predictions include it.`,
           steps,
-          trap: `Dividing ${scene.pairShow(P)} by the slope, ${num(M)}, mixes units: the slope is in ${scene.slopeUnits}.`,
+          trap: `Dividing ${scene.pairShow(P)} by the slope magnitude, ${num(M)}, mixes units: the slope is in ${scene.slopeUnits}.`,
           hint: "Put the predicted difference in the model's units for y first. What change in x produces it?",
           verify: () => {
             const line = lineOf();
@@ -1636,19 +1636,66 @@
     skill: "Two-variable data",
     subskill: "linear models",
     difficulty: "Hard",
-    title: "Converting a fitted slope to other units",
+    title: "Percent comparisons within a fitted model",
     recognize:
-      "The slope is in the model's units (thousands of dollars per hundred square feet, say); the question asks in other units, " +
-      "so convert the change in x into model units, multiply by the slope, and convert the change in y back (or run all of it backward).",
-    // Hard: two predictions compared in plain units (the intercept cancels),
-    // or a predicted difference turned back into a difference in x, with
-    // both unit conversions running backward. Converting the slope itself
-    // to a unit rate is Medium and lives in fit-slope-unit-rate.
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
-    tricks: ["unit-mismatch", "wrong-quantity", "intermediate-value"],
+      "Translate the percent changes in the input and prediction separately. The intercept prevents equal percent changes: " +
+      "write the two predictions, solve for the unknown input, then convert the model's units.",
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 2, trap: 1 },
+    tricks: ["percent-base", "unit-mismatch", "wrong-quantity"],
     build(t) {
-      const form = t.chance(0.5) ? "reverse" : "pair";
-      return rescaleItem(t, form, t.chance(0.5));
+      const difference = t.chance(0.5);
+      const numeric = t.chance(0.5);
+      return retry(() => {
+        const m = t.int(2, 12);
+        const b = t.int(6, 60);
+        const x = t.int(3, 40);
+        const p = t.pick([25, 40, 50, 60, 75, 80, 100]);
+        const q = m * x * p / (m * x + b);
+        if (!Number.isInteger(q) || q < 5 || q >= p) return null;
+        const nextX = x * (1 + p / 100);
+        const key = tidy(100 * (difference ? nextX - x : x));
+        const shown = (value) => Number.isFinite(value) && value > 0 && isClean(value, 2) ? fmt(value) : null;
+        const wanted = (value) => 100 * value * (difference ? p / 100 : 1);
+        const stem =
+          `A line of best fit for apartments is y = ${S.lin(m, b)}, where y is the predicted monthly rent in hundreds of dollars and x is the floor area in hundreds of square feet. ` +
+          `Apartment B has ${p}% more floor area than apartment A, and its predicted monthly rent is ${q}% greater than apartment A's. ` +
+          (difference ? "How many more square feet of floor area does apartment B have than apartment A?" : "What is apartment A's floor area, in square feet?");
+        return packRanked(t, numeric, key, [
+          [key / 100, "Leaves the answer in hundreds of square feet instead of square feet."],
+          [100 * (difference ? x : nextX), difference ? "Gives apartment A's area instead of the difference." : "Gives apartment B's area instead of apartment A's."],
+          [wanted(b * q / (m * p)), "Applies the rent increase only to the intercept, omitting the variable part of apartment A's rent."],
+          [wanted(b * q / (m * (p + q))), "Adds the two percentage rates while rearranging instead of subtracting them."],
+          [wanted(b * p / (m * (p - q))), "Swaps the floor-area percent and the rent percent on the intercept term."],
+          [key * 100, "Converts hundreds of square feet to square feet twice."],
+        ], {
+          stimulus: null,
+          figure: null,
+          stem,
+          explanation:
+            `Let apartment A's area be x model units. Apartment B's is ${num(1 + p / 100)}x, so ${m}(${num(1 + p / 100)}x) + ${b} = ${num(1 + q / 100)}(${m}x + ${b}). ` +
+            `This gives ${m}(${p} − ${q})x = ${b}(${q}), hence x = ${x}. ` +
+            (difference ? `The area difference is ${num(nextX - x)} hundreds of square feet, or ${fmt(key)} square feet.` : `Apartment A's area is ${x} hundreds of square feet, or ${fmt(key)} square feet.`),
+          steps: [
+            `Apartment A's predicted rent is ${m}x + ${b}; B's is ${m}(${num(1 + p / 100)}x) + ${b}.`,
+            `Apply the ${q}% rent increase to all of A's prediction, including its intercept.`,
+            `Rearrange: ${m}(${p} − ${q})x = ${b}(${q}), so x = ${x}.`,
+            difference ? `Find the difference and convert: (${num(nextX)} − ${x}) × 100 = ${fmt(key)} square feet.` : `Convert the area: ${x} × 100 = ${fmt(key)} square feet.`,
+          ],
+          principles: [
+            "A percent change in the input of a linear model does not give the same percent change in its output when the intercept is nonzero.",
+            "Apply a percent comparison to the entire predicted value, and convert model units only after solving.",
+          ],
+          trap: "The rent increase applies to the entire prediction, not only its slope term or only its intercept.",
+          hint: "Write expressions for both apartments' predicted rents. Which entire expression is multiplied by the stated rent increase?",
+          estimatedSeconds: 150,
+          verify: () => {
+            const recovered = difference ? key / p : key / 100;
+            const a = m * recovered + b;
+            const next = m * recovered * (1 + p / 100) + b;
+            return close((next - a) / a, q / 100) && close(recovered, x);
+          },
+        }, { places: 2, show: shown });
+      });
     },
   };
 
@@ -1678,7 +1725,7 @@
   // must reason about where the point sits, not compute.
   const OUTLIER_SCENES = [
     {
-      sign: 1, xSteps: [1, 2], ySteps: [5, 10], xTitle: "Number of employees", yTitle: "Sales (thousands of dollars)",
+      sign: 1, xSteps: [2], ySteps: [5, 10], xTitle: "Number of employees", yTitle: "Sales (thousands of dollars)",
       about: (n) => `the numbers of employees and the monthly sales, in thousands of dollars, of ${n} stores`, far: "employees",
     },
     {
@@ -1823,7 +1870,7 @@
           ],
           principles: [
             "A point far from the trend near one end of the data has a strong pull on the slope of the line of best fit.",
-            "A line of best fit passes through the mean of the data, so when one end moves one way, the other end moves the other way.",
+            "For these data, the lines pivot inside the plotted range. Removing a point changes both the means and the slope; opposite ends need not move in opposite directions for every possible data set.",
           ],
           trap: sameSide
             ? `The ${above ? "high" : "low"} point makes the left end of the line, where x = 0 is, ${above ? "higher" : "lower"}; removing it moves that end, and the y-intercept with it, the other way.`
@@ -1912,7 +1959,10 @@
         if (!xMax) return null;
         // The data: the model plus a little scatter, at whole units.
         const xs = range(0, xMax);
-        const ys = xs.map((x) => model(x) * (1 + (t.random() * 2 - 1) * 0.06));
+        const ys = xs.map((x) => {
+          const value = model(x) * (1 + (t.random() * 2 - 1) * 0.06);
+          return ["bacteria", "users"].includes(scene.things) ? Math.round(value) : value;
+        });
         const top = Math.max(...ys) * 1.1;
         // A 1, 2, or 5 times a power of ten, giving at most 10 gridlines.
         const power = 10 ** Math.floor(Math.log10(top / 10));
@@ -2191,8 +2241,7 @@
     tricks: ["sign-error", "wrong-quantity", "neighbouring-rule"],
     build(t) {
       const scene = t.pick(RESIDUAL_SCENES);
-      const form = t.pick(["farthest", "farthest", "greatest", "actual"]);
-      const numeric = form === "actual" && t.chance(0.6);
+      const form = t.pick(["farthest", "greatest"]);
       const step = scene.step || 1;
       const principles = [
         "A residual is the actual value minus the value predicted by the model: positive for a point above the line, negative below it.",
@@ -2205,7 +2254,7 @@
         const predicted = (x) => tidy(m * x + b);
         const xs = t.sample(range(scene.xs[0], scene.xs[1]), 5).sort((p, q) => p - q);
         const res = xs.map(() => t.int(scene.residuals[0] / step, scene.residuals[1] / step) * step * t.sign());
-        if (new Set(res).size < 5) return null;
+        if (new Set(res).size < 5 || !res.some((r) => r < 0) || !res.some((r) => r > 0)) return null;
         const actual = xs.map((x, index) => tidy(predicted(x) + res[index]));
         if (actual.some((y) => y <= 0)) return null;
         const names = scene.names;
@@ -2324,37 +2373,6 @@
             },
           };
         }
-        // The actual value at one x.
-        const index = t.int(0, 4);
-        const X = xs[index];
-        const key = actual[index];
-        const pred = predicted(X);
-        const r = res[index];
-        return packRanked(t, numeric, key, [
-          [tidy(pred - r), "Subtracts the residual from the prediction; a residual is actual − predicted, so the actual value is the prediction plus the residual."],
-          [pred, "Gives the predicted value, leaving out the residual."],
-          [Math.abs(r), "Gives the size of the residual instead of the actual value."],
-          [tidy(pred + (res[(index + 1) % 5])), `Uses the residual for x = ${xs[(index + 1) % 5]} instead of x = ${X}.`],
-          [tidy(m * (X + 1) + b + r), `Predicts at x = ${X + 1} instead of x = ${X}.`],
-        ], {
-          stimulus: { type: "table", content },
-          figure: null,
-          stem: `${scene.model(eq)} The table shows the residuals for five data points used to find the model. What is the actual value of y for the data point with x = ${X}?`,
-          principles,
-          explanation: `The model predicts ${num(m)}(${X}) ${b < 0 ? MINUS : "+"} ${num(Math.abs(b))} = ${num(pred)} at x = ${X}. The residual is actual − predicted, so the actual value is ${num(pred)} ${r < 0 ? MINUS : "+"} ${num(Math.abs(r))} = ${num(key)}.`,
-          steps: [
-            `Predicted value at x = ${X}: ${num(pred)}.`,
-            `Residual from the table: ${num(r)}.`,
-            `Actual = predicted + residual = ${num(key)}.`,
-          ],
-          trap: `Subtracting the residual gives ${num(tidy(pred - r))}, the reflection of the point across the line.`,
-          hint: "A residual is actual minus predicted. Solve that for the actual value.",
-          estimatedSeconds: 110,
-          verify: () => {
-            const row = parseTable(content).slice(1).find(([x]) => parseNumber(x) === X);
-            return Boolean(row) && close(parseNumber(row[1]) + m * X + b, key);
-          },
-        }, { show: num, places: 2, positive: true });
       });
     },
   };

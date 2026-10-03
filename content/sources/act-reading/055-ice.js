@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p055",
   type: "literary-narrative",
   title: "Ice",
-  intro: "This passage is adapted from a novel set in northern Minnesota. Owen is thirteen; Mrs Halvorsen farms the land above the reservoir.",
+  intro: "This is an original fictional passage set in northern Minnesota. Owen is thirteen; Mrs Halvorsen farms the land above the reservoir.",
   content: `Mrs Halvorsen never once told Owen that the ice was safe, and it took him most of that
 first winter to notice that this was deliberate.
 
@@ -230,20 +230,20 @@ caution or something closer to a habit of attention that he was given and did no
       subskill: "claims and evidence",
       family: "claim-and-support",
       difficulty: "Hard",
-      stem: "Which detail best supports the claim that Mrs Halvorsen taught by example rather than instruction?",
-      key: "She stated each fact once and never tested him on it.",
+      stem: "Which detail best supports the claim that Owen learned to apply Mrs Halvorsen's judgment without being prompted?",
+      key: "He accepts the end of the season despite wanting another hour.",
       wrong: [
-        ["She kept a notebook that went back to 1987.", "The record shows her own practice, not how she taught."],
-        ["She refused to lend the auger to anybody.", "Keeping the tool shows care with equipment, not a method of teaching."],
-        ["She answered his question about falling through.", "Answering a direct question is instruction, not example."],
+        ["She kept a notebook that went back many years to 1987.", "Her record documents her practice, not Owen's independent response."],
+        ["She refused to lend her drilling auger to anybody who asked.", "Possession of the tool does not show Owen applying judgment."],
+        ["She answered his direct question about falling through the reservoir ice.", "Her answer supplies information but does not show how Owen acts on it."],
       ],
-      why: "The passage says Owen knew the things he knew \"because she had said them once each, in passing, in the flat voice, and had never repeated them and had never tested him on them.\"",
+      why: "The passage supports this conclusion: At the final March measurement, Owen wants more skating but does not ask for it. The narrator explicitly connects that unprompted restraint with what he has learned; the later drilling habit reinforces the lesson.",
       steps: [
-        "Look for a statement about how the knowledge reached him.",
-        "Note what the sentence says she never did.",
-        "Reject details about her equipment or her records.",
+        "Find Owen's action at the season's end.",
+        "Compare what he wants with what he chooses to do.",
+        "Connect that choice with the later habit of checking conditions.",
       ],
-      hint: "The support describes the manner of the telling.",
+      hint: "Look for Owen making a choice, rather than Mrs Halvorsen describing a fact.",
       trap: "Choosing a detail about her own practice rather than about how Owen learned.",
     },
     {

@@ -106,7 +106,7 @@
       if (!wrong || (!numeric && wrong.length < 3)) return null;
       const greatest = t.chance(0.5);
       const ask = numeric
-        ? `Based on these results, what is the ${greatest ? "greatest" : "least"} plausible number of ${ctx.popShort} who ${ctx.attr}?`
+        ? `Based on these results, what is the ${greatest ? "upper" : "lower"} endpoint of the interval of plausible numbers of ${ctx.popShort} who ${ctx.attr}?`
         : `Based on these results, which of the following ranges is most plausible for the number of ${ctx.popShort} who ${ctx.attr}?`;
       const answer = greatest ? hi : lo;
       if (numeric && !fitsGrid(answer)) return null;
@@ -124,7 +124,7 @@
           `Plausible percent for the whole population: ${p} ${MINUS} ${m} = ${p - m} to ${p} + ${m} = ${p + m}.`,
           `Apply the lower percent to the population: ${p - m}% of ${fmt(N)} = ${fmt(lo)}.`,
           `Apply the upper percent: ${p + m}% of ${fmt(N)} = ${fmt(hi)}.`,
-          numeric ? `The ${greatest ? "greatest" : "least"} plausible number is ${fmt(answer)}.` : `The plausible range is ${fmt(lo)} to ${fmt(hi)}.`,
+          numeric ? `The ${greatest ? "upper" : "lower"} endpoint is ${fmt(answer)}.` : `The plausible range is ${fmt(lo)} to ${fmt(hi)}.`,
         ],
         principles: [
           "A margin of error in percentage points is added to and subtracted from the sample percent itself.",
@@ -305,7 +305,7 @@
       ["yesDiff", "A large difference alone shows neither cause nor who the result applies to; the design must justify both."],
     ]],
     ["volunteerAssign", "causeAll", "noSample", [
-      ["yesAssign", "Random assignment supports cause only for people like the volunteers, who were not a random sample of the population."],
+      ["yesAssign", "Random assignment supports a causal conclusion within the study; volunteers need not represent the population."],
       ["noAssign", "Misreads the design: a random half of the volunteers used the treatment."],
       ["yesDiff", "A large difference cannot make volunteers represent the whole population."],
     ]],
@@ -348,7 +348,7 @@
     return finish(false, {
       stimulus: null,
       stem:
-        `${ctx.designs[design](n)} ${assigned ? ctx.assigned(x) : ctx.observed(x)} Based on the design of the study, is it ` +
+        `${ctx.designs[design](n)} ${assigned ? ctx.assigned(x) : ctx.observed(x)} Analysis indicates that the observed difference is unlikely to be due to chance alone. Based on the design of the study, is it ` +
         `appropriate to conclude that ${ctx.claims[claim]}?`,
       correct: VERDICTS[keyName],
       wrong: distractors.map(([name, reason]) => [VERDICTS[name], reason]),
@@ -358,7 +358,7 @@
         `This claim is ${causal ? "causal" : "about an association"} and concerns ${whole ? ctx.pop : "only the participants"}, so the answer is: ${VERDICTS[keyName]}`,
       steps: [
         `Classify the claim: ${causal ? "cause and effect" : "association only"}, about ${whole ? "the whole population" : "the participants only"}.`,
-        `Check the selection: ${randomSample ? "random, so results can extend to the population" : "volunteers, so results apply only to people like them"}.`,
+        `Check the selection: ${randomSample ? "random, so results can extend to the population" : "volunteers, so results cannot be generalized to the whole population"}.`,
         `Check the assignment: ${assigned ? "random, so a cause can be inferred" : "self-chosen, so only an association can be inferred"}.`,
         `Match the claim to what the design supports: ${keyName.startsWith("yes") ? "it is supported" : "it is not supported"}.`,
       ],
@@ -482,7 +482,7 @@
               `Estimate: ${cx - cy} × ${fmt(mult)} = ${fmt(key)}.`,
             ],
             trap: `${cx - cy} is the difference in the sample of ${n}; the question is about all ${fmt(N)}.`,
-            hint: `How many ${scene.whole.split(" ")[0]} does each one in the sample represent?`,
+            hint: "What is the ratio of the population size to the sample size?",
             verify: () => sampleCheck() && key * n === N * (cx - cy),
           }, { show: whole, places: 9 });
         }
@@ -922,16 +922,16 @@
           responseType: "numeric",
           stimulus: null,
           figure: null,
-          stem: `${intro} Based on these results, what is the ${greatest ? "greatest" : "least"} plausible value for ${scene.statAll}?`,
+          stem: `${intro} Based on these results, what is the ${greatest ? "upper" : "lower"} endpoint of the interval of plausible values for ${scene.statAll}?`,
           correct: key,
-          explanation: `The plausible values run from ${text(est - margin)} to ${text(est + margin)}, so the ${greatest ? "greatest" : "least"} is ${num(key)}.`,
+          explanation: `The plausible values run from ${text(est - margin)} to ${text(est + margin)}, so the ${greatest ? "upper" : "lower"} endpoint is ${num(key)}.`,
           steps: [
             `Plausible range: ${estimateText} ${MINUS} ${marginText} to ${estimateText} + ${marginText}.`,
             `That is ${text(est - margin)} to ${text(est + margin)}.`,
-            `The ${greatest ? "greatest" : "least"} plausible value is ${num(key)}.`,
+            `The ${greatest ? "upper" : "lower"} endpoint is ${num(key)}.`,
           ],
           principles,
-          trap: `The estimate, ${num(est / scale)}, is the most likely single value, but the question asks for the ${greatest ? "top" : "bottom"} of the plausible range.`,
+          trap: `The estimate, ${num(est / scale)}, is the center of the interval; the question asks for its ${greatest ? "upper" : "lower"} endpoint.`,
           hint: "How far from the estimate can a plausible value be?",
           estimatedSeconds: 50,
           verify: () => {
@@ -1078,7 +1078,7 @@
       return packRanked(t, numeric, key, candidates, {
         stimulus: null,
         figure: null,
-        stem: `${scene.first(M)} ${scene.second(C)}${found}. ${scene.assume} ${ask}`,
+        stem: `${scene.first(M)} ${scene.second(C)}${found}. ${scene.assume} Assume also that there were no births or deaths, all original markings remained identifiable, and marking did not affect the chance of selection. ${ask}`,
         explanation:
           `The share of ${scene.marked} ${scene.animals} in the second sample, ${asPercent ? `${num(tidy(pct))}%` : `${R}/${C}`}, estimates their share of the whole ` +
           `population, which contains exactly ${M} ${scene.marked} ones. So ${setup}, and N = ${fmt(N)}` +
@@ -1249,12 +1249,12 @@
           `Plausible values for ${scene.groups[0]}: ${ranges[0]}.`,
           `Plausible values for ${scene.groups[1]}: ${ranges[1]}.`,
           overlap
-            ? "The ranges overlap, so equal values are plausible; the data do not show a difference."
+            ? "These ranges overlap substantially, leaving equality plausible. Overlap alone is not a general test for a difference."
             : `The ranges do not overlap, so a difference is likely, with ${hi} greater.`,
         ],
         principles: [
           "An estimate with a margin of error gives a range of plausible values for the population.",
-          "When two groups' plausible ranges overlap, the groups may have the same value; when they do not, a difference is likely but not certain.",
+          "Separate intervals support a difference. Overlapping intervals do not by themselves settle whether a difference is statistically significant.",
         ],
         trap: overlap
           ? `The estimate for ${lo} may fall outside ${hi}'s range, but the question is whether the two ranges share any values; they do.`
@@ -1287,8 +1287,8 @@
     difficulty: "Medium",
     title: "Comparing two estimates that each have a margin of error",
     recognize:
-      "Turn each estimate and margin into a range of plausible values. Overlapping ranges leave equal values plausible, however " +
-      "far apart the estimates look; separate ranges make a difference likely, never certain.",
+      "Turn each estimate and margin into a range of plausible values. Substantial overlap can leave equality plausible; " +
+      "separate ranges support a difference, never certainty. Slight overlap alone does not rule out a difference.",
     // Medium (relabelled from Hard, 2026-09-26 review): two ranges written
     // and compared by one known rule; overstating the difference is the trap.
     rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
@@ -1474,7 +1474,7 @@
     const total = (value) => tidy((N * value) / scene.scale);
     const key = total(m + sign * E);
     const stem = `${scene.intro(n, N)} ${scene.sample(show(m), show(lo), show(hi))} ${scene.margin(show(E))} ` +
-      `Based on these results, what is the ${greatest ? "greatest" : "least"} plausible value for the ${scene.total}?`;
+      `Based on these results, what is the ${greatest ? "upper" : "lower"} endpoint of the interval of plausible values for the ${scene.total}?`;
     const text = (value) => (value > 0 ? fmt(tidy(value)) : null);
     const fields = {
       stimulus: null,
@@ -1482,8 +1482,8 @@
       stem,
       explanation:
         `The plausible values for the mean are ${show(m)} ± ${show(E)}, from ${show(m - E)} to ${show(m + E)} ${scene.unit} per ` +
-        `${scene.ones.replace(/s$/, "")}. The total for all ${fmt(N)} ${scene.ones} is ${fmt(N)} times the mean, so its ${greatest ? "greatest" : "least"} ` +
-        `plausible value is ${fmt(N)} × ${show(m + sign * E)} = ${fmt(key)}.`,
+        `${scene.ones.replace(/s$/, "")}. The total for all ${fmt(N)} ${scene.ones} is ${fmt(N)} times the mean, so the ${greatest ? "upper" : "lower"} ` +
+        `endpoint of its interval is ${fmt(N)} × ${show(m + sign * E)} = ${fmt(key)}.`,
       steps: [
         `Plausible mean: ${show(m)} ${greatest ? "+" : MINUS} ${show(E)} = ${show(m + sign * E)} at the ${greatest ? "top" : "bottom"} of the range.`,
         `The total is the number of ${scene.ones} times their mean: ${fmt(N)} × ${show(m + sign * E)}.`,
@@ -1502,7 +1502,7 @@
       [total(m), `Gives the estimated total, ${fmt(total(m))}, ignoring the margin of error.`],
       [total(greatest ? hi : lo), `Uses the ${greatest ? "largest" : "smallest"} value in the sample, ${show(greatest ? hi : lo)}, as if every ${scene.ones.replace(/s$/, "")} matched it; the interval for the mean is much narrower.`],
       [total(m + 2 * sign * E), "Moves twice the margin of error from the estimate."],
-      [total(m - sign * E), `Gives the ${greatest ? "least" : "greatest"} plausible total instead.`],
+      [total(m - sign * E), `Gives the ${greatest ? "lower" : "upper"} endpoint of the interval for the total instead.`],
       [tidy((n * (m + sign * E)) / scene.scale), `Multiplies by the ${n} ${scene.ones} in the sample instead of all ${fmt(N)}.`],
     ], fields, { show: text, places: 9 });
     if (!item) return null;
@@ -1821,14 +1821,14 @@
       const x = t.pick(ctx.x);
       const assigned = design.endsWith("Assign");
       const randomSample = design.startsWith("sample");
-      const whom = (all) => (all ? `the result applies to ${ctx.pop} in general` : "the result applies only to people like the participants");
+      const whom = (all) => (all ? `it generalizes to ${ctx.pop}` : "it does not generalize to the whole population");
       const say = (cause, all) => cause
-        ? `The study shows that ${ctx.effect}, and ${whom(all)}.`
-        : `The study shows only that ${ctx.link}, and ${whom(all)}.`;
+        ? `Evidence suggests that ${ctx.effect}; ${whom(all)}.`
+        : `Evidence shows only that ${ctx.link}; ${whom(all)}.`;
       const reasonFor = (cause, all) => {
         const parts = [];
         if (cause && !assigned) parts.push("the participants chose whether to use the treatment, so the study cannot show cause");
-        if (!cause && assigned) parts.push("the treatment was assigned at random, so the study does show cause");
+        if (!cause && assigned) parts.push("the treatment was assigned at random, and the difference is unlikely to be due to chance, so a causal conclusion is supported");
         if (all && !randomSample) parts.push(`volunteers need not represent ${ctx.pop}`);
         if (!all && randomSample) parts.push(`the participants were chosen at random, so the result extends to ${ctx.pop}`);
         return `${parts.join("; and ")}.`.replace(/^./, (c) => c.toUpperCase());
@@ -1837,7 +1837,7 @@
       const key = cells.find(([cause, all]) => cause === assigned && all === randomSample);
       const wrong = cells.filter((cell) => cell !== key).map(([cause, all]) => [say(cause, all), reasonFor(cause, all)]);
       const stem =
-        `${ctx.designs[design](n)} ${assigned ? ctx.assigned(x) : ctx.observed(x)} Which of the following is the most ` +
+        `${ctx.designs[design](n)} ${assigned ? ctx.assigned(x) : ctx.observed(x)} Analysis indicates that the observed difference is unlikely to be due to chance alone. Which of the following is the most ` +
         "appropriate conclusion?";
       return finish(false, {
         stimulus: null,
@@ -1847,10 +1847,10 @@
         explanation:
           `The participants were ${randomSample ? "selected at random" : "volunteers"}, and the treatment was ${assigned ? "assigned at random" : "chosen by the participants"}. ` +
           `${assigned ? "Random assignment supports a cause-and-effect conclusion" : "Without random assignment, only an association can be concluded"}, and ` +
-          `${randomSample ? `random selection lets the result describe ${ctx.pop}` : "without random selection the result applies only to people like the volunteers"}.`,
+          `${randomSample ? `random selection lets the result describe ${ctx.pop}` : "without random selection the result cannot be generalized to the whole population"}.`,
         steps: [
           `Assignment: ${assigned ? "random, so the study can show cause" : "chosen by the participants, so only an association"}.`,
-          `Selection: ${randomSample ? `random, so the result extends to ${ctx.pop}` : "volunteers, so only people like them"}.`,
+          `Selection: ${randomSample ? `random, so the result extends to ${ctx.pop}` : "volunteers, so no generalization to the whole population"}.`,
           `The conclusion that matches both: "${say(key[0], key[1])}"`,
         ],
         principles: [
@@ -1873,146 +1873,77 @@
 
   /* ============================== margin-sample-size-scaling (Hard) */
 
-  // The margin of error is taken as inversely proportional to the square
-  // root of the sample size, as the stem says. Ratios of sample sizes are
-  // perfect squares (or their reciprocals), so every margin is exact.
-  const SCALING_SCENES = [
-    {
-      first: (n, p, E) => `A random sample of ${fmt(n)} registered voters in a state found that ${p}% support a proposed law, with a margin of error of ${num(E)} percentage points.`,
-      second: (n) => `A second random sample of ${fmt(n)} registered voters in the state finds about the same percent.`,
-      askE: "What is the margin of error, in percentage points, of the second survey?",
-      askN: (E) => `How many registered voters must a second random sample include to have a margin of error of ${num(E)} percentage points?`,
-      unit: "percentage points", who: "registered voters", p: [38, 62], margins: [2, 3, 4, 5, 6], spread: 98,
-    },
-    {
-      first: (n, p, E) => `A random sample of ${fmt(n)} households in a city found that ${p}% have a pet, with a margin of error of ${num(E)} percentage points.`,
-      second: (n) => `A second random sample of ${fmt(n)} households in the city finds about the same percent.`,
-      askE: "What is the margin of error, in percentage points, of the second survey?",
-      askN: (E) => `How many households must a second random sample include to have a margin of error of ${num(E)} percentage points?`,
-      unit: "percentage points", who: "households", p: [30, 70], margins: [2, 3, 4, 5, 6], spread: 98,
-    },
-    {
-      first: (n, p, E) => `A random sample of ${fmt(n)} commuters in a city had a mean commute time of ${p} minutes, with a margin of error of ${S.plural(E, "minute")}.`,
-      second: (n) => `A second random sample of ${fmt(n)} commuters in the city has about the same mean and spread.`,
-      askE: "What is the margin of error, in minutes, of the second sample's mean?",
-      askN: (E) => `How many commuters must a second random sample include for its mean to have a margin of error of ${S.plural(E, "minute")}?`,
-      unit: "minutes", who: "commuters", p: [22, 41], margins: [0.5, 1, 1.5, 2, 2.5], spread: 29.4,
-    },
-  ];
-
-  // Sample-size ratios whose square roots are simple fractions: [top, bottom] of √(n2/n1).
-  const ROOT_RATIOS = [[2, 1], [3, 1], [4, 1], [3, 2], [5, 2], [1, 2], [1, 3], [2, 3], [5, 3], [4, 3]];
-
   const marginScaling = {
     id: "margin-sample-size-scaling",
     domain: DATA,
     skill: "Statistical inference",
     subskill: "margin of error",
     difficulty: "Hard",
-    title: "How the margin of error scales with the sample size",
+    title: "Planning a survey to meet an interval-width target",
     recognize:
-      "With the margin of error inversely proportional to √n, E·√n stays the same: multiplying the sample size by k divides the " +
-      "margin by √k, so quadrupling the sample halves the margin, and halving the margin takes four times the sample.",
-    // Hard: the relationship is a square-root inverse variation, and the
-    // intuitive linear reading (4 times the people, a quarter of the
-    // margin; half the margin, twice the people) is offered every time.
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
-    tricks: ["neighbouring-rule", "reversed-condition", "wrong-quantity"],
+      "Convert the target interval width to a margin, square the inverse margin ratio to find the needed completed sample, " +
+      "then account for the response rate and any cost per invitation.",
+    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["neighbouring-rule", "percent-base", "rounding-direction", "wrong-quantity"],
     build(t) {
-      const scene = t.pick(SCALING_SCENES);
-      const askSize = t.chance(0.5);
-      const numeric = t.chance(0.45);
-      const rule = "Assume that the margin of error is inversely proportional to the square root of the sample size.";
+      const askCost = t.chance(0.5);
+      const numeric = t.chance(0.5);
       return retry(() => {
-        const [a, b] = t.pick(ROOT_RATIOS);
-        // n2/n1 = (a/b)^2, so n1 must be a multiple of b^2.
-        // A realistic first survey: its size is near what its margin needs
-        // (about (spread ÷ margin)²), rounded to a multiple of 25 b² so the
-        // second size is a whole number.
-        const E1 = t.pick(scene.margins);
-        const block = 25 * b * b;
-        const n1 = Math.max(block, Math.round((scene.spread / E1) ** 2 / block) * block);
-        const n2 = (n1 * a * a) / (b * b);
-        if (n2 < 50 || n2 > 20000 || n1 === n2) return null;
-        const E2 = tidy((E1 * b) / a);
-        const p = t.int(scene.p[0], scene.p[1]);
-        const intro = `${scene.first(n1, p, E1)} ${rule}`;
-        const common = {
+        const n = t.int(8, 40) * 25;
+        const E = t.pick([2, 3, 4, 5, 6]);
+        const factor = t.pick([1.5, 2, 2.5, 3]);
+        const targetE = E / factor;
+        if (!isClean(targetE, 2)) return null;
+        const width = 2 * targetE;
+        const response = t.pick([40, 50, 60, 70, 75, 80]);
+        const need = n * factor * factor;
+        if (!Number.isInteger(need)) return null;
+        const invitations = Math.ceil(need * 100 / response - 1e-9);
+        const cost = t.int(2, 8);
+        const setup = t.int(8, 40) * 25;
+        const key = askCost ? setup + cost * invitations : invitations;
+        if (numeric && !fitsGrid(key)) return null;
+        const convert = (completed) => Math.ceil(completed * 100 / response - 1e-9);
+        const answer = (invited) => askCost ? setup + cost * invited : invited;
+        const stem =
+          `A pilot survey with ${fmt(n)} completed responses estimated a population percent with a margin of error of ${E} percentage points. For the same population and confidence level, assume the margin of error is inversely proportional to the square root of the number of completed responses. ` +
+          `A researcher plans a new survey whose interval from estimate minus margin to estimate plus margin has a total width of at most ${num(width)} percentage points. For planning, the number of completed responses is modeled as ${response}% of the number of invitations sent. ` +
+          (askCost ? `There is a fixed cost of $${fmt(setup)} plus $${cost} per invitation. What is the least planned cost, in dollars, to meet the target under this model?` : "What is the least whole number of invitations needed to meet the target under this model?");
+        return packRanked(t, numeric, key, [
+          [answer(convert(n * (E / width) ** 2)), "Uses the entire interval width as the margin instead of half its width."],
+          [answer(convert(n * factor)), "Scales the sample by the margin ratio instead of its square."],
+          [answer(Math.ceil(need)), "Counts the completed responses as invitations, ignoring nonresponses."],
+          [answer(convert(n * factor ** 4)), "Squares the margin ratio twice."],
+          [answer(convert(need) + n), "Adds the pilot sample to a new survey that must meet the target independently."],
+          ...(askCost ? [[cost * invitations, "Omits the fixed cost."]] : []),
+        ], {
           stimulus: null,
           figure: null,
-          principles: [
-            "If the margin of error is inversely proportional to √n, then E·√n is the same for every sample size.",
-            "Multiplying the sample size by k divides the margin of error by √k, not by k.",
-          ],
-          estimatedSeconds: 110,
-        };
-        const ratioText = `${fmt(n2)}/${fmt(n1)} = ${S.frac(a * a, b * b)}`;
-        if (!askSize) {
-          const keyText = S.frac(E1 * b * (scene.unit === "minutes" ? 2 : 1), a * (scene.unit === "minutes" ? 2 : 1));
-          if (numeric && !(fitsGrid(E2) && isClean(E2, 3)) && keyText.length > 5) return null;
-          const stem = `${intro} ${scene.second(n2)} ${scene.askE}`;
-          const fields = {
-            ...common,
-            stem,
-            explanation:
-              `The sample size is multiplied by ${ratioText}, so the margin of error is divided by √(${S.frac(a * a, b * b)}) = ${S.frac(a, b)}: ` +
-              `${num(E1)} × ${S.frac(b, a)} = ${isClean(E2, 3) ? num(E2) : keyText} ${scene.unit}.`,
-            steps: [
-              `Compare the sample sizes: ${ratioText}.`,
-              `The margin changes by the reciprocal of the square root: √(${S.frac(a * a, b * b)}) = ${S.frac(a, b)}, so multiply by ${S.frac(b, a)}.`,
-              `${num(E1)} × ${S.frac(b, a)} = ${isClean(E2, 3) ? num(E2) : keyText}.`,
-            ],
-            trap: `Dividing by ${S.frac(a * a, b * b)} treats the margin as inversely proportional to the sample size itself; it depends on the square root.`,
-            hint: "If the sample size is multiplied by some number, what happens to its square root?",
-            verify: () => {
-              const found = stem.replace(/,(\d{3})/g, "$1").match(/sample of (\d+) .*?margin of error of ([\d.]+) .*?sample of (\d+) /);
-              if (!found) return false;
-              const [m1, e1, m2] = found.slice(1).map(Number);
-              return close(e1 * Math.sqrt(m1 / m2), E2);
-            },
-          };
-          if (numeric) {
-            return finish(true, { ...fields, correct: fitsGrid(E2) && isClean(E2, 3) ? E2 : keyText });
-          }
-          if (!isClean(E2, 2)) return null;
-          return packRanked(t, false, E2, [
-            [(E1 * b * b) / (a * a), `Divides the margin by ${S.frac(a * a, b * b)}, as if it were inversely proportional to the sample size.`],
-            [(E1 * a) / b, "Multiplies by the square root of the change instead of dividing by it."],
-            [E1, "Keeps the same margin of error, as if it did not depend on the sample size."],
-            [(E1 * a * a) / (b * b), "Multiplies the margin by the change in sample size."],
-            [tidy(E1 * Math.sqrt(b / a)), "Takes the square root of the margin's change twice."],
-          ], fields, { show: num, places: 2 });
-        }
-        const stem = `${intro} ${scene.askN(E2)}`;
-        if (!isClean(E2, 2)) return null;
-        return packRanked(t, numeric, n2, [
-          [(n1 * a) / b, `Scales the sample size by ${S.frac(a, b)}, the change in the margin, instead of by its square.`],
-          [(n1 * b * b) / (a * a), E2 < E1
-            ? "Scales the sample size the wrong way: a smaller margin needs a larger sample."
-            : "Scales the sample size the wrong way: a larger margin allows a smaller sample."],
-          [(n1 * b) / a, "Scales the sample size by the change in the margin, the wrong way."],
-          [n1 * 2 * (a > b ? 1 : 0) || NaN, "Doubles the sample size."],
-          [(n1 * a * a * a * a) / (b * b * b * b), "Squares the change in the margin twice."],
-        ], {
-          ...common,
           stem,
           explanation:
-            `E·√n stays the same, so √n must be multiplied by ${num(E1)} ÷ ${num(E2)} = ${S.frac(a, b)}, and n by (${S.frac(a, b)})² = ${S.frac(a * a, b * b)}: ` +
-            `${fmt(n1)} × ${S.frac(a * a, b * b)} = ${fmt(n2)}.`,
+            `The margin must be at most half the total width, ${S.plural(targetE, "percentage point")}. The old margin is ${num(factor)} times the target, so the completed sample must be ${num(factor)}² = ${num(factor ** 2)} times as large: ${fmt(need)} responses. ` +
+            `With a response rate of ${response}%, at least ${fmt(invitations)} invitations are needed. ` +
+            (askCost ? `The cost is ${fmt(setup)} + ${cost}(${fmt(invitations)}) = $${fmt(key)}.` : `Thus the answer is ${fmt(key)}.`),
           steps: [
-            `The margin goes from ${num(E1)} to ${num(E2)}: it is multiplied by ${S.frac(b, a)}.`,
-            `So √n is multiplied by ${S.frac(a, b)}, and n by ${S.frac(a * a, b * b)}.`,
-            `${fmt(n1)} × ${S.frac(a * a, b * b)} = ${fmt(n2)}.`,
+            `Target margin: ${num(width)} ÷ 2 = ${num(targetE)} percentage points.`,
+            `Needed completed responses: ${fmt(n)}(${E}/${num(targetE)})² = ${fmt(need)}.`,
+            `Invitations must be at least ${fmt(need)} ÷ ${num(response / 100)}; round up to ${fmt(invitations)}.`,
+            askCost ? `Include both costs: ${fmt(setup)} + ${cost}(${fmt(invitations)}) = ${fmt(key)}.` : `One fewer invitation falls short under the response model.`,
           ],
-          trap: `The margin changes by a factor of ${S.frac(b, a)}, but the sample size must change by the square of its reciprocal, ${S.frac(a * a, b * b)}.`,
-          hint: "Which quantity stays the same when the sample size changes?",
+          principles: [
+            "An estimate-plus-or-minus-margin interval has total width twice its margin of error.",
+            "Under the inverse-square-root model, reducing a margin by a factor requires increasing the completed sample by the square of that factor.",
+            "Invitations and completed responses are different counts; a whole-number minimum rounds upward.",
+          ],
+          trap: "The width is twice the margin, and the formula uses completed responses rather than invitations.",
+          hint: "Which margin gives the requested total interval width, and which count belongs in the square-root relationship?",
+          estimatedSeconds: 160,
           verify: () => {
-            const found = stem.replace(/,(\d{3})/g, "$1").match(/sample of (\d+) .*?margin of error of ([\d.]+) .*?margin of error of ([\d.]+) /);
-            if (!found) return false;
-            const [m1, e1, e2] = found.slice(1).map(Number);
-            return close(m1 * (e1 / e2) ** 2, n2);
+            const i = askCost ? (key - setup) / cost : key;
+            const predictedWidth = (count) => 2 * E * Math.sqrt(n / (count * response / 100));
+            return Number.isInteger(i) && predictedWidth(i) <= width + 1e-9 && predictedWidth(i - 1) > width + 1e-9;
           },
-        }, { places: 0 });
+        }, { places: 0, show: (v) => Number.isInteger(v) && v > 0 ? fmt(v) : null });
       });
     },
   };

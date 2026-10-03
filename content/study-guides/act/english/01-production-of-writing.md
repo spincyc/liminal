@@ -81,8 +81,8 @@ Verify the reason against the text, every time.
 
 ### "Would this be a relevant addition?"
 
-**The answer is often no.** The proposed sentence is usually related to the
-general topic but not to *this paragraph's* specific point.
+Check whether the proposed sentence serves *this paragraph's* specific point,
+not merely whether it concerns the same general topic.
 
 Test: does the addition support the sentence immediately before or after it? If
 it merely mentions the same subject matter, that's not relevance.
@@ -233,7 +233,7 @@ selecting.
 **Distractors are usually well-written.** Quality of prose is not the
 discriminator on this domain; *fit to the stated job* is.
 
-**"Would this be a relevant addition?" → usually no.**
+**Addition questions:** check relevance without assuming a yes or no answer.
 
 **Keep-or-delete: check the reason half separately.** Half the wrong answers
 have the correct verdict.
@@ -241,8 +241,8 @@ have the correct verdict.
 **On placement questions, follow the pronouns.** Backward-pointing words
 determine the order almost every time.
 
-**On transitions, contrast is over-represented** — but only guess that as a last
-resort, after actually determining the relationship.
+**On transitions, determine the relationship from the text.** There is no
+reliable default transition to choose without that evidence.
 
 **Specificity questions are the exception to "shorter is better."**
 
@@ -267,11 +267,11 @@ resort, after actually determining the relationship.
 
 | Stage | Filter | Volume and method |
 | --- | --- | --- |
-| 1. Transitions | Organization, Unity, and Cohesion, Easy → Medium | 30. **Cover the choices; name the relationship aloud** for the first 20. |
-| 2. Keep/delete | Topic Development, Medium | 25. Write the verdict, *then* check the reason. |
-| 3. Goal-stated questions | Topic Development, Medium → Hard | 25. Underline the goal and list its requirements. |
-| 4. Placement | Organization, Unity, and Cohesion, Medium → Hard | 20. Circle every backward-pointing word. |
-| 5. Whole-essay | Topic Development, Hard | 10 |
+| 1. Transitions | Organization, Unity, and Cohesion | 30. **Cover the choices; name the relationship aloud** for the first 20. |
+| 2. Keep/delete | Topic Development | 25. Write the verdict, *then* check the reason. |
+| 3. Goal-stated questions | Topic Development | 25. Underline the goal and list its requirements. |
+| 4. Placement | Organization, Unity, and Cohesion | 20. Circle every backward-pointing word. |
+| 5. Whole-essay | Topic Development | 10 |
 | 6. Mixed timed | Whole domain | 40 at 50 sec each |
 
 Note the timing target in stage 6: rhetorical questions get 50 seconds because

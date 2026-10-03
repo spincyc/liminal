@@ -41,18 +41,22 @@ millennium.`,
       key: "it, and so do",
       noChange: "Two independent clauses joined by 'and' need a comma before the conjunction.",
       wrong: [
-        ["it; and so do", "A semicolon and a coordinating conjunction do the same job, so both is redundant."],
-        ["it and so do,", "The comma now falls after the conjunction and before its own subject."],
+        [
+          "it; although so do",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "it and so do,",
+          "The comma now falls after the conjunction and before its own subject."
+        ]
       ],
-      why:
-        "'Tour guides say it' and 'so do a good many textbooks' are both complete clauses, so the " +
-        "'and' joining them takes a comma before it.",
+      why: "'Tour guides say it' and 'so do a good many textbooks' are both complete clauses, so the 'and' joining them takes a comma before it.",
       steps: [
         "Check whether the words on each side of 'and' could stand alone. They could.",
-        "Place a comma immediately before the conjunction.",
+        "Place a comma immediately before the conjunction."
       ],
       hint: "The inverted second clause still has a subject and a verb.",
-      trap: "'So do' is short and reads as a fragment rather than as a full clause.",
+      trap: "'So do' is short and reads as a fragment rather than as a full clause."
     },
     {
       number: 2,
@@ -290,23 +294,21 @@ millennium.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "down: it is steadier in the frame and easier to seal.",
-          "A colon introduces an explanation, but the clause states a parallel practical fact.",
+          "down; although it is steadier in the frame and easier to seal.",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "down, and it is steadier in the frame, and easier to seal.",
-          "The extra comma before 'and easier' breaks a two-item pair that needs none.",
-        ],
+          "The extra comma before 'and easier' breaks a two-item pair that needs none."
+        ]
       ],
-      why:
-        "Both clauses are complete and carry equal weight — what glaziers did, and why it worked. A " +
-        "semicolon joins equals without subordinating either.",
+      why: "Both clauses are complete and carry equal weight — what glaziers did, and why it worked. A semicolon joins equals without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Join them with the mark that keeps them equal.",
+        "Join them with the mark that keeps them equal."
       ],
       hint: "Two full sentences of similar weight are what a semicolon is for.",
-      trap: "The second clause gives a reason, which points the eye toward a colon.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 12,

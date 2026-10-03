@@ -18,7 +18,7 @@ film chemically bonded to the {5 pan, this process is called polymerisation}.
 more effective} than thick ones. A thick layer cannot cross-link all the way
 through: the outside hardens, the inside stays soft, and the surface comes away
 in sticky patches. {7 Wiped on until the pan looks almost dry, the film builds
-in layers a molecule or two deep.}
+in thin, overlapping coats.}
 
 [4] {8 Similarly,} the second consequence is that the film is far tougher than
 most people treat it as being. Modern dish soap is a {9 thing that removes
@@ -140,23 +140,21 @@ and wipe it with oil}. The soap was never the point.`,
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "pan, and this process is called polymerisation",
-          "The conjunction repairs the splice but hangs the definition off an already long sentence.",
+          "pan, however, this process is called polymerisation",
+          "'However' is a conjunctive adverb, so it cannot join the two independent clauses with commas alone."
         ],
         [
-          "pan, the process being called polymerisation",
-          "The participle leaves the second half without a main verb of its own.",
-        ],
+          "pan; the process being called polymerisation",
+          "A semicolon requires an independent clause after it; this participial construction has no main verb."
+        ]
       ],
-      why:
-        "The first clause has already run through three stages of a process. Naming that process " +
-        "deserves its own sentence rather than a fourth clause.",
+      why: "The two statements are independent clauses. The key separates them with a period and begins the next sentence with a capital letter. The other choices leave a comma splice or fail to provide a complete clause after a semicolon.",
       steps: [
-        "Test each side of the comma as a sentence. Both stand.",
-        "Count the clauses already in the first half before deciding where the name belongs.",
+        "Find the subjects and finite verbs on both sides of the boundary.",
+        "Keep a complete statement on each side of the sentence boundary."
       ],
       hint: "The sentence is long before the comma arrives.",
-      trap: "'And' fixes the grammar and produces a sentence with five clauses.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -185,27 +183,25 @@ and wipe it with oil}. The soap was never the point.`,
       family: "dangling-participle",
       difficulty: "Hard",
       keep: false,
-      key: "Wiped on until the pan looks almost dry, the oil builds a film in layers a molecule or two deep.",
+      key: "Wiped on until the pan looks almost dry, the oil builds a film in thin, overlapping coats.",
       noChange: "The opening phrase describes the oil, but the noun after the comma is 'the film.'",
       wrong: [
         [
-          "Wiping on until the pan looks almost dry, the film builds in layers a molecule or two deep.",
-          "The active form makes the film do the wiping.",
+          "Wiping on until the pan looks almost dry, the film builds in thin, overlapping coats.",
+          "The active form makes the film do the wiping."
         ],
         [
-          "Wiped on until the pan looks almost dry, layers a molecule or two deep are the result.",
-          "The phrase now describes 'layers,' which are produced rather than wiped on.",
-        ],
+          "Wiped on until the pan looks almost dry, thin, overlapping coats are the result.",
+          "The phrase now describes 'layers,' which are produced rather than wiped on."
+        ]
       ],
-      why:
-        "A participial phrase at the head of a sentence attaches to the first noun after the comma. " +
-        "The oil is wiped on; the film is what the oil becomes.",
+      why: "A participial phrase at the head of a sentence attaches to the first noun after the comma. The oil is wiped on; the film is what the oil becomes.",
       steps: [
         "Ask what is wiped on until the pan looks dry. The oil is.",
-        "Rewrite so 'the oil' follows the comma.",
+        "Rewrite so 'the oil' follows the comma."
       ],
       hint: "Read the opening phrase, then the first noun after the comma, and see if they match.",
-      trap: "The sentence describes the outcome correctly, so nothing sounds wrong.",
+      trap: "The sentence describes the outcome correctly, so nothing sounds wrong."
     },
     {
       number: 8,
@@ -304,23 +300,21 @@ and wipe it with oil}. The soap was never the point.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "fine: a pan left wet in the sink overnight is a repair job",
-          "A colon introduces an explanation, but the second clause is the matching half of a pair.",
+          "fine; although a pan left wet in the sink overnight is a repair job",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "fine and a pan left wet in the sink overnight is a repair job",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The two clauses are complete and deliberately parallel — one pan cared for, one pan not. A " +
-        "semicolon joins equals and keeps the symmetry audible.",
+      why: "The two clauses are complete and deliberately parallel — one pan cared for, one pan not. A semicolon joins equals and keeps the symmetry audible.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or mirrors it. It mirrors.",
+        "Ask whether the second explains the first or mirrors it. It mirrors."
       ],
       hint: "The two halves are built the same way on purpose.",
-      trap: "The clauses are short, which makes a comma feel sufficient.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 13,

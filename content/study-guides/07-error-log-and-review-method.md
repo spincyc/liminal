@@ -190,7 +190,7 @@ schedule for every question you miss there:
 
 ACT questions come from fixed banks, so they come back as they were. A right
 answer before the due day doesn't move the schedule, and a right answer at the
-21-day redo marks the question learned.
+21-day redo completes this review schedule; it does not prove lasting mastery.
 
 Review's **Due** list shows what comes back today and practices it in one set;
 its **Missed** list is your error log, and **Marked** holds what you marked.
@@ -258,8 +258,8 @@ learning and isn't. You must reproduce the solution yourself, from scratch,
 later.
 
 **Only reviewing hard questions.** Missed easy questions are more important —
-they're guaranteed points you're leaking, and the fix is usually mechanical and
-fast.
+they can reveal prerequisite gaps or process errors that affect many harder
+questions too.
 
 **Reviewing in bulk at the end of the week.** By then you've forgotten your
 reasoning, which is the most diagnostic information available. Review within 24

@@ -14,7 +14,7 @@
 
   window.PRACTICE_ANSWER_SIGNS = {
     version: "2026.1",
-    updated: "2026-09-26",
+    updated: "2026-10-02",
     disclaimer:
       "These are heuristics, not rules. A well-written question can and will " +
       "punish a student who only pattern-matches. Solve first; use a tell to " +
@@ -29,7 +29,7 @@
         body:
           "You rarely need to prove the right answer. Prove three answers wrong " +
           "and the last one is correct by default. Cross off aggressively; one " +
-          "clearly false word inside a choice kills the whole choice.",
+          "unsupported part can invalidate a choice. First check whether the stem asks for a true statement, a false statement, an exception, or a speaker's view.",
         caution:
           "It fails when you eliminate for the wrong reason. If all four choices " +
           "end up crossed off, or you are left with none you can defend, your " +
@@ -37,64 +37,37 @@
           "least bad survivor.",
       },
       {
-        title: "The test rewards the defensible answer, not the clever one",
+        title: "Support the answer with the relevant evidence",
         body:
-          "The correct choice is the one a reasonable person could defend using " +
-          "only the passage or the math on the page. If defending a choice " +
-          "requires a story, an assumption, or outside knowledge, it is wrong.",
+          "For reading, use the passage and any supplied data. For Math, apply the mathematical rules and stated conditions. Check every part of the answer against the task.",
         caution:
-          "It fails on questions that ask for a reasonable inference or a " +
-          "logical completion: there the answer goes one careful step beyond " +
-          "the words on the page. The step must be forced by the text, not " +
-          "merely plausible.",
+          "Reading inferences can combine details from several places; they need not restate one sentence. ACT Science can also require introductory science knowledge, so this is not a rule to ignore everything learned in class.",
       },
       {
-        title: "Extreme language is usually a trap",
+        title: "Check the strength of a claim",
         body:
-          "Absolute words — always, never, none, every, impossible, cannot, " +
-          "proves, all — are easy to disprove with a single exception, so they " +
-          "are rarely correct on reading and science. Measured words — often, " +
-          "may, suggests, some, tends to — survive scrutiny and are correct more " +
-          "often. (Math is the exception: there, precision is required.)",
+          "Words such as always, never, every and only make strong claims. Check whether the passage or data support that strength. A cautious word such as may is not evidence that a choice is correct.",
         caution:
-          "It fails whenever the text itself is emphatic. If the passage says " +
-          "a result held in every trial, the choice with 'every' is right and " +
-          "the hedged one is wrong. On Liminal's own items the most-hedged " +
-          "choice was the key only a little more often than chance, so check " +
-          "the wording against the text instead of counting hedges.",
+          "Both absolute and cautious choices can be right. Reject a choice for a mismatch with the evidence, not for a word it contains.",
       },
       {
-        title: "Right answers are boring; wrong answers are interesting",
+        title: "Match meaning rather than style",
         body:
-          "Trap choices are designed to be attractive: they are dramatic, " +
-          "surprising, or emotionally satisfying. The credited answer is often " +
-          "the flattest, most literal restatement of the text or the cleanest " +
-          "number.",
+          "Compare what each choice actually claims with the evidence and the question. Plain wording, dramatic wording and a clean-looking number are not reliable indicators of the key.",
         caution:
-          "It fails on hard questions, which are built so that the plain-" +
-          "sounding choice is the near miss and the key needs a closer reading, " +
-          "and on hard math, where the correct value is often the messy one. " +
-          "Use it only to break a genuine tie after you have reasoned it out.",
+          "A familiar or plausible statement can still answer the wrong question. Check the full claim and all the conditions.",
       },
       {
-        title: "Two opposite choices often contain the answer",
+        title: "Test opposing choices separately",
         body:
-          "When two choices are direct opposites, the test writer usually built " +
-          "the question around that contrast — the answer is frequently one of " +
-          "the two. When two choices say the same thing in different words, both " +
-          "are usually wrong (they can't both be right, so they cancel).",
+          "Opposite choices can help identify a distinction to check, but both may be distractors. If two choices truly mean the same thing in context, neither can be the unique best answer.",
         caution:
-          "Opposite pairs are often both distractors, one overstating each " +
-          "way, with the key a measured third option. And two choices only " +
-          "cancel if they truly mean the same thing; check that before " +
-          "crossing both off.",
+          "Look-alike choices may differ in scope, conditions or attribution. Do not discard other choices just because an opposite pair is present.",
       },
       {
-        title: "Match scope, tense, and tone",
+        title: "Match the requested scope and viewpoint",
         body:
-          "The credited answer matches the passage's scope (not broader, not " +
-          "narrower), its verb tense, and its tone. A choice that is too sweeping " +
-          "for a modest paragraph, or too negative for a neutral author, is out.",
+          "Match the scope and viewpoint the question asks about. Check whether the choice describes the whole text, a specific part, the author, or a person the author discusses. A paraphrase does not have to copy the passage's verb tense.",
         caution:
           "It fails when the question asks about one part of the text, not the " +
           "whole, or about a view the author describes but rejects. Match the " +
@@ -114,8 +87,7 @@
         title: "SAT Reading & Writing tells",
         intro:
           "The digital SAT Reading & Writing section is short-passage and " +
-          "single-question. Every question is answerable from the text in front " +
-          "of you — never from memory or opinion. Predict an answer in your own " +
+          "single-question. Use the text for reading and language rules for editing. Predict an answer in your own " +
           "words before you read the choices.",
         tells: [
           {
@@ -124,9 +96,7 @@
               "Cover the four choices, answer the question in your own words, " +
               "then find the choice that matches your prediction.",
             why:
-              "The choices are engineered to sound tempting. A prediction made " +
-              "before you see them immunizes you against the traps and turns the " +
-              "question into a simple matching task.",
+              "An initial prediction can keep a tempting choice from steering your reading. Compare the meaning of every remaining choice; a prediction is a hypothesis to check, not an answer key.",
             example:
               "For a main-idea question, jot a 5-word summary of the passage, " +
               "then pick the choice closest to it.",
@@ -162,9 +132,7 @@
               "'Novel' can mean 'a book' or 'new.' In 'a novel approach,' only " +
               "'new' fits — the common noun meaning is the distractor.",
             caution:
-              "Watch for secondary meanings of easy words (arrest, table, " +
-              "check, qualify). The harder the passage, the likelier the " +
-              "secondary meaning is correct.",
+              "Common and less familiar meanings can both be correct. Read enough context to establish the intended sense; word difficulty does not decide it.",
           },
           {
             name: "Transitions: name the relationship first",
@@ -173,15 +141,12 @@
               "the two sentences: same direction (also, moreover), contrast " +
               "(however, but), cause/effect (therefore, because), or example.",
             why:
-              "Each choice usually represents a different relationship. Naming the " +
-              "relationship first collapses four options to one.",
+              "Naming the relationship narrows the choices. Two transitions may express related ideas, so also check their specific meanings and the sentence grammar.",
             example:
               "If sentence 2 reverses sentence 1, only a contrast word " +
               "(however, nevertheless, by contrast) can be right.",
             caution:
-              "Don't be seduced by a transition that sounds smart. 'Therefore' " +
-              "needs an actual cause before it; 'for example' needs a real " +
-              "example after it.",
+              "Therefore can introduce a logical conclusion, not only a physical cause. For example needs an example; however and nevertheless express different kinds of contrast. Match the actual relationship.",
           },
           {
             name: "Rhetorical synthesis: obey the stated goal",
@@ -190,8 +155,7 @@
               "prompt. The answer is the ONLY choice that accomplishes that exact " +
               "goal using the notes.",
             why:
-              "All four choices are usually factually accurate given the notes. " +
-              "Accuracy is not the test — fulfilling the stated purpose is.",
+              "A choice must be accurate to the notes and accomplish the stated purpose. Do not assume every distractor is factually accurate.",
             example:
               "If the goal is 'to emphasize a difference between the two studies,' " +
               "pick the choice that states a contrast, not the one that just lists " +
@@ -210,9 +174,7 @@
               "verbs (verb finiteness), tenses, apostrophes (possessives and " +
               "plurals), or word order (modifier placement).",
             why:
-              "The SAT's conventions questions test a short official list of " +
-              "points, and every choice keeps the same meaning. Knowing which " +
-              "point is in play tells you exactly what to check.",
+              "Comparing choices helps identify the convention in play. Read the full sentence to determine the required grammar and meaning.",
             example:
               "If the choices are the forms study's, studies, studies' and " +
               "studys, decide how many studies there are and whether anything " +
@@ -226,9 +188,7 @@
           {
             name: "Punctuation: test the two halves",
             sign:
-              "For comma/semicolon/colon questions, check whether each side of " +
-              "the mark is an independent clause. Two independent clauses need a " +
-              "period, semicolon, or comma+FANBOYS — never a lone comma.",
+              "For punctuation questions, identify independent clauses and interruptions. Two independent clauses can use a period, semicolon or comma plus coordinating conjunction; a colon or dash can also work when the relationship calls for it.",
             why:
               "The SAT recycles a small set of boundary rules. Classifying each " +
               "half as a complete or incomplete sentence resolves most of them " +
@@ -237,9 +197,7 @@
               "A colon must follow a complete sentence and introduce an " +
               "explanation, list, or example.",
             caution:
-              "If two answer choices are grammatically identical in effect (e.g., " +
-              "a semicolon and a period both work), neither is the answer — the " +
-              "test won't give you two correct options.",
+              "A semicolon can also separate complex list items. Two punctuation choices cancel only if both produce equivalent, correct complete sentences in this exact context; check capitalization and the surrounding words.",
           },
         ],
       },
@@ -270,8 +228,7 @@
               "For 'x such that 3x - 7 = 2x + 4,' try the middle choice; adjust " +
               "up or down based on the result.",
             caution:
-              "Read what the question asks for (x, or 2x, or x+1). Backsolving " +
-              "finds a value; make sure it's the value requested.",
+              "Check the requested quantity and every condition. Moving up or down after a middle choice works only when the tested relationship changes in one direction; for a quadratic or other nonmonotonic relationship, test remaining choices separately.",
           },
           {
             name: "Pick numbers for variables in the answers",
@@ -286,8 +243,7 @@
               "For 'which expression equals the perimeter,' let the side = 3 and " +
               "test each choice.",
             caution:
-              "If two choices give the same target, pick a second set of numbers " +
-              "to break the tie. Avoid numbers that appear in the problem.",
+              "Use values allowed by every stated condition and keep denominators nonzero. A mismatch disproves equivalence, but a match at one or several values does not prove an identity; confirm the surviving expression algebraically when possible.",
           },
           {
             name: "The answer that skips a step is the trap",
@@ -296,8 +252,7 @@
               "for the wrong quantity. If a choice equals an intermediate value " +
               "you computed, be suspicious.",
             why:
-              "Test writers seed the exact numbers a rushing student would " +
-              "produce. The 'natural mistake' is always an available choice.",
+              "Distractors can reflect a common intermediate result or wrong quantity. Its presence does not confirm that your work is right, and the exact mistake you make may not be listed.",
             example:
               "Solve for x = 4, but the question asks for x^2. '4' will be sitting " +
               "right there as a wrong choice; the answer is 16.",
@@ -373,9 +328,7 @@
           {
             name: "Shortest correct answer wins",
             sign:
-              "When several choices are grammatically acceptable and mean the " +
-              "same thing, choose the shortest. 'OMIT the underlined portion' or " +
-              "'DELETE' is correct far more often than chance.",
+              "When choices preserve the required meaning, grammar and tone, remove unnecessary repetition. Evaluate DELETE or OMIT by reading the sentence and paragraph without the material.",
             why:
               "The ACT explicitly values concise, non-redundant writing. Extra " +
               "words are usually there to be removed.",
@@ -387,14 +340,13 @@
               "sentence needs to stay complete or clear.",
           },
           {
-            name: "Redundancy is the #1 trap",
+            name: "Check for unnecessary repetition",
             sign:
               "Scan for two words that say the same thing: 'end result,' 'each " +
               "and every,' 'past history,' 'combine together,' 'small in size.' " +
               "Eliminate the choice that keeps both.",
             why:
-              "Redundancy questions are a huge share of the section, and the " +
-              "answer is always the version that cuts the repetition.",
+              "ACT English assesses concise expression. Remove repetition only when it adds no needed meaning or rhetorical effect.",
             example:
               "'The reason is because' → 'The reason is' (or 'because').",
             caution:
@@ -429,8 +381,7 @@
             example:
               "'I ran, I was late' is a splice; 'I ran, so I was late' is fine.",
             caution:
-              "Semicolons behave like periods — they also require a complete " +
-              "sentence on each side.",
+              "This applies when the semicolon joins clauses. Semicolons also separate complex list items that already contain commas.",
           },
           {
             name: "Descriptive/rhetorical questions: read the whole context",
@@ -451,15 +402,12 @@
           {
             name: "Keep verb tense and pronouns consistent with the passage",
             sign:
-              "The correct verb tense matches the surrounding sentences; the " +
-              "correct pronoun matches its antecedent in number and stays " +
-              "consistent (don't switch you/one/they).",
+              "Match each verb tense to its event time and each pronoun to its intended antecedent. Nearby verbs offer context, but a sentence can legitimately describe different times.",
             why:
               "Consistency questions are resolved by scanning nearby sentences, " +
               "not by ear.",
             example:
-              "If the paragraph is in past tense, a sudden present-tense verb in " +
-              "the underline is the error to fix.",
+              "A past-tense account may correctly include a present-tense general fact. Look for the time relationship, not just matching endings.",
             caution:
               "Match the antecedent, not the nearest noun. In 'The team, after " +
               "three losses to rival schools, changed their lineup,' the " +
@@ -483,11 +431,9 @@
           "reference, and 'literal and supported' beats 'insightful.'",
         tells: [
           {
-            name: "If you can't point to the line, it's wrong",
+            name: "Locate evidence for the whole claim",
             sign:
-              "The correct answer can be justified by a specific word, phrase, or " +
-              "sentence in the passage. If defending a choice requires inference " +
-              "beyond the text, drop it.",
+              "Justify the answer with relevant passage evidence. An inference may combine details from several sentences and need not be directly stated.",
             why:
               "ACT Reading is a proof exercise. Every credited answer has textual " +
               "evidence; attractive-but-unsupported choices are the traps.",
@@ -495,17 +441,14 @@
               "For 'the narrator feels ___,' find the sentence that shows the " +
               "feeling, then match the choice to it.",
             caution:
-              "'Directly supported' still allows small paraphrase. Match meaning, " +
-              "not exact wording — an exact-word-match choice can be a trap.",
+              "Use only conclusions the text supports. A plausible story based on outside knowledge is insufficient, while a supported inference is valid even without one matching line.",
           },
           {
-            name: "Extreme answers are almost always wrong",
+            name: "Check absolute wording against the text",
             sign:
-              "Cross off choices with absolutes: always, never, all, none, only, " +
-              "completely, impossible, everyone, proves.",
+              "Check absolute words such as always, never and only against the passage. Keep them when justified and reject them when they overstate the evidence.",
             why:
-              "One counterexample in the passage disproves an absolute, so test " +
-              "writers rarely credit them. Moderate wording survives.",
+              "The strength of the answer must fit the evidence. Neither absolute wording nor hedging establishes whether a choice is right.",
             example:
               "'The author completely rejects the theory' loses to 'the author " +
               "questions part of the theory.'",
@@ -531,30 +474,22 @@
               "passage; detail wants a specific line.",
           },
           {
-            name: "Answer order follows passage order",
+            name: "Locate evidence from the question's cues",
             sign:
-              "Detail questions generally appear in the same order the " +
-              "information appears in the passage, which helps you locate the " +
-              "relevant lines fast.",
+              "Use a line reference, distinctive term or paragraph topic to locate evidence. Do not assume the next question refers to a later part of the passage.",
             why:
-              "Knowing roughly where to look saves the scarce time this section " +
-              "gives you.",
+              "The question itself is a better navigation cue than its number.",
             example:
-              "If question 3's answer was in paragraph 2, question 4's is likely " +
-              "in paragraph 2 or later, not paragraph 1.",
+              "If a question names a particular experiment, find that experiment and reread the surrounding sentences, wherever it appears.",
             caution:
-              "Main-idea and 'according to the passage' questions can range " +
-              "anywhere; this ordering applies mainly to specific-detail items.",
+              "Main ideas and inferences may require evidence from several parts of the passage, so do not stop at the first matching word.",
           },
           {
             name: "Opposite pairs flag the battleground",
             sign:
-              "When two choices are direct opposites, the question usually hinges " +
-              "on that distinction — the answer is often one of the two. Decide " +
-              "the passage's direction, then pick.",
+              "When two choices oppose each other, inspect what the passage actually says about that contrast. Keep evaluating the other choices too.",
             why:
-              "Writers build a question around a contrast they want you to get " +
-              "right; the opposite is the tempting wrong turn.",
+              "A contrast can identify an issue to check, but it does not make either choice more likely to be right.",
             example:
               "'The tone is admiring' vs. 'the tone is critical' — settle the " +
               "tone from the text, then choose.",
@@ -589,34 +524,26 @@
         category: "Science",
         title: "ACT Science tells",
         intro:
-          "ACT Science is a data-reading section, not a knowledge test. Most " +
-          "answers are found by reading axes, trends, and tables — outside " +
-          "science facts are rarely needed. Let the figures, not your memory, " +
-          "decide.",
+          "ACT Science combines data interpretation, experimental reasoning and introductory science knowledge. Use the supplied evidence, and apply background knowledge when the task requires it.",
         tells: [
           {
-            name: "The answer is in the figure, not your memory",
+            name: "Start with the supplied figure and context",
             sign:
               "For data questions, go straight to the table or graph named in the " +
               "question, read the axis labels and units, and trace the value. " +
               "Ignore the intro paragraph unless a question needs it.",
             why:
-              "The section is designed so that careful figure-reading, not prior " +
-              "biology or chemistry, produces the answer.",
+              "Many questions can be solved from supplied figures and text. Others require combining that information with introductory biology, chemistry, physics or Earth science.",
             example:
               "'As temperature increases, pressure ___' — follow the curve's " +
               "direction on the graph and read the trend.",
             caution:
-              "A few 'outside knowledge' questions (usually 2–4 per test) do need " +
-              "basic facts. If nothing in the figures answers it, recall a " +
-              "fundamental (water freezes at 0°C, pH < 7 is acidic).",
+              "Do not assume an outside-knowledge question is a misread. Use the stimulus first, then the science concept needed; review missing concepts after practice.",
           },
           {
             name: "Match the trend's direction",
             sign:
-              "For 'as X increases, Y does what' questions, decide whether the " +
-              "relationship is direct (both rise) or inverse (one rises as the " +
-              "other falls), then pick the matching wording.",
+              "For a question about how Y changes as X increases, inspect the requested interval: Y may rise, fall, stay constant or change direction. Increasing together is not necessarily direct proportionality; decreasing is not necessarily inverse proportionality.",
             why:
               "Two of the four choices are usually 'increase/decrease' opposites; " +
               "reading the slope's sign eliminates half instantly.",
@@ -636,7 +563,7 @@
               "The credited value follows the established pattern; wildly larger " +
               "or smaller choices break the trend and are traps.",
             example:
-              "If Y is 10 at X=2 and 20 at X=4, a value at X=3 is about 15.",
+              "If a linear trend gives Y=10 at X=2 and Y=20 at X=4, then at X=3 the model predicts Y=15.",
             caution:
               "Only extrapolate for as far as the trend is stated to hold. Huge " +
               "jumps beyond the data are usually wrong.",
@@ -668,8 +595,7 @@
               "A single mis-scaled read produces a plausible but wrong value that " +
               "is waiting as a distractor.",
             example:
-              "If the y-axis goes 0, 10, 100, 1000, it is logarithmic — spacing " +
-              "isn't linear.",
+              "Equally spaced ticks labeled 1, 10, 100 and 1000 indicate a logarithmic scale; the steps multiply by 10. Zero cannot appear on an ordinary logarithmic axis.",
             caution:
               "Watch for multiple y-axes (left and right) on one graph, and make " +
               "sure you read the curve tied to the correct axis.",
@@ -677,9 +603,7 @@
           {
             name: "Design questions: identify the single changed variable",
             sign:
-              "For experiment-design questions, find the one variable that " +
-              "changes between trials (the independent variable) and what is held " +
-              "constant (the control).",
+              "Identify what the researchers change (independent variables), measure (dependent variables), and hold constant (controlled variables). Distinguish those constants from a control group or baseline used for comparison.",
             why:
               "Answers about 'why did they run Trial 3' or 'what does Trial 2 " +
               "test' turn on which variable moved while others were fixed.",
@@ -687,8 +611,7 @@
               "If only the catalyst amount differs across trials, the experiment " +
               "tests the effect of catalyst amount.",
             caution:
-              "The purpose of a control/baseline trial is comparison — it isn't " +
-              "testing a new variable, it anchors the others.",
+              "Some designs change more than one factor. Compare trials that isolate the factor asked about; a control group and a controlled variable are different ideas.",
           },
         ],
       },
@@ -735,8 +658,7 @@
               "'For what x is the expression zero?' — plug each choice until the " +
               "expression evaluates to 0.",
             caution:
-              "Confirm you're plugging into the right expression and answering " +
-              "the exact quantity asked.",
+              "Check all stated restrictions and the exact quantity asked. A middle choice tells you which direction to try only for a monotonic relationship; otherwise test the remaining choices separately.",
           },
           {
             name: "Pick numbers for variable-answer questions",
@@ -750,8 +672,7 @@
               "'Which is equivalent to 2(x+3)?' — let x=4, target 14, test each " +
               "choice.",
             caution:
-              "If two choices tie, retest with different numbers. Avoid values " +
-              "already in the problem.",
+              "Choose values satisfying the conditions, with nonzero denominators. A mismatch rules a choice out; matching a few inputs does not prove equivalence. Confirm symbolically when possible.",
           },
           {
             name: "The 'trap' choice is your predictable mistake",

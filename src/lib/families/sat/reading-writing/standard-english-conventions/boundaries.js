@@ -169,47 +169,47 @@
     },
     {
       scene: "sec-tolan-beaver-dams",
-      text: "The ecologist Ines Varga studies how beavers change the streams of the Tolan Valley. Each summer, she walks the length of the valley's main ______ records the height of every dam she finds, from low piles of sticks to walls taller than she is.",
+      text: "The ecologist Ines Varga studies how beavers change the streams of the Tolan Valley. Each summer, she walks the length of the valley's main ______ the height of every dam she finds, from low piles of sticks to walls taller than she is.",
       w1: "creek", w2: "records", subject: "she", verbs: ["walks", "records"],
     },
     {
       scene: "sec-waggle-dance",
-      text: "A honeybee colony shares news of food in an unusual way. Worker bees that find a rich patch of flowers fly back to the ______ perform a “waggle dance” that tells other workers the direction and distance of the food.",
+      text: "A honeybee colony shares news of food in an unusual way. Worker bees that find a rich patch of flowers fly back to the ______ a “waggle dance” that tells other workers the direction and distance of the food.",
       w1: "hive", w2: "perform", subject: "Worker bees", verbs: ["fly", "perform"],
     },
     {
       scene: "sec-powell-expedition",
-      text: "In 1869, the geologist John Wesley Powell led nine men down the Green and Colorado Rivers in wooden boats. The expedition mapped hundreds of kilometers of ______ gave many landmarks the names they still carry.",
+      text: "In 1869, the geologist John Wesley Powell led nine men down the Green and Colorado Rivers in wooden boats. The expedition mapped hundreds of kilometers of ______ many landmarks the names they still carry.",
       w1: "canyon", w2: "gave", subject: "The expedition", verbs: ["mapped", "gave"],
     },
     {
       scene: "sec-harlow-garden-plots",
-      text: "The Harlow Community Garden lends small plots to residents who have no yards of their own. Most gardeners plant vegetables in the ______ share their extra harvest with a food bank in the fall.",
+      text: "The Harlow Community Garden lends small plots to residents who have no yards of their own. Most gardeners plant vegetables in the ______ their extra harvest with a food bank in the fall.",
       w1: "spring", w2: "share", subject: "Most gardeners", verbs: ["plant", "share"],
     },
     {
       scene: "sec-lindqvist-recordings",
-      text: "Before performing a new piece, the pianist Tomas Lindqvist listens to several recordings of ______ writes notes in the margins of his score about each performer's choices.",
+      text: "Before performing a new piece, the pianist Tomas Lindqvist listens to several recordings of ______ notes in the margins of his score about each performer's choices.",
       w1: "it", w2: "writes", subject: "the pianist Tomas Lindqvist", verbs: ["listens", "writes"],
     },
     {
       scene: "sec-turtle-hatchlings",
-      text: "Sea turtles hatch at night from nests buried in sandy beaches. The hatchlings dig their way up through the ______ crawl toward the brightest part of the horizon, which on an undeveloped beach is usually the moonlit sea.",
+      text: "Sea turtles hatch at night from nests buried in sandy beaches. The hatchlings dig their way up through the ______ toward the brightest part of the horizon, which on an undeveloped beach is usually the moonlit sea.",
       w1: "sand", w2: "crawl", subject: "The hatchlings", verbs: ["dig", "crawl"],
     },
     {
       scene: "sec-portrait-varnish",
-      text: "Conservators at the Varden Museum spent a year cleaning a nineteenth-century portrait. They removed a layer of yellowed varnish from the ______ found a signature that no one had noticed for more than a century.",
+      text: "Conservators at the Varden Museum spent a year cleaning a nineteenth-century portrait. They removed a layer of yellowed varnish from the ______ a signature that no one had noticed for more than a century.",
       w1: "canvas", w2: "found", subject: "They", verbs: ["removed", "found"],
     },
     {
       scene: "sec-autumn-nutrients",
-      text: "As days shorten in the fall, many deciduous trees stop producing chlorophyll in their ______ draw nitrogen and other nutrients back into their branches before the leaves drop.",
+      text: "As days shorten in the fall, many deciduous trees stop producing chlorophyll in their ______ nitrogen and other nutrients back into their branches before the leaves drop.",
       w1: "leaves", w2: "draw", subject: "many deciduous trees", verbs: ["stop", "draw"],
     },
     {
       scene: "sec-lyrebird-mound",
-      text: "The superb lyrebird of southeastern Australia is famous for its songs. A courting male scratches together a low mound of soil on the forest ______ sings a long medley of calls copied from dozens of other bird species.",
+      text: "The superb lyrebird of southeastern Australia is famous for its songs. A courting male scratches together a low mound of soil on the forest ______ a long medley of calls copied from dozens of other bird species.",
       w1: "floor", w2: "sings", subject: "A courting male", verbs: ["scratches", "sings"],
     },
     {
@@ -421,12 +421,12 @@
     domain: DOMAIN,
     skill: SKILL,
     subskill: "within-sentence punctuation",
-    difficulty: "Easy",
+    difficulty: "Medium",
     title: "Colon introducing a list, and the marks between its items",
     recognize:
       "A complete clause announces a number of things, so a colon introduces the list; the items are separated by commas, or by semicolons when the items contain commas of their own.",
-    rubric: { steps: 1, concept: 0, interpretation: 0, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
-    tricks: ["neighbouring-rule"],
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 1, trap: 1 },
+    tricks: ["neighbouring-rule", "part-vs-whole"],
     build(t) {
       const topic = t.pick(COLON_LIST_TOPICS);
       const { w1, first, next } = topic;
@@ -438,8 +438,8 @@
         if (intro === "semicolon") problems.push(`a semicolon must separate two independent clauses, and the list after "${w1}" is not a clause`);
         if (separator !== keySeparator) {
           problems.push(complex
-            ? `each item already contains a comma ("${first}"), so a comma between items would blur where one ends; semicolons separate them, as the rest of the list shows`
-            : "semicolons separate list items only when the items contain commas of their own; these do not, so commas separate them, as the rest of the list shows");
+            ? `the list includes internal commas ("${first}"), so a comma between items would blur where one ends; semicolons separate them, as the rest of the list shows`
+            : "the remaining plain list items are separated by commas, so this separator should also be a comma");
         }
         return problems.length ? cap(`${problems.join("; also, ")}.`) : null;
       });
@@ -529,7 +529,7 @@
     },
     {
       scene: "sec-mauna-kea-air",
-      text: "Mauna Kea, a dormant volcano on the island of Hawaii, holds more than a dozen large telescopes on its summit. Because the air above the summit is unusually dry and ______ astronomers there can observe faint objects that would be blurred at most other sites.",
+      text: "Mauna Kea, a dormant volcano on the island of Hawaii, holds more than a dozen large telescopes on its summit. Because the air above the summit is unusually dry and ______ there can observe faint objects that would be blurred at most other sites.",
       kind: "intro", sub: "Because", w1: "still", w2: "astronomers", main: ["astronomers", "can observe"],
     },
     {
@@ -539,27 +539,27 @@
     },
     {
       scene: "sec-homing-pigeons",
-      text: "Homing pigeons can find their way back to their lofts from hundreds of kilometers away. The birds appear to steer by the position of the sun when the sky is ______ on overcast days they seem to rely on Earth's magnetic field instead.",
+      text: "Homing pigeons can find their way back to their lofts from hundreds of kilometers away. The birds appear to steer by the position of the sun when the sky is ______ overcast days they seem to rely on Earth's magnetic field instead.",
       kind: "joined", conj: "but", w1: "clear", w2: "on", first: ["birds", "appear"], main: ["they", "seem"],
     },
     {
       scene: "sec-bridge-expansion",
-      text: "Engineers attached sensors to the steel Lowell Street Bridge to record how it responds to changes in temperature. The bridge's deck expands by several centimeters as the air warms each ______ it shrinks back again after sunset.",
+      text: "Engineers attached sensors to the steel Lowell Street Bridge to record how it responds to changes in temperature. The bridge's deck expands by several centimeters as the air warms each ______ shrinks back again after sunset.",
       kind: "joined", conj: "and", w1: "afternoon", w2: "it", first: ["deck", "expands"], main: ["it", "shrinks"],
     },
     {
       scene: "sec-herbarium-seeds",
-      text: "Botanist Esther Oduya tried to germinate seeds taken from dried plant specimens collected in the 1870s. Most of the seeds failed to sprout even after she soaked them for a ______ three species produced healthy seedlings.",
+      text: "Botanist Esther Oduya tried to germinate seeds taken from dried plant specimens collected in the 1870s. Most of the seeds failed to sprout even after she soaked them for a ______ species produced healthy seedlings.",
       kind: "joined", conj: "but", w1: "week", w2: "three", first: ["Most", "failed"], main: ["species", "produced"],
     },
     {
       scene: "sec-mailed-ballots",
-      text: "Political scientist Aaron Feld compared voter turnout in towns that mailed ballots to every resident with turnout in towns that did not. Turnout was higher where ballots arrived by ______ Feld cautions that the mailed-ballot towns were also wealthier on average.",
+      text: "Political scientist Aaron Feld compared voter turnout in towns that mailed ballots to every resident with turnout in towns that did not. Turnout was higher where ballots arrived by ______ cautions that the mailed-ballot towns were also wealthier on average.",
       kind: "joined", conj: "but", w1: "mail", w2: "Feld", first: ["Turnout", "was"], main: ["Feld", "cautions"],
     },
     {
       scene: "sec-great-wave-print",
-      text: "Katsushika Hokusai's The Great Wave off Kanagawa was published as a woodblock print around 1831. A carved block could be inked and pressed onto paper many times before it wore ______ the print was sold in large numbers at a modest price.",
+      text: "Katsushika Hokusai's The Great Wave off Kanagawa was published as a woodblock print around 1831. A carved block could be inked and pressed onto paper many times before it wore ______ print was sold in large numbers at a modest price.",
       kind: "joined", conj: "so", w1: "out", w2: "the", first: ["block", "could be inked"], main: ["print", "was sold"],
     },
   ];
@@ -637,16 +637,10 @@
 
   /* ------------------------------------------ B4: conjunctive adverb between clauses */
 
-  // Each topic: the blank holds w1, a mark, the transition `adv`, a mark,
-  // and w2. The choices cross the mark before `adv` (a sentence boundary or
-  // a comma) with the mark after it (a comma or a boundary); the boundary is
-  // a semicolon or, with capitals, a period (`mark`). Three kinds:
-  // "second": two independent clauses, the first opening the passage, and
-  //   `adv` begins the second ("; adv," or ". Adv,");
-  // "first": two independent clauses after a sentence that the first one
-  //   answers, so `adv` ends the first clause (", adv;" or ", adv. W2");
-  // "interrupt": `adv` sits between a short subject and its verb (w2), so
-  //   commas set it off (", adv,").
+  // A scene fixes the transition's position. Clause scenes cross the
+  // required sentence boundary with capitalization; interruption scenes
+  // cross the closing mark with capitalization. Moving a transition to
+  // the other clause is not a dependable grammatical distractor.
   const ADVERB_JOIN_TOPICS = [
     {
       scene: "sec-lowland-pikas",
@@ -764,107 +758,57 @@
     },
   ];
 
-  // The key's corner by kind: [mark before adv, mark after it].
-  const ADVERB_KEYS = { second: ["boundary", "comma"], first: ["comma", "boundary"], interrupt: ["comma", "comma"] };
   const BOUNDARY = { semicolon: ";", period: "." };
 
   const conjunctiveAdverbJoin = {
-    id: "sec-conjunctive-adverb-join",
-    sectionKey: "sat-reading-writing",
-    domain: DOMAIN,
-    skill: SKILL,
-    subskill: "sentence boundaries",
-    difficulty: "Medium",
-    title: "Where a transition such as however belongs, and the marks around it",
-    recognize:
-      "A transition such as however cannot join two independent clauses on its own. Find the clauses: the transition takes a semicolon or period on the side where one clause ends, goes with the clause whose relation it names, and inside a single clause is set off by commas.",
-    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 0, synthesis: 1, trap: 1 },
+    id: "sec-conjunctive-adverb-join", sectionKey: "sat-reading-writing", domain: DOMAIN,
+    skill: SKILL, subskill: "sentence boundaries", difficulty: "Medium",
+    title: "Punctuation and capitalization around a transition",
+    recognize: "Locate the independent clauses. A transition cannot replace the punctuation between them; a period starts a capitalized sentence, while a semicolon does not capitalize an ordinary word. Within one clause, paired commas can set off a transition.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 1, trap: 1 },
     tricks: ["comma-splice", "neighbouring-rule"],
     build(t) {
       const topic = t.pick(ADVERB_JOIN_TOPICS);
       const { w1, adv, w2, kind } = topic;
-      const mark = BOUNDARY[topic.mark];
-      const markName = topic.mark;
       const parts = around(topic.text);
-      // A blank that starts a sentence has nothing before it in that sentence.
       const lead = !parts ? "" : /[.!?]["”]?\s+$/.test(parts.before) ? "" : sentenceLead(parts.before);
       const first = `${lead}${w1}`.trim();
-      // A period starts a new sentence, so the word after it is capitalized.
-      const render = (before, after) => {
-        const opener = before === "boundary" && mark === "." ? cap(adv) : adv;
-        const next = after === "boundary" && mark === "." ? cap(w2) : w2;
-        return `${w1}${before === "boundary" ? mark : ","} ${opener}${after === "comma" ? "," : mark} ${next}`;
+      const interrupt = kind === "interrupt";
+      const boundary = BOUNDARY[topic.mark];
+      const keyMark = interrupt ? "comma" : "boundary";
+      const keyCase = !interrupt && boundary === "." ? "upper" : "lower";
+      // Keep the transition on the same side in every option: moving it
+      // across the boundary can produce a second grammatical reading.
+      const render = (mark, letterCase) => {
+        const punctuation = mark === "comma" ? "," : boundary;
+        if (kind === "second") return `${w1}${punctuation} ${letterCase === "upper" ? cap(adv) : adv}, ${w2}`;
+        return `${w1}, ${adv}${punctuation} ${letterCase === "upper" ? cap(w2) : w2}`;
       };
-      const both = markName === "period" ? `"${cap(adv)}." would stand alone as a sentence with no subject or verb` : `with a semicolon on each side, "${adv}" is stranded between the two clauses and belongs to neither`;
-      const choices = squareOf(["before", "after"], [["boundary", "comma"], ["comma", "boundary"]], render, (before, after) => {
-        if (before === ADVERB_KEYS[kind][0] && after === ADVERB_KEYS[kind][1]) return null;
-        if (before === "boundary" && after === "boundary") {
-          return kind === "interrupt"
-            ? cap(`${both}; besides, "${first}" is only the subject of the verb "${w2}," not a clause.`)
-            : cap(`${both}.`);
-        }
-        if (kind === "interrupt") {
-          return before === "boundary"
-            ? `A ${markName} must follow an independent clause, but "${first}" is only the subject of the verb "${w2}"; the ${markName} would cut the subject off from its verb.`
-            : `A ${markName} after "${adv}" would cut the subject, "${first}," off from its verb, "${w2}"; inside a single clause, "${adv}" is set off by a comma on each side.`;
-        }
-        if (before === "comma" && after === "comma") {
-          return `This joins two independent clauses with only commas, a comma splice; "${adv}" is a transition, not a conjunction like "and" or "but."`;
-        }
-        if (kind === "second") {
-          return `This makes "${adv}" end the first clause, linking that clause to something before it; but the first clause opens the passage, and "${adv}" ${topic.link}, so it belongs at the start of the second clause.`;
-        }
-        return `This makes "${adv}" begin the second clause, setting the second clause against the first; but the second clause ${topic.rest}, and "${adv}" ${topic.link}, so it belongs at the end of the first clause.`;
+      const choices = squareOf(["mark", "capitalization"], [["comma", "boundary"], ["lower", "upper"]], render, (mark, letterCase) => {
+        const problems = [];
+        if (mark !== keyMark) problems.push(interrupt
+          ? `a ${topic.mark} would cut the subject, "${first}", off from its verb, "${w2}"`
+          : `a comma cannot join these two independent clauses; "${adv}" is a transition, not a coordinating conjunction`);
+        const caseRequired = mark === "boundary" && boundary === "." ? "upper" : "lower";
+        if (letterCase !== caseRequired) problems.push(caseRequired === "upper"
+          ? "the first word after a period must begin with a capital letter"
+          : "this ordinary word does not begin a new sentence and must not be capitalized");
+        return problems.length ? cap(problems.join("; also, ")) + "." : null;
       });
-      const boundaryWords = markName === "period" ? "a period (and a capital letter)" : "a semicolon";
-      const explanation = {
-        second: `"${first}" and the words after the blank are both independent clauses, and "${adv}" ${topic.link}, so it opens the second clause. A transition cannot join clauses by itself: ${boundaryWords} separates the clauses, and a comma follows the transition: "${choices.correct}".`,
-        first: `"${first}" and the words after the blank are both independent clauses. "${cap(adv)}" ${topic.link}, while the second clause ${topic.rest}, so the transition ends the first clause: a comma before it and ${boundaryWords} after it: "${choices.correct}".`,
-        interrupt: `"${first}" is the subject of the verb "${w2}"; there is only one clause here, so "${adv}" (which ${topic.link}) interrupts it and is set off by a comma on each side: "${choices.correct}".`,
-      }[kind];
+      const explanation = interrupt
+        ? `"${first}" is only the subject of "${w2}". The transition interrupts one clause, so commas set it off and the verb stays lowercase: "${choices.correct}".`
+        : `The words on both sides form independent clauses. In the offered arrangement, a ${topic.mark} separates them; ${topic.mark === "period" ? "the next word begins a new sentence and is capitalized" : "the ordinary word after the semicolon stays lowercase"}: "${choices.correct}".`;
       const instance = multipleChoice(topic, choices, {
         explanation,
-        steps: [
-          "Check whether the words on each side of the blank are independent clauses, or one clause split between its subject and verb.",
-          kind === "interrupt"
-            ? `Only one clause: "${first}" is the subject of "${w2}".`
-            : `Two clauses. Decide which one "${adv}" belongs to: it ${topic.link}.`,
-          {
-            second: `Put ${boundaryWords} before "${adv}" and a comma after it.`,
-            first: `Put a comma before "${adv}" and ${boundaryWords} after it.`,
-            interrupt: `Set off "${adv}" with a comma on each side.`,
-          }[kind],
-        ],
-        principles: [
-          "Transitions such as however, consequently, and for example do not join clauses; a semicolon or period must still separate the clauses.",
-          "A transition goes with the clause whose relation it names: at the start of the second clause, or at the end of the first when it relates that clause to what came before.",
-          "Inside a single clause, a transition is set off by a comma on each side.",
-        ],
-        trap: {
-          second: "Treating the transition like and or but and joining the clauses with a comma, which creates a comma splice.",
-          first: `Putting the ${markName} before "${adv}" by habit, which sets the second clause against the first although it only explains the first.`,
-          interrupt: `Putting a ${markName} before "${adv}" by habit, though the words before it are only a subject.`,
-        }[kind],
-        hint: `Could the words before the blank stand alone as a sentence? Could the words after it? What does "${adv}" connect to what?`,
+        steps: ["Find the subjects and main verbs on both sides of the transition.", interrupt ? "The transition separates a subject from its verb, so use paired commas." : `Separate the independent clauses with the offered ${topic.mark}.`, "Check capitalization against the actual punctuation."],
+        principles: ["A transition cannot join independent clauses with commas alone.", "A period begins a new sentence; a semicolon does not require a capital letter unless the following word independently needs one, as I or a proper noun does.", "Paired commas can set off a transition inside a single clause."],
+        trap: "Treating the transition as a conjunction or automatically capitalizing the word after a semicolon.",
+        hint: "Are there two complete clauses, or is the transition inside one? Which mark actually starts a new sentence?",
         estimatedSeconds: 65,
       });
-      instance.verify = () => {
-        if (!parts) return false;
-        const tail = `${w2}${parts.after}`;
-        const clauses = lead.includes(topic.c1 ? topic.c1[0] : "") && lead.includes(topic.c1 ? topic.c1[1] : "") &&
-          topic.c2 && tail.includes(topic.c2[0]) && tail.includes(topic.c2[1]) && !SUBORDINATORS.includes(firstWord(lead));
-        // "second": the first clause opens the passage, so nothing precedes
-        // it for a clause-final transition to link to. "first": a sentence
-        // comes before it. "interrupt": the words before the blank are
-        // exactly the subject, and a sentence comes before them.
-        const structure = {
-          second: () => clauses && lead === parts.before,
-          first: () => clauses && lead !== parts.before && ["however", "in contrast"].includes(adv),
-          interrupt: () => first === topic.subject && lead !== parts.before && /^[a-z]/.test(w2),
-        }[kind]();
-        return CONJ_ADVERBS.includes(adv) && structure && Boolean(mark) &&
-          instance.correct === render(...ADVERB_KEYS[kind]) && isSquare(instance.features);
-      };
+      instance.verify = () => Boolean(parts) && CONJ_ADVERBS.includes(adv) && /^[a-z]/.test(w2) &&
+        (interrupt ? first === topic.subject : Boolean(topic.c1 && topic.c2)) &&
+        instance.correct === render(keyMark, keyCase) && isSquare(instance.features);
       return instance;
     },
   };
@@ -979,15 +923,15 @@
         const problems = [];
         if (intro !== keyIntro) {
           problems.push(governed
-            ? `a colon must follow a complete clause, and the words before the list are not complete until the list supplies the object of the ${topic.gov} "${w1}"`
+            ? `a colon must follow a complete clause, and the words before the list are not complete until the list completes the ${topic.gov} "${w1}"`
             : `the words before the list already form a complete clause, so without a colon the list runs straight into it`);
         }
-        if (separator === "semicolon") problems.push("semicolons separate list items only when the items contain commas of their own; these do not");
+        if (separator === "semicolon") problems.push("the remaining plain list items are separated by commas, so this separator should also be a comma");
         return problems.length ? cap(`${problems.join("; also, ")}.`) : null;
       });
       const instance = multipleChoice(topic, choices, {
         explanation: governed
-          ? `The list is the object of the ${topic.gov} "${w1}"; without it, the sentence would be incomplete. Nothing separates a ${topic.gov} from its object, even a list, and the plain items are separated by commas: "${choices.correct}".`
+          ? `The list completes the ${topic.gov} "${w1}"; without it, the sentence would be incomplete. A colon cannot separate that ${topic.gov} from its required complement, and the plain items are separated by commas: "${choices.correct}".`
           : `The words before the blank ("... ${w1}") already form a complete clause that announces the list, so a colon introduces it, and the plain items are separated by commas: "${choices.correct}".`,
         steps: [
           `Stop the sentence right after "${w1}" and ask whether it is complete.`,
@@ -998,7 +942,7 @@
         ],
         principles: [
           "A colon introduces a list only after an independent clause.",
-          "No punctuation separates a verb or preposition from its object, even when the object is a list.",
+          "A colon cannot separate a verb or preposition from its required complement, even when that complement is a list.",
         ],
         trap: governed
           ? "Reaching for a colon because a list follows, even though the list completes the verb or preposition."
@@ -1095,9 +1039,9 @@
     skill: SKILL,
     subskill: "within-sentence punctuation",
     difficulty: "Medium",
-    title: "No punctuation between a long subject and its verb",
+    title: "No extra comma between a long subject and its verb",
     recognize:
-      "The blank falls between a long subject and its verb; however long the subject, nothing separates them, and the verb agrees with the subject's head noun, not the noun just before it.",
+      "The blank follows a complete subject, with no interruption left to close. Do not add a comma just because that subject is long; match the verb to its head noun.",
     rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 1, trap: 1 },
     tricks: ["neighbouring-rule", "agreement-attractor"],
     build(t) {
@@ -1114,14 +1058,14 @@
       const parts = around(topic.text);
       const lead = parts ? sentenceLead(parts.before) : "";
       const instance = multipleChoice(topic, choices, {
-        explanation: `Everything from "${head}" to "${w1}" is the subject, and its head noun, "${head}", is ${number}. Nothing separates a subject from its verb, and the verb agrees with the head noun: "${choices.correct}".`,
+        explanation: `Everything from "${head}" to "${w1}" is the subject, and its head noun, "${head}", is ${number}. No interruption needs a closing mark here, so do not add a comma before the verb. The verb agrees with the head noun: "${choices.correct}".`,
         steps: [
           "Find the subject's head noun and follow the subject to its end at the blank.",
           `The head noun is "${head}", which is ${number}; "${w1}" belongs to a phrase describing it.`,
           "Choose the verb that agrees with the head noun, with no punctuation before it.",
         ],
         principles: [
-          "No punctuation separates a subject from its verb.",
+          "Do not insert a single comma directly between a subject and its predicate. A paired supplement may occur between them, but these sentences have no such interruption to close.",
           "A verb agrees with the head of its subject, not with a noun inside a phrase that describes the subject.",
         ],
         trap: "Adding a comma where a reader would pause for breath after a long subject, or matching the verb to the noun right before it.",
@@ -1519,11 +1463,11 @@
     domain: DOMAIN,
     skill: SKILL,
     subskill: "within-sentence punctuation",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Closing a long interruption, and the verb that follows it",
     recognize:
       "A comma, dash, or parenthesis far back opened an interruption full of nouns (and sometimes commas of its own); it must close with the same kind of mark, and the verb after it agrees with the subject before the interruption.",
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 1, trap: 2 },
     tricks: ["neighbouring-rule", "agreement-attractor"],
     build(t) {
       const topic = t.pick(CLOSING_MARK_TOPICS);
@@ -1686,8 +1630,8 @@
     },
     {
       scene: "sec-brandt-sisters-bakery",
-      text: "For forty years, the only bakery in the town of Ellisfort was run by two sisters, Greta and Ilse Brandt. The ______ also the town's first licensed pilots, and they sometimes delivered bread by airplane.",
-      head: "sisters", clause: "who baked every loaf by hand", verbs: { singular: "was", plural: "were" }, candidates: 1, cue: "Greta and Ilse Brandt",
+      text: "For forty years, the only bakery in the town of Ellisfort was run by two sisters, Greta and Ilse Brandt. ______ also the town's first licensed pilots, and they sometimes delivered bread by airplane.",
+      head: "Greta and Ilse Brandt", number: "plural", clause: "who baked every loaf by hand", verbs: { singular: "was", plural: "were" }, candidates: 1, cue: "Greta and Ilse Brandt",
       note: "The two sisters are already identified by name, so the clause only adds information about them and must be set off by a pair of commas.",
     },
   ];
@@ -1817,79 +1761,72 @@
     },
     {
       scene: "sec-kessel-footbridge-forecast",
-      text: "The engineers who built the first wooden footbridges across the Kessel Gorge in the 1800s expected them to last for a century or ______ most of them had to be replaced within a few decades. Only the steel bridge completed in 1931 has lasted longer.",
+      text: "The engineers who built the first wooden footbridges across the Kessel Gorge in the 1800s expected them to last for a century or ______ of them had to be replaced within a few decades. Only the steel bridge completed in 1931 has lasted longer.",
       head: "The engineers", w1: "more", adv: "however", w2: "most", kind: "clause", c1: ["engineers", "expected"],
       link: "contrasts the engineers' expectation with what happened",
     },
     {
       scene: "sec-pell-curators-assumption",
-      text: "The curators who planned the Pell Museum's 2022 renovation assumed that visitors would use its new touch-screen ______ most visitors relied on printed labels and on conversations with one another. The museum has since added more labels.",
+      text: "The curators who planned the Pell Museum's 2022 renovation assumed that visitors would use its new touch-screen ______ visitors relied on printed labels and on conversations with one another. The museum has since added more labels.",
       head: "The curators", w1: "guides", adv: "however", w2: "most", kind: "clause", c1: ["curators", "assumed"],
       link: "contrasts the curators' assumption with what visitors did",
     },
     {
       scene: "sec-homework-expectations",
-      text: "The students whose teachers agreed to try shorter homework assignments expected their grades to ______ they earned slightly higher grades than their peers by the end of the term.",
+      text: "The students whose teachers agreed to try shorter homework assignments expected their grades to ______ earned slightly higher grades than their peers by the end of the term.",
       head: "The students", w1: "fall", adv: "however", w2: "they", kind: "clause", c1: ["students", "expected"],
       link: "contrasts the students' expectation with their results",
     },
     {
       scene: "sec-aldridge-attribution",
-      text: "The historian who compiled the Aldridge Gallery's first catalog of portraits in 1911 attributed one of them to a student of the Flemish painter Jan ______ x-rays later revealed an underdrawing in the hand of Verhulst himself.",
+      text: "The historian who compiled the Aldridge Gallery's first catalog of portraits in 1911 attributed one of them to a student of the Flemish painter Jan ______ later revealed an underdrawing in the hand of Verhulst himself.",
       head: "The historian", w1: "Verhulst", adv: "however", w2: "x-rays", kind: "clause", c1: ["historian", "attributed"],
       link: "contrasts the historian's attribution with what the x-rays revealed",
     },
     {
       scene: "sec-selby-valley-canals",
-      text: "The farmers who settled the dry western edge of the Selby Valley in the 1870s could not rely on ______ they dug a network of canals to carry water from the river to their fields.",
+      text: "The farmers who settled the dry western edge of the Selby Valley in the 1870s could not rely on ______ dug a network of canals to carry water from the river to their fields.",
       head: "The farmers", w1: "rain", adv: "consequently", w2: "they", kind: "clause", c1: ["farmers", "could not rely"],
       link: "presents the canals as a result of the lack of rain",
     },
     {
       scene: "sec-harrow-puffin-diet",
-      text: "The puffins that nest on the cliffs of Harrow Island feed their chicks almost entirely on small ______ a single chick may eat hundreds of sand eels in its first weeks in the burrow.",
+      text: "The puffins that nest on the cliffs of Harrow Island feed their chicks almost entirely on small ______ single chick may eat hundreds of sand eels in its first weeks in the burrow.",
       head: "The puffins", w1: "fish", adv: "for example", w2: "a", kind: "clause", c1: ["puffins", "feed"],
       link: "introduces one chick's meals as an example of that diet",
     },
     {
       scene: "sec-dunmore-monarch-count",
-      text: "The volunteers who counted monarch butterflies at the Dunmore nature preserve in 2023 saw more of them than in any earlier ______ the total was nearly twice the previous record.",
+      text: "The volunteers who counted monarch butterflies at the Dunmore nature preserve in 2023 saw more of them than in any earlier ______ total was nearly twice the previous record.",
       head: "The volunteers", w1: "year", adv: "in fact", w2: "the", kind: "clause", c1: ["volunteers", "saw"],
       link: "strengthens the first claim with a more striking detail",
     },
     {
       scene: "sec-tolliver-dam-road",
-      text: "The dam that engineers completed across the Tolliver River in 1934 flooded the valley's only ______ the villages upstream could be reached only by boat for several years.",
+      text: "The dam that engineers completed across the Tolliver River in 1934 flooded the valley's only ______ villages upstream could be reached only by boat for several years.",
       head: "The dam", w1: "road", adv: "as a result", w2: "the", kind: "clause", c1: ["dam", "flooded"],
       link: "presents the villages' isolation as a result of the flooding",
     },
     {
       scene: "sec-harlow-garden-tomatoes",
-      text: "The tomatoes that gardeners at the Harlow Community Garden grew in raised beds last summer ripened by early ______ those planted directly in the ground did not ripen until August.",
+      text: "The tomatoes that gardeners at the Harlow Community Garden grew in raised beds last summer ripened by early ______ planted directly in the ground did not ripen until August.",
       head: "The tomatoes", w1: "July", adv: "in contrast", w2: "those", kind: "clause", c1: ["tomatoes", "ripened"],
       link: "contrasts the tomatoes in the ground with those in raised beds",
     },
     {
       scene: "sec-ellisfort-solar-roofs",
-      text: "The solar panels that the town of Ellisfort installed on its school roofs in 2019 supply most of the electricity the schools ______ they produce enough extra power in summer to light the town's parks.",
+      text: "The solar panels that the town of Ellisfort installed on its school roofs in 2019 supply most of the electricity the schools ______ produce enough extra power in summer to light the town's parks.",
       head: "The solar panels", w1: "use", adv: "moreover", w2: "they", kind: "clause", c1: ["panels", "supply"],
       link: "adds a second benefit of the panels to the first",
     },
   ];
 
-  const INTERRUPTER_KEYS = { interrupt: ["comma", "comma"], clause: ["semicolon", "comma"] };
-
   const adverbInterruptsClause = {
-    id: "sec-adverb-interrupts-clause",
-    sectionKey: "sat-reading-writing",
-    domain: DOMAIN,
-    skill: SKILL,
-    subskill: "sentence boundaries",
-    difficulty: "Hard",
-    title: "Transition inside a clause or between two",
-    recognize:
-      "Decide whether the words before the blank are only a long subject (the transition interrupts one clause and takes a comma on each side) or a complete clause (the transition begins a new clause after a semicolon).",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    id: "sec-adverb-interrupts-clause", sectionKey: "sat-reading-writing", domain: DOMAIN,
+    skill: SKILL, subskill: "sentence boundaries", difficulty: "Medium",
+    title: "Transition after a long subject or a complete clause",
+    recognize: "Look past relative clauses to find the main verb. A transition between a long subject and its verb takes commas; a transition opening a second independent clause needs a semicolon before it. Neither mark starts a new sentence.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 1, trap: 2 },
     tricks: ["neighbouring-rule", "comma-splice"],
     build(t) {
       const topic = t.pick(INTERRUPTER_TOPICS);
@@ -1897,59 +1834,32 @@
       const interrupt = topic.kind === "interrupt";
       const parts = around(topic.text);
       const lead = parts ? `${sentenceLead(parts.before)}${w1}`.trim() : "";
-      const markOf = (value) => (value === "comma" ? "," : ";");
-      const render = (before, after) => `${w1}${markOf(before)} ${adv}${markOf(after)} ${w2}`;
-      const choices = squareOf(["before", "after"], [["comma", "semicolon"], ["comma", "semicolon"]], render, (before, after) => {
-        const [keyBefore, keyAfter] = INTERRUPTER_KEYS[topic.kind];
-        if (before === keyBefore && after === keyAfter) return null;
+      const keyMark = interrupt ? "comma" : "semicolon";
+      const render = (mark, letterCase) => `${w1}${mark === "comma" ? "," : ";"} ${letterCase === "upper" ? cap(adv) : adv}, ${w2}`;
+      const choices = squareOf(["before", "capitalization"], [["comma", "semicolon"], ["lower", "upper"]], render, (mark, letterCase) => {
         const problems = [];
-        if (interrupt) {
-          if (before === "semicolon") problems.push(`a semicolon must follow an independent clause, but "${lead}" is only the subject of a sentence whose verb is "${w2}"`);
-          if (after === "semicolon") problems.push(`a semicolon after "${adv}" would cut the subject off from its verb, "${w2}"; the words after it are not an independent clause`);
-        } else {
-          if (before === "semicolon" && after === "semicolon") {
-            problems.push(`with a semicolon on each side, "${adv}" is stranded between the two clauses and belongs to neither`);
-          } else if (before === "comma" && after === "comma") {
-            problems.push(`"${lead}" is already a complete clause (its verb is "${topic.c1[1]}"), and a new clause follows; commas alone around "${adv}" join the two clauses with only a comma, a comma splice`);
-          } else {
-            problems.push(`this makes "${adv}" end the first clause, linking it to something before it; but this sentence opens the passage, and "${adv}" ${topic.link}, so it begins the second clause`);
-          }
-        }
-        return problems.length ? cap(`${problems.join("; also, ")}.`) : null;
+        if (mark !== keyMark) problems.push(interrupt
+          ? `"${lead}" is only a subject, despite the verb inside its relative clause; a semicolon would cut it off from its main verb, "${w2}"`
+          : `"${lead}" is a complete clause with main verb "${topic.c1[1]}"; a comma and a transition cannot join it to another independent clause`);
+        if (letterCase === "upper") problems.push(`"${adv}" is an ordinary transition inside the same sentence, so neither a comma nor a semicolon calls for a capital letter`);
+        return problems.length ? cap(problems.join("; also, ")) + "." : null;
       });
       const instance = multipleChoice(topic, choices, {
         explanation: interrupt
-          ? `"${lead}" is the subject of the sentence, and its verb is "${w2}"; the verb inside the descriptive clause does not make these words an independent clause. "${cap(adv)}" interrupts that single clause, so it is set off by a comma on each side: "${choices.correct}".`
-          : `"${lead}" is a complete clause: its main verb is "${topic.c1[1]}". A second independent clause follows, and "${adv}" ${topic.link}, so it begins the second clause: a semicolon separates the clauses and a comma follows "${adv}": "${choices.correct}".`,
-        steps: [
-          "Find the main verb of the words before the blank, looking past any verb inside a who/that/whose clause.",
-          interrupt
-            ? `There is none: everything before the blank is the subject of "${w2}", so "${adv}" interrupts one clause.`
-            : `There is one, "${topic.c1[1]}", so the words before the blank are a complete clause and "${adv}" begins a new one.`,
-          interrupt ? `Set off "${adv}" with a comma on each side.` : `Put a semicolon before "${adv}" and a comma after it.`,
-        ],
-        principles: [
-          "A transition that begins a new independent clause takes a semicolon or period before it and a comma after it.",
-          "A transition that interrupts a single clause is set off by a comma on each side; a semicolon on either side would cut the subject off from its verb.",
-          "A verb inside a relative clause (that, who, whom, whose) is not the main verb.",
-        ],
-        trap: interrupt
-          ? `Choosing "; ${adv}," by reflex, as if the transition joined two clauses, because the long subject contains a verb.`
-          : `Choosing ", ${adv}," because the sentence opens with a long subject like one that "${adv}" could interrupt, though its main verb has already appeared.`,
-        hint: "What is the main verb of the words before the blank, if there is one?",
+          ? `"${lead}" is the subject of "${w2}". The verb inside its relative clause does not complete the main clause, so paired commas set off "${adv}", which stays lowercase: "${choices.correct}".`
+          : `"${lead}" is a complete clause whose main verb is "${topic.c1[1]}". A semicolon separates it from the next independent clause, and "${adv}" stays lowercase after it: "${choices.correct}".`,
+        steps: ["Find the main verb, looking past verbs inside who, that, or whose clauses.", interrupt ? `The main verb, "${w2}", comes after the transition: use paired commas.` : `The main verb, "${topic.c1[1]}", comes before the transition: separate the two clauses with a semicolon.`, "Keep the ordinary transition lowercase because no new sentence begins."],
+        principles: ["A verb in a relative clause does not complete the main clause.", "Commas can set off a transition inside one clause; a semicolon can separate two independent clauses.", "A semicolon does not by itself require a capital letter after it."],
+        trap: "Mistaking a verb inside the relative clause for the main verb, or treating a semicolon as a period for capitalization.",
+        hint: "Which verb belongs to the sentence's subject rather than to its descriptive clause?",
         estimatedSeconds: 85,
       });
       instance.verify = () => {
         if (!parts) return false;
         const sentence = sentenceLead(parts.before);
-        if (sentence.indexOf(topic.head) !== 0 || /[,;:—()]/.test(sentence)) return false;
         const hasMainVerb = Boolean(topic.c1) && sentence.includes(topic.c1[0]) && sentence.includes(` ${topic.c1[1]} `);
-        const kind = hasMainVerb ? "clause" : "interrupt";
-        // A clause-kind sentence opens the passage; an interrupted one
-        // follows the sentence its transition relates it to.
-        const opens = sentence === parts.before;
-        return CONJ_ADVERBS.includes(adv) && kind === topic.kind && opens === (kind === "clause") &&
-          instance.correct === render(...INTERRUPTER_KEYS[kind]) && isSquare(instance.features);
+        return sentence.indexOf(topic.head) === 0 && hasMainVerb === !interrupt && CONJ_ADVERBS.includes(adv) &&
+          instance.correct === render(keyMark, "lower") && isSquare(instance.features);
       };
       return instance;
     },
@@ -1963,8 +1873,7 @@
   // noun before a supplement (in the right number, `forms`) and the mark
   // that opens the supplement. How the
   // supplement ends decides that mark: a dash later in the sentence, a comma
-  // later in the sentence, or the end of the sentence ("end"), where a
-  // supplement that is itself a list with commas needs a dash. The noun's
+  // later in the sentence. The noun's
   // number is set by the verb after the supplement or by a number word.
   const SUPPLEMENT_TOPICS = [
     {
@@ -2009,23 +1918,23 @@
     },
     {
       scene: "sec-orrin-core-materials",
-      text: "Core samples drilled from the bottom of Lake Orrin surprised the geologists who studied them. The samples contained three unexpected ______ from a distant eruption, pollen from trees that no longer grow in the region, and the shell of a tiny freshwater snail.",
-      forms: { singular: "material", plural: "materials" }, number: "plural", ends: "end", cue: "three", next: "ash",
+      text: "Core samples drilled from the bottom of Lake Orrin surprised the geologists who studied them. Three unexpected ______ from a distant eruption, pollen from trees that no longer grow in the region, and the shell of a tiny freshwater snail—were found in the samples.",
+      forms: { singular: "material", plural: "materials" }, number: "plural", ends: "dash", cue: "were found", next: "ash",
     },
     {
       scene: "sec-summit-team",
-      text: "Ten climbers set out from the base camp on Mount Kessel, but storms turned most of them back. In the end, the summit was reached by a single ______ geologist, a botanist, and a photographer.",
-      forms: { singular: "team", plural: "teams" }, number: "singular", ends: "end", cue: "a single", next: "a",
+      text: "Ten climbers set out from the base camp on Mount Kessel, but storms turned most of them back. In the end, a single ______ geologist, a botanist, and a photographer—was able to reach the summit.",
+      forms: { singular: "team", plural: "teams" }, number: "singular", ends: "dash", cue: "was able", next: "a",
     },
     {
       scene: "sec-ashby-first-catalog",
-      text: "The first public library in the mill town of Ashby opened in 1889 with fewer than five hundred books. Its first catalog sorted them into just four ______, poetry, travel, and farming.",
-      forms: { singular: "subject", plural: "subjects" }, number: "plural", ends: "end", cue: "four", next: "history",
+      text: "The first public library in the mill town of Ashby opened in 1889 with fewer than five hundred books. Four ______, poetry, travel, and farming—were enough to classify every book in its first catalog.",
+      forms: { singular: "subject", plural: "subjects" }, number: "plural", ends: "dash", cue: "were enough", next: "history",
     },
     {
       scene: "sec-keeper-measurements",
-      text: "The keeper of the Brannock lighthouse filled forty notebooks between 1851 and 1890. Every winter morning he recorded the same three ______ height of the waves, the temperature of the air, and the thickness of the ice on the rocks.",
-      forms: { singular: "measurement", plural: "measurements" }, number: "plural", ends: "end", cue: "three", next: "the",
+      text: "The keeper of the Brannock lighthouse filled forty notebooks between 1851 and 1890. The same three ______ height of the waves, the temperature of the air, and the thickness of the ice on the rocks—were recorded every winter morning.",
+      forms: { singular: "measurement", plural: "measurements" }, number: "plural", ends: "dash", cue: "were recorded", next: "the",
     },
   ];
 
@@ -2038,7 +1947,7 @@
     difficulty: "Medium",
     title: "Opening a supplement to match how it ends",
     recognize:
-      "Read past the blank to where the supplement ends. A dash later means it opens with a dash; a comma later means a comma; a list with commas at the end of the sentence needs a single dash. The noun before it agrees with the verb or number word elsewhere in the sentence.",
+      "Read past the blank to where the supplement ends. A dash later means it opens with a dash; a comma later means a comma. The noun before it agrees with the main verb after the supplement.",
     rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 0, synthesis: 1, trap: 1 },
     tricks: ["neighbouring-rule", "agreement-attractor"],
     build(t) {
@@ -2048,32 +1957,27 @@
       const reasonFor = {
         dash: "the supplement closes with a dash later in the sentence, so it must open with one; a comma would leave the pair mismatched",
         comma: "the supplement closes with a comma later in the sentence, so it must open with one; a dash would leave the pair mismatched",
-        end: "the supplement runs to the end of the sentence and is itself a list with commas, so a comma before it would blur it into a longer list; a single dash sets it off",
       }[topic.ends];
       const choices = squareOf(["opener", "number"], [["dash", "comma"], ["singular", "plural"]], render, (mark, n) => {
         const problems = [];
         if (mark !== keyMark) problems.push(reasonFor);
-        if (n !== topic.number) problems.push(`"${topic.forms[n]}" is ${n}, but ${topic.ends === "end" ? `"${topic.cue}"` : `the verb "${topic.cue}"`} calls for the ${topic.number} "${topic.forms[topic.number]}"`);
+        if (n !== topic.number) problems.push(`"${topic.forms[n]}" is ${n}, but the verb "${topic.cue}" calls for the ${topic.number} "${topic.forms[topic.number]}"`);
         return problems.length ? cap(`${problems.join("; also, ")}.`) : null;
       });
       const instance = multipleChoice(topic, choices, {
-        explanation: `${topic.ends === "end"
-          ? "The supplement after the blank runs to the end of the sentence and is a list whose items are separated by commas, so a single dash, not a comma, introduces it."
-          : `The supplement after the blank closes with a ${keyMark} later in the sentence, so it must open with a ${keyMark}.`} The noun is ${topic.number}, as ${topic.ends === "end" ? `"${topic.cue}"` : `the verb "${topic.cue}"`} shows: "${choices.correct}".`,
+        explanation: `The supplement after the blank closes with a ${keyMark} later in the sentence, so it must open with a ${keyMark}. The noun is ${topic.number}, as the verb "${topic.cue}" shows: "${choices.correct}".`,
         steps: [
-          "Read past the blank to find where the supplement ends: a dash, a comma, or the end of the sentence.",
-          "Open the supplement with the mark that closes it; before a list that ends the sentence, use a single dash.",
-          `Check the noun's number against ${topic.ends === "end" ? "the number word before it" : "the verb after the supplement"}.`,
+          "Read past the blank to find the dash or comma that closes the supplement.",
+          "Open the supplement with the same kind of mark that closes it.",
+          "Check the noun's number against the verb after the supplement.",
         ],
         principles: [
           "A supplement in the middle of a sentence is set off by a matching pair of marks: two commas, two dashes, or two parentheses.",
-          "A supplement at the end of a sentence is introduced by a single mark; when it is a list whose items are separated by commas, a dash (or colon) keeps it distinct.",
+          "Read the whole interruption before choosing its opening mark.",
         ],
         trap: topic.ends === "dash"
           ? "Opening with a comma because commas usually set off supplements, without looking ahead to the dash that closes this one."
-          : topic.ends === "comma"
-            ? "Opening with a dash because the supplement looks long, without looking ahead to the comma that closes it."
-            : "Using a comma before the list, which turns the noun before it into one more item in the list.",
+          : "Opening with a dash because the supplement looks long, without looking ahead to the comma that closes it.",
         hint: "Where does the supplement after the blank end, and with what mark?",
         estimatedSeconds: 70,
       });
@@ -2084,12 +1988,10 @@
         const dashes = (sentenceRest.match(/—/g) || []).length;
         const commas = (sentenceRest.match(/,/g) || []).length;
         // A dash later closes the supplement; otherwise a verb after a comma
-        // (the cue) shows it closes with a comma; otherwise it runs to the
-        // end of the sentence as a list, its number set before the blank.
+        // (the cue) shows it closes with a comma.
         const ends = dashes === 1 ? "dash"
           : dashes > 0 ? null
-            : sentenceRest.includes(topic.cue) ? "comma"
-              : parts.before.includes(topic.cue) && commas >= 2 ? "end" : null;
+            : sentenceRest.includes(topic.cue) && commas > 0 ? "comma" : null;
         return ends === topic.ends &&
           instance.correct === render(ends === "comma" ? "comma" : "dash", topic.number) && isSquare(instance.features);
       };
@@ -2148,12 +2050,12 @@
     },
     {
       scene: "sec-kanaan-orchestra-founder",
-      text: "The Dunmore Community Orchestra has performed a free concert in the town park every summer since 1998. Leila ______ founded the orchestra with eleven of her former students.",
+      text: "The Dunmore Community Orchestra has performed a free concert in the town park every summer since 1998. Leila ______ the orchestra with eleven of her former students.",
       kind: "appositive", left: "Kanaan", middle: "a retired music teacher", right: "founded",
     },
     {
       scene: "sec-bessie-coleman-license",
-      text: "No flight school in the United States would admit her, so she learned French and sailed to France to learn to fly. Bessie ______ earned her license there in 1921.",
+      text: "No flight school in the United States would admit her, so she learned French and sailed to France to learn to fly. Bessie ______ her license there in 1921.",
       kind: "appositive", left: "Coleman", middle: "the first African American woman to become a licensed pilot", right: "earned",
     },
     {
@@ -2163,7 +2065,7 @@
     },
     {
       scene: "sec-mendel-friar",
-      text: "Between 1856 and 1863, thousands of pea plants grew in the garden of an abbey in Brno. Gregor ______ bred them to study how traits such as seed color pass from parents to offspring.",
+      text: "Between 1856 and 1863, thousands of pea plants grew in the garden of an abbey in Brno. Gregor ______ them to study how traits such as seed color pass from parents to offspring.",
       kind: "appositive", left: "Mendel", middle: "a friar at the abbey", right: "bred",
     },
   ];
@@ -2265,22 +2167,22 @@
     },
     {
       scene: "sec-keep-left-sign",
-      text: "The coastal trail at Kessel Point is lined with signs, most of them warnings about loose rock. Hikers who read the ______ usually laugh before they notice that the path really does bend sharply toward the cliff.",
+      text: "The coastal trail at Kessel Point is lined with signs, most of them warnings about loose rock. Hikers who read the ______ laugh before they notice that the path really does bend sharply toward the cliff.",
       kind: "integrated", left: "sign", quote: "Keep left or swim", right: "usually",
     },
     {
       scene: "sec-mayors-wall",
-      text: "The seawall that Brisk Harbor built in 2015 was controversial from the start. Because the mayor called the ______ residents who had opposed its cost began calling it the Mayor's Wall.",
+      text: "The seawall that Brisk Harbor built in 2015 was controversial from the start. Because the mayor called the ______ who had opposed its cost began calling it the Mayor's Wall.",
       kind: "closes", left: "wall", quote: "a gift to our grandchildren", right: "residents",
     },
     {
       scene: "sec-museum-lantern-wing",
-      text: "The Varden Museum's new wing is a glass box that glows at night. When the director described the wing ______ the architects who had designed it were delighted.",
+      text: "The Varden Museum's new wing is a glass box that glows at night. When the director described the wing ______ architects who had designed it were delighted.",
       kind: "closes", left: "as", quote: "a lantern for the whole city", right: "the",
     },
     {
       scene: "sec-triumph-of-patience",
-      text: "The novelist Clara Ashdown spent eleven years writing her last book. An early review praised the novel ______ and within a month the first printing had sold out.",
+      text: "The novelist Clara Ashdown spent eleven years writing her last book. An early review praised the novel ______ within a month the first printing had sold out.",
       kind: "closes", left: "as", quote: "a triumph of patience", right: "and",
     },
     {
@@ -2290,22 +2192,22 @@
     },
     {
       scene: "sec-slow-and-steady-motto",
-      text: "The town of Ellisfort adopted an official motto when it was founded in 1860. The town's ______ is carved above the door of its oldest building.",
+      text: "The town of Ellisfort adopted an official motto when it was founded in 1860. The town's ______ carved prominently above the main door of its oldest building.",
       kind: "appositive", left: "motto", quote: "Slow and steady", right: "is",
     },
     {
       scene: "sec-light-did-not-fail",
-      text: "On the night of the great storm of 1872, the keeper of the Brannock lighthouse wrote only one sentence in his log. That ______ is now engraved on a plaque at the base of the tower.",
+      text: "On the night of the great storm of 1872, the keeper of the Brannock lighthouse wrote only one sentence in his log. That ______ now engraved on a plaque at the base of the tower.",
       kind: "appositive", left: "sentence", quote: "The light did not fail", right: "is",
     },
     {
       scene: "sec-six-bridges-slogan",
-      text: "The Harlow Marathon, first run in 1981, crosses all six of the city's bridges. The race's official ______ appears on every finisher's medal and on banners along the course.",
+      text: "The Harlow Marathon, first run in 1981, crosses all six of the city's bridges. The race's official ______ on every finisher's medal and on banners along the course.",
       kind: "appositive", left: "slogan", quote: "Six bridges, one city", right: "appears",
     },
     {
       scene: "sec-bloodchild-awards",
-      text: "Octavia E. Butler is best known for her novels, but she also wrote a small number of short stories. Her most celebrated short ______ won both the Hugo and the Nebula Awards for best novelette.",
+      text: "Octavia E. Butler is best known for her novels, but she also wrote a small number of short stories. Her most celebrated short ______ both the Hugo and the Nebula Awards for best novelette.",
       kind: "appositive", left: "story", quote: "Bloodchild", right: "won",
     },
   ];
@@ -2589,7 +2491,7 @@
     },
     {
       scene: "sec-tolan-orchard-frost",
-      text: "Frost struck the apple orchards of the Tolan Valley on the last night of April. Because the blossoms on every tree in the lowest ______ most of that year's crop was lost there.",
+      text: "Frost struck the apple orchards of the Tolan Valley on the last night of April. Because the blossoms on every tree in the lowest ______ of that year's crop was lost there.",
       kind: "intro", sub: "Because", subject: "blossoms", w0: "orchard", verbs: { singular: "was", plural: "were" }, complement: "already open", w2: "most",
     },
     {
@@ -2692,7 +2594,7 @@
     },
     {
       scene: "sec-tardigrade-extremes",
-      text: "Tardigrades are animals less than a millimeter long that live in moss, soil, and ponds. They can survive temperatures close to absolute ______ some have even survived exposure to the vacuum of space.",
+      text: "Tardigrades are animals less than a millimeter long that live in moss, soil, and ponds. They can survive temperatures close to absolute ______ have even survived exposure to the vacuum of space.",
       kind: "two", joiner: "comma-and", w1: "zero", w2: "some", c1: ["They", "can survive"], c2: ["some", "have even survived"],
     },
     {
@@ -2764,7 +2666,7 @@
     difficulty: "Easy",
     title: "Period, semicolon, or comma and “and,” with capitals",
     recognize:
-      "Two independent clauses need a period, a semicolon, or a comma and “and”; a dependent clause that opens a sentence needs only a comma. A capital letter begins a new sentence only after a period.",
+      "Two independent clauses need a period, a semicolon, or a comma and “and”; a dependent clause that opens a sentence needs only a comma. After a period, capitalize the first word; after a comma or semicolon, capitalize it only if it independently needs a capital, as I or a proper name does.",
     rubric: { steps: 1, concept: 0, interpretation: 0, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["comma-splice"],
     build(t) {
@@ -2776,7 +2678,7 @@
         const next = capital === "yes" ? cap(w2) : w2;
         return `${w1}${boundary === "comma" ? "," : strong} ${next}`;
       };
-      // The right capital: only a period starts a new sentence.
+      // Of the offered marks, only a period starts a new sentence; w2 is an ordinary word.
       const keyBoundary = two ? joiner : "comma";
       const keyCapital = two && joiner === "period" ? "yes" : "no";
       const parts = around(topic.text);
@@ -2808,12 +2710,12 @@
           two
             ? "They can, and so can the words after it: join the two clauses with a period, a semicolon, or a comma and “and.”"
             : `They cannot: "${topic.sub}" makes them a dependent clause, which joins the main clause with a comma alone.`,
-          "Capitalize the next word only after a period.",
+          "The next word here is an ordinary word: capitalize it after a period, but not after a comma or semicolon.",
         ],
         principles: [
           "Two independent clauses are separated by a period or a semicolon, or joined by a comma and a coordinating conjunction such as “and”; a comma alone is a comma splice.",
           "A dependent clause that opens a sentence is joined to the main clause with a comma.",
-          "Only a period (or question mark) ends a sentence, so only then does the next word take a capital letter.",
+          "A period, question mark, or exclamation point can end a sentence; the next sentence starts with a capital. Within a sentence, words such as I and proper names still need capitals.",
         ],
         trap: two
           ? "Choosing the comma because the two clauses are closely related, which splices them."

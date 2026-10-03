@@ -98,12 +98,6 @@ The bank must land on exactly 575 questions with the difficulty targets
 Writing / 92 Knowledge of Language / 308 Conventions of Standard English** —
 30% / 16% / 54%, which is how the real ACT weights the section.
 
-> `content/catalog.json` still carries the old 235 / 120 / 220 split. Author
-> against the numbers in this table, not against the catalog. The catalog flips
-> to 175 / 92 / 308 in the same commit that ships the rebuilt bank, because
-> `npm run check` enforces per-domain counts exactly and changing the catalog
-> any earlier turns the gate red for every lane until all 40 passages exist.
-
 That fixes the arithmetic in advance:
 
 | Passages | Questions each | Domain split (PoW / KoL / CSE) |
@@ -119,3 +113,28 @@ That fixes the arithmetic in advance:
 Progress is `node tools/check-passages.js act-english`, which reports
 passages, questions, tier counts, domain counts, and the NO CHANGE keep rate,
 and fails on any authoring rule.
+
+## Editorial checks beyond the marker gate
+
+Read each replacement in the complete sentence. A choice must replace exactly
+the words inside its marker; the marker gate cannot detect a missing subject or
+a duplicated phrase. Distractors must fail for a defensible reason. Optional
+serial commas, valid absolute phrases, active participles, and grammatical
+coordinated clauses are not errors merely because another version sounds
+smoother. A semicolon can precede a coordinating conjunction in suitable
+sentences; test independent versus dependent clauses instead of declaring that
+combination universally wrong.
+
+The regression suite checks replacement boundaries, alternatives that duplicate
+NO CHANGE, and the share of Hard keys identifiable as the longest choice.
+
+Factual corrections to the original authored set were checked against
+[Perkins Archives on Barbier](https://www.perkins.org/braille-barbier/),
+[Harvard's Leavitt archive](https://platestacks.cfa.harvard.edu/henrietta-swan-leavitt/variable-stars),
+[Minnesota's apple breeding program](https://blog-fruit-vegetable-ipm.extension.umn.edu/2024/09/umn-apple-breeding-program-desirable.html),
+[research on bread staling](https://pmc.ncbi.nlm.nih.gov/articles/PMC4711428/),
+[bell acoustics research](https://www.hibberts.co.uk/basic-principles-of-bell-tuning/),
+[Iowa DOT on deicing](https://iowadot.gov/modes-travel/roads-highways/maintenance/winter-operations/roadway-deicing),
+and the [Erie Canalway National Heritage Corridor](https://www.nps.gov/erie/learn/historyculture/index.htm).
+The quiet-car essay is an explicitly imagined example, not a historical claim
+about real railroads or a reported comparison of enforcement policies.

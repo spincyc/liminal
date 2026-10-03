@@ -1,15 +1,17 @@
 "use strict";
 
+// Fact-check: Cross-inhibition between rival scouts: https://pubmed.ncbi.nlm.nih.gov/22157081/
+
 module.exports = {
   id: "act-reading-p041",
   type: "natural-science",
   title: "How a Swarm Decides",
-  intro: "This passage is adapted from an article on collective decision-making in honeybees.",
+  intro: "This original passage discusses collective decision-making in honeybees.",
   content: `When a honeybee colony outgrows its hive, about two-thirds of the workers leave with
 the old queen and hang in a cluster on a branch, sometimes for several days. In that time
 the swarm must choose a new home, and the choice is close to irreversible: a cluster that
 settles in a cavity too small, too damp, or too exposed will not survive the winter. It has
-no leader. The queen makes no decisions of any kind, and no individual bee visits more than
+no leader. The queen does not choose the new nest site, and no individual bee visits more than
 one or two candidate sites.
 
 Thomas Seeley spent three decades working out how the choice is made, largely on an island
@@ -29,8 +31,9 @@ The crucial detail is what happens next, and it is the reason the system converg
 than deadlocking. A returning scout does not dance indefinitely. Each time she leaves the
 cluster and comes back she dances fewer circuits than before, and after a number of trips
 she stops dancing altogether and becomes an ordinary member of the audience. This decay is
-independent of what other scouts are advertising. A bee does not stop because she has been
-persuaded; she stops because she has run out of enthusiasm on a fixed schedule.
+independent of what other scouts are advertising. This gradual fading does not require another bee to persuade the dancer.
+It is distinct from a second process: scouts can also inhibit rival dancers with
+stop signals. Decay is one mechanism in the decision, not the only way dancing ends.
 
 The consequence is that support for a site can only be sustained by new recruits going out,
 inspecting it themselves, and coming back convinced. A poor site attracts a few dancers whose
@@ -52,8 +55,8 @@ majority of cases. It is not infallible, and it can be fooled by exactly the man
 just described. And its accuracy depends on conditions that are easy to state and easy to
 lose — scouts search independently, they report honestly, they assess sites themselves rather
 than copying an assessment, and their enthusiasm decays whether or not anyone is listening.
-Remove any one of those and the swarm still reaches a decision, quickly and unanimously, and
-the decision stops being reliably good.`,
+Remove any one of those and the swarm still reaches a decision, quickly and unanimously, and its reliability may suffer. Agreement alone is therefore not enough to show
+that the process examined its options well.`,
   questions: [
     {
       subskill: "main idea",
@@ -99,7 +102,7 @@ the decision stops being reliably good.`,
       key: "new scouts inspect it and return convinced.",
       wrong: [
         ["the original scouts keep dancing for it.", "Each scout's dancing decays and eventually stops entirely."],
-        ["the queen moves closer to that direction.", "The queen is said to make no decisions of any kind."],
+        ["the queen moves closer to that direction.", "The queen is not described as choosing the new nest site."],
         ["rival sites are abandoned by their dancers.", "Decay happens independently of what rivals are advertising."],
       ],
       why: "The passage says that because each dancer's display decays, \"support for a site can only be sustained by new recruits going out, inspecting it themselves, and coming back convinced.\"",
@@ -194,13 +197,13 @@ the decision stops being reliably good.`,
         ["reaches a decision faster than its rivals do.", "Speed is preserved even when the conditions are removed."],
         ["reaches a decision that can later be reversed.", "The choice is described as close to irreversible throughout."],
       ],
-      why: "The paragraph says that removing any of the listed conditions leaves the swarm still reaching a decision \"quickly and unanimously,\" while \"the decision stops being reliably good.\"",
+      why: "The passage distinguishes a quick, unanimous decision from one reached under conditions that make it dependable. Its final caution is that agreement alone does not show whether the available options were examined well.",
       steps: [
         "Note the two properties the last sentence separates.",
         "Identify which one survives the loss of the conditions.",
         "Reject options naming properties the passage says are unaffected.",
       ],
-      hint: "The last sentence grants three things and withholds one.",
+      hint: "Distinguish reaching agreement from having good grounds for it.",
       trap: "Taking unanimity or speed as the quality at stake.",
     },
     {
@@ -246,14 +249,14 @@ the decision stops being reliably good.`,
       subskill: "interpret detail",
       family: "detail-interpretation",
       difficulty: "Easy",
-      stem: "The remark that a bee \"does not stop because she has been persuaded\" indicates that the decay is:",
+      stem: "The remark that gradual fading does not require another bee to persuade the dancer indicates that this particular process is:",
       key: "internal rather than a response to rivals.",
       wrong: [
         ["a sign that the site she found was poor.", "Even excellent sites' dancers decay on the same schedule."],
         ["evidence that she has forgotten the location.", "Nothing suggests scouts lose the information they carry."],
         ["caused by fatigue from the long inspection.", "No physical cause of the decline is offered in the passage."],
       ],
-      why: "The passage says the decay \"is independent of what other scouts are advertising\" and that a bee \"stops because she has run out of enthusiasm on a fixed schedule.\"",
+      why: "The passage separates gradual decay from inhibitory stop signals sent by rivals. This particular decline in dancing can occur without a rival signal; the passage does not deny that other scouts can also stop a dance.",
       steps: [
         "Read the two sentences around the remark.",
         "Note what they rule out and what they substitute.",

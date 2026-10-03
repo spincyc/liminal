@@ -2,6 +2,8 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
+const { numericValue } = require("./expr");
+const { TEMPLATE_SECTIONS } = require("./families");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const CATALOG_PATH = path.join(ROOT, "content", "catalog.json");
@@ -53,6 +55,13 @@ function readJson(filePath) {
 
 function loadCatalog() {
   return readJson(CATALOG_PATH);
+}
+
+// SAT fixed banks remain readable for old attempts; today's SAT practice uses
+// templates and has its own gate. Bank quality reports default to active banks.
+function bankSections(catalog = loadCatalog(), { includeRetired = false } = {}) {
+  return catalog.sections.filter((section) => includeRetired ||
+    (!TEMPLATE_SECTIONS.includes(section.key) && section.practiceAvailable !== false));
 }
 
 function sectionMap(catalog) {
@@ -246,9 +255,9 @@ function validateQuestion(question, section, catalog) {
   }
 
   if (question.responseType === "multiple-choice") {
-    validateMultipleChoice(question, errors);
+    validateMultipleChoice(question, errors, { active: !TEMPLATE_SECTIONS.includes(section.key) && section.practiceAvailable !== false });
   } else if (question.responseType === "numeric") {
-    validateNumeric(question, errors);
+    validateNumeric(question, errors, { active: !TEMPLATE_SECTIONS.includes(section.key) && section.practiceAvailable !== false });
   } else if (question.responseType === "essay") {
     validateEssay(question, errors);
   }
@@ -285,8 +294,15 @@ function validateVerification(question, errors) {
     return;
   }
   const numbers = verification.inputs;
-  if (!Array.isArray(numbers) || numbers.some((value) => typeof value !== "number")) {
-    addError(errors, question, "verification.inputs must be numeric");
+  if (!Array.isArray(numbers) || numbers.some((value) => !Number.isFinite(value))) {
+    addError(errors, question, "verification.inputs must be finite numbers");
+    return;
+  }
+  const arities = { "linear-equation": 3, "percent-of": 2, "percent-change": 2,
+    distance: 4, "midpoint-x": 2, pythagorean: 2, probability: 2, "circle-area-coefficient": 1 };
+  if ((arities[verification.kind] && numbers.length !== arities[verification.kind]) ||
+      (["sum", "product", "mean"].includes(verification.kind) && !numbers.length)) {
+    addError(errors, question, "verification.inputs has the wrong number of values");
     return;
   }
   let computed;
@@ -328,19 +344,26 @@ function validateVerification(question, errors) {
       addError(errors, question, `unknown verification kind "${verification.kind}"`);
       return;
   }
-  if (typeof verification.expected !== "number" ||
+  if (!Number.isFinite(computed) || !Number.isFinite(verification.expected) ||
       Math.abs(computed - verification.expected) > 1e-9) {
     addError(errors, question, "verification expected value does not match recomputation");
   }
 }
 
-function validateMultipleChoice(question, errors) {
+function numericalChoiceDuplicates(choices) {
+  const values = choices.map((choice) => numericValue(String(choice)));
+  return values.some((left, index) => left !== null && values.slice(index + 1).some((right) =>
+    right !== null && Math.abs(left - right) <= Number.EPSILON * 8 * Math.max(1, Math.abs(left), Math.abs(right))));
+}
+
+function validateMultipleChoice(question, errors, { active = true } = {}) {
   if (!Array.isArray(question.choices) || question.choices.length !== 4) {
     addError(errors, question, "multiple-choice questions require exactly four choices");
     return;
   }
   if (question.choices.some((choice) => !isNonemptyString(choice))) {
     addError(errors, question, "choices must be nonempty strings");
+    return;
   }
   const normalized = question.choices.map((choice) =>
     choice.normalize("NFKC").toLowerCase().trim().replace(/\s+/g, " "),
@@ -348,6 +371,7 @@ function validateMultipleChoice(question, errors) {
   if (new Set(normalized).size !== normalized.length) {
     addError(errors, question, "choices must be distinct");
   }
+  if (active && numericalChoiceDuplicates(question.choices)) addError(errors, question, "choices must not be numerically equivalent");
   if (!Number.isInteger(question.correctAnswer) ||
       question.correctAnswer < 0 ||
       question.correctAnswer >= question.choices.length) {
@@ -368,13 +392,15 @@ function validateMultipleChoice(question, errors) {
   }
 }
 
-function validateNumeric(question, errors) {
+function validateNumeric(question, errors, { active = true } = {}) {
   if (question.choices !== null || question.distractorRationales !== null) {
     addError(errors, question, "numeric questions must not have choices or distractors");
   }
   const answer = question.correctAnswer;
-  if (!(typeof answer === "number" || isNonemptyString(answer))) {
-    addError(errors, question, "numeric correctAnswer must be a number or nonempty string");
+  // Archived SAT records include historical unit-suffixed answers. Preserve
+  // their readable schema without admitting them into today's practice.
+  if (!(Number.isFinite(answer) || (isNonemptyString(answer) && (!active || numericValue(answer) !== null)))) {
+    addError(errors, question, "numeric correctAnswer must represent a finite number");
   }
 }
 
@@ -386,9 +412,9 @@ function validateEssay(question, errors) {
   if (!answer || typeof answer !== "object" ||
       !isNonemptyString(answer.sampleThesis) ||
       !Array.isArray(answer.outline) ||
-      answer.outline.length < 3 ||
+      answer.outline.length < 3 || answer.outline.some((item) => !isNonemptyString(item)) ||
       !Array.isArray(answer.reviewCriteria) ||
-      answer.reviewCriteria.length < 4) {
+      answer.reviewCriteria.length < 4 || answer.reviewCriteria.some((item) => !isNonemptyString(item))) {
     addError(errors, question, "essay correctAnswer requires a thesis, outline, and review criteria");
   }
 }
@@ -435,10 +461,21 @@ function comparableText(question) {
 
 function tokenSet(question) {
   const text = comparableText(question);
+  if (isQuantitative(question)) {
+    // Keep small values as well as large ones, with their sign and decimal
+    // point. Dropping tokens shorter than three characters erased nearly all
+    // algebra parameters; normalizing first also made 2.5 and 5.2 identical.
+    const quantities = [];
+    const words = String(text).replace(/(\d),(?=\d{3}(?:\D|$))/g, "$1")
+      .replace(/[−-]?(?:\d+(?:\.\d+)?|\.\d+)/g, (number) => {
+        quantities.push(`number:${Number(number.replace("−", "-"))}`);
+        return " ";
+      });
+    return new Set([...quantities, ...normalizeText(words).split(" ")
+      .filter((token) => token.length > 2 || /^[a-z]$/.test(token))]);
+  }
   const normalized = normalizeText(text);
-  const withNumbers = isQuantitative(question)
-    ? normalized
-    : normalized.replace(/\b\d+(?:\.\d+)?\b/g, "#");
+  const withNumbers = normalized.replace(/\b\d+(?:\.\d+)?\b/g, "#");
   return new Set(withNumbers.split(" ").filter((token) => token.length > 2));
 }
 
@@ -756,7 +793,9 @@ function validateAll({ requireComplete = false } = {}) {
       errors.push(`${question.id}: unknown sectionKey`);
     }
   });
-  errors.push(...duplicateErrors(questions));
+  const active = new Set(bankSections(catalog).map((section) => section.key));
+  errors.push(...duplicateErrors(questions.filter((question) => active.has(question.sectionKey))));
+  errors.push(...duplicateErrors(questions.filter((question) => !active.has(question.sectionKey))));
   errors.push(...coverageErrors(questions, catalog, requireComplete));
   errors.push(...passageErrors(catalog));
 
@@ -777,6 +816,8 @@ function writeJsonAtomic(filePath, value) {
 }
 
 module.exports = {
+  bankSections,
+  numericalChoiceDuplicates,
   BANKS_DIR,
   PASSAGES_DIR,
   jaccard,

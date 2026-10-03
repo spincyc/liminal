@@ -52,6 +52,15 @@ and ids still resolve, so never regenerate them. A template change follows
 as a strong test-taker, then run `npm run templates` and commit the registry,
 whose version bumps when what a template builds changes.
 
+Template source changes also need renewed independent review recorded in
+`content/template-reviews.json`, following `docs/question-templates.md`. The
+reviewer must solve displayed samples before seeing their keys and must differ
+from the author of the change. `tools/check-template-reviews.js` binds this
+sampled agent review to the current source/version/tier. It is not human
+editorial approval or measured SAT difficulty. Source fingerprints conservatively
+include shared dependencies, sibling templates, comments and metadata; review
+the impact of those changes rather than automatically refreshing approvals.
+
 Canonical ACT questions are JSON arrays in `content/banks/`. The build writes the
 browser bundles into `dist/content/`; never hand-edit build output. The catalog
 defines section keys, official taxonomy, allowed response types, calculator
@@ -128,6 +137,21 @@ For a coherent ACT bank batch:
   as SVG data and rebuilt element by element. Learn pages arrive as block
   trees and render through DOM APIs only.
 - Browser storage:
+  - ACT Writing drafts live only in unfinished-session storage and the active
+    report. Progress records completion, never essay text or an essay score.
+    Preserve draft download before closing a finished report and exclude
+    essays from scored denominators in summaries and analytics.
+  - A finished module in an unfinished simulation keeps its question snapshots
+    and template versions so a template update cannot regrade old choices.
+    Older saved modules lacking recoverable snapshots retain recorded totals;
+    explain when their individual questions can no longer be reviewed.
+  - New fixed-bank attempts store `contentIdentity` from the question actually
+    shown, including its resolved passage. Use `questionMatchesAttempt` before
+    attaching a historical response to current choices. Missing or changed
+    identity preserves outcomes but withholds unverifiable question details;
+    a current-version retry is explicitly labeled. Preserve identities through
+    progress export/import and do not let a revised item mature an old item's
+    review schedule.
   - `liminal:progress:v3` (`src/lib/progress.js`) holds every attempt a set
     shows (a blank is recorded as wrong), each with its source, hint use,
     time, feedback mode, template id, version and seed, and `reviewOf` when

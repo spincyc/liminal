@@ -71,9 +71,9 @@ matter because they have completely different fixes:
 | **Careless** | You knew it and would get it right on a re-do | Change a mechanical habit |
 | **Time** | You would have gotten it with more clock | Triage and pacing work |
 
-A student whose misses are 70% careless does not need more content study. They
-need to stop doing arithmetic in their head. That is a one-week fix worth 30-60
-points, and no amount of reading about quadratics will find it.
+A pattern of process slips calls for a specific habit change, such as writing
+intermediate steps or checking units. Confirm the diagnosis on fresh questions;
+no habit change guarantees a particular score gain or a one-week recovery.
 
 ### 5. Re-drill spaced
 
@@ -88,25 +88,20 @@ and being able to produce it under pressure.
 
 ## How much practice is enough
 
-Rough guidance, per weak skill:
+Question counts are planning tools, not guarantees of reliability. Work in
+short batches, review mistakes, and check the method on unfamiliar questions.
 
-- **30-40 items** to move a skill from broken to functional.
-- **60-80 items** to move it from functional to reliable under time.
+ACT uses fixed banks whose difficulty labels are not verified. The app reports
+ACT accuracy without mastery states. SAT templates generate new versions, but
+familiar designs can make accuracy look stronger than transfer to new tasks.
 
-Each ACT section draws from a fixed bank of 575 questions (175 Easy, 250
-Medium, 150 Hard). SAT sections are built from question templates that
-generate fresh versions, but each skill has only a few templates per
-difficulty, so after a few sets you will meet familiar question types in new
-numbers or passages. Do not do easy items to feel good; do them only to build a
-procedure, then move up.
-
-**When to move up:** use the bars the app's Progress view uses. A skill passes
+**When to move up in SAT practice:** use the bars the app's Progress view uses. A skill passes
 the gate when you get at least 24 of your last 30 Medium questions in it right
-with no hints; start its Hard questions then. It is mastered when you also get
+with no hints; start its Hard questions then. The advanced practice target also requires
 at least 10 of your last 15 Hard questions right. Each question counts once, at
-your first answer. The windows are long because a short run is often passed by
-luck; see the
-[mastery gate](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate).
+your first answer, and each window must span two days and two question designs.
+These are practice targets, not proof of mastery; see the
+[practice target](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan/mastery-gate).
 Until a skill passes, practice it at Easy and Medium, and if you miss most of
 the questions at a level, you are guessing rather than practicing: go back a
 level and relearn the method from the skill's page. This fails when a skill is
@@ -148,8 +143,8 @@ accuracy is not a score.
 - **Minimum 3** before test day, **maximum about 6**. Beyond that you are
   burning material and energy for diminishing returns.
 - The first one is a diagnostic. Take it before studying.
-- The rest go roughly every 2-3 weeks, and always on a Saturday morning at the
-  real start time, in one sitting, with real timing and real breaks.
+- The rest go roughly every 2-3 weeks, at your expected test time,
+  using your approved timing, breaks and accommodations.
 - Your last full test should be **7-10 days before** the real one, never the day
   before. The final week is for light review and sleep.
 
@@ -161,35 +156,24 @@ and it will hurt on test day.
 
 ## What to do the last week
 
-1. No new material. You cannot learn a new skill in five days, and trying makes
-   you anxious.
+1. Prioritize consolidation. A small, specific gap can still be fixed, but
+   avoid trying to rebuild your whole study plan in the final week.
 2. Re-read your error log. This is its whole payoff.
 3. Light drilling only — 20-30 items a day, mixed, mostly in skills you're good
    at. You want to walk in feeling fluent.
 4. Re-read the relevant [pattern guides](05-universal-answer-patterns.md) the
    day before. These are quick wins that survive short-term memory.
-5. Sleep. Two nights before matters more than the night before.
+5. Protect a regular sleep routine throughout the final week.
 
 ---
 
 ## A note on scores and expectations
 
-Realistic movement from serious, well-run prep:
-
-| Starting point | Realistic gain with 8 weeks of real work |
-| --- | --- |
-| Low baseline, big content gaps | Large — the gaps are the opportunity |
-| Mid-range | Moderate — a mix of missing content, process, and pacing |
-| Already high | Small — you are fighting for a handful of items |
-
-Where the gains come from depends on where you start. From a low or middling
-score (around 500 in SAT Math, for example), most of the gain is content: the
-Easy and Medium skills you cannot do yet. From a high score, it is mostly
-careless errors and pacing. Either way, a question pays only when you get it
-right, and the first five questions of a module are much easier to secure
-than the last five. (The SAT does not weight every question the same, so
-this is about expected points, not equal value.) For SAT Math from around 500, see the
-[Learn plan](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan).
+Gains vary with prior knowledge, time available, study quality and test-day
+conditions. Diagnose the source of errors rather than predicting a gain from
+a starting score or a fixed number of weeks. For SAT Math around 500, use the
+[Learn plan](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan)
+as a starting sequence and adjust it using official practice results.
 
 If you are retaking, look at your actual score report first. It tells you which
 reporting categories were weak. Start there, not at the beginning of this

@@ -1511,7 +1511,8 @@
         { out: "f", A: "p", B: "q", text: "For a lens, the focal length f, the object distance p, and the image distance q satisfy the equation below." },
         { out: "T", A: "m", B: "n", text: "Two pumps working together fill a tank in T hours. Their separate filling times m and n, in hours, satisfy the equation below." },
       ]);
-      const k = t.pick([1, 1, 2, 3, 4]);
+      // These scenes describe two components, so each reciprocal appears once.
+      const k = 1;
       const { out, A, B } = scene;
       const kA = `${k === 1 ? "" : k}${out}`;
       const scaledA = k === 1 ? A : `(${A}/${k})`;
@@ -1787,8 +1788,10 @@
         `Solve: x = ${ratio(x)}.`,
       ],
       principles: ["Rewrite both sides with one base; then b^m = b^n (b > 0, b ≠ 1) means m = n.", "(b^u)^m = b^(um), and 1/b^u = b^(−u)."],
-      trap: numeric
-        ? `Setting the exponents equal before rewriting the bases gives ${offers.length ? ratio(offers[0][0]) : "a different value"}; the exponents can be compared only once the bases match.`
+      trap: p === r
+        ? q === s
+          ? "The printed exponents are identical, so equating them gives an identity and does not determine x. Rewrite the different bases with one common base first."
+          : "Equating the printed exponents before matching the bases makes the x-terms cancel and gives a false statement. Rewrite both bases before comparing exponents."
         : "Exponents can be compared only after both sides have the same base, and every term of each exponent is multiplied by the power.",
       hint: `Can ${L.text} and ${Rb.text} be written as powers of the same number?`,
       verify: () => holds(x) && offers.every(([value]) => !holds(value)),
@@ -1839,14 +1842,17 @@
     domain: "Advanced Math",
     skill: "Equivalent expressions",
     subskill: "rational expressions",
-    title: "Sum or difference of rational expressions",
-    recognize: "Fractions with different denominators combine only after each is rewritten over the product of the denominators.",
+    title: "Combining rational expressions",
+    recognize: "Fractions with different denominators combine only after each is rewritten over a common denominator. If the entire sum is in a denominator, take its reciprocal last.",
     rubric: { steps: 1, concept: 1, interpretation: 0, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["equivalent-form", "neighbouring-rule", "sign-error", "intermediate-value"],
     build(t) {
       const roll = t.random();
-      const form = roll < 0.3 ? "sum" : roll < 0.55 ? "difference" : roll < 0.7 ? "constant" : "numeric";
-      return { estimatedSeconds: 90, ...drawUntilDistinct(() => rationalSumItem(t, form)) };
+      // Combining two simple fractions and taking their reciprocal is also
+      // Medium: it applies the same common-denominator rule, then inverts.
+      const form = roll < 0.15 ? "reciprocal" : roll < 0.4 ? "sum" : roll < 0.6 ? "difference" : roll < 0.75 ? "constant" : "numeric";
+      const make = form === "reciprocal" ? () => reciprocalSumItem(t) : () => rationalSumItem(t, form);
+      return { estimatedSeconds: 90, ...drawUntilDistinct(make) };
     },
   };
 
@@ -2064,12 +2070,13 @@
     const given = `(${top})/(1/${x}² ${MINUS} 1/${y}²)`;
     const f = (u, v) => (k / u - k / v) / (1 / (u * u) - 1 / (v * v));
     const key = [`(${kk}${x}${y})/(${x} + ${y})`, (u, v) => (k * u * v) / (u + v)];
+    const scaledSum = k === 1 ? `${x} + ${y}` : `${k}(${x} + ${y})`;
     const offers = [
-      [[`(${k}(${x} + ${y}))/(${x}${y})`, (u, v) => (k * (u + v)) / (u * v)], "Inverts the result: divides the denominator by the numerator."],
+      [[`(${scaledSum})/(${x}${y})`, (u, v) => (k * (u + v)) / (u * v)], "Inverts the result: divides the denominator by the numerator."],
       [[`(${kk}${x}${y})/(${y} ${MINUS} ${x})`, (u, v) => (k * u * v) / (v - u)], `Factors ${y}² ${MINUS} ${x}² as (${y} ${MINUS} ${x})², so the wrong factor is left after canceling.`],
       [[`${k}/(${x} + ${y})`, (u, v) => k / (u + v)], `Clears the fractions in the numerator and denominator with different multipliers, which loses the factor ${x}${y}.`],
       [[`(${MINUS}${kk}${x}${y})/(${x} + ${y})`, (u, v) => (-k * u * v) / (u + v)], `Writes ${k}/${x} ${MINUS} ${k}/${y} as ${k}(${x} ${MINUS} ${y})/(${x}${y}), which reverses the sign.`],
-      [[`(${MINUS}${k}(${x} + ${y}))/(${x}${y})`, (u, v) => (-k * (u + v)) / (u * v)], "Makes two slips: it reverses the sign of the numerator and inverts the result."],
+      [[`(${MINUS}${kk}(${x} + ${y}))/(${x}${y})`, (u, v) => (-k * (u + v)) / (u * v)], "Makes two slips: it reverses the sign of the numerator and inverts the result."],
     ];
     // The sign slip (4) is one change from the key; the inverted result (0)
     // and its sign slip (4) are a pair of their own.
@@ -2172,18 +2179,16 @@
     title: "Complex fraction simplified or solved for a ratio",
     recognize:
       "A fraction whose numerator or denominator holds fractions is cleared by multiplying both by the product of the " +
-      "small denominators. The reciprocal of a sum is not the sum of the reciprocals, a difference of squares may be " +
-      "waiting to cancel, and an equation with no constant term fixes only a ratio.",
-    // Hard: the structure (a reciprocal of a sum, a hidden difference of
-    // squares, a homogeneous equation) must be seen before the algebra.
+      "small denominators. A difference of squares may be waiting to cancel, and an equation with no constant term " +
+      "fixes only a ratio rather than the individual variables.",
+    // Hard: recognize a hidden difference of squares or recover a ratio
+    // from a homogeneous equation. A simple reciprocal sum is Medium.
     rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
     tricks: ["equivalent-form", "neighbouring-rule", "wrong-quantity", "sign-error"],
     build(t) {
-      const form = t.pick(["reciprocal", "squares", "ratio", "ratio"]);
+      const form = t.pick(["squares", "ratio", "ratio"]);
       const numeric = form === "ratio" && t.chance(0.55);
-      const make = form === "reciprocal"
-        ? () => reciprocalSumItem(t)
-        : form === "squares" ? () => differenceSquaresItem(t) : () => fractionRatioItem(t, numeric);
+      const make = form === "squares" ? () => differenceSquaresItem(t) : () => fractionRatioItem(t, numeric);
       return { estimatedSeconds: 120, ...drawUntilDistinctHard(make) };
     },
   };

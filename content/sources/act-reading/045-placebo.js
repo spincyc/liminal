@@ -4,9 +4,9 @@ module.exports = {
   id: "act-reading-p045",
   type: "natural-science",
   title: "The Other Arm",
-  intro: "This passage is adapted from an article on placebo controls in medical research.",
-  content: `A trial of a new drug gives one group the drug and another group a tablet with no
-active ingredient, and compares them. Everyone knows this. What is less widely understood is
+  intro: "This original passage discusses placebo controls in medical research.",
+  content: `A randomised, blinded trial can give one group a new drug and another group a tablet
+with no active ingredient, keep other care comparable, and compare their outcomes. Everyone knows this. What is less widely understood is
 what the second group is for, and the usual explanation — that it measures the placebo
 effect — is not right, or at least is not the reason the group exists.
 
@@ -14,13 +14,13 @@ Suppose a hundred people with back pain are given a new tablet and eighty report
 improvement after six weeks. That number cannot be interpreted, because several things
 produce improvement in six weeks regardless of what anyone takes. Back pain fluctuates, and
 people seek treatment at their worst, so the next measurement will usually be better; this
-is regression to the mean and it is the largest of the effects involved. People report more
+is regression to the mean, one possible contributor to an apparent improvement. People report more
 favourably to a doctor who is interested in them. Some conditions simply resolve. A patient
 who has entered a trial may also change what they do — sleeping differently, moving more,
 paying attention.
 
-The control group is subject to all of those and not to the drug. Subtracting one from the
-other leaves the drug's effect. What the placebo group measures is therefore not a
+The control group is subject to all of those and not to the drug. With random assignment and comparable care, the difference between
+the groups estimates the drug's added effect, subject to sampling uncertainty. What the placebo group measures is therefore not a
 mysterious power of belief but the sum of everything that happens to a person in a trial
 who is not receiving the treatment. It is a bookkeeping device, and calling it the placebo
 effect has caused a great deal of confusion, including among people who ought to know
@@ -28,7 +28,7 @@ better.
 
 That said, something real does sit inside that bundle. It is smaller than popular accounts
 suggest and it is not evenly distributed. Trials that measure something a patient reports —
-pain, nausea, fatigue, mood — find substantial differences between an inert tablet and no
+pain, nausea, fatigue, mood — can find differences between an inert tablet and no
 treatment at all. Trials that measure something an instrument records — tumour size,
 cholesterol, bone density, viral load — find almost nothing. A placebo can change how much
 a person's knee hurts. It does not change what an X-ray of the knee shows. Any account of
@@ -38,11 +38,10 @@ mind over body do not.
 The most surprising recent work involves telling patients the truth. In open-label placebo
 trials, participants are informed that they are receiving an inert tablet, are told plainly
 that it contains no medicine, and are asked to take it anyway. Improvement in reported
-symptoms persists. The effect is smaller than in blinded trials and it is repeatedly
-measurable, in irritable bowel syndrome, chronic low back pain, and cancer-related fatigue.
-Whatever is happening does not require the patient to be deceived, which removes the main
-ethical objection to using it and removes, at the same time, the simplest explanation for
-how it works.
+symptoms persists. Reported benefits have been
+measured, in irritable bowel syndrome, chronic low back pain, and cancer-related fatigue.
+Whatever is happening does not require the patient to be deceived, which challenges the idea that deception is necessary. It does not settle
+every ethical question or show that an inert tablet can replace effective care.
 
 Two accounts remain in contention and neither has won. One is expectation: the ritual of
 taking something, at a set time, in a defined form, generates a prediction that the body
@@ -56,7 +55,8 @@ The practical upshot is narrower than it sounds. Nobody proposes prescribing sug
 instead of medicine. What the work supports is attention to the parts of care that were
 treated as decoration — how long an appointment is, whether the clinician sits down, whether
 the reason for a treatment is explained. Those are not the placebo effect either. They are
-the conditions under which it appears, and they are, unlike most findings in medicine, free.`,
+the conditions under which it appears, and they do not require an expensive new drug, though clinical time and
+resources still have costs.`,
   questions: [
     {
       subskill: "main idea",
@@ -80,32 +80,32 @@ the conditions under which it appears, and they are, unlike most findings in med
       subskill: "locate detail",
       family: "stated-detail",
       difficulty: "Easy",
-      stem: "According to the passage, the largest of the effects producing improvement without treatment is:",
+      stem: "Which effect does the passage name when people seek treatment at a symptom peak and later report a less extreme value?",
       key: "regression towards the average value.",
       wrong: [
-        ["reporting well to an interested doctor.", "This is listed among the effects but is not identified as the largest."],
-        ["conditioning built up over a lifetime.", "Conditioning is one explanation of the placebo effect, not a trial artefact."],
-        ["changes in how much a patient moves.", "Behaviour change is listed last among the effects, without any ranking."],
+        ["reporting well to an interested doctor.", "This concerns reporting behaviour, not a return from an extreme starting measurement."],
+        ["conditioning built up over a lifetime.", "Conditioning concerns a learned response to treatment cues."],
+        ["changes in how much a patient moves.", "Behaviour change is a different possible contributor to improvement."],
       ],
-      why: "The passage says people seek treatment at their worst so the next measurement is usually better, and \"this is regression to the mean and it is the largest of the effects involved.\"",
+      why: "The second paragraph names this statistical tendency regression to the mean. It is one reason improvement alone cannot establish the effect of a treatment; the passage does not assign it a universal rank among causes.",
       steps: [
-        "Find the list of things that produce improvement anyway.",
-        "Take the one the passage singles out by size.",
+        "Locate the description of an unusually severe starting value.",
+        "Match that description to the named statistical effect.",
       ],
-      hint: "One item is explicitly ranked.",
+      hint: "Look for the term attached to a return from an unusually extreme measurement.",
     },
     {
       subskill: "cause and effect",
       family: "cause-of-a-pattern",
       difficulty: "Easy",
-      stem: "The passage says placebos produce substantial differences chiefly in trials that measure:",
+      stem: "The passage associates differences between placebo and no-treatment groups chiefly with outcomes such as:",
       key: "symptoms the patient reports.",
       wrong: [
         ["quantities recorded by an instrument.", "The passage says such trials find almost nothing."],
         ["conditions that resolve on their own.", "Spontaneous resolution is a separate trial artefact."],
         ["outcomes assessed after several years.", "No effect of follow-up length is described."],
       ],
-      why: "The passage says trials measuring \"pain, nausea, fatigue, mood\" find substantial differences, while those measuring \"tumour size, cholesterol, bone density, viral load\" find almost nothing.",
+      why: "The passage contrasts patient-reported symptoms with instrument-measured outcomes, while using qualified language about the studies. The key names the symptom category; it does not claim that every symptom trial shows an effect.",
       steps: [
         "Find the two lists of outcome types.",
         "Match each list with the result reported for it.",
@@ -117,13 +117,13 @@ the conditions under which it appears, and they are, unlike most findings in med
       family: "vocabulary-in-context",
       difficulty: "Easy",
       stem: "The passage calls the control group a \"bookkeeping device\" in order to indicate that it:",
-      key: "exists to be subtracted from the other group.",
+      key: "helps estimate the extra effect associated with the drug.",
       wrong: [
         ["records how many patients drop out of a trial.", "Attrition is not discussed anywhere in the passage."],
         ["measures the strength of a patient's belief.", "The passage denies that this is what the group measures."],
         ["keeps the cost of a trial within its budget.", "No financial consideration is raised."],
       ],
-      why: "The passage says the control group is subject to everything except the drug, and \"subtracting one from the other leaves the drug's effect.\"",
+      why: "The passage describes comparing outcomes in randomly assigned groups with otherwise comparable care. The placebo group helps account for changes that are not specific to the drug; the difference estimates an added effect rather than identifying it without uncertainty.",
       steps: [
         "Read the sentences immediately before the phrase.",
         "Note the arithmetic operation they describe.",
@@ -173,9 +173,9 @@ the conditions under which it appears, and they are, unlike most findings in med
       stem: "Which finding best supports the claim that the effect does not depend on deception?",
       key: "Symptoms improve when patients are told the tablet is inert.",
       wrong: [
-        ["The effect is smaller in open-label than in blinded trials.", "A reduced effect shows blinding matters, not that deception is unnecessary."],
-        ["Instrument-measured outcomes show almost no placebo effect.", "The asymmetry concerns which outcomes respond, not whether deception is needed."],
-        ["Patients report more favourably to an interested doctor.", "This is one of the trial artefacts, separate from the placebo effect itself."],
+        ["The tablet is supplied on a fixed daily schedule.", "A schedule may contribute to the ritual, but it does not establish whether patients were deceived."],
+        ["Instrument-measured outcomes show almost no placebo effect.", "The type of outcome does not show what patients were told."],
+        ["Patients report more favourably to an interested doctor.", "That reporting tendency can occur with or without deception."],
       ],
       why: "The passage says open-label participants \"are told plainly that it contains no medicine, and are asked to take it anyway,\" and that improvement persists, so \"whatever is happening does not require the patient to be deceived.\"",
       steps: [

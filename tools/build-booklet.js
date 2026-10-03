@@ -34,7 +34,15 @@ const SAT_NOTE =
   "print.html, and print the booklet to PDF. This tool builds ACT booklets.";
 
 function actBlueprints() {
-  return core.ALL_BLUEPRINTS.filter((blueprint) => blueprint.test === "ACT");
+  return core.ALL_BLUEPRINTS.filter((blueprint) => blueprint.test === "ACT" && core.blueprintAvailable(blueprint));
+}
+
+function requireActBlueprint(form) {
+  const blueprint = core.blueprintById(form);
+  if ((blueprint && blueprint.test === "SAT") || /^sat/i.test(form)) throw new Error(SAT_NOTE);
+  if (!blueprint) throw new Error(`Unknown form "${form}". Run with --list to see the available ids.`);
+  if (!core.blueprintAvailable(blueprint)) throw new Error(`Form "${form}" includes a section unavailable for new practice.`);
+  return blueprint;
 }
 
 const CHROME_CANDIDATES = [
@@ -172,17 +180,9 @@ function main() {
     return;
   }
 
-  const blueprint = core.blueprintById(options.form);
-  if ((blueprint && blueprint.test === "SAT") || /^sat/i.test(options.form)) {
-    console.error(SAT_NOTE);
-    process.exit(2);
-  }
-  if (!blueprint) {
-    console.error(
-      `Unknown form "${options.form}". Run with --list to see the available ids.`,
-    );
-    process.exit(2);
-  }
+  let blueprint;
+  try { blueprint = requireActBlueprint(options.form); }
+  catch (error) { console.error(error.message); process.exitCode = 2; return; }
 
   const bankBySection = {};
   blueprint.sections.forEach((entry) => {
@@ -251,4 +251,5 @@ function main() {
   written.forEach((file) => console.log(`  wrote ${path.relative(ROOT, file)}`));
 }
 
-main();
+if (require.main === module) main();
+module.exports = { requireActBlueprint, parseArgs };

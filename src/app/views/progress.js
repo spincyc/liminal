@@ -346,7 +346,7 @@
       const byQuestion = new Map(banks.flat().map((question) => [question.id, question]));
       return attempts.map((attempt) => {
         const question = attempt.skill ? null : byQuestion.get(attempt.questionId);
-        return question
+        return question && Progress.questionMatchesAttempt(question, attempt)
           ? { ...attempt, domain: question.domain, skill: question.skill, difficulty: attempt.difficulty || question.difficulty }
           : attempt;
       });
@@ -464,8 +464,8 @@
           ? card("Hard accuracy", percent(hard.accuracy), hardNote(hard))
           : card("Hard accuracy", "—", untiered),
         tiered
-          ? card("Skills at the gate", `${states["at-gate"] + states.mastered} / ${rows.length}`,
-            `${states.mastered} mastered`)
+          ? card("Practice targets met", `${states["at-gate"] + states.mastered} / ${rows.length}`,
+            `${states.mastered} advanced targets met`)
           : card("Skills practised", `${rows.length - states["not-started"]} / ${rows.length}`, "Accuracy only, no gate"),
         card("Missed / marked", `${ctx.formatNumber(missed)} / ${ctx.formatNumber(marked)}`, "",
           missed || marked ? { href: "#review", text: "Review them" } : null),
@@ -912,10 +912,10 @@
       );
       const { GATE, HARD_BAR, MIN_ATTEMPTS } = Analytics;
       const untiered = model.tiered ? "" : "These questions come from fixed banks whose difficulty labels are not " +
-        "verified: Hard differs from Easy by label only. Skills here show accuracy only, with no gate and no Mastered. ";
+        "verified: Hard differs from Easy by label only. Skills here show accuracy only, without practice-target states. ";
       elements.masteryNote.textContent = untiered ||
-        `States are practice guidance, not a score. The gate: at least ${GATE.correct} correct of your last ` +
-        `${GATE.window} Medium questions in a skill. Mastered: the gate, plus at least ${HARD_BAR.correct} ` +
+        `States are practice guidance, not a score or proof of mastery. Practice target met: at least ${GATE.correct} correct of your last ` +
+        `${GATE.window} Medium questions in a skill. Advanced practice target met: that target, plus at least ${HARD_BAR.correct} ` +
         `correct of your last ${HARD_BAR.window} Hard questions. Each window must span ${GATE.days} days and ${GATE.templates} ` +
         "question designs, and each question counts once, at its first answer. " +
         `Under ${MIN_ATTEMPTS} answers is not enough data. ` +

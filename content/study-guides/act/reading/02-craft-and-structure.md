@@ -3,7 +3,8 @@
 **Catalog domain:** Craft and Structure
 **Skills:** Text Structure · Word Meaning and Word Choice · Purpose and Point of
 View
-**~28% of the section** — about 10 questions
+**26–33% of scored Reading questions** — 7–9 of 27; see the
+[overview](00-overview.md) for the official blueprint source.
 
 How the passage is built and what the author's stance is.
 
@@ -167,8 +168,9 @@ and away from:
 
 > *contemptuous · outraged · euphoric · dismissive · hostile · indifferent*
 
-**Extreme attitude words are usually wrong.** So is *indifferent* — an author who
-wrote a passage about something is rarely indifferent to it.
+**Choose tone from the language and the target of the question.** Writing
+about a topic does not rule out indifference toward a particular event or
+person, and strong attitudes can be supported.
 
 **Fails when:** the passage genuinely is polemical. Some Humanities passages are
 sharply critical. Check the language rather than applying the rule blindly.
@@ -252,12 +254,12 @@ personality.
 
 | Stage | Filter | Volume and method |
 | --- | --- | --- |
-| 1. Vocabulary in context | Word Meaning and Word Choice, Easy → Hard | 30. **Cover choices, write a prediction** for the first 20. |
-| 2. Function | Text Structure, Medium | 20. Write the job in your own words first. |
-| 3. Structure | Text Structure, Medium → Hard | 15. Map each paragraph in four words. |
-| 4. Attitude | Purpose and Point of View, Medium | 25. Record valence and intensity separately. |
-| 5. Author vs. subject | Purpose and Point of View, Hard | 15. Highlight the author's own-voice sentences. |
-| 6. Purpose | Purpose and Point of View, Medium | 15. Choose on the verb first. |
+| 1. Vocabulary in context | Word Meaning and Word Choice | 30. **Cover choices, write a prediction** for the first 20. |
+| 2. Function | Text Structure | 20. Write the job in your own words first. |
+| 3. Structure | Text Structure | 15. Map each paragraph in four words. |
+| 4. Attitude | Purpose and Point of View | 25. Record valence and intensity separately. |
+| 5. Author vs. subject | Purpose and Point of View | 15. Highlight the author's own-voice sentences. |
+| 6. Purpose | Purpose and Point of View | 15. Choose on the verb first. |
 
 Stage 4's two-dimension habit — valence, then intensity — is the fastest route
 to reliable attitude questions. Most students evaluate holistically and get

@@ -4,7 +4,7 @@ module.exports = {
   id: "act-reading-p044",
   type: "literary-narrative",
   title: "The Complaint",
-  intro: "This passage is adapted from a novel. Mr Bhatt, retired, has lived at number 14 for twenty-two years.",
+  intro: "This is an original fictional passage. Mr Bhatt, retired, has lived at number 14 for twenty-two years.",
   content: `Mr Bhatt had drafted the letter four times and each version was worse. The first was
 too angry. The second, in correcting the first, had become so mild that it did not appear to
 be complaining about anything. The third achieved a tone he thought of as *reasonable but

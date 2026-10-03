@@ -43,18 +43,22 @@ in my head when I hear a sentence I know she would have said better.`,
       key: "work and then stopped",
       noChange: "A comma before 'and' needs a second subject after it, and none appears.",
       wrong: [
-        ["work; and then stopped", "A semicolon must join independent clauses, and 'then stopped' is not one."],
-        ["work and, then stopped", "The comma now separates the conjunction from the verb it introduces."],
+        [
+          "work; although then stopped",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "work and, then stopped",
+          "The comma now separates the conjunction from the verb it introduces."
+        ]
       ],
-      why:
-        "'Learned' and 'stopped' share the subject 'She,' so they form a compound predicate. A " +
-        "compound predicate takes no comma before its conjunction.",
+      why: "'Learned' and 'stopped' share the subject 'She,' so they form a compound predicate. A compound predicate takes no comma before its conjunction.",
       steps: [
         "Look for a subject after 'and.' There is none — 'then stopped' has no subject of its own.",
-        "Remove the comma.",
+        "Remove the comma."
       ],
       hint: "Ask whether the words after 'and' could stand alone as a sentence.",
-      trap: "The sentence pauses naturally there in speech, which is where the comma feels earned.",
+      trap: "The sentence pauses naturally there in speech, which is where the comma feels earned."
     },
     {
       number: 2,
@@ -339,56 +343,50 @@ in my head when I hear a sentence I know she would have said better.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "symptoms: everything that made her herself stayed on the other side.",
-          "A colon introduces an explanation, but the second clause states a separate loss.",
+          "symptoms; with everything that made her herself stayed on the other side.",
+          "After 'with,' this wording cannot form the independent clause required after the semicolon."
         ],
         [
-          "symptoms, and everything that made her herself stayed on the other side.",
-          "The conjunction repairs the splice but flattens two balanced statements into a list.",
-        ],
+          "symptoms, however everything that made her herself stayed on the other side.",
+          "The conjunctive adverb 'however' cannot join two independent clauses with only a comma."
+        ]
       ],
-      why:
-        "Both clauses are complete and carry equal weight — what she became, and what was left " +
-        "behind. A semicolon holds two such clauses together without subordinating either.",
+      why: "Both sides are independent clauses. A semicolon joins them; the alternatives either leave a comma splice or insert 'with' where a complete second clause is needed.",
       steps: [
-        "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or balances it. It balances.",
+        "Check that both original clauses can stand as sentences.",
+        "Choose the boundary that joins them without making either clause incomplete."
       ],
-      hint: "A semicolon is for two sentences of equal weight; a colon is for one that answers the other.",
-      trap: "The colon is tempting because the second clause feels like it is spelling out the first.",
+      hint: "A semicolon needs a complete clause on each side; an adverb such as 'however' does not repair a comma splice.",
+      trap: "A connecting word may sound like a conjunction without functioning as one."
     },
     {
       number: 14,
       subskill: "support",
       family: "supporting-detail",
       difficulty: "Hard",
-      stem:
-        "Given that all the choices are true, which one, if added here, most effectively supports " +
-        "the idea the essay closes on?",
-      key: "At the funeral an aunt told a story about her that I had never heard, because it had never needed me.",
+      stem: "Given that all the choices are true, which one, if added here, most effectively supports the idea the essay closes on?",
+      key: "At her funeral I heard a family story that had never needed my translation.",
       wrong: [
         [
           "By then I had been translating for her at appointments for thirteen years.",
-          "The span of service restates what the essay has shown rather than extending it.",
+          "The span of service restates what the essay has shown rather than extending it."
         ],
         [
           "I had started college two years earlier and was home only on weekends.",
-          "The narrator's schedule is a fact about the narrator, not about what was lost.",
+          "The narrator's schedule is a fact about the narrator, not about what was lost."
         ],
         [
           "She had lived in the same apartment on Lincoln Avenue for more than forty years.",
-          "The detail is vivid but bears on neither her humor nor the limits of translation.",
-        ],
+          "The detail is vivid but bears on neither her humor nor the limits of translation."
+        ]
       ],
-      why:
-        "The closing says the narrator still hears sentences she would have said better. A story that " +
-        "reached the family without passing through the narrator shows exactly what was missing.",
+      why: "The closing says the narrator still hears sentences she would have said better. A story that reached the family without passing through the narrator shows exactly what was missing.",
       steps: [
         "Read the final sentence and name what it claims was lost.",
-        "Keep the choice that demonstrates that loss rather than restating the essay's facts.",
+        "Keep the choice that demonstrates that loss rather than restating the essay's facts."
       ],
       hint: "The support should show her sounding like herself to someone else.",
-      trap: "Every choice is a true sentence about the same grandmother and the same years.",
+      trap: "Every choice is a true sentence about the same grandmother and the same years."
     },
     {
       number: 15,
@@ -416,33 +414,29 @@ in my head when I hear a sentence I know she would have said better.`,
       subskill: "conclusions",
       family: "goal-assessment",
       difficulty: "Hard",
-      stem:
-        "Suppose the writer's goal had been to write an essay about a skill that solved one problem " +
-        "and created another. Would this essay accomplish that goal?",
-      key: "Yes, because the translating that made appointments work is also what kept her out of her own conversations.",
+      stem: "Suppose the writer's goal had been to write an essay about a skill that solved one problem and created another. Would this essay accomplish that goal?",
+      key: "Yes, because useful translation also sidelined her in her own conversations.",
       wrong: [
         [
           "Yes, because the narrator became fluent enough to explain insurance terms without hunting for words.",
-          "That fluency is the solved half only; the goal requires the cost as well.",
+          "That fluency is the solved half only; the goal requires the cost as well."
         ],
         [
           "No, because the narrator states plainly that the work was done well and done early.",
-          "Doing the work well is what made the second problem possible, not what prevents it.",
+          "Doing the work well is what made the second problem possible, not what prevents it."
         ],
         [
           "No, because the essay is about the narrator's grandmother rather than about the narrator.",
-          "The essay traces what the arrangement did to both of them, which is the point.",
-        ],
+          "The essay traces what the arrangement did to both of them, which is the point."
+        ]
       ],
-      why:
-        "The skill got the dosage right and kept the household running. It also meant adults spoke to " +
-        "a child instead of to her, and that her humor never crossed into English.",
+      why: "The skill got the dosage right and kept the household running. It also meant adults spoke to a child instead of to her, and that her humor never crossed into English.",
       steps: [
         "Name the problem the skill solved and the one it created.",
-        "Keep the reason that holds both halves together.",
+        "Keep the reason that holds both halves together."
       ],
       hint: "The goal has two parts, so the correct reason must have two parts as well.",
-      trap: "One wrong choice describes the essay accurately and only covers half of what the goal asks.",
+      trap: "One wrong choice describes the essay accurately and only covers half of what the goal asks."
     },
   ],
 };

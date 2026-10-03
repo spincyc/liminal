@@ -7,8 +7,8 @@ ACT-specific strategy, see
 
 **SAT students:** the SAT tests a narrower official list — sentence
 boundaries, subject-verb and pronoun agreement, verb form and tense, modifier
-placement, and plurals and possessives. It does not test concision, idioms,
-word choice, who/whom, fewer/less, or comparisons. Use the app's Learn pages
+placement, and plurals and possessives. SAT Standard English Conventions does not separately test concision, idioms,
+who/whom, fewer/less, or comparisons. SAT Words in Context does test word choice. Use the app's Learn pages
 for [Boundaries](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/standard-english-conventions/boundaries)
 and [Form, Structure, and Sense](https://spincyc.github.io/liminal/learn.html#sat-reading-writing/standard-english-conventions/form-structure-and-sense)
 instead of sections 6-8 below.
@@ -162,8 +162,9 @@ standard: *The first trial worked**,** although the second did not.* The
 > non-essential)
 
 **That vs. which:**
-- *That* introduces essential clauses — no comma.
-- *Which* introduces non-essential clauses — comma.
+- *That* introduces restrictive clauses.
+- Nonrestrictive *which* clauses take commas. Restrictive *which* also exists;
+  decide from the clause's function instead of treating the word as proof.
 
 > *The book **that** I ordered arrived.*
 > *The book**, which** I ordered last week, arrived.*
@@ -177,8 +178,8 @@ Two uses only:
 2. **Separate list items that themselves contain commas.**
    > *The team visited Lima, Peru; Quito, Ecuador; and Bogotá, Colombia.*
 
-**A semicolon is functionally a period.** If a period doesn't work there, a
-semicolon doesn't either.
+**When joining clauses, a semicolon acts like a period.** The complex-list
+use above is different and does not require a complete sentence per item.
 
 ### Colon
 
@@ -252,7 +253,7 @@ The verb agrees with the **subject**, not with the nearest noun.
 | *either/or*, *neither/nor* → agrees with **nearer** subject | *Neither the students nor the **teacher is** here.* |
 | Compound subject with *and* → plural | *The **cat and dog are** asleep.* |
 | Collective nouns → singular | *The **committee has** decided.* |
-| Indefinite pronouns → singular | *each, every, either, neither, one, none, everyone, anybody, nobody, somebody* |
+| Indefinite pronouns → singular | *each, either, neither, one, everyone, anybody, nobody, somebody* |
 | *Some, most, all, none, any* → depend on the object | *Most of the **water is** gone. Most of the **books are** gone.* |
 | Gerund subject → singular | ***Running** marathons **is** hard.* |
 | Titles and amounts → singular | *Ten dollars **is** enough.* |
@@ -270,7 +271,10 @@ The verb agrees with the **subject**, not with the nearest noun.
 | Present progressive | *is walking* | Ongoing now |
 | Past progressive | *was walking* | Ongoing in the past |
 
-**Past perfect is the tested one.** Use it for the earlier of two past events.
+**Past perfect** marks an action completed before a past reference point.
+It is useful when that sequence needs clarification; two past events do not
+automatically require it, especially when words such as *before* or *after*
+already establish the order.
 
 > *By the time the results arrived, the team **had already published**.*
 
@@ -341,7 +345,8 @@ The past participle (used with *has/have/had*) differs from the simple past.
 > *The scientist **who** discovered it* → *he discovered it* → *who*
 > *The scientist **whom** we consulted* → *we consulted him* → *whom*
 
-**Never use a reflexive as a subject or plain object.**
+**Use a reflexive object when it refers back to the subject:** *I reminded
+myself.* Do not use it as a substitute for an ordinary subject or object:
 > ✗ *Myself and John attended.* ✓ *John and I attended.*
 > ✗ *Please contact myself.* ✓ *Please contact me.*
 
@@ -465,7 +470,8 @@ Items in a series, comparison, or correlative pair share grammatical form.
 > *fewer **cars**, less **traffic*** · *the number of **errors**, the amount of
 > **time***
 
-**Between vs. among:** *between* two, *among* three or more.
+**Between vs. among:** *between* expresses distinct relationships, even
+between more than two named parties; *among* describes something within a group.
 
 ---
 

@@ -902,12 +902,12 @@
     domain: DOMAIN,
     skill: "Circles",
     subskill: "circle equations",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Circle equation in general form",
     recognize:
       "The equation is a circle in disguise: divide out a common leading coefficient, complete the square in x and in y, " +
       "and move every constant to the right before reading the center (signs flip) and the radius (square root of the right side).",
-    rubric: { steps: 2, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["intermediate-value", "sign-error", "wrong-quantity"],
     build(t) {
       for (;;) {
@@ -1278,15 +1278,15 @@
     domain: GEO,
     skill: "Circles",
     subskill: "circle measures",
-    difficulty: "Easy",
+    difficulty: "Medium",
     title: "Tangent line and radius",
     recognize:
       "A radius drawn to the point of tangency is perpendicular to the tangent line, so the center, the point of tangency, " +
       "and a point on the tangent line form a right triangle whose hypotenuse runs from the center to the outside point.",
-    // Easy (relabelled from Medium, 2026-09-26 review): one fact (the
-    // radius meets the tangent at a right angle) and one use of the
-    // Pythagorean theorem, stated or drawn.
-    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 0 },
+    // Medium: some variants need the right-triangle length followed by a
+    // subtraction of the radius (or a diameter conversion). The earlier
+    // Easy rationale covered only the single-Pythagorean-step variants.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 1, trap: 1 },
     tricks: ["intermediate-value", "neighbouring-rule", "wrong-quantity"],
     build(t) {
       const form = t.pick(["hyp", "hyp", "leg", "leg", "radius", "outside", "outside"]);

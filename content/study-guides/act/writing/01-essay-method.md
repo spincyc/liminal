@@ -59,9 +59,10 @@ higher than a muddled C. Do not spend planning time hunting for cleverness.
 **specific and arguable**. "There are good points on both sides" is not a
 thesis.
 
-### Step 3 — Map your relationship to each perspective
+### Step 3 — Choose which perspectives to analyze
 
-For each of the three, note in a few words:
+Read all three, then choose one or more to relate to your position.
+For each perspective you discuss, note in a few words:
 
 - What it gets **right**
 - What it **misses or assumes**
@@ -203,8 +204,8 @@ clearest markers of a high-scoring essay.
 The middle sentence matters. Acknowledging that the objection is *reasonable*
 before answering it reads as genuine engagement rather than a rhetorical move.
 
-Since you must engage all three perspectives anyway, the perspective you most
-disagree with is your natural counterargument.
+You must relate your position to one or more supplied perspectives, not all
+three. A perspective you disagree with can provide a useful counterargument.
 
 ---
 
@@ -252,7 +253,7 @@ That plan took about four minutes and the essay is now mostly transcription.
 | --- | --- |
 | **Summarizing perspectives** | Apply an analytical move to each |
 | **No clear thesis** | State your position in the introduction, specifically |
-| **Ignoring a perspective** | Address all three; the task requires it |
+| **Ignoring the supplied perspectives** | Analyze your position in relation to at least one; discussing all three is optional |
 | **Assertion without reasoning** | Add the "because" |
 | **Generic examples** | Add specifics: names, dates, mechanisms |
 | **Fence-sitting** | "Both sides have merit" is not a position |

@@ -2,7 +2,7 @@
 
 **Catalog domain:** Scientific Investigation
 **Skills:** Experimental design · Extend an investigation · Evaluate methods
-**~26% of the section** — about 10 questions
+See the [Science overview](00-overview.md) for current scored-question targets.
 
 Questions about *how* the experiments were done, not what they found. These
 appear mostly on Research Summaries passages.
@@ -23,7 +23,7 @@ Know these precisely. Questions turn on them.
 | **Independent variable** | What the experimenter **deliberately changed** |
 | **Dependent variable** | What was **measured** in response |
 | **Control (constant)** | What was **held the same** across trials |
-| **Control group** | A group receiving no treatment, for comparison |
+| **Control group** | A comparison group receiving no treatment, a placebo, or an established treatment, depending on the design |
 | **Trial** | One run of the procedure |
 | **Replication** | Repeating trials to check consistency |
 
@@ -52,12 +52,9 @@ Know these precisely. Questions turn on them.
 
 ### "Why was X held constant?"
 
-The answer is always some version of: **to isolate the effect of the independent
-variable** — so that any observed change can be attributed to the variable being
-tested rather than to something else.
-
-Choices offering practical reasons ("because it was convenient," "because the
-equipment required it") are usually distractors.
+Holding a variable constant often helps isolate the effect being studied.
+Read the actual procedure and question: a condition can also be fixed because
+of measurement requirements or other design constraints.
 
 ### "Why was a control group included?"
 
@@ -91,21 +88,13 @@ dramatic new behavior.
 
 ### Method for "which additional trial"
 
-1. Identify what the question wants to determine.
-2. The correct trial **changes only that variable** and holds everything else
-   constant.
-3. Eliminate trials that change two things at once — they can't isolate a cause.
-4. Eliminate trials that duplicate an existing condition — they add nothing.
-
-**This is the whole skill:** a good additional trial isolates one variable and
-tests a condition not already covered.
-
-### Patterns
-
-**A good experimental modification changes exactly one thing.**
-
-**If a question asks how to test whether A causes B**, the answer varies A while
-holding everything else fixed — and includes a comparison condition.
+1. Identify whether the question calls for testing a new condition, isolating
+   a factor, or checking repeatability.
+2. For a simple causal comparison, choose trials differing in the factor of
+   interest while controlling plausible alternative explanations.
+3. Repeating a condition can be useful when the goal is reliability. Designs
+   that vary several factors systematically can also be valid; do not reject
+   them merely because more than one factor changes.
 
 **"Would the results support the hypothesis?"** requires checking the data
 against the specific claim, not against general plausibility.
@@ -129,7 +118,7 @@ Questions about the quality, limitations, and appropriateness of the design.
 | --- | --- |
 | **No control group** | Nothing to compare the treatment against |
 | **Too few trials** | Results may be chance |
-| **Small sample** | Not representative |
+| **Small sample** | Greater sampling uncertainty; selection method determines bias |
 | **Confounded variables** | Two things changed at once |
 | **Narrow range tested** | Conclusions can't extend beyond the range tested |
 | **No replication** | Consistency unverified |
@@ -141,7 +130,7 @@ Questions about the quality, limitations, and appropriateness of the design.
 | --- | --- |
 | Add a control group | Establish a baseline |
 | Increase trials | Reduce the influence of chance |
-| Increase sample size | Improve representativeness |
+| Increase sample size | Reduce random sampling uncertainty; it does not fix biased selection |
 | Test a wider range | Extend the conclusions' scope |
 | Hold additional variables constant | Remove confounds |
 | Repeat with a different method | Check that the result isn't an artifact |
@@ -167,24 +156,23 @@ mirrors the SAT's statistical-inference questions.
 
 ## Patterns and tells
 
-**Read the procedure, not the results**, for this domain. The answer is in the
-prose describing what was done.
+**Use the procedure and the results the question needs.** Design questions
+often depend on prose describing what was done; interpretation or extension
+questions may also require the data.
 
-**Independent = x-axis / what differs between rows. Dependent = y-axis / what
-was measured.**
+**Identify variables from their roles.** Axes and table headings help, but the
+x-axis need not be a manipulated independent variable.
 
-**"Held constant in order to..." → to isolate the variable being tested.**
-Nearly always.
+**Controls help isolate effects.** Read why a factor was held constant rather
+than treating every practical design choice as a control.
 
-**A good additional trial changes one variable.** Eliminate any choice that
-changes two.
+**Choose an additional trial for the stated purpose.** Changing one variable
+can isolate its effect; repeating a condition can assess consistency, and a
+well-designed multifactor experiment can test more than one variable.
 
-**Conclusions can't exceed the range tested.** Over-generalizing choices are
-distractors.
-
-**More trials → more reliable. Wider range → broader conclusions. Control group
-→ baseline.** These three mappings answer most "how would you improve this"
-questions.
+**Limit conclusions to what the design supports.** Wider sampling may support
+broader generalization; predictions beyond measured values require a model
+or trend assumption. More trials can reduce random noise without fixing bias.
 
 ---
 
@@ -193,10 +181,10 @@ questions.
 | Trap | Description |
 | --- | --- |
 | **Independent/dependent swapped** | |
-| **Confused a control with the control group** | A held-constant variable vs. an untreated comparison group |
+| **Confused a control with the control group** | A held-constant variable vs. a comparison group (which may receive a standard treatment) |
 | **Practical reason for a control** | "For convenience" instead of "to isolate the variable" |
 | **Additional trial changes two variables** | Can't isolate anything |
-| **Duplicate trial** | Tests a condition already covered |
+| **Duplicate trial** | Useful for repeatability; does not by itself test a new condition |
 | **Over-generalized conclusion** | Beyond the tested range or population |
 | **Dramatic extrapolation** | Predicted behavior unlike the observed trend |
 | **Answered from the figure** | The question was about the procedure |
@@ -207,11 +195,11 @@ questions.
 
 | Stage | Filter | Volume and method |
 | --- | --- | --- |
-| 1. Variable identification | Experimental design, Easy → Medium | 25. For each passage, **write out** independent / dependent / controls. |
-| 2. Experiment comparison | Experimental design, Medium | 20. State the single difference between experiments. |
-| 3. Predictions | Extend an investigation, Medium | 20. Name the trend before predicting. |
-| 4. Additional trials | Extend an investigation, Medium → Hard | 20. Check that each choice changes exactly one variable. |
-| 5. Design evaluation | Evaluate methods, Medium → Hard | 20 |
+| 1. Variable identification | Experimental design | 25. For each passage, **write out** independent / dependent / controls. |
+| 2. Experiment comparison | Experimental design | 20. State the single difference between experiments. |
+| 3. Predictions | Extend an investigation | 20. Name the trend before predicting. |
+| 4. Additional trials | Extend an investigation | 20. Check that each choice changes exactly one variable. |
+| 5. Design evaluation | Evaluate methods | 20 |
 | 6. Timed | Whole domain | 2 Research Summaries passages at 6 min each |
 
 Stage 1's write-it-out habit is the foundation. Once identifying variables is

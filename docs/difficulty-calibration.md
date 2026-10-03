@@ -8,6 +8,14 @@ generator can be written to them and a validator can check them.
 
 ## The rule
 
+These labels are provisional editorial judgments, not measured SAT difficulty
+or evidence of readiness. Independent reviewers must solve displayed questions
+and assess the plausible competing answers. The automated rubric check only
+checks declared scores; it cannot determine whether those scores are deserved.
+Reading and Writing decisions must be judged in their linguistic context:
+discriminating between closely related meanings can be demanding without
+requiring several mathematical operations.
+
 **Difficulty is the reasoning a question demands, never the size of its
 numbers, the length of its sentences, or the obscurity of its topic.** A
 question with four-digit numbers and one step is Easy. A question with
@@ -76,6 +84,17 @@ or interpolate a trend. Hard: apply a stated model to a case outside the data,
 or decide which of two viewpoints a new result supports.
 
 ## How this is enforced
+
+For current SAT templates, `tools/check-families.js` checks that the authored
+rubric total matches the declared tier and tests specified answer tells.
+`tools/check-template-reviews.js` requires independent sampled review evidence
+matching the current source fingerprint, version and tier. Neither check
+measures student difficulty or automatically verifies prose meaning. Review
+coverage and remaining limits are recorded in `docs/reviews/`.
+
+The following bank diagnostics apply to the fixed ACT banks, whose difficulty
+labels are not used in practice or progress. They do not establish SAT template
+calibration:
 
 `tools/check-difficulty.js` measures each bank and fails on:
 

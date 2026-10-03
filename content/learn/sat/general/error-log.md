@@ -22,9 +22,8 @@ different fix.
 | Careless | "I'd get it right if I did it again." | Change a habit: circle what is asked, write every step, check signs, reread the question before choosing. |
 | Time | "I ran out, or rushed it." | Pacing practice (see [Modules and pacing](learn:sat/general/modules-and-pacing#pacing)), and redo the question untimed to check whether it was really a content gap. |
 
-> **Note.** For a student around 500 in Math, most misses are content
-> errors, and that is good news: content is the most direct thing to fix.
-> Don't label a miss "careless" to avoid studying. If you can't solve it
+> **Note.** A score around 500 in Math does not identify the cause of a miss.
+> Check both content and process before labeling a miss "careless." If you can't solve it
 > again with the explanation hidden, it is content or process.
 
 A time error often hides another type. When in doubt, redo the question with
@@ -82,10 +81,12 @@ for you and lists what is due each day under Due:
 | third | 7 days after that | a fresh version | whether it lasts |
 | fourth | 21 days after that | a fresh version | whether it is automatic |
 
-A right answer at the fourth return marks the question learned. A wrong
+A right answer at the fourth return completes this review schedule; it does
+not prove lasting mastery. A wrong
 answer, a blank or a right answer after a hint sends it back to the first
 return. Answering it again before it is due changes
-nothing, because inside the gap you would be remembering, not solving.
+nothing in the schedule. You may still review it sooner, but memory of the
+answer makes that attempt weaker evidence of independent recall.
 
 Once a week, count your log by error type and by skill. Mostly content: study
 those skills. Mostly careless: fix habits before adding content. The two or

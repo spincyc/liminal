@@ -1,1134 +1,1329 @@
 {
   "sectionKey": "sat-math",
-  "note": "Bit positions are permanent: append new templates, retire removed ones, never renumber. A version goes up when the template's fingerprint (what it builds for fixed seeds) changes.",
+  "note": "Bit positions are permanent: append new templates, retire removed ones, never renumber. A version goes up when its source fingerprint changes, including shared dependencies. Source hashing conservatively includes comments, metadata and sibling templates in the same file.",
   "templates": [
     {
       "id": "linear-equation-solve",
       "bit": 0,
-      "version": 2,
-      "fingerprint": "25fc5f435ef6ec61"
+      "version": 3,
+      "fingerprint": "459cbf9c87d3b7c2500ccdcc5b7681471499a66a5494f42b1632b4860483f716",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-equation-context-meaning",
       "bit": 1,
-      "version": 2,
-      "fingerprint": "dc8792a8c572a81e"
+      "version": 3,
+      "fingerprint": "ed7cdc8f0292ae884a6d18d01e9eb29c761b63536bbb2e5b5c8e859e13d45eef",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "equation-solution-count",
       "bit": 2,
-      "version": 2,
-      "fingerprint": "2514b64fd1b00480"
+      "version": 3,
+      "fingerprint": "d8fd54d9ae4202d126a5de010de636cbe726628f87d22a6fe4a453a122c11796",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-equation-word-model",
       "bit": 3,
-      "version": 1,
-      "fingerprint": "80133db91fb2a235"
+      "version": 2,
+      "fingerprint": "27ea53f7918e35669f84ac71fc27fab546a08d86d5491a8f5d9aceba29c05097",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "literal-equation-rearrange",
       "bit": 4,
-      "version": 2,
-      "fingerprint": "554782e5b3946b61"
+      "version": 3,
+      "fingerprint": "51cb3fe2561b27c46b611577162e8402d2276de7a658748a032db6a95470cc9e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-expression-from-equation",
       "bit": 5,
-      "version": 1,
-      "fingerprint": "a728e0dad01fa1f2"
+      "version": 2,
+      "fingerprint": "a0f8182be7e9001de89e46be09d6a733c39e1e0b3bc7c60f71681b4e1f292e7e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "function-value-and-input",
       "bit": 6,
-      "version": 2,
-      "fingerprint": "c2fe652cb0bb2a7e"
+      "version": 3,
+      "fingerprint": "46c08888bd8c09139171e07f174d18cec2cfa51185c9dbf4c9e95c855cac1ae5",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "slope-from-two-points",
       "bit": 7,
-      "version": 2,
-      "fingerprint": "f4153e011606a57d"
+      "version": 3,
+      "fingerprint": "83b9b72d52cdb11dd04c6eac6bbb8716d1364cfedbd7254338282ce85bdf4a5e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "line-intercept-read",
       "bit": 8,
-      "version": 2,
-      "fingerprint": "4314bd691b2b9576"
+      "version": 3,
+      "fingerprint": "f34e33aad4d3970efc4e64b4339c218443bbcfb2e32504e4f51a8ba14d6198ee",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "function-constant-from-value",
       "bit": 9,
-      "version": 2,
-      "fingerprint": "72af264dbb9be8c5"
+      "version": 3,
+      "fingerprint": "8b5ec72dcaf0504f49894867cb73710673faa7ef96d4864629447ddb6ccd5f95",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "perpendicular-line-through-point",
       "bit": 10,
-      "version": 1,
-      "fingerprint": "b5517c7d28c3efd6"
+      "version": 2,
+      "fingerprint": "63713bcc91abafed7cf66e974bf1e2a5872974513b991a5283ce1c6ebf0b9112",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-function-transformation",
       "bit": 11,
-      "version": 2,
-      "fingerprint": "ae081ca88d83fa25"
+      "version": 3,
+      "fingerprint": "50a5dc3a0e3bd1a6ee046878f682cdcad4c751a28101d90766304ae3b2b214e9",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-function-identity",
       "bit": 12,
-      "version": 2,
-      "fingerprint": "984dfa4e532cfcf8"
+      "version": 3,
+      "fingerprint": "ca29d4d48b395cfcbabb6dc04307a5c2faa1e1968692b86113fb61630e84ffa9",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "point-on-line",
       "bit": 13,
-      "version": 2,
-      "fingerprint": "98c9b618df30a04f"
+      "version": 3,
+      "fingerprint": "a0b39fd57dcc0826301d9e8141edfa9b9df03398a129e948ce5f28fe67c98a1e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "standard-form-slope",
       "bit": 14,
-      "version": 2,
-      "fingerprint": "c3a587e4675fbb23"
+      "version": 3,
+      "fingerprint": "4fe308bd4ce2c72eb9bb161e46c8982da32f6e6a1c3a482a3f6ba60f8615a850",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-variable-equation-model",
       "bit": 15,
-      "version": 2,
-      "fingerprint": "72b0e7f6be8e0d0f"
+      "version": 3,
+      "fingerprint": "18ef9a08072cb35708971ec41b01b7ac7825d4354529b4561193dd6d0b716e9e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-graph-context",
       "bit": 16,
-      "version": 2,
-      "fingerprint": "9ab87d6318023bac"
+      "version": 3,
+      "fingerprint": "a9c2ea1e938d4217286257fb7b8e047176ee676f44826b179f349089adac364a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-model-interpretation",
       "bit": 17,
-      "version": 2,
-      "fingerprint": "44ab9180058ce3e0"
+      "version": 3,
+      "fingerprint": "3848c76055b733c9d8d00d18980fa01193ce884dfab887326f7f326dfd401097",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "line-point-shift",
       "bit": 18,
-      "version": 2,
-      "fingerprint": "582191c5afa0a343"
+      "version": 3,
+      "fingerprint": "f287151888c003c8f19abfb2443dfe58280593a86bb6c5ec5cff0c39081cd188",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "system-from-context",
       "bit": 19,
-      "version": 1,
-      "fingerprint": "ce25f6b6bc8a3f9c"
+      "version": 2,
+      "fingerprint": "e241abebf5d5bc28abe18ca709febc8ed8e1366498b13a1c13809769b6ade166",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "system-intersection-point",
       "bit": 20,
-      "version": 2,
-      "fingerprint": "203b1b92a0e12eba"
+      "version": 3,
+      "fingerprint": "7de22a0e223a14b259d1ca8311a22acbb06fc3920b2dd96b152f1e889b8537fe",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "system-combination-value",
       "bit": 21,
-      "version": 2,
-      "fingerprint": "c460c6da448774f4"
+      "version": 3,
+      "fingerprint": "0a76c1c4256ab643b11a8e1b50aa0b89278358615e72ffce75266b0bc8c6d765",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "system-word-totals",
       "bit": 22,
-      "version": 1,
-      "fingerprint": "4b7fbe5c7e3e122e"
+      "version": 2,
+      "fingerprint": "658fc2462b9b3a5e813ce583c9f189263032fc97eddef90c7242c1f4b93f17ed",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "system-parameter-solution-count",
       "bit": 23,
-      "version": 2,
-      "fingerprint": "153d4813ee63f876"
+      "version": 3,
+      "fingerprint": "8408ed14f6f2f7bb2f7922473f424af52dd7d42eeb6ca1b3466da20fbbd01b10",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-plan-crossover",
       "bit": 24,
-      "version": 1,
-      "fingerprint": "9ff1ce7d8a721d19"
+      "version": 2,
+      "fingerprint": "665e404a5ba0257f0b711ac29b7b5a649d87408513255e5e42da409050241e5c",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-allowed-range",
       "bit": 25,
-      "version": 2,
-      "fingerprint": "c2bce23e7df68f3a"
+      "version": 3,
+      "fingerprint": "457bd62e51b5a63d88a14efdbf55ec4fc56cfecc0704a4484e98bac2077de262",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-inequality-solve",
       "bit": 26,
-      "version": 2,
-      "fingerprint": "a942f15554f67b84"
+      "version": 3,
+      "fingerprint": "305b8ef5b431ebfdc77b8b326605b0adee2badb648411929cdab2b61d7e9474f",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-word-limit",
       "bit": 27,
-      "version": 1,
-      "fingerprint": "9d6066004c8738ad"
+      "version": 2,
+      "fingerprint": "79cb929ea448012ac60e973972f89dac5abc9d63a5cf67979338ef708405c10b",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-system-check",
       "bit": 28,
-      "version": 1,
-      "fingerprint": "9fedcef215ec13c9"
+      "version": 2,
+      "fingerprint": "47f3e8ba628962463dc7c18aa74819cc180d154c41d707c80d8e93fd4c858313",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-integer-optimization",
       "bit": 29,
-      "version": 2,
-      "fingerprint": "1b614da85e1e74b1"
+      "version": 3,
+      "fingerprint": "80bedbc1d0b3dbedaaf26aa22f95e94c35f3fd77d6928fecd8fed8ed89a3387a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-region-corner",
       "bit": 30,
-      "version": 3,
-      "fingerprint": "4d4b46cd37bc7614"
+      "version": 4,
+      "fingerprint": "f0060df697e88d36510b5ecd38535765df3bc19560b37c1d852936d93d336cd1",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "monomial-exponent-rules",
       "bit": 31,
-      "version": 2,
-      "fingerprint": "c82ddb316d239138"
+      "version": 3,
+      "fingerprint": "3e3f775b1868a18d07f6b53fb5b982ac40426674e35389cb303207311e029e1f",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-factor-match",
       "bit": 32,
-      "version": 2,
-      "fingerprint": "53580d5355165ecb"
+      "version": 3,
+      "fingerprint": "bea62afe9c3eff9eff34665d8be6ef303877cb7c739b21be3ea8ba9713502946",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "rational-expression-combine",
       "bit": 33,
-      "version": 1,
-      "fingerprint": "40560983f2e6ac23"
+      "version": 2,
+      "fingerprint": "fd852e45115973ddb5d0b581efa368b752c4d79229f0acb67f5d6d2bf94bb2ee",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "rational-exponent-rewrite",
       "bit": 34,
-      "version": 3,
-      "fingerprint": "4b4b83ee2a195e57"
+      "version": 4,
+      "fingerprint": "4f7ad57e1ef6f582d60f66773bbb2efcfa268b258512adadefbeb319bf5693b8",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "unknown-coefficient-product",
       "bit": 35,
-      "version": 2,
-      "fingerprint": "0c8b908b878b4f20"
+      "version": 3,
+      "fingerprint": "019494dd106f856c16f7c9c52164c990b822fbc7ac7e5dc0569f4cb5643406f3",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "expression-substitution",
       "bit": 36,
-      "version": 3,
-      "fingerprint": "0612201d6fd8b5b4"
+      "version": 4,
+      "fingerprint": "2e64e4450c08a8c0c3b9950d6d6b908e5e78c1095c93be395d9779761983f5d3",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-square-root-solve",
       "bit": 37,
-      "version": 2,
-      "fingerprint": "aef63502f0367ad1"
+      "version": 3,
+      "fingerprint": "de392bfffc6099ffc8d0209e406017406b375345b51b5e00cfc3b669e22f19bf",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "radical-equation-solve",
       "bit": 38,
-      "version": 1,
-      "fingerprint": "e40bc2a7ca895975"
+      "version": 2,
+      "fingerprint": "3ba7e4949ab6f4f267ea77a2f2c171068a63b6631b89476a44d81753e677a7d5",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "absolute-value-equation",
       "bit": 39,
-      "version": 2,
-      "fingerprint": "30deafa1f7ab8351"
+      "version": 3,
+      "fingerprint": "2f200dde56c66256055423f279ac83e2c8621a3b201e11757c16cdb66b111169",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-irrational-solutions",
       "bit": 40,
-      "version": 3,
-      "fingerprint": "2434d5b393c596b5"
+      "version": 4,
+      "fingerprint": "ed09179c7358e88144202908270ec243906f21a549de0f588c6c7f39dcdea9cb",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "root-sum-product",
       "bit": 41,
-      "version": 3,
-      "fingerprint": "2396155f95bffe33"
+      "version": 4,
+      "fingerprint": "3d959e47baea6eace4b9127a5046780e7dc99b5561bcd7d0408911f1f45c0485",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "extraneous-roots",
       "bit": 42,
-      "version": 2,
-      "fingerprint": "3d98d0e0e826af8c"
+      "version": 3,
+      "fingerprint": "7cc80bff5eacf95ab3b3fb24fa502d7907471659b343f825c5a32578e8fe67ea",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "system-constant-from-solution",
       "bit": 43,
-      "version": 1,
-      "fingerprint": "2e6b205925fba77c"
+      "version": 2,
+      "fingerprint": "0527f7f8b74057963ac84ff168dcd12b4a2f88e1442e8b9502e346430c77d3dd",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "parabola-line-solution-check",
       "bit": 44,
-      "version": 2,
-      "fingerprint": "755d29ca530eefeb"
+      "version": 3,
+      "fingerprint": "398eb67fcb79dfce46e79ca614c7c8a97188b7939daaa9ace89734091dbe2b0c",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "line-parabola-solve",
       "bit": 45,
-      "version": 1,
-      "fingerprint": "85796ae7c0c66551"
+      "version": 2,
+      "fingerprint": "90348db9e6694506eb2b79d9e4b37004f790f5d422d7a3931406c45d2dc22e86",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "nonlinear-system-solve",
       "bit": 46,
-      "version": 1,
-      "fingerprint": "4fd759be45d22b2f"
+      "version": 2,
+      "fingerprint": "8dd473c4be6438edc05bce68805880ca4098c79b84c36e1a30caa36c89d0d392",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "discriminant-parameter",
       "bit": 47,
-      "version": 2,
-      "fingerprint": "d362bdfdbe469327"
+      "version": 3,
+      "fingerprint": "7dcd1a555f69e3ff7f33cc5c373c2dd9134f5d3a1924b6109933232b0cc33d92",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "system-square-identity",
       "bit": 48,
-      "version": 2,
-      "fingerprint": "41285c9277dce0ba"
+      "version": 3,
+      "fingerprint": "e63772d36f7c2ec8af5a858038c2d7c2812c5435b8611cd2637e113de72bd8e9",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "factored-polynomial-intercepts",
       "bit": 49,
-      "version": 2,
-      "fingerprint": "5706b74d0627cbc1"
+      "version": 3,
+      "fingerprint": "d7cb99e604f0ab8098728b1ea075f640180b6fb42ef52baee10ea663395d54dd",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "exponential-model-reading",
       "bit": 50,
-      "version": 2,
-      "fingerprint": "3def721079690307"
+      "version": 3,
+      "fingerprint": "e6a82256f65dd001ee644ac01e673d46e8a9a1245446073dd98f54417c320d29",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-vertex-reading",
       "bit": 51,
-      "version": 2,
-      "fingerprint": "09c24def3b6f3179"
+      "version": 3,
+      "fingerprint": "a73b0a7c4cdca1aa6ec9ced5dad5be23114349466b93f4a416eab52d043fdd50",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "projectile-height-model",
       "bit": 52,
-      "version": 2,
-      "fingerprint": "827b2c55dcaddc18"
+      "version": 3,
+      "fingerprint": "39ce30785093d462ac218736e7f221acbe8102366117f53c874e22d627818c7b",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "exponential-table-model",
       "bit": 53,
-      "version": 2,
-      "fingerprint": "fd355ea339e8c289"
+      "version": 3,
+      "fingerprint": "cc547e0e430ed805a28a54f6568a725647208998f9d2d0b929a708ed391d38d8",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "vertex-from-conditions",
       "bit": 54,
-      "version": 3,
-      "fingerprint": "e796870992b92b7c"
+      "version": 4,
+      "fingerprint": "2b220a6aa3349de675cc77b68fc12bfbd2a91dda1b808d9645b4919945a8708e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "exponential-rewrite",
       "bit": 55,
-      "version": 2,
-      "fingerprint": "bafa4a1b286a955d"
+      "version": 3,
+      "fingerprint": "850d3d33c99bc66193e0373a4c45a31be94f7fa87fe0799107b3134cfa9e87b7",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "function-transformation-table",
       "bit": 56,
-      "version": 3,
-      "fingerprint": "845c0c7ff8bd35c0"
+      "version": 4,
+      "fingerprint": "2d0352df2137a2824a46bd14177dc73811a59c384faf7da889633438ca582b92",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "polynomial-factor-remainder",
       "bit": 57,
-      "version": 3,
-      "fingerprint": "2c1f4a8b74d639ae"
+      "version": 4,
+      "fingerprint": "14a7d768b6963ac824f2d6bcc4e1caf3280523bc0768e05f8fb47c19da6f1e81",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "proportional-rate-scaling",
       "bit": 58,
-      "version": 2,
-      "fingerprint": "812450a44767f0cf"
+      "version": 3,
+      "fingerprint": "a8f0e9ba5b0a5a892d53ca0486d96561be7bf3228970c31884bf9173b2a936b7",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "ratio-share-of-total",
       "bit": 59,
-      "version": 2,
-      "fingerprint": "3b909258bdc2bda6"
+      "version": 3,
+      "fingerprint": "62a4923aa3eaf829d97f62c7b042dbafe4ea9da5b539e2b24b53c8ede3c2cc8b",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "rate-unit-conversion",
       "bit": 60,
-      "version": 2,
-      "fingerprint": "09ce65cc357ac218"
+      "version": 3,
+      "fingerprint": "bfc265d0751bff032085bf0e4b2a9f31a9880e57f12ab0b79ed4a9b338455479",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "ratio-after-change",
       "bit": 61,
-      "version": 1,
-      "fingerprint": "d52210b0a12cbf8b"
+      "version": 2,
+      "fingerprint": "bb64fadeced90db49af60e8c4e4b8c7da09009712970dafff30c0cb1c03ceb27",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "multi-unit-rate",
       "bit": 62,
-      "version": 2,
-      "fingerprint": "13fc029730c58650"
+      "version": 3,
+      "fingerprint": "26156ec014b8e1fda816b101c1aaafdd92a4d73c4a4c94280fa579b1e07a01b8",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "average-rate-two-legs",
       "bit": 63,
-      "version": 2,
-      "fingerprint": "64f737c2c005083f"
+      "version": 3,
+      "fingerprint": "7d36e6f4cc6f0bf260ab3007edd5e016a6f50355d872b66226c35b1dd6e219fa",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "percent-of-a-quantity",
       "bit": 64,
-      "version": 3,
-      "fingerprint": "06af28bc3e038c90"
+      "version": 4,
+      "fingerprint": "0e81d27f905afd1f1188e5dc3ed02f71eef94ca740c4736bf0cbb97402fceb87",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "percent-change-between-values",
       "bit": 65,
-      "version": 2,
-      "fingerprint": "3328d4b8c6c5d5c1"
+      "version": 3,
+      "fingerprint": "400c8ba9e41506d1140723a0374168c5b2f5e9e9f05e38117a2b94ac3d4a894e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "percent-of-a-subgroup",
       "bit": 66,
-      "version": 1,
-      "fingerprint": "5f6981cff8caaadd"
+      "version": 2,
+      "fingerprint": "752ac94084e69152de3b4db8ca055e337c306c034e38175a648dcd42cd70d93d",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "percent-change-expression",
       "bit": 67,
-      "version": 2,
-      "fingerprint": "790095fb59d92de0"
+      "version": 3,
+      "fingerprint": "fd125857ce746921636b32570ce5d19e5efb069d1e4230b394573c2eeb799ef0",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "successive-percent",
       "bit": 68,
-      "version": 3,
-      "fingerprint": "5bc0834aced355f5"
+      "version": 4,
+      "fingerprint": "f70dea24b6248c90028a96ffeabbf6a3ac99ea182cd11657e1a0033cfc8b2605",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "percent-mixture-fixed-part",
       "bit": 69,
-      "version": 2,
-      "fingerprint": "9d9ff48570d3156b"
+      "version": 3,
+      "fingerprint": "70e9a5b6895ee7dcac5382175d6e6ee2fbbbc1d1b1e95f38a1495cbd47fdd4f9",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "list-mean-or-median",
       "bit": 70,
-      "version": 2,
-      "fingerprint": "b42c2226ce192c58"
+      "version": 3,
+      "fingerprint": "aa0a5cefbf65da73cf20b8499fc5b5dbe00e89770e585c59447c3e2199d3f7c4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "box-plot-summary",
       "bit": 71,
-      "version": 2,
-      "fingerprint": "3e4e5215f4f40b7b"
+      "version": 3,
+      "fingerprint": "2cd49a94d189a1b38d7c84bc9cd8c3dbf6227159998d7c1ab385638db20bd581",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "data-display-center",
       "bit": 72,
-      "version": 3,
-      "fingerprint": "cb07e70f970bc959"
+      "version": 4,
+      "fingerprint": "807c623c22a8e2aacf7305c7a684f4abb9662f0395723930b8637c887f0ef088",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "mean-missing-value",
       "bit": 73,
-      "version": 2,
-      "fingerprint": "70369af4d06e6ee7"
+      "version": 3,
+      "fingerprint": "c61b3b7f717cb811fd99e7742ba2c84c2fad8f1dd2938eb0711df7408abfdc25",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "weighted-mean-groups",
       "bit": 74,
-      "version": 2,
-      "fingerprint": "1289034986d710eb"
+      "version": 3,
+      "fingerprint": "c07fb12fcf521f984bf6720e207df7fe4ad5fda6f65bafd8a55258f28c54a645",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "data-change-statistics",
       "bit": 75,
-      "version": 3,
-      "fingerprint": "b2eca2c9abc17c79"
+      "version": 4,
+      "fingerprint": "e4bfd752842194f6fc98aa672421074add0d5f23bc387a0a35eae2e94c9d14d1",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "best-fit-line-equation",
       "bit": 76,
-      "version": 2,
-      "fingerprint": "6501952ff08dec11"
+      "version": 3,
+      "fingerprint": "a1fc9a707736ba7b1ff9bad27e5d12ede5c6367a0fc804470620560d77ab907b",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "scatterplot-shape-and-count",
       "bit": 77,
-      "version": 2,
-      "fingerprint": "8563c734aa025b5d"
+      "version": 3,
+      "fingerprint": "d807c6947ee1b5107773652c25bea049bc4664f68095b8956682dd03cabc8363",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "scatterplot-fit-reading",
       "bit": 78,
-      "version": 2,
-      "fingerprint": "e22f13f83c12446d"
+      "version": 3,
+      "fingerprint": "2e26773f6493facffc3926523551a1ba0d0ab484f9f36c78801ac1fc76822baa",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-group-fit-lines",
       "bit": 79,
-      "version": 2,
-      "fingerprint": "832989df9f86b585"
+      "version": 3,
+      "fingerprint": "0390ed5d72fa0a8fc54d683423ba84bf04da344080c1c273e5d3148820b3a5c6",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "uneven-table-growth",
       "bit": 80,
-      "version": 2,
-      "fingerprint": "e40e0bfd5366049f"
+      "version": 3,
+      "fingerprint": "3d908aa93fdf5be0a7122564a65bdd33e2c2e809b06a5616338dde78b29f91e4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "fit-slope-rescaled-units",
       "bit": 81,
-      "version": 3,
-      "fingerprint": "b3f63a8a7c6f79d6"
+      "version": 4,
+      "fingerprint": "c52ae133a2254c8962f63b3c6e4a6671034d6530b31edbe15604763fe33e61d0",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-way-table-chance",
       "bit": 82,
-      "version": 2,
-      "fingerprint": "cd8fea1bccd43223"
+      "version": 3,
+      "fingerprint": "5388f796e97322f62523d80fdfd4b82e7f0928ca343e5289b87365d306c8da80",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "expected-count-from-probability",
       "bit": 83,
-      "version": 2,
-      "fingerprint": "98110999a91dac6f"
+      "version": 3,
+      "fingerprint": "a8196bf92460b8a5776fe23f707ced38d6671112a5b58719e9d1f1455ae83aab",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "frequency-distribution-probability",
       "bit": 84,
-      "version": 3,
-      "fingerprint": "77cfd8051d8045bc"
+      "version": 4,
+      "fingerprint": "da0742829fa24241eee1395aad44b4cec751776aea026fede9a3a26b594fc777",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-way-or-neither",
       "bit": 85,
-      "version": 2,
-      "fingerprint": "467413f01e10cfc5"
+      "version": 3,
+      "fingerprint": "97d8db919753540e2e2afd66fa6df93d59116567b75f381d10d052d9d74c40ab",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "conditional-two-way",
       "bit": 86,
-      "version": 3,
-      "fingerprint": "f59fca2944613875"
+      "version": 4,
+      "fingerprint": "0ed090ea509baaa8d6b4c9b42c406c56c3050a643171454b2095a827a1cb1e06",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "probability-after-change",
       "bit": 87,
-      "version": 2,
-      "fingerprint": "a27d0a5b2293d106"
+      "version": 3,
+      "fingerprint": "a0024d3490ade3d51fc2dbb49a90e4f411d8e1a61bab7644f6d01b185300fc55",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sampling-method-choice",
       "bit": 88,
-      "version": 2,
-      "fingerprint": "37f56aa70ca957ef"
+      "version": 3,
+      "fingerprint": "476fbeadc3211a6da196b329b0e47c2bb05edc0a4029faffea9fd7fd74160aaa",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "margin-and-sample-size",
       "bit": 89,
-      "version": 2,
-      "fingerprint": "9c32db69974d41b4"
+      "version": 3,
+      "fingerprint": "7f1522c82d72023b6eeb18fb19e403df83ba6601c48563ad3e7662b95d6c4ac6",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sample-proportion-estimate",
       "bit": 90,
-      "version": 2,
-      "fingerprint": "01c55917f4106f9c"
+      "version": 3,
+      "fingerprint": "d940f2e51add5b8387663f90521b767533f25ffc5739dd4f894efa0cb69478d0",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "mark-recapture-estimate",
       "bit": 91,
-      "version": 2,
-      "fingerprint": "b56e8dbe8ea9bf8a"
+      "version": 3,
+      "fingerprint": "7fdbc8dc8d4325c69c7897c71e1dd376a635933b3e647e77485a996cecd81bcd",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sample-inference",
       "bit": 92,
-      "version": 2,
-      "fingerprint": "919c172403d351ac"
+      "version": 3,
+      "fingerprint": "b73900de64bd6a50646e9c0e081f975d62dc37e3382d6ef6696b68eb48b0a26a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-estimates-compare",
       "bit": 93,
-      "version": 2,
-      "fingerprint": "c5151f25ef937d8d"
+      "version": 3,
+      "fingerprint": "dfbc4d6dba9d743b4c33d025aecd13cd1cc18d980e81f451685e96f10812d784",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "altitude-area",
       "bit": 94,
-      "version": 3,
-      "fingerprint": "9babee4c7eb1a62c"
+      "version": 4,
+      "fingerprint": "9c0356b3d87751504cbf569336fb63e75e6d201f7174bbf0c673d8f2eaa439d2",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "rectilinear-floor-plan",
       "bit": 95,
-      "version": 2,
-      "fingerprint": "434f02db6479e94a"
+      "version": 3,
+      "fingerprint": "7bd9b03c74b237bad10c0e608b6adb77b2a744593801a8202cc9a2c120b9e665",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "volume-to-dimension",
       "bit": 96,
-      "version": 2,
-      "fingerprint": "de28a775d8829d9f"
+      "version": 3,
+      "fingerprint": "788e4bb41e86c35f018042261c94e7864a19228598a5f16e3b5e75b498297c01",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "volume-unit-conversion",
       "bit": 97,
-      "version": 2,
-      "fingerprint": "b6e9f6efe2aeeeb7"
+      "version": 3,
+      "fingerprint": "a758923675da2f1513838da6f14b2b50fe74cace2695df62df65aca4daac43fd",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "scaling-area-volume",
       "bit": 98,
-      "version": 3,
-      "fingerprint": "39aa056dba48946d"
+      "version": 4,
+      "fingerprint": "0b3d8b44a3adb5267bfc1505e011c173f9440d7d144003d7dfc376798fce0444",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "displacement-and-transfer",
       "bit": 99,
-      "version": 2,
-      "fingerprint": "ddfb3b75976e5c06"
+      "version": 3,
+      "fingerprint": "147ad28b40dfedce1933918e0a0cbe863dd55b0cc8d58570942e97996bebefd8",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "angle-pair-single-step",
       "bit": 100,
-      "version": 2,
-      "fingerprint": "ce04dc2d69e9bec0"
+      "version": 3,
+      "fingerprint": "9247fd28bcd45cd5151f828e1d9a01d384a93fabc342fe7e0222439551686171",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "triangle-side-bounds",
       "bit": 101,
-      "version": 2,
-      "fingerprint": "d22bf865da2d324d"
+      "version": 3,
+      "fingerprint": "f0fef270d3c03a34a9c78851544667a744c4b1e4f947029a0e3fe52e34112a61",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "crossing-similar-triangles",
       "bit": 102,
-      "version": 2,
-      "fingerprint": "dfe47b9d8dfc34ce"
+      "version": 3,
+      "fingerprint": "0c66fde54133fad8d407ccc26272d6b1e8d4f98cebae0a21160da91eb8567beb",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "shared-height-area-ratio",
       "bit": 103,
-      "version": 2,
-      "fingerprint": "367ae0bcbfa0a30f"
+      "version": 3,
+      "fingerprint": "e13aa272b63706fc11badfdb235b1aa71ef748637e2a4a61d3de1d29144a4298",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "similar-triangles-parallel",
       "bit": 104,
-      "version": 2,
-      "fingerprint": "8a84132a6ffdbb14"
+      "version": 3,
+      "fingerprint": "ef3efb12e6f5aa724538f3c04241d20998eba32661bc4334430467476e51fce7",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "angle-chase-not-to-scale",
       "bit": 105,
-      "version": 2,
-      "fingerprint": "b65a178d141b4d1f"
+      "version": 3,
+      "fingerprint": "036d8a5bfda7fd44af7e49bf42aa9a68bbd564560f99c3642aadd20369d9c24e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "right-triangle-ratio-read",
       "bit": 106,
-      "version": 2,
-      "fingerprint": "f7d3aa891558644b"
+      "version": 3,
+      "fingerprint": "8c3488dde4bd44979160d716a02039734f1b769736ac3eb4e4b187236e0e37fd",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "special-right-triangle",
       "bit": 107,
-      "version": 2,
-      "fingerprint": "a96fb4b8d2da4c6c"
+      "version": 3,
+      "fingerprint": "00d51620b45b68af7cfc1685cc51f7215f38ab87a6b43ad32c81d9310b2776d4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "pythagorean-two-step",
       "bit": 108,
-      "version": 3,
-      "fingerprint": "7d4626059a0d652d"
+      "version": 4,
+      "fingerprint": "c8f72a0588eb27ab4e84e65526148e341a32063cb4aeeb386d52d9c5d264ab11",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "trig-context-length",
       "bit": 109,
-      "version": 2,
-      "fingerprint": "835fc18927474cba"
+      "version": 3,
+      "fingerprint": "29070a844ba007022bba9b546b0004141d565d5698dace50a700e710b54fea76",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "trig-similar-cofunction",
       "bit": 110,
-      "version": 2,
-      "fingerprint": "ff1d91cad95750c0"
+      "version": 3,
+      "fingerprint": "625f6dfa5b79b9564311347c7ad6f1c9e85e9ccfc8042678609c28f109020181",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "unit-circle-quadrant",
       "bit": 111,
-      "version": 2,
-      "fingerprint": "2286775ff9137fff"
+      "version": 3,
+      "fingerprint": "cf0c1a7852542ce3ce9e74654815bef35c029f057849d4cee420ce0643f9c882",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "circle-measure-basic",
       "bit": 112,
-      "version": 2,
-      "fingerprint": "4a60ad037b0789e7"
+      "version": 3,
+      "fingerprint": "319fb907efdc06b2cd63b4552f1c24ab76d0a6dd7d3b3d0b2535686562c3361b",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "circle-measure-convert",
       "bit": 113,
-      "version": 2,
-      "fingerprint": "ee7194338271c245"
+      "version": 3,
+      "fingerprint": "7542d8d88cff2b9881f151837cf1350b81ba6c7407fa894e2632e3e65953adfb",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "circle-equation-features",
       "bit": 114,
-      "version": 3,
-      "fingerprint": "7511b8f7cb6e6bc0"
+      "version": 4,
+      "fingerprint": "ccedd33fa6f1e6b5b55da3b8cd3b69c6c6a8904b0d1008367e108cd145825741",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "tangent-radius-right-angle",
       "bit": 115,
-      "version": 2,
-      "fingerprint": "157630cc96599b7e"
+      "version": 3,
+      "fingerprint": "68bda1f1f687073d50add28b30be275e1f8e433796b7be43b3c5634c1481b92c",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "arc-sector-inscribed",
       "bit": 116,
-      "version": 3,
-      "fingerprint": "b97cbea2d4e6f4e2"
+      "version": 4,
+      "fingerprint": "ee4adcb2a7dfa423543c418c8383f998b06ee9298ebd326731929b09515e1133",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "circle-equation-complete-square",
       "bit": 117,
-      "version": 3,
-      "fingerprint": "7eb1a634c762fe05"
+      "version": 4,
+      "fingerprint": "af35c683c299bda5c0ff843cdb009a1f166a28b2b17c0c36ed0a2342e737192a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "literal-equation-factor-target",
       "bit": 118,
-      "version": 2,
-      "fingerprint": "8b7aea7f29b05be2"
+      "version": 3,
+      "fingerprint": "9928f4eb4fbaaab676cd8db8ec2f99152b5ff6a050e54186e80c45c1985c7fd0",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-equation-unknown-constants",
       "bit": 119,
-      "version": 2,
-      "fingerprint": "6171fe5c0a56e65b"
+      "version": 3,
+      "fingerprint": "5950a304354da90ee64ce7f280d7aa8ba48cc3699197129252f6069a48902743",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-equation-two-quantities",
       "bit": 120,
-      "version": 2,
-      "fingerprint": "f69a2b71ef26ae86"
+      "version": 3,
+      "fingerprint": "b98c0a3d640317654020ca4200e0b00648fa070fcb1b12fc881a7ca1ef2f936d",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-graph-transform-parameter",
       "bit": 121,
-      "version": 2,
-      "fingerprint": "01133ed3f482f5ff"
+      "version": 3,
+      "fingerprint": "d56c56ff9babef10f4a41c44201763a6b40c2c5a83b894d038682961ab930056",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-table-unknown-entry",
       "bit": 122,
-      "version": 2,
-      "fingerprint": "e1f41208d7e33210"
+      "version": 3,
+      "fingerprint": "95e8b1fc70f846280d54e68115317d24a7fd831dc87e6e61642fc4bcc2d32485",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-intercept-meaning",
       "bit": 123,
-      "version": 1,
-      "fingerprint": "9a3ae28194832bc1"
+      "version": 2,
+      "fingerprint": "92626ee45e36de3b6818d100331ba5798ef458363e3648d6da752f37bf731c43",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "translated-line-intercept",
       "bit": 124,
-      "version": 1,
-      "fingerprint": "13652030da10a1e4"
+      "version": 2,
+      "fingerprint": "a256d112e49535fa629c1fce5ff803d9c6daf1013548988e32c34bf5d04b3aa4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "line-intercept-conditions",
       "bit": 125,
-      "version": 2,
-      "fingerprint": "2473b8b0187dc765"
+      "version": 3,
+      "fingerprint": "3ba25de04f8f58f27c3b5aad4d7e707df430ed5e08155893c290fec53ee9e51a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "system-two-constants",
       "bit": 126,
-      "version": 2,
-      "fingerprint": "cfaf27fb0713f5be"
+      "version": 3,
+      "fingerprint": "ce8b6292cc6d4e8e332775beed1d72e1ee724e030bbd6aa9dbe0134b1cc92f6b",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "system-graph-two-lines",
       "bit": 127,
-      "version": 1,
-      "fingerprint": "dbf8805b8aa366c1"
+      "version": 2,
+      "fingerprint": "68a181613796e3268c4db3fb2c81a648c6fbf4a1ce48d05b26bb4fb2625aa28f",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "system-mixture-blend",
       "bit": 128,
-      "version": 2,
-      "fingerprint": "091fee5c31522452"
+      "version": 3,
+      "fingerprint": "4b16301fd64fefb8c5884923bc8a7ce19f9287d6506466432ecb004d56f2c30b",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-two-variable-context",
       "bit": 129,
-      "version": 2,
-      "fingerprint": "a1ae022cf2004f72"
+      "version": 3,
+      "fingerprint": "7bce6ac0c6d9f7d3722c4d0397c7639eb40567e514a4ebdbd97a2894fed0a173",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-graph-region",
       "bit": 130,
-      "version": 1,
-      "fingerprint": "21ccac7369c4f6ca"
+      "version": 2,
+      "fingerprint": "f092cf6a2830fd1cdc561cf2d748cb786bbef08b1ca8e2bae175cd567128608e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-parameter-range",
       "bit": 131,
-      "version": 2,
-      "fingerprint": "fb831f0a365d1223"
+      "version": 3,
+      "fingerprint": "d18fca76515c50b2dd32cc2970f3825611543843f9171df119301a92d3dee271",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "expression-from-combination",
       "bit": 132,
-      "version": 1,
-      "fingerprint": "60c85468cf8c2799"
+      "version": 2,
+      "fingerprint": "68a0ad65ea74fd00d00eb16f5036e1dc94b2d5f615834f4d229dc0ee5cf348b8",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "nonlinear-formula-rearrange",
       "bit": 133,
-      "version": 1,
-      "fingerprint": "ad50d52006e7ed6e"
+      "version": 2,
+      "fingerprint": "4b6d8199a4f205b6cfb075cf93085309d0886cf4788880b0d48515787154b4ca",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "common-base-exponent",
       "bit": 134,
-      "version": 1,
-      "fingerprint": "2a21a89e761a8614"
+      "version": 2,
+      "fingerprint": "a05c06c0582debe64d694ec2785dd408f24a88960389cf8525c2d45f34cb30cc",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-structure-form",
       "bit": 135,
-      "version": 2,
-      "fingerprint": "d2b31da68459ba2e"
+      "version": 3,
+      "fingerprint": "5d0b81253c21e60be6500d4292e0e794ccd05c2fcc28549d88718814a96c8950",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "rational-equation-structure",
       "bit": 136,
-      "version": 2,
-      "fingerprint": "71b986adac01fed4"
+      "version": 3,
+      "fingerprint": "49539df5ac4e521dbbfa1823c6f217ac159d10203035cc9d01bfc388d03d93f0",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "absolute-value-cases",
       "bit": 137,
-      "version": 2,
-      "fingerprint": "07ad5e345b427340"
+      "version": 3,
+      "fingerprint": "b208b080fbca754cee7d919092b773effea3d9674b5398cc0cff9ebd52178e2d",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "line-circle-tangent",
       "bit": 138,
-      "version": 2,
-      "fingerprint": "590fae39dc99d294"
+      "version": 3,
+      "fingerprint": "56d835c6e85ff6d0da98703b8e3ecb2bde0aed02fd130c6ffb1bc546e0490cf2",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "polynomial-level-count",
       "bit": 139,
-      "version": 1,
-      "fingerprint": "7cf7ce9c23b15736"
+      "version": 2,
+      "fingerprint": "774cf5d43e50e3dc401df3fd0e6a00a2d5474c80a4258d8357211ed038463380",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "function-table-evaluate",
       "bit": 140,
-      "version": 2,
-      "fingerprint": "5f942e1a42a3076b"
+      "version": 3,
+      "fingerprint": "276429af0a19618320588865955c1a077b5e70f55787cda51ac69ccb816de4bd",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "polynomial-constant-from-remainder",
       "bit": 141,
-      "version": 2,
-      "fingerprint": "5ea047458cb7e1c2"
+      "version": 3,
+      "fingerprint": "12068a9a280cdd6ba3b7d2afbdfacfa588b4c8387d7121955b9dd78497de7a62",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "exponential-from-words",
       "bit": 142,
-      "version": 1,
-      "fingerprint": "b848fb4d81587327"
+      "version": 2,
+      "fingerprint": "cb466e7ee99fd2bebcb1a9825533dc9057b8451c9180fba76be7e546a15a4f15",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "graph-which-function",
       "bit": 143,
-      "version": 2,
-      "fingerprint": "c3d67c2a218d7d09"
+      "version": 3,
+      "fingerprint": "4e31cb4562ad781db16096b1f1d11124d382064fd92e82e99c677e4b5bb57fca",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "graph-transformation",
       "bit": 144,
-      "version": 1,
-      "fingerprint": "3a8218b781668ada"
+      "version": 2,
+      "fingerprint": "fead50ec64c40336a15c0c54a625d6e07c37e450d57f18dd4b8985580bf47bd1",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "average-rate-required-leg",
       "bit": 145,
-      "version": 2,
-      "fingerprint": "fdf4b90065c93dd1"
+      "version": 3,
+      "fingerprint": "210402a7f3faae692aa3c0e18ddbf6d76723da4fd7d12d39716a4ac717593959",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "density-cube-edge",
       "bit": 146,
-      "version": 2,
-      "fingerprint": "6fff5f53395bb035"
+      "version": 3,
+      "fingerprint": "bd21830a1b624d40f5227228c7c13850b6eeceec19db434cf570e64e3df68302",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "combined-work-rate",
       "bit": 147,
-      "version": 2,
-      "fingerprint": "6383e53694adaa95"
+      "version": 3,
+      "fingerprint": "7b6ab799c03c5c539311425f1ae93be0e2d1ebf984afcdb670a049bb4a4fdca6",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "successive-percent-undo",
       "bit": 148,
-      "version": 1,
-      "fingerprint": "16c6bfcaadf4fbc6"
+      "version": 2,
+      "fingerprint": "e871faeddfba63a8ee6f198925654f163b81a8d5e60f264f06bdbac05a877af3",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "percent-of-equals-percent-of",
       "bit": 149,
-      "version": 1,
-      "fingerprint": "e704b7f7b4956413"
+      "version": 2,
+      "fingerprint": "e15ca12cd34c07cd28b9aa3a380872c778aaf9b2af83649510390f1d499c26d2",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "percent-base-reversal",
       "bit": 150,
-      "version": 2,
-      "fingerprint": "5efe602a38788bec"
+      "version": 3,
+      "fingerprint": "895078c66696097d343f75baea64a2cf389b87aa31eb3aeb3ee974c584ca1bd2",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "data-change-median",
       "bit": 151,
-      "version": 2,
-      "fingerprint": "df84ae9451938839"
+      "version": 3,
+      "fingerprint": "a259c180426249e4de9e1e95e708c59a0840a05a8b64c8dc62f8a76f3336f84a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "histogram-class-intervals",
       "bit": 152,
-      "version": 1,
-      "fingerprint": "9c0f565a98e1b887"
+      "version": 2,
+      "fingerprint": "3ec31d3fce28f117f691548ab9c076230286c7942a18a56d125096c26fbd75e4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "compare-spread-plots",
       "bit": 153,
-      "version": 1,
-      "fingerprint": "90a31ee653bda80e"
+      "version": 2,
+      "fingerprint": "0adb21220d16787d41932dfb392b014c1aa931b778e38d74efe45582037b7251",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "could-be-median",
       "bit": 154,
-      "version": 2,
-      "fingerprint": "8c4d7c5c1d019885"
+      "version": 3,
+      "fingerprint": "7dbfd4a4be8e9b9d016e40a758cba495303df41fecd2d8eeae72cf5bf055e587",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "fit-model-choice",
       "bit": 155,
-      "version": 1,
-      "fingerprint": "eba430af6f55f9c5"
+      "version": 2,
+      "fingerprint": "6bba1b334dae6e82da62fd49402cc18823751839f9c9758226142287b57d92b4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "outlier-removal-fit",
       "bit": 156,
-      "version": 2,
-      "fingerprint": "bb862c12ecf902d8"
+      "version": 3,
+      "fingerprint": "cc9358fed999737d9512a49882e6526071997c7893a449289e10b4a5ec6d5dc0",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "exponential-fit-interpretation",
       "bit": 157,
-      "version": 2,
-      "fingerprint": "d7522f806140d273"
+      "version": 3,
+      "fingerprint": "3ecbc6fef7366b629d40f3ca41a02daef1f4baf0be2a04221c39f77040953044",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "conditional-table-probability",
       "bit": 158,
-      "version": 2,
-      "fingerprint": "1fe26dd825b00ad6"
+      "version": 3,
+      "fingerprint": "6db4019817646cc63cd9b88362eacb896918fbdbd5adc7a468f8f23c59dca8a1",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-way-unknown-cells",
       "bit": 159,
-      "version": 1,
-      "fingerprint": "5a3bd5c667f42e1e"
+      "version": 2,
+      "fingerprint": "c03371d89966ea5648a1f0dd487a8cf7800be7564a21884d63170574194c5f3e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "interval-mean-scope",
       "bit": 160,
-      "version": 2,
-      "fingerprint": "5cea65b50f71c132"
+      "version": 3,
+      "fingerprint": "9e614e0cbbdea954b0e93cbd30e16c1094f5943d0f1f11a758c86543f36108f1",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "scaling-dimension-change",
       "bit": 161,
-      "version": 2,
-      "fingerprint": "f03fca241e8e6fd1"
+      "version": 3,
+      "fingerprint": "1678abe83b78f6803879743cf6137c6b6f3be24c30baf8c366e025bdc5968133",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inscribed-polygon-circle",
       "bit": 162,
-      "version": 1,
-      "fingerprint": "2e291fbe02079da1"
+      "version": 2,
+      "fingerprint": "38c22e9576a4482f138062b495ef568043e435a42f8d60708a1fed1f29fc3027",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "shaded-region-area",
       "bit": 163,
-      "version": 2,
-      "fingerprint": "a9f230d5b79d390d"
+      "version": 3,
+      "fingerprint": "39ef202b1afc1e6c86d6261db062de86cc963dfef850ed65ceb7a9bae249d0d8",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "altitude-hypotenuse-similarity",
       "bit": 164,
-      "version": 1,
-      "fingerprint": "5b456a9c2d184fa5"
+      "version": 2,
+      "fingerprint": "61e47f67bec6a0e6a8b66c3b6e5e91ab4e1a9464938e0cd62456e60e48fa55b2",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "nonparallel-similarity",
       "bit": 165,
-      "version": 1,
-      "fingerprint": "7be393b1dfd1d5a9"
+      "version": 2,
+      "fingerprint": "c3412e4bed47ce2d2b7128ca9da8a9496d78c4cf3db4661a7e4b1d49ccb4d956",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "regular-polygon-angles",
       "bit": 166,
-      "version": 2,
-      "fingerprint": "50cca8d9f2858841"
+      "version": 3,
+      "fingerprint": "142ff35d6599067cb85bd81cdddc2e538d6e3cc58f9ca18fb65088a0e4204454",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "cofunction-complementary-angles",
       "bit": 167,
-      "version": 1,
-      "fingerprint": "4cdb261d4bfb855d"
+      "version": 2,
+      "fingerprint": "8497d727f322b5b9ccb43c9e924a828536214dd806011e21e2430dbaa8fb455a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-observer-elevation",
       "bit": 168,
-      "version": 2,
-      "fingerprint": "5248b220bd5b22e1"
+      "version": 3,
+      "fingerprint": "70dfbb9092a9f6a3d06a5f7cd954482a3d8d4c690fff6e68ed7dd494dc7e75c5",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "chord-distance-center",
       "bit": 169,
-      "version": 1,
-      "fingerprint": "4768205c260527a2"
+      "version": 2,
+      "fingerprint": "bb11dc7e1d6e565d239820657bf54dbb206ea0db132235b3a521ef0697dcb8ec",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "chord-arc-height",
       "bit": 170,
-      "version": 2,
-      "fingerprint": "a6f7691bbd06a442"
+      "version": 3,
+      "fingerprint": "3224c73e2338f5dbcb04ce9867440a3f353549fa40a648be749a2c38118fe95a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "stratified-sample-total",
       "bit": 171,
-      "version": 1,
-      "fingerprint": "741792e6ed7d7714"
+      "version": 2,
+      "fingerprint": "8b7369d391bc0428aa15dea08f2249e4d0def77a19f5dbd6aa24e510b46a3a80",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "percent-comparison-chain",
       "bit": 172,
-      "version": 1,
-      "fingerprint": "7cd2aeadf060e1f9"
+      "version": 2,
+      "fingerprint": "5f22ecb0a5b63e239137693c133d56a4195666e88e0fde41ba82639ef8571bdd",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "percent-share-and-total",
       "bit": 173,
-      "version": 1,
-      "fingerprint": "afee00bc87216e81"
+      "version": 2,
+      "fingerprint": "2648b9fb5dd3456ab53aa2d8ad50c16741465b9b1b0879bd4c5bbecb7d40ebf6",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "extreme-value-correction",
       "bit": 174,
-      "version": 2,
-      "fingerprint": "873987743fdf28e5"
+      "version": 3,
+      "fingerprint": "d22ba138b0a979815199f36ade265fcd40485354b0e045dbc44b651230337e1d",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "fit-slope-unit-rate",
       "bit": 175,
-      "version": 1,
-      "fingerprint": "53c7c7ba66403d7c"
+      "version": 2,
+      "fingerprint": "5c315f0d1135d9cf11fbfcef13893c5e542eec9919973303883a11b05975c337",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "residual-actual-predicted",
       "bit": 176,
-      "version": 1,
-      "fingerprint": "7b19dc8e3aa4adad"
+      "version": 2,
+      "fingerprint": "d758b421dc526e73655c9778b03ea6abb4dfb5f8af10cf8540b1771a1856f9a4",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "experiment-scope-grid",
       "bit": 177,
-      "version": 1,
-      "fingerprint": "b7901340cdac22cd"
+      "version": 2,
+      "fingerprint": "b93b54fa66bb4a59dd2e9ccd9dc9e1e54f6ee9910b7f3b8e0f5e9ac6061fa99c",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "margin-sample-size-scaling",
       "bit": 178,
-      "version": 2,
-      "fingerprint": "dc211515d6c8e1d2"
+      "version": 3,
+      "fingerprint": "70e90efac7cfa1d8c624ab2aaa1075744c2e1a37c87d5bf7257b20b135667b4d",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "circles-packed-in-square",
       "bit": 179,
-      "version": 1,
-      "fingerprint": "810bc49eff28461c"
+      "version": 2,
+      "fingerprint": "1a223b86eb67b0eb739f8af7a86d37bbad60d5752ace69b7fea78f3e16814a0d",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inscribed-composite-solids",
       "bit": 180,
-      "version": 2,
-      "fingerprint": "f3b1b93804642ab5"
+      "version": 3,
+      "fingerprint": "711c0eed86278c0e7e12a363fcb86ffe2254c770ca9a4753e0855a4cc990bd8a",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "regular-polygon-angle-ratio",
       "bit": 181,
-      "version": 1,
-      "fingerprint": "8a4917478d2b4b43"
+      "version": 2,
+      "fingerprint": "16968b57715a19023b3051ad5e09c1c7ca900c20f5dbac32b80438d86964813e",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "circle-tangent-line",
       "bit": 182,
-      "version": 1,
-      "fingerprint": "aef2e9a46f46d052"
+      "version": 2,
+      "fingerprint": "77c64a2e229a83b72f3eba543baacd8e7031c6311595f80dbf7e8380a9153258",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "integer-combination-count",
       "bit": 183,
-      "version": 2,
-      "fingerprint": "547fe58b9c72d90a"
+      "version": 3,
+      "fingerprint": "596e4fb1ed75d52f47b470c85c4799871773152841acfc1829866496035cd96d",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "system-intersection-region",
       "bit": 184,
-      "version": 1,
-      "fingerprint": "b108399e61b53e2e"
+      "version": 2,
+      "fingerprint": "71bc5c83ff97d0a518a2927718f5e47d12778cf3c10d6bf142e1c6568d3a4414",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "complex-fraction-equivalence",
       "bit": 185,
-      "version": 1,
-      "fingerprint": "334f217c4f10e244"
+      "version": 2,
+      "fingerprint": "c055c83e278f4cf393183c3e349ad12d2b6c394db7e51df2b773a01d32794a06",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "radical-parameter-extraneous",
       "bit": 186,
-      "version": 1,
-      "fingerprint": "ff3950199ee4e813"
+      "version": 2,
+      "fingerprint": "2fb70434d90ffb13a2c68dbeed6a7d2899895e8bbfdf6dd18fa849587f1cc2ab",
+      "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-must-be-true",
       "bit": 187,
+      "version": 2,
+      "fingerprint": "c0e284aa8030c6902099f95f5e70f4787a1ef783b4bbf82d72577b21eea12c1f",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "prism-volume-basic",
+      "bit": 188,
       "version": 1,
-      "fingerprint": "187026a77f1b4009"
+      "fingerprint": "e0258a5043e8b1eeb9bc5a0248d88d98183797350816e6a64185c6c3aa82aa46",
+      "fingerprintAlgorithm": "source-v1"
     }
   ]
 }

@@ -1185,7 +1185,7 @@
 
   const AVERAGE_PRINCIPLES = [
     "An average rate is the total amount divided by the total time (or total distance by total fuel), not the mean of the rates.",
-    "When the parts take different times, each rate counts in proportion to its time, so the average leans toward the slower rate.",
+    "For speed over several time periods, each speed is weighted by its time. Over two equal distances, the slower part takes longer, so the average is closer to the slower speed.",
   ];
 
   function averageRoundTrip(t, numeric) {
@@ -1508,15 +1508,20 @@
       const d = t.pick(ctx.d);
       const e = t.pick(EDGES);
       const cm3 = e ** 3;
+      const cavityRatio = t.pick([[1, 2], [2, 3], [3, 4]]);
+      const [ca, cb] = cavityRatio;
+      if (e % cb !== 0) return null;
+      const inner = e * ca / cb;
+      const materialVolume = cm3 - inner ** 3;
       // Mass in kilograms: kg/m^3 times m^3, or g/cm^3 times cm^3 over 1,000.
-      const M = tidy(ctx.system === "si" ? (d * cm3) / 1e6 : (d * cm3) / 1000);
-      if (!isClean(M, 3) || M < 0.1 || M > 3000) return null;
+      const M = tidy(ctx.system === "si" ? (d * materialVolume) / 1e6 : (d * materialVolume) / 1000);
+      if (!isClean(M, 3) || C.looksCutOff(num(M)) || M < 0.1 || M > 3000) return null;
       const densityText = ctx.system === "si"
         ? `${num(d)} kilograms per cubic meter`
         : `${num(d)} grams per cubic centimeter`;
       const key = askArea ? 6 * e * e : e;
-      const volumeText = ctx.system === "si" ? `${num(M)} ÷ ${num(d)} = ${num(tidy(cm3 / 1e6))} cubic meter` : `${fmt(M * 1000)} ÷ ${num(d)} = ${fmt(cm3)} cubic centimeters`;
-      const inCm = ctx.system === "si" ? `${num(tidy(cm3 / 1e6))} × 1,000,000 = ${fmt(cm3)} cubic centimeters` : `${fmt(cm3)} cubic centimeters`;
+      const volumeText = ctx.system === "si" ? `${num(M)} ÷ ${num(d)} = ${num(tidy(materialVolume / 1e6))} cubic meter` : `${fmt(M * 1000)} ÷ ${num(d)} = ${fmt(materialVolume)} cubic centimeters`;
+      const inCm = ctx.system === "si" ? `${num(tidy(materialVolume / 1e6))} × 1,000,000 = ${fmt(materialVolume)} cubic centimeters` : `${fmt(materialVolume)} cubic centimeters`;
       // The unit slip: meters for centimeters (si), or kilograms read as grams (cgs).
       const slipEdge = ctx.system === "si" ? e / 100 : e / 10;
       const slipReason = ctx.system === "si"
@@ -1546,30 +1551,31 @@
       return packRanked(t, numeric, key, candidates, {
         stimulus: null,
         stem:
-          `A solid cube is made of ${ctx.name} that has a density of ${densityText}. The mass of the cube is ${mass}. ` +
-          (askArea ? "What is the total surface area, in square centimeters, of the cube?" : "What is the length, in centimeters, of each edge of the cube?"),
+          `A hollow cube is made of ${ctx.name} with density ${densityText}. It contains a sealed cubical cavity whose edge length is ${frac(ca, cb)} of the outer edge length. The material alone has a mass of ${mass}. ` +
+          (askArea ? "What is the total area, in square centimeters, of the six exterior faces?" : "What is the length, in centimeters, of each outer edge?"),
         explanation:
-          `Volume = mass ÷ density: ${volumeText}` + (ctx.system === "si" ? `, which is ${inCm}` : "") + `. ` +
-          `A cube's volume is its edge cubed, so the edge is the cube root of ${fmt(cm3)}: ${e} centimeters.` +
+          `Material volume = mass ÷ density: ${volumeText}` + (ctx.system === "si" ? `, which is ${inCm}` : "") + `. ` +
+          `If the outer edge is s, the material occupies s³ − ((${frac(ca, cb)})s)³ = (${frac(cb ** 3 - ca ** 3, cb ** 3)})s³. Thus s³ = ${fmt(cm3)}, so s = ${e} centimeters.` +
           (askArea ? ` Its six square faces have a total area of 6 × ${e}² = ${fmt(key)} square centimeters.` : ""),
         steps: [
-          `Volume = mass ÷ density: ${volumeText}.`,
+          `Material volume = mass ÷ density: ${volumeText}.`,
           ctx.system === "si" ? `In cubic centimeters: ${inCm} (a cubic meter is 100 × 100 × 100 cubic centimeters).` : `The mass in grams is ${fmt(M * 1000)}, matching the density's units.`,
-          `Edge: the number whose cube is ${fmt(cm3)} is ${e}.`,
+          `Subtract the cavity volume: (${frac(cb ** 3 - ca ** 3, cb ** 3)})s³ = ${fmt(materialVolume)}, so s³ = ${fmt(cm3)} and s = ${e}.`,
           askArea ? `Surface area: 6 × ${e} × ${e} = ${fmt(key)}.` : `The edge is ${e} centimeters.`,
         ],
         principles: [
-          "Density = mass ÷ volume, so volume = mass ÷ density, in matching units.",
+          "Density uses the volume occupied by material. For a hollow object, subtract the cavity volume from the outer volume.",
           "A cube with edge s has volume s³ and surface area 6s²; a cubic meter is 100³ = 1,000,000 cubic centimeters.",
         ],
         trap: askArea
           ? `The volume, ${fmt(cm3)}, is a step on the way; the edge comes from its cube root, and the surface area counts all six faces.`
           : `The volume, ${fmt(cm3)}, is not the edge: the edge is its cube root, measured in centimeters.`,
-        hint: "What does the density say about the volume of the cube?",
+        hint: "Which volume does mass divided by density measure, and how is that related to the outer edge?",
         estimatedSeconds: 120,
         verify: () => {
           const edge = askArea ? Math.sqrt(key / 6) : key;
-          const massBack = ctx.system === "si" ? d * (edge / 100) ** 3 : (d * edge ** 3) / 1000;
+          const material = edge ** 3 - (edge * ca / cb) ** 3;
+          const massBack = ctx.system === "si" ? d * material / 1e6 : d * material / 1000;
           return close(massBack, M) && Number.isInteger(edge);
         },
       }, { show: fmt, places: 3 });
@@ -1582,13 +1588,13 @@
     skill: "Ratios, rates, and units",
     subskill: "unit conversion",
     difficulty: "Hard",
-    title: "A cube's size from its mass and density",
+    title: "A hollow cube's size from its mass and density",
     recognize:
-      "Density links mass and volume (volume = mass ÷ density, in matching units); a cube's edge is the cube root of its " +
-      "volume, and a cubic meter is 100³ cubic centimeters, not 100.",
-    // Hard: nothing asks for a volume, yet the volume, a cube root, and a
-    // cubed unit factor all stand between the given mass and the answer.
-    rubric: { steps: 2, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 2, trap: 1 },
+      "Density gives the volume of material, not the outer cube. Subtract the cavity's cubed edge ratio from 1 before " +
+      "recovering the outer volume, then take its cube root and use the requested units.",
+    // Hard: distinguish material from enclosing volume, cube a linear
+    // cavity ratio, and combine density, units, and three-dimensional geometry.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 2, trap: 1 },
     tricks: ["intermediate-value", "unit-mismatch", "neighbouring-rule"],
     build(t) {
       return densityCube(t, t.chance(0.35));

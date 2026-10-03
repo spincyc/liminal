@@ -13,8 +13,8 @@ units). This skill is part of Geometry and Trigonometry,
 {{fact:sat-math-geometry}} of the Math section. Bluebook's reference sheet
 gives most basic formulas, so the questions test setup: composite shapes,
 missing dimensions found backward, and what happens to area and volume when
-every length is scaled. Hard questions find the one length two figures
-share, or work from an area or volume ratio back to the lengths. See
+every length is scaled. Hard questions connect several geometric relationships, such as a tangent
+chord and two concentric circles, or the surfaces exposed by drilling a solid. See
 [the reference sheet](learn:sat/general/format-and-scoring#reference-sheet).
 
 ## Area {#area}
@@ -81,8 +81,8 @@ without either radius.
 
 ## Surface area {#surface-area}
 
-Surface area is the sum of the areas of all the faces, and these formulas are
-not on the reference sheet:
+Surface area measures a solid’s entire boundary, including curved surfaces.
+These formulas are not on the reference sheet:
 
 | Solid | Surface area |
 | --- | --- |
@@ -90,6 +90,10 @@ not on the reference sheet:
 | Cube with edge s | 6s² |
 | Cylinder, radius r, height h | 2πr² + 2πrh (two circles plus the curved side) |
 | Sphere, radius r | 4πr², which is also πd² |
+
+The sphere formula is supplied in our questions that require an actual sphere
+surface area. A ratio of sphere areas can also be found from squared radius
+ratios without knowing the constant 4π.
 
 > **Example.** Find the surface area of a closed box 4 by 3 by 2 inches, and
 > of a closed cylinder with radius 3 and height 5.
@@ -201,11 +205,14 @@ first.
 
 ## What Hard looks like {#hard}
 
-- A polygon and a circle, one inside the other: a square, a hexagon or an equilateral triangle in a circle, or a circle in a square. Find the shared length first (see [a polygon and a circle](#inscribed-figures)).
-- A region bounded by circles: two circles with one center and a chord of the larger touching the smaller, or equal circles packed in a square. Look for the relationship the figure forces, such as R² − r² from a right triangle, rather than each measure.
-- Similar solids with a given area or volume ratio. Go back to the length ratio first (a square root or a cube root), then forward to the measure asked: lengths scale by k, areas by k², volumes by k³.
+- A region between concentric circles when a chord of the larger touches the smaller. Look for R² − r² from a right triangle, rather than trying to find each radius.
 - A box whose corners lie on a sphere: the box's space diagonal is the sphere's diameter (see [a box inside a sphere](#box-in-a-sphere)).
 - The surface area of a drilled or glued solid. A hole removes two openings and adds its inside wall; gluing hides one patch on each solid (see [drilled and glued solids](#drilled-and-glued)).
+
+The direct area, volume, and scaling applications above are Easy or Medium;
+a shared geometric constraint can make a problem Hard. For example, in a
+region between concentric circles, a tangent chord of length 18 fixes the
+area as π(18/2)² = 81π even when neither radius is known.
 
 > **Example.** A cone and a cylinder have the same radius, and the cone's
 > volume equals the cylinder's. The cylinder is 5 inches tall. How tall is

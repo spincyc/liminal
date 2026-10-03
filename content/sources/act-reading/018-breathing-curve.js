@@ -4,14 +4,14 @@ module.exports = {
   id: "act-reading-p018",
   type: "natural-science",
   title: "The Breathing Curve",
-  intro: "This passage is adapted from an article on the longest continuous record of atmospheric carbon dioxide. The figure accompanied the article.",
+  intro: "This original passage discusses the longest continuous record of atmospheric carbon dioxide. The figure is a simplified illustration for this practice passage.",
   content: `When Charles David Keeling put an instrument on Mauna Loa in 1958, the question he
 was trying to settle was narrow and technical: whether the amount of carbon dioxide in the
 air could be measured accurately enough to be compared from one year to the next. Earlier
 attempts had produced numbers that scattered wildly, and the general view was that the gas
 was too variable to have a meaningful global value at all. Keeling suspected the scatter was
 in the instruments and the sampling sites rather than in the air, which is why he chose a
-volcano in the middle of an ocean, four kilometres from any continent, and why he built his
+volcano in the middle of an ocean, thousands of kilometres from any continent, and why he built his
 own analyser.
 
 Within two years he had two results. The first is the one everybody knows: the amount was
@@ -95,7 +95,7 @@ record is not in any one year of it, and no year of it can be added later.`,
         ["close to the equator and its steady air.", "Latitude is discussed for land distribution, not as a criterion for the site."],
         ["a place where earlier readings had been taken.", "Earlier attempts are described as scattered, with no site named."],
       ],
-      why: "The first paragraph says he chose \"a volcano in the middle of an ocean, four kilometres from any continent,\" because he suspected the scatter came from instruments and sampling sites.",
+      why: "The passage locates Mauna Loa in the middle of an ocean, thousands of kilometres from a continent. The stated reason is remoteness from continental sources, not its height or a previous set of readings.",
       steps: [
         "Find the clause listing what he chose and what he built.",
         "Take the property of the site that the sentence emphasises.",

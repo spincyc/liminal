@@ -2,7 +2,9 @@
 
 ## Source of truth
 
-Canonical records live in `content/banks/<section-key>.json`. The catalog in
+This document covers fixed ACT banks. Active SAT questions come from the
+templates described in [`question-templates.md`](question-templates.md).
+Canonical bank records live in `content/banks/<section-key>.json`. The catalog in
 `content/catalog.json` defines the allowed sections, domains, skills,
 subskills, response types, calculator policies, and exact coverage targets.
 `content/schema.md` defines every required field.
@@ -102,4 +104,21 @@ The current banks use deterministic families with varied invented settings,
 parameters, passages, tasks, and distractor logic. Duplicate gates prevent exact
 and high-similarity items, but they cannot measure pedagogical novelty,
 psychometric calibration, cultural bias, or prose quality. All 4,025 current
-items therefore remain awaiting independent human editorial review.
+records therefore remain awaiting independent human editorial review. This
+includes two retired SAT banks and the unavailable ACT Science bank, retained
+for compatibility. The four available ACT banks contain 2,300 exercise
+variants, not 2,300 independent question designs. English uses 40 authored
+passages, Reading 55, and Mathematics 232 generator shapes. Writing variants
+share 53 issues. Repeated settings, parameters and writing perspectives do not
+establish new pedagogical designs.
+
+The [2026-10-02 cold review](reviews/2026-10-02-cold-review.md) records agent
+review coverage and repairs. Agent review does not satisfy the outstanding
+human editorial review or establish empirical difficulty. ACT tiers remain
+excluded from practice filtering and readiness judgments. Science needs
+original passage sets and independent review before practice is enabled again.
+
+`audit-questions.js --admission` checks available banks for answer tells,
+concentrated families, exact duplicates and response defects. The stricter
+shape-repetition diagnostic remains available with `--strict`; a bank of
+parameter variants is not represented as passing a unique-design threshold.

@@ -41,18 +41,22 @@ have been ready the whole time.`,
       key: "activities, and it",
       noChange: "Two independent clauses joined by 'and' need a comma before the conjunction.",
       wrong: [
-        ["activities; and it", "A semicolon and a coordinating conjunction do the same job, so both is redundant."],
-        ["activities, and, it", "The second comma separates the conjunction from the subject that follows."],
+        [
+          "activities; although it",
+          "The semicolon cannot be followed by a dependent clause beginning with 'although.'"
+        ],
+        [
+          "activities, and, it",
+          "The second comma separates the conjunction from the subject that follows."
+        ]
       ],
-      why:
-        "'My family had one rule about activities' and 'it was not negotiable' are both complete " +
-        "clauses, so the 'and' between them takes a comma.",
+      why: "'My family had one rule about activities' and 'it was not negotiable' are both complete clauses, so the 'and' between them takes a comma.",
       steps: [
         "Check whether the words on each side of 'and' could stand alone. They could.",
-        "Place a comma immediately before the conjunction.",
+        "Place a comma immediately before the conjunction."
       ],
       hint: "A comma goes before 'and' when a full sentence follows it.",
-      trap: "The colon later in the sentence draws the eye away from the earlier join.",
+      trap: "The colon later in the sentence draws the eye away from the earlier join."
     },
     {
       number: 2,
@@ -134,27 +138,25 @@ have been ready the whole time.`,
       family: "comma-splice",
       difficulty: "Medium",
       keep: false,
-      key: "o'clock, sitting",
+      key: "o'clock as I sat",
       noChange: "Two independent clauses are joined by a comma with no conjunction.",
       wrong: [
         [
-          "o'clock, and I sat",
-          "The conjunction repairs the splice but makes the sitting a second, separate event.",
+          "o'clock; while I sat",
+          "A semicolon cannot be followed by the dependent clause introduced by 'while.'"
         ],
         [
-          "o'clock; I sat",
-          "A semicolon repairs the splice and still separates the feeling from where it happened.",
-        ],
+          "o'clock, and sitting",
+          "The participle cannot complete a coordinated independent clause or supply a clear subject for the sitting."
+        ]
       ],
-      why:
-        "The sitting is not a second action but the circumstance of the first. A participial phrase " +
-        "attaches it to the clause it describes.",
+      why: "The clause 'as I sat in a practice room' supplies the setting for what the narrator felt. It connects the timing without a comma splice and explicitly makes the narrator the one sitting.",
       steps: [
-        "Ask whether the second half is a new event or the setting of the first.",
-        "Subordinate it rather than giving it equal weight.",
+        "Identify the main statement about the feeling and the clause giving its setting.",
+        "Subordinate the setting with 'as' and retain its subject and finite verb."
       ],
-      hint: "The practice room is where the feeling happened, not something that happened next.",
-      trap: "Both alternatives are grammatical, and only one keeps the sentence's meaning.",
+      hint: "The room provides a setting for the feeling; look for a complete dependent clause that expresses that connection.",
+      trap: "A linking word can make a sentence sound connected without repairing its clause structure."
     },
     {
       number: 6,
@@ -344,23 +346,21 @@ have been ready the whole time.`,
       noChange: "A comma alone cannot join two independent clauses of equal weight.",
       wrong: [
         [
-          "that: she had been waiting a while",
-          "A colon introduces an explanation, but the second clause is a separate admission.",
+          "that; although she had been waiting a while",
+          "The semicolon is followed by a dependent 'although' clause instead of the independent clause it requires."
         ],
         [
           "that and she had been waiting a while",
-          "Without a comma before 'and' the two clauses run together unpunctuated.",
-        ],
+          "Without a comma before 'and' the two clauses run together unpunctuated."
+        ]
       ],
-      why:
-        "The two clauses are complete and equally weighted — what the rule was not, and what she had " +
-        "been doing meanwhile. A semicolon joins equals without subordinating either.",
+      why: "The two clauses are complete and equally weighted — what the rule was not, and what she had been doing meanwhile. A semicolon joins equals without subordinating either.",
       steps: [
         "Confirm both sides stand alone as sentences. They do.",
-        "Ask whether the second explains the first or stands beside it. It stands beside it.",
+        "Ask whether the second explains the first or stands beside it. It stands beside it."
       ],
       hint: "The second clause is the essay's revelation; it should not be made subordinate.",
-      trap: "The sentence is long, so the splice sits far from where the eye stops.",
+      trap: "A semicolon may look acceptable even when the words after it form only a dependent clause."
     },
     {
       number: 14,

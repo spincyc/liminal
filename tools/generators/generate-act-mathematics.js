@@ -3,8 +3,8 @@
 
 const { generateSection, hashString, rotate } = require("../lib/generation");
 const { jaccard, loadBank, tokenSet } = require("../lib/content");
-const { pose } = require("../lib/phrasing");
-const { CHOICE_MENU, COHORT, COLLECTION, DECAY_SAMPLE, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, SOLUTION, SURFACE, TRAVEL, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("../lib/scenes");
+const { pose: sharedPose } = require("../lib/phrasing");
+const { CHOICE_MENU, COHORT, COLLECTION, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, SURFACE, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("../lib/scenes");
 const { context } = require("./generate-sat-math");
 
 const SECTION_KEY = "act-mathematics";
@@ -12,12 +12,9 @@ const GENERATOR_NAME = "act-mathematics-generator-v1";
 const REBUILD = process.argv.includes("--rebuild");
 const MINUS = "−";
 
-// Enhanced ACT Mathematics ramps hard: 1-15 are one-step, 16-35 take two or
-// three steps or a modelling translation, and 36-45 reach logarithms, the unit
-// circle, complex numbers, matrices, sequences, conics, vectors, composition
-// and inverses, counting models, and parameterised systems. Every subskill
-// therefore carries several structurally different shapes per tier, and the
-// tier the catalog assigns picks the shape family.
+// The fixed bank retains historical tier labels for record compatibility.
+// These shapes vary their mathematical demands, but the bank has not been
+// calibrated against official ACT difficulty or scores.
 const TIER_SECONDS = { Easy: 40, Medium: 60, Hard: 100 };
 
 const TIER_STRATEGY = {
@@ -62,6 +59,23 @@ function frac(numerator, denominator) {
     `${sign}${Math.abs(numerator)}/${Math.abs(denominator)}`,
     numerator / denominator,
   );
+}
+
+// Preserve exact rational answers instead of rounding repeating decimals.
+function exactRatio(numerator, denominator) {
+  const divisor = gcd(numerator, denominator);
+  const n = numerator / divisor;
+  const d = denominator / divisor;
+  return d === 1 ? val(num(n), n) : frac(n, d);
+}
+
+function piRatio(numerator, denominator) {
+  const ratio = exactRatio(numerator, denominator);
+  const text = ratio.text.includes("/")
+    ? ratio.text.replace("/", "π/")
+    : `${ratio.text}π`;
+  // Like pi(), the value is the coefficient, so all π choices sort together.
+  return val(text, ratio.value);
 }
 
 function pi(coefficient) {
@@ -112,8 +126,7 @@ function choose(sequence, options) {
   return options[sequence % options.length];
 }
 
-// Four ways to ask for the same unknown. Each carries a word the others lack,
-// so two uses of one shape never read as the same sentence.
+// Direct phrasings for a requested unknown.
 function ask(variant, symbol) {
   return choose(variant, [
     `what is the value of ${symbol}?`,
@@ -123,272 +136,32 @@ function ask(variant, symbol) {
   ]);
 }
 
-// Bare symbolic stems need vocabulary that identifies the mathematical object
-// under test. Without it, the validator discards the short variables and
-// numbers and sees unrelated shapes as the same generic question. These pools
-// are reserved to the abstract subskills that need that extra signal; concrete
-// shapes already carry their own geometry, data, or real-world vocabulary.
-const SUBSKILL_LEADS = {
-  "angles": [
-    "Use the angle relationship shown.",
-    "Classify the geometric angle pair first.",
-    "Apply the relevant angle-sum fact.",
-    "Track how the two angle measures relate.",
-    "Interpret the angular condition before calculating.",
-    "Identify the governing angle equation.",
-    "Reason from the stated angle geometry.",
-    "Connect the unknown angle to its partner.",
-  ],
-  "area": [
-    "Model the two-dimensional region carefully.",
-    "Use the area relationship for this figure.",
-    "Track how the planar measure changes.",
-    "Decompose the region before calculating.",
-    "Interpret the figure's covered space.",
-    "Apply the appropriate area scale or formula.",
-    "Compare the component regions geometrically.",
-    "Measure the portion of the plane described.",
-  ],
-  "averages": [
-    "Use the arithmetic mean of the data.",
-    "Balance the list around its average.",
-    "Relate the data total to its entry count.",
-    "Compute the equal-share center of the values.",
-    "Treat the mean as a total-per-entry measure.",
-    "Track how the list average is formed.",
-    "Recover the data sum from its mean.",
-    "Analyze the central quotient for the list.",
-  ],
-  "center and spread": [
-    "Describe the distribution's center or variability.",
-    "Use a resistant summary of the data set.",
-    "Compare the locations within the ordered distribution.",
-    "Measure how widely the observations disperse.",
-    "Interpret the statistical spread of the sample.",
-    "Locate the median-based summary in the data.",
-    "Analyze a variability statistic for the observations.",
-    "Read the distribution summary before calculating.",
-  ],
-  "complex numbers": [
-    "Work within the complex-number system.",
-    "Separate the real and imaginary components.",
-    "Apply arithmetic involving the imaginary unit.",
-    "Track both parts of the complex value.",
-    "Interpret the number in rectangular complex form.",
-    "Use the defining property of the imaginary unit.",
-    "Combine the real-imaginary terms carefully.",
-    "Analyze the complex expression by component.",
-  ],
-  "coordinate geometry": [
-    "Translate the coordinate data into geometry.",
-    "Use the point locations on the coordinate plane.",
-    "Relate the ordered pairs through a geometric formula.",
-    "Track horizontal and vertical coordinate changes.",
-    "Interpret the plane figures from their coordinates.",
-    "Analyze the coordinate relationship between the points.",
-    "Convert the plotted information into a measurement.",
-    "Reason from the Cartesian positions given.",
-  ],
-  "dimensional reasoning": [
-    "Follow the units through the calculation.",
-    "Build a conversion chain with compatible dimensions.",
-    "Cancel the measurement units in sequence.",
-    "Track how each rate changes the quantity.",
-    "Use dimensional labels to choose the operations.",
-    "Reconcile the rates before computing the result.",
-    "Let the desired unit guide the setup.",
-    "Analyze the compound measurement one factor at a time.",
-  ],
-  "domain and range": [
-    "Identify the function's allowable inputs or outputs.",
-    "Check the mapping's permissible argument set.",
-    "Track which input values the rule accepts.",
-    "Determine the attainable outputs of the function.",
-    "Apply the restriction governing the function domain.",
-    "Read the correspondence between inputs and results.",
-    "Analyze the function's defined-value set.",
-    "Locate the permitted side of the input-output mapping.",
-  ],
-  "exponents": [
-    "Apply the relevant exponent law.",
-    "Read the base-and-power structure carefully.",
-    "Simplify using the rules for powers.",
-    "Track how the indices combine.",
-    "Interpret the repeated-factor notation.",
-    "Preserve the exponential structure while solving.",
-    "Analyze the powers before evaluating.",
-    "Use the relationship between bases and exponents.",
-  ],
-  "factoring": [
-    "Expose the polynomial's factor structure.",
-    "Rewrite the expression as a binomial product.",
-    "Use the factors to analyze the polynomial.",
-    "Identify the product hidden in the expanded form.",
-    "Decompose the polynomial into multiplying parts.",
-    "Match the terms to a factor pattern.",
-    "Recover the factor pair from the coefficients.",
-    "Analyze the expression through its product form.",
-  ],
-  "inequalities": [
-    "Interpret the order relation and its boundary.",
-    "Locate the solution region on a number line.",
-    "Track the direction of the inequality.",
-    "Test which values satisfy the ordered condition.",
-    "Analyze the interval described by the comparison.",
-    "Preserve the bound while isolating the variable.",
-    "Determine the permitted side of each boundary.",
-    "Read the inequality as a set of solutions.",
-  ],
-  "linear equations": [
-    "Balance the linear equation to isolate its unknown.",
-    "Use inverse operations on the first-degree equality.",
-    "Track the coefficient and constant terms.",
-    "Solve the variable equation without disturbing equality.",
-    "Collect the linear terms before isolating the variable.",
-    "Find the value that makes the equality true.",
-    "Reduce the one-variable relation systematically.",
-    "Maintain both sides while solving the linear statement.",
-  ],
-  "notation": [
-    "Decode the function notation before computing.",
-    "Interpret the symbolic input-output instruction.",
-    "Follow the mapping rule represented by the symbols.",
-    "Read what the function notation asks you to evaluate.",
-    "Apply the named operation to the indicated input.",
-    "Translate the symbolic definition into a calculation.",
-    "Track the input through the stated function rule.",
-    "Resolve the notation by using its definition.",
-  ],
-  "number properties": [
-    "Use the integer structure in the statement.",
-    "Analyze the divisibility or sequence pattern.",
-    "Track the whole-number relationship carefully.",
-    "Represent the integers with their defining property.",
-    "Apply the relevant arithmetic pattern.",
-    "Reason from the spacing between the integers.",
-    "Identify the shared number-theory structure.",
-    "Translate the integer condition into an equation.",
-  ],
-  "percentages": [
-    "Represent the percent change with a multiplier.",
-    "Track the original and changed quantities separately.",
-    "Convert the percentage statement into a factor.",
-    "Use the correct base for the percent comparison.",
-    "Interpret which quantity represents one hundred percent.",
-    "Reverse or apply the stated percent operation.",
-    "Relate the part, rate, and reference amount.",
-    "Analyze the proportional change before calculating.",
-  ],
-  "proportions": [
-    "Set up the proportional relationship between quantities.",
-    "Track which variables scale together.",
-    "Use the constant ratio or product implied.",
-    "Compare corresponding quantities before solving.",
-    "Translate the variation statement into an equation.",
-    "Preserve the scaling relationship across both cases.",
-    "Identify whether the quantities vary directly or inversely.",
-    "Solve from the invariant connecting the variables.",
-  ],
-  "quadratic": [
-    "Analyze the parabola's defining structure.",
-    "Use the quadratic form suited to the question.",
-    "Track the roots, vertex, or discriminant as needed.",
-    "Interpret the second-degree function geometrically.",
-    "Rewrite the quadratic to expose the requested feature.",
-    "Apply the governing property of the parabola.",
-    "Connect the coefficients to the quadratic's behavior.",
-    "Reason from the squared-term structure first.",
-  ],
-  "rational expressions": [
-    "Analyze the algebraic fraction and its denominator.",
-    "Preserve the restrictions of the rational expression.",
-    "Simplify the quotient structure carefully.",
-    "Use the common-denominator relationship.",
-    "Track the reciprocal form in the algebraic fraction.",
-    "Identify valid cancellations in the rational form.",
-    "Respect excluded values while manipulating the quotient.",
-    "Rewrite the fractional expression without losing factors.",
-  ],
-  "regression": [
-    "Interpret the fitted relationship in its data context.",
-    "Compare the observed value with the model prediction.",
-    "Use the regression equation as a statistical estimate.",
-    "Track what the model's slope or residual represents.",
-    "Analyze the linear fit without claiming causation.",
-    "Relate the data point to the trend line.",
-    "Read the statistical model within its observed range.",
-    "Evaluate what the fitted line supports.",
-  ],
-  "right-triangle trigonometry": [
-    "Choose the trigonometric ratio matching the sides.",
-    "Model the right triangle before evaluating.",
-    "Relate the acute angle to the needed side lengths.",
-    "Use sine, cosine, or tangent from the diagram.",
-    "Separate the right-triangle calculation from any offset.",
-    "Identify opposite, adjacent, and hypotenuse roles.",
-    "Translate the elevation or depression into a triangle.",
-    "Apply the trigonometric relationship in stages.",
-  ],
-  "surface area": [
-    "Measure every exposed face of the solid.",
-    "Use the surface formula for the three-dimensional object.",
-    "Track the exterior area rather than the enclosed space.",
-    "Decompose the solid's boundary into familiar regions.",
-    "Interpret the requested measure as an outer covering.",
-    "Add or apply the areas forming the solid's surface.",
-    "Distinguish the boundary measure from volume.",
-    "Analyze the solid's complete exterior geometry.",
-  ],
-  "systems": [
-    "Solve the simultaneous pair of equations.",
-    "Find the shared solution to the coupled relations.",
-    "Use both conditions in the equation system.",
-    "Locate where the two linear relations agree.",
-    "Combine the paired equations to determine the unknowns.",
-    "Interpret the intersection represented by the system.",
-    "Track the ordered pair satisfying both statements.",
-    "Analyze the linked equations together.",
-  ],
-  "triangles": [
-    "Use the stated relationships within the triangle.",
-    "Identify the relevant triangular measure.",
-    "Apply the base-height or side-angle structure.",
-    "Track how the triangle's dimensions determine the result.",
-    "Interpret the geometric information as a triangle formula.",
-    "Reason from the sides, heights, or angles provided.",
-    "Connect the given measurements inside the triangle.",
-    "Analyze the three-sided figure before calculating.",
-  ],
-  "transformations": [
-    "Track the stated motion of the graph.",
-    "Relate the transformed function to its parent.",
-    "Follow how the coordinates change under the mapping.",
-    "Interpret the shift, reflection, or stretch.",
-    "Analyze the image of the original graph.",
-    "Use the transformation rule on the function.",
-    "Determine how the curve's position or scale changes.",
-    "Map the original relation to its transformed form.",
-  ],
-  "volume": [
-    "Measure the three-dimensional space described.",
-    "Use cross-sectional area through the solid's depth.",
-    "Track how the solid's dimensions determine capacity.",
-    "Interpret the displacement or enclosure geometrically.",
-    "Apply the appropriate volume relationship.",
-    "Build the cubic measure from the given lengths.",
-    "Analyze the space occupied inside the solid.",
-    "Relate the base region to the solid's extent.",
-  ],
-};
-
-function distinguishSubskillStem(subskill, spec, variant) {
-  const leads = SUBSKILL_LEADS[subskill];
-  if (!leads) return spec;
-  const offset = hashString(spec.family) % leads.length;
-  return {
-    ...spec,
-    stem: `${leads[(variant + offset) % leads.length]} ${spec.stem}`,
-  };
+// Keep solution methods in hints and explanations. A short mathematical stem
+// needs no extra coaching to distinguish it from another exercise.
+function pose(variant, kind, parts) {
+  if (kind === "parameterFor" && variant % 8 === 0) {
+    return `For which value of ${parts.parameter} is the following statement true: ${parts.condition}?`;
+  }
+  if (kind === "quantityOf") {
+    const rounded = parts.description.match(/^to the nearest ([^,]+), (.+)$/);
+    let description = rounded ? rounded[2] : parts.description;
+    const prefix = rounded ? `To the nearest ${rounded[1]}, ` : "";
+    description = description.replace(/^the (cups|liters|boxes|days|square yards|fluid ounces|whole cans)\b/, "the number of $1");
+    const frames = [
+      (d) => `What is ${d}?`,
+      (d) => `Which choice gives ${d}?`,
+      (d) => `Find ${d}.`,
+      (d) => `Determine ${d}.`,
+      (d) => `Give ${d}.`,
+      (d) => `Identify ${d}.`,
+      (d) => `Report ${d}.`,
+      (d) => `State ${d}.`,
+    ];
+    let stem = frames[variant % frames.length](description);
+    if (prefix) stem = prefix + stem[0].toLowerCase() + stem.slice(1);
+    return stem;
+  }
+  return sharedPose(variant, kind, parts);
 }
 
 function gcd(left, right) {
@@ -574,6 +347,21 @@ const UNITS = [
   { from: "weeks", to: "days", factor: 7 },
 ];
 
+// Parameters in the speed designs are suitable for motor vehicles, not for
+// cyclists and hikers selected from the shared general-purpose scene pool.
+const ACT_TRAVEL = [
+  { mover: "car", route: "highway" },
+  { mover: "bus", route: "intercity road" },
+  { mover: "train", route: "rail line" },
+  { mover: "delivery van", route: "coast road" },
+  { mover: "motorcycle", route: "test track" },
+  { mover: "coach", route: "turnpike" },
+  { mover: "freight train", route: "railway corridor" },
+  { mover: "shuttle", route: "expressway" },
+  { mover: "taxi", route: "airport road" },
+  { mover: "truck", route: "bypass" },
+];
+
 const SHAPES = {};
 
 SHAPES["number properties"] = {
@@ -593,7 +381,7 @@ SHAPES["number properties"] = {
           [1, "This treats the two numbers as relatively prime, but both are even and share a much larger factor."],
           [2, `2 divides ${smaller} and ${larger}, but it is not the greatest factor that does.`],
           [cofactor, `${cofactor} is the cofactor left when ${smaller} is divided by the shared factor, not the shared factor itself.`],
-          [2 * shared, `Doubling the shared factor overshoots: ${2 * shared} does not divide ${larger}.`],
+          [2 * shared, `Doubling the shared factor overshoots: ${2 * shared} does not divide both ${smaller} and ${larger}.`],
           [smaller, "The smaller number divides itself but does not divide the larger number."],
           [shared * cofactor * (cofactor + 1), "This is the least common multiple, which is the smallest shared multiple rather than the largest shared factor."],
         ],
@@ -637,16 +425,7 @@ SHAPES["number properties"] = {
       const place = context(s).place;
       return {
         family: "lcm-repeating-cycles",
-        stem: `${choose(variant, [
-          "Compare the repeating departure cycles.",
-          "Synchronize the two shuttle schedules.",
-          "Find when the recurring departures coincide.",
-          "Track the first shared point in both timetables.",
-          "Use the cycle lengths to predict the next match.",
-          "Determine when both transit patterns align again.",
-          "Analyze the shuttles' common departure interval.",
-          "Locate the earliest reunion of the two schedules.",
-        ])} At the ${place} transit stop, one shuttle leaves every ${first} minutes and another leaves every ${second} minutes. Both leave at 9:00 a.m. How many minutes later do they next leave at the same time?`,
+        stem: `At the ${place} transit stop, one shuttle leaves every ${first} minutes and another leaves every ${second} minutes. Both leave at 9:00 a.m. How many minutes later do they next leave at the same time?`,
         answer: together,
         wrong: [
           [gcd(first, second), "This is the greatest common factor of the two cycles; a shared departure needs a common multiple instead."],
@@ -793,11 +572,11 @@ SHAPES["complex numbers"] = {
         stem: choose(variant, [
           `Subtract the complex numbers: (${a} + ${b}i) ${MINUS} (${c} + ${d}i).`,
           `Compute the complex difference (${a} + ${b}i) ${MINUS} (${c} + ${d}i).`,
-          `Combine real and imaginary parts to find (${a} + ${b}i) ${MINUS} (${c} + ${d}i).`,
+          `Find the value of (${a} + ${b}i) ${MINUS} (${c} + ${d}i).`,
           `Remove ${c} + ${d}i from ${a} + ${b}i and state the resulting complex number.`,
           `What complex number remains after subtracting (${c} + ${d}i) from (${a} + ${b}i)?`,
           `Evaluate the subtraction (${a} + ${b}i) ${MINUS} (${c} + ${d}i) in rectangular form.`,
-          `Perform componentwise subtraction on (${a} + ${b}i) and (${c} + ${d}i).`,
+          `Find the difference between (${a} + ${b}i) and (${c} + ${d}i).`,
           `Simplify the difference between ${a} + ${b}i and ${c} + ${d}i, in that order.`,
         ]),
         answer: cplx(a - c, b - d),
@@ -827,10 +606,10 @@ SHAPES["complex numbers"] = {
           `Multiply the complex factors (${a} + ${b}i) and (${c} + ${d}i).`,
           `Expand the complex product (${a} + ${b}i)(${c} + ${d}i).`,
           `Using i² = ${MINUS}1, compute (${a} + ${b}i)(${c} + ${d}i).`,
-          `Apply binomial multiplication to (${a} + ${b}i)(${c} + ${d}i).`,
+          `Find the product (${a} + ${b}i)(${c} + ${d}i).`,
           `Determine the product of the complex numbers ${a} + ${b}i and ${c} + ${d}i.`,
           `Evaluate the multiplication (${a} + ${b}i)(${c} + ${d}i) in rectangular form.`,
-          `Combine the cross terms after multiplying (${a} + ${b}i) by (${c} + ${d}i).`,
+          `Compute the result of multiplying (${a} + ${b}i) by (${c} + ${d}i).`,
           `What results when the complex value ${a} + ${b}i is multiplied by ${c} + ${d}i?`,
         ]),
         answer: cplx(a * c - b * d, a * d + b * c),
@@ -1154,7 +933,7 @@ SHAPES["unit conversion"] = {
     (s, variant) => {
       const speeds = [36, 54, 72, 90, 18, 108];
       const speed = speeds[(s + variant) % speeds.length];
-      const trip = scene(variant, TRAVEL);
+      const trip = scene(variant, ACT_TRAVEL);
       const answer = speed / 3.6;
       return {
         family: "speed-unit-conversion",
@@ -1214,11 +993,11 @@ SHAPES["unit conversion"] = {
         wrong: [
           [price, "This is the price of a single square yard."],
           [area / 9, "This is the number of square yards, not the cost."],
-          [area, "This is the floor area in square feet."],
+          [area, "This is the area in square feet before converting units."],
           [round3((area / 3) * price), "This divides by 3 rather than 9; 1 square yard is 3 feet by 3 feet, so it holds 9 square feet."],
           [area * price, "This prices every square foot at the per-square-yard rate."],
         ],
-        why: `The floor is ${area} square feet. Since 1 square yard = 9 square feet, that is ${area / 9} square yards, costing ${area / 9} × $${price} = $${answer}.`,
+        why: `The region is ${area} square feet. Since 1 square yard = 9 square feet, that is ${area / 9} square yards, costing ${area / 9} × $${price} = $${answer}.`,
         steps: ["Find the area in square feet.", "Divide by 9 to convert to square yards.", "Multiply by the price per square yard."],
         principles: ["Converting an area squares the linear conversion factor: 3 ft = 1 yd gives 9 ft² = 1 yd²."],
         hint: "The linear factor 3 becomes 9 for areas.",
@@ -1234,16 +1013,7 @@ SHAPES["unit conversion"] = {
       const answer = gallons / rate;
       return {
         family: "chained-rate-conversion",
-        stem: `${choose(variant, [
-          "Convert the capacity before using the delivery rate.",
-          "Link the volume conversion to the filling time.",
-          "Trace cubic feet through gallons into minutes.",
-          "Use compatible units for the fluid-transfer calculation.",
-          "Translate the vessel capacity into the pump's units.",
-          "Combine the liquid-volume factor with the flow rate.",
-          "Follow the unit chain to determine duration.",
-          "Reconcile the storage measure and the fill-rate measure.",
-        ])} A ${vessel.vessel} holds ${volume} cubic feet of ${vessel.fluid}, 1 cubic foot holds 7.5 gallons, and a ${vessel.filler} delivers ${rate} gallons per minute. How many minutes does filling it take?`,
+        stem: `A ${vessel.vessel} holds ${volume} cubic feet of ${vessel.fluid}, 1 cubic foot holds 7.5 gallons, and a ${vessel.filler} delivers ${rate} gallons per minute. How many minutes does filling it take?`,
         answer,
         wrong: [
           [round3(volume / (7.5 * rate)), "This divides by the 7.5 gallons per cubic foot instead of multiplying by it."],
@@ -1268,7 +1038,7 @@ SHAPES["dimensional reasoning"] = {
     (s, variant) => {
       const speed = 12 + (s % 9);
       const hours = 3 + (s % 5);
-      const trip = scene(variant, TRAVEL);
+      const trip = scene(variant, ACT_TRAVEL);
       const answer = speed * hours;
       return {
         family: "distance-from-rate-and-time",
@@ -1291,7 +1061,7 @@ SHAPES["dimensional reasoning"] = {
     (s, variant) => {
       const rate = 14 + (s % 11);
       const hours = 4 + (s % 4);
-      const trip = scene(variant, TRAVEL);
+      const trip = scene(variant, ACT_TRAVEL);
       const distance = rate * hours;
       return {
         family: "rate-from-distance-and-time",
@@ -1316,7 +1086,7 @@ SHAPES["dimensional reasoning"] = {
     (s, variant) => {
       const pairs = [[30, 60], [20, 30], [40, 60], [12, 24], [10, 15], [45, 90]];
       const [slow, fast] = pairs[(s + variant) % pairs.length];
-      const trip = scene(variant, TRAVEL);
+      const trip = scene(variant, ACT_TRAVEL);
       const leg = lcm(slow, fast);
       const answer = (2 * slow * fast) / (slow + fast);
       return {
@@ -1332,7 +1102,7 @@ SHAPES["dimensional reasoning"] = {
         ],
         why: `The trip takes ${leg}/${slow} + ${leg}/${fast} = ${leg / slow + leg / fast} hours for ${2 * leg} miles, so the average speed is ${2 * leg}/${leg / slow + leg / fast} = ${answer} mph.`,
         steps: ["Find the time for each leg separately.", "Add the times and the distances.", "Divide total distance by total time."],
-        principles: ["Average speed is total distance over total time, never the mean of the speeds."],
+        principles: ["Average speed is total distance over total time; it equals the unweighted mean of two speeds only when equal times are spent at those speeds."],
         hint: "More time is spent on the slow leg, so the average sits below the midpoint.",
         verification: quotientCheck(2 * leg, leg / slow + leg / fast, answer),
       };
@@ -1676,7 +1446,7 @@ SHAPES.inequalities = {
           [highBound - Math.abs(lowBound) * -1, "This counts integers between the outer bounds without undoing the coefficient and the shift."],
           [highBound, "This is an endpoint of the middle expression, not a count of solutions."],
         ],
-        why: `Subtract ${shift} throughout: ${MINUS}${Math.abs(lowBound + shift)} < ${coefficient}x ≤ ${highBound - shift}. Divide by ${coefficient}: ${num(lowX)} < x ≤ ${num(highX)}. The integers in that range are ${integers.join(", ")}, so there are ${integers.length}.`,
+        why: `Subtract ${shift} throughout: ${num(lowBound - shift)} < ${coefficient}x ≤ ${highBound - shift}. Divide by ${coefficient}: ${num(lowX)} < x ≤ ${num(highX)}. The integers in that range are ${integers.join(", ")}, so there are ${integers.length}.`,
         steps: ["Subtract the constant from all three parts.", "Divide all three parts by the positive coefficient.", "List the integers, respecting which endpoint is included."],
         principles: ["Operations on a compound inequality apply to every part at once."],
         hint: "Work on all three parts together, then list the integers rather than guessing the count.",
@@ -1700,7 +1470,7 @@ SHAPES.inequalities = {
           [Math.floor(capacity / crateWeight), "This ignores the operator's weight entirely."],
           [capacity - driver, "This is the pounds available for crates, not the number of crates."],
         ],
-        why: `Crates may weigh at most ${capacity} − ${driver} = ${capacity - driver} pounds, and ${capacity - driver}/${crateWeight} = ${round3((capacity - driver) / crateWeight)}, so at most ${answer} whole crates fit.`,
+        why: `Crates may weigh at most ${capacity} − ${driver} = ${capacity - driver} pounds, and ${capacity - driver}/${crateWeight} ≈ ${round3((capacity - driver) / crateWeight)}, so at most ${answer} whole crates fit.`,
         steps: ["Subtract the operator's weight from the capacity.", "Divide the remaining pounds by the weight of one crate.", "Round down, since a partial crate cannot be loaded."],
         principles: ["Model a limit with ≤, then round a count down to a whole number."],
         hint: "The operator's weight is counted once, not once per crate.",
@@ -2044,7 +1814,7 @@ SHAPES.factoring = {
           [constant, "This is the constant term; only for a monic quadratic does the constant equal the product of the roots."],
           [Math.abs(middle) + constant, "Adding coefficients does not produce a root."],
         ],
-        why: `The quadratic factors as (${lead}x − ${numerator})(x − ${wholeRoot}) = 0, giving x = ${round3(numerator / lead)} or x = ${wholeRoot}; the greater root is ${wholeRoot}.`,
+        why: `The quadratic factors as (${lead}x − ${numerator})(x − ${wholeRoot}) = 0, giving x = ${exactRatio(numerator, lead).text} or x = ${wholeRoot}; the greater root is ${wholeRoot}.`,
         steps: ["Look for factors of the leading coefficient and the constant that produce the middle term.", "Write the two binomial factors.", "Set each factor to zero and compare the roots."],
         principles: ["With a leading coefficient, the factors distribute that coefficient across the roots."],
         hint: "The leading coefficient has to be split between the two factors.",
@@ -2189,17 +1959,18 @@ SHAPES["rational expressions"] = {
   ],
   Medium: [
     (s, variant) => {
-      const other = 4 + (s % 8);
       const combined = 2 + (s % 3);
-      const answer = round3(1 / (1 / combined - 1 / other));
-      const usable = Number.isInteger(answer) ? answer : round3(answer);
+      const other = Math.max(4 + (s % 8), combined + 1);
+      const numerator = combined * other;
+      const denominator = other - combined;
+      const answer = frac(numerator, denominator);
       return {
         family: "reciprocal-equation",
         stem: pose(variant, "givenFind", {
           given: `1/x + 1/${other} = 1/${combined}`,
           target: "x",
         }),
-        answer: usable,
+        answer,
         wrong: [
           [round3(combined - other), "This subtracts the denominators as if the reciprocals could be dropped."],
           [round3(1 / (1 / combined + 1 / other)), "This adds the reciprocals instead of subtracting to isolate 1/x."],
@@ -2207,7 +1978,7 @@ SHAPES["rational expressions"] = {
           [round3(other * combined), "This multiplies the denominators without dividing by their difference."],
           [round3(other + combined), "This adds the denominators, which would only be valid if the equation involved x itself rather than 1/x."],
         ],
-        why: `1/x = 1/${combined} − 1/${other} = ${round3(1 / combined - 1 / other)}, so x = ${usable}.`,
+        why: `1/x = 1/${combined} − 1/${other} = ${denominator}/${numerator}, so x = ${answer.text}.`,
         steps: ["Isolate 1/x on one side.", "Subtract the fractions using a common denominator.", "Take the reciprocal of the result to find x."],
         principles: ["Reciprocals must be combined before inverting; 1/a + 1/b is not 1/(a + b)."],
         hint: "Solve for 1/x first, then flip.",
@@ -2404,11 +2175,11 @@ SHAPES["exponents"] = {
         family: "fractional-exponent-evaluation",
         stem: choose(variant, [
           `Evaluate the fractional power ${radicand}^(${power}/${root}).`,
-          `Use the root encoded by the denominator to compute ${radicand}^(${power}/${root}).`,
-          `Rewrite the rational exponent, then find the value of ${radicand}^(${power}/${root}).`,
+          `Find the numerical value of ${radicand}^(${power}/${root}).`,
+          `Evaluate the expression ${radicand}^(${power}/${root}).`,
           `Interpret ${power}/${root} as a fractional index and simplify ${radicand}^(${power}/${root}).`,
           `Extract the indicated root before applying the numerator in ${radicand}^(${power}/${root}).`,
-          `Convert the radicand to a perfect power and calculate ${radicand}^(${power}/${root}).`,
+          `Calculate ${radicand}^(${power}/${root}).`,
           `Resolve the root-and-power expression ${radicand}^(${power}/${root}).`,
           `What number results from the rational power ${radicand}^(${power}/${root})?`,
         ]),
@@ -2443,8 +2214,8 @@ SHAPES["exponents"] = {
         stem: choose(variant, [
           `Apply the negative power to the fraction (${top}/${bottom})^${MINUS}${power}.`,
           `Reciprocate the fractional base, then evaluate (${top}/${bottom})^${MINUS}${power}.`,
-          `Rewrite the negative exponent as a positive power and simplify (${top}/${bottom})^${MINUS}${power}.`,
-          `Use the reciprocal rule to compute (${top}/${bottom})^${MINUS}${power}.`,
+          `Simplify (${top}/${bottom})^${MINUS}${power}.`,
+          `Find the value of (${top}/${bottom})^${MINUS}${power}.`,
           `Invert the base before applying the magnitude of the exponent in (${top}/${bottom})^${MINUS}${power}.`,
           `Determine the value of the negative fractional power (${top}/${bottom})^${MINUS}${power}.`,
           `Transform (${top}/${bottom})^${MINUS}${power} into an equivalent positive-exponent fraction.`,
@@ -2953,7 +2724,7 @@ SHAPES["domain and range"] = {
         stem: pose(variant, "quantityOf", {
           description: `the greatest real value in the domain of f(x) = √(${constant} ${MINUS} ${coefficient}x)`,
         }),
-        answer,
+        answer: exactRatio(constant, coefficient),
         wrong: [
           [constant, `This ignores the coefficient ${coefficient} multiplying x.`],
           [-answer, "This flips the sign; the radicand is non-negative for x below the boundary, not above its negative."],
@@ -2962,7 +2733,7 @@ SHAPES["domain and range"] = {
           [constant * coefficient, "This multiplies instead of dividing."],
           [answer + 1, "At this value the radicand is already negative."],
         ],
-        why: `Require ${constant} − ${coefficient}x ≥ 0, so ${coefficient}x ≤ ${constant} and x ≤ ${answer}. The greatest allowed value is ${answer}.`,
+        why: `Require ${constant} − ${coefficient}x ≥ 0, so ${coefficient}x ≤ ${constant} and x ≤ ${exactRatio(constant, coefficient).text}. The greatest allowed value is ${exactRatio(constant, coefficient).text}.`,
         steps: [
           "Set the radicand greater than or equal to zero.",
           "Solve for x, dividing by the positive coefficient.",
@@ -3011,7 +2782,7 @@ SHAPES["domain and range"] = {
       return {
         family: "domain-of-a-composition",
         stem: pose(variant, "quantityOf", {
-          description: `the value of x for which 1/(√(x ${MINUS} ${inner}) ${MINUS} ${outer}) is undefined`,
+          description: `the value of x ≥ ${inner} for which 1/(√(x ${MINUS} ${inner}) ${MINUS} ${outer}) is undefined`,
         }),
         answer,
         wrong: [
@@ -3111,7 +2882,7 @@ SHAPES["transformations"] = {
       return {
         family: "horizontal-shift-of-a-point",
         stem: pose(variant, "parameterFor", {
-          condition: `f(k ${MINUS} ${shift}) = ${pointY}, given f(${pointX}) = ${pointY}`,
+          condition: `f(k ${MINUS} ${shift}) = ${pointY}, given that f is one-to-one and f(${pointX}) = ${pointY}`,
           parameter: "k",
         }),
         answer,
@@ -3141,7 +2912,7 @@ SHAPES["transformations"] = {
       return {
         family: "reflection-across-an-axis",
         stem: pose(variant, "quantityOf", {
-          description: `the image of (${pointX}, ${pointY}) under the transformation y = ${MINUS}f(x)`,
+          description: `the image of the point (${pointX}, ${pointY}) on y = f(x) under the transformation y = ${MINUS}f(x)`,
         }),
         answer: point(pointX, -pointY),
         wrong: [
@@ -3175,7 +2946,7 @@ SHAPES["transformations"] = {
       return {
         family: "combined-transformation-of-a-point",
         stem: pose(variant, "quantityOf", {
-          description: `the image of (${pointX}, ${pointY}) under y = ${factor}f(x ${MINUS} ${shift}) + ${raise}`,
+          description: `the image of the point (${pointX}, ${pointY}) on y = f(x) under y = ${factor}f(x ${MINUS} ${shift}) + ${raise}`,
         }),
         answer: point(newX, newY),
         wrong: [
@@ -3510,7 +3281,7 @@ SHAPES["quadratic"] = {
           [round3(answer - start), "This is the rise above the release point, not the height above the ground."],
           [round3(-16 * peakTime * peakTime + speed * peakTime), "This drops the release height."],
         ],
-        why: `The peak occurs at t = −b/(2a) = ${speed}/32 = ${num(peakTime)} seconds. Substituting gives h = ${MINUS}16(${num(peakTime * peakTime)}) + ${speed}(${num(peakTime)}) + ${start} = ${num(answer)} feet.`,
+        why: `The peak occurs at t = −b/(2a) = ${speed}/32 = ${num(peakTime)} seconds. Substituting gives h = ${MINUS}16(${num(peakTime)})² + ${speed}(${num(peakTime)}) + ${start} = ${num(answer)} feet.`,
         steps: [
           "Find the vertex time with t = −b/(2a).",
           "Substitute that time back into the height function.",
@@ -3667,7 +3438,7 @@ SHAPES["exponential"] = {
       const halvings = 2 + (s % 4);
       const answer = start / 2 ** halvings;
       const halfLife = 3 + (s % 5);
-      const sample = scene(variant, DECAY_SAMPLE);
+      const sample = "radioactive isotope sample";
       return {
         family: "half-life-decay",
         stem: `A ${sample} of ${start} milligrams decays with a half-life of ${halfLife} years. How many milligrams remain after ${halfLife * halvings} years?`,
@@ -3717,7 +3488,7 @@ SHAPES["exponential"] = {
           [cents(principal * rate / 100), "This is one year's interest alone."],
           [cents(principal + rate * years), "This adds the percentage as if it were dollars."],
         ],
-        why: `Each year multiplies the balance by 1 + ${rate}/100 = ${1 + rate / 100}. After ${years} years the balance is ${principal} · ${round3((1 + rate / 100) ** years)} = ${answer.text}.`,
+        why: `Each year multiplies the balance by 1 + ${rate}/100 = ${1 + rate / 100}. After ${years} years the balance is ${principal} · (${1 + rate / 100})^${years} ≈ ${answer.text}.`,
         steps: [
           "Convert the percentage to a growth factor.",
           `Raise that factor to the power ${years}.`,
@@ -3741,20 +3512,20 @@ SHAPES["exponential"] = {
         wrong: [
           [round3(target / start), "This divides the totals; repeated multiplication needs an exponent, not a quotient."],
           [round3(target / (start * factor)), "This divides by one growth factor and stops."],
-          [answer + 1, "One decade earlier the population has already reached the target."],
-          [answer - 1, "At this point the population is still below the target."],
-          [target - start, "This is the increase in thousands, not a number of decades."],
+          [answer + 1, "The target has already been reached one period earlier."],
+          [answer - 1, "At this point the quantity is still below the target."],
+          [target - start, "This is the change in quantity, not the number of growth periods."],
           [factor * answer, "This multiplies the answer by the growth factor."],
         ],
-        why: `Solve ${start} · ${factor}^n = ${target}, so ${factor}^n = ${target / start}. Since ${factor}^${answer} = ${factor ** answer}, n = ${answer} decades.`,
+        why: `Solve ${start} · ${factor}^n = ${target}, so ${factor}^n = ${target / start}. Since ${factor}^${answer} = ${factor ** answer}, n = ${answer} periods of one ${growth.period} each.`,
         steps: [
           "Divide the target by the starting value to isolate the power.",
           "Ask what exponent produces that quotient.",
-          "Report the exponent, which counts the decades.",
+          "Report the exponent, which counts the growth periods.",
         ],
         principles: ["Solving A₀rⁿ = A for n means finding the exponent that reproduces the ratio A/A₀."],
         hint: "Divide first, then ask what power of the growth factor you are looking at.",
-        trap: "Reporting the ratio of the populations rather than the exponent.",
+        trap: "Reporting the ratio of the quantities rather than the exponent.",
         verification: factorCountCheck(target / start, factor, answer),
       };
     },
@@ -4257,21 +4028,21 @@ SHAPES["circles"] = {
     (s, variant) => {
       const radius = 4 + (s % 8);
       const degreesArc = 30 * (1 + (s % 6));
-      const answer = round3((degreesArc / 360) * 2 * radius);
+      const answer = piRatio(degreesArc * 2 * radius, 360);
       return {
         family: "arc-length-fraction-of-circumference",
         stem: pose(variant, "quantityOf", {
           description: `the arc length in terms of π for a ${degreesArc}° central angle in a circle of radius ${radius}`,
         }),
-        answer: pi(answer),
+        answer,
         wrong: [
-          [pi(round3((degreesArc / 360) * radius * radius)), "This computes the sector's area rather than its arc length."],
+          [piRatio(degreesArc * radius * radius, 360), "This computes the sector's area rather than its arc length."],
           [pi(2 * radius), "This is the whole circumference, ignoring the fraction of the circle."],
-          [pi(round3(degreesArc / 360)), "This is the fraction of the circle alone, without multiplying by the circumference."],
-          [pi(round3((degreesArc / 180) * radius)), "This uses 180° as a full rotation."],
-          [pi(round3(answer / 2)), "This halves the arc length."],
+          [piRatio(degreesArc, 360), "This is the fraction of the circle alone, without multiplying by the circumference."],
+          [piRatio(degreesArc * 2 * radius, 180), "This uses 180° as a full rotation."],
+          [piRatio(degreesArc * radius, 360), "This halves the arc length."],
         ],
-        why: `The arc is ${degreesArc}/360 of the circle. The circumference is ${2 * radius}π, so the arc is (${degreesArc}/360)(${2 * radius}π) = ${answer}π.`,
+        why: `The arc is ${degreesArc}/360 of the circle. The circumference is ${2 * radius}π, so the arc is (${degreesArc}/360)(${2 * radius}π) = ${answer.text}.`,
         steps: [
           "Write the central angle as a fraction of 360°.",
           "Compute the full circumference 2πr.",
@@ -4285,21 +4056,21 @@ SHAPES["circles"] = {
     (s, variant) => {
       const radius = 3 + (s % 9);
       const degreesArc = 30 * (1 + (s % 6));
-      const answer = round3((degreesArc / 360) * radius * radius);
+      const answer = piRatio(degreesArc * radius * radius, 360);
       return {
         family: "sector-area-fraction-of-circle",
         stem: pose(variant, "quantityOf", {
           description: `the area in terms of π of a ${degreesArc}° sector in a circle of radius ${radius}`,
         }),
-        answer: pi(answer),
+        answer,
         wrong: [
-          [pi(round3((degreesArc / 360) * 2 * radius)), "This is the arc length, not the sector's area."],
+          [piRatio(degreesArc * 2 * radius, 360), "This is the arc length, not the sector's area."],
           [pi(radius * radius), "This is the whole circle's area, ignoring the fraction."],
-          [pi(round3(degreesArc / 360)), "This is the fraction of the circle alone."],
-          [pi(round3((degreesArc / 180) * radius * radius)), "This treats 180° as a full rotation."],
-          [pi(round3(answer * 2)), "This doubles the sector's area."],
+          [piRatio(degreesArc, 360), "This is the fraction of the circle alone."],
+          [piRatio(degreesArc * radius * radius, 180), "This treats 180° as a full rotation."],
+          [piRatio(degreesArc * radius * radius, 180), "This doubles the sector's area."],
         ],
-        why: `The sector is ${degreesArc}/360 of the circle. The circle's area is ${radius * radius}π, so the sector is (${degreesArc}/360)(${radius * radius}π) = ${answer}π.`,
+        why: `The sector is ${degreesArc}/360 of the circle. The circle's area is ${radius * radius}π, so the sector is (${degreesArc}/360)(${radius * radius}π) = ${answer.text}.`,
         steps: [
           "Express the central angle as a fraction of 360°.",
           "Compute the whole circle's area πr².",
@@ -4457,7 +4228,7 @@ SHAPES["coordinate geometry"] = {
       return {
         family: "perpendicular-slope",
         stem: pose(variant, "quantityOf", {
-          description: `the slope perpendicular to ${numerator}/${denominator}`,
+          description: `the slope of a line perpendicular to a line with slope ${numerator}/${denominator}`,
         }),
         answer: frac(-denominator, numerator),
         wrong: [
@@ -4630,7 +4401,7 @@ SHAPES["area"] = {
     (s, variant) => {
       const side = 8 + 2 * (s % 7);
       const radius = side / 2;
-      const answer = round3(side * side - Math.PI * radius * radius);
+      const answer = side * side - Math.PI * radius * radius;
       return {
         family: "shaded-region-circle-in-square",
         stem: pose(variant, "quantityOf", {
@@ -5176,7 +4947,7 @@ SHAPES["right-triangle trigonometry"] = {
     },
     (s, variant) => {
       const [a, b, c] = TRIPLES[s % TRIPLES.length];
-      const answer = round3((Math.atan(b / a) * 180) / Math.PI);
+      const answer = (Math.atan(b / a) * 180) / Math.PI;
       return {
         family: "angle-from-tangent",
         stem: pose(variant, "quantityOf", {
@@ -5190,7 +4961,7 @@ SHAPES["right-triangle trigonometry"] = {
           [degrees(90), "A ramp with a finite run is not vertical."],
           [degrees(45), "The rise and run are unequal, so the angle is not 45°."],
         ],
-        why: `The rise is opposite the angle and the run is adjacent, so tan θ = ${b}/${a}. Then θ = arctan(${round3(b / a)}) ≈ ${round3(Math.round(answer * 10) / 10)}°.`,
+        why: `The rise is opposite the angle and the run is adjacent, so tan θ = ${b}/${a}. Then θ = arctan(${b}/${a}) ≈ ${round3(Math.round(answer * 10) / 10)}°.`,
         steps: [
           "Identify rise as opposite and run as adjacent.",
           "Use tangent, which relates exactly those two sides.",
@@ -5211,7 +4982,7 @@ SHAPES["right-triangle trigonometry"] = {
       const angle = choose(s, [30, 60]);
       const eye = 5 + (s % 3);
       const factor = { 30: 1 / Math.sqrt(3), 60: Math.sqrt(3) }[angle];
-      const answer = round3(distance * factor + eye);
+      const answer = distance * factor + eye;
       return {
         family: "angle-of-elevation-with-eye-height",
         stem: pose(variant, "quantityOf", {
@@ -5241,7 +5012,7 @@ SHAPES["right-triangle trigonometry"] = {
       const b = a + 2 + (s % 5);
       const angle = choose(s, [30, 60, 90, 120]);
       const cosine = { 30: Math.sqrt(3) / 2, 60: 0.5, 90: 0, 120: -0.5 }[angle];
-      const answer = round3(Math.sqrt(a * a + b * b - 2 * a * b * cosine));
+      const answer = Math.sqrt(a * a + b * b - 2 * a * b * cosine);
       return {
         family: "law-of-cosines-third-side",
         stem: pose(variant, "quantityOf", {
@@ -5255,7 +5026,7 @@ SHAPES["right-triangle trigonometry"] = {
           [round3(Math.round(Math.abs(b - a) * 100) / 100), "This subtracts the sides, giving the strict lower bound."],
           [round3(Math.round((a * a + b * b - 2 * a * b * cosine) * 100) / 100), "This stops at c² without taking the square root."],
         ],
-        why: `c² = ${a}² + ${b}² − 2(${a})(${b})cos ${angle}° = ${round3(a * a + b * b - 2 * a * b * cosine)}, so c ≈ ${round3(Math.round(answer * 100) / 100)}.`,
+        why: `c² = ${a}² + ${b}² − 2(${a})(${b})cos ${angle}° ≈ ${round3(a * a + b * b - 2 * a * b * cosine)}, so c ≈ ${round3(Math.round(answer * 100) / 100)}.`,
         steps: [
           "Write the law of cosines with the included angle.",
           "Substitute the exact cosine of the given angle.",
@@ -5300,31 +5071,27 @@ SHAPES["identities"] = {
       };
     },
     (s, variant) => {
-      const numerator = 3 + (s % 4);
-      const denominator = numerator + 2 + (s % 5);
+      const [opposite, adjacent, hypotenuse] = choose(s, TRIPLES);
+      const answer = frac(opposite, adjacent);
       return {
         family: "tangent-as-sine-over-cosine",
         stem: pose(variant, "givenFind", {
-          given: `sin θ = ${numerator}/${denominator} and cos θ = 1/${denominator}`,
+          given: `sin θ = ${opposite}/${hypotenuse} and cos θ = ${adjacent}/${hypotenuse}`,
           target: "tan θ",
         }),
-        answer: numerator,
+        answer,
         wrong: [
-          [frac(1, numerator), "This is cot θ, the reciprocal of the tangent."],
-          [frac(numerator, denominator * denominator), "This multiplies the two ratios instead of dividing them."],
-          [frac(numerator + 1, denominator), "This adds the numerators rather than dividing the ratios."],
-          [denominator, "This is the shared denominator, which cancels in the quotient."],
-          [frac(numerator, denominator), "This repeats sin θ without dividing by cos θ."],
+          [frac(adjacent, opposite), "This is cot θ, the reciprocal of the tangent."],
+          [frac(opposite * adjacent, hypotenuse * hypotenuse), "This multiplies sine by cosine instead of dividing."],
+          [frac(opposite + adjacent, hypotenuse), "This adds sine and cosine instead of dividing."],
+          [frac(opposite, hypotenuse), "This repeats sin θ without dividing by cos θ."],
+          [hypotenuse, "The common denominator cancels when the two ratios are divided."],
         ],
-        why: `tan θ = sin θ/cos θ = (${numerator}/${denominator}) ÷ (1/${denominator}) = ${numerator}/${denominator} · ${denominator}/1 = ${numerator}.`,
-        steps: [
-          "Write tangent as sine divided by cosine.",
-          "Divide by multiplying by the reciprocal.",
-          "Cancel the common denominator.",
-        ],
+        why: `tan θ = sin θ/cos θ = (${opposite}/${hypotenuse}) ÷ (${adjacent}/${hypotenuse}) = ${opposite}/${adjacent}.`,
+        steps: ["Write tangent as sine divided by cosine.", "Divide by multiplying by the reciprocal.", "Cancel the common denominator."],
         principles: ["tan θ = sin θ / cos θ."],
-        hint: "Dividing by 1/d is multiplying by d.",
-        verification: quotientCheck(numerator / denominator, 1 / denominator, numerator),
+        hint: "The sine and cosine fractions share a denominator.",
+        verification: quotientCheck(opposite, adjacent, opposite / adjacent),
       };
     },
   ],
@@ -5542,7 +5309,7 @@ SHAPES["center and spread"] = {
       const meanA = 70 + (s % 8);
       const groupB = 15 + 3 * (s % 5);
       const meanB = meanA + 5 + (s % 6);
-      const answer = round3((groupA * meanA + groupB * meanB) / (groupA + groupB));
+      const answer = (groupA * meanA + groupB * meanB) / (groupA + groupB);
       return {
         family: "weighted-mean-of-two-groups",
         stem: pose(variant, "quantityOf", {
@@ -5739,9 +5506,7 @@ SHAPES["data displays"] = {
         { label: "4", frequency: 2 + (s % 3) },
       ];
       const total = rows.reduce((sum, row) => sum + row.frequency, 0);
-      const answer = round3(
-        rows.reduce((sum, row) => sum + Number(row.label) * row.frequency, 0) / total,
-      );
+      const answer = rows.reduce((sum, row) => sum + Number(row.label) * row.frequency, 0) / total;
       const collection = scene(variant, COLLECTION);
       return {
         family: "mean-from-a-frequency-table",
@@ -5754,13 +5519,13 @@ SHAPES["data displays"] = {
         }),
         answer: round3(Math.round(answer * 100) / 100),
         wrong: [
-          [round3(Math.round((rows.reduce((sum, row) => sum + Number(row.label), 0) / rows.length) * 100) / 100), "This averages the pet counts 1 through 4 without weighting by how many households reported each."],
-          [total, "This is the number of households surveyed."],
-          [round3(Math.round((total / rows.length) * 100) / 100), "This averages the household counts rather than the pet counts."],
-          [round3(rows.reduce((sum, row) => sum + Number(row.label) * row.frequency, 0)), "This is the total number of pets, before dividing by the households."],
-          [3, "This is the most common pet count, the mode rather than the mean."],
+          [round3(Math.round((rows.reduce((sum, row) => sum + Number(row.label), 0) / rows.length) * 100) / 100), "This averages the item counts 1 through 4 without weighting by how many locations reported each."],
+          [total, "This is the number of locations surveyed."],
+          [round3(Math.round((total / rows.length) * 100) / 100), "This averages the location counts rather than the item counts."],
+          [round3(rows.reduce((sum, row) => sum + Number(row.label) * row.frequency, 0)), "This is the total number of items, before dividing by the locations."],
+          [3, "This is the most common item count, the mode rather than the mean."],
         ],
-        why: `The total number of pets is ${rows.map((row) => `${row.label}·${row.frequency}`).join(" + ")} = ${rows.reduce((sum, row) => sum + Number(row.label) * row.frequency, 0)}, spread over ${total} households, giving about ${round3(Math.round(answer * 100) / 100)}.`,
+        why: `The total number of items is ${rows.map((row) => `${row.label}·${row.frequency}`).join(" + ")} = ${rows.reduce((sum, row) => sum + Number(row.label) * row.frequency, 0)}, spread over ${total} locations, giving about ${round3(Math.round(answer * 100) / 100)}.`,
         steps: [
           "Multiply each value by its frequency.",
           "Add those products to get the overall total.",
@@ -5788,27 +5553,27 @@ SHAPES["data displays"] = {
         family: "conditional-proportion-from-two-way-table",
         stimulus: {
           type: "table",
-          content: `A frequency cross-tabulation summarizes the survey responses. ${survey.group} were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.second} | do not ${survey.second}\n${survey.first} | ${bothYes} | ${yesNo}\ndo not ${survey.first} | ${noYes} | ${bothNo}`,
+          content: `The following survey asks ${survey.group} two questions. They were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.second} | do not ${survey.second}\n${survey.first} | ${bothYes} | ${yesNo}\ndo not ${survey.first} | ${noYes} | ${bothNo}`,
         },
         stem: pose(variant, "quantityOf", {
           description: `the fraction who ${survey.second} among the ${survey.group} who ${survey.first}`,
         }),
         answer,
         wrong: [
-          [frac(bothYes, bothYes + yesNo + noYes + bothNo), "This divides by every student surveyed; the question restricts attention to those who cycle."],
-          [frac(bothYes, bothYes + noYes), "This divides by all helmet owners, conditioning on the wrong variable."],
-          [frac(yesNo, rowTotal), "This is the fraction of cyclists without a helmet."],
-          [frac(rowTotal, bothYes + yesNo + noYes + bothNo), "This is the fraction of all students who cycle."],
-          [frac(bothYes + noYes, bothYes + yesNo + noYes + bothNo), "This is the fraction of all students who own a helmet."],
+          [frac(bothYes, bothYes + yesNo + noYes + bothNo), "This divides by everyone surveyed, ignoring the condition in the question."],
+          [frac(bothYes, bothYes + noYes), "This conditions on yes to the second question, reversing the requested condition."],
+          [frac(yesNo, rowTotal), "This counts no answers to the second question within the specified row."],
+          [frac(rowTotal, bothYes + yesNo + noYes + bothNo), "This is the fraction answering yes to the first question among everyone surveyed."],
+          [frac(bothYes + noYes, bothYes + yesNo + noYes + bothNo), "This is the fraction answering yes to the second question among everyone surveyed."],
         ],
-        why: `${rowTotal} students cycle, of whom ${bothYes} own a helmet. The conditional fraction is ${bothYes}/${rowTotal}.`,
+        why: `${rowTotal} ${survey.group} answered yes to the first question, and ${bothYes} of those also answered yes to the second. The conditional fraction is ${bothYes}/${rowTotal}.`,
         steps: [
-          "Identify the row the condition selects: students who cycle.",
+          "Identify the row specified by the condition: yes to the first question.",
           "Use that row's total as the denominator.",
           "Put the count meeting both conditions on top.",
         ],
         principles: ["A conditional proportion uses the conditioning group as its denominator, not the whole table."],
-        hint: "The phrase \"among the students who cycle\" fixes the denominator.",
+        hint: "The word among identifies the group that determines the denominator.",
         trap: "Dividing by the grand total instead of the row total.",
         verification: { kind: "probability", inputs: [bothYes, rowTotal], expected: bothYes / rowTotal },
       };
@@ -5827,33 +5592,34 @@ SHAPES["data displays"] = {
           break;
         }
       }
-      const trip = scene(variant, TRAVEL);
+      const trip = scene(variant, ACT_TRAVEL);
       return {
         family: "median-class-from-a-histogram",
         stimulus: {
-          type: "diagram",
-          content: `A histogram of ${trip.mover} travel times on a ${trip.route} has these bar heights.\n\ntravel time (minutes) | journeys\n${values.map((value, index) => `${value} | ${frequencies[index]}`).join("\n")}`,
+          type: "table",
+          content: `A frequency table of ${trip.mover} travel times on a ${trip.route} lists these exact recorded times.\n\ntravel time (minutes) | journeys\n${values.map((value, index) => `${value} | ${frequencies[index]}`).join("\n")}`,
         },
         stem: pose(variant, "quantityOf", {
-          description: `the median ${trip.mover} travel time represented by the histogram`,
+          description: `the median ${trip.mover} travel time represented by the table`,
         }),
         answer,
         wrong: [
-          [values[frequencies.indexOf(Math.max(...frequencies))] === answer ? values[values.length - 1] : values[frequencies.indexOf(Math.max(...frequencies))], "This is the tallest bar, which gives the mode rather than the median."],
-          [total, "This is the number of commuters, not a commute time."],
-          [round3(values.reduce((sum, value) => sum + value, 0) / values.length), "This averages the four labels and ignores how many commuters each represents."],
-          [Math.max(...frequencies), "This is a bar height, not a commute time."],
-          [values[0], "The running total has not yet reached half the commuters at this bar."],
+          [values[frequencies.indexOf(Math.max(...frequencies))], "This is the most frequent value, the mode rather than the median."],
+          [total, "This is the number of journeys, not a travel time."],
+          [values[values.length - 1], "This is the greatest observed travel time, not the middle of the ordered data."],
+          [round3(values.reduce((sum, value) => sum + value, 0) / values.length), "This averages the four labels and ignores how many journeys each represents."],
+          [Math.max(...frequencies), "This is a frequency, not a travel time."],
+          [values[0], "The running total has not yet reached half the journeys at this row."],
         ],
-        why: `There are ${total} commuters, so the median sits at position ${round3(half)}. Accumulating the bars ${frequencies.join(", ")} reaches that position within the ${answer}-minute bar.`,
+        why: `There are ${total} journeys. The middle position${total % 2 ? " is " + Math.ceil(half) : "s are " + half + " and " + (half + 1)}. The cumulative frequencies place the middle observation${total % 2 ? "" : "s"} in the ${answer}-minute row, so the median is ${answer} minutes.`,
         steps: [
-          "Add the bar heights to find the total number of data points.",
-          "Halve that total to locate the median's position.",
-          "Accumulate the bars left to right until the running total reaches that position.",
+          "Add the frequencys to find the total number of data points.",
+          "Locate the middle observation, or both middle observations when the total is even.",
+          "Accumulate the frequencies left to right until the running total reaches that position.",
         ],
-        principles: ["A histogram's median is found by cumulative frequency, not by the tallest bar."],
-        hint: "The tallest bar gives the mode; the median needs a running total.",
-        trap: "Reporting the tallest bar's value.",
+        principles: ["A frequency table's median is found by cumulative frequency, not by the largest frequency."],
+        hint: "The most frequent value is the mode; the median needs a running total.",
+        trap: "Reporting the tallest row's value.",
       };
     },
   ],
@@ -6189,13 +5955,13 @@ SHAPES["counting"] = {
         answer,
         wrong: [
           [combinations(total, size), "This ignores the restriction and counts every possible team."],
-          [combinations(total, size - required), `This removes ${required} from the team size but still chooses from all ${total} volunteers.`],
-          [combinations(total - required, size), `This removes the ${required} required volunteers from the pool but does not reduce the number of seats left to fill.`],
+          [combinations(total, size - required), `This removes ${required} from the team size but still chooses from all ${total} members.`],
+          [combinations(total - required, size), `This removes the ${required} required members from the pool but does not reduce the number of seats left to fill.`],
           [permutations(total - required, size - required), "This orders the remaining selections, which a team does not distinguish."],
-          [total - required, "This counts the remaining volunteers rather than the ways of choosing from them."],
+          [total - required, "This counts the remaining members rather than the ways of choosing from them."],
           [combinations(total - required, size - required) + required, "This adds the required members to the count of teams."],
         ],
-        why: `Seating the ${required} required volunteers uses ${required} of the ${size} places, leaving ${size - required} to fill from the other ${total - required} volunteers: C(${total - required}, ${size - required}) = ${answer}.`,
+        why: `Including the ${required} required members uses ${required} of the ${size} places, leaving ${size - required} to fill from the other ${total - required} members: C(${total - required}, ${size - required}) = ${answer}.`,
         steps: [
           "Place the required members first; they consume seats but offer no choice.",
           "Reduce both the pool and the number of seats by the number required.",
@@ -6259,16 +6025,16 @@ SHAPES["compound probability"] = {
         }),
         answer: frac(favourable, total),
         wrong: [
-          [frac(favourable, others), "This compares red to blue rather than red to the whole bag."],
-          [frac(others, total), "This is the probability of drawing a blue marble."],
+          [frac(favourable, others), "This compares the favorable count to the unfavorable count rather than to the total."],
+          [frac(others, total), "This is the probability of drawing an item of the other color or type."],
           [frac(total, favourable), "This inverts the probability, giving a value greater than 1."],
-          [frac(1, total), "This is the probability of one specific marble, not of any red one."],
-          [frac(favourable, favourable), "This is 1, which would mean every marble is red."],
+          [frac(1, total), "This is the probability of one specific item, not any item of the required type."],
+          [frac(favourable, favourable), "This is 1, which would mean every item has the required color or type."],
         ],
-        why: `There are ${total} marbles in all, ${favourable} of them red, so the probability is ${favourable}/${total}.`,
+        why: `There are ${total} items in all, ${favourable} of the required color or type, so the probability is ${favourable}/${total}.`,
         steps: ["Count the favourable outcomes.", "Count all equally likely outcomes.", "Divide."],
         principles: ["Probability is favourable outcomes over total outcomes."],
-        hint: "The denominator counts every marble, not just the other colour.",
+        hint: "The denominator counts every item, not just the other color or type.",
         verification: { kind: "probability", inputs: [favourable, total], expected: favourable / total },
       };
     },
@@ -6317,19 +6083,19 @@ SHAPES["compound probability"] = {
         answer,
         wrong: [
           [frac(red * red, total * total), "This treats the draws as independent; without replacement the second draw has one fewer token of each kind."],
-          [frac(red, total), "This is the probability that only the first token is red."],
+          [frac(red, total), "This is the probability that only the first item is red."],
           [frac(red - 1, total - 1), "This is the probability of the second draw alone, given the first was red."],
           [frac(2 * red, total), "This doubles the count rather than multiplying two probabilities."],
           [frac(red * (red - 1), total * total), "This reduces the numerator for the second draw but not the denominator."],
         ],
-        why: `The first token is red with probability ${red}/${total}. Given that, the second is red with probability ${red - 1}/${total - 1}. Multiplying gives ${red * (red - 1)}/${total * (total - 1)}.`,
+        why: `The first item has the required color or type with probability ${red}/${total}. Given that, the second has that color or type with probability ${red - 1}/${total - 1}. Multiplying gives ${red * (red - 1)}/${total * (total - 1)}.`,
         steps: [
           "Find the probability of the first draw.",
-          "Update both counts for the second draw, since the first token is not replaced.",
+          "Update both counts for the second draw, since the first item is not replaced.",
           "Multiply the two probabilities.",
         ],
         principles: ["Without replacement the draws are dependent: both the favourable count and the total drop by one."],
-        hint: "After a red is removed, one fewer red and one fewer token remain.",
+        hint: "After a matching item is removed, both the matching count and the total drop by one.",
         trap: "Squaring the first probability, which assumes replacement.",
         verification: { kind: "probability", inputs: [red * (red - 1), total * (total - 1)], expected: (red * (red - 1)) / (total * (total - 1)) },
       };
@@ -6419,28 +6185,28 @@ SHAPES["compound probability"] = {
         family: "conditional-probability-reversed",
         stimulus: {
           type: "table",
-          content: `A conditional-probability contingency table records the joint outcomes. ${survey.group} were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.first} | do not ${survey.first}\n${survey.second} | ${bothYes} | ${noYes}\ndo not ${survey.second} | ${yesNo} | ${bothNo}`,
+          content: `The ${survey.group} were asked whether they ${survey.first} and whether they ${survey.second}.\n\n | ${survey.first} | do not ${survey.first}\n${survey.second} | ${bothYes} | ${noYes}\ndo not ${survey.second} | ${yesNo} | ${bothNo}`,
         },
         stem: pose(variant, "quantityOf", {
-          description: `the probability that a randomly chosen ${survey.group.slice(0, -1)} ${survey.first}, given that the person ${survey.second}`,
+          description: `the probability of a yes answer to "Do you ${survey.first}?" among the ${survey.group} who answered yes to "Do you ${survey.second}?"`,
         }),
         answer,
         wrong: [
-          [frac(bothYes, bothYes + yesNo), "This conditions on having the condition, answering the reverse question: given the condition, how likely is a positive test?"],
-          [frac(bothYes, bothYes + yesNo + noYes + bothNo), "This divides by every patient rather than only those who tested positive."],
-          [frac(noYes, columnTotal), "This is the probability that the condition is absent given a positive test."],
-          [frac(columnTotal, bothYes + yesNo + noYes + bothNo), "This is the probability of testing positive at all."],
-          [frac(bothYes + yesNo, bothYes + yesNo + noYes + bothNo), "This is the prevalence of the condition, before any test result is known."],
+          [frac(bothYes, bothYes + yesNo), "This conditions on the first yes answer and asks about the second, reversing the requested condition."],
+          [frac(bothYes, bothYes + yesNo + noYes + bothNo), "This divides by everyone surveyed instead of the group named after given."],
+          [frac(noYes, columnTotal), "This counts no answers to the first question within the specified group."],
+          [frac(columnTotal, bothYes + yesNo + noYes + bothNo), "This is the fraction answering yes to the second question among everyone surveyed."],
+          [frac(bothYes + yesNo, bothYes + yesNo + noYes + bothNo), "This is the fraction answering yes to the first question among everyone surveyed."],
         ],
-        why: `${columnTotal} patients tested positive, and ${bothYes} of them have the condition, so the probability is ${bothYes}/${columnTotal}. This is not the same as the probability of a positive test given the condition.`,
+        why: `${columnTotal} ${survey.group} answered yes to the second question. Of those, ${bothYes} also answered yes to the first, so the probability is ${bothYes}/${columnTotal}.`,
         steps: [
-          "Identify what is being conditioned on: a positive test.",
+          "Identify the group specified after given: yes to the second question.",
           "Restrict to that row and use its total as the denominator.",
-          "Count the patients in that row who also have the condition.",
+          "Count the yes answers to the first question in that row.",
         ],
         principles: ["P(A|B) and P(B|A) are different quantities; the condition names the denominator."],
         hint: "The word \"given\" tells you which total goes underneath.",
-        trap: "Swapping the conditioning and computing P(positive | condition) instead.",
+        trap: "Swapping the conditioning and computing P(second yes | first yes) instead.",
         verification: { kind: "probability", inputs: [bothYes, columnTotal], expected: bothYes / columnTotal },
       };
     },
@@ -6492,7 +6258,7 @@ SHAPES["rates"] = {
       const speed = span(s, 25, 8, 5);
       const hours = span(s, 2, 4);
       const distance = speed * hours;
-      const trip = scene(variant, TRAVEL);
+      const trip = scene(variant, ACT_TRAVEL);
       return {
         family: "average-speed-single-leg",
         stem: pose(variant, "quantityOf", {
@@ -6526,8 +6292,8 @@ SHAPES["rates"] = {
       const t2 = t1 + 1 + (s % 2);
       const distance = first * t1 + second * t2;
       const time = t1 + t2;
-      const answer = round3(distance / time);
-      const trip = scene(variant, TRAVEL);
+      const answer = exactRatio(distance, time);
+      const trip = scene(variant, ACT_TRAVEL);
       return {
         family: "average-speed-two-legs",
         stem: pose(variant, "quantityOf", {
@@ -6542,7 +6308,7 @@ SHAPES["rates"] = {
           [round3(distance / t1), "This divides the whole distance by only the first leg's time."],
           [second, "This is the faster leg's speed, not the trip average."],
         ],
-        why: `The legs cover ${first} · ${t1} = ${first * t1} and ${second} · ${t2} = ${second * t2} miles, so the trip is ${distance} miles in ${time} hours: ${distance} ÷ ${time} = ${num(answer)} miles per hour.`,
+        why: `The legs cover ${first} · ${t1} = ${first * t1} and ${second} · ${t2} = ${second * t2} miles, so the trip is ${distance} miles in ${time} hours: ${distance} ÷ ${time} = ${answer.text} miles per hour.`,
         steps: [
           "Find each leg's distance as speed × time.",
           `Add them: ${distance} miles in total.`,
@@ -6558,12 +6324,12 @@ SHAPES["rates"] = {
     (s, variant) => {
       const a = span(s, 4, 5, 2);
       const b = a + span(s, 2, 4, 2);
-      const answer = round3((a * b) / (a + b));
+      const answer = exactRatio(a * b, a + b);
       const production = scene(variant, PRODUCTION);
       return {
         family: "combined-work-rate",
         stem: pose(variant, "quantityOf", {
-          description: `the time for two ${production.actor}s working together to finish a ${production.object} job when they need ${a} and ${b} hours alone`,
+          description: `the time for two machines working together to finish one batch of ${production.object} when they need ${a} and ${b} hours alone`,
         }),
         answer,
         wrong: [
@@ -6573,7 +6339,7 @@ SHAPES["rates"] = {
           [b, "This is the slower machine's time alone."],
           [round3((a * b) / 2), "This multiplies the times and halves, ignoring the rate sum."],
         ],
-        why: `Rates add: 1/${a} + 1/${b} = ${a + b}/${a * b} of the tank per hour, so the time is the reciprocal, ${a * b}/${a + b} = ${num(answer)} hours.`,
+        why: `Rates add: 1/${a} + 1/${b} = ${a + b}/${a * b} of the job per hour, so the time is the reciprocal, ${a * b}/${a + b} = ${answer.text} hours.`,
         steps: [
           "Convert each time to a rate: 1 job per a hours means 1/a of the job per hour.",
           `Add the rates: 1/${a} + 1/${b} = ${a + b}/${a * b}.`,
@@ -6599,7 +6365,7 @@ SHAPES["rates"] = {
       ];
       const [out, back, answer] = choose(s, table);
       const distance = lcm(out, back);
-      const trip = scene(variant, TRAVEL);
+      const trip = scene(variant, ACT_TRAVEL);
       return {
         family: "round-trip-harmonic-average-speed",
         stem: pose(variant, "quantityOf", {
@@ -6646,16 +6412,16 @@ SHAPES["rates"] = {
         answer,
         wrong: [
           [round3((a * hours) / m + (b * hours) / p), "This uses hours where the rates are stated per minute; the running time has to be converted first."],
-          [(a + b) * hours, "This adds the carton counts and multiplies by hours, ignoring the stated intervals."],
+          [(a + b) * hours, "This adds the item counts and multiplies by hours, ignoring the stated intervals."],
           [round3((a * minutes) / m), "This counts only machine A."],
           [round3((b * minutes) / p), "This counts only machine B."],
           [round3(((a + b) * minutes) / (m + p)), "This adds the counts and the intervals separately, which is not how rates combine."],
           [answer + a, "This adds one extra interval of machine A's output."],
         ],
-        why: `${hours} hours is ${minutes} minutes. Machine A seals ${a}/${m} = ${num(a / m)} cartons per minute and machine B seals ${b}/${p} = ${num(b / p)}, so together they seal ${num(a / m + b / p)} per minute, and ${num(a / m + b / p)} · ${minutes} = ${answer} cartons.`,
+        why: `${hours} hours is ${minutes} minutes. Machine A produces ${a}/${m} items per minute and machine B produces ${b}/${p} items per minute. Together they produce (${a}/${m} + ${b}/${p}) · ${minutes} = ${answer} items.`,
         steps: [
           `Convert the running time to the rates' unit: ${hours} hours = ${minutes} minutes.`,
-          "Turn each statement into cartons per minute.",
+          "Turn each statement into items per minute.",
           "Add the two rates, then multiply by the total minutes.",
         ],
         principles: [
@@ -6688,12 +6454,12 @@ SHAPES["proportions"] = {
           [cups, "This is the original amount, unscaled."],
           [target, "This is the number of servings, not cups."],
           [cups * (factor + 1), "This scales by one factor too many."],
-          [round3(cups / factor), "This divides by the scale factor; more servings need more flour."],
+          [round3(cups / factor), "This divides by the scale factor; more servings need more of the ingredient."],
         ],
         why: `${target} ÷ ${serves} = ${factor}, so every ingredient is multiplied by ${factor}: ${cups} · ${factor} = ${answer} cups.`,
         steps: [
           `Find the scale factor: ${target} ÷ ${serves} = ${factor}.`,
-          `Apply it to the flour: ${cups} · ${factor}.`,
+          `Apply it to the ingredient: ${cups} · ${factor}.`,
           "Check that the answer is larger, since more people are being served.",
         ],
         principles: ["In a direct proportion, both quantities are multiplied by the same factor."],
@@ -6715,13 +6481,13 @@ SHAPES["proportions"] = {
         }),
         answer,
         wrong: [
-          [money(cost + (wanted - count)), "This adds the extra notebooks as dollars rather than pricing them."],
+          [money(cost + (wanted - count)), "This adds the extra items as dollars rather than pricing them."],
           [money(cost), "This is the cost of the smaller group, not the larger one."],
           [money(wanted), "This treats each notebook as costing one dollar."],
           [money(cost * wanted), "This multiplies the whole cost by the new count instead of the unit price."],
           [money(price), "This is the price of a single notebook."],
         ],
-        why: `Each notebook costs ${cost} ÷ ${count} = ${price}, so ${wanted} notebooks cost ${wanted} · ${price} = ${wanted * price}.`,
+        why: `Each item costs ${cost} ÷ ${count} = ${price}, so ${wanted} items cost ${wanted} · ${price} = ${wanted * price}.`,
         steps: [
           `Divide to get the unit price: ${cost} ÷ ${count} = ${price}.`,
           `Multiply by the new count: ${price} · ${wanted}.`,
@@ -6748,14 +6514,14 @@ SHAPES["proportions"] = {
         }),
         answer,
         wrong: [
-          [blue * groups, "This is the number of blue tiles."],
+          [blue * groups, "This is the number of blue items."],
           [round3(total / (red + blue)), "This is the size of one share, not the red part."],
           [round3((total * red) / blue), "This uses the part-to-part ratio as if it were part-to-whole."],
           [round3(total / red), "This divides the total by the red term alone."],
           [red, "This is the ratio term, not a tile count."],
-          [round3(total / 2), "This splits the tiles evenly, ignoring the ratio."],
+          [round3(total / 2), "This splits the items evenly, ignoring the ratio."],
         ],
-        why: `The ratio makes ${red + blue} shares in all, so one share is ${total} ÷ ${red + blue} = ${groups} tiles, and red takes ${red} shares: ${red} · ${groups} = ${answer}.`,
+        why: `The ratio makes ${red + blue} shares in all, so one share is ${total} ÷ ${red + blue} = ${groups} items, and the first group takes ${red} shares: ${red} · ${groups} = ${answer}.`,
         steps: [
           `Add the ratio terms to count the shares: ${red} + ${blue} = ${red + blue}.`,
           `Divide the total by the shares: ${total} ÷ ${red + blue} = ${groups}.`,
@@ -6764,7 +6530,7 @@ SHAPES["proportions"] = {
         principles: [
           "A part-to-part ratio becomes a part-to-whole fraction only after the terms are summed.",
         ],
-        hint: "How many equal shares does the ratio divide the tiles into?",
+        hint: "How many equal shares does the ratio divide the items into?",
         trap: "Treating the ratio's first term as a fraction of the whole.",
         verification: { kind: "product", inputs: [red, groups], expected: answer },
       };
@@ -6788,7 +6554,7 @@ SHAPES["proportions"] = {
           [round3(wall / cm), "This divides by the wrong term of the scale."],
           [cm, "This is the scale's drawing length, not the wall's."],
         ],
-        why: `The scale is ${cm} cm per ${meters} m, so each meter is ${num(cm / meters)} cm on the drawing: ${wall} · ${num(cm / meters)} = ${num(answer)} centimeters.`,
+        why: `The scale is ${cm} cm per ${meters} m, so each meter is ${cm}/${meters} cm on the drawing: ${wall} · (${cm}/${meters}) = ${num(answer)} centimeters.`,
         steps: [
           `Reduce the scale to centimeters per meter: ${cm} ÷ ${meters}.`,
           `Multiply by the real length ${wall} meters.`,
@@ -7017,25 +6783,34 @@ SHAPES["percentages"] = {
         [70, 30, 50],
       ];
       const [volume, weak, target] = choose(s, table);
-      const answer = round3((volume * (target - weak)) / (100 - target));
-      const solution = scene(variant, SOLUTION);
+      const answer = exactRatio(volume * (target - weak), 100 - target);
+      const solution = scene(variant, [
+        { solute: "liquid concentrate", solvent: "mixture", agent: "technician" },
+        { solute: "syrup", solvent: "drink", agent: "bottler" },
+        { solute: "liquid dye", solvent: "coloring solution", agent: "dyer" },
+        { solute: "liquid fertilizer", solvent: "plant feed", agent: "grower" },
+        { solute: "detergent", solvent: "cleaning solution", agent: "cleaner" },
+        { solute: "lemon juice", solvent: "beverage", agent: "cook" },
+        { solute: "antifreeze", solvent: "coolant", agent: "mechanic" },
+        { solute: "liquid pigment", solvent: "paint mixture", agent: "painter" },
+      ]);
       return {
         family: "acid-mixture-add-pure-solute",
         stem: pose(variant, "quantityOf", {
-          description: `the liters of pure ${solution.solute} a ${solution.agent} must add to ${volume} liters of ${weak}% ${solution.solvent} to make it ${target}% ${solution.solute}`,
+          description: `the liters of pure ${solution.solute} a ${solution.agent} must add to ${volume} liters of ${weak}% ${solution.solute} ${solution.solvent} to make it ${target}% ${solution.solute}, assuming volumes add and percentages are by volume`,
         }),
         answer,
         wrong: [
-          [round3((volume * (target - weak)) / 100), "This takes the percent difference of the original volume, treating the added acid as if it did not also enlarge the total."],
+          [round3((volume * (target - weak)) / 100), "This takes the percent difference of the original volume, treating the added concentrate as if it did not also enlarge the total."],
           [target - weak, "This is the difference of the percents, not a volume."],
-          [round3((volume * target) / 100), "This is the acid the final mixture contains, not the amount added."],
-          [round3((volume * weak) / 100), "This is the acid already present."],
+          [round3((volume * target) / 100), "This is the concentrate the final mixture contains, not the amount added."],
+          [round3((volume * weak) / 100), "This is the concentrate already present."],
           [volume, "This repeats the starting volume."],
-          [round3((volume * (target - weak)) / (100 - weak)), "This divides by the wrong complement; the added liquid is pure acid, so it is the target percent that limits the dilution."],
+          [round3((volume * (target - weak)) / (100 - weak)), "This divides by the wrong complement; the added liquid is pure concentrate, so it is the target percent that limits the dilution."],
         ],
-        why: `Start with ${num((volume * weak) / 100)} liters of acid in ${volume} liters. Adding x liters of pure acid gives ${num((volume * weak) / 100)} + x acid in ${volume} + x liters, and setting that equal to ${target}% gives x = ${volume}(${target} − ${weak}) ÷ (100 − ${target}) = ${num(answer)} liters.`,
+        why: `Start with ${num((volume * weak) / 100)} liters of concentrate in ${volume} liters. Adding x liters of pure concentrate gives ${num((volume * weak) / 100)} + x concentrate in ${volume} + x liters, and setting that equal to ${target}% gives x = ${volume}(${target} − ${weak}) ÷ (100 − ${target}) = ${answer.text} liters.`,
         steps: [
-          "Track the acid and the total separately; adding pure acid increases both.",
+          "Track the concentrate and the total separately; adding pure concentrate increases both.",
           `Write the equation (${num((volume * weak) / 100)} + x) ÷ (${volume} + x) = ${num(target / 100)}.`,
           "Clear the denominator and solve the resulting linear equation for x.",
         ],
@@ -7043,7 +6818,7 @@ SHAPES["percentages"] = {
           "In a mixture problem the added substance changes the numerator and the denominator, so the concentration equation is not a simple percent of the original volume.",
         ],
         hint: "The total volume does not stay at the starting number.",
-        trap: "Holding the total volume fixed while the acid amount grows.",
+        trap: "Holding the total volume fixed while the concentrate amount grows.",
       };
     },
     (s, variant) => {
@@ -7163,7 +6938,7 @@ SHAPES["perimeter and area"] = {
           [round3((outerW - cutW) * (outerH - cutH)), "This shrinks both dimensions, which cuts away far more than one corner."],
           [2 * (outerW + outerH), "This is a perimeter, not an area."],
         ],
-        why: `The whole rectangle is ${outerW} · ${outerH} = ${outerW * outerH} square feet and the removed corner is ${cutW} · ${cutH} = ${cutW * cutH}, so the floor is ${outerW * outerH} − ${cutW * cutH} = ${answer} square feet.`,
+        why: `The whole rectangle is ${outerW} · ${outerH} = ${outerW * outerH} square feet and the removed corner is ${cutW} · ${cutH} = ${cutW * cutH}, so the remaining area is ${outerW * outerH} − ${cutW * cutH} = ${answer} square feet.`,
         steps: [
           "Find the area of the complete rectangle.",
           "Find the area of the piece taken away.",
@@ -7284,14 +7059,14 @@ SHAPES["measurement conversion"] = {
       return {
         family: "single-step-unit-conversion",
         stem: choose(variant, [
-          `Scale into the smaller measurement unit. There are ${unit.factor} ${unit.to} in one ${unit.from.replace(/s$/, "")}. How many ${unit.to} are in ${count} ${unit.from}?`,
-          `Convert the stated quantity using its unit factor. One ${unit.from.replace(/s$/, "")} equals ${unit.factor} ${unit.to}; express ${count} ${unit.from} in ${unit.to}.`,
-          `Translate this measure without changing its size. If 1 ${unit.from.replace(/s$/, "")} is ${unit.factor} ${unit.to}, how many ${unit.to} equal ${count} ${unit.from}?`,
-          `Apply the equivalence between these measurement units. Given ${unit.factor} ${unit.to} per ${unit.from.replace(/s$/, "")}, convert ${count} ${unit.from}.`,
-          `Rewrite the quantity in the finer unit. A single ${unit.from.replace(/s$/, "")} contains ${unit.factor} ${unit.to}; what is the ${unit.to} count for ${count} ${unit.from}?`,
-          `Use dimensional conversion on the measurement. How many ${unit.to} represent ${count} ${unit.from} when each ${unit.from.replace(/s$/, "")} contains ${unit.factor}?`,
-          `Change the unit label while preserving the quantity. With ${unit.factor} ${unit.to} in every ${unit.from.replace(/s$/, "")}, find the equivalent of ${count} ${unit.from}.`,
-          `Map the larger-unit count to smaller units. If ${unit.factor} ${unit.to} make one ${unit.from.replace(/s$/, "")}, determine the number in ${count} ${unit.from}.`,
+          `There are ${unit.factor} ${unit.to} in one ${unit.from.replace(/s$/, "")}. How many ${unit.to} are in ${count} ${unit.from}?`,
+          `One ${unit.from.replace(/s$/, "")} equals ${unit.factor} ${unit.to}; express ${count} ${unit.from} in ${unit.to}.`,
+          `If 1 ${unit.from.replace(/s$/, "")} is ${unit.factor} ${unit.to}, how many ${unit.to} equal ${count} ${unit.from}?`,
+          `Given ${unit.factor} ${unit.to} per ${unit.from.replace(/s$/, "")}, convert ${count} ${unit.from}.`,
+          `A single ${unit.from.replace(/s$/, "")} contains ${unit.factor} ${unit.to}; what is the ${unit.to} count for ${count} ${unit.from}?`,
+          `How many ${unit.to} represent ${count} ${unit.from} when each ${unit.from.replace(/s$/, "")} contains ${unit.factor}?`,
+          `With ${unit.factor} ${unit.to} in every ${unit.from.replace(/s$/, "")}, find the equivalent of ${count} ${unit.from}.`,
+          `If ${unit.factor} ${unit.to} make one ${unit.from.replace(/s$/, "")}, determine the number in ${count} ${unit.from}.`,
         ]),
         answer,
         wrong: [
@@ -7345,7 +7120,7 @@ SHAPES["measurement conversion"] = {
     (s, variant) => {
       const feetPerSecond = span(s, 22, 6, 22);
       const answer = round3((feetPerSecond * 3600) / 5280);
-      const trip = scene(variant, TRAVEL);
+      const trip = scene(variant, ACT_TRAVEL);
       return {
         family: "rate-unit-conversion-fps-to-mph",
         stem: pose(variant, "quantityOf", {
@@ -7421,7 +7196,7 @@ SHAPES["measurement conversion"] = {
           [round3((width * length) / 27), "This uses the cubic conversion, 27 cubic feet per cubic yard."],
           [round3((width + length) / 3), "This converts a perimeter-like sum rather than an area."],
         ],
-        why: `The room is ${width * length} square feet. One square yard is 3 ft · 3 ft = 9 square feet, so ${width * length} ÷ 9 = ${num(answer)} square yards. Checking the other way: ${num(width / 3)} yd · ${num(length / 3)} yd = ${num(answer)}.`,
+        why: `The region is ${width * length} square feet. One square yard is 3 ft · 3 ft = 9 square feet, so ${width * length} ÷ 9 = ${num(answer)} square yards. Checking the other way: ${num(width / 3)} yd · ${num(length / 3)} yd = ${num(answer)}.`,
         steps: [
           "Find the area in square feet first.",
           "Recognize that the area conversion factor is the linear factor squared: 3² = 9.",
@@ -7571,13 +7346,13 @@ SHAPES["averages"] = {
         }),
         answer,
         wrong: [
-          [round3((m1 + m2) / 2), "This averages the two class averages, which is correct only when the classes are the same size."],
-          [m2, "This is the larger class average."],
-          [m1, "This is the smaller class average."],
-          [round3((n1 * m1 + n2 * m2) / 2), "This divides the combined total by 2 rather than by the number of students."],
+          [round3((m1 + m2) / 2), "This averages the two group averages, which is correct only when the groups are the same size."],
+          [m2, "This is the larger group average."],
+          [m1, "This is the smaller group average."],
+          [round3((n1 * m1 + n2 * m2) / 2), "This divides the combined total by 2 rather than by the number of records."],
           [n1 * m1 + n2 * m2, "This is the combined point total, not an average."],
         ],
-        why: `The two classes score ${n1 * m1} and ${n2 * m2} points, a total of ${n1 * m1 + n2 * m2} across ${n1 + n2} students: ${n1 * m1 + n2 * m2} ÷ ${n1 + n2} = ${num(answer)}.`,
+        why: `The two groups score ${n1 * m1} and ${n2 * m2} points, a total of ${n1 * m1 + n2 * m2} across ${n1 + n2} records: ${n1 * m1 + n2 * m2} ÷ ${n1 + n2} = ${num(answer)}.`,
         steps: [
           "Convert each average back into a total by multiplying by the group size.",
           "Add the totals and add the group sizes.",
@@ -7586,7 +7361,7 @@ SHAPES["averages"] = {
         principles: [
           "A combined average weights each group by its size, so it lies nearer the average of the larger group.",
         ],
-        hint: "The larger class pulls the combined average toward itself.",
+        hint: "The larger group pulls the combined average toward itself.",
         trap: "Averaging the two averages.",
       };
     },
@@ -7634,7 +7409,7 @@ SHAPES["averages"] = {
       const current = span(s, 76, 5, 2);
       const extra = span(s, 2, 3);
       const target = current + span(s, 2, 4);
-      const answer = round3(((taken + extra) * target - taken * current) / extra);
+      const answer = exactRatio((taken + extra) * target - taken * current, extra);
       const cohort = scene(variant, COHORT);
       return {
         family: "scores-needed-to-raise-a-mean",
@@ -7649,7 +7424,7 @@ SHAPES["averages"] = {
           [round3((taken + extra) * target - taken * current), "This is the total still needed across all remaining tests, not the score on each."],
           [current, "This is the current average."],
         ],
-        why: `All ${taken + extra} tests must total ${taken + extra} · ${target} = ${(taken + extra) * target}. The ${taken} tests so far total ${taken * current}, leaving ${(taken + extra) * target - taken * current} points across ${extra} test${extra === 1 ? "" : "s"}: ${num(answer)} each.`,
+        why: `All ${taken + extra} tests must total ${taken + extra} · ${target} = ${(taken + extra) * target}. The ${taken} tests so far total ${taken * current}, leaving ${(taken + extra) * target - taken * current} points across ${extra} test${extra === 1 ? "" : "s"}: ${answer.text} each.`,
         steps: [
           "Find the total the target average requires over every test.",
           "Subtract the points already earned.",
@@ -7797,7 +7572,7 @@ SHAPES["financial contexts"] = {
       const principal = span(s, 1000, 6, 500);
       const rate = choose(s, [5, 10, 20, 4]);
       const years = span(s, 2, 3);
-      const compound = round3(principal * (1 + rate / 100) ** years);
+      const compound = Math.round(principal * (1 + rate / 100) ** years * 100) / 100;
       const simple = round3(principal * (1 + (rate * years) / 100));
       const finance = scene(variant, FINANCE);
       return {
@@ -7813,14 +7588,14 @@ SHAPES["financial contexts"] = {
           [money(principal), "This is the amount originally invested."],
           [money(round3(principal * (rate / 100) ** years)), "This raises the rate to a power instead of the growth factor."],
         ],
-        why: `Each year multiplies the balance by ${num(1 + rate / 100)}, so after ${years} years the balance is ${principal} · ${num(1 + rate / 100)}^${years} = ${num(compound)}. Simple interest would give only ${num(simple)}.`,
+        why: `Each year multiplies the balance by ${num(1 + rate / 100)}, so after ${years} years the balance is ${principal} · ${num(1 + rate / 100)}^${years} ≈ ${money(compound).text}. Simple interest would give only ${num(simple)}.`,
         steps: [
           `Write the growth factor: 1 + ${rate}/100 = ${num(1 + rate / 100)}.`,
           `Raise it to the number of compounding periods: ${years}.`,
           "Multiply by the principal and round to cents.",
         ],
         principles: [
-          "Compound growth is repeated multiplication by the same factor, so it always exceeds simple interest over more than one period.",
+          "With a positive interest rate, compound interest earns interest on prior interest, so it exceeds simple interest after more than one period.",
         ],
         hint: "The second year's interest is computed on a larger balance.",
         trap: "Multiplying the annual rate by the number of years.",
@@ -7846,23 +7621,23 @@ SHAPES["financial contexts"] = {
         }),
         answer,
         wrong: [
-          [round3(feeA - feeB), "This is the difference of the fees; it still has to be spread across the difference in the per-class rates."],
-          [round3(rateB - rateA), "This is the difference of the per-class rates."],
-          [totalAtCross, "This is the cost at the break-even point, not the number of classes."],
+          [round3(feeA - feeB), "This is the difference of the fees; it still has to be spread across the difference in the per-use rates."],
+          [round3(rateB - rateA), "This is the difference of the per-use rates."],
+          [totalAtCross, "This is the cost at the break-even point, not the number of uses."],
           [round3((feeA + feeB) / (rateA + rateB)), "This adds the fees and the rates rather than comparing them."],
           [round3((feeA - feeB) / rateB), "This divides by one rate instead of by the gap between the rates."],
         ],
-        why: `Setting ${feeA} + ${rateA}n = ${feeB} + ${rateB}n gives ${feeA - feeB} = (${rateB} − ${rateA})n, so n = ${feeA - feeB} ÷ ${rateB - rateA} = ${num(answer)} classes. Both plans then cost ${num(totalAtCross)}.`,
+        why: `Setting ${feeA} + ${rateA}n = ${feeB} + ${rateB}n gives ${feeA - feeB} = (${rateB} − ${rateA})n, so n = ${feeA - feeB} ÷ ${rateB - rateA} = ${num(answer)} uses. Both plans then cost ${num(totalAtCross)}.`,
         steps: [
-          "Write a cost expression for each plan in terms of the number of classes.",
+          "Write a cost expression for each plan in terms of the number of uses.",
           "Set the two expressions equal to each other.",
-          "Collect the class terms on one side and divide by their coefficient.",
+          "Collect the use terms on one side and divide by their coefficient.",
         ],
         principles: [
           "Two linear cost models meet where the difference in fixed cost is exactly repaid by the difference in per-unit cost.",
         ],
-        hint: "The plan with the bigger fee has the smaller per-class charge.",
-        trap: "Answering with the shared cost rather than the number of classes.",
+        hint: "The plan with the bigger fee has the smaller per-use charge.",
+        trap: "Answering with the shared cost rather than the number of uses.",
         verification: quotientCheck(feeA - feeB, rateB - rateA, answer),
       };
     },
@@ -7885,16 +7660,16 @@ SHAPES["combined concepts"] = {
         }),
         answer,
         wrong: [
-          [sold, "This is the number of mugs shipped, not the number of boxes."],
-          [round3(total / perBox), "This packs every mug in the warehouse, not just the shipped ones."],
+          [sold, "This is the number of items shipped, not the number of boxes."],
+          [round3(total / perBox), "This packs every item in the starting inventory, not just the shipped ones."],
           [percent, "This repeats the percent."],
           [round3(sold * perBox), "This multiplies by the box size instead of dividing by it."],
           [total, "This is the whole inventory."],
         ],
-        why: `${percent}% of ${total} is ${num(sold)} mugs, and ${num(sold)} ÷ ${perBox} = ${num(answer)} boxes.`,
+        why: `${percent}% of ${total} is ${num(sold)} items, and ${num(sold)} ÷ ${perBox} = ${num(answer)} boxes.`,
         steps: [
           `Take the percent first: ${percent}% of ${total} = ${num(sold)}.`,
-          `Divide by ${perBox} mugs per box.`,
+          `Divide by ${perBox} items per box.`,
           "Check that the final unit is boxes.",
         ],
         principles: ["Multi-step problems finish in the unit the question names."],
@@ -7947,13 +7722,14 @@ SHAPES["combined concepts"] = {
         }),
         answer,
         wrong: [
-          [area, "This is the wall's area in square feet, not a number of cans."],
-          [Math.floor(area / coverage) === answer ? answer + 2 : Math.floor(area / coverage), "This rounds the number of cans down, leaving part of the wall unpainted."],
-          [round3(area / coverage) === answer ? answer + 3 : round3(area / coverage), "This reports a fractional number of cans, but paint is sold in whole cans."],
+          [area, "This is the surface's area in square feet, not a number of cans."],
+          [Math.floor(area / coverage), "This rounds the number of cans down, leaving part of the surface uncovered."],
+          [round3(area / coverage), "This reports a fractional number of cans, but the finish is sold in whole cans."],
           [coverage, "This is one can's coverage."],
-          [round3((length + height) / coverage) === answer ? answer + 4 : Math.ceil((2 * (length + height)) / coverage), "This uses the wall's perimeter instead of its area."],
+          [Math.ceil(area / coverage) + 1, "This adds an extra can after already rounding up to cover the entire area."],
+          [Math.ceil((2 * (length + height)) / coverage), "This uses the surface's perimeter instead of its area."],
         ],
-        why: `The wall is ${length} · ${height} = ${area} square feet. Each can covers ${coverage}, so ${area} ÷ ${coverage} = ${num(round3(area / coverage))} cans are needed, and buying whole cans means ${answer}.`,
+        why: `The surface is ${length} · ${height} = ${area} square feet. Each can covers ${coverage}, so ${area} ÷ ${coverage} ≈ ${num(round3(area / coverage))} cans are needed, and buying whole cans means ${answer}.`,
         steps: [
           "Find the area to be covered.",
           "Divide by the coverage of one can.",
@@ -7962,7 +7738,7 @@ SHAPES["combined concepts"] = {
         principles: [
           "When a quantity must be bought whole, the division is followed by rounding up, not to the nearest.",
         ],
-        hint: "A leftover fraction of a wall still needs a full can.",
+        hint: "A leftover fraction of a surface still needs a full can.",
         trap: "Rounding the number of cans down or leaving it fractional.",
       };
     },
@@ -7982,20 +7758,20 @@ SHAPES["combined concepts"] = {
         }),
         answer,
         wrong: [
-          [larger, "This is the number of stamps in the larger album, before the percent is applied."],
-          [round3((total * percent) / 100), `This takes ${percent}% of the whole collection instead of the larger album only.`],
-          [round3((parts1 * scale * percent) / 100), "This applies the percent to the smaller album."],
+          [larger, "This is the number of items in the larger group, before the percent is applied."],
+          [round3((total * percent) / 100), `This takes ${percent}% of the whole collection instead of the larger group only.`],
+          [round3((parts1 * scale * percent) / 100), "This applies the percent to the smaller group."],
           [total, "This is the size of the whole collection."],
           [percent, "This repeats the percent."],
         ],
-        why: `The ratio makes ${parts1 + parts2} shares of ${scale} stamps, so the larger album holds ${parts2} · ${scale} = ${larger}. Then ${percent}% of ${larger} is ${num(answer)}.`,
+        why: `The ratio makes ${parts1 + parts2} shares of ${scale} items, so the larger group holds ${parts2} · ${scale} = ${larger}. Then ${percent}% of ${larger} is ${num(answer)}.`,
         steps: [
-          `Divide the collection into ${parts1 + parts2} shares of ${scale} stamps.`,
+          `Divide the collection into ${parts1 + parts2} shares of ${scale} items.`,
           `Multiply the larger term by the share size: ${parts2} · ${scale} = ${larger}.`,
-          "Apply the percent to that album, not to the whole collection.",
+          "Apply the percent to that group, not to the whole collection.",
         ],
         principles: ["Each step of a chain applies to the quantity produced by the previous step."],
-        hint: "The percent belongs to one album only.",
+        hint: "The percent belongs to one group only.",
         trap: "Applying the percent to the full collection.",
         verification: { kind: "percent-of", inputs: [larger, percent], expected: answer },
       };
@@ -8013,7 +7789,7 @@ SHAPES["combined concepts"] = {
       ];
       const [workers, miles, days, newMiles, newWorkers] = choose(s, table);
       const answer = round3((days * newMiles * workers) / (miles * newWorkers));
-      const trip = scene(variant, TRAVEL);
+      const trip = scene(variant, ACT_TRAVEL);
       return {
         family: "combined-direct-and-inverse-variation",
         stem: pose(variant, "quantityOf", {
@@ -8027,7 +7803,7 @@ SHAPES["combined concepts"] = {
           [days, "This repeats the original number of days."],
           [round3(days + newMiles - miles), "This adjusts the days by the difference in miles rather than by their ratio."],
         ],
-        why: `One worker paves ${num(miles / (workers * days))} miles per day. Then ${newWorkers} workers pave ${num((newWorkers * miles) / (workers * days))} miles per day, so ${newMiles} miles take ${newMiles} ÷ ${num((newWorkers * miles) / (workers * days))} = ${num(answer)} days. Equivalently, days scale directly with the miles (× ${num(newMiles / miles)}) and inversely with the crew (× ${num(workers / newWorkers)}).`,
+        why: `The original work requires ${workers * days} worker-days for ${miles} miles. The new job takes ${days} · (${newMiles}/${miles}) · (${workers}/${newWorkers}) = ${num(answer)} days. Days scale directly with the distance and inversely with the number of workers.`,
         steps: [
           "Reduce the given data to a per-worker, per-day rate.",
           "Scale the rate up to the new crew size.",
@@ -8051,12 +7827,21 @@ SHAPES["combined concepts"] = {
         [6, 30, 90, 50],
       ];
       const [volumeA, percentA, percentB, target] = choose(s, table);
-      const answer = round3((volumeA * (target - percentA)) / (percentB - target));
-      const solution = scene(variant, SOLUTION);
+      const answer = exactRatio(volumeA * (target - percentA), percentB - target);
+      const solution = scene(variant, [
+        { solute: "liquid concentrate", solvent: "mixture", agent: "technician" },
+        { solute: "syrup", solvent: "drink", agent: "bottler" },
+        { solute: "liquid dye", solvent: "coloring solution", agent: "dyer" },
+        { solute: "liquid fertilizer", solvent: "plant feed", agent: "grower" },
+        { solute: "detergent", solvent: "cleaning solution", agent: "cleaner" },
+        { solute: "lemon juice", solvent: "beverage", agent: "cook" },
+        { solute: "antifreeze", solvent: "coolant", agent: "mechanic" },
+        { solute: "liquid pigment", solvent: "paint mixture", agent: "painter" },
+      ]);
       return {
         family: "two-solution-mixture-alligation",
         stem: pose(variant, "quantityOf", {
-          description: `the liters of ${percentB}% ${solution.solute} ${solution.solvent} a ${solution.agent} must mix with ${volumeA} liters at ${percentA}% to obtain ${target}% ${solution.solute}`,
+          description: `the liters of ${percentB}% ${solution.solute} ${solution.solvent} a ${solution.agent} must mix with ${volumeA} liters at ${percentA}% to obtain ${target}% ${solution.solute}, assuming volumes add and percentages are by volume`,
         }),
         answer,
         wrong: [
@@ -8066,11 +7851,11 @@ SHAPES["combined concepts"] = {
           [round3((volumeA * (percentB - target)) / (target - percentA)), "This inverts the ratio, adding less of the stronger solution than is needed."],
           [round3((volumeA * target) / 100), "This is a percent of the starting volume."],
         ],
-        why: `Let x be the liters added. Salt balances as ${num(percentA / 100)}·${volumeA} + ${num(percentB / 100)}·x = ${num(target / 100)}·(${volumeA} + x). Solving gives x = ${volumeA}(${target} − ${percentA}) ÷ (${percentB} − ${target}) = ${num(answer)} liters. In alligation terms, the volumes are in inverse ratio to the distances from the target: ${target - percentA} against ${percentB - target}.`,
+        why: `Let x be the liters added. The dissolved substance balances as ${num(percentA / 100)}·${volumeA} + ${num(percentB / 100)}·x = ${num(target / 100)}·(${volumeA} + x). Solving gives x = ${volumeA}(${target} − ${percentA}) ÷ (${percentB} − ${target}) = ${answer.text} liters. In alligation terms, the volumes are in inverse ratio to the distances from the target: ${target - percentA} against ${percentB - target}.`,
         steps: [
-          "Write the total salt on each side of the mix as a percent of a volume.",
-          "Set the salt before mixing equal to the salt after mixing.",
-          "Solve the linear equation, keeping x in both the salt and the volume terms.",
+          "Write the total dissolved substance on each side of the mix as a percent of a volume.",
+          "Set the dissolved substance before mixing equal to the dissolved substance after mixing.",
+          "Solve the linear equation, keeping x in both the substance and the volume terms.",
         ],
         principles: [
           "In a mixture, the two volumes are inversely proportional to their distances from the target concentration.",
@@ -8082,16 +7867,41 @@ SHAPES["combined concepts"] = {
   ],
 };
 
+// A misconception can coincide with the correct value for particular inputs.
+// Exclude that candidate before the shape leaves this registry, including
+// equivalent fractions; it is no longer a distractor for those inputs.
+function distinctWrongChoices(spec) {
+  const answer = toChoice(spec.answer);
+  const seenText = new Set([answer.text]);
+  const seenValues = Number.isFinite(answer.value) ? [answer.value] : [];
+  return {
+    ...spec,
+    wrong: spec.wrong.filter(([raw]) => {
+      const choice = toChoice(raw);
+      if (seenText.has(choice.text)) return false;
+      if (Number.isFinite(choice.value) && seenValues.some((value) =>
+        Math.abs(value - choice.value) < 1e-10 * Math.max(1, Math.abs(value)))) return false;
+      seenText.add(choice.text);
+      if (Number.isFinite(choice.value)) seenValues.push(choice.value);
+      return true;
+    }),
+  };
+}
+
+Object.values(SHAPES).forEach((tiers) => {
+  Object.keys(tiers).forEach((tier) => {
+    tiers[tier] = tiers[tier].map((shape) => (sequence, variant) =>
+      distinctWrongChoices(shape(sequence, variant)));
+  });
+});
+
 /* @@SHAPES@@ */
 
 const nextAnswerPosition = mirrorAnswerPlanner();
 
-// Each shape is reused a handful of times across the bank. Content validation
-// rejects two stems whose word sets overlap by 90% or more, and one- or
-// two-digit numbers are not counted as words, so a shape that only changes its
-// numbers reads as a duplicate. Shapes therefore receive the number of times
-// they have already been accepted and use it to rotate wording, which also
-// stops the bank from shipping the same sentence five times over.
+// Each shape is reused across the bank. Numeric parameters and relevant
+// settings distinguish exercises; grammatical phrasing may also vary, but
+// solution methods belong in the hint and explanation, never in a preamble.
 const shapeUses = new Map();
 
 function generatedChoiceSet(question) {
@@ -8145,11 +7955,7 @@ function generate({ sequence, task }) {
     for (let attempt = 0; attempt < VARIANT_ATTEMPTS; attempt += 1) {
       const variant = base + attempt;
       const parameterSequence = sequence + attempt * PARAMETER_RETRY_STEP;
-      const spec = distinguishSubskillStem(
-        task.subskill,
-        shapes[position](parameterSequence, variant),
-        variant,
-      );
+      const spec = shapes[position](parameterSequence, variant);
       const built = assemble(spec, tier, index);
       const choiceSet = generatedChoiceSet(built.question);
       const freshStem = !emittedStems.has(spec.stem);
