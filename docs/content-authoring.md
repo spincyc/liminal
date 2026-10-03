@@ -84,8 +84,10 @@ metadata, provenance, exact duplicates, structural duplicates, 0.90 Jaccard
 near duplicates, domain/difficulty coverage, answer-position balance, and
 supported mathematical verification records.
 
-Complete mode additionally requires exactly `targetPerSection` (currently 575)
-accepted records in every section:
+Complete mode additionally requires exactly the section's `targetQuestions`,
+or the catalog's `targetPerSection` default (575), and exact domain and tier
+counts. Science deliberately has 80 authored questions rather than padding a
+larger inventory with numerical variants:
 
 ```sh
 node tools/validate-content.js --complete
@@ -103,10 +105,10 @@ npm run report
 The current banks use deterministic families with varied invented settings,
 parameters, passages, tasks, and distractor logic. Duplicate gates prevent exact
 and high-similarity items, but they cannot measure pedagogical novelty,
-psychometric calibration, cultural bias, or prose quality. All 4,025 current
+psychometric calibration, cultural bias, or prose quality. All 4,105 retained
 records therefore remain awaiting independent human editorial review. This
-includes two retired SAT banks and the unavailable ACT Science bank, retained
-for compatibility. The four available ACT banks contain 2,300 exercise
+includes two retired SAT banks and 575 archived Science questions, retained
+for compatibility. The four other ACT banks contain 2,300 exercise
 variants, not 2,300 independent question designs. English uses 40 authored
 passages, Reading 55, and Mathematics 232 generator shapes. Writing variants
 share 53 issues. Repeated settings, parameters and writing perspectives do not
@@ -115,8 +117,27 @@ establish new pedagogical designs.
 The [2026-10-02 cold review](reviews/2026-10-02-cold-review.md) records agent
 review coverage and repairs. Agent review does not satisfy the outstanding
 human editorial review or establish empirical difficulty. ACT tiers remain
-excluded from practice filtering and readiness judgments. Science needs
-original passage sets and independent review before practice is enabled again.
+excluded from practice filtering and readiness judgments. Science's 80 new
+questions are independently solved by agents before admission; this does not
+close the outstanding human review.
+
+## Science passage sets
+
+`content/sources/act-science/` holds the authored passages and teaching fields.
+`node tools/generators/generate-act-science.js` assembles them into the bank and
+shared passage file without inventing additional variants. The original IDs
+0001–0575 stay unchanged in `content/archive/act-science.json`; new questions
+use 0576–0655. The runtime admits only new IDs for practice and refuses archived
+saved sessions without deleting them. Historical outcomes and identities retain
+their existing meaning.
+
+Every new question belongs to a passage. Figures have a safe SVG, descriptive
+alternative text, and complete printable data in the passage. The Science gate
+checks structure, coverage, reproducibility, figure safety, and source-bound
+independent solutions in `content/science-reviews.json`. A changed question or
+passage invalidates its review. Reviewers solve displayed material before seeing
+keys, then inspect explanations and distractor rationales. See the
+[rebuild review](reviews/2026-10-03-science-rebuild.md) for findings and limits.
 
 `audit-questions.js --admission` checks available banks for answer tells,
 concentrated families, exact duplicates and response defects. The stricter

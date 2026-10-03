@@ -2,6 +2,8 @@
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const vm = require("node:vm");
 const core = require("../src/lib/core");
 
 const questions = [
@@ -104,7 +106,7 @@ const catalog = require("../content/catalog.json");
 function syntheticBank(sectionKey, section, count) {
   const difficulties = ["Easy", "Medium", "Hard"];
   return Array.from({ length: count }, (unused, index) => ({
-    id: `${sectionKey}-${index}`,
+    id: sectionKey === "act-science" ? `${sectionKey}-${String(576 + index).padStart(4, "0")}` : `${sectionKey}-${index}`,
     test: sectionKey.startsWith("sat") ? "SAT" : "ACT",
     section,
     sectionKey,
@@ -114,6 +116,10 @@ function syntheticBank(sectionKey, section, count) {
     responseType: "multiple-choice",
     choices: ["a", "b", "c", "d"],
     correctAnswer: index % 4,
+    ...(sectionKey === "act-science" ? {
+      passageId: `act-science-p${String(1 + Math.floor(index / 5)).padStart(3, "0")}`,
+      stimulus: { type: "data-representation", content: "Synthetic Science data." },
+    } : {}),
   }));
 }
 
@@ -220,22 +226,26 @@ test("buildMiniTest honors each blueprint's per-section counts and order", () =>
   }
 });
 
-test("withdrawn Science cannot launch through question or blueprint builders, while archived scoring stays readable", () => {
+test("a withdrawn section cannot launch through builders, while archived scoring stays readable", () => {
   const science = catalog.sections.find((section) => section.key === "act-science");
-  assert.equal(core.sectionAvailable(science), false);
-  assert.equal(core.sectionAvailable(science.key), false);
-  assert.equal(core.sectionAvailable("act-reading"), true);
+  const configured = structuredClone(catalog);
+  configured.sections.find((section) => section.key === science.key).practiceAvailable = false;
+  const context = vm.createContext({ PRACTICE_CATALOG: configured });
+  vm.runInContext(fs.readFileSync(require.resolve("../src/lib/core"), "utf8"), context);
+  const paused = context.PracticeCore;
+  assert.equal(paused.sectionAvailable(science.key), false);
+  assert.equal(paused.sectionAvailable("act-reading"), true);
   const bank = syntheticBank(science.key, "Science", 4);
   for (const build of [
-    () => core.buildSession(bank, 2, "withdrawn"),
-    () => core.drawSectionItems(bank, 2, "withdrawn"),
-    () => core.drawPassageSets(bank, 2, "withdrawn"),
-    () => core.buildMiniTest({}, core.blueprintById("act-science"), "withdrawn"),
-    () => core.buildTestForm({}, core.blueprintById("act-full-science"), "withdrawn"),
-  ]) assert.throws(build, /Science practice is unavailable/);
-  assert.equal(core.blueprintAvailable(core.blueprintById("act-full-science")), false);
-  assert.equal(core.blueprintAvailable(core.blueprintById("act-full")), true);
-  assert.equal(core.scoreResponse(bank[0], bank[0].correctAnswer), true);
+    () => paused.buildSession(bank, 2, "withdrawn"),
+    () => paused.drawSectionItems(bank, 2, "withdrawn"),
+    () => paused.drawPassageSets(bank, 2, "withdrawn"),
+    () => paused.buildMiniTest({}, paused.blueprintById("act-science"), "withdrawn"),
+    () => paused.buildTestForm({}, paused.blueprintById("act-full-science"), "withdrawn"),
+  ]) assert.throws(build, /Science \(optional\) practice is unavailable/);
+  assert.equal(paused.blueprintAvailable(paused.blueprintById("act-full-science")), false);
+  assert.equal(paused.blueprintAvailable(paused.blueprintById("act-full")), true);
+  assert.equal(paused.scoreResponse(bank[0], bank[0].correctAnswer), true);
 });
 
 test("buildMiniTest is deterministic for a given seed", () => {

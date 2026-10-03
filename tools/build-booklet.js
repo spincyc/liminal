@@ -12,9 +12,10 @@
 // SAT booklets are not built here. They are built from question templates
 // on the Booklets page (src/print.html, lib/modules.js) and rendered by the
 // practice screen's renderer (app/render.js), which typesets Math and
-// sanitizes figure SVG with the browser's parser; a Node copy of that
-// renderer would drift from it. The old fixed SAT banks, which named each
-// Math question's method in its stem, are no longer used for booklets.
+// sanitizes figure SVG with the browser's parser. The ACT figure adapter
+// reuses its SVG sanitizer without duplicating Math typesetting. The old fixed
+// SAT banks, which named each Math question's method in its stem, are no longer
+// used for booklets.
 //
 // The filename avoids the `-test.js` suffix on purpose: `node --test` globs
 // that pattern and would execute this script during the test run.
@@ -26,6 +27,7 @@ const { spawn } = require("child_process");
 
 const core = require("../src/lib/core.js");
 const booklet = require("../src/lib/booklet.js");
+const render = require("./lib/booklet-render.js");
 const { ROOT, hydrateBank } = require("./lib/content.js");
 
 const SAT_NOTE =
@@ -86,7 +88,7 @@ function usage() {
     "  -s, --seed <str>  seed controlling which questions are drawn",
     "  -o, --out <dir>   output directory (default dist/booklets/)",
     "      --pdf         also render PDFs using an installed Chrome",
-    "      --tex         also emit pdflatex-ready LaTeX source",
+    "      --tex         also emit pdflatex-ready LaTeX (Science diagrams use descriptions and passage data)",
     "  -l, --list        list available blueprints and exit",
   ].join("\n");
 }
@@ -207,7 +209,7 @@ function main() {
   const written = [];
 
   const testHtml = path.join(options.outDir, `${base}-test.html`);
-  fs.writeFileSync(testHtml, booklet.renderBookletHtml(model));
+  fs.writeFileSync(testHtml, booklet.renderBookletHtml(model, { render }));
   written.push(testHtml);
 
   const keyHtml = path.join(options.outDir, `${base}-key.html`);

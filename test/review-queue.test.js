@@ -38,7 +38,7 @@ const Q = "sat-math:slope-t:s1.slope-t.0";
 const FRESH_1 = "sat-math:slope-t:f1.slope-t.0";
 const FRESH_2 = "sat-math:slope-t:f2.slope-t.2";
 
-test("withdrawn Science misses stay in the record but leave the due practice queue", () => {
+test("archived Science misses stay in the record but leave the due practice queue", () => {
   const attempt = miss("act-science-0001", "2026-09-01T10:00", { sectionKey: "act-science", source: "bank", test: "ACT", templateId: null });
   const entries = Queue.build([attempt]);
   assert.equal(entries.size, 1);

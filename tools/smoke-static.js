@@ -102,10 +102,32 @@ for (const section of catalog.sections) {
   }
   vm.runInContext(fs.readFileSync(bankPath, "utf8"), context, { filename: bankPath });
   const bank = context.window.PRACTICE_BANKS[section.key];
-  if (!Array.isArray(bank) || bank.length !== catalog.targetPerSection) {
+  const activeTarget = section.targetQuestions ?? catalog.targetPerSection;
+  const archiveTarget = section.archive?.targetQuestions || 0;
+  if (!Array.isArray(bank) || bank.length !== activeTarget + archiveTarget) {
     throw new Error(
-      `${section.key} registered ${bank && bank.length} items; expected ${catalog.targetPerSection}.`,
+      `${section.key} registered ${bank && bank.length} items; expected ${activeTarget + archiveTarget}.`,
     );
+  }
+  if (section.archive) {
+    const minimum = section.activeQuestionIdMin;
+    if (!Number.isInteger(minimum)) throw new Error(`${section.key}: archive needs an active ID boundary.`);
+    const validIds = bank.every((question) => new RegExp(`^${section.key}-\\d{4}$`).test(question.id));
+    const active = bank.filter((question) => Number(question.id.slice(-4)) >= minimum);
+    const archived = bank.filter((question) => Number(question.id.slice(-4)) < minimum);
+    if (!validIds || new Set(bank.map((question) => question.id)).size !== bank.length ||
+        active.length !== activeTarget || archived.length !== archiveTarget) {
+      throw new Error(`${section.key}: expected ${activeTarget} active and ${archiveTarget} archived unique records.`);
+    }
+    if (active.some((question) => !question.passageId || !question.stimulus)) {
+      throw new Error(`${section.key}: active shared passages were not hydrated.`);
+    }
+    const figures = new Map((context.window.PRACTICE_PASSAGES[section.key] || [])
+      .filter((passage) => passage.figure).map((passage) => [passage.id, passage.figure]));
+    if (active.some((question) => figures.has(question.passageId) &&
+        JSON.stringify(question.figure) !== JSON.stringify(figures.get(question.passageId)))) {
+      throw new Error(`${section.key}: shared passage figures were not hydrated.`);
+    }
   }
 }
 

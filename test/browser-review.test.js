@@ -163,9 +163,10 @@ function shellFixture() {
   return env;
 }
 
-function appFixture(blockStorage = false) {
+function appFixture(blockStorage = false, practiceCore) {
   const env = environment();
   const { window, document } = env;
+  if (practiceCore) window.PracticeCore = practiceCore;
   for (const id of ["storageWarning", "storageWarningText", "storageDownloadBtn"]) {
     const node = document.createElement(id.endsWith("Btn") ? "button" : "div");
     node.id = id;
@@ -202,6 +203,16 @@ function appFixture(blockStorage = false) {
 const mc = { id: "sat-math-0001", sectionKey: "sat-math", test: "SAT", section: "Math", responseType: "multiple-choice", stem: "Choose two.", choices: ["2", "3", "4", "5"], correctAnswer: 0, hint: "Use the first option.", domain: "Algebra", skill: "Equations", difficulty: "Medium" };
 const essay = { id: "act-writing-0001", sectionKey: "act-writing", test: "ACT", section: "Writing", responseType: "essay", stem: "Develop a position on shared gardens.", stimulus: { type: "writing-prompt", content: "Consider shared gardens and their costs." }, domain: "Ideas and Analysis", skill: "Engage perspectives", difficulty: "Medium", hint: "Compare values.", correctAnswer: { sampleThesis: "A trial can test the idea.", outline: ["State a position.", "Address a limitation."], reviewCriteria: ["Develop your reasons."] } };
 const draft = "A shared garden can help neighbors.\n\nA trial would measure both benefits and costs.";
+
+function reopenedScienceCore() {
+  const catalog = structuredClone(require("../content/catalog.json"));
+  Object.assign(catalog.sections.find((section) => section.key === "act-science"), {
+    practiceAvailable: true, activeQuestionIdMin: 576,
+  });
+  const context = vm.createContext({ PRACTICE_CATALOG: catalog });
+  vm.runInContext(fs.readFileSync(require.resolve("../src/lib/core"), "utf8"), context);
+  return context.PracticeCore;
+}
 
 for (const feedback of ["instant", "end"]) test(`essay drafts survive resume and offer unscored self-review (${feedback})`, () => {
   const env = shellFixture();
@@ -336,23 +347,69 @@ test("a complete test retains its original totals when only part of the answer r
   screen.close();
 });
 
-test("a paused unavailable section remains saved when resume is refused", async () => {
-  const { ctx, window } = appFixture();
-  window.LiminalShell = { canResume: () => true };
-  const saved = {
-    config: { sessionId: "science-draft", sectionKey: "act-science" },
-    state: { questions: [{ ...mc, sectionKey: "act-science" }], finished: false },
-  };
-  window.localStorage.setItem("liminal:session:v1", JSON.stringify(saved));
-  const message = await ctx.resume("set");
-  assert.match(message, /temporarily unavailable/);
-  assert.match(message, /saved set is still kept/);
-  assert.equal(window.localStorage.getItem("liminal:session:v1"), JSON.stringify(saved));
+test("archived Science stays saved in both snapshot formats when resume is refused", async () => {
+  for (const wrapped of [false, true]) {
+    const { ctx, window } = appFixture(false, reopenedScienceCore());
+    window.LiminalShell = { canResume: () => true };
+    const state = { questions: [{ ...mc, id: "act-science-0001", sectionKey: "act-science",
+      passageId: "act-science-p001" }], finished: false };
+    const saved = {
+      config: { sessionId: "science-draft", sectionKey: "act-science" },
+      state: wrapped ? { session: state } : state,
+    };
+    window.localStorage.setItem("liminal:session:v1", JSON.stringify(saved));
+    const message = await ctx.resume("set");
+    assert.match(message, /unavailable/);
+    assert.match(message, /saved set is still kept/);
+    assert.equal(window.localStorage.getItem("liminal:session:v1"), JSON.stringify(saved));
+    assert.throws(() => ctx.launch({ questions: state.questions }), /unavailable/);
+  }
 });
 
-function reviewFixture(question, attempt) {
+test("active Science passage sets retain their questions, responses, and shared text after save and resume", async () => {
+  const env = appFixture(false, reopenedScienceCore());
+  env.load("render.js");
+  env.load("test-shell.js");
+  let screen;
+  let options;
+  const start = env.window.LiminalShell.start;
+  env.window.LiminalShell.start = (settings) => { options = settings; screen = start(settings); return screen; };
+  const stimulus = { type: "data-representation", content: "Two samples were measured.\n\nSample | Growth\nA | 2\nB | 4" };
+  const questions = [576, 577].map((number) => ({ ...mc, id: `act-science-0${number}`,
+    test: "ACT", section: "Science", sectionKey: "act-science", passageId: "act-science-p001", stimulus }));
+  env.ctx.launch({ title: "Science set", sectionKey: "act-science", kind: "practice", questions, feedback: "end" });
+  screen.element.querySelector(".lm-choice").click();
+  screen.element.querySelector(".lm-mark").click();
+  const snapshot = screen.snapshot({ paused: true });
+  options.onSave(snapshot);
+  const original = env.window.localStorage.getItem("liminal:session:v1");
+  screen.close();
+  assert.equal(await env.ctx.resume("set"), null);
+  const restored = screen.snapshot({ paused: true });
+  assert.deepEqual(restored.session.questions, snapshot.session.questions);
+  assert.deepEqual(restored.session.responses, snapshot.session.responses);
+  assert.deepEqual(restored.session.marked, snapshot.session.marked);
+  assert.equal(JSON.parse(original).state.session.questions[0].stimulus.content, stimulus.content);
+  assert.match(screen.element.querySelector(".lm-stimulus-pane").textContent, /Two samples were measured/);
+  assert.ok(screen.element.querySelector(".lm-stimulus-pane table"));
+  screen.close();
+  assert.equal(env.intervals.size, 0);
+});
+
+test("finished archived Science snapshots can still open their historical report", () => {
+  const { ctx, window } = appFixture(false, reopenedScienceCore());
+  const questions = [{ ...mc, id: "act-science-0001", sectionKey: "act-science" }];
+  let opened;
+  window.LiminalShell = { start: (options) => { opened = options; } };
+  const state = { questions, finished: true };
+  ctx.launch({ sectionKey: "act-science", questions: [] }, state);
+  assert.equal(opened.resume, state);
+});
+
+function reviewFixture(question, attempt, practiceCore) {
   const env = environment();
   const { document, window } = env;
+  if (practiceCore) window.PracticeCore = practiceCore;
   const Progress = require("../src/lib/progress");
   const progress = { ...Progress.empty(), attempts: [attempt], marked: [question.id] };
   const launched = [];
@@ -437,4 +494,28 @@ test("ACT Due and Marked cards omit unverified difficulty labels", () => {
   assert.doesNotMatch(document.querySelector(".review-due-facts").textContent, /Hard/);
   view.open({}, ["marked"]);
   assert.equal(document.querySelector(".review-facts"), null);
+});
+
+test("archived Science history remains readable without offering new Missed or Marked practice", async () => {
+  const Progress = require("../src/lib/progress");
+  const question = { ...mc, id: "act-science-0001", sectionKey: "act-science", test: "ACT", stem: "Archived Science question." };
+  const attempt = Progress.buildAttempt(question, { response: 1, correct: false }, { id: "archive:0", now: 0 });
+  const { document, view, progress, launched } = reviewFixture(question, attempt, reopenedScienceCore());
+  const before = JSON.stringify(progress);
+  view.open({}, ["missed"]);
+  assert.equal(document.querySelectorAll("button").some((button) => button.textContent.startsWith("Practise these")), false);
+  const retry = document.querySelectorAll("button").find((button) => button.textContent === "Try current version");
+  assert.equal(retry.disabled, true);
+  retry.click();
+  document.querySelectorAll("button").find((button) => button.textContent === "Show question").click();
+  await new Promise(setImmediate);
+  assert.match(document.querySelector(".review-question-host").textContent, /Archived Science question/);
+  view.open({}, ["marked"]);
+  const start = document.querySelectorAll("button").find((button) => button.textContent.startsWith("Practise all"));
+  assert.equal(start.disabled, true);
+  assert.match(document.querySelector(".review-toolbar").textContent, /Archived questions remain available here for history/);
+  start.click();
+  await new Promise(setImmediate);
+  assert.equal(launched.length, 0);
+  assert.equal(JSON.stringify(progress), before);
 });

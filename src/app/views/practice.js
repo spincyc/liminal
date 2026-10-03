@@ -186,8 +186,9 @@
         return;
       }
       const essay = (section) => (section.responseTypes || []).includes("essay");
-      const questions = sections.filter((section) => !essay(section)).length * ctx.catalog.targetPerSection;
-      const prompts = sections.filter(essay).length * ctx.catalog.targetPerSection;
+      const count = (total, section) => total + (section.targetQuestions ?? ctx.catalog.targetPerSection);
+      const questions = sections.filter((section) => !essay(section)).reduce(count, 0);
+      const prompts = sections.filter(essay).reduce(count, 0);
       elements.setupLede.textContent =
         `Build a set from ${ctx.formatNumber(questions)} original ${test} questions` +
         (prompts ? ` and ${ctx.formatNumber(prompts)} writing prompts` : "") +
@@ -240,7 +241,7 @@
           ? await ctx.loadBank(section.key)
           : ctx.bankIfLoaded(section.key) || [];
         if (requestId !== bankRequestId) return;
-        currentBank = bank;
+        currentBank = bank.filter(core.questionAvailable);
         populateTaxonomy();
         updateMatches();
         updateRecommendation();
@@ -347,6 +348,11 @@
     }
 
     function modeNote(mode) {
+      if (sectionKey() === "act-science") {
+        return "Questions from the same Science passage stay together. Practice uses complete sets when they fit; " +
+          "topic filters, review selections, and other counts may use part of a set with its full passage. " +
+          (mode === "mix" ? "Topic filters are not used." : "Only questions matching your selection are included.");
+      }
       if (mode === "targeted") {
         return usesTemplates()
           ? "New questions of the kinds you have seen least recently, narrowed by any topic filters."
@@ -987,6 +993,8 @@
         ? `${count} ${levelWord}question${count === 1 ? "" : "s"} from ${kinds} kind${kinds === 1 ? "" : "s"} ` +
           "of question; repeats use new numbers or a new context."
         : `${Math.min(count, matching)} of ${matching} matching ${levelWord}question${matching === 1 ? "" : "s"}.`;
+      if (key === "act-science") elements.drillNote.textContent +=
+        " Questions stay grouped by passage; a skill drill may use part of a set with its full passage.";
     }
 
     async function startDrill(event) {

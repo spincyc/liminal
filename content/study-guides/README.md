@@ -132,7 +132,7 @@ The SAT guides moved into the app's Learn pages, one page per catalog skill.
 | [Overview](act/science/00-overview.md) | — |
 | [Interpretation of Data](act/science/01-interpretation-of-data.md) | Interpretation of Data |
 | [Scientific Investigation](act/science/02-scientific-investigation.md) | Scientific Investigation |
-| [Evaluation of Models and Results](act/science/03-evaluation-of-models.md) | Evaluation of Models, Inferences, and Experimental Results |
+| [Scientific Arguments and Models](act/science/03-evaluation-of-models.md) | Evaluating Scientific Arguments and Models with Evidence |
 
 ### Writing — 1 essay, 40 minutes *(optional section)*
 

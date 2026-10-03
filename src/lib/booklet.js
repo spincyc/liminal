@@ -1,8 +1,8 @@
 // Turns a built test form into printable artifacts. The model step is shared
 // so the HTML booklet, the answer key, and the LaTeX source always number and
 // letter questions identically. Pure: loaded by the build script (ACT forms)
-// and by the booklet page, which passes the site's own renderer for SAT
-// template forms (see `render` under HTML below).
+// and by the booklet page, which passes the site's own renderer for figures
+// and SAT template forms (see `render` under HTML below).
 (function (root, factory) {
   const api = factory(
     typeof module === "object" && module.exports
@@ -110,9 +110,16 @@ function parseBlocks(text) {
 
   return blocks.map((block) => {
     if (block.type === "table") {
+      const rows = block.lines
+        .filter((line) => !(/^[\s|:-]+$/.test(line) && line.includes("-")))
+        .map((line) => {
+          const text = line.startsWith("|") && line.endsWith("|") ? line.slice(1, -1) : line;
+          return text.split("|").map((cell) => cell.trim());
+        });
+      if (!rows.length) return { type: "text", text: block.lines.join(" ") };
       return {
         type: "table",
-        rows: block.lines.map((line) => line.split("|").map((cell) => cell.trim())),
+        rows,
       };
     }
     if (block.type === "list") {
@@ -164,9 +171,37 @@ function blocksToHtml(text) {
     .join("");
 }
 
+function repeatedStimulus(question, previous) {
+  if (!previous || !question.stimulus || !previous.question.stimulus) return false;
+  const before = previous.question;
+  if ((question.passageId || before.passageId) && question.passageId !== before.passageId) return false;
+  return question.stimulus.content === before.stimulus.content;
+}
+
+// A shared passage figure prints with its first question. Separate questions
+// without a passage id keep their own figures, even when the SVG is identical.
+function repeatedFigure(question, previous) {
+  if (!question.passageId || !repeatedStimulus(question, previous)) return false;
+  const figure = question.figure;
+  const before = previous.question.figure;
+  return Boolean(figure && before && figure.svg === before.svg &&
+    figure.alt === before.alt && Boolean(figure.notToScale) === Boolean(before.notToScale));
+}
+
+function figureDescription(figure) {
+  return String(figure.alt || "Figure").trim() || "Figure";
+}
+
+function figureFallbackHtml(figure) {
+  return `<figure class="lm-figure"><p class="lm-figure-fallback">Diagram description (drawing unavailable): ${escapeHtml(figureDescription(figure))}</p>` +
+    (figure.notToScale ? '<figcaption class="lm-figure-note">Note: Figure not drawn to scale.</figcaption>' : "") +
+    "</figure>";
+}
+
 // How question content becomes HTML. Without `render`, content is escaped
-// plain text and stimuli go through parseBlocks above (ACT bank forms). The
-// booklet page passes `render` for SAT template forms, so a booklet shows
+// plain text and stimuli go through parseBlocks above (ACT bank forms). Science
+// figures retain a text fallback when no renderer is supplied. The booklet
+// page passes `render` for figures and SAT template forms, so a booklet shows
 // exactly what the practice screen shows (app/render.js: math typesetting,
 // real tables, sanitized figures):
 //   render.rich(text, question)          block content: stems, choices, explanations
@@ -181,11 +216,7 @@ function questionHtml(item, previous, render) {
   // A passage set shares one stimulus across every question in it. Printing it
   // above each question would repeat 750 words ten times; the real booklet
   // prints the passage once and then the questions that go with it.
-  const repeated =
-    previous &&
-    previous.question.stimulus &&
-    question.stimulus &&
-    previous.question.stimulus.content === question.stimulus.content;
+  const repeated = repeatedStimulus(question, previous);
   if (question.stimulus && question.stimulus.content && !repeated) {
     parts.push(
       `<div class="stimulus ${escapeHtml(question.stimulus.type)}">` +
@@ -195,9 +226,16 @@ function questionHtml(item, previous, render) {
         `</div>`,
     );
   }
-  if (question.figure && render && render.figure) {
-    parts.push(`<div class="figure">${render.figure(question.figure, question)}</div>`);
+  if (question.figure && !repeatedFigure(question, previous)) {
+    const figureHtml = render && render.figure
+      ? render.figure(question.figure, question)
+      : question.sectionKey === "act-science" ? figureFallbackHtml(question.figure) : "";
+    if (figureHtml) parts.push(`<div class="figure">${figureHtml}</div>`);
   }
+  // A Science passage plus graph can exceed a column. Let that context flow,
+  // but keep the question and all its choices together when the article splits.
+  const science = question.sectionKey === "act-science";
+  if (science) parts.push('<div class="question-body">');
   parts.push(
     rich
       ? `<div class="stem"><span class="num">${number}.</span><div class="body">${render.rich(question.stem, question)}</div></div>`
@@ -215,6 +253,7 @@ function questionHtml(item, previous, render) {
   } else if (question.responseType === "numeric") {
     parts.push('<p class="gridin">Student-produced response: <span class="rule"></span></p>');
   }
+  if (science) parts.push("</div>");
   parts.push("</article>");
   return parts.join("");
 }
@@ -277,6 +316,7 @@ h1, h2, h3 { font-weight: 600; margin: 0 0 .4em; line-height: 1.2; }
 .section-head .dirs { margin-top: .5em; font-size: 9.3pt; max-width: 6.6in; }
 .questions { column-count: 2; column-gap: .34in; column-fill: auto; orphans: 3; widows: 3; }
 .q { break-inside: avoid; page-break-inside: avoid; margin: 0 0 .82em; }
+.question-body { break-inside: avoid; page-break-inside: avoid; }
 .stem { margin: 0 0 .3em; }
 .num { font-weight: 700; margin-right: .25em; }
 .choices { list-style: none; margin: 0 0 0 .95em; padding: 0; }
@@ -605,6 +645,9 @@ const TEX_UNICODE = [
   ["\u2022", "\\textbullet{}"],
   ["\u00B7", "$\\cdot$"],
   ["\u03B8", "$\\theta$"],
+  ["\u03A9", "$\\Omega$"],
+  ["\u03BC", "$\\mu$"],
+  ["\u00B5", "$\\mu$"],
   ["\u00B0", "$^{\\circ}$"],
   ["\u00D7", "$\\times$"],
   ["\u03C0", "$\\pi$"],
@@ -659,12 +702,17 @@ function tex(value) {
   return out;
 }
 
-function blocksToTex(text) {
+function blocksToTex(text, options) {
   return parseBlocks(text)
     .map((block) => {
       if (block.type === "table") {
         const columns = Math.max(...block.rows.map((row) => row.length));
-        const spec = "l".repeat(columns);
+        // Science tables have descriptive headers that must wrap inside a
+        // booklet column; otherwise a valid table can overlap the next column.
+        const wrap = options && options.wrapTables;
+        const spec = wrap
+          ? `*{${columns}}{>{\\raggedright\\arraybackslash}p{\\dimexpr\\linewidth/${columns}-2\\tabcolsep\\relax}}`
+          : "l".repeat(columns);
         const body = block.rows
           .map((row, index) => {
             const cells = row.concat(Array(columns - row.length).fill(""));
@@ -672,7 +720,7 @@ function blocksToTex(text) {
             return index === 0 ? `${line} \\\\ \\hline` : `${line} \\\\`;
           })
           .join("\n");
-        return `\\begin{center}\\small\\begin{tabular}{${spec}}\\hline\n${body}\n\\hline\\end{tabular}\\end{center}`;
+        return `\\begin{center}\\small${wrap ? "\\setlength{\\tabcolsep}{3pt}" : ""}\\begin{tabular}{${spec}}\\hline\n${body}\n\\hline\\end{tabular}\\end{center}`;
       }
       if (block.type === "list") {
         return `\\begin{itemize}\\itemsep0pt\n${block.items
@@ -692,16 +740,17 @@ function renderTex(model) {
         .map((item, index) => {
           const q = item.question;
           const before = section.questions[index - 1];
-          const repeated =
-            before &&
-            before.question.stimulus &&
-            q.stimulus &&
-            before.question.stimulus.content === q.stimulus.content;
+          const repeated = repeatedStimulus(q, before);
           const parts = ["\\begin{samepage}"];
           if (q.stimulus && q.stimulus.content && !repeated) {
             parts.push(
-              `\\begin{stimulus}\n${blocksToTex(q.stimulus.content)}\n\\end{stimulus}`,
+              `\\begin{stimulus}\n${blocksToTex(q.stimulus.content, { wrapTables: q.sectionKey === "act-science" })}\n\\end{stimulus}`,
             );
+          }
+          if (q.sectionKey === "act-science" && q.figure && !repeatedFigure(q, before)) {
+            parts.push(`\\begin{stimulus}\n\\textbf{Diagram description (drawing unavailable):} ${tex(figureDescription(q.figure))}` +
+              (q.figure.notToScale ? "\n\n\\textit{Note: Figure not drawn to scale.}" : "") +
+              "\n\\end{stimulus}");
           }
           parts.push(`\\question{${item.number}}{${tex(q.stem)}}`);
           if (q.responseType === "multiple-choice" && q.choices) {

@@ -3,6 +3,28 @@
 Older commit hashes in this log refer to the project's earlier history, which
 this repository does not include.
 
+## ACT Science passage-set rebuild — 2026-10-03
+
+The [rebuild record](reviews/2026-10-03-science-rebuild.md) supersedes the
+Science availability statement in the earlier review below. The active bank
+now has 80 explicitly authored questions in 14 original passage sets, with
+shared tables, figures, experimental comparisons and competing viewpoints.
+The original 575 Science records retain their exact bytes and IDs in the
+archive; none are accepted for new practice.
+
+Four author lanes and separate blind-solving reviewer lanes cover every new
+question. The source-bound manifest records their final independent answers;
+the full gate rejects stale or absent reviews and non-reproducible assembly.
+Question-level availability guards preserve the archive boundary through
+builders, Review and saved-session resumes. The linked record contains the
+review findings and integrated verification evidence.
+
+Accepted new inventory: 80. Archived Science inventory excluded from practice:
+575. New items awaiting independent human editorial review: 80. All 4,105
+retained bank records still await human review; 2,380 are in available ACT
+banks. No new record is marked `editorial-reviewed`, and provisional Science
+tiers do not affect practice, reports or mastery judgments.
+
 ## Whole-product cold review — 2026-10-02
 
 Reviewed baseline: `25e176df1a812eba36083f9e45603d2907540f11`.

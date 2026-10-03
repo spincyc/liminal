@@ -248,14 +248,14 @@
       "section": "Science",
       "shortLabel": "Science (optional)",
       "optional": true,
-      "practiceAvailable": false,
-      "practiceNote": "Science practice is unavailable while its question bank is rebuilt around reviewed passage sets. Previous results remain available.",
+      "practiceAvailable": true,
+      "practiceNote": "Science uses 80 questions in 14 original passage sets. Earlier Science questions remain archived for historical results.",
       "responseTypes": ["multiple-choice"],
       "calculatorPolicy": "not-permitted",
       "domains": [
         {
           "name": "Interpretation of Data",
-          "target": 253,
+          "target": 34,
           "skills": {
             "Read data displays": ["tables", "graphs", "diagrams"],
             "Analyze data": ["trends", "interpolation", "comparison"],
@@ -264,7 +264,7 @@
         },
         {
           "name": "Scientific Investigation",
-          "target": 150,
+          "target": 22,
           "skills": {
             "Experimental design": ["variables", "controls", "procedures"],
             "Extend an investigation": ["prediction", "follow-up study"],
@@ -272,15 +272,60 @@
           }
         },
         {
-          "name": "Evaluation of Models, Inferences, and Experimental Results",
-          "target": 172,
+          "name": "Evaluating Scientific Arguments and Models with Evidence",
+          "target": 24,
           "skills": {
             "Evaluate explanations": ["claims and evidence", "model evaluation"],
             "Draw conclusions": ["inference", "generalization"],
             "Compare viewpoints": ["agreement and disagreement", "evidence preference"]
           }
         }
-      ]
+      ],
+      "archive": {
+        "contentVersion": "2026.1",
+        "targetQuestions": 575,
+        "difficultyTargets": {
+          "Easy": 175,
+          "Medium": 250,
+          "Hard": 150
+        },
+        "domains": [
+          {
+            "name": "Interpretation of Data",
+            "target": 253,
+            "skills": {
+              "Read data displays": ["tables", "graphs", "diagrams"],
+              "Analyze data": ["trends", "interpolation", "comparison"],
+              "Translate data": ["graph to text", "table to graph"]
+            }
+          },
+          {
+            "name": "Scientific Investigation",
+            "target": 150,
+            "skills": {
+              "Experimental design": ["variables", "controls", "procedures"],
+              "Extend an investigation": ["prediction", "follow-up study"],
+              "Evaluate methods": ["precision", "limitations", "replication"]
+            }
+          },
+          {
+            "name": "Evaluation of Models, Inferences, and Experimental Results",
+            "target": 172,
+            "skills": {
+              "Evaluate explanations": ["claims and evidence", "model evaluation"],
+              "Draw conclusions": ["inference", "generalization"],
+              "Compare viewpoints": ["agreement and disagreement", "evidence preference"]
+            }
+          }
+        ]
+      },
+      "targetQuestions": 80,
+      "activeQuestionIdMin": 576,
+      "difficultyTargets": {
+        "Easy": 15,
+        "Medium": 61,
+        "Hard": 4
+      }
     },
     {
       "key": "act-writing",

@@ -10,8 +10,8 @@ missed until you can do it.
 
 SAT questions are generated from question templates: 189 for SAT Math and
 128 for SAT Reading and Writing, covering the catalog's tested skills.
-Available ACT sections draw from 575 original exercise
-variants each. Every
+ACT English, Mathematics, Reading, and Writing draw from 575 original exercise
+variants each. ACT Science has 80 questions in 14 original passage sets. Every
 question carries a hint, an explanation, a step-by-step solution, the reliable
 approach, the common trap, and, for multiple choice, why each wrong option is
 wrong.
@@ -21,7 +21,7 @@ wrong.
 | SAT Reading and Writing | 128 templates | 35 / 66 / 27 |
 | SAT Math | 189 templates | 47 / 95 / 47 |
 | ACT English, Mathematics, Reading, Writing | 575 exercise variants each | Tiers unverified |
-| ACT Science | Practice unavailable pending passage-set rebuild | |
+| ACT Science | 80 questions in 14 passage sets | Tiers unverified |
 
 ## Honest practice
 
@@ -104,6 +104,12 @@ never recorded. Liminal is now built to keep practice honest:
   text download, and rubric-guided self-review. Essays are unscored. Download
   a draft before closing its completed report; progress stores completion,
   while unfinished-session storage holds the draft.
+- **Science passage sets.** Original data displays, experiments, and competing
+  explanations support every question. A full Science form uses seven complete
+  sets (40 questions); all answers count toward practice accuracy. It does not
+  simulate ACT's unscored field-test passage. Targeted practice can use a subset
+  of a set, always with its full context. The retired Science questions remain
+  available only for historical records.
 
 See [`docs/roadmap.md`](docs/roadmap.md) for what is next.
 

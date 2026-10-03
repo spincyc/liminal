@@ -2,6 +2,7 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
+const vm = require("node:vm");
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const Analytics = require("../src/lib/analytics");
@@ -95,7 +96,13 @@ test("withdrawn sections keep their accuracy but cannot be the next practice rec
   const rows = Analytics.skillMap(many(5, { sectionKey: science.key, domain: domain.name, skill, source: "bank", test: "ACT" }),
     [science], { tiered: () => false });
   assert.equal(rows.find((row) => row.skill === skill).accuracy, 1);
-  assert.equal(Analytics.nextStep(rows), null);
+  assert.equal(Analytics.nextStep(rows).sectionKey, science.key);
+  const pausedCatalog = structuredClone(catalog);
+  pausedCatalog.sections.find((entry) => entry.key === science.key).practiceAvailable = false;
+  const context = vm.createContext({ PRACTICE_CATALOG: pausedCatalog, LiminalProgress: Progress, LiminalRuns: Runs });
+  vm.runInContext(fs.readFileSync(require.resolve("../src/lib/core"), "utf8"), context);
+  vm.runInContext(fs.readFileSync(require.resolve("../src/lib/analytics"), "utf8"), context);
+  assert.equal(context.LiminalAnalytics.nextStep(rows), null);
 });
 
 test("registry entries re-tier answers without the template bundles", () => {

@@ -91,7 +91,18 @@ Reading has 27 scored questions and 9 field-test questions; Science has 34
 scored questions and 6 field-test questions. Reading's three scored passage
 sets may include zero or one paired-text set. Science includes 5–8 scored
 questions requiring background knowledge together with passage reasoning.
-Liminal's current Science bank is unavailable pending a passage-set rebuild.
+Liminal's rebuilt Science bank has 80 original questions in 14 passage sets.
+Its full Science forms use seven complete sets: two Data Representation sets
+with five questions each, four Research Summaries sets with six each, and one
+Conflicting Viewpoints set with six. All 40 answers count for practice; Liminal
+does not designate unscored field-test questions or predict a scaled score.
+
+Rechecked on 2026-10-03 against Table 2.4 of ACT's February 2026 Design
+Framework: the official design uses six operational passages (two Data
+Representation, three Research Summaries, one Conflicting Viewpoints) and a
+separate six-question field-test passage. The extra Research Summaries set in
+Liminal is a practice approximation. The finite inventory and its provisional
+tiers are not empirical calibration or proof of official-form equivalence.
 
 The current Composite score is based on English, Mathematics, and Reading.
 Science receives a separate section score and contributes to a STEM score when

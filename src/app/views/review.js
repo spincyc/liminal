@@ -321,6 +321,7 @@
       ctx.setStatus(status, "Building the set…");
       try {
         const set = await build();
+        if (set) set.questions = (set.questions || []).filter(core.questionAvailable);
         if (!set || !set.questions.length) {
           ctx.setStatus(status, (set && set.empty) || "No question could be built for this set.", "error");
           return;
@@ -377,9 +378,10 @@
       const byId = new Map(exactQuestions.map((question) => [question.id, question]));
       exact.forEach((entry) => {
         const question = byId.get(entry.exactId);
-        if (question && !question.templateId && !Progress.questionMatchesAttempt(question,
+        if (!question || !core.questionAvailable(question)) return;
+        if (!question.templateId && !Progress.questionMatchesAttempt(question,
           { ...entry, questionId: entry.exactId })) return;
-        if (question) built.set(entry.questionId, { ...question, reviewOf: entry.questionId });
+        built.set(entry.questionId, { ...question, reviewOf: entry.questionId });
       });
       const freshBySection = new Map();
       entries.filter((entry) => Queue.modeOf(entry) === "fresh").forEach((entry) => {
@@ -605,7 +607,7 @@
           className: "field-note",
           text: `${plural(schedule.unavailable.length, "scheduled question")} cannot currently be practised because ` +
             "the section is paused or the original question version cannot be verified. Their records stay in " +
-            "your history. In Missed, choose Try current version for a new attempt when the section is available.",
+            "your history. In Missed, choose Try current version for a new attempt when an eligible current question is available.",
         }));
       }
       if (dueCount) {
@@ -852,7 +854,8 @@
       const ids = [];
       list.forEach((attempt) => {
         const latest = model.latest.get(attempt.questionId);
-        if (Progress.isMiss(latest) && !ids.includes(attempt.questionId)) ids.push(attempt.questionId);
+        if (core.questionAvailable(attempt.questionId, attempt.sectionKey) &&
+            Progress.isMiss(latest) && !ids.includes(attempt.questionId)) ids.push(attempt.questionId);
       });
       return ids;
     }
@@ -1010,6 +1013,8 @@
       const toggle = questionToggle(`missed:${attempt.id}`, attempt.questionId, attempt);
       const actionStatus = statusLine();
       const retry = h("button", { type: "button", className: "text-link", text: "Try current version" });
+      retry.disabled = !core.questionAvailable(attempt.questionId, attempt.sectionKey);
+      if (retry.disabled) retry.title = "Archived questions remain in history and are unavailable for new practice.";
       retry.dataset.focusKey = `${attempt.id}:retry`;
       retry.addEventListener("click", () => startSet(retry, actionStatus, async () => {
         const question = await loadQuestion(attempt.questionId);
@@ -1111,9 +1116,10 @@
         return [box];
       }
       const status = statusLine();
-      const start = h("button", { type: "button", className: "button primary", text: `Practise all ${model.marked.length}` });
+      const ids = model.marked.filter((id) => core.questionAvailable(id));
+      const start = h("button", { type: "button", className: "button primary", text: `Practise all ${ids.length}` });
+      start.disabled = !ids.length;
       start.dataset.focusKey = "start-marked";
-      const ids = model.marked.slice();
       start.addEventListener("click", () => startSet(start, status, async () => {
         const matches = await ctx.questionsForIds(ids);
         return {
@@ -1127,8 +1133,9 @@
         start,
         h("p", {
           className: "muted",
-          text: "Uses current question versions as new attempts. Feedback after each question, no timer. " +
-            "Questions you leave unmarked in the set leave this list.",
+          text: (ids.length ? "Uses current question versions as new attempts. Feedback after each question, no timer. " +
+            "Questions you leave unmarked in the set leave this list." : "No marked questions are currently available for practice.") +
+            (ids.length < model.marked.length ? " Archived questions remain available here for history." : ""),
         }),
         status,
       ]);

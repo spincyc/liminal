@@ -1,0 +1,219 @@
+[
+  {
+    "id": "act-science-p001",
+    "type": "data-representation",
+    "title": "Winter Soil Temperatures",
+    "intro": "The sites and measurements in this passage are invented for this practice set.",
+    "content": "A field team recorded soil temperatures at two nearby sites at the same time on a winter morning. Both sites had the same soil type and similar slopes. One site had bare soil; the other had a 15 cm layer of snow. Depth was measured downward from the soil surface, not from the top of the snow. The sensors had been left in place overnight.\n\nThe table and Figure 1 show the readings. In the figure, the horizontal axis is depth and the vertical axis is temperature. Solid and dashed segments connect adjacent readings; they do not represent additional measurements. For estimates between measured depths, assume temperature changes linearly along each segment.\n\n| Depth below soil surface (cm) | Bare-site temperature (°C) | Snow-site temperature (°C) |\n| --- | --- | --- |\n| 0 | −8 | −1 |\n| 5 | −6 | 0 |\n| 10 | −4 | 1 |\n| 20 | −1 | 2 |\n| 40 | 2 | 3 |\n\nAt normal atmospheric pressure, pure water's freezing temperature is 0°C. A temperature equal to 0°C is neither above nor below that value. These measurements describe this morning only; the team did not measure temperatures during the preceding days.",
+    "figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 580 365\">\n<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\">\n<path d=\"M65 42 V290 H525\"/>\n<path d=\"M65 114 H525\" stroke-dasharray=\"3 4\"/>\n<path d=\"M65 290 H59 M65 246 H59 M65 202 H59 M65 158 H59 M65 114 H59 M65 70 H59\"/>\n<path d=\"M65 290 V296 M122.5 290 V296 M180 290 V296 M295 290 V296 M525 290 V296\"/>\n<polyline points=\"65,290 122.5,246 180,202 295,136 525,70\" stroke-width=\"2.5\"/>\n<polyline points=\"65,136 122.5,114 180,92 295,70 525,48\" stroke-width=\"2.5\" stroke-dasharray=\"8 5\"/>\n</g>\n<g fill=\"currentColor\">\n<circle cx=\"65\" cy=\"290\" r=\"3.5\"/><circle cx=\"122.5\" cy=\"246\" r=\"3.5\"/><circle cx=\"180\" cy=\"202\" r=\"3.5\"/><circle cx=\"295\" cy=\"136\" r=\"3.5\"/><circle cx=\"525\" cy=\"70\" r=\"3.5\"/>\n<rect x=\"61.5\" y=\"132.5\" width=\"7\" height=\"7\"/><rect x=\"119\" y=\"110.5\" width=\"7\" height=\"7\"/><rect x=\"176.5\" y=\"88.5\" width=\"7\" height=\"7\"/><rect x=\"291.5\" y=\"66.5\" width=\"7\" height=\"7\"/><rect x=\"521.5\" y=\"44.5\" width=\"7\" height=\"7\"/>\n</g>\n<g fill=\"currentColor\" font-family=\"sans-serif\" font-size=\"13\">\n<text x=\"290\" y=\"20\" text-anchor=\"middle\">Figure 1. Temperature by soil depth</text>\n<text x=\"50\" y=\"294\" text-anchor=\"end\">−8</text><text x=\"50\" y=\"250\" text-anchor=\"end\">−6</text><text x=\"50\" y=\"206\" text-anchor=\"end\">−4</text><text x=\"50\" y=\"162\" text-anchor=\"end\">−2</text><text x=\"50\" y=\"118\" text-anchor=\"end\">0</text><text x=\"50\" y=\"74\" text-anchor=\"end\">2</text>\n<text x=\"18\" y=\"175\" transform=\"rotate(-90 18 175)\" text-anchor=\"middle\">Temperature (°C)</text>\n<text x=\"65\" y=\"313\" text-anchor=\"middle\">0</text><text x=\"122.5\" y=\"313\" text-anchor=\"middle\">5</text><text x=\"180\" y=\"313\" text-anchor=\"middle\">10</text><text x=\"295\" y=\"313\" text-anchor=\"middle\">20</text><text x=\"525\" y=\"313\" text-anchor=\"middle\">40</text>\n<text x=\"300\" y=\"335\" text-anchor=\"middle\">Depth below soil surface (cm)</text>\n<text x=\"115\" y=\"357\">Solid, circles: bare site</text><text x=\"315\" y=\"357\">Dashed, squares: snow site</text>\n</g></svg>",
+      "alt": "Figure 1 is a line graph of soil temperature in degrees Celsius against depth below the soil surface in centimeters. At depths 0, 5, 10, 20, and 40 cm, the bare-site solid line with circles has values −8, −6, −4, −1, and 2°C; the snow-site dashed line with squares has values −1, 0, 1, 2, and 3°C. Straight segments connect adjacent points.",
+      "notToScale": false
+    },
+    "sectionKey": "act-science",
+    "wordCount": 207,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p001",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p002",
+    "type": "data-representation",
+    "title": "Solubility of Two Solids",
+    "intro": "Solids R and S and all measurements are invented for this practice set.",
+    "content": "A laboratory measured the solubility of two solids, R and S, in water. Solubility here means the greatest mass of a solid that can remain dissolved at equilibrium in 100 g of water at a specified temperature. A solution containing that mass is saturated. The solids were tested separately; no container held both R and S.\n\nEach measurement used 100 g of water. Containers were covered to prevent evaporation, and the water mass remained constant. The table gives the mass dissolved after equilibrium was reached. Any undissolved solid was excluded from that mass.\n\n| Temperature (°C) | Solubility of R (g per 100 g water) | Solubility of S (g per 100 g water) |\n| --- | --- | --- |\n| 20 | 18 | 42 |\n| 30 | 26 | 43 |\n| 40 | 36 | 44 |\n| 50 | 48 | 45 |\n| 60 | 62 | 46 |\n\nIn a cooling test, each saturated solution was first separated from any undissolved solid at its starting temperature. The solution was then cooled without losing water and allowed to reach equilibrium again. Dissolved solid in excess of the solubility at the final temperature formed crystals. Neither solid reacted chemically with the water. The mass of a solution includes both its water and its dissolved solid.",
+    "sectionKey": "act-science",
+    "wordCount": 222,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p002",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p003",
+    "type": "data-representation",
+    "title": "Forces on Two Carts",
+    "intro": "The carts and all numerical measurements are invented for this practice set.",
+    "content": "Two carts moved to the right on a horizontal track. A device applied a constant rightward force F to each cart during a trial. A brake exerted a constant leftward opposing force while each cart moved. Figure 1 shows only the horizontal forces; the vertical forces balanced. Cart A had a mass of 1.0 kg and an opposing force of 0.2 N. Cart B had a mass of 2.0 kg and an opposing force of 0.4 N.\n\n| Cart | Mass (kg) | Rightward force | Leftward force (N) |\n| --- | --- | --- | --- |\n| A | 1.0 | F | 0.2 |\n| B | 2.0 | F | 0.4 |\n\nThe following table gives the measured rightward accelerations. For estimates between tested forces, treat the acceleration values as connected by straight segments.\n\n| Applied force F (N) | Cart A acceleration (m/s²) | Cart B acceleration (m/s²) |\n| --- | --- | --- |\n| 0.6 | 0.4 | 0.1 |\n| 1.0 | 0.8 | 0.3 |\n| 1.4 | 1.2 | 0.5 |\n| 1.8 | 1.6 | 0.7 |\n| 2.2 | 2.0 | 0.9 |\n\nNewton's second law relates acceleration to net force: acceleration = net force / mass. For these horizontal forces, rightward net force equals the applied rightward force minus the leftward opposing force. Force is measured in newtons (N); 1 N equals 1 kg·m/s².",
+    "figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 580 290\">\n<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">\n<rect x=\"222\" y=\"57\" width=\"136\" height=\"60\" rx=\"5\"/><circle cx=\"247\" cy=\"124\" r=\"7\"/><circle cx=\"334\" cy=\"124\" r=\"7\"/>\n<path d=\"M222 85 H120 M120 85 L131 78 M120 85 L131 92 M358 85 H490 M490 85 L479 78 M490 85 L479 92 M85 134 H510\"/>\n<rect x=\"222\" y=\"184\" width=\"136\" height=\"60\" rx=\"5\"/><circle cx=\"247\" cy=\"251\" r=\"7\"/><circle cx=\"334\" cy=\"251\" r=\"7\"/>\n<path d=\"M222 212 H120 M120 212 L131 205 M120 212 L131 219 M358 212 H490 M490 212 L479 205 M490 212 L479 219 M85 261 H510\"/>\n</g>\n<g fill=\"currentColor\" font-family=\"sans-serif\" font-size=\"14\" text-anchor=\"middle\">\n<text x=\"290\" y=\"22\">Figure 1. Horizontal forces (arrows not to scale)</text>\n<text x=\"290\" y=\"83\">Cart A</text><text x=\"290\" y=\"103\">1.0 kg</text><text x=\"157\" y=\"68\">0.2 N</text><text x=\"425\" y=\"68\">F</text>\n<text x=\"290\" y=\"210\">Cart B</text><text x=\"290\" y=\"230\">2.0 kg</text><text x=\"157\" y=\"195\">0.4 N</text><text x=\"425\" y=\"195\">F</text>\n<text x=\"290\" y=\"282\">Both carts move to the right.</text>\n</g></svg>",
+      "alt": "Figure 1 shows two carts on a horizontal track, both moving right. Cart A has mass 1.0 kg, a rightward arrow labeled F, and a leftward arrow labeled 0.2 N. Cart B has mass 2.0 kg, a rightward arrow labeled F, and a leftward arrow labeled 0.4 N. Arrow lengths do not represent force magnitudes. Only horizontal forces are shown.",
+      "notToScale": true
+    },
+    "sectionKey": "act-science",
+    "wordCount": 239,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p003",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p004",
+    "type": "data-representation",
+    "title": "Seed Germination in Salty Water",
+    "intro": "The seed study and all measurements are invented for this practice set.",
+    "content": "A team placed 40 seeds from one seed lot in each of four covered dishes. Each dish received the same volume of water containing a different salt concentration. Temperature, light, and the type of paper supporting the seeds were the same in every dish. The solutions were replenished at their assigned concentrations to keep the paper wet.\n\nA seed was counted as germinated once a root became visible. The table shows cumulative counts: a seed that germinated on day 2 remained included in the counts on days 4 and 6. Each seed was counted only once within a day's total. The study ended after day 6.\n\n| Salt concentration (g/L) | Seeds germinated by day 2 | Seeds germinated by day 4 | Seeds germinated by day 6 |\n| --- | --- | --- | --- |\n| 0 | 8 | 24 | 36 |\n| 2 | 2 | 20 | 34 |\n| 4 | 2 | 10 | 24 |\n| 6 | 0 | 2 | 10 |\n\nFigure 1 plots the counts for the 0, 4, and 6 g/L dishes. The 2 g/L dish is included only in the table. Connecting lines help identify the series and do not show the exact germination time of individual seeds.\n\nSeeds must take up water before germination. For the initial water movement considered here, treat seed membranes as permeable to water but not to the dissolved salt. Across such a membrane, net water movement tends toward the side with the higher concentration of dissolved particles. Assume that adding salt raised the dissolved-particle concentration outside each seed without changing the initial concentration inside it.",
+    "figure": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 580 365\">\n<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\">\n<path d=\"M75 45 V285 H525\"/>\n<path d=\"M75 45 H525 M75 105 H525 M75 165 H525 M75 225 H525\" stroke-dasharray=\"2 5\"/>\n<path d=\"M145 285 V291 M320 285 V291 M495 285 V291\"/>\n<polyline points=\"145,237 320,141 495,69\" stroke-width=\"2.5\"/>\n<polyline points=\"145,273 320,225 495,141\" stroke-width=\"2.5\" stroke-dasharray=\"9 5\"/>\n<polyline points=\"145,285 320,273 495,225\" stroke-width=\"2.5\" stroke-dasharray=\"2 5\"/>\n</g>\n<g fill=\"currentColor\">\n<circle cx=\"145\" cy=\"237\" r=\"3.5\"/><circle cx=\"320\" cy=\"141\" r=\"3.5\"/><circle cx=\"495\" cy=\"69\" r=\"3.5\"/>\n<rect x=\"141.5\" y=\"269.5\" width=\"7\" height=\"7\"/><rect x=\"316.5\" y=\"221.5\" width=\"7\" height=\"7\"/><rect x=\"491.5\" y=\"137.5\" width=\"7\" height=\"7\"/>\n<polygon points=\"145,281 141,289 149,289\"/><polygon points=\"320,269 316,277 324,277\"/><polygon points=\"495,221 491,229 499,229\"/>\n</g>\n<g fill=\"currentColor\" font-family=\"sans-serif\" font-size=\"13\">\n<text x=\"290\" y=\"20\" text-anchor=\"middle\">Figure 1. Cumulative germination</text>\n<text x=\"60\" y=\"289\" text-anchor=\"end\">0</text><text x=\"60\" y=\"229\" text-anchor=\"end\">10</text><text x=\"60\" y=\"169\" text-anchor=\"end\">20</text><text x=\"60\" y=\"109\" text-anchor=\"end\">30</text><text x=\"60\" y=\"49\" text-anchor=\"end\">40</text>\n<text x=\"20\" y=\"165\" transform=\"rotate(-90 20 165)\" text-anchor=\"middle\">Seeds germinated (count)</text>\n<text x=\"145\" y=\"310\" text-anchor=\"middle\">2</text><text x=\"320\" y=\"310\" text-anchor=\"middle\">4</text><text x=\"495\" y=\"310\" text-anchor=\"middle\">6</text>\n<text x=\"305\" y=\"331\" text-anchor=\"middle\">Time (days)</text>\n<text x=\"65\" y=\"356\">Solid, circles: 0 g/L</text><text x=\"242\" y=\"356\">Dashed, squares: 4 g/L</text><text x=\"432\" y=\"356\">Dotted: 6 g/L</text>\n</g></svg>",
+      "alt": "Figure 1 plots cumulative numbers of germinated seeds against time in days. At days 2, 4, and 6, the 0 g/L salt dish has counts 8, 24, and 36, shown by a solid line with circles; the 4 g/L dish has counts 2, 10, and 24, shown by a dashed line with squares; and the 6 g/L dish has counts 0, 2, and 10, shown by a dotted line with triangles. Each dish began with 40 seeds. The vertical axis spans 0 to 40 seeds.",
+      "notToScale": false
+    },
+    "sectionKey": "act-science",
+    "wordCount": 277,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p004",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p005",
+    "type": "research-summaries",
+    "title": "Salt, light, and seed germination",
+    "content": "Students investigated germination of one variety of radish. They counted a seed as germinated when a root at least 2 mm long emerged. All dishes contained the same paper, solution volume, and number of seeds and were maintained at 24°C. Seeds were randomly assigned to dishes.\n\nExperiment 1\nThe students combined three salt concentrations with two light treatments: 12 hours of light each day or continuous darkness. Each combination had five dishes of 20 seeds. After four days, they counted germinated seeds. The table gives totals across the five dishes, out of 100 seeds per combination.\n\n| Salt concentration (mmol/L) | Germinated with daily light | Germinated in darkness |\n| --- | --- | --- |\n| 0 | 92 | 88 |\n| 40 | 76 | 64 |\n| 80 | 44 | 28 |\n\nExperiment 2\nUsing a new batch, the students kept seeds in 80 mmol/L salt solution in darkness for four days. They then randomly assigned 144 ungerminated seeds to two treatments, each with six dishes of 12 seeds. Seeds were rinsed and placed on fresh paper with either salt-free water or fresh 80 mmol/L salt solution. Both treatments remained in darkness at 24°C. The table gives additional germination during the next four days.\n\n| Solution after transfer | Newly germinated seeds out of 72 |\n| --- | --- |\n| Salt-free water | 58 |\n| 80 mmol/L salt solution | 14 |\n\nSeeds must absorb water before germination. A higher concentration of dissolved substances outside a seed can reduce its water uptake. Failure to germinate within four days does not, by itself, establish that a seed is dead.",
+    "sectionKey": "act-science",
+    "wordCount": 277,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p005",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p006",
+    "type": "research-summaries",
+    "title": "Testing insulation sleeves",
+    "content": "An engineering class tested removable sleeves for keeping water warm. Each trial used an identical lidded metal cup containing 200 g of water initially at 70.0°C. Cups stood on identical pads in a 20.0°C room. A probe measured water temperature through a small opening in the lid. The temperature drop was the initial temperature minus the temperature after 20 minutes. A smaller drop indicates better heat retention under these conditions.\n\nExperiment 1\nThe class tested two sleeve materials at two thicknesses and also tested a cup without a sleeve. Each condition was tested three times with fresh water, after the cup returned to room temperature. Table 1 lists all three temperature drops.\n\n| Sleeve | Thickness (mm) | Trial 1 drop (°C) | Trial 2 drop (°C) | Trial 3 drop (°C) |\n| --- | --- | --- | --- | --- |\n| None | 0 | 28.0 | 28.5 | 27.5 |\n| Felt | 5 | 18.0 | 19.0 | 17.0 |\n| Felt | 10 | 12.0 | 12.5 | 11.5 |\n| Cork | 5 | 16.0 | 16.5 | 15.5 |\n| Cork | 10 | 11.0 | 11.5 | 10.5 |\n\nExperiment 2\nUsing only 10 mm cork sleeves, the class compared calm air with air moved by a fan. The same probe was used. Each table entry is the mean of three trials.\n\n| Time (minutes) | Water temperature in calm air (°C) | Water temperature with fan (°C) |\n| --- | --- | --- |\n| 0 | 70.0 | 70.0 |\n| 10 | 64.0 | 59.0 |\n| 20 | 59.0 | 51.0 |\n| 30 | 55.0 | 45.0 |\n\nMoving air can increase heat transfer between an object's outer surface and its surroundings. No tests were made with different cup shapes, water masses, or room temperatures.",
+    "sectionKey": "act-science",
+    "wordCount": 311,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p006",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p007",
+    "type": "research-summaries",
+    "title": "Dissolving a mineral sample",
+    "content": "A laboratory investigated how temperature and particle size affect the dissolution of mineral M. Dissolution transfers material from solid particles into the surrounding liquid. All samples came from the same mineral batch. Each trial began with 4.00 g of mineral in 200 mL of fresh solvent and used the same stirring speed. After two minutes, the remaining solid was filtered, dried, and weighed. Dissolved mass was calculated by subtracting the remaining mass from 4.00 g.\n\nExperiment 1\nThe laboratory tested coarse granules, 2–3 mm across, and fine granules, 0.2–0.3 mm across, at three temperatures. Each entry is the mean dissolved mass from three independent trials. Temperature was maintained throughout each trial. A preliminary test showed that the solvent could dissolve more than 4.00 g at every temperature used.\n\n| Temperature (°C) | Coarse: mass dissolved (g) | Fine: mass dissolved (g) |\n| --- | --- | --- |\n| 15 | 0.40 | 1.20 |\n| 25 | 0.70 | 1.80 |\n| 35 | 1.00 | 2.40 |\n\nExperiment 2\nTo examine trial-to-trial variation, the laboratory repeated the 25°C fine-granule condition on four more independently prepared samples. The original conditions, drying procedure, and balance were retained.\n\n| Repeat trial | Mass dissolved (g) |\n| --- | --- |\n| A | 1.76 |\n| B | 1.84 |\n| C | 1.78 |\n| D | 1.82 |\n\nBreaking a solid into smaller pieces increases its total exposed surface area without increasing its total mass. Dissolution occurs at surfaces in contact with solvent. The laboratory did not determine how long complete dissolution would take.",
+    "sectionKey": "act-science",
+    "wordCount": 267,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p007",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p008",
+    "type": "research-summaries",
+    "title": "Sediment settling in water columns",
+    "content": "Researchers studied sediment collected from a stream. They separated the sediment into coarse grains, 0.4–0.6 mm across, and fine grains, 0.04–0.06 mm across. Each trial used a new 2.0 g sample placed near the top of a transparent cylinder containing water at 20°C. No sediment was added after the trial began. The researchers measured the mass that had reached the bottom and reported it as a percentage of the starting mass. Each reported percentage is the mean of three trials.\n\nExperiment 1\nIdentical cylinders contained 40 cm-deep columns of still water. The researchers compared the two grain-size groups.\n\n| Time after release (seconds) | Coarse sediment settled (%) | Fine sediment settled (%) |\n| --- | --- | --- |\n| 20 | 80 | 10 |\n| 40 | 96 | 28 |\n| 60 | 100 | 50 |\n| 120 | 100 | 82 |\n\nExperiment 2\nUsing fine sediment only, the researchers compared two water depths. Cylinders had the same internal diameter. They recorded the earliest observation time when at least 50% of the sediment had settled. Observations were made every 10 seconds, including at time zero.\n\n| Water depth (cm) | First observation with at least 50% settled (seconds) |\n| --- | --- |\n| 20 | 30 |\n| 40 | 60 |\n\nGravity pulls sediment particles downward. Upward water movement can oppose that settling. The experiments used still water, and the researchers did not observe individual grain paths.",
+    "sectionKey": "act-science",
+    "wordCount": 247,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p008",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p009",
+    "type": "research-summaries",
+    "title": "Oxygen Changes Around an Aquatic Plant",
+    "content": "Researchers used changes in dissolved oxygen to study an aquatic plant. They placed a 1.0 g plant cutting in each sealed chamber containing 100 mL of water. All cuttings came from the same stock. Water temperature was held at 22°C, and the initial dissolved oxygen concentration was 6.0 mg/L. Each trial lasted 20 minutes. A positive oxygen change means the final concentration exceeded the initial concentration. Each reported change is the mean of four fresh chambers.\n\nExperiment 1\n\nThe initial dissolved carbon dioxide concentration was 8 mg/L in every chamber. Lamps supplied different light intensities, measured in light units (LU). An intensity of 0 LU indicates darkness. Matched chambers containing water but no plant were tested at every light intensity.\n\nLight intensity (LU) | Oxygen change with plant (mg/L) | Oxygen change without plant (mg/L)\n0 | −0.7 | 0.0\n40 | −0.2 | 0.0\n80 | +0.4 | 0.0\n160 | +1.2 | 0.0\n320 | +1.2 | 0.0\n\nExperiment 2\n\nThe researchers compared two initial carbon dioxide concentrations. For each concentration, one group of plant chambers received 160 LU and another was kept dark. Plant mass, water volume, temperature, initial oxygen concentration, and trial duration were unchanged.\n\nInitial carbon dioxide (mg/L) | Oxygen change at 160 LU (mg/L) | Oxygen change in darkness (mg/L)\n4 | +0.5 | −0.7\n12 | +1.5 | −0.7\n\nIn these trials, photosynthesis was the only process producing oxygen and cellular respiration was the only process consuming oxygen. Photosynthesis required light. Both processes could occur in illuminated plant chambers. Gas exchange with the outside air was prevented.",
+    "sectionKey": "act-science",
+    "wordCount": 264,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p009",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p010",
+    "type": "research-summaries",
+    "title": "Wire Length, Temperature, and Current",
+    "content": "Students investigated the resistance of bare metal wires. They used wires made from one alloy, all with the same diameter. A regulated source maintained 1.20 volts (V) across the tested wire, as checked by a voltmeter connected to its two ends. An ammeter measured current in amperes (A). The resistance of the connecting leads was negligible. Wire resistance R, in ohms (Ω), is related to voltage V and current I by R = V/I.\n\nThe wire was immersed in an electrically insulating bath that held its temperature constant. Students waited for the wire to reach the bath temperature before briefly switching on the current. They then switched off the current and allowed the wire to return to the bath temperature before the next reading. Each table entry is the mean of four readings.\n\nExperiment 1\n\nStudents compared three wire lengths with the bath at 20°C.\n\nWire length (cm) | Current (A)\n20 | 0.60\n40 | 0.30\n60 | 0.20\n\nExperiment 2\n\nStudents used the 20 cm wire from Experiment 1 at four bath temperatures.\n\nTemperature (°C) | Current (A)\n20 | 0.60\n80 | 0.50\n140 | 0.40\n220 | 0.30\n\nTwo models were proposed for heating a wire from 20°C to 220°C. Model A predicts that heating adds the same number of ohms to every wire, regardless of its length. Model B predicts that heating multiplies every wire's resistance by the same factor, regardless of its length. Each model is to be fitted using the 20 cm wire's results. Neither model makes a claim about untested intermediate temperatures.",
+    "sectionKey": "act-science",
+    "wordCount": 260,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p010",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p011",
+    "type": "research-summaries",
+    "title": "Enzyme Activity After a pH Change",
+    "content": "An enzyme converts a colorless substrate into a yellow product. Researchers used the rate of product formation to measure enzyme activity. All trials used the same enzyme concentration and excess substrate at 30°C. Rates were measured during the first minute after substrate was added, when substrate depletion was negligible. Each reported rate is the mean of five separately prepared samples.\n\nExperiment 1\n\nEnzyme samples were held for 10 minutes in buffers at pH 4, 5, 6, 7, or 8 without substrate. Substrate was then added, and the rate was measured at that same pH. Buffer solutions maintained the stated pH during each measurement. A matching sample without enzyme was tested at every pH and produced no yellow product.\n\npH during pretreatment and measurement | Product formation rate (μmol/min)\n4 | 2\n5 | 6\n6 | 12\n7 | 9\n8 | 3\n\nExperiment 2\n\nFresh enzyme samples received the same 10-minute pretreatment at pH 4, 6, or 8. The researchers then adjusted every sample to pH 6. One minute after adjustment, they added substrate and measured the rate. Final enzyme concentration, substrate concentration, temperature, and solution volume matched those in Experiment 1.\n\npH during pretreatment | pH during measurement | Product formation rate (μmol/min)\n4 | 6 | 11\n6 | 6 | 12\n8 | 6 | 4\n\nThe researchers considered two explanations for the low rate after pH 8 pretreatment. One explanation proposed permanent loss of enzyme activity. The other proposed a change from which the enzyme could recover slowly after return to pH 6. Experiment 2 included only the one-minute waiting period before substrate addition.",
+    "sectionKey": "act-science",
+    "wordCount": 269,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p011",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p012",
+    "type": "research-summaries",
+    "title": "Choosing Blades for a Small Wind Turbine",
+    "content": "Engineers tested turbine blades in a wind tunnel. Every rotor had three blades, a radius of 15 cm, and the same total mass. All tests used the same generator and electrical load. Wind speed was held at the stated value for one minute before measurements began. Reported values are means of five trials using separately assembled rotors. Sound level was measured at a fixed position 1 m from the rotor.\n\nExperiment 1\n\nThe engineers used straight blades and changed their pitch, the angle of each blade relative to the plane swept by the rotor. They measured electrical power at a wind speed of 6 m/s.\n\nBlade pitch (degrees) | Electrical power (mW)\n10 | 120\n20 | 180\n30 | 150\n40 | 90\n\nExperiment 2\n\nThe engineers compared straight and curved blade shapes, both at a pitch of 20 degrees. Blade material, rotor radius, rotor mass, generator, and electrical load were unchanged. They measured electrical power and sound level at three wind speeds.\n\nWind speed (m/s) | Straight-blade power (mW) | Curved-blade power (mW) | Straight-blade sound (dB) | Curved-blade sound (dB)\n4 | 45 | 60 | 30 | 32\n6 | 180 | 210 | 36 | 40\n8 | 380 | 360 | 45 | 49\n\nFor one installation, the design must produce at least 175 mW while remaining at or below 38 dB when the wind speed is 6 m/s. These are simultaneous requirements. The experiments did not measure performance at wind speeds between the listed values or the best pitch for curved blades.",
+    "sectionKey": "act-science",
+    "wordCount": 259,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p012",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p013",
+    "type": "conflicting-viewpoints",
+    "title": "What Starts an Autumn Algal Bloom?",
+    "intro": "The lake observations, hypotheses, and follow-up data below describe an invented investigation.",
+    "content": "In a shallow freshwater lake, the density of active cells of one algal species increased after autumn winds mixed surface water with deeper water and disturbed bottom sediment. Before mixing, deeper water contained more dissolved phosphorus than surface water. Sediment contained resting cells: living algal cells that were inactive but could become active. The scientists defined a bloom as at least 100 active cells per milliliter after 3 days.\n\nScientist N: Nutrient hypothesis\nThe phosphorus brought upward by mixing allows the active algae already in surface water to multiply. Raising dissolved phosphorus from 0.02 to 0.10 mg/L is sufficient to produce a bloom within 3 days, even without added resting cells. Adding resting cells while phosphorus remains at 0.02 mg/L will not produce a bloom.\n\nScientist C: Cell-supply hypothesis\nThe small resident population contributes little to a bloom during the first 3 days. Mixing supplies resting cells, which become active and multiply. Adding resting cells is sufficient to produce a bloom within 3 days at either phosphorus concentration. Raising phosphorus without supplying resting cells will not produce a bloom.\n\nBoth scientists assume adequate light and the same temperature. They agree that a treatment supplying both elevated phosphorus and resting cells should produce a bloom.\n\nFollow-up study\nSurface water was divided among identical jars. All jars initially contained 20 active cells/mL. Each jar received either no resting cells or 100 resting cells/mL, rinsed so they added negligible phosphorus. Resting cells were excluded from active-cell counts. Initial phosphorus concentrations were adjusted as shown. Light, temperature, water volume, and observation time were the same for every jar. Each result is the mean of 5 jars; every individual result was within 3 active cells/mL of its treatment mean.\n\nTreatment | Initial phosphorus (mg/L) | Resting cells added? | Active cells/mL after 3 days\nA | 0.02 | No | 24\nB | 0.10 | No | 28\nC | 0.02 | Yes | 30\nD | 0.10 | Yes | 168",
+    "sectionKey": "act-science",
+    "wordCount": 327,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p013",
+      "created": "2026-10-03"
+    }
+  },
+  {
+    "id": "act-science-p014",
+    "type": "conflicting-viewpoints",
+    "title": "Why Do Drying Clay Layers Crack?",
+    "intro": "Two scientists propose explanations for the results of an invented materials investigation.",
+    "content": "Wet clay spread in a rigid tray often develops cracks as it dries. In preliminary trials, some layers lifted from their trays before drying had fewer cracks than layers left attached. Two scientists agreed that water loss makes the clay tend to shrink horizontally. They disagreed about what prevents free shrinkage and produces the pulling stress that opens cracks.\n\nScientist R: Restraint explanation\nThe tray's base grips the clay and prevents horizontal shrinkage. This external restraint produces cracks. A layer that can slide freely along its base will not crack, even if its top dries before its bottom. A firmly attached layer will crack after sufficient water loss, even if it dries uniformly through its thickness.\n\nScientist G: Gradient explanation\nThe top of a layer usually dries and tries to shrink before its wetter lower part. The difference in shrinkage within the layer produces cracks, even on a base that allows sliding. A layer that dries uniformly through its thickness will not crack, even if it is firmly attached to the tray.\n\nFollow-up study\nLayers of one clay mixture were prepared with the same area and a thickness of 4 mm. They dried either on a rough base to which the clay adhered or on a coated base along which it could slide. Drying conditions produced either a drier top than bottom or approximately uniform moisture through the thickness. Sensors confirmed these moisture patterns. All layers lost the same total mass of water before their cracks were measured, and their temperatures were equal. The table gives mean total crack length per 100 cm² of original layer area for 5 layers per treatment. Individual measurements differed from their treatment mean by at most 0.2 cm.\n\nTreatment | Base behavior | Moisture pattern during drying | Crack length (cm per 100 cm²)\nR | Adhering | Top drier than bottom | 14\nS | Sliding | Top drier than bottom | 12\nT | Adhering | Uniform through thickness | 2\nU | Sliding | Uniform through thickness | 0",
+    "sectionKey": "act-science",
+    "wordCount": 338,
+    "provenance": {
+      "type": "original",
+      "generator": "act-science-authored-v1",
+      "seed": "act-science-p014",
+      "created": "2026-10-03"
+    }
+  }
+]

@@ -25,6 +25,25 @@
     return !section || section.practiceAvailable !== false;
   }
 
+  // A reopened section can retain older questions for history without serving
+  // them again. Read the id as well as sectionKey so a saved snapshot cannot
+  // bypass its archive boundary by carrying a different section label.
+  function questionAvailable(questionOrId, sectionKey) {
+    const question = questionOrId && typeof questionOrId === "object" ? questionOrId : null;
+    const id = question ? question.id || question.questionId : questionOrId;
+    const sections = (catalog && catalog.sections) || [];
+    const named = sections.find((entry) => entry.key ===
+      (typeof sectionKey === "string" ? sectionKey : question && question.sectionKey));
+    const identified = typeof id === "string" && sections.find((entry) =>
+      id.startsWith(`${entry.key}-`) || id.startsWith(`${entry.key}:`));
+    if (named && identified && named.key !== identified.key) return false;
+    const section = identified || named;
+    if (!sectionAvailable(section)) return false;
+    if (!section || !Number.isInteger(section.activeQuestionIdMin)) return true;
+    const match = typeof id === "string" && id.match(new RegExp(`^${section.key}-(\\d{4})$`));
+    return Boolean(match && Number(match[1]) >= section.activeQuestionIdMin);
+  }
+
   function blueprintAvailable(blueprint) {
     return Boolean(blueprint) && blueprint.sections.every((entry) => sectionAvailable(entry.sectionKey));
   }
@@ -250,24 +269,39 @@
     return counts;
   }
 
-  // Whole passages for a section whose questions share passages (ACT
-  // English and Reading): passages in a seeded order, each with its
+  // Passages in a seeded order, each with its
   // questions in passage order, until `count` is filled; the last passage
   // gives only as many of its first questions as are needed. A set of 36
   // Reading questions then reads four passages, as the real test does,
   // instead of thirty.
-  function drawPassageSets(questions, count, seed) {
+  function drawPassageSets(questions, count, seed, options) {
     requireAvailable(questions.map((question) => question.sectionKey));
+    const settings = options || {};
+    const avoid = new Set(settings.avoidIds || []);
     const byPassage = new Map();
-    questions.forEach((question) => {
+    questions.filter(questionAvailable).forEach((question) => {
       if (!byPassage.has(question.passageId)) byPassage.set(question.passageId, []);
       byPassage.get(question.passageId).push(question);
     });
-    const order = deterministicShuffle([...byPassage.keys()], `${seed}-passages`);
+    const groups = deterministicShuffle([...byPassage.keys()], `${seed}-passages`)
+      .map((id) => byPassage.get(id).slice().sort((left, right) => left.id < right.id ? -1 : left.id > right.id ? 1 : 0));
+    // One previously served question moves its whole passage behind fresh
+    // passages; splitting fresh/old questions would repeat the same context.
+    const order = groups.filter((items) => !items.some((question) => avoid.has(question.id)))
+      .concat(groups.filter((items) => items.some((question) => avoid.has(question.id))));
+    if (settings.preferWholeSets) {
+      const combinations = new Map([[0, []]]);
+      for (const items of order) {
+        for (const [size, picked] of [...combinations]) {
+          const next = size + items.length;
+          if (next <= count && !combinations.has(next)) combinations.set(next, picked.concat([items]));
+        }
+        if (combinations.has(count)) return combinations.get(count).flat();
+      }
+    }
     const chosen = [];
-    for (const passageId of order) {
+    for (const items of order) {
       if (chosen.length >= count) break;
-      const items = byPassage.get(passageId).slice().sort((left, right) => (left.id < right.id ? -1 : left.id > right.id ? 1 : 0));
       chosen.push(...items.slice(0, count - chosen.length));
     }
     return chosen;
@@ -275,15 +309,63 @@
 
   const sharesPassages = (questions) => questions.length > 0 && questions.every((question) => question.passageId);
 
+  // Review may collect isolated Science questions in due-date order. Keep
+  // their shared context together without adding questions the user did not
+  // request. Other sections retain their original order.
+  function groupScienceQuestions(questions) {
+    const groups = new Map();
+    const ordered = [];
+    questions.forEach((question) => {
+      if (question.sectionKey !== "act-science" || !question.passageId) {
+        ordered.push([question]);
+        return;
+      }
+      if (!groups.has(question.passageId)) {
+        const group = [];
+        groups.set(question.passageId, group);
+        ordered.push(group);
+      }
+      groups.get(question.passageId).push(question);
+    });
+    groups.forEach((items) => items.sort((left, right) => left.id < right.id ? -1 : left.id > right.id ? 1 : 0));
+    return ordered.flat();
+  }
+
+  // The Science practice form has seven complete sets. All forty questions
+  // count toward practice accuracy; this does not simulate hidden pretest items.
+  function drawScienceForm(questions, count, seed) {
+    const mix = count === 5
+      ? [["data-representation", 1, 5]]
+      : [["data-representation", 2, 5], ["research-summaries", 4, 6], ["conflicting-viewpoints", 1, 6]];
+    const sets = new Map();
+    questions.forEach((question) => {
+      if (!sets.has(question.passageId)) sets.set(question.passageId, []);
+      sets.get(question.passageId).push(question);
+    });
+    const chosen = [];
+    for (const [type, needed, size] of mix) {
+      const pool = [...sets.values()].filter((items) => items.length === size &&
+        items.every((question) => question.passageId && question.stimulus && question.stimulus.type === type));
+      chosen.push(...deterministicShuffle(pool, `${seed}-${type}`).slice(0, needed));
+    }
+    return deterministicShuffle(chosen, `${seed}-sets`).flatMap((items) =>
+      items.slice().sort((left, right) => left.id < right.id ? -1 : left.id > right.id ? 1 : 0));
+  }
+
   // Draws `count` scoreable items from one section. SAT's editorial tiers
   // set its mix, backfilled when a tier is short; unverified ACT labels do
   // not affect selection. Shared passages stay together (drawPassageSets).
   function drawSectionItems(bank, count, seed, excludeIds) {
     requireAvailable(bank.map((question) => question.sectionKey));
     const blocked = excludeIds || new Set();
+    const science = bank.some((question) => question.sectionKey === "act-science");
+    const blockedPassages = new Set(science ? bank.filter((question) => blocked.has(question.id))
+      .map((question) => question.passageId).filter(Boolean) : []);
     const scoreable = bank.filter(
-      (question) => question.responseType !== "essay" && !blocked.has(question.id),
+      (question) => questionAvailable(question) && question.responseType !== "essay" &&
+        !blocked.has(question.id) && !blockedPassages.has(question.passageId),
     );
+    if (science && (count === 5 || count === 40)) return drawScienceForm(scoreable, count, seed);
     if (sharesPassages(scoreable)) return drawPassageSets(scoreable, count, seed);
     if (!scoreable.every((question) => supportsDifficulty(question.sectionKey))) {
       return deterministicShuffle(scoreable, `${seed}-order`).slice(0, count);
@@ -485,6 +567,7 @@
     const includedIds = filters.includedIds ? new Set(filters.includedIds) : null;
 
     return questions.filter((question) => {
+      if (!questionAvailable(question)) return false;
       if (domains.size && !domains.has(question.domain)) return false;
       if (skills.size && !skills.has(question.skill)) return false;
       if (difficulties.size && !difficulties.has(question.difficulty)) return false;
@@ -720,6 +803,7 @@
   // whole passages instead (drawPassageSets), as a timed set should be.
   function buildSession(questions, count, seed, options) {
     requireAvailable(questions.map((question) => question.sectionKey));
+    questions = questions.filter(questionAvailable);
     const settings = options || {};
     const avoid = new Set(settings.avoidIds || []);
     const target = count === "all"
@@ -727,11 +811,9 @@
       : Math.max(1, Number(count) || 10);
 
     // `passageSets`: whole passages, recently served ones last.
-    if (settings.passageSets && sharesPassages(questions)) {
-      const fresh = questions.filter((question) => !avoid.has(question.id));
-      const served = questions.filter((question) => avoid.has(question.id));
-      const first = drawPassageSets(fresh, target, seed);
-      return first.length >= target ? first : first.concat(drawPassageSets(served, target - first.length, `${seed}-again`));
+    const science = questions.length > 0 && questions.every((question) => question.sectionKey === "act-science");
+    if ((settings.passageSets || science) && sharesPassages(questions)) {
+      return drawPassageSets(questions, target, seed, { avoidIds: settings.avoidIds, preferWholeSets: science });
     }
 
     const shuffled = deterministicShuffle(questions, seed);
@@ -786,6 +868,7 @@
     drawPassageSets,
     deterministicShuffle,
     filterQuestions,
+    groupScienceQuestions,
     normalize,
     numericEqual,
     accuracyByDifficulty,
@@ -795,6 +878,7 @@
     paceBudgetSeconds,
     SECONDS_PER_QUESTION,
     questionFamily,
+    questionAvailable,
     scoreResponse,
     sectionAvailable,
     supportsDifficulty,

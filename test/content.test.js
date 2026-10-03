@@ -56,10 +56,13 @@ function validQuestion(overrides = {}) {
   };
 }
 
-test("catalog domain targets total targetPerSection in every section", () => {
+test("catalog domain targets total each section's target", () => {
   catalog.sections.forEach((section) => {
     const total = section.domains.reduce((sum, domain) => sum + domain.target, 0);
-    assert.equal(total, catalog.targetPerSection, section.key);
+    assert.equal(total, section.targetQuestions ?? catalog.targetPerSection, section.key);
+    if (section.archive) {
+      assert.equal(section.archive.domains.reduce((sum, domain) => sum + domain.target, 0), section.archive.targetQuestions, `${section.key} archive`);
+    }
   });
 });
 
@@ -69,6 +72,11 @@ test("difficulty targets total targetPerSection", () => {
     0,
   );
   assert.equal(total, catalog.targetPerSection);
+  catalog.sections.forEach((section) => {
+    const targets = section.difficultyTargets ?? catalog.difficultyTargets;
+    assert.equal(Object.values(targets).reduce((sum, count) => sum + count, 0), section.targetQuestions ?? catalog.targetPerSection, section.key);
+    if (section.archive) assert.equal(Object.values(section.archive.difficultyTargets).reduce((sum, count) => sum + count, 0), section.archive.targetQuestions);
+  });
 });
 
 test("valid multiple-choice record passes schema validation", () => {

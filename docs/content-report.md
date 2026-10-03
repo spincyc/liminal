@@ -21,7 +21,10 @@ Source-version and review evidence are checked separately from schema and answer
 | ACT English | 575 | 575 | 175 | 250 | 150 | 575 |
 | ACT Math | 575 | 575 | 175 | 250 | 150 | 575 |
 | ACT Reading | 575 | 575 | 175 | 250 | 150 | 575 |
+| ACT Science (optional) | 80 | 80 | 15 | 61 | 4 | 80 |
 | ACT Writing (optional) | 575 | 575 | 175 | 250 | 150 | 575 |
+
+Science has 80 authored questions in 14 shared passage sets. Its explicit target describes that inventory; the former 575 records are archived separately, not used to fill the active target.
 
 Fixed-bank difficulty labels remain uncalibrated; repeated numerical variants are not new question designs.
 
@@ -33,7 +36,7 @@ These records remain for compatibility, outside new practice inventory. Historic
 | --- | ---: | --- |
 | SAT Reading & Writing | 575 | Retired; replaced by templates |
 | SAT Math | 575 | Retired; replaced by templates |
-| ACT Science (optional) | 575 | Unavailable for new practice |
+| ACT Science (optional) | 575 | Archived original records; excluded from active coverage and admission |
 
 ## Available fixed-bank domain coverage
 
@@ -64,6 +67,14 @@ These records remain for compatibility, outside new practice inventory. Historic
 | Craft and Structure | 160 | 160 |
 | Integration of Knowledge and Ideas | 140 | 140 |
 
+### ACT Science (optional)
+
+| Domain | Records | Target |
+| --- | ---: | ---: |
+| Interpretation of Data | 34 | 34 |
+| Scientific Investigation | 22 | 22 |
+| Evaluating Scientific Arguments and Models with Evidence | 24 | 24 |
+
 ### ACT Writing (optional)
 
 | Domain | Records | Target |
@@ -80,6 +91,7 @@ These records remain for compatibility, outside new practice inventory. Historic
 | ACT English | 575 | 0 | 0 | 151 | 154 | 129 | 141 |
 | ACT Math | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
 | ACT Reading | 575 | 0 | 0 | 144 | 144 | 144 | 143 |
+| ACT Science (optional) | 80 | 0 | 0 | 20 | 20 | 20 | 20 |
 | ACT Writing (optional) | 0 | 0 | 575 | 0 | 0 | 0 | 0 |
 
 ## Validation status

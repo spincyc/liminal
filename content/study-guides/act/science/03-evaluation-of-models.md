@@ -1,8 +1,9 @@
-# ACT Science — Evaluation of Models, Inferences, and Experimental Results
+# ACT Science — Evaluating Scientific Arguments and Models with Evidence
 
-**Catalog domain:** Evaluation of Models, Inferences, and Experimental Results
+**Catalog domain:** Evaluating Scientific Arguments and Models with Evidence
 **Skills:** Evaluate explanations · Draw conclusions · Compare viewpoints
-**~30% of the section** — about 12 questions
+**8–13 of the 34 scored questions.** See the [Science overview](00-overview.md)
+for the official source and verify-before-relying note.
 
 Reasoning about whether data support a claim, and comparing competing
 explanations. This domain includes the **Conflicting Viewpoints** passage, which

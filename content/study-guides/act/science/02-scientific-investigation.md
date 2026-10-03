@@ -209,4 +209,4 @@ understanding.
 
 ---
 
-**Next:** [Evaluation of Models, Inferences, and Experimental Results](03-evaluation-of-models.md)
+**Next:** [Evaluating Scientific Arguments and Models with Evidence](03-evaluation-of-models.md)

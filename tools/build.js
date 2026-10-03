@@ -35,7 +35,9 @@ TEMPLATE_SECTIONS.forEach((sectionKey) => {
 });
 
 // Validates the canonical banks, then writes dist/content/*.js.
-require("./build-content");
+if (require("./build-content").main() !== 0) {
+  throw new Error("Build stopped because content admission failed");
+}
 
 fs.copyFileSync(
   path.join(ROOT, "content", "guides", "answer-signs.js"),

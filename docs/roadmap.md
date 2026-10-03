@@ -1,6 +1,6 @@
 # Roadmap
 
-## Current status — 2026-10-02
+## Current status — 2026-10-03
 
 The [whole-product cold review](reviews/2026-10-02-cold-review.md) supersedes
 the 2026-09-26 quality claims and completed parts of the older Next list below.
@@ -18,8 +18,10 @@ Remaining product work:
 
 1. Calibrate difficulty using consented student results and independent human
    editorial review. Practice targets remain practice targets, not readiness.
-2. Rebuild Science as coherent original passage sets and review them before
-   enabling practice. Current Science records remain archived.
+2. Expand and human-review Science beyond its rebuilt 80-question, 14-passage
+   inventory. New questions have independent agent solutions; the old 575
+   records remain archived and excluded from practice. See the
+   [rebuild review](reviews/2026-10-03-science-rebuild.md).
 3. Reconcile the preserved platform and ACT Math WIP branches against the
    current implementation; neither is ready for automatic integration.
 4. Expand genuinely distinct ACT designs, then review and calibrate them.

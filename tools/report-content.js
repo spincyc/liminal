@@ -32,10 +32,18 @@ active.forEach((section) => {
   const awaiting = report.total - (report.reviewStatuses["editorial-reviewed"] || 0);
   lines.push(`| ${section.test} ${section.shortLabel} | ${report.total} | ${report.target} | ${report.difficulties.Easy || 0} | ${report.difficulties.Medium || 0} | ${report.difficulties.Hard || 0} | ${awaiting} |`);
 });
+if (activeKeys.has("act-science")) {
+  const sets = result.passages.filter((passage) => passage.sectionKey === "act-science").length;
+  lines.push("", `Science has ${result.report["act-science"].total} authored questions in ${sets} shared passage sets. Its explicit target describes that inventory; the former ${result.archiveReport["act-science"]?.total || 0} records are archived separately, not used to fill the active target.`);
+}
 lines.push("", "Fixed-bank difficulty labels remain uncalibrated; repeated numerical variants are not new question designs.", "",
   "## Retained banks", "", "These records remain for compatibility, outside new practice inventory. Historical outcomes are preserved; original question details require a matching identity or saved snapshot.", "",
   "| Section | Retained records | Status |", "| --- | ---: | --- |");
 archived.forEach((section) => lines.push(`| ${section.test} ${section.shortLabel} | ${result.report[section.key].total} | ${TEMPLATE_SECTIONS.includes(section.key) ? "Retired; replaced by templates" : "Unavailable for new practice"} |`));
+Object.entries(result.archiveReport).forEach(([key, report]) => {
+  const section = result.catalog.sections.find((entry) => entry.key === key);
+  lines.push(`| ${section.test} ${section.shortLabel} | ${report.total} | Archived original records; excluded from active coverage and admission |`);
+});
 lines.push("", "## Available fixed-bank domain coverage", "");
 active.forEach((section) => {
   lines.push(`### ${section.test} ${section.shortLabel}`, "", "| Domain | Records | Target |", "| --- | ---: | ---: |");

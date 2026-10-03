@@ -794,6 +794,13 @@
     showView(currentView);
   }
 
+  function unavailableQuestionNote(question) {
+    const section = sectionByKey(question.sectionKey);
+    return !core.sectionAvailable(section)
+      ? section && section.practiceNote || "This section is temporarily unavailable."
+      : "This question belongs to an archived bank and is unavailable for new practice. Previous results remain available.";
+  }
+
   // Every set, practice or timed, runs in the full-screen test mode.
   // `config`: { title, sectionKey, kind, questions, feedback,
   // timeLimitSeconds, runCode?, setCode?, tools?, simulation? }; a config
@@ -807,10 +814,9 @@
     if (!window.LiminalShell) throw new Error("The test screen did not load. Refresh the page and try again.");
     const state = resume && (resume.session || resume);
     const questions = state ? state.questions : config.questions;
-    const unavailable = (questions || []).find((question) => !core.sectionAvailable(question.sectionKey));
+    const unavailable = (questions || []).find((question) => !core.questionAvailable(question));
     if (unavailable && !(state && state.finished)) {
-      const section = sectionByKey(unavailable.sectionKey);
-      throw new Error(section && section.practiceNote || "This section is temporarily unavailable.");
+      throw new Error(unavailableQuestionNote(unavailable));
     }
     if (!resume && !config.simulation) {
       const saved = activeSession.load("set");
@@ -831,7 +837,7 @@
 
   function openScreen(config, resume) {
     const { questions: given, notice, openDirections, ...rest } = config;
-    const questions = resume ? given : stampVersions(given);
+    const questions = resume ? given : stampVersions(core.groupScienceQuestions(given));
     const meta = {
       ...rest,
       sessionId: rest.sessionId || Progress.newId("s"),
@@ -902,10 +908,9 @@
     if (what === "test") return resumeTest(saved);
     const state = saved.state && (saved.state.session || saved.state);
     const unavailable = state && !state.finished && (state.questions || [])
-      .find((question) => !core.sectionAvailable(question.sectionKey));
+      .find((question) => !core.questionAvailable(question));
     if (unavailable) {
-      const section = sectionByKey(unavailable.sectionKey);
-      return `${section && section.practiceNote || "This section is temporarily unavailable."} Your saved set is still kept here.`;
+      return `${unavailableQuestionNote(unavailable)} Your saved set is still kept here.`;
     }
     try {
       launch({ ...saved.config, questions: [] }, saved.state);
@@ -1432,7 +1437,8 @@
         const templates = (await sectionTemplates(sectionKey)).filter((template) => ids.includes(template.id));
         questions.push(...buildRun({ sectionKey, count: templates.length, templates }).questions);
       }
-      list.filter((item) => !item.question.templateId).forEach((item) => questions.push(item.question));
+      list.filter((item) => !item.question.templateId && core.questionAvailable(item.question))
+        .forEach((item) => questions.push(item.question));
     }
     if (questions.length) instantSet(`${meta.title}: what you missed`, questions, "missed-drill");
   }
@@ -1510,7 +1516,7 @@
   // report's sections, which after a diagnostic comes first.
   function reportActions(meta, report) {
     let missedAction = null;
-    const missed = report.items.filter((item) => item.question.responseType !== "essay" &&
+    const missed = report.items.filter((item) => core.questionAvailable(item.question) && item.question.responseType !== "essay" &&
       !(item.answered && item.correct && !item.hinted));
     if (missed.length) {
       const fresh = missed.every((item) => item.question.templateId);

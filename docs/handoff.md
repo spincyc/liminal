@@ -15,20 +15,21 @@ completed review. That describes its findings, not a guarantee about every possi
 generated question.
 
 A [follow-up cold review on 2026-10-03](reviews/2026-10-03-handoff-review.md)
-reproduced and repaired additional runtime and reporting defects. Those changes are
-local to `feature/prep` until explicitly published; the release evidence above applies
-to the published baseline, not these follow-up changes.
+reproduced and repaired additional runtime and reporting defects. The subsequent
+[Science rebuild](reviews/2026-10-03-science-rebuild.md) preserves those repairs and
+replaces the withdrawn Science inventory. Its verification is recorded separately
+from the earlier release evidence above.
 
 ## Ranked outstanding work
 
 P1 denotes a substantial missing capability or missing evidence of instructional
 quality. P2 denotes a bounded product limitation, verification gap or operational risk.
 P3 denotes maintenance or an optional enhancement. Rank gives the suggested order within
-those levels; evidence gaps are not asserted software failures.
+those levels; evidence gaps are not asserted software failures. Original rank
+numbers are retained; completed item 1 is recorded below.
 
 | Rank | Severity | Outstanding issue | Current status |
 | ---: | --- | --- | --- |
-| 1 | P1 | ACT Science has no usable passage-set bank | Contained: practice, minis and booklets disabled |
 | 2 | P1 | Independent human editorial review remains outstanding | Agent review completed; human approval not claimed |
 | 3 | P1 | Difficulty and practice targets lack empirical calibration | Editorial tiers only; no scaled-score/readiness prediction |
 | 4 | P2 | ACT inventory repeats designs and has unverified tiers | Exercise variants; tiers unused in practice/progress |
@@ -41,28 +42,11 @@ those levels; evidence gaps are not asserted software failures.
 
 ## P1 — instructional capability and evidence
 
-### 1. Rebuild ACT Science before enabling it
-
-The retained 575-item bank has no shared passages and systematic answer tells: all 32
-diagram items chose Sample D, and all 28 model-evaluation items chose Model A. These are
-known defects in archived material, not content approved for new practice. [The
-catalog](../content/catalog.json) sets `practiceAvailable` to false; history remains
-available.
-
-Next: author original coherent passage/data/figure sets, including experimental design
-and competing viewpoints, and independently solve their questions. Keep Science
-unavailable until the replacement passes content review, bank admission, passage/figure
-checks and browser/booklet verification. Preserve historical IDs or provide explicit
-compatibility mappings. Re-enabling the flag alone does not close this issue.
-
-Entry points: [Science generator](../tools/generators/generate-act-science.js), [review
-findings](reviews/2026-10-02-cold-review.md).
-
 ### 2. Obtain independent human editorial review
 
 All 317 active SAT templates have independent **agent** acceptance, with 1,228 recorded
 sample answers. That does not certify every draw or replace an educator's review. All
-4,025 retained bank records still await human editorial approval; 2,300 belong to
+4,105 retained bank records still await human editorial approval; 2,380 belong to
 available ACT banks and the rest are archived. Guide review also has documented sampling
 limits.
 
@@ -95,10 +79,11 @@ Evidence: [calibration policy](difficulty-calibration.md),
 
 ### 4. Expand distinct ACT designs and assess their tiers
 
-Each available ACT bank has 575 records, not 575 independent designs. Math has 232
+The four other ACT banks each have 575 records, not 575 independent designs. Math has 232
 generator shapes; Writing reuses 53 issues; English uses 40 authored passages and
-Reading 55. All available catalog subskills are represented, but presence does not
-establish depth or calibration. Strict shape-repetition diagnostics are not represented
+Reading 55. Science has 80 questions across 14 passages. All available catalog
+subskills are represented, but presence does not establish depth or calibration.
+Strict shape-repetition diagnostics are not represented
 as passing.
 
 Next: inventory actual design/scene coverage, expand thin areas and independently review
@@ -167,11 +152,15 @@ concurrent tabs: localStorage provides no atomic multi-tab transactions, while e
 tests cover particular stale-write and ownership paths. Record reproducible failures
 before proposing a storage redesign.
 
-The follow-up adds injected failure and DOM adapter regressions. This workspace could
-not launch an HTTP server or Chromium because socket creation was denied; it supplies
-no new native browser, concurrent-tab, assistive-technology or OS-level print acceptance.
-An ACT LaTeX symbol repair passed a 131-question PDF compilation; pagination quality
-across generated forms remains unverified.
+The handoff-review pass added injected failure and DOM adapter regressions, but
+socket restrictions prevented native browser acceptance in that session. The later
+[Science rebuild](reviews/2026-10-03-science-rebuild.md) exercised the rebuilt site
+over local HTTP in Chromium: targeted and timed Science, both feedback modes,
+save/reload/resume, archived-history safeguards, keyboard operation, phone width,
+dark mode and a 171-question browser PDF. Complementary Science forms covered all
+14 passages in Chromium and LaTeX; the full 171-question CLI form also compiled.
+This adds native evidence for those flows, while concurrent tabs, assistive
+technology, other browser engines and OS-level printing remain unverified.
 
 Evidence: [review coverage](reviews/2026-10-02-cold-review.md), [browser
 regressions](../test/browser-review.test.js), [session-store
@@ -219,6 +208,13 @@ keyboard, mobile and accessibility behavior is verified. See [calculator
 guidance](../content/learn/sat/general/desmos.md).
 
 ## Completed work and continuation rules
+
+The former item 1, the unusable Science bank, is replaced by 14 original passage
+sets and 80 questions with independent blind agent solutions. Practice, minis,
+and booklets use the new IDs; the original 575 IDs and outcomes remain archived.
+Full Science forms keep seven complete passage sets. The
+[rebuild review](reviews/2026-10-03-science-rebuild.md) records admission,
+browser and print evidence, and the remaining human-review and calibration limits.
 
 The former item 9, mathematical-structure collisions in difficulty diagnostics, is
 repaired. The signature retains operators, grouping and numeric positions while

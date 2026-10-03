@@ -383,7 +383,11 @@
         `The ${short.label} bank is short of the ${short.entry.count} items this form needs.`,
       );
     }
-    return { model: booklet.buildModel(form, blueprint, seed), options: {}, warnings: [] };
+    return {
+      model: booklet.buildModel(form, blueprint, seed),
+      options: { render: { figure: RENDER.figure } },
+      warnings: [],
+    };
   }
 
   /* ------------------------------------------------------- SAT (templates) */

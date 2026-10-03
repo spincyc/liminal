@@ -4,10 +4,13 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { numericValue } = require("./expr");
 const { TEMPLATE_SECTIONS } = require("./families");
+const { figureProblems } = require("./tells");
+const { sanitizeSvgTree } = require("../../src/app/render");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const CATALOG_PATH = path.join(ROOT, "content", "catalog.json");
 const BANKS_DIR = path.join(ROOT, "content", "banks");
+const ARCHIVE_DIR = path.join(ROOT, "content", "archive");
 const PASSAGES_DIR = path.join(ROOT, "content", "passages");
 const GENERATED_DIR = path.join(ROOT, "dist", "content");
 
@@ -77,6 +80,21 @@ function loadBank(sectionKey) {
   return fs.existsSync(filePath) ? readJson(filePath) : [];
 }
 
+// Archived records retain their original IDs and taxonomy for old attempts.
+// Admission and coverage always use loadBank; only historical consumers join.
+function loadArchive(sectionKey) {
+  const filePath = path.join(ARCHIVE_DIR, `${sectionKey}.json`);
+  return fs.existsSync(filePath) ? readJson(filePath) : [];
+}
+
+function loadRuntimeBank(sectionKey) {
+  return [...loadArchive(sectionKey), ...loadBank(sectionKey)];
+}
+
+function archiveSection(section) {
+  return { ...section, ...section.archive, practiceAvailable: false, activeQuestionIdMin: null };
+}
+
 function passagePath(sectionKey) {
   return path.join(PASSAGES_DIR, `${sectionKey}.json`);
 }
@@ -124,11 +142,13 @@ function passageStimulus(passage) {
 // one set share a single stimulus object rather than a copy each.
 function hydrateBank(sectionKey) {
   const passages = new Map(
-    loadPassages(sectionKey).map((passage) => [passage.id, passageStimulus(passage)]),
+    loadPassages(sectionKey).map((passage) => [passage.id, {
+      stimulus: passageStimulus(passage), ...(passage.figure ? { figure: passage.figure } : {}),
+    }]),
   );
-  return loadBank(sectionKey).map((question) =>
+  return loadRuntimeBank(sectionKey).map((question) =>
     question.passageId && passages.has(question.passageId)
-      ? { ...question, stimulus: passages.get(question.passageId) }
+      ? { ...question, ...passages.get(question.passageId) }
       : question,
   );
 }
@@ -568,13 +588,13 @@ function coverageReport(questions, catalog = loadCatalog()) {
     const bank = questions.filter((question) => question.sectionKey === section.key);
     report[section.key] = {
       total: bank.length,
-      target: catalog.targetPerSection,
+      target: section.targetQuestions ?? catalog.targetPerSection,
       domains: countBy(bank, "domain"),
       domainTargets: Object.fromEntries(
         section.domains.map((domain) => [domain.name, domain.target]),
       ),
       difficulties: countBy(bank, "difficulty"),
-      difficultyTargets: catalog.difficultyTargets,
+      difficultyTargets: section.difficultyTargets ?? catalog.difficultyTargets,
       responseTypes: countBy(bank, "responseType"),
       reviewStatuses: countBy(bank, "reviewStatus"),
       answerPositions: countBy(
@@ -591,11 +611,11 @@ function coverageErrors(questions, catalog = loadCatalog(), requireComplete = fa
   const report = coverageReport(questions, catalog);
   catalog.sections.forEach((section) => {
     const sectionReport = report[section.key];
-    if (sectionReport.total > catalog.targetPerSection) {
-      errors.push(`${section.key}: ${sectionReport.total} exceeds target ${catalog.targetPerSection}`);
+    if (sectionReport.total > sectionReport.target) {
+      errors.push(`${section.key}: ${sectionReport.total} exceeds target ${sectionReport.target}`);
     }
-    if (requireComplete && sectionReport.total !== catalog.targetPerSection) {
-      errors.push(`${section.key}: expected ${catalog.targetPerSection}, found ${sectionReport.total}`);
+    if (requireComplete && sectionReport.total !== sectionReport.target) {
+      errors.push(`${section.key}: expected ${sectionReport.target}, found ${sectionReport.total}`);
     }
     if (requireComplete) {
       Object.entries(sectionReport.domainTargets).forEach(([domain, target]) => {
@@ -605,7 +625,7 @@ function coverageErrors(questions, catalog = loadCatalog(), requireComplete = fa
           );
         }
       });
-      Object.entries(catalog.difficultyTargets).forEach(([difficulty, target]) => {
+      Object.entries(sectionReport.difficultyTargets).forEach(([difficulty, target]) => {
         if ((sectionReport.difficulties[difficulty] || 0) !== target) {
           errors.push(
             `${section.key}/${difficulty}: expected ${target}, found ${sectionReport.difficulties[difficulty] || 0}`,
@@ -668,7 +688,7 @@ const PASSAGE_RULES = {
   "act-science": {
     types: ["data-representation", "research-summaries", "conflicting-viewpoints"],
     words: [80, 600],
-    perSet: [5, 8],
+    perSet: [5, 6],
   },
 };
 
@@ -681,7 +701,19 @@ const PASSAGE_FIELDS = new Set([
   "content",
   "wordCount",
   "provenance",
+  "figure",
 ]);
+
+function validateFigure(figure) {
+  if (!figure || typeof figure !== "object" || Array.isArray(figure)) return ["figure must be an object"];
+  const errors = [];
+  if (Object.keys(figure).some((field) => !["svg", "alt", "notToScale"].includes(field))) errors.push("unknown figure field");
+  if (!isNonemptyString(figure.alt)) errors.push("figure.alt is required");
+  if (typeof figure.notToScale !== "boolean") errors.push("figure.notToScale must be boolean");
+  if (!isNonemptyString(figure.svg)) errors.push("figure.svg is required");
+  else errors.push(...figureProblems(figure.svg, sanitizeSvgTree));
+  return errors;
+}
 
 function countWords(text) {
   return String(text).trim().split(/\s+/).filter(Boolean).length;
@@ -751,6 +783,7 @@ function passageErrors(catalog = loadCatalog()) {
       if (!passage.provenance || passage.provenance.type !== "original") {
         errors.push(`${where}: provenance must declare original content`);
       }
+      if (passage.figure !== undefined) validateFigure(passage.figure).forEach((error) => errors.push(`${where}: ${error}`));
     });
 
     referenced.forEach((questionIds, passageId) => {
@@ -781,13 +814,28 @@ function validateAll({ requireComplete = false } = {}) {
   const sections = sectionMap(catalog);
   const questions = loadAllBanks(catalog);
   const errors = [];
+  const archiveQuestions = [];
+  const archiveReport = {};
 
   catalog.sections.forEach((section) => {
     const bank = loadBank(section.key);
     bank.forEach((question) => {
       errors.push(...validateQuestion(question, section, catalog));
     });
+    const archive = loadArchive(section.key);
+    if (archive.length || section.archive) {
+      if (!section.archive) errors.push(`${section.key}: archived records need an archived catalog policy`);
+      const policy = archiveSection(section);
+      const archivedCatalog = { ...catalog, contentVersion: policy.contentVersion ?? catalog.contentVersion, sections: [policy] };
+      archive.forEach((question) => errors.push(...validateQuestion(question, policy, archivedCatalog)));
+      errors.push(...duplicateErrors(archive));
+      errors.push(...coverageErrors(archive, archivedCatalog, requireComplete));
+      archiveReport[section.key] = coverageReport(archive, archivedCatalog)[section.key];
+      archiveQuestions.push(...archive);
+    }
   });
+  const activeIds = new Set(questions.map((question) => question.id));
+  archiveQuestions.forEach((question) => { if (activeIds.has(question.id)) errors.push(`${question.id}: archived ID reused by active bank`); });
   questions.forEach((question) => {
     if (!sections.has(question.sectionKey)) {
       errors.push(`${question.id}: unknown sectionKey`);
@@ -802,6 +850,8 @@ function validateAll({ requireComplete = false } = {}) {
   return {
     catalog,
     questions,
+    archiveQuestions,
+    archiveReport,
     passages: loadAllPassages(catalog),
     report: coverageReport(questions, catalog),
     errors,
@@ -819,6 +869,8 @@ module.exports = {
   bankSections,
   numericalChoiceDuplicates,
   BANKS_DIR,
+  ARCHIVE_DIR,
+  archiveSection,
   PASSAGES_DIR,
   jaccard,
   loadPassages,
@@ -838,6 +890,8 @@ module.exports = {
   duplicateErrors,
   loadAllBanks,
   loadBank,
+  loadArchive,
+  loadRuntimeBank,
   loadCatalog,
   normalizeText,
   readJson,
@@ -846,5 +900,6 @@ module.exports = {
   tokenSet,
   validateAll,
   validateQuestion,
+  validateFigure,
   writeJsonAtomic,
 };

@@ -359,12 +359,151 @@ test("template forms render through the page's renderer, with the key at the end
   assert.ok(!keyOnly.includes('<article class="q'), "the key alone prints no questions");
 });
 
-test("without a renderer, text is escaped and no figure markup is emitted", () => {
+test("without a renderer, SAT text is escaped and no figure markup is emitted", () => {
   const html = booklet.renderBookletHtml(richModel());
   assert.equal((html.match(/<article class="q"/g) || []).length, 3);
   assert.ok(!html.includes("<figure") && !html.includes('<div class="figure">'));
   assert.match(html, /<p class="stem"><span class="num">1\.<\/span> Which &quot;value&quot;/);
   assert.ok(!html.includes("Answer key — form"), "the key is opt-in");
+});
+
+/* ---------------------------------------------- shared ACT Science figures */
+
+test("booklet tables match Markdown pipe rows without printing separators or empty edge columns", () => {
+  const text = "| Treatment | Rate |\n| --- | ---: |\n| A | 12 |";
+  assert.deepEqual(booklet.parseBlocks(text), [{ type: "table", rows: [["Treatment", "Rate"], ["A", "12"]] }]);
+  assert.match(booklet.blocksToHtml(text), /<tr><th>Treatment<\/th><th>Rate<\/th><\/tr>/);
+  assert.doesNotMatch(booklet.blocksToHtml(text), /<t[dh]><\/t[dh]>|---/);
+  assert.match(booklet.blocksToTex(text), /tabular\}\{ll\}/);
+  assert.match(booklet.blocksToTex(text, { wrapTables: true }), /raggedright/);
+  assert.doesNotMatch(booklet.blocksToTex(text), /raggedright/);
+});
+
+test("Science resistance and micro units remain readable in ASCII LaTeX", () => {
+  assert.equal(booklet.tex("12 Ω; 4 μmol; 8 µm"), "12 $\\Omega$; 4 $\\mu$mol; 8 $\\mu$m");
+});
+
+const scienceFigure = {
+  svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120"><line x1="20" y1="100" x2="220" y2="20" stroke="black"/><text x="20" y="15">Rate &amp; time</text></svg>',
+  alt: "A line rises from 4 to 12 units over 6 minutes.",
+  notToScale: true,
+};
+
+function scienceModel(overrides) {
+  const questions = makeBank("act-science", 2, 1).map((question, index) => ({
+    ...question,
+    passageId: "act-science-p001",
+    stimulus: { type: "passage", content: "A growth experiment.\n\nTime (minutes) | Rate\n0 | 4\n6 | 12" },
+    figure: { ...scienceFigure },
+    ...(overrides ? overrides[index] : {}),
+  }));
+  return booklet.buildModel([{ label: "Science", minutes: 40, directions: "Use the data.", questions }],
+    { id: "science-figures", test: "ACT", label: "Science", summary: "A passage set." }, "figures");
+}
+
+test("Science passage figures print once beside the complete passage in HTML and TeX", () => {
+  const render = require("../tools/lib/booklet-render");
+  const model = scienceModel();
+  for (const renderer of [render, fakeRender]) {
+    const html = booklet.renderBookletHtml(model, { render: renderer });
+    assert.equal((html.match(/<figure /g) || []).length, 1);
+    assert.equal((html.match(/A growth experiment\./g) || []).length, 1);
+    assert.equal((html.match(/<article class="q/g) || []).length, 2);
+    assert.match(html, /A line rises from 4 to 12 units over 6 minutes\./);
+  }
+  const html = booklet.renderBookletHtml(model, { render });
+  assert.match(html, /<svg[^>]*viewBox="0 0 240 120"[^>]*role="img"/);
+  assert.match(html, /<line x1="20"/);
+  assert.match(html, /<td>6<\/td><td>12<\/td>/);
+  const tex = booklet.renderTex(model);
+  assert.equal((tex.match(/Diagram description \(drawing unavailable\)/g) || []).length, 1);
+  assert.equal((tex.match(/A growth experiment\./g) || []).length, 1);
+  assert.match(tex, /A line rises from 4 to 12 units over 6 minutes\./);
+  assert.match(tex, /6 & 12/);
+  assert.match(tex, /Figure not drawn to scale/);
+});
+
+test("standalone and distinct passage figures stay visible while shared context is omitted", () => {
+  const render = require("../tools/lib/booklet-render");
+  for (const overrides of [
+    [{ passageId: null }, { passageId: null }],
+    [{}, { passageId: "act-science-p002" }],
+    [{}, { figure: { ...scienceFigure, alt: "A second drawing." } }],
+  ]) {
+    const model = scienceModel(overrides);
+    assert.equal((booklet.renderBookletHtml(model, { render }).match(/<figure /g) || []).length, 2);
+    assert.equal((booklet.renderTex(model).match(/Diagram description/g) || []).length, 2);
+  }
+  const model = scienceModel();
+  model.sections[0].questions.shift();
+  assert.match(booklet.renderBookletHtml(model, { render }), /<figure /);
+  assert.match(booklet.renderTex(model), /Diagram description/);
+});
+
+test("Science figures retain escaped descriptions without a renderer or usable SVG", () => {
+  const render = require("../tools/lib/booklet-render");
+  const figure = { svg: "<svg><line></svg>", alt: '<img src=x onerror="alert(1)"> & a graph', notToScale: true };
+  const model = scienceModel([{ figure }, { figure }]);
+  for (const options of [{}, { render }]) {
+    const html = booklet.renderBookletHtml(model, options);
+    assert.match(html, /Diagram description \(drawing unavailable\)/);
+    assert.match(html, /&lt;img src=x onerror=&quot;alert\(1\)&quot;&gt; &amp; a graph/);
+    assert.doesNotMatch(html, /<img|<svg/);
+    assert.match(html, /Figure not drawn to scale/);
+  }
+});
+
+test("the Node booklet renderer shares the browser SVG sanitizer", () => {
+  const render = require("../tools/lib/booklet-render");
+  const html = render.figure({
+    svg: '<svg viewBox="0 0 20 20" onload="evil()"><script>evil()</script><foreignObject><p>bad</p></foreignObject><image href="https://example.com/track"/><path d="M0 0 L20 20" stroke="black" fill="url(#bad)"/><text x="2" y="10">&lt;script&gt; &amp; safe</text></svg>',
+    alt: 'Graph "A" <B>',
+  });
+  assert.match(html, /<path d="M0 0 L20 20" stroke="black"><\/path>/);
+  assert.match(html, /aria-label="Graph &quot;A&quot; &lt;B&gt;"/);
+  assert.match(html, /&lt;script&gt; &amp; safe/);
+  assert.doesNotMatch(html, /onload|evil|foreignObject|<script|<image|https:|url\(/);
+});
+
+test("a full Science booklet preserves seven complete passage sets and their figures", () => {
+  const { hydrateBank } = require("../tools/lib/content");
+  const render = require("../tools/lib/booklet-render");
+  const bank = hydrateBank("act-science");
+  const entry = core.blueprintById("act-full-science").sections.find((part) => part.sectionKey === "act-science");
+  const questions = core.drawSectionItems(bank, entry.count, "science-booklet");
+  assert.equal(questions.length, 40);
+  assert.equal(new Set(questions.map((question) => question.id)).size, 40);
+  const sets = new Map();
+  questions.forEach((question) => {
+    if (!sets.has(question.passageId)) sets.set(question.passageId, []);
+    sets.get(question.passageId).push(question);
+  });
+  assert.equal(sets.size, 7);
+  for (const [id, selected] of sets) {
+    assert.deepEqual(selected.map((question) => question.id).sort(),
+      bank.filter((question) => question.passageId === id).map((question) => question.id).sort(), id);
+  }
+  const model = booklet.buildModel([{ ...entry, questions }],
+    { id: "science-booklet", test: "ACT", label: "Science", summary: "Seven complete sets." }, "science-booklet");
+  const html = booklet.renderBookletHtml(model, { render });
+  const tex = booklet.renderTex(model);
+  const passages = [...sets.values()].map((set) => set[0]);
+  const figures = passages.filter((question) => question.figure);
+  assert.ok(figures.length > 0);
+  assert.equal((html.match(/<article class="q"/g) || []).length, 40);
+  assert.equal((html.match(/<div class="stimulus /g) || []).length, 7);
+  assert.equal((html.match(/<figure /g) || []).length, figures.length);
+  assert.equal((html.match(/<svg /g) || []).length, figures.length);
+  assert.equal((tex.match(/\\question\{/g) || []).length, 40);
+  assert.equal((tex.match(/Diagram description \(drawing unavailable\)/g) || []).length, figures.length);
+  for (const question of passages) {
+    assert.ok(html.includes(booklet.blocksToHtml(question.stimulus.content)), question.passageId);
+    if (question.figure) {
+      assert.ok(html.includes(booklet.escapeHtml(question.figure.alt)), question.passageId);
+      assert.ok(tex.includes(booklet.tex(question.figure.alt)), question.passageId);
+    }
+  }
+  assert.doesNotMatch(tex, /[^\x00-\x7F]/);
 });
 
 test("the break direction prints only for a form with a break", () => {

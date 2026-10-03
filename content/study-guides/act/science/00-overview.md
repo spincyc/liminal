@@ -34,13 +34,18 @@ Seven passage sets contain 40 questions: 34 scored and six field-test items.
 The scored sets include data displays, research summaries and conflicting
 viewpoints. Treat every set as scored.
 
+Liminal provides 80 original questions across 14 passage sets. Its full Science
+form also has seven sets and 40 questions, with all answers counted for practice
+accuracy. It does not simulate unscored field-test questions or a scaled score.
+Targeted sets may use fewer questions from a passage, with its complete context.
+
 ### Domain weighting
 
 | Domain | Scored questions (of 34) |
 | --- | ---: |
 | [Interpretation of Data](01-interpretation-of-data.md) | 13–17 |
 | [Scientific Investigation](02-scientific-investigation.md) | 6–11 |
-| [Evaluation of Models, Inferences, and Experimental Results](03-evaluation-of-models.md) | 8–13 |
+| [Evaluating Scientific Arguments and Models with Evidence](03-evaluation-of-models.md) | 8–13 |
 
 > **Verify before you rely on this.** Checked 2026-10-02 against ACT's
 > [enhanced design framework](https://www.act.org/content/dam/act/unsecured/documents/R2519-Design-Framework-for-the-ACT-Enhancements-2026-02.pdf), Table 2.4,
@@ -192,4 +197,4 @@ error. Add a content tag when missing science knowledge caused the error.
 | --- | --- |
 | Reading graphs and tables, trends, comparisons | [Interpretation of Data](01-interpretation-of-data.md) |
 | Experimental design, variables, controls | [Scientific Investigation](02-scientific-investigation.md) |
-| Hypotheses, predictions, conflicting viewpoints | [Evaluation of Models, Inferences, and Experimental Results](03-evaluation-of-models.md) |
+| Hypotheses, predictions, conflicting viewpoints | [Evaluating Scientific Arguments and Models with Evidence](03-evaluation-of-models.md) |

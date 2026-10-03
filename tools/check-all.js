@@ -26,6 +26,7 @@ const checks = [
   ["node", ["tools/validate-content.js", "--complete"]],
   ["node", ["tools/audit-questions.js", "--admission"]],
   ["node", ["tools/check-passages.js"]],
+  ["node", ["tools/check-science.js"]],
   ["node", ["tools/check-shapes.js", "act-mathematics"]],
   ["node", ["tools/check-answer-positions.js"]],
   ["node", ["tools/update-templates.js", "--check"]],

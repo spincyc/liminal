@@ -14,7 +14,7 @@ Use it when you want a diagnostic signal without losing a Saturday.
 | --- | ---: | ---: | --- |
 | **SAT** | 20 | 28 min | 11 Reading and Writing, 9 Math |
 | **ACT** | 20 | 20 min | 8 English, 7 Mathematics, 5 Reading |
-| **ACT with Science** | — | — | Currently unavailable while the Science bank is under review |
+| **ACT with Science** | 20 | 20 min | 6 English, 5 Mathematics, 4 Reading, and one 5-question Science passage set |
 
 These section splits roughly follow the official question counts: SAT
 54 Reading and Writing / 44 Math, and ACT 50 English / 45 Math / 36 Reading.

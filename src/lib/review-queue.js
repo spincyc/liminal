@@ -194,7 +194,8 @@
     const list = entries instanceof Map ? [...entries.values()] : (entries || []);
     list.forEach((entry) => {
       if (entry.learned) summary.learned.push(entry);
-      else if (!Core.sectionAvailable(entry.sectionKey) || (settings.skip && settings.skip(entry))) summary.unavailable.push(entry);
+      else if (!Core.questionAvailable(entry.exactId || entry.questionId, entry.sectionKey) ||
+          (settings.skip && settings.skip(entry))) summary.unavailable.push(entry);
       else if (isDue(entry, today)) summary.due.push(entry);
       else summary.upcoming.push(entry);
     });
@@ -217,7 +218,7 @@
     const left = [];
     (due || []).forEach((entry) => {
       const key = entry.templateId ? `${entry.sectionKey}:${entry.templateId}` : entry.questionId;
-      if (!Core.sectionAvailable(entry.sectionKey) || picked.length >= limit || used.has(key)) {
+      if (!Core.questionAvailable(entry.exactId || entry.questionId, entry.sectionKey) || picked.length >= limit || used.has(key)) {
         left.push(entry);
         return;
       }
