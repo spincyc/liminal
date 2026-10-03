@@ -110,7 +110,9 @@ records therefore remain awaiting independent human editorial review. This
 includes two retired SAT banks and 575 archived Science questions, retained
 for compatibility. The four other ACT banks contain 2,300 exercise
 variants, not 2,300 independent question designs. English uses 40 authored
-passages, Reading 55, and Mathematics 232 generator shapes. Writing variants
+passages and Reading 55. Mathematics retains 232 legacy generator shapes;
+12 additional graph designs revise 24 stable IDs with plotted exercises.
+Writing variants
 share 53 issues. Repeated settings, parameters and writing perspectives do not
 establish new pedagogical designs.
 
@@ -120,6 +122,14 @@ human editorial review or establish empirical difficulty. ACT tiers remain
 excluded from practice filtering and readiness judgments. Science's 80 new
 questions are independently solved by agents before admission; this does not
 close the outstanding human review.
+
+The [graphing review](reviews/2026-10-03-graphing-review.md) records the
+plotted Mathematics batch and the Reading figure repair. Run
+`node tools/generators/generate-act-mathematics.js --graphs-only` to apply
+that deterministic batch without rerunning the legacy parameter search.
+Normal generation and `--rebuild` also apply it after the legacy generator,
+preserving IDs, taxonomy and answer positions. The batch uses the optional
+standalone `figure` field; shared Reading figures belong to the passage.
 
 ## Science passage sets
 

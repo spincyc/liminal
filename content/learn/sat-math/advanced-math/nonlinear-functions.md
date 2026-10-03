@@ -161,7 +161,9 @@ back; a zero from a single factor makes it cross.
 > Expanding would give a leading term x³ with a positive coefficient, so the
 > graph falls to the left and rises to the right.
 
-Transformations move a graph without changing its shape:
+### Transformations {#transformations}
+
+Translations and reflections preserve a graph's shape and size:
 
 | New function | Effect on the graph of f |
 | --- | --- |
@@ -182,6 +184,31 @@ Transformations move a graph without changing its shape:
 
 > **Trap.** Shifting right for f(x + 3). Inside the parentheses the shift
 > goes the opposite way from the sign: f(x + 3) moves left.
+
+A multiplier stretches or compresses the graph. For
+g(x) = a · f(b(x − h)) + k with a and b nonzero, a point (u, v) on f
+becomes (h + u/b, av + k) on g. Solve b(x − h) = u for the new input;
+then apply the outside operations to the old output.
+
+> **Example.** A graph of f has a minimum at (2, −3) and passes through
+> (0, 1). For g(x) = −2f(3(x − 1)) + 4, where do those points move?
+>
+> For the minimum's input, solve 3(x − 1) = 2, giving x = 5/3.
+> Its output becomes −2(−3) + 4 = 10, so the point moves to (5/3, 10).
+> Since multiplying by −2 reverses output order, this is a maximum of g.
+>
+> The point (0, 1) moves to (1, 2): 3(x − 1) = 0 gives x = 1, and
+> −2(1) + 4 = 2.
+
+> **Fails when.** You read the constant inside an unfactored expression as
+> the shift. In f(3x − 6), factor first: f(3(x − 2)) shifts right 2 after
+> horizontally compressing by a factor of 1/3. The shift is not 6.
+
+For a restricted graph, carry its allowed inputs and included or excluded
+endpoints through the same mapping. A transformed point outside the stated
+domain is not part of the graph. Review
+[domain and range](learn:sat/general/reading-graphs#domain-and-range)
+before using a vertex to claim a maximum or minimum.
 
 ## Building toward Hard {#hard}
 

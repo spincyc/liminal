@@ -147,6 +147,26 @@ puppies' ages and residuals.
 > means the actual value is more than predicted, so add it: Ace is 9.5
 > pounds, not 4.5.
 
+### Reading a residual plot {#residual-pattern}
+
+A residual plot keeps x on the horizontal axis but replaces the original y
+with actual − predicted. Its reference line is residual = 0. Points above
+and below zero without a clear pattern are consistent with the proposed
+model; a systematic curve suggests that the model misses part of the trend.
+
+> **Example.** At x = 1, 2, 3, 4 and 5, a linear model has residuals
+> 4, −1, −6, −1 and 4. Does a sum of zero show that the fit has no problem?
+>
+> No. The model predicts too low at the ends and too high in the middle.
+> The residuals sum to zero but form a curved pattern. A curved model is
+> worth investigating; positive and negative errors canceling does not
+> establish a suitable fit.
+
+> **Fails when.** You conclude that a pattern-free residual plot proves
+> the model is true or causal. It is one diagnostic within the observed
+> range. A few observations, hidden groups or extrapolation can still make
+> predictions unreliable.
+
 ### Removing an outlier {#removing-an-outlier}
 
 A point far from the trend pulls the line of best fit toward it, most

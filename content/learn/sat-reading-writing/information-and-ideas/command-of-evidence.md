@@ -243,6 +243,41 @@ Comparison words are precise, and choices exploit the differences:
 > vertical axis on the right of a graph, or missing a units label such as "in
 > thousands". Each produces a choice that looks accurate and isn't.
 
+### Height, change and interval {#graph-comparisons}
+
+A line's height answers "how much at this input?" Its change between two
+inputs answers "how much more or less over this interval?" Compare the same
+interval, and divide by the interval length if the claim is about a rate.
+Unequal axis steps can make visual steepness misleading; see
+[reading scales](learn:sat/general/reading-graphs#scales).
+
+The table gives the labeled points of a line graph of monthly attendance
+at two invented museums. The vertical axis is in thousands of visits.
+
+| Month | Museum A | Museum B |
+| --- | --- | --- |
+| January | 20 | 8 |
+| February | 22 | 12 |
+| March | 25 | 18 |
+
+> **Example.** A writer claims, "Museum B's attendance increased more
+> from January to March, although Museum A had higher attendance in every
+> month shown." Which evidence supports both parts?
+>
+> A rose from 20,000 to 25,000, a gain of 5,000; B rose from 8,000 to
+> 18,000, a gain of 10,000. A's values also exceed B's in all three months:
+> 20 > 8, 22 > 12 and 25 > 18. Together those comparisons support the claim.
+>
+> "A had 25,000 visits in March" is true but does not establish either
+> the relative increase or the comparison in every month. "B had more
+> visitors in March" confuses B's larger increase with a larger final value.
+
+> **Fails when.** The display samples only a few dates but the choice
+> claims something happened at every instant between them. Check what is
+> measured and whether the text supports connecting or interpolating the
+> observations. A line joining sampled points is not proof of an unobserved
+> value, and the graph alone does not show what caused a change.
+
 ### A rate against a count {#rate-versus-count}
 
 Some claims set a relative number against an absolute one: "a larger share

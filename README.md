@@ -8,7 +8,7 @@ Liminal is a study tool as well as a question bank: it teaches each SAT skill,
 drills it, tests it the way the digital SAT does, and brings back what you
 missed until you can do it.
 
-SAT questions are generated from question templates: 197 for SAT Math and
+SAT questions are generated from question templates: 200 for SAT Math and
 163 for SAT Reading and Writing, covering the catalog's tested skills.
 ACT English, Mathematics, Reading, and Writing draw from 575 original exercise
 variants each. ACT Science has 80 questions in 14 original passage sets. Every
@@ -19,7 +19,7 @@ wrong.
 | Section | Source | Easy / Medium / Hard |
 | --- | --- | --- |
 | SAT Reading and Writing | 163 templates | 42 / 75 / 46 |
-| SAT Math | 197 templates | 48 / 99 / 50 |
+| SAT Math | 200 templates | 48 / 102 / 50 |
 | ACT English, Mathematics, Reading, Writing | 575 exercise variants each | Tiers unverified |
 | ACT Science | 80 questions in 14 passage sets | Tiers unverified |
 
@@ -112,6 +112,13 @@ never recorded. Liminal is now built to keep practice honest:
   simulate ACT's unscored field-test passage. Targeted practice can use a subset
   of a set, always with its full context. The retired Science questions remain
   available only for historical records.
+- **Graph practice.** SAT Math includes quadratic reconstruction, polynomial
+  sign regions and residual plots. ACT Math includes 24 plotted exercises in
+  12 graph designs, and ACT Reading has a shared carbon dioxide graph. Figures
+  carry descriptive data for accessibility and printable exports. Learn's
+  [Reading graphs](https://spincyc.github.io/liminal/learn.html#sat/general/reading-graphs)
+  lesson and the ACT guides teach scales, endpoints, transformations and data
+  interpretation; the finite exercise inventory does not cover every graph type.
 
 See [`docs/roadmap.md`](docs/roadmap.md) for what is next.
 

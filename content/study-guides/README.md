@@ -1,10 +1,12 @@
 # Liminal Study Guides
 
 A self-contained study library for the digital SAT and the enhanced ACT. This
-is the *knowledge* half of Liminal: the app's practice sets give you questions
-(ACT sections draw from fixed banks of 575 questions each; SAT sections are
-built from question templates that generate fresh versions), and these guides
-tell you what to actually know, what patterns to look for, and how to work.
+is the *knowledge* half of Liminal: the app's practice sets give you questions,
+and these guides explain the concepts, methods and common traps. ACT English,
+Mathematics, Reading and Writing each draw from 575 fixed exercise variants;
+Science has 80 questions in 14 original passage sets. SAT sections use
+question templates that generate fresh versions. These are finite practice
+inventories, not counts of independent official question designs.
 
 **SAT skills now live in the app.** Every SAT catalog skill has a page in the
 [Learn section](https://spincyc.github.io/liminal/learn.html) of the site, with the method, original worked examples,
@@ -68,6 +70,7 @@ The SAT guides moved into the app's Learn pages, one page per catalog skill.
 | [SAT Math plan from around 500](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan) | Skill order, practice targets, official practice tests |
 | [Error log](https://spincyc.github.io/liminal/learn.html#sat/general/error-log) | The four error types, the rule column, Review and Progress |
 | [Desmos](https://spincyc.github.io/liminal/learn.html#sat/general/desmos) | Solving, systems, sliders, statistics, regressions |
+| [Reading graphs](https://spincyc.github.io/liminal/learn.html#sat/general/reading-graphs) | Scales, inputs and outputs, domain and range, endpoints, intersections, predictions and evidence |
 | [Math formulas to know](https://spincyc.github.io/liminal/learn.html#sat/general/math-reference) | Everything not on the reference sheet, with links |
 | [Answer tells](https://spincyc.github.io/liminal/learn.html#sat/general/answer-tells) | What tells are worth (little) and what works instead |
 

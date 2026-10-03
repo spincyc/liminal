@@ -103,6 +103,52 @@ data when an exact comparison is required.
 **Before answering any data question, read the title, axis labels, units, and
 legend.** Ten seconds. It prevents most errors here.
 
+### Scatterplots, regression and residuals
+
+Describe an association by its direction, form and strength. A strong negative
+association can be just as tightly clustered as a strong positive one. A curve
+can show a strong association even when a straight line is a poor model.
+
+For a fitted line `ŷ = mx + b`, the slope predicts a change in y per input
+unit, and the intercept predicts y at zero. The symbol `ŷ` means predicted y.
+Read a plotted observation when asked for an actual value and the fitted line
+when asked for a prediction.
+
+```
+residual = observed − predicted
+observed = predicted + residual
+```
+
+> **Worked example.** A model predicts delivery time with `ŷ = 2.5x + 12`,
+> where x is distance in kilometers and time is in minutes. A delivery at
+> 8 kilometers takes 35 minutes. Interpret its residual and the slope.
+>
+> Predicted time: `2.5(8) + 12 = 32 minutes`. Residual:
+> `35 − 32 = 3 minutes`. The observed point lies above the line, and the
+> model underestimated the time by 3 minutes. Each additional kilometer is
+> associated with 2.5 more predicted minutes; 12 is the predicted time at
+> zero kilometers, not a rate.
+
+The largest positive residual is the point farthest vertically above its
+prediction. The largest absolute residual is farthest vertically from its
+prediction in either direction. Neither necessarily identifies the largest
+observed y-value.
+
+> **Worked example.** For the same model, delivery A travels 4 kilometers
+> and has residual 4 minutes. Delivery B travels 10 kilometers and has
+> residual −2 minutes. Which took longer?
+>
+> A: predicted 22, so observed `22 + 4 = 26 minutes`.
+> B: predicted 37, so observed `37 − 2 = 35 minutes`.
+> B took longer even though A has the larger residual.
+
+**Bound the inference.** A fit describes these observations; it does not prove
+causation. Prediction inside the observed x-range is interpolation; prediction
+outside it is extrapolation and may be less reliable. A curved pattern in a
+linear model's residuals suggests a missed trend, even if the residuals sum
+to zero. For more work on axis scales and comparing rates, see
+[Science: Interpretation of Data](../science/01-interpretation-of-data.md).
+
 ---
 
 ## Probability

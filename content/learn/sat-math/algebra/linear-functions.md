@@ -14,6 +14,9 @@ the output when x = 0. Linear functions are part of Algebra, which is
 a slope or evaluate f(3). Hard ones give an identity that holds for every
 input or a table with unknown entries, then ask about the resulting function.
 
+If graph axes or input/output readings are still uncertain, start with
+[Reading graphs](learn:sat/general/reading-graphs#scales).
+
 ## Slope {#slope}
 
 Slope is rise over run between any two points:

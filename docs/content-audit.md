@@ -3,6 +3,22 @@
 Older commit hashes in this log refer to the project's earlier history, which
 this repository does not include.
 
+## SAT and ACT graphing review — 2026-10-03
+
+The [graphing review](reviews/2026-10-03-graphing-review.md) records three new
+SAT Math designs, renewed source-bound independent reviews of all 31 templates
+in their defining files, 24 revised ACT Math items in 12 graph designs, and a
+shared SVG replacing the ASCII plot for ACT Reading question 0173. Independent
+reviewers solved 127 SAT samples and all 25 affected ACT questions before
+seeing keys; final answers agreed after presentation and teaching repairs.
+
+Accepted SAT inventory is now 200 Math templates and 163 Reading and Writing
+templates. ACT inventory counts and statuses are unchanged: 24 Math records
+were revised, not added; zero reviewed graph items remain rejected or blocked.
+All 4,105 retained bank records still await independent human editorial review.
+Neither agent review nor successful automated checks establish measured test
+difficulty or complete coverage of graphing skills.
+
 ## ACT Science passage-set rebuild — 2026-10-03
 
 The [rebuild record](reviews/2026-10-03-science-rebuild.md) supersedes the

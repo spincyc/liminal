@@ -199,6 +199,44 @@ value or comparison.
 choice against each. A choice accurate to the figure but contradicted by the
 passage is wrong, and vice versa.
 
+### Worked example: connect the graph with the claim
+
+An original passage describes a town's two bus routes:
+
+> The transit office counted passenger trips, not distinct passengers. It
+> reported that Route B added more trips between spring and autumn, although
+> Route A remained busier at each of the three recorded dates. The office
+> cautioned that the counts alone do not explain the changes.
+
+A line graph accompanying the passage has the following labeled points.
+Its vertical axis is **thousands of passenger trips**.
+
+| Recorded date | Route A | Route B |
+| --- | --- | --- |
+| Spring | 24 | 10 |
+| Summer | 26 | 15 |
+| Autumn | 28 | 22 |
+
+Which conclusion is supported by both sources?
+
+- A. Route B gained 12,000 trips while A gained 4,000, and A was busier at each recorded date.
+- B. Route B served 12,000 more distinct passengers in autumn than in spring.
+- C. Route A gained more trips because its line was higher at all three dates.
+- D. A change in Route B's timetable caused its larger increase in trips.
+
+**Answer: A.** B's change is `22 − 10 = 12` thousand, while A's is
+`28 − 24 = 4` thousand; A's value is larger at all three dates. B changes the
+unit from trips to people, C confuses height with increase, and D invents a
+cause the passage explicitly leaves unresolved.
+
+**Limits of a quick trend check:** matching direction alone cannot distinguish
+those choices. Read the quantity, unit, interval and population. Three recorded
+dates do not establish what happened on every intervening day. "Consistently
+higher" must be read within the scope the display and passage actually support.
+
+For practice with legends, unequal time intervals and linking two displays,
+see [Science: Interpretation of Data](../science/01-interpretation-of-data.md).
+
 ### Traps
 
 | Trap | Description |

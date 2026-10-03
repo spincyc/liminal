@@ -129,10 +129,11 @@ y > mx + b shade above the line, for y < mx + b shade below it."
 ### The greatest or least value over a region {#region-corner}
 
 When a question asks for the greatest or least possible x (or y) of a point
-in the solution region and gives no other value, neither boundary alone
-answers it. The extreme is at the corner where the two boundary lines
-cross: past that corner, the line the point must stay above is above the
-line it must stay below, so no point fits.
+in the solution region, first check whether the region is bounded in that
+direction. For two crossing lines with y required to be above one and below
+the other, their intersection gives the limiting x-value: past it, the lower
+bound exceeds the upper bound. That limit is attained only if the boundary
+conditions include a point there.
 
 > **Example.** The point (a, b) lies in the solution region of y ≥ 2x − 4
 > and y ≤ −x + 11. What is the greatest possible value of a?
@@ -151,6 +152,25 @@ line it must stay below, so no point fits.
 > fails when either inequality is strict (the corner itself is excluded,
 > so there is no greatest value) or the boundaries are parallel (there is no
 > corner).
+
+### Reading the side and the boundary {#boundary-and-side}
+
+> **Example.** A graph has a dashed boundary through (0, 4) and (2, 0),
+> shaded on the side containing (0, 0). What inequality does it represent,
+> and is (−3, 10) a solution?
+>
+> The boundary slope is (0 − 4)/(2 − 0) = −2, so its equation is
+> y = −2x + 4. At (0, 0), 0 < 4, so the shaded side is below the line.
+> The dashed boundary gives y < −2x + 4.
+>
+> At (−3, 10), the boundary value is −2(−3) + 4 = 10. The point is on
+> the boundary, not below it, so it is excluded even if it lies off the
+> drawn grid.
+
+> **Trap.** Using (0, 0) as a test point when the boundary passes through
+> it. A boundary point cannot tell you which side to shade. Choose a point
+> away from the line. For a vertical boundary x = c, test left versus right
+> directly; there is no above/below rule in y.
 
 When the region comes as a shaded graph, read each boundary's equation from
 two grid points, note whether it is solid (≤ or ≥) or dashed (< or >) and
@@ -183,7 +203,7 @@ Hard linear-inequality questions rarely need harder algebra. They hide what
 is being asked, so you must decide what the question is before you
 calculate.
 
-- The greatest or least x or y over the region of two inequalities, with no value given. It is at the corner where the boundaries cross (see [the greatest or least value over a region](#region-corner)).
+- The greatest or least x or y over a region. Check boundedness and included boundaries before using a corner (see [the greatest or least value over a region](#region-corner)).
 - A shaded graph and a point off the grid, such as (−18, k): write each boundary's inequality from the graph, then work with it, minding solid against dashed.
 
 At Medium, the x-terms may cancel and leave a condition on a constant, or a

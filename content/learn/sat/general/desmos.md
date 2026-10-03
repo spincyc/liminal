@@ -11,6 +11,11 @@ on test day, it wastes minutes. Practice with the free version at
 [desmos.com/calculator](https://www.desmos.com/calculator), then try the one
 inside Bluebook's practice tools so nothing surprises you.
 
+Start with [Reading graphs](learn:sat/general/reading-graphs) if you need to
+separate input from output, slope from intercept, or an endpoint from the
+edge of the viewing window. Decide what the answer represents before reading
+a calculator coordinate.
+
 The keys you need: `^` for exponents, `/` for fractions (the arrow keys move
 you out of an exponent or a denominator), `sqrt` for √, and `abs` or `|`
 for absolute value. Each line of the list on the left is its own object; the

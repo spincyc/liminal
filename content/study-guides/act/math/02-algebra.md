@@ -51,6 +51,44 @@ Midpoint:  ((x₁+x₂)/2, (y₁+y₂)/2)
 **Midpoint questions run both directions.** "Given one endpoint and the
 midpoint, find the other endpoint" is common — solve `(x₁+x₂)/2 = mₓ` for `x₂`.
 
+> **Worked example: read a scaled graph.** A line models total cost `C`
+> in dollars after `h` hours. Its labeled points are `(0, 18)` and `(3, 42)`.
+> Each horizontal grid interval represents 1 hour; each vertical interval
+> represents 6 dollars. Find the hourly rate and starting charge.
+>
+> Slope is `(42 − 18)/(3 − 0) = 8 dollars per hour`. The starting charge
+> is the y-intercept, 18 dollars. A rise of four squares over three squares
+> is not a rate of `4/3 dollars per hour`: the vertical squares mean 6 dollars
+> each. The model is `C = 8h + 18`.
+
+**Intercept versus slope:** an intercept is a value when the other variable
+is zero. A slope is a change in output per input unit. To find an x-intercept,
+set `y = 0`; to find a y-intercept, set `x = 0`.
+
+### Graphing inequality regions
+
+Draw the boundary equation first. Use a solid line for `≤` or `≥`, a dashed
+line for `<` or `>`. Test a point off the boundary to determine which side
+works. A system uses the overlap, so a solution must satisfy every condition.
+
+> **Worked example.** Is `(2, 1)` in the solution region of
+> `y ≥ 2x − 3` and `x + y < 5`? What about `(3, 2)`?
+>
+> For `(2, 1)`, `1 ≥ 1` and `3 < 5` are both true. It lies on the
+> included solid boundary of the first inequality and below the dashed
+> boundary `y = 5 − x` of the second. It is included.
+> For `(3, 2)`, `2 ≥ 3` is false, and `5 < 5` is also false. It is excluded.
+
+**When the shortcut fails:** "shade above for `>`" works only after isolating
+`y`. In `−2y > 4x − 6`, division by `−2` gives `y < −2x + 3`, so shade below.
+For `x > 2`, shade right of the vertical boundary. If the origin lies on a
+boundary, use a different test point; equality cannot distinguish its sides.
+
+An intersection of boundaries is not automatically a greatest or least value.
+Check whether the region extends indefinitely in the requested direction and
+whether the boundary point is included. Counts may add whole-number and
+nonnegative restrictions that the drawn half-planes alone do not show.
+
 ### Systems
 
 **Substitution** when a variable is isolated. **Elimination** when coefficients

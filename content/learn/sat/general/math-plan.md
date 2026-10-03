@@ -22,6 +22,10 @@ to organize work, and checks transfer with official practice tests.
 Work through the skills in this order. Each stage builds on the one before,
 and each skill has a Learn page with the method and worked examples.
 
+If your misses involve axes, scales, endpoints or which coordinate to report,
+work through [Reading graphs](learn:sat/general/reading-graphs) alongside
+the first stage. Those skills recur in lines, curves and data displays.
+
 1. Linear equations and functions, with percents and ratios: [linear equations in one variable](learn:sat-math/algebra/linear-equations-in-one-variable), [linear functions](learn:sat-math/algebra/linear-functions), [linear equations in two variables](learn:sat-math/algebra/linear-equations-in-two-variables), [percentages](learn:sat-math/problem-solving-and-data-analysis/percentages), [ratios, rates, and units](learn:sat-math/problem-solving-and-data-analysis/ratios-rates-and-units).
 2. Systems, inequalities and models: [systems of two linear equations](learn:sat-math/algebra/systems-of-two-linear-equations), [linear inequalities](learn:sat-math/algebra/linear-inequalities), [two-variable data](learn:sat-math/problem-solving-and-data-analysis/two-variable-data), [one-variable data](learn:sat-math/problem-solving-and-data-analysis/one-variable-data).
 3. Equivalent expressions, quadratics and exponentials: [equivalent expressions](learn:sat-math/advanced-math/equivalent-expressions), [nonlinear equations](learn:sat-math/advanced-math/nonlinear-equations), [nonlinear functions](learn:sat-math/advanced-math/nonlinear-functions), [systems of equations](learn:sat-math/advanced-math/systems-of-equations).
