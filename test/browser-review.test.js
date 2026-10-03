@@ -295,6 +295,32 @@ test("active drills hide skill and difficulty until the report", () => {
   screen.close();
 });
 
+test("ACT reports and answer review omit unverified tiers while SAT keeps editorial tiers", () => {
+  const actMath = { ...mc, id: "act-mathematics-0001", sectionKey: "act-mathematics", test: "ACT", difficulty: "Hard" };
+  const actEnglish = { ...actMath, id: "act-english-0001", sectionKey: "act-english", section: "English" };
+  for (const questions of [[actMath], [actMath, actEnglish], [mc], [mc, actMath]]) {
+    const env = shellFixture();
+    const engine = env.window.LiminalTestEngine;
+    const finished = engine.combineFinished([{ questions, responses: questions.map(() => 0), elapsedMs: 1000 }], 2000);
+    const screen = env.window.LiminalShell.start({ resume: engine.serialize(finished, 2000) });
+    const satOnly = questions.every((question) => question.test === "SAT");
+    const hasSat = questions.some((question) => question.test === "SAT");
+    assert.equal(Boolean(screen.element.querySelector(".lm-difficulty")), satOnly);
+    const header = screen.element.querySelector(".lm-items-table thead").textContent;
+    assert.equal(header.includes("Difficulty"), hasSat);
+    assert.doesNotMatch(screen.element.querySelector(".lm-caveat").textContent, /adapts its second module/);
+    if (!hasSat) {
+      assert.equal(screen.element.querySelectorAll(".lm-section-hard").length, 0);
+      assert.doesNotMatch(screen.element.querySelector(".lm-items-table").textContent, /Hard/);
+      assert.match(screen.element.querySelector(".lm-main").textContent, /Difficulty labels.*unverified/);
+    }
+    screen.element.querySelector(".lm-back").click();
+    const taxonomy = screen.element.querySelector(".lm-taxonomy").textContent;
+    assert.equal(taxonomy.includes(questions[0].difficulty), questions[0].test === "SAT");
+    screen.close();
+  }
+});
+
 test("a complete test retains its original totals when only part of the answer review is available", () => {
   const env = shellFixture();
   const engine = env.window.LiminalTestEngine;
@@ -400,4 +426,15 @@ test("scheduled bank review cannot serve changed content as the original questio
   unknown.view.open({}, ["due"]);
   assert.equal(unknown.document.querySelectorAll("button").some((button) => button.textContent.startsWith("Start review")), false);
   assert.match(unknown.document.getElementById("reviewList").textContent, /Try current version/);
+});
+
+test("ACT Due and Marked cards omit unverified difficulty labels", () => {
+  const Progress = require("../src/lib/progress");
+  const question = { ...mc, id: "act-mathematics-0007", sectionKey: "act-mathematics", test: "ACT", difficulty: "Hard" };
+  const attempt = Progress.buildAttempt(question, { response: 1, correct: false }, { id: "old:0", now: 0 });
+  const { document, view } = reviewFixture(question, attempt);
+  view.open({}, ["due"]);
+  assert.doesNotMatch(document.querySelector(".review-due-facts").textContent, /Hard/);
+  view.open({}, ["marked"]);
+  assert.equal(document.querySelector(".review-facts"), null);
 });

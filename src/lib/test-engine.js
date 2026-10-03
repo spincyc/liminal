@@ -561,10 +561,29 @@
     return JSON.parse(JSON.stringify(snapshot));
   }
 
+  // A saved question must still have the original response format and key.
+  // Reject broken snapshots rather than opening choices that cannot render
+  // or grading an incomplete question as though it were the original.
+  function readableQuestion(question) {
+    if (!question || typeof question !== "object" || Array.isArray(question) ||
+        typeof question.id !== "string" || !question.id) return false;
+    if (question.responseType === "multiple-choice") {
+      return Array.isArray(question.choices) && question.choices.length > 0 &&
+        question.choices.every((choice) => typeof choice === "string") &&
+        Number.isInteger(question.correctAnswer) && question.correctAnswer >= 0 &&
+        question.correctAnswer < question.choices.length;
+    }
+    if (question.responseType === "numeric") {
+      return (typeof question.correctAnswer === "number" && Number.isFinite(question.correctAnswer)) ||
+        (typeof question.correctAnswer === "string" && Boolean(question.correctAnswer.trim()));
+    }
+    return question.responseType === "essay";
+  }
+
   function restore(snapshot, nowMs) {
     if (!snapshot || typeof snapshot !== "object") return null;
     if (snapshot.schema !== SCHEMA || snapshot.version !== VERSION) return null;
-    if (!Array.isArray(snapshot.questions) || !snapshot.questions.length) return null;
+    if (!Array.isArray(snapshot.questions) || !snapshot.questions.length || !snapshot.questions.every(readableQuestion)) return null;
     const count = snapshot.questions.length;
     const list = (value, fallback) =>
       Array.isArray(value) && value.length === count ? value.slice() : filled(count, fallback);

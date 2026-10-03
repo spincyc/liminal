@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-// Checks that Easy, Medium, and Hard describe the questions carrying them.
+// Screens fixed-bank difficulty labels with mechanical, uncalibrated proxies.
 //
 //   node tools/check-difficulty.js              # every section
 //   node tools/check-difficulty.js act-reading
@@ -10,9 +10,8 @@
 // The criteria are in docs/difficulty-calibration.md. This measures the four
 // consequences that can be checked mechanically:
 //
-//   1. A question shape must not appear under two different labels. The same
-//      shape called Medium in one item and Hard in another means the label
-//      describes the rotation that assigned it, not the question.
+//   1. Flag a question shape appearing under different labels for review.
+//      A textual signature is a heuristic, not proof of equivalent reasoning.
 //   2. Tiers must not invert. Reasoning steps, expected time, and the number of
 //      distractor rationales are all proxies for work; none may fall as
 //      difficulty rises.
@@ -21,12 +20,12 @@
 //   4. Hard must not be more guessable than Easy. A student who ignores the
 //      question and picks the longest choice should not score better on Hard.
 
-const { loadCatalog, loadBank, normalizeText, bankSections } = require("./lib/content");
+const { loadCatalog, loadBank, bankSections } = require("./lib/content");
 
 const TIERS = ["Easy", "Medium", "Hard"];
 
-// Mirrors the audit's shape signature: strip the numbers and the proper nouns
-// and what is left is the question being asked.
+// Ignore numeric values and proper nouns, but retain mathematical operators,
+// grouping and number positions. Shared prose normalization discards these.
 function shapeSignature(question) {
   const stimulus = question.stimulus ? question.stimulus.content : "";
   // A passage-set item shares its passage with nine others by design, so the
@@ -41,11 +40,20 @@ function shapeSignature(question) {
     : stimulus;
   let text = `${context} ${question.stem}`.trim();
   text = text.replace(/\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*/g, " ");
-  text = text.replace(/\b\d+(?:\.\d+)?\b/g, "#");
+  // Convert script digits before Unicode normalization loses their position.
+  text = text.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, (digits) => `^${digits.normalize("NFKD")}`);
+  text = text.replace(/[₀₁₂₃₄₅₆₇₈₉]+/g, (digits) => `_${digits.normalize("NFKD")}`);
+  text = text.normalize("NFKC").toLowerCase()
+    .replace(/−/g, "-").replace(/[×·]/g, "*").replace(/÷/g, "/")
+    .replace(/<=/g, "≤").replace(/>=/g, "≥").replace(/!=/g, "≠")
+    // No word boundaries: coefficients such as 3x and 7x are numeric variants.
+    .replace(/\d+(?:,\d{3})*(?:\.\d+)?|\.\d+/g, "#");
+  // Tokenizing also makes optional spacing around operators immaterial.
+  const tokens = text.match(/[\p{L}]+|[#+*=<>≤≥≠^_|√()[\]{}\/:%°$⟨⟩-]/gu) || [];
   // Preserve the passage ID outside number normalization. Otherwise p001 and
   // p002 both become p# and repeated authentic stems collide across sets.
   const passageAnchor = question.passageId ? `${question.passageId}|` : "";
-  return `${passageAnchor}${question.subskill}|${normalizeText(text).replace(/\s+/g, " ").trim()}`;
+  return `${passageAnchor}${question.subskill}|${tokens.join(" ")}`;
 }
 
 function median(values) {

@@ -202,7 +202,7 @@
       if (seen.has(attempt.id)) return false;
       seen.add(attempt.id);
       return true;
-    }));
+    }).map(completionOnly));
     progress.marked = unique(strings(raw.marked));
     progress.errorLog = isObject(raw.errorLog) ? Object.assign({}, raw.errorLog) : {};
     progress.history = normalizeHistory(raw.history);
@@ -259,6 +259,19 @@
 
   /* ----------------------------------------------------------- migration */
 
+  // Older records and restored files can predate essay redaction. Writing
+  // keeps completion only even when its old response contains the draft.
+  function completionOnly(attempt) {
+    if (attempt.sectionKey !== "act-writing" && sectionOfId(attempt.questionId) !== "act-writing") return attempt;
+    const answered = typeof attempt.answered === "boolean" ? attempt.answered : hasResponse(attempt.response);
+    return Object.assign({}, attempt, {
+      answered,
+      correct: null,
+      response: answered ? "[local essay draft]" : null,
+      reviewAt: null,
+    });
+  }
+
   function migrateAttempt(attempt, index) {
     const generated = parseQuestionId(attempt.questionId);
     const sectionKey = attempt.sectionKey || sectionOfId(attempt.questionId);
@@ -304,7 +317,7 @@
     if (!isObject(v2)) return progress;
     progress.attempts = markRepeats((Array.isArray(v2.attempts) ? v2.attempts : [])
       .map((attempt, index) => (isObject(attempt) && typeof attempt.questionId === "string"
-        ? migrateAttempt(attempt, index)
+        ? completionOnly(migrateAttempt(attempt, index))
         : null))
       .filter(Boolean));
     progress.marked = unique(strings(v2.flagged));
@@ -839,9 +852,9 @@
     return latest;
   }
 
-  // A template's fingerprint covers what the student sees, not its tier or
-  // taxonomy, so a template relabeled since (Hard to Medium, say) keeps its
-  // version. Stats therefore take difficulty, domain, skill, and subskill
+  // Stats use the current classification even when a template was relabeled
+  // (Hard to Medium, say). Source fingerprints include this metadata, so a
+  // relabel can also change the version. Take difficulty, domain, skill, and subskill
   // from the current template, falling back to what the attempt stored, and
   // flag `updated` when the template's version changed since the answer.
   // `current`: { [sectionKey]: { [templateId]: { difficulty, domain, skill,

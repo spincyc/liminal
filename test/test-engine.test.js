@@ -381,6 +381,19 @@ test("restore rejects foreign or empty snapshots", () => {
   assert.deepEqual(partial.state.responses, [null, null, null]);
 });
 
+test("restore rejects unreadable saved questions before summaries or choices can crash", () => {
+  const snapshot = engine.create({ questions: QUESTIONS, now: clock() }).serialize();
+  const brokenQuestions = [null, [], {}, { ...QUESTIONS[0], choices: null },
+    { ...QUESTIONS[0], choices: [null] }, { ...QUESTIONS[0], correctAnswer: 4 },
+    { ...QUESTIONS[0], responseType: "unknown" }, { ...QUESTIONS[1], correctAnswer: null }];
+  for (const question of brokenQuestions) {
+    const saved = { ...snapshot, questions: [question] };
+    assert.equal(engine.restoreState(saved, 1), null);
+    assert.equal(engine.restore(saved, { now: clock() }), null);
+  }
+  assert.deepEqual(engine.restore(snapshot, { now: clock() }).state.questions, QUESTIONS);
+});
+
 test("delayed expiry caps question time and rejects an answer before the next interval tick", () => {
   const now = clock(0);
   const session = engine.create({ questions: QUESTIONS, timeLimitSeconds: 10, now });

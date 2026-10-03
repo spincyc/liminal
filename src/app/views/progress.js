@@ -89,7 +89,7 @@
   const seconds = (value) => (value === null || value === undefined ? "—" : `${Math.round(value)} s`);
 
   function create(ctx) {
-    const { Progress, practice } = ctx;
+    const { core, Progress, practice } = ctx;
     const Analytics = window.LiminalAnalytics;
     const ProgressIO = window.LiminalProgressIO;
     const byId = (id) => document.getElementById(id);
@@ -357,14 +357,14 @@
     }
 
     // The skill map and the next step come from ctx.guide, as on every
-    // page. Only sections built from templates carry difficulty labels worth
-    // trusting; the fixed ACT banks' Hard differs from Easy by label only.
+    // page. SAT template tiers are editorial judgments; fixed ACT bank
+    // labels are unverified and do not guide practice targets.
     function buildModel(test, progress, attempts) {
       const guide = ctx.guide(test, attempts);
       const trend = Analytics.sessionTrend(progress.sessions, attempts, (session) => sessionTest(session) === test);
       return {
         test,
-        tiered: guide.sections.some((section) => practice.usesTemplates(section.key)),
+        tiered: guide.sections.some(core.supportsDifficulty),
         progress,
         attempts,
         sections: guide.sections,
@@ -912,7 +912,7 @@
       );
       const { GATE, HARD_BAR, MIN_ATTEMPTS } = Analytics;
       const untiered = model.tiered ? "" : "These questions come from fixed banks whose difficulty labels are not " +
-        "verified: Hard differs from Easy by label only. Skills here show accuracy only, without practice-target states. ";
+        "verified. Skills here show accuracy only, without practice-target states. ";
       elements.masteryNote.textContent = untiered ||
         `States are practice guidance, not a score or proof of mastery. Practice target met: at least ${GATE.correct} correct of your last ` +
         `${GATE.window} Medium questions in a skill. Advanced practice target met: that target, plus at least ${HARD_BAR.correct} ` +
@@ -1126,7 +1126,8 @@
     function renderHistory() {
       const points = historyPoints();
       if (!points.length) {
-        history.note.textContent = "Finished sets appear here with their accuracy, and Hard accuracy on its own.";
+        history.note.textContent = "Finished sets appear here with their accuracy" +
+          (model.tiered ? ", and Hard accuracy on its own." : ".");
         history.legend.replaceChildren();
         history.chart.replaceChildren();
         history.tableWrap.replaceChildren();
@@ -1134,7 +1135,8 @@
         return;
       }
       history.note.textContent = `${count(points.length, "finished set")}. Accuracy counts a blank as wrong and ` +
-        "a correct answer after a hint as not correct; Hard accuracy covers the Hard questions in each set.";
+        "a correct answer after a hint as not correct." +
+        (model.tiered ? " Hard accuracy covers the Hard questions in each set." : "");
       drawTrend(points);
       renderHistoryTable(points);
     }
@@ -1146,7 +1148,7 @@
       table.appendChild(el("caption", "sr-only", "Finished sets, newest first"));
       const head = el("thead");
       const headRow = el("tr");
-      ["Finished", "Set", "Questions", "Accuracy", "Hard", "Time"].forEach((text) => {
+      ["Finished", "Set", "Questions", "Accuracy", ...(model.tiered ? ["Hard"] : []), "Time"].forEach((text) => {
         const th = el("th", null, text);
         th.scope = "col";
         headRow.appendChild(th);
@@ -1180,7 +1182,7 @@
           title,
           cell("Questions", ctx.formatNumber(point.total)),
           accuracyCell(point),
-          cell("Hard", model.tiered && point.hard.attempted ? `${percent(point.hard.accuracy)} of ${point.hard.attempted}` : "—"),
+          ...(model.tiered ? [cell("Hard", point.hard.attempted ? `${percent(point.hard.accuracy)} of ${point.hard.attempted}` : "—")] : []),
           cell("Time", point.timeMs ? ctx.formatDuration(point.timeMs) : "—"),
         );
         body.appendChild(tr);
@@ -1231,9 +1233,9 @@
       const last = points[points.length - 1];
       chart.setAttribute("aria-label",
         `Accuracy over your last ${points.length} sets: ${percent(first.accuracy)} in the first, ${percent(last.accuracy)} in the latest.` +
-        (hardPoints.length
+        (model.tiered ? (hardPoints.length
           ? ` Hard accuracy: ${percent(hardPoints[0].hard.accuracy)} in the first set with Hard questions, ${percent(hardPoints[hardPoints.length - 1].hard.accuracy)} in the latest.`
-          : " No Hard questions in these sets.") +
+          : " No Hard questions in these sets.") : "") +
         " The table below lists every set.");
 
       [0, 0.5, 1].forEach((value) => {
@@ -1265,7 +1267,7 @@
           const title = svg("title");
           title.textContent = `${entry.point.title || sectionName(entry.point.sectionKey)}, ` +
             `${entry.point.finishedAt ? dayLabel(entry.point.finishedAt) : ""}: ${percent(entry.point.accuracy)} correct` +
-            (entry.point.hard.attempted ? `; Hard ${percent(entry.point.hard.accuracy)} of ${entry.point.hard.attempted}` : "");
+            (model.tiered && entry.point.hard.attempted ? `; Hard ${percent(entry.point.hard.accuracy)} of ${entry.point.hard.attempted}` : "");
           group.appendChild(title);
           group.appendChild(svg("circle", { class: "trend-hit", cx: x(entry.index), cy: y(entry.value), r: 11 }));
           group.appendChild(key === "hard"

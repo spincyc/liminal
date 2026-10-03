@@ -289,6 +289,9 @@ test("restore refuses what it cannot continue", () => {
   assert.equal(Simulation.restore({ ...state, version: 2 }), null);
   assert.equal(Simulation.restore({ ...state, kind: "diagnostic" }), null);
   assert.equal(Simulation.restore({ ...state, index: 7 }), null);
+  assert.equal(Simulation.restore({ ...state, index: "0" }), null,
+    "a string index would concatenate to 01 on finish and fail to find the next step");
+  assert.equal(Simulation.restore({ ...state, index: null }), null);
   assert.equal(Simulation.restore({ ...state, steps: [{ type: "module", sectionKey: "act-english", module: "1" }] }), null);
   // Module 2 with no route recorded cannot be shown.
   assert.equal(Simulation.restore({ ...state, index: 1 }), null);

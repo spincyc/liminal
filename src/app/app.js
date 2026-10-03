@@ -61,16 +61,23 @@
   /* ----------------------------------------------------- storage trouble */
 
   // When this browser cannot save (its storage is full or blocked), the
-  // page says so and offers the progress file, which holds everything this
-  // page still has in memory. It goes away once that save works again.
-  let storageTrouble = null;
+  // page says so and offers the progress file, which holds the recorded
+  // progress still in memory, not unfinished answers or essay drafts.
+  // Each record must recover before its warning
+  // clears: saving a set does not mean unsaved progress was recovered.
+  const storageTrouble = new Set();
   const storageWarning = {
     box: document.getElementById("storageWarning"),
     text: document.getElementById("storageWarningText"),
     download: document.getElementById("storageDownloadBtn"),
   };
 
-  function warnStorage(what) {
+  function renderStorageWarning() {
+    const what = storageTrouble.has("progress") ? "progress" : storageTrouble.values().next().value;
+    if (!memoryOnly && !what) {
+      storageWarning.box.classList.add("hidden");
+      return;
+    }
     storageWarning.text.textContent = memoryOnly
       ? "This browser has blocked site storage. Your progress and unfinished sets are kept only until this page " +
         "closes. Download your progress before leaving to keep what you have recorded."
@@ -80,15 +87,18 @@
       : `This browser could not save your unfinished ${what}, so it may not be there to resume after this page ` +
         "closes, probably because its storage is full. Download your progress to keep what you have recorded.";
     storageWarning.box.classList.remove("hidden");
-    storageTrouble = what;
+  }
+
+  function warnStorage(what) {
+    storageTrouble.add(what);
+    renderStorageWarning();
   }
 
   // `what` ("progress", "set", "test") saved again.
   function storageRecovered(what) {
     if (memoryOnly) return;
-    if (storageTrouble !== what) return;
-    storageTrouble = null;
-    storageWarning.box.classList.add("hidden");
+    if (!storageTrouble.delete(what)) return;
+    renderStorageWarning();
   }
 
   function downloadProgress() {
@@ -877,9 +887,9 @@
     }
   }
 
-  // Reopens the saved set ("set") or test ("test"), or removes it with a
-  // reason when it cannot be reopened. Resolves to an error message, or
-  // null when it opened.
+  // Reopens the saved set ("set") or test ("test"). Invalid snapshots are
+  // removed, but a screen failure leaves valid work saved for another try.
+  // Resolves to an error message, or null when it opened.
   async function resume(slot) {
     const what = slot === "test" ? "test" : "set";
     const saved = activeSession.load(what);
@@ -901,9 +911,8 @@
       launch({ ...saved.config, questions: [] }, saved.state);
       return null;
     } catch (error) {
-      sessions.clear("set");
       notifySession();
-      return `The unfinished set could not be restored (${error.message}), so it was removed.`;
+      return `The unfinished set could not open (${error.message}). Refresh the page and try again; your set is still saved.`;
     }
   }
 
@@ -1133,9 +1142,8 @@
       return null;
     } catch (error) {
       shellOpen = false;
-      sessions.clear("test");
       notifySession();
-      return `The unfinished test could not be restored (${error.message}), so it was removed.`;
+      return `The unfinished test could not open (${error.message}). Refresh the page and try again; your test is still saved.`;
     }
   }
 
@@ -1146,10 +1154,7 @@
     if (step.type === "done") {
       finishTest(state).catch((error) => {
         console.error(error);
-        // Its modules are recorded; a saved test that cannot report would
-        // fail the same way on every Resume.
-        sessions.clear("test", state.id);
-        closeScreen(`The test's report could not open (${error.message}). Its modules are in your progress.`);
+        closeScreen(`The test's report could not open (${error.message}). Your test is still saved; refresh the page and resume it to try again.`);
       });
       return;
     }
@@ -1315,7 +1320,6 @@
         feedback: "end",
       }, items, summary.elapsedMs), Simulation.sessionFields(state))));
     }
-    sessions.clear("test", state.id);
     const reviewParts = Simulation.reviewParts(state);
     const legacyIds = reviewParts.flatMap((part) => part.questionIds.filter((_, index) => !part.questions[index]));
     // New saved modules carry the exact question the student saw. Only
@@ -1360,6 +1364,7 @@
           reviewNote, ...moduleTable(summary).rows.map((row) => `${row[0]}: ${row[2]}, ${row[3]}.`)],
         cancel: "Close report", confirm: "Open Progress",
       });
+      if (choice !== "busy") sessions.clear("test", state.id);
       if (choice === "confirm") openView("dashboard");
       return;
     }
@@ -1392,6 +1397,8 @@
         closeScreen();
       },
     });
+    // Keep the original module snapshots until their report really opens.
+    sessions.clear("test", state.id);
   }
 
   /* ------------------------------------------------- after-report actions */

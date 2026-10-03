@@ -14,6 +14,11 @@ uncontained critical defect or unresolved incorrect active answer was identified
 completed review. That describes its findings, not a guarantee about every possible
 generated question.
 
+A [follow-up cold review on 2026-10-03](reviews/2026-10-03-handoff-review.md)
+reproduced and repaired additional runtime and reporting defects. Those changes are
+local to `feature/prep` until explicitly published; the release evidence above applies
+to the published baseline, not these follow-up changes.
+
 ## Ranked outstanding work
 
 P1 denotes a substantial missing capability or missing evidence of instructional
@@ -31,9 +36,8 @@ those levels; evidence gaps are not asserted software failures.
 | 6 | P2 | Some historical question details cannot be reconstructed | Outcomes preserved; unverifiable details withheld |
 | 7 | P2 | Browser, accessibility, concurrency and print coverage is incomplete | Verification gap; no corresponding open failure established |
 | 8 | P2 | Two unreviewed WIP branches exist only in this workspace | Preserved, unmerged and absent from fetched remote refs |
-| 9 | P3 | Difficulty diagnostic collapses different mathematical structures | Reproduced shape collision; not a release gate |
-| 10 | P3 | Archived SAT banks and large modules remain | Maintenance backlog; compatibility paths still use banks |
-| 11 | P3 | Calculator opens externally instead of being embedded | Optional enhancement; integration requirements need verification |
+| 9 | P3 | Archived SAT banks and large modules remain | Maintenance backlog; compatibility paths still use banks |
+| 10 | P3 | Calculator opens externally instead of being embedded | Optional enhancement; integration requirements need verification |
 
 ## P1 — instructional capability and evidence
 
@@ -102,6 +106,10 @@ new material. Evaluate the old ACT Math proposal below before reusing it. Conver
 templates alone does not make tiers trustworthy. Retain accuracy-only ACT treatment
 until justified.
 
+The follow-up review removed remaining ACT tier filters, tier-based Math form selection,
+report/Review/booklet labels and Progress breakdowns (including accessible chart text).
+The earlier statement that these labels were already unused was too broad.
+
 Evidence: [coverage report](content-report.md), [bank
 limitations](content-authoring.md), [bank audit](../tools/audit-questions.js).
 
@@ -118,6 +126,12 @@ portable sessions are wanted, specify opt-in draft inclusion and import preview/
 handling. Verify that restore cannot silently overwrite a different saved set or test,
 and preserve versions, deadlines and ownership checks. Do not silently add essay text to
 progress exports.
+
+Follow-up fixes preserve ownership when storage reads fail, keep warnings visible until
+each affected record saves successfully, preserve usable snapshots after report/startup
+failures, and prevent distinct imported answers from being lost to ID collisions.
+Older imported Writing responses are reduced to completion metadata. These repairs do
+not make unfinished sessions portable.
 
 Entry points: [progress I/O](../src/lib/progress-io.js), [session
 store](../src/lib/session-store.js), [draft behavior](../README.md).
@@ -153,6 +167,12 @@ concurrent tabs: localStorage provides no atomic multi-tab transactions, while e
 tests cover particular stale-write and ownership paths. Record reproducible failures
 before proposing a storage redesign.
 
+The follow-up adds injected failure and DOM adapter regressions. This workspace could
+not launch an HTTP server or Chromium because socket creation was denied; it supplies
+no new native browser, concurrent-tab, assistive-technology or OS-level print acceptance.
+An ACT LaTeX symbol repair passed a 131-question PDF compilation; pagination quality
+across generated forms remains unverified.
+
 Evidence: [review coverage](reviews/2026-10-02-cold-review.md), [browser
 regressions](../test/browser-review.test.js), [session-store
 tests](../test/session-store.test.js).
@@ -179,22 +199,7 @@ and is not new work created by this handoff.
 
 ## P3 — maintenance and enhancements
 
-### 9. Preserve mathematical structure in shape diagnostics
-
-Reproduced on 2026-10-03 with `node tools/check-difficulty.js`: 3/4 available sections
-pass. Math reports one shape under two labels: `act-mathematics-0076` (compound
-inequality, Medium) and `act-mathematics-0136` (absolute-value inequality, Hard). The
-normalizer removes the operators distinguishing their structures. This collision does
-not prove duplicate questions or incorrect keys; fixing it would not calibrate the
-tiers.
-
-Next: preserve relevant operators/absolute-value structure, with tests for same-design
-numeric variants and distinct structures. Use `--strict` when a failing exit status is
-needed; the default command reports failures without failing the process. This
-diagnostic is separate from the passing release admission checks. See
-[implementation](../tools/check-difficulty.js).
-
-### 10. Retire compatibility banks and split modules when useful
+### 9. Retire compatibility banks and split modules when useful
 
 Fixed SAT banks and their generators remain; historical IDs/marks still use
 compatibility paths. Some app/logic files remain large. These are maintenance items, not
@@ -205,7 +210,7 @@ platform proposal selectively. Split views/helpers around concrete responsibilit
 without changing grading, storage or review semantics. Preserve the full gate and
 browser/Node parity checks.
 
-### 11. Evaluate an embedded calculator
+### 10. Evaluate an embedded calculator
 
 The calculator currently opens an external Desmos page. Embedding remains optional.
 Before implementation, verify current provider licensing, integration and credential
@@ -214,6 +219,14 @@ keyboard, mobile and accessibility behavior is verified. See [calculator
 guidance](../content/learn/sat/general/desmos.md).
 
 ## Completed work and continuation rules
+
+The former item 9, mathematical-structure collisions in difficulty diagnostics, is
+repaired. The signature retains operators, grouping and numeric positions while
+normalizing numerical variants. The named compound/absolute-value inequality collision
+is covered by regressions; `node tools/check-difficulty.js --strict` now passes all four
+available banks. This heuristic result does not calibrate their difficulty or make ACT
+tiers suitable for practice. The [follow-up review](reviews/2026-10-03-handoff-review.md)
+records the other repairs and verification limits.
 
 Do not reopen these baseline findings without new evidence: Nora/Beth's explicit trait
 matching; identified key/domain/teaching errors; eight-seed-only fingerprints; missing
@@ -230,5 +243,5 @@ changes. Source hashing intentionally includes comments, metadata and sibling te
 conservative version/review churn is an accepted tradeoff, not an outstanding corruption
 defect.
 
-This handoff update changes documentation only. It does not implement the open items or
-confer human approval/calibration on the reviewed release.
+The remaining open items are not closed by these repairs. No human approval or empirical
+calibration is conferred by either review.

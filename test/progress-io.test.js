@@ -204,6 +204,31 @@ test("two browsers' migrated ids that name different answers are both kept", () 
   assert.deepEqual(IO.mergeImport(merged, imported).added, { attempts: 0, sessions: 0, marked: 0, officialScores: 0 });
 });
 
+test("colliding migrated answers remain distinct across repeated restores and shared epochs", () => {
+  let current = record({ epoch: "here", attempts: [attempt("v2:0", { response: 0 })], sessions: [], errorLog: {} });
+  const file = (response) => IO.parseImport(JSON.stringify(record({ epoch: "e0", sessions: [],
+    attempts: [attempt("v2:0", { response, correct: false })],
+    errorLog: { "v2:0": { reason: "time", at: 1 } },
+  }))).progress;
+  current = IO.mergeImport(current, file(1)).progress;
+  current = IO.mergeImport(current, file(2)).progress;
+  assert.deepEqual(current.attempts.map((entry) => [entry.id, entry.response]),
+    [["v2:0", 0], ["v2:0~e0", 1], ["v2:0~e0~2", 2]]);
+  assert.deepEqual(Object.keys(current.errorLog).sort(), ["v2:0~e0", "v2:0~e0~2"]);
+  assert.equal(IO.mergeImport(current, file(1)).added.attempts, 0);
+  assert.equal(IO.mergeImport(current, file(2)).added.attempts, 0);
+  const otherEpoch = { ...file(2), epoch: "a-new-v2-migration-epoch" };
+  assert.equal(IO.mergeImport(current, otherEpoch).added.attempts, 0,
+    "parsing the same v2 file again must reuse its previous rename");
+
+  const oldFile = JSON.stringify({ version: 2, attempts: [{ questionId: "act-english-0001", response: 3,
+    correct: false, timestamp: 100 }] });
+  const firstRead = IO.parseImport(oldFile, { epoch: "first-read" }).progress;
+  const secondRead = IO.parseImport(oldFile, { epoch: "second-read" }).progress;
+  current = IO.mergeImport(current, firstRead).progress;
+  assert.equal(IO.mergeImport(current, secondRead).added.attempts, 0);
+});
+
 test("a merge beyond what the browser keeps reports how many answers are over", () => {
   const many = (prefix, count) => Array.from({ length: count }, (_, index) => attempt(`${prefix}${index}`, { timestamp: index }));
   const current = Object.assign(Progress.empty({ epoch: "e" }), { attempts: many("h", 3000) });
@@ -272,4 +297,40 @@ test("bank content identity survives export/import and malformed identity is rej
   assert.equal(Progress.questionMatchesAttempt(question, parsed.progress.attempts[0]), true);
   const merged = IO.mergeImport(Progress.empty(), parsed.progress).progress;
   assert.equal(merged.attempts[0].contentIdentity, bank.contentIdentity);
+});
+
+test("old Writing responses restore and export as completion without essay text", () => {
+  const draft = "Private draft text that must stay out of progress downloads.";
+  const writing = attempt("essay", { questionId: "act-writing-0001", sectionKey: "act-writing", test: "ACT",
+    source: "bank", response: draft, correct: false });
+  const original = record({ attempts: [writing, attempt("ordinary", { response: "3/7" })] });
+  const file = IO.exportFile(original, 1);
+  assert.equal(file.text.includes(draft), false, "export also protects a record predating normalization");
+  assert.equal(original.attempts[0].response, draft, "export does not mutate its input");
+  for (const source of [original, { version: 2, attempts: [writing] }]) {
+    const imported = IO.parseImport(JSON.stringify(source));
+    assert.equal(imported.ok, true);
+    assert.equal(imported.progress.attempts[0].response, "[local essay draft]");
+    assert.equal(imported.progress.attempts[0].correct, null);
+    assert.equal(imported.progress.attempts[0].answered, true);
+    assert.equal(IO.exportFile(imported.progress, 1).text.includes(draft), false);
+  }
+  assert.equal(JSON.parse(file.text).progress.attempts[1].response, "3/7");
+});
+
+test("progress replacement leaves unfinished set and test slots, including drafts, intact", () => {
+  const Sessions = require("../src/lib/session-store");
+  const storage = memoryStorage();
+  const set = JSON.stringify({ config: { sessionId: "set" }, state: { response: "Private unfinished draft" } });
+  const simulation = JSON.stringify({ config: { simulation: { id: "test" } }, state: null });
+  storage.setItem(Sessions.KEYS.set, set);
+  storage.setItem(Sessions.KEYS.test, simulation);
+  const store = Progress.createStore(storage, { epoch: "here" });
+  const imported = IO.parseImport(JSON.stringify(record()));
+  store.update(() => IO.replaceWith(imported.progress, "replacement"));
+  assert.equal(storage.getItem(Sessions.KEYS.set), set);
+  assert.equal(storage.getItem(Sessions.KEYS.test), simulation);
+  const exported = IO.exportFile(store.get(), 1).text;
+  assert.equal(exported.includes("Private unfinished draft"), false);
+  assert.equal(exported.includes("simulation"), false);
 });

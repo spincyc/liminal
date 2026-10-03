@@ -8,6 +8,15 @@
 
   const DIFFICULTY_ORDER = ["Easy", "Medium", "Hard"];
 
+  // Only current SAT template sections support editorial difficulty labels.
+  // These are practice judgments, not empirically calibrated exam difficulty;
+  // fixed ACT bank tiers must not guide selection or appear in feedback.
+  function supportsDifficulty(sectionOrKey) {
+    const key = sectionOrKey && typeof sectionOrKey === "object"
+      ? sectionOrKey.key || sectionOrKey.sectionKey : sectionOrKey;
+    return key === "sat-math" || key === "sat-reading-writing";
+  }
+
   // Availability controls new practice only. Archived answers, question ids,
   // and blueprint metadata remain readable when a section is withdrawn.
   function sectionAvailable(sectionOrKey) {
@@ -266,11 +275,9 @@
 
   const sharesPassages = (questions) => questions.length > 0 && questions.every((question) => question.passageId);
 
-  // Draws `count` scoreable items from one section, spread across difficulty
-  // tiers and backfilled when a tier is short. A section whose questions
-  // share passages draws whole passages instead (drawPassageSets), since its
-  // difficulty labels are not verified and scattered questions from thirty
-  // passages are nothing like the test.
+  // Draws `count` scoreable items from one section. SAT's editorial tiers
+  // set its mix, backfilled when a tier is short; unverified ACT labels do
+  // not affect selection. Shared passages stay together (drawPassageSets).
   function drawSectionItems(bank, count, seed, excludeIds) {
     requireAvailable(bank.map((question) => question.sectionKey));
     const blocked = excludeIds || new Set();
@@ -278,6 +285,9 @@
       (question) => question.responseType !== "essay" && !blocked.has(question.id),
     );
     if (sharesPassages(scoreable)) return drawPassageSets(scoreable, count, seed);
+    if (!scoreable.every((question) => supportsDifficulty(question.sectionKey))) {
+      return deterministicShuffle(scoreable, `${seed}-order`).slice(0, count);
+    }
     const targets = allocateByWeight(
       count,
       MINI_TEST_DIFFICULTY_MIX.map((entry) => entry.weight),
@@ -787,6 +797,7 @@
     questionFamily,
     scoreResponse,
     sectionAvailable,
+    supportsDifficulty,
     blueprintAvailable,
     summarizeMiniTest,
     summarizeProgress,

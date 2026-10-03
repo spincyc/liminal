@@ -126,6 +126,37 @@ function banksFor(blueprint) {
   );
 }
 
+test("only SAT template sections support editorial difficulty feedback", () => {
+  for (const section of catalog.sections) {
+    const expected = ["sat-math", "sat-reading-writing"].includes(section.key);
+    assert.equal(core.supportsDifficulty(section), expected);
+    assert.equal(core.supportsDifficulty(section.key), expected);
+  }
+  assert.equal(core.supportsDifficulty(null), false);
+  assert.equal(core.supportsDifficulty("sat-unknown"), false);
+});
+
+test("ACT draws ignore unverified labels while retaining exclusions and seed variation", () => {
+  const bank = syntheticBank("act-mathematics", "Mathematics", 120);
+  const relabelled = bank.map((question) => ({ ...question, difficulty: "Hard" }));
+  const blocked = new Set([bank[0].id, bank[1].id]);
+  const ids = (items) => items.map((question) => question.id);
+  const first = core.drawSectionItems(bank, 20, "same", blocked);
+  assert.deepEqual(ids(first), ids(core.drawSectionItems(relabelled, 20, "same", blocked)));
+  assert.equal(first.length, 20);
+  assert.equal(new Set(ids(first)).size, 20);
+  assert.ok(first.every((question) => !blocked.has(question.id)));
+  assert.notDeepEqual(ids(first), ids(core.drawSectionItems(bank, 20, "different", blocked)));
+});
+
+test("SAT draws retain the editorial tier mix", () => {
+  const bank = syntheticBank("sat-math", "Math", 120);
+  const picked = core.drawSectionItems(bank, 20, "sat-tiers");
+  assert.deepEqual(Object.fromEntries(core.DIFFICULTY_ORDER.map((tier) =>
+    [tier, picked.filter((question) => question.difficulty === tier).length])),
+  { Easy: 6, Medium: 9, Hard: 5 });
+});
+
 test("every mini test blueprint references real catalog sections", () => {
   const known = new Set(catalog.sections.map((section) => section.key));
   for (const blueprint of core.MINI_TEST_BLUEPRINTS) {

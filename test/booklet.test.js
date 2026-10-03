@@ -158,6 +158,23 @@ test("pipe tables render as real HTML tables", () => {
   assert.match(html, /<td>37<\/td>/);
 });
 
+test("LaTeX preserves ACT logarithm bases and vector delimiters", () => {
+  assert.equal(booklet.tex("log₂(x), log₃(y), log₄(z); ⟨2, 3⟩"),
+    "log\\textsubscript{2}(x), log\\textsubscript{3}(y), log\\textsubscript{4}(z); $\\langle$2, 3$\\rangle$");
+});
+
+test("every active scored ACT question has ASCII-safe printable text", () => {
+  const { hydrateBank } = require("../tools/lib/content");
+  for (const sectionKey of ["act-english", "act-mathematics", "act-reading"]) {
+    for (const question of hydrateBank(sectionKey)) {
+      const fields = [question.stem, question.stimulus && question.stimulus.content, ...(question.choices || [])];
+      for (const value of fields) {
+        assert.doesNotMatch(booklet.tex(value), /[^\x00-\x7F]/, question.id);
+      }
+    }
+  }
+});
+
 test("LaTeX escaping emits no raw Unicode and protects specials", () => {
   const source = "50% of x² − 3 ≤ π, “quoted” — ends with √9 and 5 × 2 & more_stuff";
   const out = booklet.tex(source);
@@ -226,6 +243,22 @@ test("rendered booklet and key cover every question", () => {
   const texOut = booklet.renderTex(model);
   assert.equal((texOut.match(/\\question\{/g) || []).length, 98);
   assert.ok(!/[^\x00-\x7F]/.test(texOut), "LaTeX source must stay ASCII");
+});
+
+test("answer keys omit unverified ACT difficulty while preserving SAT editorial labels", () => {
+  for (const [sectionKey, formId, labelled] of [
+    ["act-mathematics", "act", false],
+    ["sat-math", "sat", true],
+  ]) {
+    const question = { ...makeBank(sectionKey, 1, 1)[0], difficulty: "Hard" };
+    const form = core.blueprintById(formId);
+    const model = booklet.buildModel([{ label: sectionKey, questions: [question] }], form, "labels");
+    const html = booklet.renderKeyHtml(model);
+    const tag = html.match(/<p class="tag">([^<]+)<\/p>/)[1];
+    assert.equal(tag.includes("Hard"), labelled, sectionKey);
+    assert.ok(tag.includes(question.skill));
+    assert.ok(tag.includes(question.id));
+  }
 });
 
 /* ------------------------------------------------ template forms (SAT) */

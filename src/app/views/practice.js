@@ -176,7 +176,7 @@
       // SAT drills are generated; ACT drills draw from fixed banks.
       elements.drillLede.textContent = test === "SAT"
         ? "A short set on a single skill at one level, with new numbers or a new context each time."
-        : "A short set on a single skill at one level, from the questions you have seen least recently.";
+        : "A short set on a single skill, from the questions you have seen least recently. Difficulty labels in these banks are unverified.";
       if (test === "SAT") {
         const templates = sections.reduce(
           (total, section) => total + practice.templateCount(ctx.registry(section.key)), 0);
@@ -223,6 +223,7 @@
       const requestId = ++bankRequestId;
       const section = ctx.sectionByKey(sectionKey());
       sectionByTest[section.test] = section.key;
+      renderFilterState(elements.mode.value);
       elements.start.disabled = true;
       elements.recommendBtn.disabled = true;
       elements.matchCount.className = "match-count";
@@ -305,6 +306,7 @@
     }
 
     function selectedDifficulties() {
+      if (!core.supportsDifficulty(sectionKey())) return [];
       return difficultyInputs().filter((input) => input.checked).map((input) => input.value);
     }
 
@@ -366,7 +368,9 @@
         return { domain: true, skill: true, difficulty: true, search: false,
           hint: "Questions here are new each time, so there is no text to search." };
       }
-      return { domain: true, skill: true, difficulty: true, search: true, hint: "" };
+      const difficulty = core.supportsDifficulty(sectionKey());
+      return { domain: true, skill: true, difficulty, search: true,
+        hint: difficulty ? "" : "Difficulty labels here are unverified, so they do not filter this set." };
     }
 
     function activeFilterCount(use) {
@@ -385,6 +389,7 @@
       elements.search.disabled = !use.search;
       difficultyInputs().forEach((input) => {
         input.disabled = !use.difficulty;
+        input.closest("fieldset").hidden = !core.supportsDifficulty(sectionKey());
       });
       elements.filterHint.textContent = use.hint;
       elements.filterHint.classList.toggle("hidden", !use.hint);
@@ -856,6 +861,7 @@
     }
 
     function drillLevel() {
+      if (!core.supportsDifficulty(elements.drillSection.value)) return "";
       const checked = drillLevelInputs().find((input) => input.checked);
       return checked ? checked.value : "";
     }
@@ -866,10 +872,20 @@
 
     // The drill's default level for the chosen skill is the next step's
     // level for it (Analytics.skillLevel): Easy until the skill is routine,
-    // Medium toward the gate, then Hard; every level where difficulty
-    // labels are not verified. The note under the level says why.
+    // Medium toward the gate, then Hard. Sections with unverified labels
+    // draw without a level filter.
     function applyDrillLevel() {
       const key = elements.drillSection.value;
+      const tiered = core.supportsDifficulty(key);
+      drillLevelInputs().forEach((input) => {
+        input.disabled = !tiered;
+        input.closest("fieldset").hidden = !tiered;
+      });
+      if (!tiered) {
+        setDrillLevel("");
+        elements.drillLevelNote.textContent = "";
+        return;
+      }
       const skill = elements.drillSkill.value;
       const row = key && skill ? guide().row(key, skill) : null;
       if (!row) {
@@ -960,7 +976,8 @@
       }
       const levelWord = level ? `${level.toLowerCase()} ` : "";
       if (kinds === 0 || matching === 0) {
-        elements.drillNote.textContent = `No ${levelWord}questions for this skill yet. Choose another level.`;
+        elements.drillNote.textContent = `No ${levelWord}questions for this skill yet. ` +
+          (core.supportsDifficulty(key) ? "Choose another level." : "Choose another skill.");
         elements.drillNote.classList.add("is-empty");
         elements.drillStart.disabled = true;
         return;
@@ -993,7 +1010,8 @@
         }
         ctx.setStatus(elements.drillStatus, opened
           ? (opened < request.count ? `Only ${opened} questions matched, so the drill has ${opened}.` : "")
-          : "No questions match this drill. Choose another level.", opened ? "" : "error");
+          : "No questions match this drill. " +
+            (core.supportsDifficulty(request.sectionKey) ? "Choose another level." : "Choose another skill."), opened ? "" : "error");
       } catch (error) {
         ctx.setStatus(elements.drillStatus, `${error.message} Refresh the page and try again.`, "error");
       } finally {
@@ -1219,7 +1237,9 @@
       }
       const level = drillLevel();
       ctx.setStatus(elements.drillStatus, `The drill is set to ${found.skill}` +
-        (level ? ` at ${level}, your next level for it` : ", every level") + ". Change the level if you like, and start.",
+        (core.supportsDifficulty(key)
+          ? (level ? ` at ${level}, your next level for it` : ", every level") + ". Change the level if you like, and start."
+          : ". Difficulty labels here are unverified; start when ready."),
       "success");
       scrollToCard(elements.drillForm, elements.drillStart);
     }

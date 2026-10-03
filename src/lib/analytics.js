@@ -47,8 +47,8 @@
   // massed drill on one design cannot fill it.
   // Practice states, in the order a skill moves through them.
   // "accuracy-only" is the state of every skill with enough answers in a
-  // section whose difficulty labels are not verified (the fixed ACT banks,
-  // where Hard differs from Easy by label only): no gate, no Mastered.
+  // section whose difficulty labels are not verified (the fixed ACT banks):
+  // no gate, no Mastered.
   const STATES = ["not-started", "not-enough-data", "building", "at-gate", "mastered", "accuracy-only"];
   const STATE_LABELS = {
     "not-started": "Not started",
@@ -778,7 +778,7 @@
       }
       const section = sections.get(sectionKey);
       groups.push(section);
-      if (TIERS.includes(attempt.difficulty)) {
+      if (Core.supportsDifficulty(sectionKey) && TIERS.includes(attempt.difficulty)) {
         const key = `${sectionKey}|${attempt.difficulty}`;
         if (!tiers.has(key)) tiers.set(key, paceRow({ sectionKey, difficulty: attempt.difficulty }));
         groups.push(tiers.get(key));

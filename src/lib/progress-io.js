@@ -43,7 +43,8 @@
   // The file for `progress` (the whole record, every test): { name, text }.
   function exportFile(progress, now) {
     const at = new Date(now === undefined ? Date.now() : now);
-    const payload = { format: FORMAT, version: VERSION, exportedAt: at.toISOString(), progress };
+    const payload = { format: FORMAT, version: VERSION, exportedAt: at.toISOString(),
+      progress: Progress.normalize(progress) };
     return {
       name: `liminal-progress-${at.getFullYear()}-${pad(at.getMonth() + 1)}-${pad(at.getDate())}.json`,
       text: JSON.stringify(payload),
@@ -248,7 +249,10 @@
   // The same answer: one attempt id can name two different answers only when
   // two browsers migrated their own v2 records ("v2:0", "v2:1", ...).
   function sameAttempt(left, right) {
-    return left.questionId === right.questionId && Number(left.timestamp) === Number(right.timestamp);
+    return left.questionId === right.questionId && Number(left.timestamp) === Number(right.timestamp) &&
+      (left.response ?? null) === (right.response ?? null) && left.correct === right.correct &&
+      Boolean(left.hinted) === Boolean(right.hinted) && left.contentIdentity === right.contentIdentity &&
+      left.templateVersion === right.templateVersion;
   }
 
   // `imported` joined to `current` with LiminalProgress.merge: attempts and
@@ -268,10 +272,23 @@
     const renamed = new Map();
     const attempts = imported.attempts.map((attempt) => {
       const existing = known.get(attempt.id);
-      if (!existing || sameAttempt(existing, attempt)) return attempt;
-      const id = `${attempt.id}~${imported.epoch}`;
+      if (!existing || sameAttempt(existing, attempt)) {
+        known.set(attempt.id, attempt);
+        return attempt;
+      }
+      // More than two records can share a migrated id or the fallback epoch
+      // e0. Reuse a previous rename of this answer, otherwise find a free id.
+      const prefix = `${attempt.id}~`;
+      const previous = [...known.values()].find((entry) => entry.id.startsWith(prefix) && sameAttempt(entry, attempt));
+      const base = `${prefix}${imported.epoch}`;
+      let id = previous ? previous.id : base;
+      for (let suffix = 2; known.has(id) && !sameAttempt(known.get(id), attempt); suffix += 1) {
+        id = `${base}~${suffix}`;
+      }
       renamed.set(attempt.id, id);
-      return Object.assign({}, attempt, { id });
+      const renamedAttempt = Object.assign({}, attempt, { id });
+      known.set(id, renamedAttempt);
+      return renamedAttempt;
     });
     const errorLog = {};
     Object.keys(imported.errorLog || {}).forEach((id) => {

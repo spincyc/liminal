@@ -665,7 +665,7 @@
         `Return ${entry.stage} of ${Queue.INTERVALS.length}: ${mode}`,
         when,
         entry.misses > 1 ? `missed ${entry.misses} times` : null,
-        entry.difficulty,
+        core.supportsDifficulty(entry.sectionKey) && entry.difficulty,
       ].filter(Boolean);
       const learn = learnLink(entry, true);
       const rules = rulesFor(entry.questionId);
@@ -995,7 +995,7 @@
         ? `Time: ${ctx.formatDuration(attempt.timeMs)}`
         : "Time not recorded");
       if (attempt.hinted) facts.push("Hint used");
-      if (attempt.difficulty) facts.push(attempt.difficulty);
+      if (core.supportsDifficulty(attempt.sectionKey) && attempt.difficulty) facts.push(attempt.difficulty);
       const flags = [];
       if (attempt.updated) flags.push(h("span", { className: "review-flag", text: "Template revised since" }));
       if (attempt.source === "legacy-bank") flags.push(h("span", { className: "review-flag", text: "Retired question bank" }));
@@ -1087,7 +1087,7 @@
         cardHead(item, item.timestamp ? `Last answered ${formatDate(item.timestamp)}` : null),
       ]);
       const facts = [];
-      if (item.difficulty) facts.push(item.difficulty);
+      if (core.supportsDifficulty(item.sectionKey) && item.difficulty) facts.push(item.difficulty);
       if (item.updated) facts.push("Template revised since you answered");
       if (facts.length) card.appendChild(h("p", { className: "review-facts", text: facts.join(" · ") }));
       const toggle = questionToggle(`marked:${questionId}`, questionId, model.latest.get(questionId) || null);

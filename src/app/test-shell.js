@@ -1957,7 +1957,8 @@
 
     function taxonomyLine(question) {
       return h("p", { className: "lm-taxonomy" }, [
-        [question.domain, question.skill, question.difficulty].filter(Boolean).join(" · "),
+        [question.domain, question.skill, Core.supportsDifficulty(question.sectionKey) && question.difficulty]
+          .filter(Boolean).join(" · "),
       ]);
     }
 
@@ -2888,10 +2889,10 @@
           h("ul", { className: "lm-section-scores" }, sections.map((row) => h("li", {}, [
             h("span", { className: "lm-section-name", text: row.section || row.sectionKey }),
             h("span", { className: "lm-section-score" }, scoreLine(row)),
-            h("span", {
+            Core.supportsDifficulty(row.sectionKey) ? h("span", {
               className: "lm-section-hard",
               text: row.hard.total ? `Hard: ${row.hard.correct} of ${row.hard.total}` : "No Hard questions",
-            }),
+            }) : null,
           ]))),
           h("p", {
             className: "lm-score-combined",
@@ -2938,7 +2939,7 @@
         children.push(h("p", { className: "lm-report-note", text: String(text) }));
       });
       if (report.scored) children.push(h("p", { className: "lm-caveat", text: options.caveat ||
-        "This is accuracy on one practice set, not a scaled score. The real test adapts its second module to your first, weights questions differently, and draws on a wider range of difficulty, so a percent correct here does not convert to an SAT or ACT score." }));
+        "This is accuracy on one practice set, not a scaled score. A percent correct here does not convert to or predict an SAT or ACT score." }));
 
       const actions = typeof options.reportActions === "function"
         ? (call("reportActions", report) || []).filter((action) => action && action.label && typeof action.run === "function")
@@ -2978,7 +2979,15 @@
         ]));
       });
 
-      const difficulties = report.byDifficulty.filter((row) => row.scored > 0);
+      const tieredSections = scoredSections.filter((row) => Core.supportsDifficulty(row.sectionKey));
+      // A combined tier total cannot separate verified editorial labels from
+      // unverified ones. Only show it when every scored section supports it.
+      const difficulties = tieredSections.length === scoredSections.length
+        ? report.byDifficulty.filter((row) => row.scored > 0) : [];
+      if (tieredSections.length < scoredSections.length) {
+        children.push(h("p", { className: "lm-report-note", text:
+          "Difficulty labels in the ACT banks are unverified, so ACT results show accuracy without difficulty breakdowns." }));
+      }
       if (difficulties.length) {
         children.push(h("section", { className: "lm-report-section" }, [
           h("h3", { text: "By difficulty" }),
@@ -3009,7 +3018,9 @@
         ]),
       ]));
 
-      const columns = ["Question", "Your answer", "Correct answer", "Result", "Marked", "Domain", "Skill", "Difficulty"];
+      const showDifficulty = tieredSections.length > 0;
+      const columns = ["Question", "Your answer", "Correct answer", "Result", "Marked", "Domain", "Skill"];
+      if (showDifficulty) columns.push("Difficulty");
       children.push(h("section", { className: "lm-report-section" }, [
         h("h3", { text: "Question by question" }),
         h("table", { className: "lm-table lm-items-table" }, [
@@ -3039,7 +3050,8 @@
               h("td", { "data-label": columns[4], text: item.marked ? "Marked" : "—" }),
               h("td", { "data-label": columns[5], text: item.question.domain || "" }),
               h("td", { "data-label": columns[6], text: item.question.skill || "" }),
-              h("td", { "data-label": columns[7], text: item.question.difficulty || "" }),
+              showDifficulty ? h("td", { "data-label": columns[7],
+                text: Core.supportsDifficulty(item.question.sectionKey) ? item.question.difficulty || "" : "—" }) : null,
             ]);
           })),
         ]),

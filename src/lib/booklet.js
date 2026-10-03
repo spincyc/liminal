@@ -445,7 +445,7 @@ function keyParts(model, render) {
         <h4>${item.number}. Correct answer: ${
           item.correctLetter || escapeHtml(String(q.correctAnswer))
         }</h4>
-        <p class="tag">${escapeHtml(q.domain)} · ${escapeHtml(q.skill)} · ${escapeHtml(q.difficulty)} · ${escapeHtml(q.id)}</p>
+        <p class="tag">${[q.domain, q.skill, core.supportsDifficulty(q.sectionKey) ? q.difficulty : null, q.id].filter(Boolean).map(escapeHtml).join(" · ")}</p>
         ${rich ? `<div>${text(q.explanation)}</div>` : `<p>${text(q.explanation)}</p>`}
         ${steps ? `<ol>${steps}</ol>` : ""}
         ${traps ? `<p class="tag">Why the others fail</p><ul>${traps}</ul>` : ""}
@@ -596,6 +596,11 @@ const TEX_UNICODE = [
   ["\u00B3", "\\textsuperscript{3}"],
   ["\u2075", "\\textsuperscript{5}"],
   ["\u2076", "\\textsuperscript{6}"],
+  ["\u2082", "\\textsubscript{2}"],
+  ["\u2083", "\\textsubscript{3}"],
+  ["\u2084", "\\textsubscript{4}"],
+  ["\u27E8", "$\\langle$"],
+  ["\u27E9", "$\\rangle$"],
   ["\u2192", "$\\rightarrow$"],
   ["\u2022", "\\textbullet{}"],
   ["\u00B7", "$\\cdot$"],

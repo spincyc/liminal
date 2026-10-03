@@ -114,6 +114,9 @@ storage on the device you practice on, so it survives closing the tab and
 returning later. It does not follow you between devices and is lost if you
 clear the site's data, so the Progress page can download it as a file and
 restore it on another browser.
+That file excludes unfinished sets, tests and essay drafts. Writing history
+keeps completion only, including when older progress is restored; download
+essay text separately before closing its report.
 
 ## Project layout
 

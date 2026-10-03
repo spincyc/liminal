@@ -125,9 +125,13 @@
       if (typeof settings.onError === "function") settings.onError(error, slot);
     };
 
+    function readChecked(slot) {
+      return parse(storage.getItem(KEYS[checkSlot(slot)]));
+    }
+
     function read(slot) {
       try {
-        return parse(storage.getItem(KEYS[checkSlot(slot)]));
+        return readChecked(slot);
       } catch (error) {
         return null;
       }
@@ -136,8 +140,10 @@
     function remove(slot) {
       try {
         storage.removeItem(KEYS[slot]);
+        return true;
       } catch (error) {
         report(error, slot);
+        return false;
       }
     }
 
@@ -145,10 +151,12 @@
     // "saved", "taken" (another set or test holds the slot), or "failed".
     function store(slot, value, owner) {
       checkSlot(slot);
-      const current = read(slot);
-      const holder = ownerOf(current);
-      if (current && owner && holder && holder !== String(owner)) return "taken";
       try {
+        // An unreadable slot is not evidence that it is empty. Preserve its
+        // owner and contents until storage can be read again.
+        const current = readChecked(slot);
+        const holder = ownerOf(current);
+        if (current && owner && holder && holder !== String(owner)) return "taken";
         storage.setItem(KEYS[slot], JSON.stringify(value));
         return "saved";
       } catch (error) {
@@ -161,11 +169,15 @@
     function clear(slot, owner) {
       checkSlot(slot);
       if (owner) {
-        const holder = ownerOf(read(slot));
-        if (holder && holder !== String(owner)) return false;
+        try {
+          const holder = ownerOf(readChecked(slot));
+          if (holder && holder !== String(owner)) return false;
+        } catch (error) {
+          report(error, slot);
+          return false;
+        }
       }
-      remove(slot);
-      return true;
+      return remove(slot);
     }
 
     // A test saved in the set slot (before tests had their own) moves to
@@ -173,16 +185,15 @@
     function migrate() {
       const old = read("set");
       if (!old || slotOf(old) !== "test") return false;
-      if (!read("test")) {
-        try {
+      try {
+        if (!readChecked("test")) {
           storage.setItem(KEYS.test, JSON.stringify(old));
-        } catch (error) {
-          report(error, "test");
-          return false;
         }
+      } catch (error) {
+        report(error, "test");
+        return false;
       }
-      remove("set");
-      return true;
+      return remove("set");
     }
 
     return {

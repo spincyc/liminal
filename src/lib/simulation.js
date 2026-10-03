@@ -374,7 +374,7 @@
       (step.type === "module" && Modules.SECTIONS[step.sectionKey] &&
         (MODULE_KEYS.includes(step.module) || step.module === ROUTED))));
     if (!stepsOk) return null;
-    const index = Number(saved.index);
+    const index = saved.index;
     if (!Number.isInteger(index) || index < 0 || index > saved.steps.length) return null;
     if (!Array.isArray(saved.modules) || !isObject(saved.routes)) return null;
     if (!saved.modules.every((entry) => validModuleRecord(entry, saved.steps, index))) return null;

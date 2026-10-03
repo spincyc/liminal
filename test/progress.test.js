@@ -497,6 +497,20 @@ test("migration and merging keep one first answer, including after older attempt
   assert.equal(Progress.markRepeats(retained), retained, "a pruned predecessor does not turn a repeat into a first answer");
 });
 
+test("old Writing records keep completion without draft text or scored outcomes", () => {
+  const writing = { id: "essay", questionId: "act-writing-0001", response: "Private essay", correct: false, timestamp: 1 };
+  const normalized = Progress.normalize(Object.assign(Progress.empty(), { attempts: [writing,
+    { ...writing, id: "blank", questionId: "act-writing-0002", response: "", answered: false },
+    { ...writing, id: "math", questionId: "act-mathematics-0001", response: 2, answered: true },
+  ] }));
+  assert.deepEqual(normalized.attempts.map((entry) => [entry.answered, entry.correct, entry.response]),
+    [[true, null, "[local essay draft]"], [false, null, null], [true, false, 2]]);
+  assert.equal(writing.response, "Private essay");
+  const migrated = Progress.migrate({ version: 2, attempts: [writing] });
+  assert.equal(migrated.attempts[0].response, "[local essay draft]");
+  assert.equal(Progress.stats(migrated.attempts).attempted, 0);
+});
+
 test("essay summaries keep question counts without adding a scored answer", () => {
   const session = Progress.summarizeSession({ id: "essay" }, [{
     question: { id: "act-writing-0001", sectionKey: "act-writing", responseType: "essay", difficulty: "Hard" },

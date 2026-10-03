@@ -95,6 +95,46 @@ test("a failed write is reported, not thrown", () => {
   assert.deepEqual(heard, [["set", "QuotaExceededError"]]);
 });
 
+test("a failed ownership read cannot overwrite or clear another tab's saved work", () => {
+  const storage = memory();
+  const successor = { config: { sessionId: "new" }, state: { n: 2 } };
+  storage.setItem(Store.KEYS.set, JSON.stringify(successor));
+  const read = storage.getItem;
+  storage.getItem = () => { throw new Error("read blocked"); };
+  const heard = [];
+  const slots = Store.create(storage, { onError: (error, slot) => heard.push([slot, error.message]) });
+  assert.equal(slots.store("set", { config: { sessionId: "old" }, state: { n: 1 } }, "old"), "failed");
+  assert.equal(slots.clear("set", "old"), false);
+  assert.equal(storage.data.get(Store.KEYS.set), JSON.stringify(successor));
+  assert.deepEqual(heard, [["set", "read blocked"], ["set", "read blocked"]]);
+  storage.getItem = read;
+  assert.equal(slots.store("set", successor, "old"), "taken");
+  assert.equal(slots.store("set", successor, "new"), "saved");
+});
+
+test("failed migration reads and removals preserve saved work and report failure", () => {
+  const storage = memory();
+  const old = savedTest("old");
+  const successor = savedTest("new");
+  storage.setItem(Store.KEYS.set, JSON.stringify(old));
+  storage.setItem(Store.KEYS.test, JSON.stringify(successor));
+  const read = storage.getItem;
+  storage.getItem = (key) => {
+    if (key === Store.KEYS.test) throw new Error("read blocked");
+    return read(key);
+  };
+  const slots = Store.create(storage);
+  assert.equal(slots.migrate(), false);
+  assert.equal(storage.data.get(Store.KEYS.set), JSON.stringify(old));
+  assert.equal(storage.data.get(Store.KEYS.test), JSON.stringify(successor));
+  storage.getItem = read;
+  storage.removeItem = () => { throw new Error("remove blocked"); };
+  assert.equal(slots.clear("test", "new"), false);
+  assert.equal(slots.clear("test"), false);
+  assert.equal(slots.migrate(), false);
+  assert.deepEqual(slots.all(), { set: old, test: successor });
+});
+
 test("a test saved in the old shared slot moves to its own", () => {
   const storage = memory();
   const old = savedTest("t-old");
@@ -117,6 +157,19 @@ test("unreadable values are treated as empty", () => {
   const slots = Store.create(storage);
   assert.deepEqual(slots.all(), { set: null, test: null });
   assert.equal(Store.parse(JSON.stringify([1, 2])), null);
+});
+
+test("malformed question snapshots cannot crash a saved-work banner or discard", () => {
+  const storage = memory();
+  const session = Engine.create({ questions: [question("a")], now: () => 1 });
+  const saved = savedSet(session, "s", 1, true);
+  saved.state.session.questions = [null];
+  storage.setItem(Store.KEYS.set, JSON.stringify(saved));
+  const slots = Store.create(storage);
+  assert.equal(Store.restoreScreen(slots.load("set"), 2), null);
+  assert.equal(Store.summary(slots.load("set"), 2).total, 0);
+  assert.equal(Store.discardResult(slots.load("set"), 2), null);
+  assert.equal(storage.getItem(Store.KEYS.set), JSON.stringify(saved), "inspection never deletes the original save");
 });
 
 test("a saved set's summary and discard follow the engine's discard rule", () => {

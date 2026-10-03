@@ -16,6 +16,19 @@ const rwRegistry = require("../content/templates/sat-reading-writing.json");
 
 const section = (key) => catalog.sections.find((entry) => entry.key === key);
 
+test("pacing retains ACT section totals without unverified difficulty breakdowns", () => {
+  const base = { source: "bank", correct: true, repeat: false, timeMs: 60000, difficulty: "Hard" };
+  const attempts = [
+    { ...base, questionId: "act-mathematics-0001", sectionKey: "act-mathematics" },
+    { ...base, source: "template", questionId: "sat-math:a:1", sectionKey: "sat-math" },
+  ];
+  const result = Analytics.pacing(attempts);
+  assert.equal(result.timed, 2);
+  assert.deepEqual(result.sections.map((row) => [row.sectionKey, row.count, row.median]),
+    [["act-mathematics", 1, 60], ["sat-math", 1, 60]]);
+  assert.deepEqual(result.tiers.map((row) => row.sectionKey), ["sat-math"]);
+});
+
 // A small catalog: two Algebra skills and one Geometry skill.
 const SECTIONS = [{
   key: "sat-math",
