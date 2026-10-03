@@ -112,6 +112,38 @@ test("a recovered progress save does not hide an unsaved set", () => {
   assert.equal(env.warningVisible(), false);
 });
 
+test("a failed progress clear warns until a successful retry, without hiding other save failures", () => {
+  const env = fixture();
+  assert.equal(env.saveProgress().ok, true);
+  const original = env.values.get(Progress.STORAGE_KEY);
+  env.failures.add(Progress.STORAGE_KEY);
+  assert.equal(env.ctx.clearProgress().ok, false);
+  assert.equal(env.values.get(Progress.STORAGE_KEY), original);
+  assert.equal(env.warningVisible(), true);
+  assert.match(env.nodes.storageWarningText.textContent, /could not save your progress/);
+  env.failures.add(SessionStore.KEYS.set);
+  env.saveSet();
+  env.failures.delete(Progress.STORAGE_KEY);
+  assert.equal(env.ctx.clearProgress().ok, true);
+  assert.equal(env.warningVisible(), true);
+  assert.match(env.nodes.storageWarningText.textContent, /could not save your unfinished set/);
+  env.failures.delete(SessionStore.KEYS.set);
+  env.saveSet();
+  assert.equal(env.warningVisible(), false);
+});
+
+for (const observesReplacement of [false, true]) test(`a discarded set stays ended after replacement finishes (idle=${!observesReplacement})`, () => {
+  const env = fixture();
+  env.saveSet();
+  const old = JSON.parse(env.values.get(SessionStore.KEYS.set));
+  env.values.set(SessionStore.KEYS.set, JSON.stringify({ config: { sessionId: "replacement" }, state: {} }));
+  if (observesReplacement) env.saveSet();
+  assert.equal(JSON.parse(env.values.get(SessionStore.KEYS.set)).config.sessionId, "replacement");
+  env.values.delete(SessionStore.KEYS.set);
+  env.saveSet();
+  assert.equal(env.values.has(SessionStore.KEYS.set), false, `the discarded ${old.config.sessionId} must not return`);
+});
+
 const question = {
   id: "sat-math:resume-fixture:1", templateId: "resume-fixture", templateVersion: 1,
   sectionKey: "sat-math", test: "SAT", section: "Math", responseType: "multiple-choice",
@@ -140,6 +172,17 @@ function savedTest(done = false) {
   if (done) saved.state = null;
   return saved;
 }
+
+for (const slot of ["set", "test"]) test(`a resumed ${slot} cannot autosave after the same session completes elsewhere`, async () => {
+  const env = fixture();
+  env.values.set(SessionStore.KEYS[slot], JSON.stringify(slot === "set" ? savedSet() : savedTest()));
+  assert.equal(await env.ctx.resume(slot), null);
+  // Another tab finishes before this newly resumed screen's first save.
+  env.values.delete(SessionStore.KEYS[slot]);
+  env.screen.onSave(env.screen.resume);
+  env.screen.onSave(env.screen.resume);
+  assert.equal(env.values.has(SessionStore.KEYS[slot]), false);
+});
 
 for (const slot of ["set", "test"]) test(`a transient ${slot} screen failure preserves the saved snapshot for retry`, async () => {
   const env = fixture();

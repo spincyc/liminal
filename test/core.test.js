@@ -452,3 +452,32 @@ test("sections that share passages are drawn as whole passages", () => {
   assert.deepEqual([...new Set(avoided.map((question) => question.passageId))], ["p3"], "recently served passages come last");
   assert.ok(new Set(core.buildSession(bank, 6, "seed").map((question) => question.passageId)).size >= 2);
 });
+
+test("Science practice rotates through every passage and question at ordinary set sizes", () => {
+  const bank = require("../tools/lib/content").hydrateBank("act-science").filter(core.questionAvailable);
+  const inventory = bank.map((question) => question.id).sort();
+  for (const count of [10, 20]) {
+    const reached = new Set();
+    for (let seed = 0; seed < 100; seed += 1) {
+      const picked = core.buildSession(bank, count, `cold-${seed}`);
+      assert.equal(picked.length, count);
+      assert.equal(new Set(picked.map((question) => question.id)).size, count);
+      picked.forEach((question) => reached.add(question.id));
+    }
+    assert.deepEqual([...reached].sort(), inventory,
+      `${count}-question practice must not exclude longer research or viewpoint sets`);
+  }
+});
+
+test("Science practice prefers fresh passages even when only recent sets fit the count exactly", () => {
+  const bank = require("../tools/lib/content").hydrateBank("act-science").filter(core.questionAvailable);
+  const avoidIds = bank.filter((question) => question.stimulus.type === "data-representation")
+    .map((question) => question.id);
+  const avoided = new Set(avoidIds);
+  for (const count of [10, 20]) {
+    const picked = core.buildSession(bank, count, "cold-repeat", { avoidIds });
+    assert.equal(picked.length, count);
+    assert.equal(picked.filter((question) => avoided.has(question.id)).length, 0,
+      "fresh research and viewpoint questions must precede recently served data sets");
+  }
+});

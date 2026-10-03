@@ -8,8 +8,12 @@ const IO = require("../src/lib/progress-io");
 function memoryStorage() {
   const map = new Map();
   return {
+    full: false,
     getItem: (key) => (map.has(key) ? map.get(key) : null),
-    setItem: (key, value) => map.set(key, String(value)),
+    setItem(key, value) {
+      if (this.full) throw new Error("QuotaExceededError");
+      map.set(key, String(value));
+    },
     removeItem: (key) => map.delete(key),
   };
 }
@@ -70,6 +74,31 @@ test("an export round-trips through the file", () => {
   assert.deepEqual(parsed.info.tests, { SAT: 2, ACT: 0 });
   assert.deepEqual([parsed.info.firstAt, parsed.info.lastAt], [1000, 2000]);
   assert.equal(parsed.info.exportedAt, payload.exportedAt);
+});
+
+test("downloading after failed saves exports the latest additions and removals", () => {
+  const storage = memoryStorage();
+  const store = Progress.createStore(storage);
+  store.update((progress) => Object.assign({}, progress, Progress.normalize(record()), { epoch: progress.epoch }));
+  storage.full = true;
+  store.update((progress) => {
+    progress = Progress.setMarks(progress, { "sat-math:linear-equation-solve:a1": true,
+      "sat-math:linear-equation-solve:a2": false });
+    progress = Progress.setPlan(progress, { testDate: undefined, weeklyQuestions: 90 }, "ACT");
+    progress = Progress.removeOfficialScore(progress, "o1");
+    progress = Progress.addOfficialScore(progress, { id: "new", date: "2026-10-03", kind: "practice", math: 650 });
+    progress = Progress.tagError(progress, "a2", null);
+    return Progress.tagError(progress, "a1", { reason: "time" }, 1);
+  });
+  // The Download action refreshes before handing the record to exportFile.
+  const exported = IO.parseImport(IO.exportFile(store.refresh(), 1).text);
+  assert.equal(exported.ok, true);
+  assert.deepEqual(exported.progress.marked, ["sat-math:linear-equation-solve:a1"]);
+  assert.deepEqual(exported.progress.plan, { SAT: { testDate: "2026-11-07", weeklyQuestions: 120 },
+    ACT: { weeklyQuestions: 90 } });
+  assert.deepEqual(exported.progress.officialScores.map((score) => [score.id, score.math]), [["new", 650]]);
+  assert.deepEqual(exported.progress.errorLog, { a1: { reason: "time", at: 1 } });
+  assert.equal(store.saved(), false, "an export does not claim browser storage recovered");
 });
 
 test("foreign, empty, and newer files are refused with a reason", () => {
@@ -252,6 +281,46 @@ test("replacing takes a new epoch, so another tab's older copy does not come bac
   tabB.update((progress) => Progress.setMarked(progress, "x", true));
   assert.deepEqual(Progress.load(storage).progress.attempts.map((entry) => entry.id), ["a1", "a2"]);
   assert.notEqual(IO.replaceWith(imported).epoch, imported.epoch);
+});
+
+test("a failed replacement survives reads of the unchanged old epoch and can be retried", () => {
+  const storage = memoryStorage();
+  const store = Progress.createStore(storage, { epoch: "old" });
+  store.update((progress) => Progress.recordAttempts(progress, [attempt("old")]));
+  const imported = IO.parseImport(JSON.stringify(record())).progress;
+  const expected = Object.assign({}, imported, { epoch: "replacement" });
+  storage.full = true;
+  let replacements = 0;
+  assert.equal(store.update(() => {
+    replacements += 1;
+    return IO.replaceWith(imported, "replacement");
+  }).ok, false);
+  const fresh = store.refresh();
+  assert.equal(fresh.epoch, "replacement");
+  assert.deepEqual(fresh.attempts.map((entry) => entry.id), ["a1", "a2"]);
+  assert.deepEqual(IO.parseImport(IO.exportFile(store.refresh(), 1).text).progress, expected);
+  assert.equal(Progress.load(storage).progress.epoch, "old", "the failed save did not replace storage");
+  storage.full = false;
+  assert.equal(store.update().ok, true);
+  assert.equal(replacements, 1);
+  assert.deepEqual(Progress.load(storage).progress, expected);
+});
+
+test("a different saved epoch supersedes an unsaved replacement", () => {
+  const storage = memoryStorage();
+  const localStorage = Object.assign({}, storage);
+  const local = Progress.createStore(localStorage, { epoch: "old" });
+  local.update((progress) => Progress.recordAttempts(progress, [attempt("old")]));
+  const remote = Progress.createStore(storage);
+  localStorage.full = true;
+  local.update(() => IO.replaceWith(Progress.normalize(record()), "local-replacement"));
+  remote.update(() => IO.replaceWith(Progress.empty(), "remote-replacement"));
+  assert.equal(local.refresh().epoch, "remote-replacement");
+  assert.deepEqual(local.get().attempts, []);
+  localStorage.full = false;
+  local.update();
+  assert.equal(Progress.load(storage).progress.epoch, "remote-replacement");
+  assert.deepEqual(Progress.load(storage).progress.attempts, []);
 });
 
 test("importing another device's answer to the same question does not count it twice", () => {

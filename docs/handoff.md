@@ -20,6 +20,14 @@ reproduced and repaired additional runtime and reporting defects. The subsequent
 replaces the withdrawn Science inventory. Its verification is recorded separately
 from the earlier release evidence above.
 
+A subsequent [runtime cold review](reviews/2026-10-03-runtime-cold-review.md)
+started from `306d4e0` and reproduced six bounded runtime defects. The Science
+practice, progress-storage, session-lifecycle and shell/report-recovery repairs
+passed focused checks, a complete gate and native rechecks. Three report-recovery
+regressions found during integration review are also repaired and pass those
+checks. The final independent cold review found no actionable defect in the
+completed repair set; that record states its coverage and limits.
+
 ## Ranked outstanding work
 
 P1 denotes a substantial missing capability or missing evidence of instructional
@@ -118,6 +126,15 @@ failures, and prevent distinct imported answers from being lost to ID collisions
 Older imported Writing responses are reduced to completion metadata. These repairs do
 not make unfinished sessions portable.
 
+The runtime review additionally preserves unsaved mutable progress edits through
+refresh and export, reports failed clearing truthfully, and prevents a previously
+loaded or saved session owner from reclaiming its cleared slot. Focused regressions
+and the integrated gate pass; the final state review found no actionable defect.
+Native rechecks also prevent same-owner session resurrection. The final
+independent review accepted the complete repair set, as recorded in the
+[runtime review](reviews/2026-10-03-runtime-cold-review.md). These guards do not
+provide atomic multi-tab transactions.
+
 Entry points: [progress I/O](../src/lib/progress-io.js), [session
 store](../src/lib/session-store.js), [draft behavior](../README.md).
 
@@ -162,6 +179,16 @@ dark mode and a 171-question browser PDF. Complementary Science forms covered al
 This adds native evidence for those flows, while concurrent tabs, assistive
 technology, other browser engines and OS-level printing remain unverified.
 
+The subsequent runtime review reproduced storage failures, report/startup recovery
+failures and stale-session resurrection, including a native two-window case where
+both windows had resumed the same owner. Its Chromium probes used local files,
+not HTTP. Native rechecks passed 27 flows plus confirmation and failed-resume
+scenarios for the three additional report-recovery defects found during
+integration review. This does not close the broader concurrency or
+network-coverage gap. The final clean review disposition and evidence limits
+are recorded in the
+[runtime review](reviews/2026-10-03-runtime-cold-review.md).
+
 Evidence: [review coverage](reviews/2026-10-02-cold-review.md), [browser
 regressions](../test/browser-review.test.js), [session-store
 tests](../test/session-store.test.js).
@@ -173,10 +200,14 @@ fetched remote refs contain neither branch. Before deleting the workspace, decid
 whether to retain/publish/archive or explicitly discard them. Their old passing checks
 are not current acceptance.
 
-| Branch | WIP commit / base | Proposal and unfinished work |
+| Branch | WIP commit / earlier baseline | Proposal and unfinished work |
 | --- | --- | --- |
 | `lane/platform` | `ba6c6ba` / `cbb7e6f` | Retire SAT banks, split core, add recording helper and report drift check; recording tests unfinished, no independent/browser acceptance |
 | `lane/act-math` | `0e4ad3a` / `b68714f` | 63 ACT Math templates and plumbing; independent solvers unfinished, not reviewed or served |
+
+The table names the earlier proposal baselines, not necessarily each WIP commit's
+immediate parent: `ba6c6ba` has parent `83783d2`. These proposals remain untouched
+and unmerged by the runtime cold review.
 
 Use `git worktree list` and `git show <commit>` to inspect them. Compare each proposal
 with the repaired release and selectively reconcile useful work on the workspace branch.
@@ -216,11 +247,19 @@ Full Science forms keep seven complete passage sets. The
 [rebuild review](reviews/2026-10-03-science-rebuild.md) records admission,
 browser and print evidence, and the remaining human-review and calibration limits.
 
+The runtime cold review found that exact whole-set matching in ordinary 10- and
+20-question Science practice excluded all six-question sets, leaving only 20 of
+the 80 active questions reachable. Practice now follows seeded passage order and
+recency, shortening only the final set while retaining its complete passage.
+Both practice sizes reach all 80 questions and 14 passages over 100 seeds; full
+and mini form selections remain unchanged across 100 seeds. See the
+[runtime review](reviews/2026-10-03-runtime-cold-review.md) for regression evidence.
+
 The former item 9, mathematical-structure collisions in difficulty diagnostics, is
 repaired. The signature retains operators, grouping and numeric positions while
 normalizing numerical variants. The named compound/absolute-value inequality collision
-is covered by regressions; `node tools/check-difficulty.js --strict` now passes all four
-available banks. This heuristic result does not calibrate their difficulty or make ACT
+is covered by regressions; `node tools/check-difficulty.js --strict` now passes all five
+available ACT banks. This heuristic result does not calibrate their difficulty or make ACT
 tiers suitable for practice. The [follow-up review](reviews/2026-10-03-handoff-review.md)
 records the other repairs and verification limits.
 

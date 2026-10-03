@@ -289,16 +289,10 @@
     // passages; splitting fresh/old questions would repeat the same context.
     const order = groups.filter((items) => !items.some((question) => avoid.has(question.id)))
       .concat(groups.filter((items) => items.some((question) => avoid.has(question.id))));
-    if (settings.preferWholeSets) {
-      const combinations = new Map([[0, []]]);
-      for (const items of order) {
-        for (const [size, picked] of [...combinations]) {
-          const next = size + items.length;
-          if (next <= count && !combinations.has(next)) combinations.set(next, picked.concat([items]));
-        }
-        if (combinations.has(count)) return combinations.get(count).flat();
-      }
-    }
+    // Keep the seeded/recency order even when the last set must be shortened.
+    // Exact whole-set matching can exclude entire passage types whose sizes
+    // cannot add up to a common practice count (such as six-item sets at 20).
+    // Full Science forms use drawScienceForm's separate complete-set blueprint.
     const chosen = [];
     for (const items of order) {
       if (chosen.length >= count) break;
@@ -799,8 +793,8 @@
   // template families, so refreshing the page does not recycle the same items
   // and one family cannot dominate. Both constraints relax rather than fail
   // when the filtered pool is too small to honour them. With
-  // `options.passageSets`, a pool whose questions share passages is drawn as
-  // whole passages instead (drawPassageSets), as a timed set should be.
+  // `options.passageSets` (and always for Science), shared passages stay
+  // together; only the final set may be shortened to fit the requested count.
   function buildSession(questions, count, seed, options) {
     requireAvailable(questions.map((question) => question.sectionKey));
     questions = questions.filter(questionAvailable);
@@ -810,10 +804,10 @@
       ? questions.length
       : Math.max(1, Number(count) || 10);
 
-    // `passageSets`: whole passages, recently served ones last.
+    // `passageSets`: grouped passages, recently served ones last.
     const science = questions.length > 0 && questions.every((question) => question.sectionKey === "act-science");
     if ((settings.passageSets || science) && sharesPassages(questions)) {
-      return drawPassageSets(questions, target, seed, { avoidIds: settings.avoidIds, preferWholeSets: science });
+      return drawPassageSets(questions, target, seed, { avoidIds: settings.avoidIds });
     }
 
     const shuffled = deterministicShuffle(questions, seed);

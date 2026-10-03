@@ -58,6 +58,17 @@ function dom() {
       if (!parent) return;
       nodes.forEach((node) => { node.remove(); parent.childNodes.splice(parent.childNodes.indexOf(this), 0, node); node.parentNode = parent; });
     }
+    after(...nodes) {
+      const parent = this.parentNode;
+      if (!parent) return;
+      let previous = this;
+      nodes.forEach((node) => {
+        node.remove();
+        parent.childNodes.splice(parent.childNodes.indexOf(previous) + 1, 0, node);
+        node.parentNode = parent;
+        previous = node;
+      });
+    }
     append(...nodes) { nodes.forEach((node) => this.appendChild(typeof node === "string" ? new Text(node) : node)); }
     replaceChildren(...nodes) { this.childNodes.forEach((node) => { node.parentNode = null; }); this.childNodes = []; this.append(...nodes); }
     setAttribute(name, value) {
@@ -278,6 +289,50 @@ test("blocked storage gives a persistent warning even after successful in-memory
 
 test("available storage does not show the temporary-memory warning", () => {
   const { document } = appFixture();
+  assert.equal(document.getElementById("storageWarning").classList.contains("hidden"), true);
+});
+
+test("the Progress clear button reports a failed clear honestly and permits a successful retry", () => {
+  const env = appFixture();
+  const { document, window, ctx } = env;
+  window.LiminalAnalytics = require("../src/lib/analytics");
+  window.LiminalProgressIO = require("../src/lib/progress-io");
+  const add = (parent, tag, id) => {
+    const element = document.createElement(tag);
+    element.id = id;
+    parent.append(element);
+    return element;
+  };
+  const dashboard = add(document.body, "section", "dashboardView");
+  add(dashboard, "div", "progressHeading").className = "page-head";
+  for (const id of ["dashboardStats", "dashboardNotes"]) add(dashboard, "div", id);
+  const mastery = add(dashboard, "section", "masteryCard");
+  for (const id of ["skillTableWrap", "masteryHeading", "masterySection", "masterySort", "masteryNote"]) add(mastery, "div", id);
+  const danger = add(dashboard, "section", "dangerZone");
+  add(danger, "p", "clearNote");
+  const clear = add(danger, "button", "clearProgressBtn");
+  env.load("views/progress.js");
+  window.LiminalViews.progress(ctx);
+  const status = danger.querySelector('[role="status"]');
+  ctx.update((progress) => window.LiminalProgress.setMarked(progress, "act-english-0001", true));
+  const key = window.LiminalProgress.STORAGE_KEY;
+  const original = window.localStorage.getItem(key);
+  const write = window.localStorage.setItem;
+  window.localStorage.setItem = () => { throw new Error("write blocked"); };
+  clear.click();
+  assert.match(status.textContent, /Download your progress first/);
+  clear.click();
+  assert.match(status.textContent, /could not clear all saved progress/);
+  assert.equal(status.classList.contains("error"), true);
+  assert.equal(window.localStorage.getItem(key), original);
+  assert.equal(document.getElementById("storageWarning").classList.contains("hidden"), false);
+  assert.equal(clear.textContent, "Clear all saved progress");
+  window.localStorage.setItem = write;
+  clear.click();
+  clear.click();
+  assert.equal(status.textContent, "All saved progress was cleared.");
+  assert.equal(status.classList.contains("success"), true);
+  assert.equal(window.LiminalProgress.load(window.localStorage).progress.marked.length, 0);
   assert.equal(document.getElementById("storageWarning").classList.contains("hidden"), true);
 });
 

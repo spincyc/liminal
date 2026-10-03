@@ -423,9 +423,9 @@
   // What another tab stored (`stored`) plus what this tab holds (`local`).
   // Attempts and sessions are append-only, so they are unioned by id; history
   // only grows, so it takes the larger of each value. Marks, the error log's
-  // existing entries, the plan, and official scores come from storage: every
-  // change to them is applied to a fresh read, so storage already has this
-  // tab's changes.
+  // existing entries, the plan, and official scores come from storage.
+  // createStore overlays only this tab's pending edits after a failed save,
+  // so a stale copy cannot resurrect another tab's deletions.
   // A different epoch means the record was cleared since this tab read it,
   // and the clear wins.
   function merge(stored, local) {
@@ -446,35 +446,103 @@
     const first = load(storage, settings);
     let current = first.progress;
     let lastSaveOk = true;
-    const pendingTags = new Map();
-    if (first.migrated) lastSaveOk = save(storage, current).ok;
+    let observedEpoch = first.readable && !first.absent ? current.epoch : null;
+    let pendingReplacement = false;
+    const pending = Object.fromEntries(["marked", "errorLog", "officialScores", ...PLAN_TESTS]
+      .map((field) => [field, new Map()]));
+    const clearPending = () => Object.values(pending).forEach((edits) => edits.clear());
+    if (first.migrated) {
+      const result = save(storage, current);
+      current = result.progress;
+      lastSaveOk = result.ok;
+    }
+
+    // Snapshot values before calling the mutator. Retry values by key, never
+    // the callback: it may allocate IDs, serve questions, or have side effects.
+    // Plans track each test's fields separately so concurrent date and goal
+    // edits do not overwrite each other. Undefined records a removal.
+    function mutableEntries(progress) {
+      const fields = {
+        marked: Object.fromEntries(progress.marked.map((id) => [id, true])),
+        errorLog: progress.errorLog,
+        officialScores: Object.fromEntries(progress.officialScores.map((score) => [score.id, score])),
+        SAT: planFor(progress, "SAT"),
+        ACT: planFor(progress, "ACT"),
+      };
+      return Object.fromEntries(Object.entries(fields).map(([field, values]) => [field,
+        new Map(Object.entries(values).map(([id, value]) => [id, JSON.stringify(value)]))]));
+    }
+
+    function applyPending(base) {
+      if (!Object.values(pending).some((edits) => edits.size)) return base;
+      const fields = mutableEntries(base);
+      const result = Object.assign({}, base, { plan: Object.assign({}, base.plan) });
+      Object.entries(pending).forEach(([field, edits]) => {
+        if (!edits.size) return;
+        const entries = fields[field];
+        edits.forEach((value, id) => {
+          if (value === undefined) entries.delete(id);
+          else entries.set(id, value);
+        });
+        if (field === "marked") result.marked = [...entries.keys()];
+        else if (field === "officialScores") {
+          result.officialScores = [...entries.values()].map((value) => JSON.parse(value))
+            .sort(byScoreDate).slice(-LIMITS.officialScores);
+        } else {
+          const values = Object.fromEntries([...entries].filter(([, value]) => value !== undefined)
+            .map(([id, value]) => [id, JSON.parse(value)]));
+          if (field === "errorLog") result.errorLog = values;
+          else if (Object.keys(values).length) result.plan[field] = values;
+          else delete result.plan[field];
+        }
+      });
+      return result;
+    }
 
     function refreshed() {
-      const fresh = load(storage, settings);
+      // A v2 migration has no stored epoch yet; reuse its initial one until
+      // it saves, instead of mistaking each migration read for a clear.
+      const fresh = load(storage, Object.assign({}, settings, { epoch: observedEpoch || current.epoch }));
       const readable = fresh.readable && !fresh.absent;
-      if (readable && fresh.progress.epoch !== current.epoch) pendingTags.clear();
-      const base = readable ? merge(fresh.progress, current) : current;
-      if (!pendingTags.size) return base;
-      const errorLog = Object.assign({}, base.errorLog);
-      pendingTags.forEach((tag, id) => {
-        if (tag === undefined) delete errorLog[id];
-        else errorLog[id] = tag;
-      });
-      return Object.assign({}, base, { errorLog });
+      if (readable) {
+        if (observedEpoch !== null && fresh.progress.epoch !== observedEpoch) {
+          clearPending();
+          pendingReplacement = false;
+          observedEpoch = fresh.progress.epoch;
+          return fresh.progress;
+        }
+        if (observedEpoch === null) {
+          // The first successful read establishes the epoch. An earlier
+          // absent/blocked read cannot establish that another tab cleared.
+          observedEpoch = fresh.progress.epoch;
+          if (!pendingReplacement) current = Object.assign({}, current, { epoch: observedEpoch });
+        }
+      }
+      // A failed import replacement has its own new epoch, but storage still
+      // holds the original one. Only a genuinely changed stored epoch wins.
+      if (pendingReplacement) return current;
+      return applyPending(readable ? merge(fresh.progress, current) : current);
     }
 
     function update(change) {
       const base = refreshed();
+      const baseEpoch = base.epoch;
+      const before = mutableEntries(base);
       const changed = typeof change === "function" ? change(base) || base : base;
       const result = save(storage, changed);
-      if (result.ok) pendingTags.clear();
-      else {
-        // Retry this tab's unsaved tag edits, without bringing back tags
-        // another tab deleted from a successfully saved record.
-        new Set(Object.keys(base.errorLog).concat(Object.keys(changed.errorLog))).forEach((id) => {
-          if (JSON.stringify(base.errorLog[id]) !== JSON.stringify(changed.errorLog[id])) {
-            pendingTags.set(id, changed.errorLog[id]);
-          }
+      if (result.ok) {
+        clearPending();
+        pendingReplacement = false;
+        observedEpoch = result.progress.epoch;
+      } else if (changed.epoch !== baseEpoch) {
+        clearPending();
+        pendingReplacement = true;
+      } else if (!pendingReplacement) {
+        const after = mutableEntries(changed);
+        Object.entries(pending).forEach(([field, edits]) => {
+          new Set([...before[field].keys(), ...after[field].keys()]).forEach((id) => {
+            if (before[field].get(id) !== after[field].get(id)) edits.set(id, after[field].get(id));
+          });
         });
       }
       current = result.progress;
@@ -493,15 +561,22 @@
       },
       // The student asked for everything to go, so the v2 backup goes too.
       clear() {
-        pendingTags.clear();
+        current = refreshed();
         const result = save(storage, empty());
+        lastSaveOk = result.ok;
+        // A failed clear must leave the record and pending edits available
+        // for download or retry, and must not remove the migration backup.
+        if (!result.ok) return { ok: false, progress: current };
+        clearPending();
+        pendingReplacement = false;
+        observedEpoch = result.progress.epoch;
+        current = result.progress;
         try {
           storage.removeItem(LEGACY_KEY);
         } catch (error) {
-          /* nothing more to remove */
+          lastSaveOk = false;
+          return { ok: false, progress: current };
         }
-        current = result.progress;
-        lastSaveOk = result.ok;
         return result;
       },
       saved: () => lastSaveOk,

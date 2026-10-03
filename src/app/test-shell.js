@@ -82,6 +82,9 @@
   const VERDICT_ICONS = { correct: "check", hinted: "bulb", incorrect: "cross", omitted: "warning", unscored: "list" };
 
   let active = null;
+  const mounted = [];
+  let pageOverflow;
+  const inerted = new Set();
 
   /* ------------------------------------------------------------- utilities */
 
@@ -468,21 +471,33 @@
   }
 
   // Puts a full-screen node on the page. The page behind it is inert while
-  // it is open, so Tab and screen readers stay inside. Returns the undo.
+  // it is open, so Tab and screen readers stay inside. A replacement can
+  // mount before the previous shell closes; only the last unmount unlocks
+  // the page. Returns the undo.
   function mount(node) {
-    const previousOverflow = document.documentElement.style.overflow;
-    const inerted = [];
+    if (!mounted.length) pageOverflow = document.documentElement.style.overflow;
     document.body.appendChild(node);
+    mounted.push(node);
     Array.from(document.body.children).forEach((child) => {
-      if (child === node || child.hasAttribute("inert") || child.tagName === "SCRIPT") return;
+      // Closed native dialogs are already hidden; showModal owns their modal
+      // locking. Explicit inert would disable a reused page confirmation.
+      if (child === node || child.hasAttribute("inert") || child.tagName === "SCRIPT" || child.tagName === "DIALOG") return;
       child.setAttribute("inert", "");
-      inerted.push(child);
+      inerted.add(child);
     });
     document.documentElement.style.overflow = "hidden";
     return function unmount() {
       node.remove();
-      inerted.forEach((child) => child.removeAttribute("inert"));
-      document.documentElement.style.overflow = previousOverflow;
+      if (inerted.delete(node)) node.removeAttribute("inert");
+      mounted.splice(mounted.indexOf(node), 1);
+      if (mounted.length) {
+        const current = mounted[mounted.length - 1];
+        if (inerted.delete(current)) current.removeAttribute("inert");
+      } else {
+        inerted.forEach((child) => child.removeAttribute("inert"));
+        inerted.clear();
+        document.documentElement.style.overflow = pageOverflow;
+      }
     };
   }
 
@@ -633,8 +648,10 @@
   }
 
   function start(options) {
-    if (active) active.close();
+    // Keep the current report usable if its replacement cannot render.
+    const previous = active;
     const controller = createShell(options || {});
+    if (previous) previous.close();
     active = controller;
     return {
       close: controller.close,
@@ -739,6 +756,8 @@
     let lastStimulusKey = null;
     let timerId = null;
     let closed = false;
+    let reportActionPending = false;
+    let reportActionError = "";
     const refs = {};
 
     // Passage tools. Highlights are kept per passage (questions that share
@@ -2829,6 +2848,18 @@
     }
 
     /* ---- report */
+    function updateReportActionStatus() {
+      const region = refs.main.querySelector(".lm-next-steps");
+      if (!region) return;
+      region.querySelectorAll("button").forEach((button) => { button.disabled = reportActionPending; });
+      const pending = region.querySelector("[role=\"status\"]");
+      pending.hidden = !reportActionPending;
+      pending.textContent = reportActionPending ? "Opening your next practice…" : "";
+      const error = region.querySelector("[role=\"alert\"]");
+      error.hidden = !reportActionError;
+      error.textContent = reportActionError;
+    }
+
     function statBlock(labelText, valueNode, note) {
       return h("div", { className: "lm-stat" }, [
         h("dt", { text: labelText }),
@@ -2952,13 +2983,38 @@
               type: "button",
               className: `lm-btn ${index === 0 ? "lm-btn-primary" : "lm-btn-outline"}`,
               text: action.label,
-              onClick: () => {
-                exit("done");
-                action.run();
+              disabled: reportActionPending,
+              onClick: async (event) => {
+                if (reportActionPending || closed) return;
+                const opener = event.currentTarget;
+                reportActionPending = true;
+                reportActionError = "";
+                updateReportActionStatus();
+                try {
+                  const opened = await action.run();
+                  if (!closed && opened !== false) exit("done");
+                } catch (error) {
+                  reportActionError = `Could not open the next practice. ${error && error.message || "Please check your connection."} Try again from this report.`;
+                } finally {
+                  reportActionPending = false;
+                  if (!closed) {
+                    updateReportActionStatus();
+                    // A page modal cannot restore focus to its disabled
+                    // opener until this pending action has settled.
+                    const focused = document.activeElement;
+                    const dialog = focused && focused.closest && focused.closest("dialog");
+                    if (opener.isConnected && (!focused || !focused.isConnected || focused === document.body || (dialog && !dialog.open))) {
+                      opener.focus();
+                    }
+                  }
+                }
               },
             }),
             action.note ? h("p", { className: "lm-next-note", text: action.note }) : null,
           ]))),
+          h("p", { className: "lm-next-note", role: "status", hidden: !reportActionPending,
+            text: reportActionPending ? "Opening your next practice…" : "" }),
+          h("p", { className: "lm-notice", role: "alert", hidden: !reportActionError, text: reportActionError }),
         ]));
       }
 
@@ -3138,9 +3194,8 @@
 
     /* ---- keyboard */
     function onKeyDown(event) {
-      if (closed || event.defaultPrevented) return;
+      if (closed || event.defaultPrevented || refs.dialog.open || document.querySelector("dialog[open]")) return;
       if (event.key === "Escape") {
-        if (refs.dialog.open) return;
         if (openPanel) {
           event.preventDefault();
           closePanel(true);
@@ -3156,7 +3211,7 @@
       // selection is not lost on the way to the Annotate button. In a text
       // field it only acts on a passage selection, and otherwise types.
       if (event.altKey && event.shiftKey && !event.ctrlKey && !event.metaKey && event.code === "KeyH") {
-        if (view !== "question" || refs.dialog.open || !toolAvailable("annotate")) return;
+        if (view !== "question" || !toolAvailable("annotate")) return;
         const range = selectionRange();
         if (typing && !range) return;
         event.preventDefault();
@@ -3164,7 +3219,7 @@
         return;
       }
       if (event.ctrlKey || event.metaKey || event.altKey) return;
-      if (view !== "question" || refs.dialog.open) return;
+      if (view !== "question") return;
       if (typing) return;
       const question = currentQuestion();
       if (question.responseType !== "multiple-choice" || !Array.isArray(question.choices)) return;
@@ -3216,40 +3271,47 @@
       if (active && active.root === shell) active = null;
     }
 
-    unmount = mount(shell);
-    if (frameObserver) { frameObserver.observe(refs.top); frameObserver.observe(refs.bottom); }
-    refs.main.addEventListener("click", onMainClick);
-    refs.main.addEventListener("pointerdown", (event) => {
-      lastPointerType = event.pointerType || "mouse";
-    });
-    document.addEventListener("keydown", onKeyDown, true);
-    document.addEventListener("pointerdown", onDocumentPointer, true);
-    document.addEventListener("visibilitychange", onVisibility);
-    root.addEventListener("pagehide", onPageHide);
+    const previousFocus = document.activeElement;
+    try {
+      unmount = mount(shell);
+      if (frameObserver) { frameObserver.observe(refs.top); frameObserver.observe(refs.bottom); }
+      refs.main.addEventListener("click", onMainClick);
+      refs.main.addEventListener("pointerdown", (event) => {
+        lastPointerType = event.pointerType || "mouse";
+      });
+      document.addEventListener("keydown", onKeyDown, true);
+      document.addEventListener("pointerdown", onDocumentPointer, true);
+      document.addEventListener("visibilitychange", onVisibility);
+      root.addEventListener("pagehide", onPageHide);
 
-    if (session.state.finished) {
-      // A module whose time ran out while the page was closed hands over at
-      // once; anything else finished shows its report.
-      if (moduleInfo) endModule(session.state.finishReason || "user");
-      else {
-        if (!session.state.reported) deliverResult();
-        render();
-      }
-    } else {
-      const first = session.tick();
-      if (!session.state.finished) {
-        if (first.alertDue) {
-          refs.alert.hidden = false;
-          timerHidden = false;
+      if (session.state.finished) {
+        // A module whose time ran out while the page was closed hands over at
+        // once; anything else finished shows its report.
+        if (moduleInfo) endModule(session.state.finishReason || "user");
+        else {
+          if (!session.state.reported) deliverResult();
+          render();
         }
-        render();
-        flushSave();
-        timerId = root.setInterval(onTick, 250);
-        if (!resume && options.openDirections) openPanelNamed("directions");
-        if (!resume && options.notice) showNotice(String(options.notice));
       } else {
-        timeUp();
+        const first = session.tick();
+        if (!session.state.finished) {
+          if (first.alertDue) {
+            refs.alert.hidden = false;
+            timerHidden = false;
+          }
+          render();
+          flushSave();
+          timerId = root.setInterval(onTick, 250);
+          if (!resume && options.openDirections) openPanelNamed("directions");
+          if (!resume && options.notice) showNotice(String(options.notice));
+        } else {
+          timeUp();
+        }
       }
+    } catch (error) {
+      teardown();
+      if (previousFocus && previousFocus.isConnected) previousFocus.focus({ preventScroll: true });
+      throw error;
     }
 
     return {

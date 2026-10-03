@@ -86,6 +86,58 @@ test("a slot is written only by its owner, so another tab's newer set is not ove
   assert.equal(Store.ownerOf(mine), "a");
 });
 
+for (const slot of Store.SLOTS) {
+  const saved = (id) => slot === "test" ? savedTest(id) : { config: { sessionId: id }, state: { draft: id } };
+
+  for (const observesReplacement of [false, true]) {
+    test(`a replaced ${slot} cannot return after its successor clears, even when idle=${!observesReplacement}`, () => {
+      const storage = memory();
+      const oldTab = Store.create(storage);
+      const newTab = Store.create(storage);
+      assert.equal(oldTab.store(slot, saved("old"), "old"), "saved");
+      assert.equal(newTab.clear(slot, "old"), true);
+      assert.equal(newTab.store(slot, saved("new"), "new"), "saved");
+      if (observesReplacement) assert.equal(oldTab.store(slot, saved("old"), "old"), "taken");
+      assert.equal(newTab.clear(slot, "new"), true);
+      assert.equal(oldTab.store(slot, saved("old"), "old"), "taken");
+      assert.equal(oldTab.store(slot, saved("old"), "old"), "taken", "revocation survives further autosaves");
+      assert.equal(newTab.load(slot), null);
+      assert.equal(newTab.store(slot, saved("fresh"), "fresh"), "saved", "a fresh session can claim the empty slot");
+    });
+  }
+
+  test(`a loaded ${slot} cannot save after the same session finishes in another tab`, () => {
+    const storage = memory();
+    const active = Store.create(storage);
+    assert.equal(active.store(slot, saved("same"), "same"), "saved");
+    const resumed = Store.create(storage);
+    const snapshot = resumed.load(slot);
+    // Finishing can happen while the resumed screen is still loading, before
+    // it has ever saved or seen the other tab's completed state.
+    assert.equal(active.clear(slot, "same"), true);
+    assert.equal(resumed.store(slot, snapshot, "same"), "taken");
+    assert.equal(active.store(slot, snapshot, "same"), "taken");
+    assert.equal(resumed.load(slot), null);
+  });
+}
+
+test("an initial save can recover after failure, and a loaded legacy owner can keep saving", () => {
+  const storage = memory();
+  const slots = Store.create(storage);
+  const saved = { config: { sessionId: "recover" }, state: { draft: "kept" } };
+  const write = storage.setItem;
+  storage.setItem = () => { throw new Error("write blocked"); };
+  assert.equal(slots.store("set", saved, "recover"), "failed");
+  storage.setItem = write;
+  assert.equal(slots.store("set", saved, "recover"), "saved");
+  const resumed = Store.create(storage);
+  assert.deepEqual(resumed.load("set"), saved);
+  assert.equal(resumed.store("set", { ...saved, savedAt: 2 }, "recover"), "saved");
+  storage.removeItem = () => { throw new Error("remove blocked"); };
+  assert.equal(slots.clear("set", "recover"), false);
+  assert.equal(resumed.store("set", { ...saved, savedAt: 3 }, "recover"), "saved", "a failed clear preserves ownership");
+});
+
 test("a failed write is reported, not thrown", () => {
   const storage = memory();
   storage.setItem = () => { throw new Error("QuotaExceededError"); };

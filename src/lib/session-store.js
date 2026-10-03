@@ -6,6 +6,8 @@
 // break or between modules). Each saved value has an owner (a set's
 // sessionId, a test's id); a screen writes its slot only while it owns it,
 // so a set replaced in another tab is not written back over its successor.
+// Loading or saving an owner binds this store to continuing that session:
+// an empty slot then means it ended, not permission to claim it again.
 //
 // Also: what a saved set would record if it were discarded
 // (LiminalTestEngine.discardResult: every question seen, none unseen), and
@@ -121,12 +123,22 @@
   // saved.
   function create(storage, options) {
     const settings = options || {};
+    // Remember successful saves AND loaded owners. A resumed screen can be
+    // waiting on content when another tab clears its session; even its first
+    // save must then be refused. No storage event or observation of the
+    // replacement is required. Fresh owners can still claim an empty slot,
+    // and a failed first write can retry. This is not an atomic transaction:
+    // localStorage can still change between this page's read and write.
+    const continuing = { set: new Set(), test: new Set() };
     const report = (error, slot) => {
       if (typeof settings.onError === "function") settings.onError(error, slot);
     };
 
     function readChecked(slot) {
-      return parse(storage.getItem(KEYS[checkSlot(slot)]));
+      const saved = parse(storage.getItem(KEYS[checkSlot(slot)]));
+      const owner = ownerOf(saved);
+      if (owner) continuing[slot].add(owner);
+      return saved;
     }
 
     function read(slot) {
@@ -147,8 +159,8 @@
       }
     }
 
-    // Writes `value` unless the slot holds another owner's. Returns
-    // "saved", "taken" (another set or test holds the slot), or "failed".
+    // A new owner may claim an empty slot; a continuing owner must still
+    // hold it. Returns "saved", "taken" (replaced or ended), or "failed".
     function store(slot, value, owner) {
       checkSlot(slot);
       try {
@@ -157,7 +169,9 @@
         const current = readChecked(slot);
         const holder = ownerOf(current);
         if (current && owner && holder && holder !== String(owner)) return "taken";
+        if (owner && continuing[slot].has(String(owner)) && holder !== String(owner)) return "taken";
         storage.setItem(KEYS[slot], JSON.stringify(value));
+        if (owner) continuing[slot].add(String(owner));
         return "saved";
       } catch (error) {
         report(error, slot);

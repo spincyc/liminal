@@ -117,13 +117,17 @@ test("Science form exclusions remove whole sets and never backfill malformed or 
   assert.ok(picked.every((question) => question.passageId !== active[0].passageId));
 });
 
-test("Science practice prefers whole sets and moves an entire used passage behind fresh ones", () => {
-  for (const count of [10, 11, 12, 40, 80]) {
+test("Science practice groups passages, shortens only the final set and puts used passages last", () => {
+  for (const count of [5, 10, 11, 12, 20, 40, 80]) {
     const picked = core.buildSession(active, count, `practice-${count}`);
     assert.equal(picked.length, count);
     assertContiguous(picked);
     for (const [passageId, items] of groups(picked)) {
-      assert.equal(items.length, active.filter((question) => question.passageId === passageId).length);
+      const complete = active.filter((question) => question.passageId === passageId);
+      if (passageId !== picked.at(-1).passageId) assert.equal(items.length, complete.length);
+      assert.deepEqual(ids(items), ids(complete.slice(0, items.length)));
+      items.forEach((question) => assert.deepEqual(question.stimulus, complete[0].stimulus,
+        "shortened sets retain the complete passage context"));
     }
   }
   const usedPassage = active[0].passageId;

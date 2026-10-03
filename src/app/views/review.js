@@ -296,9 +296,9 @@
     /* ----------------------------------------------------- launching sets */
 
     // Opens a review set; returns an error message, or null when it opened.
-    function launchSet(title, questions, feedback) {
+    async function launchSet(title, questions, feedback) {
       try {
-        ctx.launch({
+        await ctx.launch({
           title,
           sectionKey: questions[0].sectionKey,
           kind: "review",
@@ -327,7 +327,7 @@
           return;
         }
         ctx.setStatus(status, "");
-        const error = launchSet(set.title, set.questions, set.feedback);
+        const error = await launchSet(set.title, set.questions, set.feedback);
         if (error) ctx.setStatus(status, error, "error");
       } catch (error) {
         ctx.setStatus(status, `The set could not be built (${error.message}). Refresh the page and try again.`, "error");

@@ -1458,9 +1458,12 @@
         return;
       }
       closePanel();
-      ctx.clearProgress();
+      const result = ctx.clearProgress();
       resetClearButton();
-      ctx.setStatus(data.status, "All saved progress was cleared.", "success");
+      ctx.setStatus(data.status, result.ok
+        ? "All saved progress was cleared."
+        : "This browser could not clear all saved progress. Try again when storage is available.",
+        result.ok ? "success" : "error");
     }
 
     /* ------------------------------------------------------------- events */

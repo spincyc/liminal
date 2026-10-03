@@ -133,6 +133,223 @@ test("a failed write keeps the record in memory and merges it into the next save
   assert.deepEqual(stored.attempts.map((item) => item.id), ["a1", "a2", "a3"]);
 });
 
+test("failed mutable edits survive refresh and retry without repeating the change callback", () => {
+  const storage = memoryStorage();
+  const store = Progress.createStore(storage, { epoch: "saved" });
+  store.update((progress) => Progress.recordAttempts(progress, [attempt("a1")]));
+  storage.full = true;
+  let calls = 0;
+  const result = store.update((progress) => {
+    calls += 1;
+    progress = Progress.setMarked(progress, "q1", true);
+    progress = Progress.setPlan(progress, { weeklyQuestions: 100, testDate: "2026-12-12" }, "ACT");
+    progress = Progress.addOfficialScore(progress, { id: "o1", date: "2026-10-03", kind: "practice", math: 600 });
+    progress = Progress.serveQuestions(progress, "act-english", ["act-english-0001"]);
+    return Progress.tagError(progress, "a1", { reason: "time" }, 1);
+  });
+  assert.equal(result.ok, false);
+  for (let index = 0; index < 3; index += 1) {
+    const fresh = store.refresh();
+    assert.deepEqual(fresh.marked, ["q1"]);
+    assert.deepEqual(fresh.plan, { ACT: { weeklyQuestions: 100, testDate: "2026-12-12" } });
+    assert.equal(fresh.officialScores[0].math, 600);
+    assert.equal(fresh.errorLog.a1.reason, "time");
+    assert.equal(fresh.history["act-english"].serve, 1);
+    assert.equal(store.saved(), false, "refresh does not claim unsaved edits are durable");
+  }
+  // Further failed changes keep the latest value of each edited key.
+  store.update((progress) => Progress.setPlan(progress, { weeklyQuestions: 120 }, "ACT"));
+  storage.full = false;
+  assert.equal(store.update().ok, true);
+  assert.equal(calls, 1, "retry saves values instead of rerunning a side-effectful callback");
+  const saved = Progress.load(storage).progress;
+  assert.deepEqual(saved.marked, ["q1"]);
+  assert.deepEqual(saved.plan.ACT, { weeklyQuestions: 120, testDate: "2026-12-12" });
+  assert.equal(saved.officialScores[0].math, 600);
+  assert.equal(saved.errorLog.a1.reason, "time");
+  assert.equal(saved.history["act-english"].serve, 1);
+});
+
+test("failed removals survive refresh, unreadable storage, and recovery", () => {
+  const storage = memoryStorage();
+  const store = Progress.createStore(storage);
+  store.update((progress) => {
+    progress = Progress.setMarks(progress, { q1: true, q2: true });
+    progress = Progress.setPlan(progress, { weeklyQuestions: 100, testDate: "2026-12-12" }, "ACT");
+    progress = Progress.addOfficialScore(progress, { id: "o1", date: "2026-10-03", math: 600 });
+    return Progress.tagError(progress, "a1", { reason: "time" }, 1);
+  });
+  storage.full = true;
+  store.update((progress) => {
+    progress = Progress.setMarked(progress, "q1", false);
+    progress = Progress.setPlan(progress, { testDate: undefined }, "ACT");
+    progress = Progress.removeOfficialScore(progress, "o1");
+    return Progress.tagError(progress, "a1", null);
+  });
+  const reads = storage.getItem;
+  storage.getItem = () => { throw new Error("blocked"); };
+  assert.deepEqual(store.refresh().marked, ["q2"]);
+  storage.getItem = reads;
+  const fresh = store.refresh();
+  assert.deepEqual(fresh.marked, ["q2"]);
+  assert.deepEqual(fresh.plan, { ACT: { weeklyQuestions: 100 } });
+  assert.deepEqual(fresh.officialScores, []);
+  assert.deepEqual(fresh.errorLog, {});
+  storage.full = false;
+  assert.equal(store.update().ok, true);
+  const saved = Progress.load(storage).progress;
+  assert.deepEqual(saved.marked, ["q2"]);
+  assert.deepEqual(saved.plan, { ACT: { weeklyQuestions: 100 } });
+  assert.deepEqual(saved.officialScores, []);
+  assert.deepEqual(saved.errorLog, {});
+});
+
+test("pending keys merge with another tab's additions and deletions, then release after saving", () => {
+  const storage = memoryStorage();
+  const localStorage = Object.assign({}, storage);
+  const local = Progress.createStore(localStorage);
+  local.update((progress) => Object.assign({}, progress, {
+    marked: ["remove-remote", "remove-local"],
+    plan: { SAT: { testDate: "2026-11-07", weeklyQuestions: 50 }, ACT: { testDate: "2026-12-12" } },
+    officialScores: [{ id: "remove-remote", date: "2026-09-01", math: 500 },
+      { id: "remove-local", date: "2026-09-02", math: 510 }, { id: "edit-local", date: "2026-09-03", math: 520 }],
+    errorLog: { "remove-remote": { reason: "time" }, "remove-local": { reason: "time" } },
+  }));
+  const remote = Progress.createStore(storage);
+  localStorage.full = true;
+  local.update((progress) => {
+    progress = Progress.setMarks(progress, { "add-local": true, "remove-local": false });
+    progress = Progress.setPlan(progress, { testDate: "2027-03-06" }, "SAT");
+    progress = Progress.addOfficialScore(progress, { id: "edit-local", date: "2026-09-03", math: 620 });
+    progress = Progress.removeOfficialScore(progress, "remove-local");
+    progress = Progress.tagError(progress, "remove-local", null);
+    return Progress.tagError(progress, "add-local", { reason: "content" }, 2);
+  });
+  remote.update((progress) => {
+    progress = Progress.setMarks(progress, { "remove-remote": false, "add-remote": true });
+    progress = Progress.setPlan(progress, { weeklyQuestions: 90 }, "SAT");
+    progress = Progress.setPlan(progress, { testDate: undefined }, "ACT");
+    progress = Progress.removeOfficialScore(progress, "remove-remote");
+    progress = Progress.addOfficialScore(progress, { id: "add-remote", date: "2026-10-03", math: 630 });
+    progress = Progress.tagError(progress, "remove-remote", null);
+    return Progress.tagError(progress, "add-remote", { reason: "careless" }, 3);
+  });
+  const fresh = local.refresh();
+  assert.deepEqual(fresh.marked.sort(), ["add-local", "add-remote"]);
+  assert.deepEqual(fresh.plan.SAT, { testDate: "2027-03-06", weeklyQuestions: 90 });
+  assert.equal(fresh.plan.ACT.testDate, undefined);
+  assert.deepEqual(fresh.officialScores.map((score) => [score.id, score.math]), [["edit-local", 620], ["add-remote", 630]]);
+  assert.deepEqual(Object.keys(fresh.errorLog).sort(), ["add-local", "add-remote"]);
+  localStorage.full = false;
+  assert.equal(local.update().ok, true);
+  remote.update((progress) => {
+    progress = Progress.setMarked(progress, "add-local", false);
+    progress = Progress.setPlan(progress, { testDate: undefined }, "SAT");
+    progress = Progress.removeOfficialScore(progress, "edit-local");
+    return Progress.tagError(progress, "add-local", null);
+  });
+  const released = local.refresh();
+  assert.deepEqual(released.marked, ["add-remote"]);
+  assert.deepEqual(released.plan.SAT, { weeklyQuestions: 90 });
+  assert.deepEqual(released.officialScores.map((score) => score.id), ["add-remote"]);
+  assert.deepEqual(Object.keys(released.errorLog), ["add-remote"]);
+  local.update();
+  assert.deepEqual(Progress.load(storage).progress.marked, ["add-remote"]);
+});
+
+test("a saved clear in another tab drops every pending edit from the old epoch", () => {
+  const storage = memoryStorage();
+  const localStorage = Object.assign({}, storage);
+  const local = Progress.createStore(localStorage, { epoch: "old" });
+  local.update((progress) => Progress.recordAttempts(progress, [attempt("old")]));
+  const remote = Progress.createStore(storage);
+  localStorage.full = true;
+  local.update((progress) => Object.assign({}, progress, {
+    marked: ["q1"], plan: { ACT: { weeklyQuestions: 100 } },
+    officialScores: [{ id: "o1", date: "2026-10-03", math: 600 }], errorLog: { a1: { reason: "time" } },
+  }));
+  assert.equal(remote.clear().ok, true);
+  assert.deepEqual(local.refresh(), remote.get());
+  localStorage.full = false;
+  local.update((progress) => Progress.recordAttempts(progress, [attempt("new")]));
+  const saved = Progress.load(storage).progress;
+  assert.deepEqual(saved.attempts.map((entry) => entry.id), ["new"]);
+  assert.deepEqual(saved.marked, []);
+  assert.deepEqual(saved.plan, {});
+  assert.deepEqual(saved.officialScores, []);
+  assert.deepEqual(saved.errorLog, {});
+});
+
+test("failed clear keeps the current record, pending edits, and migration backup for recovery", () => {
+  const storage = memoryStorage({ [Progress.LEGACY_KEY]: JSON.stringify(V2) });
+  const store = Progress.createStore(storage);
+  const epoch = store.get().epoch;
+  storage.full = true;
+  store.update((progress) => Progress.setPlan(progress, { weeklyQuestions: 100 }, "ACT"));
+  const failed = store.clear();
+  assert.equal(failed.ok, false);
+  assert.equal(store.saved(), false);
+  assert.equal(failed.progress.epoch, epoch);
+  assert.equal(failed.progress.attempts.length, 5);
+  assert.equal(store.refresh().plan.ACT.weeklyQuestions, 100);
+  assert.equal(storage.getItem(Progress.LEGACY_KEY), JSON.stringify(V2));
+  storage.full = false;
+  assert.equal(store.update().ok, true);
+  assert.equal(Progress.load(storage).progress.plan.ACT.weeklyQuestions, 100);
+  assert.equal(store.clear().ok, true);
+  assert.equal(storage.getItem(Progress.LEGACY_KEY), null);
+  assert.notEqual(store.get().epoch, epoch);
+  assert.deepEqual(store.refresh().plan, {});
+  assert.deepEqual(store.get().attempts, []);
+});
+
+test("clear reports a failed legacy-backup removal and retries it", () => {
+  const storage = memoryStorage({ [Progress.LEGACY_KEY]: JSON.stringify(V2) });
+  const store = Progress.createStore(storage);
+  const remove = storage.removeItem;
+  storage.removeItem = () => { throw new Error("blocked"); };
+  assert.equal(store.clear().ok, false);
+  assert.equal(store.saved(), false);
+  assert.deepEqual(Progress.load(storage).progress.attempts, [], "the v3 clear already succeeded");
+  assert.ok(storage.getItem(Progress.LEGACY_KEY), "the backup still needs removing");
+  storage.removeItem = remove;
+  assert.equal(store.clear().ok, true);
+  assert.equal(store.saved(), true);
+  assert.equal(storage.getItem(Progress.LEGACY_KEY), null);
+});
+
+test("failed migration writes do not manufacture a new epoch at every refresh", () => {
+  const storage = memoryStorage({ [Progress.LEGACY_KEY]: JSON.stringify(V2) });
+  storage.full = true;
+  const store = Progress.createStore(storage);
+  const epoch = store.get().epoch;
+  store.update((progress) => Progress.setPlan(progress, { weeklyQuestions: 100 }, "ACT"));
+  assert.equal(store.refresh().epoch, epoch);
+  assert.equal(store.refresh().plan.ACT.weeklyQuestions, 100);
+  storage.full = false;
+  assert.equal(store.update().ok, true);
+  assert.equal(Progress.load(storage).progress.plan.ACT.weeklyQuestions, 100);
+  assert.equal(Progress.load(storage).progress.attempts.length, 5);
+});
+
+test("a first readable epoch keeps edits made while storage was absent or unreadable", () => {
+  for (const unreadable of [false, true]) {
+    const storage = memoryStorage();
+    const localStorage = Object.assign({}, storage, { full: true });
+    if (unreadable) localStorage.getItem = () => { throw new Error("blocked"); };
+    const local = Progress.createStore(localStorage, { epoch: "provisional" });
+    local.update((progress) => Progress.setMarked(progress, "local", true));
+    const remote = Progress.createStore(storage, { epoch: "persisted" });
+    remote.update((progress) => Progress.setMarked(progress, "remote", true));
+    localStorage.getItem = storage.getItem;
+    assert.equal(local.refresh().epoch, "persisted");
+    assert.deepEqual(local.get().marked.sort(), ["local", "remote"]);
+    localStorage.full = false;
+    assert.equal(local.update().ok, true);
+    assert.deepEqual(Progress.load(storage).progress.marked.sort(), ["local", "remote"]);
+  }
+});
+
 test("clearing in one tab is not undone by another tab's older copy", () => {
   const storage = memoryStorage({ [Progress.LEGACY_KEY]: JSON.stringify(V2) });
   const tabA = Progress.createStore(storage);

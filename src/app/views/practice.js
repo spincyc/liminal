@@ -549,10 +549,9 @@
 
     /* ------------------------------------------------------------ launch */
 
-    function tryLaunch(config, statusNode) {
+    async function tryLaunch(config, statusNode) {
       try {
-        ctx.launch(config);
-        return true;
+        return await ctx.launch(config);
       } catch (error) {
         ctx.setStatus(statusNode, error.message, "error");
         return false;
@@ -595,7 +594,7 @@
           ctx.setStatus(elements.bankStatus, "Nothing matches this set. Loosen a filter.", "error");
           return;
         }
-        tryLaunch({
+        await tryLaunch({
           title,
           sectionKey: section.key,
           kind: mode,
@@ -632,7 +631,7 @@
       if (!revisiting) {
         ctx.update((current) => Progress.serveQuestions(current, section.key, questions.map((question) => question.id)));
       }
-      tryLaunch({
+      await tryLaunch({
         title: revisiting ? `${title}: ${mode === "missed" ? "missed" : "marked"} questions` : title,
         sectionKey: section.key,
         kind: mode,
@@ -657,7 +656,7 @@
       const run = ctx.buildRun({ sectionKey: "sat-math", count: HARD_REPS_DEFAULT_COUNT, filters: { difficulties: ["Hard"] } });
       elements.hardRepsBtn.disabled = false;
       ctx.setStatus(elements.hardRepsStatus, "");
-      tryLaunch({
+      await tryLaunch({
         title: "SAT Math — Hard",
         sectionKey: "sat-math",
         kind: "hard-reps",
@@ -745,7 +744,7 @@
       ctx.setStatus(elements.miniTestStatus, "");
       // The test screen offers the calculator on math questions only and the
       // reference sheet on SAT Math only, switching at each section.
-      tryLaunch({
+      await tryLaunch({
         title: blueprint.label,
         sectionKey: blueprint.sections[0].sectionKey,
         kind: "mini",
@@ -825,7 +824,7 @@
       ctx.setStatus(elements.retakeStatus, "");
       if (!(await ctx.confirmReplace("set"))) return;
       const section = ctx.sectionByKey(parsed.sectionKey);
-      tryLaunch({
+      await tryLaunch({
         title: `${section.test} ${section.shortLabel}: set ${run.setCode}`,
         sectionKey: parsed.sectionKey,
         kind: "retake",

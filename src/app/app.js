@@ -528,7 +528,7 @@
     });
     if (!chosen.templates.length) throw new Error("No Medium or Hard templates are available for this section.");
     const run = buildRun({ sectionKey, count: chosen.templates.length, templates: chosen.templates });
-    launch({
+    return launch({
       title: `${sectionName(sectionKey)} diagnostic`,
       sectionKey,
       kind: "diagnostic",
@@ -538,7 +538,6 @@
       feedback: "end",
       timeLimitSeconds: null,
     });
-    return true;
   }
 
   const DIAGNOSTIC_CAVEAT = "This is accuracy on practice questions, not a scaled score, and too few questions to " +
@@ -685,6 +684,8 @@
 
   function clearProgress() {
     const result = store.clear();
+    if (!result.ok) warnStorage("progress");
+    else if (store.saved()) storageRecovered("progress");
     notifyProgress();
     return result;
   }
@@ -806,7 +807,9 @@
   // timeLimitSeconds, runCode?, setCode?, tools?, simulation? }; a config
   // with `simulation` is one module of an on-screen SAT test (see "SAT
   // tests" below), and may add `notice` and `openDirections` for its first
-  // screen. Throws when the test screen cannot open; the caller shows why.
+  // screen. Returns true when opened, or a promise of true/false when a
+  // late replacement needs confirmation. Throws/rejects when the test
+  // screen cannot open; the caller shows why.
   // A new set that would replace a saved one asks first (confirmReplace)
   // and opens only if the student agrees; views should ask before they
   // build the set, so this is the fallback.
@@ -821,18 +824,16 @@
     if (!resume && !config.simulation) {
       const saved = activeSession.load("set");
       if (saved && SessionStore.ownerOf(saved) !== (config.sessionId || null)) {
-        confirmReplace("set")
+        return confirmReplace("set")
           .then((go) => {
-            if (go) openScreen(config);
-          })
-          .catch((error) => {
-            console.error(error);
-            closeScreen(`The set could not open (${error.message}).`);
+            if (!go) return false;
+            openScreen(config);
+            return true;
           });
-        return;
       }
     }
     openScreen(config, resume);
+    return true;
   }
 
   function openScreen(config, resume) {
@@ -856,12 +857,13 @@
       resume: resume || null,
       learnHref: practice.learnHref,
       onSave(state) {
+        if (replacedWarned) return;
         const outcome = sessions.store(slot, { config: meta, savedAt: Date.now(), state }, owner);
         if (outcome === "saved") storageRecovered(slot);
-        // Another tab replaced this set with its own: leave that one be.
+        // Once ended or replaced, this screen cannot claim a later empty slot.
         if (outcome === "taken" && !replacedWarned) {
           replacedWarned = true;
-          console.warn(`Another tab started a new ${slot}, so this one is no longer saved to resume.`);
+          console.warn(`This ${slot} ended or was replaced in another tab, so this screen is no longer saved to resume.`);
         }
       },
       onAnswer(item) {
@@ -884,11 +886,12 @@
     };
     if (meta.kind === "diagnostic") Object.assign(options, { reportNotes: [], caveat: DIAGNOSTIC_CAVEAT });
     if (meta.simulation) Object.assign(options, moduleOptions(meta), { notice, openDirections });
+    const wasShellOpen = shellOpen;
     shellOpen = true;
     try {
       window.LiminalShell.start(options);
     } catch (error) {
-      shellOpen = false;
+      shellOpen = wasShellOpen;
       throw error;
     }
   }
@@ -1015,8 +1018,8 @@
   // Before a new set or test is built: when one is saved in that slot,
   // asks whether to end it (recording what it showed, as Discard does),
   // resume it instead, or keep it. Resolves true when the new one may go
-  // ahead. A saved one that could not be reopened anyway is removed with a
-  // note.
+  // ahead. Invalid snapshots are removed with a note. A failed resume is
+  // reported on the page, or rejects for the retained report's action to show.
   async function confirmReplace(slot) {
     const what = slot === "test" ? "test" : "set";
     const saved = activeSession.load(what);
@@ -1039,7 +1042,10 @@
     });
     if (choice === "alternative") {
       const problem = await resume(what);
-      if (problem) notifySession(problem);
+      if (problem) {
+        if (shellOpen) throw new Error(problem);
+        notifySession(problem);
+      }
       return false;
     }
     if (choice !== "confirm") return false;
@@ -1410,7 +1416,7 @@
 
   function instantSet(title, questions, kind) {
     const sectionKey = questions[0].sectionKey;
-    launch({
+    return launch({
       title,
       sectionKey,
       kind,
@@ -1423,7 +1429,7 @@
   // New questions from the templates of what was missed; bank questions
   // (no templates) come back as they were.
   async function practiceMissed(meta, items) {
-    if (!(await confirmReplace("set"))) return;
+    if (!(await confirmReplace("set"))) return false;
     const questions = [];
     const bySection = new Map();
     items.forEach((item) => {
@@ -1440,7 +1446,8 @@
       list.filter((item) => !item.question.templateId && core.questionAvailable(item.question))
         .forEach((item) => questions.push(item.question));
     }
-    if (questions.length) instantSet(`${meta.title}: what you missed`, questions, "missed-drill");
+    if (!questions.length) throw new Error("No questions are available for this practice.");
+    return instantSet(`${meta.title}: what you missed`, questions, "missed-drill");
   }
 
   const DRILL_COUNT = 10;
@@ -1487,7 +1494,7 @@
     const questions = await drillQuestions(request);
     if (!questions.length) return 0;
     const section = sectionByKey(request.sectionKey);
-    launch({
+    const opened = await launch({
       title: `${section.test} ${section.shortLabel}: ${request.skill}${request.difficulty ? `, ${request.difficulty}` : ""}`,
       sectionKey: request.sectionKey,
       kind: "drill",
@@ -1495,7 +1502,7 @@
       feedback: request.feedback === "end" ? "end" : "instant",
       timeLimitSeconds: null,
     });
-    return questions.length;
+    return opened ? questions.length : null;
   }
 
   // A report's button for the next step, or null when there is none.
@@ -1508,7 +1515,12 @@
     return {
       label: `Next step: ${words.title}`,
       note: note.trim(),
-      run: () => startStep(step).catch((error) => console.error(error)),
+      run: async () => {
+        const opened = await startStep(step);
+        if (step.kind === "review") return true;
+        if (opened === 0) throw new Error("No questions are available for this practice.");
+        return opened !== null;
+      },
     };
   }
 
@@ -1525,7 +1537,7 @@
         note: fresh
           ? "New questions built the same way, with feedback after each."
           : "The same questions again, with feedback after each.",
-        run: () => practiceMissed(meta, missed).catch((error) => console.error(error)),
+        run: () => practiceMissed(meta, missed),
       };
     }
     const sectionKeys = [...new Set(report.items.map((item) => item.question.sectionKey).filter(Boolean))];
