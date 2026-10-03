@@ -1183,7 +1183,7 @@
           `${n / g === 1 ? "" : `, because ${b.text} = ${factorPower(s, 1).text}^${n / g}`}. ` +
           `A factor of ${F.text} is a ${F.change}% ${word}.`,
         steps: [
-          `Over ${nUnits} the quantity is multiplied by ${b.text}.`,
+          `Over ${count(n)} the quantity is multiplied by ${b.text}.`,
           `Write ${b.text} as a power of the factor for ${count(g)}: ${b.text} = ${factorPower(s, 1).text}^${n / g}.`,
           `${count(P)} ${P === 1 ? "is" : "contain"} ${P / g} such ${P / g === 1 ? "step" : "steps"}, so the factor is ${factorPower(s, 1).text}^${P / g} = ${F.text}.`,
           `Convert the factor to a percent ${word}: ${F.text} ${F.up ? `${MINUS} 1` : `is 1 ${MINUS} ${ratioText(Number(F.change.replace(".", "")), 100 * 10 ** places(F.change))}`} → ${F.change}%.`,
@@ -3046,10 +3046,171 @@
     },
   };
 
+  const graphQuadraticLevel = {
+    id: "graph-quadratic-level",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Nonlinear functions",
+    subskill: "quadratic functions",
+    title: "Recover a quadratic from its graph and solve at another height",
+    recognize: "The vertex gives the horizontal and vertical shifts. A second plotted point determines the coefficient; the requested height may lie outside the displayed window.",
+    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 0, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["wrong-quantity", "sign-error"],
+    build(t) {
+      const h = t.nonzero(-5, 5);
+      const k = t.int(-12, 12);
+      const a = t.sign() * t.int(1, 6);
+      const d = t.pick([1, 2]);
+      const e = t.int(d + 2, d + 5);
+      const direction = t.sign();
+      const larger = t.chance(0.5);
+      const f = (x) => a * (x - h) ** 2 + k;
+      const other = [h + direction * d, f(h + direction * d)];
+      const level = k + a * e * e;
+      const key = h + (larger ? e : -e);
+      const yLow = Math.min(0, k, other[1]) - 2;
+      const yHigh = Math.max(0, k, other[1]) + 2;
+      const yStep = yHigh - yLow > 18 ? 5 : 2;
+      const yMin = Math.floor(yLow / yStep) * yStep;
+      const yMax = Math.ceil(yHigh / yStep) * yStep;
+      if (level >= yMin && level <= yMax) return graphQuadraticLevel.build(t);
+      const P = S.plane({ xMin: -8, xMax: 8, yMin, yMax, unit: 20, yUnit: 260 / (yMax - yMin), xLabelStep: 2, yStep, yLabelStep: yStep });
+      const alt = `Part of the graph of the quadratic function f in ${P.describe()}. Its vertex is the marked point ${point(h, k)}. Another marked point is ${point(...other)}. The vertex is labeled A and the other marked point is labeled B.`;
+      const axes = P.axes();
+      const curve = P.curve(f);
+      // Keep long coordinates in a separate legend. The small point names
+      // avoid tick labels, the curve, and each other at every graph scale.
+      const textBoxes = [...axes.join("").matchAll(/<text x="([\d.]+)" y="([\d.]+)"[^>]*font-size="(\d+)"[^>]*text-anchor="([^"]+)"[^>]*>([^<]+)<\/text>/g)].map((match) => {
+        const [x, y, size] = match.slice(1, 4).map(Number);
+        const width = match[5].length * size * 0.75;
+        const start = match[4] === "end" ? x - width : match[4] === "middle" ? x - width / 2 : x;
+        return [start - 3, y - size / 2 - 3, start + width + 3, y + size / 2 + 3];
+      });
+      const marked = [[h, k], other];
+      const pointBoxes = marked.map(([x, y]) => [P.px(x) - 7, P.py(y) - 7, P.px(x) + 7, P.py(y) + 7]);
+      const overlaps = (box, blocked) => box[0] < blocked[2] && box[2] > blocked[0] && box[1] < blocked[3] && box[3] > blocked[1];
+      const names = marked.map(([x, y], index) => {
+        const candidates = [];
+        for (const dx of [-14, 14, -28, 28, -42, 42, 0]) for (const dy of [-16, 16, -30, 30, -44, 44, 0]) {
+          if (dx === 0 && dy === 0) continue;
+          candidates.push({ dx, dy, distance: Math.hypot(dx, dy) });
+        }
+        const location = candidates.sort((p, q) => p.distance - q.distance).find(({ dx, dy }) => {
+          const box = [P.px(x) + dx - 8, P.py(y) + dy - 10, P.px(x) + dx + 8, P.py(y) + dy + 10];
+          if (box[0] < 6 || box[2] > P.width - 6 || box[1] < 4 || box[3] > P.height - 4) return false;
+          if ([...textBoxes, ...pointBoxes].some((blocked) => overlaps(box, blocked))) return false;
+          const from = (box[0] - P.px(0)) / 20;
+          const to = (box[2] - P.px(0)) / 20;
+          const curveYs = [from, to, Math.max(from, Math.min(to, h))].map((input) => P.py(f(input)));
+          if (Math.min(...curveYs) <= box[3] + 3 && Math.max(...curveYs) >= box[1] - 3) return false;
+          textBoxes.push(box);
+          return true;
+        });
+        if (!location) throw new Error("quadratic graph has no clear point-label position");
+        return P.label(x, y, index === 0 ? "A" : "B", { anchor: "middle", dx: location.dx, dy: location.dy });
+      });
+      const legend = (x, name, coordinates) => `<text x="${x}" y="${P.height + 14}" fill="currentColor" font-size="14" font-family="sans-serif" text-anchor="middle">${S.escapeXml(`${name} ${point(...coordinates)}`)}</text>`;
+      const parts = [...P.grid(), ...axes, curve, P.point(h, k), P.point(...other), ...names,
+        legend(Math.round(P.width / 4), "A", marked[0]), legend(Math.round(3 * P.width / 4), "B", marked[1])];
+      const squared = h > 0 ? `(x ${MINUS} ${h})^2` : `(x + ${-h})^2`;
+      const formula = `${a === 1 ? "" : a === -1 ? MINUS : num(a)}${squared} ${signed(k)}`;
+      const steps = [
+        `The vertex is ${point(h, k)}, so f(x) = a${squared} ${signed(k)}.`,
+        `The other marked point gives ${num(other[1])} = a(${num(other[0] - h)})^2 ${signed(k)}, so a = ${num(a)}.`,
+        `Set ${formula} = ${num(level)}. Then ${squared} = ${e * e}, so x = ${num(h - e)} or x = ${num(h + e)}.`,
+        `The ${larger ? "larger" : "smaller"} solution is ${num(key)}.`,
+      ];
+      return {
+        responseType: "numeric", stimulus: null,
+        figure: { svg: S.svg(P.width, P.height + 34, parts, alt), alt, notToScale: false },
+        stem: `Part of the graph of a quadratic function f is shown. What is the ${larger ? "larger" : "smaller"} solution of f(x) = ${num(level)}?`,
+        correct: key, explanation: steps.join(" "), steps,
+        principles: ["A quadratic with vertex (h, k) has the form a(x − h)^2 + k.", "The two inputs at the same nonvertex height are equally far from the axis of symmetry."],
+        trap: "The requested height is outside the displayed window. Recover the quadratic rather than extending its arms as straight lines, and select the requested root.",
+        hint: "What equation is determined by the vertex and the other marked point?",
+        estimatedSeconds: 115,
+        verify: () => {
+          // Recover all three coefficients from the plotted vertex and point,
+          // then solve the expanded quadratic independently.
+          const A = (other[1] - k) / (other[0] - h) ** 2;
+          const B = -2 * A * h;
+          const C0 = A * h * h + k - level;
+          const roots = [(-B - Math.sqrt(B * B - 4 * A * C0)) / (2 * A), (-B + Math.sqrt(B * B - 4 * A * C0)) / (2 * A)].sort((x, y) => x - y);
+          return approx(roots[larger ? 1 : 0], key) && (level < yMin || level > yMax);
+        },
+      };
+    },
+  };
+
+  const graphPolynomialSign = {
+    id: "graph-polynomial-sign-integers",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Nonlinear functions",
+    subskill: "polynomial functions",
+    title: "Integer inputs in the sign regions of a polynomial graph",
+    recognize: "Read where the graph is above or below the x-axis. A touching zero does not reverse the sign, but it still matters when deciding whether equality is allowed.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 0, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["context-constraint", "wrong-quantity"],
+    build(t) {
+      const left = t.int(-6, 1);
+      const right = t.int(Math.max(left + 3, 1), Math.min(left + 7, 6));
+      const touch = t.chance(0.5) ? left : right;
+      const cross = touch === left ? right : left;
+      const sign = t.sign();
+      // The nonzero turning point is four vertical units from the x-axis.
+      const coefficient = sign * 27 / Math.abs(right - left) ** 3;
+      const f = (x) => coefficient * (x - touch) ** 2 * (x - cross);
+      const lower = t.int(-8, 1);
+      const upper = t.int(Math.max(lower + 3, 2), 8);
+      const positive = t.chance(0.5);
+      const inclusive = t.chance(0.5);
+      const sum = t.chance(0.5);
+      const relation = positive ? (inclusive ? "≥" : ">") : (inclusive ? "≤" : "<");
+      const qualifies = (x) => {
+        if (x === touch || x === cross) return inclusive;
+        return (f(x) > 0) === positive;
+      };
+      const valid = [];
+      for (let x = lower; x <= upper; x += 1) if (qualifies(x)) valid.push(x);
+      if (sum && !valid.length) return graphPolynomialSign.build(t);
+      const key = sum ? valid.reduce((total, x) => total + x, 0) : valid.length;
+      const P = S.plane({ xMin: -8, xMax: 8, yMin: -6, yMax: 6, unit: 22, xLabelStep: 1, yLabelStep: 2 });
+      const alt = `The graph of a cubic polynomial f in ${P.describe()}, with grid lines 1 unit apart. It touches the x-axis at ${point(touch, 0)} without crossing, crosses the x-axis at ${point(cross, 0)}, and ${sign > 0 ? "rises" : "falls"} to the right. These are its only x-intercepts.`;
+      const steps = [
+        `The zeros are ${num(left)} and ${num(right)}. The graph crosses at x = ${num(cross)} but only touches at x = ${num(touch)}.`,
+        `Select the portions ${positive ? "above" : "below"} the x-axis; ${inclusive ? "include" : "exclude"} the zeros because the condition is f(x) ${relation} 0.`,
+        `Within ${num(lower)} ≤ x ≤ ${num(upper)}, the qualifying ${valid.length === 1 ? "integer is" : "integers are"} ${valid.length ? valid.map(num).join(", ") : "none"}.`,
+        sum ? `The sum is ${num(key)}.` : `There ${key === 1 ? "is 1 qualifying integer" : `are ${key} qualifying integers`}.`,
+      ];
+      return {
+        responseType: "numeric", stimulus: null,
+        figure: { svg: P.svg([...P.grid(), ...P.axes(), P.curve(f), P.point(left, 0), P.point(right, 0)], alt), alt, notToScale: false },
+        stem: `The graph of a cubic polynomial f is shown. ${sum ? "What is the sum of all integers x" : "How many integers x are there"} such that ${num(lower)} ≤ x ≤ ${num(upper)} and f(x) ${relation} 0?`,
+        correct: key, explanation: steps.join(" "), steps,
+        principles: ["Positive function values lie above the x-axis and negative values lie below it.", "A zero where a graph touches the x-axis may separate two intervals with the same sign."],
+        trap: "Do not reverse the sign at a touching zero. A strict inequality excludes each zero even when the graph has the requested sign on both sides.",
+        hint: "Mark the portions of the x-axis where the graph satisfies the condition, then check the integer inputs and the zeros.",
+        estimatedSeconds: 95,
+        verify: () => {
+          // A squared factor is positive away from its zero. The crossing
+          // factor and the right-hand sign alone determine the other signs.
+          const expected = [];
+          for (let x = lower; x <= upper; x += 1) {
+            const productSign = x === touch || x === cross ? 0 : sign * Math.sign(x - cross);
+            if (productSign === 0 ? inclusive : (productSign > 0) === positive) expected.push(x);
+          }
+          return (sum ? expected.reduce((total, x) => total + x, 0) : expected.length) === key;
+        },
+      };
+    },
+  };
+
   return [
     factoredPolynomialIntercepts, exponentialModelReading, quadraticVertexReading,
     projectileHeightModel, exponentialTableModel, functionTableEvaluate, polynomialConstantFromRemainder,
     exponentialFromWords, graphTransformation, vertexFromConditions, exponentialRewrite, functionTransformationTable,
     polynomialFactorRemainder, graphWhichFunction, quadraticMustBeTrue, shiftedExponentialRecovery, quadraticZerosInInterval,
+    graphQuadraticLevel, graphPolynomialSign,
   ];
 });

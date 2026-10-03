@@ -494,7 +494,7 @@
               `Slope: ${num(tidy(4 * q * yStep))} ÷ ${4 * xStep} = ${num(m)}.`,
               `The y-intercept is ${B}, so the equation is ${keyText}.`,
             ],
-            trap: `Counting squares gives a slope of ${num(q)}; the axes use different scales, ${xStep} per square across and ${yStep} per square up.`,
+            trap: `Counting squares gives a slope of ${num(q)}. Convert to axis units using ${xStep} per square across and ${yStep} per square up; the square count alone is correct only when those scales agree.`,
             hint: "Where does the line cross the y-axis, and how much does y change when x increases by one gridline?",
             verify: () => {
               const { slope, intercept } = read();
@@ -1063,11 +1063,13 @@
         const stem = `${intro}${figure ? "" : ` ${lineSentence}`} ${scene.cross}`;
         return packRanked(t, numeric, X, [
           [gapStart, "Gives the difference between the starting values instead of where the lines meet."],
-          [xStep !== 1 ? crossCells : NaN, `Counts ${crossCells} gridlines across without using the horizontal scale, ${xStep} per gridline.`],
+          [xStep !== 1 ? crossCells : NaN, figure
+            ? `Counts ${crossCells} gridlines across without using the horizontal scale, ${xStep} per gridline.`
+            : `Scales the equal-prediction input down by ${xStep}; the stated models already use the original input units.`],
           [level, `Gives the shared predicted value, ${num(level)}, instead of the value of x where it occurs.`],
           [gapStart / (Math.abs(fits[0][0]) + Math.abs(fits[1][0])), "Adds the two slopes instead of subtracting them when solving for the crossing."],
-          [X + xStep, "Reads the crossing one gridline too far to the right."],
-          [X - xStep, "Reads the crossing one gridline too far to the left."],
+          [X + xStep, figure ? "Reads the crossing one gridline too far to the right." : `Places the equal-prediction input ${S.plural(xStep, "unit")} too high; the predictions are unequal there.`],
+          [X - xStep, figure ? "Reads the crossing one gridline too far to the left." : `Places the equal-prediction input ${S.plural(xStep, "unit")} too low; the predictions are unequal there.`],
         ], {
           ...common,
           stem,
@@ -1102,8 +1104,8 @@
         [Math.abs(fits[0][0] - fits[1][0]) * X, "Multiplies the difference in slopes by x but leaves out the difference in the starting values."],
         [Math.abs(fits[0][1] - fits[1][1]), "Gives the difference between the predictions at x = 0 instead of at the given x."],
         [predict(lo, X), `Gives the predicted value for ${scene.lower[lo]} alone.`],
-        [tidy(predict(hi, X + xStep) - predict(lo, X + xStep)), `Compares the predictions one gridline past x = ${X}.`],
-        [tidy(predict(hi, X - xStep) - predict(lo, X - xStep)), `Compares the predictions one gridline before x = ${X}.`],
+        [tidy(predict(hi, X + xStep) - predict(lo, X + xStep)), `Compares the predictions at x = ${X + xStep} instead of x = ${X}.`],
+        [tidy(predict(hi, X - xStep) - predict(lo, X - xStep)), `Compares the predictions at x = ${X - xStep} instead of x = ${X}.`],
       ], {
         ...common,
         stem,
@@ -2377,8 +2379,60 @@
     },
   };
 
+  const residualPlotReconstruction = {
+    id: "residual-plot-reconstruction",
+    domain: DATA,
+    skill: "Two-variable data",
+    subskill: "scatterplots",
+    difficulty: "Medium",
+    title: "Recover observed values from a residual plot",
+    recognize: "A residual plot shows errors, not the original outputs. Read the residual at the requested input and add it to the model's prediction before comparing observed values.",
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 0, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["sign-error", "wrong-quantity"],
+    build(t) {
+      const m = t.nonzero(-6, 6);
+      const b = t.int(35, 95);
+      const xs = t.sample(range(1, 11), 8).sort((x, y) => x - y);
+      const residuals = xs.map(() => t.nonzero(-5, 5));
+      const points = xs.map((x, i) => [x, residuals[i]]);
+      const first = t.int(0, 5);
+      const second = t.int(first + 1, 7);
+      const difference = t.chance(0.5);
+      const prediction = (x) => m * x + b;
+      const observed = (i) => prediction(xs[i]) + residuals[i];
+      const key = difference ? observed(second) - observed(first) : observed(first);
+      const P = S.plane({ xMin: 0, xMax: 12, yMin: -6, yMax: 6, unit: 25, xLabelStep: 1, yLabelStep: 1, names: ["x", "r"] });
+      const alt = `A residual plot in ${P.describe()}, with x on the horizontal axis and residual r on the vertical axis. The plotted points (x, r) are ${points.map(([x, r]) => S.point(x, r)).join(", ")}.`;
+      const model = `y = ${S.lin(m, b)}`;
+      const reading = (i) => `At x = ${xs[i]}, the residual is ${num(residuals[i])} and the predicted value is ${num(m)}(${xs[i]}) + ${b} = ${num(prediction(xs[i]))}.`;
+      const reconstruction = (i) => `The observed value at x = ${xs[i]} is ${num(prediction(xs[i]))} ${S.signed(residuals[i])} = ${num(observed(i))}.`;
+      const steps = [reading(first), reconstruction(first)];
+      if (difference) steps.push(reading(second), reconstruction(second), `Subtract in the requested order: ${num(observed(second))} ${MINUS} ${S.paren(observed(first))} = ${num(key)}.`);
+      return {
+        responseType: "numeric", stimulus: null,
+        figure: { svg: P.svg([...P.grid(), ...P.axes(), ...points.map(([x, r]) => P.point(x, r))], alt), alt, notToScale: false },
+        stem: `A linear model for a data set is ${model}. The graph shows each residual r, defined as the observed value of y minus the value predicted by the model. ${difference ? `What is the observed value of y at x = ${xs[second]} minus the observed value of y at x = ${xs[first]}?` : `What is the observed value of y at x = ${xs[first]}?`}`,
+        correct: key, explanation: steps.join(" "), steps,
+        principles: ["Residual = observed − predicted, so observed = predicted + residual.", "The change in observed values includes both the change in predictions and the change in residuals."],
+        trap: "The vertical coordinate in this graph is a residual, not an observed value. A negative residual lowers the prediction; subtracting it instead would raise the result.",
+        hint: "What does the model predict at each requested input, and how does the plotted residual change that prediction?",
+        estimatedSeconds: difference ? 110 : 85,
+        verify: () => {
+          // Read the actual rendered dots back through the coordinate scale.
+          const dots = [...P.svg(points.map(([x, r]) => P.point(x, r)), alt).matchAll(/<circle cx="([\d.]+)" cy="([\d.]+)" r="4"/g)];
+          const recovered = dots.map((match) => [(Number(match[1]) - P.px(0)) / 25, (P.py(0) - Number(match[2])) / 25]);
+          const actual = (x) => {
+            const plotted = recovered.find(([input]) => close(input, x));
+            return plotted ? prediction(x) + plotted[1] : NaN;
+          };
+          return recovered.length === xs.length && close(difference ? actual(xs[second]) - actual(xs[first]) : actual(xs[first]), key);
+        },
+      };
+    },
+  };
+
   return [
     bestFitEquation, shapeAndCount, scatterReading, twoGroupLines, fitModelChoice, unevenTable, rescaledSlope, outlierRemoval,
-    expFitInterpretation, slopeUnitRate, residualActual,
+    expFitInterpretation, slopeUnitRate, residualActual, residualPlotReconstruction,
   ].map(withAgreement);
 });

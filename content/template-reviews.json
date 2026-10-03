@@ -285,42 +285,32 @@
       "sectionKey": "sat-math",
       "templateId": "best-fit-line-equation",
       "difficulty": "Easy",
-      "reviewer": "final_data",
-      "author": "math_data",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
-      "reviewedAt": "2026-10-02",
-      "evidence": "docs/reviews/2026-10-02-cold-review.md",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
       "samples": [
         {
-          "seed": "0",
-          "answer": "19.5",
+          "seed": "graph-review-0",
+          "answer": 3,
           "scene": null
         },
         {
-          "seed": "1",
-          "answer": "20.6",
+          "seed": "graph-review-1",
+          "answer": 3,
           "scene": null
         },
         {
-          "seed": "2",
-          "answer": 2,
-          "scene": null
-        },
-        {
-          "seed": "16",
-          "answer": "6",
-          "scene": null
-        },
-        {
-          "seed": "153",
-          "answer": "70",
+          "seed": "graph-review-2",
+          "answer": 3,
           "scene": null
         }
       ],
-      "templateVersion": 3,
+      "templateVersion": 4,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "a1fc9a707736ba7b1ff9bad27e5d12ede5c6367a0fc804470620560d77ab907b"
+      "fingerprint": "3edb75acfbc89b78361362519eae5ca6bcb29e16471236cb68a33fe0d962dfb6"
     },
     {
       "sectionKey": "sat-math",
@@ -1163,156 +1153,156 @@
       "sectionKey": "sat-math",
       "templateId": "exponential-fit-interpretation",
       "difficulty": "Medium",
-      "reviewer": "final_data",
-      "author": "math_data",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
-      "reviewedAt": "2026-10-02",
-      "evidence": "docs/reviews/2026-10-02-cold-review.md",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
       "samples": [
         {
-          "seed": "0",
+          "seed": "graph-review-0",
           "answer": 3,
           "scene": null
         },
         {
-          "seed": "1",
-          "answer": "51",
+          "seed": "graph-review-1",
+          "answer": 51,
           "scene": null
         },
         {
-          "seed": "2",
-          "answer": 1,
+          "seed": "graph-review-2",
+          "answer": 27.1,
           "scene": null
         }
       ],
-      "templateVersion": 3,
+      "templateVersion": 4,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "3ecbc6fef7366b629d40f3ca41a02daef1f4baf0be2a04221c39f77040953044"
+      "fingerprint": "f68f1177c25ae3e5d4b0b5fe2ca5173f2a355320b1099b4710bbb1b31a7f0262"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "exponential-from-words",
-      "templateVersion": 3,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "8af87d9470eb2b6ea7f7cddb8a9cacbc561b0551c7123ffd0f533f9da24cc509",
       "difficulty": "Medium",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
-          "answer": 1,
+          "seed": "graph-review-0",
+          "answer": 3,
           "scene": null
         },
         {
-          "seed": "47",
-          "answer": 1,
+          "seed": "graph-review-1",
+          "answer": 3,
           "scene": null
         },
         {
-          "seed": "91",
-          "answer": 2,
+          "seed": "graph-review-2",
+          "answer": 3,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 4,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "bec87158d93abd3c34785a8dd95f83e08522d2746a00d04c94814812be34a217"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "exponential-model-reading",
-      "templateVersion": 4,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "2f973380c77c8bf04f00bb97bafa29631a78e0c8e61e74a5588ebeba970bd885",
       "difficulty": "Easy",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
+          "seed": "graph-review-0",
           "answer": 1,
           "scene": null
         },
         {
-          "seed": "47",
-          "answer": 0,
+          "seed": "graph-review-1",
+          "answer": 4840,
           "scene": null
         },
         {
-          "seed": "91",
+          "seed": "graph-review-2",
           "answer": 1,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 5,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "f640aa7e4b437d93750132e0b053cc8dd9ddc085787193373bcf619177852558"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "exponential-rewrite",
-      "templateVersion": 4,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "08fe8c8e702e8e6daa8d5bd21914de40cd20e3d4b1a5a195f6e4ff5976a1b51a",
       "difficulty": "Medium",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
-          "answer": 2,
+          "seed": "graph-review-0",
+          "answer": 3,
           "scene": null
         },
         {
-          "seed": "47",
+          "seed": "graph-review-1",
           "answer": 0,
           "scene": null
         },
         {
-          "seed": "91",
-          "answer": "850",
+          "seed": "graph-review-2",
+          "answer": 368,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 5,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "6993eb1f97526f9c5dc50ab4c4ba9e4cd0c53a37fa76081726f917ada3c35658"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "exponential-table-model",
-      "templateVersion": 4,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "334e5961c8ea54a411555a35c9e8e036a7ac2119dcbe04a28ce53656dff6b760",
       "difficulty": "Medium",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
-          "answer": 3,
+          "seed": "graph-review-0",
+          "answer": 1,
           "scene": null
         },
         {
-          "seed": "47",
-          "answer": 3,
-          "scene": null
-        },
-        {
-          "seed": "91",
+          "seed": "graph-review-1",
           "answer": 0,
           "scene": null
+        },
+        {
+          "seed": "graph-review-2",
+          "answer": 1,
+          "scene": null
         }
-      ]
+      ],
+      "templateVersion": 5,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "4c5b6d3e4a436f3f82a580ae407ce7b3e9004146ab29d465e43b626e6b3f13e1"
     },
     {
       "sectionKey": "sat-math",
@@ -1451,156 +1441,126 @@
     {
       "sectionKey": "sat-math",
       "templateId": "factored-polynomial-intercepts",
-      "templateVersion": 4,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "ef637bed3e63d161510abfeb436c506dc223259621fa348a878709d8c92bdc76",
       "difficulty": "Easy",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
+          "seed": "graph-review-0",
+          "answer": 12,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-1",
+          "answer": 0,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-2",
           "answer": 1,
           "scene": null
-        },
-        {
-          "seed": "47",
-          "answer": 3,
-          "scene": null
-        },
-        {
-          "seed": "91",
-          "answer": "5",
-          "scene": null
         }
-      ]
+      ],
+      "templateVersion": 5,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "6b91930b2c8e3116fa87ce032a7d79b31c95cc90c6a5a14896a4e0ab69e3e2fc"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "fit-model-choice",
       "difficulty": "Medium",
-      "reviewer": "final_data",
-      "author": "math_data",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
-      "reviewedAt": "2026-10-02",
-      "evidence": "docs/reviews/2026-10-02-cold-review.md",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
       "samples": [
         {
-          "seed": "0",
-          "answer": 2,
+          "seed": "graph-review-0",
+          "answer": 1,
           "scene": null
         },
         {
-          "seed": "1",
-          "answer": 2,
-          "scene": null
-        },
-        {
-          "seed": "2",
+          "seed": "graph-review-1",
           "answer": 0,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-2",
+          "answer": 3,
           "scene": null
         }
       ],
-      "templateVersion": 2,
+      "templateVersion": 3,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "6bba1b334dae6e82da62fd49402cc18823751839f9c9758226142287b57d92b4"
+      "fingerprint": "d8a1b7c87c0efd5864fa0dfb25d4f4bb00d73ca076de803a7d34f3a75c3bc04e"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "fit-slope-rescaled-units",
       "difficulty": "Hard",
-      "reviewer": "final_data",
-      "author": "math_data",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
-      "reviewedAt": "2026-10-02",
-      "evidence": "docs/reviews/2026-10-02-cold-review.md",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
       "samples": [
         {
-          "seed": "0",
-          "answer": "3300",
+          "seed": "graph-review-0",
+          "answer": 3600,
           "scene": null
         },
         {
-          "seed": "1",
-          "answer": 2,
+          "seed": "graph-review-1",
+          "answer": 900,
           "scene": null
         },
         {
-          "seed": "2",
-          "answer": "300",
-          "scene": null
-        },
-        {
-          "seed": "3",
-          "answer": 0,
-          "scene": null
-        },
-        {
-          "seed": "4",
-          "answer": "900",
-          "scene": null
-        },
-        {
-          "seed": "5",
-          "answer": 0,
+          "seed": "graph-review-2",
+          "answer": 700,
           "scene": null
         }
       ],
-      "templateVersion": 4,
+      "templateVersion": 5,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "c52ae133a2254c8962f63b3c6e4a6671034d6530b31edbe15604763fe33e61d0"
+      "fingerprint": "355590e3337c5340afa700dd62bdd928205e049fc1fd30a640ca1de7cef65f05"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "fit-slope-unit-rate",
       "difficulty": "Medium",
-      "reviewer": "final_data",
-      "author": "math_data",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
-      "reviewedAt": "2026-10-02",
-      "evidence": "docs/reviews/2026-10-02-cold-review.md",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
       "samples": [
         {
-          "seed": "0",
-          "answer": "24",
+          "seed": "graph-review-0",
+          "answer": 2,
           "scene": null
         },
         {
-          "seed": "1",
-          "answer": 1,
+          "seed": "graph-review-1",
+          "answer": 0,
           "scene": null
         },
         {
-          "seed": "2",
-          "answer": 1,
-          "scene": null
-        },
-        {
-          "seed": "3",
-          "answer": 3,
-          "scene": null
-        },
-        {
-          "seed": "4",
-          "answer": 1,
-          "scene": null
-        },
-        {
-          "seed": "5",
-          "answer": "15",
+          "seed": "graph-review-2",
+          "answer": 125,
           "scene": null
         }
       ],
-      "templateVersion": 2,
+      "templateVersion": 3,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "5c315f0d1135d9cf11fbfcef13893c5e542eec9919973303883a11b05975c337"
+      "fingerprint": "0ea227c517e42fe39857db45208d8fc0814f0efb4d32676eeaae2e73df16a48e"
     },
     {
       "sectionKey": "sat-math",
@@ -1667,104 +1627,64 @@
     {
       "sectionKey": "sat-math",
       "templateId": "function-table-evaluate",
-      "templateVersion": 4,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "348e2011dc6a2a46add05b2ad5a86c06716da09880aef728b575748284080289",
       "difficulty": "Medium",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
+          "seed": "graph-review-0",
           "answer": 0,
           "scene": null
         },
         {
-          "seed": "47",
+          "seed": "graph-review-1",
           "answer": 0,
           "scene": null
         },
         {
-          "seed": "91",
+          "seed": "graph-review-2",
           "answer": 3,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 5,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "f6f3cb7dd43824697d904248a06663c8b7824aa6684a7cd1687ff33246708d49"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "function-transformation-table",
-      "templateVersion": 5,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "7dfffd1fb2887fc100182b89b5fa0fe4e0e7f82280280aaee80e4028a94d5303",
       "difficulty": "Hard",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
-          "answer": 3,
-          "scene": null
-        },
-        {
-          "seed": "47",
-          "answer": 1,
-          "scene": null
-        },
-        {
-          "seed": "91",
-          "answer": 2,
-          "scene": null
-        },
-        {
-          "seed": "0",
-          "answer": 1,
-          "scene": null
-        },
-        {
-          "seed": "1",
+          "seed": "graph-review-0",
           "answer": 0,
           "scene": null
         },
         {
-          "seed": "2",
-          "answer": "5",
-          "scene": null
-        },
-        {
-          "seed": "3",
-          "answer": 1,
-          "scene": null
-        },
-        {
-          "seed": "4",
+          "seed": "graph-review-1",
           "answer": 0,
           "scene": null
         },
         {
-          "seed": "5",
-          "answer": 0,
-          "scene": null
-        },
-        {
-          "seed": "6",
-          "answer": 1,
-          "scene": null
-        },
-        {
-          "seed": "7",
-          "answer": "9",
+          "seed": "graph-review-2",
+          "answer": -6,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 6,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "87e19fe724ff23fe75bc641158472a909da79629cab6ae308180d7bf1cc00740"
     },
     {
       "sectionKey": "sat-math",
@@ -1800,64 +1720,64 @@
     {
       "sectionKey": "sat-math",
       "templateId": "graph-transformation",
-      "templateVersion": 3,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "c623045611885a225683fd8c473e92a510e13aca15f5209278e8eda196c63d24",
       "difficulty": "Medium",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
+          "seed": "graph-review-0",
           "answer": 2,
           "scene": null
         },
         {
-          "seed": "47",
-          "answer": "3",
+          "seed": "graph-review-1",
+          "answer": 2,
           "scene": null
         },
         {
-          "seed": "91",
-          "answer": 0,
+          "seed": "graph-review-2",
+          "answer": 3,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 4,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "ae781faec298656f5b8da4f44b04297d72958e1f4ec7fbd5ff80318f7aa8e50d"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "graph-which-function",
-      "templateVersion": 4,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "94e6c73189bea5926b2fee9d67fa3e5d02b86d2a01198cd90747ff491b763a0b",
       "difficulty": "Medium",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "0",
-          "answer": 1,
+          "seed": "graph-review-0",
+          "answer": 3,
           "scene": null
         },
         {
-          "seed": "1",
-          "answer": 0,
+          "seed": "graph-review-1",
+          "answer": 3,
           "scene": null
         },
         {
-          "seed": "13",
+          "seed": "graph-review-2",
           "answer": 3,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 5,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "69f80ff5f0984f6aa2641274aa68ce63cb04a6d2c60d6c0b430f6bd3778ca2e0"
     },
     {
       "sectionKey": "sat-math",
@@ -3307,37 +3227,57 @@
       "sectionKey": "sat-math",
       "templateId": "outlier-removal-fit",
       "difficulty": "Hard",
-      "reviewer": "final_data",
-      "author": "math_data",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
-      "reviewedAt": "2026-10-02",
-      "evidence": "docs/reviews/2026-10-02-cold-review.md",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
       "samples": [
         {
-          "seed": "0",
-          "answer": 2,
+          "seed": "graph-review-0",
+          "answer": 1,
           "scene": null
         },
         {
-          "seed": "1",
+          "seed": "graph-review-1",
+          "answer": 3,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-2",
+          "answer": 1,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-3",
+          "answer": 3,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-4",
+          "answer": 1,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-5",
+          "answer": 3,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-6",
           "answer": 0,
           "scene": null
         },
         {
-          "seed": "2",
-          "answer": 2,
-          "scene": null
-        },
-        {
-          "seed": "11",
+          "seed": "graph-review-7",
           "answer": 1,
           "scene": null
         }
       ],
-      "templateVersion": 3,
+      "templateVersion": 4,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "cc9358fed999737d9512a49882e6526071997c7893a449289e10b4a5ec6d5dc0"
+      "fingerprint": "c12548a66aa24e9c81c8d02d4e1a667fdd15b80222cbe553e90830cbb0f749f4"
     },
     {
       "sectionKey": "sat-math",
@@ -3714,64 +3654,64 @@
     {
       "sectionKey": "sat-math",
       "templateId": "polynomial-constant-from-remainder",
-      "templateVersion": 4,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "350bca16671203be6bbd6bdc71d21a5948490a58c2a026167d6606863f4c6c03",
       "difficulty": "Medium",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
-          "answer": 1,
+          "seed": "graph-review-0",
+          "answer": 12,
           "scene": null
         },
         {
-          "seed": "47",
-          "answer": "7",
+          "seed": "graph-review-1",
+          "answer": 0,
           "scene": null
         },
         {
-          "seed": "91",
-          "answer": 1,
+          "seed": "graph-review-2",
+          "answer": -12,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 5,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "6547a22ff20286b5569cd3773a932c8af49a0fa5089a4fb145fe446b7aba608b"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "polynomial-factor-remainder",
-      "templateVersion": 5,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "fb7bc1cab030877cc163a6a95208eea42e253f41757b5d41df5222e3218e6d25",
       "difficulty": "Medium",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
+          "seed": "graph-review-0",
           "answer": 2,
           "scene": null
         },
         {
-          "seed": "47",
+          "seed": "graph-review-1",
           "answer": 2,
           "scene": null
         },
         {
-          "seed": "91",
-          "answer": 2,
+          "seed": "graph-review-2",
+          "answer": 1,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 6,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "5414c6acf6ecc8c964a8c4fe59206a5c644885c13ae95e51b5616752d80d18f1"
     },
     {
       "sectionKey": "sat-math",
@@ -3869,33 +3809,33 @@
     {
       "sectionKey": "sat-math",
       "templateId": "projectile-height-model",
-      "templateVersion": 4,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "3262be4079f9f99e2e04025a241838194ea38e0f45c2544ea2ba3c48301caeed",
       "difficulty": "Medium",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
+          "seed": "graph-review-0",
+          "answer": 2,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-1",
           "answer": 3,
           "scene": null
         },
         {
-          "seed": "47",
-          "answer": 3,
-          "scene": null
-        },
-        {
-          "seed": "91",
-          "answer": "4",
+          "seed": "graph-review-2",
+          "answer": 2,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 5,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "e566552f1a78387187d1402b48730685da894a64e6e6d2708f6eb4944f8eb28d"
     },
     {
       "sectionKey": "sat-math",
@@ -4024,53 +3964,33 @@
     {
       "sectionKey": "sat-math",
       "templateId": "quadratic-must-be-true",
-      "templateVersion": 3,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "11bf993a3ed2ad2e45c45ceaf981d783537ed4d63cd6cf2050697f638f64692f",
       "difficulty": "Medium",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
-          "answer": 2,
+          "seed": "graph-review-0",
+          "answer": 0,
           "scene": null
         },
         {
-          "seed": "47",
-          "answer": 1,
+          "seed": "graph-review-1",
+          "answer": 0,
           "scene": null
         },
         {
-          "seed": "91",
-          "answer": 3,
-          "scene": null
-        },
-        {
-          "seed": "12",
-          "answer": 1,
-          "scene": null
-        },
-        {
-          "seed": "5",
-          "answer": 2,
-          "scene": null
-        },
-        {
-          "seed": "19",
-          "answer": 2,
-          "scene": null
-        },
-        {
-          "seed": "1",
-          "answer": 2,
+          "seed": "graph-review-2",
+          "answer": 0,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 4,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "3d1a3c6712cc3806ecb94edfad1dcb988024852cb2ddd203c127b8dd55ef43ca"
     },
     {
       "sectionKey": "sat-math",
@@ -4137,33 +4057,33 @@
     {
       "sectionKey": "sat-math",
       "templateId": "quadratic-vertex-reading",
-      "templateVersion": 4,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "b2411706e65952a725145c563a7cbbf693e60f39688d2629b4546dee62645bbb",
       "difficulty": "Easy",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
-          "answer": "0",
+          "seed": "graph-review-0",
+          "answer": 1,
           "scene": null
         },
         {
-          "seed": "47",
-          "answer": "-3",
+          "seed": "graph-review-1",
+          "answer": 2,
           "scene": null
         },
         {
-          "seed": "91",
+          "seed": "graph-review-2",
           "answer": 2,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 5,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "a607db8dd25a06b7603e2823d186aec58648a8db8af8b6d1f51cef31accaac36"
     },
     {
       "sectionKey": "sat-math",
@@ -4510,62 +4430,32 @@
       "sectionKey": "sat-math",
       "templateId": "residual-actual-predicted",
       "difficulty": "Hard",
-      "reviewer": "final_data",
-      "author": "math_data",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
-      "reviewedAt": "2026-10-02",
-      "evidence": "docs/reviews/2026-10-02-cold-review.md",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
       "samples": [
         {
-          "seed": "0",
+          "seed": "graph-review-0",
           "answer": 3,
           "scene": null
         },
         {
-          "seed": "1",
-          "answer": 0,
-          "scene": null
-        },
-        {
-          "seed": "2",
+          "seed": "graph-review-1",
           "answer": 3,
           "scene": null
         },
         {
-          "seed": "3",
-          "answer": 1,
-          "scene": null
-        },
-        {
-          "seed": "4",
+          "seed": "graph-review-2",
           "answer": 3,
-          "scene": null
-        },
-        {
-          "seed": "5",
-          "answer": 2,
-          "scene": null
-        },
-        {
-          "seed": "6",
-          "answer": 3,
-          "scene": null
-        },
-        {
-          "seed": "7",
-          "answer": 1,
-          "scene": null
-        },
-        {
-          "seed": "8",
-          "answer": 2,
           "scene": null
         }
       ],
-      "templateVersion": 2,
+      "templateVersion": 3,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "d758b421dc526e73655c9778b03ea6abb4dfb5f8af10cf8540b1771a1856f9a4"
+      "fingerprint": "af9318985c0fe7dfa08c31f15bf2448497b305a52a310e11b31daa171c5d68b9"
     },
     {
       "sectionKey": "sat-math",
@@ -4788,78 +4678,108 @@
       "sectionKey": "sat-math",
       "templateId": "scatterplot-fit-reading",
       "difficulty": "Medium",
-      "reviewer": "final_data",
-      "author": "math_data",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
-      "reviewedAt": "2026-10-02",
-      "evidence": "docs/reviews/2026-10-02-cold-review.md",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
       "samples": [
         {
-          "seed": "0",
+          "seed": "graph-review-0",
           "answer": 0,
           "scene": null
         },
         {
-          "seed": "1",
-          "answer": "8",
+          "seed": "graph-review-1",
+          "answer": 0,
           "scene": null
         },
         {
-          "seed": "2",
-          "answer": 3,
+          "seed": "graph-review-2",
+          "answer": 30,
           "scene": null
         },
         {
-          "seed": "153",
-          "answer": "20",
+          "seed": "graph-review-9",
+          "answer": 5,
           "scene": null
         },
         {
-          "seed": "16",
+          "seed": "graph-review-14",
           "answer": 3,
           "scene": null
         }
       ],
-      "templateVersion": 3,
+      "templateVersion": 4,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "2e26773f6493facffc3926523551a1ba0d0ab484f9f36c78801ac1fc76822baa"
+      "fingerprint": "0142f163d9c7e5be0f7a4ab1a95b00467f65bcfecd260fd4bf120b21be525c89"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "scatterplot-shape-and-count",
       "difficulty": "Easy",
-      "reviewer": "final_data",
-      "author": "math_data",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
-      "reviewedAt": "2026-10-02",
-      "evidence": "docs/reviews/2026-10-02-cold-review.md",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
       "samples": [
         {
-          "seed": "0",
-          "answer": 1,
+          "seed": "graph-review-0",
+          "answer": 5,
           "scene": null
         },
         {
-          "seed": "1",
-          "answer": "4",
+          "seed": "graph-review-1",
+          "answer": 6,
           "scene": null
         },
         {
-          "seed": "2",
+          "seed": "graph-review-2",
           "answer": 3,
           "scene": null
         },
         {
-          "seed": "23",
+          "seed": "graph-review-3",
+          "answer": 0,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-4",
           "answer": 2,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-5",
+          "answer": 1,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-6",
+          "answer": 3,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-7",
+          "answer": 5,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-12",
+          "answer": 2,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-13",
+          "answer": 1,
           "scene": null
         }
       ],
-      "templateVersion": 3,
+      "templateVersion": 4,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "d807c6947ee1b5107773652c25bea049bc4664f68095b8956682dd03cabc8363"
+      "fingerprint": "979502003f27f70d0bf2aa4e6f40723f7e30a5ac12a3e372f6f7d4fbfaa29714"
     },
     {
       "sectionKey": "sat-math",
@@ -5711,37 +5631,32 @@
       "sectionKey": "sat-math",
       "templateId": "two-group-fit-lines",
       "difficulty": "Medium",
-      "reviewer": "final_data",
-      "author": "math_data",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
-      "reviewedAt": "2026-10-02",
-      "evidence": "docs/reviews/2026-10-02-cold-review.md",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
       "samples": [
         {
-          "seed": "0",
+          "seed": "graph-review-0",
+          "answer": 0,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-1",
           "answer": 3,
           "scene": null
         },
         {
-          "seed": "1",
-          "answer": "1.25",
-          "scene": null
-        },
-        {
-          "seed": "2",
-          "answer": 1,
-          "scene": null
-        },
-        {
-          "seed": "23",
-          "answer": "6",
+          "seed": "graph-review-2",
+          "answer": 0,
           "scene": null
         }
       ],
-      "templateVersion": 3,
+      "templateVersion": 4,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "0390ed5d72fa0a8fc54d683423ba84bf04da344080c1c273e5d3148820b3a5c6"
+      "fingerprint": "76fb4a30f93ce6c48d8a9875efa2fdb5e2f1136688a95b166a63d09c7ba2ae44"
     },
     {
       "sectionKey": "sat-math",
@@ -5933,32 +5848,32 @@
       "sectionKey": "sat-math",
       "templateId": "uneven-table-growth",
       "difficulty": "Medium",
-      "reviewer": "final_data",
-      "author": "math_data",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
-      "reviewedAt": "2026-10-02",
-      "evidence": "docs/reviews/2026-10-02-cold-review.md",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
       "samples": [
         {
-          "seed": "0",
-          "answer": 0,
-          "scene": null
-        },
-        {
-          "seed": "1",
+          "seed": "graph-review-0",
           "answer": 3,
           "scene": null
         },
         {
-          "seed": "3",
-          "answer": 2,
+          "seed": "graph-review-1",
+          "answer": 0,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-2",
+          "answer": 400,
           "scene": null
         }
       ],
-      "templateVersion": 3,
+      "templateVersion": 4,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "3d908aa93fdf5be0a7122564a65bdd33e2c2e809b06a5616338dde78b29f91e4"
+      "fingerprint": "d6cefc2116a28f9e7f347b4a52d7c7ac863dcec9e2428dd2058e6958e2d62024"
     },
     {
       "sectionKey": "sat-math",
@@ -6025,33 +5940,33 @@
     {
       "sectionKey": "sat-math",
       "templateId": "vertex-from-conditions",
-      "templateVersion": 5,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "c404b7a88eb8e15bf8d399c2fb4aba0f43f7a8d994de415f936d25d7be6cb9f5",
       "difficulty": "Medium",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
+          "seed": "graph-review-0",
           "answer": 0,
           "scene": null
         },
         {
-          "seed": "47",
-          "answer": 3,
+          "seed": "graph-review-1",
+          "answer": -20,
           "scene": null
         },
         {
-          "seed": "91",
-          "answer": 2,
+          "seed": "graph-review-2",
+          "answer": 1,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 6,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "ca2dcc6abb15e134a301404975e7ce2cf53cb9bc24ee3e3141d897de8f035a93"
     },
     {
       "sectionKey": "sat-math",
@@ -10431,79 +10346,64 @@
     {
       "sectionKey": "sat-math",
       "templateId": "shifted-exponential-recovery",
-      "templateVersion": 1,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "63408d4dccd60ff19563b0748738501657b384eb842b0d3a3f24443a3e8e7ebb",
       "difficulty": "Hard",
-      "reviewer": "/root/expand_math/review_nonlinear",
-      "author": "/root/expand_math/advanced_functions_replacement",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "13",
-          "answer": 0,
-          "scene": null
-        },
-        {
-          "seed": "47",
+          "seed": "graph-review-0",
           "answer": 2,
           "scene": null
         },
         {
-          "seed": "91",
+          "seed": "graph-review-1",
           "answer": 2,
           "scene": null
         },
         {
-          "seed": "4",
+          "seed": "graph-review-2",
           "answer": 0,
-          "scene": null
-        },
-        {
-          "seed": "8",
-          "answer": "18",
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 2,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "91eb3b9690f98da510fad7c391bd6780ab5e27ffea4bc34a70d5673bc5dd7cf1"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "quadratic-zeros-in-interval",
-      "templateVersion": 1,
-      "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "3b4617b50655fa090c7d93e675bc7fae19385db2950ae22a74b7ee804e5e9998",
       "difficulty": "Hard",
-      "reviewer": "/root/expand_math/review_final_constraint",
-      "author": "/root/expand_math/advanced_constraint_replacement",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-03",
-      "evidence": "docs/reviews/2026-10-03-sat-math-expansion.md",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
       "samples": [
         {
-          "seed": "28t5.quadratic-zeros-in-interval.0",
-          "answer": "-22",
-          "scene": null
-        },
-        {
-          "seed": "2ex4.quadratic-zeros-in-interval.1",
-          "answer": 3,
-          "scene": null
-        },
-        {
-          "seed": "2l13.quadratic-zeros-in-interval.2",
+          "seed": "graph-review-0",
           "answer": 2,
           "scene": null
         },
         {
-          "seed": "3rsw.quadratic-zeros-in-interval.9",
-          "answer": "2",
+          "seed": "graph-review-1",
+          "answer": -18,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-2",
+          "answer": 3,
           "scene": null
         }
-      ]
+      ],
+      "templateVersion": 2,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "0b4618fb48efc7f0f897aec63dafd6c70eab2f91400ec9194ab9ff247cf0c82d"
     },
     {
       "sectionKey": "sat-math",
@@ -12096,6 +11996,199 @@
           "scene": "sec-demonstrative-courtyard-benches"
         }
       ]
+    },
+    {
+      "sectionKey": "sat-math",
+      "templateId": "residual-plot-reconstruction",
+      "difficulty": "Medium",
+      "reviewer": "/root/review_sat_data",
+      "author": "/root and /root/sat_graphs",
+      "method": "independent-agent-blind-solve",
+      "verdict": "accepted",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-data-review.md",
+      "samples": [
+        {
+          "seed": "graph-review-0",
+          "answer": 86,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-1",
+          "answer": 5,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-2",
+          "answer": -1,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-3",
+          "answer": 48,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-4",
+          "answer": -11,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-5",
+          "answer": -6,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-6",
+          "answer": 78,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-7",
+          "answer": 103,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-9",
+          "answer": 62,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-12",
+          "answer": 5,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-14",
+          "answer": 22,
+          "scene": null
+        }
+      ],
+      "templateVersion": 1,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "a6ad8d178baca13215e65ebf74a8247cb908249ef28d947532c500ad4c267cd7"
+    },
+    {
+      "sectionKey": "sat-math",
+      "templateId": "graph-quadratic-level",
+      "difficulty": "Medium",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
+      "method": "independent-agent-blind-solve",
+      "verdict": "accepted",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
+      "samples": [
+        {
+          "seed": "graph-review-0",
+          "answer": 2,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-1",
+          "answer": 3,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-2",
+          "answer": 1,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-3",
+          "answer": 0,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-4",
+          "answer": -2,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-5",
+          "answer": -1,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-6",
+          "answer": 2,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-7",
+          "answer": 0,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-8",
+          "answer": -4,
+          "scene": null
+        }
+      ],
+      "templateVersion": 1,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "358a67a45da27c60096f7f39f76e16c830dab6fabc91e8bf81e011de839689e4"
+    },
+    {
+      "sectionKey": "sat-math",
+      "templateId": "graph-polynomial-sign-integers",
+      "difficulty": "Medium",
+      "reviewer": "/root/review_sat_nonlinear",
+      "author": "/root/sat_graphs",
+      "method": "independent-agent-blind-solve",
+      "verdict": "accepted",
+      "reviewedAt": "2026-10-03",
+      "evidence": "docs/reviews/2026-10-03-graphing-nonlinear-review.md",
+      "samples": [
+        {
+          "seed": "graph-review-0",
+          "answer": 3,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-1",
+          "answer": 6,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-2",
+          "answer": 6,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-3",
+          "answer": -3,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-4",
+          "answer": 1,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-5",
+          "answer": 7,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-6",
+          "answer": 6,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-7",
+          "answer": 21,
+          "scene": null
+        },
+        {
+          "seed": "graph-review-8",
+          "answer": 6,
+          "scene": null
+        }
+      ],
+      "templateVersion": 1,
+      "fingerprintAlgorithm": "source-v1",
+      "fingerprint": "6082a91fa314aa7e8f496e6423a3b77d260cd611512ae1c022f2a870d37e2f0d"
     }
   ]
 }
