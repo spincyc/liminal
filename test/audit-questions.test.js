@@ -3,11 +3,20 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 
-const { blindScore, shapeSignature } = require("../tools/audit-questions");
+const { blindScore, exactSignature, shapeSignature } = require("../tools/audit-questions");
 
 function question(choices, correctAnswer) {
   return { choices, correctAnswer };
 }
+
+test("graph data distinguishes exact items while numerical variants retain the same shape", () => {
+  const base = { sectionKey: "act-mathematics", subskill: "linear", stimulus: null,
+    stem: "What is the slope of the line?", figure: { alt: "A line through (2, 4) and (6, 8)." } };
+  const changed = { ...base, figure: { alt: "A line through (2, 8) and (6, 4)." } };
+  assert.notEqual(exactSignature(base), exactSignature(changed));
+  assert.equal(exactSignature(base), exactSignature({ ...base, id: "another-id" }));
+  assert.equal(shapeSignature(base), shapeSignature(changed));
+});
 
 test("blind score treats four equal-length choices as chance", () => {
   assert.equal(blindScore([question(["12", "15", "18", "21"], 2)]), 0.25);

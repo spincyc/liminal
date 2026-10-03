@@ -1,10 +1,37 @@
 "use strict";
 
+// Original rounded illustration, not an observational data series. Keep the
+// accessible description and plotted coordinates tied to the same values.
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const departures = [0, 1, 2, 3, 4, 3, 1, -2, -4, -3, -2, -1];
+const px = (index) => 65 + 46 * index;
+const py = (value) => 150 - 24 * value;
+const number = (value) => String(value).replace("-", "−");
+const figure = {
+  svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 330">
+<g fill="none" stroke="currentColor">
+<path d="M65 44 V254 H580"/>
+${Array.from({ length: 9 }, (_, i) => i - 4).map((value) => `<path d="M59 ${py(value)} H580" stroke-opacity="${value === 0 ? 0.7 : 0.16}"${value === 0 ? ' stroke-dasharray="4 4"' : ""}/>`).join("\n")}
+<polyline points="${departures.map((value, i) => `${px(i)},${py(value)}`).join(" ")}" stroke-width="2.5"/>
+</g>
+<g fill="currentColor">${departures.map((value, i) => `<circle cx="${px(i)}" cy="${py(value)}" r="3.5"/>`).join("")}</g>
+<g fill="currentColor" font-family="sans-serif" font-size="13">
+<text x="310" y="21" text-anchor="middle">Figure 1. A simplified annual carbon dioxide cycle</text>
+${Array.from({ length: 9 }, (_, i) => i - 4).map((value) => `<text x="51" y="${py(value) + 4}" text-anchor="end">${number(value)}</text>`).join("\n")}
+${months.map((month, i) => `<text x="${px(i)}" y="278" text-anchor="middle">${month}</text>`).join("\n")}
+<text x="310" y="310" text-anchor="middle">Month</text>
+<text x="17" y="150" transform="rotate(-90 17 150)" text-anchor="middle">Departure from annual mean (ppm)</text>
+</g></svg>`,
+  alt: `Figure 1. A simplified illustration of monthly carbon dioxide departures from the annual mean at Mauna Loa, rounded to the nearest part per million (ppm). The horizontal axis is month; the vertical axis is departure in ppm, from −4 to 4 in steps of 1. Points in month order: ${months.map((month, i) => `${month} ${number(departures[i])}`).join("; ")}. Segments connect consecutive months.`,
+  notToScale: false,
+};
+
 module.exports = {
   id: "act-reading-p018",
   type: "natural-science",
   title: "The Breathing Curve",
   intro: "This original passage discusses the longest continuous record of atmospheric carbon dioxide. The figure is a simplified illustration for this practice passage.",
+  figure,
   content: `When Charles David Keeling put an instrument on Mauna Loa in 1958, the question he
 was trying to settle was narrow and technical: whether the amount of carbon dioxide in the
 air could be measured accurately enough to be compared from one year to the next. Earlier
@@ -19,20 +46,10 @@ rising, steadily, year over year. The second was stranger and arrived faster. Th
 concentration did not merely rise. It went up and down within each year, by several parts
 per million, on a schedule that repeated.
 
-Figure 1. Carbon dioxide at Mauna Loa, monthly departure from the annual mean, rounded to
-the nearest part per million
-
- +4 |                  *
- +3 |              *       *
- +2 |          *
- +1 |      *                   *
-  0 |  *
- -1 |                                              *
- -2 |                              *           *
- -3 |                                      *
- -4 |                                  *
-    +------------------------------------------------
-     Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+Figure 1 illustrates monthly departures from the annual mean, rounded to the
+nearest part per million. A value of zero means the annual mean, not an absence of
+carbon dioxide. The points are a simplified illustration, not a particular year's
+measurements.
 
 The explanation is photosynthesis, and it is lopsided for a reason that has nothing to do
 with climate. Most of the planet's land is north of the equator; the southern hemisphere is
@@ -110,12 +127,12 @@ record is not in any one year of it, and no year of it can be added later.`,
       key: "September, near the end of summer.",
       wrong: [
         ["May, at the close of the spring.", "May is the highest point on the figure rather than the lowest one."],
-        ["December, at the end of the year.", "December is below the mean but by the smallest amount of any month plotted."],
-        ["October, in the middle of autumn.", "October is below the mean but sits one row above the lowest mark on the plot."],
+        ["December, at the end of the year.", "December is below the mean but by the smallest amount among the months below the mean."],
+        ["October, in the middle of autumn.", "October is below the mean but sits one unit above the lowest mark on the plot."],
       ],
       why: "Figure 1 in the passage plots each month as a departure from the annual mean, and the mark at the bottom of the vertical scale stands above the September label on the horizontal axis.",
       steps: [
-        "Find the lowest row of the figure that contains a mark.",
+        "Find the plotted point with the lowest departure from the annual mean.",
         "Read down to the month label beneath that mark.",
       ],
       hint: "Look for the mark nearest the bottom of the plot.",

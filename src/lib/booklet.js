@@ -199,7 +199,7 @@ function figureFallbackHtml(figure) {
 }
 
 // How question content becomes HTML. Without `render`, content is escaped
-// plain text and stimuli go through parseBlocks above (ACT bank forms). Science
+// plain text and stimuli go through parseBlocks above (ACT bank forms). All
 // figures retain a text fallback when no renderer is supplied. The booklet
 // page passes `render` for figures and SAT template forms, so a booklet shows
 // exactly what the practice screen shows (app/render.js: math typesetting,
@@ -229,7 +229,7 @@ function questionHtml(item, previous, render) {
   if (question.figure && !repeatedFigure(question, previous)) {
     const figureHtml = render && render.figure
       ? render.figure(question.figure, question)
-      : question.sectionKey === "act-science" ? figureFallbackHtml(question.figure) : "";
+      : figureFallbackHtml(question.figure);
     if (figureHtml) parts.push(`<div class="figure">${figureHtml}</div>`);
   }
   // A Science passage plus graph can exceed a column. Let that context flow,
@@ -747,7 +747,7 @@ function renderTex(model) {
               `\\begin{stimulus}\n${blocksToTex(q.stimulus.content, { wrapTables: q.sectionKey === "act-science" })}\n\\end{stimulus}`,
             );
           }
-          if (q.sectionKey === "act-science" && q.figure && !repeatedFigure(q, before)) {
+          if (q.figure && !repeatedFigure(q, before)) {
             parts.push(`\\begin{stimulus}\n\\textbf{Diagram description (drawing unavailable):} ${tex(figureDescription(q.figure))}` +
               (q.figure.notToScale ? "\n\n\\textit{Note: Figure not drawn to scale.}" : "") +
               "\n\\end{stimulus}");

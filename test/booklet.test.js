@@ -359,10 +359,11 @@ test("template forms render through the page's renderer, with the key at the end
   assert.ok(!keyOnly.includes('<article class="q'), "the key alone prints no questions");
 });
 
-test("without a renderer, SAT text is escaped and no figure markup is emitted", () => {
+test("without a renderer, SAT text is escaped and figures retain their descriptions", () => {
   const html = booklet.renderBookletHtml(richModel());
   assert.equal((html.match(/<article class="q"/g) || []).length, 3);
-  assert.ok(!html.includes("<figure") && !html.includes('<div class="figure">'));
+  assert.match(html, /Diagram description \(drawing unavailable\): A triangle/);
+  assert.ok(!html.includes("<svg"), "raw figure SVG must never bypass the renderer");
   assert.match(html, /<p class="stem"><span class="num">1\.<\/span> Which &quot;value&quot;/);
   assert.ok(!html.includes("Answer key — form"), "the key is opt-in");
 });

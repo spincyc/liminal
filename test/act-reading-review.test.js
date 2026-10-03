@@ -48,6 +48,7 @@ test("ACT Reading assembly preserves authored keys, rationales, teaching text, a
     for (const field of ["title", "intro", "content"]) {
       assert.equal(stored[field], passage[field], `${passage.id}: ${field}`);
     }
+    assert.deepEqual(stored.figure, passage.figure, `${passage.id}: figure`);
     assert.equal(stored.wordCount, passage.content.trim().split(/\s+/).length);
   }
 });
@@ -80,14 +81,18 @@ test("the smoke-seed table key follows changes rather than the largest final val
 
 test("the illustrated CO2 minimum aligns with September", () => {
   const passage = passages.find((p) => p.id === "act-reading-p018");
-  const lines = passage.content.split("\n");
-  const labels = lines.find((line) => /Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec/.test(line));
-  const plotted = lines.filter((line) => /^\s*[+-]?\d+\s*\|/.test(line));
-  const low = plotted.reduce((a, b) => Number(a.split("|")[0]) < Number(b.split("|")[0]) ? a : b);
-  const point = low.indexOf("*");
-  const nearest = [...labels.matchAll(/[A-Z][a-z]{2}/g)]
-    .sort((a, b) => Math.abs(a.index + 1 - point) - Math.abs(b.index + 1 - point))[0][0];
-  assert.equal(nearest, "Sep");
+  const { validateFigure, hydrateBank } = require("../tools/lib/content");
+  assert.deepEqual(validateFigure(passage.figure), []);
+  const dots = [...passage.figure.svg.matchAll(/<circle cx="([\d.]+)" cy="([\d.]+)"/g)]
+    .map((match) => ({ x: Number(match[1]), y: Number(match[2]) }));
+  assert.equal(dots.length, 12);
+  const minimum = dots.reduce((a, b) => a.y > b.y ? a : b);
+  assert.match(passage.figure.svg, new RegExp(`<text x="${minimum.x}" y="278" text-anchor="middle">Sep</text>`));
+  const altValues = [...passage.figure.alt.matchAll(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ([−\d]+)/g)];
+  assert.equal(altValues.length, 12);
+  assert.equal(altValues.reduce((a, b) => Number(a[2].replace("−", "-")) < Number(b[2].replace("−", "-")) ? a : b)[1], "Sep");
+  assert.doesNotMatch(passage.content, /\*/);
+  assert.equal(hydrateBank("act-reading").find((q) => q.id === "act-reading-0173").figure.svg, passage.figure.svg);
   assert.match(bank[172].choices[bank[172].correctAnswer], /^September/);
 });
 

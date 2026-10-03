@@ -10899,17 +10899,17 @@
       },
       {
         "index": 2,
-        "reason": "December is below the mean but by the smallest amount of any month plotted."
+        "reason": "December is below the mean but by the smallest amount among the months below the mean."
       },
       {
         "index": 3,
-        "reason": "October is below the mean but sits one row above the lowest mark on the plot."
+        "reason": "October is below the mean but sits one unit above the lowest mark on the plot."
       }
     ],
     "hint": "Look for the mark nearest the bottom of the plot.",
     "explanation": "Figure 1 in the passage plots each month as a departure from the annual mean, and the mark at the bottom of the vertical scale stands above the September label on the horizontal axis.",
     "solutionSteps": [
-      "Find the lowest row of the figure that contains a mark.",
+      "Find the plotted point with the lowest departure from the annual mean.",
       "Read down to the month label beneath that mark."
     ],
     "strategy": "Fix the axes and units before reading any point, then locate the extreme or trend the question names rather than the most visually striking feature.",

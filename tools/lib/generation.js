@@ -181,6 +181,7 @@ function baseRecord({
     difficulty: task.difficulty,
     responseType,
     stimulus: generated.stimulus || null,
+    ...(generated.figure === undefined ? {} : { figure: generated.figure }),
     stem: generated.stem,
     hint: generated.hint,
     explanation: generated.explanation,

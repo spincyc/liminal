@@ -15,6 +15,7 @@ validator rejects unknown or missing required values.
 | `difficulty` | string | `Easy`, `Medium`, or `Hard` |
 | `responseType` | string | `multiple-choice`, `numeric`, or `essay` |
 | `stimulus` | object or `null` | Optional passage, notes, table, or scenario belonging to this question alone |
+| `figure` | object, optional | Standalone question's `{ svg, alt, notToScale }`, validated with the same strict SVG rules as a shared passage figure. Omit for passage-set questions; their figure belongs to the passage |
 | `passageId` | string or `null` | Links the question to a shared passage in `content/passages/<section-key>.json`. Mutually exclusive with `stimulus` |
 | `stem` | string | Complete question or essay task |
 | `choices` | array or `null` | Four choices for multiple-choice records |
@@ -133,8 +134,11 @@ reproducible generation and current independent answers. It runs in the full
 gate and before any build that enables Science practice.
 
 Duplicate detection adapts: two standalone questions are compared on their
-stimulus, while two questions in a passage set are compared on stem plus
+stimulus and descriptive figure data, while two questions in a passage set are compared on stem plus
 choices, since sharing the passage is the point.
+The standalone figure comparison uses its descriptive `alt` text. Authors
+and reviewers must also check that the drawing matches that data; SVG safety
+validation cannot establish the mathematical meaning of a drawing.
 
 Run `npm run validate` after authoring and `npm run build` to
 refresh the browser-loadable banks. No package installation is required.

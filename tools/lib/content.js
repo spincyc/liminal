@@ -25,6 +25,7 @@ const ALLOWED_FIELDS = new Set([
   "difficulty",
   "responseType",
   "stimulus",
+  "figure",
   "passageId",
   "stem",
   "choices",
@@ -241,6 +242,12 @@ function validateQuestion(question, section, catalog) {
     } else if (question.stimulus !== null) {
       addError(errors, question, "a question in a passage set must not also carry its own stimulus");
     }
+    if (question.figure !== undefined) {
+      addError(errors, question, "a question in a passage set must keep its figure on the shared passage");
+    }
+  }
+  if (question.figure !== undefined) {
+    validateFigure(question.figure).forEach((error) => addError(errors, question, error));
   }
 
   [
@@ -453,7 +460,7 @@ function structuralSignature(question) {
   const context = question.passageId && Array.isArray(question.choices)
     ? question.choices.join(" ")
     : stimulus;
-  const normalized = normalizeText(`${context} ${question.stem}`);
+  const normalized = normalizeText(`${context} ${question.figure ? question.figure.alt : ""} ${question.stem}`);
   const withNumbers = isQuantitative(question)
     ? normalized
     : normalized.replace(/\b\d+(?:\.\d+)?\b/g, "#");
@@ -476,7 +483,8 @@ function comparableText(question) {
     const choices = Array.isArray(question.choices) ? question.choices.join(" ") : "";
     return `${question.stem} ${choices}`;
   }
-  return question.stimulus ? question.stimulus.content : question.stem;
+  const context = question.stimulus ? question.stimulus.content : question.stem;
+  return question.figure ? `${context} ${question.figure.alt}` : context;
 }
 
 function tokenSet(question) {
@@ -529,7 +537,7 @@ function duplicateErrors(questions) {
     // comparison, exactly as it does in structuralSignature.
     const anchor = question.passageId ? `${question.passageId} ` : "";
     const fullText = normalizeText(
-      `${anchor}${question.stimulus ? question.stimulus.content : ""} ${question.stem}`,
+      `${anchor}${question.stimulus ? question.stimulus.content : ""} ${question.figure ? question.figure.alt : ""} ${question.stem}`,
     );
     if (exact.has(fullText)) {
       errors.push(`Exact duplicate text: ${exact.get(fullText)} and ${question.id}`);

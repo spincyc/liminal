@@ -207,6 +207,7 @@ function main() {
     title: passage.title,
     intro: passage.intro,
     content: passage.content,
+    ...(passage.figure ? { figure: passage.figure } : {}),
     wordCount: countWords(passage.content),
     provenance: { type: "original", generator: GENERATOR, seed: passage.id, created: CREATED },
   }));

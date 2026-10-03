@@ -88,7 +88,7 @@ function usage() {
     "  -s, --seed <str>  seed controlling which questions are drawn",
     "  -o, --out <dir>   output directory (default dist/booklets/)",
     "      --pdf         also render PDFs using an installed Chrome",
-    "      --tex         also emit pdflatex-ready LaTeX (Science diagrams use descriptions and passage data)",
+    "      --tex         also emit pdflatex-ready LaTeX (figures use accessible descriptions)",
     "  -l, --list        list available blueprints and exit",
   ].join("\n");
 }

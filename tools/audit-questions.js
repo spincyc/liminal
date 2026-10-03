@@ -47,7 +47,7 @@ function shapeSignature(question) {
   const context = question.passageId && Array.isArray(question.choices)
     ? question.choices.join(" ")
     : stimulus;
-  let text = `${context} ${question.stem}`.trim();
+  let text = `${context} ${question.figure ? question.figure.alt : ""} ${question.stem}`.trim();
   text = text.replace(SCENE_PREAMBLE, "");
   text = text.replace(/\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*/g, " ");
   text = text.replace(/\b\d+(?:\.\d+)?\b/g, "#");
@@ -61,7 +61,7 @@ function shapeSignature(question) {
 function exactSignature(question) {
   const stimulus = question.stimulus ? question.stimulus.content : "";
   const anchor = question.passageId ? `${question.passageId} ` : "";
-  return normalizeText(`${anchor}${stimulus} ${question.stem}`);
+  return normalizeText(`${anchor}${stimulus} ${question.figure ? question.figure.alt : ""} ${question.stem}`);
 }
 
 function templateFamily(question) {
@@ -298,6 +298,7 @@ if (require.main === module) main();
 module.exports = {
   admissionFailures,
   auditSection,
+  exactSignature,
   blindScore,
   longestChoiceIsKey,
   positionBias,

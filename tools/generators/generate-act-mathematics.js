@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 "use strict";
 
-const { generateSection, hashString, rotate } = require("../lib/generation");
-const { jaccard, loadBank, tokenSet } = require("../lib/content");
+const { arrangeChoices, generateSection, hashString, rotate } = require("../lib/generation");
+const { bankPath, jaccard, loadBank, tokenSet, writeJsonAtomic } = require("../lib/content");
+const { graphSpecFor } = require("../lib/math-graphs");
 const { pose: sharedPose } = require("../lib/phrasing");
 const { CHOICE_MENU, COHORT, COLLECTION, DRAW_POOL, EXPONENTIAL_GROWTH, FINANCE, GROUND, HOURLY_SERVICE, MEMBERSHIP, PRODUCTION, PROJECTILE, RECIPE, RETAIL, scene, SURFACE, TWO_WAY_SURVEY, VESSEL, WATERCRAFT } = require("../lib/scenes");
 const { context } = require("./generate-sat-math");
@@ -300,6 +301,7 @@ function assemble(spec, tier, index) {
     question: {
       responseType: "multiple-choice",
       stimulus: spec.stimulus || null,
+      ...(spec.figure ? { figure: spec.figure } : {}),
       stem: spec.stem,
       correct: answer.text,
       correctAnswer: answer.text,
@@ -311,7 +313,7 @@ function assemble(spec, tier, index) {
       trap: spec.trap || TIER_TRAP[tier],
       estimatedSeconds: TIER_SECONDS[tier],
       principles: spec.principles,
-      format: "standalone",
+      format: spec.figure ? "graph" : "standalone",
       tags: [`templateFamily:act-math/${spec.family}/${tier.toLowerCase()}`],
       verification: spec.verification || null,
     },
@@ -7995,14 +7997,32 @@ function accept({ question, stem, tokens, choiceSet, key, variant }) {
   return question;
 }
 
+// Apply the graph batch after the legacy parameter search. Rebuilding only the
+// graph IDs would otherwise change the answer planner and every later search.
+// This pass is idempotent and preserves every non-batch record byte for byte.
+function reviseGraphs(questions) {
+  return questions.map((question) => {
+    const spec = graphSpecFor(question);
+    if (!spec) return question;
+    const built = assemble(distinctWrongChoices(spec), question.difficulty, question.correctAnswer).question;
+    const { correct, distractors, correctAnswer, ...fields } = built;
+    return {
+      ...question,
+      ...fields,
+      ...arrangeChoices(correct, distractors, question.correctAnswer),
+    };
+  });
+}
+
 if (require.main === module) {
-  const completed = generateSection(SECTION_KEY, generate, {
+  const completed = process.argv.includes("--graphs-only") ? null : generateSection(SECTION_KEY, generate, {
     generatorName: GENERATOR_NAME,
     regenerateGenerated: REBUILD,
   });
+  writeJsonAtomic(bankPath(SECTION_KEY), reviseGraphs(loadBank(SECTION_KEY)));
   console.log(
-    `ACT Mathematics: kept ${completed.existing}, generated ${completed.generated}, total ${completed.total}.`,
+    completed ? `ACT Mathematics: kept ${completed.existing}, generated ${completed.generated}, total ${completed.total}; applied graph revisions.` : "ACT Mathematics: applied the stable-ID graph revisions.",
   );
 }
 
-module.exports = { SHAPES, generate };
+module.exports = { SHAPES, generate, reviseGraphs };
