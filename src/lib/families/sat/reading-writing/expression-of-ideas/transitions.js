@@ -146,7 +146,7 @@
       scene: "eoi-con-inventor-notebooks",
       relation: "contrast",
       text: "The inventor Samuel Okafor kept meticulous notebooks, recording every experiment, measurement, and failure in neat columns. ______, his business partner, Jonas Bell, rarely wrote anything down and relied on memory when he needed to reconstruct an earlier test.",
-      why: "Bell's habit of keeping no records is the opposite of Okafor's careful notebooks, so the final sentence contrasts the two partners.",
+      why: "Bell kept few written records and relied on memory, whereas Okafor recorded every test carefully; the final sentence contrasts the two partners' approaches.",
     },
   ];
   const EXAMPLE_TOPICS = [
@@ -641,8 +641,8 @@
     {
       scene: "eoi-con-two-rowing-clubs",
       relation: "contrast",
-      text: "The Ostby rowing club trains at dawn, before the harbor fills with fishing boats and ferries. ______, the Varne club across the bay trains in the evening, after the ferries have stopped running for the day.",
-      why: "The Varne club trains in the evening while the Ostby club trains at dawn, so the final sentence contrasts the two clubs.",
+      text: "The Ostby rowing club trains only in sheltered coves, where the water remains calm even on windy days. ______, the Varne club across the bay trains beyond the breakwater, where its rowers must contend with large waves.",
+      why: "The clubs train in opposite water conditions: Ostby chooses calm, sheltered water, while Varne practices among large waves. The shared activity of rowing does not make those conditions parallel.",
     },
     {
       scene: "eoi-con-two-sculptors",
@@ -1134,7 +1134,7 @@
     },
   ];
 
-  // Hard: distinguish a paraphrase, an implication, an illustration, and
+  // Medium: distinguish a paraphrase, an implication, an illustration, and
   // independent evidence while preserving the claim's scope. Each scene
   // contains a tempting nearby detail or competing interpretation.
   const ELABORATION_TOPICS = [
@@ -1183,8 +1183,9 @@
     {
       scene: "eoi-elb-bus-survey",
       relation: "result",
-      text: "In a survey of 1,200 Harlow residents, 71 percent said they would commute by bus if a stop were within a ten-minute walk of home. Supporters of a planned route expansion cited these responses in arguing that new stops could attract riders. The survey, however, collected neither travel diaries nor information about respondents' current bus use. ______, most respondents expressed willingness to ride under a proposed condition; their answers do not establish that most already travel that way.",
-      why: "The final sentence draws an evidentiary conclusion from the hypothetical question and the absence of current-use data. That inference limits what supporters may claim; it is not merely the favorable responses or the survey design restated.",
+      keyPool: ["Therefore", "Thus"],
+      text: "In a survey of 1,200 Harlow residents, 71 percent said they would commute by bus if the proposed new stops were within a ten-minute walk of home. Supporters of the expansion described all of these willing respondents as potential additions to current ridership. A separate question found that 63 percent of the same respondents already commuted by bus, but the published report did not match individuals' responses to the two questions. ______, some willing respondents must already be bus commuters, so counting all willing respondents as additional riders would overstate the expansion's potential gain.",
+      why: "The willing group and the current-rider group together exceed 100 percent of the same respondents, so they must overlap even without matched responses. That inference limits the claim about additional riders; it adds a conclusion rather than restating either percentage.",
     },
     {
       scene: "eoi-elb-bicycle-households",
@@ -1857,13 +1858,16 @@
     hint: "Does the final sentence tell you anything the previous sentence did not?",
   });
 
+  // Recalibrated to Medium on 2026-10-03: six example/addition scenes can
+  // be solved from their adjacent sentences. The stronger inference and
+  // restatement scenes do not establish Hard demand throughout this pool.
   const elaborationTransition = transitionFamily({
     id: "transition-elaboration-kind",
     subskill: "sentence connection",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Transition that preserves scope across an explanation",
     recognize: "Track the claim, its scope, and any intervening qualification. Decide whether the final sentence illustrates that claim, preserves it in a paraphrase, derives a new implication, or adds evidence for a different claim.",
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
     tricks: ["grammatical-but-illogical", "neighbouring-rule"],
     seconds: 100,
     topics: ELABORATION_TOPICS,
@@ -1872,7 +1876,9 @@
     plans: {
       example: { neighbour: "result", others: ["restatement", "addition"], pools: { restatement: ["In other words"] } },
       result: { neighbour: "restatement", others: ["example", "addition"], pools: { restatement: ["In other words"] } },
-      restatement: { neighbour: "result", others: ["example", "addition"], keyPool: ["In other words"] },
+      // Inferential summaries can also follow "Thus" or "Therefore"; only
+      // effect phrases make a defensible competing result category here.
+      restatement: { neighbour: "result", others: ["example", "addition"], keyPool: ["In other words"], pools: { result: ["As a result", "Consequently"] } },
       addition: { neighbour: "result", others: ["example", "restatement"], pools: { restatement: ["In other words"] } },
     },
     extraStep: "Trace the claim through the whole passage, preserving its population, conditions, and measured quantity; an intervening detail may not be the final sentence's target.",
@@ -1980,6 +1986,392 @@
     hint: "Summarize the argument so far in a few words. Does the new sentence respond to it, reverse it, qualify it, grant something against it, or extend it?",
   });
 
+  // Hard: compare cases on the population, interval, or criterion the writer
+  // actually selected. Quoted verdicts concern another scope and can point
+  // in the opposite direction. These are comparisons between independent
+  // cases, not a general claim followed by an example or a causal sequence.
+  const REFERENCE_SCOPE_TOPICS = [
+    {
+      scene: "eoi-scope-choir-returners",
+      relation: "similarity",
+      text: "Mara Pell evaluated the Leston youth choir's mentoring program by whether singers eligible for another year chose to return. Every such singer reenrolled, although the departure of an unusually large graduating class lowered total membership and prompted a newspaper to call the program a failure. ______, with respect to Pell's measure, the only names removed from the Varo choir's previous membership list belonged to singers who had reached its age limit, a fact obscured by praise focused on its large intake of beginners.",
+      why: "Pell's criterion is retention among eligible returning singers. Neither choir lost anyone in that group, although the membership headlines point in opposite directions because they include graduates or beginners. Varo is a separate parallel case, not an instance of a claim about Leston or an effect of Leston's mentoring.",
+    },
+    {
+      scene: "eoi-scope-greenhouse-nights",
+      relation: "similarity",
+      text: "In comparing two greenhouse covers, researcher Anja Voss considered only whether seedlings remained above freezing between sunset and sunrise. Under the clear cover, they spent two hours below freezing each night, although hot afternoons led the supplier to advertise a warming effect. ______, during Voss's chosen interval, seedlings under the tinted cover dropped below freezing two hours before sunrise and stayed there until the sun rose, despite publicity describing its lower daytime average as a cooling effect.",
+      why: "The covers have the same outcome during the nighttime interval Voss selected: neither prevents two hours below freezing. The advertised warming and cooling effects concern daytime temperatures and therefore do not reverse that comparison. The independently tested tinted cover is neither a consequence nor a particular instance of the clear cover's performance.",
+    },
+    {
+      scene: "eoi-scope-map-transfers",
+      relation: "similarity",
+      text: "Designer Ivo Sen assessed transit diagrams by whether a rider could identify every available transfer without inventing a connection. His own diagram preserved which lines met at each station, though a critic dismissed its geographically displaced stations as distorted. ______, on the matter Sen was assessing, riders using Rella's diagram could transfer at every depicted meeting of lines, and no actual interchange lacked a symbol, even though praise of that map's accuracy focused on its faithful street outlines.",
+      why: "Sen tests connectivity, not geographic position. Both diagrams preserve all and only the real transfers, so their different geographic reputations do not make their performance on that test opposite. Rella's independently made diagram supplies a parallel case; it does not result from Sen's diagram or exemplify a generalization made about a class of diagrams.",
+    },
+    {
+      scene: "eoi-scope-press-operating-cost",
+      relation: "similarity",
+      text: "A printer compared two presses using electricity consumed per completed sheet once each machine had reached its operating temperature. The Kest press reduced that amount, although prolonged heating before short runs raised its total bill and earned it the label of energy setback. ______, under the operating conditions the printer selected, the Neral press produced more sheets from a fixed amount of electricity than its predecessor; praise of its lower total bill, however, emphasized the savings from a shorter warm-up cycle.",
+      why: "Both replacements improve the selected measure during uninterrupted operation. The opposite total-bill judgments include warm-up electricity, which the printer's comparison excludes. Neral's separate replacement is a parallel outcome, not an effect of the Kest change or a specific member of the single Kest case.",
+    },
+    {
+      scene: "eoi-scope-orchard-mature-trees",
+      relation: "similarity",
+      text: "Forester Lena Ard tested a watering schedule on established fruit trees, defining that group as trees planted before the current season. At the Bell orchard, none of those trees died, though a rise in deaths among new seedlings produced a headline about mounting losses. ______, for the population Ard was studying, the Daven orchard reported that its living trees included its entire inventory from the previous season, a detail overshadowed by a headline celebrating fewer deaths among this year's new plantings.",
+      why: "Both orchards had complete survival among the established trees Ard studied. The reported rise or fall in total deaths belongs to newly planted seedlings, outside that population. Daven is an independent case with the same scoped outcome, not a result or an example of a claim applying only to Bell.",
+    },
+    {
+      scene: "eoi-scope-translation-voice",
+      relation: "similarity",
+      text: "Critic Sera Dall compared translations of a novel by asking whether readers could distinguish the narrator's formal speech from the servants' casual speech. Ren's version preserved that difference, although a reviewer called its updated spelling a modernization. ______, in the feature Dall examined, Tobin's translation confined colloquial expressions to the servants' dialogue and elevated diction to the narrator, beneath obsolete spellings advertised as deliberately old-fashioned.",
+      why: "Dall compares the contrast between speakers' registers, which both translations preserve. The modernization and old-fashioned labels concern spelling and do not establish opposite outcomes on her criterion. Tobin's translation is another parallel case, not a consequence of Ren's choices or a specific instance of Ren's single translation.",
+    },
+    {
+      scene: "eoi-scope-library-borrowers",
+      relation: "contrast",
+      text: "To assess whether a library's delivery service reached people who had previously lacked access, analyst Mira Sol counted only borrowers unable to visit a branch. Arven's reported growth in borrowing came entirely from this group, even though borrowing by branch visitors fell. A newspaper described the service as a success. ______, with respect to Sol's target population, all of Belden's delivery users were people who could visit a branch; its service earned the same accolade because these existing borrowers began requesting more books.",
+      why: "Sol's population is residents unable to visit a branch. Arven reached that population and Belden did not, despite identical success labels based on total growth. The separate outcomes therefore contrast; Arven's borrowing cannot cause Belden's finding, and Belden is not an example of the single Arven result.",
+    },
+    {
+      scene: "eoi-scope-reservoir-dry-season",
+      relation: "contrast",
+      text: "Engineer Tomas Rel compared reservoir schedules by the water left for farms during the final month of the dry season, when the farms had no other supply. At Mere Reservoir, shifting releases from the rainy months increased that late-season supply without increasing the annual total. Officials called the schedule unchanged because the yearly volume stayed constant. ______, during the period Rel selected, Hadden left farms with less water, having moved releases into the rainy months while preserving the yearly volume that earned its schedule the same description.",
+      why: "The same annual-total label conceals opposite changes during the selected dry-season month: Mere provides more and Hadden less. The final sentence contrasts the schedules at the relevant time. The independent Hadden schedule is neither caused by Mere's schedule nor an example of a claim about Mere alone.",
+    },
+    {
+      scene: "eoi-scope-hearing-accounts",
+      relation: "contrast",
+      text: "Historian Nira Vale compared hearing transcripts for their ability to reveal disagreements before a council reached a decision. The Ulven transcripts recorded every adopted motion but omitted statements by speakers whose proposals lost. Their clerk described them as complete, using that word for a record of decisions. ______, for Vale's purpose, the Corren transcripts retained rejected proposals and the exchanges surrounding them, material included in the similarly described complete record because its clerks preserved the proceedings, not just their outcome.",
+      why: "Vale needs evidence of disagreement, which the Ulven record omits and the Corren record preserves. The matching word complete uses a narrower scope in the first clerk's description and cannot establish similarity on Vale's criterion. Corren is a contrasting independent archive, not a consequence or an example of Ulven's omissions.",
+    },
+    {
+      scene: "eoi-scope-workshop-unprompted",
+      relation: "contrast",
+      text: "Educator Vera Oss judged repair workshops by whether participants could identify faults without an instructor's prompts. Elmford's final session produced more repaired radios than its first, but instructors supplied each diagnosis before participants made the repairs. The organizers reported an improvement. ______, on the ability Oss assessed, Norlen's final-session participants diagnosed unfamiliar faults unaided, although its identically worded report showed no rise in the number of radios they finished repairing.",
+      why: "The selected outcome is independent diagnosis. Elmford's extra completed repairs do not demonstrate it because instructors supplied the diagnoses; Norlen's participants actually perform it. The reports thus differ on Oss's criterion despite their matching improvement labels. Norlen's separate training is not caused by, or an example of, Elmford's assisted repairs.",
+    },
+    {
+      scene: "eoi-scope-path-continuity",
+      relation: "contrast",
+      text: "Planner Oren Taal assessed a walking network by whether every residential district had a continuous route to the market. Darsa added several kilometers of path, all within districts already linked to the market, leaving two isolated districts untouched. The council celebrated the expansion. ______, on Taal's criterion, Kelven's one short bridge joined its last isolated district to the existing paths, even though the two councils used the same expansion label for additions of very different lengths.",
+      why: "Taal's criterion is connection of every district, not the amount of path added. Darsa's long additions leave gaps in that coverage; Kelven's short bridge completes it. Those are contrasting results despite the shared expansion label. Kelven is not an effect of Darsa's work or an example belonging to that particular network.",
+    },
+    {
+      scene: "eoi-scope-insect-survey-reach",
+      relation: "contrast",
+      text: "Ecologist Rina Mell evaluated insect surveys by how well they represented species active only after dark. The Teren team doubled its observations by extending visits around noon, describing its larger daytime sample as greater coverage. ______, in the coverage Mell evaluated, the Sovan team replaced half its noon visits with visits after sunset and recorded species that emerged only at night, using the same greater coverage description even though its total number of observations had not changed.",
+      why: "The criterion concerns nocturnal species, not the number of observations. Teren's larger daytime sample provides no new coverage of that population, whereas Sovan's unchanged sample reaches it by changing the sampling times. The separate studies contrast on Mell's criterion; one does not cause or constitute a specific example of the other.",
+    },
+  ];
+
+  const referenceScopeTransition = transitionFamily({
+    id: "transition-reference-scope",
+    subskill: "sentence connection",
+    difficulty: "Hard",
+    title: "Transition comparing outcomes within a defined scope",
+    recognize: "Recover the population, time interval, or criterion selected for a comparison, separate that scope from a quoted verdict about another measure, and determine whether an independent second case matches or reverses the first on the selected measure.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    tricks: ["grammatical-but-illogical", "wrong-quantity", "misattributed-view"],
+    seconds: 100,
+    topics: REFERENCE_SCOPE_TOPICS,
+    // Both comparison relations are keys in half the scenes. "However"
+    // could instead qualify a quoted local verdict, so use comparison-only
+    // contrast phrases. "Thus" supplies a short foil and the example pool
+    // a long one without making either key relation the length outlier.
+    plans: {
+      similarity: {
+        neighbour: "contrast", others: ["result", "example"],
+        pools: { contrast: ["By contrast", "In contrast"], result: ["Thus"] },
+      },
+      contrast: {
+        neighbour: "similarity", others: ["result", "example"],
+        keyPool: ["By contrast", "In contrast"], pools: { result: ["Thus"] },
+      },
+    },
+    extraStep: "Name the comparison's population, time interval, or criterion; then decide what each case shows within that scope before comparing their quoted labels.",
+    principles: TRANSITION_PRINCIPLES.concat(
+      "A comparison keeps its criterion fixed: opposite overall labels can conceal the same scoped outcome, and matching labels can conceal opposite outcomes.",
+      "A quoted verdict belongs to the measure used by its speaker; it does not automatically supply the writer's measure of comparison.",
+      "Two independent cases are not a causal chain, and a statement about one particular case does not make another case its example.",
+    ),
+    reasons: {
+      similarity: {
+        contrast: (phrase) => `"${phrase}" would make the selected outcomes differ. Their quoted labels concern another scope; within the population, interval, or criterion actually being compared, the cases match.`,
+        result: (phrase) => `"${phrase}" would derive the second case from the first, but the passage reports two independent cases rather than an effect or inference established by the first alone.`,
+        example: (phrase) => `"${phrase}" would make the second case an instance of an earlier general claim. The earlier finding concerns one particular case, and the final sentence compares a separate one.`,
+      },
+      contrast: {
+        similarity: (phrase) => `"${phrase}" would equate the cases by their surface labels or overall measurements. Within the population, interval, or criterion selected for comparison, their outcomes differ.`,
+        result: (phrase) => `"${phrase}" would derive the second case from the first, but the passage reports independent cases with different scoped outcomes.`,
+        example: (phrase) => `"${phrase}" would make the second case an instance of an earlier general claim. The first finding concerns one particular case, and the next case differs on the criterion being assessed.`,
+      },
+    },
+    traps: {
+      similarity: "Comparing opposite headlines or totals while overlooking the matching outcomes in the population, interval, or criterion the writer selected.",
+      contrast: "Treating matching labels or totals as parallel outcomes even though the cases differ within the scope of the writer's comparison.",
+    },
+    hint: "What exactly is being compared, and do the quoted judgments use that same measure?",
+  });
+
+  const EVIDENCE_REVISION_TOPICS = [
+    {
+      scene: "eoi-evr-vessel-finish",
+      relation: "result",
+      text: "A curator attributed the red surfaces of vessels from the Neral workshop to minerals in the clay, arguing that the potters had applied no colored finish. That explanation predicts red material throughout each vessel's wall. Broken edges instead reveal pale clay beneath a thin red layer bearing brush marks, and the same layer covers repairs made after firing. ______, the conservation team rejects the curator's explanation of how the vessels acquired their color.",
+      why: "The original explanation predicts color within the clay, whereas both the cross sections and the repaired areas place the red material outside it. The team's rejection of the curator's explanation follows from those observations; it does not hold despite them or merely add another observation.",
+    },
+    {
+      scene: "eoi-evr-proof-corrections",
+      relation: "result",
+      text: "An editor ascribed changes in Mira Seln's printed essay to a compositor who supposedly shortened sentences while setting the type. A newly recovered manuscript contains the same changes in Seln's handwriting. The printer's dated receipt establishes that this manuscript arrived before typesetting began. ______, the editor withdraws the original attribution of responsibility for the changes.",
+      why: "The handwriting identifies Seln as the reviser, and the receipt places the changes before the compositor could have made them. Together those facts warrant revising the attribution; the conclusion opposes the quoted theory but follows the evidence the author has just supplied.",
+    },
+    {
+      scene: "eoi-evr-call-threshold",
+      relation: "result",
+      text: "A report interpreted fewer recorded calls at the Fenwick marsh as evidence that its bird population had declined. An equipment log shows that the recorder began rejecting quieter sounds during the period in question. When analysts apply that same threshold to the older recordings, the apparent decline disappears; visual counts made under an unchanged procedure show no decrease either. ______, the analysts recommend withdrawing the report's conclusion about the bird population.",
+      why: "The threshold comparison reproduces the apparent decline without a population change, and the independent visual counts agree. Withdrawing the report's population conclusion follows from that combined evidence, even though it rejects the first report's interpretation.",
+    },
+    {
+      scene: "eoi-evr-mill-wheel",
+      relation: "result",
+      text: "The owner of the Edrin mill credited a new wheel with increasing flour output. The mill's engineer proposed that the unusually high river had supplied the extra power. Maintenance records show that output rose before the wheel was replaced, and matched tests at equal water levels show no output difference between the two wheels. ______, the engineer retains her own account of the increase and rejects the owner's.",
+      why: "The timing prevents the new wheel from explaining the initial increase, and the matched tests show no independent wheel effect. These findings explain the engineer's rejection of the owner's account while leaving her river proposal viable; they do not prove that the river was the cause or rule out other causes. Her stated decision follows the evidence, so retaining a proposal here does not require a concession.",
+    },
+    {
+      scene: "eoi-evr-workshop-molds",
+      relation: "concession",
+      text: "An early catalog claimed that no glass ornaments had ever been made in Vardel. Excavators later found a local furnace containing unfinished ornaments fused to their molds, direct evidence of manufacture there. Most of the furnace site was destroyed before excavation, preventing any estimate of how much the workshop supplied. ______, the catalog's account remains untenable: the surviving molds establish local manufacture even without a production total.",
+      why: "The destruction limits estimates of quantity but cannot undo the direct evidence that some ornaments were made locally. The last sentence preserves that disproof despite the loss of evidence; the loss itself did not cause or establish local manufacture.",
+    },
+    {
+      scene: "eoi-evr-daytime-pollinator",
+      relation: "concession",
+      text: "A field guide describes the Pellin vine as pollinated exclusively at night. A continuous daytime recording shows a bee transferring pollen between its flowers; a tagged flower in that recording later forms a fruit. A camera failure erased most other recordings, leaving the frequency of daytime pollination unknown. ______, the observation that survives rules out the guide's claim of exclusively nocturnal pollination, regardless of how uncommon daytime visits prove to be.",
+      why: "One documented daytime pollination is enough to contradict an exclusive night-only claim. The missing recordings prevent a frequency estimate but do not erase that counterexample, so the final sentence retains a conclusion despite the evidential limitation.",
+    },
+    {
+      scene: "eoi-evr-signed-ballots",
+      relation: "concession",
+      text: "A historian claimed that the charter of Lessen prevented any woman from voting in its guild elections. A surviving signed ballot and the corresponding register show that a woman cast a vote that officials counted. The archive lacks most election registers, so researchers cannot establish how widely women participated. ______, the historian's claim of complete exclusion cannot stand, although the surviving documents cannot establish whether this voter's experience was typical.",
+      why: "The counted ballot contradicts complete exclusion, whereas the missing registers limit only what can be said about the extent of participation. The final sentence preserves the counterexample's force despite the archive's gaps; it does not infer the counted vote from those gaps.",
+    },
+    {
+      scene: "eoi-evr-tunnel-echoes",
+      relation: "concession",
+      text: "A model of the Orven tunnel predicts that a single clap can produce no more than two distinct echoes. One intact recording contains three echoes, each traced to that clap by its matching sound pattern. Interference makes most other recordings unusable, preventing a reliable description of the tunnel's usual response. ______, the intact recording is sufficient to reject the model's absolute limit, even though it cannot establish how often a third echo occurs.",
+      why: "The interference blocks a general account of typical responses, but a verified third echo already violates the model's maximum of two. The last sentence maintains that rejection despite the incomplete record, rather than treating interference as the cause of the rejection.",
+    },
+    {
+      scene: "eoi-evr-shared-itinerary",
+      relation: "addition",
+      text: "A critic explained matching passages in two travelogues by proposing that one traveler copied the other's manuscript. The manuscripts' dates and the travelers' separate locations rule out access in either direction. Both texts reproduce a peculiar error from an older itinerary, pointing to that itinerary as a common source. ______, the travelers' separate expense books each record the purchase of a copy of the itinerary before their journeys.",
+      why: "The shared error points to a common source, and the purchase entries independently establish access to that source. The expense books add support for the author's replacement explanation; their contents are not a consequence or a restatement of the textual error.",
+    },
+    {
+      scene: "eoi-evr-trading-tokens",
+      relation: "addition",
+      text: "A museum label described the tokens of the Aven market as ceremonial objects that never circulated in trade. A study found wear on the tokens' raised edges matching wear on objects repeatedly passed from hand to hand. This pattern favors a trading function over the label's account of display and storage. ______, a merchant's account book lists prices in tokens and records settling purchases with them, providing evidence of actual transactions.",
+      why: "The wear supports a trading interpretation, and the account book supplies a separate documentary reason to accept it. The transactions do not follow from the wear analysis, contradict it, or simply restate a physical observation.",
+    },
+    {
+      scene: "eoi-evr-bridge-design",
+      relation: "addition",
+      text: "An architectural history attributed the unequal arches of the Rellan bridge to a builder's taste for irregular forms. Surveyors found that each arch's width matches the channel beneath it, allowing the supports to rest on exposed rock. The pattern indicates adaptation to the riverbed rather than a purely decorative choice. ______, the builder's working notes identify firm footing as the reason for placing each support, without referring to visual irregularity.",
+      why: "The measured fit to the riverbed supports a structural explanation, and the working notes independently document that purpose. The notes add evidence for the author's interpretation after the cited history's interpretation has been displaced; they are not an effect of the survey.",
+    },
+    {
+      scene: "eoi-evr-soil-seedbank",
+      relation: "addition",
+      text: "A report attributed seedlings on an isolated quarry floor to seeds recently blown in from nearby fields. Investigators instead found the quarry species growing from sealed samples of soil collected there before the quarry opened. Those samples establish a buried seed supply that predates the supposed arrivals. ______, barriers that intercepted incoming seeds left seedling emergence unchanged throughout the period when the nearby fields were releasing seeds.",
+      why: "The old soil samples establish a preexisting seed supply, while the barriers separately test whether newly arriving seeds account for emergence. The barrier result adds evidence against the cited report's explanation; it is not caused by, or equivalent to, the older soil result.",
+    },
+  ];
+
+  const EVIDENCE_REVISION_POOLS = {
+    result: ["Therefore", "Thus", "As a result"],
+    concession: ["Nevertheless", "Even so", "Nonetheless"],
+    addition: ["Moreover", "In addition", "Furthermore"],
+    restatement: ["In other words", "That is"],
+  };
+
+  const evidenceRevisionTransition = transitionFamily({
+    id: "transition-evidence-revision",
+    subskill: "sentence connection",
+    difficulty: "Hard",
+    title: "Transition that evaluates evidence for an explanation",
+    recognize: "Separate a cited explanation from the author's assessment of diagnostic evidence. Decide whether the final sentence draws the resulting inference, preserves a disproof despite an evidential gap, or supplies an independent premise for the revised explanation.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["grammatical-but-illogical", "misattributed-view", "neighbouring-rule"],
+    seconds: 105,
+    topics: EVIDENCE_REVISION_TOPICS,
+    // These are contextual best-answer distinctions, not exclusive word
+    // definitions. A result phrase can summarize the earlier counterexample,
+    // but concession links the retained finding to the intervening gap in
+    // evidence more precisely. The custom rationale explains that scope.
+    // No contrast/concession pair depends on a disputed synonym boundary.
+    plans: {
+      result: {
+        neighbour: "concession", others: ["addition", "restatement"],
+        keyPool: EVIDENCE_REVISION_POOLS.result, pools: EVIDENCE_REVISION_POOLS,
+      },
+      concession: {
+        neighbour: "result", others: ["addition", "restatement"],
+        keyPool: EVIDENCE_REVISION_POOLS.concession,
+        pools: { ...EVIDENCE_REVISION_POOLS, result: ["As a result"] },
+      },
+      addition: {
+        neighbour: "result", others: ["concession", "restatement"],
+        keyPool: EVIDENCE_REVISION_POOLS.addition, pools: EVIDENCE_REVISION_POOLS,
+      },
+    },
+    reasons: {
+      concession: {
+        result: (phrase) => `"${phrase}" could introduce a conclusion drawn from the earlier counterexample, but it skips the intervening limit on the evidence. A concession more precisely marks why the conclusion still holds despite that limit.`,
+      },
+    },
+    extraStep: "Identify whose explanation is being tested, what the observations establish, and what any missing evidence prevents the author from claiming.",
+    principles: TRANSITION_PRINCIPLES.concat(
+      "A conclusion can reject a quoted explanation while following logically from the author's evidence; disagreement with the quoted source does not by itself require a concession.",
+      "A single established counterexample can refute an absolute claim even when missing evidence prevents estimating how common such counterexamples are.",
+      "An independent observation can support the same explanation as an earlier observation without being a consequence or a restatement of it.",
+    ),
+    traps: {
+      result: "Choosing a concession because the conclusion rejects the first speaker's explanation, overlooking that it follows from the evidence the author has supplied.",
+      concession: "Reading only the earlier counterexample and overlooking the intervening limit on frequency or quantity; the conclusion retains its force despite that limit.",
+      addition: "Attaching the new evidence to the cited explanation the author has already displaced, or calling one independent source of support a consequence of another.",
+    },
+    hint: "Whose explanation is under discussion now, and what does the final sentence do with the evidence rather than merely say about the same subject?",
+  });
+
+  const GOVERNING_CONDITION_TOPICS = [
+    {
+      scene: "eoi-condition-editorial-referral",
+      relation: "similarity",
+      text: "A literary press requires a second reading whenever an author contests a change or the first editor reports unresolved passages; either circumstance is sufficient. The press is assessing two manuscripts simultaneously. Mara Elt has accepted every change, but her editor's report identifies several unresolved passages. ______, Kalen Roh's manuscript requires a second reading at that same assessment time: Roh has contested a change, though his editor's report identifies no unresolved passages.",
+      why: "Elt's editor activates one sufficient reason for a second reading; Roh's objection activates the other. Both manuscripts require the procedure, even though the editors' reports differ. The final sentence supplies a parallel case in the same review, not a later event or a rewording of the facts about Elt.",
+    },
+    {
+      scene: "eoi-condition-record-access",
+      relation: "similarity",
+      text: "An oral-history archive releases a recording if its speaker consents, or if the recording is anonymized and a separate privacy review clears it. The archive is assessing two recordings simultaneously. Recording L is anonymized and carries privacy clearance. Its speaker's consent form is unsigned. ______, Recording M is authorized for release at that same assessment time on its speaker's signed consent, with the speaker's name retained and no separate privacy review.",
+      why: "The archive provides two independent routes to release. Recording L satisfies both parts of the route without consent; Recording M satisfies the consent route. The missing consent does not bar L, so the final authorization parallels L's required treatment despite the opposite consent decisions.",
+    },
+    {
+      scene: "eoi-condition-relay-pulses",
+      relation: "similarity",
+      text: "A charged supply is mandatory for a demonstration circuit's relay to emit a pulse. With that supply charged, either a closed contact or an engaged bypass produces a pulse. At a simultaneous measurement of two relays, Relay A has a charged supply and an engaged bypass. Its contact remains open. ______, Relay B emits a pulse at that measurement instant with its contact closed and its bypass disengaged, drawing on its charged supply.",
+      why: "The charged supply is required in both cases, but a closed contact and an engaged bypass are alternative routes. A's bypass permits a pulse without a closed contact; B uses the contact route. Their pulse behavior matches even though their contact positions, the immediately adjacent details, differ.",
+    },
+    {
+      scene: "eoi-condition-repair-fund",
+      relation: "similarity",
+      text: "A town repair fund approves an eligible building when its owners provide matching funds; a district emergency declaration waives that requirement, while structural eligibility remains mandatory. Two buildings are under simultaneous assessment. Nera is structurally eligible and lies in a declared district, but its owners have no matching funds. ______, the structurally eligible Pavo building qualifies for approval at that same instant, using its owners' matching funds without an emergency declaration.",
+      why: "Nera meets the structural requirement, and the declaration removes its need for matching funds. Pavo meets the structural requirement and supplies the funds directly. Both qualify for approval. Reading only Nera's lack of funds would conceal the waiver and make the two approvals seem different.",
+    },
+    {
+      scene: "eoi-condition-audition-waiver",
+      relation: "similarity",
+      text: "A youth orchestra waives an audition for a prior competition winner or for an applicant who has completed its training course and passed its listening assessment. Sora's and Ben's audition requirements are being determined simultaneously. Sora has completed the course and passed the assessment. She has never entered the competition. ______, Ben's audition is waived at that same instant because he has won the competition, although he has taken neither the course nor the assessment.",
+      why: "Sora satisfies the two-part training route, and Ben satisfies the separate competition route. The audition is waived for each. Entering or winning the competition is not necessary for Sora once the alternative conditions are met; the different competition histories conceal matching treatment.",
+    },
+    {
+      scene: "eoi-condition-ventilation-closure",
+      relation: "similarity",
+      text: "The vents in a model greenhouse close during rain or whenever the interior is cold and its heater is off; cold alone does not close them. During simultaneous observations, Model A's interior is cold and its heater is off. Its rain sensor reports dry conditions. ______, Model B's vents are closed at the same observation time under simulated rain, with a warm interior and a running heater.",
+      why: "A meets the joint cold-and-no-heat condition, while B meets the independently sufficient rain condition. Both sets of vents close. The dry-versus-rainy comparison next to the blank would obscure the alternative closure route given at the start.",
+    },
+    {
+      scene: "eoi-condition-ferry-dispatch",
+      relation: "contrast",
+      text: "A model ferry can be dispatched only when its channel is deep enough and either the current is below the test limit or a reserve motor is attached. In a simultaneous dispatch test, Ferry A's channel is too shallow and its current exceeds the limit. Its attached reserve motor removes the need for a weaker current. ______, Ferry B receives dispatch authorization at that instant with an attached reserve motor and an equally strong current, in a channel of adequate depth.",
+      why: "The reserve motor substitutes for a weaker current, not for adequate depth. A fails the depth prerequisite and cannot be dispatched; B satisfies it and uses the reserve-motor route. Their matching motors and currents therefore conceal opposite dispatch outcomes.",
+    },
+    {
+      scene: "eoi-condition-image-license",
+      relation: "contrast",
+      text: "An image library requires documented copyright clearance and payment of a licensing fee for download authorization; registered nonprofit projects are exempt from the fee but require the same clearance. Two projects are under simultaneous assessment. Project H has no copyright clearance. Its verified nonprofit registration leaves it with no fee to pay. ______, Project J receives download authorization at that same instant with documented clearance and a fee waiver based on its nonprofit registration.",
+      why: "A fee waiver removes only the payment requirement. H's missing copyright clearance still blocks authorization, whereas J has the clearance as well as the waiver. The final decision contrasts with H's required treatment despite the projects' matching nonprofit status.",
+    },
+    {
+      scene: "eoi-condition-bursary-stages",
+      relation: "contrast",
+      text: "Confirmed enrollment is required for a shortlisted applicant to receive a training bursary. A supervisor's nomination guarantees a place on the shortlist but does not establish enrollment. At the instant the panel determines two applicants' awards, Tavi's enrollment remains unconfirmed. His nomination places him on the shortlist without further review. ______, Nela is awarded the bursary at that same instant: her nomination has secured a shortlist place, and her enrollment is confirmed.",
+      why: "The nomination guarantees only an intermediate status. Tavi has reached that status but lacks the further condition needed for an award; Nela has both. Comparing only their nominations or shortlist places would suggest similarity, while the governing award condition makes their treatment differ.",
+    },
+    {
+      scene: "eoi-condition-scan-preservation",
+      relation: "contrast",
+      text: "A preservation service requires both a successful visual check of every page and a match with a stored digital checksum to accept a scan; direct comparison with the original can replace the checksum test only while that original is available. Two scans are assessed simultaneously. Scan R has a mismatched checksum and its original is missing. No page has failed its visual check. ______, Scan S is accepted at that same instant, having passed its visual check and comparison with an available original despite a mismatched checksum.",
+      why: "A successful visual check is not sufficient by itself. R cannot use the alternative to its failed checksum test because its original is missing; S can and has passed that alternative check. The scans share a failed checksum test but differ in access to the permitted replacement, so their acceptance outcomes differ.",
+    },
+    {
+      scene: "eoi-condition-manuscript-entry",
+      relation: "contrast",
+      text: "An essay contest admits a signed entry within its word limit; entrants under sixteen may exceed the limit, but the signature requirement applies at every age. Judges are assessing two essays simultaneously. Lio's unsigned essay is well over the limit. He is fifteen, so the length restriction has been waived. ______, Mera's signed essay is admitted at that same assessment time under the length waiver for entrants under sixteen, although it also exceeds the standard limit.",
+      why: "Lio's age removes the length restriction, not the signature requirement, so his unsigned essay remains inadmissible. Mera uses the same length waiver but supplies the required signature. Their matching age-based exemption hides a difference in whether they satisfy the full admission rule.",
+    },
+    {
+      scene: "eoi-condition-exhibit-loans",
+      relation: "contrast",
+      text: "A museum requires confirmed insurance and either climate control or a sealed display case to release an exhibit loan. A curator's consent permits review but does not waive either requirement. Two requests are under simultaneous assessment. The curator has consented to Request V, for which insurance remains unconfirmed. Inspectors have approved its sealed case. ______, Request W is cleared for release at that same instant on confirmed insurance and an approved sealed case, without climate control.",
+      why: "The curator's consent starts review but does not authorize release, and the sealed case substitutes only for climate control. V therefore lacks the mandatory insurance confirmation. W meets that requirement and the display-condition alternative, so its clearance contrasts with V's required disposition.",
+    },
+  ];
+
+  const governingConditionTransition = transitionFamily({
+    id: "transition-governing-condition",
+    subskill: "sentence connection",
+    difficulty: "Hard",
+    title: "Transition comparing consequences of nested conditions",
+    recognize: "Reconstruct a rule with an alternative route, a limited waiver, or a preliminary permission. Infer the first case's unstated outcome, then compare it with the simultaneous second case without mistaking one shared or different prerequisite for the complete rule.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    tricks: ["grammatical-but-illogical", "reversed-condition", "intermediate-value"],
+    seconds: 105,
+    topics: GOVERNING_CONDITION_TOPICS,
+    // A comparison-only contrast phrase avoids a second defensible reading
+    // that concedes an adverse detail. Results and examples are excluded:
+    // the governing rule could support a loose inference or illustration.
+    // Concurrent decisions rule out chronology; the new case cannot be a
+    // paraphrase of the first case's independently specified conditions.
+    // Using "By contrast" avoids a first-word collision with "In other
+    // words" that would skew the allowed phrase frequencies.
+    plans: {
+      similarity: {
+        neighbour: "contrast", others: ["restatement", "sequence"],
+        pools: { contrast: ["By contrast"] },
+      },
+      contrast: {
+        neighbour: "similarity", others: ["restatement", "sequence"],
+        keyPool: ["By contrast"],
+      },
+    },
+    extraStep: "Separate mandatory conditions from alternative routes, waivers, and permissions to begin a process. Derive the first case's outcome before comparing it with the final sentence's outcome.",
+    principles: TRANSITION_PRINCIPLES.concat(
+      "Meeting one requirement does not establish that every requirement is met; a waiver can remove one condition while leaving another mandatory.",
+      "Alternative sufficient routes can produce the same outcome from different details, while a shared intermediate status can conceal different final outcomes.",
+      "A comparison may require deriving an unstated first outcome from the complete rule rather than comparing only the details beside the blank.",
+    ),
+    reasons: {
+      similarity: {
+        contrast: (phrase) => `"${phrase}" would contrast the required outcomes. The cases differ in an immediately visible condition, but each satisfies a complete authorized route to the same outcome.`,
+        restatement: (phrase) => `"${phrase}" would reword the first case. The final sentence introduces a different case with its own conditions and outcome, so it supplies a comparison rather than an equivalent formulation.`,
+        sequence: (phrase) => `"${phrase}" would put the second case after the first. The passage explicitly places both at a simultaneous assessment or observation, so the final sentence compares outcomes at the same time.`,
+      },
+      contrast: {
+        similarity: (phrase) => `"${phrase}" would equate the outcomes because the cases share a qualifying detail. That detail does not replace the missing mandatory condition in the first case, so the full rule gives different outcomes.`,
+        restatement: (phrase) => `"${phrase}" would restate the first case, but the final sentence describes a different case satisfying a condition the first lacks. It cannot be an equivalent version of the first case.`,
+        sequence: (phrase) => `"${phrase}" would establish a later event. The passage makes the decisions or observations simultaneous; the different conditions produce contrasting outcomes at the same time.`,
+      },
+    },
+    traps: {
+      similarity: "Treating different prerequisites as different outcomes without checking whether each set of prerequisites completes an alternative sufficient route.",
+      contrast: "Treating a shared waiver, preliminary permission, or satisfied prerequisite as if it established the complete outcome while overlooking an unmet mandatory condition.",
+    },
+    hint: "What would the full rule require for the first case, even though that outcome is not stated? Compare outcomes only after deciding what each condition does.",
+  });
+
   return [
     resultTransition,
     contrastTransition,
@@ -1993,5 +2385,8 @@
     elaborationTransition,
     adversativeTransition,
     argumentTransition,
+    referenceScopeTransition,
+    evidenceRevisionTransition,
+    governingConditionTransition,
   ];
 });

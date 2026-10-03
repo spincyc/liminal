@@ -112,7 +112,8 @@ For a coherent ACT bank batch:
   documented at its top; each view (`practice`, `progress`, `review`, `tips`)
   lives in `app/views/`.
 - SAT sections are built from templates (`docs/question-templates.md`): a run
-  takes at most one question per template and one per scene, prefers
+  takes at most one question per template, avoids repeated items and scenes,
+  reports reuse if its bounded draw search is exhausted, prefers
   templates the student saw least recently, follows the catalog's domain
   weights, and is described by its code (mask, seed and any steered
   attempts). ACT sections draw from their fixed banks. New or changed

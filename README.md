@@ -9,7 +9,7 @@ drills it, tests it the way the digital SAT does, and brings back what you
 missed until you can do it.
 
 SAT questions are generated from question templates: 197 for SAT Math and
-128 for SAT Reading and Writing, covering the catalog's tested skills.
+163 for SAT Reading and Writing, covering the catalog's tested skills.
 ACT English, Mathematics, Reading, and Writing draw from 575 original exercise
 variants each. ACT Science has 80 questions in 14 original passage sets. Every
 question carries a hint, an explanation, a step-by-step solution, the reliable
@@ -18,7 +18,7 @@ wrong.
 
 | Section | Source | Easy / Medium / Hard |
 | --- | --- | --- |
-| SAT Reading and Writing | 128 templates | 35 / 66 / 27 |
+| SAT Reading and Writing | 163 templates | 42 / 75 / 46 |
 | SAT Math | 197 templates | 48 / 99 / 50 |
 | ACT English, Mathematics, Reading, Writing | 575 exercise variants each | Tiers unverified |
 | ACT Science | 80 questions in 14 passage sets | Tiers unverified |

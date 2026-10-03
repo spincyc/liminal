@@ -168,21 +168,21 @@
         : sections[0].key;
     }
 
-    // SAT questions are generated fresh each time, so the honest number is
+    // SAT questions are generated from finite designs, so the honest number is
     // how many kinds of question there are; ACT sections are fixed banks.
     function renderSetupCopy() {
       const test = ctx.currentTest();
       const sections = availableSections(test);
       // SAT drills are generated; ACT drills draw from fixed banks.
       elements.drillLede.textContent = test === "SAT"
-        ? "A short set on a single skill at one level, with new numbers or a new context each time."
+        ? "A short set on a single skill at one level, using varied numbers and contexts. Limited pools may repeat."
         : "A short set on a single skill, from the questions you have seen least recently. Difficulty labels in these banks are unverified.";
       if (test === "SAT") {
         const templates = sections.reduce(
           (total, section) => total + practice.templateCount(ctx.registry(section.key)), 0);
         elements.setupLede.textContent =
-          "Take a timed test built like the real SAT, or practice in shorter sets. Every question is " +
-          `new each time, drawn from ${ctx.formatNumber(templates)} kinds of question.`;
+          "Take a timed test built like the real SAT, or practice in shorter sets. Questions draw from " +
+          `${ctx.formatNumber(templates)} kinds of question, with recent content avoided when available.`;
         return;
       }
       const essay = (section) => (section.responseTypes || []).includes("essay");
@@ -372,7 +372,7 @@
       }
       if (buildsTemplateRun(mode)) {
         return { domain: true, skill: true, difficulty: true, search: false,
-          hint: "Questions here are new each time, so there is no text to search." };
+          hint: "These questions are generated when a set opens. Filter by topic or level; text search is unavailable." };
       }
       const difficulty = core.supportsDifficulty(sectionKey());
       return { domain: true, skill: true, difficulty, search: true,
@@ -948,9 +948,8 @@
       return updateDrillNote();
     }
 
-    // How many questions the drill can hold. A template section repeats a
-    // kind of question with new numbers or a new context, so it rarely runs
-    // short; a bank section holds only the questions that match.
+    // A template drill draws several variants of a design and reports reuse
+    // if its finite pool runs short; a bank drill holds matching questions.
     async function updateDrillNote() {
       const key = elements.drillSection.value;
       const skill = elements.drillSkill.value;
@@ -995,7 +994,7 @@
       elements.drillStart.disabled = false;
       elements.drillNote.textContent = kinds !== null
         ? `${count} ${levelWord}question${count === 1 ? "" : "s"} from ${kinds} kind${kinds === 1 ? "" : "s"} ` +
-          "of question; repeats use new numbers or a new context."
+          "of question; varied numbers and contexts are preferred, with reuse reported when needed."
         : `${Math.min(count, matching)} of ${matching} matching ${levelWord}question${matching === 1 ? "" : "s"}.`;
       if (key === "act-science") elements.drillNote.textContent +=
         " Questions stay grouped by passage; a skill drill may use part of a set with its full passage.";

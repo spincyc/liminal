@@ -2734,6 +2734,502 @@
     },
   };
 
+  // Begin additional design: cross-evidence-standard.
+  // The observations are shared; the object or standard of evaluation is not.
+  // These scenes require resolving apparent opposition without importing a
+  // factual rebuttal, a new finding, or a condition from one text into another.
+  const CTC_STANDARD_TOPICS = [
+    {
+      "scene": "cs-standard-loom-autonomy",
+      "target": "the autonomy of the Veyran looms",
+      "one": "The Veyran loom selects among repairs as the cloth changes, rather than repeating a fixed repair sequence. Workers supplied its rules and still assign each pattern; it now completes a run without further messages from them. I would call this a gain in autonomy. The same unexpected knot that once sent an operator to the controls now receives a response determined at the loom.",
+      "two": "The loom's responses vary with the cloth, and its operator can leave once a pattern is assigned. Compare an experienced weaver: given the same assignment, she might decide that wasting fine thread on this pattern is unjustified. She too learned her craft from others. What keeps the loom from resembling her is not the source of its instruction or the variety of its repairs.",
+      "key": "Text 1 locates autonomy in choosing how an assignment proceeds; Text 2 locates it in being able to reconsider what the assignment calls for.",
+      "wrong": [
+        [
+          "Text 1 treats a wider range of responses as greater autonomy; Text 2 requires that range to extend to interruptions beyond those already encountered.",
+          "A broader repertoire is a plausible extension of Text 1's reasoning. But Text 2's weaver does not merely handle an additional interruption: she questions whether to carry out the assigned pattern. Its contrast concerns the assignment's authority, not the breadth of repairs."
+        ],
+        [
+          "Text 1 treats locally selected responses as autonomous; Text 2 distinguishes learned responses from decisions whose rules the decision maker devised.",
+          "Text 2 deliberately notes that the experienced weaver also learned from others. The origin of the rules therefore does not separate her from the loom. Her ability to reconsider the assignment does."
+        ],
+        [
+          "Text 1 accepts a division of decisions between people and machines; Text 2 requires production decisions to become independent of other decision makers.",
+          "Text 2's weaver still receives an assignment and uses a learned craft. She need not be independent of every other decision maker; she can assess whether the assigned use of the thread is justified. The distractor substitutes complete independence for that specific authority."
+        ]
+      ],
+      "why": "Both texts accept variable, locally selected repairs within a human assignment. Text 1 counts the absence of further direction during execution as increased autonomy. Text 2's weaver also receives instruction but can question the assigned use of material, so its standard concerns authority over the ends of the work rather than additional independence in executing it.",
+      "shared": "Both writers accept a human assignment, learned rules, and variable repairs selected without further human messages.",
+      "standards": "The unexpected knot tests control within the assignment; the weaver's objection tests whether the assignment itself can be reconsidered."
+    },
+    {
+      "scene": "cs-standard-marsh-recovery",
+      "target": "the recovery of the Elvare marsh",
+      "one": "Elvare's new reeds slow floodwater and trap sediment without pumps. The old sedges and insects that fed on them remain absent; this is a different plant community. Yet I call the marsh recovered. Restocking every former species while pumps performed the reeds' work would improve the species list but undo the achievement on which my judgment rests.",
+      "two": "The new reeds' unassisted water regulation is established. Keeping it, imagine adding every former species but isolating each behind barriers: I would still withhold 'recovered.' Now plant a substitute for the sedges that supports the former insects and restores their other interactions. I would withdraw that objection, although a botanist comparing species lists would still find a mismatch.",
+      "key": "Text 1 asks whether the marsh's water functions operate independently; Text 2 asks whether ecological relations return, even with different participants.",
+      "wrong": [
+        [
+          "Text 1 accepts altered membership when former functions return; Text 2 requires membership to match the past as well as former interactions to return.",
+          "The first half fits, but the second conflates restored interactions with an exact historical membership. Text 2 rejects the isolated collection despite its matching species list and accepts a substitute plant when the insects' interactions return. The roles and connections, not every earlier participant, must be restored."
+        ],
+        [
+          "Text 1 asks whether the replacement community can sustain itself; Text 2 asks whether it enables the original plant community to reestablish itself.",
+          "The new plant is not valued as a temporary step toward the sedges' return. Text 2 would withdraw its objection even while the botanical mismatch remains. Its comparison requires the insects' connections to return, not succession back to the original plant community."
+        ],
+        [
+          "Both writers require restored relations among organisms; Text 1 infers them from water regulation, while Text 2 requires evidence of the relations themselves.",
+          "Text 1 explicitly accepts the loss of the sedges and their dependent insects, so it is not inferring restored relations from water regulation. Its pump comparison isolates independent water functions. The two writers apply different standards rather than different evidentiary demands for one shared standard."
+        ]
+      ],
+      "why": "Text 1's pump comparison would reject historical membership without independent water regulation; the current loss of insect connections does not prevent its favorable judgment. Text 2 holds water regulation fixed and compares a complete but isolated collection with a different plant community that restores interactions. That contrast makes ecological connections, rather than an exact membership or its eventual return, the second standard.",
+      "shared": "Both writers accept independent water regulation alongside the absence of the former sedges and their dependent insects.",
+      "standards": "Use the pumps to isolate Text 1's criterion, then compare Text 2's matching species list without interactions against restored interactions with a mismatching list."
+    },
+    {
+      "scene": "cs-standard-archive-completeness",
+      "target": "the completeness of the Neral workshop archive",
+      "one": "Neral's digitized workshop archive includes every surviving ledger, with every page linked to its volume and date. There are no ledgers from the years of expansion; the original shelves have the same gap. The project is complete. Sending a researcher to the building would add the experience of handling paper but would not enlarge the record available for consultation.",
+      "two": "The website preserves all surviving pages and their dates. Yet a researcher tracing the expansion can see the old wage bill and the new one without following the intervening hiring. Visiting the building cannot fix this. What prevents me from calling the archive complete would remain even if every surviving entry were legible and every link worked perfectly.",
+      "key": "Text 1 measures coverage against what remains to be consulted; Text 2 measures it against the sequence that a particular historical inquiry must follow.",
+      "wrong": [
+        [
+          "Text 1 treats equal access to the copies as sufficient; Text 2 asks whether consulting the records requires an experience that the copies cannot provide.",
+          "Handling paper is mentioned, but Text 1 treats that difference as irrelevant to the available record, and Text 2 says a visit cannot fix the gap. Its missing resource is the intervening historical sequence, not an experience of the originals."
+        ],
+        [
+          "Text 1 regards preserving each entry's context as sufficient; Text 2 requires researchers to connect entries before the archive's coverage can be judged.",
+          "The date and volume links preserve context, and the historian does connect two wage bills. Those links cannot supply records for the missing interval. The issue is which whole must be covered, not whether researchers have yet made connections among the present entries."
+        ],
+        [
+          "Text 1 judges the archive by the work its compilers could finish; Text 2 judges it by the amount of detail that a surviving document makes available.",
+          "The first half plausibly captures the project's limit, but Text 2's issue is absent years between two available records. Perfectly detailed surviving entries would not themselves restore that sequence, as its closing qualification emphasizes."
+        ]
+      ],
+      "why": "Neither writer identifies an omitted copy or a defective link. Text 1's counterfactual visit adds no surviving evidence, so completion is measured against the extant collection. Text 2's inquiry must traverse an interval the collection cannot cover, even with perfect access. The reference whole changes from surviving objects to a historical sequence.",
+      "shared": "Both writers accept exhaustive copying, preserved dates, missing expansion years, and the inability of an on-site visit to fill those years.",
+      "standards": "Compare what the imagined visit would add with what the historian needs between the two wage bills: one test exhausts a collection, the other covers a sequence."
+    },
+    {
+      "scene": "cs-standard-harbor-forecast",
+      "target": "the usefulness of the Selen harbor forecast",
+      "one": "The new Selen model reduces water-level errors on calm days and near the harbor's closure level. On the historical record, both models would nevertheless have issued exactly the same gate instructions, including the same mistakes. Calling the revision useless would discard a real gain: its estimates describe the recorded water levels more closely even where the gate instructions coincide.",
+      "two": "The smaller errors extend to days near the closure level; they are not confined to calm water. Still, replace the old estimates on the gate operator's desk with the new ones and no recorded opening or closure changes. A second revision might slightly enlarge the average error yet prevent one mistaken closure. That revision would improve this operator's forecast in a way the first has not.",
+      "key": "Text 1 values closer estimates even when actions stay the same; Text 2 values changes in estimates according to the decisions they would alter.",
+      "wrong": [
+        [
+          "Text 1 evaluates gains throughout the water-level record; Text 2 gives gains near the closure level priority over gains during ordinary conditions.",
+          "Both passages establish that errors decrease near the closure level too. Merely restricting the accuracy comparison to difficult days therefore does not explain Text 2's judgment. Its hypothetical second revision instead separates numerical closeness from crossing a consequential decision boundary."
+        ],
+        [
+          "Text 1 evaluates the size of errors in the model's estimates; Text 2 gives the direction of those errors priority over their numerical size.",
+          "The direction of a water-level error could affect a closure, making this plausible. But Text 2 does not prefer overestimates or underestimates as such. It favors an altered decision, which depends on the estimate's relation to a threshold, not on error direction alone."
+        ],
+        [
+          "Text 1 evaluates estimates against recorded water levels; Text 2 evaluates whether the improved estimates justify changing the harbor's closure rule.",
+          "Text 2 changes the estimates supplied to the existing decision rule and asks whether the resulting instructions change. It does not evaluate a new closure threshold or a revision to the policy itself. The distractor confuses improving a rule's input with replacing the rule."
+        ]
+      ],
+      "why": "The smaller errors occur even near the closure level, so ordinary-versus-extreme conditions cannot explain the assessments. Text 1 counts a closer description of water levels as a gain. Text 2's hypothetical revision may be less close numerically yet better at preventing a mistaken closure: its evaluative target is the decision changed by an estimate.",
+      "shared": "Both texts accept smaller errors near and away from the closure level, plus identical gate instructions from the two existing models.",
+      "standards": "Use the hypothetical less-accurate revision to distinguish numerical closeness from the consequences of crossing a decision boundary."
+    },
+    {
+      "scene": "cs-standard-ceramic-uniformity",
+      "target": "standardization at the Lethrin pottery workshop",
+      "one": "Lethrin's potters used different clay mixtures and adjusted firing by sight. Yet their later cups fitted racks made from one drawing: a buyer could mix cups from several potters without sorting them. Earlier cups, made from a shared clay batch, needed separate supports. Standardization had arrived, although neither the mixture nor the judgments at the kiln had become uniform.",
+      "two": "The later Lethrin cups could share racks, and their varied mixtures and firing judgments are well documented. Move a finished cup between buyers and it still fits; move a potter's firing instructions to another bench and the change of mixture makes them unreliable. I hesitate to date standardized production from the first exchange. The second exchange would have to work too.",
+      "key": "The writers differ on whether interchangeability must extend from finished products to the procedures by which those products are produced.",
+      "wrong": [
+        [
+          "The writers differ on whether a common specification is enough to make the same physical properties recur across products made by different potters.",
+          "Both accept recurrence of the relevant external dimensions. Text 2's failed exchange concerns firing instructions, not whether the common specification can produce compatible cups. It extends the object of interchangeability to procedures."
+        ],
+        [
+          "The writers differ on the scale of comparison: Text 1 assesses agreement across potters, while Text 2 assesses consistency within each potter's work.",
+          "Both tests concern exchanges across working settings: cups between buyers or firing instructions between benches. Text 2 does not shift to repeated consistency within one potter's work; it changes what must be transferable across settings."
+        ],
+        [
+          "The writers differ on whether varied methods demonstrate skilled adaptation to a common target or demonstrate that the common target is insufficiently exact.",
+          "Skilled adaptation is compatible with the account, but Text 2 does not infer an imprecise target from varied procedures. Compatible output is accepted. The disagreement concerns whether a standard target suffices when production instructions are not transferable."
+        ]
+      ],
+      "why": "The common clay of the earlier cups did not make products interchangeable, so Text 1 locates standardization in the later cups' shared fit. Text 2 accepts that achievement but tests a second exchange: instructions between benches. Its additional demand concerns transferable procedures, not tighter dimensions or a different historical phase.",
+      "shared": "Both texts accept later cups' common fit, varied mixtures, and firing instructions that depend on individual working conditions.",
+      "standards": "Separate exchanging completed cups from exchanging the instructions that produce them; the authors disagree about which exchanges standardization must permit."
+    },
+    {
+      "scene": "cs-standard-musical-originality",
+      "target": "the originality of Roven's suite",
+      "one": "Every melody in Roven's suite comes from a familiar street song. The ordering is new and creates striking effects, but write each melody on a separate card and every card has an earlier counterpart. Hearing one in a new position does not erase that history. The suite's ingenuity is considerable; my reservation concerns calling its music original.",
+      "two": "Lay out Roven's borrowed melodies on cards and none will be new. Now place the final movement first: its formerly uneasy return sounds confident, and the opening loses its later irony. No note need change. The sources of the cards remain plain in either order. The originality I hear vanishes in that rearrangement, though everything named in the inventory survives.",
+      "key": "The first writer tests originality in the elements considered separately; the second tests it in effects that depend on how those elements are related.",
+      "wrong": [
+        [
+          "The first writer asks whether the melodies have historical precedents; the second asks whether their presentation makes those precedents hard to recognize.",
+          "Historical borrowing matters to Text 1, but the source cards remain recognizable in Text 2's two orders. Its contrast depends on changed relations and effects, not on a presentation that conceals the material's origins."
+        ],
+        [
+          "The first writer separates compositional skill from invention; the second considers the emotional force of a performance sufficient to establish invention.",
+          "Text 1 does make the stated separation. Text 2, however, changes only the order while holding the notes and identifiable sources fixed. This isolates compositional relationships, not emotional force in a performance as a sufficient test of invention."
+        ],
+        [
+          "The first writer measures novelty against the source songs; the second measures novelty against the expectations listeners bring to familiar material.",
+          "Familiarity helps make the distractor plausible, but Text 2 compares two organizations of the same material, not two sets of listener expectations. Its claimed originality lies in order-dependent relationships even when listeners recognize the sources."
+        ]
+      ],
+      "why": "Both writers accept old melodies and new effects. Text 1's separate-card inventory preserves the relevant unit for its assessment. Text 2 changes the relations among those same cards, losing what it calls original without altering the elements or hiding their sources. That controlled contrast identifies a different unit of evaluation.",
+      "shared": "Both texts accept identifiable borrowed melodies and effects produced by their new ordering.",
+      "standards": "The inventory stays fixed while the order changes: ask why that leaves Text 1's test unchanged but changes Text 2's assessment."
+    },
+    {
+      "scene": "cs-standard-transit-success",
+      "target": "the success of the Orven transit program",
+      "one": "Before Orven's bus program opened, two large employers moved beyond the residential district. Both traffic assessments agree that, without the buses, daily car trips would have risen sharply. They rose only slightly, though they still exceeded the earlier total. The program reduced the driving burden in a meaningful sense: it removed most of the additional traffic that the relocations would have generated.",
+      "two": "I accept that Orven's buses prevented most of the forecast increase. Residents nevertheless encounter more daily car trips than before the employers moved. Imagine a smaller town with no such avoided increase but fewer cars on its roads than before: it would have achieved the reduction still missing here. A large benefit against the alternative does not settle my assessment.",
+      "key": "Text 1 compares observed traffic with the credible outcome without the program; Text 2 compares the resulting traffic burden with the town's earlier burden.",
+      "wrong": [
+        [
+          "Text 1 adjusts the traffic measure for changes in demand; Text 2 asks whether the program reduced the proportion of that demand met through driving.",
+          "The relocations change demand, but Text 2 does not use a share of total journeys. Its smaller-town comparison is about fewer cars than before, regardless of how total demand is distributed among forms of travel."
+        ],
+        [
+          "Text 1 judges the program by the traffic prevented by its introduction; Text 2 judges it by how much traffic can be attributed to the employers' moves.",
+          "Text 2 accepts the avoided increase and does not try to isolate the employers' causal contribution. Its comparison asks whether the resulting burden is below the prior burden, even in a town without a large avoided increase."
+        ],
+        [
+          "Text 1 treats a favorable forecast comparison as sufficient evidence of success; Text 2 requires the favorable comparison to be confirmed by observed counts.",
+          "Both assessments already accept the observed counts and the credible no-program comparison. Text 2 introduces a different baseline, not a demand to replace a forecast with observations. More confirmation of the avoided increase would leave its concern intact."
+        ]
+      ],
+      "why": "Both writers accept an avoided large increase and an actual small increase. Text 1 evaluates the program against the counterfactual without buses. Text 2's smaller-town comparison permits success without a large avoided increase, showing that its baseline is the earlier burden. The issue is the comparison defining reduction, not competing traffic measurements.",
+      "shared": "Both writers accept a credible large increase without buses, an observed small increase, and a benefit from the program.",
+      "standards": "Contrast the no-program alternative with the earlier traffic total; Text 2's smaller-town example separates those two baselines."
+    },
+    {
+      "scene": "cs-standard-city-independence",
+      "target": "the independence of Mereth after its charter",
+      "one": "Mereth's charter ended the governor's right to countersign council rules. Grants remained discretionary, and threats to withhold them still stopped expensive proposals. Yet a resident contesting a rule now had to bring the council, not the governor, before the charter court. Mereth had acquired independence in a consequential respect, even when the sums available for its choices had not changed.",
+      "two": "The council now defends its rules in court, and the governor cannot cancel them by withholding a signature. Still, a refused canal proposal returned unchanged as soon as a grant was promised. Imagine the council retaining its new legal position but gaining a dependable local income: the difference to that proposal reveals how far Mereth remained from the independence I would recognize.",
+      "key": "Text 1 asks who must answer for binding decisions; Text 2 asks whether those decisions can take effect without another authority's discretionary support.",
+      "wrong": [
+        [
+          "Text 1 tracks which institution bears the cost of its decisions; Text 2 tracks which institution has the right to determine how public funds are spent.",
+          "The court example concerns responsibility for rules, not the financial cost of decisions. Text 2's income comparison concerns practical dependence even when the council's legal right stays unchanged; it does not relocate formal spending authority."
+        ],
+        [
+          "Text 1 treats a reduction in one kind of dependence as sufficient; Text 2 requires the city to become free of constraints on the policies it can pursue.",
+          "Text 2 isolates another authority's discretionary grants by holding the legal position fixed and changing the income source. It does not require freedom from every constraint, such as limited resources or competing local priorities. The distractor overextends the practical criterion."
+        ],
+        [
+          "Text 1 assesses the charter by the decisions it has reassigned; Text 2 assesses it by whether that reassignment is likely to survive changes in funding.",
+          "The first half fits. But Text 2's thought experiment preserves the new legal position while changing funding. Its target is the city's capacity to implement choices, not the durability of the legal reassignment under financial pressure."
+        ]
+      ],
+      "why": "The court example makes the council the legally responsible authority even while grant dependence persists. Text 2 holds that legal position constant and changes the source of income, identifying practical capacity to execute policy as its target. The two assessments concern different dimensions of independence, not whether the charter is valid or permanent.",
+      "shared": "Both writers accept the end of countersigning, the council's legal responsibility, and the governor's continuing financial influence.",
+      "standards": "Read the court example as a test of authoritative responsibility and the income counterfactual as a test of practical capacity."
+    },
+    {
+      "scene": "cs-standard-instrument-replication",
+      "target": "the replication of the Torvel vibration experiment",
+      "one": "The Torvel vibration curve reappeared in a device with a different linkage. Both teams agree that the new linkage cannot test Torvel's account of a delayed release in the old one. Nevertheless, a pattern once associated with one apparatus has now survived a change in construction. This is a replication worth claiming, even if the old mechanism remains an open question.",
+      "two": "The new device reproduces the curve and leaves Torvel's delayed-release account open. If a third device copied Torvel's linkage exactly and drew the same curve, that account might still remain open. I would prefer a modified linkage that disabled the supposed delay and showed whether the curve changed. For the experiment's central question, replication must reach the uncertainty that the unchanged curve leaves behind.",
+      "key": "Text 1 counts robustness of a result across constructions; Text 2 seeks a result that can discriminate among accounts of the original construction's behavior.",
+      "wrong": [
+        [
+          "Text 1 values departures from the original apparatus as a test of robustness; Text 2 requires closer reproduction of its construction to test the explanation.",
+          "Text 2 says that even an exact copy with the same curve might leave the explanation open. Its preferred modification is valuable because it tests the proposed delay, not because it reproduces the apparatus more closely."
+        ],
+        [
+          "Text 1 tests whether varied constructions yield an equivalent pattern; Text 2 tests whether one construction yields a stable pattern across repeated trials.",
+          "The contrast is not between cross-apparatus and repeated-trial stability. Text 2's proposed change intentionally disables a mechanism; what matters is whether that intervention discriminates between explanations, not whether an unchanged apparatus repeats its pattern."
+        ],
+        [
+          "Text 1 accepts an observation independent of its explanation; Text 2 requires the observation to remain valid when that explanation is experimentally removed.",
+          "The first half fits. Text 2 does not require the curve to persist after disabling the delay; a changed curve could be informative support for the delay's role. It requires a discriminating test, not preservation of the observation under that test."
+        ]
+      ],
+      "why": "Text 1's replication target is an observed relation robust to a construction change. Text 2 contrasts an exact copy that might settle nothing with a changed linkage that can test a causal account. That comparison makes explanatory discrimination, rather than physical fidelity or mere repeated stability, its relevant target.",
+      "shared": "Both texts accept a repeated curve from a different linkage and the unresolved explanation of Torvel's original linkage.",
+      "standards": "Compare the evidentiary roles of a different construction, an exact copy, and a modification that disables the proposed cause."
+    },
+    {
+      "scene": "cs-standard-craft-continuity",
+      "target": "the survival of the Arveth weaving tradition",
+      "one": "Arveth weaving ceased before today's weavers were born. Cloth, notebooks, and film let them reconstruct both its knot sequences and the hand movements that produced them. I regard the tradition as having survived. Had the current weavers learned directly from a former practitioner but changed those distinctive sequences, that uninterrupted instruction would preserve less of what makes the craft Arveth.",
+      "two": "Today's Arveth weavers reproduce the recorded knots and movements faithfully. But put an equally accurate notebook between each successive pair of generations, with nobody watching a learner or correcting a hand, and something more than a teaching convenience disappears. Accuracy permits this achievement to count as a reconstruction; I would not let it decide whether the tradition continued through the intervening years.",
+      "key": "The first writer prioritizes continuity in the craft's defining features; the second prioritizes continuity in the exchanges through which people pass it on.",
+      "wrong": [
+        [
+          "The first writer judges continuity by the resemblance of finished cloth; the second requires continuity in the bodily skills that produce that resemblance.",
+          "The product-versus-process distinction is tempting because Text 2 describes watching and correcting a hand. But both texts accept reconstruction of the hand movements too. Text 2's notebook thought experiment concerns relationships of transmission, even with equal technical accuracy."
+        ],
+        [
+          "The first writer treats a reconstruction as evidence of preserved knowledge; the second requires knowledge to be preserved without changes in teaching method.",
+          "Text 2 does not reject every change in teaching method; its imagined notebooks remove the exchanges between learners and practitioners. The specific concern is continuity of such exchanges, not fidelity to one fixed instructional technique."
+        ],
+        [
+          "The first writer values what current practitioners recover from earlier work; the second values what current practitioners add through their own participation.",
+          "Participation matters in Text 2, but the thought experiment is about a missing chain of interaction across generations. It does not require current weavers to add innovations. This option turns continuity of transmission into a criterion of contemporary contribution."
+        ]
+      ],
+      "why": "Text 1 imagines direct teaching with altered knot sequences and finds less continuity than in accurate reconstruction. Text 2 imagines equally accurate transmission through notebooks but removes the interpersonal exchanges. Holding accuracy apart from transmission in these comparisons shows that defining craft features and a continuous social practice are the respective targets.",
+      "shared": "Both texts accept the historical break and the faithful reconstruction of knots as well as hand movements.",
+      "standards": "Compare direct teaching with changed features to accurate records without teaching exchanges; each writer preserves a different element in its test of continuity."
+    }
+  ];
+
+  const ctcDifferentEvaluationStandards = {
+    ...CTC_BASE,
+    id: "cross-text-different-evaluation-standards",
+    subskill: "response between texts",
+    difficulty: "Hard",
+    title: "Reconcile assessments by identifying their different evaluative targets",
+    recognize: "Establish the observations both writers accept, then identify the object, baseline, or criterion each uses to evaluate them. Different verdicts need not contradict the shared findings.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["one-text-only", "too-broad", "word-association"],
+    build(t) {
+      const topic = t.pick(CTC_STANDARD_TOPICS);
+      const content = CTC_passage(topic.one, topic.two);
+      return {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "paired-passages", content },
+        stem: `Which choice best describes the relationship between the authors' assessments of ${topic.target}?`,
+        correct: topic.key,
+        wrong: topic.wrong,
+        explanation: topic.why,
+        steps: [
+          topic.shared,
+          topic.standards,
+          "Check the competing interpretations against both comparisons. A plausible distinction can still assign the wrong target, hold the wrong feature constant, or extend a criterion too far.",
+        ],
+        principles: [
+          "Agreement about observations can coexist with different evaluations when the authors evaluate different things.",
+          "A shared evaluative word may carry different reference sets, baselines, or criteria in two arguments.",
+        ],
+        trap: "Choosing a plausible distinction between the texts without testing what each comparison holds fixed and what change would alter each writer’s verdict.",
+        hint: "Which change would matter in each writer’s comparison, and which accepted fact would remain the same?",
+        estimatedSeconds: 105,
+        verify: () => {
+          const [one, two] = CTC_split(content);
+          const choices = [topic.key, ...topic.wrong.map(([choice]) => choice)];
+          return one === topic.one && two === topic.two && one.length + two.length >= 150 &&
+            one.length + two.length <= 900 && topic.wrong.length === 3 && new Set(choices).size === 4 &&
+            choices.every((choice) => choice.length > 0 && choice.length <= 160) &&
+            topic.wrong.every(([, reason]) => reason.length > 0);
+        },
+      };
+    },
+  };
+  // End additional design: cross-evidence-standard.
+
+  // Begin additional design: easy-cross-procedure.
+  const CTC_DISTINCT_PURPOSE_TOPICS = [
+    {
+      scene: "cs-purpose-orchard-notebooks",
+      one: "An orchard's notebooks contain weather reports, harvest dates, sales, and payments to workers. One historian copies the dates of the last spring frost from each year's entries. Her project asks whether those frosts tended to arrive earlier or later over the period covered by the notebooks.",
+      two: "A second historian reads the same orchard notebooks but copies the amounts customers paid for a basket of apples. He arranges these amounts by year to discover how the price of the orchard's apples changed over time.",
+      aim1: "compares the timing of spring frosts",
+      foil1: "compares the timing of autumn harvests",
+      aim2: "tracks the prices charged for apples",
+      foil2: "tracks the wages paid to pickers",
+      anchor1: "whether those frosts tended to arrive earlier or later",
+      anchor2: "how the price of the orchard's apples changed",
+      reason1: "The notebooks include harvest dates, but the first historian's stated question concerns spring frosts, not the timing of harvests.",
+      reason2: "Payments to workers appear in the notebooks, but the second historian records customers' payments for apples, not workers' wages.",
+    },
+    {
+      scene: "cs-purpose-ferry-tickets",
+      one: "A transport museum has boxes of used ferry tickets showing dates, routes, and fares. A researcher groups one summer's tickets by route and counts each group. The aim is to find out which routes carried the most passengers that summer.",
+      two: "Another researcher works with tickets from the same museum. She selects tickets for one unchanged journey, takes examples from each decade, and compares their printed prices. Her study follows the rise and fall of the fare over time.",
+      aim1: "compares passenger traffic on different routes",
+      foil1: "compares passenger fares on different routes",
+      aim2: "traces fare changes across several decades",
+      foil2: "traces route changes across several decades",
+      anchor1: "which routes carried the most passengers",
+      anchor2: "the rise and fall of the fare",
+      reason1: "The first researcher counts tickets to compare passenger numbers; the fares printed on them are not the subject of that comparison.",
+      reason2: "The second researcher deliberately follows an unchanged journey, so the comparison concerns fares rather than alterations to routes.",
+    },
+    {
+      scene: "cs-purpose-harbor-photographs",
+      one: "Photographs of the old Brindle harbor show fishing boats beside warehouses and workshops. An architectural historian orders the photographs by date to trace the waterfront's construction history. She notes when buildings first appear and when older buildings disappear.",
+      two: "A boat designer studies the same harbor photographs. Looking closely at the vessels, he makes drawings of their hulls and groups boats with similar outlines. His purpose is to compare the different hull shapes used by the harbor's fishing fleet.",
+      aim1: "reconstructs changes in the waterfront buildings",
+      foil1: "reconstructs changes in the fishing vessels",
+      aim2: "compares the shapes of boat hulls",
+      foil2: "compares the heights of harbor walls",
+      anchor1: "trace the waterfront's construction history",
+      anchor2: "compare the different hull shapes",
+      reason1: "Boats are visible in the photographs, but the architectural historian records the appearance and disappearance of buildings.",
+      reason2: "The designer traces the outlines of boats, not the walls along the harbor, to compare hull shapes.",
+    },
+    {
+      scene: "cs-purpose-recipe-books",
+      one: "A collection of handwritten recipe books includes shopping lists, instructions, and occasional comments about family celebrations. A food historian records ingredients described as grown nearby. She uses these entries to identify the foods that cooks could obtain locally.",
+      two: "A museum curator examines the same recipe books while preparing an exhibit about kitchens. He marks references to presses, grinders, molds, and other equipment. He wants to establish which tools the books' owners used to prepare their food.",
+      aim1: "investigates which ingredients were locally available",
+      foil1: "investigates which recipes were most popular",
+      aim2: "identifies the kitchen tools cooks used",
+      foil2: "identifies the holiday meals cooks served",
+      anchor1: "identify the foods that cooks could obtain locally",
+      anchor2: "which tools the books' owners used",
+      reason1: "The food historian records where ingredients came from; she does not count how often particular recipes were prepared.",
+      reason2: "The curator selects references to equipment. Comments about celebrations do not make holiday meals the focus of his project.",
+    },
+    {
+      scene: "cs-purpose-dialect-recordings",
+      one: "A language archive holds recorded interviews with residents of several villages. Each recording is labeled with the speaker's village and birthplace. A researcher notes the names speakers give common household objects and maps which terms occur in each village.",
+      two: "A second researcher uses those interviews to compare how quickly people speak. She selects a minute of uninterrupted speech from each recording and counts its syllables. She is interested in differences in speech rate across the speakers.",
+      aim1: "maps where particular words were used",
+      foil1: "maps where particular speakers were born",
+      aim2: "compares speakers' rates of speech",
+      foil2: "compares speakers' levels of volume",
+      anchor1: "maps which terms occur in each village",
+      anchor2: "differences in speech rate",
+      reason1: "Birthplaces are included on the labels, but the first researcher maps the use of words rather than the origins of speakers.",
+      reason2: "Counting syllables within equal periods measures how quickly speakers talk, not how loudly they talk.",
+    },
+    {
+      scene: "cs-purpose-theater-promptbooks",
+      one: "The promptbooks for an old theater contain actors' lines and handwritten notes for performances. A director studies the marked pauses and entrances to reconstruct how scenes were timed. Her aim is to recover the pacing of the original productions.",
+      two: "A historian examines the same promptbooks for crossed-out lines and replacement phrases. Comparing these changes with the printed scripts, he identifies what dialogue was altered before a play reached the stage. He is documenting revisions to the spoken text.",
+      aim1: "reconstructs the pacing of past performances",
+      foil1: "reconstructs the scenery of past performances",
+      aim2: "identifies changes made to actors' dialogue",
+      foil2: "identifies changes made to actors' costumes",
+      anchor1: "recover the pacing of the original productions",
+      anchor2: "documenting revisions to the spoken text",
+      reason1: "The director uses pauses and entrances to study timing. The text does not describe an effort to reconstruct stage scenery.",
+      reason2: "The historian compares crossed-out lines and replacement phrases with scripts, so the changes concern dialogue rather than clothing.",
+    },
+    {
+      scene: "cs-purpose-kiln-logs",
+      one: "A pottery workshop kept logs listing each kiln load's clay, fuel, temperature, and firing time. An engineer uses the logs to compare the amount of wood burned for loads of equal weight. The project measures how the kiln's fuel consumption changed over the years.",
+      two: "A ceramic artist reads the same logs to plan a firing schedule. She groups entries by clay type and compares the recorded hours in the kiln. Her goal is to find the typical firing duration for each kind of clay the workshop used.",
+      aim1: "tracks the kiln's consumption of fuel",
+      foil1: "tracks the kiln's range of temperatures",
+      aim2: "compares firing durations for different clays",
+      foil2: "compares firing temperatures for different clays",
+      anchor1: "how the kiln's fuel consumption changed",
+      anchor2: "the typical firing duration for each kind of clay",
+      reason1: "Temperature appears in the logs, but the engineer compares quantities of wood used for equally heavy loads.",
+      reason2: "The artist compares hours in the kiln. Although temperatures are available, her stated goal concerns duration.",
+    },
+    {
+      scene: "cs-purpose-newspaper-transit",
+      one: "Old newspapers in Bellmere published bus notices listing routes, stops, and departure times. A geographer marks the advertised stops on maps from successive years. She wants to discover how far the bus network extended into the growing town.",
+      two: "A transport historian uses the same notices to study service on one route that remained unchanged. For each year, he counts the scheduled departures on a weekday. His question is how frequently buses ran along that route.",
+      aim1: "maps the geographical reach of service",
+      foil1: "maps the geographical distribution of readers",
+      aim2: "compares the number of scheduled departures",
+      foil2: "compares the number of advertised stops",
+      anchor1: "how far the bus network extended",
+      anchor2: "how frequently buses ran along that route",
+      reason1: "The geographer plots bus stops to trace the network's extent; the newspapers' readership is not being mapped.",
+      reason2: "The historian counts departures on an unchanged route, not stops, to compare the frequency of service.",
+    },
+    {
+      scene: "cs-purpose-garden-plans",
+      one: "An estate's garden plans show paths, planting beds, and fountains at several dates. A landscape historian traces each plan's paths onto a separate sheet. The resulting sequence shows how the routes for walking through the garden changed.",
+      two: "A botanist works with the same plans and the plant names written inside each bed. She counts the different kinds of plants listed in each period. Her project asks whether the garden's plant collection became more or less varied.",
+      aim1: "traces changes in the walking routes",
+      foil1: "traces changes in the fountain locations",
+      aim2: "compares the variety of plants listed",
+      foil2: "compares the size of beds drawn",
+      anchor1: "how the routes for walking through the garden changed",
+      anchor2: "whether the garden's plant collection became more or less varied",
+      reason1: "The historian traces paths. The plans also show fountains, but their locations are not the subject of the sequence.",
+      reason2: "The botanist counts kinds of plants, not the dimensions of beds, to assess variety in the collection.",
+    },
+    {
+      scene: "cs-purpose-weather-letters",
+      one: "Letters sent by residents of Norwick often mention rain, snow, and storms alongside family news. A climate researcher extracts dated reports of snowfall and places them on a calendar. She wants to establish which months had snow during the years the letters cover.",
+      two: "A literary scholar reads the same letters, collecting comparisons such as storms described as angry visitors. He studies the imagery writers used for the weather. His interest is in their choice of figurative language when describing familiar conditions.",
+      aim1: "identifies the seasonal timing of snowfall",
+      foil1: "identifies the seasonal timing of correspondence",
+      aim2: "examines the writers' images of weather",
+      foil2: "examines the writers' accounts of relatives",
+      anchor1: "which months had snow",
+      anchor2: "their choice of figurative language",
+      reason1: "The letters supply dates, but the researcher organizes reports of snow rather than studying when people tended to write letters.",
+      reason2: "Family news is present, but the scholar collects weather comparisons to study imagery, not descriptions of relatives.",
+    },
+    {
+      scene: "cs-purpose-market-tokens",
+      one: "A museum holds metal tokens once issued by stalls at the Darnet market. Most bear a stall name on one side and a value on the other. A local historian catalogs the names to identify the different businesses that operated in the market.",
+      two: "A metalworker examines the same tokens under magnification. She records ridges and tool marks left during production, then groups tokens by these features. Her study asks which techniques were used to manufacture them.",
+      aim1: "identifies businesses named on the tokens",
+      foil1: "identifies values stamped on the tokens",
+      aim2: "investigates how the tokens were manufactured",
+      foil2: "investigates how the tokens were exchanged",
+      anchor1: "identify the different businesses",
+      anchor2: "which techniques were used to manufacture them",
+      reason1: "Although values are stamped on the tokens, the historian catalogs stall names to identify businesses.",
+      reason2: "Ridges and tool marks are evidence of production methods. The metalworker is not studying how customers used the tokens in exchanges.",
+    },
+    {
+      scene: "cs-purpose-river-sound",
+      one: "An environmental archive contains recordings made beside the Vey River at marked times throughout one year. An ecologist identifies frog calls in each recording and totals them by month. She wants to find the season when frogs were most vocally active.",
+      two: "A sound engineer examines the same recordings for engine noise. He sorts them by hour rather than by month, comparing the number of passing motorboats heard at different times. His report identifies the busiest hours for boat traffic.",
+      aim1: "compares frog activity across the seasons",
+      foil1: "compares frog activity along the river",
+      aim2: "identifies daily patterns in boat traffic",
+      foil2: "identifies yearly changes in boat traffic",
+      anchor1: "the season when frogs were most vocally active",
+      anchor2: "the busiest hours for boat traffic",
+      reason1: "The ecologist groups calls by month to compare seasons; the text does not describe a comparison among locations along the river.",
+      reason2: "The engineer sorts recordings by hour of day, so the question concerns daily patterns rather than changes from year to year.",
+    },
+  ];
+
+  const ctcDistinctResearchPurposes = {
+    ...CTC_BASE,
+    id: "cross-text-distinct-research-purposes",
+    subskill: "response between texts",
+    difficulty: "Easy",
+    title: "Identify two stated purposes for examining the same materials",
+    recognize: "Find the stated aim of each project and keep each aim attached to the text that describes it.",
+    rubric: { steps: 1, concept: 0, interpretation: 0, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["one-text-only"],
+    build(t) {
+      const topic = t.pick(CTC_DISTINCT_PURPOSE_TOPICS);
+      const content = CTC_passage(topic.one, topic.two);
+      const describe = (first, second) => `Text 1 ${first}, whereas Text 2 ${second}.`;
+      const correct = describe(topic.aim1, topic.aim2);
+      const wrong = [
+        [describe(topic.aim1, topic.foil2), `This correctly describes the first project but misstates the second. ${topic.reason2}`],
+        [describe(topic.foil1, topic.aim2), `This correctly describes the second project but misstates the first. ${topic.reason1}`],
+        [describe(topic.foil1, topic.foil2), `${topic.reason1} ${topic.reason2}`],
+      ];
+      return {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "paired-passages", content },
+        stem: "Which choice best describes the difference between the purposes of the two projects?",
+        correct,
+        wrong,
+        explanation: `The projects use the same source material to answer different questions: Text 1 ${topic.aim1}, and Text 2 ${topic.aim2}. The other choices replace at least one stated aim with a different feature of the material.`,
+        steps: [
+          `Locate the first project's stated aim: “${topic.anchor1}.”`,
+          `Locate the second project's stated aim: “${topic.anchor2}.”`,
+          "Check both halves of each choice against those aims; material present in a source need not be the subject of either project.",
+        ],
+        principles: ["Two projects can use the same evidence for different stated purposes.", "A comparison must describe both texts accurately."],
+        trap: "Choosing an option that gives one project's actual purpose but substitutes another available detail for the other project's purpose.",
+        hint: "Look for what each researcher wants to learn from the material.",
+        estimatedSeconds: 55,
+        verify: () => topic.one.includes(topic.anchor1) && topic.two.includes(topic.anchor2) &&
+          topic.one.length + topic.two.length >= 150 && topic.one.length + topic.two.length <= 900 &&
+          new Set([correct, ...wrong.map(([choice]) => choice)]).size === 4,
+      };
+    },
+  };
+  // End additional design: easy-cross-procedure.
+
   return [
     ctcAuthorVersusCitedView,
     ctcSharedClaim,
@@ -2746,5 +3242,7 @@
     ctcCommonGround,
     ctcPartialAgreement,
     ctcConditionApplied,
+    ctcDifferentEvaluationStandards,
+    ctcDistinctResearchPurposes,
   ];
 });

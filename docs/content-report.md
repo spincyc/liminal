@@ -10,7 +10,7 @@ Counts describe practice inventory, not independent question designs or empirica
 | Section | Templates | Easy | Medium | Hard |
 | --- | ---: | ---: | ---: | ---: |
 | sat-math | 197 | 48 | 99 | 50 |
-| sat-reading-writing | 128 | 35 | 66 | 27 |
+| sat-reading-writing | 163 | 42 | 75 | 46 |
 
 Source-version and review evidence are checked separately from schema and answer-tell measurements.
 

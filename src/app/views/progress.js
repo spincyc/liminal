@@ -431,14 +431,14 @@
       return node;
     }
 
-    // Beside Hard accuracy, the same on each Hard design's first appearance,
-    // which familiarity with a design cannot raise.
+    // Beside Hard accuracy, the same on each Hard design's first recorded answer,
+    // excluding later recorded attempts at that design.
     function hardNote(hard) {
       if (!hard.attempted) return "No Hard questions yet";
       const first = Analytics.firstSight(model.attempts, "Hard");
       const counted = `${count(hard.attempted, "Hard question")} counted`;
       return first.attempted
-        ? `${counted}; ${percent(first.accuracy)} on the ${count(first.attempted, "design")} seen for the first time`
+        ? `${counted}; ${percent(first.accuracy)} on first recorded answers across ${count(first.attempted, "design")}`
         : counted;
     }
 

@@ -291,6 +291,7 @@
       key: "The height protects the stored seeds from flooding if sea levels rise sharply.",
       otherChoice: "The permafrost keeps the rock around the vault cold if the cooling system fails.",
       assoc: "Gene banks keep ownership of the samples of seeds that they deposit in the vault.",
+      assocReason: "The text states that gene banks retain ownership, but this does not explain why the vault was built high above sea level.",
       outside: "A high site makes the vault easier for gene banks around the world to reach.",
     },
     {
@@ -322,7 +323,7 @@
       const topic = t.pick(STATED_REASON_TOPICS);
       const wrong = [
         [topic.otherChoice, "The text does say this, but it explains something else, not what the question asks about."],
-        [topic.assoc, "This reuses details from the text but connects them in a way the text never does."],
+        [topic.assoc, topic.assocReason || "This reuses details from the text but connects them in a way the text never does."],
         [topic.outside, "This may sound reasonable, but the text never gives it as the reason."],
       ];
       return mc("Easy", topic, {
@@ -893,17 +894,17 @@
   // in that order. The main idea is the author's position, not the scholar's.
   const QUALIFIED_SOURCE_TOPICS = [
     {
-      scene: "ii-lubeck-merchant-trust",
+      scene: "ii-veldhaven-merchant-trust",
       text:
-        "Historian Ines Marchetti argues that merchants in fourteenth-century Lübeck relied mainly on personal trust rather than on written contracts. As evidence, she points to thousands of surviving letters in which traders send goods to distant partners with no contract at all, only a promise to settle accounts later. The letters are a remarkable source, and they do show how often merchants extended credit on trust. But they come almost entirely from a few wealthy families who traded with relatives and longtime associates. Town court records, by contrast, show a steady stream of disputes over written agreements among smaller traders. Trust may have governed dealings within established networks, but Marchetti's sources cannot tell us how the city's many other merchants did business.",
+        "In a fictional study of the invented medieval port of Veldhaven, historian Ines Marchetti argues that merchants relied mainly on personal trust rather than on written contracts. As evidence, she points to thousands of surviving letters in which traders send goods to distant partners with no contract at all, only a promise to settle accounts later. The letters are a remarkable source, and they do show how often merchants extended credit on trust. But they come almost entirely from a few wealthy families who traded with relatives and longtime associates. Town court records, by contrast, show a steady stream of disputes over written agreements among smaller traders. Trust may have governed dealings within established networks, but Marchetti's sources cannot tell us how the city's many other merchants did business.",
       claim: "relied mainly on personal trust",
       concession: "they do show how often merchants extended credit on trust",
       limit: "cannot tell us how the city's many other merchants did business",
-      key: "Marchetti's letters show how often wealthy families traded on trust, but not how Lübeck's merchants did business in general.",
-      source: "Merchants in fourteenth-century Lübeck relied mainly on personal trust rather than written contracts when trading with partners.",
-      overreach: "The letters are genuine, but court records show that most of Lübeck's merchants relied on written contracts instead.",
+      key: "Marchetti's letters show how often wealthy families traded on trust, but not how Veldhaven's merchants did business in general.",
+      source: "Merchants in medieval Veldhaven relied mainly on personal trust rather than written contracts when trading with partners.",
+      overreach: "The letters are genuine, but court records show that most of Veldhaven's merchants relied on written contracts instead.",
       overReason: "The author says only that the letters cannot tell us how other merchants did business; the text never claims that most merchants used contracts.",
-      narrow: "Court records from fourteenth-century Lübeck show that smaller traders often disputed their written agreements.",
+      narrow: "Court records from medieval Veldhaven show that smaller traders often disputed their written agreements.",
     },
     {
       scene: "ii-cave-art-hunting-magic",
@@ -2618,6 +2619,182 @@
 
   const narrativeReassessment = createTemplate(C);
 
+
+  // Each passage states a five-stage process. The question names one stage;
+  // every option describes an actual stage, but only one comes next.
+  const PROCESS_ORDER_TOPICS = [
+    {
+      scene: "ii-process-paper-casting",
+      text: "At a paper-making workshop, students begin by cutting scrap paper into strips. They then leave the strips in a tub of water overnight. The following morning, they blend the softened scraps into a smooth mixture. Next, they dip a flat screen into the mixture and lift out a thin layer. Finally, they turn that layer onto a sheet of felt to dry.",
+      stages: [
+        ["cutting scrap paper into strips", "Cut the scrap paper into several long, narrow strips."],
+        ["leave the strips in a tub of water overnight", "Soak the paper strips in water until the morning."],
+        ["blend the softened scraps into a smooth mixture", "Blend the soaked scraps until the mixture is smooth."],
+        ["dip a flat screen into the mixture and lift out a thin layer", "Lift a thin layer of mixture with a screen."],
+        ["turn that layer onto a sheet of felt", "Place the newly formed layer on felt for drying."],
+      ],
+    },
+    {
+      scene: "ii-process-sound-library",
+      text: "A school sound club is making a collection of recordings. First, members choose a quiet room for each recording. They next set a microphone on a stand in that room. Once it is positioned, they record a short handclap to check the equipment. They then record the sound selected for the collection. Their last task is to save the recording with a descriptive file name.",
+      stages: [
+        ["choose a quiet room", "Select a room with little noise for the recording."],
+        ["set a microphone on a stand", "Put the microphone on a stand inside the room."],
+        ["record a short handclap", "Make a brief test recording of a single handclap."],
+        ["record the sound selected for the collection", "Record the intended sound for inclusion in the collection."],
+        ["save the recording with a descriptive file name", "Store the completed recording under a descriptive file name."],
+      ],
+    },
+    {
+      scene: "ii-process-shell-display",
+      text: "For a classroom shell display, volunteers first sort the shells by size. Next, they photograph each size group against a plain background. After taking the photographs, they write a short label for each group. They then attach those labels to a set of shallow trays. To finish the display, they arrange the shells in the labeled trays.",
+      stages: [
+        ["sort the shells by size", "Separate the collected shells into groups according to size."],
+        ["photograph each size group", "Take pictures of the groups against a plain background."],
+        ["write a short label for each group", "Prepare a brief written label for each shell group."],
+        ["attach those labels to a set of shallow trays", "Fasten the prepared labels onto the shallow display trays."],
+        ["arrange the shells in the labeled trays", "Place the shells inside their respective labeled display trays."],
+      ],
+    },
+    {
+      scene: "ii-process-seed-packets",
+      text: "A neighborhood garden follows a set routine when preparing seed packets. Volunteers start by folding sheets of paper into small envelopes. They next write the plant names on the empty envelopes. Then they count out the seeds for each packet. After counting, they pour the seeds into the named envelopes. Only then do they seal the envelopes with a strip of tape.",
+      stages: [
+        ["folding sheets of paper into small envelopes", "Fold the paper sheets to form small seed envelopes."],
+        ["write the plant names on the empty envelopes", "Label the empty envelopes with the appropriate plant names."],
+        ["count out the seeds for each packet", "Count the seeds that will go into each packet."],
+        ["pour the seeds into the named envelopes", "Transfer the counted seeds into the correctly named envelopes."],
+        ["seal the envelopes with a strip of tape", "Close the filled envelopes using a strip of tape."],
+      ],
+    },
+    {
+      scene: "ii-process-bridge-trial",
+      text: "An engineering club uses the same procedure for each model bridge it tests. The members first measure the model's length. Next, they rest its ends on two wooden supports. They then place an empty container at the middle of the bridge. After that, they add metal washers to the container until the bridge bends. Finally, they count the washers in the container.",
+      stages: [
+        ["measure the model's length", "Determine the full length of the model being tested."],
+        ["rest its ends on two wooden supports", "Position the model across a pair of wooden supports."],
+        ["place an empty container at the middle", "Set an empty container at the model bridge's midpoint."],
+        ["add metal washers to the container", "Fill the container with washers until the bridge bends."],
+        ["count the washers in the container", "Count all the washers added during the bridge test."],
+      ],
+    },
+    {
+      scene: "ii-process-cloth-samples",
+      text: "For a fabric-color project, students first cut a large piece of cotton into equal squares. They next mark each square with a number along its edge. The numbered squares then soak in separate cups of dye. After soaking, the students rinse each square in clean water. They finish by hanging the rinsed squares on a line to dry.",
+      stages: [
+        ["cut a large piece of cotton into equal squares", "Cut the cotton cloth into squares of equal size."],
+        ["mark each square with a number", "Write a number along the edge of each square."],
+        ["soak in separate cups of dye", "Leave the numbered cloth squares in separate dye cups."],
+        ["rinse each square in clean water", "Wash the excess dye from each square with water."],
+        ["hanging the rinsed squares on a line", "Suspend the rinsed cloth squares on a drying line."],
+      ],
+    },
+    {
+      scene: "ii-process-model-book",
+      text: "In a class on book construction, participants make small practice books. They first stack several rectangular sheets of paper. Next, they fold the stack in half. They then punch three holes along the fold. After making the holes, they pass thread through them to hold the sheets together. The final step is to trim the uneven outer edges of the pages.",
+      stages: [
+        ["stack several rectangular sheets of paper", "Place several rectangular paper sheets together in a stack."],
+        ["fold the stack in half", "Bend the entire stack of sheets into two halves."],
+        ["punch three holes along the fold", "Make three small holes along the stack's central fold."],
+        ["pass thread through them", "Join the folded sheets by threading through the holes."],
+        ["trim the uneven outer edges", "Cut away uneven paper along the pages' outer edges."],
+      ],
+    },
+    {
+      scene: "ii-process-garden-map",
+      text: "A youth group creates a map of its community garden. The group begins by measuring the garden's outside boundary. It next draws that boundary on graph paper. Then the members mark the paths inside the outline. Once the paths are marked, they sketch the planting beds beside them. Lastly, they add a key explaining the symbols used for different crops.",
+      stages: [
+        ["measuring the garden's outside boundary", "Measure the boundary around the outside of the garden."],
+        ["draws that boundary on graph paper", "Draw the garden's outer boundary onto the graph paper."],
+        ["mark the paths inside the outline", "Show the garden paths inside the newly drawn outline."],
+        ["sketch the planting beds beside them", "Add drawings of the planting beds beside the paths."],
+        ["add a key explaining the symbols", "Create a key for the map's different crop symbols."],
+      ],
+    },
+    {
+      scene: "ii-process-pottery-catalog",
+      text: "A pottery studio is cataloging its sample bowls. Staff begin by assigning each bowl an identification number. Next, they weigh each bowl on a scale. They then enter its weight beside its number in a notebook. After recording the weight, they photograph the bowl from above. The last step is to place the bowl on the studio's display shelf.",
+      stages: [
+        ["assigning each bowl an identification number", "Give each sample bowl a number for identification purposes."],
+        ["weigh each bowl on a scale", "Use the studio scale to weigh each sample bowl."],
+        ["enter its weight beside its number", "Write each bowl's weight beside its number in notes."],
+        ["photograph the bowl from above", "Take a photograph looking directly down at each bowl."],
+        ["place the bowl on the studio's display shelf", "Set the cataloged bowls on the studio's display shelf."],
+      ],
+    },
+    {
+      scene: "ii-process-interview-catalog",
+      text: "A local history club organizes its recorded interviews in five stages. First, a member listens to an entire interview. The member next writes a summary of its main topics. After writing the summary, the member selects three keywords for the interview. Those keywords are then entered in the club's index. Finally, the recording is copied to a backup drive.",
+      stages: [
+        ["listens to an entire interview", "Listen to the complete recording of a single interview."],
+        ["writes a summary of its main topics", "Prepare a short account of the interview's main topics."],
+        ["selects three keywords for the interview", "Choose three words describing the interview's most significant subjects."],
+        ["entered in the club's index", "Enter the selected keywords into the club's interview index."],
+        ["copied to a backup drive", "Make another copy of the recording on backup storage."],
+      ],
+    },
+    {
+      scene: "ii-process-cardboard-vane",
+      text: "Students constructing a model weather vane begin by drawing an arrow on cardboard. They next cut out the arrow along its outline. Then they glue it to a drinking straw. Once the glue is dry, they push a pin through the straw's middle. Their last action is to secure the pin in the eraser of an upright pencil.",
+      stages: [
+        ["drawing an arrow on cardboard", "Draw the shape of an arrow on stiff cardboard."],
+        ["cut out the arrow along its outline", "Cut the cardboard arrow out along the drawn outline."],
+        ["glue it to a drinking straw", "Attach the cardboard arrow to a straw using glue."],
+        ["push a pin through the straw's middle", "Pierce the middle of the straw with a pin."],
+        ["secure the pin in the eraser", "Fasten the pin into an upright pencil's rubber eraser."],
+      ],
+    },
+    {
+      scene: "ii-process-tile-pattern",
+      text: "In an art lesson, students design a pattern from loose colored tiles. They begin by sorting the tiles into color groups. Next, they sketch a pattern on paper. They then arrange the tiles on a board to match the sketch. After arranging them, they photograph the completed pattern. Finally, they return the loose tiles to their storage boxes.",
+      stages: [
+        ["sorting the tiles into color groups", "Separate the loose tiles into groups of matching colors."],
+        ["sketch a pattern on paper", "Draw a plan for the tile pattern on paper."],
+        ["arrange the tiles on a board", "Place the tiles on a board following the sketch."],
+        ["photograph the completed pattern", "Take a picture of the completed arrangement of tiles."],
+        ["return the loose tiles to their storage boxes", "Put the loose tiles back into their storage boxes."],
+      ],
+    },
+  ];
+
+  const processNextStep = {
+    ...RW,
+    id: "detail-next-step-in-process",
+    skill: "Central Ideas and Details",
+    subskill: "supporting detail",
+    difficulty: "Easy",
+    title: "Next action in an explicitly ordered process",
+    recognize: "Locate the action named in the question and identify the action that the text places directly after it.",
+    rubric: { steps: 0, concept: 0, interpretation: 0, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["true-but-irrelevant", "reversed-condition"],
+    build(t) {
+      const topic = t.pick(PROCESS_ORDER_TOPICS);
+      const target = t.int(0, topic.stages.length - 2);
+      const next = target + 1;
+      const key = topic.stages[next][1];
+      const wrong = topic.stages.flatMap(([anchor, choice], index) => {
+        if (index === target || index === next) return [];
+        const relation = index < target ? "before the named action" : "later in the process, with another action in between";
+        return [[choice, `This action appears in the text, but it occurs ${relation}. It is not the next step after the action in the question.`]];
+      });
+      return mc("Easy", topic, {
+        stimulus: passage(topic.text),
+        stem: `According to the text, which action comes immediately after the step described by the words "${topic.stages[target][0]}"?`,
+        correct: key,
+        wrong,
+        explanation: `The text places "${topic.stages[next][0]}" directly after "${topic.stages[target][0]}". The next action is therefore: ${key}`,
+        steps: [
+          "Find the quoted action in the passage.",
+          "Follow the stated sequence to the very next action and match it to a choice.",
+        ],
+        principles: ["An accurate description of a process step answers a sequence question only if it occupies the position the question asks about."],
+        trap: "Selecting an action that occurs elsewhere in the process instead of immediately after the named action.",
+        hint: "Locate the quoted words and follow the passage's sequence from that point.",
+        verify: () => topic.stages.length === 5 && inOrder(topic.text, topic.stages.map(([anchor]) => anchor)) && wrong.length === 3 && allDistinct(key, wrong),
+      });
+    },
+  };
+
   return [
     statedClaim,
     statedReason,
@@ -2631,5 +2808,6 @@
     academicMainIdea,
     academicDetail,
     narrativeReassessment,
+    processNextStep,
   ];
 });

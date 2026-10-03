@@ -3,8 +3,8 @@
 SAT practice is built from **templates** (called families in the code): a
 template is one question design, a parameterized generator that draws a fresh
 question and checks its declared structural or numerical invariants. A practice run takes **at most one
-question per template**, and at most one per scene (topic), so no set shows
-the same question twice with new names or numbers.
+question per template** and avoids repeated visible items and scenes (topics).
+When a limited pool exhausts the bounded draw search, the run reports reuse.
 
 The fixed banks this replaces did not work that way. Every SAT Math item named
 its method in the stem ("Use the slope perpendicular structure for this
@@ -39,6 +39,7 @@ src/lib/families/
 | `content/templates/<section>.json` | The template registry: each template's permanent bit, version and fingerprint |
 | `src/lib/template-mask.js` | A set of templates as one number |
 | `src/lib/runs.js` | Choosing a run's templates and drawing its questions |
+| `src/lib/question-identity.js` | Identity of displayed content, independent of seed and choice order |
 | `src/lib/modules.js` | The digital test's module blueprint and template-built forms (booklets) |
 | `tools/lib/families.js` | The ordered source files of each section's browser bundle |
 | `tools/check-families.js` | The gate for every template |
@@ -76,21 +77,47 @@ fills a run:
   Math run came out Algebra 26 / Advanced Math 22 / Problem-Solving 31 /
   Geometry 21%, against the real test's 35/35/15/15.
 
-`runs.drawQuestions(templates, seed, instantiate, idPrefix, { seenScenes, attempts })`
+`runs.drawQuestions(templates, seed, instantiate, idPrefix, options)`
 draws one question per template from the seeds `<run seed>.<template>.<attempt>`,
 trying attempts 0–35:
 
 - It never serves a draw that throws or whose record has `verified === false`.
-- No two questions share a scene, and with `seenScenes`
-  (`{ templateId: [scene, …] }`, oldest first) a template avoids scenes the
-  student has seen, or else shows the one seen longest ago.
+- New draws avoid identical displayed questions and scenes within the run,
+  then prefer content outside the section's recent history. History includes
+  up to 400 item identities and 120 scenes, oldest first, plus legacy
+  `seenScenes` (`{ templateId: [scene, …] }`). Scene history spans templates:
+  another design about the same passage is still a recently seen topic.
+  A bounded 36-attempt search cannot guarantee an unseen draw from a finite
+  pool. Exhaustion is returned as per-question repeat flags and summarized
+  to the student; a recently seen item may be reused when needed.
 - A template with no good draw is left out. The returned array carries
   non-enumerable `skipped` (`[{ templateId, reason }]`) and `attempts`
   (`{ templateId: attempt }`); read them before copying the array.
 
+`runs.exposureOptions(history, { avoidScenes, avoidItems })` combines recent
+history with the current test's earlier modules. Run builders return
+`itemIdentities`, `repeats`, and `shortfall`; `practice.runWarnings` turns these
+and blueprint borrowing into aggregate notices. These never label a question's
+skill or tier during the session. `Progress.serveTemplates` records the
+identities when a set opens. Booklets share the same browser history and record
+exposure on explicit open/download, once per pinned form during that page visit,
+not on passive rerender.
+Opening the answer key first counts as exposure because it reveals the solutions;
+opening the same form's question booklet afterward does not count it again.
+
+Generated attempts store `visibleIdentity` (`vi1-` plus 16 hexadecimal digits).
+It covers the displayed stem, stimulus, figure and unordered choices, not a
+seed or answer key. Accuracy and mastery reconcile duplicates across imports
+and merges before selecting time or tier windows. First-sight accuracy still
+counts the first recorded answer to each template, not proof of an unseen design.
+Progress schema v3 gains these
+optional fields; old attempts keep their outcomes, but identical content across
+old seed IDs cannot be proven without a stored identity. Legacy scene lists
+provide approximate section recency; missing item identities are never invented.
+
 A run's code is its mask and its seed, for example `7phl4hfxcdfx66p-bp99wd`.
 `runs.runCode(mask, seed, questions.attempts, templates)` appends one base-36
-digit per template in bit order when a draw steered around seen scenes;
+digit per template in bit order, including zeros, to pin the chosen draws;
 `runs.parseRunCode(code, templates)` returns `{ mask, seed, attempts? }`, and
 `drawQuestions(runs.templatesForMask(templates, mask), seed, instantiate, prefix, { attempts })`
 rebuilds the same questions in the same order. A question's id is
@@ -147,6 +174,13 @@ skill x difficulty table, so a drill on one skill at one tier never runs
 dry. A set asking for more questions than templates match is
 capped at the number available, and the setup form says so.
 
+`test/sat-freshness.test.js` additionally requires enough templates in every
+domain × tier cell for two consecutive sections on either route. It runs
+back-to-back full SATs with real module seeds, serve history and routing, checking
+the requested mixes and avoiding repeated designs, visible items and scenes.
+This capacity floor supports two fresh sections; it does not make a finite
+corpus inexhaustible, particularly for a narrowly filtered skill drill.
+
 ## The family contract
 
 ```js
@@ -174,7 +208,7 @@ capped at the number available, and the setup form says so.
 | `figure` | `null`, or `{ svg, alt, notToScale }` built with `S.svg` and `S.svgParts` |
 | `stem` | The question alone, in the real test's register: "In the given system of equations, k is a constant. …" |
 | `correct` | Number or display string for multiple choice; for numeric, a number, or an exact fraction string in lowest terms (`S.frac`) where the real answer would be a repeating decimal |
-| `wrong` | Multiple choice only: `[value, reason]` pairs, at least 3 surviving de-duplication; each reason names the specific wrong method. A modelled mistake that equals the key must be rejected in `build` by redrawing: the record's `keyEqualDistractors` must be 0 |
+| `wrong` | Multiple choice only: `[value, reason]` pairs, at least 3 surviving de-duplication; each reason names the specific wrong method. Every displayed choice, including the key, must be at most 160 characters. A modelled mistake that equals the key must be rejected in `build` by redrawing: the record's `keyEqualDistractors` must be 0 |
 | `features` | Optional: `{ correct: {…}, wrong: [{…}, …] }`, `wrong` in the same order as `wrong`, holding short string values such as `{ number: "plural", finite: "yes", mark: "comma" }`. `instantiate` records them as `choiceFeatures` in choice order. Standard English Conventions templates must declare every grammatical feature their choices vary on |
 | `explanation`, `steps` (≥ 2), `principles` (≥ 1), `trap`, `hint` | Shown after answering; the hint nudges without naming the method |
 | `verify` | `() => boolean` that recomputes the answer, by a different route than `build` where one exists (substitute back, brute force, determinant, numeric root check). Many verifies check only the key, and Reading and Writing verifies check structure, not meaning: `verified` is a guard against broken draws, not a proof that the distractors are wrong |
@@ -369,6 +403,13 @@ one registry-bit mask per module, and four check digits over the ordered
 a retired template is reported as missing, and a relabel, a version bump or
 a typo changes the check digits, so the page warns that the booklet may
 differ.
+
+New form codes append `-<attempts>.<attempts>…`, one base-36 attempt digit per
+selected template in bit order for each module. The check digits cover this
+suffix too. The suffix pins history-steered draws, so reopening a code does not
+select different questions when history changes. Four-part legacy form codes
+keep their original draw behavior. A deliberate replay can therefore repeat
+content; fresh generation applies the current section history.
 
 ## Exam tricks to reproduce
 

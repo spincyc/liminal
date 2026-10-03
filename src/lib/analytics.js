@@ -584,10 +584,9 @@
   /* ------------------------------------------------------- first sight */
 
   // Accuracy on the first answer to each question design (template): the
-  // first time the student met it, before any practice on it could turn
-  // recognition into recall. A heavy user meets every Hard design several
-  // times, so Hard accuracy can rise with familiarity whatever the skill;
-  // this one cannot. `tier` narrows to one difficulty. Returns { attempted,
+  // earliest encounter present in the answer record. Earlier offline or
+  // unrecorded practice cannot be inferred. Later recorded attempts at a
+  // design do not enter this measure. `tier` narrows to one difficulty. Returns { attempted,
   // correct, accuracy }.
   function firstSight(attempts, tier) {
     const seen = new Set();

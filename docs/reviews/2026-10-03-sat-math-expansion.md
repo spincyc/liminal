@@ -3,6 +3,7 @@
 Baseline 618d924 supplied 189 templates (47 Easy, 95 Medium, 47 Hard). Eight distinct cold author agents added one Easy and seven Hard designs, including the requested one Algebra/two Advanced Math Hard designs, four Hard replacements after honest re-tiering, and one additional Advanced Math Easy design for consecutive easier-section capacity. Final inventory: 197 (48 Easy, 99 Medium, 50 Hard). Domain Hard capacity is Algebra 12, Advanced Math 14, Data 16, Geometry 8; Advanced Math Easy 10 also covers two intended easier sections. Every skill-by-tier cell has at least two templates. These counts describe template availability, not measured transfer or score readiness.
 
 ## New designs and authors
+
 - inequality-solution-containment, Hard10, /root/expand_math/algebra_design: nonempty solution-set containment, coefficient sign, strict endpoint, integer count or extreme sum.
 - quadratic-square-coefficient, Hard11, /root/expand_math/advanced_equiv_design: squared quartic with two unknown coefficients; real-zero count chooses the hidden quadratic constant's sign before coefficient recovery. Independent review rejected the first draft's direct coefficient matching as Medium; the accepted design adds a substantive root constraint.
 - signed-cube-root-value, Easy3, /root/expand_math/advanced_easy_design: signed odd root with outside multiplication/division; exact grid-in fractions.
@@ -13,6 +14,7 @@ Baseline 618d924 supplied 189 templates (47 Easy, 95 Medium, 47 Hard). Eight dis
 - quadratic-zeros-in-interval, Hard11, /root/expand_math/advanced_constraint_replacement: two distinct roots must both lie within an open interval; combine discriminant, vertex location and positive endpoint values before counting or summing admissible integer parameters. Every draw makes each omitted condition admit an invalid integer.
 
 ## Calibration and teaching repairs by /root/expand_math
+
 - probability-after-change Hard→Medium7, graph-which-function Hard→Medium7, inscribed-composite-solids Hard→Medium8, preserving IDs and generated problems. Both probability branches require familiar linear modeling; graph matching applies familiar graph features; sphere diagonals/drilled walls/stacked cubes involve familiar geometric modeling and surface bookkeeping.
 - quadratic-must-be-true Hard→Medium8 after a renewed sample showed that upward opening plus a QuadrantIV vertex immediately gives a positive discriminant. General symbolic constants remain abstraction2, but a universal stem alone does not establish conceptual2.
 - function-transformation-table stays Hard11 after removing every listed-vertex and coordinate-only shortcut. Every table omits its vertex; both targets need its hidden value, either as the transformed minimum or in the sum of transformed vertex coordinates.
@@ -22,17 +24,21 @@ Baseline 618d924 supplied 189 templates (47 Easy, 95 Medium, 47 Hard). Eight dis
 - exponential-from-words uses the correct article before percentage values in its solution steps.
 
 ## Independent review procedure and coverage
+
 All reviewers worked cold and wrote their displayed-only answers before receiving keys or source. Root math coordinator inspected at least three final seeds of each changed design; changed graph/solid branches received additional targeted samples. Current-source reviews have at least three independently solved seeds per template, including source-fingerprint siblings. Reviewers checked new reasoning, tier consistency, unique answers, plausible distractors, teaching text and source impact. Numerical sweeps complement, rather than replace, semantic review.
-- /root/expand_math/review_algebra_system:19templates,61cold answers,2newHard,2teaching repairs,15unchanged sibling builders. One representation differed (4.5 vs9/2) but no mathematical answer correction.
-- /root/expand_math/review_equivalent:13templates,42final cold answers,11unchangedsiblings,1Easy,1revisedHard. Initial rejected-draft answers remain separate.
-- /root/expand_math/review_geometry_data:22templates,68cold answers,2newHard,2Mediumretiers,18unchangedsiblings. Additional independent12,000draw displayed-data audit checked population extrema and geometric feasibility.
+
+- /root/expand_math/review_algebra_system: 19 templates, 61 cold answers, 2 new Hard designs, 2 teaching repairs, 15 unchanged sibling builders. One representation differed (4.5 versus 9/2) but no mathematical answer correction.
+- /root/expand_math/review_equivalent: 13 templates, 42 final cold answers, 11 unchanged siblings, 1 Easy design, 1 revised Hard design. Initial rejected-draft answers remain separate.
+- /root/expand_math/review_geometry_data: 22 templates, 68 cold answers, 2 new Hard designs, 2 Medium retiers, 18 unchanged siblings. An additional independent 12,000-draw audit of displayed data checked population extrema and geometric feasibility.
 - /root/expand_math/review_nonlinear: 16 templates, 62 final cold answers, 5 shifted-exponential samples, 11 repaired-table samples, 7 symbolic-sign samples. Seven SVGs rendered and inspected.
 - /root/expand_math/review_final_constraint: accepted four pre-key/source displayed-only answers for the final interval-root replacement, covering count/sum and numeric/MC forms. Initial answers all match keys. Exact removal of the appended block/export reproduces the prior reviewed source hash; all 16 prior builders and all 62 prior full generated records are unchanged. A post-source key-hidden check separately covered seed 72's exact endpoint and repeated root. The extra boundary check is not counted among blind review samples.
 
 Total final-source independent pre-key/source blind review: 71 templates, 237 recorded answers. All match final keys; no mathematical answer corrections. The final constraint review also exhaustively checks all 15,840 raw parameter tuples, including 12,210 accepted count forms and 11,443 sum forms; all independently enumerated roots and modeled distractor errors agree. There are 377 accepted count tuples with an exact excluded upper endpoint.
 
 ## Automated verification
+
 Final section-wide deep gate passes all 197 templates at 3,000 integer plus 3,000 runtime-shaped draws each (1,182,000 questions). No failures; 29.9% numeric; A-D key positions 206865/207024/207458/207728; blind hub 27% Hard/27% Medium/28% Easy and paired choices 25% Hard/26% Medium/27% Easy. Nine regression tests pass, exercising exact signed roots, quartic constant-sign selection, strict containment, shared-branch deduplication, conditional-bound direction, infeasible positive geometric root, shifted exponential recovery, mandatory omitted table vertices, and strict interval-root endpoints/repeated roots. git diff --check also passes.
 
 ## Scope and limits
-This is sampled independent agent review, not human editorial approval or empirical SAT difficulty/score calibration. Most existing-figure blind solves used supplied alt text; nonlinear reviewer separately inspected7SVGs, and geometry/data reviewed two new samples on desktop/narrow renderer harnesses. Not all parameters, scenes, or browser workflows were semantically inspected. Existing sibling bodies/output were compared with618d924 where unchanged, while teaching-only and tier-only differences were recorded explicitly. Appended new families are isolated and do not consume sibling randomness or mutate shared helpers. All six skill source files need conservative registry/fingerprint version renewal. Common helpers/index were not changed.
+
+This is sampled independent agent review, not human editorial approval or empirical SAT difficulty/score calibration. Most existing-figure blind solves used supplied alt text; nonlinear reviewer separately inspected 7 SVGs, and geometry/data reviewed two new samples on desktop/narrow renderer harnesses. Not all parameters, scenes, or browser workflows were semantically inspected. Existing sibling bodies/output were compared with 618d924 where unchanged, while teaching-only and tier-only differences were recorded explicitly. Appended new families are isolated and do not consume sibling randomness or mutate shared helpers. All six skill source files received conservative registry/fingerprint version renewal. Common helpers/index were not changed.

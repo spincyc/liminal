@@ -28,6 +28,13 @@ regressions found during integration review are also repaired and pass those
 checks. The final independent cold review found no actionable defect in the
 completed repair set; that record states its coverage and limits.
 
+The [SAT corpus repair and expansion](reviews/2026-10-03-sat-corpus-expansion.md)
+addresses consecutive-test design shortages, ambiguous items and weak Hard
+branches. The [exposure review](reviews/2026-10-03-sat-exposure-review.md) records
+content deduplication, shared practice/booklet history and replay repairs.
+New designs received independent blind agent review; editorial tiers remain
+uncalibrated and finite inventories can still require disclosed reuse.
+
 ## Ranked outstanding work
 
 P1 denotes a substantial missing capability or missing evidence of instructional

@@ -57,8 +57,8 @@ hardest.
 The official Form, Structure, and Sense testing points are subject-verb
 agreement, pronoun-antecedent agreement, verb finiteness, verb tense and
 aspect, subject-modifier placement, and genitives and plurals. The catalog's
-"parallel structure" subskill is not an official testing point, and genitives
-and plurals have no subskill of their own yet.
+"parallel structure" subskill is not an official testing point; its
+"possessives and plurals" subskill covers genitives and plurals.
 
 ### SAT Math domains
 

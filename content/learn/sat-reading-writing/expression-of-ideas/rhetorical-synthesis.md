@@ -207,8 +207,12 @@ in opposite directions, and gains in one part can coexist with a loss overall.
 
 ## What Hard looks like {#hard}
 
-- Two-part goals ("present the finding and explain its significance"), where each wrong choice does one part.
-- Reconciling apparently conflicting findings by combining separate facts about their measures, populations, or conditions (see [reconcile findings](#reconcile-findings)).
-- Goals that rank two parts ("emphasize the finding while indicating the method"), where two choices hold the same facts and only the main clause decides (see [emphasize one part, indicate another](#emphasize-while-indicating)).
-- Goals about audience ("an audience familiar with the research"), where defining a term is unnecessary and the key uses the technical name.
-- Choices that each accomplish a real goal, just not this one: describing the method when the goal is the result, or giving a date when the goal is a place.
+- Reconciling findings when the relevant conditions or measures must be inferred from several notes (see [reconcile findings](#reconcile-findings)).
+- Selecting a conclusion that depends on several notes while preserving the limits of a proxy measurement, or separating what new evidence overturns from what it leaves supported.
+- Rejecting fluent alternatives that use accurate facts but combine them into an unsupported explanation, comparison, or generalization.
+
+A goal with two parts is not automatically Hard. If the prompt names both
+facts to include, or only asks which fact belongs in the main clause, the
+reasoning may be Medium. Straightforward offsetting trends can also be Medium.
+Difficulty depends on the relationships the reader must work out, not the
+length of the notes or the number of clauses.

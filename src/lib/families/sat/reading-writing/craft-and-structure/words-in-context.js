@@ -2838,6 +2838,730 @@
     },
   };
 
+  // Begin additional design: meaning-constraints.
+  /* ----------------------- Meaning constrained by referent and later outcome */
+
+  // Original scenes juxtapose real, neighboring senses in one discourse.
+  // Their later consequences distinguish the sense attached to the target.
+  // Structural checks do not establish linguistic meaning or difficulty.
+  const WIC_SEPARATED_CONSTRAINT_TOPICS = [
+    {
+      "scene": "cs-constraints-pottery-dates",
+      "text": "In the catalog of the fictional Lorn excavation, pottery dates and timber dates placed the same workshop in different centuries. The editors accommodated this discrepancy while preparing a revised chronology. Their preliminary work had uncovered copied numerals, and several entries now bore corrected dates. In the published chart, however, the workshop appeared as two adjoining bands, each marked with the symbol of a dating method. A reader following either symbol through the chart could construct a continuous sequence, although the two sequences assigned different ages to the workshop's foundation.",
+      "word": "accommodated",
+      "object": "this discrepancy",
+      "consequence": "the workshop appeared as two adjoining bands",
+      "key": "made allowance for",
+      "wrong": [
+        [
+          "brought into agreement",
+          "The corrected entries make reconciliation plausible. But the target discrepancy concerns the workshop, whose two method-based sequences still assign different ages to its foundation. The chart accommodates both estimates rather than harmonizing them."
+        ],
+        [
+          "explained away",
+          "Finding copied numerals explains why some entries needed correction. The two surviving sequences do not establish that such errors explain the disagreement between the workshop's pottery and timber dates."
+        ],
+        [
+          "compensated for the effects of",
+          "An offset or correction could compensate for biased estimates. Here each dating method still yields its own sequence and age for the foundation; the revision makes room for both instead of canceling their disagreement."
+        ]
+      ],
+      "why": "The editors correct some entries, but the particular discrepancy named by accommodated remains in the workshop's two distinct ages. The new chart permits readers to follow either dating sequence. Accommodated therefore means made allowance for: the format can represent the unresolved discrepancy without reconciling it or correcting its effects.",
+      "steps": [
+        "Identify the discrepancy attached to accommodated: two dating methods assign different ages to the same workshop.",
+        "Distinguish the nearby corrections to individual entries from what the revised chart does with that workshop.",
+        "Trace both symbols through the final chart: each remains a continuous sequence with a different foundation date, requiring a sense that allows disagreement to persist."
+      ],
+      "trap": "Transferring an actual correction made elsewhere in the catalog to the unresolved disagreement that the target verb describes.",
+      "hint": "Follow the workshop's two estimates through the revision, separately from the corrected entries."
+    },
+    {
+      "scene": "cs-constraints-freight-agreement",
+      "text": "Three shipping bulletins from the fictional ports of Merrow and Vey initially appeared to corroborate a fall in freight prices. A historian discounted their agreement after comparing the tables. Alongside different local commentaries, all three printed the same unusual sequence of rates and the same misplaced footnote. Her estimate of the size of the fall eventually rested on merchants' dated invoices. When explaining why merchants in both ports began demanding lower charges, however, she used the bulletins' matching tables to establish which quotations had circulated across the region.",
+      "word": "discounted",
+      "object": "their agreement",
+      "consequence": "she used the bulletins' matching tables to establish which quotations had circulated",
+      "key": "treated as less conclusive",
+      "wrong": [
+        [
+          "dismissed as irrelevant",
+          "The historian bases the price estimate on invoices, which makes exclusion tempting. Yet she uses the matching tables to support a claim about circulated quotations: their agreement still contributes to her explanation, in a more limited role."
+        ],
+        [
+          "judged to be factually false",
+          "The shared footnote suggests dependence among reports, not that their quoted rates are false. The historian can use the agreement to trace circulation without treating three dependent reports as independent confirmation of the price change."
+        ],
+        [
+          "regarded as already explained",
+          "The repeated features suggest a common source, but the force of discounted concerns how much the agreement establishes. The subsequent use of invoices and the bulletins for different claims shows a reassessment of evidence rather than merely an explanation of its origin."
+        ]
+      ],
+      "why": "The same misplaced footnote makes the agreement less persuasive as independent corroboration of a price fall. Its later use to establish circulation shows that it has not become worthless or false. Discounted means treated as less conclusive: the historian limits what the agreement can establish while still using it for a different inference.",
+      "steps": [
+        "Infer why the shared unusual ordering and misplaced footnote matter despite the bulletins' different local commentaries.",
+        "Compare the two later claims: invoices support the price estimate, while matching bulletin tables support the circulation account.",
+        "Choose a reduction in evidential force rather than total exclusion, factual rejection, or a statement solely about origins."
+      ],
+      "trap": "Treating evidence that is inadequate for one inference as evidence that has been rejected for every purpose.",
+      "hint": "What does the agreement cease to establish on its own, and what can it still establish?"
+    },
+    {
+      "scene": "cs-constraints-migration-model",
+      "text": "After restoring damaged observations from the fictional Veyra marsh, an ecology team built a simulation of animals moving between feeding sites. Its first successful run recovered the two peaks in nightly activity that had prompted the project. The model used measured travel times and food supplies as inputs, with its rules fixed before another team unsealed the nightly timing records. In the later comparison, simulated animals clustered at two times separated by almost the same interval as the peaks on the observation sheets, although the total number of visits differed.",
+      "word": "recovered",
+      "object": "the two peaks in nightly activity",
+      "consequence": "simulated animals clustered at two times separated by almost the same interval",
+      "key": "reproduced",
+      "wrong": [
+        [
+          "retrieved",
+          "Restoring damaged observations is a real earlier action, but the run uses travel times and food supplies while the timing records remain sealed. It generates a corresponding pattern rather than obtaining those records again."
+        ],
+        [
+          "corrected",
+          "The different visit totals might suggest a revision of the observations. The object of recovered is the two-peak pattern, however, and the comparison matches that pattern rather than identifying and repairing an error in it."
+        ],
+        [
+          "discovered",
+          "The peaks already prompted the project. The run independently produces their spacing under fixed rules; it does not mark the first identification of the observed pattern."
+        ]
+      ],
+      "why": "Recovered refers to the two-peak pattern, not the restored sheets or the total number of visits. The pattern was already known, its timing records were withheld while the model's rules were fixed, and the later output matched its spacing. Those facts together make reproduced the precise sense.",
+      "steps": [
+        "Keep the restored observations, the known two-peak pattern, and the simulated visit totals distinct.",
+        "Check which information was available when the model's rules were fixed and which was unsealed afterward.",
+        "Use the later match in spacing to identify reproduction of a pattern, rather than retrieval, correction, or first discovery."
+      ],
+      "trap": "Applying the earlier record-restoration activity to what the simulation accomplishes, or mistaking a fresh reproduction for an initial discovery.",
+      "hint": "Track what was known before the run and exactly which feature matches in the later comparison."
+    },
+    {
+      "scene": "cs-constraints-bell-economy",
+      "text": "Readers of the fictional novel The Bell Road often praise its elaborate descriptions of shops, but a critic locates its economy in the recurring market bell. An early ringing interrupts a father just before he answers his son's question. Much later, a witness dates an encounter by recalling two extra strokes; readers have heard those strokes during the festival from which the suspect returned early. In the last chapter, the adult son hears the bell while deciding how to answer the same question from his own child. Between these scenes lie inventories of fabrics, tools, and fruit.",
+      "word": "economy",
+      "object": "the recurring market bell",
+      "consequence": "the adult son hears the bell while deciding how to answer the same question",
+      "key": "efficient reuse of narrative material",
+      "wrong": [
+        [
+          "restraint in the quantity of description",
+          "The target is the critic's judgment about the recurring bell. The surrounding inventories and elaborate shops make the novel descriptively abundant; the bell's return matters because one element does several kinds of narrative work, not because description is scarce."
+        ],
+        [
+          "selective withholding of narrative information",
+          "The first ringing does delay an answer, so withholding is genuinely present. Later appearances help establish an encounter's date and connect the son's choice to his father's, which makes that single function too narrow an account of the bell's economy."
+        ],
+        [
+          "simplification of the story's causal structure",
+          "The bell links events across different times and connects an investigation with a family dilemma. These uses add relationships; they do not reduce the plot to a simpler chain of causes."
+        ]
+      ],
+      "why": "The bell delays a disclosure, helps locate an encounter in time, and links two generations' choices. The critic's economy concerns how much work this recurring element performs. The novel's abundant description and the bell's varied functions distinguish efficient reuse from sparseness, withholding alone, or a simplified plot.",
+      "steps": [
+        "Identify what the critic calls economical: the handling of the recurring bell rather than the novel's general descriptive style.",
+        "Connect the bell's separated appearances to the different tasks they perform in disclosure, timing, and the family parallel.",
+        "Choose efficient use of one element for several purposes, rather than a reduction in description or a single local effect."
+      ],
+      "trap": "Taking economy to mean less material, or choosing the true effect of the bell's first appearance as if it explained the whole recurring device.",
+      "hint": "Compare what the same detail accomplishes at each of its separated appearances."
+    },
+    {
+      "scene": "cs-constraints-weather-signals",
+      "text": "Two teams studying the fictional Talven basin disagreed about whether warming triggered an afternoon wind shift or followed it. A new station instrument resolved the event that each team had interpreted as evidence for its account. Its record yielded a temperature curve and a wind curve, each with a recognizable onset where the old display had shown a single broad disturbance. The clocks governing the two channels could differ by several seconds, however, and the apparent gap between the onsets lay inside that margin. Both teams added the new curves to their reports.",
+      "word": "resolved",
+      "object": "the event",
+      "consequence": "the apparent gap between the onsets lay inside that margin",
+      "key": "distinguished its component changes",
+      "wrong": [
+        [
+          "identified its underlying cause",
+          "The teams' competing explanations make causal resolution tempting. But channel-clock uncertainty is greater than the apparent gap, so separating the temperature and wind onsets does not determine which initiated the other."
+        ],
+        [
+          "established its precise timing",
+          "Each onset can be recognized on its own curve, but the clocks may differ by several seconds. Recognizable components do not amount to precisely synchronized timing of the overall event."
+        ],
+        [
+          "reconciled its competing interpretations",
+          "Both teams include the new curves, but inclusion is not agreement. The unresolved ordering still permits both accounts; the instrument has clarified the components rather than harmonized the explanations."
+        ]
+      ],
+      "why": "The instrument turns one broad disturbance into separately recognizable temperature and wind changes. The later clock margin prevents that improvement from fixing exact relative timing or causal order. Resolved therefore describes distinguishing the event's components, while the explanatory dispute remains open.",
+      "steps": [
+        "Identify the new information in the instrument's record: two recognizable onsets instead of one broad disturbance.",
+        "Compare the apparent gap with the possible difference between the channel clocks.",
+        "Separate improved differentiation of components from precise timing, causal explanation, and agreement between investigators."
+      ],
+      "trap": "Assuming that making separate parts of a phenomenon visible also settles how those parts are causally related.",
+      "hint": "Which uncertainty does having two curves remove, and which uncertainty does the clock margin preserve?"
+    },
+    {
+      "scene": "cs-constraints-dance-experiments",
+      "text": "The fictional choreographer Mara Venn left diagrams for dances in which performers chose routes while following a shared pulse. Her students took up these experiments in a production whose opening followed one diagram closely enough for its numbered paths to appear in the program. Later rounds used the same paths but let each dancer's turn alter the pulse heard by the others. A phrase completed in unison during the opening spread across several beats in one round and compressed in the next, depending on which dancer first changed direction.",
+      "word": "took up",
+      "object": "these experiments",
+      "consequence": "spread across several beats in one round and compressed in the next",
+      "key": "continued the line of inquiry",
+      "wrong": [
+        [
+          "recreated the procedure",
+          "The opening does reconstruct a notebook procedure, so this reading has real support in part of the performance. But the target refers to the students' treatment of the experiments across the production, including later tests of a changed relation between route and pulse."
+        ],
+        [
+          "adopted an established solution",
+          "A notebook diagram supplies the opening, but the subsequent rounds vary the rule and produce different outcomes. The experiments serve as an inquiry to pursue, not a settled procedure simply applied to achieve a known result."
+        ],
+        [
+          "challenged the guiding principle",
+          "The later rounds alter how the pulse is generated, but they continue to explore the relation between collective timing and individual routes. Their varied outcomes do not by themselves make the production an objection to that underlying inquiry."
+        ]
+      ],
+      "why": "The faithful opening gives reconstruction a foothold, while the later reciprocal changes between movement and pulse extend the problem the notebooks explored. Taken across the production, took up means continued the line of inquiry. The students use an earlier procedure as the starting point for new trials, rather than merely reproduce it or treat it as a settled answer.",
+      "steps": [
+        "Distinguish the production as a whole from its closely reconstructed opening.",
+        "Compare the opening's fixed pulse with later rounds in which turns change the pulse and the same phrase has variable timing.",
+        "Identify continued investigation of a relation, rather than faithful reconstruction alone, application of a settled solution, or rejection of the inquiry."
+      ],
+      "trap": "Allowing one faithfully reconstructed part of a work to determine a phrase that describes the work's broader engagement with its source.",
+      "hint": "What remains the subject of exploration when the students move from the opening to the later rounds?"
+    },
+    {
+      "scene": "cs-constraints-hall-reflection",
+      "text": "For a concert celebrating the fictional Arven Hall, a program displayed drawings of the building beside an account of its restoration. A reviewer wrote that the pacing of the commissioned score reflected the hall. The composer had retained the melody from an early draft but altered the intervals between entries after rehearsals beneath its stone vault. When the piece moved to a carpeted room, the conductor shortened those intervals: there the preceding notes faded before the next players were due to enter, leaving gaps that had been filled by lingering sound at Arven.",
+      "word": "reflected",
+      "object": "the hall",
+      "consequence": "leaving gaps that had been filled by lingering sound at Arven",
+      "key": "bore the influence of",
+      "wrong": [
+        [
+          "offered a likeness of",
+          "The program's drawings represent the hall, and a commemorative score could also portray it. But the later room comparison ties the pacing to sound decay, showing the hall's effect on the work rather than a musical imitation of its appearance."
+        ],
+        [
+          "expressed an appraisal of",
+          "The concert celebrates a restoration, which supplies an evaluative context. The specific pacing, however, changes to fit how long notes persist in different rooms; that consequence does not identify a favorable or unfavorable judgment about the building."
+        ],
+        [
+          "established a correspondence with",
+          "The program associates music and architecture, but the draft, rehearsal, and changed-room sequence establish a direction of influence. The pacing responds to the hall's acoustics rather than merely being placed in a suggestive relation with the building."
+        ]
+      ],
+      "why": "Reflected concerns the score's pacing, not the program's drawings or the occasion's praise. Rehearsals changed the spacing between entries, and the carpeted-room performance exposes what those spaces had accommodated: the original hall's lingering sound. The pacing thus bore the influence of the hall rather than portraying or appraising it.",
+      "steps": [
+        "Locate the subject of reflected: the pacing, rather than the melody, illustrations, or commemorative occasion.",
+        "Link the change after rehearsals with what happens to the same intervals in the carpeted room.",
+        "Infer influence from the acoustic setting, distinguishing that relation from resemblance, appraisal, or association alone."
+      ],
+      "trap": "Transferring the program's representational or commemorative function to a musical feature whose form arises from the performance setting.",
+      "hint": "Why do the same intervals work differently in the two rooms, and what does that reveal about their origin?"
+    },
+    {
+      "scene": "cs-constraints-arbitrary-cycle",
+      "text": "An analyst studying a fictional six-part percussion work chose an arbitrary starting point for comparing performances. At the beginning of each performance, software had shuffled the instruments assigned to the six parts; the analyst transcribed each performance after this assignment was fixed. She arranged its parts around a circle and began her list with whichever part appeared first in the recording notes. A colleague began with the loudest part instead. Their lists differed, but each adjacent pair appeared in the same order, including the pair formed by the last and first entries.",
+      "word": "arbitrary",
+      "object": "starting point",
+      "consequence": "each adjacent pair appeared in the same order",
+      "key": "freely selectable without altering the relationships",
+      "wrong": [
+        [
+          "determined by a process of random selection",
+          "The instruments are randomly assigned before analysis, but the starting point comes from the notes or the colleague's loudness criterion. The invariant circular relationships explain why either choice is permissible; they do not make either choice a random draw."
+        ],
+        [
+          "chosen without a defensible reason or method",
+          "Each analyst has an explicit method for choosing a first entry. The circular pair relationships survive either method, making the selection nonbinding for the comparison rather than unjustified."
+        ],
+        [
+          "provisionally adopted pending a more accurate choice",
+          "The two lists begin differently yet preserve every adjacent pair, including the closing pair. That result makes a uniquely accurate beginning unnecessary for the stated comparison, rather than something still to be determined."
+        ]
+      ],
+      "why": "Arbitrary modifies the analyst's starting point, not the earlier randomized instrument assignment. Both analysts use definite selection rules, and moving the first entry preserves the circular relationships they compare. The starting point is therefore freely selectable without altering those relationships, rather than random, unsupported, or awaiting correction.",
+      "steps": [
+        "Separate the software's random assignment from the analyst's later choice of where a circular list begins.",
+        "Compare the two analysts' choices and include the last-to-first pair when tracking preserved relationships.",
+        "Infer that the freedom lies in choosing any beginning that leaves the relevant structure intact, not in choosing unpredictably or without reason."
+      ],
+      "trap": "Treating arbitrary as random because an earlier stage is randomized, or treating a nonunique convention as a defective choice.",
+      "hint": "What changes between the two lists, and what remains invariant when the closing pair is included?"
+    },
+    {
+      "scene": "cs-constraints-effective-string",
+      "text": "In a fictional instrument workshop, an engineer praised a new clamp for its reliable tuning and noted that it changed a string's effective length. A ruler still showed the same distance between the string's two end supports. The clamp gripped the string partway along that distance. Moving it toward one support and plucking the intervening segment raised the note. An otherwise identical string, mounted between supports matching that shorter span, gave the same note at the same tension. A diagram in the manual nevertheless labeled the full support-to-support distance as the standard length.",
+      "word": "effective",
+      "object": "length",
+      "consequence": "mounted between supports matching that shorter span, gave the same note",
+      "key": "operative under the stated conditions",
+      "wrong": [
+        [
+          "optimal under the stated conditions",
+          "The clamp's reliable tuning supports a judgment of success, but effective modifies length. Different clamp positions produce different matching notes; the passage identifies the span that functions, not one length judged best."
+        ],
+        [
+          "measured between the fixed supports",
+          "The ruler measures the full support-to-support span, which stays fixed. The clamp changes the length relevant to the note, as the comparison with the shorter second string demonstrates."
+        ],
+        [
+          "defined between the fixed supports",
+          "The manual explicitly uses the full span as its standard. The acoustic comparison instead singles out the span affected by the clamp, so effective is not naming the reference convention."
+        ]
+      ],
+      "why": "The ruler's total span and the manual's standard stay fixed, while moving the clamp changes the note. A separately mounted string matching the shortened span gives the same note under the same tension. Effective therefore identifies the length operative in the behavior being studied, not a successful design, measured total, or reference standard.",
+      "steps": [
+        "Identify what effective modifies: a length, rather than the clamp's overall success.",
+        "Connect the moving clamp's effect with the comparison string at equal tension.",
+        "Distinguish the functionally active span from the fixed physical distance and the manual's labeling convention."
+      ],
+      "trap": "Transferring the praise of a successful device to an adjective that instead identifies which physical span governs its behavior.",
+      "hint": "Which length changes with the note, and which two lengths remain fixed by measurement or convention?"
+    },
+    {
+      "scene": "cs-constraints-critical-currency",
+      "text": "An essay about the fictional painter Sera Noll divided her works into 'enclosed' and 'exposed' periods, a distinction that soon gained currency. The essay received an award and became a standard entry on course reading lists. A later catalogue used the two labels to argue that several paintings assigned to the enclosed period share the exposed period's handling of space. Another critic organized a review around the labels while proposing that the apparent division arose from changes in available canvases rather than a change in Noll's intentions.",
+      "word": "currency",
+      "object": "a distinction",
+      "consequence": "Another critic organized a review around the labels",
+      "key": "use as a shared critical vocabulary",
+      "wrong": [
+        [
+          "acceptance as historical fact",
+          "The award and reading-list status make acceptance plausible. Yet later writers use the distinction while contesting its boundaries or explanation; their use shows that it has entered discussion without establishing consensus that it is historically correct."
+        ],
+        [
+          "precision in classifying the paintings",
+          "The catalogue challenges how particular paintings fit the two categories, and the review offers a different basis for the division. Reusing the labels does not demonstrate that their application has become more precise."
+        ],
+        [
+          "usefulness for classifying the paintings",
+          "The terminology provides a shared point around which critics organize arguments. The catalogue uses it to expose works that complicate the grouping, so circulation of the terms does not itself demonstrate their usefulness for assigning paintings to periods."
+        ]
+      ],
+      "why": "The prize and course lists establish prominence, but the later catalogue and review show what circulates: a pair of labels that writers can use while challenging the original division. Currency therefore means widespread use as a point of reference, not settled agreement about the claim or greater precision in applying it.",
+      "steps": [
+        "Identify what gains currency: the period distinction, not simply the prizewinning essay or the painter's reputation.",
+        "Compare the later writers' use of the labels with what they dispute about the division.",
+        "Distinguish a framework's circulation in debate from agreement that its historical claims are correct or that its categories work reliably."
+      ],
+      "trap": "Treating prominence and repeated citation as agreement, even when the later uses turn the same vocabulary against the original interpretation.",
+      "hint": "What do the later writers share with the original essay, and what do they continue to dispute?"
+    }
+  ];
+
+  const wicSeparatedConstraints = {
+    id: "wic-separated-context-constraints",
+    sectionKey: "sat-reading-writing",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    subskill: "meaning in context",
+    difficulty: "Hard",
+    title: "Familiar expression constrained by its referent and later consequences",
+    recognize:
+      "Identify the particular object or feature the expression describes, then reconcile its role with separated evidence about what changes or remains invariant. Nearby activities support neighboring senses, and a true description of another feature can still misread the target expression.",
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["word-association", "common-meaning", "true-but-irrelevant"],
+    build(t) {
+      const topic = t.pick(WIC_SEPARATED_CONSTRAINT_TOPICS);
+      const wrong = topic.wrong.map(([text, reason]) => [text, reason]);
+      return {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "passage", content: topic.text },
+        stem: WIC_meaningStem(topic.word),
+        correct: topic.key,
+        wrong,
+        explanation: topic.why,
+        steps: topic.steps,
+        principles: [
+          "A familiar expression can have several abstract senses. Its grammatical referent and the consequences described later must support the same reading.",
+          "A nearby activity can suggest a real meaning of a word without being the activity that the word describes in this sentence.",
+        ],
+        trap: topic.trap,
+        hint: topic.hint,
+        estimatedSeconds: 110,
+        // These are structural guards. Choosing the uniquely appropriate sense
+        // and judging difficulty still require independent editorial reading.
+        verify: () =>
+          WIC_occurrences(topic.text, topic.word) === 1 &&
+          WIC_occurrences(topic.text, topic.key) === 0 &&
+          topic.text.includes(topic.object) &&
+          topic.text.includes(topic.consequence) &&
+          topic.text.indexOf(topic.consequence) > WIC_indexOfWord(topic.text, topic.word) + topic.word.length + topic.object.length &&
+          topic.text.length >= 150 && topic.text.length <= 900 &&
+          new Set([topic.key, ...wrong.map(([text]) => text)]).size === 4,
+      };
+    },
+  };
+  // End additional design: meaning-constraints.
+
+  // Begin additional design: precision-relational.
+  /* ------------------------- Precise relation beneath surface similarity */
+
+  // Original scenarios contrast a conspicuous resemblance or difference with
+  // a relation that emerges only after origin, function, or influence is traced.
+  // These checks establish the authored shape, not the semantic uniqueness of
+  // the key; the complete finite bank still needs independent editorial review.
+  const WIC_LATENT_RELATION_TOPICS = [
+    {
+      "scene": "cs-latent-folding-supports",
+      "text": "A shelter designer and a stage designer first exchanged work at an autumn fair. Both had used a catalogue of individual hinges, and afterward the stage designer adopted the shelter's locking device. A review of their spring prototypes, however, found three ribs carrying weight to a single foot in each; the catalogue pictured joints separately, and the prototypes used different locks. Although the final stage plainly bears the shelter's influence, the development of this load-bearing arrangement was ______.",
+      "clues": [
+        "first exchanged work at an autumn fair",
+        "spring prototypes",
+        "catalogue pictured joints separately"
+      ],
+      "key": "convergent",
+      "wrong": [
+        [
+          "derivative",
+          "The stage's final locking device does come from the shelter, and both use a hinge catalogue. But the blank concerns the assembled load-bearing arrangement: both spring prototypes already contain it before the autumn exchange, and the catalogue supplies only individual joints."
+        ],
+        [
+          "collaborative",
+          "The designers eventually exchange work, making collaboration a plausible account of their finished products. The load-bearing arrangement is already present in each spring prototype, so that later exchange cannot account for its development."
+        ],
+        [
+          "cumulative",
+          "The finished stage accumulates an additional feature when it adopts the shelter's lock. The blank instead compares how the same arrangement appears in two earlier prototypes; that is not one design growing by successive additions from the other."
+        ]
+      ],
+      "why": "Convergent describes separate developments arriving at a similar result. Three facts must be combined: the shared arrangement is already in the spring prototypes, exchange begins in autumn, and the common catalogue supplies joints rather than assembled frames. The later borrowing is real but concerns a different feature.",
+      "steps": [
+        "Identify the feature named by the blank: the load-bearing arrangement, rather than the final lock or the individual hinges.",
+        "Place the spring prototypes before the autumn exchange, then check whether the common catalogue supplied their arrangement.",
+        "Distinguish separate arrival at a similar frame from the later borrowing and accumulated features of the finished stage."
+      ],
+      "trap": "Transferring genuine evidence of borrowing in one feature to the origin of a different feature that existed earlier.",
+      "hint": "Which shared feature was already present at each stage of the timeline?"
+    },
+    {
+      "scene": "cs-latent-workshop-records",
+      "text": "An archivist finds two annual registers for Bellam's one-person workshops. Apart from a small code, both record just receipts and stall numbers, but one organizes entries under artisans' names and the other under crafts. When the market moved, stall numbers were reassigned, which seems to frustrate a history of individual careers. That code beside each entry comes from a license issued once to an artisan and carried to any new stall. For tracing changes in the work practiced by named artisans, the registers are ______.",
+      "clues": [
+        "one organizes entries under artisans' names",
+        "the other under crafts",
+        "issued once to an artisan and carried to any new stall"
+      ],
+      "key": "complementary",
+      "wrong": [
+        [
+          "redundant",
+          "The repeated receipts and stall numbers make the registers look duplicative. The task requires connecting a named artisan with a craft over time, and the two organizational schemes supply different parts of that connection."
+        ],
+        [
+          "incompatible",
+          "Reassigned stall numbers initially make matching the records seem unreliable. The license code follows the artisan rather than the stall, providing a stable connection between the registers and across years."
+        ],
+        [
+          "interchangeable",
+          "Either register may suffice for some questions about receipts. For named artisans' occupational changes, substituting one for the other loses either the names or the crafts needed for the reconstruction."
+        ]
+      ],
+      "why": "Complementary means supplying different contributions that work together. Names and crafts come from separate registers, while the persistent license code makes it possible to connect those contributions despite changing stall numbers. Repetition of receipts does not make the records redundant for this particular task.",
+      "steps": [
+        "Determine which information identifies an artisan and which identifies the artisan's craft.",
+        "Test the two possible links: stall numbers change, but license codes follow the same artisans.",
+        "Judge the registers' combined usefulness for the stated task, rather than their repeated financial information or their changing addresses."
+      ],
+      "trap": "Stopping at either the duplicated columns or the changed stall numbers without checking the stable identifier and the task.",
+      "hint": "Which label follows a person, and which follows a place?"
+    },
+    {
+      "scene": "cs-latent-marsh-feedback",
+      "text": "In a marsh simulation, tanks planted densely acquire deeper sediment than sparsely planted tanks after identical tides. The designers initially regard sediment as a record of the starting vegetation. In a second trial, all tanks begin with equal stands; a screen removes sediment from the incoming water of half the tanks while preserving its speed and chemistry. Months later, new shoots are scarcer in those screened tanks. Taken together, the trials indicate that the causal relationship between vegetation and accumulated sediment is ______.",
+      "clues": [
+        "densely acquire deeper sediment",
+        "all tanks begin with equal stands",
+        "new shoots are scarcer in those screened tanks"
+      ],
+      "key": "reciprocal",
+      "wrong": [
+        [
+          "sequential",
+          "The first trial places vegetation before sediment accumulation, so a one-way sequence is tempting. The second trial changes sediment supply while holding the starting vegetation constant and finds a later vegetation difference, adding influence in the reverse direction."
+        ],
+        [
+          "proportional",
+          "Denser vegetation accompanies deeper sediment in the first trial, but neither trial establishes a fixed ratio between them. The second trial is informative about direction of influence, not the size of a proportional response."
+        ],
+        [
+          "incidental",
+          "Shared tides or favorable starting conditions could initially make the two quantities appear merely associated. The two controlled comparisons separately vary vegetation and sediment supply, connecting each with a change in the other."
+        ]
+      ],
+      "why": "Reciprocal means involving influence in both directions. The first comparison links different starting vegetation to different sediment accumulation. The second begins with equal vegetation and isolates sediment supply, after which vegetation differs. Neither result alone establishes the full relation; together they show both directions.",
+      "steps": [
+        "Identify what differs at the start of the first trial and what differs afterward.",
+        "In the second trial, hold the equal starting stands and unchanged water conditions in view when interpreting the later shoots.",
+        "Combine the two inferred directions of influence, without assuming they have equal strength or a fixed ratio."
+      ],
+      "trap": "Treating the second trial as another observation of the original sequence instead of an intervention on the original outcome.",
+      "hint": "Which factor is varied first in each trial, and which is measured later?"
+    },
+    {
+      "scene": "cs-latent-score-architecture",
+      "text": "An early notation gives each musical section a number and tells performers to proceed to the next number. A later notation gives each section a symbol and marks the permitted destinations from it. In its first published score, each nonfinal symbol has just one destination, and a performance follows the old score's sequence. A second score uses the same notation but offers two destinations at some symbols, so different performances can take different routes. Despite the first demonstration's resemblance to the old method, the later notation ______ it.",
+      "clues": [
+        "each nonfinal symbol has just one destination",
+        "same notation but offers two destinations"
+      ],
+      "key": "generalizes",
+      "wrong": [
+        [
+          "transcribes",
+          "The first score could look like the old sequence rewritten in symbols. But the second uses the very same rules to permit alternative routes, which the fixed numerical sequence cannot express."
+        ],
+        [
+          "supersedes",
+          "A broader notation might eventually replace the earlier one, but the text establishes its expressive scope, not the earlier method's abandonment or obsolescence. A fixed sequence still works within the later rules."
+        ],
+        [
+          "reconciles",
+          "The scores display fixed and branching routes, but there are not two incompatible old prescriptions that the later notation brings into agreement. One set of rules accommodates the old form and additional forms."
+        ]
+      ],
+      "why": "Generalizes means extending a method to a broader range while retaining its earlier cases. A single permitted destination produces the old fixed sequence; multiple permitted destinations produce branching routes. The first score alone suggests transcription, but the second reveals the broader structure of the notation.",
+      "steps": [
+        "Identify what the old method can express: one fixed next section at each point.",
+        "Compare the later rule's use in the first score with its use in the second; the rule stays the same while the number of permitted destinations changes.",
+        "Choose the relation between a method and a broader method that includes its fixed-sequence case."
+      ],
+      "trap": "Treating the first demonstration as the entire capacity of a notation, or assuming broader capacity proves replacement of an older method.",
+      "hint": "What stays constant between the later notation's two scores, and what new possibility appears?"
+    },
+    {
+      "scene": "cs-latent-transcription-tools",
+      "text": "An archive's restoration and transcription teams exchange work throughout a project. Restorers clean each day's recordings with a sound profile fixed at the month's start, then send the files to transcribers. At month's end, annotations from those transcripts are used to construct the next profile. The two teams therefore contribute to one another's work over the life of the project. Within the production of any single day's files and transcripts, however, their dependence on the other's current output is ______.",
+      "clues": [
+        "sound profile fixed at the month's start",
+        "send the files to transcribers",
+        "construct the next profile"
+      ],
+      "key": "asymmetric",
+      "wrong": [
+        [
+          "reciprocal",
+          "Over successive months the teams do contribute to one another's work. The blank narrows the comparison to current daily outputs: today's transcription uses today's restored files, while today's restoration uses a profile already fixed before those transcripts exist."
+        ],
+        [
+          "symmetrical",
+          "Both teams contribute to the project, but their immediate requirements are not mirror images. One needs the other's current output, whereas the other's current work uses an earlier profile."
+        ],
+        [
+          "negligible",
+          "The fixed sound profile makes daily restoration possible before that day's transcripts are produced. It does not remove the transcribers' need for that day's restored recordings."
+        ]
+      ],
+      "why": "Asymmetric means differing according to direction. Current transcripts require current restored files, but current restoration uses a profile fixed earlier. The relationship can be reciprocal across months while remaining unequal in its dependence on current output within a day; the time scale specified by the blank controls the answer.",
+      "steps": [
+        "Distinguish the daily production cycle from the monthly profile-update cycle.",
+        "For each team, locate the particular version of the other team's work that it uses: current files or an earlier profile derived from previous annotations.",
+        "Evaluate dependence on current daily output, while preserving the broader mutual contribution described in the passage."
+      ],
+      "trap": "Carrying a true description of the month-to-month collaboration into a question about dependence within one day's production.",
+      "hint": "Which inputs are already available when a new day's work begins?"
+    },
+    {
+      "scene": "cs-latent-restoration-trajectories",
+      "text": "Two enclosed restoration plots begin a trial with equal plant cover and equal numbers of viable seeds. In one, the seeds lie near the surface; in the other, they lie beneath a layer that blocks the light these seeds require for germination. The census counts seeds at every depth, and laboratory viability tests expose them to light. Both plots contain plants that die after setting seed, but collection trays remove all newly shed seeds during the trial. All seeds receiving light germinate during the next growing season. With the soil undisturbed, the initially matching census totals therefore conceal ______ developments during that first replacement generation.",
+      "clues": [
+        "laboratory viability tests expose them to light",
+        "die after setting seed",
+        "remove all newly shed seeds"
+      ],
+      "key": "divergent",
+      "wrong": [
+        [
+          "parallel",
+          "The initial cover and the laboratory counts match. Those counts do not establish that the viable seeds can germinate in place: only one plot's existing reserve receives the required light, and new seed cannot replenish either reserve."
+        ],
+        [
+          "cyclical",
+          "The plants normally set seed before dying, suggesting repeated replacement. The trays intercept that new seed, and the buried reserve remains unavailable under the specified undisturbed conditions, so the usual cycle cannot explain both plots."
+        ],
+        [
+          "compensatory",
+          "An equal buried reserve might seem capable of making up for lost adult plants. Viability under laboratory light does not make those seeds available beneath the opaque layer, and the passage supplies no counterbalancing source of replacement."
+        ]
+      ],
+      "why": "Divergent means developing along different paths. Existing adults will die in both plots, and their new seeds are removed. Replacement must therefore come from the reserves already present. Only the surface reserve has the required light, so equal laboratory viability and initial cover do not imply equal replacement in the generation immediately following the original plants.",
+      "steps": [
+        "Separate being viable under laboratory conditions from being able to germinate at the seed's actual depth.",
+        "Account for adult death and the removal of new seed: the starting reserves are the remaining source of replacement.",
+        "Compare access to those reserves to infer how cover develops in the first replacement generation, rather than extending the initial equality forward."
+      ],
+      "trap": "Treating a total that combines accessible and inaccessible reserves as a measure of usable replacement capacity.",
+      "hint": "After the original adults die, which counted seeds can actually supply their replacements under the trial's conditions?"
+    },
+    {
+      "scene": "cs-latent-exhibition-catalogues",
+      "text": "Two catalogues describe an exhibition from different administrative perspectives. The first lists works whose owners signed loan agreements and kept their works available; every such work passed the selection panel. The second lists works the panel selected that remained available for display. Some selected works were withdrawn, but every owner who left a work available signed an agreement. Although selection and lending are different acts, the two catalogues' coverage is ______.",
+      "clues": [
+        "every such work passed the selection panel",
+        "every owner who left a work available signed an agreement"
+      ],
+      "key": "coextensive",
+      "wrong": [
+        [
+          "intersecting",
+          "Both catalogues do share works, but merely intersecting understates the two inclusion rules. Each catalogue's eligible works also satisfy the other's conditions, so their coverage has the same extent."
+        ],
+        [
+          "hierarchical",
+          "Selection and lending are different administrative acts, but that does not put one catalogue's coverage above or within a larger coverage. The stated rules give both the same set of works."
+        ],
+        [
+          "complementary",
+          "The catalogues might contain different administrative details, but the blank concerns which works they cover. Neither covers works missing from the other under the stated conditions."
+        ]
+      ],
+      "why": "Coextensive means having the same extent or coverage. An agreed loan belongs to the selected, available works, and every selected work still available has an agreement. Following both inclusion rules establishes equal coverage despite the different organizing purposes.",
+      "steps": [
+        "Check whether every work with a loan agreement meets the second catalogue's conditions.",
+        "Check the reverse direction: every selected work still available has an agreement.",
+        "Choose the precise relation between two coverages when neither includes an additional work."
+      ],
+      "trap": "Assuming that different administrative criteria must produce different sets of works, or checking inclusion in only one direction.",
+      "hint": "Could a work satisfy either catalogue's final conditions without satisfying the other's?"
+    },
+    {
+      "scene": "cs-latent-rating-scales",
+      "text": "Two panels award exhibition designs scores from one to ten. The first ranks ease of navigation; the second ranks how strongly a design disrupts visitors' expectations. Their scores occasionally match, but a wide, predictable route can earn the first panel's highest score and the second's lowest. Neither panel assigns a value to the other's objective, and the brief provides no rule for trading one objective against the other. As measures of a single overall merit, the scores are ______.",
+      "clues": [
+        "Neither panel assigns a value to the other's objective",
+        "no rule for trading one objective against the other"
+      ],
+      "key": "incommensurable",
+      "wrong": [
+        [
+          "interchangeable",
+          "The matching numerical range does not give the scores the same meaning. Substituting a navigation score for a disruption score would change the quality being measured."
+        ],
+        [
+          "contradictory",
+          "A design can be easy to navigate and weak at disrupting expectations without any contradiction. The panels measure different qualities rather than make incompatible claims about one quality."
+        ],
+        [
+          "complementary",
+          "The scores provide different information, but the blank asks about a single measure of overall merit. Without a shared yardstick or a trade-off rule, the two values cannot complete such a measure merely by being put together."
+        ]
+      ],
+      "why": "Incommensurable means lacking a common basis for measurement or comparison. The identical scales disguise different objectives, and no rule translates performance on one into performance on the other. The scores therefore cannot directly express a single overall merit.",
+      "steps": [
+        "Identify what each score measures, rather than comparing only the numbers printed on the scales.",
+        "Use the absence of a common objective or trade-off rule to assess whether the scores can measure one overall quality.",
+        "Choose the term for measures lacking that common basis, without treating different judgments as a logical contradiction."
+      ],
+      "trap": "Mistaking identical numerical ranges for a shared measure, or treating different evaluation criteria as contradictory claims.",
+      "hint": "Would the same number from the two panels mean the same achievement?"
+    },
+    {
+      "scene": "cs-latent-transport-balances",
+      "text": "A town considers two timetable changes for a factory's workers: moving the last ferry from 5:40 p.m. to 6:10 p.m. and the last shuttle to its dock from 5:10 p.m. to 5:50 p.m. Shifts end at 5:30 p.m. Walking from the factory to the dock takes forty-five minutes; the shuttle takes fifteen. A planning exercise assumes that services run on time and that these are the workers' only ways to reach the dock. For enabling the workers to cross after their shift, the effects of the two changes would be ______.",
+      "clues": [
+        "Shifts end at 5:30 p.m.",
+        "forty-five minutes; the shuttle takes fifteen",
+        "only ways to reach the dock"
+      ],
+      "key": "synergistic",
+      "wrong": [
+        [
+          "cumulative",
+          "A cumulative account treats the total benefit as independent gains added together. Here either change alone still leaves these workers unable to catch a ferry; only their combination creates an opportunity to cross."
+        ],
+        [
+          "substitutive",
+          "This would make one change an alternative way to obtain the other's benefit. But the later ferry still leaves before a worker can walk to it, and the later shuttle reaches the dock after the old last ferry, so neither change substitutes for the other."
+        ],
+        [
+          "sequential",
+          "The shuttle trip must precede the ferry trip, making sequence relevant to the journey. The blank concerns the changes' effects on the ability to cross: the timing constraints make their combined effect exceed what either change produces alone."
+        ]
+      ],
+      "why": "Synergistic describes effects that produce more together than their separate contributions would yield. After a 5:30 finish, walking gets a worker to the dock at 6:15, too late even for the proposed ferry. The proposed 5:50 shuttle arrives at 6:05, too late for the old ferry but in time for the proposed one. Either change alone permits no crossing for these workers; together they permit one.",
+      "steps": [
+        "Test the later ferry with the old shuttle schedule: the shuttle leaves before the shift ends, and walking reaches the dock at 6:15.",
+        "Test the later shuttle with the old ferry schedule: the shuttle arrives at 6:05, after the 5:40 sailing.",
+        "Combine the proposed schedules: a 6:05 arrival permits boarding at 6:10. Choose the relation for a joint effect greater than the separate effects added together."
+      ],
+      "trap": "Judging the timetable changes separately as two ordinary service extensions, or describing the order of the journey instead of the interaction of their effects.",
+      "hint": "What happens under each change alone, and then under both together?"
+    },
+    {
+      "scene": "cs-latent-editorial-criteria",
+      "text": "Two editors initially accept the same manuscripts, suggesting that they apply much the same standard. One actually evaluates factual accuracy, the other narrative coherence. A later batch includes an accurate but disjointed account and a coherent account with factual errors; each editor accepts the account the other rejects. Both accept a third manuscript satisfying both criteria. Taken together, these decisions indicate that the standards are ______.",
+      "clues": [
+        "each editor accepts the account the other rejects",
+        "Both accept a third manuscript satisfying both criteria"
+      ],
+      "key": "orthogonal",
+      "wrong": [
+        [
+          "discordant",
+          "The editors disagree about two manuscripts, but their standards need not conflict: the third manuscript meets both. Disagreement in particular decisions does not make the standards opposed."
+        ],
+        [
+          "redundant",
+          "The first batch produces the same selections, but the later batch demonstrates that either standard can be met without the other. One check therefore cannot replace the other."
+        ],
+        [
+          "convergent",
+          "The initial matching selections are not evidence that the standards are developing toward a common criterion. The later cases expose two separate dimensions of judgment."
+        ]
+      ],
+      "why": "Orthogonal can describe dimensions that vary independently. Accuracy can be present without coherence, coherence without accuracy, or both together. Those combinations explain why the initial agreement and later disagreements do not make the standards identical or opposed.",
+      "steps": [
+        "Separate the editors' selections from the criteria that generate those selections.",
+        "Use the later manuscripts to establish that either criterion can be met without the other, and that both can also be met.",
+        "Choose the relation for independent dimensions, rather than identical or conflicting requirements."
+      ],
+      "trap": "Mistaking agreement on some outcomes for identical standards, or disagreement on other outcomes for inherently opposing standards.",
+      "hint": "Can a manuscript meet either standard alone as well as both together?"
+    }
+  ];
+
+  const wicLatentRelationship = {
+    id: "wic-latent-relationship",
+    sectionKey: "sat-reading-writing",
+    domain: "Craft and Structure",
+    skill: "Words in Context",
+    subskill: "precision",
+    difficulty: "Hard",
+    title: "Precise relation beneath surface similarity",
+    recognize: "Identify the dimension the blank compares, then combine the evidence about origin, function, membership, or influence. Similar appearances or initial outcomes can conceal different relationships, and different appearances can conceal the same underlying relationship.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["word-association", "true-but-irrelevant", "grammatical-but-illogical"],
+    build(t) {
+      const topic = t.pick(WIC_LATENT_RELATION_TOPICS);
+      return {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "passage", content: topic.text },
+        stem: "Which choice completes the text with the most logical and precise word or phrase?",
+        correct: topic.key,
+        wrong: topic.wrong.map(([word, reason]) => [word, reason]),
+        explanation: topic.why,
+        steps: topic.steps,
+        principles: [
+          "A relation must be evaluated on the dimension the text specifies: shared appearance, shared origin, shared function, and mutual influence are different claims.",
+          "An early match or a visible difference cannot by itself determine a relationship; trace the additional conditions that each candidate word would require.",
+        ],
+        trap: topic.trap,
+        hint: topic.hint,
+        estimatedSeconds: 105,
+        verify: () =>
+          topic.text.split("______").length === 2 &&
+          topic.text.length >= 150 && topic.text.length <= 900 &&
+          topic.clues.length >= 2 && topic.clues.every((clue) => topic.text.includes(clue)) &&
+          topic.wrong.length === 3 &&
+          new Set([topic.key, ...topic.wrong.map(([word]) => word)]).size === 4 &&
+          !new RegExp(`\\b${topic.key}\\b`, "i").test(topic.text) &&
+          topic.steps.length >= 3 &&
+          topic.wrong.every(([word, reason]) => word.length > 0 && reason.length > 40),
+      };
+    },
+  };
+  // End additional design: precision-relational.
+
   return [
     wicRestatementBlank,
     wicMagnitudeBlank,
@@ -2850,5 +3574,7 @@
     wicAcademicEvaluation,
     wicAcademicStance,
     wicPeriodSense,
+    wicSeparatedConstraints,
+    wicLatentRelationship,
   ];
 });

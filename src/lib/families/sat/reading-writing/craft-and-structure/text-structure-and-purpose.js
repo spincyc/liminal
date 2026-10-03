@@ -511,9 +511,9 @@
     difficulty: "Easy",
     title: "Sentence that concedes a limitation",
     recognize:
-      "Between a claim and its restatement, one sentence admits a weakness or a point on the other side; it limits the claim without abandoning it.",
+      "Within a favorable account, one sentence acknowledges a drawback or limitation; the following sentence explains why the favorable assessment survives.",
     // Easy: the concession is usually signposted (Admittedly, Granted, To be
-    // sure) and the next sentence reasserts the claim, so one comparison
+    // sure) and the next sentence preserves a favorable assessment, so one comparison
     // settles it.
     rubric: { steps: 0, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 0 },
     tricks: ["opposite-stance", "extreme-language", "word-association"],
@@ -528,20 +528,20 @@
         correct: topic.key,
         wrong: [
           [topic.support, "The sentence does not strengthen the claim; it points to a weakness or a fact on the other side."],
-          [topic.reject, "The sentence only limits the claim, and the final sentence reasserts it, so the text does not abandon it."],
-          [topic.newTopic, "The text never develops this subject; the very next sentence returns to the original claim."],
+          [topic.reject, "The sentence acknowledges a drawback or limitation; the next sentence puts it in context rather than abandoning the favorable assessment."],
+          [topic.newTopic, "The text never develops this separate subject; the next sentence addresses the drawback or limitation within the existing discussion."],
         ],
-        explanation: `The text makes a claim and supports it, then the quoted sentence admits a limitation before the final sentence reasserts the claim: ${TSP_lower(topic.key)}`,
+        explanation: `The text presents a favorable assessment and supporting evidence, then acknowledges a limitation before explaining why the assessment remains warranted: ${TSP_lower(topic.key)}`,
         steps: [
           "State the claim the text makes and the evidence it gives.",
           "Ask whether the quoted sentence helps or complicates that claim.",
-          "Check the next sentence: if the author returns to the claim, the quoted sentence concedes a limit rather than rejecting it.",
+          "Check how the next sentence responds to the drawback or limitation: the author puts it in context rather than abandoning the favorable assessment.",
         ],
         principles: [
           "Authors often concede a limitation and then reaffirm their claim; the concession qualifies the claim without overturning it.",
           "Judge a sentence’s function by how the surrounding sentences treat it.",
         ],
-        trap: "Reading the concession as a reversal and choosing the option that says the claim is wrong, even though the next sentence restates it.",
+        trap: "Reading an acknowledged drawback as a reversal, even though the next sentence preserves the favorable assessment.",
         hint: "Look at what the author does in the very next sentence.",
         estimatedSeconds: 75,
         verify: () => {
@@ -1026,7 +1026,7 @@
       passage:
         "Officials in the Hollis school district credit the rise in the district’s reading scores over the past five years to smaller classes, which the district introduced in 2019. The explanation has intuitive appeal, and smaller classes are popular with parents and teachers alike. A review of school-level results, though, tells against it. Scores rose just as quickly at the eleven Hollis schools that, lacking space, never reduced their class sizes, and they rose by similar amounts in neighboring districts that made no changes at all. Whatever produced the gains, the evidence gives no reason to attribute them to the smaller classes.",
       markers: ["credit the rise", "tells against it", "no reason to attribute"],
-      summary: "it reports that scores rose just as fast where classes stayed large, and it concludes that the gains cannot be credited to smaller classes",
+      summary: "it reports that scores rose just as fast where classes stayed large, and the text declines to credit the gains to smaller classes",
     },
     // Texts that confirm the view and then carry it further.
     {
@@ -1111,19 +1111,19 @@
   const TSP_SHAPE_FRAMES = [
     {
       qualify: (x) => `It states a common view about ${x}, reports evidence that complicates it, and then narrows that view.`,
-      reject: (x) => `It states a common view about ${x}, reports evidence that contradicts it, and then rejects that view.`,
+      reject: (x) => `It states a common view about ${x}, reports evidence that challenges it, and then rejects that view.`,
       extend: (x) => `It states a common view about ${x}, reports evidence that confirms it, and then extends that view to new cases.`,
       adjudicate: (x) => `It states two rival views about ${x}, weighs the evidence for each, and then favors one of them.`,
     },
     {
       qualify: (x) => `It outlines an accepted claim about ${x}, reports findings that cast doubt on it, and then limits the claim.`,
-      reject: (x) => `It outlines an accepted claim about ${x}, reports findings that refute it, and then dismisses the claim.`,
+      reject: (x) => `It outlines an accepted claim about ${x}, reports findings that weaken it, and then dismisses the claim.`,
       extend: (x) => `It outlines an accepted claim about ${x}, reports findings that strengthen it, and then applies it more widely.`,
       adjudicate: (x) => `It outlines two competing claims about ${x}, reports findings that bear on both, and then sides with one.`,
     },
     {
       qualify: (x) => `It introduces a familiar belief about ${x}, describes evidence that challenges it, and then says when it still holds.`,
-      reject: (x) => `It introduces a familiar belief about ${x}, describes evidence against it, and then concludes that it is mistaken.`,
+      reject: (x) => `It introduces a familiar belief about ${x}, describes evidence against it, and then rejects that belief.`,
       extend: (x) => `It introduces a familiar belief about ${x}, describes evidence that supports it, and then shows it holds more broadly.`,
       adjudicate: (x) => `It introduces two opposing beliefs about ${x}, describes evidence bearing on each, and then settles on one.`,
     },
@@ -1146,7 +1146,7 @@
 
   const TSP_SHAPE_VERDICT = {
     qualify: "That is a qualification: the view survives, but only under a condition.",
-    reject: "That is a rejection: no part of the view survives.",
+    reject: "That is a rejection: the text declines to retain the initial view.",
     extend: "That is an extension: the evidence confirms the view and the text carries it further.",
     adjudicate: "The text begins from two competing views, not one, and ends by favoring one of them.",
   };
@@ -2716,7 +2716,7 @@
           "In literary texts a line’s function often depends on what comes after it; read to the end before deciding.",
           "A belief stated early in a poem or story may be there to be overturned.",
         ],
-        trap: "Taking the quoted line at face value, as if the text endorsed it, when the ending overturns or reframes it.",
+        trap: "Choosing a literal detail or unsupported motive without checking how the later text develops, answers, or reframes the quoted line.",
         hint: "What happens later in the text to the view or detail in the quoted line?",
         estimatedSeconds: 105,
         verify: () =>
@@ -2728,6 +2728,425 @@
       };
     },
   };
+
+  // Begin additional design: function-reframe.
+  // The observation remains accepted; the quoted sentence supplies the frame
+  // under which the later details change its evaluative significance.
+  const TSP_EVALUATION_FRAME_TOPICS = [
+    {
+      scene: "cs-evalframe-belren-station",
+      before: "Belren's new rail timetable has lengthened several trains' stops at the central junction. A columnist adds these minutes together and calls the revision a retreat from the promise of faster travel.",
+      quoted: "Most journeys listed in the timetable require passengers to leave one train and board another.",
+      after: "The longer stops let travelers make connections that they previously missed by a minute, avoiding waits of almost an hour. The columnist's arithmetic is sound, but it measures the progress of trains through the junction; the railway's promise concerned the arrival of passengers at their destinations.",
+      key: "It supplies a feature of passenger journeys that makes the later connection times relevant to evaluating the longer stops.",
+      wrong: [
+        ["It identifies a source of delays that the columnist omitted, strengthening the criticism of longer stops at the junction.", "Transfers explain why the added minutes can shorten whole journeys. The author accepts the columnist's arithmetic but challenges the standard by which the added minutes are judged."],
+        ["It concedes that transfers add to journey times, preparing a proposal to judge the longer stops after transfer delays have been excluded.", "The passage incorporates transfer waits into the judgment rather than excluding them. The sentence makes connections part of the relevant journey, not a delay to set aside."],
+        ["It explains why passengers have missed connections, allowing the later figures to correct the columnist's calculation of stop times.", "The later account evaluates the effect of the correctly counted stop times on passengers. It does not correct that calculation or attribute missed connections to the act of changing trains."]
+      ],
+      why: "The quoted sentence identifies the journey as a sequence of trains. That makes a successful connection, discussed afterward, part of the measure of faster travel. The extra stop minutes are accepted; their significance changes when the unit is a passenger's complete journey rather than one train's progress.",
+      steps: ["Identify the columnist's measure: added minutes in individual trains' stops.", "Use the quoted sentence to see why a passenger's journey can include more than one train.", "Connect that fact to the saved transfer wait, which changes how the extra minutes should be evaluated."]
+    },
+    {
+      scene: "cs-evalframe-darsen-seed",
+      before: "A trial at Darsen field station compared a diverse seed mixture with a single high-yield variety. The mixture produced less grain in each of four ordinary seasons, a result that a reviewer presents as sufficient reason to end the trial.",
+      quoted: "The station supplies farms whose grain stores must carry them through occasional seasons when rain nearly fails.",
+      after: "In the trial's two exceptionally dry seasons, the mixture still supplied a modest harvest, while the single variety yielded almost nothing. Its lower ordinary yield therefore remains a cost, but the dry-season results must enter the judgment: the farms need an adequate supply across bad years as well as abundant grain in good ones.",
+      key: "It establishes a condition of the farms' needs that makes the later dry-season results essential to judging the lower yields.",
+      wrong: [
+        ["It explains why the mixture yielded less in ordinary seasons, preparing a correction to the reviewer's comparison of harvest sizes.", "The farms' needs do not explain the mixture's ordinary yield. Those yield comparisons are retained, while the later dry-season evidence adds a different consideration."],
+        ["It restricts the trial's comparison to exceptionally dry seasons, permitting the author to disregard the reviewer's ordinary-season results.", "The author explicitly retains the lower ordinary yield as a cost. The sentence adds the need for resilience across seasons rather than excluding ordinary seasons."],
+        ["It supplies a reason to prefer the mixture before the later comparison, treating continuity of supply as independent of harvest size.", "The farms' need identifies what must be assessed, but it does not establish that the mixture meets that need. The later harvest comparison is needed to show the mixture's particular advantage."]
+      ],
+      why: "The sentence supplies the practical need against which the trial is evaluated. Once continuity of supply matters, a smaller normal harvest cannot by itself settle the comparison; the later evidence of a surviving dry-season harvest is relevant, although the ordinary yield penalty remains.",
+      steps: ["Separate the accepted observation of lower ordinary yields from the reviewer's judgment of the mixture.", "Read the quoted sentence for the farms' need across unusually bad seasons.", "Connect the later harvest contrast to that need without erasing the ordinary-season cost."]
+    },
+    {
+      scene: "cs-evalframe-orven-wall",
+      before: "At Orven Hall, restorers left narrow gaps around newly inserted beams instead of concealing every join. A visitor remarks that the repairs would be more successful if the wall looked as though it had never been damaged.",
+      quoted: "The hall is displayed as a building repeatedly adapted by its occupants, with no single period selected as its definitive form.",
+      after: "The visible joins allow viewers to distinguish the recent work from older alterations, whose traces the restorers also retained. They do interrupt the illusion of an untouched wall. Under the exhibition's account of the hall, however, making successive interventions legible is itself part of the restoration, not a defect to be hidden.",
+      key: "It introduces the exhibition's view of the building, under which the later description of visible repairs answers the visitor's objection.",
+      wrong: [
+        ["It identifies a problem in reconstructing the hall's original form, which the later repairs address by marking the newest beams.", "The exhibition does not attempt to reconstruct a single original form. The visible joins represent another stage of adaptation rather than solve a problem in recovering an original."],
+        ["It endorses the visitor's preference for an untouched appearance, identifying an earlier state that the visible repairs should eventually reproduce.", "The sentence denies a single definitive state. The ending defends visible changes as part of representing the building's successive uses."],
+        ["It concedes that the restorers departed from the exhibition's plan, before the later description explains the practical need for visible repairs.", "The repairs carry out the exhibition's account of repeated adaptation. The passage offers no departure from the plan or practical obstacle requiring visible joins."]
+      ],
+      why: "The visitor measures success by an illusion of an undamaged original. The quoted sentence establishes a different account of the object being displayed: a history of adaptations. The subsequent visible joins serve that account by making another intervention identifiable.",
+      steps: ["Identify the visitor's preferred result: an apparently untouched wall.", "Notice that the quoted sentence gives the exhibition a history of successive forms, not one authoritative original.", "Read the visible joins as a way to represent that history, which explains their defended function."]
+    },
+    {
+      scene: "cs-evalframe-celna-translation",
+      before: "A reviewer faults Mara Celna's translation of an unfinished poem for its abrupt shifts in rhythm. A smooth version would, the reviewer argues, give readers a more satisfying sense of the completed work toward which the poet was moving.",
+      quoted: "Celna's edition places successive drafts side by side and dates each change the poet left unresolved.",
+      after: "Where a later draft breaks an earlier pattern, Celna preserves the break rather than supplying a regular line. The roughness can thus help readers locate a decision still in progress. The reviewer imagines the poem's eventual destination; the edition offers access to stages of its making without deciding which unfinished movement would have prevailed.",
+      key: "It locates the translation within a record of revision, making the later rhythmic breaks evidence of decisions still in progress.",
+      wrong: [
+        ["It identifies a completed draft that justifies the reviewer's demand for regular rhythm, before explaining Celna's departure from that draft.", "The drafts contain unresolved changes, and no completed draft is supplied. The later example explains preserving a break, not departing from a finished model."],
+        ["It supplies a chronology that proves the poet preferred irregular rhythm, supporting the later treatment of every break as a final decision.", "Dating unresolved changes does not establish a final preference. The edition keeps decisions open rather than presenting each break as settled."],
+        ["It presents the drafts as steps toward a settled final rhythm, allowing the later example to rank versions by their proximity to it.", "The arrangement retains unresolved decisions. It does not establish a settled final rhythm or rank drafts by how closely they approach one; that would import the reviewer's imagined endpoint."]
+      ],
+      why: "The quoted sentence makes the edition a record of revision rather than a reconstruction of a finished poem. That purpose changes the significance of the later rhythmic break: roughness records an unresolved choice instead of merely failing to produce smooth verse.",
+      steps: ["Identify the reviewer's standard: a satisfying approximation of a completed poem.", "Determine what the arrangement of dated drafts lets Celna's readers examine.", "Connect the preserved rhythmic break to that examination while keeping the poet's final preference unresolved."]
+    },
+    {
+      scene: "cs-evalframe-merrow-labels",
+      before: "Visitors testing labels for Merrow's proposed geology display often asked questions the labels did not answer. An administrator counted these questions as failures of the writing and proposed discarding the most troublesome labels.",
+      quoted: "During the test, the designers recorded exactly where each visitor stopped reading and asked for help.",
+      after: "One repeated question exposed an assumption that visitors already understood the display's color code. The designers could then revise the introductory panel, benefiting several labels at once. The unanswered questions were genuine difficulties for readers; in a trial intended to locate those difficulties, their occurrence also supplied information that a tally of failures concealed.",
+      key: "It shows how the trial captured the reading difficulties, preparing an example of their usefulness for revising the display.",
+      wrong: [
+        ["It introduces a measure of disruption caused by the labels, preparing the later example to justify removing the most troublesome ones.", "The recorded difficulties can identify where revision is needed, but the later example revises a shared introductory panel. It demonstrates the information gained from trouble rather than justifying removal of troublesome labels."],
+        ["It confirms that unanswered questions marked defective labels, preparing evidence that the administrator's proposal removed the main source of confusion.", "The question count identifies genuine difficulties, but the later response revises an introductory panel rather than discarding labels. The quoted method makes the questions useful diagnostically."],
+        ["It establishes that designers supplied missing explanations, permitting a later defense of the existing labels' adequacy.", "Recording questions is not supplying the missing explanations. The display needs revision, and the ending preserves the reality of the reading difficulties."]
+      ],
+      why: "The sentence describes recording the location and content of trouble. The later example shows why that matters: it reveals a shared assumption that can be repaired. The administrator's negative observation remains true, but within a diagnostic trial the difficulties also yield useful evidence.",
+      steps: ["Note that the administrator evaluates the labels by counting unanswered questions.", "Read the quoted sentence as a description of how the trial preserves information about those questions.", "Use the later color-code example to see why identifying a difficulty can advance the trial's purpose."]
+    },
+    {
+      scene: "cs-evalframe-varden-model",
+      before: "An exhibition model of Varden Harbor makes the shallow channels much deeper in proportion than the outer basin. A maritime historian objects that this distortion prevents visitors from seeing the harbor's true shape.",
+      quoted: "Water is circulated through the model at each demonstration, carrying colored beads from the channels toward the basin.",
+      after: "With every depth reduced by the same proportion, friction in the tiny channels would slow the beads far more than the model's designers intend. Their chosen depths instead reproduce the observed division of flow between channels. The historian has identified a real geometric distortion, but assessing the demonstration also requires asking which behavior the model preserves.",
+      key: "It describes a moving process represented by the model, preparing a reason to judge the distorted depths by the flow they preserve.",
+      wrong: [
+        ["It demonstrates the geometric accuracy of the shallow channels, preparing the later explanation of why the historian misread their relative depths.", "The author agrees that the relative depths are distorted. Circulating water introduces the behavior being represented rather than proving the dimensions accurate."],
+        ["It explains how colored beads distort visitors' perception, allowing the later account to attribute the historian's objection to the demonstration method.", "The objection concerns the model's actual proportions. Nothing attributes it to an illusion produced by the beads."],
+        ["It introduces the model's display method, which the later explanation treats as separate from the question of geometric distortion.", "The moving display is the reason the model's behavior matters. The explanation connects that behavior to the chosen distortion instead of treating method and geometry as separate issues."]
+      ],
+      why: "The sentence reveals that the model demonstrates flowing water, so resemblance can concern behavior as well as geometry. The later account of friction explains why changing the depths can preserve the intended flow. It answers the evaluation of the distortion without denying that distortion exists.",
+      steps: ["Identify the historian's accurate observation about distorted proportions.", "Use the quoted sentence to identify what the model does during a demonstration.", "Connect the later explanation of friction to the distinction between preserving shape and preserving flow."]
+    },
+    {
+      scene: "cs-evalframe-nelin-catalog",
+      before: "Nelin's theater archive added descriptions such as 'blue doorway' and 'table overturned' to its catalog of stage photographs. A consultant criticizes the phrases for returning numerous unrelated productions when entered as search terms.",
+      quoted: "Many visitors approach the archive remembering an image from a performance but knowing neither its title nor its company.",
+      after: "For these visitors, browsing a group of imperfect matches can produce the recognition needed to identify a production. The phrases do not replace precise title entries, which remain available. Their usefulness rests on offering a starting point when those entries cannot yet be used; the consultant's measure assumes the very knowledge such visitors lack.",
+      key: "It identifies the searchers' initial lack of information, which gives the later discussion a different basis for evaluating broad search results.",
+      wrong: [
+        ["It explains why the archive's title entries are inaccurate, preparing the later argument for replacing them with visitors' visual recollections.", "The entries remain available and are not described as inaccurate. Visitors lack the knowledge needed to use them; that differs from defective entries."],
+        ["It confirms that visual descriptions yield unrelated results, supporting the consultant's proposal to require titles before allowing visitors to search.", "The sentence identifies a need that broad searches address. No title requirement is proposed, and it would prevent the described visitors from starting."],
+        ["It concedes a limitation of visual recollection that the later title entries overcome by supplying information visitors had forgotten.", "The quoted sentence identifies why visitors cannot initially use the title entries. Browsing broad visual matches provides the route to recognition; the mere existence of title entries does not supply the missing identification."]
+      ],
+      why: "The consultant assumes a searcher can name a known target precisely. The quoted sentence supplies a different starting condition: recognition without a title. Under that condition, the later account of browsing makes an initially broad result useful rather than simply imprecise.",
+      steps: ["Identify the consultant's objection to the number of unrelated matches.", "Notice the information that the quoted sentence says visitors lack.", "Connect that lack to the later use of browsing for recognition, while retaining the role of precise title entries."]
+    },
+    {
+      scene: "cs-evalframe-tavren-alarm",
+      before: "Tavren's reservoir warning system issued six alerts during a trial, though water reached the marked upper level only once. An evaluator argues that the five other alerts show the system is too unreliable to retain.",
+      quoted: "Opening the outlet gates takes several hours, during which a rapidly rising reservoir may pass the marked level.",
+      after: "The alerts are triggered by early conditions that sometimes fade before the water rises much. Waiting until the marked level is reached would eliminate those unconfirmed alerts but also remove the time needed to respond. The five alerts remain a cost to assess; their count alone cannot determine whether the system provides useful advance warning.",
+      key: "It establishes the response time that makes the later distinction between an early warning and a confirmed event relevant to evaluation.",
+      wrong: [
+        ["It states an operating constraint that the later discussion uses to establish that the existing alert threshold is the best available.", "The time constraint shows why confirmation rate alone is insufficient. The text does not compare alternative early thresholds or prove that the existing setting is optimal."],
+        ["It shows why the marked level was recorded too late, allowing the later discussion to correct the evaluator's count of confirmed events.", "The count is accepted. The issue is whether a count of confirmations alone captures the value of advance warning, not whether events were recorded late."],
+        ["It confirms that the system should wait for the marked level, supporting the later argument that fewer alerts would improve response time.", "Waiting would remove response time rather than improve it. The ending presents that cost as a reason the unconfirmed-alert count is insufficient."]
+      ],
+      why: "The quoted sentence supplies the time constraint that the evaluator's confirmation count omits. The following explanation then distinguishes the usefulness of an early warning from its eventual confirmation. It does not erase the burden of unnecessary alerts or establish an optimal threshold.",
+      steps: ["Identify the evaluator's proposed measure: the share of alerts followed by the marked water level.", "Read the quoted sentence for how long action takes after an alert.", "Relate that delay to the later tradeoff between waiting for confirmation and preserving time to act."]
+    },
+    {
+      scene: "cs-evalframe-ilren-score",
+      before: "A jury rates Ilren Conservatory's workshop concerts below its polished end-of-term recitals. Several teachers suggest rehearsing the workshop programs more intensively so that the school's public performances will sound consistently assured.",
+      quoted: "Each workshop performer must attempt a technique that the faculty has not yet heard that student use in concert.",
+      after: "The recordings let teachers distinguish a student's emerging control from fluent repetition of familiar material. Additional rehearsal might improve the jury's ratings, but substituting mastered pieces would remove the uncertainty the workshops are meant to expose. Their unevenness must therefore be considered alongside what it allows teachers to learn.",
+      key: "It identifies the workshop's performance requirement, making the later distinction between developing and established skills central to judging its unevenness.",
+      wrong: [
+        ["It explains how the jury selected unfamiliar music, preparing evidence that the low ratings result from its failure to recognize students' established skills.", "Faculty requirements shape what students attempt; the jury is not said to select music or fail to recognize familiar skills. Its ratings concern the heard performances."],
+        ["It establishes that students have already mastered the workshop techniques, allowing the later discussion to blame their uneven playing on limited rehearsal.", "The requirement concerns a technique not previously heard from that student in concert. The later discussion treats control as emerging, not already established."],
+        ["It presents the technical demands of workshops as a temporary obstacle that the later discussion expects additional rehearsal to remove.", "Further rehearsal might improve ratings, but the requirement also exposes developing control for assessment. The ending does not treat that uncertainty simply as a temporary obstacle to eliminate."]
+      ],
+      why: "The sentence establishes a requirement to attempt a newly demonstrated technique. That changes how the later contrast between fluent repetition and emerging control bears on the jury's judgment: imperfect performances can expose precisely what teachers need to assess.",
+      steps: ["Identify the jury's basis for comparison: the assurance of the finished performances.", "Notice the quoted requirement to attempt a technique the faculty has not heard that student use in concert.", "Connect that requirement to the recordings' diagnostic value, without claiming the performances are already polished."]
+    },
+    {
+      scene: "cs-evalframe-renva-notebook",
+      before: "An editor of the inventor Sela Renva's notebooks retained pages containing abandoned designs, including sketches whose central mechanisms do not work. A reviewer calls these pages wasted space because they offer readers no usable plans.",
+      quoted: "The edition arranges the sketches by the problems Renva returned to, including problems that persisted after a design was abandoned.",
+      after: "A faulty valve drawing, for instance, introduces a pressure imbalance that Renva later resolves with a different mechanism. The drawing's value lies partly in making that later choice intelligible. The reviewer's technical criticism stands, but an account of how a solution developed has uses for a failed plan that a manual of finished devices would not.",
+      key: "It presents an organizing principle through which the later faulty drawing can illuminate a solution without itself becoming a usable plan.",
+      wrong: [
+        ["It identifies the failed designs as necessary steps toward Renva's solutions, which the later valve example confirms as a general rule.", "The edition can make a later decision intelligible without establishing that failure was necessary to invent it. One example also cannot establish a general rule about all Renva's solutions."],
+        ["It explains how the editor corrected the abandoned designs, allowing the later valve drawing to serve as a working alternative to Renva's final mechanism.", "The editor retains the faulty drawing and does not repair it. Its role is to clarify the later solution, not to function as a working alternative."],
+        ["It confirms that the edition provides practical instructions, before the later example identifies a mistake that prevents it from serving that stated purpose.", "Arranging sketches around recurring problems supports an account of development. A manual of usable instructions is the reviewer's implied standard, not the edition's stated purpose."]
+      ],
+      why: "The quoted organization follows recurring problems, so an unsuccessful design can supply context for a successful one. The valve example illustrates that value. The author preserves the reviewer's judgment that the drawing is unusable while changing the purpose under which its inclusion is assessed.",
+      steps: ["Separate the accepted failure of a design from the judgment that it has no place in the edition.", "Use the quoted arrangement to identify what connects abandoned and later designs.", "Read the valve example as context for a solution's development, not as a repaired or usable plan."]
+    }
+  ];
+
+  const tspFunctionEvaluationFrame = {
+    id: "tsp-function-evaluation-frame",
+    sectionKey: "sat-reading-writing",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    subskill: "function of a sentence",
+    difficulty: "Hard",
+    title: "A sentence changes the basis of an evaluation",
+    recognize: "Distinguish an accepted observation from the standard used to judge it. Connect the quoted sentence to both the earlier judgment and the later detail whose significance depends on that standard.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["true-but-irrelevant", "misattributed-view", "opposite-stance"],
+    build(t) {
+      const topic = t.pick(TSP_EVALUATION_FRAME_TOPICS);
+      const content = `${topic.before} ${topic.quoted} ${topic.after}`;
+      return {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "passage", content },
+        stem: `Which choice best describes the function of the sentence “${topic.quoted}” in the text as a whole?`,
+        correct: topic.key,
+        wrong: topic.wrong,
+        explanation: topic.why,
+        steps: topic.steps,
+        principles: [
+          "A text can accept an observation while changing the purpose or standard under which it is judged.",
+          "A sentence's role may connect an earlier judgment with evidence whose relevance becomes clear only later."
+        ],
+        trap: "Treating the quoted sentence as a correction of the earlier facts, or adopting the critic's standard when the later discussion introduces another basis for evaluation.",
+        hint: "What does the text accept from the opening judgment, and what does the ending ask readers to reconsider?",
+        estimatedSeconds: 105,
+        verify: () =>
+          content.length >= 150 && content.length <= 900 &&
+          TSP_inOrder(content, [topic.before, topic.quoted, topic.after]) &&
+          content.split(topic.quoted).length === 2 &&
+          topic.wrong.length === 3 && topic.steps.length >= 2 &&
+          new Set([topic.key, ...topic.wrong.map(([choice]) => choice)]).size === 4
+      };
+    }
+  };
+  // End additional design: function-reframe.
+
+  // Begin additional design: easy-structure-prediction.
+  // A forecast appears before the reported trial. The task is to identify
+  // that sentence's prospective role, not to evaluate whether it came true.
+  // Every scene has its own wording and a later observation to distinguish.
+  const TSP_PREDICTION_TOPICS = [
+    {
+      scene: "cs-prediction-library-shelf-labels",
+      before: "At the fictional Wrenford library, a shelf guide is a card showing where a category of books belongs.",
+      prediction: "Before trying illustrated guides, the librarian expected that children would return books to the correct shelves more often.",
+      after: "She then used illustrated guides for a week and counted misplaced books. The count fell from the previous week's total.",
+      cue: "Before trying",
+      observation: "The count fell from the previous week's total.",
+      key: "It states an expectation about the effect of guides that will be tested.",
+      wrong: [
+        ["It states a finding about the guides obtained after the library's trial.", "The finding is the later decrease in misplaced books. The quoted sentence says what the librarian expected before she tried the guides."],
+        ["It explains the meaning of a term used for the library's shelf cards.", "The first sentence defines a shelf guide. The quoted sentence instead anticipates what the illustrated version will do."],
+        ["It recommends a way for libraries to arrange their children's books.", "The librarian expects a measurable change; she does not advise libraries to adopt an arrangement. A prediction about what will happen is not a recommendation."],
+      ],
+      why: "The words 'Before trying' place the expectation before the trial. The librarian anticipates more correct returns; the later count provides the observation against which that expectation can be checked.",
+    },
+    {
+      scene: "cs-prediction-rehearsal-cue-cards",
+      before: "A youth theater group in the invented town of Pellwick used cue cards to signal when actors should enter. Its director prepared a larger set of cards for a rehearsal.",
+      prediction: "She predicted that the larger cards would reduce the number of missed entrances.",
+      after: "During the next rehearsal, an assistant recorded every missed entrance. The actors missed just as many as before.",
+      cue: "predicted",
+      observation: "The actors missed just as many as before.",
+      key: "It describes an anticipated outcome for a trial of a different card size.",
+      wrong: [
+        ["It presents the assistant's record of missed entrances during the rehearsal.", "The assistant's observations appear afterward. The quoted sentence is the director's forecast, made before that rehearsal."],
+        ["It explains the role of cue cards in helping actors enter during a rehearsal.", "The first sentence explains that cue cards signal entrances. The quoted sentence concerns an anticipated effect of enlarging them."],
+        ["It recommends the use of cue cards to help actors enter during a rehearsal.", "No recommendation to use cue cards appears. The director predicts fewer missed entrances in a trial of larger cards."],
+      ],
+      why: "The director predicts fewer missed entrances before anyone counts them. Although the following rehearsal does not support that prediction, the sentence's function remains to state the outcome she expected.",
+    },
+    {
+      scene: "cs-prediction-garden-soil-cover",
+      before: "In a fictional school garden, students compared two trays containing the same kind of soil. They covered one tray with shredded leaves and left the other uncovered.",
+      prediction: "Before adding water, they wrote that the covered tray would lose less water over the next two days.",
+      after: "They watered both trays equally and weighed them at the start and end of the trial. The covered tray lost less mass.",
+      cue: "Before adding water",
+      observation: "The covered tray lost less mass.",
+      key: "It describes the students' expected outcome before they measure the trays.",
+      wrong: [
+        ["It describes the students' measured outcome after they finish the trial.", "The final sentence supplies the measured outcome. The quoted sentence records an expectation before water is added."],
+        ["It explains a procedure that gardeners should follow when watering soil.", "The statement anticipates what the covered tray will do; it does not tell gardeners how they should water."],
+        ["It explains what the students mean by a covered tray in their comparison.", "The earlier sentence identifies the covering as shredded leaves. The quoted sentence predicts its effect on water loss."],
+      ],
+      why: "The timing phrase 'Before adding water' shows that the students have not yet obtained their measurements. They state an outcome that the later measurements can support or fail to support.",
+    },
+    {
+      scene: "cs-prediction-toy-ramp-surface",
+      before: "For an invented classroom investigation, Neri built two equally steep ramps, one smooth and one lined with felt. The class planned to roll the same toy cart down each ramp.",
+      prediction: "Neri's initial expectation was that the cart would reach the bottom of the smooth ramp sooner.",
+      after: "The class then timed five trips on each surface. Each trip down the smooth ramp took less time than any trip down the felt-lined ramp.",
+      cue: "initial expectation",
+      observation: "Each trip down the smooth ramp took less time than any trip down the felt-lined ramp.",
+      key: "It identifies a result Neri anticipates before the class conducts its comparison.",
+      wrong: [
+        ["It identifies the results of timing the cart on two differently covered ramps.", "The timing results follow the quoted sentence. 'Initial expectation' identifies what Neri anticipates before the trips are timed."],
+        ["It recommends a change to the covering on one of the ramps used by the class.", "Neri makes no recommendation to change a ramp. The statement concerns a result expected in this particular comparison."],
+        ["It explains the term used to describe the covering on one of the ramps.", "The sentence does not define 'smooth' or 'felt-lined.' It predicts which trip will take less time."],
+      ],
+      why: "Neri's 'initial expectation' is a prediction about travel time. The next sentences move from that prediction to a trial and its results, making the quoted sentence's prospective role explicit.",
+    },
+    {
+      scene: "cs-prediction-archive-drawing-index",
+      before: "At the imaginary Colven archive, a finding aid is a guide to the contents of a collection. An archivist added small drawings of objects to one version of an aid.",
+      prediction: "Before asking visitors to use it, she thought the drawings would help them locate records more quickly.",
+      after: "Visitors then searched with either the illustrated aid or a text-only version. Their recorded search times were about the same.",
+      cue: "Before asking visitors",
+      observation: "Their recorded search times were about the same.",
+      key: "It offers a prediction about a possible benefit of the illustrated finding aid.",
+      wrong: [
+        ["It reports the time visitors needed to locate the archive's records during the trial.", "The search times are reported later. The quoted sentence states what the archivist thought would happen before visitors searched."],
+        ["It supplies a definition of the type of guide the archivist is preparing.", "The definition of a finding aid appears in the opening sentence. The quoted sentence predicts a benefit of the drawings."],
+        ["It supplies a recommendation about which guide visitors should choose.", "The archivist does not advise visitors to choose one guide. She anticipates a difference that the comparison will test."],
+      ],
+      why: "The archivist thinks the drawings will shorten searches before anyone uses the aid. That anticipated benefit is a prediction, whereas the later sentence about similar search times reports the observation.",
+    },
+    {
+      scene: "cs-prediction-audio-tour-map",
+      before: "A fictional museum tested two versions of an audio tour. One version paused after each stop to tell visitors how to reach the next display; the other gave the directions without a pause.",
+      prediction: "The tour designer expected that visitors hearing the pauses would ask for directions less often.",
+      after: "During the trial, staff counted requests for help. Requests were less frequent among visitors who heard the paused version.",
+      cue: "expected",
+      observation: "Requests were less frequent among visitors who heard the paused version.",
+      key: "It states what the designer expects the trial of the audio tour to show.",
+      wrong: [
+        ["It states what the staff counted during the trial of the audio tour.", "The staff's count appears after the prediction. The quoted sentence gives the designer's expectation, not a completed count."],
+        ["It defines a feature of the audio tour by explaining where its pauses occur.", "The previous sentence explains where the pauses occur. The quoted sentence anticipates how they might affect requests for help."],
+        ["It recommends a route through the museum for visitors using the audio tour.", "No route is recommended. The sentence makes a claim about a possible effect of pauses that the trial can test."],
+      ],
+      why: "'Expected' presents an anticipated outcome: fewer requests for directions. The staff's later observations test that expectation, so the quoted sentence sets out what the designer expects to find.",
+    },
+    {
+      scene: "cs-prediction-clay-tile-drying",
+      before: "In an invented pottery workshop, Selma made two batches of clay tiles of equal thickness. She planned to dry one batch under a loose cloth and the other in the open air.",
+      prediction: "Before drying began, Selma guessed that fewer of the covered tiles would develop cracks.",
+      after: "She inspected every tile three days later. The two batches contained the same number of cracked tiles.",
+      cue: "Before drying began",
+      observation: "The two batches contained the same number of cracked tiles.",
+      key: "It presents a guess that Selma can check by inspecting the tiles later.",
+      wrong: [
+        ["It offers a count that Selma completed while inspecting the dried tiles.", "Selma's completed count is reported in the final sentence. The quoted sentence is a guess made before drying begins."],
+        ["It explains a term that Selma uses to distinguish the two batches of tiles.", "The covered and uncovered batches are described before the quoted sentence. No term is defined in the guess about cracking."],
+        ["It explains a practice that Selma urges the other potters to adopt.", "Selma anticipates a difference between the batches; she does not urge anyone to adopt a drying practice."],
+      ],
+      why: "The sentence explicitly places Selma's guess before drying begins. Inspecting the tiles later lets her test the guess; the equal number of cracks is a finding, separate from the earlier prediction.",
+    },
+    {
+      scene: "cs-prediction-shuttle-queue-signs",
+      before: "At the fictional Lornwick shuttle station, staff marked a separate queue for each route. They planned to try signs showing both route names and simple symbols instead of names alone.",
+      prediction: "The station manager anticipated that the new signs would lead fewer riders to join the wrong queue.",
+      after: "Staff tried the signs for three mornings and counted riders who changed queues. The number was lower than during the previous three mornings.",
+      cue: "anticipated",
+      observation: "The number was lower than during the previous three mornings.",
+      key: "It describes an anticipated change in riders' behavior before the signs are tried.",
+      wrong: [
+        ["It reports an observed change in riders' behavior after the signs are tried.", "The observed change appears in the final sentence. 'Anticipated' marks the quoted sentence as the manager's earlier expectation."],
+        ["It describes a rule that the manager advises riders to follow when queuing.", "The manager does not advise riders to follow a rule. The sentence predicts their behavior under the new signs."],
+        ["It reports the meaning of the route symbols printed on the station's signs.", "The text never identifies individual symbols or their meanings. The quoted sentence concerns the expected effect of adding them."],
+      ],
+      why: "The manager 'anticipated' fewer incorrect queue choices. The following sentences describe trying the signs and recording what happened, so the quoted sentence supplies the expectation tested by those observations.",
+    },
+    {
+      scene: "cs-prediction-cafeteria-tray-marks",
+      before: "An invented cafeteria trial used two return counters. One counter had outlines showing where trays should be stacked, while the other had a plain surface.",
+      prediction: "The organizer expected the outlined counter to need fewer visits from a worker to straighten the stacks.",
+      after: "During lunch, observers tallied those visits at each counter. Both counters needed the same number of visits.",
+      cue: "expected",
+      observation: "Both counters needed the same number of visits.",
+      key: "It identifies the outcome the organizer expects from adding the outlines.",
+      wrong: [
+        ["It identifies the outcome the observers recorded at the end of lunch.", "The recorded outcome appears at the end: the same number of visits. The quoted sentence states the organizer's expectation before those observations."],
+        ["It gives advice about how workers should straighten stacks of returned trays.", "No straightening method is recommended. The sentence predicts how often workers will need to visit one counter."],
+        ["It gives the meaning of an outline by describing the marks on the counter.", "The earlier sentence explains what the outlines show. The quoted sentence instead anticipates a consequence of adding them."],
+      ],
+      why: "The organizer expects fewer straightening visits at the outlined counter. The observers' later tally is the test of that expectation, and its disagreement with the prediction does not turn the earlier sentence into a report of results.",
+    },
+    {
+      scene: "cs-prediction-puzzle-instruction-layout",
+      before: "For an imaginary puzzle club's trial, Levan printed the same assembly instructions in two layouts: a single paragraph and a numbered list. New members would use one version each.",
+      prediction: "Levan thought that members using the numbered list would skip fewer assembly steps.",
+      after: "He then watched members work and recorded every skipped step. Members with the numbered list skipped fewer steps overall.",
+      cue: "thought",
+      observation: "Members with the numbered list skipped fewer steps overall.",
+      key: "It offers an expectation about how the layout could affect members' work.",
+      wrong: [
+        ["It offers a report of the assembly errors Levan recorded during the trial.", "The record of skipped steps comes later. The quoted sentence states what Levan thinks will happen before he observes the members."],
+        ["It describes the meaning of a numbered list by comparing its visual features.", "The text identifies the two layouts earlier, but the quoted sentence does not define or visually describe a list. It predicts an effect on skipped steps."],
+        ["It describes a way of assembling the puzzle that Levan recommends to members.", "The instructions themselves are not explained or recommended. Levan forecasts how their presentation might affect members' performance."],
+      ],
+      why: "'Thought' followed by 'would' expresses Levan's expectation. The next two sentences describe his observations and their outcome, distinguishing that expectation from the later report of errors.",
+    },
+    {
+      scene: "cs-prediction-choir-tuning-display",
+      before: "In a fictional choir rehearsal, an electronic display showed singers whether a held note was above or below a target pitch. The conductor planned to let singers watch the display during one exercise.",
+      prediction: "Before the exercise, he predicted that singers watching the display would reach the target pitch sooner.",
+      after: "An assistant timed singers with and without the display. The recorded times showed no clear difference between the groups.",
+      cue: "Before the exercise",
+      observation: "The recorded times showed no clear difference between the groups.",
+      key: "It describes a prediction about the display's effect that the exercise will test.",
+      wrong: [
+        ["It reports the timings that the assistant collected during the choir's exercise.", "The recorded times appear after the prediction and show no clear difference. The quoted sentence is the expectation made before the exercise."],
+        ["It explains what singers are shown on a display used during the choir's exercise.", "The first sentence explains what the display shows. The quoted sentence predicts how watching it might affect singers' timing."],
+        ["It recommends how singers should use a display during the choir's exercise.", "The conductor predicts faster arrival at a target pitch; he does not advise the singers about how to use the display."],
+      ],
+      why: "'Before the exercise' and 'predicted' make the timing and role explicit. The conductor anticipates faster tuning; the assistant's later timings supply a way to test that anticipation.",
+    },
+    {
+      scene: "cs-prediction-newsletter-heading-size",
+      before: "For a fictional newsletter project, student editors made two versions of a page. The versions contained identical stories but used different sizes of headings.",
+      prediction: "Before showing the pages to readers, the editors expected larger headings to help readers find a named story faster.",
+      after: "They then timed readers who searched each version. Readers using the page with larger headings took less time on average.",
+      cue: "Before showing the pages",
+      observation: "Readers using the page with larger headings took less time on average.",
+      key: "It presents an expected benefit of the headings before readers try the pages.",
+      wrong: [
+        ["It presents a measured benefit of the headings after readers try the pages.", "The measured difference comes in the final sentence. The quoted sentence states a benefit the editors expect before testing the pages."],
+        ["It defines the purpose of a heading by describing where it sits on a page.", "The sentence does not describe a heading's location or define it. It predicts how heading size might affect search time."],
+        ["It recommends a heading size that editors should use for every kind of story.", "The editors make a prediction for their trial; they do not give a general recommendation about every story."],
+      ],
+      why: "The editors express an expectation before readers see either page. The later timing results can check whether the anticipated benefit occurs, so the quoted sentence states a prediction rather than a measured finding.",
+    },
+  ];
+
+  const tspFunctionPrediction = {
+    id: "tsp-function-prediction",
+    sectionKey: "sat-reading-writing",
+    domain: "Craft and Structure",
+    skill: "Text Structure and Purpose",
+    subskill: "function of a sentence",
+    difficulty: "Easy",
+    title: "A prediction before a reported observation",
+    recognize: "Locate the quoted sentence in the sequence of expectation, trial, and observation. An expected outcome states what someone thinks will happen before the outcome is measured.",
+    rubric: { steps: 0, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["true-but-irrelevant"],
+    build(t) {
+      const topic = t.pick(TSP_PREDICTION_TOPICS);
+      const passage = `${topic.before} ${topic.prediction} ${topic.after}`;
+      return {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "passage", content: passage },
+        stem: `Which choice best describes the function of the sentence “${topic.prediction}” in the text as a whole?`,
+        correct: topic.key,
+        wrong: topic.wrong,
+        explanation: topic.why,
+        steps: [
+          `Locate the timing or expectation cue '${topic.cue}' in the quoted sentence.`,
+          "Separate the expected outcome from the later account of what observers measured or counted.",
+          "Choose the role that describes the earlier expectation; whether it is confirmed later does not change that role.",
+        ],
+        principles: [
+          "A prediction states an outcome that has not yet been observed and can be checked against later evidence.",
+          "An expectation about what will happen differs from a recommendation about what someone should do.",
+        ],
+        trap: "Assigning the later observation's role to an earlier sentence because both sentences concern the same trial.",
+        hint: "At the moment described in the quoted sentence, has the trial's outcome already been observed?",
+        estimatedSeconds: 55,
+        verify: () =>
+          passage.length >= 150 && passage.length <= 900 &&
+          topic.prediction.includes(topic.cue) &&
+          TSP_inOrder(passage, [topic.prediction, topic.observation]) &&
+          topic.wrong.length === 3 &&
+          new Set([topic.key, ...topic.wrong.map(([choice]) => choice)]).size === 4,
+      };
+    },
+  };
+  // End additional design: easy-structure-prediction.
 
   return [
     tspMainPurposeExplain,
@@ -2741,5 +3160,7 @@
     tspAcademicFunction,
     tspAcademicStructure,
     tspLiteraryFunction,
+    tspFunctionEvaluationFrame,
+    tspFunctionPrediction,
   ];
 });

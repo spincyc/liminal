@@ -407,7 +407,7 @@
       w1: "films", first: "Ice Road, a documentary", next: "Harbor", count: 3, clause: ["festival", "will open"], complex: true,
     },
     {
-      scene: "sec-tallis-program-parts",
+      scene: "sec-tallis-choir-program",
       text: "The Tallis Street Youth Choir performs music from many traditions. Its spring program has three ______ motet by Heinrich Schütz; and a new piece by the composer Ruth Adebayo.",
       w1: "parts", first: "a Georgian folk song, sung without accompaniment", next: "a", count: 3, clause: ["program", "has"], complex: true,
     },
@@ -1536,6 +1536,8 @@
   /* ------------------------------------ B10: essential or nonessential, decided by context */
 
   // Hard. Each topic: `head` + `clause` + the main verb span the blank.
+  // Every current scene supplies an excluded comparison group; the clause
+  // must restrict the referent rather than merely restate an identified name.
   // `candidates` is how many things the context offers that the head could
   // mean; more than one makes the clause essential (no commas), exactly one
   // makes it nonessential (a pair of commas). The choices cross those commas
@@ -1585,7 +1587,7 @@
     },
     {
       scene: "sec-ghana-swallow-days",
-      text: "Ornithologist Kofi Mensah counted barn swallows passing a headland near the fishing town of Keld every day during the spring migration. The ______ by far the busiest, with flocks of more than a thousand birds passing each hour.",
+      text: "Ornithologist Kofi Mensah counted barn swallows passing a headland near the fishing town of Keld every day during the spring migration. Winds came from the north on some days and from the south on others. The ______ by far the busiest, with flocks of more than a thousand birds passing each hour.",
       head: "days", clause: "when the wind blew from the south", verbs: { singular: "was", plural: "were" }, candidates: 60, cue: "every day",
       note: "Mensah counted on every day of the migration, so the clause is needed to say which days were busiest.",
       misread: "claims that the wind blew from the south on every day of the count",
@@ -1605,34 +1607,49 @@
       misread: "claims that every fragment had its edges ground flat",
     },
     {
-      scene: "sec-architect-julia-reyes",
-      text: "The Hollis Public Library, completed in 1931, was the first building in the city designed by a woman. Its architect was Julia Reyes. ______ especially proud of the reading room, which is lit entirely by skylights.",
-      head: "Reyes", number: "singular", clause: "who had studied under two celebrated architects", verbs: { singular: "was", plural: "were" }, candidates: 1, cue: "Julia Reyes",
-      note: "Reyes is already identified by name, so the clause only adds information about her and must be set off by a pair of commas.",
+      "scene": "sec-archive-carbon-copies",
+      "text": "An archive received two types of documents from an editor’s office: typed originals and carbon copies. The copies have no signatures, while every typed original carries the sender’s initials in green ink. To check which items had actually been sent, the cataloger found that the ______ identifiable as originals from their markings alone.",
+      "head": "documents",
+      "number": "plural",
+      "clause": "whose final pages bore green initials",
+      "verbs": {
+        "singular": "was",
+        "plural": "were"
+      },
+      "candidates": 2,
+      "cue": "copies have no signatures",
+      "note": "The initials identify the originals within the larger received collection; copies lack them. Setting the clause off would incorrectly attribute green initials to the documents as a whole.",
+      "misread": "attributes green initials to the copies as well as the originals"
     },
     {
-      scene: "sec-grace-hopper",
-      text: "In the early 1950s, most computers could be programmed only with long strings of numbers. Grace ______ among the first to build a compiler, a program that translated instructions written in words into code a machine could run.",
-      head: "Hopper", clause: "who led a team of programmers at a computer company in Philadelphia", verbs: { singular: "was", plural: "were" }, candidates: 1, cue: "Grace",
-      note: "Grace Hopper is identified by name, so the clause only adds information about her and must be set off by a pair of commas.",
+      "scene": "sec-rehearsal-revised-parts",
+      "text": "Players in a chamber ensemble received either the first printing of a score or a revised printing. Only the revision added a rest before the final chord. During a rehearsal, some players fell silent early while others sustained their notes; afterward, the ______ asked to mark the missing rest before the next run-through.",
+      "head": "players",
+      "number": "plural",
+      "clause": "whose parts lacked the rest",
+      "verbs": {
+        "singular": "was",
+        "plural": "were"
+      },
+      "candidates": 2,
+      "cue": "either the first printing",
+      "note": "Only players with the first printing lacked the rest, so the clause identifies that subset. The revised parts already contained it.",
+      "misread": "asserts that all the players had parts lacking the rest"
     },
     {
-      scene: "sec-baikal-endemics",
-      text: "Lake Baikal in Siberia is the deepest lake on Earth, plunging more than 1,600 meters. ______ roughly a fifth of all the unfrozen fresh water on the planet's surface.",
-      head: "Baikal", clause: "where most of the animal species live nowhere else", verbs: { singular: "has", plural: "have" }, candidates: 1, cue: "Lake Baikal",
-      note: "Baikal is a single, named lake, so the clause only adds information about it and must be set off by a pair of commas.",
-    },
-    {
-      scene: "sec-jessup-driftwood",
-      text: "For forty years, folk artist Walter Jessup carved shorebirds from driftwood he gathered along North Carolina's Outer Banks. ______ known for giving away nearly every carving he made to friends and neighbors.",
-      head: "Jessup", clause: "whose workshop was a converted fishing shack", verbs: { singular: "was", plural: "were" }, candidates: 1, cue: "Walter Jessup",
-      note: "Jessup is already identified by name, so the clause only adds information about him and must be set off by a pair of commas.",
-    },
-    {
-      scene: "sec-brandt-sisters-bakery",
-      text: "For forty years, the only bakery in the town of Ellisfort was run by two sisters, Greta and Ilse Brandt. ______ also the town's first licensed pilots, and they sometimes delivered bread by airplane.",
-      head: "Greta and Ilse Brandt", number: "plural", clause: "who baked every loaf by hand", verbs: { singular: "was", plural: "were" }, candidates: 1, cue: "Greta and Ilse Brandt",
-      note: "The two sisters are already identified by name, so the clause only adds information about them and must be set off by a pair of commas.",
+      "scene": "sec-seedling-transplant-record",
+      "text": "A nursery moved seedlings from shallow trays into deeper pots on two successive mornings. The first group had already been watered before its move; the second was moved dry and watered afterward. Reviewing records for both mornings, the supervisor found that the ______ more difficult to lift without disturbing their roots.",
+      "head": "seedlings",
+      "number": "plural",
+      "clause": "which had been watered before transplanting",
+      "verbs": {
+        "singular": "was",
+        "plural": "were"
+      },
+      "candidates": 2,
+      "cue": "second was moved dry",
+      "note": "The watering sequence distinguishes the first group from the second. Without the restricting clause the sentence would attribute that sequence to all the reviewed seedlings.",
+      "misread": "says that the second group was also watered before transplanting"
     },
   ];
 
@@ -1645,7 +1662,7 @@
     difficulty: "Hard",
     title: "Essential or nonessential clause, decided by context",
     recognize:
-      "Whether the clause takes a pair of commas depends on the context: if it is needed to pick out which one is meant, it takes none. Either way, the verb after it agrees with the head noun before it.",
+      "Use the comparison groups in the passage to decide which people or things the relative clause identifies. Commas would change a subset claim into a claim about the whole group; the main verb must still agree with the head noun.",
     rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
     tricks: ["grammatical-but-illogical", "agreement-attractor"],
     build(t) {
@@ -1683,7 +1700,7 @@
       instance.verify = () => {
         const parts = around(topic.text);
         if (!parts || !parts.before.includes(topic.cue)) return false;
-        if (!/^(who|whom|whose|where|when)\b/.test(clause) || clause.includes(",")) return false;
+        if (!/^(who|whom|whose|which|where|when)\b/.test(clause) || clause.includes(",")) return false;
         // A nonessential clause follows a named individual (or named pair);
         // an essential one follows a common noun that the context leaves
         // ambiguous.
@@ -2146,8 +2163,7 @@
   // quotation is worked into the sentence ("integrated": an object or a
   // phrase after "as", or an essential quotation that picks out one of many,
   // so no commas), ends an introductory clause or a first independent clause
-  // ("closes": a comma after it, none before), or renames something already
-  // identified ("appositive": a pair of commas). American style puts the
+  // ("closes": a comma after it, none before). American style puts the
   // comma inside the closing quotation mark.
   const QUOTATION_TOPICS = [
     {
@@ -2191,24 +2207,36 @@
       kind: "closes", left: "as", quote: "a collection of leftovers", right: "the",
     },
     {
-      scene: "sec-slow-and-steady-motto",
-      text: "The town of Ellisfort adopted an official motto when it was founded in 1860. The town's ______ carved prominently above the main door of its oldest building.",
-      kind: "appositive", left: "motto", quote: "Slow and steady", right: "is",
+      "scene": "sec-slow-and-steady-motto",
+      "text": "The town of Ellisfort chose a motto for the restoration of its oldest building. Because the council described the project ______ volunteers agreed to repair one room at a time instead of closing the entire building.",
+      "kind": "closes",
+      "left": "as",
+      "quote": "a slow and steady renewal",
+      "right": "the"
     },
     {
-      scene: "sec-light-did-not-fail",
-      text: "On the night of the great storm of 1872, the keeper of the Brannock lighthouse wrote only one sentence in his log. That ______ now engraved on a plaque at the base of the tower.",
-      kind: "appositive", left: "sentence", quote: "The light did not fail", right: "is",
+      "scene": "sec-light-did-not-fail",
+      "text": "A lighthouse keeper wrote a brief account after a night of violent weather. Although the newspaper described the keeper ______ the account gave equal credit to the assistants who had carried fuel up the stairs.",
+      "kind": "closes",
+      "left": "as",
+      "quote": "a solitary hero",
+      "right": "the"
     },
     {
-      scene: "sec-six-bridges-slogan",
-      text: "The Harlow Marathon, first run in 1981, crosses all six of the city's bridges. The race's official ______ on every finisher's medal and on banners along the course.",
-      kind: "appositive", left: "slogan", quote: "Six bridges, one city", right: "appears",
+      "scene": "sec-six-bridges-slogan",
+      "text": "The Harlow Marathon follows a route over the city’s six bridges. When an organizer referred to the race ______ local artists began using that phrase on posters that showed the bridges in the order runners would cross them.",
+      "kind": "closes",
+      "left": "as",
+      "quote": "a tour of six bridges",
+      "right": "the"
     },
     {
-      scene: "sec-bloodchild-awards",
-      text: "Octavia E. Butler is best known for her novels, but she also wrote a small number of short stories. Her most celebrated short ______ both the Hugo and the Nebula Awards for best novelette.",
-      kind: "appositive", left: "story", quote: "Bloodchild", right: "won",
+      "scene": "sec-restored-play-review",
+      "text": "A small theater revived a play that had remained unperformed for decades. The first reviewer praised the production ______ a second reviewer emphasized the restraint of its lighting and costumes.",
+      "kind": "closes",
+      "left": "as",
+      "quote": "an exercise in quiet intensity",
+      "right": "and"
     },
   ];
 
@@ -2221,30 +2249,26 @@
     difficulty: "Medium",
     title: "Commas around a quotation",
     recognize:
-      "A quotation worked into the sentence takes no commas; one that renames something already identified is set off by a pair; a comma after a quotation can also close an introductory clause or come before “and” joining two clauses.",
+      "A quotation worked into the sentence takes no surrounding commas of its own. A comma after it can close an introductory clause or come before “and” joining two clauses.",
     rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 0, synthesis: 1, trap: 1 },
     tricks: ["neighbouring-rule", "equivalent-form"],
     build(t) {
       const topic = t.pick(QUOTATION_TOPICS);
       const { left, quote, right, kind } = topic;
-      const keyBefore = kind === "appositive" ? "comma" : "none";
+      const keyBefore = "none";
       const keyAfter = kind === "integrated" ? "none" : "comma";
       const render = (before, after) => `${left}${before === "comma" ? "," : ""} “${quote}${after === "comma" ? "," : ""}” ${right}`;
       const choices = squareOf(["before", "after"], [["comma", "none"], ["comma", "none"]], render, (before, after) => {
         const problems = [];
         if (before !== keyBefore) {
-          problems.push(kind === "appositive"
-            ? `the quotation renames the ${left}, which is already identified (there is only one), so a comma must open it`
-            : `the quotation is part of the sentence's structure (${left === "as" ? `it completes "as"` : `it follows "${left}" directly`}), so no comma comes before it`);
+          problems.push(`the quotation is part of the sentence's structure (${left === "as" ? `it completes "as"` : `it follows "${left}" directly`}), so no comma comes before it`);
         }
         if (after !== keyAfter) {
           problems.push(kind === "integrated"
             ? `nothing after the quotation calls for a comma; it would separate "${right}" from the words it belongs with`
-            : kind === "closes"
-              ? right === "and"
+            : right === "and"
                 ? `the quotation ends the first of two independent clauses joined by "and," so a comma must follow it`
-                : "the quotation ends the introductory clause, so a comma must follow it before the main clause"
-              : `the quotation that opened with a comma must close with one before "${right}"`);
+                : "the quotation ends the introductory clause, so a comma must follow it before the main clause");
         }
         return problems.length ? cap(`${problems.join("; also, ")}.`) : null;
       });
@@ -2253,22 +2277,21 @@
         closes: right === "and"
           ? `The quotation is worked into the first clause, so no comma comes before it; the clause ends with it, and a comma comes before "and," which begins a second independent clause.`
           : `The quotation is worked into the introductory clause, so no comma comes before it; the clause ends with it, so a comma follows it before the main clause.`,
-        appositive: `The quotation renames the ${left}, which is already identified, so a pair of commas sets it off.`,
       }[kind];
       const marks = `${keyBefore === "comma" ? "a comma" : "no comma"} before the quotation and ${keyAfter === "comma" ? "a comma" : "no comma"} after it`;
       const instance = multipleChoice(topic, choices, {
         explanation: `${why} So the sentence needs ${marks}.`,
         steps: [
-          "Decide whether the quotation is part of the sentence's structure or an extra name for something already identified.",
+          "Identify the verb complement or noun phrase that the quotation completes.",
           "Check what comes right after the quotation: the rest of the same clause, the end of an introductory clause, or “and” before a new clause.",
           "Put commas only where those structures call for them.",
         ],
         principles: [
           "A quotation that is grammatically part of the sentence is not set off by commas.",
-          "A quotation that renames something already identified is set off by a pair of commas; in American style, a comma after a quotation goes inside the closing quotation mark.",
+          "A comma that closes an introductory clause or separates coordinated independent clauses goes inside a preceding closing quotation mark in American style.",
         ],
         trap: "Putting a comma before every quotation out of habit, or leaving out the comma that closes an introductory clause because a quotation ends it.",
-        hint: "Is the quotation part of the sentence's structure, or an extra name for something already identified? What comes right after it?",
+        hint: "What does the quotation complete, and does a new clause begin immediately after it?",
         estimatedSeconds: 65,
       });
       instance.verify = () => {
@@ -2276,7 +2299,7 @@
         if (!parts) return false;
         const lead = sentenceLead(parts.before);
         const opensWithSub = SUBORDINATORS.includes(firstWord(lead));
-        const derived = kind === "appositive" ? "appositive" : opensWithSub || right === "and" ? "closes" : "integrated";
+        const derived = opensWithSub || right === "and" ? "closes" : "integrated";
         return derived === kind && instance.correct === render(keyBefore, keyAfter) && isSquare(instance.features);
       };
       return instance;
@@ -2738,7 +2761,1177 @@
     },
   };
 
+  // End punctuation and the next sentence's initial are independent here:
+  // both offered marks end a sentence. Direct questions alternate with
+  // declarations that report a question, without quotation punctuation.
+  const COMPLETE_QUESTION_BOUNDARY_TOPICS = [
+    {
+      scene: "sec-question-boundary-archive-shelves",
+      text: "The neighborhood archive has received more donated books than its small reading room can hold. Which books should the volunteers put on the ______ catalog will help visitors request the books that remain in storage.",
+      kind: "direct", last: "shelves", next: "the", opening: "Which books should", subject: "the volunteers",
+    },
+    {
+      scene: "sec-question-boundary-clock-bell",
+      text: "A clockmaker has repaired a toy clock, but its tiny bell still remains silent at noon. Why does the bell skip that one ______ clockmaker plans to watch the gears as the hands approach twelve.",
+      kind: "direct", last: "hour", next: "the", opening: "Why does", subject: "the bell",
+    },
+    {
+      scene: "sec-question-boundary-garden-hose",
+      text: "The garden club's new hose is too long for the hook beside the gate. Where should the volunteers hang the ______ wooden rack near the shed might provide enough room for all its coils.",
+      kind: "direct", last: "hose", next: "a", opening: "Where should", subject: "the volunteers",
+    },
+    {
+      scene: "sec-question-boundary-model-bridge",
+      text: "A model bridge stands firmly on a table until a fan starts blowing across it. How can the builders keep the bridge ______ diagonal brace may prevent the narrow frame from bending sideways.",
+      kind: "direct", last: "steady", next: "a", opening: "How can", subject: "the builders",
+    },
+    {
+      scene: "sec-question-boundary-shadow-screen",
+      text: "The final scene of a shadow play uses a second screen to make the stage appear deeper. When should the actors move that screen into ______ director wants the change to happen during a pause in the dialogue.",
+      kind: "direct", last: "place", next: "the", opening: "When should", subject: "the actors",
+    },
+    {
+      scene: "sec-question-boundary-fruit-tart",
+      text: "The kitchen has plenty of ripe pears but none of the apples listed in a tart recipe. Can the cook use pears in the ______ small trial batch will show whether the filling holds its shape after baking.",
+      kind: "direct", last: "tart", next: "a", opening: "Can", subject: "the cook",
+    },
+    {
+      scene: "sec-question-boundary-missing-sketchbook",
+      text: "Mara left her sketchbook on a bench while she washed her brushes. When she returned, the bench was empty. Mara wondered who had taken the ______ began asking the other painters whether they had seen it.",
+      kind: "reported", last: "sketchbook", next: "she", opening: "Mara wondered", embedded: "who had taken",
+    },
+    {
+      scene: "sec-question-boundary-ferry-arrival",
+      text: "A festival planner needed to meet a delivery at the island dock, but the ferry's timetable was missing. The planner asked when the next boat would ______ dock worker went inside to find the current schedule.",
+      kind: "reported", last: "arrive", next: "a", opening: "The planner asked", embedded: "when the next boat would",
+    },
+    {
+      scene: "sec-question-boundary-cabinet-rattle",
+      text: "A cabinet made in a furniture workshop rattled whenever someone closed its lowest drawer. The apprentice wanted to know why the cabinet ______ teacher suggested checking whether the back panel was loose.",
+      kind: "reported", last: "rattled", next: "his", opening: "The apprentice wanted to know", embedded: "why the cabinet",
+    },
+    {
+      scene: "sec-question-boundary-trail-fork",
+      text: "At a fork in the trail, one arrow had fallen from a wooden signpost. Lena could not tell which path led to the ______ unfolded a map before choosing between the two trails.",
+      kind: "reported", last: "overlook", next: "she", opening: "Lena could not tell", embedded: "which path led",
+    },
+    {
+      scene: "sec-question-boundary-quilt-patches",
+      text: "A sewing group had finished all but one row of a quilt and had only a few fabric squares left. The group discussed whether the remaining patches would fit the ______ discussion ended when someone spread the patches across the empty row.",
+      kind: "reported", last: "quilt", next: "their", opening: "The group discussed", embedded: "whether the remaining patches would",
+    },
+    {
+      scene: "sec-question-boundary-card-game",
+      text: "Visitors gathered around a table to learn a card game invented by their host. The guide explained how the cards should be ______ player then took a turn distributing the cards until everyone understood the opening routine.",
+      kind: "reported", last: "dealt", next: "each", opening: "The guide explained", embedded: "how the cards should be",
+    },
+  ];
+
+  const completeQuestionBoundary = {
+    id: "sec-complete-question-boundary",
+    sectionKey: "sat-reading-writing",
+    domain: DOMAIN,
+    skill: "Boundaries",
+    subskill: "sentence boundaries",
+    difficulty: "Easy",
+    title: "Ending a direct question or a report of a question",
+    recognize: "A direct question ends with a question mark. A declarative sentence reporting a question ends with a period. The next sentence begins with a capital letter after either mark.",
+    rubric: { steps: 1, concept: 0, interpretation: 0, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["neighbouring-rule"],
+    build(t) {
+      const topic = t.pick(COMPLETE_QUESTION_BOUNDARY_TOPICS);
+      const direct = topic.kind === "direct";
+      const keyMark = direct ? "question" : "period";
+      const capitalNext = topic.next.charAt(0).toUpperCase() + topic.next.slice(1);
+      const render = (mark, capital) => `${topic.last}${mark === "question" ? "?" : "."} ${capital === "yes" ? capitalNext : topic.next}`;
+      const rows = [];
+      ["question", "period"].forEach((mark) => ["yes", "no"].forEach((capital) => {
+        const problems = [];
+        if (mark !== keyMark) problems.push(direct
+          ? `The sentence beginning “${topic.opening}” directly asks a question, so it needs a question mark rather than a period.`
+          : `The sentence beginning “${topic.opening}” reports a question in a statement; it needs a period rather than a question mark.`);
+        if (capital !== "yes") problems.push(`“${capitalNext}” begins the next sentence and must be capitalized after either a period or a question mark.`);
+        rows.push([render(mark, capital), { endMark: mark, nextCapital: capital }, problems.length ? problems.join(" ") : null]);
+      }));
+      const choices = square(rows);
+      const instance = {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "text", content: topic.text },
+        stem: STEM,
+        correct: choices.correct,
+        wrong: choices.wrong,
+        features: choices.features,
+        explanation: `${direct
+          ? `“${topic.opening}” begins a direct question, so that sentence ends with a question mark.`
+          : `“${topic.opening}” begins a statement reporting a question. The embedded question does not turn the whole sentence into a direct question, so the sentence ends with a period.`} “${capitalNext}” starts a new sentence and needs a capital letter.`,
+        steps: [
+          direct
+            ? `Read the sentence beginning “${topic.opening}”: it asks a direct question, which ends with a question mark.`
+            : `Read the sentence beginning “${topic.opening}”: it reports a question, so the complete statement ends with a period.`,
+          `Capitalize “${capitalNext},” the first word of the following sentence.`,
+        ],
+        principles: ["A direct question takes a question mark; a declarative sentence that reports a question takes a period. The first word of the next sentence is capitalized after either mark."],
+        trap: direct
+          ? "Using the ordinary statement-ending period even though the sentence directly asks a question."
+          : "Treating a question word inside a statement as a reason to put a question mark at the end of that statement.",
+        hint: "Is the whole sentence asking a question, or telling you about one? Where does the following sentence begin?",
+        estimatedSeconds: 40,
+      };
+      instance.verify = () => {
+        // These explicit form checks guard the authored scenes. They do not
+        // parse arbitrary English or prove that the prose has one reading.
+        const pieces = topic.text.split(BLANK);
+        if (pieces.length !== 2) return false;
+        const lead = pieces[0].split(/(?<=[.!?])\s+/).pop();
+        const directForm = /^(?:Which books should|Why does|Where should|How can|When should|Can)\s/.test(lead);
+        const reportForm = /^(?:Mara wondered|The planner asked|The apprentice wanted to know|Lena could not tell|The group discussed|The guide explained)\s/.test(lead);
+        const derivedMark = directForm ? "question" : reportForm ? "period" : null;
+        const phrasePresent = direct ? lead.includes(topic.subject) : lead.includes(topic.embedded);
+        return topic.text.length >= 150 && topic.text.length <= 900 && lead.startsWith(topic.opening) &&
+          phrasePresent && derivedMark === keyMark && /^[a-z]+$/.test(topic.next) && /^\s\S/.test(pieces[1]) &&
+          instance.correct === render(derivedMark, "yes") && isSquare(instance.features) &&
+          new Set([instance.correct, ...instance.wrong.map(([text]) => text)]).size === 4;
+      };
+      return instance;
+    },
+  };
+
+  /* ---------------------- Coordinate adjectives and the following noun */
+
+  // Every blank contains a short, uninterrupted adjective + adjective + noun
+  // phrase. The first comma depends on whether the adjectives independently
+  // describe the noun; the second would wrongly separate an adjective from
+  // its noun. Cumulative pairs use conventional size/age/color + material or
+  // size + shape order. No list separator or optional serial comma is tested.
+  const COORDINATE_ADJECTIVE_PUNCTUATION_TOPICS = [
+    {
+      scene: "sec-adjective-theater-poster",
+      text: "The school theater club is preparing a display about its first production. Mara places a ______ beside a clean copy of the program. She leaves the damage visible so visitors can see how much the old poster has changed.",
+      first: "torn", second: "faded", noun: "poster", kind: "coordinate",
+      reason: "The poster is both torn and faded; either adjective can come first without changing which object is meant.",
+    },
+    {
+      scene: "sec-adjective-orchard-path",
+      text: "An overnight storm has delayed the orchard's outdoor painting workshop. The organizer closes the ______ beside the trees and directs the visitors onto a paved route. Several people arrive carrying easels that would be difficult to balance on the old route.",
+      first: "muddy", second: "slippery", noun: "path", kind: "coordinate",
+      reason: "The path is both muddy and slippery; the adjectives independently describe its condition.",
+    },
+    {
+      scene: "sec-adjective-attic-inventory",
+      text: "A family is sorting the contents of a house before moving. Eli enters the ______ with a notebook and begins recording what is stored there. Before carrying anything downstairs, he clears a space in which to open the boxes.",
+      first: "dusty", second: "cluttered", noun: "attic", kind: "coordinate",
+      reason: "The attic is both dusty and cluttered, two independent descriptions that can be joined with “and.”",
+    },
+    {
+      scene: "sec-adjective-bakery-tray",
+      text: "The bakery's volunteers are washing equipment after a fundraising sale. Noor soaks a ______ while another volunteer dries the clean dishes. The residue on the tray takes several minutes to loosen before she can wipe it away.",
+      first: "sticky", second: "greasy", noun: "tray", kind: "coordinate",
+      reason: "The tray is both sticky and greasy; neither adjective combines with the noun to name a special kind of tray.",
+    },
+    {
+      scene: "sec-adjective-roof-bucket",
+      text: "Rain has begun dripping through the roof of a storage shed. When Sam puts a container under the drip, water soon spreads across the floor. He replaces the ______ with a sound one and marks the damaged container for recycling.",
+      first: "cracked", second: "leaking", noun: "bucket", kind: "coordinate",
+      reason: "The bucket is both cracked and leaking; the adjectives independently state what is wrong with it.",
+    },
+    {
+      scene: "sec-adjective-pool-locker",
+      text: "The recreation center is clearing out equipment before repainting its changing rooms. Workers remove a ______ from the corner and inspect the wall behind it. They keep the lock because it still opens smoothly with its original key.",
+      first: "rusty", second: "dented", noun: "locker", kind: "coordinate",
+      reason: "The locker is both rusty and dented; either description can come first.",
+    },
+    {
+      scene: "sec-adjective-cellar-storage",
+      text: "A costume designer is looking for a place to store paper masks between performances. She rejects the ______ beneath the workshop and chooses a dry cupboard upstairs. There she can inspect the masks without carrying them through a narrow stairwell.",
+      first: "cold", second: "damp", noun: "cellar", kind: "coordinate",
+      reason: "The cellar is both cold and damp, independent conditions that can be expressed as “cold and damp.”",
+    },
+    {
+      scene: "sec-adjective-pottery-surface",
+      text: "During a pottery class, Ren compares two unfinished tiles. He sands the ______ of one tile while leaving the other untouched. He plans to place the tiles side by side so the class can feel the difference made by this extra step.",
+      first: "rough", second: "uneven", noun: "surface", kind: "coordinate",
+      reason: "The surface is both rough and uneven; the adjectives independently describe its texture and shape.",
+    },
+    {
+      scene: "sec-adjective-wooden-token-box",
+      text: "The maker of a tabletop game wants players to find its pieces quickly. She puts the tokens in a ______ and draws a matching symbol on the lid. The cards remain in a separate envelope beneath the game board.",
+      first: "small", second: "wooden", noun: "box", kind: "cumulative",
+      reason: "“Wooden box” names the object by its material, and “small” describes the size of that box; the conventional order is size before material.",
+    },
+    {
+      scene: "sec-adjective-woolen-scarf",
+      text: "The lost-property desk has received several scarves after a concert. A visitor asks for the ______ that she left on her seat. The attendant finds it in a basket and checks the initials stitched into one end before returning it.",
+      first: "red", second: "woolen", noun: "scarf", kind: "cumulative",
+      reason: "“Woolen scarf” names the object by its material, and “red” specifies its color; color precedes material in this cumulative phrase.",
+    },
+    {
+      scene: "sec-adjective-ceramic-bowl",
+      text: "Jun is rearranging a kitchen shelf after a visit to a craft market. He places a ______ beside the older dishes and moves the tall pitchers to the back. The bowl fits into a gap that had previously held a stack of napkins.",
+      first: "new", second: "ceramic", noun: "bowl", kind: "cumulative",
+      reason: "“Ceramic bowl” names the object by its material, and “new” describes its age; age precedes material in this cumulative phrase.",
+    },
+    {
+      scene: "sec-adjective-rectangular-mirror",
+      text: "A stage crew is arranging the set for a play that takes place in a tailor's shop. They hang a ______ behind the sewing table. Its broad frame also conceals the opening through which a performer will enter later in the scene.",
+      first: "large", second: "rectangular", noun: "mirror", kind: "cumulative",
+      reason: "“Rectangular mirror” identifies the object's shape, and “large” describes its size; size precedes shape in this cumulative phrase.",
+    },
+  ];
+
+  const coordinateAdjectivePunctuation = {
+    id: "sec-coordinate-adjective-punctuation",
+    sectionKey: "sat-reading-writing",
+    domain: DOMAIN,
+    skill: "Boundaries",
+    subskill: "within-sentence punctuation",
+    difficulty: "Easy",
+    title: "Commas in a short adjective phrase",
+    recognize: "Use a comma between two coordinate adjectives that independently describe the same noun. Keep cumulative adjectives together, and do not place a comma between the final adjective and its noun.",
+    rubric: { steps: 1, concept: 0, interpretation: 0, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["neighbouring-rule"],
+    build(t) {
+      const topic = t.pick(COORDINATE_ADJECTIVE_PUNCTUATION_TOPICS);
+      const coordinate = topic.kind === "coordinate";
+      const expectedBetween = coordinate ? "comma" : "none";
+      const render = (between, beforeNoun) => `${topic.first}${between === "comma" ? "," : ""} ${topic.second}${beforeNoun === "comma" ? "," : ""} ${topic.noun}`;
+      const rows = [];
+      ["comma", "none"].forEach((between) => ["comma", "none"].forEach((beforeNoun) => {
+        const problems = [];
+        if (between !== expectedBetween) problems.push(coordinate
+          ? `“${topic.first}” and “${topic.second}” independently describe “${topic.noun},” so a comma belongs between them`
+          : `“${topic.first} ${topic.second} ${topic.noun}” uses cumulative adjective order, so no comma belongs between its adjectives`);
+        if (beforeNoun === "comma") problems.push(`the comma after “${topic.second}” separates that adjective from the noun “${topic.noun}” it modifies`);
+        rows.push([
+          render(between, beforeNoun),
+          { betweenAdjectives: between, beforeNoun },
+          problems.length ? `${problems[0].charAt(0).toUpperCase()}${problems.join("; also, ").slice(1)}.` : null,
+        ]);
+      }));
+      const choices = square(rows);
+      const instance = {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "text", content: topic.text },
+        stem: STEM,
+        ...choices,
+        explanation: `${topic.reason} ${coordinate ? "A comma separates these coordinate adjectives." : "No comma separates these cumulative adjectives."} No comma separates the final adjective from its noun. The correct phrase is “${choices.correct}.”`,
+        steps: [
+          `Read “${topic.first}” and “${topic.second}” as descriptions of “${topic.noun}.” ${topic.reason}`,
+          coordinate
+            ? "Separate the independent adjectives with a comma, and keep the final adjective next to its noun without a comma."
+            : "Keep the cumulative adjectives together without a comma, and keep the final adjective next to its noun without a comma.",
+        ],
+        principles: [
+          "Coordinate adjectives independently describe the same noun and take a comma between them; adding “and” or reversing their order preserves the intended relation. Cumulative adjectives build a phrase in conventional order and are not separated by a comma.",
+          "Do not insert a comma between the last adjective in an uninterrupted noun phrase and the noun it modifies.",
+        ],
+        trap: coordinate
+          ? "Treating independent adjectives as a single cumulative description, or extending the adjective comma pattern to the noun."
+          : "Putting a comma between every descriptive word even when the adjectives form a cumulative phrase.",
+        hint: "Do both adjectives independently describe the noun, or does the first describe a unit formed by the second adjective and the noun?",
+        estimatedSeconds: 40,
+      };
+      instance.verify = () => {
+        // Structural checks only: the coordinate/cumulative classification
+        // and the natural adjective order remain editorial judgments.
+        const allChoices = [instance.correct, ...instance.wrong.map(([text]) => text)];
+        return topic.text.split(BLANK).length === 2 && topic.text.length >= 150 && topic.text.length <= 900 &&
+          ["coordinate", "cumulative"].includes(topic.kind) &&
+          [topic.first, topic.second, topic.noun].every((word) => /^[a-z]+$/.test(word)) &&
+          rows.filter((row) => row[2] === null).length === 1 && new Set(allChoices).size === 4 &&
+          instance.correct === render(expectedBetween, "none") &&
+          allChoices.every((text) => text.replace(/,/g, "") === `${topic.first} ${topic.second} ${topic.noun}`) &&
+          isSquare(instance.features);
+      };
+      return instance;
+    },
+  };
+
+  // A fixed comma after the singular head can open an appositive or separate
+  // the first two subjects of a list. Context establishes whether the two
+  // following nouns constitute the first item or are additional items.
+  // The only varying features are the closing comma and the verb's number.
+  // A fixed comma after the singular head can open an appositive or separate
+  // the first two subjects of a list. Context establishes whether the two
+  // following nouns constitute the first item or are additional items.
+  // Distributive predicates (individually/separately registered, valued,
+  // insured, etc.) prevent a redundant list of a unit and its contents from
+  // remaining true: the appositive scenes explicitly deny the corresponding
+  // individual records or properties to those contents. Both key types use
+  // these predicates, so the adverb does not signal the answer.
+  // The only varying features are the closing comma and the verb's number.
+  const APPOSITIVE_OR_LIST_MEMBER_TOPICS = [
+    {
+      scene: "sec-apposition-joint-art-entry",
+      text: "At the Fenwick fair, a woven panel and a clay relief formed one joint entry. Its registration covered only the combined work; neither object was registered on its own. The registrar kept a separate record for every entry, including this one. The ______ individually registered for judging.",
+      head: "entry", first: "a woven panel", second: "a clay relief",
+      verbs: { singular: "was", plural: "were" },
+      members: ["woven-panel", "clay-relief"], named: ["woven-panel", "clay-relief"],
+      evidence: ["formed one joint entry", "neither object was registered on its own"],
+      predicateCue: "individually registered", excludedCue: "neither object was registered on its own",
+      predicateFact: "The plural list would say that the panel and relief were individually registered, contradicting the statement that neither object was registered on its own.",
+      note: "The panel and relief constitute one entry, whose combined work has a registration record. Neither object has its own registration, so the predicate can describe only the entry as a unit.",
+    },
+    {
+      scene: "sec-apposition-recital-prize",
+      text: "The Aster music school's recital has one prize: a flute together with a music book. The donor ledger gives the combined award a line of its own among the school's donations, but neither component has a separate line. The ______ been separately recorded in the donor ledger.",
+      head: "prize", first: "a flute", second: "a music book",
+      verbs: { singular: "has", plural: "have" },
+      members: ["flute", "music-book"], named: ["flute", "music-book"],
+      evidence: ["has one prize: a flute together with a music book", "neither component has a separate line"],
+      predicateCue: "separately recorded", excludedCue: "neither component has a separate line",
+      predicateFact: "The plural list would say that the flute and book were separately recorded, but the passage explicitly denies either component its own ledger line.",
+      note: "The flute and music book together make up the prize. Only that combined award has its own ledger line; the individual components are not separately recorded.",
+    },
+    {
+      scene: "sec-apposition-stage-kit",
+      text: "For a scene set in a mine, a props manager assembled a kit containing only a lantern and a coil of rope. The checkout system assigns a barcode to the assembled kit, but neither prop has a barcode of its own. An actor must borrow the props together. The ______ individually barcoded for checkout.",
+      head: "kit", first: "a lantern", second: "a coil of rope",
+      verbs: { singular: "is", plural: "are" },
+      members: ["lantern", "rope-coil"], named: ["lantern", "rope-coil"],
+      evidence: ["containing only a lantern and a coil of rope", "neither prop has a barcode of its own"],
+      predicateCue: "individually barcoded", excludedCue: "neither prop has a barcode of its own",
+      predicateFact: "The plural list would say that the lantern and rope were individually barcoded, directly contradicting the statement that neither prop has its own barcode.",
+      note: "The lantern and rope constitute the single kit that receives a barcode. Neither prop is individually barcoded, so the final predicate must apply to the kit as a unit.",
+    },
+    {
+      scene: "sec-apposition-archive-acquisition",
+      text: "The Vale archive records each donor's contribution as one acquisition. Its newest donor supplied exactly two documents: a letter and a map. The contribution received a catalog entry, but the documents have no individual index entries. The ______ separately indexed in the archive's catalog.",
+      head: "acquisition", first: "a letter", second: "a map",
+      verbs: { singular: "is", plural: "are" },
+      members: ["letter", "map"], named: ["letter", "map"],
+      evidence: ["supplied exactly two documents: a letter and a map", "the documents have no individual index entries"],
+      predicateCue: "separately indexed", excludedCue: "the documents have no individual index entries",
+      predicateFact: "The plural list would say that the letter and map were separately indexed, although the passage states that neither has an individual index entry.",
+      note: "The letter and map form the donor's single acquisition. The acquisition has a catalog entry, while neither document has an individual entry, so only the acquisition is separately indexed.",
+    },
+    {
+      scene: "sec-apposition-wing-exhibit",
+      text: "To explain an imaginary flying creature, a student built a reconstructed wing and drew a diagram of its joints. The gallery accepted the two pieces as one exhibit and insured the combined work. Its policy provides no individual coverage for either component. The ______ individually insured under the gallery's policy.",
+      head: "exhibit", first: "a reconstructed wing", second: "a diagram of its joints",
+      verbs: { singular: "is", plural: "are" },
+      members: ["wing", "joint-diagram"], named: ["wing", "joint-diagram"],
+      evidence: ["accepted the two pieces as one exhibit", "no individual coverage for either component"],
+      predicateCue: "individually insured", excludedCue: "no individual coverage for either component",
+      predicateFact: "The plural list would say that the wing and diagram were individually insured, contradicting the policy's explicit exclusion of individual component coverage.",
+      note: "The wing and diagram form one exhibit, and the policy insures that combined work. Since neither component has individual coverage, the predicate must describe the exhibit alone.",
+    },
+    {
+      scene: "sec-apposition-auction-lot",
+      text: "At an auction of stage scenery, a clock and a compass formed lot 46; no other objects belonged to it. The valuer supplied one appraisal for every lot, assessing these two objects only as a group and issuing no appraisal for either object alone. The ______ been individually appraised for the reserve-price schedule.",
+      head: "lot", first: "a clock", second: "a compass",
+      verbs: { singular: "has", plural: "have" },
+      members: ["clock", "compass"], named: ["clock", "compass"],
+      evidence: ["a clock and a compass formed lot 46", "issuing no appraisal for either object alone"],
+      predicateCue: "individually appraised", excludedCue: "issuing no appraisal for either object alone",
+      predicateFact: "The plural list would say that the clock and compass were individually appraised, although the valuer issued no appraisal for either object alone.",
+      note: "The clock and compass constitute one lot. The lot has an individual appraisal, but neither object does, so the final predicate must apply to the lot as a unit.",
+    },
+    {
+      scene: "sec-apposition-studio-insurance",
+      text: "A studio's installation consists entirely of a wooden lattice fixed to the ceiling. A floor lamp and a bench stand nearby for visitors to use, but the artist excluded both from the artwork. The ______ individually insured under the studio's policy.",
+      head: "installation", first: "a floor lamp", second: "a bench",
+      verbs: { singular: "is", plural: "are" },
+      members: ["wooden-lattice"], named: ["floor-lamp", "bench"],
+      evidence: ["consists entirely of a wooden lattice", "the artist excluded both from the artwork"],
+      note: "The installation is the lattice; the lamp and bench are separate furnishings. The sentence therefore lists three subjects.",
+    },
+    {
+      scene: "sec-apposition-flooded-workshop",
+      text: "The workshop's latest shipment contained nothing but screws. Before it could be unpacked, a flood entered the storage room, where an old pump and a motor had been kept for years. The ______ individually inspected for water damage.",
+      head: "shipment", first: "a pump", second: "a motor",
+      verbs: { singular: "was", plural: "were" },
+      members: ["screws"], named: ["pump", "motor"],
+      evidence: ["contained nothing but screws", "an old pump and a motor had been kept for years"],
+      note: "The shipment contains screws, whereas the pump and motor were already in storage. They are two additional subjects, not the shipment's contents.",
+    },
+    {
+      scene: "sec-apposition-theater-rentals",
+      text: "The theater rents a costume consisting of a vest and trousers. For a detective role, an actor also rented a hat and a satchel, each excluded from the costume's inventory and carrying its own rental charge. The ______ separately billed on the actor's invoice.",
+      head: "costume", first: "a hat", second: "a satchel",
+      verbs: { singular: "was", plural: "were" },
+      members: ["vest", "trousers"], named: ["hat", "satchel"],
+      evidence: ["a costume consisting of a vest and trousers", "each excluded from the costume's inventory and carrying its own rental charge"],
+      note: "The costume is the vest and trousers. The hat and satchel are separately rented accessories, so the sentence lists the costume and two additional items.",
+    },
+    {
+      scene: "sec-apposition-chess-award",
+      text: "The chess club's tournament prize is a glass trophy. A local bookseller supplied a handbook for the winner, and the club secretary added a badge; neither extra item is part of the official prize. The ______ individually listed in the presentation schedule.",
+      head: "prize", first: "a handbook", second: "a badge",
+      verbs: { singular: "is", plural: "are" },
+      members: ["glass-trophy"], named: ["handbook", "badge"],
+      evidence: ["prize is a glass trophy", "neither extra item is part of the official prize"],
+      note: "The prize is the trophy. The handbook and badge are separate extras, so all three form the compound subject.",
+    },
+    {
+      scene: "sec-apposition-animal-supplies",
+      text: "A foster volunteer packs a travel kit containing only food and water for a shelter animal. A blanket and a carrier are checked out from a separate supply cabinet and recorded on their own forms. The ______ been separately logged on the loading sheet.",
+      head: "kit", first: "a blanket", second: "a carrier",
+      verbs: { singular: "has", plural: "have" },
+      members: ["food", "water"], named: ["blanket", "carrier"],
+      evidence: ["containing only food and water", "recorded on their own forms"],
+      note: "The kit contains food and water. The blanket and carrier have their own records and are two additional items on the loading sheet, so the sentence needs a plural compound subject.",
+    },
+    {
+      scene: "sec-apposition-bookbinding-delivery",
+      text: "A binder wrapped three notebooks together as a bundle. A customer then ordered a sketchpad and an address book, which were placed beside the bundle in separate sleeves. None of the wrapping was changed. The ______ individually labeled for delivery to the customer.",
+      head: "bundle", first: "a sketchpad", second: "an address book",
+      verbs: { singular: "was", plural: "were" },
+      members: ["notebook-1", "notebook-2", "notebook-3"], named: ["sketchpad", "address-book"],
+      evidence: ["wrapped three notebooks together as a bundle", "placed beside the bundle in separate sleeves"],
+      note: "The bundle holds the three notebooks. The sketchpad and address book remain separate, making three coordinated subjects rather than one bundle renamed.",
+    },
+  ];
+
+  const appositiveOrListMembers = {
+    id: "sec-appositive-or-list-members",
+    sectionKey: "sat-reading-writing",
+    domain: DOMAIN,
+    skill: "Boundaries",
+    subskill: "within-sentence punctuation",
+    difficulty: "Hard",
+    title: "A phrase that renames a unit or adds subjects to a list",
+    recognize: "Use the context to determine whether the nouns after the first comma identify the first subject or name additional subjects, and check which units have the individually assigned property. An appositive closes with a comma and leaves a singular head; a list continues directly to a plural verb.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 1, trap: 1 },
+    tricks: ["grammatical-but-illogical", "agreement-attractor"],
+    build(t) {
+      const topic = t.pick(APPOSITIVE_OR_LIST_MEMBER_TOPICS);
+      const sameMembers = topic.members.length === topic.named.length &&
+        topic.members.every((member) => topic.named.includes(member));
+      const keyComma = sameMembers ? "comma" : "none";
+      const keyNumber = sameMembers ? "singular" : "plural";
+      const renaming = `${topic.first} and ${topic.second}`;
+      const render = (closingComma, verbNumber) => `${topic.head}, ${renaming}${closingComma === "comma" ? "," : ""} ${topic.verbs[verbNumber]}`;
+      const rows = [];
+      ["comma", "none"].forEach((closingComma) => ["singular", "plural"].forEach((verbNumber) => {
+        const problems = [];
+        if (closingComma !== keyComma) {
+          problems.push(sameMembers
+            ? `Without a closing comma, the words form a list that applies the final predicate to the ${topic.head} and to both named components individually. ${topic.predicateFact}`
+            : `A closing comma makes “${renaming}” an appositive identifying the ${topic.head}, but the passage makes them separate items.`);
+        }
+        const parsedNumber = closingComma === "comma" ? "singular" : "plural";
+        if (verbNumber !== parsedNumber) {
+          problems.push(closingComma === "comma"
+            ? `With the appositive set off, the subject is the singular “${topic.head},” which requires “${topic.verbs.singular}.”`
+            : `Read as a list, the ${topic.head} and the two additional items form a plural subject, which requires “${topic.verbs.plural}”; read as an appositive, the phrase lacks its closing comma.`);
+        }
+        rows.push([render(closingComma, verbNumber), { closingComma, verbNumber }, problems.length ? problems.join(" ") : null]);
+      }));
+      const choices = square(rows);
+      const instance = {
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "text", content: topic.text },
+        stem: STEM,
+        ...choices,
+        explanation: `${topic.note} ${sameMembers
+          ? `The appositive “${renaming}” needs a closing comma. The main verb agrees with the singular head “${topic.head},” so use “${topic.verbs.singular}.”`
+          : `The comma after “${topic.head}” separates list items. No comma goes between the final subject and the main verb, and the compound subject requires “${topic.verbs.plural}.”`} The answer is “${choices.correct}.”`,
+        steps: [
+          `Establish what the passage says belongs to the ${topic.head}.`,
+          `Decide whether “${renaming}” names that same unit or adds two separate items, checking which units have the individually assigned property.`,
+          sameMembers
+            ? `Close the appositive with a comma, then make the verb agree with the singular “${topic.head}.”`
+            : "Treat the nouns as a list of subjects, leave no comma before the verb, and use the plural verb.",
+        ],
+        principles: [
+          "An appositive names the same person, thing, or unit as the noun it follows; a nonessential appositive within a sentence is set off by commas.",
+          "An appositive does not add subjects. Separate subjects joined in a list normally take a plural verb, with no comma between the final subject and that verb.",
+          "The serial comma before the final “and” in a simple list is optional; its absence alone does not make a list incorrect.",
+        ],
+        trap: sameMembers
+          ? "Counting the nouns inside an appositive as additional subjects and choosing a plural verb."
+          : "Automatically closing a pair of commas around two nouns without checking whether they identify the first item or add separate items.",
+        hint: "Use the earlier facts to count the units named in the final sentence. Are any of the nouns naming the same unit again?",
+        estimatedSeconds: 85,
+      };
+      instance.verify = () => {
+        // Membership records encode the authored reading. This check guards
+        // the grid and its declared structure; it cannot prove prose meaning.
+        const overlap = topic.named.filter((member) => topic.members.includes(member));
+        const identical = overlap.length === topic.members.length && overlap.length === topic.named.length;
+        const separate = overlap.length === 0;
+        const expected = `${topic.head}, ${renaming}${identical ? "," : ""} ${topic.verbs[identical ? "singular" : "plural"]}`;
+        const [before, after] = topic.text.split(BLANK);
+        const discriminatingPredicate = /\b(individually|separately)\b/.test(after) && (!identical ||
+          (before.includes(topic.excludedCue) && after.includes(topic.predicateCue) && typeof topic.predicateFact === "string"));
+        return (identical || separate) && topic.named.length === 2 &&
+          topic.text.split(BLANK).length === 2 && topic.text.length >= 150 && topic.text.length <= 900 &&
+          topic.evidence.every((cue) => topic.text.includes(cue)) &&
+          discriminatingPredicate &&
+          instance.correct === expected && keyComma === (identical ? "comma" : "none") &&
+          keyNumber === (identical ? "singular" : "plural") && isSquare(instance.features);
+      };
+      return instance;
+    },
+  };
+
+  const boundaryScopeTopics = [
+    {
+      scene: "sec-scope-gallery-labels",
+      context: "The labels visible in a photograph taken as the gallery's first guest arrived already give Neri's corrected dimensions. The opening ceremony began once everyone was inside. Ivo's final inspection report describes a scratch made during that ceremony.",
+      first: "Neri corrected the labels", second: "Ivo accepted the final inspection report.",
+      modifier: "before the opening ceremony began", scope: "first",
+      relation: "before", firstAt: 1, secondAt: 3, pivotAt: 2,
+      evidence: "The corrected labels were present when guests arrived, and the ceremony began later. The accepted report describes damage that occurred during the ceremony, so acceptance followed its beginning.",
+      wrongEvent: "Ivo's acceptance of a report describing damage made during the ceremony",
+    },
+    {
+      scene: "sec-scope-bound-volume",
+      context: "Toma's notes say that a decorative sheet was pasted over the volume's completed stitching. The sheet was dry when the afternoon mail arrived. That delivery brought the new stamp that the reviewer used for the volume's sole acceptance mark.",
+      first: "Toma finished the stitching", second: "the reviewer marked the volume as complete.",
+      modifier: "after the decorative sheet had dried", scope: "second",
+      relation: "after", firstAt: 1, secondAt: 3, pivotAt: 2,
+      evidence: "The stitching was complete before the sheet was pasted over it. The acceptance stamp arrived only after that sheet had dried, so the mark belongs to the later period.",
+      wrongEvent: "Toma's completion of the stitching that was already finished when the sheet was pasted on",
+    },
+    {
+      scene: "sec-scope-radio-cue",
+      context: "A student radio program's equipment log says that the announcer read the number from Priya's completed cue sheet during a prebroadcast check. Leon's single saved audio file includes a closing tone that was generated live at the end of the broadcast.",
+      first: "Priya completed the cue sheet", second: "Leon saved the audio file.",
+      modifier: "before the broadcast began", scope: "first",
+      relation: "before", firstAt: 1, secondAt: 3, pivotAt: 2,
+      evidence: "The announcer used the completed sheet in a check before the broadcast. Leon's saved file contains a tone generated at its end, so he could not have saved that file before the broadcast began.",
+      wrongEvent: "Leon's saving of a file containing a tone not generated until the broadcast's end",
+    },
+    {
+      scene: "sec-scope-archive-binding",
+      context: "A repairer's log says that an atlas was scanned once in its old binding and then fitted with a new cover. The shelf label was made from a paper sample cut from that replacement cover after the repair. A later inventory lists both products.",
+      first: "The archivist printed the shelf label", second: "the photographer scanned the atlas.",
+      modifier: "before the binding was replaced", scope: "second",
+      relation: "before", firstAt: 3, secondAt: 1, pivotAt: 2,
+      evidence: "The single scan preceded the repair. The label used material taken from the replacement cover after the repair, so only the scan belongs before the binding's replacement.",
+      wrongEvent: "the archivist's printing of a label on material taken from the replacement cover after the repair",
+    },
+    {
+      scene: "sec-scope-ceramic-panel",
+      context: "At a ceramics workshop, Vale's final glaze instructions were copied onto a card before the panel entered the kiln. The installer later used a metal bracket delivered only when the cooled panel was taken out. The workshop report records the two jobs together.",
+      first: "The installer fastened the bracket", second: "Vale finalized the glaze instructions.",
+      modifier: "after the panel had cooled", scope: "first",
+      relation: "after", firstAt: 3, secondAt: 1, pivotAt: 2,
+      evidence: "The installer could use the bracket only after its delivery with the cooled panel. Vale's instructions were already final before the panel even entered the kiln.",
+      wrongEvent: "Vale's finalizing of instructions already copied before the panel entered the kiln",
+    },
+    {
+      scene: "sec-scope-tasting-ballots",
+      context: "The kitchen team sealed its only recipe card inside an envelope before putting the bread in the oven. Each judge's ballot describes a slice cut from that loaf at the tasting, which began once the finished bread had cooled. The organizer retained both records.",
+      first: "The team sealed the recipe card", second: "the judges completed their ballots.",
+      modifier: "after the loaf had cooled", scope: "second",
+      relation: "after", firstAt: 1, secondAt: 3, pivotAt: 2,
+      evidence: "Sealing the recipe card preceded baking. The ballots describe slices served at a tasting that began only after cooling, placing completion of the ballots in the later period.",
+      wrongEvent: "the team's sealing of a card that was already sealed before baking began",
+    },
+    {
+      scene: "sec-scope-pump-shutdown",
+      context: "A maintenance log lists three events in order: water service stopped, the pressure test ended, and service resumed. The desk clerk had filed the work permit before the crew was allowed to stop service. The log also identifies the worker who performed the test.",
+      first: "Suri completed the pressure test", second: "the desk clerk filed the work permit.",
+      modifier: "during the interruption in water service", scope: "first",
+      relation: "during", firstAt: 2, secondAt: 0, startAt: 1, endAt: 3,
+      evidence: "The test ended between the stopping and resuming of service. Filing the permit had to precede the crew's shutdown, so that action falls outside the interruption.",
+      wrongEvent: "the clerk's filing of the permit required before the crew could stop service",
+    },
+    {
+      scene: "sec-scope-lantern-procession",
+      context: "For a lantern festival, a route marshal returned the completed safety checklist before the procession could leave the square. A timekeeper's single photograph shows the lanterns already on the route, with the lead group still short of the finishing arch.",
+      first: "The marshal returned the checklist", second: "the timekeeper took the photograph.",
+      modifier: "during the lantern procession", scope: "second",
+      relation: "during", firstAt: 0, secondAt: 2, startAt: 1, endAt: 3,
+      evidence: "The checklist's return was a condition for departure. The photograph shows the procession after departure and before its finish, so the photograph belongs within that interval.",
+      wrongEvent: "the marshal's return of the checklist required before the procession could depart",
+    },
+    {
+      scene: "sec-scope-printing-proof",
+      context: "The press log says that the typesetter's sole correction followed the editor's signed approval. The courier's receipt, however, was already attached to the unsigned proof when it first reached the editor. Both documents were retained in the job folder.",
+      first: "The typesetter corrected the heading", second: "the courier signed the delivery receipt.",
+      modifier: "after the editor approved the proof", scope: "first",
+      relation: "after", firstAt: 3, secondAt: 1, pivotAt: 2,
+      evidence: "The log places the sole correction after approval. The signed receipt had arrived with the still-unsigned proof, so signing the receipt preceded that approval.",
+      wrongEvent: "the courier's signing of a receipt that arrived with the still-unsigned proof",
+    },
+    {
+      scene: "sec-scope-map-seal",
+      context: "An exercise packet could be sealed only after the mapmaker had initialed every route on its map. The captain's first compass setting was copied from an instruction card accessible only when the packet was later opened. The exercise report names both participants.",
+      first: "The captain set the compass", second: "the mapmaker initialed the routes.",
+      modifier: "before the packet was sealed", scope: "second",
+      relation: "before", firstAt: 3, secondAt: 1, pivotAt: 2,
+      evidence: "Initialing all routes was required before sealing. The captain obtained the setting from a card accessible only after the sealed packet was reopened, so setting the compass came later.",
+      wrongEvent: "the captain's setting of the compass from instructions accessible only after the packet was reopened",
+    },
+    {
+      scene: "sec-scope-stage-blackout",
+      context: "The rehearsal's cue log places the stagehand's confirmation between the lights going out and their return. That confirmation was sent immediately upon completion of the prop swap. The pianist's signed attendance slip had been collected before the first lighting cue.",
+      first: "The stagehand completed the prop swap", second: "the pianist signed the attendance slip.",
+      modifier: "during the stage blackout", scope: "first",
+      relation: "during", firstAt: 2, secondAt: 0, startAt: 1, endAt: 3,
+      evidence: "The confirmation sent at completion falls between lights-out and their return. The attendance slip was already signed and collected before the lighting sequence began.",
+      wrongEvent: "the pianist's signing of a slip already collected before the first lighting cue",
+    },
+    {
+      scene: "sec-scope-telescope-cover",
+      context: "In a model observatory demonstration, opening the dome started a timer and closing it stopped the timer. A visitor's one drawing bears a completion timestamp between those two readings. The operator's checklist had to be signed before the opening mechanism would unlock.",
+      first: "The operator signed the checklist", second: "the visitor finished the drawing.",
+      modifier: "while the dome was open", scope: "second",
+      relation: "during", firstAt: 0, secondAt: 2, startAt: 1, endAt: 3,
+      evidence: "The drawing's completion timestamp falls between the opening and closing readings. The checklist's signature was required before the opening mechanism would unlock, so signing preceded that interval.",
+      wrongEvent: "the operator's signing of a checklist required to unlock the still-closed dome",
+    },
+  ].map((topic) => {
+    const w1 = topic.first.split(" ").pop();
+    const w2 = topic.second.split(" ")[0];
+    return Object.assign({}, topic, {
+      w1, w2,
+      text: `${topic.context} ${topic.first.slice(0, -w1.length)}${BLANK}${topic.second.slice(w2.length)}`,
+    });
+  });
+
+  const boundaryModifierScope = {
+    id: "sec-boundary-modifier-scope",
+    sectionKey: "sat-reading-writing",
+    domain: DOMAIN,
+    skill: "Boundaries",
+    subskill: "sentence boundaries",
+    difficulty: "Hard",
+    title: "Place a clause boundary to preserve a temporal modifier's scope",
+    recognize: "A temporal phrase can end one independent clause or introduce the next. Identify which event the passage places in the stated period, then keep the phrase inside that event's clause by putting the semicolon on its other side.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 1, trap: 1 },
+    tricks: ["grammatical-but-illogical", "comma-splice"],
+    build(t) {
+      const topic = t.pick(boundaryScopeTopics);
+      const marks = { comma: ",", semicolon: ";" };
+      const render = (before, after) => `${topic.w1}${marks[before]} ${topic.modifier}${marks[after]} ${topic.w2}`;
+      const keyBefore = topic.scope === "first" ? "comma" : "semicolon";
+      const keyAfter = topic.scope === "first" ? "semicolon" : "comma";
+      const rows = [];
+      ["comma", "semicolon"].forEach((before) => ["comma", "semicolon"].forEach((after) => {
+        let reason = null;
+        if (before === after) {
+          reason = before === "comma"
+            ? `The clauses “${topic.first}” and “${topic.second.slice(0, -1)}” can each stand alone. Commas around “${topic.modifier}” leave them joined by only a comma, creating a comma splice.`
+            : `The words “${topic.modifier}” cannot stand alone as an independent clause. Semicolons on both sides would isolate that dependent element between two clause boundaries.`;
+        } else if (before !== keyBefore) {
+          reason = `This punctuation is grammatical, but it makes “${topic.modifier}” describe ${topic.wrongEvent}. That timing conflicts with the passage. ${topic.evidence}`;
+        }
+        rows.push([render(before, after), { beforeModifier: before, afterModifier: after }, reason]);
+      }));
+      const choices = square(rows);
+      const target = topic.scope === "first" ? topic.first : topic.second.slice(0, -1);
+      const instance = Object.assign({
+        responseType: "multiple-choice",
+        scene: topic.scene,
+        stimulus: { type: "text", content: topic.text },
+        stem: STEM,
+        explanation: `${topic.evidence} Thus “${topic.modifier}” modifies “${target}.” ${topic.scope === "first" ? "A comma introduces the final temporal supplement, and the semicolon after it separates the two independent clauses." : "The semicolon ends the first independent clause, and the temporal modifier introduces the second clause with a comma."} The correct completion is “${choices.correct}.”`,
+        steps: [
+          `Find the two independent clauses: “${topic.first}” and “${topic.second.slice(0, -1)}.”`,
+          `Reconstruct the event order from the surrounding evidence. ${topic.evidence}`,
+          `Keep “${topic.modifier}” in the ${topic.scope} clause: put the semicolon ${topic.scope === "first" ? "after" : "before"} the modifier and the comma on the other side.`,
+        ],
+        principles: [
+          "A semicolon separates independent clauses; a comma alone cannot join them.",
+          "A temporal supplement may follow its clause or introduce it. Moving a clause boundary across that modifier changes which event it describes.",
+          "A grammatical completion must preserve the event relationships established by the passage.",
+        ],
+        trap: "Automatically placing the semicolon at one side of a movable modifier can produce a grammatical sentence that assigns the stated time to the wrong event.",
+        hint: "Reconstruct when each of the two actions occurred. Which action can belong to the period named in the choices?",
+        estimatedSeconds: 90,
+      }, choices);
+      instance.verify = () => {
+        // These ordinal times encode the authored reading; they cannot prove
+        // that the prose establishes it. Independent semantic review is still
+        // required. The guard checks the encoding, text, key, and choice grid.
+        const inPeriod = (at) => topic.relation === "before" ? at < topic.pivotAt
+          : topic.relation === "after" ? at > topic.pivotAt
+            : topic.relation === "during" && at > topic.startAt && at < topic.endAt;
+        const firstFits = inPeriod(topic.firstAt);
+        const secondFits = inPeriod(topic.secondAt);
+        const semanticScope = firstFits && !secondFits ? "first" : secondFits && !firstFits ? "second" : null;
+        const correctBefore = semanticScope === "first" ? "comma" : "semicolon";
+        const correctAfter = semanticScope === "first" ? "semicolon" : "comma";
+        const [beforeBlank, afterBlank] = topic.text.split(BLANK);
+        return semanticScope === topic.scope &&
+          topic.text.split(BLANK).length === 2 && topic.text.length >= 150 && topic.text.length <= 900 &&
+          beforeBlank.endsWith(topic.first.slice(0, -topic.w1.length)) &&
+          `${topic.w2}${afterBlank}` === topic.second &&
+          rows.filter((row) => row[2] === null).length === 1 &&
+          new Set(rows.map((row) => row[0])).size === 4 &&
+          instance.correct === render(correctBefore, correctAfter) && isSquare(instance.features);
+      };
+      return instance;
+    },
+  };
+
+  // The punctuation grid also occurs in temporal-modifier and however
+  // attachment, but this family requires reconstructing a source's position:
+  // quoting, correcting, or rejecting a claim is not endorsing that claim.
+  const sourceAttributionTopics = [
+    {
+      scene: "sec-source-scope-painted-border",
+      context: "Reviewing a dealer's catalogue, Elin quoted its claim that a canvas's painted border was a later addition, then objected that the border belonged to the original design. Elsewhere, she called the top coating a veil over an earlier sketch. A subsequent layer scan showed that the dealer had been right about the border.",
+      first: "The coating hid an earlier sketch", second: "the border was a later addition.",
+      attribution: "according to Elin", scope: "first",
+      source: "Elin's review", endorsed: "the coating hid an earlier sketch", rejected: "the border was a later addition",
+      evidence: "Elin's veil description supports the claim about the coating. The later-addition claim appears in her review as the dealer's position, which she rejects; the subsequent scan, not Elin's position, supports it.",
+    },
+    {
+      scene: "sec-source-scope-garden-plan",
+      context: "In his garden history, Neri reproduced an early visitor's description of a curved path but called it a mistaken impression of a straight route. He interpreted the benches facing the pond as evidence of a retreat designed for readers. An erased curve recovered from the original plan has since vindicated the visitor.",
+      first: "The original path was curved", second: "the pond was intended as a setting for reading.",
+      attribution: "in Neri's interpretation", scope: "second",
+      source: "Neri's garden history", endorsed: "the pond was intended as a setting for reading", rejected: "the original path was curved",
+      evidence: "The visitor, not Neri, described a curved path: Neri rejects that description even though new evidence supports it. Neri's own interpretation of the benches supports the reading-retreat claim.",
+    },
+    {
+      scene: "sec-source-scope-motor-demonstration",
+      context: "At a workshop demonstration, Suri repeated a spectator's assertion that the older motor was faster, then held up a chart to dismiss it. Asked about the lowered curtain, she pointed to the glare that had vanished from the control panel. The chart was later found to have its motor labels reversed, confirming the spectator's assertion.",
+      first: "Lowering the curtain reduced glare", second: "the older motor was faster.",
+      attribution: "as Suri explained", scope: "first",
+      source: "Suri's explanation at the demonstration", endorsed: "lowering the curtain reduced glare", rejected: "the older motor was faster",
+      evidence: "Suri identifies the vanished glare as the curtain's effect. She repeats the spectator's speed claim in order to dismiss it; the later correction of the chart establishes that claim despite her explanation.",
+    },
+    {
+      scene: "sec-source-scope-manuscript-hands",
+      context: "Reviewer Varo defended the dating of a manuscript to Sela's mature career. His review reproduced a rival's phrase, 'the work of a single scribe,' only to call it incompatible with the two distinct sets of letter forms. A newly discovered bill places the copying in Sela's apprenticeship instead.",
+      first: "The manuscript was copied during Sela's apprenticeship", second: "it contains the work of two scribes.",
+      attribution: "as Varo argued", scope: "second",
+      source: "Varo's review", endorsed: "the manuscript contains the work of two scribes", rejected: "the manuscript was copied during Sela's apprenticeship",
+      evidence: "Varo rejects the rival's single-scribe attribution because he identifies two sets of letter forms. The apprenticeship date comes from the new bill and conflicts with the mature-career date Varo defended.",
+    },
+    {
+      scene: "sec-source-scope-troupe-minutes",
+      context: "A theater troupe's minutes preserve a motion favoring the larger hall, followed by the vote defeating it in favor of the smaller one. In those same minutes, 'outdoors' is crossed out of the account of the first performance and replaced with 'inside the hall.' A dated photograph has now established that the crossed-out location was accurate.",
+      first: "The troupe preferred the smaller hall", second: "its first performance took place outdoors.",
+      attribution: "according to the corrected minutes", scope: "first",
+      source: "the corrected minutes", endorsed: "the troupe preferred the smaller hall", rejected: "the first performance took place outdoors",
+      evidence: "The minutes record a defeated proposal for the larger hall and a successful vote for the smaller one. Their correction explicitly places the first performance indoors; the photograph restores the crossed-out outdoor location.",
+    },
+    {
+      scene: "sec-source-scope-model-keel",
+      context: "Model maker Ivo's reply to a customer quotes the customer's description of a hollow hull, then insists that the hull is solid. The reply also acknowledges the customer's complaint that a replacement keel, rather than the original, is now attached. Imaging of the surviving model supports the customer's description of the hull.",
+      first: "The model's hull is hollow", second: "its attached keel is a replacement.",
+      attribution: "as Ivo's reply acknowledges", scope: "second",
+      source: "Ivo's reply", endorsed: "the attached keel is a replacement", rejected: "the model's hull is hollow",
+      evidence: "Ivo acknowledges the replacement keel but disputes the hollow hull. The customer's words are quoted in the reply without being accepted; imaging, rather than Ivo's account, supports those words.",
+    },
+    {
+      scene: "sec-source-scope-play-finale",
+      context: "In her review of a school play, Toma quoted a critic who called the final speech a private monologue, then pointed to its repeated requests for spectators to answer aloud. She nevertheless accepted the director's assurance that every musical phrase came from a fixed score. A rehearsal recording later revealed substantial improvisation.",
+      first: "The final speech invited audience participation", second: "some of the music was improvised.",
+      attribution: "in Toma's reading", scope: "first",
+      source: "Toma's review", endorsed: "the final speech invited audience participation", rejected: "some of the music was improvised",
+      evidence: "Toma uses the requests for spoken responses to challenge the private-monologue reading. She accepts the assurance that all musical phrases were fixed, so the improvisation established by the recording cannot be presented as her position.",
+    },
+    {
+      scene: "sec-source-scope-textile-strips",
+      context: "In a textile catalogue, Oren reproduced an older claim that two strips came from the same cloth, commenting that similar dye had been mistaken for common fabric. Elsewhere, he cited the maker's instructions to reject the idea that the strips' alternating directions were accidental. A newly matched seam proves that the older fabric claim was right.",
+      first: "The strips were cut from the same cloth", second: "their alternating directions were deliberate.",
+      attribution: "according to Oren", scope: "second",
+      source: "Oren's catalogue", endorsed: "the strips' alternating directions were deliberate", rejected: "the strips were cut from the same cloth",
+      evidence: "Oren quotes the common-fabric claim to criticize it; the new seam evidence overturns his criticism. His rejection of an accidental arrangement, based on the maker's instructions, supports deliberate alternation.",
+    },
+    {
+      scene: "sec-source-scope-workshop-clock",
+      context: "A guide's claim that a workshop clock rang only for emergencies appears in Ada's notebook beside her objection that the bell sounded at every scheduled meal. The notebook dismisses an old account of self-advancing hands as a fable. Conservators have since uncovered the automatic drive described in that old account.",
+      first: "The bell signaled the workers' meals", second: "the hands advanced automatically.",
+      attribution: "as Ada's notebook reports", scope: "first",
+      source: "Ada's notebook", endorsed: "the bell signaled the workers' meals", rejected: "the hands advanced automatically",
+      evidence: "The emergency-only claim belongs to the quoted guide; Ada counters it with the regular meal signal. The notebook rejects automatic movement, which the conservators' discovery subsequently establishes.",
+    },
+    {
+      scene: "sec-source-scope-map-reply",
+      context: "Cartographer Leto's letter quotes a colleague's interpretation of a blue line as a footpath and dotted marks as proposed wells. Leto replies that the colleague is correct only about the dots: the line, Leto insists, marks a seasonal stream. The mapmaker's recovered color key now confirms the colleague's interpretation of the blue line as well.",
+      first: "The blue line depicts a footpath", second: "the dotted marks record proposed wells.",
+      attribution: "according to Leto's letter", scope: "second",
+      source: "Leto's letter", endorsed: "the dotted marks record proposed wells", rejected: "the blue line depicts a footpath",
+      evidence: "The quoted colleague supplies both interpretations, but Leto accepts only the one about the wells. The recovered key, not Leto's own position, establishes that the blue line is a footpath.",
+    },
+    {
+      scene: "sec-source-scope-pressure-dial",
+      context: "In the final version of Eda's workshop report, a dial described in the draft as a temperature gauge becomes a pressure gauge. The final version retains the draft's restriction that the valve can be adjusted only with the apparatus stopped. A recent demonstration of the same apparatus has disproved that restriction.",
+      first: "The dial measured pressure", second: "the valve could be adjusted while the apparatus was running.",
+      attribution: "as Eda's final report states", scope: "first",
+      source: "Eda's final report", endorsed: "the dial measured pressure", rejected: "the valve could be adjusted while the apparatus was running",
+      evidence: "The final report changes the dial's function to pressure measurement but retains the ban on adjustment during operation. The demonstration establishes the adjustment claim in opposition to that retained restriction.",
+    },
+    {
+      scene: "sec-source-scope-revised-program",
+      context: "A concert program initially called the closing tune borrowed. An erratum replaced that description with 'newly composed' while leaving intact the explanation that the opening solo's pauses were deliberate imitations of uncertainty. A musician has since found the entire closing tune in an older score.",
+      first: "The closing tune was borrowed", second: "the opening solo was intended to sound hesitant.",
+      attribution: "as the corrected program explains", scope: "second",
+      source: "the corrected program", endorsed: "the opening solo was intended to sound hesitant", rejected: "the closing tune was borrowed",
+      evidence: "The corrected program retains the explanation of intentionally uncertain pauses but replaces the borrowed-tune claim. The newly located older score supports the original description, not the corrected program's position.",
+    },
+  ].map((topic) => {
+    const lastWord = topic.first.split(" ").pop();
+    const firstWord = topic.second.split(" ")[0];
+    return Object.assign({}, topic, {
+      lastWord, firstWord,
+      text: `${topic.context} ${topic.first.slice(0, -lastWord.length)}${BLANK}${topic.second.slice(firstWord.length)}`,
+    });
+  });
+
+  const sourceAttributionScope = {
+    id: "sec-source-attribution-scope", sectionKey: "sat-reading-writing", domain: DOMAIN,
+    skill: "Boundaries", subskill: "sentence boundaries", difficulty: "Hard",
+    title: "Preserve a source's position across a clause boundary",
+    recognize: "Reconstruct what a source endorses rather than assigning every quotation or superseded draft to that source's position. Keep the attribution with the claim the source actually supports; a neighboring claim can be established by other evidence while contradicting the source.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 1, trap: 1 },
+    tricks: ["misattributed-view", "grammatical-but-illogical", "comma-splice"],
+    build(t) {
+      const topic = t.pick(sourceAttributionTopics);
+      const marks = { comma: ",", semicolon: ";" };
+      const render = (before, after) => `${topic.lastWord}${marks[before]} ${topic.attribution}${marks[after]} ${topic.firstWord}`;
+      const keyBefore = topic.scope === "first" ? "comma" : "semicolon";
+      const keyAfter = topic.scope === "first" ? "semicolon" : "comma";
+      const rows = [];
+      ["comma", "semicolon"].forEach((before) => ["comma", "semicolon"].forEach((after) => {
+        let reason = null;
+        if (before === after) {
+          reason = before === "comma"
+            ? `Both “${topic.first}” and “${topic.second.slice(0, -1)}” are independent clauses. Commas around the attribution leave those clauses joined by only a comma, producing a comma splice.`
+            : `“${topic.attribution}” is a source-attribution supplement, not an independent clause. Two semicolons strand it between clause boundaries.`;
+        } else if (before !== keyBefore) {
+          reason = `This punctuation is grammatical, but it attributes the claim that ${topic.rejected} to ${topic.source}. The source rejects that claim. ${topic.evidence}`;
+        }
+        rows.push([render(before, after), { beforeAttribution: before, afterAttribution: after }, reason]);
+      }));
+      const choices = square(rows);
+      const instance = {
+        responseType: "multiple-choice", scene: topic.scene,
+        stimulus: { type: "text", content: topic.text }, stem: STEM,
+        ...choices,
+        explanation: `${topic.evidence} The attribution therefore belongs with the ${topic.scope} clause, which says that ${topic.endorsed}. Put the semicolon ${topic.scope === "first" ? "after" : "before"} the attribution to separate the two independent clauses: “${choices.correct}.”`,
+        steps: [
+          `Identify the two complete claims: “${topic.first}” and “${topic.second.slice(0, -1)}.”`,
+          `Separate the source's own position from quoted objections, rejected claims, or superseded wording. ${topic.evidence}`,
+          `Keep “${topic.attribution}” inside the ${topic.scope} clause, using a comma to attach it and a semicolon to separate the other complete claim.`,
+        ],
+        principles: [
+          "A source-attribution supplement can end one clause or introduce the next; moving the clause boundary changes which claim is attributed to the source.",
+          "A writer who quotes, disputes, or corrects a statement does not thereby endorse that statement. An attribution must preserve the source's position even when other evidence favors a different position.",
+          "A semicolon can separate two independent clauses. A comma alone cannot do so, and a source-attribution supplement cannot stand alone between semicolons.",
+        ],
+        trap: "Treating a claim found in a source's quotation or earlier draft as the source's own position, or attributing a later discovery to a source that actually rejected it.",
+        hint: "For each final claim, identify whose position it represents. Does the named source accept the claim, or merely reproduce it before disputing it?",
+        estimatedSeconds: 95,
+      };
+      instance.verify = () => {
+        // Structural checks and authored position data cannot independently
+        // prove the attribution reading. Independent semantic review is needed.
+        const [lead, tail] = topic.text.split(BLANK);
+        const sourceClaim = topic.scope === "first" ? topic.first : topic.second.slice(0, -1);
+        return topic.text.split(BLANK).length === 2 && topic.text.length >= 150 && topic.text.length <= 900 &&
+          ["first", "second"].includes(topic.scope) && topic.endorsed !== topic.rejected &&
+          lead.endsWith(topic.first.slice(0, -topic.lastWord.length)) && `${topic.firstWord}${tail}` === topic.second &&
+          sourceClaim.length > 15 && topic.context.length > 150 &&
+          rows.filter((row) => row[2] === null).length === 1 && new Set(rows.map((row) => row[0])).size === 4 &&
+          instance.correct === render(keyBefore, keyAfter) && isSquare(instance.features);
+      };
+      return instance;
+    },
+  };
+
+  // The comma/semicolon grid is shared with temporal and source attachment.
+  // Here the semantic decision is which universal claim has counterexamples:
+  // the named subset must be excluded from that claim, not the neighboring one.
+  const exceptionScopeTopics = [
+    {
+      scene: "sec-exception-scope-clock-models",
+      context: "A workshop sets its clock models to a reference before displaying them. Their mechanisms stay synchronized with that reference while their springs retain tension but stop if a spring runs down. The models have one-day or seven-day reserves. Rocking stands keep their automatic winding weights moving; stationary stands leave those weights idle. Both reserves appear on both kinds of stand. An attendant replenishes any reserve the stand cannot renew just before it runs out.",
+      first: "All the workshop models keep accurate time", second: "none of the workshop models needs an attendant to wind it each day.",
+      exception: "except for the one-day models on stationary stands", scope: "second",
+      evidence: "Rocking stands renew their models' reserves; where a stand cannot do so, the attendant intervenes before the spring loses tension. That continued tension preserves the synchronization established at the start. On a stationary stand, however, a one-day reserve makes the attendant's intervention daily, whereas a seven-day reserve does not. The named group therefore keeps accurate time through daily attention rather than being exempt from that attention.",
+      groups: [
+        { name: "one-day models on rocking stands", excluded: false, first: true, second: true },
+        { name: "seven-day models on rocking stands", excluded: false, first: true, second: true },
+        { name: "seven-day models on stationary stands", excluded: false, first: true, second: true },
+        { name: "one-day models on stationary stands", excluded: true, first: true, second: false },
+      ],
+    },
+
+    {
+      scene: "sec-exception-scope-seed-storage",
+      context: "For a storage trial, viable seeds received a soft coating that let shoots through but hardened in damp air and then blocked them. Paper packets admitted air; sealed jars did not. Both containers were filled dry and kept in either a dry cupboard or a damp cellar before sowing. Cellar packets lost their paper batch labels but remained in numbered trays. A dry shelf plan linked tray numbers to batch codes. Storage entries for the trial's batches were indexed by those codes; the other labels remained readable.",
+      first: "All the seed lots could produce shoots after storage", second: "every seed lot can be matched to its storage record.",
+      exception: "except for the lots in cellar packets", scope: "first",
+      evidence: "The cellar supplies damp air, and packets admit that air to the coating. Its hardening blocks shoots, while dry cupboard air and sealed jars avoid that combination. Although the cellar packets' paper labels are lost, their tray numbers lead through the shelf plan to batch codes and then to register entries. Thus the named lots fail the shoot-production claim but remain traceable to their storage records.",
+      groups: [
+        { name: "cupboard packets or jars", excluded: false, first: true, second: true },
+        { name: "cellar jars", excluded: false, first: true, second: true },
+        { name: "cellar packets", excluded: true, first: false, second: true },
+      ],
+    },
+
+    {
+      scene: "sec-exception-scope-strobe-wheel",
+      context: "A camera focused on a wheel with identical, evenly spaced spokes takes photographs at slow and fast shutter settings. Each exposure uses two brief flashes and no other light. The wheel turns one spoke spacing between flashes but moves too little during either flash to register. A front curtain uncovers the sensor from top to bottom; a rear curtain covers it in the same direction. At slow settings the rear waits until both flashes finish. At fast settings it starts before the front finishes. The flashes occur just after the front reaches the bottom, before the rear reaches it. The wheel fills the frame.",
+      first: "All the photographs show the entire wheel",
+      second: "none of the photographs shows blurred or doubled spokes.",
+      exception: "except for those taken at fast settings",
+      scope: "first",
+      evidence: "At fast settings, the rear curtain is already covering the sensor from the top when the front reaches the bottom. Both flashes occur after that point and before the rear reaches the bottom, so they expose only a lower portion of the sensor. Since the wheel fills the frame and there is no other light, part of the wheel is absent. At slow settings, the front has finished uncovering the sensor and the rear has not begun covering it during either flash, so the whole wheel is recorded. The wheel moves too little within a flash to blur a spoke. Between flashes, each spoke moves into the former position of its identical neighbor, so the two illuminated patterns coincide wherever both are recorded. Darkness between flashes prevents the intervening motion from leaving a trail. Thus neither setting produces blurred or doubled spokes, even though fast settings leave part of the wheel unrecorded.",
+      groups: [
+        {
+          name: "photographs taken at slow settings",
+          excluded: false,
+          first: true,
+          second: true
+        },
+        {
+          name: "photographs taken at fast settings",
+          excluded: true,
+          first: false,
+          second: true
+        }
+      ]
+    },
+    {
+      scene: "sec-exception-scope-parcel-transfer",
+      context: "At a depot, boxes enter a belt with an address on either the top or the leading end. A roller tips each box rightward relative to the first belt's travel, making its top the right-hand face. A transfer then slides each box sideways to the right, without rotating it, onto a second belt running in that same direction. A reader there scans the left-hand face relative to that belt's travel. Readable addresses send boxes into the matching destination chutes. An unread box follows a loop that turns its leading face toward the reader and rejoins the second belt just before it.",
+      first: "All the boxes reach their addressed destination chutes",
+      second: "none of the boxes passes the reader more than once.",
+      exception: "except for the boxes initially addressed on top",
+      scope: "second",
+      evidence: "Tipping moves each top address to the box's right-hand face. Because the next belt carries the box to its former right without rotating it, that face becomes the leading face, while the original leading end becomes the left-hand face. The reader therefore reads the original end addresses on the first pass but misses the original top addresses. The return loop turns those now-leading addresses toward the reader and brings them back before it, so they are read on a second pass and sent to their matching chutes. Thus every box reaches its addressed chute, but the boxes initially addressed on top pass the reader twice.",
+      groups: [
+        {
+          name: "boxes initially addressed on their leading ends",
+          excluded: false,
+          first: true,
+          second: true
+        },
+        {
+          name: "boxes initially addressed on top",
+          excluded: true,
+          first: true,
+          second: false
+        }
+      ]
+    },
+    {
+      scene: "sec-exception-scope-cast-handles",
+      context: "A workshop presses wax against raised lettering on a block to decorate curved handle patterns. Each pattern surrounds a salt rod with exposed ends. Ceramic packed around each pattern projects into its hollows and recedes around its projections. Heating drains out the wax, leaving the salt and ceramic intact. Molten metal fills every connected empty cavity and then sets. One batch of molds is washed and dried before pouring; the other is washed after the metal sets. Water dissolves salt but leaves ceramic and metal intact. The exposed rod ends sit in openings on top of each mold. Finally, the ceramic is broken away.",
+      first: "Every finished handle has an open channel",
+      second: "all the handles bear recessed lettering.",
+      exception: "except for the handles whose molds were washed before pouring",
+      scope: "first",
+      evidence: "At pouring, early washing has removed the salt rods and heating has removed the wax. Both connected spaces are empty, so molten metal enters both and sets where the channels would have been. In the other batch, salt occupies that route while the metal sets around it; the later wash removes the salt to leave an open channel. The block's raised letters first make recesses in the wax. Ceramic enters those recesses and remains there after the wax drains out, so metal sets around ceramic projections. Removing the ceramic exposes recessed letters in either batch. The early wash therefore changes the interior channel without reversing the exterior lettering.",
+      groups: [
+        {
+          name: "handles whose molds were washed after the metal set",
+          excluded: false,
+          first: true,
+          second: true
+        },
+        {
+          name: "handles whose molds were washed before pouring",
+          excluded: true,
+          first: false,
+          second: true
+        }
+      ]
+    },
+    {
+      scene: "sec-exception-scope-loan-abstracts",
+      context: "For each annual loan account, an archive has either a bound ledger or a loose abstract, never both. Debt changed only through lending, repayment, and added interest. Each record gives opening and closing debt. Ledgers retain totals lent and repaid. To make abstracts, a clerk subtracted the same unrecorded sum from both totals, copied the remainders, and left the balances unchanged. No other records survive.",
+      first: "All the records allow the year's total lending to be calculated",
+      second: "every record allows the year's interest charge to be calculated.",
+      exception: "except for the loose abstracts",
+      scope: "first",
+      evidence: "Adding the canceled sum back to both remainder columns would produce the original lending and repayment totals. Several canceled sums could produce the same surviving abstract: increasing both original totals equally would leave their difference, and therefore the opening-to-closing debt change, unchanged. The balances thus cannot identify the gross lending total in an abstract. However, lending minus repayment is unchanged by the clerk's subtraction. Subtracting that net amount from the increase in debt isolates the interest charge. This works with the ledgers' original totals and the abstracts' remainders alike. The abstracts therefore prevent recovery of gross lending, not recovery of interest.",
+      groups: [
+        {
+          name: "bound ledgers",
+          excluded: false,
+          first: true,
+          second: true
+        },
+        {
+          name: "loose abstracts",
+          excluded: true,
+          first: false,
+          second: true
+        }
+      ]
+    },
+    {
+      scene: "sec-exception-scope-tape-aliasing",
+      context: "In a digitizing trial, tapes recorded at normal or half speed contain a 500-hertz reference tone and a test tone of either 1,000 or 2,000 hertz. Both tests occur at both speeds. Transfer plays every tape at normal speed; doubling playback speed doubles its tones' frequencies. The digitizer samples 6,000 times a second. Tones below 3,000 hertz register unchanged, but those between 3,000 and 6,000 register at 6,000 minus their transferred frequency. Copies from half-speed tapes are finally played at half the transfer rate, halving their registered frequencies.",
+      first: "All copies reproduce the reference tone at its original pitch",
+      second: "every copy reproduces its test tone at its original pitch.",
+      exception: "except for the copies of half-speed tapes with 2,000-hertz test tones",
+      scope: "second",
+      evidence: "A half-speed tape's 500-hertz reference becomes 1,000 hertz during normal-speed transfer. The digitizer registers that frequency unchanged, and the final halving returns it to 500 hertz. Normal-speed tapes leave the reference at 500 hertz throughout. The named tapes' 2,000-hertz test tones become 4,000 hertz during transfer. The digitizer therefore registers them at 6,000 minus 4,000, or 2,000 hertz; final playback then halves that registered frequency to 1,000 hertz, not the original 2,000. The digitizer leaves the other test tones unchanged: a half-speed tape's lower test reaches 2,000 hertz and returns to 1,000, while both tests on normal-speed tapes retain their original frequencies. Thus every copy reproduces its reference at the original pitch, but the named copies reproduce their test tone at the wrong pitch.",
+      groups: [
+        {
+          name: "copies of normal-speed tapes with 1,000-hertz test tones",
+          excluded: false,
+          first: true,
+          second: true
+        },
+        {
+          name: "copies of normal-speed tapes with 2,000-hertz test tones",
+          excluded: false,
+          first: true,
+          second: true
+        },
+        {
+          name: "copies of half-speed tapes with 1,000-hertz test tones",
+          excluded: false,
+          first: true,
+          second: true
+        },
+        {
+          name: "copies of half-speed tapes with 2,000-hertz test tones",
+          excluded: true,
+          first: true,
+          second: false
+        }
+      ]
+    },
+    {
+      scene: "sec-exception-scope-sapling-bands",
+      context: "A weeklong trial gave each sapling one leafy branch, either above or below a marked stem band. Both positions occurred in each of two groups: bands left intact and bands stripped of bark without damage to the wood. The branches produced sugar that traveled to roots only through continuous bark. Roots used incoming sugar first; without it, they converted stored starch to sugar. Their stores exceeded a week's demand. Sugar powered root uptake of minerals, which then traveled through wood to shoot tips.",
+      first: "All the saplings supplied their shoot tips with newly absorbed minerals",
+      second: "none of the saplings converted root starch to sugar.",
+      exception: "except for the stripped-band saplings with branches above the band",
+      scope: "second",
+      evidence: "A leafy branch above a stripped band is separated from the roots by a gap in the bark, so its sugar cannot reach them. Those roots must convert stored starch to sugar. A branch below the band still has a continuous bark path to the roots, and intact bands interrupt neither branch position, so the other roots use incoming sugar. The stored starch lasts beyond the trial, allowing the separated roots to power mineral uptake throughout it. The other roots power uptake with incoming sugar. Because stripping preserved the wood, both sources of root fuel support the uptake and upward transport of minerals to shoot tips. The named saplings therefore supply newly absorbed minerals while drawing on root starch.",
+      groups: [
+        {
+          name: "intact-band saplings with branches above the band",
+          excluded: false,
+          first: true,
+          second: true
+        },
+        {
+          name: "intact-band saplings with branches below the band",
+          excluded: false,
+          first: true,
+          second: true
+        },
+        {
+          name: "stripped-band saplings with branches below the band",
+          excluded: false,
+          first: true,
+          second: true
+        },
+        {
+          name: "stripped-band saplings with branches above the band",
+          excluded: true,
+          first: true,
+          second: false
+        }
+      ]
+    },
+  ].map((topic) => {
+    const lastWord = topic.first.split(" ").pop();
+    const nextWord = topic.second.split(" ")[0];
+    return Object.assign({}, topic, {
+      lastWord, nextWord,
+      text: `${topic.context} ${topic.first.slice(0, -lastWord.length)}${BLANK}${topic.second.slice(nextWord.length)}`,
+    });
+  });
+
+  // Both orders state the same two claims about the same full group. They
+  // are two visible items for one canonical scene, not additional scenes.
+  function exceptionScopeOrder(authored, reverse) {
+    const capInitial = (text) => text.charAt(0).toUpperCase() + text.slice(1);
+    const lowerInitial = (text) => text.charAt(0).toLowerCase() + text.slice(1);
+    const first = reverse ? capInitial(authored.second.slice(0, -1)) : authored.first;
+    const second = reverse ? `${lowerInitial(authored.first)}.` : authored.second;
+    const scope = reverse ? (authored.scope === "first" ? "second" : "first") : authored.scope;
+    const groups = authored.groups.map((group) => ({
+      name: group.name, excluded: group.excluded,
+      first: reverse ? group.second : group.first,
+      second: reverse ? group.first : group.second,
+    }));
+    const lastWord = first.split(" ").pop();
+    const nextWord = second.split(" ")[0];
+    return {
+      ...authored, first, second, scope, groups, lastWord, nextWord,
+      text: `${authored.context} ${first.slice(0, -lastWord.length)}${BLANK}${second.slice(nextWord.length)}`,
+    };
+  }
+
+  const exceptionScope = {
+    id: "sec-exception-scope", sectionKey: "sat-reading-writing", domain: DOMAIN,
+    skill: "Boundaries", subskill: "sentence boundaries", difficulty: "Hard",
+    title: "Place an exception with the claim it limits",
+    recognize: "Derive each complete claim from the process or conditions that govern its outcome. A subset can satisfy one claim while contradicting the other. Keep the exception with the contradicted claim, and check that the other claim remains true for the entire group.",
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 1, trap: 1 },
+    tricks: ["context-constraint", "grammatical-but-illogical", "comma-splice"],
+    build(t) {
+      const authored = t.pick(exceptionScopeTopics);
+      const reverse = t.chance(0.5);
+      const topic = exceptionScopeOrder(authored, reverse);
+      const marks = { comma: ",", semicolon: ";" };
+      const render = (before, after) => `${topic.lastWord}${marks[before]} ${topic.exception}${marks[after]} ${topic.nextWord}`;
+      const keyBefore = topic.scope === "first" ? "comma" : "semicolon";
+      const keyAfter = topic.scope === "first" ? "semicolon" : "comma";
+      const rows = [];
+      ["comma", "semicolon"].forEach((before) => ["comma", "semicolon"].forEach((after) => {
+        let reason = null;
+        if (before === after) {
+          reason = before === "comma"
+            ? `“${topic.first}” and “${topic.second.slice(0, -1)}” are independent clauses. Commas around the exception leave these complete clauses joined by only a comma, creating a comma splice.`
+            : `“${topic.exception}” is a phrase, not an independent clause. Semicolons on both sides strand that phrase between the two complete clauses.`;
+        } else if (before !== keyBefore) {
+          const wrongClaim = topic.scope === "first" ? topic.first : topic.second.slice(0, -1);
+          reason = `This punctuation is grammatical, but it attaches the exception to the other claim and leaves “${wrongClaim}” unrestricted. The named group contradicts that unrestricted claim. ${topic.evidence}`;
+        }
+        rows.push([render(before, after), { beforeException: before, afterException: after }, reason]);
+      }));
+      const choices = square(rows);
+      const instance = {
+        responseType: "multiple-choice", scene: topic.scene,
+        stimulus: { type: "text", content: topic.text }, stem: STEM,
+        ...choices,
+        explanation: `${topic.evidence} Place “${topic.exception}” in the ${topic.scope} clause. The comma attaches that phrase to its claim; the semicolon separates the two independent clauses: “${choices.correct}.”`,
+        steps: [
+          `Read the two unqualified claims: “${topic.first}” and “${topic.second.slice(0, -1)}.”`,
+          `Derive each result for the named subset from the separate conditions or processes that govern it. ${topic.evidence}`,
+          `Attach the exception to the ${topic.scope} claim with a comma, and put the semicolon on its other side to separate the complete clauses.`,
+        ],
+        principles: [
+          "An exception phrase limits the claim in its own clause. Moving a clause boundary past the phrase changes which claim it limits.",
+          "A universal claim must hold for every member of its stated group. An exception must exclude the actual counterexamples, including when the claim is negative, such as none of them.",
+          "A semicolon can separate independent clauses. A comma alone cannot join them, and a phrase cannot stand alone between two semicolons.",
+        ],
+        trap: "Transferring a subset's exception from one outcome to another without following the different process or conditions that determine each outcome.",
+        hint: "For the group named in the choices, test each final claim separately. Which claim would be false if that group were included?",
+        estimatedSeconds: 95,
+      };
+      instance.verify = () => {
+        // Group truth values encode the authored reading; they do not prove
+        // that the prose supports it. Semantic uniqueness needs cold review.
+        const fittingScopes = ["first", "second"].filter((scope) => {
+          const other = scope === "first" ? "second" : "first";
+          return topic.groups.some((group) => group.excluded) &&
+            topic.groups.some((group) => !group.excluded) &&
+            topic.groups.every((group) => group[scope] === !group.excluded && group[other]);
+        });
+        const expectedBefore = fittingScopes[0] === "first" ? "comma" : "semicolon";
+        const expectedAfter = fittingScopes[0] === "first" ? "semicolon" : "comma";
+        const [lead, tail] = topic.text.split(BLANK);
+        return fittingScopes.length === 1 && fittingScopes[0] === topic.scope &&
+          topic.text.split(BLANK).length === 2 && topic.text.length >= 150 && topic.text.length <= 900 &&
+          lead.endsWith(topic.first.slice(0, -topic.lastWord.length)) && `${topic.nextWord}${tail}` === topic.second &&
+          rows.filter((row) => row[2] === null).length === 1 && new Set(rows.map((row) => row[0])).size === 4 &&
+          instance.correct === render(expectedBefore, expectedAfter) && isSquare(instance.features);
+      };
+      return instance;
+    },
+  };
+
   return [
+    exceptionScope,
+    sourceAttributionScope,
+    boundaryModifierScope,
+    appositiveOrListMembers,
+    coordinateAdjectivePunctuation,
+    completeQuestionBoundary,
     joinIndependentClauses,
     colonBeforeList,
     introClauseComma,

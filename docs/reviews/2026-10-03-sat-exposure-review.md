@@ -20,9 +20,9 @@ expansion and its independent content reviews are recorded separately.
   warnings. The final test report includes those notices without exposing
   question skills or tiers during the session.
 - Explicit booklet or answer-key opening/download records exposure once per
-  pinned form. Viewing solutions counts as exposure even if the key is opened
-  first. Passive preparation and subsequent key/booklet opens do not increment
-  that form again within the page.
+  pinned form during that page visit. Viewing solutions counts as exposure even
+  if the key is opened first. Passive preparation and subsequent key/booklet
+  opens do not increment that form again within the page.
 - New run and form codes pin every draw attempt, including zeros. Legacy codes
   retain their prior selection behavior. Codes still depend on the source
   version; the project does not archive executable old template versions.

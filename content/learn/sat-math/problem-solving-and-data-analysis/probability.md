@@ -100,7 +100,7 @@ the" is the denominator.
 
 - A conditional question whose data run the other way: percents of one group are given, and the question picks from another. Turn every percent into a count first, then use the new group's total as the denominator.
 - A two-way table with unknown cells and a stated probability. Write that probability as (cell) ÷ (the group it is chosen from) with the unknown, solve, then answer the question actually asked, which usually needs a different cell and a different group.
-- An unknown mixture constrained by a probability bound: first find the allowed mixtures, then determine the largest or smallest value of a different conditional probability. Check that the endpoint can actually occur.
+- An unknown mixture constrained by a probability bound: first find the allowed mixtures, then determine the largest or smallest value of a different conditional or overall probability. Check that the endpoint can actually occur.
 
 Adding or removing items changes the denominator as well as the numerator,
 but a direct one-equation version of that task is Medium. More arithmetic
