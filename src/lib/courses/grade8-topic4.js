@@ -103,7 +103,7 @@
       ] },
       graph: graph(points, [], settings),
       answer: `Model ${high ? 'B' : 'A'} fits better: total absolute error ${bestError}, compared with ${otherError} for the other model.`,
-      steps: [`Subtract each prediction from y = ${linear(m, b)} from its observed y-value: ${noise.map(n).join(', ')}. Their absolute values total ${bestError}.`, `The other line is ${Math.abs(gap)} units ${gap > 0 ? 'higher' : 'lower'} at every x-value; its absolute vertical errors total ${otherError}.`, 'A smaller total error supports the selected model among these two candidates; it does not establish a perfect prediction rule.'],
+      steps: [`For each observation, subtract the model prediction (using y = ${linear(m, b)}) from the observed y-value: ${noise.map(n).join(', ')}. Their absolute values total ${bestError}.`, `The other line is ${Math.abs(gap)} units ${gap > 0 ? 'higher' : 'lower'} at every x-value; its absolute vertical errors total ${otherError}.`, 'A smaller total error supports the selected model among these two candidates; it does not establish a perfect prediction rule.'],
       workLines: 5
     };
   });
@@ -199,13 +199,20 @@
   });
 
   design('relative-frequency-denominators', '4-7', 'Distinguish joint and conditional percentages', r => {
-    const morning = r.pick([20, 40, 60]), afternoon = 100 - morning, a = r.int(2, morning / 2 - 1) * 2, c = r.int(2, afternoon / 2 - 1) * 2, b = morning - a, d = afternoon - c;
+    const morning = r.pick([20, 30, 40, 50, 60, 80]), afternoon = r.pick([20, 30, 40, 50, 60, 80]);
+    const a = r.int(2, morning - 2), c = r.int(2, afternoon - 2), b = morning - a, d = afternoon - c;
+    const row = r.int(0, 1), column = r.int(0, 1), condition = r.pick(['row', 'column']);
+    const group = row === 0 ? 'morning' : 'afternoon', preference = column === 0 ? 'outdoors' : 'indoors';
+    const joint = [[a, b], [c, d]][row][column], total = morning + afternoon;
+    const denominator = condition === 'row' ? [morning, afternoon][row] : [a + c, b + d][column];
+    const conditionedGroup = condition === 'row' ? `the ${group} group` : `participants who prefer ${preference}`;
+    const conditionalTask = condition === 'row' ? `the percentage of the ${group} group who prefer ${preference}` : `among participants who prefer ${preference}, the percentage who are in the ${group} group`;
     return {
-      practiceKey: key('g8-t4-relative-frequency-denominators', a, b, c, d),
-      prompt: 'Using the table, find (a) the percentage of all participants who are in the morning group and prefer outdoors and (b) the percentage of the morning group who prefer outdoors. Give exact percentages; a fraction is acceptable.',
+      practiceKey: key('g8-t4-relative-frequency-denominators', a, b, c, d, row, column, condition),
+      prompt: `Using the table, find (a) the percentage of all participants who are in the ${group} group and prefer ${preference} and (b) ${conditionalTask}. Give exact percentages; a fraction is acceptable.`,
       table: frequencyTable(a, b, c, d),
-      answer: `(a) ${a}%; (b) ${percent(a, morning)}.`,
-      steps: [`For (a), divide the joint count by the grand total: (${a}/100) × 100% = ${a}%.`, `For (b), the condition is Morning group, so the denominator is ${morning}: (${a}/${morning}) × 100% = ${percent(a, morning)}.`, 'The two denominators describe different comparison groups.'],
+      answer: `(a) ${percent(joint, total)}; (b) ${percent(joint, denominator)}.`,
+      steps: [`For (a), divide the joint count by the grand total: (${joint}/${total}) × 100% = ${percent(joint, total)}.`, `For (b), restrict the comparison to ${conditionedGroup}, so the denominator is ${denominator}: (${joint}/${denominator}) × 100% = ${percent(joint, denominator)}.`, 'The two denominators describe different comparison groups.'],
       workLines: 4
     };
   });

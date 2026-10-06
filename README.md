@@ -14,9 +14,12 @@ enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
 examples, and 85 parameterized exercise designs. Choose a lesson or mix of
 lessons to generate up to 30 nights of homework, with 1–100 problems per night.
 Study guides, student worksheets with writing space, and worked answer keys
-download separately as complete offline HTML files. Print them on paper or
-save as PDF. The course opens with a focused lesson reader; larger homework
-packets are available from the practice builder.
+download separately or together as a nightly packet: study guide, worksheets,
+then worked answers, in one print job. Double-sided packets keep each section
+on separate physical sheets. Print them on paper or save as PDF. The course
+opens with a focused lesson reader; larger homework packets are available from
+the practice builder. Student workspaces are blank and unruled, with a thin
+border around each problem.
 Packets exclude repeated exercises across their nights. If a selected set of
 lessons cannot supply enough distinct items, the builder asks for fewer
 questions or more lessons. Separate packets do not share an exposure history.

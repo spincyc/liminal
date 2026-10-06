@@ -25,6 +25,18 @@ test("packet selection keeps course order and enforces the chosen unit", () => {
   assert.throws(() => selectLessons(course, { unit: "topic-5" }), /Unknown unit/);
 });
 
+test("combined CLI packets record duplex layout and include their own printable artifact", () => {
+  assert.throws(() => parseArgs(["--single-sided"]), /requires --combined/);
+  for (const args of [["--combined", "--pdf"], ["--combined", "--single-sided", "--pdf"]]) {
+    const options = parseArgs(args);
+    const manifest = packetManifest({ id: "grade-8-math", title: "Math", revision: "v1" }, [], ["1-1"], options);
+    assert.equal(manifest.printing.duplex, !args.includes("--single-sided"));
+    assert.equal(manifest.files.length, 8);
+    assert.ok(manifest.files.includes("nightly-packet.html"));
+    assert.ok(manifest.files.includes("nightly-packet.pdf"));
+  }
+});
+
 test("student renderer receives no solution model, even for answer-only graphs", () => {
   const table = { headers: ["x", "y"], rows: [["0", "1"]] };
   const graph = { xMin: -3, xMax: 3, yMin: -3, yMax: 3, xStep: 1, yStep: 1, xLabel: "x", yLabel: "y", points: [{ x: 1, y: 2, label: "solution-only-point" }], lines: [[{ x: 0, y: 0 }, { x: 1, y: 2 }]], check: "secret-graph-check" };

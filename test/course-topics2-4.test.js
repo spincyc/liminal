@@ -108,6 +108,8 @@ test('practice keys ignore row order, point labels, model labels, and cosmetic u
     ['g8-t4-scatter-outlier', 'reverse'],
     ['g8-t4-compare-fit-lines', 'flip-labels'],
     ['g8-t3-rental-comparison-model', 'flip-labels'],
+    ['g8-t2-printing-plans', 'flip-labels'],
+    ['g8-t3-square-display-model', 'flip-labels'],
     ['g8-t2-compare-table-equation', 'units']
   ]) {
     let changedDisplays = 0;
@@ -216,6 +218,32 @@ test('perimeter and savings answers reproduce the stated quantities', () => {
     assert.equal(startA + weeks * rateA, total);
     assert.equal(startB + weeks * rateB, total);
   });
+});
+
+test('printing plans vary labels and comparison sides while matching displayed costs', () => {
+  const branches = new Set();
+  exercise('g8-t2-printing-plans', q => {
+    const plans = [...q.prompt.matchAll(/Plan ([AB]) charges (.*?)\./g)].map(match => {
+      const dollars = [...match[2].matchAll(/\$(\d+)/g)].map(value => +value[1]);
+      return dollars.length === 1 ? { rate: dollars[0], fee: 0 } : { rate: dollars[1], fee: dollars[0] };
+    });
+    assert.equal(plans.length, 2);
+    const [a, b] = plans, equalAt = (b.fee - a.fee) / (a.rate - b.rate);
+    const direction = q.prompt.includes('above') ? 1 : -1, compareAt = equalAt + direction;
+    const winner = a.rate * compareAt + a.fee < b.rate * compareAt + b.fee ? 'A' : 'B';
+    assert.ok(q.answer.includes(`; ${equalAt} packs; Plan ${winner} is cheaper at ${compareAt} packs.`));
+    const [left, right] = q.answer.split(';')[0].replace(/p/g, 'x').split(' = ');
+    for (const x of [0, equalAt, compareAt]) {
+      assert.equal(arithmetic(left, x), a.rate * x + a.fee);
+      assert.equal(arithmetic(right, x), b.rate * x + b.fee);
+    }
+    branches.add(`${direction}:${winner}`);
+  });
+  assert.equal(branches.size, 4);
+  const source = byId.get('g8-t2-printing-plans');
+  const a = M.random('comparison-side'), b = M.random('comparison-side'), pick = b.pick;
+  b.pick = values => { const value = pick(values); return values.includes(-1) ? -value : value; };
+  assert.notEqual(source.generate(a).practiceKey, source.generate(b).practiceKey, 'The requested side of break-even is mathematical work');
 });
 
 test('proportional table and graph comparisons use common rates and units', () => {
@@ -351,15 +379,23 @@ test('piecewise graphs and sketch keys follow the stated intervals and rates', (
 });
 
 test('model comparisons include either winner and the equal-count case', () => {
-  const countComparisons = new Set(), fasterIntervals = new Set();
+  const countComparisons = new Set(), fasterIntervals = new Set(), modelBranches = new Set();
   exercise('g8-t3-square-display-model', q => {
-    const width = +q.prompt.match(/with (\d+) tiles/)[1], x = +q.prompt.match(/when n = (\d+)/)[1], [extraA, extraB] = Array.from(q.prompt.matchAll(/plus (\d+) tiles?/g), m => +m[1]);
-    const a = width * x + extraA, b = x * x + extraB, winner = a === b ? 'equal' : a > b ? 'A' : 'B';
-    assert.ok(q.answer.includes(winner === 'equal' ? 'the counts are equal' : `${winner} uses more`));
+    const models = [...q.prompt.matchAll(/Design ([AB]) uses (.*?)\./g)].map(match => {
+      const extra = +match[2].match(/plus (\d+) tiles?/)[1], width = match[2].match(/with (\d+) tiles/);
+      const linear = Boolean(width);
+      assert.ok(q.answer.includes(`is ${linear ? 'linear' : 'nonlinear'}${match[1] === 'A' ? ';' : '.'}`));
+      return { value: x => (linear ? +width[1] * x : x ** 2) + extra, linear };
+    });
+    const growth = q.prompt.includes('extra tiles to increase'), x = +q.prompt.match(/(?:when n = |increase n from )(\d+)/)[1];
+    const values = models.map(model => growth ? model.value(x + 1) - model.value(x) : model.value(x));
+    const winner = values[0] === values[1] ? 'equal' : values[0] > values[1] ? 'A' : 'B';
+    assert.ok(q.answer.includes(winner === 'equal' ? `the ${growth ? 'increases' : 'counts'} are equal` : `${winner} ${growth ? 'needs more extra tiles' : 'uses more'}`));
     const pairs = Array.from(q.answer.split('Table pairs (A, B): ')[1].matchAll(/\((\d+), (\d+)\)/g), m => [+m[1], +m[2]]);
-    assert.deepEqual(pairs, q.table.rows.map(row => [+row[0] * width + extraA, Number(row[0]) ** 2 + extraB]));
-    countComparisons.add(winner);
-  });
+    assert.deepEqual(pairs, q.table.rows.map(row => models.map(model => model.value(+row[0]))));
+    countComparisons.add(`${growth}:${winner}`);
+    modelBranches.add(`${growth}:${models[0].linear}`);
+  }, 1000);
   exercise('g8-t3-compare-increasing-intervals', q => {
     const [a, b, c] = q.graph.points;
     const first = (b.y - a.y) / (b.x - a.x), second = (c.y - b.y) / (c.x - b.x);
@@ -367,7 +403,8 @@ test('model comparisons include either winner and the equal-count case', () => {
     assert.ok(q.answer.startsWith(`Faster from ${interval} seconds.`));
     fasterIntervals.add(first > second);
   });
-  assert.equal(countComparisons.size, 3);
+  assert.equal(countComparisons.size, 6);
+  assert.equal(modelBranches.size, 4);
   assert.equal(fasterIntervals.size, 2);
   exercise('g8-t3-rental-comparison-model', q => {
     const [feeA, rateA, feeB, rateB] = Array.from(q.prompt.matchAll(/\$(\d+)/g), m => +m[1]);
@@ -542,14 +579,37 @@ test('frequency counts, missing cells, and conditional denominators agree with d
     assert.equal(dTotal, b + +second[2]);
     assert.equal(grand, +total[1] + dTotal);
   });
+  const conditionBranches = new Set(), totals = new Set();
+  let nonCopyingJoint = 0, fractionalAnswers = 0;
   exercise('g8-t4-relative-frequency-denominators', q => {
     const [morning, afternoon, total] = q.table.rows;
+    const [, group, preference] = q.prompt.match(/in the (morning|afternoon) group and prefer (outdoors|indoors)/);
+    const row = group === 'morning' ? morning : afternoon, column = preference === 'outdoors' ? 1 : 2;
+    const rowCondition = q.prompt.includes(`(b) the percentage of the ${group} group`);
+    const joint = +row[column], denominator = +(rowCondition ? row[3] : total[column]);
     const values = Array.from(q.answer.matchAll(/([\d/]+)\)?%/g), m => fraction(m[1]));
     assert.equal(values.length, 2);
-    assert.ok(Math.abs(values[0] - +morning[1] / +total[3] * 100) < 1e-10);
-    assert.ok(Math.abs(values[1] - +morning[1] / +morning[3] * 100) < 1e-10);
+    assert.ok(Math.abs(values[0] - joint / +total[3] * 100) < 1e-10);
+    assert.ok(Math.abs(values[1] - joint / denominator * 100) < 1e-10);
     assert.equal(+morning[3] + +afternoon[3], +total[3]);
+    conditionBranches.add(`${group}:${preference}:${rowCondition}`);
+    totals.add(+total[3]);
+    if (values[0] !== joint) nonCopyingJoint++;
+    if (q.answer.includes('/')) fractionalAnswers++;
   });
+  assert.equal(conditionBranches.size, 8);
+  assert.ok(totals.size >= 8);
+  assert.ok(nonCopyingJoint >= 300);
+  assert.ok(fractionalAnswers >= 100);
+  const conditional = byId.get('g8-t4-relative-frequency-denominators');
+  const first = M.random('condition-identity'), second = M.random('condition-identity'), pick = second.pick;
+  second.pick = values => {
+    const chosen = pick(values);
+    return values.includes('row') ? chosen === 'row' ? 'column' : 'row' : chosen;
+  };
+  const a = conditional.generate(first), b = conditional.generate(second);
+  assert.deepEqual(a.table, b.table);
+  assert.notEqual(a.practiceKey, b.practiceKey, 'Reversing the condition changes the mathematical task');
   const branches = new Set();
   exercise('g8-t4-compare-conditional-frequencies', q => {
     const [morning, afternoon] = q.table.rows;

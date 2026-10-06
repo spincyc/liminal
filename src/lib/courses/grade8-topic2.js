@@ -137,11 +137,16 @@
 
   design('printing-plans', '2-6', 'Compare two original linear cost models', r => {
     const packs = r.int(4, 16), low = r.int(2, 6), high = low + r.int(1, 4), fee = (high - low) * packs;
+    const swap = r.pick([true, false]), direction = r.pick([-1, 1]), compareAt = packs + direction;
+    const rateA = swap ? low : high, feeA = swap ? fee : 0, rateB = swap ? high : low, feeB = swap ? 0 : fee;
+    const describe = (rate, setup) => setup ? `a $${setup} setup fee plus $${rate} per pack` : `$${rate} per pack`;
+    const costA = feeA + rateA * compareAt, costB = feeB + rateB * compareAt;
+    const equation = `${linear(rateA, feeA, 'p')} = ${linear(rateB, feeB, 'p')}`;
     return {
-      practiceKey: key('g8-t2-printing-plans', ordered([[high, 0], [low, fee]])),
-      prompt: `A school print club compares two plans for identical poster packs. Plan A charges $${high} per pack. Plan B charges a $${fee} setup fee plus $${low} per pack. Write an equation to find when the costs match, solve it, and identify the cheaper plan one pack above that amount.`,
-      answer: `${high}p = ${fee} + ${low}p; ${packs} packs; Plan B is cheaper at ${packs + 1} packs.`,
-      steps: [`Let p be the number of packs: ${high}p = ${fee} + ${low}p.`, `${high - low}p = ${fee}, so p = ${packs}. Both plans cost $${high * packs}.`, `At ${packs + 1} packs, Plan A costs $${high * (packs + 1)} and Plan B costs $${fee + low * (packs + 1)}.`],
+      practiceKey: key('g8-t2-printing-plans', ordered([[rateA, feeA], [rateB, feeB]]), compareAt),
+      prompt: `A school print club compares two plans for identical poster packs. Plan A charges ${describe(rateA, feeA)}. Plan B charges ${describe(rateB, feeB)}. Write an equation to find when the costs match, solve it, and identify the cheaper plan one pack ${direction > 0 ? 'above' : 'below'} that amount.`,
+      answer: `${equation}; ${packs} packs; Plan ${costA < costB ? 'A' : 'B'} is cheaper at ${compareAt} packs.`,
+      steps: [`Let p be the number of packs: ${equation}.`, `Collect terms: ${term(rateA - rateB, 'p')} = ${n(feeB - feeA)}, so p = ${packs}. Both plans cost $${high * packs}.`, `At ${compareAt} packs, Plan A costs $${costA} and Plan B costs $${costB}.`],
       workLines: 6
     };
   });

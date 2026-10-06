@@ -312,11 +312,9 @@
       const work = el("div", "course-workspace");
       work.setAttribute("aria-label", "Space to show your work");
       const count = Math.min(7, Math.max(3, Math.round(question.workLines || 4)));
-      for (let i = 0; i < count; i += 1) {
-        const line = el("div", "course-work-line");
-        line.setAttribute("aria-hidden", "true");
-        work.appendChild(line);
-      }
+      // The authored hint still reserves handwriting room, without prescribing
+      // lines: students can calculate, sketch, or arrange their work freely.
+      work.style.setProperty("--course-work-units", String(count));
       item.appendChild(work);
     }
     return item;
@@ -325,7 +323,7 @@
   function sheetHeader(course, sheet, answers, page, pages, packetDays) {
     packetDays = packetDays || sheet.days;
     const head = el("header", "course-document-head course-sheet-head");
-    head.appendChild(el("p", "course-eyebrow", `Liminal / ${answers ? "Worked answers" : "Student worksheet"}${sheet.day ? ` / Night ${sheet.day}` : ""}`));
+    head.appendChild(el("p", "course-eyebrow", `Liminal${sheet.day ? ` / Night ${sheet.day}` : ""} / ${answers ? "Worked answers" : "Student worksheets"}`));
     head.appendChild(el("h1", "", course.title));
     if (!answers && sheet.title && sheet.title !== course.title) head.appendChild(el("p", "course-sheet-title", sheet.title));
     head.appendChild(el("p", "course-form-code", `Form ${sheet.code} · Version ${sheet.version}${pages > 1 ? ` · Page ${page} of ${pages}` : ""}`));
@@ -368,14 +366,14 @@
     doc.head.appendChild(style);
     doc.body.className = "course-export";
     return {
-      fits(page) {
+      fits(page, className) {
         const copy = doc.importNode(page, true);
         const wrapper = doc.createElement("article");
-        wrapper.className = "course-document course-worksheet";
+        wrapper.className = className || "course-document course-worksheet";
         wrapper.appendChild(copy);
         doc.body.replaceChildren(wrapper);
         // A small allowance protects against fractional printer rounding.
-        return copy.getBoundingClientRect().height <= 945;
+        return copy.getBoundingClientRect().height <= 945 && copy.scrollWidth <= copy.clientWidth + 1;
       },
       remove() { frame.remove(); },
     };
@@ -437,6 +435,123 @@
     return packet;
   }
 
+  function nightlyGuidePage(course, sheet, lessonIds, chunks, pageNumber, pages) {
+    const page = el("section", "course-guide-page");
+    const head = el("header", "course-document-head course-sheet-head");
+    head.append(el("p", "course-eyebrow", `Liminal / Night ${sheet.day} / Study guide`), el("h1", "", course.title));
+    head.appendChild(el("p", "course-form-code", `Form ${sheet.code} · Version ${sheet.version} · Page ${pageNumber} of ${pages}`));
+    head.appendChild(el("p", "course-document-meta", `Lessons in tonight’s questions: ${lessonIds.join(", ")}. Read the explanations and examples before trying the student worksheets.`));
+    const body = el("div", "course-guide-page-body");
+    if (chunks.length && chunks[0].continuation) body.appendChild(el("h3", "course-guide-continuation", `${chunks[0].title} · continued`));
+    chunks.forEach((chunk) => body.appendChild(chunk.node.cloneNode(true)));
+    page.append(head, body, footer());
+    return page;
+  }
+
+  function renderNightlyGuide(course, sheet, lessonIds, measurer) {
+    // Reuse the complete lesson presentation. Chunk only at authored block
+    // boundaries: an introduction and its explanations, a worked example,
+    // or the lesson's closing advice. Never cut through typeset reasoning.
+    const source = renderGuide(course, lessonIds, { compact: true });
+    const chunks = [];
+    source.querySelectorAll(".course-guide-lesson").forEach((lesson) => {
+      const id = lesson.id.slice("guide-".length);
+      const title = lesson.querySelector("h3").textContent;
+      let group = el("section", "course-guide-chunk course-guide-opening");
+      group.dataset.lessonId = id;
+      Array.from(lesson.children).forEach((node) => {
+        if (node.classList.contains("course-example")) {
+          if (group.children.length) chunks.push({ node: group, title, continuation: !group.classList.contains("course-guide-opening") });
+          const givenGraph = node.querySelector(":scope > .course-graph");
+          const givenTable = node.querySelector(":scope > .course-table-wrap");
+          const solution = node.querySelector(".course-example-solution");
+          const workedGraph = solution.querySelector(":scope > .course-graph");
+          const illustrations = givenGraph && workedGraph ? [["Given graph", givenGraph], ["Worked graph", workedGraph]]
+            : givenGraph && givenTable && givenTable.querySelector("tr").children.length <= 4 ? [["Given table", givenTable], ["Given graph", givenGraph]] : null;
+          if (illustrations) {
+            // Two full-size illustrations beside one another leave room for
+            // the complete reasoning without shrinking coordinate labels.
+            const pair = el("div", "course-guide-figures");
+            illustrations.forEach(([label, figure]) => {
+              const panel = el("div");
+              panel.append(el("p", "course-figure-label", label), figure);
+              pair.appendChild(panel);
+            });
+            node.insertBefore(pair, solution);
+          }
+          node.dataset.lessonId = id;
+          chunks.push({ node, title, continuation: true });
+          group = el("section", "course-guide-chunk course-guide-takeaways");
+          group.dataset.lessonId = id;
+        } else group.appendChild(node);
+      });
+      if (group.children.length) chunks.push({ node: group, title, continuation: !group.classList.contains("course-guide-opening") });
+    });
+    const article = el("article", "course-document course-guide course-paginated-guide");
+    const groups = [];
+    let group = [];
+    const fits = (values) => measurer.fits(nightlyGuidePage(course, sheet, lessonIds, values, groups.length + 1, 999), article.className);
+    chunks.forEach((chunk) => {
+      if (fits([...group, chunk])) { group.push(chunk); return; }
+      if (group.length) { groups.push(group); group = []; }
+      if (!fits([chunk])) throw new Error(`Study guide for ${chunk.title} has a block too large for a Letter page. Shorten the introduction or worked example before printing.`);
+      group.push(chunk);
+    });
+    if (group.length) groups.push(group);
+    groups.forEach((values, index) => article.appendChild(nightlyGuidePage(course, sheet, lessonIds, values, index + 1, groups.length)));
+    return article;
+  }
+
+  function separatorPage(component) {
+    const page = el("section", "course-document course-packet-blank");
+    page.dataset.night = component.night;
+    page.dataset.component = "separator";
+    page.append(el("p", "course-eyebrow", `Liminal / Night ${component.night} / Separator back`), el("h1", "", "This side is intentionally blank"));
+    page.appendChild(el("p", "", "Keep this back with the preceding section. The next section begins on a fresh sheet when printed on both sides."));
+    page.appendChild(el("p", "course-form-code", `Form ${component.code}`));
+    page.appendChild(footer());
+    return page;
+  }
+
+  function renderNightlyPacket(course, sheets, options) {
+    const settings = options || {};
+    const engine = root.LiminalCourses;
+    if (!engine || !engine.nightlyLessons || !engine.packetPagePlan) throw new Error("Load the course engine before rendering a nightly packet.");
+    if (!Array.isArray(sheets) || !sheets.length) throw new Error("Build at least one night before printing a nightly packet.");
+    const measurer = printMeasurer();
+    if (!measurer) throw new Error("Load courses.css before printing a nightly packet so every page can be measured.");
+    const packet = el("div", "course-packet course-nightly-packet");
+    packet.dataset.duplex = settings.duplex !== false ? "true" : "false";
+    const components = [];
+    try {
+      sheets.forEach((sheet, index) => {
+        const night = sheet.day || index + 1;
+        const numberedSheet = { ...sheet, day: night };
+        const lessonIds = engine.nightlyLessons(course, sheet);
+        const guide = renderNightlyGuide(course, numberedSheet, lessonIds, measurer);
+        const packetDays = settings.packetDays || sheet.days || sheets.length;
+        const student = renderWorksheet(course, numberedSheet, { packetDays, measurer });
+        const answers = renderWorksheet(course, numberedSheet, { answers: true, packetDays, measurer });
+        [["guide", guide], ["student", student], ["answers", answers]].forEach(([kind, node]) => {
+          components.push({ night, kind, code: sheet.code, pageCount: node.children.length, node });
+        });
+      });
+      engine.packetPagePlan(components, { duplex: settings.duplex !== false }).forEach((component) => {
+        const node = component.node;
+        node.classList.add("course-packet-component");
+        node.dataset.night = component.night;
+        node.dataset.component = component.kind;
+        node.dataset.startPage = component.startPage;
+        node.dataset.pageCount = component.pageCount;
+        packet.appendChild(node);
+        if (component.blankAfter) packet.appendChild(separatorPage(component));
+      });
+      return packet;
+    } finally {
+      measurer.remove();
+    }
+  }
+
   function exportHtml(title, contentElement, cssText) {
     const doc = document.implementation.createHTMLDocument(String(title));
     doc.documentElement.lang = "en";
@@ -455,9 +570,15 @@
     const note = doc.createElement("p");
     note.className = "course-print-instructions";
     note.textContent = "Print or save as PDF using your browser’s Print command. Choose Letter paper, 100% scale, and turn off browser headers and footers. This document works offline.";
+    if (contentElement.classList.contains("course-nightly-packet")) {
+      note.textContent += " Print the full document with one page per sheet.";
+      note.textContent += contentElement.dataset.duplex === "true"
+        ? " For two-sided printing, use long-edge binding and keep every labeled separator back. Each study guide, student worksheet section, and answer section begins on a fresh sheet."
+        : " Choose single-sided printing. The document omits separator backs; each section begins on a fresh page.";
+    }
     doc.body.append(note, doc.importNode(contentElement, true));
     return `<!doctype html>\n${doc.documentElement.outerHTML}`;
   }
 
-  return { renderText, renderGraph, renderTable, renderGuide, renderWorksheet, renderPacket, exportHtml };
+  return { renderText, renderGraph, renderTable, renderGuide, renderWorksheet, renderPacket, renderNightlyPacket, exportHtml };
 });

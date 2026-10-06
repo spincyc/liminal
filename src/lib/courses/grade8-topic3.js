@@ -119,13 +119,24 @@
   });
 
   design('square-display-model', '3-5', 'Compare original linear and nonlinear models', r => {
-    const width = r.int(2, 9), target = r.int(1, 12), extraA = r.int(0, 12), extraB = r.int(0, 12), xs = [...new Set([1, 2, 3, target])].sort((a, b) => a - b), aTotal = width * target + extraA, bTotal = target * target + extraB;
+    const width = r.int(2, 9), target = r.int(1, 12), linearExtra = r.int(0, 12), squareExtra = r.int(0, 12);
+    const swap = r.pick([true, false]), task = r.pick(['total', 'growth']);
+    const linearLabel = swap ? 'B' : 'A', squareLabel = swap ? 'A' : 'B';
+    const models = {
+      [linearLabel]: { description: `n rows with ${width} tiles in each row plus ${counted(linearExtra, 'tiles')} for a fixed decoration`, rule: `${width}n + ${linearExtra}`, value: x => width * x + linearExtra, classification: 'linear' },
+      [squareLabel]: { description: `an n-by-n square plus ${counted(squareExtra, 'tiles')} for its fixed decoration`, rule: `n^2 + ${squareExtra}`, value: x => x * x + squareExtra, classification: 'nonlinear' }
+    };
+    const xs = [...new Set([1, 2, 3, target, ...(task === 'growth' ? [target + 1] : [])])].sort((a, b) => a - b);
+    const a = models.A.value(target), b = models.B.value(target), growthA = models.A.value(target + 1) - a, growthB = models.B.value(target + 1) - b;
+    const comparison = task === 'total'
+      ? `At n = ${target}, A uses ${a} and B uses ${b}; ${a === b ? 'the counts are equal' : `${a > b ? 'A' : 'B'} uses more`}.`
+      : `From n = ${target} to n = ${target + 1}, A needs ${counted(growthA, 'extra tiles')} and B needs ${counted(growthB, 'extra tiles')}; ${growthA === growthB ? 'the increases are equal' : `${growthA > growthB ? 'A' : 'B'} needs more extra tiles`}.`;
     return {
-      practiceKey: key('g8-t3-square-display-model', width, extraA, extraB, target, xs),
-      prompt: `Design A uses n rows with ${width} tiles in each row plus ${counted(extraA, 'tiles')} for a fixed decoration. Design B uses an n-by-n square plus ${counted(extraB, 'tiles')} for its fixed decoration. Complete the table for tile counts, classify each rule as linear or nonlinear, and decide which uses more tiles when n = ${target}.`,
+      practiceKey: key('g8-t3-square-display-model', width, linearExtra, squareExtra, target, task, xs),
+      prompt: `Design A uses ${models.A.description}. Design B uses ${models.B.description}. Complete the table for tile counts, classify each rule as linear or nonlinear, and ${task === 'total' ? `decide which uses more tiles when n = ${target}` : `decide which needs more extra tiles to increase n from ${target} to ${target + 1}`}.`,
       table: { headers: ['n', 'Design A tiles', 'Design B tiles'], rows: xs.map(x => [String(x), '____', '____']) },
-      answer: `A(n) = ${width}n + ${extraA} is linear; B(n) = n^2 + ${extraB} is nonlinear. At n = ${target}, A uses ${aTotal} and B uses ${bTotal}; ${aTotal === bTotal ? 'the counts are equal' : `${aTotal > bTotal ? 'A' : 'B'} uses more`}. Table pairs (A, B): ${xs.map(x => `(${width * x + extraA}, ${x * x + extraB})`).join(', ')}.`,
-      steps: [`For A, multiply n by ${width} and add ${extraA}; equal increases of 1 in n add ${width} tiles.`, `For B, multiply n by itself and add ${extraB}; its successive differences for unit increases in n grow rather than stay constant.`, `At n = ${target}, compare ${width}(${target}) + ${extraA} = ${aTotal} with ${target}^2 + ${extraB} = ${bTotal}.`],
+      answer: `A(n) = ${models.A.rule} is ${models.A.classification}; B(n) = ${models.B.rule} is ${models.B.classification}. ${comparison} Table pairs (A, B): ${xs.map(x => `(${models.A.value(x)}, ${models.B.value(x)})`).join(', ')}.`,
+      steps: [`For ${linearLabel}, multiply n by ${width} and add ${linearExtra}; equal increases of 1 in n add ${width} tiles.`, `For ${squareLabel}, multiply n by itself and add ${squareExtra}; its successive differences for unit increases in n grow rather than stay constant.`, task === 'total' ? `Substitute ${target} into both rules. ${comparison}` : `Subtract the old total from the new total: A changes by ${models.A.value(target + 1)} − ${a} = ${growthA}, and B by ${models.B.value(target + 1)} − ${b} = ${growthB}. ${comparison}`],
       workLines: 6
     };
   });

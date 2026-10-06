@@ -30,7 +30,8 @@
       case 'classify-roots': inputs = c.candidates.map(v => v.text).sort(); break;
       case 'number-sets': inputs = [c.text]; break;
       case 'infinite-pattern': inputs = [c.digit, c.first, c.whole]; break;
-      case 'bounds': case 'square-equation': case 'cube-equation': inputs = [c.n]; break;
+      case 'bounds': case 'cube-equation': inputs = [c.n]; break;
+      case 'square-equation': inputs = [c.coefficient, c.offset, c.right]; break;
       case 'order': inputs = c.values.map(v => v.text).sort(); break;
       case 'negative-comparison': inputs = [c.n, c.decimalNumerator]; break;
       case 'roots': inputs = [c.a, c.b]; break;
@@ -223,23 +224,31 @@
     ], { kind: 'roots', a: a * a, b: b ** 3 }, 3);
   });
   add('square-cube-categories', 4, 'Recognizing perfect squares and perfect cubes', r => {
-    const squareBase = r.pick([2, 3, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18]);
-    const cubeBase = r.pick([2, 3, 5, 6, 7, 8, 10, 11, 12]);
-    const bothBase = r.int(1, 3), near = r.int(3, 25);
-    let neither = near * near + r.int(1, 2 * near);
-    while (Math.round(Math.cbrt(neither)) ** 3 === neither) neither++;
-    if (neither === (near + 1) ** 2) neither += 1;
-    const values = r.shuffle([
-      { n: squareBase ** 2, category: 'perfect square only' },
-      { n: cubeBase ** 3, category: 'perfect cube only' },
-      { n: bothBase ** 6, category: 'both' },
-      { n: neither, category: 'neither' }
-    ]);
+    const pools = {
+      'perfect square only': Array.from({ length: 24 }, (_, i) => (i + 2) ** 2).filter(n => Math.round(Math.cbrt(n)) ** 3 !== n),
+      'perfect cube only': Array.from({ length: 11 }, (_, i) => (i + 2) ** 3).filter(n => !Number.isInteger(Math.sqrt(n))),
+      both: [0, 1, 64, 729],
+      neither: Array.from({ length: 149 }, (_, i) => i + 2).filter(n => !Number.isInteger(Math.sqrt(n)) && Math.round(Math.cbrt(n)) ** 3 !== n)
+    };
+    const used = new Set(), chosen = [];
+    for (let i = 0; i < 4; i++) {
+      const category = r.pick(Object.keys(pools).filter(name => pools[name].some(n => !used.has(n))));
+      const n = r.pick(pools[category].filter(value => !used.has(value)));
+      used.add(n);
+      chosen.push({ n, category });
+    }
+    const values = r.shuffle(chosen);
     return item(`Classify each number as a perfect square only, a perfect cube only, both, or neither: ${values.map(v => v.n).join(', ')}.`, values.map(v => `${v.n}: ${v.category}`).join('; '), [
       'A perfect square is the square of an integer; a perfect cube is the cube of an integer.',
-      `${squareBase ** 2} = ${squareBase}^2; ${cubeBase ** 3} = ${cubeBase}^3; ${bothBase ** 6} = ${bothBase ** 3}^2 = ${bothBase ** 2}^3.`,
-      `${neither} has neither an integer square root nor an integer cube root.`
-    ], { kind: 'square-cube-categories', values }, 4);
+      ...values.map(({ n, category }) => {
+        const square = Math.floor(Math.sqrt(n)), cube = Math.round(Math.cbrt(n));
+        if (category === 'both') return `${n} = ${square}^2 = ${cube}^3, so it is both.`;
+        if (category === 'perfect square only') return `${n} = ${square}^2, but it has no integer cube root.`;
+        if (category === 'perfect cube only') return `${n} = ${cube}^3, but it has no integer square root.`;
+        const lowerCube = Math.floor(Math.cbrt(n));
+        return `${square}^2 < ${n} < ${square + 1}^2 and ${lowerCube}^3 < ${n} < ${lowerCube + 1}^3, so it is neither.`;
+      })
+    ], { kind: 'square-cube-categories', values }, 5);
   });
   add('cube-edge-context', 4, 'Finding a cube edge from its volume', r => {
     const edge = r.int(2, 12), count = r.int(2, 20);
@@ -250,14 +259,21 @@
   });
 
   add('square-equation', 5, 'Solving squared-variable equations', r => {
-    const root = r.int(2, 25), perfect = r.pick([true, false]);
-    const n = perfect ? root * root : root * root + r.int(1, 2 * root);
+    const kind = r.pick(['positive', 'positive', 'zero', 'negative']), root = r.int(2, 25), perfect = r.pick([true, false]);
+    const n = kind === 'zero' ? 0 : kind === 'negative' ? -r.int(1, 100) : perfect ? root * root : root * root + r.int(1, 2 * root);
+    const multistep = r.pick([true, false]), coefficient = multistep ? r.int(2, 5) : 1, offset = multistep ? r.nonzero(-20, 20) : 0, right = coefficient * n + offset;
+    const left = `${coefficient === 1 ? '' : coefficient}x^2${offset === 0 ? '' : offset < 0 ? ` − ${-offset}` : ` + ${offset}`}`;
     const exact = perfect ? String(root) : `√${n}`;
-    return item(`Find all real solutions of x^2 = ${n}. Give exact values; do not round.`, `x = −${exact} or x = ${exact}`, [
-      `Taking principal square roots gives |x| = √${n}.`,
-      `Both a positive number and its negative have square ${n}.`,
-      `Thus x = −${exact} or x = ${exact}.`
-    ], { kind: 'square-equation', n, perfect }, 4);
+    const answer = n < 0 ? 'No real solutions.' : n === 0 ? 'x = 0' : `x = −${exact} or x = ${exact}`;
+    const steps = multistep ? [
+      `Subtract ${signed(offset)} from both sides: ${coefficient}x^2 = ${signed(right - offset)}.`,
+      `Divide by ${coefficient}: x^2 = ${signed(n)}.`
+    ] : [];
+    steps.push(...(n < 0 ? ['The square of a real number is nonnegative.', `It cannot equal ${signed(n)}, so there are no real solutions.`]
+      : n === 0 ? ['Only zero has a square of zero.', 'Thus x = 0 is the one real solution.']
+        : [`Taking principal square roots gives |x| = √${n}.`, `Both a positive number and its negative have square ${n}.`, `Thus ${answer}.`]));
+    return item(`Find all real solutions of ${left} = ${signed(right)}. Give exact values; do not round.`, answer, steps,
+      { kind: 'square-equation', n, perfect, coefficient, offset, right }, multistep ? 6 : 4);
   });
   add('cube-equation', 5, 'Solving cubed-variable equations', r => {
     const root = r.int(2, 12), sign = r.sign(), perfect = r.pick([true, false]);

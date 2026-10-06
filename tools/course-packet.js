@@ -13,6 +13,7 @@ const ROOT = path.resolve(__dirname, "..");
 const Engine = require("../src/lib/courses/engine.js");
 const { loadCourses } = require("./build-courses.js");
 const NAMES = ["original-study-guide", "student-worksheets", "worked-answers"];
+function documentNames(options) { return options.combined ? [...NAMES, "nightly-packet"] : NAMES; }
 
 function usage() {
   return `Usage: node tools/course-packet.js [options]
@@ -24,7 +25,9 @@ function usage() {
   --days <1-30>       nights of homework (default: 10)
   --seed <text>       reproducible packet seed, 1-140 characters (default: practice)
   --out <directory>   destination (default: .scratch/course-packets/<course>)
-  --pdf              also save three Letter-size PDFs
+  --pdf              also save matching Letter-size PDFs
+  --combined         also save nightly-packet: guide, worksheets, answers per night
+  --single-sided     omit separator backs in --combined (default: double-sided)
   --list             list courses, topics, and lesson ids
   --help             show this help
 
@@ -33,6 +36,8 @@ Set CHROMIUM and CHROMEDRIVER to executable paths if they are not on PATH.
 Writes original-study-guide.html, student-worksheets.html, worked-answers.html
 and packet-manifest.json; --pdf adds matching PDF files. Replaces these filenames
 in --out. The manifest records replay settings, revisions, and form codes.
+With --combined, nightly-packet.html (and .pdf with --pdf) contains all nights
+in one print job, with each section starting on a fresh sheet for duplex printing.
 The guide covers the selected lessons; --unit all includes the whole course.
 Same seed + lessons + count + days + course revision reproduces the same forms.
 All files are local and work offline; this command does not publish anything.
@@ -47,7 +52,8 @@ function parseArgs(argv) {
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
     if (["--help", "-h"].includes(argument)) { options.help = true; continue; }
-    if (["--pdf", "--list"].includes(argument)) { options[argument.slice(2)] = true; continue; }
+    if (["--pdf", "--list", "--combined"].includes(argument)) { options[argument.slice(2)] = true; continue; }
+    if (argument === "--single-sided") { options.singleSided = true; continue; }
     const match = /^--([a-z]+)(?:=(.*))?$/.exec(argument);
     if (!match || !values.has(match[1])) throw new Error(`Unknown option: ${argument}. Use --help.`);
     const value = match[2] === undefined ? argv[++index] : match[2];
@@ -55,6 +61,7 @@ function parseArgs(argv) {
     options[match[1]] = value;
   }
   if (options.help) return options;
+  if (options.singleSided && !options.combined) throw new Error("--single-sided requires --combined.");
   for (const [key, max] of [["count", Engine.MAX_COUNT], ["days", Engine.MAX_DAYS]]) {
     if (!/^\d+$/.test(String(options[key])) || Number(options[key]) < 1 || Number(options[key]) > max) {
       throw new Error(`--${key} must be an integer from 1 to ${max}.`);
@@ -113,9 +120,10 @@ function packetManifest(course, packet, lessonIds, options) {
     format: "liminal-course-packet", version: 1,
     course: { id: course.id, title: course.title, revision: String(course.revision || course.version) },
     settings: { lessonIds, count: options.count, days: options.days, seed: options.seed },
+    ...(options.combined ? { printing: { combined: true, duplex: !options.singleSided } } : {}),
     replayNote: "Replay requires the same course revision. Use --course, --unit all, --lessons, --count, --days, and --seed with the recorded settings.",
     sheets: packet.map(sheet => ({ day: sheet.day, seed: sheet.seed, code: sheet.code, warnings: sheet.warnings })),
-    files: NAMES.flatMap(name => (options.pdf ? ["html", "pdf"] : ["html"]).map(extension => `${name}.${extension}`)),
+    files: documentNames(options).flatMap(name => (options.pdf ? ["html", "pdf"] : ["html"]).map(extension => `${name}.${extension}`)),
   };
 }
 
@@ -209,7 +217,7 @@ async function exportPacket(course, packet, lessonIds, options, signal = new Abo
   try {
     const css = ["tokens", "app", "math", "courses"].map(name => fs.readFileSync(path.join(ROOT, "src/styles", name + ".css"), "utf8")).join("\n");
     const helper = path.join(scratch, "renderer.html");
-    const scripts = ["render", "course-render"].map(name => `<script src="${pathToFileURL(path.join(ROOT, "src/app", name + ".js")).href}"></script>`).join("\n");
+    const scripts = ["lib/courses/math.js", "lib/courses/engine.js", "app/render.js", "app/course-render.js"].map(name => `<script src="${pathToFileURL(path.join(ROOT, "src", name)).href}"></script>`).join("\n");
     fs.writeFileSync(helper, `<!doctype html><meta charset="utf-8"><title>Local packet renderer</title>${scripts}`);
     await withBrowser(scratch, signal, async command => {
       await command("/url", { url: pathToFileURL(helper).href });
@@ -220,12 +228,15 @@ async function exportPacket(course, packet, lessonIds, options, signal = new Abo
         { name: NAMES[1], title: `${course.title} — Student worksheets`, kind: "student", course: { title: course.title }, data: studentPacket(packet) },
         { name: NAMES[2], title: `${course.title} — Worked answers`, kind: "answers", course, data: packet },
       ];
+      if (options.combined) documents.push({ name: "nightly-packet", title: `${course.title} — Nightly packet`, kind: "combined", course, data: packet, duplex: !options.singleSided });
       for (const document of documents) {
         const html = await command("/execute/sync", { script: `
           const [input, css] = arguments;
           const render = window.LiminalCourseRender;
           if (!render) throw new Error("Course renderer did not load.");
-          const content = input.kind === "guide"
+          const content = input.kind === "combined"
+            ? render.renderNightlyPacket(input.course, input.data, {duplex: input.duplex})
+            : input.kind === "guide"
             ? render.renderGuide(input.course, input.data)
             : render.renderPacket(input.course, input.data, {answers: input.kind === "answers"});
           if (content.querySelector("script, iframe, object, embed")) throw new Error("Export contains active content.");
@@ -236,7 +247,7 @@ async function exportPacket(course, packet, lessonIds, options, signal = new Abo
         fs.writeFileSync(path.join(scratch, document.name + ".html"), html);
       }
       if (options.pdf) {
-        for (const name of NAMES) {
+        for (const name of documentNames(options)) {
           await command("/url", { url: pathToFileURL(path.join(scratch, name + ".html")).href });
           const result = await command("/goog/cdp/execute", { cmd: "Page.printToPDF", params: {
             printBackground: true, preferCSSPageSize: true, displayHeaderFooter: false,
@@ -286,7 +297,7 @@ async function main(argv = process.argv.slice(2)) {
       for (const warning of sheet.warnings) console.warn(`  Night ${sheet.day}: ${warning}`);
     }
     for (const file of files) console.log(`  Wrote ${file}`);
-    if (!options.pdf && NAMES.some(name => fs.existsSync(path.join(options.outDir, name + ".pdf")))) {
+    if (!options.pdf && documentNames(options).some(name => fs.existsSync(path.join(options.outDir, name + ".pdf")))) {
       console.warn("  Existing PDFs in this destination were not updated. Re-run with --pdf to replace them with this packet.");
     }
   } finally {

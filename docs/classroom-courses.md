@@ -32,8 +32,32 @@ documents. Student downloads contain neither solution data nor hidden answer
 graphs. The student and key copies carry matching worksheet identifiers and
 question numbers. Browser print supports paper or Save as PDF. Course work
 does not alter SAT/ACT progress or infer a student's mastery from printing.
+Student practice leaves response space unruled, with a thin border around each
+problem and its workspace. Graph grids and tables required by the question stay
+visible. The space can be used for calculation, a diagram, or a written explanation.
 Printing directly from the Courses page prints the selected study guide;
-use the separate student or answer print buttons for homework packets.
+use the packet controls for homework.
+
+After making practice, choose the preview night and use **Print nightly packet**.
+It combines that night's study guide, student worksheets, and worked answers in
+one document, in that order. **Nights to include** can instead include all nights,
+each with its own guide/worksheets/answers. The guide includes only lessons that
+appear in that night's actual questions, in course order. Review nights can
+repeat a lesson's instruction; exercises remain distinct within the generated
+packet. Combined packets intentionally include answers, so set those sheets
+aside before giving the work to the learner. Separate student-only exports
+remain available.
+
+**Double-sided** layout is the default. Measured pages and explicit separator
+backs make every component, including the next night's guide, begin on an odd
+document page—a fresh physical sheet. Print the whole document on Letter paper
+at 100% scale, one page per side, with browser headers/footers off and double-sided
+long-edge binding selected in the print dialog. Keep separator backs in the job.
+The site cannot set the printer's duplex option. **Single-sided** layout omits
+separator backs and starts each component on a new page; choose single-sided
+printing for that version. **Download packet HTML** saves the same complete,
+static document for offline printing. Changing lessons, quantities, or seed
+requires building a fresh packet before exporting again.
 
 The CLI creates the same rendered documents and can write PDFs using an
 installed Chromium and ChromeDriver:
@@ -43,6 +67,10 @@ node tools/course-packet.js --course grade-8-math --unit topic-1 \
   --count 20 --days 10 --seed home-1 --out .scratch/print/home-1 --pdf
 node tools/course-packet.js --help
 ```
+
+Add `--combined` to also write `nightly-packet.html` and, with `--pdf`, its PDF.
+This uses the same nightly layout and double-sided separation as the web
+interface. Add `--single-sided` with `--combined` to omit separator backs.
 
 No browser packages are installed by the tool. Generated outputs belong in
 `.scratch/` when used in an agent workspace; download or copy printouts to a
@@ -70,6 +98,8 @@ structured table, student graph, or answer-only graph. The renderer typesets
 exponents, fractions, and radicals using the existing math renderer. Repeating
 decimal strings use `0.[27]` or `2.1[6]`; brackets become an overline in print.
 No content field is interpreted as HTML.
+The legacy `workLines` field controls the amount of open workspace; it does not
+request visible ruling.
 
 Add a course manifest, its original guides, a pure generator module, and a
 registration in `templatesForCourse`; load the module on `courses.html` and in
@@ -130,3 +160,10 @@ page breaks, handwriting space, small exponents, repeating bars, tables,
 coordinate labels, answer-only plots, and answer exclusion. Test the Courses
 controls, fresh/replayed packets, downloads, keyboard navigation, dark mode,
 and phone width. Run the repository-wide gate before committing changes.
+
+Combined-packet changes additionally require real PDF verification of odd/even
+component boundaries, night/form labels, selected-night versus all-night scope,
+and single-sided output. The pure page-plan tests check that no physical sheet
+is shared by different components; browser pagination must also be checked.
+The [nightly packet review](reviews/2026-10-06-grade8-nightly-packets.md)
+records the web print integration, cold reviews, and verification limits.

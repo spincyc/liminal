@@ -109,6 +109,14 @@
 .course-preview-controls { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: end; margin: 24px 0 16px; }
 .course-preview-answer-toggle { display: flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; cursor: pointer; }
 .course-preview-section > .notice { margin: 16px 0; }
+.course-combined-download { padding: 22px; border: 1px solid var(--color-line-strong); background: var(--color-surface); }
+.course-combined-download > h3 { font-size: 19px; }
+.course-combined-download > p { margin-top: 10px; font-size: 14px; }
+.course-combined-download > .course-packet-fields { max-width: none; margin-top: 20px; }
+.course-combined-download select { width: 100%; min-width: 0; }
+.course-combined-download > .field-note { color: var(--color-muted); font-size: 12px; }
+.course-combined-download > .actions { margin-top: 20px; }
+.course-combined-download .text-link { min-height: 44px; }
 .course-downloads { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 24px; }
 .course-download-item { padding-block: 18px; border-top: 1px solid var(--color-line); }
 .course-download-item > h3 { font-size: 16px; }
@@ -178,14 +186,14 @@
 .course-answer-page { padding: 0; }
 .course-questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 28px; padding-top: 20px; }
 .course-question { min-width: 0; break-inside: avoid; page-break-inside: avoid; }
+.course-questions > .course-question { padding: 12px; border: 1px solid #aaa; }
 .course-question-wide { grid-column: 1 / -1; display: flow-root; }
 .course-question-wide .course-table { width: 100%; }
 .course-question-prompt { display: flex; align-items: baseline; gap: 8px; }
 .course-question-number { flex: none; }
 .course-question-prompt > .lm-rich { min-width: 0; flex: 1; }
 .course-question > * + * { margin-top: 10px; }
-.course-workspace { margin-top: 14px; }
-.course-work-line { height: 25px; border-bottom: 1px solid #ccc; }
+.course-workspace { min-height: calc(var(--course-work-units, 4) * 25px); margin-top: 14px; }
 .course-key-questions { padding-top: 20px; }
 .course-key-question + .course-key-question { padding-top: 20px; margin-top: 20px; border-top: 1px solid #bbb; }
 .course-key-question > ol { padding-left: 26px; }
@@ -208,6 +216,16 @@
 .course-axis-label, .course-point-label { font-family: var(--font-sans); font-size: 12px; font-weight: 600; fill: #111; }
 .course-graph-caption { margin-top: 2px; font-size: 11px; color: #444; }
 .course-packet > .course-worksheet + .course-worksheet { margin-top: 30px; border-top: 2px solid #777; }
+.course-paginated-guide { padding: 0; }
+.course-guide-page, .course-packet-blank { padding: 28px; }
+.course-guide-page-body { padding-top: 20px; }
+.course-guide-page-body > * + *, .course-guide-chunk > * + * { margin-top: 14px; }
+.course-guide-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.course-figure-label { font-size: .85em; font-weight: 600; }
+.course-guide-page + .course-guide-page { border-top: 2px dashed #aaa; }
+.course-nightly-packet > * + * { margin-top: 30px; border-top: 2px solid #777; }
+.course-packet-blank > * + * { margin-top: 14px; }
+.course-packet-blank { min-height: 240px; }
 .course-export { display: block; margin: 0 auto; max-width: 8.5in; }
 .course-export .course-packet { margin: 0; }
 .course-print-instructions { margin: 16px; padding: 14px 16px; border: 1px solid #777; background: #f5f5f5; font: 14px/1.5 var(--font-sans); }
@@ -272,7 +290,10 @@
   .courses-page .course-inline-guide .course-example { padding: 17px; }
   .course-study-actions { align-items: stretch; }
   .course-study-actions .button { flex: 1 1 auto; }
-  .course-sheet-page, .course-answer-key, .course-guide { padding: 20px 16px; }
+  .course-combined-download { padding: 18px 16px; }
+  .course-combined-download > .course-packet-fields { grid-template-columns: minmax(0, 1fr); }
+  .course-sheet-page, .course-answer-key, .course-guide, .course-guide-page, .course-packet-blank { padding: 20px 16px; }
+  .course-paginated-guide { padding: 0; }
   .course-questions { grid-template-columns: minmax(0, 1fr); }
   .course-document h1 { font-size: 21px; }
   .course-document h2 { font-size: 19px; }
@@ -305,8 +326,17 @@
   .course-sheet-page:last-child { break-after: auto; page-break-after: auto; }
   .course-sheet-page + .course-sheet-page { border: 0; break-before: page; page-break-before: always; }
   .course-packet > .course-worksheet + .course-worksheet { margin-top: 0; border: 0; break-before: page; page-break-before: always; }
+  /* Every measured section/page is explicit. Blank backs occupy real PDF
+     pages, so duplex separation does not depend on break-before: right. */
+  .course-guide-page, .course-packet-blank { padding: 0; min-height: 0; }
+  .course-guide-page + .course-guide-page { border: 0; break-before: page; page-break-before: always; }
+  .course-guide-page-body { padding-top: .16in; }
+  .course-guide-page-body > * + *, .course-guide-chunk > * + * { margin-top: .12in; }
+  .course-guide-chunk { break-inside: avoid; page-break-inside: avoid; }
+  .course-nightly-packet > * + * { margin-top: 0; border: 0; break-before: page; page-break-before: always; }
+  .course-packet-blank > * + * { margin-top: .14in; }
   .course-questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .18in .28in; padding-top: .16in; }
-  .course-questions > .course-question { min-height: 2.35in; }
+  .course-questions > .course-question { min-height: 2.35in; padding: .1in; border: .5pt solid #888; }
   .course-questions > .course-question-graph { min-height: 3.6in; }
   .course-question-wide .course-table { table-layout: fixed; }
   .course-question-wide .course-table th:first-child { width: .6in; }
@@ -316,9 +346,8 @@
   .course-question-wide > .course-graph + .course-workspace { margin-left: 3.05in; }
   .course-question-prompt { gap: .07in; }
   .course-question > * + * { margin-top: .07in; }
-  .course-workspace { margin-top: .12in; }
-  .course-work-line { height: .21in; border-color: #b0b0b0; }
-  .course-question-graph .course-work-line { height: .17in; }
+  .course-workspace { min-height: calc(var(--course-work-units, 4) * .21in); margin-top: .12in; }
+  .course-question-graph .course-workspace { min-height: calc(var(--course-work-units, 4) * .17in); }
   .course-graph { max-width: 2.8in; }
   .course-graph-caption { font-size: 7pt; }
   .course-key-questions { padding-top: .14in; }

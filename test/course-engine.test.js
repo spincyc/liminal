@@ -13,6 +13,49 @@ const template = (id, lessonId, size = 100000) => ({ id, lessonId, skill: "Addit
 } });
 const templates = [template("aa", "a"), template("ab", "a"), template("bb", "b")];
 
+test("nightly guides follow actual questions in course order, not every selected lesson", () => {
+  const sheet = { lessonIds: ["a", "b"], questions: [{ lessonId: "b" }, { lessonId: "b" }] };
+  assert.deepEqual(E.nightlyLessons(course, sheet), ["b"]);
+  sheet.questions.push({ lessonId: "a" });
+  assert.deepEqual(E.nightlyLessons(course, sheet), ["a", "b"]);
+  assert.throws(() => E.nightlyLessons(course, { questions: [] }), /needs questions/);
+  assert.throws(() => E.nightlyLessons(course, { questions: [{ lessonId: "missing" }] }), /unknown lesson/);
+});
+
+test("duplex packets never share a physical sheet between sections or nights", () => {
+  const rng = M.random("duplex-parity");
+  for (let draw = 0; draw < 300; draw += 1) {
+    const components = Array.from({ length: 6 }, (_, index) => ({ night: 1 + Math.floor(index / 3), kind: ["guide", "student", "answers"][index % 3], pageCount: rng.int(1, 20) }));
+    const original = JSON.stringify(components);
+    const plan = E.packetPagePlan(components);
+    const sheetOwners = new Map();
+    for (const [index, part] of plan.entries()) {
+      assert.equal(part.startPage % 2, 1);
+      for (let page = part.startPage; page < part.startPage + part.pageCount; page += 1) {
+        const physicalSheet = Math.floor((page - 1) / 2);
+        if (sheetOwners.has(physicalSheet)) assert.equal(sheetOwners.get(physicalSheet), index);
+        sheetOwners.set(physicalSheet, index);
+      }
+      assert.equal(part.blankAfter, part.pageCount % 2 === 1 && index < plan.length - 1);
+    }
+    assert.equal(JSON.stringify(components), original);
+    const single = E.packetPagePlan(components, { duplex: false });
+    assert.ok(single.every(part => !part.blankAfter));
+    assert.equal(single.at(-1).startPage + single.at(-1).pageCount - 1, components.reduce((sum, part) => sum + part.pageCount, 0));
+  }
+});
+
+test("packet page planning handles odd and even parts without trailing separator pages", () => {
+  const parts = [1, 2, 3, 2, 1, 1].map((pageCount, index) => ({ night: 1 + Math.floor(index / 3), kind: ["guide", "student", "answers"][index % 3], pageCount }));
+  assert.deepEqual(E.packetPagePlan(parts).map(part => [part.startPage, part.blankAfter]), [[1, true], [3, false], [5, true], [9, false], [11, true], [13, false]]);
+  assert.deepEqual(E.packetPagePlan([]), []);
+  for (const pageCount of [0, -1, 1.5, NaN, Infinity, Number.MAX_SAFE_INTEGER]) {
+    assert.throws(() => E.packetPagePlan([{ night: 1, kind: "guide", pageCount }]));
+  }
+  assert.throws(() => E.packetPagePlan([{ night: 0, kind: "student", pageCount: 2 }]));
+  assert.throws(() => E.packetPagePlan([{ night: 1, kind: "unknown", pageCount: 2 }]));
+});
+
 test("course random helpers are reproducible and fractions exact", () => {
   const a = M.random("nights"); const b = M.random("nights");
   assert.deepEqual(Array.from({ length: 100 }, () => a.int(-4, 7)), Array.from({ length: 100 }, () => b.int(-4, 7)));

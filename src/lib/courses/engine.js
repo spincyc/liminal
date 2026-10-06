@@ -14,6 +14,28 @@
   const MAX_COUNT = 100;
   const MAX_DAYS = 30;
   function lessons(course) { return course.units.flatMap(unit => unit.lessons); }
+  function nightlyLessons(course, sheet) {
+    if (!sheet || !Array.isArray(sheet.questions) || !sheet.questions.length) throw new Error("A nightly packet needs questions");
+    const ids = new Set(sheet.questions.map(question => question.lessonId));
+    const all = lessons(course);
+    if ([...ids].some(id => !all.some(lesson => lesson.id === id))) throw new Error("A nightly question refers to an unknown lesson");
+    return all.filter(lesson => ids.has(lesson.id)).map(lesson => lesson.id);
+  }
+  function packetPagePlan(components, options) {
+    if (!Array.isArray(components)) throw new Error("Packet sections must be a list");
+    const duplex = !options || options.duplex !== false;
+    let page = 1;
+    return components.map((component, index) => {
+      if (!component || !Number.isSafeInteger(component.pageCount) || component.pageCount < 1 ||
+          !Number.isSafeInteger(component.night) || component.night < 1 ||
+          !["guide", "student", "answers"].includes(component.kind)) throw new Error("Invalid packet section");
+      const startPage = page;
+      const blankAfter = duplex && component.pageCount % 2 === 1 && index < components.length - 1;
+      page += component.pageCount + Number(blankAfter);
+      if (!Number.isSafeInteger(page)) throw new Error("Packet page count is too large");
+      return { ...component, startPage, blankAfter };
+    });
+  }
   function visibleIdentity(question) {
     // Keep the complete signature to avoid silently treating hash collisions as duplicates.
     return JSON.stringify([question.prompt, question.table || null, question.graph || null]);
@@ -138,5 +160,5 @@
     if (plan.position < lessonIds.length) packet[0].warnings.push(`This packet has fewer questions than selected lessons. Choose at least ${lessonIds.length} total questions to include every selected lesson.`);
     return packet;
   }
-  return { MAX_COUNT, MAX_DAYS, lessons, identity, visibleIdentity, validateQuestion, validateGraph, templatesForCourse, generateWorksheet, generatePacket };
+  return { MAX_COUNT, MAX_DAYS, lessons, nightlyLessons, packetPagePlan, identity, visibleIdentity, validateQuestion, validateGraph, templatesForCourse, generateWorksheet, generatePacket };
 });

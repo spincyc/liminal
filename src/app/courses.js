@@ -212,6 +212,10 @@
     const index = Number($("coursePreviewNight").value) || 0;
     const sheet = state.sheets[index];
     if (!sheet) return;
+    $("coursePacketScope").options[0].textContent = `Night ${sheet.day || index + 1} only`;
+    $("coursePacketScope").options[1].textContent = `All ${state.sheets.length} night${state.sheets.length === 1 ? "" : "s"}`;
+    $("coursePacketScope").options[1].disabled = state.sheets.length === 1;
+    if (state.sheets.length === 1) $("coursePacketScope").value = "current";
     $("coursePreview").replaceChildren(LiminalCourseRender.renderWorksheet(state.course, sheet, { answers: $("coursePreviewAnswers").checked, packetDays: state.sheets.length }));
   }
 
@@ -238,6 +242,7 @@
       const sheets = await pending;
       if (!Array.isArray(sheets) || !sheets.length) throw new Error("No worksheets were produced. Check your lesson selection and try again.");
       state.sheets = sheets;
+      $("coursePacketScope").value = "current";
       options($("coursePreviewNight"), sheets.map((sheet, index) => ({ value: String(index), label: `Night ${sheet.day || index + 1}` })));
       $("coursePreviewAnswers").checked = false;
       const total = sheets.reduce((count, sheet) => count + sheet.questions.length, 0);
@@ -296,10 +301,14 @@
     const course = state.course;
     const lessons = selectedIds();
     const sheets = state.sheets;
+    const packetDays = sheets.length;
+    const combinedSheets = kind === "combined" && $("coursePacketScope").value !== "all"
+      ? [sheets[Number($("coursePreviewNight").value) || 0]] : sheets;
+    const duplex = $("coursePacketSides").value === "duplex";
     try {
       const css = await loadStyles();
-      const label = kind === "guide" ? "Study guide" : kind === "answers" ? "Worked answers" : "Student worksheets";
-      const content = kind === "guide" ? LiminalCourseRender.renderGuide(course, lessons) : LiminalCourseRender.renderPacket(course, sheets, { answers: kind === "answers" });
+      const label = kind === "combined" ? `Nightly packet — ${combinedSheets.length === 1 ? `Night ${combinedSheets[0].day}` : `all ${combinedSheets.length} nights`}` : kind === "guide" ? "Study guide" : kind === "answers" ? "Worked answers" : "Student worksheets";
+      const content = kind === "combined" ? LiminalCourseRender.renderNightlyPacket(course, combinedSheets, { duplex, packetDays }) : kind === "guide" ? LiminalCourseRender.renderGuide(course, lessons) : LiminalCourseRender.renderPacket(course, sheets, { answers: kind === "answers" });
       const html = LiminalCourseRender.exportHtml(`${course.title} — ${label}`, content, css);
       const url = URL.createObjectURL(new Blob([html], { type: "text/html;charset=utf-8" }));
       if (printWindow) {
@@ -308,7 +317,8 @@
       } else {
         const link = element("a");
         link.href = url;
-        link.download = `liminal-${course.id}-${kind}${sheets.length && kind !== "guide" ? `-${sheets[0].code}` : ""}.html`.replace(/[^a-z0-9._-]/gi, "-");
+        const suffix = kind === "combined" ? `-${combinedSheets.length === 1 ? `night-${combinedSheets[0].day}` : "all-nights"}-${duplex ? "duplex" : "single-sided"}-${combinedSheets[0].code}` : sheets.length && kind !== "guide" ? `-${sheets[0].code}` : "";
+        link.download = `liminal-${course.id}-${kind}${suffix}.html`.replace(/[^a-z0-9._-]/gi, "-");
         document.body.appendChild(link);
         link.click();
         link.remove();
@@ -351,6 +361,11 @@
       $("courseForm").addEventListener("submit", build);
       $("coursePreviewNight").addEventListener("change", renderPreview);
       $("coursePreviewAnswers").addEventListener("change", renderPreview);
+      $("coursePacketSides").addEventListener("change", () => {
+        $("coursePacketPrintHelp").textContent = $("coursePacketSides").value === "duplex"
+          ? "Double-sided packets include separator backs when needed, so every guide, worksheet set, and answer key begins on a new sheet. Keep every page and print one page per side, flipping on the long edge."
+          : "Single-sided packets start each section on a new page without separator backs. Choose single-sided printing in the print dialog.";
+      });
       $("courseLessonPicker").open = window.matchMedia("(min-width: 861px)").matches;
       $("courseRead").addEventListener("click", () => showMode("study", true));
       $("coursePractice").addEventListener("click", () => showMode("practice", true));

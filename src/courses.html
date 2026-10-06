@@ -119,12 +119,24 @@
               <section id="coursePacketSection" class="course-preview-section" aria-labelledby="packetHeading" hidden>
                 <div class="course-preview-heading"><div><h2 id="packetHeading">Your practice is ready.</h2><p id="coursePacketSummary" class="muted"></p></div></div>
                 <div id="courseWarnings" class="notice" hidden></div>
+                <div class="course-preview-controls"><div class="field"><label for="coursePreviewNight">Night to preview</label><select id="coursePreviewNight"></select></div></div>
+                <section class="course-combined-download" aria-labelledby="courseCombinedHeading">
+                  <h3 id="courseCombinedHeading">Print a complete nightly packet</h3>
+                  <p>Study guide, worksheets, then worked answers — together in one print job, grouped by night. Each guide covers the lessons practiced that night.</p>
+                  <div class="course-packet-fields">
+                    <div class="field"><label for="coursePacketScope">Nights to include</label><select id="coursePacketScope"><option value="current">Night 1</option><option value="all">All nights</option></select></div>
+                    <div class="field"><label for="coursePacketSides">Printing layout</label><select id="coursePacketSides"><option value="duplex">Double-sided · separate sheets</option><option value="single">Single-sided · no separator backs</option></select></div>
+                  </div>
+                  <p id="coursePacketPrintHelp" class="field-note">Double-sided packets include separator backs when needed, so every guide, worksheet set, and answer key begins on a new sheet. Keep every page and print one page per side, flipping on the long edge.</p>
+                  <p class="field-note">Includes answers. Set the answer-key sheets aside before giving the packet to the learner. Review nights may repeat a lesson’s study guide.</p>
+                  <div class="actions"><button class="button primary" type="button" data-course-export="combined" data-export-action="print" disabled>Print nightly packet</button><button class="text-link" type="button" data-course-export="combined" data-export-action="download" disabled>Download packet HTML</button></div>
+                </section>
                 <div class="course-downloads">
                   <div class="course-download-item"><h3>Student worksheets</h3><p>Questions and space for your thinking.</p><div class="actions"><button class="button primary" type="button" data-course-export="student" data-export-action="print" disabled>Print worksheets</button><button class="text-link" type="button" data-course-export="student" data-export-action="download" disabled>Download HTML</button></div></div>
                   <div class="course-download-item"><h3>Worked answers</h3><p>Matching questions, steps, and explanations.</p><div class="actions"><button class="button secondary" type="button" data-course-export="answers" data-export-action="print" disabled>Print answer key</button><button class="text-link" type="button" data-course-export="answers" data-export-action="download" disabled>Download HTML</button></div></div>
                 </div>
                 <p class="course-print-help">Print views open in a new tab. Use your browser’s Print command for paper or PDF. Downloads are complete HTML files that work offline.</p>
-                <div class="course-preview-controls"><div class="field"><label for="coursePreviewNight">Preview night</label><select id="coursePreviewNight"></select></div><label class="course-preview-answer-toggle"><input id="coursePreviewAnswers" type="checkbox" /> Show worked answers</label></div>
+                <div class="course-preview-controls"><label class="course-preview-answer-toggle"><input id="coursePreviewAnswers" type="checkbox" /> Show worked answers in preview</label></div>
                 <details class="course-preview-disclosure" open><summary>Look over the questions</summary><div id="coursePreview" class="course-paper-preview"></div></details>
               </section>
             </section>

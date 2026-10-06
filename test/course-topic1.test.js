@@ -178,12 +178,28 @@ function verify(q) {
       assert.ok(c.volume <= 12 ** 3);
       break;
     case 'square-equation': {
+      const equation = minus(q.prompt).match(/^Find all real solutions of (\d*)x\^2(?: ([+-]) (\d+))? = (-?\d+)\./);
+      assert.ok(equation, q.prompt);
+      const coefficient = Number(equation[1] || 1), offset = Number(equation[3] || 0) * (equation[2] === '-' ? -1 : 1), right = Number(equation[4]);
+      const squared = (right - offset) / coefficient;
+      assert.equal(squared, c.n);
+      if (squared < 0) {
+        assert.equal(q.answer, 'No real solutions.');
+        assert.match(q.steps.join(' '), /nonnegative/);
+        break;
+      }
+      if (squared === 0) {
+        assert.equal(q.answer, 'x = 0');
+        assert.equal(coefficient * 0 ** 2 + offset, right);
+        assert.match(q.steps.join(' '), /one real solution/);
+        break;
+      }
       const values = minus(q.answer).split(' or ').map(text => text.replace(/^x = /, ''));
       assert.equal(values.length, 2);
       const magnitude = text => text.includes('√') ? Math.sqrt(Number(text.split('√')[1])) : Math.abs(Number(text));
       assert.ok(values[0].startsWith('-'));
       assert.ok(!values[1].startsWith('-'));
-      assert.ok(Math.abs(magnitude(values[0]) ** 2 - c.n) < 1e-10);
+      for (const value of values) assert.ok(Math.abs(coefficient * magnitude(value) ** 2 + offset - right) < 1e-9);
       assert.equal(magnitude(values[0]), magnitude(values[1]));
       assert.match(q.steps.join(' '), /\|x\|/);
       break;
@@ -377,6 +393,40 @@ test('Reordering classification and plotting lists does not create a new exercis
       assert.equal(normal.practiceKey, reordered.practiceKey);
     }
   }
+});
+
+test('square and cube categories have no fixed multiplicities or required category', () => {
+  const template = templates.find(t => t.id === 'g8-t1-square-cube-categories');
+  const counts = new Map(['perfect square only', 'perfect cube only', 'both', 'neither'].map(category => [category, new Set()]));
+  for (let seed = 0; seed < 3000; seed++) {
+    const q = template.generate(M.random(`category-counts.${seed}`));
+    for (const [category, seen] of counts) seen.add(q.answer.split('; ').filter(entry => entry.endsWith(`: ${category}`)).length);
+  }
+  for (const [category, seen] of counts) assert.deepEqual([...seen].sort(), [0, 1, 2, 3, 4], category);
+});
+
+test('square equations cover positive, zero, and negative squares with and without isolation', () => {
+  const template = templates.find(t => t.id === 'g8-t1-square-equation'), branches = new Set();
+  for (let seed = 0; seed < 1000; seed++) {
+    const q = template.generate(M.random(`square-branches.${seed}`));
+    const kind = q.answer === 'x = 0' ? 'zero' : q.answer === 'No real solutions.' ? 'none' : q.answer.includes('√') ? 'irrational' : 'integer';
+    branches.add(`${q.prompt.includes('of x^2') ? 'direct' : 'isolate'}:${kind}`);
+    verify(q);
+  }
+  assert.equal(branches.size, 8);
+  const seed = 'square-identity', rng = () => {
+    const random = M.random(seed), originalPick = random.pick;
+    random.pick = values => {
+      originalPick(values);
+      return values.includes('zero') ? 'zero' : true;
+    };
+    return random;
+  };
+  const first = rng(), second = rng();
+  second.nonzero = () => 19;
+  const a = template.generate(first), b = template.generate(second);
+  assert.equal(a.answer, b.answer);
+  assert.notEqual(a.practiceKey, b.practiceKey, 'Different isolation work is not collapsed to its zero answer');
 });
 
 test('Changing variable names, decimal labels, or units leaves mathematical identities unchanged', () => {
