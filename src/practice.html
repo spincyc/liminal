@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en" data-test="SAT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Independent SAT and ACT practice with original questions, detailed answer guides, and private on-device progress."
+    />
+    <title>Liminal — SAT &amp; ACT Practice</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/app.css" />
+    <link rel="stylesheet" href="styles/test-shell.css" />
+    <link rel="stylesheet" href="styles/math.css" />
+    <link rel="stylesheet" href="styles/review.css" />
+    <link rel="stylesheet" href="styles/progress.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-name">Liminal</span>
+          <span class="brand-sub">Independent <span data-test-name>SAT</span> practice</span>
+        </a>
+        <div class="test-switch" role="group" aria-label="Test">
+          <button class="test-switch-option" type="button" data-test-option="SAT" aria-pressed="true">SAT</button>
+          <button class="test-switch-option" type="button" data-test-option="ACT" aria-pressed="false">ACT</button>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="nav-link" href="practice.html#practice" data-view="setup" aria-current="page">Practice</a>
+          <a class="nav-link" href="learn.html" data-view="learn">Learn</a>
+          <a class="nav-link" href="practice.html#progress" data-view="dashboard">Progress</a>
+          <a class="nav-link" href="practice.html#review" data-view="review">Review</a>
+          <a class="nav-link" href="practice.html#tips" data-view="signs"><span class="nav-full">Study tips</span><span class="nav-short" aria-hidden="true">Tips</span></a>
+          <a class="nav-link" href="print.html" data-view="booklets">Booklets</a>
+          <a class="nav-link" href="courses.html">Courses</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="site-main" tabindex="-1">
+      <div id="storageWarning" class="notice storage-warning hidden" role="alert">
+        <p id="storageWarningText"></p>
+        <button id="storageDownloadBtn" class="button secondary" type="button">Download my progress</button>
+      </div>
+      <section id="setupView" class="view" aria-labelledby="setupHeading">
+        <header class="page-head">
+          <h1 id="setupHeading" tabindex="-1">Practice</h1>
+          <p id="setupLede" class="lede">
+            Take a timed test built like the real <span data-test-name>SAT</span>,
+            or practice in shorter sets. Everything opens in the digital test screen.
+          </p>
+        </header>
+
+        <div id="resumeTestBanner" class="card resume-banner hidden" role="region" aria-labelledby="resumeTestHeading">
+          <div>
+            <h2 id="resumeTestHeading">You have an unfinished test</h2>
+            <p id="resumeTestText" class="muted"></p>
+          </div>
+          <div class="actions">
+            <button id="resumeTestBtn" class="button primary" type="button">Resume test</button>
+            <button id="discardTestBtn" class="button secondary" type="button">Discard test</button>
+          </div>
+        </div>
+        <div id="resumeSetBanner" class="card resume-banner hidden" role="region" aria-labelledby="resumeSetHeading">
+          <div>
+            <h2 id="resumeSetHeading">You have an unfinished set</h2>
+            <p id="resumeSetText" class="muted"></p>
+          </div>
+          <div class="actions">
+            <button id="resumeSetBtn" class="button primary" type="button">Resume set</button>
+            <button id="discardSetBtn" class="button secondary" type="button">Discard set</button>
+          </div>
+        </div>
+        <div id="sessionStatus" class="status-line" role="status" aria-live="polite"></div>
+
+        <section id="startHere" class="card start-card is-start practice-start hidden" aria-labelledby="startHereHeading">
+          <div class="card-head">
+            <h2 id="startHereHeading">Start here</h2>
+            <button id="startHereHide" class="text-link" type="button" aria-describedby="startHereHeading">Hide</button>
+          </div>
+          <p id="startHereLede" class="muted"></p>
+          <ol id="startHereSteps" class="start-steps"></ol>
+          <div id="startHereStatus" class="status-line" role="status" aria-live="polite"></div>
+        </section>
+
+        <section id="testArea" class="card test-area" aria-labelledby="testHeading" data-test-only="SAT">
+          <div class="area-head">
+            <h2 id="testHeading">Take a test</h2>
+            <p class="muted">
+              The real SAT's structure: timed modules, answers checked at the end.
+            </p>
+          </div>
+          <div class="test-options">
+            <div class="test-option">
+              <div class="test-option-text">
+                <h3>One module</h3>
+                <p>27 Reading and Writing questions in 32 minutes, or 22 Math questions in 35.</p>
+                <div class="test-option-field">
+                  <label for="testModuleKind">Which module</label>
+                  <select id="testModuleKind">
+                    <option value="1">Module 1: mixed difficulty</option>
+                    <option value="h">Module 2: harder</option>
+                    <option value="e">Module 2: easier</option>
+                  </select>
+                </div>
+              </div>
+              <div class="test-option-actions">
+                <button class="button primary" type="button" data-test-kind="module" data-section="sat-reading-writing"
+                  aria-label="Start a Reading and Writing module">Reading and Writing</button>
+                <button class="button primary" type="button" data-test-kind="module" data-section="sat-math"
+                  aria-label="Start a Math module">Math</button>
+              </div>
+            </div>
+            <div class="test-option">
+              <div class="test-option-text">
+                <h3>One section</h3>
+                <p>Module 1, then a harder or easier Module 2 depending on how Module 1 went: 64 minutes for Reading and Writing, 70 for Math.</p>
+              </div>
+              <div class="test-option-actions">
+                <button class="button secondary" type="button" data-test-kind="section" data-section="sat-reading-writing"
+                  aria-label="Start the Reading and Writing section: 54 questions in 64 minutes">Reading and Writing</button>
+                <button class="button secondary" type="button" data-test-kind="section" data-section="sat-math"
+                  aria-label="Start the Math section: 44 questions in 70 minutes">Math</button>
+              </div>
+            </div>
+            <div class="test-option">
+              <div class="test-option-text">
+                <h3>Full-length SAT</h3>
+                <p>Both sections, four modules, and a 10-minute break: 2 hours 24 minutes in all.</p>
+              </div>
+              <div class="test-option-actions">
+                <button class="button secondary" type="button" data-test-kind="full">Start full-length SAT</button>
+              </div>
+            </div>
+          </div>
+          <div id="testStatus" class="status-line" role="status" aria-live="polite"></div>
+          <p class="note">
+            How Module 2 is chosen, and each module's mix of easy and hard
+            questions, are practice approximations: the College Board does not
+            publish its own. Results show percent correct, never a scaled score.
+          </p>
+        </section>
+
+        <section class="practice-area" aria-labelledby="practiceAreaHeading">
+          <div class="area-head">
+            <h2 id="practiceAreaHeading">Practice sets</h2>
+            <p class="muted">Shorter sets, with feedback after each question if you want it.</p>
+          </div>
+
+          <div class="practice-grid">
+            <div class="main-stack">
+              <form id="drillForm" class="card drill-card" aria-labelledby="drillHeading" novalidate>
+                <h3 id="drillHeading">Drill one skill</h3>
+                <p id="drillLede" class="muted">A short set on a single skill at one level, using varied numbers and contexts. Limited pools may repeat.</p>
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="drillSection">Section</label>
+                    <select id="drillSection"></select>
+                  </div>
+                  <div class="field">
+                    <label for="drillSkill">Skill</label>
+                    <select id="drillSkill"></select>
+                  </div>
+                  <fieldset class="field span-2">
+                    <legend>Level</legend>
+                    <div class="chip-row">
+                      <label class="check-chip"><input type="radio" name="drillLevel" value="Easy" /> Easy</label>
+                      <label class="check-chip"><input type="radio" name="drillLevel" value="Medium" checked /> Medium</label>
+                      <label class="check-chip"><input type="radio" name="drillLevel" value="Hard" /> Hard</label>
+                      <label class="check-chip"><input type="radio" name="drillLevel" value="" /> All levels</label>
+                    </div>
+                    <p id="drillLevelNote" class="field-note"></p>
+                  </fieldset>
+                  <div class="field">
+                    <label for="drillCount">Questions</label>
+                    <input id="drillCount" class="count-input" type="number" min="1" max="30" step="1" value="10"
+                      inputmode="numeric" />
+                  </div>
+                  <div class="field">
+                    <label for="drillFeedback">Feedback</label>
+                    <select id="drillFeedback">
+                      <option value="instant">After each question</option>
+                      <option value="end">Report at the end</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="start-row">
+                  <button id="drillStart" class="button primary" type="submit">Start drill</button>
+                  <p id="drillNote" class="match-count" aria-live="polite"></p>
+                </div>
+                <div id="drillStatus" class="status-line" role="status" aria-live="polite"></div>
+              </form>
+
+              <form id="practiceForm" class="card builder" aria-labelledby="builderHeading" novalidate>
+                <h3 id="builderHeading">Build a practice set</h3>
+                <p class="muted">Choose a section, how many questions, and any topics. It also replays questions you missed or marked.</p>
+
+                <div class="field-grid">
+                  <div class="field">
+                    <label for="sectionSelect">Section</label>
+                    <select id="sectionSelect" required aria-describedby="sectionNote"></select>
+                    <p id="sectionNote" class="field-note"></p>
+                  </div>
+
+                  <div class="field">
+                    <label for="modeSelect">Practice mode</label>
+                    <select id="modeSelect" aria-describedby="modeNote">
+                      <option value="targeted">Targeted practice</option>
+                      <option value="mix">Whole-section mix</option>
+                      <option value="missed">Missed-question review</option>
+                      <option value="flagged">Marked for review</option>
+                    </select>
+                    <p id="modeNote" class="field-note"></p>
+                  </div>
+
+                  <div class="field">
+                    <label for="countInput">Questions</label>
+                    <input
+                      id="countInput"
+                      class="count-input"
+                      type="number"
+                      min="1"
+                      step="1"
+                      value="20"
+                      inputmode="numeric"
+                    />
+                    <div id="countPicks" class="chip-row" role="group" aria-label="Question count shortcuts"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="feedbackSelect">Feedback</label>
+                    <select id="feedbackSelect">
+                      <option value="instant">After each question</option>
+                      <option value="end">Report at the end</option>
+                    </select>
+                  </div>
+
+                  <div class="field span-2">
+                    <span class="field-label" id="timedLabel">Timing</span>
+                    <label class="check-line">
+                      <input id="timedCheck" type="checkbox" aria-describedby="timedNote" />
+                      Time me at real test pace
+                    </label>
+                    <p id="timedNote" class="field-note"></p>
+                  </div>
+                </div>
+
+                <details id="filterDetails" class="disclosure">
+                  <summary>
+                    <span class="disclosure-title">Narrow by topic</span>
+                    <span id="filterSummary" class="disclosure-note">All topics</span>
+                  </summary>
+                  <div class="disclosure-body">
+                    <p id="filterHint" class="hint hidden"></p>
+                    <div class="field-grid">
+                      <div class="field">
+                        <label for="domainSelect">Domain</label>
+                        <select id="domainSelect">
+                          <option value="">All domains</option>
+                        </select>
+                      </div>
+
+                      <div class="field">
+                        <label for="skillSelect">Skill</label>
+                        <select id="skillSelect">
+                          <option value="">All skills</option>
+                        </select>
+                      </div>
+
+                      <fieldset class="field span-2">
+                        <legend>Difficulty</legend>
+                        <div class="chip-row">
+                          <label class="check-chip"><input type="checkbox" name="difficulty" value="Easy" checked /> Easy</label>
+                          <label class="check-chip"><input type="checkbox" name="difficulty" value="Medium" checked /> Medium</label>
+                          <label class="check-chip"><input type="checkbox" name="difficulty" value="Hard" checked /> Hard</label>
+                        </div>
+                      </fieldset>
+
+                      <div class="field span-2">
+                        <label for="searchInput">Search this section</label>
+                        <input
+                          id="searchInput"
+                          type="search"
+                          placeholder="Skills, passages, topics, or question IDs"
+                          autocomplete="off"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <div class="start-row">
+                  <button id="startBtn" class="button primary" type="submit" disabled>
+                    Start practice set
+                  </button>
+                  <p id="matchCount" class="match-count" aria-live="polite">Loading…</p>
+                </div>
+                <div id="bankStatus" class="status-line" role="status" aria-live="polite"></div>
+
+                <div class="recommend-row">
+                  <div>
+                    <h4 id="recommendHeading">Recommended next</h4>
+                    <p id="recommendText" class="muted">
+                      Answer a few questions and your next step appears here.
+                    </p>
+                  </div>
+                  <button id="recommendBtn" class="button secondary" type="button" disabled
+                    aria-describedby="recommendText">
+                    Start next step
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <aside class="side-stack" aria-label="More ways to practice">
+              <section class="card" aria-labelledby="miniTestHeading">
+                <h3 id="miniTestHeading">Timed mini test</h3>
+                <p>
+                  Twenty questions weighted like the real <span data-test-name>SAT</span>,
+                  answered without feedback and reviewed in full afterwards.
+                </p>
+                <div id="miniTestOptions" class="mini-test-list"></div>
+                <div id="miniTestStatus" class="status-line" role="status" aria-live="polite"></div>
+                <p class="note">
+                  Reports accuracy by section and domain. It does not estimate a
+                  scaled score.
+                </p>
+              </section>
+
+              <section id="hardRepsCard" class="card" aria-labelledby="hardRepsHeading" data-test-only="SAT">
+                <h3 id="hardRepsHeading">Hard math reps</h3>
+                <p>
+                  Ten generated Hard-tier SAT Math problems.
+                  No timer; a full report at the end.
+                </p>
+                <div class="card-actions">
+                  <button id="hardRepsBtn" class="button primary" type="button">Start 10 hard problems</button>
+                  <button id="hardRepsCustomizeBtn" class="text-link" type="button">Set count, feedback, or timer</button>
+                </div>
+                <div id="hardRepsStatus" class="status-line" role="status" aria-live="polite"></div>
+              </section>
+
+              <section class="card" aria-labelledby="retakeHeading" data-test-only="SAT">
+                <h3 id="retakeHeading">Retake a set</h3>
+                <p>
+                  Every SAT set's report shows a set code, such as
+                  <span class="code-sample">math-3f9k2-a8x1q</span>. Enter one to
+                  take the same questions again.
+                </p>
+                <form id="retakeForm" class="retake-form" novalidate>
+                  <label for="retakeInput">Set code</label>
+                  <div class="retake-row">
+                    <input
+                      id="retakeInput"
+                      type="text"
+                      autocomplete="off"
+                      autocapitalize="off"
+                      spellcheck="false"
+                      aria-describedby="retakeStatus"
+                    />
+                    <button id="retakeBtn" class="button secondary" type="submit">Retake</button>
+                  </div>
+                </form>
+                <div id="retakeStatus" class="status-line" role="status" aria-live="polite"></div>
+              </section>
+
+              <section class="card" aria-labelledby="printHeading">
+                <h3 id="printHeading">Printable booklet</h3>
+                <p>
+                  A two-column paper test with a bubble answer sheet and a separate
+                  answer key. Print it or save it as a PDF.
+                </p>
+                <div class="card-actions">
+                  <a class="button secondary" href="print.html">Build a booklet</a>
+                </div>
+              </section>
+            </aside>
+          </div>
+        </section>
+      </section>
+
+      <section id="dashboardView" class="view hidden" aria-labelledby="dashboardHeading">
+        <header class="page-head">
+          <h1 id="dashboardHeading" tabindex="-1">Progress</h1>
+          <p class="lede">
+            Your <span data-test-name>SAT</span> practice on this device. Accuracy
+            here is practice feedback, not a scaled score; Hard accuracy is shown
+            on its own.
+          </p>
+        </header>
+        <div id="dashboardStats" class="stats-grid"></div>
+        <div id="dashboardNotes" class="dashboard-notes hidden"></div>
+        <section class="card" aria-labelledby="masteryHeading">
+          <div class="card-head">
+            <h2 id="masteryHeading">Skill performance</h2>
+            <div class="inline-controls">
+              <div class="field">
+                <label for="masterySection">Section</label>
+                <select id="masterySection"></select>
+              </div>
+              <div class="field">
+                <label for="masterySort">Sort by</label>
+                <select id="masterySort">
+                  <option value="focus">What to work on</option>
+                  <option value="accuracy-asc">Lowest accuracy</option>
+                  <option value="accuracy-desc">Highest accuracy</option>
+                  <option value="attempted">Most attempted</option>
+                  <option value="section">Section</option>
+                  <option value="skill">Skill name</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <p id="masteryNote" class="field-note"></p>
+          <div id="skillTableWrap" class="table-wrap"></div>
+        </section>
+        <section class="card danger-zone" aria-labelledby="clearHeading">
+          <div>
+            <h2 id="clearHeading">Saved progress</h2>
+            <p id="clearNote" class="muted">
+              Everything is stored in this browser only. Clearing removes SAT and
+              ACT history, review lists, and marked questions.
+            </p>
+          </div>
+          <button id="clearProgressBtn" class="button danger" type="button" aria-describedby="clearNote">
+            Clear all saved progress
+          </button>
+        </section>
+      </section>
+
+      <section id="reviewView" class="view hidden" aria-labelledby="reviewHeading">
+        <header class="page-head">
+          <h1 id="reviewHeading" tabindex="-1">Review</h1>
+          <p class="lede">
+            Re-practise the <span data-test-name>SAT</span> questions you
+            missed on a spaced schedule, log why you missed each one, and
+            practise what you marked for review.
+          </p>
+        </header>
+        <div class="segmented tabs" role="tablist" aria-label="Review lists">
+          <button id="missedTab" class="segmented-option" data-list="missed" role="tab"
+            aria-controls="reviewList" aria-selected="true" type="button">Missed</button>
+          <button id="flaggedTab" class="segmented-option" data-list="flagged" role="tab"
+            aria-controls="reviewList" aria-selected="false" tabindex="-1" type="button">Marked for review</button>
+        </div>
+        <div id="reviewList" class="review-list" role="tabpanel" aria-labelledby="missedTab"></div>
+      </section>
+
+      <section id="signsView" class="view hidden" aria-labelledby="signsHeading">
+        <header class="page-head">
+          <h1 id="signsHeading" tabindex="-1">Study tips</h1>
+          <p class="lede">
+            <span data-test-name>SAT</span> questions are written to patterns.
+            These are honest, legal tells that hint at the credited answer, each
+            with the case where it fails.
+          </p>
+        </header>
+        <p id="signsDisclaimer" class="notice" role="note"></p>
+        <p class="learn-note" data-test-only="SAT">
+          For how to solve each kind of SAT question, with worked examples and
+          the cases where a shortcut fails, see <a href="learn.html">Learn</a>.
+        </p>
+        <section class="card" aria-labelledby="signsPrinciplesHeading">
+          <h2 id="signsPrinciplesHeading">Principles for every section</h2>
+          <div id="signsPrinciples" class="principle-grid"></div>
+        </section>
+        <div id="signsFilter" class="chip-row signs-filter" role="group" aria-label="Show tips for"></div>
+        <div id="signsGroups" class="signs-groups"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <p>
+          Private by design: no account and no server. Progress stays in this
+          browser on this device.
+        </p>
+        <p>
+          Independent educational practice. Not affiliated with, endorsed by, or
+          sponsored by College Board or ACT, Inc. SAT® is a registered trademark
+          of College Board. ACT® is a registered trademark of ACT, Inc. All
+          questions and passages here are original.
+        </p>
+      </div>
+    </footer>
+
+    <script src="content/catalog.js"></script>
+    <script src="content/answer-signs.js"></script>
+    <script src="content/templates.js"></script>
+    <script src="lib/core.js"></script>
+    <script src="lib/template-mask.js"></script>
+    <script src="lib/question-identity.js"></script>
+    <script src="lib/runs.js"></script>
+    <script src="lib/modules.js"></script>
+    <script src="lib/simulation.js"></script>
+    <script src="lib/test-engine.js"></script>
+    <script src="lib/session-store.js"></script>
+    <script src="lib/annotations.js"></script>
+    <script src="lib/line-reader.js"></script>
+    <script src="lib/progress.js"></script>
+    <script src="lib/review-queue.js"></script>
+    <script src="lib/practice.js"></script>
+    <script src="lib/analytics.js"></script>
+    <script src="lib/progress-io.js"></script>
+    <script src="app/render.js"></script>
+    <script src="app/test-shell.js"></script>
+    <script src="app/site.js"></script>
+    <script src="app/views/practice.js"></script>
+    <script src="app/views/progress.js"></script>
+    <script src="app/views/review.js"></script>
+    <script src="app/views/tips.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>

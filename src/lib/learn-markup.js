@@ -811,7 +811,7 @@
   }
 
   function practiceHref(sectionKey, skillSlug) {
-    return `index.html#practice/${sectionKey}/${skillSlug}`;
+    return `practice.html#practice/${sectionKey}/${skillSlug}`;
   }
 
   // "#<pageId>" or "#<pageId>/<anchor>"; an empty hash is the index.

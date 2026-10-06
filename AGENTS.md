@@ -93,7 +93,10 @@ For a coherent ACT bank batch:
 
 - The browser app has no module loader; each page loads plain scripts in
   order, and `tools/smoke-static.js` pins that order.
-  - `index.html`: the generated catalog, answer signs and template registries,
+  - `index.html`: the module landing page, `styles/home.css`, and
+    `app/home.js` for legacy practice-hash redirects. It loads no test banks
+    or progress storage. SAT/ACT module links select `?test=SAT` or `?test=ACT`.
+  - `practice.html`: the generated catalog, answer signs and template registries,
     then `lib/core.js`, `lib/template-mask.js`, `lib/question-identity.js`, `lib/runs.js`,
     `lib/modules.js`, `lib/simulation.js`, `lib/test-engine.js`,
     `lib/session-store.js`, `lib/annotations.js`, `lib/line-reader.js`,
@@ -241,7 +244,7 @@ For a coherent ACT bank batch:
   Sessions record one `module` entry per module plus one `section` or
   `full` entry that repeats their totals, so analytics that add sessions
   must not count both. A skill drill (kind `drill`) may take several seeds
-  of one template; `index.html#practice/<sectionKey>/<skillSlug>` fills in
+  of one template; `practice.html#practice/<sectionKey>/<skillSlug>` fills in
   the drill for that skill.
 - Do not claim that the recommendation logic implements official SAT
   adaptivity, ACT scoring, or score prediction, and do not add scaled score

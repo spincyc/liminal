@@ -34,6 +34,8 @@ test('Topics 2–4 have two original designs for each of their 25 lessons', () =
       assert.equal(group.filter(t => t.lessonId === `${i + 2}-${lesson}`).length, 2);
     }
   });
+  assert.equal(byId.get('g8-t2-fraction-both-sides').lessonId, '2-4');
+  assert.equal(byId.get('g8-t2-multistep-subtraction').lessonId, '2-3');
 });
 
 test('all designs are deterministic, finite, printable, and keep data points in view over 3000 seeds', () => {
@@ -45,6 +47,8 @@ test('all designs are deterministic, finite, printable, and keep data points in 
       const q = t.generate(M.random(`${t.id}:${seed}`));
       assert.equal(typeof q.prompt, 'string');
       assert.equal(typeof q.answer, 'string');
+      assert.equal(typeof q.practiceKey, 'string');
+      assert.ok(q.practiceKey.length > 8);
       assert.ok(q.prompt.length > 0 && q.answer.length > 0, t.id);
       assert.ok(q.steps.length >= 2 && q.steps.every(s => typeof s === 'string' && s.length > 5), t.id);
       assert.ok(Number.isInteger(q.workLines) && q.workLines >= 3 && q.workLines <= 7, t.id);
@@ -66,7 +70,7 @@ test('all designs are deterministic, finite, printable, and keep data points in 
         }
         g.lines.flat().forEach(p => assert.ok(Number.isFinite(p.x) && Number.isFinite(p.y), t.id));
       }
-      seen.add(JSON.stringify([q.prompt, q.table, q.graph]));
+      seen.add(q.practiceKey);
     }
     assert.ok(seen.size >= 12, `${t.id} has only ${seen.size} visible variants`);
   }
@@ -74,6 +78,7 @@ test('all designs are deterministic, finite, printable, and keep data points in 
 
 test('browser globals expose the same generated content as Node modules', () => {
   const context = vm.createContext({});
+  vm.runInContext('String.prototype.localeCompare = function () { throw new Error("Locale-sensitive practice identity"); };', context);
   vm.runInContext(fs.readFileSync(path.join(__dirname, '../src/lib/courses/math.js'), 'utf8'), context);
   for (let topic = 2; topic <= 4; topic++) {
     vm.runInContext(fs.readFileSync(path.join(__dirname, `../src/lib/courses/grade8-topic${topic}.js`), 'utf8'), context);
@@ -83,6 +88,75 @@ test('browser globals expose the same generated content as Node modules', () => 
       assert.equal(JSON.stringify(template.generate(context.LiminalCourseMath.random('browser'))), JSON.stringify(groups[topic - 2][i].generate(M.random('browser'))));
     });
   }
+});
+
+test('practice keys ignore row order, point labels, model labels, and cosmetic units', () => {
+  function modified(seed, kind) {
+    const rng = M.random(seed);
+    return { ...rng,
+      shuffle(values) { const shuffled = rng.shuffle(values); return kind === 'reverse' ? shuffled.reverse() : shuffled; },
+      pick(values) {
+        const value = rng.pick(values);
+        if (kind === 'flip-labels' && values.every(v => typeof v === 'boolean')) return !value;
+        if (kind === 'units' && values.includes('pages')) return values[(values.indexOf(value) + 1) % values.length];
+        return value;
+      }
+    };
+  }
+  for (const [id, change] of [
+    ['g8-t3-relation-table', 'reverse'],
+    ['g8-t4-scatter-outlier', 'reverse'],
+    ['g8-t4-compare-fit-lines', 'flip-labels'],
+    ['g8-t3-rental-comparison-model', 'flip-labels'],
+    ['g8-t2-compare-table-equation', 'units']
+  ]) {
+    let changedDisplays = 0;
+    for (let seed = 0; seed < 100; seed++) {
+      const template = byId.get(id), original = template.generate(M.random(seed)), changed = template.generate(modified(seed, change));
+      assert.equal(original.practiceKey, changed.practiceKey, id);
+      if (JSON.stringify([original.prompt, original.table, original.graph]) !== JSON.stringify([changed.prompt, changed.table, changed.graph])) changedDisplays++;
+    }
+    assert.ok(changedDisplays > 80, `${id}: cosmetic mutation was not exercised`);
+  }
+  const graphTemplate = byId.get('g8-t2-graph-y-mx');
+  const first = graphTemplate.generate({ nonzero: () => 2, int: () => 4 });
+  const second = graphTemplate.generate({ nonzero: () => 3, int: () => 6 });
+  assert.equal(first.practiceKey, second.practiceKey, 'Equivalent slopes must not count twice');
+  const sameAnswer = new Map();
+  exercise('g8-t2-both-sides', q => {
+    if (!sameAnswer.has(q.answer)) sameAnswer.set(q.answer, new Set());
+    sameAnswer.get(q.answer).add(q.practiceKey);
+  });
+  assert.ok([...sameAnswer.values()].some(keys => keys.size > 10), 'Different equations sharing an answer must remain different inputs');
+});
+
+test('expanded pools count mathematical keys, while retaining honest finite limits', () => {
+  const minimums = {
+    'g8-t2-compare-table-equation': 2000,
+    'g8-t2-compare-graph-rate': 3000,
+    'g8-t2-slope-triangles': 216,
+    'g8-t2-graph-y-mx': 182,
+    'g8-t2-intercept-graph': 400,
+    'g8-t2-graph-slope-intercept': 450,
+    'g8-t2-equation-from-graph': 380,
+    'g8-t3-rule-table-graph': 240,
+    'g8-t3-vertical-line-points': 320,
+    'g8-t3-sketch-filling-rates': 288,
+    'g8-t3-square-display-model': 6000,
+    'g8-t3-rental-comparison-model': 6000,
+    'g8-t4-write-fit-line': 7000,
+    'g8-t4-correct-scatter-point': 360
+  };
+  for (const [id, minimum] of Object.entries(minimums)) {
+    const keys = new Set();
+    for (let seed = 0; seed < 10000; seed++) keys.add(draw(id, `capacity:${seed}`).practiceKey);
+    assert.ok(keys.size >= minimum, `${id}: ${keys.size} canonical items, expected at least ${minimum}`);
+  }
+  // This is an exact small domain: reduced nonzero slopes with numerator and
+  // denominator bounded by 12. Grid size or unreduced forms add no new items.
+  const slopes = new Set();
+  for (let a = -12; a <= 12; a++) if (a !== 0) for (let b = 1; b <= 12; b++) slopes.add(M.fraction(a, b));
+  assert.equal(slopes.size, 182);
 });
 
 test('equation answers satisfy the displayed equation and are unique', () => {
@@ -101,11 +175,20 @@ test('special-case equation classifications and parameter choices hold for multi
   const seen = new Set();
   exercise('g8-t2-classify-solutions', q => {
     const [left, right] = q.prompt.match(/^Does (.*?) have /)[1].split(' = ');
-    const infinite = q.answer.startsWith('Infinitely');
-    seen.add(infinite);
-    for (const x of [-19, 0, 7, 31]) assert.equal(arithmetic(left, x) === arithmetic(right, x), infinite);
+    const leftSlope = arithmetic(left, 1) - arithmetic(left, 0), rightSlope = arithmetic(right, 1) - arithmetic(right, 0);
+    const expected = leftSlope !== rightSlope ? 'one' : arithmetic(left, 0) === arithmetic(right, 0) ? 'infinite' : 'none';
+    seen.add(expected);
+    if (expected === 'one') {
+      assert.ok(q.answer.startsWith('One solution:'));
+      const x = fraction(q.answer.match(/x = (.*?)\./)[1]);
+      assert.ok(Math.abs(arithmetic(left, x) - arithmetic(right, x)) < 1e-9);
+      assert.ok(Math.abs(arithmetic(left, x + 1) - arithmetic(right, x + 1)) > 1e-9);
+    } else {
+      assert.equal(q.answer.startsWith('Infinitely'), expected === 'infinite');
+      for (const x of [-19, 0, 7, 31]) assert.equal(arithmetic(left, x) === arithmetic(right, x), expected === 'infinite');
+    }
   });
-  assert.equal(seen.size, 2);
+  assert.equal(seen.size, 3);
   exercise('g8-t2-make-solution-type', q => {
     const [left, right] = q.prompt.match(/so that (.*?) has /)[1].split(' = ');
     const k = number(q.answer.match(/k = ([−\d]+)/)[1]);
@@ -137,15 +220,15 @@ test('perimeter and savings answers reproduce the stated quantities', () => {
 
 test('proportional table and graph comparisons use common rates and units', () => {
   exercise('g8-t2-compare-table-equation', q => {
-    const row = q.table.rows[0].map(Number), a = row[1] / row[0], b = +q.prompt.match(/y = (\d+)x/)[1];
+    const row = q.table.rows[0].map(Number), a = row[1] / row[0], b = arithmetic(q.prompt.match(/y = (.*?), where/)[1], 1);
     assert.ok(q.answer.startsWith(`Machine ${a > b ? 'A' : 'B'}`));
-    assert.equal(+q.answer.match(/; (\d+)/)[1], Math.abs(a - b));
+    assert.ok(Math.abs(fraction(q.answer.match(/; ([\d/]+)/)[1]) - Math.abs(a - b)) < 1e-10);
   });
   exercise('g8-t2-compare-graph-rate', q => {
     const p = q.graph.points[0], a = p.y / p.x, b = +q.prompt.match(/B adds (\d+)/)[1];
     const duration = +q.prompt.match(/in (\d+) minutes/)[1];
     assert.ok(q.answer.startsWith(`Hose ${a > b ? 'A' : 'B'}`));
-    assert.equal(+q.answer.match(/; (\d+)/)[1], Math.abs(a - b) * duration);
+    assert.ok(Math.abs(fraction(q.answer.match(/; ([\d/]+)/)[1]) - Math.abs(a - b) * duration) < 1e-10);
   });
 });
 
@@ -177,6 +260,19 @@ test('table y-intercepts are recovered by independently extending the rate to ze
     assert.equal(number(q.answer.match(/^\(0, (.*?)\)/)[1]), intercept);
     assert.equal(q.answer.includes('not proportional'), intercept !== 0);
   });
+});
+
+test('intercept graphs use neutral labels and readable coordinates without labeling the answer', () => {
+  const directions = new Set();
+  exercise('g8-t2-intercept-graph', q => {
+    assert.ok(q.graph.points.every(p => /^[A-Z]$/.test(p.label)));
+    assert.equal(q.graph.yStep, 1);
+    const initial = q.graph.points.find(p => p.x === 0);
+    assert.equal(+q.answer.match(/^\(0, (\d+)\)/)[1], initial.y);
+    assert.ok(q.graph.points.every(p => Number.isInteger(p.y)));
+    directions.add(q.graph.points[1].y > initial.y);
+  });
+  assert.equal(directions.size, 2);
 });
 
 test('function decisions reject only an input with conflicting outputs', () => {
@@ -225,13 +321,22 @@ test('two-observation cost models reproduce both displayed totals', () => {
 });
 
 test('piecewise graphs and sketch keys follow the stated intervals and rates', () => {
+  const orders = new Set();
+  let increasingBelowZero = false, decreasingAboveZero = false;
   exercise('g8-t3-increasing-decreasing-graph', q => {
     const points = q.graph.points;
-    assert.ok(points[1].y > points[0].y);
-    assert.equal(points[2].y, points[1].y);
-    assert.ok(points[3].y < points[2].y);
-    assert.equal(q.answer, `Increasing from 0 to ${points[1].x} minutes; constant from ${points[1].x} to ${points[2].x}; decreasing from ${points[2].x} to ${points[3].x}.`);
+    const directions = points.slice(1).map((p, i) => Math.sign(p.y - points[i].y));
+    assert.deepEqual(directions.slice().sort(), [-1, 0, 1]);
+    orders.add(directions.join(','));
+    const intervals = Object.fromEntries(directions.map((direction, i) => [direction, `${points[i].x} to ${points[i + 1].x}`]));
+    assert.equal(q.answer, `Increasing from ${intervals[1]} minutes; constant from ${intervals[0]}; decreasing from ${intervals[-1]}.`);
+    points.slice(1).forEach((p, i) => {
+      if (directions[i] > 0 && p.y < 0) increasingBelowZero = true;
+      if (directions[i] < 0 && p.y > 0) decreasingAboveZero = true;
+    });
   });
+  assert.equal(orders.size, 6);
+  assert.ok(increasingBelowZero && decreasingAboveZero);
   exercise('g8-t3-sketch-walk-rest-return', q => {
     const [distance, outward, rest, inward] = Array.from(q.prompt.matchAll(/\d+/g), m => +m[0]);
     assert.deepEqual(coordinates(q.answerGraph), [[0, 0], [outward, distance], [outward + rest, distance], [outward + rest + inward, 0]]);
@@ -248,9 +353,11 @@ test('piecewise graphs and sketch keys follow the stated intervals and rates', (
 test('model comparisons include either winner and the equal-count case', () => {
   const countComparisons = new Set(), fasterIntervals = new Set();
   exercise('g8-t3-square-display-model', q => {
-    const width = +q.prompt.match(/with (\d+) tiles/)[1], x = +q.prompt.match(/when n = (\d+)/)[1];
-    const winner = width === x ? 'equal' : width > x ? 'A' : 'B';
+    const width = +q.prompt.match(/with (\d+) tiles/)[1], x = +q.prompt.match(/when n = (\d+)/)[1], [extraA, extraB] = Array.from(q.prompt.matchAll(/plus (\d+) tiles?/g), m => +m[1]);
+    const a = width * x + extraA, b = x * x + extraB, winner = a === b ? 'equal' : a > b ? 'A' : 'B';
     assert.ok(q.answer.includes(winner === 'equal' ? 'the counts are equal' : `${winner} uses more`));
+    const pairs = Array.from(q.answer.split('Table pairs (A, B): ')[1].matchAll(/\((\d+), (\d+)\)/g), m => [+m[1], +m[2]]);
+    assert.deepEqual(pairs, q.table.rows.map(row => [+row[0] * width + extraA, Number(row[0]) ** 2 + extraB]));
     countComparisons.add(winner);
   });
   exercise('g8-t3-compare-increasing-intervals', q => {
@@ -262,9 +369,18 @@ test('model comparisons include either winner and the equal-count case', () => {
   });
   assert.equal(countComparisons.size, 3);
   assert.equal(fasterIntervals.size, 2);
+  exercise('g8-t3-rental-comparison-model', q => {
+    const [feeA, rateA, feeB, rateB] = Array.from(q.prompt.matchAll(/\$(\d+)/g), m => +m[1]);
+    const expected = q.table.rows.map(row => [feeA + rateA * +row[0], feeB + rateB * +row[0]]);
+    const actual = Array.from(q.answer.matchAll(/\((\d+), (\d+)\)/g), m => [+m[1], +m[2]]);
+    assert.deepEqual(actual, expected);
+    assert.equal(actual[1][0], actual[1][1]);
+    assert.ok(q.answer.includes(`${actual[0][0] < actual[0][1] ? 'A' : 'B'} is cheaper before`));
+    assert.ok(q.answer.includes(`${actual[2][0] < actual[2][1] ? 'A' : 'B'} is cheaper after`));
+  });
 });
 
-test('scatter association designs show positive, negative, nonlinear, and no-association patterns', () => {
+test('scatter association designs include five patterns, with clusters separate from direction', () => {
   const patterns = new Set();
   exercise('g8-t4-scatter-association', q => {
     const points = q.graph.points;
@@ -274,6 +390,12 @@ test('scatter association designs show positive, negative, nonlinear, and no-ass
     if (new Set(distributions).size === 1) {
       assert.ok(q.answer.startsWith('No association'));
       patterns.add('none');
+    } else if (points.some(p => !Number.isInteger(p.x))) {
+      const sorted = points.slice().sort((a, b) => a.x - b.x);
+      assert.ok(sorted[3].x - sorted[2].x > 3);
+      assert.ok(Math.min(...sorted.slice(3).map(p => p.y)) > Math.max(...sorted.slice(0, 3).map(p => p.y)));
+      assert.ok(q.answer.startsWith('Two separated clusters, with a positive overall association'));
+      patterns.add('clusters');
     } else {
       const differences = points.slice(1).map((p, i) => p.y - points[i].y);
       const secondDifferences = differences.slice(1).map((d, i) => d - differences[i]);
@@ -289,34 +411,95 @@ test('scatter association designs show positive, negative, nonlinear, and no-ass
     }
     assert.match(q.answer, /does not establish causation/);
   });
-  assert.equal(patterns.size, 4);
+  assert.equal(patterns.size, 5);
 });
 
 test('scatter plot construction and point corrections preserve table pairings', () => {
+  const patterns = new Set();
   exercise('g8-t4-construct-scatter', q => {
     assert.deepEqual(coordinates(q.answerGraph), q.table.rows.map(row => row.map(Number)));
     assert.equal(q.graph.points.length, 0);
     assert.equal(q.answerGraph.lines.length, 0);
+    const points = q.answerGraph.points;
+    if (new Set(points.map(p => p.x)).size < points.length) {
+      const distributions = [1, 3, 5].map(x => points.filter(p => p.x === x).map(p => p.y).join(','));
+      assert.equal(new Set(distributions).size, 1);
+      assert.match(q.answer, /no association/);
+      patterns.add('none');
+    } else {
+      const differences = points.slice(1).map((p, i) => p.y - points[i].y);
+      if (differences.slice(1).every((d, i) => d - differences[i] === 2)) {
+        assert.match(q.answer, /positive and nonlinear/);
+        patterns.add('nonlinear');
+      } else {
+        const covariance = points.reduce((sum, p) => sum + (p.x - 3.5) * p.y, 0);
+        assert.ok(q.answer.includes(covariance > 0 ? 'positive and approximately linear' : 'negative and approximately linear'));
+        patterns.add(covariance > 0 ? 'positive' : 'negative');
+      }
+    }
   });
+  assert.equal(patterns.size, 4);
   exercise('g8-t4-correct-scatter-point', q => {
     const mismatch = q.graph.points.filter((p, i) => p.x !== +q.table.rows[i][0] || p.y !== +q.table.rows[i][1]);
     assert.equal(mismatch.length, 1);
     const expected = q.table.rows.find(row => +row[0] === mismatch[0].x);
     assert.equal(q.answer, `Point ${mismatch[0].label} should be (${expected[0]}, ${expected[1]}).`);
+    assert.ok(q.table.rows.every(([, y]) => +y >= q.graph.yMin && +y <= q.graph.yMax), 'Corrected table values must fit on the same graph');
   });
 });
 
+test('outliers have no fixed label, position, trend sign, or side of the trend', () => {
+  const labels = new Set(), cases = new Set();
+  exercise('g8-t4-scatter-outlier', q => {
+    const points = q.graph.points;
+    assert.equal(new Set(points.map(p => p.label)).size, 7);
+    assert.ok(points.every(p => /^[A-G]$/.test(p.label)));
+    // Fit every two-point candidate and find the line with the most nearby
+    // observations. This uses only displayed coordinates, not generator data.
+    const candidates = [];
+    points.forEach((a, i) => points.slice(i + 1).forEach(b => {
+      if (a.x === b.x) return;
+      const slope = (b.y - a.y) / (b.x - a.x), intercept = a.y - slope * a.x;
+      const errors = points.map(p => p.y - (slope * p.x + intercept));
+      candidates.push({ slope, errors, near: errors.filter(e => Math.abs(e) <= 2.000001).length, total: errors.reduce((sum, e) => sum + Math.abs(e), 0) });
+    }));
+    candidates.sort((a, b) => b.near - a.near || a.total - b.total);
+    const best = candidates[0];
+    assert.equal(best.near, 6);
+    const outIndex = best.errors.reduce((largest, error, i) => Math.abs(error) > Math.abs(best.errors[largest]) ? i : largest, 0);
+    const outlier = points[outIndex];
+    assert.ok(Math.abs(best.errors[outIndex]) > 10);
+    assert.ok(q.answer.includes(`${outlier.label}(${outlier.x}, ${String(outlier.y).replace(/-/g, '−')}) is an outlier`));
+    assert.ok(q.answer.includes(best.slope > 0 ? 'trend is positive' : 'trend is negative'));
+    labels.add(outlier.label);
+    cases.add(`${Math.sign(best.slope)},${Math.sign(best.errors[outIndex])}`);
+  });
+  assert.equal(labels.size, 7);
+  assert.equal(cases.size, 4);
+});
+
 test('fitted-line comparisons recompute all observed absolute errors', () => {
+  const countercues = new Set(), errors = new Set();
   exercise('g8-t4-compare-fit-lines', q => {
     const a = q.prompt.match(/A: y = (.*?) and model/)[1];
     const b = q.prompt.match(/B: y = (.*?)\./)[1];
-    const errorA = q.graph.points.reduce((sum, p) => sum + Math.abs(p.y - arithmetic(a, p.x)), 0);
-    const errorB = q.graph.points.reduce((sum, p) => sum + Math.abs(p.y - arithmetic(b, p.x)), 0);
+    assert.deepEqual(q.table.headers, ['x', 'Observed y', 'A prediction', 'A absolute error', 'B prediction', 'B absolute error']);
+    const dataRows = q.table.rows.filter(row => row[0] !== 'Total');
+    assert.deepEqual(dataRows.map(row => row.slice(0, 2).map(Number)), coordinates(q.graph));
+    assert.ok(dataRows.every(row => row.slice(2).every(cell => cell === '____')));
+    assert.deepEqual(q.table.rows.at(-1), ['Total', '—', '—', '____', '—', '____']);
+    const errorA = dataRows.reduce((sum, row) => sum + Math.abs(+row[1] - arithmetic(a, +row[0])), 0);
+    const errorB = dataRows.reduce((sum, row) => sum + Math.abs(+row[1] - arithmetic(b, +row[0])), 0);
     assert.ok(q.answer.startsWith(`Model ${errorA < errorB ? 'A' : 'B'} fits better:`));
     const [best, other] = Array.from(q.answer.matchAll(/\d+/g), m => +m[0]);
     assert.equal(best, Math.min(errorA, errorB));
     assert.equal(other, Math.max(errorA, errorB));
+    const winner = errorA < errorB ? 'A' : 'B', bestIntercept = arithmetic(errorA < errorB ? a : b, 0), otherIntercept = arithmetic(errorA < errorB ? b : a, 0);
+    countercues.add(`${winner},${bestIntercept < otherIntercept ? 'lower' : 'higher'}`);
+    errors.add(best);
   });
+  assert.equal(countercues.size, 4);
+  assert.ok(errors.size > 10);
   exercise('g8-t4-write-fit-line', q => {
     const expression = q.answer.match(/^y = (.*?)\./)[1];
     q.graph.points.filter(p => p.label).forEach(p => assert.equal(arithmetic(expression, p.x), p.y));
@@ -324,12 +507,16 @@ test('fitted-line comparisons recompute all observed absolute errors', () => {
 });
 
 test('model prediction answers and interpolation decisions use the given model and range', () => {
+  const locations = new Set();
   exercise('g8-t4-model-prediction', q => {
     const [m, b] = q.prompt.match(/t = (\d+)d \+ (\d+)/).slice(1).map(Number);
     const x = +q.prompt.match(/time for (\d+) km/)[1];
     assert.equal(+q.answer.match(/About (\d+)/)[1], m * x + b);
-    assert.ok(x >= 2 && x <= 10);
+    const outside = x < 2 || x > 10;
+    assert.equal(q.answer.includes('extrapolation'), outside);
+    locations.add(x < 2 ? 'below' : x > 10 ? 'above' : 'inside');
   });
+  assert.equal(locations.size, 3);
   exercise('g8-t4-inverse-prediction', q => {
     const expression = q.prompt.match(/y = (.*?);/)[1];
     const y = +q.prompt.match(/y of (\d+)/)[1], x = +q.answer.match(/x = (\d+)/)[1];

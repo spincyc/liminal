@@ -1,8 +1,8 @@
 (function () {
   "use strict";
 
-  // Shared by every page. The SAT | ACT switch in the header scopes the whole
-  // site to one test at a time; the choice is stored so it follows the
+  // Shared by the test-prep pages. The SAT | ACT switch scopes those pages
+  // to one test at a time; the choice is stored so it follows the
   // student between pages and visits. Pages listen with onTestChange.
   const TEST_KEY = "liminal:test:v1";
   const TESTS = ["SAT", "ACT"];
@@ -84,7 +84,11 @@
     if (next !== current) setTest(next, { persist: false });
   });
 
-  applyToPage();
+  // A module link from the library explicitly chooses its test. Preserve
+  // the existing choice on all other visits, without touching progress.
+  const requestedTest = new URLSearchParams(window.location.search).get("test");
+  if (TESTS.includes(requestedTest)) setTest(requestedTest);
+  else applyToPage();
 
   window.LiminalSite = {
     TESTS,

@@ -17,10 +17,13 @@ repository content. The browser needs no textbook images or external service.
 
 ## Study and print
 
-Open **Courses** from the main navigation. Select the course, lessons, problems
-per night, nights, and packet seed. Topic 1 is selected initially. Start with
-the guide's worked examples, try a worksheet independently, then mark it with
-the separate worked answer key. Use a later packet to revisit missed skills.
+Open **Courses** from the landing page. Topic 1 is selected initially. The
+Study view reads one selected lesson at a time, with worked reasoning hidden
+until requested. Use **Practice this lesson** for a focused set or choose
+several lessons for review. The practice builder offers a short set and an
+explicit 20-question, 10-night preset. Replay settings are under the advanced
+disclosure. Try a worksheet independently, then mark it with the separate
+worked answer key. Use a later packet to revisit missed skills.
 Problem counts are configurable; a packet is a supply of practice, not a
 requirement to finish every page in one sitting.
 
@@ -51,7 +54,10 @@ durable personal location before workspace cleanup.
 1–12 thereafter), subjects, titles, and course filenames. Each course declares
 its ID, version, scope and source alignment, then units and lessons. A lesson
 has a stable ID, objective, explanation paragraphs, at least two worked
-examples (`prompt`, `answer`, `steps`), pitfalls, and practice advice. The first
+examples (`prompt`, `answer`, `steps`), pitfalls, and practice advice. Example
+`table` and `graph` fields are givens. `solutionTable` and `solutionGraph` are
+worked material: the interactive reader puts these inside the answer reveal,
+while the printable guide includes the complete worked example. The first
 course also carries factual textbook page and standards references. These do
 not make new material official publisher content or a standards certification.
 
@@ -78,11 +84,21 @@ count, and revision. Printed worksheet codes identify matching copies; they
 are not standalone replay instructions. Keep a downloaded packet when exact
 future reproduction matters, since old generator revisions are not bundled.
 
-Generation balances selected lessons and cycles question designs. It rejects
-identical visible items within a sheet and tries to avoid items from earlier
-nights in the same packet. Finite pools can repeat across nights; exhaustion
-produces an explicit warning. Separate packets do not share browser exposure
-history. New seeds vary numbers and presentations, not necessarily the
+Generation balances selected lessons and cycles each lesson's designs across
+the entire packet. Every design supplies a `practiceKey` derived from its
+mathematical task and givens. It ignores cosmetic changes such as a renamed
+variable or reordered unordered relation; it must not depend on the answer
+alone. Both these keys and exact visible identities are checked within and
+across nights. The builder refuses a request when its bounded search cannot
+find enough distinct items, with advice to reduce the count/nights or add
+lessons. It never fills the gap with repeats or silently replaces an exhausted
+design with a sibling. A packet too short to cover all selected lessons shows
+a coverage note.
+
+This is an explicit per-design identity contract, not a proof of all possible
+algebraic equivalences between designs. Separate packets do not share browser
+exposure history. Replaying a seed intentionally reproduces the same items.
+New seeds vary numbers and presentations, not necessarily the
 underlying mathematical design. No claim of unlimited independent question
 designs or empirical difficulty calibration is made.
 
@@ -104,7 +120,9 @@ their actual scope and source hashes. Neither sampling nor automated checks
 establish human editorial approval or measured student difficulty.
 
 The initial release's [integration and print review](reviews/2026-10-06-grade8-integration.md)
-links the independent mathematical reviews and records the tested settings.
+is a historical baseline. The [cold-review follow-up](reviews/2026-10-06-grade8-cold-followup.md)
+records its subsequently discovered defects, corrections, renewed math review,
+and final browser/print verification.
 
 After generator changes, renew the affected mathematical tests and independent
 sample review. After renderer changes, inspect actual student and key PDFs:

@@ -119,8 +119,27 @@
               "steps": [
                 "Since 5^2 = 25 and 6^2 = 36, the root lies between 5 and 6.",
                 "Since 5.56^2 = 30.9136 and 5.57^2 = 31.0249, it lies between 5.56 and 5.57.",
-                "Both bounds round to 5.6 to the nearest tenth. On a number line, place the exact root slightly left of 5.6."
-              ]
+                "Both bounds round to 5.6 to the nearest tenth. The number line shows √31 approximately, slightly left of 5.6."
+              ],
+              "solutionGraph": {
+                "xMin": 5,
+                "xMax": 6,
+                "yMin": -1,
+                "yMax": 1,
+                "xStep": 0.1,
+                "yStep": 1,
+                "xLabel": "Value",
+                "yLabel": "",
+                "points": [
+                  {
+                    "x": 5.5677643628300215,
+                    "y": 0,
+                    "label": "√31"
+                  }
+                ],
+                "lines": [],
+                "numberLine": true
+              }
             },
             {
               "prompt": "Order −√11, −3.3, −3 1/4, and −3.[2] from least to greatest.",
@@ -690,7 +709,31 @@
                 "Subtract 4n and 6: 12 = 2n, so n = 6.",
                 "Check: 18 + 4(6) = 42 and 6 + 6(6) = 42.",
                 "For 4 kits, A costs $34 and B costs $30. For 10 kits, A costs $58 and B costs $66. The lower unit price helps A on larger orders."
-              ]
+              ],
+              "solutionTable": {
+                "headers": [
+                  "Kits n",
+                  "Plan A ($)",
+                  "Plan B ($)"
+                ],
+                "rows": [
+                  [
+                    "4",
+                    "34",
+                    "30"
+                  ],
+                  [
+                    "6",
+                    "42",
+                    "42"
+                  ],
+                  [
+                    "10",
+                    "58",
+                    "66"
+                  ]
+                ]
+              }
             },
             {
               "prompt": "Three quotes for n kits are C = 10 + 5n, D = 2(5 + 2.5n), and E = 14 + 5n, in dollars. Which totals can match?",
@@ -700,7 +743,35 @@
                 "Equating C and D gives 0 = 0, so every nonnegative whole number n is allowed.",
                 "Equating C and E gives 10 = 14, a contradiction. E always costs $4 more.",
                 "For 8 kits, C and D each cost $50, while E costs $54."
-              ]
+              ],
+              "solutionTable": {
+                "headers": [
+                  "Kits n",
+                  "Quote C ($)",
+                  "Quote D ($)",
+                  "Quote E ($)"
+                ],
+                "rows": [
+                  [
+                    "0",
+                    "10",
+                    "10",
+                    "14"
+                  ],
+                  [
+                    "4",
+                    "30",
+                    "30",
+                    "34"
+                  ],
+                  [
+                    "8",
+                    "50",
+                    "50",
+                    "54"
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -731,17 +802,73 @@
                 "Shop B's coefficient gives 3 dollars per notebook.",
                 "For 8 notebooks, A charges 3.5(8) = 28 dollars and B charges 3(8) = 24 dollars.",
                 "Subtract totals: 28 − 24 = 4 dollars saved at B."
-              ]
+              ],
+              "solutionTable": {
+                "headers": [
+                  "Notebooks",
+                  "Shop A ($)",
+                  "Shop B ($)"
+                ],
+                "rows": [
+                  [
+                    "2",
+                    "7",
+                    "6"
+                  ],
+                  [
+                    "6",
+                    "21",
+                    "18"
+                  ],
+                  [
+                    "8",
+                    "28",
+                    "24"
+                  ]
+                ]
+              }
             },
             {
               "prompt": "Runner A covers 900 meters in 6 minutes. Runner B's distance graph is a line through (0, 0) and (4, 640), with minutes first. Both maintain constant speed. Compare their 15-minute distances.",
               "answer": "B travels 2,400 meters, 150 meters farther than A.",
               "steps": [
                 "A's speed is 900/6 = 150 meters per minute.",
-                "B's speed is 640/4 = 160 meters per minute.",
+                "B's graph rises 640 meters in 4 minutes: its speed is 640/4 = 160 meters per minute.",
                 "Multiply by 15: A travels 2,250 meters and B travels 2,400 meters.",
                 "The 10-meter-per-minute difference accumulates to 10(15) = 150 meters."
-              ]
+              ],
+              "graph": {
+                "xMin": 0,
+                "xMax": 16,
+                "yMin": 0,
+                "yMax": 2600,
+                "xStep": 2,
+                "yStep": 400,
+                "xLabel": "Time (minutes)",
+                "yLabel": "Runner B distance (meters)",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 4,
+                    "y": 640
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 15,
+                      "y": 2400
+                    }
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -759,20 +886,87 @@
           ],
           "objective": "Connect constant proportional rates to slope and explain why different slope triangles give the same ratio.",
           "explanation": [
-            "Slope measures vertical change divided by horizontal change between two points with different x-coordinates. Write it as m = (y2 − y1)/(x2 − x1). In a proportional relationship the line passes through the origin, and its slope equals the constant of proportionality.",
+            "Slope is vertical change divided by horizontal change. For points (x₁, y₁) and (x₂, y₂) with different x-coordinates, m = (y₂ − y₁)/(x₂ − x₁). The subscripts label the first and second point. A proportional line passes through the origin; its slope equals the constant of proportionality.",
             "Horizontal and vertical moves between points form a right triangle. Triangles along the same straight line are similar because their angles match. Corresponding side lengths are proportional, so rise/run stays constant even for different-sized triangles.",
             "Use signed changes: a line rising to the right has positive slope; a falling line has negative slope. Reversing both points' order reverses both changes and preserves their ratio. A zero horizontal change cannot be a slope denominator."
           ],
           "examples": [
             {
-              "prompt": "A proportional line contains (0, 0), (4, 6), and (10, 15). Find its slope using two different triangles.",
+              "prompt": "A proportional line contains O(0, 0), A(4, 6), and B(10, 15). Find its slope using the two drawn right triangles.",
               "answer": "The slope is 3/2 for both triangles.",
               "steps": [
-                "From (0, 0) to (4, 6), the rise is 6 and the run is 4, so m = 6/4 = 3/2.",
-                "From (4, 6) to (10, 15), the rise is 15 − 6 = 9 and the run is 10 − 4 = 6.",
+                "For triangle OA, the horizontal leg is 4 and the vertical leg is 6, so m = 6/4 = 3/2.",
+                "For triangle AB, the rise is 15 − 6 = 9 and the run is 10 − 4 = 6.",
                 "The second ratio is 9/6 = 3/2. Its legs are each 3/2 times the first triangle's legs.",
                 "Each horizontal increase of 2 corresponds to a vertical increase of 3."
-              ]
+              ],
+              "graph": {
+                "xMin": 0,
+                "xMax": 12,
+                "yMin": 0,
+                "yMax": 18,
+                "xStep": 2,
+                "yStep": 3,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 0,
+                    "label": "O"
+                  },
+                  {
+                    "x": 4,
+                    "y": 6,
+                    "label": "A"
+                  },
+                  {
+                    "x": 10,
+                    "y": 15,
+                    "label": "B"
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 10,
+                      "y": 15
+                    }
+                  ],
+                  [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 4,
+                      "y": 0
+                    },
+                    {
+                      "x": 4,
+                      "y": 6
+                    }
+                  ],
+                  [
+                    {
+                      "x": 4,
+                      "y": 6
+                    },
+                    {
+                      "x": 10,
+                      "y": 6
+                    },
+                    {
+                      "x": 10,
+                      "y": 15
+                    }
+                  ]
+                ]
+              }
             },
             {
               "prompt": "Find the slope through (2, −6) and (5, −15), then check whether these points fit a proportional line through the origin.",
@@ -782,7 +976,82 @@
                 "Compute the matching horizontal change: 5 − 2 = 3.",
                 "Divide: m = −9/3 = −3.",
                 "Check the origin-based rule: −3(2) = −6 and −3(5) = −15. The line drops 3 units per unit to the right."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 6,
+                "yMin": -18,
+                "yMax": 0,
+                "xStep": 1,
+                "yStep": 3,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 2,
+                    "y": -6,
+                    "label": "A"
+                  },
+                  {
+                    "x": 5,
+                    "y": -15,
+                    "label": "B"
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 6,
+                      "y": -18
+                    }
+                  ],
+                  [
+                    {
+                      "x": 2,
+                      "y": -6
+                    },
+                    {
+                      "x": 5,
+                      "y": -6
+                    },
+                    {
+                      "x": 5,
+                      "y": -15
+                    }
+                  ]
+                ]
+              },
+              "graph": {
+                "xMin": 0,
+                "xMax": 6,
+                "yMin": -18,
+                "yMax": 0,
+                "xStep": 1,
+                "yStep": 3,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 2,
+                    "y": -6,
+                    "label": "A"
+                  },
+                  {
+                    "x": 5,
+                    "y": -15,
+                    "label": "B"
+                  }
+                ],
+                "lines": []
+              }
             }
           ],
           "pitfalls": [
@@ -814,7 +1083,51 @@
                 "Each increase of 4 in x increases y by 7, so rise/run = 7/4.",
                 "Set 35 = (7/4)x. Multiply both sides by 4/7: x = 35(4/7) = 20.",
                 "Check: (7/4)(20) = 35."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 24,
+                "yMin": 0,
+                "yMax": 42,
+                "xStep": 4,
+                "yStep": 7,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 4,
+                    "y": 7
+                  },
+                  {
+                    "x": 8,
+                    "y": 14
+                  },
+                  {
+                    "x": 12,
+                    "y": 21
+                  },
+                  {
+                    "x": 20,
+                    "y": 35
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 24,
+                      "y": 42
+                    }
+                  ]
+                ]
+              }
             },
             {
               "prompt": "A proportional line passes through (3, −12). Write its equation, find y at x = 5, and find x at y = 16.",
@@ -824,7 +1137,47 @@
                 "Write y = −4x; it also gives (0, 0).",
                 "Substitute x = 5: y = −4(5) = −20.",
                 "Set 16 = −4x and divide by −4: x = −4. Check: −4(−4) = 16."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": -5,
+                "xMax": 6,
+                "yMin": -24,
+                "yMax": 24,
+                "xStep": 1,
+                "yStep": 4,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": -4,
+                    "y": 16
+                  },
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 3,
+                    "y": -12
+                  },
+                  {
+                    "x": 5,
+                    "y": -20
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": -5,
+                      "y": 20
+                    },
+                    {
+                      "x": 6,
+                      "y": -24
+                    }
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -855,7 +1208,43 @@
                 "The coefficient −3 means the volume decreases by 3 liters per minute.",
                 "For an empty container set V = 0: 0 = 18 − 3t, giving t = 6.",
                 "At t = 4, V = 6 liters. The model applies from 0 through 6 minutes; negative volumes afterward would be meaningless."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 7,
+                "yMin": 0,
+                "yMax": 21,
+                "xStep": 1,
+                "yStep": 3,
+                "xLabel": "Time (minutes)",
+                "yLabel": "Volume (liters)",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 18
+                  },
+                  {
+                    "x": 4,
+                    "y": 6
+                  },
+                  {
+                    "x": 6,
+                    "y": 0
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 18
+                    },
+                    {
+                      "x": 6,
+                      "y": 0
+                    }
+                  ]
+                ]
+              }
             },
             {
               "prompt": "A linear table contains (2, 11), (3, 14), and (4, 17). Find the y-intercept.",
@@ -865,7 +1254,95 @@
                 "Step backward from (2, 11): at x = 1, y = 11 − 3 = 8.",
                 "Step backward again: at x = 0, y = 8 − 3 = 5.",
                 "Check with y = 3x + 5: the three listed outputs are 11, 14, and 17."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 5,
+                "yMin": 0,
+                "yMax": 20,
+                "xStep": 1,
+                "yStep": 5,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 5
+                  },
+                  {
+                    "x": 2,
+                    "y": 11
+                  },
+                  {
+                    "x": 3,
+                    "y": 14
+                  },
+                  {
+                    "x": 4,
+                    "y": 17
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 5
+                    },
+                    {
+                      "x": 5,
+                      "y": 20
+                    }
+                  ]
+                ]
+              },
+              "solutionTable": {
+                "headers": [
+                  "x",
+                  "y"
+                ],
+                "rows": [
+                  [
+                    "0",
+                    "5"
+                  ],
+                  [
+                    "1",
+                    "8"
+                  ],
+                  [
+                    "2",
+                    "11"
+                  ],
+                  [
+                    "3",
+                    "14"
+                  ],
+                  [
+                    "4",
+                    "17"
+                  ]
+                ]
+              },
+              "table": {
+                "headers": [
+                  "x",
+                  "y"
+                ],
+                "rows": [
+                  [
+                    "2",
+                    "11"
+                  ],
+                  [
+                    "3",
+                    "14"
+                  ],
+                  [
+                    "4",
+                    "17"
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -896,7 +1373,47 @@
                 "Use (−2, 7): 7 = −2(−2) + b = 4 + b, so b = 3.",
                 "Write y = −2x + 3. Check the other point: −2(4) + 3 = −5.",
                 "Substitute 6: y = −2(6) + 3 = −9."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": -3,
+                "xMax": 7,
+                "yMin": -12,
+                "yMax": 12,
+                "xStep": 1,
+                "yStep": 3,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": -2,
+                    "y": 7
+                  },
+                  {
+                    "x": 0,
+                    "y": 3
+                  },
+                  {
+                    "x": 4,
+                    "y": -5
+                  },
+                  {
+                    "x": 6,
+                    "y": -9
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": -3,
+                      "y": 9
+                    },
+                    {
+                      "x": 7,
+                      "y": -11
+                    }
+                  ]
+                ]
+              }
             },
             {
               "prompt": "A studio charges $7 preparation plus $2.50 per kilogram of clay. Model the cost, price 4 kilograms, and find the quantity costing $22.",
@@ -943,7 +1460,35 @@
                 "List the inputs in A: 1, 2, and 3. Each appears with exactly one output.",
                 "The shared output 4 causes no problem: different inputs are allowed to lead to the same output.",
                 "In B, input 1 leads to both 4 and 7. That single conflict is enough to disqualify B."
-              ]
+              ],
+              "table": {
+                "headers": [
+                  "A input",
+                  "A output",
+                  "B input",
+                  "B output"
+                ],
+                "rows": [
+                  [
+                    "1",
+                    "4",
+                    "1",
+                    "4"
+                  ],
+                  [
+                    "2",
+                    "4",
+                    "2",
+                    "4"
+                  ],
+                  [
+                    "3",
+                    "7",
+                    "1",
+                    "7"
+                  ]
+                ]
+              }
             },
             {
               "prompt": "Use y = 2x + 1 for inputs −2, 0, and 3. Give the ordered pairs and explain why this rule is a function.",
@@ -952,7 +1497,27 @@
                 "For x = −2, calculate 2(−2) + 1 = −3.",
                 "For x = 0, calculate 2(0) + 1 = 1. For x = 3, calculate 2(3) + 1 = 7.",
                 "Each chosen input gives one output. More generally, multiplying any allowed input by 2 and adding 1 produces a single value."
-              ]
+              ],
+              "solutionTable": {
+                "headers": [
+                  "Input x",
+                  "Output y = 2x + 1"
+                ],
+                "rows": [
+                  [
+                    "−2",
+                    "−3"
+                  ],
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "3",
+                    "7"
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -982,7 +1547,63 @@
                 "Let h be hours and C be total dollars. The starting fee supplies 4; the hourly charge supplies 1.5h.",
                 "Substitute the inputs: C(0) = 4, C(2) = 3 + 4 = 7, and C(4) = 6 + 4 = 10.",
                 "Plot the three pairs with hours horizontally and dollars vertically. Under continuous hourly billing, the rule forms a straight line for h ≥ 0."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 6,
+                "yMin": 0,
+                "yMax": 14,
+                "xStep": 1,
+                "yStep": 2,
+                "xLabel": "Time (hours)",
+                "yLabel": "Cost ($)",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 4
+                  },
+                  {
+                    "x": 2,
+                    "y": 7
+                  },
+                  {
+                    "x": 4,
+                    "y": 10
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 4
+                    },
+                    {
+                      "x": 6,
+                      "y": 13
+                    }
+                  ]
+                ]
+              },
+              "solutionTable": {
+                "headers": [
+                  "Hours h",
+                  "Cost C ($)"
+                ],
+                "rows": [
+                  [
+                    "0",
+                    "4"
+                  ],
+                  [
+                    "2",
+                    "7"
+                  ],
+                  [
+                    "4",
+                    "10"
+                  ]
+                ]
+              }
             },
             {
               "prompt": "A straight-line graph passes through (0, 12), (2, 8), and (5, 2). Find its rule and its output at x = 6.",
@@ -991,7 +1612,83 @@
                 "The point at x = 0 gives the intercept 12.",
                 "Between the first two points, the rate is (8 − 12)/(2 − 0) = −4/2 = −2.",
                 "Check the third point: −2(5) + 12 = 2. Then substitute 6: −2(6) + 12 = 0."
-              ]
+              ],
+              "graph": {
+                "xMin": 0,
+                "xMax": 7,
+                "yMin": 0,
+                "yMax": 14,
+                "xStep": 1,
+                "yStep": 2,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 12
+                  },
+                  {
+                    "x": 2,
+                    "y": 8
+                  },
+                  {
+                    "x": 5,
+                    "y": 2
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 12
+                    },
+                    {
+                      "x": 6,
+                      "y": 0
+                    }
+                  ]
+                ]
+              },
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 7,
+                "yMin": 0,
+                "yMax": 14,
+                "xStep": 1,
+                "yStep": 2,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 12
+                  },
+                  {
+                    "x": 2,
+                    "y": 8
+                  },
+                  {
+                    "x": 5,
+                    "y": 2
+                  },
+                  {
+                    "x": 6,
+                    "y": 0
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 12
+                    },
+                    {
+                      "x": 6,
+                      "y": 0
+                    }
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -1022,16 +1719,89 @@
                 "Each input step is 1. A increases by 3, 3, and 3, giving a constant rate of 3 in the table.",
                 "A starts at 1, so its linear rule is y = 3x + 1 if the constant-rate pattern continues.",
                 "B increases by 1, 3, and 5. These unequal changes confirm that its stated square rule is nonlinear."
-              ]
+              ],
+              "table": {
+                "headers": [
+                  "Input x",
+                  "A output",
+                  "B output"
+                ],
+                "rows": [
+                  [
+                    "0",
+                    "1",
+                    "1"
+                  ],
+                  [
+                    "1",
+                    "4",
+                    "2"
+                  ],
+                  [
+                    "2",
+                    "7",
+                    "5"
+                  ],
+                  [
+                    "3",
+                    "10",
+                    "10"
+                  ]
+                ]
+              }
             },
             {
               "prompt": "Compare A: y = −3x + 8 with linear function B through (−2, 5), (0, 1), and (3, −5). Which starts higher, and which decreases faster?",
               "answer": "A starts higher and decreases faster.",
               "steps": [
-                "A has starting output 8 and rate −3.",
-                "For B, use (−5 − 1)/(3 − 0) = −6/3 = −2. Its point (0, 1) gives starting output 1.",
+                "A has starting output 8 and rate −3. Its graph meets the vertical axis at the point marked A.",
+                "For B, (−5 − 1)/(3 − 0) = −6/3 = −2. Its starting point (0, 1) is marked B.",
                 "Compare 8 with 1 for the start. Compare the decreases per unit: A falls 3 while B falls 2."
-              ]
+              ],
+              "graph": {
+                "xMin": -3,
+                "xMax": 4,
+                "yMin": -8,
+                "yMax": 18,
+                "xStep": 1,
+                "yStep": 2,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 8,
+                    "label": "A"
+                  },
+                  {
+                    "x": 0,
+                    "y": 1,
+                    "label": "B"
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": -3,
+                      "y": 17
+                    },
+                    {
+                      "x": 4,
+                      "y": -4
+                    }
+                  ],
+                  [
+                    {
+                      "x": -3,
+                      "y": 7
+                    },
+                    {
+                      "x": 4,
+                      "y": -7
+                    }
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -1062,7 +1832,47 @@
                 "Calculate the rate: (20 − 11)/(5 − 2) = 9/3 = 3.",
                 "Substitute (2, 11) into y = 3x + b: 11 = 6 + b, so b = 5.",
                 "Check the other point: 3(5) + 5 = 20. Predict 3(8) + 5 = 29 under the stated linear rule."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 9,
+                "yMin": 0,
+                "yMax": 35,
+                "xStep": 1,
+                "yStep": 5,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 5
+                  },
+                  {
+                    "x": 2,
+                    "y": 11
+                  },
+                  {
+                    "x": 5,
+                    "y": 20
+                  },
+                  {
+                    "x": 8,
+                    "y": 29
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 5
+                    },
+                    {
+                      "x": 9,
+                      "y": 32
+                    }
+                  ]
+                ]
+              }
             },
             {
               "prompt": "A tank starts with 72 liters and drains steadily at 4 liters per minute. Model its volume and find when it becomes empty.",
@@ -1071,7 +1881,43 @@
                 "Let t measure minutes since draining began and V measure liters remaining.",
                 "The initial volume is 72 and the rate is −4, so V = 72 − 4t.",
                 "Set V = 0: 72 − 4t = 0, giving 4t = 72 and t = 18. At 10 minutes the check gives 72 − 40 = 32 liters."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 20,
+                "yMin": 0,
+                "yMax": 80,
+                "xStep": 2,
+                "yStep": 8,
+                "xLabel": "Time (minutes)",
+                "yLabel": "Volume (liters)",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 72
+                  },
+                  {
+                    "x": 10,
+                    "y": 32
+                  },
+                  {
+                    "x": 18,
+                    "y": 0
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 72
+                    },
+                    {
+                      "x": 18,
+                      "y": 0
+                    }
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -1102,7 +1948,31 @@
                 "Write A = 12 + 3h and B = 18 + 2h, with h ≥ 0.",
                 "Equate the costs: 12 + 3h = 18 + 2h. Subtract 2h and 12 to obtain h = 6. Both costs are then 30.",
                 "At 4 hours, A = 24 and B = 26: A saves $2. At 8 hours, A = 36 and B = 34: B wins."
-              ]
+              ],
+              "solutionTable": {
+                "headers": [
+                  "Hours h",
+                  "Room A ($)",
+                  "Room B ($)"
+                ],
+                "rows": [
+                  [
+                    "4",
+                    "24",
+                    "26"
+                  ],
+                  [
+                    "6",
+                    "30",
+                    "30"
+                  ],
+                  [
+                    "8",
+                    "36",
+                    "34"
+                  ]
+                ]
+              }
             },
             {
               "prompt": "A square tile display uses n^2 tiles; a decorative strip uses 3n + 1 tiles. Compare their growth for whole-number sizes n = 1, 2, 3, 4.",
@@ -1111,7 +1981,36 @@
                 "Calculate square counts: 1, 4, 9, 16. Their increases are 3, 5, and 7.",
                 "Calculate strip counts: 4, 7, 10, 13. Each increase is 3.",
                 "At n = 3, compare 9 versus 10; at n = 4, compare 16 versus 13. The larger count changes."
-              ]
+              ],
+              "solutionTable": {
+                "headers": [
+                  "Size n",
+                  "Square: n^2 tiles",
+                  "Strip: 3n + 1 tiles"
+                ],
+                "rows": [
+                  [
+                    "1",
+                    "1",
+                    "4"
+                  ],
+                  [
+                    "2",
+                    "4",
+                    "7"
+                  ],
+                  [
+                    "3",
+                    "9",
+                    "10"
+                  ],
+                  [
+                    "4",
+                    "16",
+                    "13"
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -1142,7 +2041,55 @@
                 "On the first segment, the output rises from 2 to 8 as x moves from 0 to 3. Its rate is (8 − 2)/(3 − 0) = 2.",
                 "Between (3, 8) and (5, 8), the output stays 8, so the rate is 0.",
                 "On the last segment, the output falls from 8 to 0. Its rate is (0 − 8)/(9 − 5) = −2."
-              ]
+              ],
+              "graph": {
+                "xMin": 0,
+                "xMax": 10,
+                "yMin": 0,
+                "yMax": 10,
+                "xStep": 1,
+                "yStep": 1,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 2
+                  },
+                  {
+                    "x": 3,
+                    "y": 8
+                  },
+                  {
+                    "x": 5,
+                    "y": 8
+                  },
+                  {
+                    "x": 9,
+                    "y": 0
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 2
+                    },
+                    {
+                      "x": 3,
+                      "y": 8
+                    },
+                    {
+                      "x": 5,
+                      "y": 8
+                    },
+                    {
+                      "x": 9,
+                      "y": 0
+                    }
+                  ]
+                ]
+              }
             },
             {
               "prompt": "A temperature model consists of straight segments connecting (0, −4), (2, −1), and (5, −3), where x is hours and y is degrees Celsius. Describe its behavior.",
@@ -1151,7 +2098,47 @@
                 "From 0 to 2 hours, −1 is greater than −4, so the temperature rises 3 degrees.",
                 "From 2 to 5 hours, it changes by −3 − (−1) = −2 degrees, so it falls.",
                 "The highest shown temperature is −1 at hour 2. A negative output can still be the maximum."
-              ]
+              ],
+              "graph": {
+                "xMin": 0,
+                "xMax": 6,
+                "yMin": -5,
+                "yMax": 1,
+                "xStep": 1,
+                "yStep": 1,
+                "xLabel": "Time (hours)",
+                "yLabel": "Temperature (°C)",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": -4
+                  },
+                  {
+                    "x": 2,
+                    "y": -1
+                  },
+                  {
+                    "x": 5,
+                    "y": -3
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": -4
+                    },
+                    {
+                      "x": 2,
+                      "y": -1
+                    },
+                    {
+                      "x": 5,
+                      "y": -3
+                    }
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -1181,7 +2168,55 @@
                 "Label time in minutes horizontally and volume in liters vertically. Begin at (0, 10).",
                 "Filling adds 5 × 4 = 20 liters, so the first stage ends at (4, 30). The pause ends at (6, 30).",
                 "Draining 30 liters takes 30/10 = 3 minutes. Add those minutes to 6 to reach the endpoint (9, 0)."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 10,
+                "yMin": 0,
+                "yMax": 40,
+                "xStep": 1,
+                "yStep": 5,
+                "xLabel": "Time (minutes)",
+                "yLabel": "Volume (liters)",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 10
+                  },
+                  {
+                    "x": 4,
+                    "y": 30
+                  },
+                  {
+                    "x": 6,
+                    "y": 30
+                  },
+                  {
+                    "x": 9,
+                    "y": 0
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 10
+                    },
+                    {
+                      "x": 4,
+                      "y": 30
+                    },
+                    {
+                      "x": 6,
+                      "y": 30
+                    },
+                    {
+                      "x": 9,
+                      "y": 0
+                    }
+                  ]
+                ]
+              }
             },
             {
               "prompt": "A walker leaves home at 60 meters per minute for 2 minutes, waits 1 minute, and returns at 40 meters per minute. Sketch distance from home against time.",
@@ -1190,7 +2225,55 @@
                 "The outward trip ends 60 × 2 = 120 meters from home at minute 2.",
                 "Waiting changes time but not distance from home, so draw a horizontal segment ending at minute 3.",
                 "Returning takes 120/40 = 3 minutes and ends at minute 6. The graph falls because distance from home decreases, even though the walker is moving."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 7,
+                "yMin": 0,
+                "yMax": 140,
+                "xStep": 1,
+                "yStep": 20,
+                "xLabel": "Time (minutes)",
+                "yLabel": "Distance from home (meters)",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 0
+                  },
+                  {
+                    "x": 2,
+                    "y": 120
+                  },
+                  {
+                    "x": 3,
+                    "y": 120
+                  },
+                  {
+                    "x": 6,
+                    "y": 0
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 0
+                    },
+                    {
+                      "x": 2,
+                      "y": 120
+                    },
+                    {
+                      "x": 3,
+                      "y": 120
+                    },
+                    {
+                      "x": 6,
+                      "y": 0
+                    }
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -1217,7 +2300,7 @@
           "objective": "Recognize the direction, shape, clusters, and unusual points in a scatter plot of paired numerical data.",
           "explanation": [
             "A scatter plot places one point for each pair of numerical measurements. Positive association means larger x values tend to occur with larger y values; negative association means larger x values tend to occur with smaller y values. The word tend allows variation.",
-            "Describe direction, shape, clusters, and outliers. Scatter plots need not be functions: observations may share x but have different y values. Association alone does not show causation; other variables or observation selection may explain a pattern."
+            "Describe direction and shape, then look for clusters: groups of points gathered in a region, often separated from other groups by a gap. An outlier lies unusually far from the main pattern. Separate observations may share an x-value but have different y-values, so a scatter plot need not be a function. Association alone does not prove causation."
           ],
           "examples": [
             {
@@ -1227,16 +2310,98 @@
                 "Put completed rounds on the horizontal axis and score on the vertical axis. Plot all five ordered pairs.",
                 "Moving from lower to higher round counts, the scores generally rise from 2 toward 7.",
                 "The points (2, 3) and (2, 4) represent different observations. Keep both; scatter plots are not required to pass the vertical-line test."
-              ]
+              ],
+              "graph": {
+                "xMin": 0,
+                "xMax": 5,
+                "yMin": 0,
+                "yMax": 8,
+                "xStep": 1,
+                "yStep": 1,
+                "xLabel": "Rounds completed",
+                "yLabel": "Game score",
+                "points": [
+                  {
+                    "x": 1,
+                    "y": 2
+                  },
+                  {
+                    "x": 2,
+                    "y": 3
+                  },
+                  {
+                    "x": 2,
+                    "y": 4
+                  },
+                  {
+                    "x": 3,
+                    "y": 5
+                  },
+                  {
+                    "x": 4,
+                    "y": 7
+                  }
+                ],
+                "lines": []
+              }
             },
             {
-              "prompt": "Invented data pairs are (1, 9), (2, 7), (3, 6), (4, 4), (5, 3), and (3, 12). Identify the overall association and a possible outlier.",
-              "answer": "Most points show a negative association; (3, 12) is a possible outlier.",
+              "prompt": "Describe the overall association, two clusters, and a possible outlier in this invented scatter plot.",
+              "answer": "The two clusters suggest a negative association. One cluster is near x = 1 to 2 and y = 10 to 12; the other is near x = 7 to 8 and y = 2 to 4. The point (5, 13) is a possible outlier.",
               "steps": [
-                "The five points from (1, 9) through (5, 3) generally move downward as x increases.",
-                "At x = 3, the point with y = 12 lies far above the nearby trend and the other observation (3, 6).",
-                "Flag it for investigation. A plotting error, a different circumstance, or ordinary variation might explain it; the plot alone cannot decide."
-              ]
+                "The four points near the upper left form one cluster; the four near the lower right form another. The gap between the groups makes the clusters visible.",
+                "Compare the groups: larger x-values tend to pair with smaller y-values, suggesting a negative association across the two clusters.",
+                "The point (5, 13) lies away from both groups and above the overall downward pattern. Flag it for investigation; the graph alone cannot tell whether it is an error or a valid unusual observation."
+              ],
+              "graph": {
+                "xMin": 0,
+                "xMax": 9,
+                "yMin": 0,
+                "yMax": 14,
+                "xStep": 1,
+                "yStep": 2,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 1,
+                    "y": 12
+                  },
+                  {
+                    "x": 1,
+                    "y": 11
+                  },
+                  {
+                    "x": 2,
+                    "y": 12
+                  },
+                  {
+                    "x": 2,
+                    "y": 10
+                  },
+                  {
+                    "x": 7,
+                    "y": 4
+                  },
+                  {
+                    "x": 7,
+                    "y": 3
+                  },
+                  {
+                    "x": 8,
+                    "y": 4
+                  },
+                  {
+                    "x": 8,
+                    "y": 2
+                  },
+                  {
+                    "x": 5,
+                    "y": 13
+                  }
+                ],
+                "lines": []
+              }
             }
           ],
           "pitfalls": [
@@ -1266,7 +2431,60 @@
                 "One suitable horizontal scale runs from 0 to 40 in steps of 10 minutes. A vertical scale from 0 to 16 in steps of 2 pages contains every output.",
                 "Plot (10, 4), (20, 7), (30, 11), and (40, 14). The output increases are 3, 4, and 3 pages for equal 10-minute changes.",
                 "The nearly equal changes support an approximate line, but another reader or longer session may follow a different pattern."
-              ]
+              ],
+              "table": {
+                "headers": [
+                  "Reading time (minutes)",
+                  "Pages read"
+                ],
+                "rows": [
+                  [
+                    "10",
+                    "4"
+                  ],
+                  [
+                    "20",
+                    "7"
+                  ],
+                  [
+                    "30",
+                    "11"
+                  ],
+                  [
+                    "40",
+                    "14"
+                  ]
+                ]
+              },
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 40,
+                "yMin": 0,
+                "yMax": 16,
+                "xStep": 10,
+                "yStep": 2,
+                "xLabel": "Reading time (minutes)",
+                "yLabel": "Pages read",
+                "points": [
+                  {
+                    "x": 10,
+                    "y": 4
+                  },
+                  {
+                    "x": 20,
+                    "y": 7
+                  },
+                  {
+                    "x": 30,
+                    "y": 11
+                  },
+                  {
+                    "x": 40,
+                    "y": 14
+                  }
+                ],
+                "lines": []
+              }
             },
             {
               "prompt": "Invented display settings and measured brightness scores are (1, 1), (2, 4), (3, 9), and (4, 16). Would a straight trend line summarize the shape well?",
@@ -1275,7 +2493,36 @@
                 "Use setting on the horizontal axis and brightness score on the vertical axis, with a vertical scale reaching at least 16.",
                 "For equal one-unit input increases, output changes are 4 − 1 = 3, 9 − 4 = 5, and 16 − 9 = 7.",
                 "The changes grow, so the plotted pattern bends upward rather than maintaining one rate. A positive association need not be linear."
-              ]
+              ],
+              "graph": {
+                "xMin": 0,
+                "xMax": 5,
+                "yMin": 0,
+                "yMax": 20,
+                "xStep": 1,
+                "yStep": 4,
+                "xLabel": "Display setting",
+                "yLabel": "Brightness score",
+                "points": [
+                  {
+                    "x": 1,
+                    "y": 1
+                  },
+                  {
+                    "x": 2,
+                    "y": 4
+                  },
+                  {
+                    "x": 3,
+                    "y": 9
+                  },
+                  {
+                    "x": 4,
+                    "y": 16
+                  }
+                ],
+                "lines": []
+              }
             }
           ],
           "pitfalls": [
@@ -1293,20 +2540,179 @@
             "8.F.A.3",
             "8.F.B.4"
           ],
-          "objective": "Judge an approximate trend line and interpret its slope and intercept in context.",
+          "objective": "Judge approximate trend lines, compare their total absolute vertical errors, and interpret a model’s slope and intercept.",
           "explanation": [
-            "A trend line summarizes an approximately linear point cloud. It should follow the overall direction, pass near the middle, and leave points on both sides without an unexplained curve. It need not pass through observed points.",
-            "Use two points on the proposed line to calculate slope, then find its intercept. Compare observations and predictions across the input range. Residual means observed minus predicted output: positive is above the line, negative below. A small sample supports estimates, not certainty."
+            "For an approximately linear association, a trend line summarizes the point cloud. It follows the direction and stays near the data without missing a curve. It need not pass through observed points. Use two points on the proposed line to calculate its slope and intercept.",
+            "A residual is observed output minus predicted output. Its sign shows direction: positive is above the line, negative is below. An absolute vertical error is the residual’s distance from zero, ignoring its sign. Thus residuals of −2 and 2 each have absolute error 2.",
+            "One way to compare candidate models is to add their absolute vertical errors at every observation. A smaller total means a closer fit by this stated measure among those candidates. Do not add signed residuals: positive and negative errors could cancel. Other fitting criteria exist; this comparison does not prove a universally best line or guarantee future predictions."
           ],
           "examples": [
             {
-              "prompt": "For invented data (0, 3), (1, 3), (2, 6), (3, 7), (4, 11), judge the candidate line y = 2x + 2.",
-              "answer": "The line is a reasonable rough summary: residuals are 1, −1, 0, −1, and 1.",
+              "prompt": "For the six invented observations in the table, compare A: y = 2x + 2 with B: y = 2x + 5. Which has the smaller sum of absolute vertical errors? A is the lower line on the graph; B is the upper line.",
+              "answer": "A fits better by this measure: its total absolute error is 4, compared with 18 for B.",
               "steps": [
-                "Compute predicted outputs at x = 0, 1, 2, 3, 4: 2, 4, 6, 8, 10.",
-                "Subtract each prediction from the observed output: 3 − 2 = 1, 3 − 4 = −1, 6 − 6 = 0, 7 − 8 = −1, and 11 − 10 = 1.",
-                "The deviations are small and balanced on both sides. The line estimates an increase of 2 output units per input unit."
-              ]
+                "At x = 1, the observed output is 3. A predicts 4, so its residual is 3 − 4 = −1 and its absolute error is 1. B predicts 7, giving residual −4 and absolute error 4.",
+                "Repeat for every row. Add A’s absolute errors: 1 + 1 + 0 + 1 + 1 + 0 = 4.",
+                "Add B’s absolute errors: 2 + 4 + 3 + 4 + 2 + 3 = 18. Since 4 < 18, choose A among these two candidates. Neither model exactly matches all observations."
+              ],
+              "graph": {
+                "xMin": 0,
+                "xMax": 6,
+                "yMin": 0,
+                "yMax": 16,
+                "xStep": 1,
+                "yStep": 2,
+                "xLabel": "x",
+                "yLabel": "y",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 3
+                  },
+                  {
+                    "x": 1,
+                    "y": 3
+                  },
+                  {
+                    "x": 2,
+                    "y": 6
+                  },
+                  {
+                    "x": 3,
+                    "y": 7
+                  },
+                  {
+                    "x": 4,
+                    "y": 11
+                  },
+                  {
+                    "x": 5,
+                    "y": 12
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 2
+                    },
+                    {
+                      "x": 5,
+                      "y": 12
+                    }
+                  ],
+                  [
+                    {
+                      "x": 0,
+                      "y": 5
+                    },
+                    {
+                      "x": 5,
+                      "y": 15
+                    }
+                  ]
+                ]
+              },
+              "solutionTable": {
+                "headers": [
+                  "x",
+                  "Observed y",
+                  "A predicts",
+                  "A abs. error",
+                  "B predicts",
+                  "B abs. error"
+                ],
+                "rows": [
+                  [
+                    "0",
+                    "3",
+                    "2",
+                    "1",
+                    "5",
+                    "2"
+                  ],
+                  [
+                    "1",
+                    "3",
+                    "4",
+                    "1",
+                    "7",
+                    "4"
+                  ],
+                  [
+                    "2",
+                    "6",
+                    "6",
+                    "0",
+                    "9",
+                    "3"
+                  ],
+                  [
+                    "3",
+                    "7",
+                    "8",
+                    "1",
+                    "11",
+                    "4"
+                  ],
+                  [
+                    "4",
+                    "11",
+                    "10",
+                    "1",
+                    "13",
+                    "2"
+                  ],
+                  [
+                    "5",
+                    "12",
+                    "12",
+                    "0",
+                    "15",
+                    "3"
+                  ],
+                  [
+                    "Total",
+                    "—",
+                    "—",
+                    "4",
+                    "—",
+                    "18"
+                  ]
+                ]
+              },
+              "table": {
+                "headers": [
+                  "x",
+                  "Observed y"
+                ],
+                "rows": [
+                  [
+                    "0",
+                    "3"
+                  ],
+                  [
+                    "1",
+                    "3"
+                  ],
+                  [
+                    "2",
+                    "6"
+                  ],
+                  [
+                    "3",
+                    "7"
+                  ],
+                  [
+                    "4",
+                    "11"
+                  ],
+                  [
+                    "5",
+                    "12"
+                  ]
+                ]
+              }
             },
             {
               "prompt": "An invented machine dataset is (1, 18), (2, 13), (3, 11), (4, 7), (5, 6), with x in hours and y in units remaining. A proposed line passes through (1, 17) and (5, 5). Find its equation.",
@@ -1315,14 +2721,59 @@
                 "Compute slope: (5 − 17)/(5 − 1) = −12/4 = −3.",
                 "Use (1, 17): 17 = −3 + b, so b = 20.",
                 "Predictions are 17, 14, 11, 8, and 5; residuals are 1, −1, 0, −1, and 1. The intercept estimates 20 at hour zero, outside the observed range."
-              ]
+              ],
+              "graph": {
+                "xMin": 0,
+                "xMax": 6,
+                "yMin": 0,
+                "yMax": 22,
+                "xStep": 1,
+                "yStep": 2,
+                "xLabel": "Time (hours)",
+                "yLabel": "Units remaining",
+                "points": [
+                  {
+                    "x": 1,
+                    "y": 18
+                  },
+                  {
+                    "x": 2,
+                    "y": 13
+                  },
+                  {
+                    "x": 3,
+                    "y": 11
+                  },
+                  {
+                    "x": 4,
+                    "y": 7
+                  },
+                  {
+                    "x": 5,
+                    "y": 6
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 20
+                    },
+                    {
+                      "x": 6,
+                      "y": 2
+                    }
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
-            "Calculate slope using points on the proposed line.",
+            "Use points on the proposed line when finding that line’s slope.",
+            "Signed errors can cancel; compare the sum of their absolute values when that is the stated criterion.",
             "A reasonable fit does not establish a cause-and-effect relationship."
           ],
-          "practiceAdvice": "Check both ends and the middle. Reject a line with curved error patterns or systematic overprediction."
+          "practiceAdvice": "Make a prediction-and-error table for every observation. State the comparison rule, total the absolute errors, and check that the chosen line also follows the plotted pattern."
         },
         {
           "id": "4-4",
@@ -1343,19 +2794,97 @@
               "prompt": "An invented delivery sample covers package masses from 2 to 10 kilograms. Its fitted cost model is C = 4.5m + 12 dollars. Estimate the cost for 6 kilograms and for 20 kilograms.",
               "answer": "The estimates are $39 and $102; the first is interpolation and the second is extrapolation.",
               "steps": [
-                "For m = 6, calculate C = 4.5(6) + 12 = 27 + 12 = 39.",
+                "The graph shows the model, not individual observations. For m = 6, C = 4.5(6) + 12 = 39 dollars.",
                 "Six kilograms lies between the sampled endpoints 2 and 10, so this estimate interpolates.",
                 "For m = 20, calculate C = 90 + 12 = 102. Twenty lies beyond the data, so this estimate extrapolates; heavy-package fees could follow a different rule."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 22,
+                "yMin": 0,
+                "yMax": 120,
+                "xStep": 2,
+                "yStep": 20,
+                "xLabel": "Package mass (kg)",
+                "yLabel": "Model cost ($)",
+                "points": [
+                  {
+                    "x": 6,
+                    "y": 39,
+                    "label": "6 kg"
+                  },
+                  {
+                    "x": 20,
+                    "y": 102,
+                    "label": "20 kg"
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 12
+                    },
+                    {
+                      "x": 22,
+                      "y": 111
+                    }
+                  ]
+                ]
+              }
             },
             {
               "prompt": "For an invented battery experiment observed from 0 to 20 hours, the fitted percentage model is P = 84 − 3t. Predict at 12 hours and assess the prediction at 30 hours.",
               "answer": "It predicts 48% at 12 hours; the −6% prediction at 30 hours is physically invalid.",
               "steps": [
-                "Substitute t = 12: P = 84 − 36 = 48. This is interpolation within 0 to 20 hours.",
+                "The graph shows model values, not individual observations. At t = 12, P = 84 − 36 = 48. This interpolates within 0 to 20 hours.",
                 "Substitute t = 30: P = 84 − 90 = −6. This extrapolation gives an impossible remaining percentage.",
                 "The model reaches zero at 84 − 3t = 0, or t = 28. This also extrapolates, so 28 hours remains unverified."
-              ]
+              ],
+              "solutionGraph": {
+                "xMin": 0,
+                "xMax": 32,
+                "yMin": -12,
+                "yMax": 96,
+                "xStep": 4,
+                "yStep": 12,
+                "xLabel": "Time (hours)",
+                "yLabel": "Model battery percentage",
+                "points": [
+                  {
+                    "x": 0,
+                    "y": 84
+                  },
+                  {
+                    "x": 12,
+                    "y": 48
+                  },
+                  {
+                    "x": 20,
+                    "y": 24
+                  },
+                  {
+                    "x": 28,
+                    "y": 0
+                  },
+                  {
+                    "x": 30,
+                    "y": -6
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 0,
+                      "y": 84
+                    },
+                    {
+                      "x": 30,
+                      "y": -6
+                    }
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -1386,7 +2915,51 @@
                 "For v = 1 through 5, predicted kit counts are 14, 21, 28, 35, and 42.",
                 "Observed minus predicted counts are 0, −1, 1, 0, and 0, so the points lie close to this line.",
                 "At v = 6, K = 7(6) + 7 = 49. This extrapolates beyond 1 to 5 volunteers; collect a six-volunteer observation to test it."
-              ]
+              ],
+              "graph": {
+                "xMin": 0,
+                "xMax": 7,
+                "yMin": 0,
+                "yMax": 56,
+                "xStep": 1,
+                "yStep": 7,
+                "xLabel": "Volunteers",
+                "yLabel": "Kits completed in one hour",
+                "points": [
+                  {
+                    "x": 1,
+                    "y": 14
+                  },
+                  {
+                    "x": 2,
+                    "y": 20
+                  },
+                  {
+                    "x": 3,
+                    "y": 29
+                  },
+                  {
+                    "x": 4,
+                    "y": 35
+                  },
+                  {
+                    "x": 5,
+                    "y": 42
+                  }
+                ],
+                "lines": [
+                  [
+                    {
+                      "x": 1,
+                      "y": 14
+                    },
+                    {
+                      "x": 6,
+                      "y": 49
+                    }
+                  ]
+                ]
+              }
             },
             {
               "prompt": "Invented observations pair boxes packed with minutes needed: (2, 11), (4, 15), (6, 20), (8, 23). Use T = 2b + 7 to estimate time for 5 boxes and evaluate its prediction for 6 boxes.",
@@ -1395,7 +2968,60 @@
                 "Substitute b = 5: T = 2(5) + 7 = 17. Five lies within the observed range 2 to 8, so this is interpolation.",
                 "For b = 6, the rule gives 12 + 7 = 19 minutes; the observation was 20.",
                 "Compute the difference: 20 − 19 = 1 minute. The discrepancy illustrates model error: the estimate is not a timing promise."
-              ]
+              ],
+              "solutionTable": {
+                "headers": [
+                  "Boxes",
+                  "Observed minutes",
+                  "Model minutes"
+                ],
+                "rows": [
+                  [
+                    "2",
+                    "11",
+                    "11"
+                  ],
+                  [
+                    "4",
+                    "15",
+                    "15"
+                  ],
+                  [
+                    "6",
+                    "20",
+                    "19"
+                  ],
+                  [
+                    "8",
+                    "23",
+                    "23"
+                  ]
+                ]
+              },
+              "table": {
+                "headers": [
+                  "Boxes",
+                  "Observed minutes"
+                ],
+                "rows": [
+                  [
+                    "2",
+                    "11"
+                  ],
+                  [
+                    "4",
+                    "15"
+                  ],
+                  [
+                    "6",
+                    "20"
+                  ],
+                  [
+                    "8",
+                    "23"
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -1426,7 +3052,63 @@
                 "Add rows: walkers total 12 + 8 = 20; bus riders total 18 + 22 = 40. The grand total is 20 + 40 = 60.",
                 "Add columns: borrowers total 12 + 18 = 30; nonborrowers total 8 + 22 = 30. Their sum also gives 60.",
                 "Among walkers gives 12/20 = 0.6. Among borrowers who walk instead gives 12/30 = 0.4: reversing the condition changes the denominator."
-              ]
+              ],
+              "solutionTable": {
+                "headers": [
+                  "Travel",
+                  "Borrowers",
+                  "Nonborrowers",
+                  "Total"
+                ],
+                "rows": [
+                  [
+                    "Walk",
+                    "12",
+                    "8",
+                    "20"
+                  ],
+                  [
+                    "Bus",
+                    "18",
+                    "22",
+                    "40"
+                  ],
+                  [
+                    "Total",
+                    "30",
+                    "30",
+                    "60"
+                  ]
+                ]
+              },
+              "table": {
+                "headers": [
+                  "Travel",
+                  "Borrowers",
+                  "Nonborrowers",
+                  "Total"
+                ],
+                "rows": [
+                  [
+                    "Walk",
+                    "12",
+                    "8",
+                    "?"
+                  ],
+                  [
+                    "Bus",
+                    "18",
+                    "22",
+                    "?"
+                  ],
+                  [
+                    "Total",
+                    "?",
+                    "?",
+                    "?"
+                  ]
+                ]
+              }
             },
             {
               "prompt": "An invented club table has 24 students. Music members: 9 play a sport and 3 do not. Nonmembers: 7 play a sport and an unknown number do not. Find the missing count and the sport total.",
@@ -1435,7 +3117,63 @@
                 "The three known interior counts sum to 9 + 3 + 7 = 19.",
                 "Subtract from the grand total: 24 − 19 = 5 nonmembers do not play a sport.",
                 "The sport column totals 9 + 7 = 16. The other column totals 3 + 5 = 8, and 16 + 8 checks the grand total 24."
-              ]
+              ],
+              "solutionTable": {
+                "headers": [
+                  "Music club",
+                  "Plays sport",
+                  "No sport",
+                  "Total"
+                ],
+                "rows": [
+                  [
+                    "Member",
+                    "9",
+                    "3",
+                    "12"
+                  ],
+                  [
+                    "Nonmember",
+                    "7",
+                    "5",
+                    "12"
+                  ],
+                  [
+                    "Total",
+                    "16",
+                    "8",
+                    "24"
+                  ]
+                ]
+              },
+              "table": {
+                "headers": [
+                  "Music club",
+                  "Plays sport",
+                  "No sport",
+                  "Total"
+                ],
+                "rows": [
+                  [
+                    "Member",
+                    "9",
+                    "3",
+                    "?"
+                  ],
+                  [
+                    "Nonmember",
+                    "7",
+                    "?",
+                    "?"
+                  ],
+                  [
+                    "Total",
+                    "?",
+                    "?",
+                    "24"
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -1462,9 +3200,31 @@
               "answer": "Fruit rates are 60% in the morning group and 40% in the afternoon group; morning-and-fruit is 36% of all respondents.",
               "steps": [
                 "Morning total is 18 + 12 = 30; afternoon total is 8 + 12 = 20; grand total is 50.",
-                "Divide within each group: 18/30 = 0.60 and 8/20 = 0.40. The observed difference is 20 percentage points.",
+                "Divide within each group: 18/30 = 60% and 8/20 = 40%. The displayed row-relative-frequency table compares these rates; their difference is 20 percentage points.",
                 "Morning and fruit jointly uses all respondents: 18/50 = 0.36. Changing the denominator changes the question answered."
-              ]
+              ],
+              "solutionTable": {
+                "headers": [
+                  "Group",
+                  "Fruit within group",
+                  "Crackers within group",
+                  "Row total"
+                ],
+                "rows": [
+                  [
+                    "Morning",
+                    "60%",
+                    "40%",
+                    "100%"
+                  ],
+                  [
+                    "Afternoon",
+                    "40%",
+                    "60%",
+                    "100%"
+                  ]
+                ]
+              }
             },
             {
               "prompt": "An invented survey has 10 bicycle commuters, of whom 8 wear helmets, and 40 scooter commuters, of whom 24 wear helmets. Which group has the higher helmet rate? Among helmet wearers, what fraction commute by bicycle?",
@@ -1473,7 +3233,54 @@
                 "Compare within travel groups: 8/10 = 80% for bicycles and 24/40 = 60% for scooters.",
                 "More scooter commuters wear helmets, but their group is larger.",
                 "For the reversed condition, total helmet wearers are 8 + 24 = 32. Bicycle commuters are 8/32 = 25% of that group."
-              ]
+              ],
+              "solutionTable": {
+                "headers": [
+                  "Commute mode",
+                  "Helmet",
+                  "No helmet",
+                  "Total"
+                ],
+                "rows": [
+                  [
+                    "Bicycle",
+                    "8",
+                    "2",
+                    "10"
+                  ],
+                  [
+                    "Scooter",
+                    "24",
+                    "16",
+                    "40"
+                  ],
+                  [
+                    "Total",
+                    "32",
+                    "18",
+                    "50"
+                  ]
+                ]
+              },
+              "table": {
+                "headers": [
+                  "Commute mode",
+                  "Helmet wearers",
+                  "Total commuters"
+                ],
+                "rows": [
+                  [
+                    "Bicycle",
+                    "8",
+                    "10"
+                  ],
+                  [
+                    "Scooter",
+                    "24",
+                    "40"
+                  ]
+                ]
+              }
             }
           ],
           "pitfalls": [
@@ -1486,11 +3293,11 @@
     }
   ],
   "studyRoutine": [
-    "Start with the lesson that matches your current classwork. If a step depends on an unfamiliar idea, review the earlier lesson that introduces it.",
-    "Read the explanation, then cover each worked solution and try the example yourself. Compare the reasoning as well as the answer.",
-    "Generate a worksheet, keep its form code, and show your work. Use a calculator when the task calls for an approximation; keep exact fractions and roots when requested.",
-    "Check the separate worked answer key after attempting the sheet. For each mistake, identify the first incorrect step and write the rule that fixes it.",
-    "Work a fresh worksheet to check the method again, then revisit missed skills after a day and again later in the week. Correcting a familiar answer is different from solving a fresh example.",
-    "Mix lessons from a topic when the individual methods feel familiar. Explain why you chose each method and check whether the answer, sign, and units fit the question."
+    "Start with one lesson that matches your current classwork. Review an earlier idea only if it blocks the next step.",
+    "Read the explanation, then try each example before opening its worked solution. On paper, cover the solution and completed figure. Compare your reasoning with the steps, then explain the method in your own words.",
+    "Begin with 6–8 problems from that lesson, or 3–4 longer graphing or modeling problems. Show your work. If the same mistake repeats, pause to study one example before continuing.",
+    "Keep fractions and roots exact when requested. Use familiar square and cube facts to reason about roots; verify by multiplication. A calculator can check large products after you choose the method, and can find approximations when asked. Do not round early.",
+    "Check the separate answer key after attempting the problems. Find the first incorrect step, write the correction, and solve a fresh problem of that type without the key.",
+    "After you can solve and explain several problems independently, mix two or three familiar lessons. Keep the form code and revisit missed skills on another day. Check each answer’s sign, units, and fit with the question."
   ]
 }

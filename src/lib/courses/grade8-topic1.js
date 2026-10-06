@@ -11,10 +11,49 @@
   const pow = (b, e) => `${b}^${signed(e)}`;
   const variable = r => r.pick(['a', 'b', 'm', 'n', 'p', 't']);
   function add(id, lesson, skill, generate) {
-    templates.push({ id: `g8-t1-${id}`, lessonId: `1-${lesson}`, skill, generate });
+    templates.push({ id: `g8-t1-${id}`, lessonId: `1-${lesson}`, skill, generate(rng) {
+      const question = generate(rng);
+      question.practiceKey = practiceKey(question.check);
+      return question;
+    } });
   }
   function item(prompt, answer, steps, check, workLines) {
     return { prompt, answer, steps, workLines: workLines || 4, check };
+  }
+  // Keys describe the mathematical task and its inputs, not the answer or its
+  // presentation. Keep complete signatures rather than risking hash collisions.
+  function practiceKey(c) {
+    let task = c.kind, inputs;
+    switch (c.kind) {
+      case 'fraction': task = 'decimal-to-fraction'; inputs = [fraction(c.n, c.d)]; break;
+      case 'decimal-fraction': inputs = [fraction(c.n, c.d)]; break;
+      case 'classify-roots': inputs = c.candidates.map(v => v.text).sort(); break;
+      case 'number-sets': inputs = [c.text]; break;
+      case 'infinite-pattern': inputs = [c.digit, c.first, c.whole]; break;
+      case 'bounds': case 'square-equation': case 'cube-equation': inputs = [c.n]; break;
+      case 'order': inputs = c.values.map(v => v.text).sort(); break;
+      case 'negative-comparison': inputs = [c.n, c.decimalNumerator]; break;
+      case 'roots': inputs = [c.a, c.b]; break;
+      case 'square-cube-categories': inputs = c.values.map(v => v.n).sort((a, b) => a - b); break;
+      case 'cube-row': inputs = [c.volume, c.count]; break;
+      case 'cube-face': inputs = [c.volume]; break;
+      case 'exponent': inputs = [c.operation, c.operation === 'product' ? c.exponents.slice().sort((a, b) => a - b) : c.exponents]; break;
+      case 'power-product': inputs = [[c.a, c.b].sort((a, b) => a - b), c.exponent]; break;
+      case 'reciprocal': inputs = [c.coefficient, c.exponent]; break;
+      case 'reciprocal-product': inputs = [c.a, c.b]; break;
+      case 'evaluate-powers': inputs = [c.x, c.coefficient, c.constant]; break; // Every allowed y gives y^0 = 1.
+      case 'estimate': case 'scientific': case 'ordinary': inputs = [decimal(c.n, c.exponent)]; break;
+      case 'estimated-ratio': inputs = [decimal(c.nA, c.exponentA), decimal(c.nB, c.exponentB)]; break;
+      case 'scientific-operation': {
+        const operands = [decimal(c.a, c.e), decimal(c.b, c.f)];
+        inputs = [c.operation, c.operation === '*' || c.operation === '+' ? operands.sort() : operands];
+        break;
+      }
+      case 'storage-model': inputs = [c.count, decimal(c.each, c.exponent - 1), decimal(c.small, c.exponent - c.gap)]; break;
+      case 'panel-model': inputs = [c.area, c.count]; break;
+      default: throw new Error(`Missing practice identity for ${c.kind}`);
+    }
+    return JSON.stringify(['grade8-topic1-v1', task, inputs]);
   }
   // Shift an integer's decimal point without binary floating-point formatting.
   function decimal(n, exponent) {
@@ -92,14 +131,25 @@
   });
 
   add('root-classification', 2, 'Classifying rational and irrational roots', r => {
-    const a = r.int(2, 20), b = r.int(2, 16), offset = r.int(1, 2 * b);
-    const candidates = r.shuffle([
-      { text: `−√${a * a}`, irrational: false, reason: `−√${a * a} = −${a}, an integer` },
-      { text: `√${b * b + offset}`, irrational: true, reason: `${b * b} < ${b * b + offset} < ${(b + 1) ** 2}, so the integer ${b * b + offset} is not a perfect square. The square root of a nonnegative integer that is not a perfect square is irrational` },
-      { text: `−${r.int(0, 8)}.[${r.int(1, 8)}]`, irrational: false, reason: 'a repeating decimal is rational' },
-      { text: fraction(r.int(1, 20), r.int(2, 15)), irrational: false, reason: 'a ratio of integers with a nonzero denominator is rational' }
+    const used = new Set();
+    const roots = r.shuffle([true, false, r.pick([true, false])]).map(irrational => {
+      let base, n;
+      do {
+        base = r.int(2, 15);
+        n = base * base + (irrational ? r.int(1, 2 * base) : 0);
+      } while (used.has(n));
+      used.add(n);
+      const sign = r.sign(), text = `${sign < 0 ? '−' : ''}√${n}`;
+      const reason = irrational
+        ? `${base * base} < ${n} < ${(base + 1) ** 2}, so the integer ${n} is not a perfect square. A nonsquare nonnegative integer has an irrational square root, and its negative is also irrational`
+        : `${text} = ${signed(sign * base)}, an integer and therefore rational`;
+      return { text, irrational, reason };
+    });
+    const candidates = r.shuffle([...roots,
+      { text: `${r.sign() < 0 ? '−' : ''}${r.int(0, 8)}.[${r.int(1, 8)}]`, irrational: false, reason: 'a repeating decimal is rational' },
+      { text: fraction(r.sign() * r.int(1, 20), r.int(2, 15)), irrational: false, reason: 'a ratio of integers with a nonzero denominator is rational' }
     ]);
-    return item(`Which of these numbers are irrational? Explain each classification: ${candidates.map(v => v.text).join('; ')}.`, candidates.filter(v => v.irrational).map(v => v.text).join(', '), candidates.map(v => `${v.text}: ${v.reason}.`), { kind: 'classify-roots', candidates, radicand: b * b + offset }, 5);
+    return item(`Which of these numbers are irrational? Select all that apply and explain each classification: ${candidates.map(v => v.text).join('; ')}.`, candidates.filter(v => v.irrational).map(v => v.text).join(', '), candidates.map(v => `${v.text}: ${v.reason}.`), { kind: 'classify-roots', candidates }, 6);
   });
   add('number-set-membership', 2, 'Natural, whole, integer, rational, and real numbers', r => {
     const category = r.int(0, 4), n = r.int(2, 150), d = r.pick([3, 7, 9]);
@@ -111,11 +161,17 @@
   });
   add('infinite-decimal-classification', 2, 'Recognizing an explicitly nonrepeating decimal', r => {
     const digit = r.int(1, 9), first = r.int(1, 6), whole = r.int(0, 30);
-    return item(`Two decimals have whole-number part ${whole}. Decimal A repeats the block ${digit}${'0'.repeat(first)} forever. Decimal B has digit ${digit}, then ${first} zeros, then digit ${digit}, then ${first + 1} zeros, and continues forever with one more zero in each successive gap. Classify A and B as rational or irrational and explain.`, 'A is rational; B is irrational.', [
-      'A has a fixed repeating block, so it can be expressed as a fraction of integers.',
-      `B never terminates: another ${digit} always follows each gap. Its zero gaps grow without bound, so no finite digit block repeats forever.`,
+    const rationalLabel = r.pick(['A', 'B']), irrationalLabel = rationalLabel === 'A' ? 'B' : 'A';
+    const descriptions = {
+      [rationalLabel]: `repeats the block ${digit}${'0'.repeat(first)} forever`,
+      [irrationalLabel]: `has digit ${digit}, then ${first} zero${first === 1 ? "" : "s"}, then digit ${digit}, then ${first + 1} zeros, and continues forever with one more zero in each successive gap`
+    };
+    const answer = rationalLabel === 'A' ? 'A is rational; B is irrational.' : 'A is irrational; B is rational.';
+    return item(`Two decimals have whole-number part ${whole}. After the decimal point, Decimal A ${descriptions.A}. Decimal B ${descriptions.B}. Classify A and B as rational or irrational and explain.`, answer, [
+      `${rationalLabel} has a fixed repeating block, so it can be expressed as a fraction of integers.`,
+      `${irrationalLabel} never terminates: another ${digit} always follows each gap. Its zero gaps grow without bound, so no finite digit block repeats forever.`,
       'A nonterminating, nonrepeating decimal is irrational.'
-    ], { kind: 'infinite-pattern', digit, first, whole }, 5);
+    ], { kind: 'infinite-pattern', digit, first, whole, rationalLabel }, 5);
   });
 
   add('root-bounds', 3, 'Bounding square roots', r => {
@@ -160,7 +216,7 @@
   });
 
   add('evaluate-roots', 4, 'Evaluating square and cube roots', r => {
-    const a = r.int(2, 35), b = r.nonzero(-15, 15);
+    const a = r.int(2, 25), b = r.nonzero(-12, 12);
     return item(`Evaluate √${a * a} and ³√(${signed(b ** 3)}). Explain why the square-root answer is nonnegative.`, `${a}; ${signed(b)}`, [
       `${a} × ${a} = ${a * a}, and √ denotes the principal, nonnegative square root.`,
       `(${signed(b)})^3 = ${signed(b ** 3)}, so ³√(${signed(b ** 3)}) = ${signed(b)}.`
@@ -169,7 +225,7 @@
   add('square-cube-categories', 4, 'Recognizing perfect squares and perfect cubes', r => {
     const squareBase = r.pick([2, 3, 5, 6, 7, 10, 11, 12, 13, 14, 15, 17, 18]);
     const cubeBase = r.pick([2, 3, 5, 6, 7, 8, 10, 11, 12]);
-    const bothBase = r.int(2, 5), near = r.int(3, 25);
+    const bothBase = r.int(1, 3), near = r.int(3, 25);
     let neither = near * near + r.int(1, 2 * near);
     while (Math.round(Math.cbrt(neither)) ** 3 === neither) neither++;
     if (neither === (near + 1) ** 2) neither += 1;
@@ -186,7 +242,7 @@
     ], { kind: 'square-cube-categories', values }, 4);
   });
   add('cube-edge-context', 4, 'Finding a cube edge from its volume', r => {
-    const edge = r.int(3, 35), count = r.int(2, 8);
+    const edge = r.int(2, 12), count = r.int(2, 20);
     return item(`A display uses ${count} identical solid cubes in a straight row, touching face to face. Each cube has volume ${edge ** 3} cm^3. How long is the row?`, `${edge * count} cm`, [
       `For one cube, edge^3 = ${edge ** 3}, so edge = ³√${edge ** 3} = ${edge} cm.`,
       `The row has ${count} edges end to end: ${count} × ${edge} = ${count * edge} cm.`
@@ -214,8 +270,8 @@
     ], { kind: 'cube-equation', n, perfect }, 4);
   });
   add('cube-face-dimensions', 5, 'Interpreting positive lengths from roots', r => {
-    const edge = r.int(3, 24), radical = r.pick([true, false]);
-    const volume = radical ? edge ** 3 + r.int(1, edge) : edge ** 3;
+    const edge = r.int(2, 12), radical = r.pick([true, false]);
+    const volume = radical ? edge ** 3 + r.int(1, 3 * edge) : edge ** 3;
     const length = radical ? `³√${volume}` : String(edge);
     return item(`A solid cube has volume ${volume} cm^3. Give the two dimensions of one square face, in centimeters. Give exact values.`, `${length} cm by ${length} cm`, [
       `If s is the edge length, s^3 = ${volume}.`,
@@ -261,7 +317,7 @@
     ], { kind: 'reciprocal', base: v, coefficient, exponent }, 3);
   });
   add('negative-power-denominator', 7, 'Simplifying a reciprocal of a negative power', r => {
-    const v = variable(r), a = r.int(2, 8), b = r.int(2, 8);
+    const v = variable(r), a = r.int(2, 12), b = r.int(2, 12);
     return item(`Rewrite (1/(${pow(v, -a)})) × ${pow(v, -b)} as one power, then give a form with no negative exponents. Assume ${v} ≠ 0.`, `${pow(v, a - b)}; ${a === b ? '1' : a > b ? pow(v, a - b) : `1/(${pow(v, b - a)})`}`, [
       `The reciprocal of ${pow(v, -a)} is ${pow(v, a)}.`,
       `Multiply: ${pow(v, a)} × ${pow(v, -b)} = ${pow(v, a - b)}.`,

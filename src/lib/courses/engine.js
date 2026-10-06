@@ -14,9 +14,20 @@
   const MAX_COUNT = 100;
   const MAX_DAYS = 30;
   function lessons(course) { return course.units.flatMap(unit => unit.lessons); }
-  function identity(question) {
+  function visibleIdentity(question) {
     // Keep the complete signature to avoid silently treating hash collisions as duplicates.
     return JSON.stringify([question.prompt, question.table || null, question.graph || null]);
+  }
+  function identity(question) {
+    // Authors identify the mathematical task and givens, ignoring superficial
+    // changes such as variable letters or the order of an unordered relation.
+    return question.practiceKey ? JSON.stringify(["practice", question.practiceKey]) : visibleIdentity(question);
+  }
+  function selection(course, settings) {
+    const all = lessons(course);
+    const selected = new Set(settings.lessonIds || all.map(lesson => lesson.id));
+    if (!selected.size || [...selected].some(id => !all.some(lesson => lesson.id === id))) throw new Error("Choose valid course lessons");
+    return all.filter(lesson => selected.has(lesson.id)).map(lesson => lesson.id);
   }
   function validateGraph(graph) {
     if (!graph || typeof graph !== "object") throw new Error("Invalid graph");
@@ -38,6 +49,7 @@
       throw new Error("Missing worked solution steps");
     }
     if (!Number.isInteger(question.workLines) || question.workLines < 1 || question.workLines > 12) throw new Error("Invalid working space");
+    if (question.practiceKey !== undefined && (typeof question.practiceKey !== "string" || !question.practiceKey.trim())) throw new Error("Invalid practice identity");
     if (question.table) {
       const t = question.table;
       if (!Array.isArray(t.headers) || !t.headers.length || !Array.isArray(t.rows) || !t.rows.length ||
@@ -48,12 +60,9 @@
     if (question.answerGraph) validateGraph(question.answerGraph);
     return question;
   }
-  function generateWorksheet(course, templates, options) {
+  function buildWorksheet(course, templates, options, plan) {
     const settings = options || {};
-    const allLessons = lessons(course);
-    const selected = new Set(settings.lessonIds || allLessons.map(lesson => lesson.id));
-    if (!selected.size || [...selected].some(id => !allLessons.some(lesson => lesson.id === id))) throw new Error("Choose valid course lessons");
-    const lessonIds = allLessons.filter(lesson => selected.has(lesson.id)).map(lesson => lesson.id);
+    const lessonIds = selection(course, settings);
     const count = settings.count === undefined ? 20 : Number(settings.count);
     if (!Number.isInteger(count) || count < 1 || count > MAX_COUNT) throw new Error("Choose 1–100 problems per worksheet");
     const seed = String(settings.seed === undefined ? "practice" : settings.seed).trim();
@@ -63,60 +72,71 @@
     const selectedTemplates = [...byLesson.values()].flat();
     if (new Set(selectedTemplates.map(t => t.id)).size !== selectedTemplates.length) throw new Error("Duplicate template IDs");
     const rng = M.random(seed);
-    const cycle = rng.shuffle(lessonIds);
-    const offsets = new Map(lessonIds.map(id => [id, rng.int(0, byLesson.get(id).length - 1)]));
-    const uses = new Map(lessonIds.map(id => [id, 0]));
+    const cycle = plan ? plan.cycle : rng.shuffle(lessonIds);
+    const offsets = plan ? plan.offsets : new Map(lessonIds.map(id => [id, rng.int(0, byLesson.get(id).length - 1)]));
+    const uses = plan ? plan.uses : new Map(lessonIds.map(id => [id, 0]));
     const prior = new Set(settings.avoid || []);
+    const priorVisible = plan ? plan.visible : new Set();
     const seen = new Set();
+    const seenVisible = new Set();
     const questions = [];
-    let reused = 0;
     for (let slot = 0; slot < count; slot += 1) {
-      const lessonId = cycle[slot % cycle.length];
+      const lessonId = cycle[((plan ? plan.position : 0) + slot) % cycle.length];
       const pool = byLesson.get(lessonId);
       const offset = offsets.get(lessonId) + uses.get(lessonId);
-      uses.set(lessonId, uses.get(lessonId) + 1);
+      const template = pool[offset % pool.length];
       let chosen = null;
-      let fallback = null;
-      // Prefer the next design, then try sibling designs if its finite pool runs out.
-      for (let attempt = 0; attempt < 240; attempt += 1) {
-        const template = pool[(offset + Math.floor(attempt / 40)) % pool.length];
+      // Preserve design coverage. Do not silently replace an exhausted graph
+      // design with hundreds of table questions, or recycle an earlier night.
+      for (let attempt = 0; attempt < 600; attempt += 1) {
         const drawSeed = seed + "/" + slot + "/" + template.id + "/" + attempt;
         const raw = validateQuestion(template.generate(M.random(drawSeed)));
         const signature = identity(raw);
-        if (seen.has(signature)) continue;
+        const visible = visibleIdentity(raw);
+        if (seen.has(signature) || prior.has(signature) || seenVisible.has(visible) || priorVisible.has(visible)) continue;
         const entry = { ...raw, id: template.id + ":" + drawSeed, number: slot + 1, templateId: template.id,
-          lessonId, skill: template.skill, signature };
-        if (!prior.has(signature)) { chosen = entry; break; }
-        if (!fallback) fallback = entry;
+          lessonId, skill: template.skill, signature, visibleSignature: visible };
+        chosen = entry;
+        break;
       }
-      if (!chosen && fallback) { chosen = fallback; reused += 1; }
-      if (!chosen) throw new Error("The selected lesson has too few distinct exercises for this sheet. Reduce the count or select more lessons.");
+      if (!chosen) throw new Error(`Could not find enough distinct exercises for lesson ${lessonId} under these settings. Try fewer questions or nights, or select more lessons.`);
+      uses.set(lessonId, uses.get(lessonId) + 1);
       seen.add(chosen.signature);
+      seenVisible.add(chosen.visibleSignature);
       questions.push(chosen);
     }
     const version = String(course.revision || course.version);
     const code = "COURSE-" + version.slice(0, 8) + "-" + M.hash(JSON.stringify([course.id, seed, lessonIds, questions.map(q => q.id)])).toUpperCase();
-    const warnings = reused ? [`${reused} problem(s) repeat an earlier night in this packet because the selected exercise pool is limited.`] : [];
+    const warnings = !plan && count < lessonIds.length ? [`This worksheet has fewer questions than selected lessons. Choose at least ${lessonIds.length} questions to include every selected lesson.`] : [];
     return { courseId: course.id, version, seed, code, lessonIds, title: course.title + " practice", questions,
-      warnings, identities: [...seen] };
+      warnings, identities: [...seen], visibleIdentities: [...seenVisible] };
   }
+  function generateWorksheet(course, templates, options) { return buildWorksheet(course, templates, options); }
   function generatePacket(course, templates, options) {
     const settings = options || {};
     const days = settings.days === undefined ? 10 : Number(settings.days);
     if (!Number.isInteger(days) || days < 1 || days > MAX_DAYS) throw new Error("Choose 1–30 nights");
     const seed = String(settings.seed === undefined ? "practice" : settings.seed).trim();
     if (!seed || seed.length > 140) throw new Error("Enter a packet seed of 1–140 characters");
+    const lessonIds = selection(course, settings);
+    const rng = M.random(seed + "/schedule");
+    const plan = { cycle: rng.shuffle(lessonIds), position: 0, visible: new Set(),
+      offsets: new Map(lessonIds.map(id => [id, rng.int(0, Math.max(0, templates.filter(t => t.lessonId === id).length - 1))])),
+      uses: new Map(lessonIds.map(id => [id, 0])) };
     const avoid = new Set(settings.avoid || []);
     const packet = [];
     for (let day = 1; day <= days; day += 1) {
-      const sheet = generateWorksheet(course, templates, { ...settings, seed: seed + "/night-" + day, avoid: [...avoid] });
+      const sheet = buildWorksheet(course, templates, { ...settings, seed: seed + "/night-" + day, avoid: [...avoid] }, plan);
       sheet.packetSeed = seed;
       sheet.day = day;
       sheet.days = days;
       sheet.identities.forEach(id => avoid.add(id));
+      sheet.visibleIdentities.forEach(id => plan.visible.add(id));
+      plan.position += sheet.questions.length;
       packet.push(sheet);
     }
+    if (plan.position < lessonIds.length) packet[0].warnings.push(`This packet has fewer questions than selected lessons. Choose at least ${lessonIds.length} total questions to include every selected lesson.`);
     return packet;
   }
-  return { MAX_COUNT, MAX_DAYS, lessons, identity, validateQuestion, validateGraph, templatesForCourse, generateWorksheet, generatePacket };
+  return { MAX_COUNT, MAX_DAYS, lessons, identity, visibleIdentity, validateQuestion, validateGraph, templatesForCourse, generateWorksheet, generatePacket };
 });

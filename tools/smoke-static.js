@@ -9,18 +9,18 @@ const { templateParityProblems } = require("./lib/template-parity");
 // Smoke-tests the built site in dist/, exactly what GitHub Pages serves.
 // Run `npm run build` first.
 const root = path.resolve(__dirname, "..", "dist");
-const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const html = fs.readFileSync(path.join(root, "practice.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "styles", "app.css"), "utf8");
 
-// Every script index.html loads, in order. Each must at least compile.
-const indexScripts = [...html.matchAll(/<script src="([^"]+)"><\/script>/g)].map((match) => match[1]);
-for (const script of indexScripts) {
+// Every script practice.html loads, in order. Each must at least compile.
+const practiceScripts = [...html.matchAll(/<script src="([^"]+)"><\/script>/g)].map((match) => match[1]);
+for (const script of practiceScripts) {
   const file = path.join(root, script);
-  if (!fs.existsSync(file)) throw new Error(`index.html loads a missing script: ${script}`);
+  if (!fs.existsSync(file)) throw new Error(`practice.html loads a missing script: ${script}`);
   new vm.Script(fs.readFileSync(file, "utf8"), { filename: script });
 }
 // The page's own scripts (app.js and the views) are where DOM ids are used.
-const appScripts = indexScripts.filter((script) => script.startsWith("app/"));
+const appScripts = practiceScripts.filter((script) => script.startsWith("app/"));
 const appSources = appScripts.map((script) => fs.readFileSync(path.join(root, script), "utf8"));
 
 const htmlIds = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
@@ -35,7 +35,7 @@ const requiredIds = appSources.flatMap((source) => [
 ].map((match) => match[1]));
 const missingIds = [...new Set(requiredIds)].filter((id) => !htmlIds.includes(id));
 if (missingIds.length) {
-  throw new Error(`index.html's app scripts reference missing HTML IDs: ${missingIds.join(", ")}`);
+  throw new Error(`practice.html's app scripts reference missing HTML IDs: ${missingIds.join(", ")}`);
 }
 
 const cssWithoutComments = css.replace(/\/\*[\s\S]*?\*\//g, "");
@@ -79,7 +79,7 @@ for (const asset of [
   "content/catalog.js",
 ]) {
   if (!html.includes(`"${asset}"`)) {
-    throw new Error(`index.html does not load ${asset}`);
+    throw new Error(`practice.html does not load ${asset}`);
   }
   if (!fs.existsSync(path.join(root, asset))) {
     throw new Error(`Referenced asset is missing: ${asset}`);
@@ -222,12 +222,12 @@ for (const asset of [
   }
 }
 if (!html.includes('href="print.html"')) {
-  throw new Error("index.html does not link to the booklet page.");
+  throw new Error("practice.html does not link to the booklet page.");
 }
 
 // The booklet renderer belongs to the booklet page; the practice page never
 // needs it.
-if (html.includes('"lib/booklet.js"')) throw new Error("index.html loads lib/booklet.js, which it does not use.");
+if (html.includes('"lib/booklet.js"')) throw new Error("practice.html loads lib/booklet.js, which it does not use.");
 
 // One design system: the shared tokens load before any stylesheet that reads
 // them, and the shared header script before the page script that listens to
@@ -237,7 +237,7 @@ if (html.includes('"lib/booklet.js"')) throw new Error("index.html loads lib/boo
 // session store that reads saved sets with it; the passage tools load before
 // the test screen that uses them.
 for (const [name, page, order] of [
-  ["index.html", html, [
+  ["practice.html", html, [
     "styles/tokens.css", "styles/app.css", "styles/test-shell.css", "styles/math.css",
     "lib/core.js", "lib/template-mask.js", "lib/question-identity.js", "lib/runs.js", "lib/modules.js", "lib/simulation.js",
     "lib/test-engine.js", "lib/session-store.js",
@@ -256,8 +256,7 @@ for (const [name, page, order] of [
   }
 }
 
-// One header on every page: the same test switch and the same nav links, in
-// the same order.
+// The test-prep pages share the test switch and module navigation.
 function headerContract(page) {
   const header = (page.match(/<header class="site-header">[\s\S]*?<\/header>/) || [""])[0];
   return {
@@ -289,20 +288,20 @@ if (fs.existsSync(learnFile)) {
     throw new Error(`learn.html must load ${learnOrder.join(", then ")}.`);
   }
 }
-if (!html.includes('href="learn.html"')) throw new Error("index.html does not link to the Learn page.");
+if (!html.includes('href="learn.html"')) throw new Error("practice.html does not link to the Learn page.");
 
-const indexHeader = headerContract(html);
-if (!indexHeader.nav.includes("courses.html Courses")) throw new Error("The course library is not reachable from navigation.");
-if (indexHeader.tests !== "SAT,ACT" || !indexHeader.nav.includes("print.html") ||
-  !indexHeader.nav.includes("learn.html Learn")) {
-  throw new Error("index.html is missing the SAT | ACT switch, the Learn link, or the Booklets link.");
+const practiceHeader = headerContract(html);
+if (!practiceHeader.nav.includes("courses.html Courses")) throw new Error("The course library is not reachable from navigation.");
+if (practiceHeader.tests !== "SAT,ACT" || !practiceHeader.nav.includes("print.html") ||
+  !practiceHeader.nav.includes("learn.html Learn")) {
+  throw new Error("practice.html is missing the SAT | ACT switch, the Learn link, or the Booklets link.");
 }
 for (const page of ["print.html", "learn.html"]) {
   const file = path.join(root, page);
   if (page !== "print.html" && !fs.existsSync(file)) continue;
   const other = headerContract(fs.readFileSync(file, "utf8"));
-  if (JSON.stringify(indexHeader) !== JSON.stringify(other)) {
-    throw new Error(`${page}'s header differs from index.html's: ${other.nav} vs ${indexHeader.nav}`);
+  if (JSON.stringify(practiceHeader) !== JSON.stringify(other)) {
+    throw new Error(`${page}'s header differs from practice.html's: ${other.nav} vs ${practiceHeader.nav}`);
   }
 }
 
@@ -316,9 +315,26 @@ if (!courseHtml.includes('src="content/courses.js"') || !courseHtml.includes('sr
   throw new Error("Courses is missing its content or application entry point.");
 }
 
+// The library entrance is usable without the test-prep application or its
+// storage. Check its links/assets separately from the practice DOM contract.
+const homeHtml = fs.readFileSync(path.join(root, "index.html"), "utf8");
+for (const target of ["courses.html", "practice.html?test=SAT#practice", "practice.html?test=ACT#practice", "learn.html", "print.html"]) {
+  if (!homeHtml.includes(`href="${target}"`)) throw new Error("Home is missing a module link: " + target);
+}
+const homeIds = [...homeHtml.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+if (new Set(homeIds).size !== homeIds.length) throw new Error("Home has duplicate element IDs");
+for (const match of homeHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
+  const target = match[1];
+  if (/^(https?:|mailto:|data:)/.test(target)) continue;
+  if (!fs.existsSync(path.join(root, target.split(/[?#]/)[0]))) throw new Error("Missing home link/asset: " + target);
+}
+const homeScripts = [...homeHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(match => match[1]);
+if (!homeScripts.includes("app/home.js") || homeScripts.some(script => script !== "app/home.js")) throw new Error("Home must load only its bookmark compatibility script");
+new vm.Script(fs.readFileSync(path.join(root, "app/home.js"), "utf8"), { filename: "app/home.js" });
+
 // Every page names its icon, which is built with it, so no page asks the
 // server for a favicon.ico that is not there.
-for (const page of ["index.html", "learn.html", "print.html"]) {
+for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html"]) {
   const file = path.join(root, page);
   if (!fs.existsSync(file)) continue;
   const icon = (fs.readFileSync(file, "utf8").match(/<link rel="icon" href="([^"]+)"/) || [])[1];
@@ -371,7 +387,7 @@ if (!fs.existsSync(guidePath)) {
   throw new Error("Answer-signs guide is missing: content/answer-signs.js");
 }
 if (!html.includes('"content/answer-signs.js"')) {
-  throw new Error("index.html does not load the answer-signs guide.");
+  throw new Error("practice.html does not load the answer-signs guide.");
 }
 vm.runInContext(fs.readFileSync(guidePath, "utf8"), context, { filename: guidePath });
 const signs = context.window.PRACTICE_ANSWER_SIGNS;
@@ -385,7 +401,7 @@ for (const group of signs.groups) {
 }
 
 console.log(
-  `Static smoke passed: ${indexScripts.length} scripts compile, ` +
+  `Static smoke passed: ${practiceScripts.length} scripts compile, ` +
   `${new Set(requiredIds).size} DOM ids in ${appScripts.length} app scripts, ` +
   `${catalog.sections.length} generated banks, ` +
   `${practiceCore.MINI_TEST_BLUEPRINTS.length} mini test blueprints, ` +

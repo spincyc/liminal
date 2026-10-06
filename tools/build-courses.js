@@ -42,6 +42,13 @@ function loadCourses() {
           !Array.isArray(e.steps) || !e.steps.length || e.steps.some(s => typeof s !== "string" || !s.trim()))) {
           throw new Error("Missing worked examples in " + lesson.id);
         }
+        for (const example of lesson.examples) {
+          try {
+            Engine.validateQuestion({ ...example, workLines: 3 });
+            Engine.validateQuestion({ ...example, table: example.solutionTable, graph: example.solutionGraph, workLines: 3 });
+          }
+          catch (error) { throw new Error(`Invalid worked example in ${lesson.id}: ${error.message}`); }
+        }
       }
     }
     const templates = Engine.templatesForCourse(course.id);

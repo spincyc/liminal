@@ -31,103 +31,106 @@
           <span class="brand-sub">Independent learning &amp; practice</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <a class="nav-link" href="index.html">Test prep</a>
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="practice.html">Test prep</a>
           <a class="nav-link" href="courses.html" aria-current="page">Courses</a>
         </nav>
       </div>
     </header>
     <main id="main" class="site-main" tabindex="-1">
-      <header class="page-head">
-        <p class="course-eyebrow">Learn a little. Practice a little. Come back tomorrow.</p>
-        <h1>Courses</h1>
-        <p class="lede">Study guides and fresh homework for a steady nightly routine. Start with Grade 8 math; more courses can join the library.</p>
+      <header class="page-head course-hero">
+        <p class="course-eyebrow">The course library</p>
+        <h1 id="coursePageTitle">A place to understand.</h1>
+        <p class="lede">Read a lesson, try an example, then make a little time to practice.</p>
+        <p id="courseScope" class="course-scope"></p>
       </header>
-      <noscript><p class="notice">Turn on JavaScript to select lessons and build homework. Downloaded guides and worksheets work offline without JavaScript.</p></noscript>
-      <p id="courseLoadStatus" class="status-line" role="status" aria-live="polite">Loading the course library…</p>
+      <noscript><p class="notice">Turn on JavaScript to read lessons and build homework. Downloaded guides and worksheets work offline without JavaScript.</p></noscript>
+      <p id="courseLoadStatus" class="status-line" role="status" aria-live="polite">Opening the course library…</p>
       <div id="courseApp" hidden>
-        <section class="card course-library" aria-labelledby="libraryHeading">
-          <h2 id="libraryHeading">Choose a course</h2>
+        <details class="course-library">
+          <summary>Choose a course <span id="courseLibraryLabel"></span></summary>
           <div class="course-catalog-fields">
             <div class="field"><label for="courseGrade">Grade</label><select id="courseGrade"></select></div>
             <div class="field"><label for="courseSubject">Subject</label><select id="courseSubject"></select></div>
             <div class="field"><label for="courseChoice">Course</label><select id="courseChoice"></select></div>
           </div>
           <p id="courseDescription"></p>
-          <p id="courseScope" class="course-scope"></p>
           <p id="courseSource" class="field-note"></p>
-        </section>
-        <div class="course-layout">
-          <section class="card course-builder" aria-labelledby="builderHeading">
-            <h2 id="builderHeading">Build a homework packet</h2>
-            <p class="muted">Topic 1 is selected to start. Mix lessons or select a whole topic for review.</p>
-            <form id="courseForm">
+        </details>
+        <div class="course-workspace-layout">
+          <aside class="course-selection-panel" aria-label="Choose lessons">
+            <details id="courseLessonPicker" class="course-lesson-picker" open>
+              <summary><span>Lessons</span><span id="courseSelectionLabel">Topic 1 selected</span></summary>
               <fieldset class="course-lessons-fieldset">
-                <legend>Lessons to practice</legend>
+                <legend class="sr-only">Lessons to study and practice</legend>
+                <p class="course-picker-note">Choose one lesson or gather a few for review. Topic 1 is selected to start.</p>
                 <div class="course-selection-actions">
-                  <button id="courseSelectAll" class="text-link" type="button">Select all lessons</button>
-                  <button id="courseSelectNone" class="text-link" type="button">Clear selection</button>
+                  <button id="courseSelectAll" class="text-link" type="button">Select all</button>
+                  <button id="courseSelectNone" class="text-link" type="button">Clear</button>
                 </div>
                 <div id="courseLessons" class="course-lessons"></div>
                 <p id="courseSelectionCount" class="field-note" role="status" aria-live="polite"></p>
               </fieldset>
-              <div class="course-packet-fields">
-                <div class="field"><label for="courseCount">Questions per night</label><input id="courseCount" type="number" min="1" max="100" step="1" value="20" required /><p class="field-note">1–100 questions</p></div>
-                <div class="field"><label for="courseDays">Nights</label><input id="courseDays" type="number" min="1" max="30" step="1" value="10" required /><p class="field-note">1–30 nights</p></div>
-              </div>
-              <div class="field course-seed-field">
-                <label for="courseSeed">Packet seed</label>
-                <input id="courseSeed" type="text" maxlength="140" required spellcheck="false" autocomplete="off" aria-describedby="courseSeedHelp" />
-                <p id="courseSeedHelp" class="field-note">The same seed, lessons, questions per night, and number of nights reproduce the packet while the course version stays the same.</p>
-              </div>
-              <div class="actions course-build-actions">
-                <button id="courseBuild" class="button primary" type="submit">Build homework</button>
-                <button id="courseFresh" class="button secondary" type="button">Use a fresh seed</button>
-                <button id="courseCancel" class="button secondary" type="button" hidden>Cancel</button>
-              </div>
-              <p id="courseBuildStatus" class="status-line" role="status" aria-live="polite"></p>
-              <p id="courseError" class="status-line error" role="alert" hidden></p>
-            </form>
-          </section>
-          <aside class="course-side-stack">
-            <section class="card" aria-labelledby="routineHeading">
-              <h2 id="routineHeading">A nightly routine</h2>
+            <details class="course-help">
+              <summary>Make the time count</summary>
               <ol id="courseRoutine" class="course-routine-list"></ol>
-              <p class="field-note">Start with 20 questions for 10 nights. Adjust the amount to fit the evening, and revisit mistakes the next day.</p>
-            </section>
-            <section class="card course-downloads" aria-labelledby="downloadsHeading">
-              <h2 id="downloadsHeading">Print &amp; take it with you</h2>
-              <p class="muted">Each file is complete and works offline. Open a print view, then use your browser’s Print command to print or save a PDF.</p>
-              <div class="course-download-item">
-                <h3>Study guide</h3><p>Explanations, worked examples, and common mistakes for your selected lessons.</p>
-                <div class="actions"><button class="button secondary" type="button" data-course-export="guide" data-export-action="print">Open print view</button><button class="button secondary" type="button" data-course-export="guide" data-export-action="download">Download HTML</button></div>
-              </div>
-              <div class="course-download-item">
-                <h3>Student worksheets</h3><p>Every night’s questions with room to show work.</p>
-                <div class="actions"><button class="button secondary" type="button" data-course-export="student" data-export-action="print" disabled>Open print view</button><button class="button secondary" type="button" data-course-export="student" data-export-action="download" disabled>Download HTML</button></div>
-              </div>
-              <div class="course-download-item">
-                <h3>Worked answers</h3><p>Matching form codes, questions, answers, and reasoning for every night.</p>
-                <div class="actions"><button class="button secondary" type="button" data-course-export="answers" data-export-action="print" disabled>Open print view</button><button class="button secondary" type="button" data-course-export="answers" data-export-action="download" disabled>Download HTML</button></div>
-              </div>
-              <p id="courseExportStatus" class="status-line" role="status" aria-live="polite"></p>
-            </section>
+              <p>Start with a few questions you can explain. Revisit a mistake tomorrow before adding more.</p>
+            </details>
+            </details>
           </aside>
-        </div>
-        <section id="coursePacketSection" class="course-preview-section" aria-labelledby="packetHeading" hidden>
-          <div class="course-preview-heading">
-            <div><h2 id="packetHeading">Your homework packet</h2><p id="coursePacketSummary" class="muted"></p></div>
-            <div class="course-preview-controls">
-              <div class="field"><label for="coursePreviewNight">Preview night</label><select id="coursePreviewNight"></select></div>
-              <label class="course-preview-answer-toggle"><input id="coursePreviewAnswers" type="checkbox" /> Show worked answers</label>
-            </div>
+          <div class="course-learning-area">
+            <nav class="course-mode-nav" aria-label="Study and practice">
+              <button id="courseRead" type="button" aria-controls="courseGuideDetails" aria-pressed="true"><span>01</span> Study the lesson</button>
+              <button id="coursePractice" type="button" aria-controls="coursePracticePanel" aria-pressed="false"><span>02</span> Try it yourself</button>
+            </nav>
+            <section id="courseGuideDetails" class="course-study-panel" aria-labelledby="courseStudyHeading">
+              <header class="course-study-heading">
+                <h2 id="courseStudyHeading" class="sr-only" tabindex="-1">Study selected lessons</h2>
+                <div class="course-reader-navigation">
+                  <div class="field"><label for="courseReadLesson">Reading now</label><select id="courseReadLesson"></select></div>
+                  <div class="course-reader-arrows"><button id="courseReadPrevious" class="button secondary" type="button" aria-label="Previous selected lesson">←</button><button id="courseReadNext" class="button secondary" type="button" aria-label="Next selected lesson">→</button></div>
+                </div>
+              </header>
+              <div id="courseGuide" class="course-reading-surface"></div>
+              <div class="course-study-actions">
+                <button id="coursePracticeLesson" class="button primary" type="button">Practice this lesson</button>
+                <button class="button secondary" type="button" data-course-export="guide" data-export-action="print">Print selected lessons</button>
+                <button class="text-link" type="button" data-course-export="guide" data-export-action="download">Download guide</button>
+              </div>
+            </section>
+            <section id="coursePracticePanel" class="course-practice-panel" aria-labelledby="builderHeading" hidden>
+              <header class="course-practice-heading"><p class="course-eyebrow">Make it stick</p><h2 id="builderHeading" tabindex="-1">A little practice, done thoughtfully.</h2><p>Work independently, show your thinking, then use the answer key to understand a mistake.</p></header>
+              <form id="courseForm" class="course-builder">
+                <div class="course-presets" role="group" aria-label="Practice amounts"><button id="courseShortSet" class="button secondary" type="button">Tonight: 8 questions</button><button id="courseTenNights" class="button secondary" type="button">10 nights: 20 each</button></div>
+                <div class="course-packet-fields">
+                  <div class="field"><label for="courseCount">Questions per night</label><input id="courseCount" type="number" min="1" max="100" step="1" value="8" required /><p class="field-note">Choose 1–100</p></div>
+                  <div class="field"><label for="courseDays">Nights</label><input id="courseDays" type="number" min="1" max="30" step="1" value="1" required /><p class="field-note">Choose 1–30</p></div>
+                </div>
+                <p class="course-amount-advice">A packet is a supply of practice. You do not need to finish every question in one sitting.</p>
+                <details id="courseAdvanced" class="course-advanced">
+                  <summary>Recreate a saved packet</summary>
+                  <div class="field course-seed-field"><label for="courseSeed">Packet seed</label><input id="courseSeed" type="text" maxlength="140" required spellcheck="false" autocomplete="off" aria-describedby="courseSeedHelp" /><p id="courseSeedHelp" class="field-note">Use the seed printed on your packet with the same lessons, questions per night, and nights. Exact reproduction also requires the same course version.</p></div>
+                  <button id="courseFresh" class="text-link" type="button">Use a new seed</button>
+                </details>
+                <div class="actions course-build-actions"><button id="courseBuild" class="button primary" type="submit">Make practice</button><button id="courseCancel" class="button secondary" type="button" hidden>Cancel</button></div>
+                <p id="courseBuildStatus" class="status-line" role="status" aria-live="polite"></p>
+                <p id="courseError" class="status-line error" role="alert" hidden></p>
+              </form>
+              <section id="coursePacketSection" class="course-preview-section" aria-labelledby="packetHeading" hidden>
+                <div class="course-preview-heading"><div><h2 id="packetHeading">Your practice is ready.</h2><p id="coursePacketSummary" class="muted"></p></div></div>
+                <div id="courseWarnings" class="notice" hidden></div>
+                <div class="course-downloads">
+                  <div class="course-download-item"><h3>Student worksheets</h3><p>Questions and space for your thinking.</p><div class="actions"><button class="button primary" type="button" data-course-export="student" data-export-action="print" disabled>Print worksheets</button><button class="text-link" type="button" data-course-export="student" data-export-action="download" disabled>Download HTML</button></div></div>
+                  <div class="course-download-item"><h3>Worked answers</h3><p>Matching questions, steps, and explanations.</p><div class="actions"><button class="button secondary" type="button" data-course-export="answers" data-export-action="print" disabled>Print answer key</button><button class="text-link" type="button" data-course-export="answers" data-export-action="download" disabled>Download HTML</button></div></div>
+                </div>
+                <p class="course-print-help">Print views open in a new tab. Use your browser’s Print command for paper or PDF. Downloads are complete HTML files that work offline.</p>
+                <div class="course-preview-controls"><div class="field"><label for="coursePreviewNight">Preview night</label><select id="coursePreviewNight"></select></div><label class="course-preview-answer-toggle"><input id="coursePreviewAnswers" type="checkbox" /> Show worked answers</label></div>
+                <details class="course-preview-disclosure" open><summary>Look over the questions</summary><div id="coursePreview" class="course-paper-preview"></div></details>
+              </section>
+            </section>
+            <p id="courseExportStatus" class="status-line" role="status" aria-live="polite"></p>
           </div>
-          <div id="courseWarnings" class="notice" hidden></div>
-          <div id="coursePreview" class="course-paper-preview"></div>
-        </section>
-        <details id="courseGuideDetails" class="course-guide-details">
-          <summary>Read the study guide for selected lessons</summary>
-          <div id="courseGuide" class="course-paper-preview"></div>
-        </details>
+        </div>
       </div>
     </main>
     <footer class="site-footer"><div class="site-footer-inner"><p>Liminal · Original, independent educational practice.</p><p>Not affiliated with or endorsed by Savvas or any textbook publisher. Textbook names identify topic alignment; explanations, examples, and questions are original.</p><p>Grade 8 math currently covers the four supplied topics. This is a focused course library, with room for later volumes, grades, and subjects.</p></div></footer>

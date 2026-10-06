@@ -2,6 +2,11 @@
 
 ## Classroom courses — 2026-10-06
 
+Liminal's entrance now connects classroom courses, SAT practice, ACT practice,
+and study tools. Courses opens with a focused lesson reader, then a practice
+builder. The [cold-review follow-up](reviews/2026-10-06-grade8-cold-followup.md)
+records the teaching, repetition, answer-cue, and print repairs.
+
 The course library now has a grade/subject catalog and the four topics in the
 supplied Grade 8 Mathematics volume: 36 original guides, 72 worked examples,
 and repeatable nightly worksheets with separate worked keys. Topic 1 follows

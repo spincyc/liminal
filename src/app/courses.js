@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   const $ = (id) => document.getElementById(id);
-  const state = { course: null, selected: new Set(), sheets: [], job: null, styles: null, exportBusy: false };
+  const state = { course: null, selected: new Set(), sheets: [], job: null, styles: null, exportBusy: false, readId: null, mode: "study" };
   const bundles = ["lib/courses/math.js", "lib/courses/grade8-topic1.js", "lib/courses/grade8-topic2.js", "lib/courses/grade8-topic3.js", "lib/courses/grade8-topic4.js", "lib/courses/engine.js"];
   const stylesheets = ["styles/tokens.css", "styles/app.css", "styles/math.css", "styles/courses.css"];
   let catalog = [];
@@ -52,7 +52,7 @@
     }
     $("courseCancel").hidden = true;
     $("courseBuild").disabled = !state.selected.size;
-    $("courseBuild").textContent = "Build homework";
+    $("courseBuild").textContent = "Make practice";
     $("courseForm").removeAttribute("aria-busy");
     if (message) $("courseBuildStatus").textContent = message;
     setExportButtons();
@@ -63,9 +63,36 @@
     state.sheets = [];
     $("coursePacketSection").hidden = true;
     $("coursePreview").replaceChildren();
-    $("courseBuildStatus").textContent = "Build homework to use these selections.";
+    $("courseBuildStatus").textContent = "Practice will use your selected lessons.";
     error("");
     setExportButtons();
+  }
+
+  function showMode(mode, focus) {
+    state.mode = mode;
+    const study = mode === "study";
+    $("courseGuideDetails").hidden = !study;
+    $("coursePracticePanel").hidden = study;
+    $("courseRead").setAttribute("aria-pressed", String(study));
+    $("coursePractice").setAttribute("aria-pressed", String(!study));
+    if (focus) {
+      const heading = $(study ? "courseStudyHeading" : "builderHeading");
+      heading.focus({ preventScroll: true });
+      $(study ? "courseGuideDetails" : "coursePracticePanel").scrollIntoView({ block: "start", behavior: "auto" });
+    }
+  }
+
+  function readLesson() {
+    const id = $("courseReadLesson").value;
+    state.readId = id || null;
+    $("courseGuide").replaceChildren();
+    if (id) $("courseGuide").appendChild(LiminalCourseRender.renderGuide(state.course, [id], { compact: true, interactive: true }));
+    else $("courseGuide").appendChild(element("p", "course-empty", "Choose a lesson in the Lessons menu to begin reading."));
+    const index = $("courseReadLesson").selectedIndex;
+    $("courseReadPrevious").disabled = index <= 0;
+    $("courseReadNext").disabled = index < 0 || index >= $("courseReadLesson").options.length - 1;
+    $("courseReadLesson").disabled = !id;
+    $("coursePracticeLesson").disabled = !id;
   }
 
   function updateSelection() {
@@ -76,12 +103,13 @@
       input.checked = count === unit.lessons.length;
       input.indeterminate = count > 0 && count < unit.lessons.length;
     });
-    const total = state.course.units.reduce((count, unit) => count + unit.lessons.length, 0);
-    $("courseSelectionCount").textContent = `${state.selected.size} of ${total} lessons selected${state.selected.size ? "." : ". Select at least one lesson."}`;
-    $("courseBuild").disabled = !state.selected.size;
-    $("courseGuide").replaceChildren();
-    if (state.selected.size) $("courseGuide").appendChild(LiminalCourseRender.renderGuide(state.course, selectedIds()));
-    else $("courseGuide").appendChild(element("p", "course-empty", "Select lessons to read their study guide."));
+    const all = state.course.units.flatMap((unit) => unit.lessons);
+    const selected = all.filter((lesson) => state.selected.has(lesson.id));
+    $("courseSelectionCount").textContent = `${selected.length} of ${all.length} lessons selected${selected.length ? "." : ". Choose at least one lesson."}`;
+    $("courseSelectionLabel").textContent = `${selected.length} selected`;
+    $("courseBuild").disabled = !selected.length;
+    options($("courseReadLesson"), selected.map((lesson) => ({ value: lesson.id, label: `${lesson.id} · ${lesson.title}` })), state.readId);
+    readLesson();
     setExportButtons();
   }
 
@@ -128,6 +156,9 @@
     state.course = LIMINAL_COURSES.courses.find((course) => course.id === $("courseChoice").value);
     if (!state.course) throw new Error("This course could not be loaded. Reload the page to try again.");
     state.selected = new Set((state.course.units.find((unit) => unit.id === "topic-1") || state.course.units[0]).lessons.map((lesson) => lesson.id));
+    state.readId = null;
+    $("coursePageTitle").textContent = state.course.title;
+    $("courseLibraryLabel").textContent = `${gradeLabel(state.course.grade)} · ${subjectLabel(state.course.subject)}`;
     $("courseDescription").textContent = state.course.description || "";
     $("courseScope").textContent = state.course.scopeNote || "";
     const source = state.course.source || {};
@@ -186,6 +217,7 @@
 
   async function build(event) {
     if (event) event.preventDefault();
+    if (!$("courseSeed").value.trim()) $("courseAdvanced").open = true;
     if (!$("courseForm").reportValidity()) return;
     if (!state.selected.size) { error("Select at least one lesson before building homework."); return; }
     const seed = $("courseSeed").value.trim();
@@ -195,7 +227,7 @@
     state.sheets = [];
     $("coursePacketSection").hidden = true;
     const settings = { lessonIds: selectedIds(), count: Number($("courseCount").value), days: Number($("courseDays").value), seed };
-    $("courseBuildStatus").textContent = `Building ${settings.days} night${settings.days === 1 ? "" : "s"} of ${settings.count} questions…`;
+    $("courseBuildStatus").textContent = `Making ${settings.days} night${settings.days === 1 ? "" : "s"} of ${settings.count} questions…`;
     $("courseBuild").disabled = true;
     $("courseBuild").textContent = "Building…";
     $("courseCancel").hidden = false;
@@ -209,7 +241,7 @@
       options($("coursePreviewNight"), sheets.map((sheet, index) => ({ value: String(index), label: `Night ${sheet.day || index + 1}` })));
       $("coursePreviewAnswers").checked = false;
       const total = sheets.reduce((count, sheet) => count + sheet.questions.length, 0);
-      $("coursePacketSummary").textContent = `${sheets.length} night${sheets.length === 1 ? "" : "s"} · ${total} questions · ${settings.lessonIds.length} lessons · Seed: ${seed} · Version: ${sheets[0].version}`;
+      $("coursePacketSummary").textContent = `${sheets.length} night${sheets.length === 1 ? "" : "s"} · ${total} questions · ${settings.lessonIds.length} selected lesson${settings.lessonIds.length === 1 ? "" : "s"}`;
       const warnings = unique(sheets.flatMap((sheet) => sheet.warnings || []));
       $("courseWarnings").replaceChildren();
       if (warnings.length) {
@@ -221,7 +253,7 @@
       $("courseWarnings").hidden = !warnings.length;
       renderPreview();
       $("coursePacketSection").hidden = false;
-      $("courseBuildStatus").textContent = `Ready: ${sheets.length} night${sheets.length === 1 ? "" : "s"}, ${total} questions. Preview below or open a print view.`;
+      $("courseBuildStatus").textContent = `Ready: ${total} questions. Print below, or look them over first.`;
     } catch (failure) {
       if (failure.name === "AbortError") return;
       error(failure.message || "The packet could not be built. Please try again.");
@@ -229,7 +261,7 @@
     } finally {
       if (!state.job) {
         $("courseBuild").disabled = !state.selected.size;
-        $("courseBuild").textContent = "Build homework";
+        $("courseBuild").textContent = "Make practice";
         $("courseCancel").hidden = true;
         $("courseForm").removeAttribute("aria-busy");
         setExportButtons();
@@ -297,7 +329,7 @@
     crypto.getRandomValues(numbers);
     $("courseSeed").value = `practice-${Array.from(numbers, (number) => number.toString(36)).join("-")}`;
     invalidate();
-    $("courseBuildStatus").textContent = "Fresh seed ready. Build homework for a new set of questions.";
+    $("courseBuildStatus").textContent = "New seed ready. Choose Make practice to generate another set.";
   }
 
   function start() {
@@ -319,20 +351,42 @@
       $("courseForm").addEventListener("submit", build);
       $("coursePreviewNight").addEventListener("change", renderPreview);
       $("coursePreviewAnswers").addEventListener("change", renderPreview);
-      let guideWasOpen;
+      $("courseLessonPicker").open = window.matchMedia("(min-width: 861px)").matches;
+      $("courseRead").addEventListener("click", () => showMode("study", true));
+      $("coursePractice").addEventListener("click", () => showMode("practice", true));
+      $("courseReadLesson").addEventListener("change", readLesson);
+      $("courseReadPrevious").addEventListener("click", () => { $("courseReadLesson").selectedIndex -= 1; readLesson(); });
+      $("courseReadNext").addEventListener("click", () => { $("courseReadLesson").selectedIndex += 1; readLesson(); });
+      function amount(count, nights) {
+        $("courseCount").value = count;
+        $("courseDays").value = nights;
+        invalidate();
+      }
+      $("courseShortSet").addEventListener("click", () => amount(8, 1));
+      $("courseTenNights").addEventListener("click", () => amount(20, 10));
+      $("coursePracticeLesson").addEventListener("click", () => {
+        state.selected = new Set([state.readId]);
+        amount(8, 1);
+        updateSelection();
+        showMode("practice", true);
+        build();
+      });
+      let printGuide;
       window.addEventListener("beforeprint", () => {
-        if (guideWasOpen === undefined) guideWasOpen = $("courseGuideDetails").open;
-        $("courseGuideDetails").open = true;
+        if (printGuide) return;
+        printGuide = LiminalCourseRender.renderGuide(state.course, selectedIds());
+        printGuide.classList.add("course-browser-print");
+        document.body.appendChild(printGuide);
       });
       window.addEventListener("afterprint", () => {
-        if (guideWasOpen !== undefined) $("courseGuideDetails").open = guideWasOpen;
-        guideWasOpen = undefined;
+        if (printGuide) printGuide.remove();
+        printGuide = null;
       });
       document.querySelectorAll("[data-course-export]").forEach((button) => button.addEventListener("click", () => exportDocument(button)));
       $("courseApp").hidden = false;
       $("courseLoadStatus").hidden = true;
       loadStyles().catch(() => {}); // A later export retries a failed prefetch.
-      build();
+      showMode("study", false);
     } catch (failure) {
       $("courseLoadStatus").textContent = failure.message;
       $("courseLoadStatus").classList.add("error");

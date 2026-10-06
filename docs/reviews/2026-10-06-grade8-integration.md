@@ -1,5 +1,11 @@
 # Grade 8 course integration review — 2026-10-06
 
+Historical baseline at `8c79a1d`. A later cold review found defects missed by
+this pass, including semantic repetition and oversized graph-legend radicals.
+See the [cold-review follow-up](2026-10-06-grade8-cold-followup.md) for corrections
+and current verification; the hashes and page counts below describe the old
+artifacts.
+
 Scope: the supplied volume's four topics and 36 lessons. Course revision
 `5ac28bdd81ef7278` contains 72 original worked examples and 85 parameterized
 exercise designs. Topic 1 was aligned with the supplied review pages; the other

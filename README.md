@@ -5,13 +5,21 @@ practice that run entirely in the browser.
 
 **Live site:** https://spincyc.github.io/liminal/
 
+The landing page connects **Courses**, **SAT practice**, **ACT practice**,
+and the study/review tools. Test practice lives at `practice.html`; earlier
+`index.html#practice`, Progress, Review, and Tips bookmarks still resolve.
+
 **Courses** starts with Grade 8 Mathematics: the four topics in the supplied
 enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
 examples, and 85 parameterized exercise designs. Choose a lesson or mix of
 lessons to generate up to 30 nights of homework, with 1–100 problems per night.
 Study guides, student worksheets with writing space, and worked answer keys
 download separately as complete offline HTML files. Print them on paper or
-save as PDF. The initial selection covers Topic 1, Real Numbers.
+save as PDF. The course opens with a focused lesson reader; larger homework
+packets are available from the practice builder.
+Packets exclude repeated exercises across their nights. If a selected set of
+lessons cannot supply enough distinct items, the builder asks for fewer
+questions or more lessons. Separate packets do not share an exposure history.
 
 The four topics are Real Numbers, Linear Equations, Functions, and Bivariate
 Data. This covers the supplied volume, not every Grade 8 standard. The course

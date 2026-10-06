@@ -73,66 +73,96 @@
 
   function footer() { return el("footer", "course-document-footer", INDEPENDENT); }
 
-  function renderGuide(course, lessonIds) {
+  function renderGuide(course, lessonIds, options) {
+    const settings = options || {};
     const selected = new Set(lessonIds || course.units.flatMap((unit) => unit.lessons.map((lesson) => lesson.id)));
-    const guide = el("article", "course-document course-guide");
-    const header = el("header", "course-document-head");
-    header.append(el("p", "course-eyebrow", "Liminal / Study guide"), el("h1", "", course.title));
-    prose(header, course.description || "");
-    if (course.scopeNote) prose(header, course.scopeNote, "course-scope");
-    const source = course.source || {};
-    if (source.title) header.appendChild(el("p", "course-document-meta", `Topic alignment: ${source.title}${source.edition ? ` · ${source.edition}` : ""}${source.volume ? ` · ${source.volume}` : ""}. Original Liminal explanations and examples.`));
-    guide.appendChild(header);
-    if (course.studyRoutine && course.studyRoutine.length) {
-      const routine = el("section", "course-routine");
-      routine.appendChild(el("h2", "", "A steady nightly routine"));
-      list(routine, course.studyRoutine, true);
-      guide.appendChild(routine);
+    const guide = el("article", `course-document course-guide${settings.compact ? " course-inline-guide" : ""}`);
+    if (!settings.compact) {
+      const header = el("header", "course-document-head");
+      header.append(el("p", "course-eyebrow", "Liminal / Study guide"), el("h1", "", course.title));
+      prose(header, course.description || "");
+      if (course.scopeNote) prose(header, course.scopeNote, "course-scope");
+      const source = course.source || {};
+      if (source.title) header.appendChild(el("p", "course-document-meta", `Topic alignment: ${source.title}${source.edition ? ` · ${source.edition}` : ""}${source.volume ? ` · ${source.volume}` : ""}. Original Liminal explanations and examples.`));
+      guide.appendChild(header);
+      if (course.studyRoutine && course.studyRoutine.length) {
+        const routine = el("section", "course-routine");
+        routine.appendChild(el("h2", "", "A steady nightly routine"));
+        list(routine, course.studyRoutine, true);
+        guide.appendChild(routine);
+      }
     }
     course.units.forEach((unit) => {
       const lessons = unit.lessons.filter((lesson) => selected.has(lesson.id));
       if (!lessons.length) return;
       const section = el("section", "course-guide-unit");
-      section.appendChild(el("h2", "", unit.title));
-      if (unit.description) prose(section, unit.description);
+      if (!settings.compact) {
+        section.appendChild(el("h2", "", unit.title));
+        if (unit.description) prose(section, unit.description);
+      }
       lessons.forEach((lesson) => {
         const lessonNode = el("section", "course-guide-lesson");
         lessonNode.id = `guide-${lesson.id}`;
-        lessonNode.appendChild(el("h3", "", `${lesson.id} · ${lesson.title}`));
+        const intro = el("div", "course-lesson-intro");
+        intro.appendChild(el("h3", "", `${lesson.id} · ${lesson.title}`));
         const metadata = [];
         if (lesson.bookPage !== undefined && lesson.bookPage !== null) metadata.push(`Textbook page ${lesson.bookPage}`);
-        if (lesson.standards && lesson.standards.length) metadata.push(`Standards: ${lesson.standards.join(", ")}`);
-        if (metadata.length) lessonNode.appendChild(el("p", "course-document-meta", metadata.join(" · ")));
-        prose(lessonNode, lesson.objective || "", "course-objective");
+        if (lesson.standards && lesson.standards.length && !settings.compact) metadata.push(`Standards: ${lesson.standards.join(", ")}`);
+        if (metadata.length) intro.appendChild(el("p", "course-document-meta", metadata.join(" · ")));
+        prose(intro, lesson.objective || "", "course-objective");
+        lessonNode.appendChild(intro);
         (lesson.explanation || []).forEach((paragraph) => prose(lessonNode, paragraph));
         (lesson.examples || []).forEach((example, index) => {
           const exampleNode = el("section", "course-example");
-          exampleNode.appendChild(el("h4", "", `Worked example ${index + 1}`));
+          exampleNode.appendChild(el("h4", "", `${settings.interactive ? "Try an example" : "Worked example"} ${index + 1}`));
           prose(exampleNode, example.prompt);
           if (example.table) exampleNode.appendChild(renderTable(example.table));
           if (example.graph) exampleNode.appendChild(renderGraph(example.graph));
-          list(exampleNode, example.steps, true);
+          const solution = el(settings.interactive ? "details" : "div", "course-example-solution");
+          if (settings.interactive) solution.appendChild(el("summary", "", "Show reasoning and answer"));
+          list(solution, example.steps, true);
+          if (example.solutionTable) solution.appendChild(renderTable(example.solutionTable));
+          if (example.solutionGraph) solution.appendChild(renderGraph(example.solutionGraph));
           const answer = el("div", "course-answer");
           answer.appendChild(el("strong", "", "Answer: "));
           answer.appendChild(renderText(example.answer));
-          exampleNode.appendChild(answer);
+          solution.appendChild(answer);
+          exampleNode.appendChild(solution);
           lessonNode.appendChild(exampleNode);
         });
         if (lesson.pitfalls && lesson.pitfalls.length) {
           const pitfalls = el("section", "course-pitfalls");
-          pitfalls.appendChild(el("h4", "", "Check for these mistakes"));
+          pitfalls.appendChild(el("h4", "", "Check your thinking"));
           list(pitfalls, lesson.pitfalls, false);
           lessonNode.appendChild(pitfalls);
         }
         if (lesson.practiceAdvice) {
-          lessonNode.appendChild(el("h4", "", "Practice move"));
-          prose(lessonNode, lesson.practiceAdvice);
+          const advice = el("section", "course-practice-advice");
+          advice.appendChild(el("h4", "", "Put it into practice"));
+          prose(advice, lesson.practiceAdvice);
+          lessonNode.appendChild(advice);
         }
         section.appendChild(lessonNode);
       });
       guide.appendChild(section);
     });
-    guide.appendChild(footer());
+    if (!settings.compact) {
+      // End the guide with a complete worked example and its takeaways,
+      // rather than a final page holding only a short practice note.
+      const lesson = guide.querySelector(".course-guide-unit:last-child .course-guide-lesson:last-child");
+      const examples = lesson ? lesson.querySelectorAll(":scope > .course-example") : [];
+      if (examples.length) {
+        const closing = el("div", "course-guide-closing");
+        let node = examples[examples.length - 1];
+        lesson.insertBefore(closing, node);
+        while (node) {
+          const next = node.nextElementSibling;
+          closing.appendChild(node);
+          node = next;
+        }
+        closing.appendChild(footer());
+      } else guide.appendChild(footer());
+    }
     return guide;
   }
 
@@ -258,8 +288,13 @@
     return wrap;
   }
 
+  function hasWideTable(question) {
+    const table = question.table;
+    return !!table && Math.max((table.headers || []).length, ...(table.rows || []).map((row) => row.length)) > 4;
+  }
+
   function questionNode(question, answers) {
-    const item = el("section", `course-question${answers ? " course-key-question" : ""}${question.graph || question.answerGraph ? " course-question-graph" : ""}`);
+    const item = el("section", `course-question${answers ? " course-key-question" : ""}${question.graph || question.answerGraph ? " course-question-graph" : ""}${!answers && hasWideTable(question) ? " course-question-wide" : ""}`);
     const prompt = el("div", "course-question-prompt");
     prompt.append(el("strong", "course-question-number", `${question.number}.`), renderText(question.prompt));
     item.appendChild(prompt);
@@ -292,10 +327,10 @@
     const head = el("header", "course-document-head course-sheet-head");
     head.appendChild(el("p", "course-eyebrow", `Liminal / ${answers ? "Worked answers" : "Student worksheet"}${sheet.day ? ` / Night ${sheet.day}` : ""}`));
     head.appendChild(el("h1", "", course.title));
-    if (sheet.title && sheet.title !== course.title) head.appendChild(el("p", "course-sheet-title", sheet.title));
+    if (!answers && sheet.title && sheet.title !== course.title) head.appendChild(el("p", "course-sheet-title", sheet.title));
     head.appendChild(el("p", "course-form-code", `Form ${sheet.code} · Version ${sheet.version}${pages > 1 ? ` · Page ${page} of ${pages}` : ""}`));
-    head.appendChild(el("p", "course-document-meta course-replay-meta", `${sheet.packetSeed ? "Packet seed" : "Seed"}: ${sheet.packetSeed || sheet.seed} · ${sheet.questions.length} questions per night${packetDays ? ` · ${packetDays} night${packetDays === 1 ? "" : "s"}` : ""}. Lessons: ${(sheet.lessonIds || []).join(", ")}.`));
-    (sheet.warnings || []).forEach((warning) => head.appendChild(el("p", "course-print-warning", `Packet note: ${warning}`)));
+    if (!answers || page === 1) head.appendChild(el("p", "course-document-meta course-replay-meta", `${sheet.packetSeed ? "Packet seed" : "Seed"}: ${sheet.packetSeed || sheet.seed} · ${sheet.questions.length} questions per night${packetDays ? ` · ${packetDays} night${packetDays === 1 ? "" : "s"}` : ""}. Lessons: ${(sheet.lessonIds || []).join(", ")}.`));
+    if (!answers || page === 1) (sheet.warnings || []).forEach((warning) => head.appendChild(el("p", "course-print-warning", `Packet note: ${warning}`)));
     if (!answers) {
       head.appendChild(el("p", "course-student-name", "Name: __________________________________   Date: ______________"));
       head.appendChild(el("p", "course-document-meta", "Show your work. Use the study guide first; check the separate answer key afterward."));
@@ -346,43 +381,46 @@
     };
   }
 
+  function answerPage(course, sheet, questions, pageNumber, pages, packetDays) {
+    const page = el("section", "course-answer-page");
+    page.appendChild(sheetHeader(course, sheet, true, pageNumber, pages, packetDays));
+    const body = el("div", "course-key-questions");
+    questions.forEach((question) => body.appendChild(questionNode(question, true)));
+    page.append(body, footer());
+    return page;
+  }
+
   function renderWorksheet(course, sheet, options) {
     const settings = options || {};
     const answers = !!settings.answers;
     const article = el("article", `course-document course-worksheet${answers ? " course-answer-key" : ""}`);
-    if (answers) {
-      article.appendChild(sheetHeader(course, sheet, true, 1, 1, settings.packetDays));
-      const questions = el("div", "course-key-questions");
-      sheet.questions.forEach((question) => questions.appendChild(questionNode(question, true)));
-      article.append(questions, footer());
-    } else {
-      const measurer = settings.measurer || printMeasurer();
-      const groups = [];
-      let offset = 0;
-      try {
-        while (offset < sheet.questions.length) {
-          let count = Math.min(6, sheet.questions.length - offset);
-          let group = sheet.questions.slice(offset, offset + count);
-          if (measurer) {
-            while (count > 1 && !measurer.fits(sheetPage(course, sheet, group, 99, 99, settings.packetDays))) {
-              count = count > 2 ? count - (count % 2 || 2) : 1;
-              group = sheet.questions.slice(offset, offset + count);
-            }
-            if (!measurer.fits(sheetPage(course, sheet, group, 99, 99, settings.packetDays))) throw new Error(`Question ${group[0].number} is too large for a Letter page.`);
-          } else {
-            // Standalone DOM consumers may omit styles. Keep a conservative
-            // fallback; install courses.css before rendering for measured fit.
-            const roomy = group.some((question) => question.graph || question.answerGraph || question.table || question.workLines > 5 || String(question.prompt).length > 350);
-            count = Math.min(roomy ? 2 : 4, count);
+    const measurer = settings.measurer || printMeasurer();
+    const pageRenderer = answers ? answerPage : sheetPage;
+    const groups = [];
+    let offset = 0;
+    try {
+      while (offset < sheet.questions.length) {
+        let count = Math.min(6, sheet.questions.length - offset);
+        let group = sheet.questions.slice(offset, offset + count);
+        if (measurer) {
+          const pageNumber = groups.length + 1;
+          while (count > 1 && !measurer.fits(pageRenderer(course, sheet, group, pageNumber, 99, settings.packetDays))) {
+            count = answers || group.some(hasWideTable) ? count - 1 : count > 2 ? count - (count % 2 || 2) : 1;
             group = sheet.questions.slice(offset, offset + count);
           }
-          groups.push(group);
-          offset += group.length;
+          if (!measurer.fits(pageRenderer(course, sheet, group, pageNumber, 99, settings.packetDays))) throw new Error(`Question ${group[0].number} is too large for a Letter page.`);
+        } else {
+          // Install courses.css before rendering for measured page fit.
+          const roomy = group.some((question) => question.graph || question.answerGraph || question.table || question.workLines > 5 || String(question.prompt).length > 350);
+          count = Math.min(roomy || answers ? 2 : 4, count);
+          group = sheet.questions.slice(offset, offset + count);
         }
-        groups.forEach((questions, index) => article.appendChild(sheetPage(course, sheet, questions, index + 1, groups.length, settings.packetDays)));
-      } finally {
-        if (measurer && !settings.measurer) measurer.remove();
+        groups.push(group);
+        offset += group.length;
       }
+      groups.forEach((questions, index) => article.appendChild(pageRenderer(course, sheet, questions, index + 1, groups.length, settings.packetDays)));
+    } finally {
+      if (measurer && !settings.measurer) measurer.remove();
     }
     return article;
   }
@@ -390,7 +428,7 @@
   function renderPacket(course, sheets, options) {
     const settings = options || {};
     const packet = el("div", "course-packet");
-    const measurer = settings.answers ? null : printMeasurer();
+    const measurer = printMeasurer();
     try {
       sheets.forEach((sheet) => packet.appendChild(renderWorksheet(course, sheet, { ...settings, packetDays: sheets.length, measurer })));
     } finally {

@@ -220,7 +220,7 @@ test("routes read a page, a page and anchor, the index, or nothing", () => {
 test("link and practice addresses follow the Learn contract", () => {
   assert.equal(Learn.learnHref("sat-math/algebra/linear-inequalities", "solve-inequalities"),
     "learn.html#sat-math/algebra/linear-inequalities/solve-inequalities");
-  assert.equal(Learn.practiceHref("sat-math", "linear-inequalities"), "index.html#practice/sat-math/linear-inequalities");
+  assert.equal(Learn.practiceHref("sat-math", "linear-inequalities"), "practice.html#practice/sat-math/linear-inequalities");
   assert.equal(Learn.linkHref({ page: "a/b", anchor: "c" }), "#a/b/c");
   assert.equal(Learn.linkHref({ url: "https://www.desmos.com/calculator" }), "https://www.desmos.com/calculator");
   // The renderer re-checks every URL, so a tampered bundle cannot add one.

@@ -89,12 +89,13 @@ function verify(q) {
       break;
     }
     case 'classify-roots': {
-      const actual = c.candidates.filter(v => {
-        const root = v.text.match(/√(\d+)/);
+      const displayed = q.prompt.split('classification: ')[1].slice(0, -1).split('; ');
+      const actual = displayed.filter(text => {
+        const root = text.match(/√(\d+)/);
         return root && integerRoot(Number(root[1]), 2) === null;
       });
-      assert.equal(q.answer, actual.map(v => v.text).join(', '));
-      assert.equal(actual.length, 1);
+      assert.equal(q.answer, actual.join(', '));
+      assert.ok(actual.length === 1 || actual.length === 2);
       assert.ok(c.candidates.every(v => q.prompt.includes(v.text)));
       break;
     }
@@ -111,11 +112,14 @@ function verify(q) {
       assert.equal(q.answer, expected);
       break;
     }
-    case 'infinite-pattern':
+    case 'infinite-pattern': {
       assert.match(q.prompt, /continues forever with one more zero/);
       assert.match(q.steps.join(' '), /zero gaps grow without bound/);
-      assert.equal(q.answer, 'A is rational; B is irrational.');
+      const rationalLabel = q.prompt.match(/Decimal ([AB]) repeats the block/)[1];
+      assert.equal(q.answer, rationalLabel === 'A' ? 'A is rational; B is irrational.' : 'A is irrational; B is rational.');
+      assert.ok(q.steps[0].startsWith(rationalLabel));
       break;
+    }
     case 'bounds': {
       const match = q.answer.match(/^(\d+) < √(\d+) < (\d+)$/);
       const [, lower, n, upper] = match.map(Number);
@@ -157,6 +161,7 @@ function verify(q) {
       assert.equal(answers[0] ** 2, square);
       assert.ok(answers[0] >= 0);
       assert.equal(answers[1] ** 3, cube);
+      assert.ok(Math.abs(answers[1]) <= 12, 'Integer cube roots stay in the familiar 1–12 range');
       break;
     }
     case 'square-cube-categories':
@@ -164,11 +169,13 @@ function verify(q) {
         const [number, category] = entry.split(': '), n = Number(number);
         const square = integerRoot(n, 2) !== null, cube = integerRoot(n, 3) !== null;
         assert.equal(category, square && cube ? 'both' : square ? 'perfect square only' : cube ? 'perfect cube only' : 'neither');
+        if (cube) assert.ok(integerRoot(n, 3) <= 12);
       });
       assert.equal(new Set(c.values.map(v => v.n)).size, 4);
       break;
     case 'cube-row':
       assert.equal((Number(q.answer.split(' ')[0]) / c.count) ** 3, c.volume);
+      assert.ok(c.volume <= 12 ** 3);
       break;
     case 'square-equation': {
       const values = minus(q.answer).split(' or ').map(text => text.replace(/^x = /, ''));
@@ -195,7 +202,10 @@ function verify(q) {
       assert.equal(dimensions[0], dimensions[1]);
       const length = dimensions[0].replace(' cm', '');
       if (length.startsWith('³√')) assert.equal(Number(length.slice(2)), c.volume);
-      else assert.equal(Number(length) ** 3, c.volume);
+      else {
+        assert.equal(Number(length) ** 3, c.volume);
+        assert.ok(Number(length) <= 12);
+      }
       break;
     }
     case 'exponent': {
@@ -295,6 +305,7 @@ for (const template of templates) {
     for (let seed = 0; seed < 3000; seed++) {
       const q = template.generate(M.random(`topic1.${template.id}.${seed}`));
       assert.ok(q.prompt && q.answer && q.steps.length >= 2);
+      assert.ok(typeof q.practiceKey === 'string' && q.practiceKey.length > 0);
       assert.ok(q.steps.every(step => typeof step === 'string' && step.length > 0));
       assert.ok(Number.isInteger(q.workLines) && q.workLines >= 3 && q.workLines <= 7);
       assert.doesNotMatch(JSON.stringify(q), /NaN|Infinity|undefined|<\/?[a-z][^>]*>/i);
@@ -307,18 +318,147 @@ for (const template of templates) {
   });
 }
 
-test('Each lesson can supply hundreds of visibly different practice questions', () => {
+test('Each lesson can supply hundreds of distinct mathematical input sets', () => {
   for (let lesson = 1; lesson <= 11; lesson++) {
     const pool = templates.filter(t => t.lessonId === `1-${lesson}`), visible = new Set();
     for (let seed = 0; seed < 1200; seed++) {
-      for (const template of pool) visible.add(template.generate(M.random(`variety.${seed}`)).prompt);
+      for (const template of pool) visible.add(template.generate(M.random(`variety.${seed}`)).practiceKey);
     }
-    assert.ok(visible.size >= 300, `Lesson 1-${lesson}: ${visible.size} distinct prompts`);
+    assert.ok(visible.size >= 300, `Lesson 1-${lesson}: ${visible.size} distinct mathematical inputs`);
   }
 });
 
 test('Deterministic seeds reproduce full question objects', () => {
   for (const template of templates) {
     assert.deepEqual(template.generate(M.random('repeatable')), template.generate(M.random('repeatable')));
+  }
+});
+
+test('Classification samples counter both sign shortcuts and fixed A/B answers', () => {
+  const roots = templates.find(t => t.id === 'g8-t1-root-classification');
+  const patterns = templates.find(t => t.id === 'g8-t1-infinite-decimal-classification');
+  const signClasses = new Map(), irrationalCounts = new Map(), rationalLabels = new Map();
+  for (let seed = 0; seed < 3000; seed++) {
+    const q = roots.generate(M.random(`countercue.${seed}`));
+    const displayed = q.prompt.split('classification: ')[1].slice(0, -1).split('; ');
+    let irrationalCount = 0;
+    for (const expression of displayed) {
+      const radical = expression.match(/^(−?)√(\d+)$/);
+      if (!radical) continue;
+      const irrational = integerRoot(Number(radical[2]), 2) === null;
+      if (irrational) irrationalCount++;
+      const branch = `${radical[1] ? 'negative' : 'positive'} ${irrational ? 'irrational' : 'rational'}`;
+      signClasses.set(branch, (signClasses.get(branch) || 0) + 1);
+    }
+    irrationalCounts.set(irrationalCount, (irrationalCounts.get(irrationalCount) || 0) + 1);
+    const pattern = patterns.generate(M.random(`countercue.${seed}`));
+    const rationalLabel = pattern.prompt.match(/Decimal ([AB]) repeats/)[1];
+    rationalLabels.set(rationalLabel, (rationalLabels.get(rationalLabel) || 0) + 1);
+  }
+  for (const branch of ['negative irrational', 'positive irrational', 'negative rational', 'positive rational']) {
+    assert.ok(signClasses.get(branch) >= 1000, `Missing counterexample coverage: ${branch}`);
+  }
+  for (const count of [1, 2]) assert.ok(irrationalCounts.get(count) >= 1000);
+  for (const label of ['A', 'B']) assert.ok(rationalLabels.get(label) >= 1000);
+});
+
+test('Reordering classification and plotting lists does not create a new exercise', () => {
+  for (const id of ['root-classification', 'square-cube-categories', 'order-and-plot']) {
+    const template = templates.find(t => t.id === `g8-t1-${id}`);
+    for (let seed = 0; seed < 100; seed++) {
+      const normal = template.generate(M.random(`shuffle.${seed}`));
+      const rng = M.random(`shuffle.${seed}`), originalShuffle = rng.shuffle;
+      rng.shuffle = values => {
+        const shuffled = originalShuffle(values);
+        return typeof values[0] === 'object' ? shuffled.reverse() : shuffled;
+      };
+      const reordered = template.generate(rng);
+      assert.notEqual(normal.prompt, reordered.prompt);
+      assert.equal(normal.practiceKey, reordered.practiceKey);
+    }
+  }
+});
+
+test('Changing variable names, decimal labels, or units leaves mathematical identities unchanged', () => {
+  for (const id of ['product-of-powers', 'power-of-power', 'quotient-of-powers', 'negative-power-reciprocal', 'negative-power-denominator']) {
+    const template = templates.find(t => t.id === `g8-t1-${id}`);
+    for (let seed = 0; seed < 100; seed++) {
+      function draw(variable) {
+        const rng = M.random(`rename.${seed}`), originalPick = rng.pick;
+        rng.pick = values => {
+          const chosen = originalPick(values);
+          return values.includes('a') && values.includes('t') ? variable : chosen;
+        };
+        return template.generate(rng);
+      }
+      const a = draw('a'), t = draw('t');
+      assert.notEqual(a.prompt, t.prompt);
+      assert.equal(a.practiceKey, t.practiceKey);
+    }
+  }
+  for (const [id, choices] of [['infinite-decimal-classification', ['A', 'B']], ['model-square-covering', ['cm', 'mm']]]) {
+    const template = templates.find(t => t.id === `g8-t1-${id}`);
+    function draw(label) {
+      const rng = M.random('labels'), originalPick = rng.pick;
+      rng.pick = values => {
+        const chosen = originalPick(values);
+        return values.includes(choices[0]) && values.includes(choices[1]) ? label : chosen;
+      };
+      return template.generate(rng);
+    }
+    const a = draw(choices[0]), b = draw(choices[1]);
+    assert.notEqual(a.prompt, b.prompt);
+    assert.equal(a.practiceKey, b.practiceKey);
+  }
+});
+
+function scripted(id, inputs) {
+  const remaining = Object.fromEntries(Object.entries(inputs).map(([name, values]) => [name, values.slice()]));
+  function take(name, min, max) {
+    assert.ok(remaining[name] && remaining[name].length, `Missing scripted ${name}`);
+    const value = remaining[name].shift();
+    if (min !== undefined) assert.ok(value >= min && value <= max, `Scripted ${value} outside ${min}…${max}`);
+    return value;
+  }
+  return templates.find(t => t.id === `g8-t1-${id}`).generate({
+    int: (min, max) => take('int', min, max),
+    nonzero: (min, max) => { const n = take('nonzero', min, max); assert.notEqual(n, 0); return n; },
+    pick: values => { const v = take('pick'); assert.ok(values.includes(v)); return v; },
+    sign: () => take('sign', -1, 1),
+    shuffle: values => values.slice()
+  });
+}
+
+test('Practice keys normalize equivalent inputs without collapsing different work with the same answer', () => {
+  const product = inputs => scripted('product-of-powers', { pick: ['a'], nonzero: inputs.slice(0, 2), int: inputs.slice(2) });
+  assert.equal(product([2, 3, 4]).practiceKey, product([4, 2, 3]).practiceKey);
+  assert.equal(product([2, 3, 4]).answer, product([1, 3, 5]).answer);
+  assert.notEqual(product([2, 3, 4]).practiceKey, product([1, 3, 5]).practiceKey);
+  const power = values => scripted('power-of-power', { pick: ['a'], nonzero: values });
+  assert.equal(power([2, 3]).answer, power([3, 2]).answer);
+  assert.notEqual(power([2, 3]).practiceKey, power([3, 2]).practiceKey);
+  const numericProduct = values => scripted('power-of-product', { int: values, nonzero: [4] });
+  assert.equal(numericProduct([2, 3]).practiceKey, numericProduct([3, 2]).practiceKey);
+  const scientificProduct = values => scripted('scientific-product', { int: values });
+  assert.equal(scientificProduct([23, 41, 2, 5]).practiceKey, scientificProduct([41, 23, 5, 2]).practiceKey);
+  assert.equal(scientificProduct([30, 40, 1, 2]).answer, scientificProduct([24, 50, 1, 2]).answer);
+  assert.notEqual(scientificProduct([30, 40, 1, 2]).practiceKey, scientificProduct([24, 50, 1, 2]).practiceKey);
+  const repeat = scripted('repeat-block-fraction', { int: [0, 33], sign: [1] });
+  const prefix = scripted('repeat-after-prefix', { int: [0, 3, 3] });
+  assert.equal(repeat.practiceKey, prefix.practiceKey, '0.[33] and 0.3[3] name the same input');
+  const fractionA = scripted('fraction-decimal', { pick: [6], nonzero: [2] });
+  const fractionB = scripted('fraction-decimal', { pick: [9], nonzero: [3] });
+  assert.equal(fractionA.practiceKey, fractionB.practiceKey, 'Fractions are keyed after reduction');
+  assert.notEqual(repeat.practiceKey, fractionA.practiceKey, 'Opposite conversion directions are different tasks');
+  const zeroA = scripted('evaluate-zero-negative-powers', { nonzero: [3, 2, 4], int: [8] });
+  const zeroB = scripted('evaluate-zero-negative-powers', { nonzero: [3, 9, 4], int: [8] });
+  assert.equal(zeroA.practiceKey, zeroB.practiceKey, 'Changing only a nonzero base raised to zero is not fresh arithmetic');
+});
+
+test('Every design retains enough mathematical inputs for balanced multi-night practice', () => {
+  for (const template of templates) {
+    const keys = new Set();
+    for (let seed = 0; seed < 3000; seed++) keys.add(template.generate(M.random(`capacity.${seed}`)).practiceKey);
+    assert.ok(keys.size >= 100, `${template.id}: only ${keys.size} distinct input sets`);
   }
 });

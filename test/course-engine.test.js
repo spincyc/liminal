@@ -47,12 +47,41 @@ test("worksheet code binds version and lesson selection canonicalizes order", ()
   assert.notEqual(first.code, revised.code);
 });
 
-test("finite pools disclose cross-night repetition and refuse within-sheet duplicates", () => {
+test("finite pools refuse repetitions both across nights and within a sheet", () => {
   const fixed = [template("one", "a", 1)];
-  const packet = E.generatePacket(course, fixed, { seed: "limited", count: 1, days: 2, lessonIds: ["a"] });
-  assert.deepEqual(packet[0].warnings, []);
-  assert.match(packet[1].warnings[0], /repeat/);
-  assert.throws(() => E.generateWorksheet(course, fixed, { count: 2, lessonIds: ["a"] }), /too few distinct/);
+  assert.throws(() => E.generatePacket(course, fixed, { seed: "limited", count: 1, days: 2, lessonIds: ["a"] }), /enough distinct.*fewer questions or nights/);
+  assert.throws(() => E.generateWorksheet(course, fixed, { count: 2, lessonIds: ["a"] }), /enough distinct/);
+});
+
+test("cosmetic variants cannot disguise repeated mathematical practice", () => {
+  const renamed = [{ id: "rename", lessonId: "a", skill: "Powers", generate(r) {
+    return { prompt: `Simplify ${r.pick(["m", "p", "x"])}^2 times itself.`, practiceKey: "square-times-square", answer: "fourth power", steps: ["Add the exponents."], workLines: 3 };
+  } }];
+  assert.throws(() => E.generatePacket(course, renamed, { lessonIds: ["a"], count: 1, days: 2 }), /enough distinct/);
+  const mislabeled = [{ ...renamed[0], generate(r) {
+    return { ...renamed[0].generate(r), prompt: "Simplify x^2 times itself.", practiceKey: String(r.int(1, 10000)) };
+  } }];
+  assert.throws(() => E.generateWorksheet(course, mislabeled, { lessonIds: ["a"], count: 2 }), /enough distinct/);
+});
+
+test("packets balance all selected lessons and their designs across night boundaries", () => {
+  const many = { ...course, units: [{ id: "many", lessons: Array.from({ length: 36 }, (_, i) => ({ id: String(i) })) }] };
+  const designs = E.lessons(many).flatMap(l => [template(l.id + "a", l.id), template(l.id + "b", l.id)]);
+  const packet = E.generatePacket(many, designs, { seed: "cold-coverage-27", count: 20, days: 10 });
+  const questions = packet.flatMap(s => s.questions);
+  for (const lesson of E.lessons(many)) {
+    const matching = questions.filter(q => q.lessonId === lesson.id);
+    assert.ok(matching.length === 5 || matching.length === 6);
+    assert.ok(Math.abs(matching.filter(q => q.templateId.endsWith("a")).length - matching.filter(q => q.templateId.endsWith("b")).length) <= 1);
+  }
+  assert.equal(new Set(questions.map(E.identity)).size, 200);
+});
+
+test("exhausted designs cannot be silently replaced with a different practice mode", () => {
+  const scarce = [template("graph", "a", 1), template("table", "a")];
+  assert.throws(() => E.generatePacket(course, scarce, { lessonIds: ["a"], count: 2, days: 2 }), /enough distinct/);
+  const small = E.generatePacket(course, templates, { count: 1, days: 1 });
+  assert.match(small[0].warnings[0], /fewer questions than selected lessons/);
 });
 
 test("invalid configuration and malformed generated items fail visibly", () => {
