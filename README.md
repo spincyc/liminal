@@ -12,7 +12,9 @@ and the study/review tools. Test practice lives at `practice.html`; earlier
 **Courses** starts with Grade 8 Mathematics: the four topics in the supplied
 enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
 examples, and 85 parameterized exercise designs. Choose a lesson or mix of
-lessons to generate up to 30 nights of homework, with 1–100 problems per night.
+lessons to generate up to 30 nights of homework, with three full worksheets
+per night: A, B, and C. Each has the chosen 1–100 problems. Select a worksheet
+independently for each night; its matching guide and answers follow that choice.
 Study guides, student worksheets with writing space, and worked answer keys
 download separately or together as a nightly packet: study guide, worksheets,
 then worked answers, in one print job. Double-sided packets keep each section
@@ -20,7 +22,7 @@ on separate physical sheets. Print them on paper or save as PDF. The course
 opens with a focused lesson reader; larger homework packets are available from
 the practice builder. Student workspaces are blank and unruled, with a thin
 border around each problem.
-Packets exclude repeated exercises across their nights. If a selected set of
+Packets exclude repeated exercises across all three alternatives and all nights. If a selected set of
 lessons cannot supply enough distinct items, the builder asks for fewer
 questions or more lessons. Separate packets do not share an exposure history.
 
@@ -188,6 +190,7 @@ npm run check:families -- --reps 3000   # a deeper pass over every template
 npm run templates  # register new templates and re-version changed ones
 node tools/check-courses.js # validate classroom guides and worksheet generation
 node tools/course-packet.js --unit topic-1 --days 10 --count 20 --seed home-1 --out .scratch/print/home-1 --pdf
+node tools/course-packet.js --unit topic-1 --days 3 --count 20 --worksheets B,C,A --combined --out .scratch/print/mixed --pdf
 ```
 
 Open `courses.html` on the served site for the classroom library. The packet

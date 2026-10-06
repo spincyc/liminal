@@ -136,3 +136,65 @@ test("invalid configuration and malformed generated items fail visibly", () => {
   assert.throws(() => E.validateQuestion({ prompt: "P", answer: "A", steps: [], workLines: 3 }));
   assert.throws(() => E.validateGraph({ xMin: 0, xMax: 1, yMin: 0, yMax: 1, xStep: 0, yStep: 1 }));
 });
+
+test("every night has three full, replayable alternatives with matching scope and unique exercises", () => {
+  const settings = { seed: "three-full-worksheets", days: 3, count: 12, lessonIds: ["a", "b"] };
+  const nights = E.generatePacketChoices(course, templates, settings);
+  assert.deepEqual(nights, E.generatePacketChoices(course, templates, settings));
+  assert.equal(nights.length, 3);
+  const all = nights.flatMap(night => night.worksheets);
+  assert.equal(new Set(all.map(sheet => sheet.code)).size, 9);
+  assert.equal(new Set(all.flatMap(sheet => sheet.identities)).size, 108);
+  assert.equal(new Set(all.flatMap(sheet => sheet.visibleIdentities)).size, 108);
+  for (const night of nights) {
+    assert.deepEqual(night.worksheets.map(sheet => sheet.worksheetVariant), ["A", "B", "C"]);
+    for (const sheet of night.worksheets) {
+      assert.equal(sheet.day, night.day);
+      assert.equal(sheet.days, 3);
+      assert.equal(sheet.packetSeed, settings.seed);
+      assert.equal(sheet.questions.length, settings.count);
+      assert.deepEqual(sheet.questions.map(q => q.number), Array.from({ length: 12 }, (_, i) => i + 1));
+      assert.deepEqual(sheet.questions.map(q => q.templateId), night.worksheets[0].questions.map(q => q.templateId));
+      assert.ok(sheet.questions.every(q => q.answer && q.steps.length));
+    }
+  }
+  assert.ok(nights.every(night => night.worksheets.every(sheet => sheet.questions.filter(q => q.lessonId === "a").length === 6)));
+  assert.equal(E.generatePacketChoices(course, templates, { seed: "s".repeat(140), days: 30, count: 1 })[29].worksheets.length, 3);
+});
+
+test("packet printing selects each night's worksheet and its original key without regeneration", () => {
+  const nights = E.generatePacketChoices(course, templates, { seed: "select-worksheets", days: 3, count: 8 });
+  const before = JSON.stringify(nights);
+  const choices = { 1: "B", 2: "C", 3: "A" };
+  const selected = E.selectPacketWorksheets(nights, choices);
+  assert.deepEqual(selected.map(sheet => sheet.worksheetVariant), ["B", "C", "A"]);
+  assert.equal(selected[0], nights[0].worksheets[1]);
+  assert.equal(selected[1], nights[1].worksheets[2]);
+  assert.deepEqual(E.selectPacketWorksheets(nights).map(sheet => sheet.worksheetVariant), ["A", "A", "A"]);
+  assert.equal(JSON.stringify(nights), before);
+  assert.throws(() => E.selectPacketWorksheets(nights, { 1: "D" }), /available worksheet/);
+  assert.throws(() => E.selectPacketWorksheets(nights, { 4: "A" }), /available night/);
+  assert.throws(() => E.selectPacketWorksheets([nights[0], nights[0]]), /Invalid worksheet night/);
+});
+
+test("three-worksheet requests refuse undersized pools and count coverage per printed choice", () => {
+  const twoItems = [template("tiny", "a", 2)];
+  assert.throws(() => E.generatePacketChoices(course, twoItems, { days: 1, count: 1, lessonIds: ["a"] }), /Three full worksheets.*distinct/);
+  const nights = E.generatePacketChoices(course, templates, { days: 1, count: 1 });
+  assert.ok(nights[0].worksheets.every(sheet => sheet.warnings.some(warning => warning.includes("fewer questions than selected lessons"))));
+  for (const settings of [{ days: 0 }, { days: 31 }, { count: 0 }, { count: 101 }, { seed: "" }, { seed: "x".repeat(141) }]) {
+    assert.throws(() => E.generatePacketChoices(course, templates, settings));
+  }
+});
+
+test("real Topic 1 provides three complete ten-night practice choices without repetitions", () => {
+  const actual = require("../content/courses/grade-8-math.json");
+  const nights = E.generatePacketChoices(actual, E.templatesForCourse(actual.id), { lessonIds: actual.units[0].lessons.map(lesson => lesson.id), days: 10, count: 20, seed: "three-topic-1" });
+  const sheets = nights.flatMap(night => night.worksheets);
+  assert.equal(sheets.length, 30);
+  assert.equal(new Set(sheets.flatMap(sheet => sheet.identities)).size, 600);
+  assert.equal(new Set(sheets.flatMap(sheet => sheet.visibleIdentities)).size, 600);
+  const selected = E.selectPacketWorksheets(nights, Object.fromEntries(nights.map((night, i) => [night.day, E.WORKSHEET_VARIANTS[i % 3]])));
+  assert.equal(selected.flatMap(sheet => sheet.questions).length, 200);
+  assert.equal(new Set(selected.flatMap(sheet => sheet.questions.map(q => q.lessonId))).size, 11);
+});

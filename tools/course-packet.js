@@ -21,9 +21,10 @@ function usage() {
   --course <id>       course id (default: grade-8-math)
   --unit <id|all>     topic to practice (default: all)
   --lessons <ids>     comma-separated lesson ids within the chosen topic
-  --count <1-100>     problems per night (default: 20)
+  --count <1-100>     problems per worksheet (default: 20)
   --days <1-30>       nights of homework (default: 10)
   --seed <text>       reproducible packet seed, 1-140 characters (default: practice)
+  --worksheets <ids>  A, B, or C for all nights, or one per night: B,C,A (default: A)
   --out <directory>   destination (default: .scratch/course-packets/<course>)
   --pdf              also save matching Letter-size PDFs
   --combined         also save nightly-packet: guide, worksheets, answers per night
@@ -39,7 +40,10 @@ in --out. The manifest records replay settings, revisions, and form codes.
 With --combined, nightly-packet.html (and .pdf with --pdf) contains all nights
 in one print job, with each section starting on a fresh sheet for duplex printing.
 The guide covers the selected lessons; --unit all includes the whole course.
-Same seed + lessons + count + days + course revision reproduces the same forms.
+Three full alternatives are generated for every night. --worksheets chooses
+which worksheet and matching key to export for each night.
+Same seed + lessons + count + days + course revision reproduces the alternatives;
+the same worksheet choices reproduce the selected forms.
 All files are local and work offline; this command does not publish anything.
 
 Example:
@@ -48,7 +52,7 @@ Example:
 
 function parseArgs(argv) {
   const options = { course: "grade-8-math", unit: "all", count: 20, days: 10, seed: "practice", pdf: false };
-  const values = new Set(["course", "unit", "lessons", "count", "days", "seed", "out"]);
+  const values = new Set(["course", "unit", "lessons", "count", "days", "seed", "worksheets", "out"]);
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
     if (["--help", "-h"].includes(argument)) { options.help = true; continue; }
@@ -70,6 +74,11 @@ function parseArgs(argv) {
   }
   options.seed = options.seed.trim();
   if (options.seed.length > 140) throw new Error("--seed must contain 1–140 characters.");
+  const choices = (options.worksheets || "A").split(",").map(choice => choice.trim().toUpperCase());
+  if (choices.some(choice => !Engine.WORKSHEET_VARIANTS.includes(choice)) || (choices.length !== 1 && choices.length !== options.days)) {
+    throw new Error("--worksheets must be A, B, or C for all nights, or exactly one choice per night (for example B,C,A for 3 nights).");
+  }
+  options.worksheetChoices = choices.length === 1 ? Array(options.days).fill(choices[0]) : choices;
   if (options.lessons !== undefined) {
     options.lessons = options.lessons.split(",").map(id => id.trim());
     if (options.lessons.some(id => !id)) throw new Error("--lessons must be comma-separated lesson ids, without empty entries.");
@@ -98,7 +107,7 @@ function studentPacket(packet) {
     return result;
   };
   return packet.map(sheet => ({
-    title: sheet.title, version: sheet.version, code: sheet.code, day: sheet.day, days: sheet.days,
+    title: sheet.title, version: sheet.version, code: sheet.code, day: sheet.day, days: sheet.days, worksheetVariant: sheet.worksheetVariant,
     courseId: sheet.courseId, seed: sheet.seed, packetSeed: sheet.packetSeed,
     lessonIds: sheet.lessonIds, warnings: sheet.warnings,
     questions: sheet.questions.map(question => {
@@ -119,10 +128,12 @@ function packetManifest(course, packet, lessonIds, options) {
   return {
     format: "liminal-course-packet", version: 1,
     course: { id: course.id, title: course.title, revision: String(course.revision || course.version) },
-    settings: { lessonIds, count: options.count, days: options.days, seed: options.seed },
+    settings: { lessonIds, count: options.count, days: options.days, seed: options.seed,
+      ...(options.worksheetChoices ? { worksheetChoices: options.worksheetChoices } : {}) },
     ...(options.combined ? { printing: { combined: true, duplex: !options.singleSided } } : {}),
-    replayNote: "Replay requires the same course revision. Use --course, --unit all, --lessons, --count, --days, and --seed with the recorded settings.",
-    sheets: packet.map(sheet => ({ day: sheet.day, seed: sheet.seed, code: sheet.code, warnings: sheet.warnings })),
+    replayNote: "Replay requires the same course revision. Use --course, --unit all, --lessons, --count, --days, --seed, and --worksheets with the recorded settings.",
+    sheets: packet.map(sheet => ({ day: sheet.day, seed: sheet.seed, code: sheet.code, warnings: sheet.warnings,
+      ...(sheet.worksheetVariant ? { worksheetVariant: sheet.worksheetVariant } : {}) })),
     files: documentNames(options).flatMap(name => (options.pdf ? ["html", "pdf"] : ["html"]).map(extension => `${name}.${extension}`)),
   };
 }
@@ -284,7 +295,8 @@ async function main(argv = process.argv.slice(2)) {
   const course = courses.find(item => item.id === options.course);
   if (!course) throw new Error(`Unknown course "${options.course}". Use --list.`);
   const lessonIds = selectLessons(course, options);
-  const packet = Engine.generatePacket(course, Engine.templatesForCourse(course.id), { lessonIds, count: options.count, days: options.days, seed: options.seed });
+  const nights = Engine.generatePacketChoices(course, Engine.templatesForCourse(course.id), { lessonIds, count: options.count, days: options.days, seed: options.seed });
+  const packet = Engine.selectPacketWorksheets(nights, Object.fromEntries(options.worksheetChoices.map((variant, index) => [index + 1, variant])));
   const controller = new AbortController();
   const interrupt = () => controller.abort(new Error("Packet export interrupted."));
   process.once("SIGINT", interrupt);
@@ -293,7 +305,7 @@ async function main(argv = process.argv.slice(2)) {
     const files = await exportPacket(course, packet, lessonIds, options, controller.signal);
     console.log(`${course.title}: ${options.days} nights × ${options.count} problems; ${lessonIds.length} lessons; seed "${options.seed}".`);
     for (const sheet of packet) {
-      console.log(`  Night ${sheet.day}: ${sheet.code}`);
+      console.log(`  Night ${sheet.day}, Worksheet ${sheet.worksheetVariant}: ${sheet.code}`);
       for (const warning of sheet.warnings) console.warn(`  Night ${sheet.day}: ${warning}`);
     }
     for (const file of files) console.log(`  Wrote ${file}`);

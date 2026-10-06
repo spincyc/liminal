@@ -13,6 +13,7 @@
   "use strict";
   const MAX_COUNT = 100;
   const MAX_DAYS = 30;
+  const WORKSHEET_VARIANTS = Object.freeze(["A", "B", "C"]);
   function lessons(course) { return course.units.flatMap(unit => unit.lessons); }
   function nightlyLessons(course, sheet) {
     if (!sheet || !Array.isArray(sheet.questions) || !sheet.questions.length) throw new Error("A nightly packet needs questions");
@@ -160,5 +161,64 @@
     if (plan.position < lessonIds.length) packet[0].warnings.push(`This packet has fewer questions than selected lessons. Choose at least ${lessonIds.length} total questions to include every selected lesson.`);
     return packet;
   }
-  return { MAX_COUNT, MAX_DAYS, lessons, nightlyLessons, packetPagePlan, identity, visibleIdentity, validateQuestion, validateGraph, templatesForCourse, generateWorksheet, generatePacket };
+  function generatePacketChoices(course, templates, options) {
+    const settings = options || {};
+    const days = settings.days === undefined ? 10 : Number(settings.days);
+    if (!Number.isInteger(days) || days < 1 || days > MAX_DAYS) throw new Error("Choose 1–30 nights");
+    const seed = String(settings.seed === undefined ? "practice" : settings.seed).trim();
+    if (!seed || seed.length > 140) throw new Error("Enter a packet seed of 1–140 characters");
+    const lessonIds = selection(course, settings);
+    const rng = M.random(seed + "/schedule");
+    const plan = { cycle: rng.shuffle(lessonIds), position: 0, visible: new Set(),
+      offsets: new Map(lessonIds.map(id => [id, rng.int(0, Math.max(0, templates.filter(t => t.lessonId === id).length - 1))])),
+      uses: new Map(lessonIds.map(id => [id, 0])) };
+    const avoid = new Set(settings.avoid || []);
+    const nights = [];
+    for (let day = 1; day <= days; day += 1) {
+      const worksheets = [];
+      let nextUses;
+      for (const worksheetVariant of WORKSHEET_VARIANTS) {
+        // Alternatives practice the same nightly lesson/design sequence.
+        // Advance that sequence once per night, not once per alternative.
+        const variantPlan = { ...plan, uses: new Map(plan.uses) };
+        let sheet;
+        try {
+          sheet = buildWorksheet(course, templates, { ...settings, seed: seed + "/" + worksheetVariant + "/night-" + day, avoid: [...avoid] }, variantPlan);
+        } catch (failure) {
+          if (/enough distinct exercises/.test(failure.message)) throw new Error(`Three full worksheets per night need more distinct exercises. ${failure.message}`);
+          throw failure;
+        }
+        Object.assign(sheet, { packetSeed: seed, day, days, worksheetVariant });
+        sheet.identities.forEach(id => avoid.add(id));
+        sheet.visibleIdentities.forEach(id => plan.visible.add(id));
+        nextUses = variantPlan.uses;
+        worksheets.push(sheet);
+      }
+      plan.uses = nextUses;
+      plan.position += worksheets[0].questions.length;
+      nights.push({ day, worksheets });
+    }
+    if (plan.position < lessonIds.length) {
+      const warning = `Each selected worksheet packet has fewer questions than selected lessons. Choose at least ${lessonIds.length} total questions per selection to include every selected lesson.`;
+      nights[0].worksheets.forEach(sheet => sheet.warnings.push(warning));
+    }
+    return nights;
+  }
+  function selectPacketWorksheets(nights, choices) {
+    if (!Array.isArray(nights)) throw new Error("Worksheet nights must be a list");
+    const selected = choices || {};
+    const seen = new Set();
+    for (const day of Object.keys(selected)) {
+      if (!nights.some(night => String(night.day) === day)) throw new Error("Choose a worksheet for an available night");
+    }
+    return nights.map(night => {
+      if (!night || !Number.isInteger(night.day) || night.day < 1 || seen.has(night.day) || !Array.isArray(night.worksheets)) throw new Error("Invalid worksheet night");
+      seen.add(night.day);
+      const variant = Object.prototype.hasOwnProperty.call(selected, night.day) ? selected[night.day] : "A";
+      const matches = night.worksheets.filter(sheet => sheet.worksheetVariant === variant && sheet.day === night.day);
+      if (matches.length !== 1) throw new Error(`Choose an available worksheet for Night ${night.day}`);
+      return matches[0];
+    });
+  }
+  return { MAX_COUNT, MAX_DAYS, WORKSHEET_VARIANTS, lessons, nightlyLessons, packetPagePlan, identity, visibleIdentity, validateQuestion, validateGraph, templatesForCourse, generateWorksheet, generatePacket, generatePacketChoices, selectPacketWorksheets };
 });

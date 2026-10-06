@@ -27,10 +27,20 @@ worked answer key. Use a later packet to revisit missed skills.
 Problem counts are configurable; a packet is a supply of practice, not a
 requirement to finish every page in one sitting.
 
+Every night has three complete alternatives, **Worksheet A**, **B**, and **C**,
+each with the configured question count and its own worked answers. They use
+the same nightly lesson and exercise-design sequence, with different exercises.
+Choose a night, then choose its worksheet; other nights keep their selections.
+The summary shows every selected letter and distinguishes the questions selected
+for printing from all available questions. A is initially selected for each
+night. Changing alternatives hides preview answers; rebuilding resets choices.
+
 Student worksheets, study guides, and worked answers are separate printable
 documents. Student downloads contain neither solution data nor hidden answer
 graphs. The student and key copies carry matching worksheet identifiers and
-question numbers. Browser print supports paper or Save as PDF. Course work
+question numbers, with the night and worksheet letter on each page. Separate
+student and answer exports include the chosen worksheet for every night.
+Browser print supports paper or Save as PDF. Course work
 does not alter SAT/ACT progress or infer a student's mastery from printing.
 Student practice leaves response space unruled, with a thin border around each
 problem and its workspace. Graph grids and tables required by the question stay
@@ -38,13 +48,13 @@ visible. The space can be used for calculation, a diagram, or a written explanat
 Printing directly from the Courses page prints the selected study guide;
 use the packet controls for homework.
 
-After making practice, choose the preview night and use **Print nightly packet**.
-It combines that night's study guide, student worksheets, and worked answers in
+After making practice, choose the night and worksheet, then use **Print nightly packet**.
+It combines that choice's study guide, student worksheet, and worked answers in
 one document, in that order. **Nights to include** can instead include all nights,
 each with its own guide/worksheets/answers. The guide includes only lessons that
 appear in that night's actual questions, in course order. Review nights can
 repeat a lesson's instruction; exercises remain distinct within the generated
-packet. Combined packets intentionally include answers, so set those sheets
+packet, including across A/B/C alternatives. Combined packets intentionally include answers, so set those sheets
 aside before giving the work to the learner. Separate student-only exports
 remain available.
 
@@ -65,12 +75,18 @@ installed Chromium and ChromeDriver:
 ```sh
 node tools/course-packet.js --course grade-8-math --unit topic-1 \
   --count 20 --days 10 --seed home-1 --out .scratch/print/home-1 --pdf
+node tools/course-packet.js --unit topic-1 --count 20 --days 3 \
+  --seed home-mixed --worksheets B,C,A --combined --pdf --out .scratch/print/mixed
 node tools/course-packet.js --help
 ```
 
 Add `--combined` to also write `nightly-packet.html` and, with `--pdf`, its PDF.
 This uses the same nightly layout and double-sided separation as the web
 interface. Add `--single-sided` with `--combined` to omit separator backs.
+`--worksheets B` selects B for every night; `--worksheets B,C,A` selects one
+letter per night and must match `--days`. The default is A for every night.
+All three alternatives are generated before selecting exports. The manifest
+records the selected letters, seeds, and form codes for replay.
 
 No browser packages are installed by the tool. Generated outputs belong in
 `.scratch/` when used in an agent workspace; download or copy printouts to a
@@ -110,20 +126,28 @@ have different units and lessons without changing the SAT/ACT catalog.
 The build validates lesson coverage and generates `dist/content/courses.js`.
 Its course revision hashes authored content and classroom generator sources.
 Packet replay requires the same seed, lesson selection, problem count, night
-count, and revision. Printed worksheet codes identify matching copies; they
+count, revision, and worksheet letter for each night. Printed worksheet codes identify matching copies; they
 are not standalone replay instructions. Keep a downloaded packet when exact
 future reproduction matters, since old generator revisions are not bundled.
 
-Generation balances selected lessons and cycles each lesson's designs across
-the entire packet. Every design supplies a `practiceKey` derived from its
+`generatePacketChoices` returns nights with three full worksheets each;
+`selectPacketWorksheets` projects one existing worksheet and key per night
+without regenerating questions. Generation balances selected lessons and cycles
+each lesson's designs across nights, sharing that sequence among alternatives.
+Every design supplies a `practiceKey` derived from its
 mathematical task and givens. It ignores cosmetic changes such as a renamed
 variable or reordered unordered relation; it must not depend on the answer
 alone. Both these keys and exact visible identities are checked within and
-across nights. The builder refuses a request when its bounded search cannot
+across all alternatives and nights, so mixed selections also stay distinct.
+The builder refuses a request when its bounded search cannot
 find enough distinct items, with advice to reduce the count/nights or add
 lessons. It never fills the gap with repeats or silently replaces an exhausted
 design with a sibling. A packet too short to cover all selected lessons shows
-a coverage note.
+a coverage note based on the selected worksheets, not all three alternatives.
+Three alternatives require three times the selected number of distinct items.
+Topic-sized mixes support the 10-night, 20-question preset; some individual
+lessons exhaust their finite design pools at that size. Choose fewer nights or
+questions, or include more lessons, when the builder reports this limit.
 
 This is an explicit per-design identity contract, not a proof of all possible
 algebraic equivalences between designs. Separate packets do not share browser
@@ -167,3 +191,6 @@ and single-sided output. The pure page-plan tests check that no physical sheet
 is shared by different components; browser pagination must also be checked.
 The [nightly packet review](reviews/2026-10-06-grade8-nightly-packets.md)
 records the web print integration, cold reviews, and verification limits.
+The [worksheet-choice review](reviews/2026-10-06-grade8-worksheet-choices.md)
+checks three full alternatives, mixed per-night selection, matching keys,
+repeat exclusion, browser controls, and real PDF output.

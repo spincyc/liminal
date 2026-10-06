@@ -323,11 +323,11 @@
   function sheetHeader(course, sheet, answers, page, pages, packetDays) {
     packetDays = packetDays || sheet.days;
     const head = el("header", "course-document-head course-sheet-head");
-    head.appendChild(el("p", "course-eyebrow", `Liminal${sheet.day ? ` / Night ${sheet.day}` : ""} / ${answers ? "Worked answers" : "Student worksheets"}`));
+    head.appendChild(el("p", "course-eyebrow", `Liminal${sheet.day ? ` / Night ${sheet.day}` : ""}${sheet.worksheetVariant ? ` / Worksheet ${sheet.worksheetVariant}` : ""} / ${answers ? "Worked answers" : "Student worksheets"}`));
     head.appendChild(el("h1", "", course.title));
     if (!answers && sheet.title && sheet.title !== course.title) head.appendChild(el("p", "course-sheet-title", sheet.title));
     head.appendChild(el("p", "course-form-code", `Form ${sheet.code} · Version ${sheet.version}${pages > 1 ? ` · Page ${page} of ${pages}` : ""}`));
-    if (!answers || page === 1) head.appendChild(el("p", "course-document-meta course-replay-meta", `${sheet.packetSeed ? "Packet seed" : "Seed"}: ${sheet.packetSeed || sheet.seed} · ${sheet.questions.length} questions per night${packetDays ? ` · ${packetDays} night${packetDays === 1 ? "" : "s"}` : ""}. Lessons: ${(sheet.lessonIds || []).join(", ")}.`));
+    if (!answers || page === 1) head.appendChild(el("p", "course-document-meta course-replay-meta", `${sheet.packetSeed ? "Packet seed" : "Seed"}: ${sheet.packetSeed || sheet.seed} · ${sheet.questions.length} questions per ${sheet.worksheetVariant ? "worksheet" : "night"}${packetDays ? ` · ${packetDays} night${packetDays === 1 ? "" : "s"}` : ""}. Lessons: ${(sheet.lessonIds || []).join(", ")}.`));
     if (!answers || page === 1) (sheet.warnings || []).forEach((warning) => head.appendChild(el("p", "course-print-warning", `Packet note: ${warning}`)));
     if (!answers) {
       head.appendChild(el("p", "course-student-name", "Name: __________________________________   Date: ______________"));
@@ -392,6 +392,7 @@
     const settings = options || {};
     const answers = !!settings.answers;
     const article = el("article", `course-document course-worksheet${answers ? " course-answer-key" : ""}`);
+    if (sheet.worksheetVariant) article.dataset.worksheetVariant = sheet.worksheetVariant;
     const measurer = settings.measurer || printMeasurer();
     const pageRenderer = answers ? answerPage : sheetPage;
     const groups = [];
@@ -438,7 +439,7 @@
   function nightlyGuidePage(course, sheet, lessonIds, chunks, pageNumber, pages) {
     const page = el("section", "course-guide-page");
     const head = el("header", "course-document-head course-sheet-head");
-    head.append(el("p", "course-eyebrow", `Liminal / Night ${sheet.day} / Study guide`), el("h1", "", course.title));
+    head.append(el("p", "course-eyebrow", `Liminal / Night ${sheet.day}${sheet.worksheetVariant ? ` / Worksheet ${sheet.worksheetVariant}` : ""} / Study guide`), el("h1", "", course.title));
     head.appendChild(el("p", "course-form-code", `Form ${sheet.code} · Version ${sheet.version} · Page ${pageNumber} of ${pages}`));
     head.appendChild(el("p", "course-document-meta", `Lessons in tonight’s questions: ${lessonIds.join(", ")}. Read the explanations and examples before trying the student worksheets.`));
     const body = el("div", "course-guide-page-body");
@@ -506,7 +507,8 @@
     const page = el("section", "course-document course-packet-blank");
     page.dataset.night = component.night;
     page.dataset.component = "separator";
-    page.append(el("p", "course-eyebrow", `Liminal / Night ${component.night} / Separator back`), el("h1", "", "This side is intentionally blank"));
+    if (component.worksheetVariant) page.dataset.worksheetVariant = component.worksheetVariant;
+    page.append(el("p", "course-eyebrow", `Liminal / Night ${component.night}${component.worksheetVariant ? ` / Worksheet ${component.worksheetVariant}` : ""} / Separator back`), el("h1", "", "This side is intentionally blank"));
     page.appendChild(el("p", "", "Keep this back with the preceding section. The next section begins on a fresh sheet when printed on both sides."));
     page.appendChild(el("p", "course-form-code", `Form ${component.code}`));
     page.appendChild(footer());
@@ -533,7 +535,7 @@
         const student = renderWorksheet(course, numberedSheet, { packetDays, measurer });
         const answers = renderWorksheet(course, numberedSheet, { answers: true, packetDays, measurer });
         [["guide", guide], ["student", student], ["answers", answers]].forEach(([kind, node]) => {
-          components.push({ night, kind, code: sheet.code, pageCount: node.children.length, node });
+          components.push({ night, kind, code: sheet.code, worksheetVariant: sheet.worksheetVariant, pageCount: node.children.length, node });
         });
       });
       engine.packetPagePlan(components, { duplex: settings.duplex !== false }).forEach((component) => {
@@ -541,6 +543,7 @@
         node.classList.add("course-packet-component");
         node.dataset.night = component.night;
         node.dataset.component = component.kind;
+        if (component.worksheetVariant) node.dataset.worksheetVariant = component.worksheetVariant;
         node.dataset.startPage = component.startPage;
         node.dataset.pageCount = component.pageCount;
         packet.appendChild(node);

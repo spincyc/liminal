@@ -37,6 +37,20 @@ test("combined CLI packets record duplex layout and include their own printable 
   }
 });
 
+test("CLI worksheet choices select one alternative per night and survive student projection", () => {
+  assert.deepEqual(parseArgs(["--days", "3", "--worksheets", "b,c,a"]).worksheetChoices, ["B", "C", "A"]);
+  assert.deepEqual(parseArgs(["--days", "3", "--worksheets", "C"]).worksheetChoices, ["C", "C", "C"]);
+  assert.deepEqual(parseArgs(["--days", "2"]).worksheetChoices, ["A", "A"]);
+  for (const choices of ["D", "A,", "A,B,C", "A,B,C,D"]) assert.throws(() => parseArgs(["--days", "2", "--worksheets", choices]), /one choice per night/);
+  const sheet = { day: 2, worksheetVariant: "C", code: "C-form", questions: [{ number: 1, prompt: "Prompt", workLines: 4, answer: "private", steps: ["private"] }] };
+  assert.equal(studentPacket([sheet])[0].worksheetVariant, "C");
+  const options = parseArgs(["--days", "2", "--worksheets", "B,C"]);
+  const manifest = packetManifest({ id: "math", title: "Math", revision: "v1" }, [sheet], ["1-1"], options);
+  assert.deepEqual(manifest.settings.worksheetChoices, ["B", "C"]);
+  assert.equal(manifest.sheets[0].worksheetVariant, "C");
+  assert.doesNotMatch(JSON.stringify(manifest), /private/);
+});
+
 test("student renderer receives no solution model, even for answer-only graphs", () => {
   const table = { headers: ["x", "y"], rows: [["0", "1"]] };
   const graph = { xMin: -3, xMax: 3, yMin: -3, yMax: 3, xStep: 1, yStep: 1, xLabel: "x", yLabel: "y", points: [{ x: 1, y: 2, label: "solution-only-point" }], lines: [[{ x: 0, y: 0 }, { x: 1, y: 2 }]], check: "secret-graph-check" };

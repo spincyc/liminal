@@ -107,6 +107,14 @@
 .course-preview-heading h2 { font: 400 30px/1.2 var(--course-serif); }
 .course-preview-heading .muted { margin-top: 6px; font-size: 14px; overflow-wrap: anywhere; }
 .course-preview-controls { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: end; margin: 24px 0 16px; }
+.course-worksheet-controls > .field { flex: 1 1 210px; min-width: 0; }
+.course-worksheet-controls select { width: 100%; min-width: 0; }
+.course-choice-overview { margin: 20px 0 24px; }
+.course-choice-overview > h3 { font-size: 14px; }
+.course-choice-summary { display: flex; flex-wrap: wrap; gap: 7px; padding: 0; margin: 10px 0; list-style: none; }
+.course-night-choice { min-height: 44px; padding: 8px 12px; border: 1px solid var(--color-line-strong); border-radius: 4px; background: transparent; color: var(--color-ink); font: inherit; font-size: 13px; cursor: pointer; }
+.course-night-choice:hover, .course-night-choice[aria-pressed="true"] { background: var(--color-accent-soft); border-color: var(--color-accent); }
+.course-night-choice[aria-pressed="true"] { box-shadow: inset 0 -2px var(--color-accent); font-weight: 700; }
 .course-preview-answer-toggle { display: flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; cursor: pointer; }
 .course-preview-section > .notice { margin: 16px 0; }
 .course-combined-download { padding: 22px; border: 1px solid var(--color-line-strong); background: var(--color-surface); }

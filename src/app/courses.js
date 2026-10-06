@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   const $ = (id) => document.getElementById(id);
-  const state = { course: null, selected: new Set(), sheets: [], job: null, styles: null, exportBusy: false, readId: null, mode: "study" };
+  const state = { course: null, selected: new Set(), nights: [], choices: {}, sheets: [], job: null, styles: null, exportBusy: false, readId: null, mode: "study" };
   const bundles = ["lib/courses/math.js", "lib/courses/grade8-topic1.js", "lib/courses/grade8-topic2.js", "lib/courses/grade8-topic3.js", "lib/courses/grade8-topic4.js", "lib/courses/engine.js"];
   const stylesheets = ["styles/tokens.css", "styles/app.css", "styles/math.css", "styles/courses.css"];
   let catalog = [];
@@ -60,6 +60,8 @@
 
   function invalidate() {
     cancel();
+    state.nights = [];
+    state.choices = {};
     state.sheets = [];
     $("coursePacketSection").hidden = true;
     $("coursePreview").replaceChildren();
@@ -186,22 +188,22 @@
 
   function buildInWorker(course, settings) {
     return new Promise((resolve, reject) => {
-      const source = `"use strict"; self.onmessage = function (event) { try { importScripts.apply(null, event.data.scripts); const course = event.data.course; const result = LiminalCourses.generatePacket(course, LiminalCourses.templatesForCourse(course.id), event.data.settings); self.postMessage({ sheets: result }); } catch (error) { self.postMessage({ error: error.message || String(error) }); } };`;
+      const source = `"use strict"; self.onmessage = function (event) { try { importScripts.apply(null, event.data.scripts); const course = event.data.course; const result = LiminalCourses.generatePacketChoices(course, LiminalCourses.templatesForCourse(course.id), event.data.settings); self.postMessage({ nights: result }); } catch (error) { self.postMessage({ error: error.message || String(error) }); } };`;
       const url = URL.createObjectURL(new Blob([source], { type: "text/javascript" }));
       let worker;
       try { worker = new Worker(url); }
       catch (failure) { URL.revokeObjectURL(url); reject(new Error("The worksheet builder could not start. Open this page from the Liminal website and try again.")); return; }
       const job = { worker, url, reject, timeout: null };
       state.job = job;
-      const finish = (failure, sheets) => {
+      const finish = (failure, nights) => {
         if (state.job !== job) return;
         state.job = null;
         worker.terminate();
         clearTimeout(job.timeout);
         URL.revokeObjectURL(url);
-        if (failure) reject(failure); else resolve(sheets);
+        if (failure) reject(failure); else resolve(nights);
       };
-      worker.onmessage = (event) => finish(event.data.error ? new Error(event.data.error) : null, event.data.sheets);
+      worker.onmessage = (event) => finish(event.data.error ? new Error(event.data.error) : null, event.data.nights);
       worker.onerror = () => finish(new Error("The worksheet builder could not load its question library. Reload the page and try again."));
       job.timeout = setTimeout(() => finish(new Error("This packet took too long to build. Try fewer questions or nights.")), 60000);
       worker.postMessage({ course, settings, scripts: bundles.map((path) => new URL(path, document.baseURI).href) });
@@ -212,11 +214,50 @@
     const index = Number($("coursePreviewNight").value) || 0;
     const sheet = state.sheets[index];
     if (!sheet) return;
-    $("coursePacketScope").options[0].textContent = `Night ${sheet.day || index + 1} only`;
+    const night = state.nights[index];
+    $("courseWorksheetLabel").textContent = `Worksheet for night ${night.day}`;
+    options($("coursePreviewWorksheet"), night.worksheets.map((choice) => ({ value: choice.worksheetVariant, label: `Worksheet ${choice.worksheetVariant} · ${choice.questions.length} questions` })), sheet.worksheetVariant);
+    $("courseChoiceSummary").querySelectorAll("button").forEach((button) => button.setAttribute("aria-pressed", String(Number(button.dataset.nightIndex) === index)));
+    $("coursePacketScope").options[0].textContent = `Night ${sheet.day || index + 1} only · Worksheet ${sheet.worksheetVariant}`;
     $("coursePacketScope").options[1].textContent = `All ${state.sheets.length} night${state.sheets.length === 1 ? "" : "s"}`;
     $("coursePacketScope").options[1].disabled = state.sheets.length === 1;
     if (state.sheets.length === 1) $("coursePacketScope").value = "current";
     $("coursePreview").replaceChildren(LiminalCourseRender.renderWorksheet(state.course, sheet, { answers: $("coursePreviewAnswers").checked, packetDays: state.sheets.length }));
+  }
+
+  function summarizeChoices() {
+    const selectedTotal = state.sheets.reduce((total, sheet) => total + sheet.questions.length, 0);
+    const available = state.nights.flatMap((night) => night.worksheets);
+    const availableTotal = available.reduce((total, sheet) => total + sheet.questions.length, 0);
+    $("coursePacketSummary").textContent = `${state.sheets.length} night${state.sheets.length === 1 ? "" : "s"} · ${state.sheets.length} worksheet${state.sheets.length === 1 ? "" : "s"} selected for printing (${selectedTotal} questions). ${available.length} full worksheets available (${availableTotal} questions).`;
+    $("courseChoiceSummary").replaceChildren();
+    state.sheets.forEach((sheet, index) => {
+      const item = element("li");
+      const button = element("button", "course-night-choice", `Night ${sheet.day} · ${sheet.worksheetVariant}`);
+      button.type = "button";
+      button.dataset.nightIndex = String(index);
+      button.setAttribute("aria-label", `Preview night ${sheet.day}, worksheet ${sheet.worksheetVariant} selected`);
+      button.addEventListener("click", () => {
+        $("coursePreviewNight").value = String(index);
+        $("coursePreviewAnswers").checked = false;
+        renderPreview();
+        $("coursePreviewWorksheet").focus({ preventScroll: true });
+      });
+      item.appendChild(button);
+      $("courseChoiceSummary").appendChild(item);
+    });
+  }
+
+  function chooseWorksheet() {
+    const index = Number($("coursePreviewNight").value) || 0;
+    const night = state.nights[index];
+    if (!night) return;
+    state.choices = { ...state.choices, [night.day]: $("coursePreviewWorksheet").value };
+    state.sheets = LiminalCourses.selectPacketWorksheets(state.nights, state.choices);
+    $("coursePreviewAnswers").checked = false;
+    summarizeChoices();
+    renderPreview();
+    $("courseChoiceStatus").textContent = `Night ${night.day} will print worksheet ${state.choices[night.day]} with its matching answers. Other nights keep their selections.`;
   }
 
   async function build(event) {
@@ -228,10 +269,12 @@
     if (!seed) { error("Enter a packet seed, or choose a fresh seed."); $("courseSeed").focus(); return; }
     cancel();
     error("");
+    state.nights = [];
+    state.choices = {};
     state.sheets = [];
     $("coursePacketSection").hidden = true;
     const settings = { lessonIds: selectedIds(), count: Number($("courseCount").value), days: Number($("courseDays").value), seed };
-    $("courseBuildStatus").textContent = `Making ${settings.days} night${settings.days === 1 ? "" : "s"} of ${settings.count} questions…`;
+    $("courseBuildStatus").textContent = `Making three full worksheets of ${settings.count} questions for each of ${settings.days} night${settings.days === 1 ? "" : "s"} (${settings.days * settings.count * 3} questions)…`;
     $("courseBuild").disabled = true;
     $("courseBuild").textContent = "Building…";
     $("courseCancel").hidden = false;
@@ -239,15 +282,17 @@
     try {
       const pending = buildInWorker(state.course, settings);
       setExportButtons();
-      const sheets = await pending;
-      if (!Array.isArray(sheets) || !sheets.length) throw new Error("No worksheets were produced. Check your lesson selection and try again.");
+      const nights = await pending;
+      if (!Array.isArray(nights) || !nights.length) throw new Error("No worksheets were produced. Check your lesson selection and try again.");
+      const sheets = LiminalCourses.selectPacketWorksheets(nights);
+      state.nights = nights;
       state.sheets = sheets;
       $("coursePacketScope").value = "current";
       options($("coursePreviewNight"), sheets.map((sheet, index) => ({ value: String(index), label: `Night ${sheet.day || index + 1}` })));
       $("coursePreviewAnswers").checked = false;
-      const total = sheets.reduce((count, sheet) => count + sheet.questions.length, 0);
-      $("coursePacketSummary").textContent = `${sheets.length} night${sheets.length === 1 ? "" : "s"} · ${total} questions · ${settings.lessonIds.length} selected lesson${settings.lessonIds.length === 1 ? "" : "s"}`;
-      const warnings = unique(sheets.flatMap((sheet) => sheet.warnings || []));
+      summarizeChoices();
+      $("courseChoiceStatus").textContent = "Worksheet A is selected for every night. Choose A, B, or C for each night before printing.";
+      const warnings = unique(nights.flatMap((night) => night.worksheets.flatMap((sheet) => sheet.warnings || [])));
       $("courseWarnings").replaceChildren();
       if (warnings.length) {
         $("courseWarnings").appendChild(element("strong", "", "Packet notes"));
@@ -258,7 +303,7 @@
       $("courseWarnings").hidden = !warnings.length;
       renderPreview();
       $("coursePacketSection").hidden = false;
-      $("courseBuildStatus").textContent = `Ready: ${total} questions. Print below, or look them over first.`;
+      $("courseBuildStatus").textContent = `Ready: three choices per night, each with ${settings.count} questions. Choose your worksheets below.`;
     } catch (failure) {
       if (failure.name === "AbortError") return;
       error(failure.message || "The packet could not be built. Please try again.");
@@ -300,14 +345,14 @@
     // Capture the current selection so changing controls cannot mix documents.
     const course = state.course;
     const lessons = selectedIds();
-    const sheets = state.sheets;
+    const sheets = state.sheets.slice();
     const packetDays = sheets.length;
     const combinedSheets = kind === "combined" && $("coursePacketScope").value !== "all"
       ? [sheets[Number($("coursePreviewNight").value) || 0]] : sheets;
     const duplex = $("coursePacketSides").value === "duplex";
     try {
       const css = await loadStyles();
-      const label = kind === "combined" ? `Nightly packet — ${combinedSheets.length === 1 ? `Night ${combinedSheets[0].day}` : `all ${combinedSheets.length} nights`}` : kind === "guide" ? "Study guide" : kind === "answers" ? "Worked answers" : "Student worksheets";
+      const label = kind === "combined" ? `Nightly packet — ${combinedSheets.length === 1 ? `Night ${combinedSheets[0].day}, Worksheet ${combinedSheets[0].worksheetVariant}` : `all ${combinedSheets.length} nights`}` : kind === "guide" ? "Study guide" : kind === "answers" ? "Worked answers" : "Student worksheets";
       const content = kind === "combined" ? LiminalCourseRender.renderNightlyPacket(course, combinedSheets, { duplex, packetDays }) : kind === "guide" ? LiminalCourseRender.renderGuide(course, lessons) : LiminalCourseRender.renderPacket(course, sheets, { answers: kind === "answers" });
       const html = LiminalCourseRender.exportHtml(`${course.title} — ${label}`, content, css);
       const url = URL.createObjectURL(new Blob([html], { type: "text/html;charset=utf-8" }));
@@ -359,7 +404,8 @@
       $("courseFresh").addEventListener("click", freshSeed);
       $("courseCancel").addEventListener("click", () => { cancel("Build cancelled. Adjust the options or build again."); $("courseBuild").focus(); });
       $("courseForm").addEventListener("submit", build);
-      $("coursePreviewNight").addEventListener("change", renderPreview);
+      $("coursePreviewNight").addEventListener("change", () => { $("coursePreviewAnswers").checked = false; renderPreview(); });
+      $("coursePreviewWorksheet").addEventListener("change", chooseWorksheet);
       $("coursePreviewAnswers").addEventListener("change", renderPreview);
       $("coursePacketSides").addEventListener("change", () => {
         $("coursePacketPrintHelp").textContent = $("coursePacketSides").value === "duplex"
