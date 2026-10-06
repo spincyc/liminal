@@ -1,5 +1,14 @@
 # Roadmap
 
+## Classroom courses — 2026-10-06
+
+The course library now has a grade/subject catalog and the four topics in the
+supplied Grade 8 Mathematics volume: 36 original guides, 72 worked examples,
+and repeatable nightly worksheets with separate worked keys. Topic 1 follows
+the supplied review pages. See [classroom courses](classroom-courses.md) for
+scope and review limits. Later volumes, grades, and subjects can use the same
+course structure; their content is not yet available.
+
 ## Current status — 2026-10-03
 
 The [whole-product cold review](reviews/2026-10-02-cold-review.md) supersedes

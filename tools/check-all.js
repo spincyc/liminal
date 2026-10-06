@@ -32,6 +32,7 @@ const checks = [
   ["node", ["tools/update-templates.js", "--check"]],
   ["node", ["tools/check-template-reviews.js"]],
   ["node", ["tools/check-families.js"]],
+  ["node", ["tools/check-courses.js"]],
   ["node", ["tools/build.js"]],
   ["node", ["tools/smoke-static.js"]],
   ["node", ["tools/check-guides.js"]],

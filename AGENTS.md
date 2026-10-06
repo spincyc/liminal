@@ -2,7 +2,7 @@
 
 ## Boundaries
 
-Liminal is a public, dependency-free SAT/ACT practice site. GitHub Pages serves
+Liminal is a public, dependency-free classroom study and SAT/ACT practice site. GitHub Pages serves
 the `dist/` build of `main`. Keep plain HTML, CSS, and JavaScript; do not add a
 framework, runtime server, paid service, or package dependency without explicit
 approval.
@@ -84,6 +84,12 @@ For a coherent ACT bank batch:
 5. Commit source, tests, documentation, and audit notes together.
 
 ## Application notes
+
+- Classroom courses use `content/courses/`, `src/lib/courses/`, and
+  `courses.html`, independently of the SAT/ACT taxonomy and progress records.
+  Follow `docs/classroom-courses.md` for schema, generation, review, and print
+  verification. Textbook references identify scope; all instruction and
+  exercises are original. Never commit scanned textbook pages or student work.
 
 - The browser app has no module loader; each page loads plain scripts in
   order, and `tools/smoke-static.js` pins that order.

@@ -292,6 +292,7 @@ if (fs.existsSync(learnFile)) {
 if (!html.includes('href="learn.html"')) throw new Error("index.html does not link to the Learn page.");
 
 const indexHeader = headerContract(html);
+if (!indexHeader.nav.includes("courses.html Courses")) throw new Error("The course library is not reachable from navigation.");
 if (indexHeader.tests !== "SAT,ACT" || !indexHeader.nav.includes("print.html") ||
   !indexHeader.nav.includes("learn.html Learn")) {
   throw new Error("index.html is missing the SAT | ACT switch, the Learn link, or the Booklets link.");
@@ -303,6 +304,16 @@ for (const page of ["print.html", "learn.html"]) {
   if (JSON.stringify(indexHeader) !== JSON.stringify(other)) {
     throw new Error(`${page}'s header differs from index.html's: ${other.nav} vs ${indexHeader.nav}`);
   }
+}
+
+// Classroom courses are a separate entry point; all their local assets must
+// survive the static build without loading a test-prep session or remote library.
+const courseHtml = fs.readFileSync(path.join(root, "courses.html"), "utf8");
+for (const match of courseHtml.matchAll(/(?:src|href)="([^"#]+\.(?:js|css|svg))"/g)) {
+  if (!fs.existsSync(path.join(root, match[1]))) throw new Error("Missing course asset: " + match[1]);
+}
+if (!courseHtml.includes('src="content/courses.js"') || !courseHtml.includes('src="app/courses.js"')) {
+  throw new Error("Courses is missing its content or application entry point.");
 }
 
 // Every page names its icon, which is built with it, so no page asks the

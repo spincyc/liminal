@@ -2,7 +2,7 @@
   "name": "liminal",
   "version": "0.1.0",
   "private": true,
-  "description": "Free, original SAT and ACT practice that runs entirely in the browser.",
+  "description": "Original classroom study guides, printable homework, and SAT/ACT practice in the browser.",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=22"
@@ -23,6 +23,8 @@
     "check:guides": "node tools/check-guides.js",
     "check:learn": "node tools/check-learn.js",
     "check:families": "node tools/check-families.js",
+    "check:courses": "node tools/check-courses.js",
+    "course:packet": "node tools/course-packet.js",
     "check:reviews": "node tools/check-template-reviews.js",
     "templates": "node tools/update-templates.js",
     "build:learn": "node tools/build-learn.js",

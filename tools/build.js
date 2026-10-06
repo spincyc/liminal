@@ -78,6 +78,9 @@ fs.writeFileSync(
 // still builds; tools/check-learn.js fails on it.
 require("./build-learn").build({ allowMissing: true });
 
+// Classroom courses have their own taxonomy and worksheet generators.
+require("./build-courses").build();
+
 // Serve files as they are; GitHub Pages would otherwise run Jekyll.
 fs.writeFileSync(path.join(DIST, ".nojekyll"), "");
 

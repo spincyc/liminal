@@ -1,0 +1,324 @@
+'use strict';
+
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const vm = require('node:vm');
+const path = require('node:path');
+const M = require('../src/lib/courses/math.js');
+const templates = require('../src/lib/courses/grade8-topic1.js');
+const minus = text => text.replace(/−/g, '-');
+
+// Independent exact arithmetic for checking displayed decimals and scientific notation.
+function gcd(a, b) {
+  a = a < 0n ? -a : a;
+  b = b < 0n ? -b : b;
+  while (b) [a, b] = [b, a % b];
+  return a;
+}
+function rat(n, d = 1n) {
+  n = BigInt(n); d = BigInt(d);
+  const factor = gcd(n, d), sign = d < 0n ? -1n : 1n;
+  return [sign * n / factor, sign * d / factor];
+}
+function combine(a, b, op) {
+  if (op === '+') return rat(a[0] * b[1] + b[0] * a[1], a[1] * b[1]);
+  if (op === '-') return rat(a[0] * b[1] - b[0] * a[1], a[1] * b[1]);
+  if (op === '*') return rat(a[0] * b[0], a[1] * b[1]);
+  return rat(a[0] * b[1], a[1] * b[0]);
+}
+function tenPower(n) {
+  return n >= 0 ? [10n ** BigInt(n), 1n] : [1n, 10n ** BigInt(-n)];
+}
+function parseDecimal(text) {
+  text = minus(text);
+  const sign = text.startsWith('-') ? -1n : 1n;
+  const parts = text.replace(/^-/, '').split('.');
+  const whole = parts[0], fractional = parts[1] || '';
+  const repeat = fractional.match(/^(\d*)\[(\d+)\]$/);
+  if (!repeat) return rat(sign * BigInt(whole + fractional), 10n ** BigInt(fractional.length));
+  const fixed = repeat[1], block = repeat[2];
+  const denominator = (10n ** BigInt(block.length) - 1n) * 10n ** BigInt(fixed.length);
+  const numerator = BigInt(whole) * denominator + BigInt(fixed || '0') * (10n ** BigInt(block.length) - 1n) + BigInt(block);
+  return rat(sign * numerator, denominator);
+}
+function parseFraction(text) {
+  const parts = minus(text).split('/');
+  return rat(parts[0], parts[1] || 1);
+}
+function parseScientific(text) {
+  const match = minus(text).match(/^([0-9]+(?:\.[0-9]+)?) × 10\^(-?\d+)$/);
+  assert.ok(match, `Scientific notation: ${text}`);
+  const coefficient = parseDecimal(match[1]);
+  assert.ok(coefficient[0] >= coefficient[1] && coefficient[0] < 10n * coefficient[1], text);
+  return combine(coefficient, tenPower(Number(match[2])), '*');
+}
+function assertFraction(text, expected) {
+  assert.deepEqual(parseFraction(text), expected);
+  const raw = minus(text).split('/').map(BigInt);
+  if (raw.length === 2) {
+    assert.ok(raw[1] > 1n, 'Do not retain a denominator of 1');
+    assert.equal(gcd(raw[0], raw[1]), 1n, 'Fraction must be reduced');
+  }
+}
+function displayedScientificOperands(prompt) {
+  return [...minus(prompt).matchAll(/([0-9]+(?:\.[0-9]+)?) × 10\^(-?\d+)/g)]
+    .map(match => combine(parseDecimal(match[1]), tenPower(Number(match[2])), '*'));
+}
+function integerRoot(n, power) {
+  for (let i = 0; i ** power <= n; i++) if (i ** power === n) return i;
+  return null;
+}
+function powerAnswer(text, base) {
+  const match = minus(text).match(new RegExp(`^${base}\\^(-?\\d+)$`));
+  assert.ok(match, text);
+  return Number(match[1]);
+}
+
+function verify(q) {
+  const c = q.check;
+  switch (c.kind) {
+    case 'fraction':
+      assert.deepEqual(parseDecimal(c.text), rat(c.n, c.d));
+      assertFraction(q.answer, parseDecimal(c.text));
+      assert.ok(q.prompt.includes(c.text));
+      break;
+    case 'decimal-fraction': {
+      const displayed = q.prompt.match(/^Write ([^ ]+) as a decimal/)[1];
+      assert.deepEqual(parseDecimal(q.answer), parseFraction(displayed));
+      break;
+    }
+    case 'classify-roots': {
+      const actual = c.candidates.filter(v => {
+        const root = v.text.match(/√(\d+)/);
+        return root && integerRoot(Number(root[1]), 2) === null;
+      });
+      assert.equal(q.answer, actual.map(v => v.text).join(', '));
+      assert.equal(actual.length, 1);
+      assert.ok(c.candidates.every(v => q.prompt.includes(v.text)));
+      break;
+    }
+    case 'number-sets': {
+      let expected;
+      if (c.text.includes('√')) expected = 'real';
+      else {
+        const value = parseFraction(c.text);
+        expected = value[1] > 1n ? 'rational, real'
+          : value[0] < 0n ? 'integer, rational, real'
+            : value[0] === 0n ? 'whole, integer, rational, real'
+              : 'natural, whole, integer, rational, real';
+      }
+      assert.equal(q.answer, expected);
+      break;
+    }
+    case 'infinite-pattern':
+      assert.match(q.prompt, /continues forever with one more zero/);
+      assert.match(q.steps.join(' '), /zero gaps grow without bound/);
+      assert.equal(q.answer, 'A is rational; B is irrational.');
+      break;
+    case 'bounds': {
+      const match = q.answer.match(/^(\d+) < √(\d+) < (\d+)$/);
+      const [, lower, n, upper] = match.map(Number);
+      assert.equal(upper, lower + 1);
+      assert.ok(lower ** 2 < n && n < upper ** 2);
+      assert.equal(n, Number(q.prompt.match(/√(\d+)/)[1]));
+      break;
+    }
+    case 'order': {
+      function value(text) {
+        if (text.startsWith('√')) return Math.sqrt(Number(text.slice(1)));
+        const mixed = text.match(/^(\d+) (\d+)\/(\d+)$/);
+        if (mixed) return Number(mixed[1]) + Number(mixed[2]) / Number(mixed[3]);
+        const rational = parseDecimal(text);
+        return Number(rational[0]) / Number(rational[1]);
+      }
+      const order = q.answer.split(' < ');
+      assert.deepEqual(new Set(order), new Set(c.values.map(v => v.text)));
+      for (let i = 1; i < order.length; i++) assert.ok(value(order[i - 1]) < value(order[i]), q.answer);
+      assert.deepEqual(q.graph.points, []);
+      assert.equal(q.answerGraph.points.length, 4);
+      q.answerGraph.points.forEach(p => assert.equal(p.x, value(p.label)));
+      for (let i = 1; i < q.answerGraph.points.length; i++) {
+        assert.ok(q.answerGraph.points[i].x - q.answerGraph.points[i - 1].x >= 0.12,
+          'Number-line marks must remain distinguishable at worksheet print size');
+      }
+      break;
+    }
+    case 'negative-comparison': {
+      const [, radicand, sign, rhs] = q.answer.match(/^−√(\d+) ([<>]) (.+)$/);
+      const rational = parseDecimal(rhs);
+      const greaterMagnitude = BigInt(radicand) * rational[1] ** 2n > rational[0] ** 2n;
+      assert.equal(sign, greaterMagnitude ? '<' : '>');
+      break;
+    }
+    case 'roots': {
+      const answers = minus(q.answer).split('; ').map(Number);
+      const [, square, cube] = minus(q.prompt).match(/Evaluate √(\d+) and ³√\((-?\d+)\)/).map(Number);
+      assert.equal(answers[0] ** 2, square);
+      assert.ok(answers[0] >= 0);
+      assert.equal(answers[1] ** 3, cube);
+      break;
+    }
+    case 'square-cube-categories':
+      q.answer.split('; ').forEach(entry => {
+        const [number, category] = entry.split(': '), n = Number(number);
+        const square = integerRoot(n, 2) !== null, cube = integerRoot(n, 3) !== null;
+        assert.equal(category, square && cube ? 'both' : square ? 'perfect square only' : cube ? 'perfect cube only' : 'neither');
+      });
+      assert.equal(new Set(c.values.map(v => v.n)).size, 4);
+      break;
+    case 'cube-row':
+      assert.equal((Number(q.answer.split(' ')[0]) / c.count) ** 3, c.volume);
+      break;
+    case 'square-equation': {
+      const values = minus(q.answer).split(' or ').map(text => text.replace(/^x = /, ''));
+      assert.equal(values.length, 2);
+      const magnitude = text => text.includes('√') ? Math.sqrt(Number(text.split('√')[1])) : Math.abs(Number(text));
+      assert.ok(values[0].startsWith('-'));
+      assert.ok(!values[1].startsWith('-'));
+      assert.ok(Math.abs(magnitude(values[0]) ** 2 - c.n) < 1e-10);
+      assert.equal(magnitude(values[0]), magnitude(values[1]));
+      assert.match(q.steps.join(' '), /\|x\|/);
+      break;
+    }
+    case 'cube-equation': {
+      const value = minus(q.answer).replace(/^y = /, '');
+      if (value.includes('³√')) {
+        const [, sign, radicand] = value.match(/^(-?)³√(\d+)$/);
+        assert.equal(Number(radicand) * (sign ? -1 : 1), c.n);
+        assert.equal(integerRoot(Math.abs(c.n), 3), null);
+      } else assert.equal(Number(value) ** 3, c.n);
+      break;
+    }
+    case 'cube-face': {
+      const dimensions = q.answer.split(' by ');
+      assert.equal(dimensions[0], dimensions[1]);
+      const length = dimensions[0].replace(' cm', '');
+      if (length.startsWith('³√')) assert.equal(Number(length.slice(2)), c.volume);
+      else assert.equal(Number(length) ** 3, c.volume);
+      break;
+    }
+    case 'exponent': {
+      const match = minus(q.prompt).match(/Assume (\w) ≠ 0/);
+      const base = match[1];
+      const exponents = [...minus(q.prompt).split('. Assume')[0].matchAll(/\^(-?\d+)/g)].map(m => Number(m[1]));
+      const expected = c.operation === 'product' ? exponents.reduce((a, b) => a + b, 0)
+        : c.operation === 'power' ? exponents[0] * exponents[1] : exponents[0] - exponents[1];
+      assert.equal(powerAnswer(q.answer, base), expected);
+      break;
+    }
+    case 'power-product':
+      assert.equal(powerAnswer(q.answer, c.a * c.b), c.exponent);
+      break;
+    case 'reciprocal':
+      assert.equal(q.answer, `${String(c.coefficient).replace('-', '−')}/(${c.base}^${c.exponent})`);
+      assert.match(q.prompt, /≠ 0/);
+      break;
+    case 'reciprocal-product': {
+      const [onePower, positive] = q.answer.split('; ');
+      assert.equal(powerAnswer(onePower, c.base), c.a - c.b);
+      assert.ok(!positive.includes('−'));
+      const expected = c.a === c.b ? '1' : c.a > c.b ? `${c.base}^${c.a - c.b}` : `1/(${c.base}^${c.b - c.a})`;
+      assert.equal(positive, expected);
+      break;
+    }
+    case 'evaluate-powers': {
+      const [, coefficient, constant, x, y] = minus(q.prompt).match(/Evaluate \((-?\d+)\)x\^-2 \+ (\d+)y\^0 for x = (-?\d+) and y = (-?\d+)/).map(Number);
+      assert.notEqual(x, 0);
+      assert.notEqual(y, 0);
+      assertFraction(q.answer, combine(rat(coefficient, x * x), rat(constant), '+'));
+      break;
+    }
+    case 'estimate': {
+      const match = q.answer.match(/^(\d) × 10\^([−\d]+)(?: m)?$/);
+      assert.ok(match, q.answer);
+      const expected = Math.round(c.n / 100) * 10 ** (c.exponent + 2);
+      const actual = Number(match[1]) * 10 ** Number(minus(match[2]));
+      assert.ok(Math.abs(actual / expected - 1) < 1e-12);
+      break;
+    }
+    case 'estimated-ratio': {
+      const [, a, b] = q.prompt.match(/tracks (\d+) red signals and (\d+) blue signals/);
+      const roundOneDigit = text => Math.round(Number(text) / 10 ** (text.length - 1)) * 10 ** (text.length - 1);
+      assert.equal(q.answer, `About ${roundOneDigit(a) / roundOneDigit(b)} times as large.`);
+      break;
+    }
+    case 'scientific': {
+      const shown = q.prompt.match(/(?:Write |width of )([0-9.]+)/)[1];
+      assert.deepEqual(parseScientific(q.answer.replace(/ mm$/, '')), parseDecimal(shown));
+      break;
+    }
+    case 'ordinary':
+      assert.deepEqual(parseDecimal(q.answer), displayedScientificOperands(q.prompt)[0]);
+      break;
+    case 'scientific-operation': {
+      const operands = displayedScientificOperands(q.prompt);
+      assert.equal(operands.length, 2);
+      assert.deepEqual(parseScientific(q.answer), combine(operands[0], operands[1], c.operation));
+      break;
+    }
+    case 'storage-model': {
+      const count = Number(q.prompt.match(/stores (\d+) files/)[1]);
+      const operands = displayedScientificOperands(q.prompt);
+      const total = combine(operands[0], rat(count), '*');
+      const [first, second] = q.answer.split('; ');
+      assert.deepEqual(parseScientific(first.replace(' bytes', '')), total);
+      assertFraction(second.replace(' times as large.', ''), combine(total, operands[1], '/'));
+      break;
+    }
+    case 'panel-model': {
+      const [perimeter, area] = q.answer.split('; ');
+      const side = Number(perimeter.split(' ')[0]) / (4 * c.count);
+      assert.equal(side ** 2, c.area);
+      assert.deepEqual(parseScientific(area.replace(` ${c.unit}^2`, '')), rat(c.area * c.count));
+      break;
+    }
+    default: assert.fail(`Unchecked kind: ${c.kind}`);
+  }
+}
+
+test('Topic 1 exports original templates for every lesson in Node and the browser', () => {
+  assert.ok(templates.length >= 30);
+  assert.equal(new Set(templates.map(t => t.id)).size, templates.length);
+  for (let lesson = 1; lesson <= 11; lesson++) {
+    assert.ok(templates.filter(t => t.lessonId === `1-${lesson}`).length >= 2);
+  }
+  const context = { LiminalCourseMath: M };
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../src/lib/courses/grade8-topic1.js'), 'utf8'), context);
+  assert.equal(context.LiminalGrade8Topic1.length, templates.length);
+  assert.equal(context.LiminalGrade8Topic1[0].generate(M.random('browser')).answer,
+    templates[0].generate(M.random('browser')).answer);
+});
+
+for (const template of templates) {
+  test(`${template.id}: exact answers and valid content over 3,000 seeds`, () => {
+    for (let seed = 0; seed < 3000; seed++) {
+      const q = template.generate(M.random(`topic1.${template.id}.${seed}`));
+      assert.ok(q.prompt && q.answer && q.steps.length >= 2);
+      assert.ok(q.steps.every(step => typeof step === 'string' && step.length > 0));
+      assert.ok(Number.isInteger(q.workLines) && q.workLines >= 3 && q.workLines <= 7);
+      assert.doesNotMatch(JSON.stringify(q), /NaN|Infinity|undefined|<\/?[a-z][^>]*>/i);
+      for (const g of [q.graph, q.answerGraph].filter(Boolean)) {
+        assert.ok(g.xMin < g.xMax && g.yMin < g.yMax && g.xStep > 0 && g.yStep > 0);
+        for (const p of g.points) assert.ok(Number.isFinite(p.x) && p.x >= g.xMin && p.x <= g.xMax && p.y === 0);
+      }
+      try { verify(q); } catch (error) { error.message = `${template.id} seed ${seed}: ${q.prompt}\n${q.answer}\n${error.message}`; throw error; }
+    }
+  });
+}
+
+test('Each lesson can supply hundreds of visibly different practice questions', () => {
+  for (let lesson = 1; lesson <= 11; lesson++) {
+    const pool = templates.filter(t => t.lessonId === `1-${lesson}`), visible = new Set();
+    for (let seed = 0; seed < 1200; seed++) {
+      for (const template of pool) visible.add(template.generate(M.random(`variety.${seed}`)).prompt);
+    }
+    assert.ok(visible.size >= 300, `Lesson 1-${lesson}: ${visible.size} distinct prompts`);
+  }
+});
+
+test('Deterministic seeds reproduce full question objects', () => {
+  for (const template of templates) {
+    assert.deepEqual(template.generate(M.random('repeatable')), template.generate(M.random('repeatable')));
+  }
+});

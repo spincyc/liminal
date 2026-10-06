@@ -1,0 +1,1496 @@
+{
+  "id": "grade-8-math",
+  "version": 1,
+  "grade": 8,
+  "subject": "Mathematics",
+  "title": "Grade 8 Mathematics",
+  "description": "Original study guides, worked examples, and repeatable worksheets for real numbers, linear equations, functions, and bivariate data.",
+  "scopeNote": "Covers the four topics in the supplied volume. Additional volumes can be added later.",
+  "source": {
+    "title": "enVision+ Common Core Mathematics, Grade 8 Student Edition",
+    "publisher": "Savvas Learning Company",
+    "edition": null,
+    "volume": null,
+    "alignment": "Lesson numbers, section titles, page references, and listed standards follow the supplied volume. Topic 1 also incorporates the supplied review objectives; Topics 2–4 follow the table of contents. Explanations, examples, and exercises are original. The edition year and volume number are unconfirmed."
+  },
+  "units": [
+    {
+      "id": "topic-1",
+      "title": "Real Numbers",
+      "description": "Connect number types, roots, integer exponents, estimation, and scientific notation. The lessons include the skills identified in the supplied Topic 1 review.",
+      "lessons": [
+        {
+          "id": "1-1",
+          "title": "Write Rational Numbers as Decimals",
+          "bookPage": 5,
+          "standards": [
+            "8.NS.A.1"
+          ],
+          "objective": "Move between fractions, terminating decimals, and repeating decimals, and explain why each represents a rational number.",
+          "explanation": [
+            "A rational number can be written as a ratio of integers with a nonzero denominator. Divide the numerator by the denominator to write a fraction as a decimal. Long division either ends with remainder zero or eventually repeats a remainder. A repeated remainder starts a repeated block of decimal digits.",
+            "A bar marks a repeating block: 0.[27] means 0.272727… forever, while 2.1[6] means 2.166666… forever. Only the digits under the bar repeat. A terminating decimal is also rational: 0.375 = 375/1000 = 3/8.",
+            "To recover a fraction from a repeating decimal, name the number x and multiply by powers of ten until two equations have identical repeating tails. Subtract those equations to remove the tails, then solve and simplify. If some decimal digits do not repeat, first shift past those digits. Keep the sign outside the conversion and restore it at the end."
+          ],
+          "examples": [
+            {
+              "prompt": "Write 7/12 as a decimal. Identify the repeating digits.",
+              "answer": "7/12 = 0.58[3].",
+              "steps": [
+                "Divide 7 by 12: the first decimal digit is 5, with remainder 10.",
+                "Bring down a zero: 100 ÷ 12 gives 8, with remainder 4.",
+                "Now 40 ÷ 12 gives 3, with remainder 4 again. The same step repeats forever, so only the digit 3 repeats."
+              ]
+            },
+            {
+              "prompt": "Write 1.2[7] as a simplified fraction and as a mixed number.",
+              "answer": "1.2[7] = 23/18 = 1 5/18.",
+              "steps": [
+                "Let x = 1.277777… . Then 10x = 12.777777… and 100x = 127.777777… .",
+                "Subtract the first shifted equation from the second: 90x = 115. The infinite tails cancel exactly.",
+                "Divide by 90 and reduce: x = 115/90 = 23/18. Since 23 = 18 + 5, the mixed number is 1 5/18."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Do not treat a displayed approximation such as 0.583 as the exact value of 7/12.",
+            "In 1.2[7], the 2 does not repeat. Using 99 as the denominator without aligning tails gives the wrong number."
+          ],
+          "practiceAdvice": "Practice both directions. In each repeating-decimal conversion, write the two aligned equations before subtracting, and check the fraction by division."
+        },
+        {
+          "id": "1-2",
+          "title": "Understand Irrational Numbers",
+          "bookPage": 11,
+          "standards": [
+            "8.NS.A.1"
+          ],
+          "objective": "Classify real numbers and use the definition of rational and irrational numbers to justify each classification.",
+          "explanation": [
+            "Real numbers are all points on the number line. Rational numbers are ratios of integers with nonzero denominators; irrational numbers cannot be written that way. Rational decimals terminate or eventually repeat. Irrational decimals continue forever without an eventually repeating block.",
+            "The number sets nest inside one another. Here, natural numbers are 1, 2, 3, …; whole numbers also include 0; integers also include negative whole numbers; rational numbers include integers and fractions. Every rational number is real. Irrational numbers are real but outside the rational set.",
+            "For a nonnegative integer n, √n is rational exactly when n is a perfect square. An outside minus changes the sign, not rationality: −√36 = −6. A negative radicand such as √(−36) has no real value. A short decimal prefix cannot establish how the full decimal continues."
+          ],
+          "examples": [
+            {
+              "prompt": "Classify √121, −√36, −0.[45], and √19 as rational or irrational. Justify each.",
+              "answer": "The first three are rational; √19 is irrational.",
+              "steps": [
+                "√121 = 11, a natural number, whole number, integer, and rational real number.",
+                "−√36 = −6, an integer and therefore rational.",
+                "−0.[45] = −45/99 = −5/11, so it is rational.",
+                "19 is not a perfect square: 16 < 19 < 25. Its square root is irrational."
+              ]
+            },
+            {
+              "prompt": "A decimal has a 1 followed by one zero, then a 1 followed by two zeros, then a 1 followed by three zeros, continuing with one more zero each time forever. Is it rational?",
+              "answer": "It is irrational.",
+              "steps": [
+                "The decimal starts 0.101001000100001… . It never ends because more 1s are always added.",
+                "The gaps between consecutive 1s grow without bound. A fixed repeating block could not keep producing longer gaps while still producing more 1s.",
+                "The decimal neither terminates nor eventually repeats, so it is irrational."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A number may belong to several sets. Calling 11 rational does not stop it from also being an integer.",
+            "An ellipsis alone does not prove irrationality. The rule generating the infinite decimal matters."
+          ],
+          "practiceAdvice": "Support each classification with a definition, fraction, or perfect-square argument. Include negative repeating decimals and outside minus signs."
+        },
+        {
+          "id": "1-3",
+          "title": "Compare and Order Real Numbers",
+          "bookPage": 17,
+          "standards": [
+            "8.NS.A.2",
+            "8.EE.A.2"
+          ],
+          "objective": "Bound irrational roots, compare mixed forms of real numbers, and place them accurately on a number line.",
+          "explanation": [
+            "To locate √n for positive n, first find nearby perfect squares. If a^2 < n < b^2 and a and b are nonnegative, then a < √n < b. Consecutive whole-number bounds tell you which interval on a number line contains the root.",
+            "Refine the bounds by squaring tenths or hundredths. Keep exact forms until comparison requires an approximation. For positive numbers, squaring preserves order; this lets you compare a root with a positive decimal without rounding the root. For negatives, the value with the greater distance from zero lies farther left and is smaller.",
+            "When ordering mixed forms, keep enough decimal places to distinguish neighboring values. Repeating-block notation is exact; a rounded decimal is an estimate and uses ≈. On a number line, label a uniform scale, then place each value in its proper interval. Close values need an expanded scale."
+          ],
+          "examples": [
+            {
+              "prompt": "Locate √31 between consecutive whole numbers, then estimate it to the nearest tenth.",
+              "answer": "5 < √31 < 6, and √31 ≈ 5.6.",
+              "steps": [
+                "Since 5^2 = 25 and 6^2 = 36, the root lies between 5 and 6.",
+                "Since 5.56^2 = 30.9136 and 5.57^2 = 31.0249, it lies between 5.56 and 5.57.",
+                "Both bounds round to 5.6 to the nearest tenth. On a number line, place the exact root slightly left of 5.6."
+              ]
+            },
+            {
+              "prompt": "Order −√11, −3.3, −3 1/4, and −3.[2] from least to greatest.",
+              "answer": "−√11 < −3.3 < −3 1/4 < −3.[2].",
+              "steps": [
+                "Write the convenient comparisons: −3 1/4 = −3.25 and −3.[2] = −3.222222… .",
+                "Because 3.3^2 = 10.89 < 11, √11 > 3.3, so −√11 < −3.3.",
+                "Read from left to right on a number line: below −3.3, then −3.3, then −3.25, then about −3.22. No rounded tie is needed."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "−3.3 is less than −3.25, even though 3.3 is greater than 3.25.",
+            "Do not declare two numbers equal just because your calculator rounded them to the same display."
+          ],
+          "practiceAdvice": "Before using a calculator, write whole-number bounds for each root. Then choose a number-line scale and justify each adjacent comparison."
+        },
+        {
+          "id": "1-4",
+          "title": "Evaluate Square Roots and Cube Roots",
+          "bookPage": 23,
+          "standards": [
+            "8.EE.A.2"
+          ],
+          "objective": "Evaluate square roots and cube roots, recognize perfect powers, and connect roots to area and volume.",
+          "explanation": [
+            "A square root reverses squaring. The symbol √a means the nonnegative, or principal, square root of a nonnegative number a. For example, √144 = 12 because 12^2 = 144. Although (−12)^2 also equals 144, the expression √144 has one value.",
+            "A cube root reverses cubing. A positive number has a positive cube root, a negative number has a negative cube root, and ³√0 = 0. This works because an odd number of negative factors has a negative product. A perfect square is the square of an integer; a perfect cube is the cube of an integer. Some numbers are both.",
+            "A square with side s has area s^2, so its side is the positive square root of its area. A cube has volume s^3, so its edge is the cube root of its volume. Area uses square units, volume uses cubic units, and lengths use linear units."
+          ],
+          "examples": [
+            {
+              "prompt": "Evaluate √(81/100) and ³√(−216).",
+              "answer": "√(81/100) = 9/10; ³√(−216) = −6.",
+              "steps": [
+                "Since (9/10)^2 = 81/100 and 9/10 is nonnegative, it is the principal square root.",
+                "Since (−6)(−6)(−6) = −216, the cube root is −6.",
+                "Check by applying the original operation: square the first result and cube the second."
+              ]
+            },
+            {
+              "prompt": "Classify 729 as a perfect square, a perfect cube, both, or neither. A cube has volume 729 cm^3; find its edge length and the area of one face.",
+              "answer": "729 is both; the edge is 9 cm and one face has area 81 cm^2.",
+              "steps": [
+                "27^2 = 729 and 9^3 = 729, so the number belongs to both categories.",
+                "The cube edge is ³√729 = 9 cm.",
+                "Each face is a square with side 9 cm, so its area is 9^2 = 81 cm^2."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A cube root is not division by 3: ³√216 = 6, while 216/3 = 72.",
+            "A root symbol by itself does not ask for both signs. Save the ± sign for solving an appropriate equation."
+          ],
+          "practiceAdvice": "Build a short reference list of integer squares and cubes, then verify unfamiliar roots by multiplication. Write units at every geometry step."
+        },
+        {
+          "id": "1-5",
+          "title": "Solve Equations Using Square Roots and Cube Roots",
+          "bookPage": 29,
+          "standards": [
+            "8.EE.A.2"
+          ],
+          "objective": "Solve squared-variable and cubed-variable equations, retain all real solutions, and interpret roots in geometric contexts.",
+          "explanation": [
+            "An equation asks which values make a statement true. If x^2 = a and a > 0, both x = √a and x = −√a work. This differs from the single nonnegative value of √a. Taking square roots gives √(x^2) = |x|, explaining the two answers.",
+            "For x^2 = 0, the only solution is 0. For x^2 equal to a negative real number, there is no real solution. An equation x^3 = a has exactly one real solution, ³√a, and the sign of that solution matches the sign of a.",
+            "Undo other operations before taking the root. Keep nonperfect roots exact unless rounding is requested. Check every solution in the original equation, then apply context restrictions: a physical length cannot be negative. A square face has two equal dimensions; report lengths, not area."
+          ],
+          "examples": [
+            {
+              "prompt": "Solve 3x^2 − 6 = 84 over the real numbers. Give exact answers.",
+              "answer": "x = √30 or x = −√30.",
+              "steps": [
+                "Add 6 to both sides: 3x^2 = 90. Divide both sides by 3: x^2 = 30.",
+                "The positive constant gives two roots, so x = ±√30.",
+                "For either sign, x^2 = 30. Substituting gives 3(30) − 6 = 84, so both solutions work."
+              ]
+            },
+            {
+              "prompt": "Solve z^3 = −70 exactly. Separately, a cube has volume 343 m^3. What are the dimensions of one face?",
+              "answer": "z = −³√70; the face is 7 m by 7 m.",
+              "steps": [
+                "Cubing preserves a negative sign, so the sole real solution of z^3 = −70 is −³√70. Cubing it returns −70.",
+                "For the cube, let the edge be s. The volume equation is s^3 = 343, giving s = 7.",
+                "A face has two sides of that length: 7 m by 7 m. Its area would be 49 m^2, but dimensions are lengths."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Using only the positive root loses a valid solution of x^2 = a when a > 0 and no context excludes negatives.",
+            "Do not add a ± to a cube-root solution: (−7)^3 and 7^3 have different signs."
+          ],
+          "practiceAdvice": "Predict the number of real solutions first. Check every candidate, then apply context restrictions."
+        },
+        {
+          "id": "1-6",
+          "title": "Use Properties of Integer Exponents",
+          "bookPage": 35,
+          "standards": [
+            "8.EE.A.1"
+          ],
+          "objective": "Use products, quotients, powers of powers, and powers of products to rewrite expressions with integer exponents.",
+          "explanation": [
+            "Exponents count repeated factors. Multiplying powers with the same base combines their factors: a^m × a^n = a^(m + n). Dividing cancels matching factors: a^m/a^n = a^(m − n), with a ≠ 0. The base must match before you combine exponents this way.",
+            "Raising a power to another power repeats the whole group, so (a^m)^n = a^(mn). Raising a product to a power applies that power to every factor: (ab)^n = a^n × b^n. You can use these equalities in either direction. For example, equal powers can sometimes be grouped into one power of a product.",
+            "The rules extend to integer exponents wherever the expressions are defined. A negative exponent represents a reciprocal, so a nonzero base is required. Write parentheses to show exactly what the exponent affects. Check a rule on small values if you forget whether to add, subtract, or multiply the exponents; do not apply a multiplication rule to a sum."
+          ],
+          "examples": [
+            {
+              "prompt": "For a nonzero a, simplify (a^4 × a^3)/a^2 to one power.",
+              "answer": "a^5.",
+              "steps": [
+                "The numerator multiplies powers with the same base: a^4 × a^3 = a^7.",
+                "Dividing by a^2 subtracts exponents: a^7/a^2 = a^(7 − 2) = a^5.",
+                "A factor check gives seven copies of a above the fraction bar and two below; canceling leaves five."
+              ]
+            },
+            {
+              "prompt": "Simplify (3^2)^(−2) × 2^(−4) to a single power, then evaluate it.",
+              "answer": "6^(−4) = 1/1296.",
+              "steps": [
+                "A power raised to a power multiplies exponents: (3^2)^(−2) = 3^(−4).",
+                "The two factors now have the same exponent: 3^(−4) × 2^(−4) = (3 × 2)^(−4) = 6^(−4).",
+                "A negative exponent gives the reciprocal: 6^(−4) = 1/6^4 = 1/1296. Both bases are nonzero."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "a^3 × a^4 equals a^7, while (a^3)^4 equals a^12. The grouping changes the operation.",
+            "There is no matching rule that turns a^2 + a^3 into a^5."
+          ],
+          "practiceAdvice": "Name the operation first: product, quotient, or power of a power. Write the exponent calculation on a separate line, especially when a sign is negative."
+        },
+        {
+          "id": "1-7",
+          "title": "More Properties of Integer Exponents",
+          "bookPage": 41,
+          "standards": [
+            "8.EE.A.1"
+          ],
+          "objective": "Interpret zero and negative exponents, rewrite using positive exponents, and evaluate expressions without losing coefficient signs.",
+          "explanation": [
+            "For any nonzero a, a^0 = 1. One way to see this is a^3/a^3 = 1, while subtracting the exponents gives a^0. The nonzero condition matters: this rule does not define 0^0.",
+            "A negative exponent takes a reciprocal: a^(−n) = 1/a^n for nonzero a and positive integer n. It does not make the value negative. Conversely, 1/a^(−n) = a^n. If an entire fraction is raised to a negative exponent, invert the entire nonzero fraction before using a positive exponent.",
+            "When evaluating an expression, substitute values with parentheses, then calculate powers before products and sums. An exponent affects only its base: −4^2 means −(4^2), while (−4)^2 squares a negative base. In 5x^(−2), the coefficient 5 is not part of the negative power. Retain exact fractions until the end unless an approximation is requested."
+          ],
+          "examples": [
+            {
+              "prompt": "Rewrite and evaluate 1/(4^(−3)) and −(2^0) using positive exponents where needed.",
+              "answer": "1/(4^(−3)) = 64; −(2^0) = −1.",
+              "steps": [
+                "4^(−3) = 1/4^3 = 1/64.",
+                "Dividing 1 by 1/64 gives 64, equivalently 4^3.",
+                "Because 2 is nonzero, 2^0 = 1. The outside minus remains, so −(2^0) = −1."
+              ]
+            },
+            {
+              "prompt": "Evaluate 3x^(−2) + 2y^0 − y^(−1) for x = −2 and y = 4.",
+              "answer": "5/2.",
+              "steps": [
+                "Substitute carefully: 3(−2)^(−2) + 2(4^0) − 4^(−1).",
+                "(−2)^(−2) = 1/(−2)^2 = 1/4, 4^0 = 1, and 4^(−1) = 1/4.",
+                "The expression becomes 3/4 + 2 − 1/4 = 2 + 1/2 = 5/2."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "a^0 is 1 for nonzero a; it is not 0.",
+            "A negative exponent and a negative coefficient are different: 4^(−2) = 1/16, while −4^2 = −16."
+          ],
+          "practiceAdvice": "Rewrite each negative power as a reciprocal before combining terms. Include at least one negative base, one zero exponent, and one reciprocal of a negative power."
+        },
+        {
+          "id": "1-8",
+          "title": "Use Powers of 10 to Estimate Quantities",
+          "bookPage": 47,
+          "standards": [
+            "8.EE.A.3"
+          ],
+          "objective": "Estimate very large and very small quantities with one significant digit times a power of ten, then compare their sizes.",
+          "explanation": [
+            "Powers of ten provide a compact scale: 10^6 is one million and 10^(−6) is one millionth. An estimate such as 7 × 10^5 keeps the leading size. For one significant digit, keep the first nonzero digit and use the next digit to decide whether to round up.",
+            "A leading digit from 1 through 9 times a power of ten is a one-significant-digit estimate. Rounding can change the power: 9.6 × 10^4 rounds to 1 × 10^5. Zeros before the first nonzero decimal digit locate the place value; they are not significant digits.",
+            "Compare quantities multiplicatively by dividing, using consistent units. Divide the coefficients and subtract the exponents. If the quantities are estimates, the ratio is also approximate. State which quantity is larger. Approximate ratios show scale but cannot replace exact calculations when a precise threshold matters."
+          ],
+          "examples": [
+            {
+              "prompt": "A fictional image archive contains 6,740,000 files. A sample file is 0.0000836 GB. Estimate each quantity to one significant digit in power-of-ten form.",
+              "answer": "About 7 × 10^6 files and 8 × 10^(−5) GB per sample file.",
+              "steps": [
+                "6,740,000 = 6.74 × 10^6. The next digit after 6 is 7, so round the coefficient up to 7.",
+                "0.0000836 = 8.36 × 10^(−5). The next digit after 8 is 3, so keep 8.",
+                "Both answers retain one significant digit and preserve the original units."
+              ]
+            },
+            {
+              "prompt": "Two invented counters record 8,240,000 and 39,100 events. Round each to one significant digit, then estimate how many times as large the first count is.",
+              "answer": "The first count is approximately 200 times as large.",
+              "steps": [
+                "Round the counts to 8 × 10^6 and 4 × 10^4 events.",
+                "Divide: (8 × 10^6)/(4 × 10^4) = (8/4) × 10^(6 − 4) = 2 × 10^2.",
+                "2 × 10^2 = 200. The exact counts were rounded, so this is an approximate comparison."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "One significant digit is not the same as one decimal place.",
+            "Subtracting the counts answers how many more, not how many times as large."
+          ],
+          "practiceAdvice": "Mark the first nonzero digit before rounding. Predict whether a comparison ratio should exceed 1."
+        },
+        {
+          "id": "1-9",
+          "title": "Understand Scientific Notation",
+          "bookPage": 53,
+          "standards": [
+            "8.EE.A.4"
+          ],
+          "objective": "Convert between ordinary decimal notation and normalized scientific notation while preserving all given digits and units.",
+          "explanation": [
+            "For a positive quantity, scientific notation has the form a × 10^n, where 1 ≤ a < 10 and n is an integer. The coefficient a records the digits and the exponent n records the scale. For a negative quantity, the coefficient has the same magnitude rule, with a minus sign.",
+            "Place the decimal after the first nonzero digit and count its movement from the original position. Numbers at least 10 need a positive exponent; positive numbers below 1 need a negative exponent. Numbers from 1 through just below 10 use exponent zero.",
+            "Check by multiplying back. Positive exponents move the decimal right; negative exponents move it left. Add placeholder zeros and preserve internal zeros. Converting notation is exact, so do not round unless asked. Measurements keep the same units."
+          ],
+          "examples": [
+            {
+              "prompt": "Write 40,060,000 and 0.0000704 in scientific notation without rounding.",
+              "answer": "4.006 × 10^7 and 7.04 × 10^(−5).",
+              "steps": [
+                "Move the decimal in 40,060,000 seven places left to obtain 4.006. Multiplying by 10^7 restores the original value.",
+                "Move the decimal in 0.0000704 five places right to obtain 7.04. Multiplying by 10^(−5) restores the original value.",
+                "Both coefficients are at least 1 and less than 10. Their internal zeros remain."
+              ]
+            },
+            {
+              "prompt": "A model specifies distances of 2.09 × 10^5 m and 6.03 × 10^(−4) m. Write both in ordinary decimal notation.",
+              "answer": "209,000 m and 0.000603 m.",
+              "steps": [
+                "For 2.09 × 10^5, move the decimal five places right: 209,000.",
+                "For 6.03 × 10^(−4), move the decimal four places left: 0.000603.",
+                "The units remain meters. Check that the positive exponent made the first value large and the negative exponent made the second smaller than 1."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "40.06 × 10^6 has the right value but is not normalized scientific notation because its coefficient is at least 10.",
+            "A negative exponent makes a positive quantity small; it does not make the quantity negative."
+          ],
+          "practiceAdvice": "Convert each answer back as a check. Include coefficients containing zeros and values on both sides of 1; do not silently discard digits."
+        },
+        {
+          "id": "1-10",
+          "title": "Operations with Numbers in Scientific Notation",
+          "bookPage": 59,
+          "standards": [
+            "8.EE.A.4"
+          ],
+          "objective": "Add, subtract, multiply, and divide numbers in scientific notation, then normalize and check the scale of each result.",
+          "explanation": [
+            "For multiplication, multiply the coefficients and add the exponents. For division by a nonzero quantity, divide the coefficients and subtract the denominator exponent from the numerator exponent. Parentheses are especially helpful when the denominator exponent is negative.",
+            "Addition and subtraction work differently because you are combining like quantities. First rewrite both terms with the same power of ten, then add or subtract their coefficients. You do not add exponents when adding values. Keep units consistent before any operation.",
+            "Finally normalize. For a positive coefficient at least 10, move its decimal left and raise the exponent by the same number of places. For a coefficient below 1, move its decimal right and lower the exponent. These paired changes preserve value. Estimate the expected size first; use ≈ only when rounding. Exact decimal arithmetic does not need an approximation sign."
+          ],
+          "examples": [
+            {
+              "prompt": "Evaluate (6 × 10^4)(5 × 10^(−3)) and (3 × 10^2)/(6 × 10^5). Write normalized scientific notation.",
+              "answer": "3 × 10^2 and 5 × 10^(−4).",
+              "steps": [
+                "For the product, multiply 6 × 5 and add 4 + (−3): 30 × 10^1.",
+                "Normalize 30 × 10^1 as 3 × 10^2.",
+                "For the quotient, divide 3 by 6 and subtract 2 − 5: 0.5 × 10^(−3).",
+                "Normalize by increasing the coefficient and decreasing the exponent: 5 × 10^(−4)."
+              ]
+            },
+            {
+              "prompt": "Evaluate (4.8 × 10^6) + (7 × 10^5) and (2.3 × 10^4) − (8 × 10^3).",
+              "answer": "5.5 × 10^6 and 1.5 × 10^4.",
+              "steps": [
+                "For the sum, rewrite 7 × 10^5 as 0.7 × 10^6.",
+                "Add matching-scale coefficients: (4.8 + 0.7) × 10^6 = 5.5 × 10^6.",
+                "For the difference, rewrite 8 × 10^3 as 0.8 × 10^4.",
+                "Subtract: (2.3 − 0.8) × 10^4 = 1.5 × 10^4. Both final coefficients are normalized."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Adding exponents is a multiplication rule, not an addition rule.",
+            "Renormalizing only the coefficient changes the value. Adjust the exponent in the opposite direction."
+          ],
+          "practiceAdvice": "Mix all four operations. First choose same-base exponent rules or a shared power of ten, then check the final coefficient."
+        },
+        {
+          "id": "1-11",
+          "title": "Modeling Data and Storage",
+          "bookPage": 65,
+          "standards": [
+            "8.EE.A.1",
+            "8.EE.A.3"
+          ],
+          "objective": "Build and evaluate models with powers of ten, compare quantities, and explain what estimates and units mean.",
+          "explanation": [
+            "A model connects a calculation to a situation. Name the quantities, their units, and what you need to find. A total, a difference, and a comparison of how many times as large require different operations.",
+            "Scientific notation can join a small amount per item with a large count. Multiply for a total and divide to compare. Check units: bytes per packet times packets gives bytes. Convert different units before comparing.",
+            "Keep exact stipulated data for an exact answer; round explicitly for an estimate. Models depend on assumptions: constant output per minute assumes the rate stays constant throughout. These original scenarios supply invented data, so reason from the stated model and describe its limits."
+          ],
+          "examples": [
+            {
+              "prompt": "An invented sensor model produces 4 × 10^3 packets per minute. Each packet contains 6 × 10^2 bytes. At a constant rate, how many bytes does it produce in 25 minutes?",
+              "answer": "6 × 10^7 bytes.",
+              "steps": [
+                "Multiply the rate by time: (4 × 10^3 packets/minute)(25 minutes) = 1 × 10^5 packets.",
+                "Multiply by bytes per packet: (1 × 10^5)(6 × 10^2) = 6 × 10^7 bytes.",
+                "The minute and packet units cancel. The result assumes every packet has the stated size and the rate stays constant."
+              ]
+            },
+            {
+              "prompt": "Invented storage modules hold 7.2 × 10^8 bytes and 9 × 10^6 bytes. How many times as large is the first capacity? How many more bytes does it hold?",
+              "answer": "80 times as large; 7.11 × 10^8 more bytes.",
+              "steps": [
+                "For a multiplicative comparison, divide: (7.2/9) × 10^(8 − 6) = 0.8 × 10^2 = 80.",
+                "For an additive comparison, rewrite 9 × 10^6 as 0.09 × 10^8.",
+                "Subtract: (7.2 − 0.09) × 10^8 = 7.11 × 10^8 bytes. The ratio is unitless; the difference is measured in bytes."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A ratio and a difference answer different questions. Include the words times as large only for a quotient.",
+            "A constant-rate calculation depends on the rate staying constant."
+          ],
+          "practiceAdvice": "For each modeling exercise, write a sentence answering the question, attach units, and name one assumption. Check the result with a rough power-of-ten estimate.",
+          "sourceSectionTitle": "Hard-Working Organs"
+        }
+      ]
+    },
+    {
+      "id": "topic-2",
+      "title": "Linear Equations",
+      "description": "Build reliable equation-solving habits, explain different kinds of solution sets, and connect constant rates with the slope and intercept of a line.",
+      "lessons": [
+        {
+          "id": "2-1",
+          "title": "Combine Like Terms to Solve Equations",
+          "bookPage": 81,
+          "standards": [
+            "8.EE.C.7b"
+          ],
+          "objective": "Simplify each side by combining like terms, then use equal operations to isolate the variable.",
+          "explanation": [
+            "Like terms have the same variable part, including its exponent. Add their coefficients while keeping that variable part. Constants combine with constants. Think of the coefficient as a count: seven x units minus three x units leaves four x units. A plain x has coefficient 1.",
+            "First simplify the expression on each side of the equal sign separately. Combining terms rewrites an expression without changing its value. Solving an equation then uses the same operation on both sides so the two sides remain equal. Undo addition or subtraction before undoing multiplication.",
+            "Keep a negative sign attached to the term it belongs to. After finding the variable, substitute into the original equation. A check against the original catches an incorrect simplification that a check against your last line might miss."
+          ],
+          "examples": [
+            {
+              "prompt": "Solve 7x + 4 − 3x = 28.",
+              "answer": "x = 6",
+              "steps": [
+                "Combine 7x and −3x: 4x + 4 = 28.",
+                "Subtract 4 from both sides: 4x = 24.",
+                "Divide both sides by 4: x = 6.",
+                "Check the original left side: 7(6) + 4 − 3(6) = 42 + 4 − 18 = 28."
+              ]
+            },
+            {
+              "prompt": "Solve 9a − 5a + 7 = −13.",
+              "answer": "a = −5",
+              "steps": [
+                "The variable terms combine to give 4a + 7 = −13.",
+                "Subtract 7: 4a = −20.",
+                "Divide by 4: a = −5.",
+                "Substitute carefully: 9(−5) − 5(−5) + 7 = −45 + 25 + 7 = −13."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Do not combine a variable term and a constant into one term.",
+            "Subtracting a negative value produces addition; keep parentheses during substitution."
+          ],
+          "practiceAdvice": "Underline like terms before solving. Write one equality-preserving operation per line, then check every answer in the starting equation."
+        },
+        {
+          "id": "2-2",
+          "title": "Solve Equations with Variables on Both Sides",
+          "bookPage": 87,
+          "standards": [
+            "8.EE.C.7b"
+          ],
+          "objective": "Gather variable terms on one side and constants on the other while preserving equality.",
+          "explanation": [
+            "A variable on both sides still represents one unknown number. The equation asks which value makes the two expressions equal. Remove one variable term by adding its opposite to both sides. This is the same balance principle used when removing a constant.",
+            "You may gather the variables on either side. Choosing the side with the larger coefficient often leaves a positive coefficient, but a negative coefficient is also valid. The important point is to perform the chosen operation on both complete sides, then simplify.",
+            "Once only one side has a variable term, solve the remaining equation with inverse operations. Avoid describing a term as simply jumping across the equal sign: writing the actual addition or subtraction explains why its sign changes and helps prevent mistakes."
+          ],
+          "examples": [
+            {
+              "prompt": "Solve 8x + 5 = 3x + 30.",
+              "answer": "x = 5",
+              "steps": [
+                "Subtract 3x from both sides: 5x + 5 = 30.",
+                "Subtract 5 from both sides: 5x = 25.",
+                "Divide by 5 to get x = 5.",
+                "Check both original expressions: 8(5) + 5 = 45 and 3(5) + 30 = 45."
+              ]
+            },
+            {
+              "prompt": "Solve 4 − 2n = n + 19.",
+              "answer": "n = −5",
+              "steps": [
+                "Add 2n to both sides: 4 = 3n + 19.",
+                "Subtract 19: −15 = 3n.",
+                "Divide by 3: −5 = n, which also means n = −5.",
+                "Check: 4 − 2(−5) = 14 and −5 + 19 = 14."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Removing a variable term from only one side changes the equation.",
+            "An answer written with the variable on the right is still a valid equality."
+          ],
+          "practiceAdvice": "Solve one equation twice, gathering variables on opposite sides. The intermediate signs may differ, but both paths must give the same answer."
+        },
+        {
+          "id": "2-3",
+          "title": "Solve More Equations with Variables on Both Sides",
+          "bookPage": 93,
+          "standards": [
+            "8.EE.C.7b"
+          ],
+          "objective": "Distribute signed factors, combine like terms, and solve equations with variables on both sides.",
+          "explanation": [
+            "Parentheses group an entire expression. A factor outside the group multiplies every term inside. When the factor is negative, each product needs its own sign decision. Treat a subtraction before parentheses as multiplication by −1 if that makes the distribution clearer.",
+            "A dependable sequence is to distribute, combine like terms on each side, gather variable terms, and then isolate the variable. Each stage makes the equation easier to read. You can sometimes divide out a common factor first, but only when it multiplies an entire side.",
+            "Pause after expanding a negative factor. An early sign error changes all later work even if the later algebra is correct. To check, use the original parentheses and evaluate the inside first; this provides a different calculation from your expansion."
+          ],
+          "examples": [
+            {
+              "prompt": "Solve 3(2x − 5) = 4x + 9.",
+              "answer": "x = 12",
+              "steps": [
+                "Distribute 3 to both terms: 6x − 15 = 4x + 9.",
+                "Subtract 4x: 2x − 15 = 9.",
+                "Add 15 and divide by 2: 2x = 24, so x = 12.",
+                "Check: 3(24 − 5) = 57 and 4(12) + 9 = 57."
+              ]
+            },
+            {
+              "prompt": "Solve 7 − 2(3t + 4) = t + 13.",
+              "answer": "t = −2",
+              "steps": [
+                "Distribute −2: 7 − 6t − 8 = t + 13.",
+                "Combine constants: −1 − 6t = t + 13.",
+                "Subtract t, then add 1: −7t = 14. Divide by −7 to get t = −2.",
+                "Check: 7 − 2(−6 + 4) = 11 and −2 + 13 = 11."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Distribute to the constant as well as the variable term.",
+            "In the second example the outside factor is −2, so both distributed terms are negative."
+          ],
+          "practiceAdvice": "Draw a small arrow from the outside factor to each grouped term. Check the expanded signs before collecting variables."
+        },
+        {
+          "id": "2-4",
+          "title": "Solve Multistep Equations",
+          "bookPage": 99,
+          "standards": [
+            "8.EE.C.7b"
+          ],
+          "objective": "Choose useful first steps for equations containing fractions, decimals, parentheses, and several operations.",
+          "explanation": [
+            "Fractions and decimals do not change the rules of equality. They can make arithmetic harder to track, so choose a first step that simplifies the numbers. Multiplying both sides by a common denominator clears fraction denominators when every term receives that multiplier.",
+            "For terminating decimals, multiplying by a suitable power of 10 can produce integer coefficients. Keep the multiplier exact; rounding coefficients would create a different equation. After clearing fractions or decimals, distribute, combine like terms, and gather variables as usual.",
+            "There is no single required order for all multistep equations. Compare a couple of legal first steps and choose one that reduces clutter. Write parentheses around grouped numerators or grouped expressions so it remains clear what each multiplier affects."
+          ],
+          "examples": [
+            {
+              "prompt": "Solve (x − 2)/3 + x/4 = 4.",
+              "answer": "x = 8",
+              "steps": [
+                "Multiply every term by 12, the least common multiple of 3 and 4: 4(x − 2) + 3x = 48.",
+                "Distribute and combine: 4x − 8 + 3x = 48, so 7x − 8 = 48.",
+                "Add 8 and divide by 7: x = 8.",
+                "Check: (8 − 2)/3 + 8/4 = 2 + 2 = 4."
+              ]
+            },
+            {
+              "prompt": "Solve 0.6(5y − 2) = 1.2y + 4.2.",
+              "answer": "y = 3",
+              "steps": [
+                "Multiply both complete sides by 10: 6(5y − 2) = 12y + 42.",
+                "Distribute: 30y − 12 = 12y + 42.",
+                "Subtract 12y and add 12: 18y = 54, so y = 3.",
+                "Check exactly: 0.6(15 − 2) = 7.8 and 1.2(3) + 4.2 = 7.8."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A denominator-clearing multiplier must also multiply terms without fractions.",
+            "Do not cancel a denominator with just one term of a sum in the numerator."
+          ],
+          "practiceAdvice": "Before computing, explain why your first multiplier simplifies the equation. Keep exact fractions or terminating decimals through the final check."
+        },
+        {
+          "id": "2-5",
+          "title": "Equations with No Solutions or Infinitely Many Solutions",
+          "bookPage": 105,
+          "standards": [
+            "8.EE.C.7a"
+          ],
+          "objective": "Use a simplified equation to distinguish one solution, no solutions, and infinitely many solutions.",
+          "explanation": [
+            "Solving does not always end with a single variable value. After simplifying, an equation may have a nonzero variable coefficient, or the variable terms may cancel completely. A nonzero coefficient lets you divide to find one solution.",
+            "When the variable disappears, read the remaining statement. A false statement, such as two unequal constants being equal, means no value could satisfy the original equation. A true statement independent of the variable means every real value satisfies it, so there are infinitely many solutions.",
+            "Do not divide by zero to try to recover a missing variable. Cancellation has already revealed the answer. Comparing a few substitutions can help build intuition, but a simplified identity or contradiction supplies the reason for the entire solution set. Context can later restrict which real values are meaningful."
+          ],
+          "examples": [
+            {
+              "prompt": "Classify and solve 4(x + 3) − x = 3x + 12.",
+              "answer": "Infinitely many solutions: every real number x.",
+              "steps": [
+                "Expand the left side: 4x + 12 − x = 3x + 12.",
+                "Combine like terms: 3x + 12 = 3x + 12.",
+                "Subtract 3x and then 12 from both sides: 0 = 0.",
+                "This true statement has no restriction on x; the two original expressions are equivalent."
+              ]
+            },
+            {
+              "prompt": "Classify and solve 5(2y − 1) = 10y + 4.",
+              "answer": "No solutions.",
+              "steps": [
+                "Distribute 5: 10y − 5 = 10y + 4.",
+                "Subtract 10y from both sides: −5 = 4.",
+                "The constants are unequal, so the statement is false for every y.",
+                "The original right expression is always 9 greater than the left expression; changing y cannot close that gap."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A result of 0 = 0 does not mean the variable equals zero.",
+            "Both no-solution and all-real-number equations can lose their variables; inspect the constants."
+          ],
+          "practiceAdvice": "Write the final constant statement before naming the solution type. For each classification, explain why it applies to all possible values."
+        },
+        {
+          "id": "2-6",
+          "title": "Comparing Supply Plans",
+          "sourceSectionTitle": "Powering Down",
+          "bookPage": 113,
+          "standards": [
+            "8.EE.C.7a",
+            "8.EE.C.7b"
+          ],
+          "objective": "Compare cost models, interpret a break-even point, and recognize equivalent or unequal pricing rules.",
+          "explanation": [
+            "A mathematical model relates quantities under stated assumptions. Separate a fixed packing fee from the price per kit. Define the variable with units, then write each total as fixed fee plus unit price times number of kits.",
+            "Set the totals equal to find when prices match. Here the kit count must be a nonnegative whole number. Assume every charge is included and there are no quantity discounts.",
+            "Compare totals on either side of a break-even point to choose a cheaper plan. When the variable cancels, the remaining statement tells whether prices always match or never match."
+          ],
+          "examples": [
+            {
+              "prompt": "Plan A costs $18 plus $4 per kit. Plan B costs $6 plus $6 per kit. When do the totals match?",
+              "answer": "Both plans cost $42 for 6 kits.",
+              "steps": [
+                "Let n be the number of kits. Set 18 + 4n = 6 + 6n.",
+                "Subtract 4n and 6: 12 = 2n, so n = 6.",
+                "Check: 18 + 4(6) = 42 and 6 + 6(6) = 42.",
+                "For 4 kits, A costs $34 and B costs $30. For 10 kits, A costs $58 and B costs $66. The lower unit price helps A on larger orders."
+              ]
+            },
+            {
+              "prompt": "Three quotes for n kits are C = 10 + 5n, D = 2(5 + 2.5n), and E = 14 + 5n, in dollars. Which totals can match?",
+              "answer": "C and D match for every allowed kit count. E never matches either one.",
+              "steps": [
+                "Expand D: 2(5 + 2.5n) = 10 + 5n, exactly the same expression as C.",
+                "Equating C and D gives 0 = 0, so every nonnegative whole number n is allowed.",
+                "Equating C and E gives 10 = 14, a contradiction. E always costs $4 more.",
+                "For 8 kits, C and D each cost $50, while E costs $54."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A fixed fee is added once, not once per kit.",
+            "An algebraic answer must fit the allowed quantities in the model."
+          ],
+          "practiceAdvice": "Label units, state assumptions, and check actual totals. Explain a plan choice using both the order size and the pricing rule."
+        },
+        {
+          "id": "2-7",
+          "title": "Compare Proportional Relationships",
+          "bookPage": 117,
+          "standards": [
+            "8.EE.B.5"
+          ],
+          "objective": "Find and compare unit rates from tables, equations, descriptions, and points on graphs.",
+          "explanation": [
+            "In a proportional relationship, y = kx for a constant k. For every nonzero input, y/x equals that same constant. The point (0, 0) also belongs to the relationship. A unit rate describes the output associated with one unit of input.",
+            "Representations may look different while expressing comparable rates. In a table, divide output by input and check several rows. In an equation y = kx, read the coefficient. On a graph known to represent a proportional relationship, use a nonzero point and read the axis units carefully.",
+            "Compare rates after matching their units and orientation. Dollars per item differs from items per dollar. Whether a larger rate is preferable depends on the question: lower purchase costs can help, while higher speeds mean more distance in the same time."
+          ],
+          "examples": [
+            {
+              "prompt": "Shop A charges $7 for 2 notebooks and $21 for 6, with proportional pricing. Shop B uses y = 3x dollars for x notebooks. Compare an 8-notebook order.",
+              "answer": "Shop B costs $24, which is $4 less than Shop A.",
+              "steps": [
+                "Shop A's rate is 7/2 = 21/6 = 3.5 dollars per notebook.",
+                "Shop B's coefficient gives 3 dollars per notebook.",
+                "For 8 notebooks, A charges 3.5(8) = 28 dollars and B charges 3(8) = 24 dollars.",
+                "Subtract totals: 28 − 24 = 4 dollars saved at B."
+              ]
+            },
+            {
+              "prompt": "Runner A covers 900 meters in 6 minutes. Runner B's distance graph is a line through (0, 0) and (4, 640), with minutes first. Both maintain constant speed. Compare their 15-minute distances.",
+              "answer": "B travels 2,400 meters, 150 meters farther than A.",
+              "steps": [
+                "A's speed is 900/6 = 150 meters per minute.",
+                "B's speed is 640/4 = 160 meters per minute.",
+                "Multiply by 15: A travels 2,250 meters and B travels 2,400 meters.",
+                "The 10-meter-per-minute difference accumulates to 10(15) = 150 meters."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A single nonzero pair alone does not prove an unknown relationship is proportional.",
+            "Do not compare raw totals from different input amounts."
+          ],
+          "practiceAdvice": "Write the unit beside every rate. Convert each representation to output per one input before deciding which rate is larger."
+        },
+        {
+          "id": "2-8",
+          "title": "Proportional Relationships and Slope",
+          "bookPage": 123,
+          "standards": [
+            "8.EE.B.6"
+          ],
+          "objective": "Connect constant proportional rates to slope and explain why different slope triangles give the same ratio.",
+          "explanation": [
+            "Slope measures vertical change divided by horizontal change between two points with different x-coordinates. Write it as m = (y2 − y1)/(x2 − x1). In a proportional relationship the line passes through the origin, and its slope equals the constant of proportionality.",
+            "Horizontal and vertical moves between points form a right triangle. Triangles along the same straight line are similar because their angles match. Corresponding side lengths are proportional, so rise/run stays constant even for different-sized triangles.",
+            "Use signed changes: a line rising to the right has positive slope; a falling line has negative slope. Reversing both points' order reverses both changes and preserves their ratio. A zero horizontal change cannot be a slope denominator."
+          ],
+          "examples": [
+            {
+              "prompt": "A proportional line contains (0, 0), (4, 6), and (10, 15). Find its slope using two different triangles.",
+              "answer": "The slope is 3/2 for both triangles.",
+              "steps": [
+                "From (0, 0) to (4, 6), the rise is 6 and the run is 4, so m = 6/4 = 3/2.",
+                "From (4, 6) to (10, 15), the rise is 15 − 6 = 9 and the run is 10 − 4 = 6.",
+                "The second ratio is 9/6 = 3/2. Its legs are each 3/2 times the first triangle's legs.",
+                "Each horizontal increase of 2 corresponds to a vertical increase of 3."
+              ]
+            },
+            {
+              "prompt": "Find the slope through (2, −6) and (5, −15), then check whether these points fit a proportional line through the origin.",
+              "answer": "m = −3; both points fit y = −3x.",
+              "steps": [
+                "Compute the vertical change: −15 − (−6) = −9.",
+                "Compute the matching horizontal change: 5 − 2 = 3.",
+                "Divide: m = −9/3 = −3.",
+                "Check the origin-based rule: −3(2) = −6 and −3(5) = −15. The line drops 3 units per unit to the right."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Use the same point order in the numerator and denominator.",
+            "Slope is rise divided by run; swapping the ratio usually changes the answer."
+          ],
+          "practiceAdvice": "Mark two points, draw the horizontal and vertical moves, and label signed changes before calculating the slope."
+        },
+        {
+          "id": "2-9",
+          "title": "Analyze Linear Equations: y = mx",
+          "bookPage": 129,
+          "standards": [
+            "8.EE.B.6",
+            "8.EE.B.5"
+          ],
+          "objective": "Use y = mx to connect a proportional equation with its table, graph, and constant rate.",
+          "explanation": [
+            "An equation in the form y = mx describes a line through (0, 0). The coefficient m is both slope and constant of proportionality. Knowing m determines every point: choose an x-value and multiply it by m to find the matching y-value.",
+            "For fractional slopes, multiples of the denominator often give easy graphing inputs. Plot the origin and additional points, then draw the line. Check each coordinate pair in the equation.",
+            "A negative coefficient makes the line fall from left to right. To work backward from an output, use inverse operations: divide y by m when m is nonzero. If m = 0, every input has output zero."
+          ],
+          "examples": [
+            {
+              "prompt": "For y = (7/4)x, find graphing points at x = 0, 4, 8, and 12. Then find x when y = 35.",
+              "answer": "The points are (0, 0), (4, 7), (8, 14), and (12, 21). When y = 35, x = 20.",
+              "steps": [
+                "Multiply each input by 7/4: the outputs are 0, 7, 14, and 21.",
+                "Each increase of 4 in x increases y by 7, so rise/run = 7/4.",
+                "Set 35 = (7/4)x. Multiply both sides by 4/7: x = 35(4/7) = 20.",
+                "Check: (7/4)(20) = 35."
+              ]
+            },
+            {
+              "prompt": "A proportional line passes through (3, −12). Write its equation, find y at x = 5, and find x at y = 16.",
+              "answer": "y = −4x; y = −20 at x = 5, and x = −4 at y = 16.",
+              "steps": [
+                "Because the line is proportional, m = y/x = −12/3 = −4.",
+                "Write y = −4x; it also gives (0, 0).",
+                "Substitute x = 5: y = −4(5) = −20.",
+                "Set 16 = −4x and divide by −4: x = −4. Check: −4(−4) = 16."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A proportional line always includes the origin, even when the table does not list it.",
+            "A negative input and negative slope can produce a positive output."
+          ],
+          "practiceAdvice": "Move among equation, table, and graph for the same relationship. Include a negative input and verify every coordinate pair."
+        },
+        {
+          "id": "2-10",
+          "title": "Understand the y-Intercept of a Line",
+          "bookPage": 135,
+          "standards": [
+            "8.EE.B.6"
+          ],
+          "objective": "Find the output at input zero and interpret the y-intercept in a graph, table, or situation.",
+          "explanation": [
+            "The y-intercept is where a graph meets the y-axis, where x = 0. Substitute zero for the input. In y = mx + b, this gives y = b. The intercept point is (0, b); b is its vertical coordinate.",
+            "The intercept often represents an initial amount or fixed charge, while slope describes change. A nonzero starting amount means the relationship is not proportional despite its constant rate.",
+            "A table may begin after input zero. For a linear relationship, work backward using the rate to locate the intercept. Consider whether zero is meaningful: a mathematical line may extend beyond a model's sensible inputs."
+          ],
+          "examples": [
+            {
+              "prompt": "A container's volume is V = 18 − 3t liters after t minutes of steady draining. Interpret the intercept and find when the container empties.",
+              "answer": "It begins with 18 liters and empties after 6 minutes.",
+              "steps": [
+                "At t = 0, V = 18 − 3(0) = 18. The vertical intercept is (0, 18).",
+                "The coefficient −3 means the volume decreases by 3 liters per minute.",
+                "For an empty container set V = 0: 0 = 18 − 3t, giving t = 6.",
+                "At t = 4, V = 6 liters. The model applies from 0 through 6 minutes; negative volumes afterward would be meaningless."
+              ]
+            },
+            {
+              "prompt": "A linear table contains (2, 11), (3, 14), and (4, 17). Find the y-intercept.",
+              "answer": "The y-intercept is (0, 5), so b = 5.",
+              "steps": [
+                "Each input increases by 1 while the output increases by 3, so the slope is 3.",
+                "Step backward from (2, 11): at x = 1, y = 11 − 3 = 8.",
+                "Step backward again: at x = 0, y = 8 − 3 = 5.",
+                "Check with y = 3x + 5: the three listed outputs are 11, 14, and 17."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "The y-intercept has input zero; the x-intercept has output zero.",
+            "The first row of a table is not necessarily the starting value at zero."
+          ],
+          "practiceAdvice": "Label the input and output axes, locate input zero, and state what the intercept means using the situation's units."
+        },
+        {
+          "id": "2-11",
+          "title": "Analyze Linear Equations: y = mx + b",
+          "bookPage": 141,
+          "standards": [
+            "8.EE.B.6"
+          ],
+          "objective": "Find slope and intercept, write linear equations, and answer forward and reverse questions.",
+          "explanation": [
+            "In y = mx + b, slope m is the output change per input unit, and b is the output at zero. Changing b shifts a nonvertical line vertically without changing its rate.",
+            "Given two points with different x-values, find m using their changes. Substitute one point into y = mx + b and solve for b. Verify the equation with the other point to catch sign errors.",
+            "Graph from (0, b) using the slope. For a model, state units and allowed inputs. Substitute to predict an output, or set a target output and solve for the input."
+          ],
+          "examples": [
+            {
+              "prompt": "Write the equation of the line through (−2, 7) and (4, −5), then find y when x = 6.",
+              "answer": "y = −2x + 3; at x = 6, y = −9.",
+              "steps": [
+                "Find m = (−5 − 7)/(4 − (−2)) = −12/6 = −2.",
+                "Use (−2, 7): 7 = −2(−2) + b = 4 + b, so b = 3.",
+                "Write y = −2x + 3. Check the other point: −2(4) + 3 = −5.",
+                "Substitute 6: y = −2(6) + 3 = −9."
+              ]
+            },
+            {
+              "prompt": "A studio charges $7 preparation plus $2.50 per kilogram of clay. Model the cost, price 4 kilograms, and find the quantity costing $22.",
+              "answer": "C = 2.5k + 7; 4 kilograms cost $17, and $22 buys 6 kilograms under this model.",
+              "steps": [
+                "Let k be nonnegative kilograms and C be dollars. The rate is 2.5; the fixed charge is 7.",
+                "Write C = 2.5k + 7. Assume purchase by weight without other charges.",
+                "For k = 4, C = 2.5(4) + 7 = 17.",
+                "Set 22 = 2.5k + 7. Subtract 7 and divide by 2.5: k = 6. Check: 2.5(6) + 7 = 22."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "The coefficient gives a rate; the constant gives an initial amount, with different units.",
+            "Two points with equal x-values define a vertical line, which cannot be written as y = mx + b."
+          ],
+          "practiceAdvice": "After constructing an equation, check both supplied points or quantities. Explain the slope and intercept before making a prediction."
+        }
+      ]
+    },
+    {
+      "id": "topic-3",
+      "title": "Functions",
+      "description": "Connect tables, graphs, rules, and situations; identify functions and describe how their outputs change.",
+      "lessons": [
+        {
+          "id": "3-1",
+          "title": "Understand Relations and Functions",
+          "bookPage": 159,
+          "standards": [
+            "8.F.A.1",
+            "8.EE.B.5"
+          ],
+          "objective": "Decide whether a relation assigns exactly one output to each input and explain the evidence.",
+          "explanation": [
+            "A relation pairs inputs with outputs. A function is a relation in which each allowed input has exactly one output. Different inputs may share an output. The restriction concerns what happens to one input, not how often an output appears.",
+            "Read an ordered pair (x, y) as input x and output y. In a table, compare rows with the same input. In a graph, imagine a vertical line at one input value: two distinct intersections would give that input two outputs. A repeated copy of the same point adds no conflicting output."
+          ],
+          "examples": [
+            {
+              "prompt": "Which relation is a function? A: (1, 4), (2, 4), (3, 7). B: (1, 4), (2, 4), (1, 7).",
+              "answer": "A is a function; B is not.",
+              "steps": [
+                "List the inputs in A: 1, 2, and 3. Each appears with exactly one output.",
+                "The shared output 4 causes no problem: different inputs are allowed to lead to the same output.",
+                "In B, input 1 leads to both 4 and 7. That single conflict is enough to disqualify B."
+              ]
+            },
+            {
+              "prompt": "Use y = 2x + 1 for inputs −2, 0, and 3. Give the ordered pairs and explain why this rule is a function.",
+              "answer": "(−2, −3), (0, 1), and (3, 7); the rule is a function.",
+              "steps": [
+                "For x = −2, calculate 2(−2) + 1 = −3.",
+                "For x = 0, calculate 2(0) + 1 = 1. For x = 3, calculate 2(3) + 1 = 7.",
+                "Each chosen input gives one output. More generally, multiplying any allowed input by 2 and adding 1 produces a single value."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A repeated output does not break the function rule.",
+            "Do not swap inputs and outputs when checking repeated values."
+          ],
+          "practiceAdvice": "Mark repeated inputs first. If you reject a relation, name one input and its two different outputs; if you accept it, check every listed input."
+        },
+        {
+          "id": "3-2",
+          "title": "Connect Representations of Functions",
+          "bookPage": 165,
+          "standards": [
+            "8.F.A.1",
+            "8.EE.B.5"
+          ],
+          "objective": "Translate one function among a situation, an equation, a table, and a coordinate graph.",
+          "explanation": [
+            "An equation calculates outputs, a table lists selected input-output pairs, and a graph plots those pairs. A verbal description identifies the quantities and units. Each representation can describe the same function.",
+            "Keep the input on the horizontal axis and the output on the vertical axis. For a linear rule y = mx + b, b is the output when x = 0 and m is the output change per one input unit. A table alone does not determine values between its entries unless a rule or modeling assumption is supplied."
+          ],
+          "examples": [
+            {
+              "prompt": "A rental costs $4 plus $1.50 per hour. Write the cost rule and a table for 0, 2, and 4 hours; describe the graph.",
+              "answer": "C = 1.5h + 4; the pairs are (0, 4), (2, 7), and (4, 10).",
+              "steps": [
+                "Let h be hours and C be total dollars. The starting fee supplies 4; the hourly charge supplies 1.5h.",
+                "Substitute the inputs: C(0) = 4, C(2) = 3 + 4 = 7, and C(4) = 6 + 4 = 10.",
+                "Plot the three pairs with hours horizontally and dollars vertically. Under continuous hourly billing, the rule forms a straight line for h ≥ 0."
+              ]
+            },
+            {
+              "prompt": "A straight-line graph passes through (0, 12), (2, 8), and (5, 2). Find its rule and its output at x = 6.",
+              "answer": "y = −2x + 12; the output at x = 6 is 0.",
+              "steps": [
+                "The point at x = 0 gives the intercept 12.",
+                "Between the first two points, the rate is (8 − 12)/(2 − 0) = −4/2 = −2.",
+                "Check the third point: −2(5) + 12 = 2. Then substitute 6: −2(6) + 12 = 0."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A plotted point is written input first, output second.",
+            "The initial fee is an output, not the hourly rate."
+          ],
+          "practiceAdvice": "Translate a rule into three points, then reconstruct the rule from those points. Label units before deciding whether intermediate inputs make sense."
+        },
+        {
+          "id": "3-3",
+          "title": "Compare Linear and Nonlinear Functions",
+          "bookPage": 171,
+          "standards": [
+            "8.F.A.2",
+            "8.F.A.3",
+            "8.EE.B.5"
+          ],
+          "objective": "Distinguish linear and nonlinear functions and compare rates and starting values across representations.",
+          "explanation": [
+            "A linear function has a constant rate of change and can be written y = mx + b. Its graph is a straight line. Equal input changes produce equal output changes. A nonlinear function does not maintain one rate throughout its domain.",
+            "When input steps differ, divide output change by input change. A finite table can fit a line without proving that unlisted values follow it. Compare starting outputs and rates separately: starting higher does not mean increasing faster."
+          ],
+          "examples": [
+            {
+              "prompt": "For x = 0, 1, 2, 3, function A has outputs 1, 4, 7, 10, while function B follows y = x^2 + 1 and has outputs 1, 2, 5, 10. Classify them.",
+              "answer": "A is consistent with y = 3x + 1; B is nonlinear.",
+              "steps": [
+                "Each input step is 1. A increases by 3, 3, and 3, giving a constant rate of 3 in the table.",
+                "A starts at 1, so its linear rule is y = 3x + 1 if the constant-rate pattern continues.",
+                "B increases by 1, 3, and 5. These unequal changes confirm that its stated square rule is nonlinear."
+              ]
+            },
+            {
+              "prompt": "Compare A: y = −3x + 8 with linear function B through (−2, 5), (0, 1), and (3, −5). Which starts higher, and which decreases faster?",
+              "answer": "A starts higher and decreases faster.",
+              "steps": [
+                "A has starting output 8 and rate −3.",
+                "For B, use (−5 − 1)/(3 − 0) = −6/3 = −2. Its point (0, 1) gives starting output 1.",
+                "Compare 8 with 1 for the start. Compare the decreases per unit: A falls 3 while B falls 2."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A decreasing line is still linear.",
+            "A large output does not establish a large rate."
+          ],
+          "practiceAdvice": "For every comparison, write two separate labels: starting output and rate. Check at least two consecutive intervals when judging a table."
+        },
+        {
+          "id": "3-4",
+          "title": "Construct Functions to Model Linear Relationships",
+          "bookPage": 177,
+          "standards": [
+            "8.F.B.4",
+            "8.F.A.2",
+            "8.EE.B.5"
+          ],
+          "objective": "Build a linear model from two points or from an initial value and a constant rate, with a meaningful domain.",
+          "explanation": [
+            "To construct a linear function, find its rate m and starting output b, then write y = mx + b. Two points with different inputs determine the rate: m = (change in output)/(change in input). Substitute either point to find b.",
+            "Define the variables, units, and domain. A formula may allow inputs the situation excludes: counts may require whole numbers, and draining stops at zero. Check the rule against every supplied observation."
+          ],
+          "examples": [
+            {
+              "prompt": "A linear function has output 11 when x = 2 and output 20 when x = 5. Find the rule and the output at x = 8.",
+              "answer": "y = 3x + 5; the output at x = 8 is 29.",
+              "steps": [
+                "Calculate the rate: (20 − 11)/(5 − 2) = 9/3 = 3.",
+                "Substitute (2, 11) into y = 3x + b: 11 = 6 + b, so b = 5.",
+                "Check the other point: 3(5) + 5 = 20. Predict 3(8) + 5 = 29 under the stated linear rule."
+              ]
+            },
+            {
+              "prompt": "A tank starts with 72 liters and drains steadily at 4 liters per minute. Model its volume and find when it becomes empty.",
+              "answer": "V = 72 − 4t for 0 ≤ t ≤ 18; it empties after 18 minutes.",
+              "steps": [
+                "Let t measure minutes since draining began and V measure liters remaining.",
+                "The initial volume is 72 and the rate is −4, so V = 72 − 4t.",
+                "Set V = 0: 72 − 4t = 0, giving 4t = 72 and t = 18. At 10 minutes the check gives 72 − 40 = 32 liters."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Keep point order consistent in both parts of the slope fraction.",
+            "Negative predicted volume signals that the draining model has left its domain."
+          ],
+          "practiceAdvice": "After finding a rule, substitute both original points. Finish each word problem with a sentence identifying the units and allowed inputs."
+        },
+        {
+          "id": "3-5",
+          "title": "Choose Designs for a Maker Fair",
+          "bookPage": 183,
+          "standards": [
+            "8.F.A.2",
+            "8.F.A.3",
+            "8.EE.B.5"
+          ],
+          "objective": "Choose and compare function models for an original maker-fair planning problem.",
+          "explanation": [
+            "Choose the quantities to compare and state assumptions. A fixed charge plus a constant hourly charge gives a linear function. Area that grows as the square of a side length gives a nonlinear function.",
+            "Compare models at the same input and in the same units. Identify the desired outcome, such as lower cost. State limits, such as whole-number sizes or a maximum rental duration. These original scenarios use simplified prices and dimensions."
+          ],
+          "examples": [
+            {
+              "prompt": "For a maker fair, Room A costs $12 plus $3 per hour and Room B costs $18 plus $2 per hour. When do their costs match, and which is cheaper for 4 hours?",
+              "answer": "They match at 6 hours for $30; Room A is cheaper for 4 hours.",
+              "steps": [
+                "Write A = 12 + 3h and B = 18 + 2h, with h ≥ 0.",
+                "Equate the costs: 12 + 3h = 18 + 2h. Subtract 2h and 12 to obtain h = 6. Both costs are then 30.",
+                "At 4 hours, A = 24 and B = 26: A saves $2. At 8 hours, A = 36 and B = 34: B wins."
+              ]
+            },
+            {
+              "prompt": "A square tile display uses n^2 tiles; a decorative strip uses 3n + 1 tiles. Compare their growth for whole-number sizes n = 1, 2, 3, 4.",
+              "answer": "The square is nonlinear; the strip is linear. At n = 4 the square uses 16 tiles and the strip uses 13.",
+              "steps": [
+                "Calculate square counts: 1, 4, 9, 16. Their increases are 3, 5, and 7.",
+                "Calculate strip counts: 4, 7, 10, 13. Each increase is 3.",
+                "At n = 3, compare 9 versus 10; at n = 4, compare 16 versus 13. The larger count changes."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Compare both rules using the same number of hours or the same design size.",
+            "A model comparison is incomplete until its practical meaning is stated."
+          ],
+          "practiceAdvice": "Compare plans in a table. Identify one assumption, such as a time limit, that could change the decision.",
+          "sourceSectionTitle": "Breaking Point"
+        },
+        {
+          "id": "3-6",
+          "title": "Intervals of Increase and Decrease",
+          "bookPage": 187,
+          "standards": [
+            "8.F.B.5",
+            "8.EE.B.5"
+          ],
+          "objective": "Describe where a function increases, decreases, or stays constant using intervals of input values.",
+          "explanation": [
+            "Read a graph left to right as the input increases. Rising outputs mean increasing; falling outputs mean decreasing; unchanged outputs mean constant. Describe these intervals using horizontal-axis values.",
+            "Increasing differs from positive: outputs can rise below zero or fall above zero. Check axis scales before interpreting steepness as a rate. At a turning point, separate the behavior on either side."
+          ],
+          "examples": [
+            {
+              "prompt": "A graph consists of straight segments connecting (0, 2), (3, 8), (5, 8), and (9, 0). Describe its intervals and segment rates.",
+              "answer": "It increases from x = 0 to 3, is constant from 3 to 5, and decreases from 5 to 9.",
+              "steps": [
+                "On the first segment, the output rises from 2 to 8 as x moves from 0 to 3. Its rate is (8 − 2)/(3 − 0) = 2.",
+                "Between (3, 8) and (5, 8), the output stays 8, so the rate is 0.",
+                "On the last segment, the output falls from 8 to 0. Its rate is (0 − 8)/(9 − 5) = −2."
+              ]
+            },
+            {
+              "prompt": "A temperature model consists of straight segments connecting (0, −4), (2, −1), and (5, −3), where x is hours and y is degrees Celsius. Describe its behavior.",
+              "answer": "It increases during the first 2 hours, then decreases from hour 2 to hour 5; all shown temperatures are below zero.",
+              "steps": [
+                "From 0 to 2 hours, −1 is greater than −4, so the temperature rises 3 degrees.",
+                "From 2 to 5 hours, it changes by −3 − (−1) = −2 degrees, so it falls.",
+                "The highest shown temperature is −1 at hour 2. A negative output can still be the maximum."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Give intervals in input units, not the output values at their endpoints.",
+            "Below zero does not mean decreasing."
+          ],
+          "practiceAdvice": "Trace each segment with a finger from left to right. Say the input interval, the behavior, and then the starting and ending outputs."
+        },
+        {
+          "id": "3-7",
+          "title": "Sketch Functions From Verbal Descriptions",
+          "bookPage": 193,
+          "standards": [
+            "8.F.B.5",
+            "8.EE.B.5"
+          ],
+          "objective": "Sketch a function from a verbal sequence by matching starting values, rates, durations, and pauses.",
+          "explanation": [
+            "Name the axes and measured quantities first. A distance-from-home graph is not a route map; a volume graph is not a container drawing. Time usually belongs on the horizontal axis.",
+            "Find each stage’s endpoint. Constant rates give straight segments; unchanged outputs give horizontal segments. Continue from the previous endpoint. If only faster or slower is specified, several sketches may work; exact coordinates require numbers."
+          ],
+          "examples": [
+            {
+              "prompt": "A tub contains 10 liters. It fills at 5 liters per minute for 4 minutes, stays unchanged for 2 minutes, then drains at 10 liters per minute until empty. Give sketch coordinates.",
+              "answer": "Join (0, 10), (4, 30), (6, 30), and (9, 0) with straight segments.",
+              "steps": [
+                "Label time in minutes horizontally and volume in liters vertically. Begin at (0, 10).",
+                "Filling adds 5 × 4 = 20 liters, so the first stage ends at (4, 30). The pause ends at (6, 30).",
+                "Draining 30 liters takes 30/10 = 3 minutes. Add those minutes to 6 to reach the endpoint (9, 0)."
+              ]
+            },
+            {
+              "prompt": "A walker leaves home at 60 meters per minute for 2 minutes, waits 1 minute, and returns at 40 meters per minute. Sketch distance from home against time.",
+              "answer": "Join (0, 0), (2, 120), (3, 120), and (6, 0).",
+              "steps": [
+                "The outward trip ends 60 × 2 = 120 meters from home at minute 2.",
+                "Waiting changes time but not distance from home, so draw a horizontal segment ending at minute 3.",
+                "Returning takes 120/40 = 3 minutes and ends at minute 6. The graph falls because distance from home decreases, even though the walker is moving."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Add each stage duration to elapsed time; do not use it as the new time coordinate.",
+            "A horizontal distance-from-home segment means the distance is unchanged, not necessarily that all possible motion has stopped."
+          ],
+          "practiceAdvice": "Write a stage table with duration, rate, and ending output before drawing. Check that adjacent segments meet whenever the situation changes continuously."
+        }
+      ]
+    },
+    {
+      "id": "topic-4",
+      "title": "Bivariate Data",
+      "description": "Describe patterns in paired data, judge linear models, and compare categorical groups with clear denominators.",
+      "lessons": [
+        {
+          "id": "4-1",
+          "title": "Understand Scatter Plots",
+          "bookPage": 209,
+          "standards": [
+            "8.SP.A.1",
+            "8.SP.A.2"
+          ],
+          "objective": "Recognize the direction, shape, clusters, and unusual points in a scatter plot of paired numerical data.",
+          "explanation": [
+            "A scatter plot places one point for each pair of numerical measurements. Positive association means larger x values tend to occur with larger y values; negative association means larger x values tend to occur with smaller y values. The word tend allows variation.",
+            "Describe direction, shape, clusters, and outliers. Scatter plots need not be functions: observations may share x but have different y values. Association alone does not show causation; other variables or observation selection may explain a pattern."
+          ],
+          "examples": [
+            {
+              "prompt": "An invented practice dataset records (rounds completed, game score): (1, 2), (2, 3), (2, 4), (3, 5), (4, 7). Describe its scatter plot.",
+              "answer": "The points have a positive, approximately linear association; two observations share x = 2.",
+              "steps": [
+                "Put completed rounds on the horizontal axis and score on the vertical axis. Plot all five ordered pairs.",
+                "Moving from lower to higher round counts, the scores generally rise from 2 toward 7.",
+                "The points (2, 3) and (2, 4) represent different observations. Keep both; scatter plots are not required to pass the vertical-line test."
+              ]
+            },
+            {
+              "prompt": "Invented data pairs are (1, 9), (2, 7), (3, 6), (4, 4), (5, 3), and (3, 12). Identify the overall association and a possible outlier.",
+              "answer": "Most points show a negative association; (3, 12) is a possible outlier.",
+              "steps": [
+                "The five points from (1, 9) through (5, 3) generally move downward as x increases.",
+                "At x = 3, the point with y = 12 lies far above the nearby trend and the other observation (3, 6).",
+                "Flag it for investigation. A plotting error, a different circumstance, or ordinary variation might explain it; the plot alone cannot decide."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Do not join scatter-plot points as if they were a time-ordered path.",
+            "An outlier is a reason to investigate, not automatic permission to delete data."
+          ],
+          "practiceAdvice": "Describe a plot in one sentence naming direction, shape, and exceptions. Use association language rather than claiming that x causes y."
+        },
+        {
+          "id": "4-2",
+          "title": "Construct and Interpret Scatter Plots",
+          "bookPage": 215,
+          "standards": [
+            "8.SP.A.1",
+            "8.F.B.5"
+          ],
+          "objective": "Construct a readable scatter plot and support an interpretation with specific coordinate evidence.",
+          "explanation": [
+            "Keep each observation paired. Choose and label axes, include units, and use evenly spaced numerical ticks covering all points. Plot each pair once unless identical observations need an explicit count.",
+            "Check scales before interpreting the pattern: stretching an axis changes apparent steepness without changing data. Describe the quantities’ association and judge whether a line is reasonable. Both datasets here are invented."
+          ],
+          "examples": [
+            {
+              "prompt": "Plot reading time in minutes and pages read for the invented pairs (10, 4), (20, 7), (30, 11), and (40, 14). Choose scales and describe the pattern.",
+              "answer": "Use minutes on x and pages on y; the plot has a positive, approximately linear association.",
+              "steps": [
+                "One suitable horizontal scale runs from 0 to 40 in steps of 10 minutes. A vertical scale from 0 to 16 in steps of 2 pages contains every output.",
+                "Plot (10, 4), (20, 7), (30, 11), and (40, 14). The output increases are 3, 4, and 3 pages for equal 10-minute changes.",
+                "The nearly equal changes support an approximate line, but another reader or longer session may follow a different pattern."
+              ]
+            },
+            {
+              "prompt": "Invented display settings and measured brightness scores are (1, 1), (2, 4), (3, 9), and (4, 16). Would a straight trend line summarize the shape well?",
+              "answer": "The association is positive but curved, so one straight line misses the changing rate.",
+              "steps": [
+                "Use setting on the horizontal axis and brightness score on the vertical axis, with a vertical scale reaching at least 16.",
+                "For equal one-unit input increases, output changes are 4 − 1 = 3, 9 − 4 = 5, and 16 − 9 = 7.",
+                "The changes grow, so the plotted pattern bends upward rather than maintaining one rate. A positive association need not be linear."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Do not sort the two data columns separately; that destroys the pairs.",
+            "An unevenly spaced numerical scale can create a misleading shape."
+          ],
+          "practiceAdvice": "Read two plotted points back into the table. Check units, tick spacing, and curvature before describing the trend."
+        },
+        {
+          "id": "4-3",
+          "title": "Analyze Linear Associations",
+          "bookPage": 221,
+          "standards": [
+            "8.SP.A.2",
+            "8.F.A.3",
+            "8.F.B.4"
+          ],
+          "objective": "Judge an approximate trend line and interpret its slope and intercept in context.",
+          "explanation": [
+            "A trend line summarizes an approximately linear point cloud. It should follow the overall direction, pass near the middle, and leave points on both sides without an unexplained curve. It need not pass through observed points.",
+            "Use two points on the proposed line to calculate slope, then find its intercept. Compare observations and predictions across the input range. Residual means observed minus predicted output: positive is above the line, negative below. A small sample supports estimates, not certainty."
+          ],
+          "examples": [
+            {
+              "prompt": "For invented data (0, 3), (1, 3), (2, 6), (3, 7), (4, 11), judge the candidate line y = 2x + 2.",
+              "answer": "The line is a reasonable rough summary: residuals are 1, −1, 0, −1, and 1.",
+              "steps": [
+                "Compute predicted outputs at x = 0, 1, 2, 3, 4: 2, 4, 6, 8, 10.",
+                "Subtract each prediction from the observed output: 3 − 2 = 1, 3 − 4 = −1, 6 − 6 = 0, 7 − 8 = −1, and 11 − 10 = 1.",
+                "The deviations are small and balanced on both sides. The line estimates an increase of 2 output units per input unit."
+              ]
+            },
+            {
+              "prompt": "An invented machine dataset is (1, 18), (2, 13), (3, 11), (4, 7), (5, 6), with x in hours and y in units remaining. A proposed line passes through (1, 17) and (5, 5). Find its equation.",
+              "answer": "y = −3x + 20; it predicts a decline of 3 units per hour.",
+              "steps": [
+                "Compute slope: (5 − 17)/(5 − 1) = −12/4 = −3.",
+                "Use (1, 17): 17 = −3 + b, so b = 20.",
+                "Predictions are 17, 14, 11, 8, and 5; residuals are 1, −1, 0, −1, and 1. The intercept estimates 20 at hour zero, outside the observed range."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Calculate slope using points on the proposed line.",
+            "A reasonable fit does not establish a cause-and-effect relationship."
+          ],
+          "practiceAdvice": "Check both ends and the middle. Reject a line with curved error patterns or systematic overprediction."
+        },
+        {
+          "id": "4-4",
+          "title": "Use Linear Models to Make Predictions",
+          "bookPage": 227,
+          "standards": [
+            "8.SP.A.3",
+            "8.F.A.3",
+            "8.F.B.4"
+          ],
+          "objective": "Use a linear data model to estimate outputs and distinguish interpolation from extrapolation.",
+          "explanation": [
+            "A linear model y = mx + b estimates outputs. Substitute inputs and retain units. Slope describes predicted output change per input unit; the intercept predicts output at zero, possibly outside the meaningful range.",
+            "Interpolation predicts within the observed input range; extrapolation predicts outside it, where patterns may change. Neither guarantees an individual outcome. Consider distance from the data, scatter, and practical limits. Both models below summarize invented data."
+          ],
+          "examples": [
+            {
+              "prompt": "An invented delivery sample covers package masses from 2 to 10 kilograms. Its fitted cost model is C = 4.5m + 12 dollars. Estimate the cost for 6 kilograms and for 20 kilograms.",
+              "answer": "The estimates are $39 and $102; the first is interpolation and the second is extrapolation.",
+              "steps": [
+                "For m = 6, calculate C = 4.5(6) + 12 = 27 + 12 = 39.",
+                "Six kilograms lies between the sampled endpoints 2 and 10, so this estimate interpolates.",
+                "For m = 20, calculate C = 90 + 12 = 102. Twenty lies beyond the data, so this estimate extrapolates; heavy-package fees could follow a different rule."
+              ]
+            },
+            {
+              "prompt": "For an invented battery experiment observed from 0 to 20 hours, the fitted percentage model is P = 84 − 3t. Predict at 12 hours and assess the prediction at 30 hours.",
+              "answer": "It predicts 48% at 12 hours; the −6% prediction at 30 hours is physically invalid.",
+              "steps": [
+                "Substitute t = 12: P = 84 − 36 = 48. This is interpolation within 0 to 20 hours.",
+                "Substitute t = 30: P = 84 − 90 = −6. This extrapolation gives an impossible remaining percentage.",
+                "The model reaches zero at 84 − 3t = 0, or t = 28. This also extrapolates, so 28 hours remains unverified."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Do not present a fitted value as an exact future observation.",
+            "A correct substitution can still produce a prediction the situation cannot support."
+          ],
+          "practiceAdvice": "Label predictions as interpolation or extrapolation, then check their physical limits."
+        },
+        {
+          "id": "4-5",
+          "title": "Prepare Workshop Kits",
+          "bookPage": 233,
+          "standards": [
+            "8.SP.A.1",
+            "8.SP.A.2",
+            "8.SP.A.3"
+          ],
+          "objective": "Evaluate and use approximate linear models for an original workshop-preparation scenario.",
+          "explanation": [
+            "Name the variables and units, plot the paired observations, and check whether a line is plausible. Compare predictions with several observations before using the model for a decision.",
+            "These workshop datasets are invented. Association does not prove that changing one quantity causes the predicted result; space and materials also affect production. State whether a prediction stays within the sampled range and what new observations would help."
+          ],
+          "examples": [
+            {
+              "prompt": "Invented observations pair volunteers with kits completed in one hour: (1, 14), (2, 20), (3, 29), (4, 35), (5, 42). Assess K = 7v + 7 and predict for 6 volunteers.",
+              "answer": "The model fits these observations approximately and predicts 49 kits for 6 volunteers, an extrapolation.",
+              "steps": [
+                "For v = 1 through 5, predicted kit counts are 14, 21, 28, 35, and 42.",
+                "Observed minus predicted counts are 0, −1, 1, 0, and 0, so the points lie close to this line.",
+                "At v = 6, K = 7(6) + 7 = 49. This extrapolates beyond 1 to 5 volunteers; collect a six-volunteer observation to test it."
+              ]
+            },
+            {
+              "prompt": "Invented observations pair boxes packed with minutes needed: (2, 11), (4, 15), (6, 20), (8, 23). Use T = 2b + 7 to estimate time for 5 boxes and evaluate its prediction for 6 boxes.",
+              "answer": "The estimate for 5 boxes is 17 minutes; the 6-box observation is 1 minute above the predicted 19.",
+              "steps": [
+                "Substitute b = 5: T = 2(5) + 7 = 17. Five lies within the observed range 2 to 8, so this is interpolation.",
+                "For b = 6, the rule gives 12 + 7 = 19 minutes; the observation was 20.",
+                "Compute the difference: 20 − 19 = 1 minute. The discrepancy illustrates model error: the estimate is not a timing promise."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A line that fits a few observations may fail when the workspace becomes crowded.",
+            "A model intercept can be meaningless outside the observed setting."
+          ],
+          "practiceAdvice": "Recommend an estimate with units and one limitation. Identify a new observation that would test an uncertain prediction.",
+          "sourceSectionTitle": "Reach Out"
+        },
+        {
+          "id": "4-6",
+          "title": "Interpret Two-Way Frequency Tables",
+          "bookPage": 237,
+          "standards": [
+            "8.SP.A.4",
+            "8.EE.A.4"
+          ],
+          "objective": "Read joint and marginal counts in a two-way table and identify the group named by a question.",
+          "explanation": [
+            "A two-way frequency table counts observations by two categorical variables. Interior cells give joint counts belonging to both a row and a column. Marginal counts are row or column totals; both sets must sum to the grand total.",
+            "Identify the question’s group first. Among bus riders selects the bus row; among borrowers selects the borrower column. Their totals may differ. All counts below are invented, and each variable’s categories are mutually exclusive and complete."
+          ],
+          "examples": [
+            {
+              "prompt": "Invented counts: walk, 12 borrowers and 8 nonborrowers; bus, 18 borrowers and 22 nonborrowers. Find totals and the fraction of walkers who borrowed.",
+              "answer": "There are 60 students, 30 borrowers, and 30 nonborrowers; 12/20 = 60% of walkers borrowed.",
+              "steps": [
+                "Add rows: walkers total 12 + 8 = 20; bus riders total 18 + 22 = 40. The grand total is 20 + 40 = 60.",
+                "Add columns: borrowers total 12 + 18 = 30; nonborrowers total 8 + 22 = 30. Their sum also gives 60.",
+                "Among walkers gives 12/20 = 0.6. Among borrowers who walk instead gives 12/30 = 0.4: reversing the condition changes the denominator."
+              ]
+            },
+            {
+              "prompt": "An invented club table has 24 students. Music members: 9 play a sport and 3 do not. Nonmembers: 7 play a sport and an unknown number do not. Find the missing count and the sport total.",
+              "answer": "The missing count is 5; 16 students play a sport.",
+              "steps": [
+                "The three known interior counts sum to 9 + 3 + 7 = 19.",
+                "Subtract from the grand total: 24 − 19 = 5 nonmembers do not play a sport.",
+                "The sport column totals 9 + 7 = 16. The other column totals 3 + 5 = 8, and 16 + 8 checks the grand total 24."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "Do not add interior cells and their totals together; that double-counts observations.",
+            "Reversing the phrase among changes the denominator."
+          ],
+          "practiceAdvice": "Label the requested group before dividing. Reconcile row and column totals when filling missing entries."
+        },
+        {
+          "id": "4-7",
+          "title": "Interpret Two-Way Relative Frequency Tables",
+          "bookPage": 243,
+          "standards": [
+            "8.SP.A.4"
+          ],
+          "objective": "Calculate and compare joint and conditional relative frequencies with the denominator stated explicitly.",
+          "explanation": [
+            "Relative frequency divides a count by a named total. Joint relative frequency uses the grand total; row conditional frequency uses the row total; column conditional frequency uses the column total. One cell can give different percentages for different questions.",
+            "Compare the same outcome using matching conditional denominators. Raw counts can mislead when group sizes differ. Conditional differences suggest association in the observed group, not causation or a guaranteed population pattern. These surveys are invented."
+          ],
+          "examples": [
+            {
+              "prompt": "An invented snack survey records morning group: 18 choose fruit, 12 crackers; afternoon group: 8 fruit, 12 crackers. Compare fruit preference and find the joint relative frequency for morning and fruit.",
+              "answer": "Fruit rates are 60% in the morning group and 40% in the afternoon group; morning-and-fruit is 36% of all respondents.",
+              "steps": [
+                "Morning total is 18 + 12 = 30; afternoon total is 8 + 12 = 20; grand total is 50.",
+                "Divide within each group: 18/30 = 0.60 and 8/20 = 0.40. The observed difference is 20 percentage points.",
+                "Morning and fruit jointly uses all respondents: 18/50 = 0.36. Changing the denominator changes the question answered."
+              ]
+            },
+            {
+              "prompt": "An invented survey has 10 bicycle commuters, of whom 8 wear helmets, and 40 scooter commuters, of whom 24 wear helmets. Which group has the higher helmet rate? Among helmet wearers, what fraction commute by bicycle?",
+              "answer": "Bicycle commuters have the higher rate, 80% versus 60%; 25% of helmet wearers commute by bicycle.",
+              "steps": [
+                "Compare within travel groups: 8/10 = 80% for bicycles and 24/40 = 60% for scooters.",
+                "More scooter commuters wear helmets, but their group is larger.",
+                "For the reversed condition, total helmet wearers are 8 + 24 = 32. Bicycle commuters are 8/32 = 25% of that group."
+              ]
+            }
+          ],
+          "pitfalls": [
+            "A row-conditional table sums to 100% across each complete row, not across the entire table.",
+            "A difference of 20 percentage points is not automatically a 20% relative increase."
+          ],
+          "practiceAdvice": "Name exactly whom each denominator counts. Compare percentages using matching groups and outcomes."
+        }
+      ]
+    }
+  ],
+  "studyRoutine": [
+    "Start with the lesson that matches your current classwork. If a step depends on an unfamiliar idea, review the earlier lesson that introduces it.",
+    "Read the explanation, then cover each worked solution and try the example yourself. Compare the reasoning as well as the answer.",
+    "Generate a worksheet, keep its form code, and show your work. Use a calculator when the task calls for an approximation; keep exact fractions and roots when requested.",
+    "Check the separate worked answer key after attempting the sheet. For each mistake, identify the first incorrect step and write the rule that fixes it.",
+    "Work a fresh worksheet to check the method again, then revisit missed skills after a day and again later in the week. Correcting a familiar answer is different from solving a fresh example.",
+    "Mix lessons from a topic when the individual methods feel familiar. Explain why you chose each method and check whether the answer, sign, and units fit the question."
+  ]
+}

@@ -1,8 +1,25 @@
 # Liminal
 
-Free, original SAT and ACT practice that runs entirely in the browser.
+Free, original classroom study guides, printable homework, and SAT/ACT
+practice that run entirely in the browser.
 
 **Live site:** https://spincyc.github.io/liminal/
+
+**Courses** starts with Grade 8 Mathematics: the four topics in the supplied
+enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
+examples, and 85 parameterized exercise designs. Choose a lesson or mix of
+lessons to generate up to 30 nights of homework, with 1–100 problems per night.
+Study guides, student worksheets with writing space, and worked answer keys
+download separately as complete offline HTML files. Print them on paper or
+save as PDF. The initial selection covers Topic 1, Real Numbers.
+
+The four topics are Real Numbers, Linear Equations, Functions, and Bivariate
+Data. This covers the supplied volume, not every Grade 8 standard. The course
+catalog is organized by grade and subject so later volumes and other K–12
+courses can be added. Textbook references identify lesson alignment; all
+instruction and exercises are original. See
+[`docs/classroom-courses.md`](docs/classroom-courses.md) for the course format,
+review limits, and printable packet commands.
 
 Liminal is a study tool as well as a question bank: it teaches each SAT skill,
 drills it, tests it the way the digital SAT does, and brings back what you
@@ -141,6 +158,7 @@ touching the others.
 | Path | Holds |
 | --- | --- |
 | [`content/`](content/) | The section catalog and its schema, the template registries (`templates/`), the SAT Learn pages (`learn/`), the ACT banks and passages, the authored sources the generators assemble, and the Markdown study guides |
+| [`content/courses/`](content/courses/) | Grade/subject catalog, original classroom guides and textbook lesson references |
 | [`src/`](src/) | The web app: pages, styles, pure logic in `lib/` (including the SAT question templates in `lib/families/`), and browser UI in `app/` |
 | [`tools/`](tools/) | Build, validation, audit, and question-generation scripts |
 | [`test/`](test/) | Unit tests (`node:test`) |
@@ -157,7 +175,14 @@ npm run serve      # serve dist/ at http://localhost:8080 (reachable from a phon
 npm run check      # the full gate: validation, templates, build, smoke test of dist/, guides, Learn pages, unit tests
 npm run check:families -- --reps 3000   # a deeper pass over every template
 npm run templates  # register new templates and re-version changed ones
+node tools/check-courses.js # validate classroom guides and worksheet generation
+node tools/course-packet.js --unit topic-1 --days 10 --count 20 --seed home-1 --out .scratch/print/home-1 --pdf
 ```
+
+Open `courses.html` on the served site for the classroom library. The packet
+CLI uses an already installed Chromium and ChromeDriver; browser downloads
+need no local CLI tooling. If npm is unavailable, the same full gate runs with
+`node tools/check-all.js` and the site builds with `node tools/build.js`.
 
 Pushing to `main` runs the same gate in GitHub Actions and deploys `dist/` to
 GitHub Pages. Pull requests run the gate without deploying.

@@ -1,0 +1,344 @@
+(function () {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const state = { course: null, selected: new Set(), sheets: [], job: null, styles: null, exportBusy: false };
+  const bundles = ["lib/courses/math.js", "lib/courses/grade8-topic1.js", "lib/courses/grade8-topic2.js", "lib/courses/grade8-topic3.js", "lib/courses/grade8-topic4.js", "lib/courses/engine.js"];
+  const stylesheets = ["styles/tokens.css", "styles/app.css", "styles/math.css", "styles/courses.css"];
+  let catalog = [];
+
+  function element(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = String(text);
+    return node;
+  }
+
+  function error(message) {
+    $("courseError").textContent = message || "";
+    $("courseError").hidden = !message;
+  }
+
+  function options(select, entries, selected) {
+    select.replaceChildren();
+    entries.forEach((entry) => {
+      const option = element("option", "", entry.label);
+      option.value = entry.value;
+      select.appendChild(option);
+    });
+    if (entries.some((entry) => entry.value === selected)) select.value = selected;
+  }
+
+  function unique(values) { return [...new Set(values.map(String))]; }
+  function gradeLabel(grade) { return String(grade).toLowerCase() === "k" || Number(grade) === 0 ? "Kindergarten" : `Grade ${grade}`; }
+  function subjectLabel(subject) { return String(subject).replace(/(^|[-_ ])\w/g, (value) => value.replace(/[-_]/, " ").toUpperCase()); }
+  function selectedIds() { return state.course.units.flatMap((unit) => unit.lessons.filter((lesson) => state.selected.has(lesson.id)).map((lesson) => lesson.id)); }
+
+  function setExportButtons() {
+    document.querySelectorAll("[data-course-export]").forEach((button) => {
+      button.disabled = state.exportBusy || (button.dataset.courseExport === "guide" ? !state.selected.size : !state.sheets.length || !!state.job);
+    });
+  }
+
+  function cancel(message) {
+    if (state.job) {
+      const job = state.job;
+      state.job = null;
+      job.worker.terminate();
+      clearTimeout(job.timeout);
+      URL.revokeObjectURL(job.url);
+      const reason = new Error("Cancelled");
+      reason.name = "AbortError";
+      job.reject(reason);
+    }
+    $("courseCancel").hidden = true;
+    $("courseBuild").disabled = !state.selected.size;
+    $("courseBuild").textContent = "Build homework";
+    $("courseForm").removeAttribute("aria-busy");
+    if (message) $("courseBuildStatus").textContent = message;
+    setExportButtons();
+  }
+
+  function invalidate() {
+    cancel();
+    state.sheets = [];
+    $("coursePacketSection").hidden = true;
+    $("coursePreview").replaceChildren();
+    $("courseBuildStatus").textContent = "Build homework to use these selections.";
+    error("");
+    setExportButtons();
+  }
+
+  function updateSelection() {
+    document.querySelectorAll("[data-lesson-id]").forEach((input) => { input.checked = state.selected.has(input.dataset.lessonId); });
+    document.querySelectorAll("[data-unit-id]").forEach((input) => {
+      const unit = state.course.units.find((item) => item.id === input.dataset.unitId);
+      const count = unit.lessons.filter((lesson) => state.selected.has(lesson.id)).length;
+      input.checked = count === unit.lessons.length;
+      input.indeterminate = count > 0 && count < unit.lessons.length;
+    });
+    const total = state.course.units.reduce((count, unit) => count + unit.lessons.length, 0);
+    $("courseSelectionCount").textContent = `${state.selected.size} of ${total} lessons selected${state.selected.size ? "." : ". Select at least one lesson."}`;
+    $("courseBuild").disabled = !state.selected.size;
+    $("courseGuide").replaceChildren();
+    if (state.selected.size) $("courseGuide").appendChild(LiminalCourseRender.renderGuide(state.course, selectedIds()));
+    else $("courseGuide").appendChild(element("p", "course-empty", "Select lessons to read their study guide."));
+    setExportButtons();
+  }
+
+  function showLessons() {
+    const container = $("courseLessons");
+    container.replaceChildren();
+    state.course.units.forEach((unit, index) => {
+      const details = element("details", "course-unit");
+      details.open = index === 0;
+      details.appendChild(element("summary", "", unit.title));
+      const allLabel = element("label", "course-unit-choice");
+      const all = element("input");
+      all.type = "checkbox";
+      all.dataset.unitId = unit.id;
+      all.addEventListener("change", () => {
+        unit.lessons.forEach((lesson) => { if (all.checked) state.selected.add(lesson.id); else state.selected.delete(lesson.id); });
+        invalidate();
+        updateSelection();
+      });
+      allLabel.append(all, element("span", "", "All lessons in this topic"));
+      details.appendChild(allLabel);
+      const choices = element("div", "course-lesson-choices");
+      unit.lessons.forEach((lesson) => {
+        const label = element("label", "course-lesson-choice");
+        const input = element("input");
+        input.type = "checkbox";
+        input.dataset.lessonId = lesson.id;
+        input.addEventListener("change", () => {
+          if (input.checked) state.selected.add(lesson.id); else state.selected.delete(lesson.id);
+          invalidate();
+          updateSelection();
+        });
+        label.append(input, element("span", "", `${lesson.id} · ${lesson.title}`));
+        choices.appendChild(label);
+      });
+      details.appendChild(choices);
+      container.appendChild(details);
+    });
+    updateSelection();
+  }
+
+  function showCourse() {
+    invalidate();
+    state.course = LIMINAL_COURSES.courses.find((course) => course.id === $("courseChoice").value);
+    if (!state.course) throw new Error("This course could not be loaded. Reload the page to try again.");
+    state.selected = new Set((state.course.units.find((unit) => unit.id === "topic-1") || state.course.units[0]).lessons.map((lesson) => lesson.id));
+    $("courseDescription").textContent = state.course.description || "";
+    $("courseScope").textContent = state.course.scopeNote || "";
+    const source = state.course.source || {};
+    $("courseSource").textContent = source.title ? `Topic alignment: ${source.title}. ${source.alignment || "Original practice following this course’s topic sequence."}` : "Original Liminal course materials.";
+    $("courseRoutine").replaceChildren();
+    (state.course.studyRoutine || []).forEach((text) => {
+      const item = element("li");
+      item.appendChild(LiminalCourseRender.renderText(text));
+      $("courseRoutine").appendChild(item);
+    });
+    showLessons();
+  }
+
+  function chooseSubject() {
+    const entries = catalog.filter((course) => String(course.grade) === $("courseGrade").value && String(course.subject) === $("courseSubject").value);
+    options($("courseChoice"), entries.map((course) => ({ value: course.id, label: course.title })));
+    showCourse();
+  }
+
+  function chooseGrade() {
+    const subjects = unique(catalog.filter((course) => String(course.grade) === $("courseGrade").value).map((course) => course.subject));
+    options($("courseSubject"), subjects.map((subject) => ({ value: subject, label: subjectLabel(subject) })));
+    chooseSubject();
+  }
+
+  function buildInWorker(course, settings) {
+    return new Promise((resolve, reject) => {
+      const source = `"use strict"; self.onmessage = function (event) { try { importScripts.apply(null, event.data.scripts); const course = event.data.course; const result = LiminalCourses.generatePacket(course, LiminalCourses.templatesForCourse(course.id), event.data.settings); self.postMessage({ sheets: result }); } catch (error) { self.postMessage({ error: error.message || String(error) }); } };`;
+      const url = URL.createObjectURL(new Blob([source], { type: "text/javascript" }));
+      let worker;
+      try { worker = new Worker(url); }
+      catch (failure) { URL.revokeObjectURL(url); reject(new Error("The worksheet builder could not start. Open this page from the Liminal website and try again.")); return; }
+      const job = { worker, url, reject, timeout: null };
+      state.job = job;
+      const finish = (failure, sheets) => {
+        if (state.job !== job) return;
+        state.job = null;
+        worker.terminate();
+        clearTimeout(job.timeout);
+        URL.revokeObjectURL(url);
+        if (failure) reject(failure); else resolve(sheets);
+      };
+      worker.onmessage = (event) => finish(event.data.error ? new Error(event.data.error) : null, event.data.sheets);
+      worker.onerror = () => finish(new Error("The worksheet builder could not load its question library. Reload the page and try again."));
+      job.timeout = setTimeout(() => finish(new Error("This packet took too long to build. Try fewer questions or nights.")), 60000);
+      worker.postMessage({ course, settings, scripts: bundles.map((path) => new URL(path, document.baseURI).href) });
+    });
+  }
+
+  function renderPreview() {
+    const index = Number($("coursePreviewNight").value) || 0;
+    const sheet = state.sheets[index];
+    if (!sheet) return;
+    $("coursePreview").replaceChildren(LiminalCourseRender.renderWorksheet(state.course, sheet, { answers: $("coursePreviewAnswers").checked, packetDays: state.sheets.length }));
+  }
+
+  async function build(event) {
+    if (event) event.preventDefault();
+    if (!$("courseForm").reportValidity()) return;
+    if (!state.selected.size) { error("Select at least one lesson before building homework."); return; }
+    const seed = $("courseSeed").value.trim();
+    if (!seed) { error("Enter a packet seed, or choose a fresh seed."); $("courseSeed").focus(); return; }
+    cancel();
+    error("");
+    state.sheets = [];
+    $("coursePacketSection").hidden = true;
+    const settings = { lessonIds: selectedIds(), count: Number($("courseCount").value), days: Number($("courseDays").value), seed };
+    $("courseBuildStatus").textContent = `Building ${settings.days} night${settings.days === 1 ? "" : "s"} of ${settings.count} questions…`;
+    $("courseBuild").disabled = true;
+    $("courseBuild").textContent = "Building…";
+    $("courseCancel").hidden = false;
+    $("courseForm").setAttribute("aria-busy", "true");
+    try {
+      const pending = buildInWorker(state.course, settings);
+      setExportButtons();
+      const sheets = await pending;
+      if (!Array.isArray(sheets) || !sheets.length) throw new Error("No worksheets were produced. Check your lesson selection and try again.");
+      state.sheets = sheets;
+      options($("coursePreviewNight"), sheets.map((sheet, index) => ({ value: String(index), label: `Night ${sheet.day || index + 1}` })));
+      $("coursePreviewAnswers").checked = false;
+      const total = sheets.reduce((count, sheet) => count + sheet.questions.length, 0);
+      $("coursePacketSummary").textContent = `${sheets.length} night${sheets.length === 1 ? "" : "s"} · ${total} questions · ${settings.lessonIds.length} lessons · Seed: ${seed} · Version: ${sheets[0].version}`;
+      const warnings = unique(sheets.flatMap((sheet) => sheet.warnings || []));
+      $("courseWarnings").replaceChildren();
+      if (warnings.length) {
+        $("courseWarnings").appendChild(element("strong", "", "Packet notes"));
+        const list = element("ul");
+        warnings.forEach((warning) => list.appendChild(element("li", "", warning)));
+        $("courseWarnings").appendChild(list);
+      }
+      $("courseWarnings").hidden = !warnings.length;
+      renderPreview();
+      $("coursePacketSection").hidden = false;
+      $("courseBuildStatus").textContent = `Ready: ${sheets.length} night${sheets.length === 1 ? "" : "s"}, ${total} questions. Preview below or open a print view.`;
+    } catch (failure) {
+      if (failure.name === "AbortError") return;
+      error(failure.message || "The packet could not be built. Please try again.");
+      $("courseBuildStatus").textContent = "";
+    } finally {
+      if (!state.job) {
+        $("courseBuild").disabled = !state.selected.size;
+        $("courseBuild").textContent = "Build homework";
+        $("courseCancel").hidden = true;
+        $("courseForm").removeAttribute("aria-busy");
+        setExportButtons();
+      }
+    }
+  }
+
+  function loadStyles() {
+    if (!state.styles) {
+      state.styles = Promise.all(stylesheets.map(async (path) => {
+        const response = await fetch(path);
+        if (!response.ok) throw new Error("Print styles could not be loaded. Check your connection and try again.");
+        return response.text();
+      })).then((parts) => parts.join("\n")).catch((failure) => { state.styles = null; throw failure; });
+    }
+    return state.styles;
+  }
+
+  async function exportDocument(button) {
+    if (state.exportBusy) return;
+    const kind = button.dataset.courseExport;
+    if (kind !== "guide" && !state.sheets.length) return;
+    const print = button.dataset.exportAction === "print";
+    // Reserve the browsing context inside the user's click, before async work.
+    const printWindow = print ? window.open("about:blank", "_blank") : null;
+    if (print && !printWindow) { $("courseExportStatus").textContent = "Allow a new tab for the print view, or use Download HTML."; return; }
+    if (printWindow) { printWindow.opener = null; printWindow.document.title = "Preparing print view…"; printWindow.document.body.textContent = "Preparing your print view…"; }
+    state.exportBusy = true;
+    setExportButtons();
+    $("courseExportStatus").textContent = "Preparing your document…";
+    // Capture the current selection so changing controls cannot mix documents.
+    const course = state.course;
+    const lessons = selectedIds();
+    const sheets = state.sheets;
+    try {
+      const css = await loadStyles();
+      const label = kind === "guide" ? "Study guide" : kind === "answers" ? "Worked answers" : "Student worksheets";
+      const content = kind === "guide" ? LiminalCourseRender.renderGuide(course, lessons) : LiminalCourseRender.renderPacket(course, sheets, { answers: kind === "answers" });
+      const html = LiminalCourseRender.exportHtml(`${course.title} — ${label}`, content, css);
+      const url = URL.createObjectURL(new Blob([html], { type: "text/html;charset=utf-8" }));
+      if (printWindow) {
+        printWindow.location.replace(url);
+        $("courseExportStatus").textContent = "Print view opened. Use your browser’s Print command to print or save as PDF.";
+      } else {
+        const link = element("a");
+        link.href = url;
+        link.download = `liminal-${course.id}-${kind}${sheets.length && kind !== "guide" ? `-${sheets[0].code}` : ""}.html`.replace(/[^a-z0-9._-]/gi, "-");
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        $("courseExportStatus").textContent = `${label} downloaded as a complete offline HTML document.`;
+      }
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+    } catch (failure) {
+      if (printWindow) printWindow.close();
+      $("courseExportStatus").textContent = failure.message || "The document could not be prepared. Please try again.";
+    } finally {
+      state.exportBusy = false;
+      setExportButtons();
+    }
+  }
+
+  function freshSeed() {
+    const numbers = new Uint32Array(2);
+    crypto.getRandomValues(numbers);
+    $("courseSeed").value = `practice-${Array.from(numbers, (number) => number.toString(36)).join("-")}`;
+    invalidate();
+    $("courseBuildStatus").textContent = "Fresh seed ready. Build homework for a new set of questions.";
+  }
+
+  function start() {
+    try {
+      if (!window.LIMINAL_COURSES || !window.LiminalCourses || !window.LiminalCourseRender || !window.LiminalRender) throw new Error("The course library did not finish loading. Reload this page to try again.");
+      catalog = LIMINAL_COURSES.catalog.courses;
+      if (!catalog.length) throw new Error("No courses are available yet.");
+      options($("courseGrade"), unique(catalog.map((course) => course.grade)).map((grade) => ({ value: grade, label: gradeLabel(grade) })), "8");
+      $("courseSeed").value = `practice-${new Date().toISOString().slice(0, 10)}`;
+      chooseGrade();
+      $("courseGrade").addEventListener("change", chooseGrade);
+      $("courseSubject").addEventListener("change", chooseSubject);
+      $("courseChoice").addEventListener("change", showCourse);
+      $("courseSelectAll").addEventListener("click", () => { state.selected = new Set(state.course.units.flatMap((unit) => unit.lessons.map((lesson) => lesson.id))); invalidate(); updateSelection(); });
+      $("courseSelectNone").addEventListener("click", () => { state.selected.clear(); invalidate(); updateSelection(); });
+      ["courseCount", "courseDays", "courseSeed"].forEach((id) => $(id).addEventListener("input", invalidate));
+      $("courseFresh").addEventListener("click", freshSeed);
+      $("courseCancel").addEventListener("click", () => { cancel("Build cancelled. Adjust the options or build again."); $("courseBuild").focus(); });
+      $("courseForm").addEventListener("submit", build);
+      $("coursePreviewNight").addEventListener("change", renderPreview);
+      $("coursePreviewAnswers").addEventListener("change", renderPreview);
+      let guideWasOpen;
+      window.addEventListener("beforeprint", () => {
+        if (guideWasOpen === undefined) guideWasOpen = $("courseGuideDetails").open;
+        $("courseGuideDetails").open = true;
+      });
+      window.addEventListener("afterprint", () => {
+        if (guideWasOpen !== undefined) $("courseGuideDetails").open = guideWasOpen;
+        guideWasOpen = undefined;
+      });
+      document.querySelectorAll("[data-course-export]").forEach((button) => button.addEventListener("click", () => exportDocument(button)));
+      $("courseApp").hidden = false;
+      $("courseLoadStatus").hidden = true;
+      loadStyles().catch(() => {}); // A later export retries a failed prefetch.
+      build();
+    } catch (failure) {
+      $("courseLoadStatus").textContent = failure.message;
+      $("courseLoadStatus").classList.add("error");
+      $("courseLoadStatus").setAttribute("role", "alert");
+    }
+  }
+
+  start();
+})();
