@@ -3,8 +3,11 @@
 Courses is Liminal's grade-and-subject library, separate from SAT/ACT sessions.
 The [K–12 year plans](curriculum.md) live separately at `curriculum.html`:
 their outlines do not enter this catalog until complete lessons and practice
-have been authored and reviewed. The course reader links to its full-year
-outline and the grade comparison.
+have been authored and reviewed. Separately, [weekly coursework](weekly-coursework.md)
+at `weeks.html` extends those plans with fixed worksheets and guided lessons.
+The existing generator catalog and its packet controls retain their independent
+Grade 8 scope. The course reader links to weekly work, its full-year outline,
+and the grade comparison.
 The first course covers the four topics in the supplied Grade 8 volume of
 Savvas *enVision+ Common Core Mathematics, Student Edition*: Real Numbers,
 Linear Equations, Functions, and Bivariate Data. Its 36 lesson references come

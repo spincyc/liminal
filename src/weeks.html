@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Weekly K–12 math and reading instruction, worked examples, and three printable worksheets for each week." />
+    <title>Liminal — Weekly coursework</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/math.css" />
+    <link rel="stylesheet" href="styles/weekly.css" />
+    <link rel="stylesheet" href="styles/brand.css" />
+    <script defer src="content/weekly-index.js"></script>
+    <script defer src="lib/weekly.js"></script>
+    <script defer src="app/render.js"></script>
+    <script defer src="app/weekly-render.js"></script>
+    <script defer src="app/weekly.js"></script>
+  </head>
+  <body class="weekly-page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="home-header page-width">
+      <a class="wordmark" href="index.html" aria-label="Liminal home"><svg class="brand-symbol" viewBox="0 0 28 34" fill="none" aria-hidden="true" focusable="false"><path d="M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17" stroke="currentColor" stroke-width="2.5" /><path d="M0 32h28" stroke="currentColor" stroke-width="2.5" /></svg><span>Liminal<span class="wordmark-dot">.</span></span></a>
+      <nav class="home-nav" aria-label="Primary">
+        <a href="index.html#modules">Subjects</a>
+        <a href="curriculum.html">Year plans</a>
+        <a href="weeks.html" aria-current="page">Weekly work</a>
+      </nav>
+    </header>
+    <main id="main" class="page-width weekly-main" tabindex="-1">
+      <header class="weekly-intro"><h1>Weekly work</h1></header>
+      <noscript><p>Turn on JavaScript to browse weekly coursework. <a href="curriculum.html">Explore the year plans.</a></p></noscript>
+      <p id="weeklyStatus" class="weekly-status" role="status" aria-live="polite">Opening weekly coursework…</p>
+      <div id="weeklyBrowser" hidden>
+        <form class="weekly-filters" aria-label="Choose weekly coursework">
+          <label>Pathway<select id="weeklyTrack"></select></label>
+          <label>Grade<select id="weeklyGrade"></select></label>
+          <label class="weekly-week-picker">Week<select id="weeklyWeek"></select></label>
+        </form>
+        <div id="weeklyContent" aria-busy="false"></div>
+      </div>
+      <details class="weekly-about"><summary>Using this coursework</summary><p>Choose one math pathway and keep reading alongside it. Worksheets A, B, and C offer different practice; spread them across the week as useful.</p><p>Common Core high-school years and Singapore grade mappings are editorial sequences, not placement rules. Follow each year plan’s standards and sources. Short reading exercises supplement sustained reading.</p><p>Original coursework. Automated checks and sampled agent review do not establish human editorial approval or student outcomes.</p></details>
+    </main>
+    <footer class="home-footer page-width weekly-footer"><p>Independent educational coursework. Not affiliated with standards bodies or publishers.</p><p>SAT® and ACT® are trademarks of College Board and ACT, Inc.; no affiliation.</p></footer>
+  </body>
+</html>

@@ -335,7 +335,7 @@ new vm.Script(fs.readFileSync(path.join(root, "app/home.js"), "utf8"), { filenam
 // Planning data remains separate from ready-to-study courses and saved work.
 const planHtml = fs.readFileSync(path.join(root, "curriculum.html"), "utf8");
 const planScripts = [...planHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
-if (JSON.stringify(planScripts) !== JSON.stringify(["content/curriculum.js", "lib/curriculum.js", "app/curriculum.js"])) {
+if (JSON.stringify(planScripts) !== JSON.stringify(["content/curriculum.js", "content/weekly-index.js", "lib/curriculum.js", "lib/weekly.js", "app/curriculum.js"])) {
   throw new Error("Curriculum scripts are missing or out of order");
 }
 for (const match of planHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
@@ -357,9 +357,39 @@ if (JSON.stringify(planData) !== JSON.stringify(JSON.parse(fs.readFileSync(path.
   throw new Error("Downloadable curriculum differs from the browser plans");
 }
 
+// Weekly course bodies load on demand; the index never embeds answer keys.
+const weeklyHtml = fs.readFileSync(path.join(root, "weeks.html"), "utf8");
+const weeklyScripts = [...weeklyHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+if (JSON.stringify(weeklyScripts) !== JSON.stringify(["content/weekly-index.js", "lib/weekly.js", "app/render.js", "app/weekly-render.js", "app/weekly.js"])) {
+  throw new Error("Weekly scripts are missing or out of order");
+}
+for (const match of weeklyHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
+  const target = match[1].split(/[?#]/)[0];
+  if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing weekly asset: " + target);
+}
+const weeklyIds = [...weeklyHtml.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+if (new Set(weeklyIds).size !== weeklyIds.length) throw new Error("Duplicate weekly element IDs");
+weeklyScripts.forEach(script => new vm.Script(fs.readFileSync(path.join(root, script), "utf8")));
+const weeklyContext = vm.createContext({ window: {} });
+vm.runInContext(fs.readFileSync(path.join(root, "content/weekly-index.js"), "utf8"), weeklyContext);
+const weeklyIndex = weeklyContext.window.LIMINAL_WEEKLY_INDEX;
+const weeklyJson = JSON.parse(fs.readFileSync(path.join(root, "content/weekly-index.json"), "utf8"));
+if (!weeklyIndex || weeklyIndex.version !== 1 || JSON.stringify(weeklyIndex) !== JSON.stringify(weeklyJson)) {
+  throw new Error("Weekly index differs from downloadable index");
+}
+const weeklyBuild = require("./build-weekly");
+const weeklySource = weeklyBuild.loadWeekly();
+if (JSON.stringify(weeklyJson) !== JSON.stringify(weeklySource.index)) throw new Error("Weekly index differs from source courses");
+for (let i = 0; i < weeklyJson.courses.length; i++) {
+  const entry = weeklyJson.courses[i];
+  if (!/^content\/weekly\/(?:common-core-math|common-core-reading|singapore-math)\/(?:k|[1-9]|1[0-2])\.json$/.test(entry.file)) throw new Error("Unsafe weekly course path");
+  const built = JSON.parse(fs.readFileSync(path.join(root, entry.file), "utf8"));
+  if (JSON.stringify(built) !== JSON.stringify(weeklySource.courses[i])) throw new Error("Weekly course differs from source: " + entry.file);
+}
+
 // Every page names its icon, which is built with it, so no page asks the
 // server for a favicon.ico that is not there.
-for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "curriculum.html"]) {
+for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "curriculum.html", "weeks.html"]) {
   const file = path.join(root, page);
   if (!fs.existsSync(file)) continue;
   const icon = (fs.readFileSync(file, "utf8").match(/<link rel="icon" href="([^"]+)"/) || [])[1];

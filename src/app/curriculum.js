@@ -2,6 +2,8 @@
   "use strict";
   const data = window.LIMINAL_CURRICULUM;
   const C = window.LiminalCurriculum;
+  const W = window.LiminalWeekly;
+  const weeklyIndex = window.LIMINAL_WEEKLY_INDEX;
   const status = document.getElementById("planStatus");
   if (!data || !C) {
     status.textContent = "The plans could not be loaded. Reload this page, or use the download link below.";
@@ -79,6 +81,8 @@
     header.append(heading, el("p", "36 weeks · Course outline", "plan-meta"));
     const context = C.courseContext(track.track, course);
     if (context) header.append(el("p", context, "plan-context"));
+    const weekly = W && weeklyIndex && W.courseAt(weeklyIndex, track.track.id, course.grade);
+    if (weekly) header.append(link("Start weekly work →", "weeks.html" + W.route(track.track.id, course.grade, 1), "plan-weekly-start"));
     fragment.append(header);
     const units = C.pacedUnits(course);
     units.forEach(unit => {
@@ -88,6 +92,15 @@
       summary.append(el("span", weeks(unit), "plan-week"), el("span", unit.title, "plan-unit-title"));
       const body = el("div", undefined, "plan-unit-body");
       body.append(el("p", unit.focus, "plan-unit-focus"));
+      if (weekly) {
+        const lessons = el("ol", undefined, "plan-weekly-list");
+        weekly.weeks.filter(week => week.unitId === unit.id).forEach(week => {
+          const item = el("li");
+          item.append(link("Week " + week.week + " · " + week.title, "weeks.html" + W.route(track.track.id, course.grade, week.week)));
+          lessons.append(item);
+        });
+        body.append(lessons);
+      }
       const goals = C.unitGoals(unit);
       if (goals.length) body.append(block("Goals", goals));
       const teaching = disclosure("Teaching notes", "plan-unit-notes");

@@ -19,6 +19,9 @@
 .plan-meta { margin-top: 6px; color: var(--color-muted); font-size: .875rem; }
 .plan-print-pathway { display: none; }
 .plan-context { max-width: 70ch; margin-top: 8px; font-size: .9375rem; color: var(--color-muted); }
+.plan-weekly-start { display: inline-flex; align-items: center; min-height: 44px; margin-top: 6px; font-size: .875rem; }
+.plan-weekly-list { list-style: none; padding: 0; margin-block: 10px; }
+.plan-weekly-list a { display: flex; align-items: center; min-height: 44px; padding-block: 8px; overflow-wrap: anywhere; }
 .plan-unit { border-bottom: 1px solid var(--color-line); scroll-margin-top: 16px; }
 .plan-unit:first-of-type { border-top: 1px solid var(--color-line); }
 .plan-unit > summary { display: grid; grid-template-columns: 100px minmax(0, 1fr) 16px; align-items: center; gap: 16px; padding: 19px 4px; cursor: pointer; list-style: none; }
@@ -95,7 +98,7 @@
 }
 @media print {
   .curriculum-page :focus { outline: none !important; }
-  .plan-intro, .plan-filters, .plan-status, .plan-related, .plan-journey, .plan-method, .plan-footer, .plan-ready, .plan-unit-permalink { display: none; }
+  .plan-intro, .plan-filters, .plan-status, .plan-related, .plan-journey, .plan-method, .plan-footer, .plan-ready, .plan-unit-permalink, .plan-weekly-start, .plan-weekly-list { display: none; }
   .plan-main { max-width: none; padding: 0; }
   .plan-print-pathway { display: block; margin-bottom: 8px; font-weight: 600; }
   .plan-course-heading { padding-top: 16px; }

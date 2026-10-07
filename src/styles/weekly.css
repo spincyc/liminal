@@ -1,0 +1,88 @@
+.weekly-main { max-width: 960px; padding-block: 30px 40px; }
+.weekly-intro { margin-bottom: 18px; }
+.weekly-intro h1 { font: 400 clamp(1.75rem, 5vw, 2.25rem)/1.15 var(--font-serif); letter-spacing: -.035em; }
+.weekly-intro p, .weekly-meta, .weekly-footer, .weekly-muted { color: var(--color-muted); }
+.weekly-intro p { margin-top: 8px; }
+.weekly-page [hidden] { display: none !important; }
+.weekly-page :is(button, select, summary, a):focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+.weekly-page button, .weekly-page select { min-height: 44px; font: inherit; color: var(--color-ink); background: var(--color-surface); border: 1px solid var(--color-line-strong); border-radius: 4px; }
+.weekly-page button { padding: 8px 12px; cursor: pointer; }
+.weekly-page button:hover { background: var(--color-soft); }
+.weekly-page select { width: 100%; min-width: 0; padding: 7px 28px 7px 10px; font-size: 16px; }
+.weekly-page summary { padding-block: 10px; cursor: pointer; min-height: 44px; }
+.weekly-filters { display: grid; grid-template-columns: minmax(0, 1fr) 110px 110px; gap: 14px; margin-bottom: 18px; }
+.weekly-filters label, .weekly-sheet-picker { display: grid; gap: 5px; min-width: 0; font-size: .875rem; }
+.weekly-status { padding-block: 8px; }
+.weekly-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.weekly-heading { padding-bottom: 12px; }
+.weekly-heading h2 { margin-block: 7px 12px; font: 400 clamp(1.6rem, 4vw, 2.2rem)/1.2 var(--font-serif); overflow-wrap: anywhere; }
+.weekly-meta { font-size: .875rem; }
+.weekly-context { color: var(--color-muted); font-size: .8125rem; }
+.weekly-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--color-line-strong); }
+.weekly-tabs [role="tab"] { flex: 1; border: 0; border-radius: 4px 4px 0 0; background: transparent; }
+.weekly-tabs [aria-selected="true"] { background: var(--color-soft); box-shadow: inset 0 -3px var(--color-ink); font-weight: 650; }
+.weekly-views [role="tabpanel"]:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+.weekly-links, .weekly-nav, .weekly-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; }
+.weekly-links { margin-top: 10px; font-size: .875rem; }
+.weekly-links a, .weekly-nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.weekly-nav { justify-content: space-between; padding-block: 8px; }
+.weekly-nav a:last-child { margin-left: auto; }
+.weekly-section { padding-block: 24px; border-bottom: 1px solid var(--color-line); }
+.weekly-section h3 { font: 400 1.5rem/1.25 var(--font-serif); margin-bottom: 14px; }
+.weekly-section h4 { font-size: 1rem; margin: 0 0 10px; }
+.weekly-section p + p, .weekly-rich > * + *, .weekly-answer > * + * { margin-top: 12px; }
+.weekly-rich { overflow-wrap: anywhere; }
+.weekly-rich p { white-space: pre-wrap; }
+.weekly-rich table { border-collapse: collapse; width: 100%; font-size: .9375rem; }
+.weekly-rich :is(th, td) { text-align: left; padding: 7px; border: 1px solid var(--color-line-strong); overflow-wrap: anywhere; }
+.weekly-rich li + li, .weekly-steps li + li { margin-top: 8px; }
+.weekly-teaching { margin-top: 18px; }
+.weekly-teaching p { margin-block: 10px; }
+.weekly-example { padding: 16px 0; }
+.weekly-example + .weekly-example { border-top: 1px solid var(--color-line); }
+.weekly-answer { padding: 14px 18px; background: var(--color-soft); border-left: 2px solid var(--color-line-strong); }
+.weekly-steps { padding-left: 24px; }
+.weekly-passages { margin-top: 18px; }
+.weekly-passage { margin-block: 20px; padding: 20px; background: var(--color-surface); border: 1px solid var(--color-line); border-radius: 4px; scroll-margin-top: 20px; }
+.weekly-passage .weekly-rich { font-family: var(--font-serif); font-size: 1.125rem; line-height: 1.8; }
+.weekly-passage .weekly-meta { margin-top: 12px; }
+.weekly-passage-links { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 8px; font-size: .875rem; }
+.weekly-sheet-picker { max-width: 400px; margin-bottom: 14px; }
+.weekly-actions { gap: 10px; margin-top: 16px; }
+.weekly-actions details { flex-basis: 100%; }
+.weekly-actions details .weekly-actions { margin-top: 0; }
+.weekly-items { padding-left: 26px; margin-block: 20px; }
+.weekly-items > li { padding: 12px 0 16px 6px; break-inside: avoid; }
+.weekly-items > li + li { border-top: 1px solid var(--color-line); }
+.weekly-workspace { min-height: 110px; }
+.weekly-item-answer { margin-top: 8px; }
+.weekly-about { margin-top: 24px; font-size: .875rem; }
+.weekly-about p { max-width: 75ch; margin-block: 12px; }
+.weekly-footer { padding-block: 22px 32px; font-size: .8125rem; overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  .weekly-page .page-width { width: calc(100% - 32px); }
+  .weekly-page .home-header { flex-wrap: wrap; gap: 0 18px; padding-block: 12px 4px; }
+  .weekly-page .home-nav { gap: 20px; flex-wrap: wrap; }
+  .weekly-filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 12px; }
+  .weekly-filters label:first-child { grid-column: 1 / -1; }
+  .weekly-passage { padding: 14px; }
+  .weekly-actions > button { flex: 1 1 130px; }
+  .weekly-main { padding-top: 24px; }
+}
+@media print {
+  @page { margin: 16mm; }
+  .weekly-page { font-size: 11pt; line-height: 1.5; background: #fff; color: #000; }
+  .weekly-page .page-width { width: 100%; max-width: none; }
+  .weekly-page .home-header { min-height: 0; padding-bottom: 10pt; }
+  .weekly-page :is(.home-nav, .skip-link, .weekly-intro, .weekly-filters, .weekly-status, .weekly-nav, .weekly-actions, .weekly-sheet-picker, .weekly-about, .weekly-links, .weekly-tabs) { display: none !important; }
+  .weekly-main { padding-block: 12pt; }
+  .weekly-section { padding-block: 12pt; }
+  .weekly-passage { padding: 10pt; background: #fff; }
+  .weekly-heading h2 { font-size: 20pt; }
+  .weekly-section h3 { font-size: 16pt; }
+  .weekly-answer { background: #fff; }
+  .weekly-page a { color: #000; }
+  .weekly-page .weekly-item-answer, .weekly-page .weekly-example-answer { display: none !important; }
+  .weekly-page .weekly-workspace { min-height: 32mm; }
+  .weekly-footer { padding-block: 10pt; }
+}

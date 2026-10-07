@@ -18,11 +18,21 @@ lead the library; grade labels identify curriculum alignment.
 Common Core reading, and a Singapore mathematics pathway for each grade K–12.
 Every plan spans 36 teaching weeks with prerequisites, goals, original task
 ideas, evidence checks, source references, and links across subjects and years.
-Browse one pathway, compare a grade's subjects, print a plan, or download the
-planning data. These are outlines; full lessons and assignments are still to be
-developed. High-school grade assignments and the Singapore-to-US grade mapping
+Browse one pathway, compare a grade's subjects, print a plan, or open its
+**Weekly coursework**. Each weekly lesson supplies guided explanations, worked
+examples, a suggested five-day sequence, and three distinct worksheets with
+separate worked keys. The reader loads one course at a time and shows one week;
+student sheets download and print without answers. Use the worksheets across
+the week as useful, rather than as a daily completion quota.
+High-school grade assignments and the Singapore-to-US grade mapping
 are editorial choices, explained in the plans. See
 [the curriculum format and scope](docs/curriculum.md).
+The [weekly coursework contract](docs/weekly-coursework.md) describes content,
+duplicate checks, source attribution, and independent review limits. Reading
+includes supplied original texts and attributed public-domain works; early
+decoding and adult read-aloud activities are identified separately. These
+materials support teaching and sustained reading; they do not certify mastery
+or provide a full ELA writing, speaking, and language curriculum.
 
 **Courses** starts with Grade 8 Mathematics: the four topics in the supplied
 enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
@@ -205,6 +215,7 @@ touching the others.
 | [`content/`](content/) | The section catalog and its schema, the template registries (`templates/`), the SAT Learn pages (`learn/`), the ACT banks and passages, the authored sources the generators assemble, and the Markdown study guides |
 | [`content/courses/`](content/courses/) | Grade/subject catalog, original classroom guides and textbook lesson references |
 | [`content/curriculum/`](content/curriculum/) | K–12 year plans and source-linked Common Core and Singapore references |
+| [`content/weekly/`](content/weekly/) | Original weekly teaching, supplied reading texts, worksheets, and worked answer keys |
 | [`content/work-samples/`](content/work-samples/) | Original vector written solutions, lesson bindings, and accessible transcripts |
 | [`src/`](src/) | The web app: pages, styles, pure logic in `lib/` (including the SAT question templates in `lib/families/`), and browser UI in `app/` |
 | [`tools/`](tools/) | Build, validation, audit, and question-generation scripts |
@@ -223,6 +234,7 @@ npm run check      # the full gate: validation, templates, build, smoke test of 
 npm run check:families -- --reps 3000   # a deeper pass over every template
 npm run templates  # register new templates and re-version changed ones
 node tools/check-courses.js # validate classroom guides and worksheet generation
+node tools/build-weekly.js  # validate and build available weekly courses
 node tools/course-packet.js --unit topic-1 --days 10 --count 20 --seed home-1 --out .scratch/print/home-1 --pdf
 node tools/course-packet.js --unit topic-1 --days 3 --count 20 --worksheets B,C,A --combined --out .scratch/print/mixed --pdf
 ```
@@ -245,7 +257,8 @@ Learn pages follow the rules in [`AGENTS.md`](AGENTS.md).
 
 Independent educational practice. Not affiliated with, endorsed by, or
 sponsored by College Board or ACT, Inc. SAT® is a registered trademark of
-College Board. ACT® is a registered trademark of ACT, Inc. All questions and
-passages here are original.
+College Board. ACT® is a registered trademark of ACT, Inc. SAT/ACT questions
+and passages are original. Weekly reading also includes attributed
+public-domain works; each supplied text identifies its source.
 
 No license has been chosen yet; until one is, all rights are reserved.

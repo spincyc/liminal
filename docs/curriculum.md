@@ -3,17 +3,19 @@
 `curriculum.html` contains 39 original course outlines: Common Core mathematics,
 Common Core reading, and a Singapore mathematics pathway, each from kindergarten
 through Grade 12. Each outlines 36 teaching weeks, including review and checks.
-These are curriculum skeletons, not complete courses or a certification of
-standards coverage. Task ideas describe work to author; they are not supplied
-assignments. Reading selections, daily instruction, differentiation, complete
-assessments, and most practice materials remain to be developed and reviewed.
+These records are curriculum skeletons, not a certification of standards
+coverage. Their task ideas are supplemented by separately authored
+[weekly coursework](weekly-coursework.md): guided instruction, supplied texts,
+worked examples, three worksheets per week and separate keys. Weekly materials
+do not replace local differentiation, assessment, or sustained reading.
 
 The landing page leads with Mathematics and Reading. Each subject links to its
 year plans; a separate entry identifies the ready-to-study Grade 8 lessons.
 `courses.html` remains the lesson reader and worksheet builder. Its current
 four-topic scope is described in [classroom courses](classroom-courses.md).
-Planning records never enter its course catalog, practice generators, or
-SAT/ACT progress records. The home page still loads only its legacy-bookmark
+`weeks.html` provides the weekly reader and fixed, distinct worksheets across
+the three pathways. Planning records never enter the Grade 8 generator catalog
+or SAT/ACT progress records. The home page still loads only its legacy-bookmark
 redirect script.
 
 ## Reading a plan
@@ -23,6 +25,9 @@ and alternative mathematics sequences. The initial view is a single compact
 unit list. Units start closed; opening one shows its focus and learning goals,
 with exact repeats of the focus removed from the displayed goals. Teaching
 notes and standards open separately. The original data remains complete.
+Available weekly lessons link directly from their corresponding unit, with a
+single **Start weekly work** link above the sequence. An absent course is
+never advertised as available; links come from the generated weekly index.
 Within a plan:
 
 - **About this year** holds prerequisites, outcomes, the year thread, and
@@ -114,6 +119,8 @@ content review must check that meaning and compare the inventory with sources.
 `tools/build-curriculum.js` emits `dist/content/curriculum.js` and the matching
 downloadable JSON during the normal site build. No external requests, account,
 runtime dependencies, or browser storage are needed to view the plans.
+The small `content/weekly-index.js` supplies lesson titles and links; individual
+course JSON loads only when the weekly reader opens that course.
 
 ## Verification and review
 

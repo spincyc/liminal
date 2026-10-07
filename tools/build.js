@@ -82,6 +82,7 @@ require("./build-learn").build({ allowMissing: true });
 require("./build-courses").build();
 require("./build-work-samples").build();
 require("./build-curriculum").build();
+require("./build-weekly").build();
 
 // Serve files as they are; GitHub Pages would otherwise run Jekyll.
 fs.writeFileSync(path.join(DIST, ".nojekyll"), "");
