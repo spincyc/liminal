@@ -55,6 +55,16 @@ text-specific questions. Adult read-aloud and shared reading are explicit;
 facilitator notes stay separate from student printouts. See the
 [corpus, provenance, and progression contract](docs/daily-reading.md).
 
+**Reading level** (`reading-level.html`) finds a starting point in that library
+from a few short, self-scored passages: a student reads, presses Done, and
+answers three or four original multiple-choice questions while the passage
+stays visible; the next passage moves up or down. The result is a grade and
+week in the nightly library, then a dated, printable plan that mixes in a
+growing share of nights from the next level, with a one-passage re-check every
+four weeks. It is a practice placement, not a standardized test, Lexile measure,
+or measured reading level, and its answer keys ship to the browser. Results
+stay in the browser. See the [method, thresholds, and item rules](docs/reading-level.md).
+
 **Courses** starts with Grade 8 Mathematics: the four topics in the supplied
 enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
 examples, 36 prerequisite checks, 36 partially worked practice tasks, and 85

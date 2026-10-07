@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Find a starting level in Liminal's nightly reading library from a few short passages, then follow a dated plan that steps up gradually." />
+    <title>Liminal — Reading level</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/reading-level.css" />
+    <link rel="stylesheet" href="styles/brand.css" />
+    <script defer src="content/reading-level.js"></script>
+    <script defer src="lib/reading-level.js"></script>
+    <script defer src="app/reading-level.js"></script>
+  </head>
+  <body class="rl-page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="home-header page-width">
+      <a class="wordmark" href="index.html" aria-label="Liminal home"><svg class="brand-symbol" viewBox="0 0 28 34" fill="none" aria-hidden="true" focusable="false"><path d="M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17" stroke="currentColor" stroke-width="2.5" /><path d="M0 32h28" stroke="currentColor" stroke-width="2.5" /></svg><span>Liminal<span class="wordmark-dot">.</span></span></a>
+      <nav class="home-nav" aria-label="Primary"><a href="index.html#modules">Subjects</a><a href="weeks.html">Weekly work</a><a href="daily-reading.html">Daily reading</a><a href="reading-level.html" aria-current="page">Reading level</a></nav>
+    </header>
+    <main id="main" class="page-width rl-main" tabindex="-1">
+      <header class="rl-intro">
+        <h1>Reading level</h1>
+        <p>Find a starting point in the <a href="daily-reading.html">daily reading</a> library, then step up gradually.</p>
+        <p class="rl-honesty">A practice placement from a few short passages — not a standardized test, a Lexile measure, or an official reading level. Answers are checked in your browser, so it works only if you don’t look ahead.</p>
+      </header>
+      <noscript><p>Turn on JavaScript to use the reading-level check.</p></noscript>
+      <p id="rlStatus" class="rl-status" role="status" aria-live="polite"></p>
+      <div id="rlView"></div>
+    </main>
+    <footer class="home-footer page-width rl-footer"><p>Independent educational coursework. Not affiliated with standards bodies, test makers, or publishers.</p><p>SAT® and ACT® are trademarks of College Board and ACT, Inc.; no affiliation.</p></footer>
+  </body>
+</html>

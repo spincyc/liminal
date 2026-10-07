@@ -425,6 +425,29 @@ for (let i = 0; i < dailyIndex.grades.length; i++) {
   if (JSON.stringify(built) !== JSON.stringify(dailySource.courses[i])) throw new Error("Daily-reading text differs from source: " + entry.file);
 }
 
+// Reading level: its bundle, logic and page script load in order; the
+// bundle matches a fresh build from source and carries no facilitator notes.
+const levelHtml = fs.readFileSync(path.join(root, "reading-level.html"), "utf8");
+const levelScripts = [...levelHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+if (JSON.stringify(levelScripts) !== JSON.stringify(["content/reading-level.js", "lib/reading-level.js", "app/reading-level.js"])) throw new Error("Reading-level scripts are missing or out of order");
+for (const match of levelHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
+  const target = match[1].split(/[?#]/)[0];
+  if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing reading-level asset: " + target);
+}
+const levelIds = [...levelHtml.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+if (new Set(levelIds).size !== levelIds.length) throw new Error("Duplicate reading-level element IDs");
+const levelApp = fs.readFileSync(path.join(root, "app/reading-level.js"), "utf8");
+// Each looked-up ID is in the page or assigned by the script itself.
+for (const [, id] of levelApp.matchAll(/document\.getElementById\("([^"]+)"\)/g)) if (!levelIds.includes(id) && !levelApp.includes('.id = "' + id + '"')) throw new Error("reading-level.js references a missing element: " + id);
+if (!/<link rel="icon" href="favicon.svg"/.test(levelHtml)) throw new Error("reading-level.html does not link its favicon.");
+levelScripts.forEach(script => new vm.Script(fs.readFileSync(path.join(root, script), "utf8"), { filename: script }));
+const levelContext = vm.createContext({ window: {} });
+levelScripts.slice(0, 2).forEach(script => vm.runInContext(fs.readFileSync(path.join(root, script), "utf8"), levelContext));
+const levelBuild = require("./build-reading-level"), levelBundle = levelContext.window.LIMINAL_READING_LEVEL;
+if (JSON.stringify(levelBundle) !== JSON.stringify(levelBuild.bundle(levelBuild.loadProbes()))) throw new Error("Reading-level bundle differs from source");
+if (/facilitatorNotes|"evidence"|"questions"/.test(JSON.stringify(levelBundle))) throw new Error("Reading-level bundle carries discussion material");
+if (!levelContext.window.LiminalReadingLevel || levelContext.window.LiminalReadingLevel.ladderLevels(levelBundle.probes).length !== levelBundle.levels.length) throw new Error("Reading-level logic does not load as a browser script");
+
 // Every page names its icon, which is built with it, so no page asks the
 // server for a favicon.ico that is not there.
 for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "curriculum.html", "weeks.html", "high-school.html", "daily-reading.html"]) {

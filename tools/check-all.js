@@ -35,6 +35,7 @@ const checks = [
   ["node", ["tools/check-courses.js"]],
   ["node", ["tools/check-weekly.js", "--complete"]],
   ["node", ["tools/check-daily-reading.js"]],
+  ["node", ["tools/check-reading-level.js"]],
   ["node", ["tools/build.js"]],
   ["node", ["tools/smoke-static.js"]],
   ["node", ["tools/check-guides.js"]],

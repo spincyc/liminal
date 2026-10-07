@@ -1,0 +1,852 @@
+{
+  "schemaVersion": 1,
+  "title": "Reading-level calibration probes",
+  "review": {
+    "status": "unreviewed",
+    "note": "Original items awaiting the required independent review; see docs/reading-level.md."
+  },
+  "probes": [
+    {
+      "id": "rl-1-a",
+      "level": 1,
+      "form": "a",
+      "dayId": "reading-1-w09-d2",
+      "textHash": "8ac3085527c8c529bb8eaf3f9afcbf4b10771525d177b6391eb1eb20fbd662cd",
+      "intro": "A short fable about two animals who invite each other to dinner.",
+      "items": [
+        {
+          "id": "rl-1-a-1",
+          "skill": "literal",
+          "stem": "What did the Fox give the Stork for dinner?",
+          "options": [
+            "Food in a jar with a long neck",
+            "Soup in a very shallow dish",
+            "Fish on a large plate",
+            "Bread in a basket"
+          ],
+          "key": 1,
+          "rationale": "The Fox “put nothing before her but some soup in a very shallow dish.”"
+        },
+        {
+          "id": "rl-1-a-2",
+          "skill": "inference",
+          "stem": "Why could the Fox not eat at the Stork’s house?",
+          "options": [
+            "He did not like the soup",
+            "The Stork had eaten all of the food before he came",
+            "He was too full from his own dinner",
+            "His snout would not fit into the narrow jar"
+          ],
+          "key": 3,
+          "rationale": "The dinner was in a jar “in which the Fox could not insert his snout.”"
+        },
+        {
+          "id": "rl-1-a-3",
+          "skill": "central",
+          "stem": "What does the Stork mean when she says, “One bad turn deserves another”?",
+          "options": [
+            "She tricked the Fox because he tricked her first",
+            "She is sorry that her dinner went badly",
+            "She wants the Fox to cook her a better dinner next time",
+            "Friends should always share their food"
+          ],
+          "key": 0,
+          "rationale": "The Fox served the soup “for a joke” that the Stork could not eat, so she served a dinner the Fox could not reach."
+        }
+      ]
+    },
+    {
+      "id": "rl-1-b",
+      "level": 1,
+      "form": "b",
+      "dayId": "reading-1-w22-d4",
+      "textHash": "737847d408f5775f407a6710bee2a8c33c348aecc006b24d4df8c43ffc5aae9a",
+      "intro": "A science writer explains how honeybees keep the air in their hive fresh.",
+      "items": [
+        {
+          "id": "rl-1-b-1",
+          "skill": "literal",
+          "stem": "Why does the air inside the hive need to be moved?",
+          "options": [
+            "Rain has come in through the open windows of the hive",
+            "The honey has started to spoil",
+            "The crowded bees make it hot and the air bad",
+            "The bees want to go outside to play"
+          ],
+          "key": 2,
+          "rationale": "Where “so many insects are packed closely together the heat will become very great, and the air impure and unwholesome.”"
+        },
+        {
+          "id": "rl-1-b-2",
+          "skill": "vocabulary",
+          "stem": "The bees wave their wings to make “a current of air.” What is a current of air?",
+          "options": [
+            "Air that is moving along",
+            "Air that smells sweet like honey",
+            "A loud buzzing sound",
+            "A small cloud of dust"
+          ],
+          "key": 0,
+          "rationale": "The bees wave their wings “to and fro, producing a current of air,” and so “air is sent into all the passages.”"
+        },
+        {
+          "id": "rl-1-b-3",
+          "skill": "inference",
+          "stem": "Why do more bees stand all over the floor of the hive, fanning with their backs to the entrance?",
+          "options": [
+            "To keep the honey collectors from coming in",
+            "To cool the honey before it is stored",
+            "To guard the hive from other insects",
+            "To send the fresh air farther into the hive"
+          ],
+          "key": 3,
+          "rationale": "Together with the bees at the entrance they fan, “and in this way air is sent into all the passages.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-3-a",
+      "level": 3,
+      "form": "a",
+      "dayId": "reading-3-w10-d5",
+      "textHash": "0e768731a3b9f7cc818ddb3945f0f95cd6ef4cc620045e61414d8fdbc24c192d",
+      "intro": "A nature-study writer explains that a sunflower head is really made of many small flowers.",
+      "items": [
+        {
+          "id": "rl-3-a-1",
+          "skill": "literal",
+          "stem": "What job do the ray, or “banner,” flowers do?",
+          "options": [
+            "They make the seeds",
+            "They keep the buds in the middle safe from the rain",
+            "They store food for the winter",
+            "They attract insects with their bright petals"
+          ],
+          "key": 3,
+          "rationale": "The ray flowers “hold out bright pennants to attract the attention of insects.”"
+        },
+        {
+          "id": "rl-3-a-2",
+          "skill": "central",
+          "stem": "Why does the author call the composite plan “a plan of flower cooperation”?",
+          "options": [
+            "Sunflowers grow best beside other plants",
+            "Many small flowers work together as one flower-head",
+            "Insects help children study the flowers",
+            "Each garden flower blooms at a different time of year"
+          ],
+          "key": 1,
+          "rationale": "In this plan “there are many flowers associated to form a single flower-head.”"
+        },
+        {
+          "id": "rl-3-a-3",
+          "skill": "vocabulary",
+          "stem": "The author calls the garden sunflower “the teacher’s ally.” What does ally mean here?",
+          "options": [
+            "A helper",
+            "An enemy",
+            "A student",
+            "A garden path"
+          ],
+          "key": 0,
+          "rationale": "The sunflower helps “illustrate to the children the story of the composites” because its florets are so large."
+        },
+        {
+          "id": "rl-3-a-4",
+          "skill": "structure",
+          "stem": "How is studying composite flowers different from usual nature-study, according to the author?",
+          "options": [
+            "You need to study them only in spring",
+            "You need a microscope to see any part",
+            "You need to study the single florets one by one",
+            "You need a botanist to pull them apart for you"
+          ],
+          "key": 2,
+          "rationale": "“Ordinarily, in nature-study we do not pull the flowers apart,” but with composites “it is necessary to study the individual florets.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-3-b",
+      "level": 3,
+      "form": "b",
+      "dayId": "reading-3-w24-d3",
+      "textHash": "3b574a39b6a203be4b2f57cd343b3d074f08a53c263f220ea897d77dad299170",
+      "intro": "A nature-study writer describes what she noticed about frogs’ colors, eyes, and ears.",
+      "items": [
+        {
+          "id": "rl-3-b-1",
+          "skill": "structure",
+          "stem": "How is this passage organized?",
+          "options": [
+            "One part on color, one on eyes, and one on ears",
+            "It follows one frog’s life from egg to grown adult",
+            "It gives the steps for catching a frog",
+            "It compares frogs with fish and birds"
+          ],
+          "key": 0,
+          "rationale": "The paragraphs move from the frog’s color to “The eyes of frogs” and then to “The ear.”"
+        },
+        {
+          "id": "rl-3-b-2",
+          "skill": "inference",
+          "stem": "Why is it useful for a frog to be green while a toad is the color of soil?",
+          "options": [
+            "Green frogs are easier for enemies to find",
+            "Toads are older than frogs",
+            "Each one matches the place where it lives",
+            "Frogs need more sunlight than toads"
+          ],
+          "key": 2,
+          "rationale": "“the frog lives among green things, while it is to the toad’s advantage to be the color of the soil.”"
+        },
+        {
+          "id": "rl-3-b-3",
+          "skill": "vocabulary",
+          "stem": "“When the frog winks, the nictitating membrane rises from below and covers the whole eye.” What is the nictitating membrane?",
+          "options": [
+            "The colored ring around the dark middle of the eye",
+            "The flat round ear behind the eye",
+            "A gold spot on the frog’s back",
+            "A thin covering that can close over the eye"
+          ],
+          "key": 3,
+          "rationale": "It “rises from below and covers the whole eye” when the frog winks."
+        },
+        {
+          "id": "rl-3-b-4",
+          "skill": "literal",
+          "stem": "Why does a leopard frog hiding at the bottom of the aquarium let its eyelids fall?",
+          "options": [
+            "Because it is falling asleep",
+            "So its eyes will not shine and give it away",
+            "So it can change the color of its shining eyes",
+            "So it can hear better under water"
+          ],
+          "key": 1,
+          "rationale": "It covers its eyes “so that they do not shine up and attract pursuers.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-5-a",
+      "level": 5,
+      "form": "a",
+      "dayId": "reading-5-w08-d3",
+      "textHash": "4f8db416e9022a9bf9fb6c614be05e04c95d5d2b26c5c33e18bf6bcdc5d57de5",
+      "intro": "In this chapter of a novel, Mary has just met Dickon, the brother of Martha, who works in the house. Martha speaks a Yorkshire dialect: “tha” means “you.”",
+      "items": [
+        {
+          "id": "rl-5-a-1",
+          "skill": "inference",
+          "stem": "Why does Mary keep praising Dickon’s turned-up nose, round eyes, and big mouth?",
+          "options": [
+            "She is teasing Martha by pretending she likes how he looks",
+            "She agrees that Dickon is not handsome",
+            "She admires him and won’t let Martha’s doubts change that",
+            "She wants Martha to stop talking about him"
+          ],
+          "key": 2,
+          "rationale": "Mary answers each of Martha’s doubts with praise: “I like it to turn up” and “I like them round.”"
+        },
+        {
+          "id": "rl-5-a-2",
+          "skill": "vocabulary",
+          "stem": "“I love his big mouth,” said Mary obstinately. What does obstinately mean?",
+          "options": [
+            "Stubbornly, refusing to give way",
+            "Shyly, in a quiet voice",
+            "Sadly, as if about to cry",
+            "Jokingly, as if she does not mean it"
+          ],
+          "key": 0,
+          "rationale": "Mary keeps defending each feature after Martha’s doubts, ending with “I wish mine were just like it.”"
+        },
+        {
+          "id": "rl-5-a-3",
+          "skill": "literal",
+          "stem": "Whom does Martha advise Mary to ask for a place to plant the seeds?",
+          "options": [
+            "Mr. Roach, the head gardener",
+            "Ben Weatherstaff",
+            "Mr. Craven",
+            "Dickon"
+          ],
+          "key": 1,
+          "rationale": "Martha says, “If I was you, I'd ask Ben Weatherstaff.”"
+        },
+        {
+          "id": "rl-5-a-4",
+          "skill": "inference",
+          "stem": "Why is Mary frightened when Martha asks where the flowers will be planted?",
+          "options": [
+            "She has lost the seeds Dickon brought",
+            "She does not know how to use the tools",
+            "She thinks Martha wants to use the seeds in her own garden",
+            "She has no permission and fears she may not get a place"
+          ],
+          "key": 3,
+          "rationale": "Mary admits, “I haven't asked anybody yet,” and anxiously hopes no one could “mind my having it.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-5-b",
+      "level": 5,
+      "form": "b",
+      "dayId": "reading-5-w27-d2",
+      "textHash": "a86c3a3e5993c473c2a1681323f1347112683d702933b611489868d907c290cf",
+      "intro": "In this retelling of a Greek myth, the heroes of the ship Argo sail into an unknown sea.",
+      "items": [
+        {
+          "id": "rl-5-b-1",
+          "skill": "literal",
+          "stem": "Why were the heroes afraid as they sailed into the Black Sea?",
+          "options": [
+            "Their ship had been badly damaged in a storm on the way",
+            "No Greek had crossed it, and strange stories were told of it",
+            "Orpheus had told them that the goddess Hera was against them",
+            "They had run out of food and water"
+          ],
+          "key": 1,
+          "rationale": "“No Hellen had ever crossed it,” and people “told strange stories of it.”"
+        },
+        {
+          "id": "rl-5-b-2",
+          "skill": "vocabulary",
+          "stem": "Tiphys is called “the cunning helmsman.” What does cunning mean here?",
+          "options": [
+            "Dishonest and sly",
+            "Frightened and weak",
+            "Proud and boastful",
+            "Skillful and clever"
+          ],
+          "key": 3,
+          "rationale": "Tiphys watches until he can follow the heron, which he calls “the cunning bird,” through the one gap."
+        },
+        {
+          "id": "rl-5-b-3",
+          "skill": "inference",
+          "stem": "Why does Tiphys stand silent before steering between the rocks?",
+          "options": [
+            "He has decided to turn the ship around",
+            "He is angry with Orpheus for frightening the crew",
+            "He is watching for a sign of a safe way through",
+            "He is waiting for the rocks to sink"
+          ],
+          "key": 2,
+          "rationale": "He stood silent “till he saw a heron” that seemed to be “looking for a passage through,” then followed it."
+        },
+        {
+          "id": "rl-5-b-4",
+          "skill": "structure",
+          "stem": "Why does the author say the rocks struck “but a feather from his tail”?",
+          "options": [
+            "To show how narrowly the heron escaped",
+            "To show that the heron was badly hurt",
+            "To explain why the heron left the ship",
+            "To show that the rocks were made of glass"
+          ],
+          "key": 0,
+          "rationale": "The rocks “clashed together as the bird fled swiftly through,” missing it by only a feather."
+        }
+      ]
+    },
+    {
+      "id": "rl-6-a",
+      "level": 6,
+      "form": "a",
+      "dayId": "reading-6-w04-d2",
+      "textHash": "1a54707b9dba684fa2e9e36692d1a3c617a2f0a11d93890f545de77236f4992a",
+      "intro": "A nineteenth-century country writer describes something strange he saw one summer evening after a day of rain.",
+      "items": [
+        {
+          "id": "rl-6-a-1",
+          "skill": "literal",
+          "stem": "What first made the writer go back and look through the gap again?",
+          "options": [
+            "A rabbit came out from behind a bush near the gap",
+            "He heard the sound of a steam plough at work on the hill",
+            "The rain suddenly began again",
+            "The hill looked far higher than he had ever noticed"
+          ],
+          "key": 3,
+          "rationale": "That part of the hills looked “remarkably high,” and it seemed “singular” that he had never noticed it."
+        },
+        {
+          "id": "rl-6-a-2",
+          "skill": "inference",
+          "stem": "What made the hill look like a mountain?",
+          "options": [
+            "A dark cloud resting on it had taken its exact shape",
+            "Rain had washed away the hedges around it",
+            "Smoke from a steam plough at work had piled up above it",
+            "The setting sun lit the hill from below"
+          ],
+          "key": 0,
+          "rationale": "“Upon the central hill a cloud was resting, and had for the time taken its exact shape.”"
+        },
+        {
+          "id": "rl-6-a-3",
+          "skill": "structure",
+          "stem": "Why did climbing onto the mound show him the cause?",
+          "options": [
+            "The cloud lifted off the hill as soon as he climbed onto the mound",
+            "From up there the barn and the clump of trees looked much smaller",
+            "He saw the whole range, with the hills on each side at normal height",
+            "The mound was higher than the hill itself"
+          ],
+          "key": 2,
+          "rationale": "From the mound “the whole range of hills could be seen,” and the down to “right and left remained still at its former level.”"
+        },
+        {
+          "id": "rl-6-a-4",
+          "skill": "vocabulary",
+          "stem": "“nor could the eye separate the hill from the unsubstantial vapour.” What does unsubstantial mean here?",
+          "options": [
+            "Very dark",
+            "Not solid",
+            "Slow-moving",
+            "Dangerous"
+          ],
+          "key": 1,
+          "rationale": "The vapour is cloud, which later lifted and “slowly sailed eastwards with the wind,” unlike the solid hill."
+        }
+      ]
+    },
+    {
+      "id": "rl-6-b",
+      "level": 6,
+      "form": "b",
+      "dayId": "reading-6-w20-d4",
+      "textHash": "f1107190d640b482627959fc66b5231da88d531fddf8fa4746b9592aa174a1dc",
+      "intro": "A nineteenth-century country writer describes how birds travel to an orchard on a farm.",
+      "items": [
+        {
+          "id": "rl-6-b-1",
+          "skill": "central",
+          "stem": "What is the main idea of the passage?",
+          "options": [
+            "Birds use certain hedges as regular routes to favorite places",
+            "The orchard at Wick grows the best apples and damsons nearby",
+            "Finches are the only birds that ever visit the orchard at Wick",
+            "Hedges should be cut back to keep birds away"
+          ],
+          "key": 0,
+          "rationale": "The hedge is “a favourite highway of birds and other wild creatures, and leads direct to the orchard.”"
+        },
+        {
+          "id": "rl-6-b-2",
+          "skill": "structure",
+          "stem": "The writer calls the hedge a “highway” and a “caravan route.” What do these comparisons suggest?",
+          "options": [
+            "The hedge is noisy and dangerous",
+            "Many travellers use the same path again and again",
+            "The birds travel only at night",
+            "People planted the hedge long ago to help birds travel"
+          ],
+          "key": 1,
+          "rationale": "Birds are “constantly passing up or down it,” as travellers use a road."
+        },
+        {
+          "id": "rl-6-b-3",
+          "skill": "inference",
+          "stem": "Which detail best shows that birds prefer this hedge in particular?",
+          "options": [
+            "The hedge holds hazel, willow, and maple",
+            "A little stream runs down the ditch",
+            "Greenfinches travel along it in pairs, calling softly",
+            "A parallel hedge 150 yards away is nearly deserted"
+          ],
+          "key": 3,
+          "rationale": "Another hedge nearby “is comparatively deserted,” and there “You may wait there in vain and see nothing but a robin.”"
+        },
+        {
+          "id": "rl-6-b-4",
+          "skill": "vocabulary",
+          "stem": "“their contented notes gradually become inaudible as they go towards the orchard.” What does inaudible mean?",
+          "options": [
+            "Louder and much clearer",
+            "Sad and lonely",
+            "Too faint to be heard",
+            "Out of tune"
+          ],
+          "key": 2,
+          "rationale": "The finches are moving away “towards the orchard,” so their calls fade until they cannot be heard."
+        }
+      ]
+    },
+    {
+      "id": "rl-9-a",
+      "level": 9,
+      "form": "a",
+      "dayId": "reading-9-w11-d3",
+      "textHash": "a53286cfb90a88662305570be4d4f284aa769a1488c9bb1e3a9a1d5a1f089e13",
+      "intro": "Frederick Douglass, then enslaved in Baltimore, had been badly beaten by workers at Mr. Gardner’s shipyard. Calking means sealing the seams of a ship.",
+      "items": [
+        {
+          "id": "rl-9-a-1",
+          "skill": "vocabulary",
+          "stem": "“Master Hugh, finding he could get no redress, refused to let me go back again to Mr. Gardner.” What does redress mean here?",
+          "options": [
+            "A new set of work clothes",
+            "Permission to leave the city of Baltimore",
+            "A remedy or payment for a wrong",
+            "An apology from Douglass"
+          ],
+          "key": 2,
+          "rationale": "Douglass had been hurt at Gardner’s yard, so “his wife dressed my wound,” and Hugh could get nothing to set that wrong right."
+        },
+        {
+          "id": "rl-9-a-2",
+          "skill": "literal",
+          "stem": "How did Douglass’s working life change after he learned to calk?",
+          "options": [
+            "He worked only for Master Hugh, who also set all his wages",
+            "He found his own jobs and contracts and collected his pay",
+            "He earned less than the other calkers",
+            "He was sent back to Mr. Gardner’s shipyard"
+          ],
+          "key": 1,
+          "rationale": "“I sought my own employment, made my own contracts, and collected the money which I earned.”"
+        },
+        {
+          "id": "rl-9-a-3",
+          "skill": "central",
+          "stem": "What does Douglass conclude about how better conditions affected him?",
+          "options": [
+            "They made him content to remain enslaved",
+            "They made him forget about freedom",
+            "They made him trust Master Hugh and want to please him",
+            "They made him want freedom more, not feel content"
+          ],
+          "key": 3,
+          "rationale": "“whenever my condition was improved, instead of its increasing my contentment, it only increased my desire to be free.”"
+        },
+        {
+          "id": "rl-9-a-4",
+          "skill": "structure",
+          "stem": "Why does Douglass list “Not because he earned it,—not because he had any hand in earning it”?",
+          "options": [
+            "To rule out every justification, leaving only force",
+            "To show that Master Hugh helped him earn the money",
+            "To explain how wages in the shipyard were calculated each week",
+            "To admit that he was unsure why he paid"
+          ],
+          "key": 0,
+          "rationale": "After the list he concludes that Hugh took the money “solely because he had the power to compel me to give it up.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-9-b",
+      "level": 9,
+      "form": "b",
+      "dayId": "reading-9-w23-d3",
+      "textHash": "2a600611c3449bf8728078e0cd11309f5d64be2e821c1ded63c35e9d92bdb650",
+      "intro": "Benjamin Franklin recalls teaching himself languages as an adult. His eighteenth-century spellings, such as “us'd” for “used,” are kept.",
+      "items": [
+        {
+          "id": "rl-9-b-1",
+          "skill": "literal",
+          "stem": "How did Franklin and his acquaintance use chess to study Italian?",
+          "options": [
+            "They spoke only Italian to each other while they played",
+            "The winner of each game set the loser a study task",
+            "The loser paid for the winner’s lessons",
+            "They stopped playing chess altogether"
+          ],
+          "key": 1,
+          "rationale": "“the victor in every game should have a right to impose a task” of grammar or translation."
+        },
+        {
+          "id": "rl-9-b-2",
+          "skill": "inference",
+          "stem": "Why did Franklin understand more Latin than he expected?",
+          "options": [
+            "He had studied Latin for many years as a boy",
+            "The Latin Testament included a translation",
+            "His chess partner had been secretly teaching him Latin",
+            "French, Italian, and Spanish had prepared him for it"
+          ],
+          "key": 3,
+          "rationale": "He found he did better because “those preceding languages had greatly smooth'd my way.”"
+        },
+        {
+          "id": "rl-9-b-3",
+          "skill": "structure",
+          "stem": "In Franklin’s staircase comparison, what do the lowest steps stand for?",
+          "options": [
+            "Modern languages, such as French",
+            "Greek, an older language than Latin",
+            "Latin, which he says should come first",
+            "Lessons for very young children"
+          ],
+          "key": 0,
+          "rationale": "He argues “if you begin with the lowest you will with more ease ascend to the top,” then proposes beginning with French."
+        },
+        {
+          "id": "rl-9-b-4",
+          "skill": "central",
+          "stem": "What does Franklin suggest to those in charge of educating young people?",
+          "options": [
+            "Begin with Greek so that learning Latin is easier later",
+            "Stop teaching languages to most students",
+            "Consider teaching modern languages before Latin",
+            "Use games like chess to teach Latin"
+          ],
+          "key": 2,
+          "rationale": "He asks whether “it would not have been better to have begun with the French, proceeding to the Italian.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-11-a",
+      "level": 11,
+      "form": "a",
+      "dayId": "reading-11-w12-d4",
+      "textHash": "2e27f12c519ee4077754dabdd3d40b83670d00763f4f6b6055c5c6f7f818c504",
+      "intro": "In this section of an 1837 address, Ralph Waldo Emerson describes nature as the first influence on a scholar’s mind. Bracketed numbers are reference marks from the printed edition.",
+      "items": [
+        {
+          "id": "rl-11-a-1",
+          "skill": "literal",
+          "stem": "According to the passage, how does a young mind’s understanding of nature develop?",
+          "options": [
+            "It learns general laws first, then notices each separate thing",
+            "It studies books first, then turns to nature",
+            "It classifies things, then forgets the classes",
+            "It sees things as separate, then joins them under shared laws"
+          ],
+          "key": 3,
+          "rationale": "“To the young mind everything is individual,” but “By and by it finds how to join two things and see in them one nature.”"
+        },
+        {
+          "id": "rl-11-a-2",
+          "skill": "vocabulary",
+          "stem": "“The ambitious soul sits down before each refractory fact.” What does refractory mean here?",
+          "options": [
+            "Bending light, as a lens or prism does",
+            "Recently discovered by science",
+            "Stubborn; hard to explain or classify",
+            "Of little importance to the mind"
+          ],
+          "key": 2,
+          "rationale": "The soul “reduces all strange constitutions, all new powers, to their class and their law,” so a refractory fact is one that resists that order."
+        },
+        {
+          "id": "rl-11-a-3",
+          "skill": "structure",
+          "stem": "Of nature and the soul, Emerson writes, “One is seal and one is print.” What relationship does this image express?",
+          "options": [
+            "They match part for part, like a stamp and its mark",
+            "Nature is a book that the soul must print and read",
+            "The soul is sealed away from nature and cannot touch it",
+            "Nature copies the soul, but poorly"
+          ],
+          "key": 0,
+          "rationale": "Just before the image he says nature is the soul’s opposite, “answering to it part for part.”"
+        },
+        {
+          "id": "rl-11-a-4",
+          "skill": "central",
+          "stem": "What does Emerson conclude in the final sentences?",
+          "options": [
+            "Science should replace the study of the self",
+            "Studying nature and knowing oneself become one task",
+            "Nature can never be understood by the mind",
+            "Ancient wisdom matters more than modern science does"
+          ],
+          "key": 1,
+          "rationale": "The precepts “Know thyself” and “Study nature” “become at last one maxim.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-11-b",
+      "level": 11,
+      "form": "b",
+      "dayId": "reading-11-w28-d5",
+      "textHash": "7fa6f500bf61d239b6af848af116ce1f3db8080572edc94bcf9f80dcea71252f",
+      "intro": "In this chapter of Walden (1854), Henry David Thoreau writes about books and what it means to read well.",
+      "items": [
+        {
+          "id": "rl-11-b-1",
+          "skill": "central",
+          "stem": "What does Thoreau claim about real reading in the final paragraph?",
+          "options": [
+            "It is demanding work for our most alert hours",
+            "It should give way to direct experience",
+            "It matters less than knowing how to keep accounts",
+            "It is easy once a person knows the alphabet"
+          ],
+          "key": 0,
+          "rationale": "True reading is “what we have to stand on tiptoe to read and devote our most alert and wakeful hours to.”"
+        },
+        {
+          "id": "rl-11-b-2",
+          "skill": "structure",
+          "stem": "Thoreau says most people read the great poets “as the multitude read the stars, at most astrologically, not astronomically.” What does this suggest?",
+          "options": [
+            "They read poetry only at night, by the light of the stars",
+            "They prefer the science of astronomy to reading poetry",
+            "They read only poems about the stars",
+            "They read for fanciful meanings, not with careful study"
+          ],
+          "key": 3,
+          "rationale": "He contrasts such reading with reading as “a noble intellectual exercise,” of which most men “know little or nothing.”"
+        },
+        {
+          "id": "rl-11-b-3",
+          "skill": "inference",
+          "stem": "Why, according to Thoreau, does the wealthy trader work to give his children intellectual culture?",
+          "options": [
+            "He wants his children to become traders too",
+            "He feels his riches cannot replace the culture he lacks",
+            "He has read the classics himself and wants to share them",
+            "Society requires it of every wealthy family"
+          ],
+          "key": 1,
+          "rationale": "The trader feels “the vanity and insufficiency of all his riches” and the culture “whose want he so keenly feels.”"
+        },
+        {
+          "id": "rl-11-b-4",
+          "skill": "vocabulary",
+          "stem": "“Most men have learned to read to serve a paltry convenience.” What does paltry mean?",
+          "options": [
+            "Generous and helpful",
+            "Ancient and respected",
+            "Small and unimportant",
+            "Strict and required"
+          ],
+          "key": 2,
+          "rationale": "Thoreau sets this use beside learning “to cipher in order to keep accounts,” a minor aim next to reading as “a noble intellectual exercise.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-12-a",
+      "level": 12,
+      "form": "a",
+      "dayId": "reading-12-w14-d3",
+      "textHash": "8ba371a28d580866a5d11237bfae1a45c6bfbb0ddc46d8faf34dd7f463aea255",
+      "intro": "In this dialogue from Plato’s Republic (Benjamin Jowett’s translation), Socrates, who narrates (“I said”), discusses with Glaucon what young people should study.",
+      "items": [
+        {
+          "id": "rl-12-a-1",
+          "skill": "vocabulary",
+          "stem": "Socrates says geometry concerns them if it “compels us to view being,” but not if it shows “becoming only.” What does becoming mean here?",
+          "options": [
+            "What is attractive or suitable",
+            "What is still being proved",
+            "What changes and passes away",
+            "What is useful in war"
+          ],
+          "key": 2,
+          "rationale": "He soon sets “the eternal” against what is “perishing and transient.”"
+        },
+        {
+          "id": "rl-12-a-2",
+          "skill": "central",
+          "stem": "What does Socrates argue is the main reason to study geometry?",
+          "options": [
+            "It draws the soul toward knowledge of the eternal",
+            "It teaches generals how to arrange their armies in battle",
+            "It prepares people for trade and accounts",
+            "It is the easiest science to learn"
+          ],
+          "key": 0,
+          "rationale": "“geometry will draw the soul toward truth, and create the spirit of philosophy.”"
+        },
+        {
+          "id": "rl-12-a-3",
+          "skill": "inference",
+          "stem": "Why does Socrates call the usual language of geometricians “narrow and ridiculous”?",
+          "options": [
+            "They use words that are too difficult for young students",
+            "They refuse to apply geometry to war",
+            "They argue among themselves about every proof they make",
+            "They treat geometry as practical work, not as knowledge"
+          ],
+          "key": 3,
+          "rationale": "They “confuse the necessities of geometry with those of daily life; whereas knowledge is the real object of the whole science.”"
+        },
+        {
+          "id": "rl-12-a-4",
+          "skill": "structure",
+          "stem": "What is the role of Socrates’s closing mention of geometry’s “indirect effects”?",
+          "options": [
+            "It takes back his earlier argument about the soul",
+            "It admits practical benefits but ranks them second",
+            "It shows that Glaucon’s military reason is the main one",
+            "It introduces a new subject, arithmetic"
+          ],
+          "key": 1,
+          "rationale": "He names “the military advantages of which you spoke” only after the main argument, as effects that are “indirect.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-12-b",
+      "level": 12,
+      "form": "b",
+      "dayId": "reading-12-w23-d3",
+      "textHash": "e2b1411a568651a297e546320bbdb6ed03fdccedef337bb83108ec4dede4b0b9",
+      "intro": "In this chapter of The Problems of Philosophy (1912), Bertrand Russell asks what makes a true belief count as knowledge. His examples refer to British prime ministers and newspapers of his day.",
+      "items": [
+        {
+          "id": "rl-12-b-1",
+          "skill": "inference",
+          "stem": "Why does Russell reject defining knowledge simply as “true belief”?",
+          "options": [
+            "No belief can ever be completely true",
+            "A belief can be true by luck or come from a false belief",
+            "Knowledge needs an official source, such as a telegram report",
+            "True beliefs are always reached by valid reasoning"
+          ],
+          "key": 1,
+          "rationale": "Readers of a lucky newspaper forecast believe the right result, but “they cannot be said to have knowledge.”"
+        },
+        {
+          "id": "rl-12-b-2",
+          "skill": "structure",
+          "stem": "What does the example about Socrates being a Greek illustrate?",
+          "options": [
+            "False premisses can still make a perfectly valid argument",
+            "Historical facts about the life of Socrates are uncertain",
+            "A true conclusion is not knowledge if it does not follow",
+            "Intuitive knowledge cannot be defined"
+          ],
+          "key": 2,
+          "rationale": "Though premisses and conclusion are true, “the conclusion does not follow from the premisses.”"
+        },
+        {
+          "id": "rl-12-b-3",
+          "skill": "vocabulary",
+          "stem": "Why does Russell call the definition “knowledge is what is validly deduced from known premisses” circular?",
+          "options": [
+            "It uses the idea of knowing to define knowing",
+            "It returns at the end to the example it began with",
+            "It covers too many cases",
+            "It depends on a false belief"
+          ],
+          "key": 0,
+          "rationale": "He says “it assumes that we already know what is meant by” known premisses."
+        },
+        {
+          "id": "rl-12-b-4",
+          "skill": "central",
+          "stem": "What does Russell conclude about the idea of knowledge at the end of the passage?",
+          "options": [
+            "It can be defined exactly as deduction from known premisses",
+            "It is the same thing as true belief",
+            "It applies only to intuitive knowledge",
+            "It is not precise and shades into probable opinion"
+          ],
+          "key": 3,
+          "rationale": "“knowledge” “is not a precise conception: it merges into” probable opinion."
+        }
+      ]
+    }
+  ]
+}
