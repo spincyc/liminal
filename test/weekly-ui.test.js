@@ -65,6 +65,27 @@ test("answer export contains worked reasoning for the selected worksheet only", 
   assert.doesNotMatch(html, /ANSWER_SECRET_a|ANSWER_SECRET_b|EXAMPLE_SECRET|COURSE_PRIVATE|class="weekly-workspace"/);
 }));
 
+test("export keeps the full final workspace or solution with attribution in one print unit", () => withDOM(() => {
+  for (const answers of [false, true]) {
+    const course = courseFixture();
+    const sheet = course.weeks[0].worksheets[0];
+    sheet.items.push({ ...sheet.items[0], id: "last-item", prompt: "A final question." });
+    const packet = answers ? W.answerWorksheet(course, 1, "a") : W.studentWorksheet(course, 1, "a");
+    const doc = R.exportDocument(packet, answers, "", "https://example.org/weeks.html#common-core-reading/12/1");
+    const main = doc.body.children[0];
+    const worksheet = main.children.find(node => node.className === "weekly-worksheet");
+    const items = worksheet.children.find(node => node.className === "weekly-items");
+    assert.equal(items.children.length, 2);
+    assert.equal(items.children[0].children.some(node => node.tagName === "footer"), false);
+    const last = items.children[1];
+    const footer = last.children.at(-1);
+    assert.equal(footer.tagName, "footer"); assert.match(footer.outerHTML, /Coursework source/);
+    assert.equal(last.children.at(-2).className, answers ? "weekly-answer" : "weekly-workspace");
+    assert.match(doc.documentElement.outerHTML, /min-height:38mm/);
+    assert.match(doc.documentElement.outerHTML, /\.weekly-items&gt;li\{break-inside:avoid\}/);
+  }
+}));
+
 test("worked examples reveal solutions on request and use the existing accessible math renderer", () => withDOM(() => {
   const course = courseFixture("common-core-math"); const week = course.weeks[0];
   week.examples[0].prompt = "Evaluate 3/5 + x^2.";

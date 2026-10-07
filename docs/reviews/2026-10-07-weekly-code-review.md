@@ -6,7 +6,7 @@ Reviewer: `code_cold_review`. Date: 2026-10-07. Status: **no outstanding substan
 
 Read the authoring contract, weekly builder, pure routing/projection library, reader, renderer, page, styles, tests, build/smoke integration, and home/course/year-plan entry links. Inspected exact bounded routes and fallback behavior, course identity checks, lazy loading, stale-request guards, keyboard focus behavior, source URL admission, text rendering, student/teacher separation, print rules, and duplicate identities.
 
-`/usr/bin/node --test test/weekly*.test.js | tail` passed **13 tests, 0 failures** after the repairs below. The suite exercises negative schema cases, routing, references, duplicate tasks, source provenance, allowlisted student projections, serialized exports, separated reading views, passage navigation, course qualifications, and fixture builds. Those fixture builds use test scratch directories and remove their temporary outputs; this reviewer did not rebuild `dist/`, start a server, commit, or push. Syntax checks and `git diff --check` also passed.
+`/usr/bin/node --test test/weekly*.test.js | tail` passed **14 tests, 0 failures** after the repairs below. The suite exercises negative schema cases, routing, references, duplicate tasks, source provenance, allowlisted student projections, serialized exports, separated reading views, passage navigation, course qualifications, final-question/footer grouping, and fixture builds. Those fixture builds use test scratch directories and remove their temporary outputs; this reviewer did not rebuild `dist/`, start a server, commit, or push. Syntax checks and `git diff --check` also passed.
 
 The reader's request counter prevents stale requests from replacing the current content or error state. Student exports are built from an explicit projection and a separate document: selected prompts and assigned passages remain, while answers, reasoning, guided examples, unassigned passages, and added teacher fields are excluded. Tests inspect serialized HTML, including escaped markup. Native page printing hides teacher keys; separate key exports intentionally include them. Actual browser interaction, print pagination, popup behavior, and mobile layout remain coordinator checks.
 
@@ -19,6 +19,8 @@ Rechecked the compact mobile revision: short grade/week selects, 16px control te
 **Native printing after the tab redesign omitted referenced passages.** Lazy hidden Read panels initially stayed absent when printing Learn or Worksheets through the browser. The UI author added `beforeprint` preparation that builds/reveals Read without changing the selected tab, then restores its hidden state after printing. Existing print rules continue to hide answer keys. Inspected and exercised the corrected orchestration; finding closed at code level, with actual print pagination remaining a browser check.
 
 **Coordinator-reported inequality admission false positive: closure verified.** The original broad angle-bracket matcher rejected valid comparisons such as `For 0<x<1, x^2<x; for x>1, x^2>x.` The revised authoring check recognizes syntactically shaped markup, while its regression cases accept those comparisons and continue rejecting representative tags, event attributes, and comments. Escaped/text-node rendering remains the security boundary; this heuristic is not an HTML sanitizer.
+
+**Final export-footer pagination repair: code review complete.** Inspected the later renderer/test diff that appends the attribution footer after the final exercise's full workspace or solution, inside the existing list item's `break-inside: avoid` unit. It preserves worksheet item count and order and uses the same explicitly constructed text/link nodes. Student projection and answer-key selection are unchanged; serialized separation tests still pass. The new regression covers both student and key exports and retains the 38mm student workspace. No new code finding; CSS break avoidance is advisory, so actual PDF pagination remains the print reviewer's closure check.
 
 An initially suspected encoded-fragment defect was withdrawn after checking the [HTML fragment-selection algorithm](https://html.spec.whatwg.org/multipage/browsing-the-web.html#select-the-indicated-part): it attempts raw-ID matching before percent-decoded matching. The existing export anchors therefore have a valid native target. No repair was required on that evidence.
 
@@ -36,11 +38,11 @@ Duplicate admission compares normalized prompts and resolved passage text. It ca
 801798a631121ffcdd8086df5e95951fa351bb1b973b03790b20842809a65289  tools/build-weekly.js
 6eb6eb09d8336300259d25fc987d4f7ba8eff8e048a254414471f74e7faaa5ae  src/lib/weekly.js
 54464dbdf27fdc879e80f68b4469ed357f55f3b36d3a5d337a4733c9e3638fd6  src/app/weekly.js
-940576977c9f69b938f4244200e85d00ff5a392eb399883c8ca4b0344d95354d  src/app/weekly-render.js
+beb9a03f6980100c0f0db4e2af149b09fdcca7b5e163c792d478d5562f88238a  src/app/weekly-render.js
 d941134528839c2435354b1f357ab865450fdfdd804d3d0f0cb7760212e24330  src/weeks.html
 e509a94f7462767261b6851ad94094776a01139bee617321fdb0a8475fe17b5d  src/styles/weekly.css
 484c03a933c6ba94ac1a10709d2ccbadbf8f2273453f9d88d57f8bccd7538636  test/weekly.test.js
-f8b131c6958692af2da6f9f5fe9cc99cc81317e5eaed577fcad5269f0a07f547  test/weekly-ui.test.js
+53d06649920bdf3eec15d878131bb6ca88e1b218ed346b5869ac76ba3fa0035e  test/weekly-ui.test.js
 b0b82ec8372f360362bf81fec6acb35c7ee095be170f86b13bf1bb748137ecf0  tools/build.js
 5fc724f07b37664310585c9efe1c85dc8943ff532aec4bf0ff34cacd00cae33e  tools/smoke-static.js
 3e9fe5b2cdfd0c1137fc265790a429d7f25a18c296e93d935f02afd7085d4417  src/app/curriculum.js

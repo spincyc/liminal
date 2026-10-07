@@ -95,12 +95,16 @@
     body.append(el("h4", "Worksheet " + sheet.id.toUpperCase() + " · " + sheet.title), rich(sheet.directions, math));
     if (options.includePassages) body.append(passagesBlock(packet.passages, math, "sheet"));
     const items = el("ol", undefined, "weekly-items");
-    sheet.items.forEach(item => {
+    sheet.items.forEach((item, index) => {
       const li = el("li"); li.append(rich(item.prompt, math), passageLinks(item, packet.passages, options.includePassages ? "sheet" : "week", options.onRead));
       if (answers) li.append(solution(item, math));
       else { const space = el("div", undefined, "weekly-workspace"); space.setAttribute("aria-hidden", "true"); li.append(space); }
+      // The final exercise is an existing unbreakable print unit. Keep the
+      // document credit after its full workspace, rather than on a new sheet.
+      if (options.footer && index === sheet.items.length - 1) li.append(options.footer);
       items.append(li);
     });
+    if (options.footer && !sheet.items.length) body.append(options.footer);
     body.append(items); return body;
   }
   function brand() {
@@ -138,13 +142,13 @@
     const context = window.LiminalWeekly.courseContext(packet.trackId, packet.grade);
     if (context) heading.append(el("p", context, "weekly-context"));
     if (!answers) heading.append(el("p", "Name: __________________________  Date: ______________"));
-    main.append(heading, worksheet(packet, answers, { includePassages: true }));
     const footer = el("footer", undefined, "weekly-footer");
     footer.append(el("p", "Original Liminal coursework. " + NOTICE));
     if (/^https?:\/\//i.test(sourceUrl)) {
       const source = el("p", "Coursework source: "); source.append(link(sourceUrl, sourceUrl)); footer.append(source);
     }
-    main.append(footer); doc.body.append(main); return doc;
+    main.append(heading, worksheet(packet, answers, { includePassages: true, footer }));
+    doc.body.append(main); return doc;
   }
   return { el, link, rich, section, disclosure, guide, reading, worksheet, exportDocument, NOTICE };
 });
