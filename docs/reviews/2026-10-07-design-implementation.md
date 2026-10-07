@@ -20,9 +20,10 @@ clearly named sections. No unavailable grade or subject is presented as a
 working course. The current inventory remains 36 lessons across four Grade 8
 topics, alongside test preparation.
 
-Home, Courses, Practice, Learn, Print, Progress, and Review share cream and
+At the initial rollout, Home, Courses, Practice, Learn, Print, Progress, and Review shared cream and
 green colors, the arch mark, serif headings, restrained controls, and readable
-functional text. The assessment shell retains its distinct test interface.
+functional text. The test-prep treatment was subsequently revised in the
+follow-up below. The assessment shell retains its distinct test interface.
 The phone homepage omits the large decorative illustration and reduces the
 framing before course selection. The course reader offers immediate lesson
 practice; packet quantities and replay controls remain available in disclosures.
@@ -130,3 +131,34 @@ examples across subjects and ages. No claim is made that these changes have
 measured effects on handwriting, mastery, or study time. The useful next review
 is observation of students and parents using the material, including readers
 who use enlarged text or assistive technology.
+
+## Follow-up: retain the test-prep finish
+
+After deployment, the owner found that the visual unification reduced the
+polish of test prep. Comparison with `27922a0` showed that the combined changes
+to color, heading type, card depth, control shape, and onboarding grouping had
+flattened the working interface. Sharing a brand does not require every task
+to use the same surface treatment.
+
+`styles/test-prep.css` now applies only to the three test-prep entry pages,
+identified by `data-area="test-prep"`: Practice (including Progress, Review,
+and Tips), Learn, and Booklets. It restores neutral surfaces, blue actions,
+bold sans-serif headings, rounded controls, subtle card shadows, and distinct
+onboarding steps. The arch and serif wordmark remain shared with the warm
+library and course pages; their brand colors are independent of action colors.
+The distinction follows the task, not the student's age.
+
+The stylesheet is scoped to screen media and the outer application. It retains
+the assessment shell's fixed light interface, the larger Learn reading measure
+and line spacing, 44px targets, seven-link phone navigation, stacked Review
+counts, and responsive Progress tables. No content, scoring, navigation logic,
+or generated booklet styles change.
+
+Browser verification covered 320, 390, 768, and 1440px in light and dark modes.
+Populated screens used 240 generated attempts, eight sessions, and 130
+Due/Missed/Marked counts; their controls and table values did not clip or cause
+page overflow. A live practice session retained its original colors and
+controls, including saving, reloading, and resuming. Printing the same Learn
+lesson with backgrounds disabled produced seven pages whose extracted text
+and layout exactly matched the previous print proof. The full repository
+gate and an independent design review were repeated for this refinement.

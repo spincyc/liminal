@@ -1,6 +1,7 @@
-/* The outer product uses warm paper, green ink, and serif display type.
-   Reading and controls use system sans. The active assessment shell keeps
-   its separate fixed light palette and familiar control shapes below. */
+/* The library uses warm paper and green ink. test-prep.css supplies neutral
+   surfaces and blue actions for its working screens. Shared type sizes,
+   focus targets and print tokens apply to both. The active assessment shell
+   keeps its fixed light palette and familiar control shapes below. */
 
 :root {
   /* Type */

@@ -1,0 +1,164 @@
+/* Test prep is a working interface within the Liminal library. Its neutral
+   surfaces, blue actions and compact sans headings serve controls and data;
+   the arch and serif wordmark retain the shared identity. Screen only: the
+   shared monochrome print rules and exported booklets own paper presentation. */
+@media screen {
+  :root[data-area="test-prep"] {
+    color-scheme: light;
+    --radius-sm: 6px;
+    --radius: 10px;
+    --radius-lg: 14px;
+    --color-page: #f5f6f8;
+    --color-surface: #fff;
+    --color-ink: #1a1c20;
+    --color-muted: #4d525b;
+    --color-line: #d3d6dc;
+    --color-line-strong: #6b717b;
+    --color-soft: #f2f3f5;
+    --color-softer: #f8f9fa;
+    --color-accent: #2447b3;
+    --color-accent-hover: #1b3790;
+    --color-accent-soft: #e8edfb;
+    --color-on-accent: #fff;
+    --color-good: #1a6e37;
+    --color-good-soft: #e7f3ea;
+    --color-bad: #ad2620;
+    --color-bad-soft: #fbeceb;
+    --color-disabled: #e3e6ec;
+    --color-disabled-ink: #596069;
+    --color-brand: #173c36;
+    --color-brand-mark: #1b6b60;
+    --shadow-bar: 0 1px 3px rgba(20, 24, 31, .06);
+    --shadow-card: 0 4px 18px rgba(20, 24, 31, .08);
+  }
+
+  [data-area="test-prep"] .site-header {
+    background: var(--color-surface);
+    box-shadow: var(--shadow-bar);
+  }
+
+  [data-area="test-prep"] .site-header-inner {
+    padding-block: 8px;
+  }
+
+  [data-area="test-prep"] .brand {
+    color: var(--color-brand);
+  }
+
+  [data-area="test-prep"] :is(.brand-symbol, .wordmark-dot) {
+    color: var(--color-brand-mark);
+  }
+
+  [data-area="test-prep"] .site-main {
+    padding-block: 32px 56px;
+  }
+
+  [data-area="test-prep"] .site-main :is(h1, h2) {
+    font-family: var(--font-sans);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: normal;
+  }
+
+  [data-area="test-prep"] .site-main h1 {
+    font-size: var(--text-2xl);
+  }
+
+  [data-area="test-prep"] .site-main h2 {
+    font-size: var(--text-xl);
+  }
+
+  [data-area="test-prep"] .page-head {
+    margin-bottom: 24px;
+  }
+
+  [data-area="test-prep"] .lede {
+    margin-top: 6px;
+  }
+
+  [data-area="test-prep"] .site-main .card {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-bar);
+  }
+
+  [data-area="test-prep"] :is(.site-header, .site-main) :is(
+    .button, .test-switch, .test-switch-option, .segmented, .segmented-option,
+    .chip, .check-chip, .badge, .meter, .gate-meter, .state-badge,
+    .kind-tag, .review-flag, .disclosure-note.is-active
+  ) {
+    border-radius: var(--radius-pill);
+  }
+
+  [data-area="test-prep"] .start-card.is-start {
+    border-top-width: 1px;
+    box-shadow: inset 4px 0 0 var(--color-accent), var(--shadow-bar);
+  }
+
+  [data-area="test-prep"] :is(.start-item, .start-step) {
+    padding: 12px 16px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-softer);
+  }
+
+  [data-area="test-prep"] .test-area {
+    border-top-width: 4px;
+  }
+
+  /* Secondary descriptions recede without shrinking labels or controls. */
+  [data-area="test-prep"] :is(.start-text .muted, .test-option p, .mini-test-item p, .option-desc) {
+    font-size: var(--text-sm);
+  }
+
+  [data-area="test-prep"] .test-option p {
+    margin-top: 4px;
+  }
+
+  [data-area="test-prep"] .learn-skill-link {
+    font-family: var(--font-sans);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root[data-area="test-prep"] {
+    color-scheme: dark;
+    --color-page: #111317;
+    --color-surface: #1a1d22;
+    --color-ink: #e6e8ec;
+    --color-muted: #a8aeb8;
+    --color-line: #353a42;
+    --color-line-strong: #7d8591;
+    --color-soft: #23272e;
+    --color-softer: #1e2126;
+    --color-accent: #8fb0ff;
+    --color-accent-hover: #b4caff;
+    --color-accent-soft: #1f2b47;
+    --color-on-accent: #0b1533;
+    --color-good: #6bcf8a;
+    --color-good-soft: #16291d;
+    --color-bad: #ff8f86;
+    --color-bad-soft: #3a1c1a;
+    --color-disabled: #2a2e35;
+    --color-disabled-ink: #9aa1ab;
+    --color-brand: #e9ede0;
+    --color-brand-mark: #9dcdbb;
+    --shadow-bar: 0 1px 3px rgba(0, 0, 0, .5);
+    --shadow-card: 0 4px 18px rgba(0, 0, 0, .45);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  [data-area="test-prep"] .site-header-inner {
+    padding-block: 10px 0;
+  }
+
+  [data-area="test-prep"] .site-main {
+    padding-top: 24px;
+  }
+
+  [data-area="test-prep"] :is(.start-item, .start-step) {
+    padding: 12px;
+  }
+}

@@ -6,10 +6,16 @@ The [graphic design review](reviews/2026-10-07-graphic-design.md) records the
 owner's K–12, family-time, and aspirational-work requirements, current visual
 findings, and a proposed design direction. The
 [implementation and cold review](reviews/2026-10-07-design-implementation.md)
-records the shared design, subject-first entrance, written-work models,
+records the shared identity, subject-first entrance, written-work models,
 phone usability fixes, and black-and-white print verification. Further subject
 and age coverage requires new reviewed content; the site does not offer a
 complete K–12 corpus yet.
+
+The test-prep follow-up in that report restores neutral surfaces, blue actions,
+compact sans-serif headings, and rounded controls for working with tests and
+progress. The library keeps its warm reading style; both retain the same arch
+and wordmark. Screen-specific styling preserves the shared monochrome print
+rules and the assessment shell.
 
 ## Classroom courses — 2026-10-06
 
