@@ -37,7 +37,9 @@ No exact selection repeats within or between grades. At least ten bibliographic
 sources per grade and, where appropriate, twelve authors keep a single book or
 anthology from substituting for a broad reading course. Selection quality takes
 precedence over numerical variety. Include narrative, poetry, and documentary
-or essay prose, with diverse authors, periods, and forms.
+or essay prose, with diverse authors, periods, and forms. There is no minimum
+share of documentary or essay prose; the owner decided on 2026-10-07, after a
+review measured 3–61% across grades, to keep each grade's current mix.
 
 Do not censor literature that is widely considered exemplary American and
 English writing (owner directive, 2026-10-07). Excerpt boundaries follow the
