@@ -108,3 +108,23 @@ legally available, appropriately complex texts and coordination with subject
 teachers for disciplinary reading. Alignment at outline level does not prove
 instructional quality, effective pacing, or student mastery. Standards labels
 are short summaries; the official sources govern the complete expectations.
+
+## Follow-up: concise pages and mobile layout
+
+The owner found the initial pages cluttered and verbose. The follow-up removes
+the large introduction and duplicate unit navigation. One closed unit list now
+leads the page; goals, teaching notes, and standards use progressive disclosure.
+About-the-year information and source notes remain available below the sequence.
+Subject cards, grade comparison, controls, and headings are shorter. Standards
+use wrapping records instead of a wide table. All three source JSON hashes
+above remain unchanged.
+
+Independent reviewer `concise_ui_review` identified repeated reading goals,
+hidden required attribution, an insufficiently visible Singapore mapping
+qualification, and missing print pathway identity. All four were corrected
+and independently rechecked. The full gate passed again: 718 tests, no failures
+or skips. Chromium checks cover 320, 390, 768, and 1440px layouts, collapsed
+and expanded content, keyboard controls, source-to-unit links, browser history,
+dark mode, and print disclosure restoration. The unit sequence begins within
+the first phone screen. Actual PDF inspection checks readable text and pathway
+identity; print still includes the complete teaching and source notes.

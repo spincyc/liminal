@@ -35,110 +35,95 @@
     return link(label || pair.course.title, C.route(pair.track.track.id, pair.course.grade));
   }
   function weeks(unit) { return "Weeks " + unit.startWeek + "–" + unit.endWeek; }
+  function disclosure(title, className = "plan-disclosure") {
+    const node = el("details", undefined, className);
+    node.append(el("summary", title));
+    return node;
+  }
   function renderSources(track, course) {
-    const section = el("section", undefined, "plan-sources");
-    section.append(el("h2", "Standards and source notes"), el("p", track.track.scopeNote));
+    const section = disclosure("Standards and sources", "plan-disclosure plan-sources");
+    section.append(el("p", track.track.scopeNote));
     track.sources.forEach(source => {
       const item = el("p");
-      item.append(link(source.title, source.url), document.createTextNode(" · " + source.publisher + ". " + source.edition + ". Checked " + source.accessed + ". " + source.note));
+      item.append(link(source.title, source.url), document.createTextNode(" · " + source.edition + ". Checked " + source.accessed + ". " + source.note));
       section.append(item);
     });
     const refs = C.coverage(track, course);
-    const details = el("details", undefined, "plan-coverage");
-    details.append(el("summary", "View " + refs.length + " mapped references for this year"));
-    details.append(el("p", "This index shows where an expectation is planned, not proof that it has been taught or mastered. Short labels are summaries; lettered subskills may be grouped under their numbered standard. Extension marks identify optional advanced expectations."));
-    const table = el("table");
-    table.append(el("caption", "Source references and their units"));
-    const head = el("thead");
-    const row = el("tr");
-    ["Reference", "Planning label", "Units"].forEach(label => { const cell = el("th", label); cell.scope = "col"; row.append(cell); });
-    head.append(row); table.append(head);
-    const body = el("tbody");
+    const details = disclosure(refs.length + " mapped references", "plan-coverage");
+    details.append(el("p", "Planning labels summarize the standards. Follow each source for full wording; mapping does not establish mastery."));
+    const records = el("ul", undefined, "plan-reference-list");
     refs.forEach(ref => {
-      const tr = el("tr");
-      const code = el("th"); code.scope = "row";
-      code.append(link(ref.id, ref.source.url), el("small", ref.locator));
-      const label = el("td", ref.label + (ref.kind === "extension" ? " (Extension)" : ""));
-      const units = el("td");
-      ref.units.forEach((id, index) => {
-        if (index) units.append(document.createTextNode(", "));
-        const unit = course.units.find(u => u.id === id);
-        const button = el("button", unit.title, "plan-text-button");
+      const item = el("li");
+      item.append(link(ref.id, ref.source.url), el("p", ref.label + (ref.kind === "extension" ? " (Extension)" : "")), el("small", ref.locator));
+      const units = el("div", undefined, "plan-reference-units");
+      C.pacedUnits(course).filter(u => ref.units.includes(u.id)).forEach(unit => {
+        const button = el("button", weeks(unit), "plan-text-button");
         button.type = "button";
+        button.title = unit.title;
         button.addEventListener("click", () => {
-          window.location.hash = C.route(track.track.id, course.grade, id);
-          revealUnit(id);
+          window.location.hash = C.route(track.track.id, course.grade, unit.id);
+          revealUnit(unit.id);
         });
         units.append(button);
       });
-      tr.append(code, label, units); body.append(tr);
+      item.append(units); records.append(item);
     });
-    table.append(body); details.append(table); section.append(details);
+    details.append(records); section.append(details);
     return section;
   }
   function renderCourse(track, course) {
     const fragment = document.createDocumentFragment();
     const header = el("header", undefined, "plan-course-heading");
-    header.append(el("p", track.track.title + " · " + C.gradeLabel(course.grade), "eyebrow"));
-    const heading = el("h2", course.title); heading.id = "planHeading"; heading.tabIndex = -1;
-    header.append(heading, el("p", course.levelLabel + " · 36 weeks · Course outline", "plan-meta"), el("p", course.scopeNote));
+    header.append(el("p", C.trackLabel(track.track), "plan-print-pathway"));
+    const heading = el("h2", C.courseHeading(track.track, course)); heading.id = "planHeading"; heading.tabIndex = -1;
+    header.append(heading, el("p", "36 weeks · Course outline", "plan-meta"));
+    const context = C.courseContext(track.track, course);
+    if (context) header.append(el("p", context, "plan-context"));
     fragment.append(header);
-    const overview = el("div", undefined, "plan-overview");
-    overview.append(block("Bring forward", course.prerequisites), block("Work toward", course.outcomes));
-    fragment.append(overview, block("The thread through the year", course.yearBridge), block("Keep in the weekly routine", course.routines));
-    const pace = el("nav", undefined, "plan-pacing"); pace.setAttribute("aria-label", "Units in this year");
     const units = C.pacedUnits(course);
     units.forEach(unit => {
-      const button = el("button"); button.type = "button";
-      button.append(el("small", weeks(unit)), el("span", unit.title));
-      button.addEventListener("click", () => {
-        window.location.hash = C.route(track.track.id, course.grade, unit.id);
-        revealUnit(unit.id);
-      });
-      pace.append(button);
-    });
-    fragment.append(el("h2", "The 36-week sequence"), pace);
-    units.forEach((unit, index) => {
       const details = el("details", undefined, "plan-unit");
-      details.id = "unit-" + unit.id; details.open = index === 0;
+      details.id = "unit-" + unit.id;
       const summary = el("summary");
-      summary.append(el("span", weeks(unit), "plan-week"), el("span", unit.title));
-      details.append(summary, el("p", unit.focus, "plan-unit-focus"));
-      const columns = el("div", undefined, "plan-unit-columns");
-      columns.append(block("Learning goals", unit.learning), block("Coursework to develop", unit.activities), block("Look for evidence", unit.evidence));
-      details.append(columns, block("Connect to what follows", unit.bridge));
-      const refs = el("p", "References: ", "plan-unit-refs");
-      unit.standards.forEach((id, i) => {
+      summary.append(el("span", weeks(unit), "plan-week"), el("span", unit.title, "plan-unit-title"));
+      const body = el("div", undefined, "plan-unit-body");
+      body.append(el("p", unit.focus, "plan-unit-focus"));
+      const goals = C.unitGoals(unit);
+      if (goals.length) body.append(block("Goals", goals));
+      const teaching = disclosure("Teaching notes", "plan-unit-notes");
+      teaching.append(block("Coursework ideas", unit.activities), block("Check understanding", unit.evidence), block("Next connection", unit.bridge));
+      body.append(teaching);
+      const refs = disclosure("Standards (" + unit.standards.length + ")", "plan-unit-standards");
+      const entries = el("ul");
+      unit.standards.forEach(id => {
         const standard = track.standards.find(s => s.id === id);
         const source = track.sources.find(s => s.id === standard.sourceId);
-        if (i) refs.append(document.createTextNode(" · "));
+        const item = el("li");
         const a = link(id + (standard.kind === "extension" ? " (+)" : ""), source.url);
         a.title = standard.label + " — " + standard.locator;
-        refs.append(a);
+        item.append(a, el("span", standard.label)); entries.append(item);
       });
-      details.append(refs); fragment.append(details);
-      const permalink = link("Link to this unit", C.route(track.track.id, course.grade, unit.id), "plan-unit-permalink");
-      details.append(permalink);
+      refs.append(entries); body.append(refs);
+      body.append(link("Link to unit", C.route(track.track.id, course.grade, unit.id), "plan-unit-permalink"));
+      details.append(summary, body); fragment.append(details);
     });
     const related = C.connections(data, track.track.id, course.grade);
-    const bridge = el("section", undefined, "plan-connections");
-    bridge.append(el("h2", "Carry the learning forward"), el("p", course.nextStep), block("Across subjects", course.crossSubject));
-    const nav = el("nav", undefined, "plan-related"); nav.setAttribute("aria-label", "Related year plans");
+    const nav = el("nav", undefined, "plan-related"); nav.setAttribute("aria-label", "Adjacent year plans");
     if (related.previous) nav.append(courseLink(related.previous, "← " + C.gradeLabel(course.grade - 1)));
-    nav.append(link("Subjects at " + C.gradeLabel(course.grade), C.route("grade", course.grade)));
     if (related.next) nav.append(courseLink(related.next, C.gradeLabel(course.grade + 1) + " →"));
-    bridge.append(nav);
+    fragment.append(nav);
     if (track.track.id === "common-core-math" && course.grade === 8) {
-      const ready = el("p", "Ready to study: ");
-      ready.append(link("Grade 8 mathematics lessons and printable practice", "courses.html"), document.createTextNode(" cover Real Numbers, Linear Equations, Functions, and Bivariate Data. The full-year outline also plans geometry beyond that lesson inventory."));
-      bridge.append(ready);
+      const ready = el("p", undefined, "plan-ready");
+      ready.append(link("Study Grade 8 math →", "courses.html"), el("small", "Lessons and practice for four topics."));
+      fragment.append(ready);
     }
-    fragment.append(bridge, renderSources(track, course));
-    const journey = el("details", undefined, "plan-journey");
-    journey.append(el("summary", "Follow this pathway from kindergarten to Grade 12"));
+    const overview = disclosure("About this year");
+    overview.append(el("p", course.title), el("p", course.scopeNote), block("Starting points", course.prerequisites), block("Year goals", course.outcomes), block("How the year connects", course.yearBridge), block("Weekly routine", course.routines), block("Next year", course.nextStep), block("Across subjects", course.crossSubject));
+    fragment.append(overview, renderSources(track, course));
+    const journey = disclosure("Other grades", "plan-disclosure plan-journey");
     const ordered = el("ol");
     track.courses.slice().sort((a, b) => a.grade - b.grade).forEach(c => {
-      const item = el("li"); const a = link(C.gradeLabel(c.grade) + " · " + c.title, C.route(track.track.id, c.grade));
+      const item = el("li"); const a = link(C.gradeLabel(c.grade), C.route(track.track.id, c.grade));
       if (c.grade === course.grade) a.setAttribute("aria-current", "page");
       item.append(a); ordered.append(item);
     });
@@ -147,18 +132,24 @@
   }
   function renderGrade(grade) {
     const section = el("section", undefined, "plan-grade");
-    const title = el("h2", C.gradeLabel(grade) + " · Subjects together"); title.id = "planHeading"; title.tabIndex = -1;
-    section.append(title, el("p", "Read the subjects side by side to see useful connections. Choose one mathematics pathway and keep reading alongside it. Unit weeks are flexible planning ranges; a shared week number does not imply identical prerequisites."));
+    const title = el("h2", C.gradeLabel(grade)); title.id = "planHeading"; title.tabIndex = -1;
+    section.append(title, el("p", "Choose one math pathway, with reading alongside.", "plan-context"));
     const grid = el("div", undefined, "plan-grade-grid");
     data.tracks.forEach(track => {
       const course = C.courseAt(data, track.track.id, grade).course;
       const card = el("article");
-      card.append(el("p", track.track.title, "eyebrow"), el("h3", course.title), el("p", course.levelLabel, "plan-meta"), el("p", course.scopeNote));
+      card.append(el("h3", C.trackLabel(track.track)), el("p", "36 weeks · " + course.units.length + " units · Outline", "plan-meta"));
+      const context = C.courseContext(track.track, course);
+      if (context) card.append(el("p", context, "plan-context"));
+      const details = disclosure("Units and connections");
       const schedule = el("ol");
       C.pacedUnits(course).forEach(unit => {
-        const item = el("li"); item.append(el("small", weeks(unit)), el("strong", unit.title)); schedule.append(item);
+        const item = el("li"); item.append(el("small", weeks(unit)), courseLink({ track, course }, unit.title));
+        item.lastChild.href = C.route(track.track.id, grade, unit.id);
+        schedule.append(item);
       });
-      card.append(schedule, el("p", course.crossSubject), courseLink({ track, course }, "Open this year plan →")); grid.append(card);
+      details.append(schedule, el("p", course.crossSubject));
+      card.append(courseLink({ track, course }, "Open plan →"), details); grid.append(card);
     });
     section.append(grid);
     const nav = el("nav", undefined, "plan-related"); nav.setAttribute("aria-label", "Adjacent grades");
@@ -166,10 +157,10 @@
     if (grade < 12) nav.append(link(C.gradeLabel(grade + 1) + " →", C.route("grade", grade + 1)));
     section.append(nav); return section;
   }
-  data.tracks.forEach(track => { const option = el("option", track.track.title); option.value = track.track.id; trackSelect.append(option); });
-  const all = el("option", "Subjects together"); all.value = "grade"; trackSelect.append(all);
+  data.tracks.forEach(track => { const option = el("option", C.trackLabel(track.track)); option.value = track.track.id; trackSelect.append(option); });
+  const all = el("option", "Compare subjects"); all.value = "grade"; trackSelect.append(all);
   for (let grade = 0; grade <= 12; grade++) {
-    const option = el("option", C.gradeLabel(grade)); option.value = grade; gradeSelect.append(option);
+    const option = el("option", C.gradeKey(grade).toUpperCase()); option.value = grade; option.setAttribute("aria-label", C.gradeLabel(grade)); gradeSelect.append(option);
   }
   let preservePickerFocus = false;
   function choose() {
@@ -209,6 +200,7 @@
     }
     const heading = document.getElementById("planHeading");
     document.title = heading.textContent + " — Liminal year plans";
+    status.classList.toggle("sr-only", !state.invalid);
     status.textContent = (state.invalid ? "That plan link was not recognized; showing " : "Showing ") + heading.textContent + ".";
     if (focus) heading.focus();
     if (state.unitId) revealUnit(state.unitId);

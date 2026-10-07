@@ -8,6 +8,18 @@
 
   function gradeLabel(grade) { return grade === 0 ? "Kindergarten" : "Grade " + grade; }
   function gradeKey(grade) { return grade === 0 ? "k" : String(grade); }
+  function trackLabel(track) {
+    return { "common-core-math": "Common Core math", "common-core-reading": "Common Core reading", "singapore-math": "Singapore math" }[track.id] || track.title;
+  }
+  function courseHeading(track, course) {
+    return gradeLabel(course.grade) + " · " + (track.subject === "Mathematics" ? "Math" : track.subject);
+  }
+  function courseContext(track, course) {
+    if (track.id === "singapore-math") return course.levelLabel + " · Editorial grade mapping";
+    if (course.grade >= 9) return track.subject === "Reading" ? course.levelLabel.split(" · ").slice(1).join(" · ") : course.title;
+    return "";
+  }
+  function unitGoals(unit) { return unit.learning.filter(goal => goal.trim() !== unit.focus.trim()); }
   function route(trackId, grade, unitId) { return "#" + trackId + "/" + gradeKey(grade) + (unitId ? "/" + unitId : ""); }
   function resolve(data, hash) {
     const parts = String(hash || "").replace(/^#/, "").split("/");
@@ -46,5 +58,5 @@
       peers: data.tracks.filter(t => t.track.id !== trackId).map(t => courseAt(data, t.track.id, grade)).filter(Boolean),
     };
   }
-  return { gradeLabel, gradeKey, route, resolve, courseAt, pacedUnits, coverage, connections };
+  return { gradeLabel, gradeKey, trackLabel, courseHeading, courseContext, unitGoals, route, resolve, courseAt, pacedUnits, coverage, connections };
 });

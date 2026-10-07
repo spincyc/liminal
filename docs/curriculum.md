@@ -18,16 +18,20 @@ redirect script.
 
 ## Reading a plan
 
-Choose a subject/pathway and grade, or **Subjects together** to compare a
-grade's reading and alternative mathematics sequences. Within a plan:
+Choose a pathway and grade, or **Compare subjects** to see a grade's reading
+and alternative mathematics sequences. The initial view is a single compact
+unit list. Units start closed; opening one shows its focus and learning goals,
+with exact repeats of the focus removed from the displayed goals. Teaching
+notes and standards open separately. The original data remains complete.
+Within a plan:
 
-- Prerequisites and outcomes define the year's entry and exit work.
-- The year thread and weekly routines explain how the units fit together.
+- **About this year** holds prerequisites, outcomes, the year thread, and
+  weekly routines.
 - Each unit has an explicit week range, learning goals, original coursework
   ideas, observable evidence, a bridge forward, and source references.
 - Previous/next year links, the full K–12 pathway, and the grade comparison
   make movement across years and subjects explicit.
-- The reference index shows the units that map each cited expectation and
+- **Standards and sources** holds the reference index, showing the units that map each cited expectation and
   links back to the issuing organization's source document.
 
 Daily reading and mathematics continue in parallel; shared contexts should
@@ -43,7 +47,7 @@ and the grade is `k` or `1`–`12`. For example,
 an explanatory status message. Browser Back and Forward preserve routes.
 Each unit offers a shareable link.
 
-**Print this plan** expands all unit and source disclosures for printing,
+**Print plan** expands all unit and source disclosures for printing,
 then restores their screen state. Print uses dark ink and visible rules with
 background graphics off. The downloadable `content/curriculum.json` contains
 the same full planning data and references as the browser; it is not a progress
