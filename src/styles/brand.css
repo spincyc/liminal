@@ -1,0 +1,43 @@
+/* The existing doorway and serif wordmark identify every learning surface.
+   Keep the SVG inline: it follows theme ink and prints without backgrounds. */
+:is(.brand, .wordmark) {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-brand, var(--color-ink));
+  text-decoration: none;
+}
+.brand-name, .wordmark {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -.06em;
+}
+:is(.brand, .wordmark) .brand-symbol {
+  display: block;
+  flex: none;
+  width: 27px;
+  height: 34px;
+  color: var(--color-brand-mark, var(--color-accent));
+}
+:is(.brand, .wordmark) .wordmark-dot {
+  color: var(--color-brand-mark, var(--color-accent));
+}
+.curriculum-page .wordmark { gap: 10px; }
+
+@media screen and (max-width: 640px) {
+  :is(.brand, .wordmark) { gap: 8px; }
+  .brand-name, .wordmark { font-size: 28px; }
+  :is(.brand, .wordmark) .brand-symbol { width: 23px; height: 28px; }
+}
+
+@media print {
+  /* Retain the identity on Learn and other browser printouts, with no nav. */
+  .site-header { display: block; background: #fff; box-shadow: none; }
+  .site-header-inner { min-height: 0; padding: 0 0 10pt; }
+  .site-header :is(.site-nav, .test-switch, .brand-sub) { display: none; }
+  :is(.brand, .wordmark),
+  :is(.brand, .wordmark) :is(.brand-symbol, .wordmark-dot) { color: #000; }
+  .brand-name, .wordmark { font-size: 22pt; }
+  :is(.brand, .wordmark) .brand-symbol { width: 20pt; height: 24pt; }
+}

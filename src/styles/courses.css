@@ -151,6 +151,9 @@
 .course-document .lm-rich > .lm-passage-title { font-weight: 700; }
 .course-document .course-document-head { padding-bottom: 18px; border-bottom: 1px solid #777; }
 .course-document-head > * + * { margin-top: 7px; }
+.course-document-label { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+.course-document-brand { display: inline-flex; flex: none; align-items: center; gap: 6px; color: var(--color-ink); font: 400 22px/1 var(--font-serif); letter-spacing: -.06em; }
+.course-document-brand svg { width: 18px; height: 23px; }
 .course-document-meta, .course-question-meta { font-size: 12px; color: var(--color-muted); }
 .course-print-warning { font-size: 12px; font-weight: 600; }
 .course-form-code { font-family: var(--font-mono); font-size: 12px; overflow-wrap: anywhere; }
@@ -330,6 +333,8 @@
   .course-document .course-document-head { padding-bottom: .1in; }
   .course-document-head > * + * { margin-top: .04in; }
   .course-eyebrow, .course-document-meta, .course-question-meta { font-size: 8pt; }
+  .course-document-brand { color: #000; font-size: 15pt; }
+  .course-document-brand svg { width: 14pt; height: 17pt; }
   .course-form-code, .course-print-warning { font-size: 8pt; }
   .course-sheet-title { font-size: 9pt; }
   .course-student-name { font-size: 9pt; margin-top: .1in; }

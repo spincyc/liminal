@@ -125,6 +125,17 @@
     return node;
   }
 
+  function brand() {
+    // Identity only: leaving a session still uses the existing Exit control.
+    return h("div", { className: "lm-brand" }, [
+      svgEl("svg", { viewBox: "0 0 28 34", fill: "none", "aria-hidden": "true", focusable: "false" }, [
+        svgEl("path", { d: "M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17", stroke: "currentColor", "stroke-width": 2.5 }),
+        svgEl("path", { d: "M0 32h28", stroke: "currentColor", "stroke-width": 2.5 }),
+      ]),
+      h("span", { text: "Liminal." }),
+    ]);
+  }
+
   const ICONS = {
     calculator: [
       ["rect", { x: 5, y: 2.5, width: 14, height: 19, rx: 2 }],
@@ -546,7 +557,7 @@
       dataset: { view: "break" },
     }, [
       h("header", { className: "lm-top" }, [
-        h("div", { className: "lm-top-left" }, [h("h1", { className: "lm-title", text: title })]),
+        h("div", { className: "lm-top-left" }, [brand(), h("h1", { className: "lm-title", text: title })]),
         h("div", { className: "lm-top-center" }, [h("p", { className: "lm-center-label", text: "Break" })]),
         h("div", { className: "lm-top-right" }, [
           h("button", {
@@ -917,6 +928,7 @@
     refs.title = h("h1", { className: "lm-title", text: testingTitle });
     refs.top = h("header", { className: "lm-top" }, [
       h("div", { className: "lm-top-left" }, [
+        brand(),
         refs.title,
         refs.sectionLabel,
         refs.directionsToggle,

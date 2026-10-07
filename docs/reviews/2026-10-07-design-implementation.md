@@ -162,3 +162,28 @@ controls, including saving, reloading, and resuming. Printing the same Learn
 lesson with backgrounds disabled produced seven pages whose extracted text
 and layout exactly matched the previous print proof. The full repository
 gate and an independent design review were repeated for this refinement.
+
+## Follow-up: complete the identity across pages and exports
+
+The original doorway and serif wordmark now also appear on year plans, the
+homepage footer, the active test and break screens, and printable course
+guides, worksheets, worked keys, and duplex separator backs. The favicon uses
+the doorway in place of the older blue letter. `styles/brand.css` keeps static
+page headers consistent and retains a black-ink header on Learn printouts.
+Progress, Review, and Tips inherit the Practice header. Test-prep surfaces and
+controls retain their separate treatment described above.
+
+Downloaded SAT/ACT booklets and answer keys embed the monochrome doorway and
+wordmark, without an external image or background-printing requirement. The
+optional ACT LaTeX export draws the doorway using standard picture primitives.
+Course exports likewise embed the SVG; their compact brand and document label
+share a row so the label remains near the material it identifies. The test
+shell's identity is noninteractive: its existing Exit control continues to
+govern saving or discarding a session.
+
+The targeted booklet, shell recovery, and packet CLI suite passed 82 tests.
+Booklet figure checks distinguish instructional figures from the decorative
+brand SVG while retaining their sanitizer assertions. A sample LaTeX booklet
+compiled with the installed `pdflatex`, and its cover was visually inspected.
+These checks alone do not establish browser layout or duplex pagination;
+those require browser and PDF review after integration.

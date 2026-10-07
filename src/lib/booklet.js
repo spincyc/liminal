@@ -283,6 +283,9 @@ function answerSheetHtml(model) {
     .join("");
 }
 
+// Inline, background-free identity keeps downloaded booklets self-contained.
+const BRAND_HTML = '<div class="booklet-brand"><svg viewBox="0 0 28 34" fill="none" aria-hidden="true" focusable="false"><path d="M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17" stroke="currentColor" stroke-width="2.5"/><path d="M0 32h28" stroke="currentColor" stroke-width="2.5"/></svg><span>Liminal.</span></div>';
+
 const BOOKLET_CSS = `
 @page { size: letter; margin: 0.6in 0.5in 0.7in 0.5in; }
 :root { --ink: #000; --rule: #000; }
@@ -294,6 +297,8 @@ body {
   font-size: 9.6pt; line-height: 1.36; text-rendering: optimizeLegibility;
 }
 h1, h2, h3 { font-weight: 600; margin: 0 0 .4em; line-height: 1.2; }
+.booklet-brand { display: flex; align-items: center; gap: 6pt; margin-bottom: 10pt; color: #000; font: 400 22pt/1 Georgia, "Times New Roman", serif; letter-spacing: -.06em; }
+.booklet-brand svg { flex: none; width: 18pt; height: 22pt; }
 /* At least one page, so the test-cover footer sits at its foot. */
 .cover { min-height: 9.4in; display: flex; flex-direction: column; break-after: page; }
 /* Keys flow normally so an oversized grid can continue onto another page. */
@@ -544,6 +549,7 @@ function renderBookletHtml(model, options) {
     .join("");
 
   const cover = `<div class="cover">
+  ${BRAND_HTML}
   <h1>${escapeHtml(blueprint.label)}</h1>
   <p class="sub">${escapeHtml(blueprint.summary)}</p>${notes}
   <dl class="meta">
@@ -615,6 +621,7 @@ function renderKeyHtml(model, options) {
   const settings = options || {};
   const parts = keyParts(model, settings.render);
   const cover = `<div class="cover key-cover">
+  ${BRAND_HTML}
   <h1>Answer key and explanations</h1>
   <p class="sub">${escapeHtml(model.blueprint.label)} — form ${escapeHtml(model.formCode)}</p>
   <div class="as-wrap">${parts.grid}</div>${formCodeHtml(model)}
@@ -871,6 +878,14 @@ ${questions}
 \\begin{document}
 \\onecolumn
 \\thispagestyle{empty}
+% The same doorway mark, drawn with standard LaTeX picture primitives.
+\\begingroup\\setlength{\\unitlength}{0.65pt}\\thicklines
+\\begin{picture}(28,34)
+\\put(14,19){\\oval(22,22)[t]}\\put(14,19){\\oval(8,8)[t]}
+\\put(3,2){\\line(0,1){17}}\\put(25,2){\\line(0,1){17}}
+\\put(10,2){\\line(0,1){17}}\\put(18,2){\\line(0,1){17}}
+\\put(0,2){\\line(1,0){28}}
+\\end{picture}\\hspace{6pt}{\\LARGE\\rmfamily Liminal.}\\par\\endgroup\\medskip
 {\\Huge\\bfseries ${tex(blueprint.label)}}\\par\\medskip
 {\\large\\itshape ${tex(blueprint.summary)}}\\par\\bigskip
 \\noindent\\rule{\\linewidth}{1.5pt}\\par\\smallskip

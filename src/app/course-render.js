@@ -17,6 +17,23 @@
     return node;
   }
 
+  function documentLabel(text) {
+    const label = el("div", "course-document-label");
+    const brand = el("span", "course-document-brand");
+    const mark = document.createElementNS(SVG_NS, "svg");
+    Object.entries({ viewBox: "0 0 28 34", fill: "none", "aria-hidden": "true", focusable: "false" })
+      .forEach(([name, value]) => mark.setAttribute(name, value));
+    ["M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17", "M0 32h28"].forEach((d) => {
+      const path = document.createElementNS(SVG_NS, "path");
+      Object.entries({ d, stroke: "currentColor", "stroke-width": "2.5" })
+        .forEach(([name, value]) => path.setAttribute(name, value));
+      mark.appendChild(path);
+    });
+    brand.append(mark, el("span", "", "Liminal."));
+    label.append(brand, el("span", "course-eyebrow", text));
+    return label;
+  }
+
   function renderText(value) {
     const text = String(value == null ? "" : value);
     const node = root.LiminalRender.renderText(text, { math: true });
@@ -108,7 +125,7 @@
     const guide = el("article", `course-document course-guide${settings.compact ? " course-inline-guide" : ""}`);
     if (!settings.compact) {
       const header = el("header", "course-document-head");
-      header.append(el("p", "course-eyebrow", "Liminal / Study guide"), el("h1", "", course.title));
+      header.append(documentLabel("Study guide"), el("h1", "", course.title));
       prose(header, course.description || "");
       if (course.scopeNote) prose(header, course.scopeNote, "course-scope");
       const source = course.source || {};
@@ -430,7 +447,7 @@
   function sheetHeader(course, sheet, answers, page, pages, packetDays) {
     packetDays = packetDays || sheet.days;
     const head = el("header", "course-document-head course-sheet-head");
-    head.appendChild(el("p", "course-eyebrow", `Liminal${sheet.day ? ` / Night ${sheet.day}` : ""}${sheet.worksheetVariant ? ` / Worksheet ${sheet.worksheetVariant}` : ""} / ${answers ? "Worked answers" : "Student worksheets"}`));
+    head.appendChild(documentLabel(`${sheet.day ? `Night ${sheet.day} / ` : ""}${sheet.worksheetVariant ? `Worksheet ${sheet.worksheetVariant} / ` : ""}${answers ? "Worked answers" : "Student worksheets"}`));
     head.appendChild(el("h1", "", course.title));
     if (!answers && sheet.title && sheet.title !== course.title && sheet.title !== course.title + " practice") head.appendChild(el("p", "course-sheet-title", sheet.title));
     head.appendChild(el("p", "course-form-code", `Form ${sheet.code} · Version ${sheet.version}${pages > 1 ? ` · Page ${page} of ${pages}` : ""}`));
@@ -560,7 +577,7 @@
   function nightlyGuidePage(course, sheet, lessonIds, chunks, pageNumber, pages) {
     const page = el("section", "course-guide-page");
     const head = el("header", "course-document-head course-sheet-head");
-    head.append(el("p", "course-eyebrow", `Liminal / Night ${sheet.day}${sheet.worksheetVariant ? ` / Worksheet ${sheet.worksheetVariant}` : ""} / Study guide`), el("h1", "", course.title));
+    head.append(documentLabel(`Night ${sheet.day}${sheet.worksheetVariant ? ` / Worksheet ${sheet.worksheetVariant}` : ""} / Study guide`), el("h1", "", course.title));
     head.appendChild(el("p", "course-form-code", `Form ${sheet.code} · Version ${sheet.version} · Page ${pageNumber} of ${pages}`));
     head.appendChild(el("p", "course-document-meta", `Lessons in tonight’s questions: ${lessonIds.join(", ")}. Read the explanations and examples before trying the student worksheets.`));
     const body = el("div", "course-guide-page-body");
@@ -638,7 +655,7 @@
     page.dataset.night = component.night;
     page.dataset.component = "separator";
     if (component.worksheetVariant) page.dataset.worksheetVariant = component.worksheetVariant;
-    page.append(el("p", "course-eyebrow", `Liminal / Night ${component.night}${component.worksheetVariant ? ` / Worksheet ${component.worksheetVariant}` : ""} / Separator back`), el("h1", "", "This side is intentionally blank"));
+    page.append(documentLabel(`Night ${component.night}${component.worksheetVariant ? ` / Worksheet ${component.worksheetVariant}` : ""} / Separator back`), el("h1", "", "This side is intentionally blank"));
     page.appendChild(el("p", "", "Keep this back with the preceding section. The next section begins on a fresh sheet when printed on both sides."));
     page.appendChild(el("p", "course-form-code", `Form ${component.code}`));
     page.appendChild(footer());

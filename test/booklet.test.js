@@ -363,7 +363,8 @@ test("without a renderer, SAT text is escaped and figures retain their descripti
   const html = booklet.renderBookletHtml(richModel());
   assert.equal((html.match(/<article class="q"/g) || []).length, 3);
   assert.match(html, /Diagram description \(drawing unavailable\): A triangle/);
-  assert.ok(!html.includes("<svg"), "raw figure SVG must never bypass the renderer");
+  const figures = (html.match(/<figure\b[\s\S]*?<\/figure>/g) || []).join("");
+  assert.ok(!figures.includes("<svg"), "raw figure SVG must never bypass the renderer");
   assert.match(html, /<p class="stem"><span class="num">1\.<\/span> Which &quot;value&quot;/);
   assert.ok(!html.includes("Answer key — form"), "the key is opt-in");
 });
@@ -469,7 +470,8 @@ test("Science figures retain escaped descriptions without a renderer or usable S
     const html = booklet.renderBookletHtml(model, options);
     assert.match(html, /Diagram description \(drawing unavailable\)/);
     assert.match(html, /&lt;img src=x onerror=&quot;alert\(1\)&quot;&gt; &amp; a graph/);
-    assert.doesNotMatch(html, /<img|<svg/);
+    const figures = (html.match(/<figure\b[\s\S]*?<\/figure>/g) || []).join("");
+    assert.doesNotMatch(figures, /<img|<svg/);
     assert.match(html, /Figure not drawn to scale/);
   }
 });
@@ -514,7 +516,8 @@ test("a full Science booklet preserves seven complete passage sets and their fig
   assert.equal((html.match(/<article class="q"/g) || []).length, 40);
   assert.equal((html.match(/<div class="stimulus /g) || []).length, 7);
   assert.equal((html.match(/<figure /g) || []).length, figures.length);
-  assert.equal((html.match(/<svg /g) || []).length, figures.length);
+  const figureMarkup = (html.match(/<figure\b[\s\S]*?<\/figure>/g) || []).join("");
+  assert.equal((figureMarkup.match(/<svg /g) || []).length, figures.length);
   assert.equal((tex.match(/\\question\{/g) || []).length, 40);
   assert.equal((tex.match(/Diagram description \(drawing unavailable\)/g) || []).length, figures.length);
   for (const question of passages) {
