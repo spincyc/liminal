@@ -4,6 +4,10 @@ const assert = require("node:assert/strict");
 const W = require("../src/lib/weekly");
 const R = require("../src/app/weekly-render");
 const render = require("../src/app/render");
+const H = require("../src/lib/high-school");
+const fs = require("node:fs");
+const vm = require("node:vm");
+const path = require("node:path");
 
 // Minimal DOM adapter: exercise actual rendering and serialization without a
 // browser dependency. Browser layout and interaction remain separate checks.
@@ -16,13 +20,31 @@ function documentFixture() {
   class Element {
     constructor(tag) {
       Object.assign(this, { tagName: tag, childNodes: [], attributes: {}, dataset: {}, style: {}, className: "", events: {} });
-      this.classList = { add: name => { this.className += " " + name; } };
+      this.classList = {
+        add: name => { this.className += " " + name; },
+        toggle: (name, force) => {
+          const names = new Set(this.className.split(/\s+/).filter(Boolean));
+          const enabled = force === undefined ? !names.has(name) : force;
+          if (enabled) names.add(name); else names.delete(name);
+          this.className = [...names].join(" "); return enabled;
+        },
+      };
     }
     appendChild(node) { this.childNodes.push(node); return node; }
     append(...nodes) { nodes.forEach(node => this.appendChild(node)); }
+    replaceChildren(...nodes) { this.childNodes = []; this.append(...nodes); }
     set textContent(value) { this.childNodes = [new Text(value)]; }
     setAttribute(name, value) { this.attributes[name] = String(value); }
     addEventListener(name, callback) { this.events[name] = callback; }
+    focus() { this.focused = true; }
+    scrollIntoView() { this.scrolled = true; }
+    querySelectorAll(selector) {
+      const result = [];
+      const matches = node => selector === "details:not([open])" ? node.tagName === "details" && !node.open : selector.startsWith(".") ? (node.className || "").split(/\s+/).includes(selector.slice(1)) : node.tagName === selector;
+      function visit(node) { (node.childNodes || []).forEach(child => { if (matches(child)) result.push(child); visit(child); }); }
+      visit(this); return result;
+    }
+    querySelector(selector) { return this.querySelectorAll(selector)[0] || null; }
     get children() { return this.childNodes.filter(node => node.nodeType !== 3); }
     get outerHTML() {
       const attrs = { ...this.attributes };
@@ -35,6 +57,11 @@ function documentFixture() {
     createDocumentFragment: () => new Element("fragment"), implementation: { createHTMLDocument: () => documentFixture() },
   };
   doc.documentElement = doc.createElement("html"); doc.head = doc.createElement("head"); doc.body = doc.createElement("body"); doc.documentElement.append(doc.head, doc.body);
+  doc.querySelector = selector => doc.documentElement.querySelector(selector);
+  doc.getElementById = id => {
+    function find(node) { if (node.id === id) return node; return (node.childNodes || []).map(find).find(Boolean); }
+    return find(doc.documentElement) || null;
+  };
   return doc;
 }
 function withDOM(callback) {
@@ -63,6 +90,21 @@ test("answer export contains worked reasoning for the selected worksheet only", 
   const html = R.exportDocument(W.answerWorksheet(courseFixture(), 1, "c"), true).documentElement.outerHTML;
   assert.match(html, /ANSWER_SECRET_c/); assert.match(html, /KEY_STEP_SECRET/); assert.match(html, /Answer key/);
   assert.doesNotMatch(html, /ANSWER_SECRET_a|ANSWER_SECRET_b|EXAMPLE_SECRET|COURSE_PRIVATE|class="weekly-workspace"/);
+}));
+
+test("named-course exports retain the course identity and flexible scope without inventing a grade", () => withDOM(() => {
+  const course = courseFixture("high-school-math");
+  delete course.grade; course.courseId = "calculus"; course.title = "Calculus";
+  const student = W.studentWorksheet(course, 1, "a");
+  assert.equal(student.courseId, "calculus"); assert.equal(student.courseTitle, "Calculus"); assert.equal("grade" in student, false);
+  for (const answers of [false, true]) {
+    const packet = answers ? W.answerWorksheet(course, 1, "a") : student;
+    const html = R.exportDocument(packet, answers).documentElement.outerHTML;
+    assert.match(html, /High-school math · Calculus ·/);
+    assert.match(html, /Conventional sequence · flexible placement/);
+    assert.doesNotMatch(html, /Grade undefined|Grade null|Grade 12/);
+    assert.equal(html.includes("ANSWER_SECRET_a"), answers);
+  }
 }));
 
 test("export keeps the full final workspace or solution with attribution in one print unit", () => withDOM(() => {
@@ -123,4 +165,29 @@ test("passage navigation opens a lazy reading view before finding and focusing i
   const links = items.children[0].children.find(node => node.className === "weekly-passage-links");
   links.events.click({ target: { closest: () => ({ getAttribute: () => "#week-passage-text" }) }, preventDefault() { prevented = true; } });
   assert.equal(ready, true); assert.equal(focused, true); assert.equal(scrolled, true); assert.equal(prevented, true);
+}));
+
+test("named course plans preserve deep links, truthful availability, safe text and print disclosure state", () => withDOM(() => {
+  for (const id of ["highSchoolStatus", "highSchoolContent", "highSchoolCourses", "highSchoolBrowser", "main"]) {
+    const node = document.createElement("div"); node.id = id; document.body.append(node);
+  }
+  const skip = document.createElement("a"); skip.className = "skip-link"; document.body.append(skip);
+  const data = { sources: [], standards: [{ id: "CALC.1", label: "An editorial objective", kind: "editorial-objective", locator: "Chapter 1" }], courses: H.ORDER.map(id => ({
+    id, title: id, summary: "Learn <script>untrusted()</script> safely.", scopeNote: "A deliberately detailed scope note.", prerequisites: ["Prior ideas"], goals: ["Use the ideas"],
+    units: [{ id: "u1", title: "A unit", weeks: 36, focus: "The focus", learning: ["A goal"], activities: ["A task"], evidence: ["A check"], bridge: "Next ideas", standards: ["CALC.1"] }],
+  })) };
+  const events = {};
+  Object.assign(window, { LIMINAL_HIGH_SCHOOL: data, LiminalHighSchool: H, LIMINAL_WEEKLY_INDEX: { courses: [{ trackId: "high-school-math", courseId: "algebra", title: "Algebra" }] }, location: { hash: "#algebra/u1" }, addEventListener(name, callback) { events[name] = callback; } });
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname, "../src/app/high-school.js"), "utf8"), { window, document });
+  const content = document.getElementById("highSchoolContent");
+  assert.match(content.outerHTML, /weeks.html#high-school-math\/algebra\/1/);
+  assert.match(content.outerHTML, /Editorial objective/); assert.match(content.outerHTML, /&lt;script&gt;/);
+  assert.doesNotMatch(content.outerHTML, /<script>/);
+  const unit = document.getElementById("high-school-unit-u1"); assert.equal(unit.open, true); assert.equal(unit.querySelector("summary").focused, true);
+  const notes = content.querySelector(".high-school-notes"); assert.equal(notes.open, undefined);
+  events.beforeprint(); assert.equal(notes.open, true); events.afterprint(); assert.equal(notes.open, false); assert.equal(unit.open, true);
+  window.location.hash = "#calculus"; events.hashchange();
+  assert.match(content.outerHTML, /Weekly work is being prepared/); assert.doesNotMatch(content.outerHTML, /weeks.html#high-school-math\/calculus/);
+  assert.equal(document.getElementById("highSchoolHeading").focused, true);
+  assert.deepEqual(document.getElementById("highSchoolCourses").children.map(node => node.href), H.ORDER.map(id => "#" + id));
 }));

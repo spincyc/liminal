@@ -180,3 +180,125 @@ test("course context keeps scope qualifications visible for mapped and suggested
   }
   assert.equal(weekly.courseContext("unknown", 12), "");
 });
+
+const highSchool = require("../src/lib/high-school");
+const { inspect } = require("../tools/check-weekly");
+function namedFixture(courseId, plans) {
+  const course = fixture();
+  delete course.grade;
+  course.trackId = "high-school-math";
+  course.courseId = courseId;
+  const pacing = plans.courses.find(c => c.id === courseId).units.flatMap(u => Array(u.weeks).fill(u));
+  course.weeks.forEach((week, i) => { week.unitId = pacing[i].id; week.standards = [pacing[i].standards[0]]; });
+  return course;
+}
+
+test("named plans hydrate source aliases and validate editorial pacing, references and source safety", () => {
+  const raw = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../content/high-school-math.json"), "utf8"));
+  const plans = builder.normalizeHighSchool(raw, curriculum);
+  assert.deepEqual(plans.courses.map(c => c.id), weekly.NAMED_COURSES);
+  for (const [index, course] of plans.courses.entries()) {
+    assert.equal(course.grade, undefined);
+    assert.equal(highSchool.pacedUnits(course).at(-1).endWeek, 36);
+    assert.deepEqual(course.goals, course.outcomes);
+    if (index < 3) assert.deepEqual(course.units, track.courses.find(c => c.grade === index + 9).units);
+    assert.ok(course.units.every(u => u.standards.every(id => plans.standards.some(s => s.id === id))));
+  }
+  function rejectPlan(change, pattern) { const data = structuredClone(raw); change(data); assert.throws(() => builder.normalizeHighSchool(data, curriculum), pattern); }
+  rejectPlan(p => p.courses[0].source.grade = 10, /source alias/);
+  rejectPlan(p => p.courses[0].units = [], /source alias/);
+  rejectPlan(p => p.courses[3].grade = 11, /must not assign a grade/);
+  rejectPlan(p => p.courses[3].units[0].weeks++, /pacing/);
+  rejectPlan(p => p.courses[3].units[0].id = ["u1"], /invalid named unit ID/);
+  rejectPlan(p => p.courses[3].units[0].standards = ["unresolved"], /unresolved/);
+  rejectPlan(p => p.sources[0].url = "javascript:alert(1)", /source URL/);
+  rejectPlan(p => p.sources[0].accessed = "2026-02-30", /source date/);
+  rejectPlan(p => p.courses.pop(), /five courses/);
+  const reversed = { ...plans, courses: plans.courses.slice().reverse() };
+  assert.equal(highSchool.resolve(reversed, "").course.id, "algebra");
+  assert.equal(highSchool.resolve(plans, "#calculus/u1").unitId, "u1");
+  for (const hash of ["#calculus/u999", "#calculus/u1/extra", "#unknown", "#../calculus", "#calculus/"]) assert.equal(highSchool.resolve(plans, hash).invalid, true, hash);
+  assert.equal(highSchool.route("calculus", "u1"), "#calculus/u1");
+  assert.equal(highSchool.route("../outside", "u1"), "");
+  assert.equal(highSchool.route("calculus", "../outside"), "");
+  assert.equal(highSchool.route("calculus", ["u1"]), "");
+});
+
+test("named coursework preserves named identity through routing, navigation, projection and admission", () => {
+  const plans = builder.loadHighSchool(curriculum);
+  const course = namedFixture("calculus", plans);
+  assert.doesNotThrow(() => builder.validateCourse(course, plans));
+  const invalid = structuredClone(course); invalid.grade = 12;
+  assert.throws(() => builder.validateCourse(invalid, plans), /named course identity/);
+  const wrongPace = structuredClone(course); wrongPace.weeks[0].unitId = "u2";
+  assert.throws(() => builder.validateCourse(wrongPace, plans), /pacing/);
+  const entry = { trackId: course.trackId, courseId: course.courseId, title: "Calculus", weeks: course.weeks };
+  const data = { version: 1, courses: [entry] };
+  assert.equal(weekly.courseKey(entry), "calculus");
+  assert.equal(weekly.courseLabel(entry), "Calculus");
+  assert.equal(weekly.courseKey({ grade: 0 }), "k");
+  assert.equal(weekly.courseKey({ grade: 12 }), "12");
+  assert.equal(weekly.courseAt(data, "high-school-math", "calculus"), entry);
+  const selected = weekly.resolve(data, "#high-school-math/calculus/3");
+  assert.equal(selected.courseId, "calculus"); assert.equal(selected.grade, null); assert.equal(selected.invalid, false);
+  assert.deepEqual(weekly.navigation(data, selected), { previous: "#high-school-math/calculus/2", next: "#high-school-math/calculus/4" });
+  for (const hash of ["#high-school-math/12/1", "#high-school-math/Calculus/1", "#high-school-math/calculus/03", "#high-school-math/%63alculus/1", "#high-school-math/calculus/1/extra"]) assert.equal(weekly.resolve(data, hash).invalid, true, hash);
+  assert.equal(weekly.route("high-school-math", "calculus", 1), "#high-school-math/calculus/1");
+  assert.equal(weekly.route("high-school-math", 12, 1), "");
+  assert.equal(weekly.route("common-core-math", "12", 1), "#common-core-math/12/1");
+  const packet = weekly.studentWorksheet(course, 1, "a");
+  assert.equal(packet.courseId, "calculus"); assert.equal(packet.courseTitle, "Calculus"); assert.equal(packet.grade, undefined);
+  assert.equal(weekly.courseLabel(packet), "Calculus");
+  assert.ok(!JSON.stringify(packet).includes('"answer"'));
+  assert.equal(weekly.answerWorksheet(course, 1, "a").courseId, "calculus");
+});
+
+test("complete inventory counts 41 original courses and 44 views without duplicating authored aliases", () => {
+  const plans = builder.loadHighSchool(curriculum);
+  const scratch = path.resolve(__dirname, "../.scratch/weekly-engine");
+  fs.mkdirSync(scratch, { recursive: true });
+  const directory = fs.mkdtempSync(path.join(scratch, "named-fixture-"));
+  const output = fs.mkdtempSync(path.join(scratch, "named-dist-"));
+  function write(course) {
+    const dir = path.join(directory, course.trackId); fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, weekly.courseKey(course) + ".json"), JSON.stringify(course));
+  }
+  try {
+    for (const trackId of weekly.GRADE_TRACKS) for (let grade = 0; grade <= 12; grade++) write(fixture(trackId, grade));
+    for (const id of ["trigonometry", "calculus"]) write(namedFixture(id, plans));
+    const options = { directory, curriculum, highSchool: plans, output };
+    const report = inspect({ ...options, complete: true });
+    assert.equal(report.courses, 41); assert.equal(report.courseViews, 44); assert.equal(report.aliasViews, 3);
+    assert.equal(report.weeks, 41 * 36); assert.equal(report.worksheets, 41 * 36 * 3); assert.deepEqual(report.missing, []);
+    const loaded = builder.loadWeekly(options);
+    const source = loaded.physicalCourses.find(c => c.trackId === "common-core-math" && c.grade === 11);
+    const alias = loaded.courses.find(c => c.courseId === "algebra-2");
+    assert.deepEqual(alias.weeks.slice(0, 35), source.weeks.slice(0, 35));
+    assert.equal(alias.weeks[35].connection.after, plans.courses.find(c => c.id === "algebra-2").nextStep);
+    assert.equal(source.weeks[35].connection.after, "Build new arguments.");
+    assert.deepEqual({ ...alias.weeks[35], connection: { ...alias.weeks[35].connection, after: source.weeks[35].connection.after } }, source.weeks[35]);
+    assert.equal(alias.grade, undefined);
+    assert.deepEqual(alias.source, { trackId: "common-core-math", grade: 11 });
+    const built = builder.build(options);
+    const namedEntries = built.courses.filter(c => c.courseId);
+    assert.deepEqual(namedEntries.map(c => c.courseId), weekly.NAMED_COURSES);
+    const aliasBuilt = JSON.parse(fs.readFileSync(path.join(output, "content/weekly/high-school-math/algebra-2.json"), "utf8"));
+    assert.equal(aliasBuilt.courseTitle, "Algebra 2"); assert.equal(aliasBuilt.grade, undefined);
+    const context = vm.createContext({ window: {} });
+    vm.runInContext(fs.readFileSync(path.join(output, "content/high-school.js"), "utf8"), context);
+    assert.equal(JSON.stringify(context.window.LIMINAL_HIGH_SCHOOL), JSON.stringify(plans));
+    assert.deepEqual(JSON.parse(fs.readFileSync(path.join(output, "content/high-school.json"), "utf8")), plans);
+    fs.rmSync(path.join(directory, "high-school-math/calculus.json"));
+    assert.throws(() => inspect({ ...options, complete: true }), /high-school-math\/calculus/);
+    fs.rmSync(path.join(directory, "common-core-math/9.json"));
+    const partial = inspect(options);
+    assert.ok(partial.missing.some(c => c.grade === 9 && c.trackId === "common-core-math"));
+    assert.ok(partial.missing.some(c => c.courseId === "algebra"));
+    assert.equal(builder.loadWeekly(options).courses.some(c => c.courseId === "algebra"), false);
+    fs.writeFileSync(path.join(directory, "high-school-math/algebra.json"), JSON.stringify(alias));
+    assert.throws(() => builder.loadWeekly(options), /unexpected course file/);
+  } finally {
+    fs.rmSync(directory, { recursive: true, force: true });
+    fs.rmSync(output, { recursive: true, force: true });
+  }
+});

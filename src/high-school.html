@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="A flexible high-school math sequence: Algebra, Geometry, Algebra 2, Trigonometry, and Calculus, with 36-week course plans and weekly coursework." />
+    <title>Liminal — High-school math</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/weekly.css" />
+    <link rel="stylesheet" href="styles/high-school.css" />
+    <link rel="stylesheet" href="styles/brand.css" />
+    <script defer src="content/high-school.js"></script>
+    <script defer src="content/weekly-index.js"></script>
+    <script defer src="lib/high-school.js"></script>
+    <script defer src="lib/weekly.js"></script>
+    <script defer src="app/high-school.js"></script>
+  </head>
+  <body class="weekly-page high-school-page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="home-header page-width">
+      <a class="wordmark" href="index.html" aria-label="Liminal home"><svg class="brand-symbol" viewBox="0 0 28 34" fill="none" aria-hidden="true" focusable="false"><path d="M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17" stroke="currentColor" stroke-width="2.5" /><path d="M0 32h28" stroke="currentColor" stroke-width="2.5" /></svg><span>Liminal<span class="wordmark-dot">.</span></span></a>
+      <nav class="home-nav" aria-label="Primary"><a href="index.html#modules">Subjects</a><a href="high-school.html" aria-current="page">Math sequence</a><a href="weeks.html">Weekly work</a></nav>
+    </header>
+    <main id="main" class="page-width weekly-main" tabindex="-1">
+      <header class="weekly-intro"><h1>High-school math</h1><p>Conventional sequence · flexible placement</p></header>
+      <noscript><p>Turn on JavaScript to browse the plans, or <a href="content/high-school.json" download>download the course plans and sources</a>.</p></noscript>
+      <p id="highSchoolStatus" class="weekly-status" role="status" aria-live="polite">Opening course plans…</p>
+      <div id="highSchoolBrowser" hidden>
+        <nav id="highSchoolCourses" class="high-school-courses" aria-label="Math courses"></nav>
+        <div id="highSchoolContent"></div>
+      </div>
+      <details class="weekly-about"><summary>Using this sequence</summary><p>Choose by prerequisite knowledge, not a fixed grade. These are editorial course plans; standards references do not establish complete alignment or official certification.</p><p>Trigonometry includes precalculus foundations. Algebra, Geometry, and Algebra 2 share weekly material with the corresponding Common Core year plans.</p><p><a href="curriculum.html">Explore the K–12 year plans</a> · <a href="content/high-school.json" download>Download this sequence</a></p></details>
+    </main>
+    <footer class="home-footer page-width weekly-footer"><p>Independent educational coursework. Not affiliated with standards bodies or publishers.</p><p>SAT® and ACT® are trademarks of College Board and ACT, Inc.; no affiliation.</p></footer>
+  </body>
+</html>

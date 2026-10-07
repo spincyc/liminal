@@ -138,8 +138,8 @@
     doc.head.append(charset, viewport, style); doc.body.className = "weekly-page weekly-export";
     const main = el("main"); main.append(brand());
     const heading = el("header");
-    heading.append(el("h1", "Week " + packet.week + " · " + packet.title), el("p", window.LiminalWeekly.trackLabel(packet.trackId) + " · " + window.LiminalWeekly.gradeLabel(packet.grade) + " · " + (answers ? "Answer key" : "Student worksheet"), "weekly-meta"));
-    const context = window.LiminalWeekly.courseContext(packet.trackId, packet.grade);
+    heading.append(el("h1", "Week " + packet.week + " · " + packet.title), el("p", window.LiminalWeekly.trackLabel(packet.trackId) + " · " + window.LiminalWeekly.courseLabel(packet) + " · " + (answers ? "Answer key" : "Student worksheet"), "weekly-meta"));
+    const context = window.LiminalWeekly.courseContext(packet.trackId, packet.courseId || packet.grade);
     if (context) heading.append(el("p", context, "weekly-context"));
     if (!answers) heading.append(el("p", "Name: __________________________  Date: ______________"));
     const footer = el("footer", undefined, "weekly-footer");

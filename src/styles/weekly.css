@@ -11,6 +11,7 @@
 .weekly-page select { width: 100%; min-width: 0; padding: 7px 28px 7px 10px; font-size: 16px; }
 .weekly-page summary { padding-block: 10px; cursor: pointer; min-height: 44px; }
 .weekly-filters { display: grid; grid-template-columns: minmax(0, 1fr) 110px 110px; gap: 14px; margin-bottom: 18px; }
+.weekly-filters.weekly-named { grid-template-columns: minmax(0, 1fr) minmax(180px, .8fr) 90px; }
 .weekly-filters label, .weekly-sheet-picker { display: grid; gap: 5px; min-width: 0; font-size: .875rem; }
 .weekly-status { padding-block: 8px; }
 .weekly-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
@@ -64,6 +65,7 @@
   .weekly-page .home-header { flex-wrap: wrap; gap: 0 18px; padding-block: 12px 4px; }
   .weekly-page .home-nav { gap: 20px; flex-wrap: wrap; }
   .weekly-filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 12px; }
+  .weekly-filters.weekly-named { grid-template-columns: minmax(0, 1fr) 74px; }
   .weekly-filters label:first-child { grid-column: 1 / -1; }
   .weekly-passage { padding: 14px; }
   .weekly-actions > button { flex: 1 1 130px; }

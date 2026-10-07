@@ -40,22 +40,26 @@
   const tracks = [...new Set(index.courses.map(course => course.trackId))];
   tracks.forEach(id => trackSelect.append(option(W.trackLabel(id), id)));
   function pickers(selected) {
+    const named = !!selected.course.courseId;
     trackSelect.value = selected.trackId;
-    gradeSelect.replaceChildren(...index.courses.filter(course => course.trackId === selected.trackId)
-      .slice().sort((a, b) => b.grade - a.grade).map(course => {
-        const node = option(W.gradeKey(course.grade).toUpperCase(), course.grade);
-        node.setAttribute("aria-label", W.gradeLabel(course.grade)); return node;
-      }));
-    gradeSelect.value = selected.grade;
+    document.getElementById("weeklyCourseLabel").textContent = named ? "Course" : "Grade";
+    document.querySelector(".weekly-filters").classList.toggle("weekly-named", named);
+    const courses = index.courses.filter(course => course.trackId === selected.trackId).slice();
+    if (!named) courses.sort((a, b) => b.grade - a.grade);
+    gradeSelect.replaceChildren(...courses.map(course => {
+      const node = option(named ? W.courseLabel(course) : W.gradeKey(course.grade).toUpperCase(), W.courseKey(course));
+      node.setAttribute("aria-label", W.courseLabel(course)); return node;
+    }));
+    gradeSelect.value = W.courseKey(selected.course);
     weekSelect.replaceChildren(...selected.course.weeks.map(week => {
       const node = option(week.week, week.week); node.setAttribute("aria-label", "Week " + week.week); return node;
     }));
     weekSelect.value = selected.week;
   }
   function choose(event) {
-    const course = W.courseAt(index, trackSelect.value, Number(gradeSelect.value)) || index.courses.find(c => c.trackId === trackSelect.value);
+    const course = W.courseAt(index, trackSelect.value, gradeSelect.value) || index.courses.find(c => c.trackId === trackSelect.value);
     const week = event && event.target === weekSelect ? Number(weekSelect.value) : 1;
-    const hash = W.route(course.trackId, course.grade, week);
+    const hash = W.route(course.trackId, W.courseKey(course), week);
     if (window.location.hash !== hash) { preservePickerFocus = true; window.location.hash = hash; }
   }
   [trackSelect, gradeSelect, weekSelect].forEach(select => select.addEventListener("change", choose));
@@ -70,7 +74,7 @@
   }
   function exportSheet(course, week, sheetId, answers, print) {
     const packet = answers ? W.answerWorksheet(course, week.week, sheetId) : W.studentWorksheet(course, week.week, sheetId);
-    const sourceUrl = new URL("weeks.html" + W.route(course.trackId, course.grade, week.week), window.location.href).href;
+    const sourceUrl = new URL("weeks.html" + W.route(course.trackId, W.courseKey(course), week.week), window.location.href).href;
     const doc = R.exportDocument(packet, answers, stylesForExport(), sourceUrl);
     const html = "<!doctype html>\n" + doc.documentElement.outerHTML;
     if (print) {
@@ -85,7 +89,7 @@
     } else {
       const url = URL.createObjectURL(new Blob([html], { type: "text/html;charset=utf-8" }));
       const anchor = R.link("Download", url);
-      anchor.download = "liminal-" + course.trackId + "-" + W.gradeKey(course.grade) + "-week-" + week.week + "-" + sheetId + (answers ? "-answers" : "-student") + ".html";
+      anchor.download = "liminal-" + course.trackId + "-" + W.courseKey(course) + "-week-" + week.week + "-" + sheetId + (answers ? "-answers" : "-student") + ".html";
       document.body.append(anchor); anchor.click(); anchor.remove();
       window.setTimeout(() => URL.revokeObjectURL(url), 1000);
       announce("Downloaded " + (answers ? "the separate answer key." : "a student worksheet with blank work space."));
@@ -176,34 +180,34 @@
     preparePrint = null; restorePrint = null;
     const selected = W.resolve(index, window.location.hash);
     pickers(selected); container.setAttribute("aria-busy", "true"); container.replaceChildren();
-    announce("Opening " + W.gradeLabel(selected.grade) + ", week " + selected.week + "…", true);
+    announce("Opening " + W.courseLabel(selected.course) + ", week " + selected.week + "…", true);
     try {
       let course = cache.get(selected.course.file);
       if (!course) {
         const response = await fetch(selected.course.file);
         if (!response.ok) throw new Error("Course unavailable");
         course = await response.json();
-        if (course.trackId !== selected.trackId || course.grade !== selected.grade || !Array.isArray(course.weeks)) throw new Error("Course mismatch");
+        if (course.trackId !== selected.trackId || W.courseKey(course) !== W.courseKey(selected.course) || !Array.isArray(course.weeks)) throw new Error("Course mismatch");
         cache.set(selected.course.file, course);
       }
       if (currentRequest !== request) return;
       const week = W.weekAt(course, selected.week);
       if (!week) throw new Error("Week unavailable");
       const heading = R.el("header", undefined, "weekly-heading");
-      heading.append(R.el("p", W.trackLabel(course.trackId) + " · " + W.gradeLabel(course.grade) + " · Week " + week.week + " of 36", "weekly-meta"));
-      const context = W.courseContext(course.trackId, course.grade);
+      heading.append(R.el("p", W.trackLabel(course.trackId) + " · " + W.courseLabel(course) + " · Week " + week.week + " of 36", "weekly-meta"));
+      const context = W.courseContext(course.trackId, course.courseId || course.grade);
       if (context) heading.append(R.el("p", context, "weekly-context"));
       const title = R.el("h2", week.title); title.id = "weeklyHeading"; title.tabIndex = -1;
       heading.append(title, R.rich(week.objective, course.trackId !== "common-core-reading"));
       const links = R.el("div", undefined, "weekly-links");
-      const yearRoute = "curriculum.html#" + selected.trackId + "/" + W.gradeKey(selected.grade);
+      const yearRoute = course.courseId ? "high-school.html#" + W.courseKey(course) : "curriculum.html#" + selected.trackId + "/" + W.courseKey(course);
       links.append(R.link("Year plan", yearRoute), R.link("Unit and standards", yearRoute + "/" + encodeURIComponent(week.unitId)));
       heading.append(links);
       const fragment = document.createDocumentFragment();
       fragment.append(heading, views(course, week), navigation(selected));
       container.replaceChildren(fragment);
       document.title = "Week " + week.week + " · " + week.title + " — Liminal";
-      announce((selected.invalid ? "That coursework link was not recognized. Showing " : "Showing ") + W.gradeLabel(selected.grade) + ", week " + week.week + ": " + week.title + ".", selected.invalid);
+      announce((selected.invalid ? "That coursework link was not recognized. Showing " : "Showing ") + W.courseLabel(course) + ", week " + week.week + ": " + week.title + ".", selected.invalid);
       if (focus) title.focus();
     } catch (_) {
       if (currentRequest !== request) return;

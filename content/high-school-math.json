@@ -1,0 +1,819 @@
+{
+  "version": 1,
+  "track": {
+    "id": "high-school-math",
+    "title": "High-school mathematics",
+    "subject": "Mathematics",
+    "description": "Algebra → Geometry → Algebra 2 → Trigonometry → Calculus. Conventional sequence · flexible placement.",
+    "scopeNote": "A conventional named-course pathway planned backwards from Calculus and presented in learning order. Each course budgets 36 instructional weeks, including practice, review, and assessment; use prerequisites and local requirements to choose placement. Algebra, Geometry, and Algebra 2 reuse the existing Common Core courses. Trigonometry includes precalculus foundations; Calculus introduces single-variable differential and integral calculus. The new TRIG and CALC references are editorial learning objectives informed by textbook scope, not official standards or an AP course designation. The pathway does not establish graduation credit, examination readiness, or mastery."
+  },
+  "sources": [
+    {
+      "id": "openstax-precalculus-2e",
+      "title": "Precalculus 2e",
+      "url": "https://openstax.org/books/precalculus-2e/pages/1-introduction-to-functions",
+      "publisher": "OpenStax, Rice University; senior contributing author Jay Abramson",
+      "edition": "Second edition, published 2021",
+      "accessed": "2026-10-07",
+      "note": "Scope reference: chapters 1 and 3–7, sections 8.1–8.2, and introductory rate/limit ideas in chapter 12. The Liminal sequence selects and reorders topics; it does not reproduce this textbook or cover every chapter. All Liminal explanations, models, and exercises are original."
+    },
+    {
+      "id": "openstax-calculus-1",
+      "title": "Calculus Volume 1",
+      "url": "https://openstax.org/books/calculus-volume-1/pages/1-introduction",
+      "publisher": "OpenStax, Rice University; senior contributing authors Gilbert Strang and Edwin Jed Herman",
+      "edition": "Published 2016",
+      "accessed": "2026-10-07",
+      "note": "Scope reference for functions, limits, differentiation, derivative applications, integration, and selected integral applications in chapters 1–6. This is a selected introductory course, not a reproduction or claim to cover every section."
+    },
+    {
+      "id": "openstax-calculus-2",
+      "title": "Calculus Volume 2",
+      "url": "https://openstax.org/books/calculus-volume-2/pages/4-introduction",
+      "publisher": "OpenStax, Rice University; senior contributing authors Gilbert Strang and Edwin Jed Herman",
+      "edition": "Published 2016",
+      "accessed": "2026-10-07",
+      "note": "Selected scope reference only: section 3.6 for midpoint/trapezoidal approximations and sections 4.1–4.3 for differential equations, slope fields, Euler estimates, and separation. It does not imply a full second-semester calculus course."
+    },
+    {
+      "id": "ccss-high-school-functions",
+      "title": "Common Core high-school trigonometric functions",
+      "url": "https://www.thecorestandards.org/Math/Content/HSF/TF/",
+      "publisher": "Common Core State Standards Initiative",
+      "edition": "2010 mathematics standards",
+      "accessed": "2026-10-07",
+      "note": "Official context for the Algebra 2-to-Trigonometry bridge: radians, circular definitions, periodic models, and the Pythagorean identity appear alongside (+) extensions for symmetry, inverse functions, and angle formulas. Liminal TRIG objectives are editorial and do not replace the official codes retained by the source Common Core courses."
+    }
+  ],
+  "standards": [
+    {
+      "id": "TRIG.1",
+      "label": "Functions and algebra readiness",
+      "sourceId": "openstax-precalculus-2e",
+      "locator": "Sections 1.1–1.7, 3.7–3.8, and 4.1–4.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "TRIG.2",
+      "label": "Radians and circular functions",
+      "sourceId": "openstax-precalculus-2e",
+      "locator": "Sections 5.1–5.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "TRIG.3",
+      "label": "Right triangles and exact values",
+      "sourceId": "openstax-precalculus-2e",
+      "locator": "Sections 5.2–5.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "TRIG.4",
+      "label": "Periodic graphs and models",
+      "sourceId": "openstax-precalculus-2e",
+      "locator": "Sections 6.1–6.2 and 7.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "TRIG.5",
+      "label": "Inverse trigonometry and equations",
+      "sourceId": "openstax-precalculus-2e",
+      "locator": "Sections 6.3 and 7.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "TRIG.6",
+      "label": "Identities and angle formulas",
+      "sourceId": "openstax-precalculus-2e",
+      "locator": "Sections 7.1–7.3 and 7.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "TRIG.7",
+      "label": "Triangles and geometric applications",
+      "sourceId": "openstax-precalculus-2e",
+      "locator": "Sections 8.1–8.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "TRIG.8",
+      "label": "Precalculus function synthesis",
+      "sourceId": "openstax-precalculus-2e",
+      "locator": "Sections 1.4–1.7, 3.3–3.8, and 4.1–4.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "TRIG.9",
+      "label": "Rates, secants, and calculus readiness",
+      "sourceId": "openstax-precalculus-2e",
+      "locator": "Section 1.3 and selected ideas from sections 12.1–12.4; formal derivatives are deferred to Calculus",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.1",
+      "label": "Function readiness and rates",
+      "sourceId": "openstax-calculus-1",
+      "locator": "Chapter 1; sections 2.1 and 3.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.2",
+      "label": "Limits and continuity",
+      "sourceId": "openstax-calculus-1",
+      "locator": "Sections 2.2–2.4 and 4.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.3",
+      "label": "Derivative definition and basic rules",
+      "sourceId": "openstax-calculus-1",
+      "locator": "Sections 3.1–3.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.4",
+      "label": "Product, quotient, and chain rules",
+      "sourceId": "openstax-calculus-1",
+      "locator": "Sections 3.3 and 3.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.5",
+      "label": "Implicit and transcendental differentiation",
+      "sourceId": "openstax-calculus-1",
+      "locator": "Sections 3.5 and 3.7–3.9",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.6",
+      "label": "Derivatives and function behavior",
+      "sourceId": "openstax-calculus-1",
+      "locator": "Sections 4.3–4.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.7",
+      "label": "Optimization and related rates",
+      "sourceId": "openstax-calculus-1",
+      "locator": "Sections 4.1–4.2 and 4.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.8",
+      "label": "Accumulation and definite integrals",
+      "sourceId": "openstax-calculus-1",
+      "locator": "Sections 5.1–5.2; numerical approximation also references Calculus Volume 2 section 3.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.9",
+      "label": "Fundamental Theorem and substitution",
+      "sourceId": "openstax-calculus-1",
+      "locator": "Sections 4.10 and 5.3–5.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.10",
+      "label": "Integral applications",
+      "sourceId": "openstax-calculus-1",
+      "locator": "Sections 5.2, 5.4, and 6.1–6.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.11",
+      "label": "Differential equations and initial values",
+      "sourceId": "openstax-calculus-2",
+      "locator": "Sections 4.1–4.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CALC.12",
+      "label": "Calculus synthesis and model critique",
+      "sourceId": "openstax-calculus-1",
+      "locator": "Selected concepts from chapters 2–6; synthesis pacing is editorial",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    }
+  ],
+  "courses": [
+    {
+      "id": "algebra",
+      "title": "Algebra",
+      "levelLabel": "Flexible placement",
+      "source": {
+        "trackId": "common-core-math",
+        "grade": 9
+      },
+      "summary": "Build equations, functions, and data models that prepare for geometric and algebraic reasoning.",
+      "scopeNote": "A named view of the existing Common Core mathematics Grade 9 course, preserving its full 36-week instruction and standards references. The grade belongs to that source’s suggested placement; this sequence does not assign a required grade or certify school credit.",
+      "prerequisites": [
+        "Use rational-number operations, integer exponents, proportional reasoning, and coordinate graphs.",
+        "Solve Grade 8 linear equations and systems and interpret a function as a relationship between inputs and outputs."
+      ],
+      "outcomes": [
+        "Build and solve linear, quadratic, and exponential models with stated domains and units.",
+        "Connect symbolic structure, graphs, and data, including the limits of a fitted model."
+      ],
+      "nextStep": "Continue to Geometry, carrying equation-solving and coordinate reasoning into proof and measurement.",
+      "yearBridge": "Develop linear relationships, exponential change, quadratic structure, and data reasoning; Geometry next adds proof, similarity, and geometric models.",
+      "crossSubject": "Explain the mathematical argument in clear prose, label visual evidence, and distinguish a model’s assumptions from its conclusions.",
+      "routines": [
+        "Retrieve an earlier idea, explain its conditions, and connect it to the current problem.",
+        "Move between a labeled graph, a table, an equation, and a verbal account; identify what each representation leaves uncertain.",
+        "Estimate and reason by hand before using technology; report units, domain restrictions, and the limits of the model."
+      ]
+    },
+    {
+      "id": "geometry",
+      "title": "Geometry",
+      "levelLabel": "Flexible placement",
+      "source": {
+        "trackId": "common-core-math",
+        "grade": 10
+      },
+      "summary": "Use proof, similarity, coordinates, and measurement to explain geometric relationships and prepare for Algebra 2.",
+      "scopeNote": "A named view of the existing Common Core mathematics Grade 10 course, preserving its full 36-week instruction and standards references. The grade belongs to that source’s suggested placement; this sequence does not assign a required grade or certify school credit.",
+      "prerequisites": [
+        "Solve Algebra equations, compare functions, and use coordinate models.",
+        "Recognize transformations, similar figures, right triangles, and basic area and volume relationships."
+      ],
+      "outcomes": [
+        "Support geometric conclusions with definitions, transformations, and valid proof.",
+        "Apply similarity, right-triangle trigonometry, circles, coordinates, solids, and conditional probability."
+      ],
+      "nextStep": "Continue to Algebra 2, carrying proof habits, radians, triangle ratios, and domain reasoning into broader function families.",
+      "yearBridge": "Use proof and measurement to establish geometric relationships; Algebra 2 next develops the function tools that support Trigonometry.",
+      "crossSubject": "Explain the mathematical argument in clear prose, label visual evidence, and distinguish a model’s assumptions from its conclusions.",
+      "routines": [
+        "Retrieve an earlier idea, explain its conditions, and connect it to the current problem.",
+        "Move between a labeled graph, a table, an equation, and a verbal account; identify what each representation leaves uncertain.",
+        "Estimate and reason by hand before using technology; report units, domain restrictions, and the limits of the model."
+      ]
+    },
+    {
+      "id": "algebra-2",
+      "title": "Algebra 2",
+      "levelLabel": "Flexible placement",
+      "source": {
+        "trackId": "common-core-math",
+        "grade": 11
+      },
+      "summary": "Extend function families, domain reasoning, and periodic models before Trigonometry and its precalculus foundations.",
+      "scopeNote": "A named view of the existing Common Core mathematics Grade 11 course, preserving its full 36-week instruction and standards references. The grade belongs to that source’s suggested placement; this sequence does not assign a required grade or certify school credit.",
+      "prerequisites": [
+        "Build and interpret linear, quadratic, and exponential models from Algebra.",
+        "Use Geometry’s similarity, radians, right-triangle ratios, and conditional probability."
+      ],
+      "outcomes": [
+        "Work with polynomial, radical, rational, exponential, logarithmic, and introductory periodic functions.",
+        "Track restrictions, use complex numbers in quadratic equations, and evaluate statistical models and claims."
+      ],
+      "nextStep": "Continue to Trigonometry, including precalculus foundations; revisit composition, full rational graph analysis, and inverse restrictions explicitly before Calculus.",
+      "yearBridge": "The source course introduces radians, sine/cosine, periodic models, and the Pythagorean identity. Trigonometry deepens these ideas and adds the composition, inverse, rational-graph, and rate reasoning required for Calculus.",
+      "crossSubject": "Explain the mathematical argument in clear prose, label visual evidence, and distinguish a model’s assumptions from its conclusions.",
+      "routines": [
+        "Retrieve an earlier idea, explain its conditions, and connect it to the current problem.",
+        "Move between a labeled graph, a table, an equation, and a verbal account; identify what each representation leaves uncertain.",
+        "Estimate and reason by hand before using technology; report units, domain restrictions, and the limits of the model."
+      ]
+    },
+    {
+      "id": "trigonometry",
+      "title": "Trigonometry",
+      "levelLabel": "Flexible placement",
+      "summary": "Study trigonometry and the precalculus foundations in functions, algebra, and rates needed for Calculus.",
+      "scopeNote": "A 36-week Trigonometry course including precalculus foundations, following Algebra 2 and Geometry. Earlier unit-circle work is revisited with greater depth, then extended to inverse functions, equations, identities, and triangle applications. Function synthesis and difference quotients prepare for Calculus. This selected scope does not include every topic sometimes taught in Precalculus, such as matrices, full conic classification, polar/parametric methods, or a separate sequences-and-series unit.",
+      "prerequisites": [
+        "Factor and manipulate polynomial, radical, and rational expressions while recording excluded inputs.",
+        "Solve linear, quadratic, simple rational, exponential, and logarithmic equations and interpret their graphs.",
+        "Use similar right triangles, the Pythagorean theorem, basic trigonometric ratios, and introductory radians and periodic models."
+      ],
+      "outcomes": [
+        "Use circular and triangle definitions, exact values, graphs, inverses, identities, and equations to analyze trigonometric relationships.",
+        "Model periodic and geometric situations while handling domain restrictions, periodic solution sets, ambiguity, and units.",
+        "Compose and invert functions, analyze polynomial/rational/exponential/logarithmic behavior, and simplify difference quotients to prepare for Calculus."
+      ],
+      "nextStep": "Continue to Calculus once function domains, algebraic manipulation, radians, trigonometric values, and average-rate reasoning are secure; use targeted review when needed.",
+      "yearBridge": "Extend Algebra 2’s first encounter with periodic functions, then consolidate the nontrigonometric functions and shrinking-interval rate reasoning needed for Calculus.",
+      "crossSubject": "Use precise diagrams and explanations to connect periodic motion, indirect measurement, and the interpretation of mathematical models.",
+      "routines": [
+        "Retrieve an earlier idea, explain its conditions, and connect it to the current problem.",
+        "Move between a labeled graph, a table, an equation, and a verbal account; identify what each representation leaves uncertain.",
+        "Estimate and reason by hand before using technology; report units, domain restrictions, and the limits of the model."
+      ],
+      "units": [
+        {
+          "id": "u1",
+          "title": "Functions and algebra readiness",
+          "weeks": 4,
+          "focus": "Make domain, composition, and algebraic structure explicit before extending trigonometry.",
+          "learning": [
+            "Interpret piecewise rules and rational restrictions, compose functions, and construct inverses on suitable domains.",
+            "Use exponential and logarithmic relationships, transformations, and average rates to compare function behavior."
+          ],
+          "standards": [
+            "TRIG.1"
+          ],
+          "activities": [
+            "Compare function composition with multiplication using an original two-stage conversion model.",
+            "Diagnose an invalid cancellation or logarithm step and state the condition that would make the step valid."
+          ],
+          "evidence": [
+            "Find a composite domain and verify an inverse in both directions on the stated domains.",
+            "Solve an exponential or logarithmic equation and check each candidate in the original expression."
+          ],
+          "bridge": "Angle measure and the unit circle connect these function ideas to repeating motion."
+        },
+        {
+          "id": "u2",
+          "title": "Radians and circular functions",
+          "weeks": 4,
+          "focus": "Interpret trigonometric inputs as directed rotations and outputs as coordinate relationships.",
+          "learning": [
+            "Convert angle measures, use arc length and sector area, and define sine and cosine from unit-circle coordinates.",
+            "Extend to tangent and reciprocal functions with excluded inputs and distinguish angular speed from linear speed."
+          ],
+          "standards": [
+            "TRIG.2"
+          ],
+          "activities": [
+            "Track a marked point through positive and negative rotations and compare its angle with its coordinates.",
+            "Compare two wheels rotating at the same angular speed and explain how their rim speeds depend on radius."
+          ],
+          "evidence": [
+            "Explain a radian geometrically and use consistent units in a circular-motion calculation.",
+            "Identify why a reciprocal function is undefined at a stated input rather than assigning it a very large finite value."
+          ],
+          "bridge": "Special right triangles and circle symmetry supply exact values without memorizing an isolated table."
+        },
+        {
+          "id": "u3",
+          "title": "Right triangles and exact values",
+          "weeks": 4,
+          "focus": "Connect similarity, special triangles, and unit-circle symmetry.",
+          "learning": [
+            "Justify right-triangle ratios using similarity and derive familiar exact trigonometric values.",
+            "Use reference angles, quadrant signs, and even or odd symmetry; solve indirect-measurement problems with appropriate precision."
+          ],
+          "standards": [
+            "TRIG.3"
+          ],
+          "activities": [
+            "Construct special triangles and relate their side ratios to points on the unit circle.",
+            "Plan an original indirect-height measurement, identifying the observer’s elevation and the measurement uncertainty."
+          ],
+          "evidence": [
+            "Find an exact value from a justified reference triangle and separately establish its sign.",
+            "Choose a ratio from labeled sides, state the angle unit, and report a contextual result with reasonable precision."
+          ],
+          "bridge": "As the input angle varies, the coordinate ratios create periodic graphs."
+        },
+        {
+          "id": "u4",
+          "title": "Periodic graphs and models",
+          "weeks": 4,
+          "focus": "Read the parameters and limits of a periodic function.",
+          "learning": [
+            "Graph transformed sine, cosine, tangent, and reciprocal functions with periods, key points, and any asymptotes.",
+            "Build and critique sinusoidal models from supplied data or conditions, interpreting amplitude, midline, period, and phase."
+          ],
+          "standards": [
+            "TRIG.4"
+          ],
+          "activities": [
+            "Construct two equivalent sinusoidal descriptions of the same invented circular-height model.",
+            "Compare a periodic rule with an original table and identify a feature the rule fails to explain."
+          ],
+          "evidence": [
+            "Connect a horizontal transformation to the actual period and keep tangent’s asymptotes out of the domain.",
+            "Explain each parameter with units and distinguish a periodic mathematical rule from a limited real-world approximation."
+          ],
+          "bridge": "Inverse functions and equations locate particular events within repeated cycles."
+        },
+        {
+          "id": "u5",
+          "title": "Inverse trigonometry and equations",
+          "weeks": 4,
+          "focus": "Separate a principal inverse value from the complete solution set.",
+          "learning": [
+            "Construct inverse trigonometric functions using restricted domains and evaluate compositions with their range conditions.",
+            "Solve trigonometric equations on specified intervals and describe general periodic solutions and meaningful model event times."
+          ],
+          "standards": [
+            "TRIG.5"
+          ],
+          "activities": [
+            "Compare arcsin(sin θ) with θ across several intervals and explain exactly where equality holds.",
+            "Find every occurrence of a specified height in a modeled rotation and test the interval endpoints."
+          ],
+          "evidence": [
+            "State the principal range and distinguish an inverse function from a reciprocal.",
+            "List all solutions in the requested domain, check them in the original equation, and interpret each contextual time."
+          ],
+          "bridge": "Identities give new ways to transform expressions and solve equations while preserving their domains."
+        },
+        {
+          "id": "u6",
+          "title": "Identities and angle formulas",
+          "weeks": 4,
+          "focus": "Justify transformations rather than treating identities as unrestricted cancellation rules.",
+          "learning": [
+            "Use reciprocal, quotient, and Pythagorean identities and derive or apply sum, difference, double-angle, and half-angle formulas.",
+            "Distinguish proving an identity on its common domain from solving an equation; track signs and excluded inputs."
+          ],
+          "standards": [
+            "TRIG.6"
+          ],
+          "activities": [
+            "Derive an exact angle value in two ways and reconcile the results.",
+            "Repair an identity argument that divides by an expression that can be zero and describe the lost case."
+          ],
+          "evidence": [
+            "Give a valid identity proof on the stated domain and explain why a few numerical checks are insufficient.",
+            "Choose a half-angle sign from the angle’s location and verify equation solutions after algebraic transformations."
+          ],
+          "bridge": "Trigonometric relationships extend from right triangles to general triangle models."
+        },
+        {
+          "id": "u7",
+          "title": "Triangles and geometric applications",
+          "weeks": 4,
+          "focus": "Choose geometric relationships from the available information and handle ambiguity.",
+          "learning": [
+            "Use the Laws of Sines and Cosines, including zero, one, or two triangles in the SSA case.",
+            "Find triangle areas and solve bearing or surveying models while checking diagrams, angle conventions, and constraints."
+          ],
+          "standards": [
+            "TRIG.7"
+          ],
+          "activities": [
+            "Construct two different triangles satisfying the same suitable SSA data and explain how a diagram can hide the second one.",
+            "Compare two valid methods for an original surveying model and discuss sensitivity to an uncertain angle."
+          ],
+          "evidence": [
+            "Justify the method from the given sides and angles and account for every feasible triangle.",
+            "Label a bearing diagram, use compatible angle conventions, and assess whether a computed measurement is plausible."
+          ],
+          "bridge": "Geometric models join algebraic and periodic models in a broader function toolkit."
+        },
+        {
+          "id": "u8",
+          "title": "Precalculus function synthesis",
+          "weeks": 4,
+          "focus": "Consolidate the nontrigonometric function knowledge needed for calculus.",
+          "learning": [
+            "Analyze polynomial and rational graphs through factors, signs, domains, holes, and asymptotes.",
+            "Combine exponential, logarithmic, composite, inverse, and transformed functions; choose a family and domain suited to a model."
+          ],
+          "standards": [
+            "TRIG.8"
+          ],
+          "activities": [
+            "Compare a rational function with a simplified expression and explain their shared behavior and different domains.",
+            "Fit competing function families to supplied original conditions and defend a model using behavior beyond a few sample points."
+          ],
+          "evidence": [
+            "Distinguish an intercept, a removable hole, and an asymptote using the original expression.",
+            "Verify an inverse or composition with domain restrictions and explain a model choice without claiming that fit proves its truth."
+          ],
+          "bridge": "Reliable algebra and graph interpretation make shrinking-interval rate arguments possible."
+        },
+        {
+          "id": "u9",
+          "title": "Rates, secants, and calculus readiness",
+          "weeks": 4,
+          "focus": "Prepare the algebra and reasoning behind a derivative without requiring prior calculus.",
+          "learning": [
+            "Interpret secant slopes and average rates, form and simplify difference quotients for nonzero increments.",
+            "Explore approaching values from graphs and tables, distinguish that evidence from proof, and synthesize function, trigonometric, and domain reasoning."
+          ],
+          "standards": [
+            "TRIG.9"
+          ],
+          "activities": [
+            "Compare average rates on successively shorter intervals in an original function model.",
+            "Investigate a removable hole and a jump with tables, formulas, and sketches, explaining why the situations differ."
+          ],
+          "evidence": [
+            "Simplify a difference quotient while retaining the nonzero-increment condition and explain its rate units.",
+            "Complete a readiness investigation using exact trigonometric values, composition or inverse reasoning, and a justified domain; identify gaps for targeted review."
+          ],
+          "bridge": "Calculus begins by consolidating these foundations, then formalizes limits, derivatives, and accumulated change."
+        }
+      ]
+    },
+    {
+      "id": "calculus",
+      "title": "Calculus",
+      "levelLabel": "Flexible placement",
+      "summary": "Study limits, derivatives, integrals, applications, and introductory differential equations in one variable.",
+      "scopeNote": "A 36-week introduction to single-variable differential and integral calculus: limits, derivatives, the Fundamental Theorem, elementary integration and substitution, applications, and introductory differential equations. The course assumes the Trigonometry course’s precalculus foundations and includes readiness review. Infinite series, multivariable calculus, a comprehensive set of advanced integration methods, and formal epsilon-delta proof are outside the core plan. It is not labeled AP Calculus AB or BC and does not promise exam equivalence or college credit.",
+      "prerequisites": [
+        "Analyze domains and graphs of polynomial, rational, radical, exponential, logarithmic, and trigonometric functions.",
+        "Compose and invert suitable functions, factor and simplify expressions, solve relevant equations, and preserve restrictions.",
+        "Use radians, exact trigonometric values and identities, and inverse-trigonometric ranges.",
+        "Interpret secant slopes and average rates with units, and simplify a difference quotient for a nonzero increment."
+      ],
+      "outcomes": [
+        "Explain limits, continuity, and derivatives using symbolic, numerical, graphical, and verbal evidence.",
+        "Use differentiation to analyze behavior, solve constrained problems, relate rates, and make local approximations.",
+        "Interpret and evaluate accumulated change through definite integrals, the Fundamental Theorem, and elementary substitution.",
+        "Set up selected geometric and motion integrals, solve accessible separable initial-value problems, and critique numerical and mathematical models."
+      ],
+      "nextStep": "Choose further mathematics according to goals: additional single-variable calculus, statistics, discrete mathematics, or another appropriate course. Review the receiving course’s actual prerequisites.",
+      "yearBridge": "Function structure supports limits; limits define derivatives and integrals; the Fundamental Theorem joins local change to accumulation; applications and differential equations combine those ideas.",
+      "crossSubject": "Explain rates and accumulated quantities in original motion, growth, and design models, separating mathematical consequences from assumptions about the world.",
+      "routines": [
+        "Retrieve an earlier idea, explain its conditions, and connect it to the current problem.",
+        "Move between a labeled graph, a table, an equation, and a verbal account; identify what each representation leaves uncertain.",
+        "Estimate and reason by hand before using technology; report units, domain restrictions, and the limits of the model."
+      ],
+      "units": [
+        {
+          "id": "u1",
+          "title": "Function readiness and rates",
+          "weeks": 3,
+          "focus": "Use algebra and function structure to describe change before taking a limit.",
+          "learning": [
+            "State domains and simplify expressions without losing excluded inputs; read piecewise rules accurately.",
+            "Compose and invert suitable functions, interpret exponential, logarithmic, and trigonometric rules, and form average rates and difference quotients."
+          ],
+          "standards": [
+            "CALC.1"
+          ],
+          "activities": [
+            "Compare two equivalent-looking rational rules at their excluded input and explain the difference in their graphs.",
+            "Build a secant-slope table for an original position model, keeping time and distance units attached."
+          ],
+          "evidence": [
+            "Simplify a difference quotient for nonzero increments and distinguish it from a derivative.",
+            "Explain the domain of a composition and connect a rate to its graph and units."
+          ],
+          "bridge": "Shrinking secant intervals motivates limits; a missing function value need not prevent a nearby trend."
+        },
+        {
+          "id": "u2",
+          "title": "Limits and continuity",
+          "weeks": 3,
+          "focus": "Separate a value at an input from the behavior near that input.",
+          "learning": [
+            "Estimate one-sided and two-sided limits from tables and graphs, then justify accessible limits algebraically.",
+            "Distinguish unbounded behavior, missing limits, and discontinuities; apply continuity and the Intermediate Value Theorem only with the required hypotheses."
+          ],
+          "standards": [
+            "CALC.2"
+          ],
+          "activities": [
+            "Design a piecewise rule with a removable break, then change its assigned value to repair continuity.",
+            "Compare numerical evidence near a suspected vertical asymptote with a sign analysis of the formula."
+          ],
+          "evidence": [
+            "Explain why a table alone cannot prove a limit and why unequal one-sided limits prevent a two-sided limit.",
+            "State the interval and continuity conditions behind an existence conclusion and distinguish that conclusion from locating a unique root."
+          ],
+          "bridge": "The derivative is a particular limit of rates; continuity alone will not guarantee it exists."
+        },
+        {
+          "id": "u3",
+          "title": "Derivative definition and basic rules",
+          "weeks": 3,
+          "focus": "Interpret a derivative as both a local rate and a function.",
+          "learning": [
+            "Use a difference-quotient limit to derive simple derivatives and connect the result to tangent slope.",
+            "Use constant, power, and sum rules; interpret velocity, acceleration, units, and points where differentiability fails."
+          ],
+          "standards": [
+            "CALC.3"
+          ],
+          "activities": [
+            "Compare secant slopes on both sides of a corner and explain why no single tangent slope emerges.",
+            "Derive a polynomial derivative from the definition, then check it using the basic rules."
+          ],
+          "evidence": [
+            "Write the tangent line through the actual point of contact and explain the meaning of its slope.",
+            "Distinguish position, velocity, acceleration, and speed, including their units and possible signs."
+          ],
+          "bridge": "More complex function structures require rules for products, quotients, and compositions."
+        },
+        {
+          "id": "u4",
+          "title": "Product, quotient, and chain rules",
+          "weeks": 3,
+          "focus": "Choose a differentiation rule from the structure of the expression.",
+          "learning": [
+            "Differentiate products and quotients while retaining the original function domain.",
+            "Identify inner and outer functions, apply the chain rule, and combine rules in nested expressions."
+          ],
+          "standards": [
+            "CALC.4"
+          ],
+          "activities": [
+            "Compare a product-rule solution with an expanded-polynomial solution and reconcile the results.",
+            "Annotate the layers of a composite function before differentiating and diagnose a missing inner derivative."
+          ],
+          "evidence": [
+            "Explain why multiplying two derivatives is not the derivative of their product.",
+            "Differentiate a mixed expression and check the result by a second algebraic form or nearby numerical slopes."
+          ],
+          "bridge": "The same rules extend to trigonometric, exponential, logarithmic, inverse, and implicit functions."
+        },
+        {
+          "id": "u5",
+          "title": "Implicit and transcendental differentiation",
+          "weeks": 3,
+          "focus": "Extend local-rate reasoning to functions beyond polynomials.",
+          "learning": [
+            "Differentiate trigonometric functions in radians and exponential, logarithmic, and basic inverse-trigonometric functions.",
+            "Use inverse-function reasoning and implicit differentiation, tracking domains and points where a slope formula does not apply."
+          ],
+          "standards": [
+            "CALC.5"
+          ],
+          "activities": [
+            "Compare the derivative of a periodic model with its motion and explain why angle units matter.",
+            "Differentiate an implicit curve, locate a specified tangent, and check the point in the original equation."
+          ],
+          "evidence": [
+            "Select the appropriate derivative formula and include the chain-rule factor and relevant restrictions.",
+            "Explain each appearance of dy/dx in an implicit calculation and interpret a zero or undefined slope without discarding the original curve."
+          ],
+          "bridge": "Derivative information can now explain extrema and shape across several function families."
+        },
+        {
+          "id": "u6",
+          "title": "Derivatives and function behavior",
+          "weeks": 3,
+          "focus": "Turn local slope and curvature into justified statements about a whole interval.",
+          "learning": [
+            "Find critical numbers and compare candidates and endpoints for absolute extrema when the hypotheses permit.",
+            "Use the Mean Value Theorem, derivative signs, and concavity to coordinate the graphs of a function and its first two derivatives."
+          ],
+          "standards": [
+            "CALC.6"
+          ],
+          "activities": [
+            "Construct a sign chart and predict a function sketch before checking with a graphing tool.",
+            "Compare two functions with the same derivative but different starting values, then identify which shape claims remain shared."
+          ],
+          "evidence": [
+            "Distinguish a critical number from an extremum and test for a change of concavity before declaring an inflection point.",
+            "State the continuity and differentiability conditions used in an extreme-value or mean-value argument."
+          ],
+          "bridge": "Shape analysis supplies the reasoning needed for constrained optimization and approximation."
+        },
+        {
+          "id": "u7",
+          "title": "Optimization and related rates",
+          "weeks": 3,
+          "focus": "Translate a situation into a function or changing relationship before calculating.",
+          "learning": [
+            "Set up and justify constrained optimization, checking the feasible domain and candidate endpoints.",
+            "Relate changing quantities by implicit differentiation and use linearization or differentials with an explicit approximation interval."
+          ],
+          "standards": [
+            "CALC.7"
+          ],
+          "activities": [
+            "Compare candidate dimensions for an invented design constraint and justify the best feasible one.",
+            "Create a labeled diagram for a changing geometric situation, differentiate its relationship, and evaluate at the stated instant."
+          ],
+          "evidence": [
+            "Separate a fixed constraint from a variable quantity and explain why the proposed optimum is global on the stated domain.",
+            "Attach units to a related rate or differential and describe when a local linear estimate can become unreliable."
+          ],
+          "bridge": "Rates also accumulate; summing small changes leads to the definite integral."
+        },
+        {
+          "id": "u8",
+          "title": "Accumulation and definite integrals",
+          "weeks": 3,
+          "focus": "Build total change by combining small signed contributions.",
+          "learning": [
+            "Use summation notation and Riemann sums to connect a rate graph with a definite integral.",
+            "Interpret signed accumulation, integral properties, and left, right, midpoint, and trapezoidal approximations; justify error direction only when the available shape information supports it."
+          ],
+          "standards": [
+            "CALC.8"
+          ],
+          "activities": [
+            "Estimate change from an original rate table using more than one sampling convention and compare the assumptions.",
+            "Create a rate graph with positive and negative regions and distinguish net accumulation from total unsigned contribution."
+          ],
+          "evidence": [
+            "Include subinterval widths and units in a sum and explain the limiting interpretation.",
+            "Distinguish an exact geometric integral from a numerical estimate and support any overestimate or underestimate claim."
+          ],
+          "bridge": "The Fundamental Theorem connects accumulated change with the derivative of an antiderivative."
+        },
+        {
+          "id": "u9",
+          "title": "Fundamental Theorem and substitution",
+          "weeks": 3,
+          "focus": "Connect differentiation and integration while tracking variables and bounds.",
+          "learning": [
+            "Apply both parts of the Fundamental Theorem to accumulation functions and definite integrals, including a variable upper bound with a chain-rule factor.",
+            "Construct elementary antiderivative families, use initial conditions, and apply substitution with consistent variables and transformed bounds."
+          ],
+          "standards": [
+            "CALC.9"
+          ],
+          "activities": [
+            "Differentiate an accumulation function and compare the sign of its derivative with the original rate.",
+            "Solve a definite integral by substitution twice, once changing bounds and once returning to the original variable."
+          ],
+          "evidence": [
+            "Explain the difference between an indefinite family and a definite value and verify an antiderivative by differentiating.",
+            "State why the theorem or substitution applies and avoid mixing bounds from one variable with another variable’s integrand."
+          ],
+          "bridge": "Definite integrals can measure geometric quantities as well as accumulated rates."
+        },
+        {
+          "id": "u10",
+          "title": "Integral applications",
+          "weeks": 3,
+          "focus": "Let the meaning of a slice or rate determine the integral.",
+          "learning": [
+            "Set up area between curves and disk or washer volumes using correctly ordered bounds and nonnegative geometric dimensions.",
+            "Use net change, average value, and motion integrals, separating displacement from distance traveled."
+          ],
+          "standards": [
+            "CALC.10"
+          ],
+          "activities": [
+            "Find intersections of two accessible curves, split an interval when their order changes, and justify the area integrand.",
+            "Sketch a region and a representative washer about a stated axis, labeling inner and outer radii as distances."
+          ],
+          "evidence": [
+            "Explain the units and geometry of an area or volume integral before evaluating it.",
+            "Use the sign of velocity to obtain total distance and justify an average value as total accumulation divided by interval length."
+          ],
+          "bridge": "A rate law can define an unknown function; differential equations make that relationship explicit."
+        },
+        {
+          "id": "u11",
+          "title": "Differential equations and initial values",
+          "weeks": 3,
+          "focus": "Connect a rate law, a family of solutions, and a particular starting state.",
+          "learning": [
+            "Verify candidate solutions and interpret slope fields and initial conditions.",
+            "Solve accessible separable equations without losing equilibrium solutions, use Euler estimates, and discuss the assumptions in growth and decay models."
+          ],
+          "standards": [
+            "CALC.11"
+          ],
+          "activities": [
+            "Sketch direction segments at specified points and compare two solution paths with different starting values.",
+            "Compare Euler approximations at two step sizes against a solvable model and explain what that comparison can and cannot establish."
+          ],
+          "evidence": [
+            "Check a proposed solution in the differential equation and its initial condition, keeping any domain limits.",
+            "Identify constant solutions before division and distinguish a numerical estimate from a symbolic solution or a proof of long-term behavior."
+          ],
+          "bridge": "Synthesis combines local rates, accumulated change, and model assumptions in one argument."
+        },
+        {
+          "id": "u12",
+          "title": "Calculus synthesis and model critique",
+          "weeks": 3,
+          "focus": "Choose and defend calculus methods across representations and applications.",
+          "learning": [
+            "Integrate graphical, symbolic, numerical, and verbal evidence while selecting an appropriate method and checking its conditions.",
+            "Complete a bounded model investigation, analyze an erroneous solution, and identify specific topics needing further study."
+          ],
+          "standards": [
+            "CALC.12"
+          ],
+          "activities": [
+            "Investigate an original changing-quantity model using an extremum, an accumulated change, and a statement of model limits.",
+            "Compare two proposed solution chains and repair the earliest unjustified step with a reasoned counterexample or calculation."
+          ],
+          "evidence": [
+            "Present a coherent argument with domains, units, hypotheses, and a check independent of the main calculation.",
+            "Explain what the available evidence supports and identify what would require additional mathematics or data."
+          ],
+          "bridge": "Continue according to goals into further single-variable calculus, statistics, discrete mathematics, or other mathematical study."
+        }
+      ]
+    }
+  ]
+}

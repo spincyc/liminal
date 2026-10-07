@@ -382,14 +382,31 @@ const weeklySource = weeklyBuild.loadWeekly();
 if (JSON.stringify(weeklyJson) !== JSON.stringify(weeklySource.index)) throw new Error("Weekly index differs from source courses");
 for (let i = 0; i < weeklyJson.courses.length; i++) {
   const entry = weeklyJson.courses[i];
-  if (!/^content\/weekly\/(?:common-core-math|common-core-reading|singapore-math)\/(?:k|[1-9]|1[0-2])\.json$/.test(entry.file)) throw new Error("Unsafe weekly course path");
+  if (!/^content\/weekly\/(?:(?:common-core-math|common-core-reading|singapore-math)\/(?:k|[1-9]|1[0-2])|high-school-math\/(?:algebra|geometry|algebra-2|trigonometry|calculus))\.json$/.test(entry.file)) throw new Error("Unsafe weekly course path");
   const built = JSON.parse(fs.readFileSync(path.join(root, entry.file), "utf8"));
   if (JSON.stringify(built) !== JSON.stringify(weeklySource.courses[i])) throw new Error("Weekly course differs from source: " + entry.file);
 }
 
+// The named sequence shares validated plans but never assigns a fixed grade.
+const highSchoolHtml = fs.readFileSync(path.join(root, "high-school.html"), "utf8");
+const highSchoolScripts = [...highSchoolHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+if (JSON.stringify(highSchoolScripts) !== JSON.stringify(["content/high-school.js", "content/weekly-index.js", "lib/high-school.js", "lib/weekly.js", "app/high-school.js"])) throw new Error("High-school scripts are missing or out of order");
+for (const match of highSchoolHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
+  const target = match[1].split(/[?#]/)[0];
+  if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing high-school asset: " + target);
+}
+const highSchoolIds = [...highSchoolHtml.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+if (new Set(highSchoolIds).size !== highSchoolIds.length) throw new Error("Duplicate high-school element IDs");
+highSchoolScripts.forEach(script => new vm.Script(fs.readFileSync(path.join(root, script), "utf8")));
+const highSchoolContext = vm.createContext({ window: {} });
+vm.runInContext(fs.readFileSync(path.join(root, "content/high-school.js"), "utf8"), highSchoolContext);
+const highSchoolData = highSchoolContext.window.LIMINAL_HIGH_SCHOOL;
+const highSchoolJson = JSON.parse(fs.readFileSync(path.join(root, "content/high-school.json"), "utf8"));
+if (!highSchoolData || JSON.stringify(highSchoolData) !== JSON.stringify(highSchoolJson) || JSON.stringify(highSchoolJson) !== JSON.stringify(weeklySource.highSchool)) throw new Error("High-school plan bundle differs from source or download");
+
 // Every page names its icon, which is built with it, so no page asks the
 // server for a favicon.ico that is not there.
-for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "curriculum.html", "weeks.html"]) {
+for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "curriculum.html", "weeks.html", "high-school.html"]) {
   const file = path.join(root, page);
   if (!fs.existsSync(file)) continue;
   const icon = (fs.readFileSync(file, "utf8").match(/<link rel="icon" href="([^"]+)"/) || [])[1];

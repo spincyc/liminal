@@ -34,6 +34,14 @@ decoding and adult read-aloud activities are identified separately. These
 materials support teaching and sustained reading; they do not certify mastery
 or provide a full ELA writing, speaking, and language curriculum.
 
+**High-school mathematics** also offers a named sequence: Algebra → Geometry →
+Algebra 2 → Trigonometry → Calculus. Placement follows prerequisites rather
+than fixed grades. The first three courses reuse the corresponding reviewed
+weekly material; Trigonometry and Calculus have their own 36-week plans and
+coursework. Their scope is editorial, with explicit source references and no
+claim of complete Common Core or AP alignment. See the
+[sequence and prerequisite bridges](docs/high-school-math.md).
+
 **Courses** starts with Grade 8 Mathematics: the four topics in the supplied
 enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
 examples, 36 prerequisite checks, 36 partially worked practice tasks, and 85
