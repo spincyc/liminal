@@ -102,6 +102,11 @@ existing incomplete or invalid file fails the build. The index lists grades
 12 through kindergarten. The reader fetches only the selected course and guards
 against an older request replacing a more recent selection.
 
+The full repository gate requires all 41 original courses and all 44 available
+course views, including the three reused named high-school courses. A missing
+course therefore fails release validation even though the standalone builder
+can support incomplete inventories during authoring.
+
 Routes use `weeks.html#<track>/<grade>/<week>`, with `k` for kindergarten and
 weeks 1–36. The year-plan page links each available week under its unit. Previous
 and next controls stay within the selected course. Invalid links recover with

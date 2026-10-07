@@ -42,6 +42,11 @@ coursework. Their scope is editorial, with explicit source references and no
 claim of complete Common Core or AP alignment. See the
 [sequence and prerequisite bridges](docs/high-school-math.md).
 
+The 41 original full-year courses contain 1,476 weekly lessons, 4,428 worksheets,
+26,628 exercises, and 2,953 worked examples. The three reused named courses do
+not inflate these counts. Independent sampled content review and browser/print
+checks are recorded in [the integration review](docs/reviews/2026-10-07-weekly-integration.md).
+
 **Nightly reading** supplies 180 public-domain selections for each grade K–12,
 five per week. The age-adjusted reading and discussion budget grows from about
 10 minutes in kindergarten to 25–30 minutes in high school. Each night includes
