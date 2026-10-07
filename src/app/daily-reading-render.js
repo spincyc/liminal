@@ -26,12 +26,14 @@
   function reading(packet, { notes = null, doc = document, standalone = false } = {}) {
     const { day, source } = packet;
     const article = el("article", undefined, "daily-reading", doc), header = el("header", undefined, "daily-heading", doc);
-    header.append(el("p", D.gradeLabel(packet.grade) + " · Week " + day.week + " · Day " + day.day + " · Night " + ((day.week - 1) * 5 + day.day) + " of 180", "daily-meta", doc));
+    header.append(el("p", D.gradeLabel(packet.grade) + " · Week " + day.week + " · Day " + day.day, "daily-meta", doc));
     const title = el(standalone ? "h1" : "h2", day.title, undefined, doc); title.id = "dailyHeading"; title.tabIndex = -1;
-    header.append(title, el("p", "By " + source.author + (source.translator ? " · Translated by " + source.translator : ""), "daily-author", doc));
-    const budget = el("div", undefined, "daily-budget", doc);
-    budget.append(el("span", "Read " + day.time.readingMinutes + " min", undefined, doc), el("span", "Discuss " + day.time.discussionMinutes + " min", undefined, doc), el("span", day.time.totalMinutes + " min total", undefined, doc));
-    header.append(budget, el("p", D.modeLabel(day.readingMode) + " · Suggested time, including rereading", "daily-mode", doc));
+    const credit = D.selectionCredit(day, source);
+    header.append(title);
+    if (credit.workTitle) header.append(el("p", credit.workTitle, "daily-work-title", doc));
+    header.append(el("p", "By " + credit.author + (source.translator ? " · Translated by " + source.translator : ""), "daily-author", doc));
+    const budget = el("p", "About " + day.time.totalMinutes + " min · read " + day.time.readingMinutes + " + discuss " + day.time.discussionMinutes, "daily-budget", doc);
+    header.append(budget, el("p", D.modeLabel(day.readingMode), "daily-mode", doc));
     article.append(header, el("p", day.context, "daily-context", doc));
     if (day.contentNote) article.append(el("p", "Content note: " + day.contentNote, "daily-content-note", doc));
     if (day.excerpt.continuesFrom) article.append(el("p", "Continued from the previous night.", "daily-continuation", doc));

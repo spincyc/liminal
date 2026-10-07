@@ -147,6 +147,14 @@ substitution in a generic question is not sufficient. Notes acknowledge
 defensible alternatives where the text permits them. The student view and
 student exports withhold facilitator notes and sample evidence until requested.
 
+Optional `day.author` names an individual piece's authenticated author when
+the source bibliography describes an anthology or editor; the reader otherwise
+uses `source.author`. Optional `day.workTitle` gives the individual work's exact
+title when it differs usefully from the editorial selection title. Both are
+nonempty strings when present. Do not infer anonymous nursery-rhyme authors or
+assign an editor as a poem's author. These fields do not create additional
+bibliographic sources or inflate the source-diversity count.
+
 ## Source research and rights
 
 Use trustworthy primary repositories: digitized editions and their catalogue
@@ -160,6 +168,42 @@ author's death date alone proves the needed edition and rights facts. See its
 The [US Copyright Office duration guidance](https://www.copyright.gov/help/faq/faq-duration.html)
 explains why publication history matters. Rights records apply to the United
 States; they are not a claim of worldwide public-domain status.
+
+An undated title page does not by itself make the original English text
+unidentified. A transcription with its publisher and original-text copyright
+leaf, together with the repository's explicit US public-domain determination,
+can identify that text without identifying a printing date. Describe it as
+"PG transcription of [publisher] text, copyright [year]; printing undated."
+Do not call it a dated first edition. The 2026-10-07 source review accepted
+Holbrook's [*The Book of Nature Myths*](https://www.gutenberg.org/ebooks/22420)
+(copyright 1902), Brown's [*The Book of Saints and Friendly Beasts*](https://www.gutenberg.org/ebooks/28990)
+(copyright 1900), and Baldwin's [*Fifty Famous Stories Retold*](https://www.gutenberg.org/ebooks/18442)
+(copyright 1896) on these combined
+primary leaves and explicit US status. Their selected excerpts still require
+complete fidelity checks against the actual transcription, but not a redundant
+second-witness collation solely because the printing is undated.
+
+This distinction does not extend to an author's original-publication date
+without supporting source front matter. Unknown translators, unresolved
+revisions or abridgments, mismatched versions, and actual text corruption
+require resolution, full collation, or replacement. Later introductions and
+other new material are separate from the underlying text; see the
+[Copyright Office's derivative-work guidance](https://www.copyright.gov/circs/circ14.pdf).
+Project Gutenberg's [edition and front-matter guidance](https://www.gutenberg.org/policy/permission.html)
+likewise does not promise identity with a particular print exemplar.
+
+When the text remains genuinely unidentified, do not invent its print exemplar.
+The bounded fallback is to collate **every selected excerpt** against an
+identified, dated public-domain primary witness, recording matching words
+after documented whitespace normalization. Resolve substantive revision and
+translation differences. Describe the source honestly: "PG transcription;
+print exemplar unidentified; selected text collated against [dated witness]."
+Use the identified text/witness year in `publicationYear`, and record the
+witness URL, locator, and explicit rights basis. An original-publication date,
+US public-domain label, or spot check alone is insufficient for this fallback.
+If the selected words cannot be verified against that witness, use another
+source. This 2026-10-07 editorial decision preserves verifiable selected text
+without claiming an unsupported relationship to a particular print copy.
 
 Document the publication year and translator explicitly, the US public-domain
 basis, a primary evidence URL, and the date checked. Prefer texts published by

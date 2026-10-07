@@ -37,6 +37,10 @@
     try { const url = new URL(value); return url.protocol === "https:" && !!url.hostname && !url.username && !url.password; } catch { return false; }
   }
   function sourceLabel(source) { return source.author + ", " + source.title + " (" + source.publicationYear + ")" + (source.translator ? "; translated by " + source.translator + " (" + source.translationYear + ")" : ""); }
+  function selectionCredit(day, source) {
+    return { author: day.author || source.author,
+      workTitle: day.workTitle && day.workTitle !== day.title && day.workTitle !== source.title ? day.workTitle : null };
+  }
   // Explicit allowlists keep facilitator notes, evidence, and future private
   // fields out of downloadable student files, even if a disclosure is open.
   function studentReading(course, week, dayNumber) {
@@ -44,6 +48,7 @@
     if (!day || !source) return null;
     return { format: "liminal-daily-reading-student", version: 1, grade: course.grade,
       day: { id: day.id, week: day.week, day: day.day, title: day.title, genre: day.genre, readingMode: day.readingMode,
+        ...(day.author === undefined ? {} : { author: day.author }), ...(day.workTitle === undefined ? {} : { workTitle: day.workTitle }),
         time: { readingMinutes: day.time.readingMinutes, discussionMinutes: day.time.discussionMinutes, totalMinutes: day.time.totalMinutes },
         context: day.context, contentNote: day.contentNote, focus: day.focus,
         excerpt: { locator: day.excerpt.locator, isCompleteWork: day.excerpt.isCompleteWork, continuesFrom: day.excerpt.continuesFrom, continuesTo: day.excerpt.continuesTo },
@@ -56,5 +61,5 @@
           verifiedDate: source.rights.verifiedDate, evidenceUrl: safeHttps(source.rights.evidenceUrl) ? source.rights.evidenceUrl : null } } };
   }
   return { validGrade, gradeKey, gradeLabel, gradeFromKey, validDay, route, gradeAt, resolve, dayAt, sourceAt, progressionAt,
-    navigation, modeLabel, minuteRange, safeHttps, sourceLabel, studentReading };
+    navigation, modeLabel, minuteRange, safeHttps, sourceLabel, selectionCredit, studentReading };
 });

@@ -70,6 +70,7 @@ function validateGrade(course) {
     const source = course.sources.find(item => item.id === day.sourceId);
     assert(source, "unresolved source at " + day.id); usedSources.add(day.sourceId);
     for (const field of ["title", "genre", "challenge", "focus", "context"]) text(day[field], day.id + "." + field);
+    for (const field of ["author", "workTitle"]) if (Object.hasOwn(day, field)) text(day[field], day.id + "." + field);
     nullableText(day.contentNote, day.id + ".contentNote");
     assert(["adult-read-aloud", "shared", "independent"].includes(day.readingMode), "invalid reading mode at " + day.id);
     record(day.time, day.id + ".time");

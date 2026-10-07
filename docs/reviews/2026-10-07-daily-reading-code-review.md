@@ -6,7 +6,7 @@ Reviewer: `code_cold_review`. Date: 2026-10-07. Status: **no outstanding substan
 
 Read the daily-reading contract, builder, read-only checker, pure library, page controller, renderer, HTML/CSS, and tests. Reviewed counts and ordering, progression, source and question references, continuation links, time budgets, text identities, evidence matching, route recovery, asynchronous loading, student exports, source links, print privacy, and mobile/keyboard structure. The later shared-integration review is recorded below.
 
-`/usr/bin/node --test test/daily-reading.test.js | tail` passed **12 tests, 0 failures** after the repair below. Synthetic fixtures cover complete and incomplete grades/corpora, exact hashes, malformed references and dates, time arithmetic, continuations, duplicate selections, bibliographic duplicates, safe rendering, and student projections/downloads. The fixture build confirms that failed admission preserves an existing valid output. Its temporary scratch directories are removed by the tests; this reviewer did not rebuild `dist/`, start a browser/server, commit, or push. JavaScript syntax and `git diff --check` passed.
+`/usr/bin/node --test test/daily-reading.test.js | tail` passed **15 tests, 0 failures** after the repair and optional-credit follow-up below. Synthetic fixtures cover complete and incomplete grades/corpora, exact hashes, malformed references and dates, time arithmetic, continuations, duplicate selections, bibliographic duplicates, safe rendering, selection-level attribution, and student projections/downloads. The fixture build confirms that failed admission preserves an existing valid output. Its temporary scratch directories are removed by the tests; this reviewer did not rebuild `dist/`, start a browser/server, commit, or push. JavaScript syntax and `git diff --check` passed.
 
 An additional exhaustive check passed **2,340 exact grade/week/day route roundtrips**, first/last-night boundaries, and next/previous inverse links. A separate in-memory harness executed the actual page controller with delayed fetches: neither an older grade's late successful response nor its late failure replaced a newer selected grade. This tests controller behavior with minimal DOM objects, not browser layout or assistive technology.
 
@@ -33,24 +33,32 @@ The actual corpus was still being researched during this review. Final delivery 
 
 ## Shared-integration follow-up
 
-Reviewed only the subsequent diffs in the shared build, full gate, static smoke, home entry, weekly-reading link, and README. No new findings. Independently checked the coordinator's fresh daily-page build against source, script order/syntax, local assets, unique and referenced DOM IDs, and index/source parity. **Zero actual daily-grade files were present**, so real-corpus file parity remains pending; the earlier fixture test covers that comparison with one grade. The weekly link is restricted to Common Core reading and preserves its grade/week with day 1; K/Grade 12 and first/last-week boundary links resolve correctly. README links the contract and distinguishes original-material rights from attributed public-domain texts. Both inventory checks currently run in available-content mode. This does not certify completion: both must use `--complete` before final delivery, requiring 41 original weekly courses/44 views and 13 daily grades/2,340 nights. The coordinator reported the full gate passing; this reviewer did not rerun it or rebuild output.
+Reviewed only the subsequent diffs in the shared build, full gate, static smoke, home entry, weekly-reading link, and README. No new findings. Independently checked the coordinator's fresh daily-page build against source, script order/syntax, local assets, unique and referenced DOM IDs, and index/source parity. **Zero actual daily-grade files were present at that integration check**, so real-corpus file parity was not established; the earlier fixture test covers that comparison with one grade. The weekly link is restricted to Common Core reading and preserves its grade/week with day 1; K/Grade 12 and first/last-week boundary links resolve correctly. README links the contract and distinguishes original-material rights from attributed public-domain texts. Both inventory checks initially ran in available-content mode. The final gate follow-up now passes `--complete` to the weekly checker. Inspected that argument and independently ran the read-only complete weekly checker: 41 originals, 44 views, 1,476 weeks, 4,428 worksheets, 26,628 items, and 2,953 worked examples passed, matching the new README counts. The README links the coordinator's content/browser integration review; this does not extend this reviewer's content approval. Daily admission still runs in available-content mode and must change to `--complete` before final delivery to require 13 grades/2,340 nights. The coordinator reported the full gate passing; this reviewer did not rerun it or rebuild output.
+
+## Optional piece-credit follow-up
+
+Reviewed the later validator, pure-library, renderer, style, and test diffs for optional `day.author` and `day.workTitle`. No new findings. Present values must be nonempty plain-text strings; the student projection explicitly permits only these two additional fields. The reader and standalone download use the individual author when supplied and retain the source-author fallback otherwise. An informative work title can appear separately without repeating the selection/source title. Source bibliography, rights records, selection hashes, source-diversity counting, and withheld facilitator fields remain unchanged. All 15 targeted tests pass, including invalid optional values, anthology attribution, fallback behavior, and exported student-note exclusion. No new browser or corpus evidence is implied.
+
+The final source-policy clarification records the coordinator's source-review distinction between an undated printing and an unidentified text. It permits disclosed original-English texts identified by publisher/copyright front matter together with explicit repository US status, while still requiring every selected excerpt to match the actual transcription. For genuinely unidentified texts, it retains full selected-excerpt collation against an identified dated primary witness, resolution of substantive revision/translation differences, and replacement when verification fails. It forbids invented printing dates and unsupported exemplar relationships. This is a documented research decision with no runtime/schema change; this code review did not independently inspect its cited primary leaves or determine rights. The platform does not verify external witnesses or prove rights; those remain corpus-research and source-review responsibilities.
+
+Final compact-header recheck found no remaining issue. Grade/week/day identity, piece/source attribution, reading mode, and both minute components remain visible with less repeated copy. A proposed removal of the suggested-time qualifier would also have affected standalone downloads; the accepted final wording is `About <total> min · read <reading> + discuss <discussion>`, preserving estimated-time meaning without restoring the longer header. The export regression now requires that qualifier. All 15 targeted tests and whitespace checks pass on the final snapshot below. The platform author reports a one-line timing row without overflow at 320px; this reviewer did not rerun those browser checks.
 
 ## Reviewed SHA-256 snapshot
 
 ```text
-c5d25118a92100e3e1f0ce9b22e1a00bd3ffc70c06456c7c3c1dcda199d5ad16  tools/build-daily-reading.js
+1abc9ed25ee5a447dc0495198e8b7b7e9494973d4e5e5da779e84227e0648b9a  tools/build-daily-reading.js
 812007a168b16a89a88ed2b57b9c7c3a2bad64610764872d0b15a1c15f688099  tools/check-daily-reading.js
-b2a8194879527558bbdf35d1ad6138c3af99a2c371905d129350a16242819238  src/lib/daily-reading.js
-e4fe9f54139d6410e6d8efb3ae185c72f4a984a788261bf3b48beebc8cbbf3b0  src/daily-reading.html
+f253fa48373843ce175a1483f8e16d2dc9056101158d4fbe6b89fecf114ae810  src/lib/daily-reading.js
+e05bc6a86febbadaabca7cae5035b9ab87a4986a09d1f943e7d1613a4303bdbb  src/daily-reading.html
 a0d9f8d842d856b416c34ca5cd96df44cb15d41f8d0e64fe4c17e7a8aa60096c  src/app/daily-reading.js
-99a260cb11bae30856306a8f88951dcbb04bb77374aa5ddf3e7a2472baa245c4  src/app/daily-reading-render.js
-aedb5ed22020d1d04f5212026355819c2a9e5d1b06e3335bc069dc7a27ddad89  src/styles/daily-reading.css
-6e605f8eec06abbc8fcbe768e7d2a643d8fb55aaa84800ccf3a02fd1278f5efe  test/daily-reading.test.js
-d01e67d9eef667b0a16eda110a70af0d36ae1af3948a398750e3a6ab6d06dfae  docs/daily-reading.md
+a861c09e19a52fdb9b85078d56956bff405189e4f6cce0cb87762184c9e41ccf  src/app/daily-reading-render.js
+819d78ace7cf753613205d128646bd02f6de0aa00bfdce4ed91f0652d5ff50c4  src/styles/daily-reading.css
+29a936a742e8ab6586d7b49518cf094bb5813b00fff7cbbb7b4eed495e4d60eb  test/daily-reading.test.js
+88b0594249c2af12d63f0c8d5a309a6d5557d26c06cb0df07f263de43c0f8cd9  docs/daily-reading.md
 eb830c817722f56511680c7d40d10dfeb1b492905bd85d327b7d4999aaa8476f  tools/build.js
-d4711f20d40396fc896be759cb44d691bd686948e7f50cdafef7adc686afcdc8  tools/check-all.js
+f452fdc3ea0396cc3b98551c7435cfc2e75f111c37d614913ed7753df47d59cc  tools/check-all.js
 cef557a770870459db123b7c061f74f8fef3ca445129880b9889eb494b89b892  tools/smoke-static.js
 edd90b6d16f7164d603aa7915a46e8f90e9a2056a7ea47dd0e7ed9b00286c569  src/index.html
 020b205daaa09bd03b21095b0b7f06b08aa34959024e1be4319e9741836af7d6  src/app/weekly.js
-d93477ef1494aa13e3a5b0520807129aa6fcd8dc56c04328d13c4cde5f8f0168  README.md
+eb4f9517ee5008d02745d4d6509dffd73fd0ae03687b3521a6bf979a46281c80  README.md
 ```

@@ -14,7 +14,8 @@
 .daily-meta { font-size: .8125rem; }
 .daily-heading :is(h1, h2) { font: 400 clamp(1.9rem, 5vw, 2.65rem)/1.15 var(--font-serif); letter-spacing: -.025em; margin-top: 8px; overflow-wrap: anywhere; }
 .daily-author { margin-top: 9px; font-size: .9375rem; }
-.daily-budget { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 17px; font-size: .875rem; font-weight: 600; }
+.daily-work-title { margin-top: 8px; font: italic 1rem/1.5 var(--font-serif); color: var(--color-muted); }
+.daily-budget { margin-top: 17px; font-size: .8125rem; font-weight: 600; }
 .daily-mode { margin-top: 4px; font-size: .8125rem; }
 .daily-context { margin-top: 22px; font-size: .9375rem; }
 .daily-content-note { margin-top: 16px; padding-left: 12px; border-left: 2px solid var(--color-line-strong); font-size: .875rem; }

@@ -57,6 +57,14 @@ test("source IDs and review records cannot inflate a single bibliography entry i
     url: source.url, textUrl: source.textUrl, rights: { ...source.rights, basis: "Different review prose for " + source.id } }));
   assert.throws(() => B.validateGrade(course), /bibliographic sources/);
 });
+test("optional selection credits must be nonempty plain text without changing source counts", () => {
+  const course = fixture(); course.days[0].author = "Individual Poet"; course.days[0].workTitle = "The Night Song";
+  assert.equal(B.validateGrade(course).sources.length, 10);
+  for (const field of ["author", "workTitle"]) for (const invalid of [null, " ", 7, "<em>Not plain text</em>"]) {
+    const changed = structuredClone(course); changed.days[0][field] = invalid;
+    assert.throws(() => B.validateGrade(changed), /missing text|non-plain text/);
+  }
+});
 test("whole-text identities catch repeats despite whitespace changes, inside and across grades", () => {
   const first = fixture(), second = fixture(1);
   second.days[0].blocks = structuredClone(first.days[0].blocks); second.days[0].blocks[0].text = second.days[0].blocks[0].text.replace(/ /g, "  ");
@@ -145,6 +153,29 @@ test("offline student document keeps provenance and questions without scripts or
   const html = R.exportDocument(packet, ".offline-marker{display:block}", "https://example.org/daily-reading.html#k/1/1").documentElement.outerHTML;
   assert.match(html, /offline-marker|Fixture night/); assert.match(html, /Test Author 0/); assert.match(html, /Public domain in the United States/);
   assert.match(html, /Question 3/); assert.match(html, /no affiliation/); assert.match(html, /Return to this reading/);
+  assert.match(html, /class="daily-budget">About 10 min · read 6 \+ discuss 4/);
   assert.doesNotMatch(html, /FACILITATOR_SECRET|daily-facilitator|<script|<iframe|application\/json/);
   course.sources[0].textUrl = "javascript:alert(1)"; assert.equal(D.studentReading(course, 1, 1).source.textUrl, null);
+}));
+test("anthology selections credit the piece author in reader and student export while retaining the source bibliography", () => withDOM(() => {
+  const course = fixture(), day = course.days[0], source = course.sources[0];
+  source.author = "Various authors; Collected by Test Editor"; source.title = "A Test Anthology";
+  day.title = "Listen to the night"; day.author = "Individual Poet"; day.workTitle = "The Night Song";
+  const packet = D.studentReading(course, 1, 1);
+  assert.equal(packet.day.author, "Individual Poet"); assert.equal(packet.day.workTitle, "The Night Song");
+  assert.equal(packet.source.author, source.author); assert.equal(packet.source.title, source.title);
+  for (const html of [R.reading(packet).outerHTML, R.exportDocument(packet).documentElement.outerHTML]) {
+    assert.match(html, /class="daily-author">By Individual Poet/); assert.match(html, /class="daily-work-title">The Night Song/);
+    assert.match(html, /Various authors; Collected by Test Editor, A Test Anthology \(1900\)/);
+    assert.doesNotMatch(html, /By Various authors|FACILITATOR_SECRET/);
+  }
+}));
+test("single-author selections retain the source fallback and repeated work titles stay unobtrusive", () => withDOM(() => {
+  const course = fixture();
+  for (const workTitle of [undefined, course.days[0].title, course.sources[0].title]) {
+    if (workTitle !== undefined) course.days[0].workTitle = workTitle;
+    const packet = D.studentReading(course, 1, 1), html = R.exportDocument(packet).documentElement.outerHTML;
+    assert.equal(Object.hasOwn(packet.day, "author"), false);
+    assert.match(html, /class="daily-author">By Test Author 0/); assert.doesNotMatch(html, /class="daily-work-title"/);
+  }
 }));
