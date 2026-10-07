@@ -35,10 +35,16 @@ anthology from substituting for a broad reading course. Selection quality takes
 precedence over numerical variety. Include narrative, poetry, and documentary
 or essay prose, with diverse authors, periods, and forms.
 
-Historical prejudice is neither silently rewritten nor presented as the site's
-voice. When educationally warranted, a brief content note gives context. Age
-appropriateness governs selection; younger children are not given unfiltered
-extreme depictions merely because a work is public domain.
+Do not censor literature that is widely considered exemplary American and
+English writing (owner directive, 2026-10-07). Excerpt boundaries follow the
+work's own units and the night's time budget. Do not choose them to avoid
+period language, prejudice, violence, or other difficult material, and never
+drop a work's essential scene for that reason. Historical prejudice is neither
+rewritten nor presented as the site's voice. When it helps, a brief context or
+content note explains the history or the author's purpose. Notes never tell
+readers to skip, soften, or substitute words. Age adjustment governs a grade's
+choice of works, reading difficulty, length, and reading mode. It does not
+license excising or avoiding passages of a chosen work.
 
 ## Canonical contract
 

@@ -13,7 +13,9 @@ One fresh authoring agent owns each grade and pathway. Work begins with Grade
 agent review is not human editorial approval or evidence of student outcomes.
 Content is original and self-contained. Public-domain reading excerpts may be
 included with an accurate source, author, title, and rights statement. Never
-present an invented historical document as an authentic source.
+present an invented historical document as an authentic source. Selecting
+those excerpts follows the no-censorship rule in
+[the daily-reading contract](daily-reading.md#time-and-progression).
 
 Canonical files are `content/weekly/<track>/<grade>.json`, where grade is `k`
 or `1`–`12`. Files contain plain data, never HTML or executable expressions:
