@@ -1,0 +1,3333 @@
+{
+  "version": 1,
+  "track": {
+    "id": "singapore-math",
+    "title": "Singapore mathematics",
+    "subject": "Mathematics",
+    "description": "An original K–12 planning sequence informed by Singapore MOE numeracy and mathematics syllabuses, connecting concrete experiences, diagrams, symbols and mathematical problem solving.",
+    "scopeNote": "Editorial 36-week skeletons, not complete lessons, an official MOE programme, a commercial Singapore Math textbook series or a claim of standards certification. Library labels map K to a NEL preschool bridge, Grades 1–6 to Primary 1–6, Grades 7–10 to Secondary 1–4, and Grades 11–12 to JC1–2. These are navigation correspondences, not age, placement or qualification equivalences. This selected pathway uses standard primary Mathematics, G3 secondary Mathematics, elective G3 Additional Mathematics in Secondary 3–4, and elective H2 Mathematics in junior college. Foundation primary, G1/G2, H1, vocational and other pathways are valid alternatives not represented by these skeletons. Upper secondary and JC year splits and all pacing are editorial; schools can sequence combined-band content differently. Every SG- reference ID below is a local source locator, not an official MOE standard code. Activities are original outlines; formal assessment and qualification requirements require separate current guidance."
+  },
+  "sources": [
+    {
+      "id": "sg-nel",
+      "title": "NEL: About Numeracy",
+      "url": "https://nel.moe.edu.sg/la/numeracy/overview/",
+      "publisher": "Ministry of Education, Singapore",
+      "edition": "NEL 2022 learning goals, current portal",
+      "accessed": "2026-10-07",
+      "note": "Official preschool learning goals and knowledge, skills and dispositions (KSD). K is an editorial bridge, not a primary syllabus year. Use goal/KSD locators on this web page."
+    },
+    {
+      "id": "sg-primary",
+      "title": "Mathematics Syllabus: Primary One to Six",
+      "url": "https://www.moe.gov.sg/media/files/primary/92bff26d-b2b4-4535-b868-b8415c744b91.pdf",
+      "publisher": "Ministry of Education, Singapore",
+      "edition": "2021 syllabus, updated October 2025",
+      "accessed": "2026-10-07",
+      "note": "Retrieved from the current MOE primary syllabus page. The 2021 syllabus applies to Primary 6 from 2026. This track selects standard Mathematics, not Foundation. Locators use printed page numbers."
+    },
+    {
+      "id": "sg-secondary",
+      "title": "G2 and G3 Mathematics Syllabuses: Secondary One to Four",
+      "url": "https://www.moe.gov.sg/media/files/secondary/fsbb/syllabus/d415c25d-cf29-4b05-83da-9713f38edd14.pdf",
+      "publisher": "Ministry of Education, Singapore",
+      "edition": "2020 Secondary One cohort; G2/G3 publication © 2024",
+      "accessed": "2026-10-07",
+      "note": "Retrieved from the MOE Full Subject-Based Banding syllabus page. Only Section 3, G3, is mapped here. Secondary 1 and 2 are specified separately; Secondary 3/4 is a combined band. Locators use printed pages."
+    },
+    {
+      "id": "sg-additional",
+      "title": "G2 and G3 Additional Mathematics Syllabuses: Secondary Three to Four",
+      "url": "https://www.moe.gov.sg/media/files/secondary/fsbb/syllabus/2155cce5-f6b4-4532-897c-c5a8fa1852c6.pdf",
+      "publisher": "Ministry of Education, Singapore",
+      "edition": "2020 Secondary Three cohort; G2/G3 publication © 2024",
+      "accessed": "2026-10-07",
+      "note": "Elective additional subject selected for this advanced pathway, not a requirement for every secondary learner. Section 3 G3 content; printed pages. The two-year sequence here is editorial."
+    },
+    {
+      "id": "sg-h2",
+      "title": "Mathematics Syllabus: Pre-University Higher 2",
+      "url": "https://www.moe.gov.sg/media/files/post-secondary/syllabuses/maths/138f79cf-ec8a-4c4f-a532-b04823e09031.pdf",
+      "publisher": "Ministry of Education, Singapore",
+      "edition": "2024 Pre-University H2 Mathematics",
+      "accessed": "2026-10-07",
+      "note": "Advanced elective two-year pathway, not universal Grades 11–12 content. Current MOE content and exclusions govern this skeleton; JC1/JC2 sequencing is editorial. Printed page locators; no H3 or Further Mathematics claim."
+    }
+  ],
+  "standards": [
+    {
+      "id": "SG-K-life",
+      "label": "Numeracy in daily life",
+      "sourceId": "sg-nel",
+      "locator": "Learning Goal 1; KSD 1.1–1.2",
+      "gradeBand": "Preschool bridge (K)",
+      "kind": "content"
+    },
+    {
+      "id": "SG-K-pattern",
+      "label": "Sorting, ordering and repeating patterns",
+      "sourceId": "sg-nel",
+      "locator": "Learning Goal 2; KSD 2.1–2.4",
+      "gradeBand": "Preschool bridge (K)",
+      "kind": "content"
+    },
+    {
+      "id": "SG-K-number",
+      "label": "Counting, comparison and parts of a whole",
+      "sourceId": "sg-nel",
+      "locator": "Learning Goal 3; KSD 3.1–3.8",
+      "gradeBand": "Preschool bridge (K)",
+      "kind": "content"
+    },
+    {
+      "id": "SG-K-shape",
+      "label": "Shapes and spatial language",
+      "sourceId": "sg-nel",
+      "locator": "Learning Goal 4; KSD 4.1–4.4",
+      "gradeBand": "Preschool bridge (K)",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P-practice",
+      "label": "Represent, explain, solve and reflect",
+      "sourceId": "sg-primary",
+      "locator": "Sections 2–4: curriculum framework, pedagogy and assessment, pp. 13–28",
+      "gradeBand": "P1–P6",
+      "kind": "practice"
+    },
+    {
+      "id": "SG-P1-number",
+      "label": "Whole numbers, operations and money",
+      "sourceId": "sg-primary",
+      "locator": "p. 31; Number and Algebra",
+      "gradeBand": "Primary 1",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P1-measure",
+      "label": "Length and time",
+      "sourceId": "sg-primary",
+      "locator": "p. 32; Measurement",
+      "gradeBand": "Primary 1",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P1-shape",
+      "label": "Plane shapes and composition",
+      "sourceId": "sg-primary",
+      "locator": "p. 32; Geometry",
+      "gradeBand": "Primary 1",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P1-data",
+      "label": "Picture graphs",
+      "sourceId": "sg-primary",
+      "locator": "p. 32; Statistics",
+      "gradeBand": "Primary 1",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P2-number",
+      "label": "Whole numbers to 1000 and operations",
+      "sourceId": "sg-primary",
+      "locator": "p. 33; Whole Numbers",
+      "gradeBand": "Primary 2",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P2-fraction",
+      "label": "Parts of a whole and like fractions",
+      "sourceId": "sg-primary",
+      "locator": "p. 33; Fractions",
+      "gradeBand": "Primary 2",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P2-money",
+      "label": "Dollars and cents",
+      "sourceId": "sg-primary",
+      "locator": "p. 33; Money",
+      "gradeBand": "Primary 2",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P2-measure",
+      "label": "Metric measures and time",
+      "sourceId": "sg-primary",
+      "locator": "p. 34; Measurement",
+      "gradeBand": "Primary 2",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P2-shape",
+      "label": "Shape patterns and solids",
+      "sourceId": "sg-primary",
+      "locator": "p. 34; Geometry",
+      "gradeBand": "Primary 2",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P2-data",
+      "label": "Scaled picture graphs",
+      "sourceId": "sg-primary",
+      "locator": "p. 34; Statistics",
+      "gradeBand": "Primary 2",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P3-number",
+      "label": "Whole numbers to 10000 and algorithms",
+      "sourceId": "sg-primary",
+      "locator": "p. 35; Whole Numbers",
+      "gradeBand": "Primary 3",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P3-fraction",
+      "label": "Equivalent and related fractions",
+      "sourceId": "sg-primary",
+      "locator": "p. 35; Fractions",
+      "gradeBand": "Primary 3",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P3-money",
+      "label": "Money addition and subtraction",
+      "sourceId": "sg-primary",
+      "locator": "p. 35; Money",
+      "gradeBand": "Primary 3",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P3-measure",
+      "label": "Compound measures and time",
+      "sourceId": "sg-primary",
+      "locator": "p. 36; Measurement",
+      "gradeBand": "Primary 3",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P3-area",
+      "label": "Area and perimeter",
+      "sourceId": "sg-primary",
+      "locator": "p. 36; Area and Volume",
+      "gradeBand": "Primary 3",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P3-shape",
+      "label": "Angles, parallel and perpendicular lines",
+      "sourceId": "sg-primary",
+      "locator": "p. 36; Geometry",
+      "gradeBand": "Primary 3",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P3-data",
+      "label": "Bar graphs and scales",
+      "sourceId": "sg-primary",
+      "locator": "p. 36; Statistics",
+      "gradeBand": "Primary 3",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P4-number",
+      "label": "Numbers to 100000, factors and operations",
+      "sourceId": "sg-primary",
+      "locator": "p. 37; Whole Numbers",
+      "gradeBand": "Primary 4",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P4-fraction",
+      "label": "Mixed numbers, fractions of sets and addition/subtraction",
+      "sourceId": "sg-primary",
+      "locator": "p. 37; Fractions",
+      "gradeBand": "Primary 4",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P4-decimal",
+      "label": "Decimal place value and operations",
+      "sourceId": "sg-primary",
+      "locator": "p. 38; Decimals",
+      "gradeBand": "Primary 4",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P4-shape",
+      "label": "Composite rectangles, angles, symmetry and nets",
+      "sourceId": "sg-primary",
+      "locator": "p. 39; Measurement and Geometry",
+      "gradeBand": "Primary 4",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P4-data",
+      "label": "Tables, line graphs and pie charts",
+      "sourceId": "sg-primary",
+      "locator": "p. 40; Statistics",
+      "gradeBand": "Primary 4",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P5-number",
+      "label": "Large numbers, order and decimal scaling",
+      "sourceId": "sg-primary",
+      "locator": "p. 41; Whole Numbers and Decimals",
+      "gradeBand": "Primary 5",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P5-fraction",
+      "label": "Fraction quotients, mixed numbers and multiplication",
+      "sourceId": "sg-primary",
+      "locator": "p. 41; Fractions",
+      "gradeBand": "Primary 5",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P5-percent",
+      "label": "Percentage applications",
+      "sourceId": "sg-primary",
+      "locator": "p. 41; Percentage",
+      "gradeBand": "Primary 5",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P5-rate",
+      "label": "Rates and their units",
+      "sourceId": "sg-primary",
+      "locator": "p. 41; Rate",
+      "gradeBand": "Primary 5",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P5-area",
+      "label": "Triangle area and rectangular volume",
+      "sourceId": "sg-primary",
+      "locator": "p. 42; Area and Volume",
+      "gradeBand": "Primary 5",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P5-shape",
+      "label": "Angle relationships, triangles and quadrilaterals",
+      "sourceId": "sg-primary",
+      "locator": "p. 42; Geometry",
+      "gradeBand": "Primary 5",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P6-fraction",
+      "label": "Division involving proper fractions",
+      "sourceId": "sg-primary",
+      "locator": "p. 43; Fractions",
+      "gradeBand": "Primary 6",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P6-percent",
+      "label": "Reverse percentage and percentage change",
+      "sourceId": "sg-primary",
+      "locator": "p. 43; Percentage",
+      "gradeBand": "Primary 6",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P6-ratio",
+      "label": "Whole-number ratios",
+      "sourceId": "sg-primary",
+      "locator": "p. 43; Ratio",
+      "gradeBand": "Primary 6",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P6-algebra",
+      "label": "Expressions, substitution and simple equations",
+      "sourceId": "sg-primary",
+      "locator": "p. 43; Algebra",
+      "gradeBand": "Primary 6",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P6-area",
+      "label": "Circles and inverse volume problems",
+      "sourceId": "sg-primary",
+      "locator": "p. 44; Area and Volume",
+      "gradeBand": "Primary 6",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P6-shape",
+      "label": "Angles in composite figures",
+      "sourceId": "sg-primary",
+      "locator": "p. 44; Geometry",
+      "gradeBand": "Primary 6",
+      "kind": "content"
+    },
+    {
+      "id": "SG-P6-data",
+      "label": "Average and totals",
+      "sourceId": "sg-primary",
+      "locator": "p. 44; Statistics",
+      "gradeBand": "Primary 6",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S1-number",
+      "label": "Number systems, prime structure and approximation",
+      "sourceId": "sg-secondary",
+      "locator": "p. 15; Secondary One N1",
+      "gradeBand": "Secondary 1",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S1-ratio",
+      "label": "Ratio, percentage, rate and speed",
+      "sourceId": "sg-secondary",
+      "locator": "p. 15; Secondary One N2–N4",
+      "gradeBand": "Secondary 1",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S1-algebra",
+      "label": "Expressions, patterns, linear graphs and equations",
+      "sourceId": "sg-secondary",
+      "locator": "pp. 15–16; Secondary One N5–N7",
+      "gradeBand": "Secondary 1",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S1-geometry",
+      "label": "Angles, polygons, constructions and mensuration",
+      "sourceId": "sg-secondary",
+      "locator": "p. 16; Secondary One G1, G5",
+      "gradeBand": "Secondary 1",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S1-data",
+      "label": "Data displays and misleading representations",
+      "sourceId": "sg-secondary",
+      "locator": "p. 16; Secondary One S1",
+      "gradeBand": "Secondary 1",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S2-algebra",
+      "label": "Algebraic fractions, quadratics, systems and inequalities",
+      "sourceId": "sg-secondary",
+      "locator": "p. 17; Secondary Two N5–N7",
+      "gradeBand": "Secondary 2",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S2-proportion",
+      "label": "Map scales and direct/inverse proportion",
+      "sourceId": "sg-secondary",
+      "locator": "p. 17; Secondary Two N2",
+      "gradeBand": "Secondary 2",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S2-geometry",
+      "label": "Similarity, right-triangle trigonometry and solids",
+      "sourceId": "sg-secondary",
+      "locator": "pp. 17–18; Secondary Two G2, G4, G5",
+      "gradeBand": "Secondary 2",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S2-data",
+      "label": "Distributions, averages and simple probability",
+      "sourceId": "sg-secondary",
+      "locator": "p. 18; Secondary Two S1–S2",
+      "gradeBand": "Secondary 2",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S34-algebra",
+      "label": "Indices, graphs, equations, sets and matrices",
+      "sourceId": "sg-secondary",
+      "locator": "p. 19; Secondary Three/Four N1, N6–N9",
+      "gradeBand": "Secondary 3–4",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S34-geometry",
+      "label": "Similarity, circles, trigonometry and coordinates",
+      "sourceId": "sg-secondary",
+      "locator": "p. 20; Secondary Three/Four G2–G6",
+      "gradeBand": "Secondary 3–4",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S34-vector",
+      "label": "Planar vectors",
+      "sourceId": "sg-secondary",
+      "locator": "pp. 20–21; Secondary Three/Four G7",
+      "gradeBand": "Secondary 3–4",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S34-data",
+      "label": "Spread, distributions and combined probability",
+      "sourceId": "sg-secondary",
+      "locator": "p. 21; Secondary Three/Four S1–S2",
+      "gradeBand": "Secondary 3–4",
+      "kind": "content"
+    },
+    {
+      "id": "SG-S-practice",
+      "label": "Model, reason and communicate across strands",
+      "sourceId": "sg-secondary",
+      "locator": "Section 3; Problems in Real-World Contexts, pp. 13–14",
+      "gradeBand": "Secondary 1–4",
+      "kind": "practice"
+    },
+    {
+      "id": "SG-A-algebra",
+      "label": "Quadratics, surds, polynomials, partial fractions and binomial expansions",
+      "sourceId": "sg-additional",
+      "locator": "p. 16; A1–A5",
+      "gradeBand": "Secondary 3–4 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-A-log",
+      "label": "Exponential and logarithmic functions",
+      "sourceId": "sg-additional",
+      "locator": "pp. 16–17; A6",
+      "gradeBand": "Secondary 3–4 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-A-trig",
+      "label": "Trigonometric functions, identities and equations",
+      "sourceId": "sg-additional",
+      "locator": "p. 17; G1",
+      "gradeBand": "Secondary 3–4 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-A-geometry",
+      "label": "Coordinate geometry, linearisation and plane proofs",
+      "sourceId": "sg-additional",
+      "locator": "p. 17; G2–G3",
+      "gradeBand": "Secondary 3–4 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-A-calculus",
+      "label": "Differentiation and integration",
+      "sourceId": "sg-additional",
+      "locator": "p. 18; C1",
+      "gradeBand": "Secondary 3–4 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-function",
+      "label": "Functions, graphs, equations and inequalities",
+      "sourceId": "sg-h2",
+      "locator": "pp. 16–17; 1.1–1.3",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-series",
+      "label": "Sequences and series",
+      "sourceId": "sg-h2",
+      "locator": "p. 17; 2.1",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-vector",
+      "label": "Vectors, products, lines and planes",
+      "sourceId": "sg-h2",
+      "locator": "pp. 17–18; 3.1–3.3",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-complex",
+      "label": "Cartesian complex numbers and Argand diagrams",
+      "sourceId": "sg-h2",
+      "locator": "p. 18; 4.1",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-differentiate",
+      "label": "Differentiation and its applications",
+      "sourceId": "sg-h2",
+      "locator": "pp. 18–19; 5.1",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-maclaurin",
+      "label": "Maclaurin series and approximations",
+      "sourceId": "sg-h2",
+      "locator": "p. 19; 5.2",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-integrate",
+      "label": "Integration techniques and definite integrals",
+      "sourceId": "sg-h2",
+      "locator": "pp. 19–20; 5.3–5.4",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-de",
+      "label": "Separable differential equations and models",
+      "sourceId": "sg-h2",
+      "locator": "p. 20; 5.5",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-probability",
+      "label": "Counting and conditional probability",
+      "sourceId": "sg-h2",
+      "locator": "p. 20; 6.1",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-distribution",
+      "label": "Discrete and normal probability models",
+      "sourceId": "sg-h2",
+      "locator": "p. 21; 6.2–6.3",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-sampling",
+      "label": "Sampling and tests for a population mean",
+      "sourceId": "sg-h2",
+      "locator": "pp. 21–22; 6.4–6.5",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-regression",
+      "label": "Correlation, regression and transformations",
+      "sourceId": "sg-h2",
+      "locator": "p. 22; 6.6",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "content"
+    },
+    {
+      "id": "SG-H-practice",
+      "label": "Interpret and critique mathematical models",
+      "sourceId": "sg-h2",
+      "locator": "Section 3, applications and contexts, pp. 14–15",
+      "gradeBand": "JC1–JC2 H2 elective",
+      "kind": "practice"
+    }
+  ],
+  "courses": [
+    {
+      "id": "singapore-math-k",
+      "grade": 0,
+      "title": "Singapore mathematics — Kindergarten · NEL bridge",
+      "levelLabel": "Kindergarten · NEL bridge",
+      "scopeNote": "Playful NEL preschool bridge; K is an editorial label. Observe conversation and action rather than require formal written arithmetic.",
+      "prerequisites": [
+        "Participate in short shared play with support",
+        "Notice objects and communicate choices through speech, gesture or a home language"
+      ],
+      "outcomes": [
+        "Count and compare small collections",
+        "Describe repeating patterns and basic shapes",
+        "Explain simple part–whole arrangements"
+      ],
+      "nextStep": "Build stable counting and number bonds before extending to Primary 1 numbers to 100.",
+      "yearBridge": "Sorting rules lead into stable counting and comparison. Repeating patterns and shape composition extend attention to structure; part–whole play and spatial directions then come together in a numeracy market.",
+      "crossSubject": "Retell a story with ordered events, positional words and counted props.",
+      "routines": [
+        "Use objects, pictures and spoken explanations before symbols; accept pointing, building and oral responses.",
+        "Revisit counting, comparisons and pattern language during daily play; record observations across settings."
+      ],
+      "units": [
+        {
+          "title": "Notice, match and sort",
+          "standards": [
+            "SG-K-life",
+            "SG-K-pattern"
+          ],
+          "focus": "Discover useful attributes in familiar collections.",
+          "learning": [
+            "Match objects by one shared attribute",
+            "Sort the same collection another way and explain the rule"
+          ],
+          "activities": [
+            "Sort buttons or classroom objects by a child-selected attribute",
+            "Make a mystery sorting tray for a partner to finish"
+          ],
+          "evidence": [
+            "Names or shows the attribute consistently",
+            "Accepts that one object can fit different sensible groups"
+          ],
+          "bridge": "A stable rule prepares children to order objects and identify a repeating unit.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Count collections and keep the total",
+          "standards": [
+            "SG-K-number"
+          ],
+          "focus": "Coordinate number words, one-to-one matching and cardinality.",
+          "learning": [
+            "Count at least ten objects reliably",
+            "Recognise that rearranging a set does not change its quantity"
+          ],
+          "activities": [
+            "Move each counted pebble onto a mat, then spread the pebbles apart",
+            "Match picture cards and numerals to small collections"
+          ],
+          "evidence": [
+            "Counts each object once and states the total",
+            "Keeps the total after rearrangement or recounts to check"
+          ],
+          "bridge": "Reliable collections make more, fewer and equal meaningful.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Compare and order",
+          "standards": [
+            "SG-K-number",
+            "SG-K-pattern"
+          ],
+          "focus": "Use matching and direct comparison before symbolic inequality.",
+          "learning": [
+            "Compare two sets of up to ten objects",
+            "Order objects by length, height or size"
+          ],
+          "activities": [
+            "Pair toy passengers with seats and describe any unmatched objects",
+            "Order ribbons from shortest to longest with their ends aligned"
+          ],
+          "evidence": [
+            "Uses more, fewer and the same appropriately",
+            "Explains why a displaced ribbon must be realigned"
+          ],
+          "bridge": "Comparing wholes supports later comparisons of their parts.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Hear, see and extend patterns",
+          "standards": [
+            "SG-K-pattern"
+          ],
+          "focus": "Recognise and describe a repeat, not just the next object.",
+          "learning": [
+            "Extend and create repeating patterns",
+            "Describe the repeating unit using objects, sounds or actions"
+          ],
+          "activities": [
+            "Build a clap-tap-tap pattern and represent it with counters",
+            "Repair a bead pattern with a missing element"
+          ],
+          "evidence": [
+            "Repeats the entire unit consistently",
+            "Explains a missing item using the rule"
+          ],
+          "bridge": "Pattern language later supports number sequences and equal groups.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Shapes in many positions",
+          "standards": [
+            "SG-K-shape"
+          ],
+          "focus": "Recognise shape attributes despite orientation and size.",
+          "learning": [
+            "Identify circles, squares, rectangles and triangles",
+            "Compose a new figure from familiar shapes"
+          ],
+          "activities": [
+            "Sort rotated and stretched shape cards and explain choices",
+            "Build a pretend playground from paper shapes"
+          ],
+          "evidence": [
+            "Uses sides or corners to justify a shape name",
+            "Names component shapes in a composite picture"
+          ],
+          "bridge": "Composition offers another way to think about parts making a whole.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Parts make a whole",
+          "standards": [
+            "SG-K-number"
+          ],
+          "focus": "Explore number bonds within ten through play.",
+          "learning": [
+            "Name two parts of a collection and its whole",
+            "Find more than one partition of a quantity"
+          ],
+          "activities": [
+            "Hide some of eight counters under a cup and reason about the missing part",
+            "Move a fixed collection between two toy homes"
+          ],
+          "evidence": [
+            "Reconstructs a hidden part with objects or a drawing",
+            "Shows that different partitions keep the whole unchanged"
+          ],
+          "bridge": "Number bonds become the foundation for addition and subtraction in P1.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Position, direction and sequence",
+          "standards": [
+            "SG-K-shape",
+            "SG-K-pattern"
+          ],
+          "focus": "Describe locations and ordered actions precisely.",
+          "learning": [
+            "Use positional and directional language",
+            "Arrange familiar events in a sensible sequence"
+          ],
+          "activities": [
+            "Guide a toy around a floor map using near, behind, left and right",
+            "Order picture cards for preparing a snack"
+          ],
+          "evidence": [
+            "A partner can follow the directions",
+            "Explains what happens before and after an event"
+          ],
+          "bridge": "Ordered language will support time, ordinal numbers and multi-step instructions.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "A numeracy play market",
+          "standards": [
+            "SG-K-life",
+            "SG-K-number",
+            "SG-K-pattern",
+            "SG-K-shape"
+          ],
+          "focus": "Bring counting, representation and comparison into one setting.",
+          "learning": [
+            "Rote count to at least twenty while matching quantities within ten",
+            "Record small quantities with numerals, pictures or objects"
+          ],
+          "activities": [
+            "Build a class market with counted baskets and shape-based signs",
+            "Take turns explaining how many objects are needed to fill a partly full tray"
+          ],
+          "evidence": [
+            "Connects a numeral to its collection",
+            "Explains a part–whole or comparison decision without relying on layout"
+          ],
+          "bridge": "Start P1 with secure small quantities and extend place-value grouping gradually.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-1",
+      "grade": 1,
+      "title": "Singapore mathematics — Primary 1",
+      "levelLabel": "Primary 1",
+      "scopeNote": "Standard Primary 1 scope from the 2021 syllabus updated October 2025; the 36-week sequence is editorial.",
+      "prerequisites": [
+        "Count at least ten objects and conserve a total",
+        "Describe parts of small collections and basic shapes"
+      ],
+      "outcomes": [
+        "Read, order and calculate with numbers to 100",
+        "Model addition, subtraction, equal groups and sharing",
+        "Use centimetres, clocks, shapes and picture graphs"
+      ],
+      "nextStep": "Extend tens-and-ones reasoning to hundreds and develop multiplication tables in P2.",
+      "yearBridge": "Tens and ones give meaning to addition and subtraction; equal groups extend this reasoning. Measurement, clocks and money give quantities a context, and picture graphs bring counting and comparison together in a final plan.",
+      "crossSubject": "Read short mathematical stories and label drawings with quantities and units.",
+      "routines": [
+        "Start with a short mental strategy and revisit an earlier topic each week.",
+        "Move between concrete materials, pictorial or bar models and symbolic work when each helps explain the structure.",
+        "Ask learners to estimate, explain the chosen representation and check by a second method; revisit errors after a delay."
+      ],
+      "units": [
+        {
+          "title": "Numbers to 100 and place value",
+          "standards": [
+            "SG-P1-number"
+          ],
+          "focus": "Make a ten a usable unit.",
+          "learning": [
+            "Read and order numbers to 100 using tens and ones",
+            "Use ordinal numbers to tenth and describe number patterns"
+          ],
+          "activities": [
+            "Bundle craft sticks into tens to organise a stockroom",
+            "Arrange numbered tickets and explain missing terms"
+          ],
+          "evidence": [
+            "Represents a number with both bundles and numerals",
+            "Distinguishes an object count from its position"
+          ],
+          "bridge": "Tens and ones give meaning to written operations.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Addition and subtraction stories",
+          "standards": [
+            "SG-P1-number"
+          ],
+          "focus": "Connect parts, totals and differences to equations.",
+          "learning": [
+            "Interpret joining, separating and comparison situations",
+            "Use addition to check subtraction within twenty"
+          ],
+          "activities": [
+            "Act out a changing collection, then draw it and write an equation",
+            "Compare two bead strings and label the difference"
+          ],
+          "evidence": [
+            "Matches an equation to a story rather than a keyword",
+            "Finds a missing part and checks the whole"
+          ],
+          "bridge": "Known bonds support making ten in larger calculations.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Calculate within 100",
+          "standards": [
+            "SG-P1-number"
+          ],
+          "focus": "Explain regrouping before practising a written algorithm.",
+          "learning": [
+            "Add and subtract within 100 with tens-and-ones models",
+            "Add several one-digit numbers and choose useful pairs"
+          ],
+          "activities": [
+            "Trade ten ones for a ten while solving a supply problem",
+            "Compare counting-on, making-ten and column methods"
+          ],
+          "evidence": [
+            "Explains each exchange in a calculation",
+            "Uses a mental strategy for a two-digit number plus ones or tens"
+          ],
+          "bridge": "Flexible addition prepares repeated equal-group reasoning.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Equal groups and fair shares",
+          "standards": [
+            "SG-P1-number"
+          ],
+          "focus": "Introduce multiplication and division through meaning.",
+          "learning": [
+            "Represent multiplication within forty",
+            "Share or group quantities within twenty"
+          ],
+          "activities": [
+            "Arrange identical seed packets into equal rows",
+            "Share counters among toy animals and draw each share"
+          ],
+          "evidence": [
+            "Connects a multiplication expression to equal groups",
+            "Distinguishes number of groups from objects per group"
+          ],
+          "bridge": "P2 formalises the inverse relationship and selected tables.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Length and shape construction",
+          "standards": [
+            "SG-P1-measure",
+            "SG-P1-shape"
+          ],
+          "focus": "Measure and compose with attention to units and boundaries.",
+          "learning": [
+            "Measure and draw line segments to the nearest centimetre",
+            "Compose and describe figures using basic, half-circle and quarter-circle pieces"
+          ],
+          "activities": [
+            "Design a paper path from measured strips",
+            "Copy a tile picture on a dot grid and name its pieces"
+          ],
+          "evidence": [
+            "Aligns a ruler correctly and labels cm",
+            "Recognises a shape after rotation and separates parts from the whole figure"
+          ],
+          "bridge": "Measured lengths later support perimeter and area.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Clocks and daily duration",
+          "standards": [
+            "SG-P1-measure"
+          ],
+          "focus": "Read clock structure in five-minute steps.",
+          "learning": [
+            "Tell time to five minutes using am and pm",
+            "Describe durations of an hour or half an hour"
+          ],
+          "activities": [
+            "Build a movable clock and plan a pretend morning",
+            "Match two clock faces separated by thirty or sixty minutes"
+          ],
+          "evidence": [
+            "Reads minute and hour hands together",
+            "Explains why the hour hand moves between hour marks"
+          ],
+          "bridge": "P2 refines the five-minute structure to individual minutes.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Money and comparison problems",
+          "standards": [
+            "SG-P1-number"
+          ],
+          "focus": "Count amounts with different representations of value.",
+          "learning": [
+            "Count cents to one dollar and dollars to one hundred",
+            "Use operations to solve simple money and comparison stories"
+          ],
+          "activities": [
+            "Make the same cent amount using different coin sets",
+            "Draw bars comparing the prices of two whole-dollar items"
+          ],
+          "evidence": [
+            "Separates coin count from total value",
+            "Labels the compared quantities and unknown difference"
+          ],
+          "bridge": "P2 combines dollars and cents in decimal money notation.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "Picture graphs and a class plan",
+          "standards": [
+            "SG-P1-data",
+            "SG-P1-number",
+            "SG-P-practice"
+          ],
+          "focus": "Use counted information to answer and check a question.",
+          "learning": [
+            "Read a picture graph and compare categories",
+            "Select a representation for a multi-topic whole-number problem"
+          ],
+          "activities": [
+            "Create a picture graph of pretend club supplies",
+            "Plan equal resource packs and check the plan with counters"
+          ],
+          "evidence": [
+            "Explains what one picture represents",
+            "Shows a calculation and checks it against the collection"
+          ],
+          "bridge": "Move to scaled pictures and hundreds while keeping the meaning of each unit visible.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-2",
+      "grade": 2,
+      "title": "Singapore mathematics — Primary 2",
+      "levelLabel": "Primary 2",
+      "scopeNote": "Standard Primary 2 scope from the 2021 syllabus updated October 2025; the 36-week sequence is editorial.",
+      "prerequisites": [
+        "Use tens and ones to calculate within 100",
+        "Model equal groups and read a five-minute clock"
+      ],
+      "outcomes": [
+        "Calculate with numbers to 1000 and use tables of 2, 3, 4, 5 and 10",
+        "Represent and combine like fractions within a whole",
+        "Interpret metric measurements, solids and scaled pictures"
+      ],
+      "nextStep": "Extend the remaining multiplication facts, equivalent fractions and area in P3.",
+      "yearBridge": "Hundreds extend place value, and table families organise equal groups. Fraction units develop alongside whole-number operations; money, clocks and metric measures require attention to units, while shapes and scaled pictures test how those units are represented.",
+      "crossSubject": "Write concise explanations of a measurement procedure and a graph comparison.",
+      "routines": [
+        "Start with a short mental strategy and revisit an earlier topic each week.",
+        "Move between concrete materials, pictorial or bar models and symbolic work when each helps explain the structure.",
+        "Ask learners to estimate, explain the chosen representation and check by a second method; revisit errors after a delay."
+      ],
+      "units": [
+        {
+          "title": "Hundreds and three-digit calculations",
+          "standards": [
+            "SG-P2-number"
+          ],
+          "focus": "Extend the base-ten exchange system.",
+          "learning": [
+            "Read and order numbers to 1000, continue number patterns, and distinguish odd and even numbers",
+            "Add and subtract three-digit numbers with justified regrouping"
+          ],
+          "activities": [
+            "Bundle sticks into hundreds and represent several arrangements",
+            "Audit a stock list using a written and mental calculation"
+          ],
+          "evidence": [
+            "Explains a zero in a place-value position",
+            "Checks subtraction by addition and an estimate"
+          ],
+          "bridge": "Place-value structure will extend unchanged to thousands.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Multiplication and division families",
+          "standards": [
+            "SG-P2-number"
+          ],
+          "focus": "Build the 2, 3, 4, 5 and 10 tables from structure.",
+          "learning": [
+            "Use table facts and their related division facts",
+            "Distinguish sharing from grouping and use the division symbol"
+          ],
+          "activities": [
+            "Build arrays and derive a new fact from a known one",
+            "Create two different division stories for one fact family"
+          ],
+          "evidence": [
+            "Explains a fact using equal groups or an array",
+            "Checks a quotient with multiplication"
+          ],
+          "bridge": "Derived facts prepare the remaining tables in P3.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Fractions as equal parts",
+          "standards": [
+            "SG-P2-fraction"
+          ],
+          "focus": "Keep the whole and equal-sized parts explicit.",
+          "learning": [
+            "Represent unit and like fractions with denominators at most twelve",
+            "Compare unit fractions and like fractions"
+          ],
+          "activities": [
+            "Fold equal paper strips into different numbers of parts",
+            "Sort fair and unfair sharing pictures and justify decisions"
+          ],
+          "evidence": [
+            "Names the whole before comparing fractions",
+            "Explains why more equal parts make each unit part smaller"
+          ],
+          "bridge": "P3 will rename fractions without changing their value.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Combine like fractions",
+          "standards": [
+            "SG-P2-fraction",
+            "SG-P2-number"
+          ],
+          "focus": "Count equal fractional units within one whole.",
+          "learning": [
+            "Add and subtract like fractions within a whole",
+            "Explain numerator changes while the unit stays fixed"
+          ],
+          "activities": [
+            "Move fractional pieces on a strip to model a changing amount",
+            "Write a story for a missing fraction in a whole"
+          ],
+          "evidence": [
+            "Keeps the denominator consistent with the unit",
+            "Checks a subtraction by restoring the removed pieces"
+          ],
+          "bridge": "Conserving the unit prepares equivalent fractions and related denominators.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Dollars, cents and time",
+          "standards": [
+            "SG-P2-money",
+            "SG-P2-measure"
+          ],
+          "focus": "Interpret two different systems of grouped units.",
+          "learning": [
+            "Read, compare and convert dollar-and-cent amounts",
+            "Tell time to the minute and convert hours/minutes to minutes"
+          ],
+          "activities": [
+            "Run a pretend shop with amounts written in cents and decimal money",
+            "Build a schedule using clocks and labelled minute strips"
+          ],
+          "evidence": [
+            "Explains the value of each digit in a money amount",
+            "Uses sixty minutes per hour rather than one hundred"
+          ],
+          "bridge": "P3 operations with money and elapsed time depend on distinguishing these units.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Measure length, mass and liquid",
+          "standards": [
+            "SG-P2-measure"
+          ],
+          "focus": "Choose a unit and instrument that fit the attribute.",
+          "learning": [
+            "Measure using metres, grams, kilograms and litres",
+            "Compare and order measures of the same attribute"
+          ],
+          "activities": [
+            "Set up measuring stations for ribbon, sealed packets and water",
+            "Estimate first, measure, then discuss an unexpected result"
+          ],
+          "evidence": [
+            "Selects a suitable unit and records its abbreviation",
+            "Reads a simple scale without confusing length, mass and volume"
+          ],
+          "bridge": "P3 combines units and converts between larger and smaller units.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Shape patterns and solids",
+          "standards": [
+            "SG-P2-shape"
+          ],
+          "focus": "Describe a repeat and a solid using its observable features.",
+          "learning": [
+            "Extend patterns controlled by one or two attributes",
+            "Classify cubes, cuboids, cones, cylinders and spheres"
+          ],
+          "activities": [
+            "Create a pattern that varies orientation and size",
+            "Sort everyday containers and compare their surfaces"
+          ],
+          "evidence": [
+            "Identifies which attributes change and which stay fixed",
+            "Explains a classification without using colour as the defining feature"
+          ],
+          "bridge": "Later drawings and nets connect flat representations to these solids.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "Scaled picture graphs and decisions",
+          "standards": [
+            "SG-P2-data",
+            "SG-P2-number",
+            "SG-P-practice"
+          ],
+          "focus": "Use equal groups to interpret one symbol standing for many.",
+          "learning": [
+            "Read and compare quantities in scaled picture graphs",
+            "Choose operations for a multi-step class-supply problem"
+          ],
+          "activities": [
+            "Display pretend workshop attendance with one icon for several children",
+            "Plan supplies from the graph and compare two possible orders"
+          ],
+          "evidence": [
+            "Uses the graph key for totals and differences",
+            "Explains why a plan supplies enough without confusing icons with people"
+          ],
+          "bridge": "P3 carries the scale idea into bar graphs and the grouping idea into larger products.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-3",
+      "grade": 3,
+      "title": "Singapore mathematics — Primary 3",
+      "levelLabel": "Primary 3",
+      "scopeNote": "Standard Primary 3 scope from the 2021 syllabus updated October 2025; the 36-week sequence is editorial.",
+      "prerequisites": [
+        "Calculate with three-digit numbers and selected multiplication tables",
+        "Read like fractions, money notation and metric units"
+      ],
+      "outcomes": [
+        "Use all multiplication tables and algorithms including remainders",
+        "Rename and combine related fractions",
+        "Distinguish area, perimeter, angle and measurement units"
+      ],
+      "nextStep": "Extend to factors, mixed numbers, decimals and composite geometry in P4.",
+      "yearBridge": "Thousands and the remaining tables support larger calculations. Equivalent fractions make related-denominator operations possible; money and compound measures lead to elapsed time, then area, lines and angles provide new quantities to represent in bar graphs.",
+      "crossSubject": "Use labelled diagrams and time sequences to explain a practical procedure.",
+      "routines": [
+        "Start with a short mental strategy and revisit an earlier topic each week.",
+        "Move between concrete materials, pictorial or bar models and symbolic work when each helps explain the structure.",
+        "Ask learners to estimate, explain the chosen representation and check by a second method; revisit errors after a delay."
+      ],
+      "units": [
+        {
+          "title": "Thousands and efficient addition",
+          "standards": [
+            "SG-P3-number"
+          ],
+          "focus": "Extend place value while keeping mental strategies active.",
+          "learning": [
+            "Read and order numbers to 10000",
+            "Add and subtract up to four digits and calculate mentally with two-digit numbers"
+          ],
+          "activities": [
+            "Represent a library inventory with place-value disks",
+            "Compare compensation and column methods for a changed inventory"
+          ],
+          "evidence": [
+            "Explains regrouping through a zero",
+            "Selects and checks a reasonable mental strategy"
+          ],
+          "bridge": "P4 will use rounding and larger place values for estimation.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Complete the tables and divide with remainders",
+          "standards": [
+            "SG-P3-number"
+          ],
+          "focus": "Derive the 6, 7, 8 and 9 tables and interpret leftovers.",
+          "learning": [
+            "Use multiplication/division facts from all tables",
+            "Multiply and divide up to three digits by one digit"
+          ],
+          "activities": [
+            "Split arrays into known facts to derive unfamiliar products",
+            "Pack counters into equal boxes and interpret the remainder"
+          ],
+          "evidence": [
+            "Connects each partial product to an array",
+            "Checks dividend = divisor × quotient + remainder"
+          ],
+          "bridge": "P4 extends the same algorithms to larger factors and dividends.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Equivalent and related fractions",
+          "standards": [
+            "SG-P3-fraction"
+          ],
+          "focus": "Rename equal quantities with a common fractional unit.",
+          "learning": [
+            "Generate equivalent fractions and simplify them",
+            "Compare unlike fractions and add/subtract related fractions within one whole, with denominators at most twelve"
+          ],
+          "activities": [
+            "Overlay fraction strips to find matching boundaries",
+            "Solve a ribbon-sharing story with related denominators"
+          ],
+          "evidence": [
+            "Explains why renaming preserves value",
+            "Uses a common unit rather than adding denominators"
+          ],
+          "bridge": "P4 generalises to other denominator pairs and mixed numbers.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Money and compound measures",
+          "standards": [
+            "SG-P3-money",
+            "SG-P3-measure"
+          ],
+          "focus": "Calculate quantities while respecting the unit system.",
+          "learning": [
+            "Add and subtract money in decimal notation",
+            "Convert compound length, mass and liquid-volume measures to smaller units and back"
+          ],
+          "activities": [
+            "Reconcile a pretend shop receipt and change",
+            "Create labels for kilometre/metre, kilogram/gram and litre/millilitre supplies"
+          ],
+          "evidence": [
+            "Aligns dollar and cent units correctly",
+            "Explains a conversion using a unit relationship"
+          ],
+          "bridge": "P4 decimal place value will explain the notation already used for money.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Elapsed time and the 24-hour clock",
+          "standards": [
+            "SG-P3-measure"
+          ],
+          "focus": "Use ordered time intervals across hour boundaries.",
+          "learning": [
+            "Measure time in seconds",
+            "Find a start, finish or duration using 12- and 24-hour times"
+          ],
+          "activities": [
+            "Build a transport timeline with start and arrival labels",
+            "Compare two short activities timed in seconds"
+          ],
+          "evidence": [
+            "Partitions an interval accurately across an hour",
+            "Distinguishes 14:20 from a duration of fourteen hours twenty minutes"
+          ],
+          "bridge": "Rate problems later combine these durations with other quantities.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Area is coverage; perimeter is boundary",
+          "standards": [
+            "SG-P3-area"
+          ],
+          "focus": "Use arrays and length measures to build rectangle formulas.",
+          "learning": [
+            "Measure area in square units, square centimetres and square metres",
+            "Find areas of rectangles and perimeters of rectilinear figures"
+          ],
+          "activities": [
+            "Make several rectangles using a fixed collection of square tiles",
+            "Trace and measure their boundaries and compare results"
+          ],
+          "evidence": [
+            "Uses square units for area and length units for perimeter",
+            "Shows that equal areas can have different perimeters"
+          ],
+          "bridge": "P4 uses these relationships to recover missing dimensions and decompose composites.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Angles and line relationships",
+          "standards": [
+            "SG-P3-shape"
+          ],
+          "focus": "Investigate turns and line relationships with physical tools.",
+          "learning": [
+            "Recognise angles smaller than, equal to or greater than a right angle",
+            "Identify and draw parallel and perpendicular lines"
+          ],
+          "activities": [
+            "Make a right-angle tester from folded paper",
+            "Draw a street plan with marked parallel and perpendicular routes"
+          ],
+          "evidence": [
+            "Checks an angle against a right angle rather than its arm length",
+            "Distinguishes perpendicular intersections from merely crossing lines"
+          ],
+          "bridge": "P4 measures angles numerically and uses rectangle properties.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "Bar graphs and integrated planning",
+          "standards": [
+            "SG-P3-data",
+            "SG-P3-number",
+            "SG-P-practice"
+          ],
+          "focus": "Read scales and connect data to a defensible calculation.",
+          "learning": [
+            "Read bar graphs with different scales",
+            "Combine grouping, measurement or money reasoning in a short plan"
+          ],
+          "activities": [
+            "Graph fictional garden harvest counts using two different scales",
+            "Plan equal produce bags, label leftovers and calculate a total price"
+          ],
+          "evidence": [
+            "Reads intervals even when not every value is labelled",
+            "Explains the remainder and checks the plan against the data"
+          ],
+          "bridge": "P4 extends graph interpretation to tables, lines and pie charts.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-4",
+      "grade": 4,
+      "title": "Singapore mathematics — Primary 4",
+      "levelLabel": "Primary 4",
+      "scopeNote": "Standard Primary 4 scope from the 2021 syllabus updated October 2025; the 36-week sequence is editorial.",
+      "prerequisites": [
+        "Use four-digit arithmetic and all multiplication tables",
+        "Explain equivalent fractions, rectangle area and right angles"
+      ],
+      "outcomes": [
+        "Use factors and larger multiplication/division algorithms",
+        "Calculate with fractions and decimals within P4 scope",
+        "Interpret composite figures, nets, symmetry and data displays"
+      ],
+      "nextStep": "Use decimal scaling, fraction multiplication, rates and triangle area in P5.",
+      "yearBridge": "Factors connect whole-number operations with fraction renaming. Decimal place value supports decimal arithmetic; composite rectangles and measured angles extend geometry, then nets, symmetry and data displays require careful interpretation of different representations.",
+      "crossSubject": "Compare a table and graph in a short informational text, describing the same data in words.",
+      "routines": [
+        "Start with a short mental strategy and revisit an earlier topic each week.",
+        "Move between concrete materials, pictorial or bar models and symbolic work when each helps explain the structure.",
+        "Ask learners to estimate, explain the chosen representation and check by a second method; revisit errors after a delay."
+      ],
+      "units": [
+        {
+          "title": "Larger numbers, rounding and factors",
+          "standards": [
+            "SG-P4-number"
+          ],
+          "focus": "Connect place value, divisibility and estimation.",
+          "learning": [
+            "Read and compare numbers to 100000 and round to tens, hundreds or thousands",
+            "Find factors, multiples, common factors and common multiples within syllabus limits"
+          ],
+          "activities": [
+            "Organise an imaginary museum collection using rounded inventories",
+            "Find possible equal rows for a collection and common meeting intervals"
+          ],
+          "evidence": [
+            "Explains the rounding boundary and uses the approximation symbol",
+            "Distinguishes a factor from a multiple with a numerical example"
+          ],
+          "bridge": "Factors and multiples provide the structure for fraction renaming.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Extend multiplication and division",
+          "standards": [
+            "SG-P4-number"
+          ],
+          "focus": "Keep the value of partial products visible.",
+          "learning": [
+            "Multiply up to four digits by one digit and three digits by two digits",
+            "Divide up to four digits by one digit"
+          ],
+          "activities": [
+            "Compare an area model and a two-digit multiplication algorithm",
+            "Plan shipments with equal box capacities and interpret leftovers"
+          ],
+          "evidence": [
+            "Explains why the tens partial product shifts one place",
+            "Checks division with multiplication and a remainder"
+          ],
+          "bridge": "These algorithms will be reused with decimals and multi-step models.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Mixed numbers and fractions of sets",
+          "standards": [
+            "SG-P4-fraction"
+          ],
+          "focus": "Relate wholes, equal parts and groups of objects.",
+          "learning": [
+            "Convert mixed numbers and improper fractions",
+            "Find a fraction of a set and add/subtract fractions with at most two denominators, each at most twelve"
+          ],
+          "activities": [
+            "Build lengths longer than one with fraction strips",
+            "Use counters and bars to compare fractional shares of a collection"
+          ],
+          "evidence": [
+            "Explains an improper fraction as a count of equal parts",
+            "Renames quantities into common units before combining them"
+          ],
+          "bridge": "P5 connects fractions to division and introduces fraction products.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Decimal place value",
+          "standards": [
+            "SG-P4-decimal"
+          ],
+          "focus": "Extend the base-ten system to thousandths.",
+          "learning": [
+            "Read, compare and order decimals to three places",
+            "Connect decimals and fractions and round to a stated precision"
+          ],
+          "activities": [
+            "Partition a square model and place decimals on a number line",
+            "Sort close decimal values and explain trailing zeros"
+          ],
+          "evidence": [
+            "Compares values by place rather than digit count",
+            "Locates rounding boundaries and states the requested precision"
+          ],
+          "bridge": "Shared place values make decimal operations meaningful.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Calculate with decimals",
+          "standards": [
+            "SG-P4-decimal"
+          ],
+          "focus": "Use equal units and estimation to check decimal calculations.",
+          "learning": [
+            "Add/subtract decimals up to two decimal places",
+            "Multiply/divide those decimals by a one-digit whole number and express whole-number quotients as decimals"
+          ],
+          "activities": [
+            "Share a measured ribbon and connect a diagram to long division",
+            "Compare exact and rounded totals for a pretend craft order"
+          ],
+          "evidence": [
+            "Explains decimal alignment by units",
+            "Checks the size of a product or quotient before rounding"
+          ],
+          "bridge": "P5 scales decimals by powers of ten and converts measurement units.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Composite rectangles and measured angles",
+          "standards": [
+            "SG-P4-shape"
+          ],
+          "focus": "Use known properties to recover missing information.",
+          "learning": [
+            "Find missing rectangle/square dimensions and composite area/perimeter",
+            "Measure, name and draw angles and use rectangle/square properties"
+          ],
+          "activities": [
+            "Design a stepped play space and mark internal decomposition lines",
+            "Draw a rectangle from dimensions and verify its angles"
+          ],
+          "evidence": [
+            "Avoids counting internal edges in the perimeter",
+            "Places the protractor centre and baseline correctly"
+          ],
+          "bridge": "P5 adds triangle area and reasoning with angle sums.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Symmetry, solids and nets",
+          "standards": [
+            "SG-P4-shape"
+          ],
+          "focus": "Connect spatial objects to drawings and foldable surfaces.",
+          "learning": [
+            "Complete a figure across a line of symmetry on a square grid",
+            "Interpret drawings of cubes, cuboids, cones, cylinders, prisms and pyramids; identify nets of cubes, cuboids, prisms and pyramids"
+          ],
+          "activities": [
+            "Predict which paper arrangements fold into a cube, then test",
+            "Draw a solid and its visible/hidden edges, and complete a reflected tile design"
+          ],
+          "evidence": [
+            "Pairs points at equal distances from the mirror line",
+            "Explains an overlapping or missing face in an invalid net"
+          ],
+          "bridge": "P5 uses spatial structure to count cubic units and calculate volume.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "Tables, line graphs and pie charts",
+          "standards": [
+            "SG-P4-data",
+            "SG-P-practice"
+          ],
+          "focus": "Choose a display suited to the question.",
+          "learning": [
+            "Complete tables and interpret line graphs and pie charts",
+            "Explain quantities, changes and category relationships in context"
+          ],
+          "activities": [
+            "Compare fictional water-use data in a table and line graph",
+            "Discuss a pie chart without assuming angles or percentages that are not given"
+          ],
+          "evidence": [
+            "Reads a scale and refers to a labelled category",
+            "Explains what the display supports and what it does not"
+          ],
+          "bridge": "P5 percentage and P6 averages add new ways to interpret familiar data.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-5",
+      "grade": 5,
+      "title": "Singapore mathematics — Primary 5 · standard Mathematics",
+      "levelLabel": "Primary 5 · standard Mathematics",
+      "scopeNote": "Standard Primary 5 scope from the 2021 syllabus updated October 2025; the 36-week sequence is editorial.",
+      "prerequisites": [
+        "Use decimal place value and operations by one-digit whole numbers",
+        "Rename fractions and decompose rectangular figures"
+      ],
+      "outcomes": [
+        "Multiply fractions and use ordered calculations",
+        "Apply percentages and rates with stated units",
+        "Find triangle area, rectangular volume and unknown angles"
+      ],
+      "nextStep": "Develop fraction division, ratios, algebra and inverse percentage in P6.",
+      "yearBridge": "Large-number and decimal scaling establish unit reasoning. Brackets and fraction quotients lead into fraction products, percentages and rates; triangle area and cubic layers then support geometric measurements and angle deductions.",
+      "crossSubject": "Read a short science procedure and express its quantities as rates, volumes and measurements.",
+      "routines": [
+        "Start with a short mental strategy and revisit an earlier topic each week.",
+        "Move between concrete materials, pictorial or bar models and symbolic work when each helps explain the structure.",
+        "Ask learners to estimate, explain the chosen representation and check by a second method; revisit errors after a delay."
+      ],
+      "units": [
+        {
+          "title": "Large numbers and decimal scaling",
+          "standards": [
+            "SG-P5-number"
+          ],
+          "focus": "Use powers of ten as changes of unit.",
+          "learning": [
+            "Read and write numbers to ten million",
+            "Multiply/divide whole numbers and decimals by 10, 100, 1000 and their multiples; convert metric units"
+          ],
+          "activities": [
+            "Represent a large collection through grouped units",
+            "Build paired labels in metres/centimetres and litres/millilitres using decimal quantities"
+          ],
+          "evidence": [
+            "Explains scaling through place value rather than moving a decimal point mechanically",
+            "Keeps the physical quantity unchanged during a unit conversion"
+          ],
+          "bridge": "Unit conversion supports rates and volume calculations later this year.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Order of operations and mixed numbers",
+          "standards": [
+            "SG-P5-number",
+            "SG-P5-fraction"
+          ],
+          "focus": "Record multi-step relationships without losing their structure.",
+          "learning": [
+            "Use brackets and order of operations without a calculator",
+            "Add and subtract mixed numbers and interpret a whole-number quotient as a fraction"
+          ],
+          "activities": [
+            "Write two expressions for a multi-stage packing plan",
+            "Share whole strips equally and record each share as a fraction and decimal"
+          ],
+          "evidence": [
+            "Explains how brackets change an expression",
+            "Regroups a whole when subtracting mixed numbers"
+          ],
+          "bridge": "Quotients and equal shares prepare fraction multiplication and division.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Fraction multiplication",
+          "standards": [
+            "SG-P5-fraction"
+          ],
+          "focus": "Interpret a product as equal groups or part of a quantity.",
+          "learning": [
+            "Multiply proper and improper fractions and whole numbers",
+            "Multiply a mixed number by a whole number and explain whether a product grows or shrinks"
+          ],
+          "activities": [
+            "Overlay shaded rectangle models for a fraction of a fraction",
+            "Compare batches that use fractional amounts of material"
+          ],
+          "evidence": [
+            "Connects the model dimensions to numerator and denominator",
+            "Uses a magnitude check and simplifies without changing value"
+          ],
+          "bridge": "P6 reverses these multiplicative relationships in fraction division.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Percentages in familiar contexts",
+          "standards": [
+            "SG-P5-percent"
+          ],
+          "focus": "Treat percent as a part measured against a whole of one hundred.",
+          "learning": [
+            "Express a part as a percentage and find a percentage of a whole",
+            "Calculate a stated discount, GST or annual simple interest"
+          ],
+          "activities": [
+            "Build hundred-grid models for discounts on invented price tags",
+            "Compare two bills with explicitly supplied tax and interest rates"
+          ],
+          "evidence": [
+            "Identifies the correct whole in each calculation",
+            "Shows the percentage amount separately from the final total"
+          ],
+          "bridge": "P6 works backward from a percentage part and analyses percentage change.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Rates and unit reasoning",
+          "standards": [
+            "SG-P5-rate",
+            "SG-P5-number"
+          ],
+          "focus": "Express one quantity for each unit of another.",
+          "learning": [
+            "Find a rate, total amount or number of units from the other two",
+            "Track measurement units through a rate calculation"
+          ],
+          "activities": [
+            "Compare filling machines with different output and time records",
+            "Plan supplies using price per item and volume per container"
+          ],
+          "evidence": [
+            "Labels the per-unit quantity and distinguishes it from the total",
+            "Explains why the chosen multiplication or division matches the units"
+          ],
+          "bridge": "P6 ratios compare like quantities; S1 extends rates to speed.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Triangle area and composite regions",
+          "standards": [
+            "SG-P5-area"
+          ],
+          "focus": "Relate a triangle to a rectangle with the same base and height.",
+          "learning": [
+            "Identify a perpendicular height even when it lies outside a triangle",
+            "Find triangle and composite areas"
+          ],
+          "activities": [
+            "Rearrange cut triangles into equal-area rectangles",
+            "Design a sign assembled from rectangles and triangles"
+          ],
+          "evidence": [
+            "Uses a perpendicular height rather than a sloping side",
+            "Accounts for each piece exactly once with square units"
+          ],
+          "bridge": "P6 adds circular pieces to composite-area reasoning.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Cubes, cuboids and liquid volume",
+          "standards": [
+            "SG-P5-area"
+          ],
+          "focus": "Build volume as layers of equal cubic units.",
+          "learning": [
+            "Find cube/cuboid volume and draw solids on an isometric grid",
+            "Relate rectangular-tank volume to litres, millilitres and cubic centimetres"
+          ],
+          "activities": [
+            "Build and sketch equal-volume cuboids from unit cubes",
+            "Predict the water volume in a partly filled rectangular container"
+          ],
+          "evidence": [
+            "Explains the product of length, width and height using layers",
+            "Uses cubic units and the correct liquid-volume relationship"
+          ],
+          "bridge": "P6 recovers missing dimensions and base areas from a given volume.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "Angles, triangles and quadrilaterals",
+          "standards": [
+            "SG-P5-shape",
+            "SG-P-practice"
+          ],
+          "focus": "Derive unknown angles from stated geometric relationships.",
+          "learning": [
+            "Use straight-line, point and vertically opposite angle relationships",
+            "Use triangle sums and properties of parallelograms, rhombuses and trapeziums"
+          ],
+          "activities": [
+            "Sort quadrilaterals by their properties, including rotated examples",
+            "Create a composite diagram with one unknown angle and explain a solution without adding lines"
+          ],
+          "evidence": [
+            "Names the property supporting each deduction",
+            "Does not assume a figure is to scale or use unmarked equalities"
+          ],
+          "bridge": "P6 combines these angle relationships; S1 generalises them to polygons.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-6",
+      "grade": 6,
+      "title": "Singapore mathematics — Primary 6 · standard Mathematics",
+      "levelLabel": "Primary 6 · standard Mathematics",
+      "scopeNote": "Standard Primary 6 scope from the 2021 syllabus updated October 2025; the 36-week sequence is editorial.",
+      "prerequisites": [
+        "Multiply fractions and use percentages and unit rates",
+        "Find triangle area and cuboid volume; explain basic angle relationships"
+      ],
+      "outcomes": [
+        "Divide proper fractions and interpret ratios",
+        "Represent relationships with simple algebra and reverse percentages",
+        "Use circle measures, inverse volume calculations and averages"
+      ],
+      "nextStep": "Enter G3 Secondary 1 through signed numbers, general algebra and formal proportional reasoning.",
+      "yearBridge": "Fraction division reverses familiar products; ratios organise common units and reverse percentages recover missing wholes. Bar models become algebraic expressions, then circle, volume, angle and average problems test whether the learner can choose and check a suitable representation.",
+      "crossSubject": "Translate a multi-step written problem into a labelled representation, then write a conclusion answering its exact question.",
+      "routines": [
+        "Start with a short mental strategy and revisit an earlier topic each week.",
+        "Move between concrete materials, pictorial or bar models and symbolic work when each helps explain the structure.",
+        "Ask learners to estimate, explain the chosen representation and check by a second method; revisit errors after a delay."
+      ],
+      "units": [
+        {
+          "title": "Division with fractions",
+          "standards": [
+            "SG-P6-fraction"
+          ],
+          "focus": "Use equal sharing and measurement to explain division.",
+          "learning": [
+            "Divide a proper fraction by a whole number",
+            "Divide a whole number or proper fraction by a proper fraction without a calculator"
+          ],
+          "activities": [
+            "Partition a fractional strip among equal recipients",
+            "Count how many fractional scoops fit a given amount"
+          ],
+          "evidence": [
+            "Explains a quotient with a diagram before using a reciprocal rule",
+            "Checks division by multiplication and interprets the result"
+          ],
+          "bridge": "Fraction fluency supports rational-number operations in secondary school.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Ratio and common units",
+          "standards": [
+            "SG-P6-ratio"
+          ],
+          "focus": "Compare quantities through a shared multiplicative unit.",
+          "learning": [
+            "Represent and simplify two- and three-part whole-number ratios",
+            "Divide a quantity in a ratio and connect ratio with fractions of the whole"
+          ],
+          "activities": [
+            "Use bars to allocate an invented club supply budget",
+            "Compare a part-to-part ratio and the corresponding part-to-whole fraction"
+          ],
+          "evidence": [
+            "Labels what each ratio term counts",
+            "Finds one ratio unit and verifies that the parts sum to the total"
+          ],
+          "bridge": "S1 extends ratios to fractional and decimal quantities.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Reverse percentages and change",
+          "standards": [
+            "SG-P6-percent"
+          ],
+          "focus": "Keep the reference whole visible when working backward.",
+          "learning": [
+            "Find a whole from a part and its percentage",
+            "Calculate percentage increase/decrease and distinguish original from final amounts"
+          ],
+          "activities": [
+            "Reconstruct a price before a stated discount",
+            "Compare two successive changes using bars and numerical examples"
+          ],
+          "evidence": [
+            "Uses the original amount as the change reference",
+            "Explains why equal percentage increase and decrease need not cancel"
+          ],
+          "bridge": "S1 consolidates reverse percentages and distinguishes percentage points.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "From bars to algebra",
+          "standards": [
+            "SG-P6-algebra"
+          ],
+          "focus": "Give a symbol to a repeated unknown quantity.",
+          "learning": [
+            "Write, simplify and evaluate simple linear expressions without brackets",
+            "Solve simple linear equations with whole-number coefficients"
+          ],
+          "activities": [
+            "Label matching bar segments with one letter",
+            "Compare an arithmetic bar-model solution and a symbolic solution to a packing problem"
+          ],
+          "evidence": [
+            "Distinguishes an expression from an equation",
+            "Substitutes a solution into the original equation to check it"
+          ],
+          "bridge": "S1 introduces signed coefficients, brackets, formulas and linear graphs.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Circles and composite measures",
+          "standards": [
+            "SG-P6-area"
+          ],
+          "focus": "Relate radius, diameter, circumference and area.",
+          "learning": [
+            "Find circle area and circumference",
+            "Find areas and perimeters involving semicircles, quarter circles and earlier polygons"
+          ],
+          "activities": [
+            "Measure several circular lids and compare circumference with diameter",
+            "Design a curved garden border and mark which edges belong to its boundary"
+          ],
+          "evidence": [
+            "Uses radius and diameter correctly",
+            "Separates straight boundary segments from arcs and uses square units for area"
+          ],
+          "bridge": "S1 extends composite measures and later secondary work generalises circular sectors.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Solve volume problems backward",
+          "standards": [
+            "SG-P6-area"
+          ],
+          "focus": "Use multiplicative structure to recover missing dimensions.",
+          "learning": [
+            "Find a cuboid dimension or base area from its volume",
+            "Find a cube edge from volume and use square/cube-root notation where needed"
+          ],
+          "activities": [
+            "Build possible tanks for a fixed volume and base area",
+            "Compare a cubic container with a rectangular container of equal volume"
+          ],
+          "evidence": [
+            "Connects division to the missing factor",
+            "Checks a recovered dimension by rebuilding the original volume"
+          ],
+          "bridge": "S1 extends root reasoning and volume to prisms and cylinders.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Composite angles and averages",
+          "standards": [
+            "SG-P6-shape",
+            "SG-P6-data"
+          ],
+          "focus": "Use conserved totals in geometric and numerical settings.",
+          "learning": [
+            "Find unknown angles in composite figures without adding lines",
+            "Relate average, total value and number of data values"
+          ],
+          "activities": [
+            "Explain an angle puzzle using marked triangle and quadrilateral properties",
+            "Redistribute counters to model equal shares and reconstruct a missing data value"
+          ],
+          "evidence": [
+            "Gives a reason for each angle deduction",
+            "Distinguishes an average from a sum and checks the reconstructed total"
+          ],
+          "bridge": "Secondary geometry formalises proof; statistics compares several measures of centre.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "Choose, solve and explain",
+          "standards": [
+            "SG-P6-algebra",
+            "SG-P6-ratio",
+            "SG-P6-data",
+            "SG-P-practice"
+          ],
+          "focus": "Integrate representations while keeping each quantity defined.",
+          "learning": [
+            "Choose bars, tables or equations for an unfamiliar multi-step situation",
+            "Evaluate whether a result meets all stated conditions"
+          ],
+          "activities": [
+            "Plan a fictional school event using ratio allocations, prices and average attendance",
+            "Revise a solution after a partner changes one constraint"
+          ],
+          "evidence": [
+            "Justifies the chosen model and checks units and totals",
+            "Explains which conclusions change and which remain valid"
+          ],
+          "bridge": "Begin S1 by revisiting these models and extending the number system beyond positive quantities.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-7",
+      "grade": 7,
+      "title": "Singapore mathematics — Secondary 1 · G3 Mathematics",
+      "levelLabel": "Secondary 1 · G3 Mathematics",
+      "scopeNote": "G3 Secondary 1 Mathematics scope; the 36-week sequence is editorial.",
+      "prerequisites": [
+        "Use P6 fractions, ratios, percentages and simple equations",
+        "Interpret geometric measures and numerical data"
+      ],
+      "outcomes": [
+        "Calculate with signed and rational numbers",
+        "Model relationships with expressions, equations and linear graphs",
+        "Use polygon geometry, mensuration and critical data displays"
+      ],
+      "nextStep": "Develop quadratics, systems, similarity, trigonometry and probability in Secondary 2.",
+      "yearBridge": "Signed numbers and proportional comparisons support general expressions, equations and linear graphs. Angle deductions and dimensional measurement extend geometric reasoning; data critique and an integrated proposal then require learners to choose models and explain their limits.",
+      "crossSubject": "Read quantitative claims in an informational text and explain how units, graph scales and reference quantities affect meaning.",
+      "routines": [
+        "Retrieve earlier number and algebra ideas each week and connect new work to diagrams and graphs.",
+        "Compare at least two representations or methods, then justify assumptions, restrictions and units.",
+        "Use technology to investigate and check; retain exact reasoning and explain what a numerical or graphical result can establish."
+      ],
+      "units": [
+        {
+          "title": "Number structure and signed quantities",
+          "standards": [
+            "SG-S1-number"
+          ],
+          "focus": "Extend whole-number structure to the real-number line.",
+          "learning": [
+            "Use prime factorisation to find HCF, LCM, squares, cubes and roots",
+            "Calculate with integers and rational numbers and order real numbers",
+            "Round to a specified number of decimal places or significant figures and estimate calculation results"
+          ],
+          "activities": [
+            "Build factor trees and compare packing/repetition situations",
+            "Represent changes of elevation with signed number lines",
+            "Compare exact, rounded and calculator results for a set of measured quantities and explain an implausible display"
+          ],
+          "evidence": [
+            "Selects HCF or LCM from the situation",
+            "Explains signs and operation order rather than applying an unexplained rule",
+            "Distinguishes decimal-place accuracy from significant-figure accuracy and uses estimation to check a calculator result"
+          ],
+          "bridge": "Algebra will use the same signed operations on coefficients.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Ratio, percentage, rate and speed",
+          "standards": [
+            "SG-S1-ratio",
+            "SG-S1-number"
+          ],
+          "focus": "Model multiplicative comparisons with a defined reference quantity.",
+          "learning": [
+            "Simplify ratios involving rational numbers and solve reverse-percentage problems",
+            "Use average rate/speed, convert km/h and m/s, and distinguish percentage points"
+          ],
+          "activities": [
+            "Compare two invented travel plans with different stops and distances",
+            "Analyse a percentage claim using a bar model and explicit reference total"
+          ],
+          "evidence": [
+            "Computes average speed from total distance and total time",
+            "Explains why a percentage-point difference is not the same as relative percentage change"
+          ],
+          "bridge": "S2 expands proportional reasoning to direct and inverse variation.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Expressions, patterns and formulas",
+          "standards": [
+            "SG-S1-algebra"
+          ],
+          "focus": "Express a relationship that applies to many cases.",
+          "learning": [
+            "Generate an nth-term expression from a pattern",
+            "Expand linear brackets, collect like terms and extract common factors"
+          ],
+          "activities": [
+            "Build growing tile patterns and compare counting methods",
+            "Translate a rental-fee rule into an expression and evaluate several inputs"
+          ],
+          "evidence": [
+            "Explains what each coefficient or constant counts",
+            "Checks equivalent expressions at values and by structure"
+          ],
+          "bridge": "S2 extends expansion to products of expressions and quadratic factorisation.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Linear equations and graphs",
+          "standards": [
+            "SG-S1-algebra"
+          ],
+          "focus": "Connect balance, coordinates and constant rate of change.",
+          "learning": [
+            "Solve linear and reducible simple fractional equations",
+            "Plot linear functions and interpret positive/negative gradient"
+          ],
+          "activities": [
+            "Compare two ways of solving a balance problem",
+            "Graph a changing water level and connect its table, equation and gradient"
+          ],
+          "evidence": [
+            "Checks a solution in the original equation and respects a denominator restriction",
+            "Explains rise over run with units"
+          ],
+          "bridge": "S2 studies intersections as simultaneous equations and contrasts quadratic change.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Angles, polygons and constructions",
+          "standards": [
+            "SG-S1-geometry"
+          ],
+          "focus": "Use geometric properties as reasons rather than visual guesses.",
+          "learning": [
+            "Use parallel-line angles and interior/exterior polygon sums",
+            "Classify quadrilaterals and construct figures with appropriate tools"
+          ],
+          "activities": [
+            "Triangulate convex polygons to explain their interior-angle totals",
+            "Construct a design from angle and side constraints and annotate its properties"
+          ],
+          "evidence": [
+            "Links each unknown angle to a named property",
+            "Distinguishes a measured construction from a proof of its properties"
+          ],
+          "bridge": "S2 studies when two figures are congruent or similar.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Area, surface area and volume",
+          "standards": [
+            "SG-S1-geometry"
+          ],
+          "focus": "Decompose figures and track linear, square and cubic units.",
+          "learning": [
+            "Find areas of parallelograms/trapeziums and composite figures",
+            "Find prism/cylinder surface area and volume, including unit conversions"
+          ],
+          "activities": [
+            "Derive a trapezium area formula using duplicate paper shapes",
+            "Compare container designs with equal volume but different surface areas"
+          ],
+          "evidence": [
+            "Explains the base and perpendicular height",
+            "Converts square/cubic units using the dimensional scale factor"
+          ],
+          "bridge": "S2 introduces pyramids, cones and spheres.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Represent and critique data",
+          "standards": [
+            "SG-S1-data"
+          ],
+          "focus": "Connect a display choice to the question it can answer.",
+          "learning": [
+            "Collect, classify and tabulate a small data set",
+            "Compare tables, bar/picture/line graphs and pie charts and identify misleading displays"
+          ],
+          "activities": [
+            "Show one fictional data set with two different vertical-axis choices",
+            "Design an appropriate display for a category comparison or time trend"
+          ],
+          "evidence": [
+            "Explains what a graph obscures or exaggerates",
+            "Makes a claim supported by quantities and labels"
+          ],
+          "bridge": "S2 moves from displays to distributions and measures of centre.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "A mathematical proposal",
+          "standards": [
+            "SG-S-practice",
+            "SG-S1-algebra",
+            "SG-S1-ratio",
+            "SG-S1-geometry"
+          ],
+          "focus": "Coordinate a model across number, algebra and geometry.",
+          "learning": [
+            "State assumptions and select relevant information",
+            "Check a proposal against several numerical constraints"
+          ],
+          "activities": [
+            "Plan a fictional excursion with travel rates, costs and a venue floor plan",
+            "Compare the proposal with a partner plan after one assumption changes"
+          ],
+          "evidence": [
+            "Provides a labelled equation or diagram for each key relationship",
+            "Reports a feasible result and explains a limitation of the model"
+          ],
+          "bridge": "Carry algebraic fluency and unit reasoning into S2 systems and proportional models.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-8",
+      "grade": 8,
+      "title": "Singapore mathematics — Secondary 2 · G3 Mathematics",
+      "levelLabel": "Secondary 2 · G3 Mathematics",
+      "scopeNote": "G3 Secondary 2 Mathematics scope; the 36-week sequence is editorial.",
+      "prerequisites": [
+        "Operate with signed rational numbers and simplify linear expressions",
+        "Solve linear equations and interpret gradient and polygon geometry"
+      ],
+      "outcomes": [
+        "Factor quadratics and solve linear systems",
+        "Use similarity, right-triangle trigonometry and solid geometry",
+        "Compare distributions and calculate simple-event probabilities"
+      ],
+      "nextStep": "Continue into the selected G3 plus Additional Mathematics upper-secondary pathway.",
+      "yearBridge": "Algebraic products and fractions support simultaneous equations and quadratic functions. Proportion leads to similarity and trigonometry, which support solid geometry; distribution and probability work add evidence for the final design investigation.",
+      "crossSubject": "Write a short mathematical argument that states a claim, evidence, restrictions and conclusion.",
+      "routines": [
+        "Retrieve earlier number and algebra ideas each week and connect new work to diagrams and graphs.",
+        "Compare at least two representations or methods, then justify assumptions, restrictions and units.",
+        "Use technology to investigate and check; retain exact reasoning and explain what a numerical or graphical result can establish."
+      ],
+      "units": [
+        {
+          "title": "Algebraic products and fractions",
+          "standards": [
+            "SG-S2-algebra"
+          ],
+          "focus": "Preserve equivalence while changing form.",
+          "learning": [
+            "Expand products and factor quadratic expressions using identities and grouping",
+            "Operate with simple algebraic fractions and change the subject of a formula"
+          ],
+          "activities": [
+            "Use algebra tiles to compare expanded and factored forms",
+            "Analyse two claimed simplifications and find an invalid cancellation"
+          ],
+          "evidence": [
+            "Checks factorisation by expansion",
+            "States excluded denominator values and preserves them after cancellation"
+          ],
+          "bridge": "These forms support quadratic solving and advanced functions.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Systems and linear inequalities",
+          "standards": [
+            "SG-S2-algebra"
+          ],
+          "focus": "Interpret a simultaneous solution as satisfying every condition.",
+          "learning": [
+            "Solve two linear equations by substitution, elimination and graphs",
+            "Solve simple linear inequalities and display their solution sets"
+          ],
+          "activities": [
+            "Model two unknown ticket prices from two purchase totals",
+            "Compare an exact intersection with a graphical estimate and a feasible price interval"
+          ],
+          "evidence": [
+            "Substitutes into both original equations",
+            "Reverses an inequality when multiplying or dividing by a negative number"
+          ],
+          "bridge": "Upper secondary extends inequalities and introduces nonlinear intersections.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Quadratic graphs and equations",
+          "standards": [
+            "SG-S2-algebra"
+          ],
+          "focus": "Connect roots, symmetry and the shape of a parabola.",
+          "learning": [
+            "Graph quadratic functions and identify maximum/minimum points",
+            "Solve quadratic equations by factorisation"
+          ],
+          "activities": [
+            "Build a table for a rectangular-area model with fixed perimeter",
+            "Compare an equation with its factored expression and graph"
+          ],
+          "evidence": [
+            "Uses the zero-product relationship correctly",
+            "Distinguishes roots, a vertex and a maximum value"
+          ],
+          "bridge": "S3 adds completing the square, discriminants and the quadratic formula.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Proportion, scales and similarity",
+          "standards": [
+            "SG-S2-proportion",
+            "SG-S2-geometry"
+          ],
+          "focus": "Distinguish additive changes from multiplicative scale.",
+          "learning": [
+            "Model direct and inverse proportion and interpret map scales",
+            "Use corresponding angles/sides in congruent and similar figures"
+          ],
+          "activities": [
+            "Compare two scale maps and a fixed-work completion table",
+            "Enlarge a design and explain the correspondence between its sides"
+          ],
+          "evidence": [
+            "Identifies a constant ratio or product and its units",
+            "Matches corresponding sides before setting up a proportion"
+          ],
+          "bridge": "Upper secondary extends length scale to area and volume scale.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Right triangles and trigonometry",
+          "standards": [
+            "SG-S2-geometry"
+          ],
+          "focus": "Use triangle structure to find inaccessible lengths.",
+          "learning": [
+            "Apply Pythagoras and its converse",
+            "Use sine, cosine and tangent for acute angles in right triangles"
+          ],
+          "activities": [
+            "Derive a square-area relationship with a rearrangement",
+            "Estimate a height from an invented survey diagram and compare methods"
+          ],
+          "evidence": [
+            "Identifies the hypotenuse relative to the right angle",
+            "Selects a trigonometric ratio from known and unknown sides and checks the angle unit"
+          ],
+          "bridge": "S3 extends trigonometry to non-right triangles and bearings.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Pyramids, cones and spheres",
+          "standards": [
+            "SG-S2-geometry"
+          ],
+          "focus": "Interpret solid formulas through dimensions and surface pieces.",
+          "learning": [
+            "Calculate surface areas and volumes of pyramids, cones and spheres",
+            "Distinguish slant height from perpendicular height"
+          ],
+          "activities": [
+            "Compare model packaging for a specified volume",
+            "Sketch a cone net and label its surface and height information"
+          ],
+          "evidence": [
+            "Uses slant height for the appropriate surface calculation",
+            "Reports square or cubic units and a sensible magnitude"
+          ],
+          "bridge": "Upper secondary similarity compares related solids through scale factors.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Distributions, centre and chance",
+          "standards": [
+            "SG-S2-data"
+          ],
+          "focus": "Summarise variation and count equally likely outcomes.",
+          "learning": [
+            "Interpret dot plots, histograms and stem-and-leaf diagrams, calculate suitable averages and calculate a mean for grouped data",
+            "Calculate simple-event probabilities from a complete sample space"
+          ],
+          "activities": [
+            "Compare two fictional travel-time sets with an outlier",
+            "Design a simple spinner game and list outcomes before calculating chance",
+            "Organise fictional travel times in a frequency table and compare its grouped mean with the mean of the original values"
+          ],
+          "evidence": [
+            "Explains when mean or median better describes a set",
+            "Distinguishes observed frequency from a theoretical probability",
+            "Weights each value or class midpoint by its frequency and identifies when the grouped mean is an estimate"
+          ],
+          "bridge": "S4 adds measures of spread and combined events.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "Test a design with mathematics",
+          "standards": [
+            "SG-S-practice",
+            "SG-S2-proportion",
+            "SG-S2-algebra",
+            "SG-S2-geometry",
+            "SG-S2-data"
+          ],
+          "focus": "Combine models and explain the limits of a conclusion.",
+          "learning": [
+            "Use equations, scale or data to evaluate a constrained design",
+            "Check and revise a solution after examining evidence"
+          ],
+          "activities": [
+            "Propose a small exhibition layout with scaled models and costs",
+            "Compare visitor-time data for two layouts and defend a summary measure"
+          ],
+          "evidence": [
+            "Connects each representation to the same quantities",
+            "Identifies one assumption or missing measurement that affects the recommendation"
+          ],
+          "bridge": "Before S3, revisit factorisation, fractional algebra and trigonometric meaning; these support the elective advanced sequence.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-9",
+      "grade": 9,
+      "title": "Singapore mathematics — Secondary 3 · G3 + Additional Mathematics",
+      "levelLabel": "Secondary 3 · G3 + Additional Mathematics",
+      "scopeNote": "Selected advanced pathway combining G3 Mathematics and elective Additional Mathematics. Content is published for Secondary 3–4 together; this split is editorial and needs teaching time for both subjects.",
+      "prerequisites": [
+        "Factor quadratics and operate with algebraic fractions",
+        "Use linear systems, similarity and right-triangle trigonometry"
+      ],
+      "outcomes": [
+        "Analyse quadratic, polynomial, exponential and trigonometric relationships",
+        "Use circle, coordinate and triangle geometry",
+        "Explain exact forms, solution restrictions and mathematical models"
+      ],
+      "nextStep": "Develop calculus while consolidating G3 vectors, matrices, statistics and probability in Secondary 4.",
+      "yearBridge": "Indices and exact algebra support quadratic and polynomial analysis. Exponential and logarithmic models extend the available function families; coordinate geometry, general triangles and trigonometric identities then provide multiple ways to explain the final modelling investigation.",
+      "crossSubject": "Compare a scientific model with a verbal description, making the input, output and domain explicit.",
+      "routines": [
+        "Retrieve earlier number and algebra ideas each week and connect new work to diagrams and graphs.",
+        "Compare at least two representations or methods, then justify assumptions, restrictions and units.",
+        "Use technology to investigate and check; retain exact reasoning and explain what a numerical or graphical result can establish."
+      ],
+      "units": [
+        {
+          "title": "Indices, standard form and surds",
+          "standards": [
+            "SG-S34-algebra",
+            "SG-A-algebra"
+          ],
+          "focus": "Extend exact calculation to powers and irrational quantities.",
+          "learning": [
+            "Use zero, negative and fractional indices and standard form",
+            "Simplify surds, rationalise denominators and solve simple surd equations"
+          ],
+          "activities": [
+            "Compare quantities over several orders of magnitude",
+            "Trace a surd equation through squaring and check all candidates"
+          ],
+          "evidence": [
+            "Explains an exponent law using equivalent expressions",
+            "Rejects an extraneous candidate in the original equation"
+          ],
+          "bridge": "Exact algebra supports quadratic roots and exponential models.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Quadratics and nonlinear intersections",
+          "standards": [
+            "SG-S34-algebra",
+            "SG-A-algebra"
+          ],
+          "focus": "Choose a form that exposes the needed property.",
+          "learning": [
+            "Complete the square, use the quadratic formula and interpret the discriminant",
+            "Solve quadratic inequalities and systems with one linear equation",
+            "Solve simultaneous linear inequalities and fractional equations reducible to quadratics, retaining restrictions"
+          ],
+          "activities": [
+            "Model a rectangular enclosure and compare factored, expanded and completed-square forms",
+            "Vary a line and predict the number of intersections with a parabola"
+          ],
+          "evidence": [
+            "Connects a discriminant sign to real intersections",
+            "Uses a sign chart or graph to justify an interval solution"
+          ],
+          "bridge": "Stationary-value reasoning here will later be generalised by derivatives.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Polynomials, partial fractions and binomial expansion",
+          "standards": [
+            "SG-A-algebra"
+          ],
+          "focus": "Use structure to make complicated expressions manageable.",
+          "learning": [
+            "Use polynomial division, remainder/factor theorems and sum/difference of cubes",
+            "Decompose syllabus-form rational expressions and use the positive-integer binomial theorem"
+          ],
+          "activities": [
+            "Find a missing polynomial coefficient from an imposed root",
+            "Compare a binomial coefficient calculation with successive expansions and reconstruct a partial-fraction identity"
+          ],
+          "evidence": [
+            "Checks a factor by substitution and multiplication",
+            "Matches coefficients and preserves denominator restrictions"
+          ],
+          "bridge": "These forms become useful integration tools in the advanced pathway.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Exponential and logarithmic models",
+          "standards": [
+            "SG-S34-algebra",
+            "SG-A-log",
+            "SG-A-geometry"
+          ],
+          "focus": "Treat a logarithm as the inverse question to exponentiation.",
+          "learning": [
+            "Solve simple exponential/logarithmic equations using laws and change of base",
+            "Interpret growth/decay and compound-interest models and linearise a power or exponential relationship"
+          ],
+          "activities": [
+            "Build a model for an invented culture with a fixed growth factor",
+            "Plot transformed data to estimate constants and test a prediction"
+          ],
+          "evidence": [
+            "States domain restrictions before combining logarithms",
+            "Interprets parameters and checks a solution in the original model"
+          ],
+          "bridge": "H2 will place these examples within a general framework of functions and inverses.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Coordinates, circles and geometric proof",
+          "standards": [
+            "SG-S34-geometry",
+            "SG-A-geometry"
+          ],
+          "focus": "Join algebraic descriptions to geometric reasons.",
+          "learning": [
+            "Use line equations, midpoint, distance and parallel/perpendicular conditions",
+            "Use circle equations, circle angle properties, similarity/congruence and midpoint/tangent-chord theorems",
+            "Calculate the area of a rectilinear figure from its coordinates and justify the chosen decomposition"
+          ],
+          "activities": [
+            "Determine a circle from an original centre-radius constraint",
+            "Prove a statement in a constructed circle diagram and verify a coordinate example"
+          ],
+          "evidence": [
+            "Explains each proof step from stated properties",
+            "Completes the square to recover a circle centre and radius"
+          ],
+          "bridge": "S4 revisits proof through vectors and scaled areas/volumes.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Non-right triangles, radians and sectors",
+          "standards": [
+            "SG-S34-geometry",
+            "SG-A-trig"
+          ],
+          "focus": "Extend triangle reasoning to general angles and circular measure.",
+          "learning": [
+            "Use sine/cosine rules, triangle area, bearings and elevation/depression in two- and three-dimensional problems",
+            "Convert radians/degrees and find arc, sector and segment measures"
+          ],
+          "activities": [
+            "Plan a triangulated survey from an invented set of distances and bearings",
+            "Compare sectors sharing a radius but different angles",
+            "Sketch the right triangles needed to find a diagonal length and an angle of elevation in a three-dimensional structure"
+          ],
+          "evidence": [
+            "Checks whether a sine-rule situation admits another triangle",
+            "Separates sector area from triangular area in a segment",
+            "Identifies the correct plane and triangle for each step of a three-dimensional trigonometry problem"
+          ],
+          "bridge": "Radian measure supports trigonometric graphs and calculus.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Trigonometric functions and identities",
+          "standards": [
+            "SG-A-trig"
+          ],
+          "focus": "Link circular motion, graphs and algebraic identities.",
+          "learning": [
+            "Use six trigonometric functions, exact values and principal inverse values",
+            "Prove identities and solve equations on a specified interval using compound/double-angle and R-form expressions"
+          ],
+          "activities": [
+            "Construct a periodic model for an invented rotating marker",
+            "Compare algebraic and graphical solutions and locate every interval solution"
+          ],
+          "evidence": [
+            "Distinguishes a principal inverse value from the full interval solution set",
+            "Shows valid identity transformations and interprets amplitude and period"
+          ],
+          "bridge": "S4 differentiates these familiar functions; H2 later compares local approximations.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "Graphs, modelling and synthesis",
+          "standards": [
+            "SG-S34-algebra",
+            "SG-S-practice",
+            "SG-A-log",
+            "SG-A-trig"
+          ],
+          "focus": "Select a function family and test its implications.",
+          "learning": [
+            "Sketch power, exponential and quadratic graphs and estimate a tangent gradient",
+            "Compare a model prediction with data and constraints"
+          ],
+          "activities": [
+            "Fit two plausible models to a small fictional data table",
+            "Write a model report that compares behaviour inside and beyond the observed range"
+          ],
+          "evidence": [
+            "Uses intercepts, asymptotic behaviour or turning points to justify a sketch",
+            "Identifies an unsupported extrapolation and explains the model limit"
+          ],
+          "bridge": "The estimated tangent gradient becomes a derivative in S4; begin by retrieving exact algebra and radians.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-10",
+      "grade": 10,
+      "title": "Singapore mathematics — Secondary 4 · G3 + Additional Mathematics",
+      "levelLabel": "Secondary 4 · G3 + Additional Mathematics",
+      "scopeNote": "Selected advanced pathway combining G3 Mathematics and elective Additional Mathematics. Content is published for Secondary 3–4 together; this split is editorial and needs teaching time for both subjects.",
+      "prerequisites": [
+        "Use advanced algebra, logarithms, radians and trigonometric identities",
+        "Explain circle/coordinate arguments and function graphs"
+      ],
+      "outcomes": [
+        "Use G3 sets, matrices, vectors, spread and combined probability",
+        "Differentiate and integrate the Additional Mathematics function families",
+        "Connect proof, calculus and data models with explicit assumptions"
+      ],
+      "nextStep": "Continue to the selected H2 Mathematics route only after consolidating this elective foundation.",
+      "yearBridge": "Sets and matrices organise information, while vectors strengthen geometric arguments. Differentiation develops from local change into optimisation, and integration reverses it to describe accumulation; distribution and probability work then support the final model report.",
+      "crossSubject": "Write a mathematical report distinguishing observed data, a model assumption and a justified conclusion.",
+      "routines": [
+        "Retrieve earlier number and algebra ideas each week and connect new work to diagrams and graphs.",
+        "Compare at least two representations or methods, then justify assumptions, restrictions and units.",
+        "Use technology to investigate and check; retain exact reasoning and explain what a numerical or graphical result can establish."
+      ],
+      "units": [
+        {
+          "title": "Sets, matrices and organised information",
+          "standards": [
+            "SG-S34-algebra"
+          ],
+          "focus": "Represent membership and repeated calculations precisely.",
+          "learning": [
+            "Use set notation and Venn diagrams for two sets",
+            "Interpret and add, subtract or multiply appropriate matrices and scale a matrix"
+          ],
+          "activities": [
+            "Represent membership of two fictional clubs with sets",
+            "Use a quantity matrix and a price matrix to calculate several order costs"
+          ],
+          "evidence": [
+            "Distinguishes union, intersection and complement within a stated universal set",
+            "Explains the meaning and compatible dimensions of a matrix product"
+          ],
+          "bridge": "Sets later organise combined events; matrices demonstrate structured linear calculation.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Vectors, similarity and proof",
+          "standards": [
+            "SG-S34-vector",
+            "SG-S34-geometry",
+            "SG-A-geometry"
+          ],
+          "focus": "Use multiple representations of the same geometric relationship.",
+          "learning": [
+            "Calculate with planar vectors, magnitudes and position vectors",
+            "Use area/volume scale factors, bisector constructions and geometric proof"
+          ],
+          "activities": [
+            "Prove a midpoint relationship with vectors and then geometrically",
+            "Compare scale models and construct a point constrained by angle or segment bisectors"
+          ],
+          "evidence": [
+            "Tracks vector direction and justifies a scalar multiple",
+            "Uses squared/cubed scale factors for area/volume rather than the length factor"
+          ],
+          "bridge": "H2 extends vector arguments to three dimensions and products.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Derivatives and function change",
+          "standards": [
+            "SG-A-calculus"
+          ],
+          "focus": "Make the tangent gradient an algebraic function.",
+          "learning": [
+            "Differentiate powers, trigonometric, exponential and logarithmic functions",
+            "Use product, quotient and chain rules and second-derivative notation"
+          ],
+          "activities": [
+            "Compare secant gradients approaching a point with the derivative value",
+            "Match original-function graphs to their derivative graphs"
+          ],
+          "evidence": [
+            "Selects a rule from the function structure",
+            "Explains a derivative value as a local rate with appropriate units"
+          ],
+          "bridge": "Derivative signs will support optimisation and motion analysis.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Tangents, rates and optimisation",
+          "standards": [
+            "SG-A-calculus"
+          ],
+          "focus": "Connect a derivative calculation to the question being asked.",
+          "learning": [
+            "Find tangents/normals, stationary points and increasing/decreasing intervals",
+            "Apply derivatives to connected rates and maximum/minimum problems"
+          ],
+          "activities": [
+            "Optimise an invented open container subject to a material constraint",
+            "Analyse a changing circular measurement using a supplied rate"
+          ],
+          "evidence": [
+            "Checks the nature and admissibility of stationary points",
+            "Uses the chain rule and units to interpret a connected rate"
+          ],
+          "bridge": "H2 extends these arguments to implicit and parametric curves.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Integration, area and motion",
+          "standards": [
+            "SG-A-calculus"
+          ],
+          "focus": "Reverse differentiation and interpret signed accumulation.",
+          "learning": [
+            "Integrate the syllabus power, trigonometric and exponential forms and simple linear composites",
+            "Evaluate definite integrals, areas and straight-line motion quantities"
+          ],
+          "activities": [
+            "Recover a position model from a velocity rule and an initial position",
+            "Find a region between a curve and a line, splitting at axis crossings when needed"
+          ],
+          "evidence": [
+            "Checks an antiderivative by differentiating",
+            "Distinguishes signed displacement from total distance and signed integral from area"
+          ],
+          "bridge": "H2 adds substitution, integration by parts and areas between two curves.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Spread and distribution comparisons",
+          "standards": [
+            "SG-S34-data"
+          ],
+          "focus": "Describe variation alongside a measure of centre.",
+          "learning": [
+            "Interpret quartiles, percentiles, cumulative frequency and box plots",
+            "Calculate range, interquartile range and standard deviation for grouped/ungrouped data"
+          ],
+          "activities": [
+            "Compare fictional journey-time records with similar means",
+            "Construct a cumulative frequency graph and estimate percentile cutoffs"
+          ],
+          "evidence": [
+            "Identifies which measures use all values and which resist extreme values",
+            "Explains a comparison using both centre and spread"
+          ],
+          "bridge": "H2 probability models and sampling will quantify uncertainty about a population.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Combined probability",
+          "standards": [
+            "SG-S34-data",
+            "SG-S34-algebra"
+          ],
+          "focus": "Use a complete representation of multi-stage outcomes.",
+          "learning": [
+            "Calculate combined-event probabilities using trees and possibility diagrams",
+            "Distinguish independent from mutually exclusive events and use addition/multiplication appropriately"
+          ],
+          "activities": [
+            "Compare draws with and without replacement from a small labelled set",
+            "Design two games with different event structures but the same win probability"
+          ],
+          "evidence": [
+            "Updates branch probabilities after an outcome when necessary",
+            "Explains why mutually exclusive events with positive probability are not independent"
+          ],
+          "bridge": "H2 extends this reasoning to conditional probability and combinatorial counting.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "Connect calculus, models and evidence",
+          "standards": [
+            "SG-S-practice",
+            "SG-A-calculus",
+            "SG-A-geometry",
+            "SG-S34-data"
+          ],
+          "focus": "Integrate the two subjects while maintaining exact reasoning.",
+          "learning": [
+            "Formulate and solve a multi-topic mathematical problem",
+            "Distinguish a proof, a numerical check and a model-based conclusion"
+          ],
+          "activities": [
+            "Compare two fictional production plans using rates, accumulated output and variability",
+            "Present a solution portfolio linking an algebraic, graphical and geometric method"
+          ],
+          "evidence": [
+            "States an assumption and checks domain, units and final feasibility",
+            "Explains one error corrected through a second representation"
+          ],
+          "bridge": "Begin H2 by checking algebra, functions, radians and calculus fluency; repair gaps before composite and inverse functions.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-11",
+      "grade": 11,
+      "title": "Singapore mathematics — JC1 · selected H2 Mathematics pathway",
+      "levelLabel": "JC1 · selected H2 Mathematics pathway",
+      "scopeNote": "Selected H2 Mathematics pathway, year 1 of two. This JC year allocation is editorial, assumes Additional Mathematics and is not a universal grade expectation.",
+      "prerequisites": [
+        "Complete the selected G3 and Additional Mathematics foundation",
+        "Use calculus, exact algebra, logarithms, trigonometry and planar vectors"
+      ],
+      "outcomes": [
+        "Analyse functions, sequences and Cartesian complex numbers",
+        "Use three-dimensional vectors and extend calculus",
+        "Count outcomes and calculate conditional probabilities"
+      ],
+      "nextStep": "Continue H2 with series approximations, differential equations and statistical inference in JC2.",
+      "yearBridge": "Domain and graph reasoning supports equations, inequalities and sequences. Complex numbers and spatial vectors extend algebraic representation; implicit differentiation and advanced integration build on established functions, and counting provides the foundation for conditional probability.",
+      "crossSubject": "Translate an unfamiliar scientific or economic scenario into a model while stating the meanings and allowed values of every variable.",
+      "routines": [
+        "Retrieve earlier number and algebra ideas each week and connect new work to diagrams and graphs.",
+        "Compare at least two representations or methods, then justify assumptions, restrictions and units.",
+        "Use technology to investigate and check; retain exact reasoning and explain what a numerical or graphical result can establish."
+      ],
+      "units": [
+        {
+          "title": "Functions, domains and inverses",
+          "standards": [
+            "SG-H-function"
+          ],
+          "focus": "Separate a function rule from the domain on which it acts.",
+          "learning": [
+            "Determine domain/range and whether an inverse or composite exists",
+            "Restrict a domain to obtain a one-to-one function and relate inverse graphs"
+          ],
+          "activities": [
+            "Compare several domains for the same quadratic rule",
+            "Build a composite process and trace an input through both stages"
+          ],
+          "evidence": [
+            "Checks that the inner output fits the outer domain",
+            "Justifies an inverse restriction and verifies the inverse relationship"
+          ],
+          "bridge": "Domain control matters for transformations, equations and modelling.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Graphs, transformations and inequalities",
+          "standards": [
+            "SG-H-function"
+          ],
+          "focus": "Combine exact structure with reliable graphical investigation.",
+          "learning": [
+            "Analyse conics, rational functions, asymptotes and simple parametric graphs",
+            "Use transformations, absolute values, reciprocal graphs and inequalities, including rational inequalities",
+            "Formulate and solve systems of linear equations with a graphing tool, then interpret the solution in context"
+          ],
+          "activities": [
+            "Predict transformed graphs before using software to check",
+            "Solve a constrained rational model with an exact sign diagram and graphical comparison"
+          ],
+          "evidence": [
+            "Labels forbidden inputs and distinguishes an asymptote from an intercept",
+            "States intervals and boundary inclusion correctly"
+          ],
+          "bridge": "These graph structures will guide calculus and solution checks throughout H2.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Sequences, series and recurrence",
+          "standards": [
+            "SG-H-series",
+            "SG-H-function"
+          ],
+          "focus": "Distinguish individual terms, partial sums and limiting behaviour.",
+          "learning": [
+            "Use arithmetic/geometric terms and sums, including convergent infinite geometric series",
+            "Generate recurrence sequences and relate a term formula to partial sums"
+          ],
+          "activities": [
+            "Compare two fictional savings or depreciation plans",
+            "Investigate a recurrence numerically and test whether an apparent pattern is supported algebraically"
+          ],
+          "evidence": [
+            "States the convergence condition before an infinite sum",
+            "Distinguishes a sequence limit from convergence of its series"
+          ],
+          "bridge": "JC2 Maclaurin work uses series to approximate functions rather than only count terms.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Cartesian complex numbers",
+          "standards": [
+            "SG-H-complex"
+          ],
+          "focus": "Extend real arithmetic while preserving its algebraic structure.",
+          "learning": [
+            "Calculate with complex numbers, modulus, argument and conjugates",
+            "Use conjugate polynomial roots and represent operations on an Argand diagram"
+          ],
+          "activities": [
+            "Locate roots of an original quadratic with no real roots",
+            "Show the geometric effects of addition, conjugation and multiplication by i"
+          ],
+          "evidence": [
+            "Rationalises a complex denominator using its conjugate",
+            "Relates algebraic operations to correct points and directions"
+          ],
+          "bridge": "Complex-number reasoning strengthens fluency and representation; polar/exponential form is outside this H2 outline.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Vectors, lines and planes in space",
+          "standards": [
+            "SG-H-vector"
+          ],
+          "focus": "Describe geometry through direction, position and products.",
+          "learning": [
+            "Use scalar/vector products, unit vectors and three-dimensional line/plane equations",
+            "Find intersections, angles, perpendicular feet and point-to-line/plane distances"
+          ],
+          "activities": [
+            "Model a beam and surface in a three-dimensional coordinate frame",
+            "Compare intersecting, parallel and skew lines and justify the classification"
+          ],
+          "evidence": [
+            "Chooses a product for its geometric meaning",
+            "Checks an intersection in each original equation and reports a valid angle"
+          ],
+          "bridge": "These vector methods support later modelling; shortest distance between skew lines is outside this syllabus.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Extend differentiation",
+          "standards": [
+            "SG-H-differentiate"
+          ],
+          "focus": "Read local behaviour from derivatives and the defining relation.",
+          "learning": [
+            "Differentiate simple implicit and parametric functions",
+            "Analyse stationary points, tangents, normals and connected rates"
+          ],
+          "activities": [
+            "Compare two ways of representing a curve near a point",
+            "Optimise a model subject to a physically meaningful domain"
+          ],
+          "evidence": [
+            "Explains the role of the first and second derivatives",
+            "Checks endpoint or domain constraints before claiming an optimum"
+          ],
+          "bridge": "JC2 uses repeated differentiation for Maclaurin approximations.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Integration techniques and accumulation",
+          "standards": [
+            "SG-H-integrate"
+          ],
+          "focus": "Choose a transformation from the structure of an integrand.",
+          "learning": [
+            "Use standard inverse-trigonometric forms, given substitutions and integration by parts",
+            "Evaluate definite integrals, areas between curves and volumes of revolution"
+          ],
+          "activities": [
+            "Sort integrands by a promising first transformation and justify the choice",
+            "Build a volume model from cross-sectional disks and compare with numerical integration"
+          ],
+          "evidence": [
+            "Verifies an antiderivative by differentiation",
+            "Uses intersections and sign changes to set correct limits"
+          ],
+          "bridge": "JC2 applies these tools to differential equations and reviews the limit-of-sums interpretation.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "Counting and conditional probability",
+          "standards": [
+            "SG-H-probability",
+            "SG-H-practice"
+          ],
+          "focus": "Count cases without losing restrictions or the conditioning event.",
+          "learning": [
+            "Use permutations/combinations, including line/circle arrangements with repetition or restrictions",
+            "Calculate conditional probabilities and test independence"
+          ],
+          "activities": [
+            "Count original seating arrangements by two different case decompositions",
+            "Compare a tree and two-way table for a fictional quality-screening process"
+          ],
+          "evidence": [
+            "Explains why outcomes are counted once",
+            "Uses the conditioning event as the denominator and interprets the result"
+          ],
+          "bridge": "JC2 packages outcomes into random-variable distributions, then studies samples from populations.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    },
+    {
+      "id": "singapore-math-12",
+      "grade": 12,
+      "title": "Singapore mathematics — JC2 · selected H2 Mathematics pathway",
+      "levelLabel": "JC2 · selected H2 Mathematics pathway",
+      "scopeNote": "Selected H2 Mathematics pathway, year 2 of two. This JC year allocation is editorial, assumes Additional Mathematics and is not a universal grade expectation.",
+      "prerequisites": [
+        "Use H2 functions, vectors, calculus and sequence methods",
+        "Count restricted outcomes and calculate conditional probabilities"
+      ],
+      "outcomes": [
+        "Use local series and separable differential-equation models",
+        "Analyse binomial/normal distributions, samples and mean tests",
+        "Evaluate regression models and integrated mathematical arguments"
+      ],
+      "nextStep": "Move into further mathematics or applied study through explicit course prerequisites; this outline does not determine university placement.",
+      "yearBridge": "Maclaurin approximations and differential equations extend calculus models. Discrete and normal distributions support the transition from individual outcomes to sample means; hypothesis tests and regression then supply different kinds of evidence for the final integrated investigation.",
+      "crossSubject": "Read a quantitative research summary and separate a statistical association, a model prediction and a causal claim.",
+      "routines": [
+        "Retrieve earlier number and algebra ideas each week and connect new work to diagrams and graphs.",
+        "Compare at least two representations or methods, then justify assumptions, restrictions and units.",
+        "Use technology to investigate and check; retain exact reasoning and explain what a numerical or graphical result can establish."
+      ],
+      "units": [
+        {
+          "title": "Maclaurin series and local approximation",
+          "standards": [
+            "SG-H-maclaurin",
+            "SG-H-series",
+            "SG-H-differentiate"
+          ],
+          "focus": "Use a polynomial to describe a function near zero.",
+          "learning": [
+            "Use standard expansions and derive initial terms by repeated or implicit differentiation",
+            "State convergence restrictions and use small-angle approximations"
+          ],
+          "activities": [
+            "Compare several truncations with a graph of the original function",
+            "Build an approximation for a product or composition of standard series"
+          ],
+          "evidence": [
+            "Keeps terms to a justified order",
+            "States where the expansion or approximation is intended to work"
+          ],
+          "bridge": "Approximation becomes one tool for checking complicated model behaviour.",
+          "id": "u1",
+          "weeks": 4
+        },
+        {
+          "title": "Integrals and differential-equation models",
+          "standards": [
+            "SG-H-integrate",
+            "SG-H-de"
+          ],
+          "focus": "Connect a rate law, its solution and an initial condition.",
+          "learning": [
+            "Interpret a definite integral as a limit of sums and consolidate advanced integration",
+            "Formulate and solve separable differential equations, including a given substitution"
+          ],
+          "activities": [
+            "Derive an invented cooling or growth model from a stated rate assumption",
+            "Compare its predicted values with a small supplied data table"
+          ],
+          "evidence": [
+            "Uses an initial condition to determine the constant",
+            "Differentiates the solution to check the rate law and states its valid domain"
+          ],
+          "bridge": "The modelling cycle also guides decisions about probability distributions.",
+          "id": "u2",
+          "weeks": 5
+        },
+        {
+          "title": "Discrete random variables and binomial models",
+          "standards": [
+            "SG-H-distribution",
+            "SG-H-probability"
+          ],
+          "focus": "Move from listed outcomes to a distribution of numerical values.",
+          "learning": [
+            "Construct a discrete probability distribution and find expectation/variance",
+            "Select and calculate with a binomial model and explain its assumptions"
+          ],
+          "activities": [
+            "Compare two original reward games using their distributions",
+            "Model repeated quality checks and discuss when a constant independent success probability is doubtful"
+          ],
+          "evidence": [
+            "Checks that probabilities sum to one",
+            "Distinguishes expected value from an outcome that must occur"
+          ],
+          "bridge": "Normal distributions describe continuous quantities; sampling later describes the behaviour of statistics.",
+          "id": "u3",
+          "weeks": 5
+        },
+        {
+          "title": "Normal distributions and transformed variables",
+          "standards": [
+            "SG-H-distribution"
+          ],
+          "focus": "Interpret probability as area for a continuous model.",
+          "learning": [
+            "Calculate normal probabilities, quantiles and unknown parameters",
+            "Use expectations/variances of linear transformations and sums of independent variables"
+          ],
+          "activities": [
+            "Choose a tolerance interval in an invented manufacturing model",
+            "Compare one doubled measurement with the sum of two independent measurements"
+          ],
+          "evidence": [
+            "Explains the interval represented by a calculated probability",
+            "Uses different variance rules for scaling and independent addition"
+          ],
+          "bridge": "The normal model provides a distribution for sample means under suitable conditions.",
+          "id": "u4",
+          "weeks": 4
+        },
+        {
+          "title": "Sampling and sample means",
+          "standards": [
+            "SG-H-sampling",
+            "SG-H-distribution"
+          ],
+          "focus": "Distinguish population variation from variation between samples.",
+          "learning": [
+            "Explain simple random sampling and estimate population mean/variance",
+            "Use the sampling distribution of a mean and the Central Limit Theorem in suitable cases"
+          ],
+          "activities": [
+            "Simulate repeated samples from a fictional population",
+            "Compare how the spread of sample means changes with sample size"
+          ],
+          "evidence": [
+            "States what is random and what population quantity is fixed",
+            "Checks normal-population or sufficiently-large-sample conditions"
+          ],
+          "bridge": "A test for a population mean compares an observed sample statistic with this sampling model.",
+          "id": "u5",
+          "weeks": 5
+        },
+        {
+          "title": "Tests for a population mean",
+          "standards": [
+            "SG-H-sampling"
+          ],
+          "focus": "Frame a statistical conclusion in terms of evidence and assumptions.",
+          "learning": [
+            "Set null/alternative hypotheses and conduct one- or two-tailed population-mean tests for a normal population with known variance, or for a sufficiently large sample from any population",
+            "Interpret significance level, critical region and p-value in context"
+          ],
+          "activities": [
+            "Assess an invented supplier claim from a supplied sample summary",
+            "Compare conclusions under two preselected significance levels"
+          ],
+          "evidence": [
+            "Chooses the tail from the research question before calculation",
+            "Avoids treating failure to reject as proof of the null or a p-value as its probability",
+            "Checks the normal-population/known-variance or large-sample condition before choosing a mean test; does not apply this procedure to a small sample with unknown population variance"
+          ],
+          "bridge": "Regression adds a second variable while retaining the need to check model assumptions.",
+          "id": "u6",
+          "weeks": 4
+        },
+        {
+          "title": "Correlation, regression and transformations",
+          "standards": [
+            "SG-H-regression"
+          ],
+          "focus": "Use a fitted relationship for a defined predictive purpose.",
+          "learning": [
+            "Interpret scatterplots and product-moment correlation",
+            "Use least-squares regression, choose the appropriate prediction direction, and linearise using square, reciprocal or logarithmic transformations"
+          ],
+          "activities": [
+            "Compare linear and transformed fits for a fictional response experiment",
+            "Evaluate an interpolation and an extrapolation from the same fitted model"
+          ],
+          "evidence": [
+            "Explains why association alone does not establish causation",
+            "States the model scale and reverses a transformation when interpreting predictions"
+          ],
+          "bridge": "The final synthesis weighs numerical fit alongside context and mathematical structure.",
+          "id": "u7",
+          "weeks": 5
+        },
+        {
+          "title": "Integrated H2 investigation and transition",
+          "standards": [
+            "SG-H-practice",
+            "SG-H-function",
+            "SG-H-vector",
+            "SG-H-de",
+            "SG-H-sampling",
+            "SG-H-regression"
+          ],
+          "focus": "Present a coherent argument linking several mathematical tools.",
+          "learning": [
+            "Formulate and evaluate a multi-topic model with explicit assumptions",
+            "Select further study based on demonstrated prerequisite strengths and gaps"
+          ],
+          "activities": [
+            "Investigate an invented sensor system using a geometric setup, a change model and noisy measurements",
+            "Defend the result in a report and revise it after a peer challenges an assumption"
+          ],
+          "evidence": [
+            "Separates exact deductions, approximations and statistical evidence",
+            "Checks units, domains and conditions and names a concrete next learning need"
+          ],
+          "bridge": "Prepare for the chosen next course through its prerequisites, with targeted review of algebra, calculus, probability or proof as needed.",
+          "id": "u8",
+          "weeks": 4
+        }
+      ]
+    }
+  ]
+}

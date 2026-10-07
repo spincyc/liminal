@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Connected, 36-week K–12 course outlines for Common Core mathematics, reading, and a Singapore mathematics pathway. Browse goals, task ideas, and source standards." />
+    <title>Liminal — K–12 year plans</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/curriculum.css" />
+    <script defer src="content/curriculum.js"></script>
+    <script defer src="lib/curriculum.js"></script>
+    <script defer src="app/curriculum.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="home-header page-width">
+      <a class="wordmark" href="index.html">Liminal<span class="wordmark-dot">.</span></a>
+      <nav class="home-nav" aria-label="Primary">
+        <a href="index.html#modules">Subjects</a>
+        <a href="curriculum.html" aria-current="page">Year plans</a>
+        <a href="courses.html">Study &amp; practice</a>
+      </nav>
+    </header>
+    <main id="main" class="page-width plan-main" tabindex="-1">
+      <header class="plan-intro">
+        <p class="eyebrow">The learning library · K–12</p>
+        <h1>A year of learning.<br /><em>A path through the years.</em></h1>
+        <p>Follow mathematics and reading from first ideas to independent reasoning. Choose a pathway and a grade, or see the subjects together.</p>
+        <p class="plan-notice"><strong>Course outlines</strong> · Each plan sketches 36 teaching weeks, with goals, task ideas, and checks for understanding. Lesson texts, reading selections, and complete assignments still need to be developed. <a href="courses.html">Grade 8 math lessons and practice are available now.</a></p>
+      </header>
+      <noscript><p class="plan-notice">Turn on JavaScript to browse the plans, or <a href="content/curriculum.json" download>download the complete outlines and source index as JSON</a>.</p></noscript>
+      <p id="planStatus" class="plan-status" role="status" aria-live="polite">Opening year plans…</p>
+      <div id="planBrowser" hidden>
+        <form class="plan-filters" aria-label="Choose a year plan">
+          <label>Subject and pathway<select id="planTrack"></select></label>
+          <label>Grade<select id="planGrade"></select></label>
+          <a id="planCompare" class="text-link" href="#grade/k">See subjects together</a>
+          <button id="planPrint" type="button" class="button button-ink">Print this plan</button>
+        </form>
+        <div id="planContent"></div>
+      </div>
+      <section class="plan-method" aria-labelledby="plan-method-heading">
+        <h2 id="plan-method-heading">Make the plan fit the learner.</h2>
+        <p>Use the opening prerequisites to find a starting point. Inside each unit, introduce and model a small idea, practise with support, apply it independently, and revisit earlier work. Reserve time every week for feedback and repair; the 36 weeks include review and checks. Slow down or extend a unit when the evidence calls for it.</p>
+        <p>Mathematics and reading support each other through precise language, representations, and evidence. Their daily instruction continues in parallel. The two mathematics pathways are alternatives: shared grade labels help browsing, but do not establish equivalent content or placement.</p>
+        <p>These are original editorial sequences informed by the linked standards. Common Core high-school math uses domains and reading uses grade bands. Singapore plans follow a named route through its syllabuses. Source labels summarize expectations; consult the originals for full wording and qualifications.</p>
+        <a class="text-link" href="content/curriculum.json" download>Download all plans and source references (JSON) <span aria-hidden="true">↓</span></a>
+      </section>
+    </main>
+    <footer class="home-footer page-width">
+      <div class="footer-intro"><a class="wordmark" href="index.html">Liminal<span class="wordmark-dot">.</span></a><p>Room to learn. Space to think.</p></div>
+      <div class="footer-notes"><p>Independent educational planning. Outlines and task ideas are original; standards belong to their issuing organizations.</p><p>Not affiliated with or endorsed by the Common Core State Standards Initiative, Singapore Ministry of Education, Singapore Math Inc., or any textbook publisher. SAT® and ACT® are trademarks of College Board and ACT, Inc.; this project is independent of both.</p></div>
+    </footer>
+  </body>
+</html>

@@ -71,6 +71,9 @@ h1 em, h2 em { color: var(--home-teal); font-weight: 400; }
 .section-heading h2, .paper-copy h2 { font-family: var(--home-serif); font-size: clamp(2rem, 3vw, 2.7rem); line-height: 1.15; letter-spacing: -.045em; }
 .section-heading > p { padding-bottom: 3px; color: var(--home-muted); font-size: .8125rem; }
 .module-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 36px; }
+.library-next { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 28px; padding-block: 24px; border-block: 1px solid var(--home-line); }
+.library-next h3 { font: 400 1.5rem/1.25 var(--home-serif); margin-bottom: 12px; }
+.library-next p { color: var(--home-muted); font-size: .9375rem; }
 .module { display: flex; flex-direction: column; min-width: 0; padding: 27px 27px 18px; border: 1px solid var(--home-line); border-radius: 6px; }
 .course-module { background: var(--home-course); }
 .sat-module { background: var(--home-sat); }
@@ -177,7 +180,7 @@ h1 em, h2 em { color: var(--home-teal); font-weight: 400; }
   .library, .test-library { padding-top: 32px; }
   .section-heading > p { display: none; }
   .section-heading h2 { font-size: 2rem; }
-  .module-grid, .test-grid { grid-template-columns: 1fr; gap: 20px; }
+  .module-grid, .test-grid, .library-next { grid-template-columns: 1fr; gap: 20px; }
   .library-note { max-width: 60ch; padding: 0; }
   .library-note h3 { font-size: 1.5625rem; }
   .paper-section { grid-template-columns: 1fr; margin-top: 36px; padding: 24px; }

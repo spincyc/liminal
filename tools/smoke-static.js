@@ -318,7 +318,7 @@ if (!courseHtml.includes('src="content/courses.js"') || !courseHtml.includes('sr
 // The library entrance is usable without the test-prep application or its
 // storage. Check its links/assets separately from the practice DOM contract.
 const homeHtml = fs.readFileSync(path.join(root, "index.html"), "utf8");
-for (const target of ["courses.html", "practice.html?test=SAT#practice", "practice.html?test=ACT#practice", "learn.html", "print.html"]) {
+for (const target of ["courses.html", "curriculum.html#common-core-math/k", "curriculum.html#common-core-reading/k", "curriculum.html#singapore-math/k", "practice.html?test=SAT#practice", "practice.html?test=ACT#practice", "learn.html", "print.html"]) {
   if (!homeHtml.includes(`href="${target}"`)) throw new Error("Home is missing a module link: " + target);
 }
 const homeIds = [...homeHtml.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
@@ -332,9 +332,34 @@ const homeScripts = [...homeHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map
 if (!homeScripts.includes("app/home.js") || homeScripts.some(script => script !== "app/home.js")) throw new Error("Home must load only its bookmark compatibility script");
 new vm.Script(fs.readFileSync(path.join(root, "app/home.js"), "utf8"), { filename: "app/home.js" });
 
+// Planning data remains separate from ready-to-study courses and saved work.
+const planHtml = fs.readFileSync(path.join(root, "curriculum.html"), "utf8");
+const planScripts = [...planHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+if (JSON.stringify(planScripts) !== JSON.stringify(["content/curriculum.js", "lib/curriculum.js", "app/curriculum.js"])) {
+  throw new Error("Curriculum scripts are missing or out of order");
+}
+for (const match of planHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
+  const target = match[1].split(/[?#]/)[0];
+  if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing curriculum asset: " + target);
+}
+const planIds = [...planHtml.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+if (new Set(planIds).size !== planIds.length) throw new Error("Duplicate curriculum element IDs");
+const planSource = fs.readFileSync(path.join(root, "app/curriculum.js"), "utf8");
+for (const match of planSource.matchAll(/document\.getElementById\("([^"]+)"\)/g)) {
+  if (match[1] !== "planHeading" && !planIds.includes(match[1])) throw new Error("Missing curriculum element " + match[1]);
+}
+planScripts.forEach(script => new vm.Script(fs.readFileSync(path.join(root, script), "utf8")));
+const planContext = vm.createContext({ window: {} });
+vm.runInContext(fs.readFileSync(path.join(root, "content/curriculum.js"), "utf8"), planContext);
+const planData = planContext.window.LIMINAL_CURRICULUM;
+if (!planData || planData.tracks.length !== 3 || planData.tracks.some(t => t.courses.length !== 13)) throw new Error("Incomplete curriculum bundle");
+if (JSON.stringify(planData) !== JSON.stringify(JSON.parse(fs.readFileSync(path.join(root, "content/curriculum.json"), "utf8")))) {
+  throw new Error("Downloadable curriculum differs from the browser plans");
+}
+
 // Every page names its icon, which is built with it, so no page asks the
 // server for a favicon.ico that is not there.
-for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html"]) {
+for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "curriculum.html"]) {
   const file = path.join(root, page);
   if (!fs.existsSync(file)) continue;
   const icon = (fs.readFileSync(file, "utf8").match(/<link rel="icon" href="([^"]+)"/) || [])[1];

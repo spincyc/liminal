@@ -1,5 +1,15 @@
 # Roadmap
 
+## K–12 curriculum skeletons — 2026-10-07
+
+The [year-plan library](curriculum.md) adds 39 sourced, 36-week outlines across
+Common Core mathematics, Common Core reading, and a Singapore mathematics
+pathway. Mathematics and Reading lead the landing page; grade comparison and
+adjacent-year links expose the intended progression. Ready-to-study Grade 8
+lessons remain separate. Next content work is to develop and review lesson
+texts, reading selections, differentiated practice, and complete assessments
+from these skeletons, not to treat the outlines as completed coursework.
+
 ## Graphic design direction — 2026-10-07
 
 The [graphic design review](reviews/2026-10-07-graphic-design.md) records the

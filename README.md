@@ -5,14 +5,24 @@ practice that run entirely in the browser.
 
 **Live site:** https://spincyc.github.io/liminal/
 
-The landing page connects **Courses**, **SAT practice**, **ACT practice**,
-and the study/review tools. Test practice lives at `practice.html`; earlier
+The landing page connects **Mathematics**, **Reading**, **K–12 year plans**,
+ready-to-study **Courses**, **SAT practice**, and **ACT practice**.
+Test practice lives at `practice.html`; earlier
 `index.html#practice`, Progress, Review, and Tips bookmarks still resolve.
 
 **Learn well. Make room for life.** The design sets the same standard across
 ages: understand the method, show the reasoning, and check the result. Subjects
-lead the library; grade labels identify curriculum alignment. The full K–12
-corpus is a direction for expansion, not the current inventory.
+lead the library; grade labels identify curriculum alignment.
+
+**Year plans** provides 39 full-year skeletons: Common Core mathematics,
+Common Core reading, and a Singapore mathematics pathway for each grade K–12.
+Every plan spans 36 teaching weeks with prerequisites, goals, original task
+ideas, evidence checks, source references, and links across subjects and years.
+Browse one pathway, compare a grade's subjects, print a plan, or download the
+planning data. These are outlines; full lessons and assignments are still to be
+developed. High-school grade assignments and the Singapore-to-US grade mapping
+are editorial choices, explained in the plans. See
+[the curriculum format and scope](docs/curriculum.md).
 
 **Courses** starts with Grade 8 Mathematics: the four topics in the supplied
 enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
@@ -194,6 +204,7 @@ touching the others.
 | --- | --- |
 | [`content/`](content/) | The section catalog and its schema, the template registries (`templates/`), the SAT Learn pages (`learn/`), the ACT banks and passages, the authored sources the generators assemble, and the Markdown study guides |
 | [`content/courses/`](content/courses/) | Grade/subject catalog, original classroom guides and textbook lesson references |
+| [`content/curriculum/`](content/curriculum/) | K–12 year plans and source-linked Common Core and Singapore references |
 | [`content/work-samples/`](content/work-samples/) | Original vector written solutions, lesson bindings, and accessible transcripts |
 | [`src/`](src/) | The web app: pages, styles, pure logic in `lib/` (including the SAT question templates in `lib/families/`), and browser UI in `app/` |
 | [`tools/`](tools/) | Build, validation, audit, and question-generation scripts |
