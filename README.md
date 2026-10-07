@@ -42,6 +42,14 @@ coursework. Their scope is editorial, with explicit source references and no
 claim of complete Common Core or AP alignment. See the
 [sequence and prerequisite bridges](docs/high-school-math.md).
 
+**Nightly reading** supplies 180 public-domain selections for each grade K–12,
+five per week. The age-adjusted reading and discussion budget grows from about
+10 minutes in kindergarten to 25–30 minutes in high school. Each night includes
+the authentic text, source and edition, a focused reading challenge, and
+text-specific questions. Adult read-aloud and shared reading are explicit;
+facilitator notes stay separate from student printouts. See the
+[corpus, provenance, and progression contract](docs/daily-reading.md).
+
 **Courses** starts with Grade 8 Mathematics: the four topics in the supplied
 enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
 examples, 36 prerequisite checks, 36 partially worked practice tasks, and 85
@@ -269,4 +277,5 @@ College Board. ACT® is a registered trademark of ACT, Inc. SAT/ACT questions
 and passages are original. Weekly reading also includes attributed
 public-domain works; each supplied text identifies its source.
 
-No license has been chosen yet; until one is, all rights are reserved.
+No license has been chosen for original Liminal material; until one is, its
+rights are reserved. Attributed public-domain works retain their stated status.

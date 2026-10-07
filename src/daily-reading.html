@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="A year of nightly reading for each grade, kindergarten through Grade 12: authentic public-domain literature and documents with focused discussion." />
+    <title>Liminal — Daily reading</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/daily-reading.css" />
+    <link rel="stylesheet" href="styles/brand.css" />
+    <script defer src="lib/daily-reading.js"></script>
+    <script defer src="app/daily-reading-render.js"></script>
+    <script defer src="app/daily-reading.js"></script>
+  </head>
+  <body class="daily-page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="home-header page-width">
+      <a class="wordmark" href="index.html" aria-label="Liminal home"><svg class="brand-symbol" viewBox="0 0 28 34" fill="none" aria-hidden="true" focusable="false"><path d="M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17" stroke="currentColor" stroke-width="2.5" /><path d="M0 32h28" stroke="currentColor" stroke-width="2.5" /></svg><span>Liminal<span class="wordmark-dot">.</span></span></a>
+      <nav class="home-nav" aria-label="Primary"><a href="index.html#modules">Subjects</a><a href="weeks.html">Weekly work</a><a href="daily-reading.html" aria-current="page">Daily reading</a></nav>
+    </header>
+    <main id="main" class="page-width daily-main" tabindex="-1">
+      <header class="daily-intro"><h1>Daily reading</h1><p>One reading, one conversation. Five nights a week.</p></header>
+      <noscript><p>Turn on JavaScript to choose a reading. You can also <a href="content/reading-daily/index.json">browse the downloadable grade index</a>.</p></noscript>
+      <p id="dailyStatus" class="daily-status" role="status" aria-live="polite">Opening the reading library…</p>
+      <div id="dailyBrowser" hidden>
+        <form class="daily-filters" aria-label="Choose a nightly reading">
+          <label>Grade<select id="dailyGrade"></select></label>
+          <label>Week<select id="dailyWeek"></select></label>
+          <label>Day<select id="dailyDay"></select></label>
+        </form>
+        <div id="dailyContent" aria-busy="false"></div>
+      </div>
+      <details class="daily-about"><summary>Using daily reading</summary><p>Read aloud, together, or independently as indicated. Use the suggested minutes for reading, rereading, and conversation; actual pace varies. A short poem can reward several readings. Stop at a useful point and return when needed.</p><p>Discussion questions invite supported interpretations. Facilitator notes are optional and stay out of student printouts and downloads. Literary selections are public domain in the United States; each reading carries its source and edition.</p><p><a href="weeks.html#common-core-reading/k/1">Explore weekly reading instruction</a> · <a href="curriculum.html#common-core-reading/k">Reading year plans</a></p></details>
+    </main>
+    <footer class="home-footer page-width daily-footer"><p>Independent educational coursework. Not affiliated with standards bodies or publishers.</p><p>SAT® and ACT® are trademarks of College Board and ACT, Inc.; no affiliation.</p></footer>
+  </body>
+</html>

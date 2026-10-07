@@ -202,6 +202,7 @@
       const links = R.el("div", undefined, "weekly-links");
       const yearRoute = course.courseId ? "high-school.html#" + W.courseKey(course) : "curriculum.html#" + selected.trackId + "/" + W.courseKey(course);
       links.append(R.link("Year plan", yearRoute), R.link("Unit and standards", yearRoute + "/" + encodeURIComponent(week.unitId)));
+      if (course.trackId === "common-core-reading") links.append(R.link("Nightly reading", "daily-reading.html#" + W.courseKey(course) + "/" + week.week + "/1"));
       heading.append(links);
       const fragment = document.createDocumentFragment();
       fragment.append(heading, views(course, week), navigation(selected));

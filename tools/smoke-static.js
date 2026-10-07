@@ -404,9 +404,30 @@ const highSchoolData = highSchoolContext.window.LIMINAL_HIGH_SCHOOL;
 const highSchoolJson = JSON.parse(fs.readFileSync(path.join(root, "content/high-school.json"), "utf8"));
 if (!highSchoolData || JSON.stringify(highSchoolData) !== JSON.stringify(highSchoolJson) || JSON.stringify(highSchoolJson) !== JSON.stringify(weeklySource.highSchool)) throw new Error("High-school plan bundle differs from source or download");
 
+// Nightly texts remain in separately loaded grade files, with a small index.
+const dailyHtml = fs.readFileSync(path.join(root, "daily-reading.html"), "utf8");
+const dailyScripts = [...dailyHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/daily-reading.js", "app/daily-reading-render.js", "app/daily-reading.js"])) throw new Error("Daily-reading scripts are missing or out of order");
+for (const match of dailyHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
+  const target = match[1].split(/[?#]/)[0];
+  if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing daily-reading asset: " + target);
+}
+const dailyIds = [...dailyHtml.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+if (new Set(dailyIds).size !== dailyIds.length) throw new Error("Duplicate daily-reading element IDs");
+dailyScripts.forEach(script => new vm.Script(fs.readFileSync(path.join(root, script), "utf8")));
+const dailySource = require("./build-daily-reading").loadDailyReading();
+const dailyIndex = JSON.parse(fs.readFileSync(path.join(root, "content/reading-daily/index.json"), "utf8"));
+if (JSON.stringify(dailyIndex) !== JSON.stringify(dailySource.index)) throw new Error("Daily-reading index differs from source");
+for (let i = 0; i < dailyIndex.grades.length; i++) {
+  const entry = dailyIndex.grades[i];
+  if (!/^content\/reading-daily\/(?:k|[1-9]|1[0-2])\.json$/.test(entry.file)) throw new Error("Unsafe daily-reading path");
+  const built = JSON.parse(fs.readFileSync(path.join(root, entry.file), "utf8"));
+  if (JSON.stringify(built) !== JSON.stringify(dailySource.courses[i])) throw new Error("Daily-reading text differs from source: " + entry.file);
+}
+
 // Every page names its icon, which is built with it, so no page asks the
 // server for a favicon.ico that is not there.
-for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "curriculum.html", "weeks.html", "high-school.html"]) {
+for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "curriculum.html", "weeks.html", "high-school.html", "daily-reading.html"]) {
   const file = path.join(root, page);
   if (!fs.existsSync(file)) continue;
   const icon = (fs.readFileSync(file, "utf8").match(/<link rel="icon" href="([^"]+)"/) || [])[1];

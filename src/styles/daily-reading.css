@@ -1,0 +1,84 @@
+.daily-main { max-width: 760px; padding-block: 30px 42px; }
+.daily-intro { margin-bottom: 20px; }
+.daily-intro h1 { font: 400 1.625rem/1.2 var(--font-serif); letter-spacing: -.025em; }
+.daily-intro p { margin-top: 5px; color: var(--color-muted); font-size: .875rem; }
+.daily-page :is(button, select, summary, a):focus-visible { outline: var(--focus-width) solid var(--color-accent); outline-offset: var(--focus-offset); }
+.daily-page :is(button, select) { font: inherit; color: var(--color-ink); background: var(--color-surface); border: 1px solid var(--color-line-strong); border-radius: var(--radius-sm); min-height: var(--tap); padding: 8px 10px; }
+.daily-page button { cursor: pointer; }
+.daily-page select { width: 100%; font-size: 1rem; }
+.daily-filters { display: grid; grid-template-columns: minmax(110px, 1.7fr) 1fr 1fr; gap: 12px; max-width: 500px; margin-bottom: 26px; }
+.daily-filters label { display: grid; gap: 3px; font-size: .8125rem; }
+.daily-status { margin-block: 12px; }
+.daily-heading { border-top: 1px solid var(--color-line); padding-top: 18px; }
+.daily-meta, .daily-mode, .daily-muted { color: var(--color-muted); }
+.daily-meta { font-size: .8125rem; }
+.daily-heading :is(h1, h2) { font: 400 clamp(1.9rem, 5vw, 2.65rem)/1.15 var(--font-serif); letter-spacing: -.025em; margin-top: 8px; overflow-wrap: anywhere; }
+.daily-author { margin-top: 9px; font-size: .9375rem; }
+.daily-budget { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 17px; font-size: .875rem; font-weight: 600; }
+.daily-mode { margin-top: 4px; font-size: .8125rem; }
+.daily-context { margin-top: 22px; font-size: .9375rem; }
+.daily-content-note { margin-top: 16px; padding-left: 12px; border-left: 2px solid var(--color-line-strong); font-size: .875rem; }
+.daily-continuation { margin-block: 18px; font-size: .875rem; font-style: italic; color: var(--color-muted); }
+.daily-passage { margin-block: 30px; font: 400 1.1875rem/1.85 var(--font-serif); }
+.daily-passage p + p { margin-top: 1.1em; }
+.daily-passage .daily-stanza { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.65; }
+.daily-passage .daily-paragraph { white-space: pre-line; overflow-wrap: anywhere; }
+.daily-passage .daily-heading { font: 600 1.125rem/1.5 var(--font-serif); border: 0; margin-block: 1.5em .75em; padding: 0; }
+.daily-discussion { border-top: 1px solid var(--color-line); padding-top: 22px; }
+.daily-discussion h3 { font: 400 1.5rem/1.3 var(--font-serif); }
+.daily-discussion > p { margin-top: 8px; font-size: .875rem; }
+.daily-questions { padding-left: 1.5em; margin-block: 20px; }
+.daily-questions > li { padding-left: 6px; }
+.daily-questions > li + li { margin-top: 24px; }
+.daily-page summary { cursor: pointer; min-height: var(--tap); padding-block: 10px; }
+.daily-facilitator { margin-top: 5px; font-size: .875rem; color: var(--color-muted); }
+.daily-facilitator p + p { margin-top: 10px; }
+.daily-evidence { margin-top: 14px; }
+.daily-evidence blockquote { margin: 6px 0 6px 12px; padding-left: 12px; border-left: 2px solid var(--color-line); }
+.daily-source, .daily-focus, .daily-year, .daily-about { border-top: 1px solid var(--color-line); font-size: .875rem; padding-block: 4px; }
+.daily-source p, .daily-focus p, .daily-year p, .daily-about p { margin-bottom: 12px; }
+.daily-source-links { display: flex; flex-wrap: wrap; gap: 0 18px; }
+.daily-source-links a { display: inline-flex; align-items: center; min-height: var(--tap); }
+.daily-progression { padding-left: 1.5em; }
+.daily-progression li + li { margin-top: 16px; }
+.daily-progression li[aria-current="step"] .daily-stage { font-weight: 700; }
+.daily-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; border-top: 1px solid var(--color-line); margin-top: 18px; padding-block: 14px; font-size: .875rem; }
+.daily-nav a { display: inline-flex; align-items: center; min-height: var(--tap); }
+.daily-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-block: 8px 22px; font-size: .875rem; }
+.daily-about { margin-top: 24px; }
+.daily-footer, .daily-export-footer { font-size: .8125rem; color: var(--color-muted); }
+.daily-attribution { display: none; }
+.daily-export-brand { margin-bottom: 20px; }
+.daily-export-footer { margin-top: 28px; border-top: 1px solid var(--color-line); padding-block: 14px; }
+.daily-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 640px) {
+  .daily-page .page-width { width: calc(100% - 32px); }
+  .daily-page .home-header { min-height: 70px; gap: 12px; flex-wrap: wrap; padding-block: 12px; }
+  .daily-page .home-nav { gap: 16px; flex-wrap: wrap; font-size: .8125rem; }
+  .daily-main { padding-top: 24px; }
+  .daily-filters { gap: 8px; }
+  .daily-filters select { padding-inline: 7px; }
+  .daily-passage { font-size: 1.125rem; line-height: 1.8; }
+}
+@media print {
+  @page { margin: 16mm; }
+  html { scroll-behavior: auto; }
+  .daily-page { background: #fff; color: #000; font-size: 10pt; }
+  .daily-page .page-width { width: 100%; max-width: none; }
+  .daily-page .home-header { min-height: 0; padding: 0 0 10pt; border: 0; }
+  .daily-page :is(.skip-link, .home-nav, .daily-intro, .daily-filters, .daily-status, .daily-nav, .daily-actions, .daily-facilitator, .daily-source, .daily-focus, .daily-year, .daily-about, .daily-footer) { display: none !important; }
+  .daily-main { padding: 0; }
+  .daily-heading { border: 0; padding-top: 0; }
+  .daily-heading :is(h1, h2) { font-size: 23pt; }
+  .daily-budget { margin-top: 8pt; }
+  .daily-context { margin-top: 12pt; }
+  .daily-passage { margin-block: 18pt; font-size: 12pt; line-height: 1.65; }
+  .daily-passage .daily-stanza { break-inside: avoid; }
+  .daily-discussion { padding-top: 12pt; }
+  .daily-discussion h3 { font-size: 15pt; }
+  .daily-questions > li { break-inside: avoid; margin-bottom: 18pt; }
+  .daily-attribution { display: block; border-top: 1px solid #777; margin-top: 18pt; padding-top: 8pt; font-size: 8pt; overflow-wrap: anywhere; }
+  .daily-attribution p + p { margin-top: 4pt; }
+  .daily-page h1, .daily-page h2, .daily-page h3 { break-after: avoid; }
+  .daily-page p { orphans: 3; widows: 3; }
+}
