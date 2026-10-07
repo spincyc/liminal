@@ -105,6 +105,104 @@
       ]
     },
     {
+      "id": "rl-2-a",
+      "level": 2,
+      "form": "a",
+      "dayId": "reading-2-w03-d4",
+      "textHash": "64d88c82119dcd5a15fc68e1be8a59c08aba4da0b4c11dd1e1a74cbc0d02865e",
+      "intro": "A short true-to-life story about a kind writer, retold for young readers. The hyphens in long words show their parts.",
+      "items": [
+        {
+          "id": "rl-2-a-1",
+          "skill": "literal",
+          "stem": "What did Goldsmith find when he visited the family?",
+          "options": [
+            "The man had a bad fever and needed medicine",
+            "The family had just moved into a new house",
+            "The man had no work and there was no food",
+            "The woman had already called another doctor"
+          ],
+          "key": 2,
+          "rationale": "“He was not sick, but in distress; and, as for eating, there was no food in the house.”"
+        },
+        {
+          "id": "rl-2-a-2",
+          "skill": "vocabulary",
+          "stem": "“He was not sick, but in distress.” What does distress mean here?",
+          "options": [
+            "Trouble and need",
+            "A deep, restful sleep",
+            "A brand-new job",
+            "A bad cough and cold"
+          ],
+          "key": 0,
+          "rationale": "The man “had not had work for a long time,” and “there was no food in the house.”"
+        },
+        {
+          "id": "rl-2-a-3",
+          "skill": "inference",
+          "stem": "The directions say to take the “medicine” as often as necessity requires. What does Goldsmith mean?",
+          "options": [
+            "Take the medicine three times a day",
+            "Bring the box back when he is well",
+            "Do not spend any of the money",
+            "Use the money whenever you need it"
+          ],
+          "key": 3,
+          "rationale": "The heavy box “was full of pieces of money,” so the medicine was the money itself."
+        }
+      ]
+    },
+    {
+      "id": "rl-2-b",
+      "level": 2,
+      "form": "b",
+      "dayId": "reading-2-w18-d1",
+      "textHash": "e7b4136f2c19782e8a90963bea66ee9f789a033cfa961c106054297ebd87ab22",
+      "intro": "A fairy tale from the Brothers Grimm about a servant who is invited to visit the elves.",
+      "items": [
+        {
+          "id": "rl-2-b-1",
+          "skill": "literal",
+          "stem": "Why did the maid take the letter to her master and mistress?",
+          "options": [
+            "She was afraid of the elves",
+            "She could not read it herself",
+            "It had their names written on it",
+            "She wanted to ask for a day off"
+          ],
+          "key": 1,
+          "rationale": "“as she could not read, she laid her broom in the corner” and took the letter to them."
+        },
+        {
+          "id": "rl-2-b-2",
+          "skill": "vocabulary",
+          "stem": "The maid was “very cleanly and industrious.” What does industrious mean?",
+          "options": [
+            "Often sleepy",
+            "Very rich",
+            "Rude to others",
+            "Hard-working"
+          ],
+          "key": 3,
+          "rationale": "She “swept down the house every day” and was about to begin her work."
+        },
+        {
+          "id": "rl-2-b-3",
+          "skill": "inference",
+          "stem": "Why did strangers ask the maid who she was when she came back?",
+          "options": [
+            "So much time had passed that others now lived there",
+            "She looked just like one of the elves",
+            "She was carrying pockets full of the elves’ gold",
+            "She had gone back to the wrong house"
+          ],
+          "key": 0,
+          "rationale": "She had been “seven years with the elves,” and her master and mistress “had died.”"
+        }
+      ]
+    },
+    {
       "id": "rl-3-a",
       "level": 3,
       "form": "a",
@@ -477,6 +575,254 @@
       ]
     },
     {
+      "id": "rl-7-a",
+      "level": 7,
+      "form": "a",
+      "dayId": "reading-7-w09-d1",
+      "textHash": "125e4cbf0bdb9e08bab05ad0e19343b07978af4a304b805fce3b50f9e7082a4b",
+      "intro": "A boy in India and his young elephant, Kari, are visiting the crowded city of Benares. Their pet monkey, Kopee, has waited for them outside the city.",
+      "items": [
+        {
+          "id": "rl-7-a-1",
+          "skill": "literal",
+          "stem": "Why does the narrator turn down the goldsmith’s rings?",
+          "options": [
+            "He cannot afford the price of the gold rings",
+            "He fears the rings would hurt Kari’s new tusks",
+            "He would rather buy silver rings than gold ones",
+            "He thinks the young tusks are too beautiful to spoil"
+          ],
+          "key": 3,
+          "rationale": "He says the tusks are “too beautiful to spoil with rings yet.”"
+        },
+        {
+          "id": "rl-7-a-2",
+          "skill": "inference",
+          "stem": "Why does Kari walk straight into the river after leaving the city?",
+          "options": [
+            "He is hot and tired after the long walk through town",
+            "He seems to be trying to wash away the wrong he has done",
+            "He wants a long drink of water after his big meal",
+            "He is hiding from the dogs that chased him"
+          ],
+          "key": 1,
+          "rationale": "The narrator says Kari knew “he had done something wrong and he was trying to cleanse himself of it.”"
+        },
+        {
+          "id": "rl-7-a-3",
+          "skill": "vocabulary",
+          "stem": "“The less attention he paid to them, the more audacious the dogs grew.” What does audacious mean?",
+          "options": [
+            "Frightened and shy",
+            "Tired and very hungry",
+            "Bold and daring",
+            "Quiet and calm"
+          ],
+          "key": 2,
+          "rationale": "The dogs “came after us” until “we were hemmed in by packs of dogs.”"
+        },
+        {
+          "id": "rl-7-a-4",
+          "skill": "central",
+          "stem": "What view does the narrator express at the end of the passage?",
+          "options": [
+            "The jungle is kinder to animals than the city",
+            "The city is a good place to train a young elephant",
+            "Cities would be safe if the dogs were kept out",
+            "The goldsmith was right about rings on tusks"
+          ],
+          "key": 0,
+          "rationale": "He says “the jungle is sweeter and kinder than that wilderness of stones.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-7-b",
+      "level": 7,
+      "form": "b",
+      "dayId": "reading-7-w22-d4",
+      "textHash": "3aa4698e29ad49dd9ec6f97e0ddf1b69915202b8830120754123ac9f2914c48f",
+      "intro": "Zitkala-Ša, a Dakota writer, recalls her first day teaching at an eastern school for Native American children after an illness interrupted her college studies.",
+      "items": [
+        {
+          "id": "rl-7-b-1",
+          "skill": "literal",
+          "stem": "Why did the narrator not go home to her mother after her illness?",
+          "options": [
+            "Her mother had written asking her to stay and work in the East",
+            "She had no money for the long trip West",
+            "Her pride could not bear her mother’s likely scolding",
+            "Her college would not allow her to leave"
+          ],
+          "key": 2,
+          "rationale": "“my pride kept me from returning to my mother,” whose rebuke “would have been unbearable.”"
+        },
+        {
+          "id": "rl-7-b-2",
+          "skill": "inference",
+          "stem": "What does the narrator sense in her employer’s reaction to her?",
+          "options": [
+            "He is disappointed by how small and worn she looks",
+            "He is angry that she has arrived so late",
+            "He is delighted to finally meet her",
+            "He is worried that her room is too small and plain for her"
+          ],
+          "key": 0,
+          "rationale": "After his eye “measured my height and breadth,” she heard “a subtle note of disappointment in his voice.”"
+        },
+        {
+          "id": "rl-7-b-3",
+          "skill": "vocabulary",
+          "stem": "Her illness had made her look “rather frail and languid.” What does languid mean?",
+          "options": [
+            "Angry and very impatient",
+            "Proud and confident",
+            "Cheerful and lively",
+            "Weak and lacking energy"
+          ],
+          "key": 3,
+          "rationale": "She mentions her “exhausted strength” and later a “leaden weakness.”"
+        },
+        {
+          "id": "rl-7-b-4",
+          "skill": "structure",
+          "stem": "She felt “as if years of weariness lay like water-soaked logs upon me.” What does this comparison suggest?",
+          "options": [
+            "She is wet and cold from her long journey",
+            "Her tiredness feels like a heavy, crushing weight",
+            "She feels calm, as if floating on water",
+            "She longs to be back home among the forests of the West"
+          ],
+          "key": 1,
+          "rationale": "The image follows “a leaden weakness came over me,” and she throws herself on the bed."
+        }
+      ]
+    },
+    {
+      "id": "rl-8-a",
+      "level": 8,
+      "form": "a",
+      "dayId": "reading-8-w06-d2",
+      "textHash": "cfc9105e02eee09e7cbe83d26875e65e3899a7d4718d565053d253b1a2220f42",
+      "intro": "Mary Austin describes the desert country of the Ceriso, where animals follow trails to a spring, and signs that people left to point toward water.",
+      "items": [
+        {
+          "id": "rl-8-a-1",
+          "skill": "structure",
+          "stem": "The road-runner crouches until he “looked most like some bright venomous snake.” Why does the author make this comparison?",
+          "options": [
+            "To show that road-runners like to hunt and eat snakes",
+            "To explain why the sparrows bathe in dust",
+            "To show that he is afraid of the water",
+            "To show how threatening he makes himself look"
+          ],
+          "key": 3,
+          "rationale": "He takes this shape while “daunting them with shrill abuse and feint of battle.”"
+        },
+        {
+          "id": "rl-8-a-2",
+          "skill": "vocabulary",
+          "stem": "At noon the hawks keep “a truce to all hostilities because of the heat.” What does truce mean here?",
+          "options": [
+            "A safe hiding place",
+            "A loud warning call",
+            "A pause in fighting",
+            "A long journey"
+          ],
+          "key": 2,
+          "rationale": "In the heat the hawks are “sitting panting, with wings aslant,” not hunting the other birds."
+        },
+        {
+          "id": "rl-8-a-3",
+          "skill": "inference",
+          "stem": "How does the Shoshone water sign show the way to the spring?",
+          "options": [
+            "An arrow laid in its opening would point to the spring",
+            "Its stones are piled higher on the spring’s side",
+            "Its wavy carved lines measure the distance to walk",
+            "It is built right beside the spring itself"
+          ],
+          "key": 0,
+          "rationale": "If an arrow were placed in the opening, “it would point as the crow flies to the spring.”"
+        },
+        {
+          "id": "rl-8-a-4",
+          "skill": "literal",
+          "stem": "What does the older carved sign tell a traveller?",
+          "options": [
+            "The people who carved it are buried nearby",
+            "A spring of sweet water lies in that direction",
+            "The trail ahead is too dangerous for anyone to cross",
+            "The spring has dried up, so turn back"
+          ],
+          "key": 1,
+          "rationale": "It reads, “In this direction three [units of measurement unknown] is a spring of sweet water; look for it.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-8-b",
+      "level": 8,
+      "form": "b",
+      "dayId": "reading-8-w23-d2",
+      "textHash": "ad2a5b9e442df66086b2e90f65deecf8bdd3356c1a82f29fa15d54ce17417fde",
+      "intro": "Mary Austin describes how the first great snows of winter come to the high Sierra mountains of California.",
+      "items": [
+        {
+          "id": "rl-8-b-1",
+          "skill": "central",
+          "stem": "What is the passage mainly about?",
+          "options": [
+            "How to stay safe in a mountain snowstorm",
+            "How winter snows arrive and how the land meets them",
+            "Why the valley gets more snow than the peaks",
+            "How birds fly south before the first winter storms come"
+          ],
+          "key": 1,
+          "rationale": "It follows “the great snows that come at the beginning of winter” through later drifts and the yearly “big snow.”"
+        },
+        {
+          "id": "rl-8-b-2",
+          "skill": "inference",
+          "stem": "Why do only Clark’s crow and the jays “make light of” the coming storm?",
+          "options": [
+            "They are too young to know about storms",
+            "They have already flown south for the winter",
+            "Their cries are what bring the warning wind",
+            "They are hardy enough not to need shelter"
+          ],
+          "key": 3,
+          "rationale": "“only they can afford to,” while the wind cries the other wild creatures “to their holes.”"
+        },
+        {
+          "id": "rl-8-b-3",
+          "skill": "vocabulary",
+          "stem": "The creek’s noise falls off “like a child abashed by sudden silence in the room.” What does abashed mean?",
+          "options": [
+            "Excited and very noisy",
+            "Angry and stubborn",
+            "Embarrassed into quiet",
+            "Sleepy and slow"
+          ],
+          "key": 2,
+          "rationale": "Like the child, the stream’s noise suddenly “falls off a full note.”"
+        },
+        {
+          "id": "rl-8-b-4",
+          "skill": "literal",
+          "stem": "How does the silver fir handle a heavy load of snow?",
+          "options": [
+            "Its branches droop, drop the snow, and spring back",
+            "Its branches snap off under the weight",
+            "It sheds its needles before the snow",
+            "It grows taller each year to stay above the deep drifts"
+          ],
+          "key": 0,
+          "rationale": "“there is a soft sough and muffled dropping, the boughs recover, and the weighting goes on.”"
+        }
+      ]
+    },
+    {
       "id": "rl-9-a",
       "level": 9,
       "form": "a",
@@ -597,6 +943,130 @@
           ],
           "key": 2,
           "rationale": "He asks whether “it would not have been better to have begun with the French, proceeding to the Italian.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-10-a",
+      "level": 10,
+      "form": "a",
+      "dayId": "reading-10-w05-d1",
+      "textHash": "a8e5bee7ed549e844d6c39163c668c05b024558e9ded32625272cb2749327f04",
+      "intro": "Booker T. Washington recalls his boyhood in West Virginia after emancipation, when he worked in a salt furnace and then a coal mine.",
+      "items": [
+        {
+          "id": "rl-10-a-1",
+          "skill": "literal",
+          "stem": "How did Washington get most of his boyhood education?",
+          "options": [
+            "At night school, after his day’s work",
+            "At day school, with a trained teacher",
+            "From books that his mother bought him",
+            "From the miners who worked beside him"
+          ],
+          "key": 0,
+          "rationale": "“the greater part of the education I secured in my boyhood was gathered through the night-school after my day's work was done.”"
+        },
+        {
+          "id": "rl-10-a-2",
+          "skill": "inference",
+          "stem": "What does Washington see as the worst effect of mine work on young boys?",
+          "options": [
+            "It leaves their skin dirty and very hard to clean",
+            "It pays them less than it pays adults",
+            "It stunts them and takes away their ambition",
+            "It forces them to move far from home"
+          ],
+          "key": 2,
+          "rationale": "“what is worse,” such boys are often “physically and mentally dwarfed” and “soon lose ambition.”"
+        },
+        {
+          "id": "rl-10-a-3",
+          "skill": "central",
+          "stem": "How does Washington come to measure success?",
+          "options": [
+            "By the high position a person reaches",
+            "By how many years of schooling a person has completed",
+            "By the family a person is born into",
+            "By obstacles overcome, not by position reached"
+          ],
+          "key": 3,
+          "rationale": "“success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome.”"
+        },
+        {
+          "id": "rl-10-a-4",
+          "skill": "structure",
+          "stem": "How does the paragraph beginning “In later years” relate to the one before it?",
+          "options": [
+            "It adds more details about the coal mine",
+            "It revises the boyhood envy he just described",
+            "It repeats the same view about envy in stronger words",
+            "It tells what became of the orphan boy"
+          ],
+          "key": 1,
+          "rationale": "Having described how he “used to envy the white boy,” he writes, “I do not envy the white boy as I once did.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-10-b",
+      "level": 10,
+      "form": "b",
+      "dayId": "reading-10-w17-d1",
+      "textHash": "c6544388d8cac89e8e0092d63ec503721825ef76ee8372cd611be9b548d8d503",
+      "intro": "Jane Addams founded Hull-House, a settlement house in a Chicago immigrant neighborhood. Here she describes its Labor Museum, where immigrants demonstrated crafts from their home countries.",
+      "items": [
+        {
+          "id": "rl-10-b-1",
+          "skill": "literal",
+          "stem": "Why did Angelina use a side door instead of entering with her mother?",
+          "options": [
+            "The front door was only for visitors from the School of Education",
+            "Her mother had asked her to use a separate door",
+            "She did not want to be linked with her mother’s old-country dress",
+            "Her cooking class met in a different building"
+          ],
+          "key": 2,
+          "rationale": "She “did not wish to be too closely identified” with a woman “who wore a kerchief over her head.”"
+        },
+        {
+          "id": "rl-10-b-2",
+          "skill": "inference",
+          "stem": "What changed Angelina’s view of her mother?",
+          "options": [
+            "Her mother began wearing new American clothes",
+            "Seeing her skill admired and hearing about her former life",
+            "A teacher scolded Angelina for being rude",
+            "Her mother won a prize in a spinning contest at the museum"
+          ],
+          "key": 1,
+          "rationale": "Visitors “much admired the spinning,” and Addams described “the Italian village in which her mother had lived.”"
+        },
+        {
+          "id": "rl-10-b-3",
+          "skill": "vocabulary",
+          "stem": "“I dilated somewhat on the freedom and beauty of that life.” What does dilated on mean here?",
+          "options": [
+            "Spoke at length about",
+            "Made fun of",
+            "Grew very tired of",
+            "Wrote a letter about"
+          ],
+          "key": 0,
+          "rationale": "Addams goes on to describe that life and “how hard it must be to exchange it all for a two-room tenement.”"
+        },
+        {
+          "id": "rl-10-b-4",
+          "skill": "central",
+          "stem": "What larger point does Addams draw from the craftspeople at the Labor Museum?",
+          "options": [
+            "Immigrants should give up old crafts to fit in quickly",
+            "Museums should display objects rather than people at work on crafts",
+            "Factory work is worth more than work done by hand",
+            "Immigrants bring skills America could value if it studied them"
+          ],
+          "key": 3,
+          "rationale": "They show that “immigrant colonies might yield to our American life something very valuable.”"
         }
       ]
     },

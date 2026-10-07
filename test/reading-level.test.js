@@ -46,8 +46,10 @@ test("a probe passes only with strong comprehension, comfortable pace, no 'too h
 });
 test("ladder levels need both forms and are derived from data, with no ceiling at 12", () => {
   assert.deepEqual(L.ladderLevels([probe(3, "a"), probe(3, "b"), probe(5, "a"), probe(13, "a"), probe(13, "b")]), [3, 13]);
-  assert.equal(L.levelLabel(13), "Level 13"); assert.equal(L.levelLabel(13, { 13: "Advanced I" }), "Advanced I");
-  assert.equal(L.levelLabel(0), "Kindergarten"); assert.equal(L.route(13, 2, 3), "daily-reading.html#13/2/3"); assert.equal(L.route(0, 1, 1), "daily-reading.html#k/1/1");
+  const D = require("../src/lib/daily-reading");
+  assert.equal(L.levelLabel(13), D.gradeLabel(13), "labels come from the daily library"); assert.equal(L.levelLabel(13, { 13: "Override" }), "Override");
+  assert.equal(L.levelLabel(5), "Grade 5"); assert.equal(L.levelLabel(0), "Kindergarten"); assert.equal(L.levelLabel(99), "Level 99");
+  assert.equal(L.route(13, 2, 3), "daily-reading.html#" + D.gradeKey(13) + "/2/3"); assert.equal(L.route(0, 1, 1), "daily-reading.html#k/1/1");
 });
 test("the ladder starts at the requested level, or the nearest probed level below it", () => {
   assert.deepEqual(L.nextStep([], LADDER, 5), { done: false, level: 5 });

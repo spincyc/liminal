@@ -5,13 +5,17 @@
    This is a practice placement inside Liminal's daily library, made from a
    few short passages. It is not a standardized test, a Lexile measure or a
    measured reading level. Levels are the daily library's grade numbers
-   (1–12 today); nothing here assumes 12 is the top, so a level 13+ probe
-   form and library year can be added as data. */
+   (1–12, then Advanced 1–4 as 13–16); nothing here assumes a top level, so
+   a probe form for any library level can be added as data. */
 (function (root, factory) {
-  const api = factory();
-  if (typeof module === "object" && module.exports) module.exports = api;
+  // Level names and route keys come from the daily library's own module
+  // (lib/daily-reading.js loads first in the page), so a new library level
+  // such as Advanced 1 (13, key a1) needs no change here.
+  const node = typeof module === "object" && module.exports;
+  const api = factory(node ? require("./daily-reading") : root.LiminalDailyReading);
+  if (node) module.exports = api;
   else root.LiminalReadingLevel = api;
-})(typeof window === "object" ? window : globalThis, function () {
+})(typeof window === "object" ? window : globalThis, function (D) {
   "use strict";
 
   // ---- Thresholds. Each is an editorial choice, kept conservative. ----
@@ -66,10 +70,12 @@
 
   // ---- Levels ----
   function validLevel(level) { return Number.isInteger(level) && level >= 0 && level <= 99; }
-  function levelKey(level) { return level === 0 ? "k" : String(level); }
+  // The library's key and label; a level the library does not know yet
+  // falls back to its number, and probes.json levelLabels can override.
+  function levelKey(level) { return (D && D.gradeKey(level)) || String(level); }
   function levelLabel(level, labels) {
     if (labels && typeof labels[level] === "string") return labels[level];
-    return level === 0 ? "Kindergarten" : level <= 12 ? "Grade " + level : "Level " + level;
+    return (D && D.gradeLabel(level)) || "Level " + level;
   }
   function itemCount(level) { return level <= 2 ? 3 : 4; }
   function comfortableFloor(level) {

@@ -25,16 +25,17 @@ in its header, on the printed plan, and here.
 | Tooling | `tools/build-reading-level.js`, `tools/check-reading-level.js` | Validation and the `dist/content/reading-level.js` bundle |
 
 Script order (pinned by `tools/smoke-static.js`): `content/reading-level.js`,
-`lib/reading-level.js`, `app/reading-level.js`.
+`lib/daily-reading.js`, `lib/reading-level.js`, `app/reading-level.js`.
 
 ## Probe set
 
 A **level** is a daily-library grade number. Kindergarten is adult read-aloud
 and is not self-calibrated; the ladder runs from Grade 1 up to the highest
-level with probes. Nothing assumes 12 is the top: a level 13 or higher needs
-only its library year and two probe forms (an optional `levelLabels` entry,
-for example `{ "13": "Level 13" }`, names it; the default is "Grade N" through
-12 and "Level N" above).
+level with probes. Nothing assumes 12 is the top: a higher library level,
+such as Advanced 1 (13), needs only its library year and two probe forms.
+Names and route keys come from the daily library (`gradeLabel`, `gradeKey` in
+`src/lib/daily-reading.js`); an optional `levelLabels` entry in the probe file
+overrides a name.
 
 Each level has two **forms**: `a`, used by the first check, and `b`, the
 alternate used by re-checks. Choose them from different points of that grade's
@@ -173,7 +174,7 @@ anything malformed is dropped. The page offers an erase with confirmation.
 
 ```sh
 node tools/check-reading-level.js              # validates; reports levels without probes
-node tools/check-reading-level.js --complete   # also requires every level 1–12 and any higher library level
+node tools/check-reading-level.js --complete   # also requires every level 1–12 and any higher library level (e.g. Advanced 1–4)
 node --test test/reading-level.test.js
 ```
 
