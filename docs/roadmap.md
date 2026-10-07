@@ -1,5 +1,12 @@
 # Roadmap
 
+## Graphic design direction — 2026-10-07
+
+The [graphic design review](reviews/2026-10-07-graphic-design.md) records the
+owner's K–12, family-time, and aspirational-work requirements, current visual
+findings, and a proposed design direction. Its recommendations remain open;
+the dark-mode lesson graph contrast defect is the first concrete repair.
+
 ## Classroom courses — 2026-10-06
 
 Liminal's entrance now connects classroom courses, SAT practice, ACT practice,
