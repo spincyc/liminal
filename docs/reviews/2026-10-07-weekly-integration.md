@@ -45,6 +45,13 @@ answer exclusion and print-state restoration. Its footer-only-page finding
 was repaired and rechecked. The [branding review](2026-10-07-brand-review.md)
 covers the existing site, test flows and booklet/course exports.
 
+The subsequent [named-course print review](2026-10-07-named-course-print-review.md)
+adds 16 actual/offline PDFs across four Trigonometry/Calculus weeks. It verified
+identity, complete displayed givens, student/key separation, writing space and
+pagination. Its 320px Week-selector clipping finding was repaired by widening
+the named-course Week column, then independently checked at 320px and 390px
+alongside kindergarten and Grade 12 selectors.
+
 Working browser records were held under repository scratch; the counts,
 selection rules and limits here are durable. Final course fingerprints belong
 to the twelve independent weekly-content reports and the separate named-course
