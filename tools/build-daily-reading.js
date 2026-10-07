@@ -106,10 +106,14 @@ function validateGrade(course) {
   assert(course.sources.every(source => usedSources.has(source.id)), "unused source at " + prefix);
   return course;
 }
-function validateCorpus(courses, { complete = false } = {}) {
+function validateCorpus(courses, { complete = false, completeAdvanced = false } = {}) {
   assert(Array.isArray(courses), "corpus must be an array"); courses.forEach(validateGrade);
   unique(courses.map(course => course.grade), "corpus grades");
-  if (complete) assert(courses.length === 13, "complete corpus requires 13 grades and 2340 nights");
+  const has = grade => courses.some(course => course.grade === grade);
+  // K–12 and Advanced 1–4 complete separately, so authoring advanced levels
+  // never blocks the K–12 gate.
+  if (complete) assert(D.GRADES.filter(grade => !D.isAdvanced(grade)).every(has), "complete corpus requires 13 grades and 2340 nights");
+  if (completeAdvanced) assert(D.GRADES.filter(D.isAdvanced).every(has), "complete advanced corpus requires Advanced 1–4 and 720 nights");
   const selections = new Map(), ids = new Set();
   for (const course of courses) for (const day of course.days) {
     const normalized = normalizedText(blockText(day));
@@ -119,14 +123,14 @@ function validateCorpus(courses, { complete = false } = {}) {
   }
   return courses;
 }
-function loadDailyReading({ directory = path.join(ROOT, "content/reading-daily"), complete = false } = {}) {
+function loadDailyReading({ directory = path.join(ROOT, "content/reading-daily"), complete = false, completeAdvanced = false } = {}) {
   const courses = [];
   if (fs.existsSync(directory)) for (const file of fs.readdirSync(directory, { withFileTypes: true })) {
-    assert(file.isFile() && /^(?:k|[1-9]|1[0-2])\.json$/.test(file.name), "unexpected grade file " + file.name);
+    assert(file.isFile() && /^(?:k|[1-9]|1[0-2]|a[1-4])\.json$/.test(file.name), "unexpected grade file " + file.name);
     const course = JSON.parse(fs.readFileSync(path.join(directory, file.name), "utf8"));
     assert(D.gradeKey(course.grade) + ".json" === file.name, "grade path mismatch " + file.name); courses.push(course);
   }
-  courses.sort((a, b) => a.grade - b.grade); validateCorpus(courses, { complete });
+  courses.sort((a, b) => a.grade - b.grade); validateCorpus(courses, { complete, completeAdvanced });
   const index = { schemaVersion: 1, grades: courses.map(course => ({ grade: course.grade, title: course.title, nights: course.days.length,
     file: "content/reading-daily/" + D.gradeKey(course.grade) + ".json" })) };
   return { index, courses };
@@ -143,4 +147,4 @@ function build(options = {}) {
   return index;
 }
 module.exports = { validateGrade, validateCorpus, loadDailyReading, build, textHash, blockText, normalizedText };
-if (require.main === module) { try { build({ complete: process.argv.includes("--complete") }); } catch (error) { console.error(error.message); process.exitCode = 1; } }
+if (require.main === module) { try { build({ complete: process.argv.includes("--complete"), completeAdvanced: process.argv.includes("--complete-advanced") }); } catch (error) { console.error(error.message); process.exitCode = 1; } }

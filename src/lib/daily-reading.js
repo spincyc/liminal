@@ -5,10 +5,14 @@
   else root.LiminalDailyReading = api;
 })(typeof window === "object" ? window : globalThis, function () {
   "use strict";
-  function validGrade(grade) { return Number.isInteger(grade) && grade >= 0 && grade <= 12; }
-  function gradeKey(grade) { return validGrade(grade) ? grade === 0 ? "k" : String(grade) : ""; }
-  function gradeLabel(grade) { return validGrade(grade) ? grade === 0 ? "Kindergarten" : "Grade " + grade : ""; }
-  function gradeFromKey(key) { return /^(?:k|[1-9]|1[0-2])$/.test(String(key)) ? key === "k" ? 0 : Number(key) : null; }
+  // Grades K–12 are 0–12; Advanced 1–4 (reading levels beyond Grade 12, not
+  // courses or credits) are 13–16 with keys a1–a4.
+  const GRADES = Object.freeze(Array.from({ length: 17 }, (_, grade) => grade));
+  function validGrade(grade) { return Number.isInteger(grade) && grade >= 0 && grade <= 16; }
+  function isAdvanced(grade) { return validGrade(grade) && grade > 12; }
+  function gradeKey(grade) { return validGrade(grade) ? grade === 0 ? "k" : isAdvanced(grade) ? "a" + (grade - 12) : String(grade) : ""; }
+  function gradeLabel(grade) { return validGrade(grade) ? grade === 0 ? "Kindergarten" : isAdvanced(grade) ? "Advanced " + (grade - 12) : "Grade " + grade : ""; }
+  function gradeFromKey(key) { const k = String(key); return /^(?:k|[1-9]|1[0-2])$/.test(k) ? k === "k" ? 0 : Number(k) : /^a[1-4]$/.test(k) ? 12 + Number(k.slice(1)) : null; }
   function validDay(week, day) { return Number.isInteger(week) && week >= 1 && week <= 36 && Number.isInteger(day) && day >= 1 && day <= 5; }
   function route(grade, week = 1, day = 1) { return validGrade(grade) && validDay(week, day) ? "#" + gradeKey(grade) + "/" + week + "/" + day : ""; }
   function gradeAt(index, grade) { return (index && index.grades || []).find(item => item.grade === grade) || null; }
@@ -31,7 +35,7 @@
   }
   function navigation(selected) { return { previous: adjacent(selected.grade, selected.week, selected.day, -1), next: adjacent(selected.grade, selected.week, selected.day, 1) }; }
   function modeLabel(mode) { return { "adult-read-aloud": "Adult reads aloud", shared: "Read together", independent: "Read independently" }[mode] || ""; }
-  function minuteRange(grade) { return grade === 0 ? [10, 10] : grade <= 2 ? [10, 15] : grade <= 5 ? [15, 20] : grade <= 8 ? [20, 25] : [25, 30]; }
+  function minuteRange(grade) { return grade === 0 ? [10, 10] : grade <= 2 ? [10, 15] : grade <= 5 ? [15, 20] : grade <= 8 ? [20, 25] : grade <= 12 ? [25, 30] : grade === 13 ? [30, 35] : grade === 14 ? [30, 40] : [35, 45]; }
   function safeHttps(value) {
     if (typeof value !== "string" || !/^https:\/\/[^/?#]/.test(value) || /[\s\\<>"'\u0000-\u001f\u007f]/.test(value) || /%(?:0[0-9a-f]|1[0-9a-f]|20|7f)/i.test(value)) return false;
     try { const url = new URL(value); return url.protocol === "https:" && !!url.hostname && !url.username && !url.password; } catch { return false; }
@@ -60,6 +64,6 @@
         rights: { jurisdiction: source.rights.jurisdiction, status: source.rights.status, basis: source.rights.basis,
           verifiedDate: source.rights.verifiedDate, evidenceUrl: safeHttps(source.rights.evidenceUrl) ? source.rights.evidenceUrl : null } } };
   }
-  return { validGrade, gradeKey, gradeLabel, gradeFromKey, validDay, route, gradeAt, resolve, dayAt, sourceAt, progressionAt,
+  return { GRADES, validGrade, isAdvanced, gradeKey, gradeLabel, gradeFromKey, validDay, route, gradeAt, resolve, dayAt, sourceAt, progressionAt,
     navigation, modeLabel, minuteRange, safeHttps, sourceLabel, selectionCredit, studentReading };
 });

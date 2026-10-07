@@ -420,7 +420,7 @@ const dailyIndex = JSON.parse(fs.readFileSync(path.join(root, "content/reading-d
 if (JSON.stringify(dailyIndex) !== JSON.stringify(dailySource.index)) throw new Error("Daily-reading index differs from source");
 for (let i = 0; i < dailyIndex.grades.length; i++) {
   const entry = dailyIndex.grades[i];
-  if (!/^content\/reading-daily\/(?:k|[1-9]|1[0-2])\.json$/.test(entry.file)) throw new Error("Unsafe daily-reading path");
+  if (!/^content\/reading-daily\/(?:k|[1-9]|1[0-2]|a[1-4])\.json$/.test(entry.file)) throw new Error("Unsafe daily-reading path");
   const built = JSON.parse(fs.readFileSync(path.join(root, entry.file), "utf8"));
   if (JSON.stringify(built) !== JSON.stringify(dailySource.courses[i])) throw new Error("Daily-reading text differs from source: " + entry.file);
 }
@@ -429,7 +429,7 @@ for (let i = 0; i < dailyIndex.grades.length; i++) {
 // bundle matches a fresh build from source and carries no facilitator notes.
 const levelHtml = fs.readFileSync(path.join(root, "reading-level.html"), "utf8");
 const levelScripts = [...levelHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
-if (JSON.stringify(levelScripts) !== JSON.stringify(["content/reading-level.js", "lib/reading-level.js", "app/reading-level.js"])) throw new Error("Reading-level scripts are missing or out of order");
+if (JSON.stringify(levelScripts) !== JSON.stringify(["content/reading-level.js", "lib/daily-reading.js", "lib/reading-level.js", "app/reading-level.js"])) throw new Error("Reading-level scripts are missing or out of order");
 for (const match of levelHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const target = match[1].split(/[?#]/)[0];
   if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing reading-level asset: " + target);
@@ -442,7 +442,7 @@ for (const [, id] of levelApp.matchAll(/document\.getElementById\("([^"]+)"\)/g)
 if (!/<link rel="icon" href="favicon.svg"/.test(levelHtml)) throw new Error("reading-level.html does not link its favicon.");
 levelScripts.forEach(script => new vm.Script(fs.readFileSync(path.join(root, script), "utf8"), { filename: script }));
 const levelContext = vm.createContext({ window: {} });
-levelScripts.slice(0, 2).forEach(script => vm.runInContext(fs.readFileSync(path.join(root, script), "utf8"), levelContext));
+levelScripts.slice(0, 3).forEach(script => vm.runInContext(fs.readFileSync(path.join(root, script), "utf8"), levelContext));
 const levelBuild = require("./build-reading-level"), levelBundle = levelContext.window.LIMINAL_READING_LEVEL;
 if (JSON.stringify(levelBundle) !== JSON.stringify(levelBuild.bundle(levelBuild.loadProbes()))) throw new Error("Reading-level bundle differs from source");
 if (/facilitatorNotes|"evidence"|"questions"/.test(JSON.stringify(levelBundle))) throw new Error("Reading-level bundle carries discussion material");

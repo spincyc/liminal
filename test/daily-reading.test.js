@@ -84,6 +84,23 @@ test("a complete corpus has all 13 grades and 2340 nights", () => {
   const courses = Array.from({ length: 13 }, (_, grade) => fixture(grade));
   assert.equal(B.validateCorpus(courses, { complete: true }).flatMap(course => course.days).length, 2340);
 });
+test("advanced levels 1–4 are grades 13–16 with their own keys, labels, budgets and completeness", t => {
+  assert.deepEqual([13, 14, 15, 16].map(D.gradeKey), ["a1", "a2", "a3", "a4"]);
+  assert.deepEqual([13, 16].map(D.gradeLabel), ["Advanced 1", "Advanced 4"]);
+  assert.deepEqual(["a1", "a4", "a5", "a0", "13"].map(D.gradeFromKey), [13, 16, null, null, null]);
+  assert.deepEqual([12, 13, 14, 15, 16].map(D.minuteRange), [[25, 30], [30, 35], [30, 40], [35, 45], [35, 45]]);
+  assert.equal(D.isAdvanced(12), false); assert.equal(D.isAdvanced(13), true); assert.equal(D.validGrade(17), false);
+  assert.equal(D.route(13, 36, 5), "#a1/36/5");
+  assert.deepEqual(D.resolve({ grades: [{ grade: 13 }] }, "#a1/2/3"), { course: { grade: 13 }, grade: 13, week: 2, day: 3, invalid: false });
+  assert.equal(B.validateGrade(fixture(16)).days[0].id, "reading-a4-w01-d1");
+  const k12 = Array.from({ length: 13 }, (_, grade) => fixture(grade)), advanced = [13, 14, 15, 16].map(fixture);
+  assert.equal(B.validateCorpus([...k12, ...advanced.slice(0, 2)], { complete: true }).length, 15);
+  assert.throws(() => B.validateCorpus([...k12, ...advanced.slice(0, 2)], { completeAdvanced: true }), /Advanced 1–4/);
+  assert.equal(B.validateCorpus(advanced, { completeAdvanced: true }).length, 4);
+  const directory = scratch(t); fs.writeFileSync(path.join(directory, "a2.json"), JSON.stringify(fixture(14)));
+  assert.equal(B.loadDailyReading({ directory }).index.grades[0].file, "content/reading-daily/a2.json");
+  fs.writeFileSync(path.join(directory, "a5.json"), "{}"); assert.throws(() => B.loadDailyReading({ directory }), /unexpected/);
+});
 test("lazy build writes only available complete grades and a small text-free index", t => {
   const directory = scratch(t), input = path.join(directory, "input"), output = path.join(directory, "output"); fs.mkdirSync(input);
   const course = fixture(12); fs.writeFileSync(path.join(input, "12.json"), JSON.stringify(course));
@@ -92,7 +109,7 @@ test("lazy build writes only available complete grades and a small text-free ind
   assert.deepEqual(JSON.parse(fs.readFileSync(path.join(output, "content/reading-daily/index.json"))), index);
   assert.doesNotMatch(JSON.stringify(index), /FACILITATOR_SECRET|blocks|questions/);
   assert.equal(index.grades[0].nights, 180); assert.equal(index.grades[0].file, "content/reading-daily/12.json");
-  assert.deepEqual(inspect({ directory: input }), { grades: 1, nights: 180, sources: 10, questions: 540, missing: Array.from({ length: 12 }, (_, grade) => grade) });
+  assert.deepEqual(inspect({ directory: input }), { grades: 1, nights: 180, sources: 10, questions: 540, missing: D.GRADES.filter(grade => grade !== 12) });
   course.days.pop(); fs.writeFileSync(path.join(input, "12.json"), JSON.stringify(course));
   assert.throws(() => B.build({ directory: input, output }), /180/);
   assert.equal(JSON.parse(fs.readFileSync(path.join(output, "content/reading-daily/12.json"))).days.length, 180);
@@ -113,7 +130,7 @@ test("routing and navigation preserve all 180 nights across week boundaries", ()
   assert.equal(D.navigation({ grade: 12, week: 36, day: 5 }).next, null);
   assert.equal(D.navigation({ grade: 12, week: 1, day: 5 }).next.href, "#12/2/1");
   assert.equal(D.navigation({ grade: 12, week: 2, day: 1 }).previous.href, "#12/1/5");
-  assert.equal(D.resolve({ grades: [] }, "#k/1/1").course, null); assert.equal(D.route(13), "");
+  assert.equal(D.resolve({ grades: [] }, "#k/1/1").course, null); assert.equal(D.route(17), "");
 });
 test("student projection withholds notes, evidence and all unknown fields", () => {
   const course = fixture(), day = course.days[0]; course.private = "COURSE_SECRET"; day.private = "DAY_SECRET";

@@ -2,7 +2,8 @@
 
 The daily library supplements the weekly reading courses with 180 new reading
 selections per grade: five nights in each of 36 weeks, kindergarten through
-Grade 12. It supplies the actual public-domain text, followed by discussion.
+Grade 12, and then four Advanced levels for readers well past Grade 12. It
+supplies the actual public-domain text, followed by discussion.
 The selections are authentic literary and documentary works, not rewritten
 classics or book recommendations. Editorial sequence and estimated time are
 teaching judgments, not measured reading levels or a standards certification.
@@ -16,6 +17,9 @@ teaching judgments, not measured reading levels or a standards certification.
 | 3–5 | 15–20 minutes | Shared reading moving toward independence |
 | 6–8 | 20–25 minutes | Independent reading, shared support when useful |
 | 9–12 | 25–30 minutes | Independent reading and discussion |
+| Advanced 1 | 30–35 minutes | Independent reading and discussion |
+| Advanced 2 | 30–40 minutes | Independent reading and discussion |
+| Advanced 3–4 | 35–45 minutes | Independent reading and discussion |
 
 Each day separates reading and discussion minutes. A short, demanding poem can
 need rereading and discussion rather than additional words. A family's actual
@@ -46,9 +50,22 @@ readers to skip, soften, or substitute words. Age adjustment governs a grade's
 choice of works, reading difficulty, length, and reading mode. It does not
 license excising or avoiding passages of a chosen work.
 
+## Levels beyond Grade 12
+
+Advanced 1–4 continue the same contract for students well past Grade 12.
+They are reading levels within this library, not courses, credits, years of
+college or certificates. Each level steps further back in English (from
+nineteenth-century density to sixteenth-century and glossed Middle English),
+further into abstraction, technical science and law, and toward longer
+continuous and comparative reading; nightly length rises only modestly. The
+K–12 corpus and the Advanced levels complete separately:
+`node tools/check-daily-reading.js --complete` requires K–12, and
+`--complete-advanced` requires Advanced 1–4.
+
 ## Canonical contract
 
-Each `content/reading-daily/{k,1,...,12}.json` is one complete grade. Content is
+Each `content/reading-daily/{k,1,...,12,a1,...,a4}.json` is one complete grade
+or level. Content is
 plain text, with no trusted HTML or UI instructions embedded in reading blocks.
 
 ```json
@@ -115,8 +132,8 @@ plain text, with no trusted HTML or UI instructions embedded in reading blocks.
 }
 ```
 
-`grade` is numeric (0 is kindergarten); the filename and day-ID grade component
-use `k`. Day IDs follow `reading-<grade>-w<two digits>-d<1..5>`. There are exactly
+`grade` is numeric (0 is kindergarten; 13–16 are Advanced 1–4); the filename
+and day-ID grade component use `k` and `a1`–`a4`. Day IDs follow `reading-<grade>-w<two digits>-d<1..5>`. There are exactly
 180 ordered day records and exactly one record for each week/day pair. Source
 IDs are unique within a grade and all references resolve. `publicationYear`
 identifies the publication of the text or edition actually used, not the
