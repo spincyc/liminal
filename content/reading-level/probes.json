@@ -327,6 +327,130 @@
       ]
     },
     {
+      "id": "rl-4-a",
+      "level": 4,
+      "form": "a",
+      "dayId": "reading-4-w12-d1",
+      "textHash": "841c35efee66d9106aec16986ce51adb53993344d7095a282d6d665b72e4ea38",
+      "intro": "In this nature book from 1903, a teacher talks with children about an insect that one of them, May, has caught in a box.",
+      "items": [
+        {
+          "id": "rl-4-a-1",
+          "skill": "inference",
+          "stem": "Why is the name “silver fish” misleading?",
+          "options": [
+            "It looks a bit like a fish, but it is an insect",
+            "It is gold-colored, not silver at all",
+            "It can live only in water, just like a real fish",
+            "It is a young moth that will grow wings"
+          ],
+          "key": 0,
+          "rationale": "“in spite of its name it is no fish,” and since it has six legs, “it is an insect.”"
+        },
+        {
+          "id": "rl-4-a-2",
+          "skill": "literal",
+          "stem": "Why does May call the silver fish a rascal?",
+          "options": [
+            "It bit her finger when she caught it",
+            "It keeps escaping from the little box with the glass top",
+            "It eats the leaves of her house plants",
+            "It eats the starch in wallpaper paste and bindings"
+          ],
+          "key": 3,
+          "rationale": "“It eats the starch from the paste that fastens on her wall paper, and from book-bindings.”"
+        },
+        {
+          "id": "rl-4-a-3",
+          "skill": "vocabulary",
+          "stem": "In some places this insect is called a slink. What does slink mean here?",
+          "options": [
+            "To shine brightly whenever it is in sunlight",
+            "To move quietly so as not to be seen",
+            "To jump suddenly into the air",
+            "To make a loud buzzing noise"
+          ],
+          "key": 1,
+          "rationale": "When it is uncovered, “it slips around a corner into the dark again.”"
+        },
+        {
+          "id": "rl-4-a-4",
+          "skill": "structure",
+          "stem": "How can you tell the narrator is talking with a group of children?",
+          "options": [
+            "The children take turns writing parts of the book",
+            "Each child reads one paragraph of the book aloud in turn",
+            "The narrator answers their questions, as in “Yes, Charlie”",
+            "The narrator asks the children to draw the insect"
+          ],
+          "key": 2,
+          "rationale": "The narrator replies to questions we do not hear: “Yes, Charlie, it is called the silver fish.”"
+        }
+      ]
+    },
+    {
+      "id": "rl-4-b",
+      "level": 4,
+      "form": "b",
+      "dayId": "reading-4-w32-d3",
+      "textHash": "c8bd5220d859c7bda3c81a3b803b962769d8c75db4b98df74ee9518922933de4",
+      "intro": "In this nature book from 1903, a teacher and a group of children look closely at white foam they find on the grass.",
+      "items": [
+        {
+          "id": "rl-4-b-1",
+          "skill": "central",
+          "stem": "What do the children learn about “frog spittle”?",
+          "options": [
+            "Frogs spit on grass to mark their homes",
+            "The froth is dew mixed with yellow pollen",
+            "Wasps make the froth to trap other insects",
+            "A young bug, not a frog, makes the froth"
+          ],
+          "key": 3,
+          "rationale": "“the frogs have nothing whatever to do with this frothy substance.”"
+        },
+        {
+          "id": "rl-4-b-2",
+          "skill": "structure",
+          "stem": "Why does the narrator say, “They must be tall frogs to reach up so high”?",
+          "options": [
+            "To praise how tall some frogs can grow",
+            "To hint that frogs could not have made it",
+            "To warn the children about very large frogs nearby",
+            "To explain where frogs like to sit"
+          ],
+          "key": 1,
+          "rationale": "The joke comes before the narrator shows that the froth is the work of a bug and that frogs have “nothing whatever to do” with it."
+        },
+        {
+          "id": "rl-4-b-3",
+          "skill": "literal",
+          "stem": "Where does the white froth come from?",
+          "options": [
+            "Rain that has collected on the grass",
+            "The bug’s tiny eggs breaking open as they hatch",
+            "Sap that the young bug sucks from the plant",
+            "Water splashed up from a nearby pond"
+          ],
+          "key": 2,
+          "rationale": "“the young bug sucks out the sap of the plant which finally appears as this white froth.”"
+        },
+        {
+          "id": "rl-4-b-4",
+          "skill": "vocabulary",
+          "stem": "Some wasps haul “the unwilling morsels within” out of the froth. What are morsels?",
+          "options": [
+            "Small bites of food",
+            "Small rooms of dried froth",
+            "Young wasps",
+            "Thin plant stems"
+          ],
+          "key": 0,
+          "rationale": "The wasps carry them off “to feed to their young.”"
+        }
+      ]
+    },
+    {
       "id": "rl-5-a",
       "level": 5,
       "form": "a",
