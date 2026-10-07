@@ -6,12 +6,15 @@ const path = require("node:path");
 const crypto = require("node:crypto");
 const ROOT = path.resolve(__dirname, "..");
 const Engine = require("../src/lib/courses/engine.js");
+const { loadSamples } = require("./build-work-samples.js");
 
 function loadCourses() {
   const directory = path.join(ROOT, "content/courses");
   const catalog = JSON.parse(fs.readFileSync(path.join(directory, "catalog.json"), "utf8"));
   if (catalog.version !== 1 || !Array.isArray(catalog.courses) || !catalog.courses.length) throw new Error("Invalid course catalog");
   const seen = new Set();
+  const samples = loadSamples();
+  const boundSamples = new Set();
   const courses = catalog.courses.map(entry => {
     if (!/^[a-z0-9-]+$/.test(entry.id) || seen.has(entry.id) || !/^[a-z0-9-]+\.json$/.test(entry.file)) throw new Error("Invalid course entry");
     seen.add(entry.id);
@@ -35,6 +38,8 @@ function loadCourses() {
       for (const lesson of unit.lessons) {
         if (!lesson.id || lessons.has(lesson.id) || !lesson.title || !lesson.objective || !lesson.practiceAdvice) throw new Error("Invalid lesson");
         lessons.add(lesson.id);
+        lesson.workSamples = samples.filter(sample => sample.courseId === course.id && sample.lessonId === lesson.id);
+        lesson.workSamples.forEach(sample => boundSamples.add(sample.id));
         for (const field of ["explanation", "pitfalls"]) {
           if (!Array.isArray(lesson[field]) || !lesson[field].length || lesson[field].some(text => typeof text !== "string" || !text.trim())) {
             throw new Error("Missing " + field + " in " + lesson.id);
@@ -99,6 +104,7 @@ function loadCourses() {
     // Binding source to the printed revision makes replay limits explicit after edits.
     const hash = crypto.createHash("sha256").update(source);
     if (expectationSource) hash.update(expectationSource);
+    hash.update(JSON.stringify(samples.filter(sample => sample.courseId === course.id)));
     const generatorDirectory = path.join(ROOT, "src/lib/courses");
     for (const file of fs.readdirSync(generatorDirectory).filter(f => f.endsWith(".js")).sort()) {
       hash.update(file).update(fs.readFileSync(path.join(generatorDirectory, file)));
@@ -106,6 +112,7 @@ function loadCourses() {
     course.revision = hash.digest("hex").slice(0, 16);
     return course;
   });
+  if (samples.some(sample => !boundSamples.has(sample.id))) throw new Error("Work sample refers to an unknown course or lesson");
   return { catalog, courses };
 }
 

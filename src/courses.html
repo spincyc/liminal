@@ -27,8 +27,8 @@
     <header class="site-header">
       <div class="site-header-inner">
         <a class="brand" href="index.html">
-          <span class="brand-name">Liminal</span>
-          <span class="brand-sub">Independent learning &amp; practice</span>
+          <svg class="brand-symbol" viewBox="0 0 28 34" fill="none" aria-hidden="true"><path d="M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17" stroke="currentColor" stroke-width="2.5" /><path d="M0 32h28" stroke="currentColor" stroke-width="2.5" /></svg>
+          <span class="brand-copy"><span class="brand-name">Liminal<span class="wordmark-dot">.</span></span><span class="brand-sub">Independent learning &amp; practice</span></span>
         </a>
         <nav class="site-nav" aria-label="Primary">
           <a class="nav-link" href="index.html">Home</a>
@@ -39,10 +39,9 @@
     </header>
     <main id="main" class="site-main" tabindex="-1">
       <header class="page-head course-hero">
-        <p class="course-eyebrow">The course library</p>
-        <h1 id="coursePageTitle">A place to understand.</h1>
-        <p class="lede">Read a lesson, try an example, then make a little time to practice.</p>
-        <p id="courseScope" class="course-scope"></p>
+        <p class="course-eyebrow">Course library</p>
+        <h1 id="coursePageTitle">Study and practice</h1>
+        <p class="lede">Study the method. Show your work. Check the result.</p>
       </header>
       <noscript><p class="notice">Turn on JavaScript to read lessons and build homework. Downloaded guides and worksheets work offline without JavaScript.</p></noscript>
       <p id="courseLoadStatus" class="status-line" role="status" aria-live="polite">Opening the course library…</p>
@@ -55,6 +54,7 @@
             <div class="field"><label for="courseChoice">Course</label><select id="courseChoice"></select></div>
           </div>
           <p id="courseDescription"></p>
+          <p id="courseScope" class="course-scope"></p>
           <p id="courseSource" class="field-note"></p>
         </details>
         <div class="course-workspace-layout">
@@ -63,7 +63,7 @@
               <summary><span>Lessons</span><span id="courseSelectionLabel">One lesson selected</span></summary>
               <fieldset class="course-lessons-fieldset">
                 <legend class="sr-only">Lessons to study and practice</legend>
-                <p class="course-picker-note">Start with one lesson to rebuild a skill. The first lesson is selected; choose the lesson you are working on, or gather a few for review.</p>
+                <p class="course-picker-note">Choose one lesson for focused practice, or select several for review.</p>
                 <div class="course-selection-actions">
                   <button id="courseSelectAll" class="text-link" type="button">Select all</button>
                   <button id="courseSelectNone" class="text-link" type="button">Clear</button>
@@ -72,23 +72,24 @@
                 <p id="courseSelectionCount" class="field-note" role="status" aria-live="polite"></p>
               </fieldset>
             <details class="course-help">
-              <summary>Make the time count</summary>
+              <summary>Study routine</summary>
               <ol id="courseRoutine" class="course-routine-list"></ol>
-              <p>Start with a few questions you can explain. Revisit a mistake tomorrow before adding more.</p>
+              <p>Explain each step. Correct a mistake, then revisit the method tomorrow.</p>
             </details>
             </details>
           </aside>
           <div class="course-learning-area">
             <nav class="course-mode-nav" aria-label="Study and practice">
-              <button id="courseRead" type="button" aria-controls="courseGuideDetails" aria-pressed="true"><span>01</span> Study the lesson</button>
-              <button id="coursePractice" type="button" aria-controls="coursePracticePanel" aria-pressed="false"><span>02</span> Try it yourself</button>
+              <button id="courseRead" type="button" aria-controls="courseGuideDetails" aria-pressed="true"><span>01</span> Study</button>
+              <button id="coursePractice" type="button" aria-controls="coursePracticePanel" aria-pressed="false"><span>02</span> Practice</button>
             </nav>
             <section id="courseGuideDetails" class="course-study-panel" aria-labelledby="courseStudyHeading">
               <header class="course-study-heading">
                 <h2 id="courseStudyHeading" class="sr-only" tabindex="-1">Study selected lessons</h2>
                 <div class="course-reader-navigation">
-                  <div class="field"><label for="courseReadLesson">Reading now</label><select id="courseReadLesson"></select></div>
+                  <div class="field"><label class="sr-only" for="courseReadLesson">Reading now</label><select id="courseReadLesson"></select></div>
                   <div class="course-reader-arrows"><button id="courseReadPrevious" class="button secondary" type="button" aria-label="Previous selected lesson">←</button><button id="courseReadNext" class="button secondary" type="button" aria-label="Next selected lesson">→</button></div>
+                  <button id="coursePracticeLessonTop" class="button primary" type="button">Practice this lesson</button>
                 </div>
               </header>
               <div id="courseGuide" class="course-reading-surface"></div>
@@ -99,25 +100,27 @@
               </div>
             </section>
             <section id="coursePracticePanel" class="course-practice-panel" aria-labelledby="builderHeading" hidden>
-              <header class="course-practice-heading"><p class="course-eyebrow">Make it stick</p><h2 id="builderHeading" tabindex="-1">A little practice, done thoughtfully.</h2><p>Start with support, try a fresh question on your own, then use the worked answer key to understand a mistake.</p></header>
+              <header class="course-practice-heading"><h2 id="builderHeading" tabindex="-1">Put the method to work.</h2><p id="coursePracticeSelection"></p><p>Show your reasoning. Compare it with the worked answers, correct any errors, and try again independently.</p></header>
               <form id="courseForm" class="course-builder">
                 <div class="field"><label for="coursePracticeMode">Practice approach</label><select id="coursePracticeMode" aria-describedby="coursePracticeModeHelp"><option value="rebuild">Rebuild step by step</option><option value="review">Mixed review</option></select><p id="coursePracticeModeHelp" class="field-note">Rebuild pairs a question with first-step support and a fresh independent question using the same method. Mixed review varies the methods without first-step prompts. Every question says what to do by hand, when a calculator helps, and what work to show.</p></div>
+                <div class="actions course-build-actions"><button id="courseBuild" class="button primary" type="submit">Make practice</button><button id="courseCancel" class="button secondary" type="button" hidden>Cancel</button><span id="courseAmountSummary" class="course-amount-summary">8 questions · 1 night</span></div>
+                <p id="courseBuildStatus" class="status-line" role="status" aria-live="polite"></p>
+                <p id="courseError" class="status-line error" role="alert" hidden></p>
+                <details id="coursePacketSettings" class="course-packet-settings">
+                  <summary>Practice amount and schedule</summary>
                 <div class="course-presets" role="group" aria-label="Practice amounts"><button id="courseShortSet" class="button secondary" type="button">Tonight: 8 questions</button><button id="courseFiveNights" class="button secondary" type="button">Rebuild over 5 nights: 8 each</button><button id="courseTenNights" class="button secondary" type="button">Topic review: 10 nights, 20 each</button></div>
                 <p class="field-note">Five rebuild nights provide 15 worksheets and 120 distinct questions across A/B/C. Topic review provides 30 worksheets and 600 questions; a selection within one topic expands to that whole topic.</p>
                 <div class="course-packet-fields">
                   <div class="field"><label for="courseCount">Questions per worksheet</label><input id="courseCount" type="number" min="1" max="100" step="1" value="8" required /><p class="field-note">Choose 1–100</p></div>
                   <div class="field"><label for="courseDays">Nights</label><input id="courseDays" type="number" min="1" max="30" step="1" value="1" required /><p class="field-note">Choose 1–30</p></div>
                 </div>
-                <p class="course-amount-advice">Each night gets three complete worksheets — A, B, and C — with the same lesson mix and different questions. Choose one per night, or download all three as a reserve supply. Start small; a narrow lesson selection may need fewer questions or nights.</p>
-                <p class="course-amount-advice">A packet is a supply of practice. You do not need to finish every question in one sitting.</p>
+                <p class="course-amount-advice">Each night gets three complete worksheets — A, B, and C — with the same lesson mix and different questions. Choose one per night, or keep all three for later practice. A narrow lesson selection may need fewer questions or nights.</p>
+                </details>
                 <details id="courseAdvanced" class="course-advanced">
                   <summary>Recreate a saved packet</summary>
                   <div class="field course-seed-field"><label for="courseSeed">Packet seed</label><input id="courseSeed" type="text" maxlength="140" required spellcheck="false" autocomplete="off" aria-describedby="courseSeedHelp" /><p id="courseSeedHelp" class="field-note">Use the printed seed with the same practice approach, lessons, questions per worksheet, nights, and course version. Then select each night’s printed worksheet letter.</p></div>
                   <button id="courseFresh" class="text-link" type="button">Use a new seed</button>
                 </details>
-                <div class="actions course-build-actions"><button id="courseBuild" class="button primary" type="submit">Make practice</button><button id="courseCancel" class="button secondary" type="button" hidden>Cancel</button></div>
-                <p id="courseBuildStatus" class="status-line" role="status" aria-live="polite"></p>
-                <p id="courseError" class="status-line error" role="alert" hidden></p>
               </form>
               <section id="coursePacketSection" class="course-preview-section" aria-labelledby="packetHeading" hidden>
                 <div class="course-preview-heading"><div><h2 id="packetHeading">Your practice is ready.</h2><p id="coursePacketSummary" class="muted"></p></div></div>

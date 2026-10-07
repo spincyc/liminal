@@ -1,0 +1,31 @@
+[
+  {
+    "id": "long-division",
+    "title": "Long division: 7 divided by 12",
+    "description": "Aligned place-value columns, subtraction, and bring-down arrows show why only the 3 repeats in 7/12 = 0.58[3].",
+    "courseId": "grade-8-math",
+    "lessonId": "1-1",
+    "transcript": [
+      "Divide 7 by 12. Because 7 is less than 12, write 0 before the decimal point in the quotient. Write 7 as 7.000 and align the decimal points.",
+      "12 goes into 70 five times. Write 5 in the tenths place. Subtract 60 from 70 to get 10. Bring down the next 0 to make 100.",
+      "12 goes into 100 eight times. Write 8 in the hundredths place. Subtract 96 from 100 to get 4. Bring down another 0 to make 40.",
+      "12 goes into 40 three times. Write 3 in the thousandths place. Subtract 36 from 40 to get 4 again.",
+      "Bringing down another 0 would give 40 again, so the digit 3 and the remainder 4 repeat. Thus 7/12 = 0.58333… = 0.58[3]. The recurring bar covers only the 3."
+    ],
+    "file": "long-division.svg"
+  },
+  {
+    "id": "linear-equation",
+    "title": "Solve and check: 3x + 6 = 21",
+    "description": "The work shows the same operation on both sides, aligned equality signs, and a substitution check for x = 5.",
+    "courseId": "grade-8-math",
+    "lessonId": "2-1",
+    "transcript": [
+      "Solve 3x + 6 = 21.",
+      "Subtract 6 from both sides: 3x + 6 − 6 = 21 − 6. Simplify to 3x = 15.",
+      "Divide both sides by 3: (3x)/3 = 15/3. Simplify to x = 5.",
+      "Check in the original equation: 3(5) + 6 = 15 + 6 = 21. This equals the original right side, so x = 5 is the solution."
+    ],
+    "file": "linear-equation.svg"
+  }
+]

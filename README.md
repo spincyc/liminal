@@ -9,6 +9,11 @@ The landing page connects **Courses**, **SAT practice**, **ACT practice**,
 and the study/review tools. Test practice lives at `practice.html`; earlier
 `index.html#practice`, Progress, Review, and Tips bookmarks still resolve.
 
+**Learn well. Make room for life.** The design sets the same standard across
+ages: understand the method, show the reasoning, and check the result. Subjects
+lead the library; grade labels identify curriculum alignment. The full K–12
+corpus is a direction for expansion, not the current inventory.
+
 **Courses** starts with Grade 8 Mathematics: the four topics in the supplied
 enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
 examples, 36 prerequisite checks, 36 partially worked practice tasks, and 85
@@ -33,6 +38,12 @@ on separate physical sheets. Print them on paper or save as PDF. The course
 opens with a focused lesson reader; larger homework packets are available from
 the practice builder. Student workspaces are blank and unruled, with a thin
 border around each problem.
+Two original written-work models demonstrate aligned long division and a
+checked equation solution. Lessons include full-size viewing and typed steps;
+printable guides embed the drawings. Course documents, SAT/ACT booklets, and
+Learn printouts use dark ink and visible rules without requiring background
+graphics. See the [design implementation review](docs/reviews/2026-10-07-design-implementation.md)
+for verification and remaining limits.
 Packets exclude repeated exercises across all three alternatives and all nights. If a selected set of
 lessons cannot supply enough distinct items, the builder asks for fewer
 questions or more lessons. Separate packets do not share an exposure history.
@@ -183,6 +194,7 @@ touching the others.
 | --- | --- |
 | [`content/`](content/) | The section catalog and its schema, the template registries (`templates/`), the SAT Learn pages (`learn/`), the ACT banks and passages, the authored sources the generators assemble, and the Markdown study guides |
 | [`content/courses/`](content/courses/) | Grade/subject catalog, original classroom guides and textbook lesson references |
+| [`content/work-samples/`](content/work-samples/) | Original vector written solutions, lesson bindings, and accessible transcripts |
 | [`src/`](src/) | The web app: pages, styles, pure logic in `lib/` (including the SAT question templates in `lib/families/`), and browser UI in `app/` |
 | [`tools/`](tools/) | Build, validation, audit, and question-generation scripts |
 | [`test/`](test/) | Unit tests (`node:test`) |

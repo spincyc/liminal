@@ -4,8 +4,12 @@
 
 The [graphic design review](reviews/2026-10-07-graphic-design.md) records the
 owner's K–12, family-time, and aspirational-work requirements, current visual
-findings, and a proposed design direction. Its recommendations remain open;
-the dark-mode lesson graph contrast defect is the first concrete repair.
+findings, and a proposed design direction. The
+[implementation and cold review](reviews/2026-10-07-design-implementation.md)
+records the shared design, subject-first entrance, written-work models,
+phone usability fixes, and black-and-white print verification. Further subject
+and age coverage requires new reviewed content; the site does not offer a
+complete K–12 corpus yet.
 
 ## Classroom courses — 2026-10-06
 

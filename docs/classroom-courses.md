@@ -26,6 +26,19 @@ task. Try the check/task before opening its solution; on paper, cover the
 area labeled **Check after trying**. These small checks guide the next step;
 they are not scored placement tests.
 
+Direct lesson links use `courses.html?lesson=2-1`; valid IDs select and open
+that lesson, while unknown IDs fall back to the first lesson. The subject leads
+the page, with grade, course, and coverage under the library disclosure.
+**Practice this lesson** is available above and below the reading. Quantity
+and preset controls are under **Practice amount and schedule**; the current
+question/night count remains visible.
+
+Lessons 1-1 and 2-1 also show original hand-drawn models of written work.
+These demonstrate legible notation, aligned operations, and checking, without
+requiring a particular handwriting style. On screen the solution is initially
+closed; full-size viewing and **Read the typed steps** make the annotations
+available on phones. Printed guides include the drawings and their captions.
+
 The practice builder defaults to **Rebuild step by step**: the first problem
 in each pair includes a first-step cue and a check; the second uses fresh values
 with those cues removed. Each pair practices one design in one lesson. Lesson
@@ -78,6 +91,9 @@ instead of prescribing a universal number of lines. The key explains how to
 find the first differing step, correct it, and try an unused alternative.
 Printing directly from the Courses page prints the selected study guide;
 use the packet controls for homework.
+Print styles use black text, graph strokes, and borders on white paper. Browser
+background graphics can stay off; no instruction or answer depends on color.
+The packet CLI also generates PDFs with background graphics disabled.
 
 After making practice, choose the night and worksheet, then use **Print nightly packet**.
 It combines that choice's study guide, student worksheet, and worked answers in
@@ -149,6 +165,17 @@ Optional `rebuildOrder` lists that lesson's design IDs in the preferred starting
 order; unlisted designs follow in source order. These are instructional ordering
 judgments, not measured difficulty tiers.
 
+`content/work-samples/manifest.json` binds each written-work model to an existing
+`courseId` and `lessonId`, with a unique `id`, SVG `file`, `title`, `description`,
+and ordered `transcript`. The drawings use original paths for handwriting and
+typed margin notes. `tools/build-work-samples.js` validates that visible SVG
+elements survive the shared renderer's allow-list, then publishes standalone
+images. The course build attaches the same data as lesson `workSamples`, rejects
+unknown course/lesson references, and hashes the complete sample into the course
+revision. Interactive readers offer the full-size file and typed transcript;
+offline guides embed sanitized SVG and its accessible description. Student
+worksheets never render guide samples or include their source data.
+
 `content/courses/grade-8-expectations.json` holds directions for every design:
 `byHand`, `calculator`, `showWork`, `answerForm`, `firstStep`, and `check`.
 The build requires complete coverage and binds this source into the course
@@ -176,6 +203,7 @@ have different units and lessons without changing the SAT/ACT catalog.
 
 The build validates lesson coverage and generates `dist/content/courses.js`.
 Its course revision hashes authored content and classroom generator sources.
+This includes written-work SVGs, captions, and transcripts.
 Packet replay requires the same practice mode, seed, lesson selection, problem count, night
 count, revision, and worksheet letter for each night. Printed worksheet codes identify matching copies; they
 are not standalone replay instructions. Keep a downloaded packet when exact

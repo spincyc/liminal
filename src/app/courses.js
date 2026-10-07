@@ -66,6 +66,9 @@
     $("coursePacketSection").hidden = true;
     $("coursePreview").replaceChildren();
     $("courseBuildStatus").textContent = "Practice will use your selected lessons.";
+    const count = Number($("courseCount").value);
+    const days = Number($("courseDays").value);
+    $("courseAmountSummary").textContent = `${count || "—"} question${count === 1 ? "" : "s"} · ${days || "—"} night${days === 1 ? "" : "s"}`;
     error("");
     setExportButtons();
   }
@@ -95,6 +98,9 @@
     $("courseReadNext").disabled = index < 0 || index >= $("courseReadLesson").options.length - 1;
     $("courseReadLesson").disabled = !id;
     $("coursePracticeLesson").disabled = !id;
+    $("coursePracticeLessonTop").disabled = !id;
+    $("courseReadLesson").closest(".field").hidden = $("courseReadLesson").options.length === 1;
+    $("courseReadPrevious").parentElement.hidden = $("courseReadLesson").options.length < 2;
   }
 
   function updateSelection() {
@@ -109,6 +115,9 @@
     const selected = all.filter((lesson) => state.selected.has(lesson.id));
     $("courseSelectionCount").textContent = `${selected.length} of ${all.length} lessons selected${selected.length ? "." : ". Choose at least one lesson."}`;
     $("courseSelectionLabel").textContent = `${selected.length} selected`;
+    $("coursePracticeSelection").textContent = selected.length === 1
+      ? `${selected[0].id} · ${selected[0].title}`
+      : selected.length ? `${selected.length} selected lessons` : "Choose a lesson in the Lessons menu.";
     $("courseBuild").disabled = !selected.length;
     options($("courseReadLesson"), selected.map((lesson) => ({ value: lesson.id, label: `${lesson.id} · ${lesson.title}` })), state.readId);
     readLesson();
@@ -118,9 +127,9 @@
   function showLessons() {
     const container = $("courseLessons");
     container.replaceChildren();
-    state.course.units.forEach((unit, index) => {
+    state.course.units.forEach((unit) => {
       const details = element("details", "course-unit");
-      details.open = index === 0;
+      details.open = unit.lessons.some((lesson) => state.selected.has(lesson.id));
       details.appendChild(element("summary", "", unit.title));
       const allLabel = element("label", "course-unit-choice");
       const all = element("input");
@@ -160,7 +169,7 @@
     const startingUnit = state.course.units.find((unit) => unit.id === "topic-1") || state.course.units[0];
     state.selected = new Set(startingUnit.lessons.slice(0, 1).map((lesson) => lesson.id));
     state.readId = null;
-    $("coursePageTitle").textContent = state.course.title;
+    $("coursePageTitle").textContent = state.course.subject === "math" ? "Mathematics" : subjectLabel(state.course.subject);
     $("courseLibraryLabel").textContent = `${gradeLabel(state.course.grade)} · ${subjectLabel(state.course.subject)}`;
     $("courseDescription").textContent = state.course.description || "";
     $("courseScope").textContent = state.course.scopeNote || "";
@@ -399,12 +408,20 @@
       options($("courseGrade"), unique(catalog.map((course) => course.grade)).map((grade) => ({ value: grade, label: gradeLabel(grade) })), "8");
       $("courseSeed").value = `practice-${new Date().toISOString().slice(0, 10)}`;
       chooseGrade();
+      const linkedLesson = new URLSearchParams(window.location.search).get("lesson");
+      if (linkedLesson && state.course.units.some((unit) => unit.lessons.some((lesson) => lesson.id === linkedLesson))) {
+        state.selected = new Set([linkedLesson]);
+        state.readId = linkedLesson;
+        showLessons();
+      }
       $("courseGrade").addEventListener("change", chooseGrade);
       $("courseSubject").addEventListener("change", chooseSubject);
       $("courseChoice").addEventListener("change", showCourse);
       $("courseSelectAll").addEventListener("click", () => { state.selected = new Set(state.course.units.flatMap((unit) => unit.lessons.map((lesson) => lesson.id))); invalidate(); updateSelection(); });
       $("courseSelectNone").addEventListener("click", () => { state.selected.clear(); invalidate(); updateSelection(); });
       ["courseCount", "courseDays", "courseSeed"].forEach((id) => $(id).addEventListener("input", invalidate));
+      ["courseCount", "courseDays"].forEach((id) => $(id).addEventListener("invalid", () => { $("coursePacketSettings").open = true; }));
+      $("courseSeed").addEventListener("invalid", () => { $("courseAdvanced").open = true; });
       $("coursePracticeMode").addEventListener("change", invalidate);
       $("courseFresh").addEventListener("click", freshSeed);
       $("courseCancel").addEventListener("click", () => { cancel("Build cancelled. Adjust the options or build again."); $("courseBuild").focus(); });
@@ -437,13 +454,16 @@
         amount(20, 10, "review");
         updateSelection();
       });
-      $("coursePracticeLesson").addEventListener("click", () => {
+      function practiceThisLesson() {
+        if (!state.readId) return;
         state.selected = new Set([state.readId]);
         amount(8, 1, "rebuild");
         updateSelection();
         showMode("practice", true);
         build();
-      });
+      }
+      $("coursePracticeLesson").addEventListener("click", practiceThisLesson);
+      $("coursePracticeLessonTop").addEventListener("click", practiceThisLesson);
       let printGuide;
       window.addEventListener("beforeprint", () => {
         if (printGuide) return;

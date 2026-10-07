@@ -285,7 +285,7 @@ async function exportPacket(course, packet, lessonIds, options, signal = new Abo
         for (const name of documentNames(options)) {
           await command("/url", { url: pathToFileURL(path.join(scratch, name + ".html")).href });
           const result = await command("/goog/cdp/execute", { cmd: "Page.printToPDF", params: {
-            printBackground: true, preferCSSPageSize: true, displayHeaderFooter: false,
+            printBackground: false, preferCSSPageSize: true, displayHeaderFooter: false,
             paperWidth: 8.5, paperHeight: 11, marginTop: 0.4, marginBottom: 0.4, marginLeft: 0.4, marginRight: 0.4,
           } }, 90000);
           const pdf = Buffer.from(result.data || "", "base64");

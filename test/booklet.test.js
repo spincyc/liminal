@@ -402,6 +402,26 @@ function scienceModel(overrides) {
     { id: "science-figures", test: "ACT", label: "Science", summary: "A passage set." }, "figures");
 }
 
+test("ACT passage sections group each stem with its choices outside flowing context", () => {
+  const render = require("../tools/lib/booklet-render");
+  for (const sectionKey of ["act-english", "act-reading", "act-science"]) {
+    const model = scienceModel([{ sectionKey }, { sectionKey }]);
+    for (const renderer of [render, fakeRender]) {
+      const html = booklet.renderBookletHtml(model, { render: renderer });
+      const articles = [...html.matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/g)];
+      assert.equal(articles.length, 2);
+      for (const [, article] of articles) {
+        const body = article.match(/<div class="question-body">([\s\S]*)<\/div>$/);
+        assert.ok(body, sectionKey);
+        assert.match(body[1], /class="stem"/);
+        assert.match(body[1], /<ol class="choices">/);
+        assert.equal((body[1].match(/<li>/g) || []).length, 4);
+        assert.doesNotMatch(body[1], /class="stimulus|class="figure"/);
+      }
+    }
+  }
+});
+
 test("Science passage figures print once beside the complete passage in HTML and TeX", () => {
   const render = require("../tools/lib/booklet-render");
   const model = scienceModel();

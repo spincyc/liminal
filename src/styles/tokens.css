@@ -1,16 +1,14 @@
-/* Shared design tokens. One visual language for every page and for the
-   digital test mode, taken from the test screen: plain system sans, one blue
-   accent, neutral greys. Load this file before app.css, test-shell.css, and
-   math.css; they read these properties and define no colors of their own.
-   Pages follow the system's light or dark setting; the test screen stays
-   light, like the real test (see the color block below). */
+/* The outer product uses warm paper, green ink, and serif display type.
+   Reading and controls use system sans. The active assessment shell keeps
+   its separate fixed light palette and familiar control shapes below. */
 
 :root {
   /* Type */
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
     "Noto Sans", sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  --text-xs: 0.8125rem; /* 13px, the smallest text anywhere */
+  --text-xs: 0.8125rem; /* 13px supporting labels */
   --text-sm: 0.875rem; /* 14px */
   --text-base: 1rem; /* 16px body */
   --text-lg: 1.125rem;
@@ -27,9 +25,9 @@
   --math-rule: max(1px, 0.065em); /* fraction bar and radical overline */
 
   /* Shape */
-  --radius-sm: 6px;
-  --radius: 10px;
-  --radius-lg: 14px;
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 8px;
   --radius-pill: 999px;
 
   /* Focus and targets */
@@ -43,12 +41,39 @@
   --gutter: 24px;
 }
 
-/* Color, light. The test screen (.lm-shell) sets these again on itself so
-   it keeps the light values when the page around it turns dark: its
-   stylesheet still paints some surfaces #fff directly, and the real test
-   has no dark mode. */
-:root,
+/* Outer product, light. Screen colors are never needed to interpret print. */
+:root {
+  color-scheme: light;
+  --color-page: #f6f3e9;
+  --color-surface: #fffdf7;
+  --color-ink: #173c36;
+  --color-muted: #53665f;
+  --color-line: #d5d9cc;
+  --color-line-strong: #768b80;
+  --color-soft: #eaece1;
+  --color-softer: #f1f1e7;
+  --color-accent: #1b6b60;
+  --color-accent-hover: #104f46;
+  --color-accent-soft: #e0ebe1;
+  --color-on-accent: #fff;
+  --color-good: #216239;
+  --color-good-soft: #e5eee1;
+  --color-bad: #a02e28;
+  --color-bad-soft: #f7e9e2;
+  --color-disabled: #e2e5dc;
+  --color-disabled-ink: #58645d;
+  --color-highlight: #ffe58f;
+  --color-highlight-strong: #ffd24a;
+  --color-highlight-edge: #7a5a00;
+  --shadow-bar: none;
+  --shadow-card: 0 4px 18px rgba(23, 60, 54, 0.08);
+}
+
+/* Assessment compatibility: these values do not inherit the page theme. */
 .lm-shell {
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
   color-scheme: light;
 
   --color-page: #f5f6f8;
@@ -79,38 +104,35 @@
   --shadow-card: 0 4px 18px rgba(20, 24, 31, 0.08);
 }
 
-/* Color, dark: the same roles re-valued for a dark page. Every text pair
-   the stylesheets use meets WCAG AA (4.5:1; the lowest is disabled ink on
-   the disabled fill, 5.2:1), and control borders (line-strong) and focus
-   rings (accent) stay above 3:1. The accent turns light, so text on it
-   (on-accent) turns dark. Screen only: printing keeps ink on paper. */
+/* Dark reading surfaces retain the same green identity. Screen only, so
+   print is always ink on white. Text and control borders keep AA contrast. */
 @media screen and (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
 
-    --color-page: #111317;
-    --color-surface: #1a1d22;
-    --color-ink: #e6e8ec;
-    --color-muted: #a8aeb8;
-    --color-line: #353a42;
-    --color-line-strong: #7d8591;
-    --color-soft: #23272e;
-    --color-softer: #1e2126;
-    --color-accent: #8fb0ff;
-    --color-accent-hover: #b4caff;
-    --color-accent-soft: #1f2b47;
-    --color-on-accent: #0b1533;
+    --color-page: #14201e;
+    --color-surface: #1b2b27;
+    --color-ink: #e9ede0;
+    --color-muted: #abbeb2;
+    --color-line: #374a40;
+    --color-line-strong: #7d9587;
+    --color-soft: #21362e;
+    --color-softer: #1c3029;
+    --color-accent: #9dcdbb;
+    --color-accent-hover: #c6e5d6;
+    --color-accent-soft: #223e33;
+    --color-on-accent: #14291f;
     --color-good: #6bcf8a;
     --color-good-soft: #16291d;
     --color-bad: #ff8f86;
     --color-bad-soft: #3a1c1a;
-    --color-disabled: #2a2e35;
-    --color-disabled-ink: #9aa1ab;
+    --color-disabled: #2b3931;
+    --color-disabled-ink: #b0bdb3;
     --color-highlight: #5c4a0a;
     --color-highlight-strong: #7a6210;
     --color-highlight-edge: #ffd24a;
 
-    --shadow-bar: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-bar: none;
     --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.45);
   }
 }
@@ -118,5 +140,32 @@
 @media (max-width: 640px) {
   :root {
     --gutter: 16px;
+  }
+}
+
+/* Labels, rules, and borders carry meaning without color or printed fills. */
+@media print {
+  :root {
+    color-scheme: light;
+    --color-page: #fff;
+    --color-surface: #fff;
+    --color-ink: #000;
+    --color-muted: #333;
+    --color-line: #777;
+    --color-line-strong: #555;
+    --color-soft: #fff;
+    --color-softer: #fff;
+    --color-accent: #000;
+    --color-accent-hover: #000;
+    --color-accent-soft: #fff;
+    --color-on-accent: #000;
+    --color-good: #000;
+    --color-good-soft: #fff;
+    --color-bad: #000;
+    --color-bad-soft: #fff;
+    --color-disabled: #fff;
+    --color-disabled-ink: #333;
+    --shadow-bar: none;
+    --shadow-card: none;
   }
 }

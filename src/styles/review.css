@@ -1,7 +1,11 @@
 /* The Review view: due re-practice, the error log, missed and marked lists.
-   Reads tokens.css; defines no colors of its own. The shared list pieces
+   Screen colors come from tokens.css; print uses neutral ink. The shared list pieces
    (.tabs, .review-list, .review-item, .review-item-head, .review-toolbar,
    .review-item-actions) are in app.css. */
+
+#reviewView > .tabs .segmented-option {
+  min-height: var(--tap);
+}
 
 /* ------------------------------------------------------------ summaries */
 
@@ -15,7 +19,7 @@
 }
 
 .review-summary h2 {
-  font-size: var(--text-xl);
+  font-size: 1.75rem;
 }
 
 .review-summary .check-line {
@@ -45,7 +49,7 @@
   max-width: 70ch;
   margin-top: 8px;
   color: var(--color-muted);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
 }
 
 /* ----------------------------------------------------------- due list */
@@ -168,7 +172,7 @@
 .review-flag {
   padding: 2px 10px;
   border: 1px solid var(--color-line-strong);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);
   color: var(--color-ink);
   font-size: var(--text-xs);
   font-weight: var(--weight-semibold);
@@ -243,7 +247,7 @@
   padding: 8px 12px;
   border-left: 4px solid var(--color-line-strong);
   background: var(--color-surface);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
 }
 
 .review-question .lm-stimulus,
@@ -291,7 +295,7 @@
 .review-question .lm-table {
   margin: 0 auto;
   border-collapse: collapse;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
 }
 
 .review-question .lm-table :is(th, td) {
@@ -452,7 +456,30 @@
 
 /* ---------------------------------------------------------------- phone */
 
-@media (max-width: 640px) {
+@media screen and (max-width: 640px) {
+  /* Keep three-digit counts with their labels at narrow widths, without
+     letting the shared segmented control's padding crowd adjacent tabs. */
+  #reviewView > .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #reviewView > .tabs .segmented-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-width: 0;
+    min-height: var(--tap);
+    padding: 6px 4px;
+    font-size: var(--text-sm);
+  }
+
+  #reviewView > .tabs .tab-count {
+    margin-left: 0;
+  }
+
   .review-due {
     padding: 4px 16px;
   }
@@ -510,4 +537,38 @@
 .review-rules-list li {
   display: grid;
   gap: 2px;
+}
+
+/* Correct answers and recorded responses also have text tags, so they remain
+   distinguishable on a monochrome printer with background graphics off. */
+@media print {
+  .review-filters, .review-toolbar, .review-item-actions,
+  .review-tag, .review-more, .review-summary > .card-actions {
+    display: none;
+  }
+
+  .review-question, .review-choice, .review-note,
+  .review-question .lm-stimulus {
+    background: #fff;
+    border-color: #777;
+  }
+
+  .review-choice.is-key {
+    border: 2px solid #000;
+  }
+
+  .review-choice.is-wrong {
+    border: 1px dashed #333;
+  }
+
+  .review-choice {
+    break-inside: avoid;
+  }
+
+  .review-item .review-stem {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+  }
 }

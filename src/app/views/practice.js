@@ -181,7 +181,7 @@
         const templates = sections.reduce(
           (total, section) => total + practice.templateCount(ctx.registry(section.key)), 0);
         elements.setupLede.textContent =
-          "Take a timed test built like the real SAT, or practice in shorter sets. Questions draw from " +
+          "Choose a timed SAT practice test or a focused set. Questions draw from " +
           `${ctx.formatNumber(templates)} kinds of question, with recent content avoided when available.`;
         return;
       }
@@ -1199,7 +1199,7 @@
           "Take a full-length official ACT practice test from ACT, timed. Liminal does not estimate ACT scores.",
         ]));
         const blueprint = core.MINI_TEST_BLUEPRINTS.find((entry) => entry.test === "ACT" && core.blueprintAvailable(entry));
-        steps.push(startItem(answered, "Get a first read here", [
+        steps.push(startItem(answered, "Take a practice baseline", [
           "A timed mini test samples the core sections and reports accuracy by section and domain.",
         ], blueprint ? runButton(`Start the ${blueprint.label}`, !answered, (button) => startMiniTest(blueprint, button)) : null));
       }
@@ -1208,7 +1208,7 @@
       steps.push(startItem(false, "Follow your next step", words
         ? [node("strong", null, words.title), `${words.section ? ` (${words.section})` : ""}. ${words.reason}`]
         : ["Once you have answers, it appears here, under Recommended next below, and on Progress."],
-      step && step.kind !== "mixed" ? runButton(step.kind === "review" ? "Open Review" : "Start it", true,
+      step && step.kind !== "mixed" ? runButton(step.kind === "review" ? "Open Review" : "Start next step", true,
         () => ctx.startStep(step)) : null));
       elements.startHereSteps.replaceChildren(...steps);
     }

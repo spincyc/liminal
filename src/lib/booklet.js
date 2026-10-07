@@ -232,10 +232,10 @@ function questionHtml(item, previous, render) {
       : figureFallbackHtml(question.figure);
     if (figureHtml) parts.push(`<div class="figure">${figureHtml}</div>`);
   }
-  // A Science passage plus graph can exceed a column. Let that context flow,
-  // but keep the question and all its choices together when the article splits.
-  const science = question.sectionKey === "act-science";
-  if (science) parts.push('<div class="question-body">');
+  // Shared ACT passages, data and graphs can exceed a column. Let that
+  // context flow, but keep each question and all its choices together.
+  const passageSection = ["act-english", "act-reading", "act-science"].includes(question.sectionKey);
+  if (passageSection) parts.push('<div class="question-body">');
   parts.push(
     rich
       ? `<div class="stem"><span class="num">${number}.</span><div class="body">${render.rich(question.stem, question)}</div></div>`
@@ -253,7 +253,7 @@ function questionHtml(item, previous, render) {
   } else if (question.responseType === "numeric") {
     parts.push('<p class="gridin">Student-produced response: <span class="rule"></span></p>');
   }
-  if (science) parts.push("</div>");
+  if (passageSection) parts.push("</div>");
   parts.push("</article>");
   return parts.join("");
 }
@@ -285,7 +285,7 @@ function answerSheetHtml(model) {
 
 const BOOKLET_CSS = `
 @page { size: letter; margin: 0.6in 0.5in 0.7in 0.5in; }
-:root { --ink: #111; --rule: #999; --soft: #f2f0ea; }
+:root { --ink: #000; --rule: #000; }
 * { box-sizing: border-box; }
 body {
   margin: 0; color: var(--ink); background: #fff;
@@ -294,42 +294,47 @@ body {
   font-size: 9.6pt; line-height: 1.36; text-rendering: optimizeLegibility;
 }
 h1, h2, h3 { font-weight: 600; margin: 0 0 .4em; line-height: 1.2; }
-/* At least one page, so the footer sits at its foot; a long key grid grows
-   it rather than running into the next page. */
+/* At least one page, so the test-cover footer sits at its foot. */
 .cover { min-height: 9.4in; display: flex; flex-direction: column; break-after: page; }
+/* Keys flow normally so an oversized grid can continue onto another page. */
+.key-cover { min-height: 0; display: block; }
 .cover h1 { font-size: 26pt; letter-spacing: .01em; margin-bottom: .1em; }
-.cover .sub { font-size: 12pt; font-style: italic; color: #444; margin-bottom: 1.6em; }
+.cover .sub { font-size: 12pt; font-style: italic; margin-bottom: 1.6em; }
 .meta { border-top: 1.5pt solid var(--ink); border-bottom: .5pt solid var(--rule);
   padding: .6em 0; display: flex; gap: 2em; flex-wrap: wrap; font-size: 9.5pt; }
 .meta div { min-width: 1.4in; }
-.meta dt { font-variant: small-caps; letter-spacing: .06em; color: #555; }
+.meta dt { font-variant: small-caps; letter-spacing: .06em; }
 .meta dd { margin: 0; font-size: 11pt; }
 .directions { margin: 1.4em 0; max-width: 6in; }
 .directions li { margin-bottom: .35em; }
 .schedule { border-collapse: collapse; margin: 1em 0; font-size: 9.5pt; }
 .schedule th, .schedule td { border-bottom: .5pt solid var(--rule); padding: .32em .9em .32em 0; text-align: left; }
 .schedule th { font-variant: small-caps; letter-spacing: .05em; font-weight: 600; }
-.section-head { break-before: page; border-bottom: 1.5pt solid var(--ink);
+.section-head { break-before: page; break-inside: avoid; break-after: avoid; border-bottom: 1.5pt solid var(--ink);
   padding-bottom: .5em; margin-bottom: .9em; }
 .section-head h2 { font-size: 15pt; }
-.section-head .timing { font-style: italic; color: #333; }
+.section-head .timing { font-style: italic; }
 .section-head .dirs { margin-top: .5em; font-size: 9.3pt; max-width: 6.6in; }
 .questions { column-count: 2; column-gap: .34in; column-fill: auto; orphans: 3; widows: 3; }
 .q { break-inside: avoid; page-break-inside: avoid; margin: 0 0 .82em; }
+/* ACT passage sections keep each stem and its choices in question-body.
+   Longer context may flow across columns without stranding a section title. */
+.q:has(> .question-body) { break-inside: auto; page-break-inside: auto; }
 .question-body { break-inside: avoid; page-break-inside: avoid; }
 .stem { margin: 0 0 .3em; }
 .num { font-weight: 700; margin-right: .25em; }
 .choices { list-style: none; margin: 0 0 0 .95em; padding: 0; }
 .choices li { margin-bottom: .1em; text-indent: -.95em; padding-left: .95em; }
 .letter { font-weight: 600; margin-right: .3em; }
-.stimulus { background: var(--soft); border-left: 2pt solid var(--rule);
+/* Passage and table structure survives printing with backgrounds disabled. */
+.stimulus { border-left: 2pt solid var(--rule);
   padding: .45em .6em; margin: 0 0 .45em; font-size: 9.2pt; }
 .stimulus p { margin: 0 0 .35em; }
 .stimulus p:last-child, .stimulus table:last-child { margin-bottom: 0; }
 .stimulus ul { margin: 0 0 .35em 1em; padding: 0; }
 table.data { border-collapse: collapse; margin: .35em 0; font-size: 8.8pt; width: 100%; }
-table.data th, table.data td { border: .4pt solid var(--rule); padding: .16em .4em; text-align: left; }
-table.data th { background: #e6e2d8; font-weight: 600; }
+table.data th, table.data td { border: .6pt solid var(--rule); padding: .16em .4em; text-align: left; }
+table.data th { border-bottom: 1pt solid var(--rule); font-weight: 700; }
 .gridin .rule { display: inline-block; width: 1.4in; border-bottom: .6pt solid var(--ink); }
 .stop { text-align: center; font-variant: small-caps; letter-spacing: .12em;
   border-top: 1pt solid var(--ink); margin-top: 1em; padding-top: .5em; column-span: all; }
@@ -340,16 +345,20 @@ table.data th { background: #e6e2d8; font-weight: 600; }
   border-bottom: .5pt solid var(--rule); }
 .as-grid { list-style: none; margin: 0; padding: 0; font-size: 8.4pt; }
 .as-grid li { display: flex; align-items: center; gap: .16em; margin-bottom: .09em; }
-.asnum { width: 1.5em; text-align: right; margin-right: .25em; color: #444; }
+/* Four labeled sections and 50-answer ACT groups fit below the key title
+   without shrinking the type or leaving a title-only first page. */
+.key-cover .as-wrap { column-count: 4; }
+.key-cover .as-grid { line-height: 1.2; }
+.asnum { width: 1.5em; text-align: right; margin-right: .25em; }
 .bubble { display: inline-flex; align-items: center; justify-content: center;
-  width: 1.28em; height: 1.28em; border: .5pt solid var(--ink); border-radius: 50%;
-  font-size: 6.6pt; color: #555; }
-.write-in { display: inline-block; width: 5.4em; height: 1.28em; border: .5pt solid var(--ink); border-radius: 2pt; }
+  width: 1.28em; height: 1.28em; border: .65pt solid var(--ink); border-radius: 50%;
+  font-size: 6.6pt; }
+.write-in { display: inline-block; width: 5.4em; height: 1.28em; border: .65pt solid var(--ink); border-radius: 2pt; }
 .key-grid { column-count: 5; column-gap: .3in; font-size: 9pt; }
 .key-grid li { break-inside: avoid; }
 .exp { break-inside: avoid; margin-bottom: .8em; }
 .exp h4 { margin: 0 0 .15em; font-size: 9.6pt; }
-.exp .tag { font-variant: small-caps; letter-spacing: .05em; color: #555; font-size: 8.4pt; }
+.exp .tag { font-variant: small-caps; letter-spacing: .05em; font-size: 8.4pt; }
 /* Rendered explanations run long; kept whole, most would leave half a
    column empty. They may split, but never right after their heading. */
 .exp.rich { break-inside: auto; }
@@ -357,7 +366,7 @@ table.data th { background: #e6e2d8; font-weight: 600; }
 .exp ol { margin: .2em 0 .2em 1.1em; padding: 0; }
 .cover-note { max-width: 6in; margin: 0 0 1em; padding-left: .6em; border-left: 2pt solid var(--rule); font-size: 9.3pt; }
 .form-code { margin: 1em 0 0; max-width: 6.4in; font-size: 9pt; }
-.form-code dt { font-variant: small-caps; letter-spacing: .06em; color: #555; }
+.form-code dt { font-variant: small-caps; letter-spacing: .06em; }
 .form-code dd { margin: 0 0 .3em; }
 .form-code code { font-family: "Courier New", Courier, monospace; font-size: 9pt; word-break: break-all; }
 .key-part { break-before: page; }
@@ -378,12 +387,19 @@ table.data th { background: #e6e2d8; font-weight: 600; }
 .lm-equations { display: flex; flex-direction: column; align-items: center; gap: .15em; }
 .lm-equation { margin: 0; font-variant-numeric: tabular-nums; white-space: pre-wrap; }
 .lm-table { margin: .2em auto; border-collapse: collapse; font-size: 8.8pt; }
-.lm-table th, .lm-table td { padding: .16em .5em; border: .4pt solid var(--rule); text-align: center; }
-.lm-table thead th { background: #e6e2d8; font-weight: 600; }
+.lm-table th, .lm-table td { padding: .16em .5em; border: .6pt solid var(--rule); text-align: center; }
+.lm-table thead th { border-bottom: 1pt solid var(--rule); font-weight: 700; }
 .lm-table tbody th { font-weight: 600; text-align: left; }
-.figure { margin: 0 0 .45em; }
+.figure { margin: 0 0 .45em; break-inside: avoid; page-break-inside: avoid; }
 .lm-figure { display: flex; flex-direction: column; align-items: center; margin: 0; color: var(--ink); }
 .lm-figure svg { display: block; width: 100%; height: auto; max-height: 2.6in; overflow: visible; }
+/* Authored figures already use currentColor, dash patterns and distinct
+   markers. Strengthen their faint grid and region treatments for copying,
+   preserving hollow points, unfilled shapes and different series fills. */
+.lm-figure [stroke-width="1"] { stroke-width: 1.25; }
+.lm-figure [stroke-opacity="0.18"], .lm-figure [stroke-opacity="0.2"],
+.lm-figure [stroke-opacity="0.25"] { stroke-opacity: .55; }
+.lm-figure [fill-opacity="0.16"] { fill-opacity: .24; }
 .lm-figure-note { margin-top: .2em; font-size: 8.4pt; font-style: italic; }
 .lm-figure-fallback { padding: .4em; border: .5pt dashed var(--rule); }
 /* Typeset Math (renderText with { math: true }), after src/styles/math.css
@@ -418,7 +434,13 @@ table.data th { background: #e6e2d8; font-weight: 600; }
   .page { background: #fff; max-width: 7.5in; margin: 0 auto; padding: .5in;
     box-shadow: 0 2px 18px rgba(0,0,0,.22); }
 }
-@media print { .page { padding: 0; max-width: none; } .noprint { display: none; } .lm-math-sr { display: none; } }
+@media print {
+  .page { padding: 0; max-width: none; }
+  .noprint, .lm-math-sr { display: none; }
+  /* Section headings already start fresh pages. The spanning end label can
+     otherwise spill onto a page of its own after a full question column. */
+  .stop { display: none; }
+}
 `;
 
 function shell(title, body) {
@@ -546,7 +568,7 @@ function renderBookletHtml(model, options) {
     <thead><tr><th>Section</th><th>Length</th><th>Time</th><th>Numbers</th></tr></thead>
     <tbody>${schedule}</tbody>
   </table>${formCodeHtml(model)}
-  <p style="margin-top:auto;font-size:8.4pt;color:#555">Original practice content.
+  <p style="margin-top:auto;font-size:8.4pt">Original practice content.
   Not affiliated with, endorsed by, or published by the College Board or ACT, Inc.
   Accuracy practice only — this form does not produce a scaled score.</p>
 </div>`;
@@ -592,11 +614,11 @@ function renderBookletHtml(model, options) {
 function renderKeyHtml(model, options) {
   const settings = options || {};
   const parts = keyParts(model, settings.render);
-  const cover = `<div class="cover">
+  const cover = `<div class="cover key-cover">
   <h1>Answer key and explanations</h1>
   <p class="sub">${escapeHtml(model.blueprint.label)} — form ${escapeHtml(model.formCode)}</p>
   <div class="as-wrap">${parts.grid}</div>${formCodeHtml(model)}
-  <p style="margin-top:auto;font-size:8.4pt;color:#555">Score by accuracy only.
+  <p style="font-size:8.4pt">Score by accuracy only.
   Log every miss with the question id so it can be found again in the app.</p>
 </div>`;
 

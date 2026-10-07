@@ -142,6 +142,31 @@
         lessonNode.appendChild(intro);
         if (lesson.readiness) lessonNode.appendChild(learningTask(lesson.readiness, "readiness", settings.interactive));
         (lesson.explanation || []).forEach((paragraph) => prose(lessonNode, paragraph));
+        (lesson.workSamples || []).forEach((sample) => {
+          const example = el("section", "course-example course-written-example");
+          example.appendChild(el("h4", "", "Model of written work"));
+          prose(example, sample.title);
+          const solution = el(settings.interactive ? "details" : "div", "course-example-solution");
+          if (settings.interactive) solution.appendChild(el("summary", "", "Show the written solution"));
+          const figure = root.LiminalRender.renderFigure({ svg: sample.svg,
+            alt: [sample.title, ...sample.transcript].join(" ") });
+          figure.classList.add("course-work-sample");
+          const caption = el("figcaption", "course-work-caption");
+          caption.appendChild(renderText(sample.description));
+          figure.appendChild(caption);
+          solution.appendChild(figure);
+          if (settings.interactive) {
+            const fullSize = el("a", "course-work-full-size", "Open the written page at full size");
+            fullSize.href = `content/work-samples/${sample.file}`;
+            solution.appendChild(fullSize);
+            const transcript = el("details", "course-work-transcript");
+            transcript.appendChild(el("summary", "", "Read the typed steps"));
+            list(transcript, sample.transcript, true);
+            solution.appendChild(transcript);
+          }
+          example.appendChild(solution);
+          lessonNode.appendChild(example);
+        });
         (lesson.examples || []).forEach((example, index) => {
           const exampleNode = el("section", "course-example");
           exampleNode.appendChild(el("h4", "", `Worked example ${index + 1}`));
