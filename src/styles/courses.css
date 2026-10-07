@@ -192,15 +192,39 @@
 .course-sheet-page, .course-answer-key { padding: 28px; }
 .course-sheet-page + .course-sheet-page, .course-answer-page + .course-answer-page { border-top: 2px dashed #aaa; }
 .course-answer-page { padding: 0; }
-.course-questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 28px; padding-top: 20px; }
+.course-questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding-top: 20px; }
 .course-question { min-width: 0; break-inside: avoid; page-break-inside: avoid; }
 .course-questions > .course-question { padding: 12px; border: 1px solid #aaa; }
-.course-question-wide { grid-column: 1 / -1; display: flow-root; }
+.course-question-wide, .course-question-graph { grid-column: 1 / -1; display: flow-root; }
 .course-question-wide .course-table { width: 100%; }
 .course-question-prompt { display: flex; align-items: baseline; gap: 8px; }
 .course-question-number { flex: none; }
 .course-question-prompt > .lm-rich { min-width: 0; flex: 1; }
 .course-question > * + * { margin-top: 10px; }
+.course-question-stage { font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+.course-question-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.course-expectations { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px 20px; margin: 0; font-size: 13px; line-height: 1.4; }
+.course-question-wide .course-expectations, .course-question-graph .course-expectations { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.course-expectations dt { font-weight: 700; }
+.course-expectations dd { margin: 2px 0 0; }
+.course-expectations dt, .course-expectations dd, .course-expectations dd > .lm-rich, .course-expectations dd > .lm-rich > p { display: inline; }
+.course-expectations dt::after { content: ": "; }
+.course-support-field { padding-top: 6px; border-top: 1px solid #ccc; }
+.course-response { min-width: 0; padding-top: 8px; border-top: 1px solid #ccc; }
+.course-response-graph { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 20px; }
+.course-response-graph > :not(.course-graph):not(.course-workspace):not(.course-givens-work) { grid-column: 1 / -1; }
+.course-givens-work { min-width: 0; }
+.course-question-long-table .course-question-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.course-question-long-table .course-expectations { grid-template-columns: minmax(0, 1fr); }
+.course-question-long-table .course-response { display: block; border-top: 0; padding-top: 0; }
+.course-work-label { font-size: 11px; color: #444; }
+.course-final-space { min-height: 38px; }
+.course-sheet-directions { font-size: 13px; line-height: 1.45; }
+.course-task-instruction { font-size: .88em; }
+.course-task-starter { padding: 10px 12px; border-left: 3px solid #777; background: #f5f5f5; color: #111; }
+.course-task-workspace { min-height: 55px; }
+.course-task-check { padding-top: 10px; border-top: 1px dashed #999; }
+.course-repair { font-weight: 500; }
 .course-workspace { min-height: calc(var(--course-work-units, 4) * 25px); margin-top: 14px; }
 .course-key-questions { padding-top: 20px; }
 .course-key-question + .course-key-question { padding-top: 20px; margin-top: 20px; border-top: 1px solid #bbb; }
@@ -220,7 +244,7 @@
 .course-point-leader { stroke: #555; stroke-width: .8; stroke-dasharray: 3 2; }
 .course-graph-legend { display: flex; flex-wrap: wrap; gap: 5px 28px; padding-left: 22px; margin: 8px 0; font-size: 12px; }
 .course-graph-legend > li { min-width: 60px; }
-.course-grid-label { font-family: var(--font-sans); font-size: 11px; fill: #111; }
+.course-grid-label { font-family: var(--font-sans); font-size: 14px; fill: #111; }
 .course-axis-label, .course-point-label { font-family: var(--font-sans); font-size: 12px; font-weight: 600; fill: #111; }
 .course-graph-caption { margin-top: 2px; font-size: 11px; color: #444; }
 .course-packet > .course-worksheet + .course-worksheet { margin-top: 30px; border-top: 2px solid #777; }
@@ -272,6 +296,10 @@
   .course-mode-nav { margin-bottom: 23px; }
   .courses-page .site-nav { flex: 0 0 auto; order: initial; margin: 0 0 0 auto; padding: 0; border-top: 0; }
   .courses-page .site-header-inner { padding-block: 13px; }
+}
+@media screen and (max-width: 600px) {
+  .course-questions, .course-question .course-expectations, .course-response-graph { grid-template-columns: minmax(0, 1fr); }
+  .course-question-long-table .course-question-layout { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
   .courses-page .site-main { padding-top: 28px; }
@@ -343,18 +371,30 @@
   .course-guide-chunk { break-inside: avoid; page-break-inside: avoid; }
   .course-nightly-packet > * + * { margin-top: 0; border: 0; break-before: page; page-break-before: always; }
   .course-packet-blank > * + * { margin-top: .14in; }
-  .course-questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .18in .28in; padding-top: .16in; }
-  .course-questions > .course-question { min-height: 2.35in; padding: .1in; border: .5pt solid #888; }
-  .course-questions > .course-question-graph { min-height: 3.6in; }
-  .course-question-wide .course-table { table-layout: fixed; }
-  .course-question-wide .course-table th:first-child { width: .6in; }
-  .course-question-wide .course-table th:nth-child(2) { width: .9in; }
+  .course-questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .16in; padding-top: .14in; }
+  .course-questions > .course-question { min-height: 2.5in; padding: .13in; border: .5pt solid #888; }
+  .course-questions > .course-question-graph { min-height: 3.5in; }
+  .course-question-layout { grid-template-columns: minmax(0, 1fr); gap: .07in; }
+  .course-expectations { font-size: 9.5pt; line-height: 1.35; }
+  .course-expectations { gap: .05in .2in; }
+  .course-expectations dd { margin-top: .015in; }
+  .course-support-field { padding-top: .04in; }
+  .course-question-stage { font-size: 8pt; }
+  .course-response { padding-top: .05in; }
+  .course-response-graph { gap: .04in .2in; }
+  .course-work-label { font-size: 8pt; }
+  .course-final-space { min-height: .35in; }
+  .course-sheet-directions { font-size: 9pt; }
+  .course-task-workspace { min-height: .45in; }
+  .course-task-starter { padding: .06in .1in; }
+  .course-task-check { padding-top: .06in; }
+  .course-question-long-table .course-table { table-layout: fixed; }
+  .course-question-long-table .course-table th:first-child { width: .6in; }
+  .course-question-long-table .course-table th:nth-child(2) { width: .9in; }
   .course-question-wide .course-table td { height: .29in; }
-  .course-question-wide > .course-graph { float: left; width: 2.8in; margin-right: .25in; }
-  .course-question-wide > .course-graph + .course-workspace { margin-left: 3.05in; }
   .course-question-prompt { gap: .07in; }
   .course-question > * + * { margin-top: .07in; }
-  .course-workspace { min-height: calc(var(--course-work-units, 4) * .21in); margin-top: .12in; }
+  .course-workspace { min-height: calc(var(--course-work-units, 4) * .18in); margin-top: .06in; }
   .course-question-graph .course-workspace { min-height: calc(var(--course-work-units, 4) * .17in); }
   .course-graph { max-width: 2.8in; }
   .course-graph-caption { font-size: 7pt; }

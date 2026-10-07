@@ -37,7 +37,28 @@ function check(reps = 300) {
       const items = forms.flatMap(sheet => sheet.questions);
       if (new Set(items.map(E.identity)).size !== items.length || new Set(items.map(E.visibleIdentity)).size !== items.length) throw new Error("Repeated exercise in a course packet");
     }
-    console.log(`${course.title}: ${lessons.length} lessons, ${templates.length} designs; default packet has 200 distinct exercises.`);
+    for (const practiceMode of ["rebuild", "review"]) {
+      const requests = [
+        ...lessons.map(lesson => ({ lessonIds: [lesson.id], count: 8, days: 5 })),
+        ...course.units.map(unit => ({ lessonIds: unit.lessons.map(lesson => lesson.id), count: 20, days: 10 }))
+      ];
+      for (const request of requests) {
+        const nights = E.generatePacketChoices(course, templates, { ...request, practiceMode, seed: "available-practice" });
+        const sheets = nights.flatMap(night => night.worksheets);
+        const items = sheets.flatMap(sheet => sheet.questions);
+        if (sheets.length !== request.days * 3 || sheets.some(sheet => sheet.questions.length !== request.count || sheet.warnings.length) ||
+            new Set(items.map(E.identity)).size !== items.length || new Set(items.map(E.visibleIdentity)).size !== items.length) {
+          throw new Error(`Incomplete or repeated ${practiceMode} practice for ${request.lessonIds.join(", ")}`);
+        }
+        for (const sheet of sheets) for (let index = 0; index < sheet.questions.length; index += 1) {
+          const question = sheet.questions[index];
+          const guided = practiceMode === "rebuild" && index % 2 === 0;
+          if (question.support !== (guided ? "guided" : "independent") ||
+              (guided && sheet.questions[index + 1].templateId !== question.templateId)) throw new Error("Invalid supported practice pair");
+        }
+      }
+    }
+    console.log(`${course.title}: ${lessons.length} lessons, ${templates.length} designs; both modes support 120 distinct exercises per focused five-night supply and 600 per topic ten-night supply, including A/B/C.`);
   }
   console.log(`Course structure and generation passed: ${designs} designs, ${draws} draws. Mathematical and editorial checks run separately.`);
 }

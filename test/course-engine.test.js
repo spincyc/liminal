@@ -198,3 +198,106 @@ test("real Topic 1 provides three complete ten-night practice choices without re
   assert.equal(selected.flatMap(sheet => sheet.questions).length, 200);
   assert.equal(new Set(selected.flatMap(sheet => sheet.questions.map(q => q.lessonId))).size, 11);
 });
+
+test("review remains the default and rebuild pairs fresh exercises with fading support", () => {
+  const expectations = { byHand: "Solve by hand.", calculator: "Check only.", showWork: "Show each operation.", answerForm: "An exact value.", firstStep: "Identify the operation.", check: "Substitute your result." };
+  const authored = { ...course, expectations: { aa: expectations }, units: [{ lessons: [{ id: "a", title: "First lesson" }, { id: "b", title: "Second lesson" }] }] };
+  const options = { seed: "rebuild-pairs", count: 4, days: 3, lessonIds: ["b", "a"] };
+  const review = E.generatePacketChoices(authored, templates, options);
+  assert.deepEqual(review, E.generatePacketChoices(authored, templates, { ...options, practiceMode: "review" }));
+  assert.ok(review.flatMap(night => night.worksheets).every(sheet => sheet.practiceMode === "review" && sheet.questions.every(q => q.support === "independent")));
+  const rebuild = E.generatePacketChoices(authored, templates, { ...options, practiceMode: "rebuild" });
+  assert.deepEqual(rebuild, E.generatePacketChoices(authored, templates, { ...options, practiceMode: "rebuild" }));
+  assert.deepEqual(rebuild[0].worksheets[0].questions.map(q => q.templateId), ["aa", "aa", "bb", "bb"]);
+  assert.deepEqual(rebuild[1].worksheets[0].questions.map(q => q.templateId), ["ab", "ab", "bb", "bb"]);
+  for (const night of rebuild) for (const sheet of night.worksheets) {
+    assert.equal(sheet.practiceMode, "rebuild");
+    assert.deepEqual(sheet.questions.map(q => q.lessonId), ["a", "a", "b", "b"]);
+    assert.deepEqual(sheet.questions.map(q => q.support), ["guided", "independent", "guided", "independent"]);
+    assert.deepEqual(sheet.questions.map(q => q.templateId), night.worksheets[0].questions.map(q => q.templateId));
+    assert.notEqual(sheet.questions[0].signature, sheet.questions[1].signature);
+    assert.equal(sheet.questions[0].lessonTitle, "First lesson");
+  }
+  const copied = rebuild[0].worksheets[0].questions[0].expectations;
+  assert.deepEqual(copied, expectations);
+  assert.notEqual(copied, expectations);
+  copied.firstStep = "Changed copy";
+  assert.equal(expectations.firstStep, "Identify the operation.");
+  const single = { seed: "mode-code", count: 1, lessonIds: ["b"] };
+  const a = E.generateWorksheet(course, templates, single);
+  const b = E.generateWorksheet(course, templates, { ...single, practiceMode: "rebuild" });
+  assert.equal(a.questions[0].id, b.questions[0].id);
+  assert.notEqual(a.code, b.code, "mode must change the worksheet code even when its sole question is identical");
+  for (const value of [null, "", "unknown", 1]) assert.throws(() => E.generatePacketChoices(course, templates, { practiceMode: value }), /rebuild or review/);
+});
+
+test("odd rebuild worksheets keep pairs together and balance lessons and designs across nights", () => {
+  const many = { ...course, units: [{ lessons: ["a", "b", "c"].map(id => ({ id })) }] };
+  const designs = E.lessons(many).flatMap(lesson => ["first", "second", "third"].map(id => template(lesson.id + id, lesson.id)));
+  for (const count of [1, 3, 5, 7, 9]) {
+    const nights = E.generatePacketChoices(many, designs, { practiceMode: "rebuild", seed: "odd-pairs", count, days: 12 });
+    for (const night of nights) for (const sheet of night.worksheets) {
+      assert.equal(sheet.questions.at(-1).support, "independent");
+      for (let index = 0; index + 1 < count; index += 2) {
+        const [guided, independent] = sheet.questions.slice(index, index + 2);
+        assert.equal(guided.support, "guided");
+        assert.equal(independent.support, "independent");
+        assert.equal(guided.templateId, independent.templateId);
+      }
+      assert.deepEqual(sheet.questions.map(q => [q.templateId, q.support]), night.worksheets[0].questions.map(q => [q.templateId, q.support]));
+    }
+    const selected = E.selectPacketWorksheets(nights, { 1: "B", 2: "C" }).flatMap(sheet => sheet.questions);
+    const totals = E.lessons(many).map(lesson => selected.filter(q => q.lessonId === lesson.id).length);
+    assert.ok(Math.max(...totals) - Math.min(...totals) <= 2);
+    for (const lesson of E.lessons(many)) {
+      const counts = designs.filter(t => t.lessonId === lesson.id).map(t => selected.filter(q => q.templateId === t.id).length);
+      assert.ok(Math.max(...counts) - Math.min(...counts) <= 2);
+    }
+    const all = nights.flatMap(night => night.worksheets).flatMap(sheet => sheet.questions);
+    assert.equal(new Set(all.map(E.identity)).size, count * 12 * 3);
+  }
+});
+
+test("authored rebuild order leads paired practice and leaves review order unchanged", () => {
+  const authored = { ...course, units: [{ lessons: [{ id: "a", rebuildOrder: ["ab"] }, { id: "b" }] }] };
+  const options = { seed: "authored-order", lessonIds: ["a"], count: 6, days: 2 };
+  const designs = [...templates, template("ac", "a")];
+  const rebuild = E.generatePacketChoices(authored, designs, { ...options, practiceMode: "rebuild" });
+  assert.deepEqual(rebuild[0].worksheets[0].questions.map(q => q.templateId), ["ab", "ab", "aa", "aa", "ac", "ac"]);
+  assert.deepEqual(E.generatePacketChoices(authored, designs, options), E.generatePacketChoices(course, designs, options));
+});
+
+test("rebuild coverage notes describe the actual selected packet, including paired and singleton counts", () => {
+  const options = { practiceMode: "rebuild", seed: "coverage", count: 2, days: 1 };
+  const standalone = E.generateWorksheet(course, templates, options);
+  assert.match(standalone.warnings[0], /covers 1 of 2/);
+  const short = E.generatePacketChoices(course, templates, options);
+  assert.ok(short[0].worksheets.every(sheet => /covers 1 of 2/.test(sheet.warnings[0])));
+  for (const count of [1, 2]) {
+    const complete = E.generatePacketChoices(course, templates, { ...options, count, days: 2 });
+    assert.ok(complete.flatMap(night => night.worksheets).every(sheet => !sheet.warnings.length));
+    assert.equal(new Set(E.selectPacketWorksheets(complete).flatMap(sheet => sheet.questions.map(q => q.lessonId))).size, 2);
+  }
+  const scarce = [template("tiny", "a", 2), template("large", "a")];
+  assert.throws(() => E.generatePacketChoices(course, scarce, { ...options, lessonIds: ["a"] }), /Three full worksheets.*distinct/);
+});
+
+test("every real lesson supports five short reinforcement nights and every topic supports ten review nights in both modes", () => {
+  const actual = require("../content/courses/grade-8-math.json");
+  const designs = E.templatesForCourse(actual.id);
+  const verify = (lessonIds, count, days, practiceMode, seed) => {
+    const nights = E.generatePacketChoices(actual, designs, { lessonIds, count, days, practiceMode, seed });
+    const sheets = nights.flatMap(night => night.worksheets);
+    const questions = sheets.flatMap(sheet => sheet.questions);
+    assert.equal(sheets.length, days * 3);
+    assert.ok(sheets.every(sheet => sheet.questions.length === count && !sheet.warnings.length));
+    assert.equal(new Set(questions.map(E.identity)).size, count * days * 3);
+    assert.equal(new Set(questions.map(E.visibleIdentity)).size, count * days * 3);
+    const selected = E.selectPacketWorksheets(nights, Object.fromEntries(nights.map((night, i) => [night.day, E.WORKSHEET_VARIANTS[i % 3]])));
+    assert.equal(new Set(selected.flatMap(sheet => sheet.questions.map(q => q.lessonId))).size, lessonIds.length);
+  };
+  for (const mode of ["rebuild", "review"]) for (const seed of ["reinforce-1", "reinforce-2", "reinforce-3"]) {
+    for (const lesson of E.lessons(actual)) verify([lesson.id], 8, 5, mode, seed);
+    for (const unit of actual.units) verify(unit.lessons.map(lesson => lesson.id), 20, 10, mode, seed);
+  }
+});

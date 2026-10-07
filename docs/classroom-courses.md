@@ -17,11 +17,31 @@ repository content. The browser needs no textbook images or external service.
 
 ## Study and print
 
-Open **Courses** from the landing page. Topic 1 is selected initially. The
+Open **Courses** from the landing page. The first lesson is selected initially. The
 Study view reads one selected lesson at a time, with worked reasoning hidden
 until requested. Use **Practice this lesson** for a focused set or choose
-several lessons for review. The practice builder offers a short set and an
-explicit 20-question, 10-night preset. Replay settings are under the advanced
+several lessons for review. Each lesson starts with a prerequisite check and
+repair, then alternates explanation and worked examples with a partly completed
+task. Try the check/task before opening its solution; on paper, cover the
+area labeled **Check after trying**. These small checks guide the next step;
+they are not scored placement tests.
+
+The practice builder defaults to **Rebuild step by step**: the first problem
+in each pair includes a first-step cue and a check; the second uses fresh values
+with those cues removed. Each pair practices one design in one lesson. Lesson
+and design use are balanced, breaking ties in course and authored rebuild order.
+An odd final question is independent. Start with one lesson while rebuilding;
+choose **Mixed review** once the methods are familiar. Review retains the
+balanced mixed schedule and removes the first-step/check cues throughout.
+Directions about hand work, calculator use, shown work, and answer form remain
+visible in both modes. These worksheets teach practice habits; neither mode is
+a readiness assessment.
+
+The presets offer 8 questions tonight, **5 nights of 8** for reinforcement
+(15 full A/B/C worksheets, 120 distinct exercises), and **10 nights of 20** for
+topic review (30 worksheets, 600 exercises). The topic review preset expands a
+single-topic selection to that whole topic; a selection across topics is kept.
+The focused reinforcement preset has been checked for every lesson. Replay settings are under the advanced
 disclosure. Try a worksheet independently, then mark it with the separate
 worked answer key. Use a later packet to revisit missed skills.
 Problem counts are configurable; a packet is a supply of practice, not a
@@ -34,6 +54,10 @@ Choose a night, then choose its worksheet; other nights keep their selections.
 The summary shows every selected letter and distinguishes the questions selected
 for printing from all available questions. A is initially selected for each
 night. Changing alternatives hides preview answers; rebuilding resets choices.
+The **Reserve worksheets** exports include every A/B/C alternative across all
+nights, with student sheets and worked keys kept separate. For a fresh retry,
+use the same question number on an unused letter from the same night. Keep
+track of which sheets were used, then revisit the lesson on a later day.
 
 Student worksheets, study guides, and worked answers are separate printable
 documents. Student downloads contain neither solution data nor hidden answer
@@ -45,6 +69,13 @@ does not alter SAT/ACT progress or infer a student's mastery from printing.
 Student practice leaves response space unruled, with a thin border around each
 problem and its workspace. Graph grids and tables required by the question stay
 visible. The space can be used for calculation, a diagram, or a written explanation.
+Student pages pair compact problem cards in two columns; graphs and long tables
+use the full page width. Each card includes directions, an unruled working area,
+and a separate space for the final answer or conclusion. Actual
+typeset height determines how many cards fit on each page. Work requirements
+name observable evidence, such as both aligned equations or a labeled ratio,
+instead of prescribing a universal number of lines. The key explains how to
+find the first differing step, correct it, and try an unused alternative.
 Printing directly from the Courses page prints the selected study guide;
 use the packet controls for homework.
 
@@ -77,6 +108,8 @@ node tools/course-packet.js --course grade-8-math --unit topic-1 \
   --count 20 --days 10 --seed home-1 --out .scratch/print/home-1 --pdf
 node tools/course-packet.js --unit topic-1 --count 20 --days 3 \
   --seed home-mixed --worksheets B,C,A --combined --pdf --out .scratch/print/mixed
+node tools/course-packet.js --lessons 1-1 --mode rebuild --count 8 --days 5 \
+  --seed rebuild-1 --all-worksheets --pdf --out .scratch/print/rebuild-1
 node tools/course-packet.js --help
 ```
 
@@ -87,6 +120,10 @@ interface. Add `--single-sided` with `--combined` to omit separator backs.
 letter per night and must match `--days`. The default is A for every night.
 All three alternatives are generated before selecting exports. The manifest
 records the selected letters, seeds, and form codes for replay.
+`--mode rebuild` is the CLI default; use `--mode review` for mixed practice.
+`--all-worksheets` exports every alternative and cannot be combined with an
+explicit `--worksheets` choice. Reserve copies keep their real night number,
+worksheet letter, form code, and matching key.
 
 No browser packages are installed by the tool. Generated outputs belong in
 `.scratch/` when used in an agent workspace; download or copy printouts to a
@@ -104,6 +141,20 @@ worked material: the interactive reader puts these inside the answer reveal,
 while the printable guide includes the complete worked example. The first
 course also carries factual textbook page and standards references. These do
 not make new material official publisher content or a standards certification.
+Grade 8 lessons additionally require `readiness` (`prompt`, `answer`, `steps`,
+`repair`) and `bridge` (`prompt`, `starter`, `stepsToComplete`, `answer`, `steps`).
+The bridge's optional `afterExample` is the one-based position of the matching
+worked example; it defaults to 1 and must reference an existing example.
+Optional `rebuildOrder` lists that lesson's design IDs in the preferred starting
+order; unlisted designs follow in source order. These are instructional ordering
+judgments, not measured difficulty tiers.
+
+`content/courses/grade-8-expectations.json` holds directions for every design:
+`byHand`, `calculator`, `showWork`, `answerForm`, `firstStep`, and `check`.
+The build requires complete coverage and binds this source into the course
+revision. Generators receive no DOM or layout data. The engine copies the
+directions onto questions and labels their support level. Student-only exports
+retain only the six authored direction fields, never solution fields.
 
 `src/lib/courses/` contains pure generators and selection logic. The `math.js`
 helper supplies seeded randomness and reduced exact fractions; classroom
@@ -125,7 +176,7 @@ have different units and lessons without changing the SAT/ACT catalog.
 
 The build validates lesson coverage and generates `dist/content/courses.js`.
 Its course revision hashes authored content and classroom generator sources.
-Packet replay requires the same seed, lesson selection, problem count, night
+Packet replay requires the same practice mode, seed, lesson selection, problem count, night
 count, revision, and worksheet letter for each night. Printed worksheet codes identify matching copies; they
 are not standalone replay instructions. Keep a downloaded packet when exact
 future reproduction matters, since old generator revisions are not bundled.
@@ -177,6 +228,9 @@ The initial release's [integration and print review](reviews/2026-10-06-grade8-i
 is a historical baseline. The [cold-review follow-up](reviews/2026-10-06-grade8-cold-followup.md)
 records its subsequently discovered defects, corrections, renewed math review,
 and final browser/print verification.
+The [relearning review](reviews/2026-10-07-grade8-relearning.md) records the
+readiness and bridge tasks, per-problem expectations, guided pairs, reinforcement
+presets, and renewed independent content and print checks.
 
 After generator changes, renew the affected mathematical tests and independent
 sample review. After renderer changes, inspect actual student and key PDFs:

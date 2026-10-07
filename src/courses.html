@@ -60,10 +60,10 @@
         <div class="course-workspace-layout">
           <aside class="course-selection-panel" aria-label="Choose lessons">
             <details id="courseLessonPicker" class="course-lesson-picker" open>
-              <summary><span>Lessons</span><span id="courseSelectionLabel">Topic 1 selected</span></summary>
+              <summary><span>Lessons</span><span id="courseSelectionLabel">One lesson selected</span></summary>
               <fieldset class="course-lessons-fieldset">
                 <legend class="sr-only">Lessons to study and practice</legend>
-                <p class="course-picker-note">Choose one lesson or gather a few for review. Topic 1 is selected to start.</p>
+                <p class="course-picker-note">Start with one lesson to rebuild a skill. The first lesson is selected; choose the lesson you are working on, or gather a few for review.</p>
                 <div class="course-selection-actions">
                   <button id="courseSelectAll" class="text-link" type="button">Select all</button>
                   <button id="courseSelectNone" class="text-link" type="button">Clear</button>
@@ -99,18 +99,20 @@
               </div>
             </section>
             <section id="coursePracticePanel" class="course-practice-panel" aria-labelledby="builderHeading" hidden>
-              <header class="course-practice-heading"><p class="course-eyebrow">Make it stick</p><h2 id="builderHeading" tabindex="-1">A little practice, done thoughtfully.</h2><p>Work independently, show your thinking, then use the answer key to understand a mistake.</p></header>
+              <header class="course-practice-heading"><p class="course-eyebrow">Make it stick</p><h2 id="builderHeading" tabindex="-1">A little practice, done thoughtfully.</h2><p>Start with support, try a fresh question on your own, then use the worked answer key to understand a mistake.</p></header>
               <form id="courseForm" class="course-builder">
-                <div class="course-presets" role="group" aria-label="Practice amounts"><button id="courseShortSet" class="button secondary" type="button">Tonight: 8 questions</button><button id="courseTenNights" class="button secondary" type="button">10 nights: 20 each</button></div>
+                <div class="field"><label for="coursePracticeMode">Practice approach</label><select id="coursePracticeMode" aria-describedby="coursePracticeModeHelp"><option value="rebuild">Rebuild step by step</option><option value="review">Mixed review</option></select><p id="coursePracticeModeHelp" class="field-note">Rebuild pairs a question with first-step support and a fresh independent question using the same method. Mixed review varies the methods without first-step prompts. Every question says what to do by hand, when a calculator helps, and what work to show.</p></div>
+                <div class="course-presets" role="group" aria-label="Practice amounts"><button id="courseShortSet" class="button secondary" type="button">Tonight: 8 questions</button><button id="courseFiveNights" class="button secondary" type="button">Rebuild over 5 nights: 8 each</button><button id="courseTenNights" class="button secondary" type="button">Topic review: 10 nights, 20 each</button></div>
+                <p class="field-note">Five rebuild nights provide 15 worksheets and 120 distinct questions across A/B/C. Topic review provides 30 worksheets and 600 questions; a selection within one topic expands to that whole topic.</p>
                 <div class="course-packet-fields">
                   <div class="field"><label for="courseCount">Questions per worksheet</label><input id="courseCount" type="number" min="1" max="100" step="1" value="8" required /><p class="field-note">Choose 1–100</p></div>
                   <div class="field"><label for="courseDays">Nights</label><input id="courseDays" type="number" min="1" max="30" step="1" value="1" required /><p class="field-note">Choose 1–30</p></div>
                 </div>
-                <p class="course-amount-advice">Each night gets three complete worksheets — A, B, and C — with the same lesson mix and different questions. Choose one per night for printing. Start small; a narrow lesson selection may need fewer questions or nights.</p>
+                <p class="course-amount-advice">Each night gets three complete worksheets — A, B, and C — with the same lesson mix and different questions. Choose one per night, or download all three as a reserve supply. Start small; a narrow lesson selection may need fewer questions or nights.</p>
                 <p class="course-amount-advice">A packet is a supply of practice. You do not need to finish every question in one sitting.</p>
                 <details id="courseAdvanced" class="course-advanced">
                   <summary>Recreate a saved packet</summary>
-                  <div class="field course-seed-field"><label for="courseSeed">Packet seed</label><input id="courseSeed" type="text" maxlength="140" required spellcheck="false" autocomplete="off" aria-describedby="courseSeedHelp" /><p id="courseSeedHelp" class="field-note">Use the printed seed with the same lessons, questions per worksheet, nights, and course version. Then select each night’s printed worksheet letter.</p></div>
+                  <div class="field course-seed-field"><label for="courseSeed">Packet seed</label><input id="courseSeed" type="text" maxlength="140" required spellcheck="false" autocomplete="off" aria-describedby="courseSeedHelp" /><p id="courseSeedHelp" class="field-note">Use the printed seed with the same practice approach, lessons, questions per worksheet, nights, and course version. Then select each night’s printed worksheet letter.</p></div>
                   <button id="courseFresh" class="text-link" type="button">Use a new seed</button>
                 </details>
                 <div class="actions course-build-actions"><button id="courseBuild" class="button primary" type="submit">Make practice</button><button id="courseCancel" class="button secondary" type="button" hidden>Cancel</button></div>
@@ -145,6 +147,14 @@
                   <div class="course-download-item"><h3>Student worksheets</h3><p>One selected worksheet per night, for all nights. Questions and space for your thinking.</p><div class="actions"><button class="button primary" type="button" data-course-export="student" data-export-action="print" disabled>Print worksheets</button><button class="text-link" type="button" data-course-export="student" data-export-action="download" disabled>Download HTML</button></div></div>
                   <div class="course-download-item"><h3>Worked answers</h3><p>Matching answers for all selected worksheets, with steps and explanations.</p><div class="actions"><button class="button secondary" type="button" data-course-export="answers" data-export-action="print" disabled>Print answer key</button><button class="text-link" type="button" data-course-export="answers" data-export-action="download" disabled>Download HTML</button></div></div>
                 </div>
+                <section class="course-combined-download" aria-labelledby="courseReserveHeading">
+                  <h3 id="courseReserveHeading">Keep a reserve supply</h3>
+                  <p id="courseReserveSummary"></p>
+                  <div class="course-downloads">
+                    <div class="course-download-item"><h3>All student worksheets</h3><p>Every A, B, and C worksheet across all nights, with no answers.</p><div class="actions"><button class="button secondary" type="button" data-course-export="student" data-export-scope="all" data-export-action="print" disabled>Print all A/B/C</button><button class="text-link" type="button" data-course-export="student" data-export-scope="all" data-export-action="download" disabled>Download all worksheets</button></div></div>
+                    <div class="course-download-item"><h3>All matching worked answers</h3><p>A separate key for the complete reserve supply, labeled by night and worksheet.</p><div class="actions"><button class="button secondary" type="button" data-course-export="answers" data-export-scope="all" data-export-action="print" disabled>Print all answer keys</button><button class="text-link" type="button" data-course-export="answers" data-export-scope="all" data-export-action="download" disabled>Download all answer keys</button></div></div>
+                  </div>
+                </section>
                 <p class="course-print-help">Print views open in a new tab. Use your browser’s Print command for paper or PDF. Downloads are complete HTML files that work offline.</p>
                 <div class="course-preview-controls"><label class="course-preview-answer-toggle"><input id="coursePreviewAnswers" type="checkbox" /> Show worked answers in preview</label></div>
                 <details class="course-preview-disclosure" open><summary>Look over the questions</summary><div id="coursePreview" class="course-paper-preview"></div></details>

@@ -11,10 +11,21 @@ and the study/review tools. Test practice lives at `practice.html`; earlier
 
 **Courses** starts with Grade 8 Mathematics: the four topics in the supplied
 enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
-examples, and 85 parameterized exercise designs. Choose a lesson or mix of
+examples, 36 prerequisite checks, 36 partially worked practice tasks, and 85
+parameterized exercise designs. Start with one lesson in **Rebuild step by step**:
+try a short prerequisite check, study an example, finish a partly worked task,
+then practise in pairs with support on the first problem and a fresh independent
+problem next. **Mixed review** revisits familiar lessons without first-step hints.
+Every worksheet problem states what to do by hand, how to use a calculator,
+what work to show, and the required answer form. Choose a lesson or mix of
 lessons to generate up to 30 nights of homework, with three full worksheets
 per night: A, B, and C. Each has the chosen 1–100 problems. Select a worksheet
 independently for each night; its matching guide and answers follow that choice.
+The five-night reinforcement preset supplies 15 worksheets of 8 questions
+(120 distinct exercises); topic review supplies 30 worksheets of 20 questions
+(600 distinct exercises). Download all A/B/C alternatives and their separate
+keys to keep a reserve for fresh retries. These are practice supplies, not nightly
+completion quotas or claims of mastery.
 Study guides, student worksheets with writing space, and worked answer keys
 download separately or together as a nightly packet: study guide, worksheets,
 then worked answers, in one print job. Double-sided packets keep each section

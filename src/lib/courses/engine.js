@@ -52,6 +52,23 @@
     if (!selected.size || [...selected].some(id => !all.some(lesson => lesson.id === id))) throw new Error("Choose valid course lessons");
     return all.filter(lesson => selected.has(lesson.id)).map(lesson => lesson.id);
   }
+  function practiceMode(settings) {
+    const mode = settings.practiceMode === undefined ? "review" : settings.practiceMode;
+    if (!["rebuild", "review"].includes(mode)) throw new Error("Choose rebuild or review practice");
+    return mode;
+  }
+  function packetPlan(lessonIds, templates, seed, mode) {
+    const rng = M.random(seed + "/schedule");
+    return { cycle: mode === "rebuild" ? lessonIds : rng.shuffle(lessonIds), position: 0, visible: new Set(),
+      offsets: new Map(lessonIds.map(id => [id, mode === "rebuild" ? 0 : rng.int(0, Math.max(0, templates.filter(t => t.lessonId === id).length - 1))])),
+      uses: new Map(lessonIds.map(id => [id, 0])), designUses: new Map() };
+  }
+  function coverageWarning(lessonIds, sheets, mode, label) {
+    const covered = new Set(sheets.flatMap(sheet => sheet.questions.map(question => question.lessonId)));
+    if (lessonIds.every(id => covered.has(id))) return null;
+    if (mode === "rebuild") return `${label} covers ${covered.size} of ${lessonIds.length} selected lessons. Rebuild practice keeps guided and independent questions together. Choose more questions or nights, or fewer lessons, to include every selected lesson.`;
+    return `${label} has fewer questions than selected lessons. Choose at least ${lessonIds.length} total questions to include every selected lesson.`;
+  }
   function validateGraph(graph) {
     if (!graph || typeof graph !== "object") throw new Error("Invalid graph");
     for (const key of ["xMin", "xMax", "yMin", "yMax", "xStep", "yStep"]) {
@@ -85,29 +102,56 @@
   }
   function buildWorksheet(course, templates, options, plan) {
     const settings = options || {};
+    const mode = practiceMode(settings);
     const lessonIds = selection(course, settings);
+    const lessonData = new Map(lessons(course).map(lesson => [lesson.id, lesson]));
     const count = settings.count === undefined ? 20 : Number(settings.count);
     if (!Number.isInteger(count) || count < 1 || count > MAX_COUNT) throw new Error("Choose 1–100 problems per worksheet");
     const seed = String(settings.seed === undefined ? "practice" : settings.seed).trim();
     if (!seed || seed.length > 160) throw new Error("Enter a seed of 1–160 characters");
-    const byLesson = new Map(lessonIds.map(id => [id, templates.filter(t => t.lessonId === id)]));
+    const byLesson = new Map(lessonIds.map(id => {
+      const pool = templates.filter(t => t.lessonId === id);
+      if (mode === "rebuild" && lessonData.get(id).rebuildOrder) {
+        const order = lessonData.get(id).rebuildOrder;
+        const ranks = new Map(order.map((templateId, index) => [templateId, index]));
+        pool.sort((a, b) => (ranks.get(a.id) ?? order.length) - (ranks.get(b.id) ?? order.length));
+      }
+      return [id, pool];
+    }));
     if ([...byLesson.values()].some(values => !values.length)) throw new Error("A selected lesson has no practice generators");
     const selectedTemplates = [...byLesson.values()].flat();
     if (new Set(selectedTemplates.map(t => t.id)).size !== selectedTemplates.length) throw new Error("Duplicate template IDs");
     const rng = M.random(seed);
-    const cycle = plan ? plan.cycle : rng.shuffle(lessonIds);
-    const offsets = plan ? plan.offsets : new Map(lessonIds.map(id => [id, rng.int(0, byLesson.get(id).length - 1)]));
+    const cycle = plan ? plan.cycle : mode === "rebuild" ? lessonIds : rng.shuffle(lessonIds);
+    const offsets = plan ? plan.offsets : new Map(lessonIds.map(id => [id, mode === "rebuild" ? 0 : rng.int(0, byLesson.get(id).length - 1)]));
     const uses = plan ? plan.uses : new Map(lessonIds.map(id => [id, 0]));
+    const designUses = plan ? plan.designUses : new Map();
     const prior = new Set(settings.avoid || []);
     const priorVisible = plan ? plan.visible : new Set();
     const seen = new Set();
     const seenVisible = new Set();
     const questions = [];
+    let pair;
     for (let slot = 0; slot < count; slot += 1) {
-      const lessonId = cycle[((plan ? plan.position : 0) + slot) % cycle.length];
-      const pool = byLesson.get(lessonId);
-      const offset = offsets.get(lessonId) + uses.get(lessonId);
-      const template = pool[offset % pool.length];
+      const position = (plan ? plan.position : 0) + slot;
+      if (mode === "review" || slot % 2 === 0) {
+        // Choose the least-practiced lesson/design, breaking ties in course
+        // and authored design order. Odd independent questions count too, so
+        // they cannot permanently favor one lesson or exhaust one design.
+        const lessonId = mode === "rebuild"
+          ? cycle.reduce((best, id) => uses.get(id) < uses.get(best) ? id : best, cycle[0])
+          : cycle[position % cycle.length];
+        const pool = byLesson.get(lessonId);
+        const template = mode === "rebuild"
+          ? pool.reduce((best, value) => (designUses.get(value.id) || 0) < (designUses.get(best.id) || 0) ? value : best, pool[0])
+          : pool[(offsets.get(lessonId) + uses.get(lessonId)) % pool.length];
+        pair = { lessonId, template };
+      }
+      // Keep a complete pair inside each worksheet. An odd final question is
+      // independent; the shared question counters still rotate lessons and
+      // designs over subsequent nights instead of favoring the same lesson.
+      const { lessonId, template } = pair;
+      const support = mode === "rebuild" && slot % 2 === 0 && slot + 1 < count ? "guided" : "independent";
       let chosen = null;
       // Preserve design coverage. Do not silently replace an exhausted graph
       // design with hundreds of table questions, or recycle an earlier night.
@@ -118,34 +162,37 @@
         const visible = visibleIdentity(raw);
         if (seen.has(signature) || prior.has(signature) || seenVisible.has(visible) || priorVisible.has(visible)) continue;
         const entry = { ...raw, id: template.id + ":" + drawSeed, number: slot + 1, templateId: template.id,
-          lessonId, skill: template.skill, signature, visibleSignature: visible };
+          lessonId, lessonTitle: lessonData.get(lessonId).title || lessonId, skill: template.skill, support, signature, visibleSignature: visible,
+          ...(course.expectations && course.expectations[template.id] ? { expectations: { ...course.expectations[template.id] } } : {}) };
         chosen = entry;
         break;
       }
       if (!chosen) throw new Error(`Could not find enough distinct exercises for lesson ${lessonId} under these settings. Try fewer questions or nights, or select more lessons.`);
       uses.set(lessonId, uses.get(lessonId) + 1);
+      designUses.set(template.id, (designUses.get(template.id) || 0) + 1);
       seen.add(chosen.signature);
       seenVisible.add(chosen.visibleSignature);
       questions.push(chosen);
     }
     const version = String(course.revision || course.version);
-    const code = "COURSE-" + version.slice(0, 8) + "-" + M.hash(JSON.stringify([course.id, seed, lessonIds, questions.map(q => q.id)])).toUpperCase();
-    const warnings = !plan && count < lessonIds.length ? [`This worksheet has fewer questions than selected lessons. Choose at least ${lessonIds.length} questions to include every selected lesson.`] : [];
-    return { courseId: course.id, version, seed, code, lessonIds, title: course.title + " practice", questions,
+    const codeInputs = [course.id, seed, lessonIds, questions.map(q => q.id)];
+    if (mode !== "review") codeInputs.push(mode, questions.map(question => question.support));
+    const code = "COURSE-" + version.slice(0, 8) + "-" + M.hash(JSON.stringify(codeInputs)).toUpperCase();
+    const warning = !plan && coverageWarning(lessonIds, [{ questions }], mode, "This worksheet");
+    const warnings = warning ? [warning] : [];
+    return { courseId: course.id, version, seed, code, lessonIds, practiceMode: mode, title: course.title + " practice", questions,
       warnings, identities: [...seen], visibleIdentities: [...seenVisible] };
   }
   function generateWorksheet(course, templates, options) { return buildWorksheet(course, templates, options); }
   function generatePacket(course, templates, options) {
     const settings = options || {};
+    const mode = practiceMode(settings);
     const days = settings.days === undefined ? 10 : Number(settings.days);
     if (!Number.isInteger(days) || days < 1 || days > MAX_DAYS) throw new Error("Choose 1–30 nights");
     const seed = String(settings.seed === undefined ? "practice" : settings.seed).trim();
     if (!seed || seed.length > 140) throw new Error("Enter a packet seed of 1–140 characters");
     const lessonIds = selection(course, settings);
-    const rng = M.random(seed + "/schedule");
-    const plan = { cycle: rng.shuffle(lessonIds), position: 0, visible: new Set(),
-      offsets: new Map(lessonIds.map(id => [id, rng.int(0, Math.max(0, templates.filter(t => t.lessonId === id).length - 1))])),
-      uses: new Map(lessonIds.map(id => [id, 0])) };
+    const plan = packetPlan(lessonIds, templates, seed, mode);
     const avoid = new Set(settings.avoid || []);
     const packet = [];
     for (let day = 1; day <= days; day += 1) {
@@ -158,29 +205,28 @@
       plan.position += sheet.questions.length;
       packet.push(sheet);
     }
-    if (plan.position < lessonIds.length) packet[0].warnings.push(`This packet has fewer questions than selected lessons. Choose at least ${lessonIds.length} total questions to include every selected lesson.`);
+    const warning = coverageWarning(lessonIds, packet, mode, "This packet");
+    if (warning) packet[0].warnings.push(warning);
     return packet;
   }
   function generatePacketChoices(course, templates, options) {
     const settings = options || {};
+    const mode = practiceMode(settings);
     const days = settings.days === undefined ? 10 : Number(settings.days);
     if (!Number.isInteger(days) || days < 1 || days > MAX_DAYS) throw new Error("Choose 1–30 nights");
     const seed = String(settings.seed === undefined ? "practice" : settings.seed).trim();
     if (!seed || seed.length > 140) throw new Error("Enter a packet seed of 1–140 characters");
     const lessonIds = selection(course, settings);
-    const rng = M.random(seed + "/schedule");
-    const plan = { cycle: rng.shuffle(lessonIds), position: 0, visible: new Set(),
-      offsets: new Map(lessonIds.map(id => [id, rng.int(0, Math.max(0, templates.filter(t => t.lessonId === id).length - 1))])),
-      uses: new Map(lessonIds.map(id => [id, 0])) };
+    const plan = packetPlan(lessonIds, templates, seed, mode);
     const avoid = new Set(settings.avoid || []);
     const nights = [];
     for (let day = 1; day <= days; day += 1) {
       const worksheets = [];
-      let nextUses;
+      let nextUses, nextDesignUses;
       for (const worksheetVariant of WORKSHEET_VARIANTS) {
         // Alternatives practice the same nightly lesson/design sequence.
         // Advance that sequence once per night, not once per alternative.
-        const variantPlan = { ...plan, uses: new Map(plan.uses) };
+        const variantPlan = { ...plan, uses: new Map(plan.uses), designUses: new Map(plan.designUses) };
         let sheet;
         try {
           sheet = buildWorksheet(course, templates, { ...settings, seed: seed + "/" + worksheetVariant + "/night-" + day, avoid: [...avoid] }, variantPlan);
@@ -192,14 +238,16 @@
         sheet.identities.forEach(id => avoid.add(id));
         sheet.visibleIdentities.forEach(id => plan.visible.add(id));
         nextUses = variantPlan.uses;
+        nextDesignUses = variantPlan.designUses;
         worksheets.push(sheet);
       }
       plan.uses = nextUses;
+      plan.designUses = nextDesignUses;
       plan.position += worksheets[0].questions.length;
       nights.push({ day, worksheets });
     }
-    if (plan.position < lessonIds.length) {
-      const warning = `Each selected worksheet packet has fewer questions than selected lessons. Choose at least ${lessonIds.length} total questions per selection to include every selected lesson.`;
+    const warning = coverageWarning(lessonIds, nights.map(night => night.worksheets[0]), mode, "Each selected worksheet packet");
+    if (warning) {
       nights[0].worksheets.forEach(sheet => sheet.warnings.push(warning));
     }
     return nights;

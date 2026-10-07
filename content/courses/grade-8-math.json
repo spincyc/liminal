@@ -56,7 +56,38 @@
             "Do not treat a displayed approximation such as 0.583 as the exact value of 7/12.",
             "In 1.2[7], the 2 does not repeat. Using 99 as the denominator without aligning tails gives the wrong number."
           ],
-          "practiceAdvice": "Practice both directions. In each repeating-decimal conversion, write the two aligned equations before subtracting, and check the fraction by division."
+          "practiceAdvice": "Practice both directions. In each repeating-decimal conversion, write the two aligned equations before subtracting, and check the fraction by division.",
+          "readiness": {
+            "prompt": "Write 0.35 as a fraction with denominator 100, then simplify it. Show the common factor you divide out.",
+            "answer": "0.35 = 35/100 = 7/20.",
+            "steps": [
+              "Two decimal places mean hundredths, so 0.35 is 35/100.",
+              "Divide both 35 and 100 by 5 to get 7/20."
+            ],
+            "repair": "Review place value first: tenths use denominator 10 and hundredths use 100. To simplify a fraction, divide its numerator and denominator by the same nonzero common factor; its value stays the same."
+          },
+          "bridge": {
+            "prompt": "Write 0.[6] as a fraction in simplest form. Complete the subtraction method below.",
+            "starter": "Let x = 0.666… . Multiplying by 10 gives 10x = 6.666… . The repeating tails now match.",
+            "stepsToComplete": [
+              "Write 10x − x and subtract the two decimal values.",
+              "Solve the resulting equation for x, then reduce the fraction.",
+              "Explain why no repeating decimal digits remain after subtraction."
+            ],
+            "answer": "0.[6] = 6/9 = 2/3.",
+            "steps": [
+              "10x − x = 6.666… − 0.666… gives 9x = 6.",
+              "Divide by 9: x = 6/9. Divide numerator and denominator by 3: x = 2/3.",
+              "The identical infinite decimal tails cancel; the difference is exactly 6."
+            ],
+            "afterExample": 2
+          },
+          "rebuildOrder": [
+            "g8-t1-terminating-fraction",
+            "g8-t1-fraction-decimal",
+            "g8-t1-repeat-block-fraction",
+            "g8-t1-repeat-after-prefix"
+          ]
         },
         {
           "id": "1-2",
@@ -96,7 +127,36 @@
             "A number may belong to several sets. Calling 11 rational does not stop it from also being an integer.",
             "An ellipsis alone does not prove irrationality. The rule generating the infinite decimal matters."
           ],
-          "practiceAdvice": "Support each classification with a definition, fraction, or perfect-square argument. Include negative repeating decimals and outside minus signs."
+          "practiceAdvice": "Support each classification with a definition, fraction, or perfect-square argument. Include negative repeating decimals and outside minus signs.",
+          "readiness": {
+            "prompt": "Can −4 be written as a fraction of integers with a nonzero denominator? Write one such fraction.",
+            "answer": "Yes: −4 = −4/1.",
+            "steps": [
+              "Every integer can be written over 1.",
+              "Both −4 and 1 are integers, and 1 is not zero."
+            ],
+            "repair": "A fraction does not have to be between 0 and 1. Dividing an integer by 1 leaves its value unchanged. Use this to see why every integer is rational."
+          },
+          "bridge": {
+            "prompt": "Classify √49, √50, and −0.25 as rational or irrational. Give a reason for each.",
+            "starter": "49 = 7^2, so √49 = 7. An integer is rational because it can be written over 1.",
+            "stepsToComplete": [
+              "Use the neighboring perfect squares 49 and 64 to classify √50.",
+              "Write −0.25 as a fraction and simplify it.",
+              "Attach a reason to each of the three classifications."
+            ],
+            "answer": "√49 and −0.25 are rational; √50 is irrational.",
+            "steps": [
+              "√49 = 7 = 7/1, so it is rational.",
+              "49 < 50 < 64, so the nonnegative integer 50 is not a perfect square; √50 is irrational.",
+              "−0.25 = −25/100 = −1/4, so it is rational."
+            ]
+          },
+          "rebuildOrder": [
+            "g8-t1-number-set-membership",
+            "g8-t1-root-classification",
+            "g8-t1-infinite-decimal-classification"
+          ]
         },
         {
           "id": "1-3",
@@ -155,7 +215,37 @@
             "−3.3 is less than −3.25, even though 3.3 is greater than 3.25.",
             "Do not declare two numbers equal just because your calculator rounded them to the same display."
           ],
-          "practiceAdvice": "Before using a calculator, write whole-number bounds for each root. Then choose a number-line scale and justify each adjacent comparison."
+          "practiceAdvice": "Before using a calculator, write whole-number bounds for each root. Then choose a number-line scale and justify each adjacent comparison.",
+          "readiness": {
+            "prompt": "Evaluate 6^2 and 7^2. Which result is below 40, and which is above 40?",
+            "answer": "6^2 = 36 < 40 < 49 = 7^2.",
+            "steps": [
+              "6^2 means 6 × 6 = 36.",
+              "7^2 means 7 × 7 = 49.",
+              "36 is below 40, and 49 is above 40."
+            ],
+            "repair": "Squaring means multiplying a number by itself, not by 2. Write nearby square facts before estimating a square root; they give reliable bounds."
+          },
+          "bridge": {
+            "prompt": "Compare √20 and 4.6 without rounding the root. Write a whole-number interval for √20 and an inequality comparing the two numbers.",
+            "starter": "4^2 = 16 and 5^2 = 25, so 4 < √20 < 5.",
+            "stepsToComplete": [
+              "Square 4.6 and compare its square with 20.",
+              "Use the fact that both original numbers are positive to choose < or >.",
+              "Write the final comparison using the exact root."
+            ],
+            "answer": "4 < √20 < 5, and √20 < 4.6.",
+            "steps": [
+              "4.6^2 = 21.16.",
+              "20 < 21.16. Squaring preserves the order of positive numbers, so √20 < 4.6.",
+              "The whole-number bounds locate the root; comparing squares distinguishes it from 4.6 without rounding."
+            ]
+          },
+          "rebuildOrder": [
+            "g8-t1-root-bounds",
+            "g8-t1-negative-root-comparison",
+            "g8-t1-order-and-plot"
+          ]
         },
         {
           "id": "1-4",
@@ -194,7 +284,31 @@
             "A cube root is not division by 3: ³√216 = 6, while 216/3 = 72.",
             "A root symbol by itself does not ask for both signs. Save the ± sign for solving an appropriate equation."
           ],
-          "practiceAdvice": "Build a short reference list of integer squares and cubes, then verify unfamiliar roots by multiplication. Write units at every geometry step."
+          "practiceAdvice": "Build a short reference list of integer squares and cubes, then verify unfamiliar roots by multiplication. Write units at every geometry step.",
+          "readiness": {
+            "prompt": "Calculate (−3)^2 and (−3)^3 by writing the repeated factors. Explain the different signs.",
+            "answer": "(−3)^2 = 9; (−3)^3 = −27.",
+            "steps": [
+              "(−3)(−3) = 9 because two negative factors have a positive product.",
+              "(−3)(−3)(−3) = 9(−3) = −27."
+            ],
+            "repair": "Keep a negative base in parentheses. Count the negative factors: pairs give positive products; an unpaired negative factor makes the final product negative."
+          },
+          "bridge": {
+            "prompt": "Evaluate √64 and ³√(−64). Explain why the square-root expression has only one value.",
+            "starter": "64 = 8 × 8. Also, 4 × 4 × 4 = 64.",
+            "stepsToComplete": [
+              "Choose the nonnegative number whose square is 64.",
+              "Choose the number whose cube is −64, and verify its sign by multiplication.",
+              "Distinguish the symbol √64 from an equation asking for every number with square 64."
+            ],
+            "answer": "√64 = 8; ³√(−64) = −4.",
+            "steps": [
+              "The symbol √64 requests the principal, nonnegative square root, so its value is 8.",
+              "(−4)(−4)(−4) = −64, so ³√(−64) = −4.",
+              "Although (−8)^2 is also 64, −8 is not the value of the expression √64."
+            ]
+          }
         },
         {
           "id": "1-5",
@@ -211,12 +325,12 @@
           ],
           "examples": [
             {
-              "prompt": "Solve 3x^2 − 6 = 84 over the real numbers. Give exact answers.",
-              "answer": "x = √30 or x = −√30.",
+              "prompt": "Solve 3x^2 − 6 = 69 over the real numbers. Give every solution.",
+              "answer": "x = 5 or x = −5.",
               "steps": [
-                "Add 6 to both sides: 3x^2 = 90. Divide both sides by 3: x^2 = 30.",
-                "The positive constant gives two roots, so x = ±√30.",
-                "For either sign, x^2 = 30. Substituting gives 3(30) − 6 = 84, so both solutions work."
+                "Add 6 to both sides: 3x^2 = 75. Divide both sides by 3: x^2 = 25.",
+                "Both 5^2 and (−5)^2 equal 25, so x = ±5. The equation asks for all values, unlike the single value of √25.",
+                "Check both in the original: 3(5)^2 − 6 = 69 and 3(−5)^2 − 6 = 69."
               ]
             },
             {
@@ -233,7 +347,31 @@
             "Using only the positive root loses a valid solution of x^2 = a when a > 0 and no context excludes negatives.",
             "Do not add a ± to a cube-root solution: (−7)^3 and 7^3 have different signs."
           ],
-          "practiceAdvice": "Predict the number of real solutions first. Check every candidate, then apply context restrictions."
+          "practiceAdvice": "Predict the number of real solutions first. Check every candidate, then apply context restrictions.",
+          "readiness": {
+            "prompt": "Calculate 6^2 and (−6)^2. How many of the numbers 6 and −6 have a square equal to 36?",
+            "answer": "Both: 6^2 = 36 and (−6)^2 = 36.",
+            "steps": [
+              "6 × 6 = 36.",
+              "(−6)(−6) = 36 as well."
+            ],
+            "repair": "A squared equation can have a positive and a negative solution because either sign becomes positive when squared. Check each candidate by multiplication instead of adding a sign from memory."
+          },
+          "bridge": {
+            "prompt": "Solve 2x^2 + 3 = 35 over the real numbers. Give every solution and check each in the original equation.",
+            "starter": "Subtract 3 from both sides: 2x^2 = 32.",
+            "stepsToComplete": [
+              "Divide both sides by 2 to isolate x^2.",
+              "List every real number whose square is the resulting value.",
+              "Substitute each candidate into 2x^2 + 3."
+            ],
+            "answer": "x = 4 or x = −4.",
+            "steps": [
+              "Divide by 2: x^2 = 16.",
+              "Both 4 and −4 have square 16, so x = ±4.",
+              "For x = 4, 2(4)^2 + 3 = 35. For x = −4, 2(−4)^2 + 3 = 35. Both work."
+            ]
+          }
         },
         {
           "id": "1-6",
@@ -244,9 +382,9 @@
           ],
           "objective": "Use products, quotients, powers of powers, and powers of products to rewrite expressions with integer exponents.",
           "explanation": [
-            "Exponents count repeated factors. Multiplying powers with the same base combines their factors: a^m × a^n = a^(m + n). Dividing cancels matching factors: a^m/a^n = a^(m − n), with a ≠ 0. The base must match before you combine exponents this way.",
+            "Positive integer exponents count repeated factors. Multiplying powers with the same base combines their factors: a^m × a^n = a^(m + n). Dividing cancels matching factors: a^m/a^n = a^(m − n), with a ≠ 0. The base must match before you combine exponents this way.",
             "Raising a power to another power repeats the whole group, so (a^m)^n = a^(mn). Raising a product to a power applies that power to every factor: (ab)^n = a^n × b^n. You can use these equalities in either direction. For example, equal powers can sometimes be grouped into one power of a product.",
-            "The rules extend to integer exponents wherever the expressions are defined. A negative exponent represents a reciprocal, so a nonzero base is required. Write parentheses to show exactly what the exponent affects. Check a rule on small values if you forget whether to add, subtract, or multiply the exponents; do not apply a multiplication rule to a sum."
+            "The rules extend to integer exponents wherever the expressions are defined. A negative exponent represents a reciprocal: for nonzero a, a^(−2) = 1/a^2. For example, a^(−2) × a^5 = a^5/a^2 = a^3; adding −2 + 5 gives the same exponent. Before starting this lesson’s worksheet, work through the zero and negative exponent explanation in Lesson 1-7 if reciprocals or a^0 are unfamiliar. Write parentheses to show exactly what the exponent affects, and do not apply a multiplication rule to a sum."
           ],
           "examples": [
             {
@@ -259,12 +397,12 @@
               ]
             },
             {
-              "prompt": "Simplify (3^2)^(−2) × 2^(−4) to a single power, then evaluate it.",
-              "answer": "6^(−4) = 1/1296.",
+              "prompt": "Simplify (3^2)^2 × 2^4 to a single power, then evaluate it.",
+              "answer": "6^4 = 1296.",
               "steps": [
-                "A power raised to a power multiplies exponents: (3^2)^(−2) = 3^(−4).",
-                "The two factors now have the same exponent: 3^(−4) × 2^(−4) = (3 × 2)^(−4) = 6^(−4).",
-                "A negative exponent gives the reciprocal: 6^(−4) = 1/6^4 = 1/1296. Both bases are nonzero."
+                "A power raised to a power repeats a group of factors: (3^2)^2 = 3^(2 × 2) = 3^4.",
+                "The two factors now have the same exponent: 3^4 × 2^4 = (3 × 2)^4 = 6^4.",
+                "Evaluate by multiplication: 6 × 6 × 6 × 6 = 1296. In the next lesson, the reciprocal idea explains zero and negative exponents."
               ]
             }
           ],
@@ -272,7 +410,38 @@
             "a^3 × a^4 equals a^7, while (a^3)^4 equals a^12. The grouping changes the operation.",
             "There is no matching rule that turns a^2 + a^3 into a^5."
           ],
-          "practiceAdvice": "Name the operation first: product, quotient, or power of a power. Write the exponent calculation on a separate line, especially when a sign is negative."
+          "practiceAdvice": "Name the operation first: product, quotient, or power of a power. Write the exponent calculation on a separate line. This worksheet includes zero and negative exponents: if those meanings are uncertain, study Lesson 1-7 before practicing Lesson 1-6.",
+          "readiness": {
+            "prompt": "Write 2^3 as repeated factors and evaluate it. Explain what the exponent 3 counts.",
+            "answer": "2^3 = 2 × 2 × 2 = 8; the exponent counts three factors of 2.",
+            "steps": [
+              "The base is 2, so every repeated factor is 2.",
+              "The positive integer exponent 3 tells how many factors to use."
+            ],
+            "repair": "An exponent is not an instruction to multiply the base by the exponent. For a positive integer exponent, write the repeated factors first; 2^3 and 2 × 3 are different expressions."
+          },
+          "bridge": {
+            "prompt": "For nonzero p, simplify (p^2)^3 × p^4 to one power of p. Show the exponent calculations.",
+            "starter": "(p^2)^3 = p^2 × p^2 × p^2.",
+            "stepsToComplete": [
+              "Count how many factors of p occur in the three groups.",
+              "Combine that power with the remaining p^4.",
+              "Explain why you multiply exponents for a power of a power but add them for the final product."
+            ],
+            "answer": "p^10.",
+            "steps": [
+              "Each of the three groups has two factors of p, so (p^2)^3 = p^(2 × 3) = p^6.",
+              "Now multiply powers with the same base: p^6 × p^4 = p^(6 + 4) = p^10.",
+              "Grouping repeats groups of factors; multiplying the final powers joins their factors."
+            ],
+            "afterExample": 2
+          },
+          "rebuildOrder": [
+            "g8-t1-product-of-powers",
+            "g8-t1-quotient-of-powers",
+            "g8-t1-power-of-power",
+            "g8-t1-power-of-product"
+          ]
         },
         {
           "id": "1-7",
@@ -311,7 +480,38 @@
             "a^0 is 1 for nonzero a; it is not 0.",
             "A negative exponent and a negative coefficient are different: 4^(−2) = 1/16, while −4^2 = −16."
           ],
-          "practiceAdvice": "Rewrite each negative power as a reciprocal before combining terms. Include at least one negative base, one zero exponent, and one reciprocal of a negative power."
+          "practiceAdvice": "Rewrite each negative power as a reciprocal before combining terms. Include at least one negative base, one zero exponent, and one reciprocal of a negative power.",
+          "readiness": {
+            "prompt": "Evaluate 4^3/4^3 in two ways: evaluate the powers first, then use the quotient rule. What must 4^0 equal?",
+            "answer": "4^3/4^3 = 64/64 = 1 = 4^0.",
+            "steps": [
+              "Evaluating first gives 64/64 = 1.",
+              "Subtracting exponents gives 4^(3 − 3) = 4^0.",
+              "Both expressions describe the same nonzero quotient, so 4^0 = 1."
+            ],
+            "repair": "A nonzero number divided by itself is 1. Use that fact to understand the zero-exponent rule. This argument cannot use base zero because division by zero is undefined."
+          },
+          "bridge": {
+            "prompt": "Evaluate 2x^(−2) + y^0 for x = −3 and y = 5. Give an exact simplified fraction.",
+            "starter": "Substitute with parentheses and rewrite the negative power: 2/(−3)^2 + 5^0.",
+            "stepsToComplete": [
+              "Evaluate the square and the zero power.",
+              "Write the resulting integer with denominator 9.",
+              "Add and simplify; keep the coefficient 2 outside the square."
+            ],
+            "answer": "11/9.",
+            "steps": [
+              "(−3)^2 = 9, and 5^0 = 1 because 5 is nonzero.",
+              "The expression is 2/9 + 1 = 2/9 + 9/9.",
+              "Adding the numerators gives 11/9. A negative exponent creates a reciprocal, not a negative value."
+            ],
+            "afterExample": 2
+          },
+          "rebuildOrder": [
+            "g8-t1-negative-power-reciprocal",
+            "g8-t1-evaluate-zero-negative-powers",
+            "g8-t1-negative-power-denominator"
+          ]
         },
         {
           "id": "1-8",
@@ -350,7 +550,31 @@
             "One significant digit is not the same as one decimal place.",
             "Subtracting the counts answers how many more, not how many times as large."
           ],
-          "practiceAdvice": "Mark the first nonzero digit before rounding. Predict whether a comparison ratio should exceed 1."
+          "practiceAdvice": "Mark the first nonzero digit before rounding. Predict whether a comparison ratio should exceed 1.",
+          "readiness": {
+            "prompt": "Round 684 to the nearest hundred. Identify the digit that tells you whether to round up.",
+            "answer": "700; the tens digit 8 tells you to round up.",
+            "steps": [
+              "The hundreds digit is 6.",
+              "The next digit is 8, which is at least 5, so increase the hundreds digit to 7 and replace the following digits with zeros."
+            ],
+            "repair": "First identify the place you are rounding to. Inspect the next digit only to decide whether the retained digit stays or increases; then replace the later places appropriately."
+          },
+          "bridge": {
+            "prompt": "Round 0.0000476 to one significant digit and write the estimate as a digit times a power of ten.",
+            "starter": "The first nonzero digit is 4. The exact number is 4.76 × 10^(−5).",
+            "stepsToComplete": [
+              "Identify the digit immediately after 4 and decide whether to round up.",
+              "Keep one significant digit in the coefficient.",
+              "Use ≈ for the final estimate and check that it is still a small positive number."
+            ],
+            "answer": "0.0000476 ≈ 5 × 10^(−5).",
+            "steps": [
+              "The next digit is 7, so 4.76 rounds up to 5.",
+              "Keep the scale 10^(−5): the estimate is 5 × 10^(−5), or 0.00005.",
+              "The leading zeros locate the decimal place; they are not significant digits."
+            ]
+          }
         },
         {
           "id": "1-9",
@@ -389,7 +613,31 @@
             "40.06 × 10^6 has the right value but is not normalized scientific notation because its coefficient is at least 10.",
             "A negative exponent makes a positive quantity small; it does not make the quantity negative."
           ],
-          "practiceAdvice": "Convert each answer back as a check. Include coefficients containing zeros and values on both sides of 1; do not silently discard digits."
+          "practiceAdvice": "Convert each answer back as a check. Include coefficients containing zeros and values on both sides of 1; do not silently discard digits.",
+          "readiness": {
+            "prompt": "Write 10^3 and 10^(−3) in ordinary notation. Explain the role of the negative exponent.",
+            "answer": "10^3 = 1000; 10^(−3) = 1/1000 = 0.001.",
+            "steps": [
+              "10 × 10 × 10 = 1000.",
+              "The negative exponent gives the reciprocal of 1000, which is 0.001."
+            ],
+            "repair": "Build the power from multiplication first, then use a reciprocal for a negative exponent. A negative exponent changes scale; it does not make a positive base give a negative answer."
+          },
+          "bridge": {
+            "prompt": "Write 0.00608 in normalized scientific notation without rounding. Show how multiplying back checks your answer.",
+            "starter": "Move the decimal to make the coefficient 6.08, which is between 1 and 10.",
+            "stepsToComplete": [
+              "Count how many places connect 0.00608 and 6.08.",
+              "Choose the exponent sign so multiplication restores the small original number.",
+              "Multiply back and retain the zero between 6 and 8."
+            ],
+            "answer": "0.00608 = 6.08 × 10^(−3).",
+            "steps": [
+              "The decimal moves three places right to form 6.08.",
+              "To restore the original value, multiply 6.08 by 10^(−3), or divide by 1000.",
+              "6.08/1000 = 0.00608. The conversion is exact and keeps every given digit."
+            ]
+          }
         },
         {
           "id": "1-10",
@@ -430,7 +678,32 @@
             "Adding exponents is a multiplication rule, not an addition rule.",
             "Renormalizing only the coefficient changes the value. Adjust the exponent in the opposite direction."
           ],
-          "practiceAdvice": "Mix all four operations. First choose same-base exponent rules or a shared power of ten, then check the final coefficient."
+          "practiceAdvice": "Mix all four operations. First choose same-base exponent rules or a shared power of ten, then check the final coefficient.",
+          "readiness": {
+            "prompt": "Add 3 tens and 4 tens. Write the addition using a common factor of 10.",
+            "answer": "3 × 10 + 4 × 10 = (3 + 4) × 10 = 7 × 10 = 70.",
+            "steps": [
+              "Both addends count the same unit: a group of ten.",
+              "Add the counts of that unit and keep its value."
+            ],
+            "repair": "Addition combines like units. Three tens plus four tens is seven tens; it does not change the unit into hundreds. The same idea applies to a shared power of ten."
+          },
+          "bridge": {
+            "prompt": "Add (3.6 × 10^4) + (8 × 10^3). Give the exact result in normalized scientific notation.",
+            "starter": "Rewrite the first addend with the common power: 3.6 × 10^4 = 36 × 10^3.",
+            "stepsToComplete": [
+              "Add the coefficients while keeping the common power of ten.",
+              "Normalize the coefficient to be at least 1 and less than 10.",
+              "Check by adding the ordinary numbers."
+            ],
+            "answer": "4.4 × 10^4.",
+            "steps": [
+              "(36 × 10^3) + (8 × 10^3) = 44 × 10^3.",
+              "44 × 10^3 = 4.4 × 10^4 because dividing the coefficient by 10 is balanced by multiplying the power by 10.",
+              "36,000 + 8,000 = 44,000, confirming the result."
+            ],
+            "afterExample": 2
+          }
         },
         {
           "id": "1-11",
@@ -471,7 +744,32 @@
             "A constant-rate calculation depends on the rate staying constant."
           ],
           "practiceAdvice": "For each modeling exercise, write a sentence answering the question, attach units, and name one assumption. Check the result with a rough power-of-ten estimate.",
-          "sourceSectionTitle": "Hard-Working Organs"
+          "sourceSectionTitle": "Hard-Working Organs",
+          "readiness": {
+            "prompt": "Four files each contain 6 bytes. Find the total and write units in your multiplication.",
+            "answer": "4 files × 6 bytes per file = 24 bytes.",
+            "steps": [
+              "Multiply the number of files by the amount in each file.",
+              "The file units cancel, leaving bytes."
+            ],
+            "repair": "For equal groups, multiply the group count by the amount per group. Keep units visible to distinguish a total from a comparison such as how many times as large."
+          },
+          "bridge": {
+            "prompt": "A model has 12 files with 2.5 × 10^5 bytes in each file. Another collection totals 6 × 10^5 bytes. Find the first total in scientific notation, then how many times as large it is as the second.",
+            "starter": "First total = 12 × (2.5 × 10^5) bytes.",
+            "stepsToComplete": [
+              "Multiply and normalize the first total.",
+              "Divide that total by the second total, using the same byte units.",
+              "Write a sentence that distinguishes the total in bytes from the comparison ratio."
+            ],
+            "answer": "The first total is 3 × 10^6 bytes, which is 5 times as large as the second total.",
+            "steps": [
+              "12 × 2.5 × 10^5 = 30 × 10^5 = 3 × 10^6 bytes.",
+              "(3 × 10^6)/(6 × 10^5) = (3/6) × 10 = 5.",
+              "The total has byte units; the ratio compares bytes with bytes and has no byte unit."
+            ],
+            "afterExample": 2
+          }
         }
       ]
     },
@@ -519,7 +817,31 @@
             "Do not combine a variable term and a constant into one term.",
             "Subtracting a negative value produces addition; keep parentheses during substitution."
           ],
-          "practiceAdvice": "Underline like terms before solving. Write one equality-preserving operation per line, then check every answer in the starting equation."
+          "practiceAdvice": "Underline like terms before solving. Write one equality-preserving operation per line, then check every answer in the starting equation.",
+          "readiness": {
+            "prompt": "Simplify 3x + 4 + 2x. Explain why the 4 is kept separate from the x terms.",
+            "answer": "5x + 4.",
+            "steps": [
+              "3x and 2x count the same variable unit, so their coefficients add to 5.",
+              "The constant 4 has no x factor and is not a like term."
+            ],
+            "repair": "Group terms by their complete variable part. Three x units plus two x units gives five x units; a constant belongs to a separate group."
+          },
+          "bridge": {
+            "prompt": "Solve 6x + 7 − 2x = 27. Show each operation on both sides and check the original equation.",
+            "starter": "Combine the x terms: 4x + 7 = 27.",
+            "stepsToComplete": [
+              "Undo the addition of 7 on both sides.",
+              "Undo multiplication by 4 on both sides.",
+              "Substitute your answer into the original expression 6x + 7 − 2x."
+            ],
+            "answer": "x = 5.",
+            "steps": [
+              "Subtract 7 from both sides: 4x = 20.",
+              "Divide both sides by 4: x = 5.",
+              "Check: 6(5) + 7 − 2(5) = 30 + 7 − 10 = 27."
+            ]
+          }
         },
         {
           "id": "2-2",
@@ -560,7 +882,31 @@
             "Removing a variable term from only one side changes the equation.",
             "An answer written with the variable on the right is still a valid equality."
           ],
-          "practiceAdvice": "Solve one equation twice, gathering variables on opposite sides. The intermediate signs may differ, but both paths must give the same answer."
+          "practiceAdvice": "Solve one equation twice, gathering variables on opposite sides. The intermediate signs may differ, but both paths must give the same answer.",
+          "readiness": {
+            "prompt": "Solve x + 5 = 11 by writing the same operation on both sides.",
+            "answer": "x = 6.",
+            "steps": [
+              "Subtract 5 from both sides: x + 5 − 5 = 11 − 5.",
+              "Simplify to x = 6, then check 6 + 5 = 11."
+            ],
+            "repair": "An equation states that two expressions have equal values. Adding or subtracting the same amount on both sides preserves that equality; record the operation before simplifying."
+          },
+          "bridge": {
+            "prompt": "Solve 7x + 2 = 3x + 18. Complete the balance steps and check both original sides.",
+            "starter": "Subtract 3x from both sides: 4x + 2 = 18.",
+            "stepsToComplete": [
+              "Remove the constant from the variable side using the same operation on both sides.",
+              "Isolate x.",
+              "Evaluate each original side separately using your answer."
+            ],
+            "answer": "x = 4.",
+            "steps": [
+              "Subtract 2 from both sides: 4x = 16.",
+              "Divide both sides by 4: x = 4.",
+              "Left side: 7(4) + 2 = 30. Right side: 3(4) + 18 = 30."
+            ]
+          }
         },
         {
           "id": "2-3",
@@ -601,7 +947,31 @@
             "Distribute to the constant as well as the variable term.",
             "In the second example the outside factor is −2, so both distributed terms are negative."
           ],
-          "practiceAdvice": "Draw a small arrow from the outside factor to each grouped term. Check the expanded signs before collecting variables."
+          "practiceAdvice": "Draw a small arrow from the outside factor to each grouped term. Check the expanded signs before collecting variables.",
+          "readiness": {
+            "prompt": "Expand −2(t + 3). Write both products before simplifying.",
+            "answer": "−2t − 6.",
+            "steps": [
+              "Multiply −2 by t and by 3: (−2)t + (−2)(3).",
+              "Simplify the products to −2t − 6."
+            ],
+            "repair": "The outside factor multiplies every term inside parentheses. Keep its sign attached to each product; distributing only to the first term changes the expression."
+          },
+          "bridge": {
+            "prompt": "Solve 3(x + 2) = 2x + 11. Write one equality-preserving operation per line, then check.",
+            "starter": "Distribute 3 across the left side: 3x + 6 = 2x + 11.",
+            "stepsToComplete": [
+              "Subtract 2x from both sides.",
+              "Remove the remaining constant to isolate x.",
+              "Use the original parentheses when checking."
+            ],
+            "answer": "x = 5.",
+            "steps": [
+              "Subtract 2x: x + 6 = 11.",
+              "Subtract 6: x = 5.",
+              "Check: 3(5 + 2) = 21 and 2(5) + 11 = 21."
+            ]
+          }
         },
         {
           "id": "2-4",
@@ -642,7 +1012,31 @@
             "A denominator-clearing multiplier must also multiply terms without fractions.",
             "Do not cancel a denominator with just one term of a sum in the numerator."
           ],
-          "practiceAdvice": "Before computing, explain why your first multiplier simplifies the equation. Keep exact fractions or terminating decimals through the final check."
+          "practiceAdvice": "Before computing, explain why your first multiplier simplifies the equation. Keep exact fractions or terminating decimals through the final check.",
+          "readiness": {
+            "prompt": "Simplify 6(x/3 + 1). Show what the factor 6 multiplies.",
+            "answer": "2x + 6.",
+            "steps": [
+              "Distribute to both terms: 6(x/3) + 6(1).",
+              "6/3 = 2, so the first term is 2x and the second is 6."
+            ],
+            "repair": "A multiplier outside a sum must reach every term. When clearing denominators in an equation, apply that same rule to both complete sides, including whole-number terms."
+          },
+          "bridge": {
+            "prompt": "Solve x/2 + x/3 = 10. Keep the arithmetic exact and check your result.",
+            "starter": "Multiply every term by 6: 6(x/2) + 6(x/3) = 6(10).",
+            "stepsToComplete": [
+              "Simplify each product to remove the denominators.",
+              "Combine like terms, then isolate x.",
+              "Substitute into the original fractions."
+            ],
+            "answer": "x = 12.",
+            "steps": [
+              "The products give 3x + 2x = 60.",
+              "Combine to 5x = 60, then divide by 5: x = 12.",
+              "Check: 12/2 + 12/3 = 6 + 4 = 10."
+            ]
+          }
         },
         {
           "id": "2-5",
@@ -683,7 +1077,32 @@
             "A result of 0 = 0 does not mean the variable equals zero.",
             "Both no-solution and all-real-number equations can lose their variables; inspect the constants."
           ],
-          "practiceAdvice": "Write the final constant statement before naming the solution type. For each classification, explain why it applies to all possible values."
+          "practiceAdvice": "Write the final constant statement before naming the solution type. For each classification, explain why it applies to all possible values.",
+          "readiness": {
+            "prompt": "Which statements are true: 3 = 3 and 3 = 5? Can choosing a value of x change either statement?",
+            "answer": "3 = 3 is true; 3 = 5 is false. Neither depends on x.",
+            "steps": [
+              "Compare the two sides of each statement.",
+              "There is no x in either statement, so substituting a value of x changes nothing."
+            ],
+            "repair": "When variable terms cancel, stop looking for a missing x. Read the remaining equality as a true or false statement; that decides whether every value or no value can work."
+          },
+          "bridge": {
+            "prompt": "Classify the real solutions of A: 4(x + 2) = 4x + 8 and B: 4(x + 2) = 4x + 9. Show the final constant statement for each.",
+            "starter": "Both left sides expand to 4x + 8.",
+            "stepsToComplete": [
+              "Subtract 4x from both sides of each equation.",
+              "Decide whether each remaining equality is true or false.",
+              "State infinitely many solutions or no solution and explain why."
+            ],
+            "answer": "A has infinitely many real solutions; B has no solution.",
+            "steps": [
+              "A becomes 8 = 8, true independently of x, so every real x works.",
+              "B becomes 8 = 9, false independently of x, so no real x works.",
+              "A disappearing variable does not mean x = 0; the constant statement decides the solution set."
+            ],
+            "afterExample": 2
+          }
         },
         {
           "id": "2-6",
@@ -778,7 +1197,31 @@
             "A fixed fee is added once, not once per kit.",
             "An algebraic answer must fit the allowed quantities in the model."
           ],
-          "practiceAdvice": "Label units, state assumptions, and check actual totals. Explain a plan choice using both the order size and the pricing rule."
+          "practiceAdvice": "Label units, state assumptions, and check actual totals. Explain a plan choice using both the order size and the pricing rule.",
+          "readiness": {
+            "prompt": "A kit supplier charges a fixed $5 fee plus $3 per kit. Find the cost of 4 kits and show which charge is paid only once.",
+            "answer": "$17.",
+            "steps": [
+              "The four kits cost 3 × 4 = 12 dollars.",
+              "Add the fixed fee once: 5 + 12 = 17 dollars."
+            ],
+            "repair": "Separate a fixed charge from a rate. Multiply only the per-kit charge by the kit count; then add the fixed charge once."
+          },
+          "bridge": {
+            "prompt": "Plan A costs $8 plus $3 per kit. Plan B costs $2 plus $5 per kit. Find the whole-number kit count where they match, then compare costs for 4 kits.",
+            "starter": "Let n be the number of kits. Matching costs satisfy 8 + 3n = 2 + 5n.",
+            "stepsToComplete": [
+              "Subtract 3n and then 2 from both sides to solve the equation.",
+              "Find both costs at the matching count.",
+              "Calculate both costs at 4 kits and name the cheaper plan."
+            ],
+            "answer": "They match at 3 kits for $17. At 4 kits, A costs $20 and B costs $22, so A is cheaper.",
+            "steps": [
+              "Subtract 3n: 8 = 2 + 2n. Subtract 2: 6 = 2n, so n = 3.",
+              "A(3) = 8 + 9 = 17 and B(3) = 2 + 15 = 17.",
+              "A(4) = 8 + 12 = 20; B(4) = 2 + 20 = 22. The comparison assumes the stated charges cover the same kits."
+            ]
+          }
         },
         {
           "id": "2-7",
@@ -875,7 +1318,30 @@
             "A single nonzero pair alone does not prove an unknown relationship is proportional.",
             "Do not compare raw totals from different input amounts."
           ],
-          "practiceAdvice": "Write the unit beside every rate. Convert each representation to output per one input before deciding which rate is larger."
+          "practiceAdvice": "Write the unit beside every rate. Convert each representation to output per one input before deciding which rate is larger.",
+          "readiness": {
+            "prompt": "A machine makes 12 cups in 3 minutes at a constant rate. Find cups per minute and label the units of your division.",
+            "answer": "4 cups per minute.",
+            "steps": [
+              "Divide output by time: 12 cups ÷ 3 minutes = 4 cups per minute."
+            ],
+            "repair": "The words per minute ask how many cups correspond to one minute. Put the cup count in the numerator and minutes in the denominator; reversing them gives a different rate."
+          },
+          "bridge": {
+            "prompt": "Machine A makes 10 tickets in 2 minutes and 20 tickets in 4 minutes at a constant proportional rate. Machine B follows y = 6x, with minutes x and tickets y. Which makes more tickets in 3 minutes, and by how many?",
+            "starter": "Machine A’s first rate calculation is 10 tickets ÷ 2 minutes.",
+            "stepsToComplete": [
+              "Check A’s rate using both observations.",
+              "Read B’s tickets-per-minute rate from its equation.",
+              "Find each 3-minute output and subtract."
+            ],
+            "answer": "B makes 18 tickets while A makes 15, so B makes 3 more tickets.",
+            "steps": [
+              "A makes 10/2 = 5 tickets per minute, matching 20/4 = 5.",
+              "B makes 6 tickets per minute.",
+              "At 3 minutes, A makes 5(3) = 15 and B makes 6(3) = 18; 18 − 15 = 3 tickets."
+            ]
+          }
         },
         {
           "id": "2-8",
@@ -1058,7 +1524,31 @@
             "Use the same point order in the numerator and denominator.",
             "Slope is rise divided by run; swapping the ratio usually changes the answer."
           ],
-          "practiceAdvice": "Mark two points, draw the horizontal and vertical moves, and label signed changes before calculating the slope."
+          "practiceAdvice": "Mark two points, draw the horizontal and vertical moves, and label signed changes before calculating the slope.",
+          "readiness": {
+            "prompt": "Moving from (−1, 2) to (3, 10), find the change in x and the change in y. Keep the same point order in both subtractions.",
+            "answer": "Change in x = 4; change in y = 8.",
+            "steps": [
+              "Horizontal change: 3 − (−1) = 4.",
+              "Vertical change: 10 − 2 = 8."
+            ],
+            "repair": "Use ending coordinate minus starting coordinate for both changes. Subtracting a negative adds its opposite. Slope will compare these two changes in the same direction."
+          },
+          "bridge": {
+            "prompt": "A line passes through (0, 0), (3, 6), and (6, 12). Find its slope using two different adjacent pairs, and explain why the results agree.",
+            "starter": "For the first pair, slope = (6 − 0)/(3 − 0) = 6/3.",
+            "stepsToComplete": [
+              "Simplify the first ratio.",
+              "Calculate rise divided by run from (3, 6) to (6, 12).",
+              "Explain what the equal ratios say about the line’s rate."
+            ],
+            "answer": "Both slopes are 2: the output rises 2 units for each 1-unit increase in input.",
+            "steps": [
+              "For the first pair, 6/3 = 2.",
+              "For the second pair, (12 − 6)/(6 − 3) = 6/3 = 2.",
+              "The same straight line has a constant rise/run ratio; both triangles give its rate."
+            ]
+          }
         },
         {
           "id": "2-9",
@@ -1184,7 +1674,31 @@
             "A proportional line always includes the origin, even when the table does not list it.",
             "A negative input and negative slope can produce a positive output."
           ],
-          "practiceAdvice": "Move among equation, table, and graph for the same relationship. Include a negative input and verify every coordinate pair."
+          "practiceAdvice": "Move among equation, table, and graph for the same relationship. Include a negative input and verify every coordinate pair.",
+          "readiness": {
+            "prompt": "For y = 3x, find y when x = 2 and write the matching ordered pair.",
+            "answer": "y = 6; the point is (2, 6).",
+            "steps": [
+              "Replace x by 2: y = 3(2) = 6.",
+              "An ordered pair lists input first and output second."
+            ],
+            "repair": "Substitute the input only for its variable. After calculating the output, write (input, output); do not reverse the coordinates."
+          },
+          "bridge": {
+            "prompt": "For y = (2/3)x, find the points for x = 0, 3, and 6. State the slope and describe the rise and run between adjacent points.",
+            "starter": "At x = 0, y = (2/3)(0) = 0, so the first point is (0, 0).",
+            "stepsToComplete": [
+              "Substitute x = 3 and x = 6.",
+              "Write each result as an ordered pair.",
+              "Describe how much x and y change between neighboring points."
+            ],
+            "answer": "(0, 0), (3, 2), and (6, 4); slope 2/3, with a rise of 2 for a run of 3.",
+            "steps": [
+              "At x = 3, y = (2/3)(3) = 2.",
+              "At x = 6, y = (2/3)(6) = 4.",
+              "Each 3-unit increase in x gives a 2-unit increase in y. These points lie on the proportional line through the origin."
+            ]
+          }
         },
         {
           "id": "2-10",
@@ -1349,7 +1863,32 @@
             "The y-intercept has input zero; the x-intercept has output zero.",
             "The first row of a table is not necessarily the starting value at zero."
           ],
-          "practiceAdvice": "Label the input and output axes, locate input zero, and state what the intercept means using the situation's units."
+          "practiceAdvice": "Label the input and output axes, locate input zero, and state what the intercept means using the situation's units.",
+          "readiness": {
+            "prompt": "Which point lies on the y-axis: (0, 5) or (5, 0)? Explain using the horizontal coordinate.",
+            "answer": "(0, 5) lies on the y-axis.",
+            "steps": [
+              "A point on the y-axis has no horizontal displacement, so its x-coordinate is 0.",
+              "(5, 0) lies on the x-axis instead."
+            ],
+            "repair": "Coordinates are written (x, y). The y-axis is the vertical line where x = 0; the y-coordinate tells how far up or down the point lies."
+          },
+          "bridge": {
+            "prompt": "A linear relationship contains (2, 9) and (3, 11). Work backward to find its y-intercept, giving both the value and the point.",
+            "starter": "From x = 2 to x = 3, y increases by 2, so the rate is 2 output units per input unit.",
+            "stepsToComplete": [
+              "Starting at (2, 9), move back to x = 1 and find y.",
+              "Move back once more to x = 0.",
+              "Write the y-intercept as a value and an ordered pair."
+            ],
+            "answer": "The y-intercept is 5, at (0, 5).",
+            "steps": [
+              "One step backward lowers y by 2: at x = 1, y = 7.",
+              "One more step backward gives x = 0 and y = 5.",
+              "The intercept is the output at input zero, so its point is (0, 5)."
+            ],
+            "afterExample": 2
+          }
         },
         {
           "id": "2-11",
@@ -1430,7 +1969,31 @@
             "The coefficient gives a rate; the constant gives an initial amount, with different units.",
             "Two points with equal x-values define a vertical line, which cannot be written as y = mx + b."
           ],
-          "practiceAdvice": "After constructing an equation, check both supplied points or quantities. Explain the slope and intercept before making a prediction."
+          "practiceAdvice": "After constructing an equation, check both supplied points or quantities. Explain the slope and intercept before making a prediction.",
+          "readiness": {
+            "prompt": "Write the equation of a line with slope 3 and y-intercept −2 in the form y = mx + b.",
+            "answer": "y = 3x − 2.",
+            "steps": [
+              "Replace m by 3 and b by −2.",
+              "Adding −2 is written as subtracting 2."
+            ],
+            "repair": "In y = mx + b, m multiplies the input and b is added afterward. Keep the intercept’s sign when substituting; a negative intercept does not change the slope."
+          },
+          "bridge": {
+            "prompt": "Find the equation of the line through (1, 5) and (3, 9), then verify it with the second point.",
+            "starter": "Slope m = (9 − 5)/(3 − 1) = 2. The equation therefore has the form y = 2x + b.",
+            "stepsToComplete": [
+              "Substitute the first point into y = 2x + b.",
+              "Solve for b and write the complete equation.",
+              "Substitute the second point to check."
+            ],
+            "answer": "y = 2x + 3.",
+            "steps": [
+              "Using (1, 5), write 5 = 2(1) + b.",
+              "Subtract 2 to get b = 3, so y = 2x + 3.",
+              "At x = 3, the rule gives y = 2(3) + 3 = 9, matching the second point."
+            ]
+          }
         }
       ]
     },
@@ -1524,7 +2087,30 @@
             "A repeated output does not break the function rule.",
             "Do not swap inputs and outputs when checking repeated values."
           ],
-          "practiceAdvice": "Mark repeated inputs first. If you reject a relation, name one input and its two different outputs; if you accept it, check every listed input."
+          "practiceAdvice": "Mark repeated inputs first. If you reject a relation, name one input and its two different outputs; if you accept it, check every listed input.",
+          "readiness": {
+            "prompt": "In the ordered pair (−2, 7), identify the input and the output.",
+            "answer": "Input −2; output 7.",
+            "steps": [
+              "An ordered pair lists the input x first and the output y second."
+            ],
+            "repair": "Read pairs in order: first the input, then its assigned output. Function questions compare what happens to the same input, not whether outputs repeat."
+          },
+          "bridge": {
+            "prompt": "The relation is (1, 4), (2, 4), (1, 6). Decide whether it is a function. Then decide whether removing (1, 6) would make it a function.",
+            "starter": "The pair (1, 4) assigns output 4 to input 1.",
+            "stepsToComplete": [
+              "Find any other pair with input 1 and compare its output.",
+              "Apply the exactly-one-output rule.",
+              "After removing (1, 6), check every remaining input; explain whether the repeated output 4 is allowed."
+            ],
+            "answer": "The original relation is not a function. After removing (1, 6), it is a function.",
+            "steps": [
+              "The pair (1, 6) gives input 1 a second, different output, so the original fails the function rule.",
+              "After removal, input 1 has output 4 and input 2 has output 4.",
+              "Different inputs may share an output; each input now has exactly one output."
+            ]
+          }
         },
         {
           "id": "3-2",
@@ -1695,7 +2281,31 @@
             "A plotted point is written input first, output second.",
             "The initial fee is an output, not the hourly rate."
           ],
-          "practiceAdvice": "Translate a rule into three points, then reconstruct the rule from those points. Label units before deciding whether intermediate inputs make sense."
+          "practiceAdvice": "Translate a rule into three points, then reconstruct the rule from those points. Label units before deciding whether intermediate inputs make sense.",
+          "readiness": {
+            "prompt": "Use y = 3x + 1 to find the output at input 2. Show multiplication before addition.",
+            "answer": "y = 7.",
+            "steps": [
+              "Substitute x = 2: y = 3(2) + 1.",
+              "Multiply to get 6, then add 1 to get 7."
+            ],
+            "repair": "An equation is an input-to-output rule. Substitute the input, perform multiplication before addition, and then write the resulting output beside that input."
+          },
+          "bridge": {
+            "prompt": "A parking model charges $2 plus $3 per hour. Make a cost table for 0, 1, and 2 hours and give the corresponding graph points.",
+            "starter": "The rule is C = 3h + 2. At h = 0, C = 2, so the first pair is (0, 2).",
+            "stepsToComplete": [
+              "Calculate the cost at h = 1 and h = 2.",
+              "Write all three rows as (hours, dollars) pairs.",
+              "Name the quantities on the horizontal and vertical graph axes."
+            ],
+            "answer": "(0, 2), (1, 5), and (2, 8); hours on the horizontal axis and cost in dollars on the vertical axis.",
+            "steps": [
+              "C(1) = 3(1) + 2 = 5 dollars.",
+              "C(2) = 3(2) + 2 = 8 dollars.",
+              "Each table row becomes one point, with its hour input first and cost output second."
+            ]
+          }
         },
         {
           "id": "3-3",
@@ -1808,7 +2418,32 @@
             "A decreasing line is still linear.",
             "A large output does not establish a large rate."
           ],
-          "practiceAdvice": "For every comparison, write two separate labels: starting output and rate. Check at least two consecutive intervals when judging a table."
+          "practiceAdvice": "For every comparison, write two separate labels: starting output and rate. Check at least two consecutive intervals when judging a table.",
+          "readiness": {
+            "prompt": "At inputs 0, 1, and 2, the outputs are 4, 7, and 10. Find the output change for each 1-unit input increase.",
+            "answer": "Both output changes are 3.",
+            "steps": [
+              "7 − 4 = 3 and 10 − 7 = 3.",
+              "The input changes are both 1, so the two rates are both 3/1 = 3."
+            ],
+            "repair": "Check input changes before comparing output changes. When input steps are equal, equal output changes mean equal rates over those intervals."
+          },
+          "bridge": {
+            "prompt": "A table contains (0, 1), (2, 5), and (5, 11). Do these points fit one straight line? Use rates, and state what the table alone cannot establish about unlisted inputs.",
+            "starter": "From the first pair to the second, rate = (5 − 1)/(2 − 0) = 2.",
+            "stepsToComplete": [
+              "Calculate the rate from (2, 5) to (5, 11).",
+              "Compare the two rates, accounting for the unequal input steps.",
+              "Separate a conclusion about these points from a claim about all other inputs."
+            ],
+            "answer": "The shown points fit a line with slope 2. The table alone does not prove the rule stays linear at unlisted inputs.",
+            "steps": [
+              "The second rate is (11 − 5)/(5 − 2) = 6/3 = 2.",
+              "Both rates are 2, so these three points lie on one straight line.",
+              "A rule or modeling assumption is needed to say how the function behaves between or beyond the listed inputs."
+            ],
+            "afterExample": 2
+          }
         },
         {
           "id": "3-4",
@@ -1924,7 +2559,32 @@
             "Keep point order consistent in both parts of the slope fraction.",
             "Negative predicted volume signals that the draining model has left its domain."
           ],
-          "practiceAdvice": "After finding a rule, substitute both original points. Finish each word problem with a sentence identifying the units and allowed inputs."
+          "practiceAdvice": "After finding a rule, substitute both original points. Finish each word problem with a sentence identifying the units and allowed inputs.",
+          "readiness": {
+            "prompt": "A container begins with 20 liters and loses 3 liters each minute. How much remains after 1 minute and after 2 minutes?",
+            "answer": "17 liters after 1 minute; 14 liters after 2 minutes.",
+            "steps": [
+              "After 1 minute: 20 − 3 = 17 liters.",
+              "After 2 minutes: 20 − 2(3) = 14 liters."
+            ],
+            "repair": "Keep the starting amount and repeated change separate. Losing a fixed amount each minute means subtracting rate × elapsed time from the initial amount."
+          },
+          "bridge": {
+            "prompt": "A tank begins with 30 liters and drains steadily at 5 liters per minute until empty. Find its volume after 4 minutes, when it empties, and the time interval where the draining rule applies.",
+            "starter": "Let t be minutes and V be liters. While it drains, V = 30 − 5t.",
+            "stepsToComplete": [
+              "Substitute t = 4.",
+              "Set V = 0 and solve for t.",
+              "State the allowed times from the start through emptying, with units."
+            ],
+            "answer": "10 liters after 4 minutes; empty at 6 minutes; the rule applies for 0 ≤ t ≤ 6 minutes.",
+            "steps": [
+              "V(4) = 30 − 5(4) = 10 liters.",
+              "0 = 30 − 5t gives 5t = 30, so t = 6 minutes.",
+              "Times begin at 0. After 6 minutes this rule would predict negative volume, so it no longer describes the tank."
+            ],
+            "afterExample": 2
+          }
         },
         {
           "id": "3-5",
@@ -2018,7 +2678,33 @@
             "A model comparison is incomplete until its practical meaning is stated."
           ],
           "practiceAdvice": "Compare plans in a table. Identify one assumption, such as a time limit, that could change the decision.",
-          "sourceSectionTitle": "Breaking Point"
+          "sourceSectionTitle": "Breaking Point",
+          "readiness": {
+            "prompt": "At h = 2, compare costs in dollars A = 4 + 2h and B = 1 + 3h. Show both totals and identify the lower one.",
+            "answer": "A = $8 and B = $7; B is lower by $1.",
+            "steps": [
+              "A = 4 + 2(2) = 8.",
+              "B = 1 + 3(2) = 7.",
+              "Compare costs at the same input: 8 − 7 = 1."
+            ],
+            "repair": "Compare models using the same input and matching units. A smaller starting charge alone does not settle the total once the changing part is included."
+          },
+          "bridge": {
+            "prompt": "A square design uses S(n) = n^2 tiles. A strip design uses T(n) = 2n + 3 tiles. Complete their counts for whole-number sizes 1, 2, 3, and 4; classify their growth and compare them at size 4.",
+            "starter": "At n = 1, S(1) = 1 and T(1) = 5.",
+            "stepsToComplete": [
+              "Calculate both counts at n = 2, 3, and 4.",
+              "Compare successive output changes for each design.",
+              "Name the linear and nonlinear rules, then state which uses more tiles at size 4."
+            ],
+            "answer": "S counts: 1, 4, 9, 16, nonlinear. T counts: 5, 7, 9, 11, linear. At size 4, the square uses 5 more tiles.",
+            "steps": [
+              "S(2) = 4, S(3) = 9, and S(4) = 16; the changes are 3, 5, and 7.",
+              "T(2) = 7, T(3) = 9, and T(4) = 11; each change is 2.",
+              "Only T has constant growth for equal size steps. At n = 4, 16 − 11 = 5 tiles."
+            ],
+            "afterExample": 2
+          }
         },
         {
           "id": "3-6",
@@ -2145,7 +2831,31 @@
             "Give intervals in input units, not the output values at their endpoints.",
             "Below zero does not mean decreasing."
           ],
-          "practiceAdvice": "Trace each segment with a finger from left to right. Say the input interval, the behavior, and then the starting and ending outputs."
+          "practiceAdvice": "Trace each segment with a finger from left to right. Say the input interval, the behavior, and then the starting and ending outputs.",
+          "readiness": {
+            "prompt": "As the input increases, an output changes from −5 to −2. Did the output increase or decrease? Show the signed change.",
+            "answer": "It increased by 3 because −2 − (−5) = 3.",
+            "steps": [
+              "−2 lies to the right of −5 on a number line and is greater.",
+              "A positive change means the output increased even though both outputs are negative."
+            ],
+            "repair": "Increasing describes a change, not a sign. Compare the later output with the earlier output; a negative value can increase while staying below zero."
+          },
+          "bridge": {
+            "prompt": "A graph connects (0, 2), (2, 6), (5, 6), and (7, 0) with straight segments. Give the intervals where it increases, stays constant, and decreases, using input values.",
+            "starter": "From input 0 to input 2, the output rises from 2 to 6, so that segment is increasing.",
+            "stepsToComplete": [
+              "Read the output change from input 2 to input 5.",
+              "Read the output change from input 5 to input 7.",
+              "State all three intervals using the horizontal-axis values."
+            ],
+            "answer": "Increasing from 0 to 2; constant from 2 to 5; decreasing from 5 to 7.",
+            "steps": [
+              "From 2 to 5 the output stays at 6, so this segment is constant.",
+              "From 5 to 7 the output falls from 6 to 0, so this segment is decreasing.",
+              "The interval endpoints are input coordinates; the output heights explain the behavior."
+            ]
+          }
         },
         {
           "id": "3-7",
@@ -2280,7 +2990,31 @@
             "Add each stage duration to elapsed time; do not use it as the new time coordinate.",
             "A horizontal distance-from-home segment means the distance is unchanged, not necessarily that all possible motion has stopped."
           ],
-          "practiceAdvice": "Write a stage table with duration, rate, and ending output before drawing. Check that adjacent segments meet whenever the situation changes continuously."
+          "practiceAdvice": "Write a stage table with duration, rate, and ending output before drawing. Check that adjacent segments meet whenever the situation changes continuously.",
+          "readiness": {
+            "prompt": "A person walks at 40 meters per minute for 3 minutes. Find the distance and show the units.",
+            "answer": "120 meters.",
+            "steps": [
+              "40 meters per minute × 3 minutes = 120 meters."
+            ],
+            "repair": "At constant speed, distance equals speed × time. Keep elapsed time separate from clock time, and use the distance already reached as the starting point for the next stage."
+          },
+          "bridge": {
+            "prompt": "A walker leaves home at 30 meters per minute for 2 minutes, waits for 1 minute, then returns home at 60 meters per minute. Give the transition points for a distance-from-home graph and describe how to connect them.",
+            "starter": "Use time in minutes horizontally and distance from home in meters vertically. The first points are (0, 0) and (2, 60).",
+            "stepsToComplete": [
+              "Find the point at the end of the 1-minute wait.",
+              "Calculate how long the 60-meter return takes and add it to the elapsed time.",
+              "List the points in time order and describe each connecting segment."
+            ],
+            "answer": "(0, 0), (2, 60), (3, 60), and (4, 0), joined by rising, horizontal, then falling straight segments.",
+            "steps": [
+              "Waiting adds 1 minute without changing distance, giving (3, 60).",
+              "Returning 60 meters at 60 meters per minute takes 1 minute, so arrival is at time 4 and distance 0.",
+              "Each speed is constant within its stage, so use straight segments. The graph records distance from home, not a route map."
+            ],
+            "afterExample": 2
+          }
         }
       ]
     },
@@ -2408,7 +3142,31 @@
             "Do not join scatter-plot points as if they were a time-ordered path.",
             "An outlier is a reason to investigate, not automatic permission to delete data."
           ],
-          "practiceAdvice": "Describe a plot in one sentence naming direction, shape, and exceptions. Use association language rather than claiming that x causes y."
+          "practiceAdvice": "Describe a plot in one sentence naming direction, shape, and exceptions. Use association language rather than claiming that x causes y.",
+          "readiness": {
+            "prompt": "In a scatter plot of practice rounds x and tokens earned y, what does the point (2, 9) represent?",
+            "answer": "One observation with 2 practice rounds and 9 tokens earned.",
+            "steps": [
+              "The first coordinate belongs to the horizontal variable: rounds.",
+              "The second coordinate belongs to the vertical variable: tokens."
+            ],
+            "repair": "A scatter-plot point keeps two measurements from the same observation together. Read each coordinate with its axis label before describing a pattern across observations."
+          },
+          "bridge": {
+            "prompt": "An invented dataset contains (1, 7), (2, 6), (3, 4), and (4, 3). Describe its direction and approximate form. Does the pattern alone prove that changing x causes y to change?",
+            "starter": "From the first observation to the second, x rises from 1 to 2 while y falls from 7 to 6.",
+            "stepsToComplete": [
+              "Check whether the later observations continue that direction.",
+              "Decide whether the points approximately follow a straight line or an obvious curve.",
+              "Separate the observed association from a claim about cause."
+            ],
+            "answer": "Negative, approximately linear association; it does not establish causation.",
+            "steps": [
+              "Larger x-values are paired with smaller y-values throughout these observations.",
+              "The output drops by 1, 2, then 1 for equal input steps, staying near a falling straight line.",
+              "A pattern of paired observations alone cannot rule out other explanations or prove causation."
+            ]
+          }
         },
         {
           "id": "4-2",
@@ -2529,7 +3287,31 @@
             "Do not sort the two data columns separately; that destroys the pairs.",
             "An unevenly spaced numerical scale can create a misleading shape."
           ],
-          "practiceAdvice": "Read two plotted points back into the table. Check units, tick spacing, and curvature before describing the trend."
+          "practiceAdvice": "Read two plotted points back into the table. Check units, tick spacing, and curvature before describing the trend.",
+          "readiness": {
+            "prompt": "A grid counts 1 per horizontal tick and 4 per vertical tick. To plot (3, 12) from the origin, how many tick intervals do you move right and up?",
+            "answer": "3 intervals right and 3 intervals up.",
+            "steps": [
+              "Horizontal: 3/1 = 3 tick intervals.",
+              "Vertical: 12/4 = 3 tick intervals."
+            ],
+            "repair": "A coordinate is a value, not necessarily a count of grid squares. Divide the coordinate by the labeled interval when starting at zero; check each axis scale separately."
+          },
+          "bridge": {
+            "prompt": "Sketch a scatter plot for (1, 4), (2, 7), and (3, 6), using intervals of 1 on each axis. Label the axes x and y. Explain whether to join the points.",
+            "starter": "From the origin, the first point is 1 interval right and 4 intervals up.",
+            "stepsToComplete": [
+              "Plot the other two points using x first and y second.",
+              "Check each plotted point against its original pair.",
+              "Explain why a scatter plot keeps these observations as separate points."
+            ],
+            "answer": "Plot the three separate points (1, 4), (2, 7), and (3, 6); do not join them.",
+            "steps": [
+              "The second point is 2 intervals right and 7 up; the third is 3 right and 6 up.",
+              "Read back each horizontal and vertical coordinate to check its pairing.",
+              "The points are paired observations. Connecting them would add a path or between-point behavior that the data do not specify."
+            ]
+          }
         },
         {
           "id": "4-3",
@@ -2773,7 +3555,31 @@
             "Signed errors can cancel; compare the sum of their absolute values when that is the stated criterion.",
             "A reasonable fit does not establish a cause-and-effect relationship."
           ],
-          "practiceAdvice": "Make a prediction-and-error table for every observation. State the comparison rule, total the absolute errors, and check that the chosen line also follows the plotted pattern."
+          "practiceAdvice": "Make a prediction-and-error table for every observation. State the comparison rule, total the absolute errors, and check that the chosen line also follows the plotted pattern.",
+          "readiness": {
+            "prompt": "A model predicts 10 and the observed value is 8. Find the residual and its absolute vertical error.",
+            "answer": "Residual −2; absolute vertical error 2.",
+            "steps": [
+              "Residual = observed − predicted = 8 − 10 = −2.",
+              "The absolute error is the distance from zero: 2."
+            ],
+            "repair": "Subtract predicted from observed in that order. Keep the sign to say above or below the model; use its absolute value when measuring distance so errors do not cancel."
+          },
+          "bridge": {
+            "prompt": "For observations (1, 4), (2, 5), and (3, 8), compare A: y = 2x + 1 and B: y = 2x + 3 using total absolute vertical error. Show predictions and errors for each point.",
+            "starter": "At x = 1, A predicts 3 and B predicts 5. The observed value 4 is 1 unit from either prediction.",
+            "stepsToComplete": [
+              "Find both predictions at x = 2 and x = 3.",
+              "Calculate each absolute error and total the three errors for each model.",
+              "Choose the smaller total and limit the conclusion to these candidates and observations."
+            ],
+            "answer": "A has total error 2; B has total error 4. A fits better by this measure.",
+            "steps": [
+              "At x = 2, A predicts 5 with error 0; B predicts 7 with error 2.",
+              "At x = 3, A predicts 7 with error 1; B predicts 9 with error 1.",
+              "A: 1 + 0 + 1 = 2. B: 1 + 2 + 1 = 4. A has the smaller total for these data, not a guarantee of perfect future predictions."
+            ]
+          }
         },
         {
           "id": "4-4",
@@ -2891,7 +3697,31 @@
             "Do not present a fitted value as an exact future observation.",
             "A correct substitution can still produce a prediction the situation cannot support."
           ],
-          "practiceAdvice": "Label predictions as interpolation or extrapolation, then check their physical limits."
+          "practiceAdvice": "Label predictions as interpolation or extrapolation, then check their physical limits.",
+          "readiness": {
+            "prompt": "For y = 2x + 3, calculate the predicted output at x = 4.",
+            "answer": "y = 11.",
+            "steps": [
+              "Substitute 4 for x: y = 2(4) + 3.",
+              "Multiply, then add: 8 + 3 = 11."
+            ],
+            "repair": "A model equation calculates a prediction using the same substitution rules as an exact equation. Identify the input, substitute it, and keep track of the output units."
+          },
+          "bridge": {
+            "prompt": "A delivery model is T = 3d + 4 minutes for route distance d in kilometers. Observed distances range from 2 to 8 km. Predict at 6 km and 10 km, and classify each use as interpolation or extrapolation.",
+            "starter": "At 6 km, substitute d = 6: T = 3(6) + 4.",
+            "stepsToComplete": [
+              "Finish the 6-km prediction, then calculate the 10-km prediction.",
+              "Compare each input with the observed range 2–8 km.",
+              "Explain why the farther prediction needs extra caution."
+            ],
+            "answer": "6 km: 22 minutes, interpolation. 10 km: 34 minutes, extrapolation.",
+            "steps": [
+              "T(6) = 18 + 4 = 22 minutes. Since 6 is within the observed range, this is interpolation.",
+              "T(10) = 30 + 4 = 34 minutes. Since 10 exceeds the observed range, this is extrapolation.",
+              "Conditions or rates outside the sampled distances may differ; neither prediction guarantees an individual delivery time."
+            ]
+          }
         },
         {
           "id": "4-5",
@@ -3029,7 +3859,31 @@
             "A model intercept can be meaningless outside the observed setting."
           ],
           "practiceAdvice": "Recommend an estimate with units and one limitation. Identify a new observation that would test an uncertain prediction.",
-          "sourceSectionTitle": "Reach Out"
+          "sourceSectionTitle": "Reach Out",
+          "readiness": {
+            "prompt": "One volunteer completes 12 kits and two volunteers complete 19 kits in separate one-hour observations. Find the change in kits per additional volunteer between these observations.",
+            "answer": "7 kits per additional volunteer.",
+            "steps": [
+              "The kit increase is 19 − 12 = 7.",
+              "The volunteer increase is 2 − 1 = 1, so the observed rate is 7/1 = 7."
+            ],
+            "repair": "A rate compares two changes with units. These observations provide evidence about a pattern; they do not by themselves guarantee that adding any volunteer will always add that many kits."
+          },
+          "bridge": {
+            "prompt": "Invented observations are (volunteers, kits): (1, 10), (2, 15), and (3, 23). Assess K = 6v + 4 by comparing all three predictions, then predict for 4 volunteers and state a limitation.",
+            "starter": "At v = 1, the model predicts K = 6(1) + 4 = 10, matching the observation.",
+            "stepsToComplete": [
+              "Calculate predictions at v = 2 and v = 3 and compare them with 15 and 23.",
+              "Predict at v = 4.",
+              "State whether 4 is within the observed volunteer range and why the result is an estimate."
+            ],
+            "answer": "Predictions are 10, 16, and 22, each within 1 kit of the data. At 4 volunteers the prediction is 28 kits, an extrapolation.",
+            "steps": [
+              "At v = 2, the model predicts 16, one above the observed 15.",
+              "At v = 3, it predicts 22, one below the observed 23; it is a close approximate fit to these three observations.",
+              "K(4) = 28. Four volunteers is outside the observed range 1–3; space, materials, or differing work rates could change the outcome."
+            ]
+          }
         },
         {
           "id": "4-6",
@@ -3180,7 +4034,31 @@
             "Do not add interior cells and their totals together; that double-counts observations.",
             "Reversing the phrase among changes the denominator."
           ],
-          "practiceAdvice": "Label the requested group before dividing. Reconcile row and column totals when filling missing entries."
+          "practiceAdvice": "Label the requested group before dividing. Reconcile row and column totals when filling missing entries.",
+          "readiness": {
+            "prompt": "A group has 12 participants choosing drawing and 8 choosing music. Each participant chooses exactly one. Find the group total and explain why addition is appropriate.",
+            "answer": "20 participants.",
+            "steps": [
+              "The two categories do not overlap and include everyone.",
+              "Add their counts: 12 + 8 = 20."
+            ],
+            "repair": "Add mutually exclusive category counts to find a total. If people can belong to both categories, simple addition could count someone twice; first check how the categories are defined."
+          },
+          "bridge": {
+            "prompt": "Morning participants: 6 prefer outdoors and 4 indoors. Afternoon participants: 3 prefer outdoors and 7 indoors. Each belongs to one session and chooses one preference. Find both session totals, both preference totals, and the grand total.",
+            "starter": "The morning total is 6 + 4 = 10 participants.",
+            "stepsToComplete": [
+              "Find the afternoon total.",
+              "Add the outdoor counts and then the indoor counts across sessions.",
+              "Find the grand total by both rows and columns and check agreement."
+            ],
+            "answer": "Morning 10; afternoon 10; outdoors 9; indoors 11; grand total 20.",
+            "steps": [
+              "Afternoon: 3 + 7 = 10.",
+              "Outdoors: 6 + 3 = 9. Indoors: 4 + 7 = 11.",
+              "Row totals give 10 + 10 = 20; column totals give 9 + 11 = 20. Both count every participant once."
+            ]
+          }
         },
         {
           "id": "4-7",
@@ -3287,17 +4165,42 @@
             "A row-conditional table sums to 100% across each complete row, not across the entire table.",
             "A difference of 20 percentage points is not automatically a 20% relative increase."
           ],
-          "practiceAdvice": "Name exactly whom each denominator counts. Compare percentages using matching groups and outcomes."
+          "practiceAdvice": "Name exactly whom each denominator counts. Compare percentages using matching groups and outcomes.",
+          "readiness": {
+            "prompt": "Nine of 12 participants choose fruit. Write the fraction in simplest form and convert it to a percentage.",
+            "answer": "9/12 = 3/4 = 75%.",
+            "steps": [
+              "Divide numerator and denominator by 3: 9/12 = 3/4.",
+              "3/4 = 0.75, and 0.75 × 100% = 75%."
+            ],
+            "repair": "A relative frequency compares a selected count with the total group named in the question. Divide count by group total, then multiply by 100 for a percentage."
+          },
+          "bridge": {
+            "prompt": "Morning: 8 choose fruit and 2 crackers. Afternoon: 9 choose fruit and 6 crackers. Compare the fruit percentage within each group. Then find the percentage of all participants who are both morning and fruit.",
+            "starter": "The morning group has 8 + 2 = 10 participants, so its fruit rate uses denominator 10.",
+            "stepsToComplete": [
+              "Calculate each group’s fruit percentage using its own group total.",
+              "Compare the percentages, even though the fruit counts differ.",
+              "Use the grand total for the joint morning-and-fruit percentage."
+            ],
+            "answer": "Morning fruit rate 80%; afternoon fruit rate 60%; morning and fruit is 32% of all participants.",
+            "steps": [
+              "Morning: 8/10 = 80%. Afternoon: 9/15 = 60%, so morning has the higher fruit rate despite the smaller fruit count.",
+              "The grand total is 10 + 15 = 25.",
+              "Morning and fruit includes 8 participants, so its joint relative frequency is 8/25 = 32%. The denominator changes because the named group changes."
+            ]
+          }
         }
       ]
     }
   ],
   "studyRoutine": [
-    "Start with one lesson that matches your current classwork. Review an earlier idea only if it blocks the next step.",
-    "Read the explanation, then try each example before opening its worked solution. On paper, cover the solution and completed figure. Compare your reasoning with the steps, then explain the method in your own words.",
-    "Begin with 6–8 problems from that lesson, or 3–4 longer graphing or modeling problems. Show your work. If the same mistake repeats, pause to study one example before continuing.",
-    "Keep fractions and roots exact when requested. Use familiar square and cube facts to reason about roots; verify by multiplication. A calculator can check large products after you choose the method, and can find approximations when asked. Do not round early.",
-    "Check the separate answer key after attempting the problems. Find the first incorrect step, write the correction, and solve a fresh problem of that type without the key.",
-    "After you can solve and explain several problems independently, mix two or three familiar lessons. Keep the form code and revisit missed skills on another day. Check each answer’s sign, units, and fit with the question."
+    "Choose one lesson that matches your current classwork. Start with its readiness check. If that idea is uncertain, read the repair explanation and redo the check before moving on.",
+    "Read one explanation and worked example at a time. Say why each step is allowed. Cover the solution, complete the partially worked bridge, and compare each of your steps with its reasoning.",
+    "Try a small chunk independently: 3–4 calculation problems or 1–2 longer graphing or modeling problems. Follow each problem’s tool and work directions; show the calculation, diagram, or evidence that supports your answer.",
+    "Check that chunk with the matching answer key. Find the first step that differs, decide whether the issue was the idea, setup, arithmetic, or reading, and write a correction with a reason. A different valid method can still be correct.",
+    "Cover the key and solve a fresh problem of the same kind. If the same difficulty returns, revisit the readiness check or worked example before doing another long set. Use another worksheet choice for additional attempts.",
+    "On a later day, revisit a missed skill with fresh questions. Once you can solve and explain the steps independently, mix in another familiar lesson. A large packet is a supply of practice; it does not have to be finished in one sitting.",
+    "Keep fractions and roots exact when requested, and write units where they apply. Use a calculator only as the problem’s directions allow; an arithmetic check does not replace the mathematical setup or explanation. Check signs, units, and whether the answer fits the question."
   ]
 }

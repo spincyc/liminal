@@ -157,7 +157,8 @@
     invalidate();
     state.course = LIMINAL_COURSES.courses.find((course) => course.id === $("courseChoice").value);
     if (!state.course) throw new Error("This course could not be loaded. Reload the page to try again.");
-    state.selected = new Set((state.course.units.find((unit) => unit.id === "topic-1") || state.course.units[0]).lessons.map((lesson) => lesson.id));
+    const startingUnit = state.course.units.find((unit) => unit.id === "topic-1") || state.course.units[0];
+    state.selected = new Set(startingUnit.lessons.slice(0, 1).map((lesson) => lesson.id));
     state.readId = null;
     $("coursePageTitle").textContent = state.course.title;
     $("courseLibraryLabel").textContent = `${gradeLabel(state.course.grade)} · ${subjectLabel(state.course.subject)}`;
@@ -229,7 +230,9 @@
     const selectedTotal = state.sheets.reduce((total, sheet) => total + sheet.questions.length, 0);
     const available = state.nights.flatMap((night) => night.worksheets);
     const availableTotal = available.reduce((total, sheet) => total + sheet.questions.length, 0);
-    $("coursePacketSummary").textContent = `${state.sheets.length} night${state.sheets.length === 1 ? "" : "s"} · ${state.sheets.length} worksheet${state.sheets.length === 1 ? "" : "s"} selected for printing (${selectedTotal} questions). ${available.length} full worksheets available (${availableTotal} questions).`;
+    const practiceLabel = state.sheets[0].practiceMode === "rebuild" ? "Rebuild step by step" : "Mixed review";
+    $("coursePacketSummary").textContent = `${practiceLabel} · ${state.sheets.length} night${state.sheets.length === 1 ? "" : "s"} · ${state.sheets.length} worksheet${state.sheets.length === 1 ? "" : "s"} selected for printing (${selectedTotal} questions). ${available.length} full worksheets available (${availableTotal} questions).`;
+    $("courseReserveSummary").textContent = `All ${available.length} worksheets (${availableTotal} distinct questions), including A, B, and C for every night. Keep the extra worksheets for another try at the same skills; there is no need to finish them all tonight.`;
     $("courseChoiceSummary").replaceChildren();
     state.sheets.forEach((sheet, index) => {
       const item = element("li");
@@ -273,7 +276,7 @@
     state.choices = {};
     state.sheets = [];
     $("coursePacketSection").hidden = true;
-    const settings = { lessonIds: selectedIds(), count: Number($("courseCount").value), days: Number($("courseDays").value), seed };
+    const settings = { lessonIds: selectedIds(), count: Number($("courseCount").value), days: Number($("courseDays").value), seed, practiceMode: $("coursePracticeMode").value };
     $("courseBuildStatus").textContent = `Making three full worksheets of ${settings.count} questions for each of ${settings.days} night${settings.days === 1 ? "" : "s"} (${settings.days * settings.count * 3} questions)…`;
     $("courseBuild").disabled = true;
     $("courseBuild").textContent = "Building…";
@@ -291,7 +294,7 @@
       options($("coursePreviewNight"), sheets.map((sheet, index) => ({ value: String(index), label: `Night ${sheet.day || index + 1}` })));
       $("coursePreviewAnswers").checked = false;
       summarizeChoices();
-      $("courseChoiceStatus").textContent = "Worksheet A is selected for every night. Choose A, B, or C for each night before printing.";
+      $("courseChoiceStatus").textContent = "Worksheet A is selected for every night. Choose A, B, or C per night, or export all three in the reserve supply below.";
       const warnings = unique(nights.flatMap((night) => night.worksheets.flatMap((sheet) => sheet.warnings || [])));
       $("courseWarnings").replaceChildren();
       if (warnings.length) {
@@ -345,15 +348,16 @@
     // Capture the current selection so changing controls cannot mix documents.
     const course = state.course;
     const lessons = selectedIds();
-    const sheets = state.sheets.slice();
-    const packetDays = sheets.length;
+    const allWorksheets = button.dataset.exportScope === "all";
+    const sheets = allWorksheets ? state.nights.flatMap((night) => night.worksheets) : state.sheets.slice();
+    const packetDays = state.nights.length;
     const combinedSheets = kind === "combined" && $("coursePacketScope").value !== "all"
       ? [sheets[Number($("coursePreviewNight").value) || 0]] : sheets;
     const duplex = $("coursePacketSides").value === "duplex";
     try {
       const css = await loadStyles();
-      const label = kind === "combined" ? `Nightly packet — ${combinedSheets.length === 1 ? `Night ${combinedSheets[0].day}, Worksheet ${combinedSheets[0].worksheetVariant}` : `all ${combinedSheets.length} nights`}` : kind === "guide" ? "Study guide" : kind === "answers" ? "Worked answers" : "Student worksheets";
-      const content = kind === "combined" ? LiminalCourseRender.renderNightlyPacket(course, combinedSheets, { duplex, packetDays }) : kind === "guide" ? LiminalCourseRender.renderGuide(course, lessons) : LiminalCourseRender.renderPacket(course, sheets, { answers: kind === "answers" });
+      const label = kind === "combined" ? `Nightly packet — ${combinedSheets.length === 1 ? `Night ${combinedSheets[0].day}, Worksheet ${combinedSheets[0].worksheetVariant}` : `all ${combinedSheets.length} nights`}` : kind === "guide" ? "Study guide" : `${kind === "answers" ? "Worked answers" : "Student worksheets"}${allWorksheets ? " — all A/B/C worksheets" : ""}`;
+      const content = kind === "combined" ? LiminalCourseRender.renderNightlyPacket(course, combinedSheets, { duplex, packetDays }) : kind === "guide" ? LiminalCourseRender.renderGuide(course, lessons) : LiminalCourseRender.renderPacket(course, sheets, { answers: kind === "answers", packetDays });
       const html = LiminalCourseRender.exportHtml(`${course.title} — ${label}`, content, css);
       const url = URL.createObjectURL(new Blob([html], { type: "text/html;charset=utf-8" }));
       if (printWindow) {
@@ -362,7 +366,7 @@
       } else {
         const link = element("a");
         link.href = url;
-        const suffix = kind === "combined" ? `-${combinedSheets.length === 1 ? `night-${combinedSheets[0].day}` : "all-nights"}-${duplex ? "duplex" : "single-sided"}-${combinedSheets[0].code}` : sheets.length && kind !== "guide" ? `-${sheets[0].code}` : "";
+        const suffix = kind === "combined" ? `-${combinedSheets.length === 1 ? `night-${combinedSheets[0].day}` : "all-nights"}-${duplex ? "duplex" : "single-sided"}-${combinedSheets[0].code}` : sheets.length && kind !== "guide" ? `${allWorksheets ? "-all-worksheets" : ""}-${sheets[0].code}` : "";
         link.download = `liminal-${course.id}-${kind}${suffix}.html`.replace(/[^a-z0-9._-]/gi, "-");
         document.body.appendChild(link);
         link.click();
@@ -401,6 +405,7 @@
       $("courseSelectAll").addEventListener("click", () => { state.selected = new Set(state.course.units.flatMap((unit) => unit.lessons.map((lesson) => lesson.id))); invalidate(); updateSelection(); });
       $("courseSelectNone").addEventListener("click", () => { state.selected.clear(); invalidate(); updateSelection(); });
       ["courseCount", "courseDays", "courseSeed"].forEach((id) => $(id).addEventListener("input", invalidate));
+      $("coursePracticeMode").addEventListener("change", invalidate);
       $("courseFresh").addEventListener("click", freshSeed);
       $("courseCancel").addEventListener("click", () => { cancel("Build cancelled. Adjust the options or build again."); $("courseBuild").focus(); });
       $("courseForm").addEventListener("submit", build);
@@ -418,16 +423,23 @@
       $("courseReadLesson").addEventListener("change", readLesson);
       $("courseReadPrevious").addEventListener("click", () => { $("courseReadLesson").selectedIndex -= 1; readLesson(); });
       $("courseReadNext").addEventListener("click", () => { $("courseReadLesson").selectedIndex += 1; readLesson(); });
-      function amount(count, nights) {
+      function amount(count, nights, practiceMode) {
         $("courseCount").value = count;
         $("courseDays").value = nights;
+        if (practiceMode) $("coursePracticeMode").value = practiceMode;
         invalidate();
       }
       $("courseShortSet").addEventListener("click", () => amount(8, 1));
-      $("courseTenNights").addEventListener("click", () => amount(20, 10));
+      $("courseFiveNights").addEventListener("click", () => amount(8, 5, "rebuild"));
+      $("courseTenNights").addEventListener("click", () => {
+        const selectedUnits = state.course.units.filter((unit) => unit.lessons.some((lesson) => state.selected.has(lesson.id)));
+        if (selectedUnits.length === 1) state.selected = new Set(selectedUnits[0].lessons.map((lesson) => lesson.id));
+        amount(20, 10, "review");
+        updateSelection();
+      });
       $("coursePracticeLesson").addEventListener("click", () => {
         state.selected = new Set([state.readId]);
-        amount(8, 1);
+        amount(8, 1, "rebuild");
         updateSelection();
         showMode("practice", true);
         build();

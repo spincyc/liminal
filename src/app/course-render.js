@@ -73,6 +73,35 @@
 
   function footer() { return el("footer", "course-document-footer", INDEPENDENT); }
 
+  function learningTask(task, kind, interactive) {
+    const readiness = kind === "readiness";
+    const section = el("section", `course-example course-${kind}`);
+    section.appendChild(el("h4", "", readiness ? "Before you begin" : "Your turn · finish the steps"));
+    section.appendChild(el("p", "course-task-instruction", readiness
+      ? "Try this short check by hand. If you get stuck, read the repair before the lesson."
+      : "Use the start below, then finish by hand. Explain each step. A calculator may check arithmetic afterward."));
+    prose(section, task.prompt);
+    if (task.table) section.appendChild(renderTable(task.table));
+    if (task.graph) section.appendChild(renderGraph(task.graph));
+    if (task.starter) {
+      const start = el("div", "course-task-starter");
+      start.appendChild(el("strong", "", "Start here"));
+      prose(start, task.starter);
+      section.appendChild(start);
+      list(section, task.stepsToComplete, true);
+    }
+    const space = el("div", "course-task-workspace");
+    space.setAttribute("aria-label", "Space to try the task before checking");
+    section.appendChild(space);
+    const solution = el(interactive ? "details" : "div", "course-example-solution course-task-check");
+    solution.appendChild(el(interactive ? "summary" : "h4", "", "Check after trying"));
+    list(solution, task.steps, true);
+    prose(solution, task.answer, "course-answer");
+    if (task.repair) prose(solution, task.repair, "course-repair");
+    section.appendChild(solution);
+    return section;
+  }
+
   function renderGuide(course, lessonIds, options) {
     const settings = options || {};
     const selected = new Set(lessonIds || course.units.flatMap((unit) => unit.lessons.map((lesson) => lesson.id)));
@@ -111,10 +140,11 @@
         if (metadata.length) intro.appendChild(el("p", "course-document-meta", metadata.join(" · ")));
         prose(intro, lesson.objective || "", "course-objective");
         lessonNode.appendChild(intro);
+        if (lesson.readiness) lessonNode.appendChild(learningTask(lesson.readiness, "readiness", settings.interactive));
         (lesson.explanation || []).forEach((paragraph) => prose(lessonNode, paragraph));
         (lesson.examples || []).forEach((example, index) => {
           const exampleNode = el("section", "course-example");
-          exampleNode.appendChild(el("h4", "", `${settings.interactive ? "Try an example" : "Worked example"} ${index + 1}`));
+          exampleNode.appendChild(el("h4", "", `Worked example ${index + 1}`));
           prose(exampleNode, example.prompt);
           if (example.table) exampleNode.appendChild(renderTable(example.table));
           if (example.graph) exampleNode.appendChild(renderGraph(example.graph));
@@ -129,6 +159,9 @@
           solution.appendChild(answer);
           exampleNode.appendChild(solution);
           lessonNode.appendChild(exampleNode);
+          if (lesson.bridge && index + 1 === (lesson.bridge.afterExample || 1)) {
+            lessonNode.appendChild(learningTask(lesson.bridge, "bridge", settings.interactive));
+          }
         });
         if (lesson.pitfalls && lesson.pitfalls.length) {
           const pitfalls = el("section", "course-pitfalls");
@@ -236,13 +269,20 @@
       for (let i = Math.ceil(min / stride); i <= Math.floor(max / stride); i += 1) values.push(Number((i * stride).toPrecision(10)));
       return values;
     };
-    ticks(graph.xMin, graph.xMax, xStep).forEach((value) => {
+    const xTicks = ticks(graph.xMin, graph.xMax, xStep);
+    const yTicks = ticks(graph.yMin, graph.yMax, yStep);
+    // Preserve every grid interval while spacing numeric labels far enough
+    // apart to read on paper. Dense integer grids otherwise overprint labels.
+    const xLabelWidth = Math.max(...xTicks.map(value => String(value).length), 1) * 8 + 8;
+    const xLabelStride = Math.max(1, Math.ceil(xLabelWidth / (width * xStep / (graph.xMax - graph.xMin))));
+    const yLabelStride = Math.max(1, Math.ceil(16 / (height * yStep / (graph.yMax - graph.yMin))));
+    xTicks.forEach((value) => {
       svg.appendChild(svgEl("line", { x1: x(value), y1: numberLine ? 80 : top, x2: x(value), y2: numberLine ? 90 : top + height, class: numberLine ? "course-grid-axis" : "course-grid-line" }));
-      svg.appendChild(svgEl("text", { x: x(value), y: numberLine ? 108 : top + height + 17, "text-anchor": "middle", class: "course-grid-label" }, value));
+      if (Math.round(value / xStep) % xLabelStride === 0) svg.appendChild(svgEl("text", { x: x(value), y: numberLine ? 108 : top + height + 17, "text-anchor": "middle", class: "course-grid-label" }, value));
     });
-    if (!numberLine) ticks(graph.yMin, graph.yMax, yStep).forEach((value) => {
+    if (!numberLine) yTicks.forEach((value) => {
       svg.appendChild(svgEl("line", { x1: left, y1: y(value), x2: left + width, y2: y(value), class: "course-grid-line" }));
-      svg.appendChild(svgEl("text", { x: left - 8, y: y(value) + 4, "text-anchor": "end", class: "course-grid-label" }, value));
+      if (Math.round(value / yStep) % yLabelStride === 0) svg.appendChild(svgEl("text", { x: left - 8, y: y(value) + 4, "text-anchor": "end", class: "course-grid-label" }, value));
     });
     if (!numberLine) svg.appendChild(svgEl("rect", { x: left, y: top, width, height, class: "course-grid-border" }));
     svg.appendChild(svgEl("line", { x1: left, y1: xAxis, x2: left + width, y2: xAxis, class: "course-grid-axis" }));
@@ -275,7 +315,7 @@
         svg.appendChild(svgEl("text", { x: calloutX, y: calloutY, "text-anchor": "middle", class: "course-point-label" }, index + 1));
       } else if (point.label) svg.appendChild(svgEl("text", { x: x(point.x) + (point.x > (graph.xMin + graph.xMax) / 2 ? -7 : 7), y: y(point.y) + (point.y > (graph.yMin + graph.yMax) / 2 ? 15 : -7), "text-anchor": point.x > (graph.xMin + graph.xMax) / 2 ? "end" : "start", class: "course-point-label" }, point.label));
     });
-    wrap.append(svg, el("figcaption", "course-graph-caption", numberLine ? `Number line: intervals of ${xStep}.` : `${xLabel || "Horizontal axis"}: intervals of ${xStep}; ${yLabel || "Vertical axis"}: intervals of ${yStep}.`));
+    wrap.append(svg, el("figcaption", "course-graph-caption", numberLine ? `Each tick: ${xStep}.` : `Each grid interval: ${xLabel || "horizontal"} = ${xStep}; ${yLabel || "vertical"} = ${yStep}.`));
     if (crowded) {
       const legend = el("ol", "course-graph-legend");
       visiblePoints.forEach((point) => {
@@ -294,11 +334,17 @@
   }
 
   function questionNode(question, answers) {
+    const tableByGraph = !answers && question.table && (question.graph || question.answerGraph) && !hasWideTable(question);
     const item = el("section", `course-question${answers ? " course-key-question" : ""}${question.graph || question.answerGraph ? " course-question-graph" : ""}${!answers && hasWideTable(question) ? " course-question-wide" : ""}`);
+    if (!answers && hasWideTable(question) && (question.graph || question.answerGraph)) item.classList.add("course-question-long-table");
+    if (!answers && question.expectations) {
+      const label = question.support === "guided" ? "Use the support" : "Try on your own";
+      item.appendChild(el("p", "course-question-stage", `${label}${question.lessonId ? ` · Lesson ${question.lessonId}` : ""}`));
+    }
     const prompt = el("div", "course-question-prompt");
     prompt.append(el("strong", "course-question-number", `${question.number}.`), renderText(question.prompt));
     item.appendChild(prompt);
-    if (question.table) item.appendChild(renderTable(question.table));
+    if (question.table && !tableByGraph) item.appendChild(renderTable(question.table));
     if (answers) {
       const answer = el("div", "course-answer");
       answer.append(el("strong", "", "Answer: "), renderText(question.answer));
@@ -307,15 +353,51 @@
       if (question.answerGraph || question.graph) item.appendChild(renderGraph(question.answerGraph || question.graph));
       item.appendChild(el("p", "course-question-meta", `${question.lessonId} · ${question.skill || ""}`));
     } else {
-      if (question.graph) item.appendChild(renderGraph(question.graph));
-      else if (question.answerGraph) item.appendChild(renderGraph(question.answerGraph, { blank: true }));
+      const layout = el("div", "course-question-layout");
+      if (question.expectations) {
+        const directions = el("dl", "course-expectations");
+        for (const [key, label] of [["byHand", "By hand"], ["calculator", "Calculator"], ["showWork", "Show"], ["answerForm", "Finish with"]]) {
+          const field = el("div", "course-expectation");
+          field.appendChild(el("dt", "", label));
+          const detail = el("dd");
+          prose(detail, question.expectations[key]);
+          field.appendChild(detail);
+          directions.appendChild(field);
+        }
+        if (question.support === "guided") {
+          for (const [key, label] of [["firstStep", "First step"], ["check", "Check your thinking"]]) {
+            const field = el("div", "course-expectation course-support-field");
+            field.appendChild(el("dt", "course-support-label", label));
+            const detail = el("dd", "course-support-text");
+            prose(detail, question.expectations[key]);
+            field.appendChild(detail);
+            directions.appendChild(field);
+          }
+        }
+        layout.appendChild(directions);
+      }
+      const response = el("div", `course-response${question.graph || question.answerGraph ? " course-response-graph" : ""}`);
+      response.appendChild(el("p", "course-work-label", "Your working"));
       const work = el("div", "course-workspace");
       work.setAttribute("aria-label", "Space to show your work");
       const count = Math.min(7, Math.max(3, Math.round(question.workLines || 4)));
       // The authored hint still reserves handwriting room, without prescribing
       // lines: students can calculate, sketch, or arrange their work freely.
       work.style.setProperty("--course-work-units", String(count));
-      item.appendChild(work);
+      if (tableByGraph) {
+        const tableWork = el("div", "course-givens-work");
+        tableWork.append(renderTable(question.table), work);
+        response.appendChild(tableWork);
+      }
+      if (question.graph) response.appendChild(renderGraph(question.graph));
+      else if (question.answerGraph) response.appendChild(renderGraph(question.answerGraph, { blank: true }));
+      if (!work.parentNode) response.appendChild(work);
+      response.appendChild(el("p", "course-work-label", "Answer / conclusion"));
+      const finalSpace = el("div", "course-final-space");
+      finalSpace.setAttribute("aria-label", "Space for the answer or conclusion");
+      response.appendChild(finalSpace);
+      layout.appendChild(response);
+      item.appendChild(layout);
     }
     return item;
   }
@@ -325,13 +407,20 @@
     const head = el("header", "course-document-head course-sheet-head");
     head.appendChild(el("p", "course-eyebrow", `Liminal${sheet.day ? ` / Night ${sheet.day}` : ""}${sheet.worksheetVariant ? ` / Worksheet ${sheet.worksheetVariant}` : ""} / ${answers ? "Worked answers" : "Student worksheets"}`));
     head.appendChild(el("h1", "", course.title));
-    if (!answers && sheet.title && sheet.title !== course.title) head.appendChild(el("p", "course-sheet-title", sheet.title));
+    if (!answers && sheet.title && sheet.title !== course.title && sheet.title !== course.title + " practice") head.appendChild(el("p", "course-sheet-title", sheet.title));
     head.appendChild(el("p", "course-form-code", `Form ${sheet.code} · Version ${sheet.version}${pages > 1 ? ` · Page ${page} of ${pages}` : ""}`));
-    if (!answers || page === 1) head.appendChild(el("p", "course-document-meta course-replay-meta", `${sheet.packetSeed ? "Packet seed" : "Seed"}: ${sheet.packetSeed || sheet.seed} · ${sheet.questions.length} questions per ${sheet.worksheetVariant ? "worksheet" : "night"}${packetDays ? ` · ${packetDays} night${packetDays === 1 ? "" : "s"}` : ""}. Lessons: ${(sheet.lessonIds || []).join(", ")}.`));
+    if (page === 1) head.appendChild(el("p", "course-document-meta course-replay-meta", `${sheet.packetSeed ? "Packet seed" : "Seed"}: ${sheet.packetSeed || sheet.seed} · ${sheet.questions.length} questions per ${sheet.worksheetVariant ? "worksheet" : "night"}${packetDays ? ` · ${packetDays} night${packetDays === 1 ? "" : "s"}` : ""} · ${sheet.practiceMode === "rebuild" ? "Rebuild" : "Mixed review"}. Lessons: ${(sheet.lessonIds || []).join(", ")}.`));
     if (!answers || page === 1) (sheet.warnings || []).forEach((warning) => head.appendChild(el("p", "course-print-warning", `Packet note: ${warning}`)));
     if (!answers) {
-      head.appendChild(el("p", "course-student-name", "Name: __________________________________   Date: ______________"));
-      head.appendChild(el("p", "course-document-meta", "Show your work. Use the study guide first; check the separate answer key afterward."));
+      if (page === 1) head.appendChild(el("p", "course-student-name", "Name: __________________________________   Date: ______________"));
+      const paired = sheet.practiceMode === "rebuild" && sheet.questions.some(question => question.support === "guided");
+      head.appendChild(el("p", "course-sheet-directions", paired
+        ? "Read the lesson first. Use the support on the first problem of each pair; cover it for the next. Pause after two problems and check the separate key."
+        : "Choose a method and work independently. Follow each problem’s calculator and work directions. Check the separate key after a small group of problems."));
+      if (page === 1) head.appendChild(el("p", "course-document-meta", "A correct number alone is not the whole answer: include the evidence listed under Show. If stuck, mark the step where you need help."));
+    } else if (page === 1) {
+      head.appendChild(el("p", "course-sheet-directions", "Compare reasoning as well as answers. Mark each problem: on my own / with help / retry. For a miss, find the first different step, explain the correction, then cover the key and redo it."));
+      head.appendChild(el("p", "course-document-meta", "For a fresh retry, use the same problem number on an unused worksheet letter from this night. Try it tomorrow; return to the lesson again a few days later. Needing help means choose a smaller step, not more pages at once."));
     }
     return head;
   }
@@ -340,7 +429,11 @@
     const page = el("section", `course-sheet-page${questions.some((question) => question.graph || question.answerGraph) ? " course-sheet-graphs" : ""}`);
     page.appendChild(sheetHeader(course, sheet, false, pageNumber, pages, packetDays));
     const grid = el("div", "course-questions");
-    questions.forEach((question) => grid.appendChild(questionNode(question, false)));
+    questions.forEach((question) => {
+      const node = questionNode(question, false);
+      if (questions.length === 1) node.classList.add("course-question-wide");
+      grid.appendChild(node);
+    });
     page.append(grid, footer());
     return page;
   }
@@ -372,8 +465,11 @@
         wrapper.className = className || "course-document course-worksheet";
         wrapper.appendChild(copy);
         doc.body.replaceChildren(wrapper);
-        // A small allowance protects against fractional printer rounding.
-        return copy.getBoundingClientRect().height <= 945 && copy.scrollWidth <= copy.clientWidth + 1;
+        // Worked keys combine flowing lists and tables. Leave extra room for
+        // print fragmentation so a second solution cannot lose its header on
+        // an unplanned page and shift the remaining duplex sections.
+        const limit = copy.classList.contains("course-answer-page") ? 900 : 945;
+        return copy.getBoundingClientRect().height <= limit && copy.scrollWidth <= copy.clientWidth + 1;
       },
       remove() { frame.remove(); },
     };
@@ -404,7 +500,7 @@
         if (measurer) {
           const pageNumber = groups.length + 1;
           while (count > 1 && !measurer.fits(pageRenderer(course, sheet, group, pageNumber, 99, settings.packetDays))) {
-            count = answers || group.some(hasWideTable) ? count - 1 : count > 2 ? count - (count % 2 || 2) : 1;
+            count -= 1;
             group = sheet.questions.slice(offset, offset + count);
           }
           if (!measurer.fits(pageRenderer(course, sheet, group, pageNumber, 99, settings.packetDays))) throw new Error(`Question ${group[0].number} is too large for a Letter page.`);
@@ -429,7 +525,7 @@
     const packet = el("div", "course-packet");
     const measurer = printMeasurer();
     try {
-      sheets.forEach((sheet) => packet.appendChild(renderWorksheet(course, sheet, { ...settings, packetDays: sheets.length, measurer })));
+      sheets.forEach((sheet) => packet.appendChild(renderWorksheet(course, sheet, { ...settings, packetDays: settings.packetDays || sheet.days || sheets.length, measurer })));
     } finally {
       if (measurer) measurer.remove();
     }
@@ -492,7 +588,16 @@
     const groups = [];
     let group = [];
     const fits = (values) => measurer.fits(nightlyGuidePage(course, sheet, lessonIds, values, groups.length + 1, 999), article.className);
-    chunks.forEach((chunk) => {
+    chunks.forEach((chunk, index) => {
+      const next = chunks[index + 1];
+      // Keep a new lesson's heading with its first learning task, rather than
+      // leaving only the objective at the foot of the previous lesson's page.
+      if (group.length && chunk.node.classList.contains("course-guide-opening") &&
+          next && next.node.dataset.lessonId === chunk.node.dataset.lessonId &&
+          !fits([...group, chunk, next])) {
+        groups.push(group);
+        group = [];
+      }
       if (fits([...group, chunk])) { group.push(chunk); return; }
       if (group.length) { groups.push(group); group = []; }
       if (!fits([chunk])) throw new Error(`Study guide for ${chunk.title} has a block too large for a Letter page. Shorten the introduction or worked example before printing.`);

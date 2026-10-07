@@ -1,0 +1,682 @@
+{
+  "g8-t1-repeat-block-fraction": {
+    "byHand": "Set up two equations with matching repeating tails, subtract them, and reduce the resulting fraction.",
+    "calculator": "Check only: after your fraction is written, divide its numerator by its denominator to check the decimal.",
+    "showWork": "Write the two aligned multiples, their subtraction, and the fraction before and after reducing.",
+    "answerForm": "Give one fraction in lowest terms, keeping the original sign.",
+    "firstStep": "Let x equal the decimal. Count the digits under the repeating bar to choose a power of ten.",
+    "check": "Do the repeating tails cancel, and does your fraction have the same sign and whole-number part as the decimal?"
+  },
+  "g8-t1-repeat-after-prefix": {
+    "byHand": "Shift past the nonrepeating part, align two repeating tails, and subtract to find an exact fraction.",
+    "calculator": "Check only: divide your completed fraction to check its nonrepeating prefix and repeating digit.",
+    "showWork": "Write both multiples of the original decimal, the subtraction equation, and the reduction.",
+    "answerForm": "Give a fraction in lowest terms and name the two multiples you subtracted.",
+    "firstStep": "Let x equal the decimal. Shift once past the prefix, then again by the length of the repeating block.",
+    "check": "The tails must begin at the same decimal place before subtraction; compare your fraction's decimal with the entire original."
+  },
+  "g8-t1-fraction-decimal": {
+    "byHand": "Use long division and track remainders to decide where the decimal ends or begins repeating.",
+    "calculator": "Check only: compare digits afterward; a rounded calculator display cannot identify the full repeating block.",
+    "showWork": "Show division until the remainder becomes zero or repeats, and mark the digits belonging to a repeated remainder.",
+    "answerForm": "Give the exact decimal with its sign; use a bar over the whole repeating block when needed.",
+    "firstStep": "Divide the numerator's magnitude by the denominator, keeping the sign separate while you work.",
+    "check": "Each remainder must be smaller than the denominator. Does the same remainder produce the same next digit?"
+  },
+  "g8-t1-terminating-fraction": {
+    "byHand": "Use decimal place value to write a fraction, then divide numerator and denominator by common factors.",
+    "calculator": "Check only: divide the simplified fraction afterward to recover the original decimal.",
+    "showWork": "Write the place-value fraction and the common factor used to reduce it.",
+    "answerForm": "Give one fraction in lowest terms, including the correct sign.",
+    "firstStep": "Count the displayed decimal places to choose a denominator that is a power of ten.",
+    "check": "Can any common factor still divide the numerator and denominator? Does the fraction preserve the decimal's size?"
+  },
+  "g8-t1-root-classification": {
+    "byHand": "Classify every listed number using perfect squares, repeating decimals, or ratios of integers.",
+    "calculator": "Check only: verify square products afterward; do not decide rationality from a rounded decimal display.",
+    "showWork": "Give one reason for each number. For a root, identify an exact integer root or neighboring perfect squares.",
+    "answerForm": "List all irrational numbers and include the rational or irrational classification of every candidate.",
+    "firstStep": "For each square root, ask whether its radicand is the square of an integer.",
+    "check": "Have you checked every candidate, including negative roots, fractions, and repeating decimals?"
+  },
+  "g8-t1-number-set-membership": {
+    "byHand": "Decide the number's type and use the nesting of number sets to include every set it belongs to.",
+    "calculator": "No calculator needed; use definitions and exact number properties, not a decimal approximation.",
+    "showWork": "Write one sentence explaining the number's most specific listed set and why any smaller listed sets do not apply.",
+    "answerForm": "List every applicable set from the prompt; use its convention that natural numbers begin at one.",
+    "firstStep": "Ask whether the value is a positive counting number, zero, a negative integer, a noninteger fraction, or an irrational root.",
+    "check": "If you named a smaller set, did you also include all larger sets containing it?"
+  },
+  "g8-t1-infinite-decimal-classification": {
+    "byHand": "Use each stated infinite pattern to decide whether a fixed block repeats forever.",
+    "calculator": "Do not use a calculator; a finite display cannot establish an infinite decimal pattern.",
+    "showWork": "Give a separate reason for A and B, addressing termination and whether one fixed block repeats.",
+    "answerForm": "Label both decimals rational or irrational, with a sentence supporting each label.",
+    "firstStep": "Underline what stays the same or changes in the gaps between nonzero digits.",
+    "check": "Does your reason use the rule for all future digits, rather than only the first few digits?"
+  },
+  "g8-t1-root-bounds": {
+    "byHand": "Find consecutive whole numbers whose squares lie on opposite sides of the radicand.",
+    "calculator": "Check only: after choosing bounds by hand, you may check their squares or the root's approximate location.",
+    "showWork": "Write both square calculations, the inequality between squares, and the corresponding root inequality.",
+    "answerForm": "Fill both blanks with consecutive whole numbers in increasing order.",
+    "firstStep": "Find a perfect square just below the radicand, then try the next whole number's square.",
+    "check": "Are the bounds one apart, with the radicand strictly between their squares?"
+  },
+  "g8-t1-order-and-plot": {
+    "byHand": "Convert the rational numbers to comparable forms, bound the root, and place and label every number on the line.",
+    "calculator": "Allowed after writing root bounds: approximate the root for comparison and plotting; keep original forms in the final order.",
+    "showWork": "Record the comparable values and root bounds or estimate, then label all four plotted positions.",
+    "answerForm": "Write a least-to-greatest inequality using the original numbers and give a labeled approximate number-line plot.",
+    "firstStep": "Rewrite the mixed number and repeating decimal as whole-number parts plus fractions or decimal values.",
+    "check": "Do the labels run left to right in your written order, and does the root lie between its whole-number bounds?"
+  },
+  "g8-t1-negative-root-comparison": {
+    "byHand": "Compare the positive magnitudes, then use their positions on the negative side of a number line.",
+    "calculator": "Check only: verify your squared values or approximate the two numbers after deciding the comparison by hand.",
+    "showWork": "Write a comparison of the positive magnitudes and explain how negating both numbers changes their order.",
+    "answerForm": "Insert the correct inequality symbol and give one sentence explaining the effect of the negative signs.",
+    "firstStep": "Temporarily ignore the negative signs and compare the radicand with the square of the positive decimal.",
+    "check": "Of two negative numbers, is the number with greater magnitude farther left in your comparison?"
+  },
+  "g8-t1-evaluate-roots": {
+    "byHand": "Find the integer factors that square or cube to each radicand and determine each root's sign.",
+    "calculator": "Check only: square or cube your answers afterward to verify the original radicands.",
+    "showWork": "Write one multiplication or power equality for each root and explain the principal square-root convention.",
+    "answerForm": "Give both integer values in prompt order; the square-root value must follow the principal-root convention.",
+    "firstStep": "Look for equal integer factors: two factors for the square root and three for the cube root.",
+    "check": "Does squaring or cubing recover the radicand, and does the cube-root sign match its radicand?"
+  },
+  "g8-t1-square-cube-categories": {
+    "byHand": "Test each number separately for being an integer square and an integer cube.",
+    "calculator": "Check only: verify your integer powers afterward; do not rely on rounded root displays.",
+    "showWork": "For each number, give an integer power equality when it fits, or neighboring powers when it does not.",
+    "answerForm": "Label every number square only, cube only, both, or neither, with evidence for both tests.",
+    "firstStep": "Make two columns, square and cube, and compare each number with nearby integer powers.",
+    "check": "Did you test both properties before choosing a category, including for zero or one if either appears?"
+  },
+  "g8-t1-cube-edge-context": {
+    "byHand": "Use the cube volume to find one edge length, then model the row as that length repeated.",
+    "calculator": "Check only: cube your edge and check the final multiplication after solving by hand.",
+    "showWork": "Write the cube-root calculation and a multiplication for the total row length.",
+    "answerForm": "Give the row length with centimeters as the unit.",
+    "firstStep": "Let s be one cube's edge length and write s cubed equal to the given volume.",
+    "check": "Does cubing one edge recover the volume, and is the row length greater than one edge?"
+  },
+  "g8-t1-square-equation": {
+    "byHand": "Isolate the squared variable, then decide how many real values can have that square.",
+    "calculator": "Check only: substitute your proposed values afterward; retain exact integers or radicals instead of decimal approximations.",
+    "showWork": "Write each operation used to isolate the square and explain the number of real solutions.",
+    "answerForm": "List all real solutions exactly, or state that there are no real solutions; do not round radicals.",
+    "firstStep": "If there is an added constant or coefficient, undo those operations before taking a square root.",
+    "check": "Substitute each value into the original equation. Have you considered the sign and zero cases for a square?"
+  },
+  "g8-t1-cube-equation": {
+    "byHand": "Undo cubing with a cube root and determine the solution's sign from the original equation.",
+    "calculator": "Check only: cube an integer answer afterward or approximate a radical to check its size; keep the answer exact.",
+    "showWork": "Write the cube-root step and either an integer cube equality or the exact radical form.",
+    "answerForm": "Give the variable's exact integer or radical value, including its sign.",
+    "firstStep": "Ask which real number, cubed, equals the right side; a cube keeps the sign of its base.",
+    "check": "Does cubing your expression reproduce both the size and sign of the right side?"
+  },
+  "g8-t1-cube-face-dimensions": {
+    "byHand": "Model the cube's volume using an edge length, then use the shape of a face to identify its dimensions.",
+    "calculator": "Check only: verify an integer cube or estimate a radical afterward; do not replace an exact radical with a decimal.",
+    "showWork": "Write the volume equation, solve for the positive edge length, and connect that length to both face dimensions.",
+    "answerForm": "Give two equal positive dimensions in centimeters, using exact integers or radicals.",
+    "firstStep": "Name the edge length s and write a power equation using the given volume.",
+    "check": "Are both face dimensions equal and positive, and does their edge length cubed recover the volume?"
+  },
+  "g8-t1-product-of-powers": {
+    "byHand": "Keep the common base and apply the product rule to the signed exponents.",
+    "calculator": "Check only: verify the exponent arithmetic after writing and simplifying it by hand.",
+    "showWork": "Write one power with the exponent sum, then simplify that sum, keeping negative signs visible.",
+    "answerForm": "Give one power of the original base; a zero or negative exponent may remain.",
+    "firstStep": "Check that all bases match, then copy the exponents into an addition expression.",
+    "check": "Did you add the exponents while keeping the base unchanged? Recheck every negative term."
+  },
+  "g8-t1-power-of-power": {
+    "byHand": "Keep the original base and apply the power-of-a-power rule to both signed exponents.",
+    "calculator": "Check only: verify the exponent multiplication after doing the rule and arithmetic by hand.",
+    "showWork": "Write the product of the inner and outer exponents, then simplify it.",
+    "answerForm": "Give one power of the original base; a negative exponent may remain.",
+    "firstStep": "Identify the exponent inside the parentheses and the exponent outside them.",
+    "check": "Does the sign of your exponent match the product of the two original exponent signs?"
+  },
+  "g8-t1-power-of-product": {
+    "byHand": "Use the common exponent to combine the bases into one integer base.",
+    "calculator": "Check only: verify the base multiplication after forming the single power by hand.",
+    "showWork": "Write the product of the bases inside parentheses with the common exponent, then multiply only the bases.",
+    "answerForm": "Give a single power with an integer base; do not evaluate the whole power.",
+    "firstStep": "Confirm that the two exponents are equal and copy that exponent unchanged.",
+    "check": "Did you multiply the bases while leaving the shared exponent unchanged?"
+  },
+  "g8-t1-quotient-of-powers": {
+    "byHand": "Keep the common base and subtract the denominator's exponent from the numerator's exponent.",
+    "calculator": "Check only: verify the signed subtraction after setting up and simplifying it by hand.",
+    "showWork": "Write the exponent subtraction with parentheses around a negative denominator exponent, then simplify.",
+    "answerForm": "Give one power of the original base; a zero or negative exponent may remain.",
+    "firstStep": "Copy the numerator exponent first, followed by subtraction of the entire denominator exponent.",
+    "check": "If the denominator exponent is negative, did subtracting it become addition?"
+  },
+  "g8-t1-negative-power-reciprocal": {
+    "byHand": "Rewrite the negative power as a reciprocal and keep track of the separate coefficient.",
+    "calculator": "Check only: after rewriting, test both expressions at the same positive base value other than one.",
+    "showWork": "Write the reciprocal identity for the variable power, then multiply by the original coefficient.",
+    "answerForm": "Give an equivalent expression with only positive exponents and the correct coefficient sign.",
+    "firstStep": "Separate the coefficient from the variable power; the negative exponent belongs only to that power.",
+    "check": "Is the coefficient still multiplying the reciprocal, and do both expressions agree at a positive test value other than one?"
+  },
+  "g8-t1-negative-power-denominator": {
+    "byHand": "Simplify the reciprocal first, combine the powers, then rewrite any remaining negative exponent.",
+    "calculator": "Check only: compare both completed forms at the same positive base value other than one.",
+    "showWork": "Write the reciprocal rewrite, the combined exponent, and a final form with no negative exponents.",
+    "answerForm": "Give both requested forms: one power and an equivalent form without negative exponents.",
+    "firstStep": "Rewrite the negative power in the denominator as a reciprocal before combining the factors.",
+    "check": "Do your two forms have the same value? If the combined exponent is zero, use the nonzero-base zero-power rule."
+  },
+  "g8-t1-evaluate-zero-negative-powers": {
+    "byHand": "Rewrite zero and negative powers, substitute the given values, and combine the resulting exact terms.",
+    "calculator": "Check only: evaluate the original expression afterward, using parentheses around negative substituted values.",
+    "showWork": "Show the power rewrites, substitutions, common denominator, and reduction of the final fraction.",
+    "answerForm": "Give an exact integer or fraction in lowest terms; do not round.",
+    "firstStep": "Use the nonzero conditions to rewrite the zero power and the reciprocal square before substituting.",
+    "check": "Is the squared denominator positive, and have you kept the coefficient's sign when adding?"
+  },
+  "g8-t1-estimate-large": {
+    "byHand": "Identify the first two significant digits, round to one significant digit, and determine the power of ten.",
+    "calculator": "Check only: convert your completed estimate to ordinary notation afterward to compare its size with the original.",
+    "showWork": "Mark the rounding digit and write the rounded ordinary number or a decimal-shift step.",
+    "answerForm": "Give one nonzero digit times a power of ten as an estimate of the record count.",
+    "firstStep": "Locate the first nonzero digit and the digit immediately after it.",
+    "check": "Is the coefficient a single digit? If rounding created an extra place, did you adjust the exponent?"
+  },
+  "g8-t1-estimate-small": {
+    "byHand": "Locate the first nonzero decimal digit, round using the next digit, and determine its place value.",
+    "calculator": "Check only: convert the completed estimate back to a decimal to compare magnitudes.",
+    "showWork": "Mark the significant digits used for rounding and show how their place value sets the exponent.",
+    "answerForm": "Give a single nonzero digit times a power of ten, followed by meters.",
+    "firstStep": "Ignore leading zeros when locating significant digits, but count their places when finding the exponent.",
+    "check": "Does your estimate remain a small positive measurement, with one significant digit and the correct unit?"
+  },
+  "g8-t1-estimated-ratio": {
+    "byHand": "Round each count first, then write the red estimate divided by the blue estimate.",
+    "calculator": "Allowed only after writing both rounded counts and their quotient; use it for arithmetic on those estimates.",
+    "showWork": "Write both one-digit estimates, the coefficient quotient, and the power-of-ten calculation.",
+    "answerForm": "State about how many times as large the red count is; label the result as an estimate.",
+    "firstStep": "Find the first two significant digits of each count and round each count separately.",
+    "check": "Did you divide in the requested order and use rounded counts, rather than round the exact final quotient?"
+  },
+  "g8-t1-large-scientific-notation": {
+    "byHand": "Move the decimal to form a coefficient between one and ten and count the places moved.",
+    "calculator": "Check only: evaluate your completed scientific notation afterward to recover the original number.",
+    "showWork": "Write the coefficient and record the direction and number of decimal places moved.",
+    "answerForm": "Give normalized scientific notation with every nonzero digit preserved and no rounding.",
+    "firstStep": "Place a decimal point immediately after the first nonzero digit.",
+    "check": "Is the coefficient at least one and less than ten, and does expanding the power restore the original?"
+  },
+  "g8-t1-small-scientific-notation": {
+    "byHand": "Form a coefficient between one and ten, then determine the power needed to preserve the small measurement.",
+    "calculator": "Check only: convert your completed expression back to a decimal after choosing the coefficient and exponent.",
+    "showWork": "Record the decimal shift and explain the exponent's sign.",
+    "answerForm": "Give normalized scientific notation without rounding, followed by millimeters.",
+    "firstStep": "Locate the first nonzero digit and move the decimal immediately after it.",
+    "check": "Does the power of ten make the coefficient small enough to match the original width? Keep the unit."
+  },
+  "g8-t1-scientific-to-decimal": {
+    "byHand": "Use the exponent's sign and magnitude to shift the decimal point and insert zeros as needed.",
+    "calculator": "Check only: compare your completed decimal with a calculator evaluation afterward.",
+    "showWork": "State the shift direction and number of places, or mark the decimal's moves on paper.",
+    "answerForm": "Write the exact number in ordinary decimal notation, without a power of ten or rounding.",
+    "firstStep": "Decide whether multiplying by the displayed power of ten makes the coefficient larger or smaller.",
+    "check": "Does the result's size match the exponent's sign, and are all coefficient digits still in their original order?"
+  },
+  "g8-t1-scientific-product": {
+    "byHand": "Separate coefficient multiplication from the power-of-ten rule, then normalize the result.",
+    "calculator": "Allowed after writing the coefficient product and exponent sum; use it for coefficient arithmetic, not the exponent rule.",
+    "showWork": "Write the coefficient product, exponent sum, and any paired coefficient-and-exponent adjustment.",
+    "answerForm": "Give exact normalized scientific notation; keep all result digits and do not round.",
+    "firstStep": "Group the two decimal coefficients together and the two powers of ten together.",
+    "check": "Is the final coefficient at least one and less than ten? Did every decimal shift have a compensating exponent change?"
+  },
+  "g8-t1-scientific-quotient": {
+    "byHand": "Write a coefficient quotient and an exponent difference, then normalize the result.",
+    "calculator": "Allowed after writing both operations; use it to divide coefficients and keep the terminating decimal exact.",
+    "showWork": "Show the coefficient division, numerator exponent minus denominator exponent, and normalization.",
+    "answerForm": "Give normalized scientific notation without rounding.",
+    "firstStep": "Keep numerator and denominator order the same in the coefficient division and exponent subtraction.",
+    "check": "Multiply your result by the original divisor. Does it recover the original dividend?"
+  },
+  "g8-t1-scientific-sum": {
+    "byHand": "Rewrite both quantities with the same power of ten, add coefficients, then normalize.",
+    "calculator": "Allowed after writing equivalent terms with a common power; use it for coefficient addition.",
+    "showWork": "Show the common-power rewrite, the coefficient sum, and the normalized result.",
+    "answerForm": "Give exact normalized scientific notation without rounding.",
+    "firstStep": "Choose one displayed power of ten and rewrite the other term to use that power.",
+    "check": "Did the rewrites preserve each quantity? The sum should be larger than either positive addend."
+  },
+  "g8-t1-scientific-difference": {
+    "byHand": "Rewrite both quantities with a common power of ten, subtract in prompt order, then normalize.",
+    "calculator": "Allowed after the common-power rewrite is on paper; use it for the coefficient subtraction.",
+    "showWork": "Write the equivalent common-power terms, coefficient difference, and final normalization.",
+    "answerForm": "Give exact normalized scientific notation without rounding.",
+    "firstStep": "Choose a common exponent and adjust the other coefficient so its value stays unchanged.",
+    "check": "Add the subtracted quantity back to your result. Does it restore the first quantity?"
+  },
+  "g8-t1-model-storage-comparison": {
+    "byHand": "Model the first project's total, then write a quotient comparing that total with the second project's total.",
+    "calculator": "Allowed after both operations and power-of-ten steps are written; use it for coefficient arithmetic and exact division.",
+    "showWork": "Show file count times file size, normalization of the total, and the quotient of the two totals.",
+    "answerForm": "Give the first total in normalized scientific notation with bytes, then an exact times-as-large comparison.",
+    "firstStep": "Separate the amount in one file from the amount in all files before comparing projects.",
+    "check": "Did you compare totals? Multiplying the second total by your ratio should recover the first total."
+  },
+  "g8-t1-model-square-covering": {
+    "byHand": "Find one panel's side from its area, model the total perimeter, and separately model the combined area.",
+    "calculator": "Allowed after writing the root and both total expressions; use it for multiplication and to check the square root.",
+    "showWork": "Show the side-length root, one panel's perimeter, total strip length, and total area conversion.",
+    "answerForm": "Give strip length in the stated length unit and combined area in normalized scientific notation with squared units.",
+    "firstStep": "Sketch one square and label its unknown side; relate the side squared to its given area.",
+    "check": "Did you include all four sides of every separate panel and keep length units distinct from area units?"
+  },
+  "g8-t2-combine-terms": {
+    "byHand": "Combine like variable terms, then undo the remaining operations while keeping both sides equal.",
+    "calculator": "Check only: substitute your completed solution into the original equation afterward.",
+    "showWork": "Write the combined equation and a new line for each operation used to isolate the variable.",
+    "answerForm": "State the variable equal to its exact value.",
+    "firstStep": "Mark the terms containing the variable; add their coefficients while keeping the constant separate.",
+    "check": "Does your value make the two sides of the original equation equal, before terms are combined?"
+  },
+  "g8-t2-perimeter-equation": {
+    "byHand": "Represent all four rectangle sides in a perimeter equation, solve it, then find both dimensions.",
+    "calculator": "Check only: verify the four-side total after writing and solving your equation by hand.",
+    "showWork": "Write the perimeter equation, combine terms, show each solving step, and substitute for the length.",
+    "answerForm": "Give the variable's value and label both width and length in centimeters.",
+    "firstStep": "Sketch the rectangle and label each pair of opposite sides with its given expression.",
+    "check": "Are both lengths positive, and does twice the length plus twice the width match the given perimeter?"
+  },
+  "g8-t2-both-sides": {
+    "byHand": "Collect variable terms on one side and constants on the other, using equal operations on both sides.",
+    "calculator": "Check only: evaluate both original sides with your solution after completing the algebra.",
+    "showWork": "Write a new equivalent equation for each subtraction, addition, or division used to isolate the variable.",
+    "answerForm": "State the variable equal to its exact value.",
+    "firstStep": "Choose one variable term to subtract from both sides; copy its sign carefully.",
+    "check": "Substitute into the original equation. Do both sides give the same number?"
+  },
+  "g8-t2-equal-savings": {
+    "byHand": "Write each person's savings as starting amount plus weekly savings, set the expressions equal, and solve.",
+    "calculator": "Check only: evaluate both savings expressions afterward to verify the week and common amount.",
+    "showWork": "Define your variable, write the equality, show the solving steps, and substitute to find the common amount.",
+    "answerForm": "Give the number of weeks and the dollar amount each person has then.",
+    "firstStep": "Let the variable count weeks, and write one starting-amount-plus-rate expression for each person.",
+    "check": "Is the time nonnegative, and do both expressions give the same dollar amount at that time?"
+  },
+  "g8-t2-distribute-both-sides": {
+    "byHand": "Distribute on both sides, combine terms, and solve the resulting equation.",
+    "calculator": "Check only: substitute your final value into the original parenthesized equation afterward.",
+    "showWork": "Write the fully distributed equation and each operation that gathers terms and isolates the variable.",
+    "answerForm": "State the variable equal to its exact value.",
+    "firstStep": "Multiply each outside factor by every term inside its own parentheses.",
+    "check": "Did distribution reach both terms in each group? Verify your value in the original equation."
+  },
+  "g8-t2-fraction-both-sides": {
+    "byHand": "Clear the denominators with a common multiple, distribute, and solve using exact arithmetic.",
+    "calculator": "Check only: evaluate both original fractions afterward; keep an exact fraction as your solution when needed.",
+    "showWork": "Write the multiplication that clears denominators, the distributed equation, and the steps to isolate the variable.",
+    "answerForm": "Give the variable's value as an integer or fraction in lowest terms, without rounding.",
+    "firstStep": "Find a common multiple of both denominators and multiply the whole of each side by it.",
+    "check": "Substitute into both original numerators before dividing. Are the resulting fractions equal?"
+  },
+  "g8-t2-multistep-subtraction": {
+    "byHand": "Distribute the negative factor to the entire group, combine like terms, and solve.",
+    "calculator": "Check only: evaluate the original expression with your final value after finishing the algebra.",
+    "showWork": "Show both products from the negative distribution, the combined equation, and the steps isolating the variable.",
+    "answerForm": "State the variable equal to its exact value.",
+    "firstStep": "Treat the subtraction before the parentheses as part of the factor multiplying every inside term.",
+    "check": "Have both inside terms received the negative factor? Does substitution reproduce the original right side?"
+  },
+  "g8-t2-decimal-equation": {
+    "byHand": "Clear decimals by multiplying every term by the same power of ten, then solve the equivalent equation.",
+    "calculator": "Check only: substitute your solution into the original decimal equation afterward.",
+    "showWork": "Write the equation with integer coefficients and constants, then each step used to collect terms and isolate the variable.",
+    "answerForm": "State the exact variable value without rounding.",
+    "firstStep": "Count decimal places and choose a power of ten that makes every coefficient and constant an integer.",
+    "check": "Did you multiply every term on both sides? Does the result satisfy the original decimal equation?"
+  },
+  "g8-t2-classify-solutions": {
+    "byHand": "Distribute and collect terms, then interpret whether the simplified equation determines a value or a constant statement.",
+    "calculator": "Check only: verify arithmetic afterward; decide the solution type from your algebra.",
+    "showWork": "Show the distributed equation, the simplified result, and a sentence explaining what that result means.",
+    "answerForm": "State one solution, no solution, or infinitely many solutions; if there is one, give its exact value.",
+    "firstStep": "Expand the parentheses and compare the variable coefficients on both sides.",
+    "check": "If variable terms cancel, is the remaining statement true or false? If they do not, check your solved value."
+  },
+  "g8-t2-make-solution-type": {
+    "byHand": "Expand the left side and cancel matching variable terms to find what the constant k must satisfy.",
+    "calculator": "Check only: verify the constant multiplication after deriving the condition on k.",
+    "showWork": "Write the distributed equation, the equality left after cancellation, and why your chosen k gives the requested type.",
+    "answerForm": "Give one valid value of k and describe all values of k that work.",
+    "firstStep": "Distribute the outside factor, then subtract the common variable term from both sides.",
+    "check": "With your k, is the remaining constant equality always true or always false as the requested type requires?"
+  },
+  "g8-t2-printing-plans": {
+    "byHand": "Write each plan's cost rule, solve where the costs match, and compare costs at the requested nearby quantity.",
+    "calculator": "Allowed after writing both rules and solving their equality by hand; use it to evaluate the comparison costs.",
+    "showWork": "Define the pack variable, show the equality and solving steps, then write both costs at the requested pack count.",
+    "answerForm": "Give the equation, matching number of packs, and cheaper plan at the specified nearby count.",
+    "firstStep": "For each plan, separate any setup fee from the charge multiplied by the number of packs.",
+    "check": "Do the costs match at your solution? Did you compare one pack above or below it exactly as requested?"
+  },
+  "g8-t2-container-capacity": {
+    "byHand": "Translate both piece counts into expressions, set them equal, and simplify before interpreting the allowed item counts.",
+    "calculator": "Check only: verify the fixed-piece arithmetic after modeling and simplifying by hand.",
+    "showWork": "Write both total-piece expressions, their equality, and the constant statement left after variable terms cancel.",
+    "answerForm": "State one, every, or no allowed x value and explain; allowed item counts are nonnegative whole numbers.",
+    "firstStep": "For the shelf description, multiply the number of shelves by everything counted on each shelf.",
+    "check": "Did you count both items and labels, and does your conclusion apply to all allowed item counts?"
+  },
+  "g8-t2-compare-table-equation": {
+    "byHand": "Find the table's output per minute, identify the equation's rate, and subtract the smaller rate from the larger.",
+    "calculator": "Check only: verify the rate division and difference afterward; preserve exact fractions rather than rounded decimals.",
+    "showWork": "Write the table's output-to-time ratio, the equation's coefficient, and an exact difference of rates.",
+    "answerForm": "Name the faster machine and give the exact difference with production units per minute.",
+    "firstStep": "Choose a table row and divide its production by its elapsed minutes.",
+    "check": "Does another table row give the same unit rate, and is your reported difference positive?"
+  },
+  "g8-t2-compare-graph-rate": {
+    "byHand": "Read a graph point, calculate hose A's unit rate, compare it with B's rate, and model the total difference.",
+    "calculator": "Allowed after writing the exact rate difference and time multiplication; use it for arithmetic without rounding fractions.",
+    "showWork": "Write the point's coordinates, liters divided by minutes, the rate difference, and its product with the stated time.",
+    "answerForm": "Name the faster hose and give the exact extra liters it adds over the requested time.",
+    "firstStep": "Read the axis scales, then divide the labeled point's liters by its minutes.",
+    "check": "Did you multiply the rate difference by time, so the final unit is liters rather than liters per minute?"
+  },
+  "g8-t2-slope-points": {
+    "byHand": "Read both coordinates and calculate vertical change divided by horizontal change in a consistent point order.",
+    "calculator": "Check only: verify coordinate subtraction or fraction reduction after computing the slope by hand.",
+    "showWork": "List both ordered pairs and write the two coordinate differences in the slope fraction.",
+    "answerForm": "Give the slope as a reduced fraction or integer and explain its sign from left-to-right change.",
+    "firstStep": "Read each point as horizontal coordinate first, vertical coordinate second; check the graph's tick spacing.",
+    "check": "Does your slope's sign agree with whether the line rises or falls from left to right?"
+  },
+  "g8-t2-slope-triangles": {
+    "byHand": "Form a directed rise-to-run ratio from the origin to each point and compare the reduced ratios.",
+    "calculator": "Check only: verify fraction reduction after writing both rise-to-run ratios and identifying the scale factor.",
+    "showWork": "Write both slope fractions and show how the same factor scales their numerators and denominators.",
+    "answerForm": "Give the common exact slope and explain why scaling both changes preserves the ratio.",
+    "firstStep": "For each point, use its change in y from the origin as rise and its change in x as run.",
+    "check": "Do both fractions reduce to the same signed value? A downward vertical change must retain its negative sign."
+  },
+  "g8-t2-graph-y-mx": {
+    "byHand": "Identify the slope, choose points satisfying the equation, and draw the line through them on the grid.",
+    "calculator": "Check only: verify chosen point values afterward; plot and draw the line by hand.",
+    "showWork": "State the slope, list or label at least three points including the origin, and show one point calculation or slope step.",
+    "answerForm": "Give the exact slope and a straight line across the grid through at least three marked points, including the origin.",
+    "firstStep": "Mark the origin, then read the slope as a signed vertical change over a horizontal change.",
+    "check": "Does each marked point satisfy the equation, and does the line's direction agree with the slope's sign?"
+  },
+  "g8-t2-proportional-missing-value": {
+    "byHand": "Find the constant output-to-input ratio, write a proportional rule, and substitute the requested input.",
+    "calculator": "Check only: verify the fraction and substitution after completing them by hand.",
+    "showWork": "Write the y-to-x ratio from the given point, the equation, and the substitution for the new input.",
+    "answerForm": "Give the equation with an exact coefficient and the requested output value.",
+    "firstStep": "A proportional rule has the form y = mx; divide the given output by its input to find m.",
+    "check": "Does your equation contain the given point and pass through the origin?"
+  },
+  "g8-t2-intercept-graph": {
+    "byHand": "Read where the line meets the vertical axis and explain that point using both axis labels.",
+    "calculator": "No calculator needed; read the labeled scale and interpret the point.",
+    "showWork": "Identify the point with zero elapsed time and write a sentence connecting its coordinates to the tank.",
+    "answerForm": "Give the y-intercept as an ordered pair and state the starting water amount in liters.",
+    "firstStep": "Find zero on the time axis and follow it to the line on the vertical axis.",
+    "check": "Does your explanation describe water already in the tank when filling or draining starts, rather than a rate?"
+  },
+  "g8-t2-intercept-table": {
+    "byHand": "Find the constant rate, work back to zero input, and use the initial output to test proportionality.",
+    "calculator": "Check only: verify the rate and intercept arithmetic after deriving them by hand.",
+    "showWork": "Write a rate calculation and either backward steps to zero input or substitution into y = mx + b.",
+    "answerForm": "Give the y-intercept as an ordered pair and state whether the relationship is proportional, with a reason.",
+    "firstStep": "Compare two consecutive rows: divide the change in y by the change in x.",
+    "check": "Does your rate and intercept reproduce every row? Does the resulting line pass through the origin?"
+  },
+  "g8-t2-graph-slope-intercept": {
+    "byHand": "Identify slope and intercept, plot the intercept, and use signed rise and run to locate more points.",
+    "calculator": "Check only: substitute your plotted points afterward; construct the graph by hand.",
+    "showWork": "State slope and intercept, mark at least three points, and record a slope step or point calculation.",
+    "answerForm": "Give the exact slope, the y-intercept as an ordered pair, and a straight line through at least three marked points.",
+    "firstStep": "Match the equation to y = mx + b and plot the point where x is zero.",
+    "check": "Do all marked points satisfy the equation, and did the slope move you in the correct vertical direction?"
+  },
+  "g8-t2-equation-from-graph": {
+    "byHand": "Use the labeled points to calculate slope, then substitute a point to find the initial value.",
+    "calculator": "Check only: verify your fraction arithmetic or substitute points after deriving the equation by hand.",
+    "showWork": "Write both coordinate differences in the slope fraction, then show substitution and solving for b.",
+    "answerForm": "Give an equation in y = mx + b form with exact, simplified coefficients.",
+    "firstStep": "Read and record both labeled ordered pairs, using the axis scales rather than counting unlabeled spaces.",
+    "check": "Does your final equation produce the plotted y-value for each of the two labeled x-values?"
+  },
+  "g8-t3-relation-table": {
+    "byHand": "Compare inputs and track every output assigned to each input.",
+    "calculator": "No calculator needed; decide from the input-output pairs.",
+    "showWork": "Identify any repeated input and its outputs, or explain that each input has only one assigned output.",
+    "answerForm": "Answer yes or no and give evidence from the table using the function rule.",
+    "firstStep": "Scan the input column for repeats before examining the corresponding outputs.",
+    "check": "Did you test repeated inputs rather than reject a relation just because an output repeats?"
+  },
+  "g8-t3-vertical-line-points": {
+    "byHand": "Compare the plotted x-coordinates and apply a vertical-line test to this set of separate points.",
+    "calculator": "No calculator needed; inspect the point coordinates and vertical alignment.",
+    "showWork": "Describe whether any vertical line meets more than one point; identify the input if it does.",
+    "answerForm": "Answer yes or no with a vertical-line explanation. Leave the discrete points unconnected.",
+    "firstStep": "Imagine sliding a vertical line across the plot and count how many points it meets at each input.",
+    "check": "Does your test keep x fixed, and have you considered only the given points?"
+  },
+  "g8-t3-rule-table-graph": {
+    "byHand": "Substitute every input into the rule, complete the table, and plot and connect the resulting points.",
+    "calculator": "Check only: verify completed output calculations afterward; fill the table and construct the graph by hand.",
+    "showWork": "Write a substitution for each row, label the plotted points, and explain how one row gives its coordinates.",
+    "answerForm": "Complete every table blank, draw the straight line through the points, and explain one row-to-point connection.",
+    "firstStep": "Copy the first input into every x position in the rule, using parentheses if it is negative.",
+    "check": "Is each point's horizontal coordinate the table input and its vertical coordinate the calculated output?"
+  },
+  "g8-t3-graph-function-rule": {
+    "byHand": "Read the initial output, calculate the slope from the labeled points, and build and evaluate a linear rule.",
+    "calculator": "Check only: verify point substitution and the requested output after deriving the rule by hand.",
+    "showWork": "Write the slope fraction, identify the intercept, write the equation, and substitute the requested input.",
+    "answerForm": "Give the linear equation and the output corresponding to the specified input.",
+    "firstStep": "Record the two labeled points and locate the point whose input is zero.",
+    "check": "Does your equation reproduce both labeled points before you use it at the new input?"
+  },
+  "g8-t3-linear-or-nonlinear-table": {
+    "byHand": "Compare changes in output over changes in input across the whole table.",
+    "calculator": "Check only: verify your differences after setting up and calculating the rates by hand.",
+    "showWork": "List all consecutive output changes and their corresponding input changes, then compare the rates.",
+    "answerForm": "State linear or nonlinear over the shown inputs and support the choice with the calculated rates.",
+    "firstStep": "Check whether consecutive input values are equally spaced before comparing output differences.",
+    "check": "Have you compared every interval, and are your subtractions consistently later value minus earlier value?"
+  },
+  "g8-t3-compare-function-rates": {
+    "byHand": "Find each function's rate and zero-input output, then make the two comparisons separately.",
+    "calculator": "Check only: verify the table's rate calculation after identifying both rates and initial outputs by hand.",
+    "showWork": "Record each rate and initial output; include a change-in-y over change-in-x calculation for the table.",
+    "answerForm": "Name the function with greater rate, then compare the outputs at zero, allowing equal outputs when appropriate.",
+    "firstStep": "For the equation, distinguish the coefficient of x from the constant; find their matching quantities in the table.",
+    "check": "Did you divide by the actual input change and compare rates separately from starting outputs?"
+  },
+  "g8-t3-context-linear-model": {
+    "byHand": "Translate starting area and hourly growth into a function, explain both parts, and substitute the requested time.",
+    "calculator": "Allowed after writing the function and substitution; use it for the prediction arithmetic.",
+    "showWork": "Write the model, label the rate and initial value with units, and show the prediction substitution.",
+    "answerForm": "Give the function, both coefficient meanings, and the predicted area in square meters.",
+    "firstStep": "Separate the area already finished from the additional area completed after x hours.",
+    "check": "At zero hours, does the rule give the starting area? Does each additional hour add the stated amount?"
+  },
+  "g8-t3-two-values-linear-model": {
+    "byHand": "Use the change in cost per added piece to find the rate, then recover the fixed fee from either total.",
+    "calculator": "Allowed after writing the cost-change ratio and fee equation; use it for arithmetic while keeping the model on paper.",
+    "showWork": "Show the difference ratio, substitution into cost = rate times pieces plus fee, and the resulting rule.",
+    "answerForm": "Give C(x), the setup fee in dollars, and the per-piece charge in dollars per piece.",
+    "firstStep": "Subtract the two costs and the two piece counts in the same order.",
+    "check": "Does your function reproduce both given totals, including the fixed fee only once in each total?"
+  },
+  "g8-t3-square-display-model": {
+    "byHand": "Write both tile-count rules, classify their growth, and set up the total or increase comparison requested.",
+    "calculator": "Allowed after writing both rules and substitutions; use it for table arithmetic and any new-total-minus-old-total calculations.",
+    "showWork": "Complete all table rows, explain each classification using equal input steps, and show the requested comparison calculation.",
+    "answerForm": "Give the completed table, each rule's classification, and which design has more of the requested quantity, or a tie.",
+    "firstStep": "For each design, separate the tiles that vary with n from the fixed decoration; keep A and B labels attached.",
+    "check": "Does the prompt ask for total tiles or extra tiles? For extra tiles, compare changes rather than final totals."
+  },
+  "g8-t3-rental-comparison-model": {
+    "byHand": "Write both rental cost rules and use their starting fees and hourly rates to explain how the comparison changes.",
+    "calculator": "Allowed after writing both cost rules and substituting the listed hours; use it to calculate the table entries.",
+    "showWork": "Show both rules, fill all table cells, compare costs row by row, and state one needed assumption.",
+    "answerForm": "Give the completed dollar-cost table, explain where the cheaper option changes or ties, and name a reasonable assumption.",
+    "firstStep": "For each option, add its fixed charge to its hourly rate times the booking length.",
+    "check": "Did each row use the same hours for both options, and does your explanation agree with every table comparison?"
+  },
+  "g8-t3-increasing-decreasing-graph": {
+    "byHand": "Read each segment from left to right and decide how the output changes over its time interval.",
+    "calculator": "No calculator needed; read the time boundaries and compare the endpoint heights.",
+    "showWork": "For each segment, record its start and end times and whether y rises, stays level, or falls.",
+    "answerForm": "List the increasing, constant, and decreasing time intervals in minutes and describe the change in y.",
+    "firstStep": "Mark the time values where the graph changes direction or becomes horizontal.",
+    "check": "Are your interval boundaries time values? A graph below zero can still increase as its outputs get larger."
+  },
+  "g8-t3-compare-increasing-intervals": {
+    "byHand": "Calculate distance change divided by time change for each interval, then compare the two rates.",
+    "calculator": "Check only: verify the two rate calculations after reading coordinates and setting up the ratios by hand.",
+    "showWork": "Write a difference quotient for each interval, with distance and time units.",
+    "answerForm": "Name the faster time interval and give both rates in meters per second.",
+    "firstStep": "Record the two endpoint coordinates of each interval; subtract starting values from ending values.",
+    "check": "Did you compare rates rather than ending heights, and does the steeper segment have the greater rate?"
+  },
+  "g8-t3-sketch-walk-rest-return": {
+    "byHand": "Add successive travel and rest durations to locate transition times, then sketch distance from home over time.",
+    "calculator": "Check only: verify cumulative times afterward; decide graph directions and draw all segments by hand.",
+    "showWork": "Write cumulative times, label the starting and transition ordered pairs, and connect them with appropriate straight segments.",
+    "answerForm": "Give a labeled distance-from-home graph showing the walk away, rest, and return with correct time and distance units.",
+    "firstStep": "Make a timeline from the start, adding each duration to the time already elapsed.",
+    "check": "Does distance stay unchanged during the rest and return to zero at home? Use elapsed times, not individual durations."
+  },
+  "g8-t3-sketch-filling-rates": {
+    "byHand": "Calculate the water added in each interval, keep a running volume total, and sketch the connected segments.",
+    "calculator": "Check only: verify rate-times-duration products afterward; determine the graph and transition points by hand.",
+    "showWork": "Show each added volume and cumulative time, then label the starting and all transition points.",
+    "answerForm": "Give a volume-versus-time graph with labeled transition coordinates and units on the axes.",
+    "firstStep": "Start with the initial volume at zero time; for each filling interval, add rate times duration.",
+    "check": "Does the faster filling rate make a steeper rise, and does shutting the tap leave the existing water in place?"
+  },
+  "g8-t4-scatter-association": {
+    "byHand": "Inspect the overall point pattern for direction, straight or curved form, gaps, and clusters.",
+    "calculator": "No calculator needed; use visible patterns and reasoning about what observational data can establish.",
+    "showWork": "Describe what happens to y as x increases, identify any grouping or curve, and address the causation question.",
+    "answerForm": "Give a short description of the direction and form, including clusters or no clear association when appropriate, plus a causal judgment.",
+    "firstStep": "Look across the whole plot from small to large x-values before focusing on individual points.",
+    "check": "Does your description fit the full plot? Have you distinguished an observed pattern from evidence about causes?"
+  },
+  "g8-t4-scatter-outlier": {
+    "byHand": "Identify the trend followed by most points, locate a point far from it, and consider whether exclusion is justified.",
+    "calculator": "No calculator needed; read coordinates and compare the point with the main pattern.",
+    "showWork": "Describe the main trend, explain how the unusual point differs, and give a reason for your deletion decision.",
+    "answerForm": "Name the trend, identify the outlier by label and coordinates, and explain whether it should automatically be removed.",
+    "firstStep": "Look for the pattern followed by most observations, then compare points at similar x-values.",
+    "check": "Is the selected point far from the trend rather than merely far from the origin? What evidence would justify deleting it?"
+  },
+  "g8-t4-construct-scatter": {
+    "byHand": "Plot one separate point for each table row and describe the overall association.",
+    "calculator": "No calculator needed; read the axis scales and plot each ordered pair by hand.",
+    "showWork": "Plot all six ordered pairs and write a sentence describing direction and form.",
+    "answerForm": "Give six unconnected points and a description of any linear, nonlinear, or absent association.",
+    "firstStep": "Check how much each tick represents, then move horizontally to x and vertically to y for the first row.",
+    "check": "Does every row have one plotted point, with x horizontal and y vertical? Repeated inputs can have separate points."
+  },
+  "g8-t4-correct-scatter-point": {
+    "byHand": "Match each plotted input to its table row and compare the plotted output with the listed output.",
+    "calculator": "No calculator needed; read the vertical scale carefully and compare coordinates.",
+    "showWork": "Record the mismatched point's label, its plotted output, and the table's output at the same input.",
+    "answerForm": "Name the incorrect point and give its corrected ordered pair.",
+    "firstStep": "Choose a labeled point, read its x-coordinate, and locate that same x in the table.",
+    "check": "Does your correction keep the x-coordinate unchanged and match the table's y-value exactly?"
+  },
+  "g8-t4-compare-fit-lines": {
+    "byHand": "Set up both model predictions and absolute vertical errors for every observed point, then compare their totals.",
+    "calculator": "Allowed after writing prediction substitutions and observed-minus-predicted differences; use it for arithmetic and adding absolute errors.",
+    "showWork": "Fill every prediction and absolute-error cell for all six points, total each error column, and compare the totals.",
+    "answerForm": "Name the better-fitting model and report both total absolute errors as evidence.",
+    "firstStep": "Use the first row's x in each model, then subtract each prediction from that row's observed y.",
+    "check": "Are all absolute errors nonnegative, and have you included all six observations exactly once in each total?"
+  },
+  "g8-t4-write-fit-line": {
+    "byHand": "Calculate the slope through the specified points, solve for the intercept, and explain the role of a model line.",
+    "calculator": "Check only: verify exact slope and intercept arithmetic after deriving the line by hand.",
+    "showWork": "Write the coordinate-difference slope fraction, substitute one labeled point, and show how you find the intercept.",
+    "answerForm": "Give the line's equation with exact coefficients and explain why useful models can miss individual observations.",
+    "firstStep": "Use the two named model points, keeping their order consistent in the vertical and horizontal differences.",
+    "check": "Does your equation pass through both named points? Distinguish those model points from the other observations."
+  },
+  "g8-t4-model-prediction": {
+    "byHand": "Substitute the requested distance, interpret the coefficient's units, and compare that distance with the observed range.",
+    "calculator": "Allowed after writing the substitution; use it for the prediction arithmetic and explain the slope and range yourself.",
+    "showWork": "Write the substituted expression, label the slope's units, and state where the input lies relative to the data range.",
+    "answerForm": "Give an approximate time in minutes, the slope's meaning, and interpolation or extrapolation with a reason.",
+    "firstStep": "Identify which symbol means distance and replace it with the requested route distance.",
+    "check": "Did you classify the input distance against the observed distance range, rather than compare the predicted time with that range?"
+  },
+  "g8-t4-inverse-prediction": {
+    "byHand": "Set the model output to the requested value, solve for its input, and assess that input against the observed range.",
+    "calculator": "Check only: substitute your solved input into the model after completing the algebra by hand.",
+    "showWork": "Write the target-output equation, each solving step, and the comparison with the observed input range.",
+    "answerForm": "Give the input value, identify interpolation or extrapolation, and state one relevant model limitation.",
+    "firstStep": "Replace y with the given target output, leaving x as the unknown.",
+    "check": "Does your input produce the requested model output, and does your limitation fit its position within or outside the data range?"
+  },
+  "g8-t4-volunteer-data-model": {
+    "byHand": "Set up the prediction and reason from the data range and setting about causal claims and much larger groups.",
+    "calculator": "Allowed after writing the substitution; use it for arithmetic while explaining the evidence and limitations yourself.",
+    "showWork": "Show the prediction substitution, explain the causal judgment, and compare the larger proposed group with observed group sizes.",
+    "answerForm": "Give an estimated kit count, address the exact causal claim, and explain why the far-out prediction needs caution.",
+    "firstStep": "Identify the horizontal-axis quantity and substitute the requested volunteer count into the rule.",
+    "check": "Have you treated the rule as a model rather than a guarantee, and named a limitation connected to the setting?"
+  },
+  "g8-t4-model-realistic-range": {
+    "byHand": "Set up both time predictions, interpret them as counts, and solve an equation for when the model reaches zero.",
+    "calculator": "Allowed after writing both substitutions and the zero-output equation; use it for arithmetic after showing the algebraic steps.",
+    "showWork": "Show both substituted expressions and the equation-solving steps for zero boxes; explain the later result's meaning.",
+    "answerForm": "Give both numerical model outputs with their hours, explain the unrealistic count, and state the model's zero time in hours.",
+    "firstStep": "Replace x with each requested hour separately, then write a third equation with y set to zero.",
+    "check": "Can each output represent a real box count? Which requested or solved times extend beyond the observed hours?"
+  },
+  "g8-t4-two-way-counts": {
+    "byHand": "Match each requested group to an interior cell, a column total, or the grand total.",
+    "calculator": "Check only: verify the table additions after identifying and recording the requested counts.",
+    "showWork": "Identify the row-column intersection and show one addition for the outdoor total and one for the grand total.",
+    "answerForm": "Give three labeled participant counts in the order asked.",
+    "firstStep": "For a question using and, find the cell where its row group and column preference meet.",
+    "check": "Is the joint count no larger than its group totals, and have you counted each participant only once in the grand total?"
+  },
+  "g8-t4-complete-two-way-table": {
+    "byHand": "Use row and column totals to find missing counts, then use completed counts to fill the remaining totals.",
+    "calculator": "Check only: verify additions and subtractions after filling the table by hand.",
+    "showWork": "Write a subtraction or addition for each blank, including the requested nonwalker-and-lunch count.",
+    "answerForm": "Fill every table blank with a whole-number count and explain how you found the specified group count.",
+    "firstStep": "Start with a row that has its total and one interior count; subtract to find the other count.",
+    "check": "Do all rows and columns add to their totals, and do the row totals and column totals give the same grand total?"
+  },
+  "g8-t4-relative-frequency-denominators": {
+    "byHand": "Identify the joint count and the comparison group for each part before forming the two percentages.",
+    "calculator": "Allowed after writing and labeling both count-over-group fractions; keep exact fractional percentages if decimals repeat.",
+    "showWork": "Write the numerator and denominator for each part, explain each denominator, and multiply each ratio by one hundred percent.",
+    "answerForm": "Label parts (a) and (b) with exact percentages; reduced fractional percentages are acceptable, with no rounding.",
+    "firstStep": "Circle the words naming who is included in each comparison group: everyone, one session, or one preference group.",
+    "check": "Does each denominator count only the people named by its comparison group, and does each percentage lie from zero to one hundred?"
+  },
+  "g8-t4-compare-conditional-frequencies": {
+    "byHand": "Form an outdoor-preference ratio within each session, compare the percentages, and explain why group size matters.",
+    "calculator": "Allowed after writing each outdoor-count-over-session-total fraction; use it for percentage arithmetic.",
+    "showWork": "Write both within-group fractions and percentages, compare them, and connect the comparison to association in this sample.",
+    "answerForm": "Give both labeled percentages, state whether this table shows association, and explain the limitation of raw counts.",
+    "firstStep": "For each session separately, divide the outdoor count by that session's total.",
+    "check": "Did you use the same preference for both groups and each group's own total? Account for equal percentages if they occur."
+  }
+}
