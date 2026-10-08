@@ -102,3 +102,59 @@ Burgess's *Old Mother West Wind* now follows the dated 1914 Little, Brown scan; 
 ## Limits
 
 This is sampled independent agent review. It is not human editorial approval, empirical timing, a measured reading level, or legal advice. Punctuation was image-checked only at OCR-flagged points and in samples; OCR period/comma noise can hide further differences. Blanchan, Bangs and Cox excerpt boundaries were judged from context and coverage, not from every omitted passage. Andersen variants beyond the five image-confirmed nights are reported from OCR. Scratch evidence: `.scratch/daily_reading_corpus/final-review-early/` (uncommitted).
+
+---
+
+## Delta review (2026-10-08)
+
+Same reviewer lane, the same brief and ownership. The record above is unchanged. Contract: `docs/daily-reading.md` `806d2fc9e9e79ece3b297fbf477e2c87c5cad53d08fb090ca27aef45b511d1b2`, which includes the 2026-10-08 misprint rule (785a1ed). The three grade files below did not change during the delta. `node tools/check-daily-reading.js` passes. Novelty against all grades and the weekly inventory shows 0 overlaps of 30+ words for each grade; K's only within-grade overlap is still the Old Woman and Her Pig refrain.
+
+### Delta review (2026-10-08): Kindergarten
+
+SHA-256 `901e8cd44515f08901cdb8a284b710af6732b17d5f30f4a533299e94690df9d0` (commit 4752ce8). The repair changed no reading text: only the Coleridge and Buckley source records and W4D4's `contentNote` changed. Mechanics: 180/180 hashes, 541/541 evidence quotes, continuations valid, maximum 114 words per reading minute, every total 10 minutes.
+
+| Finding | Status | Evidence |
+| --- | --- | --- |
+| K-S1 Coleridge year | **Resolved** | `publicationYear` 1853; edition and rights cite title page MDCCCLIII and withdraw the 1852 claim |
+| K-S2 Buckley year and basis | **Resolved** | `publicationYear` 1902 = first publication of the one-volume text; the scanned printing is honestly marked undated. **Verified myself:** *The English Catalogue of Books* vol. VII (1901–1905; IA `englishcatalogue0007unse`) reads "Buckley (Arabella B.)—Eyes and No Eyes. 48 Clrd. Plates, other Illus. Cr. 8vo. 3s. 6d. … Cassell, Mar. 02". I did not open the vol. X 1920 reissue entry |
+| N6 W4D4 ale note | **Resolved** | "ale is a kind of beer, part of this old household scene" |
+| N3 timing; N9 refrain overlap | Unchanged notes | — |
+
+Cold reads: none required, since K has no new or restored nights. New note: under the 2026-10-08 rule, the Tailor's printed "aid" (p. 33) and Buckley's missing stops (pp. 11, 17, 18) are failed-type blanks. They *may* be supplied from a later printing if declared; keeping them as printed also complies.
+
+### Delta review (2026-10-08): Grade 1
+
+SHA-256 `f8395faf4ceae5ea63cb9272d769cf53ab20357a4170a44fa9d7174579f09397` (commit 66774e9). There are 32 new or changed texts; 32 old texts were removed or replaced, 17 nights in all were dropped, and the year was resequenced. Mechanics: 180/180 hashes, 552/552 evidence quotes, continuations valid, 9.3–118.5 words per reading minute (none at 120+), totals 10–15. Fidelity: **156/180** match PG exactly. That now includes every Brown legend with its drop-capital opening restored (checked against the PG `cap` divs) and W3D5 without the `[1]` anchor. The other 24 follow dated witnesses. Every word agrees with the witness OCR: Burgess 1914 (9 nights), Rabbit 1922 (8), and MWWC 1911 (7). I fetched 1911 pp. 9–22 and 49–56 myself for the restored tales; only running heads and OCR noise differ.
+
+| Finding | Status | Evidence |
+| --- | --- | --- |
+| G1-S1 punctuation residues (W5D2, W11D5, W12D2, W22D1, W24D1 of the old file) | **Resolved** | Burgess: no punctuation differences remain against the 1914 OCR at pp. 42–44. Rabbit: "anything." (now W11D3), "night, and" and "picture books" (now W11D5). MWWC: "jolly, round, red" (W22D1); "to sleep." followed by a new paragraph (W24D1). The text matches the page images reviewed on 2026-10-07. The edition fields now state that other punctuation follows PG and was compared only at OCR-flagged points |
+| G1-S2 Velveteen opening | **Resolved** | W10D4 begins "There was once a velveteen rabbit…". Image-checked against 1922 p. 1 (PDF p. 15): word for word |
+| G1-S3 censorship (14 nights) | **Resolved** | Coverage maps show contiguous text to natural ends: Pooh I through the pop-gun ending (W13D1); Pooh VII from "Nobody seemed to know…" (W17D4); MWWC I, III and XI to chapter ends (W19D3–D5, W20D1–D2, W23D2); Cuthbert, Gerasimus I–II, Blaise, Launomar, Comgall with the mice, Fronto, Rigobert and Francis with Brother Wolf, each from its opening to its end; Christmas Cuckoo and Merrymind contiguous. Hervé was removed as a whole work, a selection choice. Content notes for the restored scenes are factual and do not tell readers to skip |
+| N1 timing | **Resolved** | Maximum 118.5 |
+| N4 breadth | Note | Pooh, Brown and Browne have 24 nights each and MWWC 23; with OMWW, Burgess has 32 (18%) |
+| N6 templated notes | **Largely resolved** | The Browne and Brown boilerplate is gone; one Holbrook sentence recurs 5 times |
+| N8 small items | Mostly resolved | Pooh VIII was dropped; the p. 117 lines follow PG, declared; W10D3 (Dog in the Manger) q3 reworded. **Remaining:** 60 locators still cite scratch block indexes (note) |
+
+Blind cold reads (new nights): W19D5, W25D3, W26D2, W29D3, W32D4. 15/15 answers compatible with the notes, which allow alternative readings. All prompts and notes on the other 27 new texts were read; they are text-specific with no factual errors. **No new findings.**
+
+### Delta review (2026-10-08): Grade 2
+
+SHA-256 `22d0525033e81bf78d220cbd56963570cc581f1d89552f746ce683278c1bb014` (commit 751be76). There are 38 new texts, 38 old ones removed (including Cox ×3, Bangs ×2 and Pen and Inkstand ×2), and resequencing. Mechanics: 180/180 hashes, 619/619 evidence quotes, continuations valid, 7.8–122.3 words per reading minute (four nights at 120–122), totals 10–15. Fidelity: **150/180** match their declared transcription exactly. The other 30 are 5 documented Pyle corrections, 1 declared Grahame correction ("won't", W22D3), and 24 Andersen nights now transcribed from the scan.
+
+| Finding | Status | Evidence |
+| --- | --- | --- |
+| **G2-B1** Andersen not the 1888 text | **Resolved** | `textUrl` is now the Commons DjVu file. The edition says honestly that the Wikisource text was only a draft and that every word was decided on the page images. A word-level diff of all 24 nights against my own OCR of the 1888 scan leaves only OCR noise. Every reading previously shown to be wrong is now as printed: "experiencing evil", "collect its thoughts", "favoured by fortune", "my destiny", "impossibilities", "honour" (8), "neighbour" (5), "into the sweet or sour", "I wonder", "parlour", "peculiar". **Image-checked:** the Flax passage against p. 114 and the Darning-Needle passage against p. 230 match word for word and mark for mark, including the printed "happier that I am now" |
+| G2-S1 Pyle year | **Resolved** | 1906, with the leaf n8 (MCMVI) and n9 (1885) evidence quoted |
+| G2-S2 Cox `textUrl` | **Resolved** | `pg32210.txt`; all 15 remaining Cox nights match it exactly |
+| G2-S3 "won't" and contractions | **Resolved** | Both declared in `edition`; W22D3 prints "won't" |
+| G2-S4 censorship (8 nights) | **Resolved** | Coverage maps show Hans in Luck whole (W14D1–D5); Three Spinsters from "There was once a girl who was lazy…" (W15D1); Mother Hulda whole (W16D1–D2); Golden Goose from the opening (W17D1); Oz Chapter II included (W20D3–D4) and Chapter IX from its opening (W36D3); the Dragon contiguous through the second round (W23D5); the Old Street Lamp to its last sentence (W30D3–W31D1). The content notes are factual, for example W30D5 on the 1888 "negroes" passage and W23D5 on Grahame's "Red Indian" and "Oriental" phrases; none tells readers to skip or soften |
+| N2 timing | **Resolved** | Maximum 122.3 |
+| N6 steering notes; "Spick" | **Resolved** | "rather than dwelling on" removed; W18D2 now notes that "Wing Tip the Spick" is Sandburg's nonsense name |
+| N7 Andersen date; Grimm evidence; `[A]` | **Resolved** | Andersen: "title page undated, catalogued 1888". Grimm `evidenceUrl` is now PG's front matter. W16D2 now ends with the book's footnote "[A] In Hesse, when it snows, they say, 'Mother Hulda is making her bed.'" and both contexts explain the mark |
+
+Blind cold reads (new or restored nights): W15D1, W16D2, W20D3, W23D5, W31D1. 17/17 answers compatible with the notes. **No new findings.**
+
+### Delta limits
+
+The OCR-based word diffs cannot see every punctuation difference. Andersen punctuation was image-checked on two pages; the edition reports a full image comparison, which I sampled rather than repeated. Blanchan, Bangs and Cox boundaries were not re-examined beyond context. This remains sampled independent agent review, not human editorial approval, empirical timing, a measured reading level, or legal advice.
