@@ -112,8 +112,6 @@
 }
 @media (max-width: 640px) {
   .rl-page .page-width { width: calc(100% - 32px); }
-  .rl-page .home-header { min-height: 70px; gap: 12px; flex-wrap: wrap; padding-block: 12px; }
-  .rl-page .home-nav { gap: 14px; flex-wrap: wrap; font-size: .8125rem; }
   .rl-main { padding-top: 22px; }
   .rl-text { font-size: 1.0625rem; line-height: 1.75; }
   .rl-item { padding: 10px; }
@@ -125,8 +123,7 @@
   @page { margin: 14mm; }
   .rl-page { background: #fff; color: #000; font-size: 10pt; }
   .rl-page .page-width { width: 100%; max-width: none; }
-  .rl-page .home-header { min-height: 0; padding: 0 0 8pt; border: 0; }
-  .rl-page :is(.skip-link, .home-nav, .rl-intro, .rl-status, .rl-actions, .rl-storage, .rl-footer, .rl-source) { display: none !important; }
+  .rl-page :is(.skip-link, .rl-intro, .rl-status, .rl-actions, .rl-storage, .rl-footer, .rl-source) { display: none !important; }
   .rl-main { padding: 0; }
   .rl-card { padding-block: 8pt; }
   .rl-print-only { display: block; font-size: 8.5pt; }

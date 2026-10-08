@@ -1,43 +1,110 @@
-/* The existing doorway and serif wordmark identify every learning surface.
-   Keep the SVG inline: it follows theme ink and prints without backgrounds. */
-:is(.brand, .wordmark) {
+/* The one Liminal header, built into every page from tools/lib/site-header.js:
+   the doorway symbol and serif wordmark, then the same primary navigation.
+   It reads the --header-* tokens, which test prep does not override, so the
+   identity is identical on every page. Keep the SVG inline: it follows theme
+   ink and prints without backgrounds. Loaded last on every page. */
+.lm-header {
+  flex: none;
+  border-bottom: 1px solid var(--header-line);
+  background: var(--header-page);
+  color: var(--header-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.3;
+}
+.lm-header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 24px;
+  width: min(var(--page-max), calc(100% - 96px));
+  min-height: 76px;
+  margin-inline: auto;
+  padding-block: 10px;
+}
+.lm-brand {
   display: inline-flex;
-  flex-shrink: 0;
+  flex: none;
   align-items: center;
   gap: 10px;
-  color: var(--color-brand, var(--color-ink));
+  min-height: var(--tap);
+  color: var(--header-ink);
   text-decoration: none;
 }
-.brand-name, .wordmark {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  letter-spacing: -.06em;
-}
-:is(.brand, .wordmark) .brand-symbol {
+.lm-brand .brand-symbol {
   display: block;
   flex: none;
   width: 27px;
   height: 34px;
-  color: var(--color-brand-mark, var(--color-accent));
+  color: var(--header-mark);
 }
-:is(.brand, .wordmark) .wordmark-dot {
-  color: var(--color-brand-mark, var(--color-accent));
+.lm-brand-name {
+  font: 400 32px/1 var(--font-serif);
+  letter-spacing: -.06em;
 }
-.curriculum-page .wordmark { gap: 10px; }
+.lm-header .wordmark-dot { color: var(--header-mark); }
+.lm-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 4px;
+  margin-left: auto;
+}
+.lm-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap);
+  padding: 3px 10px 0;
+  border-bottom: 3px solid transparent;
+  color: var(--header-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.lm-nav a:hover { border-bottom-color: var(--header-line); color: var(--header-ink); }
+.lm-nav a[aria-current] { border-bottom-color: var(--header-mark); color: var(--header-ink); }
+.lm-header a:focus-visible { outline: 3px solid var(--header-mark); outline-offset: 2px; border-radius: 2px; }
 
+/* Test prep keeps its own bar beneath the header: what it is, the SAT | ACT
+   switch, and its views (styled by app.css). */
+.prep-label { color: var(--color-muted); font-size: var(--text-xs); }
+
+@media (max-width: 1000px) {
+  .lm-header-inner { width: calc(100% - 48px); }
+}
+@media (max-width: 760px) {
+  .lm-header-inner { width: calc(100% - 32px); }
+}
+/* Phones: the wordmark on one row, then the six destinations as two rows of
+   three that wrap rather than scroll. */
 @media screen and (max-width: 640px) {
-  :is(.brand, .wordmark) { gap: 8px; }
-  .brand-name, .wordmark { font-size: 28px; }
-  :is(.brand, .wordmark) .brand-symbol { width: 23px; height: 28px; }
+  .lm-header-inner { gap: 0; min-height: 0; padding-block: 6px 0; }
+  .lm-brand { gap: 8px; }
+  .lm-brand .brand-symbol { width: 23px; height: 28px; }
+  .lm-brand-name { font-size: 28px; }
+  .lm-nav {
+    display: grid;
+    flex: 1 0 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin: 6px 0 0;
+    border-top: 1px solid var(--header-line);
+  }
+  .lm-nav a { padding-inline: 2px; font-size: var(--text-xs); white-space: normal; }
+  /* The test switch sits beside the wordmark, as before the shared header. */
+  .prep-bar .test-switch { position: absolute; top: 6px; right: 16px; }
+  .prep-label { display: none; }
 }
 
 @media print {
-  /* Retain the identity on Learn and other browser printouts, with no nav. */
-  .site-header { display: block; background: #fff; box-shadow: none; }
-  .site-header-inner { min-height: 0; padding: 0 0 10pt; }
-  .site-header :is(.site-nav, .test-switch, .brand-sub) { display: none; }
-  :is(.brand, .wordmark),
-  :is(.brand, .wordmark) :is(.brand-symbol, .wordmark-dot) { color: #000; }
-  .brand-name, .wordmark { font-size: 22pt; }
-  :is(.brand, .wordmark) .brand-symbol { width: 20pt; height: 24pt; }
+  /* Retain the identity on printouts, with no navigation. */
+  .lm-header { border: 0; background: #fff; color: #000; }
+  .lm-header-inner { width: 100%; min-height: 0; padding: 0 0 10pt; }
+  .lm-nav { display: none; }
+  .lm-brand, .lm-brand :is(.brand-symbol, .wordmark-dot) { color: #000; }
+  .lm-brand-name { font-size: 22pt; }
+  .lm-brand .brand-symbol { width: 20pt; height: 24pt; }
 }

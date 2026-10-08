@@ -1,5 +1,3 @@
-.curriculum-page .home-header { min-height: 76px; }
-.curriculum-page .wordmark { gap: 0; }
 .curriculum-page :is(button, select, summary):focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 .plan-main { max-width: 960px; padding-bottom: 32px; }
 .plan-intro { padding-block: 24px 18px; }
@@ -84,8 +82,6 @@
   .plan-grade-grid article { padding: 16px; }
 }
 @media (max-width: 460px) {
-  .curriculum-page .home-header { min-height: 64px; }
-  .curriculum-page .home-nav { gap: 14px; }
   .plan-intro { padding-block: 16px; }
   .plan-intro h1 { font-size: 1.75rem; }
   .plan-course-heading, .plan-grade { padding-top: 16px; }

@@ -136,44 +136,6 @@ body {
   padding: 16px var(--gutter);
 }
 
-.brand {
-  display: inline-flex;
-  flex: none;
-  align-items: center;
-  gap: 10px;
-  min-height: var(--tap);
-  color: var(--color-ink);
-  line-height: 1.2;
-  text-decoration: none;
-}
-
-.brand-symbol {
-  flex: none;
-  width: 27px;
-  height: 34px;
-  color: var(--color-accent);
-}
-
-.brand-copy {
-  display: grid;
-  gap: 3px;
-}
-
-.brand-name {
-  font: 400 32px/1 var(--font-serif);
-  letter-spacing: -.06em;
-}
-
-.wordmark-dot {
-  color: var(--color-accent);
-}
-
-.brand-sub {
-  color: var(--color-muted);
-  font-size: var(--text-xs);
-  font-weight: 400;
-}
-
 /* Selected controls use a strong fill and an explicit pressed state. */
 .test-switch,
 .segmented {
@@ -1595,29 +1557,17 @@ a.stat-note {
   }
 }
 
-/* Narrow screens: brand and switch on one row, the nav as a row of tabs
-   beneath that wraps onto a second row rather than scroll. */
+/* Narrow screens: the test-prep label, switch and views wrap onto further
+   rows rather than scroll. */
 @media screen and (max-width: 900px) {
   .site-header-inner {
     gap: 0 12px;
-    padding-top: 8px;
-  }
-
-  .brand-sub {
-    white-space: normal;
-  }
-
-  .test-switch {
-    margin-left: auto;
+    padding-block: 4px 0;
   }
 
   .site-nav {
-    order: 3;
-    flex: 1 0 100%;
-    gap: 0 8px;
-    margin: 6px calc(-1 * var(--gutter)) 0;
-    padding: 0 calc(var(--gutter) - 8px);
-    border-top: 1px solid var(--color-line);
+    gap: 0 4px;
+    margin-left: 0;
   }
 
   .nav-link {
@@ -1627,20 +1577,13 @@ a.stat-note {
   }
 }
 
-/* All seven destinations stay visible on small screens. Four columns keep
-   the navigation to two rows, including at a 320px viewport. */
+/* All six test-prep views stay visible on small screens. Three columns keep
+   them to two rows, including at a 320px viewport; the switch moves up
+   beside the shared wordmark (brand.css). */
 @media screen and (max-width: 640px) {
   .site-header-inner {
     gap: 0 12px;
-    padding-block: 10px 0;
-  }
-
-  .brand-name {
-    font-size: 30px;
-  }
-
-  .brand-sub {
-    display: none;
+    padding-block: 0;
   }
 
   .test-switch-option {
@@ -1651,10 +1594,12 @@ a.stat-note {
 
   .site-nav {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    flex: 1 0 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
-    margin-top: 10px;
+    margin-top: 0;
     padding-inline: var(--gutter);
+    border-top: 0;
   }
 
   .nav-link {

@@ -26,6 +26,12 @@ fs.cpSync(path.join(ROOT, "src"), DIST, {
   recursive: true,
   filter: (source) => !source.startsWith(FAMILY_SOURCES),
 });
+// Every page gets the one shared header (tools/lib/site-header.js).
+const siteHeader = require("./lib/site-header");
+fs.readdirSync(DIST).filter((file) => file.endsWith(".html")).forEach((page) => {
+  const file = path.join(DIST, page);
+  fs.writeFileSync(file, siteHeader.apply(fs.readFileSync(file, "utf8"), page));
+});
 fs.mkdirSync(path.join(DIST, "lib", "families"), { recursive: true });
 TEMPLATE_SECTIONS.forEach((sectionKey) => {
   const bundle = familyFiles(sectionKey)

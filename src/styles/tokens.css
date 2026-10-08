@@ -68,6 +68,14 @@
   --color-highlight-edge: #7a5a00;
   --shadow-bar: none;
   --shadow-card: 0 4px 18px rgba(23, 60, 54, 0.08);
+
+  /* The shared header (brand.css) keeps the library palette on every page,
+     including test prep, which overrides the --color-* tokens. */
+  --header-page: #f6f3e9;
+  --header-ink: #173c36;
+  --header-muted: #53665f;
+  --header-line: #d5d9cc;
+  --header-mark: #1b6b60;
 }
 
 /* Assessment compatibility: these values do not inherit the page theme. */
@@ -135,6 +143,12 @@
 
     --shadow-bar: none;
     --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.45);
+
+    --header-page: #14201e;
+    --header-ink: #e9ede0;
+    --header-muted: #abbeb2;
+    --header-line: #374a40;
+    --header-mark: #9dcdbb;
   }
 }
 

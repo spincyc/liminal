@@ -52,3 +52,19 @@ test("legacy practice bookmarks preserve their route and query while home anchor
   handler();
   assert.equal(target, "practice.html#review");
 });
+
+test("the shared header marks the page or section shown and nothing else", () => {
+  const siteHeader = require("../tools/lib/site-header");
+  const current = (page) => [...siteHeader.render(page).matchAll(/<a [^>]*aria-current="([^"]+)"[^>]*>([^<]*)/g)].map((match) => `${match[2] || "home"}=${match[1]}`);
+  assert.deepEqual(current("index.html"), ["home=page"]);
+  assert.deepEqual(current("daily-reading.html"), ["Daily reading=page"]);
+  assert.deepEqual(current("reading-level.html"), ["Reading level=page"]);
+  assert.deepEqual(current("high-school.html"), ["Year plans=true"]);
+  for (const page of ["practice.html", "learn.html", "print.html"]) assert.deepEqual(current(page), ["Test prep=true"]);
+  const pages = fs.readdirSync(path.join(__dirname, "../src")).filter((file) => file.endsWith(".html"));
+  for (const page of pages) {
+    const source = fs.readFileSync(path.join(__dirname, "../src", page), "utf8");
+    assert.equal(source.split(siteHeader.PLACEHOLDER).length, 2, `${page} has one header placeholder`);
+    assert.ok(siteHeader.apply(source, page).includes('aria-label="Liminal home"'));
+  }
+});

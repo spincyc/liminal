@@ -26,8 +26,6 @@
     --color-bad-soft: #fbeceb;
     --color-disabled: #e3e6ec;
     --color-disabled-ink: #596069;
-    --color-brand: #173c36;
-    --color-brand-mark: #1b6b60;
     --shadow-bar: 0 1px 3px rgba(20, 24, 31, .06);
     --shadow-card: 0 4px 18px rgba(20, 24, 31, .08);
   }
@@ -39,14 +37,6 @@
 
   [data-area="test-prep"] .site-header-inner {
     padding-block: 8px;
-  }
-
-  [data-area="test-prep"] .brand {
-    color: var(--color-brand);
-  }
-
-  [data-area="test-prep"] :is(.brand-symbol, .wordmark-dot) {
-    color: var(--color-brand-mark);
   }
 
   [data-area="test-prep"] .site-main {
@@ -142,8 +132,6 @@
     --color-bad-soft: #3a1c1a;
     --color-disabled: #2a2e35;
     --color-disabled-ink: #9aa1ab;
-    --color-brand: #e9ede0;
-    --color-brand-mark: #9dcdbb;
     --shadow-bar: 0 1px 3px rgba(0, 0, 0, .5);
     --shadow-card: 0 4px 18px rgba(0, 0, 0, .45);
   }
@@ -151,7 +139,7 @@
 
 @media screen and (max-width: 640px) {
   [data-area="test-prep"] .site-header-inner {
-    padding-block: 10px 0;
+    padding-block: 0;
   }
 
   [data-area="test-prep"] .site-main {

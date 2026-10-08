@@ -62,8 +62,6 @@
 .weekly-footer { padding-block: 22px 32px; font-size: .8125rem; overflow-wrap: anywhere; }
 @media (max-width: 640px) {
   .weekly-page .page-width { width: calc(100% - 32px); }
-  .weekly-page .home-header { flex-wrap: wrap; gap: 0 18px; padding-block: 12px 4px; }
-  .weekly-page .home-nav { gap: 20px; flex-wrap: wrap; }
   .weekly-filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 12px; }
   .weekly-filters.weekly-named { grid-template-columns: minmax(0, 1fr) 96px; }
   .weekly-filters label:first-child { grid-column: 1 / -1; }
@@ -75,8 +73,7 @@
   @page { margin: 16mm; }
   .weekly-page { font-size: 11pt; line-height: 1.5; background: #fff; color: #000; }
   .weekly-page .page-width { width: 100%; max-width: none; }
-  .weekly-page .home-header { min-height: 0; padding-bottom: 10pt; }
-  .weekly-page :is(.home-nav, .skip-link, .weekly-intro, .weekly-filters, .weekly-status, .weekly-nav, .weekly-actions, .weekly-sheet-picker, .weekly-about, .weekly-links, .weekly-tabs) { display: none !important; }
+  .weekly-page :is(.skip-link, .weekly-intro, .weekly-filters, .weekly-status, .weekly-nav, .weekly-actions, .weekly-sheet-picker, .weekly-about, .weekly-links, .weekly-tabs) { display: none !important; }
   .weekly-main { padding-block: 12pt; }
   .weekly-section { padding-block: 12pt; }
   .weekly-passage { padding: 10pt; background: #fff; }

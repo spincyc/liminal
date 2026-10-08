@@ -256,9 +256,25 @@ for (const [name, page, order] of [
   }
 }
 
-// The test-prep pages share the test switch and module navigation.
+// Every page carries the one Liminal header, exactly as tools/lib/site-header.js
+// renders it for that page: the wordmark, the same primary navigation, and
+// aria-current on the page or section shown.
+const siteHeader = require("./lib/site-header");
+const builtPages = fs.readdirSync(root).filter((file) => file.endsWith(".html")).sort();
+for (const page of builtPages) {
+  const found = siteHeader.problems(fs.readFileSync(path.join(root, page), "utf8"), page);
+  if (found.length) throw new Error(`${page}: ${found.join("; ")}`);
+}
+for (const item of siteHeader.NAV) {
+  if (!builtPages.includes(item.href)) throw new Error(`The primary navigation links to a missing page: ${item.href}`);
+}
+for (const page of ["daily-reading.html", "reading-level.html"]) {
+  if (!siteHeader.NAV.some((item) => item.href === page)) throw new Error(`The primary navigation omits ${page}`);
+}
+
+// The test-prep pages share a bar beneath it: the test switch and their views.
 function headerContract(page) {
-  const header = (page.match(/<header class="site-header">[\s\S]*?<\/header>/) || [""])[0];
+  const header = (page.match(/<div class="site-header prep-bar">[\s\S]*?<\/nav>/) || [""])[0];
   return {
     tests: [...header.matchAll(/data-test-option="([^"]+)"/g)].map((match) => match[1]).join(","),
     nav: [...header.matchAll(/class="nav-link" href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/g)]
@@ -291,7 +307,6 @@ if (fs.existsSync(learnFile)) {
 if (!html.includes('href="learn.html"')) throw new Error("practice.html does not link to the Learn page.");
 
 const practiceHeader = headerContract(html);
-if (!practiceHeader.nav.includes("courses.html Courses")) throw new Error("The course library is not reachable from navigation.");
 if (practiceHeader.tests !== "SAT,ACT" || !practiceHeader.nav.includes("print.html") ||
   !practiceHeader.nav.includes("learn.html Learn")) {
   throw new Error("practice.html is missing the SAT | ACT switch, the Learn link, or the Booklets link.");

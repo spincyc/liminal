@@ -280,11 +280,6 @@
   .course-question-long-table .course-question-layout { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
-  /* Three destinations fit beside the shared wordmark at phone widths;
-     allow wrapping on the narrowest screens instead of clipping links. */
-  .courses-page .site-header-inner { gap: 6px 12px; padding-block: 10px; }
-  .courses-page .site-nav { display: flex; flex: 0 0 auto; order: initial; gap: 12px; margin: 0 0 0 auto; padding: 0; border: 0; }
-  .courses-page .nav-link { padding-inline: 0; font-size: 13px; }
   .courses-page .site-main { padding-top: 18px; }
   .course-hero { margin-bottom: 14px; }
   .course-hero .lede { font-size: 16px; }

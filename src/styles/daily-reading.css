@@ -54,8 +54,6 @@
 .daily-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 @media (max-width: 640px) {
   .daily-page .page-width { width: calc(100% - 32px); }
-  .daily-page .home-header { min-height: 70px; gap: 12px; flex-wrap: wrap; padding-block: 12px; }
-  .daily-page .home-nav { gap: 16px; flex-wrap: wrap; font-size: .8125rem; }
   .daily-main { padding-top: 24px; }
   .daily-filters { gap: 8px; }
   .daily-filters select { padding-inline: 7px; }
@@ -66,8 +64,7 @@
   html { scroll-behavior: auto; }
   .daily-page { background: #fff; color: #000; font-size: 10pt; }
   .daily-page .page-width { width: 100%; max-width: none; }
-  .daily-page .home-header { min-height: 0; padding: 0 0 10pt; border: 0; }
-  .daily-page :is(.skip-link, .home-nav, .daily-intro, .daily-filters, .daily-status, .daily-nav, .daily-actions, .daily-facilitator, .daily-source, .daily-focus, .daily-year, .daily-about, .daily-footer) { display: none !important; }
+  .daily-page :is(.skip-link, .daily-intro, .daily-filters, .daily-status, .daily-nav, .daily-actions, .daily-facilitator, .daily-source, .daily-focus, .daily-year, .daily-about, .daily-footer) { display: none !important; }
   .daily-main { padding: 0; }
   .daily-heading { border: 0; padding-top: 0; }
   .daily-heading :is(h1, h2) { font-size: 23pt; }

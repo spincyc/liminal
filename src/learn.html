@@ -20,30 +20,24 @@
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <header class="site-header">
+    <!-- liminal:site-header -->
+    <div class="site-header prep-bar">
       <div class="site-header-inner">
-        <a class="brand" href="index.html" aria-label="Liminal home">
-          <svg class="brand-symbol" viewBox="0 0 28 34" fill="none" aria-hidden="true" focusable="false"><path d="M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17" stroke="currentColor" stroke-width="2.5" /><path d="M0 32h28" stroke="currentColor" stroke-width="2.5" /></svg>
-          <span class="brand-copy">
-            <span class="brand-name">Liminal<span class="wordmark-dot">.</span></span>
-            <span class="brand-sub">Independent <span data-test-name>SAT</span> practice</span>
-          </span>
-        </a>
+        <p class="prep-label">Independent <span data-test-name>SAT</span> practice</p>
         <div class="test-switch" role="group" aria-label="Test">
           <button class="test-switch-option" type="button" data-test-option="SAT" aria-pressed="true">SAT</button>
           <button class="test-switch-option" type="button" data-test-option="ACT" aria-pressed="false">ACT</button>
         </div>
-        <nav class="site-nav" aria-label="Primary">
+        <nav class="site-nav" aria-label="Test prep">
           <a class="nav-link" href="practice.html#practice" data-view="setup">Practice</a>
           <a class="nav-link" href="learn.html" data-view="learn" aria-current="page">Learn</a>
           <a class="nav-link" href="practice.html#progress" data-view="dashboard">Progress</a>
           <a class="nav-link" href="practice.html#review" data-view="review">Review</a>
           <a class="nav-link" href="practice.html#tips" data-view="signs"><span class="nav-full">Study tips</span><span class="nav-short" aria-hidden="true">Tips</span></a>
           <a class="nav-link" href="print.html" data-view="booklets">Booklets</a>
-          <a class="nav-link" href="courses.html">Courses</a>
         </nav>
       </div>
-    </header>
+    </div>
 
     <main id="main" class="site-main learn-main" tabindex="-1">
       <aside class="notice learn-act-note" data-test-only="ACT" hidden aria-label="About the ACT">

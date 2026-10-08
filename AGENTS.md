@@ -91,6 +91,12 @@ For a coherent ACT bank batch:
   verification. Textbook references identify scope; all instruction and
   exercises are original. Never commit scanned textbook pages or student work.
 
+- Every page has one Liminal header: its source holds the placeholder
+  `<!-- liminal:site-header -->`, which `tools/build.js` replaces with the
+  wordmark and the primary navigation from `tools/lib/site-header.js`
+  (styled by `styles/brand.css`, `--header-*` tokens). Change navigation
+  there only; `tools/smoke-static.js` fails if a built page's header
+  differs. Test prep keeps its SAT | ACT switch and views in a bar beneath.
 - The browser app has no module loader; each page loads plain scripts in
   order, and `tools/smoke-static.js` pins that order.
   - `index.html`: the module landing page, `styles/home.css`, and
@@ -102,8 +108,8 @@ For a coherent ACT bank batch:
     `lib/session-store.js`, `lib/annotations.js`, `lib/line-reader.js`,
     `lib/progress.js`, `lib/review-queue.js`,
     `lib/practice.js`, `lib/analytics.js`, `lib/progress-io.js`,
-    `app/render.js`, `app/test-shell.js`, `app/site.js` (the shared header
-    and SAT | ACT switch), the views in `app/views/`, then `app/app.js`.
+    `app/render.js`, `app/test-shell.js`, `app/site.js` (the SAT | ACT
+    switch in the test-prep bar), the views in `app/views/`, then `app/app.js`.
     Stylesheets: `tokens.css`, `app.css`, `test-shell.css`, `math.css`,
     `review.css`, `progress.css`.
   - `learn.html`: `content/learn-sat.js` (built by `tools/build-learn.js`),
