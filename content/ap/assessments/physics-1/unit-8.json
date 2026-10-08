@@ -19,8 +19,8 @@
     },
     {
       "id": "p1-u8-f3",
-      "alt": "Key: graph of absolute pressure P in kilopascals against depth h in meters, with the P axis running from 100 to 109 kPa. Six points lie close to a straight line that crosses h = 0 at about 101.2 kPa; the line is labeled slope ≈ 11.3 kPa/m.",
-      "caption": "Key: pressure against depth"
+      "alt": "Key: graph of the scale reading F in newtons against liquid density ρ_L in kg/m^3, with ρ_L from 950 to 1250 kg/m^3 and F from 2.0 to 4.2 N. Six points lie close to a straight line that falls from about 3.93 N at 1000 kg/m^3 to 2.34 N at 1200 kg/m^3; the line is labeled slope ≈ −7.9 × 10^−3 N·m^3/kg.",
+      "caption": "Key: scale reading against liquid density"
     },
     {
       "id": "p1-u8-f4",
@@ -52,7 +52,7 @@
               "rationale": "ρ = m/V = 0.250 kg/9.3 × 10^−5 m^3 ≈ 2.7 × 10^3 kg/m^3.",
               "distractorNotes": {
                 "A": "Divides the volume by the mass.",
-                "B": "Drops the power of ten in the volume.",
+                "B": "Computes 250 g/93 cm^3 = 2.7 g/cm^3 and labels it kg/m^3.",
                 "D": "Multiplies the mass by the volume."
               },
               "topics": [
@@ -92,7 +92,7 @@
               "rationale": "P = P_0 + ρgh = 1.01 × 10^5 Pa + (1000)(9.8)(10) Pa ≈ 1.99 × 10^5 Pa, about twice the surface value.",
               "distractorNotes": {
                 "A": "The water adds about 9.8 × 10^4 Pa, nearly one more atmosphere.",
-                "C": "Treats pressure as proportional to depth, ignoring the atmosphere's share.",
+                "C": "Compares the water's pressure at 10 m with that at a 1 m depth and leaves out the atmosphere.",
                 "D": "Squares the depth."
               },
               "topics": [
@@ -143,17 +143,17 @@
               "id": "p1-u8-mc06",
               "prompt": "A block of density 640 kg/m^3 floats in a liquid of density 800 kg/m^3. What percentage of the block's volume is below the surface?",
               "choices": [
-                "80%",
+                "125%",
                 "20%",
                 "64%",
-                "125%"
+                "80%"
               ],
-              "key": "A",
+              "key": "D",
               "rationale": "Floating: V_sub/V = ρ_block/ρ_liquid = 640/800 = 0.80, so 80% is submerged.",
               "distractorNotes": {
+                "A": "Inverts the ratio; a fraction cannot exceed 100%.",
                 "B": "That is the fraction above the surface.",
-                "C": "Compares the block with water instead of this liquid.",
-                "D": "Inverts the ratio; a fraction cannot exceed 100%."
+                "C": "Compares the block with water instead of this liquid."
               },
               "topics": [
                 "P1.8.3"
@@ -298,55 +298,55 @@
           "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
           "items": [
             {
-              "prompt": "A student wants to determine the density of a liquid that fills a tall tank. She lowers a waterproof absolute-pressure sensor, attached to a rod, to several depths h below the liquid's surface and records the pressure P.\n| h (m) | 0.10 | 0.20 | 0.30 | 0.40 | 0.50 | 0.60 |\n| --- | --- | --- | --- | --- | --- | --- |\n| P (kPa) | 102.4 | 103.4 | 104.6 | 105.8 | 106.8 | 108.0 |",
+              "prompt": "A student wants to find the volume and the average density of a sealed bottle partly filled with sand. She hangs the bottle from a spring scale and lowers it until it is completely under the surface of a liquid, without touching the container's sides or bottom, and records the scale reading F. She repeats this in salt solutions of different densities ρ_L, which she measures with a hydrometer.\n| ρ_L (kg/m^3) | 1000 | 1040 | 1080 | 1120 | 1160 | 1200 |\n| --- | --- | --- | --- | --- | --- | --- |\n| F (N) | 3.94 | 3.59 | 3.30 | 2.96 | 2.68 | 2.34 |",
               "type": "EDA",
               "topics": [
-                "P1.8.2",
+                "P1.8.3",
                 "P1.8.1"
               ],
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Describe how the student could measure the depth h accurately, and one way to reduce the uncertainty in each pressure reading.",
+                  "prompt": "Describe how the student should take each reading so that F measures what the analysis assumes, and one way to reduce the uncertainty in F.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Measures h from the liquid surface to the sensor's sensing point, for example with a scale marked on the rod read at the surface, keeping the rod vertical."
+                      "criterion": "Makes sure the bottle is fully submerged and hangs freely, not touching the sides or bottom and with no air bubbles clinging to it, and waits for it to stop moving before reading."
                     },
                     {
                       "points": 1,
-                      "criterion": "Reduces uncertainty in P by waiting for the reading to settle (the liquid to stop moving) and repeating readings at each depth and averaging."
+                      "criterion": "Reduces uncertainty in F by zeroing the scale before use, reading it at eye level, or repeating readings and averaging (stirring each solution so its density is uniform also counts)."
                     }
                   ],
-                  "answer": "Mark a scale on the rod, zeroed at the sensor's sensing point, and read it at the liquid surface with the rod held vertical. At each depth, wait for the liquid to settle and average several readings.",
+                  "answer": "Lower the bottle until it is completely covered but hangs freely, away from the sides and bottom, and wait for it to settle; zero the scale first, read it at eye level and average several readings in each solution.",
                   "steps": [
-                    "Depth is measured from the free surface to the point where pressure is sensed.",
+                    "The analysis assumes the whole bottle is submerged and that only the scale, gravity and the liquid act on it.",
                     "Averaging repeated readings reduces random uncertainty."
                   ]
                 },
                 {
                   "label": "b",
-                  "prompt": "On the grid, plot P against h, using scales that spread the data over most of the grid, and draw a best-fit line.",
+                  "prompt": "Show that F should be a linear function of ρ_L. On the grid, plot F against ρ_L, using scales that spread the data over most of the grid, and draw a best-fit line.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Axes labeled P (kPa) and h (m), with a P scale that need not start at zero but uses most of the grid."
+                      "criterion": "Applies equilibrium to the bottle: F + F_b = mg with F_b = ρ_L V g, so F = mg − (Vg)ρ_L, a straight line with slope −Vg."
                     },
                     {
                       "points": 1,
-                      "criterion": "All six points plotted correctly."
+                      "criterion": "Labels the axes F (N) and ρ_L (kg/m^3), with scales that need not start at zero, and plots all six points correctly."
                     },
                     {
                       "points": 1,
-                      "criterion": "One straight best-fit line through the trend of the points."
+                      "criterion": "Draws one straight best-fit line, with a negative slope, through the trend of the points."
                     }
                   ],
-                  "answer": "The six points lie close to a straight line that rises about 1.1 kPa for every 0.10 m of depth.",
+                  "answer": "F = mg − (Vg)ρ_L, so F falls linearly as ρ_L increases. The six points lie close to a straight line that falls about 0.32 N for every 40 kg/m^3.",
                   "steps": [
-                    "Plot h on the horizontal axis and P on the vertical axis.",
-                    "Draw one line that balances the points."
+                    "Forces on the bottle: the scale's pull F up, the buoyant force ρ_L V g up and its weight mg down; they balance.",
+                    "Plot ρ_L on the horizontal axis and F on the vertical axis."
                   ],
                   "figureIds": [
                     "p1-u8-f2"
@@ -357,46 +357,46 @@
                 },
                 {
                   "label": "c",
-                  "prompt": "Use your best-fit line to determine the density of the liquid.",
+                  "prompt": "Use your best-fit line to determine the volume of the bottle and its mass.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Identifies the slope of P against h as ρg, from P = P_0 + ρgh."
+                      "criterion": "Finds the slope from two points on the line, about −7.9 × 10^−3 N·m^3/kg (accept −7.5 × 10^−3 to −8.3 × 10^−3 N·m^3/kg)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Finds the slope from two points on the line, about 11.3 kPa/m (accept 10.8–11.8 kPa/m), converting to Pa/m."
+                      "criterion": "V = −slope/g ≈ 8.1 × 10^−4 m^3 (accept 7.7 × 10^−4 to 8.5 × 10^−4 m^3)."
                     },
                     {
                       "points": 1,
-                      "criterion": "ρ = slope/g ≈ 1.15 × 10^3 kg/m^3 (accept 1.10–1.20 × 10^3 kg/m^3)."
+                      "criterion": "Uses a point on the line in F = mg − ρ_L V g to find m ≈ 1.2 kg (accept 1.15–1.25 kg)."
                     }
                   ],
-                  "answer": "Slope ≈ 11.3 kPa/m = 1.13 × 10^4 Pa/m; ρ ≈ 1.15 × 10^3 kg/m^3",
+                  "answer": "Slope ≈ −7.9 × 10^−3 N·m^3/kg, so V ≈ 8.1 × 10^−4 m^3; the mass is about 1.2 kg.",
                   "steps": [
-                    "Two points on the best-fit line, such as (0.10 m, 102.35 kPa) and (0.60 m, 107.98 kPa): slope ≈ 5.63 kPa/0.50 m ≈ 11.3 kPa/m.",
-                    "ρ = (1.13 × 10^4 Pa/m)/(9.8 m/s^2) ≈ 1.15 × 10^3 kg/m^3."
+                    "Two points on the line, (1000 kg/m^3, 3.93 N) and (1200 kg/m^3, 2.34 N): slope = (2.34 − 3.93) N/200 kg/m^3 ≈ −7.9 × 10^−3 N·m^3/kg.",
+                    "V = (7.9 × 10^−3 N·m^3/kg)/(9.8 m/s^2) ≈ 8.1 × 10^−4 m^3; m = (F + ρ_L V g)/g = (3.93 N + 7.9 N)/(9.8 m/s^2) ≈ 1.2 kg."
                   ]
                 },
                 {
                   "label": "d",
-                  "prompt": "Determine the vertical intercept of your line and explain what it represents physically. How would the graph differ if the sensor measured gauge pressure instead?",
+                  "prompt": "Extend your line to find the liquid density at which the scale would read zero. Explain what that density represents and what the bottle would do in that liquid.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Intercept ≈ 101 kPa (accept 100.8–101.6 kPa), the pressure at the liquid surface: the atmospheric pressure."
+                      "criterion": "F = 0 at ρ_L ≈ 1.5 × 10^3 kg/m^3 (accept 1.45 × 10^3 to 1.55 × 10^3 kg/m^3), found by extending the line or from m/V."
                     },
                     {
                       "points": 1,
-                      "criterion": "With gauge pressure the line would pass through the origin with the same slope."
+                      "criterion": "Explains that there the buoyant force on the submerged bottle equals its weight, so this is the bottle's average density, m/V; in that liquid it would stay where it is placed under the surface, neither sinking nor rising."
                     }
                   ],
-                  "answer": "Intercept ≈ 101.2 kPa, the atmospheric pressure pushing on the surface. A gauge-pressure graph would have the same slope but pass through the origin.",
+                  "answer": "About 1.5 × 10^3 kg/m^3. There the buoyant force on the fully submerged bottle equals its weight, so this is the bottle's average density, m/V ≈ 1.2 kg/8.1 × 10^−4 m^3; in that liquid the bottle would hover, neither sinking nor rising.",
                   "steps": [
-                    "At h = 0, P = P_0.",
-                    "Gauge pressure subtracts P_0 from every reading, shifting the line down without changing its slope."
+                    "F = 0 when ρ_L V g = mg, that is, when ρ_L = m/V.",
+                    "Check: 1.21 kg/(8.07 × 10^−4 m^3) ≈ 1.50 × 10^3 kg/m^3."
                   ]
                 }
               ],

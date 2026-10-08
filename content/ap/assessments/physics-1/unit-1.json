@@ -33,8 +33,8 @@
     },
     {
       "id": "p1-u1-f6",
-      "alt": "Key: graph of x^2 in m^2 against h in m with five points close to a straight line through the origin; the best-fit line is labeled slope ≈ 0.52 m.",
-      "caption": "Key: linearized launch data"
+      "alt": "Key: graph of x/t in m/s against t in s, with t from 0 to 1.6 s and x/t from 0.8 to 1.6 m/s. Five points lie close to a straight line that falls from about 1.42 m/s at t = 0.28 s to 1.04 m/s at t = 1.54 s; the line meets the vertical axis at about 1.50 m/s, labeled intercept ≈ 1.50 m/s, and is labeled slope ≈ −0.30 m/s^2.",
+      "caption": "Key: linearized gate data"
     }
   ],
   "sections": [
@@ -115,7 +115,7 @@
               "choices": [
                 "+9.8 m/s",
                 "−9.8 m/s",
-                "−49 m/s",
+                "+49 m/s",
                 "0 m/s"
               ],
               "key": "B",
@@ -226,16 +226,16 @@
               "id": "p1-u1-mc09",
               "prompt": "A swimmer swims upstream at 1.2 m/s relative to the water in a river that flows at 0.50 m/s. What is the swimmer's velocity relative to the riverbank?",
               "choices": [
-                "1.7 m/s upstream",
-                "0.70 m/s downstream",
                 "0.70 m/s upstream",
+                "0.70 m/s downstream",
+                "1.7 m/s upstream",
                 "1.3 m/s upstream"
               ],
-              "key": "C",
+              "key": "A",
               "rationale": "Upstream positive: v_SB = v_SW + v_WB = 1.2 m/s + (−0.50 m/s) = +0.70 m/s, upstream.",
               "distractorNotes": {
-                "A": "Adds the speeds as if the current helped.",
                 "B": "Correct size but the swimmer outpaces the current, so the motion is upstream.",
+                "C": "Adds the speeds as if the current helped.",
                 "D": "Combines the velocities as if they were perpendicular."
               },
               "topics": [
@@ -244,19 +244,19 @@
             },
             {
               "id": "p1-u1-mc10",
-              "prompt": "An airplane points due east with an airspeed of 80 m/s while the wind blows due north at 20 m/s. What is the airplane's speed relative to the ground?",
+              "prompt": "A survey drone's velocity relative to the air is 7.0 m/s due east, and radar shows that its velocity relative to the ground is 12 m/s due north. What is the velocity of the wind relative to the ground?",
               "choices": [
-                "100 m/s",
-                "82 m/s",
-                "60 m/s",
-                "77 m/s"
+                "14 m/s toward 30° east of north",
+                "14 m/s toward 30° west of north",
+                "5.0 m/s toward the north",
+                "19 m/s toward 30° west of north"
               ],
               "key": "B",
-              "rationale": "The velocities are perpendicular: √(80^2 + 20^2) ≈ 82 m/s.",
+              "rationale": "v_drone,ground = v_drone,air + v_air,ground, so v_air,ground = (12 m/s north) − (7.0 m/s east): components 7.0 m/s west and 12 m/s north, magnitude √(12^2 + 7.0^2) ≈ 14 m/s, at arctan(7.0/12) ≈ 30° west of north.",
               "distractorNotes": {
-                "A": "Adds perpendicular speeds directly.",
-                "C": "Subtracts the speeds.",
-                "D": "Subtracts the squares instead of adding them."
+                "A": "Adds the drone's air velocity to its ground velocity instead of subtracting it.",
+                "C": "Subtracts the speeds as if the two velocities were parallel.",
+                "D": "Adds the magnitudes, 12 m/s + 7.0 m/s, instead of combining perpendicular components."
               },
               "topics": [
                 "P1.1.4",
@@ -314,7 +314,7 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 36,
+          "minutes": 46,
           "calculator": "any",
           "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
           "items": [
@@ -420,7 +420,7 @@
                     },
                     {
                       "points": 1,
-                      "criterion": "Writes 6.0 + 3.0(t − 2.0) − 0.75(t − 2.0)^2 = 1.5t, or an equivalent equation."
+                      "criterion": "Writes 6.0 + 3.0(t − 2.0) − 0.75(t − 2.0)^2 = 1.5t, or an equivalent equation, or reads the crossing time from an accurately drawn graph with cart 2's line."
                     },
                     {
                       "points": 1,
@@ -440,72 +440,72 @@
               "id": "p1-u1-fr1"
             },
             {
-              "prompt": "A student wants to find the speed at which a small steel ball leaves the end of a horizontal track. The track end can be clamped at different heights h above the floor, and the ball is always released from the same mark on the track, so it leaves the end with the same speed each time. The student records the horizontal distance x from the point on the floor directly below the track end to the landing point.\n| h (m) | 0.20 | 0.40 | 0.60 | 0.80 | 1.00 |\n| --- | --- | --- | --- | --- | --- |\n| x (m) | 0.33 | 0.45 | 0.56 | 0.65 | 0.72 |",
+              "prompt": "A student wants to find how fast a spring plunger launches a low-friction cart up a long, straight track tilted at a small angle, and the cart's acceleration along the track. Take up the track as positive. A light gate at the launch mark starts a timer when the cart passes it (t = 0), and the cart passes that mark at the same speed in every trial. A second light gate, a distance x farther up the track, stops the timer when the cart first reaches it. The student moves the second gate and records:\n| x (m) | 0.40 | 0.70 | 1.00 | 1.30 | 1.60 |\n| --- | --- | --- | --- | --- | --- |\n| t (s) | 0.281 | 0.524 | 0.788 | 1.121 | 1.538 |",
               "type": "EDA",
               "topics": [
-                "P1.1.5",
-                "P1.1.2"
+                "P1.1.2",
+                "P1.1.3"
               ],
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Describe how the student could measure h and x, and what the student could do to reduce the uncertainty in x.",
+                  "prompt": "Describe how the student should measure each distance x, and what the student could do to reduce the uncertainty in the times. Identify one source of uncertainty that repeating trials would not remove.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Measures h vertically from the floor to the bottom of the ball at the track end, using a meter stick (with a level or plumb line)."
+                      "criterion": "Measures x along the track from the beam of the first gate to the beam of the second (where each gate senses the cart), for example with a meter stick laid along the track."
                     },
                     {
                       "points": 1,
-                      "criterion": "Marks the point directly below the track end (plumb line) and locates the landing point (carbon paper, sand or video), measuring x between them."
+                      "criterion": "Launches several times at each gate position with the same plunger compression and averages t."
                     },
                     {
                       "points": 1,
-                      "criterion": "Repeats several releases at each height and averages x."
+                      "criterion": "Names a systematic source, such as measuring x to the gate housings instead of the beams or a track tilt that changes when a gate is moved, which shifts every trial the same way."
                     }
                   ],
-                  "answer": "Measure h from the floor to the ball at the track end with a vertical meter stick; mark the floor point below the end with a plumb line and find the landing spot with carbon paper; repeat several releases at each height and average x.",
+                  "answer": "Measure x along the track between the two light beams with a meter stick; launch several times at each position with the same plunger setting and average t. Repeats cannot remove a systematic error, such as an offset in where the beams are taken to be.",
                   "steps": [
-                    "The landing point varies slightly from trial to trial, so averaging repeated trials reduces random uncertainty in x."
+                    "Random scatter in t (small differences between launches) averages out over repeated trials; an offset in x or a change in tilt affects every trial the same way, so repeating does not remove it."
                   ]
                 },
                 {
                   "label": "b",
-                  "prompt": "Show that x^2 should be proportional to h, and state which quantities the student should graph to get a straight line. What does the slope represent?",
+                  "prompt": "Starting from a kinematic equation for constant acceleration, show that x/t should be a linear function of t. State what the slope and the vertical intercept of a graph of x/t against t represent.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Uses h = (1/2)gt^2 and x = vt to get x^2 = (2v^2/g)h."
+                      "criterion": "Writes x = v_0t + (1/2)at^2 and divides by t to get x/t = v_0 + (a/2)t."
                     },
                     {
                       "points": 1,
-                      "criterion": "Graphs x^2 against h; the slope is 2v^2/g."
+                      "criterion": "States that the slope is a/2 and the vertical intercept is v_0, the speed at the launch mark."
                     }
                   ],
-                  "answer": "x = v √(2h/g), so x^2 = (2v^2/g)h. Graph x^2 against h: a straight line through the origin with slope 2v^2/g.",
+                  "answer": "x = v_0t + (1/2)at^2, so x/t = v_0 + (a/2)t: a graph of x/t against t is a straight line with slope a/2 and vertical intercept v_0.",
                   "steps": [
-                    "The fall time is t = √(2h/g) and the horizontal velocity v is constant, so x = vt."
+                    "x/t is the average velocity between the gates; for constant acceleration it changes linearly with t."
                   ]
                 },
                 {
                   "label": "c",
-                  "prompt": "On the grid, plot x^2 against h for the data and draw a best-fit line.",
+                  "prompt": "On the grid, plot x/t against t for the data and draw a best-fit line.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Computes x^2 (0.109, 0.203, 0.314, 0.423, 0.518 m^2) and plots them with labeled axes and scales."
+                      "criterion": "Computes x/t (1.42, 1.34, 1.27, 1.16, 1.04 m/s) and plots them against t with labeled axes, units and scales."
                     },
                     {
                       "points": 1,
-                      "criterion": "Draws a single straight best-fit line passing near the origin."
+                      "criterion": "Draws a single straight best-fit line through the trend of the points (it does not pass through the origin)."
                     }
                   ],
-                  "answer": "x^2 (m^2): 0.109, 0.203, 0.314, 0.423, 0.518; the points lie close to a line through the origin.",
+                  "answer": "x/t (m/s): 1.42, 1.34, 1.27, 1.16, 1.04; the points fall close to a straight line that slopes down.",
                   "steps": [
-                    "Square each x value, then plot against h."
+                    "Divide each x by its t, then plot against t."
                   ],
                   "figureIds": [
                     "p1-u1-f3"
@@ -516,26 +516,26 @@
                 },
                 {
                   "label": "d",
-                  "prompt": "Use the slope of your line to find the speed of the ball as it leaves the track.",
+                  "prompt": "Use your line to find the speed of the cart at the launch mark and its acceleration along the track. State the direction of the acceleration.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Slope from two points on the line, about 0.52 m (accept 0.50–0.55 m), with units."
+                      "criterion": "Reads the vertical intercept as v_0 ≈ 1.50 m/s (accept 1.45–1.55 m/s)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Sets slope = 2v^2/g and solves v = √(g × slope/2)."
+                      "criterion": "Finds the slope from two points on the line, about −0.30 m/s^2 (accept −0.28 to −0.33 m/s^2), and a = 2 × slope ≈ −0.60 m/s^2 (accept −0.56 to −0.66 m/s^2)."
                     },
                     {
                       "points": 1,
-                      "criterion": "v ≈ 1.6 m/s (accept 1.5–1.7 m/s)."
+                      "criterion": "Interprets the negative sign: the acceleration points down the track, so the cart slows as it climbs."
                     }
                   ],
-                  "answer": "Slope ≈ 0.52 m, so v = √(9.8 × 0.52/2) ≈ 1.6 m/s.",
+                  "answer": "v_0 ≈ 1.50 m/s; a ≈ −0.60 m/s^2, that is 0.60 m/s^2 directed down the track.",
                   "steps": [
-                    "Using points on the line such as (0, 0) and (1.00 m, 0.52 m^2), the slope is about 0.52 m.",
-                    "v = √(9.8 × 0.52 / 2) ≈ 1.6 m/s."
+                    "Using points on the line such as (0.30 s, 1.41 m/s) and (1.50 s, 1.05 m/s), the slope is (1.05 − 1.41)/(1.50 − 0.30) ≈ −0.30 m/s^2.",
+                    "The line meets t = 0 at about 1.50 m/s, so v_0 ≈ 1.50 m/s; a = 2(−0.30 m/s^2) = −0.60 m/s^2."
                   ]
                 }
               ],

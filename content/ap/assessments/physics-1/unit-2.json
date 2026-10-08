@@ -49,15 +49,15 @@
               "prompt": "A 3.0 kg ball is at x = 0 and a 1.0 kg ball is at x = 2.0 m. Where is the center of mass of the two balls?",
               "choices": [
                 "x = 1.0 m",
-                "x = 0.50 m",
                 "x = 1.5 m",
+                "x = 0.50 m",
                 "x = 0.67 m"
               ],
-              "key": "B",
+              "key": "C",
               "rationale": "x_cm = (3.0 × 0 + 1.0 × 2.0)/(3.0 + 1.0) = 0.50 m, closer to the heavier ball.",
               "distractorNotes": {
                 "A": "The midpoint ignores the unequal masses.",
-                "C": "Swaps the masses.",
+                "B": "Swaps the masses.",
                 "D": "Divides by 3.0 kg instead of the total mass."
               },
               "topics": [
@@ -300,7 +300,7 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 36,
+          "minutes": 40,
           "calculator": "any",
           "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
           "items": [
@@ -318,7 +318,7 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Draw and label free-body diagrams for block A and for block B after release. Draw relative lengths of arrows reasonably.",
+                  "prompt": "Draw and label free-body diagrams for block A and for block B after release. Draw each force as an arrow from the dot, longer arrows for larger forces.",
                   "points": 3,
                   "rubric": [
                     {
@@ -465,7 +465,7 @@
                 },
                 {
                   "label": "c",
-                  "prompt": "At the bottom of the track the block has the same speed v. Without deriving a new equation in full, explain in words why the normal force at the bottom is greater than at the top, and state how much greater it is.",
+                  "prompt": "A second, identical block passes the bottom of the track with the same speed v. Without deriving a new equation in full, explain in words why the normal force on it at the bottom is greater than the normal force on the first block at the top, and state how much greater it is.",
                   "points": 3,
                   "rubric": [
                     {
@@ -478,12 +478,12 @@
                     },
                     {
                       "points": 1,
-                      "criterion": "States that F_N,bottom − F_N,top = 2mg."
+                      "criterion": "States that the normal force on the second block at the bottom exceeds that on the first block at the top by 2mg."
                     }
                   ],
-                  "answer": "At the bottom F_N = mv^2/R + mg, which is 2mg more than at the top, because gravity works against the inward net force there instead of helping.",
+                  "answer": "For the second block at the bottom, F_N = mv^2/R + mg, which is 2mg more than the first block's normal force at the top, because gravity points away from the center there and works against the inward net force instead of helping.",
                   "steps": [
-                    "Bottom: F_N − mg = mv^2/R gives F_N = mv^2/R + mg; top: F_N = mv^2/R − mg; the difference is 2mg."
+                    "Second block at the bottom: F_N − mg = mv^2/R gives F_N = mv^2/R + mg; first block at the top: F_N = mv^2/R − mg; the difference is 2mg."
                   ]
                 }
               ],

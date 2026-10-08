@@ -19,7 +19,7 @@
     },
     {
       "id": "p1-u3-f3",
-      "alt": "Graph of the fan force F in newtons on the cart against position x in meters: +4.0 N from 0 to 3.0 m, 0 from 3.0 m to 5.0 m and −6.0 N from 5.0 m to 8.0 m."
+      "alt": "Graph of the horizontal force F in newtons that the air exerts on the cart against position x in meters: +4.0 N from 0 to 3.0 m, 0 from 3.0 m to 5.0 m and −6.0 N from 5.0 m to 8.0 m."
     },
     {
       "id": "p1-u3-f4",
@@ -231,14 +231,14 @@
               "choices": [
                 "0.41",
                 "0.82",
-                "0.20",
+                "0.10",
                 "0.27"
               ],
               "key": "A",
               "rationale": "Energy converted: (1/2)(3.0)(25 − 9.0) = 24 J = μ_k mg d, so μ_k = 24/(3.0 × 9.8 × 2.0) ≈ 0.41.",
               "distractorNotes": {
                 "B": "Leaves out the factor 1/2 in the kinetic energy.",
-                "C": "Uses the change in speed instead of the change in the square of speed.",
+                "C": "Squares the change in speed, (2.0 m/s)^2, instead of taking the change in the square of the speed.",
                 "D": "Divides by 3.0 m instead of 2.0 m of sliding distance."
               },
               "topics": [
@@ -316,7 +316,7 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 36,
+          "minutes": 46,
           "calculator": "any",
           "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
           "items": [
@@ -406,7 +406,7 @@
                     },
                     {
                       "points": 1,
-                      "criterion": "Energy for the trip down: (1/2)mv^2 = mgd sin θ − μ_k mg cos θ d."
+                      "criterion": "Energy for the trip down: (1/2)mv^2 = mgd sin θ − μ_k mg cos θ d, or a = g(sin θ − μ_k cos θ) with v^2 = 2ad."
                     },
                     {
                       "points": 1,
@@ -423,7 +423,7 @@
             },
             {
               "id": "p1-u3-fr2",
-              "prompt": "A 2.0 kg cart moves along a level, frictionless track. At x = 0 it moves in the +x direction at 3.0 m/s. A fan mounted on the cart exerts a horizontal force on it that depends on the cart's position, as shown in the graph.",
+              "prompt": "A 2.0 kg cart moves along a level, frictionless track. At x = 0 it moves in the +x direction at 3.0 m/s. A fan mounted on the cart pushes air, and the air exerts a horizontal force on the cart that depends on the cart's position, as shown in the graph.",
               "type": "TBR",
               "topics": [
                 "P1.3.2",
@@ -445,7 +445,7 @@
                     },
                     {
                       "points": 1,
-                      "criterion": "Work bar of −6 J (12 J from 0 to 3.0 m and −18 J from 5.0 m to 8.0 m), drawn below zero."
+                      "criterion": "Work bar of −6 J (the air does 12 J from 0 to 3.0 m and −18 J from 5.0 m to 8.0 m), drawn below zero."
                     },
                     {
                       "points": 1,
@@ -526,14 +526,14 @@
                     },
                     {
                       "points": 1,
-                      "criterion": "Compares with the 18 J that the fan removes between 5.0 m and 8.0 m (or finds the stopping point 13 J / 6.0 N ≈ 2.2 m past 5.0 m)."
+                      "criterion": "Compares with the 18 J that the air's force removes between 5.0 m and 8.0 m (or finds the stopping point 13 J / 6.0 N ≈ 2.2 m past 5.0 m)."
                     },
                     {
                       "points": 1,
                       "criterion": "Concludes the claim is incorrect: the cart stops at about x = 7.2 m and moves back."
                     }
                   ],
-                  "answer": "Incorrect. The cart would have 13 J at x = 5.0 m, but the fan removes 6.0 J per meter after that, so it stops after about 2.2 m, at x ≈ 7.2 m.",
+                  "answer": "Incorrect. The cart would have 13 J at x = 5.0 m, but the air's force removes 6.0 J per meter after that, so it stops after about 2.2 m, at x ≈ 7.2 m.",
                   "steps": [
                     "K_i = (1/2)(2.0)(1.0)^2 = 1.0 J; the bar chart's work from 0 to 5.0 m is +12 J.",
                     "13 J / 6.0 N ≈ 2.17 m, so the K–x line reaches zero at x ≈ 7.2 m, before 8.0 m."

@@ -314,4 +314,27 @@ giving that material to any agent.
 - Exam-format facts were taken from `units.md` and `content/ap.json` as
   given. They were not re-verified against College Board pages.
 
+## Resolution (2026-10-08, first pass)
+
+A repair lane fixed these findings in the authoring sources, recomputed each
+changed number, and re-ran the lane checks, `check-ap --complete` and the
+course assembly. Items marked open remain in the practice-exam lane.
+
+| ID | Resolution |
+| --- | --- |
+| B1 | `p1-w35-b4` uses the review's answer and step: drag lengthens the approach (about 0.21 m with quadratic drag against 0.062 m without), and a check asserts the direction. |
+| Should-fix 1 | Week 4, example 3: the system now includes the cable. |
+| Should-fix 2 | `p1-u2-fr2`(c) uses a second identical block, and its rubric row is updated. |
+| Should-fix 3 | `p1-w26-f1` draws the column's weight ρAhg; the alt text matches. |
+| Should-fix 4 | `p1-w16-f2` alt text names a single string. |
+| Should-fix 5, 6 | Week 31 ¶1 and week 29 ¶3 use the review's wording. |
+| N1 | 38 weekly keys re-lettered (no letter above 26%); unit tests vary 2–4 keys per letter. |
+| N2 | Distractor notes rewritten to reproduce their choices. |
+| N3 | Section II gets 46 minutes in units 1, 3, 5 and 7. |
+| N4–N10 | Positive directions stated; rubrics credit the valid alternative methods; Unit 5 data carry three figures; loose wording tightened; `p1-w32-a4` checked against its fit; dependent items made self-contained or given a shared passage; numerical variants replaced with new designs. |
+| N11, N12 | Figures redrawn: the cable parallel to the ramp, one arrow scale, not-to-scale flags, labels and clipping fixed in 17 figures, 12 px sub- and superscripts in lanes 1–4. Open: `p1-pe-f4`, `p1-w35-f4`, `p1-w32-f3`, `p1-pe-f6`, `p1-pe-f8`, `p1-w31-f1`, `p1-w36-f2`. |
+| N13 | The lab statement is its own paragraph in weeks 7, 8, 12, 16, 20, 22, 25 and 29. |
+| N14, N15 | Five free-response questions reworked (`u1-fr2`, `u4-fr1`, `u5-fr2`, `u6-fr1` with an uncertainty part, `u8-fr1`); force-diagram wording varied. Open: `p1-pe-fr3` and week 35 sheet B. |
+| Formula reference | The review's three wording notes are applied. |
+
 AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.

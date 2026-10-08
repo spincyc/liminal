@@ -21,8 +21,8 @@
     },
     {
       "id": "p1-u6-f3",
-      "alt": "A straight ramp on a table with a cylinder at the top. A photogate is mounted at the bottom of the ramp, where the ramp meets the table, and the vertical height of the release point above the bottom is labeled h.",
-      "caption": "Rolling apparatus",
+      "alt": "A bicycle wheel on a stand, seen face-on, turning about its axle. A brake pad touches the rim on the right, 0.30 m from the axle, and a lever presses the pad against the rim with a force labeled F_N = 6.0 N.",
+      "caption": "Brake-pad apparatus",
       "notToScale": true
     },
     {
@@ -31,8 +31,8 @@
     },
     {
       "id": "p1-u6-f5",
-      "alt": "Key: graph of v^2 in m^2/s^2 against h in m with five points close to a straight line through the origin; the best-fit line is labeled slope ≈ 13.1 m/s^2.",
-      "caption": "Key: linearized rolling data"
+      "alt": "Key: graph of N in revolutions against ω_0^2 in rad^2/s^2, with ω_0^2 from 0 to 1000 and N from 0 to 12. Five points lie close to a straight line through the origin; the best-fit line is labeled slope ≈ 1.15 × 10^−2.",
+      "caption": "Key: linearized braking data"
     },
     {
       "id": "p1-u6-f6",
@@ -94,19 +94,19 @@
             },
             {
               "id": "p1-u6-mc03",
-              "prompt": "A constant torque of 15 N·m turns a wheel through 4.0 revolutions. How much work does the torque do?",
+              "prompt": "An electric screwdriver exerts a constant 1.5 N·m torque on a screw while turning it at a steady 20 rad/s. How much work does the screwdriver's torque do on the screw in 4.0 s?",
               "choices": [
-                "60 J",
-                "377 J",
-                "188 J",
-                "754 J"
+                "30 J",
+                "120 J",
+                "6.0 J",
+                "19 J"
               ],
               "key": "B",
-              "rationale": "Δθ = 4.0 × 2π ≈ 25.1 rad, so W = τΔθ = (15)(25.1) ≈ 377 J.",
+              "rationale": "The screw turns through Δθ = ωt = (20 rad/s)(4.0 s) = 80 rad, so W = τΔθ = (1.5 N·m)(80 rad) = 120 J (equivalently, P = τω = 30 W for 4.0 s).",
               "distractorNotes": {
-                "A": "Uses revolutions instead of radians.",
-                "C": "Uses π instead of 2π rad per revolution.",
-                "D": "Doubles the work."
+                "A": "Gives the power τω = 30 W, not the work done in 4.0 s.",
+                "C": "Multiplies the torque by the time, τt.",
+                "D": "Converts the 80 rad to revolutions (12.7) before multiplying by the torque."
               },
               "topics": [
                 "P1.6.2"
@@ -114,22 +114,23 @@
             },
             {
               "id": "p1-u6-mc04",
-              "prompt": "A flywheel with rotational inertia 0.50 kg·m^2 spins at 40 rad/s. A brake exerts a constant 8.0 N·m torque opposing the rotation. Through what angle does the flywheel turn before it stops?",
+              "prompt": "A flywheel with rotational inertia 0.50 kg·m^2 spins at 40 rad/s. A brake then does −300 J of work on it. What is the flywheel's angular velocity afterward?",
               "choices": [
-                "5.0 rad",
-                "2.5 rad",
-                "100 rad",
-                "50 rad"
+                "10 rad/s",
+                "35 rad/s",
+                "32 rad/s",
+                "20 rad/s"
               ],
               "key": "D",
-              "rationale": "K = (1/2)(0.50)(40)^2 = 400 J, and the brake's work τΔθ must remove it: Δθ = 400/8.0 = 50 rad.",
+              "rationale": "K_i = (1/2)(0.50)(40)^2 = 400 J; by the work–energy theorem K_f = 400 J − 300 J = 100 J, so ω = √(2K_f/I) = √(2 × 100/0.50) = 20 rad/s.",
               "distractorNotes": {
-                "A": "Divides ω by τ.",
-                "B": "Computes the stopping time, Iω/τ = 2.5 s, and reports it as an angle.",
-                "C": "Omits the factor 1/2 in the kinetic energy."
+                "A": "Assumes ω is proportional to K: 40 rad/s × 100/400.",
+                "B": "Uses the 300 J of work as the final kinetic energy: √(2 × 300/0.50) ≈ 35 rad/s.",
+                "C": "Leaves out the factor 1/2 in both kinetic energies: 800 J − 300 J = Iω^2."
               },
               "topics": [
-                "P1.6.2"
+                "P1.6.2",
+                "P1.6.1"
               ]
             },
             {
@@ -177,12 +178,12 @@
             },
             {
               "id": "p1-u6-mc07",
-              "prompt": "A skater spinning on frictionless ice pulls in her arms, reducing her rotational inertia to one third of its original value. Her angular velocity and rotational kinetic energy each become",
+              "prompt": "A skater spinning on frictionless ice pulls in her arms, reducing her rotational inertia to one third of its original value. How do her angular velocity ω and rotational kinetic energy K change?",
               "choices": [
-                "one third as large",
-                "unchanged and three times as large",
-                "three times as large",
-                "nine times as large"
+                "Both become one third as large",
+                "ω is unchanged; K is three times as large",
+                "Both become three times as large",
+                "Both become nine times as large"
               ],
               "key": "C",
               "rationale": "L = Iω is conserved, so ω triples; K = L^2/(2I), so K also triples.",
@@ -282,17 +283,17 @@
                 "p1-u6-f2"
               ],
               "choices": [
-                "1.5 × 10^4 m/s",
+                "2.4 × 10^3 m/s",
                 "6.0 × 10^3 m/s",
                 "9.6 × 10^2 m/s",
-                "2.4 × 10^3 m/s"
+                "1.5 × 10^4 m/s"
               ],
-              "key": "D",
+              "key": "A",
               "rationale": "Gravity exerts no torque about the planet's center, so mvr is the same at the two points, where v is perpendicular to r: v = (6.0 × 10^3)(2.0 × 10^7)/(5.0 × 10^7) = 2.4 × 10^3 m/s.",
               "distractorNotes": {
-                "A": "Inverts the ratio of the distances; the satellite is slowest when farthest.",
                 "B": "Speed is not constant on an elliptical orbit.",
-                "C": "Uses the square of the distance ratio."
+                "C": "Uses the square of the distance ratio.",
+                "D": "Inverts the ratio of the distances; the satellite is slowest when farthest."
               },
               "topics": [
                 "P1.6.6"
@@ -309,15 +310,15 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 36,
+          "minutes": 40,
           "calculator": "any",
           "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; paper investigations do not replace the hands-on lab work that College Board's AP® Physics 1 course framework requires.",
           "items": [
             {
-              "prompt": "Students want to find the shape factor β of a cylinder whose mass distribution is hidden, where its rotational inertia about its axis is I = βMR^2. They have a ramp, a meterstick, and a photogate at the bottom of the ramp that reports the cylinder's speed v as it passes. The cylinder rolls without slipping.",
+              "prompt": "Students want to find the coefficient of kinetic friction between a rubber brake pad and the steel rim of a bicycle wheel. The wheel is mounted on a stand so that it turns freely on its axle; its rotational inertia about the axle, 0.130 kg·m^2, was measured earlier. In each trial the students spin the wheel to an angular velocity ω_0, and then a lever presses the pad against the rim, 0.30 m from the axle, with a constant normal force of 6.0 N, as shown. They count the number of revolutions N the wheel makes from the moment the pad touches until the wheel stops.\n| ω_0 (rad/s) | 10.1 | 15.2 | 19.8 | 25.1 | 30.3 |\n| --- | --- | --- | --- | --- | --- |\n| N (revolutions) | 1.2 | 2.7 | 4.4 | 7.3 | 10.6 |",
               "type": "EDA",
               "topics": [
-                "P1.6.5",
+                "P1.6.2",
                 "P1.6.1"
               ],
               "figureIds": [
@@ -326,63 +327,63 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Describe a procedure the students could follow to collect data from which β can be determined. Identify what they would vary, what they would measure and how, and what they would keep the same.",
+                  "prompt": "Describe how the students could measure ω_0 and N in one trial. Identify one source of experimental uncertainty and state whether it would make the coefficient of friction they calculate too large or too small.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Varies the release height h (at least four or five values), measured vertically from the photogate level with the meterstick."
+                      "criterion": "Measures ω_0 just before the pad touches, for example with a photogate that times one revolution of a flag on the rim (ω_0 = 2π/T), a rotation sensor, or slow-motion video."
                     },
                     {
                       "points": 1,
-                      "criterion": "Measures the speed v at the bottom with the photogate for each height, with repeated trials averaged."
+                      "criterion": "Counts revolutions with a mark on the rim passing a fixed pointer, from the moment the pad touches until the wheel stops, estimating the final fraction of a turn."
                     },
                     {
                       "points": 1,
-                      "criterion": "Keeps the same cylinder and ramp surface, releases from rest each time, and checks that the cylinder rolls without slipping."
+                      "criterion": "Names a source with a correct direction, for example friction in the axle bearings adds to the pad's torque, so the calculated μ_k is too large; or a pad force that is sometimes less than 6.0 N makes the calculated μ_k too small."
                     }
                   ],
-                  "answer": "Release the cylinder from rest at several measured vertical heights h above the photogate, record the photogate speed v for each (several trials each, averaged), and use the same cylinder and ramp throughout, releasing gently so that it rolls without slipping.",
+                  "answer": "Time one revolution of a tape flag on the rim with a photogate just before the pad is applied (ω_0 = 2π/T), and count the turns of a chalk mark past a fixed pointer from the moment the pad touches until the wheel stops. Friction in the axle bearings adds to the pad's torque and shortens N, so it makes the calculated μ_k too large.",
                   "steps": [
-                    "The model v^2 = 2gh/(1 + β) has h as the variable the students control."
+                    "The model credits the pad with all of the stopping torque; any other friction torque is wrongly counted as the pad's."
                   ]
                 },
                 {
                   "label": "b",
-                  "prompt": "The students' data are shown below. Show that v^2 = 2gh/(1 + β) for a cylinder rolling without slipping, and state which quantities should be graphed to give a straight line and how β can be found from that line.\n| h (m) | 0.10 | 0.20 | 0.30 | 0.40 | 0.50 |\n| --- | --- | --- | --- | --- | --- |\n| v (m/s) | 1.15 | 1.60 | 1.99 | 2.27 | 2.57 |",
+                  "prompt": "Starting from the rotational form of the work–energy theorem, show that N = Iω_0^2/(4πτ_f), where τ_f is the friction torque that the pad exerts on the wheel. State what quantities the students should graph to get a straight line and what its slope represents.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Uses energy conservation with rotational energy: Mgh = (1/2)Mv^2 + (1/2)βMR^2(v/R)^2, giving v^2 = 2gh/(1 + β)."
+                      "criterion": "Writes τ_fΔθ = (1/2)Iω_0^2 with Δθ = 2πN, giving N = Iω_0^2/(4πτ_f)."
                     },
                     {
                       "points": 1,
-                      "criterion": "States that v^2 against h is a straight line through the origin with slope 2g/(1 + β), so β = 2g/slope − 1."
+                      "criterion": "Graphs N against ω_0^2: a straight line through the origin with slope I/(4πτ_f)."
                     }
                   ],
-                  "answer": "Mgh = (1/2)(1 + β)Mv^2, so v^2 = [2g/(1 + β)]h. Graph v^2 against h; the slope is 2g/(1 + β), so β = 2g/slope − 1.",
+                  "answer": "The pad's torque removes all the kinetic energy: τ_f(2πN) = (1/2)Iω_0^2, so N = [I/(4πτ_f)]ω_0^2. A graph of N against ω_0^2 is a straight line through the origin with slope I/(4πτ_f).",
                   "steps": [
-                    "Static friction does no work when the cylinder rolls without slipping, so mechanical energy is conserved."
+                    "The angle turned, in radians, is 2π times the number of revolutions."
                   ]
                 },
                 {
                   "label": "c",
-                  "prompt": "On the grid, plot v^2 against h with labeled axes and scales, and draw a best-fit line.",
+                  "prompt": "On the grid, plot N against ω_0^2 and draw a best-fit line.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Axes labeled with quantities and units, v^2 (m^2/s^2) and h (m), with scales that use most of the grid, and the five points (v^2: 1.32, 2.56, 3.96, 5.15, 6.60 m^2/s^2) plotted correctly."
+                      "criterion": "Computes ω_0^2 (102, 231, 392, 630, 918 rad^2/s^2) and plots the five points with labeled axes, units and scales that use most of the grid."
                     },
                     {
                       "points": 1,
-                      "criterion": "A single straight best-fit line close to the origin."
+                      "criterion": "Draws a single straight best-fit line close to the origin."
                     }
                   ],
-                  "answer": "The points (0.10, 1.32), (0.20, 2.56), (0.30, 3.96), (0.40, 5.15) and (0.50, 6.60) lie close to a line through the origin.",
+                  "answer": "ω_0^2 (rad^2/s^2): 102, 231, 392, 630, 918; the points lie close to a straight line through the origin.",
                   "steps": [
-                    "Square each speed before plotting."
+                    "Square each ω_0 before plotting."
                   ],
                   "figureIds": [
                     "p1-u6-f4"
@@ -393,37 +394,37 @@
                 },
                 {
                   "label": "d",
-                  "prompt": "Use your best-fit line to calculate β for the cylinder.",
+                  "prompt": "Use your best-fit line to calculate the friction torque that the pad exerts on the wheel.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Finds the slope from the line, about 13.1 m/s^2 (accept 12.6–13.6 m/s^2), using two points on the line rather than data points off it."
+                      "criterion": "Finds the slope from two points on the line, about 1.15 × 10^−2 revolution per rad^2/s^2 (accept 1.10 × 10^−2 to 1.20 × 10^−2)."
                     },
                     {
                       "points": 1,
-                      "criterion": "β = 2g/slope − 1 ≈ 0.50 (accept 0.44–0.56)."
+                      "criterion": "τ_f = I/(4π × slope) ≈ 0.90 N·m (accept 0.86–0.94 N·m)."
                     }
                   ],
-                  "answer": "Slope ≈ 13.1 m/s^2; β = 2(9.8)/13.1 − 1 ≈ 0.50",
+                  "answer": "Slope ≈ 1.15 × 10^−2 rev·s^2/rad^2, so τ_f = 0.130/(4π × 0.0115) ≈ 0.90 N·m.",
                   "steps": [
-                    "Through the origin and (0.50 m, 6.55 m^2/s^2): slope ≈ 13.1 m/s^2.",
-                    "1 + β = 19.6/13.1 ≈ 1.50."
+                    "Through the origin and (900 rad^2/s^2, 10.4 rev) on the line: slope ≈ 10.4/900 ≈ 0.0115.",
+                    "τ_f = I/(4π × slope) = 0.130 kg·m^2/0.145 ≈ 0.90 N·m (revolutions and radians are pure numbers, so the unit is kg·m^2/s^2 = N·m)."
                   ]
                 },
                 {
                   "label": "e",
-                  "prompt": "A thin-walled hollow cylinder has β = 1 and a uniform solid cylinder has β = 1/2. What does the result suggest about the mass distribution inside the students' cylinder?",
+                  "prompt": "Find the coefficient of kinetic friction between the pad and the rim.",
                   "points": 1,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Concludes that the cylinder behaves like a uniform solid cylinder (β ≈ 1/2), so its mass is spread evenly rather than concentrated at its rim."
+                      "criterion": "μ_k = τ_f/(F_N R) = 0.90/(6.0 × 0.30) ≈ 0.50 (accept 0.48–0.52)."
                     }
                   ],
-                  "answer": "β ≈ 0.50, the value for a uniform solid cylinder, so its mass is distributed evenly through its volume rather than concentrated at the rim.",
+                  "answer": "μ_k ≈ 0.50",
                   "steps": [
-                    "A hollow cylinder would give a slope near g = 9.8 m/s^2."
+                    "The friction force at the rim is τ_f/R = 0.90 N·m/0.30 m = 3.0 N, and μ_k = f_k/F_N = 3.0 N/6.0 N = 0.50."
                   ]
                 }
               ],

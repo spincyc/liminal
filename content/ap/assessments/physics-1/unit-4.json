@@ -19,7 +19,7 @@
     },
     {
       "id": "p1-u4-f3",
-      "alt": "Two carts on a level track: cart A, moving toward cart B with speed v_i, and cart B at rest, labeled mass unknown. A motion sensor sits at the left end of the track; the carts have sticky bumpers."
+      "alt": "A cart carrying a box of sand sits on a level track. At the left, a handheld force sensor touches the cart's left end and pushes it to the right; a motion sensor at the right end of the track faces the cart."
     },
     {
       "id": "p1-u4-f4",
@@ -27,8 +27,8 @@
     },
     {
       "id": "p1-u4-f5",
-      "alt": "Key: graph of v_f in m/s against v_i in m/s with five points close to a straight line through the origin; the best-fit line is labeled slope ≈ 0.40.",
-      "caption": "Key: linearized collision data"
+      "alt": "Key: graph of v in m/s against J in N·s, with J from 0 to 0.9 N·s and v from 0 to 0.7 m/s. Five points lie close to a straight line through the origin; the best-fit line is labeled slope ≈ 0.77 kg^−1.",
+      "caption": "Key: speed against impulse"
     },
     {
       "id": "p1-u4-f6",
@@ -97,14 +97,14 @@
                 "40 m/s",
                 "20 m/s",
                 "0.45 m/s",
-                "4.0 m/s"
+                "2.0 m/s"
               ],
               "key": "B",
               "rationale": "The impulse is the triangle's area, (1/2)(0.010 s)(600 N) = 3.0 N·s, so v = 3.0/0.15 = 20 m/s.",
               "distractorNotes": {
                 "A": "Uses a rectangle instead of a triangle.",
                 "C": "Multiplies the impulse by the mass instead of dividing.",
-                "D": "Reads milliseconds as tenths of a millisecond."
+                "D": "Converts 10 ms to 0.0010 s instead of 0.010 s."
               },
               "topics": [
                 "P1.4.2"
@@ -179,7 +179,7 @@
               "choices": [
                 "0 m/s",
                 "3.0 m/s",
-                "24 m/s",
+                "120 m/s",
                 "1.5 m/s"
               ],
               "key": "D",
@@ -187,7 +187,7 @@
               "distractorNotes": {
                 "A": "A heavy cannon still recoils; total momentum must stay zero.",
                 "B": "Doubles the correct value.",
-                "C": "Divides the ball's momentum by the ball's mass."
+                "C": "Gives the cannon the ball's speed: equal velocities instead of equal momenta."
               },
               "topics": [
                 "P1.4.3"
@@ -304,17 +304,17 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 36,
+          "minutes": 40,
           "calculator": "any",
           "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
           "items": [
             {
               "id": "p1-u4-fr1",
-              "prompt": "A student wants to find the mass of cart B, which is unknown. Cart A (mass 0.50 kg) is pushed toward cart B, which is at rest on a level track; the carts have sticky bumpers and move together after the collision. The student repeats the collision with different speeds v_i of cart A and records the common speed v_f just after each collision.\n| v_i (m/s) | 0.30 | 0.45 | 0.60 | 0.75 | 0.90 |\n| --- | --- | --- | --- | --- | --- |\n| v_f (m/s) | 0.13 | 0.18 | 0.23 | 0.31 | 0.36 |",
+              "prompt": "A student wants to find the mass of a sealed box of sand strapped to a cart. The cart alone has a mass of 0.50 kg. The loaded cart starts at rest on a level, low-friction track. The student gives it a brief horizontal push with a handheld force sensor, as shown; the sensor's software reports the impulse J of the push (the area under its force–time graph), and a motion sensor records the cart's speed v just after the push. The student repeats the push with different strengths.\n| J (N·s) | 0.20 | 0.35 | 0.50 | 0.65 | 0.80 |\n| --- | --- | --- | --- | --- | --- |\n| v (m/s) | 0.15 | 0.28 | 0.38 | 0.51 | 0.61 |",
               "type": "EDA",
               "topics": [
-                "P1.4.3",
-                "P1.4.4"
+                "P1.4.2",
+                "P1.4.1"
               ],
               "figureIds": [
                 "p1-u4-f3"
@@ -322,49 +322,49 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Describe a procedure for measuring v_i and v_f for one trial, including the equipment used and one step to reduce experimental uncertainty.",
+                  "prompt": "Describe how the student should set up the track and carry out one trial so that J and v are related only through the push, including one step that reduces experimental uncertainty.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Measures velocities with a motion sensor (or photogates, or video with a scale) just before and just after the collision."
+                      "criterion": "Levels the track (a cart at rest does not drift) so gravity has no component along it."
                     },
                     {
                       "points": 1,
-                      "criterion": "Keeps the track level (checking that a cart at rest does not drift) so that friction and gravity do not change speeds near the collision."
+                      "criterion": "Pushes along the track and reads v from the motion sensor just after the push ends, so friction has little time to change the speed."
                     },
                     {
                       "points": 1,
-                      "criterion": "Repeats each speed several times and averages, or measures speeds close to the collision point."
+                      "criterion": "Takes a step that reduces uncertainty, such as zeroing the force sensor before each push, repeating each push strength several times and averaging, or spreading the pushes over a wider range."
                     }
                   ],
-                  "answer": "Use the motion sensor to record cart A's velocity just before the collision and the pair's velocity just after; level the track first so a cart left at rest does not drift; repeat each trial several times and average.",
+                  "answer": "Level the track until a cart left at rest does not drift; zero the force sensor, push along the track, and read the speed from the motion sensor just after the push ends; repeat each push strength several times and average.",
                   "steps": [
-                    "Measuring close to the collision limits the effect of friction on the speeds."
+                    "Leveling removes gravity's component along the track, and reading v right after the push keeps friction's impulse small, so the push alone sets the cart's momentum."
                   ]
                 },
                 {
                   "label": "b",
-                  "prompt": "Using conservation of momentum, show what graph of the data should be a straight line, and write an expression for its slope in terms of m_A and m_B.",
+                  "prompt": "Use the impulse–momentum theorem to show what graph of the data should be a straight line, and state what its slope represents.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "m_A v_i = (m_A + m_B)v_f."
+                      "criterion": "J = Mv − 0 for the loaded cart of total mass M, so v = J/M."
                     },
                     {
                       "points": 1,
-                      "criterion": "Graph v_f against v_i: a straight line through the origin with slope m_A/(m_A + m_B)."
+                      "criterion": "Graph v against J: a straight line through the origin with slope 1/M (or J against v, with slope M)."
                     }
                   ],
-                  "answer": "m_A v_i = (m_A + m_B)v_f, so v_f = [m_A/(m_A + m_B)]v_i. A graph of v_f against v_i is a line through the origin with slope m_A/(m_A + m_B).",
+                  "answer": "J = Δp = Mv, so v = (1/M)J: a graph of v against J is a straight line through the origin whose slope is 1/M, the reciprocal of the loaded cart's mass.",
                   "steps": [
-                    "The track is level and the collision brief, so momentum is conserved across it."
+                    "The cart starts at rest, so its momentum just after the push equals the impulse of the push."
                   ]
                 },
                 {
                   "label": "c",
-                  "prompt": "On the grid, plot v_f against v_i and draw a best-fit line.",
+                  "prompt": "On the grid, plot v against J and draw a best-fit line.",
                   "points": 2,
                   "rubric": [
                     {
@@ -378,7 +378,7 @@
                   ],
                   "answer": "The five points lie close to a straight line through the origin.",
                   "steps": [
-                    "Plot v_i on the horizontal axis and v_f on the vertical axis."
+                    "Plot J on the horizontal axis and v on the vertical axis."
                   ],
                   "figureIds": [
                     "p1-u4-f4"
@@ -389,26 +389,26 @@
                 },
                 {
                   "label": "d",
-                  "prompt": "Use the slope of your line to calculate the mass of cart B.",
+                  "prompt": "Use the slope of your line to calculate the mass of the box of sand.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Slope from two points on the line (not data points unless they lie on it), about 0.40 (accept 0.38–0.42)."
+                      "criterion": "Slope from two points on the line, about 0.77 (m/s)/(N·s), which is 0.77 kg^−1 (accept 0.74–0.80)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Sets slope = m_A/(m_A + m_B) and solves m_B = m_A(1/slope − 1)."
+                      "criterion": "M = 1/slope ≈ 1.3 kg (accept 1.25–1.35 kg)."
                     },
                     {
                       "points": 1,
-                      "criterion": "m_B ≈ 0.74 kg (accept 0.69–0.82 kg)."
+                      "criterion": "Box mass = M − 0.50 kg ≈ 0.80 kg (accept 0.75–0.85 kg)."
                     }
                   ],
-                  "answer": "Slope ≈ 0.40, so m_B = 0.50(1/0.40 − 1) ≈ 0.74 kg (about 0.75 kg).",
+                  "answer": "Slope ≈ 0.77 kg^−1, so the loaded cart's mass is M = 1/0.77 ≈ 1.30 kg and the box of sand has a mass of about 0.80 kg.",
                   "steps": [
-                    "Using (0, 0) and (0.90 m/s, 0.362 m/s) on the line, the slope is about 0.40.",
-                    "m_B = 0.50 kg × (2.49 − 1) ≈ 0.74 kg."
+                    "Using (0, 0) and (0.80 N·s, 0.617 m/s) on the line, the slope is 0.617/0.80 ≈ 0.77 (m/s)/(N·s); since 1 N·s = 1 kg·m/s, that is 0.77 kg^−1.",
+                    "M = 1/0.771 ≈ 1.30 kg; m_box = 1.30 kg − 0.50 kg ≈ 0.80 kg."
                   ]
                 }
               ]

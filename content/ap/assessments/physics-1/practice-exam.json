@@ -507,7 +507,7 @@
             },
             {
               "id": "p1-pe-mc21",
-              "prompt": "A car's engine delivers constant power to the wheels as the car speeds up from rest on a level road. Neglecting friction and air resistance, which describes a graph of the car's kinetic energy against time?",
+              "prompt": "A car's engine delivers constant power to the wheels as the car speeds up from rest on a level road. Neglecting rolling resistance and air resistance, which describes a graph of the car's kinetic energy against time?",
               "choices": [
                 "A horizontal line, because the power is constant",
                 "A straight line through the origin with positive slope",
@@ -600,7 +600,7 @@
               "distractorNotes": {
                 "B": "Uses 2.0 kg for the rocket after the gas has left.",
                 "C": "Gives the rocket the gas's speed, which ignores the masses.",
-                "D": "Inverts the mass ratio."
+                "D": "Uses the full 2.0 kg and inverts the mass ratio: (30)(2.0/0.40)."
               },
               "topics": [
                 "P1.4.3"
@@ -870,8 +870,8 @@
               "rationale": "ρ = m/V = 1.2 kg / (1.5 × 10^−3 m^3) = 800 kg/m^3.",
               "distractorNotes": {
                 "B": "Divides by 1.5 instead of 1.5 × 10^−3 m^3; 0.80 kg/L is not 0.80 kg/m^3.",
-                "C": "Multiplies mass by volume instead of dividing.",
-                "D": "Divides volume by mass."
+                "C": "Multiplies 1.2 kg by 1.5 L and attaches 10^3.",
+                "D": "Divides 1.5 L by 1.2 kg and reports 1.25 × 10^3."
               },
               "topics": [
                 "P1.8.1"

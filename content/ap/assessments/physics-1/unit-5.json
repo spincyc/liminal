@@ -21,14 +21,13 @@
     },
     {
       "id": "p1-u5-f3",
-      "alt": "Key: free-body diagrams. Block A: F_N up, weight down, tension T_A toward the pulley and friction f_k away from it. Block B: tension T_B up and a longer weight arrow down. Pulley: T_A pulling horizontally at the top of the rim, T_B pulling down at the side of the rim, and the axle force and the pulley's weight at the center.",
+      "alt": "Key: free-body diagrams drawn to one scale. Block A: F_N up and weight down with equal lengths, tension T_A toward the pulley and a shorter friction f_k away from it. Block B: tension T_B up and a longer weight arrow down. Pulley: T_A pulling horizontally at the top of the rim and T_B pulling down at the side of the rim, each drawn the same length as on its block, with the pulley's weight down and the axle force up and toward block B's side at the center.",
       "caption": "Key: forces on the blocks and pulley"
     },
     {
       "id": "p1-u5-f4",
-      "alt": "A uniform plank 4.0 m long rests on support A at its left end (x = 0) and support B at x = 3.0 m, so 1.0 m overhangs on the right. A painter stands at a distance x from the left end.",
-      "caption": "Plank and painter",
-      "notToScale": true
+      "alt": "Graph of the gardener's pull F in newtons against time t in seconds, with t from 0 to 6 s and F from 0 to 6 N: F is 5.0 N from t = 0 to 2.0 s, 2.5 N from 2.0 s to 4.0 s, and zero after 4.0 s.",
+      "caption": "The gardener's pull on the hose"
     },
     {
       "id": "p1-u5-f5",
@@ -36,13 +35,13 @@
     },
     {
       "id": "p1-u5-f6",
-      "alt": "Key: extended force diagram of the plank: F_A upward at x = 0, F_B upward at x = 3.0 m, the plank's weight Mg downward at x = 2.0 m, and the painter's weight mg downward at distance x.",
-      "caption": "Key: forces on the plank"
+      "alt": "Key: graph of angular acceleration α in rad/s^2 against t in s from 0 to 11 s: horizontal segments at 1.4 from 0 to 2 s, at 0.40 from 2 to 4 s, at −0.60 from 4 to 10 s, and at zero after 10 s.",
+      "caption": "Key: angular acceleration of the reel"
     },
     {
       "id": "p1-u5-f7",
-      "alt": "Key: graph of support force in newtons against painter position x in meters from 0 to 3.4 m. F_B rises in a straight line from about 131 N at x = 0 to about 686 N at x = 3.4 m; F_A falls in a straight line from about 555 N at x = 0 to zero at x = 3.4 m.",
-      "caption": "Key: support forces against painter position"
+      "alt": "Key: graph of angular velocity ω in rad/s against t in s from 0 to 11 s: straight segments join (0, 0), (2.0, 2.8), (4.0, 3.6) and (10, 0), and ω stays at zero after 10 s.",
+      "caption": "Key: angular velocity of the reel"
     }
   ],
   "sections": [
@@ -122,19 +121,19 @@
             },
             {
               "id": "p1-u5-mc04",
-              "prompt": "A child sits 2.5 m from the axis of a merry-go-round that turns at a constant 0.40 revolution per second. What is the child's centripetal acceleration?",
+              "prompt": "A child sits 2.50 m from the axis of a merry-go-round that turns at a constant 0.400 revolution per second. What is the child's centripetal acceleration?",
               "choices": [
-                "0.40 m/s^2",
-                "6.3 m/s^2",
+                "0.400 m/s^2",
+                "6.28 m/s^2",
                 "15.8 m/s^2",
-                "1.0 m/s^2"
+                "1.00 m/s^2"
               ],
               "key": "C",
-              "rationale": "ω = 0.40 × 2π ≈ 2.51 rad/s, so a_c = ω^2r = (2.51)^2(2.5) ≈ 15.8 m/s^2.",
+              "rationale": "ω = 0.400 × 2π ≈ 2.513 rad/s, so a_c = ω^2r = (2.513)^2(2.50) ≈ 15.8 m/s^2.",
               "distractorNotes": {
-                "A": "Uses ω in rev/s, (0.40)^2(2.5); ω must be in rad/s.",
+                "A": "Uses ω in rev/s, (0.400)^2(2.50); ω must be in rad/s.",
                 "B": "This is the speed v = rω in m/s, not the acceleration.",
-                "D": "Uses ω in rev/s and multiplies by r^2 instead of r: (0.40)^2(2.5)^2."
+                "D": "Uses ω in rev/s and multiplies by r^2 instead of r: (0.400)^2(2.50)^2."
               },
               "topics": [
                 "P1.5.2"
@@ -142,15 +141,15 @@
             },
             {
               "id": "p1-u5-mc05",
-              "prompt": "A 40 N force acts on a door 0.30 m from the hinges, at 60° to the door's surface. What is the magnitude of the torque about the hinges?",
+              "prompt": "A 40.0 N force acts on a door 0.300 m from the hinges, at 60° to the door's surface. What is the magnitude of the torque about the hinges?",
               "choices": [
                 "10.4 N·m",
-                "12 N·m",
-                "6.0 N·m",
+                "12.0 N·m",
+                "6.00 N·m",
                 "0 N·m"
               ],
               "key": "A",
-              "rationale": "τ = rF sin θ = (0.30)(40) sin 60° ≈ 10.4 N·m; only the component perpendicular to the door turns it.",
+              "rationale": "τ = rF sin θ = (0.300)(40.0) sin 60° ≈ 10.4 N·m; only the component perpendicular to the door turns it.",
               "distractorNotes": {
                 "B": "Uses the whole force as if it were perpendicular.",
                 "C": "Uses cos 60° instead of sin 60°.",
@@ -212,7 +211,7 @@
               "key": "D",
               "rationale": "I_c = (1/12)ML^2; by the parallel-axis theorem I_end = I_c + M(L/2)^2 = (1/12 + 3/12)ML^2 = (1/3)ML^2 = 4I_c.",
               "distractorNotes": {
-                "A": "Doubles the distance instead of using the parallel-axis theorem.",
+                "A": "Assumes I grows in proportion to the distance to the far end, which doubles from L/2 to L.",
                 "B": "Moving the axis away from the center of mass increases I, not decreases it.",
                 "C": "Adds ML^2/6 instead of ML^2/4."
               },
@@ -222,15 +221,15 @@
             },
             {
               "id": "p1-u5-mc09",
-              "prompt": "A uniform plank 3.0 m long with a mass of 12 kg hangs horizontally from two vertical ropes, one at each end. A 30 kg box sits on the plank 1.0 m from its left end. What is the tension in the right rope?",
+              "prompt": "A uniform plank 3.00 m long with a mass of 12.0 kg hangs horizontally from two vertical ropes, one at each end. A 30.0 kg box sits on the plank 1.00 m from its left end. What is the tension in the right rope?",
               "choices": [
                 "157 N",
                 "255 N",
                 "206 N",
-                "98 N"
+                "98.0 N"
               ],
               "key": "A",
-              "rationale": "Torques about the left end: T_R(3.0) = (12)(9.8)(1.5) + (30)(9.8)(1.0) = 176.4 + 294 = 470.4 N·m, so T_R ≈ 157 N.",
+              "rationale": "Torques about the left end: T_R(3.00) = (12.0)(9.8)(1.50) + (30.0)(9.8)(1.00) = 176.4 + 294 = 470.4 N·m, so T_R ≈ 157 N.",
               "distractorNotes": {
                 "B": "This is the left rope's tension, which is larger because the box is nearer the left end.",
                 "C": "Splits the total weight equally between the ropes.",
@@ -262,22 +261,23 @@
             },
             {
               "id": "p1-u5-mc11",
-              "prompt": "A net torque of 12 N·m acts on a disk with rotational inertia 0.80 kg·m^2 that starts from rest. What is its angular velocity after 2.0 s?",
+              "prompt": "A net torque of 12 N·m acts on a disk with rotational inertia 0.80 kg·m^2 that starts from rest. What is its angular velocity after it has turned through 30 rad?",
               "choices": [
                 "15 rad/s",
                 "9.6 rad/s",
-                "60 rad/s",
+                "21 rad/s",
                 "30 rad/s"
               ],
               "key": "D",
-              "rationale": "α = τ/I = 12/0.80 = 15 rad/s^2, so ω = αt = (15)(2.0) = 30 rad/s.",
+              "rationale": "α = τ/I = 12/0.80 = 15 rad/s^2, and ω^2 = 2αΔθ = 2(15)(30) = 900 rad^2/s^2, so ω = 30 rad/s.",
               "distractorNotes": {
                 "A": "This is the angular acceleration in rad/s^2.",
-                "B": "Multiplies τ by I instead of dividing.",
-                "C": "Uses ω = αt^2."
+                "B": "Multiplies τ by I (9.6) and stops.",
+                "C": "Leaves out the factor 2: ω^2 = αΔθ gives √(450) ≈ 21 rad/s."
               },
               "topics": [
-                "P1.5.6"
+                "P1.5.6",
+                "P1.5.1"
               ]
             },
             {
@@ -285,16 +285,16 @@
               "prompt": "A string wound around a pulley of radius R and rotational inertia I is pulled with a constant tangential force F. A constant friction torque of magnitude τ_f acts at the axle. What is the magnitude of the pulley's angular acceleration?",
               "choices": [
                 "(F − τ_f)/I",
-                "(FR − τ_f)/I",
+                "(FR + τ_f)/I",
                 "FR/I",
-                "(FR + τ_f)/I"
+                "(FR − τ_f)/I"
               ],
-              "key": "B",
+              "key": "D",
               "rationale": "The net torque is FR − τ_f, because friction opposes the rotation; then α = τ_net/I.",
               "distractorNotes": {
                 "A": "Subtracts a torque from a force; F must be multiplied by its lever arm R.",
-                "C": "Ignores the friction torque.",
-                "D": "Friction opposes the rotation, so its torque subtracts."
+                "B": "Friction opposes the rotation, so its torque subtracts.",
+                "C": "Ignores the friction torque."
               },
               "topics": [
                 "P1.5.6"
@@ -311,7 +311,7 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 36,
+          "minutes": 46,
           "calculator": "any",
           "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; paper investigations do not replace the hands-on lab work that College Board's AP® Physics 1 course framework requires.",
           "items": [
@@ -329,7 +329,7 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Draw a free-body diagram for each block and an extended force diagram for the pulley, showing where each force on the pulley acts. Draw relative lengths reasonably.",
+                  "prompt": "Draw a free-body diagram for each block and an extended force diagram for the pulley, showing where each force on the pulley acts. Make each arrow's length show how that force compares with the other forces on the same object.",
                   "points": 3,
                   "rubric": [
                     {
@@ -419,11 +419,12 @@
               "id": "p1-u5-fr1"
             },
             {
-              "prompt": "A uniform plank 4.0 m long with a mass of 20 kg rests on two supports: A at its left end (x = 0) and B at x = 3.0 m, so 1.0 m of the plank overhangs on the right. A 50 kg painter stands on the plank at a distance x from the left end.",
+              "prompt": "A garden-hose reel is a drum of radius 0.20 m; with the hose wound on it, its rotational inertia about its axle is 0.50 kg·m^2 (treat both as constant). Friction at the axle exerts a constant 0.30 N·m torque opposing the rotation whenever the reel turns. The reel is at rest at t = 0. A gardener then pulls the hose off the drum, horizontally and tangent to it, with the force F shown in the graph, and lets go at t = 4.0 s. Take the direction in which the pull turns the reel as positive.",
               "type": "TBR",
               "topics": [
-                "P1.5.5",
-                "P1.5.3"
+                "P1.5.6",
+                "P1.5.1",
+                "P1.5.2"
               ],
               "figureIds": [
                 "p1-u5-f4"
@@ -431,21 +432,29 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Draw an extended force diagram of the plank with the painter at a general position x, showing where each force acts.",
-                  "points": 2,
+                  "prompt": "On the grid, sketch the reel's angular acceleration α against t from t = 0 until the reel stops. Label the value of α on each part of the graph.",
+                  "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Upward support forces F_A at x = 0 and F_B at x = 3.0 m."
+                      "criterion": "Uses α = (FR − τ_f)/I: 1.4 rad/s^2 from 0 to 2.0 s and 0.40 rad/s^2 from 2.0 s to 4.0 s."
                     },
                     {
                       "points": 1,
-                      "criterion": "Downward weight of the plank at its center, x = 2.0 m, and the painter's weight (the normal force from the painter) at x."
+                      "criterion": "After the pull ends, α = −τ_f/I = −0.60 rad/s^2 until the reel stops (at t = 10 s; see part (b)), and zero afterward."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Draws horizontal segments at these values with the values labeled (accept ±1 in the last digit)."
                     }
                   ],
-                  "answer": "F_A up at x = 0, F_B up at x = 3.0 m, Mg down at x = 2.0 m and mg down at x.",
+                  "answer": "Horizontal segments: α = +1.4 rad/s^2 from 0 to 2.0 s, +0.40 rad/s^2 from 2.0 s to 4.0 s, and −0.60 rad/s^2 from 4.0 s until the reel stops at t = 10 s, then zero.",
                   "steps": [
-                    "An extended force diagram places each force at its point of application so that torques can be found."
+                    "0 to 2.0 s: τ_net = (5.0 N)(0.20 m) − 0.30 N·m = 0.70 N·m, so α = 0.70/0.50 = 1.4 rad/s^2.",
+                    "2.0 to 4.0 s: τ_net = (2.5 N)(0.20 m) − 0.30 N·m = 0.20 N·m, so α = 0.40 rad/s^2; after 4.0 s only friction acts: α = −0.30/0.50 = −0.60 rad/s^2."
+                  ],
+                  "figureIds": [
+                    "p1-u5-f5"
                   ],
                   "answerFigureIds": [
                     "p1-u5-f6"
@@ -453,49 +462,26 @@
                 },
                 {
                   "label": "b",
-                  "prompt": "Derive expressions for F_A and F_B as functions of x.",
+                  "prompt": "On the grid, sketch the reel's angular velocity ω against t from t = 0 until the reel stops. Label ω at t = 2.0 s and t = 4.0 s and the time at which the reel stops.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Writes a torque equation about a stated axis, such as about A: F_B(3.0) = Mg(2.0) + mgx."
+                      "criterion": "Straight line from zero to 2.8 rad/s at t = 2.0 s, then a less steep straight line to 3.6 rad/s at t = 4.0 s."
                     },
                     {
                       "points": 1,
-                      "criterion": "F_B = (392 + 490x)/3.0 ≈ 131 + 163x (N, x in m)."
+                      "criterion": "Straight line falling from 3.6 rad/s to zero at t = 10 s (accept 9.9–10.1 s)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Uses ΣF_y = 0 to get F_A = 686 − F_B ≈ 555 − 163x."
+                      "criterion": "Slopes match the angular accelerations in part (a), and ω stays at zero after the reel stops (axle friction cannot reverse it)."
                     }
                   ],
-                  "answer": "F_B ≈ 131 + 163x and F_A ≈ 555 − 163x, in newtons with x in meters.",
+                  "answer": "ω rises linearly to 2.8 rad/s at 2.0 s, more slowly to 3.6 rad/s at 4.0 s, then falls linearly to zero at t = 10 s and stays at zero.",
                   "steps": [
-                    "About A: 3.0F_B = (20)(9.8)(2.0) + (50)(9.8)x = 392 + 490x.",
-                    "ΣF_y = 0: F_A + F_B = (70)(9.8) = 686 N."
-                  ]
-                },
-                {
-                  "label": "c",
-                  "prompt": "On the grid, sketch graphs of F_A and F_B against x, from x = 0 until the plank is about to tip. Label both graphs and the values at x = 0.",
-                  "points": 3,
-                  "rubric": [
-                    {
-                      "points": 1,
-                      "criterion": "Both graphs are straight lines; F_B increases and F_A decreases with the same magnitude of slope, about 163 N/m."
-                    },
-                    {
-                      "points": 1,
-                      "criterion": "Intercepts at x = 0 are labeled about 131 N for F_B and about 555 N for F_A."
-                    },
-                    {
-                      "points": 1,
-                      "criterion": "F_A reaches zero, and the graphs end, at about x = 3.4 m, where F_B = 686 N."
-                    }
-                  ],
-                  "answer": "Two straight lines: F_B from about 131 N rising to 686 N, F_A from about 555 N falling to zero, both ending at x ≈ 3.4 m.",
-                  "steps": [
-                    "The slopes are ±490/3.0 ≈ ±163 N/m, and the two forces always add to 686 N."
+                    "ω(2.0 s) = (1.4 rad/s^2)(2.0 s) = 2.8 rad/s; ω(4.0 s) = 2.8 + (0.40)(2.0) = 3.6 rad/s.",
+                    "Time to stop after the pull ends: (3.6 rad/s)/(0.60 rad/s^2) = 6.0 s, so the reel stops at t = 10 s."
                   ],
                   "figureIds": [
                     "p1-u5-f5"
@@ -505,41 +491,51 @@
                   ]
                 },
                 {
-                  "label": "d",
-                  "prompt": "Use your graphs to determine how far from the left end the painter can stand before the plank begins to tip. Explain why your equations no longer describe the plank beyond that point.",
-                  "points": 2,
+                  "label": "c",
+                  "prompt": "Use your angular velocity graph to find the length of hose pulled off the reel while the gardener is pulling (t = 0 to 4.0 s) and the total number of revolutions the reel makes before it stops.",
+                  "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "x ≈ 3.4 m, where the F_A graph reaches zero (accept 3.3–3.5 m)."
+                      "criterion": "Finds the angle turned from 0 to 4.0 s as the area under the ω–t graph: 2.8 rad + 6.4 rad = 9.2 rad."
                     },
                     {
                       "points": 1,
-                      "criterion": "Explains that support A can only push up, so F_A cannot become negative; beyond this point the net torque about B is not zero and the plank rotates about B."
+                      "criterion": "Hose length s = Rθ = (0.20 m)(9.2 rad) ≈ 1.8 m (accept 1.7–1.9 m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Total angle 9.2 rad + 10.8 rad = 20 rad, about 3.2 revolutions (accept 3.1–3.3)."
                     }
                   ],
-                  "answer": "About 3.4 m from the left end. Beyond that the equations would require a negative (downward) force from support A, which a simple support cannot supply, so the plank tips about B.",
+                  "answer": "About 1.8 m of hose (1.84 m) while she pulls; about 3.2 revolutions (20 rad) in all.",
                   "steps": [
-                    "F_A = 555 − 163x = 0 gives x ≈ 3.40 m."
+                    "Areas: (1/2)(2.0 s)(2.8 rad/s) = 2.8 rad; (1/2)(2.8 + 3.6 rad/s)(2.0 s) = 6.4 rad; (1/2)(6.0 s)(3.6 rad/s) = 10.8 rad.",
+                    "s = Rθ = (0.20 m)(9.2 rad) = 1.84 m; total θ = 20 rad, and 20/(2π) ≈ 3.2 revolutions."
                   ]
                 },
                 {
-                  "label": "e",
-                  "prompt": "Suppose the plank were replaced by a heavier uniform plank of the same length on the same supports. Describe how the slopes and intercepts of both graphs, and the tipping position, would change, and explain why.",
-                  "points": 2,
+                  "label": "d",
+                  "prompt": "A student claims, \"If the gardener had kept pulling with 5.0 N from t = 2.0 s to 4.0 s instead of 2.5 N, the reel's angular velocity would have increased twice as much during that interval, because the pull would be twice as large.\" Evaluate the claim using your representations.",
+                  "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "The slopes are unchanged because they depend only on the painter's weight and the 3.0 m spacing of the supports, while both intercepts increase because the plank's weight adds to both support forces."
+                      "criterion": "Recognizes that the angular acceleration depends on the net torque, FR − τ_f, and that the friction torque is the same in both cases."
                     },
                     {
                       "points": 1,
-                      "criterion": "The tipping position moves farther right (x = 3.0 m + 1.0 m × M/m), because a heavier plank supplies a larger counter-torque about B."
+                      "criterion": "Finds the net torques, 0.70 N·m and 0.20 N·m (or angular accelerations 1.4 and 0.40 rad/s^2), so ω would increase by 2.8 rad/s instead of 0.80 rad/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the claim is incorrect: the increase would be 3.5 times as large, not twice (ω at 4.0 s would be 5.6 rad/s instead of 3.6 rad/s)."
                     }
                   ],
-                  "answer": "Same slopes (±mg/3.0 m), higher intercepts for both lines, and a tipping point farther out, because the plank's larger weight 1.0 m left of B balances the painter farther past B.",
+                  "answer": "Incorrect. The friction torque does not change, so doubling the pull raises the net torque from 0.20 N·m to 0.70 N·m, 3.5 times as much. During that interval ω would rise by 2.8 rad/s instead of 0.80 rad/s, reaching 5.6 rad/s at t = 4.0 s.",
                   "steps": [
-                    "About B at tipping: Mg(1.0) = mg(x − 3.0), so x = 3.0 + M/m; with M = 20 kg this is 3.4 m."
+                    "Δω = (τ_net/I)Δt: (0.70/0.50)(2.0) = 2.8 rad/s against (0.20/0.50)(2.0) = 0.80 rad/s.",
+                    "On the ω–t graph, the 2.0–4.0 s segment would keep the first segment's slope, up to 5.6 rad/s."
                   ]
                 }
               ],

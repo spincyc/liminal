@@ -779,13 +779,13 @@
               "id": "p1-w02-c4",
               "prompt": "Rain falls vertically at 8.0 m/s relative to the ground. A car drives through it at 6.0 m/s. What is the speed of the raindrops relative to the car?",
               "choices": [
-                "2.0 m/s",
+                "10 m/s",
                 "14 m/s",
                 "7.0 m/s",
-                "10 m/s"
+                "2.0 m/s"
               ],
-              "key": "D",
-              "answer": "(D) 10 m/s",
+              "key": "A",
+              "answer": "(A) 10 m/s",
               "steps": [
                 "v_RC = v_RG − v_CG: 8.0 m/s down combined with 6.0 m/s backward (opposite the car's motion).",
                 "The components are perpendicular: √(8.0^2 + 6.0^2) = 10 m/s."
@@ -1420,7 +1420,7 @@
           "passageIds": []
         },
         {
-          "prompt": "A tow truck pulls a car with a cable. Take the system to be the truck and the car together. Which force is internal to this system?",
+          "prompt": "A tow truck pulls a car with a cable. Take the system to be the truck, the cable and the car together. Which force is internal to this system?",
           "choices": [
             "The cable's pull on the car",
             "Friction from the road on the truck's tires",
@@ -1431,7 +1431,7 @@
           "answer": "(A) The cable's pull on the car",
           "steps": [
             "A force is internal when both interacting objects are in the system.",
-            "The cable joins truck and car, both in the system, so its pull on the car is internal (its partners act within the system too).",
+            "The cable and the car are both in the system, so the cable's pull on the car is internal; its third-law partner, the car's pull on the cable, also acts within the system.",
             "The road and Earth are outside the system, so their forces are external."
           ],
           "passageIds": []
@@ -1496,13 +1496,13 @@
               "id": "p1-w04-a4",
               "prompt": "A person stands in an elevator car that hangs from a cable. Take the system to be the person and the car. Which forces are external to this system?",
               "choices": [
-                "The floor's normal force on the person and the person's push on the floor",
                 "The cable's tension on the car and Earth's gravitational force on the person and the car",
+                "The floor's normal force on the person and the person's push on the floor",
                 "Only Earth's gravitational force on the person",
                 "The person's weight and the floor's normal force on the person"
               ],
-              "key": "B",
-              "answer": "(B) The cable's tension on the car and Earth's gravitational force on the person and the car",
+              "key": "A",
+              "answer": "(A) The cable's tension on the car and Earth's gravitational force on the person and the car",
               "steps": [
                 "External forces come from objects outside the system: the cable and Earth.",
                 "The floor–person contact forces act between two parts of the system, so they are internal."
@@ -1933,13 +1933,13 @@
               "id": "p1-w05-a4",
               "prompt": "A horse pulls a cart forward, and the cart pulls back on the horse with a force of equal magnitude. Which statement explains how the cart can speed up?",
               "choices": [
-                "The horse's pull is slightly larger than the cart's pull",
-                "The forces cancel, so the cart cannot speed up",
                 "The two forces act on different objects; the cart speeds up when the horse's pull exceeds the friction on the cart",
+                "The forces cancel, so the cart cannot speed up",
+                "The horse's pull is slightly larger than the cart's pull",
                 "The cart's pull on the horse acts only after the cart starts moving"
               ],
-              "key": "C",
-              "answer": "(C) The two forces act on different objects; the cart speeds up when the horse's pull exceeds the friction on the cart",
+              "key": "A",
+              "answer": "(A) The two forces act on different objects; the cart speeds up when the horse's pull exceeds the friction on the cart",
               "steps": [
                 "The pair acts on two different objects, so it cannot cancel on either one.",
                 "Only the forces on the cart decide its acceleration: the forward pull and the backward friction."
@@ -2078,13 +2078,13 @@
               "id": "p1-w05-b6",
               "prompt": "An object moves east at a constant velocity of 3.0 m/s. Which statement must be true?",
               "choices": [
-                "A net force acts toward the east",
                 "The net force on the object is zero",
+                "A net force acts toward the east",
                 "No forces act on the object",
                 "The net force points east and is decreasing"
               ],
-              "key": "B",
-              "answer": "(B) The net force on the object is zero",
+              "key": "A",
+              "answer": "(A) The net force on the object is zero",
               "steps": [
                 "Constant velocity means zero acceleration, so by the first law the net force is zero.",
                 "Forces may act, but they must balance."
@@ -2679,7 +2679,8 @@
         "Every pair of masses attracts with a gravitational force F = Gm_1m_2/r^2, where G = 6.67 × 10^−11 N·m^2/kg^2 and r is the distance between their centers. Doubling r cuts the force to one quarter. Near a planet of mass M and radius R, the force on a mass m is mg with g = GM/R^2, the gravitational field strength in N/kg (equivalent to m/s^2). Mass measures inertia and is the same everywhere; weight, the gravitational force mg, depends on where the object is.",
         "Kinetic friction acts when surfaces slide over each other: f_k = μ_kF_N, directed opposite the sliding and nearly independent of speed and contact area. Static friction acts when surfaces do not slide: it takes whatever value is needed to prevent sliding, up to a maximum f_s,max = μ_sF_N. Because μ_s is usually larger than μ_k, a push must exceed μ_sF_N to start an object moving, after which a smaller push keeps it moving at constant velocity.",
         "An ideal spring exerts a force proportional to its stretch or compression from its natural length: F_s = k|Δx|, directed back toward the natural length. The spring constant k, in N/m, measures stiffness and is the slope of a graph of force against stretch. When a mass hangs at rest from a spring, kΔx = mg. The figure shows a block attached to a spring; pulling the block to the right stretches the spring, which then pulls the block to the left.",
-        "Common errors: setting F_N = mg when another force has a vertical component or the surface is tilted; using μ_sF_N as the static friction force when a smaller force is enough to hold the object; measuring r in the gravitation law from a planet's surface instead of its center; and using a spring's total length instead of its change in length. Data tasks this week use supplied measurements. College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This data task uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
+        "Common errors: setting F_N = mg when another force has a vertical component or the surface is tilted; using μ_sF_N as the static friction force when a smaller force is enough to hold the object; measuring r in the gravitation law from a planet's surface instead of its center; and using a spring's total length instead of its change in length.",
+        "Data tasks this week use supplied measurements. College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This data task uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
       ],
       "figures": [
         {
@@ -3115,7 +3116,8 @@
         "An object moving in a circle at constant speed is accelerating, because the direction of its velocity keeps changing. The velocity is tangent to the circle, and the acceleration points toward the center with magnitude a_c = v^2/r. If the object goes around once in a period T, its speed is v = 2πr/T. The figure shows the velocity along the tangent and the acceleration toward the center at one instant.",
         "By Newton's second law, uniform circular motion requires a net force toward the center of magnitude mv^2/r. That net force is not a new kind of force; it is supplied by real forces such as string tension, static friction on a car's tires on a flat curve, gravity, or a normal force. A free-body diagram shows only those real forces. Take the direction toward the center as positive and write ΣF_toward center = mv^2/r.",
         "In a vertical circle the speed may change, but at the top and the bottom the same equation holds along the vertical. At the bottom of a dip, F_N − mg = mv^2/r, so the normal force exceeds the weight. At the top of a loop, with the rider upside down, F_N + mg = mv^2/r; the slowest speed that keeps contact makes F_N = 0, so v_min = √(gr). Going over the top of a hill, mg − F_N = mv^2/r, so the normal force is less than the weight, and the car leaves the road if v exceeds √(gr).",
-        "Common errors: drawing an outward 'centrifugal' force on a free-body diagram (in an inertial frame nothing pushes outward; a rider presses against the outside of a turning car because the car must push her inward to change her velocity); expecting an object released from a circle to fly straight outward instead of along the tangent; using the diameter for r; and forgetting that friction on a flat curve is static friction. College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
+        "Common errors: drawing an outward 'centrifugal' force on a free-body diagram (in an inertial frame nothing pushes outward; a rider presses against the outside of a turning car because the car must push her inward to change her velocity); expecting an object released from a circle to fly straight outward instead of along the tangent; using the diameter for r; and forgetting that friction on a flat curve is static friction.",
+        "College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
       ],
       "figures": [
         {
@@ -3758,7 +3760,7 @@
             },
             {
               "id": "p1-w09-a7",
-              "prompt": "A 0.50 kg hockey puck slides 20 m across rough ice, slowing from 12 m/s to 8.0 m/s. Find the work done by friction and the average friction force on the puck.",
+              "prompt": "A 0.50 kg hockey puck slides 15 m across rough ice, slowing from 9.0 m/s to 6.0 m/s. Find the work done by friction and the average friction force on the puck.",
               "points": 3,
               "rubric": [
                 {
@@ -3767,17 +3769,17 @@
                 },
                 {
                   "points": 1,
-                  "criterion": "ΔK = (1/2)(0.50)(8.0^2 − 12^2) = −20 J, so W_f = −20 J."
+                  "criterion": "ΔK = (1/2)(0.50)(6.0^2 − 9.0^2) = −11.25 J, so W_f ≈ −11 J (accept −10 to −12 J)."
                 },
                 {
                   "points": 1,
-                  "criterion": "f = |W_f|/d = 20 J / 20 m = 1.0 N, directed opposite the motion."
+                  "criterion": "f = |W_f|/d = 11.25 J / 15 m = 0.75 N (accept 0.74–0.76 N), directed opposite the motion."
                 }
               ],
-              "answer": "W_f = −20 J; friction force ≈ 1.0 N opposite the motion.",
+              "answer": "W_f ≈ −11 J (−11.25 J); friction force 0.75 N opposite the motion.",
               "steps": [
-                "Gravity and the normal force are vertical and do no work, so W_net = W_f = ΔK = (1/2)(0.50 kg)[(8.0 m/s)^2 − (12 m/s)^2] = 0.25(64 − 144) = −20 J.",
-                "W_f = −fd, so f = 20 J / 20 m = 1.0 N."
+                "Gravity and the normal force are vertical and do no work, so W_net = W_f = ΔK = (1/2)(0.50 kg)[(6.0 m/s)^2 − (9.0 m/s)^2] = 0.25(36 − 81) = −11.25 J.",
+                "W_f = −fd, so f = 11.25 J / 15 m = 0.75 N."
               ],
               "passageIds": [],
               "skill": "Apply the work–energy theorem with friction"
@@ -3928,11 +3930,11 @@
               "choices": [
                 "The normal force",
                 "Kinetic friction",
-                "Gravity",
-                "None of the forces"
+                "None of the forces",
+                "Gravity"
               ],
-              "key": "C",
-              "answer": "(C) Gravity",
+              "key": "D",
+              "answer": "(D) Gravity",
               "steps": [
                 "Gravity has a component down the slope, along the displacement, so its work is positive.",
                 "The normal force is perpendicular to the motion (zero work), and kinetic friction points up the slope, against the motion (negative work)."
@@ -4008,7 +4010,7 @@
             },
             {
               "id": "p1-w09-c7",
-              "prompt": "The graph shows the kinetic energy of a 3.0 kg block moving along a straight, level track as a function of its position. (a) Find the net force on the block in each of the three intervals. (b) Sketch a graph of the net force against position from 0 to 10 m. (c) Find the block's speed at x = 10 m.",
+              "prompt": "The graph shows the kinetic energy of a 3.0 kg block moving along a straight, level track as a function of its position. Take the direction of motion (+x) as positive. (a) Find the net force on the block in each of the three intervals. (b) Sketch a graph of the net force against position from 0 to 10 m. (c) Find the block's speed at x = 10 m.",
               "figureIds": [
                 "p1-w09-f5"
               ],
@@ -4149,12 +4151,12 @@
               "prompt": "Which of these can have gravitational potential energy?",
               "choices": [
                 "A ball, considered by itself",
-                "The system of a ball and Earth",
+                "A ball's velocity",
                 "The air around a ball",
-                "A ball's velocity"
+                "The system of a ball and Earth"
               ],
-              "key": "B",
-              "answer": "(B) The system of a ball and Earth",
+              "key": "D",
+              "answer": "(D) The system of a ball and Earth",
               "steps": [
                 "Potential energy is stored in the configuration of interacting objects.",
                 "Gravitational potential energy needs both the ball and Earth in the system."
@@ -4280,13 +4282,13 @@
               "id": "p1-w10-b2",
               "prompt": "A 2.0 kg ball is thrown up, rises 3.0 m, and then falls to a point 5.0 m below its highest point. How much work does gravity do on the ball over the whole trip?",
               "choices": [
-                "−39 J",
-                "+157 J",
                 "+39 J",
+                "+157 J",
+                "−39 J",
                 "+98 J"
               ],
-              "key": "C",
-              "answer": "(C) +39 J",
+              "key": "A",
+              "answer": "(A) +39 J",
               "steps": [
                 "Gravity's work depends only on the net change in height: the ball ends 5.0 m − 3.0 m = 2.0 m below its start.",
                 "W_g = −ΔU_g = mg(2.0 m) = (2.0)(9.8)(2.0) ≈ +39 J."
@@ -4474,12 +4476,12 @@
               "prompt": "Which statement about the zero level of gravitational potential energy is correct?",
               "choices": [
                 "It must be at the ground",
-                "It changes the value of U_g but not the change ΔU_g",
+                "It must be at the lowest point of the motion",
                 "It changes ΔU_g but not U_g",
-                "It must be at the lowest point of the motion"
+                "It changes the value of U_g but not the change ΔU_g"
               ],
-              "key": "B",
-              "answer": "(B) It changes the value of U_g but not the change ΔU_g",
+              "key": "D",
+              "answer": "(D) It changes the value of U_g but not the change ΔU_g",
               "steps": [
                 "Moving the zero adds the same constant to U_g everywhere.",
                 "Differences cancel that constant, and only differences affect motion."
@@ -4844,13 +4846,13 @@
               "id": "p1-w11-b7",
               "prompt": "Two identical blocks are released from rest at the same height on two frictionless ramps, one steep and one gentle. Which statement about the blocks at the bottom is correct?",
               "choices": [
-                "The block on the steep ramp is faster",
                 "They have the same speed, and the block on the steep ramp arrives sooner",
+                "The block on the steep ramp is faster",
                 "They have the same speed and arrive at the same time",
                 "The block on the gentle ramp is faster"
               ],
-              "key": "B",
-              "answer": "(B) They have the same speed, and the block on the steep ramp arrives sooner",
+              "key": "A",
+              "answer": "(A) They have the same speed, and the block on the steep ramp arrives sooner",
               "steps": [
                 "Energy conservation gives v = √(2gh) for both.",
                 "The steep ramp is shorter and its acceleration g sin θ is larger, so that block takes less time."
@@ -4883,12 +4885,12 @@
               "prompt": "A student analyzes a falling ball with the ball–Earth system and writes ΔK + ΔU_g = W_gravity. What is wrong with this equation?",
               "choices": [
                 "Nothing; it is correct",
-                "It counts gravity twice: as potential energy and as external work",
+                "Kinetic energy is not part of the ball–Earth system",
                 "It should include the ball's spring energy",
-                "Kinetic energy is not part of the ball–Earth system"
+                "It counts gravity twice: as potential energy and as external work"
               ],
-              "key": "B",
-              "answer": "(B) It counts gravity twice: as potential energy and as external work",
+              "key": "D",
+              "answer": "(D) It counts gravity twice: as potential energy and as external work",
               "steps": [
                 "Inside the ball–Earth system, gravity is internal and is represented by ΔU_g.",
                 "The correct statement is ΔK + ΔU_g = 0 (no external work)."
@@ -4986,7 +4988,8 @@
         "When a block slides across a rough floor, kinetic friction does negative work on the block, and the block and floor warm up. If the system includes both surfaces, friction is internal, and the mechanical energy lost becomes internal (thermal) energy: ΔE_int = f_k d, where d is the total length of the sliding path, not the displacement. A block that slides back and forth across a rough patch converts energy on every pass. The figure adds a column for this internal energy to the bar chart.",
         "The full energy statement for a system is W_ext = ΔK + ΔU_g + ΔU_s + ΔE_int, where W_ext is the work done by forces from outside the system, such as a person's push or a motor's cable. A winch dragging a crate up a rough ramp at constant speed does work that goes partly into gravitational potential energy and partly into internal energy; the kinetic energy does not change.",
         "Multistep problems become manageable when the motion is split at the points where the physics changes: the bottom of a frictionless curve, the ends of a rough patch, the moment a spring is reached. Write one energy statement for each stage and use the result of one stage as the start of the next. Check that each stage's answer is possible: a block cannot have negative kinetic energy, so if the energy runs out partway across a rough patch, the block stops there.",
-        "Common errors: using the straight-line displacement instead of the path length for friction; using mg instead of the normal force mg cos θ for friction on an incline; treating friction's work as negative internal energy; and ignoring friction during the part of the motion where a spring is still pushing. College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
+        "Common errors: using the straight-line displacement instead of the path length for friction; using mg instead of the normal force mg cos θ for friction on an incline; treating friction's work as negative internal energy; and ignoring friction during the part of the motion where a spring is still pushing.",
+        "College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
       ],
       "figures": [
         {
@@ -5143,12 +5146,12 @@
               "prompt": "A block slides down a rough incline at constant speed. For the system of the block, the incline and Earth, which describes the energy changes?",
               "choices": [
                 "K decreases; U_g is constant; E_int increases",
-                "K is constant; U_g decreases; E_int increases by the same amount",
+                "K is constant; U_g decreases; E_int is constant",
                 "K increases; U_g decreases; E_int is constant",
-                "K is constant; U_g decreases; E_int is constant"
+                "K is constant; U_g decreases; E_int increases by the same amount"
               ],
-              "key": "B",
-              "answer": "(B) K is constant; U_g decreases; E_int increases by the same amount",
+              "key": "D",
+              "answer": "(D) K is constant; U_g decreases; E_int increases by the same amount",
               "steps": [
                 "Constant speed means ΔK = 0.",
                 "The block loses height, and with no external work the lost U_g must appear as internal energy."
@@ -5600,12 +5603,12 @@
               "prompt": "Two students carry identical boxes up the same flight of stairs. Student A takes 10 s and student B takes 20 s. Which statement is correct?",
               "choices": [
                 "A does twice as much work as B",
-                "A and B do the same work, and A's power is twice B's",
+                "A and B have the same power",
                 "A and B do the same work, and B's power is twice A's",
-                "A and B have the same power"
+                "A and B do the same work, and A's power is twice B's"
               ],
-              "key": "B",
-              "answer": "(B) A and B do the same work, and A's power is twice B's",
+              "key": "D",
+              "answer": "(D) A and B do the same work, and A's power is twice B's",
               "steps": [
                 "Work depends on the weight and the height, which are the same for both.",
                 "Power = work/time, so half the time means twice the power."
@@ -6147,11 +6150,11 @@
               "choices": [
                 "0",
                 "mv",
-                "2mv",
-                "mv/2"
+                "mv/2",
+                "2mv"
               ],
-              "key": "C",
-              "answer": "(C) 2mv",
+              "key": "D",
+              "answer": "(D) 2mv",
               "steps": [
                 "Taking the rebound direction as positive, Δp = mv − (−mv) = 2mv.",
                 "Zero would be the change in kinetic energy, not in momentum."
@@ -6174,13 +6177,13 @@
               "id": "p1-w14-b6",
               "prompt": "Two carts at rest on a frictionless track, of masses m and 2m, each receive a push described by the same force–time graph. Which quantity is the same for both carts after the push?",
               "choices": [
-                "Final speed",
                 "Final momentum",
+                "Final speed",
                 "Final kinetic energy",
                 "Acceleration during the push"
               ],
-              "key": "B",
-              "answer": "(B) Final momentum",
+              "key": "A",
+              "answer": "(A) Final momentum",
               "steps": [
                 "The same force–time graph gives the same impulse, so the same Δp.",
                 "The heavier cart ends with half the speed, so its kinetic energy p^2/(2m) is half as large."
@@ -6275,12 +6278,12 @@
               "prompt": "A loaded truck and a small car collide head-on. During the collision, which statement is correct?",
               "choices": [
                 "The truck exerts a larger force on the car than the car exerts on the truck",
-                "The forces are equal in size, and the car's velocity changes more",
+                "The car's momentum changes more than the truck's",
                 "The forces are equal in size, and both velocities change by the same amount",
-                "The car's momentum changes more than the truck's"
+                "The forces are equal in size, and the car's velocity changes more"
               ],
-              "key": "B",
-              "answer": "(B) The forces are equal in size, and the car's velocity changes more",
+              "key": "D",
+              "answer": "(D) The forces are equal in size, and the car's velocity changes more",
               "steps": [
                 "The forces are a third-law pair, equal in size and acting for the same time, so the impulses and the changes in momentum are equal in size.",
                 "Δv = Δp/m, so the smaller mass has the larger change in velocity."
@@ -6605,13 +6608,13 @@
               "id": "p1-w15-b4",
               "prompt": "A ball falls and bounces off the ground. Why is the ball's momentum not conserved during the bounce?",
               "choices": [
-                "The ball's kinetic energy changes",
                 "The ground exerts a large external force on the ball",
+                "The ball's kinetic energy changes",
                 "Momentum is never conserved in a bounce",
                 "The ball's mass changes"
               ],
-              "key": "B",
-              "answer": "(B) The ground exerts a large external force on the ball",
+              "key": "A",
+              "answer": "(A) The ground exerts a large external force on the ball",
               "steps": [
                 "With the ball alone as the system, the ground's push is an external force that delivers a large impulse.",
                 "For the ball–Earth system that push is internal, and the system's momentum is conserved; Earth's change in velocity is too small to notice."
@@ -6646,12 +6649,12 @@
               "prompt": "Carts X and Y rest on a level, frictionless track with a compressed spring between them. Cart X has twice the mass of cart Y. When the spring is released, which statement is correct?",
               "choices": [
                 "The carts have equal speeds",
-                "Y has twice X's speed and twice X's kinetic energy",
+                "X has twice Y's kinetic energy",
                 "Y has twice X's speed and four times X's kinetic energy",
-                "X has twice Y's kinetic energy"
+                "Y has twice X's speed and twice X's kinetic energy"
               ],
-              "key": "B",
-              "answer": "(B) Y has twice X's speed and twice X's kinetic energy",
+              "key": "D",
+              "answer": "(D) Y has twice X's speed and twice X's kinetic energy",
               "steps": [
                 "Equal and opposite momenta: (2m)v_X = mv_Y, so v_Y = 2v_X.",
                 "K = p^2/(2m) with equal p: the lighter cart Y has twice the kinetic energy."
@@ -6705,13 +6708,13 @@
               "id": "p1-w15-c4",
               "prompt": "A cart rolls along a level, frictionless track while sand pours straight down into it from a hopper above. What happens to the cart's speed, and why?",
               "choices": [
-                "It increases, because the sand's weight pushes the cart",
-                "It stays the same, because the sand falls vertically",
                 "It decreases, because the horizontal momentum is shared with more mass",
+                "It stays the same, because the sand falls vertically",
+                "It increases, because the sand's weight pushes the cart",
                 "It decreases, because friction acts on the sand"
               ],
-              "key": "C",
-              "answer": "(C) It decreases, because the horizontal momentum is shared with more mass",
+              "key": "A",
+              "answer": "(A) It decreases, because the horizontal momentum is shared with more mass",
               "steps": [
                 "The falling sand has no horizontal momentum, and no horizontal external force acts, so the horizontal momentum of cart plus sand is constant.",
                 "As the total mass grows, the shared velocity must shrink."
@@ -6801,7 +6804,8 @@
         "In any collision between objects isolated from outside forces, total momentum is conserved. Kinetic energy is a different matter. In an elastic collision the total kinetic energy after equals the total before; hard steel balls and magnetic bumpers come close. In an inelastic collision some kinetic energy becomes internal energy, sound or permanent deformation. When the objects stick together, the collision is perfectly inelastic, and the loss of kinetic energy is as large as momentum conservation allows. To classify a collision, compute the total kinetic energy before and after.",
         "For an elastic collision in one dimension, the two conservation laws together show that the relative velocity reverses: v_B,f − v_A,f = −(v_B,i − v_A,i). Using this with the momentum equation avoids squaring velocities. When equal masses collide elastically head-on and one is at rest, they exchange velocities: the moving object stops and the target moves off with the original velocity. A light object bouncing off a much heavier one at rest rebounds with nearly its original speed.",
         "Many problems have two stages. In a ballistic pendulum, a projectile embeds in a hanging block (a perfectly inelastic collision, so use momentum), and then the block swings up (no collision, so use energy). Energy conservation cannot be used through the collision itself, because kinetic energy is lost there. The figure shows such a setup. The same chaining applies to cars that lock together and then skid to a stop, or carts that compress a spring bumper.",
-        "Common errors: conserving kinetic energy in a collision that is not elastic; using energy conservation across the instant of a perfectly inelastic collision; thinking that 'elastic' means the objects bounce apart (objects can separate and still lose kinetic energy); and forgetting that kinetic energy can never increase in a collision unless stored energy, such as a compressed spring or an explosive, is released. College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
+        "Common errors: conserving kinetic energy in a collision that is not elastic; using energy conservation across the instant of a perfectly inelastic collision; thinking that 'elastic' means the objects bounce apart (objects can separate and still lose kinetic energy); and forgetting that kinetic energy can never increase in a collision unless stored energy, such as a compressed spring or an explosive, is released.",
+        "College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
       ],
       "figures": [
         {
@@ -6811,7 +6815,7 @@
         },
         {
           "id": "p1-w16-f2",
-          "alt": "A ballistic pendulum: a block hangs at rest from two strings; a small projectile approaches it horizontally from the left; a dashed outline shows the block after it has swung up to a height h above its starting position.",
+          "alt": "A ballistic pendulum: a block hangs at rest from a single string; a small projectile approaches it horizontally from the left with velocity v; a dashed outline shows the block after it has swung up to a height h above its starting position.",
           "caption": "Ballistic pendulum"
         },
         {
@@ -6859,7 +6863,7 @@
           "passageIds": []
         },
         {
-          "prompt": "A 0.20 kg glider moving at 0.90 m/s collides elastically and head-on with a 0.40 kg glider at rest. Find both velocities after the collision.",
+          "prompt": "A 0.20 kg glider moving at 0.90 m/s collides elastically and head-on with a 0.40 kg glider at rest. Taking the 0.20 kg glider's initial direction as positive, find both velocities after the collision.",
           "answer": "0.20 kg glider: −0.30 m/s (it rebounds); 0.40 kg glider: +0.60 m/s",
           "steps": [
             "Momentum: (0.20)(0.90) = 0.20v_A + 0.40v_B.",
@@ -6933,12 +6937,12 @@
               "prompt": "Two lumps of clay moving toward each other collide and stick. Compared with before the collision, the total kinetic energy and the total momentum of the two lumps are",
               "choices": [
                 "both unchanged",
-                "kinetic energy smaller, momentum unchanged",
+                "both smaller",
                 "kinetic energy unchanged, momentum smaller",
-                "both smaller"
+                "kinetic energy smaller, momentum unchanged"
               ],
-              "key": "B",
-              "answer": "(B) kinetic energy smaller, momentum unchanged",
+              "key": "D",
+              "answer": "(D) kinetic energy smaller, momentum unchanged",
               "steps": [
                 "Momentum is conserved in the isolated collision.",
                 "Sticking is perfectly inelastic, so kinetic energy is converted to internal energy."
@@ -6999,7 +7003,7 @@
         {
           "id": "b",
           "title": "Elastic collisions and two-stage problems",
-          "directions": "Decide for each stage whether momentum, energy or both are conserved. Give answers with units and 2–3 significant figures. Use g = 9.8 m/s^2.",
+          "directions": "Take the first object's initial direction of motion as positive. Decide for each stage whether momentum, energy or both are conserved. Give answers with units and 2–3 significant figures. Use g = 9.8 m/s^2.",
           "calculator": "any",
           "minutes": 25,
           "items": [
@@ -7382,12 +7386,12 @@
               "prompt": "A disk rotates about a fixed axis through its center. Which quantity is the same for every point on the disk at a given instant?",
               "choices": [
                 "Linear speed",
-                "Angular velocity",
+                "Distance traveled in 1 s",
                 "Centripetal acceleration",
-                "Distance traveled in 1 s"
+                "Angular velocity"
               ],
-              "key": "B",
-              "answer": "(B) Angular velocity",
+              "key": "D",
+              "answer": "(D) Angular velocity",
               "steps": [
                 "Every point turns through the same angle in the same time, so all share ω.",
                 "Speed, centripetal acceleration and distance traveled all grow with the distance r from the axis."
@@ -7860,13 +7864,13 @@
               "id": "p1-w18-a5",
               "prompt": "A force acts on an object along a line that passes through the object's axis of rotation. What is the torque of this force about that axis?",
               "choices": [
-                "Zero",
-                "rF, where r is the distance to the point of application",
                 "The largest torque that force can produce",
+                "rF, where r is the distance to the point of application",
+                "Zero",
                 "It depends on the object's mass"
               ],
-              "key": "A",
-              "answer": "(A) Zero",
+              "key": "C",
+              "answer": "(C) Zero",
               "steps": [
                 "The lever arm is the perpendicular distance from the axis to the line of action.",
                 "If the line passes through the axis, that distance is zero, so τ = 0."
@@ -7967,12 +7971,12 @@
               "prompt": "A solid cylinder and a thin-walled hollow cylinder have the same mass and the same outer radius. Equal torques are applied to each about its central axis. Which is harder to set spinning, and why?",
               "choices": [
                 "The solid cylinder, because it contains more material",
-                "The hollow cylinder, because its mass is farther from the axis",
+                "The solid cylinder, because its mass is closer to the axis",
                 "Neither, because objects of equal mass have equal rotational inertia",
-                "The solid cylinder, because its mass is closer to the axis"
+                "The hollow cylinder, because its mass is farther from the axis"
               ],
-              "key": "B",
-              "answer": "(B) The hollow cylinder, because its mass is farther from the axis",
+              "key": "D",
+              "answer": "(D) The hollow cylinder, because its mass is farther from the axis",
               "steps": [
                 "Rotational inertia grows with r^2, so mass at the rim counts most.",
                 "The hollow cylinder has all its mass at the outer radius (I = MR^2) versus (1/2)MR^2 for the solid one, so the same torque gives it a smaller angular acceleration."
@@ -8156,7 +8160,7 @@
       ],
       "explanation": [
         "An extended object is in equilibrium only when two conditions hold: the net force on it is zero (so its center of mass does not accelerate) and the net torque on it about any axis is zero (so its angular velocity does not change). The second condition is Newton's first law in rotational form: with zero net torque, an object at rest stays at rest and a rotating object keeps turning at constant angular velocity. Static equilibrium is the special case of an object at rest. Zero net force alone is not enough: two equal and opposite forces that do not act along the same line, a couple, give zero net force but a nonzero torque.",
-        "Method: (1) Draw an extended force diagram with every force at its point of application, including the object's own weight at its center of mass. (2) Choose an axis. When the net torque is zero about one axis it is zero about every axis, so pick the point where an unknown force acts; that force then has zero lever arm and drops out. (3) Write Στ = 0 with signs, counterclockwise positive, using lever arms or rF sin θ. (4) Write ΣF_x = 0 and ΣF_y = 0 for the remaining unknowns. Check the answer with a torque sum about a second axis.",
+        "Method: (1) Draw an extended force diagram with every force at its point of application, including the object's own weight at its center of mass. (2) Choose an axis. When the net force is zero, a net torque of zero about one axis means zero about every axis, so pick the point where an unknown force acts; that force then has zero lever arm and drops out. (3) Write Στ = 0 with signs, counterclockwise positive, using lever arms or rF sin θ. (4) Write ΣF_x = 0 and ΣF_y = 0 for the remaining unknowns. Check the answer with a torque sum about a second axis.",
         "Typical systems: a seesaw balances when the clockwise and counterclockwise torques match, m_1gx_1 = m_2gx_2; a meterstick can be used to measure an unknown mass or to locate a center of mass; a plank on two supports carries more of a load on the support nearer the load. As a load moves past one support onto an overhang, the force from the other support decreases; when it reaches zero the plank is about to tip, and farther out no equilibrium is possible. For a beam held by a hinge and an angled cable, only the cable's component perpendicular to the beam contributes torque, and the hinge force generally has both horizontal and vertical components, so it does not point along the beam.",
         "Common errors: leaving out the object's own weight; using the beam length instead of the lever arm for an angled cable; assuming the hinge force points along the beam; giving a support force a negative value without reconsidering its direction (a bolt can pull down, but a simple support can only push up); and checking only ΣF = 0 or only Στ = 0."
       ],
@@ -8360,7 +8364,7 @@
             },
             {
               "id": "p1-w19-b2",
-              "prompt": "For the plank shown, how far along the plank can the 75 kg person walk before the plank begins to tip? Can the person reach the right end?",
+              "prompt": "For the 40 kg uniform plank shown, how far along the plank can the 75 kg person walk before the plank begins to tip? Can the person reach the right end?",
               "figureIds": [
                 "p1-w19-f4"
               ],
@@ -8388,12 +8392,12 @@
               "prompt": "In a problem about a beam held by a hinge and a cable, a student takes torques about the hinge. Why is this a good choice?",
               "choices": [
                 "The hinge force is always zero",
-                "The unknown hinge force has zero lever arm about the hinge, so it drops out of the torque equation",
+                "The beam's weight acts at the hinge",
                 "Torques about the hinge are always counterclockwise",
-                "The beam's weight acts at the hinge"
+                "The unknown hinge force has zero lever arm about the hinge, so it drops out of the torque equation"
               ],
-              "key": "B",
-              "answer": "(B) The unknown hinge force has zero lever arm about the hinge, so it drops out of the torque equation",
+              "key": "D",
+              "answer": "(D) The unknown hinge force has zero lever arm about the hinge, so it drops out of the torque equation",
               "steps": [
                 "Any axis works for an object in equilibrium.",
                 "Choosing the point where an unknown force acts removes that unknown, leaving one equation for the cable tension."
@@ -8587,7 +8591,8 @@
         "A net torque on an object free to rotate about a fixed axis gives it an angular acceleration in the direction of the net torque: τ_net = Iα, with τ_net and I taken about the same axis and α in rad/s^2. This is the rotational form of Newton's second law. For a given net torque, an object with a larger rotational inertia has a smaller angular acceleration, so a wheel with its mass at the rim speeds up more slowly than a disk of the same mass and radius.",
         "Many problems join rotating and translating objects with a string that does not slip, such as a block hanging from a string wound around a wheel, or two blocks connected over a pulley with mass. Write F_net = ma for each block with a dot free-body diagram, and τ_net = Iα for each wheel with an extended force diagram. The string links them: its acceleration equals the tangential acceleration of the rim, a = rα. Because a pulley with mass needs a net torque to speed up, the tensions on its two sides are different, with (T_1 − T_2)R = Iα. For a uniform disk pulley, I/R^2 = M/2, so the pulley acts in the equations as if it added M/2 to the mass being accelerated; for example, a block of mass m hanging from a string wound on a uniform cylinder of mass M has a = mg/(m + M/2), whatever the cylinder's radius.",
         "For a rod or other object pivoted at one point, the weight acts at the center of mass and supplies a torque about the pivot. A uniform rod of length L released from rest in a horizontal position has α = (MgL/2)/((1/3)ML^2) = 3g/(2L) at that instant, so its free end starts with acceleration (3/2)g, more than free fall. As the rod swings down, the lever arm of its weight shrinks and α decreases, so the constant-α equations apply only while the torque is constant.",
-        "Common errors: setting the tension equal to the hanging weight even though the block accelerates; assuming the tensions on both sides of a massive pulley are equal; using I about one axis and torques about another; choosing a positive sense for α that does not match the positive direction for a; and ignoring a friction torque when data show it. College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
+        "Common errors: setting the tension equal to the hanging weight even though the block accelerates; assuming the tensions on both sides of a massive pulley are equal; using I about one axis and torques about another; choosing a positive sense for α that does not match the positive direction for a; and ignoring a friction torque when data show it.",
+        "College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
       ],
       "figures": [
         {
@@ -8699,12 +8704,12 @@
               "prompt": "Equal net torques act on a thin hoop and a solid disk that have the same mass and radius. How do their angular accelerations compare?",
               "choices": [
                 "The hoop's is twice the disk's",
-                "The disk's is twice the hoop's",
                 "They are equal",
+                "The disk's is twice the hoop's",
                 "The disk's is four times the hoop's"
               ],
-              "key": "B",
-              "answer": "(B) The disk's is twice the hoop's",
+              "key": "C",
+              "answer": "(C) The disk's is twice the hoop's",
               "steps": [
                 "α = τ/I, and I_hoop = MR^2 while I_disk = (1/2)MR^2.",
                 "The disk's rotational inertia is half as large, so its angular acceleration is twice as large."
@@ -9519,7 +9524,8 @@
         "Angular momentum is the rotational counterpart of linear momentum. For a rigid object turning about a fixed axis, L = Iω, in kg·m^2/s, with a sign given by the sense of rotation. A particle moving in a straight line also has angular momentum about any point not on its line of motion: L = mvr⊥, where r⊥ is the perpendicular distance from the point to the line. For a particle moving at constant velocity, r⊥ does not change, so its angular momentum about the point is constant; about a point on its line of motion it is zero.",
         "A net external torque changes angular momentum: τ_net Δt = ΔL, the angular impulse–angular momentum relation, which is the rotational form of FΔt = Δp. When the torque varies, the angular impulse is the area under a graph of τ against t. A small torque acting for a long time can produce the same change in angular momentum as a large torque acting briefly.",
         "If the net external torque on a system is zero, its total angular momentum stays constant. For a single object that changes shape, I_iω_i = I_fω_f: a spinning skater who pulls in her arms decreases I and spins faster. For several objects, add their angular momenta: a child who runs tangentially onto a merry-go-round brings in mvR, and afterward the child and merry-go-round share one ω. Kinetic energy is usually not conserved in these processes. When a skater pulls her arms in, her muscles do positive work and K = L^2/(2I) increases; when two disks are pressed together and come to a common ω, friction between them converts some kinetic energy into internal energy, as in a perfectly inelastic collision.",
-        "Common errors: assuming kinetic energy is conserved whenever angular momentum is; using r instead of r⊥ for a particle; forgetting the angular momentum a particle brings into a collision; using revolutions per second inconsistently (any unit for ω works in I_iω_i = I_fω_f, but not in kinetic energy); and applying conservation when an external torque, such as friction at an axle, acts for a long time. College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
+        "Common errors: assuming kinetic energy is conserved whenever angular momentum is; using r instead of r⊥ for a particle; forgetting the angular momentum a particle brings into a collision; using revolutions per second inconsistently (any unit for ω works in I_iω_i = I_fω_f, but not in kinetic energy); and applying conservation when an external torque, such as friction at an axle, acts for a long time.",
+        "College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
       ],
       "figures": [
         {
@@ -9640,12 +9646,12 @@
               "prompt": "A puck slides at constant velocity along a straight line that does not pass through point P. Its angular momentum about P is",
               "choices": [
                 "zero",
-                "constant",
+                "increasing as the puck moves away from P",
                 "largest when the puck is closest to P",
-                "increasing as the puck moves away from P"
+                "constant"
               ],
-              "key": "B",
-              "answer": "(B) constant",
+              "key": "D",
+              "answer": "(D) constant",
               "steps": [
                 "L = mvr⊥ about P.",
                 "The perpendicular distance from P to the puck's line of motion does not change, so L stays constant."
@@ -9821,12 +9827,12 @@
               "prompt": "In which situation is the angular momentum of the named system conserved?",
               "choices": [
                 "A bicycle wheel slowed by brake pads attached to the bicycle frame, which rests on the ground (system: wheel)",
-                "A diver who tucks into a ball in midair, about her center of mass (system: diver)",
+                "A top slowing because of friction with the floor (system: top)",
                 "A fan blade spun up by its motor on a fixed stand (system: blade)",
-                "A top slowing because of friction with the floor (system: top)"
+                "A diver who tucks into a ball in midair, about her center of mass (system: diver)"
               ],
-              "key": "B",
-              "answer": "(B) A diver who tucks into a ball in midair, about her center of mass (system: diver)",
+              "key": "D",
+              "answer": "(D) A diver who tucks into a ball in midair, about her center of mass (system: diver)",
               "steps": [
                 "Gravity acts at the diver's center of mass, so it exerts no torque about it, and no other external force acts.",
                 "In the other cases an external torque from the brake pads, the motor or the floor acts on the system."
@@ -10169,12 +10175,12 @@
               "prompt": "A ball rolls without slipping down a ramp. Which statement about the friction force on the ball is correct?",
               "choices": [
                 "It is kinetic friction directed down the ramp",
-                "It is static friction directed up the ramp, and it does no work on the ball",
+                "There is no friction, because the ball rolls",
                 "It is static friction directed down the ramp, and it speeds up the ball",
-                "There is no friction, because the ball rolls"
+                "It is static friction directed up the ramp, and it does no work on the ball"
               ],
-              "key": "B",
-              "answer": "(B) It is static friction directed up the ramp, and it does no work on the ball",
+              "key": "D",
+              "answer": "(D) It is static friction directed up the ramp, and it does no work on the ball",
               "steps": [
                 "The contact point is momentarily at rest, so the friction is static and does no work.",
                 "Directed up the ramp, it reduces the linear acceleration below g sin θ while its torque about the center increases the spin."
@@ -10287,12 +10293,12 @@
               "prompt": "Why is a satellite's angular momentum about the planet's center conserved as it moves along an elliptical orbit?",
               "choices": [
                 "The satellite's speed is constant",
-                "The gravitational force on the satellite points toward the planet's center, so its torque about that center is zero",
+                "The satellite's kinetic energy is constant",
                 "There is no force on the satellite in space",
-                "The satellite's kinetic energy is constant"
+                "The gravitational force on the satellite points toward the planet's center, so its torque about that center is zero"
               ],
-              "key": "B",
-              "answer": "(B) The gravitational force on the satellite points toward the planet's center, so its torque about that center is zero",
+              "key": "D",
+              "answer": "(D) The gravitational force on the satellite points toward the planet's center, so its torque about that center is zero",
               "steps": [
                 "The only force is gravity, whose line of action passes through the planet's center.",
                 "Zero lever arm means zero torque, so L about the center stays constant even though the speed changes."
@@ -10519,7 +10525,17 @@
           "passageIds": []
         }
       ],
-      "passages": [],
+      "passages": [
+        {
+          "id": "p1-w24-carts",
+          "title": "Data: carts on a spring",
+          "text": "A student attaches carts of different mass to the same horizontal spring and times 10 oscillations for each.\n| m (kg) | 0.10 | 0.20 | 0.30 | 0.40 | 0.50 |\n| --- | --- | --- | --- | --- | --- |\n| time for 10 oscillations (s) | 4.0 | 5.6 | 6.9 | 7.9 | 8.9 |",
+          "kind": "original",
+          "attribution": "Original data set written for Liminal.",
+          "sourceUrl": "",
+          "readingMode": "independent"
+        }
+      ],
       "worksheets": [
         {
           "id": "a",
@@ -10763,7 +10779,7 @@
           "items": [
             {
               "id": "p1-w24-c1",
-              "prompt": "A student attaches carts of different mass to the same horizontal spring and times 10 oscillations for each.\n| m (kg) | 0.10 | 0.20 | 0.30 | 0.40 | 0.50 |\n| --- | --- | --- | --- | --- | --- |\n| time for 10 oscillations (s) | 4.0 | 5.6 | 6.9 | 7.9 | 8.9 |\nFind the period and the square of the period for each cart, and explain why a graph of T^2 against m should be a straight line through the origin.",
+              "prompt": "Using the cart-and-spring data, find the period and the square of the period for each cart, and explain why a graph of T^2 against m should be a straight line through the origin.",
               "points": 3,
               "rubric": [
                 {
@@ -10784,18 +10800,22 @@
                 "Divide each time by 10, then square.",
                 "T^2 = (4π^2/k)m has the form y = (slope)x with no intercept."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "p1-w24-carts"
+              ],
               "skill": "Linearize a period relation"
             },
             {
               "id": "p1-w24-c2",
-              "prompt": "Using the cart-and-spring timing data from the previous item, find the slope of a best-fit line of T^2 against m and use it to find the spring constant.",
+              "prompt": "Using the cart-and-spring data, find the slope of a best-fit line of T^2 against m and use it to find the spring constant.",
               "answer": "Slope ≈ 1.58 s^2/kg (accept 1.50–1.65 s^2/kg); k ≈ 25 N/m (accept 24–26 N/m)",
               "steps": [
                 "A line through the origin and the data passes near (0.50 kg, 0.79 s^2), so the slope is about 0.79/0.50 ≈ 1.58 s^2/kg.",
                 "Slope = 4π^2/k, so k = 4π^2/slope ≈ 39.5/1.58 ≈ 25 N/m."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "p1-w24-carts"
+              ],
               "skill": "Extract a spring constant from a slope"
             },
             {
@@ -10914,7 +10934,8 @@
         "The position of an object in SHM traces a sinusoidal graph. If it is released from rest at x = +A when t = 0, its position is x = A cos(2πft) = A cos(2πt/T). If instead it passes through equilibrium moving in the positive direction at t = 0, x = A sin(2πt/T). On the graph, the amplitude is the height of a peak above the axis and the period is the time from one peak to the next. The argument 2πt/T is an angle in radians, so set a calculator to radian mode to evaluate it, or use the equivalent degree form 360°(t/T). The first figure shows x = 0.10 cos(πt) for an oscillator with A = 0.10 m and T = 2.0 s.",
         "Velocity is the slope of the position graph. It is zero at the peaks and troughs, where the object turns around, and largest in size where the graph crosses the axis, as the object passes equilibrium. For a block on a spring the maximum speed is v_max = 2πA/T = 2πfA. Acceleration is proportional to −x, so the acceleration graph is the position graph turned upside down: it is most positive when x is most negative, and its largest size is a_max = kA/m.",
         "With no friction, the energy of a block on a spring stays constant while it changes form: E = (1/2)mv^2 + (1/2)kx^2. At a turning point all of it is spring potential energy, so E = (1/2)kA^2; at equilibrium all of it is kinetic energy, so E = (1/2)mv_max^2. At any position, (1/2)mv^2 = (1/2)k(A^2 − x^2). The second figure graphs the potential energy (1/2)kx^2, a parabola, under the constant total energy: the gap between them is the kinetic energy, and the turning points are where the two meet. A pendulum trades kinetic energy for gravitational potential energy mgh, where h = L(1 − cos θ) is the height above the lowest point.",
-        "Common errors: placing the maximum speed at the turning points; thinking the total energy depends on the mass (for a given spring and amplitude, E = (1/2)kA^2 whatever the mass); expecting half the displacement to give half the potential energy (it gives one quarter); and evaluating cos(2πt/T) with a calculator in degree mode. College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
+        "Common errors: placing the maximum speed at the turning points; thinking the total energy depends on the mass (for a given spring and amplitude, E = (1/2)kA^2 whatever the mass); expecting half the displacement to give half the potential energy (it gives one quarter); and evaluating cos(2πt/T) with a calculator in degree mode.",
+        "College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
       ],
       "figures": [
         {
@@ -11364,13 +11385,13 @@
               "id": "p1-w25-c6",
               "prompt": "Suppose the student had released the pendulum from 40° instead of about 10° for every trial. How would the value of g she calculates from the slope compare with the true value?",
               "choices": [
-                "It would be larger than the true value.",
                 "It would be smaller than the true value.",
+                "It would be larger than the true value.",
                 "It would be the same.",
                 "It cannot be predicted without the bob's mass."
               ],
-              "key": "B",
-              "answer": "(B) It would be smaller than the true value.",
+              "key": "A",
+              "answer": "(A) It would be smaller than the true value.",
               "steps": [
                 "At 40° the real period is longer than 2π√(L/g), so each T^2 is too large and the slope 4π^2/g comes out larger.",
                 "g = 4π^2/slope is then smaller than the true value."
@@ -11441,7 +11462,7 @@
       "figures": [
         {
           "id": "p1-w26-f1",
-          "alt": "An open container of liquid of density ρ. A dashed rectangle marks a column of liquid from the surface down to a depth h, with area A at its bottom. A downward arrow labeled P_0A acts on the top of the column and an upward arrow labeled PA acts on its bottom.",
+          "alt": "An open container of liquid of density ρ. A dashed rectangle marks a column of liquid from the surface down to a depth h, with area A at its bottom. A downward arrow labeled P_0A acts on the top of the column, a downward arrow labeled ρAhg (its weight) acts at its center, and an upward arrow labeled PA acts on its bottom.",
           "caption": "A column of liquid in equilibrium"
         },
         {
@@ -11809,13 +11830,13 @@
               "id": "p1-w26-c6",
               "prompt": "A driver pushes on a brake pedal, raising the pressure of the enclosed brake fluid at the master cylinder by 5.0 × 10^5 Pa. By how much does the pressure rise in the fluid at a wheel cylinder whose piston has 4 times the area?",
               "choices": [
-                "2.0 × 10^6 Pa",
                 "5.0 × 10^5 Pa",
+                "2.0 × 10^6 Pa",
                 "1.3 × 10^5 Pa",
                 "0 Pa"
               ],
-              "key": "B",
-              "answer": "(B) 5.0 × 10^5 Pa",
+              "key": "A",
+              "answer": "(A) 5.0 × 10^5 Pa",
               "steps": [
                 "Pascal's principle: a pressure change in an enclosed fluid is transmitted to every part of it.",
                 "The larger area changes the force on the piston, not the pressure."
@@ -12005,12 +12026,12 @@
               "prompt": "A loaded cargo ship sails from a freshwater river into the ocean, where the water is denser. What happens?",
               "choices": [
                 "The ship sinks a little deeper.",
-                "The ship rises slightly higher.",
                 "The ship floats at the same level.",
+                "The ship rises slightly higher.",
                 "The buoyant force on the ship increases."
               ],
-              "key": "B",
-              "answer": "(B) The ship rises slightly higher.",
+              "key": "C",
+              "answer": "(C) The ship rises slightly higher.",
               "steps": [
                 "Floating, F_b = mg in both waters, so the buoyant force does not change.",
                 "With a larger ρ_f, a smaller submerged volume gives the same ρ_f V_sub g, so the ship rides higher."
@@ -12372,7 +12393,8 @@
         },
         {
           "id": "p1-w28-f3",
-          "alt": "A pipe carries water from point 1, in a horizontal section at ground level, up a slope to point 2, in a narrower horizontal section 6.0 m higher; an arrow shows the flow direction from 1 toward 2."
+          "alt": "A pipe carries water from point 1, in a horizontal section at ground level, up a slope to point 2, in a narrower horizontal section 6.0 m higher; an arrow shows the flow direction from 1 toward 2.",
+          "notToScale": true
         },
         {
           "id": "p1-w28-f4",
@@ -12440,12 +12462,12 @@
               "prompt": "Water flows steadily from a pipe into a second pipe with half the diameter. Compared with its speed in the first pipe, the water's speed in the second pipe is",
               "choices": [
                 "2 times as large",
-                "4 times as large",
+                "one-fourth as large",
                 "half as large",
-                "one-fourth as large"
+                "4 times as large"
               ],
-              "key": "B",
-              "answer": "(B) 4 times as large",
+              "key": "D",
+              "answer": "(D) 4 times as large",
               "steps": [
                 "Area is proportional to diameter squared, so the area is 1/4 as large.",
                 "A_1v_1 = A_2v_2 gives v_2 = 4v_1."
@@ -12553,13 +12575,13 @@
               "id": "p1-w28-b2",
               "prompt": "Water flows through a horizontal pipe that narrows to a constriction and then widens again. Where is the water pressure lowest?",
               "choices": [
-                "In the wide section before the constriction",
                 "In the constriction",
+                "In the wide section before the constriction",
                 "In the wide section after the constriction",
                 "The pressure is the same everywhere."
               ],
-              "key": "B",
-              "answer": "(B) In the constriction",
+              "key": "A",
+              "answer": "(A) In the constriction",
               "steps": [
                 "Continuity: the water is fastest in the constriction.",
                 "For equal heights, Bernoulli's equation gives the lowest pressure where the speed is greatest."
@@ -12791,8 +12813,9 @@
       "explanation": [
         "Every fluid problem starts with a choice: is the fluid at rest or flowing? At rest, pressure grows with depth (P = P_0 + ρgh), and the net pressure force on a submerged object is the buoyant force ρ_f V_sub g, which goes on a free-body diagram like any other force. In steady ideal flow, continuity (A_1v_1 = A_2v_2) and Bernoulli's equation link the speeds, heights and pressures at two points on a streamline. Many problems need both models in turn: the depth of water in a tank sets the speed of a jet, and the speed and the opening's area set the flow rate.",
         "Graphs make fluid relations testable. Pressure against depth is a straight line with slope ρg and intercept P_0; scale reading against submerged depth falls with slope −ρgA; and Torricelli's result v = √(2gh) predicts that v^2 is proportional to the depth h. For a jet leaving a bottle horizontally at a height y above a table, the landing distance is x = v√(2y/g), so x^2 = 4yh in the ideal model: plotting x^2 against h should give a straight line through the origin with slope 4y. The first figure shows this arrangement.",
-        "Real fluids fall short of the ideal model. Viscosity and the way the jet narrows just outside a hole make real efflux speeds several percent below √(2gh), so a measured slope smaller than 4y tells you by how much. When you evaluate a claim about a fluid, check the units (Pa = N/m^2 = J/m^3), test a limiting case (no depth means no flow), and check the direction of each force before trusting a number.",
-        "Common errors: applying Bernoulli's equation to a fluid at rest and forgetting it reduces to P = P_0 + ρgh; using the object's density in Archimedes' principle; forgetting that a jet and an open surface are both at atmospheric pressure; and letting the water level drop during a measurement that assumes a fixed depth. College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
+        "Real fluids fall short of the ideal model. Viscosity at the hole makes real efflux speeds a few percent below √(2gh); the jet's narrowing just outside the hole reduces the flow rate, not the speed. A measured slope smaller than 4y tells you by how much. When you evaluate a claim about a fluid, check the units (Pa = N/m^2 = J/m^3), test a limiting case (no depth means no flow), and check the direction of each force before trusting a number.",
+        "Common errors: applying Bernoulli's equation to a fluid at rest and forgetting it reduces to P = P_0 + ρgh; using the object's density in Archimedes' principle; forgetting that a jet and an open surface are both at atmospheric pressure; and letting the water level drop during a measurement that assumes a fixed depth.",
+        "College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements."
       ],
       "figures": [
         {
@@ -13619,13 +13642,13 @@
               "id": "p1-w30-c2",
               "prompt": "Satellite X orbits Earth in a circle of radius r, and satellite Y orbits in a circle of radius 4r. What is the ratio v_Y/v_X of their orbital speeds?",
               "choices": [
-                "1/4",
                 "1/2",
+                "1/4",
                 "2",
                 "1/16"
               ],
-              "key": "B",
-              "answer": "(B) 1/2",
+              "key": "A",
+              "answer": "(A) 1/2",
               "steps": [
                 "Gravity supplies the inward force: GMm/r^2 = mv^2/r, so v = √(GM/r).",
                 "Quadrupling r divides v by √(4) = 2."
@@ -13712,11 +13735,11 @@
               "choices": [
                 "1.2 × 10^4 N",
                 "8.2 × 10^2 N",
-                "1.6 × 10^3 N",
-                "0 N"
+                "0 N",
+                "1.6 × 10^3 N"
               ],
-              "key": "C",
-              "answer": "(C) 1.6 × 10^3 N",
+              "key": "D",
+              "answer": "(D) 1.6 × 10^3 N",
               "steps": [
                 "The car is at rest, so static friction balances the component of gravity along the slope.",
                 "f = mg sin 8.0° = (1200)(9.8)(0.139) ≈ 1.6 × 10^3 N."
@@ -13775,7 +13798,7 @@
         "Mixed timed practice and a check on choosing the conservation law."
       ],
       "explanation": [
-        "Most problems in Units 3–6 come down to choosing the right accounting. Energy is conserved for a system when no external work is done on it and no mechanical energy becomes internal energy; otherwise W_ext = ΔK + ΔU + ΔE_int keeps track of the difference. Linear momentum is conserved for a system when the net external force is zero, or negligible over a short collision. Angular momentum about an axis is conserved when the net external torque about that axis is zero. Each statement depends on the system you choose, so name it before writing an equation.",
+        "Most problems in Units 3–6 come down to choosing the right accounting. The mechanical energy K + U of a system stays constant when no external work is done on it and no mechanical energy becomes internal energy; in general, W_ext = ΔK + ΔU + ΔE_int keeps track of every change, so the total energy of a system on which no external work is done is always constant. Linear momentum is conserved for a system when the net external force is zero, or negligible over a short collision. Angular momentum about an axis is conserved when the net external torque about that axis is zero. Each statement depends on the system you choose, so name it before writing an equation.",
         "Multistage problems switch tools at the boundaries. A block that slides down a curved ramp and then sticks to another block needs energy for the slide (no friction), momentum for the collision (kinetic energy is not conserved when objects stick), and then energy or the work done by friction for what follows. Writing one labeled equation per stage, and carrying a speed from one stage to the next, keeps the tools from being mixed.",
         "Rotation repeats translation with new quantities:\n| Translation | Rotation |\n| --- | --- |\n| x, v, a | θ, ω, α |\n| m | I = Σmr^2 |\n| F | τ = rF sin θ |\n| ΣF = ma | Στ = Iα |\n| K = (1/2)mv^2 | K = (1/2)Iω^2 |\n| p = mv | L = Iω |\n| impulse FΔt = Δp | angular impulse τΔt = ΔL |\nAn object that rolls without slipping has v = ωR and both kinds of kinetic energy, so it reaches the bottom of a hill more slowly than an object that slides without friction.",
         "Common errors: applying energy conservation through a collision in which objects stick; forgetting the rotational kinetic energy of a rolling object or a pulley; using the full distance r instead of the lever arm r sin θ in a torque; treating angular momentum as zero for an object moving in a straight line (a particle moving past a point has L = mvr_⊥ about it); and assuming kinetic energy is conserved whenever angular momentum is."
@@ -13854,13 +13877,13 @@
               "id": "p1-w31-a2",
               "prompt": "A person pushes a cart up a frictionless ramp at constant speed. Take the cart and Earth as the system. Which statement is correct?",
               "choices": [
-                "The kinetic energy of the system increases",
                 "The person's work on the cart equals the increase in gravitational potential energy",
+                "The kinetic energy of the system increases",
                 "The total energy of the system stays constant",
                 "Gravity does negative work on the system, so the system loses energy"
               ],
-              "key": "B",
-              "answer": "(B) The person's work on the cart equals the increase in gravitational potential energy",
+              "key": "A",
+              "answer": "(A) The person's work on the cart equals the increase in gravitational potential energy",
               "steps": [
                 "The person is outside the system, so W_ext = ΔK + ΔU_g.",
                 "Constant speed means ΔK = 0, so W_person = ΔU_g; gravity is internal and appears only as ΔU_g."
@@ -14000,11 +14023,11 @@
               "choices": [
                 "v/2",
                 "v",
-                "2v",
-                "0"
+                "0",
+                "2v"
               ],
-              "key": "C",
-              "answer": "(C) 2v",
+              "key": "D",
+              "answer": "(D) 2v",
               "steps": [
                 "In an elastic head-on collision the relative velocity reverses: the ball separates from the truck at speed v.",
                 "The heavy truck barely slows, so the ball moves at about v + v = 2v."
@@ -14373,7 +14396,7 @@
               "prompt": "Find the slope of your best-fit line with units, and use it to calculate the density of the liquid.",
               "answer": "Slope about 4.5 m/kg; density about 1.1 × 10^3 kg/m^3 (accept 1.05–1.15 × 10^3 kg/m^3)",
               "steps": [
-                "Using two well-separated points on the line: slope ≈ (0.145 − 0.055) m / (0.032 − 0.012) kg ≈ 4.5 m/kg.",
+                "Two well-separated points on the best-fit line, for example (0.012 kg, 0.0545 m) and (0.032 kg, 0.145 m): slope ≈ (0.145 − 0.0545) m / (0.032 − 0.012) kg ≈ 4.5 m/kg.",
                 "ρ = 1/(slope × A) = 1/(4.5 × 2.0 × 10^−4) ≈ 1.1 × 10^3 kg/m^3."
               ],
               "passageIds": [
@@ -14556,13 +14579,13 @@
               "id": "p1-w32-b6",
               "prompt": "At the instant the oscillating cart passes through its equilibrium position, which quantities have their maximum magnitudes?",
               "choices": [
-                "Acceleration and net force",
                 "Speed and kinetic energy",
+                "Acceleration and net force",
                 "Displacement and spring potential energy",
                 "Acceleration and kinetic energy"
               ],
-              "key": "B",
-              "answer": "(B) Speed and kinetic energy",
+              "key": "A",
+              "answer": "(A) Speed and kinetic energy",
               "steps": [
                 "At equilibrium the net spring force is zero, so the acceleration is zero and the spring potential energy is at its minimum.",
                 "All of the oscillator's energy is kinetic there, so speed and kinetic energy are largest."
@@ -15065,7 +15088,7 @@
       ],
       "explanation": [
         "Targeted review works best when it is specific. Use the week 33 tally to find the units and question types with the lowest fraction of points earned, and use the error categories to decide how to practice: concept errors call for rereading an explanation and then doing fresh problems, while arithmetic and sign errors call for slower checking on mixed problems. Interleave topics rather than doing ten problems of one kind in a row, because the exam does not label its questions by unit.",
-        "The three sheets this week follow the areas that practice exams most often expose. Sheet A covers Units 5 and 6: torque balance with every force on the diagram, Στ = Iα, rolling with v = ωR, angular impulse τΔt = ΔL, and circular orbits, where gravity supplies the inward force. Sheet B covers Units 7 and 8: x = A cos(2πft), (1/2)kA^2 = (1/2)mv_max^2, T = 2π√(m/k) and T = 2π√(L/g); P = P_0 + ρgh, F_b = ρ_fluid V_disp g, A_1v_1 = A_2v_2 and Bernoulli's equation.",
+        "Sheets A–C cover Units 5–8 and problems that link units; for a weakness in Units 1–4, use the sheets of weeks 30–31 you have not yet done. Sheet A covers Units 5 and 6: torque balance with every force on the diagram, Στ = Iα, rolling with v = ωR, angular impulse τΔt = ΔL, and circular orbits, where gravity supplies the inward force. Sheet B covers Units 7 and 8: x = A cos(2πft), (1/2)kA^2 = (1/2)mv_max^2, T = 2π√(m/k) and T = 2π√(L/g); P = P_0 + ρgh, F_b = ρ_fluid V_disp g, A_1v_1 = A_2v_2 and Bernoulli's equation.",
         "Sheet C links units. A collision can set an object rotating (angular momentum about the pivot is conserved, but linear momentum is not, because the pivot pushes) or change an oscillator's amplitude (momentum is conserved during the brief collision, and then the oscillator's energy determines the new amplitude). Energy stored by height can end up as fluid flow. In each, identify the stages, the conserved quantity in each stage, and the quantity carried from one stage to the next.",
         "Common errors in these areas: leaving the pivot or hinge force off a torque diagram, then using it anyway; using v = ωR for an object that slips; computing a buoyant force from the object's density instead of the fluid's; using gauge pressure where absolute pressure is needed (or the reverse); and assuming the amplitude of an oscillator is unchanged after a collision."
       ],
@@ -15235,10 +15258,10 @@
                 "The net force on it is zero",
                 "It is not rotating",
                 "Every force on it passes through the axis",
-                "The net torque on it is zero about any axis"
+                "The net torque on it is zero"
               ],
               "key": "D",
-              "answer": "(D) The net torque on it is zero about any axis",
+              "answer": "(D) The net torque on it is zero",
               "steps": [
                 "Rotational equilibrium means constant angular velocity, which requires zero net torque.",
                 "An object can rotate steadily in equilibrium, and forces need not pass through the axis if their torques cancel."
@@ -15811,10 +15834,10 @@
             {
               "id": "p1-w35-b4",
               "prompt": "Without air resistance, how far would a single filter fall from rest before reaching 1.1 m/s? Use your answer to explain why measuring the speed over the last 1.0 m of a 2.0 m drop is reasonable.",
-              "answer": "About 0.062 m (6.2 cm); since even a drag-free filter reaches the terminal speed within a few centimeters, the real filter (which reaches it sooner, within 0.3 m) is moving steadily well before the last 1.0 m.",
+              "answer": "About 0.062 m (6.2 cm). Drag makes the filter's acceleration smaller than g, so 0.062 m is only a lower bound: the real filter takes longer to approach 1.1 m/s (about 0.2 m with quadratic drag), consistent with the video's 0.3 m. That still ends long before the last 1.0 m of the 2.0 m drop begins, so the speed timed there is the terminal speed.",
               "steps": [
                 "v^2 = 2gd gives d = (1.1)^2 / (2 × 9.8) ≈ 0.062 m.",
-                "Drag only shortens the approach to terminal speed, so the last meter of a 2.0 m drop is at constant speed."
+                "Drag reduces the acceleration below g, so the approach takes longer than without drag, not shorter. The video shows that it ends within 0.3 m, well before the timed last meter begins at 1.0 m."
               ],
               "passageIds": [],
               "skill": "Justify a measurement window"

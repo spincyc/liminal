@@ -94,15 +94,15 @@
               "choices": [
                 "0.079 s",
                 "2.0 s",
-                "79 s",
-                "0.50 s"
+                "0.50 s",
+                "79 s"
               ],
-              "key": "D",
+              "key": "C",
               "rationale": "T = 2π√(m/k) = 2π√(0.75/120) = 2π(0.0791 s) ≈ 0.50 s.",
               "distractorNotes": {
                 "A": "Leaves out the factor 2π.",
                 "B": "This is the frequency in hertz, 1/T, written as a time.",
-                "C": "Inverts the ratio, using 2π√(k/m)."
+                "D": "Inverts the ratio, using 2π√(k/m)."
               },
               "topics": [
                 "P1.7.2"
@@ -305,7 +305,7 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 40,
+          "minutes": 46,
           "calculator": "any",
           "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
           "items": [

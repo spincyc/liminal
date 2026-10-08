@@ -236,7 +236,7 @@
         },
         {
           "relation": "I = Σmr^2",
-          "meaning": "Rotational inertia of point masses about an axis. Common shapes about a central axis: hoop MR^2, solid disk or cylinder (1/2)MR^2, solid sphere (2/5)MR^2, rod (1/12)ML^2 (center) or (1/3)ML^2 (end).",
+          "meaning": "Rotational inertia of point masses about an axis. Common shapes: hoop MR^2, solid disk or cylinder (1/2)MR^2 and solid sphere (2/5)MR^2 about a central axis; rod about a perpendicular axis through its center (1/12)ML^2 or through one end (1/3)ML^2.",
           "units": "kg·m^2"
         },
         {
@@ -292,7 +292,7 @@
         },
         {
           "relation": "x = A cos(2πft)",
-          "meaning": "Position in simple harmonic motion with amplitude A, starting from x = A at t = 0 (use sine when it starts at x = 0).",
+          "meaning": "Position in simple harmonic motion with amplitude A, starting from x = A at t = 0 (use sine when it starts at x = 0 moving in the +x direction).",
           "units": "m"
         },
         {
@@ -333,7 +333,7 @@
         },
         {
           "relation": "P + (1/2)ρv^2 + ρgy = constant",
-          "meaning": "Bernoulli's equation along a streamline: where a fluid moves faster or higher, its pressure is lower. For a hole at depth h in an open tank, v = √(2gh).",
+          "meaning": "Bernoulli's equation along a streamline: at the same height, faster flow means lower pressure; at the same speed, higher means lower pressure. For a hole at depth h in an open tank, v = √(2gh).",
           "units": "Pa"
         }
       ]
