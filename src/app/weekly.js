@@ -21,7 +21,7 @@
   const toolbar = document.getElementById("weeklyToolbar");
   const topNav = document.getElementById("weeklyNavigation");
   const actionSlot = document.getElementById("weeklyActions");
-  const lessonActions = Controls.actions([{ label: "Print worked lesson", run: () => window.print() }]);
+  const lessonActions = Controls.actions([{ label: "Print worked lesson", run: () => printReady(window) }]);
   actionSlot.append(lessonActions);
   const cache = new Map();
   let request = 0;
@@ -84,15 +84,23 @@
   document.querySelector(".skip-link").addEventListener("click", event => {
     event.preventDefault(); const main = document.getElementById("main"); main.focus(); main.scrollIntoView({ block: "start" });
   });
-  function stylesForExport() {
-    // Carry local math/print styling into a standalone, offline HTML file.
-    return [...document.styleSheets].filter(sheet => /\/(tokens|math|weekly|brand)\.css(?:\?|$)/.test(sheet.href || ""))
-      .map(sheet => { try { return [...sheet.cssRules].map(rule => rule.cssText).join("\n"); } catch (_) { return ""; } }).join("\n");
+  async function printReady(target) {
+    try {
+      if (target.document.fonts) {
+        const faces = await Promise.all(["", "bold ", "italic ", "bold italic "].map(face => target.document.fonts.load(face + '10pt "Liminal Reading Serif"')));
+        if (faces.some(loaded => !loaded.length)) throw new Error("Print font unavailable");
+        await target.document.fonts.ready;
+      }
+      target.print();
+    } catch (_) { announce("The print typeface could not load. Reload the page and try printing again.", true); }
   }
   function exportSheet(course, week, sheetId, answers, print) {
     const packet = answers ? W.answerWorksheet(course, week.week, sheetId) : W.studentWorksheet(course, week.week, sheetId);
     const sourceUrl = new URL("weeks.html" + W.route(course.trackId, W.courseKey(course), week.week), window.location.href).href;
-    const doc = R.exportDocument(packet, answers, stylesForExport(), sourceUrl);
+    let assets;
+    try { assets = R.exportAssets(document); }
+    catch (error) { announce(error.message, true); return; }
+    const doc = R.exportDocument(packet, answers, assets.styles, sourceUrl, assets.fontLicense);
     const html = "<!doctype html>\n" + doc.documentElement.outerHTML;
     if (print) {
       const popup = window.open("", "_blank");
@@ -100,7 +108,7 @@
       popup.opener = null;
       popup.document.open(); popup.document.write(html); popup.document.close();
       const control = popup.document.createElement("button"); control.type = "button"; control.className = "weekly-print-control"; control.textContent = "Print " + (answers ? "answer key" : "student worksheet");
-      control.addEventListener("click", () => popup.print()); popup.document.querySelector("main").prepend(control);
+      control.addEventListener("click", () => printReady(popup)); popup.document.querySelector("main").prepend(control);
       popup.focus();
       announce("The " + (answers ? "answer key" : "student worksheet") + " opened in a separate print window. Use its Print button.");
     } else {
@@ -145,7 +153,7 @@
     section.append(toolbar, answers, sheetContent); showSheet(); return section;
   }
   function views(course, week) {
-    const group = R.el("div", undefined, "weekly-views");
+    const group = R.el("div", undefined, "weekly-views worksheet-document");
     const tabs = R.el("div", undefined, "weekly-tabs"); tabs.setAttribute("role", "tablist"); tabs.setAttribute("aria-label", "Weekly work");
     const entries = [];
     const math = course.trackId !== "common-core-reading";
@@ -153,7 +161,7 @@
     function add(id, label, build) {
       const tab = button(label, () => show(id)); tab.id = "weekly-tab-" + id;
       tab.setAttribute("role", "tab"); tab.setAttribute("aria-controls", "weekly-panel-" + id);
-      const panel = R.el("div"); panel.id = "weekly-panel-" + id; panel.tabIndex = 0;
+      const panel = R.el("div", undefined, id === "worksheets" ? "" : "worksheet-columns"); panel.id = "weekly-panel-" + id; panel.tabIndex = 0;
       panel.setAttribute("role", "tabpanel"); panel.setAttribute("aria-labelledby", tab.id);
       entries.push({ id, tab, panel, build, ready: false }); tabs.append(tab); group.append(panel);
       tab.addEventListener("keydown", event => {
@@ -198,6 +206,15 @@
         reading.panel.hidden = false;
         restores.push(() => { reading.panel.hidden = true; });
       }
+      // The final full-width credit must participate in the last column flow:
+      // a sibling after that fragmented box can otherwise become a lone page.
+      const lastPanel = entries.filter(entry => !entry.panel.hidden).at(-1)?.panel;
+      const target = lastPanel && (lastPanel.querySelectorAll(".weekly-sheet-body").length ? [...lastPanel.querySelectorAll(".weekly-sheet-body")].at(-1) : lastPanel);
+      if (pageFooter && target) {
+        const parent = pageFooter.parentNode, next = pageFooter.nextSibling;
+        target.append(pageFooter); pageFooter.classList.add("worksheet-footer");
+        restores.push(() => { parent.insertBefore(pageFooter, next); pageFooter.classList.remove("worksheet-footer"); });
+      }
       return () => restores.forEach(restore => restore());
     };
     group.prepend(tabs); show(activeView); return group;
@@ -240,7 +257,7 @@
       if (currentRequest !== request) return;
       const week = W.weekAt(course, selected.week);
       if (!week) throw new Error("Week unavailable");
-      const heading = R.el("header", undefined, "weekly-heading");
+      const heading = R.el("header", undefined, "weekly-heading worksheet-heading");
       heading.append(R.el("p", W.trackLabel(course.trackId) + " · " + W.courseLabel(course) + " · Week " + week.week + " of 36", "weekly-meta"));
       const context = W.courseContext(course.trackId, course.courseId || course.grade);
       if (context) heading.append(R.el("p", context, "weekly-context"));

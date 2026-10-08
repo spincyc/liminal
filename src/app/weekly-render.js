@@ -109,11 +109,21 @@
     });
     return links;
   }
-  function passagesBlock(passages, math, prefix) {
+  function passagesBlock(passages, math, prefix, items) {
     const block = el("div", undefined, "weekly-passages");
     passages.forEach(passage => {
       const article = el("article", undefined, "weekly-passage");
       article.id = passageId(prefix, passage.id); article.tabIndex = -1;
+      if (items) {
+        const numbers = items.flatMap((item, index) => (item.passageIds || []).includes(passage.id) ? [index + 1] : []);
+        const ranges = [];
+        for (let index = 0; index < numbers.length; index++) {
+          const first = numbers[index]; let last = first;
+          while (numbers[index + 1] === last + 1) last = numbers[++index];
+          ranges.push(first === last ? String(first) : first + "–" + last);
+        }
+        article.append(el("p", (numbers.length === 1 ? "Question " : "Questions ") + ranges.join(", "), "weekly-passage-range"));
+      }
       article.append(el("h4", passage.title), el("p", passage.readingMode === "read-aloud" ? "Read aloud together" : passage.readingMode === "shared" ? "Shared reading" : "Independent reading", "weekly-meta"), rich(passage.text, math));
       const credit = el("p", passage.attribution, "weekly-meta");
       if (/^https:\/\//i.test(passage.sourceUrl || "")) credit.append(document.createTextNode(" · "), link("Source", passage.sourceUrl));
@@ -136,8 +146,8 @@
     teaching.append(sequence); fragment.append(teaching);
     const examples = section("Work through examples");
     week.examples.forEach((example, index) => {
-      const article = el("article", undefined, "weekly-example");
-      article.append(el("h4", "Example " + (index + 1)));
+      const article = el("article", undefined, "weekly-example worksheet-problem");
+      article.append(el("h4", "Example " + (index + 1), "worksheet-number"));
       taskBody(article, example, math, week.figures, false);
       article.append(passageLinks(example, week.passages, "week", onRead));
       const answer = disclosure("Show reasoning and answer", "weekly-example-answer");
@@ -165,24 +175,28 @@
     const math = packet.trackId !== "common-core-reading";
     const body = el("div", undefined, "weekly-worksheet");
     const sheet = packet.worksheet;
-    body.append(el("h4", "Worksheet " + sheet.id.toUpperCase() + " · " + sheet.title));
+    body.append(el("h4", "Worksheet " + sheet.id.toUpperCase() + " · " + sheet.title, "weekly-sheet-heading"));
     const badges = sheetBadges(sheet);
     if (badges) body.append(badges);
     body.append(rich(sheet.directions, math));
-    if (options.includePassages) body.append(passagesBlock(packet.passages, math, "sheet"));
+    const flow = el("div", undefined, "weekly-sheet-body worksheet-columns");
+    if (options.includePassages) flow.append(passagesBlock(packet.passages, math, "sheet", sheet.items));
     const items = el("ol", undefined, "weekly-items");
     sheet.items.forEach((item, index) => {
-      const li = el("li"); taskBody(li, item, math, packet.figures, answers);
+      const li = el("li", undefined, "worksheet-problem");
+      li.append(el("h5", String(index + 1), "worksheet-number"));
+      taskBody(li, item, math, packet.figures, answers);
       li.append(passageLinks(item, packet.passages, options.includePassages ? "sheet" : "week", options.onRead));
       if (answers) li.append(solution(item, math, packet.figures));
       else { const space = el("div", undefined, "weekly-workspace"); space.setAttribute("aria-hidden", "true"); li.append(space); }
-      // The final exercise is an existing unbreakable print unit. Keep the
-      // document credit after its full workspace, rather than on a new sheet.
-      if (options.footer && index === sheet.items.length - 1) li.append(options.footer);
       items.append(li);
     });
-    if (options.footer && !sheet.items.length) body.append(options.footer);
-    body.append(items); return body;
+    flow.append(items);
+    // A final column spanner balances the last page and keeps its credit on
+    // that page instead of following a full-height fragmented column box.
+    if (options.footer) flow.append(options.footer);
+    body.append(flow);
+    return body;
   }
   function brand() {
     const mark = el("div", undefined, "wordmark");
@@ -195,33 +209,50 @@
     const name = el("span", "Liminal"); name.append(el("span", ".", "wordmark-dot")); mark.append(svg, name); return mark;
   }
   const EXPORT_CSS = `
-    *{box-sizing:border-box}body{margin:0;background:#fff;color:#000;font:16px/1.6 system-ui,sans-serif}
-    main{max-width:800px;margin:32px auto;padding:0 24px}h1{font:28px/1.2 Georgia,serif;margin:20px 0 12px}
-    h4{font-size:18px;margin:22px 0 12px}p{margin:8px 0}.wordmark{font-size:30px;line-height:1}
-    .wordmark{display:flex;align-items:center;gap:10px;font-family:Georgia,serif}
-    .wordmark .brand-symbol{display:block;flex:none;width:28px;height:34px}
-    a{color:#000}.weekly-meta,footer{color:#333;font-size:13px}.weekly-workspace{min-height:150px}
-    .weekly-items>li{break-inside:avoid}.weekly-passage{background:#fff;color:#000}.weekly-answer{background:#fff}
-    .weekly-page .weekly-workspace{min-height:38mm}.weekly-print-control{margin:20px 0;padding:8px 14px;font:inherit}
-    .weekly-footer{border-top:1px solid #777;margin-top:24px;padding-top:12px}.weekly-export{--color-line:#777;--color-line-strong:#777;--color-soft:#fff;--color-surface:#fff;--color-ink:#000;--color-accent:#000;--color-muted:#333;color-scheme:light}
-    @media print{main{margin:0;padding:0}.weekly-print-control{display:none}.weekly-footer{font-size:9pt}a{text-decoration:none}}
+    *{box-sizing:border-box}.weekly-export{margin:0;background:#fff;color:#000;--color-line:#777;--color-line-strong:#777;--color-soft:#fff;--color-surface:#fff;--color-ink:#000;--color-accent:#000;--color-muted:#333;color-scheme:light}
+    .weekly-export main{max-width:800px;margin:32px auto;padding:0 24px}
+    .weekly-export .wordmark{display:flex;align-items:center;gap:10px;font:30px/1 Georgia,serif}
+    .weekly-export .brand-symbol{display:block;flex:none;width:28px;height:34px}
+    .weekly-export h1{font:28px/1.2 var(--worksheet-serif);margin:20px 0 12px}
+    .weekly-export p{margin:8px 0}.weekly-export a{color:#000}
+    .weekly-print-control{margin:20px 0;padding:8px 14px;font:inherit}
+    @media screen{.weekly-export{font:16px/1.6 var(--worksheet-serif)}.weekly-export .weekly-workspace{min-height:150px}}
+    @media print{.weekly-export main{margin:0;padding:0;max-width:none}.weekly-export h1{font:bold 16pt/1.2 var(--worksheet-serif);margin:0 0 6pt}.weekly-export .wordmark{justify-content:center;font:14pt/1 var(--worksheet-serif);margin-bottom:10pt}.weekly-export .brand-symbol{width:12pt;height:15pt}.weekly-print-control{display:none!important}.weekly-export a{text-decoration:none}}
   `;
+  // Read the built styles, including all four embedded font faces, afresh on
+  // every export. A stylesheet/font failure leaves the selected sheet intact
+  // and the action available for retry instead of making an incomplete file.
+  function exportAssets(doc) {
+    const required = ["tokens", "math", "weekly", "brand", "print", "worksheet-print"];
+    const styles = required.map(name => {
+      const sheet = [...doc.styleSheets].find(sheet => new RegExp("/" + name + "\\.css(?:\\?|$)").test(sheet.href || ""));
+      if (!sheet) throw new Error("Worksheet styles are still loading. Reload the page and try again.");
+      try { return [...sheet.cssRules].map(rule => rule.cssText).join("\n"); }
+      catch (_) { throw new Error("Worksheet styles could not be read. Reload the page and try again."); }
+    }).join("\n");
+    const fontLicense = doc.querySelector('meta[name="font-license"]')?.content || "";
+    if ((styles.match(/data:font\/woff2;base64,/g) || []).length < 4 || !fontLicense.includes("SIL OPEN FONT LICENSE")) {
+      throw new Error("The worksheet typeface could not load. Reload the page and try again before exporting.");
+    }
+    return { styles, fontLicense };
+  }
   // Only the whitelisted packet enters this document. Never clone the reader,
   // its hidden disclosures, application state, or the underlying course JSON.
-  function exportDocument(packet, answers, styles = "", sourceUrl = "") {
+  function exportDocument(packet, answers, styles = "", sourceUrl = "", fontLicense = "") {
     const doc = document.implementation.createHTMLDocument("Liminal · Week " + packet.week + " · Worksheet " + packet.worksheet.id.toUpperCase() + (answers ? " · Answer key" : " · Student worksheet"));
     doc.documentElement.lang = "en";
     const charset = doc.createElement("meta"); charset.setAttribute("charset", "utf-8");
     const viewport = doc.createElement("meta"); viewport.setAttribute("name", "viewport"); viewport.setAttribute("content", "width=device-width, initial-scale=1");
     const style = doc.createElement("style"); style.textContent = styles + "\n" + EXPORT_CSS;
-    doc.head.append(charset, viewport, style); doc.body.className = "weekly-page weekly-export";
-    const main = el("main"); main.append(brand());
-    const heading = el("header");
-    heading.append(el("h1", "Week " + packet.week + " · " + packet.title), el("p", window.LiminalWeekly.trackLabel(packet.trackId) + " · " + window.LiminalWeekly.courseLabel(packet) + " · " + (answers ? "Answer key" : "Student worksheet"), "weekly-meta"));
+    const license = doc.createElement("meta"); license.setAttribute("name", "font-license"); license.setAttribute("content", fontLicense);
+    doc.head.append(charset, viewport, style, license); doc.body.className = "weekly-page weekly-export";
+    const main = el("main", undefined, "worksheet-document"); main.append(brand());
+    const heading = el("header", undefined, "worksheet-heading");
+    heading.append(el("h1", "Week " + packet.week + " · " + packet.title, "worksheet-title"), el("p", window.LiminalWeekly.trackLabel(packet.trackId) + " · " + window.LiminalWeekly.courseLabel(packet) + " · " + (answers ? "Answer key" : "Student worksheet"), "weekly-meta"));
     const context = window.LiminalWeekly.courseContext(packet.trackId, packet.courseId || packet.grade);
     if (context) heading.append(el("p", context, "weekly-context"));
     if (!answers) heading.append(el("p", "Name: __________________________  Date: ______________"));
-    const footer = el("footer", undefined, "weekly-footer");
+    const footer = el("footer", undefined, "weekly-footer worksheet-footer");
     footer.append(el("p", "Original Liminal coursework. " + NOTICE));
     const notice = window.LiminalWeekly.trackNotice(packet.trackId);
     if (notice) footer.append(el("p", notice, "weekly-track-notice"));
@@ -231,5 +262,5 @@
     main.append(heading, worksheet(packet, answers, { includePassages: true, footer }));
     doc.body.append(main); return doc;
   }
-  return { el, link, rich, section, disclosure, figure, guide, prepareGuidePrint, reading, worksheet, exportDocument, NOTICE };
+  return { el, link, rich, section, disclosure, figure, guide, prepareGuidePrint, reading, worksheet, exportAssets, exportDocument, NOTICE };
 });

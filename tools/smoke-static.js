@@ -31,6 +31,23 @@ for (const page of ["daily-reading", "weeks", "lessons", "curriculum", "high-sch
 for (const asset of ["styles/reader-controls.css", "app/reader-controls.js"]) {
   if (!fs.existsSync(path.join(root, asset))) throw new Error("Missing shared reader asset: " + asset);
 }
+// Every worksheet surface shares the print font and components. Check the
+// deployed assets, including complete font bytes/license needed by downloads.
+const fontDirectory = path.resolve(__dirname, "../src/fonts/computer-modern");
+const printSource = fs.readFileSync(path.resolve(__dirname, "../src/styles/print.css"), "utf8");
+const embeddedPrint = require("./lib/reading-fonts").embed(printSource, fontDirectory);
+if (fs.readFileSync(path.join(root, "styles/print.css"), "utf8") !== embeddedPrint ||
+    (embeddedPrint.match(/data:font\/woff2;base64,/g) || []).length !== 4) throw new Error("Print fonts are incomplete or stale");
+const fontLicense = fs.readFileSync(path.join(fontDirectory, "OFL.txt"), "utf8")
+  .replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+if (!fs.existsSync(path.join(root, "styles/worksheet-print.css"))) throw new Error("Missing shared worksheet print styles");
+for (const [page, sectionStyle] of [["lessons", "courses"], ["weeks", "weekly"], ["ap", "ap"]]) {
+  const pageHtml = fs.readFileSync(path.join(root, page + ".html"), "utf8");
+  const styles = [...pageHtml.matchAll(/<link\b[^>]*href="(styles\/[^"]+\.css)"/g)].map(match => match[1]);
+  const shared = styles.indexOf("styles/worksheet-print.css");
+  if (styles.indexOf("styles/print.css") < 0 || shared <= styles.indexOf("styles/" + sectionStyle + ".css")) throw new Error(page + " must load shared worksheet typography after section styles");
+  if (!pageHtml.includes(`<meta name="font-license" content="${fontLicense}" />`)) throw new Error(page + " is missing the complete offline font license");
+}
 const html = fs.readFileSync(path.join(root, "practice.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "styles", "app.css"), "utf8");
 

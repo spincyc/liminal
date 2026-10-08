@@ -1,0 +1,81 @@
+/* Shared printed worksheet components. Metrics follow SAT/ACT booklets;
+   print.css supplies the same bundled Computer Modern faces as daily readings.
+   Keep screen controls and interactive reading styles in their section files. */
+:root {
+  --worksheet-serif: var(--booklet-serif, "Liminal Reading Serif", "CMU Serif", serif);
+  --worksheet-size: 10pt;
+  --worksheet-leading: 1.3;
+  --worksheet-gap: .38in;
+  --worksheet-page-width: 7.4in;
+  --worksheet-page-height: 9.7in;
+}
+@media print {
+  @page { size: letter; margin: .6in .55in .7in; }
+  .worksheet-document {
+    --font-serif: var(--worksheet-serif);
+    --font-sans: var(--worksheet-serif);
+    color: #000;
+    background: #fff;
+    font: 400 var(--worksheet-size)/var(--worksheet-leading) var(--worksheet-serif);
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
+    orphans: 3;
+    widows: 3;
+  }
+  .worksheet-document, .worksheet-document * { box-sizing: border-box; box-shadow: none; text-shadow: none; }
+  .worksheet-document :is(h1, h2, h3, h4) {
+    font-family: var(--worksheet-serif);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: normal;
+    break-after: avoid;
+  }
+  .worksheet-heading {
+    column-span: all;
+    text-align: center;
+    break-inside: avoid;
+    break-after: avoid;
+    margin: 0 0 12pt;
+    padding: 0 0 8pt;
+    border-bottom: .75pt solid #000;
+  }
+  .worksheet-document .worksheet-title { font: 700 18pt/1.15 var(--worksheet-serif); margin: 0 0 6pt; }
+  .worksheet-document .worksheet-meta { font: 400 9pt/1.3 var(--worksheet-serif); margin: 3pt 0; }
+  .worksheet-columns {
+    display: block;
+    columns: 2;
+    column-gap: var(--worksheet-gap);
+    column-rule: .45pt solid #999;
+    column-fill: auto;
+    padding: 0;
+  }
+  .worksheet-problem { margin: 0 0 14pt; break-inside: avoid; page-break-inside: avoid; }
+  /* The rule is a border on the number's block, never an independent flex
+     decoration. It therefore travels with the number at a page/column break. */
+  .worksheet-document .worksheet-number {
+    display: block;
+    margin: 0 0 7pt;
+    padding: 0 0 4pt;
+    border: 0;
+    border-bottom: .75pt solid #000;
+    font: 700 10pt/1.2 var(--worksheet-serif);
+    break-inside: avoid;
+    break-after: avoid;
+  }
+  .worksheet-document :is(p, li) { orphans: 3; widows: 3; }
+  .worksheet-document svg { max-width: 100%; height: auto; }
+  .worksheet-document svg text { font-family: var(--worksheet-serif); }
+  .worksheet-document table { max-width: 100%; border-collapse: collapse; font-size: 9pt; }
+  .worksheet-document :is(th, td) { overflow-wrap: anywhere; }
+  .worksheet-document tr { break-inside: avoid; }
+  .worksheet-document a { color: #000; text-decoration: none; }
+  .worksheet-document .worksheet-footer {
+    column-span: all;
+    margin-top: 10pt;
+    padding-top: 5pt;
+    border-top: .5pt solid #777;
+    font: 400 8pt/1.25 var(--worksheet-serif);
+    color: #333;
+    overflow-wrap: anywhere;
+  }
+}

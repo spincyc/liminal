@@ -26,7 +26,7 @@ fs.cpSync(path.join(ROOT, "src"), DIST, {
   recursive: true,
   filter: (source) => !source.startsWith(FAMILY_SOURCES),
 });
-// Standalone reading and booklet downloads carry their print fonts.
+// Standalone readings, booklets and worksheets carry their print fonts.
 for (const stylesheet of ["reading-print.css", "print.css"]) {
   fs.writeFileSync(path.join(DIST, "styles", stylesheet),
     require("./lib/reading-fonts").embed(
@@ -38,7 +38,7 @@ const siteHeader = require("./lib/site-header");
 fs.readdirSync(DIST).filter((file) => file.endsWith(".html")).forEach((page) => {
   const file = path.join(DIST, page);
   let html = siteHeader.apply(fs.readFileSync(file, "utf8"), page);
-  if (["daily-reading.html", "print.html"].includes(page)) {
+  if (html.includes("<!-- liminal:reading-font-license -->")) {
     const license = fs.readFileSync(path.join(ROOT, "src/fonts/computer-modern/OFL.txt"), "utf8")
       .replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
     html = html.replace("<!-- liminal:reading-font-license -->", `<meta name="font-license" content="${license}" />`);

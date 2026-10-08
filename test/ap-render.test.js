@@ -34,6 +34,8 @@ test("the student booklet shows questions, workspace and answer sheet without ke
   for (const secret of ["Fixture rationale", "Placeholder note", "Fixture criterion", "Fixture answer", "Answer key", "P1.1.1"]) assert.equal(text.includes(secret), false, secret);
   assert.match(text, /Fixture question p1-u1-1/);
   assert.equal(node.find("ap-item").length, 14);
+  assert.deepEqual(node.find("worksheet-number").map(n => n.textContent), [...Array.from({ length: 12 }, (_, i) => String(i + 1)), "1", "2"]);
+  assert.equal(node.find("worksheet-columns").length, 3);
   assert.equal(node.find("ap-workspace").length, 6);
   assert.equal(node.find("ap-bubble").length, 48);
   assert.equal(node.find("lm-figure").length, 1);
@@ -51,6 +53,8 @@ test("the answer key shows keys, rationales, rubrics and a raw-point tally", () 
   assert.equal(node.find("ap-key-letter").map(n => n.textContent).join(""), "ABCDABCDABCD");
   assert.ok(text.includes("not AP scores"));
   assert.equal(A.claimProblems(text).length, 0);
+  assert.equal(node.find("worksheet-number").length, 14);
+  assert.equal(node.find("worksheet-columns").length, 2);
 });
 
 test("paired key figures retain the given drawing and completed answer with their captions", () => {
@@ -81,4 +85,17 @@ test("ap.html loads its scripts in order and names every element its scripts use
   for (const [, id] of app.matchAll(/document\.getElementById\("([^"]+)"\)/g)) assert.ok(ids.includes(id) || /\.id = "/.test(app) && ["apHeading"].includes(id), id);
   assert.ok(html.includes(A.DISCLAIMER));
   assert.ok(html.includes('href="styles/math.css"'));
+  assert.ok(html.includes('href="styles/print.css"'));
+  assert.ok(html.includes('href="styles/worksheet-print.css"'));
+  assert.ok(html.includes("<!-- liminal:reading-font-license -->"));
+});
+
+
+test("reference notes remain inside the final column flow with their complete relations", () => {
+  const ref = F.reference("physics-c-mechanics");
+  const node = R.referenceSheet(ref, { note: "Use this reference while learning." });
+  const flow = node.find("ap-reference-body")[0];
+  assert.equal(flow.find("ap-reference-table").length, ref.groups.length);
+  assert.equal(flow.find("ap-reference-notes").length, 1);
+  assert.equal(flow.find("ap-reference-note")[0].textContent, "Use this reference while learning.");
 });

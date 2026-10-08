@@ -27,6 +27,16 @@
   function disclosure(label, className) { const node = el("details", undefined, className); node.append(el("summary", label)); return node; }
   function block(title, values) { const node = el("section"); node.append(el("h3", title), Array.isArray(values) ? list(values) : el("p", values)); return node; }
   function button(label, action) { const node = el("button", label); node.type = "button"; node.addEventListener("click", action); return node; }
+  async function printReady() {
+    try {
+      if (document.fonts) {
+        const faces = await Promise.all(["", "bold ", "italic ", "bold italic "].map(face => document.fonts.load(face + '10pt "Liminal Reading Serif"')));
+        if (faces.some(loaded => !loaded.length)) throw new Error("Print font unavailable");
+        await document.fonts.ready;
+      }
+      window.print();
+    } catch (_) { status.classList.toggle("weekly-sr", false); status.textContent = "The print typeface could not load. Reload the page and try printing again."; }
+  }
   function standard(id) { return (plan.standards || []).find(s => s.id === id); }
   function source(id) { return (plan.sources || []).find(s => s.id === id); }
   function externalLink(entry) { return entry && /^https:\/\//i.test(entry.url) ? link(entry.title, entry.url) : el("span", entry ? entry.title : ""); }
@@ -122,7 +132,7 @@
     if (weekly) tools.append(link("Open weekly work →", weekly)); else tools.append(el("span", "Weekly work is being prepared.", "weekly-meta"));
     if (available(course, "practice-exam")) tools.append(link("Practice exam", A.route(course.id, "student", "practice-exam")));
     if (referenceEntry(course)) tools.append(link("Formula reference", A.route(course.id, "reference")));
-    tools.append(button("Print plan", () => window.print()));
+    tools.append(button("Print plan", () => printReady()));
     header.append(tools);
     if (course.labNote) header.append(el("p", course.labNote, "ap-note"));
     header.append(scoreNote(), examFormat(course));
@@ -168,7 +178,7 @@
     [["student", "Student copy"], ["key", "Answer key"]].forEach(([copy, label]) => {
       const a = link(label, A.route(course.id, copy, selected.assessmentId)); if (selected.copy === copy) a.setAttribute("aria-current", "page"); copies.append(a);
     });
-    tools.append(copies, button(selected.copy === "key" ? "Print answer key" : "Print student copy", () => window.print()));
+    tools.append(copies, button(selected.copy === "key" ? "Print answer key" : "Print student copy", () => printReady()));
     return tools;
   }
   async function load(file) {
@@ -207,7 +217,7 @@
     const entry = referenceEntry(course);
     const wrap = el("div", undefined, "ap-assessment");
     const tools = el("div", undefined, "reader-actions ap-print-tools");
-    tools.append(link("← " + course.shortTitle + " plan", A.route(course.id)), button("Print reference", () => window.print()));
+    tools.append(link("← " + course.shortTitle + " plan", A.route(course.id)), button("Print reference", () => printReady()));
     wrap.append(tools);
     if (!entry) {
       const title = el("h2", "Formula reference"); title.id = "apHeading"; title.tabIndex = -1;
@@ -216,7 +226,7 @@
     }
     const ref = await load(entry.file);
     if (token !== request) return null;
-    wrap.append(R.referenceSheet(ref), el("p", course.referenceNote, "ap-note"));
+    wrap.append(R.referenceSheet(ref, { note: course.referenceNote }));
     return wrap;
   }
 
@@ -257,10 +267,28 @@
   document.querySelector(".skip-link").addEventListener("click", event => {
     event.preventDefault(); const main = document.getElementById("main"); main.focus(); main.scrollIntoView({ block: "start" });
   });
-  // Print opens every disclosure in the plan, then restores them.
+  // Print opens plan disclosures. Reference notes and the required footer
+  // finish the final column flow, without becoming a separate credit page.
   let printDisclosures = [];
-  window.addEventListener("beforeprint", () => { printDisclosures = [...container.querySelectorAll("details:not([open])")]; printDisclosures.forEach(node => { node.open = true; }); });
-  window.addEventListener("afterprint", () => { printDisclosures.forEach(node => { node.open = false; }); printDisclosures = []; });
+  let restoreFooter = null;
+  window.addEventListener("beforeprint", () => {
+    if (restoreFooter) restoreFooter();
+    restoreFooter = null;
+    printDisclosures = [...container.querySelectorAll("details:not([open])")];
+    printDisclosures.forEach(node => { node.open = true; });
+    const flow = [...container.querySelectorAll(".ap-reference-body")].at(-1);
+    const footer = document.querySelector("body > footer");
+    if (flow && footer) {
+      const parent = footer.parentNode, next = footer.nextSibling;
+      flow.append(footer); footer.classList.add("worksheet-footer");
+      restoreFooter = () => { parent.insertBefore(footer, next); footer.classList.remove("worksheet-footer"); };
+    }
+  });
+  window.addEventListener("afterprint", () => {
+    printDisclosures.forEach(node => { node.open = false; }); printDisclosures = [];
+    if (restoreFooter) restoreFooter();
+    restoreFooter = null;
+  });
   window.addEventListener("hashchange", () => render(true));
   document.getElementById("apBrowser").hidden = false;
   render(false);

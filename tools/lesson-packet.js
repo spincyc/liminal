@@ -12,6 +12,7 @@ const { setTimeout: delay } = require("node:timers/promises");
 const ROOT = path.resolve(__dirname, "..");
 const Engine = require("../src/lib/lesson-modules/engine.js");
 const { loadModules } = require("./build-lesson-modules.js");
+const { embed } = require("./lib/reading-fonts.js");
 const NAMES = ["original-study-guide", "student-worksheets", "worked-answers"];
 function documentNames(options) { return options.combined ? [...NAMES, "nightly-packet"] : NAMES; }
 
@@ -263,7 +264,8 @@ async function exportPacket(course, packet, lessonIds, options, signal = new Abo
   fs.mkdirSync(scratchRoot, { recursive: true });
   const scratch = fs.mkdtempSync(path.join(scratchRoot, "render-"));
   try {
-    const css = ["tokens", "app", "math", "courses"].map(name => fs.readFileSync(path.join(ROOT, "src/styles", name + ".css"), "utf8")).join("\n");
+    const css = embed(["tokens", "app", "math", "courses", "print", "worksheet-print"].map(name => fs.readFileSync(path.join(ROOT, "src/styles", name + ".css"), "utf8")).join("\n"), path.join(ROOT, "src/fonts/computer-modern"));
+    const fontLicense = fs.readFileSync(path.join(ROOT, "src/fonts/computer-modern/OFL.txt"), "utf8");
     const helper = path.join(scratch, "renderer.html");
     const scripts = ["lib/lesson-modules/math.js", "lib/lesson-modules/registry.js", "lib/lesson-modules/engine.js", "app/render.js", "app/course-render.js"].map(name => `<script src="${pathToFileURL(path.join(ROOT, "src", name)).href}"></script>`).join("\n");
     fs.writeFileSync(helper, `<!doctype html><meta charset="utf-8"><title>Local packet renderer</title>${scripts}`);
@@ -271,6 +273,7 @@ async function exportPacket(course, packet, lessonIds, options, signal = new Abo
       await command("/url", { url: pathToFileURL(helper).href });
       // The shared renderer measures printable row heights using these styles.
       await command("/execute/sync", { script: "const style = document.createElement('style'); style.textContent = arguments[0]; document.head.appendChild(style);", args: [css] });
+      await command("/execute/async", { script: "const done = arguments[arguments.length - 1]; LiminalCourseRender.preparePrint().then(() => done(null), error => done({error: error.message}));", args: [] }).then(result => { if (result?.error) throw new Error(result.error); });
       const documents = [
         { name: NAMES[0], title: `${course.title} — Original study guide`, kind: "guide", course, data: lessonIds },
         { name: NAMES[1], title: `${course.title} — Student worksheets`, kind: "student", course: { title: course.title }, data: studentPacket(packet) },
@@ -279,7 +282,7 @@ async function exportPacket(course, packet, lessonIds, options, signal = new Abo
       if (options.combined) documents.push({ name: "nightly-packet", title: `${course.title} — Nightly packet`, kind: "combined", course, data: packet, duplex: !options.singleSided });
       for (const document of documents) {
         const html = await command("/execute/sync", { script: `
-          const [input, css] = arguments;
+          const [input, css, license] = arguments;
           const render = window.LiminalCourseRender;
           if (!render) throw new Error("Course renderer did not load.");
           const content = input.kind === "combined"
@@ -289,14 +292,15 @@ async function exportPacket(course, packet, lessonIds, options, signal = new Abo
             : render.renderPacket(input.course, input.data, {answers: input.kind === "answers", packetDays: input.packetDays});
           if (content.querySelector("script, iframe, object, embed")) throw new Error("Export contains active content.");
           if (input.kind === "student" && content.querySelector(".course-answer, .course-answer-key, .course-key-questions, .course-question-meta")) throw new Error("Student export contains solution content.");
-          return render.exportHtml(input.title, content, css);
-        `, args: [{ ...document, packetDays: options.days }, css] });
+          return render.exportHtml(input.title, content, css, license);
+        `, args: [{ ...document, packetDays: options.days }, css, fontLicense] });
         if (typeof html !== "string" || !html.startsWith("<!doctype html>")) throw new Error("Renderer returned an invalid document.");
         fs.writeFileSync(path.join(scratch, document.name + ".html"), html);
       }
       if (options.pdf) {
         for (const name of documentNames(options)) {
           await command("/url", { url: pathToFileURL(path.join(scratch, name + ".html")).href });
+          await command("/execute/async", { script: "const done = arguments[arguments.length - 1]; Promise.all([\"\", \"bold \", \"italic \", \"bold italic \"].map(face => document.fonts.load(face + '10pt \"Liminal Reading Serif\"'))).then(() => document.fonts.ready).then(() => done(null));", args: [] });
           const result = await command("/goog/cdp/execute", { cmd: "Page.printToPDF", params: {
             printBackground: false, preferCSSPageSize: true, displayHeaderFooter: false,
             paperWidth: 8.5, paperHeight: 11, marginTop: 0.4, marginBottom: 0.4, marginLeft: 0.4, marginRight: 0.4,

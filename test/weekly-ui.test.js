@@ -107,25 +107,53 @@ test("named-course exports retain the course identity and flexible scope without
   }
 }));
 
-test("export keeps the full final workspace or solution with attribution in one print unit", () => withDOM(() => {
+test("export preserves every numbered response space and places attribution after the final response inside the column flow", () => withDOM(() => {
   for (const answers of [false, true]) {
     const course = courseFixture();
     const sheet = course.weeks[0].worksheets[0];
     sheet.items.push({ ...sheet.items[0], id: "last-item", prompt: "A final question." });
     const packet = answers ? W.answerWorksheet(course, 1, "a") : W.studentWorksheet(course, 1, "a");
     const doc = R.exportDocument(packet, answers, "", "https://example.org/weeks.html#common-core-reading/12/1");
-    const main = doc.body.children[0];
-    const worksheet = main.children.find(node => node.className === "weekly-worksheet");
-    const items = worksheet.children.find(node => node.className === "weekly-items");
+    const worksheet = doc.querySelector(".weekly-worksheet");
+    const flow = worksheet.querySelector(".worksheet-columns");
+    const items = flow.querySelector(".weekly-items");
     assert.equal(items.children.length, 2);
-    assert.equal(items.children[0].children.some(node => node.tagName === "footer"), false);
-    const last = items.children[1];
-    const footer = last.children.at(-1);
-    assert.equal(footer.tagName, "footer"); assert.match(footer.outerHTML, /Coursework source/);
-    assert.equal(last.children.at(-2).className, answers ? "weekly-answer" : "weekly-workspace");
-    assert.match(doc.documentElement.outerHTML, /min-height:38mm/);
-    assert.match(doc.documentElement.outerHTML, /\.weekly-items&gt;li\{break-inside:avoid\}/);
+    assert.deepEqual(items.querySelectorAll(".worksheet-number").map(node => node.outerHTML), [1, 2].map(n => `<h5 class="worksheet-number">${n}</h5>`));
+    assert.equal(items.querySelectorAll("footer").length, 0);
+    assert.equal(items.children[1].children.at(-1).className, answers ? "weekly-answer" : "weekly-workspace");
+    assert.match(flow.children.at(-1).outerHTML, /Coursework source/);
+    assert.match(flow.outerHTML, /Questions 1–2/);
   }
+}));
+
+test("shared passages identify exact question ranges, including gaps, without duplicating their text", () => withDOM(() => {
+  const course = courseFixture();
+  const sheet = course.weeks[0].worksheets[0];
+  sheet.items = Array.from({ length: 5 }, (_, index) => ({ ...sheet.items[0], id: "item-" + index, passageIds: index === 2 ? [] : ["text"] }));
+  const html = R.exportDocument(W.studentWorksheet(course, 1, "a"), false).documentElement.outerHTML;
+  assert.match(html, /Questions 1–2, 4–5/);
+  assert.equal(html.match(/A learner opened a book/g).length, 1);
+  assert.equal((html.match(/<h5 class="worksheet-number">/g) || []).length, 5);
+}));
+
+test("offline assets carry all four embedded faces and the complete license; missing assets can be retried", () => withDOM(() => {
+  const license = fs.readFileSync(path.join(__dirname, "../src/fonts/computer-modern/OFL.txt"), "utf8");
+  const embedded = require("../tools/lib/reading-fonts").embed(fs.readFileSync(path.join(__dirname, "../src/styles/print.css"), "utf8"), path.join(__dirname, "../src/fonts/computer-modern"));
+  const sheets = ["tokens", "math", "weekly", "brand", "print", "worksheet-print"].map(name => ({ href: "https://example.org/styles/" + name + ".css", cssRules: [{ cssText: name === "print" ? embedded : "." + name + "{}" }] }));
+  const doc = { styleSheets: sheets, querySelector: () => ({ content: license }) };
+  const face = sheets.splice(4, 1)[0];
+  assert.throws(() => R.exportAssets(doc), /styles are still loading/);
+  sheets.splice(4, 0, face);
+  doc.querySelector = () => null;
+  assert.throws(() => R.exportAssets(doc), /typeface could not load/);
+  doc.querySelector = () => ({ content: license });
+  const assets = R.exportAssets(doc);
+  assert.equal(assets.fontLicense, license);
+  assert.equal((assets.styles.match(/data:font\/woff2;base64,/g) || []).length, 4);
+  const html = R.exportDocument(W.studentWorksheet(courseFixture(), 1, "a"), false, assets.styles, "", assets.fontLicense).documentElement.outerHTML;
+  assert.match(html, /SIL OPEN FONT LICENSE Version 1.1/);
+  assert.match(html, /THE FONT SOFTWARE IS PROVIDED/);
+  assert.doesNotMatch(html, /url\(&quot;\.\.\/fonts/);
 }));
 
 test("worked examples reveal solutions on request and use the existing accessible math renderer", () => withDOM(() => {
@@ -182,7 +210,7 @@ test("passage navigation opens a lazy reading view before finding and focusing i
   document.getElementById = id => ready && id === "week-passage-text" ? { focus() { focused = true; }, scrollIntoView() { scrolled = true; } } : null;
   const packet = W.studentWorksheet(courseFixture(), 1, "a");
   const sheet = R.worksheet(packet, false, { onRead: () => { ready = true; } });
-  const items = sheet.children.find(node => node.tagName === "ol");
+  const items = sheet.querySelector(".weekly-items");
   const links = items.children[0].children.find(node => node.className === "weekly-passage-links");
   links.events.click({ target: { closest: () => ({ getAttribute: () => "#week-passage-text" }) }, preventDefault() { prevented = true; } });
   assert.equal(ready, true); assert.equal(focused, true); assert.equal(scrolled, true); assert.equal(prevented, true);

@@ -89,6 +89,9 @@ For a coherent ACT bank batch:
   reuse shared control components, and verify its screen/print contract. Keep
   section-specific task behavior coherent; do not impose reader pagination on
   active assessments. Record justified template exceptions in the section docs.
+  Grade, weekly and AP worksheet exports share `styles/worksheet-print.css` and the bundled
+  Computer Modern faces in `styles/print.css`; use the same ruled question
+  headings and two-column flow as SAT/ACT, with offline fonts/license intact.
 
 - Grade lesson expansions use `content/lesson-modules/<track>/<grade>/`,
   `src/lib/lesson-modules/<track>/<grade>/`, and `lessons.html`. They belong to

@@ -51,7 +51,9 @@
 .weekly-sheet-tools .weekly-sheet-picker select { width: min(24rem, 100%); }
 .weekly-key-tools { margin-block: 8px 18px; }
 .weekly-key-tools > summary { font-size: .875rem; }
-.weekly-items { padding-left: 26px; margin-block: 20px; }
+.weekly-items { list-style: none; padding-left: 0; margin-block: 20px; }
+.weekly-items .worksheet-number { font-size: 1rem; margin: 0 0 8px; }
+.weekly-passage-range { font-size: .875rem; font-style: italic; }
 .weekly-items > li { padding: 12px 0 16px 6px; break-inside: avoid; }
 .weekly-items > li + li { border-top: 1px solid var(--color-line); }
 .weekly-workspace { min-height: 110px; }
@@ -89,26 +91,54 @@
   .weekly-main { padding-top: 24px; }
 }
 @media print {
-  @page { margin: 16mm; }
-  .weekly-page { font-size: 11pt; line-height: 1.5; background: #fff; color: #000; }
+  .weekly-page { font: 400 var(--worksheet-size)/var(--worksheet-leading) var(--worksheet-serif); background: #fff; color: #000; }
   .weekly-page :focus { outline: none !important; }
   .weekly-page .page-width { width: 100%; max-width: none; }
-  .weekly-page :is(.skip-link, .weekly-intro, .weekly-filters, .weekly-status, .weekly-sheet-tools, .weekly-key-tools, .weekly-about, .weekly-links, .weekly-tabs) { display: none !important; }
-  .weekly-main { padding-block: 12pt; }
-  .weekly-section { padding-block: 12pt; }
-  .weekly-passage { max-width: none; background: #fff; }
-  .weekly-heading h2 { font-size: 20pt; }
-  .weekly-section h3 { font-size: 16pt; break-after: avoid; }
-  .weekly-answer { background: #fff; }
+  .weekly-page :is(.skip-link, .weekly-intro, .weekly-filters, .weekly-status, .weekly-sheet-tools, .weekly-key-tools, .weekly-about, .weekly-links, .weekly-tabs, .weekly-passage-links, .weekly-teaching) { display: none !important; }
+  .weekly-main { padding: 0; }
+  .weekly-heading h2 { font-size: 18pt; margin: 0 0 6pt; }
+  .weekly-meta, .weekly-context, .weekly-muted, .weekly-points { color: #333; font-size: 9pt; line-height: 1.3; }
+  .weekly-section { padding: 0 0 12pt; }
+  .weekly-section + .weekly-section { border-top: 0; }
+  .weekly-section h3 { margin: 0 0 8pt; font-size: 12pt; padding-bottom: 4pt; border-bottom: .5pt solid #777; }
+  .weekly-section h4, .weekly-sheet-heading { font-size: 11pt; margin: 0 0 7pt; }
+  .weekly-sheet-heading { text-align: center; }
+  .weekly-sheet-body { margin-top: 12pt; }
+  .weekly-rich, .weekly-passage .weekly-rich { font: inherit; overflow-wrap: break-word; }
+  .weekly-rich p { margin: 0; }
+  .weekly-section p + p, .weekly-rich > * + *, .weekly-rich + .weekly-rich, .weekly-answer > * + * { margin-top: 6pt; }
+  .weekly-rich li + li, .weekly-steps li + li { margin-top: 4pt; }
+  .weekly-rich .lm-table-wrap { max-width: 100%; overflow: visible; }
+  .weekly-rich table { width: 100%; font-size: 9pt; table-layout: fixed; }
+  .weekly-rich :is(th, td) { padding: 3pt; border-color: #777; }
+  .weekly-passages { margin-top: 0; }
+  .weekly-passage { max-width: none; margin: 0 0 12pt; padding-left: 8pt; border-left: .65pt solid #777; background: #fff; break-inside: auto; box-decoration-break: clone; }
+  .weekly-passage + .weekly-passage { padding-top: 0; border-top: 0; }
+  .weekly-passage h4, .weekly-passage-range { break-after: avoid; }
+  .weekly-passage-range { margin: 0 0 6pt; font-size: 9pt; }
+  .weekly-passage .weekly-meta { font-size: 8pt; margin-top: 6pt; }
+  .weekly-items { margin: 0; padding: 0; }
+  .weekly-items > li { padding: 0; }
+  .weekly-items > li + li, .weekly-example + .weekly-example { border-top: 0; }
+  .weekly-example { padding: 0; }
+  .weekly-answer { padding: 0; background: #fff; border: 0; }
+  .weekly-steps { padding-left: 18pt; }
   .weekly-page a { color: #000; }
   .weekly-page .weekly-item-answer, .weekly-page .weekly-example-answer { display: none !important; }
   .weekly-page .weekly-print-lesson .weekly-example-answer { display: block !important; }
-  .weekly-print-lesson .weekly-example { break-inside: avoid; }
   .weekly-print-lesson .weekly-example-answer > summary { display: none; }
-  .weekly-print-lesson .weekly-example h4 { break-after: avoid; }
-  .weekly-page .weekly-workspace { min-height: 32mm; }
-  .weekly-figure { break-inside: avoid; color: #000; }
-  .weekly-figure svg { max-height: 90mm; }
-  .weekly-badge { border-color: #000; }
-  .weekly-footer { padding-block: 10pt; }
+  .weekly-page .weekly-workspace { min-height: 28mm; break-before: avoid; }
+  .weekly-figures { display: block; margin: 8pt 0; }
+  .weekly-figure { display: block; break-inside: avoid; color: #000; }
+  .weekly-figure svg { max-height: 75mm; }
+  .weekly-figure :is(.lm-figure-note, .weekly-figure-caption) { font-size: 8pt; margin-top: 4pt; }
+  .weekly-choices { display: block; margin: 7pt 0 0; }
+  .weekly-choice { gap: 5pt; margin-bottom: 3pt; break-inside: avoid; }
+  .weekly-choice-letter { flex: 0 0 1.8em; min-width: 0; }
+  .weekly-badges { justify-content: center; margin: 0 0 8pt; }
+  .weekly-badge { padding: 0; border: 0; border-radius: 0; font-size: 9pt; font-style: italic; }
+  .weekly-rubric { margin-top: 8pt; }
+  .weekly-rubric ul { padding-left: 18pt; }
+  .weekly-export .weekly-footer p { margin: 3pt 0; }
+  .weekly-footer { break-inside: avoid; padding-block: 8pt; font: 8pt/1.25 var(--worksheet-serif); }
 }

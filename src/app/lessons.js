@@ -4,9 +4,10 @@
   const N = window.LiminalNavigation;
   const state = { entry: null, loading: false, course: null, selected: new Set(), nights: [], choices: {}, sheets: [], job: null, styles: null, exportBusy: false, readId: null, mode: "study" };
 
-  const stylesheets = ["styles/tokens.css", "styles/app.css", "styles/math.css", "styles/courses.css"];
+  const stylesheets = ["styles/tokens.css", "styles/app.css", "styles/math.css", "styles/courses.css", "styles/print.css", "styles/worksheet-print.css"];
   let catalog = [];
   let request = 0;
+  let buildRequest = 0;
   const moduleCache = new Map();
   const scriptCache = new Map();
 
@@ -43,6 +44,7 @@
   }
 
   function cancel(message) {
+    buildRequest += 1;
     if (state.job) {
       const job = state.job;
       state.job = null;
@@ -404,6 +406,7 @@
     const seed = $("courseSeed").value.trim();
     if (!seed) { error("Enter a packet seed, or choose a fresh seed."); $("courseSeed").focus(); return; }
     cancel();
+    const currentBuild = buildRequest;
     error("");
     state.nights = [];
     state.choices = {};
@@ -418,7 +421,8 @@
     try {
       const pending = buildInWorker(state.course, settings);
       setExportButtons();
-      const nights = await pending;
+      const [nights] = await Promise.all([pending, LiminalCourseRender.preparePrint()]);
+      if (currentBuild !== buildRequest) return;
       if (!Array.isArray(nights) || !nights.length) throw new Error("No worksheets were produced. Check your lesson selection and try again.");
       const sheets = LiminalCourses.selectPacketWorksheets(nights);
       state.nights = nights;
@@ -441,11 +445,12 @@
       $("coursePacketSection").hidden = false;
       $("courseBuildStatus").textContent = `Ready: three choices per night, each with ${settings.count} questions. Choose your worksheets below.`;
     } catch (failure) {
-      if (failure.name === "AbortError") return;
+      if (currentBuild !== buildRequest || failure.name === "AbortError") return;
+      cancel();
       error(failure.message || "The packet could not be built. Please try again.");
       $("courseBuildStatus").textContent = "";
     } finally {
-      if (!state.job) {
+      if (currentBuild === buildRequest && !state.job) {
         $("courseBuild").disabled = !state.selected.size;
         $("courseBuild").textContent = "Make practice";
         $("courseCancel").hidden = true;
@@ -488,7 +493,7 @@
       ? [sheets[Number($("coursePreviewNight").value) || 0]] : sheets;
     const duplex = $("coursePacketSides").value === "duplex";
     try {
-      const css = await loadStyles();
+      const [css] = await Promise.all([loadStyles(), LiminalCourseRender.preparePrint()]);
       const label = kind === "combined" ? `Nightly packet — ${combinedSheets.length === 1 ? `Night ${combinedSheets[0].day}, Worksheet ${combinedSheets[0].worksheetVariant}` : `all ${combinedSheets.length} nights`}` : kind === "guide" ? "Study guide" : `${kind === "answers" ? "Worked answers" : "Student worksheets"}${allWorksheets ? " — all A/B/C worksheets" : ""}`;
       const content = kind === "combined" ? LiminalCourseRender.renderNightlyPacket(course, combinedSheets, { duplex, packetDays }) : kind === "guide" ? LiminalCourseRender.renderGuide(course, lessons) : LiminalCourseRender.renderPacket(course, sheets, { answers: kind === "answers", packetDays });
       const html = LiminalCourseRender.exportHtml(`${course.title} — ${label}`, content, css);

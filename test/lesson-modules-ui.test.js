@@ -8,7 +8,7 @@ const N = require("../src/lib/navigation");
 
 // Exercise the real asynchronous page controller; layout, native controls and
 // generated packet output are checked separately in browser/engine reviews.
-function fixture({ hash = "#common-core-math/8/2-1", entries, waitFor } = {}) {
+function fixture({ hash = "#common-core-math/8/2-1", entries, waitFor, waitForFonts } = {}) {
   class Element {
     constructor(tag = "div") {
       Object.assign(this, { tagName: tag, children: [], dataset: {}, attributes: {}, events: {}, hidden: false, disabled: false, textContent: "", _value: "" });
@@ -48,15 +48,19 @@ function fixture({ hash = "#common-core-math/8/2-1", entries, waitFor } = {}) {
   };
   const modules = entries || [8, 7].map(grade => ({ id: "math-" + grade, trackId: "common-core-math", grade, title: "Grade " + grade, file: "grade-" + grade + ".json", generatorScripts: [], scopeNote: "Two supplemental topics." }));
   const courses = new Map(modules.map(entry => [entry.file, { ...entry, units: [{ id: "topic-a", title: "Topic A", lessons: [{ id: "1-1", title: "First lesson" }, { id: "2-1", title: "Second lesson" }] }] }]));
-  const listeners = {}, fetches = [], rendered = [], historyCalls = [];
+  const listeners = {}, fetches = [], rendered = [], historyCalls = [], projections = [];
+  class Worker {
+    postMessage() { queueMicrotask(() => this.onmessage({ data: { nights: [{ worksheets: [] }] } })); }
+    terminate() {}
+  }
   const location = { hash, search: "" };
-  const window = { location, LIMINAL_LESSON_MODULES: { modules }, LiminalNavigation: N, LiminalCourses: {}, LiminalRender: {},
+  const window = { location, LIMINAL_LESSON_MODULES: { modules }, LiminalNavigation: N, LiminalCourses: { selectPacketWorksheets(nights) { projections.push(nights); return []; } }, LiminalRender: {},
     LiminalReaderControls: { navigation: () => new Element("nav") },
-    LiminalCourseRender: { renderText: () => new Element("p"), renderGuide(course, ids) { rendered.push({ id: course.id, ids }); return new Element("article"); } },
+    LiminalCourseRender: { preparePrint: () => waitForFonts ? waitForFonts() : Promise.resolve(), renderText: () => new Element("p"), renderGuide(course, ids) { rendered.push({ id: course.id, ids }); return new Element("article"); } },
     history: { replaceState(_, __, next) { historyCalls.push(["replace", next]); location.hash = next; }, pushState(_, __, next) { historyCalls.push(["push", next]); location.hash = next; } },
     matchMedia: () => ({ matches: true }), addEventListener(name, callback) { listeners[name] = callback; },
   };
-  const context = { window, document, URLSearchParams, URL, console, setTimeout, clearTimeout, ...window,
+  const context = { window, document, URLSearchParams, URL, Blob, Worker, console, setTimeout, clearTimeout, ...window,
     fetch: async file => {
       fetches.push(file);
       if (file.startsWith("styles/")) return { ok: true, text: async () => "" };
@@ -66,7 +70,7 @@ function fixture({ hash = "#common-core-math/8/2-1", entries, waitFor } = {}) {
   };
   vm.runInNewContext(fs.readFileSync(path.join(__dirname, "../src/app/lessons.js"), "utf8"), context);
   const flush = async () => { for (let i = 0; i < 8; i++) await new Promise(resolve => setImmediate(resolve)); };
-  return { nodes, location, listeners, fetches, rendered, flush, document, window, modules, historyCalls };
+  return { nodes, location, listeners, fetches, rendered, flush, document, window, modules, historyCalls, projections };
 }
 
 test("the selected module loads alone, then another grade follows the index without UI code changes", async () => {
@@ -132,4 +136,37 @@ test("Back to a grade’s base route returns to the first lesson after reading a
   assert.equal(page.nodes.courseReadLesson.value, "2-1");
   assert.equal(page.historyCalls.length, priorWrites, "Forward must not add another entry");
   assert.equal(page.nodes.courseReadLesson.options.length, 2, "the explicit multi-lesson selection remains intact");
+});
+
+
+test("cancelling or changing grades while fonts load cannot install a completed worker's stale packet", async () => {
+  for (const action of ["cancel", "route", "settings"]) {
+    let release;
+    const fonts = new Promise(resolve => { release = resolve; });
+    const page = fixture({ waitForFonts: () => fonts });
+    await page.flush();
+    page.nodes.courseForm.events.submit({ preventDefault() {} });
+    await page.flush(); // The worker completes while font measurement is still pending.
+    assert.equal(page.projections.length, 0);
+    if (action === "cancel") page.nodes.courseCancel.events.click();
+    else if (action === "settings") page.nodes.courseCount.events.input();
+    else { page.location.hash = "#common-core-math/7"; page.listeners.hashchange(); await page.flush(); }
+    release(); await page.flush();
+    assert.equal(page.projections.length, 0, action + " invalidates the entire build, including its font wait");
+    assert.equal(page.nodes.coursePacketSection.hidden, true);
+    assert.equal(page.nodes.courseBuild.disabled, false);
+    assert.equal(page.nodes.courseCancel.hidden, true);
+  }
+});
+
+test("a font load failure cancels pending practice and leaves the builder ready to retry", async () => {
+  const page = fixture({ waitForFonts: () => Promise.reject(new Error("Print fonts did not load.")) });
+  await page.flush();
+  page.nodes.courseForm.events.submit({ preventDefault() {} });
+  await page.flush();
+  assert.equal(page.projections.length, 0);
+  assert.match(page.nodes.courseError.textContent, /Print fonts did not load/);
+  assert.equal(page.nodes.courseBuild.disabled, false);
+  assert.equal(page.nodes.courseCancel.hidden, true);
+  assert.equal(page.nodes.coursePacketSection.hidden, true);
 });

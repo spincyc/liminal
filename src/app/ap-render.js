@@ -56,9 +56,9 @@
   }
   function partName(section, part) { return "Section " + section.id + (section.parts.length > 1 ? " Part " + part.id : "") + ": " + section.title; }
   function docHeader(packet, label, context) {
-    const header = el("header", undefined, "ap-doc-head");
+    const header = el("header", undefined, "ap-doc-head worksheet-heading");
     header.append(el("p", label, "ap-copy-label"));
-    const title = el("h2", packet.title); title.id = "apHeading"; title.tabIndex = -1;
+    const title = el("h2", packet.title, "worksheet-title"); title.id = "apHeading"; title.tabIndex = -1;
     header.append(title, el("p", (context ? context + " · " : "") + summaryLine(packet), "weekly-meta"));
     return header;
   }
@@ -78,7 +78,7 @@
   // Student booklet: prompts, choices, points and given figures, then the
   // separate answer sheet; physics booklets append the formula reference.
   function booklet(packet, options = {}) {
-    const article = el("article", undefined, "ap-doc ap-student");
+    const article = el("article", undefined, "ap-doc ap-student worksheet-document");
     article.dataset.copy = "student";
     const header = docHeader(packet, "Student copy", options.context);
     header.append(nameLine(), rich(packet.directions), partsTable(packet));
@@ -92,13 +92,14 @@
         const head = el("div", undefined, "ap-part-head");
         head.append(heading, calculatorBadge(part.calculator), rich(part.directions, "ap-directions"));
         block.append(head);
-        const items = el("ol", undefined, "ap-items");
+        const items = el("ol", undefined, "ap-items worksheet-columns");
         items.setAttribute("start", String(part.items[0] ? part.items[0].number : 1));
         part.items.forEach(item => {
-          const li = el("li", undefined, "ap-item ap-item-" + item.kind);
+          const li = el("li", undefined, "ap-item worksheet-problem ap-item-" + item.kind);
+          li.append(el("h5", String(item.number), "worksheet-number"));
           if (item.kind === "mc") li.append(rich(item.prompt), ...figureNodes(packet, item.figureIds), choiceList(item));
           else {
-            li.append(el("p", "Question " + item.number + " · " + plural(item.points, "point"), "ap-item-points"), rich(item.prompt), ...figureNodes(packet, item.figureIds));
+            li.append(el("p", plural(item.points, "point"), "ap-item-points"), rich(item.prompt), ...figureNodes(packet, item.figureIds));
             const parts = el("ol", undefined, "ap-fr-parts");
             item.parts.forEach(part => {
               const p = el("li");
@@ -138,7 +139,7 @@
 
   // Answer key: keys, rationales, scoring guidelines and the raw-point tally.
   function key(packet, options = {}) {
-    const article = el("article", undefined, "ap-doc ap-key");
+    const article = el("article", undefined, "ap-doc ap-key worksheet-document");
     article.dataset.copy = "key";
     article.append(docHeader(packet, "Answer key · keep separate from student copies", options.context));
     const topic = id => { const label = options.topicLabel ? options.topicLabel(id) : ""; return label ? id + " " + label : id; };
@@ -156,11 +157,11 @@
         body.append(row);
       });
       table.append(body); section.append(table);
-      const rationales = el("ol", undefined, "ap-items ap-rationales");
+      const rationales = el("ol", undefined, "ap-items ap-rationales worksheet-columns");
       mc.forEach(item => {
-        const li = el("li", undefined, "ap-item");
+        const li = el("li", undefined, "ap-item worksheet-problem");
         li.setAttribute("value", String(item.number));
-        li.append(el("p", "Answer " + item.key, "ap-key-answer"), rich(item.rationale));
+        li.append(el("h5", String(item.number), "worksheet-number"), el("p", "Answer " + item.key, "ap-key-answer"), rich(item.rationale));
         if (item.distractorNotes) {
           const notes = el("ul", undefined, "ap-distractors");
           Object.entries(item.distractorNotes).forEach(([letter, note]) => { const n = el("li"); n.append(el("span", letter + ": ", "ap-letter-inline"), rich(note, "ap-inline")); notes.append(n); });
@@ -176,10 +177,11 @@
     if (fr.length) {
       const section = el("section", undefined, "ap-section");
       section.append(el("h3", "Free-response scoring guidelines"));
+      const flow = el("div", undefined, "worksheet-columns");
       fr.forEach(item => {
         const block = el("article", undefined, "ap-guideline");
         const head = el("div", undefined, "ap-guideline-head");
-        head.append(el("h4", "Question " + item.number + " · " + plural(item.points, "point") + (item.type ? " · " + A().frTypeLabel(item.type) : "")), rich(item.prompt), ...figureNodes(packet, item.figureIds), ...figureNodes(packet, item.answerFigureIds));
+        head.append(el("h4", "Question " + item.number + " · " + plural(item.points, "point") + (item.type ? " · " + A().frTypeLabel(item.type) : ""), "worksheet-number"), rich(item.prompt), ...figureNodes(packet, item.figureIds), ...figureNodes(packet, item.answerFigureIds));
         block.append(head);
         item.parts.forEach(part => {
           const p = el("section", undefined, "ap-guideline-part");
@@ -202,9 +204,9 @@
           block.append(p);
         });
         block.append(el("p", "Topics: " + item.topics.map(topic).join("; "), "ap-topics"));
-        section.append(block);
+        flow.append(block);
       });
-      article.append(section);
+      section.append(flow); article.append(section);
     }
     article.append(tallySheet(packet, options));
     return article;
@@ -229,10 +231,12 @@
 
   // Liminal's own formula reference: groups of relations with meanings.
   function referenceSheet(ref, options = {}) {
-    const node = el("section", undefined, "ap-reference-sheet" + (options.appended ? " ap-reference-appended" : ""));
-    const title = el(options.appended ? "h3" : "h2", ref.title);
+    const node = el("section", undefined, "ap-reference-sheet worksheet-document" + (options.appended ? " ap-reference-appended" : ""));
+    const head = el("header", undefined, "ap-reference-head worksheet-heading");
+    const title = el(options.appended ? "h3" : "h2", ref.title, "worksheet-title");
     if (!options.appended) { title.id = "apHeading"; title.tabIndex = -1; }
-    node.append(title, rich(ref.intro));
+    head.append(title, rich(ref.intro)); node.append(head);
+    const flow = el("div", undefined, "ap-reference-body worksheet-columns");
     ref.groups.forEach(group => {
       const table = el("table", undefined, "ap-table ap-reference-table");
       table.append(el("caption", group.title));
@@ -245,10 +249,11 @@
         const units = el("td"); units.append(rich(row.units, "ap-inline"));
         tr.append(th, meaning, units); body.append(tr);
       });
-      table.append(body); node.append(table);
+      table.append(body); flow.append(table);
     });
-    if (Array.isArray(ref.notes)) { const list = el("ul", undefined, "ap-reference-notes"); ref.notes.forEach(n => list.append(el("li", n))); node.append(list); }
-    return node;
+    if (Array.isArray(ref.notes)) { const list = el("ul", undefined, "ap-reference-notes"); ref.notes.forEach(n => list.append(el("li", n))); flow.append(list); }
+    if (options.note) flow.append(el("p", options.note, "ap-note ap-reference-note"));
+    node.append(flow); return node;
   }
 
   return { el, link, rich, booklet, answerSheet, key, tallySheet, referenceSheet, partsTable, summaryLine };

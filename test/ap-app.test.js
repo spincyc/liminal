@@ -11,13 +11,13 @@ const F = require("./fixtures/ap-fixtures");
 class Element {
   constructor(tag, text = "", className = "") {
     this.tagName = tag; this.value = text; this.className = className;
-    this.children = []; this.dataset = {}; this.attributes = {};
+    this.children = []; this.events = {}; this.dataset = {}; this.attributes = {};
     this.classList = { toggle() {} };
   }
   append(...nodes) { this.children.push(...nodes); }
   replaceChildren(...nodes) { this.children = nodes; this.value = ""; }
   setAttribute(name, value) { this.attributes[name] = value; }
-  addEventListener() {}
+  addEventListener(name, callback) { this.events[name] = callback; }
   focus() {}
   scrollIntoView() {}
   querySelectorAll() { return []; }
@@ -39,7 +39,7 @@ function page(hash) {
   };
   const fetch = file => new Promise((resolve, reject) => requests.push({ file, resolve: doc => resolve({ ok: true, json: async () => doc }), reject }));
   vm.runInNewContext(fs.readFileSync(path.join(__dirname, "../src/app/ap.js"), "utf8"), { window, document, fetch });
-  return { elements, requests, go(next) { window.location.hash = next; return listeners.hashchange(); } };
+  return { elements, requests, document, window, go(next) { window.location.hash = next; return listeners.hashchange(); } };
 }
 const flush = () => new Promise(resolve => setImmediate(resolve));
 
@@ -87,4 +87,31 @@ test("failed document requests can be retried and stale failures cannot replace 
   await flush();
   assert.match(p.elements.apContent.textContent, /STUDENT unit-1/);
   assert.doesNotMatch(p.elements.apContent.textContent, /could not be loaded|KEY SECRET/);
+});
+
+
+test("printing waits for embedded fonts and a failed font load leaves the print action available for retry", async () => {
+  const p = page("#calculus-ab/test/unit-1");
+  p.requests[0].resolve(F.unitTest("calculus-ab", 1));
+  await flush();
+  const find = node => node.value === "Print student copy" ? node : node.children.map(find).find(Boolean);
+  const button = find(p.elements.apContent);
+  let ready;
+  const requests = [];
+  let printed = 0;
+  p.window.print = () => { printed++; };
+  p.document.fonts = { load: face => { requests.push(face); return Promise.resolve([{}]); }, ready: new Promise(resolve => { ready = resolve; }) };
+  const pending = button.events.click();
+  await flush();
+  assert.equal(requests.length, 4);
+  assert.equal(printed, 0);
+  ready(); await pending;
+  assert.equal(printed, 1);
+  p.document.fonts.load = async () => [];
+  await button.events.click();
+  assert.equal(printed, 1);
+  assert.match(p.elements.apStatus.textContent, /typeface could not load/);
+  p.document.fonts.load = async () => [{}];
+  await button.events.click();
+  assert.equal(printed, 2);
 });

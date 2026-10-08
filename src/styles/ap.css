@@ -60,7 +60,8 @@
 .ap-directions { margin-block: 8px; color: var(--color-muted); font-size: .9375rem; }
 .ap-calc { display: inline-block; margin-top: 6px; padding: 2px 8px; border: 1px solid var(--color-line-strong); border-radius: var(--radius-sm); font-size: .8125rem; font-weight: 650; }
 .ap-calc-none { border-style: dashed; }
-.ap-items { padding-left: 28px; margin-block: 14px; }
+.ap-items { list-style: none; padding-left: 0; margin-block: 14px; }
+.ap-items .worksheet-number { font-size: 1rem; margin: 0 0 8px; }
 .ap-items > li { padding: 12px 0 16px 4px; break-inside: avoid; }
 .ap-items > li + li { border-top: 1px solid var(--color-line); }
 .ap-items > li.ap-item-fr { break-inside: auto; }
@@ -114,7 +115,7 @@
 
 @media (max-width: 900px) { .ap-cards { grid-template-columns: 1fr; } }
 @media screen and (max-width: 640px) {
-  .ap-items { padding-left: 22px; }
+  .ap-items { padding-left: 0; }
   .ap-table { font-size: .875rem; }
   .ap-table :is(th, td) { padding: 6px; }
   .ap-parts { font-size: .8125rem; }
@@ -133,26 +134,69 @@
 
 @media print {
   .ap-page :is(.ap-courses, .ap-print-tools, .ap-copies) { display: none !important; }
-  .ap-page .weekly-intro h1 { font-size: 18pt; }
-  .ap-page :is(.high-school-course h2, .ap-doc h2, .ap-reference-sheet h2) { font-size: 16pt; }
+  .ap-page :is(.high-school-course h2, .ap-reference-sheet h2) { font-size: 16pt; }
   .ap-page[data-view="assessment"] .weekly-intro, .ap-page[data-view="reference"] .weekly-intro { display: none !important; }
   .ap-page[data-view="plan"] .weekly-intro, .ap-page[data-view="hub"] .weekly-intro { display: block !important; }
-  .ap-doc { border-top: 0; padding-top: 0; }
-  .ap-section-fr > .ap-part:last-child > .ap-items, .ap-section-fr .ap-fr-parts { margin-bottom: 0; }
-  .ap-section-fr > .ap-part:last-child > .ap-items > li:last-child { padding-bottom: 0; }
-  .ap-answer-sheet, .ap-reference-appended, .ap-tally { break-before: page; }
-  .ap-section { padding-block: 10pt; }
-  .ap-section-fr { break-before: page; padding-bottom: 0; border-bottom: 0; }
-  .ap-items > li:not(.ap-item-fr), .ap-fr-parts > li, .ap-guideline-head, .ap-guideline-part, .ap-table tr { break-inside: avoid; }
-  /* Keep each FR introduction and its given figures with the first part. */
+  .ap-doc { border: 0; padding: 0; }
+  .ap-doc-head > .ap-rich, .ap-reference-head > .ap-rich { text-align: left; }
+  .ap-doc-head .ap-parts { margin-inline: auto; }
+  .ap-copy-label { font-size: 8pt; letter-spacing: .04em; }
+  .ap-name { justify-content: center; margin-block: 8pt; font-size: 9pt; }
+  .ap-section { padding: 10pt 0 0; border: 0; }
+  .ap-section > h3, .ap-answer-sheet > h3, .ap-reference-sheet > h3 { font-size: 12pt; margin: 0 0 8pt; padding-bottom: 4pt; border-bottom: .5pt solid #777; }
+  .ap-part h4 { font-size: 10pt; }
+  .ap-part + .ap-part { margin-top: 12pt; }
+  .ap-part-head { margin-bottom: 10pt; }
+  .ap-directions { font-size: 9pt; margin: 5pt 0; }
+  .ap-calc { font-size: 9pt; border: 0; padding: 0; margin-top: 4pt; font-style: italic; }
+  .ap-items { padding: 0; margin: 0; }
+  .ap-items > li { padding: 0; }
+  .ap-items > li + li, .ap-guideline + .ap-guideline { border: 0; }
+  .ap-items > li.ap-item-fr { break-inside: auto; page-break-inside: auto; }
   .ap-item-fr > :not(.ap-fr-parts) { break-inside: avoid; break-after: avoid; }
-  .ap-fr-parts { break-before: avoid; }
-  .ap-guideline-head > h4, .ap-guideline-part > h5, .ap-section > :is(h3, h4) { break-after: avoid; }
-  .ap-workspace { min-height: 55mm; border-color: #777; }
-  .ap-doc .lm-figure svg { max-height: 90mm; }
-  .ap-answer { background: #fff; }
-  .ap-table thead th { background: #fff; }
-  .ap-note { background: #fff; }
+  .ap-fr-parts { margin: 7pt 0 0; padding: 0; break-before: avoid; }
+  .ap-fr-parts > li { padding: 6pt 0 0; break-inside: avoid; }
+  .ap-workspace { min-height: 42mm; margin-top: 6pt; border: 0; border-radius: 0; break-before: avoid; }
+  .ap-item-points, .ap-points, .ap-topics, .ap-key-answer, .ap-sheet-note, .ap-reference-notes { font-size: 9pt; }
+  .ap-rich { font: inherit; overflow-wrap: break-word; }
+  .ap-rich > * + * { margin-top: 6pt; }
+  .ap-rich .lm-table-wrap { overflow: visible; max-width: 100%; }
+  .ap-rich table { width: 100%; table-layout: fixed; }
+  .ap-choices { display: block; margin-top: 7pt; }
+  .ap-choices li { gap: 5pt; margin: 0 0 3pt; break-inside: avoid; }
+  .ap-letter { display: inline; flex: 0 0 1.2em; width: auto; height: auto; border: 0; font-size: inherit; }
+  .ap-letter::after { content: ")"; }
+  .ap-choice-text { flex: 1 1 auto; }
+  .ap-doc .lm-figure { break-inside: avoid; margin: 8pt 0; }
+  .ap-doc .lm-figure svg { max-height: 75mm; }
+  .ap-doc .lm-figure-note, .ap-figure-caption { font-size: 8pt; }
+  .ap-key-figures { display: block; }
+  .ap-key-figures > .lm-figure { min-width: 0; }
+  .ap-answer-sheet, .ap-reference-appended, .ap-tally, .ap-section-fr { break-before: page; }
+  .ap-answer-sheet { border: 0; padding: 10pt 0 0; }
+  .ap-guideline { padding: 0 0 12pt; }
+  .ap-guideline-head { break-after: avoid; }
+  .ap-guideline-head > h4, .ap-guideline-part > h5 { break-after: avoid; }
+  .ap-guideline-part { margin-top: 8pt; }
+  .ap-guideline-part h5 { font-size: 10pt; }
+  .ap-answer { background: #fff; padding: 0; border: 0; }
+  .ap-distractors { font-size: 9pt; padding-left: 14pt; }
+  .ap-table { font-size: 9pt; margin-block: 8pt; }
+  .ap-table :is(th, td), .ap-rich :is(th, td) { padding: 3pt; border-color: #777; }
+  .ap-parts :is(th, td) { overflow-wrap: anywhere; }
+  .ap-table thead th, .ap-note { background: #fff; }
+  .ap-table tr { break-inside: avoid; }
+  .ap-reference-body { margin-top: 10pt; }
+  .ap-reference-notes, .ap-reference-note { column-span: all; margin-block: 8pt; }
+  /* Keep semantic table cells on screen; printed relations need the complete
+     column width for a formula rather than three cramped nested columns. */
+  .ap-reference-table, .ap-reference-table :is(caption, tbody, tr, th, td) { display: block; width: auto; }
+  .ap-reference-table thead { display: none; }
+  .ap-reference-table caption { break-after: avoid; font-weight: 700; }
+  .ap-reference-table tr { border: 0; border-bottom: .5pt solid #777; padding: 5pt 0; break-inside: avoid; }
+  .ap-reference-table :is(th, td) { border: 0; padding: 2pt 0; overflow-wrap: break-word; }
+  .ap-reference-table td:last-child { font-size: 8pt; color: #333; }
+  .ap-reference-table td:last-child::before { content: "Units: "; }
   .ap-page a { color: #000; text-decoration: none; }
   .ap-card { break-inside: avoid; }
 }

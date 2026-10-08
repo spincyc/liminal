@@ -122,8 +122,10 @@ download separately or together as a nightly packet: study guide, worksheets,
 then worked answers, in one print job. Double-sided packets keep each section
 on separate physical sheets. Print them on paper or save as PDF. The expansion
 opens with a focused lesson reader; larger homework packets are available from
-the practice builder. Student workspaces are blank and unruled, with a thin
-border around each problem.
+the practice builder. Printed worksheets use the same Computer Modern typography, two-column flow,
+and ruled question headings as SAT/ACT booklets. Student workspaces stay blank
+and unruled. Weekly worksheets and AP assessments share these print components;
+downloaded worksheets embed the fonts for offline use.
 Two original written-work models demonstrate aligned long division and a
 checked equation solution. Lessons include full-size viewing and typed steps;
 printable guides embed the drawings. Course documents, SAT/ACT booklets, and

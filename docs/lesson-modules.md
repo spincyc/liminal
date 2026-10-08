@@ -96,21 +96,23 @@ question numbers, with the night and worksheet letter on each page. Separate
 student and answer exports include the chosen worksheet for every night.
 Browser print supports paper or Save as PDF. Lesson practice
 does not alter SAT/ACT progress or infer a student's mastery from printing.
-Student practice leaves response space unruled, with a thin border around each
-problem and its workspace. Graph grids and tables required by the question stay
-visible. The space can be used for calculation, a diagram, or a written explanation.
-Student pages pair compact problem cards in two columns; graphs and long tables
-use the full page width. Each card includes directions, an unruled working area,
-and a separate space for the final answer or conclusion. Actual
-typeset height determines how many cards fit on each page. Work requirements
-name observable evidence, such as both aligned equations or a labeled ratio,
-instead of prescribing a universal number of lines. The key explains how to
+Printed practice uses the shared SAT/ACT worksheet design: Computer Modern
+10pt type, two flowing columns, a thin divider and a rule below every question
+number. Response space remains open and unruled; graph grids and required tables
+remain visible. Each question includes its hand-work directions, workspace and
+separate answer/conclusion area. Prompts, figures and worked steps can continue
+when needed instead of being clipped inside a card. Work requirements name
+observable evidence, such as aligned equations or a labeled ratio, instead of
+prescribing a universal number of lines. The key explains how to
 find the first differing step, correct it, and try an unused alternative.
 Printing directly from the expanded lesson page prints the selected study guide;
 use the packet controls for homework.
 Print styles use black text, graph strokes, and borders on white paper. Browser
 background graphics can stay off; no instruction or answer depends on color.
-The packet CLI also generates PDFs with background graphics disabled.
+The packet CLI also generates PDFs with background graphics disabled. Offline
+HTML embeds all four Computer Modern faces and their complete license.
+See the [shared print contract](design-system.md#print-contracts) for dimensions
+and reusable components.
 
 After making practice, choose the night and worksheet, then use **Print nightly packet**.
 It combines that choice's study guide, student worksheet, and worked answers in

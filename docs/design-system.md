@@ -41,7 +41,7 @@ dependency-free implementation.
 | Assessment/check | reading-level check, AP student/key documents, SAT/ACT active test shell | Clear start, progress and completion; task-specific Next/Submit controls. Never introduce First/Last that could skip assessment state. Student and key routes remain distinguishable. |
 | Practice and progress | `practice.html` setup, progress, review, study tips | Coherent test-prep navigation beneath the shared header; one primary task per region; optional setup and secondary explanation in disclosures. Active test uses its established assessment palette and tools. |
 | Reference lesson | Learn lesson | Back-to-library/context links, bounded reading measure, in-page section navigation, examples and practice links. Topic documents have no artificial chronological order. |
-| Printable document | daily HTML/TeX, SAT/ACT books, classroom/weekly/AP sheets | Document-specific typography and pagination; no screen navigation. Protect student/key separation and preserve complete text, math and figures. See print contracts below. |
+| Printable document | daily HTML/TeX, SAT/ACT books, classroom/weekly/AP sheets | Shared Computer Modern typography and two-column worksheets; no screen navigation. Protect student/key separation and preserve complete text, math and figures. See print contracts below. |
 
 Every new page or substantially changed state must choose one of these templates,
 name any justified exception in its section documentation, and reuse its shared
@@ -144,9 +144,32 @@ long material to flow across pages without clipping. Student questions and answe
 keys remain distinct. A multi-question passage is context for its labelled range,
 not an unnumbered part of the following problem. See [booklet printing](booklet-printing.md).
 
-Classroom, weekly and AP exports preserve their instructional structure, required
-disclaimers and explicit student/key projections. A two-column literary reading
-layout is not a universal worksheet format.
+Grade expansions, every weekly pathway, and AP student/key documents use the
+same printed worksheet components in `styles/worksheet-print.css`. The type and
+question layout follow SAT/ACT booklets: bundled Computer Modern Unicode Serif,
+10pt body at 1.3 line height, Letter paper with .6in top, .55in side and .7in
+bottom margins, two columns with a .38in gap and thin divider. Content fills the
+left column before the right. A centered title and compact metadata precede
+the problems; every numbered heading carries a black rule directly below it.
+Use open response space, stable choice gutters, and small footers instead of
+boxed question cards. Keys use the same numbered heading component.
+
+`print.css` owns the four font faces shared with SAT/ACT. Worksheet pages load it
+and the common print stylesheet after their section styles. The build embeds the
+font bytes and full SIL OFL license; standalone HTML and CLI exports must carry
+both and wait for fonts before measuring or printing. Reuse `worksheet-document`,
+`worksheet-heading`, `worksheet-title`, `worksheet-meta`, `worksheet-columns`,
+`worksheet-problem`, `worksheet-number`, and `worksheet-footer` alongside local
+classes. Section CSS owns instructional structures and pagination, not a second
+font or question-heading design.
+
+Preserve required diagrams, tables, calculator directions, points, response
+space, source and trademark notices, and explicit student/key projections.
+Long material may continue across columns/pages; no clipping or fixed-height
+containers may discard content. Measured combined packets must count their
+actual printed pages and retain duplex separator backs. These layout contracts
+also apply to worked guides and keys, without exposing solutions in a student
+worksheet.
 
 ## Review and maintenance
 

@@ -141,8 +141,12 @@ texts when needed. The worksheet pane keeps
 student print and download actions beside its selector, with answer-key actions
 inside a separate disclosure. Both exports use explicit student/key projections;
 opening a key never changes the student copy.
-Keep mobile navigation compact, keyboard accessible, and printable with dark
-ink and blank work space. Content never enters SAT/ACT progress or the existing
+Printed sheets, keys and worked lessons follow the [shared print contract](design-system.md#print-contracts):
+Computer Modern 10pt text, two columns, ruled question headings and open response
+space. All pathways use the same components, including Common Core, Singapore,
+reading, named high-school and AP weekly work. Downloaded HTML carries embedded
+fonts and the complete license for offline printing. Keep mobile navigation
+compact, keyboard accessible, and printable with dark ink and blank work space. Content never enters SAT/ACT progress or the existing
 Grade 8 generated-packet inventory.
 
 Validation must check complete week coverage, unit/standard references, required
