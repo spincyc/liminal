@@ -1,8 +1,9 @@
 "use strict";
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const M = require("../src/lib/courses/math.js");
-const E = require("../src/lib/courses/engine.js");
+const M = require("../src/lib/lesson-modules/math.js");
+const E = require("../src/lib/lesson-modules/engine.js");
+require("../src/lib/lesson-modules/common-core-math/8/index.js");
 
 const course = { id: "test-course", title: "Test course", version: 1, units: [
   { id: "one", lessons: [{ id: "a" }, { id: "b" }] },
@@ -188,7 +189,7 @@ test("three-worksheet requests refuse undersized pools and count coverage per pr
 });
 
 test("real Topic 1 provides three complete ten-night practice choices without repetitions", () => {
-  const actual = require("../content/courses/grade-8-math.json");
+  const actual = require("../content/lesson-modules/common-core-math/8/module.json");
   const nights = E.generatePacketChoices(actual, E.templatesForCourse(actual.id), { lessonIds: actual.units[0].lessons.map(lesson => lesson.id), days: 10, count: 20, seed: "three-topic-1" });
   const sheets = nights.flatMap(night => night.worksheets);
   assert.equal(sheets.length, 30);
@@ -283,7 +284,7 @@ test("rebuild coverage notes describe the actual selected packet, including pair
 });
 
 test("every real lesson supports five short reinforcement nights and every topic supports ten review nights in both modes", () => {
-  const actual = require("../content/courses/grade-8-math.json");
+  const actual = require("../content/lesson-modules/common-core-math/8/module.json");
   const designs = E.templatesForCourse(actual.id);
   const verify = (lessonIds, count, days, practiceMode, seed) => {
     const nights = E.generatePacketChoices(actual, designs, { lessonIds, count, days, practiceMode, seed });

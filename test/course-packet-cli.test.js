@@ -4,7 +4,7 @@ const assert = require("node:assert/strict");
 const { spawnSync } = require("node:child_process");
 const fs = require("node:fs");
 const path = require("node:path");
-const { parseArgs, selectLessons, selectWorksheets, studentPacket, packetManifest } = require("../tools/course-packet.js");
+const { parseArgs, selectModule, selectLessons, selectWorksheets, studentPacket, packetManifest } = require("../tools/course-packet.js");
 
 function runCli(args) {
   const scratch = path.join(__dirname, "../.scratch");
@@ -38,7 +38,8 @@ test("packet CLI rejects malformed bounds and missing values before launching a 
   }
   assert.deepEqual(parseArgs(["--days=3", "--count", "12", "--lessons", "1-2, 1-1", "--pdf"]).lessons, ["1-2", "1-1"]);
   const defaults = parseArgs([]);
-  assert.equal(defaults.course, "grade-8-math");
+  assert.equal(defaults.track, "common-core-math");
+  assert.equal(defaults.grade, 8);
   assert.equal(defaults.unit, "all");
   assert.equal(defaults.days, 10);
   assert.equal(defaults.count, 20);
@@ -172,4 +173,23 @@ test("downloaded manifest records replay settings and form codes without solutio
   assert.deepEqual(manifest.sheets, [{ day: 1, seed: "home/night-1", code: "COURSE-abcdef12-123", warnings: ["Some repeats"] }]);
   assert.equal(manifest.files.length, 6);
   assert.doesNotMatch(JSON.stringify(manifest), /secret|questions|steps/);
+});
+
+
+test("grade packet selection is explicit and legacy CLI exports remain compatible", () => {
+  assert.strictEqual(require("../tools/course-packet.js"), require("../tools/lesson-packet.js"));
+  const modules = [{ id: "grade-8-math", trackId: "common-core-math", grade: 8 }, { id: "sample-k", trackId: "common-core-math", grade: 0 }];
+  assert.strictEqual(selectModule(modules, parseArgs([])), modules[0]);
+  assert.strictEqual(selectModule(modules, parseArgs(["--track", "common-core-math", "--grade", "K"])), modules[1]);
+  assert.strictEqual(selectModule(modules, parseArgs(["--course", "grade-8-math"])), modules[0]);
+  assert.throws(() => selectModule(modules, parseArgs(["--grade", "7"])), /No expanded lessons.*grade 7/);
+  assert.throws(() => selectModule(modules, parseArgs(["--track", "singapore-math"])), /No expanded lessons.*singapore/);
+  for (const args of [["--course", "grade-8-math", "--grade", "8"], ["--track=common-core-math", "--course=grade-8-math"], ["--grade", "13"], ["--grade", "8.0"]]) assert.throws(() => parseArgs(args));
+  const result = runCli(["--grade", "7"]);
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /No expanded lessons.*grade 7/);
+  assert.doesNotMatch(result.stderr, /executable|ChromeDriver/);
+  const manifest = packetManifest({ ...modules[0], title: "Math", revision: "v1" }, [], [], parseArgs([]));
+  assert.equal(manifest.course.trackId, "common-core-math");
+  assert.equal(manifest.course.grade, 8);
 });

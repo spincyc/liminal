@@ -4,6 +4,8 @@
   const C = window.LiminalCurriculum;
   const W = window.LiminalWeekly;
   const weeklyIndex = window.LIMINAL_WEEKLY_INDEX;
+  const N = window.LiminalNavigation;
+  const lessonModules = window.LIMINAL_LESSON_MODULES;
   const status = document.getElementById("planStatus");
   if (!data || !C) {
     status.textContent = "The plans could not be loaded. Reload this page, or use the download link below.";
@@ -83,6 +85,12 @@
     if (context) header.append(el("p", context, "plan-context"));
     const weekly = W && weeklyIndex && W.courseAt(weeklyIndex, track.track.id, course.grade);
     if (weekly) header.append(link("Start weekly work →", "weeks.html" + W.route(track.track.id, course.grade, 1), "plan-weekly-start"));
+    const expansion = N && N.moduleAt(lessonModules, track.track.id, course.grade);
+    if (expansion) {
+      const ready = el("p", undefined, "plan-ready");
+      ready.append(link("Expanded lessons and practice →", "lessons.html" + N.lessonRoute(track.track.id, course.grade)), el("small", expansion.scopeNote));
+      header.append(ready);
+    }
     fragment.append(header);
     const units = C.pacedUnits(course);
     units.forEach(unit => {
@@ -100,6 +108,15 @@
           lessons.append(item);
         });
         body.append(lessons);
+      }
+      const topics = expansion && (expansion.units || []).filter(topic => (topic.planUnitIds || []).includes(unit.id));
+      if (topics && topics.length) {
+        const related = el("div", undefined, "plan-block");
+        related.append(el("h3", "Expanded lessons for this unit"));
+        const links = el("ul");
+        topics.forEach(topic => { const item = el("li"); item.append(link(topic.title, "lessons.html" + N.lessonRoute(track.track.id, course.grade, topic.lessonIds[0]))); links.append(item); });
+        related.append(links, el("p", "Additional instruction and generated practice for these topics; the year plan may cover more."));
+        body.append(related);
       }
       const goals = C.unitGoals(unit);
       if (goals.length) body.append(block("Goals", goals));
@@ -125,11 +142,6 @@
     if (related.previous) nav.append(courseLink(related.previous, "← " + C.gradeLabel(course.grade - 1)));
     if (related.next) nav.append(courseLink(related.next, C.gradeLabel(course.grade + 1) + " →"));
     fragment.append(nav);
-    if (track.track.id === "common-core-math" && course.grade === 8) {
-      const ready = el("p", undefined, "plan-ready");
-      ready.append(link("Study Grade 8 math →", "courses.html"), el("small", "Lessons and practice for four topics."));
-      fragment.append(ready);
-    }
     const overview = disclosure("About this year");
     overview.append(el("p", course.title), el("p", course.scopeNote), block("Starting points", course.prerequisites), block("Year goals", course.outcomes), block("How the year connects", course.yearBridge), block("Weekly routine", course.routines), block("Next year", course.nextStep), block("Across subjects", course.crossSubject));
     fragment.append(overview, renderSources(track, course));

@@ -9,14 +9,16 @@ coverage. Their task ideas are supplemented by separately authored
 worked examples, three worksheets per week and separate keys. Weekly materials
 do not replace local differentiation, assessment, or sustained reading.
 
-The landing page leads with Mathematics and Reading. Each subject links to its
-year plans; a separate entry identifies the ready-to-study Grade 8 lessons.
-`courses.html` remains the lesson reader and worksheet builder. Its current
-four-topic scope is described in [classroom courses](classroom-courses.md).
-`weeks.html` provides the weekly reader and fixed, distinct worksheets across
-the three pathways. Planning records never enter the Grade 8 generator catalog
-or SAT/ACT progress records. The home page still loads only its legacy-bookmark
-redirect script.
+The landing page nests Grade 8 expanded lessons beneath Common Core mathematics.
+`lessons.html#common-core-math/8` deepens that grade's plan with original teaching
+and generated practice. Its four-topic scope is described in
+[grade lesson expansions](lesson-modules.md). `weeks.html` provides the weekly
+reader and fixed worksheets. Plans, weekly work, and expanded practice share
+the pathway and grade identity; the availability index adds expansion links
+only to the matching grade. Unit mappings add topic links where content exists.
+Other grades will use the same module structure when their expansions are authored.
+Neither plans nor lesson modules enter SAT/ACT progress records. The home page
+loads shared navigation metadata and its legacy-bookmark redirect script.
 
 ## Reading a plan
 

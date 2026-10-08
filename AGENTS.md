@@ -90,9 +90,12 @@ For a coherent ACT bank batch:
   section-specific task behavior coherent; do not impose reader pagination on
   active assessments. Record justified template exceptions in the section docs.
 
-- Classroom courses use `content/courses/`, `src/lib/courses/`, and
-  `courses.html`, independently of the SAT/ACT taxonomy and progress records.
-  Follow `docs/classroom-courses.md` for schema, generation, review, and print
+- Grade lesson expansions use `content/lesson-modules/<track>/<grade>/`,
+  `src/lib/lesson-modules/<track>/<grade>/`, and `lessons.html`. They belong to
+  the matching curriculum pathway and grade; Grade 8 mathematics is not a
+  standalone course. Register reviewed expansions in the shared module catalog,
+  not per-grade application branches. SAT/ACT progress stays separate.
+  Follow `docs/lesson-modules.md` for schema, generation, review, and print
   verification. Textbook references identify scope; all instruction and
   exercises are original. Never commit scanned textbook pages or student work.
 

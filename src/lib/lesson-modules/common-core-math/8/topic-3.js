@@ -1,5 +1,5 @@
 (function (root, factory) {
-  if (typeof module === 'object' && module.exports) module.exports = factory(require('./math.js'));
+  if (typeof module === 'object' && module.exports) module.exports = factory(require('../../math.js'));
   else root.LiminalGrade8Topic3 = factory(root.LiminalCourseMath);
 }(typeof globalThis !== 'undefined' ? globalThis : this, function (M) {
   'use strict';

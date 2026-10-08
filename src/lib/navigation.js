@@ -17,11 +17,50 @@
   const COURSE = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
   const WEEK = /^(?:[1-9]|[12][0-9]|3[0-6])$/;
 
+  function gradeKey(grade) { return Number(grade) === 0 || grade === "k" ? "k" : String(grade); }
+  function trackLabel(trackId) {
+    return ({ "common-core-math": "Common Core mathematics", "common-core-reading": "Common Core reading", "singapore-math": "Singapore mathematics" })[trackId] || trackId;
+  }
+  function moduleAt(index, trackId, grade) {
+    return index && Array.isArray(index.modules) ? index.modules.find(entry => entry.trackId === trackId && gradeKey(entry.grade) === gradeKey(grade)) || null : null;
+  }
+  function lessonRoute(trackId, grade, lessonId) {
+    return "#" + encodeURIComponent(trackId) + "/" + gradeKey(grade) + (lessonId ? "/" + encodeURIComponent(lessonId) : "");
+  }
+  // An explicit grade without authored expansion stays on that grade. Only an
+  // empty entry route selects the first published module from the index.
+  function lessonContext(index, location = {}) {
+    const modules = index && Array.isArray(index.modules) ? index.modules : [];
+    const query = new URLSearchParams(location.search || "");
+    let parts;
+    try { parts = String(location.hash || "").replace(/^#/, "").split("/").filter(Boolean).map(decodeURIComponent); }
+    catch (_) { return { invalid: true, entry: null, trackId: null, grade: null, lessonId: null }; }
+    const requestedId = query.get("course") || query.get("courseId") || query.get("module");
+    const alias = modules.find(entry => entry.id === (requestedId || parts[0]) || (entry.legacyIds || []).includes(requestedId || parts[0]));
+    if (alias && (requestedId || parts.length <= 2)) {
+      return { entry: alias, trackId: alias.trackId, grade: alias.grade, lessonId: query.get("lesson") || parts[1] || null, invalid: false };
+    }
+    if (!parts.length && !requestedId) {
+      const entry = modules[0] || null;
+      return { entry, trackId: entry && entry.trackId, grade: entry && entry.grade, lessonId: query.get("lesson") || null, invalid: false };
+    }
+    if (!requestedId && parts.length >= 2 && parts.length <= 3 && GRADE_TRACKS.includes(parts[0]) && GRADE.test(parts[1])) {
+      const grade = parts[1] === "k" ? 0 : Number(parts[1]);
+      const entry = moduleAt(index, parts[0], grade);
+      return { entry, trackId: parts[0], grade, lessonId: parts[2] || query.get("lesson") || null, invalid: false, unavailable: !entry };
+    }
+    return { invalid: true, entry: null, trackId: null, grade: null, lessonId: null };
+  }
+  function legacyLessonHref(index, location) {
+    const context = lessonContext(index, location);
+    return "lessons.html" + (context.trackId ? lessonRoute(context.trackId, context.grade, context.lessonId) : (location.search || "") + (location.hash || ""));
+  }
+
   function model(location, data = {}) {
     const page = String(location.pathname || "index.html").split("/").pop() || "index.html";
     const parts = String(location.hash || "").replace(/^#/, "").split("/");
     let area = null, track = "common-core-math", key = "k", week = "1", course = null;
-    if (["curriculum.html", "weeks.html", "high-school.html", "courses.html"].includes(page)) area = "courses";
+    if (["curriculum.html", "weeks.html", "high-school.html", "courses.html", "lessons.html"].includes(page)) area = "courses";
     if (["daily-reading.html", "reading-level.html"].includes(page)) area = "readings";
     if (["practice.html", "learn.html", "print.html"].includes(page)) area = "prep";
     if (page === "ap.html") area = "ap";
@@ -49,7 +88,10 @@
       const courses = data.highSchool && data.highSchool.courses;
       const selected = courses && (courses.find(item => item.id === parts[0]) || courses[0]);
       key = selected ? selected.id : COURSE.test(parts[0]) ? parts[0] : "algebra";
-    } else if (page === "courses.html") key = "8";
+    } else if (["courses.html", "lessons.html"].includes(page)) {
+      const context = lessonContext(data.lessonModules, location);
+      if (context.trackId) { track = context.trackId; key = gradeKey(context.grade); }
+    }
     else if (page === "daily-reading.html") {
       const requested = parts[0] === "browse" ? parts.length === 2 ? parts[1] : null : parts[0];
       key = READING_GRADE.test(requested) ? requested : "k";
@@ -60,7 +102,7 @@
 
     const primary = PRIMARY.map(item => ({ ...item, current: item.id === area ? "true" : null }));
     if (course) primary.find(item => item.id === "ap").href += "#" + course;
-    const gradeContext = ["curriculum.html", "weeks.html", "courses.html", "daily-reading.html"].includes(page) && GRADE_TRACKS.includes(track);
+    const gradeContext = ["curriculum.html", "weeks.html", "courses.html", "lessons.html", "daily-reading.html"].includes(page) && GRADE_TRACKS.includes(track);
     if (gradeContext && GRADE.test(key)) {
       const mathTrack = track === "common-core-reading" ? "common-core-math" : track;
       primary.find(item => item.id === "courses").href += "#" + mathTrack + "/" + key;
@@ -79,7 +121,6 @@
           current: page === "weeks.html" ? "page" : null },
         { id: "high-school", label: "High school", href: "high-school.html" + (named ? "#" + key : ""),
           current: page === "high-school.html" ? "page" : null },
-        { id: "lessons", label: "Grade 8 lessons", href: "courses.html", current: page === "courses.html" ? "page" : null },
       ];
     } else if (area === "readings") {
       const advanced = /^a[1-4]$/.test(key), planGrade = advanced ? "k" : key;
@@ -95,8 +136,14 @@
           current: page === "weeks.html" ? "page" : null },
       ];
     }
+    const expansionTrack = area === "readings" ? "common-core-reading" : track;
+    const expansion = GRADE.test(key) && moduleAt(data.lessonModules, expansionTrack, key);
+    if (expansion && ["courses", "readings"].includes(area)) secondary.splice(area === "courses" ? 2 : secondary.length, 0, {
+      id: "lessons", label: "Expanded lessons", href: "lessons.html" + lessonRoute(expansionTrack, key),
+      current: ["lessons.html", "courses.html"].includes(page) ? "page" : null,
+    });
     return { area, homeCurrent: page === "index.html" ? "page" : null, primary, secondary,
       secondaryLabel: area === "readings" ? "Reading resources" : "Course resources" };
   }
-  return { PRIMARY, model };
+  return { PRIMARY, model, gradeKey, trackLabel, moduleAt, lessonRoute, lessonContext, legacyLessonHref };
 });

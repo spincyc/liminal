@@ -5,8 +5,8 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
-const M = require('../src/lib/courses/math.js');
-const templates = require('../src/lib/courses/grade8-topic1.js');
+const M = require('../src/lib/lesson-modules/math.js');
+const templates = require('../src/lib/lesson-modules/common-core-math/8/topic-1.js');
 const minus = text => text.replace(/−/g, '-');
 
 // Independent exact arithmetic for checking displayed decimals and scientific notation.
@@ -310,7 +310,7 @@ test('Topic 1 exports original templates for every lesson in Node and the browse
     assert.ok(templates.filter(t => t.lessonId === `1-${lesson}`).length >= 2);
   }
   const context = { LiminalCourseMath: M };
-  vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../src/lib/courses/grade8-topic1.js'), 'utf8'), context);
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../src/lib/lesson-modules/common-core-math/8/topic-1.js'), 'utf8'), context);
   assert.equal(context.LiminalGrade8Topic1.length, templates.length);
   assert.equal(context.LiminalGrade8Topic1[0].generate(M.random('browser')).answer,
     templates[0].generate(M.random('browser')).answer);

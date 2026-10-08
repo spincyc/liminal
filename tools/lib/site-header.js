@@ -10,7 +10,8 @@
 const PLACEHOLDER = "<!-- liminal:site-header -->";
 const navigation = require("../../src/lib/navigation");
 const NAV = navigation.PRIMARY;
-const SCRIPTS = ["lib/navigation.js", "app/navigation.js"];
+const HEAD_SCRIPTS = ["content/lesson-modules.js", "lib/navigation.js"];
+const SCRIPTS = [...HEAD_SCRIPTS, "app/navigation.js"];
 
 const SYMBOL =
   '<svg class="brand-symbol" viewBox="0 0 28 34" fill="none" aria-hidden="true" focusable="false">' +
@@ -42,7 +43,9 @@ function render(page) {
 function apply(html, page) {
   const count = html.split(PLACEHOLDER).length - 1;
   if (count !== 1) throw new Error(`${page} must contain exactly one ${PLACEHOLDER} (found ${count})`);
-  return html.replace(PLACEHOLDER, render(page) + SCRIPTS.map(src => `<script defer src="${src}"></script>`).join(""));
+  if (!/<head\b[^>]*>/.test(html)) throw new Error(`${page} must contain a head element`);
+  return html.replace(/<head\b[^>]*>/, head => head + HEAD_SCRIPTS.map(src => `<script defer src="${src}"></script>`).join(""))
+    .replace(PLACEHOLDER, render(page) + '<script defer src="app/navigation.js"></script>');
 }
 
 // Problems with a built page's header, for the static smoke test.
@@ -60,6 +63,7 @@ function problems(html, page) {
     const matches = scripts.filter(match => match[1] === src);
     if (matches.length !== 1 || !/\bdefer\b/.test(matches[0][0])) found.push(`${src} must load once with defer`);
   });
+  if (scripts.slice(0, HEAD_SCRIPTS.length).map(match => match[1]).join(",") !== HEAD_SCRIPTS.join(",")) found.push("shared route data and helpers must load before page applications");
   const shared = scripts.filter(match => SCRIPTS.includes(match[1])).map(match => match[1]);
   if (shared.join(",") !== SCRIPTS.join(",")) found.push("shared navigation scripts are missing or out of order");
   if (/<header class="(?:site-header|home-header)/.test(html)) found.push("it still has a page-specific header");

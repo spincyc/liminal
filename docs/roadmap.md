@@ -1,12 +1,21 @@
 # Roadmap
 
+## Common Core grade expansions — 2026-10-08
+
+The detailed Grade 8 lessons are now an expansion of Common Core mathematics,
+attached to the grade’s year plan and weekly work. The shared
+[lesson-module structure](lesson-modules.md) supports future grades through
+reviewed catalog entries, parent-unit mappings, and registered generators.
+Only the authored four-topic Grade 8 expansion is currently available.
+Legacy lesson URLs and packet commands remain compatible.
+
 ## K–12 curriculum skeletons — 2026-10-07
 
 The [year-plan library](curriculum.md) adds 39 sourced, 36-week outlines across
 Common Core mathematics, Common Core reading, and a Singapore mathematics
 pathway. Mathematics and Reading lead the landing page; grade comparison and
-adjacent-year links expose the intended progression. Ready-to-study Grade 8
-lessons remain separate. Next content work is to develop and review lesson
+adjacent-year links expose the intended progression. Grade 8 expanded
+lessons now belong to their Common Core grade pathway. Next content work is to develop and review lesson
 texts, reading selections, differentiated practice, and complete assessments
 from these skeletons, not to treat the outlines as completed coursework.
 
@@ -35,12 +44,12 @@ and study tools. Courses opens with a focused lesson reader, then a practice
 builder. The [cold-review follow-up](reviews/2026-10-06-grade8-cold-followup.md)
 records the teaching, repetition, answer-cue, and print repairs.
 
-The course library now has a grade/subject catalog and the four topics in the
+The original release included a grade/subject catalog and the four topics in the
 supplied Grade 8 Mathematics volume: 36 original guides, 72 worked examples,
 and repeatable nightly worksheets with separate worked keys. Topic 1 follows
-the supplied review pages. See [classroom courses](classroom-courses.md) for
-scope and review limits. Later volumes, grades, and subjects can use the same
-course structure; their content is not yet available.
+the supplied review pages. See [grade lesson expansions](lesson-modules.md) for
+current scope, structure, and review limits. Other grade expansions have not
+yet been authored.
 
 ## Current status — 2026-10-03
 

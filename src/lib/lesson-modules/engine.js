@@ -1,12 +1,8 @@
 /* Course worksheet selection is independent of exam sessions and progress. */
 (function (root, factory) {
   const node = typeof module === "object" && module.exports;
-  const api = factory(node ? require("./math.js") : root.LiminalCourseMath, function (id) {
-    if (id !== "grade-8-math") throw new Error("No generators registered for course: " + id);
-    return node
-      ? [1, 2, 3, 4].flatMap(n => require("./grade8-topic" + n + ".js"))
-      : [1, 2, 3, 4].flatMap(n => root["LiminalGrade8Topic" + n] || []);
-  });
+  const registry = node ? require("./registry.js") : root.LiminalLessonModuleRegistry;
+  const api = factory(node ? require("./math.js") : root.LiminalCourseMath, registry.templatesForModule);
   if (node) module.exports = api;
   else root.LiminalCourses = api;
 })(typeof globalThis !== "undefined" ? globalThis : this, function (M, templatesForCourse) {
@@ -268,5 +264,5 @@
       return matches[0];
     });
   }
-  return { MAX_COUNT, MAX_DAYS, WORKSHEET_VARIANTS, lessons, nightlyLessons, packetPagePlan, identity, visibleIdentity, validateQuestion, validateGraph, templatesForCourse, generateWorksheet, generatePacket, generatePacketChoices, selectPacketWorksheets };
+  return { MAX_COUNT, MAX_DAYS, WORKSHEET_VARIANTS, lessons, nightlyLessons, packetPagePlan, identity, visibleIdentity, validateQuestion, validateGraph, templatesForModule: templatesForCourse, templatesForCourse, generateWorksheet, generatePacket, generatePacketChoices, selectPacketWorksheets };
 });

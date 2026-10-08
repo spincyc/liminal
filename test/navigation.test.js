@@ -55,7 +55,8 @@ test("legacy practice bookmarks preserve their route and query while home anchor
 
 const navigation = require("../src/lib/navigation");
 const siteHeader = require("../tools/lib/site-header");
-const navAt = (page, hash = "", data) => navigation.model({ pathname: "/liminal/" + page, hash }, data);
+const lessonModules = { version: 1, modules: [{ id: "grade-8-math", trackId: "common-core-math", grade: 8 }] };
+const navAt = (page, hash = "", data = {}) => navigation.model({ pathname: "/liminal/" + page, hash }, { lessonModules, ...data });
 const href = (model, id, primary = false) => model[primary ? "primary" : "secondary"].find(item => item.id === id).href;
 
 test("four primary areas retain access to the existing course and reading destinations", () => {
@@ -64,10 +65,10 @@ test("four primary areas retain access to the existing course and reading destin
   ]);
   const destinations = new Set();
   for (const page of ["index.html", "curriculum.html", "daily-reading.html"]) {
-    const model = navAt(page);
+    const model = navAt(page, page === "curriculum.html" ? "#common-core-math/8" : "");
     [...model.primary, ...model.secondary].forEach(item => destinations.add(item.href.split("#")[0]));
   }
-  for (const page of ["curriculum.html", "weeks.html", "courses.html", "high-school.html", "daily-reading.html", "reading-level.html", "ap.html", "practice.html"]) {
+  for (const page of ["curriculum.html", "weeks.html", "lessons.html", "high-school.html", "daily-reading.html", "reading-level.html", "ap.html", "practice.html"]) {
     assert.ok(destinations.has(page), page + " remains reachable");
   }
   assert.equal(href(navAt("curriculum.html"), "weeks"), "weeks.html#common-core-math/k/1");
@@ -76,7 +77,7 @@ test("four primary areas retain access to the existing course and reading destin
 test("current markers distinguish AP, readings, courses and test preparation", () => {
   for (const [page, hash, area, local] of [
     ["index.html", "", null, null], ["curriculum.html", "", "courses", "plans"],
-    ["courses.html", "", "courses", "lessons"], ["high-school.html", "#geometry", "courses", "high-school"],
+    ["courses.html", "", "courses", "lessons"], ["lessons.html", "#common-core-math/8/2-1", "courses", "lessons"], ["high-school.html", "#geometry", "courses", "high-school"],
     ["curriculum.html", "#common-core-reading/8/u1", "readings", "plans"],
     ["weeks.html", "#common-core-reading/8/7", "readings", "weeks"],
     ["daily-reading.html", "#browse/8", "readings", "daily"], ["reading-level.html", "#plan", "readings", "level"],
@@ -190,9 +191,9 @@ function loadNavigation(page, hash) {
     return selector === ".lm-subnav" ? secondary : primary[selector.match(/="([^"]+)"/)[1]];
   } };
   const document = { querySelector: () => header, createElement: () => new Element() };
-  const window = { location: { pathname: "/liminal/" + page, hash }, addEventListener(type, handler) { listeners[type] = handler; } };
-  const context = vm.createContext({ window, document });
-  for (const script of siteHeader.SCRIPTS) vm.runInContext(fs.readFileSync(path.join(__dirname, "../src", script), "utf8"), context);
+  const window = { LIMINAL_LESSON_MODULES: lessonModules, location: { pathname: "/liminal/" + page, hash }, addEventListener(type, handler) { listeners[type] = handler; } };
+  const context = vm.createContext({ window, document, URLSearchParams });
+  for (const script of siteHeader.SCRIPTS.filter(script => !script.startsWith("content/"))) vm.runInContext(fs.readFileSync(path.join(__dirname, "../src", script), "utf8"), context);
   return { window, primary, secondary, listeners };
 }
 
@@ -215,6 +216,64 @@ test("browser enhancement updates hash context and retains link nodes without st
   window.location.hash = "#singapore-math/3/1";
   listeners.popstate();
   assert.equal(secondary.hidden, false);
-  assert.equal(secondary.children.length, 4);
+  assert.equal(secondary.children.length, 3);
   assert.equal(primary.courses.attributes["aria-current"], "true");
+});
+
+
+test("expanded lessons belong only to their declared pathway and grade", () => {
+  for (const page of ["curriculum.html", "weeks.html", "lessons.html"]) {
+    for (const [track, grade] of [["common-core-math", "7"], ["common-core-math", "9"], ["singapore-math", "8"], ["common-core-reading", "8"]]) {
+      const model = navAt(page, "#" + track + "/" + grade);
+      assert.equal(model.secondary.some(item => item.id === "lessons"), false, page + " " + track + "/" + grade);
+      assert.equal(href(model, "plans"), "curriculum.html#" + track + "/" + grade);
+    }
+    assert.equal(href(navAt(page, "#common-core-math/8"), "lessons"), "lessons.html#common-core-math/8");
+  }
+  for (const page of ["high-school.html", "ap.html"]) assert.equal(navAt(page).secondary.some(item => item.id === "lessons"), false);
+});
+
+test("adding a future grade module changes routing and navigation through metadata alone", () => {
+  const future = { id: "math-grade-7", trackId: "common-core-math", grade: 7 };
+  const index = { modules: [...lessonModules.modules, future] };
+  const route = navigation.lessonContext(index, { hash: "#common-core-math/7/1-2" });
+  assert.equal(route.entry, future);
+  assert.equal(route.lessonId, "1-2");
+  const model = navAt("lessons.html", "#common-core-math/7/1-2", { lessonModules: index });
+  assert.equal(href(model, "plans"), "curriculum.html#common-core-math/7");
+  assert.equal(href(model, "weeks"), "weeks.html#common-core-math/7/1");
+  assert.equal(href(model, "lessons"), "lessons.html#common-core-math/7");
+});
+
+test("explicit unauthored grades never resolve to a different expansion", () => {
+  for (const hash of ["#common-core-math/k", "#common-core-math/7/1-2", "#singapore-math/8", "#common-core-reading/8"]) {
+    const selected = navigation.lessonContext(lessonModules, { hash });
+    assert.equal(selected.entry, null);
+    assert.equal(selected.unavailable, true);
+    assert.equal(selected.trackId, hash.slice(1).split("/")[0]);
+  }
+  for (const hash of ["#common-core-math/99", "#bad/8", "#common-core-math/%broken", "#grade-8-math/2-1/extra"]) {
+    const selected = navigation.lessonContext(lessonModules, { hash });
+    assert.equal(selected.entry, null);
+    assert.equal(selected.invalid, true);
+  }
+});
+
+test("legacy course and lesson bookmarks retain the requested lesson during replacement", () => {
+  for (const location of [
+    { search: "?lesson=2-1" }, { hash: "#grade-8-math/2-1" },
+    { search: "?course=grade-8-math&lesson=2-1" }, { search: "?courseId=grade-8-math&lesson=2-1" },
+    { hash: "#common-core-math/8/2-1" },
+  ]) assert.equal(navigation.legacyLessonHref(lessonModules, location), "lessons.html#common-core-math/8/2-1");
+  assert.equal(navigation.legacyLessonHref(lessonModules, { hash: "#common-core-math/7/1-2" }), "lessons.html#common-core-math/7/1-2");
+  assert.equal(navigation.legacyLessonHref(lessonModules, { search: "?course=unknown&lesson=2-1" }), "lessons.html?course=unknown&lesson=2-1");
+  let replaced;
+  const anchor = {};
+  const location = { search: "?lesson=2-1", replace(href) { replaced = href; } };
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname, "../src/app/courses.js"), "utf8"), {
+    window: { LiminalNavigation: navigation, LIMINAL_LESSON_MODULES: lessonModules, location },
+    document: { getElementById: () => anchor },
+  });
+  assert.equal(replaced, "lessons.html#common-core-math/8/2-1");
+  assert.equal(anchor.href, replaced);
 });

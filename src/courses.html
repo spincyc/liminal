@@ -4,161 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="description" content="Original course study guides, fresh nightly homework, and separate worked answer keys. Start with Grade 8 math." />
-    <title>Liminal — Courses</title>
+    <title>Liminal — Lessons have moved</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles/tokens.css" />
-    <link rel="stylesheet" href="styles/app.css" />
-    <link rel="stylesheet" href="styles/math.css" />
-    <link rel="stylesheet" href="styles/courses.css" />
-    <link rel="stylesheet" href="styles/reader-controls.css" />
+    <link rel="stylesheet" href="styles/home.css" />
     <link rel="stylesheet" href="styles/brand.css" />
-    <script defer src="content/courses.js"></script>
-    <script defer src="lib/courses/math.js"></script>
-    <script defer src="lib/courses/grade8-topic1.js"></script>
-    <script defer src="lib/courses/grade8-topic2.js"></script>
-    <script defer src="lib/courses/grade8-topic3.js"></script>
-    <script defer src="lib/courses/grade8-topic4.js"></script>
-    <script defer src="lib/courses/engine.js"></script>
-    <script defer src="app/render.js"></script>
-    <script defer src="app/course-render.js"></script>
-    <script defer src="app/reader-controls.js"></script>
     <script defer src="app/courses.js"></script>
   </head>
-  <body class="courses-page">
+  <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <!-- liminal:site-header -->
-    <main id="main" class="site-main" tabindex="-1">
-      <header class="page-head course-hero">
-        <p class="course-eyebrow">Course library</p>
-        <h1 id="coursePageTitle">Study and practice</h1>
-        <p class="lede">Study the method. Show your work. Check the result.</p>
-        <p><a href="weeks.html">Browse weekly math and reading coursework</a>, <a href="curriculum.html#common-core-math/8">see the Grade 8 year plan</a>, or <a href="curriculum.html#grade/8">compare subjects</a>.</p>
-      </header>
-      <noscript><p class="notice">Turn on JavaScript to read lessons and build homework. Downloaded guides and worksheets work offline without JavaScript.</p></noscript>
-      <p id="courseLoadStatus" class="status-line" role="status" aria-live="polite">Opening the course library…</p>
-      <div id="courseApp" hidden>
-        <details class="course-library">
-          <summary>Choose a course <span id="courseLibraryLabel"></span></summary>
-          <div class="course-catalog-fields reader-selectors">
-            <label>Grade<select id="courseGrade"></select></label>
-            <label class="reader-select-wide">Subject<select id="courseSubject"></select></label>
-            <label class="reader-select-wide">Course<select id="courseChoice"></select></label>
-          </div>
-          <p id="courseDescription"></p>
-          <p id="courseScope" class="course-scope"></p>
-          <p id="courseSource" class="field-note"></p>
-        </details>
-        <div class="course-workspace-layout">
-          <aside class="course-selection-panel" aria-label="Choose lessons">
-            <details id="courseLessonPicker" class="course-lesson-picker" open>
-              <summary><span>Lessons</span><span id="courseSelectionLabel">One lesson selected</span></summary>
-              <fieldset class="course-lessons-fieldset">
-                <legend class="sr-only">Lessons to study and practice</legend>
-                <p class="course-picker-note">Choose one lesson for focused practice, or select several for review.</p>
-                <div class="course-selection-actions">
-                  <button id="courseSelectAll" class="text-link" type="button">Select all</button>
-                  <button id="courseSelectNone" class="text-link" type="button">Clear</button>
-                </div>
-                <div id="courseLessons" class="course-lessons"></div>
-                <p id="courseSelectionCount" class="field-note" role="status" aria-live="polite"></p>
-              </fieldset>
-            <details class="course-help">
-              <summary>Study routine</summary>
-              <ol id="courseRoutine" class="course-routine-list"></ol>
-              <p>Explain each step. Correct a mistake, then revisit the method tomorrow.</p>
-            </details>
-            </details>
-          </aside>
-          <div class="course-learning-area">
-            <nav class="course-mode-nav" aria-label="Study and practice">
-              <button id="courseRead" type="button" aria-controls="courseGuideDetails" aria-pressed="true"><span>01</span> Study</button>
-              <button id="coursePractice" type="button" aria-controls="coursePracticePanel" aria-pressed="false"><span>02</span> Practice</button>
-            </nav>
-            <section id="courseGuideDetails" class="course-study-panel" aria-labelledby="courseStudyHeading">
-              <header class="course-study-heading">
-                <h2 id="courseStudyHeading" class="sr-only" tabindex="-1">Study selected lessons</h2>
-                <div class="course-reader-navigation reader-bar">
-                  <div class="reader-selectors"><label class="reader-select-wide">Lesson<select id="courseReadLesson"></select></label></div>
-                  <div class="reader-actions"><button id="coursePracticeLessonTop" type="button" aria-label="Practice this lesson">Practice lesson</button><button type="button" data-course-export="guide" data-export-action="print" aria-label="Print selected lessons">Print</button><button type="button" data-course-export="guide" data-export-action="download" aria-label="Download guide for selected lessons">Download</button></div>
-                </div>
-                <div id="courseReadNavigationTop"></div>
-              </header>
-              <div id="courseGuide" class="course-reading-surface"></div>
-              <div class="course-study-actions">
-                <div id="courseReadNavigationBottom"></div>
-                <div class="reader-actions"><button id="coursePracticeLesson" type="button">Practice this lesson</button></div>
-              </div>
-            </section>
-            <section id="coursePracticePanel" class="course-practice-panel" aria-labelledby="builderHeading" hidden>
-              <header class="course-practice-heading"><h2 id="builderHeading" tabindex="-1">Put the method to work.</h2><p id="coursePracticeSelection"></p><p>Show your reasoning. Compare it with the worked answers, correct any errors, and try again independently.</p></header>
-              <form id="courseForm" class="course-builder">
-                <div class="field"><label for="coursePracticeMode">Practice approach</label><select id="coursePracticeMode" aria-describedby="coursePracticeModeHelp"><option value="rebuild">Rebuild step by step</option><option value="review">Mixed review</option></select><p id="coursePracticeModeHelp" class="field-note">Rebuild pairs a question with first-step support and a fresh independent question using the same method. Mixed review varies the methods without first-step prompts. Every question says what to do by hand, when a calculator helps, and what work to show.</p></div>
-                <div class="actions course-build-actions"><button id="courseBuild" class="button primary" type="submit">Make practice</button><button id="courseCancel" class="button secondary" type="button" hidden>Cancel</button><span id="courseAmountSummary" class="course-amount-summary">8 questions · 1 night</span></div>
-                <p id="courseBuildStatus" class="status-line" role="status" aria-live="polite"></p>
-                <p id="courseError" class="status-line error" role="alert" hidden></p>
-                <details id="coursePacketSettings" class="course-packet-settings">
-                  <summary>Practice amount and schedule</summary>
-                <div class="course-presets" role="group" aria-label="Practice amounts"><button id="courseShortSet" class="button secondary" type="button">Tonight: 8 questions</button><button id="courseFiveNights" class="button secondary" type="button">Rebuild over 5 nights: 8 each</button><button id="courseTenNights" class="button secondary" type="button">Topic review: 10 nights, 20 each</button></div>
-                <p class="field-note">Five rebuild nights provide 15 worksheets and 120 distinct questions across A/B/C. Topic review provides 30 worksheets and 600 questions; a selection within one topic expands to that whole topic.</p>
-                <div class="course-packet-fields">
-                  <div class="field"><label for="courseCount">Questions per worksheet</label><input id="courseCount" type="number" min="1" max="100" step="1" value="8" required /><p class="field-note">Choose 1–100</p></div>
-                  <div class="field"><label for="courseDays">Nights</label><input id="courseDays" type="number" min="1" max="30" step="1" value="1" required /><p class="field-note">Choose 1–30</p></div>
-                </div>
-                <p class="course-amount-advice">Each night gets three complete worksheets — A, B, and C — with the same lesson mix and different questions. Choose one per night, or keep all three for later practice. A narrow lesson selection may need fewer questions or nights.</p>
-                </details>
-                <details id="courseAdvanced" class="course-advanced">
-                  <summary>Recreate a saved packet</summary>
-                  <div class="field course-seed-field"><label for="courseSeed">Packet seed</label><input id="courseSeed" type="text" maxlength="140" required spellcheck="false" autocomplete="off" aria-describedby="courseSeedHelp" /><p id="courseSeedHelp" class="field-note">Use the printed seed with the same practice approach, lessons, questions per worksheet, nights, and course version. Then select each night’s printed worksheet letter.</p></div>
-                  <button id="courseFresh" class="text-link" type="button">Use a new seed</button>
-                </details>
-              </form>
-              <section id="coursePacketSection" class="course-preview-section" aria-labelledby="packetHeading" hidden>
-                <div class="course-preview-heading"><div><h2 id="packetHeading">Your practice is ready.</h2><p id="coursePacketSummary" class="muted"></p></div></div>
-                <div id="courseWarnings" class="notice" hidden></div>
-                <div class="course-preview-controls course-worksheet-controls">
-                  <div class="field"><label for="coursePreviewNight">Night to preview or change</label><select id="coursePreviewNight"></select></div>
-                  <div class="field"><label id="courseWorksheetLabel" for="coursePreviewWorksheet">Worksheet for this night</label><select id="coursePreviewWorksheet" aria-describedby="courseWorksheetHelp"></select></div>
-                </div>
-                <p id="courseWorksheetHelp" class="field-note">Choose a full worksheet for this night. Switching choices keeps the other nights as selected; the answer key always matches.</p>
-                <section class="course-choice-overview" aria-labelledby="courseChoiceHeading">
-                  <h3 id="courseChoiceHeading">Worksheets selected for printing</h3>
-                  <ol id="courseChoiceSummary" class="course-choice-summary" aria-label="Worksheet selected for each night"></ol>
-                  <p id="courseChoiceStatus" class="field-note" role="status" aria-live="polite"></p>
-                </section>
-                <section class="course-combined-download" aria-labelledby="courseCombinedHeading">
-                  <h3 id="courseCombinedHeading">Print a complete nightly packet</h3>
-                  <p>Study guide, worksheets, then worked answers — together in one print job, grouped by night. Each guide covers the lessons practiced that night.</p>
-                  <div class="course-packet-fields">
-                    <div class="field"><label for="coursePacketScope">Nights to include</label><select id="coursePacketScope"><option value="current">Night 1</option><option value="all">All nights</option></select></div>
-                    <div class="field"><label for="coursePacketSides">Printing layout</label><select id="coursePacketSides"><option value="duplex">Double-sided · separate sheets</option><option value="single">Single-sided · no separator backs</option></select></div>
-                  </div>
-                  <p id="coursePacketPrintHelp" class="field-note">Double-sided packets include separator backs when needed, so every guide, worksheet set, and answer key begins on a new sheet. Keep every page and print one page per side, flipping on the long edge.</p>
-                  <p class="field-note">Includes answers. Set the answer-key sheets aside before giving the packet to the learner. Review nights may repeat a lesson’s study guide.</p>
-                  <div class="actions"><button class="button primary" type="button" data-course-export="combined" data-export-action="print" disabled>Print nightly packet</button><button class="text-link" type="button" data-course-export="combined" data-export-action="download" disabled>Download packet HTML</button></div>
-                </section>
-                <div class="course-downloads">
-                  <div class="course-download-item"><h3>Student worksheets</h3><p>One selected worksheet per night, for all nights. Questions and space for your thinking.</p><div class="actions"><button class="button primary" type="button" data-course-export="student" data-export-action="print" disabled>Print worksheets</button><button class="text-link" type="button" data-course-export="student" data-export-action="download" disabled>Download HTML</button></div></div>
-                  <div class="course-download-item"><h3>Worked answers</h3><p>Matching answers for all selected worksheets, with steps and explanations.</p><div class="actions"><button class="button secondary" type="button" data-course-export="answers" data-export-action="print" disabled>Print answer key</button><button class="text-link" type="button" data-course-export="answers" data-export-action="download" disabled>Download HTML</button></div></div>
-                </div>
-                <section class="course-combined-download" aria-labelledby="courseReserveHeading">
-                  <h3 id="courseReserveHeading">Keep a reserve supply</h3>
-                  <p id="courseReserveSummary"></p>
-                  <div class="course-downloads">
-                    <div class="course-download-item"><h3>All student worksheets</h3><p>Every A, B, and C worksheet across all nights, with no answers.</p><div class="actions"><button class="button secondary" type="button" data-course-export="student" data-export-scope="all" data-export-action="print" disabled>Print all A/B/C</button><button class="text-link" type="button" data-course-export="student" data-export-scope="all" data-export-action="download" disabled>Download all worksheets</button></div></div>
-                    <div class="course-download-item"><h3>All matching worked answers</h3><p>A separate key for the complete reserve supply, labeled by night and worksheet.</p><div class="actions"><button class="button secondary" type="button" data-course-export="answers" data-export-scope="all" data-export-action="print" disabled>Print all answer keys</button><button class="text-link" type="button" data-course-export="answers" data-export-scope="all" data-export-action="download" disabled>Download all answer keys</button></div></div>
-                  </div>
-                </section>
-                <p class="course-print-help">Print views open in a new tab. Use your browser’s Print command for paper or PDF. Downloads are complete HTML files that work offline.</p>
-                <div class="course-preview-controls"><label class="course-preview-answer-toggle"><input id="coursePreviewAnswers" type="checkbox" /> Show worked answers in preview</label></div>
-                <details class="course-preview-disclosure" open><summary>Look over the questions</summary><div id="coursePreview" class="course-paper-preview"></div></details>
-              </section>
-            </section>
-            <p id="courseExportStatus" class="status-line" role="status" aria-live="polite"></p>
-          </div>
-        </div>
-      </div>
+    <main id="main" class="page-width home-main" tabindex="-1">
+      <h1>Lessons are part of your grade’s course</h1>
+      <p id="legacyLessonStatus">Opening the requested expanded lessons…</p>
+      <p><a id="legacyLessonLink" href="lessons.html">Continue to expanded lessons and practice</a>, or <a href="curriculum.html">browse year plans</a>.</p>
     </main>
-    <footer class="site-footer"><div class="site-footer-inner"><p>Liminal · Original, independent educational practice.</p><p>Not affiliated with or endorsed by Savvas or any textbook publisher. Textbook names identify topic alignment; explanations, examples, and questions are original.</p><p>Grade 8 math currently covers the four supplied topics. This is a focused course library, with room for later volumes, grades, and subjects.</p></div></footer>
   </body>
 </html>

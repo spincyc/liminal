@@ -97,8 +97,8 @@ fs.writeFileSync(
 // still builds; tools/check-learn.js fails on it.
 require("./build-learn").build({ allowMissing: true });
 
-// Classroom courses have their own taxonomy and worksheet generators.
-require("./build-courses").build();
+// Grade expansions resolve against their parent curriculum and load independently.
+require("./build-lesson-modules").build();
 require("./build-work-samples").build();
 require("./build-curriculum").build();
 require("./build-weekly").build();

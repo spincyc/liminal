@@ -250,6 +250,13 @@
       const yearRoute = W.planRoute(course.trackId, W.courseKey(course));
       links.append(R.link("Year plan", yearRoute), R.link("Unit and standards", yearRoute + "/" + encodeURIComponent(week.unitId)));
       if (course.trackId === "common-core-reading") links.append(R.link("Nightly reading", "daily-reading.html#" + W.courseKey(course) + "/" + week.week + "/1"));
+      const N = window.LiminalNavigation;
+      const expansion = N && N.moduleAt(window.LIMINAL_LESSON_MODULES, course.trackId, course.grade);
+      if (expansion) {
+        const topics = (expansion.units || []).filter(topic => (topic.planUnitIds || []).includes(week.unitId));
+        if (topics.length) topics.forEach(topic => links.append(R.link("Expanded lessons: " + topic.title, "lessons.html" + N.lessonRoute(course.trackId, course.grade, topic.lessonIds[0]))));
+        else links.append(R.link("This grade’s expanded lessons", "lessons.html" + N.lessonRoute(course.trackId, course.grade)));
+      }
       heading.append(links);
       const fragment = document.createDocumentFragment();
       fragment.append(heading, views(course, week), navigation(selected, "bottom"));

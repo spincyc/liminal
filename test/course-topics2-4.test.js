@@ -3,8 +3,8 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const M = require('../src/lib/courses/math.js');
-const groups = [2, 3, 4].map(topic => require(`../src/lib/courses/grade8-topic${topic}.js`));
+const M = require('../src/lib/lesson-modules/math.js');
+const groups = [2, 3, 4].map(topic => require(`../src/lib/lesson-modules/common-core-math/8/topic-${topic}.js`));
 const templates = groups.flat();
 const byId = new Map(templates.map(template => [template.id, template]));
 const normal = s => s.replace(/−/g, '-');
@@ -79,9 +79,9 @@ test('all designs are deterministic, finite, printable, and keep data points in 
 test('browser globals expose the same generated content as Node modules', () => {
   const context = vm.createContext({});
   vm.runInContext('String.prototype.localeCompare = function () { throw new Error("Locale-sensitive practice identity"); };', context);
-  vm.runInContext(fs.readFileSync(path.join(__dirname, '../src/lib/courses/math.js'), 'utf8'), context);
+  vm.runInContext(fs.readFileSync(path.join(__dirname, '../src/lib/lesson-modules/math.js'), 'utf8'), context);
   for (let topic = 2; topic <= 4; topic++) {
-    vm.runInContext(fs.readFileSync(path.join(__dirname, `../src/lib/courses/grade8-topic${topic}.js`), 'utf8'), context);
+    vm.runInContext(fs.readFileSync(path.join(__dirname, `../src/lib/lesson-modules/common-core-math/8/topic-${topic}.js`), 'utf8'), context);
     const browser = context[`LiminalGrade8Topic${topic}`];
     assert.equal(browser.length, groups[topic - 2].length);
     browser.forEach((template, i) => {

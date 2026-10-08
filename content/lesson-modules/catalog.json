@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "modules": [
+    {
+      "id": "grade-8-math",
+      "trackId": "common-core-math",
+      "grade": 8,
+      "subject": "Mathematics",
+      "title": "Grade 8 Mathematics",
+      "file": "common-core-math/8/module.json",
+      "expectations": "common-core-math/8/expectations.json",
+      "generatorSources": [
+        "math.js",
+        "registry.js",
+        "common-core-math/8/topic-1.js",
+        "common-core-math/8/topic-2.js",
+        "common-core-math/8/topic-3.js",
+        "common-core-math/8/topic-4.js",
+        "common-core-math/8/index.js",
+        "engine.js"
+      ]
+    }
+  ]
+}

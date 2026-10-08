@@ -19,10 +19,10 @@ function pageScripts(page) {
 const root = path.resolve(__dirname, "..", "dist");
 // Reader/plan templates share the same controls, including their print hiding
 // and keyboard treatment. Keep their assets present and loaded before use.
-for (const page of ["daily-reading", "weeks", "courses", "curriculum", "high-school", "ap", "reading-level", "learn"]) {
+for (const page of ["daily-reading", "weeks", "lessons", "curriculum", "high-school", "ap", "reading-level", "learn"]) {
   const template = fs.readFileSync(path.join(root, page + ".html"), "utf8");
   if (!template.includes('href="styles/reader-controls.css"')) throw new Error(page + " must load the shared reader controls");
-  if (["daily-reading", "weeks", "courses"].includes(page)) {
+  if (["daily-reading", "weeks", "lessons"].includes(page)) {
     const scripts = pageScripts(template), entry = page === "weeks" ? "weekly" : page;
     const shared = scripts.indexOf("app/reader-controls.js"), app = scripts.indexOf("app/" + entry + ".js");
     if (shared < 0 || app <= shared) throw new Error(page + " must load reader controls before its application");
@@ -300,7 +300,7 @@ for (const script of siteHeader.SCRIPTS) {
 // Grouping the primary destinations must not strand a former destination.
 const linkedPages = new Set(builtPages.flatMap(page => [...siteHeader.render(page).matchAll(/href="([^"]+)"/g)]
   .map(match => match[1].split(/[?#]/)[0])));
-for (const page of ["curriculum.html", "weeks.html", "courses.html", "high-school.html", "daily-reading.html", "reading-level.html", "ap.html", "practice.html"]) {
+for (const page of ["curriculum.html", "weeks.html", "high-school.html", "daily-reading.html", "reading-level.html", "ap.html", "practice.html"]) {
   if (!linkedPages.has(page)) throw new Error(`Shared navigation does not reach ${page}`);
 }
 
@@ -352,20 +352,38 @@ for (const page of ["print.html", "learn.html"]) {
   }
 }
 
-// Classroom courses are a separate entry point; all their local assets must
-// survive the static build without loading a test-prep session or remote library.
-const courseHtml = fs.readFileSync(path.join(root, "courses.html"), "utf8");
-for (const match of courseHtml.matchAll(/(?:src|href)="([^"#]+\.(?:js|css|svg))"/g)) {
-  if (!fs.existsSync(path.join(root, match[1]))) throw new Error("Missing course asset: " + match[1]);
+// Grade expansions use the shared curriculum identity and load only their own
+// reviewed content and generators. The small index powers contextual links.
+const lessonHtml = fs.readFileSync(path.join(root, "lessons.html"), "utf8");
+for (const match of lessonHtml.matchAll(/(?:src|href)="([^"#]+\.(?:js|css|svg))"/g)) {
+  if (!fs.existsSync(path.join(root, match[1]))) throw new Error("Missing lesson asset: " + match[1]);
 }
-if (!courseHtml.includes('src="content/courses.js"') || !courseHtml.includes('src="app/courses.js"')) {
-  throw new Error("Courses is missing its content or application entry point.");
+if (!lessonHtml.includes('src="content/lesson-modules.js"') || !lessonHtml.includes('src="app/lessons.js"')) throw new Error("Lessons is missing its index or application.");
+if (pageScripts(lessonHtml).some(script => /content\/(?:catalog|courses)\.js|lib\/families\//.test(script))) throw new Error("Lessons must not load a standalone course catalog or SAT bank.");
+const lessonBuilder = require("./build-lesson-modules");
+const lessonSource = lessonBuilder.loadModules();
+const lessonContext = { window: {} };
+vm.runInNewContext(fs.readFileSync(path.join(root, "content/lesson-modules.js"), "utf8"), lessonContext);
+const lessonIndex = lessonContext.window.LIMINAL_LESSON_MODULES;
+if (JSON.stringify(lessonIndex) !== JSON.stringify(lessonBuilder.moduleIndex(lessonSource))) throw new Error("Lesson index differs from source");
+for (const entry of lessonIndex.modules) {
+  const built = JSON.parse(fs.readFileSync(path.join(root, entry.file), "utf8"));
+  if (JSON.stringify(built) !== JSON.stringify(lessonSource.modules.find(module => module.id === entry.id))) throw new Error("Lesson module differs from source: " + entry.file);
+  for (const script of entry.generatorScripts) {
+    const source = fs.readFileSync(path.join(root, script), "utf8");
+    new vm.Script(source, { filename: script });
+  }
+  const navigation = require("../src/lib/navigation");
+  const model = navigation.model({ pathname: "curriculum.html", hash: "#" + entry.trackId + "/" + (entry.grade || "k") }, { lessonModules: lessonIndex });
+  if (!model.secondary.some(item => item.href === "lessons.html" + navigation.lessonRoute(entry.trackId, entry.grade))) throw new Error("Parent grade navigation does not reach its lessons");
 }
+const legacyLessons = fs.readFileSync(path.join(root, "courses.html"), "utf8");
+if (!legacyLessons.includes('src="app/courses.js"') || !legacyLessons.includes('href="lessons.html"')) throw new Error("Legacy lesson redirect is missing");
 
 // The library entrance is usable without the test-prep application or its
 // storage. Check its links/assets separately from the practice DOM contract.
 const homeHtml = fs.readFileSync(path.join(root, "index.html"), "utf8");
-for (const target of ["curriculum.html", "courses.html", "high-school.html", "daily-reading.html", "ap.html", "practice.html?test=SAT#practice", "practice.html?test=ACT#practice", "learn.html", "print.html"]) {
+for (const target of ["curriculum.html", "curriculum.html#common-core-math/k", "lessons.html#common-core-math/8", "high-school.html", "daily-reading.html", "ap.html", "practice.html?test=SAT#practice", "practice.html?test=ACT#practice", "learn.html", "print.html"]) {
   if (!homeHtml.includes(`href="${target}"`)) throw new Error("Home is missing a module link: " + target);
 }
 const homeIds = [...homeHtml.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
@@ -551,7 +569,7 @@ if (!levelContext.window.LiminalReadingLevel || levelContext.window.LiminalReadi
 
 // Every page names its icon, which is built with it, so no page asks the
 // server for a favicon.ico that is not there.
-for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "curriculum.html", "weeks.html", "high-school.html", "ap.html", "daily-reading.html"]) {
+for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "lessons.html", "curriculum.html", "weeks.html", "high-school.html", "ap.html", "daily-reading.html"]) {
   const file = path.join(root, page);
   if (!fs.existsSync(file)) continue;
   const icon = (fs.readFileSync(file, "utf8").match(/<link rel="icon" href="([^"]+)"/) || [])[1];

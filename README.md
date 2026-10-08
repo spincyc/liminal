@@ -7,7 +7,7 @@ practice that run entirely in the browser.
 
 The home page and shared navigation offer four entry points: **Courses**,
 **Readings**, **AP prep**, and **SAT/ACT**. Courses connects year plans,
-weekly work, high-school math, and the Grade 8 lesson reader. Readings connects
+weekly work, high-school math, and grade-specific expanded lessons. Readings connects
 daily selections, reading-level checks, and reading instruction. Contextual
 links retain the selected grade or course when moving between plans and work.
 The same compact banner, warm paper, and green controls run throughout.
@@ -98,7 +98,9 @@ four weeks. It is a practice placement, not a standardized test, Lexile measure,
 or measured reading level, and its answer keys ship to the browser. Results
 stay in the browser. See the [method, thresholds, and item rules](docs/reading-level.md).
 
-**Courses** starts with Grade 8 Mathematics: the four topics in the supplied
+**Common Core grade expansions** add detailed lessons and generated practice
+to their grade’s year plan and weekly work. The first authored expansion is
+Grade 8 mathematics: the four topics in the supplied
 enVision+ Common Core Mathematics volume, with 36 original lessons, 72 worked
 examples, 36 prerequisite checks, 36 partially worked practice tasks, and 85
 parameterized exercise designs. Start with one lesson in **Rebuild step by step**:
@@ -118,7 +120,7 @@ completion quotas or claims of mastery.
 Study guides, student worksheets with writing space, and worked answer keys
 download separately or together as a nightly packet: study guide, worksheets,
 then worked answers, in one print job. Double-sided packets keep each section
-on separate physical sheets. Print them on paper or save as PDF. The course
+on separate physical sheets. Print them on paper or save as PDF. The expansion
 opens with a focused lesson reader; larger homework packets are available from
 the practice builder. Student workspaces are blank and unruled, with a thin
 border around each problem.
@@ -135,11 +137,12 @@ lessons cannot supply enough distinct items, the builder asks for fewer
 questions or more lessons. Separate packets do not share an exposure history.
 
 The four topics are Real Numbers, Linear Equations, Functions, and Bivariate
-Data. This covers the supplied volume, not every Grade 8 standard. The course
-catalog is organized by grade and subject so later volumes and other K–12
-courses can be added. Textbook references identify lesson alignment; all
+Data. This covers the supplied volume, not every Grade 8 standard. Modules
+are organized by curriculum pathway and grade. Equivalent expansions for
+other grades will use the same catalog, reader, and practice engine; they
+become available after their content is authored and reviewed. Textbook references identify lesson alignment; all
 instruction and exercises are original. See
-[`docs/classroom-courses.md`](docs/classroom-courses.md) for the course format,
+[`docs/lesson-modules.md`](docs/lesson-modules.md) for the module format,
 review limits, and printable packet commands.
 
 Liminal is a study tool as well as a question bank: it teaches each SAT skill,
@@ -279,7 +282,7 @@ touching the others.
 | Path | Holds |
 | --- | --- |
 | [`content/`](content/) | The section catalog and its schema, the template registries (`templates/`), the SAT Learn pages (`learn/`), the ACT banks and passages, the authored sources the generators assemble, and the Markdown study guides |
-| [`content/courses/`](content/courses/) | Grade/subject catalog, original classroom guides and textbook lesson references |
+| [`content/lesson-modules/`](content/lesson-modules/) | Grade expansions of curriculum pathways: original guides, practice expectations and source references |
 | [`content/curriculum/`](content/curriculum/) | K–12 year plans and source-linked Common Core and Singapore references |
 | [`content/weekly/`](content/weekly/) | Original weekly teaching, supplied reading texts, worksheets, and worked answer keys |
 | [`content/ap/`](content/ap/) | Original unit tests, practice exams, figures, and physics references; the course plan is `content/ap.json` |
@@ -300,14 +303,17 @@ npm run serve      # serve dist/ at http://localhost:8080 (reachable from a phon
 npm run check      # the full gate: validation, templates, build, smoke test of dist/, guides, Learn pages, unit tests
 npm run check:families -- --reps 3000   # a deeper pass over every template
 npm run templates  # register new templates and re-version changed ones
-node tools/check-courses.js # validate classroom guides and worksheet generation
+node tools/check-lesson-modules.js # validate grade expansions and worksheet generation
 node tools/build-weekly.js  # validate and build available weekly courses
 node tools/check-ap.js --complete # require all four AP courses' assessments and references
-node tools/course-packet.js --unit topic-1 --days 10 --count 20 --seed home-1 --out .scratch/print/home-1 --pdf
-node tools/course-packet.js --unit topic-1 --days 3 --count 20 --worksheets B,C,A --combined --out .scratch/print/mixed --pdf
+node tools/lesson-packet.js --track common-core-math --grade 8 --unit topic-1 --days 10 --count 20 --seed home-1 --out .scratch/print/home-1 --pdf
+node tools/lesson-packet.js --track common-core-math --grade 8 --unit topic-1 --days 3 --count 20 --worksheets B,C,A --combined --out .scratch/print/mixed --pdf
 ```
 
-Open `courses.html` on the served site for the classroom library. The packet
+Open `lessons.html#common-core-math/8` for Grade 8 expanded lessons, or follow
+the expansion link from its year plan or weekly work. Existing `courses.html`
+bookmarks and `tools/course-packet.js --course grade-8-math` commands remain
+compatible. The packet
 CLI uses an already installed Chromium and ChromeDriver; browser downloads
 need no local CLI tooling. If npm is unavailable, the same full gate runs with
 `node tools/check-all.js` and the site builds with `node tools/build.js`.

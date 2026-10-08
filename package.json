@@ -23,6 +23,8 @@
     "check:guides": "node tools/check-guides.js",
     "check:learn": "node tools/check-learn.js",
     "check:families": "node tools/check-families.js",
+    "check:lesson-modules": "node tools/check-lesson-modules.js",
+    "lesson:packet": "node tools/lesson-packet.js",
     "check:courses": "node tools/check-courses.js",
     "course:packet": "node tools/course-packet.js",
     "check:reviews": "node tools/check-template-reviews.js",

@@ -12,7 +12,7 @@
     else anchor.removeAttribute("aria-current");
   }
   function render() {
-    const model = navigation.model(window.location, { weeklyIndex: window.LIMINAL_WEEKLY_INDEX, highSchool: window.LIMINAL_HIGH_SCHOOL });
+    const model = navigation.model(window.location, { weeklyIndex: window.LIMINAL_WEEKLY_INDEX, highSchool: window.LIMINAL_HIGH_SCHOOL, lessonModules: window.LIMINAL_LESSON_MODULES });
     model.primary.forEach(item => updateLink(header.querySelector('[data-lm-primary="' + item.id + '"]'), item));
     const nav = header.querySelector(".lm-subnav");
     nav.hidden = !model.secondary.length;
