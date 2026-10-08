@@ -99,26 +99,23 @@
     });
     details.append(sequence); return details;
   }
-  function exportDocument(packet, css = "", pageUrl = "") {
-    const doc = document.implementation.createHTMLDocument("Daily reading · " + packet.day.title + " — Liminal");
+  function exportDocument(packet, css = "", pageUrl = "", fontLicense = "") {
+    const doc = document.implementation.createHTMLDocument("Daily reading · " + packet.day.title);
     doc.documentElement.lang = "en";
     const charset = el("meta", undefined, undefined, doc); charset.setAttribute("charset", "utf-8");
     const viewport = el("meta", undefined, undefined, doc); viewport.setAttribute("name", "viewport"); viewport.setAttribute("content", "width=device-width, initial-scale=1");
-    const style = el("style", css, undefined, doc); doc.head.append(charset, viewport, style);
+    doc.head.append(charset, viewport);
+    if (fontLicense) {
+      const license = el("meta", undefined, undefined, doc); license.setAttribute("name", "font-license"); license.setAttribute("content", fontLicense); doc.head.append(license);
+    }
+    const style = el("style", css, undefined, doc); doc.head.append(style);
     doc.body.className = "daily-page daily-export";
     const main = el("main", undefined, "page-width daily-main", doc);
-    const brand = el("p", undefined, "wordmark daily-export-brand", doc);
-    const symbol = doc.createElementNS("http://www.w3.org/2000/svg", "svg");
-    symbol.setAttribute("class", "brand-symbol"); symbol.setAttribute("viewBox", "0 0 28 34"); symbol.setAttribute("fill", "none"); symbol.setAttribute("aria-hidden", "true");
-    for (const shape of ["M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17", "M0 32h28"]) {
-      const line = doc.createElementNS("http://www.w3.org/2000/svg", "path"); line.setAttribute("d", shape); line.setAttribute("stroke", "currentColor"); line.setAttribute("stroke-width", "2.5"); symbol.append(line);
-    }
-    brand.append(symbol, el("span", "Liminal.", undefined, doc));
-    main.append(brand, reading(packet, { doc, standalone: true }));
+    main.append(reading(packet, { doc, standalone: true }));
     const footer = el("footer", undefined, "daily-export-footer", doc);
     if (D.safeHttps(pageUrl)) footer.append(link("Return to this reading", pageUrl, doc));
-    footer.append(el("p", "Independent educational coursework. Not affiliated with publishers. SAT® and ACT® are trademarks of College Board and ACT, Inc.; no affiliation.", undefined, doc));
-    main.append(footer); doc.body.append(main); return doc;
+    footer.append(el("p", "Liminal · Independent educational coursework. Not affiliated with publishers. SAT® and ACT® are trademarks of College Board and ACT, Inc.; no affiliation.", undefined, doc));
+    main.append(footer); doc.body.append(main, el("footer", "Liminal", "daily-print-footer", doc)); return doc;
   }
   return { el, link, disclosure, reading, progression, exportDocument };
 });

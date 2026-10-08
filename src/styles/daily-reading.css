@@ -61,7 +61,6 @@
 .daily-related a { display: inline-flex; align-items: center; min-height: var(--tap); }
 .daily-footer, .daily-export-footer { font-size: .8125rem; color: var(--color-muted); }
 .daily-attribution { display: none; }
-.daily-export-brand { margin-bottom: 20px; }
 .daily-export-footer { margin-top: 28px; border-top: 1px solid var(--color-line); padding-block: 14px; }
 .daily-views { display: flex; gap: 4px; margin-block: 2px 24px; border-bottom: 1px solid var(--color-line); }
 .daily-views a { display: inline-flex; align-items: center; min-height: var(--tap); margin-bottom: -1px; padding: 3px 12px 0; border-bottom: 3px solid transparent; color: var(--color-muted); font-size: .9375rem; font-weight: 600; text-decoration: none; }
@@ -112,28 +111,4 @@
   .daily-grades ul { gap: 4px; }
   .daily-grades a { min-width: 40px; padding-inline: 6px; }
   .daily-passage { font-size: 1.125rem; line-height: 1.8; }
-}
-@media print {
-  @page { margin: 16mm; }
-  html { scroll-behavior: auto; }
-  .daily-page { background: #fff; color: #000; font-size: 10pt; }
-  .daily-page .page-width { width: 100%; max-width: none; }
-  .daily-page :is(.skip-link, .daily-views, .daily-browse, .daily-intro, .daily-filters, .daily-status, .daily-nav, .daily-actions, .daily-related, .daily-facilitator, .daily-source, .daily-focus, .daily-year, .daily-about, .daily-footer) { display: none !important; }
-  .daily-main { padding: 0; }
-  .daily-heading { border: 0; padding-top: 0; }
-  .daily-heading :is(h1, h2) { font-size: 23pt; }
-  .daily-budget { margin-top: 8pt; }
-  .daily-context { margin-top: 12pt; }
-  .daily-passage { margin-block: 18pt; font-size: 12pt; line-height: 1.65; }
-  .daily-passage .daily-stanza { break-inside: avoid; }
-  .daily-table-wrap { overflow: visible; break-inside: avoid; }
-  .daily-table { font-size: 10pt; }
-  .daily-table :is(th, td) { border-color: #777; }
-  .daily-discussion { padding-top: 12pt; }
-  .daily-discussion h3 { font-size: 15pt; }
-  .daily-questions > li { break-inside: avoid; margin-bottom: 18pt; }
-  .daily-attribution { display: block; border-top: 1px solid #777; margin-top: 18pt; padding-top: 8pt; font-size: 8pt; overflow-wrap: anywhere; }
-  .daily-attribution p + p { margin-top: 4pt; }
-  .daily-page h1, .daily-page h2, .daily-page h3 { break-after: avoid; }
-  .daily-page p { orphans: 3; widows: 3; }
 }

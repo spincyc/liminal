@@ -12,9 +12,13 @@ test("packet style is the fixed two-column Computer Modern article", () => {
     String.raw`\setmainfont{CMU Serif}[Ligatures=Common]`,
     String.raw`\usepackage[protrusion=true]{microtype}`,
     String.raw`\setlength{\parindent}{1.2em}`,
-    String.raw`\fancyhead[LE,RO]{\footnotesize\itshape Liminal Daily Reading}`,
+    String.raw`\fancyhead[RE,LO]{\footnotesize \paperhead}`,
+    String.raw`\fancyfoot[C]{\scriptsize Liminal \quad\the\numexpr\value{page}-\paperstart+1\relax}`,
     String.raw`\renewcommand{\headrulewidth}{0.4pt}`,
   ]) assert.ok(P.PREAMBLE.split("\n").includes(line), "missing style line: " + line);
+  const branding = P.PREAMBLE.split("\n").filter(line => line.includes("Liminal"));
+  assert.equal(branding.length, 1, "brand appears only once in the page style");
+  assert.ok(branding[0].startsWith(String.raw`\fancyfoot[C]`), "brand appears only in the footer");
 });
 
 const course = {

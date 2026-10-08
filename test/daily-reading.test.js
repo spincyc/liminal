@@ -167,8 +167,12 @@ test("reader preserves stanzas, escapes markup and only adds notes when opened",
 }));
 test("offline student document keeps provenance and questions without scripts or facilitator material", () => withDOM(() => {
   const course = fixture(), packet = D.studentReading(course, 1, 1);
-  const html = R.exportDocument(packet, ".offline-marker{display:block}", "https://example.org/daily-reading.html#k/1/1").documentElement.outerHTML;
+  const html = R.exportDocument(packet, ".offline-marker{display:block}", "https://example.org/daily-reading.html#k/1/1", "Font copyright and license").documentElement.outerHTML;
   assert.match(html, /offline-marker|Fixture night/); assert.match(html, /Test Author 0/); assert.match(html, /Public domain in the United States/);
+  assert.match(html, /name="font-license" content="Font copyright and license"/);
+  assert.ok(html.indexOf('charset="utf-8"') < html.indexOf('name="font-license"'), "declare UTF-8 before the full font license");
+  assert.match(html, /<footer class="daily-print-footer">Liminal<\/footer>/);
+  assert.doesNotMatch(html, /daily-export-brand|brand-symbol|<svg/);
   assert.match(html, /Question 3/); assert.match(html, /no affiliation/); assert.match(html, /Return to this reading/);
   assert.match(html, /class="daily-budget">About 10 min · read 6 \+ discuss 4/);
   assert.doesNotMatch(html, /FACILITATOR_SECRET|daily-facilitator|<script|<iframe|application\/json/);

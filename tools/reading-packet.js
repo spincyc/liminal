@@ -52,9 +52,8 @@ const PREAMBLE = String.raw`\documentclass[10pt,twocolumn,twoside,letterpaper]{a
 \newcommand{\paperhead}{}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE,RO]{\footnotesize\itshape Liminal Daily Reading}
 \fancyhead[RE,LO]{\footnotesize \paperhead}
-\fancyfoot[C]{\footnotesize\the\numexpr\value{page}-\paperstart+1\relax}
+\fancyfoot[C]{\scriptsize Liminal \quad\the\numexpr\value{page}-\paperstart+1\relax}
 \renewcommand{\headrulewidth}{0.4pt}
 `;
 

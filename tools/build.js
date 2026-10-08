@@ -26,11 +26,22 @@ fs.cpSync(path.join(ROOT, "src"), DIST, {
   recursive: true,
   filter: (source) => !source.startsWith(FAMILY_SOURCES),
 });
+// Reading downloads carry their print fonts, with no external font request.
+fs.writeFileSync(path.join(DIST, "styles", "reading-print.css"),
+  require("./lib/reading-fonts").embed(
+    fs.readFileSync(path.join(ROOT, "src/styles/reading-print.css"), "utf8"),
+    path.join(ROOT, "src/fonts/computer-modern")));
 // Every page gets the one shared header (tools/lib/site-header.js).
 const siteHeader = require("./lib/site-header");
 fs.readdirSync(DIST).filter((file) => file.endsWith(".html")).forEach((page) => {
   const file = path.join(DIST, page);
-  fs.writeFileSync(file, siteHeader.apply(fs.readFileSync(file, "utf8"), page));
+  let html = siteHeader.apply(fs.readFileSync(file, "utf8"), page);
+  if (page === "daily-reading.html") {
+    const license = fs.readFileSync(path.join(ROOT, "src/fonts/computer-modern/OFL.txt"), "utf8")
+      .replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+    html = html.replace("<!-- liminal:reading-font-license -->", `<meta name="font-license" content="${license}" />`);
+  }
+  fs.writeFileSync(file, html);
 });
 fs.mkdirSync(path.join(DIST, "lib", "families"), { recursive: true });
 TEMPLATE_SECTIONS.forEach((sectionKey) => {

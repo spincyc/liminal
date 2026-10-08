@@ -87,6 +87,14 @@ returning to Browse opens its week and marks the night just read. Related
 year-plan and weekly-instruction links retain the current K–12 grade/week.
 Advanced levels offer explicitly labelled K–12 library links.
 
+Printed readings use bundled Computer Modern Unicode Serif, 10-point body type,
+two columns, a centered title and author, and a small Liminal footer. This applies
+to browser printing and downloaded student HTML; the font data and its license
+travel in the download, so offline printing needs no installed TeX fonts. Source
+attribution, verse indentation, and tables remain in the student copy; facilitator
+notes stay out. See [printed reading packets](reading-packets.md) for the matching
+TeX packet format.
+
 Browse loads only `content/reading-daily/browse/<grade>.json`, about 40 KB,
 which `tools/build-daily-reading.js` builds from each grade with an explicit
 allowlist (`browseIndex` in `src/lib/daily-reading.js`): titles, credits,

@@ -38,10 +38,11 @@
     return nav;
   }
   function download(packet) {
-    const css = [...document.styleSheets].filter(sheet => /\/(tokens|home|daily-reading|brand)\.css(?:\?|$)/.test(sheet.href || ""))
+    const css = [...document.styleSheets].filter(sheet => /\/(tokens|home|daily-reading|brand|reading-print)\.css(?:\?|$)/.test(sheet.href || ""))
       .map(sheet => { try { return [...sheet.cssRules].map(rule => rule.cssText).join("\n"); } catch (_) { return ""; } }).join("\n");
     const href = new URL("daily-reading.html" + D.route(packet.grade, packet.day.week, packet.day.day), window.location.href).href;
-    const doc = R.exportDocument(packet, css, href), html = "<!doctype html>\n" + doc.documentElement.outerHTML;
+    const fontLicense = document.querySelector('meta[name="font-license"]').content;
+    const doc = R.exportDocument(packet, css, href, fontLicense), html = "<!doctype html>\n" + doc.documentElement.outerHTML;
     const url = URL.createObjectURL(new Blob([html], { type: "text/html;charset=utf-8" })), anchor = R.link("Download reading", url);
     anchor.download = "liminal-" + packet.day.id + "-student.html"; document.body.append(anchor); anchor.click(); anchor.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000); announce("Downloaded this reading and its discussion questions, without facilitator notes.");
@@ -113,7 +114,8 @@
       actions.append(button("Print reading", () => window.print()), button("Download reading", () => download(packet)));
       const guide = R.disclosure("Tonight’s reading focus", "daily-focus"); guide.append(R.el("p", day.challenge));
       container.append(article, navigation(selected), actions, guide, R.progression(course, selected.week));
-      document.title = day.title + " · " + D.gradeLabel(selected.grade) + " — Liminal";
+      // Browser-generated print headers use this title; branding stays in the footer.
+      document.title = day.title + " · " + D.gradeLabel(selected.grade);
       announce((selected.invalid ? "That reading link was not recognized. Showing " : "Showing ") + D.gradeLabel(selected.grade) + ", week " + day.week + ", day " + day.day + ": " + day.title + ".", selected.invalid);
       if (focus) { const heading = document.getElementById("dailyHeading"); heading.focus(); heading.scrollIntoView({ block: "start" }); }
     } catch (_) {
