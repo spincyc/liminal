@@ -1,0 +1,497 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "unit-2",
+  "kind": "unit-test",
+  "unitId": "u2",
+  "title": "Unit 2 test: Force and translational dynamics",
+  "author": "p1-1",
+  "directions": "This practice test has two sections. Section I has 12 multiple-choice questions worth 1 point each; Section II has 2 free-response questions. Any calculator is allowed. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise. Record raw points from the key; they are practice tallies, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-u2-f1",
+      "alt": "A block on a ramp inclined at 40° to the horizontal ground."
+    },
+    {
+      "id": "p1-u2-f2",
+      "alt": "Block A rests on a horizontal tabletop. A string runs from A over a pulley at the table's edge and down to block B, which hangs freely."
+    },
+    {
+      "id": "p1-u2-f3",
+      "alt": "Key: two free-body diagrams. Block A: F_N up and F_{g,A} down with equal lengths, tension T to the right and a shorter kinetic friction f_k to the left. Block B: T up and a longer F_{g,B} down.",
+      "caption": "Key: free-body diagrams"
+    },
+    {
+      "id": "p1-u2-f4",
+      "alt": "A circular track in a vertical plane with radius R; a small block slides on the inside of the track at its top with velocity v directed horizontally."
+    },
+    {
+      "id": "p1-u2-f5",
+      "alt": "Key: free-body diagram of the block at the top of the track: F_N pointing down and F_g pointing down, toward the center below.",
+      "caption": "Key: forces at the top of the track"
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 24,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet.",
+          "items": [
+            {
+              "id": "p1-u2-mc01",
+              "prompt": "A 3.0 kg ball is at x = 0 and a 1.0 kg ball is at x = 2.0 m. Where is the center of mass of the two balls?",
+              "choices": [
+                "x = 1.0 m",
+                "x = 0.50 m",
+                "x = 1.5 m",
+                "x = 0.67 m"
+              ],
+              "key": "B",
+              "rationale": "x_cm = (3.0 × 0 + 1.0 × 2.0)/(3.0 + 1.0) = 0.50 m, closer to the heavier ball.",
+              "distractorNotes": {
+                "A": "The midpoint ignores the unequal masses.",
+                "C": "Swaps the masses.",
+                "D": "Divides by 3.0 kg instead of the total mass."
+              },
+              "topics": [
+                "P1.2.1"
+              ]
+            },
+            {
+              "id": "p1-u2-mc02",
+              "prompt": "A person pulls a sled across snow with a rope. The system is the person, the rope and the sled. Which force can change the velocity of the system's center of mass?",
+              "choices": [
+                "The person's pull on the rope",
+                "Tension in the rope acting on the sled",
+                "The sled's pull back on the rope",
+                "Friction from the snow on the sled"
+              ],
+              "key": "D",
+              "rationale": "Only external forces change the motion of a system's center of mass; the snow is outside the system.",
+              "distractorNotes": {
+                "A": "Both objects are in the system, so this force is internal.",
+                "B": "Internal: the rope and sled are both in the system.",
+                "C": "Internal, and the third-law partner of the rope's pull on the sled."
+              },
+              "topics": [
+                "P1.2.1"
+              ]
+            },
+            {
+              "id": "p1-u2-mc03",
+              "prompt": "A box is pulled at constant velocity across a level floor by a rope angled above the horizontal. How does the normal force on the box compare with the box's weight?",
+              "choices": [
+                "It is less than the weight",
+                "It equals the weight",
+                "It is greater than the weight",
+                "It is zero"
+              ],
+              "key": "A",
+              "rationale": "Vertical balance: F_N + T sin θ = mg, so F_N = mg − T sin θ, which is less than mg.",
+              "distractorNotes": {
+                "B": "True only if the rope were horizontal.",
+                "C": "That would happen if the rope pushed down on the box.",
+                "D": "The box stays on the floor, so the floor still pushes up."
+              },
+              "topics": [
+                "P1.2.2"
+              ]
+            },
+            {
+              "id": "p1-u2-mc04",
+              "prompt": "A 50 kg student and a 100 kg student stand on frictionless ice and push off each other. Compared with the 100 kg student's acceleration, the 50 kg student's acceleration is",
+              "choices": [
+                "half as large",
+                "the same",
+                "four times as large",
+                "twice as large"
+              ],
+              "key": "D",
+              "rationale": "The pushes are a third-law pair with equal magnitudes, so a = F/m is twice as large for half the mass.",
+              "distractorNotes": {
+                "A": "Inverts the mass ratio.",
+                "B": "Equal forces do not mean equal accelerations when the masses differ.",
+                "C": "Acceleration is inversely proportional to mass, not to its square."
+              },
+              "topics": [
+                "P1.2.3",
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-u2-mc05",
+              "prompt": "A parachutist descends at constant speed. How does the upward force of the air on the parachutist and parachute compare with their total weight?",
+              "choices": [
+                "It is greater than the weight",
+                "It is less than the weight",
+                "It is equal to the weight",
+                "It is zero"
+              ],
+              "key": "C",
+              "rationale": "Constant velocity means zero net force (first law), so the upward air force balances the weight.",
+              "distractorNotes": {
+                "A": "A larger upward force would slow the descent.",
+                "B": "A smaller upward force would make the parachutist speed up.",
+                "D": "Then the parachutist would be in free fall."
+              },
+              "topics": [
+                "P1.2.4"
+              ]
+            },
+            {
+              "id": "p1-u2-mc06",
+              "prompt": "A 70 kg passenger stands on a scale in an elevator that is moving downward and slowing down at 2.0 m/s^2. What does the scale read?",
+              "choices": [
+                "686 N",
+                "546 N",
+                "140 N",
+                "826 N"
+              ],
+              "key": "D",
+              "rationale": "Slowing while moving down means the acceleration is upward: F_N − mg = ma, so F_N = 70(9.8 + 2.0) = 826 N.",
+              "distractorNotes": {
+                "A": "Ignores the acceleration.",
+                "B": "Treats the acceleration as downward.",
+                "C": "Gives only the ma term."
+              },
+              "topics": [
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-u2-mc07",
+              "prompt": "The block shown is released from rest on the frictionless 40° ramp. What is the magnitude of its acceleration?",
+              "figureIds": [
+                "p1-u2-f1"
+              ],
+              "choices": [
+                "6.3 m/s^2",
+                "7.5 m/s^2",
+                "9.8 m/s^2",
+                "8.2 m/s^2"
+              ],
+              "key": "A",
+              "rationale": "Along the ramp the only force component is mg sin 40°, so a = g sin 40° ≈ 6.3 m/s^2.",
+              "distractorNotes": {
+                "B": "Uses cos 40° instead of sin 40°.",
+                "C": "The ramp's normal force cancels part of gravity.",
+                "D": "Uses tan 40°."
+              },
+              "topics": [
+                "P1.2.5",
+                "P1.2.2"
+              ]
+            },
+            {
+              "id": "p1-u2-mc08",
+              "prompt": "A 3.0 kg cart on a frictionless horizontal track is pulled by a string that passes over a light, frictionless pulley to a hanging 1.0 kg mass. What is the magnitude of the acceleration of the cart?",
+              "choices": [
+                "9.8 m/s^2",
+                "2.5 m/s^2",
+                "3.3 m/s^2",
+                "7.4 m/s^2"
+              ],
+              "key": "B",
+              "rationale": "For the two-object system the net external force along the string is (1.0)(9.8) N, so a = 9.8 N/4.0 kg ≈ 2.5 m/s^2.",
+              "distractorNotes": {
+                "A": "Treats the hanging mass as if it were in free fall.",
+                "C": "Divides by the cart's mass alone.",
+                "D": "Puts the cart's weight in the numerator."
+              },
+              "topics": [
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-u2-mc09",
+              "prompt": "A planet has the same mass as Earth but half of Earth's radius. What is the gravitational field strength at its surface?",
+              "choices": [
+                "4.9 m/s^2",
+                "20 m/s^2",
+                "39 m/s^2",
+                "2.5 m/s^2"
+              ],
+              "key": "C",
+              "rationale": "g = GM/R^2, so halving R multiplies g by 4: 4 × 9.8 ≈ 39 m/s^2.",
+              "distractorNotes": {
+                "A": "Treats g as proportional to R.",
+                "B": "Treats g as proportional to 1/R.",
+                "D": "Divides by 4 instead of multiplying."
+              },
+              "topics": [
+                "P1.2.6"
+              ]
+            },
+            {
+              "id": "p1-u2-mc10",
+              "prompt": "A 6.0 kg box rests on a floor where μ_s = 0.40 and μ_k = 0.30. A horizontal 20 N push is applied. What is the magnitude of the friction force on the box?",
+              "choices": [
+                "20 N",
+                "24 N",
+                "18 N",
+                "0 N"
+              ],
+              "key": "A",
+              "rationale": "The maximum static friction is 0.40 × 58.8 N ≈ 24 N, more than 20 N, so the box stays at rest and static friction equals the push, 20 N.",
+              "distractorNotes": {
+                "B": "That is the maximum static friction, not the friction that acts.",
+                "C": "Kinetic friction applies only once the box slides.",
+                "D": "Static friction acts whenever a push tries to slide the box."
+              },
+              "topics": [
+                "P1.2.7"
+              ]
+            },
+            {
+              "id": "p1-u2-mc11",
+              "prompt": "A 1.0 kg block hangs at rest from a vertical spring with spring constant 250 N/m. How far is the spring stretched?",
+              "choices": [
+                "39 cm",
+                "3.9 cm",
+                "0.40 cm",
+                "7.8 cm"
+              ],
+              "key": "B",
+              "rationale": "At rest kx = mg, so x = (1.0)(9.8)/250 ≈ 0.039 m = 3.9 cm.",
+              "distractorNotes": {
+                "A": "Converts meters to centimeters incorrectly.",
+                "C": "Uses the mass instead of the weight.",
+                "D": "Doubles the weight."
+              },
+              "topics": [
+                "P1.2.8"
+              ]
+            },
+            {
+              "id": "p1-u2-mc12",
+              "prompt": "A car rounds a flat, circular curve at constant speed. On a second curve with half the radius, at the same speed, the friction force needed to keep the car on the curve",
+              "choices": [
+                "is halved",
+                "is unchanged",
+                "doubles",
+                "quadruples"
+              ],
+              "key": "C",
+              "rationale": "Friction supplies the net inward force mv^2/r, which doubles when r is halved at the same speed.",
+              "distractorNotes": {
+                "A": "The required force is inversely proportional to r.",
+                "B": "The required force depends on the radius.",
+                "D": "The force depends on the square of the speed, not of the radius."
+              },
+              "topics": [
+                "P1.2.9"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 36,
+          "calculator": "any",
+          "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
+          "items": [
+            {
+              "prompt": "Block A (mass 2.0 kg) rests on a horizontal table. The coefficient of kinetic friction between A and the table is 0.25. A light string attached to A passes over a light, frictionless pulley at the table's edge to block B (mass 1.5 kg), which hangs freely. The blocks are released from rest.",
+              "type": "MR",
+              "topics": [
+                "P1.2.5",
+                "P1.2.2",
+                "P1.2.7"
+              ],
+              "figureIds": [
+                "p1-u2-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Draw and label free-body diagrams for block A and for block B after release. Draw relative lengths of arrows reasonably.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Block A: weight down, normal force up (equal lengths), tension toward the pulley and kinetic friction opposite."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Block B: weight down and tension up, with the weight longer than the tension."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "No extra forces (no separate 'ma' or 'force of motion'), each force labeled by type."
+                    }
+                  ],
+                  "answer": "A: F_N up, F_g,A down, T toward the pulley, f_k away from it. B: T up, F_g,B down, with F_g,B > T.",
+                  "steps": [
+                    "B accelerates downward, so its weight exceeds the tension; A accelerates toward the pulley, so the tension exceeds friction."
+                  ],
+                  "answerFigureIds": [
+                    "p1-u2-f3"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the magnitude of the acceleration of the blocks in terms of m_A, m_B, μ_k and g.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies Newton's second law to each block (T − μ_k m_A g = m_A a and m_B g − T = m_B a) or to the two-block system."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "a = (m_B − μ_k m_A)g/(m_A + m_B)."
+                    }
+                  ],
+                  "answer": "a = (m_B − μ_k m_A)g/(m_A + m_B)",
+                  "steps": [
+                    "Adding the two equations eliminates T: m_B g − μ_k m_A g = (m_A + m_B)a."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate the acceleration of the blocks and the tension in the string.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "a = (1.5 − 0.25 × 2.0)(9.8)/3.5 = 2.8 m/s^2 (accept 2.7–2.9 m/s^2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses one block's equation for T, such as T = m_B(g − a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "T ≈ 10.5 N (accept 10–11 N)."
+                    }
+                  ],
+                  "answer": "a = 2.8 m/s^2; T ≈ 10.5 N (about 11 N)",
+                  "steps": [
+                    "a = (1.5 − 0.50)(9.8)/3.5 = 9.8/3.5 = 2.8 m/s^2.",
+                    "T = 1.5(9.8 − 2.8) = 10.5 N; check with A: T = 2.0(2.8) + 0.25(2.0)(9.8) = 5.6 + 4.9 = 10.5 N."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Block B starts 0.60 m above the floor. Find its speed just before it reaches the floor.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses v^2 = v_0^2 + 2aΔy with v_0 = 0 and the acceleration from (c)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v ≈ 1.8 m/s (accept 1.7–1.9 m/s)."
+                    }
+                  ],
+                  "answer": "About 1.8 m/s",
+                  "steps": [
+                    "v = √(2 × 2.8 × 0.60) = √(3.36) ≈ 1.8 m/s."
+                  ]
+                }
+              ],
+              "id": "p1-u2-fr1"
+            },
+            {
+              "prompt": "A small block of mass m slides on the inside of a circular track of radius R that stands in a vertical plane. Friction is negligible. At the top of the track the block moves with speed v and stays in contact with the track.",
+              "type": "QQT",
+              "topics": [
+                "P1.2.9",
+                "P1.2.2"
+              ],
+              "figureIds": [
+                "p1-u2-f4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Draw a free-body diagram of the block at the top of the track, and derive an expression for the normal force exerted by the track on the block in terms of m, v, R and g.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Free-body diagram with the normal force and the weight both pointing down, toward the center."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "F_N + mg = mv^2/R, so F_N = mv^2/R − mg."
+                    }
+                  ],
+                  "answer": "Both forces point toward the center: F_N = mv^2/R − mg.",
+                  "steps": [
+                    "Taking toward the center (down) as positive, the net force is mv^2/R."
+                  ],
+                  "answerFigureIds": [
+                    "p1-u2-f5"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "A student claims: \"If the block's speed at the top were doubled, the normal force on the block at the top would double.\" Use your expression from part (a) to evaluate the claim.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Substitutes 2v: F_N' = 4mv^2/R − mg."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Compares with 2F_N = 2mv^2/R − 2mg, showing F_N' − 2F_N = 2mv^2/R + mg > 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes the claim is incorrect: the normal force more than doubles."
+                    }
+                  ],
+                  "answer": "Incorrect. With 2v, F_N' = 4mv^2/R − mg, which exceeds 2F_N by 2mv^2/R + mg, so the normal force more than doubles.",
+                  "steps": [
+                    "The mv^2/R term quadruples while the mg term stays the same, so the difference grows by more than a factor of 2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "At the bottom of the track the block has the same speed v. Without deriving a new equation in full, explain in words why the normal force at the bottom is greater than at the top, and state how much greater it is.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "At the top, gravity points toward the center and supplies part of the required inward net force, so the track pushes less."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "At the bottom, gravity points away from the center, so the track must supply mv^2/R and also balance mg."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States that F_N,bottom − F_N,top = 2mg."
+                    }
+                  ],
+                  "answer": "At the bottom F_N = mv^2/R + mg, which is 2mg more than at the top, because gravity works against the inward net force there instead of helping.",
+                  "steps": [
+                    "Bottom: F_N − mg = mv^2/R gives F_N = mv^2/R + mg; top: F_N = mv^2/R − mg; the difference is 2mg."
+                  ]
+                }
+              ],
+              "id": "p1-u2-fr2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

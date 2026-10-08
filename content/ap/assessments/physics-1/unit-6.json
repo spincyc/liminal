@@ -1,0 +1,519 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "unit-6",
+  "kind": "unit-test",
+  "unitId": "u6",
+  "title": "Unit 6 test: Energy and momentum of rotating systems",
+  "author": "p1-3",
+  "directions": "This practice test has two sections. Section I has 12 multiple-choice questions worth 1 point each; Section II has 2 free-response questions. Any calculator is allowed. Use g = 9.8 m/s^2, take counterclockwise as the positive sense of rotation unless a question says otherwise, and neglect air resistance. Record raw points from the key; they are practice tallies, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-u6-f1",
+      "alt": "Graph of torque τ in N·m against time t in s: the torque is constant at 4.0 N·m from t = 0 to t = 3.0 s, then falls in a straight line to zero at t = 5.0 s."
+    },
+    {
+      "id": "p1-u6-f2",
+      "alt": "An elliptical orbit around a planet located off-center. The closest point of the orbit is 2.0 × 10^7 m from the planet's center and the farthest point is 5.0 × 10^7 m.",
+      "caption": "An elliptical orbit",
+      "notToScale": true
+    },
+    {
+      "id": "p1-u6-f3",
+      "alt": "A straight ramp on a table with a cylinder at the top. A photogate is mounted at the bottom of the ramp, where the ramp meets the table, and the vertical height of the release point above the bottom is labeled h.",
+      "caption": "Rolling apparatus",
+      "notToScale": true
+    },
+    {
+      "id": "p1-u6-f4",
+      "alt": "Blank grid of 12 by 10 squares for plotting, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-u6-f5",
+      "alt": "Key: graph of v^2 in m^2/s^2 against h in m with five points close to a straight line through the origin; the best-fit line is labeled slope ≈ 13.1 m/s^2.",
+      "caption": "Key: linearized rolling data"
+    },
+    {
+      "id": "p1-u6-f6",
+      "alt": "Top view of a small ball moving in a circle of radius r_0 with speed v_0 on a horizontal table. A string runs from the ball to a small hole at the center of the circle and down through the table.",
+      "caption": "Ball on a string through a hole"
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 24,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet.",
+          "items": [
+            {
+              "id": "p1-u6-mc01",
+              "prompt": "A flywheel with rotational inertia 2.0 kg·m^2 spins at 30 rad/s. What is its rotational kinetic energy?",
+              "choices": [
+                "900 J",
+                "60 J",
+                "1800 J",
+                "450 J"
+              ],
+              "key": "A",
+              "rationale": "K = (1/2)Iω^2 = (1/2)(2.0)(30)^2 = 900 J.",
+              "distractorNotes": {
+                "B": "Computes Iω, the angular momentum, not the energy.",
+                "C": "Omits the factor 1/2.",
+                "D": "Uses (1/4)Iω^2."
+              },
+              "topics": [
+                "P1.6.1"
+              ]
+            },
+            {
+              "id": "p1-u6-mc02",
+              "prompt": "A thin hoop and a uniform solid disk have the same mass and radius and spin at the same angular velocity about their central axes. How does the hoop's rotational kinetic energy compare with the disk's?",
+              "choices": [
+                "It is half as large",
+                "It is the same",
+                "It is twice as large",
+                "It is four times as large"
+              ],
+              "key": "C",
+              "rationale": "K = (1/2)Iω^2 with the same ω, and I_hoop = MR^2 is twice I_disk = (1/2)MR^2.",
+              "distractorNotes": {
+                "A": "Reverses the ratio of the rotational inertias.",
+                "B": "Equal mass and radius do not mean equal rotational inertia.",
+                "D": "The rotational inertias differ by a factor of 2, not 4."
+              },
+              "topics": [
+                "P1.6.1"
+              ]
+            },
+            {
+              "id": "p1-u6-mc03",
+              "prompt": "A constant torque of 15 N·m turns a wheel through 4.0 revolutions. How much work does the torque do?",
+              "choices": [
+                "60 J",
+                "377 J",
+                "188 J",
+                "754 J"
+              ],
+              "key": "B",
+              "rationale": "Δθ = 4.0 × 2π ≈ 25.1 rad, so W = τΔθ = (15)(25.1) ≈ 377 J.",
+              "distractorNotes": {
+                "A": "Uses revolutions instead of radians.",
+                "C": "Uses π instead of 2π rad per revolution.",
+                "D": "Doubles the work."
+              },
+              "topics": [
+                "P1.6.2"
+              ]
+            },
+            {
+              "id": "p1-u6-mc04",
+              "prompt": "A flywheel with rotational inertia 0.50 kg·m^2 spins at 40 rad/s. A brake exerts a constant 8.0 N·m torque opposing the rotation. Through what angle does the flywheel turn before it stops?",
+              "choices": [
+                "5.0 rad",
+                "2.5 rad",
+                "100 rad",
+                "50 rad"
+              ],
+              "key": "D",
+              "rationale": "K = (1/2)(0.50)(40)^2 = 400 J, and the brake's work τΔθ must remove it: Δθ = 400/8.0 = 50 rad.",
+              "distractorNotes": {
+                "A": "Divides ω by τ.",
+                "B": "Computes the stopping time, Iω/τ = 2.5 s, and reports it as an angle.",
+                "C": "Omits the factor 1/2 in the kinetic energy."
+              },
+              "topics": [
+                "P1.6.2"
+              ]
+            },
+            {
+              "id": "p1-u6-mc05",
+              "prompt": "A 0.50 kg ball moves at 4.0 m/s along a straight line that passes 2.0 m from point P at its closest. What is the magnitude of the ball's angular momentum about P?",
+              "choices": [
+                "4.0 kg·m^2/s",
+                "1.0 kg·m^2/s",
+                "2.0 kg·m^2/s",
+                "8.0 kg·m^2/s"
+              ],
+              "key": "A",
+              "rationale": "L = mvr⊥ = (0.50)(4.0)(2.0) = 4.0 kg·m^2/s.",
+              "distractorNotes": {
+                "B": "Divides by r⊥ instead of multiplying.",
+                "C": "This is the linear momentum mv in kg·m/s.",
+                "D": "Omits the mass."
+              },
+              "topics": [
+                "P1.6.3"
+              ]
+            },
+            {
+              "id": "p1-u6-mc06",
+              "prompt": "The graph shows the net torque on a wheel with rotational inertia 2.0 kg·m^2 that starts from rest. What is the wheel's angular velocity at t = 5.0 s?",
+              "figureIds": [
+                "p1-u6-f1"
+              ],
+              "choices": [
+                "6.0 rad/s",
+                "8.0 rad/s",
+                "10 rad/s",
+                "16 rad/s"
+              ],
+              "key": "B",
+              "rationale": "The angular impulse is the area under the graph: (4.0)(3.0) + (1/2)(2.0)(4.0) = 16 N·m·s. Then ω = ΔL/I = 16/2.0 = 8.0 rad/s.",
+              "distractorNotes": {
+                "A": "Uses only the area up to t = 3.0 s.",
+                "C": "Treats the sloped part as a rectangle, 8.0 N·m·s, for a total of 20 N·m·s.",
+                "D": "This is the change in angular momentum, not the angular velocity."
+              },
+              "topics": [
+                "P1.6.3"
+              ]
+            },
+            {
+              "id": "p1-u6-mc07",
+              "prompt": "A skater spinning on frictionless ice pulls in her arms, reducing her rotational inertia to one third of its original value. Her angular velocity and rotational kinetic energy each become",
+              "choices": [
+                "one third as large",
+                "unchanged and three times as large",
+                "three times as large",
+                "nine times as large"
+              ],
+              "key": "C",
+              "rationale": "L = Iω is conserved, so ω triples; K = L^2/(2I), so K also triples.",
+              "distractorNotes": {
+                "A": "Angular momentum, not angular velocity, stays fixed, so ω must grow when I shrinks.",
+                "B": "ω cannot stay the same if I changes and L is conserved.",
+                "D": "Squares the factor for both; K = L^2/(2I) grows only by the factor 3."
+              },
+              "topics": [
+                "P1.6.4"
+              ]
+            },
+            {
+              "id": "p1-u6-mc08",
+              "prompt": "A disk with rotational inertia 0.30 kg·m^2 spins at 12 rad/s on a frictionless axle. A second disk with rotational inertia 0.60 kg·m^2, initially not rotating, is dropped onto it, and the two soon turn together. What is their common angular velocity?",
+              "choices": [
+                "4.0 rad/s",
+                "6.0 rad/s",
+                "8.0 rad/s",
+                "12 rad/s"
+              ],
+              "key": "A",
+              "rationale": "Angular momentum is conserved: (0.30)(12) = (0.90)ω, so ω = 4.0 rad/s.",
+              "distractorNotes": {
+                "B": "Averages the two angular velocities.",
+                "C": "Divides by half the combined rotational inertia, 0.45 kg·m^2.",
+                "D": "Friction between the disks is internal, but the added rotational inertia still slows the rotation."
+              },
+              "topics": [
+                "P1.6.4"
+              ]
+            },
+            {
+              "id": "p1-u6-mc09",
+              "prompt": "Two uniform solid balls of the same radius, one with twice the mass of the other, are released together from rest at the top of the same ramp and roll without slipping. Which reaches the bottom first?",
+              "choices": [
+                "The heavier ball",
+                "The lighter ball",
+                "It depends on the angle of the ramp",
+                "They arrive at the same time"
+              ],
+              "key": "D",
+              "rationale": "For any uniform solid ball, Mgh = (7/10)Mv^2 at every height, so v = √(10gh/7) does not depend on mass, and they stay together.",
+              "distractorNotes": {
+                "A": "The larger weight is matched by larger translational and rotational inertia.",
+                "B": "Mass cancels from the energy equation.",
+                "C": "The angle changes the time for both balls equally."
+              },
+              "topics": [
+                "P1.6.5"
+              ]
+            },
+            {
+              "id": "p1-u6-mc10",
+              "prompt": "A uniform solid sphere rolls without slipping across a level floor. What fraction of its total kinetic energy is rotational?",
+              "choices": [
+                "2/5",
+                "2/7",
+                "1/2",
+                "5/7"
+              ],
+              "key": "B",
+              "rationale": "K_rot = (1/2)(2/5)MR^2(v/R)^2 = (1/5)Mv^2 and K = (1/2)Mv^2 + (1/5)Mv^2 = (7/10)Mv^2, so the fraction is (1/5)/(7/10) = 2/7.",
+              "distractorNotes": {
+                "A": "This is the shape factor β, not the energy fraction.",
+                "C": "Assumes the energy splits equally, which holds for a hoop.",
+                "D": "This is the translational fraction."
+              },
+              "topics": [
+                "P1.6.5"
+              ]
+            },
+            {
+              "id": "p1-u6-mc11",
+              "prompt": "Satellite X of mass m and satellite Y of mass 3m move in the same circular orbit around a planet. Which statement is correct?",
+              "choices": [
+                "Y moves faster than X",
+                "Y moves more slowly than X",
+                "They have the same speed, and Y has 3 times the kinetic energy",
+                "They have the same speed and the same kinetic energy"
+              ],
+              "key": "C",
+              "rationale": "GMm/r^2 = mv^2/r gives v = √(GM/r), independent of the satellite's mass; K = (1/2)mv^2 is then proportional to mass.",
+              "distractorNotes": {
+                "A": "The satellite's mass cancels from the orbital speed.",
+                "B": "The larger gravitational force is matched by the larger mass to be accelerated.",
+                "D": "Kinetic energy depends on mass even at equal speeds."
+              },
+              "topics": [
+                "P1.6.6"
+              ]
+            },
+            {
+              "id": "p1-u6-mc12",
+              "prompt": "A satellite in the elliptical orbit shown moves at 6.0 × 10^3 m/s at its closest point, 2.0 × 10^7 m from the planet's center. What is its speed at its farthest point, 5.0 × 10^7 m from the planet's center?",
+              "figureIds": [
+                "p1-u6-f2"
+              ],
+              "choices": [
+                "1.5 × 10^4 m/s",
+                "6.0 × 10^3 m/s",
+                "9.6 × 10^2 m/s",
+                "2.4 × 10^3 m/s"
+              ],
+              "key": "D",
+              "rationale": "Gravity exerts no torque about the planet's center, so mvr is the same at the two points, where v is perpendicular to r: v = (6.0 × 10^3)(2.0 × 10^7)/(5.0 × 10^7) = 2.4 × 10^3 m/s.",
+              "distractorNotes": {
+                "A": "Inverts the ratio of the distances; the satellite is slowest when farthest.",
+                "B": "Speed is not constant on an elliptical orbit.",
+                "C": "Uses the square of the distance ratio."
+              },
+              "topics": [
+                "P1.6.6"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 36,
+          "calculator": "any",
+          "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; paper investigations do not replace the hands-on lab work that College Board's AP® Physics 1 course framework requires.",
+          "items": [
+            {
+              "prompt": "Students want to find the shape factor β of a cylinder whose mass distribution is hidden, where its rotational inertia about its axis is I = βMR^2. They have a ramp, a meterstick, and a photogate at the bottom of the ramp that reports the cylinder's speed v as it passes. The cylinder rolls without slipping.",
+              "type": "EDA",
+              "topics": [
+                "P1.6.5",
+                "P1.6.1"
+              ],
+              "figureIds": [
+                "p1-u6-f3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe a procedure the students could follow to collect data from which β can be determined. Identify what they would vary, what they would measure and how, and what they would keep the same.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Varies the release height h (at least four or five values), measured vertically from the photogate level with the meterstick."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Measures the speed v at the bottom with the photogate for each height, with repeated trials averaged."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Keeps the same cylinder and ramp surface, releases from rest each time, and checks that the cylinder rolls without slipping."
+                    }
+                  ],
+                  "answer": "Release the cylinder from rest at several measured vertical heights h above the photogate, record the photogate speed v for each (several trials each, averaged), and use the same cylinder and ramp throughout, releasing gently so that it rolls without slipping.",
+                  "steps": [
+                    "The model v^2 = 2gh/(1 + β) has h as the variable the students control."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "The students' data are shown below. Show that v^2 = 2gh/(1 + β) for a cylinder rolling without slipping, and state which quantities should be graphed to give a straight line and how β can be found from that line.\n| h (m) | 0.10 | 0.20 | 0.30 | 0.40 | 0.50 |\n| --- | --- | --- | --- | --- | --- |\n| v (m/s) | 1.15 | 1.60 | 1.99 | 2.27 | 2.57 |",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses energy conservation with rotational energy: Mgh = (1/2)Mv^2 + (1/2)βMR^2(v/R)^2, giving v^2 = 2gh/(1 + β)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States that v^2 against h is a straight line through the origin with slope 2g/(1 + β), so β = 2g/slope − 1."
+                    }
+                  ],
+                  "answer": "Mgh = (1/2)(1 + β)Mv^2, so v^2 = [2g/(1 + β)]h. Graph v^2 against h; the slope is 2g/(1 + β), so β = 2g/slope − 1.",
+                  "steps": [
+                    "Static friction does no work when the cylinder rolls without slipping, so mechanical energy is conserved."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the grid, plot v^2 against h with labeled axes and scales, and draw a best-fit line.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Axes labeled with quantities and units, v^2 (m^2/s^2) and h (m), with scales that use most of the grid, and the five points (v^2: 1.32, 2.56, 3.96, 5.15, 6.60 m^2/s^2) plotted correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A single straight best-fit line close to the origin."
+                    }
+                  ],
+                  "answer": "The points (0.10, 1.32), (0.20, 2.56), (0.30, 3.96), (0.40, 5.15) and (0.50, 6.60) lie close to a line through the origin.",
+                  "steps": [
+                    "Square each speed before plotting."
+                  ],
+                  "figureIds": [
+                    "p1-u6-f4"
+                  ],
+                  "answerFigureIds": [
+                    "p1-u6-f5"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your best-fit line to calculate β for the cylinder.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the slope from the line, about 13.1 m/s^2 (accept 12.6–13.6 m/s^2), using two points on the line rather than data points off it."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "β = 2g/slope − 1 ≈ 0.50 (accept 0.44–0.56)."
+                    }
+                  ],
+                  "answer": "Slope ≈ 13.1 m/s^2; β = 2(9.8)/13.1 − 1 ≈ 0.50",
+                  "steps": [
+                    "Through the origin and (0.50 m, 6.55 m^2/s^2): slope ≈ 13.1 m/s^2.",
+                    "1 + β = 19.6/13.1 ≈ 1.50."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "A thin-walled hollow cylinder has β = 1 and a uniform solid cylinder has β = 1/2. What does the result suggest about the mass distribution inside the students' cylinder?",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the cylinder behaves like a uniform solid cylinder (β ≈ 1/2), so its mass is spread evenly rather than concentrated at its rim."
+                    }
+                  ],
+                  "answer": "β ≈ 0.50, the value for a uniform solid cylinder, so its mass is distributed evenly through its volume rather than concentrated at the rim.",
+                  "steps": [
+                    "A hollow cylinder would give a slope near g = 9.8 m/s^2."
+                  ]
+                }
+              ],
+              "id": "p1-u6-fr1"
+            },
+            {
+              "prompt": "A small ball of mass m slides on a frictionless horizontal table, tied to a light string that passes through a small hole in the table at the center of its circular path. Below the table, a student holds the string. The ball moves in a circle of radius r_0 at speed v_0. The student then slowly pulls the string down until the radius is r_0/2.",
+              "type": "QQT",
+              "topics": [
+                "P1.6.4",
+                "P1.6.3",
+                "P1.6.1"
+              ],
+              "figureIds": [
+                "p1-u6-f6"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Without writing equations, explain whether the ball's angular momentum about the hole changes as the string is pulled, and whether its speed increases, decreases or stays the same.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the string's force on the ball always points toward the hole, so it exerts no torque about the hole and the angular momentum about the hole is constant."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reasons that with the same angular momentum at a smaller distance from the hole, the ball must move faster."
+                    }
+                  ],
+                  "answer": "The tension points at the hole, so it exerts no torque about the hole and the angular momentum stays constant. Because angular momentum depends on speed times distance, the speed must increase as the distance decreases.",
+                  "steps": [
+                    "Gravity and the normal force are vertical and cancel, so the tension is the only horizontal force."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive expressions for the ball's speed and kinetic energy when the radius is r_0/2, in terms of m and v_0.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes conservation of angular momentum: mv_0r_0 = mv(r_0/2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds v = 2v_0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds K = (1/2)m(2v_0)^2 = 2mv_0^2, four times the initial (1/2)mv_0^2."
+                    }
+                  ],
+                  "answer": "v = 2v_0 and K = 2mv_0^2, four times the initial kinetic energy.",
+                  "steps": [
+                    "mv_0r_0 = mv(r_0/2) gives v = 2v_0.",
+                    "K = (1/2)m(4v_0^2) = 2mv_0^2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "A student says, \"The table is frictionless and nothing else does work, so the ball's kinetic energy must stay the same.\" Explain what is wrong with this claim, and use your results from parts (a) and (b) to find how much work is done on the ball.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies that the string tension does work: as the ball spirals inward it moves partly in the direction of the tension, toward the hole."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Connects to (a): the tension changes the speed without changing the angular momentum, so kinetic energy can increase while L is conserved."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the work W = ΔK = 2mv_0^2 − (1/2)mv_0^2 = (3/2)mv_0^2, done by the student pulling the string."
+                    }
+                  ],
+                  "answer": "The claim ignores the string. While the radius shrinks, the ball's path spirals inward, so it moves partly along the tension and the tension does positive work. That work, W = ΔK = (3/2)mv_0^2, comes from the student pulling the string, which is consistent with angular momentum being conserved while the speed doubles.",
+                  "steps": [
+                    "Only a force perpendicular to the velocity does no work; the tension is perpendicular only while the radius stays fixed.",
+                    "Work–energy theorem: W = 2mv_0^2 − (1/2)mv_0^2."
+                  ]
+                }
+              ],
+              "id": "p1-u6-fr2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

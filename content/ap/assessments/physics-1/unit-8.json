@@ -1,0 +1,492 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "unit-8",
+  "kind": "unit-test",
+  "unitId": "u8",
+  "title": "Unit 8 test: Fluids",
+  "author": "p1-4",
+  "directions": "This practice test has two sections. Section I has 12 multiple-choice questions worth 1 point each; Section II has 2 free-response questions. Any calculator is allowed. Use g = 9.8 m/s^2 and neglect air resistance and friction unless a question says otherwise. Record raw points from the key; they are practice tallies, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-u8-f1",
+      "alt": "A horizontal pipe narrows from a wide section, labeled 1, with area A_1, to a narrow section, labeled 2, with area A_2; water flows to the right with speed v_1 in the wide section. Two thin vertical tubes, open at the top, rise from the top of the pipe, one above section 1 and one above section 2. The water levels in the tubes are not shown."
+    },
+    {
+      "id": "p1-u8-f2",
+      "alt": "Blank grid of 12 by 10 squares for plotting, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-u8-f3",
+      "alt": "Key: graph of absolute pressure P in kilopascals against depth h in meters, with the P axis running from 100 to 109 kPa. Six points lie close to a straight line that crosses h = 0 at about 101.2 kPa; the line is labeled slope ≈ 11.3 kPa/m.",
+      "caption": "Key: pressure against depth"
+    },
+    {
+      "id": "p1-u8-f4",
+      "alt": "A tank of water holding three blocks of equal volume: block A floats partly above the surface; block B is fully under water, held down by a string tied to the bottom; block C rests on the bottom."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 24,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet.",
+          "items": [
+            {
+              "id": "p1-u8-mc01",
+              "prompt": "A solid cylinder has a mass of 0.250 kg and a volume of 9.3 × 10^−5 m^3. What is its density?",
+              "choices": [
+                "3.7 × 10^−4 kg/m^3",
+                "2.7 kg/m^3",
+                "2.7 × 10^3 kg/m^3",
+                "2.3 × 10^−5 kg/m^3"
+              ],
+              "key": "C",
+              "rationale": "ρ = m/V = 0.250 kg/9.3 × 10^−5 m^3 ≈ 2.7 × 10^3 kg/m^3.",
+              "distractorNotes": {
+                "A": "Divides the volume by the mass.",
+                "B": "Drops the power of ten in the volume.",
+                "D": "Multiplies the mass by the volume."
+              },
+              "topics": [
+                "P1.8.1"
+              ]
+            },
+            {
+              "id": "p1-u8-mc02",
+              "prompt": "Equal volumes of two liquids that mix, of densities 800 kg/m^3 and 1200 kg/m^3, are combined. Assuming the volumes add, what is the density of the mixture?",
+              "choices": [
+                "960 kg/m^3",
+                "1000 kg/m^3",
+                "2000 kg/m^3",
+                "400 kg/m^3"
+              ],
+              "key": "B",
+              "rationale": "For volume V of each, the mass is 800V + 1200V = 2000V in a volume of 2V, so the density is 1000 kg/m^3.",
+              "distractorNotes": {
+                "A": "That is the result for equal masses, not equal volumes.",
+                "C": "Adds the densities without dividing by the doubled volume.",
+                "D": "Subtracts the densities."
+              },
+              "topics": [
+                "P1.8.1"
+              ]
+            },
+            {
+              "id": "p1-u8-mc03",
+              "prompt": "A diver descends from the surface of a freshwater lake to a depth of 10 m. Compared with the absolute pressure at the surface, the absolute pressure at 10 m is",
+              "choices": [
+                "about the same",
+                "about twice as large",
+                "about 10 times as large",
+                "about 100 times as large"
+              ],
+              "key": "B",
+              "rationale": "P = P_0 + ρgh = 1.01 × 10^5 Pa + (1000)(9.8)(10) Pa ≈ 1.99 × 10^5 Pa, about twice the surface value.",
+              "distractorNotes": {
+                "A": "The water adds about 9.8 × 10^4 Pa, nearly one more atmosphere.",
+                "C": "Treats pressure as proportional to depth, ignoring the atmosphere's share.",
+                "D": "Squares the depth."
+              },
+              "topics": [
+                "P1.8.2"
+              ]
+            },
+            {
+              "id": "p1-u8-mc04",
+              "prompt": "A hydraulic jack has a small piston of diameter 3.0 cm and a large piston of diameter 15 cm. What force on the small piston supports a 2000 N load on the large piston?",
+              "choices": [
+                "400 N",
+                "10 000 N",
+                "80 N",
+                "16 N"
+              ],
+              "key": "C",
+              "rationale": "Equal pressures: F_1 = F_2(d_1/d_2)^2 = 2000 N × (3.0/15)^2 = 2000 N/25 = 80 N.",
+              "distractorNotes": {
+                "A": "Uses the ratio of diameters instead of areas.",
+                "B": "Multiplies by the diameter ratio instead of dividing.",
+                "D": "Uses the cube of the diameter ratio."
+              },
+              "topics": [
+                "P1.8.2"
+              ]
+            },
+            {
+              "id": "p1-u8-mc05",
+              "prompt": "What is the gauge pressure at the bottom of a column of mercury (density 13 600 kg/m^3) that is 0.40 m tall?",
+              "choices": [
+                "5.3 × 10^4 Pa",
+                "5.4 × 10^3 Pa",
+                "1.5 × 10^5 Pa",
+                "3.9 × 10^3 Pa"
+              ],
+              "key": "A",
+              "rationale": "Gauge pressure = ρgh = (13 600)(9.8)(0.40) ≈ 5.3 × 10^4 Pa.",
+              "distractorNotes": {
+                "B": "Leaves out g.",
+                "C": "That is the absolute pressure, including the atmosphere.",
+                "D": "Uses the density of water."
+              },
+              "topics": [
+                "P1.8.2"
+              ]
+            },
+            {
+              "id": "p1-u8-mc06",
+              "prompt": "A block of density 640 kg/m^3 floats in a liquid of density 800 kg/m^3. What percentage of the block's volume is below the surface?",
+              "choices": [
+                "80%",
+                "20%",
+                "64%",
+                "125%"
+              ],
+              "key": "A",
+              "rationale": "Floating: V_sub/V = ρ_block/ρ_liquid = 640/800 = 0.80, so 80% is submerged.",
+              "distractorNotes": {
+                "B": "That is the fraction above the surface.",
+                "C": "Compares the block with water instead of this liquid.",
+                "D": "Inverts the ratio; a fraction cannot exceed 100%."
+              },
+              "topics": [
+                "P1.8.3"
+              ]
+            },
+            {
+              "id": "p1-u8-mc07",
+              "prompt": "A 3.0 kg object with a volume of 1.0 × 10^−3 m^3 hangs from a spring scale while fully submerged in water. What does the scale read?",
+              "choices": [
+                "29.4 N",
+                "9.8 N",
+                "39.2 N",
+                "19.6 N"
+              ],
+              "key": "D",
+              "rationale": "F_b = (1000)(1.0 × 10^−3)(9.8) = 9.8 N, so the scale reads mg − F_b = 29.4 N − 9.8 N = 19.6 N.",
+              "distractorNotes": {
+                "A": "That is the weight in air; the water pushes up as well.",
+                "B": "That is the buoyant force, not the scale reading.",
+                "C": "Adds the buoyant force to the weight."
+              },
+              "topics": [
+                "P1.8.3"
+              ]
+            },
+            {
+              "id": "p1-u8-mc08",
+              "prompt": "The three blocks shown have equal volumes. Which ranks the buoyant forces on them?",
+              "figureIds": [
+                "p1-u8-f4"
+              ],
+              "choices": [
+                "A = B = C",
+                "B = C > A",
+                "C > B > A",
+                "A > B > C"
+              ],
+              "key": "B",
+              "rationale": "F_b = ρ_water V_sub g. B and C are fully submerged with equal volumes, so they feel equal buoyant forces; A displaces only part of its volume, so its buoyant force is smallest.",
+              "distractorNotes": {
+                "A": "A floating block displaces less than its full volume.",
+                "C": "Depth does not change the buoyant force on a fully submerged object.",
+                "D": "The floating block has the smallest submerged volume."
+              },
+              "topics": [
+                "P1.8.3"
+              ]
+            },
+            {
+              "id": "p1-u8-mc09",
+              "prompt": "Water flows at 0.60 m/s through a pipe of diameter 5.0 cm into a pipe of diameter 2.5 cm. What is its speed in the narrower pipe?",
+              "choices": [
+                "2.4 m/s",
+                "1.2 m/s",
+                "0.15 m/s",
+                "0.30 m/s"
+              ],
+              "key": "A",
+              "rationale": "Continuity: v_2 = v_1(d_1/d_2)^2 = 0.60 × 4 = 2.4 m/s.",
+              "distractorNotes": {
+                "B": "Uses the diameter ratio instead of the area ratio.",
+                "C": "Divides by 4 instead of multiplying.",
+                "D": "Divides by 2 instead of multiplying by 4."
+              },
+              "topics": [
+                "P1.8.4"
+              ]
+            },
+            {
+              "id": "p1-u8-mc10",
+              "prompt": "Water flows through a horizontal pipe. At point 1 the speed is 2.0 m/s and the pressure is 1.50 × 10^5 Pa. At point 2 the speed is 6.0 m/s. What is the pressure at point 2?",
+              "choices": [
+                "1.66 × 10^5 Pa",
+                "1.48 × 10^5 Pa",
+                "1.18 × 10^5 Pa",
+                "1.34 × 10^5 Pa"
+              ],
+              "key": "D",
+              "rationale": "P_2 = P_1 + (1/2)ρ(v_1^2 − v_2^2) = 1.50 × 10^5 + 500(4.0 − 36) = 1.50 × 10^5 − 1.6 × 10^4 = 1.34 × 10^5 Pa.",
+              "distractorNotes": {
+                "A": "Sign error: the pressure is lower where the water is faster.",
+                "B": "Uses the speeds instead of their squares.",
+                "C": "Leaves out the factor 1/2 in the kinetic-energy term."
+              },
+              "topics": [
+                "P1.8.4"
+              ]
+            },
+            {
+              "id": "p1-u8-mc11",
+              "prompt": "Water flows out of a small hole in the side of a large open tank, 0.45 m below the water surface. What is the speed of the water leaving the hole?",
+              "choices": [
+                "8.8 m/s",
+                "2.1 m/s",
+                "3.0 m/s",
+                "4.4 m/s"
+              ],
+              "key": "C",
+              "rationale": "Bernoulli between the surface and the jet, both at atmospheric pressure: v = √(2gh) = √(2(9.8)(0.45)) ≈ 3.0 m/s.",
+              "distractorNotes": {
+                "A": "That is 2gh, without the square root.",
+                "B": "Leaves out the factor 2: √(gh).",
+                "D": "That is gh, without the square root or the factor 2."
+              },
+              "topics": [
+                "P1.8.4"
+              ]
+            },
+            {
+              "id": "p1-u8-mc12",
+              "prompt": "Two sheets of paper hang vertically, parallel and a few centimeters apart. A student blows a stream of air downward between them. What do the sheets do?",
+              "choices": [
+                "They move apart, pushed by the moving air.",
+                "They stay where they are, because the air moves parallel to them.",
+                "They swing in the direction the air flows, without moving sideways.",
+                "They move toward each other, because the pressure between them drops."
+              ],
+              "key": "D",
+              "rationale": "The fast-moving air between the sheets is at lower pressure than the still air outside, so the net pressure force on each sheet points inward.",
+              "distractorNotes": {
+                "A": "Moving air parallel to a surface lowers the pressure on it rather than pushing it away.",
+                "B": "The pressure difference produces a sideways force even though the air moves parallel to the sheets.",
+                "C": "Drag acts along the flow, but the larger effect is the inward pressure difference."
+              },
+              "topics": [
+                "P1.8.4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 40,
+          "calculator": "any",
+          "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
+          "items": [
+            {
+              "prompt": "A student wants to determine the density of a liquid that fills a tall tank. She lowers a waterproof absolute-pressure sensor, attached to a rod, to several depths h below the liquid's surface and records the pressure P.\n| h (m) | 0.10 | 0.20 | 0.30 | 0.40 | 0.50 | 0.60 |\n| --- | --- | --- | --- | --- | --- | --- |\n| P (kPa) | 102.4 | 103.4 | 104.6 | 105.8 | 106.8 | 108.0 |",
+              "type": "EDA",
+              "topics": [
+                "P1.8.2",
+                "P1.8.1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe how the student could measure the depth h accurately, and one way to reduce the uncertainty in each pressure reading.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Measures h from the liquid surface to the sensor's sensing point, for example with a scale marked on the rod read at the surface, keeping the rod vertical."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reduces uncertainty in P by waiting for the reading to settle (the liquid to stop moving) and repeating readings at each depth and averaging."
+                    }
+                  ],
+                  "answer": "Mark a scale on the rod, zeroed at the sensor's sensing point, and read it at the liquid surface with the rod held vertical. At each depth, wait for the liquid to settle and average several readings.",
+                  "steps": [
+                    "Depth is measured from the free surface to the point where pressure is sensed.",
+                    "Averaging repeated readings reduces random uncertainty."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On the grid, plot P against h, using scales that spread the data over most of the grid, and draw a best-fit line.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Axes labeled P (kPa) and h (m), with a P scale that need not start at zero but uses most of the grid."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "All six points plotted correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "One straight best-fit line through the trend of the points."
+                    }
+                  ],
+                  "answer": "The six points lie close to a straight line that rises about 1.1 kPa for every 0.10 m of depth.",
+                  "steps": [
+                    "Plot h on the horizontal axis and P on the vertical axis.",
+                    "Draw one line that balances the points."
+                  ],
+                  "figureIds": [
+                    "p1-u8-f2"
+                  ],
+                  "answerFigureIds": [
+                    "p1-u8-f3"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Use your best-fit line to determine the density of the liquid.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the slope of P against h as ρg, from P = P_0 + ρgh."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the slope from two points on the line, about 11.3 kPa/m (accept 10.8–11.8 kPa/m), converting to Pa/m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "ρ = slope/g ≈ 1.15 × 10^3 kg/m^3 (accept 1.10–1.20 × 10^3 kg/m^3)."
+                    }
+                  ],
+                  "answer": "Slope ≈ 11.3 kPa/m = 1.13 × 10^4 Pa/m; ρ ≈ 1.15 × 10^3 kg/m^3",
+                  "steps": [
+                    "Two points on the best-fit line, such as (0.10 m, 102.35 kPa) and (0.60 m, 107.98 kPa): slope ≈ 5.63 kPa/0.50 m ≈ 11.3 kPa/m.",
+                    "ρ = (1.13 × 10^4 Pa/m)/(9.8 m/s^2) ≈ 1.15 × 10^3 kg/m^3."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Determine the vertical intercept of your line and explain what it represents physically. How would the graph differ if the sensor measured gauge pressure instead?",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Intercept ≈ 101 kPa (accept 100.8–101.6 kPa), the pressure at the liquid surface: the atmospheric pressure."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "With gauge pressure the line would pass through the origin with the same slope."
+                    }
+                  ],
+                  "answer": "Intercept ≈ 101.2 kPa, the atmospheric pressure pushing on the surface. A gauge-pressure graph would have the same slope but pass through the origin.",
+                  "steps": [
+                    "At h = 0, P = P_0.",
+                    "Gauge pressure subtracts P_0 from every reading, shifting the line down without changing its slope."
+                  ]
+                }
+              ],
+              "id": "p1-u8-fr1"
+            },
+            {
+              "prompt": "Water flows steadily to the right through the horizontal pipe shown, which narrows from cross-sectional area A_1 at section 1 to A_2 at section 2. Thin vertical tubes open to the air rise from the pipe above each section, and water stands in each tube at some height. Treat the water as an ideal fluid.",
+              "type": "QQT",
+              "topics": [
+                "P1.8.4",
+                "P1.8.2"
+              ],
+              "figureIds": [
+                "p1-u8-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Without using equations, predict which tube has the higher water level, and explain your reasoning in terms of the speed and pressure of the water.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the water moves faster in section 2 because the same volume per second passes through a smaller area."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States that the pressure is lower in section 2, because water speeds up only when pushed from higher toward lower pressure (or by energy conservation along the pipe)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes the tube above section 1 has the higher level, since a higher pressure supports a taller column of water."
+                    }
+                  ],
+                  "answer": "The tube above section 1. The water speeds up entering the narrow section, which requires the pressure to drop there, and a lower pressure holds up a shorter column of water.",
+                  "steps": [
+                    "Continuity sets the speeds; a speed increase needs a pressure decrease.",
+                    "Each tube's column height reflects the pressure in the pipe below it."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the difference Δh between the water levels in the two tubes, in terms of v_1, A_1, A_2 and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses continuity: v_2 = v_1(A_1/A_2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses Bernoulli's equation at equal heights: P_1 − P_2 = (1/2)ρ(v_2^2 − v_1^2), and relates the pressures to the columns: P_1 − P_2 = ρgΔh."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Δh = (v_1^2/(2g))((A_1/A_2)^2 − 1)."
+                    }
+                  ],
+                  "answer": "Δh = (v_1^2/(2g))((A_1/A_2)^2 − 1)",
+                  "steps": [
+                    "v_2 = v_1A_1/A_2.",
+                    "ρgΔh = (1/2)ρ(v_2^2 − v_1^2) = (1/2)ρv_1^2((A_1/A_2)^2 − 1), and ρ cancels."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "The flow is increased so that v_1 doubles. Use your expression to determine how Δh changes, and explain whether this agrees with your reasoning in part (a).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Δh is proportional to v_1^2, so it becomes 4 times as large."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Agrees with part (a): faster flow means a larger speed difference and pressure difference, and the expression stays positive (A_1 > A_2), so tube 1 remains higher."
+                    }
+                  ],
+                  "answer": "Δh quadruples. This agrees with part (a): the expression is positive because A_1 > A_2, so tube 1 stays higher, and faster flow makes the pressure difference larger.",
+                  "steps": [
+                    "Δh ∝ v_1^2, and 2^2 = 4.",
+                    "A larger speed difference between the sections means a larger pressure drop."
+                  ]
+                }
+              ],
+              "id": "p1-u8-fr2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

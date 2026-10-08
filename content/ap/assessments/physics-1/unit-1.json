@@ -1,0 +1,549 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "unit-1",
+  "kind": "unit-test",
+  "unitId": "u1",
+  "title": "Unit 1 test: Kinematics",
+  "author": "p1-1",
+  "directions": "This practice test has two sections. Section I has 12 multiple-choice questions worth 1 point each; Section II has 2 free-response questions. Any calculator is allowed. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise. Record raw points from the key; they are practice tallies, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-u1-f1",
+      "alt": "Position–time graph of a toy car with t from 0 to 6 s and x from −4 to 8 m. Straight segments join (0, 0), (2, 6), (5, 6) and (6, −2)."
+    },
+    {
+      "id": "p1-u1-f2",
+      "alt": "Velocity–time graph with t from 0 to 6 s and v from −8 to 8 m/s: a straight line rising from −6 m/s at t = 0 to 6 m/s at t = 6 s."
+    },
+    {
+      "id": "p1-u1-f3",
+      "alt": "Blank grid of 12 by 10 squares for sketching graphs, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-u1-f4",
+      "alt": "Key: velocity–time graph at 3 m/s from t = 0 to 2 s, then a straight line falling through (4.0, 0) to −3 m/s at t = 6 s.",
+      "caption": "Key: velocity of cart 1"
+    },
+    {
+      "id": "p1-u1-f5",
+      "alt": "Key: position–time graph rising in a straight line to (2.0, 6.0), curving to a maximum at (4.0, 9.0) and down to (6.0, 6.0); a dashed line x = 1.5t labeled cart 2 crosses the curve once, between t = 5 s and t = 6 s.",
+      "caption": "Key: positions of both carts"
+    },
+    {
+      "id": "p1-u1-f6",
+      "alt": "Key: graph of x^2 in m^2 against h in m with five points close to a straight line through the origin; the best-fit line is labeled slope ≈ 0.52 m.",
+      "caption": "Key: linearized launch data"
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 24,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet.",
+          "items": [
+            {
+              "id": "p1-u1-mc01",
+              "prompt": "Which pair lists a vector quantity followed by a scalar quantity?",
+              "choices": [
+                "Speed, velocity",
+                "Distance, time",
+                "Velocity, speed",
+                "Acceleration, displacement"
+              ],
+              "key": "C",
+              "rationale": "Velocity has a direction and is a vector; speed is its magnitude and is a scalar.",
+              "distractorNotes": {
+                "A": "Reversed order: speed is the scalar.",
+                "B": "Both are scalars.",
+                "D": "Both are vectors."
+              },
+              "topics": [
+                "P1.1.1"
+              ]
+            },
+            {
+              "id": "p1-u1-mc02",
+              "prompt": "A dog runs along a straight path from x = 12 m to x = −20 m and then back to x = −4 m, taking 16 s in all. What is its average velocity?",
+              "choices": [
+                "−1.0 m/s",
+                "3.0 m/s",
+                "+1.0 m/s",
+                "−0.25 m/s"
+              ],
+              "key": "A",
+              "rationale": "Average velocity = Δx/Δt = (−4 m − 12 m)/16 s = −1.0 m/s.",
+              "distractorNotes": {
+                "B": "Average speed: total distance 48 m divided by 16 s.",
+                "C": "Sign error: the dog ends up on the negative side of its start.",
+                "D": "Uses the final position instead of the displacement."
+              },
+              "topics": [
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-u1-mc03",
+              "prompt": "A car moving at 15 m/s accelerates uniformly at 2.0 m/s^2 for 5.0 s. How far does it travel during those 5.0 s?",
+              "choices": [
+                "75 m",
+                "125 m",
+                "25 m",
+                "100 m"
+              ],
+              "key": "D",
+              "rationale": "Δx = v_0t + (1/2)at^2 = (15)(5.0) + (1/2)(2.0)(5.0)^2 = 75 m + 25 m = 100 m.",
+              "distractorNotes": {
+                "A": "Ignores the acceleration.",
+                "B": "Omits the factor 1/2 in the acceleration term.",
+                "C": "Keeps only the acceleration term."
+              },
+              "topics": [
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-u1-mc04",
+              "prompt": "A ball is thrown straight up at 19.6 m/s. Taking up as positive and neglecting air resistance, what is its velocity 3.0 s after release?",
+              "choices": [
+                "+9.8 m/s",
+                "−9.8 m/s",
+                "−49 m/s",
+                "0 m/s"
+              ],
+              "key": "B",
+              "rationale": "v = v_0 + at = 19.6 m/s − (9.8 m/s^2)(3.0 s) = −9.8 m/s: the ball passed the top at 2.0 s and is now falling.",
+              "distractorNotes": {
+                "A": "Correct size but the wrong sign; the ball is moving down.",
+                "C": "Adds the change in velocity instead of subtracting it.",
+                "D": "Assumes the ball is at the top; the top is reached at 2.0 s."
+              },
+              "topics": [
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-u1-mc05",
+              "prompt": "The graph shows the position of a toy car moving along a straight track. During which interval is the car's speed greatest?",
+              "figureIds": [
+                "p1-u1-f1"
+              ],
+              "choices": [
+                "0 to 2 s",
+                "2 to 5 s",
+                "5 to 6 s",
+                "The speed is the same in every interval"
+              ],
+              "key": "C",
+              "rationale": "Speed is the magnitude of the slope of a position–time graph: 3 m/s from 0 to 2 s, 0 from 2 to 5 s and 8 m/s from 5 to 6 s.",
+              "distractorNotes": {
+                "A": "This interval has a positive slope, but a smaller one in magnitude.",
+                "B": "A flat position graph means the car is at rest.",
+                "D": "The slopes differ, so the speeds differ."
+              },
+              "topics": [
+                "P1.1.3"
+              ]
+            },
+            {
+              "id": "p1-u1-mc06",
+              "prompt": "For the toy car whose position is graphed, what is the average velocity from t = 0 to t = 6 s?",
+              "figureIds": [
+                "p1-u1-f1"
+              ],
+              "choices": [
+                "+2.3 m/s",
+                "−1.3 m/s",
+                "+0.33 m/s",
+                "−0.33 m/s"
+              ],
+              "key": "D",
+              "rationale": "The car goes from x = 0 to x = −2 m in 6 s, so the average velocity is −2 m/6 s ≈ −0.33 m/s.",
+              "distractorNotes": {
+                "A": "Average speed: 14 m of total distance divided by 6 s.",
+                "B": "Uses only the last segment's displacement, −8 m, over 6 s.",
+                "C": "Sign error: the car ends on the negative side of its start."
+              },
+              "topics": [
+                "P1.1.3",
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-u1-mc07",
+              "prompt": "The graph shows the velocity of an object moving along a line. What is its displacement from t = 0 to t = 6 s?",
+              "figureIds": [
+                "p1-u1-f2"
+              ],
+              "choices": [
+                "0 m",
+                "18 m",
+                "−18 m",
+                "36 m"
+              ],
+              "key": "A",
+              "rationale": "The area below the axis from 0 to 3 s, −9 m, cancels the area above the axis from 3 to 6 s, +9 m.",
+              "distractorNotes": {
+                "B": "Adds the two triangle areas without signs, which gives the distance.",
+                "C": "Counts only the area below the axis, doubled.",
+                "D": "Treats the region as a rectangle."
+              },
+              "topics": [
+                "P1.1.3"
+              ]
+            },
+            {
+              "id": "p1-u1-mc08",
+              "prompt": "For the object whose velocity is graphed, at what time is the object farthest from its starting point on the negative side?",
+              "figureIds": [
+                "p1-u1-f2"
+              ],
+              "choices": [
+                "t = 0",
+                "t = 3 s",
+                "t = 6 s",
+                "t = 1.5 s"
+              ],
+              "key": "B",
+              "rationale": "The velocity is negative until t = 3 s, so the object moves in the negative direction until then and turns around when v = 0.",
+              "distractorNotes": {
+                "A": "The object is at its starting point at t = 0.",
+                "C": "By t = 6 s the positive area has brought the object back to its start.",
+                "D": "The object is still moving in the negative direction at 1.5 s."
+              },
+              "topics": [
+                "P1.1.3"
+              ]
+            },
+            {
+              "id": "p1-u1-mc09",
+              "prompt": "A swimmer swims upstream at 1.2 m/s relative to the water in a river that flows at 0.50 m/s. What is the swimmer's velocity relative to the riverbank?",
+              "choices": [
+                "1.7 m/s upstream",
+                "0.70 m/s downstream",
+                "0.70 m/s upstream",
+                "1.3 m/s upstream"
+              ],
+              "key": "C",
+              "rationale": "Upstream positive: v_SB = v_SW + v_WB = 1.2 m/s + (−0.50 m/s) = +0.70 m/s, upstream.",
+              "distractorNotes": {
+                "A": "Adds the speeds as if the current helped.",
+                "B": "Correct size but the swimmer outpaces the current, so the motion is upstream.",
+                "D": "Combines the velocities as if they were perpendicular."
+              },
+              "topics": [
+                "P1.1.4"
+              ]
+            },
+            {
+              "id": "p1-u1-mc10",
+              "prompt": "An airplane points due east with an airspeed of 80 m/s while the wind blows due north at 20 m/s. What is the airplane's speed relative to the ground?",
+              "choices": [
+                "100 m/s",
+                "82 m/s",
+                "60 m/s",
+                "77 m/s"
+              ],
+              "key": "B",
+              "rationale": "The velocities are perpendicular: √(80^2 + 20^2) ≈ 82 m/s.",
+              "distractorNotes": {
+                "A": "Adds perpendicular speeds directly.",
+                "C": "Subtracts the speeds.",
+                "D": "Subtracts the squares instead of adding them."
+              },
+              "topics": [
+                "P1.1.4",
+                "P1.1.5"
+              ]
+            },
+            {
+              "id": "p1-u1-mc11",
+              "prompt": "A ball leaves a horizontal ledge at 6.0 m/s and falls 4.9 m to level ground. Neglecting air resistance, what is its speed just before it lands?",
+              "choices": [
+                "9.8 m/s",
+                "16 m/s",
+                "6.0 m/s",
+                "11 m/s"
+              ],
+              "key": "D",
+              "rationale": "The fall takes √(2 × 4.9/9.8) = 1.0 s, so v_y = 9.8 m/s; speed = √(6.0^2 + 9.8^2) ≈ 11 m/s.",
+              "distractorNotes": {
+                "A": "Gives only the vertical component.",
+                "B": "Adds the components as numbers instead of as vectors.",
+                "C": "Gives only the horizontal component."
+              },
+              "topics": [
+                "P1.1.5"
+              ]
+            },
+            {
+              "id": "p1-u1-mc12",
+              "prompt": "Projectile B is launched from level ground with twice the vertical component of initial velocity of projectile A and the same horizontal component. Projectile A reaches maximum height H and lands a distance R away. What are B's maximum height and range?",
+              "choices": [
+                "4H and 2R",
+                "2H and 2R",
+                "4H and 4R",
+                "2H and R"
+              ],
+              "key": "A",
+              "rationale": "Maximum height is v_y^2/(2g), so doubling v_y multiplies it by 4; flight time 2v_y/g doubles, and with the same v_x the range doubles.",
+              "distractorNotes": {
+                "B": "Height depends on the square of v_y, not on v_y.",
+                "C": "Range scales with flight time, which only doubles.",
+                "D": "Doubling the flight time doubles the range."
+              },
+              "topics": [
+                "P1.1.5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 36,
+          "calculator": "any",
+          "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
+          "items": [
+            {
+              "prompt": "Cart 1 moves along a long, level track. It is at x = 0 at t = 0 and moves in the +x direction at a constant 3.0 m/s until t = 2.0 s. From t = 2.0 s to t = 6.0 s a fan mounted on the cart gives it a constant acceleration of −1.5 m/s^2.",
+              "type": "TBR",
+              "topics": [
+                "P1.1.3",
+                "P1.1.2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "On the grid, sketch the velocity–time graph of cart 1 from t = 0 to t = 6.0 s. Label the velocity at t = 0, 2.0 s and 6.0 s and the time when the velocity is zero.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Horizontal segment at +3.0 m/s from t = 0 to t = 2.0 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Straight line from (2.0 s, 3.0 m/s) to (6.0 s, −3.0 m/s), slope −1.5 m/s^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Line crosses v = 0 at t = 4.0 s (accept 3.9–4.1 s), with labels."
+                    }
+                  ],
+                  "answer": "v = 3.0 m/s from 0 to 2.0 s, then a straight line through zero at t = 4.0 s to −3.0 m/s at 6.0 s.",
+                  "steps": [
+                    "From 2.0 s, v = 3.0 − 1.5(t − 2.0), which is 0 at t = 4.0 s and −3.0 m/s at t = 6.0 s."
+                  ],
+                  "figureIds": [
+                    "p1-u1-f3"
+                  ],
+                  "answerFigureIds": [
+                    "p1-u1-f4"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On the grid, sketch the position–time graph of cart 1 for the same interval. Label the position at t = 2.0 s, 4.0 s and 6.0 s.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Straight line from the origin to 6.0 m at t = 2.0 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Curve bending downward with a horizontal tangent at its maximum, 9.0 m at t = 4.0 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Curve returns to 6.0 m at t = 6.0 s, consistent with the velocity graph."
+                    }
+                  ],
+                  "answer": "x rises linearly to 6.0 m at 2.0 s, curves to a maximum of 9.0 m at 4.0 s, and returns to 6.0 m at 6.0 s.",
+                  "steps": [
+                    "x(2.0) = 3.0 × 2.0 = 6.0 m; adding areas under the velocity graph gives +3.0 m from 2.0 to 4.0 s (x = 9.0 m) and −3.0 m from 4.0 to 6.0 s (x = 6.0 m).",
+                    "Constant velocity gives a straight segment; constant negative acceleration gives a downward-bending curve that is flat where v = 0."
+                  ],
+                  "figureIds": [
+                    "p1-u1-f3"
+                  ],
+                  "answerFigureIds": [
+                    "p1-u1-f5"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the total distance cart 1 travels and its displacement from t = 0 to t = 6.0 s. Explain how each is represented on your velocity–time graph.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Displacement +6.0 m as the signed area (area below the axis subtracted)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Distance 12 m as the total area counted without signs."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains the difference: from 4.0 s to 6.0 s the cart moves backward, which subtracts from displacement but adds to distance."
+                    }
+                  ],
+                  "answer": "Displacement +6.0 m; distance 12 m.",
+                  "steps": [
+                    "Areas: 0–2.0 s gives +6.0 m, 2.0–4.0 s gives +3.0 m, 4.0–6.0 s gives −3.0 m.",
+                    "Displacement = 6.0 + 3.0 − 3.0 = 6.0 m; distance = 6.0 + 3.0 + 3.0 = 12 m."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Cart 2 moves at a constant +1.5 m/s on a parallel track and is also at x = 0 at t = 0. Using your position–time graph, explain whether the carts are ever at the same position after t = 0, and if so find the time.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Adds x = 1.5t to the position graph or compares positions: cart 1 is ahead at t = 4.0 s (9.0 m against 6.0 m) and behind at t = 6.0 s (6.0 m against 9.0 m), so they meet once in between."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes 6.0 + 3.0(t − 2.0) − 0.75(t − 2.0)^2 = 1.5t, or an equivalent equation."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves t ≈ 5.2 s (accept 5.1–5.3 s), at x ≈ 7.9 m."
+                    }
+                  ],
+                  "answer": "Yes, once, at about t = 5.2 s (x ≈ 7.9 m).",
+                  "steps": [
+                    "With u = t − 2.0: 6.0 + 3.0u − 0.75u^2 = 3.0 + 1.5u, so u^2 − 2u − 4 = 0 and u = 1 + √(5) ≈ 3.24 s.",
+                    "t ≈ 5.24 s and x = 1.5 × 5.24 ≈ 7.9 m; before t = 2.0 s cart 1 is always ahead, so this is the only meeting."
+                  ],
+                  "answerFigureIds": [
+                    "p1-u1-f5"
+                  ]
+                }
+              ],
+              "id": "p1-u1-fr1"
+            },
+            {
+              "prompt": "A student wants to find the speed at which a small steel ball leaves the end of a horizontal track. The track end can be clamped at different heights h above the floor, and the ball is always released from the same mark on the track, so it leaves the end with the same speed each time. The student records the horizontal distance x from the point on the floor directly below the track end to the landing point.\n| h (m) | 0.20 | 0.40 | 0.60 | 0.80 | 1.00 |\n| --- | --- | --- | --- | --- | --- |\n| x (m) | 0.33 | 0.45 | 0.56 | 0.65 | 0.72 |",
+              "type": "EDA",
+              "topics": [
+                "P1.1.5",
+                "P1.1.2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe how the student could measure h and x, and what the student could do to reduce the uncertainty in x.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Measures h vertically from the floor to the bottom of the ball at the track end, using a meter stick (with a level or plumb line)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Marks the point directly below the track end (plumb line) and locates the landing point (carbon paper, sand or video), measuring x between them."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Repeats several releases at each height and averages x."
+                    }
+                  ],
+                  "answer": "Measure h from the floor to the ball at the track end with a vertical meter stick; mark the floor point below the end with a plumb line and find the landing spot with carbon paper; repeat several releases at each height and average x.",
+                  "steps": [
+                    "The landing point varies slightly from trial to trial, so averaging repeated trials reduces random uncertainty in x."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Show that x^2 should be proportional to h, and state which quantities the student should graph to get a straight line. What does the slope represent?",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses h = (1/2)gt^2 and x = vt to get x^2 = (2v^2/g)h."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Graphs x^2 against h; the slope is 2v^2/g."
+                    }
+                  ],
+                  "answer": "x = v √(2h/g), so x^2 = (2v^2/g)h. Graph x^2 against h: a straight line through the origin with slope 2v^2/g.",
+                  "steps": [
+                    "The fall time is t = √(2h/g) and the horizontal velocity v is constant, so x = vt."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the grid, plot x^2 against h for the data and draw a best-fit line.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes x^2 (0.109, 0.203, 0.314, 0.423, 0.518 m^2) and plots them with labeled axes and scales."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Draws a single straight best-fit line passing near the origin."
+                    }
+                  ],
+                  "answer": "x^2 (m^2): 0.109, 0.203, 0.314, 0.423, 0.518; the points lie close to a line through the origin.",
+                  "steps": [
+                    "Square each x value, then plot against h."
+                  ],
+                  "figureIds": [
+                    "p1-u1-f3"
+                  ],
+                  "answerFigureIds": [
+                    "p1-u1-f6"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use the slope of your line to find the speed of the ball as it leaves the track.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Slope from two points on the line, about 0.52 m (accept 0.50–0.55 m), with units."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Sets slope = 2v^2/g and solves v = √(g × slope/2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v ≈ 1.6 m/s (accept 1.5–1.7 m/s)."
+                    }
+                  ],
+                  "answer": "Slope ≈ 0.52 m, so v = √(9.8 × 0.52/2) ≈ 1.6 m/s.",
+                  "steps": [
+                    "Using points on the line such as (0, 0) and (1.00 m, 0.52 m^2), the slope is about 0.52 m.",
+                    "v = √(9.8 × 0.52 / 2) ≈ 1.6 m/s."
+                  ]
+                }
+              ],
+              "id": "p1-u1-fr2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

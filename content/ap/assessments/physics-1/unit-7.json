@@ -1,0 +1,541 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "unit-7",
+  "kind": "unit-test",
+  "unitId": "u7",
+  "title": "Unit 7 test: Oscillations",
+  "author": "p1-4",
+  "directions": "This practice test has two sections. Section I has 12 multiple-choice questions worth 1 point each; Section II has 2 free-response questions. Any calculator is allowed. Use g = 9.8 m/s^2 and neglect air resistance and friction unless a question says otherwise. Record raw points from the key; they are practice tallies, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-u7-f1",
+      "alt": "A cart on a horizontal track is attached to a spring whose other end is fixed to a wall on the left. A dashed line marks the cart's equilibrium position, and an arrow labeled +x points to the right."
+    },
+    {
+      "id": "p1-u7-f2",
+      "alt": "Graph of the horizontal position x of a pendulum bob against time t, with t from 0 to 2.8 s and x from −0.08 to 0.08 m. The curve starts at x = 0 at t = 0, rises to 0.060 m at t = 0.35 s, returns to 0 at 0.70 s, falls to −0.060 m at 1.05 s and returns to 0 at 1.40 s, then repeats once more to t = 2.8 s."
+    },
+    {
+      "id": "p1-u7-f3",
+      "alt": "Blank grid of 14 by 10 squares for sketching a graph, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-u7-f4",
+      "alt": "Key: velocity–time graph from t = 0 to 2.8 s: a curve starting at its maximum, 0.27 m/s, at t = 0, crossing zero at 0.35 s, reaching −0.27 m/s at 0.70 s, crossing zero at 1.05 s and returning to 0.27 m/s at 1.40 s, then repeating.",
+      "caption": "Key: velocity of the bob"
+    },
+    {
+      "id": "p1-u7-f5",
+      "alt": "Key: two energy bar charts with columns K and U_g. At t = 0: K 4 units, U_g empty. At t = 0.35 s: K empty, U_g 4 units.",
+      "caption": "Key: energy bar charts"
+    },
+    {
+      "id": "p1-u7-f6",
+      "alt": "Position–time graph of an oscillator with t from 0 to 1.6 s and x from −0.10 to 0.10 m: a cosine curve starting at its peak, 0.08 m, at t = 0, reaching −0.08 m at 0.8 s and returning to 0.08 m at 1.6 s. Four points are marked on the curve: P at t = 0.2 s, Q at t = 0.6 s, R at t = 1.0 s and S at t = 1.4 s."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 24,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet.",
+          "items": [
+            {
+              "id": "p1-u7-mc01",
+              "prompt": "A block oscillates in simple harmonic motion on a horizontal spring, with x measured from equilibrium. At one instant the block is at x = −0.03 m and moving in the +x direction. Which describes its acceleration at that instant?",
+              "choices": [
+                "Positive, and the block is speeding up",
+                "Positive, and the block is slowing down",
+                "Negative, and the block is speeding up",
+                "Negative, and the block is slowing down"
+              ],
+              "key": "A",
+              "rationale": "The spring force, and so the acceleration, points toward equilibrium: at x = −0.03 m it is positive. The velocity is also positive, so the block is speeding up as it approaches equilibrium.",
+              "distractorNotes": {
+                "B": "The acceleration and velocity have the same sign, so the block speeds up.",
+                "C": "At negative x the restoring force points in the +x direction.",
+                "D": "The sign of the acceleration is set by the displacement, not the velocity."
+              },
+              "topics": [
+                "P1.7.1"
+              ]
+            },
+            {
+              "id": "p1-u7-mc02",
+              "prompt": "Which motion is NOT simple harmonic motion?",
+              "choices": [
+                "A glider on a level air track held between two springs",
+                "A pendulum swinging through a small angle",
+                "A ball bouncing elastically up and down on a hard floor",
+                "A block bobbing on a vertical spring"
+              ],
+              "key": "C",
+              "rationale": "Between bounces the only force on the ball is its constant weight, which is not proportional to the displacement from any equilibrium point, so the motion is periodic but not SHM.",
+              "distractorNotes": {
+                "A": "The springs give a net force proportional to the displacement.",
+                "B": "For small angles the restoring force is nearly proportional to the displacement.",
+                "D": "Measured from the new equilibrium, the net force is −kx."
+              },
+              "topics": [
+                "P1.7.1"
+              ]
+            },
+            {
+              "id": "p1-u7-mc03",
+              "prompt": "A 0.75 kg block oscillates on a spring with spring constant 120 N/m. What is the period?",
+              "choices": [
+                "0.079 s",
+                "2.0 s",
+                "79 s",
+                "0.50 s"
+              ],
+              "key": "D",
+              "rationale": "T = 2π√(m/k) = 2π√(0.75/120) = 2π(0.0791 s) ≈ 0.50 s.",
+              "distractorNotes": {
+                "A": "Leaves out the factor 2π.",
+                "B": "This is the frequency in hertz, 1/T, written as a time.",
+                "C": "Inverts the ratio, using 2π√(k/m)."
+              },
+              "topics": [
+                "P1.7.2"
+              ]
+            },
+            {
+              "id": "p1-u7-mc04",
+              "prompt": "A pendulum has a period of 1.2 s on Earth. Its length is made 4 times as long and it is taken to a planet where g is twice Earth's value. What is its new period?",
+              "choices": [
+                "2.4 s",
+                "1.7 s",
+                "0.85 s",
+                "3.4 s"
+              ],
+              "key": "B",
+              "rationale": "T is proportional to √(L/g); L/g is multiplied by 4/2 = 2, so T = 1.2 s × √(2) ≈ 1.7 s.",
+              "distractorNotes": {
+                "A": "Accounts for the length but ignores the stronger gravity.",
+                "C": "Inverts the ratio, multiplying by √(2/4).",
+                "D": "Multiplies by √(4 × 2), treating larger g as lengthening the period."
+              },
+              "topics": [
+                "P1.7.2"
+              ]
+            },
+            {
+              "id": "p1-u7-mc05",
+              "prompt": "When a block is hung from a vertical spring, the spring stretches 4.9 cm and the block comes to rest. The block is then pulled down slightly and released. What is the period of its oscillation?",
+              "choices": [
+                "0.44 s",
+                "0.071 s",
+                "2.3 s",
+                "0.22 s"
+              ],
+              "key": "A",
+              "rationale": "At equilibrium k = mg/Δx, so T = 2π√(m/k) = 2π√(Δx/g) = 2π√(0.049/9.8) ≈ 0.44 s, whatever the mass.",
+              "distractorNotes": {
+                "B": "Leaves out the factor 2π.",
+                "C": "This is the frequency in hertz, 1/T.",
+                "D": "Uses π instead of 2π."
+              },
+              "topics": [
+                "P1.7.2",
+                "P1.2.8"
+              ]
+            },
+            {
+              "id": "p1-u7-mc06",
+              "prompt": "The graph shows the position of an oscillator. At which marked point is the oscillator's velocity negative while its acceleration is positive?",
+              "figureIds": [
+                "p1-u7-f6"
+              ],
+              "choices": [
+                "Point P",
+                "Point Q",
+                "Point R",
+                "Point S"
+              ],
+              "key": "B",
+              "rationale": "At Q (t = 0.6 s) the graph is below the axis and falling: the slope (velocity) is negative and, since a is opposite x, the acceleration is positive.",
+              "distractorNotes": {
+                "A": "At P the velocity is negative, but x is positive, so the acceleration is negative.",
+                "C": "At R the graph is rising, so the velocity is positive.",
+                "D": "At S the velocity is positive and the acceleration is negative."
+              },
+              "topics": [
+                "P1.7.3"
+              ]
+            },
+            {
+              "id": "p1-u7-mc07",
+              "prompt": "An object's position is x = 0.15 sin(4πt), with x in meters and t in seconds. What is its maximum speed?",
+              "choices": [
+                "0.15 m/s",
+                "0.60 m/s",
+                "1.9 m/s",
+                "24 m/s"
+              ],
+              "key": "C",
+              "rationale": "f = 2.0 Hz and A = 0.15 m, so v_max = 2πfA = (4π)(0.15) ≈ 1.9 m/s.",
+              "distractorNotes": {
+                "A": "That is the amplitude, in meters.",
+                "B": "Multiplies the amplitude by 4 and leaves out π.",
+                "D": "That is the maximum acceleration, (4π)^2(0.15) ≈ 24 m/s^2."
+              },
+              "topics": [
+                "P1.7.3"
+              ]
+            },
+            {
+              "id": "p1-u7-mc08",
+              "prompt": "An oscillator's position is x = A cos(2πt/T). Which describes the oscillator at t = T/4?",
+              "choices": [
+                "x = A and v = 0",
+                "x = 0 and the speed is maximum",
+                "x = 0 and the acceleration is maximum",
+                "x = −A and v = 0"
+              ],
+              "key": "B",
+              "rationale": "At t = T/4 the angle is π/2 (90°), so x = A cos 90° = 0: the oscillator is passing equilibrium, where its speed is greatest and its acceleration is zero.",
+              "distractorNotes": {
+                "A": "That describes t = 0 (or t = T).",
+                "C": "At equilibrium the restoring force and acceleration are zero.",
+                "D": "That describes t = T/2."
+              },
+              "topics": [
+                "P1.7.3"
+              ]
+            },
+            {
+              "id": "p1-u7-mc09",
+              "prompt": "A block on a spring with spring constant 400 N/m oscillates with amplitude 0.050 m. What is its kinetic energy when it is 0.030 m from equilibrium?",
+              "choices": [
+                "0.18 J",
+                "0.50 J",
+                "0.08 J",
+                "0.32 J"
+              ],
+              "key": "D",
+              "rationale": "E = (1/2)(400)(0.050)^2 = 0.50 J and U_s = (1/2)(400)(0.030)^2 = 0.18 J, so K = 0.50 − 0.18 = 0.32 J.",
+              "distractorNotes": {
+                "A": "That is the spring potential energy at 0.030 m.",
+                "B": "That is the total energy, which is all kinetic only at equilibrium.",
+                "C": "Uses (1/2)k(A − x)^2, which is not an energy of the system."
+              },
+              "topics": [
+                "P1.7.4"
+              ]
+            },
+            {
+              "id": "p1-u7-mc10",
+              "prompt": "A block on a spring oscillates with amplitude A. It is replaced by a block with 4 times the mass, on the same spring, set oscillating with the same amplitude. How do the total energy E and the period T change?",
+              "choices": [
+                "E is unchanged and T doubles.",
+                "E quadruples and T doubles.",
+                "E is unchanged and T is unchanged.",
+                "E doubles and T quadruples."
+              ],
+              "key": "A",
+              "rationale": "E = (1/2)kA^2 depends on k and A only, so it is unchanged; T = 2π√(m/k) doubles when m is multiplied by 4.",
+              "distractorNotes": {
+                "B": "The total energy does not depend on the mass.",
+                "C": "The period grows with the mass.",
+                "D": "Neither E nor T is proportional to the mass."
+              },
+              "topics": [
+                "P1.7.4",
+                "P1.7.2"
+              ]
+            },
+            {
+              "id": "p1-u7-mc11",
+              "prompt": "A pendulum bob is released from rest 0.20 m above its lowest point. How fast is it moving when it is 0.10 m above its lowest point?",
+              "choices": [
+                "2.0 m/s",
+                "1.0 m/s",
+                "0.70 m/s",
+                "1.4 m/s"
+              ],
+              "key": "D",
+              "rationale": "The bob has fallen 0.10 m: (1/2)mv^2 = mg(0.10 m), so v = √(2(9.8)(0.10)) ≈ 1.4 m/s.",
+              "distractorNotes": {
+                "A": "That is the speed at the lowest point, after falling 0.20 m.",
+                "B": "Assumes the speed is half the maximum because the height is half; speed is not proportional to the drop.",
+                "C": "Half of the 1.4 m/s answer, from an extra factor of 1/2."
+              },
+              "topics": [
+                "P1.7.4"
+              ]
+            },
+            {
+              "id": "p1-u7-mc12",
+              "prompt": "Which describes how the kinetic energy of a frictionless oscillator changes with time?",
+              "choices": [
+                "It is constant.",
+                "It oscillates between zero and a maximum, with the same period as the position.",
+                "It oscillates between zero and a maximum, with half the period of the position.",
+                "It oscillates between negative and positive values."
+              ],
+              "key": "C",
+              "rationale": "K is greatest each time the object passes equilibrium, which happens twice per cycle, and zero at each turning point, so K repeats with period T/2; it is never negative.",
+              "distractorNotes": {
+                "A": "Only the total energy is constant; energy moves between K and U.",
+                "B": "Equilibrium is passed twice per cycle, so K peaks twice per period.",
+                "D": "Kinetic energy, (1/2)mv^2, cannot be negative."
+              },
+              "topics": [
+                "P1.7.4",
+                "P1.7.3"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 40,
+          "calculator": "any",
+          "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
+          "items": [
+            {
+              "prompt": "A cart of mass 0.80 kg on a horizontal frictionless track is attached to a spring with spring constant 32 N/m, as shown. The cart is pulled 0.15 m in the +x direction from equilibrium and released from rest at t = 0.",
+              "type": "MR",
+              "topics": [
+                "P1.7.2",
+                "P1.7.4",
+                "P1.7.3",
+                "P1.4.3"
+              ],
+              "figureIds": [
+                "p1-u7-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Calculate the period of the cart's motion.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses T = 2π√(m/k) with m = 0.80 kg and k = 32 N/m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "T ≈ 0.99 s (accept 0.98–1.0 s)."
+                    }
+                  ],
+                  "answer": "T ≈ 0.99 s",
+                  "steps": [
+                    "T = 2π√(0.80/32) = 2π(0.158 s) ≈ 0.99 s."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Calculate the cart's maximum speed, and its speed when it is 0.075 m from equilibrium.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses conservation of energy, (1/2)kA^2 = (1/2)mv_max^2, or an equivalent method."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v_max ≈ 0.95 m/s (accept 0.94–0.96 m/s)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses (1/2)mv^2 = (1/2)k(A^2 − x^2) to get v ≈ 0.82 m/s (accept 0.81–0.83 m/s)."
+                    }
+                  ],
+                  "answer": "v_max ≈ 0.95 m/s; v ≈ 0.82 m/s at 0.075 m",
+                  "steps": [
+                    "v_max = A√(k/m) = 0.15√(40) ≈ 0.95 m/s.",
+                    "v = √((k/m)(A^2 − x^2)) = √(40(0.0225 − 0.005625)) ≈ 0.82 m/s."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Write an equation for the cart's position x(t), and use it to determine the first time the cart reaches x = −0.075 m.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "x = 0.15 cos(2πt/0.99) (in meters and seconds), a cosine because the cart starts from rest at +A."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves cos(2πt/T) = −0.5 to get 2πt/T = 120° (2π/3 rad), so t = T/3 ≈ 0.33 s (accept 0.32–0.34 s)."
+                    }
+                  ],
+                  "answer": "x = 0.15 cos(2πt/0.99); t = T/3 ≈ 0.33 s",
+                  "steps": [
+                    "Released from rest at +A, so x = A cos(2πt/T).",
+                    "−0.075 = 0.15 cos(2πt/T) gives an angle of 120°, one third of a cycle."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "As the cart passes through equilibrium moving in the −x direction, a 0.80 kg lump of clay is dropped vertically onto it and sticks. Determine the new amplitude and the new period of the motion.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Conserves horizontal momentum (the clay has none): the speed just after is v_max/2 ≈ 0.47 m/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses energy with the doubled mass, (1/2)(1.60)(0.47)^2 = (1/2)(32)A'^2, to get A' ≈ 0.11 m (accept 0.10–0.11 m; equivalently A/√(2))."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "New period 2π√(1.60/32) ≈ 1.4 s (accept 1.39–1.42 s; equivalently √(2) T)."
+                    }
+                  ],
+                  "answer": "New amplitude ≈ 0.11 m (0.106 m); new period ≈ 1.4 s",
+                  "steps": [
+                    "Momentum: (0.80)(0.95) = (1.60)v', so v' ≈ 0.47 m/s.",
+                    "Energy after the collision: (1/2)(1.60)(0.474)^2 ≈ 0.180 J = (1/2)(32)A'^2, so A' ≈ 0.106 m. Half the kinetic energy was lost in the inelastic collision.",
+                    "T' = 2π√(1.60/32) ≈ 1.4 s."
+                  ]
+                }
+              ],
+              "id": "p1-u7-fr1"
+            },
+            {
+              "prompt": "A small pendulum bob of mass 0.20 kg swings with a small amplitude. The graph shows the horizontal position x of the bob, measured from its lowest point, as a function of time t.",
+              "type": "TBR",
+              "topics": [
+                "P1.7.3",
+                "P1.7.4",
+                "P1.7.2"
+              ],
+              "figureIds": [
+                "p1-u7-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "On the grid, sketch the bob's horizontal velocity as a function of time from t = 0 to t = 2.8 s. Label the maximum velocity and the times when the velocity is zero.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Velocity starts at its positive maximum at t = 0, where the position graph is steepest and rising."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Velocity is zero at 0.35, 1.05, 1.75 and 2.45 s, at the peaks and troughs of the position graph."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Sinusoidal shape with period 1.4 s and maximum about 0.27 m/s (accept 0.25–0.29 m/s), labeled."
+                    }
+                  ],
+                  "answer": "A cosine-shaped curve starting at +0.27 m/s, zero at 0.35 s, −0.27 m/s at 0.70 s, zero at 1.05 s, and repeating with period 1.4 s.",
+                  "steps": [
+                    "Velocity is the slope of the position graph: largest at x = 0 and zero at the turning points.",
+                    "v_max = 2πA/T = 2π(0.060)/1.4 ≈ 0.27 m/s."
+                  ],
+                  "figureIds": [
+                    "p1-u7-f3"
+                  ],
+                  "answerFigureIds": [
+                    "p1-u7-f4"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Draw energy bar charts for the bob–Earth system showing the kinetic energy K and the gravitational potential energy U_g at t = 0 and at t = 0.35 s. Take U_g = 0 at the bob's lowest point.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "At t = 0 the bob is at its lowest point moving at maximum speed: all K, no U_g."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "At t = 0.35 s the bob is at a turning point: all U_g, no K."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "The total energy is the same in both charts."
+                    }
+                  ],
+                  "answer": "t = 0: K only. t = 0.35 s: U_g only. Equal totals.",
+                  "steps": [
+                    "x = 0 at t = 0 is the lowest point, where the speed is greatest.",
+                    "At t = 0.35 s the bob is at its maximum displacement and momentarily at rest."
+                  ],
+                  "answerFigureIds": [
+                    "p1-u7-f5"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Use the graph to calculate the length of the pendulum and the greatest height the bob rises above its lowest point.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Reads T = 1.4 s from the graph."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "L = gT^2/(4π^2) ≈ 0.49 m (accept 0.48–0.50 m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses mgh = (1/2)mv_max^2 with v_max from the graph (2πA/T ≈ 0.27 m/s) to get h ≈ 3.7 × 10^−3 m (accept 3.5–3.9 × 10^−3 m)."
+                    }
+                  ],
+                  "answer": "L ≈ 0.49 m; h ≈ 3.7 × 10^−3 m (3.7 mm)",
+                  "steps": [
+                    "T = 1.4 s, so L = (9.8)(1.4)^2/(4π^2) ≈ 0.49 m.",
+                    "v_max = 2π(0.060)/1.4 ≈ 0.269 m/s, so h = v_max^2/(2g) ≈ 0.0037 m."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "The pendulum is replaced by one 4 times as long, with the same bob, released to swing with the same amplitude of 0.060 m. Describe how the position–time graph and the bob's maximum speed would change, and justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Period doubles to 2.8 s because T is proportional to √(L)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "The amplitude of the graph stays 0.060 m, since it is set by the release."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Maximum speed halves, to about 0.13 m/s, because v_max = 2πA/T with the same A and twice the period."
+                    }
+                  ],
+                  "answer": "The graph keeps its 0.060 m amplitude but completes one cycle in 2.8 s instead of 1.4 s; the maximum speed halves, to about 0.13 m/s.",
+                  "steps": [
+                    "T = 2π√(L/g): 4 times the length gives twice the period.",
+                    "Same A, twice T: the slope of the position graph, and so the maximum speed, is half as large."
+                  ]
+                }
+              ],
+              "id": "p1-u7-fr2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

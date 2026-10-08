@@ -1,0 +1,553 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "unit-5",
+  "kind": "unit-test",
+  "unitId": "u5",
+  "title": "Unit 5 test: Torque and rotational dynamics",
+  "author": "p1-3",
+  "directions": "This practice test has two sections. Section I has 12 multiple-choice questions worth 1 point each; Section II has 2 free-response questions. Any calculator is allowed. Use g = 9.8 m/s^2, take counterclockwise as the positive sense of rotation unless a question says otherwise, and neglect air resistance. Record raw points from the key; they are practice tallies, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-u5-f1",
+      "alt": "Angular velocity–time graph of a spinning wheel with t from 0 to 8 s and ω from −6 to 14 rad/s: a single straight line falls from 12 rad/s at t = 0 through zero at t = 6 s to −4 rad/s at t = 8 s."
+    },
+    {
+      "id": "p1-u5-f2",
+      "alt": "Block A rests on a horizontal table. A string from A runs horizontally to a pulley at the table's edge that is a uniform disk of mass M and radius R, passes over it and hangs down to block B.",
+      "caption": "Blocks and a pulley with mass",
+      "notToScale": true
+    },
+    {
+      "id": "p1-u5-f3",
+      "alt": "Key: free-body diagrams. Block A: F_N up, weight down, tension T_A toward the pulley and friction f_k away from it. Block B: tension T_B up and a longer weight arrow down. Pulley: T_A pulling horizontally at the top of the rim, T_B pulling down at the side of the rim, and the axle force and the pulley's weight at the center.",
+      "caption": "Key: forces on the blocks and pulley"
+    },
+    {
+      "id": "p1-u5-f4",
+      "alt": "A uniform plank 4.0 m long rests on support A at its left end (x = 0) and support B at x = 3.0 m, so 1.0 m overhangs on the right. A painter stands at a distance x from the left end.",
+      "caption": "Plank and painter",
+      "notToScale": true
+    },
+    {
+      "id": "p1-u5-f5",
+      "alt": "Blank grid of 12 by 10 squares for sketching graphs, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-u5-f6",
+      "alt": "Key: extended force diagram of the plank: F_A upward at x = 0, F_B upward at x = 3.0 m, the plank's weight Mg downward at x = 2.0 m, and the painter's weight mg downward at distance x.",
+      "caption": "Key: forces on the plank"
+    },
+    {
+      "id": "p1-u5-f7",
+      "alt": "Key: graph of support force in newtons against painter position x in meters from 0 to 3.4 m. F_B rises in a straight line from about 131 N at x = 0 to about 686 N at x = 3.4 m; F_A falls in a straight line from about 555 N at x = 0 to zero at x = 3.4 m.",
+      "caption": "Key: support forces against painter position"
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 24,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet.",
+          "items": [
+            {
+              "id": "p1-u5-mc01",
+              "prompt": "A wheel starts from rest and turns with constant angular acceleration 4.0 rad/s^2 for 3.0 s. Through what angle does it turn?",
+              "choices": [
+                "12 rad",
+                "18 rad",
+                "36 rad",
+                "6.0 rad"
+              ],
+              "key": "B",
+              "rationale": "Δθ = ω_0t + (1/2)αt^2 = 0 + (1/2)(4.0)(3.0)^2 = 18 rad.",
+              "distractorNotes": {
+                "A": "αt = 12 rad/s is the final angular velocity, not the angle.",
+                "C": "Omits the factor 1/2.",
+                "D": "Uses (1/2)αt instead of (1/2)αt^2."
+              },
+              "topics": [
+                "P1.5.1"
+              ]
+            },
+            {
+              "id": "p1-u5-mc02",
+              "prompt": "The graph shows the angular velocity of a wheel. What is the wheel's angular displacement from t = 0 to t = 8 s?",
+              "figureIds": [
+                "p1-u5-f1"
+              ],
+              "choices": [
+                "40 rad",
+                "36 rad",
+                "48 rad",
+                "32 rad"
+              ],
+              "key": "D",
+              "rationale": "The signed area is (1/2)(6)(12) = +36 rad above the axis plus (1/2)(2)(−4) = −4 rad below it, so Δθ = 32 rad.",
+              "distractorNotes": {
+                "A": "Adds the two areas without signs, which gives the total angle turned.",
+                "B": "Counts only the area before the wheel reverses.",
+                "C": "Treats the whole graph as a triangle of height 12 rad/s and base 8 s."
+              },
+              "topics": [
+                "P1.5.1"
+              ]
+            },
+            {
+              "id": "p1-u5-mc03",
+              "prompt": "Points A and B are on a rigid disk that rotates about its center. Point B is twice as far from the center as point A. How do their angular velocities ω and linear speeds v compare?",
+              "choices": [
+                "ω_B = ω_A and v_B = 2v_A",
+                "ω_B = 2ω_A and v_B = 2v_A",
+                "ω_B = ω_A and v_B = v_A",
+                "ω_B = ω_A/2 and v_B = v_A"
+              ],
+              "key": "A",
+              "rationale": "Every point of a rigid disk shares the same ω, and v = rω, so doubling r doubles v.",
+              "distractorNotes": {
+                "B": "Angular velocity does not depend on the distance from the axis.",
+                "C": "Linear speed grows with r.",
+                "D": "Confuses the two quantities: ω is shared, v is not."
+              },
+              "topics": [
+                "P1.5.2"
+              ]
+            },
+            {
+              "id": "p1-u5-mc04",
+              "prompt": "A child sits 2.5 m from the axis of a merry-go-round that turns at a constant 0.40 revolution per second. What is the child's centripetal acceleration?",
+              "choices": [
+                "0.40 m/s^2",
+                "6.3 m/s^2",
+                "15.8 m/s^2",
+                "1.0 m/s^2"
+              ],
+              "key": "C",
+              "rationale": "ω = 0.40 × 2π ≈ 2.51 rad/s, so a_c = ω^2r = (2.51)^2(2.5) ≈ 15.8 m/s^2.",
+              "distractorNotes": {
+                "A": "Uses ω in rev/s, (0.40)^2(2.5); ω must be in rad/s.",
+                "B": "This is the speed v = rω in m/s, not the acceleration.",
+                "D": "Uses ω in rev/s and multiplies by r^2 instead of r: (0.40)^2(2.5)^2."
+              },
+              "topics": [
+                "P1.5.2"
+              ]
+            },
+            {
+              "id": "p1-u5-mc05",
+              "prompt": "A 40 N force acts on a door 0.30 m from the hinges, at 60° to the door's surface. What is the magnitude of the torque about the hinges?",
+              "choices": [
+                "10.4 N·m",
+                "12 N·m",
+                "6.0 N·m",
+                "0 N·m"
+              ],
+              "key": "A",
+              "rationale": "τ = rF sin θ = (0.30)(40) sin 60° ≈ 10.4 N·m; only the component perpendicular to the door turns it.",
+              "distractorNotes": {
+                "B": "Uses the whole force as if it were perpendicular.",
+                "C": "Uses cos 60° instead of sin 60°.",
+                "D": "The force is not along the door, so it does produce a torque."
+              },
+              "topics": [
+                "P1.5.3"
+              ]
+            },
+            {
+              "id": "p1-u5-mc06",
+              "prompt": "Four forces act, one at a time, on a bar that can turn about a pivot at its left end. Which force produces the torque of greatest magnitude about the pivot?\n| Force | Size | Distance from pivot | Angle to the bar |\n| --- | --- | --- | --- |\n| F_1 | 20 N | 1.0 m | 90° |\n| F_2 | 10 N | 2.5 m | 90° |\n| F_3 | 30 N | 0.50 m | 90° |\n| F_4 | 40 N | 2.0 m | 15° |",
+              "choices": [
+                "F_1",
+                "F_2",
+                "F_3",
+                "F_4"
+              ],
+              "key": "B",
+              "rationale": "τ = rF sin θ: F_1 gives 20 N·m, F_2 gives 25 N·m, F_3 gives 15 N·m and F_4 gives (2.0)(40) sin 15° ≈ 20.7 N·m, so F_2 is greatest.",
+              "distractorNotes": {
+                "A": "20 N·m is less than F_2's 25 N·m.",
+                "C": "The largest perpendicular force here has the shortest lever arm.",
+                "D": "The largest force acts nearly along the bar, so its lever arm is small."
+              },
+              "topics": [
+                "P1.5.3"
+              ]
+            },
+            {
+              "id": "p1-u5-mc07",
+              "prompt": "Three small objects are fixed to a light rod that rotates about a perpendicular axis through one end: 1.0 kg at 0.20 m, 2.0 kg at 0.50 m and 1.0 kg at 1.0 m from the axis. What is the rotational inertia about that axis?",
+              "choices": [
+                "2.2 kg·m^2",
+                "0.77 kg·m^2",
+                "1.54 kg·m^2",
+                "4.0 kg·m^2"
+              ],
+              "key": "C",
+              "rationale": "I = Σmr^2 = (1.0)(0.040) + (2.0)(0.25) + (1.0)(1.0) = 0.04 + 0.50 + 1.0 = 1.54 kg·m^2.",
+              "distractorNotes": {
+                "A": "Uses Σmr instead of Σmr^2.",
+                "B": "Halves the correct sum.",
+                "D": "Places all 4.0 kg at 1.0 m."
+              },
+              "topics": [
+                "P1.5.4"
+              ]
+            },
+            {
+              "id": "p1-u5-mc08",
+              "prompt": "A uniform rod has rotational inertia I_c about a perpendicular axis through its center. What is its rotational inertia about a parallel axis through one end?",
+              "choices": [
+                "2I_c",
+                "I_c/4",
+                "3I_c",
+                "4I_c"
+              ],
+              "key": "D",
+              "rationale": "I_c = (1/12)ML^2; by the parallel-axis theorem I_end = I_c + M(L/2)^2 = (1/12 + 3/12)ML^2 = (1/3)ML^2 = 4I_c.",
+              "distractorNotes": {
+                "A": "Doubles the distance instead of using the parallel-axis theorem.",
+                "B": "Moving the axis away from the center of mass increases I, not decreases it.",
+                "C": "Adds ML^2/6 instead of ML^2/4."
+              },
+              "topics": [
+                "P1.5.4"
+              ]
+            },
+            {
+              "id": "p1-u5-mc09",
+              "prompt": "A uniform plank 3.0 m long with a mass of 12 kg hangs horizontally from two vertical ropes, one at each end. A 30 kg box sits on the plank 1.0 m from its left end. What is the tension in the right rope?",
+              "choices": [
+                "157 N",
+                "255 N",
+                "206 N",
+                "98 N"
+              ],
+              "key": "A",
+              "rationale": "Torques about the left end: T_R(3.0) = (12)(9.8)(1.5) + (30)(9.8)(1.0) = 176.4 + 294 = 470.4 N·m, so T_R ≈ 157 N.",
+              "distractorNotes": {
+                "B": "This is the left rope's tension, which is larger because the box is nearer the left end.",
+                "C": "Splits the total weight equally between the ropes.",
+                "D": "Includes only the box's torque and ignores the plank's weight."
+              },
+              "topics": [
+                "P1.5.5"
+              ]
+            },
+            {
+              "id": "p1-u5-mc10",
+              "prompt": "A wheel turns at constant angular velocity while exactly two torques act on it. Which must be true?",
+              "choices": [
+                "The wheel must be at rest",
+                "Both torques must be zero",
+                "The two torques are equal in size and opposite in sense",
+                "The larger torque points in the direction of rotation"
+              ],
+              "key": "C",
+              "rationale": "Constant angular velocity means zero angular acceleration, so the net torque is zero: the two torques cancel.",
+              "distractorNotes": {
+                "A": "Zero net torque allows steady rotation as well as rest.",
+                "B": "Only their sum must be zero.",
+                "D": "A larger torque would produce an angular acceleration."
+              },
+              "topics": [
+                "P1.5.5"
+              ]
+            },
+            {
+              "id": "p1-u5-mc11",
+              "prompt": "A net torque of 12 N·m acts on a disk with rotational inertia 0.80 kg·m^2 that starts from rest. What is its angular velocity after 2.0 s?",
+              "choices": [
+                "15 rad/s",
+                "9.6 rad/s",
+                "60 rad/s",
+                "30 rad/s"
+              ],
+              "key": "D",
+              "rationale": "α = τ/I = 12/0.80 = 15 rad/s^2, so ω = αt = (15)(2.0) = 30 rad/s.",
+              "distractorNotes": {
+                "A": "This is the angular acceleration in rad/s^2.",
+                "B": "Multiplies τ by I instead of dividing.",
+                "C": "Uses ω = αt^2."
+              },
+              "topics": [
+                "P1.5.6"
+              ]
+            },
+            {
+              "id": "p1-u5-mc12",
+              "prompt": "A string wound around a pulley of radius R and rotational inertia I is pulled with a constant tangential force F. A constant friction torque of magnitude τ_f acts at the axle. What is the magnitude of the pulley's angular acceleration?",
+              "choices": [
+                "(F − τ_f)/I",
+                "(FR − τ_f)/I",
+                "FR/I",
+                "(FR + τ_f)/I"
+              ],
+              "key": "B",
+              "rationale": "The net torque is FR − τ_f, because friction opposes the rotation; then α = τ_net/I.",
+              "distractorNotes": {
+                "A": "Subtracts a torque from a force; F must be multiplied by its lever arm R.",
+                "C": "Ignores the friction torque.",
+                "D": "Friction opposes the rotation, so its torque subtracts."
+              },
+              "topics": [
+                "P1.5.6"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 36,
+          "calculator": "any",
+          "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; paper investigations do not replace the hands-on lab work that College Board's AP® Physics 1 course framework requires.",
+          "items": [
+            {
+              "prompt": "Block A (mass 3.0 kg) rests on a horizontal table, where the coefficient of kinetic friction is 0.20. A light string attached to A runs horizontally to a pulley at the table's edge, passes over it without slipping and hangs down to block B (mass 2.0 kg). The pulley is a uniform disk of mass 2.0 kg and radius 0.10 m turning on a frictionless axle. The blocks are released from rest and B moves down.",
+              "type": "MR",
+              "topics": [
+                "P1.5.6",
+                "P1.5.3",
+                "P1.5.2"
+              ],
+              "figureIds": [
+                "p1-u5-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Draw a free-body diagram for each block and an extended force diagram for the pulley, showing where each force on the pulley acts. Draw relative lengths reasonably.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Block A: normal force and weight (equal), tension toward the pulley and kinetic friction opposite it."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Block B: tension up and a longer weight arrow down."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Pulley: horizontal tension T_A acting at the top of the rim and vertical tension T_B acting at the side of the rim, drawn at the rim rather than the center, with any axle force at the center."
+                    }
+                  ],
+                  "answer": "A: F_N up, m_Ag down, T_A toward the pulley, f_k away from it. B: T_B up, m_Bg down (longer). Pulley: T_A and T_B pull along the string at the rim; the axle pushes at the center.",
+                  "steps": [
+                    "The tensions act where the string leaves the rim, so each has lever arm R about the axle."
+                  ],
+                  "answerFigureIds": [
+                    "p1-u5-f3"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the magnitude of the blocks' acceleration in terms of m_A, m_B, M, μ_k and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the second law for each block: T_A − μ_km_Ag = m_Aa and m_Bg − T_B = m_Ba."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the pulley's rotational second law, (T_B − T_A)R = (1/2)MR^2α, and uses a = Rα to get T_B − T_A = (1/2)Ma."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Combines the equations: a = (m_B − μ_km_A)g/(m_A + m_B + M/2)."
+                    }
+                  ],
+                  "answer": "a = (m_B − μ_km_A)g/(m_A + m_B + M/2)",
+                  "steps": [
+                    "Adding the three equations eliminates both tensions: m_Bg − μ_km_Ag = (m_A + m_B + M/2)a."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate the acceleration of the blocks and the tension in each part of the string.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "a ≈ 2.29 m/s^2 (accept 2.28–2.30 m/s^2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "T_A ≈ 12.7 N and T_B ≈ 15.0 N (accept ±0.1 N), with T_B > T_A."
+                    }
+                  ],
+                  "answer": "a ≈ 2.29 m/s^2; T_A ≈ 12.7 N; T_B ≈ 15.0 N",
+                  "steps": [
+                    "a = (2.0 − 0.20 × 3.0)(9.8)/(3.0 + 2.0 + 1.0) = 13.72/6.0 ≈ 2.29 m/s^2.",
+                    "T_A = 3.0(2.29) + 0.20(3.0)(9.8) ≈ 12.7 N; T_B = 2.0(9.8 − 2.29) ≈ 15.0 N; check: (T_B − T_A) = 2.3 N = (1/2)Ma."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "A student claims, \"If the pulley were replaced by a uniform disk with the same mass but twice the radius, the blocks would accelerate more slowly, because a bigger pulley is harder to turn.\" Evaluate the claim using your expression from part (b).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Notes that the pulley's rotational inertia increases by a factor of 4 but enters the acceleration only as I/R^2 = M/2, which is unchanged."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the acceleration is unchanged, so the claim is incorrect."
+                    }
+                  ],
+                  "answer": "Incorrect. The larger disk has four times the rotational inertia, but it also has twice the lever arm and needs half the angular acceleration for the same a. The pulley enters only as I/R^2 = M/2, so the acceleration is the same.",
+                  "steps": [
+                    "a = (m_B − μ_km_A)g/(m_A + m_B + I/R^2), and I/R^2 = (1/2)M for any uniform disk."
+                  ]
+                }
+              ],
+              "id": "p1-u5-fr1"
+            },
+            {
+              "prompt": "A uniform plank 4.0 m long with a mass of 20 kg rests on two supports: A at its left end (x = 0) and B at x = 3.0 m, so 1.0 m of the plank overhangs on the right. A 50 kg painter stands on the plank at a distance x from the left end.",
+              "type": "TBR",
+              "topics": [
+                "P1.5.5",
+                "P1.5.3"
+              ],
+              "figureIds": [
+                "p1-u5-f4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Draw an extended force diagram of the plank with the painter at a general position x, showing where each force acts.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Upward support forces F_A at x = 0 and F_B at x = 3.0 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Downward weight of the plank at its center, x = 2.0 m, and the painter's weight (the normal force from the painter) at x."
+                    }
+                  ],
+                  "answer": "F_A up at x = 0, F_B up at x = 3.0 m, Mg down at x = 2.0 m and mg down at x.",
+                  "steps": [
+                    "An extended force diagram places each force at its point of application so that torques can be found."
+                  ],
+                  "answerFigureIds": [
+                    "p1-u5-f6"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive expressions for F_A and F_B as functions of x.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes a torque equation about a stated axis, such as about A: F_B(3.0) = Mg(2.0) + mgx."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "F_B = (392 + 490x)/3.0 ≈ 131 + 163x (N, x in m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses ΣF_y = 0 to get F_A = 686 − F_B ≈ 555 − 163x."
+                    }
+                  ],
+                  "answer": "F_B ≈ 131 + 163x and F_A ≈ 555 − 163x, in newtons with x in meters.",
+                  "steps": [
+                    "About A: 3.0F_B = (20)(9.8)(2.0) + (50)(9.8)x = 392 + 490x.",
+                    "ΣF_y = 0: F_A + F_B = (70)(9.8) = 686 N."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the grid, sketch graphs of F_A and F_B against x, from x = 0 until the plank is about to tip. Label both graphs and the values at x = 0.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Both graphs are straight lines; F_B increases and F_A decreases with the same magnitude of slope, about 163 N/m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Intercepts at x = 0 are labeled about 131 N for F_B and about 555 N for F_A."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "F_A reaches zero, and the graphs end, at about x = 3.4 m, where F_B = 686 N."
+                    }
+                  ],
+                  "answer": "Two straight lines: F_B from about 131 N rising to 686 N, F_A from about 555 N falling to zero, both ending at x ≈ 3.4 m.",
+                  "steps": [
+                    "The slopes are ±490/3.0 ≈ ±163 N/m, and the two forces always add to 686 N."
+                  ],
+                  "figureIds": [
+                    "p1-u5-f5"
+                  ],
+                  "answerFigureIds": [
+                    "p1-u5-f7"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your graphs to determine how far from the left end the painter can stand before the plank begins to tip. Explain why your equations no longer describe the plank beyond that point.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "x ≈ 3.4 m, where the F_A graph reaches zero (accept 3.3–3.5 m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that support A can only push up, so F_A cannot become negative; beyond this point the net torque about B is not zero and the plank rotates about B."
+                    }
+                  ],
+                  "answer": "About 3.4 m from the left end. Beyond that the equations would require a negative (downward) force from support A, which a simple support cannot supply, so the plank tips about B.",
+                  "steps": [
+                    "F_A = 555 − 163x = 0 gives x ≈ 3.40 m."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "Suppose the plank were replaced by a heavier uniform plank of the same length on the same supports. Describe how the slopes and intercepts of both graphs, and the tipping position, would change, and explain why.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "The slopes are unchanged because they depend only on the painter's weight and the 3.0 m spacing of the supports, while both intercepts increase because the plank's weight adds to both support forces."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "The tipping position moves farther right (x = 3.0 m + 1.0 m × M/m), because a heavier plank supplies a larger counter-torque about B."
+                    }
+                  ],
+                  "answer": "Same slopes (±mg/3.0 m), higher intercepts for both lines, and a tipping point farther out, because the plank's larger weight 1.0 m left of B balances the painter farther past B.",
+                  "steps": [
+                    "About B at tipping: Mg(1.0) = mg(x − 3.0), so x = 3.0 + M/m; with M = 20 kg this is 3.4 m."
+                  ]
+                }
+              ],
+              "id": "p1-u5-fr2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

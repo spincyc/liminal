@@ -1,0 +1,549 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "unit-3",
+  "kind": "unit-test",
+  "unitId": "u3",
+  "title": "Unit 3 test: Work, energy, and power",
+  "author": "p1-2",
+  "directions": "This practice test has two sections. Section I has 12 multiple-choice questions worth 1 point each; Section II has 2 free-response questions. Any calculator is allowed. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise. Record raw points from the key; they are practice tallies, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-u3-f1",
+      "alt": "Graph of force F in newtons against position x in meters: a straight line from 12 N at x = 0 down through the x-axis at x = 4.0 m to −6 N at x = 6.0 m."
+    },
+    {
+      "id": "p1-u3-f2",
+      "alt": "Graph of potential energy U in joules against position x in meters: straight segments join (0, 5), (1, 1), (2, 3), (3, 0.5) and (4, 4)."
+    },
+    {
+      "id": "p1-u3-f3",
+      "alt": "Graph of the fan force F in newtons on the cart against position x in meters: +4.0 N from 0 to 3.0 m, 0 from 3.0 m to 5.0 m and −6.0 N from 5.0 m to 8.0 m."
+    },
+    {
+      "id": "p1-u3-f4",
+      "alt": "Blank energy bar chart with columns K_i (Initial), W (Work) and K_f (Final) and a vertical energy scale in joules from −10 J to 24 J with gridlines every 2 J."
+    },
+    {
+      "id": "p1-u3-f5",
+      "alt": "Key: energy bar chart with K_i = 9 J, W = −6 J (a bar below zero) and K_f = 3 J.",
+      "caption": "Key: energy bar chart for the cart"
+    },
+    {
+      "id": "p1-u3-f6",
+      "alt": "Blank grid of 12 by 10 squares for sketching a graph, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-u3-f7",
+      "alt": "Key: graph of the cart's kinetic energy K in joules against x in meters: a straight line from 9 J at x = 0 up to 21 J at x = 3.0 m, level at 21 J until x = 5.0 m, then a straight line down to 3 J at x = 8.0 m.",
+      "caption": "Key: kinetic energy of the cart"
+    },
+    {
+      "id": "p1-u3-f8",
+      "alt": "A block of mass m is pressed against a spring of constant k fixed to a wall on the left. The floor beneath the spring and to the right of it is frictionless up to the bottom of a rough incline at 30° to the horizontal."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 24,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet.",
+          "items": [
+            {
+              "id": "p1-u3-mc01",
+              "prompt": "Car A has mass m and speed 2v. Car B has mass 2m and speed v. What is the ratio of car A's kinetic energy to car B's?",
+              "choices": [
+                "1/2",
+                "1",
+                "2",
+                "4"
+              ],
+              "key": "C",
+              "rationale": "K_A = (1/2)m(2v)^2 = 2mv^2 and K_B = (1/2)(2m)v^2 = mv^2, so K_A/K_B = 2.",
+              "distractorNotes": {
+                "A": "Inverts the ratio.",
+                "B": "Treats mass and speed as equally important; speed is squared.",
+                "D": "Squares the speed ratio but ignores the mass ratio."
+              },
+              "topics": [
+                "P1.3.1"
+              ]
+            },
+            {
+              "id": "p1-u3-mc02",
+              "prompt": "A child pulls a wagon 10 m along level ground with a 50 N force directed 60° above the horizontal. How much work does the pull do on the wagon?",
+              "choices": [
+                "500 J",
+                "250 J",
+                "433 J",
+                "0 J"
+              ],
+              "key": "B",
+              "rationale": "W = Fd cos θ = (50 N)(10 m)cos 60° = 250 J.",
+              "distractorNotes": {
+                "A": "Ignores the angle.",
+                "C": "Uses sin 60° instead of cos 60°.",
+                "D": "Only the vertical part is perpendicular; the horizontal component still does work."
+              },
+              "topics": [
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-u3-mc03",
+              "prompt": "The graph shows the net force on an object as it moves along the x-axis. How much work does the net force do from x = 0 to x = 6.0 m?",
+              "figureIds": [
+                "p1-u3-f1"
+              ],
+              "choices": [
+                "30 J",
+                "24 J",
+                "36 J",
+                "18 J"
+              ],
+              "key": "D",
+              "rationale": "Signed area: (1/2)(4.0 m)(12 N) = 24 J above the axis, minus (1/2)(2.0 m)(6 N) = 6 J below it, giving 18 J.",
+              "distractorNotes": {
+                "A": "Adds the area below the axis instead of subtracting it.",
+                "B": "Counts only the area above the axis.",
+                "C": "Treats the whole region as a rectangle of height 6 N."
+              },
+              "topics": [
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-u3-mc04",
+              "prompt": "A 1.5 kg cart moving at 4.0 m/s has −9.0 J of net work done on it. What is its speed afterward?",
+              "choices": [
+                "1.4 m/s",
+                "2.0 m/s",
+                "3.5 m/s",
+                "0 m/s"
+              ],
+              "key": "B",
+              "rationale": "K_i = (1/2)(1.5)(4.0)^2 = 12 J, so K_f = 12 J − 9.0 J = 3.0 J and v = √(2 × 3.0/1.5) = 2.0 m/s.",
+              "distractorNotes": {
+                "A": "Leaves out the factor 2: √(3.0/1.5).",
+                "C": "Takes 9.0 J as the final kinetic energy.",
+                "D": "Negative work slows the cart but does not necessarily stop it."
+              },
+              "topics": [
+                "P1.3.1",
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-u3-mc05",
+              "prompt": "A spring stores 2.0 J when it is stretched a distance x from its natural length. How much energy does it store when stretched 2x?",
+              "choices": [
+                "4.0 J",
+                "8.0 J",
+                "16 J",
+                "2.0 J"
+              ],
+              "key": "B",
+              "rationale": "U_s = (1/2)kx^2, so doubling x multiplies the energy by 4: 8.0 J.",
+              "distractorNotes": {
+                "A": "Treats U_s as proportional to x.",
+                "C": "Squares the factor 4 again.",
+                "D": "The stored energy depends on the stretch."
+              },
+              "topics": [
+                "P1.3.3"
+              ]
+            },
+            {
+              "id": "p1-u3-mc06",
+              "prompt": "The graph shows the potential energy of a system as an object moves along the x-axis with no friction. The object's total mechanical energy is 4.5 J. At which position is the object's speed greatest?",
+              "figureIds": [
+                "p1-u3-f2"
+              ],
+              "choices": [
+                "x = 0",
+                "x = 1 m",
+                "x = 4 m",
+                "x = 3 m"
+              ],
+              "key": "D",
+              "rationale": "K = E − U is largest where U is smallest; U has its minimum, 0.5 J, at x = 3 m.",
+              "distractorNotes": {
+                "A": "U is 5 J there, more than the total energy, so the object cannot even reach x = 0.",
+                "B": "U = 1 J at x = 1 m is a local minimum but not the lowest.",
+                "C": "U is highest among these points, so the speed is smallest."
+              },
+              "topics": [
+                "P1.3.3",
+                "P1.3.4"
+              ]
+            },
+            {
+              "id": "p1-u3-mc07",
+              "prompt": "A block is released from rest at the top of a frictionless ramp 2.5 m high. What is its speed at the bottom?",
+              "choices": [
+                "4.9 m/s",
+                "7.0 m/s",
+                "49 m/s",
+                "3.5 m/s"
+              ],
+              "key": "B",
+              "rationale": "mgh = (1/2)mv^2, so v = √(2gh) = √(2 × 9.8 × 2.5) = 7.0 m/s.",
+              "distractorNotes": {
+                "A": "Leaves out the factor 2: √(gh).",
+                "C": "Forgets the square root.",
+                "D": "Halves the correct speed."
+              },
+              "topics": [
+                "P1.3.4"
+              ]
+            },
+            {
+              "id": "p1-u3-mc08",
+              "prompt": "A ball is thrown straight up. The system is the ball alone; Earth is not included. From release to the highest point, which statement correctly describes the system's energy?",
+              "choices": [
+                "The ball's gravitational potential energy increases and its kinetic energy decreases",
+                "The total energy of the system stays constant",
+                "Gravity does positive work and the kinetic energy increases",
+                "Gravity does negative work, the kinetic energy decreases, and there is no potential energy term"
+              ],
+              "key": "D",
+              "rationale": "Without Earth in the system there is no gravitational potential energy; gravity is external and its negative work reduces the ball's kinetic energy to zero at the top.",
+              "distractorNotes": {
+                "A": "Potential energy belongs to the ball–Earth system, not to the ball alone.",
+                "B": "External work by gravity changes the system's energy.",
+                "C": "Gravity points down while the ball moves up, so its work is negative."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-u3-mc09",
+              "prompt": "A 3.0 kg block slides 2.0 m across a rough level floor and slows from 5.0 m/s to 3.0 m/s. What is the coefficient of kinetic friction between the block and the floor?",
+              "choices": [
+                "0.41",
+                "0.82",
+                "0.20",
+                "0.27"
+              ],
+              "key": "A",
+              "rationale": "Energy converted: (1/2)(3.0)(25 − 9.0) = 24 J = μ_k mg d, so μ_k = 24/(3.0 × 9.8 × 2.0) ≈ 0.41.",
+              "distractorNotes": {
+                "B": "Leaves out the factor 1/2 in the kinetic energy.",
+                "C": "Uses the change in speed instead of the change in the square of speed.",
+                "D": "Divides by 3.0 m instead of 2.0 m of sliding distance."
+              },
+              "topics": [
+                "P1.3.4"
+              ]
+            },
+            {
+              "id": "p1-u3-mc10",
+              "prompt": "A pendulum bob passes through its lowest point at 3.0 m/s. Neglecting air resistance, how high above the lowest point does it rise?",
+              "choices": [
+                "0.46 m",
+                "0.92 m",
+                "0.15 m",
+                "0.31 m"
+              ],
+              "key": "A",
+              "rationale": "(1/2)mv^2 = mgh gives h = v^2/(2g) = 9.0/19.6 ≈ 0.46 m.",
+              "distractorNotes": {
+                "B": "Leaves out the factor 2: v^2/g.",
+                "C": "Uses v instead of v^2 and divides by 2g.",
+                "D": "Uses v/g."
+              },
+              "topics": [
+                "P1.3.4"
+              ]
+            },
+            {
+              "id": "p1-u3-mc11",
+              "prompt": "A motor lifts a 50 kg load straight up at a constant 0.80 m/s. What power does the motor deliver to the load?",
+              "choices": [
+                "392 W",
+                "40 W",
+                "490 W",
+                "613 W"
+              ],
+              "key": "A",
+              "rationale": "At constant speed the lifting force equals mg = 490 N, and P = Fv = (490 N)(0.80 m/s) = 392 W.",
+              "distractorNotes": {
+                "B": "Uses the mass instead of the weight.",
+                "C": "Gives the weight, a force, not the power.",
+                "D": "Divides the weight by the speed."
+              },
+              "topics": [
+                "P1.3.5"
+              ]
+            },
+            {
+              "id": "p1-u3-mc12",
+              "prompt": "Cars X and Y have the same mass and each speed up from rest to 20 m/s on a level road. Car X takes 5.0 s and car Y takes 10 s. Neglecting friction and drag, how does the average power delivered to car X compare with that delivered to car Y?",
+              "choices": [
+                "It is half as large",
+                "It is the same",
+                "It is twice as large",
+                "It is four times as large"
+              ],
+              "key": "C",
+              "rationale": "Both gain the same kinetic energy, and car X does it in half the time, so its average power is twice as large.",
+              "distractorNotes": {
+                "A": "Inverts the relation between power and time.",
+                "B": "Equal energy does not mean equal power when the times differ.",
+                "D": "Power depends on time, not on time squared."
+              },
+              "topics": [
+                "P1.3.5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 36,
+          "calculator": "any",
+          "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
+          "items": [
+            {
+              "id": "p1-u3-fr1",
+              "prompt": "A block of mass 0.40 kg is pressed against a spring (k = 250 N/m), compressing it 0.12 m, as shown. The floor under and beyond the spring is frictionless. The block is released, leaves the spring, and slides up a rough incline that makes 30° with the horizontal. The coefficients of friction between the block and the incline are μ_k = 0.20 and μ_s = 0.30.",
+              "type": "MR",
+              "topics": [
+                "P1.3.4",
+                "P1.3.3",
+                "P1.3.2"
+              ],
+              "figureIds": [
+                "p1-u3-f8"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Calculate the speed of the block as it leaves the spring.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets (1/2)kx^2 = (1/2)mv^2, with no friction on the level floor."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v = 3.0 m/s (accept 2.9–3.1 m/s)."
+                    }
+                  ],
+                  "answer": "3.0 m/s",
+                  "steps": [
+                    "(1/2)(250 N/m)(0.12 m)^2 = 1.8 J = (1/2)(0.40 kg)v^2, so v = √(9.0) = 3.0 m/s."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the distance d that the block slides up the incline before stopping, in terms of its speed v at the bottom of the incline, θ, μ_k and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes an energy statement for the incline: (1/2)mv^2 = mgd sin θ + μ_k mg cos θ d (or an equivalent force–kinematics approach)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the normal force mg cos θ for the friction force on the incline."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "d = v^2 / [2g(sin θ + μ_k cos θ)]."
+                    }
+                  ],
+                  "answer": "d = v^2 / [2g(sin θ + μ_k cos θ)]",
+                  "steps": [
+                    "The kinetic energy at the bottom becomes gravitational potential energy (height d sin θ) and internal energy (friction μ_k mg cos θ over the distance d).",
+                    "The mass cancels."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate d.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Substitutes v = 3.0 m/s, θ = 30° and μ_k = 0.20 into the expression from part (b)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "d ≈ 0.68 m (accept 0.66–0.70 m)."
+                    }
+                  ],
+                  "answer": "About 0.68 m",
+                  "steps": [
+                    "d = 9.0 / [2(9.8)(0.500 + 0.173)] = 9.0/13.2 ≈ 0.68 m."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Determine whether the block slides back down the incline after it stops. If it does, calculate its speed when it returns to the bottom of the incline.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Compares mg sin 30° with the maximum static friction μ_s mg cos 30° (or tan 30° ≈ 0.58 with μ_s = 0.30) and concludes that the block slides back."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Energy for the trip down: (1/2)mv^2 = mgd sin θ − μ_k mg cos θ d."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v ≈ 2.1 m/s (accept 2.0–2.2 m/s)."
+                    }
+                  ],
+                  "answer": "Yes, because tan 30° ≈ 0.58 is greater than μ_s = 0.30; it returns to the bottom at about 2.1 m/s.",
+                  "steps": [
+                    "Down the incline, friction points up the slope: v^2 = 2gd(sin θ − μ_k cos θ) = 2(9.8)(0.682)(0.500 − 0.173) ≈ 4.37 m^2/s^2.",
+                    "v ≈ 2.1 m/s, less than 3.0 m/s because friction converted energy on both trips."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-u3-fr2",
+              "prompt": "A 2.0 kg cart moves along a level, frictionless track. At x = 0 it moves in the +x direction at 3.0 m/s. A fan mounted on the cart exerts a horizontal force on it that depends on the cart's position, as shown in the graph.",
+              "type": "TBR",
+              "topics": [
+                "P1.3.2",
+                "P1.3.1",
+                "P1.3.4"
+              ],
+              "figureIds": [
+                "p1-u3-f3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Taking the cart alone as the system, complete the energy bar chart for the motion from x = 0 to x = 8.0 m. Draw the bars to scale.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Initial kinetic energy bar at 9 J."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Work bar of −6 J (12 J from 0 to 3.0 m and −18 J from 5.0 m to 8.0 m), drawn below zero."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Final kinetic energy bar at 3 J, consistent with K_i + W = K_f."
+                    }
+                  ],
+                  "answer": "K_i = 9 J; W = +12 J − 18 J = −6 J; K_f = 3 J.",
+                  "steps": [
+                    "K_i = (1/2)(2.0)(3.0)^2 = 9 J; work is the signed area under the F–x graph."
+                  ],
+                  "figureIds": [
+                    "p1-u3-f4"
+                  ],
+                  "answerFigureIds": [
+                    "p1-u3-f5"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On the grid, sketch the cart's kinetic energy as a function of x from 0 to 8.0 m. Label the values at x = 0, 3.0 m, 5.0 m and 8.0 m.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Straight line rising from 9 J to 21 J between x = 0 and 3.0 m (slope 4.0 N)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Horizontal segment at 21 J from 3.0 m to 5.0 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Straight line falling from 21 J to 3 J between 5.0 m and 8.0 m (slope −6.0 N)."
+                    }
+                  ],
+                  "answer": "K rises linearly from 9 J to 21 J, stays at 21 J, then falls linearly to 3 J at 8.0 m.",
+                  "steps": [
+                    "The slope of K against x equals the net force, which is constant on each interval."
+                  ],
+                  "figureIds": [
+                    "p1-u3-f6"
+                  ],
+                  "answerFigureIds": [
+                    "p1-u3-f7"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate the cart's speed at x = 4.0 m and at x = 8.0 m.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses K = 21 J at x = 4.0 m and K = 3 J at x = 8.0 m from the work done."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v = √(21) ≈ 4.6 m/s at 4.0 m (accept 4.5–4.7 m/s)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v = √(3.0) ≈ 1.7 m/s at 8.0 m (accept 1.7–1.8 m/s)."
+                    }
+                  ],
+                  "answer": "About 4.6 m/s at 4.0 m and 1.7 m/s at 8.0 m",
+                  "steps": [
+                    "v = √(2K/m) = √(K) for m = 2.0 kg: √(21) ≈ 4.58 m/s and √(3) ≈ 1.73 m/s."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "A student claims, \"If the cart started at x = 0 with a speed of only 1.0 m/s, it would still reach x = 8.0 m, because the fan pushes it forward for the first 3.0 m.\" Use your representations to evaluate the claim.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the new kinetic energy at x = 5.0 m: 1.0 J + 12 J = 13 J."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Compares with the 18 J that the fan removes between 5.0 m and 8.0 m (or finds the stopping point 13 J / 6.0 N ≈ 2.2 m past 5.0 m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes the claim is incorrect: the cart stops at about x = 7.2 m and moves back."
+                    }
+                  ],
+                  "answer": "Incorrect. The cart would have 13 J at x = 5.0 m, but the fan removes 6.0 J per meter after that, so it stops after about 2.2 m, at x ≈ 7.2 m.",
+                  "steps": [
+                    "K_i = (1/2)(2.0)(1.0)^2 = 1.0 J; the bar chart's work from 0 to 5.0 m is +12 J.",
+                    "13 J / 6.0 N ≈ 2.17 m, so the K–x line reaches zero at x ≈ 7.2 m, before 8.0 m."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

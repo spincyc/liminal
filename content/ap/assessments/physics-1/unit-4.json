@@ -1,0 +1,502 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "unit-4",
+  "kind": "unit-test",
+  "unitId": "u4",
+  "title": "Unit 4 test: Linear momentum",
+  "author": "p1-2",
+  "directions": "This practice test has two sections. Section I has 12 multiple-choice questions worth 1 point each; Section II has 2 free-response questions. Any calculator is allowed. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise. Record raw points from the key; they are practice tallies, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-u4-f1",
+      "alt": "Graph of the force F in newtons on a ball against time t in milliseconds: a triangle rising in a straight line from 0 at t = 0 to 600 N at t = 5 ms and falling back to 0 at t = 10 ms."
+    },
+    {
+      "id": "p1-u4-f2",
+      "alt": "Graph of a cart's momentum p in kg·m/s against time t in seconds: a straight line from 1 kg·m/s at t = 0 to 11 kg·m/s at t = 4 s."
+    },
+    {
+      "id": "p1-u4-f3",
+      "alt": "Two carts on a level track: cart A, moving toward cart B with speed v_i, and cart B at rest, labeled mass unknown. A motion sensor sits at the left end of the track; the carts have sticky bumpers."
+    },
+    {
+      "id": "p1-u4-f4",
+      "alt": "Blank grid of 12 by 10 squares for plotting, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-u4-f5",
+      "alt": "Key: graph of v_f in m/s against v_i in m/s with five points close to a straight line through the origin; the best-fit line is labeled slope ≈ 0.40.",
+      "caption": "Key: linearized collision data"
+    },
+    {
+      "id": "p1-u4-f6",
+      "alt": "Block A of mass m slides with speed v_0 on a frictionless surface toward block B of mass 2m, which is at rest."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 24,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet.",
+          "items": [
+            {
+              "id": "p1-u4-mc01",
+              "prompt": "Object X has mass 2m and speed v. Object Y has mass m and speed 3v. Which statement is correct?",
+              "choices": [
+                "Y has the greater momentum and the greater kinetic energy",
+                "X has the greater momentum, and Y has the greater kinetic energy",
+                "They have equal momenta, and Y has the greater kinetic energy",
+                "X has the greater momentum and the greater kinetic energy"
+              ],
+              "key": "A",
+              "rationale": "p_X = 2mv and p_Y = 3mv; K_X = mv^2 and K_Y = (1/2)m(9v^2) = 4.5mv^2. Y is greater in both.",
+              "distractorNotes": {
+                "B": "Doubling the mass does less than tripling the speed, for momentum too.",
+                "C": "2mv and 3mv are not equal.",
+                "D": "Mass enters K linearly and speed enters squared."
+              },
+              "topics": [
+                "P1.4.1"
+              ]
+            },
+            {
+              "id": "p1-u4-mc02",
+              "prompt": "A 2.0 kg cart moves at +3.0 m/s and a 4.0 kg cart moves at −2.0 m/s on the same track. What is the total momentum of the two-cart system?",
+              "choices": [
+                "+14 kg·m/s",
+                "+2.0 kg·m/s",
+                "−2.0 kg·m/s",
+                "0"
+              ],
+              "key": "C",
+              "rationale": "p = (2.0)(+3.0) + (4.0)(−2.0) = 6.0 − 8.0 = −2.0 kg·m/s.",
+              "distractorNotes": {
+                "A": "Adds magnitudes, ignoring direction.",
+                "B": "Correct size with the wrong sign.",
+                "D": "Assumes the momenta cancel; they do not."
+              },
+              "topics": [
+                "P1.4.1"
+              ]
+            },
+            {
+              "id": "p1-u4-mc03",
+              "prompt": "The graph shows the force exerted on a 0.15 kg ball, initially at rest, by a kicking machine. What is the ball's speed just after the kick?",
+              "figureIds": [
+                "p1-u4-f1"
+              ],
+              "choices": [
+                "40 m/s",
+                "20 m/s",
+                "0.45 m/s",
+                "4.0 m/s"
+              ],
+              "key": "B",
+              "rationale": "The impulse is the triangle's area, (1/2)(0.010 s)(600 N) = 3.0 N·s, so v = 3.0/0.15 = 20 m/s.",
+              "distractorNotes": {
+                "A": "Uses a rectangle instead of a triangle.",
+                "C": "Multiplies the impulse by the mass instead of dividing.",
+                "D": "Reads milliseconds as tenths of a millisecond."
+              },
+              "topics": [
+                "P1.4.2"
+              ]
+            },
+            {
+              "id": "p1-u4-mc04",
+              "prompt": "A 0.50 kg ball hits a wall at 6.0 m/s and rebounds along the same line at 4.0 m/s. What is the magnitude of the impulse the wall exerts on the ball?",
+              "choices": [
+                "1.0 N·s",
+                "5.0 N·s",
+                "3.0 N·s",
+                "2.5 N·s"
+              ],
+              "key": "B",
+              "rationale": "Taking the rebound direction as positive, Δp = (0.50)(4.0) − (0.50)(−6.0) = 5.0 N·s.",
+              "distractorNotes": {
+                "A": "Subtracts speeds, ignoring the reversal.",
+                "C": "Uses only the incoming momentum.",
+                "D": "Uses the average of the two speeds."
+              },
+              "topics": [
+                "P1.4.2"
+              ]
+            },
+            {
+              "id": "p1-u4-mc05",
+              "prompt": "A gymnast lands from the same height on a thick mat or on a hard floor, coming to rest each time. Why is the mat safer?",
+              "choices": [
+                "The mat reduces the gymnast's change in momentum",
+                "The mat reduces the impulse on the gymnast",
+                "The mat reduces the gymnast's speed before landing",
+                "The mat increases the stopping time, so the average force is smaller"
+              ],
+              "key": "D",
+              "rationale": "The change in momentum (and so the impulse) is the same in both cases; spreading it over a longer time reduces F_avg = Δp/Δt.",
+              "distractorNotes": {
+                "A": "The gymnast goes from the same speed to rest either way.",
+                "B": "Impulse equals the change in momentum, which is unchanged.",
+                "C": "The landing speed depends only on the fall height."
+              },
+              "topics": [
+                "P1.4.2"
+              ]
+            },
+            {
+              "id": "p1-u4-mc06",
+              "prompt": "The graph shows the momentum of a cart moving in a straight line. What is the net force on the cart?",
+              "figureIds": [
+                "p1-u4-f2"
+              ],
+              "choices": [
+                "2.5 N",
+                "11 N",
+                "2.75 N",
+                "10 N"
+              ],
+              "key": "A",
+              "rationale": "The net force is the slope of the momentum–time graph: (11 − 1) kg·m/s / 4 s = 2.5 N.",
+              "distractorNotes": {
+                "B": "Reads the final momentum as the force.",
+                "C": "Divides the final momentum by the time, ignoring the initial momentum.",
+                "D": "Gives the change in momentum, not its rate."
+              },
+              "topics": [
+                "P1.4.2"
+              ]
+            },
+            {
+              "id": "p1-u4-mc07",
+              "prompt": "A 400 kg cannon on frictionless wheels, initially at rest, fires a 5.0 kg ball horizontally at 120 m/s. What is the cannon's recoil speed?",
+              "choices": [
+                "0 m/s",
+                "3.0 m/s",
+                "24 m/s",
+                "1.5 m/s"
+              ],
+              "key": "D",
+              "rationale": "Momentum starts at zero: (5.0)(120) = (400)v, so v = 1.5 m/s.",
+              "distractorNotes": {
+                "A": "A heavy cannon still recoils; total momentum must stay zero.",
+                "B": "Doubles the correct value.",
+                "C": "Divides the ball's momentum by the ball's mass."
+              },
+              "topics": [
+                "P1.4.3"
+              ]
+            },
+            {
+              "id": "p1-u4-mc08",
+              "prompt": "A ball falls freely toward the ground. For which system is the total momentum constant while the ball falls?",
+              "choices": [
+                "The ball alone",
+                "Earth alone",
+                "No system, because gravity acts",
+                "The ball and Earth together"
+              ],
+              "key": "D",
+              "rationale": "Gravity is internal to the ball–Earth system, and the two pulls are a third-law pair, so that system's momentum is constant.",
+              "distractorNotes": {
+                "A": "Earth's pull is an external force on the ball alone, and its momentum increases.",
+                "B": "The ball's pull is an external force on Earth alone.",
+                "C": "Internal forces cannot change a system's total momentum."
+              },
+              "topics": [
+                "P1.4.3"
+              ]
+            },
+            {
+              "id": "p1-u4-mc09",
+              "prompt": "A projectile explodes into two fragments at the top of its flight. Neglecting air resistance, what is the path of the center of mass of the fragments after the explosion, until the first fragment lands?",
+              "choices": [
+                "It drops straight down",
+                "It stops at the explosion point",
+                "It continues along the projectile's original parabolic path",
+                "It moves toward the heavier fragment's landing point in a straight line"
+              ],
+              "key": "C",
+              "rationale": "The explosion forces are internal, and gravity is the only external force, so the center of mass keeps moving as the projectile would have.",
+              "distractorNotes": {
+                "A": "The horizontal momentum of the system is unchanged by the explosion.",
+                "B": "Internal forces cannot stop the center of mass.",
+                "D": "The center of mass still accelerates downward under gravity, so its path is a parabola."
+              },
+              "topics": [
+                "P1.4.3"
+              ]
+            },
+            {
+              "id": "p1-u4-mc10",
+              "prompt": "A 2.0 kg cart moving at 6.0 m/s collides with a 1.0 kg cart at rest, and the carts stick together. How much kinetic energy is converted to other forms?",
+              "choices": [
+                "24 J",
+                "0 J",
+                "12 J",
+                "36 J"
+              ],
+              "key": "C",
+              "rationale": "v = (2.0)(6.0)/3.0 = 4.0 m/s; K goes from (1/2)(2.0)(36) = 36 J to (1/2)(3.0)(16) = 24 J, so 12 J is converted.",
+              "distractorNotes": {
+                "A": "Gives the final kinetic energy.",
+                "B": "Momentum is conserved, but kinetic energy is not in a sticking collision.",
+                "D": "Gives the initial kinetic energy."
+              },
+              "topics": [
+                "P1.4.4"
+              ]
+            },
+            {
+              "id": "p1-u4-mc11",
+              "prompt": "Puck A slides on frictionless ice and collides head-on and elastically with identical puck B, which is at rest. What happens immediately after the collision?",
+              "choices": [
+                "Both pucks move forward at half of A's original speed",
+                "A stops, and B moves off with A's original velocity",
+                "A rebounds with its original speed, and B stays at rest",
+                "Both pucks stop"
+              ],
+              "key": "B",
+              "rationale": "Equal masses in a head-on elastic collision exchange velocities; this conserves both momentum and kinetic energy.",
+              "distractorNotes": {
+                "A": "That outcome conserves momentum but loses half the kinetic energy (a sticking collision).",
+                "C": "The total momentum would reverse from +mv to −mv, so momentum would not be conserved.",
+                "D": "Total momentum cannot drop to zero."
+              },
+              "topics": [
+                "P1.4.4"
+              ]
+            },
+            {
+              "id": "p1-u4-mc12",
+              "prompt": "A 1.0 kg glider moving at 4.0 m/s collides with a 1.0 kg glider at rest. Afterward they move in the original direction at 1.0 m/s and 3.0 m/s. How is the collision best classified?",
+              "choices": [
+                "Elastic",
+                "Perfectly inelastic",
+                "Inelastic, but not perfectly inelastic",
+                "Impossible, because momentum is not conserved"
+              ],
+              "key": "C",
+              "rationale": "Momentum: 4.0 = 1.0 + 3.0, conserved. Kinetic energy: 8.0 J before and 0.5 J + 4.5 J = 5.0 J after, so some is lost, but the gliders do not stick.",
+              "distractorNotes": {
+                "A": "Kinetic energy drops from 8.0 J to 5.0 J.",
+                "B": "The gliders move at different speeds, so they did not stick.",
+                "D": "Momentum is 4.0 kg·m/s before and after."
+              },
+              "topics": [
+                "P1.4.4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 36,
+          "calculator": "any",
+          "directions": "Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units. Questions about experiments use supplied data; they do not replace hands-on lab work.",
+          "items": [
+            {
+              "id": "p1-u4-fr1",
+              "prompt": "A student wants to find the mass of cart B, which is unknown. Cart A (mass 0.50 kg) is pushed toward cart B, which is at rest on a level track; the carts have sticky bumpers and move together after the collision. The student repeats the collision with different speeds v_i of cart A and records the common speed v_f just after each collision.\n| v_i (m/s) | 0.30 | 0.45 | 0.60 | 0.75 | 0.90 |\n| --- | --- | --- | --- | --- | --- |\n| v_f (m/s) | 0.13 | 0.18 | 0.23 | 0.31 | 0.36 |",
+              "type": "EDA",
+              "topics": [
+                "P1.4.3",
+                "P1.4.4"
+              ],
+              "figureIds": [
+                "p1-u4-f3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe a procedure for measuring v_i and v_f for one trial, including the equipment used and one step to reduce experimental uncertainty.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Measures velocities with a motion sensor (or photogates, or video with a scale) just before and just after the collision."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Keeps the track level (checking that a cart at rest does not drift) so that friction and gravity do not change speeds near the collision."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Repeats each speed several times and averages, or measures speeds close to the collision point."
+                    }
+                  ],
+                  "answer": "Use the motion sensor to record cart A's velocity just before the collision and the pair's velocity just after; level the track first so a cart left at rest does not drift; repeat each trial several times and average.",
+                  "steps": [
+                    "Measuring close to the collision limits the effect of friction on the speeds."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Using conservation of momentum, show what graph of the data should be a straight line, and write an expression for its slope in terms of m_A and m_B.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "m_A v_i = (m_A + m_B)v_f."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Graph v_f against v_i: a straight line through the origin with slope m_A/(m_A + m_B)."
+                    }
+                  ],
+                  "answer": "m_A v_i = (m_A + m_B)v_f, so v_f = [m_A/(m_A + m_B)]v_i. A graph of v_f against v_i is a line through the origin with slope m_A/(m_A + m_B).",
+                  "steps": [
+                    "The track is level and the collision brief, so momentum is conserved across it."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the grid, plot v_f against v_i and draw a best-fit line.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Axes labeled with quantities and units, with scales that use most of the grid, and all five points plotted correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "One straight best-fit line passing near the origin."
+                    }
+                  ],
+                  "answer": "The five points lie close to a straight line through the origin.",
+                  "steps": [
+                    "Plot v_i on the horizontal axis and v_f on the vertical axis."
+                  ],
+                  "figureIds": [
+                    "p1-u4-f4"
+                  ],
+                  "answerFigureIds": [
+                    "p1-u4-f5"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use the slope of your line to calculate the mass of cart B.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Slope from two points on the line (not data points unless they lie on it), about 0.40 (accept 0.38–0.42)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Sets slope = m_A/(m_A + m_B) and solves m_B = m_A(1/slope − 1)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "m_B ≈ 0.74 kg (accept 0.69–0.82 kg)."
+                    }
+                  ],
+                  "answer": "Slope ≈ 0.40, so m_B = 0.50(1/0.40 − 1) ≈ 0.74 kg (about 0.75 kg).",
+                  "steps": [
+                    "Using (0, 0) and (0.90 m/s, 0.362 m/s) on the line, the slope is about 0.40.",
+                    "m_B = 0.50 kg × (2.49 − 1) ≈ 0.74 kg."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-u4-fr2",
+              "prompt": "Block A, of mass m, slides with speed v_0 across a frictionless surface toward block B, of mass 2m, which is at rest, as shown. Consider two possible collisions: in case 1 the blocks stick together, and in case 2 the collision is elastic.",
+              "type": "QQT",
+              "topics": [
+                "P1.4.4",
+                "P1.4.3",
+                "P1.4.2"
+              ],
+              "figureIds": [
+                "p1-u4-f6"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "For case 1, derive an expression for the blocks' common speed in terms of v_0, and show that two-thirds of the original kinetic energy is converted to other forms.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Momentum: mv_0 = 3mV, so V = v_0/3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Kinetic energy after: (1/2)(3m)(v_0/3)^2 = (1/6)mv_0^2, one-third of (1/2)mv_0^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the remaining two-thirds of the kinetic energy is converted (to internal energy)."
+                    }
+                  ],
+                  "answer": "V = v_0/3; K_after = (1/6)mv_0^2 = (1/3)K_before, so 2/3 is converted.",
+                  "steps": [
+                    "K_before = (1/2)mv_0^2; K_after/K_before = (1/6)/(1/2) = 1/3."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "A student claims, \"Block B moves faster after the collision in case 1, because in case 1 block A pushes on B for the whole collision and stays with it.\" Evaluate the claim. In case 2, block A moves back at v_0/3 after the collision.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses momentum conservation for case 2: mv_0 = m(−v_0/3) + 2mv_B."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds v_B = 2v_0/3 in case 2, compared with v_0/3 in case 1."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes the claim is incorrect: B moves twice as fast in the elastic case, because A rebounds and B must carry more than the total momentum."
+                    }
+                  ],
+                  "answer": "Incorrect. In case 2, mv_0 = −mv_0/3 + 2mv_B gives v_B = 2v_0/3, twice B's speed of v_0/3 in case 1. Because A bounces back, B must carry more forward momentum than the system's total.",
+                  "steps": [
+                    "Check case 2: relative velocity reverses, v_B − v_A = 2v_0/3 − (−v_0/3) = v_0.",
+                    "Kinetic energy is conserved in case 2: (1/2)m(v_0/3)^2 + (1/2)(2m)(2v_0/3)^2 = (1/2)mv_0^2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "In which case does block A exert the greater impulse on block B? Explain without calculating a force.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Impulse on B equals B's change in momentum: 2mv_0/3 in case 1 and 4mv_0/3 in case 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes case 2 (the elastic collision) gives twice the impulse, because B ends with twice the momentum."
+                    }
+                  ],
+                  "answer": "Case 2: the impulse on B equals its change in momentum, 4mv_0/3, twice the 2mv_0/3 of case 1.",
+                  "steps": [
+                    "B starts at rest in both cases, so Δp_B = 2m × (final speed of B)."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
