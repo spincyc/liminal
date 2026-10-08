@@ -2,6 +2,8 @@
 
 Review date 2026-10-07. Reviewer: an independent review agent that did not write the items. Everything outside this record and the reviewer's scratch directory was read-only. This is a sampled agent review. It is not psychometric validation, it used no student data, and it is not human editorial approval.
 
+**Current status (re-review, 2026-10-08):** `probes.json` SHA-256 `e87c32f8d140217be85a2f35a0170c9dcfb7a4295b18dd5be3a2596dbad9476f`. No blocking finding remains, and every original blocking and should-fix finding is resolved. Six item-level cue fixes and one stale intro are open; each has validated replacement wording, and none changes a key. `review.status` can move to `independently-reviewed`, preferably in the same change that applies those seven edits. See [Re-review 2026-10-08](#re-review-2026-10-08). The original review follows unchanged.
+
 ## Summary
 
 | | |
@@ -123,3 +125,75 @@ The text load rises from Grades 1–2 to 3, then dips at 4 and 5a and rises agai
 - During the review, `content/reading-daily/3.json` had uncommitted changes from another lane. At the final check both Grade 3 probe nights still bound (their hashes matched), and `probes.json` was still `fb515295…`. The Grade 3 percentiles were computed against that working-tree file.
 - Not checked: whether passages match their sources (the daily-reading reviews cover that), whether content notes are adequate, the page in a browser, and timing or pace thresholds.
 - Reviewer files are in `.scratch/reading-level-review/`: the guesses and answers recorded before the keys were revealed, the view, compare and check scripts, and a snapshot of the 24-probe file. Like all scratch files, they are removed by `wt tidy`.
+
+## Re-review 2026-10-08
+
+This re-review covers the author's repair in commits `38e321f` and `874feb4` (the second commit rebinds the Emerson night after an apparatus fix). The file reviewed is `content/reading-level/probes.json` with SHA-256 `e87c32f8d140217be85a2f35a0170c9dcfb7a4295b18dd5be3a2596dbad9476f` (24 probes, 92 items). I froze a copy in `.scratch/reading-level-review/rereview/` and worked from it. The reviewer, ownership and limits are the same as in the original review.
+
+### Method
+
+1. **Change detection without keys.** I compared stems and options with the reviewed snapshot (`view2.js changes`). 71 items are new or changed: 32 on 8 new nights (3-a, 4-a, 4-b, 5-a, 6-a, 6-b, 10-b, 12-a) and 39 on old nights. 21 items are identical. 19 intros changed, and 10 probes now carry their own content note.
+2. **Passage-hidden pass first, on exactly the student's screen.** The screen shows the neutral "Passage" label, the probe intro and the effective content note, then the stems and options, with no title, author or passage. I recorded guesses before reading any new passage or key (`rereview/01-hidden-new-nights.md`, `rereview/02-hidden-old-nights.md`).
+3. **Blind pass.** I recorded an answer and a textual justification for all 71 new or changed items before viewing a key (`rereview/03-blind.md`).
+4. **Reveal and checks.** I revealed keys and rationales, checked every quoted phrase against its passage (all found), and checked key length and position, absolutes and hedges. I ran `check-reading-level.js --cues` (4 flags, judged below) and the tests (31/31 pass), and checked readability percentiles against the current grade files (`gradedist2.js`).
+5. **Proposed fixes validated.** All proposed wording below passes `validateProbes` in memory, and the cue report is clean on the fixed items (`rereview/proposals2.js`). `probes.json` was not edited.
+
+Contamination: on the 16 old nights I remembered the passages from round 1, and I knew the keys of the 21 unchanged items. Three changed items (2-b-3, 7-a-4, 9-b-3) reproduce my own round-1 proposals with small edits. Those 3 are excluded from the blind counts. Because I wrote them, their review is not independent; the author's adoption is the only second reading they have had.
+
+### Results
+
+| | Result |
+| --- | --- |
+| Hash binding | 24/24 nights resolve and hashes match, including the rebound Emerson night. |
+| Blind agreement | **71/71** new or changed items, 68 of them genuinely blind. The 21 unchanged items keep their round-1 agreement. Running total **92/92**. No wrong key, and no item with two defensible options. |
+| Passage hidden, as I guessed | 71/71 new or changed items matched (45/45 high confidence, 20/20 medium, 3/3 low, plus 3 of my own proposals). The 32 new-night items were genuinely blind; the other 39 were contaminated by passage memory. |
+| Passage hidden, judged for a student | Of all 92 items, judged from the student's screen alone: **39 need the passage** for a grade-level student (29 that I could answer only from adult knowledge of the text or topic, and 10 not guessable at all). **20** are vocabulary items: a student who already knows the word can answer, but every one now has a trap. **6** are figurative items that quote the figure in the stem (1-a-3, 5-b-4, 7-b-4, 8-a-1, 11-a-3, 11-b-2); they test interpretation, not the passage. **27** carry a transferable cue: **6 strong** (should-fix below) and 21 mild (two options weak, or a hint from the note or another item). In round 1, 38 items had screen, cross-item or elimination cues (figurative items excluded), and the title, intros and notes stated answers outright. |
+| Key cues | The key is strictly longest in 7 of 92 items (largest ratio 1.07), confirming the author's figure. Key positions are A 24, B 22, C 22, D 24. Absolutes appear in 5 keys and 2 distractors; hedges in 4 keys and 12 distractors. |
+| `--cues` | 4 flags, all negligible. 4-b-4's "hedge" is "May" in "May fly", a case-insensitive false positive in the tool. 1-b-1, 9-b-4 and 12-b-2 share only topic words. |
+
+### Original findings: disposition
+
+| Original finding | Status |
+| --- | --- |
+| rl-3-b-1 (blocking) | **Resolved.** The title is hidden during the quiz and the intro no longer lists the parts. The item is replaced by "prominent", which has an everyday-sense trap. |
+| rl-7-a-4 (blocking) | **Resolved.** The probe's content note no longer states the jungle claim, and the item is replaced (my proposal, lightly edited). |
+| rl-2-b-3, rl-9-b-3/4 | **Resolved** with my proposals. The 9-b-4 distractor was also revised. |
+| rl-4-a-4, rl-5-a-4, rl-6-b-1 | **Resolved** by moving the probes to new nights. The new 5-a-4 has its own cue (S5). |
+| X1 (answerable without passage) | **Largely resolved.** The title is hidden, intros orient, probes carry student-facing notes, all 20 vocabulary items have traps, absolutes have moved into keys, and the guessing-rate sentence is reworded in the doc and in `STRONG_SHARE`. The passage-hidden pass is now an authoring and review rule. Six strong cues remain (S1–S6). |
+| X2 (discussion overlap) | **Resolved** by the coordinator's decision recorded in `docs/reading-level.md`: no copied wording; the same target is allowed. |
+| X3 (ordering inversions) | **Resolved.** Grade 3a is now at the 24th percentile of its grade, Grade 4 at the 47th and 40th, Grade 6 at the 31st and 38th, and Grade 7 at the 53rd and 43rd. Paired forms are within 1.34× of each other's length. |
+| Notes | 10-a-3 fixed; skill tags fixed; cross-item cues reduced to 2 mild; 3-b-3 and 8-b-3 replaced; intros orient; top-level locator keys paraphrased; Hellens glossed; adult notes replaced; repeat limit documented. The Grade 10 forms now come from weeks 5 and 34. |
+
+### Remaining findings
+
+There is no blocking finding. Every proposed replacement passes the validator, and none changes a key.
+
+| ID | Item | Severity | Finding | Proposed fix (exact wording) |
+| --- | --- | --- | --- | --- |
+| S1 | rl-10-b-1 | should-fix | The probe's own content note, "Jim learns that some old friends have died", points to the key ("Many people and places he knew were gone"). The night's own note is generic ("references to death and loss"), so a warning is still needed. | Replace the item (literal; key B). **Stem** "Why, according to Ambrosch, might Leo have run off into the pasture?" **A** He had been sent ahead to open the lane gate · **B** He is sorry Jim is leaving, or jealous of him · **C** He wanted to go hunting up on the Niobrara · **D** He meant to wave goodbye from the windmill. **Rationale** "His brother says, “Maybe he’s sorry to have you go, and maybe he’s jealous.”" The note can then stay as it is. |
+| S2 | rl-3-b-4 (unchanged) | should-fix | The stem's word "hiding" leaves B ("…give it away") as the only option about hiding. | **Stem** "Why does the leopard frog at the bottom of the aquarium let its eyelids fall over its eyes?" Keep the options. A ("falling asleep") becomes a real trap. |
+| S3 | rl-2-a-2 | should-fix | The stem quotes the defining clause: "People called him Doctor Goldsmith, “for he had studied to be a physician.”" | **Stem** "Goldsmith “had studied to be a phy-si-cian.” What is a physician?" Keep the options. B ("A writer of books") is a nearby-detail trap. |
+| S4 | rl-6-a-4 | should-fix | "Three times" in the stem gives away the key ("repeating a thing does not make it true"). | **Stem** "How does the narrator comment on the Catherine Wheel’s view that “Romance is dead”?" Keep the options. |
+| S5 | rl-5-a-4 | should-fix | The stem ("deciding to carry the key whenever she goes out") contradicts B ("given up") and C ("give the key back"), which leaves A against D. | Keep A and D (the key). **B** It shows she means to try it in the closed rooms of the house · **C** It shows she wants to make up a game of her own with it. Both are nearby details from the passage. |
+| S6 | rl-9-a-4 (unchanged) | should-fix | B ("Hugh helped him earn the money") contradicts the quote in the stem, and C and D are weak. | Keep key A. **B** To repeat the reasons Hugh gave for taking his wages · **C** To show that the shipyard paid its calkers unfairly · **D** To admit that he still owed Master Hugh some money. |
+| S7 | rl-11-a | should-fix (trivial) | After the apparatus fix the passage has no bracketed numbers. The probe intro ("Bracketed numbers are reference marks…") and the night's note ("retains… bracketed reference numbers") are now false. | **Intro** "In this section of an 1837 address, Ralph Waldo Emerson discusses the scholar’s education." **contentNote** "This 1837 address uses nineteenth-century gendered language." The Grade 11 library lane should also correct the night's note. |
+| N1 | mild cues | note | 21 items have mild cues; none needs a fix on its own. Mild screen hints from intros or notes: 2-a-3 (both money options), 7-a-2 (note: the dog's death), 7-b-2 (illness in intro and note), 8-a-4 (note: "forgotten people"), 10-a-4. Mild cross-item cues: 2-a-1 (item 3's options mention money), 5-b-3 (item 4 mentions the heron), 4-a-1 (4-a-3's "on the stick"). Mild elimination: 1-b-1, 1-b-3, 4-a-4, 4-b-4, 5-a-1, 5-b-1, 6-b-1, 6-b-4, 7-a-4, 8-b-1, 8-b-2, 10-a-2, 10-b-4, 11-b-3. | Revisit these when the items are next edited. |
+| N2 | rl-7-a note | note | The probe note drops the night's "threats" (the doc says to keep any warning the night's note gives). | Optional: "The elephant kills a dog in this passage, though the boy tries to stop him; there are threats." |
+| N3 | rl-6-b passage | note | The moth table is one paragraph block with 59 tabs. `white-space: pre-line` collapses the tabs, so rows render as lines without columns. Item 2 is also answerable from the prose ("four very wet and dark nights"). | Check legibility in a browser, or give tables their own block type (library and app). |
+| N4 | forms | note | Grade 2's forms come from weeks 3 and 18, both in the first half of the year (missed in round 1). Lengths still zigzag across levels: Grade 6 ≈ 910 words, Grades 7–9 459–690, Grade 10 ≈ 980, Grade 11 547–679, Grade 12 ≈ 1,085. Grade 9 (16th vs 87th percentile) and Grade 10 (76th vs 42nd) forms still differ in text demand. | Accept and record, or pick other nights when convenient. |
+| N5 | library text | note | These slips persist in probe nights: "when be ceases" (reading-9-w11-d3), "obects" (reading-12-w14-d2, a new probe night), "A written\nWord" (reading-11-w28-d5), "(Fig. 1)/(Fig. 2)" not shown (reading-8-w06-d2). | For the library lanes. |
+| N6 | tool | note | `cueReport`'s hedge pattern is case-insensitive, so it matches "May" in "May fly". | Match `may` case-sensitively, or skip a capitalized "May". |
+
+### Difficulty ordering and comparability
+
+Text demand now rises without an obvious inversion between neighbouring levels. Grades 3–7 probe nights sit between the 24th and 53rd percentile of their own grades. Reading them confirms it: Ingelow's Mopsa dialogue (Grade 3a) is about as demanding as Morley's Grade 4 dialogues, so these two levels are level rather than inverted, and Wilde and Wallace at Grade 6 read at about the level of Mukerji and Zitkala-Ša at Grade 7. Item demand is more even than in round 1: the top-level keys are paraphrased, and the new 12-a items ask about the role of the finger example and the concession trap. All 12 pairs of forms are within 1.34× in length, and every grade except 2 draws one form from each half of the year. The differences left in text demand within a grade (N4) are what the doc calls "comparable, not equated".
+
+### Recommendation on `review.status`
+
+No blocking finding remains, so `review.status` can move from `unreviewed` to `independently-reviewed`, with its note citing this record. I recommend applying S1–S7 in the same change. They are wording-only, validated, and leave every key unchanged. Because I wrote that wording, as I did for 2-b-3, 7-a-4 and 9-b-3, the author's check is the only second reading those items get.
+
+### Re-review limits
+
+- One agent reviewer. There is no field data, no item statistics, and no human approval.
+- The passage-hidden figures are my guesses plus a judgment of what transfers to students. 29 of my hits came from adult knowledge of canonical texts.
+- I did not run the page in a browser (N3), did not check passage fidelity, and did not check the grade files beyond the probe nights.
