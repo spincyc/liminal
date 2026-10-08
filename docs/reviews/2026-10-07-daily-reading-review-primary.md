@@ -2,15 +2,15 @@
 
 Date: 2026-10-07. Reviewer: an independent agent lane (`final-review-primary`), separate from the grade authors. It edited no corpus file. Earlier primary-band checkpoint scratch (`review-primary/`) is prior history only; every result below comes from fresh checks of the final files.
 
-Contract reviewed against: `docs/daily-reading.md`. Grades 5 and 3 were reviewed at SHA-256 `547df876b128f36cd6733356c8b285188cf853b2531b812b239ae4654e8b5cb3`, which includes the 2026-10-07 owner directive against censoring exemplary literature. Grade 4 and the Grade 3 delta check used `c3ec5a9c4c3bf3f026999a2c3e811b7c1d993f87d80da19c4fc0b943baceef42`. That version adds the owner's decision (commit 34963bf) that there is no minimum share of documentary or essay prose, so the genre-share findings below are closed by that decision.
+Contract reviewed against: `docs/daily-reading.md`. Grades 5 and 3 were reviewed at SHA-256 `547df876b128f36cd6733356c8b285188cf853b2531b812b239ae4654e8b5cb3`, which includes the 2026-10-07 owner directive against censoring exemplary literature. Grade 4 and the Grade 3 delta check used `c3ec5a9c4c3bf3f026999a2c3e811b7c1d993f87d80da19c4fc0b943baceef42`. That version adds the owner's decision (commit 34963bf) that there is no minimum share of documentary or essay prose, so the genre-share findings below are closed by that decision. The 2026-10-08 delta reviews (end of this report) used `806d2fc9e9e79ece3b297fbf477e2c87c5cad53d08fb090ca27aef45b511d1b2`. It adds the printed-packet style (commit 1af3c69) and the rule that misprints stay as printed while letters lost to failed type may be supplied (commit 785a1ed).
 
 ## Status by grade
 
 | Grade | File and SHA-256 reviewed | Status |
 | --- | --- | --- |
-| 3 | `content/reading-daily/3.json`. Full review at `2586aef3c46d5f5c706a94ca0037faefb14d775098d0a757b9a430e7fd1f8452`; repair (commit 1f23b11) delta-checked at `ec4e467ef52c533ba4cc5dac75f0e34ea4885b262b3d94281cdb7f36c17a7571` | **Reviewed; repair verified**. Most findings are resolved; the few notes that remain are listed in the delta check. |
-| 4 | `content/reading-daily/4.json`, `8e3b05925246a9eb4b09c1165e061b4e4743bf7d7e73d96ecc7c73e6e2f1a477` (commit f6d9518; unchanged from start to finish) | **Reviewed**: full sampled scope; should-fix findings below |
-| 5 | `content/reading-daily/5.json`, `b359f458a15b0b2cf88b91967add35a61ebc8d63ac4eb4b7d043395430599caa` (unchanged from start to finish) | **Reviewed**: full sampled scope; should-fix findings below |
+| 3 | `content/reading-daily/3.json`. Full review at `2586aef3c46d5f5c706a94ca0037faefb14d775098d0a757b9a430e7fd1f8452`; repair (commit 1f23b11) delta-checked at `ec4e467ef52c533ba4cc5dac75f0e34ea4885b262b3d94281cdb7f36c17a7571` | **Reviewed; repair verified**. Most findings are resolved; the few notes that remain are listed in the delta check. Final notes (commit 4b85a2c) confirmed at `76a2527b…` on 2026-10-08. |
+| 4 | `content/reading-daily/4.json`, `8e3b05925246a9eb4b09c1165e061b4e4743bf7d7e73d96ecc7c73e6e2f1a477` (commit f6d9518; unchanged from start to finish) | **Reviewed**: full sampled scope; should-fix findings below. Repair delta-reviewed on 2026-10-08 at `f35625c0…`: most findings resolved, but the *Little Men* collation introduced 7 spacing errors (new should-fix). |
+| 5 | `content/reading-daily/5.json`, `b359f458a15b0b2cf88b91967add35a61ebc8d63ac4eb4b7d043395430599caa` (unchanged from start to finish) | **Reviewed**: full sampled scope; should-fix findings below. Repair (commit 111fd8b) delta-reviewed on 2026-10-08 at `a11913eb…`: every should-fix finding resolved. |
 
 No grade has a blocking finding. Grades 4 and 5 have should-fix findings in two areas: text errors inherited from unvalidated (proofread level 3) transcriptions, and excerpt boundaries that avoid difficult material (the owner's censorship directive). Grade 3's repair resolved its equivalents. All three grades were reviewed by the same method, set out for Grade 5 below. Looking-Glass (Grade 3) was collated against the University of Florida 1899 scan OCR; Pyle (Grade 4) against three Scribner-plate scan OCRs.
 
@@ -263,3 +263,134 @@ No Grade 4 note tells readers to skip, soften or substitute words (w11-d4 is the
 ## Limits
 
 This is sampled independent agent review: mechanical checks over every selection and 12 blind cold reads per grade. It is not human editorial approval, empirical timing, a measured reading level, or legal advice. Print collation covered the dated witnesses named above and 16 sampled Wikisource pages, not every level-3 page; the Lamb tales were sampled on only 2 pages. Jackson punctuation was not collated independently; only words were. For Grade 3, Looking-Glass was collated against UF OCR at word level, and punctuation was checked only where pattern scans flagged anomalies. Nesbit, Montgomery, Barbauld and the other Grade 3 sources were checked against their declared transcriptions, not against separate print witnesses. The Grade 3 repair was delta-checked: mechanical checks in full, five Looking-Glass corrections on page images, and three cold reads. For Grade 4, Pyle was collated against three OCR witnesses, with page images for pp. 26, 166 and 168 only. *Little Men* was collated against a second 1871 copy's OCR plus three page images, not in full. Heidi, Dodge, Kingsley, Seton, Nesbit, Longfellow, Hemans and Morley were checked against their declared Gutenberg transcriptions only. The Harper PDF was downloaded over TLS anchored on the server's AIA-fetched InCommon intermediate, because the emSign root is absent from the local trust store; its content was cross-checked against its own page images. Retained working evidence (downloads, scan crops, answers, scripts) is transient scratch in `.scratch/daily_reading_corpus/final-review-primary/`.
+
+## Delta review (2026-10-08)
+
+On 2026-10-08 the same reviewer lane, using the same brief, checked the repaired Grades 5 and 4 and the final Grade 3 notes against the findings above. That record above is unchanged. Contract: `806d2fc9…` (commit 785a1ed). For each grade the check covered: snapshot and hash, validator, recomputed hashes and evidence, a field diff against the reviewed snapshot, fidelity re-runs, a pattern scan of every note, context and prompt, timing and novelty. For Grades 4 and 5 it also covered blind cold reads of new or restored nights, witness collation, and page-image checks of the corrections.
+
+### Grade 5 delta review (`a11913eb…`, commit 111fd8b)
+
+SHA-256 `a11913ebbc6532de998573ba15ea34f4b659b576e3b9923c97a0fe36ee7fa686`, unchanged throughout the check.
+
+| Check | Result |
+| --- | --- |
+| Validator and structure | Passes. 180 nights, 555 questions, 12 sources. All 21 Lamb nights carry `author: "Mary Lamb"`. |
+| Hashes; evidence | 180/180; 588/588 literal |
+| Fidelity to declared sources | Every night matches its source after declared normalization, except the documented corrections toward print. Naidu has 5 (w03-d4, w03-d5, w12-d4); *Good Hours* 3 (w36-d3); Alcott "mantel-piece", "merriment." and "I remain," are restored. Nesbit has 2 corrections against the dated Macmillan 1905 printing: w10-d3 "he" and w20-d3 "make", both confirmed in that copy's OCR. In Lamb, every difference from the Wikisource transcription is one of the 98 logged corrections. |
+| Lamb against print | The 21 Lamb nights were collated independently, word by word, against the Internet Archive OCR of the 1908 scan (talesfromshakesp1908lamb). Of 233 difference spans, all are OCR noise, running heads, illustration captions or the Æ ligature; none is a word variant. Page images of pp. 20, 75, 196, 228 and 230 match the corrected text, including the SONG heading on p. 228. |
+| Contract rule of 785a1ed | Alcott "weet" (w16-d1): on p. 68 of the 1896 scan the word starts its line flush, with no blank, so it is a misprint. Keeping it as printed is correct. |
+| Notes | 0 notes tell readers to skip, soften or substitute words; 0 moralizing disclaimers remain |
+| Timing | Prose 42–107 words per minute; totals 16–20 minutes; no night exceeds the thresholds |
+| Novelty | 0 overlaps of 30 words or more |
+| Blind cold reads | 5 restored nights, read before notes and evidence: w25-d3, w28-d2, w17-d3, w30-d4 and w32-d4. All 20 answers agree with the notes in substance. Disclosure: I had seen the source text of the Pip and well passages while mapping gaps. |
+
+| Finding (2026-10-07) | Status |
+| --- | --- |
+| w35-d5 SONG heading | **Resolved** (heading block; p. 228 image) |
+| Alcott w12-d3, w15-d5, w17-d1, and the `edition` claim | **Resolved**: Gutenberg readings restored; `edition` rewritten |
+| Naidu w03-d5, w03-d4, w12-d4; collate all poems | **Resolved**: all 8 poems first selected were collated; 5 corrections. Cradle-Song and Alabaster were dropped, so Naidu now has 6 nights. |
+| *Good Hours* w36-d3 | **Resolved** |
+| w31-d1 Lamb errors and the note admitting them | **Resolved**; the night has no content note now |
+| Lamb, all nights | **Resolved**: 98 corrections; my independent collation and image sample found none remaining |
+| Nesbit w20-d3 "male" (and w10-d3 "ha") | **Resolved** against Macmillan 1905 |
+| Moralizing content notes (about 30) | **Resolved** |
+| Progression, weeks 31–36 | **Resolved**: the stage now reads "Return to shared reading for older prose", with 17 of 30 nights shared |
+| Lamb authorship | **Resolved**: Mary Lamb credited, with Lamb's 1807 letter cited in `edition` |
+| Nesbit edition date | **Resolved**: "copyright 1906; printing undated" |
+| Prompt quotation style | **Resolved**: quoted phrases now have quotation marks |
+| Muir sequence | **Remains (note)**: order unchanged; contexts label the excerpts |
+| Genre range | Closed (owner decision) |
+
+| Censorship-directive finding | Status |
+| --- | --- |
+| *Secret Garden* w07-d3 → w07-d4 | **Resolved**: w07-d3 runs to the chapter end, continuous with w07-d4 |
+| *Secret Garden* w05-d4 | **Resolved**: begins "During that week of sunshine" |
+| Perseus | **Resolved**: w25-d3 has the slaying of Medusa, her sisters' pursuit and Atlas. Andromeda and Polydectes remain absent (note). |
+| Argonauts | **Resolved**: w27-d3 → w28-d2 runs continuously through the bulls, the dragon's-teeth warriors, Medeia and the fleece. The Phaeacian nights were dropped. Part V, with Medeia's crime, is not included, and the w28-d2 context says so. That is a part boundary, so it is not avoidance. |
+| Theseus | **Resolved**: w28-d5 includes Periphetes the club-bearer |
+| *As You Like It* wrestling | **Resolved**: w32-d4 has the match, and w32-d3 → w32-d5 are linked as continuous |
+| Pip | **Resolved**: w17-d3 |
+| Muir's well | **Resolved**: w30-d4. The near-drowning (ch. IV) and the floggings (ch. I) remain absent (note). |
+| *Secret Garden* opening; *Little Women* ch. VII–VIII; *Willows* ch. III | **Remain (notes)**, unchanged |
+
+New findings, both minor:
+
+| Night | Severity | Finding |
+| --- | --- | --- |
+| w17-d3 context | note | Says Mother "stayed in her room after the girls spoiled her breakfast". In chapter XI she has already said she will stay in her room all day before the tray goes up, and she quietly eats her own provisions. Reword to keep the order of events. |
+| w25-d3 | note | "wrapped the head in the goat-skin" has no antecedent. Part II, where Athené gives it, is omitted, and the context names only the hat, the shield and Herpé. Add the goat-skin to the context. |
+
+Could not check: there was only one OCR witness for Lamb. Punctuation was compared on the five page images and nowhere else. The Nesbit Macmillan readings were checked in OCR, not on page images. The cold reads were five agent reads, not child readers.
+
+### Grade 4 delta review (`f35625c0…`)
+
+SHA-256 `f35625c00576cdd50ff95b466b23f5393deb3387487d3f94526c537c662973c2`, unchanged throughout the check. Compared with `8e3b0592…`, 39 nights and 2 source records changed.
+
+| Check | Result |
+| --- | --- |
+| Validator and structure | Passes. 180 nights, 545 questions (w09-d5 and w25-d5 now have four), 12 sources. |
+| Hashes; evidence | 180/180; 545/545 literal |
+| Fidelity to declared sources | 120 of the 148 Gutenberg and Wikisource nights match exactly. The rest differ only by declared changes: Larcom's 1889-scan corrections, Nesbit's asterism, and the *Little Men* corrections, which were checked against print below. The restored Nesbit night w09-d5 matches Gutenberg 17314 exactly. |
+| Pyle | Three-witness collation re-run (UC 1883, Harvard 1883, NYPL 1892). It finds 32 spans that disagree with all three OCRs, all of the known side-note interleaving kind. The w03-d1 stray paragraph is gone. w18-d4 restores "ot", which `edition` now declares, together with "drank;", as printed misprints. That matches the contract rule of 785a1ed. |
+| *Little Men* against print | Re-collated against the two 1871 OCRs (LC littlemenlifeatp01alco, UC littlemenlifeatp00alcoiala). Page images of 14 pages: 6, 9, 18, 41, 47, 67, 69, 70, 71, 72, 74, 82, 86 and 87. The corrections seen on them match print, for example "laughing,—", "flying off; but", "just round the corner", "half wild", "all sorts of things", "can I really", "This was taking them" and "Uncle Fritz in his persuasive way". Both OCRs also support the corrections sampled off those pages, such as "These are Tommy Bang's", "looked out clean clothes" and "didn't have enough". The retained misprints "lowed" and "coriopsis" follow the 785a1ed rule. Defects are listed below. |
+| Notes | The 17 notes named in the review were trimmed, and the w11-d4 "without asking children to repeat it" clause is gone. 5 residual phrases are listed below. |
+| Timing | Unchanged ceiling of 128 words per minute (w15-d4). The restored w09-d5 runs at 121 and w25-d5 at 110; totals are 15–20 minutes. |
+| Novelty | 0 overlaps |
+| Blind cold reads | 5 nights read before notes and evidence: w09-d5, w25-d5, w11-d4, w17-d3 and w03-d1. All 17 answers agree in substance. Disclosure: I had cold-read the first ~600 words of w25-d5 on 2026-10-07, and saw its ending on the page images. I had seen w11-d4 and w17-d3 diff fragments, and w09-d5's context and content note, before reading. |
+
+| Finding (2026-10-07) | Status |
+| --- | --- |
+| w03-d1 stray `"` paragraph | **Resolved** |
+| w18-d4 "ot" | **Resolved**: printed "ot" restored and declared |
+| w11-d3 "just round the corner … close by, to fill" | **Resolved** |
+| w25-d4 "The were" | **Resolved** ("They were") |
+| *Little Men*, collate all 20 nights | **Partly resolved**. The log lists 179 corrections, and those sampled are right. But the collation ignored word spaces, so it introduced 7 spacing errors and missed 5 word-division differences (new findings 1–2). |
+| Moralizing content notes (17 named) | **Resolved for the 17 named**. Five residual phrases follow the same pattern (new finding 3); four were present at the original review, which did not name them. |
+| w11-d4 clause | **Resolved**. The new wording is slightly ambiguous (new finding 4). |
+| Timing | **Remains (note)**, unchanged |
+| Heidi arc | **Remains (note)**, unchanged |
+
+| Censorship-directive finding | Status |
+| --- | --- |
+| w09-d4 → w09-d5 servants scene | **Resolved**: w09-d5 now begins "'Thank goodness, we're home!'", continuous with w09-d4 (transcript paragraphs 93–137, 138–182) to the chapter end. Martha's slur is verbatim, and the content note gives history only. |
+| w25-d5 chapter V ending | **Resolved**: Kit's theft, the burn ("I am glad to say …"), the coal-bin and the supper run to "a sunbeam." q4 asks readers to weigh the narrator's joke. |
+| *Five Children* chapter III | **Remains (note)**, unchanged |
+
+New findings:
+
+| # | Night | Severity | Finding | Evidence |
+| --- | --- | --- | --- | --- |
+| 1 | w11-d1, w11-d5, w17-d4, w25-d1, w25-d2, w25-d4 (*Little Men*) | should-fix | 7 spacing errors introduced by the repair: "Tommy Bangs;come up" (print "Bangs; come up"), "order prevailed;and nothing" ("prevailed; and"), "not halfa s fond" ("half as fond"), "little Rob,w ho kept" ("Rob, who kept"), "\"OAunty! please" ("O Aunty! please"), "\"OAunty, it's" ("O Aunty, it's") and "this one time,and after" ("time, and after"). The cause is in `.scratch/daily_reading_corpus/4/final/alcott-1871-corrections.json`: its diffs ignore spaces. For example, "Oh aunty" → "O Aunty" was applied as replacing "ha" with "A". | Page images pp. 18, 47, 67, 72 and 82; p. 4 from both 1871 OCRs. Fix the spaces, then re-collate with spaces significant. |
+| 2 | w17-d2, w17-d3, w25-d2, w25-d4, w25-d5 (*Little Men*) | should-fix (minor) | 5 word-division readings differ from print, missed because spaces were ignored, although `edition` says printed word division is adopted: "anything" (print "any thing", p. 35), "some time" ("sometime", p. 41), "anything she liked" ("any thing", p. 71), "anyone might envy" ("any one", p. 81) and, in the restored text, "another bowlful of batter" ("bowl full", p. 87; Wikisource's reading). Also w25-d1 has "today" where p. 69 hyphenates "to-/day" at a line end; the other nights print "to-day" (consistency note). | Images pp. 41, 71 and 87; pp. 35 and 81 from both OCRs |
+| 3 | w14-d4, w34-d3 content notes; w03-d1 content note; w01-d4 q1 and w09-d5 q2 facilitator notes | note (residual pattern) | "Those recollections are not suggested activities"; "that historical practice is not suggested here. Observe wildlife without feeding or disturbing it"; "readers can discuss authority without endorsing threats"; "Do not treat threatened punishment as necessary care"; "without treating any real appearance as ugly" | Trim to history or the author's purpose, as with the 17 already trimmed |
+| 4 | w11-d4 content note | note | "uses a dated racial term, then the usual name, to identify a kind of melody" reads as if the text used two terms; it uses one ("negro melody", lower-case as printed) | Reword as "the usual name at the time" |
+
+Could not check: images for most *Little Men* pages. Elsewhere the check relied on two 1871 OCRs agreeing, which cannot settle hyphens at line ends (for example "rolling-/pin" on p. 74). Pyle nights the repair left unchanged were not re-imaged. The cold reads were five agent reads.
+
+### Grade 3 final notes (`76a2527b…`, commit 4b85a2c)
+
+SHA-256 `76a2527bafe14de25a988518b4bc592df3af7c2cdf1b0516674e23141ae75fdd`. Compared with `ec4e467e…`, no text block changed. Four notes and one source `edition` changed.
+
+| Check | Result |
+| --- | --- |
+| Validator; hashes; evidence | Passes; 180/180; 557/557 literal (546 questions) |
+| Fidelity | Unchanged from the delta check: no text changed |
+| Novelty | 0 overlaps |
+| Contract rule of 785a1ed | The 1899 misprints "I afraid I'm" and "borogroves" are retained as printed; no letters are supplied |
+
+| Remaining item from the delta check | Status |
+| --- | --- |
+| w11-d2 "not recommended ways to treat children" | **Resolved**: now "An adult shakes Lionel and calls him naughty." |
+| w13-d1 "not medical advice" | **Resolved**: now states the events only |
+| w13-d4 "not an activity to copy" | **Resolved**: now states the events only |
+| w19-d2 "not as local gardening advice" | **Resolved**: the context now describes Comstock's contrast and the cover crop |
+| Roberts "II." / "III." numerals | **Resolved**: declared in `edition` for w07-d2 and w07-d4 |
+| Kehonka egg-taking passage | Remains, accepted (note) |
+| Fauntleroy chapter VII → XIV | Remains (note) |
+| 11 authors | Remains (note) |
+
+A pattern scan of every Grade 3 note, context and prompt finds no wording that tells readers to skip, soften or substitute, and no remaining safety disclaimers. Grade 3 is confirmed.
+
+### Limits of the delta review
+
+This is still sampled independent agent review. It is not human editorial approval, empirical timing, a measured reading level, or legal advice. Page images covered 5 Lamb pages, 14 *Little Men* pages and one *Little Women* page. Elsewhere it relied on OCR agreement and the authors' logs. Scratch evidence for these checks is in `.scratch/daily_reading_corpus/final-review-primary/`: `g5d2-*`, `g4d2-*`, `g4d2dl/`, `g5d2dl/`, and the two collation scripts `g4d2_lmglue.py` and `g4d2_spacediff.py`. Every network request used the User-Agent `LiminalCurriculumResearch/1.0`.
