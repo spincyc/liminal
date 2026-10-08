@@ -3,13 +3,14 @@
 `tools/reading-packet.js` typesets nightly readings from `content/reading-daily/`
 as printable packets. The owner approved the research-paper style on 2026-10-07
 and refined its print layout on 2026-10-08: Liminal and grade/week/day metadata
-appear only in a quiet footer, with clearer breaks before questions and endnotes.
+appear only in a quiet footer, with a clear break before questions and a compact
+source note that does not overwhelm shorter readings.
 `test/reading-packet.test.js` pins the style. Change it only deliberately,
 updating this page and the test together.
 
 Browser printing and downloaded reading HTML also use Computer Modern text,
-two-column reading text, separated reading/questions/endnotes sections, and a
-small footer with the grade, week, day and Liminal.
+two-column reading text, separate reading/questions sections, a compact source
+note, and a small footer with the grade, week, day and Liminal.
 
 ## The style
 
@@ -24,10 +25,15 @@ small footer with the grade, week, day and Liminal.
   3. Numbered sections: **Context** (with any content note), **Text**, and
      **Questions for discussion** (the prompts only). Text and questions have
      a thin rule below the heading; discussion prompts have extra spacing.
-  4. **Endnotes**, with its own heading and rule, holds a one-entry reference
-     list: author, title, year, translator when there is
-     one, the edition's identifying sentences, the US public-domain statement
-     and the source URL.
+  4. A compact **Source** note, separated by a thin rule: complete author,
+     title, publication year and translation credit; the US public-domain
+     statement; and a readable, clickable source URL. The small inline label
+     and note use 8 pt type for every grade. The URL omits `https://` and an
+     initial `www.` in its printed label, while retaining the full link target.
+     `sourceNote` in `src/lib/daily-reading.js` supplies the same brief record to
+     browser print and TeX packets. Edition, normalization, locator and
+     rights-basis details stay in the digital source disclosure and downloaded
+     reading.
 - **Running heads:** none. The title and body contain no grade/week/day metadata
   or Liminal branding.
 - **Footer:** centred grade, week, day, optional date, "Liminal" and the page

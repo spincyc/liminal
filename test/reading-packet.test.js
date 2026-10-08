@@ -18,6 +18,7 @@ test("packet style is the fixed two-column Computer Modern article", () => {
   ]) assert.ok(P.PREAMBLE.split("\n").includes(line), "missing style line: " + line);
   assert.doesNotMatch(P.PREAMBLE, /\\fancyhead\[/, "metadata no longer prints in a running head");
   assert.ok(P.PREAMBLE.includes(String.raw`\rule{\linewidth}{0.35pt}`), "section separators remain visible");
+  assert.ok(P.PREAMBLE.includes(String.raw`\footnotesize\raggedright\hrule height0.35pt\vspace{0.8ex}\textbf{Source.}`), "source note has a small label and legible 8-point text");
   const branding = P.PREAMBLE.split("\n").filter(line => line.includes("Liminal"));
   assert.equal(branding.length, 1, "brand appears only once in the page style");
   assert.ok(branding[0].startsWith(String.raw`\fancyfoot[C]`), "brand appears only in the footer");
@@ -36,20 +37,21 @@ const day = {
   questions: [{ id: "q1", prompt: "What changes?", facilitatorNotes: ["FACILITATOR_SECRET"], evidence: ["EVIDENCE_SECRET"] }],
 };
 
-test("a night renders as one paper: title block, abstract, sections and a short reference, never notes", () => {
+test("a night renders as one paper with a compact source credit, never editorial or facilitator notes", () => {
   const tex = P.paper(course, day, { date: "2026-10-08", newSheet: true });
   const order = [String.raw`\cleardoublepage`, String.raw`{\LARGE\bfseries A night\par}`, String.raw`{\large Ann Author\par}`,
     String.raw`{\small\itshape About 18 minutes, read together\par}`,
     String.raw`\centerline{\bfseries Abstract}`, "Notice the change. Track the turn.", String.raw`\section{Context}`,
     String.raw`\section{Text}\readingsectionrule`, String.raw`\section{Questions for discussion}\readingsectionrule`,
-    String.raw`\section*{Endnotes}\readingsectionrule`, String.raw`{\footnotesize\begin{enumerate}[label={[\arabic*]}]`];
+    String.raw`\readingsource{Ann Author, A Book \& Its \{Notes\} (1901). Public domain in the United States.`];
   let at = -1;
   for (const piece of order) { const next = tex.indexOf(piece); assert.ok(next > at, "out of order or missing: " + piece); at = next; }
-  assert.doesNotMatch(tex, /FACILITATOR_SECRET|EVIDENCE_SECRET|normalization notes/);
+  assert.doesNotMatch(tex, /FACILITATOR_SECRET|EVIDENCE_SECRET|normalization notes|Example Press|Endnotes|thebibliography/);
   assert.ok(tex.includes(String.raw`\renewcommand{\papermeta}{Grade 5 · Week 7 · Day 4 · Thu, Oct 8}`));
   assert.doesNotMatch(tex.slice(tex.indexOf(String.raw`\twocolumn`)), /Grade 5|Week 7|Day 4|Thu, Oct 8/, "metadata stays out of the title and body");
-  assert.match(tex, /\\emph\{A Book \\& Its \\\{Notes\\\}\} \(1901\)\. London: Example Press for the Society of Illustrative Fixtures, 1901, second impression\. Public domain/);
-  assert.match(tex, /\\url\{https:\/\/example\.org\/b\\#1\}/);
+  assert.ok(tex.includes(String.raw`\href{https://example.org/b\#1}{\nolinkurl{example.org/b\#1}}`));
+  const translated = P.paper({ ...course, sources: [{ ...course.sources[0], translator: "T. Translator", translationYear: 1905 }] }, day);
+  assert.ok(translated.includes(String.raw`Ann Author, A Book \& Its \{Notes\} (1901); translated by T. Translator (1905). Public domain in the United States.`));
   assert.match(tex, /\\begin\{verse\}\nFirst \u201cline\u201d here\\\\\n\\hspace\*\{1\.0em\}indented \\emph\{word\} line/);
   assert.match(tex, /\{\}\[Bracket\] 50\\% of \\\$5 \\& more\./);
   assert.match(P.paper(course, day).split("\n")[0], /^\\clearpage$/);

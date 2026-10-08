@@ -18,11 +18,13 @@
     for (const [label, url] of [["Source record", source.url], ["Read the source text", source.textUrl], ["Rights evidence", source.rights.evidenceUrl]]) if (D.safeHttps(url)) links.append(link(label, url, doc));
     details.append(links); return details;
   }
-  function attribution(source, excerpt, doc) {
+  function attribution(source, doc) {
+    const note = D.sourceNote(source);
     const footer = el("footer", undefined, "daily-attribution", doc);
-    footer.append(el("h3", "Endnotes", undefined, doc), el("p", D.sourceLabel(source) + ". " + source.edition, undefined, doc), el("p", excerpt.locator, undefined, doc),
-      el("p", "Public domain in the United States. " + source.rights.basis, undefined, doc));
-    if (D.safeHttps(source.textUrl)) footer.append(el("p", "Source text: " + source.textUrl, undefined, doc));
+    footer.append(el("h3", "Source", undefined, doc), el("p", note.credit + ". " + note.rights, undefined, doc));
+    if (note.url) {
+      const reference = el("p", undefined, undefined, doc); reference.append(link(note.linkText, note.url, doc)); footer.append(reference);
+    }
     return footer;
   }
   // The supplied text as text nodes only: paired _underscores_ become <em>
@@ -89,7 +91,7 @@
       }
       questions.append(item);
     });
-    discussion.append(questions); article.append(discussion, sourceDetails(source, day.excerpt, doc), attribution(source, day.excerpt, doc));
+    discussion.append(questions); article.append(discussion, sourceDetails(source, day.excerpt, doc), attribution(source, doc));
     return article;
   }
   function progression(course, week, doc = document) {

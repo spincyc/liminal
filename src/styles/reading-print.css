@@ -44,16 +44,15 @@
   .daily-table { width: 100%; table-layout: fixed; font: 400 9pt/1.2 var(--font-serif); }
   .daily-table tr { break-inside: avoid; }
   .daily-table :is(th, td) { padding: 3pt; border-color: #777; overflow-wrap: anywhere; }
-  .daily-discussion { border-top: 1pt solid #333; margin-top: 20pt; padding-top: 10pt; }
+  .daily-discussion { border-top: 1pt solid #333; margin-top: 20pt; padding-top: 10pt; break-inside: avoid; }
   .daily-discussion h3 { font: 700 12pt/1.25 var(--font-serif); }
   .daily-discussion > p { margin-top: 6pt; color: #333; font-size: 9pt; }
   .daily-questions { padding-left: 1.6em; margin-block: 10pt 0; }
   .daily-questions > li { padding-left: 0; break-inside: avoid; margin-bottom: 8pt; }
   .daily-questions > li + li { margin-top: 8pt; }
-  .daily-attribution { display: block; border-top: .5pt solid #777; margin-top: 16pt; padding-top: 8pt; font-size: 8pt; line-height: 1.25; overflow-wrap: anywhere; }
-  .daily-attribution h3 { margin-bottom: 6pt; font: 700 10pt/1.25 var(--font-serif); }
-  .daily-attribution p + p { margin-top: 4pt; }
-  .daily-attribution p:last-child { break-before: avoid; }
+  .daily-attribution { display: block; border-top: .5pt solid #777; margin-top: 14pt; padding-top: 7pt; font-size: 8pt; line-height: 1.25; overflow-wrap: anywhere; break-inside: avoid; }
+  .daily-attribution h3 { margin-bottom: 4pt; font: 700 9pt/1.25 var(--font-serif); }
+  .daily-attribution p + p { margin-top: 3pt; }
   .daily-print-footer { display: block; position: fixed; inset: auto 0 0; text-align: center; font: italic 8pt/1 var(--font-serif); color: #555; }
   .daily-page :is(h1, h2, h3) { break-after: avoid; }
   .daily-page p { orphans: 3; widows: 3; }

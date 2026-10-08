@@ -90,10 +90,14 @@ Advanced levels offer explicitly labelled K–12 library links.
 Printed readings use bundled Computer Modern Unicode Serif, 10-point body type,
 two columns, a centered title and author, and a small footer containing the grade,
 week, day, and Liminal. Grade/week/day appear only in the footer when printed.
-Reading, Questions, and Endnotes have distinct headings; whitespace and rules
-separate the questions and smaller endnotes from the reading. Sections flow
-across columns without mandatory page breaks. This applies
-to browser printing and downloaded student HTML; the font data and its license
+Reading and Questions have distinct headings and dividers, followed by a compact
+Source note. Every grade prints only the complete bibliographic credit (including
+any translator), a short US public-domain statement, and a readable source link.
+The full edition, transcription, excerpt locator, and rights record remain in
+the expandable digital details, also preserved in offline downloads. Long audit
+records never compete with a young reader's text on paper. Sections flow across
+columns without mandatory page breaks. This applies to browser printing and
+downloaded student HTML; the font data and its license
 travel in the download, so offline printing needs no installed TeX fonts. Source
 attribution, verse indentation, and tables remain in the student copy; facilitator
 notes stay out. See [printed reading packets](reading-packets.md) for the matching

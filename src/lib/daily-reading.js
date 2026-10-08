@@ -53,6 +53,14 @@
     try { const url = new URL(value); return url.protocol === "https:" && !!url.hostname && !url.username && !url.password; } catch { return false; }
   }
   function sourceLabel(source) { return source.author + ", " + source.title + " (" + source.publicationYear + ")" + (source.translator ? "; translated by " + source.translator + " (" + source.translationYear + ")" : ""); }
+  // Student printouts need a complete credit and a retrievable source, not the
+  // editorial audit trail. Full edition, locator and rights records stay in
+  // the digital disclosure and the standalone download's student projection.
+  function sourceNote(source) {
+    const url = safeHttps(source.url) ? source.url : safeHttps(source.textUrl) ? source.textUrl : null;
+    return { credit: sourceLabel(source), rights: "Public domain in the United States.",
+      url, linkText: url ? url.replace(/^https:\/\/(?:www\.)?/, "") : null };
+  }
   function selectionCredit(day, source) {
     return { author: day.author || source.author,
       workTitle: day.workTitle && day.workTitle !== day.title && day.workTitle !== source.title ? day.workTitle : null };
@@ -171,7 +179,7 @@
     return value.split("_").map((part, index) => ({ text: part, em: index % 2 === 1 })).filter(segment => segment.text);
   }
   return { GRADES, validGrade, isAdvanced, gradeKey, gradeLabel, gradeFromKey, validDay, route, gradeAt, resolve, dayAt, sourceAt, progressionAt,
-    navigation, lessonLinks, modeLabel, minuteRange, safeHttps, sourceLabel, selectionCredit, studentReading,
+    navigation, lessonLinks, modeLabel, minuteRange, safeHttps, sourceLabel, sourceNote, selectionCredit, studentReading,
     MODES, browseFile, browseRoute, browseIndex, view, genreLabel, workLabel, filterNights, runs, genres, modes, minutesSpan,
     weekFile, weekSlice, tableRows, emphasis };
 });

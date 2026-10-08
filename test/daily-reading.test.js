@@ -140,6 +140,20 @@ test("student projection withholds notes, evidence and all unknown fields", () =
   assert.doesNotMatch(serialized, /SECRET|facilitatorNotes|"evidence"/); assert.equal(packet.day.blocks.length, 2);
   assert.equal(packet.source.rights.status, "public-domain"); assert.equal(D.studentReading(course, 37, 1), null);
 });
+test("compact source notes preserve full credits and safe source links without editorial records", () => {
+  const source = fixture().sources[0];
+  source.translator = "A Translator"; source.translationYear = 1910;
+  source.url = "https://www.example.org/book/1?edition=1900#text";
+  const note = D.sourceNote(source);
+  assert.equal(note.credit, "Test Author 0, Fixture source 0 (1900); translated by A Translator (1910)");
+  assert.equal(note.rights, "Public domain in the United States.");
+  assert.equal(note.url, source.url); assert.equal(note.linkText, "example.org/book/1?edition=1900#text");
+  assert.doesNotMatch(JSON.stringify(note), /Synthetic|verifiedDate|edition"|basis"/);
+  source.url = "javascript:alert(1)";
+  assert.equal(D.sourceNote(source).url, source.textUrl);
+  source.textUrl = "data:text/html,unsafe";
+  assert.equal(D.sourceNote(source).url, null); assert.equal(D.sourceNote(source).linkText, null);
+});
 function documentFixture() {
   const escape = value => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   class Text { constructor(value) { this.nodeType = 3; this.value = value; } get outerHTML() { return escape(this.value); } }
@@ -174,12 +188,26 @@ test("offline student document keeps provenance and questions without scripts or
   assert.match(html, /<footer class="daily-print-footer">Kindergarten · Week 1 · Day 1 · Liminal<\/footer>/);
   assert.match(html, /class="daily-print-heading">Reading<\/h3>/);
   assert.match(html, /class="daily-print-label">Questions<\/span>/);
-  assert.match(html, /class="daily-attribution"><h3>Endnotes<\/h3>/);
+  assert.match(html, /class="daily-attribution"><h3>Source<\/h3>/);
   assert.doesNotMatch(html, /daily-export-brand|brand-symbol|<svg/);
   assert.match(html, /Question 3/); assert.match(html, /no affiliation/); assert.match(html, /Return to this reading/);
   assert.match(html, /class="daily-budget">About 10 min · read 6 \+ discuss 4/);
   assert.doesNotMatch(html, /FACILITATOR_SECRET|daily-facilitator|<script|<iframe|application\/json/);
   course.sources[0].textUrl = "javascript:alert(1)"; assert.equal(D.studentReading(course, 1, 1).source.textUrl, null);
+}));
+test("printed source notes stay brief while downloads retain complete source records", () => withDOM(() => {
+  const course = fixture(), source = course.sources[0];
+  source.edition = "EDITION_RECORD ".repeat(100);
+  source.rights.basis = "RIGHTS_RECORD ".repeat(100);
+  course.days[0].excerpt.locator = "EXCERPT_LOCATOR ".repeat(100);
+  const packet = D.studentReading(course, 1, 1);
+  for (const html of [R.reading(packet).outerHTML, R.exportDocument(packet).documentElement.outerHTML]) {
+    const note = html.match(/<footer class="daily-attribution">([\s\S]*?)<\/footer>/)[1];
+    assert.match(note, /Test Author 0, Fixture source 0 \(1900\)/);
+    assert.match(note, /href="https:\/\/example.org\/source\/0"/);
+    assert.doesNotMatch(note, /EDITION_RECORD|RIGHTS_RECORD|EXCERPT_LOCATOR/);
+    for (const detail of [source.edition, source.rights.basis, packet.day.excerpt.locator]) assert.ok(html.includes(detail), "complete digital record retained");
+  }
 }));
 test("anthology selections credit the piece author in reader and student export while retaining the source bibliography", () => withDOM(() => {
   const course = fixture(), day = course.days[0], source = course.sources[0];

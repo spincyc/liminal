@@ -49,6 +49,7 @@ const PREAMBLE = String.raw`\documentclass[10pt,twocolumn,twoside,letterpaper]{a
 \renewenvironment{verse}{\let\\\@centercr\list{}{\itemsep\z@\itemindent-1.5em\listparindent\itemindent\rightmargin\leftmargin\advance\leftmargin1.5em\topsep0.6ex\parsep0.9ex}\raggedright\item\relax}{\endlist}
 \newcommand{\readingsectionrule}{\vspace{-0.6ex}\noindent\rule{\linewidth}{0.35pt}\par\nobreak\vspace{0.8ex}\@afterindentfalse\@afterheading}
 \makeatother
+\newcommand{\readingsource}[1]{\par\addvspace{1.5ex}\noindent\begin{minipage}{\linewidth}\footnotesize\raggedright\hrule height0.35pt\vspace{0.8ex}\textbf{Source.} #1\par\end{minipage}\par}
 \newcommand{\paperstart}{1}
 \newcommand{\papermeta}{}
 \pagestyle{fancy}
@@ -99,15 +100,6 @@ function blocks(day) {
   if (inVerse) out.push("\\end{verse}");
   return out.join("\n");
 }
-// The edition's identifying sentences, without its long normalization notes.
-function shortEdition(edition) {
-  let out = "";
-  for (const sentence of edition.split(/(?<=[.;])\s+/)) {
-    if (out.length >= 70 || out.length + sentence.length > 260) break;
-    out += (out ? " " : "") + sentence;
-  }
-  return (out || edition.slice(0, 200)).replace(/;$/, ".");
-}
 const MODES = { "adult-read-aloud": "read aloud by an adult", shared: "read together", independent: "read independently" };
 const longDate = date => new Date(date + "T00:00:00Z").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
 
@@ -119,9 +111,9 @@ function paper(course, day, { date = null, newSheet = false } = {}) {
   if (!source) throw new Error("unresolved source for " + day.id);
   const where = D.gradeLabel(course.grade) + " · Week " + day.week + " · Day " + day.day + (date ? " · " + longDate(date) : "");
   const title = day.workTitle || day.title.replace(/\s+—\s+excerpt$/, "");
-  const reference = escape(source.author) + ", \\emph{" + inline(source.title) + "} (" + source.publicationYear + ")" +
-    (source.translator ? ", translated by " + escape(source.translator) + " (" + source.translationYear + ")" : "") + ". " +
-    inline(shortEdition(source.edition)) + " Public domain in the United States. \\url{" + source.url.replace(/[%#]/g, "\\$&") + "}";
+  const note = D.sourceNote(source);
+  const reference = inline(note.credit) + ". " + inline(note.rights) + (note.url
+    ? " \\href{" + note.url.replace(/[%#]/g, "\\$&") + "}{\\nolinkurl{" + note.linkText.replace(/[%#]/g, "\\$&") + "}}" : "");
   return [newSheet ? "\\cleardoublepage" : "\\clearpage",
     "\\edef\\paperstart{\\the\\value{page}}", "\\setcounter{section}{0}", "\\renewcommand{\\papermeta}{" + escape(where) + "}",
     "\\twocolumn[{\\begin{center}",
@@ -134,7 +126,7 @@ function paper(course, day, { date = null, newSheet = false } = {}) {
     "\\section{Context}", inline(day.context) + (day.contentNote ? "\n\n\\noindent\\textit{Content note.} " + inline(day.contentNote) : ""), "",
     "\\section{Text}\\readingsectionrule", blocks(day), "",
     "\\section{Questions for discussion}\\readingsectionrule", "\\begin{enumerate}", ...day.questions.map(question => "\\item " + inline(question.prompt)), "\\end{enumerate}", "",
-    "\\section*{Endnotes}\\readingsectionrule", "{\\footnotesize\\begin{enumerate}[label={[\\arabic*]}]", "\\item " + reference, "\\end{enumerate}}", ""].join("\n");
+    "\\readingsource{" + reference + "}", ""].join("\n");
 }
 // Each grade's packet starts on a fresh sheet so duplex packets separate.
 function documentTex(groups) {
@@ -210,5 +202,5 @@ function run(argv) {
   xelatex("packet-duplex.tex");
   console.log("Wrote " + path.join(out, "packet-duplex.pdf") + " (even pages rotated for duplex printers that flip backs)");
 }
-module.exports = { PREAMBLE, DEFAULT_START, schoolNight, escape, inline, verse, table, blocks, shortEdition, paper, documentTex, rotatedBacksTex, parseArgs, selections };
+module.exports = { PREAMBLE, DEFAULT_START, schoolNight, escape, inline, verse, table, blocks, paper, documentTex, rotatedBacksTex, parseArgs, selections };
 if (require.main === module) { try { run(process.argv.slice(2)); } catch (error) { console.error(error.message); process.exitCode = 1; } }
