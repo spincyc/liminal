@@ -153,6 +153,16 @@ the supplied source. Omit publisher front matter and digitizer boilerplate.
 Plain-text transcription conventions may be retained; any normalization beyond
 line-wrapping should be documented in the source's `edition` description.
 
+The text follows the declared edition as printed, which includes its
+misprints: a wrong letter or word stays, such as *The Waste Land*'s "Heimai".
+Letters that are missing because type failed to print are treated
+differently. A blank where a letter belongs, such as "w ter" or "said  o
+yourself", may be supplied when a later printing of the same text shows the
+letter unambiguously. Each supplied letter is declared in the `edition`
+description and in that night's `context`, naming the printing consulted.
+This rule was set on 2026-10-08, after review found grades handling the two
+cases differently.
+
 `textHash` is SHA-256 (UTF-8) of all `blocks[].text` joined with two newline
 characters, then Unicode-normalized to NFC. Do not trim, collapse whitespace,
 change punctuation, or include metadata when calculating this identity.
