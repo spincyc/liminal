@@ -17,12 +17,25 @@
   const trackSelect = document.getElementById("weeklyTrack");
   const gradeSelect = document.getElementById("weeklyGrade");
   const weekSelect = document.getElementById("weeklyWeek");
+  const reader = document.getElementById("weeklyBrowser");
+  const toolbar = document.getElementById("weeklyToolbar");
+  const topNav = document.getElementById("weeklyNavigation");
+  const actionSlot = document.getElementById("weeklyActions");
+  const lessonActions = Controls.actions([{ label: "Print lesson", run: () => window.print() }]);
+  actionSlot.append(lessonActions);
   const cache = new Map();
   let request = 0;
+  let topNavigation = null;
+  let pendingNavigation = null;
   let preservePickerFocus = false;
   let activeView = "learn";
   let preparePrint = null;
   let restorePrint = null;
+  reader.addEventListener("click", event => {
+    const link = event.target.closest("a[data-reader-step]");
+    if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+    pendingNavigation = { href: link.hash, step: link.dataset.readerStep, top: toolbar.contains(link), y: toolbar.getBoundingClientRect().top };
+  });
   window.addEventListener("beforeprint", () => {
     if (restorePrint) restorePrint();
     restorePrint = preparePrint ? preparePrint() : null;
@@ -102,9 +115,9 @@
   function practice(course, week, onRead) {
     const section = R.section("Try it yourself");
     section.append(R.el("p", "Choose a worksheet. Show your thinking in the blank space.", "weekly-muted"));
-    const toolbar = R.el("div", undefined, "reader-bar weekly-sheet-tools");
+    const toolbar = R.el("div", undefined, "reader-bar reader-toolbar weekly-sheet-tools");
     const selectors = R.el("div", undefined, "reader-selectors");
-    const label = R.el("label", "Worksheet", "weekly-sheet-picker");
+    const label = R.el("label", "Worksheet", "weekly-sheet-picker reader-select-wide");
     const select = R.el("select");
     week.worksheets.forEach(sheet => select.append(option(sheet.id.toUpperCase() + " · " + sheet.title, sheet.id)));
     label.append(select); selectors.append(label);
@@ -131,7 +144,7 @@
     answers.addEventListener("toggle", showKey);
     section.append(toolbar, answers, sheetContent); showSheet(); return section;
   }
-  function views(course, week, lessonActions) {
+  function views(course, week) {
     const group = R.el("div", undefined, "weekly-views");
     const tabs = R.el("div", undefined, "weekly-tabs"); tabs.setAttribute("role", "tablist"); tabs.setAttribute("aria-label", "Weekly work");
     const entries = [];
@@ -163,10 +176,8 @@
         entry.panel.hidden = !current;
       });
       activeView = selected.id;
-      lessonActions.replaceChildren(...(selected.id === "worksheets" ? [] : [Controls.actions([
-        { label: selected.id === "read" ? "Print reading" : "Print lesson", run: () => window.print() },
-      ])]));
-      lessonActions.hidden = selected.id === "worksheets";
+      lessonActions.firstElementChild.textContent = selected.id === "read" ? "Print reading" : "Print lesson";
+      actionSlot.hidden = selected.id === "worksheets";
     }
     add("learn", "Learn", () => R.guide(week, math, onRead));
     if (week.passages.length) add("read", "Read", () => R.reading(week, math));
@@ -182,7 +193,7 @@
     };
     group.prepend(tabs); show(activeView); return group;
   }
-  function navigation(selected, position) {
+  function navigation(selected, position, existing) {
     const pages = W.navigation(index, selected);
     const destination = (href, label) => href ? { href, label } : null;
     return Controls.navigation({
@@ -191,14 +202,23 @@
       previous: destination(pages.previous, "Previous week, week " + (selected.week - 1)),
       next: destination(pages.next, "Next week, week " + (selected.week + 1)),
       last: destination(pages.last, "Last week, week 36"),
-    });
+    }, existing);
   }
   async function render(focus) {
     const currentRequest = ++request;
+    const movement = pendingNavigation && pendingNavigation.href === window.location.hash ? pendingNavigation : null;
+    pendingNavigation = null;
     preparePrint = null; restorePrint = null;
     const selected = W.resolve(index, window.location.hash);
-    pickers(selected); container.setAttribute("aria-busy", "true"); container.replaceChildren();
-    announce("Opening " + W.courseLabel(selected.course) + ", week " + selected.week + "…", true);
+    pickers(selected); container.setAttribute("aria-busy", "true");
+    topNavigation = navigation(selected, "top", topNavigation);
+    if (!topNavigation.parentElement) topNav.append(topNavigation);
+    if (movement && movement.top) Controls.focusNavigation(topNavigation, movement.step);
+    lessonActions.firstElementChild.disabled = true;
+    // Keep the previous lesson's height while loading, but never export it as
+    // the newly selected week or let a tab re-enable its document actions.
+    container.querySelectorAll("button, select").forEach(control => { control.disabled = true; });
+    announce("Opening " + W.courseLabel(selected.course) + ", week " + selected.week + "…", !container.childElementCount);
     try {
       let course = cache.get(selected.course.file);
       if (!course) {
@@ -222,15 +242,19 @@
       links.append(R.link("Year plan", yearRoute), R.link("Unit and standards", yearRoute + "/" + encodeURIComponent(week.unitId)));
       if (course.trackId === "common-core-reading") links.append(R.link("Nightly reading", "daily-reading.html#" + W.courseKey(course) + "/" + week.week + "/1"));
       heading.append(links);
-      const toolbar = R.el("div", undefined, "reader-bar");
-      const lessonActions = R.el("div");
-      toolbar.append(navigation(selected, "top"), lessonActions);
       const fragment = document.createDocumentFragment();
-      fragment.append(toolbar, heading, views(course, week, lessonActions), navigation(selected, "bottom"));
+      fragment.append(heading, views(course, week), navigation(selected, "bottom"));
       container.replaceChildren(fragment);
+      lessonActions.firstElementChild.disabled = false;
       document.title = "Week " + week.week + " · " + week.title + " — Liminal";
       announce((selected.invalid ? "That coursework link was not recognized. Showing " : "Showing ") + W.courseLabel(course) + ", week " + week.week + ": " + week.title + ".", selected.invalid);
-      if (focus) title.focus();
+      if (movement) {
+        if (movement.top) window.scrollBy({ top: toolbar.getBoundingClientRect().top - movement.y, behavior: "instant" });
+        else { toolbar.scrollIntoView({ block: "start", behavior: "instant" }); Controls.focusNavigation(topNavigation, movement.step); }
+      } else if (focus) {
+        title.focus({ preventScroll: true });
+        toolbar.scrollIntoView({ block: "start", behavior: "instant" });
+      }
     } catch (_) {
       if (currentRequest !== request) return;
       cache.delete(selected.course.file);
@@ -241,6 +265,6 @@
     }
   }
   window.addEventListener("hashchange", () => { const focus = !preservePickerFocus; preservePickerFocus = false; render(focus); });
-  document.getElementById("weeklyBrowser").hidden = false;
+  reader.hidden = false;
   render(false);
 })();

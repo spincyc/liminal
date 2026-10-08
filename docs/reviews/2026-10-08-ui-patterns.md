@@ -71,3 +71,29 @@ This is sampled visual and interaction verification, not exhaustive accessibilit
 certification or an editorial re-review of the educational corpus. Print engines
 can choose different page breaks. TeX's existing accessible diagram descriptions
 remain distinct from the browser's rendered diagrams.
+
+## Follow-up: persistent controls and print rules
+
+Daily and weekly readers now keep the top controls mounted while the document
+changes. Grade/pathway, week and day come first, followed by sequence navigation
+and document actions, with matching unboxed controls and 44px targets. Daily
+numeric controls are now 44px wide and fit one row at 320px. Repeated top Next
+clicks and Enter presses retain control focus and viewport position; bottom
+navigation returns to the complete top strip. During loading, the previous
+content stays mounted and document actions are disabled until the latest route
+is ready. The design-system contract records this behavior.
+
+Chromium checks at 1280px and 320px exercised repeated clicks at identical
+coordinates, keyboard pagination, endpoints, week boundaries, bottom navigation,
+selector focus, and rapid changes during delayed loading. Named weekly routes,
+student/key export separation, dark mode, 200% text and print-control suppression
+were checked. Regression tests cover reused navigation controls, updated actions,
+endpoint focus and shared numbered print headings. The full gate passed 876 tests.
+
+Student questions and key explanations now share a direct solid border below
+their numbered headings; TeX uses the same placement. Full-PDF raster audits
+covered 1,479 headings across browser, CLI, TeX, scaled and oversized-content
+fixtures. Every heading retained its rule, and the underlying question models
+were unchanged. Missing strokes did not reproduce in the local Chromium
+baseline; this change removes inconsistent heading treatments and rendering
+mechanisms. See [booklet printing](../booklet-printing.md) for the print contract.

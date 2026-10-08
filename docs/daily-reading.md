@@ -90,8 +90,12 @@ Advanced levels offer explicitly labelled K–12 library links.
 The Read view follows the [sequential reader template](design-system.md): compact
 Grade/Week/Day selectors, First/Previous/Next/Last above and below the reading,
 and quiet Print/Download controls above the text. Sequence navigation stays within
-the grade and disables unavailable endpoints. Select changes retain focus;
-navigation focuses the new title. Time estimates live in Endnotes and source
+the grade and disables unavailable endpoints. All top controls share one persistent
+strip, ordered Grade, Week, Day, sequence, then Print and Download. Top pagination
+keeps its control focused and in the same viewport position for repeated clicks
+or Enter presses. Bottom pagination returns to that top strip. Select changes
+retain picker focus. While a week loads, the previous document stays mounted and
+Print/Download are disabled until the current reading is ready. Time estimates live in Endnotes and source
 record, after the questions, rather than in the heading.
 
 Printed readings use bundled Computer Modern Unicode Serif, 10-point body type,

@@ -366,7 +366,7 @@ test("without a renderer, SAT text is escaped and figures retain their descripti
   assert.match(html, /Diagram description \(drawing unavailable\): A triangle/);
   const figures = (html.match(/<figure\b[\s\S]*?<\/figure>/g) || []).join("");
   assert.ok(!figures.includes("<svg"), "raw figure SVG must never bypass the renderer");
-  assert.match(html, /<h3 class="question-heading"><span>Question 1<\/span><\/h3><div class="stem"><div class="body">Which &quot;value&quot;/);
+  assert.match(html, /<h3 class="question-heading entry-heading">Question 1<\/h3><div class="stem"><div class="body">Which &quot;value&quot;/);
   assert.ok(!html.includes("Answer key — form"), "the key is opt-in");
 });
 
@@ -678,9 +678,9 @@ test("each SAT problem labels its complete passage, figure, stem, and answer spa
   const html = booklet.renderBookletHtml(model, { render: fakeRender });
   const articles = [...html.matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/g)].map(match => match[1]);
   articles.forEach((article, index) => {
-    assert.ok(article.startsWith(`<h3 class="question-heading"><span>Question ${index + 1}</span></h3>`));
+    assert.ok(article.startsWith(`<h3 class="question-heading entry-heading">Question ${index + 1}</h3>`));
     assert.match(article, /class="work-space"/);
-    assert.equal((article.match(/class="question-heading"/g) || []).length, 1);
+    assert.equal((article.match(/class="question-heading entry-heading"/g) || []).length, 1);
   });
   assert.ok(articles[0].indexOf('class="stimulus') < articles[0].indexOf('class="stem"'));
   assert.ok(articles[1].indexOf('class="figure"') < articles[1].indexOf('class="stem"'));
@@ -690,11 +690,27 @@ test("each SAT problem labels its complete passage, figure, stem, and answer spa
 test("shared ACT context names exactly its consecutive question range", () => {
   const shared = booklet.renderBookletHtml(scienceModel());
   assert.equal((shared.match(/Questions 1–2 refer to the following information/g) || []).length, 1);
-  assert.equal((shared.match(/class="question-heading"/g) || []).length, 2);
+  assert.equal((shared.match(/class="question-heading entry-heading"/g) || []).length, 2);
   const separate = booklet.renderBookletHtml(scienceModel([{}, { passageId: "second" }]));
   assert.match(separate, /Question 1 refers to the following information/);
   assert.match(separate, /Question 2 refers to the following information/);
   assert.doesNotMatch(separate, /Questions 1–2 refer/);
+});
+
+test("student questions and key explanations share a numbered entry boundary", () => {
+  for (const model of [richModel(), scienceModel()]) {
+    const expected = model.sections.flatMap(section => section.questions.map(item => item.number));
+    const student = booklet.renderBookletHtml(model);
+    const appendix = booklet.renderBookletHtml(model, { key: true });
+    const key = booklet.renderKeyHtml(model);
+    const numbers = (html, pattern) => [...html.matchAll(pattern)].map(match => Number(match[1]));
+    assert.deepEqual(numbers(student, /<h3 class="question-heading entry-heading">Question (\d+)<\/h3>/g), expected);
+    assert.doesNotMatch(student, /class="explanation-heading/);
+    for (const html of [appendix, key]) {
+      assert.deepEqual(numbers(html, /<h4 class="explanation-heading entry-heading">(\d+)\. Correct answer:/g), expected);
+    }
+    assert.doesNotMatch(key, /class="question-heading/);
+  }
 });
 
 test("standalone test and key keep embedded Computer Modern fonts and their license", () => {
@@ -735,7 +751,7 @@ test("TeX labels whole problems before context and allows long content to flow",
   const output = booklet.renderTex(richModel());
   assert.ok(output.indexOf('\\question{2}') < output.indexOf('Diagram description (drawing unavailable)'));
   assert.match(output, /\\question\{3\}\s+\\begin\{stimulus\}/);
-  assert.match(output, /\\leaders\\hrule/);
+  assert.match(output, /\\hrule height \.75pt/);
   assert.doesNotMatch(output, /\\begin\{samepage\}|\\begin\{fullwidth\}/);
   assert.match(output, /\\normalsize\s+\\twocolumn\[/);
   assert.match(output, /\\pagegoal-\\pagetotal\\relax<9\\baselineskip\\newpage/);

@@ -65,6 +65,8 @@ function dom() {
     set textContent(value) { this.childNodes = [new Text(value)]; }
     get textContent() { return this.childNodes.map((child) => child.textContent).join(""); }
     get children() { return this.childNodes.filter((child) => child.nodeType === 1); }
+    get firstElementChild() { return this.children[0] || null; }
+    get parentElement() { return this.parentNode && this.parentNode.nodeType === 1 ? this.parentNode : null; }
     get isConnected() { return this === document.documentElement || Boolean(this.parentNode && this.parentNode.isConnected); }
     appendChild(node) { node.remove(); this.childNodes.push(node); node.parentNode = this; return node; }
     before(...nodes) {
@@ -103,7 +105,7 @@ function dom() {
       return event;
     }
     click() { if (!this.disabled) this.dispatch("click"); }
-    focus() { document.activeElement = this; }
+    focus(options) { document.activeElement = this; this.focusOptions = options; }
     scrollIntoView() {}
     contains(node) { return node === this || this.children.some((child) => child.contains(node)); }
     matches(selector) {
@@ -593,4 +595,43 @@ test("archived Science history remains readable without offering new Missed or M
   await new Promise(setImmediate);
   assert.equal(launched.length, 0);
   assert.equal(JSON.stringify(progress), before);
+});
+
+test("reader pagination preserves the focused control as destinations change", () => {
+  const { window, document, load } = environment();
+  load("reader-controls.js");
+  const controls = window.LiminalReaderControls;
+  const route = (night) => ({ href: `#8/1/${night}`, label: `Night ${night}` });
+  const nav = controls.navigation({ label: "Reading nights, top", next: route(2), last: route(5) });
+  document.body.append(nav);
+  const next = nav.querySelector('[data-reader-step="next"]');
+  next.focus();
+  const updated = controls.navigation({ label: "Reading nights, top", first: route(1), previous: route(1), next: route(3), last: route(5) }, nav);
+  assert.equal(updated, nav);
+  assert.equal(document.activeElement, next);
+  assert.equal(nav.querySelector('[data-reader-step="next"]'), next);
+  assert.equal(next.href, "#8/1/3");
+  assert.equal(next.getAttribute("aria-label"), "Night 3");
+  assert.equal(nav.querySelectorAll("li").length, 4);
+  controls.navigation({ label: "Reading nights, top", first: route(1), previous: route(4) }, nav);
+  controls.focusNavigation(nav, "next");
+  assert.equal(nav.querySelector('[data-reader-step="next"]').getAttribute("aria-disabled"), "true");
+  assert.equal(document.activeElement.dataset.readerStep, "previous");
+  assert.equal(document.activeElement.focusOptions.preventScroll, true);
+});
+
+test("reader pagination updates reused button actions and removes obsolete index links", () => {
+  const { window, load } = environment();
+  load("reader-controls.js");
+  const controls = window.LiminalReaderControls;
+  let selected = 0;
+  const nav = controls.navigation({ label: "Lessons", next: { run: () => { selected = 1; } }, index: { href: "#lessons", label: "All lessons" } });
+  const next = nav.querySelector('[data-reader-step="next"]');
+  next.onclick();
+  assert.equal(selected, 1);
+  controls.navigation({ label: "Lessons", next: { run: () => { selected = 2; } } }, nav);
+  assert.equal(nav.querySelector('[data-reader-step="next"]'), next);
+  next.onclick();
+  assert.equal(selected, 2);
+  assert.equal(nav.querySelector(".reader-index"), null);
 });

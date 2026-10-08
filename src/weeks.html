@@ -28,11 +28,15 @@
       <noscript><p>Turn on JavaScript to browse weekly coursework. <a href="curriculum.html">Explore the year plans.</a></p></noscript>
       <p id="weeklyStatus" class="weekly-status" role="status" aria-live="polite">Opening weekly coursework…</p>
       <div id="weeklyBrowser" hidden>
-        <form class="weekly-filters reader-selectors" aria-label="Choose weekly coursework">
-          <label class="reader-select-wide">Pathway<select id="weeklyTrack"></select></label>
-          <label><span id="weeklyCourseLabel">Grade</span><select id="weeklyGrade"></select></label>
-          <label class="weekly-week-picker">Week<select id="weeklyWeek"></select></label>
-        </form>
+        <div id="weeklyToolbar" class="reader-toolbar">
+          <form class="weekly-filters reader-selectors" aria-label="Choose weekly coursework">
+            <label class="reader-select-wide">Pathway<select id="weeklyTrack"></select></label>
+            <label><span id="weeklyCourseLabel">Grade</span><select id="weeklyGrade"></select></label>
+            <label class="weekly-week-picker">Week<select id="weeklyWeek"></select></label>
+          </form>
+          <div id="weeklyNavigation"></div>
+          <div id="weeklyActions"></div>
+        </div>
         <div id="weeklyContent" aria-busy="false"></div>
       </div>
       <details class="weekly-about"><summary>Using this coursework</summary><p>Choose one math pathway and keep reading alongside it. Worksheets A, B, and C offer different practice; spread them across the week as useful.</p><p>The <a href="high-school.html">named high-school math sequence</a> allows flexible placement. Common Core high-school years and Singapore grade mappings are editorial sequences, not placement rules. Follow each year plan’s standards and sources. Short reading exercises supplement sustained reading.</p><p>Original coursework. Automated checks and sampled agent review do not establish human editorial approval or student outcomes.</p></details>

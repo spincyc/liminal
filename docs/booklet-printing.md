@@ -10,7 +10,10 @@ the exported document has no screen navigation.
 ## Layout
 
 Booklets use letter paper, two columns, a thin column divider and 10pt Computer
-Modern text. A numbered heading and fine rule introduce each problem. SAT passages,
+Modern text. Every numbered heading has the same full-width black rule directly
+below it, in student questions and answer explanations alike. The rule belongs to
+the heading itself, so it stays with the label at a column or page boundary; do not
+replace it with a flex decoration or a border on the surrounding entry. SAT passages,
 tables and diagrams follow that problem's number. Choices share a stable letter
 gutter, and mathematics questions include working space; numeric responses retain
 their answer line.
@@ -52,7 +55,8 @@ node tools/build-booklet.js --form act-full-science --seed classroom --out .scra
 `--pdf` requires an installed Chrome/Chromium. `--tex` emits source for pdfLaTeX;
 it uses the TeX installation's native Computer Modern family and does not distribute
 the browser font files. Its numbered rules, passage ranges, choice spacing, working
-space and ACT annotations follow the HTML hierarchy. Diagram descriptions remain
+space and ACT annotations follow the HTML hierarchy, including a full-width rule
+below every problem number. Diagram descriptions remain
 the existing TeX fallback; use HTML-to-PDF for the actual drawings and browser math
 typesetting. The CLI supports ACT forms; SAT forms are generated on the Booklets
 page. No additional packages or font services are required by the website.
@@ -66,8 +70,18 @@ sampled pages had no clipped content or overlapping columns. Independent inspect
 confirmed the corrected ACT annotations. Separate ACT test/key CLI PDFs also
 rendered successfully with embedded fonts.
 
+A subsequent rule-consistency review audited every numbered heading in full
+`layout26` exports: all 98 SAT questions and 98 appended explanations, all 171 ACT
+questions, and every explanation in the separate SAT and ACT keys had a visible
+rule. The audit matched PDF text coordinates to actual raster strokes, including
+column and page starts. The same checks passed for CLI ACT test/key HTML converted
+to PDF, all SAT/ACT TeX question headings, and an SAT PDF at 80% print scale.
+Student questions and key explanations now share one heading style; native TeX
+uses the same placement. Content models before and after the change were identical.
+
 Synthetic oversized questions and shared passages preserved all 160 paragraph
-markers, end markers and choices across six printed pages. Offline downloaded
+markers, end markers and choices across printed pages, with all 18 numbered
+headings retaining their rules. Offline downloaded
 HTML loaded the embedded fonts and license without network access. SAT and ACT
 setup controls were checked at 320px without horizontal overflow.
 

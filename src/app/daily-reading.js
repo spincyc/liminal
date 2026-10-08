@@ -6,6 +6,15 @@
   const browseLink = document.getElementById("dailyBrowseLink"), readLink = document.getElementById("dailyReadLink");
   const gradeSelect = document.getElementById("dailyGrade"), weekSelect = document.getElementById("dailyWeek"), daySelect = document.getElementById("dailyDay");
   const printFooter = document.getElementById("dailyPrintFooter");
+  const toolbar = document.getElementById("dailyToolbar"), topNav = document.getElementById("dailyNavigation");
+  let topNavigation, packetShown = null, pendingNavigation = null;
+  const actions = C.actions([{ label: "Print", run: () => window.print() }, { label: "Download", run: () => download(packetShown) }]);
+  document.getElementById("dailyActions").append(actions);
+  reader.addEventListener("click", event => {
+    const link = event.target.closest("a[data-reader-step]");
+    if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+    pendingNavigation = { href: link.hash, step: link.dataset.readerStep, top: toolbar.contains(link), y: toolbar.getBoundingClientRect().top };
+  });
   let index, request = 0, preservePickerFocus = false, last = null, inFlight = null;
   const cache = new Map(), browseCache = new Map();
   // One load at a time: a newer choice cancels the download it supersedes,
@@ -28,12 +37,12 @@
     const href = D.route(D.gradeFromKey(gradeSelect.value), reset ? 1 : Number(weekSelect.value), reset || event && event.target === weekSelect ? 1 : Number(daySelect.value));
     if (href && window.location.hash !== href) { preservePickerFocus = true; window.location.hash = href; }
   }
-  function navigation(selected, position) {
+  function navigation(selected, position, existing) {
     const pages = D.navigation(selected);
     const destinations = Object.fromEntries(Object.entries(pages).map(([key, page]) => [key, page && {
       href: page.href, label: key[0].toUpperCase() + key.slice(1) + " night: week " + page.week + ", day " + page.day,
     }]));
-    return C.navigation({ label: "Reading nights, " + position, ...destinations });
+    return C.navigation({ label: "Reading nights, " + position, ...destinations }, existing);
   }
   function download(packet) {
     const css = [...document.styleSheets].filter(sheet => /\/(tokens|home|daily-reading|brand|reading-print)\.css(?:\?|$)/.test(sheet.href || ""))
@@ -48,7 +57,7 @@
   // Browse and Read are two views of one page, each with its own hash route:
   // #browse/<grade> and #<grade>/<week>/<day>. Switching keeps the grade.
   function showView(name, grade) {
-    printFooter.textContent = "";
+    if (name === "browse") printFooter.textContent = "";
     document.body.dataset.readingView = name;
     views.hidden = false; browsePanel.hidden = name !== "browse"; reader.hidden = name !== "read";
     browseLink.href = D.browseRoute(grade);
@@ -91,10 +100,16 @@
   }
   async function render(selected, focus = false) {
     const current = ++request;
+    const movement = pendingNavigation && pendingNavigation.href === window.location.hash ? pendingNavigation : null;
+    pendingNavigation = null;
     last = { grade: selected.grade, week: selected.week, day: selected.day };
     showView("read", selected.grade);
-    pickers(selected); container.replaceChildren(); container.setAttribute("aria-busy", "true");
-    announce("Opening " + D.gradeLabel(selected.grade) + ", week " + selected.week + ", day " + selected.day + "…", true);
+    pickers(selected); container.setAttribute("aria-busy", "true");
+    topNavigation = navigation(selected, "top", topNavigation);
+    if (!topNavigation.parentElement) topNav.append(topNavigation);
+    if (movement && movement.top) C.focusNavigation(topNavigation, movement.step);
+    for (const button of actions.children) button.disabled = true;
+    announce("Opening " + D.gradeLabel(selected.grade) + ", week " + selected.week + ", day " + selected.day + "…", !container.childElementCount);
     try {
       // Only the night's week (five nights and their sources), not the grade.
       const key = selected.grade + "/" + selected.week;
@@ -110,17 +125,21 @@
       const day = D.dayAt(course, selected.week, selected.day), packet = D.studentReading(course, selected.week, selected.day);
       if (!day || !packet) throw new Error("Night unavailable");
       const article = R.reading(packet, { notes: day.questions });
-      const bar = R.el("div", undefined, "reader-bar");
-      bar.append(navigation(selected, "top"), C.actions([
-        { label: "Print", run: () => window.print() }, { label: "Download", run: () => download(packet) },
-      ]));
       const guide = R.disclosure("Tonight’s reading focus", "daily-focus"); guide.append(R.el("p", day.challenge));
-      container.append(bar, article, navigation(selected, "bottom"), guide, R.progression(course, selected.week));
+      container.replaceChildren(article, navigation(selected, "bottom"), guide, R.progression(course, selected.week));
+      packetShown = packet;
+      for (const button of actions.children) button.disabled = false;
       printFooter.textContent = R.printFooterText(packet);
       // Browser-generated print headers use this title; metadata stays in the footer.
       document.title = day.title;
       announce((selected.invalid ? "That reading link was not recognized. Showing " : "Showing ") + D.gradeLabel(selected.grade) + ", week " + day.week + ", day " + day.day + ": " + day.title + ".", selected.invalid);
-      if (focus) { const heading = document.getElementById("dailyHeading"); heading.focus(); heading.scrollIntoView({ block: "start" }); }
+      if (movement) {
+        if (movement.top) window.scrollBy({ top: toolbar.getBoundingClientRect().top - movement.y, behavior: "instant" });
+        else { toolbar.scrollIntoView({ block: "start", behavior: "instant" }); C.focusNavigation(topNavigation, movement.step); }
+      } else if (focus) {
+        document.getElementById("dailyHeading").focus({ preventScroll: true });
+        toolbar.scrollIntoView({ block: "start", behavior: "instant" });
+      }
     } catch (_) {
       if (current !== request) return;
       announce("This reading could not be loaded. Try again, or choose another grade.", true);

@@ -59,6 +59,13 @@ At 400px and below, numeric labels sit above their controls so Grade/Week/Day
 remain on one row. Long choices retain their complete accessible option text.
 Changing a selector keeps focus on that selector and announces the new content.
 
+For daily and weekly readers, put selectors, sequence navigation and document
+actions in one persistent `.reader-toolbar`, in that order. It uses inline labels,
+2.75rem numeric selects, and the same 16px type, unboxed surface, 44px targets and
+hover treatment for every control. Let the groups wrap naturally on phones; keep
+each numeric label beside its value. The wider, boxed selector variant above is
+for forms and packet setup outside a reading toolbar.
+
 ### Sequence navigation
 
 Use `LiminalReaderControls.navigation({ label, first, previous, next, last })`.
@@ -74,16 +81,29 @@ chosen grade's 180 nights; weekly navigation stays in the chosen course's 36
 weeks; classroom navigation stays in the explicitly selected lesson set. Never
 wrap the last item into another grade/course. A classroom selection containing
 only one lesson keeps the lesson selector visible and omits its empty pagination.
-Pagination focuses the new content
-heading; selector changes preserve picker focus. Do not make the bars sticky.
+Daily and weekly readers keep the top toolbar outside the changing document.
+Pass its existing navigation node as the second argument to `navigation` so
+active links retain identity. Top pagination preserves the invoked control's
+focus and viewport position; bottom pagination returns to the complete top
+strip and the corresponding control. If the control becomes unavailable at an
+endpoint, `focusNavigation` selects an available direction without scrolling.
+Selector changes preserve picker focus. Other document entry routes can focus
+the heading with `preventScroll` while bringing the toolbar into view. Classroom
+lesson pagination focuses its new heading. Do not make the bars sticky.
+
+Keep the previous document mounted during an asynchronous transition, mark its
+region busy, and disable its document actions until the current selection is
+ready. A newer route supersedes the pending request. Announce loading without
+inserting a status block that displaces an existing toolbar.
 
 ### Document actions
 
 Use `.reader-actions` or `LiminalReaderControls.actions([{ label, run }])`.
 Print and Download are native buttons styled as quiet text utilities. Links are
 reserved for real destinations. The group is not an ARIA toolbar: ordinary Tab
-navigation works, without an invented arrow-key interaction. `.reader-bar`
-groups sequence navigation and actions above the document and wraps on phones.
+navigation works, without an invented arrow-key interaction. `.reader-toolbar`
+groups a reader’s location, sequence and actions; `.reader-bar` groups sequence
+and actions where selection belongs in separate setup. Both wrap on phones.
 
 Label the document when scope could be ambiguous: Print lesson, Print student
 sheet, Download key. Do not promise a download the page cannot generate. Weekly

@@ -127,13 +127,17 @@ pad broad units with unrelated easy drills.
 ## Interface and review
 
 The reader shows one selected week, with explanations, worked examples and
-worksheet choices. Compact native selectors and the shared reader controls
-match the daily reader. First, Previous, Next and Last appear above and below
-the lesson; unavailable edges remain visible and disabled. Learn and Read offer
-a quiet print action at the top. The worksheet pane keeps student print and
-download actions beside its selector, with answer-key actions inside a separate
-disclosure. Both exports use explicit student/key projections; opening a key
-never changes the student copy.
+worksheet choices. The persistent toolbar orders native selectors, week
+navigation, and document actions in one shared control style. First, Previous,
+Next and Last appear above and below the lesson; unavailable edges remain
+visible and disabled. Top navigation keeps its control focused at the same
+viewport position for repeated clicks or Enter presses. Bottom navigation
+returns to the toolbar. While loading, the previous lesson retains its height
+and document actions remain disabled until the selected week is ready.
+Learn and Read offer a quiet print action at the top. The worksheet pane keeps
+student print and download actions beside its selector, with answer-key actions
+inside a separate disclosure. Both exports use explicit student/key projections;
+opening a key never changes the student copy.
 Keep mobile navigation compact, keyboard accessible, and printable with dark
 ink and blank work space. Content never enters SAT/ACT progress or the existing
 Grade 8 generated-packet inventory.

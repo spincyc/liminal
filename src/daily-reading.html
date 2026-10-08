@@ -41,11 +41,15 @@
         <div id="dailyYear" class="daily-year-list" aria-busy="false"></div>
       </section>
       <div id="dailyReader" hidden>
-        <form class="daily-filters reader-selectors" aria-label="Choose a nightly reading">
-          <label>Grade<select id="dailyGrade"></select></label>
-          <label>Week<select id="dailyWeek"></select></label>
-          <label>Day<select id="dailyDay"></select></label>
-        </form>
+        <div id="dailyToolbar" class="reader-toolbar">
+          <form class="daily-filters reader-selectors" aria-label="Choose a nightly reading">
+            <label>Grade<select id="dailyGrade"></select></label>
+            <label>Week<select id="dailyWeek"></select></label>
+            <label>Day<select id="dailyDay"></select></label>
+          </form>
+          <div id="dailyNavigation"></div>
+          <div id="dailyActions"></div>
+        </div>
         <div id="dailyContent" aria-busy="false"></div>
       </div>
       <nav class="daily-related" aria-label="Related reading lessons"><a id="dailyInstructionLink" href="weeks.html#common-core-reading/k/1">K–12 reading instruction</a><a id="dailyPlanLink" href="curriculum.html#common-core-reading/k">K–12 reading year plans</a></nav>

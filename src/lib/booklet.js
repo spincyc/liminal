@@ -228,7 +228,7 @@ function questionHtml(item, previous, render, lastNumber) {
   const shared = passageSection(question);
   const repeated = repeatedStimulus(question, previous);
   const newPassage = shared && question.stimulus && question.stimulus.content && !repeated;
-  const heading = `<h3 class="question-heading"><span>Question ${number}</span></h3>`;
+  const heading = `<h3 class="question-heading entry-heading">Question ${number}</h3>`;
   const parts = [`<article class="q${rich ? " rich" : ""}" id="q${number}">`];
   // SAT passages and figures belong to one problem; its number comes first.
   // ACT passage sets identify their whole range before flowing across columns.
@@ -339,9 +339,12 @@ h1, h2, h3 { font-weight: 700; margin: 0 0 .4em; line-height: 1.2; }
 .questions { column-count: 2; column-gap: .38in; column-rule: .45pt solid #999;
   column-fill: auto; orphans: 3; widows: 3; }
 .q { break-inside: avoid; page-break-inside: avoid; margin: 0 0 14pt; }
-.question-heading { display: flex; align-items: center; gap: 8pt;
-  margin: 0 0 7pt; font-size: 10pt; font-weight: 700; break-after: avoid; }
-.question-heading::after { content: ""; flex: 1; border-top: .65pt solid #555; }
+/* One real block border for every numbered entry, including answer keys.
+   Keep the rule attached to its heading across print columns and pages;
+   avoid a separately fragmented flex item or generated decoration. */
+.entry-heading { display: block; margin: 0 0 7pt; padding-bottom: 4pt;
+  border-bottom: .75pt solid #000; font-size: 10pt; font-weight: 700;
+  line-height: 1.2; break-inside: avoid; break-after: avoid; }
 .passage-context { border-left: .65pt solid #777; padding-left: 8pt; margin: 0 0 12pt;
   box-decoration-break: clone; }
 .passage-label { margin: 0 0 8pt; font-size: 9pt; font-style: italic; break-after: avoid; }
@@ -391,8 +394,7 @@ table.data th { border-bottom: 1pt solid var(--rule); font-weight: 700; }
 .write-in { display: inline-block; width: 5.4em; height: 1.28em; border: .65pt solid var(--ink); border-radius: 2pt; }
 .key-grid { column-count: 5; column-gap: .3in; font-size: 9pt; }
 .key-grid li { break-inside: avoid; }
-.exp { break-inside: avoid; margin-bottom: 12pt; border-top: .5pt solid #777; padding-top: 7pt; }
-.exp h4 { margin: 0 0 .15em; font-size: 9.6pt; }
+.exp { break-inside: avoid; margin-bottom: 14pt; }
 .exp .tag { font-variant: small-caps; letter-spacing: .05em; font-size: 8.4pt; }
 /* Rendered explanations run long; kept whole, most would leave half a
    column empty. They may split, but never right after their heading. */
@@ -537,7 +539,7 @@ function keyParts(model, render) {
               )
               .join("");
             return `<div class="exp${rich ? " rich" : ""}">
-        <h4>${item.number}. Correct answer: ${
+        <h4 class="explanation-heading entry-heading">${item.number}. Correct answer: ${
           item.correctLetter || escapeHtml(String(q.correctAnswer))
         }</h4>
         <p class="tag">${[q.domain, q.skill, core.supportsDifficulty(q.sectionKey) ? q.difficulty : null, q.id].filter(Boolean).map(escapeHtml).join(" · ")}</p>
@@ -914,8 +916,8 @@ ${questions}
 % Reserve a few lines at the start so a heading and stem do not dangle.
 \\newcommand{\\question}[1]{\\par
   \\ifdim\\dimexpr\\pagegoal-\\pagetotal\\relax<9\\baselineskip\\newpage\\fi
-  \\addvspace{8pt}\\noindent\\textbf{Question #1}\\hspace{.6em}%
-  \\leaders\\hrule height .4pt\\hfill\\kern0pt\\par\\nobreak\\smallskip}
+  \\addvspace{8pt}\\noindent\\textbf{Question #1}\\par\\nobreak
+  \\vskip4pt\\hrule height .75pt\\nobreak\\vskip7pt}
 \\newcommand{\\passageheading}[1]{\\par\\addvspace{8pt}\\noindent\\textbf{\\textit{#1}}\\par\\nobreak\\smallskip}
 \\newenvironment{choices}
   {\\begin{list}{}{\\setlength{\\leftmargin}{1.8em}\\setlength{\\labelwidth}{1.2em}\\setlength{\\labelsep}{.6em}%
