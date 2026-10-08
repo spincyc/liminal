@@ -57,7 +57,7 @@ or establish lab credit. See the [course contract](docs/ap-courses.md) and
 [completion review](docs/reviews/2026-10-08-ap-completion.md).
 
 The 44 original full-year courses contain 1,584 weekly lessons, 4,752 worksheets,
-28,650 exercises, and 3,270 worked examples. The three reused named courses do
+28,651 exercises, and 3,274 worked examples. The three reused named courses do
 not inflate these counts. Independent sampled content review and browser/print
 checks for the earlier 41 courses are recorded in
 [the integration review](docs/reviews/2026-10-07-weekly-integration.md);

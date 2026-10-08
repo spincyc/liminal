@@ -105,10 +105,10 @@ navigation works, without an invented arrow-key interaction. `.reader-toolbar`
 groups a reader’s location, sequence and actions; `.reader-bar` groups sequence
 and actions where selection belongs in separate setup. Both wrap on phones.
 
-Label the document when scope could be ambiguous: Print lesson, Print student
+Label the document when scope could be ambiguous: Print worked lesson, Print student
 sheet, Download key. Do not promise a download the page cannot generate. Weekly
-Learn/Read offer lesson printing; worksheet downloads contain the selected
-student sheet. Generate exports from explicit student projections, never by
+Learn prints explanations and complete worked examples; Read prints the supplied
+texts. Worksheet downloads contain the selected student sheet. Generate exports from explicit student projections, never by
 copying the live DOM after an answer disclosure has been opened.
 
 ### Plan rows and progressive disclosure

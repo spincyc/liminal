@@ -1,5 +1,9 @@
 # AP course cold review
 
+The confirmed defects below have been corrected. See the
+[repair and verification record](2026-10-08-ap-repairs.md). This review preserves
+the original findings and inventory at the snapshot below.
+
 Reviewed 2026-10-08 at `42e974f70474b9738bd77ee3f5870d4268ff5197`.
 Scope: pedagogy, elegance, worked examples, worksheet quantity and variation,
 and coverage in Liminal's courses for AP® Calculus AB, Physics 1, and Physics C:

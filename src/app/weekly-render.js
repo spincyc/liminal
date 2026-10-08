@@ -149,6 +149,18 @@
     });
     fragment.append(examples); return fragment;
   }
+  // Printing a study lesson includes every worked model, even if its screen
+  // disclosure has never been opened. Populate synchronously: toggle events
+  // may run only after the browser has already captured the print document.
+  function prepareGuidePrint(guideNode, week, math) {
+    const answers = [...guideNode.querySelectorAll(".weekly-example-answer")];
+    const open = answers.map(node => !!node.open);
+    answers.forEach((node, index) => {
+      if (node.children.length === 1) node.append(solution(week.examples[index], math, week.figures));
+      node.open = true;
+    });
+    return () => answers.forEach((node, index) => { node.open = open[index]; });
+  }
   function worksheet(packet, answers, options = {}) {
     const math = packet.trackId !== "common-core-reading";
     const body = el("div", undefined, "weekly-worksheet");
@@ -219,5 +231,5 @@
     main.append(heading, worksheet(packet, answers, { includePassages: true, footer }));
     doc.body.append(main); return doc;
   }
-  return { el, link, rich, section, disclosure, figure, guide, reading, worksheet, exportDocument, NOTICE };
+  return { el, link, rich, section, disclosure, figure, guide, prepareGuidePrint, reading, worksheet, exportDocument, NOTICE };
 });

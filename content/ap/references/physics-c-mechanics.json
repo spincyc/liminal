@@ -257,8 +257,8 @@
           "units": "N·s = kg·m/s"
         },
         {
-          "relation": "If ΣF_ext = 0 (or acts only briefly), then Σp_before = Σp_after",
-          "meaning": "Conservation of momentum, in each direction separately.",
+          "relation": "If ∫ ΣF_ext dt = 0, then Σp_after = Σp_before",
+          "meaning": "Over the chosen interval, zero net external impulse gives exact momentum conservation; negligible net external impulse gives approximate conservation, component by component. A brief interaction alone is not sufficient.",
           "units": "kg·m/s"
         },
         {

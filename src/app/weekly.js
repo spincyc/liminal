@@ -21,7 +21,7 @@
   const toolbar = document.getElementById("weeklyToolbar");
   const topNav = document.getElementById("weeklyNavigation");
   const actionSlot = document.getElementById("weeklyActions");
-  const lessonActions = Controls.actions([{ label: "Print lesson", run: () => window.print() }]);
+  const lessonActions = Controls.actions([{ label: "Print worked lesson", run: () => window.print() }]);
   actionSlot.append(lessonActions);
   const cache = new Map();
   let request = 0;
@@ -176,20 +176,29 @@
         entry.panel.hidden = !current;
       });
       activeView = selected.id;
-      lessonActions.firstElementChild.textContent = selected.id === "read" ? "Print reading" : "Print lesson";
+      lessonActions.firstElementChild.textContent = selected.id === "read" ? "Print reading" : "Print worked lesson";
       actionSlot.hidden = selected.id === "worksheets";
     }
     add("learn", "Learn", () => R.guide(week, math, onRead));
     if (week.passages.length) add("read", "Read", () => R.reading(week, math));
     add("worksheets", "Worksheets", () => practice(course, week, onRead));
-    // Native page printing also needs the texts behind passage references.
-    // Keep answer disclosures closed/hidden and restore the screen selection.
+    // Study lessons print their worked examples; worksheet answers stay hidden.
+    // Include referenced reading and restore the learner's disclosure state.
     preparePrint = () => {
+      const restores = [];
+      const learn = entries.find(entry => entry.id === "learn");
+      if (!learn.panel.hidden) {
+        restores.push(R.prepareGuidePrint(learn.panel, week, math));
+        learn.panel.classList.add("weekly-print-lesson");
+        restores.push(() => learn.panel.classList.remove("weekly-print-lesson"));
+      }
       const reading = entries.find(entry => entry.id === "read");
-      if (!reading || !reading.panel.hidden) return null;
-      if (!reading.ready) { reading.panel.append(reading.build()); reading.ready = true; }
-      reading.panel.hidden = false;
-      return () => { reading.panel.hidden = true; };
+      if (reading && reading.panel.hidden) {
+        if (!reading.ready) { reading.panel.append(reading.build()); reading.ready = true; }
+        reading.panel.hidden = false;
+        restores.push(() => { reading.panel.hidden = true; });
+      }
+      return () => restores.forEach(restore => restore());
     };
     group.prepend(tabs); show(activeView); return group;
   }

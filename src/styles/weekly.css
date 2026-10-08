@@ -102,6 +102,10 @@
   .weekly-answer { background: #fff; }
   .weekly-page a { color: #000; }
   .weekly-page .weekly-item-answer, .weekly-page .weekly-example-answer { display: none !important; }
+  .weekly-page .weekly-print-lesson .weekly-example-answer { display: block !important; }
+  .weekly-print-lesson .weekly-example { break-inside: avoid; }
+  .weekly-print-lesson .weekly-example-answer > summary { display: none; }
+  .weekly-print-lesson .weekly-example h4 { break-after: avoid; }
   .weekly-page .weekly-workspace { min-height: 32mm; }
   .weekly-figure { break-inside: avoid; color: #000; }
   .weekly-figure svg { max-height: 90mm; }

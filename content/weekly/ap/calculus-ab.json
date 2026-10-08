@@ -3203,16 +3203,17 @@
         "after": "Week 10 differentiates inverse trigonometric functions, chooses among all the rules, and takes second and higher derivatives."
       },
       "days": [
-        "Split composite functions into outer and inner layers and apply the chain rule to powers, roots, exponentials, logarithms and trigonometric functions.",
-        "Use the chain rule with tables and graphs: find g(a) first, then evaluate f′ at that output and multiply by g′(a).",
+        "Split composite functions into outer and inner layers and apply the chain rule to powers, roots, exponentials of any positive base, logarithms and trigonometric functions.",
+        "Use the worked table and graph models, then complete a partly worked table problem before evaluating other composites independently: find g(a), read f′ at that output, and multiply by g′(a).",
         "Differentiate implicitly, solve for dy/dx, and write tangent lines to curves that are not graphs of functions.",
-        "Find the derivative of an inverse function at a point from an equation, a table, or the graph of f.",
+        "Find the derivative of an inverse function at a point from an equation, a table, or the graph of f; use a calculator to solve for the matching input when it is not exact.",
         "Mixed practice that starts by naming the rule, then a short no-calculator check."
       ],
       "explanation": [
         "A composite function feeds the output of an inner function into an outer one. If y = f(u) and u = g(x), the chain rule says dy/dx = f′(g(x))·g′(x), or in Leibniz form dy/dx = (dy/du)(du/dx). Differentiate the outer function while keeping its input unchanged, then multiply by the derivative of the input. For example, d/dx sin(x^3) = cos(x^3)·3x^2 and d/dx e^(5x − 2) = 5e^(5x − 2). A function with several layers, such as (ln(4x + 1))^2, needs one factor for each layer: 2 ln(4x + 1)·(1/(4x + 1))·4.",
+        "The chain rule also gives the derivative of an exponential with any positive constant base a: a^x = e^(x ln a), so d/dx a^x = (ln a)·a^x. More generally, d/dx a^(u(x)) = (ln a)·a^(u(x))·u′(x). For example, d/dx 4^(2x − 1) = 2(ln 4)·4^(2x − 1). This is an exponential rule, not the power rule: a is constant and the exponent varies. For 0 < a < 1, ln a is negative, so a^x decreases; for a = 1 the derivative is 0.",
         "Tables and graphs use the same rule in three steps. To find h′(a) for h(x) = f(g(x)), first find the inner value g(a), then read f′ at that value, not at a, and finally multiply by g′(a). Implicit differentiation applies the chain rule to an equation in x and y, treating y as an unknown function of x. Every term containing y picks up a factor of dy/dx: d/dx(y^3) = 3y^2(dy/dx), and by the product rule d/dx(xy) = y + x(dy/dx). After differentiating both sides, collect the dy/dx terms on one side, factor, and divide. The result usually involves both x and y, so a slope at a point needs both coordinates.",
-        "If g is the inverse of f and f(a) = b, then g(b) = a and g′(b) = 1/f′(a), provided f′(a) ≠ 0. The reason is the chain rule: differentiating f(g(x)) = x gives f′(g(x))·g′(x) = 1. On a graph, reflecting across the line y = x swaps rise and run, so the tangent slopes at the matching points (a, b) and (b, a) are reciprocals. To use the formula you must first solve f(a) = b for a; a table often shows that value directly.",
+        "If g is the inverse of f and f(a) = b, then g(b) = a and g′(b) = 1/f′(a), provided f′(a) ≠ 0. The reason is the chain rule: differentiating f(g(x)) = x gives f′(g(x))·g′(x) = 1. On a graph, reflecting across the line y = x swaps rise and run, so the tangent slopes at the matching points (a, b) and (b, a) are reciprocals. To use the formula you must first solve f(a) = b for a; a table often shows that value directly. When f(a) = b has no convenient exact solution, graph f(x) and the line y = b, solve their intersection numerically, and store a. Evaluate 1/f′(a) at that stored input; round only the final answer. A calculator finding an inverse value g(b) has not yet found the inverse derivative g′(b).",
         "Common errors: forgetting the inner derivative, as in writing cos(x^3) for the derivative of sin(x^3); evaluating f′ at a instead of at g(a) in a table problem; writing d/dx(y^2) = 2y with no dy/dx; and computing 1/f′(b) instead of 1/f′(a) for an inverse. The notation f^(−1)(x) means the inverse function, not the reciprocal 1/f(x)."
       ],
       "figures": [
@@ -3263,6 +3264,39 @@
             "g′(2) = 1/f′(g(2)) = 1/f′(1) = 1/5. The figure shows the slopes 5 and 1/5 at the matching points."
           ],
           "passageIds": []
+        },
+        {
+          "prompt": "The differentiable functions f and g have the values shown. Let h(x) = f(g(x)). A student writes h′(2) = f′(2)·g′(2) = −4. Explain the error and find h′(2).\n\n| x | 0 | 2 | 5 |\n| --- | --- | --- | --- |\n| f(x) | 1 | −2 | 4 |\n| f′(x) | 3 | −1 | 6 |\n| g(x) | 2 | 5 | 0 |\n| g′(x) | −2 | 4 | 1 |",
+          "answer": "h′(2) = 24. The outer derivative must be evaluated at g(2) = 5, not at 2.",
+          "steps": [
+            "The chain rule is h′(2) = f′(g(2))·g′(2). First use the row of function values to find the inner output: g(2) = 5.",
+            "Move to the column x = 5 in the f′ row: f′(5) = 6. For the inner derivative, stay at the original input: g′(2) = 4.",
+            "Multiply 6·4 = 24. The student used f′(2) = −1 instead of f′(5), skipping the inner function’s output."
+          ],
+          "passageIds": []
+        },
+        {
+          "prompt": "The graph of f consists of the line segments shown. Let q(x) = f(4 − 3x). Find q′(0), and identify the segment that supplies the needed slope.",
+          "figureIds": [
+            "ab-w09-f2"
+          ],
+          "answer": "q′(0) = 3/2. Use the segment from (3, 3) to (5, 2), because the inner input is 4.",
+          "steps": [
+            "Differentiate the composition: q′(x) = f′(4 − 3x)·(−3). At x = 0, the input to f is 4 − 3(0) = 4.",
+            "Read the slope of the segment containing x = 4, not the height f(4) or the slope at x = 0: f′(4) = (2 − 3)/(5 − 3) = −1/2.",
+            "Multiply by the inner derivative: q′(0) = (−1/2)(−3) = 3/2. The segment’s negative slope and the inner function’s negative rate give a positive result."
+          ],
+          "passageIds": []
+        },
+        {
+          "prompt": "Graphing calculator. Let f(x) = x + e^(2x), and let g be its inverse. Find g(4) and g′(4), each to three decimal places. Show which equation you solve and which derivative you evaluate.",
+          "answer": "g(4) ≈ 0.610 and g′(4) ≈ 0.129.",
+          "steps": [
+            "f′(x) = 1 + 2e^(2x) > 0 for all x, so f is increasing and has an inverse. To find g(4), solve f(a) = 4, that is a + e^(2a) = 4.",
+            "f(0) = 1 < 4 and f(1) = 1 + e^2 > 4. Find the intersection with y = 4 in 0 < a < 1 and store a ≈ 0.6103616214.",
+            "Use the derivative at the matching input: g′(4) = 1/f′(a) = 1/(1 + 2e^(2a)) ≈ 0.1285466543. Round the two final results to 0.610 and 0.129."
+          ],
+          "passageIds": []
         }
       ],
       "passages": [],
@@ -3287,14 +3321,15 @@
             },
             {
               "id": "ab-w09-a2",
-              "prompt": "Differentiate f(x) = ln(x^2 + 9).",
-              "answer": "f′(x) = 2x/(x^2 + 9)",
+              "prompt": "(a) Differentiate f(x) = ln(x^2 + 9). (b) Differentiate g(x) = 3^(x^2 − 2x).",
+              "answer": "(a) f′(x) = 2x/(x^2 + 9). (b) g′(x) = (2x − 2)(ln 3)·3^(x^2 − 2x).",
               "steps": [
-                "The derivative of ln u is (1/u)·u′.",
-                "With u = x^2 + 9 and u′ = 2x, f′(x) = 2x/(x^2 + 9)."
+                "(a) The outer derivative of ln u is 1/u and the inner derivative of x^2 + 9 is 2x, giving 2x/(x^2 + 9).",
+                "(b) Rewrite 3^(x^2 − 2x) as e^((x^2 − 2x)ln 3). The derivative of its exponent is (2x − 2)ln 3.",
+                "Multiply that inner derivative by the exponential: g′(x) = (2x − 2)(ln 3)·3^(x^2 − 2x). A base other than e contributes the factor ln 3."
               ],
               "passageIds": [],
-              "skill": "Apply the chain rule to a logarithm"
+              "skill": "Differentiate logarithmic and general-base exponential composites"
             },
             {
               "id": "ab-w09-a3",
@@ -3358,7 +3393,7 @@
           "items": [
             {
               "id": "ab-w09-b1",
-              "prompt": "The differentiable functions f and g have the values below. Find h′(1) for h(x) = f(g(x)), k′(3) for k(x) = g(f(x)), and m′(4) for m(x) = [f(x)]^3.\n| x | 1 | 2 | 3 | 4 |\n| --- | --- | --- | --- | --- |\n| f(x) | 3 | 4 | 2 | 1 |\n| f′(x) | −2 | 5 | 6 | −3 |\n| g(x) | 2 | 3 | 4 | 1 |\n| g′(x) | 7 | −1 | 2 | 4 |",
+              "prompt": "The differentiable functions f and g have the values below. Let h(x) = f(g(x)). Complete the partly worked solution: g(1) = ___, so h′(1) = f′(___)·___ = ___. Then, without the scaffold, find k′(3) for k(x) = g(f(x)) and m′(4) for m(x) = [f(x)]^3.\n| x | 1 | 2 | 3 | 4 |\n| --- | --- | --- | --- | --- |\n| f(x) | 3 | 4 | 2 | 1 |\n| f′(x) | −2 | 5 | 6 | −3 |\n| g(x) | 2 | 3 | 4 | 1 |\n| g′(x) | 7 | −1 | 2 | 4 |",
               "answer": "h′(1) = 35, k′(3) = −6, m′(4) = −9",
               "steps": [
                 "h′(1) = f′(g(1))·g′(1) = f′(2)·7 = 5·7 = 35.",
@@ -4843,11 +4878,12 @@
           "items": [
             {
               "id": "ab-w13-b1",
-              "prompt": "The table gives values of a twice-differentiable function f and its derivative, and f″(x) > 0 for 1 ≤ x ≤ 2. Use the tangent line at x = 1.5 to approximate f(1.4), and decide whether the approximation is too large or too small.\n| x | 1.0 | 1.5 | 2.0 |\n| --- | --- | --- | --- |\n| f(x) | 7 | 6 | 6.5 |\n| f′(x) | −3 | −2 | 2 |",
+              "prompt": "The table gives values of a twice-differentiable function f and its derivative, and f″(x) > 0 for 1 ≤ x ≤ 2. Use the tangent line at x = 1.5 to approximate f(1.4), and decide whether the approximation is too large or too small.\n| x | 1.0 | 1.5 | 2.0 |\n| --- | --- | --- | --- |\n| f(x) | 7.5 | 6 | 5.5 |\n| f′(x) | −4 | −2 | 0 |",
               "answer": "f(1.4) ≈ 6.2, an underestimate.",
               "steps": [
                 "L(x) = f(1.5) + f′(1.5)(x − 1.5) = 6 − 2(x − 1.5), so L(1.4) = 6 + 0.2 = 6.2.",
-                "f″ > 0 means the graph is concave up and above its tangent lines, so 6.2 is too small."
+                "f″ > 0 means the graph is concave up and above its tangent lines, so 6.2 is too small.",
+                "The table is consistent, for example, with f(x) = 2(x − 1.5)^2 − 2(x − 1.5) + 6, whose second derivative is 4. For that function f(1.4) = 6.22, confirming the direction of the tangent-line error."
               ],
               "passageIds": [],
               "skill": "Approximate from a table and judge the error"
@@ -10632,14 +10668,16 @@
           "items": [
             {
               "id": "ab-w27-c1",
-              "prompt": "Find the y-coordinates where the curves x = y^2 − 3 and x = e^(y/2) intersect, and find the area of the region they enclose.",
-              "answer": "y ≈ −1.843 and y ≈ 2.573; area ≈ 11.928.",
+              "prompt": "The curves x = y^2 − 3 and x = e^(y/2) enclose two bounded regions. Find all three y-coordinates of intersection, then find the area of each region and their total area. Choose a graphing window wide enough to include both regions.",
+              "answer": "Intersections: y ≈ −1.843, 2.573, and 8.452. The lower region has area ≈ 11.928, the upper region has area ≈ 48.299, and the total area is ≈ 60.227.",
               "steps": [
-                "Solve e^(y/2) = y^2 − 3 (graph both sides as functions of a single variable): y ≈ −1.843 and y ≈ 2.573.",
-                "x = e^(y/2) is on the right between them, so Area = ∫ of (e^(y/2) − y^2 + 3) dy ≈ 11.928."
+                "Solve e^(y/2) = y^2 − 3. A window covering −3 ≤ y ≤ 10 reveals roots a ≈ −1.843327573, b ≈ 2.572929563, and c ≈ 8.451618342; store the roots without rounding.",
+                "Between a and b, x = e^(y/2) is the right boundary. The lower area is ∫ from a to b of (e^(y/2) − y^2 + 3) dy ≈ 11.927634643.",
+                "Between b and c, x = y^2 − 3 is the right boundary. The upper area is ∫ from b to c of (y^2 − 3 − e^(y/2)) dy ≈ 48.299209787.",
+                "Add the unrounded positive areas, not a signed integral across both regions: the total is ≈ 60.226844430, or 60.227 to three decimal places."
               ],
               "passageIds": [],
-              "skill": "Compute an area with respect to y numerically"
+              "skill": "Find every intersection and sum areas with horizontal slices"
             },
             {
               "id": "ab-w27-c2",
@@ -13689,9 +13727,9 @@
         "Write a short report: the model, the fitted constant, the evidence, one limitation, and one improvement (Worksheet C, item 6)."
       ],
       "explanation": [
-        "The exam is over, and this week uses its tools on an open question: how does water drain from a bottle? The investigation is on paper, with a data set invented for this course, so no equipment is needed. A tall cylindrical bottle of radius 3.5 cm has a small hole in its side near the bottom. At t = 0 the water stands 16.0 cm above the hole, and the height h of the water above the hole, in centimeters, is recorded every 10 seconds:\n\n| t (s) | 0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| h (cm) | 16.0 | 13.0 | 10.3 | 7.8 | 5.8 | 4.0 | 2.5 | 1.5 | 0.6 |\n\nOptional at home: an adult makes a small hole near the bottom of a clean plastic bottle with a pushpin; stand the bottle in a sink, fill it, and record the height above the hole every 10 seconds with a ruler and a phone timer. Keep the work area dry to avoid slips.",
+        "The exam is over, and this week uses its tools on an open question: how does water drain from a bottle? The accompanying passage, Drainage observations, supplies the bottle’s dimensions and an invented data set for this paper investigation; no equipment is needed. It accompanies every worksheet that uses the observations. Optional at home: an adult makes a small hole near the bottom of a clean plastic bottle with a pushpin; stand the bottle in a sink, fill it, and record the height above the hole every 10 seconds with a ruler and a phone timer. Keep the work area dry to avoid slips.",
         "A modeling cycle has five steps: notice, propose, solve, test, and report. Notice: the water falls fast at first and slowly near the end, so the rate depends on the height. Propose: a physical principle called Torricelli's law (taken as given here) says the water leaves the hole at a speed proportional to √h, which leads to the differential equation dh/dt = −k√h for a constant k > 0. A competing guess, dh/dt = −ch, would make the water decrease exponentially. Data decide between them: if dh/dt = −k√h, then h′/√h should be nearly constant, and √h should be a linear function of t.",
-        "Solve: separating variables gives h^(−1/2) dh = −k dt, so 2√h = −kt + C, and with h(0) = H, √h = √H − (k/2)t, that is, h(t) = (√H − kt/2)^2 until the bottle empties at t = 2√H/k. Fit: the slope of the line through the points (t, √h) is −k/2. Test: compare the model with every data point (the differences are residuals), and check the shape: unlike an exponential, this model reaches 0 in finite time, as the data suggest. Use: the volume in the bottle is V = π(3.5)^2·h cubic centimeters, so the outflow rate is dV/dt = π(3.5)^2·dh/dt, and its integral is the volume drained.",
+        "Solve: separating variables gives h^(−1/2) dh = −k dt, so 2√h = −kt + C, and with h(0) = H, √h = √H − (k/2)t, that is, h(t) = (√H − kt/2)^2 until the bottle empties at t = 2√H/k. Fit: the slope of the line through the points (t, √h) is −k/2. Test: compare the model with every data point (the differences are residuals), and check the shape: unlike an exponential, this model reaches 0 in finite time, as the data suggest. Use: the volume in the bottle is V = π(3.5)^2·h cubic centimeters, so its rate of change is dV/dt = π(3.5)^2·dh/dt. During drainage this is negative; the positive outflow rate is −dV/dt, whose integral is the volume drained.",
         "Report the limits honestly. The formula (√H − kt/2)^2 rises again after the bottle is empty, so the model holds only for 0 ≤ t ≤ 2√H/k, with h = 0 afterward. Near the end, surface tension, the hole's shape, and measurement error matter more, and a fit that relies on one or two points is fragile. Common mistakes are choosing the exponential model because it is familiar, fitting k from a single point, extrapolating past the empty time, and mixing up centimeters (height) with cubic centimeters (volume)."
       ],
       "figures": [
@@ -13726,7 +13764,9 @@
             "h′/h: −0.26/10.3 ≈ −0.025 and −0.125/2.5 = −0.050, so the relative rate doubles; an exponential model would keep it constant.",
             "h′/√h: −0.26/√10.3 ≈ −0.081 and −0.125/√2.5 ≈ −0.079, nearly equal, as the model dh/dt = −k√h requires."
           ],
-          "passageIds": []
+          "passageIds": [
+            "ab-w35-data"
+          ]
         },
         {
           "prompt": "Solve dh/dt = −0.08√h with h(0) = 16, and find when the model says the bottle is empty.",
@@ -13739,12 +13779,22 @@
           "passageIds": []
         }
       ],
-      "passages": [],
+      "passages": [
+        {
+          "id": "ab-w35-data",
+          "title": "Drainage observations",
+          "text": "These observations are invented for a paper modeling investigation. A tall cylindrical bottle of radius 3.5 cm has a small hole in its side near the bottom. Time t is measured in seconds from the start of drainage, and h is the water height in centimeters above the hole. The height is recorded every 10 seconds.\n\n| t (s) | 0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| h (cm) | 16.0 | 13.0 | 10.3 | 7.8 | 5.8 | 4.0 | 2.5 | 1.5 | 0.6 |",
+          "kind": "original",
+          "attribution": "Original modeling data written for Liminal.",
+          "sourceUrl": "",
+          "readingMode": "independent"
+        }
+      ],
       "worksheets": [
         {
           "id": "a",
           "title": "Exploring the drainage data",
-          "directions": "Graphing calculator. Use the data table in this week's explanation (heights h in centimeters at times t in seconds). Give units, and round computed values to three decimal places unless an item says otherwise.",
+          "directions": "Graphing calculator. Use the accompanying Drainage observations passage. Give units, and round computed values to three decimal places unless an item says otherwise.",
           "calculator": "graphing",
           "minutes": 30,
           "items": [
@@ -13759,7 +13809,9 @@
                 "(13.0 − 16.0)/10 = −0.30 cm/s and (0.6 − 1.5)/10 = −0.09 cm/s.",
                 "The drop rate shrinks as the height shrinks, so the rate depends on h."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Compute and compare average rates from data"
             },
             {
@@ -13770,7 +13822,9 @@
                 "h′(40) ≈ (h(50) − h(30))/(50 − 30) = (4.0 − 7.8)/20 = −0.19 cm/s.",
                 "k = −h′/√h ≈ 0.19/√5.8 ≈ 0.19/2.408 ≈ 0.079 (in √cm per second)."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Estimate a model constant from a derivative estimate"
             },
             {
@@ -13788,7 +13842,9 @@
                 "A model dh/dt = −k·(something) fits when h′ divided by that something is nearly constant.",
                 "h′/√h is nearly constant, while h′ itself shrinks (ruling out a constant rate) and h′/h grows in size (ruling out exponential decay)."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Choose a model from ratio evidence"
             },
             {
@@ -13799,7 +13855,9 @@
                 "Successive differences: −0.394, −0.396, −0.417, −0.385, −0.408, −0.419, −0.356, −0.450.",
                 "Nearly equal differences over equal time steps mean a nearly constant rate of change, which is the signature of a linear function."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Linearize data with a transformation"
             },
             {
@@ -13816,7 +13874,9 @@
                 "The first and last points are (0, 4.000) and (80, 0.775): slope ≈ (0.775 − 4.000)/80 ≈ −0.040.",
                 "The intercept is about 4.0, matching √16 = 4."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Plot transformed data and fit a line"
             },
             {
@@ -13827,7 +13887,9 @@
                 "At t = 45, √h ≈ 4.0 − 0.040(45) = 2.2, so h ≈ 2.2^2 = 4.84 cm.",
                 "√h = 0 when t = 4.0/0.040 = 100 seconds."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Use a fitted line to make estimates"
             }
           ]
@@ -13892,7 +13954,9 @@
                 "e^(1.6) < e^2 < 9, so 16e^(−1.6) > 16/9 ≈ 1.8.",
                 "An exponential decreases by the same factor every equal time step and never reaches 0, while the data fall to 0.6 cm and are still dropping steadily."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Compare competing models"
             },
             {
@@ -13911,7 +13975,7 @@
         {
           "id": "c",
           "title": "Testing, using, and reporting the model",
-          "directions": "Graphing calculator. Use the model h(t) = (4 − 0.04t)^2 centimeters for 0 ≤ t ≤ 100 seconds and the bottle's radius, 3.5 cm. Write each setup before its value; give three decimal places.",
+          "directions": "Graphing calculator. Use the accompanying Drainage observations passage and the model h(t) = (4 − 0.04t)^2 centimeters for 0 ≤ t ≤ 100 seconds. Write each setup before its value; give three decimal places.",
           "calculator": "graphing",
           "minutes": 40,
           "items": [
@@ -13923,7 +13987,9 @@
                 "Model values: 16.00, 12.96, 10.24, 7.84, 5.76, 4.00, 2.56, 1.44, 0.64.",
                 "Subtract from the data: 13.0 − 12.96 = 0.04, 10.3 − 10.24 = 0.06, and so on; the residuals alternate in sign with no trend."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Test a model with residuals"
             },
             {
@@ -13934,7 +14000,9 @@
                 "dV/dt = π(3.5)^2·dh/dt = 12.25π·(−0.08)(4 − 0.04t).",
                 "At t = 20: 12.25π·(−0.08)(3.2) ≈ −9.852 cm^3/s."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Convert a height rate to a volume rate"
             },
             {
@@ -13945,7 +14013,9 @@
                 "The outflow rate is −dV/dt = 12.25π·0.08(4 − 0.04t) cm^3/s.",
                 "Its integral over [0, 60] is about 517.232 cm^3; V(0) − V(60) = 12.25π(16 − 2.56) ≈ 517.232 cm^3 agrees."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Accumulate an outflow rate"
             },
             {
@@ -13956,7 +14026,9 @@
                 "Average value = (1/(100 − 0))∫ from 0 to 100 of h(t) dt.",
                 "The integral is about 533.333, so the average is about 5.333 cm, one third of the starting height."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Compute the average value of a model"
             },
             {
@@ -13967,7 +14039,9 @@
                 "√0.6 ≈ 0.775, so k/2 = (4 − 0.775)/80 and k ≈ 0.0806.",
                 "Empty time 2√16/k = 8/k ≈ 99.212 s, close to the 100 s from the fitted line."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Refit a parameter and judge the fit"
             },
             {
@@ -14005,7 +14079,9 @@
                 "A report answers what was modeled, how the parameter was found, why the model is believable, and where it should not be trusted.",
                 "Each claim should cite a number from the investigation."
               ],
-              "passageIds": [],
+              "passageIds": [
+                "ab-w35-data"
+              ],
               "skill": "Report a model with evidence and limits"
             }
           ]

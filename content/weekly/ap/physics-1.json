@@ -7241,7 +7241,7 @@
             },
             {
               "id": "p1-w16-c7",
-              "prompt": "Suppose the air track was not quite level but sloped slightly downhill in the direction of motion, so the gliders sped up a little between the collision and the photogate. Explain how this would affect the measured values of v_f and the value of v_i found from the graph's intercept, and describe how to check the track and reduce the effect.",
+              "prompt": "Suppose the air track was not quite level but sloped slightly downhill in the direction of motion, so the gliders sped up a little between the collision and the photogate. Explain the bias in the measured values of v_f and in 1/v_f. A student argues, 'Every reciprocal-speed value is lower, so the best-fit line must have a smaller vertical intercept and the inferred v_i must be larger.' Does that conclusion follow from the lower values alone? Explain, considering both the slope and the intercept of the fitted line. Describe how to check the track and reduce the effect.",
               "points": 3,
               "rubric": [
                 {
@@ -7250,16 +7250,17 @@
                 },
                 {
                   "points": 1,
-                  "criterion": "The intercept would be too small, so v_i = 1/intercept would come out larger than the true speed (the slope would also be off)."
+                  "criterion": "Explains that lower reciprocal-speed values alone do not determine the change in the fitted vertical intercept: the slope can also change, and the intercept is extrapolated to M = 0. Therefore they do not establish whether v_i = 1/intercept is too large or too small."
                 },
                 {
                   "points": 1,
                   "criterion": "Check: a glider placed at rest on the track should not drift; level the track with its adjusting screws, or place the photogates close to the collision point."
                 }
               ],
-              "answer": "The gliders would gain speed after the collision, so v_f would read high and 1/v_f low; the intercept would come out low, making the calculated v_i too high. Check by setting a glider at rest and seeing whether it drifts, level the track, and put the photogates close to the collision point.",
+              "answer": "The measured v_f values are too large and each 1/v_f is too small. The student's conclusion does not follow: the fitted slope can change as well as the line's height, so lowering the measured points does not by itself establish which way the extrapolated intercept changes. A smaller intercept would imply a larger inferred v_i, but a larger intercept would imply a smaller v_i; the biased data or an explicit model must be analyzed to decide. Check whether a glider placed at rest drifts, level the track, and put the photogates close to the collision point.",
               "steps": [
-                "A downhill slope adds speed after the collision that is not caused by the collision.",
+                "A downhill slope adds speed after the collision, making the measured v_f too large and its reciprocal too small.",
+                "The graph contains positive target masses M; its vertical intercept is found by extending the fitted line to M = 0. Changing the slope changes that extrapolation, so the direction of the pointwise bias alone is insufficient.",
                 "Leveling removes the extra acceleration; short distances to the photogates limit its effect."
               ],
               "passageIds": [
@@ -7294,7 +7295,7 @@
       "explanation": [
         "A rigid object turning about a fixed axis needs only one coordinate: the angle θ through which a reference line on it has turned. Measure θ in radians, where one revolution is 2π rad (360°), so 1 rad ≈ 57.3°. The angular displacement is Δθ = θ_f − θ_i. Choose and state a positive sense, usually counterclockwise as seen from a stated side. The angular velocity is ω = Δθ/Δt in rad/s, and the angular acceleration is α = Δω/Δt in rad/s^2. Every point of a rigid object turns through the same angle in the same time, so ω and α describe the whole object. To convert a rate in revolutions per minute (rpm), multiply by 2π rad per revolution and divide by 60 s per minute.",
         "Rotational motion has the same structure as straight-line motion, with θ, ω and α in place of x, v and a. On a graph of ω against t, the slope is α and the signed area between the graph and the time axis is Δθ. For constant α: ω = ω_0 + αt, Δθ = ω_0 t + (1/2)αt^2, ω^2 = ω_0^2 + 2αΔθ and Δθ = (1/2)(ω_0 + ω)t. As in one dimension, an object spins faster when ω and α have the same sign and slows down when their signs are opposite; a negative α alone does not mean slowing down.",
-        "A point at distance r from the axis moves along a circle. When the object turns through Δθ (in radians), the point travels an arc length s = rΔθ, so its speed is v = rω and its tangential acceleration, along its velocity, is a_t = rα. The point also has a centripetal acceleration toward the axis, a_c = v^2/r = ω^2 r, whenever it is moving, even if ω is constant. All points share ω, but points farther from the axis move faster. A belt, chain or rope that does not slip moves at the speed of the rim it touches, so two wheels joined by a belt have equal rim speeds, r_1ω_1 = r_2ω_2, not equal angular velocities. A rope wound on a drum moves a distance rΔθ as the drum turns.",
+        "A point at distance r from the axis moves along a circle. When the object turns through Δθ (in radians), the point travels an arc length s = rΔθ, so its speed is v = rω and its signed tangential acceleration is a_t = rα. This acceleration component is tangent to the path: it points along the velocity when the point speeds up and opposite the velocity when it slows down. The point also has a centripetal acceleration toward the axis, a_c = v^2/r = ω^2 r, whenever it is moving, even if ω is constant. All points share ω, but points farther from the axis move faster. A belt, chain or rope that does not slip moves at the speed of the rim it touches, so two wheels joined by a belt have equal rim speeds, r_1ω_1 = r_2ω_2, not equal angular velocities. A rope wound on a drum moves a distance rΔθ as the drum turns.",
         "Common errors: using revolutions or degrees in s = rθ or v = rω (these relations need radians); saying a point near the rim has a larger angular velocity than a point near the axis (it has a larger speed, not a larger ω); forgetting that a point on a wheel turning at constant ω still accelerates toward the axis; giving belt-linked wheels the same ω; and dropping the sign of ω or α when a wheel slows down and reverses."
       ],
       "figures": [
@@ -10444,7 +10445,7 @@
       "week": 24,
       "unitId": "u7",
       "title": "Simple harmonic motion: restoring forces, frequency and period",
-      "objective": "Identify the linear restoring force that produces simple harmonic motion, describe amplitude, period and frequency, and calculate and predict the periods of mass–spring systems and simple pendulums.",
+      "objective": "Identify the linear restoring force that produces simple harmonic motion, describe amplitude, period and frequency, and calculate and predict the periods of mass–spring systems and simple pendulums. Use repeated timing measurements to estimate scatter and judge whether a period difference is resolved by the stated uncertainty.",
       "standards": [
         "P1.7.1",
         "P1.7.2"
@@ -10458,13 +10459,14 @@
         "Amplitude, period and frequency: read them from descriptions and timing data, and convert between T and f.",
         "Mass–spring systems: T = 2π√(m/k) for horizontal and vertical springs, and which changes leave the period alone.",
         "The simple pendulum: T = 2π√(L/g), the small-angle condition, and pendulums where g is different.",
-        "Proportional reasoning about periods, a spring data task, and a short check."
+        "Proportional reasoning about periods, a spring data task, and comparison of repeated timings using an explicit estimate of uncertainty."
       ],
       "explanation": [
         "An oscillation is a motion that repeats about an equilibrium position, the place where the net force on the object is zero. Displace the object and a restoring force points back toward equilibrium. Simple harmonic motion (SHM) is the special case in which the restoring force is proportional to the displacement: F = −kx, where x is the displacement from equilibrium and the minus sign says the force points opposite the displacement. By Newton's second law the acceleration is a = −(k/m)x, so the acceleration is largest at the turning points and zero as the object passes through equilibrium. The first figure shows a block on a spring: at x = +A the spring pulls it left, and at x = −A the spring pushes it right.",
         "The amplitude A is the largest displacement from equilibrium; the distance between the two turning points is 2A. The period T is the time for one complete cycle, ending at the same position and moving the same way, and the frequency f = 1/T is the number of cycles each second, in hertz (1 Hz = 1 s^−1). In SHM the period does not depend on the amplitude: a larger amplitude means a larger restoring force and larger speeds, so the longer path takes the same time.",
         "For a block on an ideal spring, T = 2π√(m/k). A more massive block responds more slowly and a stiffer spring pulls back harder, so T grows with m and shrinks with k. A block hanging from a vertical spring has the same period: gravity only moves the equilibrium position down by mg/k, and the net force measured from the new equilibrium is still −kx. For a simple pendulum, a small bob on a light string of length L, the restoring force is the component of gravity along the arc, mg sin θ (second figure). For angles below about 15°, this is very nearly proportional to the displacement along the arc, and T = 2π√(L/g), independent of the bob's mass and of the amplitude.",
-        "Common errors: calling the distance between the turning points the amplitude; writing T = 2π√(k/m) upside down (check that a heavier mass gives a longer period); expecting a heavier pendulum bob to change the period; using T = 2π√(L/g) for wide swings; and mixing up period and frequency when a question gives oscillations per second. To predict a change, write the period as a ratio: if m is multiplied by 4, T is multiplied by √(4) = 2."
+        "Common errors: calling the distance between the turning points the amplitude; writing T = 2π√(k/m) upside down (check that a heavier mass gives a longer period); expecting a heavier pendulum bob to change the period; using T = 2π√(L/g) for wide swings; and mixing up period and frequency when a question gives oscillations per second. To predict a change, write the period as a ratio: if m is multiplied by 4, T is multiplied by √(4) = 2.",
+        "To compare measured periods, report the scatter as well as the mean. For a simple classroom estimate, use the mean of repeated timings and half their range, (largest − smallest)/2. If each timing covers n cycles, divide both the mean and the half-range by n to obtain a period estimate T ± u. Treat T − u to T + u as a stated comparison interval, not a confidence interval or a guaranteed bound on the true period. Overlapping intervals mean this method does not resolve a difference; they do not prove the periods equal. Nonoverlapping intervals show a difference larger than this estimate of repeat scatter, but a systematic error or an uncontrolled variable could still explain it. Repetition does not reveal every uncertainty: check the effective pendulum length, the release angle and the timing procedure as well."
       ],
       "figures": [
         {
@@ -10521,6 +10523,17 @@
             "T is proportional to √(m/k).",
             "The ratio m/k is multiplied by 4/2 = 2.",
             "The period is multiplied by √(2) ≈ 1.4, so the new period is about 1.4T."
+          ],
+          "passageIds": []
+        },
+        {
+          "prompt": "A student tests whether changing a pendulum bob from 40 g to 80 g changes its period. The effective length from pivot to bob center and the 8° release angle are kept the same. Three timings of 10 cycles are 14.1, 14.3 and 14.2 s for the 40 g bob, and 14.2, 14.4 and 14.3 s for the 80 g bob. For each bob, estimate the period as mean timing divided by 10, with uncertainty equal to half the timing range divided by 10. Compare the resulting intervals. Do these measurements establish that the period depends on mass, or prove that it is independent of mass?",
+          "answer": "The estimates are 1.42 ± 0.01 s and 1.43 ± 0.01 s. Their comparison intervals, 1.41–1.43 s and 1.42–1.44 s, overlap. The measurements do not resolve a mass-dependent change by this scatter estimate, consistent with the small-angle model, but they do not prove exact independence or rule out systematic errors.",
+          "steps": [
+            "The mean timings are 14.2 s and 14.3 s. Dividing each by 10 gives periods 1.42 s and 1.43 s.",
+            "Each timing range is 0.2 s, so the half-range is 0.1 s and the estimated period uncertainty is 0.1/10 = 0.01 s.",
+            "The comparison intervals overlap between 1.42 s and 1.43 s. A difference between the means alone is therefore not evidence of a resolved change under this method.",
+            "The half-range describes the observed repeat scatter, not every source of uncertainty. More precise measurements and checks for systematic errors would be needed to test smaller effects."
           ],
           "passageIds": []
         }
@@ -10775,7 +10788,7 @@
           "title": "Applying period relations",
           "directions": "Show the relation you use before substituting. Give answers with units and 2–3 significant figures. Use g = 9.8 m/s^2. This data task uses supplied numbers. It is practice in analysis and does not replace hands-on laboratory work.",
           "calculator": "any",
-          "minutes": 30,
+          "minutes": 35,
           "items": [
             {
               "id": "p1-w24-c1",
@@ -10905,6 +10918,33 @@
               ],
               "passageIds": [],
               "skill": "Compare oscillators in a different gravitational field"
+            },
+            {
+              "id": "p1-w24-c8",
+              "prompt": "Two groups compare pendulums with bobs of different mass. They intend to use the same effective length and a small release angle. Group A records 14.0, 14.2 and 14.4 s for 10 cycles; group B records 14.8, 15.0 and 15.2 s for 10 cycles. (a) Estimate each period and its uncertainty, using the mean and half-range of the timings divided by 10. (b) Compare the intervals and evaluate the claim, \"These measurements prove that bob mass changes the period.\" (c) Name one check that could help distinguish a mass effect from a systematic difference between the groups.",
+              "points": 3,
+              "rubric": [
+                {
+                  "points": 1,
+                  "criterion": "Calculates T_A = 1.42 ± 0.02 s and T_B = 1.50 ± 0.02 s, giving comparison intervals 1.40–1.44 s and 1.48–1.52 s."
+                },
+                {
+                  "points": 1,
+                  "criterion": "Recognizes that the intervals do not overlap, so the period difference exceeds this estimate of repeat scatter, but rejects proof of a mass effect because systematic errors or uncontrolled variables are not covered by the half-range estimate."
+                },
+                {
+                  "points": 1,
+                  "criterion": "Proposes a specific control or check, such as measuring the effective length to each bob center, matching the release angles, or repeating both masses with the same apparatus and timing method."
+                }
+              ],
+              "answer": "(a) T_A = 1.42 ± 0.02 s and T_B = 1.50 ± 0.02 s. (b) The intervals 1.40–1.44 s and 1.48–1.52 s do not overlap, so the difference is larger than this estimate of repeat scatter. It does not prove a mass effect: the half-range excludes possible systematic differences, and the small-angle model predicts no mass dependence at fixed length and g. (c) For example, measure from the pivot to the center of each bob and adjust the strings to make those effective lengths equal; then compare both masses using the same timing setup.",
+              "steps": [
+                "The mean times are 14.2 s and 15.0 s, and both half-ranges are (0.4 s)/2 = 0.2 s. Divide all four quantities by 10.",
+                "Compare the full intervals, not just the means: their gap is 1.48 − 1.44 = 0.04 s.",
+                "A systematic length or timing difference can shift all trials together without increasing their scatter. Control that difference before attributing the result to mass."
+              ],
+              "passageIds": [],
+              "skill": "Compare measured periods with stated uncertainty and evaluate causal evidence"
             }
           ]
         }

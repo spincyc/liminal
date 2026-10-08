@@ -242,6 +242,31 @@ test("math: underscore subscripts stay as typed and belong to their symbol", () 
   }
 });
 
+test("math: Unicode primes stay attached to fraction operands and function calls", () => {
+  for (const prime of ["′", "″", "‴", "⁗", "′′"]) {
+    assert.equal(typeset(`1/f${prime}(a)`), `⟨1 | f${prime}(a)⟩`);
+    assert.equal(typeset(`f${prime}(x)/g′(x)`), `⟨f${prime}(x) | g′(x)⟩`);
+    assert.equal(typeset(`x${prime}/2`), `⟨x${prime} | 2⟩`);
+  }
+  assert.equal(typeset("x′/y″"), "⟨x′ | y″⟩");
+  assert.equal(typeset("−f′(x) / −g″(x)"), "−⟨f′(x) | −g″(x)⟩");
+  assert.equal(typeset("1/f′(a + 1)"), "⟨1 | f′(a + 1)⟩");
+  assert.equal(typeset("sin′(x)/cos′(x)"), "⟨sin′(x) | cos′(x)⟩");
+  assert.equal(typeset("x_0′/t"), "⟨x_0′ | t⟩");
+  assert.equal(typeset("1/f′(a)^2"), "⟨1 | f′(a)^{2}⟩");
+  assert.equal(typeset("f′(1/2)"), "f′⦅(⟨1 | 2⟩)⦆", "a primed call keeps its argument brackets");
+  assert.equal(typeset("1/(a/b)′"), "⟨1 | ⦅(⟨a | b⟩)⦆′⟩", "a prime keeps the differentiated group intact");
+  assert.equal(typeset("(a/b)′/2"), "⟨⦅(⟨a | b⟩)⦆′ | 2⟩");
+});
+
+test("math: ambiguous prime marks and apostrophes do not yield partial fractions", () => {
+  for (const text of [
+    "1/2′", "5′/2′", "5″/2", "1/2″", "1/2\"", "5'/2", "1/2'", "1/2′x",
+    "1/f'(a)", "f'(a)/2", "1/f’(a)", "f’(a)/2", "students′(a)/2", "word′/2",
+    "1/2f′(x)", "1/f′(x)g(x)", "1/′f(a)", "f′(x)/g′(x)/2",
+  ]) assert.equal(typeset(text), text, text);
+});
+
 test("math: brackets around a lone fraction drop unless they carry meaning", () => {
   assert.equal(typeset("(1/2)x"), "⟨1 | 2⟩x");
   assert.equal(typeset("−(1/2)x + 3"), "−⟨1 | 2⟩x + 3");
@@ -290,6 +315,9 @@ test("math: speech reads fractions, powers, and roots in words", () => {
   assert.equal(say("∛8"), "the cube root of 8");
   assert.equal(say("2^((x+1)/(x-1))"), "2 raised to the exponent, the fraction, x+1, over x-1, end fraction, end exponent");
   assert.equal(say("−k/−12"), "− k over −12", "the sign stands before the fraction");
+  assert.equal(say("1/f′(a)"), "1 over f′(a)");
+  assert.equal(say("f′(x)/g″(x)"), "f′(x) over g″(x)");
+  assert.equal(say("1/f′(a + 1)"), "the fraction, 1, over f′(a + 1), end fraction");
 });
 
 // Writes a tree back as plain notation, so a test can check that the
@@ -403,6 +431,15 @@ test("math DOM: typeset pieces carry spoken text and hide their drawing", () => 
     assert.match(nested, /<span class="lm-math-radical"><svg class="lm-math-sign"[^>]*><path d="[^"]+"><\/path><\/svg>/);
     const power = serialize(render.renderText("x^(3/5)", { math: true }));
     assert.match(power, /<sup class="lm-math-power" aria-hidden="true">3\/5<\/sup>/);
+  });
+});
+
+test("math DOM: inverse derivative keeps the full primed call in its denominator and spoken text", () => {
+  withDocument(() => {
+    const html = serialize(render.renderText("1/f′(a)", { math: true }));
+    assert.equal(html, '<div class="lm-rich"><p><span class="lm-math lm-math-frac">' +
+      '<span class="lm-math-sr"> 1 over f′(a) </span><span class="lm-math-stack" aria-hidden="true">' +
+      '<span class="lm-math-num">1</span><span class="lm-math-den">f′(a)</span></span></span></p></div>');
   });
 });
 

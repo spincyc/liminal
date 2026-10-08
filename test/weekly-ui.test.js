@@ -140,6 +140,27 @@ test("worked examples reveal solutions on request and use the existing accessibl
   reveal.events.toggle(); assert.equal(guide.outerHTML.match(/EXAMPLE_SECRET/g).length, 1);
 }));
 
+test("lesson printing includes unopened worked examples and restores disclosure state without leaking worksheet keys", () => withDOM(() => {
+  const course = courseFixture("common-core-math"), week = course.weeks[0];
+  week.examples.push({ ...week.examples[0], prompt: "Another model", answer: "SECOND_EXAMPLE" });
+  const guide = R.guide(week, true);
+  const disclosures = guide.querySelectorAll(".weekly-example-answer");
+  disclosures[1].open = true;
+  // No toggle event has fired: print preparation must still fill both answers.
+  const restore = R.prepareGuidePrint(guide, week, true);
+  assert.ok(disclosures.every(node => node.open));
+  assert.match(guide.outerHTML, /EXAMPLE_SECRET/);
+  assert.match(guide.outerHTML, /EXAMPLE_STEP_SECRET/);
+  assert.match(guide.outerHTML, /SECOND_EXAMPLE/);
+  restore();
+  assert.equal(disclosures[0].open, false);
+  assert.equal(disclosures[1].open, true);
+  R.prepareGuidePrint(guide, week, true)();
+  assert.equal(guide.outerHTML.match(/EXAMPLE_SECRET/g).length, 1);
+  const student = R.exportDocument(W.studentWorksheet(course, 1, "a"), false).documentElement.outerHTML;
+  assert.doesNotMatch(student, /EXAMPLE_SECRET|SECOND_EXAMPLE|ANSWER_SECRET|KEY_STEP_SECRET/);
+}));
+
 test("unsafe passage source schemes never become export links", () => withDOM(() => {
   const course = courseFixture(); course.weeks[0].passages[0].sourceUrl = "javascript:alert(1)";
   const html = R.exportDocument(W.studentWorksheet(course, 1, "a"), false).documentElement.outerHTML;

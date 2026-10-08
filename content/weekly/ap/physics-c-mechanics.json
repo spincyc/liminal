@@ -3736,7 +3736,7 @@
             },
             {
               "id": "cm-w09-c6",
-              "prompt": "Block A (1.0 kg) and block B (3.0 kg) sit on a frictionless table, joined by a light spring with k = 250 N/m. A constant 12 N force pulls A horizontally away from B, and after a short time both blocks accelerate together with a steady spring stretch. (a) Find the common acceleration. (b) Find the spring force and the stretch. (c) The same 12 N force is instead applied to B, pulling it away from A. Find the new stretch. (d) Explain why the stretch differs.",
+              "prompt": "Block A (1.0 kg) and block B (3.0 kg) lie on a frictionless table, joined by a light spring with k = 250 N/m. In each of two separate trials, the spring is stretched before release by the amount needed for both blocks to accelerate together with a constant spring stretch. Both blocks are released from rest just as a constant 12 N horizontal pull is applied. In trial 1 the force pulls A away from B. (a) Find the common acceleration. (b) Find the spring force and the required initial stretch. (c) In trial 2 the force pulls B away from A. Find the required initial stretch for this trial. (d) Explain why the stretches differ.",
               "points": 5,
               "rubric": [
                 {
@@ -3764,7 +3764,8 @@
               "steps": [
                 "System: a = 12/4.0 = 3.0 m/s^2.",
                 "B: F_s = (3.0)(3.0) = 9.0 N, so Δx = 9.0/250 = 0.036 m.",
-                "Pulling B: the spring pulls A with (1.0)(3.0) = 3.0 N, so Δx = 3.0/250 = 0.012 m."
+                "Pulling B: the spring pulls A with (1.0)(3.0) = 3.0 N, so Δx = 3.0/250 = 0.012 m.",
+                "The spring is prepared with the required stretch before each release. Equal starting velocities and equal accelerations then keep that stretch constant; an initially relaxed ideal spring would instead allow relative oscillation."
               ],
               "passageIds": [],
               "skill": "Analyze a spring inside an accelerating system"
@@ -9958,25 +9959,27 @@
           "items": [
             {
               "id": "cm-w24-b1",
-              "prompt": "The graph shows the net torque on a wheel (I = 0.30 kg·m^2), starting from rest, as it turns. Find the work done from θ = 0 to θ = 6 rad and the wheel's angular speed at θ = 6 rad.",
+              "prompt": "The graph shows the net torque on a wheel with I = 0.30 kg·m^2 as it turns. At θ = 0 the wheel is already rotating counterclockwise at 4.0 rad/s. Take counterclockwise as positive. Find the work done from θ = 0 to θ = 6 rad and the wheel's angular speed at θ = 6 rad.",
               "figureIds": [
                 "cm-w24-f1"
               ],
-              "answer": "W = 27 J; ω = 13 rad/s (13.4 rad/s).",
+              "answer": "W = 27 J; ω = 14 rad/s.",
               "steps": [
                 "Work is the area under the τ–θ graph: triangle ½(2)(6) = 6 J, rectangle (3)(6) = 18 J, triangle ½(1)(6) = 3 J, a total of 27 J.",
-                "½Iω^2 = 27 J gives ω = √(2(27)/0.30) = √180 = 13.4 rad/s."
+                "The initial kinetic energy is K_0 = ½(0.30)(4.0)^2 = 2.4 J. Net work adds to it: K_f = 2.4 + 27 = 29.4 J.",
+                "½Iω^2 = 29.4 J gives ω = √(2(29.4)/0.30) = √196 = 14 rad/s. The wheel keeps rotating counterclockwise because it starts with positive angular velocity and the net torque is nonnegative throughout this interval."
               ],
               "passageIds": [],
               "skill": "Find work as area under a τ–θ graph"
             },
             {
               "id": "cm-w24-b2",
-              "prompt": "The net torque on a turntable (I = 0.50 kg·m^2) that starts from rest is τ(θ) = 3.0θ − 0.50θ^2, in N·m with θ in radians, for 0 ≤ θ ≤ 8.0 rad. (a) At what angle is the angular speed greatest, and what is it? (b) Find the angular speed at θ = 8.0 rad.",
-              "answer": "(a) At θ = 6.0 rad, where the torque changes from positive (speeding the turntable up) to negative (slowing it down): ω = 8.5 rad/s. (b) 6.5 rad/s.",
+              "prompt": "At θ = 0 a turntable with I = 0.50 kg·m^2 is already rotating counterclockwise at 2.0 rad/s. Take counterclockwise as positive. The net torque is τ(θ) = 3.0θ − 0.50θ^2, in N·m with θ in radians, for 0 ≤ θ ≤ 8.0 rad. (a) Within this interval, at what angle is the angular speed greatest, and what is it? (b) Find the angular speed at θ = 8.0 rad.",
+              "answer": "(a) At θ = 6.0 rad, where the torque changes from positive (speeding the turntable up) to negative (slowing it down): ω = 8.7 rad/s. (b) 6.8 rad/s.",
               "steps": [
-                "τ = θ(3.0 − 0.50θ) is positive for 0 < θ < 6.0 rad, speeding the turntable up, and negative beyond 6.0 rad, slowing it, so ω is greatest where τ passes through zero from positive to negative: 3.0θ − 0.50θ^2 = 0 at θ = 6.0 rad. W(θ) = 1.5θ^2 − θ^3/6, so W(6.0) = 54 − 36 = 18 J and ω = √(2(18)/0.50) = 8.49 rad/s.",
-                "W(8.0) = 96 − 85.3 = 10.7 J, so ω = √(2(10.67)/0.50) = 6.53 rad/s."
+                "The initial kinetic energy is K_0 = ½(0.50)(2.0)^2 = 1.0 J. The net work from 0 to θ is W(θ) = ∫ from 0 to θ of (3.0s − 0.50s^2) ds = 1.5θ^2 − θ^3/6, so K(θ) = 1.0 + W(θ) in joules. Here s is a dummy angle variable in radians.",
+                "τ = θ(3.0 − 0.50θ) is positive for 0 < θ < 6.0 rad and negative for 6.0 < θ ≤ 8.0 rad. The turntable keeps rotating counterclockwise because K stays positive throughout, so its speed increases up to 6.0 rad and decreases afterward. At θ = 6.0 rad, W = 54 − 36 = 18 J, K = 19 J and ω = √(2(19)/0.50) = √76 = 8.72 rad/s.",
+                "At θ = 8.0 rad, W = 96 − 512/6 = 32/3 J and K = 35/3 J. Thus ω = √(2(35/3)/0.50) = √(140/3) = 6.83 rad/s."
               ],
               "passageIds": [],
               "skill": "Integrate a torque that changes sign"

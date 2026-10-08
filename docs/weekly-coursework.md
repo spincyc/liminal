@@ -134,7 +134,10 @@ visible and disabled. Top navigation keeps its control focused at the same
 viewport position for repeated clicks or Enter presses. Bottom navigation
 returns to the toolbar. While loading, the previous lesson retains its height
 and document actions remain disabled until the selected week is ready.
-Learn and Read offer a quiet print action at the top. The worksheet pane keeps
+Learn offers **Print worked lesson**, which includes every example's answer and
+steps, including unopened disclosures. Printing restores the screen's disclosure
+state afterward. Read offers **Print reading**. Both include the week's supplied
+texts when needed. The worksheet pane keeps
 student print and download actions beside its selector, with answer-key actions
 inside a separate disclosure. Both exports use explicit student/key projections;
 opening a key never changes the student copy.

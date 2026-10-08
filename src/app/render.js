@@ -168,9 +168,9 @@
   /* ------------------------------------------------------------- math text */
 
   // Math text is typed in plain notation: x^2, x^(3/5), (x + 1)/(x − 2),
-  // √(x + 4), ⁵√(x⁶). mathTokens reads that notation and returns a node tree
-  // the DOM renderer draws as a stacked fraction, a raised exponent, or a
-  // radical with an overline:
+  // 1/f′(a), √(x + 4), ⁵√(x⁶). mathTokens reads that notation and returns a
+  // node tree the DOM renderer draws as a stacked fraction, a raised exponent,
+  // or a radical with an overline:
   //   { type: "text", text }
   //   { type: "sup", children, simple }       an exponent written with ^
   //   { type: "frac", num, den, inline? }     a/b; inline (a slash) in exponents
@@ -184,6 +184,7 @@
   const MATH_TOKEN = new RegExp([
     "(?<num>\\d{1,3}(?:,\\d{3})+(?:\\.\\d+)?|\\d+(?:\\.\\d+)?|\\.\\d+)",
     "(?<sups>[⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿⁱ]+)",
+    "(?<prime>[′″‴⁗]+)",
     "(?<word>[\\p{Lu}\\p{Ll}\\p{Lt}\\p{Lo}]+)",
     "(?<root>[√∛∜])",
     // A subscript written with an underscore (v_0, μ_k, x_cm) stays as typed
@@ -232,6 +233,14 @@
         // A closer that matches nothing open, or the wrong kind: unwind to
         // text so the brackets print exactly as written.
         top.items.push({ kind: "other", text: value });
+      } else if (kind === "prime") {
+        const previous = top.items[top.items.length - 1];
+        // Primes belong to symbols or bracketed expressions. Numeric marks
+        // such as 5′ and apostrophes remain ambiguous units/quotation text.
+        const attached = previous && (previous.kind === "group" || previous.kind === "sub" ||
+          (previous.kind === "word" && (Array.from(previous.text).length === 1 ||
+            FUNCTION_WORDS.has(previous.text))));
+        top.items.push({ kind: attached ? "prime" : "other", text: value });
       } else if (kind === "sub" && !["word", "sub", "group"].includes((top.items[top.items.length - 1] || {}).kind)) {
         // Not attached to a symbol (1869_A, a leading _x): plain text.
         top.items.push({ kind: "other", text: "_" });
@@ -258,10 +267,11 @@
   }
 
   // Tokens that can be one factor of an operand: 3, x, ², (x + 1), √2, x^2,
-  // and a subscript such as _0.
+  // a subscript such as _0, and an attached prime.
   function isFactor(item) {
     return Boolean(item) && (item.kind === "num" || item.kind === "word" || item.kind === "sub" ||
-      item.kind === "sups" || item.kind === "group" || isNode(item, "sup") || isNode(item, "root"));
+      item.kind === "prime" || item.kind === "sups" || item.kind === "group" ||
+      isNode(item, "sup") || isNode(item, "root"));
   }
 
   function isSign(item) {
@@ -369,15 +379,16 @@
   }
 
   // The operand to the right of a slash: an optional minus, one factor, and
-  // its exponents. Returns the index after it, or -1 when what follows would
-  // make the reading ambiguous (1/2x, 1/2(3)).
+  // its exponents, subscripts, or primes. Returns the index after it, or -1
+  // when what follows would make the reading ambiguous (1/2x, 1/2(3)).
   function denominatorEnd(items, begin) {
     let index = begin;
     if (isSign(items[index]) && isFactor(items[index + 1])) index += 1;
     const primary = items[index];
-    if (!primary || primary.kind === "sups" || isNode(primary, "sup")) return -1;
-    if (primary.kind === "word" && isCall(items, index)) {
-      index += 2;
+    if (!primary || primary.kind === "sups" || primary.kind === "prime" || isNode(primary, "sup")) return -1;
+    const callEnd = functionEnd(items, index);
+    if (callEnd > index) {
+      index = callEnd;
     } else if (primary.kind === "word") {
       if (latinLetters(primary.text) > 1) return -1;
       index += 1;
@@ -386,7 +397,7 @@
     } else {
       return -1;
     }
-    while (items[index] && (items[index].kind === "sups" || items[index].kind === "sub" ||
+    while (items[index] && (items[index].kind === "sups" || items[index].kind === "sub" || items[index].kind === "prime" ||
         isNode(items[index], "sup") || isDegree(items[index], items[index - 1]))) {
       index += 1;
     }
@@ -394,11 +405,13 @@
     return index;
   }
 
-  function isCall(items, index) {
+  // A known function name, optionally primed, and its complete argument.
+  function functionEnd(items, index) {
     const word = items[index];
-    const group = items[index + 1];
-    return Boolean(word) && word.kind === "word" && Boolean(group) && group.kind === "group" &&
-      (FUNCTION_LETTERS.has(word.text) || FUNCTION_WORDS.has(word.text));
+    if (!word || word.kind !== "word" ||
+        !(FUNCTION_LETTERS.has(word.text) || FUNCTION_WORDS.has(word.text))) return -1;
+    const groupIndex = index + (items[index + 1] && items[index + 1].kind === "prime" ? 2 : 1);
+    return items[groupIndex] && items[groupIndex].kind === "group" ? groupIndex + 1 : -1;
   }
 
   function plainText(items) {
@@ -412,6 +425,7 @@
       const item = items[index];
       if (item.kind !== "word") continue;
       if (index > 0 && items[index - 1].kind === "num" && ORDINALS.has(item.text)) return false;
+      if (functionEnd(items, index) > index) continue;
       if (items[index + 1] && items[index + 1].kind === "group") {
         if (latinLetters(item.text) > 1 && !FUNCTION_WORDS.has(item.text)) return false;
       } else if (!hasCoefficient && latinLetters(item.text) > 1 &&
@@ -435,6 +449,9 @@
     const after = items[end];
     const isSlash = (item) => Boolean(item) && item.kind === "other" && item.text === "/";
     if (!num.length || !den.length) return false;
+    // Never extract a partial fraction next to an unsupported prime, an
+    // apostrophe, or an inch mark: 1/2′, f'(x)/2, and 1/f'(x) stay intact.
+    if ([before, after].some((item) => item && item.kind === "other" && /^[′″‴⁗'’"]+$/.test(item.text))) return false;
     // Part of a chain such as 9/25/2026 or a / b/c, which reads (a/b)/c.
     if (isSlash(before) || isSlash(after)) return false;
     if (before && before.kind === "space" && isSlash(items[start - 2])) return false;
@@ -502,7 +519,7 @@
     const lone = (body.length === 1 && isStackedFraction(body[0])) ||
       (signed && isStackedFraction(body[1]));
     const bound = isFactor(before) || (before && before.kind === "node") ||
-      (after && (after.kind === "sups" || isNode(after, "sup")));
+      (after && (after.kind === "prime" || after.kind === "sups" || isNode(after, "sup")));
     if (lone && !bound) return inner;
     // Prose may also contain a fraction inside parentheses. A scalable fence
     // is an unbreakable inline box, so keep prose parentheses as ordinary text
