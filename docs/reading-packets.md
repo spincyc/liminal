@@ -27,6 +27,8 @@ deliberately, updating this page and the test together.
 - **Pages:** each night starts on a new page, and each grade's packet starts on
   a fresh sheet so duplex packets separate cleanly.
 - **Verse:** stanzas keep their lines and indentation, set ragged right.
+- **Tables:** a tab-separated block prints as a table, one row per line, shrunk
+  to the column if it is wide; ditto marks keep their typed form.
 - **Typography changes made only in print:** straight double quotes become
   curly, because CMU Serif draws ASCII `"` as a closing quote, and paired
   `_underscores_`, a transcription convention, become italics. Wording is
@@ -38,8 +40,8 @@ deliberately, updating this page and the test together.
 ```sh
 # The nights for given school dates, all grades K–12:
 node tools/reading-packet.js --dates 2026-10-08,2026-10-09,2026-10-12 --out .scratch/packets/oct-8 --pdf
-# Specific nights, any grade or Advanced level:
-node tools/reading-packet.js --nights k:w7d4,a1:w3d2 --out .scratch/packets/x --pdf
+# Specific nights (any published grade or level):
+node tools/reading-packet.js --nights k:w7d4,9:w12d1 --out .scratch/packets/x --pdf
 ```
 
 - **The school calendar:** five nights a week, Monday to Friday, 36 weeks
@@ -47,7 +49,7 @@ node tools/reading-packet.js --nights k:w7d4,a1:w3d2 --out .scratch/packets/x --
   and dates outside the year have no night. `--grades k,3,9` limits the
   grades.
 - **Output:** written under the `--out` directory and never committed.
-  `--pdf` needs XeLaTeX, `fontspec`, the CMU fonts and, for `--rotate-backs`,
+  `--pdf` needs XeLaTeX, `fontspec`, `adjustbox`, the CMU fonts and, for `--rotate-backs`,
   `pdfpages`.
 - **Printing:** print duplex on the long edge, e.g.
   `lp -o sides=two-sided-long-edge -o media=letter packet.pdf`.

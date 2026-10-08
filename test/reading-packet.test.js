@@ -58,3 +58,18 @@ test("duplex wrapper rotates only back pages", () => {
   const tex = P.rotatedBacksTex("packet.pdf", 3);
   assert.match(tex, /pages=\{1\},angle=0/); assert.match(tex, /pages=\{2\},angle=180/); assert.match(tex, /pages=\{3\},angle=0/);
 });
+
+test("tab-separated blocks print as tables with ditto marks kept as typed", () => {
+  const tex = P.table("Date\tCount\n1855\nDec. 13th\t1\n\" 14th\t75");
+  assert.match(tex, /\\begin\{tabular\}\{ll\}/);
+  assert.match(tex, /\\multicolumn\{2\}\{l\}\{1855\}/);
+  assert.match(tex, /" 14th & 75/);
+  assert.doesNotMatch(tex, /\u201c/);
+  assert.match(P.blocks({ blocks: [{ type: "paragraph", text: "A\tB" }] }), /adjustbox/);
+});
+
+test("impossible dates and unknown grades are refused", () => {
+  assert.throws(() => P.schoolNight("2026-02-30"), /real YYYY-MM-DD/);
+  assert.throws(() => P.parseArgs(["--dates", "2026-10-08", "--grades", "k,13", "--out", "x"]), /unknown grade key 13/);
+  assert.equal(P.parseArgs(["--dates", "2026-10-08", "--grades", "k,a1", "--out", "x"]).grades.length, 2);
+});

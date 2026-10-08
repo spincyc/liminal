@@ -21,7 +21,10 @@ const ROOT = path.resolve(__dirname, "..");
 const DEFAULT_START = "2026-08-24";
 function schoolNight(date, start = DEFAULT_START) {
   const day = Date.parse(date + "T00:00:00Z"), first = Date.parse(start + "T00:00:00Z");
-  if (!Number.isFinite(day) || !Number.isFinite(first) || new Date(first).getUTCDay() !== 1) throw new Error("dates must be YYYY-MM-DD and the start a Monday");
+  const real = (time, text) => Number.isFinite(time) && new Date(time).toISOString().slice(0, 10) === text;
+  // Date.parse accepts impossible days such as 2026-02-30 (as March 2), so
+  // every date must round-trip exactly.
+  if (!real(day, date) || !real(first, start) || new Date(first).getUTCDay() !== 1) throw new Error("dates must be real YYYY-MM-DD days and the start a Monday");
   const offset = Math.round((day - first) / 86400000), weekday = new Date(day).getUTCDay();
   const week = Math.floor(offset / 7) + 1;
   return offset < 0 || weekday === 0 || weekday === 6 || week > 36 ? null : { week, day: weekday };
@@ -36,6 +39,7 @@ const PREAMBLE = String.raw`\documentclass[10pt,twocolumn,twoside,letterpaper]{a
 \setsansfont{CMU Sans Serif}
 \setmonofont{CMU Typewriter Text}
 \usepackage[protrusion=true]{microtype}
+\usepackage{adjustbox}
 \usepackage{fancyhdr,enumitem}
 \usepackage[hidelinks]{hyperref}
 \setlength{\parindent}{1.2em}
@@ -69,6 +73,16 @@ function verse(text) {
     return (indent ? "\\hspace*{" + (indent * 0.5).toFixed(1) + "em}" : "") + lineStart(inline(rest));
   }).join("\\\\\n");
 }
+// A tab-separated block is a printed table: one row per line. Cells keep their
+// characters exactly (ditto marks are not curled into opening quotes) and the
+// table shrinks, never grows, to fit the column.
+function table(text) {
+  const rows = text.split("\n").map(line => line.split("\t")), cols = Math.max(...rows.map(row => row.length));
+  const cell = value => escape(value).replace(/\\_([^_\n]+?)\\_/g, "\\emph{$1}");
+  const body = rows.map(row => row.length === 1 && cols > 1 ? "\\multicolumn{" + cols + "}{l}{" + cell(row[0]) + "}"
+    : row.concat(Array(cols - row.length).fill("")).map(cell).join(" & ")).join(" \\\\\n");
+  return "\\begin{center}\\small\\begin{adjustbox}{max width=\\columnwidth}\\begin{tabular}{" + "l".repeat(cols) + "}\n" + body + "\n\\end{tabular}\\end{adjustbox}\\end{center}";
+}
 function blocks(day) {
   const out = [];
   let inVerse = false;
@@ -79,7 +93,8 @@ function blocks(day) {
       continue;
     }
     if (inVerse) { out.push("\\end{verse}"); inVerse = false; }
-    out.push(block.type === "heading" ? "\\begin{center}\\textsc{" + inline(block.text) + "}\\end{center}" : lineStart(inline(block.text)) + "\n");
+    out.push(block.type === "heading" ? "\\begin{center}\\textsc{" + inline(block.text) + "}\\end{center}"
+      : block.text.includes("\t") ? table(block.text) + "\n" : lineStart(inline(block.text)) + "\n");
   }
   if (inVerse) out.push("\\end{verse}");
   return out.join("\n");
@@ -140,7 +155,11 @@ function parseArgs(argv) {
     const arg = argv[i], value = () => { if (i + 1 >= argv.length) throw new Error(arg + " needs a value"); return argv[++i]; };
     if (arg === "--dates") options.dates = value().split(",");
     else if (arg === "--nights") options.nights = value().split(",");
-    else if (arg === "--grades") options.grades = value().split(",");
+    else if (arg === "--grades") {
+      options.grades = value().split(",");
+      const bad = options.grades.filter(key => D.gradeFromKey(key) === null);
+      if (bad.length) throw new Error("unknown grade key " + bad.join(", ") + " (use k, 1–12 or a1–a4)");
+    }
     else if (arg === "--start") options.start = value();
     else if (arg === "--out") options.out = value();
     else if (arg === "--pdf") options.pdf = true;
@@ -191,5 +210,5 @@ function run(argv) {
   xelatex("packet-duplex.tex");
   console.log("Wrote " + path.join(out, "packet-duplex.pdf") + " (even pages rotated for duplex printers that flip backs)");
 }
-module.exports = { PREAMBLE, DEFAULT_START, schoolNight, escape, inline, verse, blocks, shortEdition, paper, documentTex, rotatedBacksTex, parseArgs, selections };
+module.exports = { PREAMBLE, DEFAULT_START, schoolNight, escape, inline, verse, table, blocks, shortEdition, paper, documentTex, rotatedBacksTex, parseArgs, selections };
 if (require.main === module) { try { run(process.argv.slice(2)); } catch (error) { console.error(error.message); process.exitCode = 1; } }
