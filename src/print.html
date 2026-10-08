@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
     <meta
       name="description"
       content="Build printable two-column SAT and ACT practice booklets: SAT forms built from fresh templates to the digital test's module structure, ACT forms from fixed banks, each with a bubble answer sheet and an answer key."
@@ -21,7 +21,7 @@
     <!-- liminal:site-header -->
     <div class="site-header prep-bar">
       <div class="site-header-inner">
-        <p class="prep-label">Independent <span data-test-name>SAT</span> practice</p>
+        <p class="prep-label">Test prep</p>
         <div class="test-switch" role="group" aria-label="Test">
           <button class="test-switch-option" type="button" data-test-option="SAT" aria-pressed="true">SAT</button>
           <button class="test-switch-option" type="button" data-test-option="ACT" aria-pressed="false">ACT</button>
@@ -55,7 +55,6 @@
 
       <div class="booklet-grid">
         <section class="card" aria-labelledby="formHeading">
-          <p class="step">Step 1 of 3</p>
           <h2 id="formHeading">Choose a form</h2>
           <div id="formGrid" class="option-list" role="radiogroup" aria-labelledby="formHeading"></div>
           <div id="moduleOptions" class="field-grid module-options" hidden>
@@ -79,7 +78,6 @@
 
         <div class="side-stack">
           <section class="card" aria-labelledby="buildHeading">
-            <p class="step">Step 2 of 3</p>
             <h2 id="buildHeading">Build and download</h2>
             <p id="formSummary" class="muted"></p>
 
@@ -123,43 +121,47 @@
             </p>
           </section>
 
-          <section class="card" aria-labelledby="shareHeading">
-            <p class="step">Step 3 of 3</p>
-            <h2 id="shareHeading">Share or rebuild</h2>
-            <p data-test-only="SAT">
-              Every SAT booklet prints its form code on the cover and in the
-              answer key. The code names the templates and draws of every module, so
-              it rebuilds the same booklet even after new templates are added.
-            </p>
-            <p data-test-only="ACT" hidden>
-              Anyone who opens this link builds the same test from the same seed,
-              so your results are comparable.
-            </p>
-            <div class="field">
-              <label for="shareLink">Link to this form</label>
-              <div class="input-row">
-                <input id="shareLink" type="text" readonly />
-                <button id="copyLinkBtn" class="button secondary" type="button">Copy link</button>
+          <details class="prep-disclosure booklet-share">
+            <summary>
+              <h2><span id="shareHeading">Share or rebuild a booklet</span>
+              <span class="prep-summary-note">Keep a link or recreate a saved booklet</span></h2>
+            </summary>
+            <div class="prep-disclosure-body">
+              <p data-test-only="SAT">
+                Every SAT booklet prints its form code on the cover and in the
+                answer key. The code names the templates and draws of every module, so
+                it rebuilds the same booklet even after new templates are added.
+              </p>
+              <p data-test-only="ACT" hidden>
+                Anyone who opens this link builds the same test from the same seed,
+                so your results are comparable.
+              </p>
+              <div class="field">
+                <label for="shareLink">Link to this form</label>
+                <div class="input-row">
+                  <input id="shareLink" type="text" readonly />
+                  <button id="copyLinkBtn" class="button secondary" type="button">Copy link</button>
+                </div>
               </div>
-            </div>
-            <div class="field" data-test-only="SAT">
-              <label for="codeInput">Rebuild from code</label>
-              <div class="input-row">
-                <input id="codeInput" type="text" autocomplete="off" spellcheck="false"
-                  aria-describedby="codeNote" placeholder="r1rhm1mh-…" />
-                <button id="rebuildBtn" class="button secondary" type="button">Rebuild</button>
+              <div class="field" data-test-only="SAT">
+                <label for="codeInput">Rebuild from code</label>
+                <div class="input-row">
+                  <input id="codeInput" type="text" autocomplete="off" spellcheck="false"
+                    aria-describedby="codeNote" placeholder="r1rhm1mh-…" />
+                  <button id="rebuildBtn" class="button secondary" type="button">Rebuild</button>
+                </div>
+                <p id="codeNote" class="field-note">
+                  Paste the form code from a booklet's cover or answer key. Rebuild
+                  opens that exact booklet; the buttons above then use the same code
+                  until you change the form or the seed.
+                </p>
               </div>
-              <p id="codeNote" class="field-note">
-                Paste the form code from a booklet's cover or answer key. Rebuild
-                opens that exact booklet; the buttons above then use the same code
-                until you change the form or the seed.
+              <p class="note">
+                The link names the form only: no answers, no scores, and
+                nothing about your progress.
               </p>
             </div>
-            <p class="note">
-              The link names the form only: no answers, no scores, and
-              nothing about your progress.
-            </p>
-          </section>
+          </details>
         </div>
       </div>
 

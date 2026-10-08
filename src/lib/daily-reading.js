@@ -34,6 +34,18 @@
       href: route(grade, Math.floor(position / 5) + 1, position % 5 + 1) } : null;
   }
   function navigation(selected) { return { previous: adjacent(selected.grade, selected.week, selected.day, -1), next: adjacent(selected.grade, selected.week, selected.day, 1) }; }
+  // The instruction library covers K–12 only. Advanced reading levels link
+  // to that library's entrance, never to an implied equivalent school grade.
+  function lessonLinks(grade, week = 1) {
+    if (!validGrade(grade) || !validDay(week, 1)) return null;
+    const advanced = isAdvanced(grade), key = advanced ? "k" : gradeKey(grade);
+    return {
+      weekly: { href: "weeks.html#common-core-reading/" + key + "/" + (advanced ? 1 : week),
+        label: advanced ? "Related K–12 reading instruction" : gradeLabel(grade) + " reading instruction · Week " + week },
+      plan: { href: "curriculum.html#common-core-reading/" + key,
+        label: advanced ? "K–12 reading year plans" : gradeLabel(grade) + " reading year plan" },
+    };
+  }
   function modeLabel(mode) { return { "adult-read-aloud": "Adult reads aloud", shared: "Read together", independent: "Read independently" }[mode] || ""; }
   function minuteRange(grade) { return grade === 0 ? [10, 10] : grade <= 2 ? [10, 15] : grade <= 5 ? [15, 20] : grade <= 8 ? [20, 25] : grade <= 12 ? [25, 30] : grade === 13 ? [30, 35] : grade === 14 ? [30, 40] : [35, 45]; }
   function safeHttps(value) {
@@ -159,7 +171,7 @@
     return value.split("_").map((part, index) => ({ text: part, em: index % 2 === 1 })).filter(segment => segment.text);
   }
   return { GRADES, validGrade, isAdvanced, gradeKey, gradeLabel, gradeFromKey, validDay, route, gradeAt, resolve, dayAt, sourceAt, progressionAt,
-    navigation, modeLabel, minuteRange, safeHttps, sourceLabel, selectionCredit, studentReading,
+    navigation, lessonLinks, modeLabel, minuteRange, safeHttps, sourceLabel, selectionCredit, studentReading,
     MODES, browseFile, browseRoute, browseIndex, view, genreLabel, workLabel, filterNights, runs, genres, modes, minutesSpan,
     weekFile, weekSlice, tableRows, emphasis };
 });

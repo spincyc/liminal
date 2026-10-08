@@ -1,11 +1,9 @@
 (function () {
   "use strict";
 
-  // The Practice view: "Start here" for a student who has not begun, then
-  // "Take a test" (an SAT module, section, or the full-length test on
-  // screen), then practice sets: the skill drill, the set builder form with
-  // Recommended next (the one next step, ctx.guide), and the side cards
-  // (mini tests, Hard math reps, retake a set, booklets), with the
+  // The Practice view: compact guides for "Start here" and timed SAT tests,
+  // then the skill drill and Recommended next (the one next step, ctx.guide).
+  // Custom setup and other practice tools open on request, with the
   // unfinished test and set above them all. Nothing loads until the view
   // opens, and a SAT section's template bundle only when a set needs its
   // questions: counts come from the built registries.
@@ -172,29 +170,16 @@
     // how many kinds of question there are; ACT sections are fixed banks.
     function renderSetupCopy() {
       const test = ctx.currentTest();
-      const sections = availableSections(test);
-      // SAT drills are generated; ACT drills draw from fixed banks.
+      // Keep the first screen about the student's choice; detailed generation
+      // and score limitations remain with the relevant setup and reports.
       elements.drillLede.textContent = test === "SAT"
-        ? "A short set on a single skill at one level, using varied numbers and contexts. Limited pools may repeat."
-        : "A short set on a single skill, from the questions you have seen least recently. Difficulty labels in these banks are unverified.";
-      if (test === "SAT") {
-        const templates = sections.reduce(
-          (total, section) => total + practice.templateCount(ctx.registry(section.key)), 0);
-        elements.setupLede.textContent =
-          "Choose a timed SAT practice test or a focused set. Questions draw from " +
-          `${ctx.formatNumber(templates)} kinds of question, with recent content avoided when available.`;
-        return;
-      }
-      const essay = (section) => (section.responseTypes || []).includes("essay");
-      const count = (total, section) => total + (section.targetQuestions ?? ctx.catalog.targetPerSection);
-      const questions = sections.filter((section) => !essay(section)).reduce(count, 0);
-      const prompts = sections.filter(essay).reduce(count, 0);
-      elements.setupLede.textContent =
-        `Build a set from ${ctx.formatNumber(questions)} original ${test} questions` +
-        (prompts ? ` and ${ctx.formatNumber(prompts)} writing prompts` : "") +
-        ". Every set opens in the digital test screen. " +
-        ctx.testSections(test).filter((section) => !core.sectionAvailable(section))
-          .map((section) => section.practiceNote || `${section.shortLabel} practice is temporarily unavailable.`).join(" ");
+        ? "Practice one skill with fresh variations. Limited pools may repeat."
+        : "Practice one skill from fixed question banks. Difficulty labels are unverified.";
+      elements.setupLede.textContent = test === "SAT"
+        ? "Choose a skill to practice, or open a timed SAT test."
+        : "Choose a skill to practice, or build a custom ACT set. " +
+          ctx.testSections(test).filter((section) => !core.sectionAvailable(section))
+            .map((section) => section.practiceNote || `${section.shortLabel} practice is temporarily unavailable.`).join(" ");
     }
 
     /* ---------------------------------------------------------- loading */
@@ -1216,6 +1201,11 @@
     /* --------------------------------------------------------- deep link */
 
     function scrollToCard(card, focus) {
+      // Custom setup stays folded until requested. Reveal its ancestors before
+      // measuring the scroll target or moving keyboard focus into the form.
+      for (let parent = card.parentElement; parent; parent = parent.parentElement) {
+        if (parent.tagName === "DETAILS") parent.open = true;
+      }
       const reduceMotion = window.matchMedia &&
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       card.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });

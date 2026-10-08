@@ -54,6 +54,12 @@
     readLink.href = last && last.grade === grade ? D.route(last.grade, last.week, last.day) : D.route(grade, 1, 1);
     browseLink.removeAttribute("aria-current"); readLink.removeAttribute("aria-current");
     (name === "browse" ? browseLink : readLink).setAttribute("aria-current", "page");
+    const related = D.lessonLinks(grade, last && last.grade === grade ? last.week : 1);
+    if (related) {
+      [["dailyInstructionLink", related.weekly], ["dailyPlanLink", related.plan]].forEach(([id, entry]) => {
+        const anchor = document.getElementById(id); anchor.href = entry.href; anchor.textContent = entry.label;
+      });
+    }
   }
   async function browse(selected, focus) {
     const current = ++request;

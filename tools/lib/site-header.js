@@ -4,57 +4,37 @@
 // <!-- liminal:site-header --> where its header belongs; tools/build.js
 // replaces it with render(page) in dist/, and tools/smoke-static.js fails if
 // any built page's header differs from this rendering. The header is static
-// HTML, so it works without JavaScript. Styles live in styles/brand.css.
+// HTML, so destinations remain reachable without JavaScript. The shared
+// enhancer follows route changes. Styles live in styles/brand.css.
 
 const PLACEHOLDER = "<!-- liminal:site-header -->";
-
-// The primary destinations, in order. `pages` lists other pages that belong
-// to the destination: there the link is marked aria-current="true" (the
-// current section) rather than "page".
-const NAV = [
-  { href: "curriculum.html", label: "Year plans", pages: ["high-school.html"] },
-  { href: "weeks.html", label: "Weekly work" },
-  { href: "courses.html", label: "Courses" },
-  { href: "daily-reading.html", label: "Daily reading" },
-  { href: "reading-level.html", label: "Reading level" },
-  { href: "practice.html", label: "Test prep", pages: ["learn.html", "print.html", "ap.html"], section: true },
-];
-
-// Test prep has its own views (Practice, Progress, Review…) with their own
-// page marker in the test-prep bar, so its primary link always marks the
-// section.
-function currentFor(item, page) {
-  if (page === item.href) return item.section ? "true" : "page";
-  return (item.pages || []).includes(page) ? "true" : null;
-}
+const navigation = require("../../src/lib/navigation");
+const NAV = navigation.PRIMARY;
+const SCRIPTS = ["lib/navigation.js", "app/navigation.js"];
 
 const SYMBOL =
   '<svg class="brand-symbol" viewBox="0 0 28 34" fill="none" aria-hidden="true" focusable="false">' +
   '<path d="M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17" stroke="currentColor" stroke-width="2.5" />' +
   '<path d="M0 32h28" stroke="currentColor" stroke-width="2.5" /></svg>';
 
-const MENU_ICON =
-  '<svg class="lm-menu-icon" viewBox="0 0 20 14" aria-hidden="true" focusable="false">' +
-  '<path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2" /></svg>';
+function escape(value) { return String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+function link(item, primary) {
+  return `<a${primary ? ` data-lm-primary="${item.id}"` : ""} href="${escape(item.href)}"${item.current ? ` aria-current="${item.current}"` : ""}>${escape(item.label)}</a>`;
+}
 
-// The same links appear twice: inline at desktop widths, and inside a
-// native <details> "Menu" on narrower screens, which needs no JavaScript and
-// reports its expanded state itself. CSS shows exactly one of the two, so
-// assistive technology meets one primary navigation.
+// One visible set of primary links at every width, followed by links within
+// the current section. AP and test prep retain their own existing view bars.
 function render(page) {
-  const home = page === "index.html" ? ' aria-current="page"' : "";
-  const links = NAV.map((item) => {
-    const current = currentFor(item, page);
-    return `<a href="${item.href}"${current ? ` aria-current="${current}"` : ""}>${item.label}</a>`;
-  }).join("");
+  const model = navigation.model({ pathname: page });
+  const home = model.homeCurrent ? ' aria-current="page"' : "";
   return (
     '<header class="lm-header"><div class="lm-header-inner">' +
     `<a class="lm-brand" href="index.html" aria-label="Liminal home"${home}>${SYMBOL}` +
     '<span class="lm-brand-name">Liminal<span class="wordmark-dot">.</span></span></a>' +
-    `<nav class="lm-nav" aria-label="Primary">${links}</nav>` +
-    `<details class="lm-menu"><summary>${MENU_ICON}<span class="lm-menu-label">Menu</span></summary>` +
-    `<nav class="lm-menu-nav" aria-label="Primary">${links}</nav></details>` +
-    "</div></header>"
+    `<nav class="lm-nav" aria-label="Primary">${model.primary.map(item => link(item, true)).join("")}</nav>` +
+    "</div>" +
+    `<nav class="lm-subnav" aria-label="${model.secondaryLabel}"${model.secondary.length ? "" : " hidden"}>${model.secondary.map(item => link(item)).join("")}</nav>` +
+    "</header>"
   );
 }
 
@@ -62,7 +42,7 @@ function render(page) {
 function apply(html, page) {
   const count = html.split(PLACEHOLDER).length - 1;
   if (count !== 1) throw new Error(`${page} must contain exactly one ${PLACEHOLDER} (found ${count})`);
-  return html.replace(PLACEHOLDER, render(page));
+  return html.replace(PLACEHOLDER, render(page) + SCRIPTS.map(src => `<script defer src="${src}"></script>`).join(""));
 }
 
 // Problems with a built page's header, for the static smoke test.
@@ -72,11 +52,18 @@ function problems(html, page) {
   const headers = html.match(/<header class="lm-header">[\s\S]*?<\/header>/g) || [];
   if (headers.length !== 1) found.push(`${headers.length} Liminal headers instead of 1`);
   else if (headers[0] !== render(page)) found.push("its header differs from the canonical header");
-  // The inline nav and the Menu's copy, both from render(); none elsewhere.
+  // One primary navigation, at all widths; no page-specific duplicate.
   const primary = (html.match(/aria-label="Primary"/g) || []).length;
-  if (primary !== 2) found.push(`${primary} primary navigation labels instead of the header's 2`);
+  if (primary !== 1) found.push(`${primary} primary navigation labels instead of 1`);
+  const scripts = [...html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"[^>]*><\/script>/g)];
+  SCRIPTS.forEach(src => {
+    const matches = scripts.filter(match => match[1] === src);
+    if (matches.length !== 1 || !/\bdefer\b/.test(matches[0][0])) found.push(`${src} must load once with defer`);
+  });
+  const shared = scripts.filter(match => SCRIPTS.includes(match[1])).map(match => match[1]);
+  if (shared.join(",") !== SCRIPTS.join(",")) found.push("shared navigation scripts are missing or out of order");
   if (/<header class="(?:site-header|home-header)/.test(html)) found.push("it still has a page-specific header");
   return found;
 }
 
-module.exports = { PLACEHOLDER, NAV, render, apply, problems };
+module.exports = { PLACEHOLDER, NAV, SCRIPTS, render, apply, problems };

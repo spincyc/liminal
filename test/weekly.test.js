@@ -304,3 +304,22 @@ test("complete inventory counts 44 original courses and 47 views without duplica
     fs.rmSync(output, { recursive: true, force: true });
   }
 });
+
+// A direct visit must not inherit the build index's descending grade order.
+test("weekly entry starts at kindergarten while explicit course links retain their week", () => {
+  const courses = [
+    { trackId: "common-core-math", grade: 12 },
+    { trackId: "common-core-reading", grade: 0 },
+    { trackId: "common-core-math", grade: 0 },
+  ];
+  for (const order of [courses, courses.slice().reverse()]) {
+    const selected = weekly.resolve({ courses: order }, "");
+    assert.equal(selected.trackId, "common-core-math");
+    assert.equal(selected.grade, 0);
+    assert.equal(selected.week, 1);
+    assert.equal(selected.invalid, false);
+    const direct = weekly.resolve({ courses: order }, "#common-core-math/12/18");
+    assert.equal(direct.grade, 12);
+    assert.equal(direct.week, 18);
+  }
+});

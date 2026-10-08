@@ -1,7 +1,6 @@
-/* The library uses warm paper and green ink. test-prep.css supplies neutral
-   surfaces and blue actions for its working screens. Shared type sizes,
-   focus targets and print tokens apply to both. The active assessment shell
-   keeps its fixed light palette and familiar control shapes below. */
+/* The library and test-prep pages share warm paper, green ink, typography,
+   and control shapes. The active assessment shell keeps its fixed light
+   palette and familiar control shapes below. */
 
 :root {
   /* Type */
@@ -69,8 +68,7 @@
   --shadow-bar: none;
   --shadow-card: 0 4px 18px rgba(23, 60, 54, 0.08);
 
-  /* The shared header (brand.css) keeps the library palette on every page,
-     including test prep, which overrides the --color-* tokens. */
+  /* The shared header (brand.css) follows the library palette on every page. */
   --header-page: #f6f3e9;
   --header-ink: #173c36;
   --header-muted: #53665f;

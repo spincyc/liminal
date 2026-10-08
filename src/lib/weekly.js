@@ -89,7 +89,7 @@
     const raw = String(hash || "").replace(/^#/, "");
     const parts = raw.split("/");
     const requested = courseAt(index, parts[0], parts[1]);
-    const course = requested || (index.courses || [])[0] || null;
+    const course = requested || courseAt(index, "common-core-math", "k") || (index.courses || [])[0] || null;
     const validWeek = /^(?:[1-9]|[12][0-9]|3[0-6])$/.test(parts[2] || "");
     const exact = !!requested && parts.length === 3 && validWeek;
     return { trackId: course ? course.trackId : null, grade: course && Number.isInteger(course.grade) ? course.grade : null,

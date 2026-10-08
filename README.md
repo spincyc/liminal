@@ -5,14 +5,17 @@ practice that run entirely in the browser.
 
 **Live site:** https://spincyc.github.io/liminal/
 
-The landing page connects **Mathematics**, **Reading**, **K–12 year plans**,
-ready-to-study **Courses**, **Courses for AP® exams**, **SAT practice**, and **ACT practice**.
-Test practice lives at `practice.html`; earlier
-`index.html#practice`, Progress, Review, and Tips bookmarks still resolve.
+The home page and shared navigation offer four entry points: **Courses**,
+**Readings**, **AP prep**, and **SAT/ACT**. Courses connects year plans,
+weekly work, high-school math, and the Grade 8 lesson reader. Readings connects
+daily selections, reading-level checks, and reading instruction. Contextual
+links retain the selected grade or course when moving between plans and work.
+The same compact banner, warm paper, and green controls run throughout.
 
-**Learn well. Make room for life.** The design sets the same standard across
-ages: understand the method, show the reasoning, and check the result. Subjects
-lead the library; grade labels identify curriculum alignment.
+Test practice lives at `practice.html`; earlier `index.html#practice`, Progress,
+Review, and Tips bookmarks still resolve. Short skill drills are immediately
+available; onboarding, timed tests, custom sets, and extra tools expand on
+request. The active assessment interface retains its dedicated test layout.
 
 **Year plans** provides 39 full-year skeletons: Common Core mathematics,
 Common Core reading, and a Singapore mathematics pathway for each grade K–12.
@@ -218,7 +221,7 @@ never recorded. Liminal is now built to keep practice honest:
   digital test's module structure: a full-length test, one section, or one
   module, with an answer sheet, the key and explanations, and a form code
   that rebuilds the booklet. ACT booklets draw from the ACT banks.
-- **One test at a time.** An SAT | ACT switch in the header scopes every page.
+- **One test at a time.** An SAT | ACT switch in the prep toolbar scopes practice, learning, and booklets.
 - **Writing drafts.** ACT Writing offers a multiline draft, save and resume,
   text download, and rubric-guided self-review. Essays are unscored. Download
   a draft before closing its completed report; progress stores completion,

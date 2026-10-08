@@ -21,11 +21,12 @@ phone usability fixes, and black-and-white print verification. Further subject
 and age coverage requires new reviewed content; the site does not offer a
 complete K–12 corpus yet.
 
-The test-prep follow-up in that report restores neutral surfaces, blue actions,
-compact sans-serif headings, and rounded controls for working with tests and
-progress. The library keeps its warm reading style; both retain the same arch
-and wordmark. Screen-specific styling preserves the shared monochrome print
-rules and the assessment shell.
+The October 8 UI review supersedes the separate blue test-prep treatment.
+All browsing and preparation pages now share the library palette and typography;
+the active assessment shell retains its dedicated presentation. A compact home
+directory and four shared destinations replace the large promotional entrance.
+See [the UI review](reviews/2026-10-08-ui-review.md) for navigation, reading,
+responsive, and interaction verification.
 
 ## Classroom courses — 2026-10-06
 

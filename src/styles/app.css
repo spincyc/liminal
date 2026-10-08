@@ -104,7 +104,7 @@ body {
   left: 8px;
   padding: 10px 16px;
   border-radius: var(--radius-sm);
-  background: var(--color-ink);
+  background: var(--color-accent);
   color: var(--color-on-accent);
   font-weight: var(--weight-bold);
   text-decoration: none;
@@ -1577,9 +1577,8 @@ a.stat-note {
   }
 }
 
-/* All six test-prep views stay visible on small screens: one row where they
-   fit, and no more than two at a 320px viewport. The switch moves up beside
-   the shared Menu (brand.css). */
+/* All six test-prep views stay visible on small screens. test-prep.css
+   arranges the switch and links within the prep toolbar in normal flow. */
 @media screen and (max-width: 640px) {
   .site-header-inner {
     gap: 0 12px;

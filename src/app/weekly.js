@@ -48,7 +48,7 @@
     document.getElementById("weeklyCourseLabel").textContent = named ? "Course" : "Grade";
     document.querySelector(".weekly-filters").classList.toggle("weekly-named", named);
     const courses = index.courses.filter(course => course.trackId === selected.trackId).slice();
-    if (!named) courses.sort((a, b) => b.grade - a.grade);
+    if (!named) courses.sort((a, b) => a.grade - b.grade);
     gradeSelect.replaceChildren(...courses.map(course => {
       const node = option(named ? W.courseShortLabel(course) : W.gradeKey(course.grade).toUpperCase(), W.courseKey(course));
       node.setAttribute("aria-label", W.courseLabel(course)); return node;

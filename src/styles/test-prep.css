@@ -1,152 +1,270 @@
-/* Test prep is a working interface within the Liminal library. Its neutral
-   surfaces, blue actions and compact sans headings serve controls and data;
-   the arch and serif wordmark retain the shared identity. Screen only: the
-   shared monochrome print rules and exported booklets own paper presentation. */
+/* Test preparation belongs to the same library as courses and readings.
+   Shared tokens supply its paper, green ink, typography, and control shapes.
+   Only the working layout lives here; .lm-shell owns the assessment screen. */
 @media screen {
-  :root[data-area="test-prep"] {
-    color-scheme: light;
-    --radius-sm: 6px;
-    --radius: 10px;
-    --radius-lg: 14px;
-    --color-page: #f5f6f8;
-    --color-surface: #fff;
-    --color-ink: #1a1c20;
-    --color-muted: #4d525b;
-    --color-line: #d3d6dc;
-    --color-line-strong: #6b717b;
-    --color-soft: #f2f3f5;
-    --color-softer: #f8f9fa;
-    --color-accent: #2447b3;
-    --color-accent-hover: #1b3790;
-    --color-accent-soft: #e8edfb;
-    --color-on-accent: #fff;
-    --color-good: #1a6e37;
-    --color-good-soft: #e7f3ea;
-    --color-bad: #ad2620;
-    --color-bad-soft: #fbeceb;
-    --color-disabled: #e3e6ec;
-    --color-disabled-ink: #596069;
-    --shadow-bar: 0 1px 3px rgba(20, 24, 31, .06);
-    --shadow-card: 0 4px 18px rgba(20, 24, 31, .08);
+  [data-area="test-prep"] .prep-bar {
+    background: var(--color-page);
   }
 
-  [data-area="test-prep"] .site-header {
-    background: var(--color-surface);
-    box-shadow: var(--shadow-bar);
-  }
-
-  [data-area="test-prep"] .site-header-inner {
+  [data-area="test-prep"] .prep-bar .site-header-inner {
+    gap: 4px 20px;
     padding-block: 8px;
   }
 
-  [data-area="test-prep"] .site-main {
-    padding-block: 32px 56px;
-  }
-
-  [data-area="test-prep"] .site-main :is(h1, h2) {
-    font-family: var(--font-sans);
-    font-weight: var(--weight-bold);
-    line-height: var(--leading-tight);
-    letter-spacing: normal;
-  }
-
-  [data-area="test-prep"] .site-main h1 {
-    font-size: var(--text-2xl);
-  }
-
-  [data-area="test-prep"] .site-main h2 {
-    font-size: var(--text-xl);
-  }
-
-  [data-area="test-prep"] .page-head {
-    margin-bottom: 24px;
-  }
-
-  [data-area="test-prep"] .lede {
-    margin-top: 6px;
-  }
-
-  [data-area="test-prep"] .site-main .card {
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-bar);
-  }
-
-  [data-area="test-prep"] :is(.site-header, .site-main) :is(
-    .button, .test-switch, .test-switch-option, .segmented, .segmented-option,
-    .chip, .check-chip, .badge, .meter, .gate-meter, .state-badge,
-    .kind-tag, .review-flag, .disclosure-note.is-active
-  ) {
-    border-radius: var(--radius-pill);
-  }
-
-  [data-area="test-prep"] .start-card.is-start {
-    border-top-width: 1px;
-    box-shadow: inset 4px 0 0 var(--color-accent), var(--shadow-bar);
-  }
-
-  [data-area="test-prep"] :is(.start-item, .start-step) {
-    padding: 12px 16px;
-    border: 1px solid var(--color-line);
-    border-radius: var(--radius);
-    background: var(--color-softer);
-  }
-
-  [data-area="test-prep"] .test-area {
-    border-top-width: 4px;
-  }
-
-  /* Secondary descriptions recede without shrinking labels or controls. */
-  [data-area="test-prep"] :is(.start-text .muted, .test-option p, .mini-test-item p, .option-desc) {
+  [data-area="test-prep"] .prep-label {
+    display: block;
     font-size: var(--text-sm);
   }
 
-  [data-area="test-prep"] .test-option p {
-    margin-top: 4px;
+  [data-area="test-prep"] .prep-bar .site-nav {
+    gap: 0 4px;
+    margin-left: auto;
   }
 
-  [data-area="test-prep"] .learn-skill-link {
+  [data-area="test-prep"] .prep-bar .nav-link {
+    padding-inline: 8px;
+    font-size: var(--text-sm);
+  }
+
+  [data-area="test-prep"] .site-main {
+    padding-block: 36px 64px;
+  }
+
+  [data-area="test-prep"] .page-head {
+    margin-bottom: 28px;
+  }
+
+  [data-area="test-prep"] .lede {
+    max-width: 66ch;
+    margin-top: 10px;
+  }
+
+  /* The primary drill stays visible. Other starting points open on request,
+     with rules instead of nested cards competing for attention. */
+  .prep-disclosure {
+    min-width: 0;
+    border-block: 1px solid var(--color-line);
+  }
+
+  .prep-disclosure > summary {
+    position: relative;
+    display: grid;
+    gap: 4px;
+    min-height: var(--tap);
+    padding: 18px 32px 18px 0;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .prep-disclosure > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .prep-disclosure > summary::after {
+    position: absolute;
+    top: 26px;
+    right: 5px;
+    width: 9px;
+    height: 9px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .prep-disclosure[open] > summary::after {
+    top: 30px;
+    transform: rotate(225deg);
+  }
+
+  .prep-disclosure > summary:hover {
+    color: var(--color-accent);
+  }
+
+  .prep-disclosure > summary :is(h2, h3) {
+    color: inherit;
+    font-size: 1.25rem;
+  }
+
+  .prep-summary-note {
+    display: block;
+    margin-top: 4px;
     font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: var(--leading);
+    letter-spacing: normal;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .prep-disclosure-body {
+    padding-bottom: 24px;
+  }
+
+  :where(.prep-disclosure-body > * + *) {
+    margin-top: 16px;
+  }
+
+  .practice-start {
+    margin-bottom: 0;
+  }
+
+  .practice-start + .test-area {
+    border-top: 0;
+  }
+
+  .practice-start.hidden + .test-area {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .test-area {
+    margin-bottom: 28px;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .test-option {
+    padding: 0 20px 0 0;
+    border: 0;
+    border-right: 1px solid var(--color-line);
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .test-option:last-child {
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .test-option p,
+  .mini-test-item p,
+  .start-text .muted,
+  .option-desc {
+    font-size: var(--text-sm);
+  }
+
+  .start-steps {
+    gap: 0;
+    margin-block: 16px;
+  }
+
+  .practice-recommend {
+    margin: 0 0 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .practice-recommend:has(#recommendBtn:disabled) {
+    display: none;
+  }
+
+  .practice-recommend h3 {
+    font-size: var(--text-base);
+  }
+
+  .practice-tools {
+    gap: 0;
+  }
+
+  .practice-tools > .prep-disclosure + .prep-disclosure {
+    border-top: 0;
+  }
+
+  .practice-tools .prep-disclosure > summary h3 {
     font-size: var(--text-lg);
-    font-weight: var(--weight-bold);
+  }
+
+  .prep-paper-link {
+    padding-top: 24px;
+  }
+
+  .prep-paper-link > * + * {
+    margin-top: 10px;
+  }
+
+  .prep-paper-link p {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .booklet-share > summary h2 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .booklet-share .field + .field {
+    margin-top: 20px;
   }
 }
 
-@media screen and (prefers-color-scheme: dark) {
-  :root[data-area="test-prep"] {
-    color-scheme: dark;
-    --color-page: #111317;
-    --color-surface: #1a1d22;
-    --color-ink: #e6e8ec;
-    --color-muted: #a8aeb8;
-    --color-line: #353a42;
-    --color-line-strong: #7d8591;
-    --color-soft: #23272e;
-    --color-softer: #1e2126;
-    --color-accent: #8fb0ff;
-    --color-accent-hover: #b4caff;
-    --color-accent-soft: #1f2b47;
-    --color-on-accent: #0b1533;
-    --color-good: #6bcf8a;
-    --color-good-soft: #16291d;
-    --color-bad: #ff8f86;
-    --color-bad-soft: #3a1c1a;
-    --color-disabled: #2a2e35;
-    --color-disabled-ink: #9aa1ab;
-    --shadow-bar: 0 1px 3px rgba(0, 0, 0, .5);
-    --shadow-card: 0 4px 18px rgba(0, 0, 0, .45);
+@media screen and (max-width: 1080px) {
+  [data-area="test-prep"] .prep-bar .site-header-inner {
+    gap: 4px 16px;
+  }
+
+  [data-area="test-prep"] .prep-bar .test-switch {
+    margin-left: auto;
+  }
+
+  [data-area="test-prep"] .prep-bar .site-nav {
+    flex: 1 0 100%;
+    margin-left: 0;
+    border-top: 1px solid var(--color-line);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .test-option {
+    padding: 16px 0;
+    border-right: 0;
+    border-top: 1px solid var(--color-line);
+  }
+
+  .test-options {
+    gap: 0;
+  }
+
+  .practice-tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    align-items: start;
+  }
+
+  .practice-tools > .prep-disclosure + .prep-disclosure {
+    border-top: 1px solid var(--color-line);
   }
 }
 
 @media screen and (max-width: 640px) {
-  [data-area="test-prep"] .site-header-inner {
-    padding-block: 0;
+  [data-area="test-prep"] .prep-bar .site-header-inner {
+    padding-block: 8px 0;
+  }
+
+  [data-area="test-prep"] .prep-bar .site-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 8px;
+    width: 100%;
+  }
+
+  [data-area="test-prep"] .prep-bar .nav-link {
+    justify-content: center;
+    font-size: var(--text-sm);
   }
 
   [data-area="test-prep"] .site-main {
-    padding-top: 24px;
+    padding-top: 28px;
   }
 
-  [data-area="test-prep"] :is(.start-item, .start-step) {
-    padding: 12px;
+  .practice-tools {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .practice-tools > .prep-disclosure + .prep-disclosure {
+    border-top: 0;
+  }
+
+  .prep-disclosure-body .input-row {
+    flex-wrap: wrap;
   }
 }

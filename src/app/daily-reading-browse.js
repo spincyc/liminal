@@ -7,7 +7,7 @@
   const $ = id => document.getElementById(id);
   const heading = $("dailyBrowseHeading"), summary = $("dailyBrowseSummary"), list = $("dailyYear"), count = $("dailyCount");
   const query = $("dailyQuery"), modeSelect = $("dailyMode"), genreSelect = $("dailyGenre"), grades = $("dailyGrades");
-  let shown = null; // { data, items: [{ night, element }], weeks: [{ week, element }], stages: [element] }
+  let shown = null; // Current year, its disclosures, and their state before filtering.
 
   function option(label, value) { const node = R.el("option", label); node.value = value; return node; }
   function minutes(span) { return span[0] === span[1] ? span[0] + " min" : span[0] + "–" + span[1] + " min"; }
@@ -34,7 +34,7 @@
     if (run && run.part < run.of) item.classList.add("continues");
     return item;
   }
-  function build(data) {
+  function build(data, openWeek) {
     const nights = data.nights, parts = D.runs(nights), items = [], weeks = [], stages = [];
     const year = R.el("div");
     data.progression.forEach(stage => {
@@ -43,7 +43,9 @@
       section.append(title, R.el("p", stage.focus, "daily-stage-focus"));
       const grid = R.el("div", undefined, "daily-weeks");
       for (let week = stage.weeks[0]; week <= stage.weeks[1]; week++) {
-        const block = R.el("section", undefined, "daily-week"), label = R.el("h4", "Week " + week);
+        const block = R.el("details", undefined, "daily-week"), label = R.el("summary");
+        label.append(R.el("span", "Week " + week), document.createTextNode(" "), R.el("span", "5 nights", "daily-week-count"));
+        block.open = week === openWeek;
         const ol = R.el("ol", undefined, "daily-nights");
         nights.forEach((night, i) => {
           if (night.week !== week) return;
@@ -53,7 +55,7 @@
       }
       section.append(grid); year.append(section); stages.push(section);
     });
-    return { data, items, weeks, stages, year };
+    return { data, items, weeks, stages, year, filtering: false, openWeeks: new Set([openWeek]) };
   }
 
   function filters(nights) {
@@ -68,10 +70,20 @@
   function apply() {
     if (!shown) return;
     const matches = new Set(D.filterNights(shown.data.nights, { query: query.value, mode: modeSelect.value, genre: genreSelect.value }));
-    shown.items.forEach(({ night, element }) => { element.hidden = !matches.has(night); });
-    shown.weeks.forEach(({ element }) => { element.hidden = !element.querySelector(".daily-night:not([hidden])"); });
-    shown.stages.forEach(element => { element.hidden = !element.querySelector(".daily-week:not([hidden])"); });
     const total = shown.data.nights.length, filtered = !!(query.value.trim() || modeSelect.value || genreSelect.value);
+    // Search covers the whole year, including closed weeks. Keep the reader's
+    // disclosure choices so clearing a search returns to a compact outline.
+    if (filtered && !shown.filtering) shown.openWeeks = new Set(shown.weeks.filter(({ element }) => element.open).map(({ week }) => week));
+    shown.items.forEach(({ night, element }) => { element.hidden = !matches.has(night); });
+    shown.weeks.forEach(({ week, element }) => {
+      const visible = element.querySelectorAll(".daily-night:not([hidden])").length;
+      element.hidden = !visible;
+      element.querySelector(".daily-week-count").textContent = filtered ? visible + " of 5 nights" : "5 nights";
+      if (filtered) element.open = !element.hidden;
+      else if (shown.filtering) element.open = shown.openWeeks.has(week);
+    });
+    shown.stages.forEach(element => { element.hidden = !element.querySelector(".daily-week:not([hidden])"); });
+    shown.filtering = filtered;
     count.replaceChildren(filtered ? matches.size + " of " + total + " nights match." : "");
     if (filtered) {
       const clear = R.el("button", "Clear filters", "daily-clear"); clear.type = "button";
@@ -84,7 +96,7 @@
   // when it belongs to this grade, it is marked and brought into view.
   function show(index, data, { last = null, focus = false } = {}) {
     gradeLinks(index, data.grade);
-    shown = build(data);
+    shown = build(data, last && last.grade === data.grade ? last.week : 1);
     heading.textContent = D.gradeLabel(data.grade);
     const span = D.minutesSpan(data.nights);
     summary.textContent = data.nights.length + " nights · " + (span ? minutes(span) + " each · " : "") + D.modes(data.nights).map(D.modeLabel).join(", ");
@@ -95,7 +107,16 @@
     let target = null;
     if (last && last.grade === data.grade) {
       const found = shown.items.find(({ night }) => night.week === last.week && night.day === last.day);
-      if (found && !found.element.hidden) { target = found.element.querySelector("a"); target.setAttribute("aria-current", "true"); }
+      if (found) {
+        // Next/previous-night navigation can leave the active search. Returning
+        // to the year must still reveal the reading the student just opened.
+        if (found.element.hidden) {
+          query.value = ""; modeSelect.value = ""; genreSelect.value = ""; apply();
+          count.textContent = "Filters cleared to show your last reading.";
+        }
+        found.element.closest("details").open = true;
+        target = found.element.querySelector("a"); target.setAttribute("aria-current", "true");
+      }
     }
     if (target) { target.focus({ preventScroll: true }); target.scrollIntoView({ block: "center" }); }
     else if (focus) { heading.focus(); heading.scrollIntoView({ block: "start" }); }

@@ -107,15 +107,18 @@ For a coherent ACT bank batch:
 
 - Every page has one Liminal header: its source holds the placeholder
   `<!-- liminal:site-header -->`, which `tools/build.js` replaces with the
-  wordmark and the primary navigation from `tools/lib/site-header.js`
-  (styled by `styles/brand.css`, `--header-*` tokens): inline at desktop
-  widths, and below 900px a native `<details>` Menu that needs no
-  JavaScript, keeping phone headers to one row. Change navigation
-  there only; `tools/smoke-static.js` fails if a built page's header
-  differs. Test prep keeps its SAT | ACT switch and views in a bar beneath.
+  wordmark and navigation from `tools/lib/site-header.js`, styled by
+  `styles/brand.css`. Four primary areas stay visible at every width:
+  Courses, Readings, AP prep, and SAT/ACT. `src/lib/navigation.js` owns
+  destination and contextual route decisions; `src/app/navigation.js` updates
+  the header as hashes change, preserving course/grade context. The build
+  inserts these shared scripts and `tools/smoke-static.js` validates the
+  canonical header and assets. Test prep keeps its SAT | ACT switch and views
+  in a bar beneath, in normal flow. Browsing pages share the palette and type
+  in `tokens.css`; the active assessment shell retains its separate theme.
 - The browser app has no module loader; each page loads plain scripts in
   order, and `tools/smoke-static.js` pins that order.
-  - `index.html`: the module landing page, `styles/home.css`, and
+  - `index.html`: the compact learning directory, `styles/home.css`, and
     `app/home.js` for legacy practice-hash redirects. It loads no test banks
     or progress storage. SAT/ACT module links select `?test=SAT` or `?test=ACT`.
   - `practice.html`: the generated catalog, answer signs and template registries,
@@ -248,7 +251,7 @@ For a coherent ACT bank batch:
   and Writing the weakest skill with evidence; for ACT the lowest accuracy,
   with no level. The diagnostic reports by domain and places the student in
   the plan (`PLACEMENT`). `app.js` holds `ctx.guide`, `stepWords`,
-  `startStep` and `startDiagnostic`. Practice opens with a dismissible
+  `startStep` and `startDiagnostic`. Practice offers a collapsed, dismissible
   "Start here" (`liminal:start-hidden:v1`, per viewer). Template bundles
   load only when a set needs its questions; counts and labels come from
   the built registries (`practice.registryTemplates`).

@@ -5,6 +5,14 @@ const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
 const { templateParityProblems } = require("./lib/template-parity");
+const siteHeader = require("./lib/site-header");
+
+// Shared header scripts have their own contract below; keep each page's
+// content/application order check independent of that enhancement.
+function pageScripts(page) {
+  return [...page.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(match => match[1])
+    .filter(script => !siteHeader.SCRIPTS.includes(script));
+}
 
 // Smoke-tests the built site in dist/, exactly what GitHub Pages serves.
 // Run `npm run build` first.
@@ -259,7 +267,6 @@ for (const [name, page, order] of [
 // Every page carries the one Liminal header, exactly as tools/lib/site-header.js
 // renders it for that page: the wordmark, the same primary navigation, and
 // aria-current on the page or section shown.
-const siteHeader = require("./lib/site-header");
 const builtPages = fs.readdirSync(root).filter((file) => file.endsWith(".html")).sort();
 for (const page of builtPages) {
   const found = siteHeader.problems(fs.readFileSync(path.join(root, page), "utf8"), page);
@@ -268,8 +275,15 @@ for (const page of builtPages) {
 for (const item of siteHeader.NAV) {
   if (!builtPages.includes(item.href)) throw new Error(`The primary navigation links to a missing page: ${item.href}`);
 }
-for (const page of ["daily-reading.html", "reading-level.html"]) {
-  if (!siteHeader.NAV.some((item) => item.href === page)) throw new Error(`The primary navigation omits ${page}`);
+for (const script of siteHeader.SCRIPTS) {
+  if (!fs.existsSync(path.join(root, script))) throw new Error("Missing shared navigation script: " + script);
+  new vm.Script(fs.readFileSync(path.join(root, script), "utf8"), { filename: script });
+}
+// Grouping the primary destinations must not strand a former destination.
+const linkedPages = new Set(builtPages.flatMap(page => [...siteHeader.render(page).matchAll(/href="([^"]+)"/g)]
+  .map(match => match[1].split(/[?#]/)[0])));
+for (const page of ["curriculum.html", "weeks.html", "courses.html", "high-school.html", "daily-reading.html", "reading-level.html", "ap.html", "practice.html"]) {
+  if (!linkedPages.has(page)) throw new Error(`Shared navigation does not reach ${page}`);
 }
 
 // The test-prep pages share a bar beneath it: the test switch and their views.
@@ -333,7 +347,7 @@ if (!courseHtml.includes('src="content/courses.js"') || !courseHtml.includes('sr
 // The library entrance is usable without the test-prep application or its
 // storage. Check its links/assets separately from the practice DOM contract.
 const homeHtml = fs.readFileSync(path.join(root, "index.html"), "utf8");
-for (const target of ["courses.html", "curriculum.html#common-core-math/k", "curriculum.html#common-core-reading/k", "curriculum.html#singapore-math/k", "practice.html?test=SAT#practice", "practice.html?test=ACT#practice", "learn.html", "print.html"]) {
+for (const target of ["curriculum.html", "courses.html", "high-school.html", "daily-reading.html", "ap.html", "practice.html?test=SAT#practice", "practice.html?test=ACT#practice", "learn.html", "print.html"]) {
   if (!homeHtml.includes(`href="${target}"`)) throw new Error("Home is missing a module link: " + target);
 }
 const homeIds = [...homeHtml.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
@@ -343,13 +357,13 @@ for (const match of homeHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   if (/^(https?:|mailto:|data:)/.test(target)) continue;
   if (!fs.existsSync(path.join(root, target.split(/[?#]/)[0]))) throw new Error("Missing home link/asset: " + target);
 }
-const homeScripts = [...homeHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(match => match[1]);
+const homeScripts = pageScripts(homeHtml);
 if (!homeScripts.includes("app/home.js") || homeScripts.some(script => script !== "app/home.js")) throw new Error("Home must load only its bookmark compatibility script");
 new vm.Script(fs.readFileSync(path.join(root, "app/home.js"), "utf8"), { filename: "app/home.js" });
 
 // Planning data remains separate from ready-to-study courses and saved work.
 const planHtml = fs.readFileSync(path.join(root, "curriculum.html"), "utf8");
-const planScripts = [...planHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+const planScripts = pageScripts(planHtml);
 if (JSON.stringify(planScripts) !== JSON.stringify(["content/curriculum.js", "content/weekly-index.js", "lib/curriculum.js", "lib/weekly.js", "app/curriculum.js"])) {
   throw new Error("Curriculum scripts are missing or out of order");
 }
@@ -374,7 +388,7 @@ if (JSON.stringify(planData) !== JSON.stringify(JSON.parse(fs.readFileSync(path.
 
 // Weekly course bodies load on demand; the index never embeds answer keys.
 const weeklyHtml = fs.readFileSync(path.join(root, "weeks.html"), "utf8");
-const weeklyScripts = [...weeklyHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+const weeklyScripts = pageScripts(weeklyHtml);
 if (JSON.stringify(weeklyScripts) !== JSON.stringify(["content/weekly-index.js", "lib/weekly.js", "app/render.js", "app/weekly-render.js", "app/weekly.js"])) {
   throw new Error("Weekly scripts are missing or out of order");
 }
@@ -413,7 +427,7 @@ for (let i = 0; i < weeklyJson.courses.length; i++) {
 
 // The named sequence shares validated plans but never assigns a fixed grade.
 const highSchoolHtml = fs.readFileSync(path.join(root, "high-school.html"), "utf8");
-const highSchoolScripts = [...highSchoolHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+const highSchoolScripts = pageScripts(highSchoolHtml);
 if (JSON.stringify(highSchoolScripts) !== JSON.stringify(["content/high-school.js", "content/weekly-index.js", "lib/high-school.js", "lib/weekly.js", "app/high-school.js"])) throw new Error("High-school scripts are missing or out of order");
 for (const match of highSchoolHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const target = match[1].split(/[?#]/)[0];
@@ -431,7 +445,7 @@ if (!highSchoolData || JSON.stringify(highSchoolData) !== JSON.stringify(highSch
 // AP® course pages: the plan comes from the weekly build (content/ap-plan.js),
 // assessments and references from tools/build-ap.js (content/ap.js).
 const apHtml = fs.readFileSync(path.join(root, "ap.html"), "utf8");
-const apScripts = [...apHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+const apScripts = pageScripts(apHtml);
 if (JSON.stringify(apScripts) !== JSON.stringify(["content/ap-plan.js", "content/ap.js", "content/weekly-index.js", "lib/high-school.js", "lib/weekly.js", "lib/ap-assessment.js", "app/render.js", "app/ap-render.js", "app/ap.js"])) throw new Error("AP scripts are missing or out of order");
 for (const match of apHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const target = match[1].split(/[?#]/)[0];
@@ -458,7 +472,7 @@ if (apDisclaimer.length) throw new Error(apDisclaimer.join("; "));
 
 // Nightly texts remain in separately loaded grade files, with a small index.
 const dailyHtml = fs.readFileSync(path.join(root, "daily-reading.html"), "utf8");
-const dailyScripts = [...dailyHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+const dailyScripts = pageScripts(dailyHtml);
 if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/daily-reading.js", "app/daily-reading-render.js", "app/daily-reading-browse.js", "app/daily-reading.js"])) throw new Error("Daily-reading scripts are missing or out of order");
 for (const match of dailyHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const target = match[1].split(/[?#]/)[0];
@@ -497,7 +511,7 @@ for (let i = 0; i < dailyIndex.grades.length; i++) {
 // Reading level: its bundle, logic and page script load in order; the
 // bundle matches a fresh build from source and carries no facilitator notes.
 const levelHtml = fs.readFileSync(path.join(root, "reading-level.html"), "utf8");
-const levelScripts = [...levelHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+const levelScripts = pageScripts(levelHtml);
 if (JSON.stringify(levelScripts) !== JSON.stringify(["content/reading-level.js", "lib/daily-reading.js", "lib/reading-level.js", "app/reading-level.js"])) throw new Error("Reading-level scripts are missing or out of order");
 for (const match of levelHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const target = match[1].split(/[?#]/)[0];
