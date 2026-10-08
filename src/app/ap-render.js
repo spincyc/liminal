@@ -235,7 +235,8 @@
       group.rows.forEach(row => {
         const tr = el("tr"); const th = el("th"); th.scope = "row"; th.append(rich(row.relation, "ap-inline"));
         const meaning = el("td"); meaning.append(rich(row.meaning, "ap-inline"));
-        tr.append(th, meaning, el("td", row.units)); body.append(tr);
+        const units = el("td"); units.append(rich(row.units, "ap-inline"));
+        tr.append(th, meaning, units); body.append(tr);
       });
       table.append(body); node.append(table);
     });

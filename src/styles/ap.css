@@ -103,8 +103,9 @@
 
 /* Reference */
 .ap-reference-sheet { padding-block: 10px 22px; }
-.ap-reference-table th { width: 34%; font-weight: 400; }
-.ap-reference-table td:last-child { width: 18%; }
+.ap-reference-table tbody th { font-weight: 400; }
+.ap-reference-table thead th:first-child { width: 34%; }
+.ap-reference-table thead th:last-child { width: 18%; }
 .ap-reference-notes { font-size: .875rem; padding-left: 18px; }
 
 @media (max-width: 900px) { .ap-cards { grid-template-columns: 1fr; } }
@@ -114,7 +115,14 @@
   .ap-table :is(th, td) { padding: 6px; }
   .ap-parts { font-size: .8125rem; }
   .ap-parts :is(th, td) { padding: 5px; }
-  .ap-reference-table th, .ap-reference-table td:last-child { width: auto; }
+  /* Phones: each relation stacks as a card (relation, meaning, units), so
+     narrow columns never break words mid-word. */
+  .ap-reference-table, .ap-reference-table :is(caption, tbody, tr, th, td) { display: block; width: auto; }
+  .ap-reference-table thead { display: none; }
+  .ap-reference-table tr { border: 1px solid var(--color-line-strong); margin-bottom: 8px; padding-block: 4px; }
+  .ap-reference-table :is(th, td) { border: 0; padding: 3px 10px; overflow-wrap: break-word; }
+  .ap-reference-table td:last-child { color: var(--color-muted); }
+  .ap-reference-table td:last-child::before { content: "Units: "; }
   .ap-assessment > .weekly-actions { gap: 8px 12px; }
   .ap-bubbles { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
 }
