@@ -18,7 +18,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 4px 24px;
-  width: min(var(--page-max), calc(100% - 96px));
   min-height: 76px;
   margin-inline: auto;
   padding-block: 10px;
@@ -72,38 +71,88 @@
    switch, and its views (styled by app.css). */
 .prep-label { color: var(--color-muted); font-size: var(--text-xs); }
 
-@media (max-width: 1000px) {
-  .lm-header-inner { width: calc(100% - 48px); }
+/* The side gutter, shared with the Menu panel and the test switch below. */
+:root { --lm-side: 48px; --lm-menu-w: 92px; }
+@media (max-width: 1000px) { :root { --lm-side: 24px; } }
+@media (max-width: 760px) { :root { --lm-side: 16px; } }
+.lm-header-inner { width: calc(100% - 2 * var(--lm-side)); max-width: var(--page-max); }
+
+/* Below 900px the inline links would wrap onto rows of their own, so the
+   header becomes one row: the wordmark and a native <details> Menu, which
+   works without JavaScript and announces whether it is open. */
+.lm-menu { display: none; }
+@media screen and (max-width: 900px) {
+  .lm-header { position: relative; }
+  .lm-header-inner { flex-wrap: nowrap; gap: 12px; min-height: 56px; padding-block: 6px; }
+  .lm-nav { display: none; }
+  .lm-menu { display: block; margin-left: auto; }
+  .lm-menu summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: var(--lm-menu-w);
+    min-height: var(--tap);
+    border: 1px solid var(--header-line);
+    border-radius: var(--radius-sm);
+    color: var(--header-ink);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    list-style: none;
+    cursor: pointer;
+  }
+  .lm-menu summary::-webkit-details-marker { display: none; }
+  .lm-menu summary:hover, .lm-menu[open] summary { border-color: var(--header-mark); }
+  .lm-menu summary:focus-visible { outline: 3px solid var(--header-mark); outline-offset: 2px; }
+  .lm-menu-icon { width: 18px; height: 13px; flex: none; }
+  .lm-menu-nav {
+    position: absolute;
+    z-index: 30;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 16px;
+    padding: 6px var(--lm-side) 12px;
+    border-bottom: 1px solid var(--header-line);
+    background: var(--header-page);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, .12);
+  }
+  .lm-menu-nav a {
+    display: flex;
+    align-items: center;
+    min-height: var(--tap);
+    padding-left: 10px;
+    border-left: 3px solid transparent;
+    color: var(--header-muted);
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    text-decoration: none;
+  }
+  .lm-menu-nav a:hover { color: var(--header-ink); }
+  .lm-menu-nav a[aria-current] { border-left-color: var(--header-mark); color: var(--header-ink); }
+  /* Test prep's SAT | ACT switch stays one tap away, beside the Menu. */
+  .prep-bar .test-switch { position: absolute; z-index: 20; top: 5px; right: calc(var(--lm-side) + var(--lm-menu-w) + 8px); }
 }
-@media (max-width: 760px) {
-  .lm-header-inner { width: calc(100% - 32px); }
-}
-/* Phones: the wordmark on one row, then the six destinations as two rows of
-   three that wrap rather than scroll. */
 @media screen and (max-width: 640px) {
-  .lm-header-inner { gap: 0; min-height: 0; padding-block: 6px 0; }
   .lm-brand { gap: 8px; }
   .lm-brand .brand-symbol { width: 23px; height: 28px; }
   .lm-brand-name { font-size: 28px; }
-  .lm-nav {
-    display: grid;
-    flex: 1 0 100%;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0;
-    margin: 6px 0 0;
-    border-top: 1px solid var(--header-line);
-  }
-  .lm-nav a { padding-inline: 2px; font-size: var(--text-xs); white-space: normal; }
-  /* The test switch sits beside the wordmark, as before the shared header. */
-  .prep-bar .test-switch { position: absolute; top: 6px; right: 16px; }
   .prep-label { display: none; }
+}
+/* The narrowest phones keep the Menu as an icon; its name stays "Menu". */
+@media screen and (max-width: 374px) {
+  :root { --lm-menu-w: 44px; }
+  .lm-menu-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .prep-bar .test-switch-option { min-width: 44px; padding-inline: 8px; }
 }
 
 @media print {
   /* Retain the identity on printouts, with no navigation. */
   .lm-header { border: 0; background: #fff; color: #000; }
   .lm-header-inner { width: 100%; min-height: 0; padding: 0 0 10pt; }
-  .lm-nav { display: none; }
+  .lm-nav, .lm-menu { display: none; }
   .lm-brand, .lm-brand :is(.brand-symbol, .wordmark-dot) { color: #000; }
   .lm-brand-name { font-size: 22pt; }
   .lm-brand .brand-symbol { width: 20pt; height: 24pt; }

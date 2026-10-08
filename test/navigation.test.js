@@ -55,7 +55,15 @@ test("legacy practice bookmarks preserve their route and query while home anchor
 
 test("the shared header marks the page or section shown and nothing else", () => {
   const siteHeader = require("../tools/lib/site-header");
-  const current = (page) => [...siteHeader.render(page).matchAll(/<a [^>]*aria-current="([^"]+)"[^>]*>([^<]*)/g)].map((match) => `${match[2] || "home"}=${match[1]}`);
+  // The inline nav and the phone Menu carry the same links and markers.
+  for (const page of ["index.html", "daily-reading.html", "learn.html"]) {
+    const html = siteHeader.render(page), navs = html.match(/<nav class="[^"]+" aria-label="Primary">[\s\S]*?<\/nav>/g);
+    assert.equal(navs.length, 2);
+    assert.equal(navs[0].replace(/^<nav[^>]*>/, ""), navs[1].replace(/^<nav[^>]*>/, ""));
+    assert.match(html, /<details class="lm-menu"><summary>[\s\S]*Menu<\/span><\/summary><nav class="lm-menu-nav"/);
+  }
+  const inline = (page) => siteHeader.render(page).replace(/<details[\s\S]*<\/details>/, "");
+  const current = (page) => [...inline(page).matchAll(/<a [^>]*aria-current="([^"]+)"[^>]*>([^<]*)/g)].map((match) => `${match[2] || "home"}=${match[1]}`);
   assert.deepEqual(current("index.html"), ["home=page"]);
   assert.deepEqual(current("daily-reading.html"), ["Daily reading=page"]);
   assert.deepEqual(current("reading-level.html"), ["Reading level=page"]);

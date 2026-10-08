@@ -1559,7 +1559,7 @@ a.stat-note {
 
 /* Narrow screens: the test-prep label, switch and views wrap onto further
    rows rather than scroll. */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1080px) {
   .site-header-inner {
     gap: 0 12px;
     padding-block: 4px 0;
@@ -1572,14 +1572,14 @@ a.stat-note {
 
   .nav-link {
     min-height: 48px;
-    padding: 3px 8px 0;
+    padding: 3px 6px 0;
     font-size: var(--text-sm);
   }
 }
 
-/* All six test-prep views stay visible on small screens. Three columns keep
-   them to two rows, including at a 320px viewport; the switch moves up
-   beside the shared wordmark (brand.css). */
+/* All six test-prep views stay visible on small screens: one row where they
+   fit, and no more than two at a 320px viewport. The switch moves up beside
+   the shared Menu (brand.css). */
 @media screen and (max-width: 640px) {
   .site-header-inner {
     gap: 0 12px;
@@ -1593,19 +1593,17 @@ a.stat-note {
   }
 
   .site-nav {
-    display: grid;
     flex: 1 0 100%;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
     margin-top: 0;
-    padding-inline: var(--gutter);
     border-top: 0;
   }
 
   .nav-link {
+    flex: 1 0 auto;
     justify-content: center;
     min-height: var(--tap);
-    padding: 3px 2px 0;
+    padding: 3px 4px 0;
     font-size: var(--text-xs);
   }
 

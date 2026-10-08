@@ -33,6 +33,14 @@ const SYMBOL =
   '<path d="M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17" stroke="currentColor" stroke-width="2.5" />' +
   '<path d="M0 32h28" stroke="currentColor" stroke-width="2.5" /></svg>';
 
+const MENU_ICON =
+  '<svg class="lm-menu-icon" viewBox="0 0 20 14" aria-hidden="true" focusable="false">' +
+  '<path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2" /></svg>';
+
+// The same links appear twice: inline at desktop widths, and inside a
+// native <details> "Menu" on narrower screens, which needs no JavaScript and
+// reports its expanded state itself. CSS shows exactly one of the two, so
+// assistive technology meets one primary navigation.
 function render(page) {
   const home = page === "index.html" ? ' aria-current="page"' : "";
   const links = NAV.map((item) => {
@@ -44,6 +52,8 @@ function render(page) {
     `<a class="lm-brand" href="index.html" aria-label="Liminal home"${home}>${SYMBOL}` +
     '<span class="lm-brand-name">Liminal<span class="wordmark-dot">.</span></span></a>' +
     `<nav class="lm-nav" aria-label="Primary">${links}</nav>` +
+    `<details class="lm-menu"><summary>${MENU_ICON}<span class="lm-menu-label">Menu</span></summary>` +
+    `<nav class="lm-menu-nav" aria-label="Primary">${links}</nav></details>` +
     "</div></header>"
   );
 }
@@ -62,8 +72,9 @@ function problems(html, page) {
   const headers = html.match(/<header class="lm-header">[\s\S]*?<\/header>/g) || [];
   if (headers.length !== 1) found.push(`${headers.length} Liminal headers instead of 1`);
   else if (headers[0] !== render(page)) found.push("its header differs from the canonical header");
+  // The inline nav and the Menu's copy, both from render(); none elsewhere.
   const primary = (html.match(/aria-label="Primary"/g) || []).length;
-  if (primary !== 1) found.push(`${primary} primary navigation landmarks instead of 1`);
+  if (primary !== 2) found.push(`${primary} primary navigation labels instead of the header's 2`);
   if (/<header class="(?:site-header|home-header)/.test(html)) found.push("it still has a page-specific header");
   return found;
 }

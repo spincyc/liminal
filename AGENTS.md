@@ -94,7 +94,9 @@ For a coherent ACT bank batch:
 - Every page has one Liminal header: its source holds the placeholder
   `<!-- liminal:site-header -->`, which `tools/build.js` replaces with the
   wordmark and the primary navigation from `tools/lib/site-header.js`
-  (styled by `styles/brand.css`, `--header-*` tokens). Change navigation
+  (styled by `styles/brand.css`, `--header-*` tokens): inline at desktop
+  widths, and below 900px a native `<details>` Menu that needs no
+  JavaScript, keeping phone headers to one row. Change navigation
   there only; `tools/smoke-static.js` fails if a built page's header
   differs. Test prep keeps its SAT | ACT switch and views in a bar beneath.
 - The browser app has no module loader; each page loads plain scripts in
