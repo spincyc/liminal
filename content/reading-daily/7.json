@@ -77,11 +77,11 @@
       "author": "Mark Twain",
       "title": "The Adventures of Tom Sawyer",
       "translator": null,
-      "edition": "Hartford: The American Publishing Company, 1876, first American edition (illustrated by True W. Williams). Text established against the 1876 pages: Project Gutenberg 74 was collated word by word, in punctuation, italics and paragraphing with the Wikisource transcription proofread from the scans of that edition (Index:The Adventures of Tom Sawyer.djvu). Where they differed, the 1876 reading was adopted when the independent OCR of the 1881 printing from the same plates (Internet Archive adventurestomsa01twaigoog) confirmed it, PG was kept when that OCR confirmed PG, and every other difference (200 places, including all italics and paragraph breaks) was decided on the 1876 page image. Genuine 1876 misprints are kept (for example “sermom,” “Huek,” “posssble,” “corne”). Normalized: display capitals of chapter openings and engraved initials set in ordinary case, typographic quotation marks, italics shown as _underscores_, prose line wrapping; illustration captions omitted. The oath in chapter X, printed as an engraved facsimile of Tom’s handwriting, is transcribed from the engraving; Twain’s footnotes follow the paragraphs that cite them.",
+      "edition": "Hartford: The American Publishing Company, 1876, first American edition (illustrated by True W. Williams). Text established against the 1876 pages: Project Gutenberg 74 was collated word by word, in punctuation, italics and paragraphing with the Wikisource transcription proofread from the scans of that edition (Index:The Adventures of Tom Sawyer.djvu). Where they differed, the 1876 reading was adopted when the independent OCR of the 1881 printing from the same plates (Internet Archive adventurestomsa01twaigoog) confirmed it, PG was kept when that OCR confirmed PG, and every other difference (200 places, including all italics and paragraph breaks) was decided on the 1876 page image. Genuine 1876 misprints are kept (for example “sermom,” “Huek,” “posssble,” “corne”). Normalized: display capitals of chapter openings and engraved initials set in ordinary case, typographic quotation marks, italics shown as _underscores_, prose line wrapping; illustration captions omitted. The oath in chapter X, printed as an engraved facsimile of Tom’s handwriting, is transcribed from the engraving; Twain’s footnotes follow the paragraphs that cite them. The text follows the 1876 print itself; the scan-backed Wikisource transcription linked as the catalogue record differs from that print in about 140 places, so the scan is the text source. In chapter VII the printed “love” (p. 76) has a damaged, ink-filled v and is not a misprint.",
       "publicationYear": 1876,
       "translationYear": null,
       "url": "https://en.wikisource.org/wiki/Index:The_Adventures_of_Tom_Sawyer.djvu",
-      "textUrl": "https://en.wikisource.org/wiki/The_Adventures_of_Tom_Sawyer",
+      "textUrl": "https://archive.org/details/adventuresoftoms00twaiiala",
       "rights": {
         "jurisdiction": "US",
         "status": "public-domain",
@@ -6653,7 +6653,7 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": "reading-7-w08-d4",
-        "textHash": "390cc62672e32b14404e98b59125f382b047ae886d2410441e7adfb42578a16c"
+        "textHash": "8aec01887411a477f6c7681133de26abf7107520bc01e731a5c1e46b61438a72"
       },
       "blocks": [
         {
@@ -6894,7 +6894,7 @@
         },
         {
           "type": "paragraph",
-          "text": "“No, I’ll never lore anybody but you, Tom, and I’ll never marry anybody but you—and you ain’t to ever marry anybody but me, either.”"
+          "text": "“No, I’ll never love anybody but you, Tom, and I’ll never marry anybody but you—and you ain’t to ever marry anybody but me, either.”"
         },
         {
           "type": "paragraph",
