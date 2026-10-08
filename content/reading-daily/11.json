@@ -131,7 +131,7 @@
       "author": "T. S. Eliot",
       "title": "The Waste Land",
       "translator": null,
-      "edition": "New York: Boni and Liveright, 1922, first American edition (copyright 1922; numbered issue of one thousand copies), Duke University Libraries copy digitized as Internet Archive wasteland01elio. The five verse sections were transcribed by collating every printed line against the facsimile page images (pp. 9–49), starting from the University of Virginia Literature in Context TEI and restoring the print’s readings, including “dont,” “wont,” “alright,” “tonight,” “smoothes,” “Oh keep the Dog,” “HURRY UP PLEASE ITS TIME,” and the printing’s own errors “Der Heimai zu,” “Od’,” “w ter” (a letter missing in the print) and “mount in.” Print turnovers are joined to their lines and turnover hyphens removed; small capitals are given as capitals; italics and indentation are not reproduced; margin line numbers, running heads, Eliot’s endnotes and all editorial annotations are excluded. Stanza spaces follow the print.",
+      "edition": "New York: Boni and Liveright, 1922, first American edition (copyright 1922; numbered issue of one thousand copies), Duke University Libraries copy digitized as Internet Archive wasteland01elio. The five verse sections were transcribed by collating every printed line against the facsimile page images (pp. 9–49), starting from the University of Virginia Literature in Context TEI and restoring the print’s readings, including “dont,” “wont,” “alright,” “tonight,” “smoothes,” “Oh keep the Dog,” “HURRY UP PLEASE ITS TIME,” and the printing’s own errors “Der Heimai zu,” “Od’,” and “mount in” (kept as printed: the 1928 and 1930 Liveright printings consulted read the same). One letter is supplied where type failed to print: line 135 prints “The hot w ter at ten.”; the “a” of “water” is supplied from the Horace Liveright third printing, August 1928 (Internet Archive wasteland00elio_0, p. 22). Print turnovers are joined to their lines and turnover hyphens removed; small capitals are given as capitals; italics and indentation are not reproduced; margin line numbers, running heads, Eliot’s endnotes and all editorial annotations are excluded. Stanza spaces follow the print.",
       "publicationYear": 1922,
       "translationYear": null,
       "url": "https://archive.org/details/wasteland01elio",
@@ -185,7 +185,7 @@
       "author": "Henry David Thoreau",
       "title": "Walden; or, Life in the Woods",
       "translator": null,
-      "edition": "Boston: Ticknor and Fields, 1854, first edition, from Wikisource’s fully validated scan-backed transcription of Index:Walden, or, Life in the Woods.djvu. Chapter HTML files were saved and every selected paragraph was extracted directly from its text nodes. HTML formatting is rendered as plain text; explicit poem line breaks and paragraph boundaries are retained. U+200B page-anchor controls are removed and outer layout whitespace is trimmed; no words, punctuation, spelling, or paragraph boundaries are modernized. The earlier unidentified Gutenberg Walden printing is not the supplied source.",
+      "edition": "Boston: Ticknor and Fields, 1854, first edition, from Wikisource’s fully validated scan-backed transcription of Index:Walden, or, Life in the Woods.djvu. Chapter HTML files were saved and every selected paragraph was extracted directly from its text nodes. HTML formatting is rendered as plain text; explicit poem line breaks and paragraph boundaries are retained. U+200B page-anchor controls are removed and outer layout whitespace is trimmed; no words, punctuation, spelling, or paragraph boundaries are modernized. Stray source line breaks inside prose paragraphs are joined with spaces, and blank lines between the lines of short verse quotations are removed (whitespace only). The earlier unidentified Gutenberg Walden printing is not the supplied source.",
       "publicationYear": 1854,
       "translationYear": null,
       "url": "https://en.wikisource.org/wiki/Index:Walden,_or,_Life_in_the_Woods.djvu",
@@ -8650,14 +8650,14 @@
       },
       "challenge": "Compare unequal social settings while evaluating the pressures inside quoted dialogue.",
       "focus": "Luxury, failed conversation, and demands placed on women’s bodies.",
-      "context": "Recap of Part I: the poem moved from April’s painful renewal through memories, a fortune-teller’s cards, and a crowd flowing over London Bridge. After Part I’s fractured public voices, two interiors expose troubled relationships. The myth of Philomela concerns sexual violence and transformation into a bird. A pub’s closing call interrupts the second conversation; distinguish its quoted speaker from the poem’s author. The 1922 printing’s own readings are kept, including “dont,” “wont,” “HURRY UP PLEASE ITS TIME,” and “The hot w ter at ten,” where a letter is missing in the print.",
+      "context": "Recap of Part I: the poem moved from April’s painful renewal through memories, a fortune-teller’s cards, and a crowd flowing over London Bridge. After Part I’s fractured public voices, two interiors expose troubled relationships. The myth of Philomela concerns sexual violence and transformation into a bird. A pub’s closing call interrupts the second conversation; distinguish its quoted speaker from the poem’s author. The 1922 printing’s own readings are kept, including “dont,” “wont,” and “HURRY UP PLEASE ITS TIME.” In “The hot water at ten” the first printing shows a blank where the “a” failed to print; the letter is supplied from the Horace Liveright third printing of August 1928.",
       "contentNote": "Includes allusions to rape, reproductive coercion, abortion, and dangerous childbirth. Discussion should analyze the text without asking for personal disclosure.",
       "excerpt": {
         "locator": "Complete verse section II. A GAME OF CHESS, 1922 Boni and Liveright edition; begins “THE Chair she sat in, like a burnished throne,”; ends “ladies, good night, sweet ladies, good night, good night.”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-11-w21-d1",
         "continuesTo": "reading-11-w21-d3",
-        "textHash": "6736ecc58232265429c7db8a4a75aef46550d029ab4e53da655328e0033d2a0e"
+        "textHash": "a3a9a299a16494253fd1e6365c3344a47334c0dc405b8e5391c5de08fe558e0c"
       },
       "blocks": [
         {
@@ -8678,7 +8678,7 @@
         },
         {
           "type": "stanza",
-          "text": "“What is that noise?”\nThe wind under the door.\n“What is that noise now? What is the wind doing?”\nNothing again nothing.\n“Do\n“You know nothing? Do you see nothing? Do you remember\n“Nothing?”\nI remember\nThose are pearls that were his eyes.\n“Are you alive, or not? Is there nothing in your head?”\nBut\nO O O O that Shakespeherian Rag—\nIt’s so elegant\nSo intelligent\n“What shall I do now? What shall I do?”\n“I shall rush out as I am, and walk the street\n“With my hair down, so. What shall we do tomorrow?\n“What shall we ever do?”\nThe hot w ter at ten.\nAnd if it rains, a closed car at four.\nAnd we shall play a game of chess,\nPressing lidless eyes and waiting for a knock upon the door."
+          "text": "“What is that noise?”\nThe wind under the door.\n“What is that noise now? What is the wind doing?”\nNothing again nothing.\n“Do\n“You know nothing? Do you see nothing? Do you remember\n“Nothing?”\nI remember\nThose are pearls that were his eyes.\n“Are you alive, or not? Is there nothing in your head?”\nBut\nO O O O that Shakespeherian Rag—\nIt’s so elegant\nSo intelligent\n“What shall I do now? What shall I do?”\n“I shall rush out as I am, and walk the street\n“With my hair down, so. What shall we do tomorrow?\n“What shall we ever do?”\nThe hot water at ten.\nAnd if it rains, a closed car at four.\nAnd we shall play a game of chess,\nPressing lidless eyes and waiting for a knock upon the door."
         },
         {
           "type": "stanza",
@@ -8919,7 +8919,7 @@
       },
       "challenge": "Build a qualified account of an ending whose sounds promise more than its events confirm.",
       "focus": "Thirst, isolated consciousness, and fragments used to resist ruin.",
-      "context": "Recap of Part IV: ten lines on Phlebas the Phoenician, drowned, ending with an address to “Gentile or Jew.” The final section moves through thirst, ruined cities, possible rain, and fragments of inherited language. The Sanskrit commands are glossed by Eliot as give, sympathize, and control; the closing “Shantih” invokes peace. These clues aid reading but do not settle whether recovery occurs. The 1922 printing reads “Dead mount in mouth,” with a letter missing; it is kept as printed.",
+      "context": "Recap of Part IV: ten lines on Phlebas the Phoenician, drowned, ending with an address to “Gentile or Jew.” The final section moves through thirst, ruined cities, possible rain, and fragments of inherited language. The Sanskrit commands are glossed by Eliot as give, sympathize, and control; the closing “Shantih” invokes peace. These clues aid reading but do not settle whether recovery occurs. The 1922 printing reads “Dead mount in mouth,” with the “a” of “mountain” missing; the later Liveright printings consulted (1928, 1930) read the same, so it is kept as printed.",
       "contentNote": "Includes death, apocalyptic imagery, and religious traditions in a modernist collage.",
       "excerpt": {
         "locator": "Complete verse section V. WHAT THE THUNDER SAID, 1922 Boni and Liveright edition; begins “AFTER the torchlight red on sweaty faces After the”; ends “Shantih shantih shantih”.",
@@ -9353,7 +9353,7 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": null,
-        "textHash": "dfaf7c1040d89fdb760ed1397007622b11a7471e1150d6456f82ce1299f30909"
+        "textHash": "a62db68a44c9fddd2e3a72eb4f687f19a022a73a2cec55cbbc14c00f2848c959"
       },
       "blocks": [
         {
@@ -9362,11 +9362,11 @@
         },
         {
           "type": "paragraph",
-          "text": "My imagination carried me so far that I even had the refusal of several farms,—the refusal was all I wanted,—but I never got my fingers burned by actual possession. The nearest that I came to actual possession was when I bought the Hollowell place, and had begun to sort my seeds, and collected materials with which to make a wheelbarrow to carry it on or off with; but before the owner gave me a deed of it, his wife—every man has such a wife—changed her mind and wished to keep it, and he offered me ten dollars to release him. Now, to speak the truth, I had but ten cents in the world, and it surpassed my arithmetic to tell, if I was that man who had ten cents, or who had a farm, or ten dollars, or all together. However, I let him keep the ten dollars and the farm too, for I had carried it far enough; or rather, to be generous, I sold him the farm for just what I gave for it, and, as he was not a rich man, made him a present of ten dollars, and still had my ten cents, and seeds, and materials for a wheelbarrow left. I found thus that I had been a rich man without any damage to my poverty. But I retained the landscape, and I have since annually carried off what it yielded without a wheelbarrow. With \nrespect to landscapes,—"
+          "text": "My imagination carried me so far that I even had the refusal of several farms,—the refusal was all I wanted,—but I never got my fingers burned by actual possession. The nearest that I came to actual possession was when I bought the Hollowell place, and had begun to sort my seeds, and collected materials with which to make a wheelbarrow to carry it on or off with; but before the owner gave me a deed of it, his wife—every man has such a wife—changed her mind and wished to keep it, and he offered me ten dollars to release him. Now, to speak the truth, I had but ten cents in the world, and it surpassed my arithmetic to tell, if I was that man who had ten cents, or who had a farm, or ten dollars, or all together. However, I let him keep the ten dollars and the farm too, for I had carried it far enough; or rather, to be generous, I sold him the farm for just what I gave for it, and, as he was not a rich man, made him a present of ten dollars, and still had my ten cents, and seeds, and materials for a wheelbarrow left. I found thus that I had been a rich man without any damage to my poverty. But I retained the landscape, and I have since annually carried off what it yielded without a wheelbarrow. With respect to landscapes,—"
         },
         {
           "type": "stanza",
-          "text": "\"I am monarch of all I survey,\n\nMy right there is none to dispute.\""
+          "text": "\"I am monarch of all I survey,\nMy right there is none to dispute.\""
         },
         {
           "type": "paragraph",
@@ -9610,7 +9610,7 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": null,
-        "textHash": "6cb26eb1478d85932c5984b02d9beff038f8ab397b2e9c27a7e5ab3956ac0d7d"
+        "textHash": "edbda6b6d9057071694213de9c427e146cd922391b35d7074105ffd4b877aa51"
       },
       "blocks": [
         {
@@ -9623,11 +9623,11 @@
         },
         {
           "type": "stanza",
-          "text": "\"There was a shepherd that did live,\n\nAnd held his thoughts as high\n\nAs were the mounts whereon his flocks\n\nDid hourly feed him by.\""
+          "text": "\"There was a shepherd that did live,\nAnd held his thoughts as high\nAs were the mounts whereon his flocks\nDid hourly feed him by.\""
         },
         {
           "type": "paragraph",
-          "text": "What should we think of the shepherd's life if his flocks always wandered to higher pastures than his \nthoughts?"
+          "text": "What should we think of the shepherd's life if his flocks always wandered to higher pastures than his thoughts?"
         },
         {
           "type": "paragraph",
@@ -10144,7 +10144,7 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": null,
-        "textHash": "b493a0cb3444214a36a7826d886e365739f439bbe405af3cb18215b0526c9043"
+        "textHash": "466eb5b1e0c3120c73b4e458a81b231ca118d27ae23e08f11b62bfa8694a20dc"
       },
       "blocks": [
         {
@@ -10165,7 +10165,7 @@
         },
         {
           "type": "stanza",
-          "text": "\"Mourning untimely consumes the sad;\n \nFew are their days in the land of the living,\n\nBeautiful daughter of Toscar.\""
+          "text": "\"Mourning untimely consumes the sad;\nFew are their days in the land of the living,\nBeautiful daughter of Toscar.\""
         }
       ],
       "questions": [
@@ -10393,7 +10393,7 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": null,
-        "textHash": "e043dd8045633dd21e310d466439878db1a185d8f3916087e94c26aebdbd55f3"
+        "textHash": "5335b146ad0795f59d0c02dcecf787e274dd44e78ef26f816376274a9a970041"
       },
       "blocks": [
         {
@@ -10418,7 +10418,7 @@
         },
         {
           "type": "stanza",
-          "text": "\"Arrivéd there, the little house they fill,\n\nNe looke for entertainment where none was;\n\nRest is their feast, and all things at their will:\n\nThe noblest mind the best contentment has.\""
+          "text": "\"Arrivéd there, the little house they fill,\nNe looke for entertainment where none was;\nRest is their feast, and all things at their will:\nThe noblest mind the best contentment has.\""
         }
       ],
       "questions": [
@@ -12671,12 +12671,12 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": null,
-        "textHash": "7fa6f500bf61d239b6af848af116ce1f3db8080572edc94bcf9f80dcea71252f"
+        "textHash": "24e6f60de56bf069ec73320a537877be9a439b3b9526cc7ce1ac5f3d17cab5ef"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "No wonder that Alexander carried the Iliad with him on his expeditions in a precious casket. A written \nWord is the choicest of relics. It is something at once more intimate with us and more universal than any other work of art. It is the work of art nearest to life itself. It may be translated into every language, and not only be read but actually breathed from all human lips;—not be represented on canvas or in marble only, but be carved out of the breath of life itself. The symbol of an ancient man's thought becomes a modern man's speech. Two thousand summers have imparted to the monuments of Grecian literature, as to her marbles, only a maturer golden and autumnal tint, for they have carried their own serene and celestial atmosphere into all lands to protect them against the corrosion of time. Books are the treasured wealth of the world and the fit inheritance of generations and nations. Books, the oldest and the best, stand naturally and rightfully on the shelves of every cottage. They have no cause of their own to plead, but while they enlighten and sustain the reader his common sense will not refuse them. Their authors are a natural and irresistible aristocracy in every society, and, more than kings or emperors, exert an influence on mankind. When the illiterate and perhaps scornful trader has earned by enterprise and industry his coveted leisure and independence, and is admitted to the circles of wealth and fashion, he turns inevitably at last to those still higher but yet inaccessible circles of intellect and genius, and is sensible only of the imperfection of his culture and the vanity and insufficiency of all his riches, and further proves his good sense by the pains which he takes to secure for his children that intellectual culture whose want he so keenly feels; and thus it is that he becomes the founder of a family."
+          "text": "No wonder that Alexander carried the Iliad with him on his expeditions in a precious casket. A written Word is the choicest of relics. It is something at once more intimate with us and more universal than any other work of art. It is the work of art nearest to life itself. It may be translated into every language, and not only be read but actually breathed from all human lips;—not be represented on canvas or in marble only, but be carved out of the breath of life itself. The symbol of an ancient man's thought becomes a modern man's speech. Two thousand summers have imparted to the monuments of Grecian literature, as to her marbles, only a maturer golden and autumnal tint, for they have carried their own serene and celestial atmosphere into all lands to protect them against the corrosion of time. Books are the treasured wealth of the world and the fit inheritance of generations and nations. Books, the oldest and the best, stand naturally and rightfully on the shelves of every cottage. They have no cause of their own to plead, but while they enlighten and sustain the reader his common sense will not refuse them. Their authors are a natural and irresistible aristocracy in every society, and, more than kings or emperors, exert an influence on mankind. When the illiterate and perhaps scornful trader has earned by enterprise and industry his coveted leisure and independence, and is admitted to the circles of wealth and fashion, he turns inevitably at last to those still higher but yet inaccessible circles of intellect and genius, and is sensible only of the imperfection of his culture and the vanity and insufficiency of all his riches, and further proves his good sense by the pains which he takes to secure for his children that intellectual culture whose want he so keenly feels; and thus it is that he becomes the founder of a family."
         },
         {
           "type": "paragraph",
@@ -13567,12 +13567,12 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": null,
-        "textHash": "81b1e33bdc3db723d0ab74b50864794fdf246e0de06b157b536ffc1bcd7d16ef"
+        "textHash": "d7ac6e63d83e2d81ce32664237e1f071d81bd0f861d23c2bd9024aaa076d215e"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "With thinking we may be beside ourselves in a sane sense. By a conscious effort of the mind we can stand \naloof from actions and their consequences; and all things, good and bad, go by us like a torrent. We are not wholly involved in Nature. I may be either the driftwood in the stream, or Indra in the sky looking down on it. I may be affected by a theatrical exhibition; on the other hand, I may not be affected by an actual event which appears to concern me much more. I only know myself as a human entity; the scene, so to speak, of thoughts and affections; and am sensible of a certain doubleness by which I can stand as remote from myself as from another. However intense my experience, I am conscious of the presence and criticism of a part of me, which, as it were, is not a part of me, but spectator, sharing no experience, but taking note of it; and that is no more I than it is you. When the play, it may be the tragedy, of life is over, the spectator goes his way. It was a kind of fiction, a work of the imagination only, so far as he was concerned. This doubleness may easily make us poor neighbors and friends sometimes."
+          "text": "With thinking we may be beside ourselves in a sane sense. By a conscious effort of the mind we can stand aloof from actions and their consequences; and all things, good and bad, go by us like a torrent. We are not wholly involved in Nature. I may be either the driftwood in the stream, or Indra in the sky looking down on it. I may be affected by a theatrical exhibition; on the other hand, I may not be affected by an actual event which appears to concern me much more. I only know myself as a human entity; the scene, so to speak, of thoughts and affections; and am sensible of a certain doubleness by which I can stand as remote from myself as from another. However intense my experience, I am conscious of the presence and criticism of a part of me, which, as it were, is not a part of me, but spectator, sharing no experience, but taking note of it; and that is no more I than it is you. When the play, it may be the tragedy, of life is over, the spectator goes his way. It was a kind of fiction, a work of the imagination only, so far as he was concerned. This doubleness may easily make us poor neighbors and friends sometimes."
         },
         {
           "type": "paragraph",
