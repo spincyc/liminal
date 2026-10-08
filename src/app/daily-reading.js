@@ -1,10 +1,12 @@
 (function () {
   "use strict";
-  const D = window.LiminalDailyReading, R = window.LiminalDailyReadingRender;
-  const status = document.getElementById("dailyStatus"), browser = document.getElementById("dailyBrowser"), container = document.getElementById("dailyContent");
+  const D = window.LiminalDailyReading, R = window.LiminalDailyReadingRender, B = window.LiminalDailyReadingBrowse;
+  const status = document.getElementById("dailyStatus"), reader = document.getElementById("dailyReader"), container = document.getElementById("dailyContent");
+  const views = document.getElementById("dailyViews"), browsePanel = document.getElementById("dailyBrowse");
+  const browseLink = document.getElementById("dailyBrowseLink"), readLink = document.getElementById("dailyReadLink");
   const gradeSelect = document.getElementById("dailyGrade"), weekSelect = document.getElementById("dailyWeek"), daySelect = document.getElementById("dailyDay");
-  let index, request = 0, preservePickerFocus = false;
-  const cache = new Map();
+  let index, request = 0, preservePickerFocus = false, last = null;
+  const cache = new Map(), browseCache = new Map();
   function announce(message, visible = false) { status.textContent = message; status.classList.toggle("daily-sr", !visible); }
   function button(label, action) { const node = R.el("button", label); node.type = "button"; node.addEventListener("click", action); return node; }
   function option(label, value) { const node = R.el("option", label); node.value = value; return node; }
@@ -19,6 +21,7 @@
     const pages = D.navigation(selected);
     if (pages.previous) { const a = R.link("← Previous night", pages.previous.href); a.setAttribute("aria-label", "Previous night: week " + pages.previous.week + ", day " + pages.previous.day); nav.append(a); }
     else nav.append(R.el("span", "First night", "daily-muted"));
+    nav.append(R.link("All nights", D.browseRoute(selected.grade)));
     if (pages.next) { const a = R.link("Next night →", pages.next.href); a.setAttribute("aria-label", "Next night: week " + pages.next.week + ", day " + pages.next.day); nav.append(a); }
     else nav.append(R.el("span", "End of the reading year", "daily-muted"));
     return nav;
@@ -32,9 +35,48 @@
     anchor.download = "liminal-" + packet.day.id + "-student.html"; document.body.append(anchor); anchor.click(); anchor.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000); announce("Downloaded this reading and its discussion questions, without facilitator notes.");
   }
-  async function render(focus = false) {
-    const current = ++request, selected = D.resolve(index, window.location.hash);
+  // Browse and Read are two views of one page, each with its own hash route:
+  // #browse/<grade> and #<grade>/<week>/<day>. Switching keeps the grade.
+  function showView(name, grade) {
+    views.hidden = false; browsePanel.hidden = name !== "browse"; reader.hidden = name !== "read";
+    browseLink.href = D.browseRoute(grade);
+    readLink.href = last && last.grade === grade ? D.route(last.grade, last.week, last.day) : D.route(grade, 1, 1);
+    browseLink.removeAttribute("aria-current"); readLink.removeAttribute("aria-current");
+    (name === "browse" ? browseLink : readLink).setAttribute("aria-current", "page");
+  }
+  async function browse(selected, focus) {
+    const current = ++request;
+    showView("browse", selected.grade);
+    const list = document.getElementById("dailyYear"); list.setAttribute("aria-busy", "true");
+    announce("Opening " + D.gradeLabel(selected.grade) + "…", true);
+    try {
+      let data = browseCache.get(selected.grade);
+      if (!data) {
+        // Only the small year-at-a-glance file; texts load when a night opens.
+        const response = await fetch(D.browseFile(selected.grade));
+        if (!response.ok) throw new Error("Browse unavailable");
+        data = await response.json();
+        if (data.schemaVersion !== 1 || data.grade !== selected.grade || !Array.isArray(data.nights) || !Array.isArray(data.progression)) throw new Error("Browse mismatch");
+        browseCache.set(selected.grade, data);
+      }
+      if (current !== request) return;
+      B.show(index, data, { last, focus });
+      document.title = "Daily reading · " + D.gradeLabel(selected.grade) + " — Liminal";
+      announce((selected.invalid ? "That link was not recognized. Showing " : "Showing ") + D.gradeLabel(selected.grade) + ": " + data.nights.length + " nights.", selected.invalid);
+    } catch (_) {
+      if (current !== request) return;
+      announce("This grade could not be loaded. Try again, or choose another grade.", true);
+    } finally { if (current === request) list.setAttribute("aria-busy", "false"); }
+  }
+  function route(focus = false) {
+    const selected = D.view(index, window.location.hash);
     if (!selected.course) return;
+    if (selected.view === "browse") browse(selected, focus); else render(selected, focus);
+  }
+  async function render(selected, focus = false) {
+    const current = ++request;
+    last = { grade: selected.grade, week: selected.week, day: selected.day };
+    showView("read", selected.grade);
     pickers(selected); container.replaceChildren(); container.setAttribute("aria-busy", "true");
     announce("Opening " + D.gradeLabel(selected.grade) + ", week " + selected.week + ", day " + selected.day + "…", true);
     try {
@@ -61,7 +103,7 @@
     } catch (_) {
       if (current !== request) return;
       cache.delete(selected.grade); announce("This reading could not be loaded. Try again, or choose another grade.", true);
-      container.replaceChildren(button("Try again", () => render()));
+      container.replaceChildren(button("Try again", () => route()));
     } finally { if (current === request) container.setAttribute("aria-busy", "false"); }
   }
   async function start() {
@@ -83,8 +125,8 @@
       for (let day = 1; day <= 5; day++) daySelect.append(option(day, day));
       [gradeSelect, weekSelect, daySelect].forEach(select => select.addEventListener("change", choose));
       document.querySelector(".daily-filters").addEventListener("submit", event => { event.preventDefault(); choose(); });
-      window.addEventListener("hashchange", () => { const focus = !preservePickerFocus; preservePickerFocus = false; render(focus); });
-      browser.hidden = false; render();
+      window.addEventListener("hashchange", () => { const focus = !preservePickerFocus; preservePickerFocus = false; route(focus); });
+      route();
     } catch (_) {
       announce("The reading library could not be loaded. Reload this page to try again, or explore the year plans below.", true);
     }

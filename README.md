@@ -52,7 +52,8 @@ five per week. The age-adjusted reading and discussion budget grows from about
 10 minutes in kindergarten to 25–30 minutes in high school. Each night includes
 the authentic text, source and edition, a focused reading challenge, and
 text-specific questions. Adult read-aloud and shared reading are explicit;
-facilitator notes stay separate from student printouts. See the
+facilitator notes stay separate from student printouts. Browse a grade's year
+at a glance, search it by title, author, work or genre, and open any night. See the
 [corpus, provenance, and progression contract](docs/daily-reading.md).
 
 **Reading level** (`reading-level.html`) finds a starting point in that library

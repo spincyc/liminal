@@ -70,6 +70,27 @@ K–12 corpus and the Advanced levels complete separately:
 Printed packets use one fixed two-column style, specified in
 [reading packets](reading-packets.md).
 
+## Browsing and reading online
+
+`daily-reading.html` has two views with their own links. **Browse**
+(`#browse/<grade>`, and the page's default) shows one grade's year at a
+glance: the grades in the library, read from the index so new levels appear
+without code; the year's progression stages; and each week's five nights with
+title, author, work, minutes, reading mode and genre. Continued readings are
+marked "Part 2 of 5" and joined by a rule. Search matches every word against
+titles, authors, works and genres, ignoring case and accents, and narrows by
+reading mode and genre. Each night links to **Read**
+(`#<grade>/<week>/<day>`), the full text with discussion, print and download;
+returning to Browse marks the night just read.
+
+Browse loads only `content/reading-daily/browse/<grade>.json`, about 40 KB,
+which `tools/build-daily-reading.js` builds from each grade with an explicit
+allowlist (`browseIndex` in `src/lib/daily-reading.js`): titles, credits,
+minutes, mode, genre, continuation and the progression focus. It never
+carries the text, questions, facilitator notes or evidence; a grade's full
+file loads only when one of its nights is opened. `tools/smoke-static.js`
+checks both.
+
 ## Canonical contract
 
 Each `content/reading-daily/{k,1,...,12,a1,...,a4}.json` is one complete grade

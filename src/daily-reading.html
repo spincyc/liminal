@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="description" content="A year of nightly reading for each grade, kindergarten through Grade 12: authentic public-domain literature and documents with focused discussion." />
+    <meta name="description" content="A year of nightly reading for each grade, kindergarten through Grade 12: browse the year, then read authentic public-domain literature and documents with focused discussion." />
     <title>Liminal — Daily reading</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles/tokens.css" />
@@ -13,16 +13,30 @@
     <link rel="stylesheet" href="styles/brand.css" />
     <script defer src="lib/daily-reading.js"></script>
     <script defer src="app/daily-reading-render.js"></script>
+    <script defer src="app/daily-reading-browse.js"></script>
     <script defer src="app/daily-reading.js"></script>
   </head>
   <body class="daily-page">
     <a class="skip-link" href="#main">Skip to main content</a>
     <!-- liminal:site-header -->
     <main id="main" class="page-width daily-main" tabindex="-1">
-      <header class="daily-intro"><h1>Daily reading</h1><p>Five nights a week. <a href="reading-level.html">Find a starting level and plan</a>.</p></header>
-      <noscript><p>Turn on JavaScript to choose a reading. You can also <a href="content/reading-daily/index.json">browse the downloadable grade index</a>.</p></noscript>
+      <header class="daily-intro"><h1>Daily reading</h1><p>Five nights a week, a full year per grade. <a href="reading-level.html">Find a starting level and plan</a>.</p></header>
+      <noscript><p>Turn on JavaScript to browse and read. You can also <a href="content/reading-daily/index.json">download the grade index</a>.</p></noscript>
       <p id="dailyStatus" class="daily-status" role="status" aria-live="polite">Opening the reading library…</p>
-      <div id="dailyBrowser" hidden>
+      <nav id="dailyViews" class="daily-views" aria-label="Daily reading views" hidden><a id="dailyBrowseLink" href="#browse">Browse the year</a><a id="dailyReadLink" href="#k/1/1">Read a night</a></nav>
+      <section id="dailyBrowse" class="daily-browse" aria-labelledby="dailyBrowseHeading" hidden>
+        <nav class="daily-grades" aria-label="Grades"><ul id="dailyGrades"></ul></nav>
+        <h2 id="dailyBrowseHeading" tabindex="-1"></h2>
+        <p id="dailyBrowseSummary" class="daily-browse-summary"></p>
+        <form class="daily-search" role="search" aria-label="Find nights">
+          <label class="daily-query">Search<input id="dailyQuery" type="search" autocomplete="off" spellcheck="false" placeholder="Title, author, work or genre" /></label>
+          <label>Reading<select id="dailyMode"></select></label>
+          <label>Genre<select id="dailyGenre"></select></label>
+        </form>
+        <p id="dailyCount" class="daily-count" role="status" aria-live="polite"></p>
+        <div id="dailyYear" class="daily-year-list" aria-busy="false"></div>
+      </section>
+      <div id="dailyReader" hidden>
         <form class="daily-filters" aria-label="Choose a nightly reading">
           <label>Grade<select id="dailyGrade"></select></label>
           <label>Week<select id="dailyWeek"></select></label>

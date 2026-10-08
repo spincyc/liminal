@@ -196,3 +196,42 @@ test("single-author selections retain the source fallback and repeated work titl
     assert.match(html, /class="daily-author">By Test Author 0/); assert.doesNotMatch(html, /class="daily-work-title"/);
   }
 }));
+test("browse files are a text-free allowlist that keeps credits, runs and lazy per-grade paths", t => {
+  const course = fixture(5), day = course.days[0];
+  course.days[0].excerpt.isCompleteWork = false; course.days[1].excerpt.isCompleteWork = false; course.days[2].excerpt.isCompleteWork = false;
+  course.days[0].excerpt.continuesTo = course.days[1].id; course.days[1].excerpt.continuesFrom = day.id;
+  course.days[1].excerpt.continuesTo = course.days[2].id; course.days[2].excerpt.continuesFrom = course.days[1].id;
+  course.days[1].sourceId = course.days[2].sourceId = day.sourceId;
+  day.author = "Individual Poet"; day.private = "DAY_SECRET"; course.sources[0].title = "Fixture night";
+  const browse = D.browseIndex(course), serialized = JSON.stringify(browse);
+  assert.doesNotMatch(serialized, /FACILITATOR_SECRET|DAY_SECRET|second line to read|Question 1|textHash|locator/);
+  assert.equal(browse.nights.length, 180); assert.equal(browse.progression[0].rationale, undefined);
+  assert.deepEqual(browse.nights[0], { week: 1, day: 1, title: "Fixture night 1", author: "Individual Poet", work: "Fixture night", minutes: 15, mode: "independent", genre: "poetry", continuesFrom: false, continuesTo: true });
+  assert.equal(D.workLabel(browse.nights[0]), null); assert.equal(D.workLabel(browse.nights[3]), "Fixture source 3");
+  assert.deepEqual(D.runs(browse.nights).slice(0, 4), [{ part: 1, of: 3 }, { part: 2, of: 3 }, { part: 3, of: 3 }, null]);
+  assert.equal(D.browseFile(5), "content/reading-daily/browse/5.json"); assert.equal(D.browseFile(14), "content/reading-daily/browse/a2.json"); assert.equal(D.browseFile(17), "");
+  const directory = scratch(t), input = path.join(directory, "input"), output = path.join(directory, "output"); fs.mkdirSync(input);
+  fs.writeFileSync(path.join(input, "5.json"), JSON.stringify(fixture(5))); B.build({ directory: input, output });
+  assert.deepEqual(JSON.parse(fs.readFileSync(path.join(output, D.browseFile(5)))), D.browseIndex(fixture(5)));
+});
+test("browse routes, search and filters are pure and forgiving", () => {
+  const index = { grades: [{ grade: 0 }, { grade: 5 }, { grade: 13 }] };
+  assert.deepEqual(D.view(index, ""), { view: "browse", course: index.grades[0], grade: 0, invalid: false });
+  assert.equal(D.view(index, "#browse/5").grade, 5); assert.equal(D.view(index, "#browse/a1").grade, 13);
+  assert.equal(D.view(index, "#browse/zz").invalid, true); assert.equal(D.view(index, "#browse/zz").grade, 0);
+  assert.equal(D.view(index, "#5/2/3").view, "read"); assert.equal(D.view(index, "#5/2/3").week, 2);
+  assert.equal(D.browseRoute(13), "#browse/a1");
+  const nights = [
+    { week: 1, day: 1, title: "Pied Beauty", author: "Gerard Manley Hopkins", work: "Poems", minutes: 25, mode: "independent", genre: "poetry" },
+    { week: 1, day: 2, title: "Le Morte d’Arthur", author: "Thomas Malory", work: "Le Morte Darthur", minutes: 30, mode: "shared", genre: "literary-prose" },
+    { week: 1, day: 3, title: "The Café", author: "Anon", work: "Tales", minutes: 28, mode: "independent", genre: "short-story" },
+  ];
+  assert.deepEqual(D.filterNights(nights, { query: "hopkins poetry" }).map(n => n.day), [1]);
+  assert.deepEqual(D.filterNights(nights, { query: "d'arthur" }).map(n => n.day), [2]);
+  assert.deepEqual(D.filterNights(nights, { query: "cafe" }).map(n => n.day), [3]);
+  assert.deepEqual(D.filterNights(nights, { query: "literary prose" }).map(n => n.day), [2]);
+  assert.deepEqual(D.filterNights(nights, { mode: "independent" }).map(n => n.day), [1, 3]);
+  assert.deepEqual(D.filterNights(nights, { genre: "poetry", query: "malory" }), []);
+  assert.deepEqual(D.genres(nights), ["literary-prose", "poetry", "short-story"]);
+  assert.deepEqual(D.modes(nights), ["shared", "independent"]); assert.deepEqual(D.minutesSpan(nights), [25, 30]);
+});

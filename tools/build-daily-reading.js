@@ -141,7 +141,12 @@ function build(options = {}) {
   const { index, courses } = loadDailyReading(options);
   const output = options.output || path.join(ROOT, "dist"), directory = path.join(output, "content/reading-daily");
   fs.rmSync(directory, { recursive: true, force: true }); fs.mkdirSync(directory, { recursive: true });
-  for (const course of courses) fs.writeFileSync(path.join(directory, D.gradeKey(course.grade) + ".json"), JSON.stringify(course) + "\n");
+  fs.mkdirSync(path.join(directory, "browse"));
+  for (const course of courses) {
+    fs.writeFileSync(path.join(directory, D.gradeKey(course.grade) + ".json"), JSON.stringify(course) + "\n");
+    // The browse view loads only this year-at-a-glance file, not the texts.
+    fs.writeFileSync(path.join(output, D.browseFile(course.grade)), JSON.stringify(D.browseIndex(course)) + "\n");
+  }
   fs.writeFileSync(path.join(directory, "index.json"), JSON.stringify(index) + "\n");
   console.log("Built daily reading: " + courses.length + " complete grades, " + courses.length * 180 + " nights.");
   return index;

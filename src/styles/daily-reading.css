@@ -1,4 +1,7 @@
-.daily-main { max-width: 760px; padding-block: 30px 42px; }
+/* Browse is wider than a reading: the year's weeks sit side by side. The
+   reading column keeps its measure. */
+.daily-main { max-width: 1040px; padding-block: 30px 42px; }
+.daily-intro, #dailyReader, .daily-about, .daily-search { max-width: 760px; }
 .daily-intro { margin-bottom: 20px; }
 .daily-intro h1 { font: 400 1.625rem/1.2 var(--font-serif); letter-spacing: -.025em; }
 .daily-intro p { margin-top: 5px; color: var(--color-muted); font-size: .875rem; }
@@ -51,12 +54,50 @@
 .daily-attribution { display: none; }
 .daily-export-brand { margin-bottom: 20px; }
 .daily-export-footer { margin-top: 28px; border-top: 1px solid var(--color-line); padding-block: 14px; }
+.daily-views { display: flex; gap: 4px; margin-block: 2px 24px; border-bottom: 1px solid var(--color-line); }
+.daily-views a { display: inline-flex; align-items: center; min-height: var(--tap); margin-bottom: -1px; padding: 3px 12px 0; border-bottom: 3px solid transparent; color: var(--color-muted); font-size: .9375rem; font-weight: 600; text-decoration: none; }
+.daily-views a:first-child { padding-left: 0; }
+.daily-views a:hover { color: var(--color-ink); }
+.daily-views a[aria-current] { border-bottom-color: var(--color-accent); color: var(--color-ink); }
+.daily-grades ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.daily-grades a { display: inline-flex; align-items: center; justify-content: center; min-width: var(--tap); min-height: var(--tap); padding: 0 10px; border: 1px solid var(--color-line-strong); border-radius: var(--radius-sm); background: var(--color-surface); font-weight: 600; text-decoration: none; }
+.daily-grades a:hover { background: var(--color-soft); }
+.daily-grades a[aria-current] { border-color: var(--color-accent); background: var(--color-accent); color: var(--color-on-accent); }
+.daily-browse h2 { margin-top: 22px; font: 400 1.75rem/1.2 var(--font-serif); letter-spacing: -.02em; }
+.daily-browse-summary { margin-top: 4px; color: var(--color-muted); font-size: .875rem; }
+.daily-search { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 12px; margin-block: 18px 4px; }
+.daily-search label { display: grid; gap: 3px; font-size: .8125rem; }
+.daily-page input[type="search"] { width: 100%; min-height: var(--tap); padding: 8px 10px; border: 1px solid var(--color-line-strong); border-radius: var(--radius-sm); background: var(--color-surface); color: var(--color-ink); font: inherit; font-size: 1rem; }
+.daily-page input[type="search"]:focus-visible { outline: var(--focus-width) solid var(--color-accent); outline-offset: var(--focus-offset); }
+.daily-count { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 1.5em; font-size: .875rem; }
+.daily-count:empty { min-height: 0; }
+.daily-browse .daily-year { max-width: 760px; margin-top: 12px; }
+.daily-stage-group { margin-top: 28px; }
+.daily-stage-title { color: var(--color-muted); font: 600 .8125rem/1.4 var(--font-sans); letter-spacing: .08em; text-transform: uppercase; }
+.daily-stage-focus { max-width: 70ch; margin-top: 4px; color: var(--color-muted); font-size: .875rem; }
+.daily-weeks { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px 28px; margin-top: 14px; }
+.daily-week h4 { margin: 0; padding-bottom: 4px; border-bottom: 1px solid var(--color-line-strong); font: 400 1.125rem/1.3 var(--font-serif); }
+.daily-nights { margin: 0; padding: 0; list-style: none; }
+.daily-night a { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 0 6px; min-height: var(--tap); padding-block: 7px; border-bottom: 1px solid var(--color-line); text-decoration: none; }
+.daily-night-day { padding-top: 2px; color: var(--color-muted); font-size: .75rem; font-weight: 600; }
+.daily-night-body { display: grid; gap: 2px; }
+.daily-night-title { font-size: .9375rem; font-weight: 600; line-height: 1.35; overflow-wrap: anywhere; }
+.daily-night a:hover .daily-night-title { text-decoration: underline; }
+.daily-night-meta, .daily-night-run { color: var(--color-muted); font-size: .8125rem; line-height: 1.4; overflow-wrap: anywhere; }
+.daily-night-run { font-style: italic; }
+/* A continued run is joined by a rule down its nights. */
+.daily-night:is(.is-continued, .continues) .daily-night-body { padding-left: 9px; border-left: 2px solid var(--color-accent); }
+.daily-night a[aria-current] { background: var(--color-accent-soft); }
 .daily-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 @media (max-width: 640px) {
   .daily-page .page-width { width: calc(100% - 32px); }
   .daily-main { padding-top: 24px; }
   .daily-filters { gap: 8px; }
   .daily-filters select { padding-inline: 7px; }
+  .daily-search { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; }
+  .daily-query { grid-column: 1 / -1; }
+  .daily-grades ul { gap: 4px; }
+  .daily-grades a { min-width: 40px; padding-inline: 6px; }
   .daily-passage { font-size: 1.125rem; line-height: 1.8; }
 }
 @media print {
@@ -64,7 +105,7 @@
   html { scroll-behavior: auto; }
   .daily-page { background: #fff; color: #000; font-size: 10pt; }
   .daily-page .page-width { width: 100%; max-width: none; }
-  .daily-page :is(.skip-link, .daily-intro, .daily-filters, .daily-status, .daily-nav, .daily-actions, .daily-facilitator, .daily-source, .daily-focus, .daily-year, .daily-about, .daily-footer) { display: none !important; }
+  .daily-page :is(.skip-link, .daily-views, .daily-browse, .daily-intro, .daily-filters, .daily-status, .daily-nav, .daily-actions, .daily-facilitator, .daily-source, .daily-focus, .daily-year, .daily-about, .daily-footer) { display: none !important; }
   .daily-main { padding: 0; }
   .daily-heading { border: 0; padding-top: 0; }
   .daily-heading :is(h1, h2) { font-size: 23pt; }
