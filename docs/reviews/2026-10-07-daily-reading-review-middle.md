@@ -196,3 +196,86 @@ No finding: Wilde's four selected tales are complete, including the Swallow's,
 the Prince's and the Giant's deaths. Jefferies and Muir keep shooting and
 trapping in their selected text. All three Kipling stories are complete. The
 remaining 120 content notes explain history or authorial purpose.
+
+## Delta review of repairs (2026-10-08)
+
+Scope: the committed repairs e97cbc8 (Grade 6), 6735207 (Grade 7) and
+1145016 (Grade 8), checked against the findings above. The original record
+above is kept unchanged. For each grade, the mechanical checks were re-run on
+the current file against the reviewer's own downloads, changed texts were
+diffed word by word against their witnesses, samples were checked on page
+images, and at least four new or restored nights were cold-read blind
+(answers written before notes were opened).
+
+| Grade | New SHA-256 | Hashes / literal evidence | Overlap | Timing (prose words per reading minute) | Blind reads |
+|---|---|---|---|---|---|
+| 6 | `4981671828f52f8cfbd8965e3f8a1104caf883cc48fe61250a943b0fb29ea859` | 180/180; 584/584 | none | 46–124; totals 21–25 | 4, all agree |
+| 7 | `084e8adc5f425ca088458cfadf98abf4c8470658762ddd13ffd61f32c82a937e` | 180/180; 762/762 | none | 66–153 (two nights at 150–153); totals 20–25 | 4, all agree |
+| 8 | `0f27af44d198e53e776feeb45531b16cf56ad8023d65921db83e68b695e097b9` | 180/180; 613/613 | Only the accepted Mariner stanza (now w34-d5 / reading-9-w25-d1) | 44–119; totals 22–25 | 5, all agree |
+
+The validator passes for all three files.
+
+### Grade 6 delta
+
+| Finding | Status | Evidence |
+|---|---|---|
+| Wallace w32-d4 stopped before "Contrasts of Races" | Resolved | w32-d4 now runs through pp.29–30; the only differences from the source are page markers. Cold-read; the note separates observation from period ranking. |
+| Cranford ch. II (Captain Brown) | Resolved | w02-d4 (strict match apart from a caption) includes the train death and Miss Brown's death. Cold-read. |
+| Cranford ch. VI "Poor Peter" and the return | Resolved | w21-d3 to w21-d5 give all of ch. VI; w32-d1 gives the return. "Too late" cold-read. |
+| w27-d5, w05-d4, w10-d5 site-voice morals | Resolved | Removed. |
+| Activity disclaimers (note) | Resolved | Trimmed on the 11 listed nights. |
+| "Tiger! Tiger!" (note) | Resolved | Four nights, 24/24 Kipling nights match strictly. "Cast out twice" cold-read. |
+| Jefferies re-collated to the 1879 scan (new) | Verified by sample | Against PG 36949, 55 substantive differences remain after normalizing dashes, quotes and ligatures. About 11 are quotation-style changes; the rest are the declared "&c."/"l." forms and about 43 corrections, as claimed. Page images confirm "much frequented" (p.176), the single quotes "'Come,'" and "I'm off!'" (p.150) and "contract," (p.233); the 1879 OCR confirms "comes", "present farmer", "glassy" and "time keeping". |
+
+Nine poems and one Muir night were dropped to make room. The year keeps 12
+sources and 12 authors; Cranford is the largest share at 25 nights (14%).
+**No Grade 6 finding remains.**
+
+### Grade 7 delta
+
+| Finding | Status | Evidence |
+|---|---|---|
+| B7-1 Tom Sawyer edition | Resolved, with one new error (S7-2) | All 25 nights were rebuilt to the 1876 American Publishing Co. text. Checked against the 1876 scan (`adventuresoftoms00twaiiala`): 9 of 10 sampled readings confirmed. On page images: "preceptible", "He had beside", "Finally he rode", "brim-full", "O, lordy" and the ch. X oath. By the 1876 OCR: "St. Petersburgh", "death-bed" and "practice"; the OCR also supports "ensconsced", "hasted", "phreneological" and "posssble". |
+| Slur notes on w10-d2, w13-d5, w22-d3 | Resolved | Each now explains history and purpose; none tells readers to skip a word. |
+| S7-1 Keller "were" and Zitkala-Sa "grey" | Resolved | These are now the only differences from UPenn and PG respectively. |
+| Tom climax chapters (note) | Resolved | Chapters XXXI–XXXIII added (w17-d5 to w18-d4); all four cold-read. |
+| N7-1 Anne-heavy opening | Resolved | No night now exceeds 155 words per minute. |
+| **S7-2 (new, should-fix)** | Open | reading-7-w08-d3 (ch. VII) reads "No, I'll never lore anybody but you, Tom". The 1876 p.76 image shows "love" printed with a damaged, ink-filled "v". The OCR's "lore" was adopted as a misprint, but it is not one. Change to "love". |
+| Tom `textUrl` (note) | Open | The Wikisource transcription it names (marked validated) differs from the 1876 print in about 140 words (e.g. "practise", "Petersburg", "Oh" for "O"). The selection correctly follows the print, but a reader following `textUrl` cannot reproduce the text. Point `url`/`textUrl` at the 1876 scan, or say so. |
+| Oath capital (note) | Open | The engraving appears to read "ever tell and Rot" (lower-case "t"); the selection has "Tell". A handwriting judgment. |
+
+### Grade 8 delta
+
+| Finding | Status | Evidence |
+|---|---|---|
+| B8-1 Irving | Resolved by removal | Irving is dropped; no stale references remain in the overview, progression or sources. Judgment below. |
+| S8-1 Doyle readings | Resolved | 56 word-level differences from Wikisource across 21 nights, matching the declared 2 + 54 places; the other 4 differences are caption omissions. Six further corrections confirmed on scan pages (pp.48, 80, 214, 235, 267, 288: "latter", "kerb", "exists", "knitting", "companions'", "for ever", "When suddenly"). The nine checked in the first review agree. |
+| S8-2 `textUrl` | Resolved | Austin, Burroughs, Hardy, Johnson and Coleridge now match the named `.txt` files (60/60). |
+| S8-3 Mariner glosses | Resolved | The context identifies "the short prose paragraphs between stanzas". |
+| S8-4 Scott "L. T." footnotes | Resolved | The contexts of all three nights identify them. |
+| Censorship: Dickens | Resolved | No gap after Stave Three: Ignorance and Want, Old Joe's shop, the corpse, the Cratchits and the churchyard are all in. w20-d4 and w21-d4 cold-read. |
+| Censorship: Doyle | Resolved | Chapters XII–XIV restored (w24-d4 to w26-d2). "A sight I shall never forget" cold-read. |
+| Censorship: Wells | Resolved | The Underworld and the forest fire are restored (w32-d4, w32-d5, w35-d3, w35-d4). "The burning forest" cold-read. |
+| Censorship: London | Largely resolved; note | Restored: the club beating (w08-d1, cold-read), Curly, the Spitz fight, Dave, Thornton's rescue and the drowning, and the whole final chapter. Still omitted: Dolly's madness (1,824-word gap), the trail deaths including Hal shooting Dub (1,589), and Buck's attack on "Black" Burton. The essential arc is restored. |
+| N8-1, N8-2, N8-3, N8-4 | Resolved | Evidence spacing fixed; "the churchman"; "an overlooked"; Burroughs's title wording; Doyle's undated title page stated. |
+| London edition note (new note) | Open | It still says "Illustrations are outside the selected passages". Restored nights w08-d1, w14-d5, w24-d2, w30-d3 and w30-d4 omit plate captions (each repeats a text sentence). Declare the omission. |
+
+**Dropping Irving.** This is an acceptable resolution and breaches no part of
+the contract.
+- Sources: 11, above the floor of ten.
+- Authors: 11, which the owner has accepted against "where appropriate, twelve".
+- Genre: there is no genre floor. Grade 8 still includes documentary and essay
+  prose in Mary Austin's and John Burroughs's nature essays (36 nights).
+- Authorship: the authors are not all men; Mary Austin remains, and James
+  Weldon Johnson remains.
+- What is lost: the year has no argumentative or reflective essayist any more,
+  and fiction is now 108 of 180 nights (London 24, Dickens 23, Wells 22, Doyle
+  21, Scott 18).
+- This is a note on breadth, not a finding.
+
+### Delta limits
+
+The text checks are samples: 7 Jefferies, 10 Tom Sawyer and about 18 Doyle
+corrections were checked on page images or scan OCR, not all 43 + 200 + 54.
+Unchanged texts rely on the original review. The delta cold reads cover 13
+new or restored nights. The remaining limits stated above still apply.

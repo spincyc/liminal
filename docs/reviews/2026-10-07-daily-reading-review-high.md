@@ -168,3 +168,161 @@ Scratch evidence is in `.scratch/daily_reading_corpus/final-review-high/`:
 - `src/g10/scans/` (page images)
 - `cold/`
 - `scripts/`
+
+## Delta review (2026-10-08)
+
+This section records a review of the repaired files against the findings above. The original record above is unchanged.
+
+**Hashes reviewed and re-checked at the end:**
+
+| Grade | Repair commit | New SHA-256 |
+| --- | --- | --- |
+| 9 | `04ca013` | `7dbd8002e4c3d53609ec8da6c2ff82e3322135b03d659281a3a5d9bd0b74999e` |
+| 10 | `1fee84a` | `5054038f2911a80b3b76d2b39eceb50c32482d929ca24bc2cac17debf10fb514` |
+| 11 | `874feb4` | `d6271649e9fc68d8f3e5562be0c6f1aeccdb37ddac178a6f56116d3eea7a6f3a` |
+| 12 | `73a5f73` | `59b931c279ac318187556c46b8ef8c8bd4f3e8f8e9d5ec1233fd028bf4e5cf60` |
+
+**Method.**
+
+- The validator passes.
+- These checks were re-run on all 720 nights:
+  - textHash and evidence quotes;
+  - prompt-template scan and typo scan;
+  - 30-word novelty against all grades and the weekly inventory;
+  - timing;
+  - leading/trailing whitespace, doubled punctuation and mid-sentence line breaks.
+- Fidelity was re-run on every night with the same extractors. The streams were adjusted only for each source's newly declared normalizations: Whitman TEI `reg` for turnover-split words, Emerson `[n]` removal and joined wraps.
+- **Blind cold reads.** I read 17 new or restored nights blind (4–5 per grade), plus one G12 night I had seen before. Answers were sealed before notes were opened (`dl/cold/`).
+- **Page images.**
+  - Waste Land: n15, n16, n21 and n44, plus n25–n27 from the original review.
+  - Ethan Frome: 1911 pp. 180, 185 and 193.
+  - Oedipus: 1917 pp. 73 and 76.
+  - Plato: 1901 p. 219.
+  - Douglass: 1845 pp. 7 and 32.
+
+### Grade 9 — `7dbd8002…`
+
+The checks show:
+
+- fidelity 180/180;
+- hashes 180/180, with 556/556 evidence quotes exact;
+- 548 distinct prompts;
+- novelty: only the accepted Ancient Mariner overlap, now with Grade 8 w34-d5;
+- maximum 149 wpm;
+- blind cold reads w02-d1, w02-d2, w02-d5, w05-d1: 20/20 agree.
+
+| Finding | Status |
+| --- | --- |
+| w02-d5 Demby killing | Resolved; continues through "…stained with his brother's blood." |
+| w02-d1 Aunt Hester | Resolved; runs to the end of Ch. I. |
+| w05-d1 prohibition and "pathway" | Resolved. It now ends at "…gained from my master". The continuation is in the G9 weekly course, week 36. |
+| w02-d2 Mr. Severe and the songs | Resolved. It ends before the week-16 weekly paragraph. |
+| Ch. VII not added | **Accepted.** The weekly inventory holds Ch. VII complete (G12 week 4) and in parts (G12 week 15; G9 week 33; G8 weeks 25–36). Any Ch. VII night would break the 30-word novelty rule, and the scene is taught in the program. |
+| w11-d2/d3 shipyard assault (optional) | Not taken up; remains optional. |
+| w24-d2 context; w27-d2 locator | Resolved. |
+| Notes from 2026-10-07 | Unchanged; they remain notes. |
+
+**New findings: should-fix.** These are transcription errors from the UNC source, retained without being declared. The Douglass `edition` declares only "spelling and punctuation retained". The 1845 scan is IA narrativeoflifeo1845doug.
+
+- **w02-d1, last block:** "be commenced to lay on the heavy cowskin" should be "he commenced" (1845 p. 7, image checked). This text was newly added by the repair.
+- **w02-d4:** "not dreaming that be had been conversing" should be "he had" (1845 OCR).
+- **w11-d3:** "only when be ceases to be a man" should be "he ceases" (1845 OCR).
+- **w05-d1, block 0 and locator:** "My new mistress. proved" should be "My new mistress proved" (1845 p. 32, image checked). The content note "The source transcription's punctuation is retained" should then go.
+- **w02-d2, block 7:** the two-line song "“I am going away to the Great House Farm! / O, yea! O, yea! O!”" is merged into prose. The source edition says quoted verse keeps its lines, and the UNC TEI marks it `lg`. Split it into a stanza block.
+
+### Grade 10 — `5054038f…`
+
+The checks show:
+
+- fidelity: 148 nights match a witness exactly; every differing word was classified against the dated-scan OCR;
+- hashes 180/180, with 653/653 evidence quotes exact;
+- 550 distinct prompts;
+- novelty 0;
+- maximum 169 wpm (Crane w29-d4); among new nights, Cather w31-d2 is highest at 159 wpm (3,505 words in 22 min);
+- blind cold reads w28-d3 (Cather VIII), w31-d1 (XIV), w29-d2 (Ethan IX), w29-d3 (Epilogue), w23-d1 (Awakening XXVI–XXVIII): 20/20 agree.
+
+| Finding | Status |
+| --- | --- |
+| Blocking: w05-d4 "AT" and "difficulty." | Resolved in the block and locator. |
+| w23-d2 ", ," | Resolved. |
+| w11-d2 "self- government", "Hull- House" | Resolved; Addams is now 12/12. |
+| w16-d1 "owners" | Text resolved ("owner's"). **Remaining should-fix:** the Silas `edition` still lists only "bit of pork" and says "No other wording is altered"; log "owners" → "owner's" (1861 p. 72). |
+| w08-d4 "to day"; w09-d4 title | Resolved ("to-day"; "A London Thoroughfare. 2 A.M."). |
+| Poetry timing boilerplate (60 contexts) | Resolved; 0 remain. |
+| Washington `rights.basis` | Resolved; now says the IA record has no status field. |
+| Washington framing (note) | Resolved. The content note now says "reconstructs his reasoning and then weighs it". All eight prompts now ask for his argument first and evaluation second. |
+| Censorship: Cather | Resolved. Ch. VIII is in w28-d3; chs. XIV and XV–XVI are in w31-d1 and w31-d2; Book I is now complete except chs. X, XIII, XVIII and XIX. Book II is cut to chs. VIII–IX and XIV, so Blind d'Arnault (ch. VII) and Wick Cutter (ch. XV) remain absent (note, as before). |
+| Censorship: Ethan Frome | Resolved. Ch. IX from "They had reached the top of School House Hill" is in w29-d2, and the Epilogue is in w29-d3. The old ch. II (part 1) and ch. V nights were dropped; the w26-d3 context bridges the gap. |
+| Censorship: Awakening | Resolved; XXVII–XXVIII are appended to w23-d1 (2,698 words in 18 min). |
+| Notes: w35-d3 gnawed bedstead; w16-d1 evidence | Resolved. |
+| Notes: Red Badge scope; genre balance | Unchanged; still notes. |
+
+**Ethan Frome emendations: meets the contract, with two fixes.**
+
+The page images show the 1911 first printing has physically missing type in four places:
+
+- p. 180: "said  o yourself";
+- p. 185: "und r";
+- p. 193: "fo  her" and "con idering".
+
+The corpus supplies "so", "under", "for" and "considering". Each reading is unambiguous, and the change is declared in `edition`. That makes it a documented normalization, not a "fabricated restoration" (`docs/daily-reading.md`). The quotation-mark correction (`go;" and`) also matches the print, p. 193.
+
+- **Should-fix:** the `edition` says the emendations are "listed with each night", but neither w29-d2 nor w29-d3 lists them. Add them to those locators, or change the claim.
+- **Note:** name the later printing consulted.
+- **Note on consistency:** G11 keeps the 1922 Waste Land's missing letter ("w ter"), while G10 supplies Ethan's. Both are declared, but the corpus should state one convention.
+- **Note:** the Epilogue's section ornament, which marks the move to the next morning, is omitted as declared. Grade 12 now reproduces Eveline's equivalent break; consider reproducing this one too.
+
+**New finding: should-fix.**
+
+- **reading-10-w28-d3 `context`:** "Jim and Ántonia first met the Russian bachelors Peter and Pavel on a visit to their farm (Chapter IV)". The visit is in Book I ch. V, which is in w25-d5, and "Pavel was not at home" on that visit. Suggested wording: "…first visited Peter at the Russians' farm (Chapter V); Pavel was away."
+
+### Grade 11 — `d6271649…`
+
+The checks show:
+
+- fidelity 174/180 against the witnesses as extracted; all six differences are accounted for (details below);
+- hashes 180/180, with 589 evidence quotes exact and 1 whitespace-only (w14-d2 q2, a verse line break);
+- 541 distinct prompts;
+- novelty 0;
+- maximum 112 wpm;
+- blind cold reads w29-d5 (Jungle ch. III), w36-d3 (end of ch. IX), w21-d2 and w21-d3 (Waste Land): 12/12 agree.
+
+The six differences:
+
+- **Waste Land, 5 nights:** these fail only against the noisy OCR stream. Collated line by line against the facsimile, all 439 lines are found. The 9 lines my letter-match flagged are all OCR noise (accents, italics, small capitals).
+- **Sinclair w31-d1:** fails only because of a Wikisource `wst-gap` spacer in "Dom. Namai. Heim."
+
+| Finding | Status |
+| --- | --- |
+| Blocking: Waste Land edition | **Resolved.** The text was re-sourced from the facsimile. Page images confirm "Od' und leer" (p. 13), "Der Heimai zu," (p. 12), "carvèd" (p. 18), "mount in" (p. 41) and "w ter" / "ITS" / "dont" / "wont" (pp. 22–24). The corpus now has 5× "HURRY UP PLEASE ITS TIME", "alright", "tonight", "smoothes" and "Oh keep the Dog", and no "IT'S" or "[a]". The w21-d1 content note now says "as printed in the 1922 edition, including its misprints". |
+| Whitman run-together words and print hyphens | Resolved. 14/14 match the TEI with `reg` used for turnover splits and a space at `<lb/>` except after an em dash. No run-together words remain. |
+| Emerson "[n]" | Resolved: 0 remain, and the removal is declared. |
+| Hard wraps (Darwin, Emerson, Stein) | Resolved for those sources. **New should-fix:** Walden keeps four stray mid-sentence breaks that the review missed on 2026-10-07: w22-d5 block 1 "With \nrespect", w23-d3 block 3 "his \nthoughts?", w28-d5 block 0 "A written \nWord", w30-d4 block 0 "stand \naloof". Join them with a space. |
+| Censorship: Jungle | Resolved. The ch. III hog-killing tour, including "the hog-squeal of the universe", is now w29-d5; the end of ch. IX through "…Durham's Pure Leaf Lard!" is now w36-d3. The cattle killing-beds pages of ch. III remain absent; this is length-driven (note). |
+| Notes | Resolved: w35-d1 content note, Du Bois blocks, Sinclair verse now a stanza, Lilacs now 20 reading minutes. Unchanged: Stein imprint (Claire Marie not named) and Riis. |
+
+### Grade 12 — `59b931c2…`
+
+The checks show:
+
+- fidelity 178/180, where the two differences are the declared corrections ("O villain"; the Eveline dot row);
+- the other checks are unchanged;
+- cold reads w03-d5, w33-d3, w34-d4 (blind) and w33-d4 (not blind): 12/12 agree.
+
+| Finding | Status |
+| --- | --- |
+| Blocking: w33-d3 missing line | Resolved. The 1917 Allen print, p. 73, confirms "From thee in great peril fell peace upon my heart," at the outer margin, as placed. |
+| Blocking: w33-d4 missing line | Resolved. The 1917 print, p. 76, confirms "O fallen, fallen in ghastly case,". |
+| w03-d5 Eveline break | Resolved: a row of nine spaced periods, declared in `edition`. |
+| w34-d4 "0 villain" | Resolved and logged in `edition`. |
+| w08-d3 "a imagined" | Resolved. |
+| "obects" (w14-d2) | Confirmed as printed: Colonial Press 1901 p. 219, Commons djvu page 329. Wikisource marks it [sic]. It is covered by the Plato `edition`'s "apparent source transcription errors are retained". Optional note: a [sic]-style gloss in the context would help students. |
+| Notes from 2026-10-07 | Unchanged; they remain notes. |
+
+### Delta limits
+
+- **Sampling.** Image checks were sampled. Punctuation was still not fully collated.
+- **Douglass check.** The 1845 OCR collation was word-level only, and OCR noise is heavy. Further UNC-only errors of the "be/he" kind may remain beyond the three found by targeted search.
+- **Waste Land check.** The line collation compared letters only; punctuation was checked only on the imaged pages.
+- **Reveals.** One G12 cold read (w33-d4) was not blind.
+- **Not checked.** The 2026-10-08 commits also touched `content/reading-level/probes.json` (G11) and other grades. Those files are outside this band and were not reviewed.
