@@ -221,16 +221,16 @@
       "author": "Sara Coleridge",
       "title": "Pretty Lessons in Verse for Good Children; with Some Lessons in Latin in Easy Rhyme",
       "translator": null,
-      "edition": "Fifth edition. London: John W. Parker and Son, West Strand. Title-page imprint MDCCCLII (1852), visually verified on PDF page 6; Internet Archive metadata incorrectly says 1853. Direct transcription of printed pages 11, 15 and 16, visually proofread. Small capitals represented by ordinary capitals; indentation omitted. These four poems were written in English; the book’s separate Latin lessons are not used.",
-      "publicationYear": 1852,
+      "edition": "Fifth edition. London: John W. Parker and Son, West Strand. Title-page imprint MDCCCLIII (1853), visually verified on PDF page 6 (an earlier note misread it as 1852; the Internet Archive date of 1853 is correct). Direct transcription of printed pages 11, 15 and 16, visually proofread. Small capitals represented by ordinary capitals; indentation omitted. These four poems were written in English; the book’s separate Latin lessons are not used.",
+      "publicationYear": 1853,
       "translationYear": null,
       "url": "https://archive.org/details/prettylessonsin00colegoog",
       "textUrl": "https://archive.org/download/prettylessonsin00colegoog/prettylessonsin00colegoog.pdf",
       "rights": {
         "jurisdiction": "US",
         "status": "public-domain",
-        "basis": "This original English text was published in 1852, before 1931, and its US publication copyright term has expired by 2026. Only the historical poem text is reproduced; modern editorial material and illustrations are excluded.",
-        "verifiedDate": "2026-10-07",
+        "basis": "This original English text was published in the 1853 fifth edition (title page MDCCCLIII), before 1931, and its US publication copyright term has expired by 2026. Only the historical poem text is reproduced; modern editorial material and illustrations are excluded.",
+        "verifiedDate": "2026-10-08",
         "evidenceUrl": "https://archive.org/stream/prettylessonsin00colegoog#page/n5/mode/1up"
       }
     },
@@ -419,17 +419,17 @@
       "author": "Arabella B. Buckley",
       "title": "Eyes and No Eyes, Vol. I, Book I: Wild Life in Woods and Fields",
       "translator": null,
-      "edition": "Cassell and Company, Ltd, London, Toronto, Melbourne and Sydney; title page reads “Printed in Great Britain”; undated printing of the collected Vol. I (Books I–III, “With Forty-Eight Full Page Coloured Plates”), author named as Arabella B. Buckley (Mrs. Fisher). York University Libraries catalogues this scanned copy (Internet Archive eyesnoeyes00buck) as 1903; the imprint carries no date, and its city list suggests a later printing than that catalogue year. Text used: Book I, Wild Life in Woods and Fields, whole lessons (Introduction and Lessons II–VI, VIII and XII). Gateway to the Classics HTML served only as a typing aid; every selected paragraph was collated with the scan by full-text OCR comparison and page-image checks, and 22 typing-aid errors were corrected. Printed defects are reproduced, including sentence-final stops missing from the print on pp. 11, 17 and 18. Print line wraps joined, line-end split-word hyphens removed, initial small capitals in normal capitalization, typographic quotation marks represented by straight quotes; plates and captions excluded.",
-      "publicationYear": 1903,
+      "edition": "Undated Cassell and Company, Ltd printing (imprint London, Toronto, Melbourne and Sydney; “Printed in Great Britain”) of the one-volume Eyes and No Eyes, “With Forty-Eight Full Page Coloured Plates”, author named as Arabella B. Buckley (Mrs. Fisher); York University Libraries copy, Internet Archive eyesnoeyes00buck, catalogued 1903. That one-volume edition was first published by Cassell in March 1902: The English Catalogue of Books, vol. VII (1901–1905), lists “Buckley (Arabella B.)—Eyes and No Eyes. 48 Clrd. Plates, other Illus. Cr. 8vo. 3s. 6d. Cassell, Mar. 02”, and vol. X (1916–1920) records a Cassell reissue in February 1920. The scanned printing is one of these issues or a reprint of them; its own date is unknown, so publicationYear gives the 1902 first publication of the text. Text used: Book I, Wild Life in Woods and Fields, whole lessons (Introduction and Lessons II–VI, VIII and XII). Gateway to the Classics HTML served only as a typing aid; every selected paragraph was collated with the scan by full-text OCR comparison and page-image checks, and 22 typing-aid errors were corrected. Printed defects are reproduced, including sentence-final stops missing from the print on pp. 11, 17 and 18. Print line wraps joined, line-end split-word hyphens removed, initial small capitals in normal capitalization, typographic quotation marks represented by straight quotes; plates and captions excluded.",
+      "publicationYear": 1902,
       "translationYear": null,
       "url": "https://archive.org/details/eyesnoeyes00buck",
       "textUrl": "https://archive.org/download/eyesnoeyes00buck/eyesnoeyes00buck_djvu.txt",
       "rights": {
         "jurisdiction": "US",
         "status": "public-domain",
-        "basis": "Buckley’s original English text of the Eyes and No Eyes series was first published by Cassell; York University Libraries dates this volume 1903, and Book I’s illustration of a wood-ant hill (p. 34) is signed and dated 1900 by the artist. No authorial text can postdate Buckley’s death in 1929, and the printing carries no later copyright claim, so the selected text was published before 1931 and is in the US public domain as of 2026. The printing date itself is unknown. Only Book I prose is supplied, without plates, captions, or modern editorial matter.",
-        "verifiedDate": "2026-10-07",
-        "evidenceUrl": "https://archive.org/details/eyesnoeyes00buck"
+        "basis": "The text was first published in the United Kingdom by Cassell in March 1902 (one-volume edition with 48 coloured plates; English Catalogue of Books vol. VII) and reissued in February 1920 (vol. X); the scanned printing carries no later copyright claim. Publication before 1931 places the text in the US public domain as of 2026. The printing date of the scanned copy itself is unknown. Only Book I prose is supplied, without plates, captions, or modern editorial matter.",
+        "verifiedDate": "2026-10-08",
+        "evidenceUrl": "https://archive.org/details/englishcatalogue0007unse"
       }
     }
   ],
@@ -1920,7 +1920,7 @@
       "challenge": "Separate realistic hen behaviour from the rhyme’s imaginative actions.",
       "focus": "An ordinary animal receives an extraordinary set of household abilities.",
       "context": "An adult reads this complete poem from The Real Mother Goose aloud, then rereads it with pauses for the child to point, speak or act. No independent decoding is expected.",
-      "contentNote": "The historical rhyme says the hen brews ale; explain it simply as a drink mentioned in the old household scene if asked.",
+      "contentNote": "The rhyme says the hen brews ale; ale is a kind of beer, part of this old household scene.",
       "excerpt": {
         "locator": "Complete poem “THE CLEVER HEN”; opening “I had a little hen, the prettiest ever seen,”; ending “She sat by the fire and told many a fine tale.”.",
         "isCompleteWork": true,
