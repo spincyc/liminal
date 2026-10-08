@@ -197,3 +197,14 @@ No blocking finding remains, so `review.status` can move from `unreviewed` to `i
 - One agent reviewer. There is no field data, no item statistics, and no human approval.
 - The passage-hidden figures are my guesses plus a judgment of what transfers to students. 29 of my hits came from adult knowledge of canonical texts.
 - I did not run the page in a browser (N3), did not check passage fidelity, and did not check the grade files beyond the probe nights.
+
+## Rebind check (2026-10-08)
+
+I re-checked the two probes rebound after the re-review, in the main checkout at `probes.json` SHA-256 `cd941629089117fdc7b5d8b976f36f1cc24e42cee9cc5adcfba730bddf616a24`. This was not blind: I already knew every item and key.
+
+| Probe | Text change since the re-review (`874feb4`..HEAD, word-level diff) | Result |
+| --- | --- | --- |
+| rl-9-a (reading-9-w11-d3, `a20521b`) | One change: "only when ~~be~~ **he** ceases to be a man". Intro and note are unchanged. The only item change since the re-review is 9-a-4's distractors, which are my S6 wording verbatim. | The hash binds. The corrected sentence is outside every stem, option and rationale quote, and all four keys still follow from the text as written. No new cue: `--cues` raises nothing for this probe. Because I wrote 9-a-4's distractors, that check is not independent. |
+| rl-11-b (reading-11-w28-d5, `cfeca1f`) | One change: the stray break in "A written⏎Word" joined to a space. No other line breaks remain inside paragraphs. Intro, note and items are unchanged. | The hash binds. The change is whitespace only, and every quoted rationale phrase still occurs in the passage. All four keys hold, and there is no new cue. |
+
+`check-reading-level.js` passes (review: independently-reviewed), and `test/reading-level.test.js` passes 32/32. Both probes remain reviewed.
