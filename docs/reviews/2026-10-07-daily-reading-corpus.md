@@ -31,7 +31,7 @@ The [content contract](../daily-reading.md) governs. It covers:
 | Grade 8 | 180 | 560 | 11 | 11 | 22–25 | `d9758dc9c586791c7812f8e543e3afd935711a04e9cd1861115957593d6a87f3` |
 | Grade 9 | 180 | 548 | 14 | 12 | 25–29 | `6db4f7af9a8c60ca6983ab2ede9329182689560366bbe6bb27cd3892f56bbdab` |
 | Grade 10 | 180 | 550 | 14 | 14 | 26–30 | `710ac5d497e15a80124f06c800bc61ea5056b2c6e419a420fc1dbaa5393e97fb` |
-| Grade 11 | 180 | 541 | 13 | 12 | 25–30 | `43a2e2f53a47e871ba647f805213170a7fd7e4978659456c5c55e9246bc030ac` |
+| Grade 11 | 180 | 541 | 13 | 12 | 25–30 | `8d65322ae9e640de80d870212caf174c691fbae42d9ebca342d3e8ba991ac4de` |
 | Grade 12 | 180 | 540 | 14 | 14 | 27–30 | `59b931c279ac318187556c46b8ef8c8bd4f3e8f8e9d5ec1233fd028bf4e5cf60` |
 
 **Gate.** `node tools/check-daily-reading.js --complete` runs in `check-all`.

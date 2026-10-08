@@ -257,7 +257,7 @@
       "author": "Mark Twain (Samuel L. Clemens)",
       "title": "Life on the Mississippi",
       "translator": null,
-      "edition": "Boston: James R. Osgood and Company, 1883, with more than 300 illustrations, as shown by the photographed title page in Project Gutenberg eBook245 HTML (https://www.gutenberg.org/files/245/245-h/images/titlepage.jpg). Original English prose transcription; line wrapping is joined within paragraphs. Original paragraph boundaries, dialect, punctuation, underscore emphasis and transcribed footnotes are retained. No modern introduction or digitizer boilerplate is included.",
+      "edition": "Boston: James R. Osgood and Company, 1883, with more than 300 illustrations, as shown by the photographed title page in Project Gutenberg eBook245 HTML (https://www.gutenberg.org/files/245/245-h/images/titlepage.jpg). Original English prose transcription; line wrapping is joined within paragraphs. Original paragraph boundaries, dialect, punctuation, underscore emphasis and transcribed footnotes are retained. Twain’s own footnotes, which Project Gutenberg sets inline in bracketed markup, are given as in the 1883 print: a superscript ¹ marks the citing word, and the note follows that paragraph as its own block beginning “¹”. No modern introduction or digitizer boilerplate is included.",
       "publicationYear": 1883,
       "translationYear": null,
       "url": "https://www.gutenberg.org/ebooks/245",
@@ -9690,19 +9690,23 @@
       },
       "challenge": "Track changes in pace, sound and the arrangement of a descriptive scene.",
       "focus": "Public spectacle and the manufacture of glamour.",
-      "context": "Twain recalls the steamboat arrivals that shaped boyhood aspirations in Hannibal, Missouri. The narrator recreates the scene from adulthood.",
+      "context": "Twain recalls the steamboat arrivals that shaped boyhood aspirations in Hannibal, Missouri. The narrator recreates the scene from adulthood. Twain’s footnote, marked ¹ as in the 1883 printing, follows the paragraph that cites it.",
       "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance. Includes historical racial terminology, reference to racist minstrel entertainment and descriptions of drunkenness.",
       "excerpt": {
         "locator": "Chapter4, The Boys’ Ambition, opening three prose paragraphs; source paragraph indexes 243–245, opening “WHEN I was a boy, there was but one”, closing “the town drunkard asleep by the skids once more.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": null,
-        "textHash": "6e1fb83911b5f113528c2e81283d5b7a4ae66f6762d335bc39a7b0470aa353ee"
+        "textHash": "f306ef76621ad718d8bcd60a8aed6a3f2f7ea273c76b5ecfec0c60c98bfebdc8"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "WHEN I was a boy, there was but one permanent ambition among my comrades in our village {footnote [1. Hannibal, Missouri]} on the west bank of the Mississippi River. That was, to be a steamboatman. We had transient ambitions of other sorts, but they were only transient. When a circus came and went, it left us all burning to become clowns; the first negro minstrel show that came to our section left us all suffering to try that kind of life; now and then we had a hope that if we lived and were good, God would permit us to be pirates. These ambitions faded out, each in its turn; but the ambition to be a steamboatman always remained."
+          "text": "WHEN I was a boy, there was but one permanent ambition among my comrades in our village¹ on the west bank of the Mississippi River. That was, to be a steamboatman. We had transient ambitions of other sorts, but they were only transient. When a circus came and went, it left us all burning to become clowns; the first negro minstrel show that came to our section left us all suffering to try that kind of life; now and then we had a hope that if we lived and were good, God would permit us to be pirates. These ambitions faded out, each in its turn; but the ambition to be a steamboatman always remained."
+        },
+        {
+          "type": "paragraph",
+          "text": "¹ Hannibal, Missouri"
         },
         {
           "type": "paragraph",
@@ -11135,14 +11139,14 @@
       },
       "challenge": "Distinguish changes in appearance from physical changes in the riverbank.",
       "focus": "Mental models, perception and the need to update knowledge.",
-      "context": "The apprentice has memorised many place names and begins to feel capable. Bixby introduces another demand: recognising and navigating the river under different conditions of light.",
+      "context": "The apprentice has memorised many place names and begins to feel capable. Bixby introduces another demand: recognising and navigating the river under different conditions of light. Twain’s footnote, marked ¹ as in the 1883 printing, follows the paragraph that cites it.",
       "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance. Includes figurative death wishes and a teacher’s insults.",
       "excerpt": {
         "locator": "Chapter8, Perplexing Lessons, opening through the changing banks report; source paragraph indexes 361–379, opening “At the end of what seemed a tedious while,”, closing “over again in a different way every twenty-four hours.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": null,
-        "textHash": "92547037fd895bd4f574b23857e63edbc854d701ce398fac419436922e621761"
+        "textHash": "3025304361118aad5f8151a52e1f67f2adcc0d00a2041b146f57a125905a6bfb"
       },
       "blocks": [
         {
@@ -11215,7 +11219,11 @@
         },
         {
           "type": "paragraph",
-          "text": "'Bixby, you'll have to look out for President's Island and all that country clear away up above the Old Hen and Chickens. The banks are caving and the shape of the shores changing like everything. Why, you wouldn't know the point above 40. You can go up inside the old sycamore-snag, now.{footnote [1. It may not be necessary, but still it can do no harm to explain that 'inside' means between the snag and the shore.--M.T.]}"
+          "text": "'Bixby, you'll have to look out for President's Island and all that country clear away up above the Old Hen and Chickens. The banks are caving and the shape of the shores changing like everything. Why, you wouldn't know the point above 40. You can go up inside the old sycamore-snag, now.¹"
+        },
+        {
+          "type": "paragraph",
+          "text": "¹ It may not be necessary, but still it can do no harm to explain that 'inside' means between the snag and the shore.--M.T."
         },
         {
           "type": "paragraph",
@@ -11540,14 +11548,14 @@
       },
       "challenge": "Separate perspective changes from the record of actual water-depth changes across journeys.",
       "focus": "Turning apparent inconsistency into evidence.",
-      "context": "The apprentice has been told to learn the river’s shape. He now discovers that moving along it changes how landmarks appear, and Bixby explains the practical use of that change.",
+      "context": "The apprentice has been told to learn the river’s shape. He now discovers that moving along it changes how landmarks appear, and Bixby explains the practical use of that change. Twain’s footnote, marked ¹ as in the 1883 printing, follows the paragraph that cites it.",
       "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance. Contains a figurative threat of killing and comic references to death.",
       "excerpt": {
         "locator": "Chapter8, Perplexing Lessons, renewed shape-learning through the chapter’s end; source paragraph indexes 395–404, opening “I went to work now to learn the shape”, closing “depend on it, I'll learn him or kill him.'”.",
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": null,
-        "textHash": "835daebef5ad36fd838462ecf6be003c48e0aee51a7d5476be284ad513cd98f9"
+        "textHash": "a8af072b37f1f9cd8017f5676d85932be819a096fc82ed9eb310f3aded33a5a6"
       },
       "blocks": [
         {
@@ -11588,7 +11596,11 @@
         },
         {
           "type": "paragraph",
-          "text": "'Now drop that! When I say I'll learn {footnote ['Teach' is not in the river vocabulary.]} a man the river, I mean it. And you can depend on it, I'll learn him or kill him.'"
+          "text": "'Now drop that! When I say I'll learn¹ a man the river, I mean it. And you can depend on it, I'll learn him or kill him.'"
+        },
+        {
+          "type": "paragraph",
+          "text": "¹ 'Teach' is not in the river vocabulary."
         }
       ],
       "questions": [
@@ -12735,19 +12747,23 @@
       },
       "challenge": "Distinguish a level, a change in level and the present direction of change.",
       "focus": "Cross-checking instruments and reasoning from indirect evidence.",
-      "context": "Twain explains why piloting deserves detailed treatment, then recalls learning to use the exposed riverbank as evidence of water conditions. A lead is a weighted sounding line used to measure depth.",
+      "context": "Twain explains why piloting deserves detailed treatment, then recalls learning to use the exposed riverbank as evidence of water conditions. A lead is a weighted sounding line used to measure depth. Twain’s footnote, marked ¹ as in the 1883 printing, follows the paragraph that cites it.",
       "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance.",
       "excerpt": {
         "locator": "Chapter10, Completing My Education, opening through the requirement of continual measurement; source paragraph indexes 446–474, opening “WHOSOEVER has done me the courtesy to read my”, closing “'Of course!'”.",
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": null,
-        "textHash": "0e465911b6a617d613a387380c0c0ae124ab3bf9be4d5823394f8cb828b8d192"
+        "textHash": "082018020edfdaa6be611f6db2f683445bfb77c38aa866e3aa6bad098866bcbf"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "WHOSOEVER has done me the courtesy to read my chapters which have preceded this may possibly wonder that I deal so minutely with piloting as a science. It was the prime purpose of those chapters; and I am not quite done yet. I wish to show, in the most patient and painstaking way, what a wonderful science it is. Ship channels are buoyed and lighted, and therefore it is a comparatively easy undertaking to learn to run them; clear-water rivers, with gravel bottoms, change their channels very gradually, and therefore one needs to learn them but once; but piloting becomes another matter when you apply it to vast streams like the Mississippi and the Missouri, whose alluvial banks cave and change constantly, whose snags are always hunting up new quarters, whose sandbars are never at rest, whose channels are for ever dodging and shirking, and whose obstructions must be confronted in all nights and all weathers without the aid of a single light-house or a single buoy; for there is neither light nor buoy to be found anywhere in all this three or four thousand miles of villainous river.{footnote [True at the time referred to; not true now (1882).]} I feel justified in enlarging upon this great science for the reason that I feel sure no one has ever yet written a paragraph about it who had piloted a steamboat himself, and so had a practical knowledge of the subject. If the theme were hackneyed, I should be obliged to deal gently with the reader; but since it is wholly new, I have felt at liberty to take up a considerable degree of room with it."
+          "text": "WHOSOEVER has done me the courtesy to read my chapters which have preceded this may possibly wonder that I deal so minutely with piloting as a science. It was the prime purpose of those chapters; and I am not quite done yet. I wish to show, in the most patient and painstaking way, what a wonderful science it is. Ship channels are buoyed and lighted, and therefore it is a comparatively easy undertaking to learn to run them; clear-water rivers, with gravel bottoms, change their channels very gradually, and therefore one needs to learn them but once; but piloting becomes another matter when you apply it to vast streams like the Mississippi and the Missouri, whose alluvial banks cave and change constantly, whose snags are always hunting up new quarters, whose sandbars are never at rest, whose channels are for ever dodging and shirking, and whose obstructions must be confronted in all nights and all weathers without the aid of a single light-house or a single buoy; for there is neither light nor buoy to be found anywhere in all this three or four thousand miles of villainous river.¹ I feel justified in enlarging upon this great science for the reason that I feel sure no one has ever yet written a paragraph about it who had piloted a steamboat himself, and so had a practical knowledge of the subject. If the theme were hackneyed, I should be obliged to deal gently with the reader; but since it is wholly new, I have felt at liberty to take up a considerable degree of room with it."
+        },
+        {
+          "type": "paragraph",
+          "text": "¹ True at the time referred to; not true now (1882)."
         },
         {
           "type": "paragraph",
