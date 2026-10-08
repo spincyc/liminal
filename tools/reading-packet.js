@@ -43,18 +43,18 @@ const PREAMBLE = String.raw`\documentclass[10pt,twocolumn,twoside,letterpaper]{a
 \usepackage[hidelinks]{hyperref}
 \setlength{\parindent}{1.2em}
 \setlength{\parskip}{0pt}
-\setlist[enumerate]{leftmargin=1.6em,itemsep=0.5ex}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=1ex}
 \makeatletter
 \def\cleardoublepage{\clearpage\if@twoside\ifodd\c@page\else\hbox{}\thispagestyle{empty}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
 \renewenvironment{verse}{\let\\\@centercr\list{}{\itemsep\z@\itemindent-1.5em\listparindent\itemindent\rightmargin\leftmargin\advance\leftmargin1.5em\topsep0.6ex\parsep0.9ex}\raggedright\item\relax}{\endlist}
+\newcommand{\readingsectionrule}{\vspace{-0.6ex}\noindent\rule{\linewidth}{0.35pt}\par\nobreak\vspace{0.8ex}\@afterindentfalse\@afterheading}
 \makeatother
 \newcommand{\paperstart}{1}
-\newcommand{\paperhead}{}
+\newcommand{\papermeta}{}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[RE,LO]{\footnotesize \paperhead}
-\fancyfoot[C]{\scriptsize Liminal \quad\the\numexpr\value{page}-\paperstart+1\relax}
-\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\scriptsize \papermeta \quad Liminal \quad\the\numexpr\value{page}-\paperstart+1\relax}
+\renewcommand{\headrulewidth}{0pt}
 `;
 
 const escape = s => String(s).replace(/\\/g, "\u0000").replace(/([{}$&#%_])/g, "\\$1")
@@ -117,24 +117,24 @@ const longDate = date => new Date(date + "T00:00:00Z").toLocaleDateString("en-US
 function paper(course, day, { date = null, newSheet = false } = {}) {
   const source = course.sources.find(item => item.id === day.sourceId);
   if (!source) throw new Error("unresolved source for " + day.id);
-  const where = D.gradeLabel(course.grade) + " · Week " + day.week + ", Night " + day.day + (date ? " · " + longDate(date) : "");
+  const where = D.gradeLabel(course.grade) + " · Week " + day.week + " · Day " + day.day + (date ? " · " + longDate(date) : "");
   const title = day.workTitle || day.title.replace(/\s+—\s+excerpt$/, "");
   const reference = escape(source.author) + ", \\emph{" + inline(source.title) + "} (" + source.publicationYear + ")" +
     (source.translator ? ", translated by " + escape(source.translator) + " (" + source.translationYear + ")" : "") + ". " +
     inline(shortEdition(source.edition)) + " Public domain in the United States. \\url{" + source.url.replace(/[%#]/g, "\\$&") + "}";
   return [newSheet ? "\\cleardoublepage" : "\\clearpage",
-    "\\edef\\paperstart{\\the\\value{page}}", "\\setcounter{section}{0}", "\\renewcommand{\\paperhead}{" + escape(where) + "}",
+    "\\edef\\paperstart{\\the\\value{page}}", "\\setcounter{section}{0}", "\\renewcommand{\\papermeta}{" + escape(where) + "}",
     "\\twocolumn[{\\begin{center}",
     "{\\LARGE\\bfseries " + inline(title) + "\\par}\\vspace{1.4ex}",
     "{\\large " + escape(day.author || source.author) + "\\par}\\vspace{0.8ex}",
-    "{\\small\\itshape " + escape(where + " · about " + day.time.totalMinutes + " minutes, " + MODES[day.readingMode]) + "\\par}",
+    "{\\small\\itshape " + escape("About " + day.time.totalMinutes + " minutes, " + MODES[day.readingMode]) + "\\par}",
     "\\end{center}", "\\vspace{0.6ex}",
     "\\begin{center}\\begin{minipage}{0.78\\textwidth}\\small", "\\centerline{\\bfseries Abstract}\\vspace{0.6ex}",
     "\\noindent " + inline(day.focus) + " " + inline(day.challenge), "\\end{minipage}\\end{center}", "\\vspace{1.2ex}}]",
     "\\section{Context}", inline(day.context) + (day.contentNote ? "\n\n\\noindent\\textit{Content note.} " + inline(day.contentNote) : ""), "",
-    "\\section{Text}", blocks(day), "",
-    "\\section{Questions for discussion}", "\\begin{enumerate}", ...day.questions.map(question => "\\item " + inline(question.prompt)), "\\end{enumerate}", "",
-    "\\begin{thebibliography}{1}\\footnotesize", "\\bibitem{src} " + reference, "\\end{thebibliography}", ""].join("\n");
+    "\\section{Text}\\readingsectionrule", blocks(day), "",
+    "\\section{Questions for discussion}\\readingsectionrule", "\\begin{enumerate}", ...day.questions.map(question => "\\item " + inline(question.prompt)), "\\end{enumerate}", "",
+    "\\section*{Endnotes}\\readingsectionrule", "{\\footnotesize\\begin{enumerate}[label={[\\arabic*]}]", "\\item " + reference, "\\end{enumerate}}", ""].join("\n");
 }
 // Each grade's packet starts on a fresh sheet so duplex packets separate.
 function documentTex(groups) {

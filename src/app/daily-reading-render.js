@@ -8,6 +8,8 @@
   function el(tag, text, className, doc = document) { const node = doc.createElement(tag); if (text !== undefined) node.textContent = text; if (className) node.className = className; return node; }
   function link(label, href, doc = document) { const node = el("a", label, undefined, doc); node.href = href; return node; }
   function disclosure(label, className, doc = document) { const node = el("details", undefined, className, doc); node.append(el("summary", label, undefined, doc)); return node; }
+  function readingLocation(packet) { return D.gradeLabel(packet.grade) + " · Week " + packet.day.week + " · Day " + packet.day.day; }
+  function printFooterText(packet) { return readingLocation(packet) + " · Liminal"; }
   function sourceDetails(source, excerpt, doc) {
     const details = disclosure("Source and public-domain record", "daily-source", doc);
     details.append(el("p", D.sourceLabel(source), undefined, doc), el("p", source.edition, undefined, doc), el("p", excerpt.locator, undefined, doc),
@@ -18,7 +20,7 @@
   }
   function attribution(source, excerpt, doc) {
     const footer = el("footer", undefined, "daily-attribution", doc);
-    footer.append(el("p", D.sourceLabel(source) + ". " + source.edition, undefined, doc), el("p", excerpt.locator, undefined, doc),
+    footer.append(el("h3", "Endnotes", undefined, doc), el("p", D.sourceLabel(source) + ". " + source.edition, undefined, doc), el("p", excerpt.locator, undefined, doc),
       el("p", "Public domain in the United States. " + source.rights.basis, undefined, doc));
     if (D.safeHttps(source.textUrl)) footer.append(el("p", "Source text: " + source.textUrl, undefined, doc));
     return footer;
@@ -49,7 +51,7 @@
   function reading(packet, { notes = null, doc = document, standalone = false } = {}) {
     const { day, source } = packet;
     const article = el("article", undefined, "daily-reading", doc), header = el("header", undefined, "daily-heading", doc);
-    header.append(el("p", D.gradeLabel(packet.grade) + " · Week " + day.week + " · Day " + day.day, "daily-meta", doc));
+    header.append(el("p", readingLocation(packet), "daily-meta", doc));
     const title = el(standalone ? "h1" : "h2", day.title, undefined, doc); title.id = "dailyHeading"; title.tabIndex = -1;
     const credit = D.selectionCredit(day, source);
     header.append(title);
@@ -57,7 +59,7 @@
     header.append(el("p", "By " + credit.author + (source.translator ? " · Translated by " + source.translator : ""), "daily-author", doc));
     const budget = el("p", "About " + day.time.totalMinutes + " min · read " + day.time.readingMinutes + " + discuss " + day.time.discussionMinutes, "daily-budget", doc);
     header.append(budget, el("p", D.modeLabel(day.readingMode), "daily-mode", doc));
-    article.append(header, el("p", day.context, "daily-context", doc));
+    article.append(header, el("h3", "Reading", "daily-print-heading", doc), el("p", day.context, "daily-context", doc));
     if (day.contentNote) article.append(el("p", "Content note: " + day.contentNote, "daily-content-note", doc));
     if (day.excerpt.continuesFrom) article.append(el("p", "Continued from the previous night.", "daily-continuation", doc));
     const passage = el("section", undefined, "daily-passage", doc); passage.setAttribute("aria-label", "Reading selection");
@@ -65,7 +67,9 @@
     article.append(passage);
     if (day.excerpt.continuesTo) article.append(el("p", "This reading continues next night.", "daily-continuation", doc));
     const discussion = el("section", undefined, "daily-discussion", doc);
-    discussion.append(el("h3", "Talk about the reading", undefined, doc), el("p", day.focus, "daily-muted", doc));
+    const discussionHeading = el("h3", undefined, undefined, doc);
+    discussionHeading.append(el("span", "Talk about the reading", "daily-screen-label", doc), el("span", "Questions", "daily-print-label", doc));
+    discussion.append(discussionHeading, el("p", day.focus, "daily-muted", doc));
     const questions = el("ol", undefined, "daily-questions", doc);
     day.questions.forEach(question => {
       const item = el("li", undefined, undefined, doc); item.append(el("p", question.prompt, undefined, doc));
@@ -115,7 +119,7 @@
     const footer = el("footer", undefined, "daily-export-footer", doc);
     if (D.safeHttps(pageUrl)) footer.append(link("Return to this reading", pageUrl, doc));
     footer.append(el("p", "Liminal · Independent educational coursework. Not affiliated with publishers. SAT® and ACT® are trademarks of College Board and ACT, Inc.; no affiliation.", undefined, doc));
-    main.append(footer); doc.body.append(main, el("footer", "Liminal", "daily-print-footer", doc)); return doc;
+    main.append(footer); doc.body.append(main, el("footer", printFooterText(packet), "daily-print-footer", doc)); return doc;
   }
-  return { el, link, disclosure, reading, progression, exportDocument };
+  return { el, link, disclosure, reading, progression, printFooterText, exportDocument };
 });

@@ -171,7 +171,10 @@ test("offline student document keeps provenance and questions without scripts or
   assert.match(html, /offline-marker|Fixture night/); assert.match(html, /Test Author 0/); assert.match(html, /Public domain in the United States/);
   assert.match(html, /name="font-license" content="Font copyright and license"/);
   assert.ok(html.indexOf('charset="utf-8"') < html.indexOf('name="font-license"'), "declare UTF-8 before the full font license");
-  assert.match(html, /<footer class="daily-print-footer">Liminal<\/footer>/);
+  assert.match(html, /<footer class="daily-print-footer">Kindergarten · Week 1 · Day 1 · Liminal<\/footer>/);
+  assert.match(html, /class="daily-print-heading">Reading<\/h3>/);
+  assert.match(html, /class="daily-print-label">Questions<\/span>/);
+  assert.match(html, /class="daily-attribution"><h3>Endnotes<\/h3>/);
   assert.doesNotMatch(html, /daily-export-brand|brand-symbol|<svg/);
   assert.match(html, /Question 3/); assert.match(html, /no affiliation/); assert.match(html, /Return to this reading/);
   assert.match(html, /class="daily-budget">About 10 min · read 6 \+ discuss 4/);

@@ -12,10 +12,12 @@ test("packet style is the fixed two-column Computer Modern article", () => {
     String.raw`\setmainfont{CMU Serif}[Ligatures=Common]`,
     String.raw`\usepackage[protrusion=true]{microtype}`,
     String.raw`\setlength{\parindent}{1.2em}`,
-    String.raw`\fancyhead[RE,LO]{\footnotesize \paperhead}`,
-    String.raw`\fancyfoot[C]{\scriptsize Liminal \quad\the\numexpr\value{page}-\paperstart+1\relax}`,
-    String.raw`\renewcommand{\headrulewidth}{0.4pt}`,
+    String.raw`\fancyfoot[C]{\scriptsize \papermeta \quad Liminal \quad\the\numexpr\value{page}-\paperstart+1\relax}`,
+    String.raw`\renewcommand{\headrulewidth}{0pt}`,
+    String.raw`\setlist[enumerate]{leftmargin=1.6em,itemsep=1ex}`,
   ]) assert.ok(P.PREAMBLE.split("\n").includes(line), "missing style line: " + line);
+  assert.doesNotMatch(P.PREAMBLE, /\\fancyhead\[/, "metadata no longer prints in a running head");
+  assert.ok(P.PREAMBLE.includes(String.raw`\rule{\linewidth}{0.35pt}`), "section separators remain visible");
   const branding = P.PREAMBLE.split("\n").filter(line => line.includes("Liminal"));
   assert.equal(branding.length, 1, "brand appears only once in the page style");
   assert.ok(branding[0].startsWith(String.raw`\fancyfoot[C]`), "brand appears only in the footer");
@@ -37,12 +39,15 @@ const day = {
 test("a night renders as one paper: title block, abstract, sections and a short reference, never notes", () => {
   const tex = P.paper(course, day, { date: "2026-10-08", newSheet: true });
   const order = [String.raw`\cleardoublepage`, String.raw`{\LARGE\bfseries A night\par}`, String.raw`{\large Ann Author\par}`,
-    String.raw`{\small\itshape Grade 5 · Week 7, Night 4 · Thu, Oct 8 · about 18 minutes, read together\par}`,
+    String.raw`{\small\itshape About 18 minutes, read together\par}`,
     String.raw`\centerline{\bfseries Abstract}`, "Notice the change. Track the turn.", String.raw`\section{Context}`,
-    String.raw`\section{Text}`, String.raw`\section{Questions for discussion}`, String.raw`\begin{thebibliography}{1}\footnotesize`];
+    String.raw`\section{Text}\readingsectionrule`, String.raw`\section{Questions for discussion}\readingsectionrule`,
+    String.raw`\section*{Endnotes}\readingsectionrule`, String.raw`{\footnotesize\begin{enumerate}[label={[\arabic*]}]`];
   let at = -1;
   for (const piece of order) { const next = tex.indexOf(piece); assert.ok(next > at, "out of order or missing: " + piece); at = next; }
   assert.doesNotMatch(tex, /FACILITATOR_SECRET|EVIDENCE_SECRET|normalization notes/);
+  assert.ok(tex.includes(String.raw`\renewcommand{\papermeta}{Grade 5 · Week 7 · Day 4 · Thu, Oct 8}`));
+  assert.doesNotMatch(tex.slice(tex.indexOf(String.raw`\twocolumn`)), /Grade 5|Week 7|Day 4|Thu, Oct 8/, "metadata stays out of the title and body");
   assert.match(tex, /\\emph\{A Book \\& Its \\\{Notes\\\}\} \(1901\)\. London: Example Press for the Society of Illustrative Fixtures, 1901, second impression\. Public domain/);
   assert.match(tex, /\\url\{https:\/\/example\.org\/b\\#1\}/);
   assert.match(tex, /\\begin\{verse\}\nFirst \u201cline\u201d here\\\\\n\\hspace\*\{1\.0em\}indented \\emph\{word\} line/);

@@ -4,7 +4,7 @@
 @font-face { font-family: "Liminal Reading Serif"; font-style: normal; font-weight: 700; src: url("../fonts/computer-modern/cmunbx.woff2") format("woff2"); }
 @font-face { font-family: "Liminal Reading Serif"; font-style: italic; font-weight: 400; src: url("../fonts/computer-modern/cmunti.woff2") format("woff2"); }
 @font-face { font-family: "Liminal Reading Serif"; font-style: italic; font-weight: 700; src: url("../fonts/computer-modern/cmunbi.woff2") format("woff2"); }
-.daily-print-footer { display: none; }
+.daily-print-footer, .daily-print-heading, .daily-print-label { display: none; }
 @media print {
   @page { size: letter; margin: .75in .75in .8in; }
   html { scroll-behavior: auto; }
@@ -16,17 +16,20 @@
     font: 400 10pt/1.25 var(--font-serif);
   }
   .daily-page :is(.lm-header, .skip-link, .daily-views, .daily-browse, .daily-intro, .daily-filters, .daily-status, .daily-nav, .daily-actions, .daily-related, .daily-facilitator, .daily-source, .daily-focus, .daily-year, .daily-about, .daily-footer, .daily-export-footer) { display: none !important; }
+  .daily-meta, .daily-screen-label { display: none; }
+  .daily-print-label { display: inline; }
   .daily-page :is(.page-width, #dailyReader) { width: 100%; max-width: none; }
   /* Reserve footer space in every printed fragment, including long readings. */
   .daily-main { padding: 0 0 .3in; box-decoration-break: clone; }
   .daily-reading { columns: 2; column-gap: .28in; column-fill: balance; }
   .daily-heading { column-span: all; border: 0; padding: 0; margin-bottom: 16pt; text-align: center; break-inside: avoid; }
   .daily-heading :is(h1, h2) { font: 700 18pt/1.15 var(--font-serif); letter-spacing: normal; margin-block: 6pt; }
-  .daily-meta, .daily-mode { font: italic 9pt/1.25 var(--font-serif); color: #333; }
+  .daily-mode { font: italic 9pt/1.25 var(--font-serif); color: #333; }
   .daily-author { margin-top: 6pt; font-size: 12pt; }
   .daily-work-title { font-size: 10pt; margin-top: 4pt; color: #333; }
   .daily-budget { font: 400 9pt/1.25 var(--font-serif); margin-top: 6pt; }
   .daily-mode { margin-top: 3pt; }
+  .daily-print-heading { display: block; margin: 0 0 8pt; font: 700 12pt/1.25 var(--font-serif); }
   .daily-context { margin: 0 0 10pt; font-size: 10pt; }
   .daily-content-note { margin-block: 6pt; padding: 0; border: 0; font-size: 9pt; font-style: italic; }
   .daily-continuation { margin-block: 6pt; color: #333; font-size: 9pt; }
@@ -41,14 +44,16 @@
   .daily-table { width: 100%; table-layout: fixed; font: 400 9pt/1.2 var(--font-serif); }
   .daily-table tr { break-inside: avoid; }
   .daily-table :is(th, td) { padding: 3pt; border-color: #777; overflow-wrap: anywhere; }
-  .daily-discussion { border: 0; padding-top: 8pt; }
-  .daily-discussion h3 { font: 700 11pt/1.25 var(--font-serif); }
-  .daily-discussion > p { margin-top: 4pt; color: #333; font-size: 9pt; }
-  .daily-questions { padding-left: 1.6em; margin-block: 6pt; }
-  .daily-questions > li { padding-left: 0; break-inside: avoid; margin-bottom: 5pt; }
-  .daily-questions > li + li { margin-top: 5pt; }
-  .daily-attribution { display: block; border-top: 1px solid #777; margin-top: 10pt; padding-top: 6pt; font-size: 8pt; overflow-wrap: anywhere; }
-  .daily-attribution p + p { margin-top: 3pt; }
+  .daily-discussion { border-top: 1pt solid #333; margin-top: 20pt; padding-top: 10pt; }
+  .daily-discussion h3 { font: 700 12pt/1.25 var(--font-serif); }
+  .daily-discussion > p { margin-top: 6pt; color: #333; font-size: 9pt; }
+  .daily-questions { padding-left: 1.6em; margin-block: 10pt 0; }
+  .daily-questions > li { padding-left: 0; break-inside: avoid; margin-bottom: 8pt; }
+  .daily-questions > li + li { margin-top: 8pt; }
+  .daily-attribution { display: block; border-top: .5pt solid #777; margin-top: 16pt; padding-top: 8pt; font-size: 8pt; line-height: 1.25; overflow-wrap: anywhere; }
+  .daily-attribution h3 { margin-bottom: 6pt; font: 700 10pt/1.25 var(--font-serif); }
+  .daily-attribution p + p { margin-top: 4pt; }
+  .daily-attribution p:last-child { break-before: avoid; }
   .daily-print-footer { display: block; position: fixed; inset: auto 0 0; text-align: center; font: italic 8pt/1 var(--font-serif); color: #555; }
   .daily-page :is(h1, h2, h3) { break-after: avoid; }
   .daily-page p { orphans: 3; widows: 3; }

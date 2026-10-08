@@ -5,6 +5,7 @@
   const views = document.getElementById("dailyViews"), browsePanel = document.getElementById("dailyBrowse");
   const browseLink = document.getElementById("dailyBrowseLink"), readLink = document.getElementById("dailyReadLink");
   const gradeSelect = document.getElementById("dailyGrade"), weekSelect = document.getElementById("dailyWeek"), daySelect = document.getElementById("dailyDay");
+  const printFooter = document.getElementById("dailyPrintFooter");
   let index, request = 0, preservePickerFocus = false, last = null, inFlight = null;
   const cache = new Map(), browseCache = new Map();
   // One load at a time: a newer choice cancels the download it supersedes,
@@ -50,6 +51,7 @@
   // Browse and Read are two views of one page, each with its own hash route:
   // #browse/<grade> and #<grade>/<week>/<day>. Switching keeps the grade.
   function showView(name, grade) {
+    printFooter.textContent = "";
     views.hidden = false; browsePanel.hidden = name !== "browse"; reader.hidden = name !== "read";
     browseLink.href = D.browseRoute(grade);
     readLink.href = last && last.grade === grade ? D.route(last.grade, last.week, last.day) : D.route(grade, 1, 1);
@@ -114,8 +116,9 @@
       actions.append(button("Print reading", () => window.print()), button("Download reading", () => download(packet)));
       const guide = R.disclosure("Tonight’s reading focus", "daily-focus"); guide.append(R.el("p", day.challenge));
       container.append(article, navigation(selected), actions, guide, R.progression(course, selected.week));
-      // Browser-generated print headers use this title; branding stays in the footer.
-      document.title = day.title + " · " + D.gradeLabel(selected.grade);
+      printFooter.textContent = R.printFooterText(packet);
+      // Browser-generated print headers use this title; metadata stays in the footer.
+      document.title = day.title;
       announce((selected.invalid ? "That reading link was not recognized. Showing " : "Showing ") + D.gradeLabel(selected.grade) + ", week " + day.week + ", day " + day.day + ": " + day.title + ".", selected.invalid);
       if (focus) { const heading = document.getElementById("dailyHeading"); heading.focus(); heading.scrollIntoView({ block: "start" }); }
     } catch (_) {
