@@ -124,7 +124,42 @@
     const values = (nights || []).map(night => night.minutes);
     return values.length ? [Math.min(...values), Math.max(...values)] : null;
   }
+  // Reading one night loads only its week: content/reading-daily/weeks/<key>/<week>.json
+  // holds that week's five nights and the sources they cite, plus the grade's
+  // overview and progression, so the reader treats it as a small course.
+  function weekFile(grade, week) { return validGrade(grade) && validDay(week, 1) ? "content/reading-daily/weeks/" + gradeKey(grade) + "/" + week + ".json" : ""; }
+  function weekSlice(course, week) {
+    const days = (course.days || []).filter(day => day.week === week), cited = new Set(days.map(day => day.sourceId));
+    return { schemaVersion: course.schemaVersion, grade: course.grade, title: course.title, overview: course.overview, progression: course.progression,
+      week, sources: (course.sources || []).filter(source => cited.has(source.id)), days };
+  }
+  // Presentation of the supplied text, which never changes its words.
+  // A block whose lines hold tab-separated columns (a source table, such as a
+  // naturalist's nightly counts) as rows of cells; a row that repeats the
+  // first row's opening cell is a repeated header. Null for ordinary text.
+  // (src/lib/reading-level.js keeps an identical copy for its passages.)
+  function tableRows(text) {
+    if (typeof text !== "string" || !text.includes("\t")) return null;
+    const lines = text.split("\n").filter(line => line.trim());
+    const key = cell => cell.trim().replace(/[.:]+$/, "").toLowerCase();
+    const first = key(lines[0].split("\t")[0]);
+    return lines.map((line, index) => {
+      const cells = line.split("\t");
+      return { cells, header: index === 0 || (cells.length > 1 && key(cells[0]) === first) };
+    });
+  }
+  // Paired _underscores_ are the editions' plain-text mark for italics. In a
+  // block with an even number of underscores, each consecutive pair encloses
+  // emphasis (which may cross a line, or sit inside a word, as in
+  // "_un_natural"); a block with an odd number is left exactly as written.
+  // Returns the text as segments, without the markers.
+  function emphasis(text) {
+    const value = String(text), count = (value.match(/_/g) || []).length;
+    if (!count || count % 2) return [{ text: value, em: false }];
+    return value.split("_").map((part, index) => ({ text: part, em: index % 2 === 1 })).filter(segment => segment.text);
+  }
   return { GRADES, validGrade, isAdvanced, gradeKey, gradeLabel, gradeFromKey, validDay, route, gradeAt, resolve, dayAt, sourceAt, progressionAt,
     navigation, modeLabel, minuteRange, safeHttps, sourceLabel, selectionCredit, studentReading,
-    MODES, browseFile, browseRoute, browseIndex, view, genreLabel, workLabel, filterNights, runs, genres, modes, minutesSpan };
+    MODES, browseFile, browseRoute, browseIndex, view, genreLabel, workLabel, filterNights, runs, genres, modes, minutesSpan,
+    weekFile, weekSlice, tableRows, emphasis };
 });

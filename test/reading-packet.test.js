@@ -59,13 +59,12 @@ test("duplex wrapper rotates only back pages", () => {
   assert.match(tex, /pages=\{1\},angle=0/); assert.match(tex, /pages=\{2\},angle=180/); assert.match(tex, /pages=\{3\},angle=0/);
 });
 
-test("tab-separated blocks print as tables with ditto marks kept as typed", () => {
-  const tex = P.table("Date\tCount\n1855\nDec. 13th\t1\n\" 14th\t75");
-  assert.match(tex, /\\begin\{tabular\}\{ll\}/);
-  assert.match(tex, /\\multicolumn\{2\}\{l\}\{1855\}/);
-  assert.match(tex, /" 14th & 75/);
-  assert.doesNotMatch(tex, /\u201c/);
-  assert.match(P.blocks({ blocks: [{ type: "paragraph", text: "A\tB" }] }), /adjustbox/);
+test("source tables print as a tabular with straight ditto marks", () => {
+  const tex = P.blocks({ blocks: [{ type: "paragraph", text: "Date\tNo.\tRemarks.\n1855\nDec. 13th\t1\tFine; starlight\n\" 14th\t75\tFog & rain" }] });
+  assert.match(tex, /\\begin\{tabular\}\{@\{\}llp\{0\.4\\linewidth\}@\{\}\}/);
+  assert.match(tex, /\\multicolumn\{3\}\{@\{\}l\}\{\{1855\}\}\\tabularnewline/);
+  assert.match(tex, /\{\\textquotedbl\{\} 14th\} & \{75\} & \\raggedright \{Fog \\& rain\}\\tabularnewline/);
+  assert.doesNotMatch(tex, /“/);
 });
 
 test("impossible dates and unknown grades are refused", () => {

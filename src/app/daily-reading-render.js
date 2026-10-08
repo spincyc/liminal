@@ -23,6 +23,29 @@
     if (D.safeHttps(source.textUrl)) footer.append(el("p", "Source text: " + source.textUrl, undefined, doc));
     return footer;
   }
+  // The supplied text as text nodes only: paired _underscores_ become <em>
+  // (the editions' plain-text italics), and a tab-separated source table
+  // becomes a table. The words are never changed or parsed as markup.
+  function emphasized(node, text, doc) {
+    for (const segment of D.emphasis(text)) node.append(segment.em ? el("em", segment.text, undefined, doc) : doc.createTextNode(segment.text));
+    return node;
+  }
+  function blockNode(block, doc) {
+    const rows = block.type === "paragraph" && D.tableRows(block.text);
+    if (!rows) return emphasized(el(block.type === "heading" ? "h3" : "p", undefined, "daily-" + block.type, doc), block.text, doc);
+    const width = Math.max(...rows.map(row => row.cells.length)), table = el("table", undefined, "daily-table", doc), body = el("tbody", undefined, undefined, doc);
+    rows.forEach(row => {
+      const tr = el("tr", undefined, row.cells.length === 1 ? "daily-table-span" : undefined, doc);
+      row.cells.forEach(cell => { const node = el(row.header ? "th" : "td", cell, undefined, doc); if (row.header) node.setAttribute("scope", "col"); tr.append(node); });
+      // A one-cell row (a year) spans the table; short rows keep their columns.
+      if (row.cells.length === 1) tr.childNodes[0].setAttribute("colspan", String(width));
+      else for (let i = row.cells.length; i < width; i++) tr.append(el(row.header ? "th" : "td", "", undefined, doc));
+      body.append(tr);
+    });
+    table.append(body);
+    const wrap = el("div", undefined, "daily-table-wrap", doc); wrap.setAttribute("tabindex", "0"); wrap.setAttribute("role", "region"); wrap.setAttribute("aria-label", "Table from the selection");
+    wrap.append(table); return wrap;
+  }
   function reading(packet, { notes = null, doc = document, standalone = false } = {}) {
     const { day, source } = packet;
     const article = el("article", undefined, "daily-reading", doc), header = el("header", undefined, "daily-heading", doc);
@@ -38,7 +61,7 @@
     if (day.contentNote) article.append(el("p", "Content note: " + day.contentNote, "daily-content-note", doc));
     if (day.excerpt.continuesFrom) article.append(el("p", "Continued from the previous night.", "daily-continuation", doc));
     const passage = el("section", undefined, "daily-passage", doc); passage.setAttribute("aria-label", "Reading selection");
-    day.blocks.forEach(block => passage.append(el(block.type === "heading" ? "h3" : "p", block.text, "daily-" + block.type, doc)));
+    day.blocks.forEach(block => passage.append(blockNode(block, doc)));
     article.append(passage);
     if (day.excerpt.continuesTo) article.append(el("p", "This reading continues next night.", "daily-continuation", doc));
     const discussion = el("section", undefined, "daily-discussion", doc);

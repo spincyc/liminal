@@ -87,9 +87,23 @@ Browse loads only `content/reading-daily/browse/<grade>.json`, about 40 KB,
 which `tools/build-daily-reading.js` builds from each grade with an explicit
 allowlist (`browseIndex` in `src/lib/daily-reading.js`): titles, credits,
 minutes, mode, genre, continuation and the progression focus. It never
-carries the text, questions, facilitator notes or evidence; a grade's full
-file loads only when one of its nights is opened. `tools/smoke-static.js`
-checks both.
+carries the text, questions, facilitator notes or evidence. Opening a night
+loads only its week, `content/reading-daily/weeks/<grade>/<week>.json`
+(`weekSlice`: that week's five nights, the sources they cite, and the
+grade's overview and progression; about 17–100 KB instead of a 0.5–2 MB
+grade file). A newer choice cancels a download it supersedes. The complete
+grade files are still built and remain the canonical download.
+`tools/smoke-static.js` compares every browse and week file with its source.
+
+The reader presents the supplied text without changing its words. In a block
+with an even number of underscores, each consecutive pair of the editions'
+plain-text `_italics_` marks is shown as emphasis, including across a line or
+inside a word (`_un_natural`); a block with an odd number is shown as
+written. A paragraph whose lines hold tab-separated columns, such as Wallace's
+nightly moth counts (`reading-6-w34-d2`), is shown as a table, keeping its
+ditto marks. Both are built from text nodes, never parsed as markup, and the
+student download shows them the same way. `{footnote …}` markers are still
+shown as written.
 
 ## Canonical contract
 

@@ -151,7 +151,7 @@ function documentFixture() {
     addEventListener(name, action) { this.events[name] = action; }
     get outerHTML() { const attrs = { ...this.attributes }; for (const key of ["id", "className", "href", "lang"]) if (this[key]) attrs[key === "className" ? "class" : key] = this[key]; return "<" + this.tagName + Object.entries(attrs).map(([key, value]) => " " + key + '="' + escape(value) + '"').join("") + ">" + this.childNodes.map(node => node.outerHTML).join("") + "</" + this.tagName + ">"; }
   }
-  const doc = { createElement: tag => new Element(tag), createElementNS: (_, tag) => new Element(tag), implementation: { createHTMLDocument: documentFixture } };
+  const doc = { createElement: tag => new Element(tag), createElementNS: (_, tag) => new Element(tag), createTextNode: value => new Text(value), implementation: { createHTMLDocument: documentFixture } };
   doc.documentElement = doc.createElement("html"); doc.head = doc.createElement("head"); doc.body = doc.createElement("body"); doc.documentElement.append(doc.head, doc.body); return doc;
 }
 function withDOM(fn) { const previous = global.document; global.document = documentFixture(); try { fn(); } finally { global.document = previous; } }
@@ -235,3 +235,35 @@ test("browse routes, search and filters are pure and forgiving", () => {
   assert.deepEqual(D.genres(nights), ["literary-prose", "poetry", "short-story"]);
   assert.deepEqual(D.modes(nights), ["shared", "independent"]); assert.deepEqual(D.minutesSpan(nights), [25, 30]);
 });
+
+test("a night's week file carries its five nights and only the sources they cite", t => {
+  const course = fixture(3), slice = D.weekSlice(course, 2);
+  assert.deepEqual(slice.days.map(day => day.id), course.days.slice(5, 10).map(day => day.id));
+  assert.deepEqual(slice.sources.map(source => source.id), ["source-5", "source-6", "source-7", "source-8", "source-9"]);
+  assert.equal(slice.week, 2); assert.equal(slice.overview, course.overview); assert.deepEqual(slice.progression, course.progression);
+  assert.deepEqual(D.studentReading(slice, 2, 3), D.studentReading(course, 2, 3));
+  assert.equal(D.weekFile(0, 36), "content/reading-daily/weeks/k/36.json"); assert.equal(D.weekFile(0, 37), ""); assert.equal(D.weekFile(17, 1), "");
+  const directory = scratch(t), input = path.join(directory, "input"), output = path.join(directory, "output"); fs.mkdirSync(input);
+  fs.writeFileSync(path.join(input, "3.json"), JSON.stringify(course)); B.build({ directory: input, output });
+  for (let week = 1; week <= 36; week++) assert.deepEqual(JSON.parse(fs.readFileSync(path.join(output, D.weekFile(3, week)))), D.weekSlice(course, week));
+});
+test("paired underscores become emphasis segments; odd counts and plain text stay as written", () => {
+  assert.deepEqual(D.emphasis("for they _are_ mine"), [{ text: "for they ", em: false }, { text: "are", em: true }, { text: " mine", em: false }]);
+  assert.deepEqual(D.emphasis("_un_natural"), [{ text: "un", em: true }, { text: "natural", em: false }]);
+  assert.deepEqual(D.emphasis("_Across\nlines._"), [{ text: "Across\nlines.", em: true }]);
+  assert.deepEqual(D.emphasis("a lone _ mark"), [{ text: "a lone _ mark", em: false }]);
+  assert.deepEqual(D.emphasis("plain"), [{ text: "plain", em: false }]);
+});
+test("tab-separated source tables split into rows with repeated headers, other text is not a table", () => {
+  const rows = D.tableRows("Date\tNo.\tRemarks.\n1855\nDec. 13th\t1\tFine\n\" 14th\t75\tFog.\nDate.\tNo.\tRemarks");
+  assert.deepEqual(rows.map(row => [row.cells.length, row.header]), [[3, true], [1, false], [3, false], [3, false], [3, true]]);
+  assert.equal(rows[3].cells[0], "\" 14th"); assert.equal(D.tableRows("No tabs here."), null);
+});
+test("the reader renders emphasis and source tables as elements built from text", () => withDOM(() => {
+  const course = fixture();
+  course.days[0].blocks = [{ type: "paragraph", text: "They _are_ <b>mine</b>." }, { type: "paragraph", text: "Date\tCount\n1855\nDec. 13th\t1" }];
+  const html = R.reading(D.studentReading(course, 1, 1)).outerHTML;
+  assert.match(html, /They <em>are<\/em> &lt;b&gt;mine&lt;\/b&gt;\./); assert.doesNotMatch(html, /_are_/);
+  assert.match(html, /<table class="daily-table"><tbody><tr><th scope="col">Date<\/th><th scope="col">Count<\/th><\/tr><tr class="daily-table-span"><td colspan="2">1855<\/td><\/tr><tr><td>Dec\. 13th<\/td><td>1<\/td><\/tr>/);
+  assert.match(html, /role="region"/);
+}));

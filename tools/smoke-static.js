@@ -449,6 +449,12 @@ for (let i = 0; i < dailyIndex.grades.length; i++) {
   const browseText = fs.readFileSync(browseFile, "utf8");
   if (JSON.stringify(JSON.parse(browseText)) !== JSON.stringify(DR.browseIndex(dailySource.courses[i]))) throw new Error("Daily-reading browse file differs from source: " + entry.file);
   if (/facilitatorNotes|"evidence"|"questions"|"blocks"|"textHash"/.test(browseText) || browseText.length > 80000) throw new Error("Daily-reading browse file carries reading material: " + entry.file);
+  // The reader loads one week at a time; each week file is that week of the source.
+  for (let week = 1; week <= 36; week++) {
+    const weekFile = path.join(root, DR.weekFile(entry.grade, week));
+    if (!fs.existsSync(weekFile)) throw new Error("Missing daily-reading week file: " + DR.weekFile(entry.grade, week));
+    if (JSON.stringify(JSON.parse(fs.readFileSync(weekFile, "utf8"))) !== JSON.stringify(DR.weekSlice(dailySource.courses[i], week))) throw new Error("Daily-reading week file differs from source: " + DR.weekFile(entry.grade, week));
+  }
 }
 
 // Reading level: its bundle, logic and page script load in order; the

@@ -39,7 +39,6 @@ const PREAMBLE = String.raw`\documentclass[10pt,twocolumn,twoside,letterpaper]{a
 \setsansfont{CMU Sans Serif}
 \setmonofont{CMU Typewriter Text}
 \usepackage[protrusion=true]{microtype}
-\usepackage{adjustbox}
 \usepackage{fancyhdr,enumitem}
 \usepackage[hidelinks]{hyperref}
 \setlength{\parindent}{1.2em}
@@ -73,15 +72,16 @@ function verse(text) {
     return (indent ? "\\hspace*{" + (indent * 0.5).toFixed(1) + "em}" : "") + lineStart(inline(rest));
   }).join("\\\\\n");
 }
-// A tab-separated block is a printed table: one row per line. Cells keep their
-// characters exactly (ditto marks are not curled into opening quotes) and the
-// table shrinks, never grows, to fit the column.
-function table(text) {
-  const rows = text.split("\n").map(line => line.split("\t")), cols = Math.max(...rows.map(row => row.length));
-  const cell = value => escape(value).replace(/\\_([^_\n]+?)\\_/g, "\\emph{$1}");
-  const body = rows.map(row => row.length === 1 && cols > 1 ? "\\multicolumn{" + cols + "}{l}{" + cell(row[0]) + "}"
-    : row.concat(Array(cols - row.length).fill("")).map(cell).join(" & ")).join(" \\\\\n");
-  return "\\begin{center}\\small\\begin{adjustbox}{max width=\\columnwidth}\\begin{tabular}{" + "l".repeat(cols) + "}\n" + body + "\n\\end{tabular}\\end{adjustbox}\\end{center}";
+// A tab-separated source table (D.tableRows) as a tabular. Its cells keep
+// their characters: ditto marks stay straight, not curled into quotes.
+function table(rows) {
+  const width = Math.max(...rows.map(row => row.cells.length));
+  const cell = (text, row) => (row.header ? "\\textit{" : "{") + escape(text).replace(/"/g, "\\textquotedbl{}") + "}";
+  const spec = width > 1 ? "@{}" + "l".repeat(width - 1) + "p{0.4\\linewidth}@{}" : "@{}l@{}";
+  const lines = rows.map(row => row.cells.length === 1
+    ? "\\multicolumn{" + width + "}{@{}l}{" + cell(row.cells[0], row) + "}\\tabularnewline"
+    : Array.from({ length: width }, (_, i) => (i === width - 1 && width > 1 ? "\\raggedright " : "") + cell(row.cells[i] || "", row)).join(" & ") + "\\tabularnewline");
+  return "\\par\\smallskip\\noindent{\\small\\begin{tabular}{" + spec + "}\n" + lines.join("\n") + "\n\\end{tabular}}\\par\\smallskip\n";
 }
 function blocks(day) {
   const out = [];
@@ -93,8 +93,9 @@ function blocks(day) {
       continue;
     }
     if (inVerse) { out.push("\\end{verse}"); inVerse = false; }
-    out.push(block.type === "heading" ? "\\begin{center}\\textsc{" + inline(block.text) + "}\\end{center}"
-      : block.text.includes("\t") ? table(block.text) + "\n" : lineStart(inline(block.text)) + "\n");
+    const rows = block.type === "paragraph" && D.tableRows(block.text);
+    if (rows) { out.push(table(rows)); continue; }
+    out.push(block.type === "heading" ? "\\begin{center}\\textsc{" + inline(block.text) + "}\\end{center}" : lineStart(inline(block.text)) + "\n");
   }
   if (inVerse) out.push("\\end{verse}");
   return out.join("\n");

@@ -144,11 +144,14 @@ function build(options = {}) {
   fs.mkdirSync(path.join(directory, "browse"));
   for (const course of courses) {
     fs.writeFileSync(path.join(directory, D.gradeKey(course.grade) + ".json"), JSON.stringify(course) + "\n");
-    // The browse view loads only this year-at-a-glance file, not the texts.
+    // The browse view loads only this year-at-a-glance file, not the texts;
+    // the reader loads only the week of the night it opens.
     fs.writeFileSync(path.join(output, D.browseFile(course.grade)), JSON.stringify(D.browseIndex(course)) + "\n");
+    fs.mkdirSync(path.join(directory, "weeks", D.gradeKey(course.grade)), { recursive: true });
+    for (let week = 1; week <= 36; week++) fs.writeFileSync(path.join(output, D.weekFile(course.grade, week)), JSON.stringify(D.weekSlice(course, week)) + "\n");
   }
   fs.writeFileSync(path.join(directory, "index.json"), JSON.stringify(index) + "\n");
-  console.log("Built daily reading: " + courses.length + " complete grades, " + courses.length * 180 + " nights.");
+  console.log("Built daily reading: " + courses.length + " complete grades, " + courses.length * 180 + " nights, in " + courses.length * 36 + " week files.");
   return index;
 }
 module.exports = { validateGrade, validateCorpus, loadDailyReading, build, textHash, blockText, normalizedText };

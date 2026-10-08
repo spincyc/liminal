@@ -27,8 +27,9 @@ deliberately, updating this page and the test together.
 - **Pages:** each night starts on a new page, and each grade's packet starts on
   a fresh sheet so duplex packets separate cleanly.
 - **Verse:** stanzas keep their lines and indentation, set ragged right.
-- **Tables:** a tab-separated block prints as a table, one row per line, shrunk
-  to the column if it is wide; ditto marks keep their typed form.
+- **Source tables:** a paragraph of tab-separated columns is set as a small
+  tabular (the last column ragged right), with header rows in italics and
+  ditto marks left straight rather than curled.
 - **Typography changes made only in print:** straight double quotes become
   curly, because CMU Serif draws ASCII `"` as a closing quote, and paired
   `_underscores_`, a transcription convention, become italics. Wording is
@@ -49,7 +50,7 @@ node tools/reading-packet.js --nights k:w7d4,9:w12d1 --out .scratch/packets/x --
   and dates outside the year have no night. `--grades k,3,9` limits the
   grades.
 - **Output:** written under the `--out` directory and never committed.
-  `--pdf` needs XeLaTeX, `fontspec`, `adjustbox`, the CMU fonts and, for `--rotate-backs`,
+  `--pdf` needs XeLaTeX, `fontspec`, the CMU fonts and, for `--rotate-backs`,
   `pdfpages`.
 - **Printing:** print duplex on the long edge, e.g.
   `lp -o sides=two-sided-long-edge -o media=letter packet.pdf`.

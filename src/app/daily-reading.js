@@ -5,8 +5,19 @@
   const views = document.getElementById("dailyViews"), browsePanel = document.getElementById("dailyBrowse");
   const browseLink = document.getElementById("dailyBrowseLink"), readLink = document.getElementById("dailyReadLink");
   const gradeSelect = document.getElementById("dailyGrade"), weekSelect = document.getElementById("dailyWeek"), daySelect = document.getElementById("dailyDay");
-  let index, request = 0, preservePickerFocus = false, last = null;
+  let index, request = 0, preservePickerFocus = false, last = null, inFlight = null;
   const cache = new Map(), browseCache = new Map();
+  // One load at a time: a newer choice cancels the download it supersedes,
+  // so on a slow connection the old one never competes with it.
+  async function load(path) {
+    if (inFlight) inFlight.abort();
+    const controller = inFlight = new AbortController();
+    try {
+      const response = await fetch(path, { signal: controller.signal });
+      if (!response.ok) throw new Error("Unavailable");
+      return await response.json();
+    } finally { if (inFlight === controller) inFlight = null; }
+  }
   function announce(message, visible = false) { status.textContent = message; status.classList.toggle("daily-sr", !visible); }
   function button(label, action) { const node = R.el("button", label); node.type = "button"; node.addEventListener("click", action); return node; }
   function option(label, value) { const node = R.el("option", label); node.value = value; return node; }
@@ -53,9 +64,7 @@
       let data = browseCache.get(selected.grade);
       if (!data) {
         // Only the small year-at-a-glance file; texts load when a night opens.
-        const response = await fetch(D.browseFile(selected.grade));
-        if (!response.ok) throw new Error("Browse unavailable");
-        data = await response.json();
+        data = await load(D.browseFile(selected.grade));
         if (data.schemaVersion !== 1 || data.grade !== selected.grade || !Array.isArray(data.nights) || !Array.isArray(data.progression)) throw new Error("Browse mismatch");
         browseCache.set(selected.grade, data);
       }
@@ -80,14 +89,15 @@
     pickers(selected); container.replaceChildren(); container.setAttribute("aria-busy", "true");
     announce("Opening " + D.gradeLabel(selected.grade) + ", week " + selected.week + ", day " + selected.day + "…", true);
     try {
-      let course = cache.get(selected.grade);
+      // Only the night's week (five nights and their sources), not the grade.
+      const key = selected.grade + "/" + selected.week;
+      let course = cache.get(key);
       if (!course) {
-        // Construct the path from the validated grade, never from remote data.
-        const response = await fetch("content/reading-daily/" + D.gradeKey(selected.grade) + ".json");
-        if (!response.ok) throw new Error("Reading unavailable");
-        course = await response.json();
-        if (course.schemaVersion !== 1 || course.grade !== selected.grade || !Array.isArray(course.days) || course.days.length !== 180) throw new Error("Reading mismatch");
-        cache.set(selected.grade, course);
+        // Construct the path from the validated grade and week, never from remote data.
+        course = await load(D.weekFile(selected.grade, selected.week));
+        if (course.schemaVersion !== 1 || course.grade !== selected.grade || course.week !== selected.week || !Array.isArray(course.days) || course.days.length !== 5 ||
+          course.days.some(day => day.week !== selected.week) || !Array.isArray(course.sources)) throw new Error("Reading mismatch");
+        cache.set(key, course);
       }
       if (current !== request) return;
       const day = D.dayAt(course, selected.week, selected.day), packet = D.studentReading(course, selected.week, selected.day);
@@ -102,7 +112,7 @@
       if (focus) { const heading = document.getElementById("dailyHeading"); heading.focus(); heading.scrollIntoView({ block: "start" }); }
     } catch (_) {
       if (current !== request) return;
-      cache.delete(selected.grade); announce("This reading could not be loaded. Try again, or choose another grade.", true);
+      announce("This reading could not be loaded. Try again, or choose another grade.", true);
       container.replaceChildren(button("Try again", () => route()));
     } finally { if (current === request) container.setAttribute("aria-busy", "false"); }
   }
