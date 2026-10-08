@@ -149,7 +149,7 @@
       "author": "Howard Pyle",
       "title": "The Merry Adventures of Robin Hood of Great Renown, in Nottinghamshire",
       "translator": null,
-      "edition": "New York: Charles Scribner’s Sons, 1883 (title page dated MDCCCLXXXIII; copyright 1883). Each selected excerpt was established from the OCR text of three scans of the Scribner plates: the University of California copy dated 1883 (archive.org merryadventureso00pylerich), the Harvard copy dated 1883 (archive.org merryadventures01pylegoog), and the New York Public Library copy of the 1892 printing (archive.org merryadventureso00pyle2), by word-by-word majority, with disagreements resolved from the other scans and page images. The book’s marginal side-notes, running heads, page numbers, two explanatory footnotes and their marks are omitted. Straight quotation marks and “--” for the dash are used, OCR spacing around punctuation is closed up, and words divided at printed line ends are joined unless the hyphen belongs to the word; the printed text otherwise stands, including “drank;” without a closing quotation mark on printed page 183. Project Gutenberg eBooks 964 and 10148 reproduce a later edited text (Americanized spelling, rewritten and omitted passages, replaced wording) and are not the source of these readings.",
+      "edition": "New York: Charles Scribner’s Sons, 1883 (title page dated MDCCCLXXXIII; copyright 1883). Each selected excerpt was established from the OCR text of three scans of the Scribner plates: the University of California copy dated 1883 (archive.org merryadventureso00pylerich), the Harvard copy dated 1883 (archive.org merryadventures01pylegoog), and the New York Public Library copy of the 1892 printing (archive.org merryadventureso00pyle2), by word-by-word majority, with disagreements resolved from the other scans and page images. The book’s marginal side-notes, running heads, page numbers, two explanatory footnotes and their marks are omitted. Straight quotation marks and “--” for the dash are used, OCR spacing around punctuation is closed up, and words divided at printed line ends are joined unless the hyphen belongs to the word; the printed text otherwise stands, including its misprints “ot” for “of” on printed page 168 and “drank;” without a closing quotation mark on printed page 183. Project Gutenberg eBooks 964 and 10148 reproduce a later edited text (Americanized spelling, rewritten and omitted passages, replaced wording) and are not the source of these readings.",
       "publicationYear": 1883,
       "translationYear": null,
       "url": "https://archive.org/details/merryadventureso00pylerich",
@@ -185,7 +185,7 @@
       "author": "Louisa May Alcott",
       "title": "Little Men: Life at Plumfield with Jo’s Boys",
       "translator": null,
-      "edition": "Boston: Roberts Brothers, 1871, first edition; original English text supplied directly from the scan-backed Wikisource transcription associated with Index:Little Men - Alcott (1871).djvu. Paragraph divisions and wording follow that transcription, except that one transcription paragraph break absent from printed page 42 is removed and the printed 1871 word division is restored where the transcription closes up compounds inside a printed line (for example “any thing”, “every one”, “school-room”, “up-stairs”), checked against the scan’s text layer and page images; with the erroneous “fit the head” corrected to the scanned “at the head” on printed page29, and an extraneous hyphen before “the waist” removed against printed page307. Actual printed forms “lowed” and “coriopsis” on page307 are retained. Navigation, page labels and a mid-paragraph illustration caption are omitted; prose wraps and separated drop-cap letters are joined, and verse line breaks retained. This text replaces the initially considered Gutenberg transcription.",
+      "edition": "Boston: Roberts Brothers, 1871, first edition; text taken from the scan-backed Wikisource transcription (Index:Little Men - Alcott (1871).djvu) and collated character by character against the OCR text of two scans of the 1871 printing (Library of Congress copy, archive.org littlemenlifeatp01alco; University of California copy, archive.org littlemenlifeatp00alcoiala). Where both scans agree, the printed punctuation, capitalization, word division and wording are adopted (for example “just round the corner, and Mrs. Bhaer close by, to fill”, “They were”, “O Aunty! please”, “apple-pie”, “a three mile drive”); corrections are listed in the collation log. The printed misprints “lowed” and “coriopsis” on page 307 are retained; one transcription paragraph break absent from printed page 42 is removed. Navigation, page labels and a mid-paragraph illustration caption are omitted; prose wraps and separated drop-cap letters are joined, verse line breaks retained, and italics not marked.",
       "publicationYear": 1871,
       "translationYear": null,
       "url": "https://en.wikisource.org/wiki/Little_Men",
@@ -1050,7 +1050,7 @@
       },
       "challenge": "Follow two parallel images through an unexplained delay; reread aloud to hear repeated phrasing.",
       "focus": "The contrast between a visible object and the lasting effect of a song.",
-      "context": "Read once for the two actions, then again for the discoveries. The poem is complete; the discussion considers possibilities rather than treating the arrow as instructions.",
+      "context": "Read once for the two actions, then again for the discoveries. The poem is complete.",
       "contentNote": null,
       "excerpt": {
         "locator": "The Arrow and the Song; source transcription lines 7570–7587; opens “I shot an arrow into the air,”; closes “I found again in the heart of a friend.”.",
@@ -1468,7 +1468,7 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": "reading-4-w03-d2",
-        "textHash": "ec69ba4b295067c454b7b049ef15e688df1d509f6d3be29ce98fed757f46b3bb"
+        "textHash": "2383861817d4777acad0ba3d92d760d83f6ee02d413b4c0ff338fde36cddbf03"
       },
       "blocks": [
         {
@@ -1506,10 +1506,6 @@
         {
           "type": "paragraph",
           "text": "\"In good sooth,\" said the King, \"his doings have reached even our own royal ears. He is a saucy, rebellious varlet, yet, I am fain to own, a right merry soul withal.\""
-        },
-        {
-          "type": "paragraph",
-          "text": "\""
         },
         {
           "type": "paragraph",
@@ -1577,7 +1573,7 @@
       "challenge": "Track two competing plans and interpret an extended comparison about testing ideas.",
       "focus": "Pride and caution work against each other in Robin’s answer to a warning.",
       "context": "The King has told the Sheriff to devise his own plan for capturing Robin. On the ride home, the Sheriff suddenly thinks he has found one.",
-      "contentNote": "The narrator opens with a simile comparing the Sheriff to “a Jew” testing coins. It draws on an antisemitic stereotype about Jews and money that was common in 1883 writing; it is the narrator’s period prejudice, not a fact about Jewish people. Characters also carry bows and swords and plan deception; discuss the difference between understanding a character’s choice and recommending it.",
+      "contentNote": "The narrator opens with a simile comparing the Sheriff to “a Jew” testing coins. It draws on an antisemitic stereotype about Jews and money that was common in 1883 writing; it is the narrator’s period prejudice, not a fact about Jewish people.",
       "excerpt": {
         "locator": "Part First, \"The Shooting-Match at Nottingham Town\", 1883 Scribner edition; begins “But what was the Sheriff's plan?”; ends “Then \"good, good!\" cried all the band right heartily.”.",
         "isCompleteWork": false,
@@ -1882,7 +1878,7 @@
       "challenge": "Use the reveal to reinterpret earlier dialogue and distinguish inference from confirmation.",
       "focus": "The victory does not satisfy Robin until his opponent knows who won.",
       "context": "The scarlet stranger has won the golden arrow. The Sheriff still does not know who he is, though readers know Robin planned a disguise.",
-      "contentNote": "A blunted arrow carries a taunting message through a window. This is fictional bravado, not a safe way to communicate.",
+      "contentNote": null,
       "excerpt": {
         "locator": "Part First, \"The Shooting-Match at Nottingham Town\", 1883 Scribner edition; begins “Then the Sheriff came down from his dais and drew near, in all his sil”; ends “ window, your worship,\" quoth the man who had handed the shaft to him.”.",
         "isCompleteWork": false,
@@ -2529,7 +2525,7 @@
       "challenge": "Use the narrator’s explanation to reconsider an apparent misbehavior.",
       "focus": "Homesickness beneath a comic accident.",
       "context": "Heidi wakes in Clara’s city house for her first day of lessons. She misses the open view from her mountain home.",
-      "contentNote": "The housekeeper threatens to tie Heidi to a chair. This historical threat is part of the character’s harsh response, not advice for teaching.",
+      "contentNote": "Miss Rottenmeier threatens to tie Heidi to a chair.",
       "excerpt": {
         "locator": "Chapter VII, Miss Rottenmeier Has an Uncomfortable Day; begins “When Heidi opened her eyes next morning, she did not know where she was. She found herself on a high”; ends “the room, it was late, and there was no more time for studies. Nobody had time to yawn that morning.”.",
         "isCompleteWork": false,
@@ -2929,7 +2925,7 @@
       "challenge": "Connect physical description, daily routines and emotional changes across a narrative portrait.",
       "focus": "Strength shown through skilled work, affection and grief.",
       "context": "A blacksmith heats and shapes metal with a hammer and anvil. A bellows blows air into the fire. Read for what the observers first see and what they learn later about the man.",
-      "contentNote": "The blacksmith remembers his deceased wife. Church and Paradise reflect the poem’s Christian setting. Sparks and forge work are descriptions, not activities to imitate.",
+      "contentNote": "The blacksmith remembers his dead wife. Church and Paradise reflect the poem’s Christian setting.",
       "excerpt": {
         "locator": "The Village Blacksmith; source transcription lines 1990–2048; opens “Under a spreading chestnut-tree”; closes “  Each burning deed and thought.”.",
         "isCompleteWork": true,
@@ -4963,7 +4959,7 @@
       "challenge": "Follow a life cycle while checking when the narrator is describing young or adult insects.",
       "focus": "Contrasts between a quiet winged adult and an active hungry young insect.",
       "context": "John has returned from a fishing trip with stoneflies to show the group. The comparisons with mayflies concern delicate winged insects. This 1903 account gives a general portrait rather than a rule for every species.",
-      "contentNote": "Includes natural predation and a reference to fishing bait, without instructions for killing insects. The final sentence urges care for them.",
+      "contentNote": "Includes natural predation and a reference to fishing bait. The final sentence urges care for the insects.",
       "excerpt": {
         "locator": "The Insect Folk — The Stone Fly Folk; source transcription lines 1066–1125; opens “John has been fishing.”; closes “The stone flies are harmless little people, and we should never kill one needlessly.”.",
         "isCompleteWork": false,
@@ -5201,7 +5197,7 @@
       "challenge": "Track changing guesses as new physical evidence appears.",
       "focus": "Inference and character choices",
       "context": "With their parents briefly away and caregivers at home, the siblings take their baby brother, nicknamed the Lamb, to the gravel pit. Anthea is also called Panther and Cyril is called Squirrel.",
-      "contentNote": "Children’s imaginary digging route to Australia and their fanciful geology are not scientific explanations. Follow the story’s safe-road choice; do not imitate digging into quarry edges.",
+      "contentNote": null,
       "excerpt": {
         "locator": "New York: Dodd, Mead & Company, 1905; Chapter 1; https://www.gutenberg.org/ebooks/17314; consecutive transcript paragraphs 13–50; opens “It was at the gravel-pits. Father had to go away suddenly on business, and mother had gone”; closes “\"I believe I must have dropped asleep,\" it said, stretching itself.”.",
         "isCompleteWork": false,
@@ -5644,7 +5640,7 @@
         "locator": "New York: Dodd, Mead & Company, 1905; Chapter 1; https://www.gutenberg.org/ebooks/17314; consecutive transcript paragraphs 93–137; opens “\"Just one more, please,\" said the children. \"Can you give wishes now?\"”; closes “s, but as he refused to hold on to such new acquaintances he was a dead weight, and most exhausting.”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w09-d3",
-        "continuesTo": null,
+        "continuesTo": "reading-4-w09-d5",
         "textHash": "2e3422f9fb26c664f821f7a3b18cb91f1a63b5432b8ff1ec53372fad227cf926"
       },
       "blocks": [
@@ -5866,27 +5862,103 @@
       "id": "reading-4-w09-d5",
       "week": 9,
       "day": 5,
-      "title": "Waiting to Be Themselves",
+      "title": "Strangers at Their Own Door",
       "sourceId": "4-nesbit-five-children",
       "genre": "fiction",
       "readingMode": "shared",
       "time": {
-        "readingMinutes": 7,
+        "readingMinutes": 10,
         "discussionMinutes": 9,
-        "totalMinutes": 16
+        "totalMinutes": 19
       },
       "challenge": "Read a statement that can be literally true while still misleading a listener.",
       "focus": "Reversal and double meanings",
-      "context": "After the previous excerpt, the servants also failed to recognize the transformed children and would not let them stay at home. That encounter is not included here. The children now wait outside for the wish to end at sunset.",
-      "contentNote": "The children fear being turned to stone, but the fear proves unfounded. Martha threatens to punish the strange children; no punishment occurs in the excerpt.",
+      "context": "The wish has made the children so beautiful that no one knows them, not even the Lamb at first. Carrying him by turns, they finally reach home.",
+      "contentNote": "Martha empties a jug of water over Robert and calls him a “nasty little Eye-talian monkey,” an insult aimed at Italians in Nesbit’s England; she takes the beautiful strangers for foreign children. The children fear being turned to stone at sunset.",
       "excerpt": {
-        "locator": "New York: Dodd, Mead & Company, 1905; Chapter 1; https://www.gutenberg.org/ebooks/17314; consecutive transcript paragraphs 157–182; opens “It came at last to their sitting down in a row under the hedge, with their feet in a dry d”; closes “And they never have.”.",
+        "locator": "New York: Dodd, Mead & Company, 1905; Chapter 1; https://www.gutenberg.org/ebooks/17314; consecutive transcript paragraphs 138–182; opens “\"Thank goodness, we're home!\" said Jane, staggering through the iron gate”; closes “And they never have.”.",
         "isCompleteWork": false,
-        "continuesFrom": null,
+        "continuesFrom": "reading-4-w09-d4",
         "continuesTo": null,
-        "textHash": "a4c51fed74f8ee6f02a6fcc7e824386a300709c1b3c16bdbd7902c316804edcd"
+        "textHash": "54bc56b9a48ca5a56aa88d7f9c7d443827f1cba5d58d0f7f14444c342334f63b"
       },
       "blocks": [
+        {
+          "type": "paragraph",
+          "text": "\"Thank goodness, we're home!\" said Jane, staggering through the iron gate to where Martha, the nursemaid, stood at the front door shading her eyes with her hand and looking out anxiously. \"Here! Do take Baby!\""
+        },
+        {
+          "type": "paragraph",
+          "text": "Martha snatched the Baby from her arms."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Thanks be, he's safe back,\" she said. \"Where are the others, and whoever to goodness gracious are all of you?\""
+        },
+        {
+          "type": "paragraph",
+          "text": "\"We're us, of course,\" said Robert."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"And who's Us, when you're at home?\" asked Martha scornfully."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"I tell you it's us, only we're beautiful as the day,\" said Cyril. \"I'm Cyril, and these are the others, and we're jolly hungry. Let us in, and don't be a silly idiot.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "Martha merely dratted Cyril's impudence and tried to shut the door in his face."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"I know we look different, but I'm Anthea, and we're so tired, and it's long past dinner-time.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Then go home to your dinners, whoever you are; and if our children put you up to this play-acting you can tell them from me they'll catch it, so they know what to expect!\" With that she did bang the door. Cyril rang the bell violently. No answer. Presently cook put her head out of a bedroom window and said--"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"If you don't take yourselves off, and that precious sharp, I'll go and fetch the police.\" And she slammed down the window."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"It's no good,\" said Anthea. \"Oh, do, do come away before we get sent to prison!\""
+        },
+        {
+          "type": "paragraph",
+          "text": "The boys said it was nonsense, and the law of England couldn't put you in prison for just being as beautiful as the day, but all the same they followed the others out into the lane."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"We shall be our proper selves after sunset, I suppose,\" said Jane."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"I don't know,\" Cyril said sadly; \"it mayn't be like that now--things have changed a good deal since Megatherium times.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Oh,\" cried Anthea suddenly, \"perhaps we shall turn into stone at sunset, like the Megatheriums did, so that there mayn't be any of us left over for the next day.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "She began to cry, so did Jane. Even the boys turned pale. No one had the heart to say anything."
+        },
+        {
+          "type": "paragraph",
+          "text": "It was a horrible afternoon. There was no house near where the children could beg a crust of bread or even a glass of water. They were afraid to go to the village, because they had seen Martha go down there with a basket, and there was a local constable. True, they were all as beautiful as the day, but that is a poor comfort when you are as hungry as a hunter and as thirsty as a sponge."
+        },
+        {
+          "type": "paragraph",
+          "text": "Three times they tried in vain to get the servants in the White House to let them in and listen to their tale. And then Robert went alone, hoping to be able to climb in at one of the back windows and so open the door to the others. But all the windows were out of reach, and Martha emptied a toilet-jug of cold water over him from a top window, and said--"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Go along with you, you nasty little Eye-talian monkey.\""
+        },
         {
           "type": "paragraph",
           "text": "It came at last to their sitting down in a row under the hedge, with their feet in a dry ditch, waiting for sunset, and wondering whether, when the sun did set, they would turn into stone, or only into their own old natural selves; and each of them still felt lonely and among strangers, and tried not to look at the others, for, though their voices were their own, their faces were so radiantly beautiful as to be quite irritating to look at."
@@ -6022,6 +6094,16 @@
             "We couldn't come back till they'd gone"
           ],
           "id": "reading-4-w09-d5-q3"
+        },
+        {
+          "id": "reading-4-w09-d5-q4",
+          "prompt": "Why can none of the children’s explanations get them through their own front door?",
+          "facilitatorNotes": [
+            "Martha and cook see only strangers, so every true statement sounds like impudence or a trick; the beauty they wished for has cut them off from the people who know them. Readers may also notice that Martha protects the Lamb and the house as she understands her duty."
+          ],
+          "evidence": [
+            "\"And who's Us, when you're at home?\" asked Martha scornfully."
+          ]
         }
       ]
     },
@@ -6418,7 +6500,7 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": "reading-4-w11-d2",
-        "textHash": "64bf7343658983c325219eaa80ea459766f1def7090f2538e49f6ebd18e3b157"
+        "textHash": "5da868549fe30c8d16c215117ececd5157a086156fdd681998cf5d3eb992420a"
       },
       "blocks": [
         {
@@ -6443,11 +6525,11 @@
         },
         {
           "type": "paragraph",
-          "text": "\"I hope the lady will see to me,\" he thought, and gave a timid rap with the great bronze knocker, which was a jovial griffin's head."
+          "text": "\"I hope the lady will see to me,\" he thought; and gave a timid rap with the great bronze knocker, which was a jovial griffin's head."
         },
         {
           "type": "paragraph",
-          "text": "A rosy-faced servant-maid opened the door, and smiled as she took the letter which he silently offered. She seemed used to receiving strange boys, for she pointed to a seat in the hall, and said, with a nod:—"
+          "text": "A rosy-faced servant-maid opened the door, and smiled as she took the letter which he silently offered. She seemed used to receiving strange boys, for she pointed to a seat in the hall, and said, with a nod,—"
         },
         {
           "type": "paragraph",
@@ -6459,7 +6541,7 @@
         },
         {
           "type": "paragraph",
-          "text": "The house seemed swarming with boys, who were beguiling the rainy twilight with all sorts of amusements. There were boys everywhere, \"up-stairs and down-stairs and in the lady's chamber,\" apparently, for various open doors showed pleasant groups of big boys, little boys, and middle-sized boys in all stages of evening relaxation, not to say effervescence. Two large rooms on the right were evidently school-rooms, for desks, maps, blackboards, and books were scattered about. An open fire burned on the hearth, and several indolent lads lay on their backs before it, discussing a new cricket-ground, with such animation that their boots waved in the air. A tall youth was practising on the flute in one corner, quite undisturbed by the racket all about him. Two or three others were jumping over the desks, pausing, now and then, to get their breath and laugh at the droll sketches of a little wag who was caricaturing the whole household on a blackboard."
+          "text": "The house seemed swarming with boys, who were beguiling the rainy twilight with all sorts of amusements. There were boys everywhere, \"up-stairs and down-stairs and in the lady's chamber,\" apparently, for various open doors showed pleasant groups of big boys, little boys, and middle-sized boys in all stages of evening relaxation, not to say effervescence. Two large rooms on the right were evidently school-rooms, for desks, maps, blackboards, and books were scattered about. An open fire burned on the hearth, and several indolent lads lay on their backs before it, discussing a new cricket-ground, with such animation that their boots waved in the air. A tall youth was practising on the flute in one corner, quite undisturbed by the racket all about him. Two or three others were jumping over the desks, pausing, now and then, to get their breath, and laugh at the droll sketches of a little wag who was caricaturing the whole household on a blackboard."
         },
         {
           "type": "paragraph",
@@ -6467,11 +6549,11 @@
         },
         {
           "type": "paragraph",
-          "text": "The hall, however, presented the most inviting prospect of all, for a brisk game of tag was going on in the upper entry. One landing was devoted to marbles, the other to checkers, while the stairs were occupied by a boy reading, a girl singing a lullaby to her doll, two puppies, a kitten, and a constant succession of small boys sliding down the banisters, to the great detriment of their clothes and danger to their limbs."
+          "text": "The hall, however, presented the most inviting prospect of all, for a brisk game of tag was going on in the upper entry. One landing was devoted to marbles, the other to checkers, while the stairs were occupied by a boy reading, a girl singing lullaby to her doll, two puppies, a kitten, and a constant succession of small boys sliding down the banisters, to the great detriment of their clothes, and danger to their limbs."
         },
         {
           "type": "paragraph",
-          "text": "So absorbed did Nat become in this exciting race, that he ventured farther and farther out of his corner; and when one very lively boy came down so swiftly that he could not stop himself, but fell off the banisters, with a crash that would have broken any head but one rendered nearly as hard as a cannon-ball by eleven years of constant bumping, Nat forgot himself, and ran up to the fallen rider, expecting to find him half-dead. The boy, however, only winked rapidly for a second, then lay calmly looking up at the new face with a surprised, \"Hullo!\""
+          "text": "So absorbed did Nat become in this exciting race, that he ventured farther and farther out of his corner; and when one very lively boy came down so swiftly that he could not stop himself, but fell off the banisters, with a crash that would have broken any head but one rendered nearly as hard as a cannon-ball by eleven years of constant bumping, Nat forgot himself, and ran up to the fallen rider, expecting to find him half-dead. The boy, however, only winked rapidly for a second, then lay calmly looking up at the new face with a surprised \"Hullo!\""
         },
         {
           "type": "paragraph",
@@ -6495,7 +6577,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Mine's Tommy Bangs. Come up and have a go, will you?\" and Tommy got upon his legs like one suddenly remembering the duties of hospitality."
+          "text": "\"Mine's Tommy Bangs;come up and have a go, will you?\" and Tommy got upon his legs like one suddenly remembering the duties of hospitality."
         },
         {
           "type": "paragraph",
@@ -6535,11 +6617,11 @@
         },
         {
           "type": "paragraph",
-          "text": "\"This is my sister, Daisy,\" announced Demi, as if presenting a rare and precious creature."
+          "text": "\"This is my sister Daisy,\" announced Demi, as if presenting a rare and precious creature."
         },
         {
           "type": "paragraph",
-          "text": "The children nodded to one another; and the little girl's face dimpled with pleasure, as she said affably:—"
+          "text": "The children nodded to one another; and the little girl's face dimpled with pleasure, as she said, affably,—"
         },
         {
           "type": "paragraph",
@@ -6547,7 +6629,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Of course, we do: that's what Aunt Jo has Plumfield for.\""
+          "text": "\"Of course, we do; that's what Aunt Jo has Plumfield for.\""
         },
         {
           "type": "paragraph",
@@ -6555,11 +6637,11 @@
         },
         {
           "type": "paragraph",
-          "text": "\"It's the nicest place in the world, isn't it, Demi?\" said Daisy, who evidently regarded her brother as authority on all subjects."
+          "text": "\"It's the nicest place in the world; isn't it, Demi?\" said Daisy, who evidently regarded her brother as authority on all subjects."
         },
         {
           "type": "paragraph",
-          "text": "\"No, I think Greenland, where the icebergs and seals are, is more interesting. But I'm fond of Plumfield, and it is a very nice place to be in,\" returned Demi, who was interested just now in a book on Greenland. He was about to offer to show Nat the pictures and explain them, when the servant returned, saying with a nod toward the parlor-door:—"
+          "text": "\"No; I think Greenland, where the icebergs and seals are, is more interesting. But I'm fond of Plumfield, and it is a very nice place to be in,\" returned Demi, who was interested just now in a book on Greenland. He was about to offer to show Nat the pictures and explain them, when the servant returned, saying, with a nod toward the parlor-door,—"
         },
         {
           "type": "paragraph",
@@ -6619,13 +6701,13 @@
       "challenge": "Infer care from actions as well as from words.",
       "focus": "Characterization and school culture",
       "context": "Daisy brings Nat to the adults who run Plumfield, Mr. and Mrs. Bhaer, often called Father and Mother Bhaer. Nat is wet, shy, and has a persistent cough.",
-      "contentNote": "Nat’s poverty and illness are described. Historical cough remedies and sharing a medicine spoon belong to the story’s setting, not present-day health guidance.",
+      "contentNote": "Nat’s poverty and illness are described. Historical cough remedies and a shared medicine spoon belong to the story’s setting.",
       "excerpt": {
         "locator": "Boston: Roberts Brothers, 1871; Chapter 1; https://en.wikisource.org/wiki/Little_Men/Chapter_1; consecutive transcript paragraphs 48–71; opens “Demi returned to his beloved book, while his sister led the new-comer into a back room, wh”; closes “urished, and manners and morals were insinuated, without the pupils exactly knowing how it was done.”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w11-d1",
         "continuesTo": "reading-4-w11-d3",
-        "textHash": "6a87954715bf925930842479805ed4bb2312b3d4969abc8ddf1e9e433f992943"
+        "textHash": "aed071326055d096a0553ad9c9cdeaa4c70cb8afac2b54b9407700a803ec8c7e"
       },
       "blocks": [
         {
@@ -6642,15 +6724,15 @@
         },
         {
           "type": "paragraph",
-          "text": "She was not at all handsome, but she had a merry sort of face that never seemed to have forgotten certain childish ways and looks, any more than her voice and manner had; and these things, hard to describe but very plain to see and feel, made her a genial, comfortable kind of person, easy to get on with, and generally \"jolly,\" as boys would say. She saw the little tremble of Nat's lips as she smoothed his hair, and her keen eyes grew softer, but she only drew the shabby figure nearer and said, laughing:—"
+          "text": "She was not at all handsome, but she had a merry sort of face, that never seemed to have forgotten certain childish ways and looks, any more than her voice and manner had; and these things, hard to describe but very plain to see and feel, made her a genial, comfortable kind of person, easy to get on with, and generally \"jolly,\" as boys would say. She saw the little tremble of Nat's lips as she smoothed his hair, and her keen eyes grew softer, but she only drew the shabby figure nearer and said, laughing,—"
         },
         {
           "type": "paragraph",
-          "text": "\"I am Mother Bhaer, that gentleman is Father Bhaer, and these are the two little Bhaers. Come here, boys, and see Nat.\""
+          "text": "\"I am Mother Bhaer, that gentleman is Father Bhaer, and these are the two little Bhaers.—Come here, boys, and see Nat.\""
         },
         {
           "type": "paragraph",
-          "text": "The three wrestlers obeyed at once; and the stout man, with a chubby child on each shoulder, came up to welcome the new boy. Rob and Teddy merely grinned at him, but Mr. Bhaer shook hands, and pointing to a low chair near the fire, said, in a cordial voice:—"
+          "text": "The three wrestlers obeyed at once; and the stout man, with a chubby child on each shoulder, came up to welcome the new boy. Rob and Teddy merely grinned at him, but Mr. Bhaer shook hands, and pointing to a low chair near the fire, said, in a cordial voice,—"
         },
         {
           "type": "paragraph",
@@ -6658,11 +6740,11 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Wet? So they are! My dear, off with your shoes this minute, and I'll have some dry things ready for you in a jiffy,\" cried Mrs. Bhaer, bustling about so energetically that Nat found himself in the cosy little chair, with dry socks and warm slippers on his feet, before he would have had time to say Jack Robinson, if he had wanted to try. He said \"Thank you, ma'am,\" instead; and said it so gratefully that Mrs. Bhaer's eyes grew soft again, and she said something merry, because she felt so tender, which was a way she had."
+          "text": "\"Wet? so they are! My dear, off with your shoes this minute, and I'll have some dry things ready for you in a jiffy,\" cried Mrs. Bhaer, bustling about so energetically, that Nat found himself in the cosy little chair, with dry socks and warm slippers on his feet, before he would have had time to say Jack Robinson, if he had wanted to try. He said \"Thank you, ma'am,\" instead; and said it so gratefully, that Mrs. Bhaer's eyes grew soft again, and she said something merry, because she felt so tender, which was a way she had."
         },
         {
           "type": "paragraph",
-          "text": "\"There are Tommy Bangs' slippers; but he never will remember to put them on in the house; so he shall not have them. They are too big; but that's all the better; you can't run away from us so fast as if they fitted.\""
+          "text": "\"These are Tommy Bang's slippers; but he never will remember to put them on in the house; so he shall not have them. They are too big; but that's all the better; you can't run away from us so fast as if they fitted.\""
         },
         {
           "type": "paragraph",
@@ -6678,7 +6760,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"No wonder, living in that damp cellar with hardly a rag to his poor dear back!\" said Mrs. Bhaer, in a low tone to her husband, who was looking at the boy with a skillful pair of eyes that marked the thin temples and feverish lips, as well as the hoarse voice and frequent fits of coughing that shook the bent shoulders under the patched jacket."
+          "text": "\"No wonder, living in that damp cellar with hardly a rag to his poor dear back!\" said Mrs. Bhaer, in a low tone to her husband, who was looking at the boy with a skilful pair of eyes, that marked the thin temples and feverish lips, as well as the hoarse voice and frequent fits of coughing that shook the bent shoulders under the patched jacket."
         },
         {
           "type": "paragraph",
@@ -6686,7 +6768,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Nat looked a little anxious at the preparations, but forgot his fears in a hearty laugh, when Mrs. Bhaer whispered to him, with a droll look:—"
+          "text": "Nat looked a little anxious at the preparations, but forgot his fears, in a hearty laugh, when Mrs. Bhaer whispered to him, with a droll look,—"
         },
         {
           "type": "paragraph",
@@ -6694,31 +6776,31 @@
         },
         {
           "type": "paragraph",
-          "text": "Little Ted was red in the face with his exertions by the time the bottle came, and was allowed to suck the spoon after Nat had manfully taken a dose and had the bit of flannel put about his throat."
+          "text": "Little Ted was red in the face with his exertions by the time the bottle came, and was allowed to suck the spoon, after Nat had manfully taken a dose, and had the bit of flannel put about his throat."
         },
         {
           "type": "paragraph",
-          "text": "These first steps toward a cure were hardly completed when a great bell rang, and a loud tramping through the hall announced supper. Bashful Nat quaked at the thought of meeting many strange boys, but Mrs. Bhaer held out her hand to him, and Rob said, patronizingly, \"Don't be 'fraid; I'll take care of you.\""
+          "text": "These first steps toward a cure were hardly completed, when a great bell rang, and a loud tramping through the hall announced supper. Bashful Nat quaked at the thought of meeting many strange boys, but Mrs. Bhaer held out her hand to him, and Rob said, patronizingly, \"Don't be 'fraid; I'll take care of you.\""
         },
         {
           "type": "paragraph",
-          "text": "Twelve boys, six on a side, stood behind their chairs, prancing with impatience to begin, while the tall flute-playing youth was trying to curb their ardor. But no one sat down till Mrs. Bhaer was in her place behind the teapot, with Teddy on her left, and Nat on her right."
+          "text": "Twelve boys, six on a side, stood behind their chairs, prancing with impatience to begin, while the tall flute-playing youth was trying to curb their ardor. But no one sat down, till Mrs. Bhaer was in her place behind the teapot, with Teddy on her left, and Nat on her right."
         },
         {
           "type": "paragraph",
-          "text": "\"This is our new boy, Nat Blake. After supper you can say how do you do? Gently, boys, gently.\""
+          "text": "\"This is our new boy, Nat Blake. After supper you can say, How do you do? Gently, boys, gently.\""
         },
         {
           "type": "paragraph",
-          "text": "As she spoke every one stared at Nat, and then whisked into their seats, trying to be orderly and failing utterly. The Bhaers did their best to have the lads behave well at meal times, and generally succeeded pretty well, for their rules were few and sensible, and the boys, knowing that they tried to make things easy and happy, did their best to obey. But there are times when hungry boys cannot be repressed without real cruelty, and Saturday evening, after a half-holiday, was one of those times."
+          "text": "As she spoke every one stared at Nat, and then whisked into their seats, trying to be orderly, and failing utterly. The Bhaers did their best to have the lads behave well at meal times, and generally succeeded pretty well, for their rules were few and sensible, and the boys, knowing that they tried to make things easy and happy, did their best to obey. But there are times when hungry boys cannot be repressed without real cruelty, and Saturday evening, after a half-holiday, was one of those times."
         },
         {
           "type": "paragraph",
-          "text": "\"Dear little souls, do let them have one day in which they can howl and racket and frolic to their hearts' content. A holiday isn't a holiday without plenty of freedom and fun; and they shall have full swing once a week,\" Mrs. Bhaer used to say, when prim people wondered why banister-sliding, pillow-fights, and all manner of jovial games were allowed under the once decorous roof of Plumfield."
+          "text": "\"Dear little souls, do let them have one day in which they can howl and racket and frolic, to their hearts' content. A holiday isn't a holiday, without plenty of freedom and fun; and they shall have full swing once a week,\" Mrs. Bhaer used to say, when prim people wondered why banister-sliding, pillow-fights, and all manner of jovial games were allowed under the once decorous roof of Plumfield."
         },
         {
           "type": "paragraph",
-          "text": "It did seem at times as if the aforesaid roof was in danger of flying off, but it never did, for a word from Father Bhaer could at any time produce a lull, and the lads had learned that liberty must not be abused. So, in spite of many dark predictions, the school flourished, and manners and morals were insinuated, without the pupils exactly knowing how it was done."
+          "text": "It did seem at times as if the aforesaid roof was in danger of flying off; but it never did, for a word from Father Bhaer could at any time produce a lull, and the lads had learned that liberty must not be abused. So, in spite of many dark predictions, the school flourished, and manners and morals were insinuated, without the pupils exactly knowing how it was done."
         }
       ],
       "questions": [
@@ -6772,16 +6854,16 @@
       "context": "At supper Mrs. Bhaer seats Nat beside friendly Tommy. As they talk about the school’s musicians, Nat begins to explain the life he had before arriving.",
       "contentNote": "Nat recalls his father’s death, hunger, and loss of his violin. A boy’s nickname mocks his appetite; discuss the person without adopting the insult.",
       "excerpt": {
-        "locator": "Boston: Roberts Brothers, 1871; Chapter 1; https://en.wikisource.org/wiki/Little_Men/Chapter_1; consecutive transcript paragraphs 72–100; opens “Nat found himself very well off behind the tall pitchers, with Tommy Bangs just around the”; closes “ Bhaer to herself, as she saw the eager, happy expression on his face when Tommy talked of the band.”.",
+        "locator": "Boston: Roberts Brothers, 1871; Chapter 1; https://en.wikisource.org/wiki/Little_Men/Chapter_1; consecutive transcript paragraphs 72–100; opens “Nat found himself very well off behind the tall pitchers, with Tommy Bangs just round the ”; closes “ Bhaer to herself, as she saw the eager, happy expression on his face when Tommy talked of the band.”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w11-d2",
         "continuesTo": "reading-4-w11-d4",
-        "textHash": "a58d110676f8914cfe3863b4fe7b393b63afdec5a19ca362693e1e8cb9542d48"
+        "textHash": "d87b65fb751956dfc8cae692d9cefef9f18be9f696e9b3ea97cc802c1f4ae5e8"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Nat found himself very well off behind the tall pitchers, with Tommy Bangs just around the corner, and Mrs. Bhaer close by to fill up plate and mug as fast as he could empty them."
+          "text": "Nat found himself very well off behind the tall pitchers, with Tommy Bangs just round the corner, and Mrs. Bhaer close by, to fill up plate and mug as fast as he could empty them."
         },
         {
           "type": "paragraph",
@@ -6797,7 +6879,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"His real name is John, but they call him Demi-John, because his father is John too. That's a joke, don't you see?\" said Tommy, kindly explaining. Nat did not see, but politely smiled, and asked, with interest:—"
+          "text": "\"His real name is John, but they call him Demi-John, because his father is John too. That's a joke, don't you see?\" said Tommy, kindly explaining. Nat did not see, but politely smiled, and asked, with interest,—"
         },
         {
           "type": "paragraph",
@@ -6821,7 +6903,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Tommy nodded, and said, sooner than one would have imagined possible under the circumstances, \"Oh, don't he, though? And we dance sometimes, and do gymnastics to music. I like a drum myself, and mean to learn as soon as ever I can.\""
+          "text": "Tommy nodded, and said, sooner than one would have imagined possible under the circumstances, \"Oh, don't he, though? and we dance sometimes, and do gymnastics to music. I like a drum myself, and mean to learn as soon as ever I can.\""
         },
         {
           "type": "paragraph",
@@ -6833,7 +6915,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Could I? Oh, I would like it ever so much. You see, I used to go round fiddling with my father, and another man, till he died.\""
+          "text": "\"Could I? Oh, I would like it ever so much. You see I used to go round fiddling with my father, and another man, till he died.\""
         },
         {
           "type": "paragraph",
@@ -6841,7 +6923,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"No, it was horrid; so cold in winter, and hot in summer. And I got tired; and they were cross sometimes; and I didn't get enough to eat.\" Nat paused to take a generous bite of gingerbread, as if to assure himself that the hard times were over; and then he added regretfully:—\"But I did love my little fiddle, and I miss it. Nicolo took it away when father died, and wouldn't have me any longer, 'cause I was sick.\""
+          "text": "\"No, it was horrid; so cold in winter, and hot in summer. And I got tired; and they were cross sometimes; and I didn't have enough to eat.\" Nat paused to take a generous bite of gingerbread, as if to assure himself that the hard times were over; and then he added regretfully,—\"But I did love my little fiddle, and I miss it. Nicolo took it away when father died, and wouldn't have me any longer, 'cause I was sick.\""
         },
         {
           "type": "paragraph",
@@ -6849,7 +6931,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Do you have a band here?\" Nat's eyes sparkled."
+          "text": "\"Do you have a band here?\" And Nat's eyes sparkled."
         },
         {
           "type": "paragraph",
@@ -6865,7 +6947,7 @@
         },
         {
           "type": "paragraph",
-          "text": "In the letter which Mr. Laurence had sent with Nat, he had said:—"
+          "text": "In the letter which Mr. Laurence had sent with Nat, he had said—"
         },
         {
           "type": "paragraph",
@@ -6877,7 +6959,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Of course we will!\" cried Mrs. Bhaer, as she read the letter; and when she saw Nat she felt at once that, whether he was a genius or not, here was a lonely, sick boy who needed just what she loved to give, a home and motherly care. Both she and Mr. Bhaer observed him quietly; and in spite of ragged clothes, awkward manners, and a dirty face, they saw much about Nat that pleased them. He was a thin, pale boy, of twelve, with blue eyes, and a good forehead under the rough, neglected hair; an anxious, scared face, at times, as if he expected hard words, or blows; and a sensitive mouth that trembled when a kind glance fell on him; while a gentle speech called up a look of gratitude, very sweet to see. \"Bless the poor dear, he shall fiddle all day long if he likes,\" said Mrs. Bhaer to herself, as she saw the eager, happy expression on his face when Tommy talked of the band."
+          "text": "\"Of course we will!\" cried Mrs. Bhaer, as she read the letter; and when she saw Nat, she felt at once that whether he was a genius or not, here was a lonely, sick boy, who needed just what she loved to give, a home, and motherly care. Both she and Mr. Bhaer observed him quietly; and in spite of ragged clothes, awkward manners, and a dirty face, they saw much about Nat that pleased them. He was a thin, pale boy, of twelve, with blue eyes, and a good forehead under the rough, neglected hair; an anxious, scared face, at times, as if he expected hard words, or blows; and a sensitive mouth, that trembled when a kind glance fell on him; while a gentle speech called up a look of gratitude, very sweet to see. \"Bless the poor dear, he shall fiddle all day long if he likes,\" said Mrs. Bhaer to herself, as she saw the eager, happy expression on his face when Tommy talked of the band."
         }
       ],
       "questions": [
@@ -6907,7 +6989,7 @@
             "Mr. Laurence offers to develop his talent later, while she recognizes immediate needs regardless of exceptional ability. Separate worth as a person from future achievement."
           ],
           "evidence": [
-            "whether he was a genius or not, here was a lonely, sick boy who needed just what she loved to give"
+            "whether he was a genius or not, here was a lonely, sick boy, who needed just what she loved to give"
           ],
           "id": "reading-4-w11-d3-q3"
         }
@@ -6929,13 +7011,13 @@
       "challenge": "Notice changes in the room as attention moves from appearance to ability.",
       "focus": "Emotional turning point",
       "context": "Mrs. Bhaer has overheard that Nat misses playing the violin. After supper she offers him an instrument while the other children play noisily nearby.",
-      "contentNote": "The original uses a dated racial term to identify a melody. Explain its historical usage without asking children to repeat it. Nat cries while remembering earlier hardship.",
+      "contentNote": "The original uses a dated racial term, then the usual name, to identify a kind of melody. Nat cries while remembering earlier hardship.",
       "excerpt": {
         "locator": "Boston: Roberts Brothers, 1871; Chapter 1; https://en.wikisource.org/wiki/Little_Men/Chapter_1; consecutive transcript paragraphs 101–120; opens “So, after supper, when the lads flocked into the school-room for more \"high jinks,\" Mrs. Jo”; closes “sey and have a bath, and then go to bed, and to-morrow we will lay some nice little plans together.\"”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w11-d3",
         "continuesTo": "reading-4-w11-d5",
-        "textHash": "95b901a192a3449bef8a416e905738fb88d8ce06f3406520efacac25d46a55c8"
+        "textHash": "7c1cf7d6005462327164f0456002c8a49c688e112f793d1b0fea7a4fdaf2e641"
       },
       "blocks": [
         {
@@ -6956,7 +7038,7 @@
         },
         {
           "type": "paragraph",
-          "text": "There was a great clatter in the room, but as if deaf to any sounds but those he made, Nat played softly to himself, forgetting every thing in his delight. It was only a simple Negro melody, such as street-musicians play, but it caught the ears of the boys at once, and silenced them, till they stood listening with surprise and pleasure. Gradually they got nearer and nearer, and Mr. Bhaer came up to watch the boy; for, as if he was in his element now, Nat played away and never minded any one, while his eyes shone, his cheeks reddened, and his thin fingers flew, as he hugged the old fiddle and made it speak to all their hearts the language that he loved."
+          "text": "There was a great clatter in the room, but as if deaf to any sounds but those he made, Nat played softly to himself, forgetting every thing in his delight. It was only a simple negro melody, such as street-musicians play, but it caught the ears of the boys at once, and silenced them, till they stood listening with surprise and pleasure. Gradually they got nearer and nearer, and Mr. Bhaer came up to watch the boy; for, as if he was in his element now, Nat played away and never minded any one, while his eyes shone, his cheeks reddened, and his thin fingers flew, as he hugged the old fiddle and made it speak to all their hearts the language that he loved."
         },
         {
           "type": "paragraph",
@@ -6972,7 +7054,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"You shall be the first fiddle in my band,\" added Franz, with an approving smile."
+          "text": "\"You shall be first fiddle in my band,\" added Franz, with an approving smile."
         },
         {
           "type": "paragraph",
@@ -6988,11 +7070,11 @@
         },
         {
           "type": "paragraph",
-          "text": "It was the proudest, happiest minute of the poor boy's life when he was led to the place of honor by the piano, and the lads gathered round, never heeding his poor clothes, but eying him respectfully and waiting eagerly to hear him play again."
+          "text": "It was the proudest, happiest minute of the poor boy's life when he was led to the place of honor by the piano, and the lads gathered round, never heeding his poor clothes, but eying him respectfully, and waiting eagerly to hear him play again."
         },
         {
           "type": "paragraph",
-          "text": "They chose a song he knew; and after one or two false starts they got going, and violin, flute, and piano led a chorus of boyish voices that made the old roof ring again. It was too much for Nat, more feeble than he knew; and as the final shout died away, his face began to work, he dropped the fiddle, and turning to the wall sobbed like a little child."
+          "text": "They chose a song he knew; and after one or two false starts they got going, and violin, flute, and piano led a chorus of boyish voices that made the old roof ring again. It was too much for Nat, more feeble than he knew; and as the final shout died away, his face began to work, he dropped the fiddle, and turning to the wall, sobbed like a little child."
         },
         {
           "type": "paragraph",
@@ -7000,7 +7082,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"You are all so kind and it's so beautiful I can't help it,\" sobbed Nat, coughing till he was breathless."
+          "text": "\"You are all so kind—and it's so beautiful—I can't help it,\" sobbed Nat, coughing till he was breathless."
         },
         {
           "type": "paragraph",
@@ -7042,7 +7124,7 @@
             "Joy, relief and exhaustion can coexist. She moves him to a quieter room, listens, and promises care rather than treating tears as ingratitude."
           ],
           "evidence": [
-            "You are all so kind and it's so beautiful I can't help it"
+            "You are all so kind—and it's so beautiful—I can't help it"
           ],
           "id": "reading-4-w11-d4-q3"
         }
@@ -7064,18 +7146,18 @@
       "challenge": "Read rules in relation to the reasons and promises behind them.",
       "focus": "Negotiation and a closing image",
       "context": "After music and supper, Nat is taken upstairs for a bath and a comfortable bed. He is surprised to discover that Plumfield permits a weekly pillow fight.",
-      "contentNote": "Historical bedtime remedies are mentioned as part of the story. The pillow-fight scene includes minor accidents and adult supervision; it is not an instruction to reproduce the activity.",
+      "contentNote": "Historical bedtime remedies are mentioned as part of the story.",
       "excerpt": {
-        "locator": "Boston: Roberts Brothers, 1871; Chapter 1; https://en.wikisource.org/wiki/Little_Men/Chapter_1; consecutive transcript paragraphs 121–142; opens “Nat held her hand fast in his, but had not a word to say, and let his grateful eyes speak ”; closes “-night frolic, as Mother Bhaer kissed her new boy and left him to happy dreams of life at Plumfield.”.",
+        "locator": "Boston: Roberts Brothers, 1871; Chapter 1; https://en.wikisource.org/wiki/Little_Men/Chapter_1; consecutive transcript paragraphs 121–142; opens “Nat held her hand fast in his, but had not a word to say, and let his grateful eyes speak ”; closes “night frolic, as Mother Bhaer kissed her new boy, and left him to happy dreams of life at Plumfield.”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w11-d4",
         "continuesTo": null,
-        "textHash": "4806fbd620b5b70b7021e3f1bf16907cb79af22d0b2a426d430fdda14a25b0a1"
+        "textHash": "c7b55de51cb77e274293bb34de7d97c40194783593e85af521b21a55142eb76b"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Nat held her hand fast in his, but had not a word to say, and let his grateful eyes speak for him, as Mrs. Bhaer led him up to a big room, where they found a stout German woman with a face so round and cheery that it looked like a sort of sun, with the wide frill of her cap for rays."
+          "text": "Nat held her hand fast in his, but had not a word to say, and let his grateful eyes speak for him, as Mrs. Bhaer led him up to a big room, where they found a stout German woman with a face so round and cheery, that it looked like a sort of sun, with the wide frill of her cap for rays."
         },
         {
           "type": "paragraph",
@@ -7099,11 +7181,11 @@
         },
         {
           "type": "paragraph",
-          "text": "Nursey approved the plan, finished Nat off with a flannel night-gown, a drink of something warm and sweet, and then tucked him into one of the three little beds standing in the room, where he lay looking like a contented mummy and feeling that nothing more in the way of luxury could be offered him. Cleanliness in itself was a new and delightful sensation; flannel gowns were unknown comforts in his world; sips of \"good stuff\" soothed his cough as pleasantly as kind words did his lonely heart; and the feeling that somebody cared for him made that plain room seem a sort of heaven to the homeless child. It was like a cosy dream; and he often shut his eyes to see if it would not vanish when he opened them again. It was too pleasant to let him sleep, and he could not have done so if he had tried, for in a few minutes one of the peculiar institutions of Plumfield was revealed to his astonished but appreciative eyes."
+          "text": "Nursey approved the plan, finished Nat off with a flannel night-gown, a drink of something warm and sweet, and then tucked him into one of the three little beds standing in the room, where he lay looking like a contented mummy, and feeling that nothing more in the way of luxury could be offered him. Cleanliness in itself was a new and delightful sensation; flannel gowns were unknown comforts in his world; sips of \"good stuff\" soothed his cough as pleasantly as kind words did his lonely heart; and the feeling that somebody cared for him made that plain room seem a sort of heaven to the homeless child. It was like a cosy dream; and he often shut his eyes to see if it would not vanish when he opened them again. It was too pleasant to let him sleep, and he could not have done so if he had tried, for in a few minutes one of the peculiar institutions of Plumfield was revealed to his astonished but appreciative eyes."
         },
         {
           "type": "paragraph",
-          "text": "A momentary lull in the aquatic exercises was followed by the sudden appearance of pillows flying in all directions, hurled by white goblins, who came rioting out of their beds. The battle raged in several rooms, all down the upper hall, and even surged at intervals into the nursery, when some hard-pressed warrior took refuge there. No one seemed to mind this explosion in the least; no one forbade it, or even looked surprised. Nursey went on hanging up towels, and Mrs. Bhaer laid out clean clothes, as calmly as if the most perfect order reigned. Nay, she even chased one daring boy out of the room, and fired after him the pillow he had slyly thrown at her."
+          "text": "A momentary lull in the aquatic exercises was followed by the sudden appearance of pillows flying in all directions, hurled by white goblins, who came rioting out of their beds. The battle raged in several rooms, all down the upper hall, and even surged at intervals into the nursery, when some hard-pressed warrior took refuge there. No one seemed to mind this explosion in the least; no one forbade it, or even looked surprised. Nursey went on hanging up towels, and Mrs. Bhaer looked out clean clothes, as calmly as if the most perfect order reigned. Nay, she even chased one daring boy out of the room, and fired after him the pillow he had slyly thrown at her."
         },
         {
           "type": "paragraph",
@@ -7111,7 +7193,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Oh dear, no! We always allow one pillow-fight Saturday night. The cases are changed to-morrow; and it gets up a glow after the boys' baths; so I rather like it myself,\" said Mrs. Bhaer, busy again among her dozen pairs of socks."
+          "text": "\"Oh dear, no! we always allow one pillow-fight Saturday night. The cases are changed to-morrow; and it gets up a glow after the boys' baths; so I rather like it myself,\" said Mrs. Bhaer, busy again among her dozen pairs of socks."
         },
         {
           "type": "paragraph",
@@ -7119,7 +7201,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"It's an odd one,\" laughed Mrs. Bhaer, \"but you see we don't believe in making children miserable by too many rules, and too much study. I forbade night-gown parties at first; but, bless you, it was of no use. I could no more keep those boys in their beds than so many jacks in the box. So I made an agreement with them: I was to allow a fifteen-minute pillow-fight every Saturday night; and they promised to go properly to bed every other night. I tried it, and it worked well. If they don't keep their word, no frolic; if they do, I just turn the glasses round, put the lamps in safe places, and let them rampage as much as they like.\""
+          "text": "\"It's an odd one,\" laughed Mrs. Bhaer; \"but you see we don't believe in making children miserable by too many rules, and too much study. I forbade night-gown parties at first; but, bless you, it was of no use. I could no more keep those boys in their beds, than so many jacks in the box. So I made an agreement with them: I was to allow a fifteen-minute pillow-fight, every Saturday night; and they promised to go properly to bed, every other night. I tried it, and it worked well. If they don't keep their word, no frolic; if they do, I just turn the glasses round, put the lamps in safe places, and let them rampage as much as they like.\""
         },
         {
           "type": "paragraph",
@@ -7127,11 +7209,11 @@
         },
         {
           "type": "paragraph",
-          "text": "Tommy Bangs led the assailing party, and Demi defended his own room with a dogged courage fine to see, collecting pillows behind him as fast as they were thrown, till the besiegers were out of ammunition, when they would charge upon him in a body, and recover their arms. A few slight accidents occurred, but nobody minded, and gave and took sounding thwacks with perfect good humor, while pillows flew like big snow flakes, till Mrs. Bhaer looked at her watch, and called out—"
+          "text": "Tommy Bangs led the assailing party, and Demi defended his own room with a dogged courage, fine to see, collecting pillows behind him as fast as they were thrown, till the besiegers were out of ammunition, when they would charge upon him in a body, and recover their arms. A few slight accidents occurred, but nobody minded, and gave and took sounding thwacks with perfect good humor, while pillows flew like big snow flakes, till Mrs. Bhaer looked at her watch, and called out—"
         },
         {
           "type": "paragraph",
-          "text": "\"Time is up, boys. Into bed, every man jack, or pay the forfeit!\""
+          "text": "\"Time is up, boys. Into bed, every man Jack, or pay the forfeit!\""
         },
         {
           "type": "paragraph",
@@ -7143,7 +7225,7 @@
         },
         {
           "type": "paragraph",
-          "text": "That was evident, for the battle ended as abruptly as it began—a parting shot or two, a final cheer, as Demi fired the seventh pillow at the retiring foe, a few challenges for next time, then order prevailed. And nothing but an occasional giggle or a suppressed whisper broke the quiet which followed the Saturday-night frolic, as Mother Bhaer kissed her new boy and left him to happy dreams of life at Plumfield."
+          "text": "That was evident, for the battle ended as abruptly as it began—a parting shot or two, a final cheer, as Demi fired the seventh pillow at the retiring foe, a few challenges for next time, then order prevailed;and nothing but an occasional giggle, or a suppressed whisper, broke the quiet which followed the Saturday-night frolic, as Mother Bhaer kissed her new boy, and left him to happy dreams of life at Plumfield."
         }
       ],
       "questions": [
@@ -7163,7 +7245,7 @@
             "A fifteen-minute Saturday pillow fight is exchanged for proper bedtime behavior on other nights. Note both permission and the consequence of losing the next frolic."
           ],
           "evidence": [
-            "I was to allow a fifteen-minute pillow-fight every Saturday night"
+            "I was to allow a fifteen-minute pillow-fight, every Saturday night"
           ],
           "id": "reading-4-w11-d5-q2"
         },
@@ -7887,7 +7969,7 @@
       "challenge": "Follow a conversation that moves from a defence to classification and then to independent observation.",
       "focus": "The difference between hearing an explanation and looking carefully for oneself.",
       "context": "The group has called a grasshopper’s unpleasant defensive fluid “molasses”; it is not kitchen syrup. Read the conversation for changes of subject, then reread the closing sound words aloud.",
-      "contentNote": "Mentions insects being eaten. “Mule-killer” is a historical nickname discussed by the narrator, not an instruction or an established description of danger.",
+      "contentNote": "“Mule-killer” is a historical nickname discussed by the narrator.",
       "excerpt": {
         "locator": "The Insect Folk — The Grasshopper Tribes: Watching and Wondering; source transcription lines 2590–2659; opens “John says he hates to touch the grasshopper on account of this molasses.”; closes “And this I am sure of; if you really watch and listen, you can learn to know the different insects by their sounds, just as you can know the birds by their songs. You can even tell whether you are listening to the meadow grasshopper, or the locust.”.",
         "isCompleteWork": false,
@@ -8046,7 +8128,7 @@
       "challenge": "Trace how a goal changes after disappointment.",
       "focus": "The search for a landscape leads to an unexpected gift.",
       "context": "Unable to see open countryside from a city window, Heidi asks Sebastian where she could obtain a wide view.",
-      "contentNote": "Heidi wanders into unfamiliar city streets alone in this fictional episode. Discuss her misunderstanding and the adults’ responses, rather than treating the trip as a model to follow.",
+      "contentNote": null,
       "excerpt": {
         "locator": "Chapter VII, Miss Rottenmeier Has an Uncomfortable Day; begins “In the afternoon, while Clara was resting, Heidi was left to herself. She planted herself in the hal”; ends “\"No. Please send them to Clara; she will like them, I am sure.\"”.",
         "isCompleteWork": false,
@@ -10092,7 +10174,7 @@
       "challenge": "Use two earlier rules to explain apparently contradictory testimony.",
       "focus": "Resolution and responsibility",
       "context": "The horse dealer has accused the children of possessing stolen gold and sent for a policeman. Jane has truthfully said they found it in the gravel pit, but the magical explanation sounds impossible to the adults.",
-      "contentNote": "Adults use demeaning historical language about mental illness and threaten institutional confinement. Their mistaken judgments are part of the conflict, not medical facts or recommended conduct.",
+      "contentNote": "Adults use demeaning period language about mental illness and threaten institutional confinement.",
       "excerpt": {
         "locator": "New York: Dodd, Mead & Company, 1905; Chapter 2; https://www.gutenberg.org/ebooks/17314; consecutive transcript paragraphs 138–163; opens “\"Next article,\" said the man.”; closes “ at all a nice man, and, besides, penny buns are seven for sixpence in all really respectable shops.”.",
         "isCompleteWork": false,
@@ -10672,12 +10754,12 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": "reading-4-w17-d2",
-        "textHash": "c2a1deb088407ec21f045d5d18617bc369dbbcfb03a9e1f69b6c3f92293e71b7"
+        "textHash": "650f941d1dd314428196f4687442d5f3fbda4d1f3adf921e3d5a3d0898e46e49"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "THE moment the bell rang next morning Nat flew out of bed, and dressed himself with great satisfaction in the suit of clothes he found on the chair. They were not new, being half-worn garments of one of the well-to-do boys; but Mrs. Bhaer kept all such cast-off feathers for the picked robins who strayed into her nest. They were hardly on when Tommy appeared in a high state of clean collar, and escorted Nat down to breakfast."
+          "text": "THE moment the bell rang next morning Nat flew out of bed, and dressed himself with great satisfaction in the suit of clothes he found on the chair. They were not new, being half-worn garments of one of the well to-do boys; but Mrs. Bhaer kept all such cast-off feathers for the picked robins who strayed into her nest. They were hardly on when Tommy appeared in a high state of clean collar, and escorted Nat down to breakfast."
         },
         {
           "type": "paragraph",
@@ -10689,7 +10771,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Every one scattered to his or her task, for each had some little daily duty, and was expected to perform it faithfully. Some brought wood and water, brushed the steps, or ran errands for Mrs. Bhaer. Others fed the pet animals, and did chores about the barn with Franz. Daisy washed the cups, and Demi wiped them, for the twins liked to work together, and Demi had been taught to make himself useful in the little house at home. Even Baby Teddy had his small job to do, and trotted to and fro, putting napkins away, and pushing chairs into their places. For half and hour the lads buzzed about like a hive of bees, then the 'bus drove round, Father Bhaer and Franz with the eight older boys piled in, and away they went for a three-mile drive to church in town."
+          "text": "Every one scattered to his or her task, for each had some little daily duty, and was expected to perform it faithfully. Some brought wood and water, brushed the steps, or ran errands for Mrs. Bhaer. Others fed the pet animals, and did chores about the barn with Franz. Daisy washed the cups, and Demi wiped them, for the twins liked to work together, and Demi had been taught to make himself useful in the little house at home. Even baby Teddy had his small job to do, and trotted to and fro, putting napkins away, and pushing chairs into their places. For half an hour the lads buzzed about like a hive of bees, then the 'bus drove round, Father Bhaer and Franz with the eight older boys piled in, and away they went for a three mile drive to church in town."
         },
         {
           "type": "paragraph",
@@ -10729,7 +10811,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"I'll try ma'am;\" and Nat's thin face flushed up with the earnestness of his desire to make Mrs. Bhaer \"glad and proud,\" not \"sorry and disappointed.\" \"It must be a great deal of trouble to write about so many,\" he added, as she shut her book with an encouraging pat on the shoulder."
+          "text": "\"I'll try, ma'am;\" and Nat's thin face flushed up with the earnestness of his desire to make Mrs. Bhaer \"glad and proud,\" not \"sorry and disappointed.\" \"It must be a great deal of trouble to write about so many,\" he added, as she shut her book with an encouraging pat on the shoulder."
         },
         {
           "type": "paragraph",
@@ -10755,7 +10837,7 @@
             "Follow the different chores, including Teddy’s napkins and chairs. The tasks vary by ability; shared work is part of belonging rather than reserved for older pupils."
           ],
           "evidence": [
-            "Even Baby Teddy had his small job to do"
+            "Even baby Teddy had his small job to do"
           ],
           "id": "reading-4-w17-d1-q1"
         },
@@ -10803,16 +10885,16 @@
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w17-d1",
         "continuesTo": "reading-4-w17-d3",
-        "textHash": "280ba34e7813fdbeabf890aade674aaf9f5b2ee3afdf502cf3cc101d4e9ea757"
+        "textHash": "88e3c0bbe2adcc12e8d304b207e78c407211c86e808716c328ed3b1b0e98631f"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "When the church-goers came back and dinner was over, every one read, wrote letters home, said their Sunday lessons, or talked quietly to one another, sitting here and there about the house. At three o'clock the entire family turned out to walk, for all the active young bodies must have exercise; and in these walks the active young minds were taught to see and love the providence of God in the beautiful miracles which Nature was working before their eyes. Mr. Bhaer always went with them, and in his simple, fatherly way, found for his flock, \"Sermons in stones, books in the running brooks, and good in every thing.\""
+          "text": "When the church-goers came back and dinner was over, every one read, wrote letters home, said their Sunday lessons, or talked quietly to one another, sitting here and there about the house. At three o'clock the entire family turned out to walk, for all the active young bodies must have exercise; and in these walks the active young minds were taught to see and love the providence of God in the beautiful miracles which Nature was working before their eyes. Mr. Bhaer always went with them, and in his simple, fatherly way, found for his flock \"Sermons in stones, books in the running brooks, and good in every thing.\""
         },
         {
           "type": "paragraph",
-          "text": "Mrs. Bhaer with Daisy and her own two boys drove into town, to pay the weekly visit to Grandma, which was busy Mother Bhaer's one holiday and greatest pleasure. Nat was not strong enough for the long walk, and asked to stay at home with Tommy, who kindly offered to do the honors of Plumfield. \"You've seen the house, so come out and have a look at the garden, and the barn, and the menagerie,\" said Tommy, when they were left alone with Asia, to see that they didn't get into mischief; for, though Tommy was one of the best-meaning boys who ever adorned knickerbockers, accidents of the most direful nature were always happening to him, no one could exactly tell how."
+          "text": "Mrs. Bhaer with Daisy and her own two boys drove into town, to pay the weekly visit to Grandma, which was busy Mother Bhaer's one holiday and greatest pleasure. Nat was not strong enough for the long walk, and asked to stay at home with Tommy, who kindly offered to do the honors of Plumfield. \"You've seen the house, so come out and have a look at the garden, and the barn, and the menagerie,\" said Tommy, when they were left alone with Asia, to see that they didn't get into mischief; for, though Tommy was one of the best meaning boys who ever adorned knickerbockers, accidents of the most direful nature were always happening to him, no one could exactly tell how."
         },
         {
           "type": "paragraph",
@@ -10820,7 +10902,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"We all have pets, you see, and we keep 'em in the corn-barn, and call it the menagerie. Here you are. Isn't my guinea-pig a beauty?\" and Tommy proudly presented one of the ugliest specimens of that pleasing animal that Nat ever saw."
+          "text": "\"We all have pets you see, and we keep 'em in the corn-barn, and call it the menagerie. Here you are. Isn't my guinea-pig a beauty?\" and Tommy proudly presented one of the ugliest specimens of that pleasing animal that Nat ever saw."
         },
         {
           "type": "paragraph",
@@ -10844,7 +10926,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"The big dog is Emil's. His name is Christopher Columbus. Mrs. Bhaer named him because she likes to say Christopher Columbus, and no one minds it if she means the dog,\" answered Tommy, in the tone of a show-man displaying his menagerie. \"The white pup is Rob's, and the yellow one is Teddy's. A man was going to drown them in our pond, and Pa Bhaer wouldn't let him. They do well enough for the little chaps, I don't think much of 'em myself. Their names are Castor and Pollux.\""
+          "text": "\"The big dog is Emil's. His name is Christopher Columbus. Mrs. Bhaer named him because she likes to say Christopher Columbus, and no one minds it if she means the dog,\" answered Tommy, in the tone of a showman displaying his menagerie. \"The white pup is Rob's, and the yellow one is Teddy's. A man was going to drown them in our pond and Pa Bhaer wouldn't let him. They do well enough for the little chaps, I don't think much of 'em myself. Their names are Castor and Pollux.\""
         },
         {
           "type": "paragraph",
@@ -10864,7 +10946,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"We find 'em or buy 'em, or folks give 'em to us. My father sends me mine; but as soon as I get egg money enough, I'm going to buy a pair of ducks. There's a nice little pond for 'em behind the barn, and people pay well for duck-eggs, and the little duckies are pretty, and it's fun to see 'em swim,\" said Tommy, with the air of a millionaire."
+          "text": "\"We find 'em, or buy 'em, or folks give 'em to us. My father sends me mine; but as soon as I get egg money enough, I'm going to buy a pair of ducks. There's a nice little pond for 'em behind the barn, and people pay well for duck-eggs, and the little duckies are pretty, and it's fun to see 'em swim,\" said Tommy, with the air of a millionnaire."
         },
         {
           "type": "paragraph",
@@ -10954,12 +11036,12 @@
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w17-d2",
         "continuesTo": "reading-4-w17-d4",
-        "textHash": "e9ec7b34fefa31f48a6ce6371a5a84e8243894f42f4bcb7b8c92dc5520329682"
+        "textHash": "5a2815d41a734042efa689691cf342d1f1f2d8f314d831c32cb6730f181c4b00"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Poor Nat found them so fascinating that he was with difficulty persuaded to go and deposit his first piece of portable property in Asia's store-room. Then they went on again, and having made the acquaintance of the two horses, six cows, three pigs, and one Alderney \"Bossy,\" as calves are called in New England, Tommy took Nat to a certain old willow-tree that overhung a noisy little brook. From the fence it was an easy scramble into a wide niche between the three big branches, which had been cut off to send out from year to year a crowd of slender twigs, till a green canopy rustled overhead. Here little seats had been fixed, and a hollow place a closet made big enough to hold a book or two, a dismantled boat, and several half-finished whistles."
+          "text": "Poor Nat found them so fascinating that he was with difficulty persuaded to go and deposit his first piece of portable property in Asia's store-room. Then they went on again, and having made the acquaintance of the two horses, six cows, three pigs, and one Alderney \"Bossy,\" as calves are called in New England, Tommy took Nat to a certain old willow-tree that overhung a noisy little brook. From the fence it was an easy scramble into a wide niche between the three big branches, which had been cut off to send out from year to year a crowd of slender twigs, till a green canopy rustled overhead. Here little seats had been fixed, and in a hollow place a closet made big enough to hold a book or two, a dismantled boat, and several half-finished whistles."
         },
         {
           "type": "paragraph",
@@ -11007,7 +11089,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"No; he isn't a bit cross; he sort of explains and gives you a boost over the hard places. Some folks don't; my other master didn't. If we missed a word, didn't we get raps on the head!\" and Tommy rubbed his own pate as if it tingled yet with the liberal supply of raps, the memory of which was the only thing he brought away after a year with his \"other master.\""
+          "text": "\"No, he isn't a bit cross; he sort of explains and gives you a boost over the hard places. Some folks don't; my other master didn't. If we missed a word, didn't we get raps on the head!\" and Tommy rubbed his own pate as if it tingled yet with the liberal supply of raps, the memory of which was the only thing he brought away after a year with his \"other master.\""
         },
         {
           "type": "paragraph",
@@ -11019,11 +11101,11 @@
         },
         {
           "type": "paragraph",
-          "text": "So Nat did his best, and floundered through a page with may friendly \"boosts\" from Tommy, who told him he would soon \"go it\" as well as anybody. Then they sat and talked boy-fashion about all sorts of things, among others, gardening; for Nat, looking down from his perch, asked what was planted in the many little patches lying below them on the other side of the brook."
+          "text": "So Nat did his best, and floundered through a page with many friendly \"boosts\" from Tommy, who told him he would soon \"go it\" as well as anybody. Then they sat and talked boy-fashion about all sorts of things, among others, gardening; for Nat, looking down from his perch, asked what was planted in the many little patches lying below them on the other side of the brook."
         },
         {
           "type": "paragraph",
-          "text": "\"These are our farms,\" said Tommy. \"We each have our own patch, and raise what we like in it, only have to choose different things, and can't change till the crop is in, and we must keep it in order all summer.\""
+          "text": "\"These are our farms,\" said Tommy. \"We each have our own patch, and raise what we like in it, only we have to choose different things, and can't change till the crop is in, and we must keep it in order all summer.\""
         },
         {
           "type": "paragraph",
@@ -11051,7 +11133,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"I wonder if I shall have a garden?\" said Nat, thinking that even corn-hoeing must be pleasant work."
+          "text": "\"I wonder if I shall have a garden?\" said Nat, thinking that even corn hoeing must be pleasant work."
         },
         {
           "type": "paragraph",
@@ -11063,7 +11145,7 @@
         },
         {
           "type": "paragraph",
-          "text": "In descending from their nest, Tommy fell into the brook; being used to it, he calmly picked himself out and retired to the house to be dried. This left Nat to Mr. Bhaer, which was just what he wished, and, during the stroll they took among the garden plots, he won the lad's heart by giving him a little \"farm,\" and discussing crops with him as gravely as if the food for the family depended on the harvest. From this pleasant topic they went to others, and Nat had many new and helpful thoughts put into a mind that received them as gratefully as the thirsty earth had received the warm spring rain. All supper time he brooded over them, often fixing his eyes on Mr. Bhaer with an inquiring look, that seemed to say,—\"I like that, do it again, sir.\" I don't know whether the man understood the child's mute language or not, but when the boys were all gathered together in Mrs. Bhaer's parlor for the Sunday evening talk, he chose a subject which might have been suggested by the walk in the garden."
+          "text": "In descending from their nest, Tommy fell into the brook; being used to it he calmly picked himself out and retired to the house to be dried. This left Nat to Mr. Bhaer, which was just what he wished, and, during the stroll they took among the garden plots, he won the lad's heart by giving him a little \"farm,\" and discussing crops with him as gravely as if the food for the family depended on the harvest. From this pleasant topic they went to others, and Nat had many new and helpful thoughts put into a mind that received them as gratefully as the thirsty earth had received the warm spring rain. All supper time he brooded over them, often fixing his eyes on Mr. Bhaer with an inquiring look, that seemed to say,—\"I like that, do it again, sir.\" I don't know whether the man understood the child's mute language or not, but when the boys were all gathered together in Mrs. Bhaer's parlor for the Sunday evening talk, he chose a subject which might have been suggested by the walk in the garden."
         }
       ],
       "questions": [
@@ -11117,20 +11199,20 @@
       "context": "After Mr. Bhaer gives Nat a garden plot, the household gathers for an evening talk. Mr. Bhaer tells a gardener’s story whose meaning the children gradually recognize.",
       "contentNote": "The allegory uses Christian beliefs about God. The adult restricts story-reading and food and the narrator uses body-based teasing; these historical choices can be evaluated critically rather than treated as rules for today.",
       "excerpt": {
-        "locator": "Boston: Roberts Brothers, 1871; Chapter 3; https://en.wikisource.org/wiki/Little_Men/Chapter_3; consecutive transcript paragraphs 84–120; opens “As he looked about him Nat thought it seemed more like a great family than a school, for t”; closes “le Rob, how kept the tip of her nose for his own particular kisses, and then they trooped up to bed.”.",
+        "locator": "Boston: Roberts Brothers, 1871; Chapter 3; https://en.wikisource.org/wiki/Little_Men/Chapter_3; consecutive transcript paragraphs 84–120; opens “As he looked about him Nat thought it seemed more like a great family than a school, for t”; closes “le Rob,w ho kept the tip of her nose for his own particular kisses, and then they trooped up to bed.”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w17-d3",
         "continuesTo": "reading-4-w17-d5",
-        "textHash": "f94ecc0cc78cabe9911e7aa68c20a62edb3a3ad3c8f3744c8ad8f9d5e3685860"
+        "textHash": "ad28df803f97552aafdd12b61256c23028f9695463ca4b3fabdc5ffe65d15183"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "As he looked about him Nat thought it seemed more like a great family than a school, for the lads were sitting in a wide half-circle round the fire, some on chairs, some on the rug, Daisy and Demi on the knees of Uncle Fritz, and Rob snugly stowed away in the back of his mother's easy-chair, where he could nod unseen if the talk got beyond his depth. Every one looked quite comfortable, and listened attentively, for the long walk made rest agreeable, and as every boy there knew that he would be called upon for his views, he kept his wits awake to be ready with an answer."
+          "text": "As he looked about him Nat thought it seemed more like a great family than a school, for the lads were sitting in a wide half-circle round the fire, some on chairs, some on the rug, Daisy and Demi on the knees of uncle Fritz, and Rob snugly stowed away in the back of his mother's easy-chair, where he could nod unseen if the talk got beyond his depth. Every one looked quite comfortable, and listened attentively, for the long walk made rest agreeable, and as every boy there knew that he would be called upon for his views, he kept his wits awake to be ready with an answer."
         },
         {
           "type": "paragraph",
-          "text": "\"Once upon a time,\" began Mr. Bhaer, in the dear old-fashioned way, \"there was a great and wise gardener who had the largest garden ever seen. A wonderful and lovely place it was, and he watched over it with the greatest skill and care, and raised all manner of excellent and useful things. But weeds would grow even in this fine garden; often the ground was bad and the good seeds sown in it would not spring up. He had many under gardeners to help him. Some did their duty and earned the rich wages he gave them; but others neglected their parts and let them run to waste, which displeased him very much. But he was very patient, and for thousands and thousands of years he worked and waited for his great harvest.\""
+          "text": "\"Once upon a time,\" began Mr. Bhaer in the dear old-fashioned way, \"there was a great and wise gardener who had the largest garden ever seen. A wonderful and lovely place it was, and he watched over it with the greatest skill and care, and raised all manner of excellent and useful things. But weeds would grow even in this fine garden; often the ground was bad and the good seeds sown in it would not spring up. He had many under gardeners to help him. Some did their duty and earned the rich wages he gave them; but others neglected their parts and let them run to waste, which displeased him much. But he was very patient, and for thousands and thousands of years he worked and waited for his great harvest.\""
         },
         {
           "type": "paragraph",
@@ -11142,7 +11224,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"No, I think it's an arrygory,\" said Demi."
+          "text": "\"No, I think it's a arrygory,\" said Demi."
         },
         {
           "type": "paragraph",
@@ -11154,11 +11236,11 @@
         },
         {
           "type": "paragraph",
-          "text": "\"I do know, Grandpa told me! A fable is a arrygory; it's a story that means something. My 'Story without an end' is one, because the child in it means a soul; don't it, Aunty?\" cried Demi, eager to prove himself right."
+          "text": "\"I do know, grandpa told me! A fable is a arrygory; it's a story that means something. My 'Story without an end' is one, because the child in it means a soul; don't it, aunty?\" cried Demi, eager to prove himself right."
         },
         {
           "type": "paragraph",
-          "text": "\"That's it, dear; and Uncle's story is an allegory, I am quite sure; so listen and see what it means,\" returned Mrs. Jo, who always took part in whatever was going on, and enjoyed it as much as any boy among them."
+          "text": "\"That's it, dear; and uncle's story is an allegory, I am quite sure; so listen and see what it means,\" returned Mrs. Jo, who always took part in whatever was going on, and enjoyed it as much as any boy among them."
         },
         {
           "type": "paragraph",
@@ -11182,7 +11264,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"As I tell you, some of these beds were easy to cultivate,—that means to take care of Daisy,—and others were very hard. There was one particularly sunshiny little bed that might have been full of fruits and vegetables as well as flowers, only it wouldn't take any pains, and when the man sowed, well, we'll say melons in this bed, they came to nothing, because the little bed neglected them. The man was sorry, and kept on trying, though every time the crop failed, all the bed said, was, 'I forgot.'\""
+          "text": "\"As I tell you, some of these beds were easy to cultivate,—that means to take care of, Daisy,—and others were very hard. There was one particularly sunshiny little bed, that might have been full of fruits and vegetables as well as flowers, only it wouldn't take any pains, and when the man sowed, well, we'll say melons in this bed, they came to nothing, because the little bed neglected them. The man was sorry, and kept on trying, though every time the crop failed, all the bed said, was, 'I forgot.'\""
         },
         {
           "type": "paragraph",
@@ -11206,7 +11288,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Yes, each of you think what you need most, and tell me, and I will help you to grow it; only you must do your best, or you will turn out like Tommy's melons—all leaves and no fruit. I will begin with the oldest, and ask the mother what she will have in her plot, for we are all parts of the beautiful garden, and may have rich harvests for our Master if we love Him enough,\" said Father Bhaer."
+          "text": "\"Yes, each of you think what you need most, and tell me, and I will help you to grow it; only, you must do your best, or you will turn out like Tommy's melons—all leaves and no fruit. I will begin with the oldest, and ask the mother what she will have in her plot, for we are all parts of the beautiful garden, and may have rich harvests for our Master if we love Him enough,\" said Father Bhaer."
         },
         {
           "type": "paragraph",
@@ -11214,7 +11296,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Franz wanted perseverance, Tommy steadiness, Ned went in for good temper, Daisy for industry, Demi for \"as much wiseness as Grandpa,\" and Nat timidly said he wanted so many things he would let Mr. Bhaer choose for him. The others chose much the same things, and patience, good temper, and generosity seemed the favorite crops. One boy wished to like to get up early, but did not know what name to give that sort of seed; and poor Stuffy sighed out—"
+          "text": "Franz wanted perseverance, Tommy steadiness, Ned went in for good temper, Daisy for industry, Demi for \"as much wiseness as grandpa,\" and Nat timidly said he wanted so many things he would let Mr. Bhaer choose for him. The others chose much the same things, and patience, good temper, and generosity seemed the favorite crops. One boy wished to like to get up early, but did not know what name to give that sort of seed; and poor Stuffy sighed out—"
         },
         {
           "type": "paragraph",
@@ -11230,7 +11312,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"So they are; but I find you reading 'Roland and Maybird,' a great deal oftener than 'Harry and Lucy,' and I think you are not half so fond of 'Frank' as you are of 'Sinbad.' Come, I shall make a little bargain with you both,—George shall eat but three times a day, and you shall read but one story-book a week, and I will give you the new cricket-ground; only, you must promise to play in it,\" said Uncle Fritz, in his persuasive way, for Stuffy hated to run about, and Demi was always reading in play hours."
+          "text": "\"So they are; but I find you reading 'Roland and Maybird' a great deal oftener than 'Harry and Lucy,' and I think you are not halfa s fond of 'Frank' as you are of 'Sinbad.' Come, I shall make a little bargain with you both,—George shall eat but three times a day, and you shall read but one story book a week, and I will give you the new cricket-ground; only, you must promise to play in it,\" said Uncle Fritz in his persuasive way, for Stuffy hated to run about, and Demi was always reading in play hours."
         },
         {
           "type": "paragraph",
@@ -11242,11 +11324,11 @@
         },
         {
           "type": "paragraph",
-          "text": "This was taken them both on the right side, and they agreed to the bargain, to the great satisfaction of the rest."
+          "text": "This was taking them both on the right side, and they agreed to the bargain, to the great satisfaction of the rest."
         },
         {
           "type": "paragraph",
-          "text": "There was a little more talk about the gardens, and then they all sang together. The band delighted Nat, for Mrs. Bhaer played the piano, Franz the flute, Mr. Bhaer a bass viol, and he himself the violin. A very simple little concert, but all seemed to enjoy it, and old Asia, sitting in the corner, joined at times with the sweetest voice of any, for in this family, master and servant, old and young, black and white, shared in the Sunday song, which went up to the Father of them all. After this they each shook hands with Father Bhaer; Mother Bhaer kissed them every one from sixteen-year-old Franz to little Rob, how kept the tip of her nose for his own particular kisses, and then they trooped up to bed."
+          "text": "There was a little more talk about the gardens, and then they all sang together. The band delighted Nat, for Mrs. Bhaer played the piano, Franz the flute, Mr. Bhaer a bass viol, and he himself the violin. A very simple little concert, but all seemed to enjoy it, and old Asia, sitting in the corner, joined at times with the sweetest voice of any, for in this family, master and servant, old and young, black and white, shared in the Sunday song, which went up to the Father of them all. After this they each shook hands with Father Bhaer; Mother Bhaer kissed them every one from sixteen-year old Franz to little Rob,w ho kept the tip of her nose for his own particular kisses, and then they trooped up to bed."
         }
       ],
       "questions": [
@@ -11304,12 +11386,12 @@
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w17-d4",
         "continuesTo": null,
-        "textHash": "4cefb36785a355b234a574bf8f8a7c7f9c40d3255ff4e36b2696d76c7a2c8ad3"
+        "textHash": "01210704c50d6e229bff9dfe41ec7ec9f22643654557ed21340849a91386a57f"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "The light of the shaded lamp that burned in the nursery shone softly on a picture hanging at the foot of Nat's bed. There were several others on the walls, but the boy thought there must be something peculiar about this one, for it had a graceful frame of moss and cones about it, and on a little bracket underneath stood a vase of wild flowers freshly gathered from the spring woods. It was the most beautiful picture of them all, and Nat lay looking at it, dimly feeling what it meant, and wishing he knew all about it."
+          "text": "The light of the shaded lamp that burned in the nursery shone softly on a picture hanging at the foot of Nat's bed. There were several others on the walls, but the boy thought there must be something peculiar about this one, for it had a graceful frame of moss and cones about it, and on a little bracket underneath stood a vase of wild flowers freshly gathered from the spring woods. It was the most beautiful picture of them all, and Nat lay looking at it dimly feeling what it meant, and wishing he knew all about it."
         },
         {
           "type": "paragraph",
@@ -11365,7 +11447,7 @@
         },
         {
           "type": "paragraph",
-          "text": "And Demi gladly told on without pause or punctuation. \"I found a very pretty book one day and wanted to play with it, but Grandpa said I mustn't, and showed me the pictures, and told me about them, and I liked the stories very much, all about Joseph and his bad brothers, and the frogs that came up out of the sea, and dear little Moses in the water, and ever so many more lovely ones, but I liked about the Good Man best of all, and Grandpa told it to me so many times that I learned it by heart, and he gave me this picture so I shouldn't forget, and it was put up here once when I was sick, and I left it for other sick boys to see.\"'"
+          "text": "And Demi gladly told on without pause or punctuation. \"I found a very pretty book one day and wanted to play with it, but Grandpa said I mustn't, and showed me the pictures, and told me about them, and I liked the stories very much, all about Joseph and his bad brothers, and the frogs that came up out of the sea, and dear little Moses in the water, and ever so many more lovely ones, but I liked about the Good Man best of all, and Grandpa told it to me so many times that I learned it by heart, and he gave me this picture so I shouldn't forget, and it was put up here once when I was sick, and I left it for other sick boys to see.\""
         },
         {
           "type": "paragraph",
@@ -11381,7 +11463,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Yes, I think so; you see some haven't got hardly any clothes on, and the mothers don't look like rich ladies. He liked poor people, and was very good to them. He made them well, and helped them, and told rich people they must not be cross to them, and they loved Him dearly, dearly,\" cried Demi, with enthusiasm."
+          "text": "\"Yes, I think so; you see some haven't got hardly any clothes on, and the mothers don't look like rich ladies. He liked poor people, and was very good to them. He made them well, and helped them, and told rich people they must not be cross to them, and they loved Him dearly, dearly,\" cried Demi with enthusiasm."
         },
         {
           "type": "paragraph",
@@ -11409,7 +11491,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Mrs. Bhaer had meant to go and talk with Nat a moment before he slept, for she had found that a serious word spoken at this time often did much good. But when she stole to the nursery door, and saw Nat eagerly drinking in the words of his little friends, while Demi told the sweet and solemn story as it had been taught him, speaking softly as he sat with his beautiful eyes fixed on the tender face above them, her own filled with tears, and she went silently away, thinking to herself—"
+          "text": "Mrs. Bhaer had meant to go and talk with Nat a moment before he slept, for she had found that a serious word spoken at this time often did much good. But when she stole to the nursery door, and saw Nat eagerly drinking in the words of his little friend, while Demi told the sweet and solemn story as it had been taught him, speaking softly as he sat with his beautiful eyes fixed on the tender face above them, her own filled with tears, and she went silently away, thinking to herself—"
         },
         {
           "type": "paragraph",
@@ -11850,7 +11932,7 @@
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w18-d3",
         "continuesTo": "reading-4-w18-d5",
-        "textHash": "4d9c3464347545b52ca208407f2d96d6773277aa439cca743a83cf7b86b6f9e8"
+        "textHash": "a6aa9b3308376b25b213a91f13bc1f61bde0a0e64440d129b18a6188be016a3e"
       },
       "blocks": [
         {
@@ -11863,7 +11945,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Then Robin turned to Sir Richard of the Lea, and quoth he, \"Now, Sir Richard, the church seemed like to despoil thee, therefore some of the overplus of church gains may well be used in aiding thee. Thou shalt take that five hundred pounds laid aside for people more in need than the Bishop is, and shalt pay thy debts to Emmet therewith.\""
+          "text": "Then Robin turned to Sir Richard of the Lea, and quoth he, \"Now, Sir Richard, the church seemed like to despoil thee, therefore some of the overplus ot church gains may well be used in aiding thee. Thou shalt take that five hundred pounds laid aside for people more in need than the Bishop is, and shalt pay thy debts to Emmet therewith.\""
         },
         {
           "type": "paragraph",
@@ -13679,7 +13761,7 @@
       "challenge": "Hear what a character says while noticing qualifications and contradictions.",
       "focus": "Advice, kindness, and limits",
       "context": "After rain and an outing have interrupted wishing, Anthea rises early to speak privately with the Psammead. She wants their next wish to work out better.",
-      "contentNote": "A brief cautionary tale implies a boy’s fatal fall when magical wings become stone; there is no graphic description. The narrator’s head-banging wake-up trick is literary humor, not an activity to imitate.",
+      "contentNote": "A brief cautionary tale implies a boy’s fatal fall when magical wings become stone.",
       "excerpt": {
         "locator": "New York: Dodd, Mead & Company, 1905; Chapter 4; https://www.gutenberg.org/ebooks/17314; consecutive transcript paragraphs 18–52; opens “The day after Uncle Richard had behaved so handsomely was a very hot day indeed. The peopl”; closes “It jumped off her lap--dug frantically, and vanished.”.",
         "isCompleteWork": false,
@@ -14049,7 +14131,7 @@
       "challenge": "Distinguish reasons, excuses, and incomplete information.",
       "focus": "Argument and narrator commentary",
       "context": "The children’s wings frighten people who might otherwise sell them food. Hungry and tired, they settle on a church tower and see food through the nearby clergyman’s window.",
-      "contentNote": "The children take food without permission. A dog threatens them but does not bite. Cyril misquotes a historical saying to suit himself; the scene is not a model for obtaining food.",
+      "contentNote": "The children take food without permission, and a dog threatens them. Cyril misquotes a historical saying to suit himself.",
       "excerpt": {
         "locator": "New York: Dodd, Mead & Company, 1905; Chapter 4; https://www.gutenberg.org/ebooks/17314; consecutive transcript paragraphs 81–107; opens “This was the case in the matter of the fierce dog who sprang out at them when they had fol”; closes “ck themselves. The man appeared to live in Rochester, which would not be much out of their way home.”.",
         "isCompleteWork": false,
@@ -14216,7 +14298,7 @@
       "challenge": "Notice how comfort delays attention to an already established deadline.",
       "focus": "Suspense and consequences",
       "context": "The winged children have taken food and a soda-water syphon from a clergyman’s larder, leaving a letter and money. They eat on the church tower, still needing to get home before their wings vanish.",
-      "contentNote": "The narrator suggests a messy soda-syphon experiment; read it as a joke, not instructions to try. Children become trapped on a tower; no fall occurs.",
+      "contentNote": null,
       "excerpt": {
         "locator": "New York: Dodd, Mead & Company, 1905; Chapter 4; https://www.gutenberg.org/ebooks/17314; consecutive transcript paragraphs 108–123; opens “Everything was carried up to the top of the tower, and laid down on a sheet of kitchen pap”; closes “ be better employed in making up your minds what you would have done if you had been in their place.”.",
         "isCompleteWork": false,
@@ -14429,7 +14511,7 @@
       },
       "challenge": "Follow shifts from a description of flowers to comparisons with private thoughts and prayer.",
       "focus": "Quiet beauty and feeling that appear away from crowds.",
-      "context": "Some flowers open or become fragrant at night. The poem uses that natural pattern to imagine inward experiences; it is not a botanical instruction.",
+      "context": "Some flowers open or become fragrant at night. The poem uses that natural pattern to imagine inward experiences.",
       "contentNote": "The last stanza includes grief and private prayer as part of the speaker’s comparison.",
       "excerpt": {
         "locator": "Night-Blowing Flowers; source transcription lines 61812–61842; opens “Children of night! unfolding meekly, slowly,”; closes “            In silent hours to fill.”.",
@@ -15119,7 +15201,7 @@
       "challenge": "Separate reported information, a plan, and a guess within a letter.",
       "focus": "A friend’s voice travels through writing.",
       "context": "Spring has returned, and Heidi is back in the mountain hut. Grandfather is preparing for the hoped-for guests.",
-      "contentNote": "The letter repeats historical beliefs about mountain air and health. Read these as characters’ beliefs and enthusiasm, not as modern medical guidance.",
+      "contentNote": "The letter repeats period beliefs about mountain air and health.",
       "excerpt": {
         "locator": "Chapter XX, News from Distant Friends; begins “May had come. Warm sunshine was bathing the whole Alp in glorious light, and having melted the last ”; ends “I am your true friend, CLARA.”.",
         "isCompleteWork": false,
@@ -15250,7 +15332,7 @@
       "challenge": "Infer how physical arrangements affect a character’s freedom to participate.",
       "focus": "Hospitality made visible through actions.",
       "context": "Clara and Grandmama’s planned visit finally begins. Clara uses a rolling-chair, so the journey requires several people and careful preparation.",
-      "contentNote": "This translation uses “lame” for a person with limited mobility and briefly recalls a soldier’s death. Clara’s wishes and participation remain central; historical health claims are not medical advice.",
+      "contentNote": "This translation uses “lame” for a person with limited mobility, and the scene briefly recalls a soldier’s death.",
       "excerpt": {
         "locator": "Chapter XX, News from Distant Friends; begins “The blossom month had passed, and June, with the long, long days, had come. Quantities of flowers we”; ends “on't stop, our mountain wind helps along where the cooking is faulty!\" contentedly said the old man.”.",
         "isCompleteWork": false,
@@ -15583,7 +15665,7 @@
       "challenge": "Notice how questions turn a commonplace object into an investigation.",
       "focus": "Practical knowledge gives an inquiry a starting point.",
       "context": "The child wants to learn about caves, but passing carts lead the speaker to an ordinary farming question first.",
-      "contentNote": "This is nineteenth-century nature writing, with personification and historical scientific explanations. Read it as an argument to examine, not a current science textbook. The farmer’s terms “sour” and “sweet” describe historical observations of soil; this is not a soil-treatment recommendation.",
+      "contentNote": "This is nineteenth-century nature writing, with personification and the scientific explanations of its time. The farmer’s terms “sour” and “sweet” describe soil as it was observed then.",
       "excerpt": {
         "locator": "Chapter VII, The Chalk-Carts; begins “Well, we will talk about that in good time: but now--What is that coming down the hill?”; ends “But how can these lumps of chalk hold water?  They are not made like cups.”.",
         "isCompleteWork": false,
@@ -15854,7 +15936,7 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": "reading-4-w25-d2",
-        "textHash": "46a292dbf7733e30b21b648b3530e9d270e3b46772a0ddec38c724824e4191de"
+        "textHash": "5ecd48e3e3ee2145b790cfd65359297bb38d72785ecdf075798b7a434795dac7"
       },
       "blocks": [
         {
@@ -15895,7 +15977,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"I should like to go and see her and Baby Josy, but I'd rather come back, please. Demi would miss me, and I love to be here, Aunty.\""
+          "text": "\"I should like to go and see her and baby Josy, but I'd rather come back please. Demi would miss me, and I love to be here, Aunty.\""
         },
         {
           "type": "paragraph",
@@ -15907,7 +15989,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Now, what will you do with your little self while I fly around?\" asked Mrs. Bhaer, who was whisking piles of linen into a wardrobe with great rapidity."
+          "text": "\"Now, what will you do with your little self while I fly round?\" asked Mrs. Bhaer, who was whisking piles of linen into a wardrobe with great rapidity."
         },
         {
           "type": "paragraph",
@@ -15915,7 +15997,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"I shall have to think of a brand new one, and it will take me some time; so suppose you go down and see what Asia has got for your lunch,\" suggested Mrs. Bhaer, thinking that would be a good way in which to dispose of the little hindrance for a time."
+          "text": "\"I shall have to think of a bran new one, and it will take me some time; so suppose you go down and see what Asia has got for your lunch,\" suggested Mrs. Bhaer, thinking that would be a good way in which to dispose of the little hindrance for a time."
         },
         {
           "type": "paragraph",
@@ -15923,11 +16005,11 @@
         },
         {
           "type": "paragraph",
-          "text": "In five minutes, Daisy was back again, with a wide-awake face, a bit of dough in her hand and a dab of flour on her little nose."
+          "text": "In five minutes Daisy was back again, with a wide-awake face, a bit of dough in her hand and a dab of flour on her little nose."
         },
         {
           "type": "paragraph",
-          "text": "\"Oh aunty! Please could I go and make gingersnaps and things? Asia isn't cross, and she says I may, and it would be such fun, please do,\" cried Daisy, all in one breath."
+          "text": "\"OAunty! please could I go and make gingersnaps and things? Asia isn't cross, and she says I may, and it would be such fun, please do,\" cried Daisy, all in one breath."
         },
         {
           "type": "paragraph",
@@ -15939,11 +16021,11 @@
         },
         {
           "type": "paragraph",
-          "text": "What it was no one found out that day, but Aunt Jo's eyes twinkled so when she told Daisy she had thought of a new play, and was going to buy it, that Daisy was much excited and asked questions all the way into town, without getting answers that told her any thing. She was left at home to play with the new baby, and delight her mother's eyes, while Aunt Jo went off shopping. When she came back with all sorts of queer parcels in corners of the carry-all, Daisy was so full of curiosity that she wanted to go back to Plumfield at once. But her aunt would not be hurried, and made a long call in mamma's room, sitting on the floor with baby in her lap, making Mrs. Brooke laugh at the pranks of the boys, and all sorts of droll nonsense."
+          "text": "What it was no one found out that day, but Aunt Jo's eyes twinkled so when she told Daisy she had thought of a new play, and was going to buy it, that Daisy was much excited and asked questions all the way into town, without getting answers that told her any thing. She was left at home to play with the new baby, and delight her mother's eyes, while Aunt Jo went off shopping. When she came back with all sorts of queer parcels in corners of the carry-all, Daisy was so full of curiosity, that she wanted to go back to Plumfield at once. But her aunt would not be hurried, and made a long call in mamma's room, sitting on the floor with baby in her lap, making Mrs. Brooke laugh at the pranks of the boys, and all sorts of droll nonsense."
         },
         {
           "type": "paragraph",
-          "text": "How her aunt told the secret Daisy could not imagine, but her mother evidently knew it, for she said, as she tied on the little bonnet and kissed the rosy little face inside, \"Be a good child, my Daisy, and learn the nice new play aunty has got for you. It's a most useful and interesting one, and it is very kind of her to play it with you, because she does not like it very well herself.\""
+          "text": "How her aunt told the secret Daisy could not imagine, but her mother evidently knew it, for she said, as she tied on the little bonnet and kissed the rosy little face inside, \"Be a good child, my Daisy, and learn the nice new play Aunty has got for you. It's a most useful and interesting one, and it is very kind of her to play it with you, because she does not like it very well herself.\""
         },
         {
           "type": "paragraph",
@@ -15967,7 +16049,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"How strange! What color is it?\""
+          "text": "\"How strange! what color is it?\""
         },
         {
           "type": "paragraph",
@@ -15999,7 +16081,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Is it for the boys, too?\""
+          "text": "\"Is it for the boys too?\""
         },
         {
           "type": "paragraph",
@@ -16011,7 +16093,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"No fear that they won't all want to, especially Stuffy,\" and Mrs. Bhaer's eyes twinkled more than ever as she patted a queer knobby bundle in her lap."
+          "text": "\"No fear that they won't all want to, especially Stuffy,\" and Mrs. Bhaer's eyes twinkled more than ever, as she patted a queer knobby bundle in her lap."
         },
         {
           "type": "paragraph",
@@ -16031,15 +16113,15 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Oh dear, no! It has got to be arranged, and ever so many parts fixed in their places. I promised Uncle Teddy that you shouldn't see it till it was all in apple-pie order.\""
+          "text": "\"Oh dear, no! it has got to be arranged, and ever so many parts fixed in their places. I promised Uncle Teddy that you shouldn't see it till it was all in apple-pie order.\""
         },
         {
           "type": "paragraph",
-          "text": "\"If uncle knows about it then it must be splendid!\" cried Daisy, clapping her hands; for this kind, rich, jolly uncle of hers was as good as a fairy god-mother to the children, and was always planning merry surprises, pretty gifts, and droll amusements for them."
+          "text": "\"If Uncle knows about it then it must be splendid!\" cried Daisy, clapping her hands; for this kind, rich, jolly uncle of hers was as good as a fairy god-mother to the children, and was always planning merry surprises, pretty gifts, and droll amusements for them."
         },
         {
           "type": "paragraph",
-          "text": "\"Yes; Teddy went and bought it with me, and we had such fun in the shop choosing the different parts. He would have every thing fine and large, and my little plan got regularly splendid when he took hold. You must give him your very best kiss when he comes, for he is the kindest uncle that ever went and bought a charming little coo—— Bless me! I nearly told you what it was!\" and Mrs. Bhaer cut that most interesting word short off in the middle, and began to look over her bills, as if afraid she would let the cat out of the bag if she talked any more. Daisy folded her hands with an air of resignation, and sat quite still trying to think what play had a \"coo\" in it."
+          "text": "\"Yes; Teddy went and bought it with me, and we had such fun in the shop choosing the different parts. He would have every thing fine and large, and my little plan got regularly splendid when he took hold. You must give him your very best kiss when he comes, for he is the kindest uncle that ever went and bought a charming little coo—— Bless me! I nearly told you what it was!\" and Mrs. Bhaer cut that most interesting word short off in the middle, and began to look over her bills as if afraid she would let the cat out of the bag if she talked any more. Daisy folded her hands with an air of resignation, and sat quite still trying to think what play had a \"coo\" in it."
         }
       ],
       "questions": [
@@ -16091,26 +16173,26 @@
       "challenge": "Connect a revealed object with the observations that inspired it.",
       "focus": "Reversal and learning through play",
       "context": "Aunt Jo and Uncle Teddy have bought Daisy a mysterious new play. The packages are being arranged upstairs, and the boys have become curious too.",
-      "contentNote": "The historical play kitchen contains a working fire. Treat its use as a supervised story scene, not a design or activity to imitate. Domestic roles reflect the period’s gender expectations.",
+      "contentNote": "Domestic roles reflect the period’s expectations for girls.",
       "excerpt": {
         "locator": "Boston: Roberts Brothers, 1871; Chapter 5; https://en.wikisource.org/wiki/Little_Men/Chapter_5; consecutive transcript paragraphs 53–88; opens “When they got home she eyed every bundle that was taken out, and one large heavy one, whic”; closes “ basket, telling Sally to be on the watch for the butcher's boy, because he sometimes played tricks.”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w25-d1",
         "continuesTo": "reading-4-w25-d3",
-        "textHash": "b71479e74218174cf2b6674a59fc3dcf78c0a19b011e9c3637b56192baa54cf3"
+        "textHash": "2abf9c50dd0aaa606e43832399602a950488a3cf1a328c7ed03761c0ce915998"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "When they got home she eyed every bundle that was taken out, and one large heavy one, which Franz took straight up-stairs and hid in the nursery, filled her with amazement and curiosity. Something very mysterious went on up there that afternoon, for Franz was hammering, and Asia trotting up and down, and Aunt Jo flying around like a will-o'-the-wisp, with all sort of things under her apron, while little Ted, who was the only child admitted, because he couldn't talk plain, babbled and laughed, and tried to tell what the \"sumpin pitty\" was."
+          "text": "When they got home she eyed every bundle that was taken out, and one large heavy one, which Franz took straight up-stairs and hid in the nursery, filled her with amazement and curiosity. Something very mysterious went on up there that afternoon, for Franz was hammering, and Asia trotting up and down, and Aunt Jo flying around like a will-o'-the-wisp, with all sorts of things under her apron, while little Ted, who was the only child admitted, because he couldn't talk plain, babbled and laughed, and tried to tell what the \"sumpin pitty\" was."
         },
         {
           "type": "paragraph",
-          "text": "All this made Daisy half-wild, and her excitement spread among the boys, who quite overwhelmed Mother Bhaer with offers of assistance, which she declined by quoting their own words to Daisy—"
+          "text": "All this made Daisy half wild, and her excitement spread among the boys, who quite overwhelmed Mother Bhaer with offers of assistance, which she declined by quoting their own words to Daisy—"
         },
         {
           "type": "paragraph",
-          "text": "\"Girls can't play with boys. This is for Daisy, and Bess, and me, so we don't want you.\" Whereupon the young gentlemen meekly retired, and invited Daisy to a game of marbles, horse, football, anything she liked, with a sudden warmth and politeness which astonished her innocent little soul."
+          "text": "\"Girls can't play with boys. This is for Daisy, and Bess, and me, so we don't want you.\" Whereupon the young gentlemen meekly retired, and invited Daisy to a game of marbles, horse, foot-ball, anything she liked, with a sudden warmth and politeness which astonished her innocent little soul."
         },
         {
           "type": "paragraph",
@@ -16138,11 +16220,11 @@
         },
         {
           "type": "paragraph",
-          "text": "Daisy did hear an odd crackling, and then a purry little sound as of a kettle singing. These noises came from behind a curtain drawn before a deep bay window. Daisy snatched it back, gave one joyful, \"Oh!\" and then stood gazing with delight at—what do you think?"
+          "text": "Daisy did hear an odd crackling, and then a purry little sound as of a kettle singing. These noises came from behind a curtain drawn before a deep bay window. Daisy snatched it back, gave one joyful \"Oh!\" and then stood gazing with delight at—what do you think?"
         },
         {
           "type": "paragraph",
-          "text": "A wide seat ran round the three sides of the window; on one side hung and stood all sorts of little pots and pans, gridirons and skillets; on the other side a small dinner and tea set; and on the middle part a cooking-stove. Not a tin one, that was of no use, but a real iron stove, big enough to cook for a large family of very hungry dolls. But the best of it was that a real fire burned in it, real steam came out of the nose of the little tea-kettle, and the lid of the little boiler actually danced a jig, the water inside bubbled so hard. A pane of glass had been taken out and replaced by a sheet of tin, with a hole for the small funnel, and real smoke went sailing away outside so naturally, that it did one's heart good to see it. The box of wood with a hod of charcoal stood near by; just above hung dust-pan, brush and broom; a little market basket was on the low table at which Daisy used to play, and over the back of her little chair hung a white apron with a bib, and a droll mob cap. The sun shone in as if he enjoyed the fun, the little stove roared beautifully, the kettle steamed, the new tins sparkled on the walls, the pretty china stood in tempting rows, and it was altogether as cheery and complete a kitchen as any child could desire."
+          "text": "A wide seat ran round the three sides of the window; on one side hung and stood all sorts of little pots and pans, gridirons, and skillets; on the other side a small dinner and tea set, and on the middle part a cooking-stove. Not a tin one, that was of no use, but a real iron stove, big enough to cook for a large family of very hungry dolls. But the best of it was that a real fire burned in it, real steam came out of the nose of the little tea-kettle, and the lid of the little boiler actually danced a jig, the water inside bubbled so hard. A pane of glass had been taken out and replaced by a sheet of tin, with a hole for the small funnel, and real smoke went sailing away outside so naturally, that it did one's heart good to see it. The box of wood with a hod of charcoal stood near by; just above hung dust-pan, brush and broom; a little market basket was on the low table at which Daisy used to play, and over the back of her little chair hung a white apron with a bib, and a droll mob cap. The sun shone in as if he enjoyed the fun, the little stove roared beautifully, the kettle steamed, the new tins sparkled on the walls, the pretty china stood in tempting rows, and it was altogether as cheery and complete a kitchen as any child could desire."
         },
         {
           "type": "paragraph",
@@ -16150,7 +16232,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Oh aunty, it's a splendid new play! Can I really cook at the dear stove, and have parties and mess, and sweep, and make fires that truly burn? I like it so much! What made you think of it?\""
+          "text": "\"OAunty, it's a splendid new play! can I really cook at the dear stove, and have parties and mess, and sweep, and make fires that truly burn? I like it so much! What made you think of it?\""
         },
         {
           "type": "paragraph",
@@ -16210,7 +16292,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Old Asia enjoyed the joke as much as Daisy, and laughed jollily as the little girl came flying into the room with her cap all on one side, the lids of her basket rattling like castanets and looking like a very crazy little cook."
+          "text": "Old Asia enjoyed the joke as much as Daisy, and laughed jollily as the little girl came flying into the room with her cap all on one side, the lids of her basket rattling like castanets, and looking like a very crazy little cook."
         },
         {
           "type": "paragraph",
@@ -16232,7 +16314,7 @@
             "Aunt Jo repeats their own exclusion and a desirable activity is out of reach. Their reversal may include curiosity and self-interest as well as friendliness; support a reading with their timing."
           ],
           "evidence": [
-            "invited Daisy to a game of marbles, horse, football, anything she liked"
+            "invited Daisy to a game of marbles, horse, foot-ball, anything she liked"
           ],
           "id": "reading-4-w25-d2-q1"
         },
@@ -16274,13 +16356,13 @@
       "challenge": "Notice how a teacher and learner respond when neither can guarantee success.",
       "focus": "Trial, error, and comic surprise",
       "context": "Daisy is playing the cook “Sally,” with Aunt Jo directing her first meal and Asia supplying ingredients from the main kitchen. A promised butcher’s boy is still to arrive.",
-      "contentNote": "The text treats dropped food casually and depicts knives, fire and a dog carrying food. Read as historical fiction rather than food-handling instructions. A brief Mary Howitt verse quotation keeps its original line breaks.",
+      "contentNote": "A brief Mary Howitt verse quotation keeps its original line breaks.",
       "excerpt": {
         "locator": "Boston: Roberts Brothers, 1871; Chapter 5; https://en.wikisource.org/wiki/Little_Men/Chapter_5; consecutive transcript paragraphs 89–116; opens “\"Who is he?\" and Daisy hoped it would be Demi.”; closes “paper with them on which Asia had scrawled, \"For Missy's lunch, if her cookin' don't turn out well.\"”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w25-d2",
         "continuesTo": "reading-4-w25-d4",
-        "textHash": "ab1584f786dabd08f4bde3c6a1072f78a938f7cd4c3288ffc1a071ecbeee389a"
+        "textHash": "04299933086a2f4ea36399a1bc185bf44cb24522aca2b333f588e22af2773a24"
       },
       "blocks": [
         {
@@ -16293,7 +16375,7 @@
         },
         {
           "type": "stanza",
-          "text": "\"Away went little Mabel,\nWith the wheaten cake so fine,\nThe new-made pot of butter,\nAnd the little flask of wine.\""
+          "text": "\"Away went little Mabel,\nWith the wheaten cake so fine,\nThe new made pot of butter,\nAnd the little flask of wine.\""
         },
         {
           "type": "paragraph",
@@ -16301,11 +16383,11 @@
         },
         {
           "type": "paragraph",
-          "text": "There was a cupboard under the middle shelf, and on opening the door fresh delights appeared. One half was evidently the cellar, for wood, coal, and kindlings were piled there. The other half was full of little jars, boxes, and all sorts of droll contrivances for holding small quantities of flour, meal, sugar, salt, and other household stores. A pot of jam was there, a little tin box of gingerbread, a cologne bottle full of currant wine, and a tiny canister of tea. But the crowning charm was two doll's pans of new milk, with cream actually rising on it, and a wee skimmer all ready to skim it with. Daisy clasped her hands at this delicious spectacle, and wanted to skim it immediately. But Aunt Jo said—"
+          "text": "There was a cupboard under the middle shelf, and on opening the door fresh delights appeared. One half was evidently the cellar, for wood, coal, and kindlings were piled there. The other half was full of little jars, boxes, and all sorts of droll contrivances for holding small quantities of flour, meal, sugar, salt, and other household stores. A pot of jam was there, a little tin box of gingerbread, a cologne bottle full of currant wine, and a tiny canister of tea. But the crowning charm was two doll's pans of new milk, with cream actually rising on it, and a wee skimmer all ready to skim it with. Daisy clasped her hands at this delicious spectacle, and wanted to skim immediately. But Aunt Jo said—"
         },
         {
           "type": "paragraph",
-          "text": "\"Not yet; you will want the cream to eat on your apple pie at dinner, and must not disturb it till then.\""
+          "text": "\"Not yet; you will want the cream to eat on your apple-pie at dinner, and must not disturb it till then.\""
         },
         {
           "type": "paragraph",
@@ -16313,7 +16395,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Yes; if your oven does well we will have two pies,—one apple and one strawberry,\" said Mrs. Jo, who was nearly as much interested in the new play as Daisy herself."
+          "text": "\"Yes; if your oven does well we will have two pies—one apple and one strawberry,\" said Mrs. Jo, who was nearly as much interested in the new play as Daisy herself."
         },
         {
           "type": "paragraph",
@@ -16345,7 +16427,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"I always wanted to cut them round, and Asia never would let me. How nice it is to do it all my ownty donty self!\" said Daisy, as the little knife went clipping round the doll's plate poised on her hand."
+          "text": "\"I always wanted to cut them round, and Asia never would let me. How nice it is to do it all my ownty donty self,\" said Daisy, as the little knife went clipping round the doll's plate poised on her hand."
         },
         {
           "type": "paragraph",
@@ -16357,11 +16439,11 @@
         },
         {
           "type": "paragraph",
-          "text": "\"My new cook has a good temper, I see, and that is such a comfort,\" said Mrs. Jo. \"Now open the jar of strawberry jam, fill the uncovered pie, and put some strips of paste over the top as Asia does.\""
+          "text": "\"My new cook has a good temper I see, and that is such a comfort,\" said Mrs. Jo. \"Now open the jar of strawberry jam, fill the uncovered pie, and put some strips of paste over the top as Asia does.\""
         },
         {
           "type": "paragraph",
-          "text": "\"I'll make a D in the middle, and have zigzags all round, that will be so interesting when I come to eat it,\" said Sally, loading the pie with quirls and flourishes that would have driven a real pastry cook wild. \"Now I put them in!\" she exclaimed; when the last grimy knob had been carefully planted in the red field of jam, and with an air of triumph she shut them into the little oven."
+          "text": "\"I'll make a D in the middle, and have zigzags all round, that will be so interesting when I come to eat it,\" said Sally, loading her pie with quirls and flourishes that would have driven a real pastry cook wild. \"Now I put them in!\" she exclaimed; when the last grimy knob had been carefully planted in the red field of jam, and with an air of triumph she shut them into the little oven."
         },
         {
           "type": "paragraph",
@@ -16381,7 +16463,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"No, indeed! Just pare it and cut it up, and put in into the steamer over the pot. It is drier so, though it takes longer to cook.\""
+          "text": "\"No, indeed! just pare it and cut it up, and put it into the steamer over the pot. It is drier so, though it takes longer to cook.\""
         },
         {
           "type": "paragraph",
@@ -16389,7 +16471,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Here's the butcher boy!\" cried Daisy, much tickled at the idea, as she relieved him of his load, whereat he licked his lips and began to beg, evidently thinking that it was his own dinner, for he often carried it to his master in that way. Being undeceived, he departed in great wrath and barked all the way downstairs, to ease his wounded feelings."
+          "text": "\"Here's the butcher's boy!\" cried Daisy, much tickled at the idea, as she relieved him of his load, whereat he licked his lips and began to beg, evidently thinking that it was his own dinner, for he often carried it to his master in that way. Being undeceived, he departed in great wrath and barked all the way downstairs, to ease his wounded feelings."
         },
         {
           "type": "paragraph",
@@ -16413,7 +16495,7 @@
             "Daisy notices the sealed edges kept it together and continues working, while Aunt Jo praises her temper. Distinguish resilience from the historically casual attitude toward food dropped on a floor."
           ],
           "evidence": [
-            "My new cook has a good temper, I see"
+            "My new cook has a good temper I see"
           ],
           "id": "reading-4-w25-d3-q2"
         },
@@ -16445,13 +16527,13 @@
       "challenge": "Compare success measured by perfection with success measured by learning and participation.",
       "focus": "Changing judgment and practical support",
       "context": "Daisy is confident that her first little dinner will succeed. Asia has also sent a spare cake and pear, which Daisy initially takes as an insult to her cooking.",
-      "contentNote": "Historical gender expectations link girls’ cooking to boys’ approval. A boy mentions using a saucepan to melt lead; that unsafe proposal is refused and is not an activity suggestion.",
+      "contentNote": "Historical gender expectations link girls’ cooking to boys’ approval. A boy proposes melting lead in a saucepan, and the idea is refused.",
       "excerpt": {
         "locator": "Boston: Roberts Brothers, 1871; Chapter 5; https://en.wikisource.org/wiki/Little_Men/Chapter_5; consecutive transcript paragraphs 117–144; opens “\"I don't want any of her old pears and things; my cooking will turn out well, and I'll hav”; closes “d Aunt Jo knew by long experience how soon new toys lose their charm if they are not prudently used.”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w25-d3",
         "continuesTo": "reading-4-w25-d5",
-        "textHash": "a979be8c0c34f7d7c11edda98abe528a2cc2a8801409a4baa3a834bb84d6cb8d"
+        "textHash": "e4ad9e2b82d75136b6dc52c6f8656f596dd0b4739f3929c943aa2f5af35b3095"
       },
       "blocks": [
         {
@@ -16472,15 +16554,15 @@
         },
         {
           "type": "paragraph",
-          "text": "What a thing it was to see the potatoes bobbing about in the little pot; to peep at the squash getting soft so fast in the tiny steamer; to whisk open the oven door every five minutes to see how the pies got on, and at last when the coals were red and glowing, to put two real steaks on a finger-long gridiron and proudly turn them with a fork. The potatoes were done first, and no wonder, for they had boiled frantically all the while. The were pounded up with a little pestle, had much butter and no salt put in (cook forgot it in the excitement of the moment), then it was made into a mound in a gay red dish, smoothed over with a knife dipped in milk, and put in the oven to brown."
+          "text": "What a thing it was to see the potatoes bobbing about in the little pot; to peep at the squash getting soft so fast in the tiny steamer; to whisk open the oven door every five minutes to see how the pies got on, and at last when the coals were red and glowing, to put two real steaks on a finger-long gridiron and proudly turn them with a fork. The potatoes were done first, and no wonder, for they had boiled frantically all the while. They were pounded up with a little pestle, had much butter and no salt put in (cook forgot it in the excitement of the moment), then it was made into a mound in a gay red dish, smoothed over with a knife dipped in milk, and put in the oven to brown."
         },
         {
           "type": "paragraph",
-          "text": "So absorbed in these last performances had Sally been, that she forgot her pastry till she opened the door to put in the potato, then a wail arose, for alas! alas! the little pies were burnt black!"
+          "text": "So absorbed in these last performances had Sally been, that she forgot her pastry till she opened the door to put in the potato, then a wail arose, for, alas! alas! the little pies were burnt black!"
         },
         {
           "type": "paragraph",
-          "text": "\"Oh, my pies! My darling pies! They are all spoilt!\" cried poor Sally, wringing her dirty little hands as she surveyed the ruin of her work. The tart was especially pathetic, for the quirls and zigzags stuck up in all directions from the blackened jelly, like the walls and chimney of a house after a fire."
+          "text": "\"Oh, my pies! my darling pies! they are all spoilt!\" cried poor Sally, wringing her dirty little hands as she surveyed the ruin of her work. The tart was especially pathetic, for the quirls and zigzags stuck up in all directions from the blackened jelly, like the walls and chimney of a house after a fire."
         },
         {
           "type": "paragraph",
@@ -16496,11 +16578,11 @@
         },
         {
           "type": "paragraph",
-          "text": "The \"cunning pepper-pot\" soothed Sally's feelings, and she dished up her squash in fine style. The dinner was safely put upon the table; the six dolls were seated three on a side; Teddy took the bottom, and Sally the top. When all were settled, it was a most imposing spectacle, for one doll was in full ball costume, another in her night-gown; Jerry, the worsted boy, wore his red winter suit, while Annabella, the noseless darling, was airily attired in nothing but her own kid skin. Teddy, as father of the family, behaved with great propriety, for he smilingly devoured every thing offered him, and did not find a single fault. Daisy beamed upon her company like the weary, warm, but hospitable hostess so often to be seen at larger tables than this, and did the honors with an air of innocent satisfaction, which we do not often see elsewhere."
+          "text": "The \"cunning pepper-pot\" soothed Sally's feelings, and she dished up her squash in fine style. The dinner was safely put upon the table; the six dolls were seated three on a side; Teddy took the bottom, and Sally the top. When all were settled, it was a most imposing spectacle, for one doll was in full ball costume, another in her night-gown; Jerry, the worsted boy, wore his red winter suit, while Annabella, the noseless darling, was airily attired in nothing but her own kid skin. Teddy, as father of the family, behaved with great propriety, for he smilingly devoured every thing offered him, and did not find a single fault. Daisy beamed upon her company like the weary, warm, but hospitable hostess, so often to be seen at larger tables than this, and did the honors with an air of innocent satisfaction, which we do not often see elsewhere."
         },
         {
           "type": "paragraph",
-          "text": "The steak was so tough that the little carving-knife would not cut it; the potato did not go round, and the squash was very lumpy; but the guests appeared politely unconscious of these trifles; and the master and mistress of the house cleared the table with appetites that anyone might envy them. The joy of skimming a jug-full of cream mitigated the anguish felt for the loss of the pies, and Asia's despised cake proved a treasure in the way of dessert."
+          "text": "The steak was so tough, that the little carving-knife would not cut it; the potato did not go round, and the squash was very lumpy; but the guests appeared politely unconscious of these trifles; and the master and mistress of the house cleared the table with appetites that anyone might envy them. The joy of skimming a jug-full of cream mitigated the anguish felt for the loss of the pies, and Asia's despised cake proved a treasure in the way of dessert."
         },
         {
           "type": "paragraph",
@@ -16520,7 +16602,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"Couldn't I have Demi come up to tea alone just this one time? And after that I could cook things for the others if they were good,\" proposed Daisy, with a sudden inspiration."
+          "text": "\"Couldn't I have Demi come up to tea alone just this one time,and after that I could cook things for the others if they were good,\" proposed Daisy, with a sudden inspiration."
         },
         {
           "type": "paragraph",
@@ -16528,7 +16610,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\"That last hit was for me, sharp woman. I accept it, for it is true; but if I had married thee for thy cooking, heart's dearest, I should have fared badly all these years,\" answered the professor, laughing as he tossed Teddy, who became quite apoplectic in his endeavors to describe the feast he had just enjoyed."
+          "text": "\"That last hit was for me, sharp woman. I accept it, for it is true; but if I had married thee for thy cooking, heart's dearest, I should have fared badly all these years,\" answered the professor, laughing, as he tossed Teddy, who became quite apoplectic in his endeavors to describe the feast he had just enjoyed."
         },
         {
           "type": "paragraph",
@@ -16544,7 +16626,7 @@
         },
         {
           "type": "paragraph",
-          "text": "At this point the bell rang, and the entire population went down to dinner, which meal was enlivened by each of the boy's giving Daisy a list of things he would like to have cooked for him as fast as he earned them. Daisy, whose faith in her stove was unlimited, promised every thing, if Aunt Jo would tell her how to make them. This suggestion rather alarmed Mrs. Jo, for some of the dishes were quite beyond her skill wedding-cake, for instance, bull's-eye candy; and cabbage soup with herrings and cherries in it, which Mr. Bhaer proposed as his favorite, and immediately reduced his wife to despair, for German cookery was beyond her."
+          "text": "At this point the bell rang, and the entire population went down to dinner, which meal was enlivened by each of the boy's giving Daisy a list of things he would like to have cooked for him as fast as he earned them. Daisy, whose faith in her stove was unlimited, promised every thing, if Aunt Jo would tell her how to make them. This suggestion rather alarmed Mrs. Jo, for some of the dishes were quite beyond her skill—wedding-cake for instance, bull's-eye candy, and cabbage soup with herrings and cherries in it, which Mr. Bhaer proposed as his favorite, and immediately reduced his wife to despair, for German cookery was beyond her."
         },
         {
           "type": "paragraph",
@@ -16588,25 +16670,25 @@
       "id": "reading-4-w25-d5",
       "week": 25,
       "day": 5,
-      "title": "The First Successful Flapjacks",
+      "title": "The First Flapjacks and a Hungry Dog",
       "sourceId": "4-alcott-little-men",
       "genre": "fiction",
       "readingMode": "independent",
       "time": {
-        "readingMinutes": 7,
-        "discussionMinutes": 9,
-        "totalMinutes": 16
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
       },
       "challenge": "Track how explanation, preparation, and a corrected mistake contribute to success.",
       "focus": "Cooperation and figurative language",
       "context": "After Daisy’s first lunch, the children offer supplies and help. Demi joins her in the nursery kitchen to prepare a private tea, while Aunt Jo gives instructions between household jobs.",
-      "contentNote": "This historical cooking scene includes a working stove and adult direction. It is an excerpt ending after the first successful batch, before a later mishap in the full chapter.",
+      "contentNote": null,
       "excerpt": {
-        "locator": "Boston: Roberts Brothers, 1871; Chapter 5; https://en.wikisource.org/wiki/Little_Men/Chapter_5; consecutive transcript paragraphs 145–159; opens “Every one was very kind to Daisy that afternoon. Tommy promised her the first fruits of his”; closes “\"Then go and ask Asia for some,\" answered Daisy, going into the bath-room to wash her hands.”.",
+        "locator": "Boston: Roberts Brothers, 1871; Chapter V, “Patty Pans”, to the end of the chapter; https://en.wikisource.org/wiki/Little_Men/Chapter_5; opens “Every one was very kind to Daisy that afternoon.”; closes “her last trap to catch a sunbeam.”.",
         "isCompleteWork": false,
         "continuesFrom": "reading-4-w25-d4",
         "continuesTo": null,
-        "textHash": "2bee156bbe798ca8bd65dd60a75c24e87f0f6f42e379f29946f75dacd0788531"
+        "textHash": "549c9f1b049eb408cbf10481ac6ce19e1640aaa430e0a8c1dfc917b4a7359a7a"
       },
       "blocks": [
         {
@@ -16655,15 +16737,75 @@
         },
         {
           "type": "paragraph",
-          "text": "Such a clatter as the little spoon made, and such a beating as the batter got, it quite foamed, I assure you; and when Daisy poured some on to the griddle, it rose like magic into a puffy flapjack that made Demi's mouth water. To be sure, the first one stuck and scorched, because she forgot the butter, but after that first failure all went well, and six capital little cakes were safely landed in a dish."
+          "text": "Such a clatter as the little spoon made, and such a beating as the batter got, it quite foamed I assure you; and when Daisy poured some on to the griddle, it rose like magic into a puffy flapjack, that made Demi's mouth water. To be sure the first one stuck and scorched, because she forgot the butter, but after that first failure all went well, and six capital little cakes were safely landed in a dish."
         },
         {
           "type": "paragraph",
-          "text": "\"I think I like maple-syrup better than sugar,\" said Demi, from his arm-chair where he had settled himself after setting the table in a new and peculiar manner."
+          "text": "\"I think I'd like maple-syrup better than sugar,\" said Demi from his arm-chair, where he had settled himself after setting the table in a new and peculiar manner."
         },
         {
           "type": "paragraph",
           "text": "\"Then go and ask Asia for some,\" answered Daisy, going into the bath-room to wash her hands."
+        },
+        {
+          "type": "paragraph",
+          "text": "While the nursery was empty something dreadful happened. You see, Kit had been feeling hurt all day because he had carried meat safely and yet got none to pay him. He was not a bad dog, but he had his little faults like the rest of us, and could not always resist temptation. Happening to stroll into the nursery at that moment, he smelt the cakes, saw them unguarded on the low table, and never stopping to think of consequences, swallowed all six at one mouthful. I am glad to say that they were very hot, and burned him so badly that he could not repress a surprised yelp. Daisy heard it, ran in, saw the empty dish, also the end of a yellow tail disappearing under the bed. Without a word she seized that tail, pulled out the thief, and shook him till his ears flapped wildly, then bundled him down-stairs to the shed, where he spent a lonely evening in the coal-bin."
+        },
+        {
+          "type": "paragraph",
+          "text": "Cheered by the sympathy which Demi gave her, Daisy made another bowlful of batter, and fried a dozen cakes, which were even better than the others. Indeed, Uncle Fritz after eating two sent up word that he had never tasted any so nice, and every boy at the table below envied Demi at the flapjack party above."
+        },
+        {
+          "type": "paragraph",
+          "text": "It was a truly delightful supper, for the little teapot lid only fell off three times, and the milk jug upset but once; the cakes floated in syrup, and the toast had a delicious beef-steak flavor, owing to cook's using the gridiron to make it on. Demi forgot philosophy, and stuffed like any carnal boy, while Daisy planned sumptuous banquets, and the dolls looked on smiling affably."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Well, dearies, have you had a good time?\" asked Mrs. Jo, coming up with Teddy on her shoulder."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"A very good time. I shall come again soon,\" answered Demi, with emphasis."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"I'm afraid you have eaten too much, by the look of that table.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "\"No, I haven't, I only ate fifteen cakes, and they were very little ones,\" protested Demi, who had kept his sister busy supplying his plate."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"They won't hurt him, they are so nice,\" said Daisy, with such a funny mixture of maternal fondness, and housewifely pride, that Aunt Jo could only smile, and say—"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Well, on the whole, the new game is a success then?\""
+        },
+        {
+          "type": "paragraph",
+          "text": "\"I like it,\" said Demi, as if his approval was all that was necessary."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"It is the dearest play ever made!\" cried Daisy, hugging her little dish-tub as she proposed to wash up the cups. \"I just wish everybody had a sweet cooking stove like mine,\" she added, regarding it with affection."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"This play ought to have a name,\" said Demi, gravely removing the syrup from his countenance with his tongue."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"It has.\""
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Oh, what?\" asked both children, eagerly."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"Well, I think we will call it Patty-pans,\" and Aunt Jo retired, satisfied with the success of her last trap to catch a sunbeam."
         }
       ],
       "questions": [
@@ -16696,6 +16838,16 @@
             "nearly every thing is better for a pinch of it"
           ],
           "id": "reading-4-w25-d5-q3"
+        },
+        {
+          "id": "reading-4-w25-d5-q4",
+          "prompt": "How does the narrator’s comment that she is “glad to say” the cakes burned Kit change the way we see the theft?",
+          "facilitatorNotes": [
+            "The narrator sides openly with Daisy and treats Kit’s punishment as deserved and comic, after first explaining that he felt unpaid and “had his little faults like the rest of us.” Readers can weigh the joke against that sympathetic explanation."
+          ],
+          "evidence": [
+            "I am glad to say that they were very hot, and burned him so badly that he could not repress a surprised yelp."
+          ]
         }
       ]
     },
@@ -17970,7 +18122,7 @@
       "challenge": "Distinguish a comparison and inferred motives from reported behavior.",
       "focus": "Human collecting language animates an animal portrait.",
       "context": "Seton introduces pack-rat behavior by recalling a schoolmate who collected curious objects.",
-      "contentNote": "The writer’s “trade” and “museum” are human comparisons, not proof of a rat’s intentions. “Elk sign” means droppings. Do not disturb nests or retrieve animal-handled objects as an activity.",
+      "contentNote": "“Elk sign” means droppings. The writer’s “trade” and “museum” are his comparisons for the pack-rat’s habits.",
       "excerpt": {
         "locator": "Chapter II, The Pack-rat and His Museum; A Free Trader; begins “Among my school fellows was a boy named Waddy who had a mania for collecting odds, ends, curios, bit”; ends “nny days, and gloat till his little black eyes are a-swim, and his small heart filled with holy joy.”.",
         "isCompleteWork": false,
@@ -19597,12 +19749,12 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": "reading-4-w31-d3",
-        "textHash": "d0bcfa17e05c0045b3da6cf4dee75ede329a50f83a362ce9025398186d74856a"
+        "textHash": "45d66ff627176239321d3edac6764291a4cd77dcc6a84122bddd270dba435edb"
       },
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Stuffy had various trials with his melons; for, being impatient to taste them, he had a solitary revel before they were ripe, and made himself so ill, that for a day or two it seemed doubtful if he would ever eat any more: But he pulled through it, and served up his first cantelope without tasting a mouthful himself. They were excellent melons, for he had a warm slope for them, and they ripened fast. The last and best were lingering on the vines, and Stuffy had announced that he should sell them to a neighbor. This disappointed the boys, who had hoped to eat the melons themselves, and they expressed their displeasure in a new and striking manner. Going one morning to gaze upon the three fine watermelons which he had kept for the market, Stuffy was horrified to find the word \"Pig\" cut in white letters on the green rind, staring at him from every one. He was in a great rage, and flew to Mrs. Jo for redress. She listened, condoled with him, and then said—"
+          "text": "Stuffy had various trials with his melons; for, being impatient to taste them, he had a solitary revel before they were ripe, and made himself so ill, that for a day or two it seemed doubtful if he would ever eat any more. But he pulled through it, and served up his first cantelope without tasting a mouthful himself. They were excellent melons, for he had a warm slope for them, and they ripened fast. The last and best were lingering on the vines, and Stuffy had announced that he should sell them to a neighbor. This disappointed the boys, who had hoped to eat the melons themselves, and they expressed their displeasure in a new and striking manner. Going one morning to gaze upon the three fine watermelons which he had kept for the market, Stuffy was horrified to find the word \"Pig\" cut in white letters on the green rind, staring at him from every one. He was in a great rage, and flew to Mrs. Jo for redress. She listened, condoled with him, and then said—"
         },
         {
           "type": "paragraph",
@@ -19670,7 +19822,7 @@
       "challenge": "Reconsider what counts as a contribution when circumstances differ.",
       "focus": "Adaptation and descriptive detail",
       "context": "Dan has not had a garden because he was away or recovering from an injury much of the summer. He has helped with chores, but at harvest time wishes he had something visible to contribute.",
-      "contentNote": "The passage mentions historical plant remedies, which are not instructions for treatment or unsupervised collecting. “Lame” describes Dan’s temporary difficulty walking in the original language.",
+      "contentNote": "The passage mentions period plant remedies. “Lame” describes Dan’s temporary difficulty walking.",
       "excerpt": {
         "locator": "Boston: Roberts Brothers, 1871; Chapter 18; https://en.wikisource.org/wiki/Little_Men/Chapter_18; consecutive transcript paragraphs 35–41; opens “Dan had no garden, for he was away or lame the greater part of the summer; so he had helpe”; closes “ beechnuts lay in separate compartments, getting brown, and dry, and sweet, ready for winter revels.”.",
         "isCompleteWork": false,
