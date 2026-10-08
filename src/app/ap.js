@@ -173,9 +173,12 @@
   }
   async function load(file) {
     if (!cache.has(file)) {
-      const response = await fetch(file);
-      if (!response.ok) throw new Error("HTTP " + response.status);
-      cache.set(file, await response.json());
+      const pending = fetch(file).then(response => {
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        return response.json();
+      });
+      cache.set(file, pending);
+      pending.catch(() => { if (cache.get(file) === pending) cache.delete(file); });
     }
     return cache.get(file);
   }
@@ -227,6 +230,9 @@
     document.body.dataset.view = selected.view;
     let node;
     container.setAttribute("aria-busy", "true");
+    // Remove the previous copy before any network wait: a student route must
+    // never leave an earlier answer key visible or available to print.
+    container.replaceChildren(el("p", "Loading…"));
     try {
       if (selected.view === "hub") node = renderHub();
       else if (selected.view === "plan") node = renderPlan(selected.course);

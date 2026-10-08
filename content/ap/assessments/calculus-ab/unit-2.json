@@ -478,7 +478,7 @@
                     },
                     {
                       "points": 1,
-                      "criterion": "Concludes that g is not differentiable at 0 because the one-sided limits differ, and notes that g is continuous there, so continuity alone does not settle differentiability."
+                      "criterion": "Concludes that g is not differentiable at 0 because the one-sided limits differ."
                     }
                   ],
                   "answer": "No. As x→0⁻ the difference quotient is 1 (slope of the left segment) and as x→0⁺ it is 0 (the horizontal segment). The one-sided limits differ, so g′(0) does not exist: the graph has a corner at (0, 2), even though g is continuous there.",

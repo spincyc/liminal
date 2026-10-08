@@ -24,7 +24,7 @@
     },
     {
       "id": "p1-pe-f4",
-      "alt": "Side view of a lawn roller: a solid cylinder of radius R on level ground, with a handle attached at its axle. A horizontal arrow F at the axle points to the right.",
+      "alt": "Side view of a lawn roller: a solid cylinder of radius R and mass M on level ground. A light handle attached at the axle is held level and extends horizontally to the right; a horizontal arrow F at the end of the handle points to the right, along the handle.",
       "caption": "Lawn roller pulled at its axle",
       "notToScale": true
     },
@@ -57,8 +57,8 @@
     },
     {
       "id": "p1-pe-f11",
-      "alt": "A toy launcher points straight up from a table, with a ball resting on its compressed spring; the compression x is marked. A vertical meter stick stands beside it, and a dashed line marks the ball's highest point a height h above the launch point.",
-      "caption": "Vertical spring launcher",
+      "alt": "Two views of the same spring hanging from a fixed support beside a vertical meter stick. Left, at release: a mass m hangs on the unstretched spring, and a dashed line marks the bottom of the mass. Right, at the lowest point: the spring is stretched and the mass hangs lower; a second dashed line marks the bottom of the mass, and the distance d between the two dashed lines is marked.",
+      "caption": "Dropping a mass on a spring",
       "notToScale": true
     },
     {
@@ -67,8 +67,8 @@
     },
     {
       "id": "p1-pe-f13",
-      "alt": "Key: graph of height h in meters against x^2 in units of 10^−4 m^2, with five points close to a straight line through the origin; the best-fit line has slope about 7.7 × 10^2 m^−1.",
-      "caption": "Key: height against compression squared"
+      "alt": "Key: graph of the greatest stretch d in meters against the mass m in kilograms, with five points close to a straight line through the origin; the best-fit line has slope about 0.38 m/kg.",
+      "caption": "Key: greatest stretch against mass"
     },
     {
       "id": "p1-pe-f14",
@@ -976,7 +976,7 @@
           "items": [
             {
               "id": "p1-pe-fr1",
-              "prompt": "A lawn roller is a uniform solid cylinder of mass M = 30 kg and radius R = 0.20 m; its rotational inertia about its axle is (1/2)MR^2. A gardener pulls on the handle, which is attached at the axle, with a constant horizontal force F = 45 N, as shown. The roller starts from rest and rolls without slipping on level ground. The coefficient of static friction between the roller and the ground is 0.10. Use g = 9.8 m/s^2.",
+              "prompt": "A lawn roller is a uniform solid cylinder of mass M = 30 kg and radius R = 0.20 m; its rotational inertia about its axle is (1/2)MR^2. A gardener holds the light handle level and pulls it with a constant horizontal force F = 45 N, as shown; the handle is attached at the axle, so the pull acts on the roller at the axle. The roller starts from rest and rolls without slipping on level ground. The coefficient of static friction between the roller and the ground is 0.10. Use g = 9.8 m/s^2.",
               "type": "MR",
               "topics": [
                 "P1.5.6",
@@ -1215,7 +1215,7 @@
             },
             {
               "id": "p1-pe-fr3",
-              "prompt": "A student wants to determine the spring constant k of the spring in a toy launcher that fires a 0.025 kg ball straight up, as shown. For each compression x of the spring, the student measures the greatest height h the ball rises above its launch point, averaging three launches:\n| x (m) | h (m) |\n| --- | --- |\n| 0.010 | 0.08 |\n| 0.020 | 0.31 |\n| 0.030 | 0.70 |\n| 0.040 | 1.24 |\n| 0.050 | 1.93 |",
+              "prompt": "A student wants to determine the spring constant k of a spring by releasing attached masses. The light spring hangs from a fixed support beside a vertical meter stick, as shown. For each mass m, the student hooks the mass to the spring's lower end, holds it so that the spring is at its natural length, and releases it from rest. The mass falls and stretches the spring, and the student records the greatest stretch d, measured downward from the release position. Each value of d is the average of three drops:\n| m (kg) | d (m) |\n| --- | --- |\n| 0.10 | 0.039 |\n| 0.15 | 0.056 |\n| 0.20 | 0.077 |\n| 0.25 | 0.094 |\n| 0.30 | 0.114 |",
               "type": "EDA",
               "topics": [
                 "P1.3.4",
@@ -1229,66 +1229,66 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Describe how the student could measure h, and one step that would reduce the uncertainty in h.",
+                  "prompt": "Describe how the student could make sure that each mass starts from rest with the spring at its natural length, and how the student could measure d. Include one step that would reduce the uncertainty in d.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Measures h from the launch point to the top of the flight against a vertical meter stick or a marked board, for example by filming the launch."
+                      "criterion": "Supports the mass so that the light spring is straight and unstretched, records a reference point on the mass against a meter stick, then releases it without pushing. Measures d as the difference between that point's release position and its lowest position, for example using video."
                     },
                     {
                       "points": 1,
-                      "criterion": "Reduces uncertainty, for example by reading the top of the flight frame by frame from video, viewing at the height of the top to avoid parallax, or repeating launches and averaging."
+                      "criterion": "Reduces uncertainty, for example by reading the lowest point frame by frame from video at a high frame rate, viewing the scale at the level of the mass to avoid parallax, or repeating the drops and averaging."
                     }
                   ],
-                  "answer": "Fix a meter stick vertically beside the launcher, film each launch, and read the ball's highest position frame by frame, measured from the launch point. Repeat each compression several times and average, viewing the scale straight on.",
+                  "answer": "Support the mass with the spring straight and unstretched, record the bottom of the mass against a vertical meter stick, and withdraw the support without pushing. Film the fall and read the lowest position of the same point on the mass; d is the difference between the two readings. View the scale straight on, use a high frame rate, and repeat and average the drops.",
                   "steps": [
-                    "The top of the flight is brief, so video frames give a more reliable reading than the eye.",
-                    "Averaging repeated launches reduces random scatter."
+                    "The release must add no energy: the mass starts at rest with the spring unstretched.",
+                    "The mass reverses direction at its lowest point; video helps identify that point without adding a marker that could remove energy."
                   ]
                 },
                 {
                   "label": "b",
-                  "prompt": "Neglecting air resistance and the small rise of the ball while the spring expands, show that h = (k/(2mg))x^2. State what graph of the data should be a straight line, and what its slope represents.",
+                  "prompt": "Neglecting air resistance and any energy lost in the spring, use conservation of energy to show that d = 2mg/k. State what graph of the data should be a straight line, and how k can be found from its slope.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Energy for the ball–spring–Earth system: (1/2)kx^2 = mgh (all spring energy becomes gravitational energy at the top)."
+                      "criterion": "Energy for the mass–spring–Earth system: the kinetic energy is zero at release and at the lowest point, so the gravitational energy lost, mgd, equals the spring energy stored, (1/2)kd^2."
                     },
                     {
                       "points": 1,
-                      "criterion": "Rearranges to h = (k/(2mg))x^2."
+                      "criterion": "Solves to d = 2mg/k (dividing by d, which is not zero)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Plots h against x^2: a line through the origin with slope k/(2mg)."
+                      "criterion": "Plots d against m: a straight line through the origin with slope 2g/k, so k = 2g/slope."
                     }
                   ],
-                  "answer": "(1/2)kx^2 = mgh gives h = [k/(2mg)]x^2, so h against x^2 is a straight line through the origin with slope k/(2mg).",
+                  "answer": "mgd = (1/2)kd^2, so d = 2mg/k. A graph of d against m should be a straight line through the origin with slope 2g/k, so k = 2g/slope.",
                   "steps": [
-                    "At the top the ball is momentarily at rest, so all the stored energy is gravitational.",
-                    "The relation has the form y = (slope)x with y = h and x = x^2."
+                    "At release and at the lowest point the mass is momentarily at rest, so K = 0 at both.",
+                    "Dividing mgd = (1/2)kd^2 by d gives d = 2mg/k, a direct proportion between d and m; it is twice the stretch mg/k at which the same mass would hang at rest."
                   ]
                 },
                 {
                   "label": "c",
-                  "prompt": "Calculate x^2 for each trial, then plot h against x^2 on the grid and draw a best-fit line.",
+                  "prompt": "Plot d against m on the grid and draw a best-fit line.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "x^2 = 1.0, 4.0, 9.0, 16, 25 × 10^−4 m^2."
+                      "criterion": "Axes labeled with quantities and units, with uniform scales that use most of the grid."
                     },
                     {
                       "points": 1,
-                      "criterion": "Axes labeled with quantities and units, uniform scales, points plotted correctly, and one straight best-fit line."
+                      "criterion": "All five points plotted correctly and one straight best-fit line that passes close to the origin."
                     }
                   ],
-                  "answer": "x^2 = 1.0, 4.0, 9.0, 16 and 25 × 10^−4 m^2; the points lie close to a straight line through the origin.",
+                  "answer": "The five points lie close to a straight line through the origin, as the model predicts, with slope about 0.38 m/kg.",
                   "steps": [
-                    "Square each compression: (0.010 m)^2 = 1.0 × 10^−4 m^2, and so on.",
-                    "The heights rise in proportion to x^2, as the model predicts."
+                    "Put m (kg) on the horizontal axis and d (m) on the vertical axis.",
+                    "Draw one straight line with the points scattered evenly about it; it passes very close to the origin."
                   ],
                   "figureIds": [
                     "p1-pe-f12"
@@ -1304,33 +1304,33 @@
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Slope about 7.7 × 10^2 m^−1 (accept 7.4–8.0 × 10^2 m^−1)."
+                      "criterion": "Slope from two points far apart on the line, about 0.38 m/kg (accept 0.36–0.40 m/kg)."
                     },
                     {
                       "points": 1,
-                      "criterion": "k = 2mg × slope ≈ 3.8 × 10^2 N/m (accept 3.6–3.9 × 10^2 N/m)."
+                      "criterion": "k = 2g/slope ≈ 52 N/m (accept 49–55 N/m), with units."
                     }
                   ],
-                  "answer": "Slope ≈ 7.7 × 10^2 m^−1, so k = 2mg × slope = 2(0.025)(9.8)(770) ≈ 3.8 × 10^2 N/m.",
+                  "answer": "Slope ≈ 0.38 m/kg, so k = 2g/slope = 2(9.8 m/s^2)/(0.38 m/kg) ≈ 52 N/m.",
                   "steps": [
-                    "Slope from two points far apart on the line, for example (1.93 − 0.08) m / (25 − 1.0) × 10^−4 m^2 ≈ 7.7 × 10^2 m^−1.",
-                    "k = (2mg)(slope) = (0.49 N)(770 m^−1) ≈ 3.8 × 10^2 N/m."
+                    "Two points far apart on the best-fit line, for example (0.10 kg, 0.0384 m) and (0.30 kg, 0.1136 m), give a slope of 0.0752 m / 0.20 kg ≈ 0.376 m/kg.",
+                    "k = 2g/slope = (19.6 m/s^2)/(0.376 m/kg) ≈ 52 N/m; the units (m/s^2)/(m/kg) = kg/s^2 = N/m."
                   ]
                 },
                 {
                   "label": "e",
-                  "prompt": "A second student hangs a 0.50 kg mass from the same spring and finds that it stretches the spring 0.0123 m. Compare the two values of k, and give a physical reason why the launch method gives a smaller value.",
+                  "prompt": "A second student lets the 0.30 kg mass hang at rest from the same spring and finds that the spring is stretched 0.0590 m. Calculate k from this measurement, compare it with your value from part (d), and give one physical reason why dropping the masses could give a larger value.",
                   "points": 1,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Static k = (0.50)(9.8)/0.0123 ≈ 4.0 × 10^2 N/m, about 5% larger; the launch method underestimates k because some stored energy goes to air resistance, friction in the launcher and the spring's own motion, so the ball rises less than the model assumes."
+                      "criterion": "Finds static k ≈ 49.8 N/m (accept 49–51 N/m), compares it consistently with the value obtained in part (d), and explains a mechanism that could bias the dropping value upward: dissipation or missing the exact lowest position reduces measured d and the fitted slope, so k = 2g/slope increases. The central fit gives about 52 N/m, roughly 5% higher; a valid graphical estimate may overlap the static result."
                     }
                   ],
-                  "answer": "The hanging test gives k ≈ 4.0 × 10^2 N/m. The launch value is about 5% smaller because not all of the stored energy reaches the ball's height: some goes to air resistance, friction in the launcher and the moving spring itself.",
+                  "answer": "The static value is k = (0.30)(9.8)/0.0590 ≈ 49.8 N/m, compared with about 52 N/m from the best-fit line, a difference of roughly 5%. Dissipation in the spring or air can reduce the greatest stretch below 2mg/k, lowering the slope and raising the inferred k. A video reading that misses the lowest point can cause the same bias. The measurements do not provide enough uncertainty information to prove a discrepancy; credit a comparison consistent with a valid graphical estimate.",
                   "steps": [
-                    "k = mg/Δx = 4.9 N / 0.0123 m ≈ 398 N/m.",
-                    "Energy lost before the top makes each h too small, which lowers the slope and the inferred k."
+                    "At rest the spring force balances the weight: k = mg/x = 2.94 N / 0.0590 m ≈ 49.8 N/m.",
+                    "The static stretch, 0.059 m, is about half the dropped stretch of the same mass, 0.114 m, as d = 2mg/k predicts."
                   ]
                 }
               ]

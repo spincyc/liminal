@@ -1400,7 +1400,7 @@
                   "steps": [
                     "The stretched spring pulls A toward B and B toward A with force ks: m d^2x_A/dt^2 = ks and m d^2x_B/dt^2 = −ks.",
                     "Subtracting: d^2s/dt^2 = d^2x_B/dt^2 − d^2x_A/dt^2 = −(2k/m)s, which is simple harmonic motion with ω^2 = 2k/m.",
-                    "Check: each glider is s/2 from the fixed center of mass, and m d^2(s/2)/dt^2 = −ks = −2k(s/2), a glider on a spring of constant 2k."
+                    "Check: glider B is displaced by s/2 from its equilibrium position relative to the fixed center of mass, and m d^2(s/2)/dt^2 = −ks = −2k(s/2), a glider on a spring of constant 2k."
                   ]
                 },
                 {

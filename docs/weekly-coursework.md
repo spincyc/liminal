@@ -160,10 +160,10 @@ that track carry. The build emits each present plan as a script bundle
 (`content/high-school.js` as `LIMINAL_HIGH_SCHOOL`, `content/ap-plan.js` as
 `LIMINAL_AP_PLAN`) with a matching `.json`.
 
-The full repository gate requires all 41 original courses and all 44 available
+The full repository gate requires all 44 original courses and all 47 available
 course views, including the three reused named high-school courses. A track
-joins this inventory when its registry entry sets `inventory: true`; `ap` stays
-out until its three courses land. A missing
+joins this inventory when its registry entry sets `inventory: true`; all three
+AP courses are included. A missing
 course therefore fails release validation even though the standalone builder
 can support incomplete inventories during authoring.
 

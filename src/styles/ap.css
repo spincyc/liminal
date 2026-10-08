@@ -109,7 +109,7 @@
 .ap-reference-notes { font-size: .875rem; padding-left: 18px; }
 
 @media (max-width: 900px) { .ap-cards { grid-template-columns: 1fr; } }
-@media (max-width: 640px) {
+@media screen and (max-width: 640px) {
   .ap-items { padding-left: 22px; }
   .ap-table { font-size: .875rem; }
   .ap-table :is(th, td) { padding: 6px; }
@@ -140,6 +140,7 @@
   .ap-items > li:not(.ap-item-fr), .ap-fr-parts > li, .ap-guideline-part, .ap-table tr { break-inside: avoid; }
   .ap-guideline > h4, .ap-guideline-part > h5, .ap-section > :is(h3, h4) { break-after: avoid; }
   .ap-workspace { min-height: 55mm; border-color: #777; }
+  .ap-doc .lm-figure svg { max-height: 90mm; }
   .ap-answer { background: #fff; }
   .ap-table thead th { background: #fff; }
   .ap-note { background: #fff; }

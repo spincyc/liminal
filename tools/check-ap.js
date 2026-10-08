@@ -43,6 +43,7 @@ function collector() {
   const text = (value, where) => check(typeof value === "string" && value.trim().length > 0, where, "missing text");
   const list = (value, minimum, where) => check(Array.isArray(value) && value.length >= minimum && value.every(v => typeof v === "string" && v.trim()), where, `needs at least ${minimum} text entries`);
   const unique = (values, where) => check(new Set(values).size === values.length, where, "duplicate IDs");
+  const records = (value, where) => check(Array.isArray(value) && value.every(v => v && typeof v === "object" && !Array.isArray(v)), where, "needs a list of objects");
   function plain(value, where) {
     for (const { where: at, text: string } of A.strings(value, where)) {
       if (/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/.test(string) || markup.test(string)) fail(at, "non-plain text (markup or control characters)");
@@ -54,7 +55,7 @@ function collector() {
       for (const found of A.claimProblems(string)) fail(at, `banned claim (${found.claim}): "${found.sentence.slice(0, 120)}"`);
     }
   }
-  return { problems, fail, check, text, list, unique, plain, claims };
+  return { problems, fail, check, text, list, unique, records, plain, claims };
 }
 
 function readJson(file, c) {
@@ -63,8 +64,33 @@ function readJson(file, c) {
 
 // content/ap.json: the plan contract shared with the weekly build's named-track
 // plans (units, standards, sources), plus AP schedule, exam and blueprints.
+function planShape(plan, c) {
+  const before = c.problems.length;
+  for (const key of ["sources", "standards", "courses"]) if (!c.records(plan[key], "ap." + key)) return false;
+  plan.standards.forEach((standard, i) => c.text(standard.id, "ap.standards[" + i + "].id"));
+  plan.courses.forEach((course, n) => {
+    const where = "ap.courses[" + n + "]";
+    if (course.prerequisiteLinks !== undefined) c.records(course.prerequisiteLinks, where + ".prerequisiteLinks");
+    if (c.records(course.units, where + ".units")) course.units.forEach((unit, i) => {
+      c.list(unit.standards, 1, where + ".units[" + i + "].standards");
+      c.check(Number.isInteger(unit.weeks) && unit.weeks > 0 && unit.weeks <= 36, where + ".units[" + i + "].weeks", "needs a whole week count from 1 to 36");
+    });
+    if (c.records(course.schedule, where + ".schedule")) course.schedule.forEach((entry, i) => c.list(entry.standards, 1, where + ".schedule[" + i + "].standards"));
+    const exam = course.exam;
+    if (!c.check(exam && typeof exam === "object" && !Array.isArray(exam), where + ".exam", "needs exam facts")) return;
+    if (c.records(exam.sections, where + ".exam.sections")) exam.sections.forEach((section, i) => c.records(section.parts, where + ".exam.sections[" + i + "].parts"));
+    const blueprints = course.blueprints;
+    if (!c.check(blueprints && typeof blueprints === "object", where + ".blueprints", "needs assessment blueprints")) return;
+    for (const kind of ["unitTest", "practiceExam"]) c.check(blueprints[kind] && typeof blueprints[kind] === "object" && !Array.isArray(blueprints[kind]), where + ".blueprints." + kind, "needs a blueprint");
+    if (blueprints.unitTest && c.records(blueprints.unitTest.sections, where + ".blueprints.unitTest.sections")) {
+      blueprints.unitTest.sections.forEach((section, i) => c.records(section.parts, where + ".blueprints.unitTest.sections[" + i + "].parts"));
+    }
+  });
+  return c.problems.length === before;
+}
 function validatePlan(plan, c) {
   if (!c.check(plan && plan.version === 1 && plan.track && plan.track.id === "ap", "content/ap.json", "needs version 1 and track ap")) return;
+  if (!planShape(plan, c)) return;
   c.plain(plan, "ap");
   c.claims(plan, "ap");
   for (const key of ["title", "description", "scopeNote"]) c.text(plan.track[key], "ap.track." + key);
@@ -88,6 +114,7 @@ function validatePlan(plan, c) {
   const covered = new Set();
   for (const course of plan.courses) {
     const where = "ap." + course.id;
+    if (!A.COURSES.includes(course.id)) continue;
     const prefix = A.TOPIC_PREFIX[course.id];
     for (const key of ["title", "shortTitle", "examName", "summary", "scopeNote", "nextStep", "referenceNote", "calculatorNote"]) c.text(course[key], where + "." + key);
     c.list(course.prerequisites, 1, where + ".prerequisites");
@@ -121,6 +148,11 @@ function validatePlan(plan, c) {
         covered.add(ref);
         if (standard.kind === "content") c.check(A.topicUnit(ref) === unit.unit, at, ref + " belongs to unit " + A.topicUnit(ref));
       });
+      if (unit.unit !== null) {
+        const expected = plan.standards.filter(s => s.kind === "content" && s.id.startsWith(prefix + ".") && A.topicUnit(s.id) === unit.unit).map(s => s.id);
+        if (course.id === "physics-c-mechanics" && unit.unit === 1) expected.push("CM.TOOLKIT");
+        c.check(JSON.stringify([...unit.standards].sort()) === JSON.stringify(expected.sort()), at + ".standards", "must contain exactly the unit's framework topics" + (course.id === "physics-c-mechanics" && unit.unit === 1 ? " and CM.TOOLKIT" : ""));
+      }
       c.check(unit.test === (unit === review ? "practice-exam" : "unit-" + unit.unit), at + ".test", "content units name unit-<n>; the final review unit names practice-exam");
     });
     c.check(review.unit === null && contentUnits.length === course.units.length - 1, where, "the last unit is the editorial review unit (unit: null)");
@@ -143,9 +175,10 @@ function validatePlan(plan, c) {
       });
       course.units.forEach(unit => {
         const end = pacing.lastIndexOf(unit) + 1;
-        if (unit.test === "practice-exam") c.check(placed.has("practice-exam") && course.schedule[placed.get("practice-exam") - 1].unitId === unit.id, where, "the practice exam is placed in the review unit");
+        if (unit.test === "practice-exam") c.check(placed.has("practice-exam") && course.schedule[placed.get("practice-exam") - 1]?.unitId === unit.id, where, "the practice exam is placed in the review unit");
         else c.check(placed.get(unit.test) === end, where, unit.test + " is placed in the unit's last week (" + end + ")");
       });
+      c.check(placed.get("practice-exam") === 33, where + ".schedule", "the practice exam is placed in week 33");
       c.check(placed.size === course.units.length, where + ".schedule", "every unit's assessment is placed once");
       const scheduled = new Set(course.schedule.flatMap(entry => entry.standards || []));
       plan.standards.filter(s => s.id.startsWith(prefix + ".")).forEach(s => c.check(scheduled.has(s.id), where + ".schedule", "no week covers " + s.id));
@@ -155,15 +188,24 @@ function validatePlan(plan, c) {
     const exam = course.exam;
     if (c.check(exam && Array.isArray(exam.sections) && exam.sections.length === 2, where + ".exam", "needs two sections")) {
       for (const key of ["name", "effective", "delivery", "calculator", "reference"]) c.text(exam[key], where + ".exam." + key);
+      c.list(exam.notes, 1, where + ".exam.notes");
       c.check(plan.sources.some(s => s.id === exam.sourceId), where + ".exam", "unresolved source");
       c.check(validDate(exam.checked), where + ".exam.checked", "needs a date");
-      exam.sections.forEach(section => section.parts.forEach(part => {
-        c.check(Number.isInteger(part.questions) && part.questions > 0 && Number.isInteger(part.minutes) && part.minutes > 0, where + ".exam." + section.id + part.id, "needs question and minute counts");
-        c.check(COURSE_CALCULATORS[course.id].includes(part.calculator), where + ".exam." + section.id + part.id, "calculator policy not allowed for the course");
-      }));
+      exam.sections.forEach((section, i) => {
+        c.check(section.id === ["I", "II"][i], where + ".exam", "sections are I and II in order");
+        c.text(section.title, where + ".exam." + section.id + ".title");
+        c.text(section.weight, where + ".exam." + section.id + ".weight");
+        c.check(section.parts.length > 0, where + ".exam." + section.id, "needs parts");
+        section.parts.forEach((part, j) => {
+          c.check(part.id === String.fromCharCode(65 + j), where + ".exam." + section.id, "parts are A, B, … in order");
+          c.check(Number.isInteger(part.questions) && part.questions > 0 && Number.isInteger(part.minutes) && part.minutes > 0, where + ".exam." + section.id + part.id, "needs question and minute counts");
+          c.check(COURSE_CALCULATORS[course.id].includes(part.calculator), where + ".exam." + section.id + part.id, "calculator policy not allowed for the course");
+        });
+      });
       const mc = exam.sections[0].parts.reduce((s, p) => s + p.questions, 0);
       const blueprint = course.blueprints && course.blueprints.practiceExam;
       if (c.check(blueprint && blueprint.mcByUnit, where + ".blueprints.practiceExam", "needs mcByUnit")) {
+        c.check(typeof blueprint.mcByUnit === "object" && !Array.isArray(blueprint.mcByUnit) && Object.values(blueprint.mcByUnit).every(n => Number.isInteger(n) && n > 0), where + ".blueprints.practiceExam.mcByUnit", "needs positive whole question counts");
         const units = Object.keys(blueprint.mcByUnit).map(Number);
         c.check(JSON.stringify(units) === JSON.stringify(contentUnits.map(u => u.unit)), where + ".blueprints.practiceExam", "mcByUnit names every content unit");
         c.check(units.reduce((s, u) => s + blueprint.mcByUnit[u], 0) === mc, where + ".blueprints.practiceExam", "mcByUnit must total " + mc);
@@ -175,7 +217,30 @@ function validatePlan(plan, c) {
         });
       }
       const unitTest = course.blueprints && course.blueprints.unitTest;
-      c.check(unitTest && Array.isArray(unitTest.sections) && Array.isArray(unitTest.minutes), where + ".blueprints.unitTest", "needs sections and a minutes range");
+      c.check(Array.isArray(unitTest.minutes) && unitTest.minutes.length === 2 && unitTest.minutes.every(n => Number.isInteger(n) && n > 0) && unitTest.minutes[0] <= unitTest.minutes[1], where + ".blueprints.unitTest", "needs a valid minutes range");
+      c.check(unitTest.sections.length === 2, where + ".blueprints.unitTest", "needs two sections");
+      unitTest.sections.forEach((section, i) => {
+        const at = where + ".blueprints.unitTest." + section.id;
+        c.check(section.id === ["I", "II"][i] && section.kind === ["mc", "fr"][i], at, "sections are I (mc) and II (fr) in order");
+        c.check(section.parts.length > 0, at, "needs parts");
+        section.parts.forEach((part, j) => {
+          c.check(part.id === String.fromCharCode(65 + j), at, "parts are A, B, … in order");
+          c.check(Number.isInteger(part.questions) && part.questions > 0, at, "needs whole question counts");
+          c.check(COURSE_CALCULATORS[course.id].includes(part.calculator), at, "calculator policy not allowed for the course");
+        });
+      });
+      for (const [kind, rule] of Object.entries(course.blueprints)) {
+        if (!["unitTest", "practiceExam"].includes(kind)) continue;
+        const at = where + ".blueprints." + kind;
+        if (PHYSICS.has(course.id)) {
+          c.check(rule.frTypes && typeof rule.frTypes === "object" && JSON.stringify(Object.keys(rule.frTypes).sort()) === JSON.stringify(Object.keys(A.FR_TYPES).sort()) && Object.values(rule.frTypes).every(n => Number.isInteger(n) && n > 0), at, "needs whole point values for every physics free-response type");
+          c.check(kind === "unitTest" ? rule.distinctFrTypes === true : rule.oneOfEachFrType === true, at, "must require distinct free-response types");
+          if (kind === "unitTest") c.check(Number.isInteger(rule.minTypeUsesAcrossUnitTests) && rule.minTypeUsesAcrossUnitTests >= 3, at, "must require every free-response type in at least three unit tests");
+        } else {
+          c.check(Number.isInteger(rule.frPoints) && rule.frPoints > 0, at, "needs whole free-response points");
+          if (kind === "practiceExam") c.check(Number.isInteger(rule.minContextFr) && rule.minContextFr >= 2, at, "must require at least two free-response questions in context");
+        }
+      }
     }
   }
   plan.standards.forEach(s => c.check(covered.has(s.id), "reference " + s.id, "not mapped to any unit"));
@@ -186,14 +251,43 @@ function figureReferences(item) {
     answer: [...(item.answerFigureIds || []), ...(item.parts || []).flatMap(p => p.answerFigureIds || [])] };
 }
 
+// Reject malformed collections before traversing them. Validation must report
+// authoring errors instead of throwing from a projection or duplicate check.
+function assessmentShape(doc, where, c) {
+  const before = c.problems.length;
+  if (doc.figures !== undefined) c.records(doc.figures, where + ".figures");
+  const references = (value, at) => {
+    for (const key of ["figureIds", "answerFigureIds"]) if (value[key] !== undefined) c.list(value[key], 0, at + "." + key);
+  };
+  if (c.records(doc.sections, where + ".sections")) doc.sections.forEach((section, s) => {
+    const at = where + ".sections[" + s + "]";
+    if (c.records(section.parts, at + ".parts")) section.parts.forEach((part, p) => {
+      const pat = at + ".parts[" + p + "]";
+      if (c.records(part.items, pat + ".items")) part.items.forEach((item, i) => {
+        const it = pat + ".items[" + i + "]";
+        references(item, it);
+        if (item.topics !== undefined) c.list(item.topics, 0, it + ".topics");
+        if (item.choices !== undefined) c.list(item.choices, 0, it + ".choices");
+        if (item.parts !== undefined && c.records(item.parts, it + ".parts")) item.parts.forEach((subpart, n) => {
+          const sub = it + ".parts[" + n + "]";
+          references(subpart, sub);
+          if (subpart.rubric !== undefined) c.records(subpart.rubric, sub + ".rubric");
+        });
+      });
+    });
+  });
+  return c.problems.length === before;
+}
+
 // One unit test or practice exam.
 function validateAssessment(doc, expected, ctx, c) {
   const where = expected.courseId + "/" + expected.id;
   if (!c.check(doc && doc.format === A.FORMAT && doc.version === A.VERSION, where, "needs format " + A.FORMAT + " version 1")) return;
+  if (!assessmentShape(doc, where, c)) return;
   c.plain(doc, where);
   c.claims(doc, where);
   const course = ctx.plan.courses.find(entry => entry.id === expected.courseId);
-  c.check(doc.courseId === expected.courseId && doc.id === expected.id, where, "courseId and id must match the file path");
+  if (!c.check(doc.courseId === expected.courseId && doc.id === expected.id, where, "courseId and id must match the file path")) return;
   const unit = course && course.units.find(u => u.test === doc.id);
   if (!c.check(unit, where, "is not an assessment in the course plan")) return;
   const exam = doc.id === "practice-exam";
@@ -217,6 +311,7 @@ function validateAssessment(doc, expected, ctx, c) {
   });
   const declared = new Set(figures.map(f => f.id));
   const referenced = new Set();
+  const givenFigures = new Set(), answerFigures = new Set();
   // Sections, parts and items.
   if (!c.check(Array.isArray(doc.sections) && doc.sections.length > 0, where, "needs sections")) return;
   c.unique(doc.sections.map(s => s.id), where + ".sections");
@@ -234,7 +329,7 @@ function validateAssessment(doc, expected, ctx, c) {
       c.check(COURSE_CALCULATORS[doc.courseId].includes(part.calculator), pat + ".calculator", "must be one of " + COURSE_CALCULATORS[doc.courseId].join(", "));
       c.text(part.directions, pat + ".directions");
       if (part.title !== undefined) c.text(part.title, pat + ".title");
-      if (!c.check(Array.isArray(part.items) && part.items.length > 0, pat, "needs items")) part.items = [];
+      c.check(part.items.length > 0, pat, "needs items");
     });
   });
   A.entries(doc).forEach(({ section, item, number }) => {
@@ -251,6 +346,8 @@ function validateAssessment(doc, expected, ctx, c) {
       });
     }
     const refs = figureReferences(item);
+    refs.given.forEach(id => givenFigures.add(id));
+    refs.answer.forEach(id => answerFigures.add(id));
     [...refs.given, ...refs.answer].forEach(id => { referenced.add(id); c.check(declared.has(id), at, "undeclared figure " + id); });
     c.check(refs.given.every(id => !refs.answer.includes(id)), at, "a figure cannot be both given and answer-only");
     if (A.isMc(item)) {
@@ -296,6 +393,7 @@ function validateAssessment(doc, expected, ctx, c) {
     else ctx.identities.set(identity, at);
   });
   c.unique(itemIds, where + " item IDs");
+  for (const id of givenFigures) c.check(!answerFigures.has(id), where + ".figures." + id, "a figure cannot be both given and answer-only anywhere in the assessment");
   figures.forEach(f => c.check(referenced.has(f.id), where + ".figures." + f.id, "declared but never used"));
   const shaped = doc.sections.every(s => Array.isArray(s.parts) && s.parts.every(p => Array.isArray(p.items) && p.items.every(i => i && typeof i === "object")));
   if (!shaped) return;
@@ -312,13 +410,13 @@ function validateReference(ref, courseId, c) {
   c.claims(ref, where);
   for (const key of ["title", "intro"]) c.text(ref[key], where + "." + key);
   if (ref.notes !== undefined) c.list(ref.notes, 1, where + ".notes");
-  if (!c.check(Array.isArray(ref.groups) && ref.groups.length > 0, where, "needs groups")) return;
+  if (!c.records(ref.groups, where + ".groups") || !c.check(ref.groups.length > 0, where, "needs groups")) return;
   c.unique(ref.groups.map(g => g.id), where + ".groups");
   ref.groups.forEach(group => {
     const at = where + "." + group.id;
     c.check(typeof group.id === "string" && /^[a-z0-9][a-z0-9-]*$/.test(group.id), at, "invalid group ID");
     c.text(group.title, at + ".title");
-    if (c.check(Array.isArray(group.rows) && group.rows.length > 0, at, "needs rows")) {
+    if (c.records(group.rows, at + ".rows") && c.check(group.rows.length > 0, at, "needs rows")) {
       group.rows.forEach((row, i) => { for (const key of ["relation", "meaning", "units"]) c.text(row[key], at + "." + i + "." + key); });
     }
   });

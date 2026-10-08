@@ -235,4 +235,58 @@ as written; the table says what changed.
 | N13 | Every listed figure is redrawn: field segments off the axes, labels moved clear of curves and regions, the week 5 hump raised to 2.614, the week 14 curve drawn on 0 ≤ x ≤ 2. The kit's 11 px superscripts are unchanged (deferred). |
 | N14 | Fixed in code: skill labels are key-only (commit 062d4e3). |
 
+## Cold follow-up (2026-10-08)
+
+A second independent agent reviewed the calculus repairs at `afdf948`, using
+the repair record above as a list of proposals to verify. The final keyed
+records were withheld until solutions were recorded. No College Board
+questions, PDFs, or scoring guides were consulted. The repair narrative above
+already disclosed some expected results, so this is a targeted independent
+recalculation, not a new fully blind review of the entire corpus.
+
+The sample included all 28 assessment items whose student-facing content
+changed in `830ae3e`: 11 multiple-choice items and 17 free-response items
+with 70 parts. It also included all four parts of `ab-pe-fr4` to check its
+concavity repair, and weekly items `ab-w13-a4`, `ab-w13-c6`, `ab-w14-c6`,
+`ab-w17-b4`, `ab-w31-b1`, `ab-w31-b2`, and `ab-w32-b1`.
+Symbolic work, independent antiderivatives, bisection, and Simpson integration
+confirmed the final keyed answers. Two preliminary reviewer slips were
+corrected: the midpoint-sum choice in `ab-u6-mc11` and the final trapezoid
+in `ab-pe-fr5`(b), whose total is 333 cubic meters.
+
+Key checks on the redesigned questions included:
+
+- `ab-pe-fr1`: V(4) = 48.283137, radius 27.720931, drain time
+  9.917252, average escape rate 12.829613, equal-rate times 2.259108 and
+  8.964650, and fastest area growth at t = 5.
+- `ab-u8-fr1`: arrival-rate endpoints 1.699209 and 7.789838, accumulated
+  arrivals 736.218946, first 300-car time 4.211926, and change from t = 6
+  to t = 12 of −191.504937 cars.
+- `ab-pe-fr6`: the only horizontal tangent is at (∛3, −2∛3);
+  at (1, 2), dy/dt = −8 and dA/dt = 2.
+- `ab-pe-fr3`: g(0) = 9π/4, g(5) = 9π/4 − 2, and exactly two
+  solutions of g(x) = 6.
+
+One scoring issue was corrected: `ab-u2-fr2`(c) required an extra continuity
+statement in its third rubric row, although the prompt asks only for a
+differentiability decision justified by the one-sided difference-quotient
+limits. The row now awards that point for concluding that the unequal limits
+1 and 0 imply nondifferentiability. The continuity explanation remains in the
+worked key. This change preserves the three-point total.
+
+The notation repair, week 4 alt text, week 16 second-derivative statement,
+week 32 example reference, unit-test part titles and calculator timings,
+and preservation of correct answers when choices were reordered were also
+checked. No further answer-key error was found in this sample.
+After the rubric correction, `node tools/check-ap.js --complete` passed
+(26 assessments, 402 MC and 60 FR), and `git diff --check` passed.
+
+Limits: this follow-up did not re-review every weekly item or establish
+originality against external question banks. Browser and print checks belong
+to integration. Fourteen calculus SVGs still contain 11 px superscript spans;
+the explicit N13 deferral remains in force. No new evidence of unreadability
+was established here, and changing those spans without checking rendered
+spacing could introduce collisions. This remains an agent review, not human
+editorial approval or measured difficulty.
+
 AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.

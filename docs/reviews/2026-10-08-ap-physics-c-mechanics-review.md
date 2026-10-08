@@ -314,4 +314,53 @@ sources reproduces its JSON and figures byte for byte.
 | N3 | Seven designs replaced: week 10 sheet C (loaded balls sinking in syrup), `cm-u2-fr2` (spring-scale readings on a spinning asteroid), week 23 sheet C (a rotating stage on five hub radii), `cm-u6-fr2` (a brake pad, revolutions against ω₀²), week 30 sheet C (a pendulum on a tilted air table), `cm-pe-fr2` (a crate sliding onto a sled on ice), `cm-pe-fr4` (one and two gliders on the same spring). These, like the originals, were screened from memory only. |
 | N4–N14 | Fixed as proposed, including legibility in about 45 figures, a new figure `cm-w09-f5`, and dependent items made self-contained. `cm-w13-f2`'s alt text is kept; it describes what is drawn. |
 
+## Cold verification of the repairs (2026-10-08)
+
+A second independent agent reviewed the repaired content starting at
+`afdf948`. For the seven replacement designs, the reviewer extracted only
+student prompts, given figures and directions, recorded solutions, and then
+opened the keys: four assessment FR (19 parts) and all 21 items on week 10,
+23 and 30 worksheet C. All numeric results and intended physical models
+agreed. This verifies those repairs, not the entire original corpus again.
+
+- `cm-u2-fr2`: scale readings 0.42688 N and 0.25765 N; limiting period
+  6800 s. `cm-u6-fr2`: fitted slope 0.058811 s^2, torque 0.1488 N·m and
+  inertia 0.10997 kg·m^2.
+- `cm-pe-fr2`: friction 43.2 N, common speed 0.60 m/s, sliding distance
+  0.60 m and energy loss 25.92 J. `cm-pe-fr4`: periods 1.25664 s and
+  0.88858 s, with the heavy-second-glider limit approaching the first period.
+- Week 10: fitted drag constant 1.1995 kg/s and syrup density 1350 kg/m^3.
+  Week 23: inertia 0.32077 kg·m^2 and friction torque 0.029859 N·m.
+  Week 30: fitted slope 2.02623 s^2, intercept −0.01875 s^2 and
+  g = 9.74184 m/s^2.
+
+The reviewer also recomputed `cm-u3-fr1` and `cm-pe-fr3`, solved the
+student prompts for `cm-w02-c5`, `cm-w04-c5`, `cm-w09-a6`,
+`cm-w11-b6`, `cm-w24-b3`, `cm-w26-b6` and `cm-w33-b1` before
+opening their keys, and inspected the repaired speed-extremum teaching and
+assessment rationales. The earlier report disclosed some expected results
+for these additional checks, so they are not counted as blind review.
+The revised force/torque sign rules, orbital-energy scale, torque
+cancellation, scoring model and formula-reference axes agree with the
+intended cases. Selected rubric rows credit the required reasoning and
+have consistent totals.
+
+Three residual findings were corrected during this pass:
+
+| ID | Finding and resolution |
+| --- | --- |
+| C1 | `cm-u6-fr2` called τ_f the pad's torque but two key steps included bearing friction; part (e)'s 11% bias treated only the pad torque as the whole resistance. The prompt now explicitly neglects bearing friction and air resistance, and both key steps use the same assumption. Then the inferred inertia is I/0.9 as scored. |
+| C2 | `cm-pe-fr4`(b)'s final check called s/2 the distance from the center of mass, although s denotes spring extension. It now correctly identifies s/2 as glider B's displacement from its equilibrium position relative to the fixed center of mass. |
+| C3 | Standalone renders clipped the brake-pad annotation in `cm-u6-f1` and the horizontal-axis unit in `cm-w23-f7`. Their viewBoxes are widened; re-rendering shows both labels completely. |
+
+Eighteen selected replacement and repaired figures were rasterized and
+visually checked against prompts, data and keys. This included all seven
+replacement designs, the four redrawn geometry/teaching figures, and the
+orbital-energy plot. The two changed SVGs pass figure admission, and
+`node tools/check-ap.js --complete` passes after the corrections.
+Standalone SVG review does not replace site-rendered phone, dark-mode or
+printed-booklet checks; integration owns those checks. No College Board
+questions, PDFs or scoring guidelines were consulted. This remains agent
+review, not human editorial approval or measured difficulty.
+
 AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.

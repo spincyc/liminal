@@ -337,4 +337,58 @@ course assembly. Items marked open remain in the practice-exam lane.
 | N14, N15 | Five free-response questions reworked (`u1-fr2`, `u4-fr1`, `u5-fr2`, `u6-fr1` with an uncertainty part, `u8-fr1`); force-diagram wording varied. Open: `p1-pe-fr3` and week 35 sheet B. |
 | Formula reference | The review's three wording notes are applied. |
 
+## Completion and cold check (2026-10-08)
+
+The remaining first-pass items are now resolved in the canonical JSON and
+SVG files. This pass inspected the unfinished authoring material in
+`.scratch/ap/physics-1/p1-x/`, so its review is not a repetition of the
+original blind review. The integrating agent separately solved student-only
+projections of the revised five-part `p1-pe-fr3` and all six week 35 B items
+before seeing their keys; those solutions agreed with the final keys.
+No College Board questions, PDFs, scoring guides or equation sheets were
+retrieved or supplied to either agent.
+
+| Item | Final resolution and evidence |
+| --- | --- |
+| N5, N15: `p1-pe-fr3` | Replaced the vertical launcher with an attached mass released from rest at a hanging spring's natural length. The student measures maximum stretch against mass, derives `mgd = kd^2/2`, fits the graph and compares with a static measurement. The five data pairs independently give slope 0.376 m/kg, intercept 0.0008 m, and `k = 2g/slope = 52.13 N/m`; the static check gives 49.83 N/m. Dissipation reduces the stretch and therefore biases the dynamic estimate upward. The rubric accepts a comparison consistent with a valid graphical fit, including overlap with the static result; no unsupported significance claim is required. |
+| B1, N15: week 35 B | Replaced stacked filters with one 0.80 g baking cup released from six different heights, timing the entire fall. The fit of height against time gives 1.2993 m/s, height intercept −0.11938 m and time intercept 0.09188 s. Assuming quadratic drag, `c = mg/v_t^2 = 0.004644 kg/m`. The revised design retains original supplied data, graphing, model interpretation and a safe optional procedure. |
+| Additional cold finding in the unfinished B4 repair | A drag-free distance is only a lower bound and cannot establish near-terminal motion in the shortest drop. The final question explicitly asks students to identify this limitation and check equal-time late-video displacements. Its drag-free calculation is 0.08622 m. The key does not require an unstated differential-equation model or claim that exact terminal speed is reached in finite time. B3 and B5 also distinguish an approximate terminal-speed inference from choosing a drag law. |
+| N11, N12: seven open figures | The roller handle is horizontal and its prompt/alt agree (`p1-pe-f4`); oscillation tick labels are below the curves (`p1-pe-f6`, `p1-pe-f8`); the mass-axis label fits (`p1-w32-f3`); ramp and launcher labels clear the drawing (`p1-w31-f1`, `p1-w36-f2`); the pendulum length label follows its string (`p1-w35-f4`). The changed experiments also replace `p1-pe-f11`, `p1-pe-f13` and `p1-w35-f3`, with matching alt text. |
+| Additional teaching precision | Week 35 no longer calls a half-range uncertainty estimate a probability interval. The accelerometer paragraph and optional procedure specify an app's gravity-removed vertical signal and a zero-at-rest check; this behavior is not asserted for every raw accelerometer output. |
+
+The math check read the canonical displayed tables and used normal-equation
+least squares independently of the author's mean-centered fit. It checked
+the energy equality and the reported fit, stiffness, speed, intercept, drag
+coefficient and drag-free distance. The integrating agent's separate solutions
+also reproduced these results and selected B for `p1-w35-b5`.
+
+Validation after the edits:
+
+- `node tools/check-ap.js --complete`: exit 0; 3 courses, 26 assessments
+  (402 MC, 60 FR), 2 references.
+- `node tools/check-weekly.js --complete`: exit 0; 44 original courses,
+  47 course views, 1,584 weeks, 4,752 worksheets, 28,650 items,
+  3,270 worked examples and 438 figures.
+- `node --test test/weekly-ap.test.js test/ap-assessment.test.js`: exit 0;
+  both test files passed.
+- `git diff --check`: exit 0.
+- All ten changed SVGs were rasterized with the installed `rsvg-convert`
+  and inspected in light and dark colors. Labels and graph values are
+  legible and agree with the content. Chromium could not start in this
+  lane's sandbox (`crashpad: setsockopt: Operation not permitted`), so this
+  does not establish browser rendering, phone layout or printed pagination.
+
+Final content fingerprints for this pass:
+
+| File | SHA-256 |
+| --- | --- |
+| `content/weekly/ap/physics-1.json` | `5b6a23eee2e6c4ca1058989fb5edd015147939318e886e9b4ade72d335688a7c` |
+| `content/ap/assessments/physics-1/practice-exam.json` | `246875a2db439b0a26c1345c5b76c57d8f5241158b4369af1560dc14e16614b1` |
+
+The earlier blind-review scope and limits remain historical evidence for the
+unchanged material. This completion pass is limited to the listed repairs and
+does not claim a new blind solve of the entire course. The changed experiment
+structures reduce the specific familiarity concern; they do not prove
+originality against an external corpus or constitute human editorial approval.
+
 AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.

@@ -15529,7 +15529,7 @@
       "week": 35,
       "unitId": "u9",
       "title": "Synthesis investigations: an elevator ride, air drag and a fading swing",
-      "objective": "Carry out three paper investigations with supplied data that combine several units: a phone accelerometer in an elevator, the terminal speed of falling paper filters, and a pendulum whose swings die away. Build and test models, linearize data, judge uncertainty, and plan safe household versions.",
+      "objective": "Carry out three paper investigations with supplied data that combine several units: a phone accelerometer in an elevator, the fall times of a paper baking cup dropped from several heights, and a pendulum whose swings die away. Build and test models, linearize data, judge uncertainty, and plan safe household versions.",
       "standards": [
         "P1.SYNTHESIS"
       ],
@@ -15540,14 +15540,14 @@
       "days": [
         "The modeling cycle: state a model, predict a straight-line graph, test it against data and revise; compare results using uncertainty.",
         "Investigation 1: turning a phone's acceleration readings from an elevator ride into velocity, distance and apparent weight.",
-        "Investigation 2: terminal speed of nested paper filters and a model of air drag (beyond the exam).",
+        "Investigation 2: fall times of a paper baking cup from several heights, its terminal speed and a model of air drag (beyond the exam).",
         "Investigation 3: how fast a pendulum's swings die away, and the energy lost per swing.",
         "Plan a household version of one investigation with its safety notes, and present the results."
       ],
       "explanation": [
         "After the exam, investigations can combine units the way real problems do. Each investigation this week follows the same cycle: write a model from physics you know, decide what graph the model predicts will be a straight line, plot the supplied data, and compare the slope with the model. When the data do not fit, revise the model; when they do, use the slope or area to measure something that is hard to measure directly, such as a drag constant or the height of a building. College Board's AP® Physics 1 course framework calls for at least 25 percent of class time in hands-on laboratory work. This paper investigation uses supplied data; it does not replace that lab work and does not satisfy the AP® Course Audit or college lab-credit requirements.",
-        "Two results agree when they are equal within their uncertainties. A simple estimate of uncertainty is half the range of repeated trials; a result written as 9.62 ± 0.10 m/s^2 claims the true value is probably between 9.52 and 9.72 m/s^2. Percent difference, |measured − expected| / expected × 100%, describes how far apart two values are, but it does not by itself say whether they agree; compare the difference with the uncertainty.",
-        "Several ideas in this week's investigations go beyond the Physics 1 exam. Air drag on a light, broad object grows roughly with the square of its speed, so a falling paper filter quickly reaches a terminal speed where drag balances gravity. A swinging pendulum loses a little energy to the air on every swing; when it loses the same fraction each time, its amplitude shrinks by the same factor every swing, so a graph of each amplitude against the one before it is a straight line through the origin. A phone's accelerometer reports acceleration with gravity removed, so the area under its readings gives changes in velocity, just as on any acceleration–time graph.",
+        "Compare results using both their differences and their stated uncertainties. Half the range of repeated trials is a simple estimate of scatter; it is not a confidence interval and does not account for systematic errors. A result written as 9.62 ± 0.10 m/s^2 gives an interval from 9.52 to 9.72 m/s^2, but its interpretation depends on how the uncertainty was estimated. The relative difference from a reference, |measured − reference| / |reference| × 100%, describes their separation; it does not by itself establish agreement.",
+        "Several ideas in this week's investigations go beyond the Physics 1 exam. Air drag on a light, broad object grows roughly with the square of its speed, so a falling paper baking cup quickly reaches a terminal speed where drag balances gravity; from then on, a graph of the distance it has fallen against time is a straight line. A swinging pendulum loses a little energy to the air on every swing; when it loses the same fraction each time, its amplitude shrinks by the same factor every swing, so a graph of each amplitude against the one before it is a straight line through the origin. A phone app can provide vertical acceleration with gravity removed; use that setting and check that it reads approximately zero while stationary, so the area under its readings gives changes in velocity, just as on any acceleration–time graph.",
         "Household versions are optional and need care. Work at floor or table height (never stand on chairs), stay clear of other people's way, hold phones securely, keep swinging objects away from faces, and never aim any object at a person or animal. Record your own data in a table before analyzing it, and note any change from the supplied procedure."
       ],
       "figures": [
@@ -15562,12 +15562,12 @@
         },
         {
           "id": "p1-w35-f3",
-          "alt": "Key: graph of terminal speed squared v_t^2 in m^2/s^2 against the number of filters n from 0 to 6, with six data points close to a straight line through the origin; the best-fit line has slope about 1.2 m^2/s^2 per filter.",
-          "caption": "Key: terminal speed squared against number of filters"
+          "alt": "Key: graph of drop height h in meters against fall time t in seconds, with six data points close to a straight line of slope about 1.3 m/s; the best-fit line crosses the time axis at about 0.09 s instead of passing through the origin.",
+          "caption": "Key: drop height against fall time"
         },
         {
           "id": "p1-w35-f4",
-          "alt": "A pendulum hangs from a fixed support by a string 1.0 m long; the bob is pulled to one side, and the horizontal distance A from the lowest point to the bob is marked as the amplitude.",
+          "alt": "A pendulum hangs from a fixed support by a string 1.0 m long, with the length labeled along the string; the bob is pulled to one side, and the horizontal distance A from the lowest point to the bob is marked as the amplitude.",
           "caption": "Pendulum and its amplitude",
           "notToScale": true
         },
@@ -15603,16 +15603,16 @@
         {
           "id": "p1-w35-elevator",
           "title": "Investigation data: a phone in an elevator",
-          "text": "A student lies a phone flat on the floor of an elevator, which starts at rest, rides upward and stops. The phone's app records vertical acceleration with gravity removed (up positive); the table gives the average reading during each second.\n| t (s) | 0–1 | 1–2 | 2–3 | 3–4 | 4–5 | 5–6 | 6–7 | 7–8 | 8–9 | 9–10 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| a (m/s^2) | 1.18 | 1.22 | 0.02 | −0.01 | 0.00 | 0.01 | −0.02 | 0.00 | −1.21 | −1.19 |",
+          "text": "A student lays a phone flat on the floor of an elevator, which starts at rest, rides upward and stops. The phone's app records vertical acceleration with gravity removed (up positive); the table gives the average reading during each second.\n| t (s) | 0–1 | 1–2 | 2–3 | 3–4 | 4–5 | 5–6 | 6–7 | 7–8 | 8–9 | 9–10 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| a (m/s^2) | 1.18 | 1.22 | 0.02 | −0.01 | 0.00 | 0.01 | −0.02 | 0.00 | −1.21 | −1.19 |",
           "kind": "original",
           "attribution": "Original data set written for Liminal.",
           "sourceUrl": "",
           "readingMode": "independent"
         },
         {
-          "id": "p1-w35-filters",
-          "title": "Investigation data: falling paper filters",
-          "text": "A student drops stacks of n nested paper coffee filters (1.1 g each), open side up, from a height of 2.0 m. A video shows that each stack reaches a steady speed within the first 0.3 m; the student measures that terminal speed v_t over the last 1.0 m of the fall, averaging four drops.\n| n | 1 | 2 | 3 | 4 | 5 | 6 |\n| --- | --- | --- | --- | --- | --- | --- |\n| v_t (m/s) | 1.12 | 1.54 | 1.93 | 2.18 | 2.48 | 2.67 |",
+          "id": "p1-w35-cup",
+          "title": "Investigation data: a falling baking cup",
+          "text": "A student drops one paper baking cup (mass 0.80 g), open side up, from rest at six heights h above the floor. A phone films each drop in slow motion at 240 frames per second, and the student counts the frames from release to landing to find the fall time t, averaging five drops at each height.\n| h (m) | 0.30 | 0.60 | 0.90 | 1.20 | 1.50 | 1.80 |\n| --- | --- | --- | --- | --- | --- | --- |\n| t (s) | 0.32 | 0.56 | 0.78 | 1.02 | 1.24 | 1.48 |",
           "kind": "original",
           "attribution": "Original data set written for Liminal.",
           "sourceUrl": "",
@@ -15730,7 +15730,7 @@
               "rubric": [
                 {
                   "points": 1,
-                  "criterion": "Places the phone flat on the floor (or holds it level and still), records vertical acceleration for a whole ride from rest to rest, and repeats the ride."
+                  "criterion": "Places the phone flat on the floor (or holds it level and still), selects vertical acceleration with gravity removed, checks for a zero reading at rest, records it for a whole ride from rest to rest, and repeats the ride."
                 },
                 {
                   "points": 1,
@@ -15741,7 +15741,7 @@
                   "criterion": "Gives two safety or courtesy steps, such as standing still and holding the rail, not jumping, keeping out of other riders' way, or using an elevator when it is not busy."
                 }
               ],
-              "answer": "Lay the phone flat on the elevator floor, start recording before the doors close, ride several floors from rest to rest, and repeat three times. Check that the computed velocity returns to zero and that the height matches the floors traveled. Stand still, never jump in the car, and let other riders use the elevator first.",
+              "answer": "Lay the phone flat on the elevator floor, select vertical acceleration with gravity removed, check that it reads zero at rest, start recording before the doors close, ride several floors from rest to rest, and repeat three times. Check that the computed velocity returns to zero and that the height matches the floors traveled. Stand still, never jump in the car, and let other riders use the elevator first.",
               "steps": [
                 "A complete ride from rest to rest gives a built-in check: the total area under a–t should be zero.",
                 "Elevators are shared spaces, so safety and courtesy limit what you can do in them."
@@ -15753,14 +15753,14 @@
         },
         {
           "id": "b",
-          "title": "Investigation: falling filters and air drag (beyond the exam)",
-          "directions": "Use the filter data. Use g = 9.8 m/s^2. Air drag beyond 'it opposes motion' is not Physics 1 exam content. This is a paper investigation with supplied data; it does not replace hands-on lab work.",
+          "title": "Investigation: a falling baking cup and air drag (beyond the exam)",
+          "directions": "Use the baking-cup data. Use g = 9.8 m/s^2. Air drag beyond 'it opposes motion' is not Physics 1 exam content. This is a paper investigation with supplied data; it does not replace hands-on lab work. Take downward as positive.",
           "calculator": "any",
           "minutes": 30,
           "items": [
             {
               "id": "p1-w35-b1",
-              "prompt": "Use Newton's second law to explain why a falling paper filter reaches a terminal speed instead of speeding up the whole way down, and write the condition that holds at terminal speed.",
+              "prompt": "Use Newton's second law to explain why a falling paper baking cup reaches a terminal speed instead of speeding up the whole way down, and write the condition that holds at terminal speed.",
               "points": 3,
               "rubric": [
                 {
@@ -15769,16 +15769,16 @@
                 },
                 {
                   "points": 1,
-                  "criterion": "The net force, mg − F_drag, and so the acceleration, decrease toward zero as the filter speeds up."
+                  "criterion": "The net force, mg − F_drag, and so the acceleration, decrease toward zero as the cup speeds up."
                 },
                 {
                   "points": 1,
                   "criterion": "At terminal speed F_drag = mg, so the acceleration is zero and the speed stays constant."
                 }
               ],
-              "answer": "Gravity mg is constant, but the upward drag grows with speed, so the net force and acceleration shrink as the filter speeds up. When drag equals mg, the net force is zero and the filter falls at constant terminal speed.",
+              "answer": "Gravity mg is constant, but the upward drag grows with speed, so the net force and acceleration shrink as the cup speeds up. When drag equals mg, the net force is zero and the cup falls at constant terminal speed.",
               "steps": [
-                "Second law: ma = mg − F_drag(v).",
+                "Second law, down positive: ma = mg − F_drag(v).",
                 "As v grows, F_drag grows until it equals mg, where a = 0."
               ],
               "passageIds": [],
@@ -15786,7 +15786,7 @@
             },
             {
               "id": "p1-w35-b2",
-              "prompt": "Compute v_t^2 for each trial in the filter data, then plot v_t^2 against n on the grid with labeled axes and scales and draw a single best-fit line.",
+              "prompt": "Plot the drop height h against the fall time t for the baking-cup data on the grid, with labeled axes and scales, and draw a single best-fit line. Does your line pass through the origin?",
               "figureIds": [
                 "p1-w35-f2"
               ],
@@ -15794,89 +15794,92 @@
               "rubric": [
                 {
                   "points": 1,
-                  "criterion": "v_t^2 ≈ 1.25, 2.37, 3.72, 4.75, 6.15, 7.13 m^2/s^2."
+                  "criterion": "Axes labeled h (m) and t (s) with uniform scales that use most of the grid."
                 },
                 {
                   "points": 1,
-                  "criterion": "Axes labeled v_t^2 (m^2/s^2) and n with uniform scales; points plotted correctly."
+                  "criterion": "All six points plotted correctly."
                 },
                 {
                   "points": 1,
-                  "criterion": "One straight best-fit line passing close to the origin."
+                  "criterion": "One straight best-fit line through the points that meets the time axis at about 0.09 s (accept 0.07–0.11 s), so it does not pass through the origin."
                 }
               ],
               "answerFigureIds": [
                 "p1-w35-f3"
               ],
-              "answer": "v_t^2 ≈ 1.25, 2.37, 3.72, 4.75, 6.15, 7.13 m^2/s^2; the points lie close to a straight line through the origin with slope about 1.2 m^2/s^2 per filter.",
+              "answer": "The six points lie close to a straight line with slope about 1.3 m/s. Extended down to h = 0, the line meets the time axis at about 0.09 s, so it does not pass through the origin.",
               "steps": [
-                "Square each speed: for example (1.12)^2 ≈ 1.25 m^2/s^2.",
-                "A straight line through the origin means v_t^2 ∝ n, as quadratic drag predicts (mass ∝ n)."
+                "Put t on the horizontal axis and h on the vertical axis, as on a position–time graph.",
+                "Extend the best-fit line down to h = 0: it reaches the time axis at about 0.09 s, not at t = 0."
               ],
               "passageIds": [
-                "p1-w35-filters"
+                "p1-w35-cup"
               ],
-              "skill": "Linearize drag data"
+              "skill": "Graph distance fallen against time"
             },
             {
               "id": "p1-w35-b3",
-              "prompt": "With quadratic drag F_drag = cv^2, terminal speed gives n m_0 g = c v_t^2, where m_0 = 1.1 g is the mass of one filter. Use the slope of your best-fit line to find c, with units.",
-              "answer": "Slope ≈ 1.19 m^2/s^2 per filter, so c = m_0 g/slope ≈ 9.0 × 10^−3 kg/m (accept 8.5–9.5 × 10^−3 kg/m)",
+              "prompt": "Assume the cup repeats the same initial motion in every drop. Explain why the nearly constant slope of drop height against fall time supports approximately terminal motion in the later part of each fall, and estimate that terminal speed. Assuming quadratic drag F_drag = cv^2 and using the cup's mass of 0.80 g, find c from mg = cv_t^2, with units.",
+              "answer": "Each extra 0.30 m of drop adds about 0.23 s. With the same startup motion each time, that nearly constant Δh/Δt supports approximately constant speed over the later distances. The slope estimates v_t ≈ 1.30 m/s (accept 1.25–1.35 m/s). Then c = mg/v_t^2 ≈ 4.6 × 10^−3 kg/m (accept 4.3–5.0 × 10^−3 kg/m). The straight line does not by itself distinguish linear drag from quadratic drag.",
               "steps": [
-                "v_t^2 = (m_0 g/c)n, so slope = m_0 g/c.",
-                "c = (0.0011 kg)(9.8 m/s^2)/(1.19 m^2/s^2) ≈ 9.0 × 10^−3 kg/m."
+                "Use two separated points on the best-fit line, approximately (0.40 s, 0.400 m) and (1.40 s, 1.700 m): Δh/Δt ≈ 1.30 m/s. The common startup contributes the same delay to both, so their difference measures the later motion.",
+                "c = mg/v_t^2, with units (kg)(m/s^2)/(m^2/s^2) = kg/m."
               ],
               "passageIds": [
-                "p1-w35-filters"
+                "p1-w35-cup"
               ],
-              "skill": "Extract a drag constant"
+              "skill": "Extract a terminal speed and a drag constant"
             },
             {
               "id": "p1-w35-b4",
-              "prompt": "Without air resistance, how far would a single filter fall from rest before reaching 1.1 m/s? Use your answer to explain why measuring the speed over the last 1.0 m of a 2.0 m drop is reasonable.",
-              "answer": "About 0.062 m (6.2 cm). Drag makes the filter's acceleration smaller than g, so 0.062 m is only a lower bound: the real filter takes longer to approach 1.1 m/s (about 0.2 m with quadratic drag), consistent with the video's 0.3 m. That still ends long before the last 1.0 m of the 2.0 m drop begins, so the speed timed there is the terminal speed.",
+              "prompt": "Without air resistance, how far would the cup fall from rest before reaching 1.3 m/s? Explain why this result alone cannot establish whether the real cup approaches terminal speed during the shortest 0.30 m drop. Describe a check using the video that would test whether its late motion is approximately steady.",
+              "answer": "The drag-free distance is 0.086 m (8.6 cm). Drag reduces the downward acceleration below g, so reaching the same speed requires more distance, if that speed is reached at all. This lower bound cannot establish that the cup is nearly at terminal speed within 0.30 m. Compare distances traveled in equal short time intervals late in the video; equal distances within measurement uncertainty support steady motion.",
               "steps": [
-                "v^2 = 2gd gives d = (1.1)^2 / (2 × 9.8) ≈ 0.062 m.",
-                "Drag reduces the acceleration below g, so the approach takes longer than without drag, not shorter. The video shows that it ends within 0.3 m, well before the timed last meter begins at 1.0 m."
+                "With no drag, v^2 = 2gd gives d = (1.3 m/s)^2/(2 × 9.8 m/s^2) = 0.086 m.",
+                "With drag, ma = mg − F_drag, so the acceleration is smaller; a lower bound is not an upper bound on the approach distance.",
+                "Measure several successive late-video displacements over the same number of frames and compare them, allowing for pixel and frame uncertainty."
               ],
-              "passageIds": [],
-              "skill": "Justify a measurement window"
+              "passageIds": [
+                "p1-w35-cup"
+              ],
+              "skill": "Distinguish a lower bound from evidence of steady motion"
             },
             {
               "id": "p1-w35-b5",
-              "prompt": "A classmate fits the filter data with a straight line on a graph of v_t against n and finds that the points curve downward. What is the best conclusion?",
+              "prompt": "A best-fit line of drop height h against fall time t for the baking cup meets the time axis at about 0.09 s instead of passing through the origin. Assume the release and landing times have no systematic offset. What is the best explanation?",
               "choices": [
-                "The data are unreliable, because they do not fit a straight line",
-                "Drag is closer to proportional to v^2 than to v, since v_t^2, not v_t, is proportional to n",
-                "Drag does not depend on speed",
-                "The filters had not reached terminal speed"
+                "Air drag is proportional to v rather than to v^2, so the cup never reaches a constant speed",
+                "The cup starts from rest and needs a short time to reach terminal speed, so each drop takes a little longer than h/v_t",
+                "The cup falls freely, with no drag, so the distance it falls grows in proportion to the time",
+                "The cup's terminal speed is greater in the longer drops, because it has more time to speed up"
               ],
               "key": "B",
-              "answer": "(B) Drag is closer to proportional to v^2 than to v, since v_t^2, not v_t, is proportional to n",
+              "answer": "(B) The cup starts from rest and needs a short time to reach terminal speed, so each drop takes a little longer than h/v_t",
               "steps": [
-                "Linear drag predicts v_t ∝ n (a straight line); quadratic drag predicts v_t ∝ √(n), which curves downward.",
-                "The v_t^2 graph is straight, supporting quadratic drag."
+                "Moving at v_t from the start, the cup would follow h = v_t t, a line through the origin; speeding up from rest adds nearly the same extra time to every drop.",
+                "Both linear and quadratic drag models approach a terminal speed and can give this late-motion offset; this graph alone does not select between them. Free fall would make h grow as t^2, while the nearly constant slope supports one approximate terminal speed."
               ],
               "passageIds": [],
-              "skill": "Choose between models using linearization"
+              "skill": "Interpret the intercept of a line"
             },
             {
               "id": "p1-w35-b6",
-              "prompt": "Plan an optional household version of the filter investigation with a phone video and a meter stick. Describe how you would measure the terminal speed and state two safety or care steps.",
+              "prompt": "Plan an optional household version of the baking-cup investigation with a phone's slow-motion video and a tape measure. Describe how you would find the fall time from each height, and state two safety or care steps.",
               "points": 2,
               "rubric": [
                 {
                   "points": 1,
-                  "criterion": "Films the fall beside a vertical meter stick (or marked wall) and measures the time to fall a known distance in the lower part of the drop, repeating several times for each n."
+                  "criterion": "Marks several measured heights on a wall, up to what can be reached from the floor, releases the cup from rest at each mark, films in slow motion, and finds the fall time as the number of frames from release to landing divided by the frame rate, repeating several drops per height."
                 },
                 {
                   "points": 1,
-                  "criterion": "Gives two safety or care steps, such as dropping from a stable standing height rather than a chair, keeping clear of stairs, or using a partner to hold the stack level."
+                  "criterion": "Gives two safety or care steps, such as reaching the marks while standing on the floor rather than a chair, keeping the drop area clear of stairs and people, or propping the phone so it cannot fall."
                 }
               ],
-              "answer": "Tape a meter stick vertically to a wall, drop each stack from standing height beside it, film at a known frame rate, and time the fall through the lowest 1.0 m, repeating four times for each n. Stand on the floor rather than a chair, and keep the drop area clear of stairs and people.",
+              "answer": "Tape marks at measured heights up to about 1.8 m on a wall, hold the cup at each mark open side up, let go without pushing, and film in slow motion. Count the frames from release to landing and divide by the frame rate; repeat five drops per height. Stand on the floor rather than a chair, keep the area clear of stairs and people, and prop the phone securely.",
               "steps": [
-                "Frame counts give the time over a known distance in the steady part of the fall.",
+                "The frame count divided by the frame rate gives the time; for example, 120 frames at 240 frames per second is 0.50 s.",
                 "Nothing in the procedure requires climbing."
               ],
               "passageIds": [],

@@ -414,7 +414,7 @@
                 "CM.6.2",
                 "CM.6.1"
               ],
-              "prompt": "The data below are invented for a paper investigation, which does not replace the hands-on laboratory work the course framework calls for and does not count toward the AP Course Audit or college lab credit. A student wants to find the rotational inertia I of a bicycle wheel that turns on a fixed horizontal axle, as shown. A felt pad held in a spring clamp can be lowered onto the rim, where it exerts a friction torque τ_f that she assumes is constant. To measure τ_f, she lowers the pad and pulls the rim around slowly at a steady rate with a spring scale held tangent to the rim, 0.31 m from the axle; the scale reads 0.48 N. In each trial she then spins the wheel with the pad raised, reads its angular speed ω_0 from a rotation sensor on the axle, lowers the pad at once and records the number of revolutions n the wheel turns before it stops.\n| Trial | 1 | 2 | 3 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- |\n| ω_0 (rad/s) | 8.0 | 12.0 | 16.0 | 20.0 | 24.0 |\n| n (revolutions) | 3.9 | 8.4 | 15.1 | 23.4 | 34.0 |",
+              "prompt": "The data below are invented for a paper investigation, which does not replace the hands-on laboratory work the course framework calls for and does not count toward the AP Course Audit or college lab credit. A student wants to find the rotational inertia I of a bicycle wheel that turns on a fixed horizontal axle, as shown. Neglect friction in the axle bearings and air resistance. A felt pad held in a spring clamp can be lowered onto the rim, where it exerts a friction torque τ_f that she assumes is constant. To measure τ_f, she lowers the pad and pulls the rim around slowly at a steady rate with a spring scale held tangent to the rim, 0.31 m from the axle; the scale reads 0.48 N. In each trial she then spins the wheel with the pad raised, reads its angular speed ω_0 from a rotation sensor on the axle, lowers the pad at once and records the number of revolutions n the wheel turns before it stops.\n| Trial | 1 | 2 | 3 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- |\n| ω_0 (rad/s) | 8.0 | 12.0 | 16.0 | 20.0 | 24.0 |\n| n (revolutions) | 3.9 | 8.4 | 15.1 | 23.4 | 34.0 |",
               "figureIds": [
                 "cm-u6-f1"
               ],
@@ -455,7 +455,7 @@
                   ],
                   "answer": "W = −τ_fΔθ with Δθ = 2πn rad, and W = ΔK = −½Iω_0^2, so 2πnτ_f = ½Iω_0^2 and n = [I/(4πτ_f)]ω_0^2. Plot n against ω_0^2: a line through the origin with slope I/(4πτ_f).",
                   "steps": [
-                    "The pad's torque is the only torque that does work while the wheel stops (bearing friction is included in the measured τ_f, as part (d) explains).",
+                    "The pad's torque is the only torque that does work while the wheel stops; bearing friction and air resistance are negligible.",
                     "Divide both sides by 4πτ_f; n is proportional to ω_0^2."
                   ]
                 },
@@ -501,7 +501,7 @@
                   ],
                   "answer": "τ_f = 0.149 N·m; slope ≈ 0.059 s^2, so I = 4π(0.149 N·m)(0.059 s^2) ≈ 0.11 kg·m^2.",
                   "steps": [
-                    "Zero angular acceleration means zero net torque; the scale's torque is FR with the force tangent to the rim. The pull also balances the bearing's friction, so τ_f includes it.",
+                    "Zero angular acceleration means zero net torque; the scale's torque is FR with the force tangent to the rim. With bearing friction and air resistance negligible, the pull balances the pad's friction torque τ_f.",
                     "A least-squares fit gives slope 0.0588 s^2 and intercept 0.02 revolution, close to zero as the model requires; I = 4π(0.1488)(0.0588) = 0.110 kg·m^2."
                   ]
                 },

@@ -99,6 +99,79 @@ test("duplicates, figure files and unexpected files are caught", t => {
   assert.ok(result.problems.some(p => /ab-u1-mc04: duplicates calculus-ab weekly week 1 sheet a ab-w01-a1/.test(p)), result.problems.join("\n"));
 });
 
+test("answer-only figures cannot be given by another question", t => {
+  const doc = F.unitTest("calculus-ab", 1);
+  doc.sections[1].parts[0].items[0].parts[0].answerFigureIds = [doc.figures[0].id];
+  const result = check(t, [doc]);
+  assert.match(result.problems.join("\n"), /both given and answer-only anywhere in the assessment/);
+});
+
+test("malformed nested assessment and reference collections report errors without throwing", t => {
+  const mutations = [
+    doc => { doc.figures = [null]; },
+    doc => { doc.courseId = "unknown"; },
+    doc => { doc.sections = [null]; },
+    doc => { doc.sections[0].parts = {}; },
+    doc => { doc.sections[0].parts[0].items = [null]; },
+    doc => { doc.sections[0].parts[0].items[0].figureIds = "ab-u1-f1"; },
+    doc => { doc.sections[0].parts[0].items[0].parts = {}; },
+    doc => { doc.sections[1].parts[0].items[0].parts = [null]; },
+    doc => { doc.sections[1].parts[0].items[0].parts[0].rubric = [null]; },
+  ];
+  for (const mutate of mutations) {
+    const result = check(t, [F.unitTest("calculus-ab", 1)], { mutate: dir => {
+      const file = path.join(dir, "ap/assessments/calculus-ab/unit-1.json");
+      const doc = JSON.parse(fs.readFileSync(file, "utf8")); mutate(doc); fs.writeFileSync(file, JSON.stringify(doc));
+    } });
+    assert.ok(result.problems.length, String(mutate));
+  }
+  for (const groups of [[null], [{ id: "motion", title: "Motion", rows: [null] }]]) {
+    const ref = F.reference("physics-1"); ref.groups = groups;
+    assert.ok(check(t, [], { references: [ref] }).problems.length);
+  }
+});
+
+test("plan validation preserves required blueprint and schedule constraints", t => {
+  const cases = [
+    [plan => { delete plan.courses[0].blueprints.unitTest.frPoints; }, /needs whole free-response points/],
+    [plan => { delete plan.courses[0].blueprints.practiceExam.minContextFr; }, /at least two free-response questions in context/],
+    [plan => { delete plan.courses[1].blueprints.practiceExam.frTypes; }, /point values for every physics free-response type/],
+    [plan => { delete plan.courses[1].blueprints.unitTest.distinctFrTypes; }, /must require distinct free-response types/],
+    [plan => { delete plan.courses[1].blueprints.unitTest.minTypeUsesAcrossUnitTests; }, /at least three unit tests/],
+    [plan => { const counts = plan.courses[0].blueprints.practiceExam.mcByUnit; counts[1] += 0.25; counts[2] -= 0.25; }, /positive whole question counts/],
+    [plan => { plan.courses[0].blueprints.unitTest.minutes = [70, 50]; }, /valid minutes range/],
+    [plan => { plan.courses[0].exam.sections[0].id = "II"; }, /sections are I and II/],
+    [plan => { const schedule = plan.courses[0].schedule; delete schedule[32].assessment; schedule[33].assessment = "practice-exam"; }, /practice exam is placed in week 33/],
+    [plan => { const units = plan.courses[2].units; units[0].standards = units[0].standards.filter(s => s !== "CM.TOOLKIT"); units.at(-1).standards.push("CM.TOOLKIT"); }, /exactly the unit's framework topics and CM.TOOLKIT/],
+  ];
+  for (const [mutate, pattern] of cases) {
+    const result = check(t, [], { mutate: dir => {
+      const file = path.join(dir, "ap.json"), plan = JSON.parse(fs.readFileSync(file, "utf8"));
+      mutate(plan); fs.writeFileSync(file, JSON.stringify(plan));
+    } });
+    assert.match(result.problems.join("\n"), pattern);
+  }
+});
+
+test("malformed plan collections and pacing produce diagnostics", t => {
+  for (const mutate of [
+    plan => { plan.sources = [null]; },
+    plan => { plan.standards[0].id = null; },
+    plan => { plan.courses[0].units[0].weeks = -1; },
+    plan => { plan.courses[0].units[0].standards = "AB.1.1"; },
+    plan => { plan.courses[0].schedule = [null]; },
+    plan => { plan.courses[0].exam.sections[0].parts = [null]; },
+    plan => { plan.courses[0].blueprints = null; },
+    plan => { plan.courses[0].blueprints.unitTest.sections = [null]; },
+  ]) {
+    const result = check(t, [], { mutate: dir => {
+      const file = path.join(dir, "ap.json"), plan = JSON.parse(fs.readFileSync(file, "utf8"));
+      mutate(plan); fs.writeFileSync(file, JSON.stringify(plan));
+    } });
+    assert.ok(result.problems.length, String(mutate));
+  }
+});
+
 test("--complete requires every assessment, reference, topic and free-response rotation", t => {
   const result = check(t, standardDocs(), { complete: true });
   const text = result.problems.join("\n");

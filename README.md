@@ -6,7 +6,7 @@ practice that run entirely in the browser.
 **Live site:** https://spincyc.github.io/liminal/
 
 The landing page connects **Mathematics**, **Reading**, **K–12 year plans**,
-ready-to-study **Courses**, **SAT practice**, and **ACT practice**.
+ready-to-study **Courses**, **Courses for AP® exams**, **SAT practice**, and **ACT practice**.
 Test practice lives at `practice.html`; earlier
 `index.html#practice`, Progress, Review, and Tips bookmarks still resolve.
 
@@ -42,10 +42,23 @@ coursework. Their scope is editorial, with explicit source references and no
 claim of complete Common Core or AP alignment. See the
 [sequence and prerequisite bridges](docs/high-school-math.md).
 
-The 41 original full-year courses contain 1,476 weekly lessons, 4,428 worksheets,
-26,628 exercises, and 2,953 worked examples. The three reused named courses do
+**Courses for AP® exams** adds original 36-week courses for Calculus AB,
+Physics 1, and Physics C: Mechanics at `ap.html`. Each has weekly teaching and
+worksheets, one test per framework unit (23 in total), and a full-length
+practice exam using the May 2027 format. Student copies and worked keys print
+separately; physics includes original formula references and paper
+investigations. Reports show raw points, with no AP score conversion or
+prediction. These are independent preparation materials, not authorized AP
+courses. Paper investigations do not replace required hands-on physics labs
+or establish lab credit. See the [course contract](docs/ap-courses.md) and
+[completion review](docs/reviews/2026-10-08-ap-completion.md).
+
+The 44 original full-year courses contain 1,584 weekly lessons, 4,752 worksheets,
+28,650 exercises, and 3,270 worked examples. The three reused named courses do
 not inflate these counts. Independent sampled content review and browser/print
-checks are recorded in [the integration review](docs/reviews/2026-10-07-weekly-integration.md).
+checks for the earlier 41 courses are recorded in
+[the integration review](docs/reviews/2026-10-07-weekly-integration.md);
+the AP completion review records its separate coverage and verification limits.
 
 **Nightly reading** supplies 180 public-domain selections for each grade K–12,
 five per week. The age-adjusted reading and discussion budget grows from about
@@ -248,6 +261,7 @@ touching the others.
 | [`content/courses/`](content/courses/) | Grade/subject catalog, original classroom guides and textbook lesson references |
 | [`content/curriculum/`](content/curriculum/) | K–12 year plans and source-linked Common Core and Singapore references |
 | [`content/weekly/`](content/weekly/) | Original weekly teaching, supplied reading texts, worksheets, and worked answer keys |
+| [`content/ap/`](content/ap/) | Original unit tests, practice exams, figures, and physics references; the course plan is `content/ap.json` |
 | [`content/work-samples/`](content/work-samples/) | Original vector written solutions, lesson bindings, and accessible transcripts |
 | [`src/`](src/) | The web app: pages, styles, pure logic in `lib/` (including the SAT question templates in `lib/families/`), and browser UI in `app/` |
 | [`tools/`](tools/) | Build, validation, audit, and question-generation scripts |
@@ -267,6 +281,7 @@ npm run check:families -- --reps 3000   # a deeper pass over every template
 npm run templates  # register new templates and re-version changed ones
 node tools/check-courses.js # validate classroom guides and worksheet generation
 node tools/build-weekly.js  # validate and build available weekly courses
+node tools/check-ap.js --complete # require all three AP courses' assessments and references
 node tools/course-packet.js --unit topic-1 --days 10 --count 20 --seed home-1 --out .scratch/print/home-1 --pdf
 node tools/course-packet.js --unit topic-1 --days 3 --count 20 --worksheets B,C,A --combined --out .scratch/print/mixed --pdf
 ```
@@ -292,6 +307,8 @@ sponsored by College Board or ACT, Inc. SAT® is a registered trademark of
 College Board. ACT® is a registered trademark of ACT, Inc. SAT/ACT questions
 and passages are original. Weekly reading also includes attributed
 public-domain works; each supplied text identifies its source.
+
+AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.
 
 No license has been chosen for original Liminal material; until one is, its
 rights are reserved. Attributed public-domain works retain their stated status.
