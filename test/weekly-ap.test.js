@@ -250,5 +250,7 @@ test("student projections carry choices, points, policies and given figures but 
   assert.equal(course.weeks[0].worksheets[0].items[0].choices.length, 4);
   // Sheets without the new fields project exactly as before.
   assert.deepEqual(Object.keys(W.studentWorksheet(course, 4, "a")), ["format", "version", "trackId", "courseId", "courseTitle", "week", "title", "worksheet", "passages"]);
-  assert.deepEqual(Object.keys(W.studentWorksheet(course, 4, "a").worksheet.items[0]), ["id", "prompt", "passageIds", "skill"]);
+  assert.deepEqual(Object.keys(W.studentWorksheet(course, 4, "a").worksheet.items[0]), ["id", "prompt", "passageIds"]);
+  // The skill label can name the targeted error, so only the key carries it.
+  assert.equal(W.answerWorksheet(course, 4, "a").worksheet.items[0].skill, course.weeks[3].worksheets[0].items[0].skill);
 });

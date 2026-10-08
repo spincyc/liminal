@@ -179,8 +179,9 @@ without progress storage.
 figures through `LiminalRender.renderFigure`. Student projections retain only
 question fields (prompt, choices, points, given figure references), the sheet's
 calculator policy and minutes, and the passages and given figures they
-reference; hidden keys, key letters, rubrics, answer-only figures, worked
-models and future teacher-only fields never enter the student export. Downloaded HTML embeds styling and the Liminal mark
+reference; hidden keys, key letters, rubrics, skill labels (which can name the
+error an item targets), answer-only figures, worked models and future
+teacher-only fields never enter the student export. Downloaded HTML embeds styling and the Liminal mark
 for offline printing. Matching week and worksheet labels appear on separate
 student and key copies, with blank, unruled working space on student sheets.
 

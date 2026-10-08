@@ -119,8 +119,8 @@
       ...(Array.isArray(item.figureIds) && item.figureIds.length ? { figureIds: item.figureIds.slice() } : {}),
       ...(Array.isArray(item.choices) ? { choices: item.choices.slice() } : {}),
       ...(Number.isInteger(item.points) ? { points: item.points } : {}),
-      skill: item.skill,
-      ...(answers ? { answer: item.answer, steps: item.steps.slice(),
+      // The skill label can name the error an item targets, so it is key-only.
+      ...(answers ? { skill: item.skill, answer: item.answer, steps: item.steps.slice(),
         ...(typeof item.key === "string" ? { key: item.key } : {}),
         ...(Array.isArray(item.rubric) ? { rubric: item.rubric.map(r => ({ points: r.points, criterion: r.criterion })) } : {}),
         ...(Array.isArray(item.answerFigureIds) && item.answerFigureIds.length ? { answerFigureIds: item.answerFigureIds.slice() } : {}) } : {}) };
