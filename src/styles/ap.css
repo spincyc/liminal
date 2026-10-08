@@ -38,7 +38,7 @@
 .ap-tally-table .ap-blank { min-width: 90px; }
 
 /* Documents */
-.ap-assessment > .weekly-actions { margin-bottom: 18px; }
+.ap-assessment > .reader-actions { margin-bottom: 18px; }
 .ap-copies { display: inline-flex; gap: 4px; }
 .ap-copies a { padding: 8px 12px; border: 1px solid var(--color-line); border-radius: var(--radius-sm); text-decoration: none; }
 .ap-copies a[aria-current="page"] { border-color: var(--color-ink); background: var(--color-soft); font-weight: 650; }
@@ -126,7 +126,7 @@
   .ap-reference-table :is(th, td) { border: 0; padding: 3px 10px; overflow-wrap: break-word; }
   .ap-reference-table td:last-child { color: var(--color-muted); }
   .ap-reference-table td:last-child::before { content: "Units: "; }
-  .ap-assessment > .weekly-actions { gap: 8px 12px; }
+  .ap-assessment > .reader-actions { gap: 8px 12px; }
   .ap-bubbles { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
 }
 

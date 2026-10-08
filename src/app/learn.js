@@ -53,6 +53,10 @@
       : group.sectionKey === page.section)) || null;
   }
 
+  function groupAnchor(group) {
+    return "learn-subject-" + (group.sectionKey || group.kind);
+  }
+
   /* ------------------------------------------------------------- inline */
 
   // Prose text, typeset as math when `math` is set (see
@@ -237,9 +241,20 @@
       return title;
     }
 
+    const subjects = el("nav", "reader-actions learn-subjects");
+    subjects.setAttribute("aria-label", "Learn subjects");
+    data.index.forEach((group) => subjects.append(link("#" + groupAnchor(group), String(group.title))));
+    view.append(subjects);
+
     data.index.forEach((group) => {
       const section = el("section", "learn-group");
-      section.append(el("h2", null, String(group.title)));
+      const heading = el("h2", null, String(group.title));
+      heading.id = groupAnchor(group);
+      heading.tabIndex = -1;
+      section.setAttribute("aria-labelledby", heading.id);
+      const head = el("div", "learn-group-head");
+      head.append(heading, link("#", "All subjects"));
+      section.append(head);
       if (group.kind === "section") {
         group.domains.forEach((domain) => {
           const block = el("div", "learn-domain");
@@ -285,7 +300,11 @@
     home.append(link("#", "Learn"));
     list.append(home);
     const group = groupOf(page);
-    if (group) list.append(el("li", null, String(group.title)));
+    if (group) {
+      const subject = el("li");
+      subject.append(link("#" + groupAnchor(group), String(group.title)));
+      list.append(subject);
+    }
     if (page.kind === "skill" && page.domain) list.append(el("li", null, String(page.domain)));
     nav.append(list);
     return nav;
@@ -410,7 +429,8 @@
   // Draws the view the hash names. `moveFocus` is false on the first load,
   // so opening the page does not jump focus unless the link names a section.
   function show(moveFocus) {
-    const target = learn.route(window.location.hash, data.pages);
+    const subject = data.index.find((group) => window.location.hash === "#" + groupAnchor(group));
+    const target = subject ? { view: "index" } : learn.route(window.location.hash, data.pages);
     status.textContent = "";
     let focusTarget = null;
     let changed = false;
@@ -436,6 +456,12 @@
       focusTarget = target.view === "missing" ? renderMissing(target.path) : renderIndex();
       if (target.view === "index") document.title = BASE_TITLE;
       changed = true;
+    }
+    if (subject) {
+      const heading = document.getElementById(groupAnchor(subject));
+      heading.focus({ preventScroll: true });
+      heading.scrollIntoView({ block: "start" });
+      return;
     }
     if (changed || moveFocus !== false) window.scrollTo(0, 0);
     if (focusTarget && moveFocus !== false) focusTarget.focus({ preventScroll: true });

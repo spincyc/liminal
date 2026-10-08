@@ -48,7 +48,7 @@
     (course.related || []).filter(entry => /^[a-z-]+\.html#[a-z0-9-]+$/.test(entry.href)).forEach(entry => {
       const note = el("p", entry.note + " ", "weekly-meta"); note.append(link(entry.label, entry.href)); header.append(note);
     });
-    const tools = el("div", undefined, "weekly-actions high-school-print-tools");
+    const tools = el("div", undefined, "reader-actions high-school-print-tools");
     const ready = weeklyLink(course, 1, "Open weekly work →");
     if (ready) tools.append(ready); else tools.append(el("span", "Weekly work is being prepared.", "weekly-meta"));
     const print = el("button", "Print plan"); print.type = "button"; print.addEventListener("click", () => window.print()); tools.append(print);

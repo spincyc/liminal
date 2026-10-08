@@ -35,7 +35,11 @@ function browser(saved) {
   };
   let seed = 0;
   const opened = [];
+  const renderOptions = [];
+  let fontRequests = 0;
+  let failFonts = false;
   const document = {
+    querySelector: () => ({ content: "SIL OPEN FONT LICENSE Version 1.1" }),
     getElementById(id) {
       if (!elements.has(id)) {
         const node = element(id);
@@ -58,7 +62,8 @@ function browser(saved) {
     PracticeCore: Core, LiminalRuns: Runs, LiminalModules: Modules, LiminalProgress: Progress,
     PracticeBooklet: {
       buildModel: (groups, blueprint, seedValue, options) => ({ groups, blueprint, formCode: options.code, code: options.code }),
-      renderKeyHtml: (model) => JSON.stringify(model), renderBookletHtml: (model) => JSON.stringify(model),
+      renderKeyHtml: (model, options) => { renderOptions.push(options); return JSON.stringify(model); },
+      renderBookletHtml: (model, options) => { renderOptions.push(options); return JSON.stringify(model); },
     },
     LiminalRender: render,
     LiminalSite: { getTest: () => "SAT", setTest() {}, onTestChange() {} },
@@ -76,11 +81,18 @@ function browser(saved) {
     },
     setTimeout() {},
   };
-  const context = vm.createContext({ window, document, URL, URLSearchParams, Uint32Array, Blob,
+  const fetch = async (url) => {
+    assert.equal(url, "styles/print.css");
+    fontRequests += 1;
+    return { ok: !failFonts, text: async () => '@font-face { font-family: "Liminal Reading Serif"; }' };
+  };
+  const context = vm.createContext({ window, document, fetch, URL, URLSearchParams, Uint32Array, Blob,
     navigator: { clipboard: { async writeText() {} } }, console });
   vm.runInContext(fs.readFileSync(require.resolve("../src/app/print.js"), "utf8"), context);
   return {
-    elements, opened, storage,
+    elements, opened, storage, renderOptions,
+    fontRequests: () => fontRequests,
+    failFonts: (value) => { failFonts = value; },
     click: (id) => elements.get(id).listeners.click(),
     progress: () => Progress.load(storage).progress,
   };
@@ -147,4 +159,31 @@ test("print shares practice exposure, pins exact forms, and records each opened 
   const fresh = JSON.parse(other.opened.at(-1).document.html);
   assert.ok(fresh.groups.flatMap((group) => group.questions.map(Runs.visibleIdentity))
     .every((identity) => !firstIds.includes(identity)));
+});
+
+
+test("booklet and key exports embed the same font assets and license, fetched once", async () => {
+  const app = browser(new Map());
+  await app.click("openTestBtn");
+  await app.click("openKeyBtn");
+  assert.equal(app.fontRequests(), 1);
+  assert.equal(app.renderOptions.length, 2);
+  for (const options of app.renderOptions) {
+    assert.match(options.styles, /Liminal Reading Serif/);
+    assert.match(options.fontLicense, /SIL OPEN FONT LICENSE/);
+  }
+  assert.equal(app.renderOptions[0].key, true, "SAT booklet retains its appended key");
+});
+
+test("failed booklet fonts prevent a partial export and can be retried", async () => {
+  const app = browser(new Map());
+  app.failFonts(true);
+  await app.click("openTestBtn");
+  assert.equal(app.renderOptions.length, 0);
+  assert.match(app.elements.get("printStatus").textContent, /typeface could not load/);
+  assert.equal(Progress.historyFor(app.progress(), "sat-reading-writing").serve, 0);
+  app.failFonts(false);
+  await app.click("openTestBtn");
+  assert.equal(app.fontRequests(), 2);
+  assert.equal(app.renderOptions.length, 1);
 });

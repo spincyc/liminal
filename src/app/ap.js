@@ -117,7 +117,7 @@
     const header = el("header");
     const title = el("h2", course.title); title.id = "apHeading"; title.tabIndex = -1;
     header.append(el("p", "36 weeks · Course plan", "weekly-meta"), title, el("p", course.summary));
-    const tools = el("div", undefined, "weekly-actions ap-print-tools");
+    const tools = el("div", undefined, "reader-actions ap-print-tools");
     const weekly = weeklyHref(course, 1);
     if (weekly) tools.append(link("Open weekly work →", weekly)); else tools.append(el("span", "Weekly work is being prepared.", "weekly-meta"));
     if (available(course, "practice-exam")) tools.append(link("Practice exam", A.route(course.id, "student", "practice-exam")));
@@ -162,7 +162,7 @@
   }
 
   function assessmentTools(course, selected, entry) {
-    const tools = el("div", undefined, "weekly-actions ap-print-tools");
+    const tools = el("div", undefined, "reader-actions ap-print-tools");
     tools.append(link("← " + course.shortTitle + " plan", A.route(course.id, "unit", (course.units.find(u => u.test === selected.assessmentId) || {}).id)));
     const copies = el("nav", undefined, "ap-copies"); copies.setAttribute("aria-label", "Copy");
     [["student", "Student copy"], ["key", "Answer key"]].forEach(([copy, label]) => {
@@ -206,7 +206,7 @@
   async function renderReference(course, token) {
     const entry = referenceEntry(course);
     const wrap = el("div", undefined, "ap-assessment");
-    const tools = el("div", undefined, "weekly-actions ap-print-tools");
+    const tools = el("div", undefined, "reader-actions ap-print-tools");
     tools.append(link("← " + course.shortTitle + " plan", A.route(course.id)), button("Print reference", () => window.print()));
     wrap.append(tools);
     if (!entry) {

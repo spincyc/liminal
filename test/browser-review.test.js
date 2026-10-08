@@ -21,6 +21,20 @@ function dom() {
   class Text {
     constructor(text) { this.nodeType = 3; this.textContent = String(text); this.parentNode = null; }
     remove() { if (this.parentNode) this.parentNode.childNodes.splice(this.parentNode.childNodes.indexOf(this), 1); this.parentNode = null; }
+    replaceWith(...nodes) {
+      const parent = this.parentNode;
+      if (!parent) return;
+      const replacements = nodes.map((node) => typeof node === "string" ? new Text(node) : node);
+      const next = parent.childNodes.slice(parent.childNodes.indexOf(this) + 1)
+        .find((node) => !replacements.includes(node));
+      replacements.forEach((node) => node.remove());
+      this.remove();
+      replacements.forEach((node) => {
+        node.remove();
+        parent.childNodes.splice(next ? parent.childNodes.indexOf(next) : parent.childNodes.length, 0, node);
+        node.parentNode = parent;
+      });
+    }
   }
   class Element extends Text {
     constructor(tag) {
@@ -93,7 +107,7 @@ function dom() {
     scrollIntoView() {}
     contains(node) { return node === this || this.children.some((child) => child.contains(node)); }
     matches(selector) {
-      const tag = selector.match(/^[a-z]+/i);
+      const tag = selector.match(/^[a-z][a-z0-9-]*/i);
       if (tag && this.tagName !== tag[0].toUpperCase()) return false;
       const id = selector.match(/#([\w-]+)/);
       if (id && this.id !== id[1]) return false;
@@ -304,11 +318,17 @@ test("the Progress clear button reports a failed clear honestly and permits a su
     return element;
   };
   const dashboard = add(document.body, "section", "dashboardView");
-  add(dashboard, "div", "progressHeading").className = "page-head";
+  const pageHead = add(dashboard, "header", "progressHeading");
+  pageHead.className = "page-head";
+  add(pageHead, "h1", "dashboardHeading").textContent = "Progress";
   for (const id of ["dashboardStats", "dashboardNotes"]) add(dashboard, "div", id);
   const mastery = add(dashboard, "section", "masteryCard");
-  for (const id of ["skillTableWrap", "masteryHeading", "masterySection", "masterySort", "masteryNote"]) add(mastery, "div", id);
+  add(mastery, "h2", "masteryHeading").textContent = "Skill performance";
+  for (const id of ["masterySection", "masterySort"]) add(mastery, "select", id);
+  add(mastery, "p", "masteryNote");
+  add(mastery, "div", "skillTableWrap");
   const danger = add(dashboard, "section", "dangerZone");
+  add(danger, "h2", "clearHeading").textContent = "Saved progress";
   add(danger, "p", "clearNote");
   const clear = add(danger, "button", "clearProgressBtn");
   env.load("views/progress.js");

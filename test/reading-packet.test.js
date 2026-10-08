@@ -40,7 +40,7 @@ const day = {
 test("a night renders as one paper with a compact source credit, never editorial or facilitator notes", () => {
   const tex = P.paper(course, day, { date: "2026-10-08", newSheet: true });
   const order = [String.raw`\cleardoublepage`, String.raw`{\LARGE\bfseries A night\par}`, String.raw`{\large Ann Author\par}`,
-    String.raw`{\small\itshape About 18 minutes, read together\par}`,
+    String.raw`{\small\itshape Read together\par}`,
     String.raw`\centerline{\bfseries Abstract}`, "Notice the change. Track the turn.", String.raw`\section{Context}`,
     String.raw`\section{Text}\readingsectionrule`, String.raw`\section{Questions for discussion}\readingsectionrule`,
     String.raw`\readingsource{Ann Author, A Book \& Its \{Notes\} (1901). Public domain in the United States.`];
@@ -50,6 +50,13 @@ test("a night renders as one paper with a compact source credit, never editorial
   assert.ok(tex.includes(String.raw`\renewcommand{\papermeta}{Grade 5 · Week 7 · Day 4 · Thu, Oct 8}`));
   assert.doesNotMatch(tex.slice(tex.indexOf(String.raw`\twocolumn`)), /Grade 5|Week 7|Day 4|Thu, Oct 8/, "metadata stays out of the title and body");
   assert.ok(tex.includes(String.raw`\href{https://example.org/b\#1}{\nolinkurl{example.org/b\#1}}`));
+  const estimate = "About 18 min · read 12 + discuss 6";
+  assert.equal(tex.indexOf(estimate), tex.lastIndexOf(estimate), "print estimates appear only once");
+  assert.ok(tex.indexOf(estimate) > tex.indexOf(String.raw`\readingsource{`), "print estimates stay in the source note");
+  const independent = P.paper(course, { ...day, readingMode: "independent" });
+  assert.doesNotMatch(independent, /read independently/i);
+  assert.ok(independent.includes(estimate));
+  assert.ok(P.paper(course, { ...day, readingMode: "adult-read-aloud" }).includes(String.raw`{\small\itshape Read aloud by an adult\par}`));
   const translated = P.paper({ ...course, sources: [{ ...course.sources[0], translator: "T. Translator", translationYear: 1905 }] }, day);
   assert.ok(translated.includes(String.raw`Ann Author, A Book \& Its \{Notes\} (1901); translated by T. Translator (1905). Public domain in the United States.`));
   assert.match(tex, /\\begin\{verse\}\nFirst \u201cline\u201d here\\\\\n\\hspace\*\{1\.0em\}indented \\emph\{word\} line/);

@@ -253,12 +253,12 @@
       "The next passage moves up if that went well, or down if it was hard. Up to " + L.MAX_PROBES + " passages, about 15–35 minutes.",
       "Get a starting week in the daily library and a dated plan that adds harder nights gradually."].forEach(text => steps.append(el("li", text)));
     intro.append(steps);
-    const form = el("form", undefined, "rl-start"), field = el("label", "Start at"), select = el("select"); select.id = "rlStartLevel";
+    const form = el("form", undefined, "rl-start"), controls = el("div", undefined, "reader-selectors"), field = el("label", "Start at", "reader-select-wide"), select = el("select"); select.id = "rlStartLevel";
     ladder.forEach(level => { const option = el("option", label(level)); option.value = String(level); select.append(option); });
     const stated = latest("calibration"); if (stated && ladder.includes(stated.startLevel)) select.value = String(stated.startLevel);
     field.append(select);
-    form.append(field, el("p", "Choose your current grade, or the level you read comfortably now. Levels without passages yet are skipped.", "rl-muted"));
-    const start = el("button", "Start the check", "rl-primary"); start.type = "submit"; form.append(start);
+    const start = el("button", "Start the check", "rl-primary"); start.type = "submit"; controls.append(field, start);
+    form.append(controls, el("p", "Choose your current grade, or the level you read comfortably now. Levels without passages yet are skipped.", "rl-muted"));
     form.addEventListener("submit", event => { event.preventDefault(); startCalibration(Number(select.value)); });
     intro.append(form); view.append(intro);
     view.append(storageSection());
@@ -322,13 +322,13 @@
     const make = el("section", undefined, "rl-card");
     make.append(el("h2", state.plan ? "Make a new plan from this result" : "Make a plan"));
     make.append(el("p", "Most nights stay at your starting level. " + (place.confirmed ? "A growing share of stretch nights comes from the next level: " + L.STRETCH_NIGHTS_BY_STAGE.join(", then ") + " a week. " : "Stretch nights begin once a re-check confirms this start. ") + "Every " + L.RECHECK_EVERY_WEEKS + " weeks, a one-passage re-check moves you up or holds your level.", "rl-muted"));
-    const form = el("form", undefined, "rl-plan-form");
-    const startField = el("label", "First week starts on or after"), startInput = el("input"); startInput.type = "date"; startInput.required = true; startInput.value = L.addDays(today(), 1); startInput.id = "rlPlanStart"; startField.append(startInput);
-    const nightsField = el("label", "Reading nights"), nights = el("select"); nights.id = "rlPlanNights";
+    const form = el("form", undefined, "rl-plan-form reader-selectors");
+    const startField = el("label", "Start date", "reader-select-wide"), startInput = el("input"); startInput.type = "date"; startInput.required = true; startInput.value = L.addDays(today(), 1); startInput.id = "rlPlanStart"; startField.append(startInput);
+    const nightsField = el("label", "Reading nights", "reader-select-wide"), nights = el("select"); nights.id = "rlPlanNights";
     [["weekdays", "Monday to Friday"], ["school-nights", "Sunday to Thursday"]].forEach(([value, text]) => { const option = el("option", text); option.value = value; nights.append(option); });
     nightsField.append(nights);
-    const weeksField = el("label", "Length"), weeks = el("select"); weeks.id = "rlPlanWeeks";
-    L.PLAN_WEEKS.forEach(count => { const option = el("option", count + " weeks"); option.value = String(count); weeks.append(option); }); weeks.value = String(L.DEFAULT_PLAN_WEEKS);
+    const weeksField = el("label", "Weeks"), weeks = el("select"); weeks.id = "rlPlanWeeks";
+    L.PLAN_WEEKS.forEach(count => { const option = el("option", String(count)); option.value = String(count); weeks.append(option); }); weeks.value = String(L.DEFAULT_PLAN_WEEKS);
     weeksField.append(weeks);
     const submit = el("button", state.plan ? "Replace my plan" : "Make my plan", "rl-primary"); submit.type = "submit";
     form.append(startField, nightsField, weeksField, submit);
@@ -361,8 +361,8 @@
     if (state.plan.supported) card.append(el("p", "Read these nights with an adult until a re-check shows you are ready to read them alone.", "rl-notice"));
     if (state.plan.note) card.append(el("p", state.plan.note, "rl-muted rl-note"));
     card.append(el("p", "Practice placement from a few short passages; not a standardized test or measured reading level.", "rl-print-only"));
-    const actions = el("div", undefined, "rl-actions");
-    actions.append(button("Print plan", () => window.print(), "rl-primary"), button("Take the re-check now", startRecheck));
+    const actions = el("div", undefined, "rl-actions reader-actions");
+    actions.append(button("Print plan", () => window.print()), button("Take the re-check now", startRecheck));
     if (latest("calibration")) actions.append(link("Starting point", "#result", "rl-button"));
     actions.append(link("Home", "#", "rl-button"));
     card.append(actions); view.append(card);

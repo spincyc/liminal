@@ -85,6 +85,11 @@ For a coherent ACT bank batch:
 
 ## Application notes
 
+- UI changes follow `docs/design-system.md`: choose the applicable page template,
+  reuse shared control components, and verify its screen/print contract. Keep
+  section-specific task behavior coherent; do not impose reader pagination on
+  active assessments. Record justified template exceptions in the section docs.
+
 - Classroom courses use `content/courses/`, `src/lib/courses/`, and
   `courses.html`, independently of the SAT/ACT taxonomy and progress records.
   Follow `docs/classroom-courses.md` for schema, generation, review, and print

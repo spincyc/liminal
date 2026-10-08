@@ -207,18 +207,25 @@ function main() {
 
   const base = `${blueprint.id}-${model.formCode}`;
   const written = [];
+  const fontDirectory = path.join(ROOT, "src/fonts/computer-modern");
+  const printOptions = {
+    render,
+    styles: require("./lib/reading-fonts").embed(
+      fs.readFileSync(path.join(ROOT, "src/styles/print.css"), "utf8"), fontDirectory),
+    fontLicense: fs.readFileSync(path.join(fontDirectory, "OFL.txt"), "utf8"),
+  };
 
   const testHtml = path.join(options.outDir, `${base}-test.html`);
-  fs.writeFileSync(testHtml, booklet.renderBookletHtml(model, { render }));
+  fs.writeFileSync(testHtml, booklet.renderBookletHtml(model, printOptions));
   written.push(testHtml);
 
   const keyHtml = path.join(options.outDir, `${base}-key.html`);
-  fs.writeFileSync(keyHtml, booklet.renderKeyHtml(model));
+  fs.writeFileSync(keyHtml, booklet.renderKeyHtml(model, printOptions));
   written.push(keyHtml);
 
   if (options.tex) {
     const texPath = path.join(options.outDir, `${base}-test.tex`);
-    fs.writeFileSync(texPath, booklet.renderTex(model));
+    fs.writeFileSync(texPath, booklet.renderTex(model, { parseUnderlines: render.parseUnderlines }));
     written.push(texPath);
   }
 

@@ -4,8 +4,8 @@
 // tooling parser as figure validation, then serialize only the sanitized tree.
 // Content never becomes trusted markup, and malformed SVG retains its alt text.
 const { parseXml } = require("./svg-tree.js");
-const { sanitizeSvgTree, svgSize } = require("../../src/app/render.js");
-const { escapeHtml } = require("../../src/lib/booklet.js");
+const { sanitizeSvgTree, svgSize, parseUnderlines } = require("../../src/app/render.js");
+const { escapeHtml, blocksToHtml } = require("../../src/lib/booklet.js");
 
 function svgHtml(node) {
   if (typeof node.text === "string") return escapeHtml(node.text);
@@ -37,4 +37,19 @@ function figure(figure) {
     "</figure>";
 }
 
-module.exports = { figure };
+function stimulus(stimulus, question) {
+  const inline = question.sectionKey === "act-english" ? (text) =>
+    parseUnderlines(text).map((segment) => {
+      if (segment.marker !== undefined) {
+        return `<span class="lm-ul-marker" aria-label="Point ${segment.marker}">${segment.marker}</span>`;
+      }
+      if (segment.underline !== undefined) {
+        return `<span class="lm-ul"><u>${escapeHtml(segment.text)}</u>` +
+          `<span class="lm-ul-n" aria-label="Underlined portion ${segment.underline}">${segment.underline}</span></span>`;
+      }
+      return escapeHtml(segment.text);
+    }).join("") : escapeHtml;
+  return `<div class="lm-stimulus">${blocksToHtml(stimulus.content, { inline })}</div>`;
+}
+
+module.exports = { figure, stimulus, parseUnderlines };

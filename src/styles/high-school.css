@@ -3,15 +3,16 @@
 .high-school-courses a[aria-current="page"] { border-color: var(--color-ink); background: var(--color-soft); font-weight: 650; }
 .high-school-course h2 { font: 400 2rem/1.2 var(--font-serif); margin-block: 8px 12px; }
 .high-school-course > header > p { max-width: 75ch; }
-.high-school-course .weekly-actions { margin-block: 14px 20px; }
-.high-school-course .weekly-actions a { min-height: 44px; display: inline-flex; align-items: center; }
+.high-school-course .reader-actions { margin-block: 14px 20px; }
 .high-school-unit { border-top: 1px solid var(--color-line); }
-.high-school-unit > summary { display: flex; align-items: baseline; gap: 16px; list-style: none; padding-block: 14px; }
-.high-school-unit > summary::before { content: "+"; width: 12px; flex: none; }
-.high-school-unit[open] > summary::before { content: "−"; }
-.high-school-unit-week { color: var(--color-muted); font-size: .8125rem; flex: 0 0 86px; }
-.high-school-unit-title { font-weight: 600; }
-.high-school-unit-body { padding: 0 0 20px 28px; }
+.high-school-unit > summary { display: grid; grid-template-columns: 100px minmax(0, 1fr) 16px; align-items: center; gap: 16px; list-style: none; padding: 19px 4px; cursor: pointer; }
+.high-school-unit > summary::-webkit-details-marker { display: none; }
+.high-school-unit > summary::after { content: "+"; color: var(--color-muted); font-size: 1.25rem; text-align: center; }
+.high-school-unit[open] > summary::after { content: "−"; }
+.high-school-unit > summary:hover { background: var(--color-soft); }
+.high-school-unit-week { color: var(--color-muted); font-size: .8125rem; white-space: nowrap; }
+.high-school-unit-title { font-weight: 600; line-height: 1.4; }
+.high-school-unit-body { padding: 0 4px 20px; }
 .high-school-unit-body h3 { font-size: 1rem; font-weight: 600; margin-top: 18px; }
 .high-school-unit-body p { margin-block: 10px; }
 .high-school-unit-body li + li, .high-school-notes li + li { margin-top: 8px; }
@@ -23,15 +24,18 @@
 @media (max-width: 640px) {
   .high-school-courses { gap: 4px; margin-bottom: 18px; }
   .high-school-courses a { padding-inline: 8px; }
-  .high-school-unit > summary { gap: 10px; flex-wrap: wrap; }
-  .high-school-unit-title { width: calc(100% - 22px); margin-left: 22px; }
-  .high-school-unit-body { padding-left: 0; }
+}
+@media (max-width: 460px) {
+  .high-school-unit > summary { grid-template-columns: minmax(0, 1fr) 16px; gap: 4px 12px; padding: 14px 0; }
+  .high-school-unit-week, .high-school-unit-title { grid-column: 1; }
+  .high-school-unit > summary::after { grid-column: 2; grid-row: 1 / 3; }
+  .high-school-unit-body { padding-inline: 0; }
 }
 @media print {
   .high-school-page :is(.high-school-courses, .high-school-print-tools) { display: none !important; }
   .high-school-page .weekly-intro { display: block !important; }
   .high-school-unit > summary { break-after: avoid; }
-  .high-school-unit > summary::before { display: none; }
+  .high-school-unit > summary::after { display: none; }
   .high-school-unit-body { padding-left: 0; }
   .high-school-unit a { text-decoration: none; }
 }

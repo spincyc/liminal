@@ -10,21 +10,24 @@
   function disclosure(label, className, doc = document) { const node = el("details", undefined, className, doc); node.append(el("summary", label, undefined, doc)); return node; }
   function readingLocation(packet) { return D.gradeLabel(packet.grade) + " · Week " + packet.day.week + " · Day " + packet.day.day; }
   function printFooterText(packet) { return readingLocation(packet) + " · Liminal"; }
-  function sourceDetails(source, excerpt, doc) {
-    const details = disclosure("Source and public-domain record", "daily-source", doc);
+  function timeEstimate(time) { return "About " + time.totalMinutes + " min · read " + time.readingMinutes + " + discuss " + time.discussionMinutes; }
+  function sourceDetails(source, excerpt, time, doc) {
+    const details = disclosure("Endnotes and source record", "daily-source", doc);
+    details.append(el("p", timeEstimate(time), "daily-budget", doc));
     details.append(el("p", D.sourceLabel(source), undefined, doc), el("p", source.edition, undefined, doc), el("p", excerpt.locator, undefined, doc),
       el("p", "Public domain in the United States. " + source.rights.basis, undefined, doc), el("p", "Rights record checked " + source.rights.verifiedDate + ".", "daily-muted", doc));
     const links = el("div", undefined, "daily-source-links", doc);
     for (const [label, url] of [["Source record", source.url], ["Read the source text", source.textUrl], ["Rights evidence", source.rights.evidenceUrl]]) if (D.safeHttps(url)) links.append(link(label, url, doc));
     details.append(links); return details;
   }
-  function attribution(source, doc) {
+  function attribution(source, time, doc) {
     const note = D.sourceNote(source);
     const footer = el("footer", undefined, "daily-attribution", doc);
     footer.append(el("h3", "Source", undefined, doc), el("p", note.credit + ". " + note.rights, undefined, doc));
     if (note.url) {
       const reference = el("p", undefined, undefined, doc); reference.append(link(note.linkText, note.url, doc)); footer.append(reference);
     }
+    footer.append(el("p", timeEstimate(time), "daily-source-budget", doc));
     return footer;
   }
   // The supplied text as text nodes only: paired _underscores_ become <em>
@@ -59,8 +62,8 @@
     header.append(title);
     if (credit.workTitle) header.append(el("p", credit.workTitle, "daily-work-title", doc));
     header.append(el("p", "By " + credit.author + (source.translator ? " · Translated by " + source.translator : ""), "daily-author", doc));
-    const budget = el("p", "About " + day.time.totalMinutes + " min · read " + day.time.readingMinutes + " + discuss " + day.time.discussionMinutes, "daily-budget", doc);
-    header.append(budget, el("p", D.modeLabel(day.readingMode), "daily-mode", doc));
+    const modeClass = "daily-mode" + (day.readingMode === "independent" ? " daily-screen-label" : "");
+    header.append(el("p", D.modeLabel(day.readingMode), modeClass, doc));
     article.append(header, el("h3", "Reading", "daily-print-heading", doc), el("p", day.context, "daily-context", doc));
     if (day.contentNote) article.append(el("p", "Content note: " + day.contentNote, "daily-content-note", doc));
     if (day.excerpt.continuesFrom) article.append(el("p", "Continued from the previous night.", "daily-continuation", doc));
@@ -91,7 +94,7 @@
       }
       questions.append(item);
     });
-    discussion.append(questions); article.append(discussion, sourceDetails(source, day.excerpt, doc), attribution(source, doc));
+    discussion.append(questions); article.append(discussion, sourceDetails(source, day.excerpt, day.time, doc), attribution(source, day.time, doc));
     return article;
   }
   function progression(course, week, doc = document) {

@@ -145,28 +145,29 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-function blocksToHtml(text) {
+function blocksToHtml(text, options) {
+  const inline = options && options.inline || escapeHtml;
   return parseBlocks(text)
     .map((block) => {
       if (block.type === "table") {
         const [head, ...body] = block.rows;
         const headHtml = head
-          .map((cell) => `<th>${escapeHtml(cell)}</th>`)
+          .map((cell) => `<th>${inline(cell)}</th>`)
           .join("");
         const bodyHtml = body
           .map(
             (row) =>
-              `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`,
+              `<tr>${row.map((cell) => `<td>${inline(cell)}</td>`).join("")}</tr>`,
           )
           .join("");
         return `<table class="data"><thead><tr>${headHtml}</tr></thead><tbody>${bodyHtml}</tbody></table>`;
       }
       if (block.type === "list") {
         return `<ul>${block.items
-          .map((item) => `<li>${escapeHtml(item)}</li>`)
+          .map((item) => `<li>${inline(item)}</li>`)
           .join("")}</ul>`;
       }
-      return `<p>${escapeHtml(block.text)}</p>`;
+      return `<p>${inline(block.text)}</p>`;
     })
     .join("");
 }
@@ -209,14 +210,33 @@ function figureFallbackHtml(figure) {
 //   render.figure(figure, question)      a { svg, alt, notToScale } figure
 // Each returns markup serialized from escaped text and allow-listed
 // elements, never content strings inserted as HTML.
-function questionHtml(item, previous, render) {
+function passageSection(question) {
+  return ["act-english", "act-reading", "act-science"].includes(question.sectionKey);
+}
+
+// Only consecutive questions with the same passage share a context heading.
+// This range is independent of question IDs and retains the printed numbers.
+function passageLastNumber(items, index) {
+  let last = index;
+  while (last + 1 < items.length && repeatedStimulus(items[last + 1].question, items[index])) last += 1;
+  return items[last].number;
+}
+
+function questionHtml(item, previous, render, lastNumber) {
   const { question, number, letters } = item;
   const rich = Boolean(render && render.rich);
-  const parts = [`<article class="q${rich ? " rich" : ""}" id="q${number}">`];
-  // A passage set shares one stimulus across every question in it. Printing it
-  // above each question would repeat 750 words ten times; the real booklet
-  // prints the passage once and then the questions that go with it.
+  const shared = passageSection(question);
   const repeated = repeatedStimulus(question, previous);
+  const newPassage = shared && question.stimulus && question.stimulus.content && !repeated;
+  const heading = `<h3 class="question-heading"><span>Question ${number}</span></h3>`;
+  const parts = [`<article class="q${rich ? " rich" : ""}" id="q${number}">`];
+  // SAT passages and figures belong to one problem; its number comes first.
+  // ACT passage sets identify their whole range before flowing across columns.
+  if (!shared) parts.push(heading);
+  if (newPassage) {
+    parts.push('<div class="passage-context">');
+    parts.push(`<h3 class="passage-label">${lastNumber > number ? `Questions ${number}–${lastNumber} refer` : `Question ${number} refers`} to the following ${question.sectionKey === "act-science" ? "information" : "passage"}.</h3>`);
+  }
   if (question.stimulus && question.stimulus.content && !repeated) {
     parts.push(
       `<div class="stimulus ${escapeHtml(question.stimulus.type)}">` +
@@ -232,28 +252,25 @@ function questionHtml(item, previous, render) {
       : figureFallbackHtml(question.figure);
     if (figureHtml) parts.push(`<div class="figure">${figureHtml}</div>`);
   }
-  // Shared ACT passages, data and graphs can exceed a column. Let that
-  // context flow, but keep each question and all its choices together.
-  const passageSection = ["act-english", "act-reading", "act-science"].includes(question.sectionKey);
-  if (passageSection) parts.push('<div class="question-body">');
-  parts.push(
-    rich
-      ? `<div class="stem"><span class="num">${number}.</span><div class="body">${render.rich(question.stem, question)}</div></div>`
-      : `<p class="stem"><span class="num">${number}.</span> ${escapeHtml(question.stem)}</p>`,
-  );
+  if (newPassage) parts.push("</div>");
+  // Shared ACT context may flow, while a normal stem and its choices stay
+  // together. Oversized questions can still fragment instead of clipping.
+  if (shared) parts.push('<div class="question-body">', heading);
+  parts.push(`<div class="stem"><div class="body">${rich
+    ? render.rich(question.stem, question) : escapeHtml(question.stem)}</div></div>`);
   if (question.responseType === "multiple-choice" && question.choices) {
     parts.push(
-      `<ol class="choices">${question.choices
-        .map((choice, index) =>
-          rich
-            ? `<li><span class="letter">${letters[index]}.</span><div class="body">${render.rich(choice, question)}</div></li>`
-            : `<li><span class="letter">${letters[index]}.</span> ${escapeHtml(choice)}</li>`)
-        .join("")}</ol>`,
+      `<ol class="choices">${question.choices.map((choice, index) =>
+        `<li><span class="letter">${letters[index]}.</span><div class="body">${rich
+          ? render.rich(choice, question) : escapeHtml(choice)}</div></li>`).join("")}</ol>`,
     );
   } else if (question.responseType === "numeric") {
     parts.push('<p class="gridin">Student-produced response: <span class="rule"></span></p>');
   }
-  if (passageSection) parts.push("</div>");
+  if (["sat-math", "act-mathematics"].includes(question.sectionKey)) {
+    parts.push('<div class="work-space" aria-hidden="true"></div>');
+  }
+  if (shared) parts.push("</div>");
   parts.push("</article>");
   return parts.join("");
 }
@@ -287,17 +304,16 @@ function answerSheetHtml(model) {
 const BRAND_HTML = '<div class="booklet-brand"><svg viewBox="0 0 28 34" fill="none" aria-hidden="true" focusable="false"><path d="M3 32V15a11 11 0 0 1 22 0v17M10 32V15a4 4 0 0 1 8 0v17" stroke="currentColor" stroke-width="2.5"/><path d="M0 32h28" stroke="currentColor" stroke-width="2.5"/></svg><span>Liminal.</span></div>';
 
 const BOOKLET_CSS = `
-@page { size: letter; margin: 0.6in 0.5in 0.7in 0.5in; }
+@page { size: letter; margin: 0.6in 0.55in 0.7in; }
 :root { --ink: #000; --rule: #000; }
 * { box-sizing: border-box; }
 body {
   margin: 0; color: var(--ink); background: #fff;
-  font-family: "Latin Modern Roman", "Computer Modern", Charter, "Palatino Linotype",
-    Palatino, Georgia, "Times New Roman", serif;
-  font-size: 9.6pt; line-height: 1.36; text-rendering: optimizeLegibility;
+  font-family: var(--booklet-serif, "CMU Serif", "Latin Modern Roman", Georgia, serif);
+  font-size: 10pt; line-height: 1.3; text-rendering: optimizeLegibility;
 }
-h1, h2, h3 { font-weight: 600; margin: 0 0 .4em; line-height: 1.2; }
-.booklet-brand { display: flex; align-items: center; gap: 6pt; margin-bottom: 10pt; color: #000; font: 400 22pt/1 Georgia, "Times New Roman", serif; letter-spacing: -.06em; }
+h1, h2, h3 { font-weight: 700; margin: 0 0 .4em; line-height: 1.2; }
+.booklet-brand { display: flex; align-items: center; gap: 6pt; margin-bottom: 10pt; color: #000; font-size: 22pt; font-weight: 400; line-height: 1; letter-spacing: -.06em; }
 .booklet-brand svg { flex: none; width: 18pt; height: 22pt; }
 /* At least one page, so the test-cover footer sits at its foot. */
 .cover { min-height: 9.4in; display: flex; flex-direction: column; break-after: page; }
@@ -314,32 +330,46 @@ h1, h2, h3 { font-weight: 600; margin: 0 0 .4em; line-height: 1.2; }
 .directions li { margin-bottom: .35em; }
 .schedule { border-collapse: collapse; margin: 1em 0; font-size: 9.5pt; }
 .schedule th, .schedule td { border-bottom: .5pt solid var(--rule); padding: .32em .9em .32em 0; text-align: left; }
-.schedule th { font-variant: small-caps; letter-spacing: .05em; font-weight: 600; }
+.schedule th { font-variant: small-caps; letter-spacing: .05em; font-weight: 700; }
 .section-head { break-before: page; break-inside: avoid; break-after: avoid; border-bottom: 1.5pt solid var(--ink);
   padding-bottom: .5em; margin-bottom: .9em; }
 .section-head h2 { font-size: 15pt; }
 .section-head .timing { font-style: italic; }
 .section-head .dirs { margin-top: .5em; font-size: 9.3pt; max-width: 6.6in; }
-.questions { column-count: 2; column-gap: .34in; column-fill: auto; orphans: 3; widows: 3; }
-.q { break-inside: avoid; page-break-inside: avoid; margin: 0 0 .82em; }
+.questions { column-count: 2; column-gap: .38in; column-rule: .45pt solid #999;
+  column-fill: auto; orphans: 3; widows: 3; }
+.q { break-inside: avoid; page-break-inside: avoid; margin: 0 0 14pt; }
+.question-heading { display: flex; align-items: center; gap: 8pt;
+  margin: 0 0 7pt; font-size: 10pt; font-weight: 700; break-after: avoid; }
+.question-heading::after { content: ""; flex: 1; border-top: .65pt solid #555; }
+.passage-context { border-left: .65pt solid #777; padding-left: 8pt; margin: 0 0 12pt;
+  box-decoration-break: clone; }
+.passage-label { margin: 0 0 8pt; font-size: 9pt; font-style: italic; break-after: avoid; }
+.work-space { min-height: .3in; break-before: avoid; }
+
 /* ACT passage sections keep each stem and its choices in question-body.
    Longer context may flow across columns without stranding a section title. */
 .q:has(> .question-body) { break-inside: auto; page-break-inside: auto; }
 .question-body { break-inside: avoid; page-break-inside: avoid; }
-.stem { margin: 0 0 .3em; }
-.num { font-weight: 700; margin-right: .25em; }
-.choices { list-style: none; margin: 0 0 0 .95em; padding: 0; }
-.choices li { margin-bottom: .1em; text-indent: -.95em; padding-left: .95em; }
-.letter { font-weight: 600; margin-right: .3em; }
+.stem { margin: 0 0 6pt; }
+.choices { list-style: none; margin: 0; padding: 0; }
+.choices li { display: flex; align-items: baseline; gap: 5pt; margin: 0 0 3pt; }
+.choices .letter { flex: 0 0 1.2em; font-weight: 700; }
+.choices .body { flex: 1 1 auto; min-width: 0; }
+
 /* Passage and table structure survives printing with backgrounds disabled. */
-.stimulus { border-left: 2pt solid var(--rule);
-  padding: .45em .6em; margin: 0 0 .45em; font-size: 9.2pt; }
+.stimulus { margin: 0 0 8pt; font-size: inherit; }
 .stimulus p { margin: 0 0 .35em; }
 .stimulus p:last-child, .stimulus table:last-child { margin-bottom: 0; }
+.lm-ul u { text-decoration-thickness: .6pt; text-underline-offset: 2pt; }
+.lm-ul-n, .lm-ul-marker { display: inline; margin-inline: 2pt; font-size: 7.5pt; font-weight: 700;
+  line-height: 1; vertical-align: super; }
+.lm-ul-marker { border: .5pt solid #777; padding: 0 2pt; vertical-align: baseline; }
 .stimulus ul { margin: 0 0 .35em 1em; padding: 0; }
 table.data { border-collapse: collapse; margin: .35em 0; font-size: 8.8pt; width: 100%; }
 table.data th, table.data td { border: .6pt solid var(--rule); padding: .16em .4em; text-align: left; }
 table.data th { border-bottom: 1pt solid var(--rule); font-weight: 700; }
+.gridin { margin: 8pt 0 0; line-height: 1.8; }
 .gridin .rule { display: inline-block; width: 1.4in; border-bottom: .6pt solid var(--ink); }
 .stop { text-align: center; font-variant: small-caps; letter-spacing: .12em;
   border-top: 1pt solid var(--ink); margin-top: 1em; padding-top: .5em; column-span: all; }
@@ -361,7 +391,7 @@ table.data th { border-bottom: 1pt solid var(--rule); font-weight: 700; }
 .write-in { display: inline-block; width: 5.4em; height: 1.28em; border: .65pt solid var(--ink); border-radius: 2pt; }
 .key-grid { column-count: 5; column-gap: .3in; font-size: 9pt; }
 .key-grid li { break-inside: avoid; }
-.exp { break-inside: avoid; margin-bottom: .8em; }
+.exp { break-inside: avoid; margin-bottom: 12pt; border-top: .5pt solid #777; padding-top: 7pt; }
 .exp h4 { margin: 0 0 .15em; font-size: 9.6pt; }
 .exp .tag { font-variant: small-caps; letter-spacing: .05em; font-size: 8.4pt; }
 /* Rendered explanations run long; kept whole, most would leave half a
@@ -377,26 +407,22 @@ table.data th { border-bottom: 1pt solid var(--rule); font-weight: 700; }
 .key-part { break-before: page; }
 .key-part > h2 { font-size: 15pt; }
 /* Content from the site's renderer (app/render.js), for template forms. */
-/* Baseline-aligned, so a number or letter sits on the first line of its
-   text even when a stacked fraction makes that line taller. */
-.q.rich .stem, .q.rich .choices li { display: flex; align-items: baseline; gap: .3em; }
-.q.rich .choices li { text-indent: 0; padding-left: 0; }
-.q.rich .num, .q.rich .letter { flex: none; margin-right: 0; }
-.q.rich .body { flex: 1 1 auto; min-width: 0; }
+/* Choice letters keep a fixed gutter and follow the first text baseline,
+   including choices beginning with a typeset fraction. */
 .inline > .lm-rich, .inline > .lm-rich > p:only-child { display: inline; }
 .lm-rich > * + *, .lm-stimulus > * + * { margin-top: .35em; }
 .lm-rich p, .lm-stimulus p { margin: 0; }
-.lm-passage-title { margin: 0; font-size: 9.6pt; font-weight: 600; text-align: center; }
-.lm-passage-label { margin: 0; font-weight: 600; }
+.lm-passage-title { margin: 0; font-size: 9.6pt; font-weight: 700; text-align: center; }
+.lm-passage-label { margin: 0; font-weight: 700; }
 .lm-list { margin: 0 0 0 1.1em; padding: 0; }
 .lm-equations { display: flex; flex-direction: column; align-items: center; gap: .15em; }
 .lm-equation { margin: 0; font-variant-numeric: tabular-nums; white-space: pre-wrap; }
-.lm-table { margin: .2em auto; border-collapse: collapse; font-size: 8.8pt; }
-.lm-table th, .lm-table td { padding: .16em .5em; border: .6pt solid var(--rule); text-align: center; }
+.lm-table { margin: .4em auto; border-collapse: collapse; font-size: 9pt; max-width: 100%; }
+.lm-table th, .lm-table td { padding: .22em .4em; border: .6pt solid var(--rule); text-align: center; }
 .lm-table thead th { border-bottom: 1pt solid var(--rule); font-weight: 700; }
-.lm-table tbody th { font-weight: 600; text-align: left; }
+.lm-table tbody th { font-weight: 700; text-align: left; }
 .figure { margin: 0 0 .45em; break-inside: avoid; page-break-inside: avoid; }
-.lm-figure { display: flex; flex-direction: column; align-items: center; margin: 0; color: var(--ink); }
+.lm-figure { break-inside: avoid; display: flex; flex-direction: column; align-items: center; margin: 0; color: var(--ink); }
 .lm-figure svg { display: block; width: 100%; height: auto; max-height: 2.6in; overflow: visible; }
 /* Authored figures already use currentColor, dash patterns and distinct
    markers. Strengthen their faint grid and region treatments for copying,
@@ -448,12 +474,14 @@ table.data th { border-bottom: 1pt solid var(--rule); font-weight: 700; }
 }
 `;
 
-function shell(title, body) {
+function shell(title, body, options) {
+  const settings = options || {};
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escapeHtml(title)}</title>
-<style>${BOOKLET_CSS}</style>
+${settings.fontLicense ? `<meta name="font-license" content="${escapeHtml(settings.fontLicense)}">` : ""}
+<style>${BOOKLET_CSS}\n${settings.styles || ""}</style>
 </head><body><div class="page">${body}</div></body></html>
 `;
 }
@@ -587,7 +615,7 @@ function renderBookletHtml(model, options) {
       questions ${section.firstNumber}–${section.lastNumber}</p>
     <p class="dirs">${escapeHtml(section.directions)}</p>
   </div>
-  <div class="questions">${section.questions.map((item, index) => questionHtml(item, section.questions[index - 1], settings.render)).join("")}
+  <div class="questions">${section.questions.map((item, index) => questionHtml(item, section.questions[index - 1], settings.render, passageLastNumber(section.questions, index))).join("")}
     <p class="stop">End of ${escapeHtml(section.label)}</p>
   </div>`,
     )
@@ -612,7 +640,7 @@ function renderBookletHtml(model, options) {
 </div>${parts.explanations}`;
   }
 
-  return shell(`${blueprint.label} — form ${model.formCode}`, cover + sections + sheet + key);
+  return shell(`${blueprint.label} — form ${model.formCode}`, cover + sections + sheet + key, settings);
 }
 
 // The answer key and explanations on their own. `options.render`: see
@@ -631,7 +659,7 @@ function renderKeyHtml(model, options) {
 
   return shell(
     `Answer key — ${model.blueprint.label} — form ${model.formCode}`,
-    cover + parts.explanations,
+    cover + parts.explanations, settings,
   );
 }
 
@@ -680,6 +708,7 @@ const TEX_UNICODE = [
   ["\u00B0", "$^{\\circ}$"],
   ["\u00D7", "$\\times$"],
   ["\u03C0", "$\\pi$"],
+  ["\u2113", "$\\ell$"],
   ["\u00B1", "$\\pm$"],
   ["\u2260", "$\\neq$"],
   ["\u2264", "$\\leq$"],
@@ -731,6 +760,22 @@ function tex(value) {
   return out;
 }
 
+// The CLI passes the practice renderer's existing ACT annotation parser.
+// Underline words individually so long marked phrases can still line-wrap,
+// without requiring a new TeX package.
+function inlineTex(text, options) {
+  if (!(options && options.parseUnderlines)) return tex(text);
+  return options.parseUnderlines(text).map((segment) => {
+    if (segment.marker !== undefined) return `\\fbox{\\scriptsize ${segment.marker}}`;
+    if (segment.underline !== undefined) {
+      const marked = segment.text.split(/(\s+)/).map((word) =>
+        /^\s+$/.test(word) ? word : `\\underline{${tex(word)}}`).join("");
+      return `${marked}\\textsuperscript{${segment.underline}}`;
+    }
+    return tex(segment.text);
+  }).join("");
+}
+
 function blocksToTex(text, options) {
   return parseBlocks(text)
     .map((block) => {
@@ -745,7 +790,7 @@ function blocksToTex(text, options) {
         const body = block.rows
           .map((row, index) => {
             const cells = row.concat(Array(columns - row.length).fill(""));
-            const line = cells.map((cell) => tex(cell)).join(" & ");
+            const line = cells.map((cell) => inlineTex(cell, options)).join(" & ");
             return index === 0 ? `${line} \\\\ \\hline` : `${line} \\\\`;
           })
           .join("\n");
@@ -753,15 +798,16 @@ function blocksToTex(text, options) {
       }
       if (block.type === "list") {
         return `\\begin{itemize}\\itemsep0pt\n${block.items
-          .map((item) => `\\item ${tex(item)}`)
+          .map((item) => `\\item ${inlineTex(item, options)}`)
           .join("\n")}\n\\end{itemize}`;
       }
-      return tex(block.text);
+      return inlineTex(block.text, options);
     })
     .join("\n\n");
 }
 
-function renderTex(model) {
+function renderTex(model, options) {
+  const settings = options || {};
   const { blueprint } = model;
   const body = model.sections
     .map((section) => {
@@ -770,10 +816,20 @@ function renderTex(model) {
           const q = item.question;
           const before = section.questions[index - 1];
           const repeated = repeatedStimulus(q, before);
-          const parts = ["\\begin{samepage}"];
+          const shared = passageSection(q);
+          const parts = [];
+          if (!shared) parts.push(`\\question{${item.number}}`);
+          if (shared && q.stimulus && q.stimulus.content && !repeated) {
+            const last = passageLastNumber(section.questions, index);
+            const label = last > item.number ? `Questions ${item.number}--${last} refer` : `Question ${item.number} refers`;
+            parts.push(`\\passageheading{${label} to the following ${q.sectionKey === "act-science" ? "information" : "passage"}.}`);
+          }
           if (q.stimulus && q.stimulus.content && !repeated) {
             parts.push(
-              `\\begin{stimulus}\n${blocksToTex(q.stimulus.content, { wrapTables: q.sectionKey === "act-science" })}\n\\end{stimulus}`,
+              `\\begin{stimulus}\n${blocksToTex(q.stimulus.content, {
+                wrapTables: q.sectionKey === "act-science",
+                parseUnderlines: q.sectionKey === "act-english" && settings.parseUnderlines,
+              })}\n\\end{stimulus}`,
             );
           }
           if (q.figure && !repeatedFigure(q, before)) {
@@ -781,39 +837,33 @@ function renderTex(model) {
               (q.figure.notToScale ? "\n\n\\textit{Note: Figure not drawn to scale.}" : "") +
               "\n\\end{stimulus}");
           }
-          parts.push(`\\question{${item.number}}{${tex(q.stem)}}`);
+          if (shared) parts.push(`\\question{${item.number}}`);
+          parts.push(`${tex(q.stem)}\\par\\nopagebreak[2]`);
           if (q.responseType === "multiple-choice" && q.choices) {
             parts.push(
               "\\begin{choices}\n" +
-                q.choices
-                  .map(
-                    (choice, index) =>
-                      `\\item[${item.letters[index]}.] ${tex(choice)}`,
-                  )
-                  .join("\n") +
+                q.choices.map((choice, index) => `\\item[${item.letters[index]}.] ${tex(choice)}`).join("\n") +
                 "\n\\end{choices}",
             );
           } else if (q.responseType === "numeric") {
             parts.push("\\gridin");
           }
-          parts.push("\\end{samepage}\\par\\penalty0\\medskip");
+          if (["sat-math", "act-mathematics"].includes(q.sectionKey)) parts.push("\\par\\nopagebreak[2]\\vspace{.3in}");
+          parts.push("\\par\\penalty0\\medskip");
           return parts.join("\n");
         })
         .join("\n\n");
       return `\\clearpage
-\\begin{fullwidth}
+\\normalsize
+\\twocolumn[{
 \\sectionhead{${tex(section.label)}}{${section.questions.length} questions \\quad ${
         section.minutes
-      } minutes \\quad questions ${section.firstNumber}--${section.lastNumber}}{${tex(
-        section.directions,
-      )}}
-\\end{fullwidth}
+      } minutes \\quad questions ${section.firstNumber}--${section.lastNumber}}{${tex(section.directions)}}
+\\vspace{.6em}}]
 
 ${questions}
 
-\\begin{fullwidth}\\begin{center}\\scshape\\rule{\\linewidth}{.4pt}\\\\[.3em]End of ${tex(
-        section.label,
-      )}\\end{center}\\end{fullwidth}`;
+\\par\\medskip\\noindent\\textsc{End of ${tex(section.label)}}`;
     })
     .join("\n\n");
 
@@ -849,7 +899,8 @@ ${questions}
 \\usepackage[margin=0.55in,top=0.6in,bottom=0.7in]{geometry}
 \\usepackage{amsmath,amssymb,enumitem,multicol,fancyhdr,array,xcolor}
 \\usepackage[T1]{fontenc}
-\\setlength{\\columnsep}{0.32in}
+\\setlength{\\columnsep}{0.38in}
+\\setlength{\\columnseprule}{0.4pt}
 \\setlength{\\parindent}{0pt}
 \\setlength{\\parskip}{0.35em}
 \\pagestyle{fancy}\\fancyhf{}
@@ -858,17 +909,23 @@ ${questions}
 \\cfoot{\\scriptsize\\thepage}
 \\renewcommand{\\headrulewidth}{0.4pt}
 
-\\newenvironment{fullwidth}{\\par\\onecolumn\\vspace*{-1em}}{\\par\\twocolumn}
-\\newcommand{\\question}[2]{\\noindent\\textbf{#1.}~#2\\par}
+% A ruled number introduces the entire problem, including its context.
+% No unbreakable box encloses a long passage or question.
+% Reserve a few lines at the start so a heading and stem do not dangle.
+\\newcommand{\\question}[1]{\\par
+  \\ifdim\\dimexpr\\pagegoal-\\pagetotal\\relax<9\\baselineskip\\newpage\\fi
+  \\addvspace{8pt}\\noindent\\textbf{Question #1}\\hspace{.6em}%
+  \\leaders\\hrule height .4pt\\hfill\\kern0pt\\par\\nobreak\\smallskip}
+\\newcommand{\\passageheading}[1]{\\par\\addvspace{8pt}\\noindent\\textbf{\\textit{#1}}\\par\\nobreak\\smallskip}
 \\newenvironment{choices}
-  {\\begin{list}{}{\\setlength{\\leftmargin}{1.5em}\\setlength{\\labelwidth}{1.2em}%
-   \\setlength{\\itemsep}{0pt}\\setlength{\\parsep}{0pt}\\setlength{\\topsep}{2pt}}}
+  {\\begin{list}{}{\\setlength{\\leftmargin}{1.8em}\\setlength{\\labelwidth}{1.2em}\\setlength{\\labelsep}{.6em}%
+   \\setlength{\\itemsep}{3pt}\\setlength{\\parsep}{0pt}\\setlength{\\topsep}{4pt}}}
   {\\end{list}}
 \\newenvironment{stimulus}
-  {\\begingroup\\small\\setlength{\\fboxsep}{4pt}\\begin{list}{}{\\setlength{\\leftmargin}{0.6em}%
+  {\\begingroup\\setlength{\\fboxsep}{4pt}\\begin{list}{}{\\setlength{\\leftmargin}{0.6em}%
    \\setlength{\\rightmargin}{0pt}\\setlength{\\topsep}{2pt}}\\item[]\\color{black!85}}
   {\\end{list}\\endgroup}
-\\newcommand{\\gridin}{\\par\\smallskip\\footnotesize Student-produced response:~\\rule{1.3in}{0.4pt}\\par}
+\\newcommand{\\gridin}{\\par\\smallskip{\\footnotesize Student-produced response:~\\rule{1.3in}{0.4pt}}\\par}
 \\newcommand{\\sectionhead}[3]{%
   \\noindent{\\Large\\bfseries #1}\\par\\smallskip
   \\noindent\\textit{#2}\\par\\smallskip
@@ -912,7 +969,6 @@ ${schedule}
 \\vfill
 \\noindent\\footnotesize Original practice content. Not affiliated with, endorsed by,
 or published by the College Board or ACT, Inc.\\par
-\\twocolumn
 
 ${body}
 

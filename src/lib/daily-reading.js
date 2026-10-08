@@ -33,7 +33,14 @@
     return position >= 0 && position < 180 ? { grade, week: Math.floor(position / 5) + 1, day: position % 5 + 1,
       href: route(grade, Math.floor(position / 5) + 1, position % 5 + 1) } : null;
   }
-  function navigation(selected) { return { previous: adjacent(selected.grade, selected.week, selected.day, -1), next: adjacent(selected.grade, selected.week, selected.day, 1) }; }
+  function navigation(selected) {
+    const { grade, week, day } = selected || {}, valid = validGrade(grade) && validDay(week, day);
+    return {
+      first: valid && (week !== 1 || day !== 1) ? adjacent(grade, 1, 1, 0) : null,
+      previous: adjacent(grade, week, day, -1), next: adjacent(grade, week, day, 1),
+      last: valid && (week !== 36 || day !== 5) ? adjacent(grade, 36, 5, 0) : null,
+    };
+  }
   // The instruction library covers K–12 only. Advanced reading levels link
   // to that library's entrance, never to an implied equivalent school grade.
   function lessonLinks(grade, week = 1) {

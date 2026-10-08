@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/tokens.css" />
     <link rel="stylesheet" href="styles/home.css" />
     <link rel="stylesheet" href="styles/curriculum.css" />
+    <link rel="stylesheet" href="styles/reader-controls.css" />
     <link rel="stylesheet" href="styles/brand.css" />
     <script defer src="content/curriculum.js"></script>
     <script defer src="content/weekly-index.js"></script>
@@ -28,10 +29,10 @@
       <noscript><p class="plan-notice">Turn on JavaScript to browse the plans, or <a href="content/curriculum.json" download>download the complete outlines and source index as JSON</a>.</p></noscript>
       <p id="planStatus" class="plan-status" role="status" aria-live="polite">Opening year plans…</p>
       <div id="planBrowser" hidden>
-        <form class="plan-filters" aria-label="Choose a year plan">
-          <label>Pathway<select id="planTrack"></select></label>
+        <form class="plan-filters reader-selectors" aria-label="Choose a year plan">
+          <label class="reader-select-wide">Pathway<select id="planTrack"></select></label>
           <label>Grade<select id="planGrade"></select></label>
-          <div class="plan-tools"><a id="planCompare" href="#grade/k">Compare subjects</a><button id="planPrint" type="button">Print plan</button></div>
+          <div class="plan-tools reader-actions"><a id="planCompare" href="#grade/k">Compare subjects</a><button id="planPrint" type="button">Print plan</button></div>
         </form>
         <div id="planContent"></div>
       </div>

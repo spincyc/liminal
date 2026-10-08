@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  const D = window.LiminalDailyReading, R = window.LiminalDailyReadingRender, B = window.LiminalDailyReadingBrowse;
+  const D = window.LiminalDailyReading, R = window.LiminalDailyReadingRender, B = window.LiminalDailyReadingBrowse, C = window.LiminalReaderControls;
   const status = document.getElementById("dailyStatus"), reader = document.getElementById("dailyReader"), container = document.getElementById("dailyContent");
   const views = document.getElementById("dailyViews"), browsePanel = document.getElementById("dailyBrowse");
   const browseLink = document.getElementById("dailyBrowseLink"), readLink = document.getElementById("dailyReadLink");
@@ -28,15 +28,12 @@
     const href = D.route(D.gradeFromKey(gradeSelect.value), reset ? 1 : Number(weekSelect.value), reset || event && event.target === weekSelect ? 1 : Number(daySelect.value));
     if (href && window.location.hash !== href) { preservePickerFocus = true; window.location.hash = href; }
   }
-  function navigation(selected) {
-    const nav = R.el("nav", undefined, "daily-nav"); nav.setAttribute("aria-label", "Adjacent reading nights");
+  function navigation(selected, position) {
     const pages = D.navigation(selected);
-    if (pages.previous) { const a = R.link("← Previous night", pages.previous.href); a.setAttribute("aria-label", "Previous night: week " + pages.previous.week + ", day " + pages.previous.day); nav.append(a); }
-    else nav.append(R.el("span", "First night", "daily-muted"));
-    nav.append(R.link("All nights", D.browseRoute(selected.grade)));
-    if (pages.next) { const a = R.link("Next night →", pages.next.href); a.setAttribute("aria-label", "Next night: week " + pages.next.week + ", day " + pages.next.day); nav.append(a); }
-    else nav.append(R.el("span", "End of the reading year", "daily-muted"));
-    return nav;
+    const destinations = Object.fromEntries(Object.entries(pages).map(([key, page]) => [key, page && {
+      href: page.href, label: key[0].toUpperCase() + key.slice(1) + " night: week " + page.week + ", day " + page.day,
+    }]));
+    return C.navigation({ label: "Reading nights, " + position, ...destinations });
   }
   function download(packet) {
     const css = [...document.styleSheets].filter(sheet => /\/(tokens|home|daily-reading|brand|reading-print)\.css(?:\?|$)/.test(sheet.href || ""))
@@ -52,6 +49,7 @@
   // #browse/<grade> and #<grade>/<week>/<day>. Switching keeps the grade.
   function showView(name, grade) {
     printFooter.textContent = "";
+    document.body.dataset.readingView = name;
     views.hidden = false; browsePanel.hidden = name !== "browse"; reader.hidden = name !== "read";
     browseLink.href = D.browseRoute(grade);
     readLink.href = last && last.grade === grade ? D.route(last.grade, last.week, last.day) : D.route(grade, 1, 1);
@@ -112,10 +110,12 @@
       const day = D.dayAt(course, selected.week, selected.day), packet = D.studentReading(course, selected.week, selected.day);
       if (!day || !packet) throw new Error("Night unavailable");
       const article = R.reading(packet, { notes: day.questions });
-      const actions = R.el("div", undefined, "daily-actions");
-      actions.append(button("Print reading", () => window.print()), button("Download reading", () => download(packet)));
+      const bar = R.el("div", undefined, "reader-bar");
+      bar.append(navigation(selected, "top"), C.actions([
+        { label: "Print", run: () => window.print() }, { label: "Download", run: () => download(packet) },
+      ]));
       const guide = R.disclosure("Tonight’s reading focus", "daily-focus"); guide.append(R.el("p", day.challenge));
-      container.append(article, navigation(selected), actions, guide, R.progression(course, selected.week));
+      container.append(bar, article, navigation(selected, "bottom"), guide, R.progression(course, selected.week));
       printFooter.textContent = R.printFooterText(packet);
       // Browser-generated print headers use this title; metadata stays in the footer.
       document.title = day.title;

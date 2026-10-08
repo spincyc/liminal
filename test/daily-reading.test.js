@@ -177,7 +177,7 @@ test("reader preserves stanzas, escapes markup and only adds notes when opened",
   function find(node, name) { if (node.className === name) return node; return (node.childNodes || []).map(child => find(child, name)).find(Boolean); }
   const notes = find(article, "daily-facilitator"); notes.open = true; notes.events.toggle(); notes.events.toggle();
   assert.equal(article.outerHTML.match(/FACILITATOR_SECRET 0/g).length, 1);
-  assert.match(article.outerHTML, /Source and public-domain record/); assert.match(article.outerHTML, /Public domain in the United States/);
+  assert.match(article.outerHTML, /Endnotes and source record/); assert.match(article.outerHTML, /Public domain in the United States/);
 }));
 test("offline student document keeps provenance and questions without scripts or facilitator material", () => withDOM(() => {
   const course = fixture(), packet = D.studentReading(course, 1, 1);
@@ -205,8 +205,25 @@ test("printed source notes stay brief while downloads retain complete source rec
     const note = html.match(/<footer class="daily-attribution">([\s\S]*?)<\/footer>/)[1];
     assert.match(note, /Test Author 0, Fixture source 0 \(1900\)/);
     assert.match(note, /href="https:\/\/example.org\/source\/0"/);
+    assert.match(note, /class="daily-source-budget">About 10 min · read 6 \+ discuss 4/);
     assert.doesNotMatch(note, /EDITION_RECORD|RIGHTS_RECORD|EXCERPT_LOCATOR/);
     for (const detail of [source.edition, source.rights.basis, packet.day.excerpt.locator]) assert.ok(html.includes(detail), "complete digital record retained");
+  }
+}));
+test("print keeps useful shared-reading guidance and moves estimates into the source note", () => withDOM(() => {
+  const course = fixture(5);
+  for (const mode of ["independent", "adult-read-aloud", "shared"]) {
+    course.days[0].readingMode = mode;
+    const packet = D.studentReading(course, 1, 1);
+    for (const html of [R.reading(packet).outerHTML, R.exportDocument(packet).documentElement.outerHTML]) {
+      const className = mode === "independent" ? "daily-mode daily-screen-label" : "daily-mode";
+      assert.ok(html.includes('class="' + className + '">' + D.modeLabel(mode)), "mode guidance stays on screen; only independent is hidden in print");
+      const note = html.match(/<footer class="daily-attribution">([\s\S]*?)<\/footer>/)[1];
+      assert.match(note, /class="daily-source-budget">About 15 min · read 11 \+ discuss 4/);
+      assert.doesNotMatch(note, /Read independently/);
+      assert.doesNotMatch(html.match(/<header class="daily-heading">([\s\S]*?)<\/header>/)[1], /About \d+ min/);
+      assert.match(html.match(/<details class="daily-source">([\s\S]*?)<\/details>/)[1], /About 15 min · read 11 \+ discuss 4/);
+    }
   }
 }));
 test("anthology selections credit the piece author in reader and student export while retaining the source bibliography", () => withDOM(() => {

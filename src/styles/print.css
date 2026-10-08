@@ -1,0 +1,8 @@
+/* Computer Modern Unicode, SIL OFL 1.1 (fonts/computer-modern/OFL.txt).
+   Used only inside generated booklets. The build embeds these faces so a
+   downloaded test or answer key has the same typography when opened offline. */
+@font-face { font-family: "Liminal Reading Serif"; font-style: normal; font-weight: 400; src: url("../fonts/computer-modern/cmunrm.woff2") format("woff2"); }
+@font-face { font-family: "Liminal Reading Serif"; font-style: normal; font-weight: 700; src: url("../fonts/computer-modern/cmunbx.woff2") format("woff2"); }
+@font-face { font-family: "Liminal Reading Serif"; font-style: italic; font-weight: 400; src: url("../fonts/computer-modern/cmunti.woff2") format("woff2"); }
+@font-face { font-family: "Liminal Reading Serif"; font-style: italic; font-weight: 700; src: url("../fonts/computer-modern/cmunbi.woff2") format("woff2"); }
+:root { --booklet-serif: "Liminal Reading Serif", "CMU Serif", serif; }

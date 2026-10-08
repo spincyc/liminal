@@ -112,8 +112,32 @@ test("routes are exact, bounded, canonical and recover safely", () => {
   assert.equal(weekly.route("common-core-reading", 0, 2), "#common-core-reading/k/2");
   assert.equal(weekly.route("../outside", 12, 1), "");
   assert.equal(weekly.route("common-core-math", 12, 37), "");
-  assert.deepEqual(weekly.navigation(data, weekly.resolve(data, "")), { previous: null, next: "#common-core-math/12/2" });
-  assert.deepEqual(weekly.navigation(data, weekly.resolve(data, "#common-core-math/12/36")), { previous: "#common-core-math/12/35", next: null });
+  assert.deepEqual(weekly.navigation(data, weekly.resolve(data, "")), { first: null, previous: null, next: "#common-core-math/12/2", last: "#common-core-math/12/36" });
+  assert.deepEqual(weekly.navigation(data, weekly.resolve(data, "#common-core-math/12/36")), { first: "#common-core-math/12/1", previous: "#common-core-math/12/35", next: null, last: null });
+});
+
+test("reader navigation stays in each graded or named course and disables unavailable edges", () => {
+  const courses = [
+    ...weekly.GRADE_TRACKS.flatMap(trackId => [0, 8, 12].map(grade => ({ trackId, grade }))),
+    ...weekly.NAMED_TRACK_IDS.flatMap(trackId => weekly.namedCourses(trackId).map(courseId => ({ trackId, courseId }))),
+  ].map(course => ({ ...course, weeks: Array.from({ length: 36 }, (_, i) => ({ week: i + 1 })) }));
+  const data = { courses };
+  for (const course of courses) {
+    const route = week => weekly.route(course.trackId, weekly.courseKey(course), week);
+    for (const week of [1, 18, 36]) {
+      const selected = weekly.resolve(data, route(week));
+      assert.deepEqual(weekly.navigation(data, selected), {
+        first: week > 1 ? route(1) : null,
+        previous: week > 1 ? route(week - 1) : null,
+        next: week < 36 ? route(week + 1) : null,
+        last: week < 36 ? route(36) : null,
+      });
+    }
+  }
+  const unavailable = { first: null, previous: null, next: null, last: null };
+  assert.deepEqual(weekly.navigation(data, null), unavailable);
+  assert.deepEqual(weekly.navigation(data, { trackId: "common-core-math", grade: 8, week: 37 }), unavailable);
+  assert.deepEqual(weekly.navigation({ courses: [] }, weekly.resolve(data, "#ap/calculus-ab/18")), unavailable);
 });
 
 test("student projection includes only assigned passages and cannot leak new teacher fields", () => {
@@ -242,7 +266,7 @@ test("named coursework preserves named identity through routing, navigation, pro
   assert.equal(weekly.courseAt(data, "high-school-math", "calculus"), entry);
   const selected = weekly.resolve(data, "#high-school-math/calculus/3");
   assert.equal(selected.courseId, "calculus"); assert.equal(selected.grade, null); assert.equal(selected.invalid, false);
-  assert.deepEqual(weekly.navigation(data, selected), { previous: "#high-school-math/calculus/2", next: "#high-school-math/calculus/4" });
+  assert.deepEqual(weekly.navigation(data, selected), { first: "#high-school-math/calculus/1", previous: "#high-school-math/calculus/2", next: "#high-school-math/calculus/4", last: "#high-school-math/calculus/36" });
   for (const hash of ["#high-school-math/12/1", "#high-school-math/Calculus/1", "#high-school-math/calculus/03", "#high-school-math/%63alculus/1", "#high-school-math/calculus/1/extra"]) assert.equal(weekly.resolve(data, hash).invalid, true, hash);
   assert.equal(weekly.route("high-school-math", "calculus", 1), "#high-school-math/calculus/1");
   assert.equal(weekly.route("high-school-math", 12, 1), "");

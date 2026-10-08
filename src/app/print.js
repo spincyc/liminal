@@ -20,6 +20,7 @@
   const recordedCodes = new Set();
   let cachedBuild = null;
   let pendingBuild = null;
+  let printAssets = null;
 
   const elements = {
     formGrid: document.getElementById("formGrid"),
@@ -393,7 +394,7 @@
     }
     return {
       model: booklet.buildModel(form, blueprint, seed),
-      options: { render: { figure: RENDER.figure } },
+      options: { render: { stimulus: RENDER.stimulus, figure: RENDER.figure } },
       warnings: [],
     };
   }
@@ -439,7 +440,7 @@
   const RENDER = {
     rich: (text, question) => render.renderText(text, { math: question.sectionKey === MATH }).outerHTML,
     stimulus: (stimulus, question) => {
-      const node = render.renderStimulus(stimulus, { math: question.sectionKey === MATH });
+      const node = render.renderStimulus(stimulus, { math: question.sectionKey === MATH, underlines: question.sectionKey === "act-english" });
       return node ? node.outerHTML : "";
     },
     figure: (figure) => {
@@ -588,11 +589,30 @@
     if (!result.ok) build.warnings.push("Booklet history could not be saved in this browser; it is remembered only while this page stays open.");
   }
 
+  // Embed the font faces and their license in every standalone artifact.
+  // A failed request can be retried without discarding the already built form.
+  function loadPrintAssets() {
+    if (!printAssets) {
+      printAssets = fetch("styles/print.css").then((response) => {
+        if (!response.ok) throw new Error("The booklet typeface could not load. Try again before downloading.");
+        return response.text();
+      }).then((styles) => ({
+        styles,
+        fontLicense: document.querySelector('meta[name="font-license"]')?.content || "",
+      })).catch((error) => {
+        printAssets = null;
+        throw error;
+      });
+    }
+    return printAssets;
+  }
+
   // SAT booklets end with their answer key; ACT keeps the key separate.
-  function documentFor(build, kind) {
-    if (kind === "key") return booklet.renderKeyHtml(build.model, build.options);
+  async function documentFor(build, kind) {
+    const options = { ...build.options, ...await loadPrintAssets() };
+    if (kind === "key") return booklet.renderKeyHtml(build.model, options);
     return booklet.renderBookletHtml(build.model, {
-      ...build.options,
+      ...options,
       key: build.model.blueprint.test === "SAT",
     });
   }
@@ -624,8 +644,9 @@
     setWarnings([]);
     try {
       const build = await buildBooklet();
+      const html = await documentFor(build, kind);
       target.document.open();
-      target.document.write(documentFor(build, kind));
+      target.document.write(html);
       target.document.close();
       target.document.title = fileNameFor(build.model, kind).replace(/\.html$/, "");
       recordBuild(build);
@@ -646,7 +667,7 @@
     setWarnings([]);
     try {
       const build = await buildBooklet();
-      const blob = new Blob([documentFor(build, kind)], {
+      const blob = new Blob([await documentFor(build, kind)], {
         type: "text/html;charset=utf-8",
       });
       const url = URL.createObjectURL(blob);

@@ -314,6 +314,42 @@
     dangerZone.classList.add("data-zone");
     dangerZone.append(data.actions, data.panel, data.status);
     elements.masteryHeading.textContent = "Skill map";
+    const mapHelp = el("details", "skill-map-help");
+    elements.masteryNote.replaceWith(mapHelp);
+    mapHelp.append(el("summary", null, "How skill states work"), elements.masteryNote);
+    const sections = new Map([
+      ["plan", plan.card], ["scores", official.card], ["skills", masteryCard],
+      ["pacing", pacing.card], ["history", history.card], ["saved", dangerZone],
+    ]);
+    const sectionNav = el("nav", "progress-sections");
+    sectionNav.setAttribute("aria-label", "Progress sections");
+    sections.forEach((card, key) => {
+      const heading = card.querySelector("h2");
+      heading.tabIndex = -1;
+      const link = el("a", null, heading.textContent);
+      link.href = "#progress/" + key;
+      link.dataset.section = key;
+      sectionNav.append(link);
+    });
+    elements.view.querySelector(".page-head").append(sectionNav);
+    function focusSection(key) {
+      const card = sections.get(key);
+      if (!card || card.classList.contains("hidden")) return;
+      if (key === "skills") {
+        const map = elements.skillTableWrap.querySelector("details");
+        if (map) map.open = true;
+      }
+      const heading = card.querySelector("h2");
+      heading.focus({ preventScroll: true });
+      heading.scrollIntoView({ block: "start" });
+    }
+    sectionNav.addEventListener("click", (event) => {
+      const link = event.target.closest("a");
+      if (!link || link.getAttribute("href") !== window.location.hash || event.button > 0 ||
+        event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      focusSection(link.dataset.section);
+    });
     elements.masterySort.replaceChildren(...[["need", "What to study next"], ["domain", "Domain"]].map(([value, text]) => {
       const option = el("option", null, text);
       option.value = value;
@@ -325,6 +361,8 @@
     let renderId = 0;
     let model = null;
     let historyExpanded = false;
+    const mapExpansion = new Map();
+    let printingMap = false;
 
     // Each template's current tier and skill: the built registries, with any
     // loaded templates over them.
@@ -385,7 +423,7 @@
       elements.skillTableWrap.innerHTML = "";
     }
 
-    async function render(options) {
+    async function render(options, params = []) {
       ctx.showView("dashboard", options);
       const id = ++renderId;
       const test = ctx.currentTest();
@@ -409,11 +447,13 @@
       renderStart();
       renderPlan();
       renderOfficial();
+      sectionNav.querySelector('[data-section="scores"]').hidden = model.test !== "SAT";
       populateMapSections();
       renderMap();
       renderPacing();
       populateHistorySections();
       renderHistory();
+      if (params.length) window.requestAnimationFrame(() => focusSection(params[0]));
     }
 
     /* -------------------------------------------------------------- stats */
@@ -959,7 +999,18 @@
         rows.forEach((row) => body.appendChild(skillRow(row, true)));
         table.appendChild(body);
       }
-      elements.skillTableWrap.replaceChildren(table);
+      const practiced = rows.filter((row) => row.attempted > 0).length;
+      const key = model.test + ":" + sectionFilter;
+      const disclosure = el("details", "skill-map-disclosure");
+      disclosure.open = mapExpansion.get(key) === true;
+      const summary = el("summary", null, `${count(rows.length, "skill")} · ${practiced} practiced`);
+      disclosure.append(summary);
+      if (!practiced) disclosure.append(el("p", "muted", "No counted answers yet. Choose a skill below to learn or practice."));
+      disclosure.append(table);
+      disclosure.addEventListener("toggle", () => {
+        if (disclosure.isConnected && !printingMap) mapExpansion.set(key, disclosure.open);
+      });
+      elements.skillTableWrap.replaceChildren(disclosure);
     }
 
     /* ------------------------------------------------------------- pacing */
@@ -1485,12 +1536,23 @@
     data.restore.addEventListener("click", () => data.input.click());
     data.input.addEventListener("change", readFile);
     elements.clearProgress.addEventListener("click", clearProgress);
+    let closedForPrint = [];
+    window.addEventListener("beforeprint", () => {
+      printingMap = true;
+      closedForPrint = [...masteryCard.querySelectorAll("details:not([open])")];
+      closedForPrint.forEach((details) => { details.open = true; });
+    });
+    window.addEventListener("afterprint", () => {
+      closedForPrint.forEach((details) => { details.open = false; });
+      closedForPrint = [];
+      window.setTimeout(() => { printingMap = false; }, 0);
+    });
 
     return {
       name: "dashboard",
       hash: "progress",
       element: elements.view,
-      open: (options) => render(options),
+      open: (options, params) => render(options, params),
       onTestChange(current) {
         if (current) render({ focus: false });
       },

@@ -100,7 +100,7 @@ function blocks(day) {
   if (inVerse) out.push("\\end{verse}");
   return out.join("\n");
 }
-const MODES = { "adult-read-aloud": "read aloud by an adult", shared: "read together", independent: "read independently" };
+const PRINT_MODES = { "adult-read-aloud": "Read aloud by an adult", shared: "Read together" };
 const longDate = date => new Date(date + "T00:00:00Z").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
 
 // One night as one paper. Only reader-facing fields are used: the text,
@@ -114,19 +114,20 @@ function paper(course, day, { date = null, newSheet = false } = {}) {
   const note = D.sourceNote(source);
   const reference = inline(note.credit) + ". " + inline(note.rights) + (note.url
     ? " \\href{" + note.url.replace(/[%#]/g, "\\$&") + "}{\\nolinkurl{" + note.linkText.replace(/[%#]/g, "\\$&") + "}}" : "");
+  const estimate = "About " + day.time.totalMinutes + " min · read " + day.time.readingMinutes + " + discuss " + day.time.discussionMinutes;
   return [newSheet ? "\\cleardoublepage" : "\\clearpage",
     "\\edef\\paperstart{\\the\\value{page}}", "\\setcounter{section}{0}", "\\renewcommand{\\papermeta}{" + escape(where) + "}",
     "\\twocolumn[{\\begin{center}",
     "{\\LARGE\\bfseries " + inline(title) + "\\par}\\vspace{1.4ex}",
     "{\\large " + escape(day.author || source.author) + "\\par}\\vspace{0.8ex}",
-    "{\\small\\itshape " + escape("About " + day.time.totalMinutes + " minutes, " + MODES[day.readingMode]) + "\\par}",
+    ...(PRINT_MODES[day.readingMode] ? ["{\\small\\itshape " + escape(PRINT_MODES[day.readingMode]) + "\\par}"] : []),
     "\\end{center}", "\\vspace{0.6ex}",
     "\\begin{center}\\begin{minipage}{0.78\\textwidth}\\small", "\\centerline{\\bfseries Abstract}\\vspace{0.6ex}",
     "\\noindent " + inline(day.focus) + " " + inline(day.challenge), "\\end{minipage}\\end{center}", "\\vspace{1.2ex}}]",
     "\\section{Context}", inline(day.context) + (day.contentNote ? "\n\n\\noindent\\textit{Content note.} " + inline(day.contentNote) : ""), "",
     "\\section{Text}\\readingsectionrule", blocks(day), "",
     "\\section{Questions for discussion}\\readingsectionrule", "\\begin{enumerate}", ...day.questions.map(question => "\\item " + inline(question.prompt)), "\\end{enumerate}", "",
-    "\\readingsource{" + reference + "}", ""].join("\n");
+    "\\readingsource{" + reference + "\\par\\smallskip\\noindent " + escape(estimate) + "}", ""].join("\n");
 }
 // Each grade's packet starts on a fresh sheet so duplex packets separate.
 function documentTex(groups) {

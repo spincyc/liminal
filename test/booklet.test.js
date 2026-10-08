@@ -176,13 +176,14 @@ test("every active scored ACT question has ASCII-safe printable text", () => {
 });
 
 test("LaTeX escaping emits no raw Unicode and protects specials", () => {
-  const source = "50% of x² − 3 ≤ π, “quoted” — ends with √9 and 5 × 2 & more_stuff";
+  const source = "50% of x² − 3 ≤ π, “quoted” — ends with √9 and 5 × 2 & more_stuff on line ℓ";
   const out = booklet.tex(source);
   assert.match(out, /\\%/);
   assert.match(out, /\\textsuperscript\{2\}/);
   assert.match(out, /\$-\$/);
   assert.match(out, /\$\\leq\$/);
   assert.match(out, /\$\\pi\$/);
+  assert.match(out, /\$\\ell\$/);
   assert.match(out, /``quoted''/);
   assert.match(out, /---/);
   assert.match(out, /\$\\sqrt\{9\}\$/);
@@ -365,7 +366,7 @@ test("without a renderer, SAT text is escaped and figures retain their descripti
   assert.match(html, /Diagram description \(drawing unavailable\): A triangle/);
   const figures = (html.match(/<figure\b[\s\S]*?<\/figure>/g) || []).join("");
   assert.ok(!figures.includes("<svg"), "raw figure SVG must never bypass the renderer");
-  assert.match(html, /<p class="stem"><span class="num">1\.<\/span> Which &quot;value&quot;/);
+  assert.match(html, /<h3 class="question-heading"><span>Question 1<\/span><\/h3><div class="stem"><div class="body">Which &quot;value&quot;/);
   assert.ok(!html.includes("Answer key — form"), "the key is opt-in");
 });
 
@@ -668,4 +669,78 @@ test("buildSession still honours its original contract", () => {
   const a = core.buildSession(bank, 7, "same");
   const b = core.buildSession(bank, 7, "same");
   assert.deepEqual(a.map((q) => q.id), b.map((q) => q.id), "must stay deterministic");
+});
+
+
+test("each SAT problem labels its complete passage, figure, stem, and answer space", () => {
+  const model = richModel();
+  model.sections[0].questions[0].question.stimulus = { type: "passage", content: "A short setup." };
+  const html = booklet.renderBookletHtml(model, { render: fakeRender });
+  const articles = [...html.matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/g)].map(match => match[1]);
+  articles.forEach((article, index) => {
+    assert.ok(article.startsWith(`<h3 class="question-heading"><span>Question ${index + 1}</span></h3>`));
+    assert.match(article, /class="work-space"/);
+    assert.equal((article.match(/class="question-heading"/g) || []).length, 1);
+  });
+  assert.ok(articles[0].indexOf('class="stimulus') < articles[0].indexOf('class="stem"'));
+  assert.ok(articles[1].indexOf('class="figure"') < articles[1].indexOf('class="stem"'));
+  assert.match(articles[1], /Student-produced response/);
+});
+
+test("shared ACT context names exactly its consecutive question range", () => {
+  const shared = booklet.renderBookletHtml(scienceModel());
+  assert.equal((shared.match(/Questions 1–2 refer to the following information/g) || []).length, 1);
+  assert.equal((shared.match(/class="question-heading"/g) || []).length, 2);
+  const separate = booklet.renderBookletHtml(scienceModel([{}, { passageId: "second" }]));
+  assert.match(separate, /Question 1 refers to the following information/);
+  assert.match(separate, /Question 2 refers to the following information/);
+  assert.doesNotMatch(separate, /Questions 1–2 refer/);
+});
+
+test("standalone test and key keep embedded Computer Modern fonts and their license", () => {
+  const fs = require("node:fs"), path = require("node:path");
+  const { embed } = require("../tools/lib/reading-fonts");
+  const fontDirectory = path.join(__dirname, "../src/fonts/computer-modern");
+  const styles = embed(fs.readFileSync(path.join(__dirname, "../src/styles/print.css"), "utf8"), fontDirectory);
+  const fontLicense = fs.readFileSync(path.join(fontDirectory, "OFL.txt"), "utf8");
+  for (const renderer of [booklet.renderBookletHtml, booklet.renderKeyHtml]) {
+    const html = renderer(richModel(), { styles, fontLicense });
+    assert.equal((html.match(/data:font\/woff2;base64,/g) || []).length, 4);
+    assert.match(html, /--booklet-serif: "Liminal Reading Serif"/);
+    assert.match(html, /<meta name="font-license" content="/);
+    assert.match(html, /SIL OPEN FONT LICENSE Version 1\.1/);
+    assert.doesNotMatch(html, /url\("\.\.\/fonts/);
+  }
+});
+
+
+test("ACT print annotations use the existing parser in browser-independent HTML and TeX", () => {
+  const render = require("../tools/lib/booklet-render");
+  const model = scienceModel([
+    { sectionKey: "act-english", stimulus: { type: "passage", content: "We {1 walk & talk} here. {2}" } },
+    { sectionKey: "act-english", stimulus: { type: "passage", content: "We {1 walk & talk} here. {2}" } },
+  ]);
+  const html = booklet.renderBookletHtml(model, { render });
+  assert.match(html, /<u>walk &amp; talk<\/u>/);
+  assert.match(html, /aria-label="Underlined portion 1"/);
+  assert.match(html, /aria-label="Point 2"/);
+  assert.doesNotMatch(html, /\{1 walk|\{2\}/);
+  const output = booklet.renderTex(model, { parseUnderlines: render.parseUnderlines });
+  assert.ok(output.includes('\\underline{walk} \\underline{\\&} \\underline{talk}\\textsuperscript{1}'));
+  assert.ok(output.includes('\\fbox{\\scriptsize 2}'));
+  assert.doesNotMatch(output, /\\\{1 walk/);
+});
+
+test("TeX labels whole problems before context and allows long content to flow", () => {
+  const output = booklet.renderTex(richModel());
+  assert.ok(output.indexOf('\\question{2}') < output.indexOf('Diagram description (drawing unavailable)'));
+  assert.match(output, /\\question\{3\}\s+\\begin\{stimulus\}/);
+  assert.match(output, /\\leaders\\hrule/);
+  assert.doesNotMatch(output, /\\begin\{samepage\}|\\begin\{fullwidth\}/);
+  assert.match(output, /\\normalsize\s+\\twocolumn\[/);
+  assert.match(output, /\\pagegoal-\\pagetotal\\relax<9\\baselineskip\\newpage/);
+  const act = booklet.renderTex(scienceModel());
+  assert.match(act, /\\passageheading\{Questions 1--2 refer/);
+  assert.ok(act.indexOf('Questions 1--2 refer') < act.indexOf('A growth experiment.'));
+  assert.ok(act.indexOf('A growth experiment.') < act.indexOf('\\question{1}'));
 });

@@ -26,8 +26,12 @@ repository content. The browser needs no textbook images or external service.
 
 Open **Courses** from the landing page. The first lesson is selected initially. The
 Study view reads one selected lesson at a time, with worked reasoning hidden
-until requested. Use **Practice this lesson** for a focused set or choose
-several lessons for review. Each lesson starts with a prerequisite check and
+until requested. The lesson selector remains visible for a single lesson;
+selecting several adds **First**, **Previous**, **Next**, and **Last** controls
+above and below the reading. They move within the selected lessons and keep
+the selection for practice. **Print** and **Download** sit above the reading
+and export the selected lessons. Use **Practice lesson** for a focused set or
+choose several lessons for review. Each lesson starts with a prerequisite check and
 repair, then alternates explanation and worked examples with a partly completed
 task. Try the check/task before opening its solution; on paper, cover the
 area labeled **Check after trying**. These small checks guide the next step;

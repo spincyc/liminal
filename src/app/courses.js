@@ -87,20 +87,34 @@
     }
   }
 
-  function readLesson() {
+  function readLesson(focus = false) {
     const id = $("courseReadLesson").value;
     state.readId = id || null;
     $("courseGuide").replaceChildren();
     if (id) $("courseGuide").appendChild(LiminalCourseRender.renderGuide(state.course, [id], { compact: true, interactive: true }));
     else $("courseGuide").appendChild(element("p", "course-empty", "Choose a lesson in the Lessons menu to begin reading."));
-    const index = $("courseReadLesson").selectedIndex;
-    $("courseReadPrevious").disabled = index <= 0;
-    $("courseReadNext").disabled = index < 0 || index >= $("courseReadLesson").options.length - 1;
+    const select = $("courseReadLesson"), index = select.selectedIndex, count = select.options.length;
+    const destination = position => ({ run() { select.selectedIndex = position; readLesson(true); } });
+    for (const placement of ["Top", "Bottom"]) {
+      const container = $("courseReadNavigation" + placement);
+      container.replaceChildren();
+      container.hidden = count < 2;
+      if (count > 1) container.append(window.LiminalReaderControls.navigation({
+        label: "Selected lessons, " + placement.toLowerCase() + ", " + (index + 1) + " of " + count,
+        first: index > 0 ? destination(0) : null,
+        previous: index > 0 ? destination(index - 1) : null,
+        next: index < count - 1 ? destination(index + 1) : null,
+        last: index < count - 1 ? destination(count - 1) : null,
+      }));
+    }
     $("courseReadLesson").disabled = !id;
     $("coursePracticeLesson").disabled = !id;
     $("coursePracticeLessonTop").disabled = !id;
-    $("courseReadLesson").closest(".field").hidden = $("courseReadLesson").options.length === 1;
-    $("courseReadPrevious").parentElement.hidden = $("courseReadLesson").options.length < 2;
+    if (focus) {
+      const heading = $("courseGuide").querySelector(".course-lesson-intro h3") || $("courseStudyHeading");
+      heading.tabIndex = -1; heading.focus({ preventScroll: true });
+      $("courseGuideDetails").scrollIntoView({ block: "start" });
+    }
   }
 
   function updateSelection() {
@@ -402,10 +416,10 @@
 
   function start() {
     try {
-      if (!window.LIMINAL_COURSES || !window.LiminalCourses || !window.LiminalCourseRender || !window.LiminalRender) throw new Error("The course library did not finish loading. Reload this page to try again.");
+      if (!window.LIMINAL_COURSES || !window.LiminalCourses || !window.LiminalCourseRender || !window.LiminalRender || !window.LiminalReaderControls) throw new Error("The course library did not finish loading. Reload this page to try again.");
       catalog = LIMINAL_COURSES.catalog.courses;
       if (!catalog.length) throw new Error("No courses are available yet.");
-      options($("courseGrade"), unique(catalog.map((course) => course.grade)).map((grade) => ({ value: grade, label: gradeLabel(grade) })), "8");
+      options($("courseGrade"), unique(catalog.map((course) => course.grade)).map((grade) => ({ value: grade, label: Number(grade) === 0 ? "K" : grade })), "8");
       $("courseSeed").value = `practice-${new Date().toISOString().slice(0, 10)}`;
       chooseGrade();
       const linkedLesson = new URLSearchParams(window.location.search).get("lesson");
@@ -437,9 +451,7 @@
       $("courseLessonPicker").open = window.matchMedia("(min-width: 861px)").matches;
       $("courseRead").addEventListener("click", () => showMode("study", true));
       $("coursePractice").addEventListener("click", () => showMode("practice", true));
-      $("courseReadLesson").addEventListener("change", readLesson);
-      $("courseReadPrevious").addEventListener("click", () => { $("courseReadLesson").selectedIndex -= 1; readLesson(); });
-      $("courseReadNext").addEventListener("click", () => { $("courseReadLesson").selectedIndex += 1; readLesson(); });
+      $("courseReadLesson").addEventListener("change", () => readLesson());
       function amount(count, nights, practiceMode) {
         $("courseCount").value = count;
         $("courseDays").value = nights;

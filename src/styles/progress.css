@@ -11,6 +11,18 @@
   margin-bottom: 16px;
 }
 
+.progress-sections { display: flex; flex-wrap: wrap; gap: 0 18px; margin-top: 12px; }
+.progress-sections a { display: inline-flex; align-items: center; min-height: var(--tap); font-size: var(--text-sm); }
+#dashboardView h2 { scroll-margin-top: 16px; }
+.skill-map-help { margin-block: 12px; }
+.skill-map-help summary, .skill-map-disclosure summary { min-height: var(--tap); padding-block: 10px; cursor: pointer; }
+.skill-map-help summary { color: var(--color-muted); font-size: var(--text-sm); }
+.skill-map-disclosure { border-top: 1px solid var(--color-line); }
+.skill-map-disclosure summary { font-weight: var(--weight-semibold); }
+.skill-map-disclosure > p { margin-block: 4px 12px; }
+.skill-map-help > p { margin-bottom: 12px; }
+.skill-map-help summary:focus-visible, .skill-map-disclosure summary:focus-visible { outline: var(--focus-width) solid var(--color-accent); outline-offset: var(--focus-offset); }
+
 .cell-note {
   display: block;
   color: var(--color-muted);
@@ -656,6 +668,7 @@
 }
 
 @media print {
+  .progress-sections,
   .data-zone,
   .start-card,
   .plan-form,

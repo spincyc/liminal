@@ -5,13 +5,8 @@
 .plan-intro p { margin-top: 6px; color: var(--color-muted); }
 .plan-notice, .plan-status { padding-block: 12px; font-size: .9375rem; }
 .curriculum-page .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
-.plan-filters { display: grid; grid-template-columns: minmax(0, 1fr) 88px auto; gap: 16px; align-items: end; padding-bottom: 18px; border-bottom: 1px solid var(--color-line); }
-.plan-filters label { display: grid; min-width: 0; gap: 5px; font-size: .8125rem; font-weight: 600; }
-.plan-filters select { width: 100%; min-width: 0; min-height: 44px; padding: 8px; border: 1px solid var(--color-line-strong); border-radius: 4px; color: var(--color-ink); background: var(--color-surface); font: 400 1rem var(--font-sans); }
-.plan-tools { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.plan-tools a, .plan-tools button { display: inline-flex; align-items: center; min-height: 44px; font: 400 .875rem var(--font-sans); color: var(--color-ink); }
-.plan-tools button { padding: 0 12px; background: none; border: 1px solid var(--color-line-strong); border-radius: 4px; cursor: pointer; }
-.plan-tools button:hover { background: var(--color-soft); }
+.plan-filters { padding-bottom: 14px; border-bottom: 1px solid var(--color-line); }
+.plan-filters.reader-selectors > label:not(.reader-select-wide) { display: flex; flex: none; flex-direction: row; }
 .plan-course-heading, .plan-grade { padding-block: 22px 16px; }
 #planContent h2 { font: 400 1.875rem/1.2 var(--font-serif); letter-spacing: -.025em; }
 .plan-meta { margin-top: 6px; color: var(--color-muted); font-size: .875rem; }
@@ -76,8 +71,6 @@
 .plan-footer p + p { margin-top: 8px; }
 [hidden] { display: none !important; }
 @media (max-width: 760px) {
-  .plan-filters { grid-template-columns: minmax(0, 1fr) 76px; column-gap: 12px; row-gap: 8px; padding-bottom: 12px; }
-  .plan-tools { grid-column: 1 / -1; }
   .plan-grade-grid { grid-template-columns: 1fr; gap: 12px; }
   .plan-grade-grid article { padding: 16px; }
 }
@@ -111,12 +104,4 @@
   .plan-grade-grid { display: block; }
   .plan-grade-grid article { margin-bottom: 20px; border-color: #777; background: #fff; }
   .plan-grade-grid li { break-inside: avoid; }
-}
-@media screen and (max-width: 360px) {
-  .plan-filters { grid-template-columns: 54px minmax(0, 1fr); column-gap: 12px; }
-  .plan-filters label:first-child { grid-column: 1 / -1; }
-  .plan-filters select { padding-inline: 6px; }
-  .plan-tools { grid-column: 2; gap: 8px; }
-  .plan-tools a, .plan-tools button { font-size: .8125rem; }
-  .plan-tools button { padding-inline: 8px; }
 }

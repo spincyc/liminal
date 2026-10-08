@@ -87,12 +87,21 @@ returning to Browse opens its week and marks the night just read. Related
 year-plan and weekly-instruction links retain the current K–12 grade/week.
 Advanced levels offer explicitly labelled K–12 library links.
 
+The Read view follows the [sequential reader template](design-system.md): compact
+Grade/Week/Day selectors, First/Previous/Next/Last above and below the reading,
+and quiet Print/Download controls above the text. Sequence navigation stays within
+the grade and disables unavailable endpoints. Select changes retain focus;
+navigation focuses the new title. Time estimates live in Endnotes and source
+record, after the questions, rather than in the heading.
+
 Printed readings use bundled Computer Modern Unicode Serif, 10-point body type,
 two columns, a centered title and author, and a small footer containing the grade,
 week, day, and Liminal. Grade/week/day appear only in the footer when printed.
 Reading and Questions have distinct headings and dividers, followed by a compact
-Source note. Every grade prints only the complete bibliographic credit (including
-any translator), a short US public-domain statement, and a readable source link.
+Source note. Every grade prints the complete bibliographic credit (including
+any translator), a short US public-domain statement, a readable source link, and
+the suggested reading/discussion time. “Read independently” is omitted from
+print; adult/shared reading guidance remains when applicable.
 The full edition, transcription, excerpt locator, and rights record remain in
 the expandable digital details, also preserved in offline downloads. Long audit
 records never compete with a young reader's text on paper. Sections flow across

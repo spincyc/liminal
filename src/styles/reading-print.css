@@ -16,7 +16,7 @@
     font: 400 10pt/1.25 var(--font-serif);
   }
   .daily-page :is(.lm-header, .skip-link, .daily-views, .daily-browse, .daily-intro, .daily-filters, .daily-status, .daily-nav, .daily-actions, .daily-related, .daily-facilitator, .daily-source, .daily-focus, .daily-year, .daily-about, .daily-footer, .daily-export-footer) { display: none !important; }
-  .daily-meta, .daily-screen-label { display: none; }
+  .daily-meta, .daily-screen-label, .daily-budget { display: none; }
   .daily-print-label { display: inline; }
   .daily-page :is(.page-width, #dailyReader) { width: 100%; max-width: none; }
   /* Reserve footer space in every printed fragment, including long readings. */
@@ -27,7 +27,6 @@
   .daily-mode { font: italic 9pt/1.25 var(--font-serif); color: #333; }
   .daily-author { margin-top: 6pt; font-size: 12pt; }
   .daily-work-title { font-size: 10pt; margin-top: 4pt; color: #333; }
-  .daily-budget { font: 400 9pt/1.25 var(--font-serif); margin-top: 6pt; }
   .daily-mode { margin-top: 3pt; }
   .daily-print-heading { display: block; margin: 0 0 8pt; font: 700 12pt/1.25 var(--font-serif); }
   .daily-context { margin: 0 0 10pt; font-size: 10pt; }

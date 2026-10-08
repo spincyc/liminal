@@ -104,8 +104,10 @@
   function navigation(index, selected) {
     const course = selected && courseAt(index, selected.trackId, selected.courseId || selected.grade);
     const week = course && weekAt(course, selected.week);
-    return { previous: week && selected.week > 1 ? route(selected.trackId, courseKey(course), selected.week - 1) : null,
-      next: week && selected.week < 36 ? route(selected.trackId, courseKey(course), selected.week + 1) : null };
+    return { first: week && selected.week > 1 ? route(selected.trackId, courseKey(course), 1) : null,
+      previous: week && selected.week > 1 ? route(selected.trackId, courseKey(course), selected.week - 1) : null,
+      next: week && selected.week < 36 ? route(selected.trackId, courseKey(course), selected.week + 1) : null,
+      last: week && selected.week < 36 ? route(selected.trackId, courseKey(course), 36) : null };
   }
   function copyFigure(figure) {
     return { id: figure.id, alt: figure.alt, ...(figure.caption ? { caption: figure.caption } : {}),

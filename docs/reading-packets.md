@@ -20,7 +20,8 @@ note, and a small footer with the grade, week, day and Liminal.
   0.75 in (top 0.75, bottom 0.8), column gap 0.28 in; microtype protrusion.
 - **Each night is one paper:**
   1. A centred title block: the selection title (`\LARGE` bold), the author
-     (`\large`), then an italic line with the total minutes and reading mode.
+     (`\large`), then italic adult-read-aloud or shared-reading guidance when
+     applicable. "Read independently" appears on screen only.
   2. A centred **Abstract**: the night's focus, then its challenge.
   3. Numbered sections: **Context** (with any content note), **Text**, and
      **Questions for discussion** (the prompts only). Text and questions have
@@ -33,7 +34,8 @@ note, and a small footer with the grade, week, day and Liminal.
      `sourceNote` in `src/lib/daily-reading.js` supplies the same brief record to
      browser print and TeX packets. Edition, normalization, locator and
      rights-basis details stay in the digital source disclosure and downloaded
-     reading.
+     reading. Total, reading and discussion time estimates appear at the end
+     of this note, with no time estimate in the printed title block.
 - **Running heads:** none. The title and body contain no grade/week/day metadata
   or Liminal branding.
 - **Footer:** centred grade, week, day, optional date, "Liminal" and the page

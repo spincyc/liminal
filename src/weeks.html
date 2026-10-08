@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="styles/home.css" />
     <link rel="stylesheet" href="styles/math.css" />
     <link rel="stylesheet" href="styles/weekly.css" />
+    <link rel="stylesheet" href="styles/reader-controls.css" />
     <link rel="stylesheet" href="styles/brand.css" />
     <script defer src="content/weekly-index.js"></script>
     <script defer src="lib/weekly.js"></script>
     <script defer src="app/render.js"></script>
     <script defer src="app/weekly-render.js"></script>
+    <script defer src="app/reader-controls.js"></script>
     <script defer src="app/weekly.js"></script>
   </head>
   <body class="weekly-page">
@@ -26,8 +28,8 @@
       <noscript><p>Turn on JavaScript to browse weekly coursework. <a href="curriculum.html">Explore the year plans.</a></p></noscript>
       <p id="weeklyStatus" class="weekly-status" role="status" aria-live="polite">Opening weekly coursework…</p>
       <div id="weeklyBrowser" hidden>
-        <form class="weekly-filters" aria-label="Choose weekly coursework">
-          <label>Pathway<select id="weeklyTrack"></select></label>
+        <form class="weekly-filters reader-selectors" aria-label="Choose weekly coursework">
+          <label class="reader-select-wide">Pathway<select id="weeklyTrack"></select></label>
           <label><span id="weeklyCourseLabel">Grade</span><select id="weeklyGrade"></select></label>
           <label class="weekly-week-picker">Week<select id="weeklyWeek"></select></label>
         </form>

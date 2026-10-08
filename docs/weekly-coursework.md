@@ -127,7 +127,13 @@ pad broad units with unrelated easy drills.
 ## Interface and review
 
 The reader shows one selected week, with explanations, worked examples and
-worksheet choices. Answer keys are separate from student worksheet exports.
+worksheet choices. Compact native selectors and the shared reader controls
+match the daily reader. First, Previous, Next and Last appear above and below
+the lesson; unavailable edges remain visible and disabled. Learn and Read offer
+a quiet print action at the top. The worksheet pane keeps student print and
+download actions beside its selector, with answer-key actions inside a separate
+disclosure. Both exports use explicit student/key projections; opening a key
+never changes the student copy.
 Keep mobile navigation compact, keyboard accessible, and printable with dark
 ink and blank work space. Content never enters SAT/ACT progress or the existing
 Grade 8 generated-packet inventory.
@@ -168,10 +174,11 @@ course therefore fails release validation even though the standalone builder
 can support incomplete inventories during authoring.
 
 Routes use `weeks.html#<track>/<grade>/<week>` (or `<track>/<courseId>/<week>`
-for a named track), with `k` for kindergarten and weeks 1–36. The year-plan page links each available week under its unit. Previous
-and next controls stay within the selected course. Invalid links recover with
-a visible explanation. Browser Back/Forward and native keyboard selectors work
-without progress storage.
+for a named track), with `k` for kindergarten and weeks 1–36. The year-plan page
+links each available week under its unit. First, previous, next and last
+controls stay within the selected course. Invalid links recover with a visible
+explanation. Browser Back/Forward and native keyboard selectors work without
+progress storage.
 
 `src/lib/weekly.js` owns routing, navigation, the named-track registry
 (`NAMED_TRACKS`), and explicit student/key projections.

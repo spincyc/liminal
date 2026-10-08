@@ -111,7 +111,9 @@ checked equation solution. Lessons include full-size viewing and typed steps;
 printable guides embed the drawings. Course documents, SAT/ACT booklets, and
 Learn printouts use dark ink and visible rules without requiring background
 graphics. See the [design implementation review](docs/reviews/2026-10-07-design-implementation.md)
-for verification and remaining limits.
+for verification and remaining limits. The [design system](docs/design-system.md)
+defines shared controls and specific templates for readers, plans, practice,
+assessments and print documents.
 Packets exclude repeated exercises across all three alternatives and all nights. If a selected set of
 lessons cannot supply enough distinct items, the builder asks for fewer
 questions or more lessons. Separate packets do not share an exposure history.

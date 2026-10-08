@@ -17,6 +17,20 @@ function pageScripts(page) {
 // Smoke-tests the built site in dist/, exactly what GitHub Pages serves.
 // Run `npm run build` first.
 const root = path.resolve(__dirname, "..", "dist");
+// Reader/plan templates share the same controls, including their print hiding
+// and keyboard treatment. Keep their assets present and loaded before use.
+for (const page of ["daily-reading", "weeks", "courses", "curriculum", "high-school", "ap", "reading-level", "learn"]) {
+  const template = fs.readFileSync(path.join(root, page + ".html"), "utf8");
+  if (!template.includes('href="styles/reader-controls.css"')) throw new Error(page + " must load the shared reader controls");
+  if (["daily-reading", "weeks", "courses"].includes(page)) {
+    const scripts = pageScripts(template), entry = page === "weeks" ? "weekly" : page;
+    const shared = scripts.indexOf("app/reader-controls.js"), app = scripts.indexOf("app/" + entry + ".js");
+    if (shared < 0 || app <= shared) throw new Error(page + " must load reader controls before its application");
+  }
+}
+for (const asset of ["styles/reader-controls.css", "app/reader-controls.js"]) {
+  if (!fs.existsSync(path.join(root, asset))) throw new Error("Missing shared reader asset: " + asset);
+}
 const html = fs.readFileSync(path.join(root, "practice.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "styles", "app.css"), "utf8");
 
@@ -389,7 +403,7 @@ if (JSON.stringify(planData) !== JSON.stringify(JSON.parse(fs.readFileSync(path.
 // Weekly course bodies load on demand; the index never embeds answer keys.
 const weeklyHtml = fs.readFileSync(path.join(root, "weeks.html"), "utf8");
 const weeklyScripts = pageScripts(weeklyHtml);
-if (JSON.stringify(weeklyScripts) !== JSON.stringify(["content/weekly-index.js", "lib/weekly.js", "app/render.js", "app/weekly-render.js", "app/weekly.js"])) {
+if (JSON.stringify(weeklyScripts) !== JSON.stringify(["content/weekly-index.js", "lib/weekly.js", "app/render.js", "app/weekly-render.js", "app/reader-controls.js", "app/weekly.js"])) {
   throw new Error("Weekly scripts are missing or out of order");
 }
 for (const match of weeklyHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
@@ -473,7 +487,7 @@ if (apDisclaimer.length) throw new Error(apDisclaimer.join("; "));
 // Nightly texts remain in separately loaded grade files, with a small index.
 const dailyHtml = fs.readFileSync(path.join(root, "daily-reading.html"), "utf8");
 const dailyScripts = pageScripts(dailyHtml);
-if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/daily-reading.js", "app/daily-reading-render.js", "app/daily-reading-browse.js", "app/daily-reading.js"])) throw new Error("Daily-reading scripts are missing or out of order");
+if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/daily-reading.js", "app/daily-reading-render.js", "app/daily-reading-browse.js", "app/reader-controls.js", "app/daily-reading.js"])) throw new Error("Daily-reading scripts are missing or out of order");
 for (const match of dailyHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const target = match[1].split(/[?#]/)[0];
   if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing daily-reading asset: " + target);

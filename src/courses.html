@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/app.css" />
     <link rel="stylesheet" href="styles/math.css" />
     <link rel="stylesheet" href="styles/courses.css" />
+    <link rel="stylesheet" href="styles/reader-controls.css" />
     <link rel="stylesheet" href="styles/brand.css" />
     <script defer src="content/courses.js"></script>
     <script defer src="lib/courses/math.js"></script>
@@ -21,6 +22,7 @@
     <script defer src="lib/courses/engine.js"></script>
     <script defer src="app/render.js"></script>
     <script defer src="app/course-render.js"></script>
+    <script defer src="app/reader-controls.js"></script>
     <script defer src="app/courses.js"></script>
   </head>
   <body class="courses-page">
@@ -38,10 +40,10 @@
       <div id="courseApp" hidden>
         <details class="course-library">
           <summary>Choose a course <span id="courseLibraryLabel"></span></summary>
-          <div class="course-catalog-fields">
-            <div class="field"><label for="courseGrade">Grade</label><select id="courseGrade"></select></div>
-            <div class="field"><label for="courseSubject">Subject</label><select id="courseSubject"></select></div>
-            <div class="field"><label for="courseChoice">Course</label><select id="courseChoice"></select></div>
+          <div class="course-catalog-fields reader-selectors">
+            <label>Grade<select id="courseGrade"></select></label>
+            <label class="reader-select-wide">Subject<select id="courseSubject"></select></label>
+            <label class="reader-select-wide">Course<select id="courseChoice"></select></label>
           </div>
           <p id="courseDescription"></p>
           <p id="courseScope" class="course-scope"></p>
@@ -76,17 +78,16 @@
             <section id="courseGuideDetails" class="course-study-panel" aria-labelledby="courseStudyHeading">
               <header class="course-study-heading">
                 <h2 id="courseStudyHeading" class="sr-only" tabindex="-1">Study selected lessons</h2>
-                <div class="course-reader-navigation">
-                  <div class="field"><label class="sr-only" for="courseReadLesson">Reading now</label><select id="courseReadLesson"></select></div>
-                  <div class="course-reader-arrows"><button id="courseReadPrevious" class="button secondary" type="button" aria-label="Previous selected lesson">←</button><button id="courseReadNext" class="button secondary" type="button" aria-label="Next selected lesson">→</button></div>
-                  <button id="coursePracticeLessonTop" class="button primary" type="button">Practice this lesson</button>
+                <div class="course-reader-navigation reader-bar">
+                  <div class="reader-selectors"><label class="reader-select-wide">Lesson<select id="courseReadLesson"></select></label></div>
+                  <div class="reader-actions"><button id="coursePracticeLessonTop" type="button" aria-label="Practice this lesson">Practice lesson</button><button type="button" data-course-export="guide" data-export-action="print" aria-label="Print selected lessons">Print</button><button type="button" data-course-export="guide" data-export-action="download" aria-label="Download guide for selected lessons">Download</button></div>
                 </div>
+                <div id="courseReadNavigationTop"></div>
               </header>
               <div id="courseGuide" class="course-reading-surface"></div>
               <div class="course-study-actions">
-                <button id="coursePracticeLesson" class="button primary" type="button">Practice this lesson</button>
-                <button class="button secondary" type="button" data-course-export="guide" data-export-action="print">Print selected lessons</button>
-                <button class="text-link" type="button" data-course-export="guide" data-export-action="download">Download guide</button>
+                <div id="courseReadNavigationBottom"></div>
+                <div class="reader-actions"><button id="coursePracticeLesson" type="button">Practice this lesson</button></div>
               </div>
             </section>
             <section id="coursePracticePanel" class="course-practice-panel" aria-labelledby="builderHeading" hidden>

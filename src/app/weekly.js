@@ -3,8 +3,9 @@
   const index = window.LIMINAL_WEEKLY_INDEX;
   const W = window.LiminalWeekly;
   const R = window.LiminalWeeklyRender;
+  const Controls = window.LiminalReaderControls;
   const status = document.getElementById("weeklyStatus");
-  if (!index || !W || !R || !window.LiminalRender) {
+  if (!index || !W || !R || !Controls || !window.LiminalRender) {
     status.textContent = "Weekly coursework could not be loaded. Reload this page to try again.";
     return;
   }
@@ -46,7 +47,7 @@
     const named = !!selected.course.courseId;
     trackSelect.value = selected.trackId;
     document.getElementById("weeklyCourseLabel").textContent = named ? "Course" : "Grade";
-    document.querySelector(".weekly-filters").classList.toggle("weekly-named", named);
+    gradeSelect.closest("label").classList.toggle("reader-select-wide", named);
     const courses = index.courses.filter(course => course.trackId === selected.trackId).slice();
     if (!named) courses.sort((a, b) => a.grade - b.grade);
     gradeSelect.replaceChildren(...courses.map(course => {
@@ -101,18 +102,24 @@
   function practice(course, week, onRead) {
     const section = R.section("Try it yourself");
     section.append(R.el("p", "Choose a worksheet. Show your thinking in the blank space.", "weekly-muted"));
+    const toolbar = R.el("div", undefined, "reader-bar weekly-sheet-tools");
+    const selectors = R.el("div", undefined, "reader-selectors");
     const label = R.el("label", "Worksheet", "weekly-sheet-picker");
     const select = R.el("select");
     week.worksheets.forEach(sheet => select.append(option(sheet.id.toUpperCase() + " · " + sheet.title, sheet.id)));
-    label.append(select); section.append(label);
+    label.append(select); selectors.append(label);
     const sheetContent = R.el("div");
-    const controls = R.el("div", undefined, "weekly-actions");
-    controls.append(button("Print student sheet", () => exportSheet(course, week, select.value, false, true)), button("Download student sheet", () => exportSheet(course, week, select.value, false, false)));
+    toolbar.append(selectors, Controls.actions([
+      { label: "Print student sheet", run: () => exportSheet(course, week, select.value, false, true) },
+      { label: "Download student sheet", run: () => exportSheet(course, week, select.value, false, false) },
+    ]));
     const answers = R.disclosure("Answer key", "weekly-key-tools");
-    const keyControls = R.el("div", undefined, "weekly-actions");
+    const keyControls = Controls.actions([
+      { label: "Print answer key", run: () => exportSheet(course, week, select.value, true, true) },
+      { label: "Download answer key", run: () => exportSheet(course, week, select.value, true, false) },
+    ]);
     const keyContent = R.el("div", undefined, "weekly-item-answer");
-    keyControls.append(button("Print answer key", () => exportSheet(course, week, select.value, true, true)), button("Download answer key", () => exportSheet(course, week, select.value, true, false)));
-    answers.append(keyControls, keyContent); controls.append(answers);
+    answers.append(keyControls, keyContent);
     function showKey() {
       if (answers.open && !keyContent.childNodes.length) keyContent.append(R.worksheet(W.answerWorksheet(course, week.week, select.value), true, { onRead }));
     }
@@ -122,9 +129,9 @@
     }
     select.addEventListener("change", () => { showSheet(); announce("Showing worksheet " + select.value.toUpperCase() + "."); });
     answers.addEventListener("toggle", showKey);
-    section.append(controls, sheetContent); showSheet(); return section;
+    section.append(toolbar, answers, sheetContent); showSheet(); return section;
   }
-  function views(course, week) {
+  function views(course, week, lessonActions) {
     const group = R.el("div", undefined, "weekly-views");
     const tabs = R.el("div", undefined, "weekly-tabs"); tabs.setAttribute("role", "tablist"); tabs.setAttribute("aria-label", "Weekly work");
     const entries = [];
@@ -156,6 +163,10 @@
         entry.panel.hidden = !current;
       });
       activeView = selected.id;
+      lessonActions.replaceChildren(...(selected.id === "worksheets" ? [] : [Controls.actions([
+        { label: selected.id === "read" ? "Print reading" : "Print lesson", run: () => window.print() },
+      ])]));
+      lessonActions.hidden = selected.id === "worksheets";
     }
     add("learn", "Learn", () => R.guide(week, math, onRead));
     if (week.passages.length) add("read", "Read", () => R.reading(week, math));
@@ -171,12 +182,16 @@
     };
     group.prepend(tabs); show(activeView); return group;
   }
-  function navigation(selected) {
-    const nav = R.el("nav", undefined, "weekly-nav"); nav.setAttribute("aria-label", "Adjacent weeks");
+  function navigation(selected, position) {
     const pages = W.navigation(index, selected);
-    if (pages.previous) nav.append(R.link("← Week " + (selected.week - 1), pages.previous));
-    if (pages.next) nav.append(R.link("Week " + (selected.week + 1) + " →", pages.next));
-    return nav;
+    const destination = (href, label) => href ? { href, label } : null;
+    return Controls.navigation({
+      label: "Week navigation, " + position,
+      first: destination(pages.first, "First week"),
+      previous: destination(pages.previous, "Previous week, week " + (selected.week - 1)),
+      next: destination(pages.next, "Next week, week " + (selected.week + 1)),
+      last: destination(pages.last, "Last week, week 36"),
+    });
   }
   async function render(focus) {
     const currentRequest = ++request;
@@ -207,8 +222,11 @@
       links.append(R.link("Year plan", yearRoute), R.link("Unit and standards", yearRoute + "/" + encodeURIComponent(week.unitId)));
       if (course.trackId === "common-core-reading") links.append(R.link("Nightly reading", "daily-reading.html#" + W.courseKey(course) + "/" + week.week + "/1"));
       heading.append(links);
+      const toolbar = R.el("div", undefined, "reader-bar");
+      const lessonActions = R.el("div");
+      toolbar.append(navigation(selected, "top"), lessonActions);
       const fragment = document.createDocumentFragment();
-      fragment.append(heading, views(course, week), navigation(selected));
+      fragment.append(toolbar, heading, views(course, week, lessonActions), navigation(selected, "bottom"));
       container.replaceChildren(fragment);
       document.title = "Week " + week.week + " · " + week.title + " — Liminal";
       announce((selected.invalid ? "That coursework link was not recognized. Showing " : "Showing ") + W.courseLabel(course) + ", week " + week.week + ": " + week.title + ".", selected.invalid);
