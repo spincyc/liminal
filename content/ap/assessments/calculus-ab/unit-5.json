@@ -270,17 +270,17 @@
               "id": "ab-u5-mc12",
               "prompt": "The derivative of a function f is f′(x) = x^2 − 2sin(2x). At what value of x in 0 < x < 2 does the graph of f have a point of inflection?",
               "choices": [
-                "1.183",
+                "0.626",
                 "0.785",
                 "0.000",
-                "0.626"
+                "1.183"
               ],
-              "key": "D",
+              "key": "A",
               "rationale": "f″(x) = 2x − 4cos(2x) changes sign once in (0, 2), at x ≈ 0.626.",
               "distractorNotes": {
-                "A": "This is a zero of f′, where f has an extremum.",
                 "B": "This is π/4, where sin(2x) is largest, not where f″ changes sign.",
-                "C": "Outside the open interval."
+                "C": "Outside the open interval.",
+                "D": "This is a zero of f′, where f has an extremum."
               },
               "topics": [
                 "AB.5.9",
@@ -316,7 +316,7 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Find the production level x that maximizes profit on 0 ≤ x ≤ 10. Justify your answer.",
+                  "prompt": "Find the production level x that maximizes profit on 0 ≤ x ≤ 10, and show why it gives the maximum.",
                   "points": 4,
                   "rubric": [
                     {
@@ -425,7 +425,7 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Find the x-coordinates of all relative minima and relative maxima of f on −3 < x < 4. Justify.",
+                  "prompt": "Find the x-coordinates of all relative minima and relative maxima of f on −3 < x < 4. Explain how the graph of f′ shows each one.",
                   "points": 2,
                   "rubric": [
                     {
@@ -445,7 +445,7 @@
                 },
                 {
                   "label": "b",
-                  "prompt": "On what open intervals is the graph of f concave up? Justify.",
+                  "prompt": "On what open intervals is the graph of f concave up? Give a reason.",
                   "points": 2,
                   "rubric": [
                     {
@@ -509,13 +509,14 @@
                     },
                     {
                       "points": 1,
-                      "criterion": "Greater than f(1.1), because f is concave down on (0, 2), so its graph lies below the tangent line."
+                      "criterion": "Greater than f(1.1): f′ is decreasing on the whole interval 1 ≤ x ≤ 1.1 (part of the segment from (0, 2) to (2, −2)), so f is concave down from x = 1 to x = 1.1 and its graph lies below the tangent line there."
                     }
                   ],
                   "answer": "f(1.1) ≈ 3, which is greater than f(1.1).",
                   "steps": [
                     "The tangent line is constant, so the approximation is 3.",
-                    "f′ is decreasing on (0, 2), so f is concave down there and f(1.1) < 3."
+                    "The interval 1 ≤ x ≤ 1.1 lies inside (0, 2), where f′ is decreasing, so f″ < 0 on the whole interval from the point of tangency to x = 1.1.",
+                    "A graph that is concave down on that whole interval lies below its tangent line there, so f(1.1) < 3."
                   ]
                 }
               ]

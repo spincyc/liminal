@@ -134,16 +134,16 @@
               "id": "ab-u3-mc06",
               "prompt": "Which expression equals d/dx arcsin(x^2) for −1 < x < 1?",
               "choices": [
-                "2x/√(1 − x^4)",
-                "1/√(1 − x^4)",
                 "2x/√(1 − x^2)",
+                "1/√(1 − x^4)",
+                "2x/√(1 − x^4)",
                 "2x/(1 + x^4)"
               ],
-              "key": "A",
+              "key": "C",
               "rationale": "d/dx arcsin(u) = u′/√(1 − u^2) with u = x^2: 2x/√(1 − x^4).",
               "distractorNotes": {
+                "A": "Uses x^2 instead of (x^2)^2 under the radical.",
                 "B": "Omits the inner derivative 2x.",
-                "C": "Uses x^2 instead of (x^2)^2 under the radical.",
                 "D": "Uses the arctan derivative."
               },
               "topics": [
@@ -309,7 +309,7 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Find the rate at which the air temperature at the balloon is changing at t = 10 minutes. Indicate units of measure.",
+                  "prompt": "How fast is the air temperature at the balloon changing at t = 10 minutes? Give units.",
                   "points": 2,
                   "rubric": [
                     {
@@ -329,7 +329,7 @@
                 },
                 {
                   "label": "b",
-                  "prompt": "Find h″(10). Using correct units, explain what this value says about the balloon's motion.",
+                  "prompt": "Find h″(10), give its units, and describe what this value says about the balloon's motion.",
                   "points": 2,
                   "rubric": [
                     {
@@ -349,7 +349,7 @@
                 },
                 {
                   "label": "c",
-                  "prompt": "The function h has an inverse function g, so t = g(h) gives the time at which the balloon reaches altitude h. Find g′(4) and interpret it in context.",
+                  "prompt": "The function h has an inverse function g, so t = g(h) gives the time at which the balloon reaches altitude h. Find g′(4), and describe what it tells you about the balloon's climb.",
                   "points": 3,
                   "rubric": [
                     {

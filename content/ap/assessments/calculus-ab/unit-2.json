@@ -26,6 +26,7 @@
       "parts": [
         {
           "id": "A",
+          "title": "No calculator",
           "minutes": 18,
           "calculator": "none",
           "directions": "Choose the best answer. No calculator is allowed.",
@@ -180,15 +181,15 @@
               "prompt": "If y = (1 + sin x)/cos x, what is the value of dy/dx at x = 0?",
               "choices": [
                 "0",
-                "2",
                 "1",
+                "2",
                 "−1"
               ],
-              "key": "C",
+              "key": "B",
               "rationale": "Quotient rule: (cos x·cos x − (1 + sin x)(−sin x))/cos^2 x = (1 + sin x)/cos^2 x, which is 1 at x = 0. (Equivalently, y = sec x + tan x.)",
               "distractorNotes": {
                 "A": "Uses only the derivative of sec x, which is 0 at x = 0.",
-                "B": "Counts sec^2 x twice.",
+                "C": "Counts sec^2 x twice.",
                 "D": "Reverses the order of the quotient-rule numerator."
               },
               "topics": [
@@ -200,7 +201,8 @@
         },
         {
           "id": "B",
-          "minutes": 10,
+          "title": "Graphing calculator",
+          "minutes": 12,
           "calculator": "graphing",
           "directions": "Choose the best answer. A graphing calculator is required for some questions. If the exact value is not a choice, choose the closest approximation.",
           "items": [
@@ -297,6 +299,7 @@
       "parts": [
         {
           "id": "A",
+          "title": "Graphing calculator",
           "minutes": 15,
           "calculator": "graphing",
           "directions": "A graphing calculator is required. Show the setup for every calculator result, and give answers to three decimal places with units.",
@@ -313,7 +316,7 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Use the data to estimate R′(2). Show the computation and include units.",
+                  "prompt": "Estimate R′(2) from the table with a difference quotient, and give its units.",
                   "points": 2,
                   "rubric": [
                     {
@@ -333,7 +336,7 @@
                 },
                 {
                   "label": "b",
-                  "prompt": "Find M′(2). Using correct units, interpret M′(2) in this context.",
+                  "prompt": "Find M′(2), and say what this value tells you about the water in the barrel two hours after the storm begins. Give units.",
                   "points": 2,
                   "rubric": [
                     {
@@ -401,6 +404,7 @@
         },
         {
           "id": "B",
+          "title": "No calculator",
           "minutes": 15,
           "calculator": "none",
           "directions": "No calculator is allowed. Show your work and give exact answers.",
@@ -461,46 +465,47 @@
                 },
                 {
                   "label": "c",
-                  "prompt": "Is g differentiable at x = 0? Justify your answer.",
-                  "points": 2,
-                  "rubric": [
-                    {
-                      "points": 1,
-                      "criterion": "Finds the one-sided slopes at 0: 1 on the left and 0 on the right."
-                    },
-                    {
-                      "points": 1,
-                      "criterion": "Concludes g is not differentiable at 0 because the one-sided derivatives differ (a corner), even though g is continuous there."
-                    }
-                  ],
-                  "answer": "No. The slope is 1 just left of 0 and 0 just right of 0, so the one-sided derivatives differ and the graph has a corner at (0, 2).",
-                  "steps": [
-                    "Read the slopes of the segments meeting at (0, 2).",
-                    "Unequal one-sided derivatives mean g′(0) does not exist."
-                  ]
-                },
-                {
-                  "label": "d",
-                  "prompt": "Let m(x) = x·tan x. Find m′(π/4).",
+                  "prompt": "Decide whether g is differentiable at x = 0. Support your decision with the one-sided limits of the difference quotient (g(x) − g(0))/x as x→0.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Uses the product rule: m′(x) = tan x + x·sec^2 x."
+                      "criterion": "Finds the left-hand limit of the difference quotient, 1 (the slope of the segment from (−4, −2) to (0, 2))."
                     },
                     {
                       "points": 1,
-                      "criterion": "Uses tan(π/4) = 1 and sec^2(π/4) = 2."
+                      "criterion": "Finds the right-hand limit of the difference quotient, 0 (the horizontal segment from (0, 2) to (2, 2))."
                     },
                     {
                       "points": 1,
-                      "criterion": "Gets m′(π/4) = 1 + π/2."
+                      "criterion": "Concludes that g is not differentiable at 0 because the one-sided limits differ, and notes that g is continuous there, so continuity alone does not settle differentiability."
                     }
                   ],
-                  "answer": "m′(π/4) = 1 + π/2",
+                  "answer": "No. As x→0⁻ the difference quotient is 1 (slope of the left segment) and as x→0⁺ it is 0 (the horizontal segment). The one-sided limits differ, so g′(0) does not exist: the graph has a corner at (0, 2), even though g is continuous there.",
                   "steps": [
-                    "m′(x) = tan x + x sec^2 x.",
-                    "At π/4: 1 + (π/4)(2) = 1 + π/2."
+                    "For −4 ≤ x < 0, g(x) = x + 2, so (g(x) − 2)/x = 1.",
+                    "For 0 < x ≤ 2, g(x) = 2, so (g(x) − 2)/x = 0.",
+                    "The one-sided limits 1 and 0 differ, so g is not differentiable at 0; g is continuous there because both sides approach g(0) = 2."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Let m(x) = g(x)·tan x. Find m′(π/3).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies the product rule, m′(x) = g′(x)tan x + g(x)sec^2 x, with g(π/3) = 2 and g′(π/3) = 0 read from the horizontal segment (0 < π/3 < 2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses sec^2(π/3) = 4 to get m′(π/3) = 8."
+                    }
+                  ],
+                  "answer": "m′(π/3) = 8",
+                  "steps": [
+                    "π/3 lies between 0 and 2, where g(x) = 2 and g′(x) = 0.",
+                    "m′(π/3) = 0·tan(π/3) + 2·sec^2(π/3) = 2·4 = 8."
                   ]
                 }
               ]

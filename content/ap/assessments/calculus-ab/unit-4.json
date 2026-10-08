@@ -87,15 +87,15 @@
               "choices": [
                 "52 g/cm",
                 "13 g/cm",
-                "25 g/cm",
-                "24 g/cm"
+                "24 g/cm",
+                "25 g/cm"
               ],
-              "key": "C",
+              "key": "D",
               "rationale": "Linear density is dm/dx = 6x + 1, which is 25 g/cm at x = 4.",
               "distractorNotes": {
                 "A": "This is the mass m(4), not its rate of change.",
                 "B": "This is the average density m(4)/4 over the first 4 cm.",
-                "D": "Omits the derivative of the x term."
+                "C": "Omits the derivative of the x term."
               },
               "topics": [
                 "AB.4.3",
@@ -165,7 +165,7 @@
             },
             {
               "id": "ab-u4-mc08",
-              "prompt": "What is lim_(x→0) (1 − cos(4x))/x^2?",
+              "prompt": "What is lim as x→0 of (1 − cos(4x))/x^2?",
               "choices": [
                 "4",
                 "16",
@@ -302,7 +302,7 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Find the rate at which the height of the pile is increasing at t = 3. Indicate units of measure.",
+                  "prompt": "How fast is the height of the pile rising at t = 3? Give units.",
                   "points": 3,
                   "rubric": [
                     {
@@ -362,7 +362,7 @@
                 },
                 {
                   "label": "d",
-                  "prompt": "Use a tangent line to the graph of the height of the pile at t = 3 to estimate the height at t = 3.5. Interpret the answer.",
+                  "prompt": "Use a tangent line to the graph of the height of the pile at t = 3 to estimate the height at t = 3.5. For 3 ≤ t ≤ 3.5 the second derivative of the height is negative. Is your estimate greater than or less than the actual height at t = 3.5? Give a reason.",
                   "points": 3,
                   "rubric": [
                     {
@@ -375,13 +375,14 @@
                     },
                     {
                       "points": 1,
-                      "criterion": "States that the pile is about 1.865 m high half a minute later, by the linear approximation."
+                      "criterion": "Greater than the actual height: the height's graph is concave down on the whole interval 3 ≤ t ≤ 3.5, so it lies below its tangent line there."
                     }
                   ],
-                  "answer": "About 1.865 m",
+                  "answer": "About 1.865 m, which is greater than the actual height at t = 3.5.",
                   "steps": [
                     "The tangent line uses the height 1.8 and slope dh/dt ≈ 0.13088 from part (a).",
-                    "1.8 + 0.13088(0.5) ≈ 1.865 m: half a minute later the pile is about 1.865 m high."
+                    "1.8 + 0.13088(0.5) ≈ 1.865 m.",
+                    "The second derivative of the height is negative for all t from 3 to 3.5, so the height's graph bends below its tangent line on that whole interval and the estimate 1.865 m is too large."
                   ]
                 }
               ]
@@ -405,7 +406,7 @@
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "On what open interval is the particle moving to the left? Justify.",
+                  "prompt": "On what open interval is the particle moving to the left? Give a reason.",
                   "points": 2,
                   "rubric": [
                     {
@@ -425,7 +426,7 @@
                 },
                 {
                   "label": "b",
-                  "prompt": "Is the speed of the particle increasing or decreasing at t = 3? Justify.",
+                  "prompt": "Is the speed of the particle increasing or decreasing at t = 3? Explain using v(3) and a(3).",
                   "points": 2,
                   "rubric": [
                     {
@@ -469,22 +470,23 @@
                 },
                 {
                   "label": "d",
-                  "prompt": "Find lim_(t→2) (x(t) − 52)/(t − 2)^2.",
+                  "prompt": "Find lim as t→2 of (x(t) − 52)/(t − 2)^2.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Identifies the 0/0 form (x(2) = 52) and applies L'Hospital's Rule, getting v(t)/(2(t − 2)), again 0/0 since v(2) = 0."
+                      "criterion": "Identifies the 0/0 form (x(2) = 52) and applies L'Hospital's Rule, getting v(t)/(2(t − 2)), again 0/0 since v(2) = 0; or factors x(t) − 52 = (t − 2)^2(2t − 13)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Applies the rule again: a(t)/2 → a(2)/2 = −9."
+                      "criterion": "Applies the rule again: a(t)/2 → a(2)/2 = −9; or cancels (t − 2)^2 and evaluates 2t − 13 at t = 2 to get −9."
                     }
                   ],
                   "answer": "−9",
                   "steps": [
                     "x(2) − 52 = 0 and (2 − 2)^2 = 0, so the form is 0/0; the derivative quotient is v(t)/(2(t − 2)).",
-                    "v(2) = 0 makes this 0/0 again; the next quotient is a(t)/2, and a(2) = 24 − 42 = −18, so the limit is −9."
+                    "v(2) = 0 makes this 0/0 again; the next quotient is a(t)/2, and a(2) = 24 − 42 = −18, so the limit is −9.",
+                    "Factoring also works: t = 2 is a double root of x(t) − 52, and x(t) − 52 = (t − 2)^2(2t − 13), so the quotient is 2t − 13 for t ≠ 2, which approaches −9."
                   ]
                 }
               ]

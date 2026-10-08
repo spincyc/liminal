@@ -342,13 +342,13 @@
               "id": "ab-w01-c2",
               "prompt": "Which value best approximates lim as x→0 of (e^(3x) − 1)/sin(x)?",
               "choices": [
-                "1.000",
                 "3.000",
+                "1.000",
                 "0.333",
                 "2.718"
               ],
-              "key": "B",
-              "answer": "(B) 3.000",
+              "key": "A",
+              "answer": "(A) 3.000",
               "steps": [
                 "A table with x = ±0.001 gives about 2.996 and 3.005.",
                 "The outputs approach 3 from both sides; 1, 1/3, and e come from misreading the expression."
@@ -1260,7 +1260,7 @@
       "figures": [
         {
           "id": "ab-w04-f1",
-          "alt": "Graph of y = r(x) for −5 ≤ x ≤ 6 with dashed vertical lines at x = −1 and x = 2 and a dashed horizontal line at y = 2. On the left the curve stays just below y = 2, then falls steeply as x approaches −1 from the left. Between the dashed vertical lines the curve comes down from the top of the window near x = −1, passes through (0, 2), and falls steeply as x approaches 2. Right of x = 2 the curve comes down from the top of the window and levels off above y = 2.",
+          "alt": "Graph of y = r(x) for −5 ≤ x ≤ 6 with dashed vertical lines at x = −1 and x = 2 and a dashed horizontal line at y = 2. Left of x = −1 the curve starts below y = 2 near (−5, 1.3), falls through (−2, 0), and drops steeply as x approaches −1 from the left. Between the dashed vertical lines the curve comes down from the top of the window near x = −1, passes through (0, 2) and (1, 0), and falls steeply as x approaches 2. Right of x = 2 the curve comes down from the top of the window and levels off above y = 2.",
           "caption": "The function r"
         },
         {
@@ -1355,12 +1355,12 @@
               "prompt": "Which function is continuous on the closed interval [−2, 2]?",
               "choices": [
                 "1/(x^2 − 1)",
-                "√(4 − x^2)",
                 "ln(x + 2)",
-                "tan x"
+                "tan x",
+                "√(4 − x^2)"
               ],
-              "key": "B",
-              "answer": "(B) √(4 − x^2)",
+              "key": "D",
+              "answer": "(D) √(4 − x^2)",
               "steps": [
                 "√(4 − x^2) is defined on [−2, 2] and continuous there, with one-sided continuity at ±2.",
                 "1/(x^2 − 1) fails at ±1, ln(x + 2) is undefined at −2, and tan x has an asymptote at π/2 ≈ 1.57."
@@ -1483,12 +1483,12 @@
               ],
               "choices": [
                 "lim as x→2⁻ of r(x) = ∞",
-                "lim as x→−1⁺ of r(x) = ∞",
                 "lim as x→∞ of r(x) = 0",
+                "lim as x→−1⁺ of r(x) = ∞",
                 "lim as x→1 of r(x) = ∞"
               ],
-              "key": "B",
-              "answer": "(B) lim as x→−1⁺ of r(x) = ∞",
+              "key": "C",
+              "answer": "(C) lim as x→−1⁺ of r(x) = ∞",
               "steps": [
                 "Just right of x = −1 the graph comes down from the top of the window, so r(x) → ∞.",
                 "Left of x = 2 the graph falls (−∞), the graph levels off at height 2 (not 0), and r is continuous at x = 1 with r(1) = 0."
@@ -2541,13 +2541,13 @@
               "id": "ab-w07-a5",
               "prompt": "If g(x) = 3 ln x + π^2, what is g′(x)?",
               "choices": [
-                "3/x + 2π",
                 "3/x",
+                "3/x + 2π",
                 "(3 ln x)/x",
                 "1/(3x)"
               ],
-              "key": "B",
-              "answer": "(B) 3/x",
+              "key": "A",
+              "answer": "(A) 3/x",
               "steps": [
                 "d/dx (3 ln x) = 3/x.",
                 "π^2 is a constant, so its derivative is 0, not 2π."
@@ -3034,12 +3034,12 @@
               ],
               "choices": [
                 "1",
-                "3",
                 "−3",
-                "−2"
+                "−2",
+                "3"
               ],
-              "key": "B",
-              "answer": "(B) 3",
+              "key": "D",
+              "answer": "(D) 3",
               "steps": [
                 "At x = −2: f(−2) = 1, f′(−2) = 2 (segment from (−3, −1) to (−1, 3)); g(−2) = 1, g′(−2) = −1 (segment from (−3, 2) to (0, −1)).",
                 "q′(−2) = (2·1 − 1·(−1))/1^2 = 3; reversing the numerator gives −3."
@@ -3218,7 +3218,7 @@
       "figures": [
         {
           "id": "ab-w09-f1",
-          "alt": "Graph of the increasing curve y = f(x) and of its inverse y = g(x), drawn as mirror images across the dashed line y = x on −1 ≤ x ≤ 4. The point (1, 2) on f and the point (2, 1) on g are marked, each with a short tangent segment; the tangent on f is steep and the tangent on g is shallow.",
+          "alt": "Graph of the increasing curve y = f(x) and of its inverse y = g(x), drawn as mirror images across the dashed line y = x on −1 ≤ x ≤ 4. The point (1, 2) on f and the point (2, 1) on g are marked, each with a thin tangent line drawn across the window; the tangent line to f is steep, the tangent line to g is shallow, and the two tangent lines are mirror images across y = x.",
           "caption": "A function, its inverse, and tangent lines at matching points"
         },
         {
@@ -3408,16 +3408,16 @@
               "id": "ab-w09-b5",
               "prompt": "The function f is differentiable and increasing, with f(2) = 5, f′(2) = 3, and f′(5) = 4. If g is the inverse of f, what is g′(5)?",
               "choices": [
-                "1/4",
                 "1/3",
+                "1/4",
                 "3",
                 "1/5"
               ],
-              "key": "B",
-              "answer": "(B) 1/3",
+              "key": "A",
+              "answer": "(A) 1/3",
               "steps": [
                 "Since f(2) = 5, g(5) = 2.",
-                "g′(5) = 1/f′(g(5)) = 1/f′(2) = 1/3. Choice A uses f′ at the wrong input."
+                "g′(5) = 1/f′(g(5)) = 1/f′(2) = 1/3. Choice B, 1/4, uses f′ at the wrong input."
               ],
               "passageIds": [],
               "skill": "Use the inverse derivative relationship"
@@ -4519,13 +4519,13 @@
               "id": "ab-w12-b4",
               "prompt": "A rectangle's length increases at 2 cm/s and its width decreases at 1 cm/s. When the length is 10 cm and the width is 6 cm, what is happening to the area?",
               "choices": [
-                "It is decreasing at 2 cm^2/s.",
                 "It is increasing at 2 cm^2/s.",
+                "It is decreasing at 2 cm^2/s.",
                 "It is increasing at 22 cm^2/s.",
                 "It is decreasing at 10 cm^2/s."
               ],
-              "key": "B",
-              "answer": "(B) It is increasing at 2 cm^2/s.",
+              "key": "A",
+              "answer": "(A) It is increasing at 2 cm^2/s.",
               "steps": [
                 "dA/dt = L(dW/dt) + W(dL/dt) = 10(−1) + 6(2).",
                 "dA/dt = −10 + 12 = 2 > 0, so the area is increasing at 2 cm^2/s."
@@ -4715,8 +4715,8 @@
       "explanation": [
         "Near a point where f is differentiable, its graph is almost straight: zoom in far enough and it is indistinguishable from its tangent line. The tangent line L(x) = f(a) + f′(a)(x − a) is called the linearization of f at a, and f(x) ≈ L(x) for x close to a. For example, with f(x) = √x and a = 16, L(x) = 4 + (1/8)(x − 16), so √16.4 ≈ 4 + 0.05 = 4.05. The approximation is good only near a; the error usually grows as x moves away.",
         "Whether L(x) is too high or too low depends on how the graph bends between a and x. If f″ > 0 there, the graph is concave up and lies above its tangent line, so L(x) underestimates f(x). If f″ < 0, the graph is concave down and lies below the tangent line, so L(x) overestimates. A table that gives f(a) and f′(a) is enough to build L; a statement about f″ or about f′ increasing or decreasing settles the direction of the error.",
-        "L'Hospital's Rule evaluates limits that are indeterminate. If f(x) and g(x) both approach 0, or both approach ±∞, as x → a (or x → ±∞), and f and g are differentiable near a with g′(x) ≠ 0 there, then lim f(x)/g(x) = lim f′(x)/g′(x), provided the second limit exists or is infinite. Differentiate the numerator and the denominator separately; the result may need the rule again. For example, lim_(x→0) (e^(3x) − 1 − 3x)/x^2 is 0/0, becomes (3e^(3x) − 3)/(2x), still 0/0, then 9e^(3x)/2, whose limit is 9/2.",
-        "Common errors: applying the rule to a limit that is not indeterminate, such as lim_(x→0) (x + 1)/(x + 2), whose value is 1/2 by substitution while the rule would wrongly give 1; using the quotient rule on f/g instead of differentiating top and bottom separately; and forgetting to state the indeterminate form, which is part of a complete justification."
+        "L'Hospital's Rule evaluates limits that are indeterminate. If f(x) and g(x) both approach 0, or both approach ±∞, as x → a (or x → ±∞), and f and g are differentiable near a with g′(x) ≠ 0 there, then lim f(x)/g(x) = lim f′(x)/g′(x), provided the second limit exists or is infinite. Differentiate the numerator and the denominator separately; the result may need the rule again. For example, lim as x→0 of (e^(3x) − 1 − 3x)/x^2 is 0/0, becomes (3e^(3x) − 3)/(2x), still 0/0, then 9e^(3x)/2, whose limit is 9/2.",
+        "Common errors: applying the rule to a limit that is not indeterminate, such as lim as x→0 of (x + 1)/(x + 2), whose value is 1/2 by substitution while the rule would wrongly give 1; using the quotient rule on f/g instead of differentiating top and bottom separately; and forgetting to state the indeterminate form, which is part of a complete justification."
       ],
       "examples": [
         {
@@ -4730,21 +4730,21 @@
           "passageIds": []
         },
         {
-          "prompt": "Evaluate lim_(x→0) (e^(3x) − 1 − 3x)/x^2.",
+          "prompt": "Evaluate lim as x→0 of (e^(3x) − 1 − 3x)/x^2.",
           "answer": "9/2",
           "steps": [
-            "Substitution gives 0/0, so L'Hospital's Rule applies: the limit equals lim_(x→0) (3e^(3x) − 3)/(2x).",
-            "This is still 0/0, so apply the rule again: lim_(x→0) 9e^(3x)/2.",
+            "Substitution gives 0/0, so L'Hospital's Rule applies: the limit equals lim as x→0 of (3e^(3x) − 3)/(2x).",
+            "This is still 0/0, so apply the rule again: lim as x→0 of 9e^(3x)/2.",
             "Substitution now gives 9/2."
           ],
           "passageIds": []
         },
         {
-          "prompt": "Evaluate lim_(x→∞) ln(x^2 + 1)/x.",
+          "prompt": "Evaluate lim as x→∞ of ln(x^2 + 1)/x.",
           "answer": "0",
           "steps": [
             "Both ln(x^2 + 1) and x grow without bound, so the form is ∞/∞.",
-            "L'Hospital's Rule gives lim_(x→∞) (2x/(x^2 + 1))/1 = lim_(x→∞) 2x/(x^2 + 1).",
+            "L'Hospital's Rule gives lim as x→∞ of (2x/(x^2 + 1))/1 = lim as x→∞ of 2x/(x^2 + 1).",
             "Dividing numerator and denominator by x^2 shows this limit is 0."
           ],
           "passageIds": []
@@ -4794,10 +4794,10 @@
             },
             {
               "id": "ab-w13-a4",
-              "prompt": "Evaluate lim_(x→0) sin(5x)/(2x).",
+              "prompt": "Evaluate lim as x→0 of sin(5x)/(2x).",
               "answer": "5/2",
               "steps": [
-                "The form is 0/0, so L'Hospital's Rule gives lim_(x→0) 5cos(5x)/2.",
+                "The form is 0/0, so L'Hospital's Rule gives lim as x→0 of 5cos(5x)/2.",
                 "Substitution gives 5/2."
               ],
               "passageIds": [],
@@ -4805,11 +4805,11 @@
             },
             {
               "id": "ab-w13-a5",
-              "prompt": "Evaluate lim_(x→1) (ln x)/(x^2 − 1).",
+              "prompt": "Evaluate lim as x→1 of (ln x)/(x^2 − 1).",
               "answer": "1/2",
               "steps": [
                 "At x = 1 the form is 0/0.",
-                "L'Hospital's Rule gives lim_(x→1) (1/x)/(2x) = 1/2."
+                "L'Hospital's Rule gives lim as x→1 of (1/x)/(2x) = 1/2."
               ],
               "passageIds": [],
               "skill": "Apply L'Hospital's Rule to a logarithm"
@@ -4818,13 +4818,13 @@
               "id": "ab-w13-a6",
               "prompt": "For which limit is L'Hospital's Rule NOT appropriate, because the limit is not an indeterminate form?",
               "choices": [
-                "lim_(x→0) (1 − cos x)/x^2",
-                "lim_(x→0) (x + 1)/e^x",
-                "lim_(x→∞) x^3/e^x",
-                "lim_(x→2) (x^2 − 4)/(x − 2)"
+                "lim as x→0 of (1 − cos x)/x^2",
+                "lim as x→0 of (x + 1)/e^x",
+                "lim as x→∞ of x^3/e^x",
+                "lim as x→2 of (x^2 − 4)/(x − 2)"
               ],
               "key": "B",
-              "answer": "(B) lim_(x→0) (x + 1)/e^x",
+              "answer": "(B) lim as x→0 of (x + 1)/e^x",
               "steps": [
                 "Choices A and D have the form 0/0 and choice C has the form ∞/∞.",
                 "In choice B the numerator and denominator both approach 1, so the limit is 1 by substitution."
@@ -4854,7 +4854,7 @@
             },
             {
               "id": "ab-w13-b2",
-              "prompt": "Evaluate lim_(x→0) (x − sin x)/x^3.",
+              "prompt": "Evaluate lim as x→0 of (x − sin x)/x^3.",
               "answer": "1/6",
               "steps": [
                 "The form is 0/0; one application gives (1 − cos x)/(3x^2), still 0/0.",
@@ -4865,7 +4865,7 @@
             },
             {
               "id": "ab-w13-b3",
-              "prompt": "Evaluate lim_(x→∞) x^2/e^(0.5x).",
+              "prompt": "Evaluate lim as x→∞ of x^2/e^(0.5x).",
               "answer": "0",
               "steps": [
                 "The form is ∞/∞; the rule gives 2x/(0.5e^(0.5x)), still ∞/∞.",
@@ -4876,7 +4876,7 @@
             },
             {
               "id": "ab-w13-b4",
-              "prompt": "Functions f and g are differentiable, with f(3) = g(3) = 0, f′(3) = 5, and g′(3) = −2. What is lim_(x→3) f(x)/g(x)?",
+              "prompt": "Functions f and g are differentiable, with f(3) = g(3) = 0, f′(3) = 5, and g′(3) = −2. What is lim as x→3 of f(x)/g(x)?",
               "choices": [
                 "−5/2",
                 "−2/5",
@@ -4886,7 +4886,7 @@
               "key": "A",
               "answer": "(A) −5/2",
               "steps": [
-                "The form is 0/0, so the limit equals lim_(x→3) f′(x)/g′(x).",
+                "The form is 0/0, so the limit equals lim as x→3 of f′(x)/g′(x).",
                 "Assuming f′ and g′ are continuous at 3, that is 5/(−2) = −5/2."
               ],
               "passageIds": [],
@@ -4905,7 +4905,7 @@
             },
             {
               "id": "ab-w13-b6",
-              "prompt": "A function g is twice differentiable, and lim_(x→0) (g(x) − 3)/(e^x − 1) = 4. Also g″(x) < 0 for all x. (a) Explain why g(0) = 3. (b) Find g′(0). (c) Use the tangent line to g at x = 0 to approximate g(0.05). (d) Is the approximation in (c) an overestimate or an underestimate? Explain.",
+              "prompt": "A function g is twice differentiable, and lim as x→0 of (g(x) − 3)/(e^x − 1) = 4. Also g″(x) < 0 for all x. (a) Explain why g(0) = 3. (b) Find g′(0). (c) Use the tangent line to g at x = 0 to approximate g(0.05). (d) Is the approximation in (c) an overestimate or an underestimate? Explain.",
               "points": 5,
               "rubric": [
                 {
@@ -4971,10 +4971,10 @@
             },
             {
               "id": "ab-w13-c3",
-              "prompt": "Evaluate lim_(x→0) (2^x − 1)/x exactly with L'Hospital's Rule, then check your answer on the calculator at x = 0.001 and x = −0.001.",
+              "prompt": "Evaluate lim as x→0 of (2^x − 1)/x exactly with L'Hospital's Rule, then check your answer on the calculator at x = 0.001 and x = −0.001.",
               "answer": "ln 2 ≈ 0.693; the quotient is about 0.693 at x = 0.001 and 0.693 at x = −0.001.",
               "steps": [
-                "The form is 0/0, and d/dx 2^x = 2^x ln 2, so the limit is lim_(x→0) 2^x ln 2 = ln 2.",
+                "The form is 0/0, and d/dx 2^x = 2^x ln 2, so the limit is lim as x→0 of 2^x ln 2 = ln 2.",
                 "At x = ±0.001 the quotient is about 0.69339 and 0.69291, both within 0.001 of ln 2 ≈ 0.69315."
               ],
               "passageIds": [],
@@ -5011,7 +5011,7 @@
             },
             {
               "id": "ab-w13-c6",
-              "prompt": "A differentiable function f satisfies f(4) = 2.31 and f′(x) = √x·cos(x/3). (a) Use the tangent line at x = 4 to approximate f(4.3). (b) Determine whether the approximation in (a) is an overestimate or an underestimate. Justify. (c) Find lim_(x→4) (f(x) − 2.31)/(x^2 − 16).",
+              "prompt": "A differentiable function f satisfies f(4) = 2.31 and f′(x) = √x·cos(x/3). (a) Use the tangent line at x = 4 to approximate f(4.3). (b) Determine whether the approximation in (a) is an overestimate or an underestimate. Justify. (c) Find lim as x→4 of (f(x) − 2.31)/(x^2 − 16).",
               "points": 6,
               "rubric": [
                 {
@@ -5281,13 +5281,13 @@
               "id": "ab-w14-b4",
               "prompt": "Which value is a critical point of f(x) = xe^(−x^2/2)?",
               "choices": [
-                "x = 0",
                 "x = 1",
+                "x = 0",
                 "x = 1/2",
                 "x = e"
               ],
-              "key": "B",
-              "answer": "(B) x = 1",
+              "key": "A",
+              "answer": "(A) x = 1",
               "steps": [
                 "f′(x) = e^(−x^2/2) − x^2e^(−x^2/2) = e^(−x^2/2)(1 − x^2).",
                 "f′(x) = 0 at x = ±1; f′(0) = 1, so 0 is not critical."
@@ -5414,8 +5414,8 @@
             },
             {
               "id": "ab-w14-c6",
-              "prompt": "The derivative of a function f is f′(x) = 2x − 3 + 4cos x for 0 ≤ x ≤ 6. (a) Find the critical points of f in (0, 6). (b) On what intervals is f increasing? Justify. (c) Explain why f has an absolute minimum on [0, 6], and determine the x-values at which it could occur.",
-              "points": 6,
+              "prompt": "Let f(x) = x^2 − 3x + 4sin x for 0 ≤ x ≤ 6, so that f′(x) = 2x − 3 + 4cos x. (a) Find the critical points of f in (0, 6). (b) On what intervals is f increasing? Justify. (c) Explain why f has an absolute minimum on [0, 6], and determine the x-value at which it occurs.",
+              "points": 7,
               "rubric": [
                 {
                   "points": 1,
@@ -5439,14 +5439,19 @@
                 },
                 {
                   "points": 1,
-                  "criterion": "Uses the candidates and the increasing intervals to narrow the minimum to x = 0 or x ≈ 3.422."
+                  "criterion": "Uses the candidates and the increasing intervals to narrow the minimum to x = 0 or x ≈ 3.422 (or evaluates f at all four candidates)."
+                },
+                {
+                  "points": 1,
+                  "criterion": "Compares the two: f(3.422) − f(0) ≈ 0.337 > 0 (by evaluating f, or as ∫ from 0 to 3.422 of f′(x) dx with the calculator), so the absolute minimum occurs at x = 0."
                 }
               ],
-              "answer": "(a) x ≈ 1.642 and 3.422. (b) Increasing on [0, 1.642] and [3.422, 6], where f′ > 0. (c) f is continuous on [0, 6], so the EVT ensures a minimum. The candidates are 0, 1.642, 3.422, and 6; since f increases on [0, 1.642] and on [3.422, 6], the minimum is at x = 0 or x ≈ 3.422.",
+              "answer": "(a) x ≈ 1.642 and 3.422. (b) Increasing on [0, 1.642] and [3.422, 6], where f′ > 0. (c) f is continuous on [0, 6], so the EVT ensures an absolute minimum. The candidates are 0, 1.642, 3.422, and 6; since f increases on [0, 1.642] and on [3.422, 6], the minimum is at x = 0 or x ≈ 3.422. Because f(0) = 0 and f(3.422) ≈ 0.337, the absolute minimum occurs at x = 0.",
               "steps": [
                 "Graph f′ on [0, 6]: zeros at x ≈ 1.642 and 3.422, with f′ > 0 before the first and after the second.",
                 "A function with a derivative is continuous, so the EVT applies on [0, 6].",
-                "f(1.642) > f(0) and f(6) > f(3.422), so neither 1.642 nor 6 can give the minimum."
+                "f(1.642) > f(0) and f(6) > f(3.422), so neither 1.642 nor 6 can give the minimum.",
+                "f(0) = 0 and f(3.422) ≈ 0.337 > 0, so the absolute minimum is at x = 0 (f(1.642) ≈ 1.760 and f(6) ≈ 16.882 are larger)."
               ],
               "passageIds": [],
               "skill": "Use critical points and the EVT with a calculator"
@@ -5882,7 +5887,7 @@
         "Mixed practice and a short check."
       ],
       "explanation": [
-        "The graphs of f, f′, and f″ carry the same information in different forms. To sketch f′ from f, mark where f has horizontal tangents (zeros of f′), where f rises (f′ above the axis) or falls (f′ below), and where f is steepest (largest |f′|). To sketch f from f′, read the signs of f′ for increase and decrease and the rise or fall of f′ for concavity; because adding a constant does not change f′, many vertical shifts of f fit the same f′. The table summarizes the links:\n| Feature of f | Feature of f′ | Feature of f″ |\n| --- | --- | --- |\n| increasing | positive | — |\n| local maximum | changes from + to − | negative there, if f″ exists and f′ = 0 |\n| concave up | increasing | positive |\n| point of inflection | local maximum or minimum | changes sign |",
+        "The graphs of f, f′, and f″ carry the same information in different forms. To sketch f′ from f, mark where f has horizontal tangents (zeros of f′), where f rises (f′ above the axis) or falls (f′ below), and where f is steepest (largest |f′|). To sketch f from f′, read the signs of f′ for increase and decrease and the rise or fall of f′ for concavity; because adding a constant does not change f′, many vertical shifts of f fit the same f′. The table summarizes the links:\n| Feature of f | Feature of f′ | Feature of f″ |\n| --- | --- | --- |\n| increasing | positive | — |\n| local maximum | changes from + to − | not positive there, if it exists; f′ = 0 with f″ < 0 ensures one |\n| concave up | increasing | positive |\n| point of inflection | local maximum or minimum | changes sign |",
         "When a function is given in one representation, translate before answering. A zero of f′ where its graph crosses the axis is an extremum of f; a peak or valley of the f′ graph is an inflection point of f; a sign change of f″ is an inflection point of f and an extremum of f′. If f′ is differentiable and f′(a) = f′(b), then f″ must be 0 somewhere between a and b, by the Mean Value Theorem applied to f′.",
         "An optimization problem asks for the largest or smallest value of a quantity. Name the quantity to optimize and write it as a function. Use the constraint to reduce it to one variable, state the domain the situation allows, and find the critical points. Then justify that the answer is an absolute extremum, either with the candidates test on a closed interval or by showing that a single critical point is a local extremum of a function that changes from increasing to decreasing (or the reverse) there. Answer the question that was asked, with units.",
         "Common errors: sketching f′ with the same shape as f; forgetting that a graph of f′ cannot tell you the value of f at a point; leaving the domain out of an optimization model, so that an endpoint is missed; and reporting the variable that gives the maximum when the question asks for the maximum value itself."
@@ -6346,7 +6351,7 @@
           "passageIds": []
         },
         {
-          "prompt": "Evaluate lim_(h→0) (sin(π/3 + h) − √3/2)/h by recognizing it as a derivative.",
+          "prompt": "Evaluate lim as h→0 of (sin(π/3 + h) − √3/2)/h by recognizing it as a derivative.",
           "answer": "1/2",
           "steps": [
             "sin(π/3) = √3/2, so the expression is the difference quotient of f(x) = sin x at x = π/3.",
@@ -6429,7 +6434,7 @@
             },
             {
               "id": "ab-w17-a6",
-              "prompt": "Evaluate lim_(x→3) (x^2 − 9)/(√(x + 1) − 2).",
+              "prompt": "Evaluate lim as x→3 of (x^2 − 9)/(√(x + 1) − 2).",
               "answer": "24",
               "steps": [
                 "Substitution gives 0/0; multiply numerator and denominator by √(x + 1) + 2.",
@@ -6482,15 +6487,15 @@
             },
             {
               "id": "ab-w17-b4",
-              "prompt": "What is lim_(x→0) tan(3x)/(e^(2x) − 1)?",
+              "prompt": "What is lim as x→0 of tan(3x)/(e^(2x) − 1)?",
               "choices": [
                 "2/3",
-                "3/2",
                 "3",
-                "0"
+                "0",
+                "3/2"
               ],
-              "key": "B",
-              "answer": "(B) 3/2",
+              "key": "D",
+              "answer": "(D) 3/2",
               "steps": [
                 "The form is 0/0, so apply L'Hospital's Rule: 3sec^2(3x)/(2e^(2x)).",
                 "At x = 0 this is 3/2."
@@ -7316,12 +7321,12 @@
               "prompt": "Let F(x) = ∫ from 2 to 3x of ln t dt for x > 2/3. What is F′(1)?",
               "choices": [
                 "ln 3",
-                "3 ln 3",
                 "1/3",
-                "3 ln 3 − ln 2"
+                "3 ln 3 − ln 2",
+                "3 ln 3"
               ],
-              "key": "B",
-              "answer": "(B) 3 ln 3",
+              "key": "D",
+              "answer": "(D) 3 ln 3",
               "steps": [
                 "F′(x) = ln(3x)·3 by the Fundamental Theorem and the chain rule.",
                 "F′(1) = 3 ln 3. Leaving out the factor 3 gives ln 3; the constant lower limit contributes nothing."
@@ -7602,12 +7607,12 @@
               "prompt": "If ∫ from 2 to 7 of f(x) dx = 10 and ∫ from 2 to 4 of f(x) dx = 3, what is ∫ from 7 to 4 of f(x) dx?",
               "choices": [
                 "7",
-                "−7",
                 "13",
-                "−13"
+                "−13",
+                "−7"
               ],
-              "key": "B",
-              "answer": "(B) −7",
+              "key": "D",
+              "answer": "(D) −7",
               "steps": [
                 "∫ from 4 to 7 of f = ∫ from 2 to 7 of f − ∫ from 2 to 4 of f = 10 − 3 = 7.",
                 "Reversing the limits changes the sign: ∫ from 7 to 4 of f = −7."
@@ -8684,7 +8689,7 @@
         },
         {
           "id": "ab-w23-f2",
-          "alt": "A slope field drawn at points spaced 0.5 apart for −2 ≤ x ≤ 2 and −1 ≤ y ≤ 4. Every row of segments looks the same from left to right. Segments are horizontal along y = 2, rise steeply far below y = 2, and fall steeply far above it.",
+          "alt": "A slope field drawn at points spaced 0.5 apart for −2 ≤ x ≤ 2 and −1 ≤ y ≤ 4, with no segments on the axes. Every row of segments looks the same from left to right. Segments are horizontal along y = 2, rise steeply far below y = 2, and fall steeply far above it.",
           "caption": "A slope field"
         },
         {
@@ -9089,7 +9094,7 @@
       "figures": [
         {
           "id": "ab-w24-f1",
-          "alt": "Slope field for dy/dx = −xy at points spaced 0.5 apart for −3 ≤ x ≤ 3 and −1 ≤ y ≤ 3, with the solution curve through the marked point (0, 2) drawn on it: a bell-shaped curve with its peak at (0, 2) that falls toward the x-axis on both sides.",
+          "alt": "Slope field for dy/dx = −xy at points spaced 0.5 apart for −3 ≤ x ≤ 3 and −1 ≤ y ≤ 3 (no segments on the axes), with the solution curve through the marked point (0, 2) drawn on it: a bell-shaped curve with its peak at (0, 2) that falls toward the x-axis on both sides.",
           "caption": "dy/dx = −xy and the solution through (0, 2)"
         }
       ],
@@ -10574,12 +10579,12 @@
               "prompt": "What is the area of the region enclosed by x = y^2 − 4 and x = 2 − y?",
               "choices": [
                 "22/3",
-                "125/6",
                 "27/2",
-                "61/6"
+                "61/6",
+                "125/6"
               ],
-              "key": "B",
-              "answer": "(B) 125/6",
+              "key": "D",
+              "answer": "(D) 125/6",
               "steps": [
                 "y^2 − 4 = 2 − y gives (y + 3)(y − 2) = 0, so y = −3 and y = 2; the line is on the right.",
                 "∫ from −3 to 2 of (6 − y − y^2) dy = 22/3 + 27/2 = 125/6; 22/3 and 27/2 are the pieces on [0, 2] and [−3, 0]."
@@ -11388,15 +11393,15 @@
               "prompt": "The region between y = x^2 and the line y = 4 is revolved about the x-axis. Which integral gives the volume?",
               "choices": [
                 "π ∫ from −2 to 2 of (4 − x^2)^2 dx",
-                "π ∫ from −2 to 2 of (16 − x^4) dx",
+                "π ∫ from 0 to 4 of (16 − y^2) dy",
                 "π ∫ from −2 to 2 of (x^4 − 16) dx",
-                "π ∫ from 0 to 4 of (16 − y^2) dy"
+                "π ∫ from −2 to 2 of (16 − x^4) dx"
               ],
-              "key": "B",
-              "answer": "(B) π ∫ from −2 to 2 of (16 − x^4) dx",
+              "key": "D",
+              "answer": "(D) π ∫ from −2 to 2 of (16 − x^4) dx",
               "steps": [
                 "R = 4 (the line) and r = x^2 (the parabola), so A = π(16 − x^4).",
-                "(4 − x^2)^2 is the error π(R − r)^2, x^4 − 16 swaps R and r, and the last choice mixes y-limits with a disc that does not exist."
+                "(4 − x^2)^2 is the error π(R − r)^2, x^4 − 16 swaps R and r, and π ∫ from 0 to 4 of (16 − y^2) dy mixes y-limits with a disc that does not exist."
               ],
               "passageIds": [],
               "skill": "Choose the washer integral"
@@ -12100,13 +12105,18 @@
         },
         {
           "id": "ab-w31-f2",
-          "alt": "Slope field on the grid −2 ≤ x ≤ 2 and 0 ≤ y ≤ 4 at half-unit steps. Every segment on the line x = 0 and every segment on the line y = 2 is horizontal. Below y = 2, segments slope upward to the right of the y-axis and downward to the left; above y = 2 this pattern reverses. Slopes are steepest at the corners of the grid.",
-          "caption": "A slope field"
+          "alt": "Slope field for dy/dx = x(2 − y) on the grid −2 ≤ x ≤ 2 and 0 ≤ y ≤ 4 at half-unit steps, with no segments drawn on the coordinate axes. Every segment on the line y = 2 is horizontal, and segments next to the y-axis are nearly horizontal. Below y = 2, segments slope upward to the right of the y-axis and downward to the left; above y = 2 this pattern reverses. Slopes are steepest at the corners of the grid.",
+          "caption": "Slope field for dy/dx = x(2 − y)"
         },
         {
           "id": "ab-w31-f3",
-          "alt": "The same slope field with the solution curve through (0, 1): the curve has its lowest point at (0, 1) and rises symmetrically on both sides toward the horizontal line y = 2 without reaching it.",
+          "alt": "The same slope field with the solution curve through the labeled point (0, 1): the curve has its lowest point at (0, 1) and rises symmetrically on both sides toward the horizontal line y = 2 without reaching it.",
           "caption": "Solution through (0, 1)"
+        },
+        {
+          "id": "ab-w31-f4",
+          "alt": "Slope field on the grid −2 ≤ x ≤ 2 and −2 ≤ y ≤ 2 at half-unit steps, with no segments drawn on the coordinate axes. Segments on both diagonal lines through the origin, y = x and y = −x, are horizontal. In the regions to the left and right of the diagonals the segments slope upward; in the regions above and below the diagonals they slope downward. Slopes grow steeper farther from the diagonals.",
+          "caption": "A slope field"
         }
       ],
       "explanationFigureIds": [
@@ -12284,7 +12294,7 @@
         {
           "id": "b",
           "title": "Differential equations",
-          "directions": "No calculator. Show the separation of variables and the constant of integration in every solution. Items 1 and 2 use the slope field shown.",
+          "directions": "No calculator. Show the separation of variables and the constant of integration in every solution. Items 1 and 2 each use the slope field shown with them.",
           "calculator": "none",
           "minutes": 30,
           "items": [
@@ -12292,26 +12302,26 @@
               "id": "ab-w31-b1",
               "prompt": "Which differential equation could have the slope field shown?",
               "figureIds": [
-                "ab-w31-f2"
+                "ab-w31-f4"
               ],
               "choices": [
-                "dy/dx = 2x − y",
-                "dy/dx = y(2 − x)",
-                "dy/dx = x(2 − y)",
-                "dy/dx = x(y − 2)"
+                "dy/dx = y^2 − x^2",
+                "dy/dx = x^2 + y^2",
+                "dy/dx = x^2 − y^2",
+                "dy/dx = xy"
               ],
               "key": "C",
-              "answer": "(C) dy/dx = x(2 − y)",
+              "answer": "(C) dy/dx = x^2 − y^2",
               "steps": [
-                "The slopes are 0 along the y-axis and along the line y = 2, so dy/dx must be 0 whenever x = 0 or y = 2.",
-                "Below y = 2 the slopes are positive for x > 0. Only x(2 − y) has both zero lines and is positive when x > 0 and y < 2."
+                "The horizontal segments lie along both diagonals, y = x and y = −x, so dy/dx must be 0 whenever |y| = |x|. That rules out x^2 + y^2 (0 only at the origin) and xy (0 only on the axes).",
+                "To the right of the diagonals, for example at (1.5, 0.5), the segments slope upward. There x^2 − y^2 = 2 > 0 while y^2 − x^2 = −2 < 0, so the field matches dy/dx = x^2 − y^2."
               ],
               "passageIds": [],
               "skill": "Match a slope field to a differential equation"
             },
             {
               "id": "ab-w31-b2",
-              "prompt": "On the slope field, sketch the solution curve through the point (0, 1). Then use the differential equation from item 1 to describe what happens to this solution as x→∞.",
+              "prompt": "The slope field shown is for the differential equation dy/dx = x(2 − y). On the slope field, sketch the solution curve through the point (0, 1). Then use the differential equation to describe what happens to this solution as x→∞.",
               "figureIds": [
                 "ab-w31-f2"
               ],
@@ -12605,7 +12615,7 @@
       "explanation": [
         "Units 6 and 8 rest on one idea: the definite integral of a rate is a net change. If r(t) is a rate in liters per hour, then ∫ from a to b of r(t) dt is the net number of liters gained from t = a to t = b, and the amount at time T is the starting amount plus the accumulated change, A(T) = A(a) + ∫ from a to T of r(t) dt. The same structure gives position from velocity, x(T) = x(0) + ∫ from 0 to T of v(t) dt, and values of f from f′. Distance traveled is ∫ |v(t)| dt, not ∫ v(t) dt. Without a calculator, evaluate integrals with antiderivatives (using substitution, long division, or completing the square), with geometry from a graph, or approximate them with Riemann and trapezoidal sums whose widths come from the table, not from an assumed equal spacing.",
         "An accumulation function g(x) = ∫ from a to x of f(t) dt is a function like any other: g′(x) = f(x), so the sign of f tells where g increases and the slope of f tells the concavity of g. With a variable upper limit u(x), the chain rule gives d/dx of ∫ from a to u(x) of f(t) dt = f(u(x))·u′(x). A question that asks when an amount is greatest is a candidates test on the amount: find where the net rate changes sign, then compare the amount there with the amounts at the endpoints.",
-        "On calculator questions, the setup earns points, so write the integral or the equation before the number: \"Bikes at t = 6: 15 + ∫ from 0 to 6 of (A(t) − D(t)) dt = 59.901.\" Use radian mode, store intersection values in the calculator instead of retyping rounded decimals, and round only the final answer, to three decimal places. Area between curves is ∫ (top − bottom) dx, or ∫ (right − left) dy, between intersections. A cross-section volume is ∫ A(x) dx, with A(x) the area of one slice. A washer about the horizontal line y = k uses π∫ (R^2 − r^2) dx, where R and r are the distances from y = k to the far and near boundaries.",
+        "On calculator questions, the setup earns points, so write the integral or the equation before the number: \"Grain at t = 6 in Example 3: 60 + ∫ from 0 to 6 of (G(t) − 18) dt ≈ 84.484.\" Use radian mode, store intersection values in the calculator instead of retyping rounded decimals, and round only the final answer, to three decimal places. Area between curves is ∫ (top − bottom) dx, or ∫ (right − left) dy, between intersections. A cross-section volume is ∫ A(x) dx, with A(x) the area of one slice. A washer about the horizontal line y = k uses π∫ (R^2 − r^2) dx, where R and r are the distances from y = k to the far and near boundaries.",
         "Common errors: using equal widths in a trapezoidal sum when the table's widths differ, leaving out the initial amount, integrating a rate when the question asks for the rate at an instant, writing π∫ (R − r)^2 dx instead of π∫ (R^2 − r^2) dx, measuring radii from the x-axis instead of from the axis of rotation, and reporting a displacement when a distance was asked for."
       ],
       "figures": [
@@ -13108,7 +13118,7 @@
             },
             {
               "id": "ab-w33-a2",
-              "prompt": "A 2-point part reads: \"R(t) is the rate, in liters per minute, at which water drains from a tank, where t is in minutes. Explain the meaning of ∫ from 0 to 30 of R(t) dt = 450 in the context of the problem.\" Rubric: 1 point for identifying the amount of water that drains out of the tank; 1 point for the time interval 0 ≤ t ≤ 30 minutes together with the units, liters. A student writes: \"There are 450 liters of water left in the tank at t = 30 minutes.\" How many points does the response earn?",
+              "prompt": "A 2-point part reads: \"R(t) is the rate, in liters per minute, at which water drains from a tank, where t is in minutes. What does ∫ from 0 to 30 of R(t) dt = 450 tell you about the tank?\" Rubric: 1 point for identifying the amount of water that drains out of the tank; 1 point for the time interval 0 ≤ t ≤ 30 minutes together with the units, liters. A student writes: \"There are 450 liters of water left in the tank at t = 30 minutes.\" How many points does the response earn?",
               "answer": "0 of 2 points: the response describes the amount remaining at one instant, not the amount that drained out during the first 30 minutes.",
               "steps": [
                 "The integral of a draining rate is the amount that leaves, so \"left in the tank\" misidentifies the quantity: the first point is not earned.",
@@ -13524,7 +13534,7 @@
             },
             {
               "id": "ab-w34-b3",
-              "prompt": "Using the graph of r, find r′(5). Using correct units, explain what r′(5) means.",
+              "prompt": "Using the graph of r, find r′(5). What does r′(5) tell you about the rate at which the volume changes? Include units.",
               "figureIds": [
                 "ab-w34-f1"
               ],

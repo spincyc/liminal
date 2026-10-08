@@ -26,6 +26,7 @@
       "parts": [
         {
           "id": "A",
+          "title": "No calculator",
           "minutes": 18,
           "calculator": "none",
           "directions": "Choose the best answer. No calculator is allowed.",
@@ -200,7 +201,8 @@
         },
         {
           "id": "B",
-          "minutes": 10,
+          "title": "Graphing calculator",
+          "minutes": 12,
           "calculator": "graphing",
           "directions": "Choose the best answer. A graphing calculator is required for some questions. If the exact value is not a choice, choose the closest approximation.",
           "items": [
@@ -251,15 +253,15 @@
               "prompt": "What is the midpoint Riemann sum with four subintervals of equal width for ∫ from 0 to 2 of 1/(1 + x^3) dx?",
               "choices": [
                 "1.087",
-                "1.092",
                 "1.309",
+                "1.092",
                 "0.864"
               ],
-              "key": "B",
+              "key": "C",
               "rationale": "Width 0.5 and midpoints 0.25, 0.75, 1.25, 1.75: 0.5[f(0.25) + f(0.75) + f(1.25) + f(1.75)] ≈ 1.092.",
               "distractorNotes": {
                 "A": "This is the trapezoidal sum.",
-                "C": "This is the left sum.",
+                "B": "This is the left sum.",
                 "D": "This is the right sum."
               },
               "topics": [
@@ -299,6 +301,7 @@
       "parts": [
         {
           "id": "A",
+          "title": "Graphing calculator",
           "minutes": 15,
           "calculator": "graphing",
           "directions": "A graphing calculator is required. Show the setup for every calculator result, and give answers to three decimal places with units.",
@@ -306,17 +309,18 @@
             {
               "id": "ab-u6-fr1",
               "context": true,
-              "prompt": "A greenhouse irrigation tank holds 400 liters of water at time t = 0 hours. For 0 ≤ t ≤ 8, water is pumped into the tank at a rate of P(t) liters per hour, where P is continuous; selected values are shown in the table. Water drains out of the tank at a rate of D(t) = 30 + 10 sin(t/2) liters per hour.\n\n| t (h) | 0 | 2 | 3 | 6 | 8 |\n| --- | --- | --- | --- | --- | --- |\n| P(t) (L/h) | 40 | 52 | 55 | 46 | 38 |",
+              "prompt": "Water is pumped into a greenhouse irrigation tank at a rate of P(t) liters per hour for 0 ≤ t ≤ 8 hours, where P is a differentiable function; selected values are shown in the table. Water drains out of the tank at a rate of D(t) = 30 + 10 sin(t/2) liters per hour.\n\n| t (h) | 0 | 2 | 3 | 6 | 8 |\n| --- | --- | --- | --- | --- | --- |\n| P(t) (L/h) | 40 | 52 | 55 | 46 | 38 |",
               "topics": [
                 "AB.6.2",
                 "AB.6.1",
                 "AB.6.4",
-                "AB.6.7"
+                "AB.6.7",
+                "AB.5.1"
               ],
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Use a trapezoidal sum with the four subintervals in the table to approximate ∫ from 0 to 8 of P(t) dt. Show the computation.",
+                  "prompt": "Use a trapezoidal sum with the four subintervals in the table to approximate ∫ from 0 to 8 of P(t) dt. Write out the sum you use.",
                   "points": 2,
                   "rubric": [
                     {
@@ -336,7 +340,7 @@
                 },
                 {
                   "label": "b",
-                  "prompt": "Explain the meaning of ∫ from 2 to 6 of P(t) dt in the context of the problem. Include units.",
+                  "prompt": "What does ∫ from 2 to 6 of P(t) dt measure for this tank? Give its units.",
                   "points": 1,
                   "rubric": [
                     {
@@ -351,45 +355,47 @@
                 },
                 {
                   "label": "c",
-                  "prompt": "Find the total amount of water that drains out of the tank for 0 ≤ t ≤ 8.",
+                  "prompt": "Must there be a time t, 3 < t < 6, at which P′(t) = −3 liters per hour per hour? Give a reason.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Sets up ∫ from 0 to 8 of D(t) dt."
+                      "criterion": "Computes the difference quotient (P(6) − P(3))/(6 − 3) = (46 − 55)/3 = −3."
                     },
                     {
                       "points": 1,
-                      "criterion": "Gets 273.073 liters (accept 273.072–273.074)."
+                      "criterion": "Yes, by the Mean Value Theorem: P is differentiable, so it is continuous on [3, 6] and differentiable on (3, 6)."
                     }
                   ],
-                  "answer": "∫ from 0 to 8 of (30 + 10 sin(t/2)) dt ≈ 273.073 liters.",
+                  "answer": "Yes. (P(6) − P(3))/(6 − 3) = (46 − 55)/3 = −3 liters per hour per hour. P is differentiable, so it is continuous on [3, 6] and differentiable on (3, 6), and the Mean Value Theorem gives a time t in (3, 6) with P′(t) = −3.",
                   "steps": [
-                    "Numerical integration of D from 0 to 8."
+                    "The average rate of change of P over [3, 6] is −9/3 = −3.",
+                    "The hypotheses of the Mean Value Theorem hold because P is differentiable on the whole interval."
                   ]
                 },
                 {
                   "label": "d",
-                  "prompt": "Use your answers to parts (a) and (c) to estimate the amount of water in the tank at t = 8.",
+                  "prompt": "Find the time T, 0 < T < 8, at which the total amount of water that has drained out of the tank since t = 0 is 150 liters.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Writes 400 + ∫ from 0 to 8 of P(t) dt − ∫ from 0 to 8 of D(t) dt with the estimate from (a)."
+                      "criterion": "Sets up ∫ from 0 to T of D(t) dt = 150."
                     },
                     {
                       "points": 1,
-                      "criterion": "Gets about 507.927 liters."
+                      "criterion": "T ≈ 4.043 hours (accept 4.042–4.044)."
                     }
                   ],
-                  "answer": "400 + 381 − 273.073 ≈ 507.927 liters.",
+                  "answer": "Solving ∫ from 0 to T of (30 + 10 sin(t/2)) dt = 150 gives T ≈ 4.043 hours.",
                   "steps": [
-                    "Amount = initial amount + water in − water out."
+                    "The water drained from time 0 to time T is the accumulation ∫ from 0 to T of D(t) dt.",
+                    "Graph it as a function of T, or use the solver, and find where it equals 150: T ≈ 4.043."
                   ]
                 },
                 {
                   "label": "e",
-                  "prompt": "Is the amount of water in the tank increasing or decreasing at t = 6? Justify your answer.",
+                  "prompt": "Is the amount of water in the tank increasing or decreasing at t = 6? Give a reason based on the two rates.",
                   "points": 2,
                   "rubric": [
                     {
@@ -403,7 +409,7 @@
                   ],
                   "answer": "Increasing: A′(6) = P(6) − D(6) ≈ 46 − 31.411 = 14.589 liters per hour > 0.",
                   "steps": [
-                    "A(t) = 400 + ∫ from 0 to t of (P(s) − D(s)) ds, so by the Fundamental Theorem A′(t) = P(t) − D(t).",
+                    "A(t) = A(0) + ∫ from 0 to t of (P(s) − D(s)) ds, so by the Fundamental Theorem A′(t) = P(t) − D(t).",
                     "D(6) = 30 + 10 sin 3 ≈ 31.411."
                   ]
                 }
@@ -413,6 +419,7 @@
         },
         {
           "id": "B",
+          "title": "No calculator",
           "minutes": 15,
           "calculator": "none",
           "directions": "No calculator is allowed. Show your work and give exact answers.",
@@ -453,7 +460,7 @@
                 },
                 {
                   "label": "b",
-                  "prompt": "Find the x-coordinate of each relative extremum of g on the open interval (−3, 4), and classify each. Justify your answers.",
+                  "prompt": "Find the x-coordinate of each relative extremum of g on the open interval (−3, 4), and classify each. Give a reason for each, based on the graph of f.",
                   "points": 2,
                   "rubric": [
                     {
@@ -473,7 +480,7 @@
                 },
                 {
                   "label": "c",
-                  "prompt": "On what open interval or intervals is the graph of g concave down? Give a reason for your answer.",
+                  "prompt": "On what open interval or intervals is the graph of g concave down? Explain how the graph of f shows this.",
                   "points": 2,
                   "rubric": [
                     {

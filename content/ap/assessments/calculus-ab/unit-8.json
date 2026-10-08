@@ -26,6 +26,7 @@
       "parts": [
         {
           "id": "A",
+          "title": "No calculator",
           "minutes": 18,
           "calculator": "none",
           "directions": "Choose the best answer. No calculator is allowed.",
@@ -99,15 +100,15 @@
               "choices": [
                 "108 L",
                 "38 L",
-                "182 L",
-                "128 L"
+                "128 L",
+                "182 L"
               ],
-              "key": "D",
+              "key": "C",
               "rationale": "20 + ∫ from 0 to 9 of 6√t dt = 20 + 4t^(3/2) from 0 to 9 = 20 + 108 = 128 L.",
               "distractorNotes": {
                 "A": "108 L is the water added, without the initial 20 L.",
                 "B": "Adds the rate at t = 9, 18 L/min, instead of accumulating it.",
-                "C": "Antidifferentiates 6√t as 6t^(3/2), dropping the factor 2/3."
+                "D": "Antidifferentiates 6√t as 6t^(3/2), dropping the factor 2/3."
               },
               "topics": [
                 "AB.8.3"
@@ -197,7 +198,8 @@
         },
         {
           "id": "B",
-          "minutes": 10,
+          "title": "Graphing calculator",
+          "minutes": 12,
           "calculator": "graphing",
           "directions": "Choose the best answer. A graphing calculator is required for some questions. If the exact value is not a choice, choose the closest approximation.",
           "items": [
@@ -292,6 +294,7 @@
       "parts": [
         {
           "id": "A",
+          "title": "Graphing calculator",
           "minutes": 15,
           "calculator": "graphing",
           "directions": "A graphing calculator is required. Show the setup for every calculator result, and give answers to three decimal places with units.",
@@ -299,94 +302,94 @@
             {
               "id": "ab-u8-fr1",
               "context": true,
-              "prompt": "Cars enter a parking garage at a rate modeled by E(t) = 60 + 40sin(πt/6) cars per hour and leave at a rate modeled by L(t) = 20 + 12√t cars per hour, where t is the number of hours after the garage opens, for 0 ≤ t ≤ 10. There are 120 cars in the garage at t = 0.",
+              "prompt": "A parking garage opens at 6 a.m. with 40 cars left inside overnight. For 0 ≤ t ≤ 12, where t is the number of hours after opening, cars arrive at a rate modeled by A(t) = 90t·e^(−t/4) cars per hour and leave at a rate modeled by D(t) = 10 + 12t cars per hour. Let N(t) be the number of cars in the garage at time t.",
               "topics": [
                 "AB.8.3",
-                "AB.8.1"
+                "AB.6.4"
               ],
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "How many cars enter the garage during the 10 hours? Show the integral you use.",
+                  "prompt": "For what values of t is the arrival rate at least 100 cars per hour? Give the endpoints to three decimal places.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Sets up ∫ from 0 to 10 of E(t) dt."
+                      "criterion": "Sets up A(t) = 100 (or A(t) ≥ 100) for the calculator."
                     },
                     {
                       "points": 1,
-                      "criterion": "Gets 638.197 cars (accept 638.196–638.198)."
+                      "criterion": "1.699 ≤ t ≤ 7.790 (accept ±0.001 at each endpoint)."
                     }
                   ],
-                  "answer": "∫ from 0 to 10 of E(t) dt ≈ 638.197 cars",
+                  "answer": "A(t) ≥ 100 for 1.699 ≤ t ≤ 7.790 (hours after opening).",
                   "steps": [
-                    "The integral of an entry rate in cars per hour over hours gives cars.",
-                    "The calculator gives about 638.197."
+                    "Graph y = A(t) and y = 100 and find both intersections: t ≈ 1.699 and t ≈ 7.790.",
+                    "A rises to its peak at t = 4 and then falls, so A(t) ≥ 100 exactly between the two intersections."
                   ]
                 },
                 {
                   "label": "b",
-                  "prompt": "Find the average rate at which cars leave the garage over 0 ≤ t ≤ 10. Include units.",
+                  "prompt": "How many cars arrive while the arrival rate is at least 100 cars per hour? Write the integral you evaluate.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Uses (1/10) ∫ from 0 to 10 of L(t) dt."
+                      "criterion": "Writes ∫ from 1.699 to 7.790 of A(t) dt, with the endpoints from part (a)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Gets 45.298 cars per hour (accept 45.297–45.299)."
+                      "criterion": "Gets 736.219 cars (accept 736.218–736.257, which allows endpoints rounded to three decimals)."
                     }
                   ],
-                  "answer": "(1/10) ∫ from 0 to 10 of L(t) dt ≈ 45.298 cars per hour",
+                  "answer": "∫ from 1.699 to 7.790 of A(t) dt ≈ 736.219 cars",
                   "steps": [
-                    "The average value of L on [0, 10] is (1/10) ∫ L(t) dt.",
-                    "∫ from 0 to 10 of (20 + 12√t) dt ≈ 452.982, so the average is about 45.298 cars per hour."
+                    "Integrating an arrival rate in cars per hour over hours gives a number of cars.",
+                    "With the stored endpoints the calculator gives about 736.219."
                   ]
                 },
                 {
                   "label": "c",
-                  "prompt": "How many cars are in the garage at t = 10?",
-                  "points": 2,
-                  "rubric": [
-                    {
-                      "points": 1,
-                      "criterion": "Uses 120 + ∫ from 0 to 10 of (E(t) − L(t)) dt."
-                    },
-                    {
-                      "points": 1,
-                      "criterion": "Gets 305.215 cars (accept 305.214–305.216)."
-                    }
-                  ],
-                  "answer": "About 305.215 cars",
-                  "steps": [
-                    "Amount at t = 10 = 120 + ∫ from 0 to 10 of (E(t) − L(t)) dt.",
-                    "≈ 120 + 185.215 = 305.215."
-                  ]
-                },
-                {
-                  "label": "d",
-                  "prompt": "At what time t in [0, 10] is the number of cars in the garage greatest? Justify your answer.",
+                  "prompt": "Write an expression for N(t) that uses an integral, and find the first time at which the garage holds 300 cars.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Finds where E(t) = L(t): t ≈ 6.458."
+                      "criterion": "Writes N(t) = 40 + ∫ from 0 to t of (A(s) − D(s)) ds."
                     },
                     {
                       "points": 1,
-                      "criterion": "Explains that E − L changes from positive to negative there, or evaluates the candidates t = 0, 6.458, and 10."
+                      "criterion": "Sets N(T) = 300 and solves with the calculator, taking the smaller solution (the garage holds 300 cars again at T ≈ 10.985)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Concludes the maximum is at t ≈ 6.458, with about 397.631 cars, more than 120 and 305.215 at the endpoints."
+                      "criterion": "T ≈ 4.212 hours (accept 4.211–4.213)."
                     }
                   ],
-                  "answer": "At t ≈ 6.458 hours, when there are about 397.631 cars.",
+                  "answer": "N(t) = 40 + ∫ from 0 to t of (A(s) − D(s)) ds; the garage first holds 300 cars at T ≈ 4.212 hours (about 10:13 a.m.).",
                   "steps": [
-                    "N′(t) = E(t) − L(t) is zero only at t ≈ 6.458 in (0, 10); it is positive before and negative after.",
-                    "Candidates: N(0) = 120, N(6.458) ≈ 397.631, N(10) ≈ 305.215; the greatest is at t ≈ 6.458."
+                    "The number of cars is the starting 40 plus the accumulated net rate A − D.",
+                    "Graph y = N(t) and y = 300: the intersections are at T ≈ 4.212 and T ≈ 10.985, and the first is the one asked for."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find N(12) − N(6). Did the garage hold more cars at t = 6 or at t = 12? Explain how your value shows this.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes N(12) − N(6) = ∫ from 6 to 12 of (A(t) − D(t)) dt ≈ −191.505 cars (accept −191.506 to −191.504)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes the garage held more cars at t = 6, because the net change from t = 6 to t = 12 is negative: about 191.505 more cars left than arrived."
+                    }
+                  ],
+                  "answer": "N(12) − N(6) = ∫ from 6 to 12 of (A(t) − D(t)) dt ≈ −191.505, so the garage held about 191.505 more cars at t = 6 than at t = 12.",
+                  "steps": [
+                    "The change in N between two times is the integral of its rate N′ = A − D between them.",
+                    "The value is negative, so more cars left than arrived between t = 6 and t = 12."
                   ]
                 }
               ]
@@ -395,6 +398,7 @@
         },
         {
           "id": "B",
+          "title": "No calculator",
           "minutes": 15,
           "calculator": "none",
           "directions": "No calculator is allowed. Show your work and give exact answers.",

@@ -205,4 +205,34 @@ The only inaccurate alt text is S3; the readability items are in N13.
 - Numeric verification used Simpson's rule (2,000–4,000 subintervals),
   bisection and symmetric differences. All agreements hold at three decimals.
 
+## Resolution (2026-10-08)
+
+Repair lanes fixed every finding in the authoring sources, recomputed each
+changed number in two independent scripts, and re-ran the lane checks,
+`check-ap --complete` and the course assembly. This record keeps the review
+as written; the table says what changed.
+
+| ID | Resolution |
+| --- | --- |
+| S1 | The row now reads "not positive there, if it exists; f′ = 0 with f″ < 0 ensures one" ("ensures", because the claims lint reserves "guarantees"). |
+| S2 | All 29 `lim_(x→a)` forms now read `lim as x→a of`; no file contains `lim_(`. |
+| S3 | The review's alt text, checked against r(x). |
+| S4 | `ab-pe-fr1` is a new design: water spreading into a shallow circular pool, with volume and radius at an instant, the time the edge reaches a drain, an average rate and the times the rate equals it, and when the area grows fastest. |
+| S5 | `ab-u8-fr1` is a new design: arrivals 90t·e^(−t/4), departures 10 + 12t; when arrivals are at least 100 per hour, the cars arriving then, the first time the garage holds 300 cars, and a comparison of two times. |
+| S6 | `ab-pe-fr6` uses the curve x²y + xy² = 6: the derivative, every horizontal tangent, and related rates along the curve. |
+| N1 | New opener and a new graph of f (a quarter circle, then segments); part (d) counts solutions of g(x) = 6. |
+| N2 | `ab-u6-fr1` drops the starting amount and the total-drained parts; it now asks for a trapezoid sum, its meaning, the Mean Value Theorem on the table (a Unit 5 topic as cumulative review), a drain time and a rate comparison. |
+| N3 | The flagged boilerplate phrases are reworded throughout the course and the tests. |
+| N4 | Week 32 now cites its own Example 3 (≈ 84.484). The old line also gave away `ab-w32-b1`(a). |
+| N5 | Practice exam MC21 is a Riemann limit that must be refactored before it reads as ∫ from 1 to 3 of dx/x; MC25 is ∫ from 0 to 1 of x³/(x² + 1) dx. |
+| N6 | `ab-u4-fr2`(d) credits the factoring route. |
+| N7 | The keys now show the concavity sign on the whole interval. |
+| N8 | `ab-u4-fr1`(d) row 3 is an over- or underestimate point; `ab-u2-fr2` is now 2 + 2 + 3 + 2, and (d) uses the graph of g. |
+| N9 | `ab-w14-c6` gives f, so students can compare candidates before integrals are taught, and asks where the absolute minimum occurs (x = 0). |
+| N10 | 13 weekly keys moved off B (weekly MC is now 26% B); unit tests vary 2–4 keys per letter. |
+| N11 | Every unit test gives Part B 12 minutes and uses the same part titles. |
+| N12 | `ab-w31-b2` states its equation; `ab-w31-b1` now matches its own new slope field so b2 does not give it away. |
+| N13 | Every listed figure is redrawn: field segments off the axes, labels moved clear of curves and regions, the week 5 hump raised to 2.614, the week 14 curve drawn on 0 ≤ x ≤ 2. The kit's 11 px superscripts are unchanged (deferred). |
+| N14 | Fixed in code: skill labels are key-only (commit 062d4e3). |
+
 AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.
