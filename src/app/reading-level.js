@@ -105,21 +105,27 @@
   function history_replace(hash) { window.history.pushState(null, "", hash || window.location.pathname + window.location.search); }
 
   // ---- Shared pieces ----
+  // While the student reads and answers, the passage has a neutral label:
+  // a night's descriptive title can state an answer. The title, author and
+  // source follow on the feedback screen (sourceSection).
   function passageSection(probe) {
     const section = el("section", undefined, "rl-passage"); section.setAttribute("aria-labelledby", "rlPassageTitle");
-    const title = el("h3", probe.title); title.id = "rlPassageTitle";
-    section.append(title);
-    if (probe.workTitle) section.append(el("p", probe.workTitle, "rl-work-title"));
-    section.append(el("p", "By " + probe.author + (probe.translator ? " · Translated by " + probe.translator : ""), "rl-author"));
-    section.append(el("p", probe.intro, "rl-context"));
+    const title = el("h3", "Passage"); title.id = "rlPassageTitle";
+    section.append(title, el("p", probe.intro, "rl-context"));
     if (probe.contentNote) section.append(el("p", "Content note: " + probe.contentNote, "rl-content-note"));
     const text = el("div", undefined, "rl-text");
     probe.blocks.forEach(block => text.append(el(block.type === "heading" ? "h4" : "p", block.text, "rl-" + block.type)));
-    section.append(text);
+    section.append(text, el("p", "The title, author and source appear after the questions.", "rl-muted"));
+    return section;
+  }
+  function sourceSection(probe) {
+    const box = el("section", undefined, "rl-source-card");
+    box.append(el("h3", "About the passage"), el("p", probe.title + (probe.workTitle ? " (" + probe.workTitle + ")" : ""), "rl-source-title"),
+      el("p", "By " + probe.author + (probe.translator ? " · Translated by " + probe.translator : ""), "rl-author"));
     const source = el("details", undefined, "rl-source"); source.append(el("summary", "Source"));
     source.append(el("p", probe.source), el("p", probe.locator), el("p", "Public domain in the United States. " + probe.rights));
-    section.append(source);
-    return section;
+    box.append(source, link("Read this night in the daily library", L.route(probe.level, probe.week, probe.day)));
+    return box;
   }
   function stepLabel(attempt) {
     return attempt.kind === "recheck" ? "Re-check passage" : "Passage " + (attempt.responses.length + (state.current.phase === "feedback" ? 0 : 1)) + " of up to " + L.MAX_PROBES;
@@ -196,7 +202,7 @@
       entry.append(el("p", item.rationale, "rl-muted"));
       list.append(entry);
     });
-    wrap.append(list);
+    wrap.append(list, sourceSection(probe));
     const done = attempt.kind === "recheck" || L.nextStep(L.replay(attempt, probesById), ladder, attempt.startLevel).done;
     const actions = el("div", undefined, "rl-actions");
     actions.append(button(done ? (attempt.kind === "recheck" ? "See the decision" : "See your starting point") : "Next passage", continueAttempt, "rl-primary"));

@@ -39,14 +39,19 @@ overrides a name.
 
 Each level has two **forms**: `a`, used by the first check, and `b`, the
 alternate used by re-checks. Choose them from different points of that grade's
-year (usually one in the first half and one in the second) and, where the year
-allows, of similar kind, so the forms are comparable.
+year (usually one in the first half and one in the second), of similar length
+(within about 1.5 times), near the middle of that grade's text demand, and,
+where the year allows, of similar kind, so the forms are comparable and the
+ladder's difficulty rises from level to level. Choose nights for measurement
+(length, self-containment, comparable forms), never to avoid difficult
+content; see the daily library's policy in `docs/daily-reading.md`.
 
 ```json
 {
   "id": "rl-5-a", "level": 5, "form": "a",
   "dayId": "reading-5-w08-d3", "textHash": "<the night's excerpt.textHash>",
   "intro": "One or two original orienting sentences, outside the source text.",
+  "contentNote": "Optional student-facing note replacing the night's own (null: none).",
   "items": [
     { "id": "rl-5-a-1", "skill": "inference", "stem": "…", "options": ["…", "…", "…", "…"],
       "key": 2, "rationale": "One sentence quoting the passage: “…”." }
@@ -63,7 +68,8 @@ Probe nights must be 80–1,200 words (roughly 100–250 at Grade 1, rising to
 500–1,100 at Grade 12), must not continue an earlier night, and should make
 sense alone; the `intro` may supply a sentence of orientation. The night's own
 `context` is not shown, because it is written for its night (often for an
-adult reading aloud). Its `contentNote` is shown. Facilitator notes and
+adult reading aloud). Its `contentNote` is shown unless the probe supplies its
+own student-facing `contentNote` (or `null`). Facilitator notes and
 discussion questions never reach the bundle.
 
 The file's `review.status` is `unreviewed` until an independent reviewer has
@@ -73,17 +79,39 @@ review record in `docs/reviews/`.
 ## Item-writing rules
 
 - Grades 1–2: three items per probe; Grade 3 and up: four.
-- Every item is **original**. Never adapt the night's discussion questions or
-  facilitator notes; the validator refuses six consecutive words shared with
-  them, apart from words quoted from the passage.
+- Every item is **original**. Items must not copy or closely paraphrase the
+  night's discussion questions or facilitator notes; the validator refuses six
+  consecutive words shared with them, apart from words quoted from the passage.
+  An item may target the same point as a discussion question, because the
+  ladder never credits a passage the student has already seen (coordinator
+  decision, 2026-10-08, after the independent item review found 25 items
+  sharing a question's target but not its wording).
 - Read the whole passage before writing. Each item is text-dependent,
   answerable from the passage alone (with the `intro`), and has exactly one
   defensible key. No trivia, outside knowledge, or trick wording.
 - Four distinct options, all plausible to a reader who misread or skimmed
   (for example the other character's dinner, the everyday sense of a word, the
-  writer's concession instead of the claim). The key must not be visibly the
-  longest option: the validator refuses a key at least 25% longer than every
-  distractor. Spread keys across positions.
+  writer's concession instead of the claim). Distractors are text-dependent:
+  details from the wrong place in the passage, a reversal, or a misreading,
+  not inventions anyone can rule out without reading. The key must not be
+  visibly the longest option: the validator refuses a key at least 25% longer
+  than every distractor. Spread keys across positions.
+- Every vocabulary item has a trap: the word's everyday sense or a look-alike
+  word (current as "now", industrious as "factory", intimates as "close
+  friends"), or a nearby detail of the passage that describes the thing
+  rather than the word.
+- Do not put absolutes (always, never, only, all) only in distractors, or
+  hedges (some, usually, more) only in keys.
+- No item may give away another: check each stem against the other keys of
+  the same probe.
+- Nothing on screen may state an answer. The quiz shows the passage under a
+  neutral label ("Passage"); the night's title, author and source appear only
+  after the questions. The `intro` orients (who, where, when) without stating
+  the main idea, and an item may not ask what the intro or content note says;
+  the validator refuses a key that repeats four consecutive words of either.
+  A probe's optional `contentNote` replaces the night's note with a
+  student-facing one (the night's notes are often written for an adult);
+  `null` shows none. Keep any content warning the night's note gives.
 - One skill tag: `literal` (stated detail), `vocabulary` (meaning in context),
   `inference`, `structure` (organization, craft, the role of a detail or
   comparison), or `central` (main idea, claim, purpose). Mix them in each form.
@@ -93,11 +121,21 @@ review record in `docs/reviews/`.
   grades; argument, figurative language and the role of examples dominate the
   later ones.
 
+**Passage-hidden pass.** Before an item is final, read only its stem, its
+options and what the screen shows (intro and content note), and ask whether
+the key can be picked without the passage: from the stem's own wording, from
+another item, from implausible or absolute distractors, or from length.
+Rewrite any item that can. `node tools/check-reading-level.js --cues` lists
+heuristic cues (absolutes only in distractors, hedges only in keys, key words
+shared with the intro or with another item's stem) to start that pass; each
+needs judgment, and the list never fails the gate.
+
 Authors keep a scratch record of each item's justification (why the key is
 right and each distractor wrong). Items need an **independent review** before
 the set is described as reviewed: the reviewer answers each item from the
-passage before seeing the key, then checks for ambiguity, outside knowledge,
-copied wording, cueing and fit to the level. The author does not certify
+passage before seeing the key, also guesses every item with the passage
+hidden, then checks for ambiguity, outside knowledge, copied wording, cueing
+and fit to the level. The author does not certify
 their own items.
 
 ## Method and thresholds
@@ -113,7 +151,7 @@ which are untimed. A reload mid-passage restarts the clock.
 
 | Constant | Value | Why |
 | --- | --- | --- |
-| `STRONG_SHARE` | 75% | 3 of 4, or 3 of 3. Guessing 3 of 4 happens about 5% of the time, 3 of 3 under 2%. |
+| `STRONG_SHARE` | 75% | 3 of 4, or 3 of 3. Guessing 3 of 4 among four equally plausible options happens about 5% of the time (3 of 3, under 2%); it rises sharply when options can be ruled out without reading (about 11% with one ruled out per item, 31% with two), so every distractor must be plausible. |
 | `WEAK_BELOW` | 50% | 0–1 of 4 or of 3: not understood well enough to read alone. |
 | `COMFORTABLE_WPM_FLOOR` | 40 (Grade 1) rising to 130 (Grade 12) | Deliberately low floors, well under typical silent-reading rates, so only clearly laboured reading holds a student back. Editorial, not norms. Levels above the table use its last value. |
 | `MAX_PLAUSIBLE_WPM` | 600 | Faster is not careful first reading; such a probe cannot move a student up. |
@@ -195,3 +233,7 @@ downloads a whole grade file.
   not recorded.
 - Kindergarten is not calibrated, and a level without probes is skipped by the
   ladder (a re-check uses the next probed level above it).
+- Only probe attempts count as repeats. A student who already read a probe's
+  night in the library, with its discussion, is not flagged.
+- Readability comparisons used to choose forms are heuristic (syllable
+  counts on older prose) and were checked by reading, not measured.

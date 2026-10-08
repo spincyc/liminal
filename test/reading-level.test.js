@@ -295,6 +295,10 @@ test("the validator refuses each structural failure", () => {
     [data => { data.probes[0].items[0].hint = "x"; }, /unknown item field/],
     [data => { data.review.status = "approved"; }, /review.status/],
     [data => { data.schemaVersion = 2; }, /schemaVersion/],
+    [data => { data.probes[0].intro = "A boat has come home after the winter, the story says."; }, /repeats the intro or content note/],
+    [data => { data.probes[0].contentNote = "Shows that a boat has come home after the winter."; }, /repeats the intro or content note/],
+    [data => { data.probes[0].contentNote = "<b>Note</b>"; }, /non-plain/],
+    [data => { data.probes[0].contentNote = 5; }, /missing or overlong text/],
   ];
   for (const [mutate, error] of cases) { const data = probeData([1, 3]); mutate(data); assert.throws(() => T.validateProbes(data, courses), error, String(error)); }
   const continued = [course(1), course(3)]; continued[0].days[0].excerpt.continuesFrom = "reading-1-w00-d5";
@@ -303,6 +307,25 @@ test("the validator refuses each structural failure", () => {
   const long = [course(1), course(3)]; long[0].days[0].blocks[0].text = "word ".repeat(T.MAX_WORDS + 1).trim(); long[0].days[0].excerpt.textHash = textHash(long[0].days[0]);
   const data = probeData([1, 3]); data.probes[0].textHash = long[0].days[0].excerpt.textHash;
   assert.throws(() => T.validateProbes(data, long), /words, outside/);
+});
+test("a probe's student-facing content note replaces the night's own; null shows none", () => {
+  const courses = [course(1), course(3)]; courses[0].days[0].contentNote = "ADULT_NOTE for a facilitator.";
+  const data = probeData([1, 3]);
+  let built = T.bundle({ data, courses, ...T.validateProbes(data, courses) });
+  assert.equal(built.probes[0].contentNote, "ADULT_NOTE for a facilitator.");
+  data.probes[0].contentNote = "A short note for students.";
+  built = T.bundle({ data, courses, ...T.validateProbes(data, courses) });
+  assert.equal(built.probes[0].contentNote, "A short note for students."); assert.doesNotMatch(JSON.stringify(built), /ADULT_NOTE/);
+  data.probes[0].contentNote = null;
+  assert.equal(T.bundle({ data, courses, ...T.validateProbes(data, courses) }).probes[0].contentNote, null);
+});
+test("the cue report flags absolutes only in distractors and cross-item cues without failing", () => {
+  const courses = [course(1), course(3)], data = probeData([1, 3]);
+  data.probes[0].items[0].options[1] = "The fog never lifts from the harbour";
+  data.probes[0].items[1].stem = "Why has a boat come home after the winter? (2)";
+  const cues = T.cueReport(T.validateProbes(data, courses).resolved);
+  assert.ok(cues.some(line => /rl-1-a-1: absolute word only in a distractor/.test(line)));
+  assert.ok(cues.some(line => /rl-1-a-1: key words .* appear in the stem of rl-1-a-2/.test(line)));
 });
 test("the bundle resolves passage text and never includes facilitator notes", () => {
   const courses = [course(1), course(3)], data = probeData([1, 3]);

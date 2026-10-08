@@ -31,6 +31,9 @@ const LONGEST_KEY_RATIO = 1.25;
 // passage itself. Items are original, never adapted from the corpus prompts.
 const SHARED_WORDS = 6;
 const REVIEW_STATUSES = ["unreviewed", "independently-reviewed"];
+// The key may not repeat this many consecutive words of the probe's intro or
+// the content note shown with it: what the screen states, an item must not ask.
+const SCREEN_WORDS = 4;
 
 function assert(value, message) { if (!value) throw new Error("Reading level: " + message); }
 function text(value, where, max = 400) { assert(typeof value === "string" && value.trim() && value.length <= max && value === value.trim(), "missing or overlong text at " + where); }
@@ -46,7 +49,7 @@ function shingles(value, size = SHARED_WORDS) {
 // Quoted phrases, without the closing punctuation a sentence adds.
 function quotes(value) { return [...value.matchAll(/[“"]([^”"]+)[”"]/g)].map(match => match[1].replace(/[.,;:!?]+$/u, "")); }
 
-function validateItem(item, probe, index, passage, borrowed) {
+function validateItem(item, probe, index, passage, borrowed, screen) {
   const where = probe.id + ".items." + index;
   assert(item && typeof item === "object" && !Array.isArray(item), "expected item at " + where);
   assert(item.id === probe.id + "-" + (index + 1), "item ID must be " + probe.id + "-" + (index + 1) + " at " + where);
@@ -66,6 +69,8 @@ function validateItem(item, probe, index, passage, borrowed) {
     const value = typeof field === "number" ? item.options[field] : item[field];
     for (const shingle of shingles(value)) assert(passageShingles.has(shingle) || !borrowed.has(shingle), "wording copied from the night's discussion material at " + item.id + "." + field);
   }
+  const keyRuns = shingles(item.options[item.key], SCREEN_WORDS);
+  assert(![...shingles(screen, SCREEN_WORDS)].some(run => keyRuns.has(run)), "key repeats the intro or content note shown with the passage at " + item.id);
   const extra = Object.keys(item).filter(key => !["id", "skill", "stem", "options", "key", "rationale"].includes(key));
   assert(!extra.length, "unknown item field " + extra.join(", ") + " at " + item.id);
 }
@@ -99,13 +104,17 @@ function validateProbes(data, courses, { complete = false } = {}) {
     const passage = blockText(day), count = L.wordCount(passage);
     assert(count >= MIN_WORDS && count <= MAX_WORDS, "probe night has " + count + " words, outside " + MIN_WORDS + "–" + MAX_WORDS + " at " + id);
     text(probe.intro, id + ".intro", 300); plain(probe.intro, id + ".intro");
+    // An optional student-facing content note replaces the night's own, which
+    // is often written for an adult reader (null: show none).
+    if (Object.hasOwn(probe, "contentNote") && probe.contentNote !== null) { text(probe.contentNote, id + ".contentNote", 400); plain(probe.contentNote, id + ".contentNote"); }
+    const note = Object.hasOwn(probe, "contentNote") ? probe.contentNote : day.contentNote;
     assert(Array.isArray(probe.items) && probe.items.length === L.itemCount(probe.level), id + " needs " + L.itemCount(probe.level) + " items");
     const borrowed = new Set(day.questions.flatMap(question => [question.prompt, ...question.facilitatorNotes]).flatMap(value => [...shingles(value)]));
-    probe.items.forEach((item, i) => validateItem(item, probe, i, passage, borrowed));
-    const extra = Object.keys(probe).filter(key => !["id", "level", "form", "dayId", "textHash", "intro", "items"].includes(key));
+    probe.items.forEach((item, i) => validateItem(item, probe, i, passage, borrowed, probe.intro + " " + (note || "")));
+    const extra = Object.keys(probe).filter(key => !["id", "level", "form", "dayId", "textHash", "intro", "contentNote", "items"].includes(key));
     assert(!extra.length, "unknown probe field " + extra.join(", ") + " at " + id);
     const levelForms = forms.get(probe.level) || []; levelForms.push(probe.form); forms.set(probe.level, levelForms);
-    return { probe, day, course, words: count };
+    return { probe, day, course, words: count, note };
   });
   for (const [level, list] of forms) assert(L.FORMS.every(form => list.includes(form)), "level " + level + " needs both forms (" + L.FORMS.join(", ") + ")");
   const levels = [...forms.keys()].sort((a, b) => a - b);
@@ -123,11 +132,11 @@ function loadProbes({ file = PROBE_FILE, directory, complete = false } = {}) {
 }
 
 function bundle({ data, courses, resolved, levels, labels }) {
-  const probes = resolved.map(({ probe, day, course, words }) => {
+  const probes = resolved.map(({ probe, day, course, words, note }) => {
     const source = D.sourceAt(course, day), credit = D.selectionCredit(day, source);
     return { id: probe.id, level: probe.level, form: probe.form, dayId: day.id, week: day.week, day: day.day, title: day.title,
       workTitle: credit.workTitle, author: credit.author, translator: source.translator, source: D.sourceLabel(source),
-      locator: day.excerpt.locator, rights: source.rights.basis, contentNote: day.contentNote, intro: probe.intro, words,
+      locator: day.excerpt.locator, rights: source.rights.basis, contentNote: note, intro: probe.intro, words,
       blocks: day.blocks.map(block => ({ type: block.type, text: block.text })),
       items: probe.items.map(item => ({ id: item.id, skill: item.skill, stem: item.stem, options: item.options.slice(), key: item.key, rationale: item.rationale })) };
   });
@@ -146,5 +155,31 @@ function build(options = {}) {
   return loaded;
 }
 
-module.exports = { validateProbes, loadProbes, bundle, build, MIN_WORDS, MAX_WORDS, EXPECTED_LEVELS, LONGEST_KEY_RATIO, SHARED_WORDS };
+// Heuristic cues an author should look at during the passage-hidden pass
+// (docs/reading-level.md). Reported, never failed: each needs judgment.
+const ABSOLUTE = /\b(?:always|never|only|all|every|none|no one|nothing|everyone|everything|completely|entirely)\b/i;
+const HEDGE = /\b(?:some|often|usually|may|might|perhaps|seems?|more|mostly|partly|likely)\b/i;
+const STOP = new Set("a an the and or but of to in on at by for with from as is are was were be been it its this that these those he she they his her their them him you your i we our not no so than then there what why how who which when where does do did has have had can could would will".split(" "));
+function contentWords(value) { return new Set(words(value).filter(word => word.length > 3 && !STOP.has(word))); }
+function cueReport(resolved) {
+  const notes = [];
+  for (const { probe, note } of resolved) {
+    const screen = contentWords(probe.intro + " " + (note || ""));
+    probe.items.forEach((item, index) => {
+      const key = item.options[item.key], distractors = item.options.filter((_, i) => i !== item.key);
+      if (!ABSOLUTE.test(key) && distractors.some(option => ABSOLUTE.test(option))) notes.push(item.id + ": absolute word only in a distractor");
+      if (HEDGE.test(key) && !distractors.some(option => HEDGE.test(option))) notes.push(item.id + ": hedge only in the key");
+      const shared = [...contentWords(key)].filter(word => screen.has(word));
+      if (shared.length >= 2) notes.push(item.id + ": key shares " + shared.join(", ") + " with the intro or note");
+      probe.items.forEach((other, j) => {
+        if (j === index) return;
+        const overlap = [...contentWords(key)].filter(word => contentWords(other.stem).has(word) && !contentWords(item.stem).has(word));
+        if (overlap.length >= 2) notes.push(item.id + ": key words " + overlap.join(", ") + " appear in the stem of " + other.id);
+      });
+    });
+  }
+  return notes;
+}
+
+module.exports = { validateProbes, loadProbes, bundle, build, cueReport, MIN_WORDS, MAX_WORDS, EXPECTED_LEVELS, LONGEST_KEY_RATIO, SHARED_WORDS, SCREEN_WORDS };
 if (require.main === module) { try { build({ complete: process.argv.includes("--complete") }); } catch (error) { console.error(error.message); process.exitCode = 1; } }

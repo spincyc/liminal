@@ -41,6 +41,9 @@
 .rl-text .rl-paragraph { white-space: pre-line; overflow-wrap: anywhere; }
 .rl-text .rl-stanza { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; }
 .rl-text .rl-heading { margin-block: 1.2em .5em; font: 600 1.0625rem/1.5 var(--font-serif); }
+.rl-source-card { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--color-line); font-size: .9375rem; }
+.rl-source-card h3 { margin-top: 0; }
+.rl-source-title { margin-top: 4px; font: italic 1.0625rem/1.4 var(--font-serif); }
 .rl-source { border-top: 1px solid var(--color-line); font-size: .8125rem; color: var(--color-muted); }
 .rl-source summary { cursor: pointer; min-height: var(--tap); padding-block: 10px; }
 .rl-source p { margin-bottom: 8px; overflow-wrap: anywhere; }

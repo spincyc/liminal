@@ -21,8 +21,10 @@
   // ---- Thresholds. Each is an editorial choice, kept conservative. ----
 
   // A probe shows strong comprehension at 75% correct or better: 3 of 4, or
-  // all 3 of a 3-item probe. Guessing 3 of 4 four-option items happens about
-  // 5% of the time; guessing all 3 of 3 about 1.6%.
+  // all 3 of a 3-item probe. Guessing 3 of 4 among four equally plausible
+  // options happens about 5% of the time (all 3 of 3, about 1.6%); it rises
+  // sharply when options can be ruled out without reading (about 11% with one
+  // ruled out per item, 31% with two), so every distractor must be plausible.
   const STRONG_SHARE = 0.75;
   // Below half correct (0–1 of 4, 0–1 of 3) is weak: the passage was not
   // understood well enough to read alone, so the ladder steps down faster.
